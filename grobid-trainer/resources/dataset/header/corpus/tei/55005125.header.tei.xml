@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005125"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<lb/>
+			<docTitle>
+				<titlePart>Communication in Context:<lb/>Exploring new mobile applications<lb/></titlePart>
+			</docTitle>
+
+			<byline>
+				<docAuthor>Jeroen Schot</docAuthor>
+			</byline>
+			<byline>
+				<affiliation> - Telematics Research Center - </affiliation>
+			</byline>
+			<address>the Netherlands<lb/></address>
+
+			<div type="abstract">Abstract-<lb/> In this paper we present an approach for
+				matching<lb/> innovative applications with upcoming mobile tech-<lb/> nologies, like
+				UMTS, through structured service de-<lb/> scription. Eventually, this approach can
+				be used to<lb/> perform market analysis for mobile services, using a<lb/> value
+				chain model that puts communication services in<lb/> economic context. The approach
+				has been applied suc-<lb/> cessfully to a number of cases in the
+				Netherlands.<lb/></div>
+
+		</front>
+	</text>
+</tei>

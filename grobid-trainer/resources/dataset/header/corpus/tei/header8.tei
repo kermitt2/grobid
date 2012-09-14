@@ -1,0 +1,21 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="9"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Multimedia Database Systems: Challenges and <lb/>Opportunities <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Yelena Yesha <lb/></docAuthor></byline>
+		<byline><affiliation>Dept. of Computer Science <lb/> University of Maryland <lb/></affiliation></byline>
+		<address>5401 Wilkens Avenue <lb/>Baltimore, MD <lb/></address>
+		<byline><docAuthor>Mukesh Singhal <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer <lb/>and Information Science <lb/> The Ohio State University <lb/></affiliation></byline>
+		<address>2015 Neil Avenue <lb/>Columbus, OH 43210 <lb/></address>
+		<div type="abstract">Abstract <lb/>Since multimedia systems typically require storage, retrieval, and manipulation <lb/>of huge amount of information, database systems play key role in the design of high-performance multimedia systems. This article examines the issues in the design of <lb/>multimedia database systems and explores the current state of the art. <lb/></div>
+		<keywords>Key Words: Multimedia systems, multimedia databases, information systems. <lb/></keywords>
+		<pb/>
+		</front>
+</text>
+</tei>

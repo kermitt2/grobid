@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>a</marker>
+							<orgName type="institution">Institut Pasteur</orgName>,
+							<orgName type="department">Department of Infection and Epidemiology</orgName>,
+							<orgName type="laboratory">Unit of Molecular Prevention and Therapy of Human Diseases</orgName>,
+							<address>
+								<addrLine>25 rue Docteur Roux</addrLine>,
+								<postCode>75724</postCode>
+								<settlement>Paris</settlement>
+								<postCode>Cedex 15</postCode>,
+								<country>France</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>b</marker>
+							<orgName type="institution">CNRS URA3012</orgName>,
+							<address>
+								<addrLine>25 rue Docteur Roux</addrLine>,
+								<postCode>75724</postCode>
+								<settlement>Paris</settlement>
+								<postCode>Cedex 15</postCode>,
+								<country>France</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>c</marker>
+							<orgName type="laboratory">CNRS UMR6204, Biotechnology, Biocatalysis and Bioregulation</orgName>,
+							<address>
+								<addrLine>2 rue de la Houssinière</addrLine>,
+								<addrLine>BP 92208</addrLine>,
+								<postCode>44322</postCode>
+								<settlement>Nantes</settlement>
+								<postCode>Cedex 3</postCode>,
+								<country>France</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>d</marker>
+							<orgName type="institution">Université de Nantes</orgName>,
+							<orgName type="department">Faculté des Sciences et des Techniques</orgName>,
+							<address>
+								<addrLine>2 rue de la Houssinière</addrLine>,
+								<addrLine>BP 92208</addrLine>,
+								<postCode>44322</postCode>
+								<settlement>Nantes</settlement>
+								<postCode>Cedex 3</postCode>,
+								<country>France</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

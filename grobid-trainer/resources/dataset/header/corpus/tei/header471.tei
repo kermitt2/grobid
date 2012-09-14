@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="474"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Implementing Atomic Sequences on Uniprocessors <lb/>Using Rollforward <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>David Mosberger, Peter Druschel , and Larry L. Peterson <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science <lb/>University of Arizona <lb/></affiliation></byline>
+		<address>Tucson, AZ 85721 <lb/></address>
+		<email>{davidm,druschel,llp}@cs.arizona.edu <lb/></email>
+		<div type="abstract">Summary <lb/>This article presents a software-only solution to the synchronization problem for uniprocessors. <lb/>The idea is to execute atomic sequences without any hardware protection, and in the rare case <lb/>of pre-emption, to roll the sequence forward to the end, thereby preserving atomicity. One of <lb/>the proposed implementations protects atomic sequences without any memory-accesses. This <lb/>is significant as it enables execution at CPU-speeds, rather than memory-speeds. The benefit of <lb/>this method increases with the frequency at which atomic sequences are executed. It therefore <lb/>encourages the building of systems with fine-grained synchronization. This has the additional <lb/>advantage of reducing average latency. Experiments demonstrate that this technique has the <lb/>potential to outperform even the best hardware mechanisms. The main contribution of this article <lb/>is to discuss operating-system related issues of rollforward and to demonstrate its practicality, <lb/>both in terms of flexibility and performance. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../jsp/xmlverbatimwrapper.xsl"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+							<marker>1</marker> 
+							<affiliation>
+								<orgName type="laboratory" key="lab1">Institut Pluridisciplinaire Hubert Curien<lb/></orgName>
+								<orgName type="laboratory" key="lab2">Département de Recherches Subatomiques</orgName>
+								<orgName type="laboratory" key="lab3" corresp="#lab1">UMR7178</orgName>,
+
+								<orgName type="institution" key="instit1">IN2P3-CNRS</orgName>
+								and<lb/>
+								<orgName type="institution" key="instit2">Université de Strasbourg</orgName>,
+								<address>
+									<addrLine>23 rue du Loess</addrLine>
+									<addrLine>B.P. 28</addrLine>,
+									<postCode>F-67037</postCode>
+									<settlement>Strasbourg Cedex 2</settlement>,
+									<country key="FR">France<lb/></country>
+								</address>
+							</affiliation>
+							
+							<marker>2</marker> 
+							<affiliation>
+								<orgName type="departement">Zakład Fizyki Matematycznej</orgName>,
+								<orgName type="institution">Uniwersytet Marii Curie-Skłodowskiej</orgName>,<lb/>
+								<address>
+									<addrLine>pl. Marii Curie-Skłodowskiej 1</addrLine>,
+									<postCode>PL-20031</postCode>
+									<settlement>Lublin</settlement>,
+									<country key="PL">Poland<lb/></country>
+								</address>
+							</affiliation>
+							
+							<marker>3</marker> 
+							<affiliation>
+								<orgName type="departement">The Niewodniczański Institut of Nuclear Physics</orgName>,
+								<orgName type="insitution">Polish Academy of Sciences</orgName>,
+								<address>
+									<addrLine>ul. Radzikowskiego 152</addrLine>,
+									<postCode>Pl-31-342</postCode>
+									<settlement>Kraków</settlement>,
+									<country key="PL">Poland<lb/></country>
+								</address>
+							</affiliation>
+							
+							<affiliation>
+								<orgName type="laboratory">and Grand Accélérateur National d'Ions Lourds</orgName>,
+								<address>
+									<addrLine>Bd Henri Becquerel<lb/></addrLine>
+									<addrLine>BP 55027</addrLine>
+									-
+									<postCode>14076</postCode>
+									<settlement>Caen Cedex 05</settlement>,
+									<country key="FR">France<lb/></country>
+								</address>
+							</affiliation>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</TEI>

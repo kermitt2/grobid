@@ -1,0 +1,20 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="532"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Clustering Learning Tasks and the Selective Cross-Task <lb/>Transfer of Knowledge <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Sebastian Thrun Joseph O&apos;Sullivan <lb/></docAuthor></byline>
+		<date>November 1995 <lb/></date>
+		<idno>CMU-CS-95-209 <lb/></idno>
+		<byline><affiliation>School of Computer Science <lb/>Carnegie Mellon University <lb/></affiliation></byline>
+		<address>Pittsburgh, PA 15213 <lb/></address>
+		<note type="other">The first author is also affiliated with the Computer Science Department III of the University of <lb/>Bonn, Germany, where part of this research was carried out. <lb/></note>
+		<note type="grant">This research is sponsored in part by the National Science Foundation under award IRI-9313367, <lb/>and by the Wright Laboratory, Aeronautical Systems Center, Air Force Materiel Command, USAF, <lb/>and the Advanced Research Projects Agency (ARPA) under grant number F33615-93-1-1330. The <lb/>views and conclusions contained in this document are those of the author and should not be interpreted <lb/>as necessarily representing official policies or endorsements, either expressed or implied, of NSF, <lb/>Wright Laboratory or the United States Government. <lb/></note>
+		<pb/>
+		</front>
+</text>
+</tei>

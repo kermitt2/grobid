@@ -1,0 +1,36 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="1096"/> 
+	</teiHeader>
+<text xml:lang="en"> 
+	<front> 
+		<note type="submission">Confidential:  not for distribution. Submitted to IOP Publishing for peer review </note>
+        <date type="submission">15 December 2009<lb/></date>
+
+        <note type="title">CVD  synthesis of polycrystalline magnetite thin films: structural, magnetic, and magnetotransport properties<lb/></note>
+        
+		<docTitle>
+			<titlePart type="main">CVD  synthesis of polycrystalline magnetite thin films: structural,<lb/>magnetic, and magnetotransport properties<lb/></titlePart>
+		</docTitle> 
+		 
+		<byline><docAuthor>by<lb/>R Mantovan  1,3  , A Lamperti  1  , M Georgieva  1  , G Tallarida  1  and M Fanciulli  1,2<lb/></docAuthor></byline>
+		 
+		<byline><affiliation>1  Laboratorio Nazionale MDM CNR-INFM, </affiliation></byline> 
+		<address>Via C. Olivetti 2, 20041 Agrate Brianza (MI), Italy.<lb/></address>
+		
+		<byline><affiliation>2<lb/> Dipartimento di Scienza dei Materiali, Università di Milano</affiliation></byline> 
+		<address> Bicocca, Milano, Italy<lb/></address> 
+		
+		<email>E-mail: roberto.mantovan@mdm.infm.it<lb/></email>
+		
+		<div type="abstract">Abstract. Magnetite (Fe  3  O  4  ) is predicted to be half metallic at room temperature and it shows the<lb/> highest Curie temperature among oxides. The use of Fe  3  O  4  thin films is therefore promising<lb/> spintronic devices such as magnetic tunnel junctions and magnetoresistive sensors. The structural,<lb/> magnetic, and magnetotransport properties of magnetite are reported to be strongly dependent on the<lb/> growth conditions. We have developed a very simple deposition chamber for growing thin magnetite<lb/> films via a chemical vapor deposition process based on the Fe  3  (CO)  12  carbonyl precursor. The<lb/> structural, morphological and magnetic properties of the as deposited Fe  3  O  4  films have been<lb/> investigated by means of time of flight secondary ion mass spectrometry, grazing incidence X-ray<lb/> diffraction, X-ray reflectivity, atomic force microscopy, conversion electron Mössbauer<lb/> and superconducting quantum interference device magnetometry. Magnetotransport measurements<lb/> show magnetoresistance up to -2.4% at room temperature at the maximum applied field of 1.1 T.<lb/> Resistivity measurements in the 100-300 K temperature range reveal that the magnetotransport<lb/> properties of the Fe  3  O  4  films are governed by inter-granular tunneling of the spin polarized electrons.<lb/> The spin polarization is estimated to be around -16%. A possible route for increasing the spin-<lb/> polarized performances of our magnetite films is proposed. We have also deposited Fe  3  O  4 <lb/> stacks by using a combined chemical vapor- and atomic layer- deposition process. The trilayer's<lb/> hysteresis curve evidences the presence of two distinct switching fields making it promising for<lb/> magnetite-based magnetic tunnel junction applications.<lb/></div> 
+		
+		<note type="other">3  Author to whom any correspondence should be addressed.</note>
+		 
+		<note type="title">CVD  synthesis of polycrystalline magnetite thin films: structural, magnetic, and magnetotransport properties<lb/>2<lb/></note>
+
+   		<introduction>1.  Introduction<lb/></introduction>
+		
+    </front>
+</text>
+</tei>                              

@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="683"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Run-time Techniques for Exploiting Irregular Task <lb/>Parallelism on Distributed Memory Architectures <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Cong Fu and Tao Yang <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science <lb/>University of California <lb/></affiliation></byline>
+		<address>Santa Barbara, CA 93106 <lb/></address>
+		<email>{cfu,tyang}@cs.ucsb.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>Automatic scheduling for directed acyclic graphs (DAG) and its applications for coarse-grained irregular problems such as large n-body simulation have been studied in the literature. <lb/>However solving irregular problems with mixed granularities such as sparse matrix factorization <lb/>is challenging since it requires efficient run-time support to execute a DAG schedule. In this <lb/>paper, we investigate run-time optimization techniques for executing general asynchronous <lb/>DAG schedules on distributed memory machines. Our solution tightly integrates the run-time <lb/>scheme with a fast communication mechanism to eliminate unnecessary overhead in message <lb/>buffering and copying. We discuss a consistency model incorporating the above optimizations, <lb/>and taking advantage of task dependence properties to ensure the correctness of execution. <lb/>We demonstrate the applications of this scheme in sparse factorizations and triangular solver <lb/>for which actual speedups are hard to obtain. Our experiments on Meiko CS-2 show that the <lb/>automatically scheduled code has achieved scalable performance for these problems and the <lb/>run-time overhead is small compared to the total execution time. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

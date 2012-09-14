@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+<listBibl>
+
+  	<bibl><date>2011</date> <title level="j">J. Opt.</title> <biblScope type="vol">13</biblScope> <note>013001</note><lb/></bibl>
+  	<bibl><title level="j">J. Opt.</title> <biblScope type="vol">13</biblScope> (<date>2011</date>) <biblScope type="pp">013001</biblScope> (<note>22pp</note>)<lb/></bibl>
+
+</listBibl>
+</tei>

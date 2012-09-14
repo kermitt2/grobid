@@ -1,0 +1,82 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005179"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<docType>
+				<titlePart>Investigation of the behaviour of the Sherman function for elastic
+					electron scattering from Kr<lb/> and Xe<lb/></titlePart>
+			</docType>
+			<note type="other">This article has been downloaded from IOPscience. Please scroll down
+				to see the full text article.<lb/></note>
+			<reference>2010 J. Phys. B: At. Mol. Opt. Phys. 43 215208<lb/></reference>
+			<ptr type="web">(http://iopscience.iop.org/0953-4075/43/21/215208)<lb/></ptr>
+			<note type="other">View the table of contents for this issue, or go to the journal
+				homepage for more<lb/></note>
+			<note type="other"> Download details:<lb/> IP Address: 145.64.134.242<lb/> The article
+				was downloaded on 05/04/2011 at 13:22<lb/>
+			</note>
+			<note type="other"> Please note that terms and conditions apply.<lb/>
+			</note>
+
+			<pb/>
+
+			<note type="other">IOP PUBLISHING</note>
+			<space dim="horizontal"/>
+			<note type="other">JOURNAL OF PHYSICS B: ATOMIC, MOLECULAR AND OPTICAL
+				PHYSICS<lb/></note>
+			<idno>doi:10.1088/0953-4075/43/21/215208</idno>
+			<space dim="horizontal"/>
+			<reference>J. Phys. B: At. Mol. Opt. Phys. 43 (2010) 215208 (8pp)<lb/></reference>
+			<docTitle>
+				<titlePart> Investigation of the behaviour of the<lb/> Sherman function for elastic
+					electron<lb/> scattering from Kr and Xe<lb/>
+				</titlePart>
+			</docTitle>
+
+			<byline>
+				<docAuthor> R P McEachran1 , A D Stauffer2 , M Piwinski3,4 , L Pravica3 ,<lb/> J F
+					Williams3 , D Cvejanovic3 and S N Samarin3<lb/>
+				</docAuthor>
+			</byline>
+
+			<byline>
+				<affiliation>1 ARC Centre for Antimatter-Matter Studies (CAMS), Research School of
+					Physics and Engineering,<lb/> Australian National University,</affiliation>
+			</byline>
+			<address>Canberra ACT 0200, Australia<lb/></address>
+			<byline>
+				<affiliation>2 Department of Physics and Astronomy, York University,</affiliation>
+			</byline>
+			<address>Toronto ON M3J 1P3, Canada<lb/></address>
+			<byline>
+				<affiliation>3 ARC Centre for Antimatter-Matter Studies (CAMS), The Centre for
+					Atomic, Molecular<lb/> and Surface Studies (CAMSP), School of Physics, The
+					University of Western Australia,<lb/></affiliation>
+			</byline>
+			<address>Crawley,<lb/>Perth, 6009, Australia</address>
+			<byline>
+				<affiliation>4 Institute of Physics, Nicolaus Copernicus University,</affiliation>
+			</byline>
+			<address> ul. Grudziadzka 5/7, 87-100 Torun, Poland<lb/></address>
+
+			<email>E-mail: stauffer@yorku.ca<lb/></email>
+			<note type="submission"> Received 2 August 2010, in final form 29 September 2010<lb/></note>
+			<date>Published 22 October 2010<lb/></date>
+			
+			<ptr type="web">Online at stacks.iop.org/JPhysB/43/215208<lb/></ptr>
+			
+			<div type="abstract"> Abstract<lb/> We have investigated in detail certain rich
+				structures in the Sherman function S arising when<lb/> spin-polarized electrons are
+				elastically scattered from the heavy noble gases, krypton and<lb/> xenon. These
+				structures exhibit large magnitudes which span several degrees of the
+				scattering<lb/> angle and change significantly as the incident electron energy
+				varies. We follow the evolution<lb/> of these structures as a function of energy
+				both theoretically and experimentally and compare<lb/> with published data.<lb/>
+			</div>
+
+		</front>
+	</text>
+</tei>

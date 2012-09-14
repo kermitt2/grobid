@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="5"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Clustering and Intra-Processor Scheduling for <lb/>Explicitly-Parallel Programs on Distributed-Memory Systems <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Vibha A. Dixit-Radiya and Dhabaleswar K. Panda <lb/></docAuthor></byline>
+		<idno>OSU-CISRC-3/93-TR11 <lb/></idno>
+		<date>Updated on February 7, 1994 <lb/></date>
+		<note type="other">A short version of this report will appear in <lb/></note>
+		<note type="reference">International Parallel Processing Symposium, 1994. <lb/></note>
+		<pb/>
+		</front>
+</text>
+</tei>

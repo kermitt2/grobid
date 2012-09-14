@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="unknown"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">A Multicast Congestion Control Mechanism Using Representatives <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Dante DeLucia Katia Obraczka <lb/></docAuthor></byline>
+		<byline><affiliation>Hughes Research Laboratories USC Information Sciences Institute <lb/></affiliation></byline>
+		<address>3011 Malibu Canyon Road 4676 Admiralty Way Suite 1001 <lb/>Malibu CA 90265 Marina Del Rey, CA 90292 <lb/></address>
+		<email>email: dante@usc.edu </email> <email>email: katia@isi.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>In this paper, we propose a congestion control <lb/>mechanism for reliable multicast applications that <lb/>uses a small set of group members, or representatives, <lb/>to provide timely and accurate feedback on behalf of <lb/>congested subtrees of a multicast distribution tree. <lb/>Our algorithm does not need to compute round-trip <lb/>time (RTT) from all receivers to the source, nor does <lb/>it require knowledge of group membership or network <lb/>topology. Through simulations, we evaluate our algorithm with and without TCP cross traffic. This initial evaluation study shows that our algorithm takes <lb/>advantage of network bandwidth when available, yet <lb/>does not starve competing flows. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

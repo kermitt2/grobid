@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="610"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">3-D Stereo Using Photometric Ratios <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Lawrence B. Wolff <lb/>Elli Angelopoulou <lb/></docAuthor></byline>
+		<byline><affiliation>Computer Vision Laboratory <lb/>Department of Computer Science <lb/>The Johns Hopkins University <lb/></affiliation></byline>
+		<address>Baltimore, MD 21218 <lb/></address>
+		<div type="abstract">ABSTRACT <lb/>We present a novel robust methodology for corresponding a dense set of points on an <lb/>object surface from photometric values, for 3-D stereo computation of depth. The methodology utilizes multiple stereo pairs of images, each stereo pair taken of exactly the same <lb/>scene but under different illumination. With just 2 stereo pairs of images taken respectively for 2 different illumination conditions, a stereo pair of ratio images can be produced; one for the ratio of left images, and one for the ratio of right images. We <lb/>demonstrate how the photometric ratios composing these images can be used for accurate <lb/>correspondence of object points. Object points having the same photometric ratio with <lb/>respect to 2 different illumination conditions comprise a well-defined equivalence class of <lb/>physical constraints defined by local surface orientation relative to illumination conditions. We formally show that for diffuse reection the photometric ratio is invariant to <lb/>varying camera characteristics, surface albedo, and viewpoint and that therefore the same <lb/>photometric ratio in both images of a stereo pair implies the same equivalence class of <lb/>physical constraints. Corresponding photometric ratios along epipolar lines in a stereo pair <lb/>of images under different illumination conditions is therefore a robust correspondence of <lb/>equivalent physical constraints, and determination of depth from stereo can be performed <lb/>without explicitly knowing what these physical constraints being corresponded actually <lb/>are. This implies a very practical shape-from-stereo methodology applicable to perspective views and not requiring any knowledge whatsoever of illumination conditions. This is <lb/>particularly practical for determination of 3-D shape on smooth featureless surfaces which <lb/>has previously been hard to perform using stereo. We demonstrate experimental 3-D shape <lb/>determination from a dense set of points using our stereo technique on smooth objects of <lb/>known ground truth shape that are accurate to well within 1% depth accuracy. <lb/></div>
+		<pb/>
+		</front>
+</text>
+</tei>

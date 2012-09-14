@@ -1,0 +1,71 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005204"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<lb/>
+			<note type="articleType">Methods Note/<lb/></note>
+			<docTitle>
+				<titlePart>Line-Source Multi-Tracer Test for Assessing<lb/> High Groundwater
+					Velocity<lb/></titlePart>
+			</docTitle>
+
+			<byline>
+				<docAuthor>by Einat Magal 1,2 , Noam Weisbrod 2 , Alexander Yakirevich 2 , Daniel
+					Kurtzman 3 , and Yoseph Yechieli 2<lb/></docAuthor>
+			</byline>
+
+			<div type="abstract">Abstract<lb/> Segmented line-source multi-tracer injection is
+				suggested as an effective method for assessing groundwater<lb/> velocities and flow
+				directions in subsurfaces characterized by high water flux. Modifying the common
+				techniques<lb/> of injecting a tracer into a well became necessary after
+				point-source natural and forced gradient tracer tests ended<lb/> with no reliable
+				information on the local groundwater flow. The tracer's line-source increases the
+				likelihood of<lb/> success of the test and could provide additional information
+				regarding the lateral heterogeneity of the aquifer.<lb/> In a field experiment
+				conducted in the northwestern part on the Dead Sea coast, tracers were injected
+				into<lb/> an 8-m-long line injection system perpendicular to the assumed flow
+				direction. The injection system was divided<lb/> into four separate segments with
+				four different tracers. An array of five boreholes located within a 10 × 10 m
+				area<lb/> downstream was used for monitoring the tracers' transport. Two dye tracers
+				(uranine and Na naphthionate) were<lb/> injected in a long pulse of several hours
+				into two of the injection pipe segments. Two other tracers (Rhenium<lb/> oxide and
+				Gd-DTPA) were instantaneously injected into the other two segments. The tracers were
+				detected 0.7 to<lb/> 2.3 h after injection in four of the five observation wells,
+				located 2.3 to 10 m away from the injection system.<lb/> The groundwater velocity
+				was determined to be ∼80 to 170 m/d, based on the recoveries of the tracers.
+				The<lb/> groundwater flow direction was derived based on the arrival of the tracers
+				and was found to be quite consistent<lb/> with the apparent direction of the
+				hydraulic gradient.<lb/></div>
+
+			<byline>
+				<affiliation>1 Corresponding author: Department of Environmental Hydrology &amp;
+					Microbiology, Zuckerberg Institute for Water Research, Blaustein Institute for
+					Desert Studies, Ben Gurion University of the Negev,</affiliation>
+			</byline>
+			<address>Sede Boqer 84990, Israel;</address>
+			<phone>+972-506-206081;<lb/> fax: +972-2-5316087;</phone>
+			<email>einatm@mni.gov.il<lb/></email>
+			<byline>
+				<affiliation>2 Geological Survey of Israel,</affiliation>
+			</byline>
+			<address>30 Malkhe Israel St., Jerusalem<lb/>
+			95501, Israel.<lb/></address>
+			<byline>
+				<affiliation>3 Institute of Soil, Water and Environmental Sciences,<lb/>
+					Agricultural Research Organization, Volcani Center,</affiliation>
+			</byline>
+			<address>Bet Dagan<lb/>
+			50250, Israel.<lb/></address>
+			<note type="submission">Received July 2009, accepted March 2010.<lb/></note>
+			<note type="copyright">Copyright © 2010 The Author(s)<lb/> Journal compilation © 2010
+				National Ground Water Association.<lb/>
+			</note>
+			<idno> doi: 10.1111/j.1745-6584.2010.00707.x<lb/>
+			</idno>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="ZFN-A-035-01-0057"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<titlePage>
+				<docTitle>
+					<titlePart type="main">On the Distribution of Major and Trace Elements Between <lb/>Metal and Phosphide Phases of Some Iron Meteorites<lb/></titlePart>
+				</docTitle>
+				<byline><docAuthor>K. P. Jochum, M. Seufert, and F. Begemann</docAuthor><lb/></byline>
+				<byline><affiliation>Max-Planck-Institut für Chemie </affiliation>, <address>Mainz, Germany </address> <lb/></byline>
+				<reference>Z. Naturforsch. 35a, 57-63 (1980); </reference>
+				<note type="submission">received October 25  1979 <lb/></note>
+				<note type="dedication">Dedicated to Prof. Dr. H. Hintenberger on the occasion of his 70ik birthday<lb/></note>
+			</titlePage>
+			<div type="abstract">The concentrations of Fe, Ni, Co, P, Cu, Ga, Ge, Mo, Ru, Rh, Pd, W, Ir and Pt in the phos- <lb/>phides and the metal of the coarse octahedrites Campo del Cielo, Canyon Diablo, Cranbourne <lb/>and Sardis, the coarsest octahedrite Säo Juliäo de Moreira and the hexahedrites Braunau and <lb/>Lombard have been determined by spark source mass spectrometry. Striking differences are <lb/>observed of the element contents between bulk meteorite and the phosphides as well as between <lb/>the different phosphide modifications Schreibersite and rhabdite. Extreme values are a 20 fold <lb/>depletion of Ga and a 40 times higher content of Pd in the phosphides. A particularly strong <lb/>correlation between the noble metal element content and size of phosphide aggregates is observed ; <lb/>it is shown that this correlation is not an artifact of the sample preparation but that is must be <lb/>real.<lb/></div>
+			<div type="intro"><lb/></div>
+		</front>
+	</text>
+</tei>

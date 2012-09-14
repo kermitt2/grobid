@@ -1,0 +1,21 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="233"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Optimal Smoothing of Stored Video and the Impact on <lb/>Network Resource Requirements fly <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>James D. Salehi, Zhi-Li Zhang, James F. Kurose, and Don Towsley <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science <lb/>University of Massachusetts <lb/></affiliation></byline>
+		<address>Amherst, MA 01003, U.S.A <lb/></address>
+		<note type="phone">(413) 545-3179 (voice), (413) 545-1249 (fax) <lb/></note>
+		<email>{fsalehi,zhzhang,kurose,towsleyg}@cs.umass.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>VBR compressed video is known to exhibit significant, multiple-time-scale bit rate variability. In this paper, we consider the transmission of stored video from a server to a client across a <lb/>high speed network, and explore how the client buffer space can be used most effectively toward <lb/>reducing the variability of the transmitted bit rate. <lb/>We present two basic results. First, we show how to achieve the greatest possible reduction in <lb/>rate variability when sending stored video to a client with given buffer size. We formally establish <lb/>the optimality of our optimal smoothing approach, and illustrate its performance over a set of <lb/>long MPEG-1 encoded video traces. Second, we evaluate the impact of optimal smoothing on the <lb/>network resources needed for video transport, under two network service models: Deterministic <lb/>Guaranteed service [1, 11] and Renegotiated CBR (RCBR) service [9, 8]. Under both models, we <lb/>find the impact of optimal smoothing to be dramatic. <lb/></div>
+		<note type="reference">An earlier version of this paper appeared at the 1996 ACM SIGMETRICS conference. </note>
+		<note type="grant"><lb/>This work was supported by NSF under grant NCR-9206908 and by ARPA under ESD/AVS contract F-19628-92-C <lb/>0089. <lb/></note>
+		<pb/>
+		</front>
+</text>
+</tei>

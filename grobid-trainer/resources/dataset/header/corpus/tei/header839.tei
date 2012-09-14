@@ -1,0 +1,16 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="unknown"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">On the Computational Requirements of <lb/>Virtual Reality Systems 1 <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Frank Devai <lb/></docAuthor></byline>
+		<byline><affiliation>School of Computing &amp; Mathematics, University of Ulster <lb/></affiliation></byline>
+		<div type="abstract">Abstract <lb/>The computational requirements of high-quality, real-time rendering exceeds the limits of <lb/>generally available computing power. However illumination effects, except shadows, are <lb/>less noticeable on moving pictures. Shadows can be produced with the same techniques <lb/>used for visibility computations, therefore the basic requirements of real-time rendering <lb/>are transformations, pre-selection of the part of the scene to be displayed and visibility <lb/>computations. Transformations scale well, ie, their time requirement grows linearly with <lb/>the input size. Pre-selection, if implemented by the traditional way of polygon clipping, <lb/>has a growing rate of N log N in the worst case, where N is the total number of edges in <lb/>the scene. Visibility computations, exhibiting a quadratic growing rate, are the bottleneck <lb/>from a theoretical point of view. Three approaches are discussed to speed up visibility <lb/>computations: (i) reducing the expected running time to O(N log N ) (ii) using approximation algorithms with O(N K) worst-case time, where K is the linear resolution of the <lb/>image, and (iii) applying parallel techniques leading to logarithmic time in the worst-case. <lb/>Though the growing rate of the time requirement of pre-selection is significantly slower <lb/>than that of visibility, it is demonstrated that pre-selection has to deal with a significantly <lb/>higher amount of data than visibility computations, as the average clipping volume is 1/27 <lb/>of the volume of the model. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

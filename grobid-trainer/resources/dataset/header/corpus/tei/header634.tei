@@ -1,0 +1,21 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="636"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<idno>DIMACS Technical Report 98-10 <lb/></idno>
+		<date>February 1998 <lb/></date>
+		<docTitle>
+			<titlePart type="main">Patience is a Virtue: The Effect of Delay on <lb/>Competitiveness for Admission Control <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>by <lb/>Michael H. Goldwasser 1 <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science <lb/>Princeton University <lb/></affiliation></byline>
+		<address>Princeton, NJ 08544 <lb/></address>
+		<email>wass@cs.princeton.edu <lb/></email>
+		<note type="other">1 Permanent Member <lb/>DIMACS is a partnership of Rutgers University, Princeton University, AT&amp;T Labs-Research, <lb/>Bell Labs and Bellcore. <lb/></note>
+		<note type="grant">DIMACS is an NSF Science and Technology Center, funded under contract STC-91-19999; <lb/>and also receives support from the New Jersey Commission on Science and Technology. <lb/></note>
+		<pb/>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="ZNB-1947-2b-0073"/>
+	</teiHeader>
+	<text xml:lang="de">
+		<front>
+			<lb/>
+			<docTitle>
+				<titlePart>Über eine verbesserte Ableitetechnik hirnelektrischer Ströme<lb/></titlePart>
+			</docTitle>
+
+			<byline>
+				<docAuthor>Von BKUNO FRANEK<lb/></docAuthor>
+			</byline>
+
+			<byline>
+				<affiliation>Aus der Universitäts-Nervenklinik,</affiliation>
+			</byline>
+			
+			<address>Tübingen*<lb/></address>
+
+			<reference>(Z. Naturforschg. 2 b, 73—76 [1947];</reference>
+
+			<note type="submission">eingegangen am 23. Oktober 1946)<lb/></note>
+
+			<div type="abstract">Um die Registrierung hirnelektrischer Ströme unter gewissen Belastungen, bei denen die Ver-<lb/>suchspersonen starken Erschüttungen und beträchtlichen äußeren Störströmen ausgesetzt sind,<lb/> zu ermöglichen, wird eine verbesserte Ableitetechnik vorgeschlagen. Durch Einführung zweck-<lb/>mäßiger Elektrodenfassungen aus Trolitul wird eine weitgehende Kontaktstabilität sowie eine<lb/> praktische Abschirmung erreicht.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="165"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">High-Bandwidth Address Translation <lb/>for Multiple-Issue Processors <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Todd M. Austin Gurindar S. Sohi <lb/></docAuthor></byline>
+		<byline><affiliation>Computer Sciences Department <lb/>University of Wisconsin-Madison <lb/></affiliation></byline>
+		<address>1210 W. Dayton Street <lb/>Madison, WI 53706 <lb/></address>
+		<email>faustin,sohig@cs.wisc.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>In an effort to push the envelope of system performance, microprocessor designs are continually exploiting higher levels of <lb/>instruction-level parallelism, resulting in increasing bandwidth demands on the address translation mechanism. Most current microprocessor designs meet this demand with a multi-ported TLB. While <lb/>this design provides an excellent hit rate at each port, its access latency and area grow very quickly as the number of ports is increased. <lb/>As bandwidth demands continue to increase, multi-ported designs <lb/>will soon impact memory access latency. <lb/>We present four high-bandwidth address translation mechanisms <lb/>with latency and area characteristics that scale better than a multi-ported TLB design. We extend traditional high-bandwidth memory <lb/>design techniques to address translation, developing interleaved and <lb/>multi-level TLB designs. In addition, we introduce two new designs <lb/>crafted specifically for high-bandwidth address translation. Piggyback ports are introduced as a technique to exploit spatial locality in <lb/>simultaneous translation requests, allowing accesses to the same virtual memory page to combine their requests at the TLB access port. <lb/>Pretranslation is introduced as a technique for attaching translations <lb/>to base register values, making it possible to reuse a single translation many times. <lb/>We perform extensive simulation-based studies to evaluate our <lb/>designs. We vary key system parameters, such as processor model, <lb/>page size, and number of architected registers, to see what effects <lb/>these changes have on the relative merits of each approach. A number of designs show particular promise. Multi-level TLBs with as <lb/>few as eight entries in the upper-level TLB nearly achieve the performance of a TLB with unlimited bandwidth. Piggyback ports <lb/>combined with a lesser-ported TLB structure, e.g., an interleaved or <lb/>multi-ported TLB, also perform well. Pretranslation over a single-ported TLB performs almost as well as a same-sized multi-level <lb/>TLB with the added benefit of decreased access latency for physically indexed caches. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

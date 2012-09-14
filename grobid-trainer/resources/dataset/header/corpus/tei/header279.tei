@@ -1,0 +1,19 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="284"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">On Algorithms for Simplicial Depth <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Andrew Y. Cheng <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Industrial Engineering <lb/></affiliation></byline>
+		<byline><docAuthor>Ming Ouyang <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science <lb/> Rutgers University <lb/></affiliation></byline>
+		<address>New Brunswick, New Jersey 08903 <lb/></address>
+		<div type="abstract">ABSTRACT <lb/>Simplicial depth is a way to measure how deep a point is among a set of points. Efficient <lb/>algorithms to compute it are important to the usefulness of its applications, such as in <lb/>multivariate analysis in statistics. A straightforward method takes O(n d+1 ) time when the <lb/>points are in d-dimensional space. We discuss an algorithm that takes O(n 2 ) time when the <lb/>points are in three-dimensional space, and we generalize it to four-dimensional space with <lb/>a time complexity of O(n 4 ). For spaces higher than four-dimensional, there are no known <lb/>algorithms faster than the straightforward method. <lb/></div>
+		<div type="intro">1 Simplicial depth</div>
+		</front>
+</text>
+</tei>

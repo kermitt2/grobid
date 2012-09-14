@@ -1,0 +1,19 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="267"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<note type="reference">Reference: Proceedings of the IASTED International Conference on Artificial Intelligence, Expert Systems and Neural Networks, pp. <lb/>249-252, 1996. <lb/></note>
+		<docTitle>
+			<titlePart type="main">Using Multiple Node Types to Improve the <lb/>Performance of DMP (Dynamic Multilayer Perceptron) <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Tim L. Andersen and Tony R. Martinez <lb/></docAuthor></byline>
+		<byline><affiliation>Computer Science Department, Brigham Young University,</affiliation></byline>
+		<address>Provo, Utah 84602 <lb/></address>
+		<email>email: tim@axon.cs.byu.edu, </email> <email>martinez@cs.byu.edu <lb/></email>
+		<div type="abstract">ABSTRACT <lb/>This paper discusses a method for training multilayer <lb/>perceptron networks called DMP2 (Dynamic Multilayer <lb/>Perceptron 2). The method is based upon a divide and conquer <lb/>approach which builds networks in the form of binary trees, <lb/>dynamically allocating nodes and layers as needed. The focus <lb/>of this paper is on the effects of using multiple node types <lb/>within the DMP framework. Simulation results show that <lb/>DMP2 performs favorably in comparison with other learning <lb/>algorithms, and that using multiple node types can be <lb/>beneficial to network performance. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

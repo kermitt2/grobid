@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">National Center for Agricultural Utilization Research</orgName>,
+							<orgName type="department">Agricultural Research Service</orgName>,
+							<orgName type="insitution">USDA</orgName><marker>1</marker>,
+							<address>
+								<addrLine>1815 N. University Street</addrLine>,
+								<settlement>Peoria</settlement>,
+								<region>IL</region>
+								<postCode>61604</postCode>,
+								<country>USA</country>
+							</address>
+							
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

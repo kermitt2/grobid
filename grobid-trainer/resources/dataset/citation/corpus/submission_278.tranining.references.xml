@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+<listBibl>
+
+		<bibl>"<title level="a">Single defect centres in diamond: A review</title>", <author>F. Jelezko, and J. Wrachtrup</author>, <title level="j">Phys. Stat. Sol. A</title> <biblScope type="vol">203</biblScope>, <biblScope type="pp">3207</biblScope> (<date>2006</date>).<lb/></bibl>
+
+		<bibl>"<title level="a">Enhancement of the zero phonon line emission from a single nitrogen vacancy center in a nanodiamond via<lb/> coupling to a photonic crystal cavity</title> ", <author>J. Wolters, A. W. Schell, G. Kewes, N. Nüsse, M. Schoengen, H. Döscher,<lb/> T. Hannappel, B. Löchel, M. Barth, and O. Benson</author>, <title level="j">Appl. Phys. Lett.</title> <biblScope type="vol">97</biblScope>, <biblScope type="pp">141108</biblScope> (<date>2010</date>).</bibl>
+
+		<bibl>"<title level="a">Single Defect Centers in Diamond Nanocrystals as Quantum Probes for Plasmonic Nanostructures</title>",<lb/> <author>A. W. Schell, G. Kewes, T. Hanke, A. Leitenstorfer, R. Bratschitsch, O. Benson, and T. Aichele</author>, <idno>arXiv:1103.2019</idno>.</bibl>
+
+		<bibl>"<title level="a">Fiber-Integrated Diamond-Based Single Photon Source</title>", <author>T. Schröder, A. W. Schell, G. Kewes, T. Aichele,<lb/> and O. Benson</author>, <title level="j">Nano. Lett.</title> <biblScope type="vol">11</biblScope>, <biblScope type="pp">198</biblScope> (<date>2011</date>).</bibl>
+
+</listBibl>
+</tei>

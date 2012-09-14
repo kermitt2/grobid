@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="56"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Constructing a Configurable Group RPC Service <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Matti A. Hiltunen and Richard D. Schlichting <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science <lb/> University of Arizona <lb/></affiliation></byline>
+		<address>Tucson, AZ 85721, USA <lb/></address>
+		<div type="abstract">Abstract <lb/>Current Remote Procedure Call (RPC) services implement a variety of semantics, with many of the differences <lb/>related to how communication and server failures are handled. The list increases even more when considering group <lb/>RPC, a variant of RPC often used for fault-tolerance where <lb/>an invocation is sent to a group of servers rather than one. <lb/>This paper presents an approach to constructing group <lb/>RPC in which a single configurable system is used to build <lb/>different variants of the service. The approach is based on <lb/>implementing each property as a separate software module <lb/>called a micro-protocol, and then configuring the micro-protocols needed to implement the desired service together <lb/>using a software framework based on the x-kernel. The <lb/>properties of point-to-point and group RPC are identified <lb/>and classified, and the general execution model described. <lb/>An example consisting of a modular implementation of a <lb/>group RPC service is given to illustrate the approach. Dependency issues that restrict configurability are also addressed. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

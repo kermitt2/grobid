@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="162"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Mathematical Programming in Machine Learning <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>O. L. Mangasarian <lb/></docAuthor></byline>
+		<idno>Mathematical Programming Technical Report 95-06 <lb/></idno>
+		<date>April 1995 - Revised July 1995 <lb/></date>
+		<div type="abstract">Abstract <lb/>We describe in this work a number of central problems of machine learning and <lb/>show how they can be modeled and solved as mathematical programs of various <lb/>complexity. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

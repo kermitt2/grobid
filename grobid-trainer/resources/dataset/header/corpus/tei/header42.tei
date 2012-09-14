@@ -1,0 +1,19 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="43"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Core Selection Methods for <lb/>Multicast Routing <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Kenneth L. Calvert Ellen W. Zegura <lb/>Michael J. Donahoo <lb/></docAuthor></byline>
+		<idno>GIT-CC-95/15 <lb/></idno>
+		<div type="abstract">Abstract <lb/>Multicast routing is an important topic of both theoretical and practical <lb/>interest. Some recently-proposed multicast routing algorithms involve the <lb/>designation of one or more network nodes as the &quot;center&quot; of the routing <lb/>tree for each multicast group address. The choice of this designated router <lb/>(which we refer to as the &quot;core&quot;) influences the shape of the multicast routing <lb/>tree, and thus influences performance of the routing scheme. In this paper we <lb/>investigate the relationship between the choice of core and three performance <lb/>measures. Specifically, we compare various methods of selecting a core with <lb/>respect to their effect on bandwidth, delay, and traffic concentration. We <lb/>conclude that simple methods are adequate for widely distributed groups, <lb/>but that the addition of group information can be leveraged to improve <lb/>performance especially when the group is small or exhibits a high degree <lb/>of locality. We also conclude that core choice has a significant impact on <lb/>traffic concentration, in fact traffic concentration effects can be ameliorated <lb/>by appropriate core choice policies. <lb/></div>
+		<keywords>Keywords: Multicast routing, Scalability, Network modeling <lb/></keywords>
+		<byline><affiliation>College of Computing <lb/> Georgia Institute of Technology <lb/></affiliation></byline>
+		<address>Atlanta, Georgia 30332-0280 <lb/></address>
+		<pb/>
+		</front>
+</text>
+</tei>

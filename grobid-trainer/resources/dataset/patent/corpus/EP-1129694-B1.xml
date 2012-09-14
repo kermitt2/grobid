@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<patent-document status="new" lang="FR" ucid="EP-1129694-B1" country="EP" doc-number="1129694" kind="B1" date="20050907"><bibliographic-data><publication-reference fvid="23212757" ucid="EP-1129694-B1" status="new"><document-id status="new" format="original"><country>EP</country><doc-number>1129694</doc-number><kind>B1</kind><date>20050907</date><lang>FR</lang></document-id></publication-reference><application-reference ucid="EP-01400308-A" status="new" is-representative="NO"><document-id format="epo" status="new"><country>EP</country><doc-number>01400308</doc-number><kind>A</kind><date>20010208</date><lang>FR</lang></document-id></application-reference><priority-claims status="new"><priority-claim ucid="FR-0001841-A" status="new"><document-id format="epo" status="new"><country>FR</country><doc-number>0001841</doc-number><kind>A</kind><date>20000215</date></document-id></priority-claim></priority-claims><dates-of-public-availability status="new"><intention-to-grant-date><date>20050315</date></intention-to-grant-date></dates-of-public-availability><term-of-grant /><technical-data status="new"><classifications-ipcr><classification-ipcr status="new">A61K   8/00        20060101ALI20060310RMJP        </classification-ipcr><classification-ipcr status="new">A61K   8/00        20060101CLI20060310RMJP        </classification-ipcr><classification-ipcr status="new">A61K   8/02        20060101ALI20060310RMJP        </classification-ipcr><classification-ipcr status="new">A61K   8/02        20060101CLI20060310RMJP        </classification-ipcr><classification-ipcr status="new">A61K   8/04        20060101CLI20060310RMJP        </classification-ipcr><classification-ipcr status="new">A61K   8/06        20060101ALI20060310RMJP        </classification-ipcr><classification-ipcr status="new">A61K   8/30        20060101ALI20060310RMJP        </classification-ipcr><classification-ipcr status="new">A61K   8/30        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">A61K   8/31        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">A61K   8/34        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">A61K   8/37        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">A61K   8/39        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">A61K   8/42        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">A61K   8/44        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">A61K   8/46        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">A61K   8/72        20060101ALI20060310RMJP        </classification-ipcr><classification-ipcr status="new">A61K   8/72        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">A61K   8/81        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">A61K   8/86        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">A61K   8/92        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">A61K   8/92        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">A61K   8/96        20060101ALI20060310RMJP        </classification-ipcr><classification-ipcr status="new">A61K   8/96        20060101CLI20060310RMJP        </classification-ipcr><classification-ipcr status="new">A61K   8/97        20060101ALI20060310RMJP        </classification-ipcr><classification-ipcr status="new">A61K   9/08        20060101AFI20060310RMJP        </classification-ipcr><classification-ipcr status="new">A61K   9/08        20060101CFI20060310RMJP        </classification-ipcr><classification-ipcr status="new">A61K   9/10        20060101ALI20060310RMJP        </classification-ipcr><classification-ipcr status="new">A61K   9/10        20060101CLI20060310RMJP        </classification-ipcr><classification-ipcr status="new">A61K   9/107       20060101ALI20060310RMJP        </classification-ipcr><classification-ipcr status="new">A61K   9/107       20060101CLI20060310RMJP        </classification-ipcr><classification-ipcr status="new">A61K  31/164       20060101ALI20060310RMJP        </classification-ipcr><classification-ipcr status="new">A61K  31/164       20060101CLI20060310RMJP        </classification-ipcr><classification-ipcr status="new">A61K  31/21        20060101CLI20060310RMJP        </classification-ipcr><classification-ipcr status="new">A61K  31/22        20060101ALI20060310RMJP        </classification-ipcr><classification-ipcr status="new">A61K  31/225       20060101ALI20060310RMJP        </classification-ipcr><classification-ipcr status="new">A61K  31/23        20060101ALI20060310RMJP        </classification-ipcr><classification-ipcr status="new">A61K  31/25        20060101ALI20060310RMJP        </classification-ipcr><classification-ipcr status="new">A61K  31/255       20060101ALI20060310RMJP        </classification-ipcr><classification-ipcr status="new">A61K  31/74        20060101CLI20060310RMJP        </classification-ipcr><classification-ipcr status="new">A61K  31/765       20060101ALI20060310RMJP        </classification-ipcr><classification-ipcr status="new">A61K  31/785       20060101ALI20060310RMJP        </classification-ipcr><classification-ipcr status="new">A61K  36/18        20060101ALI20060310RMJP        </classification-ipcr><classification-ipcr status="new">A61K  36/18        20060101CLI20060310RMJP        </classification-ipcr><classification-ipcr status="new">A61K  45/00        20060101ALI20060310RMJP        </classification-ipcr><classification-ipcr status="new">A61K  45/00        20060101CLI20060310RMJP        </classification-ipcr><classification-ipcr status="new">A61P  17/00        20060101A I20060521RMFR        </classification-ipcr><classification-ipcr status="new">A61P  17/00        20060101C I20060521RMFR        </classification-ipcr><classification-ipcr status="new">A61P  17/10        20060101ALI20060310RMJP        </classification-ipcr><classification-ipcr status="new">A61P  31/00        20060101CLI20060310RMJP        </classification-ipcr><classification-ipcr status="new">A61P  31/10        20060101ALI20060310RMJP        </classification-ipcr><classification-ipcr status="new">A61Q   5/00        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">A61Q   5/00        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">A61Q  15/00        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">A61Q  15/00        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">A61Q  17/00        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">A61Q  17/00        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">A61Q  19/00        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">A61Q  19/00        20060101C I20051008RMEP        </classification-ipcr></classifications-ipcr><classification-ecla status="new"><classification-symbol scheme="EC">A61K8/31</classification-symbol><classification-symbol scheme="EC">A61K8/34C</classification-symbol><classification-symbol scheme="EC">A61K8/37</classification-symbol><classification-symbol scheme="EC">A61K8/37C</classification-symbol><classification-symbol scheme="EC">A61K8/39</classification-symbol><classification-symbol scheme="EC">A61K8/42</classification-symbol><classification-symbol scheme="EC">A61K8/44D</classification-symbol><classification-symbol scheme="EC">A61K8/46F</classification-symbol><classification-symbol scheme="EC">A61K8/81K6</classification-symbol><classification-symbol scheme="EC">A61K8/86</classification-symbol><classification-symbol scheme="EC">A61K8/92C</classification-symbol><classification-symbol scheme="EC">A61Q15/00</classification-symbol><classification-symbol scheme="EC">A61Q17/00F</classification-symbol><classification-symbol scheme="EC">A61Q19/00</classification-symbol><classification-symbol scheme="EC">A61Q5/00F</classification-symbol><classification-symbol scheme="ICO">K61K201:09</classification-symbol></classification-ecla><invention-title lang="DE" status="new">Verwendung von Verbindungen zur Modifizierung der physico-chemischen Eigenschaften der Haut und/oder der Schleimhaut als Mittel zur Verhinderung oder Reduzierung der Adhäsion von Mikro-organismen darauf</invention-title><invention-title lang="EN" status="new">Use of components for modifying the physico-chemical properties of the skin and/or the mucous membrane as agents for preventing or reducing the adhesion of micro-organisms thereon</invention-title><invention-title lang="FR" status="new">Utilisation de composés permettant de modifier les propriétés physico-chimiques de la peau et/ou des muqueuses en tant qu'agents empêchant ou diminuant l'adhésion des micro-organismes sur ces dernières</invention-title><citations /><figures /></technical-data><parties><applicants><applicant format="epo" status="new"><addressbook><name>OREAL</name><address><country>FR</country></address></addressbook></applicant><applicant format="intermediate" status="new"><addressbook><name>L'OREAL</name><address><country /></address></addressbook></applicant></applicants><inventors><inventor format="epo" status="new"><addressbook><name>GUILLOU VERONIQUE</name><address><country>FR</country></address></addressbook></inventor><inventor format="epo" status="new"><addressbook><name>SIMON PASCAL</name><address><country>FR</country></address></addressbook></inventor><inventor format="epo" status="new"><addressbook><name>CUPFERMAN SYLVIE</name><address><country>FR</country></address></addressbook></inventor><inventor format="epo" status="new"><addressbook><name>LEREBOUR GERALDINE</name><address><country>FR</country></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>SIMON, PASCAL</name><address><country /></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>GUILLOU, VERONIQUE</name><address><country /></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>CUPFERMAN, SYLVIE</name><address><country /></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>LEREBOUR, GERALDINE</name><address><country /></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>SIMON, PASCAL</last-name><address><street>1, rue d'Alègre</street><city>94400 Vitry-sur-Seine</city><country>FR</country></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>Lerebour, Géraldine</last-name><address><street>9, rue Marguerite</street><city>91200 Athis-Mons</city><country>FR</country></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>CUPFERMAN, SYLVIE</last-name><address><street>2, avenue du Général de Gaulle</street><city>94240 L'Hay les Roses</city><country>FR</country></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>Guillou, Véronique </last-name><address><street>2, chemin du Pont aux Anes</street><city>92160 Antony</city><country>FR</country></address></addressbook></inventor></inventors><assignees><assignee format="original" status="new"><addressbook><last-name>L'OREAL</last-name><address><street>14, rue Royale</street><city>75008 Paris</city><country>FR</country></address></addressbook></assignee></assignees><agents><agent format="original" status="new"><addressbook><last-name>Casalonga, Axel</last-name><address><street>BUREAU D.A. CASALONGA - JOSSE Paul-Heyse-Strasse 33</street><city>80336 München</city><country>DE</country></address></addressbook></agent></agents></parties><international-convention-data><designated-states><ep-contracting-states><country>AT</country><country>BE</country><country>CH</country><country>CY</country><country>DE</country><country>DK</country><country>ES</country><country>FI</country><country>FR</country><country>GB</country><country>GR</country><country>IE</country><country>IT</country><country>LI</country><country>LU</country><country>MC</country><country>NL</country><country>PT</country><country>SE</country><country>TR</country></ep-contracting-states></designated-states></international-convention-data></bibliographic-data><abstract lang="FR" source="EPO" status="new"><p>La présente invention concerne l'utilisation dans des compositions cosmétiques ou pour la préparation de compositions pharmaceutiques en tant que principe actif, d'une quantité efficace d'au moins un composé exempt de motifs hydrates de carbone modifiant les propriétés physico-chimiques de la surface de la peau et/ou des muqueuses, en vue d'empêcher ou de réduire l'adhésion de micro-organismes sur ces dernières, choisi de manière à ce que le logarithme décimal du nombre moyen de bactéries viables adhérant sur l'épiderme, après un test de mise en contact dudit épiderme avec le composé testé pendant 2 heures à 37°C, soit inférieur d'au moins 0,3 à celui obtenu par un test réalisé avec de l'eau dans les mêmes conditions.</p></abstract><abstract lang="FR" status="new"><p num="">La présente invention concerne l'utilisation dans des
+compositions cosmétiques ou pour la préparation de compositions
+pharmaceutiques en tant que principe actif, d'une quantité efficace d'au
+moins un composé exempt de motifs hydrates de carbone modifiant les
+propriétés physico-chimiques de la surface de la peau et/ou des
+muqueuses, en vue d'empêcher ou de réduire l'adhésion de micro-organismes
+sur ces dernières, choisi de manière à ce que le logarithme
+décimal du nombre moyen de bactéries viables adhérant sur l'épiderme,
+après un test de mise en contact dudit épiderme avec le composé testé
+pendant 2 heures à 37°C, soit inférieur d'au moins 0,3 à celui obtenu par un
+test réalisé avec de l'eau dans les mêmes conditions.</p></abstract><description lang="FR" status="new"><p num="0001">L'invention concerne l'utilisation de composés permettant de
+modifier les propriétés physico-chimiques de la surface de la peau et/ou
+des muqueuses dans une composition cosmétique ou pour la préparation
+d'une composition pharmaceutique en tant qu'agents empêchant ou
+diminuant l'adhésion des micro-organismes, particulièrement des
+bactéries, sur la peau et/ou les muqueuses.</p><p num="0002">La peau humaine est peuplée en permanence d'une multitude de
+micro-organismes différents (bactéries, levures et champignons). La
+flore microbienne résidente, indispensable à la bonne santé de la peau, est
+constituée principalement de staphylocoques (<i>Staphylococcus epidermis</i>
+et <i>Staphylococcus hominis</i>), de corynebactéries, de propionibactéries
+Gram+ telles que <i>Propionibacterium acnes</i>, ainsi que d'une flore fongique
+principalement composée de <i>Pytosporum ovale.</i></p><p num="0003">Les infections cutanées sont le plus souvent dues à la rupture de
+l'équilibre écologique de la flore résidente suite à la colonisation de la
+peau par des germes exogènes pathogènes ou à la prolifération anormale
+d'une souche endogène. Les germes pathogènes les plus connus sont
+<i>Pseudomonas aeruginosa</i> (Gram -) qui est responsable de petits boutons,
+de folliculites, de rougeurs et de prurit, <i>Candida albicans</i> pouvant provoquer
+des inflammations à la commissure des lèvres, des candidoses cutanées,
+du prurit, des folliculites et des aphtes, <i>Staphylococcus aureus</i> pouvant
+provoquer des boutons, des folliculites, de l'impétigo, et des furoncles,
+et <i>Streptococcus</i> du groupe A responsable d'impétigo. </p><p num="0004">Le document <ref type="patent">EP 315912</ref> décrit l'utilisation de composés ayant une action anti-séborrhéique.
+Le document <ref type="patent">WO 95/31956</ref> décrit une émulsion antibactérienne constituée d'une huile et d'un
+ester de glycérol afin d'inactiver la bactérie <i>Helicobacter pylori</i>. Le document <ref type="patent">DE 19634021</ref>
+décrit l'utilisation d'un ou plusieurs composés choisis dans le groupe des glycoglycérolipides
+en tant que principes actifs anti-adhésifs contre les microorganismes, virus, parasites et
+protozoaires. Le document <ref type="patent">JP 05/186328</ref> décrit une composition pour nettoyer la peau à base
+d'une huile végétale et d'un alcool en présence d'un polysiloxane volatil. Le document <ref type="patent">DE
+4330664</ref> décrit une composition contenant au moins une huile végétale pour traiter des
+maladies comme le psoriasis ou la dermatite. Le document <ref type="patent">FR 2768925</ref> décrit une
+composition cosmétique comportant des extraits de lierre et de tournesol, utilisée contre les
+agressions chimiques de l'environnement sur la peau. Le document <ref type="patent">DE 19634959</ref> décrit une
+composition pour son usage dans différentes maladies de la peau comprenant une huile de
+camomille, germe de blé ou d'amande douce. Le document <ref type="patent">US 4172149</ref> décrit une
+composition cosmétique comprenant des triglycérides pour son utilisation dans les cas de
+sécrétion excessive de sébum. Le document <ref type="patent">DE 4134137</ref> décrit une lotion bioactive pour
+stimuler la croissance des cheveux et éviter la formation de pellicules. Le document
+<ref type="patent">FR2689011</ref> décrit une préparation cosmétique pour combattre les lésions cutanées labiales à
+base d'huile végétale, de teinture végétale et d'huiles essentielles. Le document <ref type="patent">US 4451480</ref>
+décrit une composition pour le traitement de l'acné, comprenant des ozonides d'huiles. Le
+document <ref type="patent">CH 688787</ref> décrit des compositions destinées aux soins de la peau comprenant des
+huiles naturelles. </p><p num="0005">Pour combattre ces micro-organismes, il est courant d'utiliser
+des antibiotiques ou bactéricides. L'utilisation de ces composés pose
+cependant le problème de la non spécificité d'action visant indifféremment
+la flore pathogène et la flore résidente, et le problème du risque
+d'apparition de résistances bactériennes, ainsi que des problèmes de
+tolérance cutanée (irritations, allergies).</p><p num="0006">Il est également connu de réduire ou de prévenir la colonisation
+de surfaces telles que les dents, la peau et/ou des muqueuses, par des germes
+pathogènes en empêchant leur fixation sur ces supports. Les composés
+utilisés en tant qu'agents anti-adhésion décrits dans l'art antérieur sont
+des hydrates de carbone et des dérivés d'hydrates de carbone (<ref type="patent">WO 96/23
+479</ref>, <ref type="patent">EP 380 084</ref>, <ref type="patent">US 5 002 759</ref>, <ref type="patent">US 4 859 656</ref>, <ref type="patent">WO 81/03 175</ref>, <ref type="patent">WO 93/14
+773</ref>, <ref type="patent">WO 95/15 149</ref>, <ref type="patent">WO 95/07 084</ref> et <ref type="patent">WO 95/17 898</ref>).</p><p num="0007">Or, la plupart des hydrates de carbone constituent une source de
+carbone pour des bactéries et champignons. Leur présence dans des compositions
+cosmétiques favorise par conséquent la prolifération microbienne
+et nécessite l'augmentation de la concentration en agents conservateurs
+(bactéricides ou bactériostatiques). Cet inconvénient annule ainsi le
+bénéfice de l'approche consistant à remplacer des composés antibiotiques
+ou bactéricides par des composés réduisant l'adhérence microbienne.</p><p num="0008">La demanderesse a trouvé de manière surprenante qu'un groupe
+de composés particuliers, exempts de motifs hydrate de carbone,
+permettait de réduire significativement l'adhérence microbienne sur la
+peau et/ou les muqueuses et de prévenir ainsi la prolifération de germes
+potentiellement pathogènes en l'absence d'agents antibiotiques, bactéricides
+ou fongicides.</p><p num="0009">Ces composés, à la différence des hydrates de carbone qui se
+lient aux récepteurs des micro-organismes pour empêcher les liaisons aux
+glycolipides des cornéocytes, agissent sur les propriétés physico-chimiques
+de la surface de la peau et/ou des muqueuses, ces propriétés
+physico-chimiques faisant intervenir les interactions électrodynamiques
+dues au forces de Van der Waals, les interactions acido-basiques selon 
+Lewis et les interactions électrostatiques.</p><p num="0010">En outre, ces composés ne sont pas bactéricides. De ce fait, ils ne
+provoquent pas d'effets secondaires indésirables sur la peau et/ou les
+muqueuses.</p><p num="0011">Les composés selon l'invention, utilisés en tant que principes
+actifs, permettent de réduire ou d'empêcher l'adhésion d'un micro-organisme
+dont la charge globale de surface est négative ou positive en
+augmentant la charge respectivement négative ou positive de la peau, de
+manière à entraíner une répulsion entre la peau et/ou les muqueuses et le
+micro-organisme.</p><p num="0012">Les composés selon l'invention, utilisés en tant que principes
+actifs, permettent en outre de réduire ou d'empêcher l'adhésion d'un
+micro-organisme, en limitant le plus possible les interactions du type Van
+der Waals entre la peau et/ou les muqueuses et le micro-organisme, en
+favorisant les interactions répulsives de type acide-base selon Lewis et en
+limitant les interactions attractives de type acide-base selon Lewis entre
+le micro-organisme et la peau et/ou les muqueuses.</p><p num="0013">Par empêcher ou réduire l'adhésion des micro-organismes, il
+faut entendre que le composé ou la composition le contenant peut être
+utilisé aussi bien à titre préventif, pour sa capacité à prévenir, totalement
+ou partiellement, l'adhésion des micro-organismes, qu'à titre curatif pour
+sa capacité à faciliter le détachement des micro-organismes.</p><p num="0014">Ces composés sont choisis de manière à ce que le logarithme
+décimal du nombre moyen de bactéries viables adhérant sur l'épiderme
+reconstruit, après un test de mise en contact dudit épiderme avec le
+composé testé pendant 2 heures à 37°C, soit inférieur d'au moins 0,3 à
+celui obtenu par un test réalisé avec de l'eau dans les mêmes conditions.</p><p num="0015">L'épiderme reconstruit utilisé dans le test indiqué ci-dessus est
+l'épiderme humain reconstitué, équivalent de la peau humaine, vendu par
+la société EPISKIN.</p><p num="0016">Ce test permet d'évaluer les modifications des propriétés
+physico-chimiques de surface de la peau et/ou des muqueuses, faisant
+intervenir les interactions électrodynamiques de Van der Waals, les 
+interactions acido-basiques selon Lewis et les interactions
+électrostatiques.</p><p num="0017">L'invention a donc pour objet l'utilisation en tant que principe
+actif, dans une composition cosmétique ou pour la préparation d'une
+composition pharmaceutique, d'une quantité efficace d'au moins un
+composé exempt de motifs hydrates de carbone, modifiant les propriétés
+physico-chimiques de la surface de la peau et/ou des muqueuses, en vue
+d'empêcher ou réduire l'adhésion des micro-organismes sur la peau et/ou
+les muqueuses, choisi de manière à ce que le logarithme décimal du
+nombre moyen de bactéries viables adhérant sur l'épiderme reconstruit,
+après un test de mise en contact dudit épiderme avec le composé testé
+pendant 2 heures à 37°C, soit inférieur d'au moins 0,3 à celui obtenu par un
+test réalisé avec de l'eau dans les mêmes conditions.</p><p num="0018">De préférence, on utilisera les composés pour lesquels le
+logarithme décimal ci-dessus défini est inférieur de 0,5 et plus
+particulièrement inférieur de 1 à celui de l'eau dans les mêmes conditions.</p><p num="0019">Le protocole expérimental permettant de choisir ces composés
+sera défini ci-dessous.</p><p num="0020">Ces composés peuvent être de natures complètement différentes
+et peuvent être choisis, à titre d'exemple non limitatif, parmi des corps
+gras non solides à température ambiante, des polymères, des tensio-actifs
+et/ou leurs mélanges.</p><p num="0021">Les composés utilisés selon l'invention peuvent très bien être
+hydrophiles ou lipophiles.</p><p num="0022">On utilise plus préférentiellement en tant que principe actif dans
+une composition cosmétique ou pour la préparation d'une composition
+pharmaceutique, une quantité efficace de composés exempts de motifs
+hydrates de carbone modifiant les propriétés physico-chimiques de la
+surface de la peau et/ ou des muqueuses choisis parmi les tensioactifs tels
+que le cocoamphodiacétate disodique, le cocoate de glycéryle
+oxyéthyléné (7 OE) comme le produit vendu par la société COGNIS sous la
+dénomination Cetiol HE, l'hexadécénylsuccinate 18, le PPG-15 stéaryl
+éther; &quot;les sels de mono sulfosuccinate de monoéthanol amide 
+ricinoleique comme le produit vendu par la société Goldschmidt sous la
+dénomination REWODERM 51333, le triglycéride ricinoleique
+hydrogéné oxyéthyléné à 60 motifs d'oxyde d'éthylène comme le produit
+vendu par la société Nikko sous la dénomination NIKK OL HCO-60 ou
+comme le produit vendu par la société BASF sous la dénomination
+CREMOPHOR RH60&quot;, les polymères tels que les Poloxamers, qui sont des
+copolymères séquencés d'oxyde d'éthylène et d'oxyde de propylène,
+comme par exemple le produit vendu sous la dénomination Lutrol F68 par
+la société BASF et le Poloxamer 407 vendu sous la dénomination
+SYNPERONIC PE/F 127 par la société UNIQEMA; &quot;le
+polyacrylamide/C13-14 Isoparaffin/Laureth-7 comme le produit vendu
+par la société SEPPIC sous la dénomination SEPIGEL 305&quot;. Les corps
+gras non solides à température ambiante (c'est à dire à une température
+allant d'environ 20 à 35°C) tels que l'huile de sésame, l'huile d'amande
+douce, l'huile d'amande d'abricot, l'huile de tournesol, le palmitate
+d'octoxyglycéryle (ou palmitate d'éthyl-2-hexyl glycéryl éther) comme le
+produit commercialisé sous la dénomination Mexanyl GP par la société
+Chimex, le béhénate d'octoxyglycéryle (ou béhénate d'éthyl-2-hexyl
+glycéryl éther), l'adipate de dioctyle, le tartrate de di-alcools C<sub>12</sub>-C<sub>13</sub>
+ramifiés comme le produit vendu sous la dénomination Cosmacol ETI par
+la société Enichem.</p><p num="0023">Selon l'invention, on utilise le ou les composé ou la composition
+le ou les contenant en application topique sur la peau et/ou les muqueuses.</p><p num="0024">L'adhésion de micro-organismes à la peau et/ou aux muqueuses a
+des conséquences qui vont du simple désagrément (l'odeur, les petits
+boutons) aux maladies plus ou moins graves.</p><p num="0025">Un des aspects de l'invention est donc de proposer l'utilisation
+d'un composé exempt de motifs hydrates de carbone en tant que principe
+actif dans une composition cosmétique ou pour la préparation d'une
+composition pharmaceutique.</p><p num="0026">Particulièrement, l'invention a pour objet l'utilisation
+cosmétique en application topique d'au moins un composé en tant que
+principe actif dans une composition cosmétique destinée à diminuer les 
+mauvaises odeurs corporelles.</p><p num="0027">La flore microbienne de la surface de la peau est responsable
+d'un grand nombre de désordres.</p><p num="0028">La quantité de composé utilisable selon l'invention dépend bien
+évidemment de l'effet recherché et doit être une quantité efficace pour
+empêcher partiellement ou totalement l'adhésion des micro-organismes
+ou pour faciliter le détachement des micro-organismes.</p><p num="0029">A titre d'exemple, la quantité de composé utilisable selon
+l'invention peut aller par exemple de 0,1 à 100 %, de préférence de 0,5 à
+50% et plus particulièrement de 1 à 25% du poids total de la composition.</p><p num="0030">Par milieu cosmétiquement acceptable, on entend un milieu
+compatible avec la peau, le cuir chevelu, les muqueuses, les ongles, et les
+cheveux. </p><p num="0031">Les compositions cosmétiques et pharmaceutiques utilisées
+selon l'invention peuvent se présenter sous toutes les formes galéniques
+normalement utilisées pour une application topique, notamment sous
+forme d'une solution aqueuse, hydroalcoolique ou huileuse, d'une
+émulsion huile-dans-eau ou eau-dans-huile ou multiple, d'un gel aqueux
+ou huileux, d'un produit anhydre liquide, pâteux ou solide ou d'une
+dispersion d'huile dans une phase aqueuse à l'aide de sphérules, ces
+sphérules pouvant être des nanoparticules polymériques telles que les
+nanosphères et les nanocapsules, ou mieux, des vésicules lipidiques de
+type ionique et/ou non-ionique.</p><p num="0032">Quand la composition selon l'invention comporte une phase
+grasse, celle-ci représente, de préférence, de 1 à 60% du poids total de la
+composition.</p><p num="0033">Cette phase grasse peut comporter une ou plusieurs huiles
+choisies de préférence dans le groupe constitué par :
+<ul list-style="bullet"><li>les silicones volatiles ou non-volatiles, linéaires, ramifiées ou
+cycliques, organo-modifiées ou non, hydrosolubles ou liposolubles,</li><li>les huiles minérales telles que l'huile de paraffine et de
+vaseline,</li><li>les huiles d'origine animale telles que le perhydrosqualène,</li><li>les huiles d'origine végétale telles que l'huile d'amandes
+douces, l'huile d'avocat, l'huile de ricin, l'huile d'olive, l'huile de jojoba,
+l'huile de sésame, l'huile d'arachide, l'huile de macadamia, l'huile de
+pépins de raisin, l'huile de colza, l'huile de coprah,</li><li>les huiles synthétiques telles que les isoparaffines,</li><li>les huiles fluorées et perfluorées,</li><li>les esters d'acides gras.</li></ul></p><p num="0034">Elle peut aussi comporter comme matières grasses (un) ou
+plusieurs alcools gras, acides gras ou cires (paraffine, cire de
+polyéthylène, Carnauba, cire d'abeilles).</p><p num="0035">De façon connue, les compositions utilisées dans l'invention
+peuvent en outre contenir des adjuvants habituels dans le domaine
+cosmétique tels que des gélifiants et/ou épaississants classiques 
+hydrophiles ou lipophiles; des actifs hydrophiles ou lipophiles; des
+conservateurs; des solvants; des antioxydants; des parfums; des
+émulsionnants; des agents hydratants; des agents pigmentants; des
+dépigmentants; des agents kératolytiques; des vitamines; des émollients;
+des séquestrants; des tensio-actifs; des polymères; des agents
+alcalinisants ou acidifiants; des charges; des agents anti-radicaux libres;
+des céramides; des filtres solaires (notamment ultra-violets); des
+répulsifs pour insectes; des agents amincissants; des matières colorantes;
+des anti-pelliculaires.</p><p num="0036">Les quantités de ces différents adjuvants sont celles
+classiquement utilisées dans les domaines considérés.</p><p num="0037">Bien entendu, l'homme de l'art veillera à choisir le ou les
+éventuels composés à ajouter à la composition selon l'invention, de
+manière telle que les propriétés avantageuses attachées intrinsèquement à
+la composition conforme à l'invention ne soient pas, ou substantiellement
+pas, altérées par l'addition envisagée.</p><p num="0038">Comme solvants, on peut citer les solvants organiques
+hydrophiles, et par exemple les mono-alcools inférieurs, linéaires ou
+ramifiés, ayant de 1 à 8 atomes de carbone comme l'éthanol, le propanol, le
+butanol, l'isopropanol, l'isobutanol; les polyéthylèneglycols ayant de 6 à
+80 oxydes d'éthylène, les polyols tels que le propylèneglycol, l'isoprène
+glycol, le butylèneglycol, le glycérol; les mono- ou dialkyles d'isosorbide
+dont les groupements alkyles ont de 1 à 5 atomes de carbone comme le
+diméthyl isosorbide; les éthers de glycol comme le diéthylène glycol
+mono-méthyle ou mono-éthyléther et les éthers de propylène glycol
+comme le dipropylène glycol méthyléther.</p><p num="0039">Les solvants organiques peuvent représenter de 5 à 98% du poids
+total de la composition.</p><p num="0040">Les compositions utilisées dans la présente invention peuvent
+être plus ou moins fluides et avoir l'aspect d'une crème blanche ou colorée,
+d'une pommade, d'un lait, d'une lotion, d'un sérum, d'une pâte, d'une
+mousse ou d'un solide.</p><p num="0041">Elles peuvent éventuellement être appliquées sur la peau sous 
+forme d'aérosol.</p><p num="0042">Elles peuvent également se présenter sous forme solide, et par
+exemple sous forme de stick.</p><p num="0043">Elles peuvent être utilisées comme produit de soin, comme
+produit de nettoyage pour la peau ou les cheveux, comme produit solaire,
+en tant que produit de maquillage comme les fonds de teint, les rouges à
+lèvres, les mascaras, les fards, et/ou comme simple produit déodorant.</p><p num="0044">Le test d'anti-adhésion répond au protocole ci-dessous :</p><p num="0045">Avant l'adhésion bactérienne, l'épiderme reconstruit est mis en
+contact pendant 2 heures avec 25 mg du produit à tester à 37°C. On y ajoute
+alors 1 ml de suspension bactérienne de <i>Staphylococcus aureus</i> à une
+concentration de 10<sup>7</sup> germes/ml dans du Tryptone sel. Après incubation 24
+heures à 37°C, la suspension bactérienne est vidée et cinq rinçages sont
+réalisés par 1 ml d'eau distillée stérile. L'épiderme détaché de son support
+est alors broyé à l'aide d'un robot dans 18 ml de Tryptone sel. On effectue
+une dilution décimale de cette suspension dans le Tryptone sel, on procède
+ensuite à un ensemencement de ml de la dilution dans 15 ml de la gélose
+Trypticase Soja et à l'incubation pendant 24 heures à 37°C. On dénombre
+ensuite les cellules adhérentes et viables.</p><p num="0046">Ce test d'anti-adhésion permet d'évaluer l'efficacité de
+molécules seules ou de produits finis.</p><p num="0047">Avant le test d'anti-adhésion, on met en oeuvre le test de
+viabilité suivant :</p><p num="0048">Un mélange bactéries/produit à tester, dans le même rapport que
+dans le test anti-adhésion, est mis en contact 24 heures à 37°C. Le test peut
+nécessiter une incubation sous agitation pour éviter la mort des bactéries
+par manque d'oxygène, en particulier en ce qui concerne les corps gras non
+solide à température ambiante. Le dénombrement des germes est réalisé
+par dilution décimale dans du Tryptone sel et ensemencement au râteau de 
+100 µl sur de la gélose Trypticase Soja. Le comptage des colonies
+s'effectue après 24 heures d'incubation à 37°C.</p><p num="0049">L'essai de viabilité réalisé préalablement au test d'antiadhésion
+permet d'écarter toute composante bactéricide des molécules ou des
+produits finis testés et de ne mettre en évidence que l'activité anti-adhésion.</p><p num="0050">Les exemples suivants présentent les résultats obtenus pour
+différents composés testés selon l'invention et une réalisation particulière
+de composition selon l'invention.</p><p num="0051">Ces exemples sont bien entendu donnés à titre illustratif et n'ont
+absolument pas de caractère limitatif. </p><heading><b>Exemples de composés utilisés selon l'invention :</b></heading><p num="0052">Les résultats obtenus, pour les composés ici présentés, résultent
+de la mise en oeuvre du protocole ci-dessus détaillé.</p><p num="0053">Les chiffres présentés en face du composé correspondent à la
+diminution du logarithme décimal du nombre moyen de <i>Staphylococcus
+aureus</i> viable adhérent sur l'épiderme reconstruit après traitement par le
+composé dans les conditions définies par le test précédent par rapport au
+logarithme décimal du nombre moyen de <i>Staphylococcus aureus</i> viable
+adhérent sur l'épiderme reconstruit après traitement à l'eau dans les
+mêmes conditions.
+<tables><table><tgroup cols="2"><tbody><row><entry align="left">Cocoamphodiacétate disodique</entry><entry align="center">1,34</entry></row><row><entry align="left">Cocoate de glycéryle oxyéthyléné (7 OE)</entry><entry align="center">1,41</entry></row><row><entry align="left">Sel de mono sulfoccinate de mono ethanol amide ricinoléique (testé à 5% en matière active)</entry><entry align="center">3,84</entry></row><row><entry align="left">Triglyacide ricinoléique hydrogéné oxyéthyléné vendu sous la dénomination NIKKOL HCO-60 par la société NIKKO (testé à 10% en matière active)</entry><entry align="center">0,8</entry></row><row><entry align="left">Poloxamer 407 : copolymère d'oxyde d'éthylène, d'oxyde de propylène et d'oxyde d'éthylène (98 OE/67 OP/98 OE) (PM : 12000) vendu sous la dénomination : SYNPERONIC PE/F 127 par la société UNIQEMA</entry><entry align="center">0,81</entry></row><row><entry align="left">Polyacrylamide/C13-14 Isoparaffin/Laureth-7 (testé à 1% en matière active)</entry><entry align="center">1,43</entry></row><row><entry align="left">Tartrate de di-alcools C<sub>12</sub>-C<sub>13</sub> ramifiés</entry><entry align="center">2,31</entry></row><row><entry align="left">Huile d'amande d'abricot</entry><entry align="center">0,81</entry></row><row><entry align="left">Adipate de dioctyle</entry><entry align="center">0,90</entry></row></tbody></tgroup></table></tables></p><p num="0054"><b>Exemple de composition utilisée selon l'invention:</b><tables><table><tgroup cols="2"><tbody><row><entry namest="1" nameend="2">Emulsion E/H pour le soin du visage :</entry></row><row><entry align="left">Poly méthylcétyl diméthyl méthylsiloxane oxyéthyléné (ABIL EM 90 ® de GOLDSCHMIDT)</entry><entry align="left">3 %</entry></row><row><entry align="left">Palmitate d'éthyl-2-hexyl glycéryl éther (MEXANYL GP® de CHIMEX)</entry><entry align="left">10 %</entry></row><row><entry align="left">Tartrate de di-alcools C<sub>12</sub>-C<sub>13</sub> ramifiés (COSMACOL ETI ® de ENICHEM)</entry><entry align="left">10 %</entry></row><row><entry align="left">Cocoate de glycéryle oxyéthyléné (7 OE) (CETIOL HE ® de GOGNIS)</entry><entry align="left">3 %</entry></row><row><entry align="left">Condensat d'oxyde d'éthylène, d'oxyde de propylène et d'oxyde d'éthylène (PM : 8350) (75 OE/30 OP/75 OE) (LUTROL F 68 ® de BASF)</entry><entry align="left">3%</entry></row><row><entry align="left">Eau</entry><entry align="left">QSP 100</entry></row><row><entry align="left">Anti-oxydant</entry><entry align="left">qs</entry></row><row><entry align="left">Parfum</entry><entry align="left">qs</entry></row></tbody></tgroup></table></tables></p><p num="0055">Après traitement par la composition ci-dessus, dans les
+conditions définies par le test précédent, on observe une diminution du
+logarithme décimal du nombre moyen de <i>Staphylococcus aureus</i> viable
+adhérent sur l'épiderme reconstruit par rapport au logarithme décimal du
+nombre moyen de <i>Staphylococcus aureus</i> viable adhérent sur l'épiderme
+reconstruit après traitement à l'eau dans les mêmes conditions de 3,96.</p></description><claims lang="DE" status="new"><claim num="xx"><claim-text>Verwendung einer wirksamen Menge mindestens einer Verbindung,
+die keine Kohlenhydrateinheiten aufweist und die die physikalisch-chemischen
+Eigenschaften der Oberfläche der Haut
+und/oder der Schleimhäute verändert, um das Anhaften von Mikroorganismen
+auf der Haut und/oder den Schleimhäuten zu verhindern
+oder zu vermindern, als Wirkstoff in einer kosmetischen
+Zusammensetzung oder für die Herstellung einer pharmazeutischen
+Zusammensetzung, wobei die Verbindung so ausgewählt
+ist, dass der dekadische Logarithmus der mittleren Anzahl von
+lebensfähigen Bakterien, die an rekonstruierter Epidermis anhaften,
+nach einem Test unter in Kontakt Bringen der Epidermis mit
+der zu testenden Verbindung während 2 Stunden bei 37 °C mindestens
+0,3 unter dem dekadischen Logarithmus liegt, der in einem
+Test erhalten wird, welcher mit Wasser unter den gleichen
+Bedingungen durchgeführt wird.</claim-text></claim><claim num="xx"><claim-text>Verwendung einer wirksamen Menge mindestens einer Verbindung
+gemäß Anspruch 1 als Wirkstoff in einer kosmetischen Zusammensetzung
+oder für die Herstellung einer pharmazeutischen
+Zusammensetzung, dadurch gekennzeichnet, dass der dekadische
+Logarithmus der mittleren Anzahl von lebensfähigen, an der
+rekonstruierten Epidermis anhaftenden Bakterien nach einem
+Test unter in Kontakt Bringen der Epidermis mit der zu testenden
+Verbindung während 2 Stunden bei 37 °C mindestens 0,5 unter
+dem Wert liegt, der in einem Test erhalten wird, der mit Wasser
+unter den gleichen Bedingungen durchgeführt wird.</claim-text></claim><claim num="xx"><claim-text>Verwendung einer wirksamen Menge mindestens einer Verbindung
+nach einem der Ansprüche 1 oder 2 als Wirkstoff in einer
+kosmetischen Zusammensetzung oder für die Herstellung einer
+pharmazeutischen Zusammensetzung, dadurch gekennzeichnet,
+dass der dekadische Logarithmus der mittleren Anzahl von lebensfähigen,
+an der rekonstruierten Epidermis anhaftenden Bakterien
+nach einem Test unter in Kontakt Bringen der Epidermis
+mit der zu testenden Verbindung während 2 Stunden bei 37 °C
+mindestens 1 unter dem Wert liegt, der in einem Test erhalten
+wird, der mit Wasser unter den gleichen Bedingungen durchgeführt
+wird.</claim-text></claim><claim num="xx"><claim-text>Verwendung nach einem der Ansprüche 1 bis 3, dadurch gekennzeichnet,
+dass der Wirkstoff unter den grenzflächenaktiven Stoffen,
+Polymeren und bei Umgebungstemperatur nicht festen Fettsubstanzen
+ausgewählt ist.</claim-text></claim><claim num="xx"><claim-text>Verwendung nach einem der Ansprüche 1 bis 4, dadurch gekennzeichnet,
+dass der Wirkstoff ausgewählt ist unter Dinatriumcocoamphodiacetat,
+ethoxyliertem (7 EO) Glycerylcocoat, Monoethanolamidricinolsäure-monosulfosuccinatsalzen,
+mit 60 Einheiten
+Ethylenoxid ethoxyliertem, hydriertem Ricinolsäuretriglycerid, Poloxameren,
+Polyacrylamid/C13-14 Isoparaffin/Laureth-7, Hexadecenylsuccinat
+18, Sesamöl, Octoxyglycerylpalmitat, Octoxyglycerylbehenat,
+Dioctyladipat, PPG-15-stearylether, Aprikosenkernöl,
+dem Tartrat von verzweigten C12-13-Alkoholen und deren Gemischen.</claim-text></claim><claim num="xx"><claim-text>Verwendung nach einem der Ansprüche 1 bis 5, dadurch gekennzeichnet,
+dass der Wirkstoff in einer Menge von 0,1 bis 100 % des
+Gesamtgewichts der Zusammensetzung vorliegt.</claim-text></claim><claim num="xx"><claim-text>Verwendung nach Anspruch 6, dadurch gekennzeichnet, dass der
+Wirkstoff in einer Menge von 0,5 bis 50 % des Gesamtgewichts
+der Zusammensetzung vorliegt.</claim-text></claim><claim num="xx"><claim-text>Verwendung nach einem der Ansprüche 6 oder 7, dadurch gekennzeichnet,
+dass der Wirkstoff in einer Menge von 1 bis 25 %
+des Gesamtgewichts der Zusammensetzung vorliegt.</claim-text></claim><claim num="xx"><claim-text>Verwendung nach einem der Ansprüche 1 bis 8, dadurch gekennzeichnet,
+dass die Zusammensetzung als Lotion, wässeriges Gel,
+Serum, Emulsion oder Dispersion von Lipidvesikeln vorliegt.</claim-text></claim><claim num="xx"><claim-text>Kosmetische Verwendung mindestens einer Verbindung nach einem
+der Ansprüche 1 bis 5 zur topischen Anwendung als Wirkstoff
+in einer kosmetischen Zusammensetzung, die dazu vorgesehen
+ist, schlechte Körpergerüche zu vermindern.</claim-text></claim></claims><claims lang="EN" status="new"><claim num="xx"><claim-text>Use, as active ingredient, in a cosmetic
+composition or for the preparation of a pharmaceutical
+composition, of an effective quantity of at least one
+compound free of carbohydrate units, modifying the
+physicochemical properties of the surface of the skin
+and/or of the mucous membranes, so as to prevent or
+reduce the adhesion of microorganisms to the skin and/or
+the mucous membranes, chosen so that the decimal
+logarithm of the mean number of viable bacteria adhering
+to reconstructed epidermis, after a test consisting in
+bringing the said epidermis into contact with the test
+compound for 2 hours at 37°C, is at least 0.3 less than
+that obtained by a test carried out with water under the
+same conditions.</claim-text></claim><claim num="xx"><claim-text>Use, as active ingredient, in a cosmetic
+composition or for the preparation of a pharmaceutical
+composition, of an effective quantity of at least one
+compound according to Claim 1, characterized in that the
+decimal logarithm of the mean number of viable bacteria
+adhering to reconstructed epidermis, after a test
+consisting in bringing the said epidermis into contact
+with the test compound for 2 hours at 37°C, is at least
+0.5 less than that obtained by a test carried out with
+water under the same conditions.</claim-text></claim><claim num="xx"><claim-text>Use, as active ingredient, in a cosmetic
+composition or for the preparation of a pharmaceutical
+composition, of an effective quantity of at least one
+compound according to either of Claims 1 and 2,
+characterized in that the decimal logarithm of the mean
+number of viable bacteria adhering to reconstructed
+epidermis, after a test consisting in bringing the said
+epidermis into contact with the test compound for 2 hours
+at 37°C, is at least 1 less than that obtained by a test
+carried out with water under the same conditions.</claim-text></claim><claim num="xx"><claim-text>Use according to any one of Claims 1 to 3,
+characterized in that the active ingredient is chosen
+from surfactants, polymers and nonsolid fatty substances
+at room temperature.</claim-text></claim><claim num="xx"><claim-text>Use according to any one of Claims 1 to 4,
+characterized in that the active ingredient is chosen
+from disodium cocoamphodiacetate, oxyethylenated glyceryl
+cocoate (7 EO), the ricinoleic monoethanolamide
+monosulphosuccinate salts, oxyethylenated hydrogenated
+ricinoleic triglyceride containing 60 ethylene units,
+Poloxamers, polyacrylamide/C13-14 Isoparaffin/Laureth-7
+hexadecenyl succinate 18, sesame oil, octoxyglyceryl
+palmitate, octoxyglyceryl behenate, dioctyl adipate,
+PEG-15 stearyl ether, apricot stone oil, tartrate of
+branched C12-C13 dialcohols and mixtures thereof.</claim-text></claim><claim num="xx"><claim-text>Use according to any one of Claims 1 to 5,
+characterized in that the active ingredient is present in
+a quantity ranging from 0.1% to 100% of the total weight
+of the composition.</claim-text></claim><claim num="xx"><claim-text>Use according to Claim 6, characterized in that
+the active ingredient is present in a quantity ranging
+from 0.5% to 50% of the total weight of the composition.</claim-text></claim><claim num="xx"><claim-text>Use according to either of Claims 6 and 7,
+characterized in that the active ingredient is present in
+a quantity ranging from 1% to 25% of the total weight of
+the composition.</claim-text></claim><claim num="xx"><claim-text>Use according to any one of Claims 1 to 8,
+characterized in that the composition is provided in the
+form of a lotion, an aqueous gel, a serum, an emulsion or
+a dispersion of lipid vesicles.</claim-text></claim><claim num="xx"><claim-text>Cosmetic use by topical application of at least
+one compound as defined according to any one of Claims 1
+to 5 as active ingredient in a cosmetic composition
+intended to reduce bad body odours.</claim-text></claim></claims><claims lang="FR" status="new"><claim num="xx"><claim-text>Utilisation en tant que principe actif, dans une composition cosmétique ou pour la
+préparation d'une composition pharmaceutique,
+d'une quantité efficace d'au moins un composé exempt de motifs hydrates
+de carbone, modifiant les propriétés physico-chimiques de la surface de la
+peau et/ou des muqueuses, en vue d'empêcher ou de réduire l'adhésion de
+micro-organismes sur ces dernières, ledit composé étant choisi de manière
+à ce que le logarithme décimal du nombre moyen de bactéries viables
+adhérant sur l'épiderme reconstruit, après un test de mise en contact dudit
+épiderme avec le composé testé pendant 2 heures à 37°C, soit inférieur
+d'au moins 0,3 à celui obtenu par un test réalisé avec de l'eau dans les
+mêmes conditions.</claim-text></claim><claim num="xx"><claim-text>Utilisation en tant que principe actif, dans une composition cosmétique ou pour la
+préparation d'une composition pharmaceutique,
+d'une quantité efficace d'au moins un composé selon la revendication 1,
+caractérisée en ce que le logarithme décimal du nombre moyen de
+bactéries viables adhérant sur l'épiderme reconstruit, après un test de mise
+en contact dudit épiderme avec le composé testé pendant 2 heures à 37°C,
+est inférieur d'au moins 0,5 à celui obtenu par un test réalisé avec de l'eau
+dans les mêmes conditions.</claim-text></claim><claim num="xx"><claim-text>Utilisation en tant que principe actif, dans une composition cosmétique ou pour la
+préparation d'une composition pharmaceutique,
+d'une quantité efficace d'au moins un composé selon l'une quelconque des
+revendications 1 ou 2, caractérisée en ce que le logarithme décimal du
+nombre moyen de bactéries viables adhérant sur l'épiderme reconstruit,
+après un test de mise en contact dudit épiderme avec le composé testé
+pendant 2 heures à 37°C, est inférieur d'au moins 1 à celui obtenu par un
+test réalisé avec de l'eau dans les mêmes conditions.</claim-text></claim><claim num="xx"><claim-text>Utilisation selon l'une quelconque des revendications 1 à 3,
+caractérisée en ce que le principe actif est choisi parmi les tensioactifs, les
+polymères et les corps gras non solides à température ambiante.</claim-text></claim><claim num="xx"><claim-text>Utilisation selon l'une quelconque des revendications 1 à 4,
+caractérisée en ce que le principe actif est choisi parmi, le
+cocoamphodiacétate disodique, le cocoate de glycéryle oxyéthyléné (7
+OE), les sels de monosulfosuccinate de monoéthanol amide ricinoléique,
+le triglycéride ricinoléique hydrogéné oxyéthyléné à 60 motifs d'éthylène
+les Poloxamers, le polyacrylamide /C13-14 Isoparaffin/laureth-7,
+l'hexadécénylsuccinate 18, l'huile de sésame, le palmitate
+d'octoxyglycéryle, le béhénate d'octoxyglycéryle, l'adipate de dioctyle,
+le PPG-15 stéaryl éther, l'huile d'amande d'abricot, le tartrate de di-alcools
+C12-C13 ramifiés et leurs mélanges.</claim-text></claim><claim num="xx"><claim-text>Utilisation selon l'une quelconque des revendications 1 à 5,
+caractérisée en ce que le principe actif est présent en une quantité allant de
+0,1% à 100% du poids total de la composition.</claim-text></claim><claim num="xx"><claim-text>Utilisation selon la revendication 6, caractérisée en ce que le
+principe actif est présent en une quantité allant de 0,5% à 50% du poids
+total de la composition.</claim-text></claim><claim num="xx"><claim-text>Utilisation selon l'une quelconque des revendications 6 ou 7,
+caractérisée en ce que le principe actif est présent en une quantité allant de
+1% à 25% du poids total de la composition.</claim-text></claim><claim num="xx"><claim-text>Utilisation selon l'une quelconque des revendications 1 à 8,
+caractérisée en ce que la composition se présente sous la forme d'une
+lotion, d'un gel aqueux, d'un sérum, d'une émulsion ou d'une dispersion de
+vésicules lipidiques.</claim-text></claim><claim num="xx"><claim-text>Utilisation cosmétique en application topique d'au moins un
+composé défini selon l'une quelconque des revendications 1 à 5 en tant que principe actif dans une
+composition cosmétique destinée à diminuer les mauvaises odeurs
+corporelles.</claim-text></claim></claims><legal-status status="new"><legal-event country="EP" code="25" date="20070328"><legal-event-body><event-title>LAPSED IN A CONTRACTING STATE ANNOUNCED VIA POSTGRANT INFORM. FROM NAT. OFFICE TO EPO</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>AT</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>BE</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>CH</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>DK</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>FI</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>GR</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>IE</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>LI</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>LU</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>MC</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>NL</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>PT</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>SE</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20050907</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20050907</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20050907</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20050907</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20051207</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20051207</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20051207</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20060207</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20060228</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20060228</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20060228</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20060228</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20060228</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REG" date="20061013"><legal-event-body><event-title>REFERENCE TO A NATIONAL CODE</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>CH</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Legal Event Code </event-attribute-label><event-attribute-value>PL</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="26" date="20060719"><legal-event-body><event-title>OPPOSITION FILED</event-title><event-attributes><event-attribute><event-attribute-label>opponent name </event-attribute-label><event-attribute-value>HENKEL KOMMANDITGESELLSCHAFT AUF AKTIEN</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20060607</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REG" date="20060503"><legal-event-body><event-title>REFERENCE TO A NATIONAL CODE</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>IE</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Legal Event Code </event-attribute-label><event-attribute-value>FD4D</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="NLV1" date="20060301"><legal-event-body><event-title>NL: LAPSED OR ANNULED DUE TO FAILURE TO FULFILL THE REQUIREMENTS OF ART. 29P AND 29M OF THE PATENTS ACT; NO LEGAL EFFECT FROM</event-title></legal-event-body></legal-event><legal-event country="EP" code="REG" date="20051216"><legal-event-body><event-title>REFERENCE TO A NATIONAL CODE</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>ES</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Legal Event Code </event-attribute-label><event-attribute-value>FG2A</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Document Number </event-attribute-label><event-attribute-value>2244565</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>T3</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REF" date="20051013"><legal-event-body><event-title>CORRESPONDS TO:</event-title><event-attributes><event-attribute><event-attribute-label>Ref Document Number </event-attribute-label><event-attribute-value>60113167</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Country of Ref Document </event-attribute-label><event-attribute-value>DE</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Date of Ref Document </event-attribute-label><event-attribute-value>20051013</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>P</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REG" date="20051005"><legal-event-body><event-title>REFERENCE TO A NATIONAL CODE</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>IE</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Legal Event Code </event-attribute-label><event-attribute-value>FG4D</event-attribute-value></event-attribute><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>LANGUAGE OF EP DOCUMENT: FRENCH</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="GBT" date="20050928"><legal-event-body><event-title>GB: TRANSLATION OF EP PATENT FILED (GB SECTION 77(6)(A)/1977)</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20050907</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REG" date="20050915"><legal-event-body><event-title>REFERENCE TO A NATIONAL CODE</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>CH</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Legal Event Code </event-attribute-label><event-attribute-value>EP</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20050907"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>B1</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>ATBECHCYDEDKESFIFRGBGRIEITLILUMCNLPTSETR</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REG" date="20050907"><legal-event-body><event-title>REFERENCE TO A NATIONAL CODE</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>GB</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Legal Event Code </event-attribute-label><event-attribute-value>FG4D</event-attribute-value></event-attribute><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>NOT ENGLISH</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="RTI1" date="20050316"><legal-event-body><event-title>TITLE (CORRECTION)</event-title><event-attributes><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>USE OF COMPONENTS FOR MODIFYING THE PHYSICO-CHEMICAL PROPERTIES OF THE SKIN AND/OR THE MUCOUS MEMBRANE AS AGENTS FOR PREV</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="17Q" date="20040310"><legal-event-body><event-title>FIRST EXAMINATION REPORT</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20040126</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AKX" date="20020522"><legal-event-body><event-title>PAYMENT OF DESIGNATION FEES</event-title><event-attributes><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>AT BE CH CY DE DK ES FI FR GB GR IE IT LI LU MC NL PT SE TR</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="17P" date="20010905"><legal-event-body><event-title>REQUEST FOR EXAMINATION FILED</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20010213</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20010905"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>A1</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>ATBECHCYDEDKESFIFRGBGRIEITLILUMCNLPTSETR</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AX" date="20010905"><legal-event-body><event-title>EXTENSION OF THE EUROPEAN PATENT TO</event-title><event-attributes><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>AL;LT;LV;MK;RO;SI</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event></legal-status></patent-document>

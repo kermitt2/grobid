@@ -1,0 +1,64 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005196"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<lb/>
+			<reference>Applied Mathematics and Computation 192 (2007) 487–495<lb/></reference>
+			<ptr type="web">www.elsevier.com/locate/amc<lb/></ptr>
+			
+			<docTitle>
+				<titlePart>A simple mobile communication billing system<lb/> among charged
+					parties<lb/></titlePart>
+			</docTitle>
+
+			<byline>
+				<docAuthor>Hsia-Hung Ou a , Min-Shiang Hwang b, * , Jinn-Ke Jan a<lb/></docAuthor>
+			</byline>
+
+			<byline>
+				<affiliation>a Department of Computer Science, National Chung Hsing
+					University,</affiliation>
+			</byline>
+
+			<address>Taichung 402, Taiwan, ROC<lb/></address>
+
+			<byline>
+				<affiliation>b Department of Management Information Systems, National Chung Hsing
+					University,</affiliation>
+			</byline>
+
+			<address>250, Kuo Kuong Road, Taichung 402, Taiwan, ROC<lb/></address>
+
+			<div type="abstract">Abstract<lb/> Mobile communication is a milestone technology that
+				has brought people a kind of universal convenience otherwise<lb/> unattainable. From
+				GSM to UMTS, the mobile communication technologies, like all the other great
+				inventions in human<lb/> history, have gone through such fast-paced advancements
+				since the very first day it came to existence that each day we<lb/> seem to be using
+				a newer, more powerful device than before to talk to people close by or far away. We
+				are so used to this<lb/> convenience that it is hard to imagine how life could carry
+				on without cell phones. However, when cell phone users roam<lb/> from city to city
+				crossing different system facilitators' domains of services, besides the conveyance
+				of the signals, some<lb/> charging problems may also arise between or among the
+				service providers. In this paper, we shall present a simple mobile<lb/>
+				communication billing system that can help solve roaming-related charging problems.
+				Our new system can be used in a<lb/> wide variety of applications without having to
+				modify the standard UMTS protocol, and it only causes slight, readily<lb/> ignorable
+				traffic increase. As we can expect, the new mobile communication billing system will
+				be a friendly design that<lb/> comes in handy for both service providers and
+				users.<lb/>
+			</div>
+			
+			<keywords>Keywords: Mobile communication; Billing; Charging; UMTS<lb/></keywords>
+			
+			<note type="other">0096-3003/$ - see front matter</note> 
+			<note type="copyright">&#169; 2007 Elsevier Inc. All rights reserved.<lb/></note>
+			
+			<idno>doi:10.1016/j.amc.2007.03.034</idno>
+			
+
+		</front>
+	</text>
+</tei>

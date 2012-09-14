@@ -1,0 +1,20 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="777"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">An Evaluation of Object Management System <lb/>Architectures for Software Engineering Applications <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Jayavel Shanmugasundaram, Barbara Staudt Lerner, Lori Clarke <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science <lb/>University of Massachusetts <lb/></affiliation></byline>
+		<address>Amherst, MA 01003 USA <lb/></address>
+		<note type="phone">+1 413 545 3787 <lb/></note>
+		<email>{shan, lerner, clarke}@cs.umass.edu <lb/></email>
+		<div type="abstract">ABSTRACT <lb/>Software engineering applications require sophisticated <lb/>object management system support for creating and <lb/>manipulating software objects. One of the key issues for <lb/>object management systems is distribution. Addressing this issue in the context of software engineering applications is particularly challenging because they have <lb/>widely varying object access profiles. Two fundamental <lb/>approaches to dealing with distribution are the object <lb/>server architecture, where objects are shipped to the <lb/>application program, and the operation server architecture, where operation requests are shipped to where the <lb/>objects reside. We compare these architectures experimentally to determine the conditions under which each <lb/>performs better. <lb/></div>
+		<keywords>KEYWORDS <lb/>Distributed object management, experimental evaluation <lb/></keywords>
+		<div type="intro">1 INTRODUCTION</div>
+		</front>
+</text>
+</tei>

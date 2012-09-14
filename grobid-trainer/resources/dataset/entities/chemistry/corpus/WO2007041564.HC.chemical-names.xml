@@ -1,0 +1,866 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<nite:root nite:id="WO2007041564.HC.chemical-names" xmlns:nite="http://nite.sourceforge.net/">
+   <chem-name nite:id="WO2007041564.HC.chemical-names.1" comment="6-methylenandrosta-1,4-diene-3,17 -dione" name="6-methylenandrosta-l,4-diene-3,17 -dione" relevant="false" chebi-id="WO2007041564:641092" epochem-id="EPOCHEM:NEW:COMPOUND:404">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_235)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_221)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_223)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_225)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_232)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_228)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_222)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_233)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_231)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_224)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_230)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_229)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_227)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_234)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_226)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.2" comment="" name="6-alkylidenandrosta-l,4- diene-3,17-dione" relevant="false" chebi-id="WO2007041564:778844" epochem-id="EPOCHEM:NEW:COMPOUND:405">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_313)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_307)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_310)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_314)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_306)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_318)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_311)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_308)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_319)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_312)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_316)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_315)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_309)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_317)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_320)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.3" comment="" name="androsta-l,4-diene-3,17-diones" relevant="false" chebi-id="WO2007041564:475260" epochem-id="EPOCHEM:NEW:COMPOUND:406">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_355)..id(WO2007041564_w_356)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_362)..id(WO2007041564_w_363)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_358)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_366)..id(WO2007041564_w_367)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_365)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_364)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_357)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_361)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_359)..id(WO2007041564_w_360)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.4" comment="" name="androsta-l,4-diene-3,17-diones" relevant="false" chebi-id="WO2007041564:475260" epochem-id="EPOCHEM:NEW:COMPOUND:406">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_419)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_421)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_412)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_418)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_422)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_410)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_416)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_415)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_417)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_414)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_420)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_413)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_411)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.5" comment="" name="androsta-3,5-diene-17-one" relevant="false" chebi-id="WO2007041564:462257" epochem-id="EPOCHEM:NEW:COMPOUND:407">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_426)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_432)..id(WO2007041564_w_433)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_428)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_430)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_425)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_434)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_427)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_431)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_435)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_429)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.6" comment="" name="formaldehyde" relevant="false" chebi-id="CHEBI:16842" epochem-id="EPOCHEM:COMPOUND:4560">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_376)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.7" comment="" name="formaldehyde" relevant="false" chebi-id="CHEBI:16842" epochem-id="EPOCHEM:COMPOUND:4560">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_437)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.8" comment="" name="formaldehyde" relevant="false" chebi-id="CHEBI:16842" epochem-id="EPOCHEM:COMPOUND:4560">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_639)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.9" comment="" name="formaldehyde" relevant="false" chebi-id="CHEBI:16842" epochem-id="EPOCHEM:COMPOUND:4560">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3000)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.10" comment="" name="l,3-dipyrrolidyl-[Delta]3,5-androstadiene-17-one" relevant="false" chebi-id="WO2007041564:368023" epochem-id="EPOCHEM:NEW:COMPOUND:408">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_506)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_508)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_507)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_503)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_502)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_492)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_494)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_501)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_504)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_498)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_500)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_495)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_497)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_505)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_496)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_493)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_499)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_491)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.11" comment="" name="l,3-dipyrrolidyl-[Delta]3,5-androstadiene-17-one" relevant="false" chebi-id="WO2007041564:368023" epochem-id="EPOCHEM:NEW:COMPOUND:408">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_549)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_552)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_547)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_543)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_539)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_541)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_538)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_546)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_542)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_548)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_555)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_551)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_553)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_540)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_550)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_544)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_554)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_545)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.12" comment="6-methylenandrosta-1,4-diene-3,17 -dione" name="[Delta]l,4- androstadiene-3,17-dione" relevant="false" chebi-id="WO2007041564:999939" epochem-id="EPOCHEM:NEW:COMPOUND:409">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_512)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_516)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_521)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_514)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_518)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_522)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_511)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_524)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_513)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_515)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_519)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_517)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_523)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_520)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.13" comment="" name="pyrrolidine" relevant="false" chebi-id="CHEBI:33135" epochem-id="EPOCHEM:COMPOUND:5954">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_528)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.14" comment="" name="pyrrolidine" relevant="false" chebi-id="CHEBI:33135" epochem-id="EPOCHEM:COMPOUND:5954">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2344)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.15" comment="" name="pyrrolidine" relevant="false" chebi-id="CHEBI:33135" epochem-id="EPOCHEM:COMPOUND:5954">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2792)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.16" comment="" name="pyrrolidine" relevant="false" chebi-id="CHEBI:33135" epochem-id="EPOCHEM:COMPOUND:5954">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2823)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.17" comment="6-hydroxymethyl-androsta-1,4-diene-3,17-dione" name="6-hydroxymethyl-androsta-l,4-diene-3,17-dione" relevant="false" chebi-id="WO2007041564:475375" epochem-id="EPOCHEM:NEW:COMPOUND:410">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_569)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_579)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_565)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_573)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_566)..id(WO2007041564_w_567)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_572)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_563)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_574)..id(WO2007041564_w_575)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_568)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_576)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_570)..id(WO2007041564_w_571)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_564)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_577)..id(WO2007041564_w_578)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.18" comment="6-hydroxymethyl-androsta-1,4-diene-3,17-dione" name="6-hydroxymethyl-androsta-l,4-diene-3,17-dione" relevant="false" chebi-id="WO2007041564:475375" epochem-id="EPOCHEM:NEW:COMPOUND:410">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2922)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2926)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2934)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2924)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2933)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2931)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2930)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2925)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2935)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2929)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2921)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2928)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2923)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2919)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2927)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2920)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2932)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.19" comment="6-hydroxymethyl-androsta-1,4-diene-3,17-dione" name="6-hydroxymethyl-androsta-l,4-diene-3,17-dione" relevant="false" chebi-id="WO2007041564:475375" epochem-id="EPOCHEM:NEW:COMPOUND:410">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3158)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3172)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3167)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3161)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3157)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3173)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3168)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3162)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3164)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3170)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3169)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3160)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3163)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3166)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3171)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3159)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3165)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.20" comment="6-hydroxymethyl-androsta-1,4-diene-3,17-dione" name="6-hydroxymethyl-androsta-l,4-diene-3,17-dione" relevant="false" chebi-id="WO2007041564:475375" epochem-id="EPOCHEM:NEW:COMPOUND:410">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3371)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3359)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3369)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3368)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3360)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3362)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3366)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3374)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3361)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3373)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3372)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3370)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3365)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3367)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3364)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3363)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3358)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.21" comment="androsta-1,4-diene-3,17-dione" name="androsta-l,4-diene-3,17-dione" relevant="false" chebi-id="WO2007041564:836774" epochem-id="EPOCHEM:NEW:COMPOUND:411">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_569)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_579)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_573)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_567)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_572)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_574)..id(WO2007041564_w_575)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_568)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_570)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_576)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_571)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_577)..id(WO2007041564_w_578)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.22" comment="androsta-1,4-diene-3,17-dione" name="androsta-l,4-diene-3,17-dione" relevant="false" chebi-id="WO2007041564:836774" epochem-id="EPOCHEM:NEW:COMPOUND:411">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_593)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_589)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_591)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_588)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_595)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_587)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_585)..id(WO2007041564_w_586)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_592)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_583)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_590)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_594)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_584)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.25" comment="androsta-1,4-diene-3,17-dione" name="androsta-l,4-diene-3,17-dione" relevant="false" chebi-id="WO2007041564:836774" epochem-id="EPOCHEM:NEW:COMPOUND:411">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2926)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2934)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2924)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2931)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2933)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2930)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2925)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2935)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2929)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2928)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2923)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2927)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2932)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.26" comment="androsta-1,4-diene-3,17-dione" name="androsta-l,4-diene-3,17-dione" relevant="false" chebi-id="WO2007041564:836774" epochem-id="EPOCHEM:NEW:COMPOUND:411">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3167)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3172)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3161)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3168)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3173)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3162)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3164)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3170)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3169)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3163)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3166)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3171)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3165)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.27" comment="androsta-1,4-diene-3,17-dione" name="androsta-l,4-diene-3,17-dione" relevant="false" chebi-id="WO2007041564:836774" epochem-id="EPOCHEM:NEW:COMPOUND:411">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3371)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3369)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3368)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3362)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3366)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3374)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3372)..id(WO2007041564_w_3373)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3370)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3365)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3367)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3364)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3363)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.30" comment="1,3-dipyrrolidinoandrosta-3,5-dien-17-one" name="l,3-dipyrrolidinoandrosta-3,5-dien-17-one" relevant="false" chebi-id="WO2007041564:376882" epochem-id="EPOCHEM:NEW:COMPOUND:2095">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_617)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_624)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_629)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_622)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_630)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_620)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_627)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_625)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_628)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_623)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_626)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_616)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_621)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_618)..id(WO2007041564_w_619)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.31" comment="" name="benzene" relevant="false" chebi-id="CHEBI:16716" epochem-id="EPOCHEM:COMPOUND:5607">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_632)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.32" comment="" name="ethanol" relevant="false" chebi-id="CHEBI:16236" epochem-id="EPOCHEM:COMPOUND:4765">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_634)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.33" comment="" name="ethanol" relevant="false" chebi-id="CHEBI:16236" epochem-id="EPOCHEM:COMPOUND:4765">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2799)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.34" comment="" name="ethanol" relevant="false" chebi-id="CHEBI:16236" epochem-id="EPOCHEM:COMPOUND:4765">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2804)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.35" comment="" name="ethanol" relevant="false" chebi-id="CHEBI:16236" epochem-id="EPOCHEM:COMPOUND:4765">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2821)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.36" comment="" name="ethanol" relevant="false" chebi-id="CHEBI:16236" epochem-id="EPOCHEM:COMPOUND:4765">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2889)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.37" comment="" name="ethanol" relevant="false" chebi-id="CHEBI:16236" epochem-id="EPOCHEM:COMPOUND:4765">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_5588)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.47" comment="" name="estrone" relevant="false" chebi-id="CHEBI:17263" epochem-id="EPOCHEM:COMPOUND:1854">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_778)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.48" comment="" name="estradiol" relevant="false" chebi-id="CHEBI:23965" epochem-id="EPOCHEM:COMPOUND:3351">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_780)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.49" comment="" name="androstenedione" relevant="false" chebi-id="CHEBI:16422" epochem-id="EPOCHEM:NEW:COMPOUND:415">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_771)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.50" comment="" name="testosterone" relevant="false" chebi-id="CHEBI:17347" epochem-id="EPOCHEM:COMPOUND:1858">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_773)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.89" comment="" name="6-methyloxamethyl exemestane" relevant="false" chebi-id="WO2007041564:609383" epochem-id="EPOCHEM:NEW:COMPOUND:416">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2092)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2090)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2093)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2091)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.90" comment="" name="6-methyloxamethyl exemestane" relevant="false" chebi-id="WO2007041564:609383" epochem-id="EPOCHEM:NEW:COMPOUND:416">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_6377)..id(WO2007041564_w_6378)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_6376)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_6375)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.91" comment="" name="6-methyloxamethyl exemestane" relevant="false" chebi-id="WO2007041564:609383" epochem-id="EPOCHEM:NEW:COMPOUND:416">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_7532)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_7529)..id(WO2007041564_w_7531)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.112" comment="" name="exemestane" relevant="true" chebi-id="WO2007041564:199693" epochem-id="EPOCHEM:NEW:COMPOUND:423">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_16)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.113" comment="" name="exemestane" relevant="true" chebi-id="WO2007041564:199693" epochem-id="EPOCHEM:NEW:COMPOUND:423">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_175)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.114" comment="" name="exemestane" relevant="true" chebi-id="WO2007041564:199693" epochem-id="EPOCHEM:NEW:COMPOUND:423">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_197)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.115" comment="" name="exemestane" relevant="true" chebi-id="WO2007041564:199693" epochem-id="EPOCHEM:NEW:COMPOUND:423">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_206)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.116" comment="" name="exemestane" relevant="true" chebi-id="WO2007041564:199693" epochem-id="EPOCHEM:NEW:COMPOUND:423">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_263)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.117" comment="" name="exemestane" relevant="true" chebi-id="WO2007041564:199693" epochem-id="EPOCHEM:NEW:COMPOUND:423">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_325)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.118" comment="" name="exemestane" relevant="true" chebi-id="WO2007041564:199693" epochem-id="EPOCHEM:NEW:COMPOUND:423">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_462)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.119" comment="" name="exemestane" relevant="true" chebi-id="WO2007041564:199693" epochem-id="EPOCHEM:NEW:COMPOUND:423">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_686)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.120" comment="" name="exemestane" relevant="true" chebi-id="WO2007041564:199693" epochem-id="EPOCHEM:NEW:COMPOUND:423">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_709)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.121" comment="" name="exemestane" relevant="true" chebi-id="WO2007041564:199693" epochem-id="EPOCHEM:NEW:COMPOUND:423">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_811)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.122" comment="" name="exemestane" relevant="true" chebi-id="WO2007041564:199693" epochem-id="EPOCHEM:NEW:COMPOUND:423">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_851)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.123" comment="" name="exemestane" relevant="true" chebi-id="WO2007041564:199693" epochem-id="EPOCHEM:NEW:COMPOUND:423">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_1136)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.124" comment="" name="exemestane" relevant="true" chebi-id="WO2007041564:199693" epochem-id="EPOCHEM:NEW:COMPOUND:423">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_1517)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.125" comment="" name="exemestane" relevant="true" chebi-id="WO2007041564:199693" epochem-id="EPOCHEM:NEW:COMPOUND:423">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_1537)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.126" comment="" name="exemestane" relevant="true" chebi-id="WO2007041564:199693" epochem-id="EPOCHEM:NEW:COMPOUND:423">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_1689)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.127" comment="" name="exemestane" relevant="true" chebi-id="WO2007041564:199693" epochem-id="EPOCHEM:NEW:COMPOUND:423">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_1889)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.128" comment="" name="exemestane" relevant="true" chebi-id="WO2007041564:199693" epochem-id="EPOCHEM:NEW:COMPOUND:423">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2093)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.129" comment="" name="exemestane" relevant="true" chebi-id="WO2007041564:199693" epochem-id="EPOCHEM:NEW:COMPOUND:423">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2192)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.130" comment="" name="exemestane" relevant="true" chebi-id="WO2007041564:199693" epochem-id="EPOCHEM:NEW:COMPOUND:423">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2269)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.131" comment="" name="exemestane" relevant="true" chebi-id="WO2007041564:199693" epochem-id="EPOCHEM:NEW:COMPOUND:423">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2501)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.132" comment="" name="exemestane" relevant="true" chebi-id="WO2007041564:199693" epochem-id="EPOCHEM:NEW:COMPOUND:423">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2521)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.133" comment="" name="exemestane" relevant="true" chebi-id="WO2007041564:199693" epochem-id="EPOCHEM:NEW:COMPOUND:423">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2696)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.134" comment="" name="exemestane" relevant="true" chebi-id="WO2007041564:199693" epochem-id="EPOCHEM:NEW:COMPOUND:423">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3337)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.135" comment="" name="exemestane" relevant="true" chebi-id="WO2007041564:199693" epochem-id="EPOCHEM:NEW:COMPOUND:423">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3387)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.136" comment="" name="exemestane" relevant="true" chebi-id="WO2007041564:199693" epochem-id="EPOCHEM:NEW:COMPOUND:423">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3392)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.137" comment="" name="exemestane" relevant="true" chebi-id="WO2007041564:199693" epochem-id="EPOCHEM:NEW:COMPOUND:423">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_6271)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.138" comment="" name="exemestane" relevant="true" chebi-id="WO2007041564:199693" epochem-id="EPOCHEM:NEW:COMPOUND:423">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_6378)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.139" comment="" name="exemestane" relevant="true" chebi-id="WO2007041564:199693" epochem-id="EPOCHEM:NEW:COMPOUND:423">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_6429)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.140" comment="" name="exemestane" relevant="true" chebi-id="WO2007041564:199693" epochem-id="EPOCHEM:NEW:COMPOUND:423">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_6646)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.141" comment="" name="exemestane" relevant="true" chebi-id="WO2007041564:199693" epochem-id="EPOCHEM:NEW:COMPOUND:423">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_6746)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.143" comment="" name="exemestane" relevant="true" chebi-id="WO2007041564:199693" epochem-id="EPOCHEM:NEW:COMPOUND:423">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_6828)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.144" comment="" name="exemestane" relevant="true" chebi-id="WO2007041564:199693" epochem-id="EPOCHEM:NEW:COMPOUND:423">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_6850)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.145" comment="" name="exemestane" relevant="true" chebi-id="WO2007041564:199693" epochem-id="EPOCHEM:NEW:COMPOUND:423">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_6893)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.146" comment="" name="exemestane" relevant="true" chebi-id="WO2007041564:199693" epochem-id="EPOCHEM:NEW:COMPOUND:423">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_6905)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.148" comment="" name="exemestane" relevant="true" chebi-id="WO2007041564:199693" epochem-id="EPOCHEM:NEW:COMPOUND:423">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_7215)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.149" comment="" name="exemestane" relevant="true" chebi-id="WO2007041564:199693" epochem-id="EPOCHEM:NEW:COMPOUND:423">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_7532)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.150" comment="" name="water" relevant="false" chebi-id="CHEBI:15377" epochem-id="EPOCHEM:COMPOUND:5421">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3069)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.151" comment="" name="water" relevant="false" chebi-id="CHEBI:15377" epochem-id="EPOCHEM:COMPOUND:5421">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_4153)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.152" comment="" name="water" relevant="false" chebi-id="CHEBI:15377" epochem-id="EPOCHEM:COMPOUND:5421">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_4155)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.153" comment="" name="water" relevant="false" chebi-id="CHEBI:15377" epochem-id="EPOCHEM:COMPOUND:5421">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_4887)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.154" comment="" name="water" relevant="false" chebi-id="CHEBI:15377" epochem-id="EPOCHEM:COMPOUND:5421">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_5586)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.155" comment="" name="water" relevant="false" chebi-id="CHEBI:15377" epochem-id="EPOCHEM:COMPOUND:5421">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_5796)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.156" comment="" name="water" relevant="false" chebi-id="CHEBI:15377" epochem-id="EPOCHEM:COMPOUND:5421">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_6034)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.157" comment="" name="glycerin" relevant="false" chebi-id="CHEBI:17754" epochem-id="EPOCHEM:NEW:COMPOUND:98">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_4183)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.158" comment="" name="sucrose" relevant="false" chebi-id="CHEBI:17992" epochem-id="EPOCHEM:COMPOUND:1888">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_4121)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.159" comment="" name="sucrose" relevant="false" chebi-id="CHEBI:17992" epochem-id="EPOCHEM:COMPOUND:1888">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_4186)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.160" comment="" name="sucrose" relevant="false" chebi-id="CHEBI:17992" epochem-id="EPOCHEM:COMPOUND:1888">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_4309)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.161" comment="" name="sucrose" relevant="false" chebi-id="CHEBI:17992" epochem-id="EPOCHEM:COMPOUND:1888">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_4343)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.162" comment="" name="sodium citrate" relevant="false" chebi-id="WO2007041564:940021" epochem-id="EPOCHEM:NEW:COMPOUND:380">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_4282)..id(WO2007041564_w_4283)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.163" comment="" name="dicalcium phosphate" relevant="false" chebi-id="WO2007041564:190000" epochem-id="EPOCHEM:NEW:COMPOUND:381">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_4286)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_4285)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.164" comment="" name="calcium carbonate" relevant="false" chebi-id="CHEBI:3311" epochem-id="EPOCHEM:COMPOUND:6668">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_4371)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_4370)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.165" comment="" name="sodium carbonate" relevant="false" chebi-id="CHEBI:29377" epochem-id="EPOCHEM:COMPOUND:6671">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_4386)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_4385)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.166" comment="" name="glycerol monostearate" relevant="false" chebi-id="WO2007041564:38466" epochem-id="EPOCHEM:NEW:COMPOUND:333">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_4426)..id(WO2007041564_w_4427)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.167" comment="" name="cetyl alcohol" relevant="false" chebi-id="CHEBI:16125" epochem-id="EPOCHEM:NEW:COMPOUND:246">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_4423)..id(WO2007041564_w_4424)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.168" comment="" name="calcium stearate" relevant="false" chebi-id="WO2007041564:435759" epochem-id="EPOCHEM:NEW:COMPOUND:424">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_4451)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_4450)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.169" comment="" name="magnesium stearate" relevant="false" chebi-id="CHEBI:9254" epochem-id="EPOCHEM:NEW:COMPOUND:85">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_4453)..id(WO2007041564_w_4454)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.170" comment="" name="sodium lauryl sulfate" relevant="false" chebi-id="CHEBI:8984" epochem-id="EPOCHEM:NEW:COMPOUND:425">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_4460)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_4462)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_4461)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.171" comment="" name="lactose" relevant="false" chebi-id="CHEBI:17716" epochem-id="EPOCHEM:COMPOUND:2313">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_4307)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.172" comment="" name="lactose" relevant="false" chebi-id="CHEBI:17716" epochem-id="EPOCHEM:COMPOUND:2313">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_4518)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.173" comment="" name="lactose" relevant="false" chebi-id="CHEBI:17716" epochem-id="EPOCHEM:COMPOUND:2313">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_5333)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.174" comment="" name="glucose" relevant="false" chebi-id="CHEBI:17234" epochem-id="EPOCHEM:COMPOUND:2079">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_4311)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.175" comment="" name="mannitol" relevant="false" chebi-id="CHEBI:29864" epochem-id="EPOCHEM:COMPOUND:2429">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_4313)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.176" comment="" name="glycerol" relevant="false" chebi-id="CHEBI:17754" epochem-id="EPOCHEM:COMPOUND:1821">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_4356)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.177" comment="" name="glycerol" relevant="false" chebi-id="CHEBI:17754" epochem-id="EPOCHEM:COMPOUND:1821">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_4426)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.178" comment="" name="glycerol" relevant="false" chebi-id="CHEBI:17754" epochem-id="EPOCHEM:COMPOUND:1821">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_4948)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.179" comment="" name="glycerol" relevant="false" chebi-id="CHEBI:17754" epochem-id="EPOCHEM:COMPOUND:1821">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_5594)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.180" comment="" name="ethyl alcohol" relevant="false" chebi-id="CHEBI:16236" epochem-id="EPOCHEM:NEW:COMPOUND:426">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_4900)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_4899)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.181" comment="" name="isopropyl alcohol" relevant="false" chebi-id="CHEBI:17824" epochem-id="EPOCHEM:NEW:COMPOUND:427">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_4903)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_4902)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.182" comment="" name="ethyl carbonate" relevant="false" chebi-id="WO2007041564:668221" epochem-id="EPOCHEM:NEW:COMPOUND:428">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_4906)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_4905)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.183" comment="" name="ethyl acetate" relevant="false" chebi-id="CHEBI:27750" epochem-id="EPOCHEM:COMPOUND:4306">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_4908)..id(WO2007041564_w_4909)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.184" comment="" name="benzyl alcohol" relevant="false" chebi-id="CHEBI:17987" epochem-id="EPOCHEM:COMPOUND:4702">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_4912)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_4911)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.185" comment="" name="benzyl benzoate" relevant="false" chebi-id="CHEBI:41237" epochem-id="EPOCHEM:NEW:COMPOUND:429">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_4914)..id(WO2007041564_w_4915)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.186" comment="" name="propylene glycol" relevant="false" chebi-id="CHEBI:16997" epochem-id="EPOCHEM:NEW:COMPOUND:25">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_4917)..id(WO2007041564_w_4918)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.187" comment="" name="propylene glycol" relevant="false" chebi-id="CHEBI:16997" epochem-id="EPOCHEM:NEW:COMPOUND:25">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_5596)..id(WO2007041564_w_5597)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.188" comment="" name="1,3-butylene glycol" relevant="false" chebi-id="WO2007041564:864221" epochem-id="EPOCHEM:NEW:COMPOUND:430">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_4921)..id(WO2007041564_w_4922)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_4920)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_4924)..id(WO2007041564_w_4925)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_4923)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.189" comment="" name="tetrahydrofuryl alcohol" relevant="false" chebi-id="WO2007041564:101866" epochem-id="EPOCHEM:NEW:COMPOUND:431">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_4951)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_4950)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.190" comment="" name="sorbitan" relevant="false" chebi-id="WO2007041564:675221" epochem-id="EPOCHEM:NEW:COMPOUND:432">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_4960)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.191" comment="" name="sorbitan" relevant="false" chebi-id="WO2007041564:675221" epochem-id="EPOCHEM:NEW:COMPOUND:432">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_5029)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.192" comment="" name="aluminum hydroxide" relevant="false" chebi-id="CHEBI:33130" epochem-id="EPOCHEM:NEW:COMPOUND:433">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_5340)..id(WO2007041564_w_5341)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.193" comment="" name="butane" relevant="false" chebi-id="CHEBI:37808" epochem-id="EPOCHEM:NEW:COMPOUND:434">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_5371)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.194" comment="" name="propane" relevant="false" chebi-id="CHEBI:32879" epochem-id="EPOCHEM:COMPOUND:5455">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_5373)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.195" comment="" name="sodium chloride" relevant="false" chebi-id="CHEBI:26710" epochem-id="EPOCHEM:COMPOUND:6837">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_5703)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_5702)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.196" comment="" name="aluminum monostearate" relevant="false" chebi-id="WO2007041564:658881" epochem-id="EPOCHEM:NEW:COMPOUND:27">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_5737)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_5736)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.197" comment="" name="formazan" relevant="false" chebi-id="WO2007041564:896349" epochem-id="EPOCHEM:NEW:COMPOUND:435">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_6458)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.198" comment="" name="formazan" relevant="false" chebi-id="WO2007041564:896349" epochem-id="EPOCHEM:NEW:COMPOUND:435">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_6463)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.199" comment="" name="exemestane6S" relevant="false" chebi-id="WO2007041564:720669" epochem-id="EPOCHEM:NEW:COMPOUND:436">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_6779)..id(WO2007041564_w_6780)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.200" comment="" name="6-hydroxymethyl-androsta- 1 ,A- diene-3, 17-dione" relevant="false" chebi-id="WO2007041564:292324" epochem-id="EPOCHEM:NEW:COMPOUND:437">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3114)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3121)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3123)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3111)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3122)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3127)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3116)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3115)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3113)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3125)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3112)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3118)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3120)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3119)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3126)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3117)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3124)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.201" comment="" name="aluminum metahydroxide" relevant="false" chebi-id="WO2007041564:776667" epochem-id="EPOCHEM:NEW:COMPOUND:438">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_5036)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_5035)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.202" comment="" name="bentonite" relevant="false" chebi-id="WO2007041564:244969" epochem-id="EPOCHEM:NEW:COMPOUND:439">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_4438)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.203" comment="" name="bentonite" relevant="false" chebi-id="WO2007041564:244969" epochem-id="EPOCHEM:NEW:COMPOUND:439">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_5038)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.204" comment="" name="zinc oxide" relevant="false" chebi-id="CHEBI:36560" epochem-id="EPOCHEM:COMPOUND:7673">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_5308)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_5307)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.205" comment="" name="ethyl oleate" relevant="false" chebi-id="WO2007041564:970048" epochem-id="EPOCHEM:NEW:COMPOUND:440">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_5628)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_5627)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.206" comment="" name="lecithin" relevant="false" chebi-id="CHEBI:16110" epochem-id="EPOCHEM:NEW:COMPOUND:441">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_5648)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.207" comment="" name="exemestane" relevant="true" chebi-id="WO2007041564:199693" epochem-id="EPOCHEM:NEW:COMPOUND:423">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_6779)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.208" comment="" name="methanol" relevant="false" chebi-id="CHEBI:17790" epochem-id="EPOCHEM:COMPOUND:4792">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_535)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.209" comment="" name="methanol" relevant="false" chebi-id="CHEBI:17790" epochem-id="EPOCHEM:COMPOUND:4792">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2806)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.210" comment="(+)-androsta-1,4-diene-3, 17- dione" name="(+)-androsta-l,4-diene-3, 17- dione" relevant="false" chebi-id="WO2007041564:396307" epochem-id="EPOCHEM:NEW:COMPOUND:1533">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2286)..id(WO2007041564_w_2287)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2294)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2293)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2285)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2295)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2289)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2292)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2301)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2291)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2300)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2297)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2299)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2290)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2296)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2288)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2298)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.211" comment="" name="l,3-dipyrrolidinoandrosta-3,5-diene-17-one" relevant="false" chebi-id="WO2007041564:914290" epochem-id="EPOCHEM:NEW:COMPOUND:1534">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2727)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2723)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2721)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2728)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2730)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2732)..id(WO2007041564_w_2733)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2720)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2729)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2731)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2725)..id(WO2007041564_w_2726)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2724)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2734)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2722)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.212" comment="" name="l,3-dipyrrolidinoandrosta-3,5-diene-17-one" relevant="false" chebi-id="WO2007041564:914290" epochem-id="EPOCHEM:NEW:COMPOUND:1534">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2981)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2977)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2985)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2987)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2984)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2979)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2982)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2973)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2976)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2980)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2983)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2978)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2974)..id(WO2007041564_w_2975)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2986)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.213" comment="1,3-dipyrrolidinoandrosta-3,5-dien-17-one" name="(+)-androsta-l, A- diene-3, 17-dione" relevant="false" chebi-id="WO2007041564:98364" epochem-id="EPOCHEM:NEW:COMPOUND:1535">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2754)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2744)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2748)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2743)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2746)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2749)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2742)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2745)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2750)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2741)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2747)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2755)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2753)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2756)..id(WO2007041564_w_2757)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2752)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2751)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.214" comment="" name="acetic acid" relevant="false" chebi-id="CHEBI:15366" epochem-id="EPOCHEM:COMPOUND:445">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2795)..id(WO2007041564_w_2796)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.215" comment="" name="tetrahydrofuran" relevant="false" chebi-id="CHEBI:26911" epochem-id="EPOCHEM:NEW:COMPOUND:239">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2813)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.216" comment="" name="l,3-dipyrrolidinoandrosta-355-diene-17-one" relevant="false" chebi-id="WO2007041564:378558" epochem-id="EPOCHEM:NEW:COMPOUND:1536">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2945)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2949)..id(WO2007041564_w_2950)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2947)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2955)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2951)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2944)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2946)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2953)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2952)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2954)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2948)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2956)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.217" comment="" name="formalin" relevant="false" chebi-id="CHEBI:16842" epochem-id="EPOCHEM:NEW:COMPOUND:1537">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2998)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.218" comment="" name="dichloromethane" relevant="false" chebi-id="CHEBI:15767" epochem-id="EPOCHEM:COMPOUND:5443">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3005)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.219" comment="" name="sulfuric acid" relevant="false" chebi-id="CHEBI:26836" epochem-id="EPOCHEM:COMPOUND:1226">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3036)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3035)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.220" comment="" name="sulfuric acid" relevant="false" chebi-id="CHEBI:26836" epochem-id="EPOCHEM:COMPOUND:1226">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3059)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3058)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.221" comment="" name="toluene" relevant="false" chebi-id="CHEBI:17578" epochem-id="EPOCHEM:COMPOUND:5618">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3076)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.222" comment="" name="toluene" relevant="false" chebi-id="CHEBI:17578" epochem-id="EPOCHEM:COMPOUND:5618">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3097)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.223" comment="" name="sorbitol" relevant="false" chebi-id="CHEBI:30911" epochem-id="EPOCHEM:NEW:COMPOUND:990">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_5027)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.224" comment="androsta-1,4-diene-3,17-dione" name="androsta-l,4-diene-3,17-dione" relevant="false" chebi-id="WO2007041564:836774" epochem-id="EPOCHEM:NEW:COMPOUND:411">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2292)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2289)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2301)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2293)..id(WO2007041564_w_2294)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2296)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2291)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2298)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2290)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2299)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2295)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2297)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2300)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.225" comment="1,3-dipyrrolidinoandrosta-3,5-dien-17-one" name="l,3-dipyrrolidinoandrosta-3,5-dien-17-one" relevant="false" chebi-id="WO2007041564:376882" epochem-id="EPOCHEM:NEW:COMPOUND:2095">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_603)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_599)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_604)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_610)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_609)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_611)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_608)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_600)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_606)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_602)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_597)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_605)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_601)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_607)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_598)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.226" comment="" name="hydrogen" relevant="false" chebi-id="CHEBI:24634" epochem-id="EPOCHEM:COMPOUND:7665">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2610)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.227" comment="" name="hydrogen" relevant="false" chebi-id="CHEBI:24634" epochem-id="EPOCHEM:COMPOUND:7665">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_3253)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.228" comment="" name="ADD" relevant="false" chebi-id="WO2007041564:619130" epochem-id="EPOCHEM:NEW:COMPOUND:2096">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2759)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.229" comment="" name="ADD" relevant="false" chebi-id="WO2007041564:619130" epochem-id="EPOCHEM:NEW:COMPOUND:2096">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2785)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.230" comment="" name="ADD" relevant="false" chebi-id="WO2007041564:619130" epochem-id="EPOCHEM:NEW:COMPOUND:2096">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2844)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.231" comment="" name="ADD" relevant="false" chebi-id="WO2007041564:619130" epochem-id="EPOCHEM:NEW:COMPOUND:2096">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2865)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.232" comment="(+)-androsta-1,4-diene-3, 17- dione" name="(+)-androsta-l,4-diene-3, 17- dione" relevant="false" chebi-id="WO2007041564:396307" epochem-id="EPOCHEM:NEW:COMPOUND:1533">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2781)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2770)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2773)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2777)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2782)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2769)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2783)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2774)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2776)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2779)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2768)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2780)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2778)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2775)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2771)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2767)"/>
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_2772)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007041564.HC.chemical-names.233" comment="" name="exemestane" relevant="false" chebi-id="WO2007041564:817202" epochem-id="EPOCHEM:NEW:COMPOUND:2098">
+      <nite:child href="WO2007041564.words.xml#id(WO2007041564_w_7196)"/>
+   </chem-name>
+</nite:root>

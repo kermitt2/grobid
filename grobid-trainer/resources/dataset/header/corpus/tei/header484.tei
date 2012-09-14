@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="487"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">A New O(n <lb/>2 ) Algorithm for the Symmetric Tridiagonal <lb/>Eigenvalue/Eigenvector Problem <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>by <lb/>Inderjit Singh Dhillon <lb/></docAuthor></byline>
+		<note type="degree">B.Tech. (Indian Institute of Technology, Bombay) 1989 <lb/>A dissertation submitted in partial satisfaction of the <lb/>requirements for the degree of <lb/>Doctor of Philosophy <lb/>in <lb/>Computer Science <lb/>in the <lb/>GRADUATE DIVISION <lb/>of the <lb/></note>
+		<byline><affiliation>UNIVERSITY of CALIFORNIA, BERKELEY <lb/></affiliation></byline>
+		<note type="degree">Committee in charge: <lb/>Professor James W. Demmel, Chair <lb/>Professor Beresford N. Parlett <lb/>Professor Phil Colella <lb/></note>
+		<date>1997 <lb/></date>
+		<pb/>
+		</front>
+</text>
+</tei>

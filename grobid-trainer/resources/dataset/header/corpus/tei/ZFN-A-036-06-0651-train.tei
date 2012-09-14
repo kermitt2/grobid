@@ -1,0 +1,26 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="ZFN-A-036-06-0651"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<titlePage>
+				<docTitle>
+					<titlePart type="main">Correlations between the Ground State and the Triplet State<lb/> Character Orders of Benzenoid Hydrocarbons<lb/></titlePart>
+				</docTitle>
+				<byline><docAuthor>Chr. Brauchte and J. Voitlander</docAuthor><lb/></byline>
+				<byline><affiliation>Institut für Physikalische Chemie der Universität München<lb/></affiliation></byline>
+                                <byline><docAuthor>and H. Vogler</docAuthor><lb/></byline>
+                                <byline><affiliation>MPI für Medizinische Forschung, Abteilung Organische Chemie</affiliation>, <address>Heidelberg<lb/></address></byline>
+				<reference>Z. Naturforsch. *6«, 651-653 (1981); </reference>
+				<note type="submission">received April 25, 1981<lb/></note>
+			</titlePage>
+			<div type="abstract">The relative localization of the ^-conjugation of benzenoid hydrocarbons in the ground state So <lb/>
+and the lowest excited triplet state Ti is described by means of character orders. For molecules <lb/>
+with the same unmber of electron sextets a linear correlation could be found between the mean <lb/>
+character orders of So and Ti indicating the similarities in the electron distribution of these states. <lb/>
+The relevance of this similarity for an earlier explanation of the zero-field splitting in Ti is given.<lb/></div>
+			<div type="intro">Recently we have developed a concept [1] to<lb/></div>
+		</front>
+	</text>
+</tei>

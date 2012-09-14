@@ -1,0 +1,34 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="1111"/>  
+	</teiHeader>
+<text xml:lang="en"> 
+	<front>
+        <note type="reference">Computer  Methods and Programs in Biomedicine (2005)  77,  129—139<lb/></note>
+        
+		<docTitle>
+			<titlePart type="main">Robust tests for the multivariate Behrens—Fisher<lb/> problem<lb/></titlePart>
+		</docTitle> 
+		
+		<byline><docAuthor>Lisa M. Lix  a, *  , H.J. Keselman  b  , Aynslie M. Hinds  a <lb/> </docAuthor></byline>
+		
+		<byline><affiliation>a   Department  of Community Health Sciences, Faculty of Medicine, University of Manitoba, <lb/> </affiliation></byline> 
+		<address>408-727  <lb/> McDermot Avenue, Winnipeg, Man., Canada R3E 3P5<lb/></address>  
+		
+		<byline><affiliation>b  Department of Psychology, University of Manitoba, </affiliation></byline> 
+		<address>Winnipeg, Man., Canada R3T 2N2 <lb/></address> 
+		
+		<note type="submission">Received </note><date type="submission">2 December 2003 ;</date> <note type="submission">received in revised form 9 July 2004; accepted 9 September 2004<lb/></note>
+
+		<keywords>KEYWORDS<lb/> Multivariate;<lb/> Mean equality;<lb/> Two-group design;<lb/>  Robust estimation;<lb/> Covariance<lb/> heterogeneity<lb/></keywords>
+		
+		<div type="abstract">Summary Hotelling's T  2  procedure is used to test the equality of means in two-<lb/> group multivariate designs when covariances are homogeneous. A number of alter-<lb/> natives to T  2  , which are robust to covariance heterogeneity, have been proposed in<lb/> the literature. However, all are sensitive to departures from multivariate normal-<lb/> ity. We demonstrate how to obtain multivariate tests that are robust to covariance<lb/> heterogeneity and non-normality with estimators of location and scale based on<lb/> trimming and Winsorizing. The performance of six alternatives to T  2  was examined<lb/> via Monte Carlo methods when characteristics of the research design, degree of co-<lb/> variance heterogeneity, and degree of non-normality were manipulated. We have<lb/> recently developed a program written in the SAS/IML language that can be used to<lb/> implement these robust multivariate tests. Recommendations are provided on the<lb/> specific data-analytic conditions under which these tests should be adopted.<lb/></div>  	
+		
+		<note type="copyrights">© 2004 Elsevier Ireland Ltd. All rights reserved.<lb/> </note>
+		
+		<introduction>1. Introduction<lb/></introduction>
+		
+		
+    </front>
+</text>
+</tei>                              

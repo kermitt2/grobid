@@ -1,0 +1,37 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="ZFN-A-054-01-0039"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<titlePage>
+				<docTitle>
+					<titlePart type="main">Phase Structures in the Micromaser Photon Statistics*</titlePart>
+				</docTitle>
+				<byline><docAuthor>Jänos A, Bergou and Päl Bogär</docAuthor><lb/></byline>
+				<byline><affiliation>Department of Physics and Astronomy, Hunter College of the City University of New York, <lb/></affiliation></byline>
+				<byline><address>695 Park Avenue, New York, New York 10021, USA<lb/></address></byline>
+				<reference>Z. Naturforsch. 54 a, 39^9 (1999); </reference>
+				<note type="submission">received September 24, 1998<lb/></note>
+			</titlePage>
+			<div type="abstract">In the photon number distribution p{0,k) of the micromaser, distinct structures are formed <lb/>
+by the ridges connecting the peaks in the 6 - k space. We refer to these structures as phases. <lb/>
+By a simple condition we can distinguish between "semiclassicar* and "quantum" regimes of <lb/>
+operation near and far above threshold, respectively. In the semiclassical regime, the equations <lb/>
+of state of the phases 0 = 0{k) are monotonous and coincide with the steady state solutions of <lb/>
+the semiclassical theory. They reflect typical features of the micromaser dynamics. The transition <lb/>
+jumps, e. g„ between the phases decrease with increasing pumping parameter 0, signifying the onset <lb/>
+of the Jaynes-Cummings collapse. On increasing 0 further, the phases first disintegrate and then <lb/>
+restructure into new kinds of phases in the quantum regime. The equations of state are no longer <lb/>
+monotonous. Large single peaks, the quantum island states (QIS), develop in the neighborhoods <lb/>
+of minima. The system undergoes oscillations between two kinds of quantum island states, QIS" <lb/>
+and QIS*, as a function of ß. The disintegration and transformation of phases recur periodically as <lb/>
+B is varied, and the phases in the semiclassical region are followed by consecutive phase structures <lb/>
+in the quantum regime. The subsequent collapses and revivals of phases are directly connected <lb/>
+to the Jaynes-Cummings collapse and revival. The observation of these phase structures and the <lb/>
+accompanying QIS is experimentally feasible. <lb/></div>
+	     	    	<keywords>PACS 42.50.Dv, 42.52+x<lb/></keywords>
+			<div type="intro">1. Introduction<lb/></div>
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">Institut für Physikalische und Theoretische Chemie</orgName> der
+							<orgName type="institution">Technischen Universität München</orgName>,
+							<address>
+								<addrLine>Lichtenbergstraße 4</addrLine>,
+								<postCode>D-8046</postCode>
+								<settlement>Garching</settlement>,
+								<country>Bundesrepublik Deutschland</country>
+								<lb/>
+							</address>
+							<orgName type="institution">Botanisches Institut</orgName> der
+							<orgName type="institution">Ludwig-Maximilians-Universität</orgName>,
+							<address>
+								<addrLine>Menzinger Straße 67</addrLine>,
+								<postCode>D-8000</postCode>
+								<settlement>München 19</settlement>,
+								<country>Bundesrepublik Deutschland</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

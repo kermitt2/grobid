@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="245"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Layered, Server-based Support <lb/>for Object-Oriented Application Development <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Guruduth Banavar Douglas Orr Gary Lindstrom <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science <lb/>University of Utah,</affiliation></byline>
+		<address>Salt Lake City, UT 84112 USA <lb/></address>
+		<email>{fbanavar,dbo,lindstromg}@cs.utah.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>This paper advocates the idea that the physical modularity (file structure) of application components supported by conventional OS environments can be elevated to the level of logical modularity, which in turn <lb/>can directly support application development in an <lb/>object-oriented manner. We demonstrate this idea <lb/>through a system-wide server that manages the manipulation of such components effectively. The server <lb/>is designed to be a fundamental operating system service responsible for binding and mapping component <lb/>instances into client address spaces. <lb/>We show how this model solves some longstanding <lb/>problems with the management of application components in existing application development environments. We demonstrate that this model&apos;s effectiveness derives from its support for the cornerstones of <lb/>OO programming: classes and their instances, encapsulation, and several forms of inheritance. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

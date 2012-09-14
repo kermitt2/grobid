@@ -1,0 +1,20 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="1044"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Two-Dimensional Melting of a Crystal of Ferrofluid Spikes <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>François Boyer  1  and Eric Falcon  2 <lb/></docAuthor></byline>
+		<byline><affiliation>1  IUSTI, Université de Provence, CNRS (UMR 6595),</affiliation></byline>
+		<address>5 rue E. Fermi, 13 453 Marseille, France <lb/></address>
+		<byline><affiliation>2  Laboratoire Matière et Systèmes Complexes (MSC), Université Paris Diderot, CNRS (UMR 7057) <lb/></affiliation></byline>
+		<address>10 rue A. Domon &amp; L. Duquet, 75 013 Paris, France <lb/></address>
+		<date>(Dated: September 18, 2009) <lb/></date>
+		<div type="abstract">We report the observation of the transition from an ordered solid-like phase to a disordered liquid- <lb/> like phase of a lattice of spikes on a ferrofluid surface submitted to horizontal sinusoidal vibrations. <lb/> The melting transition occurs for a critical spike displacement which is experimentally found to follow <lb/> the Lindemann criterion, for two different lattice topologies (hexagonal and square) and over a wide <lb/> range of lattice wavelengths. An intermediate hexatic-like phase between the solid and isotropic <lb/> liquid phases is also observed and characterized by standard correlation functions. This dissipative <lb/> out-of-equilibrium system exhibits strong similarities with 2D melting in solid-state physics. <lb/></div>
+		<keywords type="pacs">PACS numbers: 47.65.Cb, 64.70.D-, 05.70.Ln <lb/></keywords>
+		</front>
+</text>
+</tei>

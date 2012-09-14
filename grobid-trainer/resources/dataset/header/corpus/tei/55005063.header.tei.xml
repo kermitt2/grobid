@@ -1,0 +1,69 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005063"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<lb/>
+			<reference>Future Generation Computer Systems</reference>
+			<note type="other">( ) –<lb/></note>
+			<note type="other">Contents lists available at ScienceDirect<lb/></note>
+			<note type="other">Future Generation Computer Systems<lb/></note>
+			<docTitle>
+				<titlePart>Enabling multi-user interaction in large high-resolution distributed<lb/>
+					environments<lb/>
+				</titlePart>
+			</docTitle>
+			<byline>
+				<docAuthor>Ratko Jagodic a,∗ , Luc Renambot a , Andrew Johnson a , Jason Leigh a ,
+					Sachin Deshpande b</docAuthor>
+			</byline>
+			<byline>
+				<affiliation>a Electronic Visualization Laboratory, University Illinois at Chicago, </affiliation>
+			</byline>
+			<address>United States</address>
+			<byline>
+				<affiliation>b Sharp Labs of America, </affiliation>
+			</byline>
+			<address>
+				United States
+			</address>
+			<note type="other">article info<lb/></note>
+			<note type="submission">Article history:<lb/>Received 7 March 2010<lb/>Received in
+				revised form 30 July 2010<lb/>Accepted 12 November 2010<lb/></note>
+				
+				
+			<note type="other">Available online xxxx<lb/></note>
+				
+			<keywords>Keywords: Human factors<lb/> Input devices and strategies<lb/>Interactive
+				systems<lb/>Distributed systems<lb/>Distributed graphics<lb/>Collaborative
+				computing<lb/></keywords>
+				
+			<space dim="horizontal"/>
+			<div type="abstract"> abstract<lb/> As the amount and the resolution of collected<lb/>
+				scientific data increase, scientists are realizing the potential benefits that
+				large<lb/> high-resolution displays can have in assimilating this incoming data.
+				Often this data<lb/> has to be processed on powerful remote computing and storage
+				resources, converted to<lb/> high-resolution digital media and yet visualized on a
+				local tiled-display. This is the<lb/> basic premise behind the OptIPuter model.
+				While the streaming middleware to enable this<lb/> kind of work exists and the
+				optical networking infrastructure is becoming more widely<lb/> available, enabling
+				multi-user interaction in such environments is still a challenge. In<lb/> this
+				paper, we present an interaction system we developed to support collaborative
+				work<lb/> on large high-resolution displays using multiple interaction devices and
+				scalable,<lb/> distributed user interface widgets. This system allows multiple users
+				to simultaneously<lb/> interact with local or remote data, media and applications,
+				through a variety of<lb/> physical interaction devices on large high-resolution
+				displays. Finally, we present our<lb/> experiences with using the system over the
+				past two years. Most importantly, having an<lb/> actual working system based on the
+				OptIPuter model allows us to focus our research<lb/> efforts to better understand
+				how to make such high-resolution environments more<lb/> user-friendly and usable in
+				true real-world collaborative scenarios as opposed to<lb/> constrained laboratory
+				settings.<lb/>
+			</div>
+
+			<note type="copyright">&#169; 2010 Elsevier B.V. All rights reserved.</note>
+		</front>
+	</text>
+</tei>

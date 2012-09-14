@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="ZNB-1947-2b-0010"/>
+	</teiHeader>
+	<text xml:lang="de">
+		<front>
+			<lb/>
+			<docTitle>
+				<titlePart>Eine neue Deutung<lb/> des, antibakteriellen Wirkungsmechanismus der Sulfonamide<lb/></titlePart>
+			</docTitle>
+
+			<byline>
+				<docAuthor>Von RUDOLF TSCHESCHE<lb/></docAuthor>
+			</byline>
+
+			<byline>
+				<affiliation>Aus dem Foischungslat oratorium der Kindelklinik</affiliation>
+			</byline>
+			
+			<address>in Hamburg-Eppendorf<lb/></address>
+
+			<reference>(Z. Naturforschg. 2b, IC—11 [1947];</reference>
+
+			<note type="submission">eirigegargen am 17. Dezember 1946)<lb/></note>
+
+		</front>
+	</text>
+</tei>

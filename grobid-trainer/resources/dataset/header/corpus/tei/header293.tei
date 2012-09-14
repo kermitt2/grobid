@@ -1,0 +1,20 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="298"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Automatic Program Specialization for <lb/>Interactive Media <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Scott Draves <lb/></docAuthor></byline>
+		<date>July 23, 1997 <lb/></date>
+		<idno>CMU-CS-97-159 <lb/></idno>
+		<byline><affiliation>School of Computer Science <lb/>Carnegie Mellon University <lb/></affiliation></byline>
+		<address>Pittsburgh, PA 15213 <lb/></address>
+		<note type="degree">Submitted in partial fulfillment of the requirements <lb/>for the degree of Doctor of Philosophy. <lb/>Thesis Committee: <lb/>Peter Lee, Chair <lb/>William Scherlis <lb/>Andy Witkin <lb/>Olivier Danvy <lb/></note>
+		<note type="copyright">c fl1997 Scott Draves <lb/></note><note type="grant">This research was sponsored in part by the Defense Advanced Research Projects Agency <lb/>CSTO under the title The Fox Project: Advanced Languages for Systems Software, ARPA Order No. C533, issued by ESC/ENS under Contract No. F19628-95-C-0050. The views and <lb/>conclusions contained in this document are those of the authors and should not be interpreted as <lb/>representing the official policies, either expressed or implied, of the Defense Advanced Research <lb/>Projects Agency or the U.S. Government. <lb/></note>
+		<pb/>
+		</front>
+</text>
+</tei>

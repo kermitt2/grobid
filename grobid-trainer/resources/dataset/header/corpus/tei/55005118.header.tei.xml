@@ -1,0 +1,66 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005118"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<pb/>
+			<pb/>
+			<idno>ORNL/Sub/8.5-22005/1<lb/></idno>
+			<note type="other">Dist. Category UC-97a<lb/></note>
+			<docTitle>
+				<titlePart>INTEGRATED HIERARCHICAL COMPUTER SYSTEMS FOR<lb/>
+					ADAPTIVE PROTECTIVE RELAYING AND CONTROL<lb/>
+					OF ELECTRlC TRANSMISSION POWER SYSTEMS<lb/></titlePart>
+			</docTitle>
+			<note type="other">Investigation Team<lb/></note>
+			<byline>
+				<docAuthor>A. G. Phadke,* Project Leader<lb/> H. Horowitz @<lb/>
+					J. S. Thorp #</docAuthor>
+			</byline>
+			
+			<byline>
+				<affiliation>* Virginia Polytechnic Institute and State University<lb/></affiliation>
+			</byline>
+			<byline>
+				<affiliation>@ American Electric Power Company, Xnc.<lb/></affiliation>
+			</byline>
+			<byline>
+				<affiliation># Cornell University<lb/></affiliation>
+			</byline>
+			
+			<note type="other">Technical Pro&amp;t Manager<lb/>
+				Oak Ridge National Laboratory<lb/>
+				D. T. Rizy<lb/>
+			</note>
+			<note type="grant">Research sponsored by the Office of Energy Storage and Distribution,<lb/>
+				Electric Energy Systems Program, U. S. Department of Energy<lb/>
+			</note>
+			<note type="submission">
+				Date Completed - October 27, 1988<lb/>
+			</note>
+			<date>	
+				Date P u b l i s h e d - November 1989<lb/>
+			</date>	
+			<note type="other">
+				Report prepared by<lb/>
+				Virginia Polytechnic Institute and State University<lb/>
+				Blacksburg, Virginia 24061<lb/>
+				under<lb/>
+				Subcontract No. 86X-22005C<lb/>
+				for the<lb/>
+				ENERGY DIVISION<lb/>
+				OAK RIDGE NATIONAL LABORATORY<lb/>
+				Oak Ridge, Tennessee 37831<lb/>
+				operated by<lb/>
+				MARTIN MARJETTA ENERGY SYSTEMS, INC.<lb/>
+				for the<lb/>
+				U. S. Department of Energy<lb/>
+				under Contract No. DE-AC05-840R21490<lb/>
+			</note>
+			<note type="other">3 41)Sb 03285LB 4<lb/></note>
+			
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Ramon</forename>
+								<surname>Ganigué</surname>
+								<marker>a,*</marker> ,
+							</persName>
+							<persName>
+								<forename>Jordi</forename>
+								<surname>Gabarró</surname>
+								<marker>a</marker> ,
+							</persName>
+							<persName>
+								<forename>Alexandre</forename>
+								<surname>Sànchez-Melsió</surname>
+								<marker>b</marker> ,
+							</persName>
+							<persName>
+								<forename>Maël</forename>
+								<surname>Ruscalleda</surname>
+								<marker>a</marker> ,
+							</persName>
+							<persName>
+								<forename>Helio</forename>
+								<surname>López</surname>
+								<marker>a</marker> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Xavier</forename>
+								<surname>Vila</surname>
+								<marker>b</marker> ,
+							</persName>
+							<persName>
+								<forename>Jesús</forename>
+								<surname>Colprim</surname>
+								<marker>a</marker> ,
+							</persName>
+							<persName>
+								<forename>M</forename> .
+								<surname>Dolors Balaguer</surname>
+								<marker>a</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

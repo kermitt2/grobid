@@ -1,0 +1,38 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="690"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Learning to Schedule Straight-Line Code <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>J. Eliot B. Moss <lb/></docAuthor></byline>
+		<byline><affiliation>Dept. of Comp. Sci. <lb/>Univ. of Mass. <lb/></affiliation></byline>
+		<address>Amherst, MA 01003 <lb/></address>
+		<byline><docAuthor>Paul E. Utgoff <lb/></docAuthor></byline>
+		<byline><affiliation>Dept. of Comp. Sci. <lb/>Univ. of Mass. <lb/></affiliation></byline>
+		<address>Amherst, MA 01003 <lb/></address>
+		<byline><docAuthor>John Cavazos <lb/></docAuthor></byline>
+		<byline><affiliation>Dept. of Comp. Sci. <lb/>Univ. of Mass. <lb/></affiliation></byline>
+		<address>Amherst, MA 01003 <lb/></address>
+		<byline><docAuthor>Doina Precup <lb/></docAuthor></byline>
+		<byline><affiliation>Dept. of Comp. Sci. <lb/>Univ. of Mass. <lb/></affiliation></byline>
+		<address>Amherst, MA 01003 <lb/></address>
+		<byline><docAuthor>Darko Stefanovi c <lb/></docAuthor></byline>
+		<byline><affiliation>Dept. of Comp. Sci. <lb/>Univ. of Mass. <lb/></affiliation></byline>
+		<address>Amherst, MA 01003 <lb/></address>
+		<byline><docAuthor>Carla Brodley <lb/></docAuthor></byline>
+		<byline><affiliation>Sch. of Elec. and Comp. Eng. <lb/>Purdue University <lb/></affiliation></byline>
+		<address>W. Lafayette, IN 47907 <lb/></address>
+		<byline><docAuthor>David Scheeff <lb/></docAuthor></byline>
+		<byline><affiliation>Sch. of Elec. and Comp. Eng. <lb/>Purdue University <lb/></affiliation></byline>
+		<address>W. Lafayette, IN 47907 <lb/></address>
+		<div type="abstract">Abstract <lb/>Execution speed of programs on modern computer architectures is sensitive, by a factor of two or more, to the order in which instructions <lb/>are presented to the processor. To realize potential execution efficiency, <lb/>it is now customary for an optimizing compiler to employ a heuristic <lb/>algorithm for instruction scheduling. These algorithms are painstakingly <lb/>hand-crafted, which is expenseive and time-consuming. We show how <lb/>to cast the instruction scheduling problem as a learning task, so that one <lb/>obtains the heuristic scheduling algorithm automatically. Our focus is the <lb/>narrower problem of scheduling straight-line code, also known as a basic <lb/>block of instructions. Our empirical results show that just a few features <lb/>are adequate for quite good performance at this task for a real modern <lb/>processor, and that any of several supervised learning methods perform <lb/>nearly optimally with respect to the features used. <lb/></div>
+		<keywords>Category: Applications (compiler optimization) <lb/></keywords>
+		<note type="submission">Original: This work has not been submitted elsewhere. <lb/></note>
+		<note type="other">Presentation: We prefer oral presentation. <lb/>Contact author: Eliot Moss <lb/></note>
+		<div type="intro">1 Introduction <lb/></div>
+		</front>
+</text>
+</tei>

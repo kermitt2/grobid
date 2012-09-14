@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>ISLAM</forename>
+								<surname>KHAN</surname>,
+							</persName>
+							<persName>
+								<forename>FARIDA</forename>
+								<middlename>M</middlename>.
+								<surname>AL-AWADI</surname>, and
+							</persName>
+							<persName>
+								<forename>NANCY</forename>
+								<surname>THOMAS</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

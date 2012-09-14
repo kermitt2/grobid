@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="538"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<note type="reference">Proceedings of the 4th International Symposium on Intelligent Robotic Systems SIRS&apos;96, Lisbon, Portugal, July 22-26, 1996 <lb/></note>
+		<docTitle>
+			<titlePart type="main">Memory-based Stochastic Optimization for Automated Tuning <lb/>of Neural Network&apos;s High Level Parameters ? <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Artur Dubrawski ** <lb/></docAuthor></byline>
+		<byline><affiliation>The Robotics Institute, Carnegie Mellon University,</affiliation></byline>
+		<address>5000 Forbes Avenue, Pittsburgh, PA 15213, USA <lb/></address>
+		<div type="abstract">Abstract. In this paper we describe a new method for automated tuning of high level parameters of supervised <lb/>learning systems. It uses memory-based learning principles and follows certain ideas of experimental design. The <lb/>described method allows not only for an efficient search through a decision space, but also for a concurrent validation <lb/>of the learning algorithm performance on a given data. Potential usefulness of the proposed approach is illustrated <lb/>with the Fuzzy-ARTMAP neural network application to learning a qualitative positioning of an indoor mobile robot <lb/>equipped with sonar range sensors. Automatically selected neural network setpoints reach a comparable performance <lb/>to those achieved by human experts in relatively simple 2D cases. Migration of the proposed method to higher order <lb/>optimization domains bears a big promise, but requires further research. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

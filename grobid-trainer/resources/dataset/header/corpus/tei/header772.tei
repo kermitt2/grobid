@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="773"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">MULTI-COORDINATION METHODS FOR <lb/>PARALLEL SOLUTION OF <lb/>BLOCK-ANGULAR PROGRAMS <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>By <lb/>Golbon Zakeri <lb/></docAuthor></byline>
+		<note type="degree">A thesis submitted in partial fulfillment of the <lb/>requirements for the degree of <lb/>Doctor of Philosophy <lb/>(Computer Sciences and Mathematics) <lb/>at the <lb/></note>
+		<byline><affiliation>UNIVERSITY OF WISCONSIN - MADISON <lb/></affiliation></byline>
+		<date>1995 <lb/></date>
+		<pb/>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="674"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Greedy Algorithms in <lb/>Datalog with Choice and Negation <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Sergio Greco Carlo Zaniolo <lb/></docAuthor></byline>
+		<byline><affiliation>Dip: Elettr: Informatica Sist: Computer Science Dept: <lb/>Universita della Calabria Univ: of California at Los Angeles <lb/></affiliation></byline>
+		<address>87030 Rende; Italy LosAngeles; CA 90024 <lb/></address>
+		<email>greco@si:deis:unical:it </email> <email>zaniolo@cs:ucla:edu <lb/></email>
+		<div type="abstract">Abstract <lb/>In the design of algorithms, the greedy paradigm provides a powerful tool for solving <lb/>efficiently classical computational problems, within the framework of procedural languages. However, expressing these algorithms within the declarative framework of logic-based languages has proved to be a difficult research challenge. In this paper, we extend the framework of Datalog-like languages to obtain simple declarative formulations <lb/>for such problems, and propose effective implementation techniques to ensure computational complexities comparable to those of procedural formulations. These advances are <lb/>achieved through the use of the choice construct, that has semantics reducible to that of <lb/>programs with negation under stable model semantics. Then we extend the fixpoint-based <lb/>semantics of choice programs with preference annotations to guide search strategies and <lb/>simple logic-based formulations of classical greedy algorithms. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

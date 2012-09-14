@@ -1,0 +1,16 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="299"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">RECENT ADVANCES IN JANUS: <lb/>A SPEECH TRANSLATION SYSTEM <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>M.Woszczyna, N.Coccaro, A.Eisele, A.Lavie, A.McNair, T.Polzin, I.Rogina, <lb/>C.P.Rose,T.Sloboda, M.Tomita, J.Tsutsumi, N.Aoki-Waibel, A.Waibel, W. Ward <lb/></docAuthor></byline>
+		<byline><affiliation>Carnegie Mellon University <lb/>University of Karlsruhe <lb/></affiliation></byline>
+		<div type="abstract">ABSTRACT <lb/>We present recent advances from our efforts in increasing coverage, robustness, generality and speed of JANUS, CMU&apos;s <lb/>speech-to-speech translation system. JANUS is a speaker-independent system which translates spoken utterances in <lb/>English and also in German into one of German, English or <lb/>Japanese. The system has been designed around the task <lb/>of conference registration (CR). It has initially been built <lb/>based on a speech database of 12 read dialogs, encompassing a vocabulary of around 500 words. We have since been <lb/>expanding the system along several dimensions to improve <lb/>speed, robustness and coverage and to move toward spontaneous input. <lb/></div>
+		<div type="intro">1. INTRODUCTION</div>
+		</front>
+</text>
+</tei>

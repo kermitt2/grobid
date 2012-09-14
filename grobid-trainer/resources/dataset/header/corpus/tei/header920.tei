@@ -1,0 +1,16 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="unknown"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Two Computer Systems Paradoxes: Serialize-to-Parallelize, <lb/>and Queuing Concurrent-Writes <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Rimon Orni and Uzi Vishkin <lb/></docAuthor></byline>
+		<date>September 17, 1995 <lb/></date>
+		<div type="abstract">Abstract <lb/>We present and examine the following Serialize-to-Parallelize Paradox: suppose a <lb/>programmer has a parallel algorithm in mind; the programmer must serialize the algorithm, and is actually trained to suppress its parallelism, while writing code; later, <lb/>however, compilation and runtime techniques are used to reverse the results of this serialization effort and extract as much parallelism as possible. This work actually provides <lb/>examples where parallel or parallel-style code enables extracting more parallelism than <lb/>standard serial code. <lb/>The &quot;arbitrary concurrent-write&quot; convention is useful in parallel algorithms and programs and appears to be not too difficult to implement in hardware for serial machines. <lb/>Still, typically concurrent-writes to the same memory location in a program are implemented by queuing the write operations, thus requiring time linear in the number of <lb/>writes. We call this the Queuing Concurrent-Writes Paradox. <lb/>Assuming that providing useful, easy-to-program programming paradigms to improve the overall effectiveness of computer systems is of interest, this work is a modest <lb/>example for applying such software-driven considerations to computer architecture issues. This work may be the first to relate parallel algorithms and parallel programming <lb/>with the technology of instruction level parallelism. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

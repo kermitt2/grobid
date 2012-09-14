@@ -1,0 +1,20 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="unknown"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<byline><affiliation>INTERNATIONAL COMPUTER SCIENCE INSTITUTE <lb/></affiliation></byline>
+		<address>I 1947 Center St. * Suite 600 * Berkeley, California 94704-1198 *</address>
+		<note type="phone">(510) 643-9153 * FAX (510) 643-7684 <lb/></note>
+		<docTitle>
+			<titlePart type="main">Some MPEG Decoding Functions <lb/>on Spert <lb/>An Example for Assembly <lb/>Programmers <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Arno Formella <lb/></docAuthor></byline>
+		<idno>TR-94-027 <lb/></idno>
+		<date>October 1994 <lb/></date>
+		<div type="abstract">Abstract <lb/>We describe our method how to implement C-program sequences in torrent (T0) <lb/>assembler code while there is no efficient automatic tool. We use re-structuring of <lb/>the source code, vectorization, dataflow graphs, a simple scheduling strategy and a <lb/>straight forward register allocation algorithm. We define some lower and an upper <lb/>bound for the expected run time. For two functions, namely the color transformation <lb/>and reverse DCT, we achieve almost 54, respectively 16 times the performance of a <lb/>Sparc 2 workstation. <lb/></div>
+		<pb/>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,27 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="318"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">-- IBROW3 -- <lb/>An Intelligent Brokering Service for <lb/>Knowledge-Component Reuse on the <lb/>World-Wide Web <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>V. Richard Benjamins 3,4 , Enric Plaza 4 , Enrico Motta 2 , Dieter Fensel 1 , Rudi Studer 1 , Bob Wielinga 3 , <lb/>Guus Schreiber 3 , Zdenek Zdrahal 2 and Stefan Decker 1 <lb/></docAuthor></byline>
+		<byline><affiliation>1 University of Karlsruhe,</affiliation></byline>
+		<address>Institute AIFB, 76128 Karlsruhe, Germany, <lb/></address>
+		<email>{dfe,studer}@aifb.uni-karlsruhe.de <lb/></email>
+		<byline><affiliation>2 Knowledge Media Institute, The Open University,</affiliation></byline>
+		<address>Walton Hall, Milton Keynes, United Kingdom, <lb/></address>
+		<email>{E.Motta,Z.Zdrahal}@open.ac.uk <lb/></email>
+		<byline><affiliation>3 Dept. of Social Science Informatics (SWI), University of Amsterdam,</affiliation></byline>
+		<address>Roetersstraat 15, 1018 WB <lb/> Amsterdam, The Netherlands,</address>
+		<email>{richard,schreiber,wielinga}@swi.psy.uva.nl <lb/></email>
+		<byline><affiliation>4 Artificial Intelligence Research Institute (IIIA), Spanish Council for Scientific Research (CSIC), <lb/></affiliation></byline>
+		<address>Campus UAB, 08193 Bellaterra, Barcelona, Spain,</address>
+		<email>enric@iiia.csic.es <lb/></email>
+		<div type="abstract">The World-Wide Web is changing the nature of software development to a distributive <lb/>plug &amp; play process. This requires a new way of managing software by so-called intelligent <lb/>software brokers. The aim of the European IBROW3 project is to develop an intelligent <lb/>brokering service that enables third party knowledge-component reuse through the <lb/>World-Wide Web. Suppliers provide libraries of knowledge components adhering to some <lb/>standard, and customers can consult these libraries -- through intelligent brokers -- to <lb/>configure a knowledge system suited to their needs by selection and adaptation. IBROW3 <lb/>integrates research on heterogeneous databases, interoperability and web technology with <lb/>knowledge-system technology and ontologies. The aim is to develop a broker that can handle <lb/>web requests for classes of knowledge system (e.g. diagnostic systems) by accessing <lb/>libraries of reusable problem-solving methods on the Web, and selecting, adapting and <lb/>configuring these methods in accordance with the domain at hand. <lb/>The aim of this paper is to give a general overview of the project and to presents its main <lb/>ideas and approach. IBROW3 has started on January 1, 1998 and thus we can only present <lb/>preliminary results. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

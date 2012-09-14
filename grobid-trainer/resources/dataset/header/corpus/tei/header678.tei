@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="680"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">EXPLOITING COMMUTING OPERATIONS IN PARALLELIZING <lb/>SERIAL PROGRAMS <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>PEDRO DINIZ AND MARTIN RINARD <lb/></docAuthor></byline>
+		<byline><affiliation>DEPARTMENT OF COMPUTER SCIENCE <lb/>UNIVERSITY OF CALIFORNIA, SANTA BARBARA <lb/></affiliation></byline>
+		<address>SANTA BARBARA, CA 93106 <lb/></address>
+		<div type="abstract">Abstract. Two operations commute if the result of their execution is independent of the order in which they execute. Commuting operations can be executed <lb/>concurrently provided they execute atomically on the objects they access. Statically <lb/>recognizing commuting operations is of great interest because they increase the amount <lb/>of concurrency a compiler can exploit. In this document we introduce commutativity <lb/>analysis anew technique for automatically parallelizing serial programs. We then <lb/>conduct a feasibility study of existing scientific applications as to the existence and <lb/>exploitability of commuting operations. We study the commuting operations present <lb/>in one such application the Barnes-Hut hierarchical N-body algorithm. We then <lb/>parallelize this application using knowledge of commuting operations and present performance results of the parallel code for a shared-memory multiprocessor. <lb/></div>
+		<div type="intro">1. Introduction.</div>
+		</front>
+</text>
+</tei>

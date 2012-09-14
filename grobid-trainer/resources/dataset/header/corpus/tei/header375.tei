@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="380"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Depth Discontinuities by Pixel-to-Pixel Stereo <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Stan Birchfield Carlo Tomasi <lb/></docAuthor></byline>
+		<byline><affiliation>Computer Science Department <lb/>Stanford University <lb/></affiliation></byline>
+		<address>Stanford, California 94305 <lb/></address>
+		<email>[birchfield, tomasi]@cs.stanford.edu <lb/></email>
+		<note type="grant">This research was supported by the National Science Foundation under a Graduate Research Fellowship and under contract IRI-9506064, and by the Department of Defense under <lb/>MURI contract DAAH04-96-1-0007 monitored by ARO and under a subcontract of STTR <lb/>contract F49620-95-C-0078 monitored by AFOSR. <lb/></note>
+		<pb/>
+		</front>
+</text>
+</tei>

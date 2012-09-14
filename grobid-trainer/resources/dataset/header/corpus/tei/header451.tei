@@ -1,0 +1,23 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="454"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Practical Data Breakpoints: Design and Implementation <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Robert Wahbe Steven Lucco Susan L. Graham <lb/></docAuthor></byline>
+		<byline><affiliation>Computer Science Division,</affiliation></byline>
+		<address>571 Evans Hall <lb/></address>
+		<byline><affiliation>UC Berkeley,</affiliation></byline>
+		<address>Berkeley CA, 94720 <lb/></address>
+		<div type="abstract">Abstract <lb/>A data breakpoint associates debugging actions with <lb/>programmer-specified conditions on the memory state <lb/>of an executing program. Data breakpoints provide <lb/>a means for discovering program bugs that are tedious or impossible to isolate using control breakpoints <lb/>alone. In practice, programmers rarely use data break-points, because they are either unimplemented or prohibitively slow in available debugging software. In this <lb/>paper, we present the design and implementation of a <lb/>practical data breakpoint facility. <lb/>A data breakpoint facility must monitor all memory <lb/>updates performed by the program being debugged. <lb/>We implemented and evaluated two complementary <lb/>techniques for reducing the overhead of monitoring <lb/>memory updates. First, we checked write instructions <lb/>by inserting checking code directly into the program <lb/>being debugged. The checks use a segmented bitmap <lb/>data structure that minimizes address lookup complexity. Second, we developed data flow algorithms <lb/>that eliminate checks on some classes of write instructions but may increase the complexity of the remaining <lb/>checks. <lb/>We evaluated these techniques on the Sparc using <lb/>the spec benchmarks. Checking each write instruc <lb/></div>
+		<note type="grant">This research was sponsored in part by the Defense Advanced Research Projects Agency under grant MDA972-92-J-1028 and contract DABT63-92-C-0026. The content of the paper does not necessarily reflect the position or the policy of the <lb/>Government and no official endorsement should be inferred. <lb/></note>
+		<email>Email: frwahbe, lucco, grahamg@cs.berkeley.edu <lb/></email>
+		<note type="reference">To appear in Proceedings of the ACM SIGPLAN&apos;93 Symposium on Programming Language Design and Implementation, Albuquerque, NM, June 23-25 1993. <lb/></note>
+		<div type="abstract">tion using a segmented bitmap achieved an average <lb/>overhead of 42%. This overhead is independent of the <lb/>number of breakpoints in use. Data flow analysis eliminated an average of 79% of the dynamic write checks. <lb/>For scientific programs such the nas kernels, analysis <lb/>reduced write checks by a factor of ten or more. On the <lb/>Sparc these optimizations reduced the average overhead to 25%. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

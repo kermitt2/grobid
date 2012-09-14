@@ -1,0 +1,27 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="570"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Scalability of Hierarchical Meta-Learning <lb/>on Partitioned Data <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Philip K. Chan <lb/></docAuthor></byline>
+		<byline><affiliation>Computer Science <lb/>Florida Institute of Technology <lb/></affiliation></byline>
+		<address>Melbourne, FL 32901 <lb/></address>
+		<email>pkc@cs.fit.edu <lb/></email>
+		<note type="phone">FAX: (407) 984-8461 <lb/></note>
+		<byline><docAuthor>Salvatore J. Stolfo <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science <lb/>Columbia University <lb/></affiliation></byline>
+		<address>New York, NY 10027 <lb/></address>
+		<email>sal@cs.columbia.edu <lb/></email>
+		<note type="phone">(212) 939-7080 <lb/></note>
+		<date>May 8, 1997 <lb/></date>
+		<div type="abstract">Abstract <lb/>In this paper we study the issue of how to scale machine learning algorithms, that <lb/>typically are designed to deal with main-memory based datasets, to efficiently learn <lb/>models from large distributed databases. We have explored an approach called meta-learning that is related to the traditional approaches of data reduction commonly <lb/>employed in distributed database query processing systems. We explore the scalability <lb/>of learning arbiter and combiner trees from partitioned data. Arbiter and combiner <lb/>trees integrate classifiers trained in parallel from small disjoint subsets. Previous work <lb/>demonstrated the efficacy of these meta-learning architectures in terms of accuracy <lb/>of the computed meta-classifiers. Here we discuss the computational performance <lb/>of constructing arbiter and combiner trees in terms of speedup and scalability as a <lb/>function of database size and number of partitions. The performance of serial learning <lb/>algorithms is evaluated. We then analyze the performance of the algorithms used to <lb/>construct combiner and arbiter trees in parallel. Our empirical results validate these <lb/>analyses and indicate that the techniques can effectively scale up to large datasets with <lb/>millions of records using cheap commodity hardware. <lb/></div>
+		<keywords>Keywords: speedup, scalability, arbiter and combiner trees, meta-learning, parallel/distributed <lb/>processing, inductive learning <lb/></keywords>
+		<note type="grant">This work was partially funded by grants from NSF (IRI-96-32225 &amp; CDA-96-25374), ARPA (F30602 <lb/>96-1-0311), and NYSSTF (423115-445). <lb/></note>
+		<pb/>
+		</front>
+</text>
+</tei>

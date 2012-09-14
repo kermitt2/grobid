@@ -1,0 +1,45 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="ZFN-A-007-01-0127"/>
+	</teiHeader>
+	<text xml:lang="de">
+		<front>
+			<titlePage>
+				<docTitle>
+					<titlePart type="main">Über den Schweif des Kometen Halley im Jahre 1910<lb/></titlePart>
+				</docTitle>
+				<byline>Von <docAuthor>L. BlEEMANN</docAuthor><lb/></byline>
+				<byline>Aus dem <affiliation>Max-Planck-Institut für Physik, Göttingen<lb/></affiliation></byline>
+				<reference>(Z. Naturforschg. 7 a, 127-136 [1952]; </reference>
+				<note type="submission">eingegangen am 11. Oktober 1951)<lb/></note>
+				<note type="dedication">Werner Heisenderg zum 50. Geburtstag<lb/></note>
+			</titlePage>
+			<div type="abstract">Auf Grund von Bobrovnikoffs zusammenfassender Bearbeitung aller Beobach- <lb/>
+tungen des Kometen Halley während der Erscheinung 1910 wird eine in einer voran- <lb/>
+gegangenen Arbeit aufgestellte Hypothese über das Zustandekommen der in geraden Ko- <lb/>
+metenschweifen beobachteten hohen Beschleunigungen einer erneuten Prüfung unter- <lb/>
+zogen. Nach dieser Hypothese beruhen die hohen Beschleunigungen auf der Wechsel- <lb/>
+wirkung solarer ionisierter Partikelströme mit den in derartigen Schweifen beobach- <lb/>
+teten Molekülionen. — Die Beobachtungen des Kometen Halley zeigten, daß der gerade <lb/>
+Schweif I vermutlich ausschließlich aus solchen Ionen bestand. Allerdings kamen CO^ <lb/>
+Ionen auch im Bereich des gekrümmten Schweifs II vor, der im übrigen vorwiegend <lb/>
+aus Staub und Molekülen wie Cg und CN bestand; die Theorie dieses Schweifs wird <lb/>
+nicht diskutiert. — Um die Beziehung der Vorgänge im Kometenschweif zu solaren und <lb/>
+geomagnetischen Ereignissen zu untersuchen, wird eine Tabelle nach Art der in der <lb/>
+Geomagnetik üblichen Darstellungen entworfen. Hierzu wird zu jedem Datum, das <lb/>
+sich auf ein irdisches Ereignis beziehen soll, dasjenige Datum berechnet, zu dem im <lb/>
+Kometenschweif etwas vorgegangen sein muß, wenn derselbe persistente solare Korpus- <lb/>
+kularstrom sich in beiden Fällen ausgewirkt hat. Mit Hilfe dieser Tabelle lassen sich die <lb/>
+höchsten im Schweif beobachteten Beschleunigungen auf denselben auch geomagnetisch <lb/>
+deutlichen solaren Herd zurückführen; zu den entsprechenden Daten tritt im Schweif <lb/>
+eine charakteristische Wolkenbildung auf. Für die mittelgroßen Beschleunigungen <lb/>
+(1 — = 20 bis 100) ergibt sich keine gleich deutliche Korrelation zur erdmagnetischen <lb/>
+Unruhe. — Als weiteres Kriterium wird die Ausbildung und Aktivität feiner faden- <lb/>
+förmiger Strahlen („streamers") in Schweif I herangezogen, ferner die Schweifentwick- <lb/>
+lung vor der ersten Konjunktion mit der Sonne. — Zum Schluß wird die Frage dis- <lb/>
+kutiert, ob Elektronenstöße merklich zur Anregung der Moleküle beitragen können. <lb/>
+Sie wird auf Grund einer quantitativen Abschätzung verneint. <lb/></div>
+			<div type="intro">I n einer vorangegangenen Arbeit ^ war die Wir-<lb/></div>
+		</front>
+	</text>
+</tei>

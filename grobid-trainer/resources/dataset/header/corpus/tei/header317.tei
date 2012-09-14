@@ -1,0 +1,16 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="322"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Markov Chain Algorithms for Planar Lattice Structures <lb/></titlePart>
+		</docTitle>
+		<note type="other">(Extended Abstract) <lb/></note>
+		<byline><docAuthor>Michael Luby Dana Randall Alistair Sinclair <lb/></docAuthor></byline>
+		<div type="abstract">Abstract <lb/>Consider the following Markov chain, whose states <lb/>are all domino tilings of a 2n fi 2n chessboard: starting from some arbitrary tiling, pick a 2 fi 2 window <lb/>uniformly at random. If the four squares appearing in <lb/>this window are covered by two parallel dominoes, rotate the dominoes in place. Repeat many times. This <lb/>process is used in practice to generate a random tiling, <lb/>and is a key tool in the study of the combinatorics of <lb/>tilings and the behavior of dimer systems in statistical physics. Analogous Markov chains are used to <lb/>randomly generate other structures on various two-dimensional lattices. This paper presents techniques <lb/>which prove for the first time that, in many interesting cases, a small number of random moves suffice to <lb/>obtain a uniform distribution. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

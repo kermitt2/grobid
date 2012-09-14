@@ -1,0 +1,33 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="1088"/> 
+	</teiHeader>
+<text xml:lang="en">
+	<front> 
+		<docTitle>
+			<titlePart type="main">On  the theoretical and experimental uncertainties in<lb/> the extraction of the  J/ψ  absorption cross section in<lb/> cold nuclear matter<lb/></titlePart>
+		</docTitle> 
+		<byline><docAuthor>A. Rakotozafindrabe  †   , E. G. Ferreiro   ‡  , F. Fleuret   §  and<lb/> J. P. Lansberg ¶ <lb/></docAuthor></byline>
+		
+		<byline><affiliation>† IRFU/SPhN,  CEA Saclay, </affiliation></byline>
+		<address>91191 Gif-sur-Yvette Cedex, France<lb/></address>
+		
+		<byline><affiliation>‡ Departamento de Fsica de Partculas, Universidad de Santiago de Compostela,<lb/> </affiliation></byline>
+		<address>15782 Santiago de Compostela, Spain<lb/></address>
+		
+		<byline><affiliation>§ Laboratoire Leprince Ringuet, École polytechnique, CNRS-IN2P3, </affiliation></byline>
+		<address>91128 Palaiseau,<lb/> France<lb/></address>
+		
+		<byline><affiliation>¶ Centre de Physique Théorique, École Polytechnique, CNRS, </affiliation></byline>
+		<address>91128 Palaiseau,<lb/> France<lb/></address>
+				
+		<email>E-mail:  andry.rakotozafindrabe@cea.fr<lb/></email>
+		
+		<div type="abstract">Abstract.  We investigate the cold nuclear matter effects on  J/ψ  production, whose<lb/> understanding is fundamental to study the quark-gluon plasma. Two of these effects<lb/> are of particular relevance: the shadowing of the parton distributions and the nuclear<lb/> absorption of the  c¯ c  pair. If  J/ψ's  are not produced  via  a 2  →  1 process as suggested<lb/> by recent theoretical works, one has to modify accordingly the way to compute the<lb/> nuclear shadowing. This naturally induces differences in the absorption cross-section<lb/> fit to the data. A careful analysis of these differences however requires taking into<lb/> account the experimental uncertainties and their correlations, as done in this work for<lb/> dAu  collisions at<lb/>  √  s   N  N   = 200 GeV, using several shadowing parametrisations.<lb/></div>
+		
+		<keywords type="pacs">PACS numbers: 25.75.Dw, 25.75.-q, 24.85.+p, 21.60.Ka<lb/></keywords>
+		<keywords>Keywords:  J/ψ  production,  heavy-ion collisions, cold nuclear matter effects<lb/></keywords>
+		<introduction>1. Introduction<lb/></introduction>
+    </front>
+</text>
+</tei>                              

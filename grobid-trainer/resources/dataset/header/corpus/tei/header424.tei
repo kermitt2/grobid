@@ -1,0 +1,20 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="427"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Dis-equality Constraints in Linear/Integer <lb/>Programming <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Mozafar T. Hajian <lb/></docAuthor></byline>
+		<byline><affiliation>IC-Parc, William Penny Laboratory, Imperial College,</affiliation></byline>
+		<address>London, SW7 2AZ. <lb/></address>
+		<email>mh10@doc.ic.ac.uk <lb/></email>
+		<date>June 21, 1996 <lb/></date>
+		<div type="abstract">Abstract <lb/>We have proposed an extension to the definition of general integer linear programs (ILP) to accept dis-equality constraints explicitly. A new class of logical <lb/>variables is introduced to transform the extended ILP in general form to standard <lb/>form. Branch and Bound algorithm is modified to solve this new class of ILP. <lb/></div>
+		<keywords>Keywords: Mathematical Modelling, Linear/Integer Programming, Algorithms, <lb/>Branch and Bound, Dis-equality Constraints. <lb/></keywords>
+		<pb/>
+		</front>
+</text>
+</tei>

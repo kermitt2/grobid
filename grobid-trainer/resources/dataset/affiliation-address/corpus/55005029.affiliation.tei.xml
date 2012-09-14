@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>a</marker>
+							<orgName type="department">Melbourne Business School</orgName>,
+							<orgName type="institution">University of Melbourne</orgName>,
+							<address>
+								<settlement>Carlton</settlement>,
+								<country>Australia</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>b</marker>
+							<orgName type="department">Department of Economics</orgName>,
+							<orgName type="institution">The University of Melbourne</orgName>,
+							<address>
+								<settlement>Parkville</settlement>,
+								<country>Australia</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>c</marker>
+							<orgName type="institution">Frontier Economics</orgName>,
+							<address>
+								<settlement>Melbourne</settlement>,
+								<country>Australia</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

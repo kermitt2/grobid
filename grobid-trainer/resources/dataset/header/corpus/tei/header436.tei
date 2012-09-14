@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="439"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<note type="reference">16 IEEE TRANSACTIONS ON INFORMATION THEORY, VOL. 44, NO. 1, JANUARY 1998 <lb/></note>
+		<docTitle>
+			<titlePart type="main">Quantized Overcomplete Expansions in R <lb/>N <lb/>Analysis, Synthesis, and Algorithms <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Vivek K Goyal, Student Member, IEEE, Martin Vetterli, Fellow, IEEE, <lb/>and Nguyen T. Thao, Member, IEEE <lb/></docAuthor></byline>
+		<div type="abstract">Abstract|Coefficient quantization has peculiar qualitative <lb/>effects on representations of vectors in R N with respect to <lb/>overcomplete sets of vectors. These effects are investigated <lb/>in two settings: frame expansions (representations obtained <lb/>by forming inner products with each element of the set) <lb/>and matching pursuit expansions (approximations obtained <lb/>by greedily forming linear combinations). In both cases, <lb/>based on the concept of consistency, it is shown that traditional linear reconstruction methods are suboptimal, and <lb/>better consistent reconstruction algorithms are given. The <lb/>proposed consistent reconstruction algorithms were in each <lb/>case implemented, and experimental results are included. <lb/>For frame expansions, results are proven to bound distortion as a function of frame redundancy r and quantization <lb/>step size for linear, consistent, and optimal reconstruction <lb/>methods. Taken together, these suggest that optimal reconstruction methods will yield O(1=r 2 ) MSE, and that consistency is sufficient to insure this asymptotic behavior. A <lb/>result on the asymptotic tightness of random frames is also <lb/>proven. <lb/>Applicability of quantized matching pursuit to lossy vector compression is explored. Experiments demonstrate the <lb/>likelihood that a linear reconstruction is inconsistent, the <lb/>MSE reduction obtained with a nonlinear (consistent) reconstruction algorithm, and generally competitive performance <lb/>at low bit rates. <lb/></div>
+		<keywords>Index Terms Consistent reconstruction, frames, matching <lb/>pursuit, MSE bounds, optimal reconstruction, overcomplete <lb/>representations, quantization, source coding <lb/></keywords>
+		<div type="intro">I. Introduction</div>
+		</front>
+</text>
+</tei>

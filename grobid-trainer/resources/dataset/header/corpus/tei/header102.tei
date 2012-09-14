@@ -1,0 +1,20 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="103"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Priors for Infinite Networks <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Radford M. Neal <lb/></docAuthor></byline>
+		<idno>Technical Report CRG-TR-94-1 <lb/></idno>
+		<byline><affiliation>Department of Computer Science <lb/>University of Toronto <lb/></affiliation></byline>
+		<address>10 King&apos;s College Road <lb/>Toronto, Canada M5S 1A4 <lb/></address>
+		<email>E-mail: radford@cs.toronto.edu <lb/></email>
+		<date>1 March 1994 <lb/></date>
+		<div type="abstract">Abstract <lb/>Bayesian inference begins with a prior distribution for model parameters that is <lb/>meant to capture prior beliefs about the relationship being modeled. For multilayer <lb/>perceptron networks, where the parameters are the connection weights, the prior <lb/>lacks any direct meaning | what matters is the prior over functions computed <lb/>by the network that is implied by this prior over weights. In this paper, I show <lb/>that priors over weights can be defined in such a way that the corresponding <lb/>priors over functions reach reasonable limits as the number of hidden units in the <lb/>network goes to infinity. When using such priors, there is thus no need to limit the <lb/>size of the network in order to avoid &quot;overfitting&quot;. The infinite network limit also <lb/>provides insight into the properties of different priors. A Gaussian prior for hidden-to-output weights results in a Gaussian process prior for functions, which can be <lb/>smooth, Brownian, or fractional Brownian, depending on the hidden unit activation <lb/>function and the prior for input-to-hidden weights. Quite different effects can be <lb/>obtained using priors based on non-Gaussian stable distributions. In networks with <lb/>more than one hidden layer, a combination of Gaussian and non-Gaussian priors <lb/>appears most interesting. <lb/></div>
+		<pb/>
+		</front>
+</text>
+</tei>

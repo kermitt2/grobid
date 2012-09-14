@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="387"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Efficient Restoration of Multicolor Images with <lb/>Independent Noise <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Yuri Boykov Olga Veksler Ramin Zabih <lb/></docAuthor></byline>
+		<byline><affiliation>Cornell University,</affiliation></byline>
+		<address>USA <lb/></address>
+		<keywords>Keywords: Bayesian image restoration; Markov random fields; max flow-min cut <lb/></keywords>
+		<div type="abstract">Abstract <lb/>We consider the problem of maximum a posteriori (MAP) restoration of multicolor images <lb/>where each pixel has been degraded by independent arbitrary noise. We assume that the <lb/>prior distribution is given by a Markov random field with only pairwise site interactions. <lb/>Two classes of site interactions are considered: two-valued site interactions, which form a <lb/>generalized Potts model; and linear site interactions. We give efficient algorithms based on <lb/>graph cuts for both classes. The MAP estimate for a generalized Potts model can be computed by solving a multiway minimum cut problem on a graph. While this graph problem is <lb/>computationally intractable, there are fast algorithms for computing provably good approximations. The MAP estimate with linear site interactions can be computed exactly by solving <lb/>a minimum cut problem on a graph. This can be performed in nearly linear time. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

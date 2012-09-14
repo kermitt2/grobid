@@ -1,0 +1,32 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="ZFN-A-007-11-0735"/>
+	</teiHeader>
+	<text xml:lang="de">
+		<front>
+			<titlePage>
+				<docTitle>
+					<titlePart type="main">Über die Entstehung von Versetzungen *</titlePart>
+				</docTitle>
+				<byline>Von <docAuthor>Peter Fischer **</docAuthor> und <docAuthor>Albert Kochendörfer ***</docAuthor><lb/></byline>
+				<byline>Aus deih <affiliation>Institut für theoretische und angewandte Physik der Techn. Hochschule und <lb/>dem Max-Planck-Institut für Metallforschimg in Stuttgart<lb/></affiliation></byline>
+				<reference>(Z. Naturforschg. 7a, 735-741 [1952]; </reference> 
+				<note type="submission">eingegangen am 7. Juli 1952)<lb/></note>
+			</titlePage>
+			<div type="abstract">Mit HiMe des Ansatzes von Peierls wird die Büdung von Einzelversetzungen an der <lb/>
+Oberfiäche eines unendlich ausgedehnten Halbkristalls unter der Wirkung geeignet an- <lb/>
+gebrachter Oberfiächenkräfte untersucht. Da der kleinste mögliche Energiebetrag für <lb/>
+die Versetzungsbüdung interessiert, erhält man ein Variationsproblem, das aber nicht di- <lb/>
+rekt lösbar ist. Als Näherung wird daher die Form der Versetzung vorgegeben, so daß nur <lb/>
+noch eine Integralgleichung für die Verteüung der Oberflächenkräfte zu lösen ist. Dies <lb/>
+erfolgt durch ein graphisches Verfahren. <lb/>
+Die Energieberechnung ergibt, daß zur Büdimg einer Versetzung eine stetig ansteigende <lb/>
+Energiestufe der Höhe 1—2 eV (bezogen auf eine Kristalldicke eines Atomabstandes A) <lb/>
+zu überwinden ist. Dieser Wert stimmt mit dem von Kochendörfer aus dem Experiment <lb/>
+erschlossenen Wert der Büdungsenergie überein. Da die Bechnung ergibt, daß die zur <lb/>
+Bildung einer Versetzung erforderhchen äußeren Kräfte sehr groß sind^ bleibt auch bei <lb/>
+dieser genauen Untersuchung nur die Annahme einer Kerbwirkung zur Erklärung der <lb/>
+Versetzungsbydung übrig. <lb/></div>
+		</front>
+	</text>
+</tei>

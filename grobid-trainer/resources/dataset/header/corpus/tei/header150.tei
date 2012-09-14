@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="151"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Interface Timing Verification with <lb/>Combined Max and Linear Constraints <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Elizabeth Walkup, Gaetano Borriello <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science and Engineering <lb/>University of Washington <lb/></affiliation></byline>
+		<address>Seattle, WA 98195 <lb/></address>
+		<idno>Technical Report 94-03-04 <lb/></idno>
+		<date>June 3, 1994 <lb/></date>
+		<pb/>
+		</front>
+</text>
+</tei>

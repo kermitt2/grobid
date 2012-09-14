@@ -1,0 +1,20 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="693"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">A Method Providing Identity Privacy to Mobile Users during <lb/>Authentication <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Didier Samfat, Refik Molva <lb/></docAuthor></byline>
+		<byline><affiliation>Institut Eurecom <lb/></affiliation></byline>
+		<address>2229 Route des Cr�tes <lb/>BP 193 - Sophia Antipolis FRANCE <lb/></address>
+		<email>{samfat, molva}@eurecom.fr <lb/></email>
+		<date>August 12, 1994 <lb/></date>
+		<div type="abstract">Abstract <lb/>The increasing development of mobile networks raises new security requirements and concerns. <lb/> In addition to the basic need of authentication, confidentiality and key distribution services, a new pro- <lb/> blem involving privacy is the unauthorized tracking of users&apos; migration. In other words, accessing any <lb/>information related to the mobile user&apos;s location data without his consent, is a serious violation of his <lb/>privacy. Moreover, if no care is taken, the disclosure of the mobile user real identity may appear during <lb/> the authentication process. The basic solution to this problem is the use of aliases which insure non- <lb/> traceability by hiding the user&apos;s real identity and also his relationship with domain authorities. In this <lb/>paper we provide a classification of the different degrees of non-traceability and present a new efficient <lb/> method for the computation of aliases. This technique can be used during authentication of mobile users <lb/>and thus avoids the drawbacks of existing solutions such as GSM and CDPD. <lb/></div>
+		<keywords>Keywords: authentication, mobility, alias, non-traceability, GSM, CDPD, roaming, networksecurity. <lb/></keywords>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

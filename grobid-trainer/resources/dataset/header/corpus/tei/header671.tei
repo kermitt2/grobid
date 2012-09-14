@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="673"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">User-Defined Aggregates <lb/>for Logical Data Languages <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Haixun Wang and Carlo Zaniolo <lb/></docAuthor></byline>
+		<byline><affiliation>Computer Science Department <lb/>University of California at Los Angeles <lb/></affiliation></byline>
+		<address>Los Angeles, CA 90095 <lb/></address>
+		<email>hxwang@cs.ucla.edu </email> <email>zaniolo@cs.ucla.edu <lb/></email>
+		<div type="abstract">Abstract. A new wave of data-intensive and knowledge-based applications|such as data <lb/>mining and decision support|require the introduction of complex application-specific aggregate functions. In this paper, we propose extensions for deductive database systems to <lb/>support these new applications. We develop constructs, formal semantics, and implementation techniques for user-defined aggregates, and describe their realization in an extended <lb/>LDL++ system recently built at UCLA. With these extensions, the system can support online aggregation, roll-ups for data cubing, temporal aggregates for time-series, iceberg queries, <lb/>and other recently proposed operators used in decision support and data mining procedures. <lb/>We then discuss the application of this technology to other DBMSs, and in particular to the <lb/>SQL3 specifications that support the notion of user-defined aggregates. We show that SQL3 <lb/>suffers from limitations that severely restrict its use in new applications; thus we propose <lb/>simple extensions similar to those used for LDL++ to overcome such limitations. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

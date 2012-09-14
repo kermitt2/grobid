@@ -1,0 +1,28 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="329"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">A Tutorial on Visual Servo Control <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Seth Hutchinson <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Electrical and Computer Engineering <lb/>The Beckman Institute for Advanced Science and Technology <lb/>University of Illinois at Urbana-Champaign <lb/></affiliation></byline>
+		<address>405 N. Mathews Avenue <lb/>Urbana, IL 61801 <lb/></address>
+		<email>Email: seth@uiuc.edu <lb/></email>
+		<byline><docAuthor>Greg Hager <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science <lb/>Yale University <lb/></affiliation></byline>
+		<address>New Haven, CT 06520-8285 <lb/></address>
+		<note type="phone">Phone: 203 432-6432 <lb/></note>
+		<email>Email: hager@cs.yale.edu <lb/></email>
+		<byline><docAuthor>Peter Corke <lb/></docAuthor></byline>
+		<byline><affiliation>CSIRO Division of Manufacturing Technology <lb/></affiliation></byline>
+		<address>P.O. Box 883, <lb/>Kenmore. Australia, 4069. <lb/></address>
+		<email>pic@brb.dmt.csiro.au <lb/></email>
+		<date>May 14, 1996 <lb/></date>
+		<div type="abstract">Abstract <lb/>This paper provides a tutorial introduction to visual servo control of robotic manipulators. <lb/>Since the topic spans many disciplines our goal is limited to providing a basic conceptual framework. We begin by reviewing the prerequisite topics from robotics and computer vision, including <lb/>a brief review of coordinate transformations, velocity representation, and a description of the <lb/>geometric aspects of the image formation process. We then present a taxonomy of visual servo <lb/>control systems. The two major classes of systems, position-based and image-based systems, are <lb/>then discussed. Since any visual servo system must be capable of tracking image features in a <lb/>sequence of images, we include an overview of feature-based and correlation-based methods for <lb/>tracking. We conclude the tutorial with a number of observations on the current directions of <lb/>the research field of visual servo control. <lb/></div>
+		<pb/>
+		</front>
+</text>
+</tei>

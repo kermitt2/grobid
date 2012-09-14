@@ -1,0 +1,20 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="634"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Database and Display Algorithms for <lb/>Interactive Visualization of Architectural Models <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>by <lb/>Thomas Allen Funkhouser <lb/></docAuthor></byline>
+		<note type="degree">B.S. (Stanford University) 1983 <lb/>M.S. (University of California at Los Angeles) 1989 <lb/>A dissertation submitted in partial satisfaction of the <lb/>requirements for the degree of <lb/>Doctor of Philosophy <lb/>in <lb/></note>
+		<byline><affiliation>Computer Science <lb/></affiliation></byline>
+		<note type="degree">in the <lb/>GRADUATE DIVISION <lb/>of the <lb/></note>
+		<byline><affiliation>UNIVERSITY of CALIFORNIA at BERKELEY <lb/></affiliation></byline>
+		<note type="degree">Committee in charge: <lb/>Professor Carlo H. Sequin , Chair <lb/>Professor Lawrence Rowe <lb/>Professor Jean Pierre Protzen <lb/></note>
+		<date>1993 <lb/></date>
+		<pb/>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,21 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="unknown"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Trainable Cataloging for Digital Image Libraries with Applications <lb/>to Volcano Detection <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>M.C. Burl yz , U.M. Fayyad , P. Perona , P. Smyth <lb/></docAuthor></byline>
+		<byline><affiliation>California Institute of Technology Jet Propulsion Laboratory <lb/></affiliation></byline>
+		<address>MS 116-81 | Pasadena, CA 91125 MS 525-3660 | Pasadena, CA 91109 <lb/></address>
+		<email>fburl,peronag@systems.caltech.edu </email> <email>ffayyad,pjsg@aig.jpl.nasa.gov <lb/></email>
+		<idno>Computation and Neural Systems Technical Report <lb/>CNS-TR-96-01 |</idno>
+		<date>October 2, 1996 <lb/></date>
+		<div type="abstract">Abstract <lb/>Users of digital image libraries are often not interested in image data per se but in derived <lb/>products such as catalogs of objects of interest. Converting an image database into a usable <lb/>catalog is typically carried out manually at present. For many larger image databases the <lb/>purely manual approach is completely impractical. In this paper we describe the development <lb/>of a trainable cataloging system: the user indicates the location of the objects of interest for <lb/>a number of training images and the system learns to detect and catalog these objects in the <lb/>rest of the database. In particular we describe the application of this system to the cataloging <lb/>of small volcanoes in radar images of Venus. The volcano problem is of interest because of the <lb/>scale (30,000 images, order of 1 million detectable volcanoes), technical difficulty (the variability <lb/>of the volcanoes in appearance) and the scientific importance of the problem. The problem of <lb/>uncertain or subjective ground truth is of fundamental importance in cataloging problems of this <lb/>nature and is discussed in some detail. Experimental results are presented which quantify and <lb/>compare the detection performance of the system relative to human detection performance. The <lb/>paper concludes by discussing the limitations of the proposed system and the lessons learned of <lb/>general relevance to the development of digital image libraries. <lb/></div>
+		<keywords>Keywords: digital image libraries, pattern recognition, science data analysis, volcanoes, Venus, <lb/>SAR, detection, classification, learning, remote sensing <lb/></keywords>
+		<pb/>
+		</front>
+</text>
+</tei>

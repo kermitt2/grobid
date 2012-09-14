@@ -1,0 +1,24 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="445"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Taxonomic Syntax for First Order Inference <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>DAVID MCALLESTER and ROBERT GIVAN <lb/></docAuthor></byline>
+		<byline><affiliation>Massachusetts Institute of Technology, Cambridge Massachusetts <lb/></affiliation></byline>
+		<div type="abstract">Abstract: We identify a new polynomial time decidable fragment of first order <lb/>logic and present a general method for using polynomial time inference procedures <lb/>in knowledge representation systems. Our results indicate that a non-standard <lb/>&quot;taxonomic&quot; syntax is essential in constructing natural and powerful polynomial <lb/>time inference procedures. The central role of taxonomic syntax in our polynomial time inference procedures provides technical support for the often expressed <lb/>intuition that knowledge is better represented in terms of taxonomic relationships <lb/>than classical first order formulas. To use our procedures in a knowledge representation system we define a &quot;Socratic proof system&quot; which is complete for first <lb/>order inference and which can be used as a semi-automated interface to a first <lb/>order knowledge base. <lb/></div>
+		<keywords>Categories and Subject Descriptors: F.4.1 [Mathematical Logic and Formal Languages]: Mathematical logic | computational logic, mechanical theorem <lb/>proving; I.2.3 [Artificial Intelligence]: Deduction and Theorem Proving | deduction <lb/>General Terms: Deduction, Algorithms <lb/>Additional Keywords and Phrases: Proof Theory, Machine Inference, Theorem Proving, Automated Reasoning, Polynomial Time Algorithms, Inference <lb/>Rules, Proof Systems, Mechanical Verification. <lb/></keywords>
+		<note type="grant">This research was supported in part by National Science Foundation Grant IRI-8819624 and in part by the Advanced Research Projects Agency of the Department <lb/>of Defense under Office of Naval Research contract N00014-85-K-0124 and N00014-89-J-3202. <lb/></note>
+		<note type="other">Author&apos;s Address:</note>
+		<byline><affiliation>MIT Artificial Intelligence Laboratory,</affiliation></byline>
+		<address>545 Technology Square, <lb/>Cambridge Mass, 02139,</address>
+		<email>DAM@ai.mit.edu <lb/></email>
+		<note type="reference">This paper appeared in JACM, vol. 40, no. 2, April 1993. </note>
+		<note type="other">A postscript electronic source <lb/>for this paper can be found in ftp.ai.mit.edu:/pub/dam/jacm1.ps. A bibtex reference can <lb/>be found in internet file ftp.ai.mit.edu:/pub/dam/dam.bib. <lb/></note>
+		<pb/>
+		</front>
+</text>
+</tei>

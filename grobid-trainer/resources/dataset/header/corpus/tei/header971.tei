@@ -1,0 +1,19 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="1040"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Clifford group dipoles and the enactment of <lb/> Weyl/Coxeter group W (E  8  ) by entangling gates <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Michel Planat <lb/></docAuthor></byline>
+		<byline><affiliation>Institut FEMTO-ST, CNRS,</affiliation></byline>
+		<address>32 Avenue de l&apos;Observatoire, <lb/> F-25044 Besançon, France</address>
+		<email>(planat@femto-st.fr) <lb/></email>
+		<div type="abstract">Abstract. <lb/>  Peres/Mermin arguments about no-hidden variables in quantum mechanics are used <lb/> for displaying a pair (R, S) of entangling Clifford quantum gates, acting on two qubits. <lb/> From them, a natural unitary representation of Coxeter/Weyl groups W (D  5  ) and <lb/>  W (F  4  ) emerges, which is also reflected into the splitting of the n-qubit Clifford group <lb/>  C  n  into dipoles C  � <lb/>  n  . The union of the three-qubit real Clifford group C  + <lb/> 3  and the Toffoli <lb/> gate ensures a orthogonal representation of the Weyl/Coxeter group W (E  8  ), and of its <lb/> relatives. Other concepts involved are complex reflection groups, BN pairs, unitary <lb/> group designs and entangled states of the GHZ, W and chain families. <lb/></div>
+		<keywords type="pacs">PACS numbers: 03.67.Pp, 03.67.Pp, 02.20.-a, 03.65.Ud <lb/></keywords>
+		<div type="intro">1. Introduction <lb/></div>
+		</front>
+</text>
+</tei>

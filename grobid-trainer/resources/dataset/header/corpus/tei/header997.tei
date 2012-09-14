@@ -1,0 +1,23 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="1066"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">   Strangeness  production in hadronic models and<lb/> recombination models<lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>  Gunnar Gräf   1   , Elvira Santini   1   , Hannah Petersen   1,2   , Jan<lb/> Steinheimer   1   , Michael Mitrovski   3   , Marcus Bleicher   3<lb/></docAuthor></byline>
+		<byline><affiliation> 1   Institut  für Theoretische Physik, Goethe Universität Frankfurt,</affiliation></byline>
+		<address>Germany<lb/></address>    
+		<byline><affiliation> 2   Department of Physics, Duke University, </affiliation></byline>
+		<address>Durham, NC 27708, United States<lb/></address>
+                <byline><affiliation> 3   Frankfurt Institute for Advanced Studies (FIAS), </affiliation></byline>
+                <address>Ruth-Moufang-Str. 1, 60438<lb/>Frankfurt, Germany<lb/></address>
+		<email>E-mail:  bleicher@th.physik.uni-frankfurt.de<lb/></email>
+		<div type="abstract">  Abstract.  We present recent results on the production, spectra and elliptic flow<lb/> of strange particles in dynamic simulations employing hadronic degrees of freedom<lb/> and from recombination models. The main focus will be on the Ultra-relativistic<lb/> Molecular Dynamics (UrQMD) Boltzmann approach to relativistic heavy ion collisions<lb/> and a hybrid approach with intermediate hydrodynamic evolution based on UrQMD<lb/> (available for download as UrQMD v3.3). Compared to the standard binary collision<lb/> approach, an enhancement of the strange particle particle yields is found in the hybrid<lb/> approach due to the assumption of local equilibration. The production origins of the<lb/>  φ-meson  in the hybrid approach are studied in further detail. We also present results<lb/> on the transverse momentum spectra of baryon to meson ratios of strange particles.<lb/> Due to the approximate energy independent scaling of this ratio as a function of  p   T   we<lb/> argue, that a maximum in these spectra may not be a unique sign for quark coalescence<lb/> but can be understood in terms of flow and fragmentation.<lb/></div>
+		<note type="title">Strangeness  production in hadronic models and recombination models<lb/>2<lb/></note>
+		<div type="intro">1. Introduction</div>
+                </front>
+</text>
+</tei>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:mml="http://www.w3.org/1998/Math/MathML">
+   <teiHeader>
+      <fileDesc>
+         <sourceDesc>
+            <biblStruct>
+               <analytic>
+                  <author>
+                     <persName>
+                        <forename>Berna</forename> 
+                        <surname>Bolat</surname> 
+                        <marker>a</marker>,
+                     </persName>
+                     <persName>
+                        <forename>Pablo</forename> 
+                        <surname>Cortés</surname> 
+                        <marker>b,∗</marker>
+                     </persName>
+                  </author>
+               </analytic>
+            </biblStruct>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+</TEI>

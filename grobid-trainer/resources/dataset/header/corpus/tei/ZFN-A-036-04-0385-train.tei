@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="ZFN-A-036-04-0385"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<titlePage>
+				<docTitle>
+					<titlePart type="main">Analysis of the Electronic Factors Controlling the N„ and <lb/>
+the First two «(***, bt) Photoelectron Ionizations in N-Containing <lb/>
+Monosubstituted Benzenes (Ph—NRR' and Ph—N=X) <lb/></titlePart>
+				</docTitle>
+                                <byline><docAuthor>Francesco Paolo Colonna, Giuseppe Distefano, and Derek Jones,</docAuthor><lb/></byline>
+                                <byline><affiliation>Istituto dei Composti del Carbonio Contenenti Eteroatomi e Loro Applicazioni del C. N. R.</affiliation>, <address>Ozzano-Emilia (Bologna), Italy</address> <lb/></byline>
+                                <byline><docAuthor>Alberto Modelli</docAuthor><lb/></byline>
+                                <byline><affiliation>Istituto Chimico "G. Ciamician" deirUniveraita di Bologna</affiliation>, <address>Via Selmi 2 , Bologna , Italy</address> <lb/></byline>
+				<byline><docAuthor>and Vinicio Galasso</docAuthor><lb/></byline>
+				<byline><affiliation>Dipartimento di Chimica dell'Universita</affiliation>, <address>Trieste , Italy</address> <lb/></byline>
+				<reference>Z. Naturforsch. 86a», 385—390 (1081); </reference>
+				<note type="submission">received February 16  1981 <lb/></note>
+			</titlePage>
+			<div type="abstract">The first two 71(02, b\ ) IE*B of monosubstituted benzenes containing di- and tri-coordinated <lb/>nitrogen directly linked to the ring have been measured and analysed together with the Nu IE. <lb/>These photoelectron properties are found to respond in the same sense, though to different ex* <lb/>tents, to inductive and mesomeric interactions that the N-containing substituents sustain with <lb/>the aromatic ring. The different sensitivities of these properties to substituent changes are dis- <lb/>cussed in connection with mechanisms of transmission of electronic effects with the aid of the <lb/>ground state electronic structures determined by means of ab-initio calculations. The relative <lb/>contribution of the relaxation energy to the considered core and valence IE'» is also examined by <lb/>referring to the model used by Gelius and Siegbahn. The factors determining the apparently <lb/>anomalous behaviour of nitrobenzene are discussed.<lb/></div>
+			<div type="intro">Introduction<lb/></div>
+		</front>
+	</text>
+</tei>

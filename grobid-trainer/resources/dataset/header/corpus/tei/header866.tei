@@ -1,0 +1,16 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="unknown"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">A Construction of a Cipher <lb/>From a Single Pseudorandom Permutation <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Shimon Even 1 and Yishay Mansour 2 <lb/></docAuthor></byline>
+		<div type="abstract">Abstract <lb/>We suggest a scheme for a block cipher which uses only one randomly chosen permutation, F . The key, consisting of two blocks, K 1 <lb/>and K 2 is used in the following way: The message block is XORed <lb/>with K 1 before applying F , and the outcome is XORed with K 2 , to <lb/>produce the cryptogram block. We show that the resulting cipher <lb/>is secure (when the permutation is random or pseudorandom). This <lb/>removes the need to store, or generate a multitude of permutations. <lb/></div>
+		<byline><affiliation>1 Comp. Sci. Dept., Technion, Israel Institute of Technology,</affiliation></byline>
+		<address>Haifa, Israel 32000.</address>
+		</front>
+</text>
+</tei>

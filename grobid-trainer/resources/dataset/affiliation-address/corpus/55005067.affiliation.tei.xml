@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>a</marker>
+							<orgName type="department">Department of Computer Science and Systems Engineering</orgName>, 
+							<orgName type="institution">University of Zaragoza</orgName>,
+							<address>
+								<country>Spain</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>b</marker>
+							<orgName type="department">Department of Probability, Logic and Statistics</orgName>, 
+							<orgName type="institution">University of Barcelona</orgName>,
+							<address>
+								<country>Spain</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>c</marker>
+							<orgName type="department">Istituto di Scienza e Tecnologie dell&apos;Informazione</orgName>,
+							<orgName type="institution">Consiglio Nazionale delle Ricerche (ISTI - CNR)</orgName>,
+							<address>
+								<settlement>Pisa</settlement>,
+								<country>Italy</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

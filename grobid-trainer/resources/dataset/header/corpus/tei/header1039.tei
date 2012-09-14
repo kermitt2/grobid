@@ -1,0 +1,29 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="1108"/>  
+	</teiHeader>
+<text xml:lang="en"> 
+	<front>
+		<note type="submission">Confidential:  not for distribution. Submitted to IOP Publishing for peer review </note>
+        <date type="submission">30 November 2009<lb/></date>
+        
+        <note>LETTER  TO THE EDITOR<lb/></note>
+        
+		<docTitle>
+			<titlePart type="main">Influence  of autoionizing states on the pulse-length<lb/> dependence of strong-field Ne   +   photoionization at<lb/> 38.4 eV<lb/></titlePart>
+		</docTitle> 
+		
+		<byline><docAuthor> Linda Hamonou, Michael A. Lysaght and Hugo W. van der<lb/> Hart <lb/></docAuthor></byline>
+		
+		<byline><affiliation>Centre  for Theoretical Atomic, Molecular and Optical Physics, Queen's University<lb/> Belfast,    </affiliation></byline> 
+		<address>Belfast BT7 1NN, United Kingdom <lb/></address> 
+		
+		<div type="abstract"> Abstract.  Using the time-dependent R-matrix approach, we investigate ionization<lb/> of ground-state Ne   +   , irradiated by laser light with a photon energy of 38.4 eV at<lb/> intensities 10   13   W cm   −2   , 2  ×  10   13   W cm   −2   and 10   14   W cm   −2   as a function of pulse<lb/> length. Although the photon energy is below the threshold for single-photon ionization,<lb/> we obtain a significant contribution from single-photon ionization to the ionization<lb/> probability due to the finite duration of the pulse. The two-photon ionization rates<lb/> deduced from the calculations are consistent with those obtained in R-matrix-Floquet<lb/> rate calculations. The ionization probability oscillates with pulse length, which is<lb/> ascribed to population and depopulation of autoionizing states just above the Ne   2+<lb/>   ground state, reached after absorption of a single photon. At an intensity of 10   14   W<lb/> cm   −2   , pulse lengths longer than 50 cycles are required for two-photon ionization to<lb/> dominate the ionization probability. <lb/></div> 	
+		
+		<keywords type="pacs"> PACS numbers: 32.80.Rm, 32.30.Rj<lb/></keywords>
+		 
+		<note>Letter  to the Editor<lb/> 2<lb/></note>
+		
+    </front>
+</text>
+</tei>                              

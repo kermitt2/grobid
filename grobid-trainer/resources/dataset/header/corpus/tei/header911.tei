@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="unknown"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Predicting Data Cache Misses in Non-Numeric Applications <lb/>Through Correlation Profiling <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Todd C. Mowry Chi-Keung Luk <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science Department of Computer Science <lb/>Carnegie Mellon University University of Toronto <lb/></affiliation></byline>
+		<address>Pittsburgh, PA 15213 Toronto, Canada M5S 3G4 <lb/></address>
+		<email>tcm@cs.cmu.edu luk@eecg.toronto.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>To maximize the benefit and minimize the overhead of software-based latency tolerance techniques, <lb/>we would like to apply them precisely to the set of <lb/>dynamic references that suffer cache misses. Unfortunately, the information provided by the state-of-the-art cache miss profiling technique (summary profiling) <lb/>is inadequate for references with intermediate miss <lb/>ratios|it results in either failing to hide latency, or <lb/>else inserting unnecessary overhead. To overcome this <lb/>problem, we propose and evaluate a new technique| <lb/>correlation profiling|which improves predictability by <lb/>correlating the caching behavior with the associated dynamic context. Our experimental results demonstrate <lb/>that roughly half of the 22 non-numeric applications <lb/>we study can potentially enjoy significant reductions <lb/>in memory stall time by exploiting at least one of the <lb/>three forms of correlation profiling we consider. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

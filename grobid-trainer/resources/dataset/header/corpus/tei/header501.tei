@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="504"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">OBJECT-ORIENTED QUERIES: EQUIVALENCE AND OPTIMIZATION <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Gail M. Shaw and Stanley B. Zdonik <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science <lb/>Brown University <lb/></affiliation></byline>
+		<address>Providence, R.I. 02912 <lb/></address>
+		<div type="abstract">We are interested in efficiently accessing data in an object-oriented database. <lb/>We have developed a query algebra which fully supports object identity and <lb/>abstract data types, and have identified a variety of algebraic query transformations. The equivalence of two queries is complicated by the presence of <lb/>object identity. In this paper we define a hierarchy of notions of equivalence <lb/>for queries, and present examples of equivalent query transformations for each <lb/>level of the hierarchy. <lb/></div>
+		<div type="intro">1. INTRODUCTION</div>
+		</front>
+</text>
+</tei>

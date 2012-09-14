@@ -1,0 +1,25 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="ZFN-A-007-01-0010"/>
+	</teiHeader>
+	<text xml:lang="de">
+		<front>
+			<titlePage>
+				<docTitle>
+					<titlePart type="main">Energiebänder und Zwischenbandterme im gestörten Kronig-Potential<lb/></titlePart>
+				</docTitle>
+				<byline>Von <docAuthor>B. Kockel</docAuthor><lb/></byline>
+				<byline>Aus dem <affiliation>Theoretisch-Physikalischen Institut der Universität Leipzig<lb/></affiliation></byline>
+				<reference>(Z. Naturforschg.7 a, 10-16 [1952];</reference> 
+				<note type="submission">eingegangen am 6. September 1951)<lb/></note>
+				<note type="dedication">W. Heisenberg zum 50. Geburtstag gewidmet<lb/></note>
+			</titlePage>
+			<div type="abstract">In einem eindimensionalen Kronigschen Potentialverlauf ist das Potential in einer <lb/>
+Zelle erhöht oder erniedrigt. Das Auftreten von Zwischenbandtermen und ihre Lage <lb/>
+in Abhängigkeit von der Potentialveränderung werden untersucht und daran einige <lb/>
+Bemerkungen über die Vorstellung der verbogenen oder schiefliegenden Energie- <lb/>
+bänder geknüpft.<lb/></div>
+			<div type="intro">I. Einführung und Potentialansatz<lb/></div>
+		</front>
+	</text>
+</tei>

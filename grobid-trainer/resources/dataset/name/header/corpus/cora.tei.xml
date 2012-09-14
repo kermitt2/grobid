@@ -1,0 +1,4994 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink"  xmlns:mml="http://www.w3.org/1998/Math/MathML"><teiHeader xml:lang="en"><fileDesc>
+<sourceDesc>
+<biblStruct>
+<analytic>
+
+<author file="header0.tei">
+<persName>
+	<forename>Chungki</forename>
+	<surname>Lee</surname>
+	<lb/>
+</persName>
+<persName>
+	<forename>James</forename>
+	<middlename>E</middlename>.
+	<surname>Burns</surname>
+	<lb/>
+</persName>
+<persName>
+	<forename>Mostafa</forename>
+	<middlename>H</middlename>.
+	<surname>Ammar</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header1.tei">
+<persName>
+
+	<forename>Sambasiva</forename>
+	<middlename>R</middlename>.
+	<surname>Bhatta</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header10.tei">
+<persName>
+
+	<forename>Neelam</forename>
+	<surname>Soundarajan</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header100.tei">
+<persName>
+
+	<forename>Maged</forename>
+	<middlename>M</middlename>.
+	<surname>Michael</surname>
+</persName>
+<persName>	
+  	<forename>Michael</forename>
+	<middlename>L</middlename>.
+	<surname>Scott</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header1000.tei">
+<persName>
+	<forename>T</forename>
+	<surname>Boeckel</surname>
+</persName>
+<persName>
+,  
+	<forename>M</forename>
+	<surname>Hempel</surname>
+</persName>
+<persName>
+,
+	<forename>I</forename>
+	<surname>Sagert</surname>
+</persName>
+<persName>
+,  
+	<forename>G</forename>
+	<surname>Pagliara</surname>
+</persName>
+<persName>
+	<forename>B</forename>
+	<surname>Sa&apos;d</surname>
+	<lb/>
+</persName>
+<persName>
+, 
+	<forename>J</forename>
+	<surname>Schaffner-Bielich</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header1001.tei">
+<persName>
+	<forename>M</forename>.
+	<surname>Kortelainen</surname>
+</persName>
+<persName>
+and 
+	<forename>T</forename>.
+	<surname>Lesinski</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header1002.tei">
+<persName>
+	<forename>Hélène</forename>
+	<surname>Ricaud</surname>
+	<marker>1</marker>
+</persName>
+<persName>
+, 
+	<forename>Alexander</forename>
+	<surname>Kalweit</surname>
+	<marker>1</marker>
+</persName>
+<persName>
+and 
+	<forename>Antonin</forename>
+	<surname>Maire</surname>
+	<marker>2</marker>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header1003.tei">
+<persName>
+
+	<forename>I</forename>. 
+	<surname>Kraus</surname>
+	<marker>1</marker>
+</persName>
+<persName>
+, 
+	<forename>J</forename>.
+	<surname>Cleymans</surname>
+	<marker>1,2</marker>
+</persName>
+<persName>
+, 
+	<forename>H</forename>.
+	<surname>Oeschler</surname>
+	<marker>1</marker>
+</persName>
+<persName>
+ and 
+	<forename>K</forename>.
+	<surname>Redlich</surname>
+	<marker>3,4,5</marker>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header1004.tei">
+<persName>
+
+	<forename>S</forename>. 
+	<surname>Huang</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header1005.tei">
+<persName>
+
+	<forename>P</forename>.. 
+	<surname>Gossiaux</surname>
+</persName>
+<persName>
+ 
+	<forename>J</forename>.
+	<surname>Aichelin</surname>
+</persName>
+<persName>
+ 
+	<forename>T</forename>.
+	<surname>Gousset</surname>
+</persName>
+<persName>
+and 
+	<forename>V</forename>.
+	<surname>Guiho</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header1006.tei">
+<persName>
+ 
+	<forename>Z</forename>
+	<middlename>L</middlename>
+	<surname>Matthews</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header1007.tei">
+<persName>
+	<forename>Mark</forename>
+	<middlename>G</middlename>.
+	<surname>Alford</surname>
+	<marker>*</marker>
+</persName>
+<persName> 
+	<forename>Armen</forename>
+	<surname>Sedrakian</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header1008.tei">
+<persName>
+	<forename>S</forename>.
+	<middlename>K</middlename>.
+	<surname>Patra</surname>
+	<marker>1</marker>
+</persName>
+<persName>
+	<forename>R</forename>.
+	<middlename>K</middlename>.
+	<surname>Choudhury</surname>
+	<marker>2</marker>
+</persName>
+<persName>
+and 
+	<forename>L</forename>.
+	<surname>Satpathy</surname>
+	<marker>1</marker>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header1009.tei">
+<persName>
+
+	<forename>Péter</forename>
+	<surname>Petreczky</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header101.tei">
+<persName>
+	<forename>Eric</forename>
+	<surname>Allender</surname>,
+</persName>
+<persName>
+	<forename>Danilo</forename>
+	<surname>Bruschi</surname>
+	<lb/>
+</persName>
+<persName>
+and 
+	<forename>Giovanni</forename>
+	<surname>Pighizzini</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header1010.tei">
+<persName>
+
+	<forename>Azwinndini</forename> 
+	<surname>Muronga</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header1011.tei">
+<persName>
+
+	<forename>Paul</forename> 
+	<surname>Sorensen</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header1012.tei">
+<persName>
+
+	<forename>Michael</forename>
+	<surname>Bortz</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header1013.tei">
+<persName>
+
+	<forename>Ho-Meoyng</forename> 
+	<surname>Choi</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header1014.tei">
+<persName>
+	<forename>N</forename>.
+	<surname>Michel</surname>
+	<marker>1</marker>
+</persName>
+<persName>
+,
+	<forename>W</forename>.
+	<surname>Nazarewicz</surname>
+	<marker>2-4</marker>
+</persName>
+<persName>
+, 
+	<forename>J</forename>. 
+	<middlename>Oko</middlename>
+	<surname>lowicz</surname>
+	<marker>5</marker>
+</persName>
+<persName>
+and 
+	<forename>M</forename>.
+	<lb/>
+	<middlename>P</middlename>
+	<surname>loszajczak</surname>
+	<marker>6</marker>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header1015.tei">
+<persName>
+	<forename>Javier</forename> 
+	<surname>Castillo</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header1016.tei">
+<persName>
+	<forename>Wei</forename> 
+	<surname>Wang</surname> 
+	<marker>a</marker>
+</persName>
+<persName>
+, 
+	<forename>Yue-Long</forename>
+	<surname>Shen</surname> 
+	<marker>b,c</marker>
+</persName>
+<persName>
+	<forename>Cai-Dian</forename>
+	<surname>Lü</surname>
+	<marker>a</marker>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header1017.tei">
+<persName>
+
+	<forename>Shu</forename> 
+	<surname>Luo</surname>
+	<marker>*</marker>
+</persName>
+<persName>
+and 
+	<forename>Zhi-zhong</forename>
+	<surname>Xing</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header1018.tei">
+<persName>
+
+	<forename>J</forename>.
+	<surname>Steinheimer</surname>
+	<marker>1</marker>
+</persName>
+<persName>
+, 
+	<forename>C</forename>.
+	<surname>Sturm</surname>
+	<marker>2,3</marker>
+</persName>
+<persName>
+, 
+	<forename>S</forename>.
+	<surname>Schramm</surname>
+	<marker>4,5</marker>
+</persName>
+<persName>
+and 
+	<forename>H</forename>.
+	<surname>Stöcker</surname>
+	<marker>1,3,5</marker>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header1019.tei">
+<persName>
+	<forename>A</forename>.
+	<surname>Rakotozafindrabe</surname>
+	<marker>†</marker>
+</persName>	
+<persName>
+,
+	<forename>E</forename>.
+	<middlename>G</middlename>.
+	<surname>Ferreiro</surname>
+	<marker>‡</marker>
+</persName>	
+<persName>
+,
+	<forename>F</forename>.
+	<surname>Fleuret</surname>
+	<marker>§</marker>
+	<lb/>
+</persName>	
+<persName>
+and 
+	<forename>J</forename>.
+	<middlename>P</middlename>.
+	<surname>Lansberg</surname>
+	<marker>¶</marker>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header102.tei">
+<persName>
+	<forename>Radford</forename>
+	<forename>M</forename>.
+	<surname>Neal</surname>
+	<lb/>	
+</persName>
+</author>
+
+
+<author file="header1020.tei">
+<persName>
+	<forename>J</forename>.
+	<middlename>D</middlename>.
+	<surname>Tapia Takaki</surname>
+	<lb/>	
+</persName>
+</author>
+
+
+<author file="header1021.tei">
+<persName>
+	<forename>P</forename>
+	<surname>Salamon</surname>
+	<marker>1,2</marker>
+</persName>
+<persName>
+and
+   	<forename>A</forename>
+	<middlename>T</middlename>
+	<surname>Kruppa</surname>
+	<marker>1</marker>
+	<lb/>	
+</persName>
+</author>
+
+
+<author file="header1022.tei">
+<persName>
+	<forename>P</forename>. 
+	<surname>Klein</surname>
+	<marker>1</marker>
+</persName>
+<persName>
+, 
+	<forename>R</forename>.
+	<surname>Varga</surname>
+	<marker>1</marker>
+</persName>
+<persName>
+, 
+	<forename>P</forename>.
+	<surname>Vojtanik</surname>
+	<marker>1</marker>
+</persName>
+<persName>
+ 1 , 
+	<forename>J</forename>.
+	<surname>Kovac</surname>
+	<marker>2</marker>
+</persName>
+<persName>
+, 
+	<forename>J</forename>.
+	<surname>Ziman</surname>
+	<marker>3</marker>
+</persName>
+<persName>
+, 
+	<forename>G</forename>.
+	<middlename>A</middlename>.
+	<surname>Badini-Confalonieri</surname>
+	<marker>4</marker>
+</persName>
+<persName>
+, and <lb/>
+	<forename>M</forename>.
+	<surname>Vazquez</surname>
+	<marker>4</marker>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header1023.tei">
+<persName>
+	<forename>S</forename>. 
+	<middlename>H</middlename>.
+	<middlename>M</middlename>.
+	<surname>Jafri</surname>
+	<marker>1, *</marker>	
+</persName>
+<persName>
+, 
+	<forename>K</forename>.
+	<surname>Carva</surname>
+	<marker>2</marker>	
+</persName>
+<persName>
+, 
+	<forename>E</forename>.
+	<surname>Widenkvist</surname>
+	<marker>3</marker>
+</persName>
+<persName>
+, 
+	<forename>T</forename>.
+	<surname>Blom</surname>
+	<marker>1, *</marker>	
+</persName>
+<persName>
+, 
+	<forename>B</forename>.
+	<lb/>
+	<surname>Sanyal</surname>
+	<marker>2</marker>	
+</persName>
+<persName>
+, 
+	<forename>J</forename>.
+	<surname>Fransson</surname>
+	<marker>2</marker>	
+</persName>
+<persName>
+, 
+	<forename>O</forename>.
+	<surname>Eriksson</surname>
+	<marker>2</marker>	
+</persName>
+<persName>
+, 
+	<forename>U</forename>.
+	<surname>Jansson</surname>
+	<marker>3</marker>	
+</persName>
+<persName>
+, 
+	<forename>H</forename>.
+	<surname>Grennberg</surname>
+	<marker>4</marker>	
+</persName>
+<persName>
+, 
+	<forename>O</forename>.
+	<surname>Karis</surname>
+	<marker>2</marker>	
+</persName>
+<persName>
+, 
+	<forename>R</forename>.
+	<middlename>A</middlename>.
+	<surname>Quinlan</surname>
+	<marker>5</marker>	
+</persName>
+<persName>
+, 
+	<forename>B</forename>.
+	<middlename>C</middlename>.
+	<surname>Holloway</surname>
+	<marker>6</marker>	
+</persName>
+<persName>
+and 
+	<forename>K</forename>.
+	<lb/>
+	<surname>Leifer</surname>
+	<marker>1</marker>	
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header1024.tei">
+<persName>
+	<forename>A</forename>.
+	<middlename>N</middlename>.
+	<surname>Vasiliev</surname>
+	<marker>1</marker>
+</persName>
+<persName>	
+, 
+	<forename>O</forename>.
+	<surname>Heczko</surname>
+	<marker>2,3,♣</marker>
+
+	
+</persName>
+<persName>
+, 
+	<forename>O</forename>.
+	<middlename>S</middlename>.
+	<surname>Volkova</surname>
+	<marker>1</marker>
+</persName>
+<persName>
+, 
+	<forename>T</forename>.
+	<middlename>N</middlename>.
+	<surname>Vasilchikova</surname>
+	<marker>1</marker>
+</persName>
+<persName>
+, 
+	<forename>T</forename>.
+	<middlename>N</middlename>.
+	<surname>Voloshok</surname>
+	<marker>1</marker>
+</persName>
+<persName>
+, 
+	<forename>K</forename>.
+	<middlename>V</middlename>.
+	<lb/>
+	<surname>Klimov</surname>
+	<marker>1</marker>
+</persName>
+<persName>
+,
+	<forename>W</forename>.
+	<surname>Ito</surname>
+	<marker>4</marker>
+</persName>
+<persName>
+, 
+	<forename>R</forename>.
+	<surname>Kainuma</surname>
+	<marker>4</marker>
+</persName>
+<persName>
+, 
+	<forename>K</forename>.
+	<surname>Ishida</surname>
+	<marker>5</marker>
+</persName>
+<persName>
+, 
+	<forename>K</forename>.
+	<surname>Oikawa</surname>
+	<marker>5</marker>
+</persName>
+<persName>
+, and 
+	<forename>S</forename>.
+	<surname>Fähler</surname>
+	<marker>2</marker>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header1025.tei">
+<persName>
+by
+	<forename>R</forename>.
+	<middlename>R</middlename>.
+	<middlename>A</middlename>.
+	<surname>Syms</surname>
+	<marker>*</marker>
+</persName>
+<persName>
+, 
+	<forename>L</forename>.
+	<surname>Solymar</surname>
+</persName>
+<persName>
+, 
+	<forename>I</forename>.
+	<middlename>R</middlename>.
+	<surname>Young</surname>
+</persName>
+<persName>
+and 
+	<forename>T</forename>.
+	<surname>Floume</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header1026.tei">
+<persName>
+by
+	<forename>M</forename>.
+	<middlename>A</middlename>.
+	<surname>Moram</surname>
+	<marker>a)</marker>
+</persName>
+<persName>
+, 
+	<forename>C</forename>.
+	<forename>F</forename>.
+	<surname>Johnston</surname>
+</persName>
+<persName>
+,
+	<forename>M</forename>.
+	<forename>J</forename>.
+	<surname>Kappers</surname>
+</persName>
+<persName>
+, 
+	<forename>C</forename>.
+	<forename>J</forename>.
+	<surname>Humphreys</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header1027.tei">
+<persName>
+by 
+	<lb/>
+	<forename>R</forename>
+	<surname>Mantovan</surname>
+	<marker>1,3</marker>
+</persName>
+<persName>
+, 
+	<forename>A</forename>
+	<surname>Lamperti</surname>
+	<marker>1</marker>
+</persName>
+<persName>
+, 
+ 	<forename>M</forename>
+	<surname>Georgieva</surname>
+	<marker>1</marker>
+</persName>
+<persName>
+, 
+ 	<forename>G</forename>
+	<surname>Tallarida</surname>
+	<marker>1</marker>
+</persName>
+<persName>
+and 
+ 	<forename>M</forename>
+	<surname>Fanciulli</surname>
+	<marker>1,2</marker>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header1028.tei">
+<persName>
+
+	<forename>N</forename>. 
+	<surname>Herrman</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header1029.tei">
+<persName>
+
+	<forename>Grégory</forename>
+	<surname>Malinowski</surname>
+	<marker>1</marker>
+</persName>
+<persName>
+, 
+	<forename>Andreas</forename>
+	<surname>Lörincz</surname>
+	<marker>1</marker>
+</persName>
+<persName>
+, 
+	<forename>Stephen</forename>
+	<surname>Krzyk</surname>
+	<marker>1</marker>
+</persName>
+<persName>
+, 
+ 	<lb/>
+	<forename>Philipp</forename>
+	<surname>Möhrke</surname>
+	<marker>1</marker>
+</persName>
+<persName>
+, 
+	<forename>Daniel</forename>
+	<surname>Bedau</surname>
+	<marker>1,3</marker>
+</persName>
+<persName>
+, 
+	<forename>Olivier</forename>
+	<surname>Boulle</surname>
+	<marker>1</marker>
+</persName>
+<persName>
+, 
+	<forename>Jan</forename>
+	<lb/>
+	<surname>Rhensius</surname>
+	<marker>1,2</marker>
+</persName>
+<persName>
+, 
+	<forename>Laura</forename>
+	<middlename>J</middlename>.
+	<surname>Heyderman</surname>
+	<marker>2</marker>
+</persName>
+<persName>
+, 
+	<forename>Young</forename>
+	<middlename>Jin</middlename>
+	<surname>Cho</surname>
+	<marker>3</marker>
+</persName>
+<persName>
+, 
+	<forename>Sunae</forename>
+	<surname>Seo</surname>
+	<marker>3</marker>
+	<lb/>
+</persName>
+<persName>
+ and 
+	<forename>Mathias</forename>
+	<surname>Kläui</surname>
+	<marker>1</marker>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header103.tei">
+<persName>
+
+	<forename>Geoffrey</forename>
+	<middlename>E</middlename>.
+	<surname>Hinton</surname>
+</persName>
+<persName>
+and 
+	<forename>Zoubin</forename>
+	<surname>Ghahramani</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header1030.tei">
+<persName>
+	<forename>M</forename>
+	<surname>Horkel</surname>
+	<marker>1</marker>
+</persName>
+<persName>
+, 
+	<forename>K</forename>
+	<surname>Van Aeken</surname>
+	<marker>2</marker>
+</persName>
+<persName>
+,
+	<forename>C</forename>
+	<surname>Eisenmenger-Sittner</surname>
+	<marker>1</marker>
+</persName>
+<persName>
+, 
+ 	<forename>D</forename>
+	<surname>Depla</surname>
+	<marker>2</marker>
+</persName>
+<persName>
+, 
+	<forename>S</forename>
+	<surname>Mahieu</surname>
+	<marker>2</marker>
+</persName>
+<persName>
+and 
+	<forename>W</forename>
+	<middlename>P</middlename>
+	<surname>Leroy</surname>
+	<marker>2</marker>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header1031.tei">
+<persName>
+	<forename>S</forename>
+	<surname>Theiß</surname>
+	<marker>1</marker>
+</persName>
+<persName>
+, 
+ 	<forename>N</forename>
+	<surname>Bibinov</surname>
+	<marker>2</marker>
+</persName>
+<persName>
+, 
+ 	<forename>N</forename>
+	<surname>Bagcivan</surname>
+	<marker>1</marker>
+</persName>
+<persName>
+, 
+ 	<forename>M</forename>
+	<surname>Ewering</surname>
+	<marker>1</marker>
+</persName>
+<persName>
+, 
+ 	<forename>P</forename>
+	<surname>Awakowicz</surname>
+	<marker>2</marker>
+	<lb/>
+</persName>
+<persName>
+and 
+ 	<forename>K</forename>
+	<surname>Bobzin</surname>
+	<marker>1</marker>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header104.tei">
+<persName>
+
+	<forename>Zoubin</forename>
+	<surname>Ghahramani</surname>
+</persName>
+<persName>
+and 
+	<forename>Geoffrey</forename>
+	<middlename>E</middlename>.
+	<surname>Hinton</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header105.tei">
+<persName>
+by 
+	<forename>David</forename>
+	<middlename>C</middlename>.
+	<surname>Dolson</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header106.tei">
+<persName>
+	<forename>Stephen</forename>
+	<middlename>A</middlename>.  
+	<surname>Fenner</surname>
+	<lb/>
+</persName>
+<persName>	
+	<forename>Lance</forename>
+	<middlename>J</middlename>.  
+	<surname>Fortnow</surname>
+	<lb/>
+</persName>
+<persName>	
+	<forename>Stuart</forename>
+	<middlename>A</middlename>.  
+	<surname>Kurtz</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header107.tei">
+<persName>
+
+	<forename>Divyakant</forename> 
+	<surname>Agrawal</surname>
+</persName>
+<persName>	
+	<forename>Manhoi</forename> 
+	<surname>Choy</surname>
+</persName>
+<persName>	
+	<forename>Hong</forename>
+	<middlename>Va</middlename>
+	<surname>Leong</surname>
+</persName> 
+<persName>		  
+	<forename>Ambuj</forename>
+	<middlename>K</middlename>.
+	<surname>Singh</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header108.tei">
+<persName>
+
+	<forename>Michael</forename>
+	<middlename>O</middlename>.
+	<surname>Duff</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header109.tei">
+<persName>
+	<forename>Richard</forename>
+	<middlename>S</middlename>.
+	<surname>Sutton</surname>
+	<lb/>
+</persName> 
+<persName>	
+	<forename>Doina</forename>
+	<surname>Precup</surname>
+	<lb/>
+</persName> 
+<persName>
+	<middlename>Satinder</middlename>
+	<surname>Singh</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header11.tei">
+<persName>
+	<forename>Jun</forename>
+	<surname>Xu</surname>
+</persName> 
+<persName>	
+	<middlename>Mukesh</middlename>
+	<surname>Singhal</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header110.tei">
+<persName>
+
+	<forename>Tim</forename>
+	<surname>Oates</surname>
+</persName>
+<persName>
+and 
+	<forename>Paul</forename>
+	<middlename>R</middlename>.
+	<surname>Cohen</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header111.tei">
+<persName>
+	<forename>Alan</forename>
+	<surname>Garvey</surname>
+</persName>
+<persName>	
+	<forename>Victor</forename>
+	<surname>Lesser</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header112.tei">
+<persName>
+	<forename>Alan</forename>
+	<surname>Garvey</surname>
+</persName>
+<persName>	
+	<forename>Victor</forename>
+	<surname>Lesser</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header113.tei">
+<persName>
+	<forename>Mary</forename>
+	<middlename>W</middlename>.
+	<surname>Hall</surname>
+</persName>
+<persName>
+	<forename>Ken</forename>
+	<surname>Kennedy</surname>
+</persName>
+<persName>
+	<forename>Kathryn</forename>
+	<middlename>S</middlename>.
+	<surname>Mc Kinley</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header114.tei">
+<persName>
+
+	<forename>Victor</forename>
+	<surname>Lesser</surname>
+</persName>
+<persName>
+, 
+	<forename>Hamid</forename>
+	<surname>Nawab</surname>
+	<lb/>
+</persName>
+<persName>
+, 
+	<forename>Malini</forename>
+	<surname>Bhandaru</surname>
+</persName>
+<persName>
+, 
+	<forename>Norman</forename>
+	<surname>Carver</surname>
+	<lb/>
+</persName>
+<persName>
+, 
+	<forename>Zarko</forename>
+	<surname>Cvetanovic</surname>
+</persName>
+<persName>
+ 
+	<forename>Izaskun</forename>
+	<surname>Gallastegi</surname>
+	<lb/>
+</persName>
+<persName>
+, 
+	<forename>Frank</forename>
+	<surname>Klassner</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header115.tei">
+<persName>
+	<forename>William</forename>
+	<middlename>C</middlename>.
+	<surname>Regli</surname>
+	<lb/>
+</persName>
+<persName>
+	<forename>Satyandra</forename>
+	<middlename>K</middlename>.
+	<surname>Gupta</surname>
+	<lb/>
+</persName>
+<persName>	
+	<forename>Dana</forename>
+	<middlename>S</middlename>.
+	<surname>Nau</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header116.tei">
+<persName>
+
+	<forename>Dheeraj</forename>
+	<surname>Sanghi</surname>
+</persName>
+<persName>
+and 
+	<forename>Ashok</forename>
+	<middlename>K</middlename>.
+	<surname>Agrawala</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header117.tei">
+<persName>
+
+	<forename>G</forename>.
+	<middlename>W</middlename>.
+	<surname>Stewart</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header118.tei">
+<persName>
+
+	<forename>Charles</forename>
+	<surname>Falkenberg</surname>
+</persName>
+<persName>
+,
+	<forename>Paul</forename>
+	<surname>Hagger</surname>
+</persName>
+<persName>
+and 
+	<forename>Steve</forename>
+	<surname>Kelley</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header119.tei">
+<persName>
+
+	<forename>Cengiz</forename>
+	<surname>Alaettinoglu</surname>
+</persName>
+<persName>
+, 
+	<forename>A</forename>.
+	<middlename>Udaya</middlename>
+	<surname>Shankar</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header12.tei">
+<persName>
+
+	<forename>Dean</forename>
+	<surname>Hougen</surname>
+</persName>
+<persName>
+	<forename>John</forename>
+	<surname>Fischer</surname>
+</persName>
+<persName>	 
+	<forename>Deva</forename>
+	<surname>Johnam</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header120.tei">
+<persName>
+
+	<forename>Peter</forename>
+	<surname>Tino</surname>
+	<marker>a;b</marker>
+</persName>
+<persName>
+,
+	<forename>Bill</forename>
+	<middlename>G</middlename>.
+	<surname>Horne</surname>
+	<marker>b</marker>
+</persName>
+<persName>
+, 
+	<forename>C</forename>.
+	<middlename>Lee</middlename>
+	<surname>Giles</surname>
+	<marker>b;c</marker>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header121.tei">
+<persName>
+
+	<forename>G</forename>.
+	<middlename>W</middlename>.
+	<surname>Stewart</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header122.tei">
+<persName>
+
+	<forename>Pete</forename>
+	<surname>Keleher</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header123.tei">
+<persName>
+
+	<forename>Hong</forename>
+	<surname>Liu</surname>
+</persName>
+<persName>	
+	<forename>Jun-Cheol</forename>
+	<surname>Park</surname>
+</persName>
+<persName>	
+	<forename>Raymond</forename>
+	<middlename>E</middlename>.
+	<surname>Miller</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header124.tei">
+<persName>
+
+	<forename>Marwan</forename>
+	<surname>Krunz</surname>
+</persName>
+<persName>
+and 
+	<forename>Satish</forename>
+	<surname>Tripathi</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header125.tei">
+<persName>
+
+	<forename>Jason</forename>
+	<surname>Ellis</surname>
+</persName>
+<persName>
+, 
+	<forename>Anne</forename>
+	<surname>Rose</surname>
+</persName>
+<persName>
+, 
+	<forename>Catherine</forename>
+	<surname>Plaisant</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header126.tei">
+<persName>
+	<forename>Donald</forename>
+	<middlename>L</middlename>.
+	<surname>Stone</surname>
+</persName>
+<persName>	
+	<middlename>Kevin</middlename>
+	<surname>Jeffay</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header127.tei">
+<persName>
+	<forename>James</forename>
+	<middlename>H</middlename>.
+	<surname>Anderson</surname>
+</persName>
+<persName>	
+	<forename>Srikanth</forename>
+	<surname>Ramamurthy</surname>
+</persName>
+<persName>		
+	<middlename>Kevin</middlename>
+	<surname>Jeffay</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header128.tei">
+<persName>
+
+	<forename>Jonathan</forename>
+	<middlename>P</middlename>.
+	<surname>Munson</surname>
+</persName>
+<persName>
+and 
+	<forename>Prasun</forename>
+	<surname>Dewan</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header129.tei">
+<persName>
+	<forename>Maria</forename>
+	<surname>Wolters</surname>
+	<marker>(i)</marker>
+</persName>
+<persName>
+and
+	<forename>Antal</forename>
+	<surname>van den Bosch</surname>
+	<marker>(ii)</marker>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header13.tei">
+<persName>
+
+	<forename>Wee</forename>
+	<middlename>Kheng</middlename>
+	<surname>Leow</surname>
+</persName>
+<persName>
+and 
+	<forename>Risto</forename>
+	<surname>Miikkulainen</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header130.tei">
+<persName>
+
+	<forename>Douglas</forename>
+	<middlename>B</middlename>.
+	<surname>Orr</surname>
+</persName>
+<persName>
+, 
+	<forename>Robert</forename>
+	<middlename>W</middlename>.
+	<surname>Mecklenburg</surname>
+</persName>
+<persName>
+and 
+	<forename>Ravindra</forename>
+	<surname>Kuramkote</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header131.tei">
+<persName>
+
+	<forename>J</forename>. 
+	<middlename>H</middlename>. 
+	<surname>Jacobs</surname> 
+	<lb/>
+</persName>
+<persName>
+	<forename>M</forename>. 
+	<middlename>R</middlename>. 
+	<surname>Swanson </surname> 
+	<lb/>
+</persName>
+<persName>
+	<forename>R</forename>.
+	<middlename>R</middlename>.
+	<surname>Kessler</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header132.tei">
+<persName>
+	<forename>Kenneth</forename>
+	<middlename>L</middlename>.
+	<surname>Albin</surname>
+</persName>
+<persName>
+, 
+	<forename>Bishop</forename>
+	<middlename>C</middlename>.
+	<surname>Brock</surname>
+</persName>
+<persName>
+,
+	<lb/>
+	<forename>Warren</forename>
+	<middlename>A</middlename>.
+	<surname>Hunt</surname>,
+	<suffix>Jr</suffix>.
+</persName>
+<persName>
+,           
+	<forename>Lawrence</forename>
+	<middlename>M</middlename>.
+	<surname>Smith</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header133.tei">
+<persName>
+	<forename>Myung</forename>
+	<middlename>Won</middlename>
+	<surname>Kim</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header134.tei">
+<persName>
+	<forename>Chung</forename>  
+	<middlename>Kei</middlename>
+	<surname>Wong</surname> 
+</persName>
+<persName>	
+	<forename>Mohamed</forename> 
+	<surname>Gouda</surname> 
+</persName>
+<persName>	
+	<forename>Simon</forename>
+	<middlename>S</middlename>.
+	<surname>Lam</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header135.tei">
+<persName>
+
+	<forename>Tara</forename>
+	<middlename>A</middlename>.
+	<surname>Estlin</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header136.tei">
+<persName>
+
+	<forename>Don</forename>
+	<surname>Batory</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header137.tei">
+<persName>
+
+	<forename>Jayadev</forename>
+	<surname>Misra</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header138.tei">
+<persName>
+
+	<forename>William</forename>
+	<surname>Adams</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header139.tei">
+<persName>
+
+	<forename>Vasilis</forename>
+	<surname>Samoladas</surname>
+</persName>
+<persName>
+	<forename>Daniel</forename>
+	<middlename>P</middlename>.
+	<surname>Miranker</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header14.tei">
+<persName>
+
+	<forename>Sebastian</forename>
+	<surname>Thrun</surname>
+	<marker>1</marker>
+</persName>
+<persName>
+, 
+	<forename>Steffen</forename>
+	<surname>Gutmann</surname>
+	<marker>2</marker>
+</persName>
+<persName>
+, 
+	<forename>Dieter</forename>
+	<surname>Fox</surname>
+	<marker>3</marker>
+</persName>
+<persName>
+, 
+	<forename>Wolfram</forename>
+	<surname>Burgard</surname>
+	<marker>3</marker>
+</persName>
+<persName>
+, and 
+	<forename>Benjamin</forename>
+	<middlename>J</middlename>.
+	<surname>Kuipers</surname>
+	<marker>4</marker>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header140.tei">
+<persName>
+	<forename>Robert-Paul</forename>
+	<surname>Berretty</surname>
+	<lb/>
+</persName>
+<persName>
+	<forename>Ken</forename>
+	<surname>Goldberg</surname>
+	<lb/>
+</persName>
+<persName>  
+	<forename>Mark</forename>
+	<middlename>H</middlename>.
+	<surname>Overmars</surname>
+	<lb/>
+</persName>
+<persName>
+	<forename>A.</forename>
+	<middlename>Frank</middlename>
+	<surname>van der Stappen</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header141.tei">
+<persName>
+	<forename>Jorg</forename>
+	<surname>Liebeherr</surname>
+</persName>
+<persName>	
+	<forename>Ian</forename>
+	<middlename>F</middlename>. 
+	<surname>Akyildiz</surname>
+</persName>
+<persName>	
+	<forename>Debapriya</forename>
+	<surname>Sarkar</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header142.tei">
+<persName>
+	<forename>Jane</forename>
+	<middlename>C</middlename>. 
+	<surname>Prey</surname>
+</persName>
+<persName>		
+	<forename>James</forename>
+	<middlename>F</middlename>. 
+	<surname>Cohoon</surname>
+</persName>
+<persName>		 
+	<forename>Greg</forename>
+	<surname>Fife</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header143.tei">
+<persName>
+	<forename>Paul</forename>
+	<middlename>F</middlename>. 
+	<surname>Reynolds</surname>,
+	<suffix>Jr</suffix>.
+	<lb/>
+</persName>
+<persName>	
+	<forename>Craig</forename>
+	<surname>Williams</surname>
+	<lb/>
+</persName>
+<persName>		
+	<forename>Raymond</forename>
+	<middlename>R</middlename>.
+	<surname>Wagner</surname>,
+	<suffix>Jr</suffix>.
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header144.tei">
+<persName>
+	<forename>Bob </forename> 
+	<surname>Cmelik</surname>
+	<lb/>
+</persName>
+<persName>		
+	<forename>David</forename>
+	<surname>Keppel</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header145.tei">
+<persName>
+	<forename>Theodore</forename>
+	<middlename>H</middlename>.
+	<surname>Romer</surname>
+	<lb/>
+</persName>
+<persName>    
+	<forename>Dennis</forename>
+	<surname>Lee</surname>
+	<lb/>
+</persName>
+<persName>  
+	<forename>Brian</forename>
+	<middlename>N</middlename>.
+	<surname>Bershad</surname>
+	<lb/>
+</persName>
+<persName>
+	<forename>J</forename>.
+	<middlename>Bradley</middlename>
+	<surname>Chen</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header146.tei">
+<persName>
+	<forename>E</forename>
+	<middlename>Christopher</middlename>
+	<surname>Lewis</surname>
+</persName>
+<persName>
+	<forename>Calvin</forename>
+	<surname>Lin</surname>
+</persName>
+<persName>
+	<forename>Lawrence</forename>
+	<surname>Snyder</surname>
+</persName>
+<persName>
+	<forename>George</forename>
+	<surname>Turkiyyah</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header147.tei">
+<persName>
+
+	<forename>Tod</forename>
+	<surname>Amon</surname>
+</persName>
+<persName>
+, 
+	<forename>Henrik</forename>
+	<surname>Hulgaard</surname>
+</persName>
+<persName>
+, 
+	<forename>Gaetano</forename>
+	<surname>Borriello</surname>
+</persName>
+<persName>
+, 
+	<forename>Steve</forename>
+	<surname>Burns</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header148.tei">
+<persName>
+
+	<forename>Michael</forename>
+	<middlename>J</middlename>.
+	<surname>Feeley</surname>
+</persName>
+<persName>
+, 
+	<forename>Jeffrey</forename>
+	<middlename>S</middlename>.
+	<surname>Chase</surname>
+</persName>
+<persName>
+, and 
+	<forename>Edward</forename>
+	<middlename>D</middlename>.
+	<surname>Lazowska</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header149.tei">
+<persName>
+
+	<forename>Peter</forename>
+	<surname>Haddawy</surname>
+	<marker>1</marker>
+</persName>
+<persName>
+, 
+	<forename>Steve</forename>
+	<surname>Hanks</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header15.tei">
+<persName>
+
+	<forename>Pai</forename>
+	<surname>Chou</surname>
+</persName>
+<persName>
+,
+	<forename>Elizabeth</forename>
+	<surname>Walkup</surname>
+</persName>
+<persName>
+,
+	<forename>Gaetano</forename>
+	<surname>Borriello</surname>
+	<marker>2</marker>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header150.tei">
+<persName>
+
+	<forename>Elizabeth</forename>
+	<surname>Walkup</surname>
+</persName>
+<persName>
+, 
+	<forename>Gaetano</forename>
+	<surname>Borriello</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header151.tei">
+<persName>
+	<forename>Jonathan</forename>
+	<surname>Shade</surname>
+</persName>
+<persName>		  
+	<forename>Dani</forename>
+	<surname>Lischinski</surname>
+</persName>
+<persName>	
+	<forename>David</forename>
+	<middlename>H</middlename>.
+	<surname>Salesin</surname>
+	<lb/>
+</persName>
+<persName>	
+	<forename>Tony</forename>
+	<surname>DeRose</surname>
+</persName>
+<persName>	
+	<forename>John</forename>
+	<surname>Snyder</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header152.tei">
+<persName>
+	<forename>Kari </forename> 
+	<surname>Pulli</surname>
+	<lb/>
+</persName>
+<persName>	
+	<forename>Mark</forename>
+	<surname>Segal</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header153.tei">
+<persName>
+	<forename>Alfred</forename>
+	<middlename>V</middlename>.
+	<surname>Aho</surname>
+	<lb/>
+</persName>
+<persName> 
+	<forename>David</forename>
+	<middlename>S</middlename>.
+	<surname>Johnson</surname>
+	<lb/>
+</persName>
+<persName>  
+	<forename>Richard</forename>
+	<middlename>M</middlename>.
+	<surname>Karp</surname>
+	<title>(Chair)</title>
+	<lb/>
+</persName>
+<persName>  
+	<forename>S</forename>.
+	<middlename>Rao</middlename>
+	<surname>Kosaraju</surname>
+	<lb/>
+</persName>
+<persName> 
+	<forename>Catherine</forename>
+	<middlename>C</middlename>.
+	<surname>McGeoch</surname>
+	<lb/>
+</persName>
+<persName> 
+	<forename>Christos</forename>
+	<middlename>H</middlename>.
+	<surname>Papadimitriou</surname>
+	<lb/>
+</persName>
+<persName>	
+	<forename>Pavel</forename>
+	<surname>Pevzner</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header154.tei">
+<persName>
+	<forename>Juan</forename>
+	<surname>Alemany</surname>
+</persName>
+<persName>
+and 
+	<forename>Jayram</forename>
+	<middlename>S</middlename>.
+	<surname>Thathachar</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header155.tei">
+<persName>
+	<forename>Greg</forename>
+	<middlename>J</middlename>.
+	<surname>Badros</surname>
+</persName>
+<persName>		
+	<forename>Alan</forename>
+	<surname>Borning</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header156.tei">
+<persName>
+
+	<forename>Carl</forename>
+	<surname>de Boor</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header157.tei">
+<persName>
+
+	<forename>Carl</forename>
+	<surname>de Boor</surname>
+	<marker>1</marker>
+</persName>
+<persName>
+&amp; 
+	<forename>Amos</forename>
+	<surname>Ron</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header158.tei">
+<persName>
+	<forename>Kiriakos</forename>
+	<middlename>N</middlename>.
+	<surname>Kutulakos</surname>
+</persName>
+<persName>	
+	<forename>Charles</forename>
+	<middlename>R</middlename>.
+	<surname>Dyer</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header159.tei">
+<persName>
+
+	<forename>Kevin</forename>
+	<middlename>J</middlename>.
+	<surname>Cherkauer</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header16.tei">
+<persName>
+
+	<forename>Henry</forename>
+	<surname>Sheng</surname>
+</persName>
+<persName>
+, 
+	<forename>Roberto</forename>
+	<surname>Guerrieri</surname>
+</persName>
+<persName>
+and 
+	<forename>Alberto</forename>
+	<surname>Sangiovanni-Vincentelli</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header160.tei">
+<persName>
+	<forename>Sanjay</forename> 
+	<surname>Jain</surname>
+	<lb/>	
+</persName>
+<persName>	
+	<forename>Arun</forename>
+	<surname>Sharma</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header161.tei">
+<persName>
+
+	<forename>O</forename>.
+	<middlename>L</middlename>.
+	<surname>Mangasarian</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header162.tei">
+<persName>
+
+	<forename>P</forename>.
+	<middlename>S</middlename>.
+	<surname>Bradley</surname>
+</persName>
+<persName>
+and 
+	<forename>O</forename>.
+	<middlename>L</middlename>.
+	<surname>Mangasarian</surname>
+</persName>
+<persName>
+	
+	<forename>W</forename>.
+	<middlename>N</middlename>.
+	<surname>Street</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header163.tei">
+<persName>
+By
+	<forename>Paul</forename>
+	<middlename>S</middlename>.
+	<surname>Bradley</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header164.tei">
+<persName>
+
+	<forename>ToddO</forename>
+	<middlename>M</middlename>.
+	<surname>Austin</surname>
+</persName>
+<persName>
+	<forename>Gurindar</forename>
+	<middlename>S</middlename>.
+	<surname>Sohi</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header165.tei">
+<persName>
+	<forename>M</forename>.
+	<middlename>C</middlename>.
+	<surname>FERRIS</surname>
+</persName>
+<persName>
+ AND 
+	<forename>O</forename>.
+	<middlename>L</middlename>.
+	<surname>MANGASARIAN</surname>
+	<lb/>
+</persName>
+</author>
+
+ 
+<author file="header166.tei">
+<persName>
+	<forename>SHAHRAM</forename>
+	<surname>GHANDEHARIZADEH</surname>
+</persName>
+<persName>
+,
+	<forename>ROBERT</forename>
+	<middlename>R</middlename>.
+	<surname>MEYER</surname>
+
+</persName>
+<persName>
+ , 
+	<forename>GARY</forename>
+	<middlename>L</middlename>.
+	<surname>SCHULTZ</surname>
+</persName>
+<persName>
+and
+	<lb/>
+	<forename>JONATHAN</forename>
+	<surname>YACKEL</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header167.tei">
+<persName>
+By
+	<forename>Menglin</forename>
+	<surname>Cao</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header168.tei">
+<persName>
+	<forename>Robert</forename>
+	<middlename>E</middlename>.
+	<surname>Kinicki</surname>
+	<lb/>
+</persName>
+<persName>
+	<forename>Craig</forename>
+	<middlename>E</middlename>.
+	<surname>Wills</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header169.tei">
+<persName>
+
+	<forename>J</forename>.
+	<middlename>P</middlename>.
+	<surname>Hespanha</surname>
+</persName>
+<persName>
+, 
+	<forename>Z</forename>.
+	<surname>Dodds</surname>
+</persName>
+<persName>
+, 
+	<forename>G</forename>.
+	<middlename>D</middlename>.
+	<surname>Hager</surname>
+</persName>
+<persName>
+, and 
+	<forename>A</forename>.
+	<middlename>S</middlename>.
+	<surname>Morse</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header17.tei">
+<persName>
+
+	<forename>P</forename>.
+	<surname>Turney</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header170.tei">
+<persName>
+
+	<forename>Christian</forename>
+	<surname>Clémencon</surname>
+ 
+</persName>
+<persName>
+
+ 	<forename>Karsten</forename>
+	<middlename>M</middlename>.
+	<surname>Decker</surname>
+
+</persName>
+<persName>
+
+	<forename>Vaibhav</forename>
+	<middlename>R</middlename>.
+	<surname>Deshpande</surname>
+	<lb/>
+
+</persName>
+<persName>
+
+	<forename>Akiyoshi</forename>
+	<surname>Endo</surname>
+
+</persName>
+<persName>
+
+	<forename>Josef</forename>
+	<surname>Fritscher</surname>
+
+</persName>
+<persName>
+
+	<forename>Paulo</forename>
+	<middlename>A</middlename>.
+	<middlename>R</middlename>.
+	<surname>Lorenzo</surname>
+	<lb/> 
+
+</persName>
+<persName>
+
+	<forename>Norio</forename>
+	<surname>Masuda</surname>
+
+</persName>
+<persName>
+
+	<forename>Andreas</forename>
+	<surname>Muller</surname>
+  
+</persName>
+<persName>
+
+	<forename>Roland</forename>
+	<surname>Rühl</surname>
+	<lb/> 
+
+</persName>
+<persName>
+
+	<forename>William</forename>
+	<surname>Sawyer</surname>
+	<lb/> 
+
+</persName>
+<persName>
+
+	<forename>Brian</forename>
+	<middlename>J</middlename>.
+	<middlename>N</middlename>.
+	<surname>Wylie</surname>
+
+</persName>
+<persName>
+	<forename>Frank</forename>
+	<surname>Zimmermann</surname>
+	<lb/> 
+</persName>
+</author>
+
+
+<author file="header171.tei">
+<persName>
+
+	<forename>Neli</forename>
+	<middlename>P</middlename>.
+	<surname>Zlatareva</surname>
+	<lb/> 
+</persName>
+</author>
+
+
+<author file="header172.tei">
+<persName>
+	<surname>HO</surname>, 
+	<forename>Kei</forename>
+	<middlename>Shiu</middlename>
+	<middlename>Edward</middlename>
+</persName>
+<persName>
+ and 
+ 	<surname>CHAN</surname>,
+	<forename>Lai</forename>
+	<middlename>Wan</middlename>
+	<lb/> 
+</persName>
+</author>
+
+
+<author file="header173.tei">
+<persName>
+
+	<forename>Tim</forename>
+	<surname>Menzies</surname>
+	<lb/> 
+</persName>
+</author>
+
+
+<author file="header174.tei">
+<persName>
+	<forename>Michael</forename>
+	<surname>Harries</surname>
+	<lb/> 
+</persName>
+<persName>	
+	<forename>Kim</forename>
+	<surname>Horn</surname>
+	<lb/> 
+</persName>
+</author>
+
+
+<author file="header175.tei">
+<persName>
+
+	<forename>Peter</forename> 
+	<surname>Grunwald</surname>
+	<lb/> 
+</persName>
+<persName>	
+	
+	<middlename>Petri</middlename>
+	<surname>Kontkanen</surname>
+</persName>
+<persName>
+, 
+	<forename>Petri</forename>
+	<surname>Myllymaki</surname>,
+	<lb/> 
+</persName>
+<persName>
+	<forename>Tomi</forename>
+	<surname>Silander</surname>
+</persName>
+<persName>
+, 
+	<forename>Henry</forename>
+	<surname>Tirri</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header176.tei">
+<persName>
+
+	<forename>Emanuel</forename>
+	<middlename>G</middlename>.
+	<surname>Noik</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header177.tei">
+<persName>
+
+	<forename>Marco</forename>
+	<surname>Comini</surname>
+</persName>
+<persName>
+, 
+	<forename>Giorgio</forename>
+	<surname>Levi</surname>
+</persName>
+<persName>
+, 
+	<forename>Maria</forename>
+	<middlename>Chiara</middlename>
+	<surname>Meo</surname>
+</persName>
+<persName>
+, and 
+	<forename>Giuliana</forename>
+	<surname>Vitiello</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header178.tei">
+<persName>
+
+	<forename>Yuri</forename>
+	<surname>Gurevich</surname>
+</persName>
+<persName>
+and 
+	<forename>James</forename>
+	<middlename>K</middlename>.
+	<surname>Huggins</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header179.tei">
+<persName>
+
+	<forename>Giuseppe</forename>
+	<middlename>Del</middlename>
+	<surname>Castillo</surname>
+	<marker>1</marker>
+	
+</persName>
+<persName>
+, 
+	<forename>Igor</forename>
+	<surname>Durdanovic</surname>
+	<marker>2</marker>
+</persName>
+<persName>
+, 
+	<forename>Uwe</forename>
+	<surname>Glasser</surname>
+	<marker>1</marker>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header18.tei">
+<persName>
+
+	<forename>Giri</forename>
+	<surname>NARASIMHAN</surname>
+	<marker>1</marker>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header180.tei">
+<persName>
+
+	<forename>Egon</forename>
+	<surname>Borger</surname>
+	<marker>1</marker>
+</persName>
+<persName>
+and 
+	<forename>Wolfram</forename>
+	<surname>Schulte</surname>
+	<marker>2</marker>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header181.tei">
+<persName>
+
+	<forename>Christoph</forename>
+	<surname>Beierle</surname>
+</persName>
+<persName>
+, 
+	<forename>Egon</forename>
+	<surname>Börger</surname>
+</persName>
+<persName>
+, 
+	<forename>Igor</forename>
+	<surname>Durdanovic</surname>
+
+</persName>
+<persName>
+, 
+	<forename>Uwe</forename>
+	<surname>Glasser</surname>
+	
+</persName>
+<persName>
+, 
+	<forename>Elvinia</forename>
+	<lb/>
+	<surname>Riccobene</surname>
+	<lb/>
+</persName>
+
+
+</author>
+
+
+<author file="header182.tei">
+<persName>
+
+	<forename>Piotr</forename>
+	<middlename>J</middlename>.
+	<surname>Gmytrasiewicz</surname>
+</persName>
+<persName>
+and 
+	<forename>Edmund</forename>
+	<middlename>H</middlename>.
+	<surname>Durfee</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header183.tei">
+<persName>
+	<forename>Marcus</forename>
+	<middlename>J</middlename>.
+	<surname>Huber</surname>
+	<lb/>
+</persName>
+<persName>  
+	<forename>Edmund</forename>
+	<middlename>H</middlename>.
+	<surname>Durfee</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header184.tei">
+<persName>
+
+	<forename>Edmund</forename>
+	<middlename>H</middlename>.
+	<surname>Durfee</surname>
+</persName>
+<persName>
+and 
+	<forename>Thomas</forename>
+	<middlename>A</middlename>.
+	<surname>Montgomery</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header185.tei">
+<persName>
+
+	<forename>Stephen</forename>
+	<middlename>R</middlename>.
+	<surname>Titus</surname>
+</persName>
+<persName>
+, 
+	<forename>Alfred</forename>
+	<middlename>O</middlename>.
+	<surname>Hero</surname>
+	<title>III</title>
+</persName>
+<persName>
+, 
+	<forename>Jeffrey</forename>
+	<middlename>A</middlename>.
+	<surname>Fessler</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header186.tei">
+<persName>
+
+	<forename>Marcus</forename>
+	<middlename>J</middlename>.
+	<surname>Huber</surname>
+	<lb/>
+</persName>
+<persName>	
+	
+	<forename>Edmund</forename>
+	<middlename>H</middlename>.
+	<surname>Durfee</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header187.tei">
+<persName>
+
+	<forename>Yun-Wu</forename>
+	<surname>Huangy</surname>
+</persName>
+<persName>
+, 
+	<forename>Ning</forename>
+	<surname>Jingz</surname>
+</persName>
+<persName>
+ and 
+	<forename>Elke</forename>
+	<middlename>A</middlename>.
+	<surname>Rundensteinery</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header188.tei">
+<persName>
+
+	<forename>Yun-Wu</forename>
+	<surname>Huangy</surname>
+</persName>
+<persName>
+, 
+	<forename>Ning</forename>
+	<surname>Jingz</surname>
+</persName>
+<persName>
+ and 
+	<forename>Elke</forename>
+	<middlename>A</middlename>.
+	<surname>Rundensteinery</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header189.tei">
+<persName>
+   
+	<forename>Ning</forename>
+	<surname>Jing</surname>
+	<lb/>
+</persName>
+<persName>
+
+	<forename>Yun-Wu</forename>
+	<surname>Huang</surname>
+	<lb/>
+</persName>
+<persName>
+
+	<forename>Elke</forename>
+	<middlename>A</middlename>.
+	<surname>Rundensteinery</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header19.tei">
+<persName>
+
+	<forename>Stella</forename>
+	<surname>Gatziu</surname>
+</persName>
+<persName>
+, 
+	<forename>Andreas</forename>
+	<surname>Geppert</surname>
+</persName>
+<persName>
+, 
+	<forename>Klaus</forename>
+	<middlename>R</middlename>.
+	<surname>Dittrich</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header190.tei">
+<persName>
+
+	<forename>Peter</forename>
+	<middlename>R</middlename>.
+	<surname>Wurman</surname>
+</persName>
+<persName>
+and 
+	<forename>Michael</forename>
+	<middlename>P</middlename>.
+	<surname>Wellman</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header191.tei">
+<persName>
+ 
+	<forename>James</forename>
+	<middlename>P</middlename>.
+	<surname>Hobert</surname>  
+	<lb/>
+</persName>
+<persName>
+	<forename>C</forename>.
+	<middlename>P</middlename>.
+	<surname>Robert</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header192.tei">
+<persName>
+
+	<forename>Jiawei</forename>
+	<surname>Han</surname>
+</persName>
+<persName>
+and 
+	<forename>Yongjian</forename>
+	<surname>Fu</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header193.tei">
+<persName>
+
+	<forename>Eithan</forename>
+	<surname>Ephrati</surname>
+	<lb/>
+</persName>
+<persName>	
+	<forename>Jeffrey</forename>
+	<middlename>S</middlename>.
+	<surname>Rosenschein</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header194.tei">
+<persName>
+
+	<forename>Philip</forename>
+	<middlename>M</middlename>.
+	<surname>Johnson</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header195.tei">
+<persName>
+	<forename>Dadong</forename>
+	<surname>Wan</surname>
+	<lb/>
+</persName>
+<persName>	
+	<forename>Philip</forename>
+	<middlename>M</middlename>.
+	<surname>Johnson</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header196.tei">
+<persName>
+
+	<forename>Karl</forename>
+	<surname>Aberer</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header197.tei">
+<persName>
+
+	<forename>Jordan</forename>
+	<surname>Zlatev</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header198.tei">
+<persName>
+	<forename>Elias</forename>
+	<surname>Dahlhaus</surname>
+	<marker></marker>  
+	<lb/>
+</persName>
+<persName>	
+	<forename>Marek</forename>
+	<surname>Karpinski</surname>
+	<marker>2</marker>  
+	<lb/>
+</persName>
+<persName>	
+	<forename>Peter</forename>
+	<surname>Kelsen</surname>
+	<marker>3</marker>  
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header199.tei">
+<persName>
+	<forename>Richard</forename>
+	<middlename>M</middlename>.
+	<surname>Karp</surname>
+	<lb/>
+</persName>
+<persName>
+	<forename>Michael</forename>
+	<surname>Luby</surname>
+	<lb/>
+</persName>
+<persName>
+	<forename>Friedhelm</forename>
+	<surname>Meyer auf der Heide</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header2.tei">
+<persName>
+
+	<forename>Dhabaleswar</forename>
+	<middlename>K</middlename>.
+	<surname>Panda</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header20.tei">
+<persName>
+	<middlename>Andreas</middlename>
+	<surname>Rieder</surname>
+	<marker>1,2</marker>
+	<lb/>
+</persName>
+<persName>
+	<middlename>Xiaodong</middlename>
+	<surname>Zhou</surname>
+	<marker>1</marker>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header200.tei">
+<persName>
+
+	<forename>Vineet </forename>
+	<surname>Gupta</surname>
+</persName>
+<persName>	
+	<forename>Peter</forename>
+	<surname>Struss</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header201.tei">
+<persName>
+
+	<forename>Micah</forename>
+	<surname>Adler</surname>
+</persName>
+<persName>	
+	<forename>John</forename>
+	<middlename>W</middlename>.
+	<surname>Byers</surname>
+</persName>
+<persName>	
+	<forename>Richard</forename>
+	<middlename>M</middlename>.
+	<surname>Karp</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header202.tei">
+<persName>
+
+	<forename>Edward</forename>
+	<middlename>W</middlename>.
+	<surname>Knightly</surname>
+</persName>
+<persName>
+and 
+	<forename>Paola</forename>
+	<surname>Rossaro</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header203.tei">
+<persName>
+
+	<forename>M</forename>.
+	<middlename>A</middlename>.
+	<surname>Shokrollahi</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header204.tei">
+<persName>
+
+	<forename>Roya</forename>
+	<surname>Ulrich</surname>
+</persName>
+<persName>
+and 
+	<forename>Pieter</forename>
+	<surname>Kritzinger</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header205.tei">
+<persName>
+
+	<forename>Bernd</forename>
+	<surname>Sturmfels</surname>
+</persName>
+<persName>
+and 
+	<forename>Markus</forename>
+	<surname>Wiegelmann</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header206.tei">
+<persName>
+
+	<forename>Roya</forename>
+	<surname>Ulrich</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header207.tei">
+<persName>
+
+	<forename>Martin</forename>
+	<surname>Bernhardt</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header208.tei">
+<persName>
+
+	<forename>Piotr</forename>
+	<surname>Berman</surname>
+	<lb/>
+</persName>
+<persName>
+	<forename>Moses</forename>
+	<surname>Charikar</surname>
+	<lb/>
+</persName>
+<persName>	
+	<forename>Marek</forename>
+	<surname>Karpinski</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header209.tei">
+<persName>
+
+	<forename>Choong-Ho</forename>
+	<surname>Yi</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header21.tei">
+<persName>
+	<forename>Raymond</forename>
+	<middlename>O</middlename>.
+	<surname>Wells</surname>,
+	<suffix>Jr</suffix>.
+	<lb/>
+</persName>
+
+</author>
+
+
+<author file="header210.tei">
+<persName>
+
+	<forename>Rafal</forename>
+	<surname>Salustowicz</surname>
+</persName>
+<persName>
+,
+	<forename>Marco</forename>
+	<surname>Wiering</surname>
+</persName>
+<persName>
+,
+	<forename>Jurgen</forename>
+	<surname>Schmidhuber</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header211.tei">
+<persName>
+
+	<forename>John</forename>
+	<surname>Granacki</surname>
+</persName>
+<persName>
+and 
+	<forename>Tauseef</forename>
+	<surname>Kazi</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header212.tei">
+<persName>
+	<forename>Benjamin</forename>
+	<middlename>D</middlename>.
+	<surname>Smith</surname>
+	<lb/>
+</persName>
+<persName>
+	<forename>Paul</forename>
+	<middlename>S</middlename>.
+	<surname>Rosenbloom</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header213.tei">
+<persName>
+
+	<forename>Ismail</forename>
+	<surname>Taha</surname>
+</persName>
+<persName>
+and 
+	<forename>Joydeep</forename>
+	<surname>Ghosh</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header214.tei">
+<persName>
+	<forename>Kenneth</forename>
+	<middlename>E</middlename>.
+	<surname>Kinnear</surname>,
+	<suffix>Jr.</suffix>.
+	<lb/>
+	</persName>
+</author>
+
+
+<author file="header215.tei">
+<persName>
+
+	<forename>Tze-Yun</forename>
+	<surname>Leong</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header216.tei">
+<persName>
+
+	<forename>Henry</forename>
+	<forename>G</forename>.
+	<surname>Baker</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header217.tei">
+<persName>
+
+	<forename>R</forename>.
+	<surname>Urbanczik</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header218.tei">
+<persName>
+	<forename>Atul</forename>.
+	<surname>Adya</surname>
+</persName>	
+<persName>	
+	<forename>Robert</forename>.
+	<surname>Gruber</surname>
+</persName>
+<persName>	
+	<forename>Barbara</forename>.
+	<surname>Liskov</surname>	
+</persName>
+<persName>		
+	<forename>Umesh</forename>
+	<surname>Maheshwari</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header219.tei">
+<persName>
+	<forename>John</forename>
+	<middlename>S</middlename>.
+	<surname>Breese</surname>
+	<lb/>	
+</persName>
+<persName>		
+	<forename>David</forename>
+	<surname>Heckerman</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header22.tei">
+<persName>
+
+	<forename>Nathan</forename>
+	<surname>Intrator</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header220.tei">
+<persName>
+
+	<forename>Erik</forename>
+	<surname>Ruf</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header221.tei">
+<persName>
+
+	<forename>Kristin</forename>
+	<middlename>P</middlename>.
+	<surname>Bennett</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header222.tei">
+<persName>
+by 	
+	<lb/>
+	<forename>Grace</forename>
+	<surname>Wahba</surname>
+</persName>
+<persName>
+and 
+	<forename>Yuedong</forename>
+	<surname>Wang</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header223.tei">
+<persName>
+	<forename>Bonnie</forename> 
+	<middlename>J</middlename>.
+	<surname>Dorr</surname>
+	<lb/>
+</persName>
+<persName>	
+	<forename>Terry</forename>
+	<surname>Gaasterland</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header224.tei">
+<persName>
+  
+	<forename>CLARE</forename>
+	<surname>VOSS</surname>
+	<lb/>
+</persName>
+<persName>	
+	<forename>BONNIE</forename>
+	<middlename>J</middlename>.
+	<surname>Dorr</surname>
+	<lb/>
+
+</persName>
+</author>
+
+
+<author file="header225.tei">
+<persName>
+by 
+	<lb/>
+	<forename>Douglas</forename>
+	<middlename>Arnold</middlename>
+	<surname>Jones</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header226.tei">
+<persName>
+
+	<forename>E</forename>.
+	<surname>BLANZIERI</surname>
+	<marker>*</marker>
+	
+</persName>
+<persName>
+ , 
+	<forename>P</forename>. 
+	<surname>KATENKAMP</surname>
+	<marker>**</marker>
+	
+</persName>
+<persName>
+and 
+	<forename>A</forename>. 
+	<surname>GIORDANA</surname>
+	<marker>***</marker>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header227.tei">
+<persName>
+
+	<forename>STEFAN</forename>
+	<surname>MÜNCH</surname>
+	<marker>*</marker>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header228.tei">
+<persName>
+	<forename>Sridhar</forename>
+	<surname>Pingali</surname>
+	<lb/>
+</persName>
+<persName> 
+	<forename>James</forename>
+	<middlename>F</middlename>.
+	<surname>Kurose</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header229.tei">
+<persName>
+
+	<forename>Dan</forename>
+	<surname>Rubenstein</surname>
+</persName>
+<persName>
+, 
+	<forename>Jim</forename>
+	<surname>Kurose</surname>
+</persName>
+<persName>
+ and 
+	<forename>Don</forename>
+	<surname>Towsley</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header23.tei">
+<persName>
+
+	<forename>Ivan</forename>
+	<surname>Krsul</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header230.tei">
+<persName>
+
+	<forename>James</forename>
+	<middlename>D</middlename>.
+	<surname>Salehi</surname>
+</persName>
+<persName>
+,
+	<forename>James</forename>
+	<middlename>F</middlename>.
+	<surname>Kurose</surname>
+</persName>
+<persName>
+, and 
+	<forename>Don</forename>
+	<surname>Towsley</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header231.tei">
+<persName>
+	<forename>Henning</forename>
+	<surname>Schulzrinne</surname>
+</persName>
+<persName>	
+	<forename>James</forename>
+	<middlename>F</middlename>.
+	<surname>Kurose</surname>
+</persName>
+<persName>
+and 
+	<forename>Donald</forename>
+	<middlename>F</middlename>.
+	<surname>Towsley</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header232.tei">
+<persName>
+	<forename>James</forename>
+	<middlename>D</middlename>.
+	<surname>Salehi</surname>
+</persName>
+<persName>
+,
+	<forename>Zhi-Li</forename>
+	<surname>Zhang</surname>
+</persName>
+<persName>
+,
+	<forename>James</forename>
+	<middlename>F</middlename>.
+	<surname>Kurose</surname>
+</persName>
+<persName>
+, and 
+	<forename>Don</forename>
+	<surname>Towsley</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header233.tei">
+<persName>
+
+	<forename>Blaz</forename>
+	<surname>Zupan</surname>
+</persName>
+<persName>
+and 
+	<forename>Saso</forename>
+	<surname>Dzeroski</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header234.tei">
+<persName>
+
+	<forename>Douglas</forename>
+	<middlename>C</middlename>.
+	<surname>Burger</surname>
+</persName>
+<persName>
+, 
+	<forename>Rahmat</forename>
+	<middlename>S</middlename>.
+	<surname>Hyder</surname>
+</persName>
+<persName>
+, 
+	<forename>Barton</forename>
+	<middlename>P</middlename>.
+	<surname>Miller</surname>
+</persName>
+<persName>
+, 
+	<forename>David</forename>
+	<middlename>A</middlename>.
+	<surname>Wood</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header235.tei">
+<persName>
+	<forename>Yuan-Shin</forename>
+	<surname>Hwang</surname>
+	<marker>1</marker>
+</persName>	
+
+<persName>
+	<forename>Bongki</forename>
+	<surname>Moon</surname>
+	<marker>1</marker>
+</persName>	
+	
+<persName>
+	<forename>Shamik</forename>
+	<surname>Sharma</surname>
+	<marker>1</marker>
+</persName>	
+
+<persName>
+	<forename>Raja</forename>
+	<surname>Das</surname>
+	<marker>1</marker>
+	<lb/>
+</persName>	
+
+<persName>
+	<forename>Joel</forename>
+	<surname>Saltz</surname>
+	<marker>1</marker>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header236.tei">
+<persName>
+	<forename>Ravi</forename>
+	<surname>Ponnusamy</surname>
+	<marker>†‡</marker>
+</persName>	
+
+<persName>	
+	<forename>Yuan-Shin</forename>
+	<surname>Hwang</surname>
+	<marker>†</marker>
+</persName>	
+
+<persName>	
+	<forename>Raja</forename>
+	<surname>Das</surname>
+	<marker>†</marker>	
+	<lb/>
+</persName>	
+
+<persName>	
+	<forename>Joel</forename>
+	<surname>Saltz</surname>
+	<marker>†</marker>
+</persName>		  
+
+<persName>	
+	<forename>Alok</forename>
+	<surname>Choudhary</surname>
+	<marker>‡</marker>
+</persName>		
+	
+<persName>		
+	<forename>Geoffrey</forename>
+	<surname>Fox</surname>
+	<marker>‡</marker>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header237.tei">
+<persName>
+
+	<forename>Edoardo</forename>
+	<surname>Charbon</surname>
+</persName>
+<persName>
+, 
+	<forename>Ranjit</forename>
+	<surname>Gharpurey</surname>
+</persName>
+<persName>
+, 
+	<lb/>
+	<forename>Robert</forename>
+	<middlename>G</middlename>.
+	<surname>Meyer</surname>
+</persName>
+<persName>
+, and 
+	<forename>Alberto</forename>
+	<surname>Sangiovanni-Vincentelli</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header238.tei">
+<persName>
+by 
+	<lb/>
+	<forename>Jagesh</forename>
+	<middlename>V</middlename>.
+	<surname>Sanghavi</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header239.tei">
+<persName>
+	<forename>Ton</forename>
+	<surname>Weijters</surname>
+	<marker>1</marker>
+</persName>
+<persName>
+,
+	<forename>Antal</forename>
+	<surname>van den Bosch</surname>
+	<marker>2</marker>
+	
+</persName>
+<persName>
+, and 
+	<forename>Jaap</forename>
+	<surname>van den Herik</surname>
+	<marker>3</marker>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header24.tei">
+<persName>
+
+	<forename>D</forename>.
+	<surname>Cliff</surname>
+</persName>
+<persName>
+, 
+	<forename>P</forename>.
+	<surname>Husbands</surname>
+</persName>
+<persName>
+, 
+	<forename>I</forename>.
+	<surname>Harvey</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header240.tei">
+<persName>
+
+	<forename>A</forename>.
+	<surname>Biancardi</surname>
+</persName>
+<persName>
+, 
+	<forename>V</forename>.
+	<surname>Cantoni</surname>
+</persName>
+<persName>
+, 
+	<forename>M</forename>.
+	<surname>Ferretti</surname>
+</persName>
+<persName>
+and 
+	<forename>M</forename>.
+	<surname>Mosconi</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header241.tei">
+<persName>
+	<forename>Alberto</forename>
+	<surname>Colorni</surname>
+	<lb/>
+</persName>
+<persName>
+	<forename>Marco</forename>
+	<surname>Dorigo</surname>
+	<lb/>
+</persName>
+<persName>
+	<forename>Vittorio</forename>
+	<surname>Maniezzo</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header242.tei">
+<persName>
+	<forename>Henrik</forename>
+	<middlename>Hautop</middlename>
+	<surname>Lund</surname>
+	<marker>§¶</marker>
+</persName>
+<persName>	
+	<forename>Domenico</forename>
+	<surname>Parisi</surname>
+	<marker>§</marker>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header243.tei">
+<persName>
+
+	<forename>Brian</forename>
+	<middlename>R</middlename>.
+	<surname>Gaines</surname>
+</persName>
+<persName>
+, 
+	<forename>Douglas</forename>
+	<middlename>H</middlename>.
+	<surname>Norrie</surname>
+</persName>
+<persName>
+and 
+	<forename>Mildred</forename>
+	<middlename>L</middlename>.
+	<middlename>G</middlename>.
+	<surname>Shaw</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header244.tei">
+<persName>
+	<forename>Guruduth</forename>
+	<surname>Banavar</surname>
+</persName>
+<persName>	
+	<forename>Douglas</forename>
+	<surname>Orr</surname>
+</persName>
+<persName>	
+	<forename>Gary</forename>
+	<surname>Lindstrom</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header245.tei">
+<persName>
+by 
+	<forename>Daniel</forename>
+	<middlename>J</middlename>.
+	<surname>SARGENT</surname>
+	<marker>1</marker>
+</persName>
+<persName>
+, 
+	<forename>James</forename>
+	<middlename>S</middlename>.
+	<surname>HODGES</surname>
+	<marker>2</marker>
+</persName>
+<persName>
+, and 
+	<forename>Bradley</forename>
+	<middlename>P</middlename>.
+	<surname>CARLIN</surname>
+	<marker>2</marker>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header246.tei">
+<persName>
+
+	<forename>Colin</forename>
+	<surname>Parris</surname>
+</persName>
+<persName>
+, 
+	<forename>Hui</forename>
+	<surname>Zhang</surname>
+</persName>
+<persName>
+, and 
+	<forename>Domenico</forename>
+	<surname>Ferrari</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header247.tei">
+<persName>
+
+	<forename>Alberto</forename>
+	<surname>Belussi</surname>
+	<lb/>
+</persName>
+<persName>
+	<forename>Christos</forename>
+	<surname>Faloutsos</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header248.tei">
+<persName>
+
+	<forename>Padhraic</forename>
+	<surname>Smyth</surname>
+</persName>
+<persName>
+, 
+	<forename>David</forename>
+	<surname>Heckerman</surname>
+</persName>
+<persName>
+, and 
+	<forename>Michael</forename>
+	<surname>Jordan</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header249.tei">
+<persName>
+
+	<forename>Yan</forename>
+	<surname>Xiao</surname>
+</persName>
+<persName>	
+	<forename>Paul</forename>
+	<surname>Milgram</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header25.tei">
+<persName>
+	<forename>S</forename>.
+	<middlename>M</middlename>. 
+	<surname>Bellovin</surname>
+	<marker>*</marker>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header250.tei">
+<persName>
+
+	<forename>Federico</forename>
+	<surname>Girosi</surname>
+</persName>
+<persName>
+and 
+	<forename>Tomaso</forename>
+	<surname>Poggio</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header251.tei">
+<persName>
+by 
+	<lb/>
+	<forename>Jerry</forename>
+	<middlename>E</middlename>.
+	<surname>Pratt</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header252.tei">
+<persName>
+
+	<forename>Jonathan</forename>
+	<middlename>E</middlename>.
+	<surname>Hazan</surname>
+	<lb/>
+</persName>
+<persName>
+and 
+	<forename>Richard</forename>
+	<middlename>G</middlename>.
+	<surname>Morgan</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header253.tei">
+<persName>
+
+	<forename>Dilip</forename>
+	<middlename>D</middlename>.
+	<surname>Kandlur</surname>
+</persName>
+<persName>
+, 
+	<forename>Kang</forename> 
+	<middlename>G</middlename>.
+	<surname>Shin</surname>
+	<lb/>
+</persName>
+<persName>	
+	<forename>Domenico</forename>
+	<surname>Ferrari</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header254.tei">
+<persName>
+
+	<forename>Michael</forename>
+	<surname>Stonebraker</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header255.tei">
+<persName>
+	<forename>Pai</forename>
+	<middlename>H</middlename>.
+	<surname>Chou</surname>
+</persName>
+<persName>	
+	<forename>Ross</forename>
+	<middlename>B</middlename>.
+	<surname>Ortega</surname>
+</persName>
+<persName>
+	<forename>Gaetano</forename>
+	<surname>Borriello</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header256.tei">
+<persName>
+
+	<forename>Lorie</forename>
+	<middlename>M</middlename>.
+	<surname>Liebrock</surname>
+	<lb/>
+</persName>
+<persName>	
+	<forename>Ken</forename>
+	<surname>Kennedy</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header257.tei">
+<persName>
+
+	<forename>Alain</forename>
+	<surname>Sei</surname>
+</persName>
+<persName>
+and 
+	<forename>William</forename>
+	<surname>Symes</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header258.tei">
+<persName>
+
+	<forename>K</forename>.
+	<middlename>Mani</middlename>
+	<surname>Chandy</surname>
+</persName>
+<persName>	
+	<forename>Ian</forename>
+	<surname>Foster</surname>
+	<lb/>
+</persName>
+
+</author>
+
+
+<author file="header259.tei">
+<persName>
+
+	<forename>J</forename>.
+	<middlename>E</middlename>.
+	<surname>Dennis</surname>
+</persName>
+<persName>
+and 
+	<forename>Lus</forename>
+	<middlename>N</middlename>.
+	<surname>Vicente</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header260.tei">
+<persName>
+by 
+	<lb/>
+	<forename>Gerald</forename>
+	<middlename>H</middlename>.
+	<surname>Roth</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header261.tei">
+<persName>
+    
+	<forename>Eldar</forename>
+	<surname>Giladi</surname>
+	<lb/>
+</persName>
+<persName>
+
+	<forename>Herbert</forename>  
+	<middlename>B</middlename>.
+	<surname>Keller</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header262.tei">
+<persName>
+
+	<forename>Tim</forename>
+	<middlename>L</middlename>.
+	<surname>Andersen</surname>
+</persName>
+<persName>
+and 
+	<forename>Tony</forename>
+	<middlename>R</middlename>.
+	<surname>Martinez</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header263.tei">
+<persName>
+
+	<forename>D</forename>.
+	<middlename>Randall</middlename>
+	<surname>Wilson</surname>
+</persName>
+<persName>
+, 
+	<forename>Tony</forename>
+	<middlename>R</middlename>.
+	<surname>Martinez</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header264.tei">
+<persName>
+by <lb/>
+	<forename>Matteo</forename>
+	<surname>Frigo</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header265.tei">
+<persName>
+
+	<forename>Mihir</forename>
+	<surname>Bellare</surname>
+	
+</persName>
+<persName>
+
+	<forename>Oded</forename>
+	<surname>Goldreich</surname>
+	
+</persName>
+<persName>
+	
+	<forename>Shafi</forename>
+	<surname>Goldwasser</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header266.tei">
+<persName>
+
+	<forename>Benny</forename>
+	<surname>Chor</surname>
+	<marker>*</marker>
+	
+</persName>
+<persName>	
+	
+	<forename>Oded</forename>
+	<surname>Goldreich</surname>
+	<marker>**</marker>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header267.tei">
+<persName>
+
+	<forename>Oded</forename>
+	<surname>Goldreich</surname>
+	<marker>†</marker>
+</persName>
+<persName>		
+	<forename>Noam</forename>
+	<surname>Nisan</surname>
+	<marker>†</marker>
+	  
+</persName>
+<persName>		
+	
+	<forename>Avi</forename>
+	<surname>Wigderson</surname>
+	<marker>§</marker>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header268.tei">
+<persName>
+
+	<forename>Alan</forename>
+	<surname>Fekete</surname>
+	  
+</persName>
+<persName>	
+	<forename>David</forename>
+	<surname>Gupta</surname>
+</persName>
+<persName>	  
+	<forename>Victor</forename>
+	<surname>Luchangco</surname>
+</persName>
+<persName>		
+	<forename>Nancy</forename>
+	<surname>Lynch</surname>	
+	
+</persName>
+<persName>		
+	<forename>Alex</forename>
+	<surname>Shvartsman</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header269.tei">
+<persName>
+
+	<forename>Ran</forename>
+	<surname>Canetti</surname>
+	
+</persName>
+<persName>		
+	
+	<forename>Rosario</forename>
+	<surname>Gennaro</surname>
+	<lb/>
+	
+</persName>
+</author>
+
+
+<author file="header27.tei">
+<persName>
+
+	<forename>Jeffrey</forename>
+	<middlename>M</middlename>.
+	<surname>Bell</surname>
+</persName>
+
+<persName>
+&amp; 
+	<forename>Françoise</forename> 
+	<surname>Bellegarde</surname>
+</persName>
+<persName>
+&amp; 
+	<forename>James</forename>
+	<surname>Hook</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header270.tei">
+<persName>
+
+	<forename>Yair</forename> 
+	<surname>Frankel</surname>
+	<marker>*</marker>
+</persName>
+<persName> 
+	<forename>Peter</forename> 
+	<surname>Gemmell</surname>
+	<marker>†</marker>
+</persName>
+<persName> 
+	<forename>Philip</forename> 
+	<middlename>D</middlename>.
+	<surname>MacKenzie</surname>	  
+	<marker>‡</marker>
+</persName>
+<persName>	
+	
+	<forename>Moti</forename>
+	<surname>Yung</surname>
+	<marker>§</marker>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header271.tei">
+<persName>
+
+	<forename>Nancy</forename> 
+	<surname>Lynch</surname>
+	<lb/>
+</persName>
+<persName>		
+	<forename>Frits</forename>
+	<surname>Vaandrager</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header272.tei">
+<persName>
+
+	<forename>Irfan</forename>
+	<middlename>A</middlename>.
+	<surname>Essa</surname>
+	
+</persName>
+<persName>
+and 
+	<forename>Alex</forename>
+	<middlename>P</middlename>.
+	<surname>Pentland</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header273.tei">
+<persName>
+
+	<forename>Rosalind</forename>
+	<middlename>W</middlename>.
+	<surname>Picard</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header274.tei">
+<persName>
+
+	<forename>Tanzeem</forename>
+	<surname>Choudhury</surname>
+</persName>
+<persName>
+, 
+	<forename>Brian</forename>
+	<surname>Clarkson</surname>
+</persName>
+<persName>
+, 
+	<forename>Tony</forename>
+	<surname>Jebara</surname>
+</persName>
+<persName>
+, 
+	<forename>Alex</forename>
+	<surname>Pentland</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header275.tei">
+<persName>
+
+	<forename>Mitch</forename>
+	<surname>Cherniack</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header276.tei">
+<persName>
+
+	<forename>Ender</forename>
+	<surname>Ozcan</surname>
+</persName>
+<persName>
+and 
+	<forename>Chilukuri</forename>
+	<middlename>K</middlename>.
+	<surname>Mohan</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header277.tei">
+<persName>
+
+	<forename>Alex</forename>
+	<surname>Borgida</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header278.tei">
+<persName>
+
+	<forename>Louis</forename>
+	<surname>Ibarra</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header279.tei">
+<persName>
+
+	<forename>Andrew</forename> 
+	<middlename>Y</middlename>.
+	<surname>Cheng</surname>
+	<lb/>
+</persName>
+<persName>	
+	<forename>Ming</forename>
+	<surname>Ouyang</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header28.tei">
+<persName>
+
+	<forename>Richard</forename>
+	<middlename>B</middlename>.
+	<surname>Kieburtz</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header280.tei">
+<persName>
+
+	<forename>Jie</forename>
+	<surname>Cheng</surname>
+</persName>
+<persName>
+, 
+	<forename>David</forename>
+	<middlename>A</middlename>.
+	<surname>Bell</surname>
+</persName>
+<persName>
+, 
+	<forename>Weiru</forename>
+	<surname>Liu</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header281.tei">
+<persName>
+
+	<forename>Joshua</forename>
+	<surname>Grass</surname>
+</persName>
+<persName>
+and 
+	<forename>Shlomo</forename>
+	<surname>Zilberstein</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header282.tei">
+<persName>
+
+	<forename>Arvind</forename>
+	<surname>Krishnamurthy</surname>
+</persName>
+<persName>
+, 
+	<forename>Klaus</forename>
+	<middlename>E</middlename>.
+	<surname>Schauser</surname>
+</persName>
+<persName>
+, 
+	<forename>Chris</forename>
+	<middlename>J</middlename>.
+	<surname>Scheiman</surname>
+</persName>
+<persName>
+, 
+	<lb/>
+	<forename>Randolph</forename>
+	<middlename>Y</middlename>.
+	<surname>Wang</surname>
+</persName>
+<persName>
+, 
+	<forename>David</forename>
+	<middlename>E</middlename>.
+	<surname>Culler</surname>
+</persName>
+<persName>
+, and 
+	<forename>Katherine</forename>
+	<surname>Yelick</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header283.tei">
+<persName>
+
+	<forename>Jason</forename>
+	<surname>Cong</surname>
+</persName>
+<persName>
+and 
+	<forename>Chang</forename>
+	<surname>Wu</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header284.tei">
+<persName>
+	<forename>Giuseppe</forename>
+	<surname>Ateniese</surname>
+	<marker>1</marker>
+</persName>
+<persName>
+,
+	<forename>Carlo</forename>
+	<surname>Blundo</surname>
+	<marker>2</marker>
+</persName>
+<persName>
+, 
+	<forename>Alfredo</forename>
+	<surname>De Santis</surname>
+	<marker>2</marker>
+</persName>
+<persName>
+, and 
+	<forename>Douglas</forename>
+	<middlename>R</middlename>.
+	<surname>Stinson</surname>
+	<marker>3</marker>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header285.tei">
+<persName>
+	<forename>G</forename>.
+	<surname>Jiang</surname>
+	<marker>*</marker>
+	<lb/>
+</persName>
+<persName>	
+	<forename>H</forename>.
+	<surname>Henein</surname>
+	<marker>*</marker>
+	<lb/>
+</persName>
+<persName>
+and 
+	<lb/>
+	<forename>M</forename>. 
+	<middlename>W</middlename>.
+	<surname>Siegel</surname>
+	<marker>**</marker>
+	<lb/>                    
+</persName>
+</author>
+
+
+<author file="header286.tei">
+<persName>
+
+	<forename>Chris</forename>
+	<surname>Seher</surname>
+	<marker>1</marker>
+</persName>
+<persName>
+, 
+	<forename>Mel</forename>
+	<surname>Siegel</surname>
+	<marker>2</marker>
+</persName>
+<persName>
+, and 
+	<forename>William</forename>
+	<middlename>M</middlename>.
+	<surname>Kaufman</surname>
+	<marker>3</marker>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header287.tei">
+<persName>
+by 
+	<lb/>
+	<forename>Jeffrey</forename>
+	<middlename>Scott</middlename>
+	<surname>McVeigh</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header288.tei">
+<persName>
+
+	<forename>Dunja</forename>
+	<surname>Mladenic</surname>
+</persName>
+<persName>
+and 
+	<forename>Marko</forename>
+	<surname>Grobelnik</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header289.tei">
+<persName>
+
+	<forename>Mads</forename>
+	<surname>Tofte</surname>
+</persName>
+<persName>
+	<forename>Lars</forename>
+	<surname>Birkedal</surname>
+</persName>
+<persName>
+
+</persName>
+</author>
+
+
+<author file="header29.tei">
+<persName>
+
+	<forename>David</forename>
+	<middlename>C</middlename>.
+	<surname>Steere</surname>
+</persName>
+<persName>
+, 
+	<forename>Mark</forename>
+	<surname>Morrissey</surname>
+</persName>
+<persName>
+, 
+	<forename>Peter</forename>
+	<surname>Geib</surname>
+</persName>
+<persName>
+, 
+	<forename>Calton</forename>
+	<surname>Pu</surname>
+</persName>
+<persName>
+, and 
+	<forename>Jonathan</forename>
+	<surname>Walpole</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header290.tei">
+<persName>
+
+	<forename>David</forename>
+	<surname>Garlan</surname>
+</persName>
+<persName>
+and 
+	<forename>Mary</forename>
+	<surname>Shaw</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header291.tei">
+<persName>
+
+	<forename>M</forename>.
+	<surname>Satyanarayanan</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header292.tei">
+<persName>
+
+	<forename>Brian</forename>
+	<middlename>D</middlename>.
+	<surname>Noble</surname>
+</persName>
+<persName>
+, 
+	<forename>M</forename>.
+	<surname>Satyanarayanan</surname>
+</persName>
+<persName>
+, 
+	<forename>Dushyanth</forename>
+	<surname>Narayanan</surname>
+</persName>
+<persName>
+, 
+	<forename>James</forename>
+	<middlename>Eric</middlename>
+	<surname>Tilton</surname>
+</persName>
+<persName>
+, 
+	<forename>Jason</forename>
+	<surname>Flinn</surname>
+</persName>
+<persName>
+, 
+	<forename>Kevin</forename>
+	<middlename>R</middlename>.
+	<surname>Walker</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header293.tei">
+<persName>
+
+	<forename>Scott</forename>
+	<surname>Draves</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header294.tei">
+<persName>
+
+	<forename>M</forename>.
+	<surname>Woszczyna</surname>
+</persName>
+<persName>
+, 
+	<forename>N</forename>.
+	<surname>Coccaro</surname>
+</persName>
+<persName>
+, 
+	<forename>A</forename>.
+	<surname>Eisele</surname>
+</persName>
+<persName>
+, 
+	<forename>A</forename>.
+	<surname>Lavie</surname>
+</persName>
+<persName>
+, 
+	<forename>A</forename>.
+	<surname>McNair</surname>
+</persName>
+<persName>
+, 
+	<forename>T</forename>.
+	<surname>Polzin</surname>
+</persName>
+<persName>
+, 
+	<forename>I</forename>.
+	<surname>Rogina</surname>
+</persName>
+<persName>
+, 
+	<lb/>
+	<forename>C</forename>.
+	<middlename>P</middlename>.
+	<surname>Rose</surname>
+</persName>
+<persName>
+
+	<forename>T</forename>.
+	<surname>Sloboda</surname>
+</persName>
+<persName>
+, 
+	<forename>M</forename>.
+	<surname>Tomita</surname>
+</persName>
+<persName>
+, 
+	<forename>J</forename>.
+	<surname>Tsutsumi</surname>
+</persName>
+<persName>
+, 
+	<forename>N</forename>.
+	<surname>oki-Waibel</surname>
+</persName>
+<persName>
+
+	<surname>A</surname> 
+	<forename>Waibel</forename>.
+</persName>
+<persName>
+, 
+	<forename>W</forename>.
+	<surname>Ward</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header295.tei">
+<persName>
+
+	<forename>Mei</forename>
+	<surname>Chen</surname>
+</persName>
+<persName>
+, 
+	<forename>Todd</forename>
+	<surname>Jochem</surname>
+</persName>
+<persName>
+, 
+	<forename>Dean</forename>
+	<surname>Pomerleau</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header296.tei">
+<persName>
+
+	<forename>David</forename>
+	<middlename>S</middlename>. 
+	<surname>Lees</surname>
+	<lb/>
+</persName>
+<persName>	 
+	<forename>Gregory</forename>
+	<middlename>S</middlename>.
+	<surname>Chirikjian</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header297.tei">
+<persName>
+
+	<forename>Saman</forename>
+	<middlename>P</middlename>.
+	<surname>Amarasinghe</surname>
+</persName>
+<persName>
+, 
+	<forename>Jennifer</forename>
+	<middlename>M</middlename>.
+	<surname>Anderson</surname>
+	<lb/>
+</persName>
+<persName>
+, 
+	<forename>Monica</forename>
+	<middlename>S</middlename>.
+	<surname>Lam</surname>
+</persName>
+<persName>
+and 
+	<forename>Amy</forename>
+	<middlename>W</middlename>.
+	<surname>Lim</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header298.tei">
+<persName>
+
+	<forename>K</forename>.
+	<middlename>Mani</middlename>
+	<surname>Chandy</surname>
+</persName>
+<persName>	
+	<forename>Carl</forename>
+	<surname>Kesselman</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header299.tei">
+<persName>
+
+	<forename>Herbert</forename>
+	<surname>Praehofer</surname>
+</persName>
+<persName>
+and 
+	<forename>Gernot</forename>
+	<surname>Reisinger</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header3.tei">
+<persName>
+
+	<forename>Yu-Chee</forename>
+	<surname>Tseng</surname>
+</persName>
+<persName>
+, 
+	<forename>Dhabaleswar</forename>
+	<middlename>K</middlename>.
+	<surname>Panda</surname>
+	<title>Member, IEEE</title>
+</persName>
+<persName>
+,  and 
+	<forename>Ten-Hwang</forename>
+	<surname>Lai</surname>
+	<title>Member, IEEE</title>
+	<lb/>
+</persName>
+
+</author>
+
+
+<author file="header30.tei">
+<persName>
+
+	<forename>Ethem</forename>
+	<surname>Alpaydn</surname>
+</persName>
+<persName>
+, 
+	<forename>Fikret</forename>
+	<surname>Gurgen</surname>
+	<lb/>
+</persName>
+</author>
+
+
+<author file="header300.tei">
+<persName>
+	<forename>Yuan</forename>
+	<surname>Shi</surname>
+	<lb/>
+</persName>
+</author>
+
+
+
+
+</analytic>
+</biblStruct>
+</sourceDesc>
+</fileDesc>
+</teiHeader>
+</TEI>

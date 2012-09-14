@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="ZNC-1988-43c-0118"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>On the Release and Action of the Hypertrehalosaemic Hormone<lb/> from the Cockroach Nauphoeta cinerea<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Gerd Gäde<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institut für Zoologie IV der Universität Düsseldorf,</affiliation>
+	</byline>
+
+	<address>Universitätsstraße 1,<lb/> D-4000 Düsseldorf 1, Bundesrepublik Deutschland<lb/></address>
+
+	<reference>Z. Naturforsch. 43c, 108-116 (1988);</reference>
+
+	<note type="submission">received July 22/September 21, 1987<lb/></note>
+
+	<keyword>Synthetic Hypertrehalosaemic Hormone, Nauphoeta cinerea, Activation of Fat Body Glycogen<lb/> Phosphorylase, Increase of Blood Carbohydrates, Release of Hypertrehalosaemic Hormone<lb/></keyword>
+
+	<div type="abstract">The corpora cardiaca of the cockroach Nauphoeta cinerea contain a hypertrehalosaemic hor-<lb/>mone (HTH) which is chemically characterized as a blocked decapeptide. The synthetic HTH<lb/> shows the same chromatographic behaviour as the material isolated from corpora cardiaca. The<lb/> synthetic peptide causes hypertrehalosaemia and fat body glycogen phosphorylase-activation in<lb/> N. cinerea as well as in the American cockroach, Periplaneta americana in a dose-dependent<lb/> fashion. It is calculated that one gland from N. cinerea stores about 50 pmol of HTH. Roughly<lb/> 10% of the total available hormone in the gland is released in vitro during exposure to an elevated<lb/> potassium saline which causes depolarization of the neurosecretory cells.<lb/></div>
+
+		</front>
+	</text>
+</tei>

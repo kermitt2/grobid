@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1471-2350-12-42"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+
+			<reference>Williams et al. BMC Medical Genetics 2011, 12:42<lb/></reference>
+			<ptr type="web">http://www.biomedcentral.com/1471-2350/12/42<lb/></ptr>
+
+			<note type="articleType">R E S E A R C H A R T I C L E<lb/></note>
+
+			<note type="copyright">Open Access<lb/></note>
+			<titlePart><docTitle>Survival bias and drug interaction can attenuate<lb/> cross-sectional case-control comparisons of genes<lb/> with health outcomes. An example of the kinesin-<lb/> like protein 6 (KIF6) Trp719Arg polymorphism and<lb/> coronary heart disease<lb/></docTitle></titlePart>
+
+	<byline>
+	<docAuthor>Paul Williams 1* , Lakshmana Pendyala 2 and Robert Superko 1<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Abstract<lb/> Background: Case-control studies typically exclude fatal endpoints from the case set, which we hypothesize will<lb/> substantially underestimate risk if survival is genotype-dependent. The loss of fatal cases is particularly nontrivial for<lb/> studies of coronary heart disease (CHD) because of significantly reduced survival (34% one-year fatality following a<lb/> coronary attack). A case in point is the KIF6 Trp719Arg polymorphism (rs20455). Whereas six prospective studies<lb/> have shown that carriers of the KIF6 Trp719Arg risk allele have 20% to 50% greater CHD risk than non-carriers,<lb/> several cross-sectional case-control studies failed to show that carrier status is related to CHD. Computer<lb/> simulations were therefore employed to assess the impact of the loss of fatal events on gene associations in cross-<lb/> sectional case-control studies, using KIF6 Trp719Arg as an example.<lb/> Results: Ten replicates of 1,000,000 observations each were generated reflecting Canadian demographics.<lb/> Cardiovascular disease (CVD) risks were assigned by the Framingham equation and events distributed among KIF6<lb/> Trp719Arg genotypes according to published prospective studies. Logistic regression analysis was used to estimate<lb/> odds ratios between KIF6 genotypes. Results were examined for 33%, 41.5%, and 50% fatality rates for incident<lb/> CVD.<lb/> In the absence of any difference in percent fatalities between genotypes, the odds ratios (carriers vs. noncarriers)<lb/> were unaffected by survival bias, otherwise the odds ratios were increasingly attenuated as the disparity between<lb/> fatality rates increased between genotypes. Additional simulations demonstrated that statin usage, shown in four<lb/> clinical trials to substantially reduce the excess CHD risk in the KIF6 719Arg variant, should also attenuate the KIF6<lb/> 719Arg odds ratio in case-control studies.<lb/> Conclusions: These computer simulations show that exclusions of prior CHD fatalities attenuate odds ratios of<lb/> case-control studies in proportion to the difference in the percent fatalities between genotypes. Disproportionate<lb/> CHD survival for KIF6 Trip719Arg carriers is suggested by their 50% greater risk for recurrent myocardial infarction.<lb/> This, and the attenuation of KIF6 719Arg carrier risk with statin use, may explain the genotype's weak association<lb/> with CHD in cross-sectional case-control studies. The results may be relevant to the underestimation of risk in<lb/> cross-sectional case-control studies of other genetic CHD-risk factors affecting survival.<lb/></div>
+
+	<email>* Correspondence: 1742spyglass@comcast.net<lb/> 1<lb/></email>
+
+			<byline><affiliation>Celera</affiliation></byline>, <address>1401 Harbor Bay Parkway, Alameda, CA 94502, USA<lb/></address>
+
+	        <note type="other">Full list of author information is available at the end of the article<lb/></note>
+			
+			<note type="copyright">© 2011 Williams et al; licensee BioMed Central Ltd. This is an Open Access article distributed under the terms of the Creative Commons<lb/> Attribution License (http://creativecommons.org/licenses/by/2.0), which permits unrestricted use, distribution, and reproduction in<lb/> any medium, provided the original work is properly cited.<lb/></note>
+
+		</front>
+	</text>
+</tei>

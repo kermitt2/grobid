@@ -1,0 +1,21 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="660"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Why Should Architectural Principles be <lb/>Enforced? <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Naftaly H. Minsky <lb/></docAuthor></byline>
+		<email>minsky@cs.rutgers.edu <lb/></email>
+		<byline><affiliation>Department of Computer Science <lb/>Rutgers University <lb/></affiliation></byline>
+		<address>New Brunswick, NJ, 08903 USA <lb/></address>
+		<date>August 12, 1998 <lb/></date>
+		<div type="abstract">Abstract <lb/>There is an emerging consensus that an explicit architectural model <lb/>would be invaluable for large evolving software systems, providing them <lb/>with a framework within which such a system can be reasoned about and <lb/>maintained. But the great promise of architectural models has not been <lb/>fulfilled so far, due to a gap between the model and the system it purports <lb/>to describe. It is our contention that this gap is best bridged if the model <lb/>is not just stated, but is enforced. <lb/>This gives rise to a concept enforced architectural model |or, a law | <lb/>which is explored in this paper. We argue that this model has two major beneficial consequences: First, by bridging the above mentioned gap <lb/>between an architectural model and the actual system, an enforced architectural model provides a truly reliable framework within which a system <lb/>can be reasoned about and maintained. Second, our model provides software developers with a carefully circumscribed flexibility in molding the <lb/>law of a project, during its evolutionary lifetime|while maintaining certain architectural principles as invariant of evolution. <lb/></div>
+		<keywords>Keywords: architectural model, law-governed software, evolution, in <lb/>variants of evolution, firewalls, protection. <lb/></keywords>
+		<note type="grant">Work supported in part by NSF grants No. CCR-9308773 <lb/></note>
+		<pb/>
+		</front>
+</text>
+</tei>

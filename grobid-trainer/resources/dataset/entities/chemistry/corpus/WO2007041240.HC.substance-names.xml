@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<nite:root nite:id="WO2007041240.HC.substance-names" xmlns:nite="http://nite.sourceforge.net/">
+   <substance-name nite:id="WO2007041240.HC.substance-names.1" comment="" name="polyethylene glycol" relevant="false" chebi-id="CHEBI:46793" epochem-id="EPOCHEM:NEW:SUBSTANCE:2">
+      <nite:child href="WO2007041240.words.xml#id(WO2007041240_w_7857)"/>
+      <nite:child href="WO2007041240.words.xml#id(WO2007041240_w_7856)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007041240.HC.substance-names.2" comment="" name="polyethylene glycol" relevant="false" chebi-id="CHEBI:46793" epochem-id="EPOCHEM:NEW:SUBSTANCE:2">
+      <nite:child href="WO2007041240.words.xml#id(WO2007041240_w_9939)"/>
+      <nite:child href="WO2007041240.words.xml#id(WO2007041240_w_9938)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007041240.HC.substance-names.3" comment="" name="polyoxyethylene oleyl ether" relevant="false" chebi-id="WO2007041240:9425" epochem-id="EPOCHEM:NEW:SUBSTANCE:9">
+      <nite:child href="WO2007041240.words.xml#id(WO2007041240_w_9608)..id(WO2007041240_w_9610)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007041240.HC.substance-names.4" comment="" name="n-hexadecyl polyethylene ether" relevant="false" chebi-id="WO2007041240:876878" epochem-id="EPOCHEM:NEW:SUBSTANCE:10">
+      <nite:child href="WO2007041240.words.xml#id(WO2007041240_w_9616)"/>
+      <nite:child href="WO2007041240.words.xml#id(WO2007041240_w_9614)..id(WO2007041240_w_9615)"/>
+      <nite:child href="WO2007041240.words.xml#id(WO2007041240_w_9612)..id(WO2007041240_w_9613)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007041240.HC.substance-names.5" comment="" name="chitosan" relevant="false" chebi-id="WO2007041240:504385" epochem-id="EPOCHEM:NEW:SUBSTANCE:11">
+      <nite:child href="WO2007041240.words.xml#id(WO2007041240_w_9654)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007041240.HC.substance-names.6" comment="" name="alginate" relevant="false" chebi-id="WO2007041240:171765" epochem-id="EPOCHEM:NEW:SUBSTANCE:12">
+      <nite:child href="WO2007041240.words.xml#id(WO2007041240_w_9657)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007041240.HC.substance-names.7" comment="" name="lecithin" relevant="false" chebi-id="CHEBI:16110" epochem-id="EPOCHEM:NEW:SUBSTANCE:13">
+      <nite:child href="WO2007041240.words.xml#id(WO2007041240_w_9971)"/>
+   </substance-name>
+</nite:root>

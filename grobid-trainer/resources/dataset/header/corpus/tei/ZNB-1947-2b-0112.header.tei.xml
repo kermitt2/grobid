@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="ZNB-1947-2b-0112"/>
+	</teiHeader>
+	<text xml:lang="de">
+		<front>
+			<lb/>
+			<docTitle>
+				<titlePart>Über die Spaltung des Tabakmosaikvirus und die Wiedervereinigung<lb/> der Spaltstücke zu höhermolekularen Proteinen<lb/> I. Die Sp'altungsreaktion<lb/></titlePart>
+			</docTitle>
+
+			<byline>
+				<docAuthor>Von GERHARD SCHRAMM<lb/></docAuthor>
+			</byline>
+
+			<byline>
+				<affiliation>Aus dem Kaiser-Wilhelm-Institut für Biochemie, Abteilung Virusforschung,</affiliation>
+			</byline>
+
+			<address>Tübingen<lb/></address>
+
+			<reference>(Z. Naturforschg. 2b, 112—121 [1947];</reference>
+
+			<note type="submission">eingegangen am 3. Dezember 1946)<lb/></note>
+
+			<div type="abstract">In schwach alkalischer Lösung entstehen aus dem Tabakmosaikvirus 8 verschiedene Spalt-<lb/>proteine definierter Größe und außerdem in einigen Fällen freie Nucleinsäure. Die Anzahl, Größe<lb/> und Gestalt der Spaltproteine wird bestimmt und eine Vorstellung über ihre Anordnung im ur-<lb/>sprünglichen Virusmolekül entwickelt. Aus den chemischen und serologischen Eigenschaften<lb/> ergibt sich, daß es sich um native Eiweißstoffe handelt. Über die Kinetik der Zerfallsreaktion<lb/> lassen sich bisher nur einige qualitative Angaben machen.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,28 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="90"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">A Feedback Mechanism for Query by Navigation <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>F.C. Berger <lb/>Th.P. van der Weide n <lb/></docAuthor></byline>
+		<note type="other">Published as:</note>
+		<byline><docAuthor>F.C. Berger and Th.P. van der <lb/>Weide.</docAuthor></byline>
+		<docTitle>
+			<titlePart type="main">A Feedback Mechanism for Query by <lb/>Navigation.</titlePart>
+		</docTitle>
+		<idno>Technical Report CSI-R9413,</idno>
+		<byline><affiliation>Computing Science Institute, University of Nijmegen, <lb/></affiliation></byline>
+		<address>Nijmegen, The Netherlands,</address>
+		<date>October 1994. <lb/></date>
+		<div type="abstract">Abstract <lb/>The Two-Level Hypermedia Paradigm sees an <lb/>Information Retrieval System as consisting of <lb/>a document network (the Hyperbase) and a <lb/>descriptor (term) network (the Hyperindex). <lb/>Query by Navigation is a process whereby the <lb/>searcher gives a description of the Information Need by travelling through the descriptor <lb/>network. This paper presents a formalism for <lb/>expressing the effects of traversing the Hyper-index on the elements of the Hyperindex. This <lb/>formalism makes use of probabilities for mod-elling the searcher&apos;s behavious. The events <lb/>which can occur during the search process <lb/>are discussed and modelled. Some important <lb/>properties, which are reasonable to demand of <lb/>a retrieval system, can be proven to be valid <lb/>if this formalism is adopted. A mechanism <lb/>for assigning a measure of relevance to documents is presented. This uses the formalism <lb/>mentioned above. An example will show the <lb/>effectiveness of The aspect of relevance feedback and its role in Query by Navigation is <lb/>introduced by examining the different level on <lb/>which the searcher can offer information for <lb/>weeding out unwanted sections of the search <lb/>space. In order to illustrate the workings of <lb/>Query by Navigation a small example is included. <lb/></div>
+		<byline><affiliation>Dept. of Information Systems, Faculty of Mathematics and <lb/>Informatics, University of Nijmegen,</affiliation></byline>
+		<address>Toernooiveld 1, 6525 ED <lb/>Nijmegen, The Netherlands <lb/></address>
+		<keywords>Keywords: information retrieval, relevance feedback, user modelling, query formulation <lb/></keywords>
+		<note type="other">Classification: AMS 68P20; CR H.3.3, H.5.1 <lb/></note>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,19 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="780"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">C**: <lb/>A Large-Grain, Object-Oriented, Data-Parallel <lb/>Programming Language <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>James R. Larus, Brad Richards, and Guhan Viswanathan 1 <lb/></docAuthor></byline>
+		<byline><affiliation>Computer Sciences Department <lb/>University of Wisconsin-Madison <lb/></affiliation></byline>
+		<address>1210 West Dayton Street <lb/>Madison, WI 53706 USA <lb/></address>
+		<idno>UW Technical Report #1126 <lb/></idno>
+		<date>November 24, 1992 <lb/></date>
+		<note type="grant">1 This work was supported by the National Science Foundation under grants CCR-9101035 and CDA <lb/>9024618. <lb/></note>
+		<pb/>
+		</front>
+</text>
+</tei>

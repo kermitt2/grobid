@@ -1,0 +1,19 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="7"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">An Asymptotically Optimal Minimum <lb/>Degree Ordering of Regular Grids <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>B. Kumar, P. Sadayappan, C.-H. Huang <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer and Information Science <lb/> The Ohio State University, <lb/></affiliation></byline>
+		<address>Columbus, OH 43210 <lb/></address>
+		<div type="abstract">Abstract <lb/>It has previously been shown that there exists a minimum degree ordering for regular grids that is considerably worse than nested dissection <lb/>in terms of fill-in and operations for factorization [1]. This paper proves <lb/>the existence of a minimum degree ordering for regular grids that has the <lb/>same optimal asymptotic order complexity for fill-in and operation count <lb/>as nested dissection. The analysis is verified by showing exact match between analytical prediction and experimental measurement. The analysis <lb/>motivates a peripheral preordering strategy for use with the popular multiple minimum degree (MMD) algorithm, and is shown to consistently <lb/>reduce fill-in and operation count for regular grids. <lb/></div>
+		<keywords>Keywords: Sparse Matrices, Finite Element Grids, Minimum Degree <lb/>Ordering, Computational Complexity. <lb/></keywords>
+		<keywords type="classes">AMS(MOS) subject classifications: 65F05, 65F50, 68R10 <lb/></keywords>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

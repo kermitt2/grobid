@@ -1,0 +1,44 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005026"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<lb/>
+			<reference>Proceedings ofISCIT2005<lb/></reference>
+
+			<docTitle>
+				<titlePart>A CVM Approach for Service Migration *<lb/></titlePart>
+			</docTitle>
+
+			<byline>
+				<docAuthor>Qiwei Shen, Jianxin Liao<lb/></docAuthor>
+			</byline>
+
+			<byline>
+				<affiliation>State Key Laboratory of Networking and Switching Technology<lb/>
+					Beijing University of Posts and Telecommunications,</affiliation>
+			</byline>
+
+			<address>Beijing, China<lb/></address>
+
+			<email>E-mail: {shenqiwei, liaojianxin}@ebupt.com<lb/></email>
+
+			<div type="abstract">Abstract-The road to 3G runs through 2G and 2.5G<lb/> networks.
+				Until 3G is deployed ubiquitously, 2-2.5G networks<lb/> and endpoints will dominate.
+				The 3G subscribers should<lb/> share the successful services deployed in the
+				existing network<lb/> and the service migration is needed. Redesigning and<lb/>
+				redeveloping the legacy services is a time-consuming and<lb/> error-prone task. A
+				Connection View Model (CVM)<lb/> approach is taken to simplify the service
+				migration. Services<lb/> represented with the CVM are platform independent and
+				the<lb/> main task is to develop the transform rules for service<lb/> migration
+				which can be reused. With this approach, the<lb/> successful Color Ring Back Tone
+				(CRBT) service is migrated<lb/> to the IP Multimedia Subsystem (IMS).<lb/></div>
+
+			<keyword>Keywords- Service Migration, Connection View Model,<lb/> MDA, IMS,
+				CAMEL<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

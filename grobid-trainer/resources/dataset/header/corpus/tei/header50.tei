@@ -1,0 +1,20 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="51"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Quality Management of Information Systems Development <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Geoff Beckworth, <lb/></docAuthor></byline>
+		<email>email: gbeck@deakin.edu.au <lb/></email>
+		<byline><docAuthor>Brian Garner <lb/></docAuthor></byline>
+		<email>email: brian@deakin.edu.au <lb/></email>
+		<byline><affiliation>School of Computing and Mathematics <lb/> Deakin University,</affiliation></byline>
+		<address>Geelong, Victoria, 3217, Australia. <lb/></address>
+		<div type="abstract">Abstract <lb/>The role of the systems analyst in the implementation process has changed <lb/>dramatically in recent times because of changes to organisational boundaries, the <lb/>need to align IT with business objectives and the complexity of the systems now <lb/>required. Some organisations are finding themselves in a continually changing <lb/>environment and being involved in multi-organisational structures. Establishing <lb/>strategies and requirements for these organisations requires a new understanding <lb/>of the implementation process. Implementation is concerned with behavioural <lb/>phenomena since people are involved from the inception of the idea, as well as <lb/>being involved in the development process. They are also affected by the changes <lb/>which the new system brings to the organisation. The research is attempting to <lb/>understand the critical factors associated with the implementation process and <lb/>consequently develop an appropriate model. <lb/></div>
+		<div type="intro">1. Introduction</div>
+		</front>
+</text>
+</tei>

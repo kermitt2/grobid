@@ -1,0 +1,30 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="ZFN-A-007-01-0002"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<titlePage>
+				<docTitle>
+					<titlePart type="main">Ersatzpotentiale mit verwandtem Eigenwertspektrum<lb/> in Schrödinger-Gleichungen<lb/></titlePart>
+				</docTitle>
+				<byline>Von <docAuthor>E. Fues</docAuthor> und <docAuthor>H. Statz</docAuthor><lb/></byline>
+				<byline>Aus dem <affiliation>Institut für theoretische und angewandte Physik <lb/>der Technischen Hochschule Stuttgart <lb/></affiliation></byline>
+ 				 <reference>(Z. Naturforschg. 7 a, 2-9 [1952];</reference> 
+				 <note type="submission">eingegangen am 17. Oktober 1951)<lb/></note>
+				 <note type="dedication">Werner Heisenberg zum SO, Geburtstag gewidmet<lb/></note>
+			</titlePage>
+			<div type="abstract">Die Frage, weshalb man in manchen Metallen die Valenzelektronen als fast freies <lb/>
+Elektronengas behandeln darf, wird aus einem neuen Gesichtspunkt heraus unter- <lb/>
+sucht. Es wird hierbei gezeigt, daß das tiefe und enge Bmnpfpotential unter gewissen, <lb/>
+genauer abgeleiteten Voraussetzungen kaum einen Einfluß auf das Energiespektrum <lb/>
+der Valenzelektronen hat. Es läßt sich ein Ersatzpotential definieren, das die tiefen <lb/>
+Rumpf schlauche" vermeidet und, in die Schrödinger-Gleichung eingesetzt, trotzdem <lb/>
+Eigenfunktionen und Quantenenergien der Valenzelektronen näherungsweise wieder- <lb/>
+gibt. Vor allem werden idealisierte verwandte Potentialformen einer genaueren und <lb/>
+aufschlußreichen Betrachtung unterworfen. Die erwähnte Besonderheit der Metallelek- <lb/>
+tronen erklärt sich durch ein nahezu konstantes Ersatzpotential. Anwendungsmöglich- <lb/>
+keiten, besonders auf die Theorie der Oberflächenzustände, werden erwähnt.<lb/></div>
+		</front>
+	</text>
+</tei>

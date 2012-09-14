@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="522"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Information Extraction from HTML: <lb/>Application of a General Machine Learning Approach <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Dayne Freitag <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science <lb/>Carnegie Mellon University <lb/></affiliation></byline>
+		<address>5000 Forbes Avenue <lb/>Pittsburgh, PA 15213 <lb/></address>
+		<email>dayne@cs.cmu.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>Because the World Wide Web consists primarily of <lb/>text, information extraction is central to any effort that <lb/>would use the Web as a resource for knowledge discovery. We show how information extraction can be cast <lb/>as a standard machine learning problem, and argue for <lb/>the suitability of relational learning in solving it. The <lb/>implementation of a general-purpose relational learner <lb/>for information extraction, SRV, is described. In contrast with earlier learning systems for information extraction, SRV makes no assumptions about document <lb/>structure and the kinds of information available for use <lb/>in learning extraction patterns. Instead, structural and <lb/>other information is supplied as input in the form of an <lb/>extensible token-oriented feature set. We demonstrate <lb/>the effectiveness of this approach by adapting SRV for <lb/>use in learning extraction rules for a domain consisting <lb/>of university course and research project pages sampled <lb/>from the Web. Making SRV Web-ready only involves <lb/>adding several simple HTML-specific features to its basic feature set. <lb/></div>
+		<pb/>
+		</front>
+</text>
+</tei>

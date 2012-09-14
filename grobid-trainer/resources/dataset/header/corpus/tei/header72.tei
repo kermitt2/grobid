@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="73"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">A Simple Algorithm for Nearest Neighbor Search <lb/>in High Dimensions <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Sameer A. Nene and Shree K. Nayar <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science <lb/> Columbia University <lb/></affiliation></byline>
+		<address>New York, N.Y. 10027 <lb/></address>
+		<date>October, 1995 <lb/></date>
+		<idno>Technical Report No. CUCS-030-95 <lb/></idno>
+		<pb/>
+		</front>
+</text>
+</tei>

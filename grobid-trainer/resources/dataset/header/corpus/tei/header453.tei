@@ -1,0 +1,22 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="456"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<ptr type="web">URL: http://www.cam.sri.com/tr/crc044/paper.ps.ZARPA</ptr>
+		<note type="other">(HLT) Proceedings, Princeton, 1994 <lb/></note>
+		<docTitle>
+			<titlePart type="main">Combining Knowledge Sources <lb/>to Reorder N-Best Speech Hypothesis Lists <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Manny Rayner 1 , David Carter 1 , Vassilios Digalakis 2 , Patti Price 2 <lb/></docAuthor></byline>
+		<byline><affiliation>(1) SRI International,</affiliation></byline>
+		<address>Suite 23, Millers Yard, Cambridge CB2 1RQ, UK <lb/></address>
+		<byline><affiliation>(2) SRI International,</affiliation></byline>
+		<address>333 Ravenswood Ave., Menlo Park, CA 94025, USA <lb/></address>
+		<date>November 29, 1994 <lb/></date>
+		<div type="abstract">Abstract <lb/>A simple and general method is described that can combine different <lb/>knowledge sources to reorder N-best lists of hypotheses produced by a <lb/>speech recognizer. The method is automatically trainable, acquiring information from both positive and negative examples. Experiments are <lb/>described in which it was tested on a 1000-utterance sample of unseen <lb/>ATIS data. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

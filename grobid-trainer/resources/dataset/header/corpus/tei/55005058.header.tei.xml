@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005058"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<lb/>
+			<reference>Computer Communications 31 (2008) 1–4<lb/></reference>
+			
+			<note type="other">Short Communication<lb/></note>
+
+			<docTitle>
+				<titlePart>On modeling multiplexed VBR videoconference traffic<lb/> from H.263 video
+					coders<lb/></titlePart>
+			</docTitle>
+
+			<byline>
+				<docAuthor>P. Koutsakis *<lb/></docAuthor>
+			</byline>
+
+			<byline>
+				<affiliation>Department of Electrical &amp; Computer Engineering, McMaster
+					University,</affiliation>
+			</byline>
+
+			<address>ITB-A318, 1280 Main Street West, Hamilton, Ont., Canada L8S 4K1<lb/></address>
+
+			<note type="submission">Received 14 April 2007; accepted 30 October 2007<lb/></note>
+			<date>Available online 12 November 2007<lb/></date>
+
+			<div type="abstract">Abstract<lb/> Due to the burstiness of video traffic, video traffic
+				modeling is very important in order to evaluate the performance of future wired
+				and<lb/> wireless networks. In this letter, we build a highly accurate Discrete
+				Autoregressive model to capture the behavior of multiplexed H.263<lb/>
+				videoconference movies from VBR coders.<lb/>
+			</div>
+			
+			<note type="copyright">Ó 2007 Elsevier B.V. All rights
+				reserved.<lb/></note>
+
+			<keywords>Keywords: Videoconference traffic; Traffic modeling; H.263; Autoregressive
+				models</keywords>
+
+		</front>
+	</text>
+</tei>

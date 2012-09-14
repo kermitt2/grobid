@@ -1,0 +1,21 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="1084"/> 
+	</teiHeader>
+<text xml:lang="en">
+	<front> 
+		<note type="submission">Confidential:  not for distribution. Submitted to IOP Publishing for peer review </note>
+		<date type="submission">15 April 2010<lb/></date>
+		<docTitle>
+			<titlePart type="main">Measurements  of quarkonium production with<lb/> ALICE at the LHC<lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Javier  Castillo<lb/></docAuthor></byline>
+		<note type="other"> for the ALICE Collaboration<lb/></note>
+		<byline><affiliation>CEA,  Centre de Saclay, IRFU/SPhN, </affiliation></byline>
+		<address>91191 Gif-sur-Yvette, France<lb/></address>
+	    <email>E-mail:  jcastill@cea.fr<lb/></email>
+		<div type="abstract">Abstract.  ALICE is the LHC experiment dedicated to the study of heavy-ion<lb/> collisions. The main purpose of ALICE is to investigate the properties of a new state<lb/> of deconfined nuclear matter, the quark gluon plasma. Quarkonium measurements are<lb/> very promising tools to unveil the properties of the quark gluon plasma. We will review<lb/> the capabilities of the ALICE detectors to measure heavy quarkonia at both mid and<lb/> forward-rapidity regions, and discuss the related physics programme.<lb/></div>
+		<introduction>1. Introduction<lb/></introduction>
+    </front>
+</text>
+</tei>                              

@@ -1,0 +1,28 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="443"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">A Perturbation Scheme for Spherical Arrangements <lb/>with Application to Molecular Modeling <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Dan Halperin <lb/></docAuthor></byline>
+		<byline><affiliation>Tel Aviv University <lb/></affiliation></byline>
+		<byline><docAuthor>Christian R. Shelton <lb/></docAuthor></byline>
+		<byline><affiliation>Massachusetts Institute of Technology <lb/></affiliation></byline>
+		<date>July 31, 1997 <lb/></date>
+		<div type="abstract">Abstract <lb/>We describe a software package for computing and manipulating the subdivision of a sphere <lb/>by a collection of (not necessarily great) circles and for computing the boundary surface of the <lb/>union of spheres. We present problems that arise in the implementation of the software and the <lb/>solutions that we have found for them. At the core of the paper is a novel perturbation scheme to <lb/>overcome degeneracies and precision problems in computing spherical arrangements while using <lb/>floating point arithmetic. The scheme is relatively simple, it balances between the efficiency <lb/>of computation and the magnitude of the perturbation, and it performs well in practice. We <lb/>report and discuss experimental results. Our package is a major component in a larger package <lb/>aimed to support geometric queries on molecular models; it is currently employed by chemists <lb/>working in `rational drug design.&apos; The spherical subdivisions are used to construct a geometric <lb/>model of a molecule where each sphere represents an atom. We also give an overview of the <lb/>molecular modeling package and detail additional features and implementation issues. <lb/></div>
+		<note type="grant">This work has been supported in part by a grant from Pfizer Central Research. Dan Halperin has also been <lb/>supported by an Alon Fellowship, by ESPRIT IV LTR Project No. 21957 (CGAL), and by the Hermann Minkowski <lb/></note>
+		<byline><affiliation>- Minerva Center for Geometry at Tel Aviv University. <lb/></affiliation></byline>
+		<byline><affiliation>Department of Computer Science, Tel Aviv University,</affiliation></byline>
+		<address>Tel Aviv 69978, Israel.</address>
+		<email>E-mail: <lb/>halperin@math.tau.ac.il. <lb/></email>
+		<byline><affiliation>Department of Computer Science, MIT,</affiliation></byline>
+		<address>Cambridge, MA 02139.</address>
+		<email>E-mail: cshelton@ai.mit.edu.</email>
+		<note type="other">Part of the <lb/>work on this paper was carried out while Christian Shelton was at the Department of Computer Science, Stanford <lb/>University <lb/></note>
+		<pb/>
+		</front>
+</text>
+</tei>

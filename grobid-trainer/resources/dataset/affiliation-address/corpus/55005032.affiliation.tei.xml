@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>a</marker>
+							<orgName type="department">Department of Construction</orgName>,
+							<orgName type="institution">University of Oviedo</orgName>,
+							<address>
+								<postCode>33204</postCode>
+								<settlement>Gijon</settlement>,
+								<country>Spain</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>b</marker>
+							<orgName type="laboratory">ICITECH</orgName>,
+							<orgName type="department">Departamento de Ingeniería de la Construcción</orgName>,
+							<orgName type="institution">Universidad Politécnica de Valencia</orgName>,
+							<address>
+								<postCode>46071</postCode>
+								<settlement>Valencia</settlement>,
+								<country>Spain</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

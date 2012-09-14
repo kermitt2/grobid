@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+<listBibl>
+
+  	<bibl><date>2007</date> <title level="j">Sci. Technol. Adv. Mater.</title> <biblScope type="vol">8</biblScope> <biblScope type="pp">624</biblScope><lb/></bibl>
+  	<bibl><title level="j">Science and Technology of Advanced Materials</title> <biblScope type="vol">8</biblScope> (<date>2007</date>) <biblScope type="pp">624–634</biblScope><lb/></bibl>
+
+</listBibl>
+</tei>

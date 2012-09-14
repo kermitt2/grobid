@@ -1,0 +1,20 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="617"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Model-guided Segmentation of Corpus Callosum in MR Images <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Arvid Lundervold 1 , Nicolae Duta 2 , Torfinn Taxt 1 &amp; Anil K. Jain 2 <lb/></docAuthor></byline>
+		<byline><affiliation>1 Section for Medical Image Analysis and Informatics, Department of Physiology <lb/></affiliation></byline>
+		<byline><affiliation>University of Bergen,</affiliation></byline>
+		<address>Arstadveien 19, N-5009 Bergen, Norway <lb/></address>
+		<byline><affiliation>2 Department of Computer Science and Engineering, Michigan State University <lb/></affiliation></byline>
+		<address>East Lansing, MI 48824-1226, USA <lb/></address>
+		<div type="abstract">Abstract <lb/>Magnetic resonance imaging (MRI) of the brain, followed by automated segmentation of the corpus callosum <lb/>(CC) in midsagittal sections have important applications <lb/>in both clinical neurology and neurocognitive research <lb/>since the size and shape of the CC are shown to be correlated to sex, age, neurodegenerative diseases and various lateralized behavior in man. Moreover, whole head, <lb/>multispectral 3D MRI recordings enable voxel-based tissue classification and estimation of total brain volumes, <lb/>in addition to CC morphometric parameters. We propose <lb/>a new algorithm that uses both multispectral MRI measurements (intensity values) and prior information about <lb/>shape (CC template) to segment CC in midsagittal slices <lb/>with very little user interaction. The algorithm has been <lb/>tested on a sample of 10 subjects scanned with multispec-tral 3D MRI, collected for a study of dyslexia, with very <lb/>good agreement between the manually traced (true) CC <lb/>outline and the detected CC outline. We conclude that <lb/>the proposed method for CC segmentation is promising for <lb/>clinical use when multispectral MR images are recorded. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

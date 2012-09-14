@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="department">Department of Physics</orgName>,
+							<orgName type="department">Faculty of Mathematics and Physics</orgName>,
+							<orgName type="institution">University of Ljubljana</orgName>,
+							<address>
+								<postCode>SI-1000</postCode>
+								<settlement>Ljubljana</settlement>,
+								<country>Slovenia</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="department">Faculty of Education</orgName>,
+							<orgName type="institution">University of Ljubljana</orgName>,
+							<address>
+								<postCode>SI-1000</postCode>
+								<settlement>Ljubljana</settlement>,
+								<country>Slovenia</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>3</marker>
+							<orgName type="department">Department of Physics</orgName>,
+							<orgName type="institution">University of Massachusetts</orgName>,
+							<address>
+								<settlement>Amherst</settlement>,
+								<region>MA</region>
+								<postCode>01003</postCode>,
+								<country>USA</country>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>4</marker>
+							<address>
+								<addrLine>1278 Line 2 RR No 6 Niagara-on-the-Lake</addrLine>, 
+								<region>Ontario</region>
+								<postCode>L0S1J0</postCode>,
+								<country>Canada</country>
+							</address>								
+							<lb/>
+						</affiliation>
+						<affiliation>
+							<marker>5</marker>
+							<orgName type="department">DepartmentofTheoreticalPhysics</orgName>,
+							<orgName type="institution">JStefanInstitute</orgName>,
+							<address>
+								<postCode>SI-1000</postCode>
+								<settlement>Ljubljana</settlement>,
+								<country>Slovenia</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,24 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="491"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Belief Revision: A Critique <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Nir Friedman <lb/></docAuthor></byline>
+		<byline><affiliation>Computer Science Department <lb/>Stanford University <lb/></affiliation></byline>
+		<address>Gates Building 1A <lb/>Stanford, CA 94305-9010 <lb/></address>
+		<email>nir@cs.stanford.edu <lb/></email>
+		<byline><docAuthor>Joseph Y. Halpern <lb/></docAuthor></byline>
+		<byline><affiliation>IBM Research Division <lb/>Almaden Research Center,</affiliation></byline>
+		<address>Dept. K53-B2 <lb/>650 Harry Road <lb/>San Jose, CA 95120-6099 <lb/></address>
+		<email>halpern@almaden.ibm.com <lb/></email>
+		<date>May 6, 1996 <lb/></date>
+		<div type="abstract">Abstract <lb/>The problem of belief changehow an agent should revise her beliefs upon learning new <lb/>informationhas been an active area of research in both philosophy and artificial intelligence. <lb/>Many approaches to belief change have been proposed in the literature. Our goal is not to <lb/>introduce yet another approach, but to examine carefully the rationale underlying the approaches <lb/>already taken in the literature, and to highlight what we view as methodological problems in the <lb/>literature. The main message is that to study belief change carefully, we must be quite explicit <lb/>about the ontology or scenario underlying the belief change process. This is something that <lb/>has been missing in previous work, with its focus on postulates. Our analysis shows that we <lb/>must pay particular attention to two issues which have often been taken for granted: The first <lb/>is how we model the agent&apos;s epistemic state. (Do we use a set of beliefs, or a richer structure, <lb/>such as an ordering on worlds? And if we use a set of beliefs, in what language are these <lb/>beliefs are expressed?) The second is the status of observations. (Are observations known to <lb/>be true, or just believed? In the latter case, how firm is the belief?) For example, we argue that <lb/>even postulates that have been called beyond controversy are unreasonable when the agent&apos;s <lb/>beliefs include beliefs about her own epistemic state as well as the external world. Issues of the <lb/>status of observations arise particularly when we consider iterated belief revision, and we must <lb/>confront the possibility of revising by &apos; and then by :&apos;. <lb/></div>
+		<keywords>Keyword: Belief revision <lb/></keywords>
+		<pb/>
+		</front>
+</text>
+</tei>

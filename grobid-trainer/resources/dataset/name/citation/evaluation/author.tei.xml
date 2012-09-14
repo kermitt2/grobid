@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+        <teiHeader xml:lang="en">
+                <fileDesc>
+                        <sourceDesc>
+                                <biblStruct>
+                                        <analytic>
+        <author><forename>A</forename>. <lastname>Cau</lastname>, <forename>R</forename>. <lastname>Kuiper</lastname>, and <forename>W.-P</forename>. <lastname>de Roever</lastname> .</author>
+        <author><forename>M</forename>. <lastname>Kitsuregawa</lastname>, <forename>H</forename>. <lastname>Tanaka</lastname>, and <forename>T</forename>. <lastname>Moto-oka</lastname>.</author>
+        <author><forename>Alexander</forename> <lastname>Vrchoticky</lastname>.</author>
+        <author><forename>Marc</forename> <lastname>Shapiro</lastname> and <forename>Susan</forename> <lastname>Horwitz</lastname>.</author>
+        <author><forename>W</forename>. <lastname>Landi</lastname> and <forename>B</forename>. <middlename>G</middlename>. <lastname>Ryder</lastname>.</author>
+        <author><forename>W</forename>. <middlename>H</middlename>. <lastname>Enright</lastname>.</author>
+        <author><lastname>Gmytrasiewicz</lastname>, <forename>P</forename>. <middlename>J</middlename>., <lastname>
+Durfee</lastname>, <forename>E</forename>. <middlename>H</middlename>., &amp; <lastname>Wehe</lastname>, <forename>D</forename>. <middlename>K</middlename>.</author>
+        <author><forename>A</forename>. <lastname>Bookstein</lastname> and <forename>S</forename>. <middlename>T</middlename>. <lastname>Klein</lastname>,</author>
+        <author><forename>U</forename>. <lastname>Dayal</lastname>, <forename>H</forename>. <lastname>Garcia-Molina</lastname>, <forename>M</forename>. <lastname>Hsu</lastname>, <forename>B</forename>. <lastname>Kao</lastname>, and <forename>M.- C</forename>. <lastname>Shan</lastname>.</author>
+		<author><forename>C</forename>. <lastname>Qiao</lastname> and <forename>R</forename>. <lastname>Melhem</lastname>,</author>
+		<author><lastname>Ramadge</lastname>, <forename>P</forename>., &amp; <lastname>Wonham</lastname>, <forename>W</forename>.</author>
+		<author><lastname>Schaal</lastname>, <forename>S</forename>., &amp; <lastname>Atkeson</lastname>, <forename>C</forename>.</author>
+		<author><lastname>Hinton</lastname>, <forename>G</forename>. <middlename>E</middlename>., &amp; <lastname>Nowlan</lastname>, <forename>S</forename>. <middlename>J</middlename>.</author>
+		<author><forename>Cameron-Jones</forename>, <forename>R</forename>. <middlename>M</middlename>., &amp; <lastname>Quinlan</lastname>, <forename>J</forename>. <middlename>R</middlename>.</author>
+		<author><forename>D</forename>. <lastname>Ourston</lastname> and <forename>R</forename>. <middlename>J</middlename>. <lastname>Mooney</lastname>.</author>
+		<author><forename>E</forename>. <lastname>Styer</lastname>,</author>
+		<author><lastname>Pearl</lastname>, <forename>J</forename>.</author>
+		<author><forename>Larry</forename> <middlename>D</middlename>. <lastname>Wittie</lastname>, <forename>Gudjun</forename> <lastname>Hermannsson</lastname>, and <forename>Ai</forename> <middlename>Li</middlename>.</author>
+		<author><lastname>Bylander</lastname>, <forename>T</forename>.</author>
+		<author><forename>T</forename>. <lastname>Fahringer</lastname>, <forename>R</forename>. <lastname>Blasko</lastname>, and <forename>H</forename>. <lastname>Zima</lastname>.</author>
+		<author><forename>A</forename>. <middlename>D</middlename>. <lastname>Kallis</lastname> and <forename>D</forename>. <lastname>Klappholz</lastname>,</author>
+		<author><forename>R</forename>. <lastname>Fletcher</lastname>.</author>
+		<author><lastname>Clark</lastname>, <forename>K</forename>. <middlename>L</middlename>.,</author>
+		<author><lastname>Gent</lastname>, <forename>I</forename>. <middlename>P</middlename>., &amp; <lastname>Walsh</lastname>, <forename>T</forename>.</author>
+		<author><forename>P</forename>. <middlename>D</middlename>. Alevizos.</author>
+		<author><lastname>Ancona</lastname>, <forename>D</forename>., and <lastname>Zucca</lastname>, <forename>E</forename>.</author>
+		<author><forename>P</forename>. <lastname>Yang</lastname> and <forename>J</forename>. <middlename>H</middlename>. <lastname>Chern</lastname></author>
+		<author><lastname>Johnson</lastname>, et al.,</author>
+		<author><lastname>Calci</lastname>.</author>
+		<author><lastname>Holler</lastname>, et al.,</author>
+		<author><lastname>Smith</lastname>, B. et al.,</author>
+		<author><lastname>Elliot</lastname>, et al.,</author>
+		<author><lastname>von Dullemen</lastname>, et al.,</author>
+                                </analytic>
+                        </biblStruct>
+                </sourceDesc>
+        </fileDesc>
+	</teiHeader>
+</TEI>

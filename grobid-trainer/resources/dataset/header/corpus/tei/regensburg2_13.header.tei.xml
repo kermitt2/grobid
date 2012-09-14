@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="regensburg2_13"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Preparation and Crystal Structure of SbCl3 @BULLET I2 @BULLET 1,4-Dithiane<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Gertrud Kiel*<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institut für Anorganische Chemie und Analytische Chemie der Universität Mainz,<lb/></affiliation>
+	</byline>
+
+	<address>Johann-Joachim-Becher-Weg 24, D-6500 Mainz<lb/></address>
+
+	<reference>Z. Naturforsch. 36b, 55-58 (1981);</reference>
+
+	<note type="submission">eingegangen am 19. August/22. Oktober 1980<lb/></note>
+
+	<keyword>Iodine Antimony Trichloride 1,4-Dithiane, Crystal Structure<lb/></keyword>
+
+	<div type="abstract">The darkred compound SbCl3 • I2 • S2C4H8 has been prepared and its crystal structure<lb/> determined. This new compound crystallizes in the monoclinic system, space group P2_,<lb/> with a = 849.2 pm, b = 904.2 pm, c = 923.6 pm and ß = 106.1° at a temperature of 113 K,<lb/> and with a = 858.8(2) pm, b = 914.7(3) pm, c = 934.0(4) pm and ß = 106.62(3)° at a tem-<lb/>perature of 293 K, respectively. The structure is built up from chains<lb/> (SC2H4S---I-I---ClSbCl2)oo with a y-trigonal bipyramid around Sb.</div>
+
+		</front>
+	</text>
+</tei>

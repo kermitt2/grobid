@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="365"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<note type="reference">IEEE JOURNAL ON SELECTED AREAS IN COMMUNICATIONS, VOL. 13, NO. 7, SEPTEMBER 1995 1 <lb/></note>
+		<docTitle>
+			<titlePart type="main">Billing Users and Pricing for TCP <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Richard J. Edell, Nick McKeown and Pravin P. Varaiya <lb/></docAuthor></byline>
+		<div type="abstract">Abstract This paper presents a system for billing users <lb/>for their TCP traffic. This is achieved by postponing the <lb/>establishment of connections while the user is contacted, <lb/>verifying in a secure way that they are prepared to pay. By <lb/>presenting the user with cost and price information, the system can be used for cost recovery and to encourage efficient <lb/>use of network resources. The system requires no changes to <lb/>existing protocols or applications and can be used to recover <lb/>costs between cooperating sites. Statistics collected from a <lb/>four day trace of traffic between the University of Califor-nia, Berkeley and the rest of the Internet demonstrate that <lb/>such a billing system is practical and introduces acceptable <lb/>latency. An implementation based on the BayBridge prototype router is described. Our study also indicates that <lb/>pricing schemes may be used to control network congestion <lb/>either by rescheduling time-insensitive traffic to a less expensive time of the day, or by smoothing packet transfers to <lb/>reduce traffic peaks. <lb/></div>
+		<keywords>Keywords Internet economics, network tracing, usage-accounting <lb/></keywords>
+		<div type="intro">I. Introduction</div>
+		</front>
+</text>
+</tei>

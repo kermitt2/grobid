@@ -1,0 +1,19 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="403"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Efficient Gate Delay Modeling for Large Interconnect Loads <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Andrew B. Kahng and Sudhakar Muddu <lb/></docAuthor></byline>
+		<byline><affiliation>UCLA Computer Science Department,</affiliation></byline>
+		<address>Los Angeles, CA 90095-1596 USA <lb/></address>
+		<email>abk@cs.ucla.edu, </email> <email>sudhakar@cs.ucla.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>With fast switching speeds and large interconnect trees (MCMs), the <lb/>resistance and inductance of interconnect has a dominant impact on <lb/>logic gate delay. In this paper, we propose a new P model for distributed RC and RLC interconnects to estimate the driving point admittance at the output of a CMOS gate. Using this model we are able to <lb/>compute the gate delay efficiently, within 25% of SPICE-computed delays. Our parameters depend only on total interconnect tree resistance <lb/>and capacitance at the output of the gate. Previous effective load capacitance methods [7, 9], applicable only for distributed RC interconnects, are based on P model parameters obtained via a recursive admittance moment computation. Our model should be useful for iterative <lb/>optimization of performance-driven routing or for estimation of gate <lb/>delay and rise times in high-level synthesis. <lb/></div>
+		<keywords>Keywords: gate delay, reduced-order models, driving point admittance, <lb/>effective capacitance, interconnect modeling <lb/></keywords>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

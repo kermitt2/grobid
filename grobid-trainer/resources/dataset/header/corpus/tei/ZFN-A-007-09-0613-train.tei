@@ -1,0 +1,27 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="ZFN-A-007-09-0613"/>
+	</teiHeader>
+	<text xml:lang="de">
+		<front>
+			<titlePage>
+				<docTitle>
+					<titlePart type="main">Statistische Mechanik der Phasenumwandlungen II <lb/>Umwandlungen höherer Ordnung<lb/></titlePart>
+				</docTitle>
+				<byline>Von <docAuthor>ABNOLD MÜNSTER</docAuthor><lb/></byline>
+				<byline>Aus dem<affiliation>Metall-Laboratorium der Metall-Gesellschaft A.G.</affiliation> <address>Frankfurt a. M.</address><lb/></byline>
+				<reference>(Z. Naturforschg. 7a, 613-619 [1952]; </reference> 
+				<note type="submission">eingegangen am 6. Mai 1952)<lb/></note>
+			</titlePage>
+			<div type="abstract">Es wird gezeigt, daß das statistische Analogon einer Umwandlung r-tev Ordnung darin <lb/>
+besteht, daß die relativen Schwankungsgrößen der Ordnung r + 1 einer Großen Ge- <lb/>
+samtheit groß werden. Im besonderen ergibt sich allgemein die Möglichkeit von Umwand- <lb/>
+lungen II. Ordnung nach Ehrenfest und vom Onsagerschen Typus. An der Stelle <lb/>
+einer Umwandlung r-ter Ordnung hat die molekulare Verteilungsfunktion der Ordnung <lb/>
+r 4- 1 eine Singularität derart, daß das Integral über dieselbe nicht konvergiert. In Gasen <lb/>
+können Umwandlungen höherer Ordnung in hinreichender Entfernung vom kritischen <lb/>
+Punkt nicht auftreten. <lb/></div>
+			<div type="intro">X 7[ T^^ vorhergehenden Arbeit i gezeigt <lb/></div>
+		</front>
+	</text>
+</tei>

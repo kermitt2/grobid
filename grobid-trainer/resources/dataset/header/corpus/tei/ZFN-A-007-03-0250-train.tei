@@ -1,0 +1,23 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="ZFN-A-007-03-0250"/>
+	</teiHeader>
+	<text xml:lang="de">
+		<front>
+			<titlePage>
+				<docTitle>
+					<titlePart type="main">Uber die Dämpfung der elektromagnetischen Eigenschwingungen <lb/> des Systems Erde - Luft - Ionosphäre<lb/></titlePart>
+				</docTitle>
+				<byline>Von <docAuthor>W. O. Schumann</docAuthor><lb/></byline>
+				<byline>Aus dem <affiliation>Elektrophysikalischen Institut der Technischen Hochschule München<lb/></affiliation></byline>
+				<reference>(Z. Naturforschg. 7a, 250-252 [1952]; </reference>
+				<note type="submission">eingegangen am 17. Januar 1952)<lb/></note>
+			</titlePage>
+			<div type="abstract">Es wird eine Näherungsformel für die Dämpfung der niedersten Eigenfrequenzen <lb/>
+des Systems Erde — Luft — Ionosphäre abgeleitet, durch deren Messung die wirksame <lb/>
+Höhe ö der Luftschicht und der wirksame Leitwert der Ionosphäre bestimmt werden <lb/>
+kann. <lb/></div>
+			<div type="intro">I n einer Arbeit ^ sind die Eigenfrequenzen dieses <lb/></div>
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+<listBibl>
+
+	<bibl>
+		<title level="j">Protein Engineering, Design &amp; Selection</title> vol. <biblScope type="vol">23</biblScope> no. <biblScope type="issue">4</biblScope> pp. <biblScope type="pp">229– 241</biblScope>, <date>2010</date> Edited by <editor>Andrew Bradbury</editor>
+	</bibl>
+
+</listBibl>
+</tei>

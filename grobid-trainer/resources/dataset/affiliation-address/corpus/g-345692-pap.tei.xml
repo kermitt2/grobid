@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../jsp/xmlverbatimwrapper.xsl"?> 
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<affiliation>
+								<orgName type="department">Physics Department</orgName>,
+								<orgName type="institution">Washington University</orgName>,
+								<address>
+									<settlement>St. Louis</settlement>,
+									<region type="state" n="MO">MO</region>
+									<postCode>63130-4899</postCode>,
+									<country key="US">USA<lb/></country>
+								</address>
+							</affiliation>
+							<affiliation>
+								<orgName type="department">Institute for Theoretical Physics</orgName>,
+								<orgName type="institution">J.W. Goethe-University</orgName>,<lb/>
+								<address>	
+									<postCode>D-60438</postCode>
+									<settlement>Frankfurt am Main</settlement>
+									<country key="DE">Germany<lb/></country>
+								</address>
+							</affiliation>
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</TEI>

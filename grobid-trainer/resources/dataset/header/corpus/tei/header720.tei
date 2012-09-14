@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="721"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Modeling and Parameter Estimation of the Human Index Finger <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Robert N. Rohling and John M. Hollerbach <lb/></docAuthor></byline>
+		<byline><affiliation>Biorobotics Laboratory, McGill University <lb/></affiliation></byline>
+		<address>3775 University St., Montreal, Quebec H3A 2B4 <lb/></address>
+		<div type="abstract">Abstract <lb/>Precise teleoperation of dextrous robotic hands by <lb/>hand masters requires an accurate human hand model. <lb/>A kinematic model of a human index finger is developed as an example for human hand modeling. The <lb/>parameters of the model are determined by open-loop <lb/>kinematic calibration. Singular value decomposition is <lb/>used as a tool for analyzing the kinematic model and <lb/>the identification process. Accurate and reliable results are obtained only when the numerical condition <lb/>is minimized through parameter scaling, model reduction and pose set selection. The identified kinematic <lb/>parameters show the kinematic model and calibration <lb/>procedure have an accuracy on the order of a few millimeters. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

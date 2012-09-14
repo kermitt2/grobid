@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affilliation>
+							<marker>1</marker>
+							<orgName type="department">Istituto di Analisi dei Sistemi ed Informatica</orgName>,
+							<orgName type="institution">Consiglio Nazionale delle Ricerche</orgName>,
+							<address>
+								<addrLine>viale Manzoni 30</addrLine>,
+								<postCode>I-00185</postCode>
+								<settlement>Roma</settlement>,
+								<country>Italy</country>,
+							</address>
+						</affilliation>
+						<affilliation>
+							<marker>2</marker>
+							<orgName type="department">Dipartimento di Matematica</orgName>,
+							<orgName type="institution">University of Rome &quot;Tor Vergata&quot;</orgName>,
+							<address>
+								<addrLine>via della Ricerca Scientifica</addrLine>,
+								<postCode>I-00133</postCode>
+								<settlement>Roma</settlement>,
+								<country>Italy</country>.
+							</address>
+						</affilliation>
+						<affilliation>
+							<marker>3</marker>
+							<orgName type="department">Istituto di Analisi dei Sistemi ed Informatica</orgName>,
+							<orgName type="institution">Consiglio Nazionale delle Ricerche</orgName>,
+							<address>
+								<addrLine>viale Manzoni 30</addrLine>,
+								<postCode>I-00185</postCode>
+								<settlement>Roma</settlement>,
+								<country>Italy</country>.
+							</address>
+						</affilliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,22 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="226"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<note type="other">v4.9 1 <lb/></note>
+		<docTitle>
+			<titlePart type="main">Binding as an Interface Condition: <lb/>An Investigation of Hindi Scrambling <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>by <lb/>Douglas Arnold Jones <lb/></docAuthor></byline>
+		<note type="degree">Bachelor of Arts in Linguistics, Stanford University (1987) <lb/>Master of Arts in Linguistics, Stanford University (1989) <lb/>Submitted to the Department of Linguistics and Philosophy in <lb/>Partial Fulfillment of the Requirements for the Degree of <lb/>Doctor of Philosophy <lb/>at the <lb/></note>
+		<byline><affiliation>MASSACHUSETTS INSTITUTE OF TECHNOLOGY <lb/></affiliation></byline>
+		<byline><docAuthor>Douglas Arnold Jones <lb/></docAuthor></byline>
+		<note type="copyright">The author hereby grants to M.I.T permission to reproduce and <lb/>to distribute copies of this thesis document in whole or in <lb/>part. <lb/></note>
+		<note type="other">Signature of Author <lb/>Department of Linguistics and Philosophy <lb/></note>
+		<date>July 22, 1993 <lb/></date>
+		<note type="other">Certified by <lb/>Noam Chomsky <lb/>Institute Professor <lb/>Accepted by <lb/>Wayne O&apos;Neil <lb/>Head, Department of Linguistics and Philosophy <lb/></note>
+		<pb/>
+		</front>
+</text>
+</tei>

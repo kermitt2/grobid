@@ -1,0 +1,23 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="782"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Towards Effective and Efficient Free Space Management <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Mark L. McAuliffe <lb/></docAuthor></byline>
+		<byline><affiliation>University of Wisconsin|Madison <lb/></affiliation></byline>
+		<email>mcauliff@cs.wisc.edu <lb/></email>
+		<byline><docAuthor>Michael J. Carey <lb/></docAuthor></byline>
+		<byline><affiliation>IBM Almaden Research Center <lb/></affiliation></byline>
+		<email>carey@almaden.ibm.com <lb/></email>
+		<byline><docAuthor>Marvin H. Solomon <lb/></docAuthor></byline>
+		<byline><affiliation>University of Wisconsin|Madison <lb/></affiliation></byline>
+		<email>solomon@cs.wisc.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>An important problem faced by many database management <lb/>systems is the &quot;online object placement problem&quot;|the <lb/>problem of choosing a disk page to hold a newly allocated <lb/>object. In the absence of clustering criteria, the goal is <lb/>to maximize storage utilization. For main-memory based <lb/>systems, simple heuristics exist that provide reasonable <lb/>space utilization in the worst case and excellent utilization <lb/>in typical cases. However, the storage management problem <lb/>for databases includes significant additional challenges, such <lb/>as minimizing I/O traffic, coping with crash recovery, and <lb/>gracefully integrating space management with locking and <lb/>logging. <lb/>We survey several object placement algorithms, including <lb/>techniques that can be found in commercial and research <lb/>database systems. We then present a new object placement <lb/>algorithm that we have designed for use in Shore, an <lb/>object-oriented database system under development at the <lb/>University of Wisconsin|Madison. Finally, we present <lb/>results from a series of experiments involving actual Shore <lb/>implementations of some of these algorithms. Our results <lb/>show that while current object placement algorithms have <lb/>serious performance deficiencies, including excessive CPU <lb/>or main memory overhead, I/O traffic, or poor disk <lb/>utilization, our new algorithm consistently demonstrates <lb/>excellent performance in all of these areas. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

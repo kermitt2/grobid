@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Simone</forename>
+								<surname>Borri</surname>
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>Magali</forename>
+								<surname>Hage-Hassan</surname>
+								<marker>1,2</marker>
+							</persName>
+							<persName>
+								<forename>Patrick</forename>
+								<surname>Girard</surname>
+								<marker>3</marker>
+							</persName>
+							<persName>
+								<forename>Serge</forename>
+								<surname>Pravossoudovitch</surname>
+								<marker>3</marker>
+							</persName>
+							<persName>
+								<forename>Arnaud</forename>
+								<surname>Virazel</surname>
+								<marker>3</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

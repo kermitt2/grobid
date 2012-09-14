@@ -1,0 +1,20 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="274"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Incoercible Multiparty Computation <lb/></titlePart>
+		</docTitle>
+		<note type="other">(Extended Abstract) <lb/></note>
+		<byline><docAuthor>Ran Canetti Rosario Gennaro <lb/></docAuthor></byline>
+		<date>August 5, 1996 <lb/></date>
+		<div type="abstract">Abstract <lb/>Current secure multiparty protocols have the following deficiency. The public transcript of the communication can be used as an involuntary commitment of the parties to their inputs and outputs. Thus <lb/>parties can be later coerced by some authority to reveal their private data. Previous work that has <lb/>pointed this interesting problem out contained only partial treatment. <lb/>In this work we present the first general and rigorous treatment of the coercion problem in secure computation. First we present a general definition of protocols that provide resilience to coercion. Our <lb/>definition constitutes a natural extension of the general paradigm used for defining secure multiparty <lb/>protocols. Next we show that if trapdoor permutations exist then any function can be incoercibly <lb/>computed (i.e., computed by a protocol that provides resilience to coercion) in the presence of com-putationally bounded adversaries and only public communication channels. This holds as long as less <lb/>than half the parties are coerced (or corrupted). In particular, ours are the first incoercible protocols <lb/>without physical assumptions. Also, our protocols constitute an alternative solution to the recently <lb/>solved adaptive security problem. <lb/>Our techniques are quite surprising and include non-standard use of deniable encryptions. <lb/></div>
+		<byline><affiliation>Laboratory for Computer Science, Massachusetts Institute of Technology,</affiliation></byline>
+		<address>545 Technology Square, Cambridge MA 02139, <lb/> U.S.A.</address>
+		<email>canetti,rosario@theory.lcs.mit.edu <lb/></email>
+		<pb/>
+		</front>
+</text>
+</tei>

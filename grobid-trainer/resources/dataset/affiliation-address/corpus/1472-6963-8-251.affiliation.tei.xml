@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="department">Division of Nephrology</orgName>,
+							<address>
+								<addrLine>Suite A240</addrLine>,
+							</address>
+							<orgName type="institution">Sunnybrook Health Sciences Centre</orgName>,
+							<address>
+								<addrLine>2075 Bayview Avenue</addrLine>,
+								<settlement>Toronto</settlement>,
+								<region>Ontario</region>,
+								<country key="CA">Canada</country>,
+								<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="department">Heart and Stroke Foundation of Ontario</orgName>,
+							<address>
+								<addrLine>2300 Yonge Street</addrLine>,
+								<addrLine>Suite 1300</addrLine>,
+								<settlement>Toronto</settlement>,
+								<region>Ontario</region>,
+								<country key="CA">Canada</country>,
+								<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>3</marker>
+							<orgName type="department">Centre for Evaluation of Medicines</orgName>,
+							<address>
+								<addrLine>105 Main Street East</addrLine>,
+								<settlement>Hamilton</settlement>,
+								<region>Ontario</region>,
+								<country key="CA">Canada</country> and
+								<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>4</marker>
+							<orgName type="department">Institute for Clinical Evaluative Sciences</orgName>,
+							<address>
+								<addrLine>2075 Bayview Avenue</addrLine>,
+								<settlement>Toronto</settlement>,
+								<region>Ontario</region>,
+								<country key="CA">Canada</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

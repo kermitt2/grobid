@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="05366561"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>A robot's navigation method based on information fusion<lb/> in dynamic unknown environment<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>MENG Wei<lb/> Han Xuedong<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Information school<lb/> 706 Institute<lb/> Beijing Forestry University<lb/></affiliation></byline>
+		<byline>
+		<affiliation>China Aerospace Science and Industry Corporation<lb/></affiliation>
+	</byline>
+
+	<address>Beijing, China<lb/> Beijing, China<lb/></address>
+
+	<email>mengw@263.net<lb/></email>
+	<email>xdhm@263.net<lb/></email>
+
+		<div type="abstract">Abstract-An autonomous navigation method of robot in<lb/> dynamic unknown environment is presented. Human's<lb/> assistance is used instead of particular description of map.<lb/> There are two phases in this method. In phase of human's<lb/> guiding, a rough map of local environment is obtained by<lb/> sensor fusion. According to polar map, robot moves in<lb/> dynamic environment in the phase of autonomous<lb/> navigation. Emergent obstacles are disposed of in this<lb/> method, and optimization of path is also attained.<lb/> Experiment results show the effectiveness of this method.<lb/></div>
+		<keywords>KeyWords-autonomous robot ， sensor fusion ， obstacle<lb/> avoiding<lb/></keywords>
+		<div type="intro">I. INTRODUCTION</div>
+
+		</front>
+	</text>
+</tei>

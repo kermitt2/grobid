@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="632"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Irregular Applications under Software Shared Memory <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Liviu Iftode, Jaswinder Pal Singh and Kai Li <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science <lb/>Princeton University <lb/></affiliation></byline>
+		<address>Princeton, NJ 08544 <lb/></address>
+		<email>liv,jps,li@cs.princeton.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>Shared Virtual Memory (SVM) provides an inexpensive way to support the popular shared address <lb/>space programming model on networks of workstations or personal computers. Despite recent advances <lb/>in SVM systems, their performance for all but coarse-grained or regular applications is not well understood. <lb/>Nor is there an understanding of whether and how <lb/>fine-grained, irregular programs should be written differently for SVM, with its large granularities of communication and coherence, than for the more familiar <lb/>hardware coherent at cache line granularity. In this <lb/>paper we try to understand the performance and programming issues for emerging, irregular applications <lb/>on SVM systems. We examine performance on both <lb/>an aggressive all-software system as well as one with a <lb/>little hardware support in the network interface. We <lb/>also present approaches to improve the performance <lb/>of irregular applications at both the programming and <lb/>the system level. As a result of our experiences, we <lb/>identify a set of guidelines and techniques that pertain <lb/>specifically to programming SVM systems, beyond the <lb/>guidelines commonly used for programming hardware-coherent systems as well. We also present a further <lb/>relaxation of the memory consistency model, called <lb/>scope consistency, which is particularly effective for <lb/>such applications. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

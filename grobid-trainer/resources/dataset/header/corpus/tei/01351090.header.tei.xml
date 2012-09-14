@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="01351090"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+	
+	<reference>IMTC 2004 - lnstrumentation and Measurement<lb/>
+		Technology Conference<lb/>
+		Coma, Italy, 18-20 May 2004<lb/></reference>
+
+	<docTitle>
+	<titlePart>The Effects of Fusion Structures on Image Fusion Performances*<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Qiang WANG, Yi SHEN<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Dept. of Control Science and Engineering, Harbin Institute of Technology,</affiliation>
+	</byline>
+
+	<address>I5000 I , P. R. China<lb/></address>
+
+	<phone>Tel: +86 451 641341 I, Fax: +86 451 86418378,</phone>
+
+	<email>Email: wangqiang@hit,edu.cn<lb/></email>
+
+	<div type="abstract">Abstract - Imagefiisioii is becoming one of /he hot/es/ techiriques in<lb/> image processiirg. Maiiy iinugejtsioii methods have been developed<lb/> iii a namher oj applicarims. This puper maiir!v dI.~cus.~es /he<lb/> striicIirres uf image .firsion proces,~, which is ulasvrfed us<lb/> hierurchicul fusion s/rucIure, overall fusion scuclure. and arbitrary<lb/> firsion srntcIure. A i d rlre eflects qf such image fusion structures on<lb/>/he performarices of image,fusion are una!vzed In /he experimeril. a<lb/> y i c a l h.vperspecrrn1 image dura se/ isfused using /he sume isaveler<lb/> rruiisfirm hased image jisioii rechniquc. bm upplyi,ig diflereiir<lb/> firsinn .stniclure.s. The diflerences among /heir fused images are<lb/> uiiuiyzed The cxperimeiital results m / r l v /he rheorericul undysis<lb/> /hu/ the perforinairces (f image fisioi~ lechniqzres ure reluled no/<lb/> imly lo /he piston algorithm, htil also to the J i ~ s i i ~ ~<lb/> sIructures, arid<lb/> dfferent image ,fi,Si"H s/nlc1I,res ,"ill produce d!flere,,/ ,fusio,z<lb/> prcfirniaiices even z~sing /he same imoge,fusim mr/hod.<lb/></div>
+
+		<keywords>Keywords - Performances evaluation, image fusion, wavelet<lb/> transform, fusion structure<lb/></keywords>
+
+		<div type="introduction">I. INTRODUCTION<lb/></div>
+
+		</front>
+	</text>
+</tei>

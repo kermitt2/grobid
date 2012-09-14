@@ -1,0 +1,23 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="327"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Translucent Sums: A Foundation for <lb/>Higher-Order Module Systems <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Mark Lillibridge <lb/></docAuthor></byline>
+		<date>May, 1997 <lb/></date>
+		<idno>CMU�CS�97�122</idno>
+		<byline><affiliation>School of Computer Science <lb/>Carnegie Mellon University <lb/></affiliation></byline>
+		<address>Pittsburgh, PA 15213 <lb/></address>
+		<note type="degree">Submitted in partial fulfillment of the requirements <lb/>for the degree of Doctor of Philosophy. <lb/>Thesis Committee: <lb/>Robert Harper, Chair <lb/>Peter Lee <lb/>John Reynolds <lb/>Luca Cardelli, DEC SRC <lb/></note>
+		<note type="copyright">Copyright c fl1997 Mark Lillibridge <lb/></note>
+		<note type="grant">This research was sponsored by the Air Force Materiel Command (AFMC) and the Defense Advanced Research Projects Agency (DARPA) under contract number, F19628-95-C-0050. </note>
+		<note type="copyright">The U.S. Government is authorized to reproduce and distribute reprints for Government purposes notwithstanding <lb/>any copyright notation thereon. <lb/> </note>
+		<note type="other">The views and conclusions contained in this document are those of the author and should not be <lb/>interpreted as representing the official policies or endorsements, either expressed or implied, of the U.S. <lb/>Government. <lb/></note>
+		<pb/>
+		</front>
+</text>
+</tei>

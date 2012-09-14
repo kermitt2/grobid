@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="742"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">How to Progress a Database (and Why) <lb/>I. Logical Foundations <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Fangzhen Lin and Ray Reiter <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science <lb/>University of Toronto <lb/></affiliation></byline>
+		<address>Toronto, Canada M5S 1A4 <lb/></address>
+		<email>email: fl@ai.toronto.edu reiter@ai.toronto.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>One way to think about STRIPS is as a mapping from databases to databases, in the following sense: Suppose we want to know what <lb/>the world would be like if an action, represented by the STRIPS operator ff, were done <lb/>in some world, represented by the STRIPS <lb/>database D 0 . To find out, simply perform <lb/>the operator ff on D 0 (by applying ff&apos;s elementary add and delete revision operators to <lb/>D 0 ). We describe this process as progressing <lb/>the database D 0 in response to the action ff. <lb/>In this paper, we consider the general problem of progressing an initial database in response to a given sequence of actions. We <lb/>appeal to the situation calculus and an axiomatization of actions which addresses the <lb/>frame problem (Reiter [13], Lin and Reiter <lb/>[8]). This setting is considerably more general than STRIPS. Our results concerning <lb/>progression are mixed. The (surprising) bad <lb/>news is that, in general, to characterize a progressed database we must appeal to second <lb/>order logic. The good news is that there are <lb/>many useful special cases for which we can <lb/>compute the progressed database in first order logic; not only that, we can do so efficiently. <lb/></div>
+		<div type="intro">1 INTRODUCTION</div>
+		</front>
+</text>
+</tei>

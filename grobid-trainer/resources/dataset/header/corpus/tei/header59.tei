@@ -1,0 +1,19 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="60"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Evolution of Recursive Transition Networks for <lb/>Natural Language Recognition with Parallel <lb/>Distributed Genetic Programming <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Riccardo Poli <lb/></docAuthor></byline>
+		<byline><affiliation>School of Computer Science <lb/> The University of Birmingham <lb/></affiliation></byline>
+		<email>E-mail: R.Poli@cs.bham.ac.uk <lb/></email>
+		<idno>Technical Report: CSRP-96-19 <lb/></idno>
+		<date>December 1996 <lb/></date>
+		<div type="abstract">Abstract <lb/>This paper describes the application of Parallel Distributed Genetic Programming (PDGP) to the problem of inducing programs for natural language processing. <lb/>PDGP is a new form of Genetic Programming (GP) which is suitable for the development of programs with a high degree of parallelism and an efficient and effective <lb/>reuse of partial results. Programs are represented in PDGP as graphs with nodes <lb/>representing functions and terminals, and links representing the flow of control and <lb/>results. PDGP allows the exploration of a large space of possible programs including standard tree-like programs, logic networks, neural networks, finite state <lb/>automata, Recursive Transition Networks (RTNs), etc. The paper describes the <lb/>representations, the operators and the interpreters used in PDGP, and illustrates <lb/>its behaviour on the problem of inducing RTN-based recognisers for natural lan <lb/>guage from positive and negative examples. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

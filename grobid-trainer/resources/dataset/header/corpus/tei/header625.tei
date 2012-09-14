@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="627"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Hierarchical Explanation-Based Reinforcement Learning <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Prasad Tadepalli and Thomas G. Dietterich <lb/></docAuthor></byline>
+		<byline><affiliation>Computer Science Department <lb/>Oregon State University <lb/></affiliation></byline>
+		<address>Corvallis,Oregon 97331-3202 <lb/></address>
+		<email>{tadepalli,tgd}@research.cs.orst.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>Explanation-Based Reinforcement Learning <lb/>(EBRL) was introduced by Dietterich and <lb/>Flann as a way of combining the ability of <lb/>Reinforcement Learning (RL) to learn optimal plans with the generalization ability <lb/>of Explanation-Based Learning (EBL) (Di-etterich &amp; Flann, 1995). We extend this <lb/>work to domains where the agent must order and achieve a sequence of subgoals in <lb/>an optimal fashion. Hierarchical EBRL can <lb/>effectively learn optimal policies in some of <lb/>these sequential task domains even when the <lb/>subgoals weakly interact with each other. <lb/>We also show that when a planner that can <lb/>achieve the individual subgoals is available, <lb/>our method converges even faster. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

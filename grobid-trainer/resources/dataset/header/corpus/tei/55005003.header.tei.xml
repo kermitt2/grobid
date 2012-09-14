@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005003"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">D A T A B A S E</note>  <note type="copyright">Open Access<lb/></note> 
+        <docTitle>
+		<titlePart>zTrap: zebrafish gene trap and enhancer<lb/> trap database<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Koichi Kawakami 1,2* , Gembu Abe 1 , Tokuko Asada 1 , Kazuhide Asakawa 1,2 , Ryuichi Fukuda 1 , Aki Ito 1 , Pradeep Lal 1,2 ,<lb/> Naoko Mouri 1 , Akira Muto 1 , Maximilliano L Suster 1,5 , Hitomi Takakubo 1 , Akihiro Urasaki 1 , Hironori Wada 3 ,<lb/> Mikio Yoshida 4<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Abstract<lb/> Background: We have developed genetic methods in zebrafish by using the Tol2 transposable element; namely,<lb/> transgenesis, gene trapping, enhancer trapping and the Gal4FF-UAS system. Gene trap constructs contain a splice<lb/> acceptor and the GFP or Gal4FF (a modified version of the yeast Gal4 transcription activator) gene, and enhancer<lb/> trap constructs contain the zebrafish hsp70l promoter and the GFP or Gal4FF gene. By performing genetic screens<lb/> using these constructs, we have generated transgenic zebrafish that express GFP and Gal4FF in specific cells,<lb/> tissues and organs. Gal4FF expression is visualized by creating double transgenic fish carrying a Gal4FF transgene<lb/> and the GFP reporter gene placed downstream of the Gal4-recognition sequence (UAS). Further, the Gal4FF-<lb/> expressing cells can be manipulated by mating with UAS effector fish. For instance, when fish expressing Gal4FF in<lb/> specific neurons are crossed with the UAS:TeTxLC fish carrying the tetanus neurotoxin gene downstream of UAS,<lb/> the neuronal activities are inhibited in the double transgenic fish. Thus, these transgenic fish are useful to study<lb/> developmental biology and neurobiology.<lb/> Description: To increase the usefulness of the transgenic fish resource, we developed a web-based database<lb/> named zTrap http://kawakami.lab.nig.ac.jp/ztrap/. The zTrap database contains images of GFP and Gal4FF<lb/> expression patterns, and genomic DNA sequences surrounding the integration sites of the gene trap and enhancer<lb/> trap constructs. The integration sites are mapped onto the Ensembl zebrafish genome by in-house Blat analysis and<lb/> can be viewed on the zTrap and Ensembl genome browsers. Furthermore, zTrap is equipped with the functionality<lb/> to search these data for expression patterns and genomic loci of interest. zTrap contains the information about<lb/> transgenic fish including UAS reporter and effector fish.<lb/> Conclusion: zTrap is a useful resource to find gene trap and enhancer trap fish lines that express GFP and Gal4FF<lb/> in desired patterns, and to find insertions of the gene trap and enhancer trap constructs that are located within or<lb/> near genes of interest. These transgenic fish can be utilized to observe specific cell types during embryogenesis, to<lb/> manipulate their functions, and to discover novel genes and cis-regulatory elements. Therefore, zTrap should<lb/> facilitate studies on genomics, developmental biology and neurobiology utilizing the transgenic zebrafish resource.<lb/></div>
+
+		</front>
+	</text>
+</tei>

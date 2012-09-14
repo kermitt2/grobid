@@ -1,0 +1,19 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="325"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">The Interaction of <lb/>Architecture and Operating System Design <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Thomas E. Anderson, Henry M. Levy, Brian N. Bershad, and Edward D. Lazowska <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science and Engineering <lb/>University of Washington <lb/></affiliation></byline>
+		<address>Seattle, WA 98195 <lb/></address>
+		<div type="abstract">Abstract <lb/>Today&apos;s high-performance RISC microprocessors have been <lb/>highly tuned for integer and floating point application performance. These architectures have paid less attention to <lb/>operating system requirements. At the same time, new operating system designs often have overlooked modern architectural trends which may unavoidably change the relative <lb/>cost of certain primitive operations. The result is that operating system performance is well below application code <lb/>performance on contemporary RISCs. <lb/>This paper examines recent directions in computer architecture and operating systems, and the implications of <lb/>changes in each domain for the other. The requirements of <lb/>three components of operating system design are discussed <lb/>in detail: interprocess communication, virtual memory, and <lb/>thread management. For each component, we relate operating system functional and performance needs to the mechanisms available on commercial RISC architectures such as <lb/>the MIPS R2000 and R3000, Sun SPARC, IBM RS6000, <lb/>Motorola 88000, and Intel i860. <lb/>Our analysis reveals a number of specific reasons why <lb/>the performance of operating system primitives on RISCs <lb/>has not scaled with integer performance. In addition, <lb/>we identify areas in which architectures could better (and <lb/>cost-effectively) accommodate operating system needs, and <lb/>areas in which operating system design could accommodate certain necessary characteristics of cost-effective high-performance microprocessors. <lb/></div>
+		<note type="grant">This work was supported in part by the National Science <lb/>Foundation under Grants No. CCR-8703049, CCR-8619663, and <lb/>CCR-8907666, by the Washington Technology Center, by the Digital Equipment Corporation Systems Research Center and External Research Program, and by IBM and AT&amp;T Fellowships. <lb/></note>
+		<note type="other">Bershad is now with the School of Computer Science, Carnegie <lb/>Mellon University. <lb/></note>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

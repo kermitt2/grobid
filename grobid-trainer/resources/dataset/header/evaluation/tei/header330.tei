@@ -1,0 +1,23 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="335"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">MPI-FM: High Performance MPI on Workstation <lb/>Clusters <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Mario Lauria <lb/></docAuthor></byline>
+		<byline><affiliation>Dipartimento di Informatica e Sistemistica <lb/>Universita di Napoli &quot;Federico II&quot; <lb/></affiliation></byline>
+		<address>via Claudio 21 <lb/>80125 Napoli, Italy <lb/></address>
+		<email>lauria@nadis.dis.unina.it. <lb/></email>
+		<byline><docAuthor>Andrew Chien <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science <lb/>University of Illinois at Urbana-Champaign <lb/></affiliation></byline>
+		<address>1304 W. Springfield Ave. <lb/>Urbana, IL 61801, USA <lb/></address>
+		<email>achien@cs.uiuc.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>Despite the emergence of high speed LANs, the communication performance available to applications on workstation clusters still falls short of that available on MPPs. <lb/>A new generation of efficient messaging layers is needed to take advantage of the hardware performance and to deliver it to the application level. Communication software <lb/>is the key element in bridging the communication performance gap separating MPPs <lb/>and workstation clusters. <lb/>MPI-FM is a high performance implementation of MPI for networks of workstations connected with a Myrinet network, built on top of the Fast Messages (FM) library. <lb/>Based on the FM version 1.1 released in Fall 1995, MPI-FM achieves a minimum one-way latency of 19 s and a peak bandwidth of 17.3 MByte/s with common MPI send <lb/>and receive function calls. A direct comparison using published performance figures <lb/>shows that MPI-FM running on SPARCstation 20 workstations connected with a relatively inexpensive Myrinet network outperforms the MPI implementations available <lb/>on the IBM SP2 and the Cray T3D, both in latency and in bandwidth, for messages <lb/>up to 2 KByte in size. <lb/></div>
+		<note type="other">Visiting at time of writing <lb/></note>
+		<pb/>
+		</front>
+</text>
+</tei>

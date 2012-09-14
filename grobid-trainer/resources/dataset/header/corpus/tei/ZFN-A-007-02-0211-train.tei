@@ -1,0 +1,28 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="ZFN-A-007-02-0211"/>
+	</teiHeader>
+	<text xml:lang="de">
+		<front>
+			<titlePage>
+				<docTitle>
+					<titlePart type="main">Thermokraftmessungen an Kupferoxydul<lb/>
+bei hohen Temperaturen<lb/></titlePart>
+				</docTitle>
+				<byline>Yon <docAuthor>Helmut Müser</docAuthor> und <docAuthor>Helmut Schilling</docAuthor><lb/></byline>
+				<byline><affiliation>Physikalisches Institut der Universität <lb/>
+Frankfurt-Main<lb/></affiliation></byline>
+				<reference>(Z. Naturforschg. 7a, 211-212 [1952]; </reference>
+				<note>eingegangen am 15. Dez. 1951)<lb/></note>
+			</titlePage>
+			<div type="abstract">Bei Hall-Effektmessungen an Kupferoxydul fanden <lb/>
+SchottkyundWaibe 1 ^jaßi^^isauerstoffarmen <lb/>
+Proben das Vor zeichen der Hall-Spannung von Def ekt- <lb/>
+zu Überschußleitung umschlägt, wenn man die Tem- <lb/>
+peratur über 500 °0 steigert. Spätere, ähnliche Mes- <lb/>
+sungen von Feldman^ ergaben keine Vorzeichenum- <lb/>
+kehr.<lb/></div>
+			<div type="intro">Die vorliegenden Untersuchungen sollten klären, <lb/></div>
+		</front>
+	</text>
+</tei>

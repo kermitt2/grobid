@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="70"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Does Configuration Management Research Have a Future? <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Andre van der Hoek, Dennis Heimbigner, and Alexander L. Wolf <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science, CB 430 <lb/>  University of Colorado <lb/></affiliation></byline>
+		<address>Boulder, Colorado 80309 USA <lb/></address>
+		<email>fandre,dennis,alwg@cs.colorado.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>In this position paper we raise the question of whether Configuration Management (CM) <lb/>research has a future. The new standard in CM systems|typified by commercial products <lb/>such as Adele, ADC, ClearCase, Continuus/CM, and CCC/Harvest|largely satisfies the CM <lb/>functionality requirements posed by Dart. This implies that research in the area of CM is either <lb/>unnecessary or that we must find new challenges in CM on which to focus. We believe that <lb/>these challenges indeed exist. Here we present some areas that we feel are good opportunities <lb/>for new or continued CM research, and therefore conclude that CM research does have a future. <lb/></div>
+		<div type="intro">Introduction</div>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<nite:root nite:id="WO2007038869.HC.substance-names" xmlns:nite="http://nite.sourceforge.net/">
+   <substance-name nite:id="WO2007038869.HC.substance-names.1" comment="" name="polyethylene glycol" relevant="false" chebi-id="CHEBI:46793" epochem-id="EPOCHEM:NEW:SUBSTANCE:2">
+      <nite:child href="WO2007038869.words.xml#id(WO2007038869_w_6242)"/>
+      <nite:child href="WO2007038869.words.xml#id(WO2007038869_w_6241)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038869.HC.substance-names.2" comment="" name="polyanhydrides" relevant="false" chebi-id="WO2007038869:975293" epochem-id="EPOCHEM:NEW:SUBSTANCE:162">
+      <nite:child href="WO2007038869.words.xml#id(WO2007038869_w_6429)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038869.HC.substance-names.3" comment="" name="polyglycolic acid" relevant="false" chebi-id="WO2007038869:757660" epochem-id="EPOCHEM:NEW:SUBSTANCE:163">
+      <nite:child href="WO2007038869.words.xml#id(WO2007038869_w_6431)..id(WO2007038869_w_6432)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038869.HC.substance-names.4" comment="" name="polyorthoesters" relevant="false" chebi-id="WO2007038869:364348" epochem-id="EPOCHEM:NEW:SUBSTANCE:164">
+      <nite:child href="WO2007038869.words.xml#id(WO2007038869_w_6436)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038869.HC.substance-names.5" comment="" name="polylactic acid" relevant="false" chebi-id="WO2007038869:987003" epochem-id="EPOCHEM:NEW:SUBSTANCE:165">
+      <nite:child href="WO2007038869.words.xml#id(WO2007038869_w_6439)"/>
+      <nite:child href="WO2007038869.words.xml#id(WO2007038869_w_6438)"/>
+   </substance-name>
+</nite:root>

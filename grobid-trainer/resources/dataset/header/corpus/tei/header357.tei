@@ -1,0 +1,22 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="362"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Path integral approach to no-Coriolis <lb/>approximation in heavy-ion collisions <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>K. Hagino, 1 N. Takigawa, 1 , A.B. Balantekin 2 , and J.R. Bennett 3 <lb/></docAuthor></byline>
+		<byline><affiliation>1 Department of Physics, Tohoku University,</affiliation></byline>
+		<address>980-77 Sendai, Japan <lb/></address>
+		<byline><affiliation>2 Physics Department, University of Wisconsin, <lb/></affiliation></byline>
+		<address>Madison, Wisconsin 53706, USA <lb/></address>
+		<byline><affiliation>3 Department of Physics and Astronomy, <lb/>University of North Carolina at Chapel Hill,</affiliation></byline>
+		<address>Chapel Hill, NC 27599-3255 <lb/></address>
+		<date>June 26, 1995 <lb/></date>
+		<div type="abstract">Abstract <lb/>We use the two time influence functional method of the path integral approach in <lb/>order to reduce the dimension of the coupled-channels equations for heavy-ion reactions <lb/>based on the no-Coriolis approximation. Our method is superior to other methods in that <lb/>it easily enables us to study the cases where the initial spin of the colliding particle is not <lb/>zero. It can also be easily applied to the cases where there is a spin-orbit force, and where <lb/>the internal degrees of freedom are not necessarily collective coordinates. It also clarifies <lb/>the underlying assumption of the approximation. <lb/></div>
+		<pb/>
+		</front>
+</text>
+</tei>

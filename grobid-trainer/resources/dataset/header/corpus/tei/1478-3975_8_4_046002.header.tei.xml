@@ -1,0 +1,88 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="1478-3975_8_4_046002"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<lb/>
+			<note>Home Search Collections Journals About Contact us My IOPscience<lb/></note>
+			<docTitle>
+				<titlePart>The effect of interactions on the cellular uptake of
+					nanoparticles<lb/></titlePart>
+			</docTitle>
+
+			<note type="other">This article has been downloaded from IOPscience. Please scroll down to see the
+				full text article.<lb/></note>
+
+			<reference>2011 Phys. Biol. 8 046002<lb/></reference>
+
+			<ptr type="web">(http://iopscience.iop.org/1478-3975/8/4/046002)<lb/></ptr>
+
+			<note type="other">View the table of contents for this issue, or go to the journal homepage for
+				more<lb/></note>
+
+			<note type="other">Download details:<lb/></note>
+
+			<note type="other">IP Address: 145.64.134.241<lb/></note>
+
+			<note type="other">The article was downloaded on 27/05/2011 at 09:32<lb/> Please note that terms and
+				conditions apply.<lb/></note>
+			
+				
+			<pb/>
+			
+			<note type="other">IOP PUBLISHING</note> 
+			<space dim="horizontal"/>
+			<reference>PHYSICAL BIOLOGY<lb/></reference>
+
+			<reference>Phys. Biol. 8 (2011) 046002 (9pp)</reference>
+			<space dim="horizontal"/>
+			<idno>doi:10.1088/1478-3975/8/4/046002<lb/></idno>
+			<docTitle>
+				<titlePart>The effect of interactions on the cellular<lb/> uptake of
+					nanoparticles<lb/></titlePart>
+			</docTitle>
+
+			<byline>
+				<docAuthor>Abhishek Chaudhuri 1,2 , Giuseppe Battaglia 1 and Ramin Golestanian
+					2<lb/></docAuthor>
+			</byline>
+
+			<byline>
+				<affiliation>1 Department of Biomedical Science, University of
+					Sheffield,</affiliation>
+			</byline>
+
+			<address>Western Bank, Sheffield S10 2TN, UK<lb/></address>
+
+			<byline>
+				<affiliation>2 The Rudolf Peierls Centre for Theoretical Physics, University of
+					Oxford,</affiliation>
+			</byline>
+
+			<address>1 Keble Road,<lb/> Oxford OX1 3NP, UK<lb/></address>
+
+			<email>E-mail: a.chaudhuri1@physics.ox.ac.uk<lb/></email>
+
+			<note type="submission">Received 13 January 2011<lb/> Accepted for publication 28 March
+				2011<lb/></note> 
+			<date>Published 20 April 2011<lb/></date>
+
+			<ptr type="web">Online at stacks.iop.org/PhysBio/8/046002<lb/></ptr>
+
+			<div type="abstract">Abstract We present a simple two-state model to understand the
+				size-dependent endocytosis of<lb/> nanoparticles. Using this model, we elucidate the
+				relevant energy terms required to understand<lb/> the size-dependent uptake
+				mechanism and verify it by correctly predicting the behavior at<lb/> large and small
+				particle sizes. In the absence of interactions between the nanoparticles, we<lb/>
+				observe an asymmetric distribution of sizes with maximum uptake at intermediate
+				sizes and a<lb/> minimum size cut-off below which there can be no endocytosis.
+				Including the effect of<lb/> interactions in our model has remarkable effects on the
+				uptake characteristics. Attractive<lb/> interactions shift the minimum size cut-off
+				and increase the optimal uptake while repulsive<lb/> interactions make the
+				distribution more symmetric lowering the optimal uptake.<lb/></div>
+
+		</front>
+	</text>
+</tei>

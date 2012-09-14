@@ -1,0 +1,26 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="212"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">PMoct: A Policy management tool for OCT based Design Systems for Multiple Domains <lb/></titlePart>
+		</docTitle>
+		<idno>ISI Research Report <lb/>ISI/RR-93-387 <lb/></idno>
+		<date>October, 1993 <lb/></date>
+		<docTitle>
+			<titlePart type="main">PMoct: A Policy management tool for OCT <lb/>based Design Systems for Multiple Domains <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>John Granacki and Tauseef Kazi <lb/></docAuthor></byline>
+		<idno>ISI/RR-93-387 <lb/></idno>
+		<date>October, 1993 <lb/></date>
+		<byline><affiliation>University of Southern California <lb/>Information Science Institute <lb/></affiliation></byline>
+		<address>4676 Admiralty Way, Marina del Rey, CA 90292 <lb/></address>
+		<note type="other">Unclassified/Unlimited <lb/></note>
+		<byline><affiliation>UNIVERSITY OF SOUTHERN CALIFORNIA INFORMATION SCIENCES INSTITUTE <lb/></affiliation></byline>
+		<address>4676 Admiralty Way Marina del Rey, CA 90292 <lb/></address>
+		<pb/>
+		</front>
+</text>
+</tei>

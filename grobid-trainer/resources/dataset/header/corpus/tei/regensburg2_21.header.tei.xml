@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="regensburg2_21"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Metall-rr-Komplexe von Benzolderivaten, XIII [1]<lb/>Bis(methylthio-/-benzol)chrom(0)<lb/> Darstellung und Einsatz als zweizähniger Chelatligand<lb/> </titlePart>
+	</docTitle>
+
+	<note type="english-title">Metal-Ti Complexes of Benzene Derivatives, XIII [1]<lb/> Bis(methylthio-?7-benzene)chromium(0)<lb/> Preparation and Function as a Bidentate Chelating Ligand<lb/></note>
+
+	<byline>
+	<docAuthor>Helmut Burdorf und Christoph Eischenbroich*<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Fachbereich Chemie der Universität Marburg,</affiliation>
+	</byline>
+
+	<address>Hans-Meerwein-Straße, D-3550 Marburg/Lahn<lb/></address>
+
+	<reference>Z. Naturforsch. 36b, 94-101 (1981);</reference>
+
+	<note type="submission">eingegangen am 9. September 1980<lb/></note>
+
+	<keyword>Thioanisole Sandwich Complexes, X H NMR Spectra, 13 C NMR Spectra, ESR Spectra,<lb/> Coordination Chemistry<lb/></keyword>
+
+	<div type="abstract">The thioanisole-^-complexes (methylthio-7j-benzene)-(Tj-benzene)-chromium (2) and<lb/> bis(methylthio-?7-benzene)chromium (3) have been prepared via lithiation of bis(?7-benzene)-<lb/>chromium and consecutive reaction with dimethyldisulfide. X H NMR and 13 C NMR spectra<lb/> of 2 and 3 as well as ESR-spectra of the corresponding radical cations 2+ and 3t were<lb/> recorded and analyzed. In contrast to C(i7-arene)-Si and C(f/.arene)-P bonds, C(j/.arene)-S bonds<lb/> are stable to solvolysis.<lb/> With (norbornadiene)tetracarbonylmolybdenum, 3 readily forms [bis(methylthio-jj-<lb/>benzene)chromium]tetracarbonylmolybdenum (6) wherein 3 functions as a chelating<lb/> ligand. X H and 13 C NMR evidence suggests, that at room temperature 6 undergoes rapid<lb/> conformational interconversions.</div>
+
+		</front>
+	</text>
+</tei>

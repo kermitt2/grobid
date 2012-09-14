@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+<listBibl>
+
+		<bibl><author>K. Akahane et al.</author>, <title level="j">J. Cryst. Growth</title> <biblScope type="vol">245</biblScope> (<date>2002</date>), pp. <biblScope type="pp">31-36</biblScope>.</bibl>
+
+		<bibl><author>K. Akahane, N. Yamamoto, and M. Tsuchiya</author>, <title level="j">Appl. Phys. Lett.</title>, <biblScope type="vol">93</biblScope>( <date>2008</date>),<biblScope type="pp">041121</biblScope> .</bibl>
+
+		<bibl><author>K. Akahane, N. Yamamoto, T. Kawanishi</author>, <title level="j">Phys. Stat. Sol. A</title>, <biblScope type="vol">208</biblScope>( <date>2011</date>), pp. <biblScope type="pp">425-428</biblScope>.</bibl>
+
+		<bibl><author>O. Kojima et al.</author>, <title level="j">J. Appl. Phys.</title> <biblScope type="vol">103</biblScope> (<date>2008</date>), <biblScope type="pp">113504</biblScope>.</bibl>
+
+		<bibl><author>O. Kojima et al.</author>, <title level="j">J. Appl. Phys.</title> <biblScope type="vol">107</biblScope> (<date>2010</date>), <biblScope type="pp">073506</biblScope>.</bibl>
+
+		<bibl><author>O. Kojima et al.</author>, <title level="j">Phys. Stat. Sol. C</title> <biblScope type="vol">8</biblScope> (<date>2011</date>), <biblScope type="pp">46-49</biblScope>.</bibl>
+
+</listBibl>
+</tei>

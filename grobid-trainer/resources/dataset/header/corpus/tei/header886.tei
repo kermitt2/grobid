@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="unknown"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Laser Remote Sensing Techniques for Vertical Profiling of Cloud and <lb/>Aerosol Extinction and Back-scatter in the Lower Atmosphere. <lb/>A Brief Review <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>$flfl Papayannis*, E. Fokitis <lb/></docAuthor></byline>
+		<byline><affiliation>National Technical University of Athens, Physics Department <lb/></affiliation></byline>
+		<address>Zografou Campus, 15780 Zografou, GREECE <lb/></address>
+		<email>Email: apdlidar@central.ntua.gr <lb/></email>
+		<div type="abstract">Abstract <lb/>In this brief contribution we present the three principal laser remote <lb/>sensing ( lidar) techniques developed to retrieve the vertical profiling of <lb/>clouds and of the suspended aerosols (extinction and backscatter) in the <lb/>lower atmosphere, namely in the 0-7 km altitude region. The three lidar <lb/>techniques include the elastic ( Klett inversion, Doppler broadening) and <lb/>the nonelastic backscattering techniques ( Raman scattering). We report <lb/>on the potential of these techniques, as well as on the typical accuracies <lb/>of these techniques in the retrieval of the cloud and aerosol extinction <lb/>and backscatter vertical profiles in the troposphere (0-7 km ASL). <lb/></div>
+		<div type="intro">flfl Introduction</div>
+		</front>
+</text>
+</tei>

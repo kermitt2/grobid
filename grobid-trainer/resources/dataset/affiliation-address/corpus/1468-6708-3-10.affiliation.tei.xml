@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							Address:
+							<marker>1</marker>
+							<orgName type="institution">The University of Texas School of Public Health</orgName>,
+							<address>
+								<settlement>Houston</settlement>,
+								<region>TX</region>,
+								<country key="US">USA</country>,
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="institution">National Heart, Lung, and Blood Institute</orgName>,
+							<address>
+								<settlement>Bethesda</settlement>,
+								<region>MD</region>,
+								<country key="US">USA</country>,
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>3</marker>
+							<orgName type="department">Memphis Veterans Affairs Medical Center</orgName>,
+							<address>
+								<settlement>Memphis</settlement>,
+								<region>TN</region>,
+								<country key="US">USA</country>,
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>4</marker>
+							<orgName type="institution">Case Western Reserve University School of Medicine</orgName>,
+							<address>
+								<settlement>Cleveland</settlement>,
+								<region>OH</region>,
+								<country key="US">USA</country>,
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>5</marker>
+							<orgName type="institution">Wake Forest University</orgName>,
+							<address>
+								<addrLine>Winston-Salem</addrLine>,
+								<region>NC</region>,
+								<country key="US">USA</country>,
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>6</marker>
+							<orgName type="institution">University of Ottawa Heart Institute</orgName>,
+							<address>
+								<settlement>Ottawa</settlement>,
+								<region>ON</region>,
+								<country key="CA">Canada</country>,
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>7</marker>
+							<orgName type="institution">Howard University Medical School</orgName>,
+							<address>
+								<settlement>Washington</settlement>,
+								<region>DC</region>,
+								<country key="US">USA</country>,
+							</address>
+						</affiliation>
+						<affiliation>
+								<marker>8</marker>
+								<orgName type="institution"> Kaiser Permanente, Mid-Atlantic States</orgName>,
+							<address>
+								<settlement>Washington</settlement>,
+								<region>DC</region>,
+								<country key="US">USA</country>,
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>9</marker>
+							<orgName type="department">Keck School of Medicine</orgName>,
+							<orgName type="institution">University of Southern California</orgName>,
+							
+							<address>
+								<settlement>Los Angeles</settlement>,
+								<region>CA</region>,
+								<country key="US">USA</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

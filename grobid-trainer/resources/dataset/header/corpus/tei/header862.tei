@@ -1,0 +1,21 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="unknown"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<note type="reference">Proceedings of the Thirteenth International Joint Conference on Artificial Intelligence, 1995. <lb/></note>
+		<docTitle>
+			<titlePart type="main">Using Introspective Reasoning to Refine Indexing <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Susan Fox and David B. Leake <lb/></docAuthor></byline>
+		<byline><affiliation>Computer Science Department <lb/></affiliation></byline>
+		<address>Lindley Hall 215 <lb/></address>
+		<byline><affiliation>Indiana University <lb/></affiliation></byline>
+		<address>Bloomington, IN 47405 USA <lb/></address>
+		<email>E-mail: fsfox,leakeg@cs.indiana.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>Introspective reasoning about a system&apos;s own <lb/>reasoning processes can form the basis for <lb/>learning to refine those reasoning processes. <lb/>The ROBBIE 1 system uses introspective reasoning to monitor the retrieval process of a <lb/>case-based planner to detect retrieval of inappropriate cases. When retrieval problems <lb/>are detected, the source of the problems is explained and the explanations are used to determine new indices to use during future case <lb/>retrieval. The goal of ROBBIE&apos;s learning is to <lb/>increase its ability to focus retrieval on relevant <lb/>cases, with the aim of simultaneously decreasing the number of candidates to consider and <lb/>increasing the likelihood that the system will be <lb/>able to successfully adapt the retrieved cases to <lb/>fit the current situation. We evaluate the benefits of the approach in light of empirical results <lb/>examining the effects of index learning in the <lb/>ROBBIE system. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

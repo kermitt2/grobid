@@ -1,0 +1,21 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="705"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Transport and Display Mechanisms For Multimedia <lb/>Conferencing Across Packet-Switched Networks * <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>K. Jeffay, D.L. Stone, F.D. Smith <lb/></docAuthor></byline>
+		<byline><affiliation>University of North Carolina at Chapel Hill <lb/>Department of Computer Science <lb/></affiliation></byline>
+		<address>Chapel Hill, NC 27599-3175 USA <lb/></address>
+		<email>-jeffay,stone,smithfd-@cs.unc.edu <lb/></email>
+		<date>September, 1993 <lb/></date>
+		<div type="abstract">Abstract: A transport protocol that supports real-time communication of <lb/>audio/video frames across campus-area packet switched networks is presented. <lb/>It is a best effort protocol that attempts to ameliorate the effect of jitter, load <lb/>variation, and packet loss, to provide low latency, synchronized audio and video <lb/>communications. This goal is realized through four transport and display <lb/>mechanisms, and a real-time implementation of these mechanisms that <lb/>integrates operating system services ( e.g., scheduling and resource allocation, <lb/>and device management) with network communication services ( e.g., transport <lb/>protocols), and with application code ( e.g., display routines). The four <lb/>mechanisms are: a facility for varying the synchronization between audio and <lb/>video to achieve continuous audio in the face of jitter, a network congestion <lb/>monitoring mechanism that is used to control audio/video latency, a queueing <lb/>mechanism at the sender that is used to maximize frame throughput without <lb/>unnecessarily increasing latency, and a forward error correction mechanism for <lb/>transmitting audio frames multiple times to ameliorate the effects of packet loss <lb/>in the network. The effectiveness of these techniques is demonstrated by <lb/>measuring the performance of the protocol when transmitting audio and video <lb/>across congested networks. <lb/></div>
+		<note type="reference">Published in: Computer Networks and ISDN Systems, <lb/>Vol. 26, No. 10, (July 1994) pp. 1281-1304. <lb/></note>
+		<note type="grant">* This work supported in parts by grants from the National Science Foundation (numbers CCR-9110938 and ICI <lb/>9015443), and by the Digital Equipment Corporation and the IBM Corporation. <lb/></note>
+		<pb/>
+		</front>
+</text>
+</tei>

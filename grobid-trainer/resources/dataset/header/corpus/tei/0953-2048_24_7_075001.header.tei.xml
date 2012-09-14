@@ -1,0 +1,91 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="0953-2048_24_7_075001"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<lb/>
+			<note>Home Search Collections Journals About Contact us My IOPscience<lb/></note>
+			<docTitle>
+				<titlePart>Critical current and AC loss analysis of a superconducting power
+					transmission cable with<lb/> ferromagnetic diverters<lb/></titlePart>
+			</docTitle>
+
+			<note>This article has been downloaded from IOPscience. Please scroll down to see the
+				full text article.<lb/></note>
+
+			<reference>2011 Supercond. Sci. Technol. 24 075001<lb/></reference>
+
+			<ptr type="web">(http://iopscience.iop.org/0953-2048/24/7/075001)<lb/></ptr>
+			
+			<note>View the table of contents for this issue, or go to the journal homepage for
+				more<lb/></note>
+
+			<note>Download details:<lb/></note>
+
+			<note type="other">IP Address: 145.64.134.241<lb/></note>
+
+			<note>The article was downloaded on 27/05/2011 at 09:39<lb/> Please note that terms and
+				conditions apply.<lb/></note>
+			
+			<pb/>
+			<note type="other">IOP PUBLISHING</note>
+			<space dim="horizontal"/>
+			<reference>SUPERCONDUCTOR SCIENCE AND TECHNOLOGY<lb/></reference>
+			<reference>Supercond. Sci. Technol. 24 (2011) 075001 (7pp)<lb/></reference>
+			<space dim="horizontal"/>
+			<idno>doi:10.1088/0953-2048/24/7/075001<lb/></idno>
+			<docTitle>
+				<titlePart>Critical current and AC loss analysis of a<lb/> superconducting power
+					transmission cable<lb/> with ferromagnetic diverters<lb/></titlePart>
+			</docTitle>
+
+			<byline>
+				<docAuthor>M Vojeniak 1,2 , J Šouc 1 and F Gömöry 1<lb/></docAuthor>
+			</byline>
+
+			<byline>
+				<affiliation>1 Institute of Electrical Engineering, Slovak Academy of
+					Sciences,</affiliation>
+			</byline>
+
+			<address>Dubravska cesta 9,<lb/> 841 04 Bratislava, Slovakia<lb/></address>
+
+			<byline>
+				<affiliation>2 Karlsruhe Institute of Technology, Institute for Technical
+					Physics,<lb/></affiliation>
+			</byline>
+
+			<address>Hermann-von-Helmholtz-Platz 1, 76344 Eggenstein-Leopoldshafen, Germany<lb/></address>
+
+			<email>E-mail: michal.vojenciak@savba.sk<lb/></email>
+
+			<note type="submission">Received 28 January 2011, in final form 22 March 2011<lb/></note>
+			<date>Published 12 May 2011<lb/></date>
+
+			<ptr type="web">Online at stacks.iop.org/SUST/24/075001<lb/></ptr>
+
+			<div type="abstract">Abstract Superconducting transmission cables are important for
+				increasing the capability of electricity<lb/> networks. We analysed monolayer power
+				transmission cable based on high-temperature<lb/> superconductors, and we propose a
+				new way to improve its performance in this paper. We<lb/> studied two important
+				parameters of this cable—critical current and AC loss. For the former<lb/>
+				parameter, the dependence of the critical current density on the local magnetic
+				field is very<lb/> important. For the latter parameter, the direction of the
+				magnetic field penetration also has a<lb/> substantial influence. We propose placing
+				ferromagnetic diverters above the gaps between<lb/> individual superconducting
+				tapes. Ferromagnetic components placed in this position influenced<lb/> both the
+				critical current density and the AC loss in the superconductor in a positive way.
+				We<lb/> used a numerical model for magnetic field analysis, and we also prepared a
+				0.5 m long sample<lb/> of the cable for experimentation. Our experimental results
+				confirmed the correctness of the<lb/> basic idea. The critical current of the cable
+				was increased by 14%. However, the AC loss<lb/> measurement showed differences
+				between the experiment and the calculation.<lb/></div>
+
+			<note type="other">(Some figures in this article are in colour only in the electronic
+				version)<lb/></note>
+
+		</front>
+	</text>
+</tei>

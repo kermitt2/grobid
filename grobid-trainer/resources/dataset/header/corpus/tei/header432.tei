@@ -1,0 +1,20 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="435"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Building Interpreters by Composing Monads <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Guy L. Steele Jr. <lb/></docAuthor></byline>
+		<byline><affiliation>Thinking Machines Corporation <lb/></affiliation></byline>
+		<address>245 First Street <lb/>Cambridge, Massachusetts 02142 <lb/></address>
+		<note type="phone">(617) 234-2860 <lb/></note>
+		<email>gls@think.com <lb/></email>
+		<div type="abstract">Abstract: We exhibit a set of functions coded in <lb/>Haskell that can be used as building blocks to construct <lb/>a variety of interpreters for Lisp-like languages. The <lb/>building blocks are joined merely through functional <lb/>composition. Each building block contributes code to <lb/>support a specific feature, such as numbers, continuations, functions calls, or nondeterminism. The result of <lb/>composing some number of building blocks is a parser, <lb/>an interpreter, and a printer that support exactly the <lb/>expression forms and data types needed for the combined set of features, and no more. <lb/>The data structures are organized as pseudomonads, <lb/>a generalization of monads that allows composition. <lb/>Functional composition of the building blocks implies <lb/>type composition of the relevant pseudomonads. <lb/>Our intent was that the Haskell type resolution system ought to be able to deduce the approprate data <lb/>types automatically. Unfortunately there is a deficiency <lb/>in current Haskell implementations related to recursive <lb/>data types: circularity must be reflected statically in the <lb/>type definitions. <lb/>We circumvent this restriction by applying a purpose-built program simplifier that performs partial evaluation <lb/>and a certain amount of program algebra. We construct <lb/>a wide variety of interpreters in the style of Wadler by <lb/>starting with the building blocks and a page of boiler-plate code, writing three lines of code (one to specify the <lb/>building blocks and two to (redundantly) specify type <lb/>compositions), and then applying the simplifier. The <lb/>resulting code is acceptable Haskell code. <lb/>We have tested a dozen different interpreters with <lb/>various combinations of features. In this paper we discuss the overall code structuring strategy, exhibit several building blocks, briefly describe the partial evaluator, and present a number of automatically generated <lb/>interpreters. <lb/></div>
+		<note type="other">This is a preprint of a paper that is </note><note type="reference">to appear <lb/> in the Proceedings of the Twenty-first Annual ACM <lb/>SIGPLAN-SIGACT Symposium on Principles of Programming Languages, January 1994. <lb/></note>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

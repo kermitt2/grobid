@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="ZFN-A-035-02-0226"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<titlePage>
+				<docTitle>
+					<titlePart type="main">NMR Investigations of 170, MS, MMo, and S7Mo in Thiomolybdatcs <lb/></titlePart>
+				</docTitle>
+				<byline><docAuthor>P. Kroneck<lb/></docAuthor></byline>
+				<byline><affiliation>Fakultät für Biologie der Universität Konstanz<lb/></affiliation></byline>
+                                <byline>and <docAuthor>O. Lutz and A. Nolle</docAuthor><lb/></byline>
+                                <byline><affiliation>Physikalisches Institut der Universität Tübingen</affiliation><lb/></byline>
+				<reference>Z. Naturforsch. 85«, 226—229 (1980); </reference>
+				<note type="submission">received December 24  1979 <lb/></note>
+			</titlePage>
+			<div type="abstract">NMR investigations of 17 0, ^S, 95 Mo, and 97 Mo have been used to elucidate the existence <lb/>and the behaviour of the oxothiomolybdate species, Mo04- n S» 2 ~ ( n = 0,1, 2, 3, 4 ) in aqueous <lb/>solution. Very large chemical shifts and surprisingly narrow lines have been found for these <lb/>nuclei in the different species.<lb/></div>
+			<div type="intro">Introduction<lb/></div>
+		</front>
+	</text>
+</tei>

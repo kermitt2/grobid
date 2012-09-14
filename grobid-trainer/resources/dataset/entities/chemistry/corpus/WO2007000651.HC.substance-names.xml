@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<nite:root nite:id="WO2007000651.HC.substance-names" xmlns:nite="http://nite.sourceforge.net/">
+   <substance-name nite:id="WO2007000651.HC.substance-names.1" comment="" name="hyaluronic acid" relevant="false" chebi-id="CHEBI:16336" epochem-id="EPOCHEM:NEW:SUBSTANCE:7">
+      <nite:child href="WO2007000651.words.xml#id(WO2007000651_w_19)..id(WO2007000651_w_20)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007000651.HC.substance-names.2" comment="" name="hyaluronic acid" relevant="false" chebi-id="CHEBI:16336" epochem-id="EPOCHEM:NEW:SUBSTANCE:7">
+      <nite:child href="WO2007000651.words.xml#id(WO2007000651_w_47)"/>
+      <nite:child href="WO2007000651.words.xml#id(WO2007000651_w_46)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007000651.HC.substance-names.3" comment="" name="hyaluronic acid" relevant="false" chebi-id="CHEBI:16336" epochem-id="EPOCHEM:NEW:SUBSTANCE:7">
+      <nite:child href="WO2007000651.words.xml#id(WO2007000651_w_145)"/>
+      <nite:child href="WO2007000651.words.xml#id(WO2007000651_w_144)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007000651.HC.substance-names.4" comment="" name="hyaluronic acid" relevant="false" chebi-id="CHEBI:16336" epochem-id="EPOCHEM:NEW:SUBSTANCE:7">
+      <nite:child href="WO2007000651.words.xml#id(WO2007000651_w_179)"/>
+      <nite:child href="WO2007000651.words.xml#id(WO2007000651_w_178)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007000651.HC.substance-names.5" comment="" name="hyaluronic acid" relevant="false" chebi-id="CHEBI:16336" epochem-id="EPOCHEM:NEW:SUBSTANCE:7">
+      <nite:child href="WO2007000651.words.xml#id(WO2007000651_w_237)..id(WO2007000651_w_238)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007000651.HC.substance-names.6" comment="" name="hyaluronic acid" relevant="false" chebi-id="CHEBI:16336" epochem-id="EPOCHEM:NEW:SUBSTANCE:7">
+      <nite:child href="WO2007000651.words.xml#id(WO2007000651_w_571)"/>
+      <nite:child href="WO2007000651.words.xml#id(WO2007000651_w_570)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007000651.HC.substance-names.7" comment="" name="hyaluronic acid" relevant="false" chebi-id="CHEBI:16336" epochem-id="EPOCHEM:NEW:SUBSTANCE:7">
+      <nite:child href="WO2007000651.words.xml#id(WO2007000651_w_915)..id(WO2007000651_w_916)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007000651.HC.substance-names.8" comment="" name="hyaluronic acid" relevant="false" chebi-id="CHEBI:16336" epochem-id="EPOCHEM:NEW:SUBSTANCE:7">
+      <nite:child href="WO2007000651.words.xml#id(WO2007000651_w_1006)..id(WO2007000651_w_1007)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007000651.HC.substance-names.9" comment="" name="hyaluronic acid" relevant="false" chebi-id="CHEBI:16336" epochem-id="EPOCHEM:NEW:SUBSTANCE:7">
+      <nite:child href="WO2007000651.words.xml#id(WO2007000651_w_1065)..id(WO2007000651_w_1066)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007000651.HC.substance-names.10" comment="" name="hyaluronic acid" relevant="false" chebi-id="CHEBI:16336" epochem-id="EPOCHEM:NEW:SUBSTANCE:7">
+      <nite:child href="WO2007000651.words.xml#id(WO2007000651_w_1232)..id(WO2007000651_w_1233)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007000651.HC.substance-names.11" comment="" name="hyaluronic acid" relevant="false" chebi-id="CHEBI:16336" epochem-id="EPOCHEM:NEW:SUBSTANCE:7">
+      <nite:child href="WO2007000651.words.xml#id(WO2007000651_w_1320)..id(WO2007000651_w_1321)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007000651.HC.substance-names.12" comment="" name="sodium hyaluronan" relevant="false" chebi-id="WO2007000651:431166" epochem-id="EPOCHEM:NEW:SUBSTANCE:8">
+      <nite:child href="WO2007000651.words.xml#id(WO2007000651_w_578)"/>
+      <nite:child href="WO2007000651.words.xml#id(WO2007000651_w_577)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007000651.HC.substance-names.13" comment="" name="sodium hyaluronan" relevant="false" chebi-id="WO2007000651:431166" epochem-id="EPOCHEM:NEW:SUBSTANCE:8">
+      <nite:child href="WO2007000651.words.xml#id(WO2007000651_w_919)"/>
+      <nite:child href="WO2007000651.words.xml#id(WO2007000651_w_918)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007000651.HC.substance-names.14" comment="" name="sodium hyaluronan" relevant="false" chebi-id="WO2007000651:431166" epochem-id="EPOCHEM:NEW:SUBSTANCE:8">
+      <nite:child href="WO2007000651.words.xml#id(WO2007000651_w_1009)..id(WO2007000651_w_1010)"/>
+   </substance-name>
+</nite:root>

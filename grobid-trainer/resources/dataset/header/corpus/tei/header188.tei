@@ -1,0 +1,20 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="189"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Hierarchical Path Views: A Model Based on Fragmentation and <lb/>Transportation Road Types <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Yun-Wu Huangy, Ning Jingz, and Elke A. Rundensteinery <lb/></docAuthor></byline>
+		<email>e-mail: [ywh | jning | rundenst] @eecs.umich.edu <lb/></email>
+		<byline><affiliation>Dept. of Electrical Engineering and Computer Science, Univ. of Michigan,</affiliation></byline>
+		<address>Ann Arbor, MI48109 <lb/></address>
+		<byline><affiliation>Dept. of Electrical Engineering, Changsha Institute of Technology,</affiliation></byline>
+		<address>Changsha, Hunan, China <lb/></address>
+		<div type="abstract">Abstract <lb/>Efficient path query processing necessary for route guidance has been identified as one of the key requirements <lb/>for Intelligent Transportation Systems (ITS) applications. <lb/>While precomputing the view of all shortest paths provides <lb/>the most efficient path retrieval, the view maintenance and <lb/>storage costs become unrealistic for large ITS networks. Based <lb/>on ITS road type classification, we propose a hierarchical <lb/>path view approach, in which the path view maintenance <lb/>and storage costs are dramatically reduced at the cost of <lb/>negligible loss of path optimality. Comparing with the traditional ITS path finding approaches that use A or hierarchical A , our hierarchical approach is superior in three <lb/>areas: 1) path search is more efficient, 2) the connecting <lb/>point from the low-level roads to the high-level roads and <lb/>vice versa are dynamically determined based on the most <lb/>recent traffic, 3) within one region, the high-level traffic can <lb/>be dynamically rerouted through the low-level roads. In <lb/>this paper, we conduct experiments to gain insight into the <lb/>performance of our proposed algorithms and model, as well <lb/>as to contrast the difference in computational resource requirements between the hierarchical path view and the A <lb/>algorithms. <lb/></div>
+		<div type="intro">1 INTRODUCTION</div>
+		</front>
+</text>
+</tei>

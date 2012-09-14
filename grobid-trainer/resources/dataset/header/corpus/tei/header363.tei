@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="368"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Evaluation and Ordering of Rules Extracted from Feedforward <lb/>Networks <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Ismail Taha and Joydeep Ghosh <lb/></docAuthor></byline>
+		<byline><affiliation>Laboratory of Artificial Neural Systems <lb/>University of Texas <lb/></affiliation></byline>
+		<address>Austin, TX. 78712-1084 <lb/></address>
+		<email>{ismail,ghosh}@pine.ece.utexas.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>Rules extracted from trained feedforward networks <lb/>can be used for explanation, validation, and cross-referencing of network output decisions. This paper <lb/>introduces a rule evaluation and ordering mechanism <lb/>that orders rules extracted from feedforward networks <lb/>based on three performance measures. Detailed experiments using three rule extraction techniques as applied <lb/>to the Wisconsin breast cancer database, illustrate the <lb/>power of the proposed methods. Moreover, a method <lb/>of integrating the output decisions of both the extracted <lb/>rule-based system and the corresponding trained network is proposed. The integrated system provides further improvements. <lb/></div>
+		<div type="intro">1. Introduction</div>
+		</front>
+</text>
+</tei>

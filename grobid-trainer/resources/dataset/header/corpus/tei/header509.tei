@@ -1,0 +1,16 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="512"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Transfer Equations in Global Illumination <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>James Arvo <lb/></docAuthor></byline>
+		<byline><affiliation>Program of Computer Graphics <lb/>Cornell University <lb/></affiliation></byline>
+		<div type="abstract">Abstract <lb/>The purpose of these notes is to describe some of the physical and mathematical properties <lb/>of the equations occurring in global illumination. We first examine the physical assumptions <lb/>that make the particle model of light an appropriate paradigm for computer graphics and <lb/>then derive a balance equation for photons. In doing this we establish connections with the <lb/>field of radiative transfer and its more abstract counterpart, transport theory. The resulting <lb/>balance equation, known as the equation of transfer, accounts for large-scale interaction <lb/>of light with participating media as well as complex reflecting surfaces. Under various <lb/>simplifying assumptions the equation of transfer reduces to more conventional equations <lb/>encountered in global illumination. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,901 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<patent-document status="new" lang="EN" ucid="EP-1132169-B1" country="EP" doc-number="1132169" kind="B1" date="20040728"><bibliographic-data><publication-reference fvid="23245860" ucid="EP-1132169-B1" status="new"><document-id status="new" format="original"><country>EP</country><doc-number>1132169</doc-number><kind>B1</kind><date>20040728</date><lang>EN</lang></document-id></publication-reference><application-reference ucid="EP-01830151-A" status="new" is-representative="NO"><document-id format="epo" status="new"><country>EP</country><doc-number>01830151</doc-number><kind>A</kind><date>20010306</date><lang>IT</lang></document-id></application-reference><priority-claims status="new"><priority-claim ucid="IT-BO000117" status="new"><document-id format="original" status="new"><country>IT</country><doc-number>BO000117</doc-number><date>20000307</date></document-id></priority-claim><priority-claim ucid="IT-BO20000117-A" status="new"><document-id format="epo" status="new"><country>IT</country><doc-number>BO20000117</doc-number><kind>A</kind><date>20000307</date></document-id></priority-claim></priority-claims><dates-of-public-availability status="new"><intention-to-grant-date><date>20040113</date></intention-to-grant-date></dates-of-public-availability><term-of-grant /><technical-data status="new"><classifications-ipcr><classification-ipcr status="new">B23P  15/00        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">B23P  15/00        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">E05C   9/00        20060101C I20060722RMEP        </classification-ipcr><classification-ipcr status="new">E05C   9/02        20060101A I20060722RMEP        </classification-ipcr></classifications-ipcr><classification-ecla status="new"><classification-symbol scheme="EC">B23P15/00</classification-symbol><classification-symbol scheme="EC">E05C9/02</classification-symbol></classification-ecla><invention-title lang="DE" status="new">Steuereinheit für Fensterrahmen, Verfahren zu seiner Herstellung und Maschine zum Durchführen des Verfahrens</invention-title><invention-title lang="EN" status="new">A control unit for window frames, a method for production of the control unit and a machine which implements this method</invention-title><invention-title lang="FR" status="new">Unité de commande pour cadres de fenêtre, son procédé de fabrication et machine pour la mise en oeuvre de ce procédé</invention-title><citations /><figures /></technical-data><parties><applicants><applicant format="epo" status="new"><addressbook><name>GSG INTERNAT S P A</name><address><country>IT</country></address></addressbook></applicant><applicant format="epo" status="new"><addressbook><name>GSG INT SPA</name><address><country>IT</country></address></addressbook></applicant><applicant format="intermediate" status="new"><addressbook><name>GSG INTERNATIONAL S.P.A.</name><address><country /></address></addressbook></applicant></applicants><inventors><inventor format="epo" status="new"><addressbook><name>LAMBERTINI MARCO</name><address><country>IT</country></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>LAMBERTINI, MARCO</name><address><country /></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>LAMBERTINI, MARCO</last-name><address><street>Via Martiri di Pizzocalvo, 89</street><city>40068 San Lazzaro di Savena(Bologna)</city><country>IT</country></address></addressbook></inventor></inventors><assignees><assignee format="original" status="new"><addressbook><last-name>GSG International S.p.A.</last-name><address><street>Via Tubertini, 1</street><city>40054 Budrio (Bologna)</city><country>IT</country></address></addressbook></assignee></assignees><agents><agent format="original" status="new"><addressbook><last-name>Lanzoni, Luciano</last-name><address><street>c/o BUGNION S.p.A. Via Goito, 18</street><city>40126 Bologna</city><country>IT</country></address></addressbook></agent></agents></parties><international-convention-data><designated-states><ep-contracting-states><country>AT</country><country>BE</country><country>CH</country><country>CY</country><country>DE</country><country>DK</country><country>ES</country><country>FI</country><country>FR</country><country>GB</country><country>GR</country><country>IE</country><country>IT</country><country>LI</country><country>LU</country><country>MC</country><country>NL</country><country>PT</country><country>SE</country><country>TR</country></ep-contracting-states></designated-states></international-convention-data></bibliographic-data><abstract lang="EN" source="EPO" status="new"><p>A control unit for window frames, the latter comprising a fixed frame (1) and a mobile frame (2) with several opening configurations, comprises a single rod (11) extending substantially the height (H) of the mobile frame (2), it being possible to insert the rod in a sliding channel (4) in one of the uprights of the mobile frame (2), the rod forming the means (8) which transmit the sliding movement, drive means (6) which may be attached to a control handle (7) and at least part of the control elements (10) which move the mobile frame (2) relative to the fixed frame (1); the subject matter of the present invention also includes a method for the production of this control unit (3) and a machine which implements the method. &lt;IMAGE&gt;</p></abstract><abstract lang="EN" status="new"><p num="">A control unit for window frames, the latter
+comprising a fixed frame (1) and a mobile frame (2)
+with several opening configurations, comprises a
+single rod (11) extending substantially the height
+(H) of the mobile frame (2), it being possible to
+insert the rod in a sliding channel (4) in one of
+the uprights of the mobile frame (2), the rod
+forming the means (8) which transmit the sliding
+movement, drive means (6) which may be attached to
+a control handle (7) and at least part of the
+control elements (10) which move the mobile frame
+(2) relative to the fixed frame (1); the subject
+matter of the present invention also includes a
+method for the production of this control unit (3)
+and a machine which implements the method.
+<img file="00000001.tif" id="img-EP-1132215-A2-00000001" he="136" wi="28" img-format="tif" img-content="ad" orientation="unknown" inline="no" /></p></abstract><description lang="EN" status="new"><p num="0001">The present invention relates to a control unit for
+tilt and turn window frames, a method for production of the
+control unit and a machine which implements this
+method.</p><p num="0002">At present, in the metal window frame fitting
+sector, on tilt and turn frames,
+the
+control unit allows the achievement of the mobile
+frame configurations (side-hung turning opening,
+tilting opening, closed) by operation of a handle
+on the outer surface of the mobile frame itself.</p><p num="0003">The control unit consists of a pair of rod segments
+(a flat section of a bar) connected by a connecting
+element or, as it is called in the sector, a drive
+unit, which is placed between the two segments and
+attached to them using pins, normally present on
+the drive unit, which may be inserted in the holes
+in the corresponding ends of the segments.</p><p num="0004">The two segments also have other seats or holes,
+made close to the ends opposite those attached to 
+the drive unit, for their connection, during frame
+assembly, to the moving parts which open and close
+the mobile frame (push bolts or lock terminals) and
+to drive elements (such as corner drives) for
+mobile frame tilting opening.</p><p num="0005">The control unit structured in this way is obtained
+using a method according to which the rod segments
+are produced using a special cutting machine,
+starting with a section bar with a suitable cross-section
+which can be attached with a matching fit
+in a channel present on the frame section. The
+length of the segments depends on the dimensions
+(height) of the mobile frame in which they will be
+inserted. Once cut, the segments are machined to
+create the seats and/or holes mentioned, which are
+needed in order to connect them to the drive unit
+and to the opening/closing and drive parts.</p><p num="0006">Following this machining, the segments are
+assembled in succession, each being attached to the
+control elements until assembly on the section is
+complete.</p><p num="0007">Although the above-mentioned procedure is
+conventionally used by all metal frame
+manufacturers, it has disadvantages due to the
+complexity of the machining required on the rod 
+segments and the numerous parts of which the
+control unit assembly consists, which require time
+and experience for their assembly. Thus, adding
+together the large number of parts in the unit, the
+machining required on the rod segments and the
+assembly time needed, the total represents a
+significant part of the final cost of the whole
+frame.</p><p num="0008">Document <ref type="patent">FR-A-2 664 932</ref> discloses a control unit for window frames with simple side hung
+turning opening comprising a fixed frame and mobile frame, having a height and opening in
+one configuration; the control unit comprising, sliding in a channel in one of the uprights of
+the section forming the mobile frame, drive means which may be attached to a control
+handle mounted on the mobile frame and means for transmitting a sliding movement by the
+drive means in both directions and along the channel, obtained by movement of the handle;
+the transmission means being attached to the drive means and, respectively, to connecting
+elements and/or control elements for the mobile frame relative to the fixed frame, allowing
+the mobile frame to move to the opening or closing configurations, the control unit
+comprising a single rod extending substantially the height of the mobile frame, it being
+possible to insert the rod in the channel, the rod forming the means which transmit the sliding
+movement.</p><p num="0009">Document <ref type="patent">EP-A-0 803 624</ref> discloses a method for producing a control unit for window
+frames with simple side hung turning opening, comprising a fixed frame and mobile frame,
+having a height and opening in one configuration; the control unit comprising, sliding in a
+channel in one of the uprights of the section forming the mobile frame, drive means which
+may be attached to a control handle mounted on the mobile frame , and means for
+transmitting a sliding movement by the drive means in both directions and along the channel
+obtained by movement of the handle; the transmission means being attached to the drive
+means and respectively, to connecting elements and/or control elements for the mobile
+frame relative to the fixed frame, allowing the mobile frame to move to the opening or
+closing configurations, the method comprising the following steps, which may be
+simultaneous or successive:
+<sl><li>feeding a section bar with a cross-section which makes a matching fit with the channel in
+an operating direction;</li><li>performing a plurality of machining and/or forming operations on the section bar using
+means designed to make a series of features in the shape and/or profile of the section bar,
+for forming at least the drive means and part of the control elements;</li><li>cutting from the section bar of a portion, comprising the above mentioned features, which
+forms the single rod whose length is substantially equal to the height of the mobile frame.</li></sl></p><p num="0010">Document <ref type="patent">DE-A-43 28 205</ref> discloses a machine suitable for producing control units for
+window frames as described above, according to the preamble of claim 12.</p><p num="0011">The aim of the present invention is, therefore, to
+overcome the above-mentioned disadvantages by
+providing a control unit whose structure is
+extremely simplified, thus facilitating assembly
+and so making the entire unit more economically
+viable.</p><p num="0012">Another aim of the present invention is to provide
+a method for production of the control unit which
+is extremely fast and precise and a machine which
+implements this method.</p><p num="0013">Accordingly, the present invention achieves the
+preset aims with a control unit for tilt and turn window frames,  
+appended claims 1 to 6.</p><p num="0014">The present aims are also accordingly achieved by a
+method for production of the control unit
+comprising the steps,
+according to appended claims 7 to 11.
+This method, again in accordance with the present
+invention, is implemented by a machine 
+according to appended claims 12 to 18.</p><p num="0015">The technical features of the present invention, in
+accordance with the above-mentioned aims, are set
+out in the claims herein and the advantages more
+clearly illustrated in the detailed description
+which follows, with reference to the accompanying
+drawings, which illustrate a preferred embodiment
+without limiting the scope of application, and in
+which:
+<ul list-style="bullet"><li>Figure 1 is a schematic front view of a metal
+frame in the side-hung turning opening 
+configuration, equipped with a control unit, in
+accordance with the present invention;</li><li>Figures 2 and 3 are respectively a top plan view
+and a side view of the control unit disclosed, with
+some parts cut away to better illustrate others;</li><li>Figures 4 and 5 are perspective views of details
+of the control unit illustrated in Figure 2;</li><li>Figure 6 is a diagram of a machine which produces
+the control unit illustrated in the previous
+figures;</li><li>Figure 7 is a detail of the machine illustrated
+in Figure 6.</li></ul></p><p num="0016">With reference to the accompanying drawings and in
+particular Figure 1, the control unit disclosed is
+fitted on metal frames of the type comprising a
+fixed frame 1 and a mobile frame 2, with height H,
+with both side-hung turning and tilting opening.</p><p num="0017">The control unit, labelled 3 as a whole, fits in
+such a way that it can slide inside a channel 4 on 
+one of the uprights 5 of the section (which
+determines the height H referred to above) and
+forms part of the mobile frame 2.</p><p num="0018">This control unit 3 comprises drive means 6 which
+may be attached to a control handle 7 mounted on
+the mobile frame 2 and which operates a control
+lever 13, and means 8 for transmitting a sliding
+movement by the drive means 6 in both directions
+and along the channel 4 (see arrow F in Figure 1),
+obtained by movement of the handle 7.</p><p num="0019">To obtain the sliding movements, the transmission
+means 8 are attached to the drive means 6 and,
+respectively, to elements 9 for connecting and/or
+elements 10 for moving the mobile frame 2 relative
+to the fixed frame 1, in order to allow achievement
+of the mobile frame 2 opening or closing
+configurations.</p><p num="0020">As shown in Figures 1, 2 and 3, the control unit 3
+comprises a single rod 11 which extends
+substantially the height H of the mobile frame 2,
+forming the means 8 which transmit the sliding
+movement, the drive means 6 and at least part of
+the control elements 10.</p><p num="0021">The single rod 11 also has means 12 for connection
+to other mobile frame 2 control elements 10. </p><p num="0022">Thus, a single part is used to incorporate all of
+the basic parts. That is to say, the drive means 6
+and most of the control elements 10 and, as
+indicated below, the seats which hold the
+connecting elements 9, for correct transmission of
+the control commands for opening and closing the
+mobile frame 2.</p><p num="0023">Looking more closely at the technical details (see
+Figures 2, 3 and 4), the drive means 6 comprise a
+pair of first projections 6a and 6b, opposite one
+another, consisting of portions of the surface of
+the single rod 11 and forming elements which
+intercept the handle 7 control lever 13 in both
+directions.</p><p num="0024">Figure 5 shows one of the ends of the single rod
+11, with tapering 14 of the cross-section of the
+rod 11, designed to form a control end piece, for
+rotation, for the mobile frame 2, when it is in the
+tilting opening configuration, and forming one of
+the control elements 10. Basically, the taper 14
+consists of two arced notches, positioned opposite
+one another, at the end of the rod 11, forming a
+sort of double pivot zone for the mobile frame 2.</p><p num="0025">Figure 5 also shows how, again close to the tapered
+end 14, the single rod 11 has a second projection 
+15 consisting of a portion of the surface of the
+single rod 11 designed to form another control
+element 10 needed for mobile frame 2 tilting
+opening.</p><p num="0026">In order to allow connection of the single rod 11
+to other control elements 10, the rod 11 has a
+first hole 16 at the end opposite that with the
+taper 14, forming the above-mentioned means 12 for
+connection to control elements 10 which, in the
+embodiment illustrated, consist of a corner drive
+with a first pin 17 for connection to the rod 11.</p><p num="0027">The single rod 11 has a second hole 18 between the
+second projection 15 and the tapered end 14,
+designed to allow the insertion on the single rod
+11 of a second pin 19, forming one of the
+connecting elements 9, for making contact with and
+holding the mobile frame 2 against the fixed frame
+1 when the window frame is in the closed
+configuration.</p><p num="0028">If the height of the mobile frame 2 is
+considerable, the single rod 11 may have a third
+hole 20, close to the pair of first projections 6a
+and 6b, designed to allow the insertion of a third
+pin 21 for making contact with and holding the
+mobile frame 2 against the fixed frame 1 when the 
+window frame is in the closed configuration.</p><p num="0029">In order to make the control unit 3 described
+above, a method is used which comprises the
+following steps, to be carried out simultaneously
+or in succession:
+<ul list-style="bullet"><li>feeding a section bar P with a cross-section
+which makes a matching fit with the channel 4 in an
+operating direction L (see Figure 6);</li><li>performing a plurality of machining operations on
+the section bar P, using means 30 (described
+below), designed to make a series of features in
+the shape and/or profile of the section bar P, to
+form at least the drive means 6 and part of the
+control elements 10;</li><li>cutting from the section bar P of a portion,
+comprising the above-mentioned features, which
+forms the single rod 11 whose length is
+substantially equal to the height H of the mobile
+frame 2.</li></ul></p><p num="0030">Upon completion of these steps, the basic control
+unit 3 is obtained, although during machining of
+the section bar, a first boring operation is
+preferably carried out, to make at least the first
+hole 16 for connecting other control elements 10.</p><p num="0031">More specifically, the main machining operations 
+include the following:
+<ul list-style="bullet"><li>a cutting operation, on the surface of the
+section bar P, to produce the pair of first
+projections 6a and 6b, opposite one another, which
+form the drive means 6;</li><li>another cutting operation on the surface of the
+section bar P, for forming the second projection 15
+which is one of the control elements 10;</li><li>another cutting operation at one end of the
+section bar P, for tapering 14 the end so as to
+create another control element 10.</li></ul></p><p num="0032">In the embodiment illustrated and, preferably
+during the machining of the single rod 11, another
+boring operation is carried out. In addition to the
+first hole 16, this allows the creation of the
+second and third holes 18 and 20 for connection of
+the first and second pins 19 and 21, which can then
+be attached to the rod 11.</p><p num="0033">This method may be implemented using a machine,
+illustrated in the diagram in Figure 6, comprising:
+<ul list-style="bullet"><li>a first station 31, which feeds a continuous
+section bar P in the operating direction L (see
+arrow L);</li><li>a second station 32, for machining the section
+bar P, equipped with a plurality of machining units 
+30 designed to allow simultaneous or successive
+operations for making a series of features in the
+shape and/or profile of the section bar P, to form
+the drive means 6 and part of the control elements
+10, and cutting to size of the section bar P to
+form the single rod 11 equipped with the drive
+means 6 and part of the control elements 10;</li><li>a control unit 33 for the feed station 31 and the
+machining units 30, designed to activate the
+machining units 30 according to the final length of
+the single rod 11, the type of machining to be done
+and section bar P feed in the second station 32.</li></ul></p><p num="0034">Specifically, the first station 31, located
+upstream of the second station 32 relative to the
+operating direction L, comprises a section bar P
+infeed channel 34 and a unit 35 for the bilateral
+pickup and feed of the section bar P connected to
+the control unit 33.</p><p num="0035">The pickup unit 35 may consist of a pair of rollers
+35a and 35b positioned opposite one another and in
+contact with both sides of the section bar P.</p><p num="0036">One of the rollers, 35a, is motor-powered and is
+connected to a counting element 26 (for example, an
+encoder), which is controlled directly by the
+control unit 33, for checking the length of the 
+section bar P fed in.</p><p num="0037">The second station 32, for machining the section
+bar P, may comprise a support frame 37 for the
+machining units 30, located above the section bar P
+fed in and positioned one after another.</p><p num="0038">This frame 37 may be controlled by means 38 (for
+example a cylinder 38c) which move it between a
+non-operating position, in which the units 30 are
+distanced from the section bar P (see Figure 6),
+and an operating position, in which the units 30
+are close to the section bar P (see arrow F1 and
+Figure 7).</p><p num="0039">Between the frame 37 and each of the units 30,
+there may be an activation element 39, controlled
+by the control unit 33, and designed to allow the
+unit 30 to perform another operating stroke so
+that, when the frame 37 is in the operating
+position, the machining unit makes contact with the
+section bar P (see arrow F2 in Figure 7). This
+activation element 39 for each machining unit 30
+may be magnetic and activated by means of the unit
+33 according to a preset program.</p><p num="0040">Returning to Figure 6, the second station 32 may
+comprise a support and sliding base 40, opposite
+the machining units 30, consisting of a support 
+track 41 for the section bar P. This track is
+designed to form an element which opposes the
+machining units 30 during the cutting downstroke.</p><p num="0041">In particular, each of the machining units 30 (in
+Figure 6, for example, five units are illustrated,
+although this number may vary according to
+requirements) consists of a cutting head 42 shaped
+in such a way as to produce the single feature in
+the shape and/or profile of the section bar P, bore
+a hole in it, or cut the section bar.</p><p num="0042">The control unit 33 may consist of a microprocessor
+unit which the operator may programme using a
+keyboard according to the various machining
+requirements and the length of the rod 11.</p><p num="0043">The control unit, the method for producing the unit
+and the machine described above, therefore, fulfil
+the preset aims thanks to the rationalisation and
+unification of a set of elements which, in the
+known embodiments, are separate and are made with
+successive machining operations.</p><p num="0044">This unification of the unit in a single rod allows
+more rapid assembly on the frame by the fitter
+without particular pre-fitting of other elements,
+with the exception of the single operation for
+fitting the pins which make contact with and hold 
+the mobile frame closed against the fixed frame. In
+this way, the fitter simply inserts the rod in the
+channel in the upright, attaches the handle lever
+between the two central projections and connects
+the upper end of the rod to the corner drive (if
+present).</p><p num="0045">The steps of the method for producing the rod are
+significantly simplified and, partly thanks to the
+machine which implements the method, allow rapid
+setting of unit dimensions and rational production
+of all elements on the rod, thus further speeding
+up frame assembly.</p><p num="0046">All of this reduces the overall costs of the frame
+and the related warehouse costs which
+conventionally have a greater effect on costs, due
+to the high number of elements needed to produce
+the unit.</p></description><claims lang="DE" status="new"><claim num="xx"><claim-text>Steuereinheit für Kipp- und Drehfenster, enthaltend einen
+feststehenden Rahmen (1) und einen beweglichen Rahmen
+(2) von einer Höhe (H); wobei die Steuereinheit (3),
+gleitend in einem Kanal (4) in einem der Pfosten (5) des
+den beweglichen Rahmen (2) bildenden Abschnitts, Antriebsmittel
+(6) enthält, welche an einen Betätigungsgriff
+(7) angeschlossen werden können, montiert an dem beweglichen
+Rahmen (2), und Mittel (8) zum Übertragen einer
+Gleitbewegung durch die Antriebsmittel (6) in beiden
+Richtungen und entlang dem Kanal (4), erzeugt durch die
+Bewegung des Griffes (7); wobei die Übertragungsmittel
+(8) an die Antriebsmittel (6) und jeweils an Verbindungselemente
+(9) und/oder Betätigungselemente (10) für den
+beweglichen Rahmen (2) im Verhältnis zu dem feststehenden
+Rahmen (1) angeschlossen sind und es dem beweglichen
+Rahmen (2) erlauben, sich in die geöffneten
+oder geschlossenen Konfigurationen zu bewegen, wobei
+die Steuereinheit eine einzige Stange (11) enthält, die sich
+im wesentlichen in der Höhe (H) des beweglichen Rahmens
+(2) erstreckt, mit der Möglichkeit, die Stange in den
+Kanal (4) einzuschieben, und wobei die Stange die Mittel
+(8) bildet, welche die Gleitbewegung übertragen, wobei
+die Antriebsmittel (6) ein Paar von ersten, sich einander
+gegenüberliegenden Vorsprüngen (6a, 6b) aufweisen,
+ausgebildet aus den Abschnitten der Oberfläche der einzigen
+Stange (11) und Elemente bildend, welche den Betätigungshebel
+(13) des Griffes (7) in beiden Richtungen
+abfangen, und wenigstens ein Ende der einzigen Stange
+(11) eine Verjüngung (14) im Querschnitt aufweist, die
+dazu bestimmt ist, eine Verbindung zum Drehen des beweglichen
+Rahmens (2) in eine Konfiguration der Kippöffnung
+herzustellen und Teil der Betätigungselemente
+(10) ist.</claim-text></claim><claim num="xx"><claim-text>Einheit nach Patentanspruch 1, dadurch gekennzeichnet,
+dass die einzige Stange (11) mit Mitteln (12) zum Verbinden
+des beweglichen Rahmens (2) mit anderen Betätigungselementen
+(10) versehen ist.</claim-text></claim><claim num="xx"><claim-text>Einheit nach Patentanspruch 1, dadurch gekennzeichnet,
+dass wenigstens an dem verjüngten Ende (14) die einzige
+Stange (11) einen zweiten Vorsprung (15) an einem Abschnitt
+der Oberfläche der einzigen Stange (11) aufweist,
+der dazu bestimmt ist, ein Kontaktelement zu bilden,
+wenn der beweglichen Rahmen (2) sich in einer Konfiguration
+der Kippöffnung befindet, und der eins der Betätigungselemente
+(10) bildet.</claim-text></claim><claim num="xx"><claim-text>Einheit nach den Patentansprüchen von 1 bis 3, dadurch
+gekennzeichnet, dass die einzige Stange (11) wenigstens
+eine erste Bohrung (16) an dem Ende entgegengesetzt zu
+der Verjüngung (14) aufweist, welche Mittel (12) zum
+Anschliessen des beweglichen Rahmens (2) an andere Betätigungselemente
+(10) bildet, enthaltend einen ersten
+Verbindungszapfen (17).</claim-text></claim><claim num="xx"><claim-text>Einheit nach den Patentansprüchen von 1 bis 4, dadurch
+gekennzeichnet, dass die einzige Stange (11) eine zweite
+Bohrung (18) zwischen dem zweiten Vorsprung (15) und
+dem verjüngten Ende (14) aufweist, die dazu bestimmt ist,
+das Einsetzen eines zweiten Zapfens (19) zu erlauben,
+welcher eines der Verbindungselemente (9) an der einzigen
+Stange (11) ist.</claim-text></claim><claim num="xx"><claim-text>Einheit nach den Patentansprüchen von 1 bis 5, dadurch
+gekennzeichnet, dass die einzige Stange (11) eine dritte
+Bohrung (20) dicht an dem Paar von ersten Vorsprüngen
+(6a, 6b) aufweist, die dazu bestimmt ist, das Einsetzen eines
+dritten Zapfens (21) zu erlauben, welcher ein anderes
+Verbindungselement (9) an der einzigen Stange (11) ist.</claim-text></claim><claim num="xx"><claim-text>Verfahren zur Herstellung einer Steuereinheit für Kippund
+Drehfenster vom Typ enthaltend einen feststehenden
+Rahmen (1) und einen beweglichen Rahmen (2) von einer
+Höhe (H); wobei die Steuereinheit (3), gleitend in einem
+Kanal (4) in einem der Pfosten (5) des den beweglichen
+Rahmen (2) bildenden Abschnitts, Antriebsmittel (6) enthält,
+welche an einen Betätigungsgriff (7) angeschlossen
+werden können, montiert an dem beweglichen Rahmen
+(2), und Mittel (8) zum Übertragen einer Gleitbewegung
+durch die Antriebsmittel (6) in beiden Richtungen und
+entlang dem Kanal (4), erzeugt durch die Bewegung des
+Griffes (7); wobei die Übertragungsmittel (8) an die Antriebsmittel
+(6) und jeweils an Verbindungselemente (9)
+und/oder Betätigungselemente (10) für den beweglichen
+Rahmen (2) im Verhältnis zu dem feststehenden Rahmen
+(1) angeschlossen sind und es dem beweglichen Rahmen
+(2) erlauben, sich in die geöffneten oder geschlossenen
+Konfigurationen zu bewegen, wobei das Verfahren die
+folgenden Phasen enthält, die gleichzeitig oder aufeinanderfolgend
+ausgeführt werden können:
+<claim-text><claim-text>Zuführen einer Profilstange (P) mit einem Querschnitt,
+der sich in Betriebsrichtung (L) passrecht in den Kanal (4)
+einfügt;</claim-text><claim-text>Ausführen einer Anzahl von Bearbeitungen an der Profilstange
+(P) unter Verwendung von Mitteln (30), dazu
+bestimmt, eine Reihe von Besonderheiten in der Form
+und/oder dem Profil der Profilstange (P) anzubringen, um
+wenigstens die Antriebsmittel (6) und einen Teil der Betätigungselemente
+(10) herzustellen;</claim-text><claim-text>Ablängen von der Profilstange (P) eines die obigen Besonderheiten
+enthaltenden Abschnittes, welcher die einzige
+Stange (11) bildet, deren Länge im wesentlichen der
+Höhe (H) des beweglichen Rahmens (2) entspricht; wobei
+die Bearbeitungsphase einen Arbeitsgang zum Schneiden
+der Oberfläche der Profilstange (P) enthält, bei dem ein
+Paar von ersten Vorsprüngen (6a, 6b) hergestellt wird,
+welche sich einander gegenüberliegen und die Antriebsmittel
+(6) bilden, und einen Arbeitsgang zum Schneiden
+eines Endes der Profilstange (P), dazu bestimmt , an dem
+genannten Ende eine Verjüngung (14) und eins der Betätigungselemente
+(10) zu bilden.</claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>Verfahren nach Patentanspruch 7, dadurch gekennzeichnet,
+dass die Phase der Bearbeitung der einzigen
+Stange (11) wenigstens einen Bohrvorgang enthält, um
+wenigstens einen Sitz (16) für den Anschluss eines anderen
+Betätigungselementes (10) herzustellen.</claim-text></claim><claim num="xx"><claim-text>Verfahren nach Patentanspruch 7, dadurch gekennzeichnet,
+dass die Bearbeitungsphase einen Arbeitsgang
+zum Schneiden der Oberfläche der Profilstange (P) enthält,
+bei welchem ein zweiter Vorsprung (15) hergestellt
+wird, welcher eins der Betätigungselemente (10) ist.</claim-text></claim><claim num="xx"><claim-text>Verfahren nach den Patentansprüchen 7 und 8, dadurch
+gekennzeichnet, dass die Bearbeitungsphase einen anderen
+Bohrvorgang enthält, um wenigstens einen Sitz (18)
+zum Einschieben eines Kontaktelementes oder Zapfens
+(19) herzustellen, welcher an die einzige Stange (11) angeschlossen
+werden kann.</claim-text></claim><claim num="xx"><claim-text>Verfahren nach den Patentansprüchen 7 und 8, dadurch
+gekennzeichnet, dass die Bearbeitungsphase einen anderen
+Bohrvorgang enthält, um wenigstens einen Sitz (20)
+zum Einschieben eines Kontaktelementes oder Zapfens
+(21) herzustellen, welcher an die einzige Stange (11) angeschlossen
+werden kann.</claim-text></claim><claim num="xx"><claim-text>Maschine zur Herstellung einer Steuereinheit für Kippund
+Drehfenster vom Typ enthaltend einen feststehenden
+Rahmen (1) und einen beweglichen Rahmen (2) mit einer
+Höhe (H); wobei die Steuereinheit (3), gleitend in einem
+Kanal (4) in einem der Pfosten (5) des den beweglichen
+Rahmen (2) bildenden Abschnitts, Antriebsmittel (6) enthält,
+welche an einen Betätigungsgriff (7) angeschlossen
+werden können, montiert an dem beweglichen Rahmen
+(2), und Mittel (8) zum Übertragen einer Gleitbewegung
+durch die Antriebsmittel (6) in beiden Richtungen und
+entlang dem Kanal (4), erzeugt durch die Bewegung des
+Griffes (7); wobei die Übertragungsmittel (8) an die Antriebsmittel
+(6) und jeweils an Verbindungselemente (9)
+und/oder Betätigungselemente (10) für den beweglichen
+Rahmen (2) im Verhältnis zu dem feststehenden Rahmen
+(1) angeschlossen sind und es dem beweglichen Rahmen
+(2) erlauben, sich in die geöffneten oder geschlossenen
+Konfigurationen zu bewegen, wobei die Maschine wie
+folgt enthält:
+<claim-text><claim-text>eine erste Station (31) zum Zuführen einer kontinuierlichen
+Profilstange (P) in einer Arbeitsrichtung (L);</claim-text><claim-text>eine zweite Station (32) zum Bearbeiten der Profilstange
+(P), ausgestattet mit einer Anzahl von Bearbeitungseinheiten
+(30);</claim-text><claim-text>eine Steuereinheit (33) für die Zuführstation (31) und die
+Bearbeitungseinheiten (30), dazu bestimmt, die Bearbeitungseinheiten
+(30) entsprechend der endgültigen, von der
+Profilstange abgetrennten Länge der einzigen Stange (11),
+der Art der vorzunehmenden Bearbeitung und dem von
+der Profilstange (P) in der zweiten Station (32) ausgeführten
+Vorschub zu aktivieren; dadurch gekennzeichnet,
+dass die Bearbeitungseinheiten (30) oberhalb der zugeführten
+Profilstange (P) angeordnet und eine hinter der
+anderen positioniert und dazu bestimmt sind, gleichzeitig
+oder aufeinanderfolgend Arbeitsgänge zum Anbringen einer
+Reihe von Besonderheiten in der Form und/oder dem
+Profil der Profilstange (P) auszuführen, um die Antriebsmittel
+(6) als ein Paar von ersten, sich einander gegenüberliegenden
+Vorsprüngen (6a, 6b) und einen Teil der Betätigungselemente
+(10) als eine Verjüngung (14) im Querschnitt
+an wenigstens einem Ende der einzigen Stange
+herzustellen, und die Profilstange (P) massgerecht abzulängen,
+um die einzige Stange (11) zu bilden, die mit den
+Antriebsmitteln (6) und einem Teil der Betätigungselemente
+(10) versehen ist.</claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>Maschine nach Patentanspruch 12, dadurch gekennzeichnet,
+dass die erste Station (31) einen Zuführkanal
+(34) für die Profilstange (P) und eine Einheit (35) zum
+beiderseitigen Aufnehmen und Zuführen der Profilstange
+(P) enthält, angeschlossen an die Steuereinheit (33).</claim-text></claim><claim num="xx"><claim-text>Maschine nach Patentanspruch 12, dadurch gekennzeichnet,
+dass die Einheit (35) zum beiderseitigen Aufnehmen
+aus einem Paar von Rollen (35a, 35b) besteht, die
+sich einander gegenüberliegend an beiden Seiten der Profilstange
+(P) angeordnet sind; wobei wenigstens eine der
+Rollen (35a, 35b) angetrieben und an ein Zählelement
+(36) angeschlossen ist, gesteuert durch die Steuereinheit
+(33).</claim-text></claim><claim num="xx"><claim-text>Maschine nach Patentanspruch 12, dadurch gekennzeichnet,
+dass die zweite Station (32) zum Bearbeiten der
+Profilstange (P) einen Trägerrahmen (37) für die Bearbeitungseinheiten
+(30) enthält; wobei der Rahmen (37) durch
+Mittel (38) gesteuert wird, welche ihn zwischen einer Ruhestellung,
+in welcher die Einheiten (30) von der Profilstange
+(P) entfernt sind, und einer Arbeitsposition, in
+welcher die Einheiten (30) an die Profilstange (P) herangeführt
+sind, bewegen; wobei sich zwischen dem Rahmen
+(37) und einer jeden der Einheiten (30) ein Aktivierungselement
+(39) befindet, gesteuert durch die Steuereinheit
+(33), welches es der Einheit (30) erlaubt, einen anderen
+Arbeitshub auszuführen, so dass, wenn der Rahmen (37)
+sich in der Arbeitsposition befindet, die Bearbeitungseinheit
+Kontakt mit der Profilstange (P) hat.</claim-text></claim><claim num="xx"><claim-text>Maschine nach Patentanspruch 15, dadurch gekennzeichnet,
+dass das Aktivierungselement (39) einer jeden
+Bearbeitungseinheit (30) von magnetischem Typ ist.</claim-text></claim><claim num="xx"><claim-text>Maschine nach den Patentansprüchen von 12 bis 15, dadurch
+gekennzeichnet, dass die zweite Station (32) eine
+den Bearbeitungseinheiten (30) gegenüberliegende Auflagebasis
+(40) enthält, bestehend aus einer Stützschiene (41)
+für die Profilstange (P); wobei die Schiene dazu bestimmt
+ist, ein Element zu bilden, welches den Bearbeitungseinheiten
+(30) entgegenwirkt.</claim-text></claim><claim num="xx"><claim-text>Maschine nach Patentanspruch 12, dadurch gekennzeichnet,
+dass jede der Bearbeitungseinheiten (30) aus einem
+Schneidkopf (42) besteht, der auf solche Weise ausgebildet
+ist, dass er eine Besonderheit in der Form
+und/oder dem Profil der Profilstange (P) herstellt oder die
+Profilstange ablängt.</claim-text></claim></claims><claims lang="EN" status="new"><claim num="xx"><claim-text>A control unit for tilt and turn window frames comprising a fixed
+frame (1) and mobile frame (2), having a height (H);
+the
+control unit (3) comprising, sliding in a channel
+(4) in one of the uprights (5) of the section
+forming the mobile frame (2), drive means (6) which
+may be attached to a control handle (7) mounted on
+the mobile frame (2), and means (8) for
+transmitting a sliding movement by the drive means
+(6) in both directions and along the channel (4),
+obtained by movement of the handle (7); the
+transmission means (8) being attached to the drive
+means (6) and, respectively, to connecting elements
+(9) and/or control elements (10) for the mobile
+frame (2) relative to the fixed frame (1), allowing
+the mobile frame (2) to move to the opening or
+closing configurations, the control unit comprising
+a single
+rod (11) extending substantially the height (H) of
+the mobile frame (2), it being possible to insert
+the rod in the channel (4), the rod forming the
+means (8) which transmit the sliding movement,
+the drive
+means (6) comprising a pair of first projections
+(6a, 6b), opposite one another, being formed from
+portions of the surface of the single rod (11) and
+forming elements which intercept the handle (7)
+control lever (13) in both directions and in that,
+at least at one end, the single rod (11) has a
+taper (14) in its cross-section, being designed to
+create a connection for rotation of the mobile
+frame (2) in a tilting opening configuration and
+forming part of the control elements (10).</claim-text></claim><claim num="xx"><claim-text>The unit according to claim 1, characterised in
+that the single rod (11) is equipped with means
+(12) for connecting the mobile frame (2) to other
+control elements (10).</claim-text></claim><claim num="xx"><claim-text>The unit according to claim 1, characterised in
+that, at least at the tapered end (14), the single
+rod (11) has a second projection (15) on a portion
+of the surface of the single rod (11), being
+designed to form a contact element, when the mobile
+frame (2) is in a tilting opening configuration and
+constituting one of the control elements (10).</claim-text></claim><claim num="xx"><claim-text>The unit according to claims 1 to 3,
+characterised in that the single rod (11) has at
+least one first hole (16) at the end opposite the
+taper (14) forming the means (12) for connecting
+the mobile frame (2) to other control elements
+(10), comprising a first connecting pin (17).</claim-text></claim><claim num="xx"><claim-text>The unit according to claims 1 to 4,
+characterised in that the single rod (11) has a
+second hole (18) between the second projection (15)
+and the tapered end (14), being designed to allow
+the insertion of a second pin (19) which is one of
+the connecting elements (9) on the single rod (11).</claim-text></claim><claim num="xx"><claim-text>The unit according to claims 1 to 5,
+characterised in that the single rod (11) has a
+third hole (20), close to the pair of first
+projections (6a, 6b), being designed to allow the
+insertion of a third pin (21) which is another
+connecting element (9) on the single rod (11).</claim-text></claim><claim num="xx"><claim-text>A method for producing a control unit for tilt and turn window
+frames of the type comprising a fixed frame (1) and
+mobile frame (2), having a height (H);
+the control unit (3)
+comprising, sliding in a channel (4) in one of the
+uprights (5) of the section forming the mobile
+frame (2), drive means (6) which may be attached to
+a control handle (7) mounted on the mobile frame
+(2), and means (8) for transmitting a sliding
+movement by the drive means (6) in both directions
+and along the channel (4), obtained by movement of
+the handle (7); the transmission means (8) being
+attached to the drive means (6) and, respectively,
+to connecting elements (9) and/or control elements
+(10) for the mobile frame (2) relative to the fixed
+frame (1), allowing the mobile frame (2) to move to
+the opening or closing configurations, the method
+comprising
+the following steps, which may be simultaneous or
+successive:
+<claim-text><claim-text>feeding a section bar (P) with a cross-section
+which makes a matching fit with the channel (4) in
+an operating direction (L);</claim-text><claim-text>performing a plurality of machining operations on
+the section bar (P) using means (30) designed to
+make a series of features in the shape and/or
+profile of the section bar (P), for forming at
+least the drive means (6) and part of the control
+elements (10);</claim-text><claim-text>cutting from the section bar (P) of a portion,
+comprising the above-mentioned features, which
+forms the single rod (11) whose length is
+substantially equal to the height (H) of the mobile
+frame 2; the machining step
+comprising an operation for cutting the surface of
+the section bar (P), producing a pair of first
+projections (6a, 6b) which are opposite one another
+and form the drive means (6), and an operation for
+cutting one end of the section bar (P), being
+designed to form a taper (14) at said end and form
+one of the control elements (10).</claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>The method according to claim 7, characterised in
+that the step of machining the single rod (11)
+comprises at least one boring operation, to produce
+at least one seat (16) for connecting another
+control element (10).</claim-text></claim><claim num="xx"><claim-text>The method according to claim 7, characterised in
+that the machining step comprises an operation for
+cutting the surface of the section bar (P), forming
+a second projection (15) which is one of the
+control elements (10).</claim-text></claim><claim num="xx"><claim-text>The method according to claims 7 and 8,
+characterised in that the machining step comprises
+another boring operation for making at least one
+seat (18) for the insertion of a contact element or
+pin (19) which can be attached to the single rod
+(11).</claim-text></claim><claim num="xx"><claim-text>The method according to claims 7 and 8,
+characterised in that the machining step comprises
+another boring operation for making at least one
+seat (20) for the insertion of a contact element or
+pin (21) which can be attached to the single rod
+(11).</claim-text></claim><claim num="xx"><claim-text>A machine for producing a control unit for tilt and turn window
+frames of the type comprising a fixed frame (1) and
+mobile frame (2), having a height (H);
+the control unit (3)
+comprising, sliding in a channel (4) in one of the
+uprights (5) of the section forming the mobile
+frame (2), drive means (6) which may be attached to
+a control handle (7) mounted on the mobile frame
+(2), and means (8) for transmitting a sliding
+movement by the drive means (6) in both directions
+and along the channel (4), obtained by movement of
+the handle (7); the transmission means (8) being
+attached to the drive means (6) and, respectively,
+to connecting elements (9) and/or control elements
+(10) for the mobile frame (2) relative to the fixed
+frame (1), allowing the mobile frame (2) to move to
+the opening or closing configurations, the machine
+comprising:
+<claim-text><claim-text>a first station (31), for feeding a section bar
+(P) in an operating direction (L);</claim-text><claim-text>a second station (32), for machining the section
+bar (P), equipped with a plurality of machining
+units (30);</claim-text><claim-text>a control unit (33) for the feed station (31) and
+the machining units (30), for activating the
+machining units (30) according to the final length
+of the single rod (11) obtained from the section bar, the type of machining to be
+done and section bar (P) feed in the second station
+(32); characterised in that the machining units
+(30) are located above the section bar (P) fed in
+and positioned one after another and designed to
+allow simultaneous or successive operations for
+making a series of features in the shape and/or
+profile of the section bar (P), for forming the
+drive means (6) as a pair of first projections (6a, 6b), opposite
+one another and part of the control elements
+(10) as a taper (14) in the cross section of at
+least one end of the single rod and cutting to size of the section bar (P) to
+form the single rod (11) equipped with the drive
+means (6) and the part of the control elements
+(10).</claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>The machine according to claim 12, characterised
+in that the first station (31) comprises an infeed
+channel (34) for the section bar (P) and a unit
+(35) for the bilateral pickup and feed of the
+section bar (P), being connected to the control
+unit (33).</claim-text></claim><claim num="xx"><claim-text>The machine according to claim 12, characterised
+in that the bilateral pickup unit (35) consists of
+a pair of rollers (35a, 35b), being opposite one
+another and on both sides of the section bar (P);
+at least one of the rollers (35a, 35b) being motor-powered
+and connected to a counting element (36)
+controlled by the control unit (33).</claim-text></claim><claim num="xx"><claim-text>The machine according to claim 12, characterised
+in that the second station (32) for machining the
+section bar (P) comprises a support frame (37) for
+the machining units (30);
+the frame (37) being controlled by
+means (38) which move it between a non-operating
+position, in which the units (30) are distanced
+from the section bar (P), and an operating
+position, in which the units (30) are close to the
+section bar (P); between the frame (37) and each of
+the units (30) there being an activation element
+(39), controlled by the control unit (33), which
+allows the unit (30) to perform another operating
+stroke so that, when the frame (37) is in the
+operating position, the machining unit makes
+contact with the section bar (P).</claim-text></claim><claim num="xx"><claim-text>The machine according to claim 15, characterised
+in that the activation element (39) of each
+machining unit (30) is of the magnetic type.</claim-text></claim><claim num="xx"><claim-text>The machine according to claims 12 to 15,
+characterised in that the second station (32)
+comprises a support base (40) opposite the
+machining units (30), consisting of a support track
+(41) for the section bar (P); the track being
+designed to form an element which opposes the
+machining units (30).</claim-text></claim><claim num="xx"><claim-text>The machine according to claim 12, characterised
+in that each of the machining units (30) consists
+of a cutting head (42) shaped in such a way as to
+produce a feature in the shape and/or profile of
+the section bar (P) or to cut the section bar.</claim-text></claim></claims><claims lang="FR" status="new"><claim num="xx"><claim-text>Une unité de commande pour cadres de fenêtre
+oscillo-battante comprenant un dormant (1) et un
+ouvrant (2) de hauteur (H) ; l'unité de commande
+(3) comprenant, coulissant dans un canal (4)
+réalisé dans un des montants (5) du profilé formant
+l'ouvrant (2), des moyens d'entraínement (6) qui
+peuvent être associés à une poignée de commande (7)
+montée sur l'ouvrant (2), et des moyens (8)
+destinés à transmettre, par le biais d'un mouvement
+de la poignée (7), un mouvement de coulissement
+dans les deux sens et le long du canal (4) des
+moyens d'entraínement (6) ; les moyens de
+transmission (8) étant associés aux moyens
+d'entraínement (6) et, respectivement, à des
+éléments de liaison (9) et/ou des éléments (10) de
+manoeuvre de l'ouvrant (2) par rapport au dormant
+(1), pour que ce même ouvrant (2) puisse être
+déplacé dans les configurations d'ouverture ou de
+fermeture, l'unité de commande comprenant une tige
+unique (11) qui s'étend essentiellement sur la
+hauteur (H) de l'ouvrant (2), cette même tige
+pouvant être insérée dans le canal (4) et
+définissant les moyens (8) susmentionnés de
+transmission du mouvement de coulissement, les
+moyens d'entraínement (6) comprenant une paire de
+premières saillies (6a, 6b), réciproquement
+opposées, définies par des portions de la surface
+de la tige unique (11) et définissant des éléments
+qui interceptent, dans les deux sens, un levier de
+manoeuvre (13) de la poignée (7), et la tige unique
+(11) présentant, au moins à une extrémité, un
+amincissement (14) de sa section destiné à définir
+une liaison pour la rotation de l'ouvrant (2) dans
+une configuration d'ouverture « à soufflet » et
+faisant partie des éléments de manoeuvre (10).</claim-text></claim><claim num="xx"><claim-text>L'unité selon la revendication 1, caractérisée
+en ce que la tige unique (11) est pourvue de moyens
+(12) destinés à relier l'ouvrant (2) à d'autres
+éléments de manoeuvre (10).</claim-text></claim><claim num="xx"><claim-text>L'unité selon la revendication 1, caractérisée
+en ce que, au moins au niveau de l'extrémité
+amincie (14), la tige unique (11) présente une
+seconde saillie (15) réalisée sur une portion de la
+surface de cette même tige unique (11), destinée à
+définir un élément de contact lorsque l'ouvrant (2)
+est dans une configuration d'ouverture « à
+soufflet » et constituant un des éléments de
+manoeuvre (10).</claim-text></claim><claim num="xx"><claim-text>L'unité selon les revendications de 1 à 3,
+caractérisée en ce que la tige unique (11) comporte
+au moins un premier trou (16) réalisé au niveau de
+l'extrémité opposée à l'amincissement (14) et
+définissant les moyens (12) de liaison de l'ouvrant
+(2) à d'autres éléments de manoeuvre (10), qui
+comprennent un premier pivot de liaison (17).</claim-text></claim><claim num="xx"><claim-text>L'unité selon les revendications de 1 à 4,
+caractérisée en ce que la tige unique (11) comporte
+un deuxième trou (18) situé entre la seconde
+saillie (15) et l'extrémité amincie (14) et destiné
+à permettre l'insertion d'un deuxième pivot (19)
+qui constitue un des éléments de liaison (9) sur la
+tige unique (11).</claim-text></claim><claim num="xx"><claim-text>L'unité selon les revendications de 1 à 5,
+caractérisée en ce que la tige unique (11) comporte
+un troisième trou (20) situé à proximité de la
+paire de premières saillies (6a, 6b) et destiné à
+permettre l'insertion d'un troisième pivot (21) qui
+constitue un autre élément de liaison (9) sur la
+tige unique (11).</claim-text></claim><claim num="xx"><claim-text>Un procédé de fabrication d'une unité de
+commande pour cadres de fenêtre oscillo-battante du
+type comprenant un dormant (1) et un ouvrant (2) de
+hauteur (H) ; l'unité de commande (3) comprenant,
+coulissant dans un canal (4) réalisé dans un des
+montants (5) du profilé formant l'ouvrant (2), des
+moyens d'entraínement (6) qui peuvent être associés
+à une poignée de commande (7) montée sur l'ouvrant
+(2), et des moyens (8) destinés à transmettre, par
+le biais d'un mouvement de la poignée (7), un
+mouvement de coulissement dans les deux sens et le
+long du canal (4) des moyens d'entraínement (6) ;
+les moyens de transmission (8) étant associés aux
+moyens d'entraínement (6) et, respectivement, à des
+éléments de liaison (9) et/ou des éléments (10) de
+manoeuvre de l'ouvrant (2) par rapport au dormant
+(1), pour que ce même ouvrant (2) puisse être
+déplacé dans les configurations d'ouverture ou de
+fermeture, le procédé en question comprenant les
+phases suivantes, qui peuvent être simultanées ou
+se suivrent :
+<claim-text><claim-text>alimenter, dans une direction opérationnelle (L),
+un profilé (P) ayant une section pouvant être
+emboítée de façon complémentaire dans le canal
+(4) ;</claim-text><claim-text>effectuer une pluralité d'opérations d'usinage
+sur le profilé (P) en utilisant des moyens (30)
+destinés à exécuter une série de fonctions dans la
+forme et/ou le profil du profilé (P) lui-même pour
+former au moins les moyens d'entraínement (6) et
+une partie des éléments de manoeuvre (10) ;</claim-text><claim-text>couper, à partir du profilé (P), une portion
+comprenant les fonctions susmentionnées, qui
+constitue la tige unique (11) dont la longueur est
+essentiellement égale à la hauteur (H) de l'ouvrant
+(2) ; la phase d'usinage comprenant une opération
+consistant à couper la surface du profilé (P) pour
+obtenir une paire de premières saillies (6a, 6b),
+réciproquement opposées, qui constituent les moyens
+d'entraínement (6), et une opération consistant à
+couper une extrémité du profilé (P), destinée à
+définir un amincissement (14) et à constituer un
+des éléments de manoeuvre (10).</claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>Le procédé selon la revendication 7,
+caractérisé en ce que la phase d'usinage de la tige
+unique (11) comprend au moins une opération de
+perçage afin de réaliser au moins un logement (16)
+de liaison pour un autre élément de manoeuvre (10).</claim-text></claim><claim num="xx"><claim-text>Le procédé selon la revendication 7,
+caractérisé en ce que la phase d'usinage comprend
+une opération consistant à couper la surface du
+profilé (P) afin de réaliser une seconde saillie
+(15) qui constitue un des éléments de manoeuvre
+(10).</claim-text></claim><claim num="xx"><claim-text>Le procédé selon les revendications 7 et 8,
+caractérisé en ce que la phase d'usinage comprend
+une autre opération de perçage afin de réaliser au
+moins un logement (18) prévu pour l'insertion d'un
+élément de contact ou pivot (19) qui peut être
+associé à la tige unique (11).</claim-text></claim><claim num="xx"><claim-text>Le procédé selon les revendications 7 et 8,
+caractérisé en ce que la phase d'usinage comprend
+une autre opération de perçage afin de réaliser au
+moins un logement (20) prévu pour l'insertion d'un
+élément de contact ou pivot (21) qui peut être
+associé à la tige unique (11).</claim-text></claim><claim num="xx"><claim-text>Une machine pour fabriquer une unité de
+commande pour cadres de fenêtre oscillo-battante du
+type comprenant un dormant (1) et un ouvrant (2) de
+hauteur (H) ; l'unité de commande (3) comprenant,
+coulissant dans un canal (4) réalisé dans un des
+montants (5) du profilé formant l'ouvrant (2), des
+moyens d'entraínement (6) qui peuvent être associés
+à une poignée de commande (7) montée sur l'ouvrant
+(2), et des moyens (8) destinés à transmettre, par
+le biais d'un mouvement de la poignée (7), un
+mouvement de coulissement dans les deux sens et le
+long du canal (4) des moyens d'entraínement (6) ;
+les moyens de transmission (8) étant associés aux
+moyens d'entraínement (6) et, respectivement, à des
+éléments de liaison (9) et/ou des éléments (10) de
+manoeuvre de l'ouvrant (2) par rapport au dormant
+(1), pour que ce même ouvrant (2) puisse être
+déplacé dans les configurations d'ouverture ou de
+fermeture, la machine en question comprenant :
+<claim-text><claim-text>une première station (31), pour alimenter un
+profilé (P) dans une direction opérationnelle (L) ;</claim-text><claim-text>une seconde station (32) pour usiner le profilé
+(P), équipée d'une pluralité de groupes d'usinage
+(30) ;</claim-text><claim-text>une unité (33) de commande de la station
+d'alimentation (31) et des groupes d'usinage (30),
+destinée à activer ces mêmes groupes d'usinage (30)
+en fonction de la longueur finale de la tige unique
+(11) obtenue à partir du profilé, du type d'usinage
+à effectuer et de l'avancement du profilé (P) dans
+la seconde station (32) ; ladite machine étant
+caractérisée en ce que les groupes d'usinage (30)
+sont situés au-dessus du profilé (P) alimenté,
+disposés l'un à la suite de l'autre et destinés à
+permettre des opérations simultanées ou successives
+pour exécuter une série de fonctions dans la forme
+et/ou le profil du profilé (P) afin de réaliser les
+moyens d'entraínement (6), sous forme d'une paire
+de premières saillies (6a, 6b) réciproquement
+opposées, et une partie des éléments de manoeuvre
+(10), sous forme d'un amincissement (14) de la
+section d'au moins une extrémité de la tige unique,
+et afin de couper le profilé (P) à la mesure voulue
+pour constituer la tige unique (11) pourvue des
+moyens d'entraínement (6) et de la partie des
+éléments de manoeuvre (10) en question.</claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>La machine selon la revendication 12,
+caractérisée en ce que la première station (31)
+comprend un canal (34) d'alimentation du profilé
+(P) et un groupe (35) destiné au prélèvement
+bilatéral et à l'avancement du profilé (P), ce
+groupe étant relié à l'unité de commande (33).</claim-text></claim><claim num="xx"><claim-text>La machine selon la revendication 12,
+caractérisée en ce que le groupe (35) de
+prélèvement bilatéral est constitué par une paire
+de rouleaux (35a, 35b), réciproquement opposés et
+situés de chaque côté du profilé (P) ; au moins un
+des rouleaux (35a, 35b) étant motorisé et relié à
+un organe de comptage (36) asservi à l'unité de
+commande (33).</claim-text></claim><claim num="xx"><claim-text>La machine selon la revendication 12,
+caractérisée en ce que la seconde station (32)
+prévue pour l'usinage du profilé (P) comprend un
+châssis (37) de support des groupes d'usinage
+(30) ; le châssis (37) étant asservi à des moyens
+(38) qui le déplacent entre une position non
+opérationnelle, dans laquelle les groupes (30) sont
+éloignés du profilé (P), et une position
+opérationnelle, dans laquelle les groupes (30) sont
+à proximité du profilé (P) ; un élément
+d'activation (39), asservi à l'unité de commande
+(33), étant prévu entre le châssis (37) et chacun
+des groupes (30), tel élément d'activation étant à
+même de permettre au groupe d'usinage (30)
+correspondant d'effectuer une autre course
+opérationnelle afin de venir au contact du profilé
+(P) quand le châssis (37) est dans la position
+opérationnelle.</claim-text></claim><claim num="xx"><claim-text>La machine selon la revendication 15,
+caractérisée en ce que l'élément d'activation (39)
+de chaque groupe d'usinage (30) est de type
+magnétique.</claim-text></claim><claim num="xx"><claim-text>La machine selon les revendications de 12 à
+15, caractérisée en ce que la seconde station (32)
+comprend une base de support (40), opposée aux
+groupes d'usinage (30), constituée par une piste
+(41) de support du profilé (P) ; la piste étant
+destinée à définir un élément s'opposant aux
+groupes d'usinage (30).</claim-text></claim><claim num="xx"><claim-text>La machine selon la revendication 12,
+caractérisée en ce que chacun des groupes d'usinage
+(30) est constitué par une tête de coupe (42),
+conformée de manière à exécuter une fonction dans
+la forme et/ou le profil du profilé (P) ou à couper
+le profilé lui-même.</claim-text></claim></claims><legal-status status="new"><legal-event country="EP" code="25" date="20070228"><legal-event-body><event-title>LAPSED IN A CONTRACTING STATE ANNOUNCED VIA POSTGRANT INFORM. FROM NAT. OFFICE TO EPO</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>AT</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>BE</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>CH</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>DK</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>FI</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>FR</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>GB</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>IE</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>LI</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>LU</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>MC</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>NL</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>SE</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>TR</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20040728</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20040728</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20040728</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20040728</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20040728</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20040728</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20040728</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20040728</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20041028</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20041028</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20050306</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20050307</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20050331</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20050331</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="R25" date="20060809"><legal-event-body><event-title>LAPSED IN A CONTRACTING STATE DURING THE OPPOSITION PERIOD (CORRECTION)</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>AT</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>BE</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>CH</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>DK</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>FI</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>FR</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>GB</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>IE</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>LI</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>MC</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>NL</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>SE</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20040728</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20040728</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20040728</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20040728</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20040728</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20040728</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20040728</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20041028</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20041028</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20050306</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20050307</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20050331</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REG" date="20051229"><legal-event-body><event-title>REFERENCE TO A NATIONAL CODE</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>IE</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Legal Event Code </event-attribute-label><event-attribute-value>MM4A</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="GBPC" date="20051130"><legal-event-body><event-title>GB: EUROPEAN PATENT CEASED THROUGH NON-PAYMENT OF RENEWAL FEE</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20050306</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="EN" date="20050722"><legal-event-body><event-title>FR: TRANSLATION NOT FILED</event-title></legal-event-body></legal-event><legal-event country="EP" code="R26" date="20050622"><legal-event-body><event-title>OPPOSITION FILED (CORRECTION)</event-title><event-attributes><event-attribute><event-attribute-label>opponent name </event-attribute-label><event-attribute-value>COMALL INTERNATIONAL S.R.L.</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20050315</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="26" date="20050525"><legal-event-body><event-title>OPPOSITION FILED</event-title><event-attributes><event-attribute><event-attribute-label>opponent name </event-attribute-label><event-attribute-value>COMALL INTERNATIONAL S.R.L.</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20050315</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REG" date="20050316"><legal-event-body><event-title>REFERENCE TO A NATIONAL CODE</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>ES</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Legal Event Code </event-attribute-label><event-attribute-value>FG2A</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Document Number </event-attribute-label><event-attribute-value>2225458</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>T3</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REG" date="20050215"><legal-event-body><event-title>REFERENCE TO A NATIONAL CODE</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>CH</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Legal Event Code </event-attribute-label><event-attribute-value>PL</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="NLV1" date="20050103"><legal-event-body><event-title>NL: LAPSED OR ANNULED DUE TO FAILURE TO FULFILL THE REQUIREMENTS OF ART. 29P AND 29M OF THE PATENTS ACT; NO LEGAL EFFECT FROM</event-title></legal-event-body></legal-event><legal-event country="EP" code="REF" date="20040902"><legal-event-body><event-title>CORRESPONDS TO:</event-title><event-attributes><event-attribute><event-attribute-label>Ref Document Number </event-attribute-label><event-attribute-value>60104460</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Country of Ref Document </event-attribute-label><event-attribute-value>DE</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Date of Ref Document </event-attribute-label><event-attribute-value>20040902</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>P</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REG" date="20040825"><legal-event-body><event-title>REFERENCE TO A NATIONAL CODE</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>IE</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Legal Event Code </event-attribute-label><event-attribute-value>FG4D</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REG" date="20040730"><legal-event-body><event-title>REFERENCE TO A NATIONAL CODE</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>CH</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Legal Event Code </event-attribute-label><event-attribute-value>EP</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20040728"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>B1</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>ATBECHCYDEDKESFIFRGBGRIEITLILUMCNLPTSETR</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REG" date="20040728"><legal-event-body><event-title>REFERENCE TO A NATIONAL CODE</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>GB</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Legal Event Code </event-attribute-label><event-attribute-value>FG4D</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AKX" date="20030813"><legal-event-body><event-title>PAYMENT OF DESIGNATION FEES</event-title><event-attributes><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>ATBECHCYDEDKESFIFRGBGRIEITLILUMCNLPTSETR</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="17Q" date="20030502"><legal-event-body><event-title>FIRST EXAMINATION REPORT</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20030314</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="17P" date="20030319"><legal-event-body><event-title>REQUEST FOR EXAMINATION FILED</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20030116</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20021127"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>A3</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>ATBECHCYDEDKESFIFRGBGRIEITLILUMCNLPTSETR</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AX" date="20021127"><legal-event-body><event-title>EXTENSION OF THE EUROPEAN PATENT TO</event-title><event-attributes><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>AL;LT;LV;MK;RO;SI</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="RIC1" date="20021127"><legal-event-body><event-title>CLASSIFICATION (CORRECTION)</event-title><event-attributes><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>7B 23P 15/00 A, 7E 05D 15/52 B</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20010912"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>A2</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>ATBECHCYDEDKESFIFRGBGRIEITLILUMCNLPTSETR</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AX" date="20010912"><legal-event-body><event-title>EXTENSION OF THE EUROPEAN PATENT TO</event-title><event-attributes><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>AL;LT;LV;MK;RO;SI</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event></legal-status></patent-document>

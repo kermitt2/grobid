@@ -1,0 +1,25 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="552"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">A Prototype Reading Coach that Listens <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Jack Mostow, Steven F. Roth, Alexander G. Hauptmann, and Matthew Kane <lb/></docAuthor></byline>
+		<byline><affiliation>Project LISTEN,</affiliation></byline>
+		<address>215 Cyert Hall,</address>
+		<byline><affiliation>Carnegie Mellon University Robotics Institute <lb/></affiliation></byline>
+		<address>4910 Forbes Avenue, Pittsburgh, PA 15213-3890 <lb/></address>
+		<email>mostow@cs.cmu.edu <lb/></email>
+		<note type="copyright">COPYRIGHT NOTICE <lb/>This publication and its companion video and transcript (Mostow et al, 1994c) are copyrighted: <lb/></note>
+		<note type="reference">J. Mostow, S. Roth, A. G. Hauptmann, and M. Kane. (August 1994). A Prototype Reading Coach that Listens. Proceedings <lb/>of the Twelfth National Conference on Artificial Intelligence (AAAI-94). Seattle, WA, American Association for <lb/>Artificial Intelligence, Recipient of the AAAI-94 Outstanding Paper Award. <lb/></note>
+		<note type="reference">J. Mostow, S. Roth, A. Hauptmann, M. Kane, A. Swift, L. Chase, and B. Weide. (August 1994). A Reading Coach that <lb/>Listens (6-minute video). Video Track of the Twelfth National Conference on Artificial Intelligence (AAAI94). Seattle, <lb/>WA, American Association for Artificial Intelligence. <lb/></note>
+		<note type="reference">J. Mostow, S. Roth, A. Hauptmann, M. Kane, A. Swift, L. Chase, and B. Weide. (August 1994). A reading coach that <lb/>listens: (edited) video transcript. Proceedings of the Twelfth National Conference on Artificial Intelligence (AAAI94). <lb/>Seattle, WA. <lb/></note>
+		<note type="copyright">Permission to make digital or hard copies of part or all of this work for personal or classroom use is granted without fee <lb/>provided that copies are not made or distributed for profit or commercial advantage and that copies bear this notice and the <lb/>full citation on the first page. Copyrights for components of this work owned by others than ACM must be honored. <lb/>Abstracting with credit is permitted. To copy otherwise, to republish, to post on servers or to redistribute to lists, requires <lb/>prior specific permission and/or a fee. <lb/>newpage <lb/></note>
+		<note type="other">The following notice appears on page xiv of the proceedings: <lb/>AAAI-94 <lb/>Outstanding Paper Award <lb/>A Prototype Reading Coach that Listens <lb/>Jack Mostow, Steven F. Roth, Alexander G. Hauptmann, and Matthew Kane <lb/>This year, AAAI&apos;s National Conference on Artifical Intelligence honors a paper that exemplifies high standards in <lb/>technical contribution and exposition. Papers were nominated for the Outstanding Paper Award by members of the program <lb/>committee during the NCAI review process. These nominations were then reviewed once again by a smaller subset of the <lb/>program committee to select the winning paper. Care was taken during the review process to ensure that our final decisions <lb/>were based on the opinions of impartial readers who are free from personal biases and conflicts of interest. <lb/></note>
+		<pb/>
+		</front>
+</text>
+</tei>

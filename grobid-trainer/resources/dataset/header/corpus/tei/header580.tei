@@ -1,0 +1,21 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="582"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Probabilistic Analysis for Combinatorial <lb/>Functions of Moving Points <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Li Zhang Harish Devarajan Julien Basch Piotr Indyk <lb/></docAuthor></byline>
+		<byline><affiliation>Computer Science Department <lb/>Stanford University <lb/></affiliation></byline>
+		<address>Stanford, CA94305 <lb/></address>
+		<email>flizhang,harish,jbasch,indykg@cs.stanford.edu <lb/></email>
+		<date>September 9, 1997 <lb/></date>
+		<div type="abstract">Abstract <lb/>Given a set of n points, what is the description complexity of their convex hull? In our world, this question <lb/>is understood with an implicit &quot;in the worst case&quot;, and the answer is n bd=2c where d is the dimension of <lb/>the underlying space. This is not entirely satisfactory, as this description complexity can vary tremendously <lb/>depending on the positions of the points. Another approach is to look at the expected description complexity <lb/>when the points are drawn from a given distribution. This type of analysis, initiated by Renyi and Sulanke <lb/>[RS63] and pursued by others gets its value from the fact that this expectation is in general much smaller <lb/>than in the worst case, and, more importantly, in that it often allows one to design algorithms that have <lb/>expected running times against which worst case aware algorithms cannot compete. For instance, the convex <lb/>hull of n points drawn independently uniformly at random from a d-dimensional hypercube has expected <lb/>complexity O(log d1 n), and can be computed in expected linear time. <lb/>In parallel, in the past decade, a number of papers have considered a setting where points are allowed <lb/>to move along low degree algebraic trajectories. Different questions have been asked in this context. In <lb/>particular, Atallah [Ata85], studied the number of times the combinatorial description of the convex hull <lb/>or closest pair can change, in the worst case (&quot;dynamic computational geometry&quot;). More recently, Basch, <lb/>Guibas, and Hershberger [BGH97] have designed kinetic data structures to maintain these attributes in an <lb/>online setting, measuring the quality of a kinetic data structure by the ratio of the worst case number of <lb/>changes to the configuration of interest, to the worst case number of changes to the data structure itself, for <lb/>low degree algebraic motions. However, an experimental study undertaken in [BGSZ97] to assess the quality <lb/>of these data structures in practice shows that the worst case analysis can hide vastly different results in <lb/>terms of expectation when the point positions and speeds are drawn at random from some distributions. It <lb/>is this study that motivated the present paper. <lb/>In this communication, we report several results on the expected number of changes to various combinatorial structures for the case when points are drawn from the uniform distribution on the unit square. These <lb/>results can be generalized for any dimension d &amp;gt; 2. <lb/></div>
+		<note type="other">This paper appeared in the </note> <note type="reference">proceedings of the 13th Symposium of Computational Geometry (1997) </note> <note type="other">as a communication <lb/></note>
+		<note type="grant">Supported in part by National Science Foundation grant CCR-9623851 and by US Army MURI grant DAAH04-96-1-0007. <lb/>Supported in part by the Okawa Foundation. <lb/>x Supported in part by ARO MURI Grant DAAH04-96-1-0007 and by NSF Award CCR-9357849, with matching funds <lb/>from IBM, Mitsubishi, Schlumberger Foundation, Shell Foundation, and Xerox Corporation. <lb/></note>
+		<pb/>
+		</front>
+</text>
+</tei>

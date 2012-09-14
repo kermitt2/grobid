@@ -1,0 +1,24 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="508"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Hierarchical Solution of Markov Decision Processes using Macro-actions <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Milos Hauskrecht, Nicolas Meuleau <lb/>Leslie Pack Kaelbling, Thomas Dean <lb/></docAuthor></byline>
+		<byline><affiliation>Computer Science Department,</affiliation></byline>
+		<address>Box 1910 <lb/></address>
+		<byline><affiliation>Brown University,</affiliation></byline>
+		<address>Providence, RI 02912 <lb/></address>
+		<email>fmilos, nm, lpk, tldg@cs.brown.edu <lb/></email>
+		<byline><docAuthor>Craig Boutilier <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science <lb/>University of British Columbia <lb/></affiliation></byline>
+		<address>Vancouver, BC V6T 1Z4, Canada <lb/></address>
+		<email>cebly@cs.ubc.ca <lb/></email>
+		<div type="abstract">Abstract <lb/>We investigate the use of temporally abstract <lb/>actions, or macro-actions, in the solution of <lb/>Markov decision processes. Unlike current models that combine both primitive actions and <lb/>macro-actions and leave the state space unchanged, we propose a hierarchical model (using <lb/>an abstract MDP) that works with macro-actions <lb/>only, and that significantly reduces the size of the <lb/>state space. This is achieved by treating macro-actions as local policies that act in certain regions <lb/>of state space, and by restricting states in the abstract MDP to those at the boundaries of regions. <lb/>The abstract MDP approximates the original and <lb/>can be solved more efficiently. We discuss several ways in which macro-actions can be generated to ensure good solution quality. Finally, <lb/>we consider ways in which macro-actions can be <lb/>reused to solve multiple, related MDPs; and we <lb/>show that this can justify the computational over <lb/>head of macro-action generation. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

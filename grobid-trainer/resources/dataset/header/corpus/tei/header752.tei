@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="753"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Effective Cache Prefetching on Bus-Based Multiprocessors <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Dean M. Tullsen and Susan J. Eggers <lb/></docAuthor></byline>
+		<byline><affiliation>University of Washington <lb/></affiliation></byline>
+		<div type="abstract">Abstract <lb/>Compiler-directed cache prefetching has the potential to hide much of the high memory latency seen by <lb/>current and future high-performance processors. However, prefetching is not without costs, particularly on a <lb/>multiprocessor. Prefetching can negatively affect bus utilization, overall cache miss rates, memory latencies and <lb/>data sharing. <lb/>We simulate the effects of a compiler-directed prefetching algorithm, running on a range of bus-based multiprocessors. We show that, despite a high memory latency, this architecture does not necessarily support prefetching <lb/>well, in some cases actually causing performance degradations. We pinpoint several problems with prefetching on <lb/>a shared memory architecture (additional conflict misses, no reduction in the data sharing traffic and associated <lb/>latencies, a multiprocessor&apos;s greater sensitivity to memory utilization and the sensitivity of the cache hit rate to <lb/>prefetch distance) and measure their effect on performance. We then solve those problems through architectural <lb/>techniques and heuristics for prefetching that could be easily incorporated into a compiler: 1) victim caching, <lb/>which eliminates most of the cache conflict misses caused by prefetching in a direct-mapped cache, 2) special <lb/>prefetch algorithms for shared data, which significantly improve the ability of our basic prefetching algorithm <lb/>to prefetch invalidation misses, and 3) compiler-based shared data restructuring, which eliminates many of the <lb/>invalidation misses the basic prefetching algorithm doesn&apos;t predict. The combined effect of these improvements <lb/>is to make prefetching effective over a much wider range of memory architectures. <lb/></div>
+		<keywords>keywords: cache prefetching, bus-based multiprocessor, cache misses, prefetching strategies, parallel programs, false sharing, memory latency <lb/></keywords>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

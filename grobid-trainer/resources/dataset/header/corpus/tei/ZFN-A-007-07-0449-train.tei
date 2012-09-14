@@ -1,0 +1,30 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="ZFN-A-007-07-0449"/>
+	</teiHeader>
+	<text xml:lang="de">
+		<front>
+			<titlePage>
+				<docTitle>
+					<titlePart type="main">Zur korrespondenzmäßigen Theorie der Sinwellengleichungen'</titlePart>
+				</docTitle>
+				<byline>Von <docAuthor>Rudolf Haag</docAuthor><lb/></byline>
+				<byline>Aus dem <affiliation>Institut für theoretische Physik der LTniversität München<lb/></affiliation></byline>
+				<reference>(Z. Naturforschg. 7a, 449-458 [1952]; </reference>
+				<note type="submission">eingegangen am 27. November 1951)<lb/></note>
+			</titlePage>
+			<div type="abstract">Im 1. Teil der Arbeit wird das Problem der Modellfähigkeit einer quantenphysika- <lb/>
+lischen Theorie in Zusammenhang gebracht mit dem Begriff der „Verwirklichung" von <lb/>
+(iruppen. Es wird gezeigt, daß in der abstrakten Theorie u. U. Möglichkeiten mit umfaßt <lb/>
+werden, die in der Natur nicht verwirklicht sind, während die Angabe eines Modells eine <lb/>
+Auswahl unter diesen Möglichkeiten trifft. Die Anwendung dieser Begriffsbildungen wird <lb/>
+diskutiert am Beispiel der Spinoperatoren der Elementarteilchen. Der zweite Teil der <lb/>
+Arbeit behandelt die höheren Näherungen in dem ,,feldmechanischen Modell" der Punkt- <lb/>
+partikel mit dem Ergebnis: die Korrespondenz zu den von Bhabha u. a. diskutierten <lb/>
+Spinwellengleichungen bleibt auch in höheren Näherungen bestehen. Die wachsende <lb/>
+Komplikation wirkt sich nur im Masseoperator aus. Das Modell liefert jedoch nur Teil- <lb/>
+chen mit ganzzahligem Spin und ist daher noch unvollständig. <lb/></div>
+			<div type="intro"></div>
+		</front>
+	</text>
+</tei>

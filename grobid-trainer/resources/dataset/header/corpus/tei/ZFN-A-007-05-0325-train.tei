@@ -1,0 +1,28 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="ZFN-A-007-05-0325"/>
+	</teiHeader>
+	<text xml:lang="de">
+		<front>
+			<titlePage>
+				<docTitle>
+					<titlePart type="main">Weitere Bestimmungen der vertikalen Ozonverteilung bei Mondfinsternissen <lb/></titlePart>
+				</docTitle>
+				<byline>Von <docAuthor>Hans-Karl Paetzold</docAuthor><lb/></byline>
+				<byline>Aus der <affiliation>Forschungsstelle für Physik der Stratosphäre in der Max-Planck-Gesellschaft in Weißenau<lb/></affiliation></byline>
+				<reference>(Z. Naturforschg. 7a, 325-328 [1952]; </reference>
+				<note type="submission">eingegangen am 20. Dezember 1951)<lb/></note>
+			</titlePage>
+			<div type="abstract">Es werden vier weitere Bestimmungen der vertikalen Ozonverteilung bei Mondfin- <lb/>
+sternissen mitgeteilt. Aus ihnen folgt wiederum das „Ozongefälle" von höheren zu nie- <lb/>
+drigeren Breiten im Frühjahr und eine erhebliche Variation des Mengenverhältnisses <lb/>
+Ozon/Luft auch in größeren Höhen oberhalb von 20 km. Die aus den vorliegenden acht <lb/>
+Ozonbestimmungen bei'Mondfinsternissen folgenden Mittelwerte für den Ozonwert und <lb/>
+für die Höhe des Ozonmaximums zeigen gegenüber den auf anderem Wege (Ballonauf- <lb/>
+stiege usw.) erhaltenen Werten nur geringe Unterschiede, so daß die Methode keine <lb/>
+merklichen systematischen Fehler aufweist. <lb/></div>
+			<div type="intro">I <lb/>
+n zwei früheren Arbeiten ist an einigen prak-<lb/></div>
+		</front>
+	</text>
+</tei>

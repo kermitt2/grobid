@@ -1,0 +1,31 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="1054"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<note type="copyright">COPYRIGHT ISO. NOT FOR COMMERCIAL USE OR REPRODUCTION <lb/> COPYRIGHT ISO. NOT FOR COMMERCIAL USE OR REPRODUCTION <lb/>  c  ISO 2009 ? All rights reserved <lb/></note>
+		<note type="other">INTERNATIONAL <lb/>  ISO <lb/>  STANDARD <lb/> </note>
+		<idno>24617-1:2009(E) <lb/></idno>
+		<note type="other">First edition <lb/></note>
+		<date>2009-10-11 <lb/></date>
+		<docTitle>
+			<titlePart type="main">Language resource management ? Semantic <lb/> annotation framework (SemAF) ? Part 1: Time and <lb/> events <lb/>  Gestion des ressources linguistiques ? Annotation Semantique <lb/> (SemAF) ? Partie 1: le temps et les événements <lb/></titlePart>
+		</docTitle>
+		<idno>Reference number ISO 24617-1:2009(E):2009(E) <lb/></idno>
+		<note type="copyright">@ ISO 2009 <lb/>  COPYRIGHT ISO. NOT FOR COMMERCIAL USE OR REPRODUCTION <lb/> COPYRIGHT ISO. NOT FOR COMMERCIAL USE OR REPRODUCTION <lb/></note>
+		<idno>ISO 24617-1:2009(E):2009(E) <lb/></idno>
+		<note type="other">PDF disclaimer <lb/> This PDF file may contain embedded typefaces. In accordance with Adobe&apos;s licensing policy, this file may be printed or viewed but shall not <lb/> be edited unless the typefaces which are embedded are licensed to and installed on the computer performing the editing. In downloading <lb/> this file, parties accept therein the responsibility of not infringing Adobe&apos;s licensing policy. The ISO Central Secretariat accepts no liability in <lb/> this area. <lb/> Adobe is a trademark of Adobe Systems Incorporated. <lb/> Details of the software products used to create this PDF file can be found in the General Info relative to the file; the PDF-creation parameters <lb/> were optimized for printing. Every care has been taken to ensure that the file is suitable for use by ISO member bodies. In the unlikely event <lb/> that a problem relating to it is found, please inform the Central Secretariat at the address given below. <lb/> </note>
+		<note type="copyright">@ ISO 2009 <lb/> All rights reserved. Unless otherwise specified, no part of this publication may be reproduced or utilized in any form or by any means, <lb/> electronic or mechanical, including photocopying and microfilm, without permission in writing from either ISO at the address below or ISO&apos;s <lb/> member body in the country of the requester. <lb/></note>
+		<byline><affiliation>ISO copyright office <lb/></affiliation></byline>
+		<address>Case postale 56 CH-1211 Geneva 20 <lb/></address>
+		<note type="phone">Tel. + 41 22 749 01 11 <lb/> Fax +41 22 749 09 47 <lb/></note>
+		<email>E-mail copyright@iso.org <lb/></email>
+		<ptr type="web">Web www.iso.org <lb/></ptr>
+		<note type="other">Published in Switzerland <lb/> </note>
+		<note type="copyright">@ ISO 24617-1 ? All rights reserved <lb/>  COPYRIGHT ISO. NOT FOR COMMERCIAL USE OR REPRODUCTION <lb/> COPYRIGHT ISO. NOT FOR COMMERCIAL USE OR REPRODUCTION <lb/></note>
+		<idno>ISO 24617-1:2009(E):2009(E) <lb/></idno>
+		<div type="intro">Contents <lb/></div>
+		</front>
+</text>
+</tei>

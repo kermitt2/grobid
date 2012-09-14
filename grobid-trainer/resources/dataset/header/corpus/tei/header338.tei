@@ -1,0 +1,11 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="343"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<div type="abstract">Abstract <lb/>TCP is a reliable transport protocol tuned to perform well <lb/>in traditional networks made up of wired links with stationary hosts. Networks with wireless links and mobile <lb/>hosts violate many of the assumptions made by TCP, causing degraded performance. In this paper, we describe a <lb/>simple protocol that improves TCP performance by modifying network-layer software only at a basestation without <lb/>violating end-to-end TCP semantics. The main idea is to <lb/>cache packets at the basestation and perform local <lb/>retransmissions. Simulations of this protocol show that it <lb/>is significantly more robust in the presence of multiple <lb/>packet losses in a single transmission window as compared to TCP. This enables our protocol to tolerate at least <lb/>10 times as high an error rate without any performance <lb/>degradation. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

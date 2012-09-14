@@ -1,0 +1,21 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="800"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<note type="grant">This research is partially supported by DARPA grant N00014-94-1-0845, DARPA contract F19628--95-C-0193, NSF grant CCR-9224375, and grants from Hewlett-Packard, Intel and Tektronix. <lb/></note>
+		<docTitle>
+			<titlePart type="main">Predictable File Access Latency for <lb/>Multimedia <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>D. Revel, C. Cowan, D. McNamee, C. Pu, and J. Walpole <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science and Engineering <lb/>Oregon Graduate Institute of Science &amp; Technology <lb/></affiliation></byline>
+		<address>20000 N.W. Walker Rd., P.O. Box 91000 <lb/>Portland, OR 97291-1000 <lb/></address>
+		<note type="phone">(503) 690-1121 <lb/></note>
+		<email>{revel,crispin,dylan,calton,walpole}@cse.ogi.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>Multimedia applications are sensitive to I/O latency and jitter when accessing <lb/>data in secondary storage. Transparent adaptive prefetching (TAP) uses software <lb/>feedback to provide multimedia applications with file system quality of service <lb/>(QoS) guarantees. We are investigating how QoS requirements can be communicated and how they can be met by adaptive resource management. A preliminary test of adaptive prefetching is presented. <lb/></div>
+		<keywords>Keywords <lb/>QoS, adaptive, multimedia, prefetching <lb/></keywords>
+		<div type="intro">1 INTRODUCTION</div>
+		</front>
+</text>
+</tei>

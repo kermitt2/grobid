@@ -1,0 +1,21 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="689"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Almost All Regular Graphs are <lb/>Hamiltonian <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>R. W. Robinson <lb/></docAuthor></byline>
+		<byline><affiliation>Computer Science Department <lb/>University of Georgia <lb/></affiliation></byline>
+		<address>Athens, GA 30602, U.S.A. <lb/></address>
+		<byline><docAuthor>N. C. Wormald <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Mathematics <lb/>University of Melbourne <lb/></affiliation></byline>
+		<address>Parkville, VIC 3052, Australia <lb/></address>
+		<div type="abstract">Abstract <lb/>In a previous paper the authors showed that almost all labelled <lb/>cubic graphs are hamiltonian. In the present paper, this result is <lb/>used to show that almost all r-regular graphs are hamiltonian for any <lb/>fixed r 3, by an analysis of the distribution of 1-factors in random <lb/>regular graphs. Moreover, almost all such graphs are r-edge-colourable <lb/>if they have an even number of vertices. Similarly, almost all r-regular <lb/>bipartite graphs are hamiltonian and r-edge-colourable for fixed r 3. <lb/></div>
+		<note type="grant">Research supported by the Australian Research Council <lb/></note>
+		<pb/>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,16 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="387"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Dealing With Disaster: Surviving Misbehaved Kernel Extensions <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Margo I. Seltzer, Yasuhiro Endo, Christopher Small, Keith A. Smith <lb/></docAuthor></byline>
+		<byline><affiliation>Harvard University <lb/></affiliation></byline>
+		<div type="abstract">Abstract <lb/> Today's extensible operating systems allow applications <lb/>to modify kernel behavior by providing mechanisms for <lb/>application code to run in the kernel address space. The <lb/>advantage of this approach is that it provides improved <lb/>application flexibility and performance; the disadvantage <lb/>is that buggy or malicious code can jeopardize the <lb/>integrity of the kernel. It has been demonstrated that it is <lb/>feasible to use safe languages, software fault isolation, <lb/>or virtual memory protection to safeguard the main kernel. <lb/>However, such protection mechanisms do not <lb/>address the full range of problems, such as resource <lb/>hoarding, that can arise when application code is introduced <lb/>into the kernel. <lb/>In this paper, we present an analysis of extension <lb/>mechanisms in the VINO kernel. VINO uses software <lb/>fault isolation as its safety mechanism and a lightweight <lb/>transaction system to cope with resource-hoarding. We <lb/>explain how these two mechanisms are sufficient to <lb/>protect against a large class of errant or malicious <lb/>extensions, and we quantify the overhead that this <lb/>protection introduces. <lb/>We find that while the overhead of these <lb/>techniques is high relative to the cost of the extensions <lb/>themselves, it is low relative to the benefits that <lb/>extensibility brings. <lb/></div>
+		<div type="intro">1 Introduction <lb/></div>
+		</front>
+</text>
+</tei>

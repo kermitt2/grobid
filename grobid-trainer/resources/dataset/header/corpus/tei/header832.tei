@@ -1,0 +1,24 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="unknown"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<note type="other">, , 1-30 () <lb/></note>
+		<note type="copyright">c Kluwer Academic Publishers, Boston. Manufactured in The Netherlands. <lb/></note>
+		<docTitle>
+			<titlePart type="main">On the Optimality of the Simple Bayesian <lb/>Classifier under Zero-One Loss <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>PEDRO DOMINGOS</docAuthor></byline>
+		<email>pedrod@ics.uci.edu <lb/></email>
+		<byline><docAuthor>MICHAEL PAZZANI</docAuthor></byline>
+		<email>pazzani@ics.uci.edu <lb/></email>
+		<byline><affiliation>Department of Information and Computer Science, University of California,</affiliation></byline>
+		<address>Irvine, CA 92697 <lb/></address>
+		<note type="other">Editor: Gregory Provan <lb/></note>
+		<div type="abstract">Abstract. The simple Bayesian classifier is known to be optimal when attributes are independent <lb/>given the class, but the question of whether other sufficient conditions for its optimality exist has <lb/>so far not been explored. Empirical results showing that it performs surprisingly well in many <lb/>domains containing clear attribute dependences suggest that the answer to this question may be <lb/>positive. This article shows that, although the Bayesian classifier&apos;s probability estimates are only <lb/>optimal under quadratic loss if the independence assumption holds, the classifier itself can be <lb/>optimal under zero-one loss (misclassification rate) even when this assumption is violated by a <lb/>wide margin. The region of quadratic-loss optimality of the Bayesian classifier is in fact a second-order infinitesimal fraction of the region of zero-one optimality. This implies that the Bayesian <lb/>classifier has a much greater range of applicability than previously thought. For example, in this <lb/>article it is shown to be optimal for learning conjunctions and disjunctions, even though they <lb/>violate the independence assumption. Further, studies in artificial domains show that it will often <lb/>outperform more powerful classifiers for common training set sizes and numbers of attributes, even <lb/>if its bias is a priori much less appropriate to the domain. This article&apos;s results also imply that <lb/>detecting attribute dependence is not necessarily the best way to extend the Bayesian classifier, <lb/>and this is also verified empirically. <lb/></div>
+		<keywords>Keywords: Simple Bayesian classifier, naive Bayesian classifier, zero-one loss, optimal classification, induction with attribute dependences <lb/></keywords>
+		<div type="intro">1. Introduction</div>
+		</front>
+</text>
+</tei>

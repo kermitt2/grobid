@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="653"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Theoretical Foundations of Association Rules <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Mohammed J. Zaki and Mitsunori Ogihara <lb/></docAuthor></byline>
+		<byline><affiliation>Computer Science Department, University of Rochester,</affiliation></byline>
+		<address>Rochester NY 14627 <lb/></address>
+		<email>{zaki,ogihara}@cs.rochester.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>In this paper we describe a formal framework for the problem of mining association rules. The theoretical foundation is based on the field of formal concept analysis. A concept is composed of closed subsets of attributes (itemsets) <lb/>and objects (transactions). We show that all frequent itemsets are uniquely determined by the frequent concepts. We <lb/>further show how this lattice-theoretic framework can be used to find a small rule generating set, from which one can <lb/>infer all other association rules. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

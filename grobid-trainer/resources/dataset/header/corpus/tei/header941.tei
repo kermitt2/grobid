@@ -1,0 +1,19 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="1010"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<note type="other">11. Parallel alignment of structured documents <lb/>1 <lb/> Chapter 11 <lb/></note>
+		<docTitle>
+			<titlePart type="main">Parallel alignment of structured documents <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Laurent Romary, Patrice Bonhomme <lb/></docAuthor></byline>
+		<byline><affiliation>Laboratoire Loria,</affiliation></byline>
+		<address>France <lb/></address>
+		<keywords>Keywords: SGML, structured documents, multi-level alignment. <lb/></keywords>
+		<div type="abstract">Abstract: <lb/> Classical methods for parallel text alignment consider one specific level (e.g. <lb/> sentences) along which two or more versions of a text are to be synchronised. This <lb/> may lead to some problems when these documents are particularly long since <lb/> alignment errors at some point in the text may, in the absence of any other <lb/> linguistic information, propagate for some time without any chance of recovery. In <lb/> this chapter we consider how multilingual parallel alignment can be based on the <lb/> fact that more and more texts are now highly structured by means of tagging <lb/> languages such as SGML. In particular we will describe recent efforts in multi- <lb/> level alignment for which we will present the main advances as well as some of the <lb/> difficulties to be dealt with, in particular when the text and its translation are <lb/> associated with different encoding schemes or different encoding practices for the <lb/> same scheme. <lb/></div>
+		<div type="intro">1. <lb/>WHERE THE PROBLEM LIES. <lb/></div>
+		</front>
+</text>
+</tei>

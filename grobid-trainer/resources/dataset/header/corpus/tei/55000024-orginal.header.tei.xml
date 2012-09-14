@@ -1,0 +1,68 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000024-orginal"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<lb/>
+			<reference>Biochemical and Biophysical Research Communications 269, 415– 421
+				(2000)<lb/></reference>
+			<idno>doi:10.1006/bbrc.2000.2303,</idno>
+			<ptr type="web">available online at http://www.idealibrary.com</ptr>
+			<note type="other">on</note>
+
+			<docTitle>
+				<titlePart>Selective Inhibition of Cyclooxygenase-2 with Antisense<lb/>
+					Oligodeoxynucleotide Restricts Induction<lb/> of Rat Adjuvant-Induced
+					Arthritis<lb/></titlePart>
+			</docTitle>
+
+			<byline>
+				<docAuthor>Ryoji Yamada,* Hajime Sano,* ,1 Timothy Hla,† Akira Hashiramoto,* Yutaka
+					Kawahito,*<lb/> Shigehiko Mukai,* Masataka Kohno,* Yasunori Tsubouchi,* Miki
+					Inoue,*<lb/> Akiko Komatsu,* Ken-ichiro Inoue,* and Motoharu
+					Kondo*<lb/></docAuthor>
+			</byline>
+
+			<byline>
+				<affiliation>*First Department of Internal Medicine, Kyoto Prefectural University of
+					Medicine, </affiliation>
+			</byline>
+
+			<address>Kamigyo-ku,<lb/> Kyoto, 602-8566, Japan;</address>
+
+			<byline>
+				<affiliation>and †Center for Vascular Biology, Department of Physiology,<lb/>
+					University of Connecticut School of Medicine,</affiliation>
+			</byline>
+
+			<address>Farmington, Connecticut 06030<lb/></address>
+
+			<note type="submission">Received January 17, 2000<lb/></note>
+
+			<div type="abstract">The effects of cyclooxygenase (COX)-2 antisense
+				oli-<lb/>godeoxynucleotide (ODN) in induction of adjuvant-<lb/>induced arthritis
+				were investigated. Female Lewis<lb/> rats were injected with Mycobacterium butyricum
+				in-<lb/>tradermally at the base of tails to induce arthritis.<lb/> Synthetic 18 mer
+				phosphorothioate ODNs correspond-<lb/>ing to the translation initiation site of rat
+				COX-2<lb/> mRNA were prepared. The antisense (AS), sense (S),<lb/> and "scrambled"
+				(Sc) ODNs were intraperitoneally ad-<lb/>ministered. Arthropathy was evaluated with
+				arthritis<lb/> score, paw edema, and histological examination. Ex-<lb/>pression of
+				COX-1 and -2 protein and mRNA were<lb/> examined with immunostaining and
+				reverse-tran-<lb/>scription polymerase chain reaction, respectively.<lb/> COX-2 AS
+				ODN significantly suppressed induction of<lb/> arthritis in a dose-dependent manner
+				without severe<lb/> adverse effects, whereas S and Sc ODNs did not show<lb/>
+				significant inhibitory effects. COX-2 mRNA and pro-<lb/>tein expression were also
+				suppressed only by COX-2<lb/> AS ODN without any alteration of COX-1
+				expression.<lb/> These data suggest that selective inhibition of COX-2<lb/> with AS
+				ODN may have a therapeutic potency in the<lb/> treatment of rheumatoid
+				arthritis.</div>
+			<note type="other">© 2000 Academic Press<lb/></note>
+			<keywords>Key Words: cyclooxygenase-2; antisense oligode-<lb/>oxynucleotide;
+				adjuvant-induced arthritis; rheuma-<lb/>toid arthritis.<lb/></keywords>
+
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+<listBibl>
+
+	<bibl>
+		<title level="j">Journal of Cellular Biochemistry</title> <biblScope type="vol">90</biblScope>:<biblScope type="pp">339–346</biblScope> (<date>2003</date>)
+    </bibl>
+
+    <bibl>
+		<title level="j">J. Cell. Biochem.</title> <biblScope type="vol">90</biblScope>:<biblScope type="pp">339–346</biblScope>, <date>2003</date>.
+    </bibl>
+
+</listBibl>
+</tei>

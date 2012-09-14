@@ -1,0 +1,20 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="unknown"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<note type="reference">Appears in: &quot;Supercomputing &apos;94,&quot; Nov. 1994. <lb/></note>
+		<note type="copyright">Reprinted by permission of IEEE. <lb/></note>
+		<docTitle>
+			<titlePart type="main">Paging Tradeoffs in Distributed-Shared-Memory Multiprocessors <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Douglas C. Burger, Rahmat S. Hyder, Barton P. Miller, David A. Wood <lb/></docAuthor></byline>
+		<byline><affiliation>Computer Sciences Department <lb/>University of Wisconsin-Madison <lb/></affiliation></byline>
+		<address>1210 W. Dayton Street <lb/>Madison, WI 53706 USA <lb/></address>
+		<email>wwt@cs.wisc.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>Massively parallel processors have begun using commodity operating systems that support demand-paged <lb/>virtual memory. To evaluate the utility of virtual <lb/>memory, we measured the behavior of seven shared-memory parallel application programs on a simulated <lb/>distributed-shared-memory machine. Our results (i) <lb/>confirm the importance of gang CPU scheduling, (ii) <lb/>show that a page-faulting processor should spin rather <lb/>than invoke a parallel context switch, (iii) show that <lb/>our parallel programs frequently touch most of their <lb/>data, and (iv) indicate that memory, not just CPUs, <lb/>must be &quot;gang scheduled&quot;. Overall, our experiments <lb/>demonstrate that demand paging has limited value <lb/>on current parallel machines because of the applications&apos; synchronization and memory reference patterns <lb/>and the machines&apos; high page-fault and parallel-context-switch overheads. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

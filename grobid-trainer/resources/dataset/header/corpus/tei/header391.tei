@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="394"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Bounds on the Time to Detect Failures <lb/>Using Bounded-capacity Message Links <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Stephen Ponzio * <lb/></docAuthor></byline>
+		<byline><affiliation>MIT Laboratory for Computer Science <lb/></affiliation></byline>
+		<div type="abstract">Abstract <lb/>We consider a system of distributed processors that <lb/>communicate by passing messages and that have inexact information about time. Specifically, a processor knows that a single message is delayed by at most <lb/>time d and the time between any two of its consecutive steps is at least c 1 and at most c 2 ; it has no <lb/>other way of estimating elapsed time. This simple <lb/>model is very close to traditional models used in distributed computing theory, and has been studied by <lb/>Attiya and Lynch [2, 1] among others. We extend <lb/>the model by making a realistic assumption about <lb/>how the delay of messages is affected by the rate at <lb/>which they are sent. We define a model of message <lb/>links with bounded capacity, which are guaranteed to <lb/>deliver messages at only a given rate. If a processor sends messages at a greater rate, they may incur <lb/>greater delay. <lb/>We quantify the effect of this bounded capacity on <lb/>the time necessary to detect processor failures. We <lb/>consider a system of two processors connected by a <lb/>bi-directional message link of (integral) capacity . <lb/>First we give two very simple protocols that guarantee any stopping failure will be detected within <lb/>time 2Cd + d and C 2 d= + Cd + d respectively, <lb/>where C = c 2 =c 1 . The main result is an almost-matching lower bound of 2Cd+d= or C 2 d=+Cd+d, <lb/>whichever is less. If the link is uni-directional, our result specializes to give a matching upper and lower <lb/>bound of C 2 d= + Cd + d. <lb/></div>
+		<note type="grant">Supported by an NSF Graduate Fellowship <lb/></note>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

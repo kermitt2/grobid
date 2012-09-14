@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+<listBibl>
+
+	<bibl>
+		<title level="j">Annals of Oncology</title> <biblScope type="vol">13</biblScope>:<biblScope type="pp">308–317</biblScope>, <date>2002</date>
+    </bibl>
+
+</listBibl>
+</tei>

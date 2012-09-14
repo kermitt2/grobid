@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>*</marker>
+							<orgName type="department">Department of Oral Biomaterials</orgName>,
+							<orgName type="institution">Catholic University</orgName>,
+							<address>
+								<postBox>P.O. Box 9101</postBox>,
+								<postCode>6500 HB</postCode>
+								<settlement>Nijmegen</settlement>,
+								<country>The Netherlands</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>**</marker>
+							<orgName type="department">Research Associate NFSR</orgName>,
+							<orgName type="laboratory">Laboratory for Analytical Chemistry</orgName>,
+							<orgName type="institution">State University</orgName>,
+							<address>
+								<settlement>Gent</settlement>,
+								<country>Belgium</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>***</marker>
+							<orgName type="institution">Caries Research Unit TNO</orgName>,
+							<address>
+								<settlement>Utrecht</settlement>.
+								<country>The Netherlands</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

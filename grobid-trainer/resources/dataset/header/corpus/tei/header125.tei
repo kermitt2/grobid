@@ -1,0 +1,21 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="126"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<idno>CS-TR-3692</idno>
+		<date>Sept. 1996 <lb/></date>
+		<docTitle>
+			<titlePart type="main">Putting Visualization to Work: <lb/>ProgramFinder for Youth Placement <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Jason Ellis, Anne Rose, Catherine Plaisant <lb/></docAuthor></byline>
+		<byline><affiliation>Human-Computer Interaction Laboratory <lb/>Institute for Advanced Computer Studies <lb/>University of Maryland,</affiliation></byline>
+		<address>College Park, MD 20742-3255 <lb/></address>
+		<ptr type="web">http://www/cs.umd.edu/projects/hcil/ <lb/></ptr>
+		<email>jellis, rose, plaisant-@cs.umd.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>The Human-Computer Interaction Laboratory (HCIL) and the Maryland Department of Juvenile Justice (DJJ) have <lb/>been working together to develop the ProgramFinder, a tool for choosing programs for a troubled youth from drug <lb/>rehabilitation centers to secure residential facilities. The seemingly straightforward journey of the ProgramFinder <lb/>from an existing user interface technique to a product design required the development of five different prototypes <lb/>which involved user interface design, prototype implementation, and selecting search criterion. While HCILs effort <lb/>focused primarily on design and implementation, DJJs attribute selection process was the most time consuming and <lb/>difficult task. We also found that a direct link to DJJs workflow was needed in the prototypes to generate the <lb/>necessary buy-in. This paper analyzes the interaction between the efforts of HCIL and DJJ and the amount of buy-in by DJJ staff and management. Lesson learned are presented for developers. <lb/></div>
+		<pb/>
+		</front>
+</text>
+</tei>

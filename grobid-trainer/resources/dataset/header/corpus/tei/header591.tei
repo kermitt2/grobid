@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="593"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Reverse Engineering with a CASE Tool <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Bret Johnson <lb/></docAuthor></byline>
+		<note type="other">Research advisors: Spencer Rugaber and Rich LeBlanc <lb/></note>
+		<date>October 6, 1994 <lb/></date>
+		<div type="abstract">Abstract <lb/>We examine using a CASE tool, Interactive Development Environment&apos;s Software through Pictures (StP), to support reverse engineering. We generate structure charts in StP from the automated analysis <lb/>of C source code. The advantages of this approach are that one can use <lb/>the CASE tool&apos;s support for drawing, linking, and modifying pictorial <lb/>notations for program design in order to make it easier to construct a <lb/>reverse engineering tool. Additionally, one can then use the design rep <lb/>resentations with the CASE tool to do reengineering for maintenance. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

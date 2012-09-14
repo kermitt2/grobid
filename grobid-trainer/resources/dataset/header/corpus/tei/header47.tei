@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="48"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">A SIMPLE APPROACH TO DISTRIBUTED POOLS <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>BENEDICT M. RAFANELLO &amp; THEODORE JOHNSON <lb/></docAuthor></byline>
+		<byline><affiliation>University of Florida,  Department of Computer and information Sciences <lb/></affiliation></byline>
+		<date>January 1994 <lb/></date>
+		<div type="abstract">Computer networks hold the potential to coordinate the activities of multiple machines so that their combined computational abilities can be applied to solving a single problem. Several methods have been developed over the years to <lb/>harness the power of networked systems for solving certain classes of problems. One such class of problems is the distributed producer/consumer problem, in which a set of producer processes supply items to a set of consumer processes. Each <lb/>of the processes involved resides on a different machine, with the machines being connected by a network and the processes communicating via message passing. The problem, then, is how to coordinate the activities of the producers and consumers so that an acceptable level of throughput can be maintained with a minimal amount of overhead. This paper <lb/>presents a simple solution to the distributed producer/consumer problem. This solution, which is based upon the notion of <lb/>a distributed pool, is described in detail and its performance analyzed. As the analysis shows, the distributed pools algorithm presented herein is a simple, efficient solution to the distributed producer/consumer problem, and is capable of better than 90% efficiency under common conditions. Its major failing is that it needs the production rates of the producers <lb/>to be reasonably similar. <lb/></div>
+		<keywords>Key words: distributed computing, distributed queue, performance modeling, producer/consumer, simulation. <lb/></keywords>
+		<div type="intro">INTRODUCTION</div>
+		</front>
+</text>
+</tei>

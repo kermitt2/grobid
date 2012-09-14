@@ -1,0 +1,15 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="unknown"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">ON COMPUTABLE BELIEFS OF RATIONAL MACHINES <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Nimrod Megiddo <lb/></docAuthor></byline>
+		<div type="abstract">Abstract. Traditional decision theory has assumed that agents have complete, consistent and readily available beliefs and preferences. Obviously, even if <lb/>an expert system has complete and consistent beliefs, it cannot have them readily <lb/>available. Moreover, some beliefs about beliefs are not even approximately computable. It is shown that if all players have complete and consistent beliefs, they <lb/>can compute approximate beliefs about beliefs of any order by considering events <lb/>arbitrarily close in some well-defined sense to the ones in question. <lb/></div>
+		<div type="intro">1. Introduction</div>
+		</front>
+</text>
+</tei>

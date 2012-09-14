@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../jsp/xmlverbatimwrapper.xsl"?> 
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+							
+							<affiliation>
+								<orgName type="department">Department of Physics</orgName>,
+								<orgName type="institution">University of Oslo</orgName>,
+								<address>
+									<settlement>Oslo</settlement>,
+									<country key="NO">Norway<lb/></country>
+								</address>
+							</affiliation>
+								
+							<affiliation>
+								<orgName type="department">Skobeltsyn Institute of Nuclear Physics</orgName>,
+								<orgName type="institution">Moscow State University</orgName>,
+								<address>
+									<settlement>Moscow</settlement>,<lb/>
+									<country key="RU">Russia<lb/></country>
+								</address>
+							</affiliation>
+
+							<affiliation>
+								<orgName type="institution">Joint Institute for Nuclear Researches</orgName>,
+								<address><settlement>Dubna</settlement>,
+									<region>Moscow Region</region>,
+									<country key="RU">Russia<lb/></country>
+								</address>
+							</affiliation>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</TEI>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+<listBibl>
+
+  	<bibl><date>January 1997</date>/Vol. <biblScope type="vol">40</biblScope>, No. <biblScope type="issue">1</biblScope> <title level="j">COMMUNICATIONS OF THE ACM</title></bibl>
+
+</listBibl>
+</tei>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../jsp/xmlverbatimwrapper.xsl"?> 
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+							<marker>1</marker> 
+							<affiliation>
+								<orgName type="department">Institut für Theoretische Physik</orgName>,
+								<orgName type="institution">Goethe Universität Frankfurt<lb/></orgName>
+								<address>
+									<addrLine>Max-von-Laue Str. 1</addrLine>,
+									<postCode>D-60438</postCode>
+									<settlement>Frankfurt Main</settlement>,
+									<country key="DE">Germany<lb/></country>
+								</address>
+							</affiliation>
+						
+							<marker>2</marker> 
+							<affiliation>
+								<orgName type="department">Institut für Kernphysik</orgName>,
+								<orgName type="institution">Goethe Universität Frankfurt</orgName>,<lb/>
+								<address>
+									<addrLine>Max-von-Laue Str. 1</addrLine>,
+									<postCode>D-60438</postCode>
+									<settlement>Frankfurt Main</settlement>,
+									<country key="DE">Germany<lb/></country>
+								</address>
+							</affiliation>
+							
+							<marker>3</marker> 
+							<affiliation>
+								<orgName type="institution">GSI Helmholtzzentrum für Schwerionenforschung GmbH</orgName>,<lb/>
+								<address>
+									<addrLine>Planckstr. 1</addrLine>,
+									<postCode>D-64291</postCode>
+									<settlement>Darmstadt</settlement>,
+									<country key="DE">Germany<lb/></country>
+								</address>			
+							</affiliation>	
+							
+							<marker>4</marker> 
+							<affiliation>
+								<orgName type="department">Center for Scientific Computing</orgName>,
+								<address>
+								<addrLine>Max-von-Laue-Str. 1</addrLine>,<lb/>
+								<postCode>D-60438</postCode>
+								<settlement>Frankfurt am Main</settlement>,
+								<country key="DE">Germany<lb/></country>
+								</address>			
+							</affiliation>
+							
+							<marker>5</marker> 
+							<affiliation>
+								<orgName type="department">Frankfurt Institute for Advanced Studies</orgName>,
+								<address>
+								<addrLine>Ruth-Moufang-Str. 1</addrLine>,<lb/>
+								<postCode>D-60438</postCode>
+								<settlement>Frankfurt am Main</settlement>,
+								<country key="DE">Germany<lb/></country>
+								</address>			
+							</affiliation>
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</TEI>

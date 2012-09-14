@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="59"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<note type="reference">USENIX Summer Conference <lb/> June 11-15, 1990 <lb/> Anaheim, California <lb/></note>
+		<docTitle>
+			<titlePart type="main">Why Aren&apos;t <lb/>Operating Systems <lb/>Getting Faster As <lb/>Fast as Hardware? <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>John K. Ousterhout</docAuthor></byline>
+		<byline><affiliation>University of California at Berkeley <lb/></affiliation></byline>
+		<div type="abstract">ABSTRACT <lb/>This paper evaluates several hardware platforms and operating systems using a set of benchmarks <lb/>that stress kernel entry/exit, file systems, and other things related to operating systems. The <lb/>overall conclusion is that operating system performance is not improving at the same rate as the <lb/>base speed of the underlying hardware. The most obvious ways to remedy this situation are to <lb/>improve memory bandwidth and reduce operating systems&apos; tendency to wait for disk operations to <lb/>complete. <lb/></div>
+		<div type="intro">1. Introduction</div>
+		</front>
+</text>
+</tei>

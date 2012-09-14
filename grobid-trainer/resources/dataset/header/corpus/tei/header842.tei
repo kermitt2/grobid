@@ -1,0 +1,19 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="unknown"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">SEE ME, HEAR ME: INTEGRATING AUTOMATIC SPEECH RECOGNITION AND <lb/>LIP-READING <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Paul Duchnowski 1 Uwe Meier 1 Alex Waibel 1;2 <lb/></docAuthor></byline>
+		<byline><affiliation>1 University of Karlsruhe,</affiliation></byline>
+		<address>Karlsruhe, Germany</address>
+		<byline><affiliation>2 Carnegie Mellon University,</affiliation></byline>
+		<address>Pittsburgh PA, USA <lb/></address>
+		<div type="abstract">ABSTRACT <lb/>We present recent work on integration of visual information (automatic lip-reading) with acoustic speech for better overall speech recognition. A Multi-State Time Delay <lb/>Neural Network performs the recognition of spelled letter <lb/>sequences taking advantage of lip images from a standard <lb/>camera. The problems addressed include efficient but effective representation of the visual information and optimum <lb/>manner of combining the two modalities when rendering a <lb/>decision. We show results for several alternatives to direct <lb/>gray level image as the visual evidence. These are: Principal <lb/>Components, Linear Discriminants, and DFT coefficients. <lb/>Dimensionality of the input is decreased by a factor of 12 <lb/>while maintaining recognition rates. Combination of the <lb/>visual and acoustic information is performed at three different levels of abstraction. Results suggest that integration <lb/>of higher order input features works best. On a continuous <lb/>spelling task, visual-alone recognition of 45-55%, when combined with acoustic data, lowers audio-alone error rates by <lb/>30-40%. <lb/></div>
+		<div type="intro">1. INTRODUCTION</div>
+		</front>
+</text>
+</tei>

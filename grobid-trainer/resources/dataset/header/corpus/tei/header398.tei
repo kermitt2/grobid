@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="401"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Determining 3-D Hand Motion * <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>James Davis Mubarak Shah <lb/></docAuthor></byline>
+		<byline><affiliation>Media Lab Computer Vision Lab <lb/>Massachusetts Institute of Technology University of Central Florida <lb/></affiliation></byline>
+		<address>Cambridge, MA 02139 Orlando, FL 32826 <lb/></address>
+		<div type="abstract">Abstract <lb/>This paper presents a glove-free method for tracking <lb/>hand movements using a set of 3-D models. In this <lb/>approach, the hand is represented by five cylindrical <lb/>models which are fit to the third phalangeal segments <lb/>of the fingers. Six 3-D motion parameters for each <lb/>model are calculated that correspond to the movement <lb/>of the fingertips in the image plane. Trajectories of <lb/>the moving models are then established to show the 3-D nature of hand motion. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

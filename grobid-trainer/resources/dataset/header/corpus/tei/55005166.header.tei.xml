@@ -1,0 +1,98 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005166"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<lb/>
+			<reference>Thrombosis Research 102 (2001) 61 ± 69<lb/></reference>
+			<note type="articleType">REGULAR ARTICLE<lb/></note>
+			<docTitle>
+				<titlePart>Matrix Metalloproteinase Deficiencies Do Not
+					Impair<lb/> Cell-Associated Fibrinolytic Activity<lb/></titlePart>
+			</docTitle>
+
+			<byline>
+				<docAuthor>Francisca Ugwu, Gudule Lemmens, Desire Collen and H. Roger Lijnen<lb/></docAuthor>
+			</byline>
+
+			<byline>
+				<affiliation>Center for Molecular and Vascular Biology, University of
+					Leuven,</affiliation>
+			</byline>
+
+			<address>Campus Gasthuisberg, O&amp;N, Herestraat 49,<lb/> B-3000 Leuven, Belgium<lb/></address>
+
+			<note type="submission">(Received 12 October 2000 by Editor J. Soria; revised/accepted 20 December 2000)<lb/></note>
+
+<div type="abstract">
+	Abstract<lb/>
+	The matrix metalloproteinase (MMP) and fibri-<lb/>
+	nolytic (plasminogen/plasmin) systems coop-<lb/>
+	erate in many (patho)physiological processes<lb/>
+	requiring extracellular proteolysis. The effect of<lb/>
+	MMP-3 (stromelysin-1), MMP-7 (matrilysin),<lb/>
+	MMP-9 (gelatinase B) or MMP-12 (metalloelas-<lb/>
+	tase) on cellular fibrinolytic activity was studied<lb/>
+	with the use of smooth muscle cells (SMC) and<lb/>
+	fibroblasts derived from mice with specific<lb/>
+	inactivation of these genes. Activation of cell-<lb/>
+	bound plasminogen by two-chain urokinase-type<lb/>
+	plasminogen activator (tcu-PA) was not signifi-<lb/>
+	cantly different with SMC or fibroblasts from the<lb/>
+	gene-deficient mice (78% to 140% of wild-type).<lb/>
+	For all cell types, very limited conversion of<lb/>
+	plasminogen to angiostatin-like kringle-contain-<lb/>
+</div>
+
+			<keywords>
+				Abbreviations: e-ACA, e-aminocaproic acid; MMP-3, MMP-3<lb/>
+				(stromelysin-1)-deficient; MMP-7À/À, MMP-7 (matrilysin)-defi-<lb/>
+				cient; MMP-9À/À, MMP-9 (gelatinase B)-deficient; MMP-12À/À,<lb/>
+				MMP-12 (metalloelastase)-deficient; SMC, smooth muscle cells;<lb/>
+				LBS, plasminogen fragment containing kringles 1 to 3 or 1 to 4<lb/>
+				with the lysine-binding sites; MAb, monoclonal antibody; S-<lb/>
+				2403, D-Glp-Phe-Lys-p-nitroanilide; tcu-PA, two-chain uroki-<lb/>
+				nase-type plasminogen activator; WT, wild-type.<lb/>
+			</keywords>
+			
+<note type="other">Corresponding author: Dr. Henri Roger Lijnen, Center for
+Molecular and Vascular Biology, University of Leuven, Campus
+Gasthuisberg, O&amp;N, Herestraat 49, B-3000 Leuven, Belgium.
+Tel: +32 (16) 345775; Fax: +32 (16) 345990; E-mail: &lt;roger.lijnen
+@med.kuleuven.ac.be&gt;.</note>
+
+<div type="abstract">
+			ing fragments was observed ( &lt; 3% of the total<lb/>
+	cell-bound plasminogen). Activation of plasmi-<lb/>
+	nogen in solution by cell-associated tcu-PA was<lb/>
+	also comparable for SMC or fibroblasts of the<lb/>
+	different genotypes (54% to 160% of wild-type).<lb/>
+	In vitro SMC migration on scrape wounded<lb/>
+	collagen-coated surfaces was comparable for<lb/>
+	wild-type, MMP-7 À / À , MMP-9 À / À and MMP-<lb/>
+	12 À / À SMC, but was significantly reduced for<lb/>
+			MMP-3 À / À SMC ( P &lt; .005 vs. wild-type). Ser-<lb/>
+	um-free conditioned medium of MMP-3 À / À and<lb/>
+	MMP-7 À / À SMC or fibroblasts induced similar<lb/>
+	lysis of fibrin films as wild-type cells. These<lb/>
+	findings indicate that several interactions that<lb/>
+	have been described between these MMPs and<lb/>
+	the plasminogen/plasmin system in a purified<lb/>
+	system do not significantly affect plasmin-<lb/>
+	mediated cellular fibrinolytic activity under cell<lb/>
+	culture conditions.<lb/>
+	</div>
+	
+	<note type="copyright">  2001 Elsevier Science Ltd.
+	All rights reserved.</note>
+	
+	<keywords>Key Words: Fibrinolysis; Matrix metalloproteinases; Plas-<lb/>
+		min(ogen); Smooth muscle cells; Fibroblasts; Gene-<lb/>
+		deficient mice<lb/></keywords>
+	
+
+		</front>
+	</text>
+</tei>

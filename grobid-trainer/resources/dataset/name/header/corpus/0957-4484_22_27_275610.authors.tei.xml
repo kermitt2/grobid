@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Veikko</forename>
+								<surname>Linko</surname>
+								<marker>1,3,4</marker> ,
+							</persName>
+							<persName>
+								<forename>Jenni</forename>
+								<surname>Leppiniemi</surname>
+								<marker>2,3</marker> ,
+							</persName>
+							<persName>
+								<forename>Seppo-Tapio</forename>
+								<surname>Paasonen</surname>
+								<marker>1,3</marker> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Vesa</forename>
+								<middlename>P</middlename>
+								<surname>Hytönen</surname>
+								<marker>2</marker> and
+							</persName>
+							<persName>
+								<forename>J</forename>
+								<middlename>Jussi</middlename>
+								<surname>Toppari</surname>
+								<marker>1</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

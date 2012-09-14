@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="regensburg2_24"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>New Furanoid Diterpenes from Teucrium<lb/> scordium L.<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Georgi Y. Papanov* and Peter Y. Malakov<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University of Plovdiv,</affiliation>
+	</byline>
+
+	<address>4000 Plovdiv, Bulgaria<lb/></address>
+
+	<reference>Z. Naturforsch. 86b, 112-113 (1981);</reference>
+
+	<note type="submission">received July 14, 1980<lb/></note>
+
+	<keyword>Teucrium scordium L., Lamiaceae, Clerodane Type, Furanoid Diterpene,<lb/> 6 -Ketoteuscordin<lb/></keyword>
+
+	<div type="abstract">Two new furanoid diterpenes of clerodane type, 6-ketoteuscordin (1) and 6a-hydroxy-<lb/>teuscordin (2) have been isolated from Teucrium scordium var. scordium, Lamiaceae.<lb/> Their structures and stereochemistry have been determined.</div>
+
+		</front>
+	</text>
+</tei>

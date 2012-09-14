@@ -1,0 +1,90 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="195.full"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<lb/>
+			<reference>Biostatistics (2003), 4, 2, pp. 195–206<lb/></reference>
+
+			<note type="other">Printed in Great Britain<lb/></note>
+
+			<docTitle>
+				<titlePart>A multivariate family-based association test using<lb/> generalized
+					estimating equations: FBAT-GEE<lb/></titlePart>
+			</docTitle>
+
+			<byline>
+				<docAuthor>CHRISTOPH LANGE *<lb/></docAuthor>
+			</byline>
+
+			<byline>
+				<affiliation>Department of Biostatistics, Harvard School of Public
+					Health,</affiliation>
+			</byline>
+
+			<address>655 Huntington Avenue, Boston, MA<lb/> 02115, USA<lb/></address>
+
+			<email>clange@hsph.harvard.edu<lb/></email>
+
+			<byline>
+				<docAuthor>EDWIN K. SILVERMAN<lb/></docAuthor>
+			</byline>
+
+			<byline>
+				<affiliation>Channing Laboratory, Brigham and Women's Hospital, Harvard Medical
+					School,</affiliation>
+			</byline>
+
+			<address>181 Longwood<lb/> Avenue, Boston, MA 02115, USA<lb/></address>
+
+			<byline>
+				<docAuthor>XIN XU<lb/></docAuthor>
+			</byline>
+
+			<byline>
+				<affiliation>Program of Population Genetics, Harvard School of Public
+					Health,</affiliation>
+			</byline>
+
+			<address>655 Huntington Avenue, Boston,<lb/> MA 02115, USA<lb/></address>
+
+			<byline>
+				<docAuthor>SCOTT T. WEISS<lb/></docAuthor>
+			</byline>
+
+			<byline>
+				<affiliation>Channing Laboratory, Brigham and Women's Hospital, Harvard Medical
+					School,</affiliation>
+			</byline>
+
+			<address>181 Longwood<lb/> Avenue, Boston, MA 02115, USA<lb/></address>
+
+			<byline>
+				<docAuthor>NAN M. LAIRD<lb/></docAuthor>
+			</byline>
+
+			<byline>
+				<affiliation>Department of Biostatistics, Harvard School of Public
+					Health,</affiliation>
+			</byline>
+
+			<address>655 Huntington Avenue, Boston, MA<lb/> 02115, USA<lb/></address>
+
+			<div type="abstract">SUMMARY In this paper we propose a multivariate extension of
+				family-based association tests based on generalized<lb/> estimating equations. The
+				test can be applied to multiple phenotypes and to phenotypic data obtained<lb/> in
+				longitudinal studies without making any distributional assumptions for the
+				phenotypic observations.<lb/> Methods for handling missing phenotypic information
+				are discussed. Further, we compare the power of<lb/> the multivariate test with
+				permutation tests and with using separate tests for each outcome which are<lb/>
+				adjusted for multiple testing. Application of the proposed test to an asthma study
+				illustrates the power of<lb/> the approach.<lb/></div>
+
+			<keywords>Keywords: Family-based association tests (FBATs); GEE; Genetic association
+				tests; Multivariate phenotypes.<lb/></keywords>
+
+		</front>
+	</text>
+</tei>

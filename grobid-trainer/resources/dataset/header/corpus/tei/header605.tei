@@ -1,0 +1,23 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="607"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Toward the Rigorous Use of <lb/>Diagrams in Reasoning about <lb/>Hardware <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Steven D. Johnson</docAuthor></byline>
+		<email>sjohnson@indiana.edu</email>
+		<byline><affiliation>Department of Computer Science Indiana University <lb/></affiliation></byline>
+		<byline><docAuthor>Jon Barwise <lb/></docAuthor></byline>
+		<email>barwise@indiana.edu <lb/></email>
+		<byline><affiliation>Departments of Philosophy, Mathematics, and Computer Science <lb/>Indiana University <lb/></affiliation></byline>
+		<byline><docAuthor>Gerard T. Allwein <lb/></docAuthor></byline>
+		<byline><affiliation>Visual Inference Laboratory <lb/>Indiana University <lb/>Indiana University Logic Group <lb/></affiliation></byline>
+		<idno>Preprint No. IULG-93-23 <lb/></idno>
+		<date>May 1993 <lb/></date>
+		<pb/>
+		</front>
+</text>
+</tei>

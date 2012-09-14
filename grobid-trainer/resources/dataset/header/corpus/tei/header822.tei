@@ -1,0 +1,19 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="unknown"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">A Scalable Key Distribution Hierarchy <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Patrick McDaniel Sugih Jamin <lb/></docAuthor></byline>
+		<byline><affiliation>Electrical Engineering and Computer Science Department <lb/>University of Michigan <lb/></affiliation></byline>
+		<address>Ann Arbor, MI 48109-2122 <lb/></address>
+		<email>fpdmcdan,jaming@eecs.umich.edu <lb/></email>
+		<date>April 13, 1998 <lb/></date>
+		<div type="abstract">Abstract <lb/>As the use of the Internet for electronic commerce, audio <lb/>and video conferencing, and other applications with sensitive content grows, the need for secure services becomes <lb/>critical. Central to the success of these services is the support for secure public key distribution. Although there are <lb/>several existing services available for this purpose, they <lb/>are not very scalable, either because they depend on a centralized server or rely on ad hoc trust relationships. <lb/>In this paper, we present and examine a flexible approach to certificate distribution scalable to arbitrarily <lb/>large networks. We propose a two level hierarchy where <lb/>certificates can be independently authenticated by one or <lb/>more peer authorities, called keyservers. Certificates for <lb/>end-user and host entities are managed within local domains, called enterprises. By administering certificates <lb/>close to the source, we reduce the load on the key servers <lb/>and the effects of network topology changes. We describe <lb/>the design of our system and present a preliminary performance analysis based on traces of present-day DNS requests. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

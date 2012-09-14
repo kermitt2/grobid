@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<patent-document status="new" lang="EN" ucid="EP-1132273-B1" country="EP" doc-number="1132273" kind="B1" date="20051109"><bibliographic-data><publication-reference fvid="23246282" ucid="EP-1132273-B1" status="new"><document-id status="new" format="original"><country>EP</country><doc-number>1132273</doc-number><kind>B1</kind><date>20051109</date><lang>EN</lang></document-id></publication-reference><application-reference ucid="EP-01301006-A" status="new" is-representative="NO"><document-id format="epo" status="new"><country>EP</country><doc-number>01301006</doc-number><kind>A</kind><date>20010205</date><lang>EN</lang></document-id></application-reference><priority-claims status="new"><priority-claim ucid="US-522442" status="new"><document-id format="original" status="new"><country>US</country><doc-number>522442</doc-number><date>20000309</date></document-id></priority-claim><priority-claim ucid="US-52244200-A" status="new"><document-id format="epo" status="new"><country>US</country><doc-number>52244200</doc-number><kind>A</kind><date>20000309</date></document-id></priority-claim></priority-claims><dates-of-public-availability status="new"><intention-to-grant-date><date>20050524</date></intention-to-grant-date></dates-of-public-availability><term-of-grant /><technical-data status="new"><classifications-ipcr><classification-ipcr status="new">B60T   8/40        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">B60T   8/40        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">B60T  13/00        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">B60T  13/66        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">B60T  13/66        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">B60T  13/74        20060101A I20051008RMEP        </classification-ipcr></classifications-ipcr><classification-ecla status="new"><classification-symbol scheme="EC">B60T13/66B</classification-symbol><classification-symbol scheme="EC">B60T13/74A</classification-symbol><classification-symbol scheme="EC">B60T8/40J</classification-symbol></classification-ecla><invention-title lang="DE" status="new">Elektrisches Bremssystem mit bedingter Beendigung des Anlegens der vollen Bremskraft beim Abstellen des Fahrzeugs</invention-title><invention-title lang="EN" status="new">Brake-by-wire system having conditioned full brake force application termination at key off</invention-title><invention-title lang="FR" status="new">Système de freinage par cable avec cessation conditionelle de la pleine force de freinage lors de l'arrèt du véhicule</invention-title><citations /><figures /></technical-data><parties><applicants><applicant format="epo" status="new"><addressbook><name>FORD GLOBAL TECH LLC</name><address><country>US</country></address></addressbook></applicant><applicant format="intermediate" status="new"><addressbook><name>FORD GLOBAL TECHNOLOGIES, LLC</name><address><country /></address></addressbook></applicant></applicants><inventors><inventor format="epo" status="new"><addressbook><name>CROMBEZ DALE SCOTT</name><address><country>US</country></address></addressbook></inventor><inventor format="epo" status="new"><addressbook><name>CURRAN PATRICK JOSEPH</name><address><country>US</country></address></addressbook></inventor><inventor format="epo" status="new"><addressbook><name>NAPIER STEVEN LEE</name><address><country>US</country></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>CROMBEZ, DALE SCOTT</name><address><country /></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>CURRAN, PATRICK JOSEPH</name><address><country /></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>NAPIER, STEVEN LEE</name><address><country /></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>CROMBEZ, DALE SCOTT</last-name><address><street>9615, Ingram</street><city>Livonia, Michigan 48150</city><country>US</country></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>CURRAN, PATRICK JOSEPH</last-name><address><street>20415, Northville Place Apt. 2309</street><city>Northville, Michigan 48167</city><country>US</country></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>NAPIER, STEVEN LEE</last-name><address><street>43565, Applewood</street><city>Canton, Michigan 48188</city><country>US</country></address></addressbook></inventor></inventors><assignees><assignee format="original" status="new"><addressbook><last-name>Ford Global Technologies, LLC</last-name><address><street>One Parklane Blvd 600 Parklane Towers East</street><city>Dearborn, MI 48126</city><country>US</country></address></addressbook></assignee></assignees><agents><agent format="original" status="new"><addressbook><last-name>Messulam, Alec Moses</last-name><address><street>A. Messulam &amp;amp; Co. Ltd., 43-45 High Road</street><city>Bushey Heath, Herts WD23 1EE</city><country>GB</country></address></addressbook></agent></agents></parties><international-convention-data><designated-states><ep-contracting-states><country>DE</country><country>FR</country><country>GB</country></ep-contracting-states></designated-states></international-convention-data></bibliographic-data><abstract lang="EN" source="EPO" status="new"><p>An electric powered brake system (10) for braking road-engaging wheels of a motor vehicle. An ignition switch for turning a motor of the vehicle on and off also controls the application of electric power to the electric powered brake system. A control and method for maintaining application of full electric power to the electric powered brake system when the ignition switch is operated from ON to OFF so long as at least one parameter related to a respective component of the vehicle and indicative of a need to maintain full electric power application to the brake system continues to exist and for discontinuing application of full electric power to the brake system when all of selected ones of several such parameters are indicative of lack of need to maintain full electric power application to the brake system. &lt;IMAGE&gt;</p></abstract><abstract lang="EN" status="new"><p num="">An electric powered brake system (10) for braking road-engaging
+wheels of a motor vehicle. An ignition switch for
+turning a motor of the vehicle on and off also controls the
+application of electric power to the electric powered brake
+system. A control and method for maintaining application of
+full electric power to the electric powered brake system
+when the ignition switch is operated from ON to OFF so long
+as at least one parameter related to a respective component
+of the vehicle and indicative of a need to maintain full
+electric power application to the brake system continues to
+exist and for discontinuing application of full electric
+power to the brake system when all of selected ones of
+several such parameters are indicative of lack of need to
+maintain full electric power application to the brake
+system.
+<img file="00000001.tif" id="img-EP-1132215-A2-00000001" he="105" wi="76" img-format="tif" img-content="ad" orientation="unknown" inline="no" /></p></abstract><description lang="EN" status="new"><p num="0001">This invention relates generally to brake systems for
+wheeled motor vehicles, and more specifically it relates to
+a brake-by-wire system.</p><p num="0002">A brake-by-wire system may comprise a pedal that
+depresses a master cylinder plunger to perform the service
+brake function for a motor vehicle. The service brake
+function is performed by selectively applying electrically
+boosted hydraulic brakes or regenerative brakes. Hydraulic
+brakes generally apply friction forces to the wheels to
+dissipate energy as heat. Regenerative brakes may take any
+of various forms, but are often considered to comprise a
+rotary electric machine load that is applied to one or more
+driven wheels. When a regenerative brake is applied, energy
+flows from the wheels to operate the electric machine as a
+generator that converts the energy into electricity. The
+electricity is often used to charge an energy storage
+device, such as a battery. Whether hydraulic or regenerative
+brakes are applied is determined by an electronic brake
+controller.</p><p num="0003">The ability to operate a motor vehicle is typically
+controlled by a key-operated switch, sometimes referred to
+as an ignition switch. Such switches may assume various
+forms, but perhaps the most common in present motor vehicles
+is a mechanical switch that is turned by a metal key. When
+a proper key is used, the switch may operated from an OFF
+position to additional positions, such as START, RUN (i.e.
+ON), and ACCESSORY, to deliver electric power to electric
+circuits and devices that perform certain functions related
+to vehicle starting and operation.</p><p num="0004">Certain electric circuits need to be energised for a
+brake-by-wire system to properly operate. Placing the
+energisation of such circuits under the control of the
+ignition switch is desirable so that they do not needlessly
+drain the battery when the ignition switch is OFF. However, 
+turning the ignition switch off to de-energise those
+circuits may remove power from devices that when powered,
+aid in reducing the pedal effort required to apply the
+brakes via the master cylinder. Hence, brake pedal effort
+may increase significantly when the ignition switch is
+turned off.</p><p num="0005">Governmental regulation applicable to certain motor
+vehicles proposes to mandate certain consistency in brake
+pedal effort that is independent of whether the ignition
+switch is OFF or ON. In the case of a brake system that
+comprises only boosted hydraulic brakes, a vacuum reservoir
+is used to provide a vacuum reserve that allows the booster
+to aid the pedal effort for several brake applications after
+the ignition switch is turned off to stop the engine. In
+the case of certain brake-by-wire systems, the de-energisation
+of associated electric circuits that occurs
+when the ignition switch is turned off, precludes
+continuance of the ability to aid the pedal effort that was
+present when the ignition switch was on.</p><p num="0006">A preliminary novelty search developed the following
+<ref type="patent">U.S. Patents: 5,139,121; 5,752,748; 5,769,509; 5,800,025;
+5,834,854; and 5,923,096</ref>.</p><p num="0007"><ref type="patent">EP 0 937 622</ref> Toyota Jidosha KK, published 25 August
+1999, describes an electrically controlled brake system shut
+down by turn off of ignition switch with a delay time,
+wherein an electric control device of the system has a
+device for detecting a changeover of an ignition switch from
+its on-state to its off-state, a device for detecting a
+depression of a brake pedal beyond a predetermined depth,
+and a device for shutting down the electrically controlled
+brake system when a time count device has counted a
+predetermined time duration with the brake pedal depression
+detection device detecting no depression of the brake pedal
+beyond the predetermined depth. </p><p num="0008">According to one aspect of the present invention there is
+provided a motor vehicle comprising:
+<sl><li>an electric powered brake system for braking road-engaging
+wheels of the motor vehicle;</li><li>an ignition switch for turning a motor of the motor vehicle
+on and off, including controlling the application of electric
+power to the electric powered brake system;</li><li>and a control for maintaining application of full electric
+power to the electric powered brake system when the ignition
+switch is operated from ON to OFF so long as at least one
+parameter of several parameters related to a respective component
+of the vehicle and indicative of a need to maintain full electric
+power application to the brake system continues to exist and for
+discontinuing application of full electric power to the brake
+system when all such parameters are indicative of lack of need to
+maintain full electric power application to the brake system</li></sl>
+   characterised in that the control is effective to reduce the
+amount of electric power to the brake system when all such
+parameters are indicative of lack of need to maintain full
+electric power application to the brake system, and, at a later
+time, to discontinue the application of all electric power to the
+brake system provided that all such parameters have continued
+until the said later time to be indicative of lack of need to
+maintain full electric power application to the brake system. </p><p num="0009">Another aspect of the invention relates to a
+method for use in a motor vehicle that has an electric
+powered brake system for braking road-engaging wheels of the
+vehicle according to claim 7.</p><p num="0010">The present invention will now be described further, by
+way of example, with reference to the accompanying drawings,
+in which:
+<sl><li>Figure 1 is a general schematic diagram of a
+representative brake-by-wire system;</li><li>Figure 2 is a flow diagram representing an example of discontinuing the application of full electric power to the brake system;
+and</li><li>Figure 3 is a flow diagram representing an
+embodiment of strategy in accordance with principles of the
+present invention.</li></sl></p><p num="0011">Figure 1 shows a representative brake-by-wire system
+10 comprising a hydraulic brake master cylinder 12 having a
+plunger 14 which is adapted to be depressed by operation of
+a brake pedal 16 to brake road-engaging wheels of a motor
+vehicle. Braking may be accomplished either by hydraulic
+brakes at individual wheels, such as 18, 20, 22, 24, or by 
+regenerative braking, as determined by an electronic brake
+controller 26. Hydraulic braking is applied through an ABS
+unit 28. Boost for aiding hydraulic braking so as to reduce
+pedal effort that would otherwise be required is derived
+from a hydraulic power source 30 whose pressure is modulated
+by a pressure modulation unit 32 under the control of brake
+controller 26. For developing the proper modulation,
+controller 26 senses brake pedal input with the use of one
+or more of the following: stroke position sensor; master
+cylinder pressure sensor; or any other sensor that may be
+used to indicate pedal input.</p><p num="0012">Figure 1 includes a back-up hydraulic circuit path from
+master cylinder 12 to ABS unit 28 through a switching valve
+unit 34 that allows hydraulic brakes to alternatively be
+applied directly by hydraulic pressure from master cylinder
+12. The regenerative braking system does not expressly
+appear in Figure 1.</p><p num="0013">The delivery of electric power for operating brake-by-wire
+system 10 is controlled by the vehicle ignition switch,
+not specifically shown in Figure 1. When that switch is
+OFF, power is not delivered; when the switch is ON, power is
+delivered. When the power is off, hydraulic power source 30
+is unable to deliver the brake boost that it does when the
+power is on. Hence, when the ignition switch is turned from
+ON to OFF to shut down the vehicle powertrain (engine and/or
+motor), brake boost is also lost.</p><p num="0014">The present invention provides continued power to
+system 10, and hence continued brake boost, after the
+ignition switch is turned off, based on the non-occurrence
+of one or more particular events involving the vehicle.
+When all such events have occurred, power is removed from
+system 10 to avoid battery drain. The events are monitored
+by monitoring certain parameters related to positions and/or
+conditions of certain components of the vehicle.</p><p num="0015">Figure 2 shows a strategy of discontinuing the application of full electric power to the brake system.
+The
+strategy involves monitoring for the ignition switch to be 
+operated to ON (step 50). When the ignition switch is ON
+electric power is applied to system 10 (step 52).
+Thereafter the strategy monitors for the ignition switch to
+be operated to OFF (step 54). When the ignition switch is
+OFF, a timer starts (step 56).</p><p num="0016">Power continues to be applied to system 10 based on the
+non-occurrence of the following events: all vehicle wheels
+not turning; brake pedal not applied; vehicle transmission
+not in PARK position; parking brake applied. Hence step 60
+monitors for all wheels not turning; step 62, for pedal 16
+not being applied; step 64, for transmission in PARK; and
+step 66 for parking brake applied. It can be seen that only
+after all these events have occurred is the elapsed time on
+the timer checked (step 68). If the elapsed time does not
+exceed a defined minimum (X minutes, for example), steps 60,
+62, 64, and 66 continue to be executed.</p><p num="0017">When the events monitored by steps 60, 62, 64, and 66
+have all occurred, and the elapsed time exceeds the defined
+minimum, power is removed from system 10. That concludes
+the strategy. The monitored events are considered to be
+indicative that there is no need for the service brakes to
+be applied, and hence that it is appropriate to de-energise
+system 10. Individual wheel speeds may determined by
+respective wheel speed sensors; non-application of brake
+pedal 12, from an associated sensor or switch; transmission
+in PARK from an associated transmission, or gear selector,
+switch; and parking brake applied from an associated sensor
+or switch. A representative defined time for X is 10
+minutes.</p><p num="0018">Figure 3 shows an embodiment of strategy that
+utilises the steps as described above, but further
+includes a series of steps that provide for a reduced power
+sleep mode before power is completely removed from system
+10. The timing step 56 does not commence until after the
+events monitored by steps 60, 62, 64, and 66 have all
+occurred. Power, but at a reduced level, continues to be
+applied to system 10 after the monitored events have all 
+occurred and the sleep mode commences. The monitored
+events, and the state of the ignition switch, continue to be
+monitored during the sleep mode (steps 72, 74, 76, 78, 80),
+and if there is a change in any one of those events or the
+ignition switch before the defined time X has elapsed, full
+power is promptly re-applied to system 10, and the strategy
+starts anew at step 54. It is only after there is no change
+in any monitored event (steps 72, 74, 76, 78) or in the
+ignition switch (step 80) after an elapsed time X, measured
+in hours rather than minutes, 10 hours for example, that
+power is completely disconnected from system 10. The sleep
+mode may provide for more quickly powering up system 10.</p><p num="0019">From the foregoing, one can understand that the present
+invention conditions the termination of brake boost at key
+off. It is believed that the present invention can enhance
+the effectiveness and acceptability of electrically-powered
+brake-by-wire systems.</p><p num="0020">While a presently preferred embodiment has been
+illustrated and described, it is to be appreciated that the
+invention may be practised in various forms within the scope
+of the following claims. Examples of such additional forms
+include the non-use of certain events, or parameters,
+already specifically mentioned above and/or the use of
+certain events, or parameters, not previously mentioned
+above, including occupant restraint engagement (i.e. seat
+belt engagement), driver position, steering input,
+accelerator pedal input, and clutch input. Furthermore,
+monitoring of various events, or parameters, may occur
+serially, as described above, or in parallel, or in various
+serial and parallel combinations.</p></description><claims lang="DE" status="new"><claim num="xx"><claim-text>Kraftfahrzeug, umfassend
+ein elektrisch betriebenes Bremssystem zum Bremsen mit der Straße
+eingreifender Räder des Kraftfahrzeugs;
+einen Zündschalter zum Ein- und Ausschalten eines Motors des Kraftfahrzeugs
+einschließlich des Steuerns der Anlegung von elektrischer Leistung an das elektrisch
+betriebene Bremssystem;
+und eine Steuerung zum Aufrechterhalten der Anlegung der vollen elektrischen
+Leistung an das elektrisch betriebene Bremssystem, wenn der Zündschalter vom
+eingeschalteten Zustand in den ausgeschalteten Zustand betätigt wird, so lange
+als zumindest ein Parameter von mehreren Parametern, die mit einem jeweiligen
+Bestandteil des Fahrzeugs in Zusammenhang stehen und einen Bedarf zur
+Aufrechterhaltung der Anlegung der vollen elektrischen Leistung an das
+Bremssystem anzeigen, weiterhin vorhanden ist, und zum Einstellen der Anlegung
+der vollen elektrischen Leistung an das Bremssystem, wenn alle diese
+Parameter einen Mangel an Bedarf zur Aufrechterhaltung der Anlegung der
+vollen elektrischen Leistung an das Bremssystem anzeigen;dadurch gekennzeichnet, daß die Steuerung dazu wirksam ist, die Menge der
+elektrischen Leistung zum Bremssystem zu verringern, wenn alle diese
+Parameter einen Mangel an Bedarf zur Aufrechterhaltung der Anlegung der
+vollen elektrischen Leistung an das Bremssystem anzeigen, und, zu einer
+späteren Zeit oder zu einem späteren Zeitpunkt, die Anlegung der gesamten
+elektrischen Leistung an das Bremssystem einzustellen, sofern alle diese
+Parameter bis zu dieser späteren Zeit oder diesem späteren Zeitpunkt damit
+fortgefahren haben, einen Mangel an Bedarf zur Aufrechterhaltung der
+Anlegung der vollen elektrischen Leistung an das Bremssystem anzuzeigen.</claim-text></claim><claim num="xx"><claim-text>Kraftfahrzeug nach Anspruch 1, wobei die Steuerung dazu wirksam ist, die
+Anlegung der vollen elektrischen Leistung an das Bremssystem
+wiederherzustellen, falls einer dieser Parameter vor der späteren Zeit damit
+aufhört, den Mangel an Bedarf zur Aufrechterhaltung der Anlegung der vollen
+elektrischen Leistung an das Bremssystem anzuzeigen.</claim-text></claim><claim num="xx"><claim-text>Kraftfahrzeug nach Anspruch 1 oder Anspruch 2, wobei die Parameter
+zumindest zwei aus der Fahrzeugradgeschwindigkeit, der Stellung eines
+Bremspedals zur Betätigung des Bremssystems, der Gangstellung eines Getriebes
+des Fahrzeugs, und der Stellung einer Feststellbremse beinhalten.</claim-text></claim><claim num="xx"><claim-text>Kraftfahrzeug nach Anspruch 1 oder Anspruch 2, wobei die Parameter alle aus
+der Fahrzeugradgeschwindigkeit, der Stellung eines Bremspedals zur Betätigung
+des Bremssystems, der Gangstellung eines Getriebes des Fahrzeugs, und der
+Stellung einer Feststellbremse beinhalten.</claim-text></claim><claim num="xx"><claim-text>Kraftfahrzeug nach einem der vorhergehenden Ansprüche, wobei die Steuerung
+ferner eine Zeitgabefunktion ausführt, die erfüllt sein muß, bevor die Anlegung
+der vollen elektrischen Leistung an das Bremssystem eingestellt werden darf.</claim-text></claim><claim num="xx"><claim-text>Kraftfahrzeug nach Anspruch 5, wobei die Zeitgabefunktion beginnt, nachdem
+der Zündschalter von EIN auf AUS betätigt wurde, und nachdem alle diese
+Parameter den Mangel an Bedarf zur Aufrechterhaltung der Anlegung der vollen
+elektrischen Leistung an das Bremssystem angezeigt haben.</claim-text></claim><claim num="xx"><claim-text>Verfahren zum Steuern der Anlegung von elektrischer Leistung an ein elektrisch
+betriebenes Bremssystem eines Kraftfahrzeugs, umfassend ein elektrisch
+betriebenes Bremssystem zum Bremsen mit der Straße eingreifender Räder des
+Kraftfahrzeugs, einen Zündschalter zum Ein- und Ausschalten eines Motors des
+Kraftfahrzeugs, und eine Steuerung zum Steuern der Anlegung von elektrischer
+Leistung an das Bremssystem;
+wobei das Verfahren das Aufrechterhalten der Anlegung der vollen elektrischen
+Leistung an das elektrisch betriebene Bremssystem, wenn der Zündschalter vom
+eingeschalteten Zustand in den ausgeschalteten Zustand betätigt wird, so lange
+als zumindest ein Parameter von mehreren Parametern, die mit einem jeweiligen
+Bestandteil des Fahrzeugs in Zusammenhang stehen und einen Bedarf zur
+Aufrechterhaltung der Anlegung der vollen elektrischen Leistung an das
+Bremssystem anzeigen, weiterhin vorhanden ist, und das Einstellen der Anlegung
+der vollen elektrischen Leistung an das Bremssystem, wenn alle diese
+Parameter einen Mangel an Bedarf zur Aufrechterhaltung der Anlegung der
+vollen elektrischen Leistung an das Bremssystem anzeigen, umfaßt;dadurch gekennzeichnet, daß die Steuerung dazu wirksam ist, die Menge der
+elektrischen Leistung zum Bremssystem zu verringern, wenn alle diese
+Parameter einen Mangel an Bedarf zur Aufrechterhaltung der Anlegung der
+vollen elektrischen Leistung an das Bremssystem anzeigen, und, zu einer
+späteren Zeit oder zu einem späteren Zeitpunkt, die Anlegung der gesamten
+elektrischen Leistung an das Bremssystem einzustellen, sofern alle diese
+Parameter bis zu dieser späteren Zeit oder zu diesem späteren Zeitpunkt damit
+fortgefahren haben, einen Mangel an Bedarf zur Aufrechterhaltung der
+Anlegung der vollen elektrischen Leistung an das Bremssystem anzuzeigen.</claim-text></claim><claim num="xx"><claim-text>Verfahren nach Anspruch 7, wobei die Steuerung dazu wirksam ist, die
+Anlegung der vollen elektrischen Leistung an das Bremssystem
+wiederherzustellen, falls einer dieser Parameter vor der späteren Zeit damit aufhört,
+den Mangel an Bedarf zur Aufrechterhaltung der Anlegung der vollen
+elektrischen Leistung an das Bremssystem anzuzeigen.</claim-text></claim><claim num="xx"><claim-text>Verfahren nach Anspruch 7 oder Anspruch 8, wobei die Steuerung ferner eine
+Zeitgabefunktion ausführt, die erfüllt sein muß, bevor die Anlegung der vollen
+elektrischen Leistung an das Bremssystem eingestellt werden darf.</claim-text></claim><claim num="xx"><claim-text>Verfahren nach Anspruch 9, wobei die Zeitgabefunktion beginnt, nachdem der
+Zündschalter von EIN auf AUS betätigt wurde, und nachdem alle diese
+Parameter den Mangel an Bedarf zur Aufrechterhaltung der Anlegung der vollen
+elektrischen Leistung an das Bremssystem angezeigt haben.</claim-text></claim></claims><claims lang="EN" status="new"><claim num="xx"><claim-text>A motor vehicle comprising:
+<claim-text><claim-text>an electric powered brake system for braking road-engaging
+wheels of the motor vehicle;</claim-text><claim-text>an ignition switch for turning a motor of the motor
+vehicle on and off, including controlling the application of
+electric power to the electric powered brake system;</claim-text><claim-text>and a control for maintaining application of full
+electric power to the electric powered brake system when the
+ignition switch is operated from ON to OFF so long as at
+least one parameter of several parameters related to a
+respective component of the vehicle and indicative of a need
+to maintain full electric power application to the brake
+system continues to exist and for discontinuing application
+of full electric power to the brake system when all such
+parameters are indicative of lack of need to maintain full
+electric power application to the brake system;</claim-text></claim-text>
+   characterised in that the control is effective to
+reduce the amount of electric power to the brake system when
+all such parameters are indicative of lack of need to
+maintain full electric power application to the brake
+system, and, at a later time, to discontinue the application
+of all electric power to the brake system provided that all
+such parameters have continued until the said later time to
+be indicative of lack of need to maintain full electric
+power application to the brake system.</claim-text></claim><claim num="xx"><claim-text>A motor vehicle as claimed in Claim 1, in which
+the control is effective to restore the application of full
+electric power to the brake system if any of such parameters
+ceases to be indicative of lack of need to maintain full
+electric power application to the brake system prior to the
+said later time.</claim-text></claim><claim num="xx"><claim-text>A motor vehicle as claimed in Claim 1 or Claim 2,
+in which the parameters include at least two of: vehicle
+wheel speed, position of a brake pedal for operating the
+brake system, gear position of a transmission of the
+vehicle, and position of a parking brake of the vehicle.</claim-text></claim><claim num="xx"><claim-text>A motor vehicle as claimed in Claim 1 or Claim 2,
+in which the parameters include all of: vehicle wheel speed,
+position of a brake pedal for operating the brake system,
+gear position of a transmission of the vehicle, and position
+of a parking brake of the vehicle.</claim-text></claim><claim num="xx"><claim-text>A motor vehicle as claimed in any one of the
+preceding claims, in which the control further executes a
+timing function that must be satisfied before application of
+full electric power to the brake system is allowed to be
+discontinued.</claim-text></claim><claim num="xx"><claim-text>A motor vehicle as claimed in Claim 5, in which
+the timing function commences after the ignition switch has
+been operated from ON to OFF and after all such parameters
+have become indicative of lack of need to maintain full
+electric power application to the brake system.</claim-text></claim><claim num="xx"><claim-text>A method of controlling the application of
+electric power to an electric powered brake system of a
+motor vehicle comprising an electric powered brake system
+for braking road-engaging wheels of the motor vehicle, an
+ignition switch for turning a motor of the motor vehicle on
+and off, and a control for controlling the application of
+electric power to the brake system;
+   which method comprises maintaining application of full
+electric power to the electric powered brake system when the
+ignition switch is operated from ON to OFF so long as at
+least one parameter of several parameters related to a
+respective component of the vehicle and indicative of a need
+to maintain full electric power application to the brake
+system continues to exist, and discontinuing application of
+full electric power to the brake system when all such
+parameters are indicative of lack of need to maintain full
+electric power application to the brake system;
+   characterised in that the control is effective to
+reduce the amount of electric power to the brake system when
+all such parameters are indicative of lack of need to
+maintain full electric power application to the brake
+system, and, at a later time, to discontinue the application
+of all electric power to the brake system provided that all
+such parameters have continued until the said later time to
+be indicative of lack of need to maintain full electric
+power application to the brake system.</claim-text></claim><claim num="xx"><claim-text>A method as claimed in Claim 7, in which the
+control is effective to restore the application of full
+electric power to the brake system if any of such parameters
+ceases to be indicative of lack of need to maintain full
+electric power application to the brake system prior to the
+said later time.</claim-text></claim><claim num="xx"><claim-text>A method as claimed in Claim 7 or Claim 8, in
+which the control further executes a timing function that
+must be satisfied before application of full electric power
+to the brake system is allowed to be discontinued.</claim-text></claim><claim num="xx"><claim-text>A method as claimed in Claim 9, in which the
+timing function commences after the ignition switch has been
+operated from ON to OFF and after all such parameters have
+become indicative of lack of need to maintain full electric
+power application to the brake system.</claim-text></claim></claims><claims lang="FR" status="new"><claim num="xx"><claim-text>Véhicule à moteur comprenant : un système de freins alimenté électriquement
+destiné à freiner les roues en contact avec la route du véhicule à moteur,
+   un contacteur d'allumage destiné à mettre sous tension et à mettre hors circuit un
+moteur du véhicule à moteur, comprenant la commande de l'application de l'alimentation
+électrique au système de freins alimenté électriquement,
+   et une commande destinée à maintenir l'application d'une alimentation électrique
+complète au système de freins alimenté électriquement lorsque le contacteur d'allumage
+est actionné de la position Fermé ou Actif à la position Ouvert ou Inactif dans la mesure
+où au moins un paramètre parmi plusieurs paramètres associés à un composant respectif
+du véhicule et indicatifs d'un besoin de maintenir une application d'alimentation
+électrique complète au système de freins continue à exister et destinée à interrompre
+l'application de la puissance électrique complète au système de freins lorsque la totalité de
+ces paramètres indique une absence de besoin de maintenir une application d'alimentation
+électrique complète au système de freins,
+   caractérisé en ce que la commande est efficace pour réduire l'intensité du courant
+électrique vers le système de freins lorsque tous ces paramètres indiquent une absence de
+besoin de maintenir une application de puissance électrique complète au système de
+freins, et, à un moment ultérieur, d'interrompre l'application de toute l'alimentation
+électrique vers le système de freins à condition que tous ces paramètres jusqu'audit instant
+ultérieur se soient poursuivis pour indiquer, ou aient continué d'indiquer, une absence de
+besoin de maintenir une application d'alimentation électrique complète au système de
+freins.</claim-text></claim><claim num="xx"><claim-text>Véhicule à moteur selon la revendication 1, dans lequel la commande est
+efficace pour restaurer l'application de l'alimentation électrique complète au système de
+freins si l'un quelconque de ces paramètres cesse d'indiquer l'absence de besoin de
+maintenir une application d'alimentation électrique complète au système de freins avant
+ledit instant ultérieur.</claim-text></claim><claim num="xx"><claim-text>Véhicule à moteur selon la revendication 1 ou la revendication 2, dans lequel
+les paramètres comprennent au moins deux éléments parmi la vitesse de roue du véhicule,
+la position d'une pédale de frein destinée à actionner le système de freins, une position de
+rapport d'une transmission du véhicule, et d'une position d'un frein de stationnement du
+véhicule.</claim-text></claim><claim num="xx"><claim-text>Véhicule à moteur selon la revendication 1 ou la revendication 2, dans lequel
+les paramètres comprennent la totalité de la vitesse de roue du véhicule, de la position
+d'une pédale de frein destinée à actionner le système de freins, d'une position de rapport
+d'une transmission de véhicule et d'une position d'un frein de stationnement du véhicule.</claim-text></claim><claim num="xx"><claim-text>Véhicule à moteur selon l'une quelconque des revendications précédentes, dans
+lequel la commande exécute en outre une fonction de temporisation qui doit être satisfaite
+avant qu'il ne soit permis que l'application de l'alimentation électrique complète au
+système de freins soit interrompue.</claim-text></claim><claim num="xx"><claim-text>Véhicule à moteur selon la revendication 5, dans lequel la fonction de
+temporisation commence après que le contacteur d'allumage a été actionné depuis la
+position Fermé à la position Ouvert et après que tous ces paramètres soient devenus
+indicatifs d'une absence de besoin de maintenir une application d'alimentation électrique
+complète au système de freins.</claim-text></claim><claim num="xx"><claim-text>Procédé de commande de l'application de la puissance électrique à un système
+de freins alimenté électriquement d'un véhicule à moteur comprenant un système de freins
+alimenté électriquement destiné à freiner les roues du véhicule à moteur qui sont en
+contact avec la route, un contacteur d'allumage destiné à mettre sous tension et à mettre
+hors circuit un moteur du véhicule à moteur, et une commande destinée à commander
+l'application d'une alimentation électrique au système de freins,
+   lequel procédé comprend le maintien de l'application de l'alimentation électrique
+complète au système de freins alimenté électriquement lorsque le contacteur d'allumage
+est actionné depuis la position Fermé ou Actif à la position Ouvert ou Désactivé dans la
+mesure où au moins un paramètre parmi plusieurs paramètres associés à un composant
+respectif du véhicule et indique un besoin de maintenir une application d'alimentation
+électrique complète au système de freins continue d'exister, et l'interruption de
+l'application de l'alimentation électrique complète au système de freins lorsque tous ces
+paramètres indiquent l'absence de besoin de maintenir une application d'alimentation
+électrique complète au système de freins,
+   caractérisé en ce que la commande est efficace pour réduire l'intensité de courant
+électrique vers le système de freins lorsque la totalité de ces paramètres indiquent
+l'absence de besoin de maintenir une application d'alimentation électrique complète au
+système de freins, et, à un instant ultérieur, pour interrompre l'application de toute
+l'alimentation électrique du système de freins à condition que tous ces paramètres,
+jusqu'audit instant ultérieur, se soient poursuivis pour indiquer, ou aient continué
+d'indiquer, l'absence de besoin de maintenir l'application d'alimentation électrique
+complète au système de freins.</claim-text></claim><claim num="xx"><claim-text>Procédé selon la revendication 7, dans lequel la commande est efficace pour
+restaurer l'application de l'alimentation électrique complète au système de freins si l'un
+quelconque de ces paramètres cesse d'indiquer l'absence de besoin de maintenir
+l'application d'alimentation électrique complète au système de freins avant ledit instant
+ultérieur.</claim-text></claim><claim num="xx"><claim-text>Procédé selon la revendication 7 ou la revendication 8, dans lequel la
+commande exécute en outre une fonction de temporisation qui doit être satisfaite avant
+que l'application de l'alimentation électrique complète au système de freins soit autorisée
+à être interrompue.</claim-text></claim><claim num="xx"><claim-text>Procédé selon la revendication 9, dans lequel la fonction de temporisation
+commence après que le contacteur d'allumage a été actionné depuis la position Fermé à la
+position Ouvert et après que tous ces paramètres en soient venus à indiquer l'absence de
+besoin de maintenir une application d'alimentation électrique complète au système de
+freins.</claim-text></claim></claims><legal-status status="new"><legal-event country="EP" code="26N" date="20061018"><legal-event-body><event-title>NO OPPOSITION FILED</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20060810</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="ET" date="20060714"><legal-event-body><event-title>FR: TRANSLATION FILED</event-title></legal-event-body></legal-event><legal-event country="EP" code="RAP2" date="20060517"><legal-event-body><event-title>PATENT OWNER REASSIGNMENT (CORRECTION)</event-title><event-attributes><event-attribute><event-attribute-label>Owner name </event-attribute-label><event-attribute-value>FORD GLOBAL TECHNOLOGIES, LLC.</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REF" date="20051215"><legal-event-body><event-title>CORRESPONDS TO:</event-title><event-attributes><event-attribute><event-attribute-label>Ref Document Number </event-attribute-label><event-attribute-value>60114682</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Country of Ref Document </event-attribute-label><event-attribute-value>DE</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Date of Ref Document </event-attribute-label><event-attribute-value>20051215</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>P</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20051109"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>B1</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>DEFRGB</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REG" date="20051109"><legal-event-body><event-title>REFERENCE TO A NATIONAL CODE</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>GB</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Legal Event Code </event-attribute-label><event-attribute-value>FG4D</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="RAP1" date="20051019"><legal-event-body><event-title>APPLICANT REASSIGNMENT (CORRECTION)</event-title><event-attributes><event-attribute><event-attribute-label>Owner name </event-attribute-label><event-attribute-value>FORD GLOBAL TECHNOLOGIES, LLC</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="17Q" date="20040630"><legal-event-body><event-title>FIRST EXAMINATION REPORT</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20040513</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AKX" date="20020605"><legal-event-body><event-title>PAYMENT OF DESIGNATION FEES</event-title><event-attributes><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>DE FR GB</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="17P" date="20020502"><legal-event-body><event-title>REQUEST FOR EXAMINATION FILED</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20020225</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20010912"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>A1</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>A1</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>ATBECHCYDEDKESFIFRGBGRIEITLILUMCNLPTSETR</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>DEFRGB</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AX" date="20010912"><legal-event-body><event-title>EXTENSION OF THE EUROPEAN PATENT TO</event-title><event-attributes><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>AL;LT;LV;MK;RO;SI</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event></legal-status></patent-document>

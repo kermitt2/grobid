@@ -1,0 +1,20 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="1078"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+        <note type="submission">Confidential:  not for distribution. Submitted to IOP Publishing for peer review</note>
+        <date type="submission">20 April 2010<lb/></date>
+		<docTitle>
+			<titlePart type="main">Quarkonium  in Hot Medium<lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>P´éter Petreczky<lb/></docAuthor></byline>
+		<byline><affiliation>Department  of Physics and RIKEN-BNL Research Center, Brookhaven National<lb/> Laboratory,</affiliation></byline>
+		<address>Upton, New York, 11973<lb/></address>    
+		<div type="abstract">Abstract.  I review recent progress in studying quarkonium properties in hot medium<lb/> as well as possible consequences for quarkonium production in heavy ion collisions.<lb/></div>
+		<keywords type="pacs">PACS numbers: 11.15.Ha, 11.10.Wx, 12.38.Mh, 25.75.Nq<lb/></keywords>
+		<introduction>1. Introduction<lb/></introduction>
+    </front>
+</text>
+</tei>

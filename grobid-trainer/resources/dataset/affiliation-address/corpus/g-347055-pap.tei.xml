@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../jsp/xmlverbatimwrapper.xsl"?> 
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<marker>1</marker>)
+							<affiliation>
+								<orgName type="department">School of Physics</orgName>,
+								<orgName type="institution">Huazhong University of science and technology</orgName>,
+								<address>
+								<country key="CN">China<lb/></country>
+								</address>
+							</affiliation>
+							
+							<marker>2</marker>)
+							<affiliation>
+								<orgName type="institution">China Institute of Atomic Energy</orgName>,
+								<address>
+								<country key="CN">China<lb/></country>
+								</address>
+							</affiliation>
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</TEI>

@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005177"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<lb/>
+			<docTitle>
+				<titlePart>Overload Protection in a SIP Signaling Network<lb/></titlePart>
+			</docTitle>
+
+			<byline>
+				<docAuthor>Masataka Ohta<lb/></docAuthor>
+			</byline>
+
+			<byline>
+				<affiliation>Faculty of Business Administration, Kanagawa
+					University<lb/></affiliation>
+			</byline>
+
+			<address>2946 Tuchiya, Hiratuka, Kanagawa, Japan<lb/></address>
+
+			<email>m-ohta@kanagawa-u.ac.jp<lb/></email>
+
+			<div type="abstract">Abstract<lb/> The paper studies performance of a SIP signaling
+				net-<lb/> work in an overload condition. The main interest is to find<lb/> a
+				preferable queuing structure of a SIP proxy server to pro-<lb/> tect from
+				performance degradation. In the study, two types<lb/> of queuing structure, which
+				are a simple single FIFO queue<lb/> and a two class priority queue, are considered.
+				Using the<lb/> network simulator (ns-2), the paper evaluates a throughput.<lb/> The
+				simulation study shows that in case of the single FIFO<lb/> queue, the throughput
+				decreases drastically when an over-<lb/> load is applied. The paper shows that the
+				priority queue<lb/> protects from performance degradation and improves the<lb/>
+				throughput. The paper shows a preferable queuing struc-<lb/> ture of a SIP proxy
+				server for overload protection.<lb/></div>
+
+		</front>
+	</text>
+</tei>

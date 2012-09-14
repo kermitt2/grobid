@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="unknown"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">MDARTS: A Multiprocessor Database Architecture for Real-Time <lb/>Systems <lb/></titlePart>
+		</docTitle>
+		<byline><affiliation>Real-Time Computing Laboratory <lb/>Computer Science and Engineering Division <lb/>Department of Electrical Engineering and Computer Science <lb/>The University of Michigan <lb/></affiliation></byline>
+		<address>Ann Arbor, Michigan 48109-2122 <lb/></address>
+		<note type="phone">(313) 763-0391 <lb/></note>
+		<div type="abstract">ABSTRACT <lb/>Some of the advanced real-time systems being proposed, such as the Next Generation Workstation/Machine <lb/>Controller (NGC) for automated factories, require a built-in database to support concurrent data access and provide <lb/>well-defined interfaces between software modules. However, conventional database systems do not provide the performance levels or response time guarantees needed by real-time applications. To address the need for high-performance <lb/>real-time database systems, we propose to design, implement, and evaluate an object-oriented software system called <lb/>Multiprocessor Database Architecture for Real-Time Systems (MDARTS). An important feature of MDARTS is that <lb/>it supports explicit specification of real-time requirements and semantic constraints at an object-granularity level. <lb/>The database examines these specifications at runtime during application initialization and dynamically adjusts <lb/>its data management strategy accordingly to provide hard real-time guarantees. For maximum performance on <lb/>shared-memory multiprocessors, MDARTS supports concurrent, direct, shared-memory data access. Prior real-time <lb/>database systems do not support per-object dynamic configuration during initialization, and they either work only on <lb/>uniprocessors or use relatively slow inter-process communication for all transactions. The unique design of MDARTS <lb/>will support a transaction execution time two to three orders of magnitude faster than current real-time database <lb/>systems for multiprocessors. For data access with less stringent timing constraints, MDARTS also supports remote <lb/>transactions across networks and provides interfaces to external database systems. Once we have implemented the <lb/>basic MDARTS architecture, we will demonstrate its capabilities by using it to develop distributed, open architecture <lb/>controllers for actual manufacturing machine tools. <lb/></div>
+		<pb/>
+		</front>
+</text>
+</tei>

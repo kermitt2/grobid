@@ -1,0 +1,65 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005135"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<lb/>
+			<ptr type="web">Available online at www.sciencedirect.com<lb/></ptr>
+			<reference>Bioresource Technology 99 (2008) 4919–4928<lb/></reference>
+			
+			<docTitle>
+				<titlePart>Effects of mixing on methane production during thermophilic<lb/>
+					anaerobic digestion of manure: Lab-scale and pilot-scale
+					studies<lb/></titlePart>
+			</docTitle>
+
+			<byline>
+				<docAuthor>Prasad Kaparaju a , Inmaculada Buendia a,1 , Lars Ellegaard b , Irini
+					Angelidakia a, *<lb/></docAuthor>
+			</byline>
+
+			<byline>
+				<affiliation>a Institute of Environment and Resources, Technical University of
+					Denmark,</affiliation>
+			</byline>
+
+			<address>Building 115, DK-2800, Kgs. Lyngby, Denmark<lb/></address>
+			<byline>
+				<affiliation>b Burmeister and Wain Scandinavian Contractor A/S, </affiliation>
+			</byline>
+			<address>Gydevang 35, DK-3450 Allerød, Denmark<lb/></address>
+
+			<note type="submission">Received 22 June 2007; received in revised form 5 September 2007; accepted 10 September
+				2007<lb/> 
+			</note>
+			<date>	
+				Available online 26 October 2007<lb/>
+			</date>
+			<div type="abstract">Abstract<lb/> The effect of mixing on anaerobic digestion of manure
+				was evaluated in lab-scale and pilot-scale experiments at 55 °C. The effect of<lb/>
+				continuous (control), minimal (mixing for 10 min prior to extraction/feeding) and
+				intermittent mixing (withholding mixing for 2 h prior<lb/> to extraction/feeding) on
+				methane production was investigated in three lab-scale continuously stirred tank
+				reactors. On comparison to<lb/> continuous mixing, intermittent and minimal mixing
+				strategies improved methane productions by 1.3% and 12.5%, respectively. Pilot-<lb/>
+				scale studies also supported the lab-scale results with an average 7% increase in
+				biogas yields during intermittent mixing compared to<lb/> continuous mixing. The
+				effect of mixing intensities (minimal, gentle or vigorous) in batch assays at 55 °C
+				showed that when the process<lb/> was overloaded by high substrate to inoculum ratio
+				(40/60), gentle (35 times per minute) or minimal mixing (10 min mixing before
+				feed-<lb/> ing) was advantageous compared to vigorous mixing (110 times per minute).
+				On the other hand, under low substrate to inoculum ratio<lb/> (10/90), gentle mixing
+				was the best. The study thus indicated that mixing schemes and intensities have some
+				effect on anaerobic digestion<lb/> of manures.<lb/> 
+			</div>
+			<note type="coypright">© 2007 Elsevier Ltd. All rights
+				reserved.<lb/></note>
+
+			<keywords>Keywords: Anaerobic digestion; Intensity; Mixing; Methanogens;
+				Stratification</keywords>
+
+		</front>
+	</text>
+</tei>

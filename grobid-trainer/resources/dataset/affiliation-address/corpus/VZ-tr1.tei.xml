@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../jsp/xmlverbatimwrapper.xsl"?> 
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<affiliation>
+								<orgName type="department">Faculty of Health</orgName>,
+								<orgName type="department">School of Biomedical Sciences</orgName>,
+								<orgName type="institution">University of Newcastle</orgName>,
+								<address>
+									<settlement>New South Wales</settlement>,
+                                    <country key="AU">Australia</country>.
+								</address>
+							</affiliation>
+						</author>
+					
+					</analytic>
+
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</TEI>

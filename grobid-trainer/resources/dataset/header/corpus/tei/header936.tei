@@ -1,0 +1,24 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="1005"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<idno>arXiv:0811.3654v2 [astro-ph]</idno>
+		<date>16 Dec 2008 <lb/></date>
+		<note type="submission">submitted to ApJ <lb/></note>
+		<note type="other">Preprint typeset using LATEX style emulateapj v. 2/19/04 <lb/></note>
+		<docTitle>
+			<titlePart type="main">CHANDRA OBSERVATIONS OF THE GALAXY GROUP AWM 5: COOL CORE RE-HEATING AND <lb/> THERMAL CONDUCTION SUPPRESSION <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>A. Baldi, W. Forman, C. Jones, P. Nulsen, L. David, R. Kraft <lb/></docAuthor></byline>
+		<byline><affiliation>Harvard-Smithsonian Center for Astrophysics <lb/></affiliation></byline>
+		<byline><docAuthor>and <lb/>  A. Simionescu <lb/></docAuthor></byline>
+		<byline><affiliation>Max Planck Institute for Extraterrestrial Physics <lb/></affiliation></byline>
+		<note type="submission">submitted to ApJ <lb/></note>
+		<div type="abstract">ABSTRACT <lb/> We present an analysis of a 40 ksec Chandra observation of the galaxy group AWM 5. It has a small <lb/> (? 8 kpc) dense cool core with a temperature of ? 1.2 keV and the temperature profile decreases <lb/> at larger radii, from ? 3.5 keV just outside the core to ? 2 keV at ? 300 kpc from the center. <lb/> The abundance distribution shows a &quot;hole&quot; in the central ? 10 kpc, where the temperature declines <lb/> sharply. An abundance of at least a few times solar is observed ? 15 ? 20 kpc from the center. The <lb/> deprojected electron density profile shows a break in slope at ? 13 kpc and can be fit by two ?-models, <lb/> with ? = 0.72  +0.16 <lb/> ?0.11  and r  c  = 5.7  +1.8 <lb/> ?1.5  kpc, for the inner part, and ? = 0.34 � 0.01 and r  c  = 31.3  +5.8 ?5.5 <lb/> kpc, for the outer part. The mass fraction of hot gas is fairly flat in the center and increases for <lb/> r &gt; 30 kpc up to a maximum of ? 6.5% at r ? 380 kpc. The gas cooling time within the central <lb/> 30 kpc is smaller than a Hubble time, although the temperature only declines in the central ? 8 <lb/> kpc region. This discrepancy suggests that an existing cooling core has been partially re-heated. In <lb/> particular, thermal conduction could have been a significant source of re-heating. In order for heating <lb/> due to conduction to balance cooling due to emission of X-rays, the conductivity must be suppressed <lb/> by a large factor (at least ? 100). Past AGN activity (still visible as a radio source in the center of <lb/> the group) is however the most likely source that re-heated the central regions of AWM 5. We also <lb/> studied the properties of the ram pressure stripped tail in the group member NGC 6265. This galaxy <lb/> is moving at M ? 3.4  +0.5 <lb/> ?0.6  (v ? 2300 km s  ?1  ) through the hot group gas. The physical length of the <lb/> tail is ? 42 kpc and its mass is 2.1 � 0.2 � 10  9  M  ?  . <lb/></div>
+		<keywords>Subject headings: conduction ? galaxies: clusters: individual (AWM 5) ? galaxies: individual <lb/> (NGC 6269, NGC 6265) ? (galaxies:) intergalactic medium ? radio continuum: <lb/> galaxies ? X-rays: galaxies: clusters <lb/></keywords>
+		<div type="intro">1.  INTRODUCTION <lb/></div>
+		</front>
+</text>
+</tei>

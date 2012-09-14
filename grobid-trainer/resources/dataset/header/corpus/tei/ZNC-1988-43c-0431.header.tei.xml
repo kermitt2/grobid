@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="ZNC-1988-43c-0431"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Cerulenin-Induced Modifications in the Fatty Acid Composition Affect<lb/> Excitation Energy Transfer in Thylakoids of Petunia hybrida Leaves<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Josef A. Graf, Karin Witzan<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Biologisches Institut, Universität Stuttgart,</affiliation>
+	</byline>
+
+	<address>Ulmer Straße 227,<lb/> D-7000 Stuttgart 60, Bundesrepublik Deutschland<lb/></address>
+
+	<byline>
+	<docAuthor>and<lb/> Reto J. Strasser<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Bioenergetics Laboratory, University of Geneva,</affiliation>
+	</byline>
+
+	<address>CH-1254 Lullier-Geneva, Switzerland<lb/></address>
+
+	<reference>Z. Naturforsch. 43c, 431-437 (1988);</reference>
+
+	<note type="submission">received December 29, 1987/March 15, 1988<lb/></note>
+
+	<dedication>Dedicated to Professor Ulrich Kuli, Stuttgart, on the occasion of his 50th birthday<lb/></dedication>
+
+	<keyword>Cerulenin, Fatty Acid Synthesis, Excitation Energy Distribution<lb/> </keyword>
+
+	<div type="abstract">Cerulenin-induced modifications in the fatty acid composition have been used to investigate the<lb/> influence of acyl lipids on excitation energy distribution in thylakoid membranes of Petunia<lb/> hybrida by means of 77 K fluorescence spectroscopy. Although cerulenin has no effect on relative<lb/> contents of chlorophyll and acyl lipids, changes in the fatty acid composition of all thylakoid acyl<lb/> lipids have been observed. The main cerulenin effect seems to be an increase in linoleic acid at the<lb/> expense of saturated and monounsaturated C16-and C18-fatty acids resulting most likely in an<lb/> increase in acyl lipid species containing both linoleic and linolenic acid. Low temperature (77 K)<lb/> fluorescence kinetics reveal a remarkable decrease in the ratio of the variable divided by the<lb/> maximal fluorescence of photosystem II (F2(v)/F2(M>), taken as indicator for cerulenin-induced<lb/> changes in this photosystem. Calculations of the excitation energy distribution terms based on a<lb/> grouped bipartite model of photosynthesis suggest that a decrease in this ratio is caused by<lb/> changes in energy transfer probabilities responsible for both, photochemical trapping of photosys-<lb/>tem II and energetic cooperativity (grouping) between different photosystem Il-light harvesting<lb/> complex-units. Moreover, changes in the conformation responsible for spillover energy transfer<lb/> are most likely to occur. Correlations between cerulenin-induced modifications of fatty acid<lb/> composition and energy distribution support the assumption that excitation energy transfer<lb/> depends on the structural state of the lipid matrix.</div>
+
+		</front>
+	</text>
+</tei>

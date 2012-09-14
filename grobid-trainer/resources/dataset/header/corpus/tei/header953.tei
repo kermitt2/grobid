@@ -1,0 +1,28 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="1022"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Discrete Choices under Social Influence: <lb/>  Generic Properties <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Mirta B. Gordon  (1),  Jean-Pierre Nadal  (2,3), <lb/>   Denis Phan  (4,5),  Viktoriya Semeshenko  (1) <lb/></docAuthor></byline>
+		<byline><affiliation>(1) Laboratoire Techniques de l&apos;Ingénierie Médicale et de la Complexité <lb/>  (TIMC-IMAG, UMR 5525 CNRS-UJF), Université Joseph Fourier,</affiliation></byline>
+		<address>Grenoble <lb/></address>
+		<byline><affiliation>(2) Centre d&apos;Analyse et Mathématique Sociales (CAMS, UMR 8557 CNRS-EHESS), <lb/>Ecole des Hautes Etudes en Sciences Sociales,</affiliation></byline>
+		<address>Paris <lb/></address>
+		<byline><affiliation>(3) Laboratoire de Physique Statistique (LPS, UMR 8550 CNRS-ENS-Paris 6-Paris 7), <lb/> Ecole Normale Supérieure,</affiliation></byline>
+		<address>Paris <lb/></address>
+		<byline><affiliation>(4) Centre de Recherche en Economie et Management <lb/> (CREM, UMR 6211 CNRS-Université de Caen-Université de Rennes 1), Université de Rennes 1 <lb/> (5) Groupe d&apos;Etude des Méthodes de l&apos;Analyse Sociologique <lb/> (GEMAS, UMR 8598 CNRS-Université Paris Sorbonne - Paris IV),</affiliation></byline>
+		<address>Paris <lb/></address>
+		<date>March 7, 2007 <lb/></date>
+		<div type="abstract">Abstract <lb/>    We consider a model of socially interacting individuals that make a binary choice in a <lb/>  context of positive additive endogenous externalities. It encompasses as particular cases <lb/>  several models from the sociology and economics literature. We extend previous results <lb/>  to the case of a general distribution of idiosyncratic preferences, called here Idiosyncratic <lb/>  Willingnesses to Pay (IWP). <lb/>  Positive additive externalities yield a family of inverse demand curves that include the <lb/>  classical downward sloping ones but also new ones with non constant convexity. When j, <lb/>  the ratio of the social influence strength to the standard deviation of the IWP distribution, <lb/>  is small enough, the inverse demand is a classical monotonic (decreasing) function of the <lb/>  adoption rate. Even if the IWP distribution is mono-modal, there is a critical value of j <lb/>  above which the inverse demand is non monotonic, decreasing for small and high adoption <lb/>  rates, but increasing within some intermediate range. Depending on the price there are <lb/>  thus either one or two equilibria. <lb/>  Beyond this first result, we exhibit the generic properties of the boundaries limiting <lb/>  the regions where the system presents different types of equilibria (unique or multiple). <lb/>  These properties are shown to depend only on qualitative features of the IWP distribution: <lb/>  modality (number of maxima), smoothness and type of support (compact or infinite). The <lb/>  main results are summarized as phase diagrams in the space of the model parameters, on <lb/>  which the regions of multiple equilibria are precisely delimited. <lb/></div>
+		<note type="other">1 <lb/></note>
+		<idno>halshs-00135405,  version 1 -</idno>
+		<date>7 Mar 2007 <lb/></date>
+		<note type="other">Contents <lb/></note>
+		<div type="intro">1 Introduction <lb/></div>
+		</front>
+</text>
+</tei>

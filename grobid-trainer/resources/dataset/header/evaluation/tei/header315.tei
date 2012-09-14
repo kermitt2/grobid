@@ -1,0 +1,21 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="320"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Finding a Shortest Diagonal of a Simple Polygon in Linear <lb/>Time <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>John Hershberger <lb/></docAuthor></byline>
+		<byline><affiliation>DEC/SRC <lb/></affiliation></byline>
+		<address>130 Lytton Avenue, <lb/>Palo Alto, California 94301 <lb/></address>
+		<byline><docAuthor>Subhash Suri <lb/></docAuthor></byline>
+		<byline><affiliation>Bellcore <lb/></affiliation></byline>
+		<address>445 South Street, <lb/>Morristown, New Jersey 07960 <lb/></address>
+		<date>August 16, 1993 <lb/></date>
+		<div type="abstract">Abstract <lb/>A diagonal of a planar, simple polygon P is an open line segment that connects <lb/>two non-adjacent vertices and lies in the relative interior of P . We present a linear <lb/>time algorithm for finding a shortest diagonal (in the L 2 norm) of a simple polygon, <lb/>improving the previous best result by a factor of log n. Our result provides an interesting <lb/>contrast to a known (n log n) lower bound for finding a closest pair of vertices in a <lb/>simple polygon|observe that a shortest diagonal is defined by a closest pair of vertices <lb/>satisfying an additional visibility constraint. <lb/></div>
+		<pb/>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,35 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="1107"/>  
+	</teiHeader>
+<text xml:lang="en"> 
+	<front>
+		<note type="submission">Confidential:  not for distribution. Submitted to IOP Publishing for peer review </note>
+        <date type="submission">10 December 2009<lb/></date>
+        
+		<docTitle>
+			<titlePart type="main">Sputtering-induced  modification of the electronic properties
+ of Ag/Cu(111)<lb/></titlePart>
+		</docTitle> 
+		
+		<byline><docAuthor>A.  Politano  1,2,3  and G. Chiarello  1,4 <lb/></docAuthor></byline>
+		
+		<byline><affiliation>1  Università degli Studi della Calabria, Dipartimento di Fisica   </affiliation></byline> 
+		<address> 87036 Rende (Cs), <lb/> Italy <lb/></address> 
+		
+		<byline><affiliation>2  Departamento de Fisica de la Materia Condensada, Universidad Autónoma de <lb/> Madrid  </affiliation></byline> 
+		<address> 28049 Madrid, Spain. <lb/></address>
+				
+		<byline><affiliation> 3  Instituto Madrileño de Estudios Avanzados (IMDEA) en Nanociencia  </affiliation></byline> 
+		<address>  28049<lb/> Madrid, Spain <lb/></address>
+		
+		<byline><affiliation> 4  CNISM, Consorzio Nazionale Interuniversitario per le Scienze Fisiche della<lb/> Materia,  </affiliation></byline> 
+		<address>  via della Vasca Navale 84, 00146 Roma, Italy <lb/></address> 
+		
+		<div type="abstract"> Abstract<lb/> High-resolution electron energy loss spectroscopy has been used to study<lb/> the electronic properties of Ag thin films deposited on Cu(111) and<lb/> modified by Ar  +  sputtering. Ion sputtering strongly modifies the loss<lb/> function in the region of single-particle transition as deduced from the<lb/> appearance of sputtering-induced spectral features in the valence band. In<lb/> contrast with unmodified Ag systems, in sputtered films the centroid of the<lb/> induced charge of the surface plasmon lies in the close nearness of the<lb/> jellium edge. In these modified Ag films, Landau damping processes are<lb/> activated beyond a critical energy of 3.83 eV and a threshold wave-vector<lb/> of 0.2 Å  -1  . Moreover, we found that plural plasmonic losses arose upon<lb/> increasing Ar  +  dose. A comparison with the case of the sputtered Ag(100)<lb/> surface is presented throughout the paper. <lb/></div> 	 
+		
+  		<introduction>1 Introduction <lb/></introduction>
+		
+    </front>
+</text>
+</tei>                              

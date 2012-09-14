@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="285"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">An Algorithm for Bayesian Belief Network Construction from Data <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Jie Cheng, David A. Bell, Weiru Liu <lb/></docAuthor></byline>
+		<byline><affiliation>School of Information and Software Engineering <lb/>University of Ulster at Jordanstown <lb/></affiliation></byline>
+		<address>Northern Ireland, UK, BT37 0QB <lb/></address>
+		<email>email: {j.cheng, da.bell, w.liu}@ulst.ac.uk <lb/></email>
+		<div type="abstract">Abstract <lb/>This paper presents an efficient algorithm for constructing Bayesian belief networks from databases. The <lb/>algorithm takes a database and an attributes ordering (i.e., the causal attributes of an attribute should appear earlier <lb/>in the order) as input and constructs a belief network structure as output. The construction process is based on the <lb/>computation of mutual information of attribute pairs. Given a data set which is large enough and has a DAG-Isomorphic probability distribution, this algorithm guarantees that the perfect map [1] of the underlying dependency <lb/>model is generated, and at the same time, enjoys the time complexity of O N( ) 2 on conditional independence (CI) <lb/>tests. To evaluate this algorithm, we present the experimental results on three versions of the well-known ALARM <lb/>network database, which has 37 attributes and 10,000 records. The correctness proof and the analysis of <lb/>computational complexity are also presented. We also discuss the features of our work and relate it to previous <lb/>works. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

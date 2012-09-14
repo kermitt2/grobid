@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="unknown"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">An Extensible Protocol Architecture for <lb/>Application-Specific Networking <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Marc E. Fiuczynski <lb/>Brian N. Bershad <lb/></docAuthor></byline>
+		<email>fmef,bershadg@cs.washington.edu <lb/></email>
+		<byline><affiliation>Department of Computer Science and Engineering <lb/>University of Washington <lb/></affiliation></byline>
+		<address>Seattle, WA 98195 <lb/></address>
+		<div type="abstract">Abstract <lb/>Plexus is a networking architecture that allows applications to achieve high performance with customized <lb/>protocols. Application-specific protocols are written in <lb/>a typesafe language and installed dynamically into the <lb/>operating system kernel. Because these protocols execute within the kernel, they can access the network <lb/>interface and other operating system services with low <lb/>overhead. Protocols implemented with Plexus outperform equivalent protocols implemented on conventional monolithic systems. Plexus runs in the context <lb/>of the SPIN extensible operating system. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

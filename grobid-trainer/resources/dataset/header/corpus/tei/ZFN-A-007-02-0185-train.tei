@@ -1,0 +1,26 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="ZFN-A-007-02-0185"/>
+	</teiHeader>
+	<text xml:lang="de">
+		<front>
+			<titlePage>
+				<docTitle>
+					<titlePart type="main">Ergebnisse der Tieftemperaturforschung <lb/>
+IX. Die Atomwärme des Kobalts zwischen 15*^ und 270^ K^ <lb/></titlePart>
+				</docTitle>
+				<byline>Von <docAuthor>KLAUS CLUSHTS und LI S ELOTTE SC HAC HI NGEB</docAuthor><lb/></byline>
+				<byline>Aus dem <affiliation>Physikalisch-Chemischen Institut der Universität Zürich<lb/></affiliation></byline>
+				<reference>(Z. Naturforschg. 7a, 185-191 [1952]; </reference>
+				<note type="submission">eingegangen am 1. Oktober 1951)<lb/></note>
+			</titlePage>
+			<div type="abstract">Die Atomwärme des Kobalts wird zwischen 15 ^ und 270*^ K gemessen. Die Stan- <lb/>
+dardentropie bei 25*^ beträgt danach 7,18 cal/g-Atom^. Am Verlauf der Debyeschen <lb/>
+charakteristischen Temperaturen wird gezeigt, daß der für die Elektronenwärme <lb/>
+bei tiefsten Temperatiu'en verantwortliche lineare Term sich in unverminderter • <lb/>
+Stärke bis Zimmertemperatur nachweisen läßt. Die anderen ferromagnetischen <lb/>
+Metalle Nickel und Eisen verhalten sich bis in die Einzelheiten analog. <lb/></div>
+			<div type="intro">I m Hinblick auf den großen Anteil der Elektronen <lb/></div>
+		</front>
+	</text>
+</tei>

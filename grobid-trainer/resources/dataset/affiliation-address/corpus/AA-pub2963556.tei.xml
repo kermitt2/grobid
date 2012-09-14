@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../jsp/xmlverbatimwrapper.xsl"?> 
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<!-- Inst. de Mecanique des Fluides de Marseille, CNRS, Univ. d'Aix-Marseille; -->
+    <teiHeader xml:lang="en">
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<affiliation>
+								<orgName type="department">Inst. de Mecanique des Fluides de Marseille</orgName>,
+								<orgName type="institution" key="instit1">CNRS</orgName>,
+								<orgName type="institution" key="instit2">Univ. d'Aix-Marseille</orgName>;
+							</affiliation>
+						</author>				
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</TEI>

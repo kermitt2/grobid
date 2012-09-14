@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="354"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">A Neural Net for Determining Structural <lb/>Similarity of Recursive Programs <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Kristina Schadler, Ute Schmid, Hendrik Lubben, Bernd <lb/>Machenschalk <lb/></docAuthor></byline>
+		<byline><affiliation>Research Group &quot;Methods of Artificial Intelligence&quot; <lb/>Institute for Applied Computer Science, Technische Universitat <lb/>Berlin <lb/></affiliation></byline>
+		<address>email: schaedle,schmid,compuman,herold@cs.tu-berlin.de <lb/></address>
+		<div type="abstract">Abstract. In this work it will be shown, how the comparison of recursive program schemata (RPS) can be reduced to an only slightly modified <lb/>type of the search for maximal isomorphic subgraphs by interpreting the <lb/>RPS as directed, cyclic, labelled graphs. The quality of the mapping of <lb/>two RPS can be used as a quantitative measure for similarity of RPS <lb/>among each other. The simultaneously calculated graph morphism can <lb/>serve as a basis for the detection of analogies between the RPS. A special <lb/>neural net, developed for the solution of general graph-matching problems, realizes the search for a sensible and as comprising as possible <lb/>mapping between two RPS. It is shown, which special properties of RPS <lb/>have to be accounted for in the modeling and how these can be incorporated into the algorithms when using a special neural approach for the <lb/>solution. <lb/></div>
+		<div type="intro">1. Structural similarities in case-based reason</div>
+		</front>
+</text>
+</tei>

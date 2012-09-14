@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+<listBibl>
+
+	<bibl>
+		<title level="j">THE JOURNAL OF BIOLOGICAL CHEMISTRY</title>, Vol. <biblScope type="vol">275</biblScope>, No. <biblScope type="issue">17</biblScope>, Issue of <date>April 28</date>, <biblScope type="pp">pp. 12572–12580,</biblScope> <date>2000</date>
+	</bibl>
+
+</listBibl>
+</tei>

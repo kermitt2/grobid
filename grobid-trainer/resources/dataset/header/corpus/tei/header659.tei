@@ -1,0 +1,22 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="661"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Imposing The Law of Demeter and Its Variations <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Partha pratim Pal <lb/></docAuthor></byline>
+		<email>partha@cs.rutgers.edu <lb/></email>
+		<byline><docAuthor>Naftaly H. Minsky <lb/></docAuthor></byline>
+		<email>minsky@cs.rutgers.edu <lb/></email>
+		<byline><affiliation>Department of Computer Science <lb/>Rutgers University <lb/></affiliation></byline>
+		<address>New Brunswick, NJ 08903 <lb/></address>
+		<date>February 28, 1996 <lb/></date>
+		<div type="abstract">Abstract <lb/>The Law of Demeter [4] is accepted as a useful design principle that <lb/>promotes tightly encapsulated classes and reduced coupling. Principles <lb/>like this are routinely adopted in real-life projects, however neither the <lb/>programming languages nor the existing environments provide enough <lb/>support for effective realization of these principles. It is our thesis <lb/>that broad structural principles should be formally specified, strictly <lb/>enforced, and relaxed whenever relaxation is in order. In this paper <lb/>we show how this can be done under our darwin-E environment using, <lb/>the Law of Demeter as an illustration. <lb/></div>
+		<keywords>keywords: Law of Demeter, Law-Governed Architecture, Software <lb/>Engineering Principles, Enforcement. <lb/></keywords>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

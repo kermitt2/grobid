@@ -1,0 +1,28 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="1053"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Consortium AVEIR at ImageCLEFphoto 2008: <lb/> on the fusion of runs <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Sabrina Tollari  1  , Marcin Detyniecki  1  , Marin Ferecatu  2  , Hervé Glotin  3  , Philippe Mulhem  4  , <lb/> Massih-Reza Amini  1  , Ali Fakeri-Tabrizi  1  , Patrick Gallinari  1  , Hichem Sahbi  2  , Zhong-Qiu Zhao  3 <lb/></docAuthor></byline>
+		<byline><affiliation>1  Université Pierre et Marie Curie-Paris6, UMR CNRS 7606-LIP6,</affiliation></byline>
+		<address>Paris,</address>
+		<email>firstname.lastname@lip6.fr <lb/></email>
+		<byline><affiliation>2  TELECOM ParisTech, UMR CNRS 5141 LTCI,</affiliation></byline>
+		<address>Paris,</address>
+		<email>firstname.lastname@telecom-paristech.fr <lb/></email>
+		<byline><affiliation>3  Université du Sud Toulon-Var, UMR CNRS 6168 LSIS,</affiliation></byline>
+		<address>Toulon,</address>
+		<email>name@univ-tln.fr <lb/></email>
+		<byline><affiliation>4  Université Joseph Fourier, UMR CNRS 5217 LIG,</affiliation></byline>
+		<address>Grenoble,</address>
+		<email>firstname.lastname@imag.fr <lb/></email>
+		<div type="abstract">Abstract <lb/>  In this working note, we present the submission of the AVEIR consortium, composed <lb/> of 4 French laboratories, to ImageCLEFphoto 2008. The submitted runs correspond to <lb/> different fusion strategies applied to four individual ranks, each proposed by an AVEIR <lb/> consortium partner. In particular, we study the complete, and partial, average of the <lb/> ranking values, the minimum of these values, and a random based diversification. We <lb/> first briefly describe the individual run of each partner, then we describe the fusion <lb/> runs. The official results classed one of the runs, the MEAN fusion, as the third best <lb/> in the automatic text-image run category. This run gives better results than the best <lb/> partner run. <lb/></div>
+		<keywords>Categories and Subject Descriptors <lb/>  H.3 [Information Storage and Retrieval]: H.3.1 Content Analysis and Indexing; H.3.3 Infor- <lb/> mation Search and Retrieval; H.3.4 Systems and Software; H.3.7 Digital Libraries; H.2.3 [Database <lb/>  Management]: Languages?Query Languages <lb/>  General Terms <lb/>  Measurement, Performance, Experimentation <lb/>  Keywords <lb/>  Rank Fusion, Image Retrieval, Multimodal Information Retrieval <lb/></keywords>
+		<div type="intro">1 Introduction <lb/></div>
+		</front>
+</text>
+</tei>

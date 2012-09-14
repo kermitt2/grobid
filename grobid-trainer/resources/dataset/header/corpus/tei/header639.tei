@@ -1,0 +1,19 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="641"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">AFEC: An Adaptive Forward Error-Correction <lb/>Protocol and Its Analysis <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Kihong Park <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Sciences <lb/>Purdue University <lb/></affiliation></byline>
+		<address>West Lafayette, IN 47907 <lb/></address>
+		<email>park@cs.purdue.edu <lb/></email>
+		<idno>CSD-TR 97-038 <lb/></idno>
+		<div type="abstract">Abstract <lb/>This paper presents an adaptive protocol for packet-level forward error-correction in dynamic networks. The objective is to facilitate best-effort real-time applications whose timing <lb/>constraints rule out the use of retransmission-based ARQ schemes. The degree of redundancy <lb/>is adjusted as a function of network state, decreasing when the network is well-behaved and <lb/>increasing when it is not. The control problem is nontrivial due to the fact that increased redundancy, beyond a certain level, backfires resulting in self-induced congestion which impedes <lb/>the timely recovery of information at the receiver. <lb/>In the first part of the paper, we present a comprehensive analysis of the control problem <lb/>associated with dynamic forward error-correction, concentrating on a particular protocol called <lb/>Adaptive Forward Error-Correction (AFEC). We show that instabilities can arise from two <lb/>distinct sources|desired operating point location and network delay|and we give solutions to <lb/>handle them. The first causal factor is intimately tied to optimality, making its achievement <lb/>potentially perilous in the context of QoS-greedy applications. <lb/>The second part of the paper presents simulation results that confirm the qualitative dynamics predicted by the analysis. We quantitatively estimate the redundancy-recovery rate function <lb/>which relates redundancy to the quality of service rendered at the receiver. We show under what <lb/>conditions the curve&apos;s shape is unimodal and to what degree. We compare the performance of <lb/>AFEC against a static FEC protocol in which the redundancy factor is fixed. We show that <lb/>AFEC exhibits superior performance when the network is subject to structural changes that <lb/>persist for nonnegligible durations. Under short-range dependent traffic conditions, AFEC is <lb/>able to closely match the performance of optimum static FEC but not exceed it. <lb/></div>
+		<pb/>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Wenru</forename>
+								<surname>Wang</surname>
+								<roleName>PhD RN</roleName>
+								<lb/>
+								<roleName>Assistant Professor</roleName>
+								<lb/>
+							</persName>
+							
+							<persName>
+								<forename>David</forename>
+								<middlename>R</middlename>.
+								<surname>Thompson</surname>,
+								<roleName>PhD RN FRCN</roleName>
+								<lb/>
+								<roleName>Professor</roleName>
+								<lb/>
+							</persName>
+							
+							<persName>
+								<forename>Sek</forename>
+								<middlename>Y</middlename>.
+								<surname>Chair</surname>
+								<roleName>PhD RN</roleName>
+								<lb/>
+								<roleName>Associate Professor</roleName>
+								<lb/>
+							</persName>
+							
+							<persName>
+								<forename>Sheila</forename>
+								<middlename>F</middlename>.
+								<surname>Twinn</surname>
+								<roleName>PhD RN RSCN</roleName>
+								<lb/>
+								<roleName>Professor</roleName>
+								<lb/>
+							</persName>
+		
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

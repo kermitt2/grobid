@@ -1,0 +1,16 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="85"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Relating Comprehension and Production <lb/>in the Acquisition of Morphology <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Michael Gasser <lb/></docAuthor></byline>
+		<byline><affiliation>Indiana University <lb/></affiliation></byline>
+		<div type="abstract">Abstract <lb/>Most theories of language processing and acquisition make the assumption that <lb/>perception and comprehension are related to production, but few have anything say <lb/>about how. This paper describes a performance-oriented connectionist model of <lb/>the acquisition of morphology in which production builds on representations which <lb/>develop during the learning of word recognition. Using artificial language stimuli <lb/>embodying simple suffixation, prefixation, and template rules, I demonstrate that <lb/>the model generalizes to novel combinations of roots and inflections for both word <lb/>recognition and production. I argue that the capacity of connectionist networks to <lb/>develop intermediate distributed representations which not only enable the solving <lb/>of the task at hand but also facilitate another task offers a plausible account of how <lb/>comprehension and production come to share phonological knowledge as words are <lb/>learned. <lb/></div>
+		<div type="intro">Introduction</div>
+		</front>
+</text>
+</tei>

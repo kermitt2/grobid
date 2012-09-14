@@ -1,0 +1,16 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="350"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Relating Test Purposes to Formal Specifications: <lb/>Towards a Theoretical Foundation of Practical Testing <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Jens Grabowski, Dieter Hogrefe <lb/> Robert Nahm, Andreas Spichiger <lb/></docAuthor></byline>
+		<idno>IAM-93-014 <lb/></idno>
+		<date>June 1993 <lb/></date>
+		<pb/>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,22 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="83"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<note type="reference">To appear in Parallel Computing, 1997. <lb/></note>
+		<note type="other">Available at URL</note>
+		<ptr type="web">ftp://ftp.cs.dartmouth.edu/kotz/papers/nieuwejaar:jgalley.ps.Z <lb/></ptr>
+		<docTitle>
+			<titlePart type="main">The Galley Parallel File System <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Nils Nieuwejaar, David Kotz <lb/></docAuthor></byline>
+		<email>fnils,dfkg@cs.dartmouth.edu <lb/></email>
+		<byline><affiliation>Department of Computer Science,  Dartmouth College,</affiliation></byline>
+		<address>Hanover, NH 03755-3510 <lb/></address>
+		<div type="abstract">Most current multiprocessor file systems are designed to use multiple disks <lb/>in parallel, using the high aggregate bandwidth to meet the growing I/O <lb/>requirements of parallel scientific applications. Many multiprocessor file <lb/>systems provide applications with a conventional Unix-like interface, allowing the application to access multiple disks transparently. This interface conceals the parallelism within the file system, increasing the ease <lb/>of programmability, but making it difficult or impossible for sophisticated programmers and libraries to use knowledge about their I/O needs <lb/>to exploit that parallelism. In addition to providing an insufficient interface, most current multiprocessor file systems are optimized for a different <lb/>workload than they are being asked to support. We introduce Galley, a <lb/>new parallel file system that is intended to efficiently support realistic <lb/>scientific multiprocessor workloads. We discuss Galley&apos;s file structure and <lb/>application interface, as well as the performance advantages offered by <lb/>that interface. <lb/></div>
+		<keywords>Key words: Parallel I/O. Multiprocessor file system. Performance evaluation. IBM <lb/>SP-2. Scientific Computing. <lb/></keywords>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

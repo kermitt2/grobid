@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="ZNC-1988-43c-0505"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Biosynthesis of Lipids Containing Isoricinoleic<lb/> (9-Hydroxy-c/s-12-octadecenoic) Acid in Seeds of Wrightia Species<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Fasih Ahmad* and Kumar D. Mukherjee<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Bundesanstalt für Fettforschung, Institut für Biochemie und Technologie<lb/> — H. P. Kaufmann-Institut —,</affiliation>
+	</byline>
+
+	<address>Piusallee 68, D-4400 Münster, Bundesrepublik Deutschland<lb/></address>
+
+	<reference>Z. Naturforsch. 43c, 505-510 (1988);</reference>
+
+	<note type="submission">received April 11/May 30, 1988<lb/></note>
+
+	<keyword>(R)-9-Hydroxy-cis-12-octadecenoic Acid, Isoricinoleic Acid, Lipids, Wrightia Species<lb/> </keyword>
+
+	<div type="abstract">Seeds of two Wrightia species, i.e. W. tinctoria and W. coccinea, synthesize triacylglycerols<lb/> containing isoricinoleoyl (9-hydroxy-cw-12-octadecenoyl, 9-OH-A 12 18:l) moieties as the major<lb/> lipid constituents. Seed maturation is accompanied by lipid accumulation and steep increase in the<lb/> level of 9-OH-A l2 18:l in the total lipids, while relative proportions of palmitic (16:0), oleic (18:1),<lb/> and linoleic (18:2) acids decrease. 9-Hydroxy stearic acid (9-OH-18:0) is also detected in these<lb/> seed lipids, and both 9-OH-A l2 18:l and 9-OH-18:0 occur exclusively in the neutral lipids of<lb/> mature and developing seeds. Developing seeds of both Wrightia species synthesize upon incuba-<lb/>tion with sodium [l-14 C]acetate, besides common long-chain fatty acids, considerable proportions<lb/> of 9-OH-A 12 18:l and 9-OH-18:0, which are predominantly esterified in triacylglycerols. Substan-<lb/>tial proportions of radiolabeled 9-OH-A l2 18:l and 9-OH-18:0 are also formed upon anaerobic<lb/> incubation of the developing seeds with the ammonium salts of [1-' 4 C]18:2 and<lb/> [1-I4 C]18:1, respectively. The data presented suggest that hydration of the A y olefinic bond of 18:2<lb/> is a possible pathway of synthesis of 9-OH-A l2 18:l, however, hydration of the A 1 ' olefinic bond of<lb/> 18:1 followed by A 12 desaturation of 9-OH-18:0 cannot be ruled out.</div>
+
+		</front>
+	</text>
+</tei>

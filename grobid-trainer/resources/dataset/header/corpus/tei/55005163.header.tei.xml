@@ -1,0 +1,73 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005163"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<lb/>
+			
+			<docTitle>
+				<titlePart>EECHE: An Energy-Efficient Cluster Head Election<lb/> Algorithm in Sensor
+					Networks*<lb/></titlePart>
+			</docTitle>
+
+			<byline>
+				<docAuthor>Kyounghwa Lee, Joohyun Lee, Minsu Park, Jaeho Kim, and Yongtae
+					Shin<lb/></docAuthor>
+			</byline>
+
+
+			<address>Room 407</address>
+			<byline>
+				<affiliation> Information Science B/D, Soongsil
+					University,<lb/></affiliation>
+			</byline>
+
+			<address>Sangdo5-dong Dongjak-gu Seoul, 156-743, South Korea<lb/></address>
+
+			<email>{khlee,jhlee,mspark}@cherry.ssu.ac.kr, jhkim@keti.re.kr,<lb/>
+				shin@ssu.ac.kr<lb/></email>
+
+			<div type="abstract">Abstract. One of the most important considerations in designing
+				sensor nodes<lb/> in a wireless sensor networks is to extend the network lifetime by
+				minimizing<lb/> an energy consumption with limited resources. In this paper, we
+				propose an En-<lb/> ergy-Efficient Cluster Head Election (EECHE) algorithm in sensor
+				networks<lb/> The proposed algorithm divides cluster area into two perpendicular
+				diameters,<lb/> and then elects cluster head by the density of member nodes and the
+				distance<lb/> from cluster head. Through the simulation experiments, we showed that
+				our al-<lb/> gorithm has improves the performance of cluster head election and
+				provides<lb/> more energy-efficient.<lb/></div>
+
+			<keyword>Keywords: wireless sensor network, clustering,
+				energy-efficiency.<lb/></keyword>
+			
+			<div type="introduction">
+				1 Introduction<lb/>
+				A Sensor networks consist of large number of small, relatively inexpensive and low-<lb/>
+				power sensors that are connected to the wireless network[1]. Since each node only has<lb/>
+				limited energy resource and the battery recharge or replacement is impractical, sensor<lb/>
+				networks with a energy-aware design becomes important to achieve the desired life-<lb/>
+				time performance. The mean of energy-aware is that the energy spent on delivering<lb/>
+				packets from a source to a destination is minimized [2].<lb/>
+				Recently, various clustering technique to reduce an energy consumption of sensor<lb/>
+				nodes have been developed. One of the most well-known clustering approaches is<lb/>
+				LEACH (Low-Energy Adaptive Clustering Hierarchy) [3] a clustering-based protocol<lb/>
+				that utilizes a randomized rotation of local cluster head to evenly distribute the energy<lb/>
+				load among the sensors in the network. But LEACH can not have chance to cluster<lb/>
+				head and consume their energy evenly with only probability. Unlike LEACH, where<lb/>
+				nodes self-configure themselves into clusters, LEACH-C (LEACH-Centralized) [4]<lb/>
+				utilizes the base station for the cluster formation. But, at the beginning of each round,<lb/>
+				LEACH-C causes on additional overhead to receive information from each node<lb/>
+			</div>
+			
+			<note type="grant">* This research has been supported by a grant from the Korea Electronics Technology Institute
+				2008.<lb/></note>
+			
+			<reference>C.S. Hong et al. (Eds.): APNOMS 2009, LNCS 5787, pp. 486–489, 2009.<lb/></reference>
+			<note type="copyright">© Springer-Verlag Berlin Heidelberg 2009<lb/></note>
+			
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="284"/>
+	</teiHeader>
+	<text xml:lang="en">
+			<front>MULTISTABILITY AND DYNAMICS OF TWO-COMPONENT<lb/> POLARITON-FLUIDS<lb/> E. Cancellieri (1) , F. M. Marchetti (1) , M. H. Szymańska (2) , D. Sanvitto (3) , C. Tejedor (1)<lb/> 1 Física Teórica de la Materia Condensada, Universidad Autónoma de Madrid, Madrid 28049, Spain.<lb/> 2 Department of Physics, University of Warwick, Coventry, England.<lb/> 3 NNL, Istituto Nanoscienze-CNR, Via Arnesano, 73100 Lecce, Italy.<lb/></front>
+
+			<p>Resonantly pumped cavity-polariton (CP) condensates constitute a novel and exciting system both for the study<lb/> of fundamental properties of superfluids out of equilibrium <ref type="biblio">[1]</ref>, and for the investigation of novel devices based on<lb/> light-matter interaction <ref type="biblio">[2]</ref>. From the point of view of the fundamental properties of these systems, particularly<lb/> interesting is that for a coherently pumped CP superfluid in presence of defects, in contrast to an equilibrium case, a<lb/> weak residual drag force is always present even at extremely high polariton densities <ref type="biblio">[3]</ref>. Nevertheless, properties<lb/> paradigmatical of an equilibrium superfluid, such as frictionless flow of polariton bullets <ref type="biblio">[1]</ref>, quantized vortices and<lb/> metastable persistent flow, and appearance and disappearance of Čerenkov-like waves can been observed.<lb/></p> 
+			<p>In our works <ref type="biblio">[3,4]</ref>, we investigate a new realization of a two-component CP system coherently driven by two<lb/> independently tunable lasers. The interplay and coexistence of different components of a superfluid is at the heart of<lb/> several experiments already realized <ref type="biblio">[1]</ref>, and is a necessary ingredient for the optical tuning, switching on and off,<lb/> and control of future devices <ref type="biblio">[2]</ref>. First we study, within a linear response approximation of a generalized Gross-<lb/>Pitaevskii (GP) equation, the multistability of the system when the laser intensities F1 and F2 are varied. We show<lb/> that, differently from the case of a single pump, where the system can only be bistable, in our case a rich phase<lb/> diagram is disclosed, where either one, two or three stable states can be observed for given pumping conditions (left<lb/> panel). Three-stability is understood noting that the cavity can be either little or highly populated and, in this second<lb/> case, the largest part of the population can lie in either one of the two components. Analyzing the imaginary part of<lb/> the energy dispersion of the lower polariton Bogoliubov branches, we classify the different instabilities appearing in<lb/> our system, and compare our case with the case of one-component fluids. Finally, we show that easily tunable<lb/> multistable hysteresis loops can be performed by the system (central panel). Multistability and the analogy with the<lb/> equations describing two-component polarized fluids, suggest that ultra fast switches or spatial multistability could<lb/> be observed also in our systems.<lb/></p> 
+			<p>Then we study the super-fluid properties of the system both considering the exact energy dispersion in the linear<lb/> response approximation and solving numerically the full GP equation. Both approaches accordingly find that, owing<lb/> to the interaction between the different components, the superfluid properties of the system depend on the balance<lb/> between the polariton densities (red dashed region in the left panel). While for the linear response approximation is<lb/> possible to identify sub-sonic regions looking for parameters that forbid scattering of Bogoliubov particles, when<lb/> solving the complete GP equation only the disappearance of Čerenkov-like waves or a strong decrease of the drag<lb/> force exerted by the fluid on a defect, are signatures of the super-sub sonic transition. In analogy with the case of one<lb/> fluid <ref type="biblio">[3]</ref> we find that a residual drag force is always present even at high polariton densities and study the<lb/> dependence of the residual drag force, on the polariton lifetime (right panel).<lb/></p>
+
+			<bibl> <label>[1]</label> A. Amo, et al., Nature, 457, 273 (2009).<lb/></bibl>
+
+			<bibl> <label>[2]</label> T. K. Paraiso, et al., Nature Materials. 9, 655 (2010).<lb/></bibl>
+
+			<bibl> <label>[3]</label> E. Cancellieri, et al., Phys. Rev. B 82, 224512 (2010).<lb/></bibl>
+
+			<bibl> <label>[4]</label> E. Cancellieri, et al., arXiv:1101.1783.<lb/></bibl>
+
+			<figure>
+
+				<figDesc>Left panel: phase diagram showing the number of stable solutions as a function of the pump intensities F1,2, green,<lb/> yellow and black regions correspond to one, two or three stable solutions. The red dashed region indicates the<lb/> regions where the system is sub-sonic. Central panel: hysteresis cycles of α1, the ratio between the polariton<lb/> population in one component divided by the total population in the cavity (stable solutions are in black, hysteresis<lb/> cycles in brown): (A) for F2=0.14 -F1, (B) for F2=0.08. Right panel: drag force, as a function of the two polariton<lb/> densities, in the case of two independent fluids (red dots) and in the case of two interacting fluids (colored cubes).</figDesc>
+			</figure>
+
+	</text>
+</tei>

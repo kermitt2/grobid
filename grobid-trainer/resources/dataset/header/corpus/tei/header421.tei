@@ -1,0 +1,16 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="424"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Compression Performance of the Xremote Protocol <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>John Danskin * Pat Hanrahan <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science, Princeton University <lb/></affiliation></byline>
+		<div type="abstract">Abstract <lb/>The Xremote protocol is a compressed transformation of the X Window System protocol, <lb/>designed to efficiently implement X connections across relatively slow serial lines. Using an <lb/>Xremote simulator and 11 traces of X sessions, we found that Xremote&apos;s overall compression <lb/>ratio is 2.4:1. This figure varies widely depending on the trace. A study of compression <lb/>ratio as a function of message type shows text based messages commonly achieving 3:1 <lb/>compression, while geometric messages usually achieve only 1.6:1 compression. By examining bandwidth requirements and compression performance as a function of time, we see <lb/>that Xremote performs adequately for some applications which are text based or which use <lb/>small geometric datasets, except at application startup where more bandwidth is required. <lb/>Further work is required to adequately support the initialization stage of X applications and <lb/>medium to large geometric databases. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

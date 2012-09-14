@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="1031"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">SPIN DIAGRAMS FOR EQUAL-MASS BLACK HOLE BINARIES WITH ALIGNED SPINS <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Luciano Rezzolla,  1,2  Ernst Nils Dorband,  1  Christian Reisswig,  1  Peter Diener,  2,3 <lb/>  Denis Pollney,  1  Erik Schnetter,  2,3  and Be �la Szila �gyi  1 <lb/></docAuthor></byline>
+		<date>Received 2007 August 29; accepted 2008 February 19 <lb/></date>
+		<div type="abstract">ABSTRACT <lb/> Binary black hole systems with spins aligned with the orbital angular momentum are of special interest, as they <lb/> may be the preferred end state of the inspiral of generic supermassive binary black hole systems. In view of this, we <lb/> have computed the inspiral and merger of a large set of binary systems of equal-mass black holes with spins aligned <lb/> with the orbital angular momentum but otherwise arbitrary. By least-square fitting the results of these simulations, we <lb/> have constructed two &apos;&apos;spin diagrams&apos;&apos; which provide straightforward information about the recoil velocity jv  kick  j and <lb/> the final black hole spin a  Bn  in terms of the dimensionless spins a  1 and a  2 of the two initial black holes. Overall, they <lb/> suggest a maximum recoil velocity of jv  kick  j &apos; 441:94 km s  �1  , and minimum and maximum final spins a  Bn  &apos; 0:3471 <lb/> and a  Bn  � 0:9591, respectively. <lb/></div>
+		<keywords>Subject headingg s: black hole physics ? gravitational waves ? relativity ? stars: statistics <lb/></keywords>
+		<note type="other">Online material: color figures <lb/></note>
+		<div type="intro">1. INTRODUCTION <lb/></div>
+		</front>
+</text>
+</tei>

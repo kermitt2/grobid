@@ -1,0 +1,19 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="746"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<note type="reference">Reprinted from 1995 Usenix Technical Conference * January 16-20, 1995 * New Orleans, LA <lb/></note>
+		<docTitle>
+			<titlePart type="main">The New Jersey Machine-Code Toolkit <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Norman Ramsey <lb/></docAuthor></byline>
+		<byline><affiliation>Bell Communications Research <lb/></affiliation></byline>
+		<byline><docAuthor>Mary F. Fernandez <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science, Princeton University <lb/></affiliation></byline>
+		<div type="abstract">Abstract <lb/>The New Jersey Machine-Code Toolkit helps programmers write applications that process machine code. <lb/>Applications that use the toolkit are written at an <lb/>assembly-language level of abstraction, but they recognize and emit binary. Guided by a short instruction-set specification, the toolkit generates all the bit-manipulating code. <lb/>The toolkit&apos;s specification language uses four concepts: fields and tokens describe parts of instructions, <lb/>patterns describe binary encodings of instructions or <lb/>groups of instructions, and constructors map between <lb/>the assembly-language and binary levels. These concepts are suitable for describing both CISC and RISC <lb/>machines; we have written specifications for the MIPS <lb/>R3000, SPARC, and Intel 486 instruction sets. <lb/>We have used the toolkit to help write two applications: a debugger and a linker. The toolkit generates <lb/>efficient code; for example, the linker emits binary up <lb/>to 15% faster than it emits assembly language, making <lb/>it 1.7-2 times faster to produce an a.out directly than <lb/>by using the assembler. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

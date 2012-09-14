@@ -1,0 +1,15 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="273"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Eventually-Serializable Data Services <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Alan Fekete David Gupta Victor Luchangco Nancy Lynch Alex Shvartsman <lb/></docAuthor></byline>
+		<div type="abstract">Abstract <lb/>We present a new specification for distributed data services that trade-off immediate consistency guarantees <lb/>for improved system availability and efficiency, while <lb/>ensuring the long-term consistency of the data. An <lb/>eventually-serializable data service maintains the operations requested in a partial order that gravitates over <lb/>time towards a total order. It provides clear and unambiguous guarantees about the immediate and long-term <lb/>behavior of the system. To demonstrate its utility, we <lb/>present an algorithm, based on one of Ladin, Liskov, <lb/>Shrira, and Ghemawat [12], that implements this specification. Our algorithm provides the interface of the <lb/>abstract service, and generalizes their algorithm by allowing general operations and greater flexibility in specifying consistency requirements. We also describe how <lb/>to use this specification as a building block for applications such as directory services. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

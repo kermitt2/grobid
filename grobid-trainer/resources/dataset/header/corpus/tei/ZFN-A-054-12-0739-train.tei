@@ -1,0 +1,34 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="ZFN-A-054-12-0739"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<titlePage>
+				<docTitle>
+					<titlePart type="main">Electrochemical Behavior of Ba^'*' at Liquid Metal Cathodes <lb/>
+in Molten Chlorides <lb/></titlePart>
+				</docTitle>
+				<byline><docAuthor>Masahiko Matsumiya, Masatoshi Takano, Ryuzo Takagi^, and Reiko Fujita^</docAuthor><lb/></byline>
+				<byline><affiliation>Japan Atomic Energy Research Insdtute</affiliation>, <address>Tokai-mura, Naka-gun, Ibaraki-ken, 319-1195, Japan</address><lb/></byline>
+                                <byline><affiliation>Research Laboratory for Nuclear Reactors, Tokyo Institute of Technology<lb/></affiliation>, <address>O-okayama, Meguro-ku, Tokyo 152-8550</address><lb/></byline>
+                                <byline><affiliation>^ Nuclear Engineering Laboratory, Toshiba Corporadon <lb/></affiliation>, <address>Ukishima-cho, Kawasaki-ku, Kawasaki 210-0862</address><lb/></byline>
+				<note>Reprint requests to Prof. M. M.; Fax: 81 29 2825922</note> 
+				<email>E-mail: matsumiya@molten.tokai.jaeri.go.jp <lb/></email>
+				<reference>Z. Naturforsch. 54 a, 739-746 (1999); </reference>
+				<note type="submission">received September 13, 1999<lb/></note>
+			</titlePage>
+			<div type="abstract">The electrochemcal behavior of Ba^"" on several liquid metal electrodes (Al, Bi, Cd, Pb, Sn <lb/>
+and Zn) in a NaCl-KCl equimolar solvent at 1000 K has been invesUgated by means of cyclic <lb/>
+voltammetry and chronopotentiometry. The kinetic parameters and the diffusion coefficient for <lb/>
+Ba^^ were determined by cyclic voltammetry widi conventional, semi-integral, semi-differential <lb/>
+methods and chronopotentiometry. It was revealed diat on a liquid Pb electrode in the NaCl- <lb/>
+KCl system at 1000 K the quasi-reversible cathodic reaction Ba^"" + 2e~ + Pb BaPb takes <lb/>
+place. In addition, the kinetic parameters and die diffusion coefficient agree well widi die values <lb/>
+determined by various electroanalyses. The possibility of alloy formation between Ba and Sn was <lb/>
+also demonsUated in this paper. <lb/></div>
+     		    	<keywords>Key words: Alloy Formation Reaction; Barium; Liquid Metal Cadiodes; Molten Salts.<lb/></keywords>
+			<div type="intro">1. Introduction <lb/></div>
+		</front>
+	</text>
+</tei>

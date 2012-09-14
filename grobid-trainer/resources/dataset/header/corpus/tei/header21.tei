@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="22"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Adaptive Wave Propagation Modeling <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Raymond O. Wells, Jr. <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Mathematics,  Rice University <lb/></affiliation></byline>
+		<address>Houston, TX 77251-1892 <lb/></address>
+		<div type="abstract">ABSTRACT <lb/>This paper discusses several current attempts to use acoustic and electromagnetic wave propagation for modeling <lb/>physical phenomena and the role that wavelet analysis is playing in these efforts. The first problem involves recent <lb/>application of wavelets to computational fluid dynamics. The second problem involves geophysical modeling of the <lb/>ocean floor, using acoustic waves, and wavelets have recently been shown to play an important role here already. <lb/>The third problem involves modeling of SAR radar images in the context of automatic target recognition efforts. <lb/>The fourth problem is global illumination in computer graphics, i.e., simulation of reflected and absorbed light <lb/>for everyday environments. The role of wavelets is more embryonic in these latter two areas, but there are some <lb/>common principles in all of these modeling efforts, and the methodology of wavelets seems well suited to certain <lb/>aspects of these problems. <lb/></div>
+		<div type="intro">1 INTRODUCTION AND OVERVIEW</div>
+		</front>
+</text>
+</tei>

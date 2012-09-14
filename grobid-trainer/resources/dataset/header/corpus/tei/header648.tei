@@ -1,0 +1,16 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="650"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<note type="reference">8th SIAM Conference on Parallel Processing for Scientific Computing, Minneapolis, MN, March 1997. <lb/></note>
+		<docTitle>
+			<titlePart type="main">On the Accuracy of Anderson&apos;s Fast N-body Algorithm <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Yu Charlie Hu S. Lennart Johnsson <lb/></docAuthor></byline>
+		<div type="abstract">Abstract <lb/>We present an empirical study of the accuracy-cost tradeoffs of Anderson&apos;s method. <lb/>The various parameters that control the degree of approximation of the computational <lb/>elements and the separateness of interacting computational elements govern both the <lb/>arithmetic complexity and the accuracy of the method. Our experiment shows that for <lb/>a given error requirement, using a near-field containing only nearest neighbor boxes <lb/>and a hierarchy depth that minimizes the number of arithmetic operations minimizes <lb/>the total number of arithmetic operations. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="unknown"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">STATISTICAL LANGUAGE MODELING FOR SPEECH DISFLUENCIES <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Andreas Stolcke Elizabeth Shriberg <lb/></docAuthor></byline>
+		<byline><affiliation>Speech Technology and Research Laboratory <lb/>SRI International,</affiliation></byline>
+		<address>Menlo Park, CA 94025 <lb/></address>
+		<email>stolcke@speech.sri.com <lb/></email> <email>ees@speech.sri.com <lb/></email>
+		<div type="abstract">ABSTRACT <lb/>Speech disfluencies (such as filled pauses, repetitions, restarts) are <lb/>among the characteristics distinguishing spontaneous speech from <lb/>planned or read speech. We introduce a language model that predicts disfluencies probabilistically and uses an edited, fluent context <lb/>to predict following words. The model is based on a generalization <lb/>of the standard N-gram language model. It uses dynamic programming to compute the probability of a word sequence, taking into <lb/>account possible hidden disfluency events. We analyze the model&apos;s performance for various disfluency types on the Switchboard <lb/>corpus. We find that the model reduces word perplexity in the <lb/>neighborhood of disfluency events; however, overall differences <lb/>are small and have no significant impact on recognition accuracy. <lb/>We also note that for modeling of the most frequent type of dis-fluency, filled pauses, a segmentation of utterances into linguistic <lb/>(rather than acoustic) units is required. Our analysis illustrates a <lb/>generally useful technique for language model evaluation based on <lb/>local perplexity comparisons. <lb/></div>
+		<div type="intro">1. MOTIVATION AND OVERVIEW</div>
+		</front>
+</text>
+</tei>

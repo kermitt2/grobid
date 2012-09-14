@@ -1,0 +1,21 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="240"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Interpretable Neural Networks with BP-SOM <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Ton Weijters 1 , Antal van den Bosch 2 , and Jaap van den Herik 3 <lb/></docAuthor></byline>
+		<byline><affiliation>1 Information Technology, Eindhoven University of Technology,</affiliation></byline>
+		<address>The Netherlands <lb/></address>
+		<byline><affiliation>2 ILK / Computational Linguistics, Tilburg University,</affiliation></byline>
+		<address>The Netherlands <lb/></address>
+		<byline><affiliation>3 Department of Computer Science, Universiteit Maastricht,</affiliation></byline>
+		<address>The Netherlands <lb/></address>
+		<div type="abstract">Abstract. Interpretation of models induced by artificial neural networks is often a difficult task. In this paper we focus on a relatively <lb/>novel neural network architecture and learning algorithm, bp-som, that <lb/>offers possibilities to overcome this difficulty. It is shown that networks <lb/>trained with bp-som show interesting regularities, in that hidden-unit <lb/>activations become restricted to discrete values, and that the som part <lb/>can be exploited for automatic rule extraction. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,22 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="438"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<note type="reference">To appear in Proceedings of IEEE Data Compression Conference 1998 Lucent Technologies -- PROPRIETARY <lb/></note>
+		<docTitle>
+			<titlePart type="main">Optimal Multiple Description Transform <lb/>Coding of Gaussian Vectors <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Vivek K Goyal <lb/></docAuthor></byline>
+		<byline><affiliation>Dept. of Elec. Eng. &amp; Comp. Sci. <lb/>University of California, Berkeley <lb/></affiliation></byline>
+		<email>v.goyal@ieee.org <lb/></email>
+		<byline><docAuthor>Jelena Kovacevic <lb/></docAuthor></byline>
+		<byline><affiliation>Bell Laboratories <lb/></affiliation></byline>
+		<address>Murray Hill, NJ <lb/></address>
+		<email>jelena@bell-labs.com <lb/></email>
+		<div type="abstract">Abstract <lb/>Multiple description coding (MDC) is source coding for multiple channels <lb/>such that a decoder which receives an arbitrary subset of the channels may produce a useful reconstruction. Orchard et al. [1] proposed a transform coding <lb/>method for MDC of pairs of independent Gaussian random variables. This paper provides a general framework which extends multiple description transform <lb/>coding (MDTC) to any number of variables and expands the set of transforms <lb/>which are considered. Analysis of the general case is provided, which can be <lb/>used to numerically design optimal MDTC systems. The case of two variables <lb/>sent over two channels is analytically optimized in the most general setting <lb/>where channel failures need not have equal probability or be independent. It <lb/>is shown that when channel failures are equally probable and independent, the <lb/>transforms used in [1] are in the optimal set, but many other choices are possible. A cascade structure is presented which facilitates low-complexity design, <lb/>coding, and decoding for a system with a large number of variables. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

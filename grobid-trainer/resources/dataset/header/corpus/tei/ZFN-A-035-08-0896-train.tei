@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="ZFN-A-035-08-0896"/>
+	</teiHeader>
+	<text xml:lang="de">
+		<front>
+			<titlePage>
+				<docTitle>
+					<titlePart type="main">Die Viskositätsabhängigkeit der Fluoreszenz-<lb/>Anisotropie und der Lebensdauer von Trans-Stilben *<lb/></titlePart>
+				</docTitle>
+				<byline><docAuthor>M. Alicka, R. K. Bauer und A. Kawski</docAuthor><lb/></byline>
+				<byline><affiliation>Luminescence Research Group , Institute of Physics , University of Gdansk , Poland Institute of Physics , N . Copernicus University</affiliation>, <address>Toruri , Poland</address> <lb/></byline>
+				<reference>Z. Naturforsch. 85a, 896-897 (1980); </reference>
+				<note type="submission">eingegangen am 14. Mai 1980 <lb/></note>
+				<note type="english-title">Influence of Viscosity upon the Anisotropic Fluorescence and <lb/>
+Lifetime of trans-StUben<lb/></note>
+			</titlePage>
+			<div type="abstract">The fluorescence anisotropy r and lifetime Tp of trans- <lb/>stilbene in different solvents has been measured and the <lb/>dielectric relaxation time from Perrin and Debye equations <lb/>has been determined. The fluorescence lifetime in the <lb/>viscosity region from 0.321 to 61.92 Nm _2 s, varies <lb/>between 30 and 152 ps.<lb/></div>
+			<div type="intro">Die mittlere Abklingzeit TF des trans-Stilbens in<lb/></div>
+		</front>
+	</text>
+</tei>

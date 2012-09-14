@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="488"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Query Execution Techniques for Caching Expensive Methods <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Joseph M. Hellerstein * Jeffrey F. Naughton <lb/></docAuthor></byline>
+		<byline><affiliation>University of Wisconsin, Department of Computer Sciences <lb/></affiliation></byline>
+		<address>1210 W. Dayton St., Madison, WI 53706 <lb/></address>
+		<email>jmh@cs.berkeley.edu, </email> <email>naughton@cs.wisc.edu <lb/></email>
+		<div type="abstract">Abstract. Object-Relational and Object-Oriented DBMSs allow <lb/>users to invoke time-consuming (expensive) methods in their <lb/>queries. When queries containing these expensive methods are run <lb/>on data with duplicate values, time is wasted redundantly computing methods on the same value. This problem has been studied in <lb/>the context of programming languages, where memoization is the <lb/>standard solution. In the database literature, sorting has been proposed to deal with this problem. We compare these approachesalong <lb/>with a third solution, a variant of unary hybrid hashing which we call <lb/>Hybrid Cache. We demonstrate that Hybrid Cache always dominates memoization, and significantly outperforms sorting in many <lb/>instances. This provides new insights into the tradeoff between hashing and sorting for unary operations. Additionally, our Hybrid Cache <lb/>algorithm includes some new optimizations for unary hybrid hashing, which can be used for other applications such as grouping and <lb/>duplicate elimination. We conclude with a discussion of techniques <lb/>for caching multiple expensive methods in a single query, and raise <lb/>some new optimization problems in choosing caching techniques. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,19 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="533"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Moving target classification and tracking from real-time video <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Alan J. Lipton Hironobu Fujiyoshi Raju S. Patil <lb/></docAuthor></byline>
+		<byline><affiliation>The Robotics Institute. Carnegie Mellon University <lb/></affiliation></byline>
+		<address>5000 Forbes Avenue, Pittsburgh, PA, 15213 <lb/></address>
+		<email>email: fajljhironobujrajug@cs.cmu.edu <lb/></email>
+		<ptr type="web">URL: http://www.cs.cmu.edu/~ vsam <lb/></ptr>
+		<div type="abstract">Abstract <lb/>This paper describes an end-to-end method for extracting moving targets from a real-time video stream, <lb/>classifying them into predefined categories according <lb/>to image-based properties, and then robustly tracking <lb/>them. Moving targets are detected using the pixelwise <lb/>difference between consecutive image frames. A classi-ficatoin metric is applied these targets with a temporal <lb/>consistency constraint to classify them into three categories: human, vehicle or background clutter. Once <lb/>classified, targets are tracked by a combination of temporal differencing and template matching. <lb/>The resulting system robustly identifies targets of <lb/>interest, rejects background clutter, and continually <lb/>tracks over large distances and periods of time despite <lb/>occlusions, appearance changes and cessation of target <lb/>motion. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

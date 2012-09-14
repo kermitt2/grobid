@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="493"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">A Fast Algorithm for Incremental Distance Calculation <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Ming C. Lin and John F. Canny <lb/></docAuthor></byline>
+		<byline><affiliation>University of California, Berkeley <lb/></affiliation></byline>
+		<address>Berkeley, CA 94720 <lb/></address>
+		<div type="abstract">Abstract <lb/>A simple and efficient algorithm for finding the closest points between two convex polyhedra is described <lb/>here. Data from numerous experiments tested on a <lb/>broad set of convex polyhedra on &amp;lt; 3 show that the <lb/>running time is roughly constant for finding closest <lb/>points when nearest points are approximately known <lb/>and is linear in total number of vertices if no special <lb/>initialization is done. This algorithm can be used for <lb/>collision detection, computation of the distance between two polyhedra in three-dimensional space, and <lb/>other robotics problems. It forms the heart of the <lb/>motion planning algorithm of [1]. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

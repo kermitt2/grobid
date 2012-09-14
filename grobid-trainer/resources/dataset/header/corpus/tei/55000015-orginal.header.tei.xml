@@ -1,0 +1,115 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000015-orginal"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<lb/>
+			
+			<note type="other">Home Search Collections Journals About Contact us My IOPscience<lb/></note>
+			
+			<docTitle>
+				<titlePart>Fabrication and characterization of a carbon nanotube-based
+					nanoknife<lb/></titlePart>
+			</docTitle>
+
+			<note type="other">This article has been downloaded from IOPscience. Please scroll down to see the
+				full text article.<lb/></note>
+
+			<reference>2009 Nanotechnology 20 095701<lb/></reference>
+
+			<ptr type="web">(http://iopscience.iop.org/0957-4484/20/9/095701)<lb/></ptr>
+			
+			<note type="other">View the table of contents for this issue, or go to the journal homepage for
+				more<lb/></note>
+
+			<note type="other">Download details:<lb/></note>
+
+			<note type="other">IP Address: 145.64.134.242<lb/></note>
+
+			<note type="other">The article was downloaded on 06/05/2011 at 15:26<lb/> Please note that terms and
+				conditions apply.<lb/></note>
+			
+			<pb/> 
+			
+			<note type="other">IOP PUBLISHING</note>
+			<space dim="horizontal"/>
+			<reference>NANOTECHNOLOGY<lb/></reference> 
+			<reference>Nanotechnology 20 (2009) 095701 (6pp)</reference>
+			<space dim="horizontal"/>
+			<idno>doi:10.1088/0957-4484/20/9/095701<lb/></idno>
+			
+			<docTitle>
+				<titlePart>Fabrication and characterization of a<lb/> carbon nanotube-based
+					nanoknife<lb/></titlePart>
+			</docTitle>
+
+			<byline>
+				<docAuthor>G Singh 1,2 , P Rice 1 , R L Mahajan 2,3,4 and J R McIntosh
+					5<lb/></docAuthor>
+			</byline>
+
+			<byline>
+				<affiliation>1 Department of Mechanical Engineering, University of Colorado
+					at</affiliation>
+			</byline>
+
+			<address>Boulder, CO 80309, USA<lb/></address>
+
+			<byline>
+				<affiliation>2 Institute for Critical Technology and Applied Science, Virginia
+					Polytechnic Institute and<lb/> State University,</affiliation>
+			</byline>
+
+			<address>Blacksburg, VA 24061, USA<lb/></address>
+
+			<byline>
+				<affiliation>3 Department of Mechanical Engineering, Virginia Polytechnic Institute
+					and State University,<lb/></affiliation>
+			</byline>
+
+			<address>Blacksburg, VA 24061, USA<lb/></address>
+
+			<byline>
+				<affiliation>4 Department of Engineering Science Mechanics, Virginia Polytechnic
+					Institute and State<lb/> University,</affiliation>
+			</byline>
+
+			<address>Blacksburg, VA 24061, USA<lb/></address>
+
+			<byline>
+				<affiliation>5 Department of Molecular, Cellular and Developmental Biology,
+					University of Colorado at<lb/></affiliation>
+			</byline>
+
+			<address>Boulder, CO 80309, USA<lb/></address>
+
+			<email>E-mail: gurpreet@vt.edu<lb/></email>
+
+			<note type="submission">Received 15 October 2008, in final form 16 January 2009<lb/></note>
+				<date>Published 11 February 2009<lb/></date> 
+			<ptr type="web">Online at stacks.iop.org/Nano/20/095701<lb/></ptr>
+
+			<div type="abstract">Abstract We demonstrate the fabrication and testing of a prototype
+				microtome knife based on a<lb/> multiwalled carbon nanotube (MWCNT) for cutting ∼100
+				nm thick slices of frozen–hydrated<lb/> biological samples. A piezoelectric-based 3D
+				manipulator was used inside a scanning electron<lb/> microscope (SEM) to select and
+				position individual MWCNTs, which were subsequently<lb/> welded in place using
+				electron beam-induced deposition. The knife is built on a pair of tungsten<lb/>
+				needles with provision to adjust the distance between the needle tips, accommodating
+				various<lb/> lengths of MWCNTs. We performed experiments to test the mechanical
+				strength of a MWCNT<lb/> in the completed device using an atomic force microscope
+				tip. An increasing force was applied<lb/> at the mid-point of the nanotube until
+				failure occurred, which was observed in situ in the SEM.<lb/> The maximum breaking
+				force was approximately (8 × 10 −7 ) N which corresponds well with<lb/> the typical
+				microtome cutting forces reported in the literature. In situ cutting experiments
+				were<lb/> performed on a cell biological embedding plastic (epoxy) by pushing it
+				against the nanotube.<lb/> Initial experiments show indentation marks on the epoxy
+				surface. Quantitative analysis is<lb/> currently limited by the surface asperities,
+				which have the same dimensions as the nanotube.<lb/></div> 
+				<note type="other">M This article features online multimedia enhancements<lb/></note>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>*</marker>
+							<orgName type="department">Department of Food Science</orgName>,
+							<orgName type="department">Food Studies Building</orgName>,
+							<orgName type="institution">University of Reading</orgName>,
+							<address>
+								<addrLine>Whiteknights</addrLine>,
+								<postBox>P.O. Box 226</postBox>,
+								<settlement>Reading</settlement>
+								<postCode>RG6 2AP</postCode>,
+								<country>England</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>*</marker>
+							<orgName type="department">Department of Agricultural Chemistry</orgName>,
+							<orgName type="department">Faculty of Agriculture</orgName>,
+							<orgName type="institution">Hokkaido University</orgName>,
+							<address>
+								<addrLine>Kita-ku</addrLine>,
+								<settlement>Sapporo</settlement>
+								<postCode>060</postCode>,
+								<country>Japan</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

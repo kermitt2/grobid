@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<nite:root nite:id="WO2007038933.HC.chemical-names" xmlns:nite="http://nite.sourceforge.net/">
+   <chem-name nite:id="WO2007038933.HC.chemical-names.1" comment="" name="beta- mercaptoethanol" relevant="false" chebi-id="WO2007038933:429135" epochem-id="EPOCHEM:NEW:COMPOUND:979">
+      <nite:child href="WO2007038933.words.xml#id(WO2007038933_w_9172)..id(WO2007038933_w_9174)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038933.HC.chemical-names.2" comment="" name="beta- mercaptoethanol" relevant="false" chebi-id="WO2007038933:429135" epochem-id="EPOCHEM:NEW:COMPOUND:979">
+      <nite:child href="WO2007038933.words.xml#id(WO2007038933_w_9347)..id(WO2007038933_w_9349)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038933.HC.chemical-names.3" comment="" name="beta- mercaptoethanol" relevant="false" chebi-id="WO2007038933:429135" epochem-id="EPOCHEM:NEW:COMPOUND:979">
+      <nite:child href="WO2007038933.words.xml#id(WO2007038933_w_9553)"/>
+      <nite:child href="WO2007038933.words.xml#id(WO2007038933_w_9555)"/>
+      <nite:child href="WO2007038933.words.xml#id(WO2007038933_w_9554)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038933.HC.chemical-names.4" comment="" name="streptomycin" relevant="false" chebi-id="CHEBI:17076" epochem-id="EPOCHEM:COMPOUND:1690">
+      <nite:child href="WO2007038933.words.xml#id(WO2007038933_w_9182)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038933.HC.chemical-names.5" comment="" name="streptomycin" relevant="false" chebi-id="CHEBI:17076" epochem-id="EPOCHEM:COMPOUND:1690">
+      <nite:child href="WO2007038933.words.xml#id(WO2007038933_w_9357)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038933.HC.chemical-names.6" comment="" name="streptomycin" relevant="false" chebi-id="CHEBI:17076" epochem-id="EPOCHEM:COMPOUND:1690">
+      <nite:child href="WO2007038933.words.xml#id(WO2007038933_w_9563)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038933.HC.chemical-names.7" comment="" name="streptomycin" relevant="false" chebi-id="CHEBI:17076" epochem-id="EPOCHEM:COMPOUND:1690">
+      <nite:child href="WO2007038933.words.xml#id(WO2007038933_w_9695)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038933.HC.chemical-names.8" comment="" name="penicillin" relevant="false" chebi-id="CHEBI:17334" epochem-id="EPOCHEM:NEW:COMPOUND:28">
+      <nite:child href="WO2007038933.words.xml#id(WO2007038933_w_9192)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038933.HC.chemical-names.9" comment="" name="penicillin" relevant="false" chebi-id="CHEBI:17334" epochem-id="EPOCHEM:NEW:COMPOUND:28">
+      <nite:child href="WO2007038933.words.xml#id(WO2007038933_w_9367)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038933.HC.chemical-names.10" comment="" name="penicillin" relevant="false" chebi-id="CHEBI:17334" epochem-id="EPOCHEM:NEW:COMPOUND:28">
+      <nite:child href="WO2007038933.words.xml#id(WO2007038933_w_9572)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038933.HC.chemical-names.11" comment="" name="penicillin" relevant="false" chebi-id="CHEBI:17334" epochem-id="EPOCHEM:NEW:COMPOUND:28">
+      <nite:child href="WO2007038933.words.xml#id(WO2007038933_w_9705)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038933.HC.chemical-names.12" comment="" name="caicium" relevant="false" chebi-id="WO2007038933:373742" epochem-id="EPOCHEM:NEW:COMPOUND:1963">
+      <nite:child href="WO2007038933.words.xml#id(WO2007038933_w_6825)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038933.HC.chemical-names.13" comment="" name="water" relevant="false" chebi-id="CHEBI:15377" epochem-id="EPOCHEM:COMPOUND:5421">
+      <nite:child href="WO2007038933.words.xml#id(WO2007038933_w_3528)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038933.HC.chemical-names.14" comment="" name="water" relevant="false" chebi-id="CHEBI:15377" epochem-id="EPOCHEM:COMPOUND:5421">
+      <nite:child href="WO2007038933.words.xml#id(WO2007038933_w_7595)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038933.HC.chemical-names.15" comment="" name="mitomycin C" relevant="false" chebi-id="CHEBI:27504" epochem-id="EPOCHEM:COMPOUND:4289">
+      <nite:child href="WO2007038933.words.xml#id(WO2007038933_w_9203)"/>
+      <nite:child href="WO2007038933.words.xml#id(WO2007038933_w_9202)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038933.HC.chemical-names.16" comment="" name="Coomassie Brilliant Blue" relevant="false" chebi-id="WO2007038933:418591" epochem-id="EPOCHEM:NEW:COMPOUND:2067">
+      <nite:child href="WO2007038933.words.xml#id(WO2007038933_w_12940)..id(WO2007038933_w_12941)"/>
+      <nite:child href="WO2007038933.words.xml#id(WO2007038933_w_12939)"/>
+   </chem-name>
+</nite:root>

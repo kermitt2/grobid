@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="04337856"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+		<titlePart>Proceedings of the<lb/> 22 nd IEEE/NPSS Symposium on<lb/> Fusion Engineering – SOFE 07<lb/> </titlePart>
+	</docTitle>
+	
+	<note type="other">IEEE Catalog Number: 07CH37901C<lb/></note>
+	
+	<address>Albuquerque, New Mexico<lb/></address>
+
+	<date>June 17-21, 2007</date>
+
+		</front>
+	</text>
+</tei>

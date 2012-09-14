@@ -1,0 +1,22 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="711"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">INTEGRATING FINE-GRAINED MESSAGE PASSING IN CACHE COHERENT <lb/>SHARED MEMORY MULTIPROCESSORS (*) <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>David K. Poulsen <lb/></docAuthor></byline>
+		<byline><affiliation>Kuck and Associates, Inc. <lb/></affiliation></byline>
+		<address>1906 Fox Drive <lb/>Champaign, IL 61821 <lb/></address>
+		<note type="phone">217-356-2288 <lb/></note>
+		<email>poulsen@kai.com <lb/></email>
+		<byline><docAuthor>and <lb/>Pen-Chung Yew <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science <lb/>University of Minnesota <lb/></affiliation></byline>
+		<address>4-192 EE/CS Building <lb/>200 Union Street SE <lb/>Minneapolis, MN 55455 <lb/></address>
+		<email>yew@cs.umn.edu <lb/></email>
+		<note type="grant">(*) This work was supported in part by the National Science Foundation under grant nos. NSF MIP 93-07910 and <lb/>NSF MIP 89-20891, the Department of Energy under grant no. DOE DE FG02-85ER25001, the National Security <lb/>Agency, and an IBM Resident Study Fellowship. <lb/>This work was performed while the authors were with the Center for Supercomputing Research and Development, <lb/>University of Illinois at Urbana-Champaign, Urbana, IL 61801. <lb/></note>
+		</front>
+</text>
+</tei>

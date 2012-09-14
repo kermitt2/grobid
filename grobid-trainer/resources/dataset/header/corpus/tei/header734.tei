@@ -1,0 +1,31 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="735"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">*Broadcasting on Meshes with Worm-Hole Routing <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Michael Barnett <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science <lb/>University of Idaho <lb/></affiliation></byline>
+		<address>Moscow, Idaho 83844-1010 <lb/></address>
+		<email>mbarnett@cs.uidaho.edu <lb/></email>
+		<byline><docAuthor>David G. Payne <lb/></docAuthor></byline>
+		<byline><affiliation>Supercomputer Systems Division <lb/>Intel Corporation <lb/></affiliation></byline>
+		<address>15201 N.W. Greenbrier Pkwy <lb/>Beaverton, Oregon 97006 <lb/></address>
+		<email>payne@ssd.intel.com <lb/></email>
+		<byline><docAuthor>Robert A. van de Geijn <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Sciences <lb/>The University of Texas at Austin <lb/></affiliation></byline>
+		<address>Austin, Texas 78712-1188 <lb/></address>
+		<email>rvdg@cs.utexas.edu <lb/></email>
+		<byline><docAuthor>Jerrell Watts <lb/></docAuthor></byline>
+		<byline><affiliation>Scalable Concurrent Programming Laboratory <lb/>California Institute of Technology <lb/></affiliation></byline>
+		<address>Pasadena, California 91125 <lb/></address>
+		<email>jwatts@scp.caltech.edu <lb/></email>
+		<note type="other">Original Version: November 2, 1993 <lb/>Revised Version: September 21, 1994 <lb/></note>
+		<div type="abstract">Abstract <lb/>We address the problem of broadcasting on mesh architectures with arbitrary (non-power-two) dimensions. It is assumed that such mesh architectures employ cut-through or worm-hole routing. The <lb/>primary focus is on avoiding network conflicts in the various proposed algorithms. We give algorithms <lb/>for performing a conflict-free minimum-spanning tree broadcast, a pipelined algorithm that is similar to <lb/>Ho and Johnsson&apos;s EDST algorithm for hypercubes, and a novel scatter-collect approach that is a natural <lb/>choice for communication libraries due to its simplicity. Results obtained on the Intel Paragon system <lb/>are included. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

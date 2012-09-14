@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005138"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<lb/>
+			<docTitle>
+				<titlePart>Virtual<lb/> Time II: Storage Management<lb/> in Distributed<lb/>
+					Simulation<lb/></titlePart>
+			</docTitle>
+
+			<byline>
+				<docAuthor>David Jefferson<lb/></docAuthor>
+			</byline>
+
+			<email>jefferson@lanai.cs.ucla.edu<lb/></email>
+
+			<byline>
+				<affiliation>UCLA<lb/></affiliation>
+			</byline>
+			<date>May 1990<lb/></date>
+
+			<div type="abstract">Abstract:<lb/> The main contribution<lb/> of this paper is the<lb/>
+				Cancelback Protocol, an extension of the<lb/> Time Warp mechanism that handles
+				stor-<lb/> age management.<lb/> It includes both fossil<lb/> collection, the
+				recovery of storage for mes-<lb/> sages and states that can never again influ-<lb/>
+				ence the computation,<lb/> and cancelback, the<lb/> recovery of storage assigned to
+				messages<lb/> and states at times so far in the future that<lb/> their memory would
+				be better used for<lb/> more immediate purposes.<lb/> It guarantees<lb/> that Time
+				Warp is optimal in its storage re-<lb/> quirements when run in shared memory,<lb/>
+				i.e. Time Warp will successfully complete a<lb/> simulation using no more space than
+				it<lb/> would take to execute the same simulation<lb/> with the sequential event
+				list algorithm.<lb/> This is better by a factor of two than the<lb/> only previously
+				published result. Without<lb/> this protocol (or equivalent) Time Warp's<lb/>
+				behavior can be unstable; hence it should<lb/> be considered an essential part of
+				Time<lb/> Warp mechanism, rather than simply a re-<lb/> finement.<lb/> In addition
+				we also prove that asynchron-<lb/> ous conservative algorithms, including all<lb/>
+				of the Chandy-Misra-Bryant<lb/> (CMB) mecha-<lb/> nisms, are not optimal; they
+				cannot neces-<lb/>sarily execute a simulation in the same<lb/>
+				amount of space as a sequential execution.<lb/>
+				In some cases a simulation requiring space<lb/>
+				n+k when executed sequentially might re-<lb/>
+				quire O(nk) space when executed on n pro-<lb/>
+				cessors by CMB.<lb/>
+			</div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="unknown"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Uniform Actions in Asynchronous Distributed <lb/>Systems <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Dalia Malki Ken Birman Aleta Ricciardi Andre Schiper x <lb/></docAuthor></byline>
+		<idno>TR 94-1447 <lb/></idno>
+		<byline><affiliation>Department of Computer Science, Cornell University <lb/></affiliation></byline>
+		<div type="abstract">Abstract <lb/>We develop necessary conditions for the development of asynchronous distributed <lb/>software that will perform uniform actions (events that if performed by any process, <lb/>must be performed at all processes). The paper focuses on dynamic uniformity, which <lb/>differs from the classical problems in that processes continually leave and join the <lb/>ongoing computation. Here, we first treat a static version of the problem (lacking joins), <lb/>and then extend the results so obtained to also include joins. Our results demonstrate <lb/>that in contrast to Consensus, which cannot be solved in asynchronous systems with <lb/>even a single faulty process, dynamic uniformity can be solved using a failure detection <lb/>mechanism that makes bounded numbers of mistakes. Because dynamic uniformity <lb/>arises in systems that maintain safety within a &quot;primary partition&quot; of a network, our <lb/>paper provides a rigorous characterization of the framework upon which several existing <lb/>distributed programming environments are based. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

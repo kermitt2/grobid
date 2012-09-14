@@ -1,0 +1,22 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="1045"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Generating Referring Expressions in Multimodal Contexts <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Susanne Salmon-Alt <lb/></docAuthor></byline>
+		<byline><affiliation>Loria ? UMR 7503 <lb/></affiliation></byline>
+		<address>Campus Scientifique, B.P.239 <lb/> 54506 Vandoeuvre-lès-Nancy, France <lb/></address>
+		<email>Susanne.Alt@loria.fr <lb/></email>
+		<byline><docAuthor>Laurent Romary <lb/></docAuthor></byline>
+		<byline><affiliation>Loria ? UMR 7503 <lb/></affiliation></byline>
+		<address>Campus Scientifique, B.P.239 <lb/> 54506 Vandoeuvre-lès-Nancy, France <lb/></address>
+		<email>Laurent.Romary@loria.fr <lb/></email>
+		<div type="abstract">Abstract <lb/> This paper adresses the need of structuring <lb/> the global context set into subsets or <lb/>  domains in order to explain adequately the <lb/> use of referring expressions in a multimodal <lb/> corpus. We underline, in particular, the <lb/> importance of taking into account not only <lb/> the discourse, but also perception and <lb/> gestures for the construction of these <lb/> domains. We propose a unified context <lb/> model where the context is built up <lb/> dynamically from different information <lb/> sources and show that this way of context <lb/> modelling predicts correctly the use of <lb/> referring expressions in a corpus of <lb/> instructional dialogues. <lb/></div>
+		<div type="intro">1 Need of a multimodal context model <lb/></div>
+		</front>
+</text>
+</tei>

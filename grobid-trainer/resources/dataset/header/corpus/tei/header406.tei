@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="409"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Inferring Reduced Ordered Decision Graphs <lb/> of Minimal Description Length <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Arlindo L. Oliveira * <lb/>Alberto Sangiovanni-Vincentelli <lb/></docAuthor></byline>
+		<byline><affiliation>Dept. of EECS, UC Berkeley,</affiliation></byline>
+		<address>Berkeley CA 94720 <lb/></address>
+		<date>july 1, 1994 <lb/></date>
+		<div type="abstract">Abstract <lb/>This work describes an approach for the inference of reduced ordered decision graphs from training sets. Reduced <lb/>ordered decision graphs (RODGs) are graphs where the variables can only be tested in accordance with a pre-specified <lb/>order and no redundant nodes exist. RODGs have several interesting properties that has made them the representation <lb/>of choice for the manipulation of Boolean functions in the logic synthesis community. <lb/>We derive a RODG representation of the function implemented by a decision tree. This decision tree can be <lb/>obtained from a training set using any one of the different algorithms proposed to date. This RODG is then used <lb/>as the starting point for an algorithm that derives another RODG of minimal description length. The reduction in <lb/>complexity is obtained by performing incremental changes in the RODG. By using ordered decision diagrams, the <lb/>task of identifying common subgraphs is made much simpler than the identification of common sub-trees in a decision <lb/>tree. <lb/>Ordered decision graphs require that a variable ordering be specified in advance. The algorithm that derives such <lb/>an ordering is based on a reordering algorithm commonly used that finds a locally optimal ordering by swapping the <lb/>order of two adjacent variables. <lb/>These algorithms are tested in a set of examples that are known to be hard to solve using decision trees. The <lb/>results show that when an effective reduction of the description length is obtained, significant gains in generalization <lb/>accuracy can be achieved. In all casesthe generalization accuracy of the final RODGwas better than the generalization <lb/>accuracy of the decision tree that was used as the starting point. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,59 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005092"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<lb/>
+			<reference>Composites: Part A 41 (2010) 146–153<lb/></reference>
+			<note type="other">Contents lists available at ScienceDirect<lb/></note>
+			<note type="other">Composites: Part A<lb/></note>
+			<ptr type="web">journal homepage: www.elsevier.com/locate/compositesa<lb/></ptr>
+			
+			<docTitle>
+				<titlePart>Production of biopolymer composites by particle bonding<lb/></titlePart>
+			</docTitle>
+
+			<byline>
+				<docAuthor>Sanghoon Kim * , Jingyuan Xu, Sean Liu<lb/></docAuthor>
+			</byline>
+
+			<byline>
+				<affiliation>National Center for Agricultural Utilization Research, Agricultural
+					Research Service, USDA 1, </affiliation>
+			</byline>
+
+			<address>1815 N. University Street, Peoria, IL 61604, USA<lb/></address>
+
+			<note type="other">a r t i c l e i n f o<lb/></note>
+			<note type="submission">
+				Article history:<lb/> Received 29
+				September 2008<lb/> Received in revised form 14 July 2009<lb/> 
+			</note>
+				
+			<date>Accepted 28 September 2009<lb/></date>
+			
+			<keywords>Keywords:<lb/> A. Polymer-matrix composites<lb/> B. Mechanical
+				properties<lb/> D. Mechanical testing<lb/> E. Compression moulding<lb/>
+			</keywords>
+			<space dim="horizontal"/>
+			<div type="abstract">
+				a b s t r a c t<lb/> This paper describes a new technology to produce biopolymer composites at
+				room temperature. During<lb/> the process, micrometer-scale raw material is coated
+				with zein that has strong adhesive property, which<lb/> is then compressed to form a
+				rigid material. Since this technology does not require purification of the raw<lb/>
+				materials, various types of compounds can be used as component materials. The
+				coating of particles with<lb/> zein makes use of the unique property of zein in
+				aqueous ethanol solution. Zein molecules adsorb to the<lb/> surface of hydrophilic
+				particles when the ethanol content of solvent mixture increases. Formation of<lb/>
+				aggregates is followed to form large agglomerates. Removal of solvents from the
+				agglomerates yields<lb/> the final product. Biopolymer composites thus formed showed
+				a broad range of compressive strengths<lb/> depending on the hardness of the
+				starting raw material used as a base component.<lb/>
+			</div>
+			<note type="copyright">Published by Elsevier Ltd.<lb/></note>
+
+		</front>
+	</text>
+</tei>

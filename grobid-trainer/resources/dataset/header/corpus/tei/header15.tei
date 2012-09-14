@@ -1,0 +1,20 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="16"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Scheduling Issues in the Co-Synthesis of <lb/>Reactive Real-Time Systems 1 <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Pai Chou, Elizabeth Walkup, Gaetano Borriello 2 <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science and Engineering <lb/> University of Washington <lb/></affiliation></byline>
+		<address>Seattle, WA 98195 <lb/></address>
+		<idno>Technical Report 94-09-04 <lb/></idno>
+		<date>April 20, 1994 <lb/></date>
+		<note type="reference">1 An edited version of ths report appears in IEEE Micro, August 1994. <lb/></note><note type="grant">2 This work was supported by an NSF Graduate Fellowship (Walkup), a PYI Award (MIP-8858782), <lb/>and by the ARPA/CSTO Microsystems Program under an ONR monitored contract (N00014-91-J-4041). The authors&apos; email addresses are</note> 
+		<email>fchou,walkup,gaetanog@cs.washington.edu. <lb/></email>
+		<pb/>
+		</front>
+</text>
+</tei>

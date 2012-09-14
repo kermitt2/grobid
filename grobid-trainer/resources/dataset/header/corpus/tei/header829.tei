@@ -1,0 +1,19 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="unknown"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Modelling rational inquiry in non-ideal agents <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Antonio Moreno <lb/></docAuthor></byline>
+		<byline><affiliation>Escola Tecnica Superior d&apos;Enginyeria <lb/>Departament d&apos;Enginyeria Informatica <lb/>Universitat Rovira i Virgili (URV) <lb/></affiliation></byline>
+		<address>Carretera de Salou, s/n. 43006-Tarragona <lb/></address>
+		<email>amoreno@etse.urv.es <lb/></email>
+		<div type="abstract">Abstract <lb/>The construction of rational agents is one of the goals that has been pursued in <lb/>Artificial Intelligence (AI). In most of the architectures that have been proposed for <lb/>this kind of agents, its behaviour is guided by its set of beliefs. In our work, rational <lb/>agents are those systems that are permanently engaged in the process of rational <lb/>inquiry; thus, their beliefs keep evolving in time, as a consequence of their internal <lb/>inference procedures and their interaction with the environment. Both AI researchers <lb/>and philosophers are interested in having a formal model of this process, and this is <lb/>the main topic in our work. <lb/>Beliefs have been formally modelled in the last decades using doxastic logics. The <lb/>possible worlds model and its associated Kripke semantics provide an intuitive semantics for these logics, but they seem to commit us to model agents that are logically <lb/>omniscient and perfect reasoners. We avoid these problems by replacing possible <lb/>worlds by conceivable situations, which are all the situations that the modelled agent <lb/>is capable of considering. <lb/>In this document we show how this notion of conceivable situations may be used <lb/>to model the process of rational inquiry in which a non-ideal rational agent is engaged. We define a wide class of agents, called rational inquirers, which are a general <lb/>abstraction of any kind of non-ideal agent. We show how the beliefs of these kind of <lb/>agents evolve in time as a consequence of a multi-dimensional belief analysis, and we <lb/>use the framework of conceivable situations in order to model this evolution. <lb/></div>
+		<keywords>Keywords: rational inquiry, doxastic logics, logical omniscience, perfect reasoning, possible <lb/>worlds, Kripke semantics, dynamic multi-dimensional belief analysis <lb/></keywords>
+		<pb/>
+		</front>
+</text>
+</tei>

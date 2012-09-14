@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="ZNB-1947-2b-0161"/>
+	</teiHeader>
+	<text xml:lang="de">
+		<front>
+			<lb/>
+			<docTitle>
+				<titlePart>Die Nebenaugen der Spinnen (Araneae)<lb/></titlePart>
+			</docTitle>
+
+			<byline>
+				<docAuthor>Von HEINRICH HOMANN<lb/></docAuthor>
+			</byline>
+
+			<byline>
+				<affiliation>Aus dem 1. Physikalischen und dem Zoologischen Institut der Universität
+					Güttingen<lb/></affiliation>
+			</byline>
+
+			<reference>(Z. Naturforschg. 2b, 161—167 [1947];</reference>
+
+			<note type="submission">eingegangen am 22. März 1947)<lb/></note>
+
+			<div type="abstract">Es wird über den Polymorphismus bei den Nebenaugen der Araneen
+				berichtet und ver-<lb/>sucht, auf Grund dieser Ergebnisse systematische Reihen
+				aufzustellen.<lb/>
+			</div>
+
+		</front>
+	</text>
+</tei>

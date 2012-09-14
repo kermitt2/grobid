@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005041"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<lb/>
+
+			<docTitle>
+				<titlePart>WDM ETHERNET PASSIVE<lb/>OPTICAL NETWORKS<lb/></titlePart>
+			</docTitle>
+
+			<byline>
+				<docAuthor>Michael P. McGarry and Martin Reisslein,</docAuthor>
+			</byline>
+
+			<byline>
+				<affiliation>Arizona State University<lb/></affiliation>
+			</byline>
+
+			<byline>
+				<docAuthor>Martin Maier, </docAuthor>
+			</byline>
+
+			<affiliaton> Institut National de la Recherche Scientifique (INRS)<lb/>
+			</affiliaton>
+
+			<div type="abstract"> ABSTRACT<lb/> WDM EPONs not only allow for cautious
+				pay-as-you-<lb/> grow upgrades of single-channel TDM EPONs but also<lb/> avoid
+				linearly increasing polling cycle times for an increas-<lb/> ing number of ONUs. In
+				this article, we first provide a com-<lb/> prehensive overview of the
+				state-of-the-art of TDM EPONs<lb/> and recently reported dynamic bandwidth
+				allocation algo-<lb/> rithms, including decentralized scheduling schemes. After<lb/>
+				reviewing previous work on WDM EPONs, we address the<lb/> requirements of WDM
+				upgraded EPONs and make recom-<lb/> mendations on an evolutionary WDM upgrade at the
+				archi-<lb/> tecture, protocol, and dynamic bandwidth allocation<lb/> algorithm
+				levels, taking backward compatibility with MPCP<lb/> and future-proofness against
+				arbitrary WDM ONU struc-<lb/> tures into account. We describe and compare online
+				and<lb/> offline scheduling paradigms for WDM EPONs. Our simula-<lb/> tion results
+				indicate that online scheduling can achieve<lb/> lower delays, especially at high
+				load<lb/>
+			</div>
+
+			<note type="other">S18</note>
+			<space dim="horizontal"/>
+			<note type="other">0163-6804/06/$20.00</note>
+			<note type="copyright">© 2006 IEEE</note>
+			<space dim="horizontal"/>
+			<reference>IEEE Optical Communications February 2006<lb/></reference>
+
+		</front>
+	</text>
+</tei>

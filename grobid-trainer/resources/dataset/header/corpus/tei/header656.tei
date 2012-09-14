@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="658"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Towards a Cost-Effective Parallel Data Mining Approach <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Zolt�n J�rai, Aashu Virmani, Liviu Iftode <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science <lb/>Rutgers University <lb/></affiliation></byline>
+		<address>Piscataway, NJ 08854 <lb/></address>
+		<email>{jarai,avirmani}@paul.rutgers.edu, </email> <email>iftode@cs.rutgers.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>Massive rule induction has recently emerged as one of the <lb/>powerful data mining techniques. The problem is known to <lb/>be exponential in the size of the attributes, and given its ever <lb/>increasing use, can greatly benefit from parallelization. <lb/>In this paper, we study cost-effective approaches to paral-lelize rule generation algorithms. In particular, we consider <lb/>the propositional rule generation algorithm of the Discovery <lb/>Board system, and present our design and implementation of <lb/>a parallel algorithm for the same task. We then present some <lb/>early performance results of our parallelization scheme on <lb/>hardware and software distributed shared memory multiprocessors. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

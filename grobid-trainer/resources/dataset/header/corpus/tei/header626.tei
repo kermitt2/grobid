@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="628"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">DISTRIBUTED CONTROL IN OPTICAL WDM NETWORKS <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>X. Yuan R. Gupta R. Melhem <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science <lb/>University of Pittsburgh <lb/></affiliation></byline>
+		<address>Pittsburgh, PA 15260 <lb/></address>
+		<div type="abstract">ABSTRACT <lb/>This paper describes and evaluates distributed <lb/>wavelength reservation protocols for all-optical WDM <lb/>networks. These protocols are essential for applying <lb/>WDM techniques to large scale all-optical networks. <lb/>The protocols ensure that the wavelengths on the links <lb/>along a path are reserved before communication takes <lb/>place. A message is transmitted using the reserved <lb/>wavelengths and remains in the optical domain utill <lb/>it reaches the destination. Based upon the timing at <lb/>which the reservation is performed, the protocols are <lb/>classified into two categories: forward reservation protocols and backward reservation protocols. Although <lb/>forward reservation protocols are simpler, our performance study shows that backward reservation protocols provide better performance. <lb/></div>
+		<div type="intro">INTRODUCTION</div>
+		</front>
+</text>
+</tei>

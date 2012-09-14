@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<nite:root nite:id="WO2007038874.HC.ligand-names" xmlns:nite="http://nite.sourceforge.net/">
+   <ligand-name nite:id="WO2007038874.HC.ligand-names.1" comment="" name="hydroxy groups" relevant="false" chebi-id="WO2007038874:41975" epochem-id="EPOCHEM:NEW:LIGAND:595">
+      <nite:child href="WO2007038874.words.xml#id(WO2007038874_w_3470)"/>
+      <nite:child href="WO2007038874.words.xml#id(WO2007038874_w_3469)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007038874.HC.ligand-names.2" comment="" name="hydroxy groups" relevant="false" chebi-id="WO2007038874:41975" epochem-id="EPOCHEM:NEW:LIGAND:595">
+      <nite:child href="WO2007038874.words.xml#id(WO2007038874_w_3484)"/>
+      <nite:child href="WO2007038874.words.xml#id(WO2007038874_w_3483)"/>
+   </ligand-name>
+</nite:root>

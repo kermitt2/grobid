@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="ZFN-A-035-08-0852"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<titlePage>
+				<docTitle>
+					<titlePart type="main">1,2,4-Triazole Complexes XII *<lb/>Magnetic properties ol Fe ( 1, 2, 4-triazole)2 ( NCS)2, a quasi two-dimensional S = £. <lb/>antiferromagnet with hidden canting. <lb/></titlePart>
+				</docTitle>
+				<byline><docAuthor>D. W. Engelfriet, W. L. Groeneveld</docAuthor><lb/></byline>
+				<byline><affiliation>Department Inorganic Chemistry , Gorlaeus Laboratoria</affiliation>, <address>Rijksuniversiteit, Leiden, <lb/> The Netherlands</address> <lb/></byline>
+                                <byline>and <lb/><docAuthor>G. M. Nap</docAuthor><lb/></byline>
+                                <byline><affiliation>Kamerlingh Onnes Laboratorium</affiliation>, <address>Rijksuniversiteit , Leiden , The Netherlands</address> <lb/></byline>
+				<reference>Z. Naturforsch. 85a, 852-864 (1980); </reference>
+				<note type="submission">received June 12  1980 <lb/></note>
+			</titlePage>
+			<div type="abstract">Fe(trz)2(NCS)2 has been investigated by means of magnetic susceptibility and magnetization <lb/>measurements on single crystals at temperatures 1.8—300 K, heat capacity measurements at <lb/>1.5—90 K and neutron powder diffraction at 1.2 K. The compound orders antiferromagnetically <lb/>at T c — 8.46(2 ) K. The susceptibilities along the orthorhombic axes are strongly anisotropic, <lb/>the a axis being the preferred direction. The susceptibility data along a and the heat capacity <lb/>results are in reasonable agreement with the predictions for the quadratic layer, S = J. Ising <lb/>antiferromagnet, with an intralayer exchange constant J Ik = — 7.2(2 ) K. Below T c the mag- <lb/>netization curve along the a axis reveals a metamagnetic transition at 1.74 kOe. In accordance <lb/>with the Ising-like properties, a direct transition from the antiferromagnetic to the paramagnetic <lb/>state is observed along a at 50 kOe. <lb/>Hidden canting is found to be present. At 1.2 K the compound appears to be monoclinically <lb/>distorted with a = 88.3° ( with respect to Aba2, the space group at 300 K ). The magnetic struc- <lb/>ture consists probably of four sublattices with the magnetic moments lying in the planes z = 0 <lb/>and z = J ( with respect to the distorted cell in Aba2 ) along directions that are at an angle of <lb/>8° with the a axis. <lb/>Ligand bonding parameters are discussed in terms of the angular overlap model.<lb/></div>
+			<div type="intro">Introduction<lb/></div>
+		</front>
+	</text>
+</tei>

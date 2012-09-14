@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="ZNC-1988-43c-0403"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Effect of Chlorsulfuron, a Potent Inhibitor of Acetohydroxyacid<lb/> Synthase, on Metabolism of Claviceps purpurea<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Walter Maier, Brigitte Schumann, and Detlef Gröger<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institut für Biochemie der Pflanzen der Akademie der Wissenschaften der DDR,<lb/></affiliation>
+	</byline>
+
+	<address>DDR-4050 Halle/Saale, Weinberg 3<lb/></address>
+
+	<reference>Z. Naturforsch. 43c, 403-407 (1988);</reference>
+
+	<note type="submission">received December 29, 1987/February 12, 1988<lb/></note>
+
+	<keyword>Chlorsulfuron, Claviceps purpurea, Alkaloid Pattern, Acetohydroxyacid Synthase<lb/></keyword>
+
+	<div type="abstract">Chlorsulfuron (CS) is a potent sulfonylurea herbicide inhibiting specifically acetohydroxyacid<lb/> synthase which catalyzes the first step in the biosynthesis of branched-chain amino acids in plant<lb/> cells, bacteria and yeast. The peptide portion of some ergot alkaloids contain inter alia branched-<lb/>chain amino acids. The influence of CS on growth and alkaloid formation in Claviceps was<lb/> studied. In an ergotoxine strain growth is inhibited by chlorsulfuron in the range of 10—100 UM.<lb/> Under CS influence ergosine is accumulated besides ergotoxines. Growth inhibition caused by CS<lb/> could be reversed by addition of L-valine (~ 35 mM), but neither by leucine nor isoleucine.<lb/> Ergosine did not occur under these conditions. Acetohydroxyacid synthase (AHAS) from<lb/> Claviceps purpurea was partially purified. AHAS preparations are not inhibited even by high<lb/> concentrations of chlorsulfuron.<lb/> </div>
+
+	<div type="introduction">Ergot alkaloids comprise an important group of<lb/></div>
+
+		</front>
+	</text>
+</tei>

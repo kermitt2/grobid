@@ -1,0 +1,29 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="495"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">High-Performance Sorting on Networks of Workstations <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Andrea C. Arpaci-Dusseau <lb/></docAuthor></byline>
+		<byline><affiliation>Computer Science Division <lb/>University of California, Berkeley <lb/></affiliation></byline>
+		<email>dusseau@cs.berkeley.edu <lb/></email>
+		<byline><docAuthor>Remzi H. Arpaci-Dusseau <lb/></docAuthor></byline>
+		<byline><affiliation>Computer Science Division <lb/>University of California, Berkeley <lb/></affiliation></byline>
+		<email>remzi@cs.berkeley.edu <lb/></email>
+		<byline><docAuthor>David E. Culler <lb/></docAuthor></byline>
+		<byline><affiliation>Computer Science Division <lb/>University of California, Berkeley <lb/></affiliation></byline>
+		<email>culler@cs.berkeley.edu <lb/></email>
+		<byline><docAuthor>Joseph M. Hellerstein <lb/></docAuthor></byline>
+		<byline><affiliation>Computer Science Division <lb/>University of California, Berkeley <lb/></affiliation></byline>
+		<email>jmh@cs.berkeley.edu <lb/></email>
+		<byline><docAuthor>David A. Patterson <lb/></docAuthor></byline>
+		<byline><affiliation>Computer Science Division <lb/>University of California, Berkeley <lb/></affiliation></byline>
+		<email>patterson@cs.berkeley.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>We report the performance of NOW-Sort, a collection of sorting implementations on a Network of Workstations (NOW). <lb/>We find that parallel sorting on a NOW is competitive to sorting on the large-scale SMPs that have traditionally held the <lb/>performance records. On a 64-node cluster, we sort 6.0 GB <lb/>in just under one minute, while a 32-node cluster finishes the <lb/>Datamation benchmark in 2.41 seconds. <lb/>Our implementations can be applied to a variety of disk, <lb/>memory, and processor configurations; we highlight salient <lb/>issues for tuning each component of the system. We evaluate the use of commodity operating systems and hardware for <lb/>parallel sorting. We find existing OS primitives for memory <lb/>management and file access adequate. Due to aggregate communication and disk bandwidth requirements, the bottleneck <lb/>of our system is the workstation I/O bus. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

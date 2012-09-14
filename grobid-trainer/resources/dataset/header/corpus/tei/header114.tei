@@ -1,0 +1,19 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="115"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Integrated Signal Processing <lb/>and Signal Understanding 1 <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Victor Lesser, Hamid Nawab , <lb/>Malini Bhandaru, Norman Carver, <lb/>Zarko Cvetanovic, Izaskun Gallastegi, <lb/>Frank Klassner <lb/></docAuthor></byline>
+		<idno>COINS Technical Report 91-34 <lb/></idno>
+		<date>November 1991 <lb/></date>
+		<byline><affiliation>Electrical and Computer Engineering Dept. <lb/>Boston University <lb/></affiliation></byline>
+		<address>44 Cummington Street <lb/>Boston, Massachusetts 02125 <lb/></address>
+		<div type="abstract">Abstract <lb/>This report outlines the IPUS paradigm, named for Integrated Processing and Understanding of Signals, which permits sophisticated interaction between theory-based problem <lb/>solving in signal processing and heuristic problem-solving in signal interpretation. The need <lb/>for such a paradigm arises in signal understanding domains that require the processing of <lb/>complicated interacting signals under variable signal-to-noise ratios. One such application is <lb/>sound understanding, in the context of which we report on a testbed experiment illustrating <lb/>the functionality of key IPUS architecture components. <lb/></div>
+		<note type="grant">1 This work was supported by the Office of Naval Research under University Research Initiative</note>
+		</front>
+</text>
+</tei>

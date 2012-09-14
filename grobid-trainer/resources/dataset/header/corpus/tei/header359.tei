@@ -1,0 +1,23 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="364"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">A Visualization Model for Concurrent Systems <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Mark Astley and Gul A. Agha <lb/></docAuthor></byline>
+		<byline><affiliation>Open Systems Laboratory <lb/>Department of Computer Science <lb/></affiliation></byline>
+		<address>1304 W. Springfield Avenue <lb/></address>
+		<byline><affiliation>University of Illinois at Urbana-Champaign <lb/></affiliation></byline>
+		<address>Urbana, IL 61801, USA <lb/></address>
+		<note type="phone">Phone: (217) 244-3087 <lb/>Fax: (217) 333-3501 <lb/></note>
+		<email>Email: {fastley � aghag}@cs.uiuc.edu <lb/></email>
+		<keywords>Keywords: Actors, Distributed Systems, Program Visualization <lb/></keywords>
+		<div type="abstract">Abstract <lb/>Concurrent systems maintain a distributed state and thus require coordination and synchronization between <lb/>components to ensure consistency. To provide a coherent design approach to concurrent systems, recent work <lb/>has employed an object-based methodology which emphasizes interactions through well-defined interfaces. The <lb/>Actor model has provided formal reasoning about distributed object systems. Nonetheless, due to the complex <lb/>interactions among components and the high volume of observable information produced, understanding and <lb/>reasoning about concurrent algorithms in terms of simple interactions is a difficult task. Coordination patterns, <lb/>which abstract over simple interactions, are not biased by low-level event orderings and are the appropriate <lb/>mechanism for reasoning about concurrent algorithms. We outline a methodology for visualizing coordination <lb/>patterns in concurrent algorithms which emphasizes observable interactions and causal connections between <lb/>objects. We introduce visualizers as a linguistic mechanism for mapping coordination patterns to visualization. <lb/>Visualizers are specified separately from algorithm code and thus respect code integrity. Moreover, visualizers <lb/>may be implemented strictly in terms of object interfaces and thus preserve object encapsulation. <lb/></div>
+		<note type="other">Author for contact. <lb/></note>
+		<pb/>
+		</front>
+</text>
+</tei>

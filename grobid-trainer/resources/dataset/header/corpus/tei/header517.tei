@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="520"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Experience with Rover Navigation for Lunar-Like Terrains <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Reid Simmons, Eric Krotkov, Lalitesh Katragadda, and Martial Hebert <lb/></docAuthor></byline>
+		<byline><affiliation>Robotics Institute, Carnegie Mellon University <lb/></affiliation></byline>
+		<address>5000 Forbes Avenue, Pittsburgh, PA 15213 <lb/></address>
+		<email>reids@cs.cmu.edu <lb/></email>
+		<div type="intro">Introduction</div>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,22 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="629"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Contingency Selection in Plan Generation <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Nilufer Onder <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science <lb/>University of Pittsburgh <lb/></affiliation></byline>
+		<address>Pittsburgh, PA 15260 <lb/></address>
+		<note type="other">nilufer@cs.pitt.edu <lb/></note>
+		<byline><docAuthor>Martha E. Pollack <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science <lb/>and Intelligent Systems Program <lb/>University of Pittsburgh <lb/></affiliation></byline>
+		<address>Pittsburgh, PA 15260 <lb/></address>
+		<note type="other">pollack@cs.pitt.edu <lb/></note>
+		<div type="abstract">Abstract <lb/>A key question in conditional planning is: how many, <lb/>and which of the possible execution failures should be <lb/>planned for? One cannot, in general, plan for all the <lb/>possible failures because the search space is too large. <lb/>One cannot ignore all the possible failures, or one will <lb/>fail to produce sufficiently flexible plans. In this paper, <lb/>we describe an approach to conditional planning that <lb/>attempts to identify the contingencies that contribute <lb/>the most to a plan&apos;s overall utility. Plan generation <lb/>proceeds by handling the most important contingencies first, extending the plan to include actions that <lb/>will be taken in case the contingency fails. We discuss <lb/>the representational issues that must be addressed in <lb/>order to implement such an algorithm, and present an <lb/>example which illustrates our approach. <lb/></div>
+		<div type="intro">Introduction</div>
+		</front>
+</text>
+</tei>

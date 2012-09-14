@@ -1,0 +1,19 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="428"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">THE AUTOMATED HIGHWAY SYSTEM: A TRANSPORTATION <lb/>TECHNOLOGY FOR THE 21ST CENTURY <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>M. Broucke and P. Varaiya 1 <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Electrical Engineering and Computer Science <lb/>University of California,</affiliation></byline>
+		<address>Berkeley CA 94720 <lb/></address>
+		<email>mire, varaiya@eclair.eecs.berkeley.edu <lb/></email>
+		<div type="abstract">Abstract. The current vehicle-highway system has reached a plateau in its ability <lb/>to meet the demand for moving goods and people. We sketch an architecture for <lb/>an automated highway system or AHS. The architecture can be realized by several <lb/>designs that differ in terms of performance and sophistication. We describe one design <lb/>that could triple capacity and reduce travel time; guarantee collision-free operation <lb/>in the absence of malfunctions; limit performance degradation in the case of faults; <lb/>and reduce emissions by half. We summarize evidence suggesting that the design can <lb/>be implemented. We indicate how the design can be adapted to different urban and <lb/>rural scenarios and how a standard land use model can show the impact of AHS on <lb/>urban density. We conclude with a critique of AHS. <lb/></div>
+		<keywords>Keywords. Automated vehicles, hierarchical control <lb/></keywords>
+		<div type="intro">1. INTRODUCTION</div>
+		</front>
+</text>
+</tei>

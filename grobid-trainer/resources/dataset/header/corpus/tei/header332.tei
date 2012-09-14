@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="337"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<idno>104 <lb/></idno>
+		<docTitle>
+			<titlePart type="main">New-Value Logging in the Echo <lb/>Replicated File System <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Andy Hisgen, Andrew Birrell, Charles Jerian, <lb/>Timothy Mann, Garret Swart <lb/></docAuthor></byline>
+		<date>June 23, 1993 <lb/></date>
+		<byline><affiliation>Systems Research Center <lb/></affiliation></byline>
+		<address>130 Lytton Avenue <lb/>Palo Alto, California 94301 <lb/></address>
+		<pb/>
+		</front>
+</text>
+</tei>

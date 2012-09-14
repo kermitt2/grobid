@@ -1,0 +1,73 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005033"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<lb/>
+			
+			<reference>Computers and Structures 88 (2010) 1092–1109<lb/></reference>
+			
+			<note type="other">Contents lists available at ScienceDirect<lb/></note>
+			<note type="other">Computers and Structures<lb/></note>
+			<ptr type="web">journal homepage: www.elsevier.com/locate/compstruc<lb/></ptr>
+			
+			
+			<docTitle>
+				<titlePart>A methodology for the structural analysis of composite wind turbine
+					blades<lb/> under geometric and material induced instabilities<lb/>
+				</titlePart>
+			</docTitle>
+
+			<byline>
+				<docAuthor>L.C.T. Overgaard a, * , E. Lund a , P.P. Camanho b<lb/></docAuthor>
+			</byline>
+
+			<byline>
+				<affiliation>a AAU/ME, Department of Mechanical Engineering, Aalborg
+					University,</affiliation>
+			</byline>
+
+			<address>Pontoppidanstraede 101, DK-9220 Aalborg East, Denmark<lb/></address>
+
+			<byline>
+				<affiliation>b DEMEGI, Faculdade de Engenharia, Universidade do Porto,</affiliation>
+			</byline>
+
+			<address>Rua Dr. Roberto Frias, 4200-465 Porto, Portugal<lb/></address>
+
+			<note type="other">a r t i c l e i n f o</note>
+			<lb/> 
+			<note type="submission">	
+				Article history:<lb/> Received 16
+				December 2008<lb/> Accepted 19 June 2010<lb/></note>
+				
+			<date>Available online 23 July 2010<lb/></date>
+			
+			
+			<keywords>	
+				Keywords:<lb/> Nonlinear finite element<lb/> Solution strategy<lb/> Composite
+				materials<lb/> Damage mechanics<lb/> Buckling Delamination
+			</keywords>
+			<space dim="horizontal"/> 
+			<div type="abstract">	
+				a b s t r a c t<lb/>
+				The objective of this work is to develop a modeling strategy for the structural
+				analysis of large three-<lb/> dimensional laminated composite structures undergoing
+				geometric and material induced instability. A<lb/> sub-modeling approach is used
+				with multiple mixed-mode linear-softening cohesive elements and<lb/> linear-elastic
+				solid-shell elements through the thickness. A localized sub-plane control strategy
+				is<lb/> adopted for tracking multiple crack formations and the propagation of
+				multiple delamination fronts. Sim-<lb/> ple element and solver benchmarks are used
+				to demonstrate the adopted methods. Finally, the adopted<lb/> methods are
+				demonstrated in an engineering case study of a generic laminated composite wind
+				turbine<lb/> blade.
+			</div>
+			<lb/>
+			<note type="copyright">&#169; 2010 Elsevier Ltd. All rights reserved.</note>
+			<lb/>
+
+		</front>
+	</text>
+</tei>

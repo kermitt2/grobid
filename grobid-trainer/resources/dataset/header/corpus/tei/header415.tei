@@ -1,0 +1,19 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="418"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Planar-Adaptive Routing: Low-cost Adaptive Networks for <lb/>Multiprocessors <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Andrew A. Chien and Jae H. Kim <lb/></docAuthor></byline>
+		<email>achien@cs.uiuc.edu </email> <email>kim@cs.uiuc.edu <lb/></email>
+		<byline><affiliation>Department of Computer Science <lb/>University of Illinois at Urbana-Champaign <lb/></affiliation></byline>
+		<address>1304 W. Springfield Avenue <lb/>Urbana, IL 61801 <lb/></address>
+		<div type="abstract">Abstract <lb/>Network throughput can be increased by allowing mul-tipath, adaptive routing. Adaptive routing allows more <lb/>freedom in the paths taken by messages, spreading load <lb/>over physical channels more evenly. The flexibility of <lb/>adaptive routing introduces new possibilities of deadlock. Previous deadlock avoidance schemes in k-ary n-cubes require an exponential number of virtual channels <lb/>[17]. We describe a family of deadlock-free routing algorithms, called planar-adaptive routing algorithms which <lb/>require only a constant number of virtual channels, independent of network size and dimension. Planar-adaptive <lb/>routing algorithms reduce the complexity of deadlock <lb/>prevention by reducing the number of choices at each <lb/>routing step. In the fault-free case, planar-adaptive <lb/>networks are guaranteed to be deadlock-free. In the <lb/>presence of network faults, the planar-adaptive router <lb/>can be extended with misrouting to produce a working network which remains provably deadlock free and <lb/>is provably livelock free. In addition, planar adaptive <lb/>networks can simultaneously support both in-order and <lb/>adaptive, out-of-order packet delivery. <lb/>Planar-adaptive routing is of practical significance. It <lb/>provides the simplest known support for deadlock-free <lb/>adaptive routing in k-ary n-cubes of more than two <lb/>dimensions (with k &amp;gt; 2). Restricting adaptivity reduces the hardware complexity, improving router speed <lb/>or allowing additional performance-enhancing network <lb/>features. The structure of planar-adaptive routers is <lb/>amenable to efficient implementation. <lb/></div>
+		<keywords>Keywords: Multicomputers, Routing Networks, Adaptive Routing, Deadlock Avoidance, Transmission-Order <lb/>Preservation, Fault Tolerance <lb/></keywords>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

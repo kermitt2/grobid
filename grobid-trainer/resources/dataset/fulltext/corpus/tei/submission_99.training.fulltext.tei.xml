@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="293"/>
+	</teiHeader>
+	<text xml:lang="en">
+			<front>COHERENT CONTROL OF THE EMISSION IN A SINGLE<lb/> CONJUGATED QUANTUM WIRE<lb/> J. Holcman, A. Al Choueiry, S. Hameau, T. Barisien, L. Legrand *<lb/> Institut des NanoSciences de Paris, UMR 7588/CNRS, Université Pierre et Marie Curie,<lb/> 4, place Jussieu, 75252 Paris Cedex 05, France<lb/></front>
+
+			<p>We report on the first coherent control experiments on a purely electronic exciton state in an extended<lb/> and quasi-perfect single organic quantum wire, a polydiacetylene chain in the crystalline matrix of its own<lb/> monomer.<lb/></p> 
+			
+			<p>On such a system, we have previously evidenced the spatial macroscopic coherence of the excitonic<lb/> emission <ref type="biblio">[1]</ref>. We have also performed the first coherent control of a photocreated vibronic state on a single<lb/> chain and deduced its short coherence time directly <ref type="biblio">[2]</ref>.<lb/></p> 
+			
+			<p>Here two phase-locked picosecond pulses are used to excite the first purely electronic excitonic state (zero<lb/> phonon) of the chain. The chain is in a first step excited at the same position by the two consecutive pulses and<lb/> we measure its time-integrated emission. The relative phase between the phase-locked laser pulses is varied by<lb/> means of a stabilized scanning interferometer. With such a set up, the relative phase ϕ can be precisely adjusted<lb/> as well as the delay τ between the two pulses. For a given delay τ, the intensities of the emission spectra for<lb/> ϕ = 0 and π, respectively I(τ,0) and I(τ,π), is measured and the emission contrast, C, defined as<lb/> (I(τ,0)-I(τ,π))/(I(τ,0)+I(τ,π)) is computed.<lb/></p> 
+			
+			<p>The experiments are performed in the weak photon-exciton coupling regime. The influence of dynamical<lb/> disorder on the overall decoherence time T 2 is explored as shown in the figure where the characteristic<lb/> deceasing times are deduced from a first approach through a two levels model.<lb/></p> 
+			
+			<p>By means of microscopic imaging spectroscopy using a micro-photoluminescence setup coupled to an<lb/> imaging spectrometer the emission of the organic quantum wire is also imaged when the relative phase between<lb/> pulses is varied. Coherent control over the whole chain length is in this manner demonstrated <ref type="biblio">[3]</ref>.<lb/></p> 
+			
+			<p>Moreover preliminary results of coherent control when the chain is excited on two spatially separated<lb/> places are presented.<lb/></p>
+
+			<head>References<lb/></head>
+
+			<bibl> <label>[1]</label> F. Dubin, R. Melet, T. Barisien, R. Grousson, L. Legrand, M. Schott, V. Voliotis, Nat. Phys. 2 2006, pp. 32-35.<lb/></bibl>
+
+			<bibl> <label>[2]</label> L. Legrand, A. Al Choueiry, J. Holcman, A. Enderlin, R. Melet, T. Barisien, V. Voliotis, R. Grousson, M. Schott,<lb/> Phys. Status Solidi B. 245 2008, pp. 2702-2707.<lb/></bibl>
+
+			<bibl> <label>[3]</label> J. Holcman et al., « Coherent Control of the Optical Emission in a Single Organic Quantum Wire», in preparation<lb/> for Nanoletters.<lb/></bibl>
+
+			<note place="footnote">*<lb/> corresponding author : laurent.legrand@insp.jussieu.fr<lb/></note>
+
+			<figure>
+				<head>Figure:</head>
+
+				<figDesc>Contrast C = (Ι(τ,0)−Ι(τ,π))/(Ι(τ,0)+Ι(τ,π)) for a single<lb/> chain at two temperatures.</figDesc>
+			</figure>
+
+	</text>
+</tei>

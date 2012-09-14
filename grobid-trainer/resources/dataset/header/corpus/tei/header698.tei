@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="700"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Within the Letter of the Law: open-textured planning <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Kathryn E. Sanders <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science <lb/>University of Maryland <lb/></affiliation></byline>
+		<address>College Park, MD 20742 <lb/></address>
+		<email>sanders@cs.umd.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>Most case-based reasoning systems have used a <lb/>single &quot;best&quot; or &quot;most similar&quot; case as the basis <lb/>for a solution. For many problems, however, <lb/>there is no single exact solution. Rather, there <lb/>is a range of acceptable answers. We use cases <lb/>not only as a basis for a solution, but also to <lb/>indicate the boundaries within which a solution <lb/>can be found. We solve problems by choosing <lb/>some point within those boundaries. <lb/>In this paper, I discuss this use of cases with <lb/>illustrations from chiron, a system I have implemented in the domain of personal income <lb/>tax planning. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

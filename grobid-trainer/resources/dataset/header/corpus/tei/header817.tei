@@ -1,0 +1,15 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="818"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">What&apos;s Decidable about Hybrid Automata? <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Thomas A. Henzinger 2 Peter W. Kopke 2 Anuj Puri 3 Pravin Varaiya 3 <lb/></docAuthor></byline>
+		<div type="abstract">Abstract. Hybrid automata model systems with both <lb/>digital and analog components, such as embedded control programs. Many verification tasks for such programs <lb/>can be expressed as reachability problems for hybrid automata. By improving on previous decidability and undecidability results, we identify the precise boundary between decidability and undecidability of the reachability <lb/>problem for hybrid automata. <lb/>On the positive side, we give an (optimal) PSPACE <lb/>reachability algorithm for the case of initialized rectangular automata, where all analog variables follow trajectories within piecewise-linear envelopes and are reinitialized <lb/>whenever the envelope changes. Our algorithm is based <lb/>on a translation of an initialized rectangular automaton <lb/>into a timed automaton that defines the same timed language. The translation has practical significance for verification, because it guarantees the termination of symbolic <lb/>procedures for the reachability analysis of initialized rectangular automata. <lb/>On the negative side, we show that several slight generalizations of initialized rectangular automata lead to an <lb/>undecidable reachability problem. In particular, we prove <lb/>that the reachability problem is undecidable for timed automata with a single stopwatch. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

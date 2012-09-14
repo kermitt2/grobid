@@ -1,0 +1,19 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="405"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Robust IP Watermarking Methodologies for Physical Design <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Andrew B. Kahng, Stefanus Mantik, Igor L. Markov, Miodrag Potkonjak, <lb/>Paul Tucker , Huijuan Wang and Gregory Wolfe <lb/></docAuthor></byline>
+		<byline><affiliation>UCLA Computer Science Dept.,</affiliation></byline>
+		<address>Los Angeles, CA 90095-1596 <lb/></address>
+		<byline><affiliation>UCSD Computer Science &amp; Engineering Dept.,</affiliation></byline>
+		<address>La Jolla, CA 92093-0114 <lb/></address>
+		<div type="abstract">Abstract <lb/>Increasingly popular reuse-based design paradigms create a pressing need for authorship enforcement techniques that protect the intellectual property rights of designers. We develop the first intellectual property protection protocols for embedding design watermarks at the physical design level. We demonstrate that these protocols are transparent with respect to existing industrial tools and <lb/>design flows, and that they can embed watermarks into real-world <lb/>industrial designs with very low implementation overhead (as measured by such standard metrics as wirelength, layout area, number <lb/>of vias, routing congestion and CPU time). On several industrial <lb/>test cases, we obtain extremely strong, tamper-resistant proofs of <lb/>authorship for placement and routing solutions. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

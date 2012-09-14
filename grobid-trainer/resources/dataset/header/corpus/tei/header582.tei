@@ -1,0 +1,25 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="584"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Lexicographic Bit Allocation for MPEG Video <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Dzung T. Hoang <lb/></docAuthor></byline>
+		<byline><affiliation>Sony Semiconductor of America <lb/></affiliation></byline>
+		<address>3300 Zanker Road, MS SJ3C3 <lb/>San Jose, CA 95134 <lb/></address>
+		<email>dth@ricochet.net <lb/></email>
+		<byline><docAuthor>Elliot L. Linzer <lb/></docAuthor></byline>
+		<byline><affiliation>C-Cube Microsystems <lb/></affiliation></byline>
+		<address>One Water Street, 2nd Floor <lb/>White Plains, NY 10601 <lb/></address>
+		<email>elliot.linzer@c-cube.com <lb/></email>
+		<byline><docAuthor>Jeffrey Scott Vitter <lb/></docAuthor></byline>
+		<byline><affiliation>Duke University <lb/></affiliation></byline>
+		<address>Box 90129 <lb/>Durham, NC 27708-0129 <lb/></address>
+		<email>jsv@cs.duke.edu <lb/></email>
+		<pb/>
+		</front>
+</text>
+</tei>

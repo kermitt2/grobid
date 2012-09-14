@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="unknown"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">State Reconstruction for Determining Predictability <lb/>in Driven Nonlinear Acoustical Systems <lb/></titlePart>
+		</docTitle>
+		<note type="degree">Diploma Thesis <lb/></note>
+		<byline><affiliation>MEDIA LABORATORY <lb/>Massachusetts Institute of Technology <lb/></affiliation></byline>
+		<note type="degree">Professor Neil Gershenfeld <lb/>Institut fur Elektrische Nachrichtentechnik <lb/>Rheinisch-Westphalische Technische Hochschule Aachen <lb/>Univ. Professor Dr.-Ing. H.D. Luke <lb/></note>
+		<byline><docAuthor>by <lb/>Bernd Schoner <lb/></docAuthor></byline>
+		<date>May 1996 <lb/></date>
+		<pb/>
+		</front>
+</text>
+</tei>

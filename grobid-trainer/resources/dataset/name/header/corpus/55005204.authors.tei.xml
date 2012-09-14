@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								by
+								<forename>Einat</forename>
+								<surname>Magal</surname>
+								<marker>1, 2</marker>,
+							</persName>
+							<persName>
+								<forename>Noam</forename>
+								<surname>Weisbrod</surname>
+								<marker>2</marker>,
+							</persName>
+							<persName>
+								<forename>Alexander</forename>
+								<surname>Yakirevich</surname>
+								<marker>2</marker>,
+							</persName>
+							<persName>
+								<forename>Daniel</forename>
+								<surname>Kurtzman</surname>
+								<marker>3</marker>, and
+							</persName>
+							<persName>
+								<forename>Yoseph</forename>
+								<surname>Yechieli</surname>
+								<marker>2</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,72 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="419.full"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<lb/>
+			<reference>Biostatistics (2008), 9, 3, pp. 419–431<lb/></reference>
+
+			<idno>doi:10.1093/biostatistics/kxm041<lb/></idno>
+
+			<date>Advance Access publication on December 3, 2007<lb/></date>
+
+			<docTitle>
+				<titlePart>Predicting renal graft failure using multivariate<lb/> longitudinal
+					profiles<lb/></titlePart>
+			</docTitle>
+
+			<byline>
+				<docAuthor>STEFFEN FIEUWS * , GEERT VERBEKE<lb/></docAuthor>
+			</byline>
+
+			<byline>
+				<affiliation>Biostatistical Centre, Katholieke Universiteit Leuven,</affiliation>
+			</byline>
+
+			<address>Leuven, Belgium<lb/></address>
+
+			<email>steffen.fieuws@med.kuleuven.be<lb/></email>
+
+			<byline>
+				<docAuthor>BART MAES<lb/></docAuthor>
+			</byline>
+
+			<byline>
+				<affiliation>Department of Nephrology, H.-Hartziekenhuis,</affiliation>
+			</byline>
+
+			<address>Roeselare-Menen, Belgium<lb/></address>
+
+			<byline>
+				<docAuthor>YVES VANRENTERGHEM<lb/></docAuthor>
+			</byline>
+
+			<byline>
+				<affiliation>Department of Nephrology, University Hospital
+					Gasthuisberg,</affiliation>
+			</byline>
+
+			<address>Leuven, Belgium<lb/></address>
+
+			<div type="abstract">SUMMARY Patients who have undergone renal transplantation are
+				monitored longitudinally at irregular time intervals<lb/> over 10 years or more.
+				This yields a set of biochemical and physiological markers containing valuable<lb/>
+				information to anticipate a failure of the graft. A general linear, generalized
+				linear, or nonlinear mixed<lb/> model is used to describe the longitudinal profile
+				of each marker. To account for the correlation between<lb/> markers, the univariate
+				mixed models are combined into a multivariate mixed model (MMM) by specify-<lb/>ing
+				a joint distribution for the random effects. Due to the high number of markers, a
+				pairwise modeling<lb/> strategy, where all possible pairs of bivariate mixed models
+				are fitted, is used to obtain parameter estimates<lb/> for the MMM. These estimates
+				are used in a Bayes rule to obtain, at each point in time, the prognosis for<lb/>
+				long-term success of the transplant. It is shown that allowing the markers to be
+				correlated can improve<lb/> this prognosis.<lb/></div>
+
+			<keyword>Keywords: Discriminant analysis; High dimensional; Joint modeling; Longitudinal
+				profiles; Multivariate mixed<lb/> models.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

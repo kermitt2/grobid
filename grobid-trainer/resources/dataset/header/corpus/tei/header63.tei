@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="64"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Low-Energy Asynchronous Memory Design <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Jose A. Tierno Alain J. Martin <lb/></docAuthor></byline>
+		<byline><affiliation>California Institute of Technology <lb/></affiliation></byline>
+		<address>Pasadena, CA 91125 <lb/></address>
+		<div type="abstract">Abstract <lb/>We introduce the concept of energy per operation as <lb/>a measure of performance of an asynchronous circuit. <lb/>We show how to model energy consumption based on <lb/>the high-level language specification. This model is independent of voltage and timing considerations. We <lb/>apply this model to memory design. We show first <lb/>how to dimension a memory array, and how to break <lb/>up this memory array into smaller arrays to minimize <lb/>the energy per access. We then show how to use cache <lb/>memory and pre-fetch mechanisms to further reduce <lb/>energy per access. <lb/></div>
+		<keywords>Keywords: Low-energy, low-power, asynchronous <lb/>design, memory design. <lb/></keywords>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

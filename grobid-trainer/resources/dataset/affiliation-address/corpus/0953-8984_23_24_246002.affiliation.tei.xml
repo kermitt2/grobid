@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="department">Department of Physics</orgName>,
+							<orgName type="institution">University of Guilan</orgName>,
+							<address>
+								<postCode>41335-1914</postCode>,
+								<settlement>Rasht</settlement>,
+								<country>Iran</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="department">Department of Physics</orgName>,
+							<orgName type="institution">Shahrood University of Technology</orgName>,
+							<address>
+								<settlement>Shahrood</settlement>
+								<postCode>36199-95161</postCode>,
+								<country>Iran</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>3</marker>
+							<orgName type="department">School of Physics</orgName>,
+							<orgName type="institution">Institute for Research in Fundamental Sciences (IPM)</orgName>,
+							<address>
+								<settlement>Tehran</settlement>
+								<postCode>19395-5531</postCode>,
+								<country>Iran</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,20 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="400"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<byline><affiliation>M.I.T Media Laboratory Perceptual Computing Section </affiliation></byline>
+		<idno>Technical Report No. 368 <lb/></idno>
+		<note type="reference">Appears in: Fourth European Conference on Computer Vision, Cambridge, UK, April 1996. <lb/></note>
+		<docTitle>
+			<titlePart type="main">Generalized Image Matching: <lb/>Statistical Learning of Physically-Based Deformations <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Chahab Nastar, Baback Moghaddam and Alex Pentland <lb/></docAuthor></byline>
+		<byline><affiliation>Perceptual Computing Section, The Media Laboratory, <lb/>Massachusetts Institute of Technology <lb/></affiliation></byline>
+		<address>20 Ames Street, Cambridge MA 02139, U.S.A. <lb/></address>
+		<div type="abstract">Abstract <lb/>We describe a novel approach for image matching <lb/>based on deformable intensity surfaces. In this <lb/>approach, the intensity surface of the image <lb/>is modeled as a deformable 3D mesh in the <lb/>(x; ; I(x; )) space. Each surface point has 3 <lb/>degrees of freedom, thus capturing fine surface <lb/>changes. A set of representative deformations <lb/>within a class of objects (e.g. faces) are statistically learned through a Principal Components Analysis, thus providing a priori knowledge <lb/>about object-specific deformations. We demonstrate the power of the approach by examples <lb/>such as image matching and interpolation of <lb/>missing data. Moreover this approach dramatically reduces the computational cost of solving <lb/>the governing equation for the physically based <lb/>system by approximately three orders of magni <lb/>tude. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>a</marker>
+							<orgName type="department">Department of Mechanical Engineering and Applied Mechanics</orgName>,
+							<orgName type="institution">North Dakota State University</orgName>,
+							<address>
+								<settlement>Fargo</settlement>,
+								<region>ND</region>
+								<postCode>58105</postCode>,
+								<country>USA</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>b</marker>
+							<orgName type="laboratory">The Key Laboratory of Beijing City on Preparation and Processing of Novel Polymer Materials</orgName>,
+							<orgName type="institution">Beijing University of Chemical Technology</orgName>,
+							<address>
+								<settlement>Beijing</settlement>
+								<postCode>100029</postCode>,
+								<country>China</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

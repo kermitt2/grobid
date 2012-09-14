@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005116"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<lb/>
+			<docTitle>
+				<titlePart>A New Aspect of Dual Basis for Efficient Field<lb/>
+					Arithmetic<lb/></titlePart>
+			</docTitle>
+
+			<byline>
+				<docAuthor>Chang-Hyi Lee 1 and Jong-In Lim 2<lb/></docAuthor>
+			</byline>
+
+			<byline>
+				<affiliation>1 Samsung Advanced Institute of Technology<lb/></affiliation>
+			</byline>
+
+			<email>chang@saitgw.sait.samsung.co.kr<lb/></email>
+
+			<byline>
+				<affiliation>2 Korea University<lb/></affiliation>
+			</byline>
+
+			<email>jilim@tiger.korea.ac.kr<lb/></email>
+
+			<div type="abstract">Abstract. In this paper we consider a special type of dual basis
+				for finite<lb/> fields, GF (2 m ), where the variants of m are presented in section
+				2. We<lb/> introduce our field representing method for efficient field
+				arithmetic(such<lb/> as field multiplication and field inversion). It reveals a very
+				effective role<lb/> for both software and hardware(VLSI) implementations, but the
+				aspect<lb/> of hardware design of its structure is out of this manuscript and so,
+				here,<lb/> we deal only the case of its software implementation(the efficiency
+				of<lb/> hardware implementation is appeared in another article submitted to<lb/>
+				IEEE Transactions on Computers). A brief description of several advan-<lb/> tageous
+				characteristics of our method is that (1) the field multiplication<lb/> in GF (2 m )
+				can be constructed only by m + 1 vector rotations and the<lb/> same amount of vector
+				XOR operations, (2) there is required no addi-<lb/> tional work load such as basis
+				changing(from standard to dual basis or<lb/> from dual basis to standard basis as
+				the conventional dual based arith-<lb/> metic does), (3) the field squaring is only
+				bit-by-bit permutation and it<lb/> has a good regularity for its implementation, and
+				(4) the field inversion<lb/> process is available to both cases of its
+				implementation using Fermat's<lb/> Theorem and using almost inverse algorithm[14],
+				especially the case of<lb/> using the almost inverse algorithm has an additional
+				advantage in find-<lb/> ing(computing) its complete inverse element(i.e., there is
+				required no<lb/> pre-computed table of the values, x −k , k = 1, 2, . .
+				.).<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="210"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Towards the Assessment of Logics for <lb/>Concurrent Actions <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Choong-Ho Yi <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer and Information Science <lb/> Linkoping University <lb/></affiliation></byline>
+		<address>581 83 Linkoping, Sweden <lb/></address>
+		<email>E-mail: choyi@ida.liu.se <lb/></email>
+		<div type="abstract">Abstract <lb/>We have introduced concurrency into the framework of Sandewall. The resulting formalism is capable of reasoning about interdependent as well <lb/>as independent concurrent actions. Following <lb/>Sandewall&apos;s systematical method, we have then <lb/>applied the entailment criterion PCM to selecting <lb/>intended models of common sense theories where <lb/>concurrent actions are allowed, and proved that <lb/>the criterion leads to only intended models for a <lb/>subset of such theories. <lb/></div>
+		<div type="intro">Introduction</div>
+		</front>
+</text>
+</tei>

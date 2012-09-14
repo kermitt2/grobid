@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../jsp/xmlverbatimwrapper.xsl"?> 
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<marker>1</marker>
+							<affiliation>
+								<orgName type="department">Institut für Theoretische Physik</orgName>,
+								<orgName type="institution">Goethe Universität</orgName>
+								<address>
+									<settlement>Frankfurt</settlement>,
+									<country key="DE">Germany<lb/></country>
+								</address>
+							</affiliation>	
+							
+							<marker>2</marker> 
+							<affiliation>		
+								<orgName type="department">Department of Physics</orgName>,
+								<orgName type="institution">Duke University</orgName>,
+								<address>
+									<settlement>Durham</settlement>,
+									<region type="state" n="NC">NC</region>
+									<postCode>27708</postCode>,
+									<country key="US">United States<lb/></country> 
+								</address>
+							</affiliation>
+							
+							<marker>3</marker> 
+							<affiliation>
+								<orgName type="department">Frankfurt Institute for Advanced Studies (FIAS)</orgName>,
+								<address>
+									<addrLine>Ruth-Moufang-Str. 1</addrLine>,
+									<postCode>60438<lb/></postCode>
+									<settlement>Frankfurt</settlement>,
+									<country key="DE">Germany<lb/></country>
+								</address>
+							</affiliation>
+						</author>	
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</TEI>

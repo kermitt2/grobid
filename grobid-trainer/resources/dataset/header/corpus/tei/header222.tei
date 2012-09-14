@@ -1,0 +1,20 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="223"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<byline><affiliation>DEPARTMENT OF STATISTICS <lb/>University of Wisconsin <lb/></affiliation></byline>
+		<address>1210 West Dayton St. <lb/>Madison, WI 53706 <lb/></address>
+		<idno>TECHNICAL REPORT NO. 910 <lb/></idno>
+		<date>December 21, 1993 <lb/></date>
+		<docTitle>
+			<titlePart type="main">Behavior Near Zero of the Distribution of GCV Smoothing <lb/>Parameter Estimates 1 <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>by <lb/>Grace Wahba and Yuedong Wang <lb/></docAuthor></byline>
+		<note type="grant">1 Supported by the National Science Foundation under Grant DMS-9121003 and the National Eye Institute under <lb/>Grant R01 EY09946.</note>
+		<email>e-mail wahba@stat.wisc.edu, </email> <email>wang@stat.wisc.edu <lb/></email>
+		<pb/>
+		</front>
+</text>
+</tei>

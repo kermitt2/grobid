@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+<listBibl>
+
+	<bibl><title level="j">Bioresource Technology</title> <biblScope type="vol">100</biblScope> (<date>2009</date>) <biblScope type="pp">1246–1251</biblScope></bibl>
+
+</listBibl>
+</tei>

@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="652"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<byline><affiliation>RICE UNIVERSITY <lb/></affiliation></byline>
+		<docTitle>
+			<titlePart type="main">Synchronization, Coherence, and Consistency for <lb/>High Performance Shared-Memory <lb/>Multiprocessing <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>by <lb/>Sandhya Dwarkadas <lb/></docAuthor></byline>
+		<note type="degree">A Thesis Submitted <lb/>in Partial Fulfillment of the <lb/>Requirements for the Degree <lb/>Doctor of Philosophy <lb/>Approved, Thesis Committee: <lb/>J Robert Jump, Co-Chairman <lb/>Professor <lb/>Electrical and Computer Engineering <lb/>James B. Sinclair, Co-Chairman <lb/>Associate Professor <lb/>Electrical and Computer Engineering <lb/>John K. Bennett <lb/>Assistant Professor <lb/>Electrical and Computer Engineering <lb/>Ken Kennedy <lb/>Professor <lb/>Computer Science <lb/>Houston, Texas <lb/></note>
+		<date>September, 1992 <lb/></date>
+		<pb/>
+		</front>
+</text>
+</tei>

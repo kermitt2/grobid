@@ -1,0 +1,29 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="ZFN-A-036-01-0051"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<titlePage>
+				<docTitle>
+					<titlePart type="main">Production of Polycrystalline »-Ti02-Layers for Photoelectrochemical Purpose<lb/></titlePart>
+				</docTitle>
+				<byline><docAuthor>K. J. Hartig, J. Lichtscheidl, and N. Getoff</docAuthor><lb/></byline>
+				<byline><affiliation>Institut für Theoretische Chemie und Strahlenchemie der Universität Wien <lb/></affiliation>
+und <affiliation>Ludwig Boltzmann Institut für Strahlenchemie</affiliation>, <address>Wien, Österreich</address><lb/></byline>
+				<reference>Z. Naturforsch. 86«, 51-56 (1981); </reference>
+				<note type="submission">received September 18, 1980<lb/></note>
+			</titlePage>
+			<div type="abstract">The preparation of highly photoactive, polycrystalline n-TiOa-semiconductors by thermo- <lb/>
+chemical oxidation of Titanium metal sheets was investigated systematically. The optimum <lb/>
+temperature in an oxygen atmosphere was found to be between 550 °C and 650 °C for a period <lb/>
+of 10—30 min. Careful etching of the Titanium surface prior to oxidation is a decisive step in <lb/>
+the production process. The growth, adhesion on the substrate and photoefficiency of the Ti(>2- <lb/>
+crystals were studied under various experimental conditions. TiOj-Iayers prepared under optimum <lb/>
+conditions showed a photocurrent higher than 2 mA* cm-2 in 0.1 mol * dm-3 KCl as electrolyte <lb/>
+and about 6 mA • cm-2 in 1 mol • dm-3 KOH, respectively. The overall energy conversion was <lb/>
+»?^3.5%. <lb/></div>
+			<div type="intro">1. Introduction<lb/></div>
+		</front>
+	</text>
+</tei>

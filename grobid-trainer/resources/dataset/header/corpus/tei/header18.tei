@@ -1,0 +1,20 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="19"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">On Hamiltonian Triangulations in Simple Polygons <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Giri NARASIMHAN 1 <lb/></docAuthor></byline>
+		<email>e-mail: giri@next1.msci.memphis.edu <lb/></email>
+		<byline><affiliation>Dept. of Mathematical Sciences <lb/> The University of Memphis <lb/></affiliation></byline>
+		<address>Memphis TN 38152 <lb/></address>
+		<div type="abstract">Abstract <lb/>A simple polygon P is said to have a Hamilitonian Triangulation if it has a triangulation <lb/>whose dual graph contains a Hamiltonian path. Such triangulations are useful in fast <lb/>rendering engines in Computer Graphics. Arkin et al. [AHMS] observed that a polygon <lb/>has a Hamiltonian triangulation if and only if it is Discretely Straight Walkable, a concept <lb/>that is a discrete version of Straight Walkability concept as introduced by Icking and Klein <lb/>[IK]. Using this characterization, Arkin et al. also showed an algorithm to recognize such <lb/>polygons in time that is linear in the size of the visibility polygon of the given polygon P . <lb/>The size of the visbility polygon of P could be quadratic in the size of P and hence their <lb/>algorithm could be very inefficient even for nearly convex polygons. <lb/>We give a new characterization of polygons with Hamiltonian triangulations. We use <lb/>this characterization to present the following algorithms: <lb/>* An O(n log n)-time algorithm to recognize polygons with a Hamiltonian triangulation. <lb/>* An O(n log n)-time algorithm to construct such a triangulation. <lb/>* Given vertices p and q on a simple polygon, an O(n)-time algorithm to determine <lb/>whether the polygon is discretely straight walkable with respect to the two vertices. <lb/>* An O(n log n)-time algorithm to list out all pairs of points on a simple polygon with <lb/>respect to which the polygon is discretely straight walkable. <lb/></div>
+		<note type="reference">References <lb/>[IK] C. Icking and R. Klein, &quot;The two guards problem,&quot; Proc. 7th Annual ACM Symp. on <lb/>Computational Geometry, 1991, pp. 166-175. <lb/></note>
+		<note type="reference">[AHMS] E.M. Arkin, M. Held, J.S.B. Mitchell, S.S. Skienna, &quot;Hamiltonian Triangulations <lb/>for Fast Rendering,&quot; Proc. of the 2nd ESA, 1994. <lb/></note>
+		<note type="grant">1 Supported in part by NSF Grant CCR-940-9752</note>
+		</front>
+</text>
+</tei>

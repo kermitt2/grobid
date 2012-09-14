@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="ZNB-1947-2b-0035"/>
+	</teiHeader>
+	<text xml:lang="de">
+		<front>
+			<lb/>
+			<docTitle>
+				<titlePart>Morphologische Beziehlingen zwischen filtrierbaren Mikroorganismen<lb/> und großen Virusarten*<lb/></titlePart>
+			</docTitle>
+
+			<byline>
+				<docAuthor>Von HELMUT RUSKA und KURT POPPE<lb/></docAuthor>
+			</byline>
+
+			<byline>
+				<affiliation>Aus dem Laboratorium für Übermikroskopie der Siemens &amp; Halske AG. (Forschungsanstalt Insel Riems bei Greifswald)<lb/> und dem Institut für Mikrobiologie,</affiliation>
+			</byline>
+
+			<address>Rostock<lb/></address>
+
+			<reference>(Z. Naturforschg. 2b, 35—36 [1947];</reference>
+
+			<note type="submission">eingegangen am 4. Januar 1947<lb/></note>
+
+		</front>
+	</text>
+</tei>

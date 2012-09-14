@@ -1,0 +1,20 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="377"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">A Fault Tolerant Control Architecture <lb/>for Automated Highway Systems <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>John Lygeros, Datta N. Godbole, Mireille Broucke <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Electrical Engineering and Computer Sciences <lb/>University of California, Berkeley <lb/></affiliation></byline>
+		<address>Berkeley, CA 94720 <lb/></address>
+		<email>lygeros, godbole, mire@robotics.eecs.berkeley.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>We propose a hierarchical control architecture for dealing with faults and adverse environmental conditions on an Automated Highway System (AHS). Our design extends <lb/>a previous control architecture that works under normal conditions of operation. The <lb/>faults that are considered in our design are classified according to the capabilities remaining on the vehicle or roadside after the fault has occurred. Information about these <lb/>capabilities is used by supervisors in each of the layers of the architecture to select appropriate control strategies. We outline the extended control strategies that are needed <lb/>by these supervisors and, in certain cases, give examples of their detailed operation. <lb/></div>
+		<keywords>Keywords <lb/>Automated Highway System Design, Fault Tolerant Control, Safety <lb/></keywords>
+		<note type="grant">Research supported by the California PATH program, Institute of Transportation Studies, University of <lb/>California, Berkeley, under MOU-135 <lb/></note>
+		<pb/>
+		</front>
+</text>
+</tei>

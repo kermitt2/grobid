@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="ZNC-1988-43c-0479"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Novel Glucoalkaloids from Rauwolfia Cell Cultures —<lb/> Acetylrauglucine and Related Glucosides<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Carl Michael Ruyter, Helmut Schübel, and Joachim Stöckigt<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institut für Pharmazeutische Biologie,</affiliation>
+	</byline>
+
+	<address>Karlstraße 29, Universität München, D-8000 München 2,<lb/> Bundesrepublik Deutschland<lb/></address>
+
+	<reference>Z. Naturforsch. 43c, 479-484 (1988);</reference>
+
+	<note type="submission">received March 9, 1988<lb/></note>
+
+	<keyword>Rauwolfia serpentina (L.) Bentham et Hook, Apocynaceae, Cell Suspension Culture, Mono-<lb/>terpenoid Indole Glucoalkaloids, Acetylrauglucine<lb/></keyword>
+
+	<div type="abstract">From cell suspension cultures of Rauwolfia serpentina grown in an optimized production<lb/> medium for the glucoalkaloid raucaffricine, a novel glucoalkaloid was isolated and identified as<lb/> 17-0-acetyl-21-0-ß-D-glucopyranosyl-ajmaline (acetylrauglucine). This alkaloid is formed in very<lb/> small amounts (&lt; 5 x 10~<lb/> 4 %). The biogenetically related N"-demethylated base (acetyl-nor-rau-<lb/>glucine) and the deacetyl product rauglucine have also been detected in culture extracts. In<lb/> addition 21(.R)-(ß-D-glucopyranosyl)-hydroxy-sarpagan-17-al has been isolated and identified as<lb/> an artifact which originates from raucaffricine.</div>
+
+		</front>
+	</text>
+</tei>

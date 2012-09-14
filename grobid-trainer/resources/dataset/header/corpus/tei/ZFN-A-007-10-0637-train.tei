@@ -1,0 +1,36 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="ZFN-A-007-10-0637"/>
+	</teiHeader>
+	<text xml:lang="de">
+		<front>
+			<titlePage>
+				<docTitle>
+					<titlePart type="main">Zur Darstellung physikalischer und geometrischer Größen <lb/>
+durch Welttensoren i. und 2. Stufe <lb/></titlePart>
+				</docTitle>
+				<byline>Von <docAuthor>TEODOR SCHLOMKA*</docAuthor><lb/></byline>
+				<reference>(Z. Naturforschg. 7a, 637-645 [1952];</reference> 
+				<note type="submission">eingegangen am 3. April 1952)<lb/></note>
+			</titlePage>
+			<div type="abstract">Jeder Raumskalar kann als Welttensor I. Stufe oder in vierfacher Weise als gleich- <lb/>
+varianter Welttensor 2. Stufe dargestellt virerden, jeder polare oder axiale Raumvektor <lb/>
+als Vierervektor oder in fünffacher Weise als gleichvarianter Vierertensor. Es bestehen <lb/>
+sowohl zwischen den einzelnen Viererdarstellungen als auch zwischen ihren Komponen- <lb/>
+ten einfache Beziehungen. <lb/>
+Transformiert man einen Welttensor, der Raumgrößen darstellt, vom Ruhsystem 8^ <lb/>
+auf ein anderes System ß, so erhält man den Welttensor in S als Funktion der Raum- <lb/>
+größen in S^; man kennt also zunächst noch nicht die geometrische oder physikalische <lb/>
+Bedeutung der Welttensorkomponenten in 8, Hier greifen die Transformationsgleichun- <lb/>
+gen der Baumgrößen ein; sie liefern den Zusammenhang der Raumgrößen in 8^ mit den <lb/>
+Raumgrößen in >S' und vermitteln so die Kenntnis der Bedeutung aller Welttensorkompo- <lb/>
+nenten. <lb/>
+Bei allen geometrischen und kinematischen sowie einigen mechanischen und elektro- <lb/>
+dynamischen Raumgrößen erhält man die zugehörigen Transformationsformeln zwangs- <lb/>
+läufig aus der allgemeinen Lorentz-Transformation und den Erhaltungssätzen von Im- <lb/>
+puls und Ladung; die Transformationsgleichungen der restlichen Raumgrößen werden <lb/>
+jedoch erst durch besondere Postulate festgelegt.<lb/></div>
+			<div type="intro">I n einer kürzlich erschienenen Arbeit ^ wurde ge-<lb/></div>
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,16 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="280"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Building Query Optimizers with Combinators: <lb/></titlePart>
+		</docTitle>
+		<note type="other">Dissertation Proposal <lb/></note>
+		<byline><docAuthor>Mitch Cherniack <lb/></docAuthor></byline>
+		<div type="abstract">Abstract <lb/>Query optimizers generate plans to retrieve data specified by queries. Query optimization <lb/>for object databases (i.e., object-oriented and object-relational databases) is an immature field, <lb/>and stands to benefit from adaptation of techniques that have proved useful for relations. One <lb/>technique uses query-to-query transformations to rewrite queries into queries that are potentially <lb/>more amenable to plan generation. For transformations to be useful, they must preserve the <lb/>semantics of the queries they rewrite (correctness) and usually result in queries that generate <lb/>better plans (effectiveness). Object databases complicate the expression of correct and effective <lb/>transformations. <lb/>Transformation correctness is problematic even for relational queries. Especially error-prone <lb/>are transformations that rewrite complex nested queries (queries containing other queries) or <lb/>queries that return duplicates. Objects make correctness more difficult because object queries <lb/>can be far more complex than relational queries. <lb/>The effectiveness of a relational transformation typically depends on the syntax of a query <lb/>rather than the semantics of of its data or functions. On the other hand, the lack of uniformity <lb/>in data functions and collections in an object query makes effectiveness more subtle. The effectiveness of a transformation for object queries may depend on the semantics of data functions, <lb/>and may vary from object to object in a collection. Therefore, optimizers may have to perform <lb/>sophisticated reasoning and apply transformations on a per object basis to ensure that they are <lb/>used only when appropriate. <lb/>This thesis considers the correctness and effectiveness of optimizer transformations. To <lb/>address correctness, we propose a formally specified query algebra and two-tiered language <lb/>(COKO-KOLA) for expressing transformations that can be verified with a theorem prover. To <lb/>address effectiveness, we propose semantic and dynamic extensions to the traditional optimizer <lb/>architecture. The high-level contribution of the thesis is the observation that the choice of <lb/>query representation impacts the quality of the optimizer. Specifically, a combinator-based <lb/>(variable-free) query representation simplifies the query manipulations that are required to make <lb/>transformations correct and effective. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

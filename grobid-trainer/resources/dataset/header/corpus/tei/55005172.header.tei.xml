@@ -1,0 +1,66 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005172"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<lb/>
+			<reference>IEEE TRANSACTIONS ON INFORMATION THEORY, VOL. 57, NO. 1, JANUARY 2011<lb/></reference>
+			<note type="other">
+				303<lb/>
+			</note>
+
+			<docTitle>
+				<titlePart>Achieving Optimal Diversity-Multiplexing Tradeoff<lb/> for Full-Duplex
+					MIMO Multihop Relay Networks<lb/></titlePart>
+			</docTitle>
+
+			<byline>
+				<docAuthor>Qian Li, Student Member, IEEE, Kwok H. Li, Senior Member, IEEE, and Kah
+					C. Teh, Senior Member, IEEE<lb/></docAuthor>
+			</byline>
+
+			<div type="abstract">Abstract—In this paper, we investigate the diversity-multi-<lb/>
+				plexing tradeoff (DMT) of a multiple-input-multiple-output<lb/> (MIMO) full-duplex
+				single-user multihop relay channel, where a<lb/> pair of source and destination
+				communicates via multiple layers<lb/> of relays. All communication terminals could
+				be equipped with<lb/> multiple antennas. The relays operate in a full-duplex
+				mode.<lb/> By incorporating time-domain linear transformation into am-<lb/>
+				plify-and-forward (AF) based relaying, we propose an AF-based<lb/> space-time relay
+				scheme and show that the DMT upper bound<lb/> of the channel can be achieved by
+				properly designing space-time<lb/> (ST) codes at the source.<lb/>
+			</div>
+			
+			<keywords>Index Terms—Diversity-multiplexing tradeoff (DMT), multihop,<lb/>
+				multiple-input-multiple-output (MIMO), relay networks.<lb/>
+			</keywords>
+			
+			<div type="introduction">I. INTRODUCTION<lb/> 
+			</div>
+			
+			<note type="submission">
+				Manuscript received May 07, 2008; revised March 01, 2010; accepted July<lb/> 22, 2010. 
+			</note>
+			
+			<date>	
+				Date of current version December 27, 2010.<lb/>
+			</date>	
+			
+			<byline>
+				<affiliation>The authors are with the School of Electrical and
+					Electronic Engineering,<lb/> Nanyang Technological University,<lb/></affiliation>
+			</byline>
+
+			<address>639798, Singapore</address>
+
+			<email>(e-mail: liqi0006@e.<lb/> ntu.edu.sg; liqi0006@ntu.edu.sg; ekhli@ntu.edu.sg;
+				ekcteh@ntu.edu.sg).<lb/></email>
+
+			<note type="other">Communicated by A. Nosratinia, Associate Editor for Communication
+				Net-<lb/> works.<lb/></note>
+			<idno>Digital Object Identifier 10.1109/TIT.2010.2090199</idno>
+
+		</front>
+	</text>
+</tei>

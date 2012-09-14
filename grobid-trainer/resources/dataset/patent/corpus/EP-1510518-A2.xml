@@ -1,0 +1,846 @@
+<?xml version="1.0" encoding="UTF-8"?><patent-document status="new" lang="EN" ucid="EP-1510518-A2" country="EP" doc-number="1510518" kind="A2" date="20050302"><bibliographic-data><publication-reference fvid="24288088" ucid="EP-1510518-A2" status="new"><document-id status="new" format="original"><country>EP</country><doc-number>1510518</doc-number><kind>A2</kind><date>20050302</date><lang>EN</lang></document-id></publication-reference><application-reference ucid="EP-04020108-A" status="new" is-representative="NO"><document-id format="epo" status="new"><country>EP</country><doc-number>04020108</doc-number><kind>A</kind><date>20001219</date><lang>EN</lang></document-id></application-reference><priority-claims status="new"><priority-claim ucid="US-470203" status="new"><document-id format="original" status="new"><country>US</country><doc-number>470203</doc-number><date>19991221</date></document-id></priority-claim><priority-claim ucid="EP-00986568-A" status="new"><document-id format="epo" status="new"><country>EP</country><doc-number>00986568</doc-number><kind>A</kind><date>20001219</date></document-id></priority-claim><priority-claim ucid="US-47020399-A" status="new"><document-id format="epo" status="new"><country>US</country><doc-number>47020399</doc-number><kind>A</kind><date>19991221</date></document-id></priority-claim></priority-claims><dates-of-public-availability status="new"/><term-of-grant/><technical-data status="new"><classifications-ipcr><classification-ipcr status="new">C07D 413/00        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">C07D 413/06        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">C07D 471/00        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">C07D 471/04        20060101A I20051008RMEP        </classification-ipcr></classifications-ipcr><classification-ecla status="new"><classification-symbol scheme="EC">C07D413/06+271+209</classification-symbol><classification-symbol scheme="EC">C07D471/04+221A+209A</classification-symbol><classification-symbol scheme="ICO">M07D413:06</classification-symbol><classification-symbol scheme="ICO">M07D471:04</classification-symbol></classification-ecla><invention-title lang="DE" status="new">Substituierte 1,3,4-Oxadiazole und eine Methode zur Verringerung des TNF-alpha-Spiegels</invention-title><invention-title lang="EN" status="new">Substituted 1,3,4-oxadiazoles and a method of reducing TNF-alpha levels</invention-title><invention-title lang="FR" status="new">1,3,4-Oxadiazoles substituées et un procédé de réduire les taux de TNF-alpha</invention-title><citations><patent-citations><patcit ucid="US-5968945-A" source="SEA" category="A" created-by-npl="N" status="new"><document-id format="epo" status="new"><country>US</country><doc-number>5968945</doc-number><kind>A</kind></document-id></patcit><patcit ucid="US-6150388-A" source="SEA" category="AP" created-by-npl="N" status="new"><document-id format="epo" status="new"><country>US</country><doc-number>6150388</doc-number><kind>A</kind></document-id></patcit></patent-citations></citations><figures/></technical-data><parties><applicants><applicant format="epo" status="new"><addressbook><name>CELGENE CORP</name><address><country>US</country></address></addressbook></applicant><applicant format="intermediate" status="new"><addressbook><name>CELGENE CORPORATION</name><address><country/></address></addressbook></applicant><applicant format="original" status="new"><addressbook><last-name>CELGENE CORPORATION</last-name><address><street>7 Powder Horn Drive</street><city>Warren New Jersey 07059</city><country>US</country></address></addressbook></applicant></applicants><inventors><inventor format="epo" status="new"><addressbook><name>MULLER GEORGE</name><address><country>US</country></address></addressbook></inventor><inventor format="epo" status="new"><addressbook><name>MAN HON-WAH</name><address><country>US</country></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>MULLER, GEORGE</name><address><country/></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>MAN, HON-WAH</name><address><country/></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>MULLER, GEORGE</last-name><address><street>250 Windmill Court</street><city>Bridgewater, NJ 08807</city><country>US</country></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>MAN, HON-WAH</last-name><address><street>27 Grant Way</street><city>Princeton, NJ08540</city><country>US</country></address></addressbook></inventor></inventors><agents><agent format="original" status="new"><addressbook><last-name>Lawrence, John</last-name><address><street>Barker Brettell, 138 Hagley Road, Edgbaston</street><city>Birmingham B16 9PW</city><country>GB</country></address></addressbook></agent></agents></parties><international-convention-data><designated-states><ep-contracting-states><country>AT</country><country>BE</country><country>CH</country><country>CY</country><country>DE</country><country>DK</country><country>ES</country><country>FI</country><country>FR</country><country>GB</country><country>GR</country><country>IE</country><country>IT</country><country>LI</country><country>LU</country><country>MC</country><country>NL</country><country>PT</country><country>SE</country><country>TR</country></ep-contracting-states></designated-states></international-convention-data></bibliographic-data><abstract lang="EN" source="EPO" status="new"><p>Substituted 1,3,4-oxadiazole compounds reduce the levels of TNF± in a mammal. Typical embodiment are 2-[1-(3-cyclopentyloxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]-5-methylisoindoline-1,3-dione and 2-[1-(3-ethoxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]isoindoline-1,3-dione.</p></abstract><abstract lang="EN" status="new"><p num="">Substituted 1,3,4-oxadiazole compounds reduce the levels of TNFα in a
+mammal. Typical embodiment are 2-[1-(3-cyclopentyloxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]-5-methylisoindoline-1,3-dione
+and 2-[1-(3-ethoxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]isoindoline-1,3-dione.</p></abstract><description lang="EN" status="new"><heading><b><i>Field of the Invention</i></b></heading><p num="0001">The present invention relates to substituted 1,3,4-oxadiazote compounds, the
+method of reducing levels of tumor necrosis factor a and increasing cAMP levels and
+treating inflammatory and autoimmune diseases and cancer in a mammal through the
+administration thereof, and to pharmaceutical compositions of such derivatives.</p><heading><b><i>Background of the Invention</i></b></heading><p num="0002">Tumor necrosis factor-α (TNFα) is a cytokine which is released primarily by cells of
+immune systems in response to certain immunostimulators. When administered to
+animals or humans, it causes inflammation, fever, cardiovascular effects, hemorrhage,
+coagulation, cachexia, and acute phase responses similar to those seen during acute
+infections, inflammatory diseases, and shock states. Excessive or unregulated TNFα
+production has been implicated in a number of disease conditions. These include
+endotoxemia and/or toxic shock syndrome [<ref type="npl">Tracey, <i>et al., Nature</i> 330, 662-664 (1987)</ref>
+and <ref type="npl">Hinshaw, <i>et al., Circ. Shock</i> 30, 279-292 (1990)</ref>], rheumatoid arthritis, inflammatory
+bowel disease, cachexia [<ref type="npl">Dezube, <i>et al., Lancet,</i> 335 (8690), 662 (1990)</ref>], and lupus.
+TNFa concentration in excess of 12,000 pg/mL have been detected in pulmonary
+aspirates from Adult Respiratory Distress Syndrome (ARDS) patients [<ref type="npl">Millar, <i>et al.,
+Lancet</i> 2(8665), 712-714 (1989)</ref>]. Systemic infusion of recombinant TNFα resulted in
+changes typically seen in ARDS [<ref type="npl">Ferrai-Baliviera, <i>et al., Arch. Surg.</i> 124(12), 1400-1405
+(1989)</ref>].</p><p num="0003">TNFα appears to be involved in a number of bone resorption diseases, including
+arthritis. When activated, leukocytes will produce bone-resorption. TNFα apparently
+contributes to this mechanism. [<ref type="npl">Bertolini, <i>et al., Nature</i> 319, 516-518 (1986)</ref> and
+<ref type="npl">Johnson, <i>et al., Endocrinology</i> 124(3), 1424-1427 (1989)</ref>]. TNFα also has been shown 
+to stimulate bone resorption and inhibit bone formation <i>in vitro</i> and <i>in vivo</i> through
+stimulation of osteoclast formation and activation combined with inhibition of osteoblast
+functions. Another compelling link with disease is the association between production
+of TNFα by tumor or host tissues and malignancy associated hypercalcemia [<ref type="npl"><i>Calci.
+Tissue Int. (US)</i> 46(Suppl.), S3-10 (1990)</ref>]. In Graft versus Host Reactions, increased
+serum TNFα levels have been associated with major complication following acute
+allogenic bone marrow transplants [<ref type="npl">Holler, <i>et al.</i>, <i>Blood</i>, 75(4), 1011-1016 (1990)</ref>].</p><p num="0004">Validation of TNF-α inhibition as a clinical therapy has been demonstrated by the
+therapeutic use of TNF-α antibodies and soluble TNF-α receptors. TNFα blockage with
+monoclonal anti-TNFα antibodies has been shown to be beneficial in rheumatoid
+arthritis [<ref type="npl">Elliot, <i>et al., Int. J. Pharmac.</i> 1995 17(2), 141-145</ref>]. High levels of TNFα are
+associated with Crohn's disease [<ref type="npl">von Dullemen, <i>et al., Gastroenterology,</i> 1995 109(1),
+129-135</ref>] treatment with soluble TNFα receptor treatment gave clinical benefits.</p><p num="0005">Cerebral malaria is a lethal hyperacute neurological syndrome associated with high
+blood levels of TNFα and the most severe complication occurring in malaria patients.
+Elevated levels of serum TNFα correlated directly with the severity of disease and the
+prognosis in patients with acute malaria attacks [<ref type="npl">Grau, <i>et al., N. Engl. J. Med.</i> 320(24),
+1586-1591 (1989)</ref>].</p><p num="0006">TNFα plays a role in the area of chronic pulmonary inflammatory diseases. The
+deposition of silica particles leads to silicosis, a disease of progressive respiratory failure
+caused by a fibrotic reaction. Antibodies to TNFα completely blocked the silica-induced
+lung fibrosis in mice [<ref type="npl">Pignet, <i>et al., Nature,</i> 344, 245-247 (1990)</ref>]. High levels of
+TNFα production (in the serum and in isolated macrophages) have been demonstrated
+in animal models of silica and asbestos induced fibrosis [<ref type="npl">Bissonriette, <i>et al.,
+Inflammation</i> 13(3), 329-339 (1989)</ref>]. Alveolar macrophages from pulmonary
+sarcoidosis patients have also been found to spontaneously release massive quantities 
+of TNFα as compared with macrophages from normal donors [<ref type="npl">Baughman, <i>et al., J. Lab.
+Clin. Med.</i> 115(1), 36-42 (1990)</ref>].</p><p num="0007">Elevated levels of TNFα are implicated in reperfusion injury, the inflammatory
+response which follows reperfusion, and is a major cause of tissue damage after blood
+flow loss [<ref type="npl">Vedder, <i>et al.</i>, <i>PNAS</i> 87, 2643-2646 (1990)</ref>]. TNFα also alters the properties
+of endothelial cells and has various pro-coagulant activities, such as producing an
+increase in tissue factor pro-coagulant activity, suppressing the anticoagulant protein C
+pathway, and down-regulating the expression of thrombomodulin [<ref type="npl">Sherry, <i>et al.</i>, <i>J. Cell
+Biol.</i> 107, 1269-1277 (1988)</ref>]. TNFα has pro-inflammatory activities which together with
+its early production (during the initial stage of an inflammatory event) make it a likely
+mediator of tissue injury in several important disorders including but not limited to,
+myocardial infarction, stroke and circulatory shock. TNFα-induced expression of
+adhesion molecules, such as intercellular adhesion molecules (ICAM) or endothelial
+leukocyte adhesion molecules (ELAM) on endothelial cells may be especially important
+[<ref type="npl">Munro, <i>et al.</i>, <i>Am. J. Path.</i> 135(1), 121-132 (1989)</ref>].</p><p num="0008">It has been reported that TNFα is a potent activator of retrovirus replication
+including activation of HIV-1. [<ref type="npl">Duh, <i>et al., Proc. Nat. Acad. Sci.</i> 86, 5974-5978 (1989)</ref>;
+<ref type="npl">Poll, <i>et al., Proc. Nat. Acad. Sci.</i> 87, 782-785 (1990)</ref>; <ref type="npl">Monto, <i>et al., Blood</i> 79, 2670
+(1990)</ref>; <ref type="npl">Clouse, <i>et al.</i>, <i>J. Immunol.</i> 142, 431-438 (1989)</ref>; <ref type="npl">Poll, <i>et al., AIDS Res. Hum.
+Retrovirus,</i> 191-197 (1992)</ref>]. At least three types or strains of HIV (<i>i.e.</i>, HIV-1, HIV-2
+and HIV-3) have been identified. As a consequence of HIV infection, T-cell mediated
+immunity is impaired and infected individuals manifest severe opportunistic infections
+and/or unusual neoplasms. HIV entry into the T-lymphocyte requires T-lymphocyte
+activation. Other viruses, such as HIV-1, HIV-2 infect T-lymphocytes after T-cell
+activation. This virus protein expression and/or replication is mediated or maintained by
+this T-cell activation. Once an activated T-lymphocyte is infected with HIV, the T-lymphocyte 
+must continue to be maintained in an activated state to permit HIV gene
+expression and/or HIV replication. Cytokines, specifically TNFα, are implicated in activated
+T-cell mediated HIV protein expression and/or virus replication by playing a role in
+maintaining T-lymphocyte activation. Therefore, interference with cytokine activity such
+as prevention or inhibition of cytokine production, notably TNFα, in an HIV-infected individual
+assists in limiting the maintenance of T-lymphocyte caused by HIV infection.</p><p num="0009">Monocytes, macrophages, and related cells, such as kupffer and glial cells, also
+have been implicated in maintenance of the HIV infection. These cells, like T-cells, are
+targets for viral replication and the level of viral replication is dependent upon the activation
+state of the cells. [<ref type="npl">Rosenberg, <i>et al., The immunopathogenesis of HIV Infection,</i>
+Advances in Immunology, 57 (1989)</ref>]. Cytokines, such as TNFα, have been shown to
+activate HIV replication in monocytes and/or macrophages [<ref type="npl">Poli, <i>et al., Proc. Natl. Acad.
+Sci.</i>, 87, 782-784 (1990)</ref>], therefore, prevention or inhibition of cytokine production or
+activity aids in limiting HIV progression for T-cells. Additional studies have identified
+TNFα as a common factor in the activation of HIV <i>in vitro</i> and have provided a clear
+mechanism of action via a nuclear regulatory protein found in the cytoplasm of cells
+[<ref type="npl">Osbom, <i>et al., PNAS</i> 86 2336-2340</ref>]. This evidence suggests that reducing TNFα
+synthesis may have an antiviral effect in HIV infections, by reducing transcription and
+thus virus production.</p><p num="0010">AIDS viral replication of latent HIV in T-cell and macrophage lines can be induced
+by TNFα [<ref type="npl">Folks, <i>et al., PNAS</i> 86, 2365-2368 (1989)</ref>]. A molecular mechanism for the
+virus inducing activity is suggested by TNFα's ability to activate a gene regulatory
+protein (transcription factor, NFκB) found in the cytoplasm of cells, which promotes HIV
+replication through binding to a viral regulatory gene sequence (LTR) [<ref type="npl">Osbom, <i>et al.</i>,
+<i>PNAS</i> 86, 2336-2340 (1989)</ref>]. TNFα in AIDS associated cachexia is suggested by
+elevated serum TNFα and high levels of spontaneous TNFα production in peripheral 
+blood monocytes from patients [<ref type="npl">Wright, <i>et al., J. Immunol.</i> 141(1), 99-104 (1988)</ref>].
+TNFα has been implicated in various roles with other viral infections. such as the
+cytomegalia virus (CMV), influenza virus, adenovirus, and the herpes family of viruses
+for similar reasons as those noted.</p><p num="0011">The nuclear factor κB (NFκB) is a plelotropic transcriptional activator (<ref type="npl">Lenardo, <i>et
+al., Cell</i> 1989, 58, 227-29</ref>). NFκB has been implicated as a transcriptional activator in a
+variety of disease and inflammatory states and is thought to regulate cytokine levels
+including but not limited to TNFα and active HIV transcription [<ref type="npl">Dbaibo, <i>et al., J. Biol.
+Chem.</i> 1993, 17782-66</ref>; <ref type="npl">Duh, <i>et al., Proc. Natl. Acad Sci.</i> 1989, 86, 5974-78</ref>;
+<ref type="npl">Bachelerie, <i>et al.</i>, <i>Nature</i> 1991, 350, 709-12</ref>; <ref type="npl">Boswas, <i>et al., J. Acquired Immune
+Deficiency Syndrome</i> 1993, 6, 778-786</ref>; <ref type="npl">Suzuki, <i>et al., Biochem. And Biophys. Res.
+Comm.</i> 1993, 193, 277-83</ref>; <ref type="npl">Suzuki, <i>et al., Biochem. And Biophys. Res Comm.</i> 1992,
+189, 1709-15</ref>; <ref type="npl">Suzuki, <i>et al.</i>, <i>Biochem. Mol. Bio. Int.</i> 1993, 31(4), 693-700</ref>; <ref type="npl">Shakhov, <i>et
+al., Proc. Natl. Acad. Sci. USA</i> 1990, 171, 35-47</ref>; and <ref type="npl">Staal, <i>et al., Proc. Natl. Acad. Sci.
+USA</i> 1990, 87, 9943-47</ref>]. Thus, it would be helpful to inhibit NFκB activation, nuclear
+translation or binding to regulate transcription of cytokine gene(s) and through this
+modulation and other mechanisms be useful to inhibit a multitude of disease states.</p><p num="0012">Many cellular functions are mediated by levels of adenosine 3',5'-cyclic
+monophosphate (cAMP). Such cellular functions can contribute to inflammatory
+conditions and diseases including asthma, inflammation, and other conditions (<ref type="npl">Lowe
+and Cheng, <i>Drugs of the Future,</i> 17(9), 799-807, 1992</ref>). It has been shown that the
+elevation of cAMP in inflammatory leukocytes inhibits their activation and the
+subsequent release of inflammatory mediators, including TNFα and NFκB. increased
+levels of cAMP also lead to the relaxation of airway smooth muscle.</p><p num="0013">The primary cellular mechanism for the inactivation of cAMP is the breakdown of
+cAMP by a family of isoenzymes referred to as cyclic nucleotide phosphodiesterases 
+(PDE) [<ref type="npl">Beavo and Reitsnyder, <i>Trends in Pharm.,</i> 11, 150-155, 1990</ref>]. There are ten
+known members of the family of PDEs. It is well documented that the inhibition of PDE
+type IV (PDE 4) enzyme is particularly effective in both the inhibition of inflammatory
+mediator release and the relaxation of airway smooth muscle [<ref type="npl">Verghese, <i>et al.</i>, <i>Journal of
+Pharmacology and Experimental Therapeutics,</i> 272(3), 1313-1320, 1995</ref>].</p><p num="0014">Decreasing TNFα levels and/or increasing cAMP levels thus constitutes a valuable
+therapeutic strategy for the treatment of many inflammatory, infectious, immunological,
+and malignant diseases. These include but are not restricted to: septic shock, sepsis,
+endotoxic shock, hemodynamic shock and sepsis syndrome, post ischemic reperfusion
+injury, malaria, mycobacterial infection, meningitis, psoriasis and other dermal diseases,
+congestive heart failure, fibrotic disease, cachexia, graft rejection, cancer, tumor growth,
+undesirable angiogenesis, autoimmune disease, opportunistic infections in AIDS,
+rheumatoid arthritis, rheumatoid spondylitis, osteoarthritis, other arthritic conditions,
+inflammatory bowel disease, Crohn's disease, ulcerative colitis, multiple sclerosis,
+systemic lupus erythrematosis, ENL in leprosy, radiation damage, and hyperoxic
+alveolar injury. Prior efforts directed to the suppression of the effects of TNFα have
+ranged from the utilization of steroids such as dexamethasone and prednisolone to the
+use of both polyclonal and monoclonal antibodies [<ref type="npl">Beutler, <i>et al., Science</i> 234, 470-474
+(1985)</ref>; <ref type="patent">WO 92/11383</ref>].</p><p num="0015">Angiogenesis, the process of new blood vessel development and formation, plays
+an important role in numerous normal and pathological physiological events.
+Angiogenesis occurs in response to specific signals and involves a complex process
+characterized by infiltration of the basal lamina by vascular endothelial cells in response
+to angiogenic growth signals), migration of the endothelial cells toward the source of
+the signal(s), and subsequent proliferation and formation of the capillary tube. Blood
+flow through the newly formed capillary is initiated after the endothelial cells come into 
+contact and connect with a preexisting capillary. Angiogenesis is required for tumor
+growth beyond a certain size.</p><p num="0016">Inhibitory influences predominate in the naturally occurring balance between
+endogenous stimulators and inhibitors of angiogenesis (<ref type="npl">Rastinejad, <i>et al.,</i> 1989, <i>Cell</i>
+56:345-355</ref>]. In those rare instances in which neovascularization occurs under normal
+physiological conditions, such as wound healing, organ regeneration, embryonic
+development and female reproductive processes, angiogenesis is stringently regulated
+and spatially and temporally delimited. Under conditions of pathological angiogenesis
+such as that characterizing solid tumor growth, these regulatory controls fail.</p><p num="0017">Unregulated angiogenesis becomes pathologic and sustains progression of many
+neoplastic and non-neoplastic diseases. A number of serious diseases are dominated
+by abnormal neovascularization including solid tumor growth and metastases, arthritis,
+some types of eye disorders, and psoriasis [<ref type="npl">Moses, <i>et al.,</i> 1991, <i>Biotech.</i> 9:630-634</ref>;
+<ref type="npl">Folkman, <i>et al.</i>, 1995, <i>N. Engl. J. Med.,</i> 333:1757-1763</ref>; <ref type="npl">Auerbach, <i>et al.</i>, 1985, <i>J.
+Microvasc. Res.</i> 29:401-411</ref>; <ref type="npl">Folkman, 1985, <i>Advances in Cancer Research,</i> eds. Klein
+and Weinhouse, Academic Press, New York, pp. 175-203</ref>; <ref type="npl">Patz, 1982, <i>Am. J.
+Opthalmol.</i> 94:715-743</ref>; and <ref type="npl">Folkman, <i>et al.,</i> 1983, <i>Science</i> 221:719-725</ref>]. In a number
+of pathological conditions, the process of angiogenesis contributes to the disease state.
+For example, significant data suggests that the growth of solid tumors is dependent on
+angiogenesis [<ref type="npl">Folkman and Klagsbrun, 1987, <i>Science</i> 235:442-447</ref>].</p><p num="0018">The maintenance of the avascularity of the cornea, lens, and trabecular meshwork
+is crucial for vision as well as for ocular physiology. See, <i>e.g.</i>, reviews by <ref type="npl">Waltman, <i>et
+al.,</i> 1978, <i>Am. J. Ophthal.</i> 85:704-710</ref> and <ref type="npl">Gartner, <i>et al.,</i> 1978, <i>Surv. Ophthal.</i> 22:291-312</ref>.
+Currently, the treatment of these diseases, especially once neovascularization has
+occurred, is inadequate and blindness often results. </p><p num="0019">An inhibitor of angiogenesis could have an important therapeutic role in limiting the
+contributions of this process to pathological progression of the underlying disease states
+as well as providing a valuable means of studying their etiology. For example, agents
+that inhibit tumor neovascularization could play an important role in inhibiting metastatic
+and solid tumor growth.</p><p num="0020">Several kinds of compounds have been used to prevent angiogenesis. Taylor, <i>et al.</i>
+used protamine to inhibit angiogenesis, [<ref type="npl">Taylor, <i>et al., Nature</i> 297:307 (1982)</ref>]. The
+toxicity of protamine limits its practical use as a therapeutic. Folkman, <i>et al.</i> used
+heparin and steroids to control angiogenesis. [<ref type="npl">Folkman, <i>et al., Science</i> 221:719 (1983)</ref>
+and <ref type="patent">U.S. Pat. Nos. 5,001,116 and 4,994,443</ref>]. Steroids, such as tetrahydrocortisol,
+which lack gluco and mineral corticoid activity, are angiogenic inhibitors, interferon β is
+also a potent inhibitor of angiogenesis induced by allogeneic spleen cells [<ref type="npl">Sidky, <i>et al.,</i>
+Cancer Research 47:5155-5161 (1987)</ref>]. Human recombinant interferon-α was reported
+to be successfully used in the treatment of pulmonary hemangiometosis, an
+angiogenesis-induced disease [<ref type="npl">White, <i>et al., New England J. Med.</i> 320:1197-1200
+(1989)</ref>].</p><p num="0021">Other agents which have been used to inhibit angiogenesis include ascorbic acid
+ethers and related compounds [<ref type="patent">Japanese Kokal Tokkyo Koho No. 58-131978</ref>]. Sulfated
+polysaccharide DS 4152 also shows angiogenic inhibition [<ref type="patent">Japanese Kokai Tokkyo
+Koho No. 63-119500</ref>]. A fungal product, fumagillin, is a potent angiostatic agent <i>in vitro.</i>
+The compound is toxic <i>in vivo,</i> but a synthetic derivative, AGM 12470, has been used <i>in
+vivo</i> to treat collagen II arthritis. Fumagillin and <i>o</i>-substituted fumagillin derivatives are
+disclosed in <ref type="patent">EPO Publication Nos. 0325199A2 and 0357061A1</ref>.</p><p num="0022">In <ref type="patent">U.S. Pat. No. 5,874,081</ref>, Parish teaches use of monoclonal antibodies to inhibit
+angiogenesis. In <ref type="patent">WO92/12717</ref>, Brem, <i>et al.</i> teach that some tetracyclines, particularly
+Minocycline, Chlortetracycline, Demeclocycline and Lymecycline are useful as inhibitors 
+of angiogenesis. Brem, <i>et al.</i> teach that Minocycline Inhibits angiogenesis to an extent
+comparable to that of the combination therapy of heparin and cortisone [<ref type="npl"><i>Cancer
+Research,</i> 51, 672-675, Jan. 15, 1991</ref>]. Teicher, <i>et al.</i> teach that tumor growth is
+decreased and the number of metastases is reduced when the anti-angiogenic agent of
+metastases is reduced when the anti-angiogenic agent Minocycline is used in
+conjunction with cancer chemotherapy or radiation therapy [<ref type="npl"><i>Cancer Research,</i> 52,
+6702-6704, Dec. 1,1992</ref>].</p><p num="0023">Macrophage-induced angiogenesis is known to be stimulated by TNFα Leibovich,
+<i>et al.</i> reported that TNFα induces <i>in vivo</i> capillary blood vessel formation in the rat
+cornea and the developing chick chorioallantoic membranes at very low doses and
+suggested TNFα is a candidate for inducing angiogenesis in inflammation, wound
+repair, and tumor growth [<ref type="npl"><i>Nature,</i> 329, 630-632 (1987)</ref>].</p><p num="0024">All of the various cell types of the body can be transformed into benign or malignant
+tumor cells. The most frequent tumor site is lung, followed by colorectal, breast
+prostate, bladder, pancreas, and then ovary. Other prevalent types of cancer include
+leukemia, central nervous system cancers, brain cancer, melanoma, lymphoma,
+erythroleukemia, uterine cancer, bone cancer, and head and neck cancer.</p><p num="0025">Cancer is now primarily treated with one or a combination of three types of
+therapies: surgery, radiation, and chemotherapy. Surgery Involves the bulk removal of
+diseased tissue. While surgery is sometimes effective in removing tumors located at
+certain sites (<i>e.g.</i>, in the breast, colon, and skin) surgery cannot be used in the
+treatment of tumors located in other areas (<i>e.g.</i>, the backbone) nor in the treatment of
+disseminated neoplastic conditions (<i>e.g.</i>, leukemia). Chemotherapy involves the
+disruption of cell replication or cell metabolism. Chemotherapy is used most often in the
+treatment of leukemia, as well as breast, lung, and testicular cancer. </p><p num="0026">Chemotherapeutic agents are often referred to as antineoplastic agents. The
+alkylating agents are believed to act by alkylating and cross-linking guanine and
+possibly other bases in DNA, arresting cell division. Typical alkylating agents include
+nitrogen mustards, ethyleneimine compounds, alkyl sulfates, cisplatin, and various
+nitrosoureas. A disadvantage with these compounds is that they not only attack
+malignant cells, but also other cells which are naturally dividing, such as those of bone
+marrow, skin, gastro-intestinal mucosa, and fetal tissue. Antimetabolites are typically
+reversible or irreversible enzyme inhibitors, or compounds that otherwise interfere with
+the replication, translation or transcription of nucleic acids. Thus, it would be preferable
+to find less toxic compounds for cancer treatment.</p><p num="0027">Matrix metalloproteinase (MMP) inhibition has been associated with several
+activities including inhibition of TNFα [<ref type="npl">Mohler, <i>et al., Nature,</i> 370, 218-220 (1994)</ref>] and
+inhibition of angiogenesis. MMPs are a family of secreted and membrane-bound zinc
+endopeptidases that play a key role in both physiological and pathological tissue
+degradation [<ref type="npl">Yu, <i>et al., Drugs &amp; Aging,</i> 1997, (3):229-244</ref>; <ref type="npl">Wojtowicz-Praga, <i>et al.. Int</i>.
+<i>New Drugs,</i> 16:61-75 (1997)</ref>]. These enzymes are capable of degrading the
+components of the extracellular matrix, including fibrillar and non-fibrillar collagens.
+fibronectin, laminin, and membrane glycoproteins. Ordinarily, there is a delicate
+balance between cell division, matrix synthesis, matrix degradation (under the control of
+cytokines), growth factors, and cell matrix interactions. Under pathological conditions,
+however, this balance can be disrupted. Conditions and diseases associated with
+undesired MMP levels include, but are not limited to: tumor metastasis invasion and
+growth, angiogenesis, rheumatoid arthritis, osteoarthritis, osteopenias such as
+osteoporosis, periodontitis, gingivitis, Crohn's disease, inflammatory bowel disease, and
+corneal epidermal or gastric ulceration. </p><p num="0028">Increased MMP activity has been detected in a wide range of cancers [<ref type="npl">Denis, <i>et al.</i>,
+<i>Invest New Drugs,</i> 15: 175-185 (1987)</ref>]. As with TNFα, MMPs are believed to be
+involved in the invasive processes of angiogenesis and tumor metastasis.</p><heading><i>Detailed Description</i></heading><p num="0029">The present invention is based on the discovery that certain classes of non-polypeptide
+compounds more fully described herein decrease the levels of TNFα,
+and/or inhibit PDEs particularly PDE 4, and/or inhibit angiogenesis and/or are useful in
+the treatment of cancer, inflammatory and autoimmune diseases. For example,
+compounds that selectively inhibit PDE 4 specifically would at least partially inhibit
+inflammation and relaxation of airway smooth muscle with a minimum of unwanted side
+effects, such as cardiovascular or anti-platelet effects. The compounds of the present
+invention are useful in the inhibition of phosphodiesterases, particularly PDE 4, and in the
+treatment of disease states mediated thereby.</p><p num="0030">The compounds described herein can inhibit the action of NFκB in the nucleus and
+thus are useful in the treatment of a variety of diseases including but not limited to
+rheumatoid arthritis, rheumatoid spondylitis, osteoarthritis, other arthritic conditions,
+septic shock, sepsis, endotoxic shock, graft versus host disease, wasting, inflammatory
+bowel disease Crohn's disease, ulcerative colitis, multiple sclerosis, systemic lupus erythrematosis,
+ENL in leprosy, HIV, AIDS, and opportunistic infections in AIDS. TNFα and
+NFκB levels are influenced by a reciprocal feedback loop. As noted above, the
+compounds of the present invention affect the levels of both TNFα and NFκB. </p><p num="0031">In particular, the invention pertains to (a) 1,3,4-oxadiazole compounds of Formula 1:
+<img file="00120001.tif" id="img-EP-1510918-A2-00120001" he="48" wi="69" img-format="tif" img-content="cf" orientation="unknown" inline="no"/>
+in which:
+<sl><li>the carbon atom designated * constitutes a center of chirality;</li><li>Y is C=O, CH<sub>2</sub>, SO<sub>2</sub> or CH<sub>2</sub>C=O;</li><li>X is hydrogen, or alkyl of 1 to 4 carbon atoms;</li><li>each of R<sup>1</sup>, R<sup>2</sup>, R<sup>3</sup>, and R<sup>4</sup>, independently of the others, is hydrogen, halo,
+trifluoromethyl, acetyl, alkyl of 1 to 8 carbon atoms, alkoxy of 1 to 4 carbon
+atoms, nitro, cyano, hydroxy, tert-butyl, -CH<sub>2</sub>NR<sup>8</sup>R<sup>9</sup>, -(CH<sub>2</sub>)<sub>2</sub>NR<sup>8</sup>R<sup>9</sup>, or -NR<sup>8</sup>R<sup>9</sup>; or</li><li>any two of R<sup>1</sup>, R<sup>2</sup> , R<sup>3</sup>, and R<sup>4</sup> on adjacent carbon atoms, together with the depicted
+phenylene ring are naphthylidene, quinoline, quinoxaline, benzimidazole,
+benzodioxole or 2-hydroxybenzimidazole;</li><li>each of R<sup>5</sup> and R<sup>6</sup>, independently of the other, is hydrogen, alkyl of 1 to 4 carbon
+atoms, alkoxy of 1 to 6 carbon atoms, cyano, benzocycloalkoxy, cycloalkoxy of
+up to 18 carbon atoms, bicyloalkoxy of up to 18 carbon atoms, tricylcoalkoxy
+of up to 18 carbon atoms, or cycloalkylalkoxy of up to 18 carbon atoms;</li><li>each of R<sup>8</sup> and R<sup>9</sup> taken independently of the other is hydrogen, straight alkyl of 1 to
+8 carbon atoms, branched alkyl of 1 to 8 carbon atoms, phenyl, benzyl, pyridyl,
+pyridylmethyl, or one of R<sup>8</sup> and R<sup>9</sup> is hydrogen and the other is -COR<sup>10</sup>, or 
+-SO<sub>2</sub>R<sup>10</sup>, or
+
+   R<sup>8</sup> and R<sup>9</sup> taken together are tetramethylene, pentamethylene, -CHNCHCH-,
+hexamethylene, or -CH<sub>2</sub>CH<sub>2</sub>X<sup>1</sup><sub>2</sub>CH<sub>2</sub>CH<sub>2</sub>-
+
+      in which X<sup>1</sup> is -O-, -S-, or -NH-;</li><li>R<sup>10</sup> is hydrogen, alkyl of 1 to 8 carbon atoms, cycloalkyl, cycloalkylmethyl of up to 6
+carbon atoms, phenyl, pyridyl, benzyl, imidazolylmethyl, pyridylmethyl, NR<sup>11</sup>R<sup>12</sup>,
+CH<sub>2</sub>NR*R<sup>0</sup>, or NR<sup>11</sup>R<sup>12</sup>
+
+   wherein R<sup>*</sup> and R<sup>0</sup>, independently of each other, are hydrogen, methyl,
+ethyl, or propyl, and
+
+   wherein R<sup>11</sup> and R<sup>12</sup>, independently of each other, are hydrogen,
+alkyl of 1 to 8 carbon atoms, phenyl, or benzyl; and</li><li><i>(b)</i> the acid addition salts of said compounds which contain a nitrogen atom
+susceptible of protonation.</li></sl></p><p num="0032">It will be appreciated that while for convenience the compounds of Formula I are
+identified as 1,3,4-oxadiazoles. The term alkyl denotes a univalent saturated or
+unsaturated branched, or straight, cyclic or mixture thereof hydrocarbon chain containing
+from 1 to 8 carbon atoms. Representative of such alkyl groups are methyl, ethyl,
+propyl, isopropyl, butyl, isobutyl, <i>sec</i>-butyl, <i>tert</i>-butyl, cyclopentyl, and
+cyclopropylmethyl. Alkoxy refers to an alkyl group bound to the remainder of the
+molecule through an ethereal oxygen atom. Representative of such alkoxy groups are
+methoxy, ethoxy, propoxy, isopropoxy, butoxy, isobutoxy, <i>sec</i>-butoxy, <i>tert</i>-butoxy,
+cyclohexylmethoxy, and cyclopentylmethoxy.</p><p num="0033">The term cycloalkyl as used herein denotes a univalent cyclic hydrocarbon chain
+which may be saturated or unsaturated. Unless otherwise stated, such chains can contain
+up to 18 carbon atoms and include monocycloalkyl, dicycloalkyl, polycycloalkyl, and
+benzocycloalkyl structures. Monocycloalkyl refers to groups having a single ring group. 
+Polycycloalkyl denotes hydrocarbon systems containing two or more ring systems with
+one or more ring carbon atoms in common; <i>i.e.</i>, a spiro, fused, or bridged structure.
+Benzocycloalkyl signifies a monocydic alkyl group fused to a benzo group. Representative
+of monocycloalkyl groups are cyclopropyl, cyclobutyl, cyclopentyl, cyclohexyl,
+cycloheptyl, cyclooctyl, cyclononyl, cyclodecyl, cycloundecyl, cyclododecyl, cyclotridecyl,
+cyclotetradecyl, cyclopentadecyl, cyclohexadecyl, cycloheptadecyl, and cyclooctadecyl.
+Representative of polycycloalkyl include decahydronaphthalene, spiro[4.5]decyl, bicyclo[2.2.1]heptyl,
+bicyclo[3.2.1]octyl, pinanyl, norbomyl, and bicyclo[2.2.2]octyl.
+Benzocycloalkyl is typified by tetrahydronaphthyl, indanyl, and 1.2-benzocycloheptanyl.
+Cycloalkoxy refers to a cycloalkyl group as just described, that is a monocycloalkyl,
+polycycloalkyl, or benzocycloalkyl structure, bound to the remainder of the molecule
+through an ethereal oxygen atom.</p><p num="0034">A first preferred group of compounds are those of Formula I in which Y is C=O.</p><p num="0035">A further preferred group of compounds are those of Formula I in which Y is CH<sub>2</sub>.</p><p num="0036">A further preferred group of compounds are those of Formula I in which each of R<sup>1</sup>,
+R<sup>2</sup>, R<sup>3</sup>, and R<sup>4</sup> independently of the others, is hydrogen, halo, methyl, ethyl, methoxy,
+ethoxy, nitro, cyano, hydroxy, or -NR<sup>8</sup>R<sup>9</sup> in which each of R<sup>8</sup> and R<sup>9</sup> taken
+independently of the other is hydrogen or methyl or one of R<sup>8</sup> and R<sup>9</sup> is hydrogen and
+the other is -COCH<sub>3</sub>, or COR, where R is alkyl, benzyl, pyridyl, or pyridylmethyl.</p><p num="0037">A further preferred group of compounds are those of Formula I in which one of R<sup>1</sup>,
+R<sup>2</sup>, R<sup>3</sup> and R<sup>4</sup> is -NH<sub>2</sub> or -CH<sub>3</sub> and the remaining of R<sup>1</sup>, R<sup>2</sup>, R<sup>3</sup> and R<sup>4</sup> are hydrogen.</p><p num="0038">A further preferred group of compounds are those of Formula I in which one of R<sup>1</sup>,
+R<sup>2</sup>, R<sup>3</sup>, and R<sup>4</sup> is -NHCOCH<sub>3</sub>, NHSO<sub>2</sub>R<sup>10</sup>, or NHCOR<sup>10</sup>, and the remaining of R<sup>1</sup>, R<sup>2</sup>, R<sup>3</sup>
+and R<sup>4</sup> are hydrogen. </p><p num="0039">A further preferred group of compounds are those of Formula I in which one of R<sup>1</sup>,
+R<sup>2</sup>, R<sup>3</sup>, and R<sup>4</sup> is -N(CH<sub>3</sub>)<sub>2</sub> and the remaining of R<sup>1</sup>, R<sup>2</sup>, R<sup>3</sup> and R<sup>4</sup> are hydrogen.</p><p num="0040">A further preferred group of compounds are those of Formula I in which one of R<sup>1</sup>,
+R<sup>2</sup>, R<sup>3</sup>, and R<sup>4</sup> is methyl or ethyl and the remaining of R<sup>1</sup>, R<sup>2</sup>, R<sup>3</sup>, and R<sup>4</sup> are hydrogen.</p><p num="0041">A further preferred group of compounds are those of Formula I in which each of R<sup>5</sup>
+and R<sup>6</sup>, independently of the other, is methoxy, ethoxy, propoxy, cyclopentoxy, or
+cyclohexoxy.</p><p num="0042">A further preferred group of compounds are those of Formula I in which R<sup>5</sup> is
+methoxy and R<sup>6</sup> is alkoxy, monocycloalkoxy, polycycloalkoxy, and benzocycloalkoxy.</p><p num="0043">A further preferred group of compounds are those of Formula I in which R<sup>5</sup> is
+methoxy and R<sup>6</sup> is ethoxy or cyclopentoxy.</p><p num="0044">The compounds of Formula I are used, under the supervision of qualified
+professionals, to inhibit the undesirable effects of TNFα and PDE 4. The compounds
+may also be given to treat cancer conditions, undesirable angiogenesis, inflammation,
+skin conditions, etc. The compounds can be administered orally, rectally, or
+parenterally, alone or in combination with other therapeutic agents including antibiotics.
+steroids, etc., to a mammal in need of treatment. Use of the terms PDE IV and PDE 4
+are deemed equivalent.</p><p num="0045">The compounds can also be used topically in the treatment or prophylaxis of topical
+disease states including, but not limited to atopic dermatitis, psoriasis, lupus, viral
+infections, such as those caused by the herpes viruses, or viral conjunctivitis, psoriasis,
+cancer, etc. PDE 4 inhibition is a preferred embodiment, though inhibition of other
+phosphodiesterases is envisioned.</p><p num="0046">The compounds also can be used in the veterinary treatment of mammals other
+than humans in need of prevention or inhibition of TNFα production or PDE 4 inhibition. 
+TNFα mediated diseases for treatment, therapeutically or prophylactically, in animals
+which include disease states such as those noted above. Viral infection examples
+include feline immunodeficiency virus, equine infectious anemia virus, caprine arthritis
+virus, visna virus, and maedi virus, as well as other lentiviruses.</p><p num="0047">Methods of preparation of acids (I) are described in <ref type="patent">U.S. Patent No. 5,605,914</ref>
+which is incorporated by reference herein. The preparation of the oxadiazoles (III) can
+be done in a two-step fashion or in a single-pot fashion. Reaction of acid (I) with
+carbonyldiimidazole (CDI) or another activating agent, followed by addition of an acyl
+hydrazide (NH<sub>2</sub>NHCXO, wherein X is a hydrogen or alkyl) provides a compound of
+Formula (II). Preferred solvents for this reaction ("a") are aprotic polar solvent that
+include acetonitrile (CH<sub>3</sub>CN) , tetrahydrofuran (THF), and ethyl acetate (EtOAc).
+Compounds of Formula (II) can be isolated at this point. Alternatively, a compound of
+Formula (II) can be used in the next reaction <b>"b"</b> without isolation (a preferred solvent is
+then acetonitrile). In reaction <b>"b"</b> dehydration of a compound of Formula (II) with
+dehydrating reagents such as phosphorous oxychloride (POCl<sub>3</sub>) or phosphorous
+pentoxide (P<sub>2</sub>O<sub>5</sub>) provides a compound of Formula (III). Heat may be used in reaction
+<b>"b"</b>. <img file="00170001.tif" id="img-EP-1510918-A2-00170001" he="110" wi="151" img-format="tif" img-content="cf" orientation="unknown" inline="no"/></p><p num="0048">When one of R<sup>1</sup>, R<sup>2</sup>, R<sup>3</sup>, and R<sup>4</sup> is to be amino in the final 1,3,4-oxadiazole, it often
+is desirable to utilize the corresponding nitro compound (I) and then reduce the resulting
+nitroisoindolinone to an aminoisoindolinone after formation. Alternatively, amino groups
+and other groups which may react can be converted to an appropriately protected
+group.</p><p num="0049">Protecting groups utilized herein denote groups which generally are not found in the
+final therapeutic compounds but which are intentionally introduced at some stage of the
+synthesis in order to protect groups which otherwise might be altered in the course of
+chemical manipulations. Such protecting groups are removed at a later stage of the 
+synthesis and compounds bearing such protecting groups thus are of importance
+primarily as chemical intermediates (although some derivatives also exhibit biological
+activity). Accordingly the precise structure of the protecting group is not critical.
+Numerous reactions for the formation and removal of such protecting groups are
+described in a number of standard works including, for example, <ref type="npl">"Protective Groups in
+Organic Chemistry'. Plenum Press, London and New York, 1973</ref>; <ref type="npl">Greene, Th. W.
+"Protective Groups in Organic Synthesis", Wiley, New York, 1981</ref>; <ref type="npl">The Peptides', Vol.
+1. Schröder and Lubke, Academic Press, London and New York, 1965</ref>; <ref type="npl">"Methoden der
+organischen Chemie", Houben-Weyl, 4th Edition, Vol. 15/1, Georg Thieme Verlag, Stuttgart
+1974</ref>, the disclosures of which are incorporated herein by reference.</p><p num="0050">The compounds of Formula I possess a center of chirality and thus can exist as
+optical isomers. Both the racemates of these isomers and the individual isomers
+themselves. as well as diastereomers when there are two chiral centers, are within the
+scope of the present invention. The racemates can be used as such or can be
+separated into their individual isomers mechanically as by chromatography using a
+chiral absorbent. Alternatively, the individual isomers can be prepared in chiral form or
+separated chemically from a mixture by forming salts with a chiral acid or base, or have
+such as the individual enantiomers of 10-camphorsulfonic acid, camphoric acid, a-bramocamphoric
+acid, methoxyacetic acid, tartaric acid, diacetyltartaric acid, malic acid,
+pyrrolidone-5-carboxylic acid, and the like, and then freeing one or both of the resolved
+bases, optionally repeating the process, so as obtain either or both substantially free of
+the other <i>i.e.,</i> in a form having an optical purity of &gt;95%.</p><p num="0051">Preferred examples include substantially chirally pure (R)-isomer, a substantially
+chirally pure (S)-isomer, or a mixture thereof, wherein the isomer is 2-[1-(3-ethoxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]isoindoline-1,3-dione,
+2-[1-(3-ethoxy-4.
+methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]benzo[e]isoindoline-1,3-dione, 2-[1-(3-ethoxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]-4-methylisoindoline-1,3-dione, 
+2-[1-(3-ethoxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]-5-methylisoindoline-1,3-dione,
+2-[1-(3-cyclopentyloxy-4-methoxy-phenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]-5-methylisoindoline-1,3-dione,
+2-[1-(3-cyclopentyloxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]-4-methylisoindoline-1,3-dione,
+N-[2-[1-(3-cyclopentyloxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]-1,3-dioxoisoindolin-4-yl]acetamide,
+N-[2-[1-(3-ethoxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]-1,3-dioxoisoindolin-4-yl]-acetamide,
+5-(tert-butyl)-2-[1-(3-ethoxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]isoindoline-1,3-dione,
+2-[1-(3,4-dimethoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]isoindoline-1,3-dione,
+2-[1-(3-ethoxy-4-methoxyphenyl)-2-1,3,4-oxadiazol-2-yl)ethyl]isoindolin-1-one,
+2-[1-(3-ethoxy-4-methoxyphenyl)-2-(5-methyl(1,3,4-oxadiazol-2-yl))ethyl]isoindolin-1-one,
+and 2-[1-(3-ethoxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]-3-pyrrolino[3,4-]quinoline-1,3-dione.</p><p num="0052">The present invention also pertains to the physiologically acceptable non-toxic acid
+addition salts of the compounds of Formula I. Such salts include those derived from
+organic and inorganic acids such as, without limitation, hydrochloric acid, hydrobromic
+acid, phosphoric acid, sulfuric acid, methanesulphonic acid, acetic acid, tartaric acid,
+lactic acid, succinic acid, citric acid, malic acid, maleic acid, sorbic acid, aconitic acid,
+salicylic acid, phthalic acid, embonic acid, enanthic acid, and the like.</p><p num="0053">Oral dosage forms include tablets, capsules, dragees, and similar shaped,
+compressed pharmaceutical forms containing from 1 to 100 mg of drug per unit dosage.
+Mixtures containing from 20 to 100 mg/mL can be formulated for parenteral
+administration which includes intramuscular, intrathecal, intravenous and intra-arterial
+routes of administration. Rectal administration can be effected through the use of
+suppositories formulated from conventional carriers such as cocoa butter. </p><p num="0054">Pharmaceutical compositions thus comprise one or more compounds of the present
+invention associated with at least one pharmaceutically acceptable carrier, diluent or
+excipient. In preparing such compositions, the active ingredients are usually mixed with
+or diluted by an excipient or enclosed within such a carrier which can be in the form of a
+capsule or sachet. When the excipient serves as a diluent, it may be a solid, semi-solid,
+or liquid material which acts as a vehicle, carrier, or medium for the active ingredient.
+Thus, the compositions can be in the form of tablets, pills, powders, elixirs,
+suspensions, emulsions, solutions, syrups, soft and hard gelatin capsules,
+suppositories, sterile injectable solutions and sterile packaged powders. Examples of
+suitable excipients include lactose, dextrose, sucrose, sorbitol, mannitol, starch, gum
+acacia, calcium silicate, microcrystalline cellulose, polyvinylpyrrolidinone
+polyvinylpyrrolidone, cellulose, water, syrup, and methyl cellulose, the formulations can
+additionally include lubricating agents such as talc, magnesium stearate and mineral oil,
+wetting agents, emulsifying and suspending agents, preserving agents such as methyl-
+and propylhydroxybenzoates, sweetening agents or flavoring agents.</p><p num="0055">The compositions preferably are formulated in unit dosage form, meaning physically
+discrete units suitable as a unitary dosage, or a predetermined fraction of a unitary dose
+to be administered in a single or multiple dosage regimen to human subjects and other
+mammals, each unit containing a predetermined quantity of active material calculated to
+produce the desired therapeutic effect in association with a suitable pharmaceutical
+excipient. The compositions can be formulated so as to provide an immediate,
+sustained or delayed release of active ingredient after administration to the patient by
+employing procedures well known in the art.</p><p num="0056">The following examples will serve to further typify the nature of this invention but
+should not be construed as a limitation in the scope thereof, which scope is defined
+solely by the appended claims. </p><heading><b>Example 1</b></heading><heading><b>2-[1-(3-Ethoxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]
+isoindoline-1,3-dione</b></heading><p num="0057">A mixture of 3-(1,3-dioxoisoindolin-2-yl)-3-(3-ethoxy-4-methoxyphenyl)propanoic
+acid (3.0 g, 8.1 mmol) and carbonyldiimidazole (1.45 g, 8.94 mmol) in tetrahydrofuran
+(15 mL) was stirred at room temperature for 2 hours. To the solution was added formic
+hydrazide (644 mg, 10.7 mmol). The mixture was stirred for 18 hours. The resulting
+suspension was filtered and washed with ether. The isolated solid was stirred in a
+mixture of ethyl acetate (40 mL) and water (10 mL) for 1 hour. The suspension was
+filtered and washed with water and ether to give crude 3-(1,3-dioxoisoindolin-2-yl)-N-carbonylamino-3-(3-ethoxy-4-methoxyphenyl)propanamide
+(1.3 g, 39% yield). A
+solution of 3-(1,3-dioxoisoindolin-2-yl)-N-carbonylamino-3-(3-ethoxy-4-methoxyphenyl)-propanamide
+(600 mg, 1.46 mmol) and phosphorus oxychloride (POCl<sub>3</sub>, 0.54 mL, 5.8
+mmol) in acetonitrile (20 mL) was heated to reflux for 2 hours. This solution was poured
+into water (10 mL). The aqueous layer was extracted with ethyl acetate (2 X 50 mL).
+The combined organic layers were washed with sodium hydrogen carbonate (50 mL,
+sat), brine (50 mL) and dried over magnesium sulfate. Removal of solvent and
+chromatography gave an oil. The oil was slurried in ether (10 mL). The resulting
+suspension was filtered to yield 2-[1-(3-ethoxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]isoindoline-1,3-dione
+as a white solid (250 mg, 43% yield): mp, 132.0-134.0 °C;
+<sup>1</sup>H NMR (CDCl<sub>3</sub>); δ 1.46 (t, <i>J</i> = 6.9 Hz, 3H, C<i>H</i><sub>3</sub>), 2.82 (dd, <i>J</i> = 6.0, 15.6 Hz, 1H, CH<i>H</i>),
+3.84 (s, 3H, C<i>H</i><sub>3</sub>), 4.11 (q, <i>J</i> = 7.0 Hz, 2H, C<i>H</i><sub>2</sub>), 4.37 (dd, <i>J</i> = 10.3, 15.7 Hz, 1H, CH<i>H</i>),
+5.81 (dd, <i>J</i> = 6.0, 10.3 Hz, 1H, NC<i>H</i>), 6.62 (d, <i>J</i> = 7.9 Hz, 1H, Ar), 7.13-7.17 (m, 2H, Ar),
+7.67-7.72 (m, 2H, Ar), 7.75-7.62 (m, 2H, Ar), 8.29 (s, 1H, Ar); <sup>13</sup>C NMR (CDCl<sub>3</sub>) δ
+14.69, 27.70, 51.85, 55.90, 64.42, 111.32, 112.51, 120.32, 123.44, 130.14, 13163, 
+134.13, 148,39, 143.43, 153.03, 163.99, 167.93; Anal Calcd for C<sub>21</sub>H<sub>29</sub>N<sub>3</sub>O<sub>5</sub>: C, 64.12;
+H, 4.87; N, 10.68. Found: C, 63.84; H, 4.90; N, 10.48.</p><heading><b>Example 2</b></heading><heading><b>2-[1-(3-Ethoxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]benzo[e]isoindoline-1,3-dione</b></heading><p num="0058">2-[1-(3-Ethoxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]benzo[e]isoindoline-1,3-dione
+was prepared by the procedure used in Example 1. Thus, reaction of 3-(1,3-dioxobenzo[e]isoindolin-2-yl)-3-(3-ethoxy-4-methoxyphenyl)propanoic
+acid (1.50 g, 3.58
+mmol), carbonyldiimidazole (0.70 g, 4.3 mmol) and formic hydrazide (310 mg, 5.16
+mmol) in tetrahydrofuran (20 mL) gave crude 3-(1,3-dioxobenzo[e]isoindoiin-2-yl)-N-carbonylamino-3-(3-ethoxy-4-methoxyphenyl)propanamide
+(1.0 g, 2.2 mmol), which
+was then treated with phosphorus oxychloride (POCl<sub>3</sub>, 0.4 mL, 4.3 mmol) in acetonitrile
+(10 mL). The product was obtained as a yellow solid (135 mg, 8% overall yield): mp,
+139.0-141.5 °C; <sup>1</sup>H NMR (CDCl<sub>3</sub>) δ 1.47 (t, <i>J</i> = 7.2 Hz, 3H, C<i>H</i><sub>3</sub>), 3.85 (s, 3H, C<i>H</i><sub>3</sub>),
+3.87 (dd, <i>J</i> = 6.0, 15.6 Hz, 1H, CH<i>H</i>), 4.13 (q, <i>J</i> = 6.9 Hz, 2H, C<i>H</i><sub>2</sub>), 4.42 (dd, <i>J</i> = 10.2,
+15.6 Hz, 1H, CH<i>H</i>), 5.87 (t, <i>J</i> = 5.9, 10.4 Hz, 1H, NC<i>H</i>), 6.84 (d, <i>J</i> = 8.7 Hz, 1H, Ar),
+7.18-7.27 (m, 2H, Ar), 7.64-7.75 (m, 2H, Ar), 7.81 (d, <i>J</i> = 8.3 Hz, 1H, Ar), 7.94 (d, <i>J</i> =
+7.6 Hz, 1H, Ar), 8.14 (d, <i>J</i> = 8.2 Hz, 1H, Ar), 8.29 (s, 1H, C<i>H</i>), 8.90 (d, <i>J</i> = 7.5 Hz, 1H,
+Ar); <sup>13</sup>C NMR (CDCl<sub>3</sub>) δ 14.63, 27.79, 51.69, 55.84, 64.39, 111.34, 112.53, 118.41,
+121.22, 124.83, 126.88, 127.93, 128.62, 128.74, 129.44, 130.31, 130.87, 135.06,
+136.59, 148.37, 149.36, 152.95, 164.04, 168.51, 169.07; Anal Calcd for C<sub>25</sub>H<sub>21</sub>N<sub>3</sub>O<sub>5</sub>: C,
+67.71; H, 4.77; N, 9.48. Found: C, 67.80; H, 4.95; N, 9.20. </p><heading><b>Example 3</b></heading><heading><b>2-[1-(3-Ethoxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]-4-methylisoindoline-1,3-dione</b></heading><p num="0059">2-[1-(3-Ethoxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]-4-methylisoindoline-1,3-dione
+was prepared by the procedure of Example 1. Reaction of 3-(3-ethoxy-4-methoxyphenyl)-3-(4-methyl-1,3-dioxoisoindolin-2-yl)propanoic
+acid (2.03 g, 5.29
+mmol), carbonyldiimidazole (1.03 g, 6.35 mmol) and formic hydrazide (420 mg, 6.99
+mmol) In tetrahydrofuran (20 mL) gave crude N-carbonylamino-3-(3-ethoxy-4-methoxyphenyl)-3-(
+4-methyl-1,3-dioxoisoindolin-2-yl)propanamide(610 mg, 1.43 mmol),
+which was then treated with phosphorus oxychloride (0.4 mL, 4.3 mmol) in acetonitrile
+(6 mL). The product was obtained as a white solid (311 mg, 14% overall yield): mp,
+96.0-98.0 °C; <sup>1</sup>H NMR (CDCl<sub>3</sub>) δ 1.47 (t, <i>J</i> = 6.9 Hz, 3H, C<i>H</i><sub>3</sub>), 2.67 (s, 3H, C<i>H</i><sub>3</sub>), 3.81
+(dd, <i>J</i> = 6.0, 15.7 Hz, 1H, CH<i>H</i>), 3.85 (s, 3H, C<i>H</i><sub>3</sub>), 4.12 (q, <i>J</i> = 6.9 Hz, 2H, C<i>H</i><sub>2</sub>), 4.37
+(dd, <i>J</i> = 10.2, 15.6 Hz, 1H, CH<i>H</i>), 5.81 (t, <i>J</i> = 6.0, 10.3 Hz, 1H, NC<i>H</i>), 6.83 (d, <i>J</i> = 8.7
+Hz, 1H, Ar), 7.14-7.17 (m, 2H, Ar), 7.43 (d, <i>J</i> = 7.6 Hz, 1H, Ar), 7.54 (t, <i>J</i> = 7.3 Hz, 1H,
+Ar), 7.63 (d, <i>J</i> = 7.1 Hz, 1H, Ar), 8.30 (s, 1H, C<i>H</i>); <sup>13</sup>C NMR (CDCl<sub>3</sub>) δ 14.69, 17.52,
+27.71, 51.62, 55.92, 64.46, 111.37, 112.63, 120.33, 121.06, 128.31, 130-33, 132.07,
+133.59, 136.55, 138.18, 148.39, 149.42, 153.02, 164-08, 168.04, 168.53; Anal Calcd
+for C<sub>22</sub>H<sub>21</sub>N<sub>3</sub>O<sub>5</sub> + 0.2 H<sub>2</sub>O: C, 64.29; H, 5.25; N, 10.22; H<sub>2</sub>O, 0.90. Found: C, 64.62; H,
+5.30; N, 9.83; H<sub>2</sub>O, 0.71. </p><heading><b>Example 4</b></heading><heading><b>2-[1-(3-Ethoxy-4-methoxyphenyl-2-(1,3,4-oxadiazol-2-yl)ethyl]-5-methylisoindoline-1,3-dione</b></heading><p num="0060">2-[1-(3-Ethoxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]-5-methylisoindoline-1,3-dione
+was prepared by the procedure of Example 1. Reaction of 3-(3-ethoxy-4-methoxyphenyl)-3-(5-methyl-1,3-dioxoisoindolin-2-yl)propanoic
+acid (1.81 g, 4.72
+mmol), carbonyldiimidazole (0.92 g, 5.7 mmol) and formic hydrazide (375 mg, 6.2
+mmol) in ethyl acetate (20 mL) gave crude N-carbonylamino-3-(3-ethoxy-4-methoxyphenyl)-3-(5-methyl-1,3-dioxoisoindolin-2-yl)propanamide
+(0.93 g, 2.2 mmol),
+which was then treated with phosphorus oxychloride (0.4 mL, 4.3 mmol) in acetonitrile
+(12 mL). The product was obtained as a white solid (371 mg, 19% overall yield): mp,
+122.0-124.0 °C; <sup>1</sup>H NMR (CDCl<sub>3</sub>) δ 1.45 (t, <i>J</i> = 6.9 Hz, 3H, C<i>H</i><sub>3</sub>), 2.48 (s, 3H, C<i>H</i><sub>3</sub>),
+3.80 (dd, <i>J</i> = 6.0, 15.6 Hz, 1H, CH<i>H</i>), 3.84 (s, 3H, C<i>H</i><sub>3</sub>), 4.10 (q, <i>J</i> = 6.9 Hz, 2H, C<i>H</i><sub>2</sub>),
+4.35 (dd, <i>J</i>= 10.3, 15.6 Hz, 1H, CH<i>H</i>), 5.79 (dd, <i>J</i> = 6.0, 10.2 Hz, 1H, NC<i>H</i>), 6.82 (d, <i>J</i> =
+8.1 Hz, 1H, Ar), 7.12-7.17 (m, 2H, Ar), 7.47 (d, <i>J</i> = 7.5 Hz, 1H, Ar), 7.59 (s, 1H, Ar), 7.68
+(d, <i>J</i> = 7.6 Hz, 1H, Ar), 8.28 (s, 1H, Ar); <sup>13</sup>C NMR (CDCl<sub>3</sub>) δ 14.61, 21.86, 27.67, 51.71,
+55.83, 64.36, 111.29, 112.49, 120.22, 123.27, 123.88, 128.97, 130.23, 131.95, 134.58,
+145.39, 146.33, 149.34, 152.93, 163.97, 167.91, 168.04; Anal Calcd for C<sub>22</sub>H<sub>21</sub>N<sub>3</sub>O<sub>5</sub>: C,
+64.86; H, 5.20; N, 10.31. Found: C, 64.77; H, 5.07; N, 10.30. </p><heading><b>Example 5</b></heading><heading><b>2-[1-(3-Cyclopentyloxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]-5-methylisoindoline-1,3-dione</b></heading><p num="0061">2-[1-(3-Cyclopentyloxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]-5-methylisoindoline-1,3-dione
+was prepared by the procedure of Example 1. Reaction of
+3-(3-cyclopentyloxy-4-methoxyphenyly-3-(5-methyl-1,3-dioxoisoindolin-2-yl)propanoic
+acid (2.33 g, 5.5 mmol), carbonyldiimidazole (1.07 g, 6.59 mmol) and formic hydrazide
+(436 mg, 7.26 mmol) in ethyl acetate (20 mL) gave crude N-carbonylamino-3-(3-cyclopentyloxy-4-methoxyphenyl)-3-(5-methyl-1,3-dioxoisoindolin-2-yl)propanamide
+(2.24 g, 4.8 mmol), which was then treated with phosphorus oxychloride (0.9 mL, 9.6
+mmol) in acetonitrile (10 mL). The product was obtained as a white solid (728 mg, 32%
+overall yield): mp, 184.0-186.5 °C; <sup>1</sup>H NMR (CDCl<sub>3</sub>) δ 1.55-2.00 (m, 8H, C<sub>5</sub><i>H</i><sub>8</sub>), 2.48 (s,
+3H, C<i>H</i><sub>3</sub>), 3.81 (s, 3H, C<i>H</i><sub>3</sub>), 3.82 (dd, <i>J</i> = 6.1, 15.7 Hz, 1H, CH<i>H</i>), 4.36 (dd, <i>J</i> = 10.3,
+15.7 Hz, 1H, -CH<i>H</i>), 4.74-4.81 (m, 1H, OC<i>H</i>), 5.79 (dd, <i>J</i> = 5.9, 10.3 Hz, 1H, NC<i>H</i>), 6.80
+(d, <i>J</i> = 8.4 Hz, 1H, Ar), 7.10 (dd, <i>J</i> = 2.0, 8.3 Hz, 1H, Ar), 7.18 (d, <i>J</i> = 2.0 Hz, 1H, Ar),
+7.47 (d, <i>J</i> = 7.5 Hz, 1H, Ar), 7.59 (s, 1H, Ar), 7.67 (d, <i>J</i> = 7.6 Hz, 1H, Ar), 8.28 (s, 1H,
+C<i>H</i>); <sup>13</sup>C NMR (CDCl<sub>3</sub>) δ 21.95, 24.09, 27.75, 32.77, 51.79, 56.00, 80.48, 111.73,
+114.51, 120.16, 123.34, 123.95, 129.05, 130.22, 132-03, 134.65, 145.44, 147.75,
+150.03, 153.00, 164.08, 167.98, 168.11; Anal Calcd for C<sub>25</sub>H<sub>25</sub>N<sub>3</sub>O<sub>5</sub> + 0.13 Et<sub>2</sub>O: C,
+67.05; H, 5.80; N, 9.19. Found: C, 66.95; H, 5.88; N, 8.97. (HNMR showed the sample
+contained 0.13 equiv. of ether). </p><heading><b>Example 6</b></heading><heading><b>2-[1-(3-Cyclopentyloxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]-4-methylisoindoline-1,3-dione</b></heading><p num="0062">2-[1-(3-Cyclopentyloxy-4-methoxyphenyl)2-(1,3,4-oxadiazol-2-yl)ethyl]-4-methylisoindoline-1,3-dione
+was prepared by the procedure of Example 1. Reaction of
+3-(3-cyclopentyloxy-4-methoxyphenyl)-3-(4-methyl-1,3-dioxoisoindolin-2-yl)propanoic
+acid (2.23 g, 5.27 mmol), carbonyldiimidazole (0-94 g, 5.8 mmol) and formic hydrazide
+(382 mg, 6.36 mmol) in ethyl acetate (20 mL) gave crude N-carbonylamino-3-(3-cyclopentyloxy-4-methoxyphenyl}-3-(4-methyl-1,3-dioxoisoindolin-2-yl)propanamide
+(1.71 g, 3.67 mmol), which was then treated with phosphorus oxychloride (0.8 mL, 8.6
+mmol) in acetonitrile (10 mL). The product was obtained as a white solid (368 mg, 16%
+overall yield): mp, 126.0-128.5 °C; <sup>1</sup>H NMR (CDCl<sub>3</sub>) δ 1.21-1.99 (m, 8H, C<sub>5</sub><i>H</i><sub>8</sub>), 2.66 (s,
+3H, C<i>H</i><sub>3</sub>), 3.81 (s, 3H, C<i>H</i><sub>3</sub>), 3.82 (dd, <i>J</i> = 6.1, 15.8 Hz, 1H, CH<i>H</i>), 4.37 (dd, <i>J</i> = 10.3,
+15.6 Hz, 1H, CH<i>H</i>)), 4.76-4.83 (m, 1H, OC<i>H</i>), 5.80 (dd, <i>J</i> = 5.9, 10.3 Hz, 1H, NC<i>H</i>), 6.81
+(d, <i>J</i> = 8.4 Hz, 1H, Ar), 7.09-7.18 (m, 2H, Ar), 7.43 (d, <i>J</i> = 7.6 Hz, 1H, Ar), 7.54 (t, <i>J</i> =
+7.4 Hz, 1H, Ar), 7.62 (d, <i>J</i> = 7.1 Hz, 1H, Ar), 8.29 (s, 1H, C<i>H</i>); <sup>13</sup>C NMR (CDCl<sub>3</sub>) δ
+17.45, 24.00, 27.67, 32.68, 51.57, 55.94, 80.44, 111.69, 114.55, 120.13, 120.98,
+128.25, 130.22, 132.01, 133.50, 136.44, 138.08, 147.68, 149.99, 152.93, 164.04,
+167.95, 168.56; Anal Calcd for C<sub>25</sub>H<sub>25</sub>N<sub>3</sub>O<sub>5</sub>: C, 67.10; H, 5.63; N, 9.39. Found: C,
+67.14; H, 5.55; N, 9.19. </p><heading><b>Example</b> 7</heading><heading><b>N-[2-{1-(3-Cyclopentyloxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]-1,3-dioxolsoindolin-4-yl]acetamide</b></heading><p num="0063">N-[2-[1-(3-Cyclopentyloxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]-1,3-dioxolsoindolin-4-yl]acetamide
+was prepared by the procedure of Example 1. Reaction
+of 3-[4-(acetylamino)-1,3-dioxoisoindolin-2-yl]-3-(3-cyclopentyloxy-4-methoxyphenyl)-propanoic
+acid (2.0 g. 4.3 mmol), carbonyldiimidazole (0.77 g, 4.8 mmol) and formic
+hydrazide (314 mg, 4.7 mmol) In ethyl acetate (20 mL) gave crude 3-[4-(acetylamino)-1,3-dioxoisoindolin-2-yl]-N-carbonylamino-3-(3-cyclopentyloxy-4-methoxyphenyl)
+propanamide, which was then reacted with phosphorus oxychloride (1.0 mL, 10.7 mmot)
+in acetonitrile (15 mL). The product was isolated as a yellow solid (555 mg, 28% overall
+yield): mp, 115.0-117.0°C; <sup>1</sup>H NMR (CDCl<sub>3</sub>) δ 1.62-1.97 (m, 8H, C<sub>5</sub><i>H</i><sub>8</sub>), 2.27 (s, 3H,
+C<i>H</i><sub>3</sub>), 3.76 (dd, <i>J</i> = 5.6, 15.9 Hz, 1H, CH<i>H</i>), 3.83 (s, 3H, C<i>H</i><sub>3</sub>), 4.40 (dd, <i>J</i> = 10.7, 15.8
+Hz, 1H, CH<i>H</i>), 4.76-4.82 (m, 1H, OC<i>H</i>), 5.78 (dd, <i>J</i> = 5.5, 10.7 Hz, 1H, NC<i>H</i>), 6.84 (d, <i>J</i>
+= 8. Hz, 1H, Ar), 7.09-7.15 (m, 2H, Ar), 7.47 (d, <i>J</i> = 7.2 Hz, 1H, Ar), 7.65 (t, <i>J</i> = 7.5 Hz,
+1H, Ar), 8.32 (s, 1H, C<i>H</i>), 8.76 (d, <i>J</i> = 8.4 Hz, 1H, Ar), 9.48 (s, 1H, N<i>H</i>); <sup>13</sup>C NMR
+(CDCl<sub>3</sub>) δ 23.99, 24.85, 27.58, 32.68, 51.71. 55.95, 80.53, 111.75, 114.46, 115.10,
+118.03, 119.88, 124,82, 129.77, 130.95, 135.94, 137.48, 147.77, 150.21, 152.99,
+163.85, 167.36, 169.07, 167.71; Anal Calcd for C<sub>26</sub>H<sub>28</sub>N<sub>4</sub>O<sub>8</sub>+ 0.1 hexane: C, 64.01; H,
+5.53: N, 11.22. Found: C, 64.01; H, 5.58; N, 10.97. (HNMR showed the product
+contained 10% of hexane). </p><heading><b>Example 8</b></heading><heading>N-[2-[1-(3-Ethoxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]-1,3-diaxoisoindolin-4-yl]acetamide</heading><p num="0064">A mixture of 3-[4-(acetylamino)-1,3-dioxoisoindolin-2-yl]-3-(3-ethoxy-4-methoxyphenyl)propanoic
+acid (1.69 g, 3.96 mmol) and carbonyldiimidazole (0.71 g, 4.4 mmol)
+in acetonitrile (20 mL) was stirred at room temperature for 2 hours. To the solution was
+added formic hydrazide (289 mg, 4.81 mmol). The mixture was then stirred for 18
+hours. To the resulting solution was added phosphorus oxychloride (1.0 mL, 10.7
+mmol), and this mixture was heated at reflux for 2 hours. The solution was poured to
+water (10 mL). The aqueous layer was extracted with ethyl acetate (2 X 50 mL). The
+combined organic layers were washed with aqueous sodium hydrogen carbonate (50
+mL, sat), brine (50 mL) and then dried over magnesium sulfate. Chromatography
+followed by removal of solvent yielded an oil. The oil was stirred in ether (10 mL) to
+give a suspension. This suspension was filtered to yield N-[2-[1-(3-ethoxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]-1,3-dioxoisoindolin-4-yl]acetamide
+as a
+white solid (478 mg, 27% yield): mp, 141.0-143.0 °C; <sup>1</sup>H NMR (CDCl<sub>3</sub>) δ 1.47 (t, <i>J</i> = 6.9
+Hz, 3H, C<i>H</i><sub>3</sub>), 2.26 (s, 3H, C<i>H</i><sub>3</sub>), 3.74 (dd, <i>J</i> = 5.8, 15.8 Hz, 1H, CH<i>H</i>), 3.85 (s, 3H,
+C<i>H</i><sub>3</sub>), 4.11 (q, <i>J</i> = 7.1 Hz, 2H, C<i>H</i><sub>2</sub>), 4.38 (dd, <i>J</i> = 10.6, 15.8 Hz, 1H, CH<i>H</i>), 5.78 (dd, <i>J</i> =
+5.6, 10.6 Hz, 1H, NC<i>H</i>), 6.83 (d, <i>J</i> = 8.9 Hz, 1H, Ar), 7.11-7.14 (m, 2H, Ar), 7.45 (d, <i>J</i> =
+7.2 Hz, 1H, Ar), 7.64 (d, <i>J</i> = 7.5 Hz, 1H, Ar), 8.31 (s, 1H, Ar), 8.75 (d, <i>J</i> = 8.4 Hz, 1H,
+Ar), 9.46 (br s, 1H, N<i>H</i>); <sup>13</sup>C NMR (CDCl<sub>3</sub>) δ 14,70, 24.92, 27.60, 51.74, 55.92, 64.50,
+111.40, 112.47, 115.15, 118.11, 120.15, 124.91, 129.87, 130.99, 136.01, 137.55,
+148,49, 149.59, 153.07, 163.88, 167.44, 169.14, 169.75; Anal Calcd for C<sub>23</sub>H<sub>22</sub>N<sub>4</sub>O<sub>6</sub>: C,
+61.33; H, 4.92; N, 12.44. Found: C, 61.37; H, 4.88; N, 12.11. </p><heading><b>Example 9</b></heading><heading><b>5-(tert-Butyl)-2-[1-(3-ethoxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]isoindoline-1,3-dione</b></heading><p num="0065">5-(t Butyl)-2-[1-(3-ethoxy-4-methoacyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]isoindoline-1,3-dione
+was prepared as described for Example 8 from 3-[5-(tert-butyl)-1,3-
+dioxoisoindolin-2-yl]-3-(3-ethoxy-4-methoxyphenyl)propanoic acid (2.0 g, 4.7
+mmol) , carbonyldiimidazole (0.81 g, 5.0 mmol), formic hydrazide (0.35 g, 5.8 mmol),
+and phosphorus oxychloride (1.0 mL, 10.7 mmol) in acetonitrile (20 mL). The product
+was isolated as a white solid (800 mg, 38% yield): mp, 136.0-138.5 °C; <sup>1</sup>H NMR
+(CDCl<sub>3</sub>) δ 1.35 (s, 9H, C<i>H</i><sub>3</sub>), 1.44 (t, <i>J</i> = 6.9 Hz, 3H, C<i>H</i><sub>3</sub>), 3.79 (dd, <i>J</i> = 5.9, 16.1 Hz,
+1H, CH<i>H</i>), 3.84 (s, 3H, C<i>H</i><sub>3</sub>), 4.11 (q, <i>J</i> = 7.1 Hz, 2H, C<i>H</i><sub>2</sub>), 4.38 (dd, <i>J</i> = 10.3, 15.8 Hz,
+1H, CH<i>H</i>), 5.80 (dd, <i>J</i> = 5.9, 10.4 Hz, 1H, NC<i>H</i>), 6.82 (d, <i>J</i> = 8.2 Hz, 1H, Ar), 7.11-7.17
+(m, 2H, Ar), 7.70 (br s, 2H, Ar), 7.82 (br s, 1H, Ar), 8.29 (s, 1H, Ar); <sup>13</sup>C NMR (CDCl<sub>3</sub>) δ
+14.71, 27.73, 31.08, 35.72, 51.78, 55.92, 64.44, 111.36, 112.58, 120.31, 120.63,
+123.26, 128.94, 130.33, 131.14, 131.84, 148.41, 149.42, 153.02, 158.82, 164.07,
+168.25, 168.39; Anal Calcd for C<sub>25</sub>H<sub>27</sub>N<sub>3</sub>O<sub>5</sub> + 0.11 H<sub>2</sub>O: C, 66.51; H, 6.08; N, 9.31; H<sub>2</sub>O,
+0.43. Found: C, 66.42; H, 5.83; N, 9,18; H<sub>2</sub>O, 0.43.</p><heading><b>Example 10</b></heading><heading><b>2-[1-(3,4-Dimethoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]isoindoline-1,3-dione</b></heading><p num="0066">2-[1-(3,4-Dimethoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]isoindoline-1,3-dione was
+prepared by the procedure of Example 8 from 3-(3,4-dimethoxyphenyl)-3-(1,3-dioxoisoindolin-2-yl)propanoic
+acid (2.0 g, 3.6 mmol), carbonyldiimidazole (1.0 g, 6.2
+mmol), formic hydrazide (0.41 g, 6.8 mmol), and phosphorus oxychloride (1.3 mL, 14
+mmol) in acetonitrile (20 mL). The product was obtained as a white solid (730 mg, 34%
+yield): mp, 83.0-85.0 °C; <sup>1</sup>H NMR (CDCl<sub>3</sub>) δ 3.82 (dd, <i>J</i> = 6.0, 16.0 Hz, 1H, CH<i>H</i>), 3.85
+(s, 3H, C<i>H</i><sub>3</sub>), 3.90 (s, 3H, C<i>H</i><sub>3</sub>), 4.39 (dd, <i>J</i> = 10.3, 15.7 Hz, 1H, CH<i>H</i>), 5.84 (dd, <i>J</i> = 6.0, 
+10.3 Hz, 1H, NCH), 6.81-6.85 (m, 1H, Ar), 7.16-7.19 (m, 2H, Ar), 7.68-7.73 (m, 2H, Ar),
+7.77-7.83 (m, 2H, - Ar), 8.30 (s, 1H, C<i>H</i>); <sup>13</sup>C NMR (CDCl<sub>3</sub>) δ 27.66, 51.76, 55.79, 55.89,
+111.00, 111.07, 120.29, 123.3,8, 130.16, 131.55, 134.07, 149.03, 149.11, 152.96,
+163.90, 167.86; Anal Calcd for C<sub>20</sub>H<sub>17</sub>N<sub>3</sub>O<sub>6</sub> + 0.3 Et<sub>2</sub>O: C, 63.22; H, 5.20; N, 10.32.
+Found: C, 63.40; H, 5.02; N, 10.46. (<sup>1</sup>H NMR showed that the sample contained 30% of
+ether).</p><heading><b>Example 11</b></heading><heading><b>2-[1-(3-Ethoxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]isoindolin-1-one</b></heading><p num="0067">2-[1-(3-Ethoxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]isoindolin-1-one was
+prepared as described in Example 1. Reaction of 3-(3-ethoxy-4-methoxyphenyl)-3-(1-oxoisoindolin-2-yl)propanoic
+acid (1.50 g, 4.22 mmol), carbonyldiimidazole (0.80 g, 4.9
+mmol) and formic hydrazide (310 mg, 5.16 mmol) in tetrahydrofuran (10 mL) yielded
+crude N-carbonylamino-3-(3-ethoxy-4-methoxyphenyl)-3-(1-oxo)soindolin-2-yl)-propanamide
+(1.0 g, 2.2 mmol), which was then reacted with phosphorus pentoxide
+(2.32 g, 16.3 mmol) in chloroform (30 mL) at room temperature for 18 hours. The
+product was obtained as a white solid (250 mg, 16% overall yield): mp, 143.5-144.5 °C;
+<sup>1</sup>H NMR (CDCl<sub>3</sub>); δ 1.43 (t, <i>J</i> = 7.0 Hz, 3H, C<i>H</i><sub>3</sub>), 3.65 (dd, <i>J</i> = 6.1, 15.1 Hz, 1H, CH<i>H</i>),
+3.85 (s, 3H, C<i>H</i><sub>3</sub>), 3.87 (dd, <i>J</i> = 9.9, 15.0 Hz, 1H, CH<i>H</i>), 4.01-4.12 (m, 3H, NCH<i>H</i>, C<i>H</i><sub>2</sub>),
+4.46 (d, <i>J</i> = 16.6 Hz, 1H, NCH<i>H</i>), 5.99 (dd, <i>J</i> = 6.1, 10.1 Hz, 1H, NC<i>H</i>), 6.83-6.87 (m,
+1H, Ar), 6.94-7.01 (m, 2H, Ar), 7.34-7.52 (m, 3H, Ar), 7.78 (d, <i>J</i> = 7.1 Hz, 1H, Ar), 8.34
+(s, 1H, NCH); <sup>13</sup>C NMR (CDCl<sub>3</sub>) δ 14.60, 27.84, 46.1 9, 52. 13, 55.86, 64.45, 1 1 1 .32,
+112.45, 118.98, 122.78, 123.72, 127.95, 129.95, 131.49, 131.98, 141.09, 148.66,
+149.35, 153.31, 163.86, 168.25; Anal Calcd for C<sub>21</sub>H<sub>21</sub>N<sub>3</sub>O<sub>4</sub> + 0.06 CH<sub>2</sub>Cl<sub>2</sub>: C, 65.79; H,
+5.54; N, 10.93. Found: C, 65.87; H, 5.67; N, 10.89. </p><heading><b>Example 12</b></heading><heading><b>2-[1-(3-Ethoxy-4-methoxyphenyl)-2-(5-methyl(1,3,4-oxadiazol-2-yl))ethyl]isoindolin-1-one</b></heading><p num="0068">2-[1-(3-Ethoxy-4-methoxyphenyl)-2-(5-methyl(1,3,4-oxadiazol-2-yl))ethyl]isoindolin-1-one
+was prepared by the procedure of Example 1. Reaction 3-(3-ethoxy-4-methoxyphenyl)-3-(1-oxoisoindolin-2-yl)propanoic
+acid (1.50 g, 4.22 mmol),
+carbonyldiimidazole (0.76 g, 4.7 mmol) and acetic hydrazide (381 mg, 5.16 mmol) in
+tetrahydrofuran (15 mL) gave crude N-carbonylamino-3-(3-ethoxy-4-methoxyphenyl)-3-(1-oxoisoindolin-2-yl)propanamide
+(1.22 g, 3.06 mmot), which (650 mg, 1.47 mmol) was
+then reacted with phosphorus pentoxide (2.0 g, 14 mmol) in chloroform (30 mL) at room
+temperature for 18 hours The product was obtained as a white solid (250 mg, 32%
+overall yield): mp, 125.5-128.0 °C; <sup>1</sup>H NMR (CDCl<sub>3</sub>); δ 1.43 (t, <i>J</i> = 7.0 Hz, 3H, C<i>H</i><sub>3</sub>),
+2.46 (s, 3H, C<i>H</i><sub>3</sub>), 3.56 (dd, <i>J</i> = 6.3, 15.1 Hz, 1H, CH<i>H</i>), 3.76 (dd, <i>J</i> = 10.0, 15.0 Hz, 1H,
+CH<i>H</i>), 3.86 (s, 3H, C<i>H</i><sub>3</sub>), 4.02-4.11 (m, 3H, NCH<i>H</i>, C<i>H</i><sub>2</sub>), 4.46 (d, <i>J</i> = 16.6 Hz, 1H,
+NCH<i>H</i>), 5.97 (dd, <i>J</i> = 6.3, 9.9 Hz, 1H, NC<i>H</i>), 6.83-6.87 (m, 1H, Ar), 6.95-7.01 (m, 2H,
+Ar), 7.35-7.53 (m, 3H, Ar), 7.77-7.81 (m, 1H, Ar); <sup>13</sup>C NMR (CDCl<sub>3</sub>) δ 10.89, 14.64,
+28.04, 46.18, 52.08, 55.89, 64,47, 111.32, 112.51, 119-03, 122.81, 123.74, 127.95,
+130.13, 131.48, 132.11, 141.17, 148.64, 149.31, 163.86, 164.23, 168.30; Anal Calcd
+for C<sub>22</sub>H<sub>23</sub>N<sub>3</sub>O<sub>4</sub> + 0.28 EtOAc: C, 66.42; H, 6.08; N, 10.05. Found: C, 66.47; H, 5.98; N,
+10.04. (<sup>1</sup>H NMR showed that the sample contained 28% of ethyl acetate). </p><heading><b>Example 13</b></heading><heading><b><i>2-[1-(3-Ethoxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]-3-pyrrolino[3,4]quinoline-1,3-dione</i></b></heading><p num="0069">2-[1-(3-Ethoxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]-3-pyrrolino[3,4-h]-quinoline-1,3-dione
+was prepared by the procedure of Example 1. Reaction of 3-(1,3-dioxo(3-pyrrolino[3,4-h]quinolin-2-yl))-3-(3-ethoxy-4-methoxyphenyl)propanoic
+acid (1.0
+g, 2.4 mmol), CDI (0.46 g, 2.8 mmol) and formic hydrazide (0.20 g, 3.4 mmol) in THF
+(10 mL) gave crude 3-(1,3-dioxo(3-pyrrolino[3,4-h]quinolin-2-yl))-N-carbonylamino-3-(3-ethoxy-4-methoxyphenyl)propanamide
+(1.12 g), which was then reacted with
+phosphorus oxychloride (0.8 mL, 8.6 mmol) in acetonitrile (30 mL). The product was
+obtained as a white solid (350 mg, 33% overall yield): mp, 166-168 °C; <sup>1</sup>H NMR
+(CDCl<sub>3</sub>) δ 1.47 (t, <i>J</i> = 6.8 Hz, 3H, C<i>H</i><sub>3</sub>), 3.85 (dd, <i>J</i> = 5.9, 15.8 Hz, 1H, CH<i>H</i>), 3.85 (s,
+3H, C<i>H</i><sub>3</sub>), 4.13 (q, <i>J</i> = 6.9 Hz, 2H, C<i>H</i><sub>2</sub>), 4.48 (dd, <i>J</i> = 10.4, 15.8 Hz, 1H, CH<i>H</i>), 5.91
+(dd, <i>J</i> = 5.8, 10.4 Hz, 1H, NC<i>H</i>), 6.82-6.85 (m, 1H, Ar), 7.21-7.25 (m, 2H, Ar), 7.58 (dd,
+<i>J</i> = 4.2, 8.4 Hz, 1H, Ar), 7.94 (d, <i>J</i> = 8.0 Hz, 1H, Ar), 8.19 (d, <i>J</i> = 8.2 Hz, 1H, Ar), 8.27
+(dd, <i>J</i> = 1.7, 8.4 Hz, 1H, Ar), 8.28 (s, 1H, C<i>H</i>), 9.24 (dd, <i>J</i> = 1.7, 4.2 Hz, 1H); <sup>13</sup> C NMR
+(CDCl<sub>3</sub>) δ 14.63, 27.60, 51.83, 55.85, 64.39, 111.29, 112.58, 119.52, 120.43, 123.16,
+126.81, 130.08, 132.14, 134.44, 135.57, 136.68, 142.77, 148.34, 149.36, 152.97,
+154.27, 163.99, 167.07, 167.80, Anal Calcd for C<sub>24</sub>H<sub>20</sub>N<sub>4</sub>O<sub>5</sub> + 0.05 CH<sub>2</sub>Cl<sub>2</sub>: C, 64.38; H,
+4.52; N, 12.49. Found: C, 64.33; H, 4.58; N, 12.12. (H NMR showed the sample
+contained ~5% of CH<sub>2</sub>Cl<sub>2</sub>). </p><heading><b>Example 14</b></heading><p num="0070">Tablets, each containing 50 mg of 2-[1-(3-cyclopentyloxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]-methylisoindoline-1,3-dione
+are prepared in the following
+manner:
+<tables><table><tgroup cols="2"><tbody><row><entry namest="1" nameend="2">Constituents (for 1000 tablets)</entry></row><row><entry align="left">2-[1-(3-cyclopentyloxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]-5-methylisoindoine-1,3-dione</entry><entry align="right">50.0 g</entry></row><row><entry align="left">lactose</entry><entry align="right">50.7 g</entry></row><row><entry align="left">wheat starch</entry><entry align="right">7.5 g</entry></row><row><entry align="left">polyethylene glycol 6000</entry><entry align="right">5.0 g</entry></row><row><entry align="left">talc</entry><entry align="right">5.0 g</entry></row><row><entry align="left">magnesium stearate</entry><entry align="right">1.8 g</entry></row><row><entry align="left">demineralized water</entry><entry align="right">q.s.</entry></row></tbody></tgroup></table></tables>
+The solid ingredients are first forced through a sieve of 0.6 mm mesh width. The active
+ingredient, lactose, talc, magnesium stearate and half of the starch then are mixed. The
+other half of the starch is suspended in 40 mL of water and this suspension is added to
+a boiling solution of the polyethylene glycol in 100 mL of water. The resulting paste is
+added to the pulverulent substances and the mixture is granulated, if necessary with the
+addition of water. The granulate is dried overnight at 35°C, forced through a sieve of
+1.2 mm mesh width and compressed to form tablets of approximately 6 mm diameter
+which are concave on both sides. </p><heading><b>Example 15</b></heading><p num="0071">Tablets, each containing 100 mg of 2-[1-(3-cyclopentyloxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]-5-methylisoindoline-1,3-dione,
+can be prepared in the
+following manner
+<tables><table><tgroup cols="2"><tbody><row><entry namest="1" nameend="2">Constituents (for 1000 tablets)</entry></row><row><entry align="left">2-[1-(3-cyclopentyloxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]-5-methylisoindoline-1,3-dione</entry><entry align="center">100.0 g</entry></row><row><entry align="left">lactose</entry><entry align="center">100.0 g</entry></row><row><entry align="left">wheat starch</entry><entry align="center">47.0 g</entry></row><row><entry align="left">magnesium stearate</entry><entry align="center">3.0 g</entry></row></tbody></tgroup></table></tables>
+All the solid ingredients are first forced through a sieve of 0.6 mm mesh width. The
+active ingredient, lactose, magnesium stearate and half of the starch then are mixed.
+The other half of the starch is suspended in 40 mL of water and this suspension is
+added to 100 mL of boiling water. The resulting paste is added to the pulverulent
+substances and the mixture is granulated, if necessary with the addition of water. The
+granulate is dried overnight at 35°C, forced through a sieve of 1.2 mm mesh width and
+compressed to form tablets of approximately 6 mm diameter which are concave on both
+sides. </p><heading><b>Example 16</b></heading><p num="0072">Tablets for chewing, each containing 75 mg of 2-[1-(3-cyclopentyloxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]-5-methylisoindoline-1,3-dione,
+can be
+prepared in the following manner:
+<tables><table><tgroup cols="2"><tbody><row><entry namest="1" nameend="2">Composition (for 1000 tablets)</entry></row><row><entry align="left">2-[1-(3-cyclopentyloxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]-5-methylisoindoline-1,3-dione</entry><entry align="right">75.0 g</entry></row><row><entry align="left">mannitol</entry><entry align="right">230.0 g</entry></row><row><entry align="left">lactose</entry><entry align="right">150.0 g</entry></row><row><entry align="left">talc</entry><entry align="right">21.0 g</entry></row><row><entry align="left">glycine</entry><entry align="right">12.5 g</entry></row><row><entry align="left">stearic acid</entry><entry align="right">10.0 g</entry></row><row><entry align="left">saccharin</entry><entry align="right">1.5 g</entry></row><row><entry align="left">5% gelatin solution</entry><entry align="right">q.s.</entry></row></tbody></tgroup></table></tables></p><p num="0073">All the solid ingredients are first forced through a sieve of 0.25 mm mesh width.
+The mannitol and the lactose are mixed, granulated with the addition of gelatin solution,
+forced through a sieve of 2 mm mesh width, dried at 50°C and again forced through a
+sieve of 1.7 mm mesh width. 2-[1-(3-Cyclopentyloxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]-5-methytisoindoline-1,3-dione,
+the glycine and the saccharin are
+carefully mixed, the mannitol, the lactose granulate, the stearic acid and the talc are
+added and the whole is mixed thoroughly and compressed to form tablets of approximately
+10 mm diameter which are concave on both sides and have a breaking groove
+on the upper side. </p><heading><b>Example 17</b></heading><p num="0074">Tablets, each containing 10 mg 2-[1-(3-cyclopentyloxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]-5-methylisoindoline-1,3-dione,
+can be prepared in the following
+manner:
+<tables><table><tgroup cols="2"><tbody><row><entry namest="1" nameend="2">Composition (for 1000 tablets)</entry></row><row><entry align="left">2-[1-(3-cyclopentyloxy-4-methoxyphenyl)-2-( 1,3,4-oxadiazol-2-yl)ethyl]-5-methylisoindoline-1,3-dione</entry><entry align="right">10.0 g</entry></row><row><entry align="left">lactose</entry><entry align="right">328.5 g</entry></row><row><entry align="left">corn starch</entry><entry align="right">17.5 g</entry></row><row><entry align="left">polyethylene glycol 6000</entry><entry align="right">5.0 g</entry></row><row><entry align="left">talc</entry><entry align="right">25.0 g</entry></row><row><entry align="left">magnesium stearate</entry><entry align="right">4.0 g</entry></row><row><entry align="left">demineralized water</entry><entry align="right">q.s.</entry></row></tbody></tgroup></table></tables>
+The solid ingredients are first forced through a sieve of 0.6 mm mesh width. Then the
+active imide ingredient, lactose, talc, magnesium stearate and half of the starch are intimately
+mixed. The other half of the starch is suspended in 65 mL of water and this suspension
+is added to a boiling solution of the polyethylene glycol in 260 mL of water. The
+resulting paste is added to the pulverulent substances, and the whole is mixed and
+granulated, if necessary with the addition of water. The granulate is dried overnight at
+35°C, forced through a sieve of 1.2 mm mesh width and compressed to form tablets of
+approximately 10 mm diameter which are concave on both sides and have a breaking
+notch on the upper side. </p><heading><b>Example 18</b></heading><p num="0075">Gelatin dry-filled capsules, each containing 100 mg of 2-[1-(3-cyclopentyloxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]-5-methylisoindoline-1,3-dione,
+can be
+prepared in the following manner:
+<tables><table><tgroup cols="2"><tbody><row><entry namest="1" nameend="2">Composition (for 1000 capsules)</entry></row><row><entry align="left">2-[1-(3-cyclopentytoxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]-5-methylisoindoline-1,3-dione</entry><entry align="center">100.0 g</entry></row><row><entry align="left">microcrystalline cellulose</entry><entry align="center">30.0 g</entry></row><row><entry align="left">sodium lauryl sulfate</entry><entry align="center">2.0 g</entry></row><row><entry align="left">magnesium stearate</entry><entry align="center">8.0 g</entry></row></tbody></tgroup></table></tables>
+The sodium lauryl sulfate is sieved into the 2-[1-(3-cyclopentyloxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]-5-methylisoindoline-1,3-dione
+through a
+sieve of 0.2 mm mesh width and the two components are intimately mixed for 10
+minutes. The microcrystalline cellulose is then added through a sieve of 0.9 mm mesh
+width and the whole is again intimately mixed for 10 minutes. Finally, the magnesium
+stearate is added through a sieve of 0.8 mm width and, after mixing for a further 3
+minutes, the mixture is introduced in portions of 140 mg each into size 0 (elongated)
+gelatin dry-fill capsules. </p><heading><b>Example 19</b></heading><p num="0076">Gelatin dry-filled capsules, each containing 100 mg of 2-[1-(3-cyclopentyloxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl}ethyl]-5-methylisoindoline-1,3-dione,
+can be
+prepared in the following manner:
+<tables><table><tgroup cols="2"><tbody><row><entry namest="1" nameend="2">Composition (for 1000 capsules)</entry></row><row><entry align="left">2-[1-(3-cyclopentyloxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]-5-methyllsoindoline-1,3-dione</entry><entry align="center">5.0 g</entry></row><row><entry align="left">microcrystalline cellulose</entry><entry align="center">30.0 g</entry></row><row><entry align="left">sodium lauryl sulfate</entry><entry align="center">2.0 g</entry></row><row><entry align="left">magnesium stearate</entry><entry align="center">8.0 g</entry></row></tbody></tgroup></table></tables>
+The sodium lauryl sulfate is sieved into the 2-[1-(3-cyclopentyloxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-y))ethyl]-5-methylisoindoline-1,3-dione
+through a
+sieve of 0.2 mm mesh width and the two components are intimately mixed for 10
+minutes. The microcrystalline cellulose is then added through a sieve of 0.9 mm mesh
+width and the whole is again intimately mixed for 10 minutes. Finally, the magnesium
+stearate is added through a sieve of 0.8 mm width and, after mixing for a further 3
+minutes, the mixture is introduced in portions of 140 mg each into size 0 (elongated)
+gelatin dry-fill capsules.</p></description><claims lang="EN" status="new"><claim num="xx"><claim-text>Use of a 1,3,4-oxadiazole compound of formula I,
+
+or a pharmaceutically acceptable salt thereof, for the manufacture of a medicament for the
+treatment of a chronic pulmonary inflammatory disease, ulcerative coltis, systemic lupus
+erythrematosis, dermatitis, psoriasis, lupus, a viral infection, or viral conjunctivitis:
+wherein:
+<claim-text><claim-text>the carbon atom designated * constitutes a center of chirality;</claim-text><claim-text>Y is C=O, CH2, SO2 or CH2C=O;</claim-text><claim-text>X is hydrogen or alkyl of 1 to 4 carbon atoms;</claim-text><claim-text>each of R1, R2, R3 and R4, independently of the others, is hydrogen, halo, trifluoromethyl,
+acetyl, alkyl of 1 to 8 carbon atoms, alkoxy of 1 to 4 carbon atoms, nitro, cyano, hydroxy,
+tert-butyl, -CH2NR8R9, -(CH2)2NR8R9 or -NR8R9; or any two of R1, R2, R3 and R4 on
+adjacent carbon atoms, together with the depicted phenylene ring, are naphthylidene,
+quinoline, quinoxaline, benzimidazole, benzodioxole or 2-hydroxybenzimidazole;</claim-text><claim-text>each of R5 and R6, independently of the other, is hydrogen, alkyl of 1 to 4 carbon atoms, alkoxy
+of 1 to 6 carbon atoms, cyano, benzocycloalkoxy, cycloalkoxy of up to 18 carbon atoms,
+bicycloalkoxy of up to 18 carbon atoms, tricycloalkoxy of up to 18 carbon atoms, or
+cycloalkylalkoxy of up to 18 carbon atoms;</claim-text><claim-text>each of R8 and R9, taken independently of the other, is hydrogen, straight alkyl of 1 to 8 carbon
+atoms, branched alkyl of 1 to 8 carbon atoms, phenyl, benzyl, pyridyl, pyridylmethyl, or
+one of R8 and R9 is hydrogen and the other is -COR10 or -SO2R10; or R8 and R9, taken
+together, are tetramethylene, pentamethylene, -CHNCHCH-, hexamethylene, or
+-CH2CH2X1CH2CH2- in which X' is -O-, -S-, or -NH-; and</claim-text><claim-text>R10 is hydrogen, alkyl of 1 to 8 carbon atoms, cycloalkyl, cycloalkylmethyl of up to 6 carbon
+atoms, phenyl, pyridyl, benzyl, imidazolylmethyl, pyridylmethyl, NR11R12 or CH2NR*R0,
+wherein R11 and R12, independently of each other, are hydrogen, alkyl of 1 to 8 carbon
+atoms, phenyl, or benzyl, and wherein R* and R0, independently of each other, are
+hydrogen, methyl, ethyl, or propyl.</claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>The use of claim 1, wherein the compound is substantially chirally pure.</claim-text></claim><claim num="xx"><claim-text>The use of claim 1, wherein the medicament is adapted for oral, rectal, parenteral,
+or topical administration.</claim-text></claim><claim num="xx"><claim-text>The use of claim 1, wherein the compound of formula I is:
+<claim-text><claim-text>2-[1-(3-ethoxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl] isoindoline-1,3-dione; 2-[1-(3-ethoxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]benzo[e]isoindoline-1,3-dione;
+2-[1-(3-ethoxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]-4-methylisoindoline-1,
+3-dione; 2-[1-(3-ethoxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]-5-methylisoindoline-1,3-dione;
+2-[1-(3-cyclopentyloxy-4-methoxy-phenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]-5-methylisoindoline-1,3-dione;
+2-[1-(3-cyclopentyloxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]-4-methylisoindoline-1,3-dione;
+N-[2-[1-(3-cyclopentyloxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]-1,
+3-dioxoisoindolin-4-yl]acetamide; N-[2-[1-(3-ethoxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]-1,3-dioxoisoindolin-4-yl]acetamide;
+5-(tert-butyl)-2-[1-(3-ethoxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]isoindoline-1,3-dione;
+2-[1-(3,4-dimethoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]isoindoline-1,3-dione;
+2-[1-(3-ethoxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]isoindolin-1-one;
+2-[1-(3-ethoxy-4-methoxyphenyl)-2-(5-methyl(1,3,4-oxadiazol-2-yl))ethyl]
+isoindolin-1-one; or 2-[1-(3-ethoxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]-3-pyrrolino[3,4-]quinoline-1,3-dione.</claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>The use of claim 4, wherein the compound is substantially chirally pure.</claim-text></claim><claim num="xx"><claim-text>Use of a 1,3,4-oxadiazole compound of formula I,
+
+or a pharmaceutically acceptable salt thereof, for the manufacture of a medicament for the
+prophylaxis of atopic dermatitis, psoriasis, lupus, a viral infection, or viral conjunctivitis:
+wherein:
+<claim-text><claim-text>the carbon atom designated * constitutes a center of chirality;</claim-text><claim-text>Y is C=O, CH2, SO2 or CH2C=O;</claim-text><claim-text>X is hydrogen or alkyl of 1 to 4 carbon atoms;</claim-text><claim-text>each of R1, R2, R3 and R4, independently of the others, is hydrogen, halo, trifluoromethyl,
+acetyl, alkyl of 1 to 8 carbon atoms, alkoxy of 1 to 4 carbon atoms, nitro, cyano, hydroxy,
+tert-butyl, -CH2NR8R9, -(CH2)2NR8R9 or -NR8R9; or any two of R1, R2, R3 and R4 on
+adjacent carbon atoms, together with the depicted phenylene ring, are naphthylidene,
+quinoline, quinoxaline, benzimidazole, benzodioxole or 2-hydroxybenzimidazole;</claim-text><claim-text>each of R5 and R6, independently of the other, is hydrogen, alkyl of 1 to 4 carbon atoms, alkoxy
+of 1 to 6 carbon atoms, cyano, benzocycloalkoxy, cycloalkoxy of up to 18 carbon atoms,
+bicycloalkoxy of up to 18 carbon atoms, tricycloalkoxy of up to 18 carbon atoms, or
+cycloalkylalkoxy of up to 18 carbon atoms;</claim-text><claim-text>each of R8 and R9, taken independently of the other, is hydrogen, straight alkyl of 1 to 8 carbon
+atoms, branched alkyl of 1 to 8 carbon atoms, phenyl, benzyl, pyridyl, pyridylmethyl, or
+one of R8 and R9 is hydrogen and the other is -COR10 or -SO2R10; or R8 and R9, taken
+together, are tetramethylene, pentamethylene, -CHNCHCH-, hexamethylene, or
+-CH2CH2X1H2CH2- in which X1 is -O-, -S-, or -NH-; and</claim-text><claim-text>R10 is hydrogen, alkyl of 1 to 8 carbon atoms, cycloalkyl, cycloalkylmethyl of up to 6 carbon
+atoms, phenyl, pyridyl, benzyl, imidazolylmethyl, pyridylmethyl, NR11R12 or CH2NR*R0,
+wherein R11 and R12, independently of each other, are hydrogen, alkyl of 1 to 8 carbon
+atoms, phenyl, or benzyl, and wherein R* and R0, independently of each other, are
+hydrogen, methyl, ethyl, or propyl.</claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>The use of claim 6, wherein the compound is substantially chirally pure.</claim-text></claim><claim num="xx"><claim-text>The use of claim 6, wherein the medicament is adapted for topical administration.</claim-text></claim><claim num="xx"><claim-text>The use of claim 6, wherein the viral infection is herpes infection.</claim-text></claim><claim num="xx"><claim-text>The use of claim 6, wherein the compound of formula I is:
+<claim-text><claim-text>2-[1-(3-ethoxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl] isoindoline-1,3-dione; 2-[1-(3-ethoxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]benzo[e]isoindoline-1,3-dione;
+2-[1-(3-ethoxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]-4-methylisoindoline-1,3-dione;
+2-[1-(3-ethoxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]-5-methylisoindoline-
+1,3-dione; 2-[1-(3-cyclopentyloxy-4-methoxy-phenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]-5-methylisoindoline-1,3-dione;
+2-[1-(3-cyclopentyloxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]-4-methylisoindoline-1,3-dione;
+N-[2-[1-(3-cyclopentyloxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]-1,3-dioxoisoindolin-4-yl]acetamide;
+N-[2-[1-(3-ethoxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]-1,3-dioxoisoindolin-4-yl]acetamide;
+5-(tert-butyl)-2-[1-(3-ethoxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]isoindoline-1,3-dione;
+2-[1-(3,4-dimethoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]isoindoline-1,3-dione;
+2-[1-(3-ethoxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]isoindolin-1-one;
+2-[1-(3-ethoxy-4-methoxyphenyl)-2-(5-methyl(1,3,4-oxadiazol-2-yl))ethyl]
+isoindolin-1-one; or 2-[1-(3-ethoxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]-3-pyrrolino[3,4-]quinoline-1,3-dione.</claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>The use of claim 10, wherein the compound is substantially chirally pure.</claim-text></claim><claim num="xx"><claim-text>A 1,3,4-oxadiazole moiety selected from the group consisting of
+<claim-text><claim-text>(a) a compound of the formula:
+
+in which:
+<claim-text><claim-text>the carbon atom designated* constitutes a center of chirality;</claim-text><claim-text>Y is C=O, CH2, SO2 or CH2C=O;</claim-text><claim-text>X is hydrogen, or alkyl of 1 to 4 carbon atoms;</claim-text><claim-text>each of R1, R2, R3, and R4, independently of the others, is hydrogen, halo,
+trifluoromethyl, acetyl, alkyl of 1 to 8 carbon atoms, alkoxy of 1 to 4 carbon
+atoms, nitro, cyano, hydroxy, tert-butyl, -CH2NR8R9, -(CH2)2NR8R8; or -NR8R9; or</claim-text><claim-text>any two of R1, R2, R3, and R4 on adjacent carbon atoms, together with the depicted
+phenylene ring are naphthylidene, quinoline, quinoxaline, benzimidazole,
+benzodioxole or 2-hydroxybenzimidazole;</claim-text><claim-text>each of R5 and R6, independently of the other, is hydrogen, alkyl of 1 to 4 carbon
+atoms, alkoxy of 1 to 6 carbon atoms, cyano, benzocycloalkoxy, cycloalkoxy of
+up to 18 carbon atoms, bicyloalkoxy of up to 18 carbon atoms, tricylcoalkoxy
+of up to 18 carbon atoms, or cycloalkylalkoxy of up to 18 carbon atoms;</claim-text><claim-text>each of R8 and R9 taken independently of the other is hydrogen, straight alkyl of 1 to
+8 carbon atoms, branched alkyl of 1 to 8 carbon atoms, phenyl, benzyl, pyridyl,
+pyridylmethyl, or one of R8 and R9 is hydrogen and the other is -COR10, or
+-SO2R10, or
+   R8 and R9 taken together are tetramethylene, pentamethylene, -CHNCHCH-,
+hexamethylene, or -CH2CH2X12CH2CH2-
+      in which X1 is -O-, -S-, or -NH-;</claim-text><claim-text>R10 is hydrogen, alkyl of 1 to 8 carbon atoms, cycloalkyl, cycloalkylmethyl of up to 6
+carbon atoms, phenyl, pyridyl, benzyl, imidazolylmethyl, pyridylmethyl, NR11R12,
+CH2NR*R0, or NR11R12
+   wherein R* and R0, independently of each other, are hydrogen, methyl,
+ethyl, or propyl, and
+   wherein R11 and R12, independently of each other, are hydrogen,
+alkyl of 1 to 8 carbon atoms, phenyl, or benzyl; and</claim-text></claim-text></claim-text><claim-text>(b) the acid addition salts of said compounds which contain a nitrogen atom
+susceptible of protonation.</claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>A1,3,4-oxadiazole moiety according to claim 12, wherein Y is C=O.</claim-text></claim><claim num="xx"><claim-text>A 1,3,4-oxadiazole moiety according to claim 12, wherein Y is CH2.</claim-text></claim><claim num="xx"><claim-text>A 1,3,4-oxadiazole moiety or a salt thereof according to claim 12, wherein each of R1,
+R2, R3, and R4, independently of the others, is hydrogen, halo, methyl, ethyl,
+methoxy, ethoxy, nitro, cyano, hydroxy, or -NR8R9, in which
+<claim-text><claim-text>(i) each of R8 and R9 taken independently of the other is hydrogen, methyl or
+alkyl of 1 to 4 carbon atoms, or</claim-text><claim-text>(ii) one of R8 and R9 is hydrogen and the other is -COCH3, or</claim-text><claim-text>(iii) one of R8 and R9 is hydrogen and the other is -CONH2, or</claim-text><claim-text>(iv) one of R8 and R9 is hydrogen and the other is -COCH2NH2 or
+-COCH2N(CH3)2.</claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>A 1,3,4-oxadiazole moiety according to claim 12, wherein one of R1, R2, R3, and R4 is
+-NH2 and the remaining of R1, R2, R3 and R4 are hydrogen.</claim-text></claim><claim num="xx"><claim-text>A 1,3,4-oxadiazole moiety according to claim 12, wherein one of R1, R2, R3, and R4 is
+-NHCOCH3, NHSO2R10, or NHCOR10 and the remaining of R1, R2, R3, and R4 are
+hydrogen.</claim-text></claim><claim num="xx"><claim-text>A 1,3,4-oxadiazole moiety according to claim 12, wherein one of R1, R2, R3, and R4 is
+methyl or ethyl and the remaining of R1, R2, R3, and R4 are hydrogen.</claim-text></claim><claim num="xx"><claim-text>A 1,3,4-oxadiazole moiety according to claim 12, wherein one of R1, R2, R3, and R4 is
+-N(CH3)2 or hydroxy and the remaining of R1, R2, R3, and R4 are hydrogen.</claim-text></claim><claim num="xx"><claim-text>A 1,3,4-oxadiazole moiety according to claim 12, wherein Y is C=O, X is hydrogen,
+and R3 and R4, taken together, are benzo.</claim-text></claim><claim num="xx"><claim-text>A 1,3,4-oxadiazole moiety according to claim 12, wherein Y is C=O, X is hydrogen,
+and R3 and R4, taken together, are methylenedioxy.</claim-text></claim><claim num="xx"><claim-text>A 1,3,4-oxadiazole moiety according to claim 12, wherein each of R5 and R6,
+independently of the other, is methoxy, ethoxy, propoxy, isopropoxy, cyclopentoxy,
+cyclohexoxy, or bicycloalkoxy,</claim-text></claim><claim num="xx"><claim-text>A 1,3,4-oxadiazole moiety according to claim 12, wherein R5 is alkoxy and R6 is
+alkoxy, cycloalkoxy, or bicycloalkoxy.</claim-text></claim><claim num="xx"><claim-text>A 1,3,4-oxadiazole moiety according to claim 12, wherein R5 is methoxy and R6 is
+methoxy, ethoxy, or cydopentoxy.</claim-text></claim><claim num="xx"><claim-text>A 1,3,4-oxadiazole moiety according to claim 12, wherein R5 is methoxy and R6 is
+bicycloalkoxy or benzoalkoxy.</claim-text></claim><claim num="xx"><claim-text>A 1,3,4-oxadiazole molety according to claim 12 wherein said compound is selected
+from the group consisting of a substantially chirally pure (R)-isomer, a substantially
+chirally pure (S)-isomer, or a mixture thereof, wherein the isomer is 2-[1-(3-ethoxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]isoindoline-1,3-dione,
+2-[1-(3-ethoxy-4-methoxyphenyl]-2-(1,3,4-oxadiazol-2-yl)ethyl]benzo[e]isoindoline-1,3-dione,
+2-[1-(3-ethoxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]-4-methylsoindoline-1,3-dione,
+2-[1-(3-ethoxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]-5-methylisoindoline-1,3-dione,
+2-[1-(3-cydopentyloxy-4-methoxy-phenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]-methytisoindoline-1,3-dione,
+2-[1-(3-cyclopentyloxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]-4-methylisoindoline-1,3-dione,
+N-[2-[1-(3-cyclopentyloxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]-1,3-dioxoisoindolin-4-yl]acetamide,
+N-[2-[1-(3-ethoxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]-1,3-dioxoisoindolin-4-yl]acetamide,
+5-(tert-butyl)-2-[1-(3-ethoxy-4-methoxyphenyl}-2-(1,3,4-oxadiazol-2-yl)ethyl]isoindoline-1,3-dione,
+2-[1-(3,4-dimethoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]isoindoline-1,3-dione,
+2-[1-(3-ethoxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethy]isoindolin-1-one,
+2-[1-(3-ethoxy-4-methoxyphenyl]-2-(5-methyl(1,3,4-oxadiazol-2-yl))ethyl]isoindolin-1-one,
+and 2-[1-(3-ethoxy-4-methoxyphenyl)-2-(1,3,4-oxadiazol-2-yl)ethyl]-3-pyrrolino[3,4-]quinoline-1,3-dione.</claim-text></claim><claim num="xx"><claim-text>A 1,3,4-oxadiazole moiety according to claim 12, wherein two of R1, R2, R3 and R4
+are hydrogen and the other two of R1, R2, R3, and R4 are not hydrogen.</claim-text></claim><claim num="xx"><claim-text>A 1,3,4-oxadiazole moiety according to claim 26, wherein two of R1, R2, R3, and R4,
+independent of each other, are alkyl of 1 to 8 carbon atoms, or alkoxy of 1 to 8
+carbon atoms.</claim-text></claim><claim num="xx"><claim-text>A method of reducing or inhibiting undesirable levels of TNFα in a mammal which
+comprises administering thereto an effective amount of a 1,3,4-oxadiazole moiety
+according to claim 12, which moiety is a substantially chirally pure (R)-isomer, a
+substantially chirally pure (S)-isomer, or a mixture thereof.</claim-text></claim><claim num="xx"><claim-text>A pharmaceutical composition comprising a quantity of a 1,3,4-oxadiazole moiety
+according to claim 12, which moiety is a substantially chirally pure (R)-isomer, a
+substantially chirally pure (S)-isomer, or a mixture thereof, sufficient upon
+administration in a single or multiple dose regimen to reduce or inhibit levels of TNFα
+in a mammal in combination with a carrier.</claim-text></claim><claim num="xx"><claim-text>A method of inhibiting phosphodiesterase type 4 in a mammal which comprises
+administering thereto an effective amount of an 1,3,4-oxadiazole moiety according to
+claim 12, which moiety is a substantially chirally pure (R)-isomer, a substantially
+chirally pure (S)-isomer, or a mixture thereof.</claim-text></claim><claim num="xx"><claim-text>A method of treating in a mammal a disease selected from the group consisting of
+inflammatory diseases and, autoimmune diseases, selected from, but not limited to
+the group consisting of arthritis, rheumatoid arthritis, inflammatory bowel disease,
+Crohn's disease, aphthous ulcers, cachexia, multiple sclerosis, graft versus host
+disease, asthma, adult respiratory distress syndrome, and acquired immune
+deficiency syndrome, which comprises administering thereto an effective amount of
+a compound according to claim 12, which compound is a substantially chirally pure
+(R)-isomer, a substantially chirally pure (S)-isomer, or a mixture thereof.</claim-text></claim><claim num="xx"><claim-text>A method of treating cancer in a mammal which comprises administering thereto an
+effective amount of a compound according to claim 12 or a combination of
+compounds according to claim 12, which compound is a substantially chirally pure
+(R)-isomer, a substantially chirally pure (S)-isomer, or a mixture thereof.</claim-text></claim><claim num="xx"><claim-text>A method of treating undesirable angiogenesis in a mammal which comprises
+administering thereto an effective amount of a compound according to claim 12,
+which compound is a substantially chirally pure (R)-isomer, a substantially chirally
+pure (S)-isomer, or a mixture thereof.</claim-text></claim><claim num="xx"><claim-text>The compound according to claim 12, which is a substantially chirally pure (R)-isomer,
+a substantially chirally pure (S)-isomer, or a mixture thereof.</claim-text></claim><claim num="xx"><claim-text>A pharmaceutical composition comprising a quantity of a 1,3,4-oxadiazole moiety
+according to claim 12 which derivative Is a substantially chirally pure (R)-isomer, a
+substantially chirally pure (S)-isomer, or a mixture thereof, sufficient upon
+administration in a single or multiple dose regimen to reduce or inhibit undesirable
+levels of TNFα or matrix metalloproteinases in a mammal in combination with a
+carrier.</claim-text></claim><claim num="xx"><claim-text>A 1,3,4-oxadiazole moiety or a salt thereof according to claim 12, wherein:
+<claim-text><claim-text>Y is C=O or CH2;</claim-text><claim-text>each of R1, R2, R3, and R4 independently of the other, is hydrogen, halo,
+trifluoromethyl, acetyl, alkyl of 1 to 8 carbon atoms, alkoxy of 1 to 4 carbon atoms,
+nitro, cyano, hydroxy, tert-butyl, or -NR8R9; and</claim-text><claim-text>any two of R1, R2, R3, and R4 on adjacent carbon atoms, together with the depicted
+phenylene ring are quinoline, quioxaline,</claim-text><claim-text>2-R13-benzimidazole, benzodioxole or 2-hydroxybenzimidazole,
+   wherein R13 is alkyl of 1 to 10 carbon atoms, -NH2, or hydrogen.</claim-text></claim-text></claim-text></claim></claims><legal-status status="new"><legal-event country="EP" code="AK" date="20061122"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>A3</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>ATBECHCYDEDKESFIFRGBGRIEITLILUMCNLPTSETR</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AX" date="20061122"><legal-event-body><event-title>EXTENSION OF THE EUROPEAN PATENT TO</event-title><event-attributes><event-attribute><event-attribute-label>Countries concerned </event-attribute-label><event-attribute-value>ALLTLVMKROSI</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="17P" date="20050302"><legal-event-body><event-title>REQUEST FOR EXAMINATION FILED</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20040915</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AC" date="20050302"><legal-event-body><event-title>DIVISIONAL APPLICATION (ART. 76) OF:</event-title><event-attributes><event-attribute><event-attribute-label>Ref Document Number </event-attribute-label><event-attribute-value>1242413</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Country of Ref Document </event-attribute-label><event-attribute-value>EP</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>P</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20050302"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>A2</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>ATBECHCYDEDKESFIFRGBGRIEITLILUMCNLPTSETR</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AX" date="20050302"><legal-event-body><event-title>EXTENSION OF THE EUROPEAN PATENT TO</event-title><event-attributes><event-attribute><event-attribute-label>Countries concerned </event-attribute-label><event-attribute-value>ALLTLVMKROSI</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event></legal-status></patent-document>

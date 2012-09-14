@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							Aus der 
+							<orgName type="institution">Biologischen Reichsanstalt</orgName>,
+							<orgName type="department">Außenstelle Guhrau</orgName>,
+						</affiliation>
+						<affiliation>
+							und dem 
+							<orgName type="laboratory">Laboratorium für L bermikroskopie</orgName> der 
+							<orgName type="institution">Siemens &amp; Halske A.G.</orgName>,
+							<address><addrLine>Forschungsanstalt Insel Riems bei Greifswald</addrLine></address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

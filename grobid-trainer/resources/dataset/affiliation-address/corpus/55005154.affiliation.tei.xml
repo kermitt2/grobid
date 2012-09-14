@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.tei-c.org/ns/1.0"
+   xmlns:mml="http://www.w3.org/1998/Math/MathML">
+   <teiHeader>
+      <fileDesc>
+         <sourceDesc>
+            <biblStruct>
+               <analytic>
+                  <author>
+                     <affiliation>
+                        <marker>a</marker>
+                        <orgName type="institution">Grenoble University</orgName>, 
+						<orgName type="laboratory" key="lab1">LEPMI</orgName>, 
+						<orgName type="laboratory" key="lab2">UMR 5631 (CNRS-INPG-UJF)</orgName>, 
+						<orgName type="laboratory" key="lab3">Laboratoire d’Electrochimie et de Physico chimie des Matériaux et Interfaces</orgName><lb/>
+                        <address>
+                           <addrLine>BP 75</addrLine>, 
+                           <postCode>38402</postCode> 
+                           <settlement>St. Martin d’Hères</settlement>, 
+                           <country>France</country><lb/>
+                        </address>
+                     </affiliation>
+                     <affiliation>
+                        <marker>b</marker>
+                        <orgName type="institution">Grenoble University</orgName>, 
+						<orgName type="laboratory" key="lab1">G-SCOP</orgName>
+                        <orgName type="laboratory" key="lab1">UMR 272 (CNRS-INPG-UJF)</orgName>,
+                           <orgName type="laboratory" key="lab1">Laboratoire des Sciences pour la Conception, l’Optimisation et la Production</orgName>,<lb/>
+                        <address>
+                           <addrLine>46, avenue Félix Viallet</addrLine>, 
+                           <postCode>38031</postCode> 
+                           <settlement>Grenoble</settlement>, 
+                           <country>France</country>
+                        </address>
+                     </affiliation>
+                    
+                     <affiliation>
+                        <marker>c</marker>
+                        <orgName type="laboratory" key="lab1">Laboratoire de Chimie et Biologie des Métaux</orgName>
+                        <orgName type="laboratory" key="lab1">(UMR 5249 CEA-CNRS-UJF)</orgName>,
+                        <orgName type="department">iRTSV/LCBM</orgName>, 
+						<orgName type="institution">CEA-Grenoble</orgName>,
+                        <address>
+                           <postCode>38054</postCode> 
+                           <settlement>Grenoble</settlement>, 
+                           <country>France</country>
+                        </address>
+                     </affiliation>
+
+                  </author>
+               </analytic>
+            </biblStruct>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+</TEI>

@@ -1,0 +1,55 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="1092"/> 
+	</teiHeader>
+<text xml:lang="en">
+	<front> 
+		<note type="submission">Confidential:  not for distribution. Submitted to IOP Publishing for peer review </note>
+        <date type="submission">27 November 2009<lb/></date>
+
+		<docTitle>
+			<titlePart type="main">Conductivity  engineering of graphene by defect<lb/> formation<lb/></titlePart>
+		</docTitle> 
+		 
+		<byline><docAuthor>S.H.M.  Jafri   1, *   , K. Carva   2   , E. Widenkvist   3   , T. Blom   1, *   , B.<lb/> Sanyal   2   , J. Fransson   2   , O. Eriksson   2   , U. Jansson   3   , H.<lb/> Grennberg   4   , O. Karis   2   , R.A. Quinlan   5   , B.C. Holloway   6   and K.<lb/> Leifer   1<lb/></docAuthor></byline>
+		
+		<byline><affiliation>1   Department  of Engineering Sciences, </affiliation></byline>	
+		<address>Box 534, ˚</address>
+		<byline><affiliation>Ångström Laboratory, Uppsala<lb/> University,<lb/> </affiliation></byline>	
+		<address> 751 21 Uppsala, Sweden.<lb/></address>
+ 
+		<byline><affiliation>2   Department of Physics and Materials Science, </affiliation></byline>	
+		<address>Box 534, ˚</address>
+		<byline><affiliation>Ångström Laboratory,<lb/> Uppsala University, </affiliation></byline>
+		<address>751 21 Uppsala, Sweden.<lb/></address>
+		
+		<byline><affiliation>3   Department of Materials Chemistry,  </affiliation></byline>	
+		<address>Box 534, ˚</address>
+		<byline><affiliation>Ångström Laboratory, Uppsala<lb/> University, </affiliation></byline>
+		<address>751 21 Uppsala, Sweden. <lb/></address>
+		
+		<byline><affiliation>4  Department of Biochemistry and Organic Chemistry, </affiliation></byline>	
+		<address>Box 576, </address>
+		<byline><affiliation>Uppsala University, <lb/></affiliation></byline>
+		<address>751 23 Uppsala, Sweden.<lb/></address>
+		
+		<byline><affiliation>5   Department of Applied Science, College of William and Mary,  </affiliation></byline>	
+		<address>325 McGlothin<lb/> Street Hall, Williamsburg, 23187, Virginia, USA.<lb/></address>
+		
+		<byline><affiliation>6   Luna Innovations Incorporated, NanoWorks Division,   </affiliation></byline>	
+		<address>521 Bridge Street, Danville,<lb/> 24541, Virginia, USA.<lb/></address>
+ 
+ 		<note type="other">*   These authors contributed equally to the experimental work<lb/></note>
+		
+		<email>E-mail:  Klaus.Leifer@Angstrom.uu.se<lb/></email>
+		
+		<div type="abstract">Abstract.  Transport measurements have revealed several exotic electronic properties<lb/> of graphene. The possibility to influence the electronic structure and hence control the<lb/> conductivity by adsorption or doping with adatoms is crucial in view of electronics<lb/> applications. Here, we show that in contrast to expectation, the conductivity of<lb/> graphene increases with increasing concentration of vacancy defects, by more than<lb/> one order of magnitude. We obtain a pronounced enhancement of the conductivity<lb/> after insertion of defects by both quantum mechanical transport calculations as well<lb/> as experimental studies of carbon nano-sheets. Our finding is attributed to the<lb/> defect induced mid-gap states, which create a region exhibiting metallic behavior<lb/> around the vacancy defects. The modification of the conductivity of graphene by<lb/> the implementation of stable defects is crucial for the creation of electronic junctions<lb/></div>
+		
+		<keywords type="pacs">PACS numbers: 73.61.Wp, 72.80.-r<lb/></keywords>
+		
+		<note type="title">S.H.M.  Jafri et al. Conductivity engineering of graphene <lb/>2<lb/></note>
+
+		<introduction>1.  Introduction<lb/></introduction>
+    </front>
+</text>
+</tei>                              

@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="476"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Optimal Representations of Polymorphic Types with <lb/>Subtyping <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Alexander Aiken Edward L. Wimmers Jens Palsberg <lb/></docAuthor></byline>
+		<idno>Report No. UCB/CSD-96-909 <lb/></idno>
+		<date>July 1996 <lb/></date>
+		<byline><affiliation>Computer Science Division (EECS) <lb/>University of California <lb/></affiliation></byline>
+		<address>Berkeley, California 94720 <lb/></address>
+		<pb/>
+		</front>
+</text>
+</tei>

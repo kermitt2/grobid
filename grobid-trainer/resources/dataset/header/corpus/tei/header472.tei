@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="475"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<note type="reference">To appear in JSAC issue on software Radios, 4th Qtr., 98 <lb/></note>
+		<docTitle>
+			<titlePart type="main">Virtual Radios <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Vanu Bose, Mike Ismert, Matt Welborn, John Guttag * <lb/></docAuthor></byline>
+		<byline><affiliation>Software Devices and Systems Group <lb/>Laboratory for Computer Science <lb/>Massachusetts Institute of Technology <lb/></affiliation></byline>
+		<div type="abstract">Abstract <lb/>Conventional software radios take advantage of vastly improved A/D converters and DSP hardware. Our <lb/>approach, which we refer to as virtual radios, also depends upon high performance A/D converters. However, <lb/>rather than use DSPs, we have chosen to ride the curve of rapidly improving workstation hardware. We use <lb/>wideband digitization and then perform all of the digital signal processing in user space on a general purpose <lb/>workstation. This approach allows us to experiment with new approaches to signal processing that exploit the <lb/>hardware and software resources of the workstation. Furthermore, it allows us to experiment with different <lb/>ways of structuring systems in which the radio component of communication devices are integrated with <lb/>higher-level applications. <lb/>This paper describes the design and performance of an environment we have constructed that facilitates building virtual radios and of two applications built using that environment. The environment consists of an I/O <lb/>subsystem that provides high bandwidth low latency user-level access to digitized signals and a programming <lb/>environment that provides an infrastructure for building applications. The applications, which exemplify <lb/>some of the benefits of virtual radios, are a software cellular receiver and a novel wireless network interface. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="ubr05372_0033_0044"/>
+	</teiHeader>
+	<text xml:lang="de">
+		<front>
+
+	<docTitle>
+	<titlePart>Statistische Ableitung der Grenzgesetze für verdünnte Lösungen<lb/> bei Verschiedenheit der Molvolumina<lb/> (Zur statistischen Theorie makromolekularer Lösungen I)<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Von G. V. SCHULZ<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Aus dem Institut für physikalische Chemie der Universität Main/.<lb/></affiliation>
+	</byline>
+
+	<reference>(Z. Naturforsi bg»! a, 27—:i8 [1947]; </reference>
+	<note type="submission">eingegangen um 7. Juni 19411)<lb/> </note>
+
+	<div type="abstract">Die Mischungsentropie einer binären Lösung, deren Komponenten verschiedene Mol-<lb/> volumina haben, wird unter der Voraussetzung, daß die Moleküle kugelförmig sind,<lb/> molekularstatistisch abgeleitet. Es zeigt sich, daß in diesem Fall die Verdünnungs-<lb/> ontropie höher ist als bei Gleichheit der Molvolumina. Bei kleinen Konzentrationen<lb/> der höherinolekularen Komponente erhält man ein Korrekturglied, das ungefähr der<lb/> van der W a a 1 s sehen Volumkorrektur entspricht. Bei verschwindender Konzen-<lb/> tration geht die Gleichung für den osmotischen Druck in die van t'IIof f sehe über.<lb/> Es wird untersucht, inwieweit man ein gitterartiges Modell für die molekularstati-<lb/> slische Ableitung der Eigenschaften von Lösungen verwenden kann, und hierbei ge-<lb/> funden, daß die Gültigkeit der Lösungsgesetze nicht an ein solches Modell gebunden ist.<lb/> Die osmotischen Koeffizienten und Aktivitätskoeffizienten, die sich aus der neu ab-<lb/> geleiteten Entropiegleichung ergeben, werden ausgerechnet und durch Vergleich mit<lb/> in der Literatur vorliegenden Versuchsergebnisse an Proteinlösungen nachgeprüft.<lb/> Hierbei ergibt sich gute Übereinstimmung.</div>
+
+		</front>
+	</text>
+</tei>

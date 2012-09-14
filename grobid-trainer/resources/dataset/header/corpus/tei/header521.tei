@@ -1,0 +1,22 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="524"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Efficient Resource Management <lb/> for Linear Logic Proof Search <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Iliano Cervesato 1 , Joshua S. Hodas 2 , and Frank Pfenning 1 <lb/></docAuthor></byline>
+		<byline><affiliation>1 Department of Computer Science, Carnegie Mellon University <lb/></affiliation></byline>
+		<address>Pittsburgh, PA 15213-3891, USA <lb/></address>
+		<email>e-mail: filianojfpg@cs.cmu.edu <lb/></email>
+		<byline><affiliation>2 Computer Science Department, Harvey Mudd College <lb/></affiliation></byline>
+		<address>Claremont, CA 91711, USA <lb/></address>
+		<email>e-mail: hodas@cs.hmc.edu <lb/></email>
+		<div type="abstract">Abstract. The design of linear logic programming languages and theorem provers opens a number of new implementation challenges not <lb/>present in more traditional logic languages such as Horn clauses (Prolog) <lb/>and hereditary Harrop formulas (Prolog). Among these, the problem of <lb/>efficiently managing the linear context when solving a goal is of crucial <lb/>importance for the use of these systems in non-trivial applications. This <lb/>paper studies this problem in the case of Lolli [6] (though its results have <lb/>application to other systems). We first give a proof-theoretic presentation of the operational semantics of this language as a resolution calculus. <lb/>We then present a series of resource management systems designed to <lb/>eliminate the non-determinism in the distribution of linear formulas that <lb/>undermines the efficiency of a direct implementation of this system. <lb/></div>
+		<note type="other">This paper will appear in the </note><note type="reference">proceedings of the 1996 International Workshop on <lb/>Extensions of Logic Programming, Leipzig, Germany, March 28-30 1996. <lb/></note>
+		<div type="intro">1 Introduction <lb/></div>
+		</front>
+</text>
+</tei>

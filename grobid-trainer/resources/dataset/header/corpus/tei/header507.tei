@@ -1,0 +1,19 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="510"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">The Undecidability of <lb/>Mitchell&apos;s Subtyping Relationship <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>J. B. Wells <lb/></docAuthor></byline>
+		<email>jbw@cs.bu.edu <lb/></email>
+		<byline><affiliation>Dept. of Computer Science <lb/>Boston University <lb/></affiliation></byline>
+		<address>Boston, MA 02215, U.S.A. <lb/></address>
+		<date>December 10, 1995 <lb/></date>
+		<div type="abstract">Abstract <lb/>Mitchell defined and axiomatized a subtyping relationship (also known <lb/>as containment, coercibility, or subsumption) over the types of System F <lb/>(with &quot;!&quot; and &quot;8&quot;). This subtyping relationship is quite simple and does <lb/>not involve bounded quantification. Tiuryn and Urzyczyn quite recently <lb/>proved this subtyping relationship to be undecidable. This paper supplies a new undecidability proof for this subtyping relationship. First, a <lb/>new syntax-directed axiomatization of the subtyping relationship is defined. Then, this axiomatization is used to prove a reduction from the <lb/>undecidable problem of semi-unification to subtyping. The undecidability of subtyping implies the undecidability of type checking for System F <lb/>extended with Mitchell&apos;s subtyping, also known as &quot;F plus eta&quot;. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,35 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="ZFN-A-036-06-0674"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<titlePage>
+				<docTitle>
+					<titlePart type="main">A Note on the Throbbing of Glow Discharges <lb/>
+in Gases at Low Pressures <lb/></titlePart>
+				</docTitle>
+				<byline><docAuthor>Rafi M. Chaudhri and Tasneem Zahra</docAuthor><lb/></byline>
+				<byline><affiliation>Centre for Solid State Physics University of Punjab</affiliation>, <address>Lahore <lb/> Pakistan<lb/></address></byline>
+                                <byline><docAuthor>and M. Munawar Chaudhri</docAuthor><lb/></byline>
+                                <byline><affiliation>Cavendish Laboratory</affiliation>, <address>Cambridge, U.K. <lb/></address></byline>
+				<reference>Z. Naturforsch. 86a, 674-676 (1981); <lb/></reference>
+				<note type="submission">received December 24, 1980<lb/></note>
+			</titlePage>
+			<div type="abstract">The phenomenon of the throbbing of glow dis- <lb/>
+charges was first studied by Thomson [1] in 1931. <lb/>
+The discharge tubes he used were probably covered <lb/>
+with a sputtered film and the gas pressure was not <lb/>
+controlled. He explained this phenomenon by the <lb/>
+electrical charging of the tube walls. Since Thomson's <lb/>
+paper there has been virtually no work on this <lb/>
+interesting phenomenon. In this note we report on <lb/>
+throbbing phenomena in tubes free from a sputtered <lb/>
+film and suggest that in this situation the mechanism <lb/>
+is the formation and decay of the negative ions in <lb/>
+the gas rather than electrical charging of the walls <lb/>
+of the tube. <lb/></div>
+			<div type="intro">Three types of discharge tubes (all of Pyrex<lb/></div>
+		</front>
+	</text>
+</tei>

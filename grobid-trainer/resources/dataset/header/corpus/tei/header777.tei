@@ -1,0 +1,19 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="778"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Moufang Quasigroups <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Kenneth Kunen 1 <lb/></docAuthor></byline>
+		<byline><affiliation>University of Wisconsin,</affiliation></byline>
+		<address>Madison, WI 53706, U.S.A. <lb/></address>
+		<email>kunen@cs.wisc.edu <lb/></email>
+		<date>September 5, 1995 <lb/></date>
+		<div type="abstract">ABSTRACT <lb/>Each of the Moufang identities in a quasigroup implies that the <lb/>quasigroup is a loop. <lb/></div>
+		<div type="intro">x1. Introduction.</div>
+		</front>
+</text>
+</tei>

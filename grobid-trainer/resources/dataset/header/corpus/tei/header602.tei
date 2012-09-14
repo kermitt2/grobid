@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="604"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">EFFICIENT COMPILATION AND PROFILE-DRIVEN <lb/>DYNAMIC RECOMPILATION IN SCHEME <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Robert G. Burger <lb/></docAuthor></byline>
+		<note type="degree">Submitted to the faculty of the University Graduate School <lb/>in partial fulfillment of the requirements <lb/>for the degree <lb/>Doctor of Philosophy <lb/>in the</note>
+		<byline><affiliation>Department of Computer Science, <lb/>Indiana University <lb/></affiliation></byline>
+		<date>March 1997 <lb/></date>
+		<pb/>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,24 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="1086"/> 
+	</teiHeader>
+<text xml:lang="en">
+	<front> 
+		<note type="submission">Confidential:  not for distribution. Submitted to IOP Publishing for peer review </note>
+		<date type="submission">4 February 2010<lb/></date>
+		<docTitle>
+			<titlePart type="main">Radiative  Corrections to the CKM Unitarity Triangles<lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Shu  Luo   *   and Zhi-zhong Xing <lb/></docAuthor></byline>
+		
+		<byline><affiliation>Institute  of High Energy Physics and Theoretical Physics Center for Science Facilities,<lb/> Chinese Academy of Sciences, </affiliation></byline>
+		<address>P.O. Box 918, Beijing 100049, China<lb/></address>
+		
+		<div type="abstract">Abstract<lb/> The  3×3 CKM matrix defines six unitarity triangles in the complex plane, which will be carefully<lb/> explored in the LHCb experiment and at the Super-B factory. We calculate the running effects of<lb/> nine different inner angles and eighteen different sides of the six triangles from the electroweak scale<lb/> to a superhigh-energy scale by using the one-loop renormalization-group equations, and demon-<lb/> strate that all the nine angles are stable against radiative corrections. In particular, we find that<lb/> the CP-violating angle  α  is most insensitive to the changes of energy scales.<lb/></div>
+		
+		<keywords>PACS  numbers: 12.15.Ff, 12.38.Bx, 12.10.Kt, 13.10.+q, 14.60.Pq, 25.30.Pt<lb/></keywords>
+		<email>*   Electronic address:  luoshu@ihep.ac.cn<lb/></email>
+		<email>Electronic address:  xingzz@ihep.ac.cn<lb/></email>
+    </front>
+</text>
+</tei>                              

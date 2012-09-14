@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<patent-document country="WO" doc-number="2008070030" kind="A1" ucid="WO-2008070030-A1" lang="EN" date="20080612" family-id="39492542" date-produced="20090522" status="new"><bibliographic-data><publication-reference fvid="89291054" ucid="WO-2008070030-A1" status="new"><document-id status="new" format="original"><country>WO</country><doc-number>2008070030</doc-number><kind>A1</kind><date>20080612</date></document-id></publication-reference><application-reference ucid="US-2007024752-W" status="new" is-representative="NO"><document-id format="epo" status="new"><country>US</country><doc-number>2007024752</doc-number><kind>W</kind><date>20071203</date></document-id></application-reference><priority-claims status="new"><priority-claim ucid="US-56626206-A" status="new"><document-id format="epo" status="new"><country>US</country><doc-number>56626206</doc-number><kind>A</kind><date>20061204</date></document-id></priority-claim></priority-claims><technical-data status="new"><classifications-ipcr><classification-ipcr status="new">C08L  23/00        20060101CLI20080612BHKR        </classification-ipcr><classification-ipcr status="new">C08L  23/22        20060101ALI20080612BHKR        </classification-ipcr><classification-ipcr status="new">C08L  33/00        20060101CFI20080612BHKR        </classification-ipcr><classification-ipcr status="new">C08L  33/08        20060101AFI20080612BHKR        </classification-ipcr><classification-ipcr status="new">C08L  47/00        20060101ALI20080612BHKR        </classification-ipcr><classification-ipcr status="new">C08L  47/00        20060101CLI20080612BHKR        </classification-ipcr></classifications-ipcr><classification-ecla status="new"><classification-symbol scheme="EC">C08L  15/00+B2</classification-symbol><classification-symbol scheme="EC">C08L  19/00D+B2</classification-symbol><classification-symbol scheme="ICO">M08L33:08</classification-symbol><classification-symbol scheme="ICO">M08L33:14</classification-symbol></classification-ecla><invention-title lang="EN" load-source="docdb" status="new">UV CURABLE COMPOSITION</invention-title><invention-title lang="FR" load-source="docdb" status="new">COMPOSITION DURCISSABLE PAR LE RAYONNEMENT ULTRAVIOLET</invention-title><citations><patent-citations><patcit ucid="EP-1376561-A1" status="new"><document-id format="epo" status="new"><country>EP</country><doc-number>1376561</doc-number><kind>A1</kind></document-id><sources><source name="SEA" category="A" created-by-npl="N"/></sources></patcit><patcit ucid="KR-950032245-A" status="new"><document-id format="epo" status="new"><country>KR</country><doc-number>950032245</doc-number><kind>A</kind></document-id><sources><source name="SEA"  category="A" created-by-npl="N"/></sources></patcit><patcit ucid="US-6714712-B2" status="new"><document-id format="epo" status="new"><country>US</country><doc-number>6714712</doc-number><kind>B2</kind></document-id><sources><source name="SEA" category="A"  created-by-npl="N"/></sources></patcit><patcit ucid="US-7109250-B2"  status="new"><document-id format="epo" status="new"><country>US</country><doc-number>7109250</doc-number><kind>B2</kind></document-id><sources><source name="SEA"  category="A" created-by-npl="N"/></sources></patcit><patcit ucid="WO-2002022697-A1" status="new"><document-id format="epo" status="new"><country>WO</country><doc-number>2002022697</doc-number><kind>A1</kind></document-id><sources><source name="SEA" category="A" created-by-npl="N"/></sources></patcit> </patent-citations></citations></technical-data><parties><applicants><applicant format="epo" status="new"><addressbook><name>HENKEL CORP</name><address><country>US</country> </address> </addressbook></applicant> <applicant format="epo" status="new"><addressbook><name>KONARSKI MARK M</name><address><country>US</country></address></addressbook></applicant><applicant format="epo" status="new"><addressbook><name>SCHALL JOEL D</name><address><country>US</country></address></addressbook></applicant><applicant format="intermediate" status="new"><addressbook><name>HENKEL CORPORATION</name></addressbook></applicant><applicant format="intermediate" status="new"><addressbook><name>KONARSKI, MARK, M.</name></addressbook></applicant><applicant format="intermediate" status="new"><addressbook><name>SCHALL, JOEL, D.</name></addressbook></applicant></applicants><inventors><inventor format="epo" status="new"><addressbook><name>KONARSKI MARK M</name><address><country>US</country></address></addressbook></inventor><inventor format="epo" status="new"><addressbook><name>SCHALL JOEL D</name><address><country>US</country></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>KONARSKI, MARK, M.</name></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>SCHALL, JOEL, D.</name></addressbook></inventor></inventors></parties></bibliographic-data><abstract lang="EN" source="national office" load-source="docdb" status="new"><p>The present invention provides a UV curable composition comprising an acrylate component, comprising an acrylate-functionalized hydrogenated polybutadiene, and at least one mono-functional acrylate, and a photoinitiator combination triggered upon exposure to radiation at 365 nm of the electromagnetic spectrum comprising a bisacyl phosphine oxide and benzophenone, where when dispensed at a thickness of about 1mm and exposed to UV radiation generated at a wavelength of 365 nm the composition cures through the thickness of the dispensed composition at a speed between 40 mm/sec to 100 mm/sec.</p></abstract><abstract lang="FR" source="national office" load-source="docdb" status="new"><p>La présente invention concerne une composition durcissable par rayonnement ultraviolet comportant un constituant acrylate, comprenant un polybutadiène hydrogéné à fonction acrylate, et au moins un acrylate monofonctionnel, et une combinaison photoamorceur déclenché lors d'une exposition à un rayonnement à 365 nm du spectre électromagnétique comprenant un oxyde de phosphine diacyle et un benzophénone. La composition, lorsqu'elle est distribuée à une épaisseur d'environ 1mm et exposée au rayonnement ultraviolet généré à une longueur d'onde de 365 nm se durcit à travers l'épaisseur de la composition distribuée à une vitesse comprise entre 40 mm/seconde et 100 mm/seconde.</p></abstract><description lang="EN" load-source="epoque" status="new"><p><pre xml:space="preserve" listing-type="other">
+UV CURABLE COMPOSITION
+
+BACKGROUND OF THE INVENTION Field of the Invention
+
+[0001] The present invention provides a UV curable composition comprising an acrylate component, comprising an acrylate-functionalized hydrogenated polybutadiene, and at least one mono-functional acrylate, and a photoinitiator combination triggered upon exposure to radiation at 365 nm of the electromagnetic spectrum comprising a bisacyl phosphine oxide and benzophenone, where when dispensed at a thickness of about 1 mm and exposed to UV radiation generated at a wavelength of 365 nm the composition cures through the thickness of the dispensed composition at a speed between 40 mm/sec to 100 mm/sec.
+
+Brief Description of Related Technology
+
+[0002] Photocurable compositions are well known. Some may be based on acrylate functional groups, while others are based on vinyl ether or epoxy functional groups.
+ These known photocurable compositions may include materials having oligomeric backbones, where the oligomer is a silicone based material, an acrylate base material, or a urethane base material.
+
+[0003] In applications where microelectronic circuitry is to be coded with a curable composition, the material once cured desirably minimizes the ingress of environmental contaminants to that electronic circuitry. Should that not be the case, the environmental contaminants could cause corrosion in the circuitry, leading to electrical disconnect and failure of the electronic component. This clearly is highly undesirable.
+
+[0004] While combinations of triphenyl phosphine oxide or bisacyl phosphine oxide with benzophenone have been described, benzophenone is used in these instances as a second photoinitiator . For instance, in International Patent Publication No.
+ <ref type="patent">WO 02/22697</ref> a methacrylate casting resin is described, in which among other things 0.1 - 10 % phosphine oxide photoinitiator plus 0 to 10% of another photoinitiator, such as a benzophenone.
+
+[0005] In addition, European Patent Publication No. <ref type="patent">EP 1 376 561</ref> speaks to an adhesive composition targeted towards medical and electronics fields.
+ The composition contains a urethane acrylate and an acrylamide, together with a photoinitiator component containing at least one acyl phosphine oxide and at least one additional photoinitiator, such as a benzophenone.
+
+[0006] Notwithstanding the state of the art, as shown in the Examples, benzophenone is not a photoinitiator in the inventive composition, and does not itself produce radicals required to initiate polymerization upon exposure to UV light of a 365 nm wavelength, but rather requires an additional electron donor to do so. [0007] Thus, it would be desirable to provide a photocurable composition having robust properties against the ingress of environmental contaminants, while curing at a fast cure profile.
+ SUMMARY OF THE INVENTION
+
+[0008] The present invention provides a UV curable composition comprising an acrylate component, comprising an acrylate-functionalized hydrogenated polybutadiene, and at least one mono-functional acrylate, and a photoinitiator combination triggered upon exposure to radiation at 365 nm of the electromagnetic spectrum comprising a bisacyl phosphine oxide and benzophenone, where when dispensed at a thickness of about 1 mm and exposed to UV radiation generated at a wavelength of 365 nm the composition cures through the thickness of the dispensed composition at a speed between 40 mm/sec to 100 mm/sec.
+
+DETAILED DESCRIPTION OF THE INVENTION
+
+[0009] The present invention provides a UV curable composition comprising an acrylate component, comprising an acrylate-functionalized hydrogenated polybutadiene, and at least one mono-functional acrylate,
+ and a photoinitiator combination triggered upon exposure to radiation at 365 nm of the electromagnetic spectrum comprising a bisacyl phosphine oxide and benzophenone.
+
+[0010] The bisacyl phosphine oxide should be present in an amount between about 1.5 and about 4 weight percent and the benzophenone present in an amount between about 0.01 and about 1 weight percent.
+ With these percentage ranges, when dispensed at a thickness of about 1 mm and exposed to UV radiation generated at a wavelength of 365 nm the composition cures through the thickness of the dispensed composition at a speed between 40 mm/sec to 100 mm/sec. [0011] More specifically, when the amount of benzophenone relative to bisacyl phosphine oxide is in the range of 0.005 to 0.25, a cure speed of 40 mm/sec may be achieved.
+
+[0012] And, when the amount of benzophenone relative to bisacyl phosphine oxide is in the range of 0.025 to 0.5, a cure speed of 100 mm/sec may be achieved. [0013] The UV radiation used to cure the inventive composition may be generated from a variety of UV light sources capable of generating 365 nm radiation.
+ However, a particularly desirable source to generated UV radiation at that wavelength is a LED source.
+
+[0014] The UV radiation intensity generated by the source is between about 120 to about 130 mW/cm&lt;2&gt;. [0015] Cure speed is dependant on the LED power (intensity of UV radiation) and thus higher power would allow for faster cure speeds, all else being equal. [0016] The inventive composition as noted has an acrylate-functionalized hydrogenated polybutadiene as a portion of the acrylate component. This polybutadiene has a molecular weight of about 3,000, as reported by the manufacturer Sartomer, Inc., Exton, PA. This polybutadiene happens to have hydrophobicity due to the backbone, which lends itself to be a particularly useful in commercial applications where the ingress of moisture through the cured composition can foul that which is beneath the composition.
+ For instance, microelectronic circuitry can be harmed if moisture penetrates the cured composition, thereby creating short circuits and a malfunction of the device.
+
+[0017] The mono-functional acrylate which is also part of the composition may be chosen from a host of acrylates, such as 2-hydroxyethyl acrylate, 2-hydroxypropyl acrylate, 2-hydroxyethyl acrylate, pentaerythritol triacrylate, 4-hydroxybutyl acrylate, isobornyl acrylate, cyclohexyl acrylate, tetrahydrofurfuryl acrylate, t-butylaminoethyl acrylate, cyanoethylacrylate, chloroethyl (meth) acrylate and lauryl acrylate. The corresponding (meth) acrylates are also embraced by the mono-functional acrylate. [0018] The present invention also provides a method of curing at 365 nm using an LED a UV curable composition at cure speeds within the range of about 40 mm/sec to about 100 mm/sec.
+ This method includes the steps of: a. dispensing onto a substrate a UV curable composition comprising a photoinitiator combination triggered upon exposure to radiation at 365 nm of the electromagnetic spectrum comprising a bisacyl phosphine oxide and benzophenone, where the bisacyl phosphine oxide is present in an amount between about 1.5 and about 4 weight percent and the benzophenone is present in an amount between about 0.01 and about 1 weight percent; and b. exposing the UV curable composition to UV radiation at a wavelength of 365 nm using an LED, such that the UV curable composition cures at cure speeds within the range of about 40 mm/sec to about 100 mm/sec.
+
+EXAMPLES
+
+[0019] In the table below, various samples were prepared to evaluate the performance in terms of surface cure, cure through depth and cure speed.
+ Table IA
+
+Components Sample
+
+A B C D E F G H
+
+CN9014&lt;*&gt; 60.1 60.1 60 1 601 60 1 60. 1 60.1 60. 1
+
+IBOA 25.59 22.59 22 1 21.6 24 1 23. 6 25.1 24. 6
+
+Lauryl Acrylate 12.3 12.3 12 3 12.3 12. 3 12. 3 12.3 12. 3
+
+IRGACURE 819 2 5 5 5 3 3 2 2
+
+Benzophenone 0.01 0.01 0. 5 1 0. 5 1 0.5 1
+
+* CN9014 is reported by the manufacturer, Sartomer Inc., to be a hydrophobic urethane acrylate oligomer having a hydrogenated polybutadiene backbone. CN9014 is reported to offer good chemical resistance and electrical properties.
+
+Table IB
+
+ &lt;EMI ID=7.1&gt; 
+
+[0020] In the table below, the performance of these samples is reported.
+ Surface cure is determined by a visual inspection when the surface is dry to the touch, after exposure to UV radiation at a wavelength of 365 nm and intensity of 120 to about 130 mW/cm&lt;2&gt; generated by a LED
+
+(commercially available from Panasonic as Aicure LED SPOT TYPE, model ANUJ5014) . Cure through volume is determined by a visual inspection of when no liquid is observed beneath the surface of the cured composition, again after exposure to UV radiation at a wavelength of 365 nm and intensity of 120 to about 130 mW/cm&lt;2&gt; generated by a LED. Table 2A
+
+ &lt;EMI ID=8.1&gt; 
+
+Table 2B
+
+ &lt;EMI ID=8.2&gt; 
+
+[0021] In Tables 2A and 2B, Ok indicates a cure through the depth of the dispensed composition; ICTD indicates the observation of liquid beneath a surface cure and thus incomplete cure through depth; and ISC indicates the observation of incomplete surface cure.
+</pre></p></description><claims lang="EN" load-source="epoque" status="new"><claim num="1"><claim-text>What is Claimed is : 
+
+
+</claim-text><claim-text>1. A UV curable composition comprising: An acrylate component, comprising an acrylate-functionalized hydrogenated polybutadiene, and at least one mono-functional acrylate, and 
+
+</claim-text><claim-text>A photoinitiator combination triggered upon exposure to radiation at 365 nm of the electromagnetic spectrum comprising a bisacyl phosphine oxide and benzophenone, wherein the bisacyl phosphine oxide is present in an amount between about 1.5 and about 4 weight percent and the benzophenone is present in an amount between about 0.01 and about 1 weight percent and wherein when dispensed at a thickness of about 1 mm and exposed to UV radiation generated at a wavelength of 365 nm the composition cures through the thickness of the dispensed composition at a speed between 40 mm/sec to 100 mm/sec. 
+
+
+</claim-text><claim-text>2. The composition of Claim 1, wherein the amount of benzophenone relative to bisacyl phosphine oxide is in the range of 0.005 to 0.25. 
+
+
+</claim-text><claim-text>3. The composition of Claim 2, wherein the cure speed is 40 mm/sec. 
+
+
+</claim-text><claim-text>4. The composition of Claim 1, wherein the amount of benzophenone relative to bisacyl phosphine oxide is in the range of 0.025 to 0.5. 
+
+
+</claim-text><claim-text>5. The composition of Claim 4, wherein the cure speed is 100 mm/sec. 
+
+
+</claim-text><claim-text>6. The composition of Claim 1, wherein the UV radiation is generated by a LED source. 
+
+
+</claim-text><claim-text>7. The composition of Claim 1, wherein the UV radiation intensity is between about 120 to about 130 mW/cm&lt;2&gt;.  
+
+
+</claim-text><claim-text>8. The composition of Claim 1, wherein the acrylate- functionalized hydrogenated polybutadiene has a molecular weight of about 3,000. 
+
+
+</claim-text><claim-text>9. The composition of Claim 1, wherein the mono- functional acrylate is selected from the group consisting of 2-hydroxyethyl acrylate, 2-hydroxypropyl acrylate, 2- hydroxyethyl acrylate, pentaerythritol triacrylate, 4- hydroxybutyl acrylate, isobornyl acrylate, cyclohexyl acrylate, tetrahydrofurfuryl acrylate, t-butylaminoethyl acrylate, cyanoethylacrylate, chloroethyl (meth) acrylate and lauryl acrylate, and their corresponding mono- functional (meth) acrylates . 
+
+
+</claim-text><claim-text>10. A method of curing at 365 nm using an LED a UV curable composition at cure speeds within the range of about 40 mm/sec to about 100 mm/sec, comprising the steps of: a. dispensing onto a substrate a UV curable composition comprising a photoinitiator combination triggered upon exposure to radiation at 365 nm of the electromagnetic spectrum comprising a bisacyl phosphine oxide and benzophenone, wherein the bisacyl phosphine oxide is present in an amount between about 1.5 and about 4 weight percent and the benzophenone is present in an amount between about 0.01 and about 1 weight percent; and b. exposing the UV curable composition to UV radiation at a wavelength of 365 nm using an LED, such that the UV curable composition cures at cure speeds within the range of about 40 mm/sec to about 100 mm/sec.
+</claim-text></claim></claims><copyright>User acknowledges that Matrixware and its third party providers retain all right, title and interest in and to this xml under applicable copyright laws.  User acquires no ownership rights to this xml including but not limited to its format.  User hereby accepts the terms and conditions of the Licence Agreement set forth at http://www.matrixware.com/legal/marec/data_licence.html</copyright></patent-document>

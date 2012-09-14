@@ -1,0 +1,21 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="561"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">The Sybil Database Integration and Evolution Environment: An Overview * <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Roger King, Michael Novak, Christian Och, Richard Osborne <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science <lb/>University of Colorado <lb/></affiliation></byline>
+		<address>Campus Box 430 <lb/>Boulder, CO 80309-0430 <lb/></address>
+		<email>roger@cs.colorado.edu, </email> <email>rick@cs.colorado.edu <lb/></email>
+		<byline><docAuthor>Fernando Velez <lb/></docAuthor></byline>
+		<byline><affiliation>Unidata Inc. <lb/></affiliation></byline>
+		<address>1099 18th Street <lb/>Suite 2200 <lb/>Denver, CO 80202-1925 <lb/></address>
+		<div type="abstract">Abstract <lb/>Sybil is a database integration and evolution environment for supporting large, heterogeneous applications. <lb/>We are interested in using Sybil to support the data integration and evolution needs of applications that are using legacy databases and are looking to integrate with <lb/>more modern database systems. The Sybil approach is <lb/>based on loosely coupling databases or other persistent <lb/>tools into lightweight alliances tailored for specific applications. Such alliances are built via four sorts of constructs: heterogeneous views, inter-database constraints, <lb/>inter-database propagations, and integration supported <lb/>by domain specific information. <lb/></div>
+		<div type="intro">Sybil Overview</div>
+		</front>
+</text>
+</tei>

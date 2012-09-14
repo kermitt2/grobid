@@ -1,0 +1,22 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="unknown"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">A Tool for Massively Replicating Internet Archives: <lb/>Design, Implementation, and Experience <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Katia Obraczka <lb/></docAuthor></byline>
+		<byline><affiliation>University of Southern California <lb/>Information Science Institute <lb/></affiliation></byline>
+		<address>4676 Admiralty Way <lb/>Marina del Rey, CA 90292, USA <lb/></address>
+		<email>katia@isi.edu <lb/></email>
+		<byline><docAuthor>Peter Danzig, Dante DeLucia, Erh-Yuan Tsai <lb/></docAuthor></byline>
+		<byline><affiliation>University of Southern California <lb/>Computer Science Department <lb/></affiliation></byline>
+		<address>Los Angeles, CA 90089-0781 <lb/></address>
+		<email>fdanzig, dante, erhyuantg@usc.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>This paper reports the design, implementation, and performance of a scalable and efficient tool to replicate Internet information services. Our tool targets replication <lb/>degrees of tens of thousands of weakly-consistent replicas scattered throughout the Internet&apos;s thousands of autonomously administered domains. The main goal of our <lb/>replication tool is to make existing replication algorithms <lb/>scale in today&apos;s exponentially-growing, autonomously-managed internetworks. <lb/></div>
+		<div type="intro">1. Introduction</div>
+		</front>
+</text>
+</tei>

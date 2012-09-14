@@ -1,0 +1,22 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="669"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<note type="reference">Appears in the <lb/>Proceedings of the Twelfth National Conference on Artificial Intelligence (AAAI-94), <lb/>Seattle, Washington, July 1994. <lb/></note>
+		<docTitle>
+			<titlePart type="main">Learning to Select Useful Landmarks <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Russell Greiner <lb/></docAuthor></byline>
+		<byline><affiliation>Siemens Corporate Research <lb/></affiliation></byline>
+		<address>Princeton, NJ 08540 <lb/></address>
+		<email>greiner@learning.siemens.com <lb/></email>
+		<byline><docAuthor>Ramana Isukapalli <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science <lb/>Rutgers University <lb/></affiliation></byline>
+		<email>ramana@cs.rutgers.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>To navigate effectively, an autonomous agent must be <lb/>able to quickly and accurately determine its current <lb/>location. Given an initial estimate of its position (perhaps based on dead-reckoning) and an image taken of <lb/>a known environment, our agent first attempts to locate a set of landmarks (real-world objects at known <lb/>locations), then uses their angular separation to obtain an improved estimate of its current position. Unfortunately, some landmarks may not be visible, or <lb/>worse, may be confused with other landmarks, resulting in both time wasted in searching for invisible landmarks, and in further errors in the agent&apos;s estimate of <lb/>its position. To address these problems, we propose a <lb/>method that uses previous experiences to learn a selection function that, given the set of landmarks that <lb/>might be visible, returns the subset which can reliably <lb/>be found correctly, and so provide an accurate registration of the agent&apos;s position. We use statistical techniques to prove that the learned selection function is, <lb/>with high probability, effectively at a local optimal in <lb/>the space of such functions. This report also presents <lb/>empirical evidence, using real-world data, that demonstrate the effectiveness of our approach. <lb/></div>
+		<div type="intro">1. Introduction</div>
+		</front>
+</text>
+</tei>

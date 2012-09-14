@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<patent-document status="new" lang="EN" ucid="EP-1133021-B1" country="EP" doc-number="1133021" kind="B1" date="20050330"><bibliographic-data><publication-reference fvid="23244361" ucid="EP-1133021-B1" status="new"><document-id status="new" format="original"><country>EP</country><doc-number>1133021</doc-number><kind>B1</kind><date>20050330</date><lang>EN</lang></document-id></publication-reference><application-reference ucid="EP-01301215-A" status="new" is-representative="NO"><document-id format="epo" status="new"><country>EP</country><doc-number>01301215</doc-number><kind>A</kind><date>20010212</date><lang>EN</lang></document-id></application-reference><priority-claims status="new"><priority-claim ucid="JP-2000063624-A" status="new"><document-id format="epo" status="new"><country>JP</country><doc-number>2000063624</doc-number><kind>A</kind><date>20000308</date></document-id></priority-claim></priority-claims><dates-of-public-availability status="new"><intention-to-grant-date><date>20040922</date></intention-to-grant-date></dates-of-public-availability><term-of-grant /><technical-data status="new"><classifications-ipcr><classification-ipcr status="new">H01R  13/629       20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">H01R  13/629       20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">H01R  13/633       20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">H01R  13/635       20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">H01R  13/639       20060101ALI20051220RMJP        </classification-ipcr><classification-ipcr status="new">H01R  13/639       20060101CLI20051220RMJP        </classification-ipcr><classification-ipcr status="new">H01R  13/64        20060101AFI20051220RMJP        </classification-ipcr><classification-ipcr status="new">H01R  13/64        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">H01R  13/641       20060101A I20051008RMEP        </classification-ipcr></classifications-ipcr><classification-ecla status="new"><classification-symbol scheme="EC">H01R13/629L</classification-symbol><classification-symbol scheme="EC">H01R13/635</classification-symbol><classification-symbol scheme="EC">H01R13/641</classification-symbol><classification-symbol scheme="ICO">T01R13:629C</classification-symbol></classification-ecla><invention-title lang="DE" status="new">Verbinder</invention-title><invention-title lang="EN" status="new">Connector</invention-title><invention-title lang="FR" status="new">Connecteur</invention-title><citations /><figures /></technical-data><parties><applicants><applicant format="epo" status="new"><addressbook><name>SUMITOMO WIRING SYSTEMS</name><address><country>JP</country></address></addressbook></applicant><applicant format="intermediate" status="new"><addressbook><name>SUMITOMO WIRING SYSTEMS, LTD.</name><address><country /></address></addressbook></applicant></applicants><inventors><inventor format="epo" status="new"><addressbook><name>KURIMOTO NAOYA</name><address><country>JP</country></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>KURIMOTO, NAOYA</name><address><country /></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>Kurimoto, Naoya, c/o Sumitomo Wiring Systems, Ltd.</last-name><address><street>1-14, Nishisuehiro-cho</street><city>Yokkaichi-City, Mie 510-8503</city><country>JP</country></address></addressbook></inventor></inventors><assignees><assignee format="original" status="new"><addressbook><last-name>Sumitomo Wiring Systems, Ltd.</last-name><address><street>1-14, Nishisuehiro-cho</street><city>Yokkaichi-City, Mie, 510-8503</city><country>JP</country></address></addressbook></assignee></assignees><agents><agent format="original" status="new"><addressbook><last-name>Chettle, Adrian John</last-name><address><street>Withers &amp;amp; Rogers, Goldings House, 2 Hays Lane</street><city>London SE1 2HW</city><country>GB</country></address></addressbook></agent></agents></parties><international-convention-data><designated-states><ep-contracting-states><country>DE</country><country>FR</country><country>GB</country><country>IT</country></ep-contracting-states></designated-states></international-convention-data></bibliographic-data><abstract lang="EN" source="EPO" status="new"><p>The invention provides fitting detecting means that can be attached to a variety of types of electrical connector. Guiding rails 30 are provided on both ends of a male housing 20, these guiding rails 30 allowing detecting units 40 to be attached. The detecting units 40 have spring holders 41 that house coiled springs 60 and sliders 61. Flange members 31 of the guiding rails 30 are inserted into guide grooves 43 of guiding members 42 formed on inner side faces of the spring holders 41, thereby attaching the detecting units 40 to the female housing 20. The detecting units 40, if required, are attached to the female housing 20 before male and female housings 10 and 20 are fitted together. The sliders 61 of the detecting units 40 are pushed by the male housing 10 while the male and female housings 10 and 20 are being fitted together, this compressing the coiled springs 60 as they are being pushed towards the posterior.</p></abstract><abstract lang="EN" status="new"><p num="">The invention provides fitting detecting means that can be attached to a variety of types
+of electrical connector. Guiding rails 30 are provided on both ends of a male housing
+20, these guiding rails 30 allowing detecting units 40 to be attached. The detecting units
+40 have spring holders 41 that house coiled springs 60 and sliders 61. Flange members
+31 of the guiding rails 30 are inserted into guide grooves 43 of guiding members 42
+formed on inner side faces of the spring holders 41, thereby attaching the detecting
+units 40 to the female housing 20. The detecting units 40, if required, are attached to
+the female housing 20 before male and female housings 10 and 20 are fitted together.
+The sliders 61 of the detecting units 40 are pushed by the male housing 10 while the
+male and female housings 10 and 20 are being fitted together, this compressing the
+coiled springs 60 as they are being pushed towards the posterior.</p></abstract><description lang="EN" status="new"><heading><u style="single">TECHNICAL FIELD</u></heading><p num="0001">The present invention relates to an electrical connector.</p><heading><u style="single">BACKGROUND TO THE INVENTION</u></heading><p num="0002">One example of a connector provided with a means for detecting whether male and female
+housings are in a half-fitted state is described in <ref type="patent">JP-9-219257</ref>. In this connector, a male
+housing is provided with a hood into which a female housing can be fitted, and a spring means
+is housed in a housing member adjacent to the hood. When the two housings are to be fitted
+together, the spring means is pressed by the female housing, spring force thereof accumulating
+while it is being pressed. If the fitting operation of the two housings is halted part-way
+through, the spring force accumulated thus far is released, this pushing the female housing
+outwards. By this means, the half-fitted state of the two housings can be detected.</p><p num="0003">The fitting operation of connectors provided with a fitting detecting means is extremely
+reliable. It is highly desirable to improve the reliability of the fitting operation of connectors in
+general, and it is therefore desirable to provide a fitting detecting means to connectors which
+conventionally do not have one. However, it is necessary to design new connectors in order to
+realise this, and the cost thereof is high.</p><p num="0004">The present invention has taken the above problem into consideration, and aims to present a
+fitting detecting means which can be added to a variety of types of connector.</p><p num="0005"><ref type="patent">US-A-5820399</ref>
+which is considered to represent
+the closest prior art
+discloses a connector comprising two mutually engageable connector housings,
+one of which includes an integral housing for a spring biased slider, which is actuated by the
+other connector housing to provide detection of incomplete engagement.</p><p num="0006"><ref type="patent">EP-A-1130691</ref> discloses a connector also having an integral housing for a spring biased slider.</p><heading><u style="single">SUMMARY OF THE INVENTION</u></heading><p num="0007">According to the invention there is provided a connector comprising two mutually
+engageable connector housings and a detecting unit for detecting incomplete
+engagement of said housings, said detecting unit having a spring acted on by the other 
+of said housings and adapted to accumulate a resilient force during engagement of said
+housings, said force tending to move said housings in the direction of separation,
+characterized in that said connector is elongate in a direction perpendicular to the
+attachment direction of said housings, a detecting unit being provided at each end of
+said one of said housings, each detecting unit latching the other of said housings on
+complete engagement of said housings, the connector having a lever on one of said
+housings, said lever being engageable with the other of said housings and pivotable to
+draw said housings into complete engagement, and each of said detecting units being
+disengaged from the other of said housings on application of a force to said lever in a
+disengaging direction, said force exceeding a predetermined limit, wherein each
+detecting unit comprises a body attachable to one of said housings, and a slider housed
+in said body for movement relative thereto.</p><p num="0008">The detecting unit preferably includes a slider retained therein and resiliently latchable with
+the other of said housings both in the direction of attachment and in the direction of separation
+of said housings. In the direction of attachment the slider and other of said housings preferably
+have contact faces perpendicular to the attachment direction, whereas in the direction of
+separation the contact faces are preferably at an angle to the attachment direction. Such an
+arrangement provides a semi-latch which is releasable on application of a predetermined
+separation force.</p><p num="0009">An attachable detecting unit has the advantage of being able to be included with the connector
+only when required.</p><heading><u style="single">BRIEF DESCRIPTION OF DRAWINGS</u></heading><p num="0010">Other features of the invention will be apparent from the following description of a preferred
+embodiment shown by way of example only in the accompanying drawings in which:-
+<sl><li>Figure 1 is a partially cut-away plan view of a connector of an embodiment of the
+present invention.</li><li>Figure 2 is a front view of a male housing.</li><li>Figure 3 is a plan view showing a female housing in a disassembled state. </li><li>Figure 4 is a partially cut-away plan view showing the female housing and a
+detecting unit in a disassembled state. </li><li>Figure 5 is a front view of the female housing.</li><li>Figure 6 is a side face view of the female housing.</li><li>Figure 7 is a rear face view of the female housing.</li><li>Figure 8 is a front view of the detecting unit.</li><li>Figure 9 is a partially cut-away plan view showing the detecting units being
+attached to the female housing.</li><li>Figure 10 is a front view showing the detecting units attached to the female
+housing.</li><li>Figure 11 is a partially cut-away plan view showing the two housings in an early
+stage of being fitted together.</li><li>Figure 12 is a partially cut-away plan view showing the two housings being fitted
+together.</li><li>Figure 13 is a partially cut-away plan view showing the two housings immediately
+prior to reaching the correct fitting position.</li><li>Figure 14 is a partially cut-away plan view showing the two housings correctly
+fitted together.</li><li>Figure 15 is a rear face view showing the two housings correctly fitted together.</li><li>Figure 16 is a partially cut-away plan view showing the two housings being
+separated.</li></sl></p><heading><u style="single">DESCRIPTION OF PREFERRED EMBODIMENT</u></heading><p num="0011">An embodiment of the present invention is described below with the aid of Figures 1 to
+16. This embodiment is a lever-type connector. As shown in Figure 1, the connector of
+this embodiment is provided with a male connector housing 10 that fits with a female
+connector housing 20 provided with a lever 25. Detecting units 40 that function as a
+fitting detecting means can be attached to the female housing 20. The fitting face sides
+of the male and female housings 10 and 20 will hereafter be considered as the anterior
+sides.</p><p num="0012">The male housing 10 has a long and narrow shape and is provided with a cylindrical
+hood 11 that is open to the anterior. As shown in Figure 2, a plurality of cavities 12 are
+aligned in two layers within the male housing 10 along the lengthwise direction thereof.
+Each cavity 12 can have a male terminal fitting (not shown) attached therein. A pair of
+follower pins 13 protrude from inner faces of the hood 11 at an approximately central
+location relative to the lengthwise direction of the male housing 10, these follower pins
+13 facing one another. The follower pins 13 can be inserted into cam grooves 28 of the
+lever 25 of the female housing 20 (to be described).</p><p num="0013">As shown in Figure 1, the female housing 20 can be fitted into the hood 11 of the male
+housing 10 and, like the male housing 10, is long and narrow in shape. As shown in
+Figure 3, the female housing 20 has a configuration whereby a lower side face (relative
+to Figure 3) of an outer housing 21 thereof has an opening 21A, an inner housing 22
+being housed within the female housing 20 from this opening 21A (see Figure 6). As
+shown in Figures 3 and 5, a plurality of cavities 23 are aligned within the inner housing
+22, the location of these cavities 23 corresponding to the location of the cavities 12 of
+the male housing 10. Female terminal fittings are housed within the cavities 23, these
+female terminal fittings fitting with the male terminal fittings. As shown in Figure 4, a
+maintaining arm 21C provided with a retaining hole 21B is provided on a
+circumference edge of the opening 21A of the outer housing 21. When the inner
+housing 22 is housed within the outer housing 21, a protrusion 22A formed on the inner
+housing 22 engages with the retaining hole 21B, thereby maintaining the inner housing
+22 in this location. </p><p num="0014">A pair of axle pins 24, to which the lever 25 is attached, protrude from outer faces of
+the outer housing 21. The lever 25 has an inverted-U shape and is formed from a pair
+of foot members 26 joined by a joining member 27. The lever 25 is attached pivotably
+to the female housing 20 by positioning the two foot members 26 so as to grip the
+female housing 20 and fitting the axle pins 24 into attachment holes 26A formed in the
+two foot members 26. The lever 25 can be pivoted along the lengthwise direction of the
+female housing 20 by pressing the joining member 27, with the axle pins 24 serving as
+the pivot centre.</p><p num="0015">The cam grooves 28, into which the follower pins 13 of the male housing 10 are
+inserted, are formed in the two foot members 26. As shown in Figure 1, when the lever
+25 is in a state prior to being pivoted, an entrance hole 28A of each cam groove 28
+faces the anterior. As shown in Figure 11, pivoting the lever 25 after the follower pins
+13 have been inserted into the entrance holes 28A of the cam grooves 28 causes the
+follower pins 13 to move along the cam grooves 28 and causes the male and female
+housings 10 and 20 to fit together. The male and female housings 10 and 20 reach the
+correct fitting position when the lever 25 has been pivoted to the position shown in
+Figure 14; in this position, an end of the joining member 27 thereof is retained by a
+stopping member 29 provided on the female housing 20. As shown in Figure 7, the
+stopping member 29 has a cantilevered shape and is capable of bending resiliently into
+the female housing 20.</p><p num="0016">Guiding or attachment rails 30 protrude from an innermost side face (relative to Figure
+3) of the outer housing 21 and from an outermost side face of the inner housing 22.
+That is, as shown in Figure 4, these guiding rails 30 are provided at both lengthwise
+ends of the female housing 20, and allow the detecting units 40 to be attached. Each
+detecting unit 40 has a configuration whereby a coiled spring 60 and a slider 61 are
+housed within a spring holder 41. The detecting units 40 are attached by fitting guiding
+members 42, which are provided on the spring holders 41, into the guiding rails 30 of
+the female housing 20 (see Figure 10). </p><p num="0017">The attachment configuration of the female housing 20 and the detecting units 40 will
+now be explained. As shown in Figure 4, the guiding rails 30 extend in a lengthwise
+direction along side faces of the female housing 20 and, as shown in Figure 5, a pair of
+flange members 31 protrude in a T-shape upwards and downwards from these guiding
+rails 30. As shown in Figure 6, the guiding rails 30 extend from a location slightly back
+from an anterior end of the female housing 20 to a posterior end of this female housing
+20.</p><p num="0018">As shown in Figure 4, the spring holders 41 are attached along the guiding rails 30 from
+the anterior of the female housing 20. The pair of guiding members 42 protrude from
+both side edges of a lower face (relative to Figure 8) of each spring holder 41. Guide
+grooves 43 are formed in inner edges of the guiding members 42, the flange members
+31 of the guiding rails 30 being inserted therein. As shown in Figure 4, protruding
+members 44 are formed at anterior ends of the guide grooves 43. As shown in Figure 1,
+when the spring holders 41 have been attached to the female housings 20, the
+protruding members 44 engage with anterior ends of the flange members 31 of the
+guiding rails 30, thereby preventing the spring holders 41 from moving any further
+towards the posterior.</p><p num="0019">As shown in Figure 6, a groove 32 extends along the entire length of an outer face of
+each guiding rail 30, at a location approximately half-way up this outer face. As shown
+in Figure 4, a catching protrusion or obstruction 33 is provided at a location slightly to
+the anterior of the centre (relative to the lengthwise direction) of the groove 32. A
+projection or stopping protrusion 45 is formed at a central location (relative to the
+widthwise direction) of a lower face (relative to Figure 8) of each spring holder 41.
+When the spring holders 41 are inserted into the grooves 32 of the guiding rails 30, the
+stopping protrusions 45 engage with the catching protrusions 33. As shown in Figure 4,
+the stopping protrusions 45 are formed at an approximately central location relative to
+the lengthwise direction of the spring holders 41.</p><p num="0020">Tapering guiding faces 34 and 46 are formed on anterior faces of the catching
+protrusions 33 and posterior faces of the stopping protrusions 45 respectively. When 
+the spring holders 41 are inserted into the grooves 32 while they are being attached, the
+guiding faces 34 and 46 guide the stopping protrusions 45 over the catching protrusions
+33. As shown in Figure 1, when the spring holders 41 have been attached to the female
+housing 20, the stopping protrusions 45 are located directly to the posterior of the
+catching protrusions 33, perpendicular faces of the two engaging with one another. By
+this means, the spring holders 41 are prevented from moving towards the anterior. At
+this juncture, as described above, the protruding members 44 engage with the anterior
+ends of the guiding rails 30. Consequently, the detecting units 40 are maintained in a
+state where they cannot move towards the anterior or the posterior relative to the female
+housing 20. Furthermore, as shown in Figure 5, a recess 35 passes from the anterior to
+the posterior of each guiding rail 30 at a location inwards from the groove 32 and
+separated therefrom by a wall. These recesses 35 allow the walls of the guiding rails 30
+to bend temporarily when the stopping protrusions 45 pass over the catching
+protrusions.</p><p num="0021">Next, the configuration of the detecting units 40 will be described in detail. As shown
+in Figure 4, the spring holders 41 have an approximately angular cylindrical shape that
+is open to the anterior. The coiled springs 60 and then the sliders 61 are housed within
+these spring holders 41, being inserted from the anterior via the opening portions
+thereof. The sliders 61 are capable of moving in an anterior-posterior direction within
+the spring holders 41 along the fitting direction of the male and female housings 10 and
+20.</p><p num="0022">The spring holders 41 have outer walls 47 formed opposite the faces that are attached to
+the female housing 20, and inner walls 48 are provided therebetween. Spaces between
+the inner sides of the inner walls 48 house the coiled springs 60, and spring receiving
+walls 49 that restrain posterior ends of the coiled springs 60 are provided at the
+posterior ends of the inner walls 48. When the sliders 61 are moved to the posterior,
+these spring receiving walls 49 allow the coiled springs 60 to be compressed, the spring
+force thereof accumulating. When the sliders 61 are attached in the position shown at
+the top of Figure 4, the coiled springs 60 are slightly compressed, and this results in the
+sliders 61 being kept positioned towards the anterior. </p><p num="0023">As shown in Figure 8, the coiled springs 60 make contact with the centre (relative to the
+widthwise direction thereof) of the sliders 61. Forked holders 62, these maintaining the
+centrally located coiled springs 60 in a gripped state, are located at both edges relative
+to the widthwise direction of the sliders 61 and extend towards the posterior. A pair of
+protrusions 63 are formed on both side faces of the sliders 61. As shown in Figure 4,
+these protrusions 63 enter a pair of guiding grooves 50 formed in inner faces of the
+spring holders 41 and slide along these guiding grooves 50, thereby guiding the
+movement of the sliders 61 in the anterior-posterior direction. Stoppers 51 are formed
+at anterior ends of the guiding grooves 50. The protrusions 63 engage with these
+stoppers 51, thereby retaining the sliders 61 in the anterior direction. When the sliders
+61 are in the position shown at the top of Figure 4, the protrusions 63 are in an engaged
+state with the stoppers 51.</p><p num="0024">As shown in Figure 4, cantilever shaped locking arms 64 protrude outwards from
+anterior end portions of side faces of the sliders 61, these side faces extending along the
+inner walls 48 of the spring holders 41. Anterior portions of the inner walls 48 are cut
+away so as to allow the locking arms 64 to enter therein. The locking arms 64 are
+provided with arms 65 that extend from base members outwards the posterior and can
+be bent along the lengthwise direction of the female housing 20 with the base members
+serving as the bending bases. The arms 65 extend along the outer walls 47. Bending
+the locking arms 64 causes the arms 65 to move inwards or outwards (see Figure 12).</p><p num="0025">The side faces of the arms 65 that extend along the outer walls 47 are provided with
+outwardly protruding locking protrusions 66. These locking protrusions 66 are located
+posteriorly with respect to the centre (relative to the lengthwise direction thereof) of the
+arms 65. Recessed grooves 52, into which the locking protrusions 66 enter, are formed
+in the outer walls 47. These recessed grooves 52 are provided along a specified
+distance from the anterior ends of the outer walls 47 and are open at the anterior. As
+shown in Figures 1 and 2, locking members 14 protrude inwards at the anterior end of
+the hood 11 of the male housing 10. The locking protrusions 66 of the locking arms 64
+engage with these locking members 14. A tapered face 15 is formed on a posterior end 
+face of each locking member 14, this tapered face 15 joining with the inner face of the
+hood 11 and being gently inclined. A tapered face 67 is provided on a posterior face of
+each locking protrusion 66 and is inclined at the same angle as the tapered faces 15.
+These tapered faces 15 and 67 mutually engage. As shown in Figure 14, if a pulling
+force exceeding a specified degree is exerted on the mutually engaged locking arms 64
+and locking members 14 so as to move the male and female housings 10 and 20 in a
+direction of separation, the locking arms 64 bend while being guided by the tapered
+faces 15 and 67, and their engaged state with the locking members 14 is released. That
+is, the tapered faces 15 and 67 form a semi-locking configuration.</p><p num="0026">As shown in Figure 11, while the male and female housings 10 and 20 are being fitted
+together, the locking members 14 of the male housing 10 enter the recessed grooves 52
+in the outer walls 47 of the spring holders 41, and strike against anterior faces of the
+locking protrusions 66. When the locking members 14 are in an inserted state within
+the recessed grooves 52, inner faces of these locking members 14 form approximately
+unified faces with inner faces of the outer walls 47. Anterior faces of the locking
+members 14 are at right angles to the fitting direction of the male and female housings
+10 and 20, these faces forming pushing members 16 that correspond to the locking
+protrusions 66. The anterior faces of the locking protrusions 66, like the pushing
+members 16, are at right angles to the fitting direction of the male and female housings
+10 and 20. These anterior faces form pushing receiving members 68 that receive the
+pushing force from the pushing members 16. Performing the fitting operation of the
+male and female housings 10 and 20 while the pushing members 16 make contact with
+the pushing receiving members 68 causes an increased pushing force to be exerted on
+the pushing receiving members 68, thereby pushing the sliders 61 to the posterior and
+compressing the coiled springs 60.</p><p num="0027">As shown in Figures 4 and 8, a pair of movable guiding members 53 is provided at the
+posterior end of side walls of each spring holder 41. These movable guiding members
+53 adjoin the outer walls 47 at the side faces of the spring holders 41 and protrude to a
+location where they form approximately unified faces with edges of the recessed
+grooves 52. As shown in Figure 4, anterior faces of the movable guiding members 53 
+form arc-shaped faces 54. Posterior end portions of the arms 65 of the locking arms 64
+engage with these arc-shaped faces 54. When the sliders 61 are moved towards the
+posterior while the posterior end portions of the arms 65 are engaged with the
+arc-shaped faces 54, the locking arms 64 bend inwards as they are guided by the
+arc-shaped faces 54. The posterior end portions of the arms 65 of the locking arms 64
+are rounded so as to be semicircular in shape.</p><p num="0028">The present embodiment is configured as described above. Next, the operation thereof
+will be explained. This connector is formed from the separate components of the male
+and female housings 10 and 20 and the detecting units 40. Consequently, before
+performing the fitting operation of the male and female housings 10 and 20, it must first
+be decided whether the fitting detecting means will be required, and consequently
+whether the detecting units 40 should be attached.</p><p num="0029">In the case where fitting detecting is not required, the lever 25 is operated to fit the
+female housing 20 with the male housing 10 with the detecting units 40 in an
+unattached state with the female housing 20 (see Figure 4).</p><p num="0030">In the case where fitting detecting is required, the detecting units 40 are first attached to
+the female housing 20, and then the fitting operation of the male and female housings
+10 and 20 is performed.</p><p num="0031">As shown in Figure 4, the detecting units 40 are attached to the female housing 20 as
+follows: the flange members 31 of the guiding rails 30 are fitted from the anterior of the
+female housing 20 into the guide grooves 43 of the spring holders 41, and the detecting
+units 40 are pushed in towards the posterior. As the detecting units 40 are being pushed
+towards the posterior along the guiding rails 30, the stopping protrusions 45 enter the
+grooves 32. Then, as shown in Figure 9, the guiding faces 34 and 46 of the catching
+protrusions 33 and the stopping protrusions 45 (the guiding faces 34 and 46 having
+been in a state whereby they were making mutual contact) guide one another to bring
+the stopping protrusions 45 over the catching protrusions 33 while the detecting units
+40 are being moved further towards the posterior. After this, as shown in Figure 1, the 
+stopping protrusions 45 are located directly to the posterior of the catching protrusions
+33 within the grooves 32, these catching protrusions 33 retaining the stopping
+protrusions 45. By this means, the detecting units 40 are prevented from moving to the
+anterior relative to the female housing 20. At this juncture, the protruding members 44
+of the spring holders 41 are engaged with the anterior ends of the flange members 31 of
+the guiding rails 30, thereby preventing the detecting units 40 from moving any further
+towards the posterior. That is, the detecting units 40 are attached to the female housing
+20 in a state whereby they cannot move to the anterior or the posterior. Furthermore, as
+shown in Figure 10, the guiding rails 30 are fitted into the guide grooves 43, thereby
+preventing the detecting units 40 from moving in a widthwise direction.</p><p num="0032">Next, the female housing 20, having the detecting units 40 attached thereto, is fitted to
+the male housing 10. As shown in Figure 11, the female housing 20 is inserted into the
+hood 11 of the male housing 10, the follower pins 13 fitting lightly within the entrance
+holes 28A of the cam grooves 28 of the lever 25. At this juncture, the pushing
+members 16 of the male housing 10 make contact with the pushing receiving members
+68 of the locking protrusions 66. The lever 25 is then pivoted in the direction shown by
+the arrow.</p><p num="0033">While the lever 25 is being pivoted, the follower pins 13 move inwards along the cam
+grooves 28 and the male and female housings 10 and 20 are brought closer together in
+the fitting direction (see Figure 12). The pushing receiving members 68 receive a
+greater pushing force from the pushing members 16 while the fitting of the male and
+female housings 10 and 20 progresses, this pushing force pushing the sliders 61 towards
+the posterior and compressing the coiled springs 60. While the lever 25 is pivoted
+further from the state where the posterior end portions of the arms 65 of the locking
+arms 64 make contact with the arc-shaped faces 54 of the movable guiding members
+53, the sliders 61 move further towards the posterior, the posterior end portions of the
+arms 65 being guided by the arc-shaped faces 54 of the movable guiding members 53
+and the locking arms 64 bending inwards. As the locking arms 64 bend, the arms 65
+provided with the locking protrusions 66 bend inwards, thereby causing the engagement 
+of the pushing receiving members 68 with the pushing members 16 to gradually
+decrease.</p><p num="0034">If the pivoting of the lever 25 is halted while the male and female housings 10 and 20
+are partly fitted together, the accumulated spring force of the coiled springs 60 is
+released, thereby separating the male and female housings 10 and 20. By this means it
+can be ascertained that the male and female housings 10 and 20 were partly fitted
+together. The coiled springs 60 are provided at both lengthwise ends of the male and
+female housings 10 and 20. Consequently, the partly fitted housings 10 and 20 separate
+smoothly from one another.</p><p num="0035">When the sliders 61 reach the position shown in Figure 13, the locking arms 64 are bent
+to a position whereby the pushing receiving members 68 are completely released from
+being pushed by the pushing members 16. At this juncture, the posterior end portions
+of the arms 65 are no longer guided by the arc-shaped faces 54 of the movable guiding
+members 53, inner edges of the movable guiding members 53 face the outer faces of the
+arms 65, and the posterior end portions of the arms 65 protrude out from the posterior
+of the spring holders 41.</p><p num="0036">The spring force of the compressed coiled springs 60 is released as the pushing state of
+the pushing members 16 and the pushing receiving members 68 is released, pushing the
+sliders 61 to the anterior. This forward movement of the sliders 61 is guided by the
+protrusions 63 sliding within the guiding grooves 50. While the sliders 61 are moving
+to the anterior, the locking arms 64, while remaining in a bent state, move so as to pass
+along the locking members 14 of the male housing 10. Then, as shown in Figure 14,
+the sliders 61 return to their original position and the locking arms 64 return to their
+original position, the tapered faces 67 of the locking protrusions 66 being retained by
+the tapered faces 15 of the locking members 14. At this juncture, the protrusions 63 of
+the sliders 61 engage with the stoppers 51, thereby preventing the sliders 61 from
+moving any further towards the anterior. Furthermore, the coiled springs 60 have
+regained their original length (their length prior to fitting), thereby avoiding set-in
+fatigue. </p><p num="0037">At approximately the same time, the joining members 27 of the lever 25 causes the
+stopping member 29 to bend resiliently, and the joining member 27 rises over it (see
+Figure 13). When the lever 25 is pivoted to the position shown in Figure 14, it is
+retained by the stopping member 29 which has returned to the end of the joining
+member 27 (see Figure 15). By this means, the lever 25 is maintained in a locked state.
+At this juncture, the male and female housings 10 and 20 are at the correct fitting depth
+(see Figure 14). The lever 25 is retained by the stopping member 29 while the follower
+pins 13 are in a fitting state within the cam grooves 28, and the locking arms 64
+provided at both lengthwise ends of the male and female housings 10 and 20 are
+retained by the locking members 14, this maintaining the male and female housings 10
+and 20 in a correct fitting state. In this manner, both lengthwise ends of the male and
+female housings 10 and 20 are maintained and, while the male and female housings 10
+and 20 are in the fitting state, instability and slippage to the anterior or posterior,
+relative to the lengthwise direction thereof, is prevented.</p><p num="0038">If the male and female housings 10 and 20 are to be separated for maintenance or the
+like, the joining member 27 of the lever 25 is released from this retained state while the
+stopping member 29 is bent, then the lever 25 is pivoted in the opposite direction to
+which it was first rotated. While the lever 25 is being pivoted, the follower pins 13
+move along the cam grooves 28 to the entrance holes 28A and the male and female
+housings 10 and 20 are moved in a direction of separation. At this juncture, the locking
+arms 64 are guided inwards from their retained state with the locking members 14 as
+the pulling force increases, being guided by the tapered faces 15 and 67 that fit mutually
+together, and as they bend these locking arms 64 are released from their retained state
+with the locking members 14 (see Figure 16). By this means, the male and female
+housings 10 and 20 are released from the retained state and can be separated by
+pivoting the lever 25 further. The locking arms 64 and the locking members 14 form
+the semi-locking configuration, and consequently their retained state is released
+automatically by pivoting the lever 25. </p><p num="0039">In the embodiment described above, the detecting units 40 are formed as a component
+separate from the male and female housings 10 and 20. Consequently, the detecting
+means can easily be added when it is required for the connector. Furthermore, the
+detecting units 40 are provided at both lengthwise ends of the long and narrow
+connector. As a result, fitting resistance at either lengthwise end is prevented when the
+male and female housings 10 and 20 are fitted together, and the male and female
+housings 10 and 20 can also be separated smoothly.</p><p num="0040">The detecting units 40 are provided with retaining devices. Consequently, the male and
+female housings 10 and 20 that have been fitted together can be maintained in a stable
+state. Furthermore, the retaining devices of the detecting units 40 have semi-locking
+devices. Consequently, the lever 25 merely needs to be pivoted from its retained state
+in order to easily separate the male and female housings 10 and 20.</p><p num="0041">In the embodiment described above, the detecting unit is attached to a lever-type
+connector. However, the detecting unit may be attached to other types of connectors as
+well if the connectors have an attachment configuration for the detecting units. For
+example, the detecting unit may be optionally attached to a connector wherein a locking
+arm is provided in the central portion (relative to the widthwise direction) of a female
+housing, this locking arm engaging with a locking member provided on a male housing.
+That is, the same detecting unit may be attached to various types of connector if the
+connectors have a common attachment configuration; this increases the universality of
+the detecting unit. Consequently, the detecting unit can be produced in bulk, and the
+production costs thereof will decrease.</p><p num="0042">The present invention is not limited to the embodiments described above with the aid of
+figures. For example, the possibilities described below also lie within the technical
+range of the present invention. In addition, the present invention may be embodied in
+various other ways without deviating from the scope thereof.
+<sl><li>(1) In the embodiment described above, the retaining devices of the detecting units
+have a semi-locking configuration. However, in the case where the male and female 
+housings are to be maintained more stably in the fitting state, a conventional locking
+configuration may be employed within perpendicular faces engage with one another.</li><li>(2) In the embodiment described above, the detecting unit is provided with the
+retaining devices. However, these retaining devices may be omitted in the case where
+locking performed by the lever alone is adequate.</li><li>(3) The detecting units may be attached to the male housing rather than the female housing.</li></sl></p></description><claims lang="DE" status="new"><claim num="xx"><claim-text>Verbinder, umfassend zwei wechselweise in Eingriff bringbare Verbindergehäuse
+(10, 20) und eine detektierende bzw. Detektionseinheit (40) zum Detektieren bzw.
+Feststellen eines unvollständigen Eingriffs der Gehäuse (10, 20), wobei die detektierende
+Einheit eine Feder (60) aufweist, auf welche durch das andere der Gehäuse
+eingewirkt wird und welche adaptiert ist, um eine rückstellfähige Kraft während eines
+Eingriffs der Gehäuse (10, 20) zu speichern bzw. zu sammeln, wobei die Kraft dazu
+tendiert, die Gehäuse (10, 20) in der Richtung einer Trennung zu bewegen, dadurch
+gekennzeichnet, daß der Verbinder länglich bzw. verlängert in einer Richtung normal
+auf die Anordnungs- bzw. Festlegungsrichtung der Gehäuse (10, 20) ist, wobei eine
+detektierende Einheit (40) an jedem Ende des einen der Gehäuse (20) vorgesehen
+ist, wobei jede detektierende Einheit (40) das andere der Gehäuse (10) bei einem
+kompletten Eingriff der Gehäuse (10, 20) verriegelt bzw. einrastet, wobei der Verbinder
+einen Hebel (25) an einem der Gehäuse (20) aufweist, wobei der Hebel (25) mit
+dem anderen der Gehäuse (10) in Eingriff bringbar ist und verschwenkbar ist, um die
+Gehäuse (10, 20) in einen vollständigen Eingriff zu ziehen, und wobei jede der detektierenden
+Einheiten (40) außer Eingriff von dem anderen der Gehäuse (10) bei
+einem Aufbringen einer Kraft auf den Hebel (25) in eine Löse- bzw. Trennrichtung
+gebracht ist, wobei die Kraft eine vorbestimmte Grenze überschreitet, wobei jede
+detektierende Einheit (40) einen Körper (41), welcher an einem der Gehäuse (20)
+festlegbar ist, und einen Schieber bzw. eine Gleiteinrichtung (61) umfaßt, welche(r)
+in dem Körper (40) für eine Bewegung relativ dazu aufgenommen ist.</claim-text></claim><claim num="xx"><claim-text>Verbinder nach Anspruch 1, wobei das andere der Gehäuse (10) aufhört, auf die
+Feder (60) bei einem kompletten Eingriff der Gehäuse (10, 20) einzuwirken, wodurch
+eine Federkraft freigegeben wird, weiche während eines Eingriffs der Gehäuse gesammelt
+bzw. gespeichert ist.</claim-text></claim><claim num="xx"><claim-text>Verbinder nach Anspruch 2, wobei der Körper (41) eine Kompressionsfeder (60)
+darin aufgenommen aufweist, und der Schieber (61) in dem Körper (41) bewegbar
+ist, um die Feder (60) zu komprimieren, wobei der Schieber (61) einen Anschlag
+(66), welcher durch das andere der Gehäuse (10) während eines Eingriffs der Gehäuse
+(10, 20) ergreifbar bzw. in Eingriff bringbar ist, und Mittel (53) aufweist, um
+den Anschlag (66) von dem anderen der Gehäuse (10) bei einem kompletten Eingriff
+der Gehäuse (10, 20) außer Eingriff zu bringen.</claim-text></claim><claim num="xx"><claim-text>Verbinder nach Anspruch 3, wobei der Schieber (61) einen rückstellfähigen vorkragenden
+bzw. einseitig eingespannten Arm (65) beinhaltet, der Anschlag (66) an
+dem Arm (65) vorgesehen ist, und der Körper (41) eine Rampe bzw. Schräge (54)
+beinhaltet, welche adaptiert ist, um den Arm (65) während eines Eingriffs der Gehäuse
+(10, 20) zu biegen, um ein Lösen bzw. Trennen des Anschlags (66) von dem
+anderen der Gehäuse (10, 20) bei einem vollständigen Eingriff davon zu erlauben.</claim-text></claim><claim num="xx"><claim-text>Verbinder nach Anspruch 3 oder Anspruch 4, wobei der Anschlag (66) einen Vorsprung
+umfaßt, welcher eine vordere Fläche bzw. Seite (68) normal zu der Festlegungsrichtung
+der Gehäuse (10, 20) und für einen Eingriff durch das andere der Gehäuse
+(10) während eines Eingriffs der Gehäuse und eine rückwärtige Fläche bzw.
+Seite (67) aufweist, welche in bezug auf die Festlegungsrichtung abgewinkelt ist.</claim-text></claim><claim num="xx"><claim-text>Verbinder nach einem vorangehenden Anspruch, wobei das eine der Gehäuse
+(20) eine externe Festlegungsschiene (30) aufweist, welche einen T-Querschnitt
+aufweist und sich in der Festlegungsrichtung der Gehäuse (10, 20) erstreckt, und die
+detektierende Einheit (40) eine Fassung bzw. einen Sockel (43) mit länglichem T-Querschnitt
+aufweist, welche(r) an einem Ende offen ist, um die Schiene (30) aufzunehmen,
+wobei das andere Ende der Fassung (43) einen Anschlag (44) aufweist,
+welcher mit der Schiene (30) in Eingriff bringbar ist, wobei die Schiene (30) und die
+Fassung (43) eine rückstellfähige Verriegelung bzw. Klinke (33, 45) aufweisen, welche
+in Eingriff bringbar ist, um die Schiene (30) gegen den Anschlag (44) zu halten.</claim-text></claim><claim num="xx"><claim-text>Verbinder nach Anspruch 6, wobei die rückstellfähige Klinke (33, 45) einen Vorsprung
+(45) der detektierenden Einheit (40) beinhaltet und in eine Rille bzw. Nut (32)
+der Schiene (30) gleitbar ist, wobei der Vorsprung (45) mit einem Hindernis (33) der
+Rille (32) in Eingriff bringbar ist.</claim-text></claim></claims><claims lang="EN" status="new"><claim num="xx"><claim-text>A connector comprising two mutually engageable connector housings (10,20)
+and a detecting unit (40) for detecting incomplete engagement of said housings (10,20),
+said detecting unit having a spring (60) acted on by the other of said housings and
+adapted to accumulate a resilient force during engagement of said housings (10,20),
+said force tending to move said housings (10,20) in the direction of separation,
+characterized in that said connector is elongate in a direction perpendicular to the
+attachment direction of said housings (10,20), a detecting unit (40) being provided at
+each end of said one of said housings (20), each detecting unit (40) latching the other of
+said housings (10) on complete engagement of said housings (10,20), the connector
+having a lever (25) on one of said housings (20), said lever (25) being engageable with
+the other of said housings (10) and pivotable to draw said housings (10,20) into
+complete engagement, and each of said detecting units (40) being disengaged from the
+other of said housings (10) on application of a force to said lever (25) in a disengaging
+direction, said force exceeding a predetermined limit, wherein each detecting unit (40)
+comprises a body (41) attachable to one of said housings (20), and a slider (61) housed
+in said body (40) for movement relative thereto.</claim-text></claim><claim num="xx"><claim-text>A connector according to claim 1 wherein the other of said housings (10)
+ceases to act on said spring (60) on complete engagement of said housings (10,20),
+thereby releasing spring force accumulated during engagement of said housings.</claim-text></claim><claim num="xx"><claim-text>A connector according to claim 2 wherein said body (41) has a compression
+spring (60) housed therein, and said slider (61) is movable in said body (41) to
+compress said spring (60), said slider (61) having an abutment (66) engageable by the
+other of said housings (10) during engagement of said housings (10,20), and means
+(53) to disengage said abutment (66) from the other of said housings (10) on complete
+engagement of said housings (10,20).</claim-text></claim><claim num="xx"><claim-text>A connector according to claim 3 wherein said slider (61) includes a resilient
+cantilever arm (65), said abutment (66) is provided on said arm (65), and said body (41)
+includes a ramp (54) adapted to bend said arm (65) during engagement of said housings
+(10,20), to permit disengagement of said abutment (66) from the other of said housings
+(10,20) on full engagement thereof.</claim-text></claim><claim num="xx"><claim-text>A connector according to claim 3 or claim 4 wherein said abutment (66)
+comprises a protrusion having a front face (68) perpendicular to the attachment
+direction of said housings (10,20), and for engagement by the other of said housings
+(10) during engagement of said housings, and a back face (67) angled with respect to
+said attachment direction.</claim-text></claim><claim num="xx"><claim-text>A connector according to any preceding claim wherein said one of said
+housings (20) has an external attachment rail (30) having a 'T' section and extending in
+the attachment direction of said housings (10,20), and said detecting unit (40) has an
+elongate 'T' section socket (43) open at one end to receive said rail (30), the other end
+of said socket (43) having an abutment (44) engageable with said rail (30), wherein said
+rail (30) and socket (43) have a resilient latch (33,45) engageable to maintain said rail
+(30) against said abutment (44).</claim-text></claim><claim num="xx"><claim-text>A connector according to claim 6 wherein said resilient latch (33,45) includes a
+projection (45) of said detecting unit (40) and slidable in a groove (32) of said rail (30),
+said projection (45) being engageable with an obstruction (33) of said groove (32).</claim-text></claim></claims><claims lang="FR" status="new"><claim num="xx"><claim-text>Connecteur comprenant deux boítiers de
+connecteur pouvant s'engager mutuellement (10, 20) et
+une unité de détection (40) pour détecter l'engagement
+incomplet desdits boítiers (10, 20), ladite unité de
+détection ayant un ressort (60) actionné par l'autre
+desdits boítiers et adapté pour accumuler une force
+élastique durant l'engagement desdits boítiers (10, 20),
+ladite force tendant à déplacer lesdits boítiers (10,
+20) dans la direction de séparation, caractérisé en ce
+que ledit connecteur est allongé dans une direction
+perpendiculaire à la direction de fixation desdits
+boítiers (10, 20), une unité de détection (40) étant
+disposée à chaque extrémité dudit un desdits boítiers
+(20), chaque unité de détection (40) verrouillant
+l'autre desdits boítiers (10) à l'engagement complet
+desdits boítiers (10, 20), le connecteur ayant un
+levier (25) sur un desdits boítiers (20), ledit levier
+(25) pouvant s'engager avec l'autre desdits boítiers
+(10) et pouvant pivoter pour tirer lesdits boítiers (10,
+20) en engagement complet et chacune desdites unités de
+détection (40) étant désengagée de l'autre desdits
+boítiers (10) à l'application d'une force sur ledit
+levier (25) dans une direction de désengagement, ladite
+force dépassant une limite prédéterminée, dans lequel
+chaque unité de détection (40) comprend un corps (41)
+pouvant être fixé à un desdits boítiers (20) et un
+élément coulissant (61) logé dans ledit corps (40) pour
+se déplacer par rapport à celui-ci.</claim-text></claim><claim num="xx"><claim-text>Connecteur selon la revendication 1, dans
+lequel l'autre desdits boítiers (10) cesse d'agir sur
+ledit ressort (60) à l'engagement complet desdits
+boítiers (10, 20), en relâchant ainsi la force
+élastique accumulée durant l'engagement desdits
+boítiers.</claim-text></claim><claim num="xx"><claim-text>Connecteur selon la revendication 2, dans
+lequel ledit corps (41) a un ressort à pression (60)
+logé dans celui-ci et ledit élément coulissant (61) est
+mobile dans ledit corps (41) pour comprimer ledit
+ressort (60), ledit élément coulissant (61) ayant une
+butée (66) pouvant être engagée par l'autre desdits
+boítiers (10) durant l'engagement desdits boítiers (10,
+20) et des moyens (53) pour désengager ladite butée (66)
+de l'autre desdits boítiers (10) à l'engagement complet
+desdits boítiers (10, 20).</claim-text></claim><claim num="xx"><claim-text>Connecteur selon la revendication 3, dans
+lequel ledit élément coulissant (61) comprend un bras
+élastique en porte à faux (65), ladite butée (66) est
+disposée sur ledit bras (65) et ledit corps (41)
+comprend une rampe (54) adaptée pour plier ledit bras
+(65) durant l'engagement desdits boítiers (10, 20) pour
+permettre le désengagement de ladite butée (66) par
+rapport à l'autre desdits boítiers (10, 20) à
+l'engagement complet de ceux-ci.</claim-text></claim><claim num="xx"><claim-text>Connecteur selon la revendication 3 ou 4, dans
+lequel ladite butée (66) comprend une saillie ayant une
+face antérieure (68) perpendiculaire à la direction de
+fixation desdits boítiers (10, 20), et pour
+l'engagement par l'autre desdits boítiers (10) durant
+l'engagement desdits boítiers, et une face postérieure
+(67) formant un angle par rapport à ladite direction de
+fixation.</claim-text></claim><claim num="xx"><claim-text>Connecteur selon l'une quelconque des
+revendications précédentes, dans lequel ledit un
+desdits boítiers (20) a un guide de fixation externe
+(30) ayant une section en « T » et s'étendant dans la
+direction de fixation desdits boítiers (10, 20) et
+ladite unité de fixation (40) a une cavité allongée à
+section en « T » (43) ouverte à une extrémité pour
+recevoir ledit guide (30), l'autre extrémité de ladite
+cavité (43) ayant une butée (44) pouvant s'engager avec
+ledit guide (30), dans lequel ledit guide (30) et
+ladite cavité (43) ont un verrouillage élastique (33,
+45) pouvant s'engager pour maintenir ledit guide (30)
+contre ladite butée (44).</claim-text></claim><claim num="xx"><claim-text>Connecteur selon la revendication 6, dans
+lequel ledit verrouillage élastique (33, 45) comprend
+une saillie (45) de ladite unité de détection (40) et
+coulissant dans une rainure (32) dudit guide (30),
+ladite saillie (45) pouvant s'engager avec une
+obstruction (33) de ladite rainure (32).</claim-text></claim></claims><legal-status status="new"><legal-event country="EP" code="GBPC" date="20061025"><legal-event-body><event-title>GB: EUROPEAN PATENT CEASED THROUGH NON-PAYMENT OF RENEWAL FEE</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20060212</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="EN" date="20060526"><legal-event-body><event-title>FR: TRANSLATION NOT FILED</event-title></legal-event-body></legal-event><legal-event country="EP" code="26N" date="20060322"><legal-event-body><event-title>NO OPPOSITION FILED</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20060102</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REF" date="20050504"><legal-event-body><event-title>CORRESPONDS TO:</event-title><event-attributes><event-attribute><event-attribute-label>Ref Document Number </event-attribute-label><event-attribute-value>60109670</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Country of Ref Document </event-attribute-label><event-attribute-value>DE</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Date of Ref Document </event-attribute-label><event-attribute-value>20050504</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>P</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REG" date="20050504"><legal-event-body><event-title>REFERENCE TO A NATIONAL CODE</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>IE</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Legal Event Code </event-attribute-label><event-attribute-value>FG4D</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20050330"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>B1</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>DEFRGBIT</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REG" date="20050330"><legal-event-body><event-title>REFERENCE TO A NATIONAL CODE</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>GB</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Legal Event Code </event-attribute-label><event-attribute-value>FG4D</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AKX" date="20030723"><legal-event-body><event-title>PAYMENT OF DESIGNATION FEES</event-title><event-attributes><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>DEFRGBIT</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="17Q" date="20030326"><legal-event-body><event-title>FIRST EXAMINATION REPORT</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20030211</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20021106"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>A3</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>ATBECHCYDEDKESFIFRGBGRIEITLILUMCNLPTSETR</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AX" date="20021106"><legal-event-body><event-title>EXTENSION OF THE EUROPEAN PATENT TO</event-title><event-attributes><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>AL;LT;LV;MK;RO;SI</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="RIC1" date="20021106"><legal-event-body><event-title>CLASSIFICATION (CORRECTION)</event-title><event-attributes><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>7H 01R 13/629 A, 7H 01R 13/635 B</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="17P" date="20010912"><legal-event-body><event-title>REQUEST FOR EXAMINATION FILED</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20010223</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20010912"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>A2</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>ATBECHCYDEDKESFIFRGBGRIEITLILUMCNLPTSETR</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AX" date="20010912"><legal-event-body><event-title>EXTENSION OF THE EUROPEAN PATENT TO</event-title><event-attributes><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>AL;LT;LV;MK;RO;SI</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event></legal-status></patent-document>

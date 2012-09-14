@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="4"/>
+	</teiHeader>
+	<text xml:lang="en">
+			<front>SELF-ASSEMBLED QUANTUM DOT-BASED QUANTUM MEMORY<lb/> Q. Wang 1,* and Y-S. Zhang 2<lb/> 1<lb/> Department of Photonics Engineering, DTU, DK-2800 Kgs. Lyngby, Denmark<lb/> 2 Department of Physics, Key Laboratory of Quantum Information, USTC, 230026, Hefei, China<lb/></front>
+
+			<p>We give a proposal on how to use self-assembled single quantum dot devices to process entanglement<lb/> storage, and then analyze the possibility of realizing it with current technology. We also evaluate the storage<lb/> fidelity with imperfect experimental conditions and demonstrate that a quite high storage fidelity can still be<lb/> obtained.<lb/></p>
+
+			<p>The main idea is to simultaneously excite electrons in two separate quantum dots with entangled-photon pairs,<lb/> thereby transferring the entanglement from photons to electrons, and then coherently map the spin state of each<lb/> electron onto the corresponding collective spin of the atomic nuclei that the quantum dot consists of. The<lb/> collective spin state of the nuclear ensemble is long lived and therefore useful for storage purpose. Finally, the<lb/> entanglement can be retrieved on demand with the reversed process. The processes above are depicted<lb/> schematically in <ref type="figure">Fig. 1</ref>. We numerically simulate the storage fidelity variation with errors in nuclear<lb/> polarizations (1-P) for any two-qubit input state, in<lb/> <formula>1 = (1-b)<lb/> 4 b I<lb/> <lb/>   <lb/></formula>, where b is the &quot;noise&quot; in the<lb/> input state. After defining a minimum storage fidelity for any spin-down state as <ref type="biblio">[1]</ref>: <formula>0<lb/> [ (1/2<lb/> )]<lb/> in z<lb/> F Tr<lb/> S<lb/> <lb/>  <lb/> <lb/></formula> ,<lb/> and sinplifying it into : <formula>0 1 (1 )/ 2<lb/> F P<lb/>   <lb/></formula>, we can model the mapping and remapping processes as<lb/> amplitude-damping channels with the Kraus operators <ref type="biblio">[2]</ref> :<lb/> <formula>0 0<lb/> 1 0<lb/> 0 M<lb/> F<lb/>  <lb/>  <lb/>  <lb/> <lb/> <lb/> and<lb/> 0 1<lb/> 0 1<lb/> 0 0<lb/> F M<lb/>  <lb/>   <lb/>  <lb/> <lb/></formula>.<lb/></p>
+
+			<p>After the storage process, the output state is :<lb/> <formula>( )<lb/> out in<lb/>   <lb/> <lb/></formula> For simplicity, we assume that the two single<lb/> QDs have the same nuclear polarizations, so as to have the same damping channels, and the simulation results of<lb/> the storage fidelity (F) variation with errors are shown in <ref type="figure">Fig. 2</ref>.<lb/></p>
+
+			<trash>Entangled Entangled<lb/> </trash>
+
+			<head>References<lb/></head>
+
+			<bibl> <label>[1]</label> J. M. Taylor, C. M. Marcus, and M. D. Lukin, Phys. Rev. Lett. 90, (2003), pp. 206803, 1-4.<lb/></bibl>
+
+			<bibl> <label>[2]</label> M. A. Nielsen and I. L. Chuang, Quantum Computation and quantum information, (Cambridge, New York,<lb/> Cambridge University Press, 2000).<lb/></bibl>
+
+			<note place="footnote">__________________________<lb/> *corresponding author : qinw@fotonik.dtu.dk<lb/></note>
+
+			<figure>
+				<head>Figure 2:</head>
+
+				<figDesc>Numerical simulation of the storage fidelity<lb/> variation with both errors in nuclear polarizations<lb/> (1-P) and noise (b) in the input state.<lb/></figDesc>
+
+			</figure>
+
+			<figure>
+				<head>Figure 1:</head>
+
+				<figDesc>Schematic of the storage proposal: Entangled<lb/> photon pairs are stored in two separated self-assembled<lb/> quantum dots and can be retrieved on-demand.</figDesc>
+
+			</figure>
+
+
+	</text>
+</tei>

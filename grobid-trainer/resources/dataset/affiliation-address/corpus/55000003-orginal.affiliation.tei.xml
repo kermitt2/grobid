@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>a</marker>
+							<orgName type="laboratory">Section on Human Biochemical Genetics</orgName>,
+							<orgName type="department">Medical Genetics Branch</orgName>,
+							<orgName type="institution" key="inst1">National Human Genome Research Institute</orgName>,
+							<orgName type="institution" key="inst2">National Institutes of Health</orgName>,
+							<address>
+								<addrLine>Building 10</addrLine>,
+								<addrLine>Room 10C-107</addrLine>,
+								<addrLine>MSC 1851</addrLine>,
+								<addrLine>10 Center Drive</addrLine>,
+								<settlement>Bethesda</settlement>,
+								<region>MD</region>
+								<postCode>20892-1851</postCode>,
+								<country>USA</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>b</marker>
+							<orgName type="department">OYce of Rare Diseases</orgName>,
+							<orgName type="institution">Intramural Program</orgName>,
+							<orgName type="department">OYce of the Director</orgName>,
+							<orgName type="institution">National Institutes of Health</orgName>,
+							<address>
+								<settlement>Bethesda</settlement>,
+								<region>MD</region>,
+								<country>USA</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>c</marker>
+							<orgName type="department">Internal Medicine Consult Service</orgName>,
+							<orgName type="institution" key="inst1">Warren Grant Magnuson Clinical Center</orgName>,
+							<orgName type="institution" key="inst2">National Institutes of Health</orgName>,
+							<address>
+								<settlement>Bethesda</settlement>,
+								<region>MD</region>,
+								<country>USA</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,27 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="ZFN-A-054-02-0124"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<titlePage>
+				<docTitle>
+					<titlePart type="main">A Generalized Debye Scattering Formula and the Hankel Transform<lb/></titlePart>
+				</docTitle>
+				<byline><docAuthor>Thomas Wieder</docAuthor><lb/></byline>
+				<byline><affiliation>TU Darmstadt, FB Materialwissenschaft, FG Stmkturforschung, <lb/></affiliation></byline>
+				<byline><address>Petersenstr. 23, D-64287 Darmstadt<lb/></address></byline>
+				<reference>Z. Naturforsch. 54 a, 124-130 (1999); </reference>
+				<note type="submission">received December 15, 1998<lb/></note>
+			</titlePage>
+			<div type="abstract">The diffracted intensity of an x-ray or neutron diffraction experiment is expressed as an integral <lb/>
+over an atomic position distribution function. A generalized Debye scattering formula results. <lb/>
+Since this distribution funcdon is expanded into a series of spherical harmonics, an inverse Hankel <lb/>
+Uransform of the intensity allows die calculation of die expansion coefficients which describe <lb/>
+the atomic arrangement completely. The connections between the generalized Debye scattering <lb/>
+formula and the original Debye formula as well as the Laue scattering formula are derived. <lb/></div>
+	    		<keywords>Key words: X-ray Scattering; Debye Formula; Hankel Transform.<lb/></keywords>
+			<div type="intro">1. Introduction<lb/></div>
+		</front>
+	</text>
+</tei>

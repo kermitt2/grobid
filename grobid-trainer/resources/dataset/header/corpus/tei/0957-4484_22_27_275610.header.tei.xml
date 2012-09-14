@@ -1,0 +1,93 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="0957-4484_22_27_275610"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<lb/>
+			<note type="other">Home Search Collections Journals About Contact us My IOPscience<lb/></note>
+			<docTitle>
+				<titlePart>Defined-size DNA triple crossover construct for molecular electronics:
+					modification,<lb/> positioning and conductance properties<lb/></titlePart>
+			</docTitle>
+
+			<note type="other">This article has been downloaded from IOPscience. Please scroll down to see the
+				full text article.<lb/></note>
+
+			<reference>2011 Nanotechnology 22 275610<lb/></reference>
+
+			<ptr type="web">(http://iopscience.iop.org/0957-4484/22/27/275610)<lb/></ptr>
+
+			<note type="other">View the table of contents for this issue, or go to the journal homepage for
+				more<lb/></note>
+
+			<note type="other">Download details:<lb/></note>
+
+			<note type="other">IP Address: 145.64.134.241<lb/></note>
+
+			<note type="other">The article was downloaded on 27/05/2011 at 09:38<lb/> Please note that terms and
+				conditions apply.<lb/></note>
+			<pb/>
+			
+			<note type="other">IOP PUBLISHING<lb/></note>
+			<space dim="horizontal"/>
+			<reference>NANOTECHNOLOGY<lb/></reference> 
+			<reference>Nanotechnology 22 (2011) 275610 (7pp)<lb/></reference>
+			<space dim="horizontal"/>
+			<idno>doi:10.1088/0957-4484/22/27/275610<lb/></idno>
+			<docTitle>
+				<titlePart>Defined-size DNA triple crossover<lb/> construct for molecular
+					electronics:<lb/> modification, positioning and conductance<lb/>
+					properties<lb/></titlePart>
+			</docTitle>
+
+			<byline>
+				<docAuthor>Veikko Linko 1,3,4 , Jenni Leppiniemi 2,3 , Seppo-Tapio Paasonen 1,3
+					,<lb/> Vesa P Hytönen 2 and J Jussi Toppari 1<lb/></docAuthor>
+			</byline>
+
+			<byline>
+				<affiliation>1 Nanoscience Center, Department of Physics, University of
+					Jyväskylä,</affiliation>
+			</byline>
+
+			<address>PO Box 35,<lb/> FIN-40014, Finland<lb/></address>
+
+			<byline>
+				<affiliation>2 Institute of Biomedical Technology, University of Tampere and Tampere
+					University Hospital,<lb/></affiliation>
+			</byline>
+
+			<address>FIN-33014, Finland<lb/></address>
+
+			<email>E-mail: veikko.linko@jyu.fi<lb/></email>
+
+			<note type="submission">Received 28 September 2010, in final form 19 April 2011<lb/></note>
+			<date>Published 25 May 2011<lb/></date>
+
+			<ptr type="web">Online at stacks.iop.org/Nano/22/275610<lb/></ptr>
+
+			<div type="abstract">Abstract We present a novel, defined-size, small and rigid DNA
+				template, a so-called B–A–B complex,<lb/> based on DNA triple crossover motifs (TX
+				tiles), which can be utilized in molecular scale<lb/> patterning for
+				nanoelectronics, plasmonics and sensing applications. The feasibility of the<lb/>
+				designed construct is demonstrated by functionalizing the TX tiles with one
+				biotin–triethylene<lb/> glycol (TEG) and efficiently decorating them with
+				streptavidin, and furthermore by positioning<lb/> and anchoring single
+				thiol-modified B–A–B complexes to certain locations on a chip via<lb/>
+				dielectrophoretic trapping. Finally, we characterize the conductance properties of
+				the<lb/> non-functionalized construct, first by measuring DC conductivity and second
+				by utilizing AC<lb/> impedance spectroscopy in order to describe the conductivity
+				mechanism of a single B–A–B<lb/> complex using a detailed equivalent circuit model.
+				This analysis also reveals further<lb/> information about the conductivity of DNA
+				structures in general.<lb/>
+			</div>
+			<ptr type="web">S Online supplementary data available from
+				stacks.iop.org/Nano/22/275610/mmedia<lb/></ptr> 
+			<note type="other">(Some figures in this article are in
+				colour only in the electronic version)<lb/></note>
+
+		</front>
+	</text>
+</tei>

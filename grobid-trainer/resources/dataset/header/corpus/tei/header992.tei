@@ -1,0 +1,23 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="1061"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<idno>DOI: 10.1002/zaac.200700529 <lb/></idno>
+		<docTitle>
+			<titlePart type="main">Tantalum(IV) Iodide, TaI 4 : A Molecular Solid Consisting of Dimers of Dimers, <lb/> Ta 4 I 16 <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Gerd Meyer a, *, Rafal Wiglusz b , Ingo Pantenburg a and Anja-Verena Mudring c, ** <lb/></docAuthor></byline>
+		<address>a  Köln,</address>
+		<byline><affiliation>Institut für Anorganische Chemie der Universität zu Köln <lb/></affiliation></byline>
+		<address>b Wroclaw/Poland,</address>
+		<byline><affiliation>Faculty of Chemistry of the University of Wroclaw <lb/></affiliation></byline>
+		<address>c Bochum,</address>
+		<byline><affiliation>Anorganische Chemie an der Ruhr-Universität Bochum <lb/></affiliation></byline>
+		<date>Received November 26th, 2007. <lb/></date>
+		<div type="abstract">Abstract. Although incongruently melting at 398 �C, single crystals <lb/> of TaI 4 were obtained as a by-product during a reaction which was <lb/> designed for Rb{Pr 6 C 2 }I 12 . The crystal structure of TaI 4 [triclinic, <lb/> P1 � (no. 2); a = 705.9(1), b = 1062.3(2), c = 1072.3(2) pm, ? = <lb/>  79.55(2), ? = 89.78(2)�, ? = 75.57(2)�, V = 765.1(5)10 6 pm 3 ; Z = <lb/>  2, R1 = 0.042 for I 0 &gt; 2?(I 0 )] contains tetrameric molecules which <lb/> consist of two face-sharing dimers of TaI 6 octahedra which share <lb/> a common edge. The Ta-Ta distance in the face-sharing dimers is <lb/> 297.5(1) pm and may be associated with a single bond. Theoretical <lb/> calculations exhibit two degenerate HOMOs which are occupied by <lb/> four electrons; two four-center-two-electron bonds is, therefore, a <lb/> better description of the metal-metal bonding situation in Ta 4 I 16 . <lb/></div>
+		<keywords>Keywords: Tantalum; Tantalum iodide; Crystal structures <lb/></keywords>
+		</front>
+</text>
+</tei>

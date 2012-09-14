@@ -1,0 +1,85 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="0741-3335_53_8_082001"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<lb/>
+			<note type="other">Home Search Collections Journals About Contact us My IOPscience<lb/></note>
+			<docTitle>
+				<titlePart>A linear response model of the vertical electromagnetic force on a vessel
+					applicable to ITER<lb/> and future tokamaks<lb/></titlePart>
+			</docTitle>
+
+			<note type="other">This article has been downloaded from IOPscience. Please scroll down to see the
+				full text article.<lb/></note>
+
+			<reference>2011 Plasma Phys. Control. Fusion 53 082001<lb/></reference>
+
+			<ptr type="web">(http://iopscience.iop.org/0741-3335/53/8/082001)<lb/></ptr>
+			
+			<note type="other">View the table of contents for this issue, or go to the journal homepage for
+				more<lb/></note>
+
+			<note type="other">Download details:<lb/></note>
+
+			<note type="other">IP Address: 145.64.134.241<lb/></note>
+
+			<note type="other">The article was downloaded on 27/05/2011 at 09:32<lb/> Please note that terms and
+				conditions apply.<lb/></note>
+			
+			<pb/>
+			
+			<note type="other">IOP PUBLISHING</note>
+			<space dim="horizontal"/>
+			<reference>PLASMA PHYSICS AND CONTROLLED FUSION<lb/></reference>
+
+			<reference>Plasma Phys. Control. Fusion 53 (2011) 082001 (7pp)<lb/></reference>
+			<space dim="horizontal"/>
+
+			<idno>doi:10.1088/0741-3335/53/8/082001<lb/></idno>
+			<note type="articleType">BRIEF COMMUNICATION<lb/></note>
+
+			<docTitle>
+				<titlePart>A linear response model of the vertical<lb/> electromagnetic force on a
+					vessel applicable<lb/> to ITER and future tokamaks<lb/></titlePart>
+			</docTitle>
+
+			<byline>
+				<docAuthor>S Miyamoto<lb/></docAuthor>
+			</byline>
+
+			<byline>
+				<affiliation>Naka Fusion Institute, Japan Atomic Energy Agency,</affiliation>
+			</byline>
+
+			<address>Naka, Ibaraki 311-0193, Japan<lb/></address>
+
+			<email>E-mail: miyamoto.seiji@jaea.go.jp<lb/></email>
+
+			<note type="submission">Received 7 February 2011, in final form 11 April 2011<lb/></note>
+			<date>Published 19 May 2011<lb/></date>
+
+			<note type="other">Online at stacks</note>
+
+			<ptr type="web">.iop.org/PPCF/53/082001<lb/></ptr>
+
+			<div type="abstract">Abstract The problem of calculating vertical electromagnetic force
+				on the vacuum vessel<lb/> of axisymmetric magnetic confinement fusion devices is
+				reformulated to a linear<lb/> response problem. It is theoretically shown that the
+				treatment of currents in the<lb/> vessel is reduced to a quantity calculated in the
+				plasma region, the source term<lb/> or input for vertical force. Vertical force
+				emerges in response to the input, where<lb/> the transfer function of the response
+				originates in the electromagnetic shielding<lb/> of the vessel. The model provides
+				an analytical way of calculating vertical<lb/> force. An example is given in
+				application to a vertical displacement event in<lb/> ITER. The derived analytical
+				formula provides an approximate explanation of<lb/> the current quench time
+				dependence of the vertical force obtained using the<lb/> DINA code.<lb/></div>
+
+			<note type="other">(Some figures in this article are in colour only in the electronic
+				version)<lb/></note>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="441"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">The Role of Learning in Autonomous Robots <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Rodney A. Brooks <lb/></docAuthor></byline>
+		<byline><affiliation>MIT Artificial Intelligence Laboratory <lb/></affiliation></byline>
+		<address>545 Technology Square <lb/>Cambridge, MA 02139 <lb/></address>
+		<email>brooks@ai.mit.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>Applications of learning to autonomous <lb/>agents (simulated or real) have often been <lb/>restricted to learning a mapping from perceived state of the world to the next action <lb/>to take. Often this is couched in terms of <lb/>learning from no previous knowledge. This <lb/>general case for real autonomous robots is <lb/>very difficult. In any case, when building a <lb/>real robot there is usually a lot of a priori <lb/>knowledge (e.g., from the engineering that <lb/>went into its design) which doesn&apos;t need to <lb/>be learned. We describe the behavior-based <lb/>approach to autonomous robots, and then examine four classes of learning problems associated with such robots. <lb/></div>
+		<div type="intro">1 INTRODUCTION</div>
+		</front>
+</text>
+</tei>

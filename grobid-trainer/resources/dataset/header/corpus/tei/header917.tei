@@ -1,0 +1,21 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="unknown"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Problem Solving for Redesign <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Anita Pos 1 and Hans Akkermans 1 and Remco Straatman 2 <lb/></docAuthor></byline>
+		<byline><affiliation>1 University of Twente (UT) <lb/>Department of Computer Science <lb/></affiliation></byline>
+		<address>P.O. Box 217 <lb/>NL-7500 AE Enschede <lb/>The Netherlands <lb/></address>
+		<email>E-mail: fpos,akkermang@cs.utwente.nl <lb/></email>
+		<byline><affiliation>2 University of Amsterdam (UvA) <lb/>Department of Social Science Informatics (SWI) <lb/></affiliation></byline>
+		<address>Roetersstraat 15 <lb/>1081 WB Amsterdam <lb/>The Netherlands <lb/></address>
+		<email>E-mail: remco@swi.psy.uva.nl <lb/></email>
+		<div type="abstract">Abstract. A knowledge-level analysis of complex tasks like diagnosis and design can give us a better understanding of these tasks in terms of the goals they <lb/>aim to achieve and the different ways to achieve these goals. In this paper we <lb/>present a knowledge-level analysis of redesign. Redesign is viewed as a family of <lb/>methods based on some common principles, and a number of dimensions along <lb/>which redesign problem solving methods can vary are distinguished. By examining the problem-solving behavior of a number of existing redesign systems and approaches, we came up with a collection of problem-solving methods for redesign <lb/>and developed a task-method structure for redesign. <lb/>In constructing a system for redesign a large number of knowledge-related choices <lb/>and decisions are made. In order to describe all relevant choices in redesign problem solving, we have to extend the current notion of possible relations between <lb/>tasks and methods in a PSM architecture. The realization of a task by a problem-solving method, and the decomposition of a problem-solving method into subtasks are the most common relations in a PSM architecture. However, we suggest <lb/>to extend these relations with the notions of task refinement and method refinement. These notions represent intermediate decisions in a task-method structure, <lb/>in which the competence of a task or method is refined without immediately paying attention to its operationalization in terms of subtasks. Explicit representation <lb/>of this kind of intermediate decisions helps to make and represent decisions in a <lb/>more piecemeal fashion. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,31 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="unknown"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">What Size Neural Network Gives Optimal Generalization? <lb/>Convergence Properties of Backpropagation <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Steve Lawrence 1;2 , C. Lee Giles 1 , Ah Chung Tsoi 2 <lb/></docAuthor></byline>
+		<email>flawrence,actg@elec.uq.edu.au, </email> <email>giles@research.nj.nec.com <lb/></email>
+		<byline><affiliation>1 NEC Research Institute,</affiliation></byline>
+		<address>4 Independence Way, Princeton, NJ 08540 <lb/></address>
+		<byline><affiliation>2 Department of Electrical and Computer Engineering <lb/>University of Queensland,</affiliation></byline>
+		<address>St. Lucia 4072, Australia <lb/></address>
+		<idno>Technical Report <lb/>UMIACS-TR-96-22 and CS-TR-3617 <lb/></idno>
+		<byline><affiliation>Institute for Advanced Computer Studies <lb/>University of Maryland <lb/></affiliation></byline>
+		<address>College Park, MD 20742 <lb/></address>
+		<date>June 1996</date>
+		<note type="other">(Revised August 1996) <lb/></note>
+		<div type="abstract">Abstract <lb/>One of the most important aspects of any machine learning paradigm is how it scales according <lb/>to problem size and complexity. Using a task with known optimal training error, and a pre-specified <lb/>maximum number of training updates, we investigate the convergence of the backpropagation algorithm <lb/>with respect to a) the complexity of the required function approximation, b) the size of the network in <lb/>relation to the size required for an optimal solution, and c) the degree of noise in the training data. In <lb/>general, for a) the solution found is worse when the function to be approximated is more complex, for <lb/>b) oversized networks can result in lower training and generalization error in certain cases, and for c) <lb/>the use of committee or ensemble techniques can be more beneficial as the level of noise in the training <lb/>data is increased. For the experiments we performed, we do not obtain the optimal solution in any case. <lb/>We further support the observation that larger networks can produce better training and generalization <lb/>error using a face recognition example where a network with many more parameters than training points <lb/>generalizes better than smaller networks. <lb/></div>
+		<keywords>Keywords: Local Minima, Generalization, Committees, Ensembles, Convergence, Backpropagation, Smoothness, <lb/>Network Size, Problem Complexity, Function Approximation, Curse of Dimensionality. <lb/></keywords>
+		<ptr type="web">http://www.neci.nj.nec.com/homepages/lawrence <lb/></ptr>
+		<note type="other">Also with the</note>
+		<byline><affiliation>Institute for Advanced Computer Studies, University of Maryland,</affiliation></byline>
+		<address>College Park, MD 20742. <lb/></address>
+		<ptr type="web">http://www.neci.nj.nec.com/homepages/giles.html <lb/></ptr>
+		<pb/>
+		</front>
+</text>
+</tei>

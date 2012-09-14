@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+<listBibl>
+
+		<bibl><author>Skolnick, M. S., Fisher, T. A. &amp; Whittaker, D. M.</author> <title level="j">Semicond. Sci. Technol.</title> <biblScope type="vol">13</biblScope>, (<date>1998</date>) <biblScope type="pp">pp645-669</biblScope>.</bibl>
+
+		<bibl><author>Litinskaya, M., Reineker, P., &amp; Agranovich, V. M..</author> <title level="j">J. Lumin.</title> <biblScope type="vol">119-120</biblScope>, (<date>2006</date>), <biblScope type="pp">pp 277-282</biblScope>.</bibl>
+
+		<bibl><author>Agranovich, V. M. &amp; La Rocca, G. C.</author> <title level="j">Sol. State Commn.</title> <biblScope type="vol">135</biblScope>, (<date>2005</date>), <biblScope type="pp">pp544-553</biblScope>.</bibl>
+
+		<bibl><author>Michetti, P. &amp; La Rocca, G. C..</author> <title level="j">Phys. Rev. B</title> <biblScope type="vol">71</biblScope>, (<date>2005</date>), <biblScope type="pp">pp115320-115326</biblScope>.</bibl>
+
+</listBibl>
+</tei>

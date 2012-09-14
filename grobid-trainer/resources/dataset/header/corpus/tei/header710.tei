@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="unknown"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Constraint-Based Animations <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Allan Heydon Greg Nelson <lb/></docAuthor></byline>
+		<byline><affiliation>Digital Systems Research Center <lb/></affiliation></byline>
+		<address>130 Lytton Ave., Palo Alto, CA 94301 <lb/></address>
+		<email>fheydon,gnelsong@pa.dec.com <lb/></email>
+		<note type="copyright">Copyright c fl1995, Digital Equipment Corporation. All right reserved. <lb/></note>
+		<div type="intro">1. Introduction</div>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,20 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="677"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<idno>TRCS 97-02 <lb/></idno>
+		<docTitle>
+			<titlePart type="main">A New Framework for Image Invariants using Basis Expansion <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Yuan-Fang Wang <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science <lb/>University of California <lb/></affiliation></byline>
+		<address>Santa Barbara, CA 93106 <lb/></address>
+		<email>E-mail: yfwang@cs.ucsb.edu <lb/></email>
+		<ptr type="web">Web: http://www.cs.ucsb.edu/ yfwang <lb/></ptr>
+		<div type="abstract">Abstract <lb/>We propose a general framework for computing invariant features from images. The proposed <lb/>approach is based on a simple concept of basis expansion. It is widely applicable to many popular <lb/>basis representations, such as wavelets [4, 5, 24, 25], short-time Fourier analysis [15, 30], and <lb/>splines [2, 6, 33]. Exploiting formulations that use both global and local information about <lb/>shape and color, the new approach is neither strictly global nor local. It has the advantage of <lb/>tolerating a certain degree of occlusion (unlike global analysis) and does not require estimating <lb/>high-order derivatives in computing invariants (unlike local analysis), whence is more robust. <lb/>Furthermore, it enables a quasi-localized, hierarchical shape analysis which is not possible with <lb/>other known invariant techniques. Unlike most current research on image invariants which <lb/>concentrates on either geometry or illumination invariants, the proposed framework is very <lb/>general and produces invariants which are insensitive to rigid motion, general affine transform, <lb/>changes of parameterization and scene illumination, and perspective transform. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

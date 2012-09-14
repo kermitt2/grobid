@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="ZFN-A-007-10-0682"/>
+	</teiHeader>
+	<text xml:lang="de">
+		<front>
+			<titlePage>
+				<docTitle>
+					<titlePart type="main">Über die Entmischung von Lösungen des Polymethacrylesters IP<lb/></titlePart>
+				</docTitle>
+				<byline><docAuthor>Von E. JENCKEL und J. DELAHAYE</docAuthor><lb/></byline>
+				<byline>Aus dem <affiliation>Institut für theoretische Hüttenkunde und physikalische Chemie der Techn . Hochschule Aachen</affiliation><lb/></byline>
+				<reference>(Z. Naturforschg. 7a, 682-692 [1952]; </reference>
+				<note type="submission">eingegangenam 19. April 1952)<lb/></note>
+			</titlePage>
+			<div type="abstract">) <lb/>Es wurden die Löslichkeitskurven einer Anzahl von Fraktionen des Polymethacryl- <lb/>säuremethylesters mit Polymerisationsgraden von 500 bis 30 000 in p-Cymol, n-Propanol <lb/>und ^/-Butanol bestimmt. <lb/>Es wurden die Koordinaten des kritischen Lösungspunktes thermodynamisch be- <lb/>rechnet. Hierbei bewährt sich vorzüghch ein Ansatz für die Mischungsentropie ather- <lb/>mischer Lösungen von Miller in Verbindung mit einem quadratischen Ausdruck ß xl <lb/>für die Lösungswärme und die zusätzhche Entropie der irregulären Lösung, in dem <lb/>fz = a ß(T zu setzen ist. <lb/></div>
+			<div type="intro">F ^ür binäre Lösungen aus hochmolekularen und<lb/></div>
+		</front>
+	</text>
+</tei>

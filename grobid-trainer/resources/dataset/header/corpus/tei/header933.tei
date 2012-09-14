@@ -1,0 +1,32 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="1002"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<idno>arXiv:0908.0036v1 [astro-ph.CO]</idno>
+		<date>1 Aug 2009 <lb/></date>
+		<note type="other">Accepted for publication in the Astrophysical Journal <lb/></note>
+		<note type="other">Preprint typeset using L  A  T E X style emulateapj v. 10/09/06 <lb/></note>
+		<docTitle>
+			<titlePart type="main">ISOTROPIC MID-INFRARED EMISSION FROM THE CENTRAL 100 PC OF ACTIVE GALAXIES <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>N. A. Levenson 1,2 , J. T. Radomski 2 , C. Packham 3 , R. E. Mason 4 , J. J. Schaefer 3 , and C. M. Telesco 3 <lb/></docAuthor></byline>
+		<div type="abstract">ABSTRACT <lb/> Dust reprocesses the intrinsic radiation of active galactic nuclei (AGNs) to emerge at longer wave- <lb/>lengths. The observed mid-infrared (MIR) luminosity depends fundamentally on the luminosity of the <lb/>central engine, but in detail it also depends on the geometric distribution of the surrounding dust. To <lb/>quantify this relationship, we observe nearby normal AGNs in the MIR to achieve spatial resolution <lb/>better than 100 pc, and we use absorption-corrected X-ray luminosity as a proxy for the intrinsic AGN <lb/>emission. We find no significant difference between optically classified Seyfert 1 and 2 galaxies. Spec- <lb/>troscopic differences, both at optical and IR wavelengths, indicate that the immediate surroundings <lb/>of AGNs is not spherically symmetric, as in standard unified AGN models. A quantitative analysis <lb/>of clumpy torus radiative transfer models shows that a clumpy local environment can account for <lb/>this dependence on viewing geometry while producing MIR continuum emission that remains nearly <lb/>isotropic, as we observe, although the material is not optically thin at these wavelengths. We find <lb/>some luminosity dependence on the X-ray/MIR correlation in the smallest scale measurements, which <lb/>may indicate enhanced dust emission associated with star formation, even on these sub-100 pc scales. <lb/></div>
+		<keywords>Subject headings: galaxies: active?galaxies: Seyfert?infrared: galaxies <lb/></keywords>
+		<div type="intro">1. INTRODUCTION <lb/></div>
+		<byline><affiliation>1  Department of Physics and Astronomy, University of Ken- <lb/>tucky,</affiliation></byline>
+		<address>Lexington, KY 40506;</address>
+		<email>nlevenson@gemini.edu <lb/></email>
+		<byline><affiliation>2  Gemini Observatory,</affiliation></byline>
+		<address>Casilla 603, La Serena, Chile;</address>
+		<email>jradom- <lb/> ski@gemini.edu</email>
+		<byline><affiliation>3  Department of Astronomy, University of Florida,</affiliation></byline>
+		<address>211 Bryant <lb/>Space Science Center, P.O. Box 112055, Gainesville, FL <lb/>32611;</address>
+		<email>packham@astro.ufl.edu; </email> <email>justin.schaefer@seakr.com; </email> <email>tele- <lb/>sco@astro.ufl.edu</email>
+		<byline><affiliation>4  Gemini Observatory,</affiliation></byline>
+		<address>670 N. A&apos;ohoku Place, Hilo, HI 96720; <lb/></address>
+		<email>rmason@gemini.edu <lb/></email>
+		</front>
+</text>
+</tei>

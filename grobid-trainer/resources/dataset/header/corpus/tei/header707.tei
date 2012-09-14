@@ -1,0 +1,19 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="709"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<note type="reference">To appear in Proceedings of the Twenty Third ACM SIGPLAN-SIGACT <lb/>Symposium on Principles of Programming Languages, St. Petersburg <lb/>Beach, Florida, January 21-24, 1996. c fl1996 ACM (see notice below). <lb/></note>
+		<docTitle>
+			<titlePart type="main">Is it a Tree, a DAG, or a Cyclic Graph? <lb/>A Shape Analysis for Heap-Directed Pointers in C <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Rakesh Ghiya and Laurie J. Hendren <lb/></docAuthor></byline>
+		<byline><affiliation>School of Computer Science, McGill University <lb/></affiliation></byline>
+		<address>Montreal, Quebec, CANADA H3A 2A7 <lb/></address>
+		<email>{ghiya,hendren}@cs.mcgill.ca <lb/></email>
+		<div type="abstract">Abstract <lb/>This paper reports on the design and implementation of a practical shape analysis for C. The purpose of the analysis is to aid in the disambiguation of <lb/>heap-allocated data structures by estimating the shape <lb/>(Tree, DAG, or Cyclic Graph) of the data structure accessible from each heap-directed pointer. This shape <lb/>information can be used to improve dependence testing and in parallelization, and to guide the choice of <lb/>more complex heap analyses. <lb/>The method has been implemented as a context-sensitive interprocedural analysis in the McCAT compiler. Experimental results and observations are given <lb/>for 16 benchmark programs. These results show that <lb/>the analysis gives accurate and useful results for an <lb/>important group of applications. <lb/></div>
+		<div type="intro">1 Introduction and Related</div>
+		</front>
+</text>
+</tei>

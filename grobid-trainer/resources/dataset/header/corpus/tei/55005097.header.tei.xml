@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005097"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<lb/>
+			<docTitle>
+				<titlePart>Silicon Photonic Modulation<lb/>Circuitry<lb/></titlePart>
+			</docTitle>
+			
+			<reference>Integrated Nanophotonic Devices.</reference> <idno>DOI: 10.1016/B978-1-4377-7848-9.00003-3<lb/></idno>
+			<note type="copyright">© 2010 Elsevier Inc. All rights reserved.</note>
+			
+		</front>
+	</text>
+</tei>

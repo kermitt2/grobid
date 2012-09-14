@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="286"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Planning information gathering under uncertainty <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Joshua Grass and Shlomo Zilberstein <lb/></docAuthor></byline>
+		<byline><affiliation>Computer Science Department <lb/>University of Massachusetts at Amherst <lb/></affiliation></byline>
+		<idno>CMPSCI Technical Report 97-32 <lb/></idno>
+		<date>May 21, 1997 <lb/></date>
+		<pb/>
+		</front>
+</text>
+</tei>

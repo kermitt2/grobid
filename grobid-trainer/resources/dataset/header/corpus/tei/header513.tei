@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="516"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">THE CORAL USER MANUAL <lb/>A Tutorial Introduction to CORAL <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Raghu Ramakrishnan Praveen Seshadri Divesh Srivastava <lb/></docAuthor></byline>
+		<byline><docAuthor>S. Sudarshan <lb/></docAuthor></byline>
+		<byline><affiliation>Computer Sciences Department, <lb/>University of Wisconsin-Madison,</affiliation></byline>
+		<address>WI 53706, U.S.A. <lb/></address>
+		<note type="other">The authors&apos; e-mail addresses are </note><email>fraghu,divesh,praveeng@cs.wisc.edu; sudarsha@research.att.com. <lb/></email>
+		<pb/>
+		</front>
+</text>
+</tei>

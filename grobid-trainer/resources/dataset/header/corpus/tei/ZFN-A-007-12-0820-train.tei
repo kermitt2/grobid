@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="ZFN-A-007-12-0820"/>
+	</teiHeader>
+	<text xml:lang="de">
+		<front>
+			<titlePage>
+				<docTitle>
+					<titlePart type="main">Zur phänomenologischen Theorie der Supraleitung<lb/></titlePart>
+				</docTitle>
+				<note>(Bemerkung zu der gleichlautenden Arbeit H. Kopp es)<lb/></note>
+				<byline><docAuthor>Von F. Beck</docAuthor><lb/></byline>
+				<byline><affiliation>Kaiser-Wilhelm-Institut für physikalische Chemie und Elektrochemie</affiliation>, <address>Berlin-Dahlem</address> <lb/></byline>
+				<reference>(Z. Naturforschg. 7 a, 820-821 [1Ö52]; </reference>
+				<note type="submission">eingeg. am 16. Oktober 1952)<lb/></note>
+			</titlePage>
+			<div type="abstract">In dieser Zeitschrift erschien eine Arbeit Koppes^, <lb/>die sich mit der Temperaturabhängigkeit der Kon- <lb/>stante A in der London-v. Laueschen Theorie yder <lb/>Supraleitung befaßt. Um die dadurch bedingte expU- <lb/>zite Abhängigkeit der Entropie des supraleitenden Zu- <lb/>standes vom elektromagnetischen Feld im Supraleiter <lb/>zu beseitigen, schlägt Koppe vor, X als thermodyna- <lb/>mische Variable zu behandeln, die von den Feldgrößen <lb/>abhängt. Dann tritt A nicht nvir in den Feldgleichun- <lb/>gen, sondern auch in der freien Umwandlungsenergie <lb/>zwischen Supra- und Normalleiter auf. Man konunt <lb/>dadurch zu einer nichthnearen Form der Theorie, wie <lb/>sie früher von Koppe^ im Anschluß an die Heisen- <lb/>bergsche Theorie für einen Spezialfall diskutiert, <lb/>durch V. Laue3 allgemein, ohne Spezialisierung auf <lb/>ein bestimmtes Modell, entwickelt wurde. Femer führt <lb/>die Abhängigkeit der Umwandlungsenergie von A auf <lb/>eine im Prinzip geänderte Thermodynamik, da nun das <lb/>Zweiphasensystem Supra-Normalleiter und das elek- <lb/>tromagnetische Feld nicht mehr als zwei getrennte <lb/>Systeme behandelt werden können, die nur über die <lb/>Londonschen Spannungen in Wechselwirkung mit- <lb/>einander stehen. Da verschiedene, in jüngster Zeit auf- <lb/>getretene Gesichtspunkte* für diese Auffassung spre- <lb/>chen, soll hier auf einen Irrtum in der Koppeschen <lb/>Arbeit hingewiesen werden, der zwar für den allge- <lb/>meinen Gedankengang belanglos ist, aber die für wei- <lb/>tere Rechnungen grundlegende Beziehung zwischen A <lb/>imd der Suprastromdichte ( Gl. [ 16 ] j^ner Arbeit ) falsch <lb/>ergibt. <lb/></div>
+			<div type="intro">Koppe gewinnt seine Gl. [16] aus einem Variations-<lb/></div>
+		</front>
+	</text>
+</tei>

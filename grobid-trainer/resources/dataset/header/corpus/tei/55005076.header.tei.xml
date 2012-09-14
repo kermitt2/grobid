@@ -1,0 +1,83 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005076"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+		
+			<lb/>
+			<reference>Leukemia (2009) 23, 1587–1597<lb/></reference>
+			<note type="copyright">&amp; 2009 Macmillan Publishers Limited All rights reserved</note>
+			<note type="other">0887-6924/09 $32.00<lb/></note>
+			<ptr type="web">www.nature.com/leu<lb/></ptr>	
+				
+			<note type="other">ORIGINAL ARTICLE<lb/></note>
+			
+			<docTitle>
+				<titlePart>Monoclonal antibodies against IREM-1: potential for
+					targeted therapy of AML<lb/></titlePart>
+			</docTitle>
+
+			<byline>
+				<docAuthor>W Korver 1 , X Zhao 2 , S Singh 1 , C Pardoux 1 , J Zhao 1 , ML Guzman 3
+					, S Sen 3 , S Yonkovich 1 , S Liu 1 , X Zhan 1 , N Tomasevic 1 , C Zhou 1 ,<lb/>
+					D Gros 1 , CT Jordan 3 , J Gotlib 4 , ED Hsi 2 and A Abo 1<lb/></docAuthor>
+			</byline>
+
+			<byline>
+				<affiliation>1<lb/> Discovery Research, Nuvelo Inc.,</affiliation>
+			</byline>
+
+			<address>San Carlos, CA, USA;</address>
+
+			<byline>
+				<affiliation>2 Department of Clinical Pathology, Cleveland Clinic, </affiliation>
+			</byline>
+
+			<address>Cleveland, OH,<lb/> USA; </address>
+
+			<byline>
+				<affiliation>3 James P. Wilmot Cancer Center, University of Rochester School of
+					Medicine, </affiliation>
+			</byline>
+				
+			<address>Rochester, NY, USA</address>
+		
+			<note type="other">and</note>
+
+			<byline>
+				<affiliation>4 Stanford Cancer<lb/> Center, </affiliation>
+			</byline>
+
+			<address>Stanford, CA, USA<lb/></address>
+
+			<div type="abstract">IREM-1 is an inhibitory cell surface receptor with an unknown<lb/>
+				function and is expressed on myeloid cell lineages, including<lb/> cell lines
+				derived from acute myeloid leukemia (AML) patients.<lb/> We have generated a series
+				of monoclonal antibodies (mAbs)<lb/> against the extracellular domain of IREM-1 and
+				further<lb/> assessed its expression in normal and AML cells. IREM-1 was<lb/>
+				restricted to cells from myeloid origin and extensive expression<lb/> analysis in
+				primary cells obtained from AML patients showed<lb/> IREM-1 expression in leukemic
+				blasts of 72% (39/54) of<lb/> samples. We therefore searched for specific IREM-1
+				mAbs with<lb/> activity in functional complement-dependent cytotoxicity (CDC)<lb/>
+				and antibody-dependent cellular cytotoxicity (ADCC). Lead<lb/> mAbs against IREM-1
+				showed specific cytotoxic activity against<lb/> a variety of AML-derived cell lines
+				and freshly isolated blasts<lb/> from AML patients. Internalization of mAbs upon
+				IREM-1<lb/> binding was also shown. In vivo anticancer activity of lead<lb/> mAbs
+				was observed in an established HL-60 xenograft model<lb/> with a tumor growth delay
+				of up to 40% and in a model using<lb/> primary human AML cells, where treatment with
+				anti-IREM-1<lb/> mAb resulted in a significant reduction of engrafted human<lb/>
+				cells. These results demonstrate IREM-1 as a potential novel<lb/> target for
+				immunotherapy of AML.<lb/>
+			</div>
+			<reference>Leukemia (2009) 23, 1587–1597;</reference>
+			<idno>doi:10.1038/leu.2009.99;<lb/></idno> 
+			<date>published online 14 May 2009<lb/></date> 
+			<keywords>Keywords: acute myeloid leukemia; antibody therapy; minimal<lb/> residual disease<lb/></keywords>
+			
+			<div type="introduction">Introduction<lb/></div>
+
+		</front>
+	</text>
+</tei>

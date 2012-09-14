@@ -1,0 +1,26 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="739"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">NetSolve: A Network Server <lb/>for Solving Computational Science Problems <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Henri Casanova <lb/></docAuthor></byline>
+		<byline><affiliation>University of Tennessee <lb/>UTK, Dept. of Computer Science</affiliation></byline>
+		<address>104, Ayres Hall. KNOXVILLE, TN 37996-1301. <lb/></address>
+		<email>casanova@cs.utk.edu <lb/></email>
+		<ptr type="web">http://www.cs.utk.edu/~casanova <lb/></ptr>
+		<byline><docAuthor>Jack Dongarra <lb/></docAuthor></byline>
+		<byline><affiliation>University of Tennessee, Oak Ridge National Laboratory <lb/>UTK, Dept. of Computer Science</affiliation></byline>
+		<address>104, Ayres Hall. KNOXVILLE, TN 37996-1301. <lb/></address>
+		<email>dongarra@cs.utk.edu <lb/></email>
+		<ptr type="web">http://www.netlib.org/utk/people/JackDongarra.html <lb/></ptr>
+		<date>November 12, 1996 <lb/></date>
+		<div type="abstract">Abstract <lb/>This paper presents a new system, called NetSolve, that allows users to access computational resources, such as hardware and software, distributed across the network. The development of NetSolve <lb/>was motivated by the need for an easy-to-use, efficient mechanism for using computational resources remotely. Ease of use is obtained as a result of different interfaces, some of which require no programming <lb/>effort from the user. Good performance is ensured by a load-balancing policy that enables NetSolve to <lb/>use the computational resources available as efficiently as possible. NetSolve offers the ability to look <lb/>for computational resources on a network, choose the best one available, solve a problem (with retry for <lb/>fault-tolerance), and return the answer to the user. <lb/></div>
+		<keywords>Keywords <lb/>Networking, Heterogeneity, Load Balancing, <lb/>Client-Server, Fault Tolerance, Numerical Computing, Virtual Library. <lb/></keywords>
+		<pb/>
+		</front>
+</text>
+</tei>

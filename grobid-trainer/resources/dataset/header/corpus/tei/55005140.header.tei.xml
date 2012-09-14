@@ -1,0 +1,71 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005140"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<lb/>
+			<reference>>Bioresource Technology 100 (2009) 5624–5632<lb/></reference>
+
+			<note type="other">Contents lists available at ScienceDirect<lb/></note>
+			<note type="other">Bioresource Technology<lb/></note>
+			<ptr type="web">journal homepage: www.elsevier.com/locate/biortech<lb/></ptr>
+
+			<docTitle>
+				<titlePart>Long-term operation of a partial nitritation pilot plant treating
+					leachate with<lb/> extremely high ammonium concentration prior to an anammox
+					process<lb/></titlePart>
+			</docTitle>
+
+			<byline>
+				<docAuthor>Ramon Ganigué a, * , Jordi Gabarró a , Alexandre Sànchez-Melsió b , Maël
+					Ruscalleda a , Helio López a ,<lb/> Xavier Vila b , Jesús Colprim a , M. Dolors
+					Balaguer a<lb/></docAuthor>
+			</byline>
+
+			<byline>
+				<affiliation>a Laboratory of Chemical and Environmental Engineering (LEQUIA),
+					Institute of the Environment, University of Girona,</affiliation>
+			</byline>
+
+			<address>Campus Montilivi s/n, Facultat de Ciències<lb/>, E-17071 Girona, Catalonia, Spain<lb/></address>
+
+			<byline>
+				<affiliation>b Laboratory of Molecular Microbial Ecology, Institute of Aquatic
+					Ecology, University of Girona,</affiliation>
+			</byline>
+
+			<address>Campus Montilivi s/n, E-17071 Girona, Catalonia, Spain<lb/></address>
+
+			<note type="other">a r t i c l e i n f o<lb/></note>
+			<note type="submission"> Article history:<lb/> Received 9 March 2009<lb/> Received in
+				revised form 8 June 2009<lb/> Accepted 9 June 2009<lb/> 
+			</note>	
+				
+			<date>Available online 3 July 2009<lb/></date>
+			
+			<keywords> Keywords:<lb/> Ammonium oxidising bacteria (AOB)<lb/> Heterotrophic
+				denitrification<lb/> Nitrite oxidising bacteria (NOB)<lb/> Operational strategy<lb/>
+				Partial nitritation<lb/>
+			</keywords>
+			<space dim="horizontal"/>
+			<div type="abstract"> a b s t r a c t<lb/> The goal of this work was to demonstrate the
+				feasibility of treating leachate with high ammonium con-<lb/> centrations using the
+				SBR technology, as a preparative step for the treatment in an anammox reactor.
+				The<lb/> cycle was based on a step-feed strategy, alternating anoxic and aerobic
+				conditions. Results of the study<lb/> verified the viability of this process,
+				treating an influent with concentration up to 5000 mg N–NH þ<lb/> 4 L À1 .<lb/> An
+				effluent with about 1500–2000 mg N–NH þ<lb/> 4 L À1 and 2000–3000 mg N–NO À<lb/> 2 L
+				À1 was achieved, present-<lb/> ing a nitrite to ammonium molar ratio close to the
+				1.32 required by the anammox. Furthermore, taking<lb/> advantage of the
+				biodegradable organic matter, the operational strategy allowed denitrifying
+				about<lb/> 200 mg N–NO À<lb/> 2 L À1 . The extreme operational conditions during the
+				long-term resulted on the selection<lb/> of a sole AOB phylotype, identified by
+				molecular techniques as Nitrosomonas sp. IWT514.<lb/>
+			</div>
+			<note type="copyright">&#169; 2009 Elsevier Ltd. All rights reserved.<lb/></note>
+
+		</front>
+	</text>
+</tei>

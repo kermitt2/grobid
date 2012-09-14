@@ -1,0 +1,19 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="726"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<note type="reference">In Proceedings of the Eighth International Workshop <lb/>on Qualitative Physics about Physical Systems (QR-94) <lb/>Nara, Japan, 1994. <lb/></note>
+		<docTitle>
+			<titlePart type="main">Model Decomposition and Simulation <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Daniel J. Clancy and Benjamin Kuipers <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Sciences <lb/>University of Texas at Austin <lb/></affiliation></byline>
+		<address>Austin, Texas 78712 <lb/></address>
+		<email>clancy@cs.utexas.edu and kuipers@cs.utexas.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>Qualitative reasoning uses incomplete knowledge to compute a description of the possible behaviors for dynamic <lb/>systems. For complex systems containing a large number <lb/>of variables and constraints, the simulation frequently is <lb/>intractable or results in a large, incomprehensible behavioral description. Abstraction and aggregation techniques are required during the simulation to eliminate <lb/>irrelevant details and highlight the important characteristics of the behavior. The total temporal ordering of <lb/>unrelated events provided by a traditional state-based <lb/>qualitative representation is one such irrelevant distinction. Model decomposition and simulation addresses this <lb/>problem. <lb/>Model decomposition uses a causal analysis of the model <lb/>to partition the variables into tightly connected components. The components are simulated separately in <lb/>the order dictated by the causal analysis beginning with <lb/>causally upstream components. Information from the <lb/>simulation of causally upstream components is used to <lb/>constrain the behavior of downstream components. If a <lb/>feedback loop exists between components or a set of components are acausally related, then a concurrent simulation is performed for these components. A truth maintenance system is used to record and retract assumptions <lb/>made during this concurrent simulation. <lb/>Model decomposition provides a general architecture <lb/>which separates the method of simulation from the model <lb/>decomposition algorithm. This architecture can be used <lb/>to introduce alternative abstraction techniques to eliminate other irrelevant distinctions. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

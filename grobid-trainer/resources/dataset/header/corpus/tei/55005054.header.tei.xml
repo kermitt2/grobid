@@ -1,0 +1,66 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005054"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<lb/>
+
+			<reference>Renewable and Sustainable Energy Reviews 14 (2010) 1722–1743<lb/></reference>
+			
+			<note type="other">Contents lists available at ScienceDirect<lb/></note>
+			<note type="other">Renewable and Sustainable Energy Reviews<lb/></note>
+			<ptr type="web">journal homepage: www.elsevier.com/locate/rser<lb/></ptr>
+			
+
+			<docTitle>
+				<titlePart>Feasibility study of offshore wind turbine installation in Iran
+					compared<lb/> with the world<lb/></titlePart>
+			</docTitle>
+
+			<byline>
+				<docAuthor>Ali Mostafaeipour *<lb/></docAuthor>
+			</byline>
+
+			<byline>
+				<affiliation>Industrial Engineering Department, Yazd University,</affiliation>
+			</byline>
+
+			<address>Yazd, Iran<lb/></address>
+
+			<note type="other">A R T I C L E I N F O<lb/></note>
+
+			<note type="submission"> Article history:<lb/>Received 30 November 2009<lb/>Accepted 18
+				March 2010<lb/></note>
+
+			<keywords>Keywords:<lb/>Offshore wind<lb/>Turbine<lb/>Iran<lb/>Persian Gulf<lb/>Caspian
+				Sea<lb/>Urmia Lake<lb/>Feasibility study<lb/></keywords>
+			
+			<space dim="horizontal"/>
+
+			<div type="abstract"> A B S T R A C T<lb/> Renewable energies have potential for
+				supplying of relatively clean and mostly local energy. Wind<lb/> energy generation
+				is expected to increase in the near future and has experienced dramatic growth
+				over<lb/> the past decade in many countries. Offshore winds are generally stronger
+				and more constant than<lb/> onshore winds in many areas. The economic feasibility
+				for utilization of offshore wind energy depends<lb/> on the favorable wind
+				conditions in the area. The present paper analyses offshore wind speed in
+				global<lb/> scale and also studies feasibility of introducing this technology for
+				harnessing wind in Persian Gulf,<lb/> Caspian Sea, Urmia Lake and Gulf of Oman. Wind
+				speed data were collected from different sources. The<lb/> ocean surface winds at a
+				10 m height from satellite passes as processed by NOAA/NESDIS, from near real-<lb/>
+				time data collected by NASA/JPL’s Sea Winds Scatterometer aboard the QuikSCAT.
+				Development of<lb/> renewable energy is one of priority research goals in Iran.
+				There are many installed wind turbines in<lb/> suitable regions like Manjil and
+				Binalood, but there has not been any offshore wind installation yet in<lb/> Iran. It
+				is suggested that policy makers to invest and pay more attentions toward harnessing
+				renewable<lb/> energy sources like offshore wind in Persian Gulf and Gulf of Oman in
+				southern parts of Iran.<lb/>
+			</div>
+			<note type="copyright">&#169; 2010 Elsevier Ltd. All rights reserved.</note>
+
+
+		</front>
+	</text>
+</tei>

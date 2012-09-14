@@ -1,0 +1,16 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="701"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">A Comparison of Content-Based Image/Video Retrieval <lb/>Systems <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Fatma Ozcan <lb/></docAuthor></byline>
+		<date>December 15, 1997 <lb/></date>
+		<div type="abstract">Abstract <lb/>Recently, content-based retrieval of images and video has become a hot research area. The reason for this <lb/>is the need for effective and efficient techniques, that meet user requirements, to access large volumes of digital <lb/>images and video data. In [GR 95], previous approaches to content-based retrieval is said to have taken two <lb/>directions. In the first approach, image contents are modeled as a set of attributes extracted manually and <lb/>managed within the framework of conventional database-management systems. The second approach depends <lb/>on an integrated feature-extraction/object-recognition subsystem to overcome the limitations of attribute-based retrieval. However, it has been also stated that [GR 95] recent content-based image retrieval systems <lb/>recognized the need for synergy between these two approaches. <lb/>There has been numerous efforts to build content-based image retrieval systems. These include, Chabot <lb/>[OS 95], SCORE [ATY 95, ATY 96], CONIVAS [AD 96], Photobook [PPS 93], CANDID [KCH 95], JACOB <lb/>[ALDV 96, LA 96], VisualSEEk [SC 96] and QBIC [FSN+ 95]. In the first place, these systems differ in their <lb/>querying capabilities. Images could be retrieved through the use of color, texture, sketch, shape, volume, <lb/>spatial constraints, browsing, motion, text and domain concepts. Current approaches to content-based image <lb/>retrieval also differ in terms of image features extracted, their level of abstraction and the degree of domain <lb/>independence. In this paper, a comparative survey on these systems is conducted to figure out design tradeoffs <lb/>and different approaches to content-based image retrieval. Furthermore, a taxonomy of content-based retrieval <lb/>systems, as well as a generic architecture, is provided. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

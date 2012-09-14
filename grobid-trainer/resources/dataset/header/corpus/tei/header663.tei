@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="665"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<note type="reference">In M. C. Mozer. M. I. Jordan and T. Petsche (editors), Advances in Neural Infor-  <lb/> mation Processing Systems 9, MIT Press, Cambridge MA, 1997 <lb/></note>
+		<docTitle>
+			<titlePart type="main">Continuous sigmoidal belief networks <lb/>trained using slice sampling <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Brendan J. Frey <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science, University of Toronto <lb/></affiliation></byline>
+		<address>6 King&apos;s College Road, Toronto, Canada M5S 1A4 <lb/></address>
+		<div type="abstract">Abstract <lb/>Real-valued random hidden variables can be useful for modelling <lb/>latent structure that explains correlations among observed variables. I propose a simple unit that adds zero-mean Gaussian noise <lb/>to its input before passing it through a sigmoidal squashing function. Such units can produce a variety of useful behaviors, ranging <lb/>from deterministic to binary stochastic to continuous stochastic. I <lb/>show how &quot;slice sampling&quot; (Neal 1996) can be used for inference <lb/>and learning in top-down networks of these units and demonstrate <lb/>learning on two simple problems. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,15 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="482"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Empirical Evaluation of Global Memory Support <lb/>on the CRAY-T3D and CRAY-T3E <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Arvind Krishnamurthy, David E. Culler, and Katherine Yelick <lb/></docAuthor></byline>
+		<byline><affiliation>Computer Science Division <lb/>University of California, Berkeley <lb/></affiliation></byline>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

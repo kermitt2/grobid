@@ -1,0 +1,20 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="207"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<byline><affiliation>INTERNATIONAL COMPUTER SCIENCE INSTITUTE <lb/></affiliation></byline>
+		<address>I 1947 Center St. * Suite 600 * Berkeley, California 94704-1198</address>
+		<note type="phone">* (510) 643-9153 * FAX (510) 643-7684 <lb/></note>
+		<docTitle>
+			<titlePart type="main">A Management Platform for <lb/>Global Area ATM Networks <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Roya Ulrich <lb/></docAuthor></byline>
+		<email>ulrich@icsi.berkeley.edu <lb/></email>
+		<idno>TR-96-018 <lb/></idno>
+		<div type="abstract">Abstract <lb/>Technological progress has made providing numerous new services to large number <lb/>of users possible. Concurrently, we also experience an increased interest in real-time <lb/>and interactive applications, e. g. teleseminaring, video conferencing and application <lb/>sharing, in particular, because of the worldwide and decentralized character of today&apos;s <lb/>research and development organizations. <lb/>The International Computer Science Institute (ICSI) is a participant of the first <lb/>transatlantic ATM link which is an integral part of the Multimedia Applications <lb/>on Intercontinental Highways (MAY) Project. Additionally, ICSI is attached to the <lb/>Bay Area Gigabit Network (BAGNet) providing ATM connectivity at the best-effort <lb/>basis. Both projects provide platforms to identify the key research and development <lb/>topics in cooperative real-time communication. <lb/>The technical report gives a brief introduction to the ATM infrastructure at ICSI and <lb/>addresses challenging management issues of multimedia applications in such global <lb/>area ATM networks. We explore three management areas: performance, configuration, <lb/>and fault management with respect to the user&apos;s point of view. Finally, we introduce <lb/>a management platform and tools we have been developing which help the user to <lb/>better predict the quality of service provided and to recover from faults occurred in <lb/>the system or during a transmission. <lb/></div>
+		<pb/>
+		</front>
+</text>
+</tei>

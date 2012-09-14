@@ -1,0 +1,23 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="716"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Using PVS to Analyze Hierarchical State-Based Requirements for <lb/>Completeness and Consistency * <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Mats P.E. Heimdahl <lb/></docAuthor></byline>
+		<byline><affiliation>University of Minnesota, Institute of Technology <lb/>Department of Computer Science,</affiliation></byline>
+		<address>4-192 EE/CS Bldg. <lb/>Minneapolis, MN 55455 <lb/></address>
+		<email>heimdahl@cs.umn.edu <lb/></email>
+		<byline><docAuthor>Barbara J. Czerny <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science,</affiliation></byline>
+		<address>A-714 Wells Hall <lb/></address>
+		<byline><affiliation>Michigan State University <lb/></affiliation></byline>
+		<address>East Lansing, MI 48824 <lb/></address>
+		<email>czerny@cps.msu.edu <lb/></email>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

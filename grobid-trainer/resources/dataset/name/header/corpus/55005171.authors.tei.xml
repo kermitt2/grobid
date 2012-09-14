@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Raymond</forename>
+								<surname>Yim</surname>,
+								<roleName>Member, IEEE</roleName>,
+							</persName>
+							<persName>
+								<forename>Neelesh</forename>
+								<middlename>B</middlename>.
+								<surname>Mehta</surname>,
+								<roleName>Senior Member, IEEE</roleName>,
+								<lb/> and
+							</persName>
+							<persName>						
+								<forename>Andreas</forename>
+								<middlename>F</middlename>.
+								<surname>Molisch</surname>,
+								<roleName>Fellow, IEEE</roleName>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

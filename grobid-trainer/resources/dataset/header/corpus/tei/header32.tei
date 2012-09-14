@@ -1,0 +1,22 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="33"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<idno>DIMACS Technical Report 97-15 <lb/></idno>
+		<date>April 1997 <lb/></date>
+		<date type="revision">(Revised August 1997) <lb/></date>
+		<docTitle>
+			<titlePart type="main">Crowds: Anonymity for Web Transactions <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>by <lb/>Michael K. Reiter 1 Aviel D. Rubin 2 <lb/></docAuthor></byline>
+		<byline><affiliation>AT&amp;T Labs|Research,</affiliation></byline>
+		<address>Murray Hill, New Jersey, USA <lb/></address>
+		<email>freiter,rubing@research.att.com <lb/></email>
+		<note type="other">1 Permanent Member <lb/>2 Permanent Member <lb/> DIMACS is a partnership of Rutgers University, Princeton University, AT&amp;T Labs, Bellcore, and Bell Labs. <lb/></note>
+		<note type="grant">DIMACS is an NSF Science and Technology Center, funded under contract STC-91-19999; and also receives <lb/>support from the New Jersey Commission on Science and Technology. <lb/></note>
+		<pb/>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="unknown"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Exploiting Redundancy to Reduce Impact Force <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Jin-Oh Kim 2 , Matthew Wayne Gertz 3 , and Pradeep K. Khosla 4 <lb/></docAuthor></byline>
+		<byline><affiliation>Advanced Manipulators Laboratory <lb/>The Robotics Institute <lb/>Carnegie Mellon University <lb/></affiliation></byline>
+		<address>Pittsburgh, Pennsylvania 15213 <lb/></address>
+		<div type="abstract">Abstract <lb/>This paper presents two strategies for reducing the impact force resulting from the collision of a <lb/>kinematically redundant manipulator with its environment, where it is assumed that the impact <lb/>event has some finite duration. The first, an impact control strategy, involves adding torques to the <lb/>joints of the redundant manipulator to impede motion into the environment with which it is colliding. The second, an impact planning strategy, involves choosing the configuration best suited for <lb/>minimizing the impact force from an impact event, the approximate location of which is known <lb/>ahead of time. Simulated results from both strategies are presented and discussed, and it is shown <lb/>that both are successful in minimizing the impact force resulting from planned and unplanned collisions. <lb/></div>
+		<note type="grant">1. This research was funded in part by NASA (grant number NAG-1-1075), the Dept. of Elec. and Comp. Engineering,</note>
+		</front>
+</text>
+</tei>

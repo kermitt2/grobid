@@ -1,0 +1,24 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="666"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<note type="reference">Appears in the <lb/> Proceedings of the Third International Conference on Knowledge Representation and Reasoning, <lb/> 25-29 October 1992, Cambridge, MA. <lb/></note>
+		<docTitle>
+			<titlePart type="main">Learning Useful Horn Approximations <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Russell Greiner <lb/></docAuthor></byline>
+		<address>755 College Road East <lb/></address>
+		<byline><affiliation>Siemens Corporate Research <lb/></affiliation></byline>
+		<address>Princeton, NJ 08540 <lb/></address>
+		<email>greiner@learning.siemens.com <lb/></email>
+		<byline><docAuthor>Dale Schuurmans <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science <lb/>University of Toronto <lb/></affiliation></byline>
+		<address>Toronto, Ontario M5S 1A4 <lb/></address>
+		<email>dale@cs.toronto.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>While the task of answering queries from an <lb/>arbitrary propositional theory is intractable in <lb/>general, it can typically be performed efficiently <lb/>if the theory is Horn. This suggests that it <lb/>may be more efficient to answer queries using a &quot;Horn approximation&quot;; i.e., a horn theory that is semantically similar to the original <lb/>theory. The utility of any such approximation <lb/>depends on how often it produces answers to <lb/>the queries that the system actually encounters; <lb/>we therefore seek an approximation whose expected &quot;coverage&quot; is maximal. Unfortunately, <lb/>there are several obstacles to achieving this goal <lb/>in practice: (i) The optimal approximation depends on the query distribution, which is typically not known a priori; (ii) identifying the optimal approximation is intractable, even given <lb/>the query distribution; and (iii) the optimal approximation might be too large to guarantee <lb/>tractable inference. This paper presents an approach that overcomes (or side-steps) each of <lb/>these obstacles. We define a learning process, <lb/>AdComp, that uses observed queries to estimate the query distribution &quot;online&quot;, and then <lb/>uses these estimates to hill-climb, efficiently, <lb/>in the space of size-bounded Horn approximations, until reaching one that is, with provably <lb/>high probability, effectively at a local optimum. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

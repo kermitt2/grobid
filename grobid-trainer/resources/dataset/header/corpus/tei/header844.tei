@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="unknown"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Tracking Drifting Concepts <lb/>By Minimizing Disagreements <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>David P. Helmbold and Philip M. Long <lb/></docAuthor></byline>
+		<byline><affiliation>CIS Board <lb/>UC Santa Cruz <lb/></affiliation></byline>
+		<address>Santa Cruz, CA 95064 <lb/></address>
+		<date>March 24, 1994 <lb/></date>
+		<div type="abstract">Abstract <lb/>In this paper we consider the problem of tracking a subset of a domain (called the target) which <lb/>changes gradually over time. A single (unknown) probability distribution over the domain is used <lb/>to generate random examples for the learning algorithm and measure the speed at which the target <lb/>changes. <lb/>Clearly, the more rapidly the target moves, the harder it is for the algorithm to maintain a good <lb/>approximation of the target. Therefore we evaluate algorithms based on how much movement of <lb/>the target can be tolerated between examples while predicting with accuracy *. Furthermore, the <lb/>complexity of the class H of possible targets, as measured by d, its VC-dimension, also effects the <lb/>difficulty of tracking the target concept. <lb/>We show that if the problem of minimizing the number of disagreements with a sample from <lb/>among concepts in a class H can be approximated to within a factor k, then there is a simple tracking <lb/>algorithm for H which can achieve a probability * of making a mistake if the target movement rate <lb/>is at most a constant times * 2 =(k(d + k) ln 1 <lb/>* ), where d is the Vapnik-Chervonenkis dimension of <lb/>H. Also, we show that if H is properly PAC-learnable, then there is an efficient (randomized) <lb/>algorithm that with high probability approximately minimizes disagreements to within a factor of <lb/>7d + 1, yielding an efficient tracking algorithm for H which tolerates drift rates up to a constant <lb/>times * 2 =(d 2 ln 1 <lb/>In addition, we prove complementary results for the classes of halfspaces and axis-aligned hy <lb/>perrectangles showing that the maximum rate of drift that any algorithm (even with unlimited <lb/>computational power) can tolerate is a constant times * 2 =d. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

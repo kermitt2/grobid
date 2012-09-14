@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="5"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>The Crystal Structures of BaSe2 and BaSe3<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>F. Hulliger and T. Siegrist*<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Laboratorium für Festkörperphysik ETH,</affiliation>
+	</byline>
+
+	<address>CH-8093 Zürich<lb/></address>
+
+	<reference>Z. Naturforsch. 36 b, 14-15 (1981);</reference>
+
+	<note type="submission">received September 9, 1980<lb/></note>
+
+	<keyword>Crystal Structure, Polyselenides<lb/></keyword>
+
+	<div type="abstract">BaSe2 crystallizes with a monoclinic cell, a = 9.820(5), 6 = 4.929(3), c = 9.335(5) A,<lb/> ß = 118.48(5)°; Z = 4, space group C 2/c. BaSe3 is tetragonal, o = 7.2802(5), c = 4.2495(4)<lb/> A; Z — 2, space group P42im. Both polyselenides are isotypic with the corresponding<lb/> polysulfides.<lb/> In the system Ba-S three polysulfides are known<lb/> and structurally characterized: tetragonal Ba2S3 [1],</div>
+
+		</front>
+	</text>
+</tei>

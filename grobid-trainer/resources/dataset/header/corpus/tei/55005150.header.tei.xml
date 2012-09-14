@@ -1,0 +1,64 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005150"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<lb/>
+			<docTitle>
+				<titlePart>The Unscented Kalman Filter for Nonlinear Estimation<lb/></titlePart>
+			</docTitle>
+
+			<byline>
+				<docAuthor>Eric A. Wan and Rudolph van der Menve<lb/></docAuthor>
+			</byline>
+
+			<byline>
+				<affiliation>Oregon Graduate Institute of Science &amp; Technology<lb/></affiliation>
+			</byline>
+
+			<address>20000 NW Walker Rd, Beaverton, Oregon 97006<lb/></address>
+
+			<email>ericwan @ece.ogi.edu, rvdmerwe@ece.ogi.edu<lb/></email>
+
+			<div type="abstract">Abstract<lb/> The Extended Kalman Filter (EKF) has become a
+				standard<lb/> technique used in a number of nonlinear estimation and ma-<lb/> chine
+				learning applications. These include estimating the<lb/> state of a nonlinear
+				dynamic system, estimating parame-<lb/> ters for nonlinear system identification
+				(e.g., learning the<lb/> weights of a neural network), and dual estimation (e.g.,
+				the<lb/> Expectation Maximization (EM) algorithm) where both states<lb/> and
+				parameters are estimated simultaneously.<lb/> This paper points out the flaws in
+				using the EKF, and<lb/> introduces an improvement, the Unscented Kalman Filter<lb/>
+				(UKF), proposed by Julier and Uhlman [SJ. A central and<lb/> vital operation
+				performed in the Kalman Filter is the prop-<lb/> agation of a Gaussian random
+				variable (GRV) through the<lb/> system dynamics. In the EKF, the state distribution
+				is ap-<lb/> proximated by a GRV, which is then propagated analyti-<lb/> cally
+				through the first-order linearization of the nonlinear<lb/> system. This can
+				introduce large errors in the true posterior<lb/> mean and covariance of the
+				transformed GRV, which may<lb/> lead to sub-optimal performance and sometimes
+				divergence<lb/> of the filter. The UKF addresses this problem by using a<lb/>
+				deterministic sampling approach. The state distribution is<lb/> again approximated
+				by a GRV, but is now represented using<lb/> a minimal set of carefully chosen sample
+				points. These sam-<lb/> ple points completely capture the true mean and
+				covariance<lb/> of the GRV, and when propagated through the true non-<lb/>
+				linear system, captures the posterior mean and covariance<lb/> 
+				accurately to the 3rd order (Taylor series expansion) for any<lb/> 
+				nonlinearity. The EKF, in contrast, only achieves first-order<lb/> 
+				accuracy. Remarkably, the computational complexity of the<lb/> 
+				UKF is the same order as that of the EKE<lb/> 
+				Julier and Uhlman demonstrated the substantial perfor-<lb/> 
+				mance gains of the UKF in the context of "estimation<lb/> 
+				for nonlinear control. Machine learning problems were not<lb/> 
+				considered. We extend the use of the UKF to a broader class<lb/> 
+				of nonlinear estimation problems, including nonlinear sys-<lb/> 
+				tem identification, training of neural networks, and dual es-<lb/> 
+				timation problems. Our preliminary results were presented<lb/> 
+				in [13]. In this paper, the algorithms are further develo<lb/> 
+			</div>
+			
+			<note type="grant">This work was sponsored by the NSF under grant grant IRI-9712346<lb/></note>
+
+		</front>
+	</text>
+</tei>

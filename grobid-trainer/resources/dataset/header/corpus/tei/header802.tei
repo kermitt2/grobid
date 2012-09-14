@@ -1,0 +1,19 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="803"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Handling Infeasible Specifications of Cryptographic Protocols <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Li Gong <lb/></docAuthor></byline>
+		<byline><affiliation>ORA Corporation Cornell University <lb/></affiliation></byline>
+		<address>301A Dates Drive</address>
+		<byline><affiliation>Dept. of Computer Science <lb/></affiliation></byline>
+		<address>Ithaca, NY 14850 Ithaca, NY 14853 <lb/></address>
+		<div type="abstract">Abstract <lb/>In the verification of cryptographic protocols along the <lb/>approach of the logic for authentication by Burrows, <lb/>Abadi, and Needham, it is possible to write a specification which does not faithfully represent the real world <lb/>situation. Such a specification, though impossible or <lb/>unreasonable to implement, can go undetected and be <lb/>verified to be correct. It can also lead to logical statements that do not preserve causality, which in turn can <lb/>have undesirable consequences. Such a specification, <lb/>called an infeasible specification here, can be subtle and <lb/>hard to locate. This note shows how the logic of cryptographic protocols by Gong, Needham, and Yahalom <lb/>can be enhanced with a notion of eligibility to preserve <lb/>causality of beliefs and detect infeasible specifications. <lb/>It is conceivable that this technique can be adopted in <lb/>other similar logics. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

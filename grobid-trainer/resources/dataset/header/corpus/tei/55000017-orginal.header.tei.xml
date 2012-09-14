@@ -1,0 +1,61 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000017-orginal"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<lb/>
+			<reference>Recent Patents on Biotechnology 2008, 2, 47-54<lb/></reference>
+			
+			<note type="other">47<lb/></note> 
+			
+			<docTitle>
+				<titlePart>Recent Inventions on Receptor Tyrosine Kinase RET
+					Modulation<lb/></titlePart>
+			</docTitle>
+
+			<byline>
+				<docAuthor>Jaana M. Jurvansuu and Adrian Goldman* #<lb/></docAuthor>
+			</byline>
+
+			<byline>
+				<affiliation>Institute of Biotechnology, University of Helsinki,</affiliation>
+			</byline>
+
+			<address>Finland<lb/></address>
+
+			<note type="submission">Received: August 17, 2007; Accepted: November 14, 2007; Revised:
+				December 4, 2007<lb/></note>
+
+			<div type="abstract">Abstract: Rearranged during transfection, RET, is a receptor
+				tyrosine kinase expressed in neural crest derived cell lineages. RET is<lb/>
+				activated by dimerisation facilitated by its binding to the heterodimeric complex
+				formed by Glial cell-derived neurotrophic factor<lb/> (GDNF) -family ligand (GFL)
+				and GNDF-family receptor (GFR). Both GDNFs and their co-receptors are a small
+				protein family of four<lb/> members. RET kinase mediated signaling can lead to
+				survival, cell growth, differentiation, and migration. Pharmaceutically RET is
+				of<lb/> interest due to its involvement in several disease conditions. Oncogenic RET
+				activation by mutations or rearragements predisposes to<lb/> cancers like multiple
+				endocrine neoplasia type 2 (A and B) and medullary thyroid carcinoma.
+				Loss-of-function mutations in RET are a<lb/> strong susceptibility factor for
+				Hirschsprung disease, which is characterized by lack of ganglion cells in
+				gastrointestinal tract. All the<lb/> GFLs promote neuronal survival and GDNF is one
+				of the most potent neurotrophic factors for dopaminergic neurons. Therefore,
+				the<lb/> neuroprotective capacity of RET activation to override the apoptotic
+				program in neurodegenerative diseases, like in dying midbrain<lb/> dopaminergic
+				neurons in Parkinson's disease, is of great interest. This article reviews the
+				recent international patents on modulation of<lb/> RET kinase activity by
+				small-molecule and peptide-based agonists and antagonists.<lb/></div>
+
+			<keywords>Keywords: RET, GDNF-family ligands, GDNF-family receptors, small-molecule
+				kinase inhibitors, Gas1, Gral.<lb/></keywords>
+			
+			<note type="other">1872-2083/08 $100.00+.00</note>
+			<space dim="horizontal"/>
+			<note type="copyright">© 2008 Bentham Science Publishers Ltd.<lb/></note>
+			
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="616"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Inductive Constraint Logic <lb/>and the Mutagenesis Problem <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Wim Van Laer Hendrik Blockeel <lb/>Luc De Raedt <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science, Katholieke Universiteit Leuven <lb/></affiliation></byline>
+		<address>Celestijnenlaan 200A, B-3001 Heverlee, Belgium <lb/></address>
+		<email>Email:{WimV,Hendrik,LucDR}@cs.kuleuven.ac.be <lb/></email>
+		<div type="abstract">Abstract <lb/>A novel approach to learning first order logic formulae from positive and negative examples is incorporated in a system named ICL (Inductive Constraint <lb/>Logic). In ICL, examples are viewed as interpretations which are true or false <lb/>for the target theory, whereas in present inductive logic programming systems, <lb/>examples are true and false ground facts (or clauses). Furthermore, ICL uses a <lb/>clausal representation, which corresponds to a conjunctive normal form where <lb/>each conjunct forms a constraint on positive examples, whereas classical learning <lb/>techniques have concentrated on concept representations in disjunctive normal <lb/>form. <lb/>We present some experiments with this new system on the mutagenesis problem. These experiments illustrate some of the differences with other systems, <lb/>and indicate that our approach should work at least as well as the more classical <lb/>approaches. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

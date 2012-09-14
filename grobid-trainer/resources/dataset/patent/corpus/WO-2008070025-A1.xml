@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<patent-document country="WO" doc-number="2008070025" kind="A1" ucid="WO-2008070025-A1" lang="EN" date="20080612" family-id="39259530" date-produced="20090522" status="new"><bibliographic-data><publication-reference fvid="89291059" ucid="WO-2008070025-A1" status="new"><document-id status="new" format="original"><country>WO</country><doc-number>2008070025</doc-number><kind>A1</kind><date>20080612</date></document-id></publication-reference><application-reference ucid="US-2007024736-W" status="new" is-representative="NO"><document-id format="epo" status="new"><country>US</country><doc-number>2007024736</doc-number><kind>W</kind><date>20071203</date></document-id></application-reference><priority-claims status="new"><priority-claim ucid="US-87218306-P" status="new"><document-id format="epo" status="new"><country>US</country><doc-number>87218306</doc-number><kind>P</kind><date>20061201</date></document-id></priority-claim></priority-claims><technical-data status="new"><classifications-ipcr><classification-ipcr status="new">G01R  31/00        20060101ALI20080612BHEP        </classification-ipcr><classification-ipcr status="new">G01R  31/00        20060101CLI20080612BHEP        </classification-ipcr><classification-ipcr status="new">H01J  37/317       20060101AFI20080612BHEP        </classification-ipcr><classification-ipcr status="new">H01J  37/317       20060101CFI20080612BHEP        </classification-ipcr></classifications-ipcr><classification-ecla status="new"><classification-symbol scheme="EC">G01R  31/26P</classification-symbol><classification-symbol scheme="EC">H01L  21/762D8B</classification-symbol></classification-ecla><invention-title lang="EN" load-source="docdb" status="new">METHODS FOR MONITORING ION IMPLANT PROCESS IN BOND AND CLEAVE, SILICON-ON-INSULATOR (SOI) WAFER MANUFACTURING</invention-title><invention-title lang="FR" load-source="docdb" status="new">PROCÉDÉS DE SURVEILLANCE D'UN PROCESSUS D'IMPLANT IONIQUE DANS LA FABRICATION DE PLAQUE DE SILICIUM SUR ISOLANT (SOI) PAR LIAISON ET CLIVAGE</invention-title><citations><patent-citations><patcit ucid="US-7063991-B1" status="new"><document-id format="epo" status="new"><country>US</country><doc-number>7063991</doc-number><kind>B1</kind></document-id><sources><source name="SEA" category="A" created-by-npl="N"/></sources></patcit><patcit ucid="WO-2006099498-A2"  status="new"><document-id format="epo" status="new"><country>WO</country><doc-number>2006099498</doc-number><kind>A2</kind></document-id><sources><source name="SEA" category="X" created-by-npl="N"/></sources></patcit></patent-citations><non-patent-citations><nplcit status="new"><text>DIETER K SCHRODER ET AL:  "REVIEW ARTICLE; Surface voltage and surface photovoltage: history, theory and applications; Surface voltage and surface photovoltage" MEASUREMENT SCIENCE AND TECHNOLOGY, INSTITUTE OF PHYSICS PUBLISHING, BRISTOL, GB, vol. 12, no. 3, 1 March 2001 (2001-03-01), pages R16-R31, XP020063145 ISSN: 0957-0233</text><sources><source name="SEA" category="A"  created-by-npl="N"/></sources></nplcit><nplcit status="new"><text>OKUMURA T ET AL:  "Contactless characterization of surface and interface band-bending in Silicon-On-Insulator (SOI) structures" MATERIALS SCIENCE AND ENGINEERING B, ELSEVIER SEQUOIA, LAUSANNE, CH, vol. 91-92, 30 April 2002 (2002-04-30), pages 182-185, XP004355524 ISSN: 0921-5107</text><sources><source name="SEA"  category="A" created-by-npl="N"/></sources></nplcit></non-patent-citations></citations></technical-data><parties><applicants><applicant format="epo"  status="new"><addressbook><name>BERTUCH ADAM</name><address><country>US</country></address></addressbook></applicant><applicant format="epo" status="new"><addressbook><name>QC SOLUTIONS INC</name><address><country>US</country></address></addressbook></applicant><applicant format="epo" status="new"><addressbook><name>STEEPLES KENNETH</name><address><country>US</country></address></addressbook></applicant><applicant format="epo" status="new"><addressbook><name>TSIDILKOVSKI EDWARD</name> <address><country>US</country></address></addressbook></applicant><applicant format="intermediate" status="new"><addressbook><name>BERTUCH, ADAM</name> </addressbook> </applicant><applicant format="intermediate" status="new"><addressbook><name>QC SOLUTIONS, INC.</name> </addressbook></applicant><applicant format="intermediate" status="new"><addressbook><name>STEEPLES, KENNETH</name></addressbook></applicant><applicant format="intermediate" status="new"><addressbook><name>TSIDILKOVSKI, EDWARD</name></addressbook></applicant></applicants><inventors><inventor format="epo" status="new"><addressbook><name>BERTUCH ADAM</name><address><country>US</country></address></addressbook></inventor><inventor format="epo" status="new"><addressbook><name>STEEPLES KENNETH</name><address><country>US</country></address></addressbook></inventor><inventor format="epo" status="new"><addressbook><name>TSIDILKOVSKI EDWARD</name><address><country>US</country></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>BERTUCH, ADAM</name></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>STEEPLES, KENNETH</name></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>TSIDILKOVSKI, EDWARD</name></addressbook></inventor></inventors></parties></bibliographic-data><abstract lang="EN" source="national office" load-source="docdb" status="new"><p>A method of in-line characterization of ion implant process, during the SOI bond and cleave manufacturing or engineered silicon layer fabrication. In one embodiment, the method includes the steps of illuminating the engineered donor wafer using a modulated light source; performing a non-contact SPV measurement on the silicon wafer; measuring a dynamic charge (Q&lt;SUB&gt;d&lt;/SUB&gt;) in response to implant induced crystal damage; and determining the accuracy and uniformity of the value of an implant parameter in response to the dynamic charge. In another embodiment, In another embodiment, the step of determining utilizes the equation V&lt;SUB&gt;PV&lt;/SUB&gt; 'kTF/?Q&lt;SUB&gt;net&lt;/SUB&gt; where V&lt;SUB&gt;PV&lt;/SUB&gt; is photo voltage generated in the implanted wafer, F is a light flux of the modulated light source, T is temperature of the wafer, and ? is a light modulation frequency of the modulated light source.</p></abstract><abstract lang="FR" source="national office" load-source="docdb" status="new"><p>La présente invention concerne un procédé de caractérisation en ligne de processus d'implant ionique, durant la fabrication de SOI par liaison et clivage ou la fabrication d'une couche de silicium modifiée. Dans un mode de réalisation, le procédé inclut les étapes suivantes : illumination de la plaque donneuse modifiée à l'aide d'une source lumineuse modulée ; réalisation d'une mesure SPV sans contact sur la plaque de silicium ; mesure d'une charge dynamique (Q&lt;SUB&gt;d&lt;/SUB&gt;) en réponse aux dommages du cristal induits par l'implant ; et détermination de l'exactitude et de l'uniformité de la valeur d'un paramètre d'implant en réponse à la charge dynamique. Dans un autre mode de réalisation, l'étape de détermination utilise l'équation V&lt;SUB&gt;PV&lt;/SUB&gt; ' kTF/?Q&lt;SUB&gt;net&lt;/SUB&gt;. Dans ladite équation, V&lt;SUB&gt;PV&lt;/SUB&gt; est le photovoltage généré dans la plaque implantée, F est un flux lumineux de la source lumineuse modulée, T est la température de la plaque, et ? est une fréquence de modulation lumineuse de la source lumineuse modulée.</p></abstract><description lang="EN" load-source="epoque" status="new"><p><pre xml:space="preserve" listing-type="other">
+Methods for Monitoring Ion Implant Process in Bond and Cleave, Silicon-On- Insulator (SOI) Wafer Manufacturing
+
+Cross Reference to Related Applications This application claims priority to and the benefit of <ref type="patent">U.S. provisional patent application no. 60/872,183</ref>, filed on December 1, 2006, the entire disclosure of which is incorporated by reference herein.
+
+Field of the Invention
+
+The invention relates to the field of semiconductor wafer manufacturing and testing, and more specifically, to a method for characterizing ion implant in semiconductor wafers during the bond and cleave manufacturing of engineered substrate wafers.
+
+Background of the Invention
+
+The process of manufacturing silicon chips typically includes a step of implanting ions in a silicon substrate.
+ During the implantation process, implanted ions create, in the silicon substrate, areas of crystalline damage associated with displaced lattice atoms. These knocked out atoms make so-called Frenkel pairs, which consist of a silicon atom in an interstitial site and a vacancy. Vacancies and interstitial atoms are crystalline point defects that have energies far below the edges of the silicon band gap. Therefore, these defects are very effective traps and recombination centers for the mobile charge carriers, resulting in a reduction of carrier lifetime. The density distribution of these point defects is related to the implant process parameters, such as implantation dose, energy and angle.
+
+Because substantial defects on a wafer can cause the wafer to be unusable, there is a need of a system and method for characterizing implanted ion concentration in an engineered donor wafer.
+ The disclosed invention provides a solution for this need.
+
+Summary of the Invention
+
+In one aspect, the invention relates to a method of characterizing implanted ion concentration in an engineered donor wafer. In one embodiment, the method includes the steps of illuminating the engineered donor wafer using a modulated light source; performing a non-contact SPV measurement on the silicon wafer; measuring a dynamic charge (Qd) in response to implant induced crystal damage; and determining the accuracy and uniformity of the value of an implant parameter in response to the dynamic charge.
+
+In another embodiment, the engineered donor wafer is a silicon-on-insulator wafer. In another embodiment, the step of illuminating takes place before a bond and cleave process. In another embodiment, ion is selected from the group consisting of hydrogen, helium, argon, silicon, germanium and oxygen.
+ In another embodiment, the implanted wafer is measured through a layer selected from the group consisting of a surface oxide layer, a nitride layer and a photo-resist layer. In another embodiment, the implant parameter is selected from the group consisting of implant dose, energy and angle. In another embodiment, the step of determining utilizes the equation VPV " kT[Phi]/[omega]Qnet where Vpv is photo voltage generated in the implanted wafer, [Phi] is a light flux of the modulated light source, T is temperature of the wafer, and [omega] is a light modulation frequency of the modulated light source.
+ In another embodiment, the implant parameter is uniformity and the method further includes the step of measuring the thermal effects of implant process non-uniformities.
+
+In another aspect, the invention relates to a system for characterizing implanted ion concentration in an engineered donor wafer. In one embodiment, the system includes a modulated light source adapted to illuminate the engineered donor wafer; a SPV measurement component adapted to perform a non-contact SPV measurement on the silicon wafer; a charge measurement component adapted to measure a dynamic charge (Qd) in response to implant induced crystal damage; and a processor adapted to determine the accuracy and uniformity of the value of an implant parameter in response to the dynamic charge. In another embodiment, a system for characterizing implanted ion concentration in an engineered donor wafer is provided.
+ The system includes means for illuminating the engineered donor wafer; means for performing a non-contact SPV measurement on the silicon wafer; means for measuring a dynamic charge (Qd) in response to implant induced crystal damage; and means for determining the accuracy and uniformity of the value of an implant parameter in response to the dynamic charge. Brief Description of the Drawings
+
+These embodiments and process aspects of this invention will be readily apparent from the detailed description below and the appended drawings, which are meant to illustrate and not to limit the invention.
+ The process steps for SOI bond and cleave manufacturing include implant monitoring after the implant step using the developed ac-SPV technique.
+
+Figure 1 is a schematic representation of one form of apparatus which may be employed to measure the photo-induced surface voltage of a specimen of semiconductor material in accordance with the present invention;
+ Figure 2 is a series of diagrams presenting an in-line ac-SPV measurement scheme for a bond and cleave technique, SOI wafer manufacturing process, according to an embodiment of the invention;
+
+Figure 3 is a diagram illustrating the correlation of measured dynamic charge (Qd) to implant dose for hydrogen ion implantation; and Figure 4 is a diagram illustrating the correlation of measured dynamic charge (Qd) to implant dose for helium ion implantation.
+
+Detailed Description
+
+The present invention will be more completely understood through the following detailed description, which should be read in conjunction with the attached drawings. In this description, like numbers refer to similar elements within various embodiments of the present invention. Within this detailed description, the claimed invention will be explained with respect to preferred embodiments.
+ However, the skilled artisan will readily appreciate that the methods and systems described herein are merely exemplary and that variations can be made without departing from the spirit and scope of the invention.
+
+In general, the invention is related to a method of characterizing ion implanted semiconductor wafers during the bond and cleave manufacturing process for silicon- on-insulator (SOI) wafers. This characterization can be used to classify SOI wafers as either suitable or unsuitable for further processing toward the production of silicon based electrical circuits. The application of an alternating current surface photo voltage (ac-SPV) technique for ion implantation monitoring is based substantially on a photo carrier lifetime measurement. By introducing light into a wafer, parameters can be measured that correlate with the implanted ion concentration present in the wafer.
+ In one aspect of the invention, the method of characterizing ions implanted into a silicon donor wafer during SOI or an engineered substrate manufacturing is similar to the ac-SPV characterization of ion species, such as boron, phosphorus, and arsenic, which are traditionally used in the ion implantation step for silicon chip manufacturing.
+
+The SPV-based lifetime measurement, as described in <ref type="patent">U.S. Patent No. 6,91 1,350</ref>, yields information about defect concentration and in-depth distribution that allows monitoring of all the critical parameters of the implantation process. The only known limitation to the method is related to the damage saturation regime when the defect concentration no longer follows the change in the implantation dose. In that case, an annealing step is required for the application of the SPV technique for implant monitoring. In the SPV method, as disclosed in <ref type="patent">U.S.
+ Patent No. 6,911,350</ref>, a beam of light is directed at a region of the surface of a specimen of semiconductor material and the photo-induced change in electrical potential at the surface is measured. The wavelength of the illuminating light beam is selected to be shorter than the wavelength of light corresponding to the energy gap of the semiconductor material undergoing testing. The intensity of the light beam is modulated, with both the intensity of the light and the frequency of modulation being selected such that the resulting AC component of the induced photovoltage is directly proportional to the intensity of light and inversely proportional to the frequency of modulation.
+
+When measured under these conditions, the AC component of the surface photovoltage (SPV), designated &lt;"&gt; , is proportional to the reciprocal of the c semiconductor space-charge capacitance, " .
+ When the surface of the specimen is illuminated uniformly, the relationship between the surface photovoltage (SPV) and the space-charge capacitance is given, at sufficiently high frequencies of light modulation, by the relation:
+
+&lt;[kappa]&gt;f where ^ is the incident photon flux, R is the reflection coefficient of the semiconductor specimen,/is the frequency at which the light is modulated, and q is the elementary charge. The constant K is equal to 4 for a square wave modulation of the light intensity and is equal to 2[pi] for sinusoidal modulation. In the above referenced patent, only a uniform configuration is considered in which the area of the sensor is at least the same size as the semiconductor wafer and the entire area of the specimen is uniformly illuminated.
+ When only a portion of the semiconductor specimen surface is coupled to the sensor, that is, when the sensor is smaller than the wafer, and when the semiconductor surface uniformly illuminated in [delta]V that area is coupled to the sensor, the surface photo voltage, &lt;!&gt; , may be determined [sigma]r[tau]r from the measured signal, &lt;m&gt; , according to the relationships:
+
+Re([delta]Vs) = Re([delta]Vm)- (\ + CL/Cp)+ \m{[delta]Vm).
+ ([omega] - Cp - RL)-&lt;[&gt;
+
+lm([delta]V,) = lm([delta]Vm) (l + CL/Cp)- R4[delta]Vm )i[omega] - Cp - RL)-&lt;1&gt;
+
+where &lt;e&gt;^ *' and &lt;m&gt;^ " ' are the real and imaginary components of the voltage,
+
+Q &lt;[omega]&gt; is an angular frequency of light modulation, &lt;p&gt; is the capacitance between sensor
+
+C R and the wafer, and &lt;L&gt; and /- are the input capacitance and resistance, respectively, of the electronic detection system.
+
+From the sign of the imaginary component, the conductivity type may be determined.
+ If the measurement is calibrated for a p-type material, then the sign of the imaginary component will change if the material is n-type.
+
+W Using above relationships, the depletion layer width, &lt;d&gt; , is given by equation:
+
+ &lt;EMI ID=6.1&gt; 
+
+where &lt;[psi]&gt;" - R) &gt; is the intensity of light absorbed in the semiconductor, q is the elementary charge, and &lt;s&gt; is the semiconductor permittivity. r In addition to the space-charge capacitance, &lt;sc&gt; , the measurement of the surface photovoltage can be used to determine the surface charge density, ^" , the doping concentration, &lt;sc&gt; , and the surface recombination lifetime, &lt;[tau]&gt; , using the following
+
+Q relationships. The space charge capacitance, &lt;sc&gt; , is proportional to the reciprocal of
+
+W the semiconductor depletion layer width, &lt;d&gt; , according to the relationship:
+
+ &lt;EMI ID=7.1&gt; 
+
+where * is the semiconductor permittivity.
+ The density of space charge, *^&lt;sc&gt; , is in turn described by equation:
+
+Qsc = qNscWd where q is an elementary charge and the net doping concentration in the space-charge region, N &lt;sc&gt; , is positive in an n-type material and negative in a p-type material. In addition, since the surface charge density, ^&lt;sc&gt;, is given by the expression:
+
+the surface charge density is easily determined from the space charge density.
+ Further, if an inversion layer can be created at the wafer surface, the depletion layer
+
+W N width, &lt;d&gt; , under inversion conditions is related to the net doping concentration, &lt;sc&gt; , according to the relationship:
+
+ &lt;EMI ID=7.2&gt; 
+
+where kT is the thermal energy and &lt;n&gt;&gt; is the intrinsic concentration of free carriers in the semiconductor.
+
+Finally, in the case of ion implanted silicon wafers, it is found that, especially in as- implanted conditions, carrier lifetime is inversely proportional to implant damage. In very low dose implanted cases, free carrier concentration is reduced. With heavy dose implant application, increased crystal damage gives a photovoltage signal dominated by photo carrier lifetimes rather than free carrier concentration. In some cases carrier lifetime is the dominant factor in the measured SPV signal.
+ After the wafers are annealed, the substitutional site implanted dopant contributes to the net carrier concentration, &lt;sc&gt; which is derived from SPV. For as-implanted p or n-type wafers the charged defects density is a measure of implant dose/energy. For implanted/annealed silicon wafers the measured quantities give the doping concentration, which is directly correlated to implanted dose/energy.
+
+Figure 1 illustrates an embodiment of an apparatus 30 for measuring the photo- induced voltage at the surface of a specimen 31 of semiconductor material. The apparatus includes a source of monochromatic light 32, typically a laser and an arrangement for controlling the intensity of the light output. The beam of light is directed through a modulator 33 to impinge on a region of the specimen 31.
+ The modulated light impinges on and passes through a partially transmissive conductive reference electrode 35 which is spaced from the specimen 31 by an insulating medium such as a gas or a vacuum. The specimen 31 is connected through an adjustable DC biasing source 36 to ground. The reference electrode 35 is connected to the input of a high input impedance buffer amplifier 40. The output of the buffer amplifier 40 is connected to a lock-in amplifier 41. The outputs of the buffer amplifier 40 and the lock-in amplifier 41 and the specimen 31 are connected to an X-Y recorder 42.
+
+The high dose implantation (&gt;lxl[theta]&lt;16&gt;at/cm&lt;2&gt;) of hydrogen, helium or a hydrogen/helium mixture is used primarily for manufacturing of the SOl structures.
+ The characteristic crystalline damage associated with this process differs, both quantitatively and qualitatively, from the type of damage induced by the species traditionally used in silicon-chip process technology. The quantitative difference is related to the small atomic mass of the hydrogen atom that makes the number of implanted ions comparable to the number of implant-induced defects. As a result, modeling of the hydrogen-induced crystalline damage would be incomplete without taking into account interstitial hydrogen atoms. Significant qualitative difference is related to the types of dominant defects and their dependencies on the implant conditions.
+ In contrast to lower dose implants where a direct correlation exists between the concentration of point defects and the implanted dose, the typical SOI implant process (H2 dose ranges from 2xlO&lt;16&gt; to lxl[theta]&lt;17&gt;at/cm&lt;2&gt;) has a density of crystalline point defects that do not correlate to the implant dose. The major characteristic defects created in this process are the (point defect) vacancy-hydrogen complexes, with the number of vacancies and hydrogen atoms in each complex varying from 1 to 4. The density of these defects, especially of the multi-vacancy complexes, is proportional to implant dose and very sensitive to the thermal budget. That is, even low temperatures ¯ 100 &lt;0&gt;C can change the defect complex configuration.
+
+Referring to Figure 2, a method of characterization of ion implanted semiconductor wafer during Smartcut(TM) SOI manufacturing process is illustrated.
+ Ion (hydrogen, helium, or a combination of hydrogen/helium) implantation is an integral step in manufacturing of layer transfer or "bonded" SOI structures - characteristic of layer transfer techniques (Step 1). Other SOI or engineered substrate fabrication techniques are available and include, but are not limited to the following, Smartcut(TM), NanoCleave(TM), and Eltran(TM). The proposed non-contact photoelectric measurement method is based on ac-SPV technology (Step 2). This aspect of the invention allows monitoring of implant characteristics of a donor wafer through the SiO2 surface oxide following the implantation step, but before the wafer-bonding step (Step 3). The ion implantation step leads to formation of a weakened layer that is stressed to cause separation of the thin silicon film from a thick substrate donor wafer (Step 4).
+ Therefore, it is critical to control the implant ion concentration across an entire wafer to ensure proper separation.
+
+The application of an ac-SPV technique to the monitoring of the hydrogen- implanted semiconductor requires different physical model and algorithm than for other traditional wafer applications. Specifically, the electron hole pairs induced by light generate photo-voltage signals at the surface and implant/substrate interfaces. The surface photo-signal in implanted p-type silicon is reduced due to the effect of electrical neutralization of doping ions by implanted hydrogen. However, the interface related photo-voltage in case of the hydrogen implant can be strong enough due to the relatively high hydrogen density and characteristic property to concentrate around vacancies and dopants creating charged areas.
+ In high frequency light modulation, a photo-voltage associated with implant/substrate interface is inversely proportional to a net charge density. In the implanted case, with a non-uniform depth profile of charge associated with implant defects a net charge density (Qnet) is measured in the implanted region rather than Qsc. Qnet is a Qsc measured throughout the SOI depth. vPV " kT[Phi]/[omega]Qna , where [Phi] is a light flux, T is temperature of the wafer, and [omega] is a light modulation frequency. In one embodiment, the modulation frequency is 33 kHz, with low intensity ultraviolet irradiation at room temperature.
+ As illustrated by Figures 3 and 4, the dynamic charge is proportional to the density of characteristic defect complexes, which is in turn proportional to the implanted dose.
+
+Furthermore, the spatial distribution of the characteristic defect complexes is correlated to implant energy and angle. Therefore, by measuring the dynamic charge the method allows key implant process parameters to be monitored. The important conditions of the measurement protocol include control of temperature during implantation and measurement processes and optimization of the probing light wavelength and intensity. The temperature control is critical due to the low activation energy of hydrogen in silicon. That is, higher temperatures may result in redistribution of hydrogen ions and change in the net charge density.
+ The optimization of the probing light intensity is driven by two requirements: signal linearity and signal strength (signal-to-noise ratio). The selection of the proper light energy is related to the light absorption profile of the material. Due to the presence of defect-related electric fields, a significant amount of photo carriers must be generated in the vicinity of the peak of the distribution of implanted ions in order to contribute to the interface photo-voltage.
+
+Variations, modifications, and other implementations of what is described herein will occur to those of ordinary skill in the art without departing from the spirit and scope of the invention as claimed. Accordingly, the invention is to be defined not by the preceding illustrative description but instead by the spirit and scope of the following claims.
+
+What is claimed is:
+</pre></p></description><claims lang="EN" load-source="epoque" status="new"><claim num="1"><claim-text>Claims 
+
+
+</claim-text><claim-text>1. A method of characterizing implanted ion concentration in an engineered donor wafer comprising the steps of: illuminating the engineered donor wafer using a modulated light source; performing a non-contact SPV measurement on the silicon wafer; measuring a dynamic charge (Qd) in response to implant induced crystal damage; and determining the accuracy and uniformity of the value of an implant parameter in response to the dynamic charge. 2. The method of claim 1 wherein the engineered donor wafer is a silicon-on- insulator wafer. 
+
+
+</claim-text><claim-text>3. The method of claim 1 wherein the ion is selected from the group consisting of hydrogen, helium, argon, silicon, germanium and oxygen. 
+
+
+</claim-text><claim-text>4. The method of claim 1 wherein the ion is an ion used for the bond and cleave technique. 
+
+
+</claim-text><claim-text>5. The method of claim 1 wherein the implanted wafer is measured through a layer selected from the group consisting of a surface oxide layer, a nitride layer and a photo-resist layer. 
+
+
+</claim-text><claim-text>6. The method of claim 1 wherein the implant parameter is selected from the group consisting of implant dose, energy and angle. 
+
+
+</claim-text><claim-text>7. The method of claim 1 wherein the step of determining utilizes the equation VpV " kT[Phi]/[omega]Qnet where Vpv is photo voltage generated in the implanted wafer, [Phi] is a light flux of the modulated light source, T is temperature of the wafer, and [omega] is a light modulation frequency of the modulated light source. 8. The method of claim 1 wherein the implant parameter is uniformity and the method further comprises a step of measuring the thermal effects of implant process non-uniformities. 
+
+
+</claim-text><claim-text>9. A system for characterizing implanted ion concentration in an engineered donor wafer, the system comprising: a modulated light source adapted to illuminate the engineered donor wafer; a SPV measurement component adapted to perform a non-contact SPV measurement on the silicon wafer; a charge measurement component adapted to measure a dynamic charge (Qd) in response to implant induced crystal damage; and a processor adapted to determine the accuracy and uniformity of the value of an implant parameter in response to the dynamic charge. 
+
+
+</claim-text><claim-text>10. The system of claim 9 wherein the engineered donor wafer is a silicon-on- insulator wafer. 1 1. The system of claim 9 wherein the engineer donor wafer is illuminated before being subjected to a bond and cleave process. 
+
+
+</claim-text><claim-text>12. The system of claim 9 wherein the ion is selected from the group consisting of hydrogen, helium, argon, silicon, germanium and oxygen. 
+
+
+</claim-text><claim-text>13. The system of claim 9 wherein the implanted wafer is measured through a layer selected from the group consisting of a surface oxide layer, a nitride layer and a photo-resist layer. 
+
+
+</claim-text><claim-text>14. The system of claim 9 wherein the implant parameter is selected from the group consisting of implant dose, energy and angle. 
+
+
+</claim-text><claim-text>15. The system of claim 9 wherein the processor determines the accuracy and uniformity of the value of the implant parameter by utilizing the equation vpv " kT[Phi]/[omega]Qmt where Vpv is photo voltage generated in the implanted wafer, [Phi] is a light flux of the modulated light source, T is temperature of the wafer, and [omega] is a light modulation frequency of the modulated light source. 
+
+
+</claim-text><claim-text>16. The system of claim 9 wherein the processor measures the thermal effects of implant process non-uniformities. 
+
+
+</claim-text><claim-text>17. A system for characterizing implanted ion concentration in an engineered donor wafer, the system comprising: means for illuminating the engineered donor wafer; means for performing a non-contact SPV measurement on the silicon wafer; means for measuring a dynamic charge (Qd) in response to implant induced crystal damage; and means for determining the accuracy and uniformity of the value of an implant parameter in response to the dynamic charge. 18. The system of claim 17 wherein the ion is selected from the group consisting of hydrogen, helium, argon, silicon, germanium and oxygen. 
+
+
+</claim-text><claim-text>19. The system of claim 17 wherein the implanted wafer is measured through a layer selected from the group consisting of a surface oxide layer, a nitride layer and a photo-resist layer. 20. The system of claim 17 wherein the implant parameter is selected from the group consisting of implant dose, energy and angle. 
+
+
+</claim-text><claim-text>21. The system of claim 17 wherein the means for determining the accuracy and uniformity of the value of the implant parameter utilizes the equation 
+
+</claim-text><claim-text>VpV " kT[Phi]/[omega]Qaa where Vpv is photo voltage generated in the implanted wafer, [Phi] is a light flux of the modulated light source, T is temperature of the wafer, and [omega] is a light modulation frequency of the modulated light source. 
+
+
+</claim-text><claim-text>22. The system of claim 17 wherein the means for measuring measures the thermal effects of implant process non-uniformities.
+</claim-text></claim></claims><copyright>User acknowledges that Matrixware and its third party providers retain all right, title and interest in and to this xml under applicable copyright laws.  User acquires no ownership rights to this xml including but not limited to its format.  User hereby accepts the terms and conditions of the Licence Agreement set forth at http://www.matrixware.com/legal/marec/data_licence.html</copyright></patent-document>

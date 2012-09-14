@@ -1,0 +1,62 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005170"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<lb/>
+			<reference>Ann. N.Y. Acad. Sci.</reference> 
+			<idno>ISSN 0077-8923<lb/></idno>
+
+			<note type="other"> ANNALS OF THE NEW YORK ACADEMY OF SCIENCES<lb/> Issue: Innate
+				Inflammation and Stroke<lb/>
+			</note>
+			<docTitle>
+				<titlePart> Metalloproteinase and stroke infarct size: role for<lb/>
+					anti-inflammatory treatment?<lb/></titlePart>
+			</docTitle>
+
+			<byline>
+				<docAuthor>Anna Morancho, Anna Rosell, Lidia García-Bonilla, and Joan
+					Montaner<lb/></docAuthor>
+			</byline>
+
+			<byline>
+				<affiliation>Neurovascular Research Laboratory, Neurology Department, Hospital
+					Universitari Vall d'Hebron, Institut de Recerca (VHIR), Universitat Autonoma de
+					Barcelona, Spain<lb/></affiliation>
+			</byline>
+
+			<note type="other">Address for correspondence:</note>
+			<address>Joan Montaner, Passeig Vall d’Hebron 119-129 08035, Barcelona, Spain.</address>
+			<email>31862jmv@comb.cat<lb/></email>
+
+
+			<div type="abstract"> Deregulation of matrix metalloproteinases (MMPs), the largest
+				class of human proteases, has been implicated in<lb/> brain damage in both animal
+				and human studies. Some MMPs are elevated after stroke (both in plasma and in<lb/>
+				brain tissue), and their expression is enhanced by t-PA during thrombolysis related
+				to hemorrhagic transformation<lb/> events. Although the exact cellular source of
+				MMPs remains unknown, brain endothelium, astrocytes, neurons,<lb/> and
+				inflammatory-activated cells, such as neutrophils, may release MMP-2, MMP-3, MMP-8,
+				MMP-9, MMP-10,<lb/> and/or MMP-13. Neurovascular perturbations occurring after
+				stroke lead to blood–brain barrier leakage, edema,<lb/> hemorrhage, leukocyte
+				infiltration, and progressive inflammatory reactions to brain injury over hours or
+				even days<lb/> after the initial stroke. Synthesized MMP inhibitors and several
+				compounds used for stroke secondary prevention,<lb/> such as anti-inflammatory
+				drugs, might decrease MMPs and improve the acute treatment of human brain
+				ischemia<lb/> without compromising the beneficial effects of matrix plasticity
+				during stroke recovery.<lb/></div>
+
+			<keywords>Keywords: stroke; biomarkers; ischemia; thrombolysis;
+				metalloproteinases<lb/></keywords>
+
+			<idno>doi: 10.1111/j.1749-6632.2010.05734.x<lb/></idno>
+			<reference>Ann. N.Y. Acad. Sci. 1207 (2010) 123–133</reference>
+			<note type="copyright">&#169; 2010 New York Academy of Sciences.</note>
+
+
+		</front>
+	</text>
+</tei>

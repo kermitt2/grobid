@@ -1,0 +1,19 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="unknown"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Distributed Pipeline Scheduling: End-to-End Analysis of <lb/>Heterogeneous, Multi-Resource Real-Time Systems <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Saurav Chatterjee and Jay Strosnider <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Electrical &amp; Computer Engineering <lb/>Carnegie Mellon University <lb/></affiliation></byline>
+		<address>Pittsburgh, PA 15213 <lb/></address>
+		<note type="grant">This research was supported in part by a grant from the Office <lb/>of Naval Research, in part by a grant from the Naval Research <lb/>and Development Laboratory, and in part by a grant from <lb/>Siemens Corporate Research. <lb/></note>
+		<note type="reference">In 15th IEEE International Conference on Distributed Computing Systems, May 1995. <lb/></note>
+		<div type="abstract">Abstract <lb/>This paper presents an hierarchical end-to-end <lb/>analysis technique that decomposes the very complex <lb/>heterogeneous multi-resource scheduling problem into <lb/>a set of single resource scheduling problems with well <lb/>defined interactions. We define heterogeneity both in <lb/>resource types, e.g., CPU, and in scheduling policies, <lb/>e.g., rate-monotonic scheduling. This analysis <lb/>technique is one phase of our systems integration <lb/>framework for designing large-scale, heterogeneous, <lb/>distributed real-time systems whose timing properties <lb/>can be strictly controlled and analyzed. This approach, <lb/>denoted the Distributed Pipelining Framework, <lb/>exploits the natural pipelining execution pattern found <lb/>in a large number of continuous (periodic) applications <lb/>executing over heterogenous resources. A teleconference application is used in this paper to show the <lb/>utility of the approach. <lb/></div>
+		<div type="intro">1. Introduction</div>
+		</front>
+</text>
+</tei>

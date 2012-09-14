@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="485"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<byline><docAuthor>Joseph D. Darcy <lb/></docAuthor></byline>
+		<idno>CS 270 Project Report,</idno>
+		<date>spring 1998 <lb/></date>
+		<docTitle>
+			<titlePart type="main">Narrowing Interval Bounds <lb/></titlePart>
+		</docTitle>
+		<div type="abstract">1. Abstract <lb/>Interval arithmetic is an automated attempt to give guaranteed upper and lower bounds of a numerical <lb/>computation in the face of uncertainly in the input data and floating point roundoff during the calculation. <lb/>While a simple interval equivalent of a rational function can be readily synthesized, the bounds from this <lb/>construction may be too pessimistically large to be useful. This paper surveys a variety of techniques for <lb/>refining the interval bounds. An appendix identifies issues with realizing floating point based interval <lb/>arithmetic on current IEEE 754 compliant processors. <lb/></div>
+		<div type="intro">2. Introduction</div>
+		</front>
+</text>
+</tei>

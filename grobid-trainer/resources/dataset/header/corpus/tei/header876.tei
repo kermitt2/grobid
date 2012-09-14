@@ -1,0 +1,21 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="unknown"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">A Comparative Study of Reliable Error Estimators <lb/>for Pruning Regression Trees <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Lus Torgo <lb/></docAuthor></byline>
+		<byline><affiliation>LIACC/FEP University of Porto <lb/></affiliation></byline>
+		<address>R. Campo Alegre, 823, 2 - 4150 PORTO - PORTUGAL <lb/></address>
+		<note type="phone">Phone : (+351) 2 607 8830 Fax : (+351) 2 600 3654 <lb/></note>
+		<email>email : ltorgo@ncc.up.pt</email>
+		<ptr type="web">WWW : http://www.ncc.up.pt/~ltorgo <lb/></ptr>
+		<div type="abstract">Abstract. This paper presents a comparative study of several methods for estimating <lb/>the true error of treestructured regression models. We evaluate these methods in the <lb/>context of regression tree pruning. Pruning is considered a key issue for obtaining <lb/>reliable treestructured models in a real world scenario. The major step of a pruning <lb/>process consists of obtaining accurate estimates of the error of alternative tree <lb/>models. We evaluate experimentally four methods for obtaining these estimates in <lb/>twelve domains. The goal of this evaluation was to characterise the performance of <lb/>the methods in the task of selecting the best possible tree among the set of trees <lb/>considered during pruning. The results of the comparison show that certain <lb/>estimators lead to poor decisions in some domains. The Cross Validation variant that <lb/>we have proposed achieved the best results on the setups we have considered. <lb/></div>
+		<keywords>Keywords : Machine Learning, Regression Trees, Pruning methods. <lb/></keywords>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

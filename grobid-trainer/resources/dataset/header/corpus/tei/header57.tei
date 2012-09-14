@@ -1,0 +1,16 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="58"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Domain-specific Information Browsers for Man Page, File, and Font * <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Thomas A. Phelps <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Electrical Engineering and Computer Science <lb/>Computer Science Division <lb/>  University of California, Berkeley <lb/></affiliation></byline>
+		<div type="abstract">Abstract <lb/>The task of information browsers is (1) to aid in navigating through a <lb/>large database to locate the item of interest and (2) to inspect or otherwise <lb/>manipulate this item once found. This document describes three experiments in constructing tools for information browsing: TkMan for UNIX <lb/>manual pages, NBT for files in a hierarchical file system, and FoSel for <lb/>bitmap fonts. Each exploits the large-scale natural organization of data <lb/>and the fine-grained structure of each datum with a graphical user interface to provide a powerful yet intuitive tool. The lessons learned in implementing the browsers point to general principles that should guide the <lb/>design of all information browsers. <lb/></div>
+		<div type="intro">1 Domain-specific Information Browsing</div>
+		</front>
+</text>
+</tei>

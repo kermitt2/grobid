@@ -1,0 +1,21 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="648"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Evaluating the Performance of Software Distributed Shared Memory <lb/>as a Target for Parallelizing Compilers <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Alan L. Cox , Sandhya Dwarkadas , Honghui Lu and Willy Zwaenepoel <lb/></docAuthor></byline>
+		<byline><affiliation>Rice University <lb/></affiliation></byline>
+		<address>Houston, TX 77005-1892 <lb/></address>
+		<email>{alc, hhl, willy}@cs.rice.edu <lb/></email>
+		<byline><affiliation>University of Rochester <lb/></affiliation></byline>
+		<address>Rochester, NY14627-0226 <lb/></address>
+		<email>sandhya@cs.rochester.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>In this paper, we evaluate the use of software distributed <lb/>shared memory (DSM) on a message passing machine as <lb/>the target for a parallelizing compiler. We compare this approach to compiler-generated message passing, hand-coded <lb/>software DSM, and hand-coded message passing. For this <lb/>comparison, we use six applications: four that are regular <lb/>and two that are irregular. <lb/>Our results are gathered on an 8-node IBM SP/2 using the TreadMarks software DSM system. We use the APR <lb/>shared-memory (SPF) compiler to generate the shared memory programs, and the APR XHPF compiler to generate message passing programs. The hand-coded message passing <lb/>programs run with the IBM PVMe optimized message passing library. On the regular programs, both the compiler-generated and the hand-coded message passing outperform <lb/>the SPF/TreadMarks combination: the compiler-generated <lb/>message passing by 5.5% to 40%, and the hand-coded <lb/>message passing by 7.5% to 49%. On the irregular programs, the SPF/TreadMarks combination outperforms the <lb/>compiler-generated message passing by 38% and 89%, and <lb/>only slightly underperforms the hand-coded message passing, differing by 4.4% and 16%. We also identify the factors <lb/>that account for the performance differences, estimate their <lb/>relative importance, and describe methods to improve the <lb/>performance. <lb/></div>
+		<div type="intro">1. Introduction</div>
+		</front>
+</text>
+</tei>

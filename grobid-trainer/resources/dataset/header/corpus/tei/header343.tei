@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="348"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Optimizing Primary Data Caches for Parallel <lb/>Scientific Applications: The Pool Buffer Approach 1 <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Liuxi Yang and Josep Torrellas <lb/></docAuthor></byline>
+		<byline><affiliation>Center for Supercomputing Research and Development <lb/>University of Illinois at Urbana-Champaign,</affiliation></byline>
+		<address>IL 61801 <lb/></address>
+		<email>Email: lyang,torrella@csrd.uiuc.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>Optimizing on-chip primary data caches for parallel scientific applications is challenging because different applications <lb/>exhibit different behavior. Indeed, while some applications <lb/>exhibit good spatial locality, others have accesses with long <lb/>strides that prevent the effective use of cache lines. Finally, <lb/>other applications cannot exploit long lines because they exhibit false sharing. To help processors execute these three <lb/>types of applications efficiently, we introduce the Pool Buffer, <lb/>a small direct-mapped cache accessed in parallel with the primary cache. The function of the pool buffer is to fetch long <lb/>sectors of relatively short cache lines from memory on a miss, <lb/>while only letting into the cache the lines that the processor <lb/>actually references. The pool buffer can also perform sequential prefetching of sectors. <lb/>An evaluation of the pool buffer based on simulations of <lb/>five 32-processor Perfect Club codes yields encouraging results. Adding a pool buffer of one-quarter the size of the <lb/>cache causes a small increase in area while usually achieving <lb/>large reductions in execution time. For example, for a range <lb/>of caches with 32-byte lines, the execution time decreases by <lb/>an average of about 20%. We also show that small 1-Kbyte <lb/>buffers are often large enough to get most of the potential <lb/>benefits. Finally, caches with pool buffers are more effective <lb/>than caches with long lines and no pool buffer. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

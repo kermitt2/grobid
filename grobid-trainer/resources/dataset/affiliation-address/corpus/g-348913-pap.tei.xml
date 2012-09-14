@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../jsp/xmlverbatimwrapper.xsl"?> 
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							
+							<marker>1</marker> 
+							<affiliation>
+								<orgName type="departement">Department of Physics</orgName>,
+								<orgName type="institution">University of South Africa</orgName>,
+								<address>
+									<postBox>P.O. Box 392</postBox>,
+									<settlement>Pretoria</settlement>
+									<postCode>0003</postCode>,<lb/>
+									<country>South Africa<lb/></country>
+								</address>
+							</affiliation>              
+						
+							<marker>2</marker> 
+							<affiliation>
+								<orgName type="institution">South African Nuclear Energy Corporation</orgName>,
+								<address>
+									<postBox>P.O. Box 582</postBox>,
+									<settlement>Pretoria</settlement>
+									<postCode>0001</postCode>,
+									<country>South <lb/>Africa<lb/></country>
+								</address>
+							</affiliation>
+						</author>
+						
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</TEI>

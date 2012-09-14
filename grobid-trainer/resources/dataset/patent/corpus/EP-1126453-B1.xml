@@ -1,0 +1,1863 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<patent-document status="new" lang="EN" ucid="EP-1126453-B1" country="EP" doc-number="1126453" kind="B1" date="20040825"><bibliographic-data><publication-reference fvid="23219148" ucid="EP-1126453-B1" status="new"><document-id status="new" format="original"><country>EP</country><doc-number>1126453</doc-number><kind>B1</kind><date>20040825</date><lang>EN</lang></document-id></publication-reference><application-reference ucid="EP-01301166-A" status="new" is-representative="NO"><document-id format="epo" status="new"><country>EP</country><doc-number>01301166</doc-number><kind>A</kind><date>20010209</date><lang>EN</lang></document-id></application-reference><priority-claims status="new"><priority-claim ucid="JP-2000032911-A" status="new"><document-id format="epo" status="new"><country>JP</country><doc-number>2000032911</doc-number><kind>A</kind><date>20000210</date></document-id></priority-claim></priority-claims><dates-of-public-availability status="new"><intention-to-grant-date><date>20040304</date></intention-to-grant-date></dates-of-public-availability><term-of-grant /><technical-data status="new"><classifications-ipcr><classification-ipcr status="new">G06F  12/14        20060101ALI20060310RMJP        </classification-ipcr><classification-ipcr status="new">G06F  12/14        20060101CLI20060310RMJP        </classification-ipcr><classification-ipcr status="new">G06F  21/00        20060101CLI20060310RMJP        </classification-ipcr><classification-ipcr status="new">G06F  21/24        20060101ALI20060310RMJP        </classification-ipcr><classification-ipcr status="new">G06T   1/00        20060101ALI20060310RMJP        </classification-ipcr><classification-ipcr status="new">G06T   1/00        20060101CLI20060310RMJP        </classification-ipcr><classification-ipcr status="new">G09C   5/00        20060101ALI20060310RMJP        </classification-ipcr><classification-ipcr status="new">G09C   5/00        20060101CLI20060310RMJP        </classification-ipcr><classification-ipcr status="new">G11B  19/02        20060101ALI20060310RMJP        </classification-ipcr><classification-ipcr status="new">G11B  19/02        20060101CLI20060310RMJP        </classification-ipcr><classification-ipcr status="new">G11B  19/04        20060101ALI20060310RMJP        </classification-ipcr><classification-ipcr status="new">G11B  19/04        20060101CLI20060310RMJP        </classification-ipcr><classification-ipcr status="new">G11B  20/00        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">G11B  20/00        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">G11B  20/10        20060101ALI20060310RMJP        </classification-ipcr><classification-ipcr status="new">G11B  20/10        20060101CLI20060310RMJP        </classification-ipcr><classification-ipcr status="new">H04N   1/387       20060101ALI20060310RMJP        </classification-ipcr><classification-ipcr status="new">H04N   1/387       20060101CLI20060310RMJP        </classification-ipcr><classification-ipcr status="new">H04N   5/84        20060101CFI20060310RMJP        </classification-ipcr><classification-ipcr status="new">H04N   5/85        20060101AFI20060310RMJP        </classification-ipcr><classification-ipcr status="new">H04N   5/91        20060101ALI20060310RMJP        </classification-ipcr><classification-ipcr status="new">H04N   5/91        20060101CLI20060310RMJP        </classification-ipcr><classification-ipcr status="new">H04N   7/08        20060101ALI20060310RMJP        </classification-ipcr><classification-ipcr status="new">H04N   7/08        20060101CLI20060310RMJP        </classification-ipcr><classification-ipcr status="new">H04N   7/081       20060101ALI20060310RMJP        </classification-ipcr><classification-ipcr status="new">H04N   7/081       20060101CLI20060310RMJP        </classification-ipcr></classifications-ipcr><classification-ecla status="new"><classification-symbol scheme="EC">G11B20/00P</classification-symbol></classification-ecla><invention-title lang="DE" status="new">Multimedia-Kopiersteuersystem und -verfahren mit einem Datenaufzeichnungsmedium und Wiedergabegerät für optische Platte</invention-title><invention-title lang="EN" status="new">Multimedia copy control system and method using digital data recording medium and optical disc reproducing apparatus</invention-title><invention-title lang="FR" status="new">Systeme et procédé multimedia de commande de copie utilisant un support d'enregistrement de données et appareil de reproduction de disque optique</invention-title><citations /><figures /></technical-data><parties><applicants><applicant format="epo" status="new"><addressbook><name>MATSUSHITA ELECTRIC IND CO LTD</name><address><country>JP</country></address></addressbook></applicant><applicant format="intermediate" status="new"><addressbook><name>MATSUSHITA ELECTRIC INDUSTRIAL CO., LTD.</name><address><country /></address></addressbook></applicant></applicants><inventors><inventor format="epo" status="new"><addressbook><name>YAMADA JIRO</name><address><country>JP</country></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>YAMADA, JIRO</name><address><country /></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>YAMADA, JIRO</last-name><address><street>5-11 Hikaridai 7-chome, Seika-cho</street><city>Soraku-gun, Kyoto-fu 619-0237</city><country>JP</country></address></addressbook></inventor></inventors><assignees><assignee format="original" status="new"><addressbook><last-name>MATSUSHITA ELECTRIC INDUSTRIAL CO., LTD.</last-name><address><street>1006, Oaza-Kadoma</street><city>Kadoma-shi, Osaka 571-8501</city><country>JP</country></address></addressbook></assignee></assignees><agents><agent format="original" status="new"><addressbook><last-name>Rackham, Stephen Neil</last-name><address><street>GILL JENNINGS &amp;amp; EVERY, Broadgate House, 7 Eldon Street</street><city>London EC2M 7LH</city><country>GB</country></address></addressbook></agent></agents></parties><international-convention-data><designated-states><ep-contracting-states><country>DE</country><country>FR</country><country>GB</country></ep-contracting-states></designated-states></international-convention-data></bibliographic-data><abstract lang="EN" source="EPO" status="new"><p>In a multimedia copy control system, digital contents data stored in the digital data recording medium includes a first copy control information of a digital format and a second copy control information of an analog embedded format, and encryption of the reproduction output data from the recording medium is decrypted and judged for each digital contents unit under reproduction, and even in the case of detecting no first copy control information, the reproduction of the digital contents data is controlled based on the second copy control information. &lt;IMAGE&gt;</p></abstract><abstract lang="EN" status="new"><p num="">In a multimedia copy control system, digital contents
+data stored in the digital data recording medium includes
+a first copy control information of a digital format and a
+second copy control information of an analog embedded
+format, and encryption of the reproduction output data
+from the recording medium is decrypted and judged for each
+digital contents unit under reproduction, and even in the
+case of detecting no first copy control information, the
+reproduction of the digital contents data is controlled
+based on the second copy control information.
+<img file="00000001.tif" id="img-EP-1126854-A1-00000001" he="70" wi="161" img-format="tif" img-content="ad" orientation="unknown" inline="no" /></p></abstract><description lang="EN" status="new"><p num="0001">The present invention generally relates to a
+multimedia copy control system and method using a digital data
+recording medium, and in particular, to an optical disc
+reproducing apparatus in combination with a digital data
+recording apparatus, adapted to control duplication of
+digital data, preventing unauthorized duplication of
+contents in an optical disc on which multimedia data including
+digital video data and digital audio data is recorded.</p><p num="0002">In recent years, DVD (Digital Versatile Disc)-Video,
+DVD-Audio and the like with dramatically improved recording
+capacity have come into use in place of conventional laser
+disc and video CD, and a number of movie titles and music titles
+have been released in DVD. High quality digital audio data
+cr digital video data is recorsed on these. DVD-Video standard
+disc and DVD-Audio standard disc, and because the digital data
+is of high quality, AV equipment makers have not taken measure
+of outputting digital signal data from the inside to the
+outside of the equipment from che fear that unauthorized 
+digital copy is made. This is because contents providers who
+produce movie titles and music titles and provide such titles
+would be significantly damaged if digital copying is made and
+a number of unauthorized copy discs appear on the market.</p><p num="0003">In a conventional audio equipment, such as for example,
+CD (compact disc) player or MD (mini disc) player, digital
+audio data is outputted outside the equipment by using
+IEC60958 as a digital I/F. This IEC60958 includes generation
+copy control management information called CGMS (Copy
+Generation Management System) and controls the generation
+copy control management information so that even in the case
+where digital copy is permitted, digital copy of first
+generation is allowed for an unlimited number of times,
+whereas digital copy of second generation is prohibited.
+However, there has been a drawback that if someone tampers
+with a CGMS generation copy control management device of a
+recorder side, digital copies of unlimited generations can
+be easily produced.</p><p num="0004">Fig. 14 shows an outline of a reproducing/recording
+system in a conventional system of DVD. An authorized optical
+disc player 209 comprises: an encryption decoder 203 for
+decoding an encryption from a system steam; a reproduction
+controller 204 for servo-controlling an optical pickup and
+a working mechanism relating to reproduction of an optical
+disc; an AV decoder 206 for converting a system stream to a 
+digital audio or digital video signal; an analogue output
+circuit 207 for converting the digital audio or the digital
+video signal into an analogue signal to output the analogue
+signal; and a digital output circuit 208 for converting the
+digital audio or digital video signal into a signal of a
+definite output format (for example, IEC60958, IEEE1394 and
+the like) to output the digital signal.</p><p num="0005">Meanwhile, an authorized optical disc recorder 216
+comprises: an analogue input circuit 210 for converting an
+analogue audio or video input signal into a digital signal;
+a digital input circuit 211 for converting an input signal
+which is input in a definite digital format into a digital
+audio or digital video signal; an AV encoder 212 for
+converting the digital audio or digital video signal into a
+system stream; a recording controller 213 for servo-controlling
+an optical pickup and an working mechanism
+relating to recording of an optical disc; copy control
+management data (CCI) detector/rewriter 214 for detecting
+copy control management information from the system stream
+and rewriting it as necessary; and an encryption generator
+215 for adding an encryption to the system stream. As for
+an commercially available press disc 201, the authorized
+optical disc player 209 reproduces an audio or video signal,
+which is digitally or analoguely connected to the authorized
+optical disc recorder 216 for creating a copy disc 202. </p><p num="0006">A case of authorized two generation recording in this
+conventional system will be described with reference to Fig.
+15. It is assumed that only digital copy control information
+(hereinafter, referred to as digital CCI or &quot;DGCCI&quot;) is
+recorded in a predetermined form on a commercially available
+press disc 220, and the commercially available press disc 220
+is under the condition with limitation that permits only one
+generation copy. This copy control management information
+is shown by a block 250. In other words, in this commercially
+available press disc 220, C parameters as shown in Fig. 10
+indicate a status &quot;C4=1, C3=0&quot; (hereinafter, expressed by
+&quot;C4C3=10&quot;). When reproducing the commercially available
+press disc 220 with an authorized optical disc player 228,
+a digital output circuit 227 converts a digital audio or
+digital video signal into a signal of a definite digital
+output format to output the digital signal.</p><p num="0007">When the digital signal outputted in the definite
+digital format is inputted to an authorized optical disc
+recorder 235 from the authorized optical disc player 228, the
+inputted digital signal is converted into a digital audio or
+digital video signal by a digital input circuit 230. The
+converted digital audio or digital video signal is then
+converted into a system stream by means of an AV encoder 232.
+With the system stream, a copy control management data (CCI)
+detector/rewriter 233 detects the digital CCI (250) and 
+determines the status to be &quot;C4C3=10&quot; that permits one
+generation copy and thus rewrites the C3 parameter of the
+digital CCI from 0 to 1 to make it into &quot;C4C3=11&quot; so as to
+prohibit copy of second and subsequent generations. An
+encryption generator 234 then adds an encryption to the system
+stream and a recording operation is performed under a control
+of a recording controller 231, whereby a first generation copy
+disc 221 is created. The resultant copy controlling
+management information of this case is shown by a block 251.</p><p num="0008">When reproducing the copy disc 251 by an authorized
+optical disc player 242, even though C parameters of the
+digital CCI have &quot;C4C3=11&quot; indicative of copy being
+prohibited, the reproduction is performed by the optical disc
+player 242 to output a system stream digital signal. The
+reason why the player normally performs a reproducing
+operation without stopping the reproduction even if copy is
+prohibited is that, it is impossible to authorize equipments
+to be connected, and the equipments to be connected to the
+digital output circuit are not limited to the recorder but
+may be an audio/video reproducing equipment with a digital
+input (such as for example, digital TV and digital amplifier) .
+When this reproduced digital signal is inputted to an
+authorized optical disc recorder 249, a copy control
+management data (CCI) detector/rewriter 247 detects the
+digital CCI (251) to determine that copy is prohibited and 
+does not perform a recording operation. As a result of this
+operation, a copy disc of second generation is not created.</p><p num="0009">However, when the copy control management data
+detector/rewriter (233) of the optical disc recorder (235)
+is tampered with, unauthorized copy becomes possible in the
+following manner. A case of unauthorized two generation
+digital recording in the same conventional system will be
+describe with reference to Fig. 16. Likewise the
+commercially available press disc 220, an commercially
+available press disc 260 is under the condition with
+limitation that permits only one generation copy, digital CCI
+satisfies &quot;C4C3=10&quot; and copy controlling management
+information thereof is shown by a bock 293. When reproducing
+the commercially available press disc 260 with an authorized
+optical disc player 269, a digital output circuit 268 converts
+a digital audio or digital video signal into a signal of a
+definite digital output format to output the digital signal.</p><p num="0010">When the digital signal outputted in the definite
+digital format is inputted into an unauthorized optical disc
+recorder 278 from the authorized optical disc player 269, the
+inputted digital signal is converted into a digital audio or
+digital video signal by a digital input circuit 271. The
+converted digital audio or digital video signal is then
+converted into a system stream by means of an AV encoder 273.
+For the system stream, a tampered copy control management data 
+(CCI) detector/rewriter 274 detects the digital CCI (293)
+having &quot;C4C3=10&quot; that permits one generation copy. The
+tampered copy control management data detector/rewriter 274
+tampers the digital CCI data to set for copy free &quot;C4C3=00&quot;
+though it should rewrite the C3 parameter of the digital CCI
+from 0 to 1 to make it into &quot;C4C3=11&quot; so as to prohibit copy
+of second and subsequent generations. Then, an encryption
+generator 276 adds an encryption to the system stream, and
+a recording operation is performed under a control of a
+recording controller 231, whereby a one generation copy disc
+261 of copy free having no limitation for copy is created.
+Copy controlling management information of this case is shown
+by a block 294.</p><p num="0011">Since the digital CCI data of the one generation copy
+disc 261 is tampered to copy free, when this disc 261 is
+reproduced by an authorized optical disc player 285, a digital
+output circuit 284 converts a digital audio or digital video
+signal into a signal of a definite digital output format and
+outputs the digital signal. When the digital signal
+outputted in the definite digital format from the authorized
+optical disc player 285 is inputted to an unauthorized optical
+disc recorder 292, since the digital CCI data is set to copy
+free &quot;C4C3=00&quot;, digital copy discs of unlimited generations
+will be created. Copy control management information at this
+time is shown by a block 295. In other words, in the 
+conventional system, once an unauthorized copy disc is
+created by means of a tampered unauthorized optical disc
+recorder, a copy free disc is to be created because of such
+an unauthorized copy disc even in the case of using an
+authorized optical disc player and authorized optical disc
+recorder.</p><p num="0012">A case of an authorized two generation analogue
+recording in this conventional system will described with
+reference to Fig. 17. Assuming that a commercially available
+press disc 300 is under the condition of copy prohibition,
+digital CCI satisfies &quot;C4C3=11&quot; and copy controlling
+management information thereof is shown by a block 331. When
+reproducing the commercially available press disc 300 with
+an authorized optical disc player 309, an analogue output
+circuit 307 outputs an analogue audio or analogue video signal,
+and a digital output circuit 308 (although not connected to
+a recorder) converts a digital audio or digital video signal
+into a signal of a definite digital output format to output
+the signal.</p><p num="0013">When the analogue signal outputted from the authorized
+optical disc player 309 is inputted to an authorized optical
+disc recorder 316, the inputted analogue signal is converted
+into a digital audio or digital video signal by means of an
+analogue input circuit 310. The converted digital audio or
+digital video signal is then converted into a system stream 
+by means of an AV encoder 313. Since this converted system
+stream does not include digital CCI data, copy management
+information does not exist. Therefore, it is impossible to
+manage copy by means of a copy control management data (CCI)
+detector/rewriter 314. Moreover, since the input signal is
+analogue signal, no encryption is added to the system stream
+by means of an encryption generator 315, and a recording
+controller 312 performs a recording operation without adding
+an encryption, whereby a first generation copy disc 301 having
+no copy management information is created.</p><p num="0014">This copy disc 301 can be reproduced when reproduced
+by means of an authorized disc player 323, and because of
+absence of copy management information, it is possible to
+perform analogue recording or digital recording also by using
+an authorized optical disc recorder 330. That is, in the
+conventional system, even in the case of using an authorized
+optical disc recorder which is not tampered with, by creating
+a copy disc once by performing analogue recording, copy free
+discs allowing digital recording or analogue recording will
+be unlimitedly created even by using an authorized optical
+disc player or authorized optical disc recorder.</p><p num="0015">Now, with reference to Fig. 18, a detail block of the
+reproducing-recording system in the conventional case will
+be explained, and then explanation on digital recording
+operation and analogue recording operation will be made. </p><p num="0016">An optical disc player 352 comprises: a spindle motor
+341 for rotating a disc 340; an optical pickup 342 for reading
+a signal recorded on the disc 340; a mechanism control section
+343 for driving and controlling the spindle motor 341 and the
+optical pickup 342; a signal processing section 344 which
+extracts a system stream digital signal by performing data
+punching or error correcting of the output of the optical
+pickup 342 and supplies a control signal to the mechanical
+control section 343; an encryption decoder 345 for decoding
+an encryption from the system stream; an AV decoder 347 for
+extracting a digital audio or digital video signal from the
+encryption-decoded system stream and decoding the digital
+audio or video signal; a DA converter 348 for converting the
+digital audio or digital video signal into an analogue audio
+or analogue video signal; a digital signal output control
+section 349 for converting the digital audio or digital video
+signal into a signal of a definite output format (for example
+IEC60958, IEEE1394 and the like) to perform output control;
+an analogue signal output control section 350 for performing
+output control of the analogue audio or analogue video signal;
+and a system controller 351 for controlling the digital signal
+output control section 349 and analogue signal output control
+section 350 while reading the digital CCI data, as well as
+for controlling the mechanism control section 343.</p><p num="0017">Meanwhile, an optical disc recorder 365 comprises: a 
+spindle motor 354 for rotating a recordable disc 353; an
+optical pickup 355 for recording a signal encoded by a
+recording signal processing section 357 on the recordable
+disc 353; a mechanism control section 356 for driving and
+controlling the spindle motor 354 and the optical pickup 355;
+the recording signal processing section 357 for outputting
+a recording signal to the optical pickup 355 while adding an
+error correcting code to a system stream on which an
+encryption has been added and performing modulation on the
+same, and for supplying a control signal to the mechanism
+control section 356 at the time of recording; a digital input
+converting section 360 for converting a definite digital
+signal outputted from the outside into a digital audio or
+digital video signal; an AD converter 359 for converting an
+analogue audio or video input signal into a digital signal;
+an AV encoder 361 for encoding the digital audio or digital
+video signal into a system stream; a digital CCI decoder 358
+for detecting digital CCI from the system stream signal; a
+digital CCI encoder 362 for rewriting digital CCI data on the
+system stream signal in accordance with a command of a system
+control section 364; an encryption generator 363 for
+encrypting the system stream by adding an encryption thereto
+and transferring the encrypted system stream to the recording
+signal processing section 357; and a system controller 364
+which reads the digital CCI data and provides the digital CCI 
+encoder 362 with a command to rewrite the digital CCI data,
+as well as controls the mechanism control section 356.</p><p num="0018">Digital recording operation is as follows. The
+optical pickup 342 reads a signal recorded on the disc 340,
+and the signal processing section 344 performs data punching
+and error correcting to extract a system stream digital signal
+while supplying the mechanism control section 343 with a
+control signal. The decoder 345 transfers a system stream
+of which encryption has been decoded from the system stream
+to the AV decoder 347. The AV decoder 347 extracts a digital
+audio or digital video signal from the system stream to decode
+the same, and transfers the decoded signal to the digital
+signal output control section 349. The digital signal output
+control section 349 outputs the digital audio or digital video
+signal while converting it into a signal of a definite output
+format (such as for example, IEC60958 and IEEE1394).</p><p num="0019">A definite digital signal inputted from the outside
+is converted into a digital audio or digital video signal by
+the digital input converting section 360 and transferred to
+the AV encoder 361. The AV encoder 361 encodes the digital
+audio or digital video signal into a system stream. The
+digital CCI decoder 358 detects digital CCI data from the
+system stream signal to transfer this digital CCI data to the
+system control section 364. The system control section 364
+reads the digital CCI data and, when necessary, provides the 
+digital CCI encoder 362 with a command to rewrite the digital
+CCI data on the system stream, and also controls the mechanism
+control section 356. The system stream is encrypted by the
+encryption generator 363, and then the recording signal
+processor 357 adds an error correcting code and perform
+modulation on the encrypted system stream to output a
+recording signal to the optical pickup 355 and record the
+system stream on the recordable disc 353.</p><p num="0020">Analogue recording operation is as follows. The
+optical pickup 342 reads a signal recorded on the disc 340,
+and the signal processing section 344 performs data punching
+and error correcting to extract a system stream digital signal
+while supplying a control signal to the mechanism control
+section 343. The decoder 345 decodes the system stream and
+transfers the decoded system stream to the AV decoder 347.
+The AV decoder 347 extracts a digital audio or digital video
+signal from the system stream to decode the same, and
+transfers the decoded signal to the DA converter 348. The
+DA converter 348 outputs the digital audio or digital video
+signal while converting it into an analogue signal.</p><p num="0021">When inputted to the optical disc recorder 365, the
+analogue signal is converted into a digital audio or digital
+video signal by means of the AD converter 359, and transferred
+to the AD encoder 361. The AD encoder 361 encodes the digital
+audio or digital video signal into a system stream. Since 
+an analogue input signal does not include digital CCI data,
+the digital CCI decoder 358 transfers information to the
+system control section 364 that digital CCI data is not
+detected from the system stream signal. The system control
+section 364 does not issue a command to the digital CCI encoder
+362, does note rewrite the digital CCI data on the system
+stream because there is no digital CCI data, and also controls
+the mechanism control section 356. The system stream is
+encrypted by the encryption generator 363, and then the
+recording signal processor 357 adds an error correcting code
+and perform modulation on the encrypted system stream to
+output a recording signal to the optical pickup 355 and record
+the system stream on the recordable disc 353. The disc on
+which recording is made in the above manner does not include
+digital CCI data.</p><p num="0022">Next, CCI data on the disc file structure of the
+conventional system will be described with reference to Fig.
+19. A disc 369 includes mainly four zones, i.e., VolumeZone,
+AudioZone, VideoZone and OtherZone, and among which, copy
+control management information of audio contents and video
+contents are described on AudioZone 370 and VideoZone 371,
+respectively.</p><p num="0023">AudioZone 370 includes a plurality of audio title sets
+ATS (372), and each audio title set ATS includes an audio title
+set management information storage area ATSI (373)and an 
+audio data object collection AOBS (374). The audio data
+object collection AOBS includes a plurality of audio contents
+as reproduction units and digital CCI data corresponding to
+the respective reproduction units of audio contents. As
+shown in Fig. 19, ATS#1 (372) includes ATSI#1 (373) and AOBS
+(374), andAOBS (374) includes p Track numbers as reproduction
+units of the audio contents. Likewise, also VideoZone 371
+includes digital CCI data with respect to audio/video
+contents for each Chapter which is a reproduction unit.</p><p num="0024">Next, CCI data on the object data structure of the
+conventional system will be described with reference to Fig.
+20. Fig. 20 shows an example of audio data. Audio title set
+collection AOTT_AOBS (380) includes a plurality of audio
+title sets AOTT_AOB (381) . The audio title set AOTT_AOB (381)
+includes a plurality of audio packs A_PCK (382), and further
+each audio pack A_PCK (382) includes PrivateHeader (383) and
+Audio data (385). Then, the Private Header (383) includes
+a region 384 storing the digital CCI. A plurality of audio
+packs A_PCK (382) constitute Audio_Cell (386), and assembly
+of plural Audio_Cell (386) constitutes a Track (387) which
+is a reproduction unit. In this reproduction unit Track (387),
+data of the digital CCI (384) is constant and will not change.
+Conversely, digital CCI data corresponds to a Track unit.</p><p num="0025">In this object data structure, PTS region in the fifth
+stair is for storing reproduction time data, sub_stream_id 
+region is for storing stream types, first-access-unit-pointer
+indicates a first byte of an audio frame of this A-PCT.</p><p num="0026">Such digital CCI data is included in the form of digital
+signal data in object data of a disc, however, there is a
+danger that a person who is familiar with the object data
+structure can easily tamper with the copy control management
+data (CCM) detector/rewriter to thereby tamper with the digital
+CCI data. In addition, there is a problem that once an
+analogue copy is made, copies of consequent generations are
+enabled without limitation. Contents providers who produce and
+provide movie titles and music titles have special feat that
+digital AC contents data that would get to higher quality in
+future will be digitally copied illegally in large extent
+without deteriorating quality thereof.</p><p num="0027"><ref type="patent">EP-A-0969462</ref> describes a multimedia control system for
+controlling a copy of a digital data recording medium in which
+digital contents data is stored and from which the digital
+contents data is reproduced and recorded on another recording
+medium for copying. The digital contents data stored in the
+digital data recording medium includes a first copy control
+information of a digital format and a second copy control
+information of an analogue embedded format, The system
+comprises decryption means decrypting reproduction output data
+from the digital recording medium, first copy control detection
+means detecting the first copy control information from the
+decrypted reproduction data, extraction means extracting the
+digital contents data from the decrypted reproduction data, and
+second copy control detection means detecting the second copy
+control information from the extracted digital contents data. 
+In this system if the first copy control detection means
+detects the first copy control information, the reproduction of
+the digital contents data is controlled based on this, whereas
+if no first copy control information is detected the
+reproduction of the digital contents data is controlled based
+on the second copy control information.</p><p num="0028"><ref type="patent">EP-A-0843471</ref> discloses a somewhat similar system and
+discloses that it can be applied to both video and audio
+information. In this system copying is only permitted if both
+of the first and second copy control information is detected
+and is in agreement with one another or if neither the first or
+second copy control information is present.</p><p num="0029">The present invention has an object to provide a copy
+control system and method of digital data and an optical disc
+reproducing using a specific recording medium, which can
+prevent unauthorized copies from being created unlimitedly even
+if digital CCI data is tampered with by means of an
+unauthorized recorder, or even if an analogue copy is made by
+means of an unauthorized recorder.</p><p num="0030">According to a first aspect of the present invention
+provides a multimedia copy control system for controlling a
+copy of a digital data recording medium in which digital
+contents data is stored and from which the digital contents
+data is reproduced and recorded to another recording medium for
+copying, wherein the digital contents data stored in the
+digital data recording medium includes a first copy control
+information of a digital format and a second copy control
+information of an analog embedded format, comprises: encryption
+judging means decrypting reproduction output data from the 
+digital data recording medium and judging whether the
+reproduction output data is encrypted data; first copy control
+detection means detecting the first copy control information
+from the decrypted reproduction data; extraction means
+extracting the digital audio contents data from the decrypted
+reproduction data; and second copy control detection means
+detecting the second copy control information from the
+extracted digital audio contents data; wherein encryption of
+the reproduction output data from the recording medium is
+decrypted and judged for each digital audio contents unit under
+reproduction, and in the case where the first copy control
+informationis judged to have been encrypted, the reproduction
+of the digital audio contents data is controlled based on the
+first copy control information, and in the case
+where the first
+copy control information is judged not to have been encrypted,
+the reproduction of the digital audio contents data is
+controlled based on the second copy control information.</p><p num="0031">According to a second aspect of the present invention a
+multimedia copy control method for controlling a copy of a
+digital data recording medium in which digital contents data is
+stored and from which the digital contents data is reproduced
+and recorded to another recording medium for copying, wherein
+the digital contents data stored in the digital data recording
+medium includes a first copy control information of a digital
+format and a second copy control information of an analog
+embedded format, comprises: decrypting reproduction output data
+from the digital data recording medium and judging whether the
+reproduction output data is encrypted data; detecting the first 
+copy control information from the decrypted reproduction data;
+extracting the digital audio contents data from the decrypted
+reproduction data; and detecting the second copy control
+information from the extracted digital audio contents data,
+wherein encryption of the reproduction output data from the
+recording medium is decrypted and judged for each digital audio
+contents unit under reproduction, and in the case where the
+first copy control information is judged to have been
+encrypted, the reproduction of the digital audio contents data
+is controlled based on the first copy control information, and
+in the case
+where the first copy control information is judged
+not to have been encrypted the reproduction of the digital
+audio contents data is controlled based on the second copy
+control information.</p><p num="0032">As a result of this system and method, even if digital
+copy controlling management information data is tampered with
+using an unauthorized recorder and an authorized digital copy
+is made, or an unauthorized analogue copy is made by using an
+unauthorized recorder, it is possible to prevent unlimited
+unauthorized copies from being created by adding reproduction
+limitation by judging as an illegal recording medium at the
+time of reproduction.</p><p num="0033">According to a third aspect of the present invention an
+optical disk reproduction device for reproducing an optical
+disk in which digital contents data is stored and from which
+the digital contents data is reproduced for copying, wherein
+the digital contents data stored in the optical disk includes
+a first copy control information of a digital format and a 
+second copy control information of an analogue embedded format,
+comprises: stream data extracting means extracting stream data
+from the reproduction output data of the optical disk;
+encryption decoder means decrypting the extracted reproduction
+stream data and judging whether the reproduction stream data is
+encrypted data; first copy control detection means detecting
+the first copy control information from the decrypted
+reproduction stream data; contents decoder means extracting and
+decoding the digital audio contents data from the decrypted
+reproduction stream data; second copy control detection means
+detecting the second copy control information from the
+extracted digital audio contents data;
+
+analog output control means generating analog contents data
+from the extracted digital audio contents data; digital output
+control means converting the extracted digital audio contents
+data to a specified output format data to be generated
+therefrom; and a system controller receiving the first and
+second copy control information and controlling said analog
+output control means and said digital output control means
+wherein encryption of the reproduction output data from the
+optical disk is decrypted and judged for each digital audio
+contents unit under reproduction, and in the case where the
+first copy control information is judged to have been
+encrypted, the reproduction of the digital audio contents data
+is controlled based on the first copy control information, and
+in the case
+where the first copy control information is judged
+not to have been encrypted, the reproduction of the digital 
+audio contents data is controlled based on the second copy
+control information.</p><p num="0034">According to a fourth aspect of the present invention a
+digital data reproducing and recording system which is a
+connection combination of a recording medium reproduction
+device reproducing digital data of a recording medium and a
+recording medium recording device recording the reproduced
+digital data to another recording medium, adapted to control a
+multimedia copy of the recording medium, wherein the digital
+contents data stored in the recording medium includes a first
+copy control information of a digital format and a second copy
+control information of an analogue embedded format comprises:
+encryption decoder means decrypting reproduction stream data
+output from the recording medium and judging whether the
+reproduction stream data is encrypted data; first copy control
+detection means detecting the first copy control information
+from the decrypted reproduction stream data; contents
+extracting means extracting the digital audio contents data
+from the decrypted reproduction stream data;
+
+second copy control detection means detecting the second copy
+control information from the extracted digital audio contents
+data; analog output control means generating analog contents
+data from the extracted digital audio contents data; and
+digital output control means converting the extracted digital
+audio contents data to a specified output format data to be
+generated therefrom, wherein encryption of the reproduction
+stream data from the recording medium is decryptedand judged
+for each digital audio data under reproduction, and in the case
+where the first copy control information is judged to have been 
+encrypted the reproduction of the digital audio contents data
+is controlled based on the first copy control information, and
+said reproduction device and said recording device are digital-connected
+via said digital output control means so that; the
+digital audio contents data reproduced from said reproduction
+device includes both the first and second copy control
+information, and in the case
+where the first copy control
+information is judged not to have been encrypted the
+reproduction of the digital audio contents data is controlled
+based on the second copy control information, and said
+reproduction device and said recording device are analog-connected
+via said analog output control means so that the
+analog contents data reproduced from said reproduction device
+includes only the second copy control information.</p><p num="0035">As a result of this, even if an unauthorized copy disc is
+created by using an optical disc recorder having illegally
+tampered digital CCI encoder, by making judgement by detecting
+said digital CCI data or said watermark CCI data recorded for
+each digital audio contents unit or digital video contents unit
+under reproduction, it is possible to judge whether each 
+contents unit is legal or illegal. Accordingly, it is
+possible to provide an optical disc copy control system which
+can prevent illegal copy discs from increasing unlimitedly.</p><p num="0036">These and other objects and features of the present
+invention will be readily understood from the following
+detailed description taken in conjunction with preferred
+embodiments thereof with reference to the accompanying drawings,
+in which like parts are designated
+by like reference numerals and in which:.
+<sl><li>Fig. 1 is a block diagram of an outline of a copy control
+system of an optical disc in the first embodiment of the
+present invention;</li><li>Fig. 2 is a block diagram in the case of authorized two
+generation digital recording in the same embodiment;</li><li>Fig. 3 is a block diagram in the case of unauthorized
+two generation digital recording in the same embodiment;</li><li>Fig. 4 is a block diagram in the case of authorized two
+generation analogue recording in the same embodiment.</li><li>Fig. 5 is a block diagram in the case of unauthorized
+two generation analogue recording in the same embodiment;</li><li>Fig. 6 is a block diagram of an optical disc reproducing
+and recording apparatus in the same embodiment;</li><li>Fig. 7 is a view showing CCI data on disc file structure 
+in the same embodiment;</li><li>Fig. 8 is a view showing a relationship between object
+reproduction units and CCI data in the same embodiment;</li><li>Fig. 9 is a view showing CCI data on an object data
+structure in the same embodiment;</li><li>Fig. 10 is an explanatory view showing copy control
+management information in the same embodiment;</li><li>Fig. 11A and Fig. 11B are views for explaining concept
+of digital copy control management information;</li><li>Fig. 12 is a CCI reproduction control flow chart of
+a player in the same embodiment;</li><li>Fig. 13 is an explanatory view showing relationship
+between copy controlling management information and player
+reproduction control in the same embodiment;</li><li>Fig. 14 is a block diagram showing a conventional copy
+control system of an optical disc;</li><li>Fig. 15 is a block diagram of a conventional copy
+control system in the case of authorized two generation
+digital recording;</li><li>Fig. 16 is a block diagram showing a conventional copy
+control system in the case of unauthorized two generation
+digital recording;</li><li>Fig. 17 is a block diagram showing a conventional copy
+control system in the case of two generation analogue
+recording in the conventional art; </li><li>Fig. 18 is a block diagram showing a conventional
+optical disc reproducing and recording apparatus;</li><li>Fig. 19 is a view showing CCI data on disc file structure
+in the conventional art; and</li><li>Fig. 20 is a view showing relationship between object
+reproduction unit and CCI data in the conventional art.</li></sl></p><p num="0037">In the following, embodiments of the present invention
+will be described with reference to Figs. 1 to 13.</p><p num="0038">Before the description proceeds, it is noted here that,
+while the following description will be made for the case of
+using an optical disc as a recording medium storing digital
+audio or digital video data including copy control management
+information, the present invention is not limit to this and
+applicable to comparable media for recording and reproducing
+digital data, for example, tape and semiconductor memory.</p><heading>(First Embodiment)</heading><p num="0039">Fig. 1 shows an outline of a reproducing/recording
+system based on a copy control method of an optical disc
+according to the first embodiment of the present invention.</p><p num="0040">In Fig. 1, reference numeral 1 denotes a commercially
+available press disc and numeral 2 denotes a copied disc. The
+commercially available press disc 1 stores digital contents
+data such as digital audio and/or digital video data having 
+an encryption added to a system stream. The digital contents
+data includes two types of copy control management
+information (CCI), i.e., a first copy control information of
+a digital CCI (referred to as &quot;DGCCI&quot;) type and a second copy
+control information of an analog embedded type (hereinafter,
+referred to as &quot;watermark&quot; or &quot;WMCCI&quot;) which are recorded in
+the disc. Detail of the WMCCI will be described later with
+reference to Fig. 11.</p><p num="0041">In Fig. 1, an authorized optical disc player 10
+includes: an encryption decoder 3 for decoding an encryption
+from a system stream reproduced from the optical disc 1; a
+reproduction controller 4 for servo-controlling an optical
+pickup and a working mechanism relating to reproduction of
+the optical disc; a copy control management data (DGCCI)
+detector 5 for detecting digital copy control management
+information (DGCCI) from the system stream; an AV decoder 6
+for converting the system stream to a digital audio or digital
+video signal; a watermark (WMCCI) decoder 7 for reading out
+WMCCI data from the digital audio or digital video signal
+outputted from the AV decoder 6; an analogue output circuit
+8 for converting the digital audio or digital video signal
+into an analogue signal to be outputted; and a digital output
+circuit 9 for converting a format of the digital audio or
+digital video signal into a signal of a definite output format
+(for example, IEC60958, IEEE1394 and the like) to output the 
+signal.</p><p num="0042">Meanwhile, an authorized optical disc recorder 18
+includes: an analogue input circuit 11 having a function of
+converting an analogue audio or video input signal into a
+digital signal; a digital input circuit 12 having a function
+of converting a signal which is input in a definite digital
+format into a digital audio or digital video signal; a
+watermark (WMCCI) decoder/encoder 15 for detecting a
+watermark signal (WMCCI) from the digital audio or digital
+video signal and rewriting the WMCCI when necessary; an AV
+encoder 14 having a function of converting the digital audio
+or digital video signal into a system stream; a recording
+control section 13 for servo-controlling an optical pickup
+and an working mechanism relating to recording of an optical
+disc; copy control management data (CCM) detector/rewriter
+16 for detecting digital copy control management information
+(DGCCI) from the system stream and rewriting the DGCCI when
+necessary; and an encryption generator 17 for generating and
+adding an encryption to the system stream.</p><p num="0043">As for the commercially available press disc 1, the
+authorized optical disc player 10 reproduces an audio or video
+signal from the disc, which is digitally or analoguely
+connected to the authorized optical disc recorder 18 to
+thereby create a copy disc 2. In the case of digital
+connection, both WMCCI data and DGCCI data are included in 
+the digital contents data, while in the case of analogue
+connection, only WMCCI data is included in the analogue
+contents data. The contents data includes encryption data
+embedded therein to enable the decryption of data packets
+carried together with the contents data signal.</p><p num="0044">A case of authorized two generation recording in the
+present invention will be described with reference to Fig.
+2. It is assumed that DGCCI and WACCI are recorded in the
+form as shown in Fig. 13 on a commercially available press
+disc 20, and the commercially available press disc 20 is under
+the condition with limitation that permits only one
+generation copy. This copy control management information
+(CCI) is shown by a block 54. In other words, in this
+commercially available press disc 20, C parameters of the
+DGCCI and the WMCCI shown in Fig. 13 represent the status
+&quot;C4C3=10&quot;. When reproducing the commercially available
+press disc 20 with an authorized optical disc player 29, an
+encryption is decoded from a system stream by means of an
+encryption decoder 22 and DGCCI is detected by means of a copy
+control management data (CCI) detector 24, thereby
+discriminating that one generation copy is permitted. As a
+result of this, in the authorized optical disc player 29, a
+digital output circuit 24 converts a digital audio or digital
+video signal into a signal of a definite digital output format
+to output the signal. </p><p num="0045">When the digital signal outputted in the definite
+digital format is inputted to an authorized optical disc
+recorder 37 from the authorized optical disc player 29, the
+inputted digital signal is converted into a digital audio or
+video signal by a digital input circuit 31. The converted
+digital audio or video signal is then converted into a system
+stream by means of an AV encoder 32. From the system stream,
+a CCI detector/rewriter 35 detects DGCCI to confirm :he C
+parameters of &quot;C4C3=10&quot; indicating that one generation copy
+is permitted. Thus, the C3 parameter of the DGCCI is
+rewritten from 0 to 1 to obtain &quot;C4C3=11&quot; so as to prohibit
+copy of second and subsequent generations. The copy control
+management information (CCI) is shown by a block 55. In
+addition, an encryption generator 36 generates and adds an
+encryption to the system stream and a recording operation is
+performed under a control of a recording controller 33,
+whereby a first generation copy disc 21 is created with the
+digital contents data including the CCI 55 recorded.</p><p num="0046">When reproducing the copy disc 21 by an authorized
+optical disc player 45, even though C parameters of the DGCCI
+are &quot;C4C3=11&quot; representing that copy is prohibited,
+reproduction is performed to output a system stream digital
+signal regardless of the copy prohibition. When this digital
+signal is inputted to an authorized optical disc recorder 53,
+a CCI detector/rewriter 51 detects the DGCCI to discriminate 
+that copy is prohibited. Thus, the recording operation is
+controlled by the recording controller 49 to be stopped,
+whereby the recording operation is not performed. As a result
+of this operation, creation of a copy disc of second
+generation is prevented.</p><p num="0047">Next, a case of unauthorized two generation digital
+recording in the case where the CCI detector/rewriter of the
+optical disc recorder is tampered, will be describe with
+reference to Fig. 3. Likewise the commercially available
+press disc 20, an commercially available press disc 60 is
+under a condition with limitation that permits only one
+generation copy, and both DGCCI and WMCCI satisfy &quot;C4C3=10&quot;,
+and the status of CCI thereof is shown by a block 93. When
+reproducing the commercially available press disc 60 using
+an authorized optical disc player 69, the DGCCI is detected
+by a CCI detector 64 and it is discriminated that one
+generation copy is permitted. Hence, a digital output
+circuit 68 converts the digital audio or video signal into
+a signal of a definite digital output format to be generated.</p><p num="0048">When the digital signal outputted from the authorized
+optical disc player 69 in the definite digital format is
+inputted to an unauthorized optical disc recorder 76 which
+does not have a WM decoder/encoder but which has a tampered
+CCI detector/rewriter (74), the inputted digital signal of
+a definite format is converted in format into a digital audio 
+or video signal by a digital input circuit 71. The converted
+digital audio or video signal is then converted into a system
+stream by means of an AV encoder 72. For the system stream,
+a tampered CCI detector/rewriter 74 detects DGCCI and
+confirms the status &quot;C4C3=10&quot; representing one generation
+copy permissible. The tampered CCI detector/rewriter 74
+tampers the DGCCI data to make setting for copy free &quot;C4C3=00&quot;
+though it should rewrite the C3 parameter of the DGCCI from
+0 to 1 to make it into &quot;C4C3=11&quot; so as to prohibit copy of
+second and subsequent generations.</p><p num="0049">On the other hand, since there is no WM decoder/encoder
+in this unauthorized optical disc recorder 76, the WMCCI data
+will not be rewritten and remain &quot;C4C3=10&quot;. Then, an
+encryption generator 75 adds an encryption of the tampered
+CCI to the system stream, and a recording controller 73
+performs recording operation. Thus, there is obtained a one
+generation copy disc 61 of copy free excluding only copy
+limitation for the DGCCI data, which CCI of this case is shown
+by a block 94.</p><p num="0050">When the one generation copy disc 61 is reproduced by
+an authorized optical disc player 84, it is confirmed by
+passing the signal reproduced from the disc through an
+encryption decoder 77 that encryption has been added. It is
+also confirmed by a CCI detector/rewriter 79 that the DGCCI
+data represents &quot;C4C3=00&quot; which indicates copy free. As 
+shown in Fig. 13, in the present invention, the reproduction
+is permitted only in the case where the DGCCI of an encrypted
+audio or video data is in the condition of copy permissible
+with restriction or copy prohibition, while reproduction is
+not permitted in the case of copy free condition. Therefore,
+when the digital CCI is of copy free, it is judged as an illegal
+disc. As the result, a digital output circuit 83 is
+controlled to mute only digital signal output, or both the
+digital output circuit 83 and analogue output circuit 82 are
+controlled to mute both digital and analogue signal output,
+or a command is sent to a reproduction controller 78 to stop
+the reproducing operation.</p><p num="0051">In a preferred embodiment, in the case where
+reproduction condition is not satisfied based on the DGCCI
+or WMCCI, the system controller may display an error message
+on the display section or video output section.</p><p num="0052">In this way, even if a copy free disc is created by
+a tampered unauthorized optical disc recorder, it is possible
+to prevent digital copy discs of second and subsequent
+generation from being created by the use of the optical disc
+copy control system of the present invention.</p><p num="0053">Next, a case of authorized two generation recording
+in the present invention will be described with reference to
+Fig. 4. It is assumed that DGCCI and WMCCI are recorded in
+the form as shown in Fig. 13 on a commercially available press 
+disc 100, and the commercially available press disc 100 is
+under the condition of prohibiting copy, of which the CCI is
+shown by a block 118. In other words, in this commercially
+available press disc 100, C parameters of the DGCCI and WMCCI
+shown in Fig. 13 represents &quot;C4C3=11&quot; . When reproducing the
+commercially available press disc 100 using an authorized
+optical disc player 109, an encryption is decrypted from a
+system stream by means of an encryption decoder 102, and then
+the DGCCI is detected by means of a CCI detector 104, thereby
+confirming that one generation copy is prohibited. Although
+the DGCCI represents copy inhibition, the reproduction is
+performed regardless thereof to reproduce a system stream.
+The reason why the player normally performs a reproducing
+operation without stopping the reproduction even if copy is
+prohibited is that, it is impossible to authorize equipments
+to be connected, and the equipments to be connected to the
+digital output are not limited to a recorder but may be an
+audio/video reproducing equipment with a digital input (such
+as for example, digital TV and digital amplifier). As a
+result of this, in the authorized optical disc player 109,
+an analogue output circuit 107 outputs an analogue audio or
+video signal and a digital output circuit 108 converts a
+digital audio or video signal into a signal of a definite
+digital output format to be generated.</p><p num="0054">When the digital signal outputted in the definite 
+digital format is inputted into an authorized optical disc
+recorder 117 from the authorized optical disc player 109, the
+inputted digital signal is converted into a digital audio or
+digital video signal by means of a digital input circuit 110.
+The converted digital audio or video signal is then converted
+into a system stream by means of an AV encoder 112. For the
+converted system stream, a WM decoder 114 detects the WMCCI
+data of the CCI 118, and since the CCI indicates copy
+prohibition, the recording operation is not performed.
+Namely, an encryption generator 116 does not generate an
+encryption to be added, and as a result of this, a first
+generation copy disc 101 will not be created. The CCI
+detected in the disc player 117 is shown by a block 119.</p><p num="0055">Next, a case of unauthorized two generation recording
+in the present invention will be described with reference to
+Fig. 5. It is assumed that DGCCI and WMCCI are recorded in
+the form as shown in Fig. 13 on a commercially available press
+disc 120, and the commercially available press disc 120 is
+under the condition of prohibiting copy. This CCI is shown
+by a block 153. In other words, in this commercially
+available press disc 120, C parameters of the DGCCI and the
+WMCCI shown in Fig. 13 represent &quot;C4C3=11&quot;. When reproducing
+the commercially available press disc 120 using an authorized
+optical disc player 129, an encryption is decrypted from a
+system stream by means of an encryption decoder 122 and then 
+DGCCI is detected by means of a CCI detector 124, thereby
+confirming that one generation copy is prohibited. Though
+the CCI represents copy inhibition, the reproduction is
+performed regardless of this, and a system stream digital
+signal is outputted. As a result of this, in the authorized
+optical disc player 129, an analogue output circuit 127
+outputs an analogue audio or analogue video signal and a
+digital output circuit 128 converts a digital audio or digital
+video signal into a signal of a definite digital output format
+to be generated.</p><p num="0056">When the analogue signal outputted from the authorized
+optical disc player 129 is inputted to an unauthorized optical
+disc recorder 136, the inputted analogue signal is converted
+into a digital audio or digital video signal by means of a/v
+analog input circuit 130. The converted digital audio or
+digital video signal is then converted into a system stream
+by means of an AV encoder 132. The converted system stream
+does not include DGCCI but includes only WMCCI data recorded
+because the input signal is analogue. However, since there
+is no WM decoder and a CCI detector/rewriter 134 is tampered,
+even if copy inhibition is defined by the WMCCI data, the
+definition is ignored and a first generation copy disc 121
+is created. The CCI detected in the disc recorder 136 is as
+shown by a block 154.</p><p num="0057">In the case of reproducing the unauthorized copy disc 
+121 with an authorized optical disc player 144, an encryption
+decoder 137 decrypts the encryption, and DGCCI data is
+detected from the decoded system stream by means of a CCI
+detector 139. However, since no DGCCI data is recorded on
+the system stream, WMCCI data is detected by means of a WM
+decoder 141. Then, it is confirmed that there is no DGCCI
+data and that the WMCCI data represents copy prohibition
+&quot;C4C3=11&quot;. As to be described later in connection with steps
+S9 to S11 shown in Fig. 12, in the present invention, when
+there is no DGCCI data and the WMCCI data represents copy
+prohibition, the disc is judged as an unauthorized copy disc.
+As the result, a digital output circuit 143 is controlled to
+mute only digital signal output, or the digital output circuit
+143 and analogue output circuit 142 are both controlled to
+mute both digital signal output and analogue signal output,
+or a command is sent to a reproduction controller 138 to stop
+the reproducing operation per se. In this way, even if an
+unauthorized disc is created by a tampered unauthorized
+optical disc recorder, it is possible to prevent analogue or
+digital copy discs of second and subsequent generation from
+being created by the optical disc copy control system of the
+present invention.</p><p num="0058">Next, a concrete example of a reproducing and recording
+apparatus employing the copy control method of an optical disc
+according to the present invention will be described with 
+reference to Fig. 6, and further description will be made on
+a digital recording operation and analogue recording
+operation.</p><p num="0059">An optical disc player 174 includes: a spindle motor
+161 for rotating a disc 160; an optical pickup 162 for reading
+a signal recorded on the disc 160; a mechanism control section
+163 for driving and controlling the spindle motor 161 and the
+optical pickup 162; a signal processing section 164 which
+extracts a system stream digital signal by performing data
+punching or error correcting of the output of the optical
+pickup 162 and supplies a control signal to the mechanical
+controlling section 163; an encryption decoder 165 for
+decoding an encryption from the system stream; a DGCCI decoder
+166 for detecting DGCCI from the encryption-decoded system
+stream; an AV decoder 167 for extracting a digital audio or
+digital video signal from the encryption-decoded system
+stream and decoding the signal; a WMCCI decoder 169 for
+reading out WMCCI data from the digital audio or video signal
+output of the AV decoder 167; a DA converter 168 for converting
+the digital audio or video signal into an analogue audio or
+video signal; a digital signal output control section 170 for
+converting the digital audio or video signal into a signal
+of a definite I/F output format (for example IEC60958,
+IEEE1394 and the like) to perform an output control; an
+analogue signal output control section 171 for performing an 
+output control of the analogue audio or video signal; a
+display section 172 for displaying an operation state; and
+a system controller 173 for controlling the digital signal
+output control section 170 and analogue signal output control
+section 171 while reading the WMCCI and DGCCI data, and also
+controlling the display section 172 and the mechanism control
+section 163. The system controller 173 may include a copy
+permissibility decision portion for deciding whether or not
+a copy is permissible according to an output of the CCI
+detector (166, 169). The system controller also may be formed
+of, e.g., a microcomputer.</p><p num="0060">Meanwhile, an optical disc recorder 190 includes: a
+spindle motor 176 for rotating a recording disc 175; an
+optical pickup 177 for recording a signal encoded by a
+recording signal processing section 179 to the recording disc
+175; a mechanism control section 178 for driving and
+controlling the spindle motor 176 and the optical pickup 177.
+The recording signal processing section 179 supplies a
+recording signal to the optical pickup 177 while adding an
+error correcting code to a system stream having an encryption
+added thereto and performing modulation on the same, and
+supplies a control signal to the mechanism control section
+178 at the time of recording. The disc recorder 190 further
+includes; a digital input converting section 181 for
+converting a definite digital signal outputted from the 
+outside into a digital audio or video signal; a WMCCI decoder
+183 for reading out WMCCI data from the digital audio or video
+signal; a WMCCI encoder 184 for rewriting the WMCCI data of
+the digital audio or video signal in accordance with a command
+of a system controller 189; an AD converter 182 for converting
+an analogue audio or video input signal into a digital signal;
+an AV encoder 185 for encoding the digital audio or video
+signal into a system stream; a DGCCI decoder 180 for detecting
+DGCCI from the system stream signal; a DGCCI encoder 186 for
+rewriting DGCCI data carried on the system stream signal in
+accordance with a command of the system controller 189; an
+encryption generator 187 for generating an encryption by
+adding an encryption to the system stream and transferring
+the encrypted system stream to the recording signal
+processing section 179; and a display section 188 for
+displaying an operation state. The system controller 189
+reads the DGCCI data and provides the DGCCI encoder 186 with
+a command to rewrite the DGCCI data, and also controls the
+mechanism control section 178.</p><p num="0061">Next, a digital reproducing and recording operation
+of the optical disc reproducing and recording apparatus
+configured as a digital connection will be described. The
+optical pickup 162 reads a signal recorded on the disc 160,
+and the signal processing section 164 performs data punching
+and error correcting to extract a system stream digital signal 
+while supplying a control signal to the mechanism controlling
+section 163 with. The encryption decrypts the encryption
+from the system stream decoder 165 and the output thereof is
+supplied to the DGCCI decoder 166 and the AV decoder 167. The
+AV decoder 167 extracts a digital audio or video signal from
+the system stream and decodes the same, and the decoded signal
+output thereof is supplied to the WMCCI decoder 169 and the
+digital signal output control section 170. The digital
+signal output control section 170 converts the digital audio
+or video signal into a signal of a definite I/F output format
+(such as for example, IEC60958 and IEEE1394) . Meanwhile, the
+DGCCI decoder 166 decodes the DGCCI data from the system
+stream and the output thereof is supplied to the system
+controller 173. The WMCCI decoder 169 decodes the WMCCI data
+from the digital audio or video signal and the decoded WMCCI
+data is supplied to the system controller 173. The system
+controller 173 receives both the DGCCI data and the WMCCI data
+and controls the digital signal output control section 170
+and the mechanism control section 163 in accordance with the
+received CCI data. The system controller 173 also transfers
+operation display information to the display section 172.</p><p num="0062">In specific, in the case where a reproduction condition
+is not satisfied by the copy controlling management
+information of the DGCCI or WMCCI, the system controller
+displays an error message on the display section or video 
+output section, and since a certain error message regarding
+illegal disc is displayed on the display or video output
+section to which the video signal is connected, it is possible
+to inform the user of the reason why a normal reproduction
+state is not achieved and thus inform the user that it is not
+a failure of the optical disc player to thereby eliminate
+user's anxiety, so that it is possible to prevent occurrences
+of unnecessary user's claims.</p><p num="0063">A definite digital signal inputted to the optical disc
+recorder 190 from the outside is converted into a digital
+audio or video signal by the digital input converting section
+180 and transferred to the AV encoder 185. The AV encoder
+185 encodes the digital audio or video signal into a system
+stream. The DGCCI decoder 180 detects DGCCI data from the
+system stream signal and this DGCCI data is supplied to the
+system controller 189. The system controller 189 reads the
+DGCCI data and provides the DGCCI encoder 186 with a command
+to rewrite the DGCCI data carried on the system stream, when
+necessary, and also controls the mechanism control section
+178. The system stream output of the DGCCI encoder 166 is
+encrypted by the encryption generator 187, and then the
+recording signal processor 179 adds an error correcting code
+and perform modulation on the encrypted system stream, which
+the resultant signal is supplied to the optical pickup 177
+and is recorded on the recording disc 175. At this time, both 
+the DGCCI data and the WMCCI data included in the system stream
+are also recorded on the recording disc 175.</p><p num="0064">Next, analogue reproducing and recording operation in
+the analogue connection configuration of the present
+invention will be described. The optical pickup 162 reads
+a signal recorded on the disc 160, and the signal processing
+section 164 performs data punching and error correcting to
+extract a system stream digital signal while supplying a
+control signal to the mechanism control section 163. The
+encryption decoder 165 decodes the encryption on the system
+stream and the encryption-decoded system stream is supplied
+to both the DGCCI decoder 166 and the AV decoder 167. The
+AV decoder 167 extracts a digital audio or video signal from
+the system stream and decodes the same, and the decoded signal
+is supplied to the DA converter 168, the WMCCI decoder 169
+and the digital signal output control section 170. The DA
+converter 168 converts the digital audio or video signal into
+an analogue signal to be supplied to the analogue signal
+output controlling section-171. The WMCCI decoder 169
+decodes the WMCCI data from the digital audio or video signal
+and the decoded WMCCI data is supplied to the system
+controller 173.</p><p num="0065">Meanwhile, the digital CCI decoder 166 decodes the
+DGCCI data from the system stream and the decoded DGCCI data
+is supplied to the system controller 173. The system 
+controller 173 reads both the DGCCI data and the WMCCI data
+and controls the analogue signal output control section 171
+and the mechanism control section 163 in accordance with the
+received CCI data. The system controller 173 also transfers
+operation display information to the display section 172
+similarly to the case of the digital connection
+configuration.</p><p num="0066">In the analogue recording operation, the analogue
+signal inputted to the optical disc recorder 190 from the
+outside is converted into a digital audio or video signal by
+the AD converter 182 and transferred to the WMCCI decoder 183.
+The WMCCI decoder 183 detects the WMCCI data from the cigital
+audio or video signal and this detected WMCCI data is supplied
+to the system controller 189. The system controller 189 reads
+the WMCCI data and provides the WMCCI encoder 184 with a
+command for rewriting the WMCCI data on the system stream,
+when necessary. The system stream having WMCCI encoded is
+then transferred to the AV encoder 185, and the AV encoder
+185 encodes the digital audio or video signal into a system
+stream. Then, the system controller 189 controls the
+mechanism control section 178. Regarding the system stream,
+encryption is generated by the encryption generator 187; an
+error correcting code is added and modulation is made by the
+recording signal processing section 179; and then the
+resultant-recording signal is supplied to the optical pickup 
+177; and the system stream is recorded on the recording disc
+175. At this time, only the WMCCI data is recorded on the
+recording disc 175.</p><p num="0067">Next, CCI data arrangement on the disc file structure
+in the present invention will be described with reference to
+Fig. 7. A disc 400 includes mainly four zones, i.e.,
+VolumeZone, AudioZone, VideoZone and OtherZone, and among
+which, CCI data of audio contents and video contents are
+written in AudioZone 401 and VideoZone 402, respectively.
+AudioZone 401 includes a plurality of audio title sets ATS
+(regions 403), and each audio title set ATS (403) includes
+an audio title set management information storage area ATSI
+(404) and an audio data object collection AOBS (405). The
+audio data object collection AOBS includes a plurality of
+audio contents as reproduction units (Tracks#1 to #p) and the
+DGCCI data (Digitals#1 to #p 406) and WMCCI data (WM#1 to WM#p
+407) are included therein corresponding to the respective
+reproduction units of the audio contents. In Fig. 7, ATS#1
+403 includes ATSI#1 404 and AOBS 405, and AOBS 405 includes
+p pieces of Tracks #1 to #p as the reproduction units of the
+audio contents.</p><p num="0068">Likewise, also VideoZone 402 includes DGCCI data 411
+and WMCCI data 412 with respect to audio/video contents for
+each Chapter which is regarded as a reproduction unit.</p><p num="0069">Next, a relationship between an object reproducing 
+unit and CCI data will be describe with reference to Fig. 8.
+Audio data object collection AOTT_AOBS 420 includes a
+plurality of audio data objects AOTT_AOB 421. The audio data
+object AOTT_AOB 421 includes a plurality of audio packs A_PCK
+422, plural (a certain number of) audio packs A_PCK 422
+constitute an Audio_Cell, and each Track (PG) as a
+reproduction unit is comprised of one or more Audio_Cells.
+For each reproduction unit, the WMCCI and DGCCI are
+designated.</p><p num="0070">Also as for video title set collection AVTT_VOBS 424,
+Chapter as a reproduction unit is composed of one or more Cells.
+For each reproduction unit, WMCCI and DGCCI designated by
+reference numeral 427 are allocated thereto.</p><p num="0071">Next, CCI data arrangement on the object data structure
+of the present invention will be described with reference to
+Fig. 9 which shows an example in the case of audio data. Audio
+data object collection AOTT_AOBS 430 is comprised of a
+plurality of audio data objects AOTT_AOB 431. Each of the
+audio title set AOTT_AOB 431 includes a plurality of audio
+packs A_PCK 432, and further each of the audio pack A_PCK 432
+includes PrivateHeader 433 and Audio data 435. The Private
+Header 433 includes DGCCI 434, and the Audio data 435 includes
+WMCCI data encoded therein. A plurality of audio packs A_PCK
+432 constitute Audio_Cell 436, and assembly of plural
+Audio Cells 436 constitutes each Track (PG) 437 which is used 
+as a reproduction unit. In this data structure, a PTS region
+is for writing reproduction time information, a region of
+sub_stream_id is for writing a stream type, a region of
+first_access_unit_pointer indicates a first byte of Audio
+frame of A_PCK thereof, and the region 434 is for writing DGCCI.</p><p num="0072">In this reproduction unit Track 437, the contents of
+the DGCCI data 434 and contents of the WMCCI data are constant
+and will not change. In other words, DGCCI data and WMCCI
+data are allocated in pair corresponding to a Track unit.</p><p num="0073">Next, one example of a reproduction control flow for
+executing copy control of an optical disc in the present
+invention configured as described above will be explained
+below with reference to Fig. 12.</p><p num="0074">First, a reproduction stream is supplied to an
+encryption decoder (165) to detect existence of encryption
+(step S1), and in the case where the encryption is detected,
+existence of DGCCI data is detected by means of the DGCCI
+decoder (step S2). In the case where there is DGCCI data,
+it is determined whether the DGCCI data is in a state of copy
+free or not (step S3). As shown in Fig. 13, in the present
+invention, the reproduction of encrypted audio or video
+digital data is permitted only when DGCCI thereof is in a state
+of copy with restriction or copy prohibition, and is not
+permitted when in a state of copy free. Therefore, in the
+case where the digital CCI data is in a state of copy free 
+(YES in step S3), it is determined as an unauthorized copy
+disc. As a result of this, a digital output circuit is
+controlled to mute only digital signal output, or both the
+digital output circuit and the analogue output circuit are
+controlled to mute both the digital signal output and analogue
+signal output together (step S4).</p><p num="0075">On the other hand, in the case where it is determined
+that the DGCCI data is not in a state of copy free in step
+S3, normal reproduction is conducted in step S8. Furthermore,
+in the case where encryption is not detected in step S1 and
+in the case where DGCCI data is not detected in step S2 even
+though encryption is detected in step S1, a WM decoder (169)
+decodes to detect WMCCI data (step S9). In the case where
+there is detected WMCCI data, it is determined in step S10
+whether the WMCCI data is in a state of copy free or not. As
+shown in Fig. 13, in the present invention, normal
+reproduction is permitted only in the case where the WMCCI
+data is in a state of copy free (step S12), and in the cases
+of copy with restriction or copy prohibition state, it is
+determined as an unauthorized copy disc. As a result of this,
+a digital output circuit is controlled to mute only digital
+signal output, or the digital output circuit and analogue
+output circuit are both controlled to mute both digital signal
+output and analogue signal output together (step S11).</p><p num="0076">Then, a terminal end of reproduction units is judged 
+(step S5) and when judged NO in step S5, the process returns
+to step S1, and when judged YES in step S5, the process advances
+to step S6 to judge whether the terminal end is a terminal
+end of the entire reproduction. In the case of NO in step
+S6, the digital output circuit and the analogue output circuit
+are reset to the normal output states, then returning to step
+S1. On the other hand, in the case of the terminal end of
+entire reproduction, the reproduction is ended.</p><p num="0077">As to the WMCCI as describe above, detail explanation
+will be made with reference to Figs. 11A and 11B. WM signal
+is generally produced by a technique in which after encoding
+certain necessary information into an audio or video signal
+to thereby make a bit stream, certain necessary information
+data is encoded into an audio or video signal to be embedded
+into the bit stream in such a manner that when a user reproduces
+the bit stream, the WM signal is imperceptible or inaudible
+such that the user cannot recognize the change in the audio
+or video signal compared to the original signal.</p><p num="0078">In the present invention, as shown in Fig. 11A, using
+a spread spectrum technique, WMCCI of a sufficiently low
+spectrum level in a user's unrecognizable degree is added to
+audio and/or video signal and embedded therein within a
+certain frequency band. As shown in Fig. 11B, in the present
+embodiment, after encoding WMCCI data into an audio or video
+signal by means of a WM encoder 1101 to thereby make it into 
+a bit stream, the bit stream is recorded to a recording disc
+1102. Then, at the time of reproducing the recorded data from
+the disc, the WMCCI data is decoded by means of the WMCCI
+decoder 1103 while the audio or video signal is reproduced
+from the bit stream. At this reproduction time, even if WMCCI
+data is recorded and embedded in the AV data, the user can
+not recognize the change in the AV signal in comparison with
+the original signal because of the low spectrum level.
+According to the above configuration, since WMCCI data is
+recorded in a state embedded in the audio or video signal,
+WMCCI data can exist also in the audio or video signal of an
+analogue reproduction signal as well as in a digital
+reproduction signal.</p><p num="0079">Whereas, in the conventional technique, since the
+conventional digital CCI data is included in PrivateHeader
+of the data as shown by areas 383 and 384 in Fig. 20, CCI data
+can exist only in an audio or video signal of a digital
+reproduction signal and does not exist in an analogue
+reproduction signal.</p><p num="0080">In the present embodiment, as shown by a region 435
+in Fig. 9, since the WMCCI is included in the audio (or video)
+data region, the WMCCI can exist also in the audio/video
+signal of an analogue reproduction signal as well as in a
+digital reproduction signal.</p><heading>(Second Embodiment)</heading><p num="0081">In the first embodiment, while the above description
+has been made for the case of using an optical disc as a
+recording medium which stores digital audio or digital video
+data including copy controlling management information (CCI)
+in the forms of watermark (WM) data and digital (DG) data,
+the present invention is not limited to this and applicable
+to various comparable media for recording and reproducing
+digital data, for example, tape and semiconductor memory.</p><p num="0082">The essential feature of the present invention is a
+multimedia copy control system for controlling a copy of a
+digital data recording medium in which digital contents data
+is stored and from which the digital contents data is reproduced
+and recorded to another recording medium for copying, wherein
+the digital contents data stored in the digital data recording
+medium includes a first copy control information (DGCCI) of a
+digital format and a second copy control information (WMCCI)
+of an analog embedded format. The system comprises: encryption
+judging means decrypting reproduction output data from the
+digital data recording medium and judging whether the
+reproduction output data is encrypted data; first copy control
+detection means detecting the first copy control information
+(DGCCI)from the decrypted reproduction data; extraction means
+extracting the digital contents data from the decrypted
+reproduction data; and second copy control detection means
+detecting the second copy control information (WMCCI) from the 
+extracted digital contents data, wherein encryption of the
+reproduction output data from the recording medium is
+decrypted and judged for each digital contents unit under
+reproduction, and in the case where said first copy control
+detection means detects the first copy control information
+(DGCCI), the reproduction of the digital contents data is
+controlled based on the first copy control information (DGCCI) ,
+and in the case where said first copy control detection means
+detects no first copy control information (DGCCI), the
+reproduction of the digital contents data is controlled based
+on the second copy control information (WMCCI).</p><p num="0083">According to the second embodiment, by applying not
+only to the optical disc but also various kinds of digital
+data recording media, an unauthorized copy of recording
+medium and the like is discriminated and reproduction
+limitation is added to the medium at the time of reproducing
+the recording medium, whereby it is possible to prevent
+unauthorized copies from being copied freely.</p><p num="0084">As describe above, according to the present invention,
+in addition to digital copy controlling management
+information data, watermark copy controlling management
+information data is recorded on a recording medium, and when
+in reproducing the recording medium, the digital copy
+controlling management information is read out by decrypting
+an encryption from the reproduction output data; and the 
+watermark copy controlling management information is read out
+from a digital audio or video signal from the output data to
+detect the encryption in a reproduction unit of the digital
+audio or video contents under reproduction; and in the case
+where encryption has been made, reproduction control is
+performed in accordance with the digital copy controlling
+management information, while on the other hand in the case
+where encryption has not been made, reproduction control is
+performed in accordance with said watermark copy controlling
+management information. Accordingly, advantageous effect
+is obtained such that even if digital copy controlling
+management information data is tampered using an unauthorized
+recorder and an authorized digital copy is made, or an
+unauthorized analogue copy is made by using an unauthorized
+recorder, it is possible to prevent unlimited unauthorized
+copies from being created by adding reproduction limitation
+by judging as an illegal recording medium at the time of
+reproduction.</p></description><claims lang="DE" status="new"><claim num="xx"><claim-text>Multimediakopiersteuersystem zum Steuern einer Kopie eines
+digitalen Datenaufzeichnungsmediums, in welchem digitale Audioinhaltsdaten
+gespeichert und von welchem die digitalen Audioinhaltsdaten wiedergegeben
+und auf einem anderen Aufzeichnungsmedium zum Kopieren
+aufgezeichnet werden, wobei die digitalen Audioinhaltsdaten, die in dem
+digitalen Datenaufzeichnungsmedium gespeichert sind, eine erste Kopiersteuerinformation
+eines digitalen Formats und eine zweite Kopiersteuerinformation
+eines analog eingebetteten Formats aufweisen, wobei das System
+aufweist:
+<claim-text><claim-text>Verschlüsselungsbeurteilungsmittel (3, 22, 165), die Wiedergabeausgabedaten
+von dem digitalen Datenaufzeichnungsmedium entschlüsseln und
+beurteilen, ob es sich bei den Wiedergabeausgabedaten um verschlüsselte
+Daten handelt;</claim-text><claim-text>erste Kopiersteuerdetektiermittel (5, 24, 166), die die erste Kopiersteuerinformation
+von den entschlüsselten Wiedergabedaten detektieren;</claim-text><claim-text>Extraktionsmittel (6, 25, 167), die die digitalen Audioinhaltsdaten von den
+entschlüsselten Wiedergabedaten extrahieren; und</claim-text><claim-text>zweite Kopiersteuerdetektiermittel (7, 26, 169), die die zweite Kopiersteuerinformation
+von den extrahierten digitalen Audioinhaltsdaten detektieren;</claim-text></claim-text>
+wobei eine Verschlüsselung der Wiedergabeausgabedaten von dem Aufzeichnungsmedium
+für jede digitale Audioinhaltseinheit unter der Wiedergabe
+entschlüsselt und beurteilt wird, und wobei in dem Fall, in dem festgestellt
+wird, dass die erste Kopiersteuerinformation verschlüsselt worden
+ist, die Wiedergabe der digitalen Audioinhaltsdaten auf der Basis der ersten
+Kopiersteuerinformation gesteuert wird, und wobei in dem Fall, in dem festgestellt
+wird, dass die erste Kopiersteuerinformation nicht verschlüsselt
+worden ist, die Wiedergabe der digitalen Audioinhaltsdaten auf der Basis
+der zweiten Kopiersteuerinformation gesteuert wird.</claim-text></claim><claim num="xx"><claim-text>Multimediakopiersteuersystem nach Anspruch 1,
+wobei jede der ersten und zweiten Kopiersteuerinformation drei Kopiersteuerzustände
+Kopierfreigabe, Kopiererlaubnis mit Beschränkung und
+Kopierverhinderung (Fig. 13) aufweist und wobei in dem Fall, in dem der
+Kopiersteuerzustand der ersten Kopiersteuerinformation der Zustand Kopierfreigabe
+ist, die Wiedergabe gesteuert wird, um verhindert zu sein, und
+in dem Fall der Zustände Kopiererlaubnis mit Beschränkung und Kopierverhinderung
+die Wiedergabe gesteuert wird, um zugelassen zu sein, und
+wobei in dem Fall, in dem der Kopiersteuerzustand der zweiten Kopiersteuerinformation
+der Zustand Kopierfreigabe ist, die Wiedergabe gesteuert
+wird, um zugelassen zu sein, und in dem Fall der Zustände Kopiererlaubnis
+mit Beschränkung und Kopierverhinderung die Wiedergabe gesteuert wird,
+um verhindert zu sein.</claim-text></claim><claim num="xx"><claim-text>Multimediakopiersteuersystem nach Anspruch 1,
+wobei das Aufzeichnungsmedium die paarweise für jede digitale Audioinhaltseinheit
+(406; 407; 423, 427) zugeordnete erste und zweite Kopiersteuerinformation
+speichert.</claim-text></claim><claim num="xx"><claim-text>Multimediakopiersteuersystem nach Anspruch 1, weiterhin aufweisend:
+<claim-text><claim-text>analoge Ausgabesteuermittel (8, 27, 168, 171), die analoge Inhaltsdaten
+von den extrahierten digitalen Audioinhaltsdaten erzeugen;</claim-text><claim-text>digitale Ausgabesteuermittel (9, 28, 170), die die extrahierten digitalen Audioinhaltsdaten
+in davon zu erzeugende spezifizierte Ausgabeformatdaten
+umwandeln;</claim-text></claim-text>
+wobei die digitalen Audioinhaltsdaten, die über die digitalen Ausgabesteuermittel
+(9, 28, 170) ausgegeben werden, sowohl die erste als auch die
+zweite Kopiersteuerinformation aufweisen, und die über die analogen Ausgabesteuermittel
+(8, 27, 168, 171) ausgegebenen analogen Inhaltsdaten
+nur die zweite Kopiersteuerinformation aufweisen.</claim-text></claim><claim num="xx"><claim-text>Multimediakopiersteuerverfahren zum Steuern einer Kopie eines
+digitalen Datenaufzeichnungsmediums, in welchem digitale Audioinhaltsdaten
+gespeichert und von welchem die digitalen Audioinhaltsdaten
+wiedergegeben und auf einem anderen Aufzeichnungsmedium zum Kopieren
+aufgezeichnet werden, wobei die digitalen Audioinhaltsdaten, die in
+dem digitalen Datenaufzeichnungsmedium gespeichert sind, eine erste
+Kopiersteuerinformation eines digitalen Formats und eine zweite Kopiersteuerinformation
+eines analogen eingebetteten Formats aufweisen, wobei
+das Verfahren aufweist:
+<claim-text><claim-text>Entschlüsseln von Wiedergabeausgabedaten von dem digitalen Datenaufzeichnungsmedium
+und Beurteilen, ob es sich bei den Wiedergabeausgabedaten
+um verschlüsselte Daten handelt;</claim-text><claim-text>Detektieren der ersten Kopiersteuerinformation von den entschlüsselten
+Wiedergabedaten;</claim-text><claim-text>Extrahieren der digitalen Audioinhaltsdaten von den entschlüsselten Wiedergabedaten;
+und</claim-text><claim-text>Detektieren der zweiten Kopiersteuerinformation von den extrahierten digitalen
+Audioinhaltsdaten,</claim-text></claim-text>
+wobei eine Verschlüsselung der Wiedergabeausgabedaten von dem Aufzeichnungsmedium
+für jede digitale Audioinhaltseinheit unter Wiedergabe
+verschlüsselt und beurteilt wird, und wobei in dem Fall, in dem festgestellt
+wird, dass die erste Kopiersteuerinformation verschlüsselt worden ist, die
+Wiedergabe der digitalen Audioinhaltsdaten auf der Basis der ersten Kopiersteuerinformation
+gesteuert wird, und wobei in dem Fall, in dem festgestellt
+wird, dass die erste Kopiersteuerinformation nicht verschlüsselt worden
+ist, die Wiedergabe der digitalen Audioinhaltsdaten auf der Basis der
+zweiten Kopiersteuerinformation gesteuert wird.</claim-text></claim><claim num="xx"><claim-text>Multimediakopiersteuerverfahren nach Anspruch 5,
+wobei jede der ersten und zweiten Kopiersteuerinformation drei Kopiersteuerzustände
+Kopierfreigabe, Kopiererlaubnis mit Beschränkung und
+Kopierverhinderung (Fig. 13) aufweist, und wobei in dem Fall, in dem der
+Kopiersteuerzustand der ersten Kopiersteuerinformation der Zustand
+Kopierfreigabe ist, die Wiedergabe gesteuert wird, um verhindert zu
+werden, und wobei in dem Fall der Zustände Kopiererlaubnis mit
+Beschränkung und Kopierverhinderung die Wiedergabe gesteuert wird, um
+freigegeben zu sein und
+wobei in dem Fall, in dem der Kopiersteuerzustand der zweiten Kopiersteuerinformation
+der Zustand Kopierfreigabe ist, die Wiedergabe gesteuert
+wird, um freigegeben zu sein, und wobei in dem Fall der Zustände Kopiererlaubnis
+mit Beschränkung und Kopierverhinderung die Wiedergabe gesteuert
+wird, um verhindert zu werden.</claim-text></claim><claim num="xx"><claim-text>Wiedergabevorrichtung für optische Disks zum Wiedergeben
+einer optischen Disk, in welcher digitale Audioinhaltsdaten gespeichert und
+von welcher die digitalen Audioinhaltsdaten zum Kopieren wiedergegeben
+werden, wobei die in der optischen Disk gespeicherten digitalen Audioinhaltsdaten
+eine erste Kopiersteuerinformation eines digitalen Formats und
+eine zweite Kopiersteuerinformation eines analogen eingebetteten Formats
+aufweisen, wobei die Wiedergabevorrichtung aufweist:
+<claim-text><claim-text>Streamdatenextrahierungsmittel (162, 164), die Streamdaten von den Wiedergabeausgabedaten
+der optischen Disk extrahieren;</claim-text><claim-text>Verschlüssefungsdekodiermittel (3, 22, 165), die die extrahierten Wiedergabestreamdaten
+entschlüsseln und beurteilen, ob die Wiedergabestreamdaten
+verschlüsselte Daten sind;</claim-text><claim-text>erste Kopiersteuerdetektiermittel (5, 24, 166), die von den entschlüsselten
+Wiedergabestreamdaten die erste Kopiersteuerinformation detektieren;</claim-text><claim-text>Inhaltsdekodiermittel (6, 25, 167), die die digitalen Audioinhaltsdaten von
+den entschlüsselten Wiedergabestreamdaten extrahieren und dekodieren;</claim-text><claim-text>zweite Kopiersteuerdetektiermittel (7, 26, 169), die die zweite Kopiersteuerinformation
+von den extrahierten digitalen Audioinhaltsdaten detektieren;</claim-text><claim-text>analoge Ausgabesteuermittel (8, 27, 168, 171), die von den extrahierten
+digitalen Audioinhaltsdaten analoge Inhaltsdaten erzeugen;</claim-text><claim-text>digitale Ausgabesteuermittel (9, 28, 170), die die extrahierten digitalen Audioinhaltsdaten
+in von diesen zu erzeugende spezifizierte Ausgabeformatdaten
+umwandeln, und</claim-text><claim-text>ein Systemsteuergerät (173), das die erste und zweite Kopiersteuerinformation
+empfängt und die analogen Ausgabesteuermittel (8, 27, 168, 171)
+und die digitalen Ausgabesteuermittel (9, 28, 170) steuert,</claim-text></claim-text>
+wobei eine Verschlüsselung der Wiedergabeausgabedaten von der optischen
+Disk entschlüsselt und für jede digitale Audioinhaltseinheit unter
+Wiedergabe beurteilt wird, und in dem Fall, in dem festgestellt wird, dass
+die erste Kopiersteuerinformation verschlüsselt worden ist, die Wiedergabe
+der digitalen Audioinhaltsdaten auf der Basis der ersten Kopiersteuerinformation
+gesteuert wird, und in dem Fall, in dem festgestellt wird, dass die
+erste Kopiersteuerinformation nicht verschlüsselt worden ist, die Wiedergabe
+der digitalen Audioinhaltsdaten auf der Basis der zweiten Kopiersteuerinformation
+gesteuert wird.</claim-text></claim><claim num="xx"><claim-text>Wiedergabevorrichtung für optische Disks nach Anspruch 7,
+wobei dann, wenn eine Wiedergabeerlaubnisbedingung nicht eingehalten
+wird, das Systemsteuergerät (173) die analogen Ausgabesteuermittel (8,
+27, 168, 171) und die digitalen Ausgabesteuermittel (9, 28, 170) steuert,
+um die Wiedergabe aufbauend auf mindestens einer der ersten und zweiten
+Kopiersteuerinformation zu beschränken.</claim-text></claim><claim num="xx"><claim-text>Wiedergabevorrichtung für optische Disks nach Anspruch 7,
+wobei jede der ersten und zweiten Kopiersteuerinformation drei Kopiersteuerzustände
+Kopierfreigabe, Kopiererlaubnis mit Beschränkung und
+Kopierverhinderung (Fig. 13) einschließt, und wobei in dem Fall, in dem der
+Kopiersteuerzustand der ersten Kopiersteuerinformation der Zustand Kopierfreigabe
+ist, die Wiedergabe gesteuert wird, um verhindert zu werden,
+und wobei in dem Fall der Zustände Kopiererlaubnis mit Beschränkung und
+Kopierverhinderung die Wiedergabe gesteuert wird, um erlaubt zu sein,
+und
+wobei in dem Fall, in dem der Kopiersteuerzustand der zweiten Kopiersteuerinformation
+der Zustand Kopierfreigabe ist, die Wiedergabe gesteuert
+wird, um erlaubt zu sein, und wobei in dem Fall der Zustände Kopiererlaubnis
+mit Beschränkung und Kopierverhinderung die Wiedergabe gesteuert
+wird, um verhindert zu werden.</claim-text></claim><claim num="xx"><claim-text>Wiedergabevorrichtung für optische Disks nach Anspruch 7,
+wobei die über die digitalen Ausgabesteuermittel (9, 28, 170) ausgegebenen
+digitalen Audioinhaltsdaten sowohl die erste als auch die zweite Kopiersteuerinformation
+aufweisen, und die über die analogen Ausgabesteuermittel
+(8, 27, 168, 171) ausgegebenen analogen Inhaltsdaten nur die
+zweite Kopiersteuerinformation aufweisen.</claim-text></claim><claim num="xx"><claim-text>Digitales Audiodatenwiedergabe- und aufzeichnungssystem,
+welches eine Verbindungskombination einer Aufzeichnungsmediumwiedergabevorrichtung,
+die digitale Audiodaten eines Aufzeichnungsmediums
+wiedergibt, und einer Aufzeichnungsvorrichtung ist, die die wiedergegebenen
+digitalen Audiodaten auf ein anderes Aufzeichnungsmedium aufzeichnet,
+angepasst, um eine Multimediakopie des Aufzeichnungsmediums zu
+steuern,
+wobei die in dem Aufzeichnungsmedium gespeicherten digitalen Audioinhaltsdaten
+eine erste Kopiersteuerinformation eines digitalen Formats und
+eine zweite Kopiersteuerinformation eines analogen eingebetteten Formats
+aufweisen,
+wobei die Wiedergabevorrichtung aufweist:
+<claim-text><claim-text>Verschlüsselungsdekodiermittel (3, 22, 165), die von dem Aufzeichnungsmedium
+ausgegebene Wiedergabestreamdaten entschlüsseln und beurteilen,
+ob die Wiedergabestreamdaten verschlüsselte Daten sind;</claim-text><claim-text>erste Kopiersteuerdetektiermittel (5, 24, 166), die die erste Kopiersteuerinformation
+von den entschlüsselten Wiedergabestreamdaten detektieren;</claim-text><claim-text>Inhaltsextrahiermittel (6, 25, 167), die die digitalen Audioinhaltsdaten von
+den entschlüsselten Wiedergabestreamdaten extrahieren;</claim-text><claim-text>zweite Kopiersteuerdetektiermittel (7, 26, 169), die die zweite Kopiersteuerinformation
+von den extrahierten digitalen Audioinhaltsdaten detektieren;</claim-text><claim-text>analoge Ausgabesteuermittel (8, 27, 168, 171), die die analogen Inhaltsdaten
+von den extrahierten digitalen Audioinhaltsdaten erzeugen; und</claim-text><claim-text>digitale Ausgabesteuermittel (9, 28, 170), die die extrahierten digitalen Audioinhaltsdaten
+in von diesen zu erzeugende spezifizierte Ausgabeformatdaten
+umwandeln,</claim-text></claim-text>
+wobei eine Verschlüsselung der Wiedergabestreamdaten von dem Aufzeichnungsmedium
+entschlüsselt und für die einzelnen digitalen Audiodaten
+unter Wiedergabe beurteilt wird, und wobei in dem Fall, in dem festgestellt
+wird, dass die erste Kopiersteuerinformation verschlüsselt wurde, die
+Wiedergabe der digitalen Audioinhaltsdaten auf der Basis der ersten Kopiersteuerinformation
+gesteuert wird, und
+wobei die Wiedergabevorrichtung und die Aufzeichnungsvorrichtung über
+die digitalen Ausgabesteuermittel (9, 28, 170) digital verbunden sind, so
+dass; die von der Wiedergabevorrichtung wiedergegebenen digitalen Audioinhaltsdaten
+sowohl die erste als auch die zweite Kopiersteuerinformation
+aufweisen, und
+in dem Fall, in dem festgestellt wird, dass die erste Kopiersteuerinformation
+nicht verschlüsselt worden ist, die Wiedergabe der digitalen Audioinhaltsdaten
+auf der Basis der zweiten Kopiersteuerinformation gesteuert wird, und
+wobei die Wiedergabevorrichtung und die Aufzeichnungsvorrichtung über
+die analogen Ausgabesteuermittel (8, 27, 168, 171) analog verbunden sind,
+so dass die von der Wiedergabevorrichtung wiedergegebenen analogen
+inhaltsdaten nur die zweite Kopiersteuerinformation aufweisen.</claim-text></claim><claim num="xx"><claim-text>Digitales Audiodatenwiedergabe- und aufzeichnungssystem
+nach Anspruch 11,
+wobei jede der ersten und zweiten Kopierinformation drei Kopiersteuerinformationszustände
+Kopierfreigabe, Kopiererlaubnis mit Beschränkung und
+Kopierverhinderung (Fig. 13) aufweist, und wobei in dem Fall, in dem der
+Kopiersteuerzustand der ersten Kopiersteuerinformation der Zustand
+Kopierfreigabe ist, die Wiedergabe gesteuert wird, um verhindert zu
+werden, und wobei in dem Fall der Zustände Kopiererlaubnis mit
+Beschränkung und Kopierverhinderung die Wiedergabe gesteuert wird, um
+erlaubt zu werden, und
+wobei in dem Fall, in dem der Kopiersteuerzustand der zweiten Kopiersteuerinformation
+der Zustand Kopierfreigabe ist, die Wiedergabe gesteuert
+wird, um erlaubt zu sein, und wobei in dem Fall der Zustände Kopiererlaubnis
+mit Beschränkung und Kopierverhinderung die Wiedergabe gesteuert
+wird, um verhindert zu werden.</claim-text></claim></claims><claims lang="EN" status="new"><claim num="xx"><claim-text>A multimedia copy control system for controlling a copy of
+a digital data recording medium in which digital audio contents
+data is stored and from which the digital audio contents data
+is reproduced and recorded to another recording medium for
+copying, wherein the digital audio contents data stored in the
+digital data recording medium includes a first copy control
+information of a digital format and a second copy control
+information of an analog embedded format, said system
+comprising:
+<claim-text><claim-text>encryption judging means (3, 22, 165) decrypting
+reproduction output data from the digital data recording medium
+and judging whether the reproduction output data is encrypted
+data;</claim-text><claim-text>first copy control detection means (5, 24, 166) detecting
+the first copy control information from the decrypted
+reproduction data;</claim-text><claim-text>extraction means (6, 25, 167) extracting the digital audio
+contents data from the decrypted reproduction data; and</claim-text><claim-text>second copy control detection means (7, 26, 169) detecting
+the second copy control information from the extracted digital
+audio contents data;</claim-text></claim-text>
+   wherein encryption of the reproduction output data from
+the recording medium is decrypted and judged for each digital
+audio contents unit under reproduction, and in the case where
+the first copy controls information is judged to have been
+encrypted, the reproduction of the digital audio contents data
+is controlled based on the first copy control information, and
+in the case
+where the first copy control information is judged
+not to have been encrypted, the reproduction of the digital
+audio contents data is controlled based on the second copy
+control information.</claim-text></claim><claim num="xx"><claim-text>The multimedia copy control system as claimed in claim 1,
+wherein each of the first and second copy control information
+includes three copy control states of copy free, copy
+permission with restriction and copy inhibition (Fig. 13), and
+in the case where the copy control state of the first copy
+control information is the copy free state, the reproduction is
+controlled to be inhibited, and in the case of the copy
+permission with restriction and copy inhibition states, the
+reproduction is controlled to be permissive, and
+   in the case where the copy control state of the second
+copy control information is the copy free state, the
+reproduction is controlled to be permissive, and in the case of
+the copy permission with restriction and copy inhibition
+states, the reproduction is controlled to be inhibited.</claim-text></claim><claim num="xx"><claim-text>The multimedia copy control system as claimed in claim 1,
+wherein said recording medium stores the first and second copy
+control information being allocated in pair for each digital
+audio contents unit (406, 407; 423, 427).</claim-text></claim><claim num="xx"><claim-text>The multimedia copy control system as claimed in claim 1,
+further comprising:<claim-text><claim-text>analog output control means (8, 27, 168, 171) generating
+analog contents data from the extracted digital audio contents
+data;</claim-text><claim-text>digital output control means (9, 28, 170) converting the
+extracted digital audio contents data to a specified output
+format data to be generated therefrom;</claim-text></claim-text>
+   wherein the digital audio contents data outputted via said
+digital output control means (9, 28, 170) includes both the
+first and second copy control information, and the analog
+contents data outputted via said analog output control means
+(8, 27, 168, 171) includes only the second copy control
+information.</claim-text></claim><claim num="xx"><claim-text>A multimedia copy control method for controlling a copy of
+a digital data recording medium in which digital audio contents
+data is stored and from which the digital audio contents data
+is reproduced and recorded to another recording medium for
+copying, wherein the digital audio contents data stored in the
+digital data recording medium includes a first copy control
+information of a digital format and a second copy control
+information of an analog embedded format, said method
+comprising:
+<claim-text><claim-text>decrypting reproduction output data from the digital data
+recording medium and judging whether the reproduction output
+data is encrypted data;</claim-text><claim-text>detecting the first copy control information from the
+decrypted reproduction data;</claim-text><claim-text>extracting the digital audio contents data from the
+decrypted reproduction data; and</claim-text><claim-text>detecting the second copy control information from the
+extracted digital audio contents data,</claim-text></claim-text>
+   wherein encryption of the reproduction output data from
+the recording medium is decrypted and judged for each digital
+audio contents unit under reproduction, and in the case where
+the first copy control information is judged to have been
+encrypted, the reproduction of the digital audio contents data
+is controlled based on the first copy control information, and
+in the case
+where the first copy control information is judged
+not to have been encrypted, the reproduction of the digital
+audio contents data is controlled based on the second copy
+control information.</claim-text></claim><claim num="xx"><claim-text>The multimedia copy control method as claimed in claim 5,
+wherein each of the first and second copy control information
+includes three copy control states of copy free, copy
+permission with restriction and copy inhibition (Fig. 13) , and
+in the case where the copy control state of the first copy
+control information is the copy free state, the reproduction is
+controlled to be inhibited, and in the case of the copy
+permission with restriction and copy inhibition states, the
+reproduction is controlled to be permissive, and
+in the case where the copy control state of the second
+copy control information is the copy free state, the
+reproduction is controlled to be permissive, and in the case of
+the copy permission with restriction and copy inhibition
+states, the reproduction is controlled to be inhibited.</claim-text></claim><claim num="xx"><claim-text>An optical disk reproduction device for reproducing an
+optical disk in which digital audio contents data is stored and
+from which the digital audio contents data is reproduced for
+copying, wherein the digital audio contents data stored in the
+optical disk includes a first copy control information of a
+digital format and a second copy control information of an
+analog embedded format, said reproduction device comprising:
+<claim-text><claim-text>stream data extracting means (162, 164) extracting stream
+data from the reproduction output data of the optical disk;</claim-text><claim-text>encryption decoder means (3, 22, 165) decrypting the
+extracted reproduction stream data and judging whether the
+reproduction stream data is encrypted data;</claim-text><claim-text>first copy control detection means (5, 24, 166) detecting
+the first copy control information from the decrypted
+reproduction stream data;</claim-text><claim-text>contents decoder means (6, 25, 167) extracting and
+decoding the digital audio contents data from the decrypted
+reproduction stream data;</claim-text><claim-text>second copy control detection means (7, 26, 169) detecting
+the second copy control information from the extracted digital
+audio contents data;</claim-text><claim-text>analog output control means (8, 27, 168, 171) generating
+analog contents data from the extracted digital audio contents
+data;</claim-text><claim-text>digital output control means (9, 28, 170) converting the
+extracted digital audio contents data to a specified output
+format data to be generated therefrom; and</claim-text><claim-text>a system controller (173) receiving the first and second
+copy control information and controlling said analog output
+control means (8, 27, 168, 171) and said digital output control
+means (9, 28, 170),</claim-text></claim-text>
+   wherein encryption of the reproduction output data from
+the optical disk is decrypted and judged for each digital audio
+contents unit under reproduction, and in the case where the
+first copy control information is judged to have been
+encrypted, the reproduction of the digital audio contents data
+is controlled based on the first copy control information, and
+in the case
+where the first copy control information is judged
+not to have been encrypted, the reproduction of the digital
+audio contents data is controlled based on the second copy
+control information.</claim-text></claim><claim num="xx"><claim-text>The optical disk reproduction device as claimed in claim
+7, wherein when a reproduction permission condition is not met,
+said system controller (173) controls said analog output
+control means (8, 27, 168, 171) and said digital output control
+means (9, 28, 170) to restrict the reproduction based on at
+least one of the first and second copy control information.</claim-text></claim><claim num="xx"><claim-text>The optical disk reproduction device as claimed in claim
+7, wherein each of the first and second copy control
+information includes three copy control states of copy free,
+copy permission with restriction and copy inhibition (Fig. 13),
+and in the case where the copy control state of the first copy
+control information is the copy free state, the reproduction is
+controlled to be inhibited, and in the case of the copy
+permission with restriction and copy inhibition states the
+reproduction is controlled to be permissive, and
+   in the case where the copy control state of the second
+copy control information is the copy free state, the
+reproduction is controlled to be permissive, and in the case of
+the copy permission with restriction and copy inhibition
+states, the reproduction is controlled to be inhibited.</claim-text></claim><claim num="xx"><claim-text>The optical disk reproduction device as claimed in claim
+7, wherein the digital audio contents data outputted via said
+digital output control means (9, 28, 170) includes both the
+first and second copy control information, and the analog
+contents data outputted via said analog output control means
+(8, 27, 168, 171) includes only the second copy control
+information.</claim-text></claim><claim num="xx"><claim-text>A digital audio data reproducing and recording system
+which is a connection combination of a recording medium
+reproduction device reproducing digital audio data of a
+recording medium and a recording medium recording device
+recording the reproduced digital audio data to another
+recording medium, adapted to control a multimedia copy of the
+recording medium,
+   wherein the digital audio contents data stored in the
+recording medium includes a first copy control information of
+a digital format and a second copy control information of an
+analog embedded format,
+   said reproduction device comprising:<claim-text><claim-text>encryption decoder means (3, 22, 165) decrypting
+reproduction stream data output from the recording medium and
+judging whether the reproduction stream data is encrypted data;</claim-text><claim-text>first copy control detection means (5, 24, 166)
+detecting the first copy control information from the decrypted
+reproduction stream data;</claim-text><claim-text>contents extracting means (6, 25, 167) extracting the
+digital audio contents data from the decrypted reproduction
+stream data;</claim-text><claim-text>second copy control detection means (7, 26, 169)
+detecting the second copy control information from the
+extracted digital audio contents data;</claim-text><claim-text>analog output control means (8, 27, 168, 171)
+generating analog contents data from the extracted digital
+audio contents data; and</claim-text><claim-text>digital output control means (9, 28, 170) converting
+the extracted digital audio contents data to a specified output
+format data to be generated therefrom,</claim-text></claim-text>
+   wherein encryption of the reproduction stream data
+from the recording medium is decrypted and judged for each
+digital audio data under reproduction, and in the case where
+the first copy control information is judged to have been
+encrypted the reproduction of the digital audio contents data
+is controlled based on the first copy control information, and
+   said reproduction device and said recording device
+are digital-connected via said digital output control means (9,
+28, 170) so that; the digital audio contents data reproduced
+from said reproduction device includes both the first and
+second copy control information, and
+   in the case where
+where the first copy control
+information is judged not to have been encrypted, the
+reproduction of the digital audio contents data is controlled
+based on the second copy control information, and
+   said reproduction device and said recording device
+are analog-connected via said analog output control means (8,
+27, 168, 171), so that the analog contents data reproduced from
+said reproduction device includes only the second copy control
+information.</claim-text></claim><claim num="xx"><claim-text>The digital audio data reproducing and recording system as
+claimed in claim 11, wherein each of the first and second copy
+control information includes three copy control states of copy
+free, copy permission with restriction and copy inhibition
+(Fig. 13), and in the case where the copy control state of the
+first copy control information is the copy free state, the
+reproduction is controlled to be inhibited, and in the case of
+the copy permission with restriction and copy inhibition
+states, the reproduction is controlled to be permissive, and
+   in the case where the copy control state of the second
+copy control information is the copy free state, the
+reproduction is controlled to be permissive, and in the case of
+the copy permission with restriction and copy inhibition
+states, the reproduction is controlled to be inhibited.</claim-text></claim></claims><claims lang="FR" status="new"><claim num="xx"><claim-text>Un système multimédia de commande de copie pour
+contrôler la copie d'un support d'enregistrement de données
+numériques dans lequel est mémorisé le contenu des données
+audio numériques, et à partir duquel le contenu des données
+audio numériques est reproduit et enregistré vers un autre
+support d'enregistrement en vue de la copie, dans lequel le
+contenus des données audio numériques mémorisé dans le
+support d'enregistrement de données numériques comprend la
+première information de commande de copie d'un format
+numérique et la seconde information de commande de copie
+d'un format intégré analogique, ledit système comprenant :
+<claim-text><claim-text>un moyen de jugement de cryptage (3, 22, 165) qui
+décrypte les données de sortie de reproduction venant du
+support d'enregistrement de données numériques et juge si
+les données de sortie de reproduction sont des données
+cryptées ;</claim-text><claim-text>un premier moyen de détection de commande de copie
+(5, 24, 166) qui détecte la première information de
+commande de copie à partir de données de reproduction
+décryptées ;</claim-text><claim-text>un moyen d'extraction (6, 25, 167) qui extrait les
+données de contenu audio numériques à partir des données de
+reproduction décryptées ; et</claim-text><claim-text>un second moyen de détection de commande de copie
+(7, 26, 169) qui détecte la seconde information de commande
+de copie à partir des données de contenu audio numériques
+extraites ;</claim-text></claim-text>
+   dans lequel le cryptage des données de sortie de
+reproduction à partir du support d'enregistrement est
+décrypté et jugé pour chaque unité de contenu audio
+numérique en reproduction, et au cas où la première
+information de commande de copie serait jugée cryptée, la
+reproduction des données de contenu audio numériques est
+commandée en fonction de la première information de
+commande de copie, et au cas où la première information de
+commande de copie serait jugée non cryptée, la reproduction
+des données de contenu audio numériques est commandée en
+fonction de la seconde information de commande de copie.</claim-text></claim><claim num="xx"><claim-text>Le système multimédia de commande de copie selon la
+revendication 1, dans lequel la première et la seconde
+information de commande de copie comprennent chacune trois
+états de commande de copie de libre copie, de permission de
+copie avec restriction et d'interdiction de copie (Figure
+13), et au cas où l'état de commande de copie de la
+première information de commande de copie serait la libre
+copie, la reproduction est commandée pour être interdite,
+et en cas de permission de copie avec restriction ou
+d'interdiction de copie, la reproduction est commandée pour
+être permise, et
+   au cas où l'état de commande de copie de la seconde
+information de commande de copie serait l'état de libre
+copie, la reproduction est commandée pour être permise, et
+en cas de permission de copie avec restriction ou
+d'interdiction de copie, la reproduction est commandée pour
+être interdite.</claim-text></claim><claim num="xx"><claim-text>Le système multimédia de commande de copie selon la
+revendication 1, dans lequel ledit support d'enregistrement
+mémorise les première et la seconde informations de
+commande de copie allouées en paire pour chaque unité de
+contenus audio numérique (406, 407 ; 423, 427).</claim-text></claim><claim num="xx"><claim-text>Le système multimédia de commande de copie comme
+selon la revendication 1 comprend en outre :
+<claim-text><claim-text>un moyen de commande de sortie analogique (8, 27,
+168, 171) qui génère des données de contenu analogiques à
+partir des données de contenu numériques extraites ;</claim-text><claim-text>un moyen de commande de sortie numérique (9, 28,
+170) qui convertit les données de contenu audio numériques
+extraites en données de format de sortie spécifié qui
+doivent en être générées ;</claim-text></claim-text>
+   dans lequel les données de contenu audio numériques
+produites via ledit moyen de commande de sortie numérique
+(9, 28, 170) comprennent à la fois la première et la
+seconde information de commande de copie, et les données de
+contenu analogiques produites via ledit moyen de commande
+de sortie analogique (8, 27, 168, 171) comprennent
+seulement la seconde information de commande de copie.</claim-text></claim><claim num="xx"><claim-text>Le procédé de commande de copie pour commander la
+copie d'un support d'enregistrement de données numériques
+dans lequel sont mémorisées des données de contenu audio
+numériques et à partir duquel les données de contenu audio
+numériques sont reproduites et enregistrées vers un autre
+support en vue de la copie, dans lequel les données de
+contenu audio numériques mémorisées dans le support
+d'enregistrement de données numériques comprennent une
+première information de commande de copie d'un format
+numérique et une seconde information de commande de copie
+du format analogique intégré, ledit procédé comprenant les
+étapes consistant à :
+<claim-text><claim-text>décrypter les données de sortie de reproduction à
+partir du support d'enregistrement de données numériques et
+juger si les données de sortie de reproduction sont des
+données cryptées ;</claim-text><claim-text>détecter la première information de commande de
+copie à partir de données de reproduction décryptées ;</claim-text><claim-text>extraire les données de contenu audio numériques à
+partir des données de reproduction décryptées ; et</claim-text><claim-text>détecter la seconde information de commande de
+copie à partir des données de contenu audio numériques
+extraites,</claim-text></claim-text>
+   dans lequel le cryptage des données de sortie de
+reproduction à partir du support d'enregistrement est
+décrypté et jugé pour chaque unité de contenu audio
+numérique en reproduction, et au cas où la première
+information de commande de copie serait jugée cryptée, la
+reproduction des données de contenu audio numériques est
+commandée en fonction de la première information de
+commande de copie, et au cas où la première information de
+commande de copie serait jugée non cryptée, la reproduction
+des données de contenu audio numériques est commandée en
+fonction de la seconde information de commande de copie.</claim-text></claim><claim num="xx"><claim-text>Le procédé multimédia de commande de copie selon la
+revendication 5, dans lequel la première et la seconde
+information de commande de copie comprennent chacune trois
+états de commande de copie de libre copie, de permission de
+copie avec restriction et d'interdiction de copie (Figure
+13), et au cas où l'état de commande de copie de la
+première information de commande de copie serait la libre
+copie, la reproduction est commandée pour être interdite,
+et en cas de permission de copie avec restriction ou
+d'interdiction de copie, la reproduction est commandée pour
+être permise, et
+   au cas où l'état de commande de copie de la seconde
+information de commande de copie serait l'état de libre
+copie, la reproduction est commandée pour être permise, et
+en cas de permission de copie avec restriction ou
+d'interdiction de copie, la reproduction est commandée pour
+être interdite.</claim-text></claim><claim num="xx"><claim-text>Un dispositif de reproduction de disque optique
+pour reproduire un disque optique dans lequel sont
+mémorisées des donnés de contenu audio numériques, et à
+partir duquel les données de contenu audio numériques sont
+reproduites en vue de la copie, dans lequel les données de
+contenu audio numériques mémorises dans le disque optique
+comprennent une première information de commande de copie
+d'un format numérique et une seconde information de
+commande de copie d'un format analogique intégré, ledit
+dispositif de reproduction comprenant :
+<claim-text><claim-text>un moyen d'extraction de données de flux (162, 164)
+qui extrait des données de flux à partir des données de
+reproduction du disque optique ;</claim-text><claim-text>un moyen décodeur de cryptage (3, 22, 165) qui
+décrypte les données de flux de reproduction extraites et
+juge si les données de flux de reproduction sont des
+données cryptées ;</claim-text><claim-text>un premier moyen de détection de commande de copie
+(5, 24, 166) qui détecte la première information de
+commande de copie à partir des données de flux de
+reproduction décryptées ;</claim-text><claim-text>un moyen décodeur de contenu (6, 25, 167) qui
+extrait et décode les données de contenu numériques à
+partir des données de flux de reproduction décryptées ;</claim-text><claim-text>un second moyen de détection de commande de copie
+(7, 26, 169) qui détecte la seconde information de commande
+de copie à partir des données de contenu audio numériques
+extraites ;</claim-text><claim-text>un moyen de commande de sortie analogique (8, 27,
+168, 171) qui génère des données de contenu analogiques à
+partir des données de contenu audio numériques extraites ;</claim-text><claim-text>un moyen de commande de sortie numérique (9, 28,
+170) qui convertit les données de contenu audio numériques
+extraites en données à un format de sortie spécifié devant
+en être générées ; et</claim-text><claim-text>un contrôleur de système (173) qui reçoit les
+première et seconde informations de commande de copie et
+commande ledit moyen de commande de sortie analogique (8,
+27, 168, 171) et ledit moyen de commande de sortie
+numérique (9, 28, 170),</claim-text></claim-text>
+   dans lequel le cryptage des données de sortie de
+reproduction provenant du disque optique est décrypté et
+jugé pour chaque unité des contenus numériques en
+reproduction, et au cas où la première information de
+commande de copie serait jugée cryptée, la reproduction des
+données de contenu audio numériques est commandée en
+fonction de la première information de commande de copie,
+et au cas où la première information de commande de copie
+serait jugée non cryptée, la reproduction des données de
+contenu audio numériques est commandée en fonction de la
+seconde information de commande de copie.</claim-text></claim><claim num="xx"><claim-text>Le dispositif de reproduction de disque optique
+selon la revendication 7, dans lequel lorsque une condition
+de permission de reproduction n'est pas remplie, ledit
+contrôleur de système (173) commande ledit moyen de
+commande de sortie analogique (8, 27, 168, 171) et ledit
+moyen de commande de sortie numérique (9, 28, 170) pour
+limiter la reproduction en fonction d'au moins une des
+première et seconde informations de commande de copie.</claim-text></claim><claim num="xx"><claim-text>Le dispositif de reproduction de disque optique
+selon la revendication 7, dans lequel la première et la
+seconde information de commande de copie comprennent
+chacune trois états de commande de copie de libre copie, de
+permission de copie avec restriction et d'interdiction de
+copie (Figure 13), et ou cas où l'état de commande de copie
+de la première information de commande de copie serait
+l'état de libre copie, la reproduction est commandée pour
+être interdite, et en cas de permission de copie avec
+restriction ou d'interdiction de copie, la reproduction est
+commandée pour être permise, et
+   au cas où l'état de contrôle de copie de la seconde
+information de commande de copie serait la libre copie, la
+reproduction est commandée pour être permise, et en cas de
+permission de copie avec restriction ou d'interdiction de
+copie, la reproduction est commandée pour être interdite.</claim-text></claim><claim num="xx"><claim-text>Le dispositif de reproduction de disque optique
+selon la revendication 7, dans lequel les données de
+contenu audio numériques produites via ledit moyen de
+commande de sortie numérique (9, 28, 170) comprennent à la
+fois la première et la seconde information de copie, et les
+données de contenu analogiques produites via ledit moyen de
+commande de sortie analogique (8, 27, 168, 171) comprennent
+seulement la seconde information de commande de copie.</claim-text></claim><claim num="xx"><claim-text>Un système d'enregistrement et de reproduction de
+données audio numériques qui est une combinaison de
+connexion d'un dispositif de reproduction du support
+d'enregistrement reproduisant des données audio numériques
+d'un support d'enregistrement et d'un dispositif
+d'enregistrement de support d'enregistrement enregistrant
+les données audio numériques reproduites vers un autre
+support d'enregistrement, adapté à commander la copie
+multimédia du support d'enregistrement,
+   dans lequel les données de contenu audio numériques
+mémorisées dans le support d'enregistrement comprennent une
+première information de commande de copie d'un format
+numérique et une seconde information de commande de copie
+d'un format analogique intégré,
+   ledit dispositif de reproduction comprenant :
+<claim-text><claim-text>un moyen décodeur de cryptage (3, 22, 165) qui
+décrypte les données de flux de reproduction produites à
+partir du support d'enregistrement et juge si les données
+de flux de reproduction sont des données cryptées ;</claim-text><claim-text>un premier moyen de détection de commande de copie
+(5, 24, 166) qui détecte la première information de
+commande de copie provenant des données de flux de
+reproduction décryptées ;</claim-text><claim-text>un moyen d'extraction de contenu (6, 25, 167) qui
+extrait les données de contenu audio numériques à partir
+des données de flux de reproduction décryptées ;</claim-text><claim-text>un second moyen de détection de commande de copie
+(7, 26, 169) qui détecte la seconde information de commande
+de copie provenant des données de contenu audio numériques
+extraites ;</claim-text><claim-text>un moyen de commande de sortie analogique (8, 27,
+168, 171) qui génère les données de contenu analogiques à
+partir des données de contenu audio numériques ; et</claim-text><claim-text>un moyen de commande de sortie numérique (8, 28,
+170) qui convertit les données de contenu audio
+numériques extraites en données de sortie à un format
+spécifié devant en être générées,</claim-text></claim-text>
+   dans lequel le cryptage des données de flux de
+reproduction provenant du support d'enregistrement est
+décrypté et jugé pour chacune des données audio numériques
+en reproduction, et ou cas où la première information de
+commande de copie serait jugée cryptée, la reproduction des
+données de contenu audio numériques est commandée en
+fonction de la première information de commande de copie,
+et
+   ledit dispositif de reproduction et ledit
+dispositif d'enregistrement sont numériquement connectés
+via ledit moyen de commande de sortie numérique (9, 28,
+170) de sorte que les données de contenu audio numériques
+reproduites à partir dudit dispositif de reproduction
+comprennent à la fois la première et la seconde information
+de commande de copie,
+   au cas où la première information de commande de
+copie serait jugée non cryptée, la reproduction des données
+de contenu est commandée en fonction de la seconde
+information de commande de copie, et
+   ledit dispositif de reproduction et ledit
+dispositif d'enregistrement sont analogiquement connectés
+via ledit dispositif de commande de sortie (8, 27, 168,
+171), de sorte que les données de contenu analogiques
+reproduites à partir dudit dispositif de reproduction
+comprennent seulement la seconde information de commande de
+copie.</claim-text></claim><claim num="xx"><claim-text>Le système d'enregistrement et de reproduction des
+données audio numériques selon la revendication 11, dans
+lequel la première et la seconde information de commande de
+copie comprennent chacune trois états de commande de copie
+de libre copie, de copie de permission avec restriction et
+d'interdiction de copie (Figure 13), et au cas où l'état de
+commande de copie de la première information de commande de
+copie serait l'état de libre copie, la reproduction est
+commandée pour être interdite, et en cas de permission de
+copie avec restriction ou d'interdiction de copie, la
+reproduction est commandée pour être permise, et
+   au cas où l'état de commande de copie de la seconde
+information de commande de copie serait l'état de libre
+copie, la reproduction est commandée pour être permise, et
+en cas de permission de copie avec restriction ou
+d'interdiction de copie, la reproduction est commandée pour
+être interdite.</claim-text></claim></claims><legal-status status="new"><legal-event country="EP" code="26N" date="20050817"><legal-event-body><event-title>NO OPPOSITION FILED</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20050526</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="ET" date="20050401"><legal-event-body><event-title>FR: TRANSLATION FILED</event-title></legal-event-body></legal-event><legal-event country="EP" code="REF" date="20040930"><legal-event-body><event-title>CORRESPONDS TO:</event-title><event-attributes><event-attribute><event-attribute-label>Ref Document Number </event-attribute-label><event-attribute-value>60105075</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Country of Ref Document </event-attribute-label><event-attribute-value>DE</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Date of Ref Document </event-attribute-label><event-attribute-value>20040930</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>P</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REG" date="20040922"><legal-event-body><event-title>REFERENCE TO A NATIONAL CODE</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>IE</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Legal Event Code </event-attribute-label><event-attribute-value>FG4D</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20040825"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>B1</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>DEFRGB</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REG" date="20040825"><legal-event-body><event-title>REFERENCE TO A NATIONAL CODE</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>GB</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Legal Event Code </event-attribute-label><event-attribute-value>FG4D</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="17Q" date="20021009"><legal-event-body><event-title>FIRST EXAMINATION REPORT</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20020826</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AKX" date="20020918"><legal-event-body><event-title>PAYMENT OF DESIGNATION FEES</event-title><event-attributes><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>DE FR GB</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="17P" date="20020828"><legal-event-body><event-title>REQUEST FOR EXAMINATION FILED</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20020626</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20020102"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>A3</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>ATBECHCYDEDKESFIFRGBGRIEITLILUMCNLPTSETR</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AX" date="20020102"><legal-event-body><event-title>EXTENSION OF THE EUROPEAN PATENT TO</event-title><event-attributes><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>AL;LT;LV;MK;RO;SI</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="RIC1" date="20020102"><legal-event-body><event-title>CLASSIFICATION (CORRECTION)</event-title><event-attributes><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>7G 11B 20/00 A, 7H 04N 5/913 B</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20010822"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>A2</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>A2</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>ATBECHCYDEDKESFIFRGBGRIEITLILUMCNLPTSETR</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>DEFRGB</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AX" date="20010822"><legal-event-body><event-title>EXTENSION OF THE EUROPEAN PATENT TO</event-title><event-attributes><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>AL;LT;LV;MK;RO;SI</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event></legal-status></patent-document>

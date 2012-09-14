@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="laboratory">Endocrine Therapeutics and Metabolic Disorders Team</orgName>,
+							<orgName type="department">Drug Discovery</orgName>,
+							<orgName type="institution">Johnson &amp; Johnson Pharmaceutical Research and Development, LLC.</orgName>,
+							<address>
+								<settlement>Raritan</settlement>,
+								<country>New Jersey</country>
+								<postCode>08869</postCode>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="laboratory">MorphoMetrics Team</orgName>, 
+							<orgName type="department">Drug Discovery</orgName>,
+							<orgName type="institution">Johnson &amp; Johnson Pharmaceutical Research and Development, LLC.</orgName>,
+							<address>
+								<addrLine>Spring House</addrLine>,
+								<region>PA</region>
+								<postCode>19477</postCode>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

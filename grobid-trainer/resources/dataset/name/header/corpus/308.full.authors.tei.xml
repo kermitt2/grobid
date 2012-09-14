@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>C.-H</forename>
+								<surname>Köhne</surname>
+								<marker>1 *</marker>,
+							</persName>
+							<persName>
+								<forename>D</forename>.
+								<surname>Cunningham</surname>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>F</forename>.
+								<surname>Di Costanzo</surname>
+								<marker>3</marker> ,
+							</persName>
+							<persName>
+								<forename>B</forename>.
+								<surname>Glimelius</surname>
+								<marker>4</marker> ,
+							</persName>
+							<persName>
+								<forename>G</forename>.
+								<surname>Blijham</surname>
+								<marker>5</marker> ,
+							</persName>
+							<persName>
+								<forename>E</forename>.
+								<surname>Aranda</surname>
+								<marker>6</marker> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>W</forename>.
+								<surname>Scheithauer</surname>
+								<marker>7</marker> ,
+							</persName>
+							<persName>
+								<forename>P</forename> .
+								<surname>Rougier</surname>
+								<marker>8</marker> ,
+							</persName>
+							<persName>
+								<forename>M</forename> .
+								<surname>Palmer</surname>
+								<marker>9</marker> ,
+							</persName>
+							<persName>
+								<forename>J</forename> .
+								<surname>Wils</surname>
+								<marker>10</marker> ,
+							</persName>
+							<persName>
+								<forename>B</forename> .
+								<surname>Baron</surname>
+								<marker>11</marker> ,
+							</persName>
+							<persName>
+								<forename>F</forename> .
+								<surname>Pignatti</surname>
+								<marker>11</marker> ,
+							</persName>
+							<persName>
+								<forename>P</forename> .
+								<surname>Schöffski</surname>
+								<marker>12</marker> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>S</forename> .
+								<surname>Micheel</surname>
+								<marker>13</marker>>&amp;
+							</persName>
+							<persName>
+								<forename>H</forename> .
+								<surname>Hecker</surname>
+								<marker>12</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

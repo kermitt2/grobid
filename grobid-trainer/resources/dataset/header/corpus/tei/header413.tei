@@ -1,0 +1,27 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="416"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Exotica/FMQM: A Persistent <lb/>Message-Based Architecture for <lb/>Distributed Workflow Management <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>G. Alonso, C. Mohan, R. Gunthor <lb/></docAuthor></byline>
+		<byline><affiliation>IBM Almaden Research Center <lb/></affiliation></byline>
+		<address>650 Harry Road, San Jose, CA 95120, USA. <lb/></address>
+		<email>E-mail: {gustavoa,rgunther,mohan}@almaden.ibm.com <lb/></email>
+		<byline><docAuthor>D. Agrawal, A. El Abbadi <lb/></docAuthor></byline>
+		<byline><affiliation>Computer Science Department, UC Santa Barbara, <lb/></affiliation></byline>
+		<address>Santa Barbara, CA 93106, USA. <lb/></address>
+		<email>E-mail: {agrawal,amr}@cs.ucsb.edu <lb/></email>
+		<byline><docAuthor>M. Kamath <lb/></docAuthor></byline>
+		<byline><affiliation>Computer Science Department, UM at Amherst, <lb/></affiliation></byline>
+		<address>Amherst, MA 01003, USA. <lb/></address>
+		<email>E-mail: kamath@cs.umass.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>In the past few years there has been an increasing interest in workflow applications as a <lb/>way of supporting complex business processes in modern corporations. Given the nature <lb/>of the environment and the technology involved, workflow applications are inherently <lb/>distributed and pose many interesting challenges to the system designer. In most cases, a <lb/>client/server architecture is used in which knowledge about the processes being executed is <lb/>centralized in one node to facilitate monitoring, auditing, and to simplify synchronization. <lb/>In this paper, we explore a novel distributed architecture, Exotica/FMQM, for workflow <lb/>systems in which the need for such a centralized database is eliminated. Instead, we use <lb/>persistent messages as the means to store the information relevant to the execution of a <lb/>business process. Our approach is to completely distribute the execution of a process so <lb/>individual nodes are independent. The advantages of this approach are increased resilience <lb/>to failures and greater scalability and flexibility of the system configuration. <lb/></div>
+		<keywords>Keywords <lb/>Workflow Management Systems, Distributed Systems, reliability, scalability. <lb/></keywords>
+		<div type="intro">1 INTRODUCTION <lb/></div>
+		</front>
+</text>
+</tei>

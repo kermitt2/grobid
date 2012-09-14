@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+ 							Aus dem
+						<affiliation>
+							<orgName type="department">Chemischen Laboratorium</orgName> der
+							<orgName type="institution">Universität Freiburg i. Br</orgName>.
+						</affiliation>
+						und dem 
+						<affiliation>
+							<orgName type="department">E. Zintl- Institut für anorganische und physikalische Chemie</orgName> 
+							der 
+							<orgName type="institution">Techn.Hochschule</orgName> in 
+							<address>
+								<settlement>Darmstadt</settlement>
+							</address>
+						</affiliation>
+							
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

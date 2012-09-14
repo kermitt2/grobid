@@ -1,0 +1,22 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="201"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Modeling a Copier Paper Path: <lb/>A Case Study in Modeling <lb/>Transportation Processes <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Vineet Gupta Peter Struss <lb/></docAuthor></byline>
+		<idno>TR-95-019 <lb/></idno>
+		<div type="abstract">Abstract <lb/>We present a compositional model of paper transportation in a photocopier that is meant to <lb/>support different problem solving tasks like simulation and diagnosis, and to be applicable to <lb/>a variety of configurations. Therefore, we try to avoid making hard-wired implicit assumptions <lb/>about design principles and possible scenarios. In order to simplify our analysis, the model <lb/>abstracts away from the physical forces and reasons only about velocities. Nonetheless, it <lb/>succeeds in determining essential features of the motion of the sheet of paper like buckling <lb/>and tearing. The framework provided is quite generic and can be used as a starting point for <lb/>developing models of other transportation domains. <lb/></div>
+		<byline><affiliation>Xerox Palo Alto Research Center,</affiliation></byline>
+		<address>3333 Coyote Hill Road, Palo Alto CA 94304 USA.</address>
+		<email>(vgupta@parc.xerox.com) <lb/></email>
+		<byline><affiliation>Technical University of Munich,</affiliation></byline>
+		<address>Orleansstr. 34, D-81667 Munich, Germany.</address>
+		<email>(struss@informatik.tu-muenchen.de) <lb/></email>
+		<pb/>
+		</front>
+</text>
+</tei>

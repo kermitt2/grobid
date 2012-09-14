@@ -1,0 +1,20 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="371"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<byline><affiliation>DEPARTMENT OF ELECTRICAL ENGINEERING AND COMPUTER SCIENCE <lb/>UNIVERSITY OF CALIFORNIA <lb/></affiliation></byline>
+		<address>BERKELEY, CALIFORNIA 94720</address>
+		<date>August 17, 1997 <lb/></date>
+		<docTitle>
+			<titlePart type="main">A PRELIMINARY STUDY OF <lb/>HIERARCHICAL FINITE STATE MACHINES <lb/>WITH MULTIPLE CONCURRENCY MODELS <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>by <lb/>Alain Girault, Bilung Lee, and Edward A. Lee <lb/></docAuthor></byline>
+		<idno>Memorandum No. UCB/ERL M97/57 <lb/></idno>
+		<byline><affiliation>ELECTRONICS RESEARCH LABORATORY <lb/>College of Engineering <lb/>
+		University of California, </affiliation></byline><address>Berkeley <lb/>94720 <lb/></address>
+		<pb/>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="811"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Layer Reassignment for Antenna Effect <lb/>Minimization in 3-Layer Channel Routing * <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Zhan Chen and Israel Koren <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Electrical and Computer Engineering <lb/>University of Massachusetts,</affiliation></byline>
+		<address>Amherst, MA 01003 <lb/></address>
+		<div type="abstract">Abstract <lb/>As semiconductor technology enters the deep submicron era, reliability has <lb/>become a major challenge in the design and manufacturing of next generation <lb/>VLSI circuits. In this paper we focus on one reliability issue the antenna <lb/>effect in the context of 3-layer channel routing. We first present an antenna effect model in 3-layer channel routing and, based on this, an antenna effect cost <lb/>function is proposed. A layer reassignment approach is adopted to minimize this <lb/>cost function and we show that the layer reassignment problem can be formulated as a network bipartitioning problem. Experimental results show that the <lb/>antenna effect can be reduced considerably by applying the proposed technique. <lb/>Compared with previous work, one advantage of our approach is that no extra <lb/>channel area is required for antenna effect minimization. We show that layer <lb/>reassignment technique can be used in yield-related critical area minimization <lb/>in 3-layer channel routing as well. The trade-off between these two objectives is <lb/>also presented. <lb/></div>
+		<div type="intro">1: Introduction</div>
+		</front>
+</text>
+</tei>

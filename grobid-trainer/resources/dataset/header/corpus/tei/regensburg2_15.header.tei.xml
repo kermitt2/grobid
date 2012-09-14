@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="regensburg2_15"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Darstellung und spektroskopische Charakterisierung von<lb/> Tetraki8(chloro-iodo)oxalato-08maten(rV)<lb/></titlePart>
+	</docTitle>
+
+	<note type="english-title">Preparation and Spectroscopical Characterisation of Tetrakis(chloro-iodo)oxalato-osmates(IV)<lb/></note>
+
+	<byline>
+	<docAuthor>W. Preetz* und H. Schulz<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institut für anorganische Chemie der Christian-Albrechts-Universität,<lb/></affiliation>
+	</byline>
+
+	<address>Olshausenstraße 40-60, D-2300 Kiel<lb/></address>
+
+	<reference>Z. Naturforsch. 36b, 62-69 (1981);</reference>
+
+	<note type="submission">eingegangen am 10. Oktober 1980<lb/></note>
+
+	<keyword>Tetrakis(chloro-iodo)oxalato-osmates(IV),<lb/> UV-VIS-NIR Spectra, IR Spectra, Raman Spectra<lb/></keyword>
+
+	<div type="abstract">On treatment of [OsI4ox] 2 -with CI -the mixed complexes [OsClnI4_nox]2-, n= 1, 2, 3,<lb/> are formed. The isolation and complete separation of the differently coloured geometric<lb/> isomers is achieved by ion exchange chromatography on diethylaminoethyl cellulose. The<lb/> IR and Ra spectra are assigned according to point groups C2v, Cs, Ci. The mutual influence<lb/> of ligands, especially by the high trans effect of I, is indicated by shifts of the distinct<lb/> vibrational and electronic bands. The observed splittings of I -> Os transitions are<lb/> attributed to the different groupings I-Os-I, I-Os-Cl, and I-Os-O, important for the<lb/> distinction of stereoisomers. The CT-bands as well as the d-d-transitions show batho-<lb/>chromic shifts with increasing number of I-ligands. Up to five spin-orbit components in<lb/> the NIR region are well resolved. The assignment is improved by the electronic Ra spectra.<lb/> The fine structure of some d-d-bands originates from coupling with symmetric vibrational<lb/> modes.</div>
+
+	<intro>Einleitung<lb/></intro>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">School of Medicine</orgName>,
+							<orgName type="institution">Xi&apos;an Jiaotong <lb/>University</orgName>,
+							<address>
+								<settlement>Xi&apos;an</settlement>,
+								<region>Shannxi</region>,
+								<country key="CN">China</country>
+								<lb/>
+							</address>
+						</affiliation>
+						
+						<affiliation>
+							<orgName type="department">The Nethersole School of Nursing</orgName>,
+							<orgName type="institution">The<lb/> Chinese University of Hong Kong</orgName>,
+							<address>
+								<settlement>Hong<lb/> Kong</settlement>,
+								<country key="CN">China</country>
+								<lb/>
+							</address>
+						</affiliation>
+						
+						<affiliation>
+							<orgName type="department">Department of Health Sciences</orgName>,
+							<orgName type="institution">University of<lb/> Leicester</orgName>,
+							<address>
+								<settlement>Leicester</settlement>,
+								<country key="GB">UK</country>
+								<lb/>
+							</address>
+						</affiliation>
+						
+						<affiliation>
+							<orgName type="department"> The Nethersole School of Nursing</orgName>,
+							<orgName type="institution">The<lb/> Chinese University of Hong Kong</orgName>,
+							<address>
+								<settlement>Hong<lb/> Kong</settlement>,
+								<country key="CN">China</country>
+								<lb/>
+							</address>
+						</affiliation>
+						
+						<affiliation>
+							<orgName type="department">The Nethersole School of Nursing</orgName>,
+							<orgName type="institution">The<lb/> Chinese University of Hong Kong</orgName>,
+							<address>
+								<settlement>Hong<lb/> Kong</settlement>,
+								<country key="CN">China</country>
+								<lb/>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

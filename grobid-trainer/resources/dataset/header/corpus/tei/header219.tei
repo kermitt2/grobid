@@ -1,0 +1,20 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="220"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Decision-Theoretic Troubleshooting: A Framework for <lb/>Repair and Experiment <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>John S. Breese <lb/>David Heckerman <lb/></docAuthor></byline>
+		<email>&amp;lt;breese|heckerma@microsoft.com&amp;gt; <lb/></email>
+		<date>March, 1996 <lb/>(revised May 1996) <lb/></date>
+		<idno>Technical Report <lb/>MSR-TR-96-06 <lb/></idno>
+		<byline><affiliation>Microsoft Research <lb/>Advanced Technology Division <lb/>Microsoft Corporation <lb/></affiliation></byline>
+		<address>One Microsoft Way <lb/>Redmond, WA 98052 <lb/></address>
+		<note type="reference">Also appears in the Proceedings of the Twelfth Conference on Uncertainty in Artificial Intelligence, <lb/>August, 1996 <lb/></note>
+		<pb/>
+		</front>
+</text>
+</tei>

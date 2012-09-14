@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Ratko</forename>
+								<surname>Jagodic</surname>
+								<marker>a,*</marker> , 
+							</persName>
+						</author>
+						
+						<author>
+							<persName>
+								<forename>Luc</forename>
+								<surname>Renambot</surname>
+								<marker>a</marker> , 
+							</persName>
+						</author>
+						
+						<author>
+							<persName>
+								<forename>Andrew</forename>
+								<surname>Johnson</surname>
+								<marker>a</marker> , 
+							</persName>
+						</author>
+						
+						<author>
+							<persName>
+								<forename>Jason</forename>
+								<surname>Leigh</surname>
+								<marker>a</marker> , 
+							</persName>
+						</author>
+						
+						<author>
+							<persName>
+								<forename>Sachin</forename>
+								<surname>Deshpande</surname>
+								<marker>b</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

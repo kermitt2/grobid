@@ -1,0 +1,26 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="317"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">On the Analysis of Indexing Schemes <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Joseph M. Hellerstein <lb/></docAuthor></byline>
+		<byline><affiliation>Division of Computer Science <lb/>UC Berkeley,</affiliation></byline>
+		<address>Berkeley, CA 94720 <lb/></address>
+		<email>jmh@cs.berkeley.edu <lb/></email>
+		<byline><docAuthor>Elias Koutsoupias <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science <lb/>UCLA,</affiliation></byline>
+		<address>Los Angeles, CA 90095 <lb/></address>
+		<email>elias@cs.ucla.edu <lb/></email>
+		<byline><docAuthor>Christos H. Papadimitriou <lb/></docAuthor></byline>
+		<byline><affiliation>Division of Computer Science <lb/>UC Berkeley,</affiliation></byline>
+		<address>Berkeley, CA 94720 <lb/></address>
+		<email>christos@cs.berkeley.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>We consider the problem of indexing general database <lb/>workloads (combinations of data sets and sets of potential queries). We define a framework for measuring the <lb/>efficiency of an indexing scheme for a workload based on <lb/>two characterizations: storage redundancy (how many <lb/>times each item in the data set is stored), and access <lb/>overhead (how many times more blocks than necessary <lb/>does a query retrieve). Using this framework we present <lb/>some initial results, showing upper and lower bounds <lb/>and trade-offs between them in the case of multi-dimensional range queries and set queries. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

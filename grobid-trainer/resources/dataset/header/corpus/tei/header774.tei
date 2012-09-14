@@ -1,0 +1,15 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="775"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">SYNCHRONOUS AND ASYNCHRONOUS MULTI-COORDINATION <lb/>METHODS FOR THE SOLUTION OF BLOCK-ANGULAR <lb/>PROGRAMS <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>R.R. MEYER AND G. ZAKERI <lb/></docAuthor></byline>
+		<div type="abstract">Abstract. Several types of multi-coordination methods for block-angular programs are considered. We present a computational comparison of synchronous multi-coordination methods. The most <lb/>efficient of these approaches is shown to involve an intermediate number of blocks in the coordination <lb/>phase. We also develop a new stabilization algorithm and present asynchronous multi-coordination <lb/>schemes, which are particularly useful when the number of blocks exceeds the number of available <lb/>processors or when the block sizes vary significantly. <lb/></div>
+		<div type="intro">1. Introduction. In this paper we present multi-coordinator synchronous and</div>
+		</front>
+</text>
+</tei>

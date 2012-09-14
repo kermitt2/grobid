@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>W</forename>
+								<surname>Korver</surname>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>X</forename>
+								<surname>Zhao</surname>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>S</forename>
+								<surname>Singh</surname>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>C</forename>
+								<surname>Pardoux</surname>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>J</forename>
+								<surname>Zhao</surname>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>M</forename>
+								<middlename>L</middlename>
+								<surname>Guzman</surname>
+								<marker>3</marker> ,
+							</persName>
+							<persName>
+								<forename>S</forename>
+								<surname>Sen</surname>
+								<marker>3</marker> ,
+							</persName>
+							<persName>
+								<forename>S</forename>
+								<surname>Yonkovich</surname>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>S</forename>
+								<surname>Liu</surname>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>X</forename>
+								<surname>Zhan</surname>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>N</forename>
+								<surname>Tomasevic</surname>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>C</forename>
+								<surname>Zhou</surname>
+								<marker>1</marker> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>D</forename>
+								<surname>Gros</surname>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>C</forename>
+								<middlename>T</middlename>
+								<surname>Jordan</surname>
+								<marker>3</marker> ,
+							</persName>
+							<persName>
+								<forename>J</forename>
+								<surname>Gotlib</surname>
+								<marker>4</marker> ,
+							</persName>
+							<persName>
+								<forename>E</forename>
+								<middlename>D</middlename>
+								<surname>Hsi</surname>
+								<marker>2</marker> and
+							</persName>
+							<persName>
+								<forename>A</forename>
+								<surname>Abo</surname>
+								<marker>1</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

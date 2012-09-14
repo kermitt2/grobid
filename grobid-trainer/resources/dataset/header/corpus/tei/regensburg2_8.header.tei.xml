@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="regensburg2_8"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Über Oxidpnictide: Zur Kenntnis von Ba2Mn2Sb20 und Ba2Mn2BitO<lb/></titlePart>
+	</docTitle>
+
+	<note type="english-title">On Oxidpnictides: Preparation and Crystal Structure of Ba2Mn2Sb20 and Ba2Mn2Bi20<lb/></note>
+
+	<byline>
+	<docAuthor>Erwin Brechtel, Gerhard Cordier und Herbert Schäfer*<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Abteilung II für Anorganische Chemie im Eduard-Zintl-Institut<lb/> der Technischen Hochschule Darmstadt,</affiliation>
+	</byline>
+
+	<address>Hochschulstraße 4, D-6100 Darmstadt<lb/></address>
+
+	<reference>Z. Naturforsch. 36b, 27-30 (1981);</reference>
+
+	<note type="submission">eingegangen am 14. Oktober 1980<lb/></note>
+
+	<keyword>Barium Oxide Pnictides, Crystal Structure<lb/></keyword>
+
+	<div type="abstract">The new oxide pnictides Ba2Mn2Sb20 and Ba2Mn2Bi20 crystallize in the hexagonal<lb/> system (space group P63/mmc) with the following constants:<lb/> Ba2Mn2Sb20: a = 471<lb/> ±1 pm, c = 2004<lb/> ± 2 pm,<lb/> c/a = 4.255,<lb/> Ba2Mn2Bi20: a = 480.3 ± 0.5pm, c = 2009.7 ± 1.0pm, c/a = 4.184.<lb/>The M n and Sb(Bi) atoms form corrugated hexagonal nets. These nets are bridged be- <lb/>tween the M n atoms by O atoms to double layers separated by B a atoms.<lb/></div>
+
+		</front>
+	</text>
+</tei>

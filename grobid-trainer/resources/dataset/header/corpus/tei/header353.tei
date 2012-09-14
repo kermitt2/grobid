@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="358"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Economic Allocation of Computation Time <lb/>with Computation Markets <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Nathaniel Rockwood Bogan <lb/></docAuthor></byline>
+		<date>May, 1994 <lb/></date>
+		<note type="copyright">c Copyright 1994 by Nathaniel R. Bogan <lb/></note>
+		<degree>This report is a reset version of a masters thesis submitted to the Department of Electrical <lb/>Engineering and Computer Science on May 15, 1994 in partial fulfillment of the requirements <lb/>for the degree of Master of Engineering. <lb/></degree>
+		<pb/>
+		</front>
+</text>
+</tei>

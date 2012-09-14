@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="ZNA-1947-2a-0001"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<other>BAND<lb/> 2 a<lb/> ZEITSCHRIFT FÜR<lb/> NATUEFOESCHUNG<lb/></other>
+
+	<other>HEFT I<lb/></other>
+
+	<docTitle>
+	<titlePart>Über die Feldgleichungen der Gravitation<lb/> bei variabler "Gravitationskonstante"<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Von PASCUAL JORDAN und CLAUS MÜLLER<lb/></docAuthor>
+	</byline>
+
+	<reference>(Z. Naturforschg. 2 a, 1—2 [1947];</reference>
+
+	<note type="submission">eingegangen am 30. Aug. 1946)<lb/></note>
+
+	<div type="introduction">D ie bekannte, von Dirac begründete These,<lb/></div>
+
+		</front>
+	</text>
+</tei>

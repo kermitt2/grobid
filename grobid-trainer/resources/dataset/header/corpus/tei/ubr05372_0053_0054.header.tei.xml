@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="ubr05372_0053_0054"/>
+	</teiHeader>
+	<text xml:lang="de">
+		<front>
+
+	<docTitle>
+	<titlePart>Zum Problem des Einflusses von Gasen<lb/> auf die Eigenschaften von PbS-Schichten<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Von PAUL GÖRLICH<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Aus den Laboratorien der Car 1 - Zei ß-Wer ke (Jena) und von Zeiß-Ikon (Dresden)<lb/> </affiliation>
+	</byline>
+
+	<reference>(Z. Naturforschg. 2 a, 17—In [1947); </reference>
+	<note type="submission">eingegangen am 19. Sept. 194(1)<lb/> </note>
+
+	<div type="abstract">Auf Grund der Ansiebt, daß die lichtelektrische Wirkung des Bleisulfids durch eine<lb/> chemische Reaktion zwischen den beteiligten Komponenten, Blei, Schwefel und Sauer-<lb/> stoff, zustande kommt, werden ultrarotempfindliche Zellen difreh Sauerstoffbehandlung<lb/> überbleiter, überschwefelter und stöchiometriseher PbS-Schichten sowie durch Schwefel-<lb/> behandlung von PbO-Schichten hergestellt.<lb/> Eine kürzlich erschienene Arbeit von Hintenberger 1 gibt die Veranlassung zu<lb/> vorliegender Notiz.<lb/></div>
+
+		</front>
+	</text>
+</tei>

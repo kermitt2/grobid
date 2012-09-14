@@ -1,0 +1,24 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="758"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Demand Interprocedural Dataflow Analysis <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Susan Horwitz, Thomas Reps, and Mooly Sagiv <lb/></docAuthor></byline>
+		<byline><affiliation>University of Wisconsin <lb/></affiliation></byline>
+		<div type="abstract">Abstract <lb/>An exhaustive dataflow-analysis algorithm associates with each point in a program a set of dataflow facts <lb/>that are guaranteed to hold whenever that point is reached during program execution. By contrast, a <lb/>demand dataflow-analysis algorithm determines whether a single given dataflow fact holds at a single given <lb/>point. <lb/>This paper presents a new demand algorithm for interprocedural dataflow analysis. The algorithm has <lb/>four important properties: <lb/>g It provides precise (meet-over-all-interprocedurally-valid-paths) solutions to a large class of problems. <lb/>g It has a polynomial worst-case cost for both a single demand and a sequence of all possible demands. <lb/>g The worst-case total cost of the sequence of all possible demands is no worse than the worst-case cost <lb/>of a single run of the current best exhaustive algorithm. <lb/>g Experimental results show that in many situations (e.g., when only a small number of demands are <lb/>made, or when most demands are answered yes) the demand algorithm is superior to the current best <lb/>exhaustive algorithm. <lb/></div>
+		<keywords>CR Categories and Subject Descriptors: D.2.2 [Software Engineering]: Tools and Techniques; D.3.4 <lb/>[Programming Languages]: Processors compilers, optimization; E.1 [Data Structures] graphs; F.2.2 <lb/>[Analysis of Algorithms and Problem Complexity]: Nonnumerical Algorithms and Problems computations on discrete structures; G.2.2 [Discrete Mathematics]: Graph Theory graph algorithms <lb/>General Terms: Algorithms, Experimentation, Theory <lb/>Additional Key Words and Phrases: demand dataflow analysis, distributive dataflow framework, graph <lb/>reachability, interprocedural dataflow analysis, interprocedurally realizable path, interprocedurally valid <lb/>path, meet-over-all-valid-paths solution <lb/></keywords>
+		<note type="other">On leave from IBM Scientific Center, Haifa, Israel. <lb/></note>
+		<note type="grant">This work was supported in part by a David and Lucile Packard Fellowship for Science and Engineering, by the National Science <lb/>Foundation under grants CCR-8958530 and CCR-9100424, by the Defense Advanced Research Projects Agency under ARPA Order <lb/>No. 8856 (monitored by the Office of Naval Research under contract N00014-92-J-1937), by the Air Force Office of Scientific <lb/>Research under grant AFOSR-91-0308, and by a grant from Xerox Corporate Research. <lb/>Part of this work was done while the authors were visiting the University of Copenhagen. <lb/>A preliminary version of this paper appeared in </note>
+		<note type="reference">SIGSOFT 95: Proceedings of the Third ACM SIGSOFT Symposium on Foundations <lb/>of Software Engineering (Washington DC, October 10-13, 1995) [15] <lb/></note>
+		<note type="other">Authors&apos; address:</note>
+		<byline><affiliation>Computer Sciences Department; Univ. of Wisconsin;</affiliation></byline>
+		<address>1210 West Dayton Street; Madison, WI 53706; USA. <lb/></address>
+		<email>Electronic mail: {horwitz, reps, sagiv}@cs.wisc.edu. <lb/></email>
+		<pb/>
+		</front>
+</text>
+</tei>

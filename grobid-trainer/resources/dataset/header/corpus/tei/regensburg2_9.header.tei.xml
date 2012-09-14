@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="regensburg2_9"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Solutions of Lithium Tetrahydrido Aluminates in Ethers:<lb/> a Li and 27 Al NMR Study<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Heinrich Nöth*, Robert Rurländer, and Peter Wolfgardt<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institute of Inorganic Chemistry, University of Munich,</affiliation>
+	</byline>
+
+	<address>Meiserstraße 1, D-8000 Munich 2<lb/></address>
+
+	<dedication>Herrn Prof. Dr. Dr. h. c. J. Ooubeau zum 80. Geburtstage gewidmet.<lb/></dedication>
+
+	<reference>Z. Naturforsch. 86b, 31-41 (1980);</reference>
+
+	<note type="submission">received July 28, 1980<lb/></note>
+
+	<keyword>Lithium Tetrahydroaluminates, Lithium Tetradeuterioaluminates, 7 Li NMR Spectra, 27 A1 NMR Spectra<lb/></keyword>
+
+	<div type="abstract">Solutions of LiAlH* in tetrahydrofuran (THF), glycoldimethylether (monoglyme),<lb/> diglycoldimethylether (diglyme) and triglycoldimethylether (triglyme) as well as solutions<lb/> of LiAlH-i/THF in toluene have been investigated by 7 Li and 27 Al NMR. It was found<lb/> that &lt;5 27 A1 is nearly independent of the solvent as is l J(A1H). However, the line width of<lb/> the 27 A1 NMR signal shows strong solvent influences and, in addition, concentration and<lb/> temperature dependence. Intermolecular hydride exchange becomes rapid in solutions of<lb/> monoglyme and triglyme at room temperature. This can also be shown by the H/D exchange<lb/> between LiAlH4 and LiAlD4. (5 7 Li data indicate that Li is hexacoordinated in the series of<lb/> glycoldimethylethers, and LiAlHi in diglyme seems to be the system in which the AIH4<lb/> moiety is least affected by ion pair or triple ion formation.</div>
+
+		</front>
+	</text>
+</tei>

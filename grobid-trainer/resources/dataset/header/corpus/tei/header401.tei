@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="404"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Gate Load Delay Computation Using Analytical Models <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Andrew B. Kahng Sudhakar Muddu <lb/></docAuthor></byline>
+		<byline><affiliation>UCLA Computer Science Department Silicon Graphics, Inc. <lb/></affiliation></byline>
+		<address>Los Angeles, CA 90095-1596 USA Mountain View, CA 94039 USA <lb/></address>
+		<email>abk@cs.ucla.edu</email> <email> muddu@mti.sgi.com <lb/></email>
+		<div type="abstract">Abstract <lb/>With submicron technologies, gate delays are dominated by gate <lb/>load delays rather than intrinsic gate delays. While the common approach for computing gate load delay (or total gate delay) is through <lb/>delay tables (or k-factor equations), there are important methodology problems associated with the delay table approach. In this paper, we propose a gate driver model with a Thevenin equivalent circuit consisting of a ramp voltage source whose slew time is obtained <lb/>from the gate slew tables, and a driver resistance in series with the <lb/>gate load. We then develop analytical gate delay formulas using this <lb/>Thevenin driver model and modeling the load with various gate load <lb/>models under both rising and falling ramp input. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

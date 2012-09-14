@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>							
+							<persName>
+								<forename>Lois</forename>
+								<forename>G</forename>
+								<surname>Kim</surname>
+								<marker>1*</marker> ,
+							</persName>
+							<persName>
+								<forename>Claire</forename>
+								<surname>Carson</surname>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>Debbie</forename>
+								<middlename>A</middlename>
+								<surname>Lawlor</surname>
+								<marker>3</marker> ,
+							</persName>
+							<persName>
+								<forename>Shah</forename>
+								<surname>Ebrahim</surname>
+								<marker>4</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

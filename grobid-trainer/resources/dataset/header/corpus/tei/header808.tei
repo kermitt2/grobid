@@ -1,0 +1,21 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="809"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Indexing PROLOG Procedures into DAGs <lb/>by Heuristic Classification <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Michael Sintek <lb/></docAuthor></byline>
+		<byline><affiliation>DFKI <lb/></affiliation></byline>
+		<address>Postfach 2080 <lb/>67608 Kaiserslautern <lb/>Germany <lb/></address>
+		<date>May 5, 1994 <lb/></date>
+		<div type="abstract">Abstract <lb/>This paper first gives an overview of standard PROLOG indexing and <lb/>then shows, in a step-by-step manner, how it can be improved by slightly <lb/>extending the WAM indexing instruction set to allow indexing on multiple <lb/>arguments. Heuristics are described that overcome the difficulty of computing the indexing WAM code. In order to become independent from a <lb/>concrete WAM instruction set, an abstract graphical representation based <lb/>on DAGs (called DAXes) is introduced. <lb/>The paper includes a COMMON LISP listing of the main heuristics <lb/>implemented; the algorithms were developed for RELFUN, a relational-plus-functional language, but can easily be used in arbitrary PROLOG <lb/>implementations. <lb/></div>
+		<note type="other">The ideas described in this paper were first presented at the </note>
+		<note type="reference">Workshop <lb/>&quot;Sprachen fur KI-Anwendungen, Konzepte - Methoden Implementierun-gen&quot; 1992 in Bad Honnef [SS92]. </note>
+		<note type="other">This paper is part of a collaborative work <lb/>together with Werner Stein [Ste92]. <lb/></note>
+		<pb/>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,22 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="35"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Kit: A Study in <lb/>Operating System Verification <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>William R. Bevier <lb/></docAuthor></byline>
+		<idno>Technical Report 28</idno>
+		<date>August, 1988 <lb/></date>
+		<byline><affiliation>Computational Logic Inc. <lb/></affiliation></byline>
+		<address>1717 W. 6th St. Suite 290 <lb/>Austin, Texas 78703 <lb/></address>
+		<note type="phone">(512) 322-9951 <lb/></note>
+		<note type="grant">This research was supported in part by the U.S. <lb/>Government. </note>
+		<note type="other">The views and conclusions contained in this <lb/>document are those of the author and should not be <lb/>interpreted as representing the official policies, either <lb/>expressed or implied, of the Defense Advanced Research <lb/>Projects Agency or the U.S. Government. </note>
+		<note type="grant">This work was <lb/>sponsored in part at Computational Logic, Inc. by the <lb/>Defense Advanced Research Projects Agency, ARPA <lb/>Orders 6082 and 9151, and at the University of Texas at <lb/>Austin by the Defense Advanced Research Projects <lb/>Agency, ARPA Order 5246, issued by the Space and <lb/>Naval Warfare Systems Command under Contract <lb/>N00039-85-K-0085. <lb/></note>
+		<pb/>
+		</front>
+</text>
+</tei>

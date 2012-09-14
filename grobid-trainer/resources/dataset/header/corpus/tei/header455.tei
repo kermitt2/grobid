@@ -1,0 +1,22 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="458"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Multistrategy Learning of Adaptive Reactive Controllers <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Juan Carlos Santamara and Ashwin Ram <lb/></docAuthor></byline>
+		<byline><affiliation>College of Computing <lb/>Georgia Institute of Technology <lb/></affiliation></byline>
+		<address>Atlanta, Georgia 30332-0280 <lb/></address>
+		<email>E-mail: fcarlos,ashwing@cc.gatech.edu <lb/></email>
+		<note type="phone">Phone: (404) 894-4995 <lb/>Fax: (404) 894-9846 <lb/></note>
+		<idno>Technical Report GIT-CC-97-05 <lb/></idno>
+		<date>January 1997 <lb/></date>
+		<div type="abstract">Abstract <lb/>Reactive controllers has been widely used in mobile robots since they are able to achieve successful performance in real-time. However, the configuration of a reactive controller depends <lb/>highly on the operating conditions of the robot and the environment; thus, a reactive controller <lb/>configured for one class of environments may not perform adequately in another. This paper <lb/>presents a formulation of learning adaptive reactive controllers. Adaptive reactive controllers <lb/>inherit all the advantages of traditional reactive controllers, but in addition they are able to adjust themselves to the current operating conditions of the robot and the environment in order to <lb/>improve task performance. Furthermore, learning adaptive reactive controllers can learn when <lb/>and how to adapt the reactive controller so as to achieve effective performance under different <lb/>conditions. The paper presents an algorithm for a learning adaptive reactive controller that <lb/>combines ideas from case-based reasoning and reinforcement learning to construct a mapping <lb/>between the operating conditions of a controller and the appropriate controller configuration; <lb/>this mapping is in turn used to adapt the controller configuration dynamically. As a case <lb/>study, the algorithm is implemented in a robotic navigation system that controls a Denning <lb/>MRV-III mobile robot. The system is extensively evaluated using statistical methods to verify <lb/>its learning performance and to understand the relevance of different design parameters on the <lb/>performance of the system. <lb/></div>
+		<keywords>Keywords: Reactive control, multistrategy learning, case-based reasoning, reinforcement learning, <lb/>robotic navigation. <lb/></keywords>
+		<pb/>
+		</front>
+</text>
+</tei>

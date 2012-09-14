@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="655"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Modeling and the Adaptive Solution of <lb/>CVD Fiber-Coating Processes <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>S. Adjerid, J. E. Flaherty, J. B. Hudson, and M. S. Shephard <lb/></docAuthor></byline>
+		<byline><affiliation>Scientific Computation Research Center <lb/>Rensselaer Polytechnic Institute <lb/></affiliation></byline>
+		<address>Troy, New York 12180, USA <lb/></address>
+		<div type="abstract">Abstract <lb/>We develop a mathematical model for the coating of ceramic fibers by chemical vapor <lb/>deposition (CVD) in cylindrical hot- or cold-walled reactors. The model couples the <lb/>Navier-Stokes equations for the mixture of a carrier gas and precursor species, an energy <lb/>equation for the gaseous mixture, a convection-diffusion system for the reacting precursor <lb/>species, a fiber coating model, and a fiber heat conduction equation. The system is heated <lb/>by a combination of conduction, convection, and radiation. <lb/>The partial differential system resulting from this model is solved by adaptive finite element software using automatic mesh refinement and coarsening on a quadtree-structured <lb/>mesh. The results of parameter studies indicate the effectiveness of using adaptive solution techniques with CVD applications and also suggest some guidance for improving <lb/>the process. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

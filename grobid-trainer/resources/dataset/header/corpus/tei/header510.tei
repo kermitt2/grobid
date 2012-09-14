@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="513"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Generating CAD-models of teeth <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Peter Johannes Neugebauer <lb/></docAuthor></byline>
+		<byline><affiliation>Fraunhofer-Institute for Computer Graphics, <lb/></affiliation></byline>
+		<address>Wilhelminenstrasse 7, 64283 Darmstadt, Germany, <lb/></address>
+		<email>email: neugeb@igd.fhg.de <lb/></email>
+		<div type="abstract">In this paper, we present an approach for the reconstruction of teeth model. Therefore, <lb/>a tooth model has to be scanned from several directions with a 3D-laser scanner. Several <lb/>views are necessary because of shadows and occluded areas in the range images. Then, <lb/>all acquired range views are combined to build a CAD-model of the tooth. The idea is <lb/>that every part of the surface should be visible in at least one view. The reconstruction <lb/>process is divided into the steps registration, volume sculpturing and generation of an <lb/>accurate polygonal representation. <lb/></div>
+		<div type="intro">1. Introduction</div>
+		</front>
+</text>
+</tei>

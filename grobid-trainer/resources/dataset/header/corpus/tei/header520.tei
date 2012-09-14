@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="523"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">The Candide System for Machine Translation <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Adam L. Berger, Peter F. Brown , Stephen A. Della Pietra, Vincent J. Della Pietra, <lb/>John R. Gillett, John D. Lafferty, Robert L. Mercer, Harry Printz, Lubos Ures <lb/></docAuthor></byline>
+		<byline><affiliation>IBM Thomas J. Watson Research Center <lb/></affiliation></byline>
+		<address>P.O. Box 704 <lb/>Yorktown Heights, NY 10598 <lb/></address>
+		<div type="abstract">ABSTRACT <lb/>We present an overview of Candide, a system for automatic <lb/>translation of French text to English text. Candide uses <lb/>methods of information theory and statistics to develop a <lb/>probability model of the translation process. This model, <lb/>which is made to accord as closely as possible with a large <lb/>body of French and English sentence pairs, is then used to <lb/>generate English translations of previously unseen French <lb/>sentences. This paper provides a tutorial in these methods, <lb/>discussions of the training and operation of the system, and <lb/>a summary of test results. <lb/></div>
+		<div type="intro">1. Introduction</div>
+		</front>
+</text>
+</tei>

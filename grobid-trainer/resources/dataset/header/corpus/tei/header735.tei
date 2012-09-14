@@ -1,0 +1,23 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="736"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Towards Usable and Lean <lb/>Parallel Linear Algebra Libraries <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Almadena Chtchelkanova Carter Edwards <lb/>John Gunnels Greg Morrow <lb/>James Overfelt Robert van de Geijn <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Sciences <lb/>and <lb/>Texas Institute for Computational and Applied Mathematics <lb/>The University of Texas at Austin <lb/></affiliation></byline>
+		<address>Austin, Texas 78712 <lb/></address>
+		<date>May 1, 1996 <lb/></date>
+		<div type="abstract">Abstract <lb/>In this paper, we introduce a new parallel library effort, as part of the PLAPACK <lb/>project, that attempts to address discrepencies between the needs of applications and <lb/>parallel libraries. A number of contributions are made, including a new approach <lb/>to matrix distribution, new insights into layering parallel linear algebra libraries, and <lb/>the application of &quot;object based&quot; programming techniques which have recently become <lb/>popular for (parallel) scientific libraries. We present an overview of a prototype library, <lb/>the SL Library, which incorporates these ideas. Preliminary performance data shows <lb/>this more application-centric approach to libraries does not necessarily adversely impact <lb/>performance, compared to more traditional approaches. <lb/></div>
+		<note type="grant">This project is sponsored in part by the Office of Naval Research under Contract N00014-95-1-0401, <lb/>the NASA High Performance Computing and Communications Program&apos;s Earth and Space Sciences Project <lb/>under NRA Grant NAG5-2497, the PRISM project under ARPA grant P-95006. <lb/>Corresponding and presenting author.</note>
+		<byline><affiliation>Dept. of Computer Sciences, The University of Texas at Austin, <lb/></affiliation></byline>
+		<address>Austin, TX 78712,</address>
+		<note type="phone">(512) 471-9720 (Office), (512) 471-8885 (Fax),</note>
+		<email>rvdg@cs.utexas.edu. <lb/></email>
+		<pb/>
+		</front>
+</text>
+</tei>

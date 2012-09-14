@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<nite:root nite:id="WO2007031596.HC.formula-names" xmlns:nite="http://nite.sourceforge.net/">
+   <formula-name nite:id="WO2007031596.HC.formula-names.1" comment="" name="H2O2" relevant="false" chebi-id="CHEBI:16240" epochem-id="EPOCHEM:NEW:FORMULA:15">
+      <nite:child href="WO2007031596.words.xml#id(WO2007031596_w_3765)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007031596.HC.formula-names.2" comment="" name="H2O2" relevant="false" chebi-id="CHEBI:16240" epochem-id="EPOCHEM:NEW:FORMULA:15">
+      <nite:child href="WO2007031596.words.xml#id(WO2007031596_w_3772)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007031596.HC.formula-names.3" comment="" name="H2O2" relevant="false" chebi-id="CHEBI:16240" epochem-id="EPOCHEM:NEW:FORMULA:15">
+      <nite:child href="WO2007031596.words.xml#id(WO2007031596_w_3912)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007031596.HC.formula-names.4" comment="" name="H2O2" relevant="false" chebi-id="CHEBI:16240" epochem-id="EPOCHEM:NEW:FORMULA:15">
+      <nite:child href="WO2007031596.words.xml#id(WO2007031596_w_3922)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007031596.HC.formula-names.5" comment="" name="H2O2" relevant="false" chebi-id="CHEBI:16240" epochem-id="EPOCHEM:NEW:FORMULA:15">
+      <nite:child href="WO2007031596.words.xml#id(WO2007031596_w_3946)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007031596.HC.formula-names.6" comment="" name="H2O2" relevant="false" chebi-id="CHEBI:16240" epochem-id="EPOCHEM:NEW:FORMULA:15">
+      <nite:child href="WO2007031596.words.xml#id(WO2007031596_w_4115)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007031596.HC.formula-names.7" comment="" name="H2O2" relevant="false" chebi-id="CHEBI:16240" epochem-id="EPOCHEM:NEW:FORMULA:15">
+      <nite:child href="WO2007031596.words.xml#id(WO2007031596_w_4284)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007031596.HC.formula-names.8" comment="" name="H2O2" relevant="false" chebi-id="CHEBI:16240" epochem-id="EPOCHEM:NEW:FORMULA:15">
+      <nite:child href="WO2007031596.words.xml#id(WO2007031596_w_4906)"/>
+   </formula-name>
+</nite:root>

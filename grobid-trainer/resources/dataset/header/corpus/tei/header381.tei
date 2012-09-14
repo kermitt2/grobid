@@ -1,0 +1,19 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="386"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">The Use of Description Logics in KBSE systems <lb/>Survey Paper <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Premkumar T. Devanbu &amp; Mark A. Jones <lb/></docAuthor></byline>
+		<byline><affiliation>Artificial Intelligence Principles Research Department <lb/>AT&amp;T Bell Laboratories <lb/></affiliation></byline>
+		<email>fprem,jonesg@research.att.com <lb/></email>
+		<address>Murray Hill, NJ 07063 <lb/></address>
+		<date>February 9, 1994 <lb/></date>
+		<div type="abstract">Abstract <lb/>The increasing size and complexity of many software <lb/>systems demand a greater emphasis on capturing and <lb/>maintaining knowledge at many different levels within <lb/>the software development process. This knowledge includes descriptions of the hardware and software components and their behavior, external and internal design specifications, and support for system testing. <lb/>The knowledge-based software engineering (KBSE) research paradigm is concerned with systems that use <lb/>formally represented knowledge, with associated inference procedures, to support the various subactivi-ties of software development. As they grow in scale, <lb/>KBSE systems must balance expressivity and inferential power with the real demands of knowledge base <lb/>construction, maintenance, performance and comprehensibility. Description Logics (DL&apos;s) possess several <lb/>features a terminological orientation, a formal semantics and efficient reasoning procedures which offer an effective tradeoff of these factors. We discuss <lb/>three KBSE systems in which DL&apos;s capture some of <lb/>the requisite knowledge needed to support design, coding and testing activities. We close with a discussion <lb/>of the benefits of DL&apos;s and ways to address some of <lb/>their limitations. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>
