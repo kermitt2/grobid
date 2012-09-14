@@ -1,0 +1,15 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="236"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Runtime Support to Parallelize Adaptive Irregular <lb/>Programs <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Yuan-Shin Hwang 1 Bongki Moon 1 Shamik Sharma 1 Raja Das 1 <lb/> Joel Saltz 1 <lb/></docAuthor></byline>
+		<div type="abstract">Abstract <lb/>This paper describes how a runtime support library can be used as compiler runtime <lb/>support in irregular applications. The CHAOS runtime support library carries out <lb/>optimizations designed to reduce communication costs by performing software caching, <lb/>communication coalescing and inspector/executor preprocessing. CHAOS also supplies <lb/>special purpose routines to support specific types of irregular reduction and runtime <lb/>support for partitioning data and work between processors. A number of adaptive <lb/>irregular codes have been parallelized using the CHAOS library and performance results <lb/>from these codes are also presented in this paper. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

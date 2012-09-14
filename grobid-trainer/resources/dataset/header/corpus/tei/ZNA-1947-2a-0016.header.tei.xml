@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="ZNA-1947-2a-0016"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Ionisierungsspannung und Elektronenabschirmung im Periodischen System<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Von WOLFGANG FINKELNBURG 1<lb/></docAuthor>
+	</byline>
+
+	<dedication>Herrn Prof. Dr. Hans Raa in Darmstadt zum 65. Geburtstag gewidmet<lb/></dedication>
+
+	<reference>(Z. Naturforschg. 2 a, 16—20 [1947];</reference>
+
+	<note type="submission">eingegangen am 9. Sept. 1946)<lb/></note>
+
+	<div type="abstract">Die Abschirmung der auf das äußerste Elektron wirkenden Kernladung durch die<lb/> inneren Elektronen zeigt im Periodischen System der Elemente Gesetzmäßigkeiten die<lb/> Schlüsse auf die Verhältnisse in der Elektronenhülle gestatten und die Extrapolation<lb/> noch unbekannter sowie die Korrektur unsicherer Ionisierungsspannungen ermöglichen.<lb/></div>
+
+	<div type="introduction">D ie Ionisierungsenergie E. des im n-quantigen<lb/></div>
+
+		</front>
+	</text>
+</tei>

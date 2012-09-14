@@ -1,0 +1,23 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="136"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<note type="reference">Ph.D. Proposal, Department of Computer Sciences, University of Texas at Austin, September 1996 <lb/></note>
+		<note type="reference">Also appears as Technical Report AI 96-250, Artificial Intelligence Lab, University of Texas at Austin <lb/></note>
+		<docTitle>
+			<titlePart type="main">Integrating Explanation-Based and Inductive Learning Techniques <lb/>to Acquire Search-Control for Planning <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Tara A. Estlin <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Sciences <lb/>University of Texas at Austin <lb/></affiliation></byline>
+		<address>Austin, TX 78712 <lb/></address>
+		<email>estlin@cs.utexas.edu <lb/></email>
+		<idno>Technical Report AI96-250 <lb/></idno>
+		<date>September 1996 <lb/></date>
+		<div type="abstract">Abstract <lb/>Planning systems have become an important tool for automating a wide variety <lb/>of tasks. Control knowledge guides a planner to find solutions quickly and is crucial <lb/>for efficient planning in most domains. Machine learning techniques enable a planning <lb/>system to automatically acquire domain-specific search-control knowledge for different <lb/>applications. Past approaches to learning control information have usually employed <lb/>explanation-based learning (EBL) to generate control rules. Unfortunately, EBL alone <lb/>often produces overly complex rules that actually decrease rather than improve overall <lb/>planning efficiency. This paper presents a novel learning approach for control knowledge <lb/>acquisition that integrates explanation-based learning with techniques from inductive <lb/>logic programming. In our learning system Scope, EBL is used to constrain an inductive search for control heuristics that help a planner choose between competing plan <lb/>refinements. Scope is one of the few systems to address learning control information for newer, partial-order planners. Specifically, this proposal describes how Scope <lb/>learns domain-specific control rules for the UCPOP planning algorithm. The resulting <lb/>system is shown to produce significant speedup in two different planning domains, and <lb/>to be more effective than a pure EBL approach. Future research will be performed <lb/>in three main areas. First, Scope&apos;s learning algorithm will be extended to include <lb/>additional techniques such as constructive induction and rule utility analysis. Second, <lb/>Scope will be more thoroughly tested; several real-world planning domains have been <lb/>identified as possible testbeds, and more in-depth comparisons will be drawn between <lb/>Scope and other competing approaches. Third, Scope will be implemented in a different planning system in order to test its portability to other planning algorithms. This <lb/>work should demonstrate that machine-learning techniques can be a powerful tool in <lb/>the quest for tractable real-world planning. <lb/></div>
+		<note type="grant">This research was supported by the NASA Graduate Student Researchers Program, grant number NGT <lb/>51332. <lb/></note>
+		<pb/>
+		</front>
+</text>
+</tei>

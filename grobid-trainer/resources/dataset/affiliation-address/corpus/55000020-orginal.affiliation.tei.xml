@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<affiliation> From the <marker>‡</marker>
+								<orgName type="department">Department of Pathology</orgName>,
+								<orgName type="institution">Kitasato University School of Medicine</orgName>, 
+								<address>
+									<addrLine>1-15-1, Kitasato</addrLine>,
+									<settlement>Sagamihara</settlement>,
+									<region>Kanagawa</region>
+									<postCode>228-8555</postCode>,
+									<country>Japan</country>,
+									<lb/>
+								</address>
+							</affiliation>
+							<affiliation>
+								the <marker>¶</marker>
+								<orgName type="department">Department of Molecular and Cellular Biology</orgName>, 
+								<orgName type="department">Medical Institute for Bioregulation</orgName>, 
+								<orgName type="institution">Kyushu University</orgName>, 
+								<address>
+									<settlement>Fukuoka</settlement>
+									<postCode>812-8582</postCode>,
+									<country>Japan</country>,
+								</address>
+							</affiliation>
+							<affiliation>
+								and the <marker>ʈ</marker>
+								<orgName type="department">CREST</orgName>, <lb/>
+								<orgName type="institution">Japan Science and Technology Corporation (JST)</orgName>,
+								<address>
+									<settlement>Kawaguchi</settlement>,
+									<region>Saitama</region>
+									<postCode>332-0012</postCode>,
+									<country>Japan</country>
+								</address>
+							</affiliation>
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

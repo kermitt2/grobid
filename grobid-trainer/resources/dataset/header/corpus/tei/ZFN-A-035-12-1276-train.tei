@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="ZFN-A-035-12-1276"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<titlePage>
+				<docTitle>
+					<titlePart type="main">Scattering on Magnetic Monopoles<lb/></titlePart>
+				</docTitle>
+				<byline><docAuthor>Herbert-Rainer Petry</docAuthor><lb/></byline>
+				<byline><affiliation>Institut für Theoretische Kernphysik der Universität Bonn</affiliation><lb/></byline>
+				<reference>Z. Naturforsch. 35a, 1276-1284 (1980); </reference>
+				<note type="submission">received June 26  1980 <lb/></note>
+			</titlePage>
+			<div type="abstract">The time-dependent scattering theory of charged particles on magnetic monopoles is invest]* <lb/>gated within a mathematical frame-work, which duely pays attention to the fact that the wave- <lb/>functions of the scattered particles are sections in a non-trivial complex line-bundle. It is found <lb/>that Möller operators have to be defined in a way which takes into account the peculiar long- <lb/>range behaviour of the monopole field. Formulas for the scattering matrix and the differential <lb/>cross-section are derived, and, as a by-product, a momentum space picture for particles, which <lb/>are described by sections in the underlying complex line-bundle, is presented.<lb/></div>
+			<div type="intro">Introduction<lb/></div>
+		</front>
+	</text>
+</tei>

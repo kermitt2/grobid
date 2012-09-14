@@ -1,0 +1,21 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="24"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Computer Vulnerability Analysis <lb/></titlePart>
+		</docTitle>
+		<note type="degree">Thesis Proposal <lb/></note>
+		<byline><docAuthor>Ivan Krsul <lb/></docAuthor></byline>
+		<byline><affiliation>The COAST Laboratory <lb/> Department of Computer Sciences <lb/> Purdue University <lb/></affiliation></byline>
+		<address>West Lafayette, IN 47907-1398 <lb/></address>
+		<email>krsul@cs.purdue.edu <lb/></email>
+		<idno>Technical Report CSD-TR-97-026 <lb/></idno>
+		<date>April 15, 1997 <lb/></date>
+		<div type="abstract">Abstract <lb/>Computer security professionals and researchers do not have a history of sharing and analyzing computer <lb/>vulnerability information. Scientists and engineers from older or more established fields have long understood <lb/>that publicizing, analyzing, and learning from other people&apos;s mistakes is essential to the stepwise refinement <lb/>of complex systems. Computer scientists, however, have not followed suit. Programmers reinvent classical <lb/>programming mistakes, contributing to the reappearance of known vulnerabilities. <lb/>In the recent past, computer systems have come to be a part of critical systems that have a direct effect <lb/>on the safety and well-being of human beings and hence we must have lower tolerance for software failures. <lb/>In the dissertation I will attempt to show that computer vulnerability information presents important <lb/>regularities and these can be detected, and possibly visualized, providing important insight about the reason <lb/>of their prevalence and existence. The information derived from these observations could be used to improve on <lb/>all phases of the development of software systems, as could be in the design, development, debugging, testing <lb/>and maintenance of complex computer systems that must implement a set of policies defined by security <lb/>analysis. <lb/>A significant portion of the work that must be performed will concentrate on the development of classifications and taxonomies that will permit the visualization and analysis of computer vulnerability information. <lb/>I hope that these classifications and taxonomies applied to a collection of vulnerabilities will provide a set <lb/>of features whose analysis will show that there are clear statistical clusterings and patterns caused because <lb/>developers and programmers are not learning from each others mistakes. This analysis may be performed by <lb/>applying statistical analysis and knowledge discovery tools. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

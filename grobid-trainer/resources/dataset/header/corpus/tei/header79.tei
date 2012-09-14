@@ -1,0 +1,16 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="80"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Numerical conformal mapping using cross-ratios <lb/>and Delaunay triangulation <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Tobin A. Driscoll Stephen A. Vavasis <lb/></docAuthor></byline>
+		<date>January 23, 1996 <lb/></date>
+		<div type="abstract">Abstract <lb/>We propose a new algorithm for computing the Riemann mapping of the <lb/>unit disk to a polygon, also known as the Schwarz-Christoffel transformation. <lb/>The new algorithm, CRDT, is based on cross-ratios of the prevertices, and also <lb/>on cross-ratios of quadrilaterals in a Delaunay triangulation of the polygon. <lb/>The CRDT algorithm produces an accurate representation of the Riemann <lb/>mapping even in the presence of arbitrary long, thin regions in the polygon, <lb/>unlike any previous conformal mapping algorithm. We believe that CRDT can <lb/>never fail to converge to the correct Riemann mapping, but the correctness and <lb/>convergence proof depend on conjectures that we have so far not been able to <lb/>prove. We demonstrate convergence with computational experiments. <lb/>The Riemann mapping has applications to problems in two-dimensional <lb/>potential theory and to finite-difference mesh generation. We use CRDT to <lb/>produce a mapping and solve a boundary value problem on long, thin regions <lb/>for which no other algorithm can solve these problems. <lb/></div>
+		<div type="intro">1 Conformal mapping</div>
+		</front>
+</text>
+</tei>

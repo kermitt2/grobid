@@ -1,0 +1,19 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="756"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Software Deviation Analysis: A &quot;Safeware&quot; Technique <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Jon Damon Reese and Nancy G. Leveson <lb/></docAuthor></byline>
+		<byline><affiliation>Dept. of C.S.E. Safeware Engineering Corp. <lb/>University of Washington</affiliation></byline>
+		<address>7200 Lower Ridge, Unit B <lb/>Box 352350 Everett, WA 98203, U.S.A. <lb/>Seattle, WA 98195, U.S.A. <lb/></address>
+		<email>{jdreese,leveson}@cs.washington.edu <lb/></email> <email>{jdreese,leveson}@safeware-eng.com <lb/></email>
+		<div type="abstract">Abstract <lb/>Standard safety analysis techniques are often ineffective when computers and digital devices are integrated into plant control. The Safeware methodology and its <lb/>set of supporting safety analysis techniques (and prototype tools) includes modeling <lb/>and hazard analysis of complex systems where the components may be a mixture of <lb/>humans, hardware, and software. This paper describes one of the Safeware hazard <lb/>analysis techniques, Software Deviation Analysis, that incorporates the beneficial features of HAZOP (such as guidewords, deviations, exploratory analysis, and a systems <lb/>engineering approach) into an automated procedure that is capable of handling the <lb/>complexity and logical nature of computer software. <lb/></div>
+		<note type="grant">This work was partly funded by NASA/Langley Grant NAG-1-1495, NSF Grant CCR-9396181, and the <lb/>California PATH Program of the University of California, in cooperation with the California Department <lb/>of Transportation and the U.S. Department of Transportation. <lb/></note>
+		<pb/>
+		</front>
+</text>
+</tei>

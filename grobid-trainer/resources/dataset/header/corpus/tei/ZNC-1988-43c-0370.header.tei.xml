@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="ZNC-1988-43c-0370"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>New Constituents of Essential Oil from Elsholtzia pilosa*<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>H. J. Bestmann, U. Kobold, B. Claßen, and O. Vostrowsky<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Organisch-Chemisches Institut der Universität Erlangen-Nürnberg,</affiliation>
+	</byline>
+
+	<address>D-8520 Erlangen,<lb/> Bundesrepublik Deutschland<lb/></address>
+
+	<byline>
+	<docAuthor>and<lb/> G. C. Sah, A. K. Pant, A. B. Melkani, and C. S. Mathela<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Chemistry, Kumaun University,</affiliation>
+	</byline>
+
+	<address>Nainital, India<lb/></address>
+
+	<reference>Z. Naturforsch. 43c, 370-372 (1988);</reference>
+
+	<note type="submission">received December 3, 1987/February 4, 1988<lb/></note>
+
+	<keyword>Elsholtzia pilosa, Terpenoids, 1.8-Cineol, Insecticidal Properties<lb/></keyword>
+
+	<div type="abstract">By means of GC and GCMS 31 constituents of the essential oil of Elsholtzia pilosa have been<lb/> identified, 1.8-cineol representing the main component (50%). The oil composition with respect<lb/> to its major constituents has been compared with other Elsholtzia species.<lb/> </div>
+
+	<div type="introduction">In continuation of our programme to analyse the<lb/> </div>
+
+		</front>
+	</text>
+</tei>

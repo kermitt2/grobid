@@ -1,0 +1,73 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="0951-7715_24_7_004"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<lb/>
+			<note>Home Search Collections Journals About Contact us My IOPscience<lb/></note>
+			<docTitle>
+				<titlePart>Exact solutions for a family of spin-boson systems<lb/></titlePart>
+			</docTitle>
+
+			<note>This article has been downloaded from IOPscience. Please scroll down to see the
+				full text article.<lb/></note>
+
+			<reference>2011 Nonlinearity 24 1975<lb/></reference>
+
+			<ptr type="web">(http://iopscience.iop.org/0951-7715/24/7/004)<lb/></ptr>
+
+			<note>Download details:<lb/></note>
+
+			<note>View the table of contents for this issue, or go to the journal homepage for
+				more<lb/></note>
+
+			<reference>IP Address: 145.64.134.241<lb/></reference>
+
+			<note>The article was downloaded on 27/05/2011 at 09:38<lb/> Please note that terms and
+				conditions apply.<lb/></note>
+
+			<pb/>
+			<note type="other">IOP PUBLISHING</note>
+			<space dim="horizontal"/>
+
+			<reference>NONLINEARITY<lb/></reference>
+			<reference>Nonlinearity 24 (2011) 1975–1986<lb/></reference>
+			<space dim="horizontal"/>
+			<idno>doi:10.1088/0951-7715/24/7/004x<lb/></idno>
+			<docTitle>
+				<titlePart>Exact solutions for a family of spin-boson systems<lb/></titlePart>
+			</docTitle>
+
+			<byline>
+				<docAuthor>Yuan-Harng Lee, Jon Links and Yao-Zhong Zhang<lb/></docAuthor>
+			</byline>
+
+			<byline>
+				<affiliation>School of Mathematics and Physics, The University of
+					Queensland,</affiliation>
+			</byline>
+
+			<address>Brisbane, Qld 4072, Australia<lb/></address>
+
+			<note type="submission">Received 15 December 2010<lb/></note>
+			<date>Published 24 May 2011<lb/></date>
+
+			<ptr type="web">Online at stacks.iop.org/Non/24/1975<lb/></ptr>
+			<note type="other">Recommended by S Nonnenmacher<lb/></note>
+
+			<div type="abstract">Abstract We obtain the exact solutions for a family of spin-boson
+				systems. This<lb/> is achieved through application of the representation theory for
+				polynomial<lb/> deformations of the su(2) Lie algebra. We demonstrate that the
+				family of<lb/> Hamiltonians includes, as special cases, known physical models which
+				are<lb/> the two-site Bose–Hubbard model, the Lipkin–Meshkov–Glick model, the<lb/>
+				molecular asymmetric rigid rotor, the Tavis–Cummings model and a two-mode<lb/>
+				generalization of the Tavis–Cummings model.<lb/></div>
+
+			<keywords>Mathematics Subject Classification: 83C15, 81U15, 81V80, 17B80, 81R12<lb/></keywords> 
+			<keywords type="pacs">PACS numbers: 02.30.Ik, 03.65.Fd<lb/></keywords>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Yoh</forename>
+								<surname>Dobashi</surname>
+								<marker>‡§</marker>,
+							</persName>
+							<persName>
+								<forename>Mitsuhiko</forename>
+								<surname>Shoji</surname>
+								<marker>‡</marker>,
+							</persName>
+							<persName>
+								<forename>Masatoshi</forename>
+								<surname>Kitagawa</surname>
+								<marker>¶ʈ</marker>,
+							</persName>
+							<persName>
+								<forename>Takashi</forename>
+								<surname>Noguchi</surname>
+								<marker>‡</marker> and
+							</persName>
+							<persName>
+								<forename>Toru</forename>
+								<surname>Kameya</surname>
+								<marker>‡</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

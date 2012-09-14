@@ -1,0 +1,25 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="486"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Modeling and Rendering Architecture from Photographs: <lb/>A hybrid geometry- and image-based approach <lb/></titlePart>
+		</docTitle>
+		<idno>Technical Report UCB//CSD-96-893 <lb/></idno>
+		<date>January 19, 1996 <lb/></date>
+		<byline><docAuthor>Paul E. Debevec Camillo J. Taylor Jitendra Malik <lb/></docAuthor></byline>
+		<email>debevec@cs.berkeley.edu </email> <email>camillo@cs.berkeley.edu </email> <email>malik@cs.berkeley.edu <lb/></email>
+		<address>545 Soda Hall 485 Soda Hall 725 Soda Hall <lb/></address>
+		<note type="phone">(510) 642 9940 (510) 642 5029 (510) 642 7597 <lb/></note>
+		<byline><affiliation>Computer Science Division, University of California at Berkeley <lb/></affiliation></byline>
+		<address>Berkeley, CA 94720-1776 <lb/></address>
+		<note type="phone">(510) 642 5775 (fax) <lb/></note>
+		<div type="abstract">Abstract <lb/>We present an approach for creating realistic synthetic views of existing architectural <lb/>scenes from a sparse set of still photographs. Our approach, which combines both geometry-based and image-based modeling and rendering techniques, has two components. The first <lb/>component is an easy-to-use photogrammetric modeling system which facilitates the recovery of a basic geometric model of the photographed scene. The modeling system is effective <lb/>and robust because it exploits the constraints that are characteristic of architectural scenes. <lb/>The second component is a model-based stereo algorithm, which recovers how the real scene <lb/>deviates from the basic model. By making use of the model, our stereo approach can robustly <lb/>recover accurate depth from image pairs with large baselines. Consequently, our approach <lb/>can model large architectural environments with far fewer photographs than current image-based modeling approaches. As an intermediate result, we present view-dependent texture <lb/>mapping, a method of better simulating geometric detail on basic models. Our approach <lb/>can recover models for use in either geometry-based or image-based rendering systems. We <lb/>present results that demonstrate our approach&apos;s abilty to create realistic renderings of architectural scenes from viewpoints far from the original photographs. <lb/>Keywords: Image-based modeling, image-based rendering, interactive modeling systems, <lb/>photogrammetry, reconstruction, view-dependent texture mapping, view interpolation, model-based stereo <lb/></div>
+		<note type="other">See also:</note>
+		<ptr type="web">http://www.cs.berkeley.edu/~debevec/Research/ <lb/></ptr>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

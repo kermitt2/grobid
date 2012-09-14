@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Ahmed</forename>
+								<surname>Abu-Rayyan</surname>
+								<marker>*</marker> ,
+								<marker>a</marker> ,
+							</persName>
+							<persName>
+								<forename>Qutaiba</forename>
+								<surname>Abu-Salem</surname>
+								<marker>b</marker> ,
+							</persName>
+							<persName>
+								<forename>Norbert</forename>
+								<surname>Kuhn</surname>
+								<marker>* ,b</marker> ,
+							</persName>
+							<persName>
+								<forename>Cäcilia</forename>
+								<surname>Maichle-Mößmer</surname>
+								<marker>b</marker> ,
+							</persName>
+							<persName>
+								<forename>Manfred</forename>
+								<surname>Steimann</surname>
+								<marker>b</marker> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Gerald</forename>
+								<surname>Henkel</surname>
+								<marker>c *</marker>
+							</persName>
+							<persName>
+								<forename>Dr</forename> .
+								<middlename>A</middlename> .
+								<surname>Abu -Rayyan</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

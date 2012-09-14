@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker> Undergraduate Student,
+							<orgName type="institution">Polytechnic Institute of Porto</orgName>,
+							<orgName type="department">School of Engineering (ISEP/IPP)</orgName>,
+							<address>
+								<settlement>Porto</settlement>,
+								<country>Portugal</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="laboratory">IPP-HURRAY! Research Group</orgName>,
+							<orgName type="institution">Polytechnic Institute of Porto</orgName>,
+							<orgName type="department">School of Engineering (ISEP/IPP)</orgName>,
+							<address>
+								<settlement>Porto</settlement>,
+								<country>Portugal</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>3</marker>
+							<orgName type="institution">Al-Imam Muhammad Ibn Saud University</orgName>,
+							<orgName type="department">Computer Science Dept</orgName>.,
+							<address>
+								<postCode>11681</postCode>
+								<settlement>Riyadh</settlement>,
+								<country>Saudi Arabia</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

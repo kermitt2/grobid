@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="ZNB-1947-2b-0056"/>
+	</teiHeader>
+	<text xml:lang="de">
+		<front>
+			<lb/>
+			<docTitle>
+				<titlePart>Die Blütenbildung von Hyoscyamus niger in 48-stündigen<lb/> Licht-Dunkel-Zyklen und in Zyklen mit aufgeteilten Lichtphasen<lb/></titlePart>
+			</docTitle>
+
+			<byline>
+				<docAuthor>Von HEDWIG CLAES und ANTON LANG<lb/></docAuthor>
+			</byline>
+
+			<byline>
+				<affiliation>Aus dem Kaiser-Wilhelm-Institut für Biologie, Abteilung Melchers,</affiliation>
+			</byline>
+			
+			<address>Tübingen (früher Berlin-Dahlem)<lb/></address>
+
+			<reference>(Z. Naturforschg. 2 b, 56—63 [1947];</reference>
+
+			<note type="submission">eingegangen'am 24. Februar 1947)<lb/></note>
+
+			<div type="abstract">Durch Aufteilung der Lichtphasen in 24h-Zyklen kann bei der Langtagpflanze Hyoscyamus<lb/> niger Blütenbildung in Lichtzeiten ausgelöst werden, die bei zusammenhängender Darbietung<lb/> weit unterhalb der kritischen Tageslänge Hegen. Dabei ist ein ausgesprochenes zeitliches Opti-<lb/>mum der Wirksamkeit des zweiten Teües der Lichtzeit vorhanden, welches etwa 16 h nach Be-<lb/>ginn des ersten und in der Mitte der Dunkelphasen liegt. In 48-stdg. Zyklen kommen Hyoscy-<lb/>amus-Pflanzen auch bei Lichtzeiten zu Blütenbildung, in denen sie in 24-stdg. vegetativ bleiben<lb/> (9 und 10 h Licht je Zyklus). Bei längeren Lichtzeiten ist die Auslösung der Blütenbüdung in 48-<lb/>gegenüber 24 h-Zyklen etwas verzögert. Bei einer Aufteilung der Lichtphasen von 48 h-Zyklensind<lb/> zwei zeitliche Optima der Lichtwirkung bezüglich der Blütenbildung vorhanden, das erste etwa<lb/> 16 h nach Beginn der ersten Belichtung, das zweite 24 h später, während dazwischen, ungefähr in<lb/> der Mitte der Dunkelphasen, Licht die Blütenbildung nicht fördert.<lb/></div>
+
+		</front>
+	</text>
+</tei>

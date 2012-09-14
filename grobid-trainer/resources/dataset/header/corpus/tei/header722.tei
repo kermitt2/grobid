@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="723"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">The Next Frontier: Interactive and Closed Loop Performance <lb/>Steering * <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Daniel A. Reed Christopher L. Elford <lb/>Tara M. Madhyastha Evgenia Smirni <lb/>Stephen E. Lamm <lb/></docAuthor></byline>
+		<email>{reed,elford,tara,esmirni,slamm}@cs.uiuc.edu <lb/></email>
+		<byline><affiliation>Department of Computer Science <lb/>University of Illinois <lb/></affiliation></byline>
+		<address>Urbana, Illinois 61801 <lb/></address>
+		<div type="abstract">Abstract <lb/>Software for a growing number of problem domains <lb/>has complex, time varying behavior and unpredictable <lb/>resource demands (e.g., WWW servers and parallel input/output systems). While current performance analysis tools provide insights into application dynamics <lb/>and the causes of poor performance, with a posteriori analysis one cannot adapt to temporally varying <lb/>application resource demands and system responses. <lb/>We believe that the solution to this performance optimization conundrum is integration of dynamic performance instrumentation and on-the-fly performance <lb/>data reduction with real-time adaptive control mechanisms that select and configure resource management <lb/>algorithms automatically, based on observed application behavior, or interactively, through high-modality <lb/>virtual environments. We motivate this belief by first <lb/>describing our experiences with performance analysis tools, input/output characterization, and WWW <lb/>server analysis, and then sketching the design of interactive and closed loop adaptive control systems. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

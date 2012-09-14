@@ -1,0 +1,24 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="unknown"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Learning and Vision Algorithms for <lb/>Robot Navigation <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>by <lb/>Margrit Betke <lb/></docAuthor></byline>
+		<note type="degree">S.M., Massachusetts Institute of Technology (1992) <lb/>Submitted to the</note>
+		<byline><affiliation>Department of Electrical Engineering and Computer <lb/>Science</affiliation></byline>
+		<note type="degree">in partial fulfillment of the requirements for the degree of <lb/>Doctor of Philosophy in Electrical Engineering and Computer Science <lb/>at the <lb/></note>
+		<byline><affiliation>MASSACHUSETTS INSTITUTE OF TECHNOLOGY <lb/></affiliation></byline>
+		<date>June 1995 <lb/></date>
+		<note type="other">c Massachusetts Institute of Technology 1995. All rights reserved. <lb/></note>
+		<note type="degree">Author : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : <lb/></note>
+		<byline><affiliation>Department of Electrical Engineering and Computer Science <lb/></affiliation></byline>
+		<date>May 18, 1995 <lb/></date>
+		<note type="degree">Certified by : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : <lb/>Ronald L. Rivest <lb/>Professor <lb/>Thesis Supervisor <lb/>Accepted by : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : <lb/>F. R. Morgenthaler <lb/>Chairman, Department Committee on Graduate Students <lb/></note>
+		<pb/>
+		</front>
+</text>
+</tei>

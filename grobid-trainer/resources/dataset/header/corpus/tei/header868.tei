@@ -1,0 +1,27 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="unknown"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Constructing Small Sample Spaces Satisfying Given <lb/>Constraints <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Daphne Koller <lb/></docAuthor></byline>
+		<email>e-mail: daphne@cs.stanford.edu <lb/></email>
+		<byline><docAuthor>Nimrod Megiddo <lb/></docAuthor></byline>
+		<email>e-mail: megiddo@almaden.ibm.com <lb/></email>
+		<div type="abstract">Abstract <lb/>Abstract. The subject of this paper is finding small sample spaces for joint distributions of <lb/>n discrete random variables. Such distributions <lb/>are often only required to obey a certain limited set of constraints of the form P r(E) = . <lb/>We show that the problem of deciding whether <lb/>there exists any distribution satisfying a given <lb/>set of constraints is NP-hard. However, if the <lb/>constraints are consistent, then there exists a distribution satisfying them which is supported by <lb/>a &quot;small&quot; sample space (one whose cardinality is <lb/>equal to the number of constraints). For the important case of independence constraints, where <lb/>the constraints have a certain form and are consistent with a joint distribution of n independent <lb/>random variables, a small sample space can be <lb/>constructed in polynomial time. This last result <lb/>is also useful for de-randomizing algorithms. We <lb/>demonstrate this technique by an application to <lb/>the problem of finding large independent sets in <lb/>sparse hypergraphs. <lb/></div>
+		<byline><affiliation>Department of Computer Science, Stanford University,</affiliation></byline>
+		<address>Stanford, CA 94305;</address>
+		<byline><affiliation>and IBM Almaden Research <lb/>Center,</affiliation></byline>
+		<address>650 Harry Road, San Jose, CA 95120. <lb/></address>
+		<byline><affiliation>IBM Almaden Research Center,</affiliation></byline>
+		<address>650 Harry Road, San <lb/>Jose, CA 95120;</address>
+		<byline><affiliation>and School of Mathematical Sciences, Tel <lb/>Aviv University,</affiliation></byline>
+		<address>Tel Aviv, Israel. <lb/></address>
+		<note type="grant">Research supported in part by ONR Contract N00014-91-C-0026 and by the Air Force Office of Scientific <lb/>Research (AFSC), under Contract F49620-91-C-0080. <lb/>(Paste copyright notice here.) <lb/></note>
+		<div type="intro">1. Introduction</div>
+		</front>
+</text>
+</tei>

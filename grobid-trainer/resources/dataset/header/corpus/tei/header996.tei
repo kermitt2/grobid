@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="1065"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">   Core  - Corona Model describes the Centrality<lb/> Dependence of  v   2   //.<lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>J. Aichelin and K. Werner<lb/></docAuthor></byline>
+		<byline><affiliation>SUBATECH, Laboratoire de Physique Subatomique et des Technologies Associées,<lb/>  Université de Nantes - IN2P3/CNRS - Ecole des Mines de Nantes <lb/></affiliation></byline>
+		<address> 4 rue Alfred Kastler, F-44072 Nantes, Cedex 03, France<lb/></address>
+		<div type="abstract">   Abstract.  Event  by event EPOS calculations in which the expansion of the system is<lb/> described by  ideal  hydrodynamics reproduce well the measured centrality dependence<lb/> of  v   2   //   part   , although it has been claimed that only viscous hydrodynamics can<lb/> reproduce these data. This is due to the core - corona effect which manifests itself<lb/> in the initial condition of the hydrodynamical expansion. The centrality dependence<lb/> of  v   2   //   part   can be understood in the recently advanced core-corona model, a simple<lb/> parameter free EPOS inspired model to describe the centrality dependence of different<lb/> observables from SPS to RHIC energies. This model has already been successfully<lb/> applied to understand the centrality dependence of multiplicities and of the average<lb/> transverse momentum of identified particles.<lb/></div>
+ 	    <keywords type="pacs">PACS numbers: <lb/></keywords>
+    </front>
+</text>
+</tei>

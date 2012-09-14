@@ -1,0 +1,1281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<patent-document country="WO" doc-number="2008070134" kind="A1" ucid="WO-2008070134-A1" lang="EN" date="20080612" family-id="39492559" date-produced="20090522" status="new"><bibliographic-data><publication-reference fvid="89291421" ucid="WO-2008070134-A1" status="new"><document-id status="new" format="original"><country>WO</country><doc-number>2008070134</doc-number><kind>A1</kind><date>20080612</date></document-id></publication-reference><application-reference ucid="US-2007024938-W" status="new" is-representative="NO"><document-id format="epo" status="new"><country>US</country><doc-number>2007024938</doc-number><kind>W</kind><date>20071204</date></document-id></application-reference><priority-claims status="new"><priority-claim ucid="US-87319206-P" status="new"><document-id format="epo" status="new"><country>US</country><doc-number>87319206</doc-number><kind>P</kind><date>20061206</date></document-id></priority-claim></priority-claims><technical-data status="new"><classifications-ipcr><classification-ipcr status="new">A61K  31/4965      20060101AFI20080612BHUS        </classification-ipcr><classification-ipcr status="new">A61K  31/4965      20060101CFI20080612BHUS        </classification-ipcr><classification-ipcr status="new">A61K  31/535       20060101ALI20080612BHUS        </classification-ipcr><classification-ipcr status="new">A61K  31/535       20060101CLI20080612BHUS        </classification-ipcr><classification-ipcr status="new">C07D 253/00        20060101ALI20080612BHUS        </classification-ipcr><classification-ipcr status="new">C07D 253/00        20060101CLI20080612BHUS        </classification-ipcr></classifications-ipcr><classification-ecla status="new"><classification-symbol scheme="EC">C07D 471/14</classification-symbol><classification-symbol scheme="EC">C07D 471/14+249C+221C+221B</classification-symbol><classification-symbol scheme="EC">C07D 519/00+471/00+471/00</classification-symbol></classification-ecla><invention-title lang="EN" load-source="docdb" status="new">INHIBITORS OF AKT ACTIVITY</invention-title><invention-title lang="FR" load-source="docdb" status="new">INHIBITEURS DE L'ACTIVITÉ AKT</invention-title><citations><patent-citations><patcit ucid="US-20040102360-A1" status="new"><document-id format="epo"  status="new"><country>US</country><doc-number>20040102360</doc-number><kind>A1</kind></document-id><sources><source name="SEA" category="Y" created-by-npl="N"/></sources></patcit></patent-citations><non-patent-citations><nplcit status="new"><text>KUMAR ET AL.: 'AKT Crystal Structure and AKT Specific Inhibitors' ONCOGENE vol. 24, 2005, pages 7493 - 7501</text><sources><source name="SEA" category="Y" created-by-npl="N"/></sources></nplcit></non-patent-citations></citations></technical-data><parties><applicants><applicant format="epo"  status="new"><addressbook><name>LAYTON MARK E</name><address><country>US</country></address></addressbook></applicant><applicant format="epo"  status="new"><addressbook><name>MERCK &amp; CO INC</name><address><country>US</country></address></addressbook></applicant><applicant format="epo" status="new"><addressbook><name>RODZINAK KEVIN J</name><address><country>US</country></address></addressbook></applicant><applicant format="epo"  status="new"><addressbook><name>SANDERSON PHILIP E</name><address><country>US</country></address></addressbook></applicant><applicant format="intermediate" status="new"><addressbook><name>LAYTON, MARK, E.</name></addressbook></applicant><applicant format="intermediate" status="new"><addressbook><name>MERCK &amp; CO., INC.</name></addressbook></applicant><applicant format="intermediate" status="new"><addressbook><name>RODZINAK, KEVIN, J.</name></addressbook></applicant><applicant format="intermediate" status="new"><addressbook><name>SANDERSON, PHILIP, E.</name></addressbook></applicant></applicants><inventors><inventor format="epo" status="new"><addressbook><name>LAYTON MARK E</name><address><country>US</country></address></addressbook></inventor><inventor format="epo" status="new"><addressbook><name>RODZINAK KEVIN J</name><address><country>US</country></address></addressbook></inventor><inventor format="epo" status="new"><addressbook><name>SANDERSON PHILIP E</name><address><country>US</country></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>LAYTON, MARK, E.</name></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>RODZINAK, KEVIN, J.</name></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>SANDERSON, PHILIP, E.</name> </addressbook></inventor></inventors></parties></bibliographic-data> <abstract lang="EN" source="national office" load-source="docdb" status="new"><p>The instant invention provides for substituted naphthyridine compounds that inhibit Akt activity. In particular, the compounds disclosed selectively inhibit one or two of the Akt isoforms. The invention also provides for compositions comprising such inhibitory compounds and methods of inhibiting Akt activity by administering the compound to a patient in need of treatment of cancer.</p> </abstract><abstract lang="FR" source="national office" load-source="docdb" status="new"><p>La présente invention concerne des composés de naphthyridine substitués qui inhibent l'activité Akt. En particulier, les composés de cette invention permettent d'inhiber sélectivement au moins deux des isoformes Akt. L'invention concerne également des compositions renfermant de tels composés inhibiteurs et des procédés inhibant l'activité Akt par administration du composé à un patient nécessitant un traitement contre le cancer.</p> </abstract><description lang="EN" load-source="epoque" status="new"><p><pre xml:space="preserve" listing-type="other">
+TITLE OF THE INVENTION INHIBITORS OF AKT ACTIVITY
+
+BACKGROUND OF THE INVENTION The present invention relates to substituted naphthyridine compounds which are inhibitors of the activity of one or more of the iso forms of the serine/threonine kinase, Akt (also known as PKB; hereinafter referred to as "Akt"). The present invention also relates to pharmaceutical compositions comprising such compounds and methods of using the instant compounds in the treatment of cancer. Apoptosis (programmed cell death) plays essential roles in embryonic development and pathogenesis of various diseases, such as degenerative neuronal diseases, cardiovascular diseases and cancer. Recent work has led to the identification of various pro- and anti-apoptotic gene products that are involved in the regulation or execution of programmed cell death.
+ Expression of anti-apoptotic genes, such as Bcl2 or BCI-XL, inhibits apoptotic cell death induced by various stimuli. On the other hand, expression of pro-apoptotic genes, such as Bax or Bad, leads to programmed cell death (<ref type="npl">Adams et al. Science, 281 :1322-1326 (1998)</ref>). The execution of programmed cell death is mediated by caspase-1 related proteinases, including caspase-3, caspase-7, caspase-8 and caspase-9 etc (<ref type="npl">Thomberry et al. Science, 281:1312-1316 (1998)</ref>). The phosphatidylinositol 3'-OH kinase (PDK)/ Akt pathway appears important for regulating cell survival/cell death (<ref type="npl">Kulik et al. MoI. Cell. Biol. 17:1595-1606 (1997)</ref>; <ref type="npl">Franke et al, Cell, 88:435-437 (1997)</ref>; <ref type="npl">Kauffmann-Zeh et al. Nature 385:544-548 (1997)</ref> <ref type="npl">Hemmings Science, 275:628-630 (1997)</ref>; <ref type="npl">Dudek et al., Science, 275:661-665 (1997)</ref>).
+ Survival factors, such as platelet derived growth factor (PDGF), nerve growth factor (NGF) and insulin-like growth factor- 1 (IGF-I), promote cell survival under various conditions by inducing the activity of PI3K (Kulik et al. 1997, Hemmings 1997). Activated PI3K leads to the production of phosphatidylinositol (3,4,5)-triphosphate (Ptdlns(3,4,5)-P3), which in turn binds to, and promotes the activation of, the serine/threonine kinase Akt, which contains a pleckstrin homology (PH)-domain (<ref type="npl">Franke et al Cell, 81 :727-736 (1995)</ref>; <ref type="npl">Hemmings Science, 277:534 (1997)</ref>; <ref type="npl">Downward, Curr. Opin. Cell Biol. 10:262-267 (1998)</ref>, <ref type="npl">Alessi et al., EMBO J. 15: 6541- 6551 (1996)</ref>). Specific inhibitors of PI3K or dominant negative Akt mutants abolish survival-promoting activities of these growth factors or cytokines.
+ It has been previously disclosed that inhibitors of PI3K (LY294002 or wortmannin) blocked the activation of Akt by upstream kinases. In addition, introduction of constitutively active PI3K or Akt mutants promotes cell survival under conditions in which cells normally undergo apoptotic cell death (Kulik et al. 1997, Dudek et al. 1997).
+
+Three members of the Akt subfamily of second-messenger regulated serine/threonine protein kinases have been identified and termed Aktl/ PKB[alpha], Akt2/PKB[beta], and Akt3/PKB[gamma] (hereinafter referred to as "Aktl", "Akt2" and "Akt3"), respectively. The isoforms are homologous, particularly in regions encoding the catalytic domains. Akts are activated by phosphorylation events occurring in response to PBK signaling.
+ PI3K phosphorylates membrane inositol phospholipids, generating the second messengers phosphatidyl-inositol 3,4,5-trisphos- phate and phosphatidylinositol 3,4-bisphosphate, which have been shown to bind to the PH domain of Akt. The current model of Akt activation proposes recruitment of the enzyme to the membrane by 3'-phosphorylated phosphoinositides, where phosphorylation of the regulatory sites of Akt by the upstream kinases occurs (<ref type="npl">B.A. Hemmings, Science 275:628-630 (1997)</ref>; <ref type="npl">B.A. Hemmings, Science 276:534 (1997)</ref>; <ref type="npl">J. Downward, Science 279:673-674 (1998)</ref>). Phosphorylation of Aktl occurs on two regulatory sites, Thr&lt;308&gt; in the catalytic domain activation loop and on Ser&lt;473&gt; near the carboxy terminus (<ref type="npl">D. R. Alessi et al. EMBO J. 15:6541-6551 (1996)</ref> and <ref type="npl">R. Meier et al. J. Biol. Chem. 272:30491-30497 (1997)</ref>). Equivalent regulatory phosphorylation sites occur in Akt2 and Akt3.
+ The upstream kinase, which phosphorylates Akt at the activation loop site has been cloned and termed 3'-phosphoinositide - dependent protein kinase 1 (PDKl). PDKl phosphorylates not only Akt, but also p70 ribosomal S6 kinase, p90RSK, serum and glucocorticoid-regulated kinase (SGK), and protein kinase C. The upstream kinase phosphorylating the regulatory site of Akt near the carboxy terminus has not been identified yet, but recent reports imply a role for the integrin-linked kinase (ELK-I), a serine/threonine protein kinase, or autophosphorylation. Analysis of Akt levels in human tumors showed that Akt2 is overexpressed in a significant number of ovarian (<ref type="npl">J. Q. Cheng et al. Proc. Natl. Acad. Sci. U.S.A. 89:9267- 9271(1992)</ref>) and pancreatic cancers (<ref type="npl">J. Q. Cheng et al. Proc. Natl. Acad. Sci. U.S.A. 93:3636- 3641 (1996)</ref>).
+ Similarly, Akt3 was found to be overexpressed in breast and prostate cancer cell lines (<ref type="npl">Nakatani et al. J. Biol. Chem. 274:21528-21532 (1999)</ref>. The tumor suppressor PTEN, a protein and lipid phosphatase that specifically removes the 3' phosphate of Ptdlns(3,4,5)-P3, is a negative regulator of the PI3K/Akt pathway (<ref type="npl">Li et al. Science 275:1943-1947 (1997)</ref>, <ref type="npl">Stambolic et al. Cell 95:29-39 (1998)</ref>, <ref type="npl">Sun et al. Proc. Natl. Acad. Sci. U.S.A. 96:6199-6204 (1999)</ref>). Germline mutations of PTEN are responsible for human cancer syndromes such as Cowden disease (<ref type="npl">Liaw et al. Nature Genetics 16:64-67 (1997)</ref>). PTEN is deleted in a large percentage of human tumors and tumor cell lines without functional PTEN show elevated levels of activated Akt (<ref type="npl">Li et al. supra, Guldberg et al. Cancer Research 57:3660-3663 (1997)</ref>, <ref type="npl">Risinger et al.
+ Cancer Research 57:4736-4738 (1997)</ref>).
+
+These observations demonstrate that the PI3K/Akt pathway plays important roles for regulating cell survival or apoptosis in tumorigenesis. Inhibition of Akt activation and activity can be achieved by inhibiting PI3K with inhibitors such as LY294002 and wortmannin. However, PI3K inhibition has the potential to indiscriminately affect not just all three Akt isozymes but also other PH domain-containing signaling molecules that are dependent on Pdtlns(3,4,5)-P3, such as the Tec family of tyrosine kinases. Furthermore, it has been disclosed that Akt can be activated by growth signals that are independent of PBK.
+
+Alternatively, Akt activity can be inhibited by blocking the activity of the upstream kinase PDKl. No specific PDKl inhibitors have been disclosed.
+ Again, inhibition of PDKl would result in inhibition of multiple protein kinases whose activities depend on PDKl, such as atypical PKC iso forms, SGK, and S6 kinases (<ref type="npl">Williams et al. Curr. Biol. 10:439-448 (2000)</ref>.
+
+It is an object of the instant invention to provide novel compounds that are inhibitors of Akt.
+
+It is also an object of the present invention to provide pharmaceutical compositions that comprise the novel compounds that are inhibitors of Akt.
+
+It is also an object of the present invention to provide a method for treating cancer that comprises administering such inhibitors of Akt activity.
+
+SUMMARY OF THE INVENTION
+
+The instant invention provides for substituted naphthyridine compounds that inhibit Akt activity. In particular, the compounds disclosed selectively inhibit one or two of the Akt isoforms.
+ The invention also provides for compositions comprising such inhibitory compounds and methods of inhibiting Akt activity by administering the compound to a patient in need of treatment of cancer.
+
+DETAILED DESCRIPTION OF THE INVENTION
+
+The compounds of the instant invention are useful in the inhibition of the activity of the serine/threonine kinase Akt.
+ In a first embodiment of this invention, the inhibitors of Akt activity are illustrated by the Formula A:
+
+ &lt;EMI ID=4.1&gt; 
+wherein: E, F, G, H, I, J, K, L and M are independently selected from: C or N, wherein each E, F, G, H, I, J, K, L and M is optionally substituted with Rl ; a is 0 or 1; b is 0 or 1 ; m is 0, 1 or 2; p is independently 0, 1, 2, 3, 4 or 5;
+
+Ring X is a 3-7 membered cycloalkyl or 4-7 membered heterocyclyl optionally substituted with one to five R3;
+
+Ring Y is 4-7 membered cycloalkyl or a 5-7 membered heterocyclyl optionally substituted with one to four R4;
+
+Ring Z is selected from: (C3-C8)cycloalkyl, aryl, heteroaryl and heterocyclyl;
+
+Rl is independently selected from:
+ H, oxo, (C=0)aOb(Ci-Cio)alkyl, (C=O)3Ob- aryl, (C=O)aOb(C2-C l o)alkenyl, (C=O)aOb (C2-C i o)alkynyl, CO2H, halo, OH, Ob(C 1 - C6)perfluoroalkyl, (C=O)aNR7R8, CN, (C=O)aOb(C3-C8)cycloalkyl, S(O)mNR7R8, SH, S(0)m-(Ci-Cio)alkyl and (C=O)aOb-heterocyclyl, said alkyl, aryl, alkenyl, alkynyl, cycloalkyl, and heterocyclyl is optionally substituted with one or more substituents selected from R6;
+
+R2 is independently selected from: oxo, (C=0)aOb(Ci-Cio)alkyl, (C=O)aOb- aryl, (C=O)aOb(C2-C 1 o)alkenyl, (C=O)aOb (C2-C 1 o)alkynyl, CO2H, halo, OH, Ob(C 1 - C6)perfluoroalkyl, (C=O)aNR7R8, CN, (C=O)aOb(C3-C8)cycloalkyl, SH, S(O)mNR7R8, S(0)m-(Ci-Cio)alkyl and (C=O)aOb-heterocyclyl, said alkyl, aryl, alkenyl, alkynyl, cycloalkyl, and heterocyclyl is optionally substituted with one or more substituents selected from R6;
+
+R3 is independently selected from:
+ oxo, (C=0)aOb(Ci-Cio)alkyl, (C=O)aOb- aryl, (C=0)aOb(C2-Cio)alkenyl, (C=O)aOb (C2-Cio)alkynyl, CO2H, halo, OH, Ob(Ci- C6)perfluoroalkyl, (C=O)aNR7R8, CN, (C=O)aOb(C3-C8)cycloalkyl, SH, S(O)mNR7R8, S(0)m-(Cl-Cio)alkyl and (C=O)aOb-heterocyclyl, said alkyl, aryl, alkenyl, alkynyl, cycloalkyl, and heterocyclyl is optionally substituted with one or more substituents selected from R6;
+
+R4 is independently selected from: oxo, (C=0)aOb(Ci-Cio)alkyl, (C=O)aOb- aryl, (C=0)aOb(C2-Cio)alkenyl, (C=O)aOb (C2-Cio)alkynyl, CO2H, halo, OH, Ob(Ci- C6)perfluoroalkyl, (C=O)aNR7R8, CN, (CO)aOb(C3-C8)cycloalkyl, SH, S(O)mNR7R8, S(0)m-(Ci-Cio)alkyl and (C=O)aOb-heterocyclyl, said alkyl, aryl, alkenyl, alkynyl, cycloalkyl, and heterocyclyl is optionally substituted with one or more substituents selected from R6;
+
+R6 is:
+ (C=0)aObCi-Cio alkyl, (C=O)aObaryl, C2-C10 alkenyl, C2-C10 alkynyl, (C=O)aOb heterocyclyl, CO2H, halo, CN, OH, ObCi-C6 perfluoroalkyl,
+ &lt;EMI ID=5.1&gt; 
+O[chi]o, CHO, (N=O)R7R8, S(O)mNR7R8, SH, S(0)m-(Ci-Cio)alkyl or (C=O)aObC3-C8 cycloalkyl, said alkyl, aryl, alkenyl, alkynyl, heterocyclyl, and cycloalkyl optionally substituted with one or more substituents selected from R6a;
+
+R6a is selected from:
+ (C=0)aOb(Ci-Cio)alkyl, Oa(Ci-C3)perfluoroalkyl, (Co- C6)alkylene-S(0)mR&lt;a&gt;, SH, oxo, OH, halo, CN, (C2-Cio)alkenyl, (C2-Cio)alkynyl, (C3-
+
+C6)cycloalkyl, (Co-C6)alkylene-aryl, (C()-C6)alkylene-heterocyclyl, (C()-C6)alkylene-N(Rb)2, C(O)R&lt;a&gt;, (C[theta]-C6)alkylene-C[theta]2R&lt;a&gt;, C(O)H, and (C()-C6)alkylene-CO2H, said alkyl, alkenyl, alkynyl, cycloalkyl, aryl, and heterocyclyl is optionally substituted with up to three substituents selected from Rb, OH, (Ci-C6)alkoxy, halogen, CO2H, CN, Oa(C=O)b(Ci-C6)alkyl, oxo, and N(Rb)2;
+
+R7 and R8 are independently selected from:
+ H, (C=O)3Ob(Ci -C io)alkyl, (C=O)aOb(C3-C8)cycloalkyl, (C=O)aOb-aryl, (C=O)aOb-heterocyclyl, (C2-C io)alkenyl, (C2- Ci[theta])alkynyl, SH, SO2R&lt;a&gt;, and (C=O)aNRb2, said alkyl, cycloalkyl, aryl, heterocylyl, alkenyl, and alkynyl is optionally substituted with one or more substituents selected from R6as or R? and R8 can be taken together with the nitrogen to which they are attached to form a monocyclic or bicyclic heterocycle with 3-7 members in each ring and optionally containing, in addition to the nitrogen, one or two additional heteroatoms selected from N, O and S, said monocylcic or bicyclic heterocycle optionally substituted with one or more substituents selected from R6a^
+
+R&lt;a&gt; is (Ci-C6)alkyl, (C3-C6)cycloalkyl, aryl, or heterocyclyl; and
+
+Rb is independently:
+ H, (Ci-C6)alkyl, aryl, heterocyclyl, (C3-C6)cycloalkyl, (C=O)aOb(Cl-C6)alkyl, or S(O)mRa; or a pharmaceutically acceptable salt or a stereoisomer thereof. hi a second embodiment of this invention, the inhibitors of Akt activity are illustrated by the Formula A, wherein:
+
+ &lt;EMI ID=6.1&gt; 
+is selected from:
+
+ &lt;EMI ID=6.2&gt; 
+ 
+ &lt;EMI ID=7.1&gt; 
+
+and all other substituents and variables are as defined in the first embodiment; or a pharmaceutically acceptable salt or a stereoisomer thereof. In a third embodiment of this invention, the inhibitors of Akt activity are illustrated by the Formula B:
+
+ &lt;EMI ID=7.2&gt; 
+wherein: p is 0, 1 or 2;
+
+R2 is independently selected from: (Ci-C6)alkyl, (Ci-C6)alkoxy, CO2H, halo, OH and NH2; all other substituents and variables are as defined in the second embodiment; or a pharmaceutically acceptable salt or a stereoisomer thereof.
+ In a fourth embodiment the inhibitors of the instant invention are illustrated by the
+
+Formula C:
+
+ &lt;EMI ID=8.1&gt; 
+wherein: a is 0 or 1 ; b is 0 or 1 ; m is 0, 1 or 2; p is 0, 1 or 2;
+
+R2 is selected from: (Ci-C6)alkyl, (Ci-C6)alkoxy, CO2H, halo, OH and NH2;
+
+Ring X is a 3-7 membered cycloalkyl or 4-7 membered heterocyclyl optionally substituted with one to three R3;
+
+Ring Y is 4-7 membered cycloalkyl or a 5-7 membered heterocyclyl optionally substituted with one to three R4;
+
+Rl is selected from:
+ H, oxo, (C=0)aOb(Ci-Cio)alkyl, (C=O)aOb-aryl, (C=0)aOb(C2-Cio)alkenyl, (C=0)aOb(C2-Cio)alkynyl, CO2H, halo, OH, Ob(Ci- C6)perfluoroalkyl, (C=O)aNR7R8, CN, (C=O)aOb(C3-C8)cycloalkyl, S(O)mNR7R8, SH, S(0)m-(Ci-Cio)alkyl and (C=O)aOb-heterocyclyl, said alkyl, aryl, alkenyl, alkynyl, cycloalkyl, and heterocyclyl is optionally substituted with one or more substituents selected from R6;
+
+R3 is independently selected from: (Ci-C6)alkyl, CO2H, halo, OH, (Ci- C[omicron])alkoxy, (C2-Cio)alkenyl;
+
+R4 is independently selected from: (Ci-C6)alkyl, CO2H, halo, OH, (Ci- C6)alkoxy, (C2-Cio)alkenyl; R6 is:
+ (C=0)aObCi-Cio alkyl, (C=O)aObaryl, C2-C10 alkenyl, C2-C10 alkynyl,
+
+(C=O)3Ob heterocyclyl, CO2H, halo, CN, OH, ObCi-C6 perfluoroalkyl, Oa(C=O)bNR7R8, oxo, CHO, (N=O)R7R8, S(O)mNR7R8, SH, S(0)m-(Ci-Cio)alkyl or (C=O)aObC3-C8 cycloalkyl, said alkyl, aryl, alkenyl, alkynyl, heterocyclyl, and cycloalkyl optionally substituted with one or more substituents selected from R6a; R6a is selected from:
+ (C=O)3Ob(Ci -C io)alkyl, Oa(Ci-C3)perfluoroalkyl, (Co-
+
+C6)alkylene-S(O)mRa, SH, oxo, OH, halo, CN, (C2-Cio)alkenyl, (C2-Cio)alkynyl, (C3- C6)cycloalkyl, (Co-C6)alkylene-aryl, (Co-C6)alkylene-heterocyclyl, (Co-C6)alkylene-N(Rb)2, C(O)R&lt;a&gt;, (Co-C6)alkylene-C[theta]2R&lt;a&gt;, C(O)H, and (Co-C6)alkylene-C02H, said alkyl, alkenyl, alkynyl, cycloalkyl, aryl, and heterocyclyl is optionally substituted with up to three substituents selected from Rb, OH, (Ci-C6)alkoxy, halogen, CO2H, CN, Oa(C=O)b(Ci-C6)alkyl, oxo, and N(Rb)2;
+
+R7 and R8 are independently selected from:
+ H, (C=O)3Ob(Ci -C io)alkyl, (C=O)aOb(C3-C8)cycloalkyl, (C=O)aOb-aryl, (C=O)aOb-heterocyclyl, (C2-C io)alkenyl, (C2- Cio)alkynyl, SH, SO2Ra, ^d (C=O)aNRb2, said alkyl, cycloalkyl, aryl, heterocylyl, alkenyl, and alkynyl is optionally substituted with one or more substituents selected from R6a, Or R7 and R8 can be taken together with the nitrogen to which they are attached to form a monocyclic or bicyclic heterocycle with 3-7 members in each ring and optionally containing, in addition to the nitrogen, one or two additional heteroatoms selected from N, O and S, said monocylcic or bicyclic heterocycle optionally substituted with one or more substituents selected from R6a;
+
+R&lt;a&gt; is (Ci-C6)alkyl, (C3-C6)cycloalkyl, aryl, or heterocyclyl; and
+
+Rb is independently:
+ H, (Ci-C6)alkyl, aryl, heterocyclyl, (C3-C6)cycloalkyl, (C=O)aOb(Ci-C6)alkyl, or S(O)mRa; or a pharmaceutically acceptable salt or a stereoisomer thereof.
+
+In a fifth embodiment the inhibitors of the instant invention are illustrated by the Formula D:
+
+ &lt;EMI ID=9.1&gt; 
+wherein: a is 0 or 1 ; b is 0 or 1 ; m is 0, 1 or 2; p is 0, 1 or 2;
+
+R2 is selected from: (Ci-C6)alkyl, (Ci-C6)alkoxy, CO2H, halo, OH and NH2;
+
+Rl is selected from: H, oxo, (C=O)3Ob(Ci -C io)alkyl, (C=O)aOb-aryl, (C=0)aOb(C2-Cio)alkenyl, (C=0)aOb(C2-Cio)alkynyl, CO2H, halo, OH, Ob(Ci- C6)perfluoroalkyl, (C=O)aNR7R8, CN, (C=O)aOb(C3-C8)cycloalkyl, S(O)mNR7R8, SH, S(O)m-(Ci-Ci0)alkyl and (C=O)aOb-heterocyclyl, said alkyl, aryl, alkenyl, alkynyl, cycloalkyl, and heterocyclyl is optionally substituted with one or more substituents selected from R6;
+
+R6 is:
+ (C=0)aObCi-Cio alkyl, (C=O)aObaryl, C2-CiO alkenyl, C2-CiO alkynyl, (C=O)aOb heterocyclyl, CO2H, halo, CN, OH, ObCi-Co perfluoroalkyl,
+ &lt;EMI ID=9.2&gt; 
+oxo, CHO, (N=O)R7R8, S(O)mNR7R8, SH, S(0)m-(Ci-Cio)alkyl or (C=0)a0bC3-Cs cycloalkyl, said alkyl, aryl, alkenyl, alkynyl, heterocyclyl, and cycloalkyl optionally substituted with one or more substituents selected from R6a;
+
+R6a is selected from:
+ (C=0)aOb(Ci-Cio)alkyl, Oa(Ci-C3)perfluoroalkyl, (Co- C6)alkylene-S(O)mRa, SH, oxo, OH, halo, CN, (C2-Cio)alkenyl, (C2-Cio)alkynyl, (C3- C6)cycloalkyl, (Co-C6)alkylene-aryl, (Co-C6)alkylene-heterocyclyl, (C()-C6)alkylene-N(Rb)2, C(O)R&lt;a&gt;, (Co-C6)alkylene-CO2R&lt;a&gt;, C(O)H, and (Co-C6)alkylene-CO2H, said alkyl, alkenyl, alkynyl, cycloalkyl, aryl, and heterocyclyl is optionally substituted with up to three substituents selected from Rb, OH, (Ci-C6)alkoxy, halogen, CO2H, CN, Oa(C=O)b(Ci-C6)alkyl, oxo, and N(Rb)2;
+
+R7 and R8 are independently selected from:
+ H, (C=O)aOb(Ci-Cio)alkyl, (C=O)aOb(C3-C8)cycloalkyl, (C=O)aOb-aryl, (C=O)aOb-heterocyclyl, (C2-Cio)alkenyl, (C2- Cio)alkynyl, SH, SO2R&lt;a&gt;, and (C=O)3NRb2, said alkyl, cycloalkyl, aryl, heterocylyl, alkenyl, and alkynyl is optionally substituted with one or more substituents selected from R6a, or R7 and R8 can be taken together with the nitrogen to which they are attached to form a monocyclic or bicyclic heterocycle with 3-7 members in each ring and optionally containing, in addition to the nitrogen, one or two additional heteroatoms selected from N, O and S, said monocylcic or bicyclic heterocycle optionally substituted with one or more substituents selected from R6a;
+
+R&lt;a&gt; is (Ci-C6)alkyl, (C3-C6)cycloalkyl, aryl, or heterocyclyl; and
+
+Rb is independently:
+ H, (Ci-C6)alkyl, aryl, heterocyclyl, (C3-C6)cycloalkyl, (C=0)a0b(Cl-C6)alkyl, or S(O)mRa; or a pharmaceutically acceptable salt or a stereoisomer thereof.
+
+In a sixth embodiment the inhibitors of the instant invention are illustrated by the Formula E:
+
+ &lt;EMI ID=10.1&gt; 
+wherein: a is 0 or 1 ; b is 0 or 1 ; m is 0, 1 or 2;
+
+Rl is selected from: H, (C=O)aOb(Ci-Cio)alkyl, (C=O)aObaryl, OH, Ob(Ci- C6)perfluoroalkyl, (C=O)aOb(C3-C8)cycloalkyl, and (C=O)aOb-heterocyclyl, said alkyl, aryl, cycloalkyl, and heterocyclyl is optionally substituted with one or more substituents selected from R6;
+
+R6 is:
+ (C=O)aObCi-Ci0 alkyl, (C=O)aObaryl, C2-C10 alkenyl, C2-C10 alkynyl, (C=O)aOb heterocyclyl, CO2H, halo, CN, OH, ObQ-Co perfluoroalkyl, Oa(C=O)bNR7R8, oxo, CHO, (N=O)R7R8, S(O)mNR7R8, SH, S(O)1n-(Cl -C i[theta])alkyl or (C=O)aObC3-C8 cycloalkyl, said alkyl, aryl, alkenyl, alkynyl, heterocyclyl, and cycloalkyl optionally substituted with one or more substituents selected from R6a;
+
+R6a is selected from:
+ (C=0)aOb(Ci-Cio)alkyl, Oa(Ci-C3)[rho]erfluoroalkyl, (Co- C6)alkylene-S(O)mRa, SH, oxo, OH, halo, CN, (C2-Cio)alkenyl, (C2-Ci[theta])alkynyl, (C3- C6)cycloalkyl, (C[theta]-C6)alkylene-aryl, (Co-C6)alkylene-heterocyclyl, (Co-C6)alkylene-N(Rb)2, C(O)R&lt;a&gt;, (Co-C6)alkylene-C[theta]2R&lt;a&gt;, C(O)H, and (Co-C6)alkylene-C02H, said alkyl, alkenyl, alkynyl, cycloalkyl, aryl, and heterocyclyl is optionally substituted with up to three substituents selected from Rb, OH, (Ci-C6)alkoxy, halogen, CO2H, CN, Oa(C=O)b(Ci-C6)alkyl, oxo, and
+
+N(Rb)2; R&lt;a&gt; is (C 1 -C6)alkyl, (C3-C6)cycloalkyl, aryl, or heterocyclyl; and
+
+Rb is independently: H, (Ci-C6)alkyl, aryl, heterocyclyl, (C3-C6)cycloalkyl,
+
+(C=O)aOb(Cl-C6)alkyl, or S(O)mRa; or a pharmaceutically acceptable salt or a stereoisomer thereof.
+ Specific compounds of the instant invention include: 2-{4-[3-(l-methyl-lH-imidazol-4-yl)-9-phenyl[l,2,4]triazolo[3,4-/J-l,6-naphthyridin-8- yl]phenyl}-5,8-dioxaspiro[3.4]octan-2-amine (l-12);
+
+2-[4-(9-phenyl[l,2,4]triazolo[3,4-/J-l,6-naphthyridin-8-yl)phenyl]-5,8-dioxaspiro[3.4]octan-2- amine (1-13);
+
+2-[4-(3-methyl-9-phenyl[l,2,4]triazolo[3,4-/J-l,6-naphthyridin-8-yl)phenyl]-5,8- dioxaspiro[3.4]octan-2-amine (1-14);
+
+2-[4-(3-ethyl-9-[rho]henyl[l,2,4]triazolo[3,4-/I-l,6-naphthyridin-8-yl)phenyl]-5,8- dioxaspiro[3.4]octan-2-amine (1-15);
+
+2-[4-(3-isopropyl-9-phenyl[l,2,4]triazolo[3,4-/J-l,6-naphthyridin-8-yl)phenyl]-5,8- dioxaspiro[3.4]octan-2-amine (l-16);
+ 2-[4-(3-cyclopropyl-9-phenyl[l,2,4]triazolo[3,4-/J-l,6-naphthyridin-8-yl)phenyl]-5,8- dioxaspiro[3.4]octan-2-amine (l-17);
+
+2-[4-(9-phenyl-3-pyrimidin-2-yl[l,2,4]triazolo[3,4-/J-l,6-naphthyridin-8-yl)phenyl]-5,8- dioxaspiro[3.4]octan-2-amine (l-18);
+
+2-[4-(9-phenyl-3-[l,2,4]triazolo[l,5-a]pyrimidin-2-yl[l,2,4]triazolo[3,4-fJ-l,6-naphthyridin-8- yl)phenyl]-5,8-dioxaspiro[3.4]octan-2-amine (1-19);
+
+2-{4-[9-phenyl-3-(l,3-thiazol-4-yl)[l,2,4]triazolo[3,4-fJ-l,6-naphthyridin-8-yl]phenyl}-5,8- dioxaspiro[3.4]octan-2-amine (1-20); 8-[4-(2-amino-5,8-dioxaspiro[3.4]oct-2-yl)phenyl]-9-phenyl[l,2,4]triazolo[3,4-f]-l,6- naphthyridin-3-ol (1-21);
+
+2- {4-[3-(2-furyl)-9-phenyl[ 1 ,2,4]triazolo[3,4-f]-l ,6-naphthyridin-8-yl]phenyl} -5,8- dioxaspiro[3.4]octan-2-amine (1-22); 3-{8-[4-(2-amino-5,8-dioxaspiro[3.4]oct-2-yl)phenyl]-9-phenyl[l,2,4]triazolo[3,4-f]-l,6- naphthyridin-3-yl}phenol (1-23); methyl 6-
+{8-[4-(2-amino-5,8-dioxaspiro[3.4]oct-2-yl)phenyl]-9-phenyl[l,2,4]triazolo[3,4-f]-l,6- naphthyridin-3-yl}pyridine-2-carboxylate (l-24);
+
+2-[4-(9-phenyl-3-pyridin-2-yl[ 1 ,2,4]triazolo[3,4-f]- 1 ,6-naphthyridin-8-yl)phenyl]-5,8- dioxaspiro[3.4]octan-2-amine (1-25);
+
+2-{4-[3-(lH-indol-5-yl)-9-phenyl[l,2,4]triazolo[3,4-f]-l,6-naphthyridin-8-yl]phenyl}-5,8- dioxaspiro[3.4]octan-2-amine (l-26);
+
+2-[4-(3-isoxazol-3-yl-9-phenyl[l,2,4]triazolo[3,4-f]-l,6-naphthyridin-8-yl)phenyl]-5,8- dioxaspiro[3.4]octan-2-amine (l-27); 2-[4-(9-phenyl-3-pyrazin-2-yl[l,2,4]triazolo[3,4-f]-l,6-naphthyridin-8-yl)phenyl]-5,8- dioxaspiro[3.4]octan-2-amine (1-28);
+ l-{8-[4-(2-amino-5,8-dioxaspiro[3.4]oct-2-yl)phenyl]-9-phenyl[l,2,4]triazolo[3,4-f]-l,6- naphthyridin-3-yl}ethanol (1-29);
+
+2-[4-(9-phenyl-3-pyridin-3-yl[l,2,4]triazolo[3,4-f]-l,6-naphthyridin-8-yl)phenyl]-5,8- dioxaspiro[3.4]octan-2-amine (1-30);
+
+2-[4-(3-cyclobutyl-9-phenyl[l,2,4]triazolo[3,4-f]-l,6-naphthyridin-8-yl)phenyl]-5,8- dioxaspiro[3.4]octan-2-amine (l-31);
+
+2-{4-[3-(cyclopropylmethyl)-9-phenyl[l,2,4]triazolo[3,4-f]-l,6-naphthyridin-8-yl]phenyl}-5,8- dioxaspiro[3.4]octan-2-amine (l-32);
+ 2-[4-(9-phenyl-3-propyl[l,2,4]triazolo[3,4-f]-l,6-naphthyridin-8-yl)phenyl]-5,8- dioxaspiro[3.4]octan-2-amine (l-33);
+
+2-[4-(3-cyclopent-3-en-l-yl-9-phenyl[l,2,4]triazolo[3,4-f]-l,6-naphthyridin-8-yl)phenyl]-5,8- dioxaspiro[3.4]octan-2-amine (1-34);
+
+2-[4-(9-phenyl-3-piperidin-2-yl[l,2,4]triazolo[3,4-f]-l,6-naphthyridin-8-yl)phenyl]-5,8- dioxaspiro[3.4]octan-2-amine (1-35);
+
+2-{4-[3-(4-methyl-l,3-thiazol-5-yl)-9-phenyl[l,2,4]triazolo[3,4-f]-l,6-naphthyridin-8- yl]phenyl}-5,8-dioxaspiro[3.4]octan-2-amine (1-36);
+
+2-[4-(9-phenyl-3-pyridin-4-yl[l,2,4]triazolo[3,4-f]-l,6-naphthyridin-8-yl)phenyl]-5,8- dioxaspiro[3.4]octan-2-amine (1-37);
+ 2-{4-[9-phenyl-3-(tetrahydro-2H-pyran-4-yl)[l,2,4]triazolo[3,4-f]-l,6-naphthyridin-8- yl]phenyl}-5,8-dioxaspiro[3.4]octan-2-amine (l-38);
+
+2-{4-[3-(l-benzyl-lH-indol-3-yl)-9-phenyl[l,2,4]triazolo[3,4-f]-l,6-naphthyridin-8-yl]phenyl}-
+
+5,8-dioxaspiro[3.4]octan-2
+-amine (l-39); l-l[delta]-^^-amino-S^-dioxaspiroCS.^oct^-yOpheny^-Q-pheny^l^^triazolotS^-fl-l^- naphthyridin-3-yl}-2-methylpropan-2-ol (1-40);
+
+2-[4-(3-tert-butyl-9-phenyl[l,2,4]triazolo[3,4-f]-l,6-naphthyridin-8-yl)phenyl]-5,8- dioxaspiro[3.4]octan-2-amine (l-41); 8-[4-(2-Amino-5,8-dioxaspiro[3.4]oct-2-yl)phenyl]-N-ethyl-9-phenyl[l,2,4]triazolo[3,4-/»-l,6- naphthyridin-3-amine (2-2); and
+
+N'-{8-[4-(2-amino-5,8-dioxaspiro[3.4]oct-2-yl)phenyl]-9-phenyl[l,2,4]triazolo[3,4-/J-l,6- naphthyridin-3-yl}-N^V-dimethylpropane-l,3-diamine (2-3); or a pharmaceutically acceptable salt or stereoisomer thereof.
+ A compound of the instant invention is:
+
+2- {4-[3-(l -methyl-l//-imidazol-4-yl)-9-phenyl[ 1 ,2,4]triazolo[3,4-/J- 1 ,6-naphthyridin-8- yl]phenyl}-5,8-dioxaspiro[3.4]octan-2-amine (l-12); or a pharmaceutically acceptable salt thereof.
+
+A compound of the instant invention is: 8-[4-(2-Amino-5,8-dioxaspiro[3.4]oct-2-yl)phenyl]-N-ethyl-9-phenyl[l,2,4]triazolo[3,4-/»-l,6- naphthyridin-3-amine (2-2); or a pharmaceutically acceptable salt thereof.
+
+A compound of the instant invention is:
+
+N'-{8-[4-(2-amino-5,8-dioxaspiro[3.4]oct-2-yl)phenyl]-9-phenyl[l,2,4]triazolo[3,4-/J-l,6- naphthyridin-3-yl}-N,N-dimethylpropane-l,3-diamine (2-3); or a pharmaceutically acceptable salt thereof.
+
+A compound of the instant invention is:
+
+2-[4-(9-phenyl-3-pyrimidin-2-yl[l,2,4]triazolo[3,4-/j-l,6-naphthyridin-8-yl)phenyl]-5,8- dioxaspiro[3.4]octan-2-amine (1-18);
+ or a pharmaceutically acceptable salt thereof.
+
+The compounds of the present invention may have asymmetric centers, chiral axes, and chiral planes (as described in: <ref type="npl">E.L. Eliel and S.H. Wilen, Stereochemistry of Carbon
+
+Compounds, John Wiley &amp; Sons, New York, 1994, pages 1119-1190</ref>), and occur as racemates, racemic mixtures, and as individual diastereomers, with all possible isomers and mixtures thereof, including optical isomers, all such stereoisomers being included in the present invention. In addition, the compounds disclosed herein may exist as tautomers and both tautomeric forms are intended to be encompassed by the scope of the invention, even though only one tautomeric structure is depicted. For example the following is within the scope of the instant invention: 
+
+ &lt;EMI ID=14.1&gt; 
+
+Tetrazoles exist as a mixture of 1H/2H tautomers.
+ The tautomeric forms of the tetrazol moiety are also within the scope of the instant invention.
+
+When any variable (e.g. R.2, etc.) occurs more than one time in any constituent, its definition on each occurrence is independent at every other occurrence. Also, combinations of substituents and variables are permissible only if such combinations result in stable compounds. Lines drawn into the ring systems from substituents represent that the indicated bond may be attached to any of the substitutable ring atoms. If the ring system is bicyclic, it is intended that the bond be attached to any of the suitable atoms on either ring of the bicyclic moiety.
+ It is understood that one or more silicon (Si) atoms can be incorporated into the compounds of the instant invention in place of one or more carbon atoms by one of ordinary skill in the art to provide compounds that are chemically stable and that can be readily synthesized by techniques known in the art from readily available starting materials. Carbon and silicon differ in their covalent radius leading to differences in bond distance and the steric arrangement when comparing analogous C-element and Si-element bonds. These differences lead to subtle changes in the size and shape of silicon-containing compounds when compared to carbon. One of ordinary skill in the art would understand that size and shape differences can lead to subtle or dramatic changes in potency, solubility, lack of off target activity, packaging properties, and so on. (<ref type="npl">Diass, J. O. et al.
+ Organometallics (2006) 5:1188-1198</ref>; <ref type="npl">Showell, G.A. et al. Bioorganic &amp; Medicinal Chemistry Letters (2006) 16:2555-2558</ref>).
+
+It is understood that substituents and substitution patterns on the compounds of the instant invention can be selected by one of ordinary skill in the art to provide compounds that are chemically stable and that can be readily synthesized by techniques known in the art, as well as those methods set forth below, from readily available starting materials. If a substituent is itself substituted with more than one group, it is understood that these multiple groups may be on the same carbon or on different carbons, so long as a stable structure results.
+ The phrase "optionally substituted with one or more substituents" should be taken to be equivalent to the phrase "optionally substituted with at least one substituent" and in such cases the preferred embodiment will have from zero to four substituents, and the more preferred embodiment will have from zero to three substituents. As used herein, "alkyl" is intended to include both branched and straight-chain saturated aliphatic hydrocarbon groups having the specified number of carbon atoms. For example, Ci-CiO, as in "(Ci-Cio)alkyl" is defined to include groups having 1, 2, 3, 4, 5, 6, 7, 8, 9 or 10 carbons in a linear or branched arrange-ment.
+ For example, "(Ci-Cio)alkyl" specifically includes methyl, ethyl, w-propyl, /-propyl, w-butyl, t-butyl, /-butyl, pentyl, hexyl, heptyl, octyl, nonyl, decyl, and so on.
+
+The term "cycloalkyl" means a monocyclic saturated aliphatic hydrocarbon group having the specified number of carbon atoms. For example, "cycloalkyl" includes cyclopropyl, methyl-cyclopropyl, 2,2-dimethyl-cyclobutyl, 2-ethyl-cyclopentyl, cyclohexyl, and so on.
+
+"Alkoxy" represents either a cyclic or non-cyclic alkyl group of indicated number of carbon atoms attached through an oxygen bridge. "Alkoxy" therefore encompasses the definitions of alkyl and cycloalkyl above.
+
+If no number of carbon atoms is specified, the term "alkenyl" refers to a non- aromatic hydrocarbon radical, straight, branched or cyclic, containing from 2 to 10 carbon atoms and at least one carbon to carbon double bond.
+ Preferably one carbon to carbon double bond is present, and up to four non-aromatic carbon-carbon double bonds may be present. Thus, "(C2- Cio)alkenyl" means an alkenyl radical having from 2 to 10 carbon atoms. Alkenyl groups include ethenyl, propenyl, butenyl, 2-methylbutenyl and cyclohexenyl. The straight, branched or cyclic portion of the alkenyl group may contain double bonds and may be substituted if a substituted alkenyl group is indicated. The term "alkynyl" refers to a hydrocarbon radical straight, branched or cyclic, containing from 2 to 10 carbon atoms and at least one carbon to carbon triple bond. Up to three carbon-carbon triple bonds may be present. Thus, "(C2-Cio)alkynyl" means an alkynyl radical having from 2 to 10 carbon atoms. Alkynyl groups include ethynyl, propynyl, butynyl, 3- methylbutynyl and so on.
+ The straight, branched or cyclic portion of the alkynyl group may contain triple bonds and may be substituted if a substituted alkynyl group is indicated.
+
+In certain instances, substituents may be defined with a range of carbons that includes zero, such as (Co-C6)alkylene-aryl. If aryl is taken to be phenyl, this definition would include phenyl itself as well as -CH2PI1, -CH2CH2PI1, CH(CH3)CH2CH(CH3)Ph, and so on. As used herein, "aryl" is intended to mean any stable monocyclic or bicyclic carbon ring of up to 7 atoms in each ring, wherein at least one ring is aromatic. Examples of such aryl elements include phenyl, naphthyl, tetrahydro-naphthyl, indanyl and biphenyl. In cases where the aryl substituent is bicyclic and one ring is non-aromatic, it is understood that attachment is via the aromatic ring.
+ The term heteroaryl, as used herein, represents a stable monocyclic or bicyclic ring of up to 7 atoms in each ring, wherein at least one ring is aromatic and contains from 1 to 4 heteroatoms selected from the group consisting of O, N and S. Heteroaryl groups within the scope of this definition include but are not limited to: acridinyl, carbazolyl, cinnolinyl, quinoxalinyl, pyrrazolyl, indolyl, benzotriazolyl, furanyl, thienyl, benzothienyl, benzofuranyl, quinolinyl, isoquinolinyl, oxazolyl, isoxazolyl, indolyl, pyrazinyl, pyridazinyl, pyridinyl, pyrimidinyl, pyrrolyl, tetrahydroquinoline.
+ As with the definition of heterocycle below, "heteroaryl" is also understood to include the N-oxide derivative of any nitrogen-containing heteroaryl. hi cases where the heteroaryl substituent is bicyclic and one ring is non-aromatic or contains no heteroatoms, it is understood that attachment is via the aromatic ring or via the heteroatom containing ring, respectively.
+ Such heteraoaryl moieties for substituent Q include but are not limited to: 2-benzimidazolyl, 2-quinolinyl, 3-quinolinyl, 4-quinolinyl, 1 -isoquinolinyl, 3- isoquinolinyl and 4-isoquinolinyl.
+
+The term "heterocycle" or "heterocyclyl" as used herein is intended to mean a 3- to 10-membered aromatic or nonaromatic heterocycle containing from 1 to 4 heteroatoms selected from the group consisting of O, N and S, and includes bicyclic groups. "Heterocyclyl" therefore includes the above mentioned heteroaryls, as well as dihydro and tetrathydro analogs thereof.
+ Further examples of "heterocyclyl" include, but are not limited to the following: benzoimidazolyl, benzoimidazolonyl, benzofuranyl, benzofurazanyl, benzopyrazolyl, benzotriazolyl, benzothiophenyl, benzoxazolyl, carbazolyl, carbolinyl, cinnolinyl, furanyl, imidazolyl, indolinyl, indolyl, indolazinyl, indazolyl, isobenzofuranyl, isoindolyl, isoquinolyl, isothiazolyl, isoxazolyl, naphthpyridinyl, oxadiazolyl, oxazolyl, oxazoline, isoxazoline, oxetanyl, pyranyl, pyrazinyl, pyrazolyl, pyridazinyl, pyridopyridinyl, pyridazinyl, pyridyl, pyrimidyl, pyrrolyl, quinazolinyl, quinolyl, quinoxalinyl, tetrahydropyranyl, tetrazolyl, tetrazolopyridyl, thiadiazolyl, thiazolyl, thienyl, triazolyl, azetidinyl, 1 ,4-dioxanyl, hexahydroazepinyl, piperazinyl, piperidinyl, pyridin-2-onyl, pyrrolidinyl, mo[phi]holinyl, thiomorpholinyl, dihydrobenzoimidazolyl, dihydrobenzofuranyl, dihydrobenzothiophenyl,
+ dihydrobenzoxazolyl, dihydrofuranyl, dihydroimidazolyl, dihydroindolyl, dihydroisooxazolyl, dihydroisothiazolyl, dihydrooxadiazolyl, dihydrooxazolyl, dihydropyrazinyl, dihydropyrazolyl, dihydropyridinyl, dihydropyrimidinyl, dihydropyrrolyl, dihydroquinolinyl, dihydrotetrazolyl, dihydrothiadiazolyl, dihydrothiazolyl, dihydrothienyl, dihydrotriazolyl, dihydroazetidinyl, methylenedioxybenzoyl, tetrahydro furanyl, and tetrahydrothienyl, and N-oxides thereof.
+ Attachment of a heterocyclyl substituent can occur via a carbon atom or via a heteroatom.
+
+As appreciated by those of skill in the art, "halo" or "halogen" as used herein is intended to include chloro (Cl), fluoro (F), bromo (Br) and iodo (I). hi an embodiment of Formula B, the moiety illustrated by the formula: 
+ &lt;EMI ID=17.1&gt; 
+
+includes the following structures:
+
+ &lt;EMI ID=17.2&gt; 
+
+In another embodiment of Formula B, the moiety illustrated by the formula:
+
+ &lt;EMI ID=17.3&gt; 
+
+is:
+
+ &lt;EMI ID=17.4&gt; 
+
+In an embodiment, Ring Z is selected from: phenyl and heterocyclyl. In another embodiment, Ring Z is selected from:
+
+ &lt;EMI ID=18.1&gt; 
+
+In yet another embodiment, Ring Z is phenyl.
+
+hi an embodiment,
+ &lt;EMI ID=18.2&gt; 
+selected from:
+
+ &lt;EMI ID=18.3&gt; 
+
+It is understood that Rings X and Y may also be further substituted. In an embodiment, p is 0, 1, 2 or 3. In a further embodiment, p is 0, 1 or 2.
+ In another embodiment, p is 1. In an embodiment of Formula A or B, Rl is selected from: oxo, (C=O)aOb(Ci-
+
+Cio)alkyl, (C=O)aOb-aryl, (C=O)aOb(C2-Cl0)alkenyl, (C=O)3Ob (C2-Cio)alkynyl, CO2H, halo, OH, Ob(Ci-C6)perfluoroalkyl, (C=O)aNR7R[delta]5 CN, (C=O)aOb(C3-C8)cycloalkyl, S(O)2NR7R8&gt; SH, S(0)2-(Ci-Cio)alkyl and (C=O)aOb-heterocyclyl, said alkyl, aryl, alkenyl, alkynyl, cycloalkyl, and heterocyclyl is optionally substituted with R.6a.
+
+In another embodiment of Formula A or B, Rl is selected from: oxo,
+
+(C=O)aOb(Ci -C io)alkyl, CO2H, halo, OH, CN, (Ci-C6)alkoxy, S(O)2NR7R8, SH, S(0)2-(Ci- C 10)alkyl, 0(C=O)(C 1 -C6)alkyl and N(Rb)2, said alkyl is optionally substituted with R6a.
+
+In another embodiment of Formula A or B, Rl is selected from: oxo, NH2, OH, SH, Oa(Ci-C6)alkyl, said alkyl is optionally substituted with R6a. hi another embodiment of Formula A or B, R2 is selected from:
+ oxo, (C=O)3Ob(Ci -C l[theta])alkyl, CO2H, halo, OH, CN, (Ci-C6)alkoxy, 0(C=O)(C i-C6)alkyl, (C2- Cl o)alkenyl and N(Rb)2, said alkyl is optionally substituted with Rb, OH, (C 1 -C6)alkoxy, halogen, CO2H, CN, 0(C=O)(C i-C6)alkyl, oxo, and N(Rb)2. hi another embodiment of Formula A or B, R3 is selected from: (Ci-Cio)alkyl, CO2H, halo, OH, (Ci-C6)alkoxy, (C2-Cio)alkenyl. hi another embodiment of Formula A or B, R4 is selected from: (Ci-Cio)alkyl, CO2H, halo, OH, (C 1 -C6)alkoxy, (C2-C 1 o)alkenyl. hi an embodiment Rb is independently selected from H and (Ci-C6)alkyl. hi an embodiment of Formula C, R2 is selected from: H, (Ci-C6)alkyl, CO2H, halo, OH and NH2; Ring X is a 4-7 membered heterocyclyl; Ring Y is cyclobutyl; Rl is selected from:
+ H, (Ci-C6)alkyl, (C3-C6)cycloalkyl, heterocyclyl, NH(Ci-C6)alkyl, said alkyl and heterocyclyl optionally substituted with (Ci-C6)alkyl and N(Rb)2, wherein said Rb is independently selected from: H and (Ci-C6)alkyl. hi an embodiment of Formula C, R2 is selected from: H and halo; Ring X is a 3-7 membered heterocyclyl; Ring Y is cyclobutyl; Rl is selected from: H, (Ci-C6)alkyl, (C3- C6)cycloalkyl, heterocyclyl, NH(Ci-C6)alkyl, said alkyl and heterocyclyl optionally substituted with (Ci-C6)alkyl and N(Rb)2, wherein said Rb is independently selected from: H and (Ci- C6)alkyl. hi an embodiment of Formula D, R2 is selected from: H, (Ci-C6)alkyl, CO2H, halo, OH and NH2; Rl is selected from: H, (Ci-C6)alkyl, (C3-C6)cycloalkyl, heterocyclyl, NH(Ci-C6)alkyl, said alkyl and heterocyclyl optionally substituted with (Ci-C6)alkyl and N(Rb)2, wherein said Rb is independently selected from:
+ H and (Ci-C6)alkyl. hi an embodiment of Formula C, p is 1; R2 is selected from: H and halo; Rl is selected from: H, (Ci-C6)alkyl, (C3-C6)cycloalkyl, heterocyclyl, NH(Ci-C6)alkyl, said alkyl and heterocyclyl optionally substituted with (Ci-C6)alkyl and N(Rb)2, wherein said Rb is independently selected from: H and (Ci-C6)alkyl. hi an embodiment of Formula D, p is O and Rl is selected from: OH,
+
+(C=0)aOb(Ci-Cio)alkyl, (C=O)aOb-aryl, (C=0)aOb(C2-Cio)alkenyl, (C=O)aOb (C2- Cio)alkynyl, CO2H, halo, OH, Ob(Ci-C6)perfluoroalkyl, (C=0)aNR?R8, CN, (C=0)a0b(C3-C8)cycloalkyl, S(O)2NR7R8, SH, S(0)2-(Ci-Cio)alkyl and (C=O)aOb-heterocyclyl, said alkyl, aryl, alkenyl, alkynyl, cycloalkyl, and heterocyclyl is optionally substituted with R6a.
+ In an embodiment of Formula D, p is 0 and Rl is selected from: OH, (C=O)aOb(Ci-Ci0)alkyl, (C=O)aOb-aryl, (C=O)3Ob(C2-C io)alkenyl, (C-O)8Ob (C2- C l O)alkynyl, CO2H, halo, OH, Ob(C 1 -C6)perfluoroalkyl, (C=O)3NR7R8, CN, (C=0)a0b(C3- C8)cycloalkyl, S(O)2NR7R8, SH, S(0)2-(Ci-Cio)alkyl and (C=O)aOb-heterocyclyl, said alkyl, aryl, alkenyl, alkynyl, cycloalkyl, and heterocyclyl is optionally substituted with (Ci-Cio)alkyl, OH, (C=0)aOb(Ci-Cio)alkyl, -CH(0H)CH3, -CH2-phenyl, and -C(CH3)2[theta]H.
+
+In an embodiment of Formula E, Rl is selected from:
+ OH, (C=O)3Ob(Ci- Cio)alkyl, (C=0)30b-aryl, (C=O)3Ob(C2-C io)alkenyl, (C=O)3Ob (C2-C io)alkynyl, CO2H, halo, OH, Ob(Ci-C6)[rho]erfluoroalkyl, (C=O)3NR7R8, CN, (C=O)aOb(C3-C8)cycloalkyl, S(O)2NRVRS, SH, S(O)2-(CI -C io)alkyl and (C=O)aOb-heterocyclyl, said alkyl, aryl, alkenyl, alkynyl, cycloalkyl, and heterocyclyl is optionally substituted with (Ci-Cio)alkyl, OH, (C=O)3Ob(Ci -C 10)alkyl, -CH(0H)CH3, -CH2-phenyl, and -C(CH3)2OH. Included in the instant invention is the free form of compounds of Formula A, as well as the pharmaceutically acceptable salts and stereoisomers thereof. Some of the isolated specific compounds exemplified herein are the protonated salts of amine compounds. The term "free form" refers to the amine compounds in non-salt form.
+ The encompassed pharmaceutically acceptable salts not only include the isolated salts exemplified for the specific compounds described herein, but also all the typical pharmaceutically acceptable salts of the free form of compounds of Formula A. The free form of the specific salt compounds described may be isolated using techniques known in the art. For example, the free form may be regenerated by treating the salt with a suitable dilute aqueous base solution such as dilute aqueous NaOH, potassium carbonate, ammonia and sodium bicarbonate.
+ The free forms may differ from their respective salt forms somewhat in certain physical properties, such as solubility in polar solvents, but the acid and base salts are otherwise pharmaceutically equivalent to their respective free forms for purposes of the invention.
+
+The pharmaceutically acceptable salts of the instant compounds can be synthesized from the compounds of this invention which contain a basic or acidic moiety by conventional chemical methods. Generally, the salts of the basic compounds are prepared either by ion exchange chromatography or by reacting the free base with stoichiometric amounts or with an excess of the desired salt-forming inorganic or organic acid in a suitable solvent or various combinations of solvents. Similarly, the salts of the acidic compounds are formed by reactions with the appropriate inorganic or organic base.
+ Thus, pharmaceutically acceptable salts of the compounds of this invention include the conventional non-toxic salts of the compounds of this invention as formed by reacting a basic instant compound with an inorganic or organic acid. For example, conventional non-toxic salts include those derived from inorganic acids such as hydrochloric, hydrobromic, sulfuric, sulfamic, phosphoric, nitric and the like, as well as salts prepared from organic acids such as acetic, propionic, succinic, glycolic, stearic, lactic, malic, tartaric, citric, ascorbic, pamoic, maleic, hydroxymaleic, phenylacetic, glutamic, benzoic, salicylic, sulfanilic, 2-acetoxy-benzoic, fumaric, toluenesulfonic, methanesulfonic, ethane disulfonic, oxalic, isethionic, trifluoroacetic (TFA) and the like.
+
+When the compound of the present invention is acidic,
+ suitable "pharmaceutically acceptable salts" refers to salts prepared form pharmaceutically acceptable non-toxic bases including inorganic bases and organic bases. Salts derived from inorganic bases include aluminum, ammonium, calcium, copper, ferric, ferrous, lithium, magnesium, manganic salts, manganous, potassium, sodium, zinc and the like. Particularly preferred are the ammonium, calcium, magnesium, potassium and sodium salts.
+ Salts derived from pharmaceutically acceptable organic non-toxic bases include salts of primary, secondary and tertiary amines, substituted amines including naturally occurring substituted amines, cyclic amines and basic ion exchange resins, such as arginine, betaine caffeine, choline, NjN'-dibenzylethylenediamine, diethylamin, 2-diethylaminoethanol, 2-dimethylaminoethanol, ethanolamine, ethylenediamine, N-ethylmorpholine, N-ethylpiperidine, glucamine, glucosamine, histidine, hydrabamine, isopropylamine, lysine, methylglucamine, morpholine, piperazine, piperidine, polyamine resins, procaine, purines, theobromine, triethylamine, trimethylamine tripropylamine, tromethamine and the like.
+
+The preparation of the pharmaceutically acceptable salts described above and other typical pharmaceutically acceptable salts is more fully described by <ref type="npl">Berg et al. , "Pharmaceutical Salts," J. Pharm.
+ ScL, 1977:66:1-19</ref>. It will also be noted that the compounds of the present invention are potentially internal salts or zwitterions, since under physiological conditions a deprotonated acidic moiety in the compound, such as a carboxyl group, may be anionic, and this electronic charge might then be balanced off internally against the cationic charge of a protonated or alkylated basic moiety, such as a quaternary nitrogen atom. UTILITY
+
+The compounds of the instant invention are inhibitors of the activity of Akt and are thus useful in the treatment of cancer, in particular cancers associated with irregularities in the activity of Akt and downstream cellular targets of Akt. Such cancers include, but are not limited to, ovarian, pancreatic, breast and prostate cancer, as well as cancers (including glioblastoma) where the tumor suppressor PTEN is mutated (<ref type="npl">Cheng et al., Proc. Natl. Acad.
+ Sci. (1992) 89:9267-9271</ref>; <ref type="npl">Cheng et al., Proc. Natl. Acad. Sci. (1996) 93:3636-3641</ref>; <ref type="npl">Bellacosa et al., Int. J. Cancer (1995) 64:280-285</ref>; <ref type="npl">Nakatani et al., J. Biol. Chem. (1999) 274:21528-21532</ref>; <ref type="npl">Graff, Expert. Opin. Ther. Targets (2002) 6(1): 103-113</ref>; and <ref type="npl">Yamada and Araki, J. Cell Science. (2001) 114:2375-2382</ref>; <ref type="npl">Mischel and Cloughesy, Brain Pathol. (2003) 13(1):52-61)</ref>.
+
+The compounds, compositions and methods provided herein are particularly deemed useful for the treatment of cancer.
+ Cancers that may be treated by the compounds, compositions and methods of the invention include, but are not limited to: Cardiac: sarcoma (angiosarcoma, fibrosarcoma, rhabdomyosarcoma, liposarcoma), myxoma, rhabdomyoma, fibroma, lipoma and teratoma; Lung: non-small eel lung, bronchogenic carcinoma (squamous cell, undifferentiated small cell, undifferentiated large cell, adenocarcinoma), alveolar (bronchiolar) carcinoma, bronchial adenoma, sarcoma, lymphoma, chondromatous hamartoma, mesothelioma;
+ Gastrointestinal: esophagus (squamous cell carcinoma, adenocarcinoma, leiomyosarcoma, lymphoma), stomach (carcinoma, lymphoma, leiomyosarcoma), pancreas (ductal adenocarcinoma, insulinoma, glucagonoma, gastrinoma, carcinoid tumors, vipoma), small bowel (adenocarcinoma, lymphoma, carcinoid tumors, Karposi's sarcoma, leiomyoma, hemangioma, lipoma, neurofibroma, fibroma), large bowel (adenocarcinoma, tubular adenoma, villous adenoma, hamartoma, leiomyoma), colon, colorectal, rectal; Genitourinary tract: kidney (adenocarcinoma, Wilm's tumor [nephroblastoma], lymphoma, leukemia), bladder and urethra (squamous cell carcinoma, transitional cell carcinoma, adenocarcinoma), prostate (adenocarcinoma, sarcoma), testis (seminoma, teratoma, embryonal carcinoma, teratocarcinoma, choriocarcinoma, sarcoma, interstitial cell carcinoma, fibroma, fibroadenoma, adenomatoid tumors, lipoma);
+ Liver: hepatoma (hepatocellular carcinoma), cholangiocarcinoma, hepatoblastoma, angiosarcoma, hepatocellular adenoma, hemangioma; Bone: osteogenic sarcoma (osteosarcoma), fibrosarcoma, malignant fibrous histiocytoma, chondrosarcoma, Ewing's sarcoma, malignant lymphoma (reticulum cell sarcoma), multiple myeloma, malignant giant cell tumor chordoma, osteochronfroma (osteocartilaginous exostoses), benign chondroma, chondroblastoma, chondromyxofibroma, osteoid osteoma and giant cell tumors; Nervous system: skull (osteoma, hemangioma, granuloma, xanthoma, osteitis deformans), meninges (meningioma, meningiosarcoma, gliomatosis), brain (astrocytoma, medulloblastoma, glioma, ependymoma, germinoma [pinealoma], glioblastoma multiform, oligodendroglioma, schwannoma, retinoblastoma, congenital tumors), spinal cord neurofibroma, meningioma, glioma, sarcoma);
+ Gynecological: uterus (endometrial carcinoma), cervix (cervical carcinoma, pre-tumor cervical dysplasia), ovaries (ovarian carcinoma [serous cystadenocarcinoma, mucinous cystadenocarcinoma, unclassified carcinoma], granulosa-thecal cell tumors, Sertoli-Leydig cell tumors, dysgerminoma, malignant teratoma), vulva (squamous cell carcinoma, intraepithelial carcinoma, adenocarcinoma, fibrosarcoma, melanoma), vagina (clear cell carcinoma, squamous cell carcinoma, botryoid sarcoma (embryonal rhabdomyosarcoma), fallopian tubes (carcinoma); Hematologic: blood (myeloid leukemia [acute and chronic], acute lymphoblastic leukemia, chronic lymphocytic leukemia, myeloproliferative diseases, multiple myeloma, myelodysplastic syndrome), Hodgkin's disease, non-Hodgkin's lymphoma [malignant lymphoma];
+ Skin: malignant melanoma, basal cell carcinoma, squamous cell carcinoma, Karposi's sarcoma, moles dysplastic nevi, lipoma, angioma, dermatofibroma, keloids, psoriasis; and Adrenal glands: neuroblastoma. Thus, the term "cancerous cell" as provided herein, includes a cell afflicted by any one of the above-identified conditions.
+ Cancers that may be treated by the compounds, compositions and methods of the invention include, but are not limited to: breast, prostate, colon, colorectal, lung, non-small cell lung, brain, testicular, stomach, pancrease, skin, small intestine, large intestine, throat, head and neck, oral, bone, liver, bladder, kidney, thyroid and blood.
+
+Cancers that may be treated by the compounds, compositions and methods of the invention include: breast, prostate, colon, ovarian, colorectal, lung and non-small cell lung.
+
+Cancers that may be treated by the compounds, compositions and methods of the invention include: breast, colon, (colorectal) and lung (non-small cell lung).
+
+Cancers that may be treated by the compounds, compositions and methods of the invention include: lymphoma and leukemia. Akt signaling regulates multiple critical steps in angiogenesis. <ref type="npl">Shiojima and
+
+Walsh, Circ. Res.
+ (2002) 90:1243-1250</ref>. The utility of angiogenesis inhibitors in the treatment of cancer is known in the literature, see <ref type="npl">J. Rak et al. Cancer Research, 55:4575-4580, 1995</ref> and <ref type="npl">Dredge et al., Expert Opin. Biol. Ther. (2002) 2(8):953-966</ref>, for example. The role of angiogenesis in cancer has been shown in numerous types of cancer and tissues: breast carcinoma (<ref type="npl">G. Gasparini and A.L. Harris, J. Clin. Oncol, 1995, 13:765-782</ref>; <ref type="npl">M. Toi et al., Japan. J. Cancer Res., 1994, 85:1045-1049</ref>); bladder carcinomas (<ref type="npl">AJ. Dickinson et al., Br. J. Urol, 1994, 74:762-766</ref>); colon carcinomas (<ref type="npl">L.M. Ellis et al., Surgery, 1996, 120(5):871-878</ref>); and oral cavity tumors (<ref type="npl">J.K. Williams et al., Am. J. Surg., 1994, 168:373-380</ref>).
+ Other cancers include, advanced tumors, hairy cell leukemia, melanoma, advanced head and neck, metastatic renal cell, non-Hodgkin's lymphoma, metastatic breast, breast adenocarcinoma, advanced melanoma, pancreatic, gastric, glioblastoma, lung, ovarian, non-small cell lung, prostate, small cell lung, renal cell carcinoma, various solid tumors, multiple myeloma, metastatic prostate, malignant glioma, renal cancer, lymphoma, refractory metastatic disease, refractory multiple myeloma, cervical cancer, Kaposi's sarcoma, recurrent anaplastic glioma, and metastatic colon cancer (<ref type="npl">Dredge et al., Expert Opin. Biol. Ther. (2002) 2(8):953-966</ref>). Thus, the Akt inhibitors disclosed in the instant application are also useful in the treatment of these angiogenesis related cancers.
+
+Tumors which have undergone neovascularization show an increased potential for metastasis.
+ In fact, angiogenesis is essential for tumor growth and metastasis. (<ref type="npl">S.P. Cunningham, et al., Can. Research, 61 : 3206-3211 (2001)</ref>). The Akt inhibitors disclosed in the present application are therefore also useful to prevent or decrease tumor cell metastasis.
+
+Further included within the scope of the invention is a method of treating or preventing a disease in which angiogenesis is implicated, which is comprised of administering to a mammal in need of such treatment a therapeutically effective amount of a compound of the present invention. Ocular neovascular diseases are an example of conditions where much of the resulting tissue damage can be attributed to aberrant infiltration of blood vessels in the eye (see <ref type="patent">WO 00/30651</ref>, published 2 June 2000).
+ The undesireable infiltration can be triggered by ischemic retinopathy, such as that resulting from diabetic retinopathy, retinopathy of prematurity, retinal vein occlusions, etc., or by degenerative diseases, such as the choroidal neovascularization observed in age-related macular degeneration. Inhibiting the growth of blood vessels by administration of the present compounds would therefore prevent the infiltration of blood vessels and prevent or treat diseases where angiogenesis is implicated, such as ocular diseases like retinal vascularization, diabetic retinopathy, age-related macular degeneration, and the like.
+ Further included within the scope of the invention is a method of treating or preventing a non-malignant disease in which angiogenesis is implicated, including but not limited to: ocular diseases (such as, retinal vascularization, diabetic retinopathy and age-related macular degeneration), atherosclerosis, arthritis, psoriasis, obesity and Alzheimer's disease (<ref type="npl">Dredge et al., Expert Opin. Biol. Ther. (2002) 2(8):953-966</ref>).
+ In another embodiment, a method of treating or preventing a disease in which angiogenesis is implicated includes: ocular diseases (such as, retinal vascularization, diabetic retinopathy and age-related macular degeneration), atherosclerosis, arthritis and psoriasis.
+
+Further included within the scope of the invention is a method of treating hyperproliferative disorders such as restenosis, inflammation, autoimmune diseases and allergy/asthma.
+
+Further included within the scope of the instant invention is the use of the instant compounds to coat stents and therefore the use of the instant compounds on coated stents for the treatment and/or prevention of restenosis (<ref type="patent">WO03/032809</ref>).
+
+Further included within the scope of the instant invention is the use of the instant compounds for the treatment and/or prevention of osteoarthritis (<ref type="patent">WO03/035048</ref>)
+.
+
+Further included within the scope of the invention is a method of treating hyperinsulinism.
+
+The compounds of the invention are also useful in preparing a medicament that is useful in treating the diseases described above, in particular cancer. In an embodiment of the invention, the instant compound is a selective inhibitor whose inhibitory efficacy is dependent on the PH domain. In this embodiment, the compound exhibits a decrease in in vitro inhibitory activity or no in vitro inhibitory activity against truncated Akt proteins lacking the PH domain.
+
+In a further embodiment, the instant compound is selected from the group of a selective inhibitor of Akt 1, a selective inhibitor of Akt2 and a selective inhibitor of both Aktl and Akt2.
+ In another embodiment, the instant compound is selected from the group of a selective inhibitor of Aktl, a selective inhibitor of Akt2, a selective inhibitor of Akt3 and a selective inhibitor of two of the three Akt isoforms. hi another embodiment, the instant compound is a selective inhibitor of all three Akt isoforms, but is not an inhibitor of one, two or all of such Akt isoforms that have been modified to delete the PH domain, the hinge region or both the PH domain and the hinge region.
+
+The present invention is further directed to a method of inhibiting Akt activity which comprises administering to a mammal in need thereof a pharmaceutically effective amount of the instant compound.
+ The compounds of this invention may be administered to mammals, including humans, either alone or, in combination with pharmaceutically acceptable carriers, excipients or diluents, in a pharmaceutical composition, according to standard pharmaceutical practice. The compounds can be administered orally or parenterally, including the intravenous, intramuscular, intraperitoneal, subcutaneous, rectal and topical routes of administration. The pharmaceutical compositions containing the active ingredient may be in a form suitable for oral use, for example, as tablets, troches, lozenges, aqueous or oily suspensions, dispersible powders or granules, emulsions, hard or soft capsules, or syrups or elixirs.
+ Compositions intended for oral use may be prepared according to any method known to the art for the manufacture of pharmaceutical compositions and such compositions may contain one or more agents selected from the group consisting of sweetening agents, flavoring agents, coloring agents and preserving agents in order to provide pharmaceutically elegant and palatable preparations. Tablets contain the active ingredient in admixture with non-toxic pharmaceutically acceptable excipients which are suitable for the manufacture of tablets.
+ These excipients may be for example, inert diluents, such as calcium carbonate, sodium carbonate, lactose, calcium phosphate or sodium phosphate; granulating and disintegrating agents, for example, microcrystalline cellulose, sodium crosscarmellose, corn starch, or alginic acid; binding agents, for example starch, gelatin, polyvinyl-pyrrolidone or acacia, and lubricating agents, for example, magnesium stearate, stearic acid or talc. The tablets may be uncoated or they may be coated by known techniques to mask the unpleasant taste of the drug or delay disintegration and absorption in the gastrointestinal tract and thereby provide a sustained action over a longer period.
+ For example, a water soluble taste masking material such as hydroxypropylmethyl-cellulose or hydroxypropylcellulose, or a time delay material such as ethyl cellulose, cellulose acetate buryrate may be employed.
+
+Formulations for oral use may also be presented as hard gelatin capsules wherein the active ingredient is mixed with an inert solid diluent, for example, calcium carbonate, calcium phosphate or kaolin, or as soft gelatin capsules wherein the active ingredient is mixed with water soluble carrier such as polyethyleneglycol or an oil medium, for example peanut oil, liquid paraffin, or olive oil. Aqueous suspensions contain the active material in admixture with excipients suitable for the manufacture of aqueous suspensions.
+ Such excipients are suspending agents, for example sodium carboxymethylcellulose, methylcellulose, hydroxypropylmethyl-cellulose, sodium alginate, polyvinyl-pyrrolidone, gum tragacanth and gum acacia; dispersing or wetting agents may be a naturally-occurring phosphatide, for example lecithin, or condensation products of an alkylene oxide with fatty acids, for example polyoxyethylene stearate, or condensation products of ethylene oxide with long chain aliphatic alcohols, for example heptadecaethylene- oxycetanol, or condensation products of ethylene oxide with partial esters derived from fatty acids and a hexitol such as polyoxyethylene sorbitol monooleate, or condensation products of ethylene oxide with partial esters derived from fatty acids and hexitol anhydrides, for example polyethylene sorbitan monooleate.
+ The aqueous suspensions may also contain one or more preservatives, for example ethyl, or n-propyl p-hydroxybenzoate, one or more coloring agents, one or more flavoring agents, and one or more sweetening agents, such as sucrose, saccharin or aspartame. Oily suspensions may be formulated by suspending the active ingredient in a vegetable oil, for example arachis oil, olive oil, sesame oil or coconut oil, or in mineral oil such as liquid paraffin. The oily suspensions may contain a thickening agent, for example beeswax, hard paraffin or cetyl alcohol. Sweetening agents such as those set forth above, and flavoring agents may be added to provide a palatable oral preparation.
+ These compositions may be preserved by the addition of an anti-oxidant such as butylated hydroxyanisol or alpha-tocopherol.
+
+Dispersible powders and granules suitable for preparation of an aqueous suspension by the addition of water provide the active ingredient in admixture with a dispersing or wetting agent, suspending agent and one or more preservatives. Suitable dispersing or wetting agents and suspending agents are exemplified by those already mentioned above. Additional excipients, for example sweetening, flavoring and coloring agents, may also be present. These compositions may be preserved by the addition of an anti-oxidant such as ascorbic acid.
+
+The pharmaceutical compositions of the invention may also be in the form of an oil-in-water emulsion.
+ The oily phase may be a vegetable oil, for example olive oil or arachis oil, or a mineral oil, for example liquid paraffin or mixtures of these. Suitable emulsifying agents may be naturally-occurring phosphatides, for example soy bean lecithin, and esters or partial esters derived from fatty acids and hexitol anhydrides, for example sorbitan monooleate, and condensation products of the said partial esters with ethylene oxide, for example polyoxyethylene sorbitan monooleate. The emulsions may also contain sweetening, flavouring agents, preservatives and antioxidants. Syrups and elixirs may be formulated with sweetening agents, for example glycerol, propylene glycol, sorbitol or sucrose. Such formulations may also contain a demulcent, a preservative, flavoring and coloring agents and antioxidant.
+ The pharmaceutical compositions may be in the form of sterile injectable aqueous solutions. Among the acceptable vehicles and solvents that may be employed are water, Ringer's solution and isotonic sodium chloride solution.
+
+The sterile injectable preparation may also be a sterile injectable oil-in- water microemulsion where the active ingredient is dissolved in the oily phase. For example, the active ingredient maybe first dissolved in a mixture of soybean oil and lecithin. The oil solution then introduced into a water and glycerol mixture and processed to form a microemulation.
+
+The injectable solutions or microemulsions may be introduced into a patient's blood-stream by local bolus injection.
+ Alternatively, it may be advantageous to administer the solution or microemulsion in such a way as to maintain a constant circulating concentration of the instant compound, hi order to maintain such a constant concentration, a continuous intravenous delivery device may be utilized. An example of such a device is the Deltec CADD- PLUS(TM) model 5400 intravenous pump.
+
+The pharmaceutical compositions may be in the form of a sterile injectable aqueous or oleagenous suspension for intramuscular and subcutaneous administration. This suspension may be formulated according to the known art using those suitable dispersing or wetting agents and suspending agents which have been mentioned above.
+ The sterile injectable preparation may also be a sterile injectable solution or suspension in a non- toxic parenterally- acceptable diluent or solvent, for example as a solution in 1,3-butane diol. hi addition, sterile, fixed oils are conventionally employed as a solvent or suspending medium. For this purpose any bland fixed oil may be employed including synthetic mono- or diglycerides. hi addition, fatty acids such as oleic acid find use in the preparation of injectables.
+
+Compounds of Formula A may also be administered in the form of suppositories for rectal administration of the drug. These compositions can be prepared by mixing the drug with a suitable non-irritating excipient which is solid at ordinary temperatures but liquid at the rectal temperature and will therefore melt in the rectum to release the drug.
+ Such materials include cocoa butter, glycerinated gelatin, hydro genated vegetable oils, mixtures of polyethylene glycols of various molecular weights and fatty acid esters of polyethylene glycol.
+
+For topical use, creams, ointments, jellies, solutions or suspensions, etc., containing the compound of Formula A are employed. (For purposes of this application, topical application shall include mouth washes and gargles.)
+
+The compounds for the present invention can be administered in intranasal form via topical use of suitable intranasal vehicles and delivery devices, or via transdermal routes, using those forms of transdermal skin patches well known to those of ordinary skill in the art. To be administered in the form of a transdermal delivery system, the dosage administration will, of course, be continuous rather than intermittent throughout the dosage regimen.
+ Compounds of the present invention may also be delivered as a suppository employing bases such as cocoa butter, glycerinated gelatin, hydrogenated vegetable oils, mixtures of polyethylene glycols of various molecular weights and fatty acid esters of polyethylene glycol.
+
+When a composition according to this invention is administered into a human subject, the daily dosage will normally be determined by the prescribing physician with the dosage generally varying according to the age, weight, and response of the individual patient, as well as the severity of the patient's symptoms.
+
+The dosage regimen utilizing the compounds of the instant invention can be selected in accordance with a variety of factors including type, species, age, weight, sex and the type of cancer being treated; the severity (i.e., stage) of the cancer to be treated; the route of administration;
+ the renal and hepatic function of the patient; and the particular compound or salt thereof employed. An ordinarily skilled physician or veterinarian can readily determine and prescribe the effective amount of the drug required to treat, for example, to prevent, inhibit (fully or partially) or arrest the progress of the disease. For example, compounds of the instant invention can be administered in a total daily dose of up to 10,000 mg. Compounds of the instant invention can be administered once daily (QD), or divided into multiple daily doses such as twice daily (BID), and three times daily (TID). Compounds of the instant invention can be administered at a total daily dosage of up to 10,000 mg, e.g., 2,000 mg, 3,000 mg, 4,000 mg, 6,000 mg, 8,000 mg or 10,000 mg, which can be administered in one daily dose or can be divided into multiple daily doses as described above.
+ For example, compounds of the instant invention can be administered in a total daily dose of up to 1,000 mg. Compounds of the instant invention can be administered once daily (QD), or divided into multiple daily doses such as twice daily (BID), and three times daily (TID). Compounds of the instant invention can be administered at a total daily dosage of up to 1,000 mg, e.g., 200 mg, 300 mg, 400 mg, 600 mg, 800 mg or 1,000 mg, which can be administered in one daily dose or can be divided into multiple daily doses as described above.
+
+In addition, the administration can be continuous, i.e., every day, or intermittently. The terms "intermittent" or "intermittently" as used herein means stopping and starting at either regular or irregular intervals.
+ For example, intermittent administration of a compound of the instant invention may be administration one to six days per week or it may mean administration in cycles (e.g. daily administration for two to eight consecutive weeks, then a rest period with no administration for up to one week) or it may mean administration on alternate days.
+
+In addition, the compounds of the instant invention may be administered according to any of the schedules described above, consecutively for a few weeks, followed by a rest period. For example, the compounds of the instant invention may be administered according to any one of the schedules described above from two to eight weeks, followed by a rest period of one week, or twice daily at a dose of 100 - 500 mg for three to five days a week.
+ In another particular embodiment, the compounds of the instant invention may be administered three times daily for two consecutive weeks, followed by one week of rest. Any one or more of the specific dosages and dosage schedules of the compounds of the instant invention, may also be applicable to any one or more of the therapeutic agents to be used in the combination treatment (hereinafter refered to as the "second therapeutic agent"). Moreover, the specific dosage and dosage schedule of this second therapeutic agent can further vary, and the optimal dose, dosing schedule and route of administration will be determined based upon the specific second therapeutic agent that is being used.
+
+Of course, the route of administration of the compounds of the instant invention is independent of the route of administration of the second therapeutic agent.
+ In an embodiment, the administration for a compound of the instant invention is oral administration. In another embodiment, the administration for a compound of the instant invention is intravenous administration. Thus, in accordance with these embodiments, a compound of the instant invention is administered orally or intravenously, and the second therapeutic agent can be administered orally, parenterally, intraperitoneally, intravenously, intraarterially, transdermally, sublingually, intramuscularly, rectally, transbuccally, intranasally, liposomally, via inhalation, vaginally, intraoccularly, via local delivery by catheter or stent, subcutaneously, intraadiposally, intraarticularly, intrathecally, or in a slow release dosage form.
+
+In addition, a compound of the instant invention and second therapeutic agent may be administered by the same mode of administration, i.e.
+ both agents administered e.g. orally, by FV. However, it is also within the scope of the present invention to administer a compound of the instant invention by one mode of administration, e.g. oral, and to administer the second therapeutic agent by another mode of administration, e.g. IV or any other ones of the administration modes described hereinabove.
+
+The first treatment procedure, administration of a compound of the instant invention, can take place prior to the second treatment procedure, i.e., the second therapeutic agent, after the treatment with the second therapeutic agent, at the same time as the treatment with the second therapeutic agent, or a combination thereof. For example, a total treatment period can be decided for a compound of the instant invention.
+ The second therapeutic agent can be administered prior to onset of treatment with a compound of the instant invention or following treatment with a compound of the instant invention. In addition, anti-cancer treatment can be administered during the period of administration of a compound of the instant invention but does not need to occur over the entire treatment period of a compound of the instant invention.
+
+The instant compounds are also useful in combination with therapeutic, chemotherapeutic and anti-cancer agents. Combinations of the presently disclosed compounds with therapeutic, chemotherapeutic and anti-cancer agents are within the scope of the invention. Examples of such agents can be found in <ref type="npl">Cancer Principles and Practice of Oncology by V.T. Devita and S. Hellman (editors), 6&lt;th&gt; edition (February 15, 2001), Lippincott Williams &amp; Wilkins Publishers</ref>.
+ A person of ordinary skill in the art would be able to discern which combinations of agents would be useful based on the particular characteristics of the drugs and the cancer involved. Such agents include the following: estrogen receptor modulators, androgen receptor modulators, retinoid receptor modulators, cytotoxic/cytostatic agents, antiproliferative agents, prenyl-protein transferase inhibitors, HMG-CoA reductase inhibitors and other angiogenesis inhibitors, HIV protease inhibitors, reverse transcriptase inhibitors, inhibitors of cell proliferation and survival signaling, bisphosphonates, aromatase inhibitors, siRNA therapeutics, [gamma]-secretase inhibitors, agents that interfere with receptor tyrosine kinases (RTKs) and agents that interfere with cell cycle checkpoints.
+ The instant compounds are particularly useful when co-administered with radiation therapy.
+
+"Estrogen receptor modulators" refers to compounds that interfere with or inhibit the binding of estrogen to the receptor, regardless of mechanism. Examples of estrogen receptor modulators include, but are not limited to, tamoxifen, raloxifene, idoxifene, LY353381, LYl 17081, toremifene, fulvestrant, 4-[7-(2,2-dimethyl-l-oxopropoxy-4-methyl-2-[4-[2-(l- piperidinyl)ethoxy]phenyl]-2H- 1 -berizopyran-3-yl]-phenyl-2,2-dimethylpropanoate, 4,4'- dihydroxybenzophenone-2,4-dinitrophenyl-hydrazone, and SH646. "Androgen receptor modulators" refers to compounds which interfere or inhibit the binding of androgens to the receptor, regardless of mechanism.
+ Examples of androgen receptor modulators include finasteride and other 5[alpha]-reductase inhibitors, nilutamide, flutamide, bicalutamide, liarozole, and abiraterone acetate.
+
+"Retinoid receptor modulators" refers to compounds which interfere or inhibit the binding of retinoids to the receptor, regardless of mechanism.
+ Examples of such retinoid receptor modulators include bexarotene, tretinoin, 13-cis-retinoic acid, 9-cis-retinoic acid, [alpha]- difluoromethylornithine, ILX23-7553, trans-N-(4'-hydroxyphenyl) retinamide, and N-4- carboxyphenyl retinamide.
+
+"Cytotoxic/cytostatic agents" refer to compounds which cause cell death or inhibit cell proliferation primarily by interfering directly with the cell's functioning or inhibit or interfere with cell myosis, including alkylating agents, tumor necrosis factors, intercalators, hypoxia activatable compounds, microtubule inhibitors/microtubule-stabilizing agents, inhibitors of mitotic kinesins, histone deacetylase inhibitors, inhibitors of kinases involved in mitotic progression, inhibitors of kinases involved in growth factor and cytokine signal transduction pathways, antimetabolites, biological response modifiers,
+ hormonal/anti-hormonal therapeutic agents, haematopoietic growth factors, monoclonal antibody targeted therapeutic agents, topoisomerase inhibitors, proteosome inhibitors, ubiquitin ligase inhibitors, and aurora kinase inhibitors.
+
+Examples of cytotoxic/cytostatic agents include, but are not limited to, sertenef, cachectin, ifosfamide, tasonermin, lonidamine, carboplatin, altretamine, prednimustine, dibromodulcitol, ranimustine, fotemustine, nedaplatin, oxaliplatin, temozolomide, heptaplatin, estramustine, improsulfan tosilate, trofosfamide, nimustine, dibrospidium chloride, pumitepa, lobaplatin, satraplatin, profiromycin, cisplatin, irofulven, dexifosfamide, cis-aminedichloro(2-methyl -pyridine)platinum, benzylguanine, glufosfamide, GPXlOO, (trans, trans, trans)-bis-mu- (hexane- 1 ,6-diamine)-mu-[diamine-platinum(II)]bis[diamine(chloro)platinum (H)] tetrachloride,
+ diarizidinylspermine, arsenic trioxide, l-(l l-dodecylamino-10-hydroxyundecyl)-3,7- dimethylxanthine, zorubicin, idarubicin, daunorubicin, bisantrene, mitoxantrone, pirarubicin, pinafide, valrubicin, amrubicin, antineoplaston, 3'-deamino-3'-morpholino-13-deoxo-10- hydroxycarminomycin, annamycin, galarubicin, elinafide, MENl 0755, 4-demethoxy-3-deamino- 3-aziridinyl-4-methylsulphonyl-daunorubicin (see <ref type="patent">WO 00/50032</ref>), Raf kinase inhibitors (such as Bay43-9006) and mTOR inhibitors (such as Wyeth's CCI-779).
+
+An example of a hypoxia activatable compound is tirapazamine.
+ Examples of proteosome inhibitors include but are not limited to lactacystin and
+
+MLN-341 (Velcade).
+
+Examples of microtubule inhibitors/microtubule- stabilising agents include paclitaxel, vindesine sulfate, 3',4'-didehydro-4'-deoxy-8'-norvincaleukoblastine, docetaxol, rhizoxin, dolastatin, mivobulin isethionate, auristatin, cemadotin, RPRl 09881, BMS 184476, vinflunine, cryptophycin, 2,3,4,5,6-pentafluoro-N-(3-fluoro-4-methoxyphenyl) benzene sulfonamide, anhydrovinblastine, N,N-dimethyl-L-valyl-L-valyl-N-methyl-L-valyl-L-prolyl-L- proline-t-butylamide, TDX258, the epothilones (see for example <ref type="patent">U.S. Pat. Nos. 6,284,781 and 6,288,237</ref>) and BMS 188797. In an embodiment the epothilones are not included in the microtubule inhibitors/microtubule-stabilising agents.
+ Some examples of topoisomerase inhibitors are topotecan, hycaptamine, irinotecan, rubitecan, 6-ethoxypropionyl-3',4'-O-exo-benzylidene-chartreusin, 9-methoxy-N,N- dimethyl-5-nitropyrazolo[3,4,5-kl]acridine-2-(6H) propanamine, l-amino-9-ethyl-5-fluoro-2,3- dihydro-9-hydroxy-4-methyl-lH,12H-benzo[de]pyrano[3',4':b,7]-indolizino[l,2b]quinoline- 10,13(9H,15H)dione, lurtotecan, 7-[2-(N-isopropylamino)ethyl]-(20S)camptothecin, BNP1350, BNPIl 100, BN80915, BN80942, etoposide phosphate, teniposide, sobuzoxane, T- dimethylamino-2'-deoxy-etoposide, GL331, N-[2-(dimethylamino)ethyl]-9-hydroxy-5,6- dimethyl-6H-pyrido[4,3-b]carbazole-l-carboxamide, asulacrine, (5a, 5aB, 8aa,9b)-9-[2-[N-[2- (dimethylamino)ethyl]-N-methylamino]ethyl]-5-[4-hydro0xy-3,5-dimethoxyphenyl]- 5,5a,6,8,8a,9-hexohydrofuro(3',4':
+6,7)naphtho(2,3-d)-l,3-dioxol-6-one, 2,3-(methylenedioxy)-5- methyl-7-hydroxy-8-methoxybenzo[c]-phenanthridinium, 6,9-bis[(2- aminoethyl)amino]benzo[g]isoguinoline-5,10-dione, 5-(3-aminopropylamino)-7,10-dihydroxy-2- (2-hydroxyethylaminomethyl)-6H-pyrazolo[4,5, 1 -de]acridin-6-one, N- [ 1 - [2(diethylamino)ethylamino]-7-methoxy-9-oxo-9H-thioxanthen-4-ylmethyl]formamide, N-(2- (dimethylamino)ethyl)acridine-4-carboxamide, 6-[[2-(dimethylamino)ethyl]amino]-3-hydroxy- 7H-indeno[2,l-c] quinolin-7-one, and dimesna.
+
+Examples of inhibitors of mitotic kinesins, and in particular the human mitotic kinesin KSP, are described in Publications <ref type="patent">WO03/039460</ref>, <ref type="patent">WO03/050064</ref>, <ref type="patent">WO03/050122</ref>, <ref type="patent">WO03/049527</ref>, <ref type="patent">WO03/049679</ref>, <ref type="patent">WO03/049678</ref>, <ref type="patent">WO04/039774</ref>, <ref type="patent">WO03/079973</ref>, <ref type="patent">WO03/099211</ref>, <ref type="patent">WO03/105855</ref>, <ref type="patent">WO03/106417</ref>, <ref type="patent">WO04/037171</ref>, <ref type="patent">WO04/058148</ref>, <ref type="patent">WO04/058700</ref>, <ref type="patent">WO04/126699</ref>, <ref type="patent">WO05/018638</ref>, <ref type="patent">WO05/019206</ref>, <ref type="patent">WO05/019205</ref>, <ref type="patent">WO05/018547</ref>,
+ <ref type="patent">WO05/017190</ref>, <ref type="patent">US2005/0176776</ref>. In an embodiment inhibitors of mitotic kinesins include, but are not limited to inhibitors of KSP, inhibitors of MKLPl, inhibitors of CENP-E, inhibitors of MCAK and inhibitors of Rab6-KIFL.
+
+Examples of "histone deacetylase inhibitors" include, but are not limited to, SAHA, TSA, oxamflatin, PXDlOl, MG98 and scriptaid. Further reference to other histone deacetylase inhibitors may be found in the following manuscript; <ref type="npl">Miller, T.A. et al. J. Med. Chem. 46(24):5097-5116 (2003)</ref>. "Inhibitors of kinases involved in mitotic progression" include, but are not limited to, inhibitors of aurora kinase, inhibitors of Polo-like kinases (PLK; in particular inhibitors of PLK-I), inhibitors of bub-1 and inhibitors of bub-Rl.
+ An example of an "aurora kinase inhibitor" is VX-680.
+
+"Antiproliferative agents" includes antisense RNA and DNA oligonucleotides such as G3139, ODN698, RVASKRAS, GEM231, and INX3001, and antimetabolites such as enocitabine, carmofur, tegafur, pentostatin, doxifluridine, trimetrexate, fludarabine, capecitabine, galocitabine, cytarabine ocfosfate, fosteabine sodium hydrate, raltitrexed, paltitrexid, emitefur, tiazofurin, decitabine, nolatrexed, pemetrexed, nelzarabine, 2'-deoxy-2'-methylidenecytidine, T- fluoromethylene-2'-deoxycytidine, N-[5-(2,3-dihydro-benzofuryl)sulfonyl]-N'-(3,4- dichlorophenyl)urea, N6-[4-deoxy-4-[N2-[2(E),4(E)-tetradecadienoyl]glycylamino]-L-glycero-B- L-manno-heptopyranosyl] adenine, aplidine, ecteinascidin, troxacitabine, 4-[2-amino-4-oxo- 4,6,7, 8-tetrahydro-3H-pyrimidino[5,4-b] [ 1 ,4]thiazin-6-yl-(S)-ethyl]-2,5-thienoyl-L-glutamic acid, aminopterin,
+ 5-flurouracil, alanosine, l l-acetyl-8-(carbamoyloxymethyl)-4-formyl-6- methoxy-14-oxa-l,l l-diazatetracyclo(7.4.1.0.0)-tetradeca-2,4,6-trien-9-yl acetic acid ester, swainsonine, lometrexol, dexrazoxane, methioninase, 2'-cyano-2'-deoxy-N4-palmitoyl-l-B-D- arabino furanosyl cytosine, 3-aminopyridine-2-carboxaldehyde thiosemicarbazone and trastuzumab.
+
+Examples of monoclonal antibody targeted therapeutic agents include those therapeutic agents which have cytotoxic agents or radioisotopes attached to a cancer cell specific or target cell specific monoclonal antibody. Examples include Bexxar.
+
+"HMG-CoA reductase inhibitors" refers to inhibitors of 3-hydroxy-3- methylglutaryl-CoA reductase. Examples of HMG-CoA reductase inhibitors that may be used include but are not limited to lovastatin (MEV ACOR(R); see <ref type="patent">U.S.
+ Patent Nos. 4,231,938, 4,294,926 and 4,319,039</ref>), simvastatin (ZOCOR(R); see <ref type="patent">U.S. Patent Nos. 4,444,784, 4,820,850 and 4,916,239</ref>), pravastatin (PRAVACHOL(R); see <ref type="patent">U.S. Patent Nos. 4,346,227, 4,537,859,
+
+4,410,629, 5,030,447 and 5,180,589</ref>), fluvastatin (LESCOL(R); see <ref type="patent">U.S. Patent Nos. 5,354,772, 4,911,165, 4,929,437, 5,189,164, 5,118,853, 5,290,946 and 5,356,896</ref>), atorvastatin (LIPITOR(R); see <ref type="patent">U.S. Patent Nos. 5,273,995, 4,681,893, 5,489,691 and 5,342,952</ref>) and cerivastatin (also known as rivastatin and BAYCHOL(R); see <ref type="patent">US Patent No. 5,177,080</ref>). The structural formulas of these and additional HMG-CoA reductase inhibitors that may be used in the instant methods are described at page 87 of <ref type="npl">M. Yalpani, "Cholesterol Lowering Drugs", Chemistry &amp; Industry, pp. 85-89 (5 February 1996)</ref> and <ref type="patent">US Patent Nos. 4,782,084 and 4,885,314</ref>.
+ The term HMG-CoA reductase inhibitor as used herein includes all pharmaceutically acceptable lactone and open-acid forms (i.e., where the lactone ring is opened to form the free acid) as well as salt and ester forms of compounds which have HMG-CoA reductase inhibitory activity, and therefor the use of such salts, esters, open-acid and lactone forms is included within the scope of this invention.
+
+"Prenyl-protein transferase inhibitor" refers to a compound which inhibits any one or any combination of the prenyl-protein transferase enzymes, including famesyl-protein transferase (FPTase), geranylgeranyl-protein transferase type I (GGPTase-I), and geranylgeranyl- protein transferase type-II (GGPTase-[upsilon], also called Rab GGPTase).
+
+Examples of prenyl-protein transferase inhibitors can be found in the following publications and patents:
+ <ref type="patent">WO 96/30343</ref>, <ref type="patent">WO 97/18813</ref>, <ref type="patent">WO 97/21701</ref>, <ref type="patent">WO 97/23478</ref>, <ref type="patent">WO 97/38665</ref>, <ref type="patent">WO 98/28980</ref>, <ref type="patent">WO 98/29119</ref>, <ref type="patent">WO 95/32987</ref>, <ref type="patent">U.S. Patent No. 5,420,245</ref>, <ref type="patent">U.S. Patent No. 5,523,430</ref>, <ref type="patent">U.S. Patent No. 5,532,359</ref>, <ref type="patent">U.S. Patent No. 5,510,510</ref>, <ref type="patent">U.S. Patent No. 5,589,485</ref>, <ref type="patent">U.S. Patent No. 5,602,098</ref>, <ref type="patent">European Patent Publ. 0 618 221</ref>, <ref type="patent">European Patent Publ. 0 675 112</ref>, <ref type="patent">European Patent Publ. 0 604 181</ref>, <ref type="patent">European Patent Publ. 0 696 593</ref>, <ref type="patent">WO 94/19357</ref>, <ref type="patent">WO 95/08542</ref>, <ref type="patent">WO 95/11917</ref>, <ref type="patent">WO 95/12612</ref>, <ref type="patent">WO 95/12572</ref>, <ref type="patent">WO 95/10514</ref>, <ref type="patent">U.S. Patent No. 5,661,152</ref>, <ref type="patent">WO 95/10515</ref>, <ref type="patent">WO 95/10516</ref>, <ref type="patent">WO 95/24612</ref>, <ref type="patent">WO 95/34535</ref>, <ref type="patent">WO 95/25086</ref>, <ref type="patent">WO 96/05529</ref>, <ref type="patent">WO 96/06138</ref>, <ref type="patent">WO 96/06193</ref>, <ref type="patent">WO 96/16443</ref>, <ref type="patent">WO 96/21701</ref>, <ref type="patent">WO 96/21456</ref>, <ref type="patent">WO 96/22278</ref>, <ref type="patent">WO 96/24611</ref>, <ref type="patent">WO 96/24612</ref>, <ref type="patent">WO 96/05168</ref>, <ref type="patent">WO 96/05169</ref>, <ref type="patent">WO 96/00736</ref>, <ref type="patent">U.S.
+ Patent No. 5,571,792</ref>, <ref type="patent">WO 96/17861</ref>, <ref type="patent">WO 96/33159</ref>, <ref type="patent">WO 96/34850</ref>, <ref type="patent">WO 96/34851</ref>, <ref type="patent">WO 96/30017</ref>, <ref type="patent">WO 96/30018</ref>, <ref type="patent">WO 96/30362</ref>, <ref type="patent">WO 96/30363</ref>, <ref type="patent">WO 96/31111</ref>, <ref type="patent">WO 96/31477</ref>, <ref type="patent">WO 96/31478</ref>, <ref type="patent">WO 96/31501</ref>, <ref type="patent">WO 97/00252</ref>, <ref type="patent">WO 97/03047</ref>, <ref type="patent">WO 97/03050</ref>, <ref type="patent">WO 97/04785</ref>, <ref type="patent">WO 97/02920</ref>, <ref type="patent">WO 97/17070</ref>, <ref type="patent">WO 97/23478</ref>, <ref type="patent">WO 97/26246</ref>, <ref type="patent">WO 97/30053</ref>, <ref type="patent">WO 97/44350</ref>, <ref type="patent">WO 98/02436</ref>, and <ref type="patent">U.S. Patent No. 5,532,359</ref>. For an example of the role of a prenyl-protein transferase inhibitor on angiogenesis see <ref type="npl">European J. of Cancer, Vol. 35, No. 9, pp.1394-1401 (1999)</ref>. "Angiogenesis inhibitors" refers to compounds that inhibit the formation of new blood vessels, regardless of mechanism.
+ Examples of angiogenesis inhibitors include, but are not limited to, tyrosine kinase inhibitors, such as inhibitors of the tyrosine kinase receptors FIt-I (VEGFRl) and Flk-1/KDR (VEGFR2), inhibitors of epidermal-derived, fibroblast-derived, or platelet derived growth factors, MMP (matrix metalloprotease) inhibitors, integrin blockers, interferon-[alpha], interleukin-12, pentosan polysulfate, cyclooxygenase inhibitors, including nonsteroidal antiinflammatories (NSAJDDs) like aspirin and ibuprofen as well as selective cyclooxy-genase-2 inhibitors like celecoxib and rofecoxib (<ref type="npl">PNAS, Vol. 89, p. 7384 (1992)</ref>; <ref type="npl">JNC/, Vol. 69, p. 475 (1982)</ref>; <ref type="npl">Arch. Opthalmol., Vol. 108, p.573 (1990)</ref>; <ref type="npl">Anat. Rec, Vol. 238, p. 68 (1994)</ref>; <ref type="npl">FEBS Letters, Vol. 372, p. 83 (1995)</ref>; <ref type="npl">Clin, Orthop. Vol. 313, p. 76 (1995)</ref>; <ref type="npl">J. MoI. Endocrinol, Vol. 16, p.107 (1996)</ref>; <ref type="npl">Jpn. J.
+ Pharmacol, Vol. 75, p. 105 (1997)</ref>; <ref type="npl">Cancer Res., Vol. 57, p. 1625 (1997)</ref>; <ref type="npl">Cell, Vol. 93, p. 705 (1998)</ref>; <ref type="npl">Intl. J. MoI. Med., Vol. 2, p. 715 (1998)</ref>; <ref type="npl">J. Biol. Chem., Vol. 274, p. 9116 (1999)</ref>), steroidal antiinflammatories (such as corticosteroids, mineralocorticoids, dexamethasone, prednisone, prednisolone, methylpred, betamethasone), carboxyamidotriazole, combretastatin A-4, squalamine, 6-O-chloroacetyl-carbonyl)-fumagillol, thalidomide, angiostatin, troponin- 1, angiotensin El antagonists (see <ref type="npl">Fernandez et al., J. Lab. CHn.
+ Med. 105:141-145 (1985)</ref>), and antibodies to VEGF (see, <ref type="npl">Nature Biotechnology, Vol. 17, pp.963-968 (October 1999)</ref>; <ref type="npl">Kim et al., Nature, 362, 841-844 (1993)</ref>; <ref type="patent">WO 00/44777</ref>; and <ref type="patent">WO 00/61186</ref>).
+
+Other therapeutic agents that modulate or inhibit angiogenesis and may also be used in combination with the compounds of the instant invention include agents that modulate or inhibit the coagulation and fibrinolysis systems (see review in <ref type="npl">Clin. Chem. La. Med. 38:679-692 (2000)</ref>). Examples of such agents that modulate or inhibit the coagulation and fibrinolysis pathways include, but are not limited to, heparin (see <ref type="npl">Thromb. Haemost. 80:10-23 (1998)</ref>), low molecular weight heparins and carboxypeptidase U inhibitors (also known as inhibitors of active thrombin activatable fibrinolysis inhibitor [TAFIa]) (see <ref type="npl">Thrombosis Res. 101:329-354 (2001)</ref>). TAFIa inhibitors have been described in <ref type="patent">U.S. Ser.
+ Nos. 60/310,927 (filed August 8, 2001) and 60/349,925</ref> (filed January 18, 2002). "Agents that interfere with cell cycle checkpoints" refer to compounds that inhibit protein kinases that transduce cell cycle checkpoint signals, thereby sensitizing the cancer cell to DNA damaging agents. Such agents include inhibitors of ATR, ATM, the CHKl 1 and CHKl 2 kinases and cdk and cdc kinase inhibitors and are specifically exemplified by 7- hydroxystaurosporin, flavopiridol, CYC202 (Cyclacel) and BMS-387032. "Agents that interfere with receptor tyrosine kinases (RTKs)" refer to compounds that inhibit RTKs and therefore mechanisms involved in oncogenesis and tumor progression. Such agents include inhibitors of c-Kit, Eph, PDGF, Flt3 and c-Met.
+ Further agents include inhibitors of RTKs as described by <ref type="npl">Bume- Jensen and Hunter, Nature, 411 :355-365, 2001</ref>. "Inhibitors of cell proliferation and survival signalling pathway" refer to compounds that inhibit signal transduction cascades downstream of cell surface receptors. Such agents include inhibitors of serine/threonine kinases (including but not limited to inhibitors of Akt such as described in <ref type="patent">WO 02/083064</ref>, <ref type="patent">WO 02/083139</ref>, <ref type="patent">WO 02/083140</ref>, <ref type="patent">US 2004-0116432</ref>, <ref type="patent">WO 02/083138</ref>, <ref type="patent">US 2004-0102360</ref>, <ref type="patent">WO 03/086404</ref>, <ref type="patent">WO 03/086279</ref>, <ref type="patent">WO 03/086394</ref>, <ref type="patent">WO 03/084473</ref>, <ref type="patent">WO 03/086403</ref>, <ref type="patent">WO 2004/041162</ref>, <ref type="patent">WO 2004/096131</ref>, <ref type="patent">WO 2004/096129</ref>, <ref type="patent">WO 2004/096135</ref>, <ref type="patent">WO 2004/096130</ref>, <ref type="patent">WO 2005/100356</ref>, <ref type="patent">WO 2005/100344</ref>, <ref type="patent">US 2005/029941</ref>, <ref type="patent">US 2005/44294</ref>, <ref type="patent">US 2005/43361, 60/734188, 60/652737, 60/670469</ref>), inhibitors of Raf kinase (for example BAY-43-9006 ), inhibitors of MEK (for example CI-1040 and PD-098059),
+ inhibitors of mTOR (for example Wyeth CCI-779), and inhibitors of PI3K (for example LY294002). As described above, the combinations with NSAID 's are directed to the use of NSAID's which are potent COX-2 inhibiting agents. For purposes of this specification an NSAID is potent if it possesses an IC5O for the inhibition of COX-2 of l[mu]M or less as measured by cell or microsomal assays. The invention also encompasses combinations with NSAID's which are selective
+
+COX-2 inhibitors. For purposes of this specification NSAID's which are selective inhibitors of COX-2 are defined as those which possess a specificity for inhibiting COX-2 over COX-I of at least 100 fold as measured by the ratio of IC50 for COX-2 over IC50 for COX-I evaluated by cell or microsomal assays. Such compounds include, but are not limited to those disclosed in <ref type="patent">U.S. Patent 5,474,995</ref>, <ref type="patent">U.S. Patent 5,861,419</ref>, <ref type="patent">U.S.
+ Patent 6,001,843</ref>, <ref type="patent">U.S. Patent 6,020,343</ref>, <ref type="patent">U.S.
+
+Patent 5,409,944</ref>, <ref type="patent">U.S. Patent 5,436,265</ref>, <ref type="patent">U.S. Patent 5,536,752</ref>, <ref type="patent">U.S. Patent 5,550,142</ref>, <ref type="patent">U.S.
+
+Patent 5,604,260</ref>, <ref type="patent">U.S. 5,698,584</ref>, <ref type="patent">U.S. Patent 5,710,140</ref>, <ref type="patent">WO 94/15932</ref>, <ref type="patent">U.S. Patent 5,344,991</ref>,
+
+<ref type="patent">U.S. Patent 5,134,142</ref>, <ref type="patent">U.S. Patent 5,380,738</ref>, <ref type="patent">U.S. Patent 5,393,790</ref>, <ref type="patent">U.S. Patent 5,466,823</ref>, <ref type="patent">U.S.
+
+Patent 5,633,272</ref> and <ref type="patent">U.S. Patent 5,932,598</ref>, all of which are hereby incorporated by reference.
+ Inhibitors of COX-2 that are particularly useful in the instant method of treatment are: 3-phenyl-4-(4-(methylsulfonyl)phenyl)-2-(5H)-furanone; and
+
+5-chloro-3-(4-methylsulfonyl)phenyl-2-(2-methyl-5-pyridinyl)pyridine; or a pharmaceutically acceptable salt thereof.
+
+Compounds that have been described as specific inhibitors of COX-2 and are therefore useful in the present invention include, but are not limited to, the following:
+ parecoxib,
+
+BEXTRA(R) and CELEBREX(R) or a pharmaceutically acceptable salt thereof.
+
+Other examples of angiogenesis inhibitors include, but are not limited to, endostatin, ukrain, ranpirnase, IM862, 5-methoxy-4-[2-methyl-3-(3-methyl-2-butenyl)oxiranyl]- l-oxaspiro[2,5]oct-6-yl(chloroacetyl)carbamate, acetyldinanaline, 5-amino-l-[[3,5-dichloro-4-(4- chlorobenzoyl)phenyl]methyl]-lH-l,2,3-triazole-4-carboxamide,CM101, squalamine, combretastatin, RPI4610, NX31838, sulfated mannopentaose phosphate, 7,7-(carbonyl- bis[imino-N-methyl-4,2-pyrrolocarbonylimino[N-methyl-4,2-pyrrole]-carbonylimino]-bis-(l,3- naphthalene disulfonate), and 3-[(2,4-dimethylpyrrol-5-yl)methylene]-2-indolinone (SU5416).
+
+As used above, "integrin blockers" refers to compounds which selectively antagonize, inhibit or counteract binding of a physiological ligand to the [alpha]y[beta]3 integrin,
+ to compounds which selectively antagonize, inhibit or counteract binding of a physiological ligand to the [alpha]v[beta]5 integrin, to compounds which antagonize, inhibit or counteract binding of a physiological ligand to both the [alpha]v[beta]3 integrin and the cty[beta]s integrin, and to compounds which antagonize, inhibit or counteract the activity of the particular integrin(s) expressed on capillary endothelial cells. The term also refers to antagonists of the [alpha]y[beta]6&gt; ctv[beta]8&gt; &lt;[alpha]&gt;l[beta]l&gt; &lt;[alpha]&gt;2[beta]l, cxs[beta]i, [alpha][beta][beta]i and [alpha]6[beta]4 integrins. The term also refers to antagonists of any combination of [alpha]v[beta]3, [alpha]v[beta]5, [alpha]v[beta]6, &lt;[alpha]&gt;v[beta]8&gt; &lt;[alpha]&gt;l[beta]l&gt; &lt;[alpha]&gt;2[beta]l&gt; "5[beta]l&gt; &lt;*6[beta]l &lt;and [alpha]&gt;6[beta]4 integrins.
+ Some specific examples of tyrosine kinase inhibitors include N- (trifluoromethylphenyl)-5-methylisoxazol-4-carboxamide, 3-[(2,4-dimethylpyrrol-5- yl)methylidenyl)indolin-2-one, 17-(allylamino)-l 7-demethoxygeldanamycin, 4-(3-chloro-4- fluorophenylamino)-7-methoxy-6-[3-(4-morpholinyl)propoxyl]quinazoline, N-(3-ethynylphenyl)- 6,7-bis(2-methoxyethoxy)-4-quinazolinamine, BIBX1382, 2,3,9,10,11, 12-hexahydro-10-
+
+(hydroxymethyl)- 10-hydroxy-9-methyl-9, 12-epoxy- 1 H-diindolo[ 1 ,2,3-fg:
+3 ',2 ' , 1 '-kl]pyrrolo[3 ,4- i][l,6]benzodiazocin-l-one, SH268, genistein, STI571, CEP2563, 4-(3-chlorophenylamino)-5,6- dimethyl-7H-pyrrolo[2,3-d]pyrimidinemethane sulfonate, 4-(3-bromo-4-hydroxyphenyl)amino- 6,7-dimethoxyquinazoline, 4-(4'-hydroxyphenyl)amino-6,7-dimethoxyquinazoline, SU6668, STI571 A, N-4-chlorophenyl-4-(4-pyridylmethyl)- 1 -phthalazinamine, and EMD 121974.
+
+Combinations with compounds other than anti-cancer compounds are also encompassed in the instant methods. For example, combinations of the instantly claimed compounds with PPAR-[gamma] (i.e., PPAR-gamma) agonists and PPAR-[delta] (i.e., PPAR-delta) agonists are useful in the treatment of certain malingnancies. PPAR-[gamma] and PPAR-[delta] are the nuclear peroxisome proliferator-activated receptors [gamma] and [delta].
+ The expression of PPAR-[gamma] on endothelial cells and its involvement in angiogenesis has been reported in the literature (see <ref type="npl">J. Cardiovasc. Pharmacol. 1998; 31 :909-913</ref>; <ref type="npl">J. Biol. Chem. 1999;274:9116-9121</ref>; <ref type="npl">Invest. Ophthalmol Vis. ScL 2000; 41:2309-2317</ref>). More recently, PPAR-[gamma] agonists have been shown to inhibit the angiogenic response to VEGF in vitro; both troglitazone and rosiglitazone maleate inhibit the development of retinal neovascularization in mice. (<ref type="npl">Arch. Ophthamol. 2001; 119:709-717</ref>).
+ Examples of PPAR-[gamma] agonists and PPAR- [gamma]/[alpha] agonists include, but are not limited to, thiazolidinediones (such as DRF2725, CS-Ol 1, troglitazone, rosiglitazone, and pioglitazone), fenofibrate, gemfibrozil, clofibrate, GW2570, SB219994, AR-H039242, JTT-501, MCC-555, GW2331, GW409544, NN2344, KRP297, NPOl 10, DRF4158, NN622, GI262570, PNU182716, DRF552926, 2-[(5,7-dipropyl-3-trifluoromethyl-l,2-benzisoxazol-6-yl)oxy]-2-methylpropionic acid (disclosed in USSN 09/782,856), and 2(R)-7-(3-(2-chloro-4-(4-fluorophenoxy) phenoxy)propoxy)-2-ethylchromane-2-carboxylic acid (disclosed in USSN 60/235,708 and 60/244,697).
+
+Another embodiment of the instant invention is the use of the presently disclosed compounds in combination with gene therapy for the treatment of cancer. For an overview of genetic strategies to treating cancer see <ref type="npl">Hall et al (Am. J. Hum.
+ Genet. 61 :785-789, 1997)</ref> and <ref type="npl">Kufe et al (Cancer Medicine, 5th Ed, pp 876-889, BC Decker, Hamilton 2000)</ref>. Gene therapy can be used to deliver any tumor suppressing gene. Examples of such genes include, but are not limited to, p53, which can be delivered via recombinant virus-mediated gene transfer (see <ref type="patent">U.S. Patent No. 6,069,134</ref>, for example), a uPA/uPAR antagonist (<ref type="npl">"Adenovirus-Mediated Delivery of a uPA/uPAR Antagonist Suppresses Angiogenesis-Dependent Tumor Growth and Dissemination in Mice," Gene Therapy, August 1998;5(8):1105-13</ref>), and interferon gamma (<ref type="npl">J. Immunol. 2000; 164:217-222</ref>). The compounds of the instant invention may also be administered in combination with an inhibitor of inherent multidrug resistance (MDR), in particular MDR associated with high levels of expression of transporter proteins.
+ Such MDR inhibitors include inhibitors of p- glycoprotein (P-gp), such as LY335979, XR9576, OC144-093, R101922, VX853 and PSC833 (valspodar).
+
+A compound of the present invention may be employed in conjunction with antiemetic agents to treat nausea or emesis, including acute, delayed, late-phase, and anticipatory emesis, which may result from the use of a compound of the present invention, alone or with radiation therapy.
+ For the prevention or treatment of emesis, a compound of the present invention may be used in conjunction with other anti-emetic agents, especially neurokinin- 1 receptor antagonists, 5HT3 receptor antagonists, such as ondansetron, granisetron, tropisetron, and zatisetron, GABAB receptor agonists, such as baclofen, a corticosteroid such as Decadron (dexamethasone), Kenalog, Aristocort, Nasalide, Preferid, Benecorten or others such as disclosed in <ref type="patent">U.S.Patent Nos. 2,789,118, 2,990,401, 3,048,581, 3,126,375, 3,929,768, 3,996,359, 3,928,326 and 3,749,712</ref>, an antidopaminergic, such as the phenothiazines (for example prochlorperazine, fluphenazine, thioridazine and mesoridazine), metoclopramide or dronabinol.
+ In another embodiment, conjunctive therapy with an anti-emesis agent selected from a neurokinin-1 receptor antagonist, a 5HT3 receptor antagonist and a corticosteroid is disclosed for the treatment or prevention of emesis that may result upon administration of the instant compounds. Neurokinin-1 receptor antagonists of use in conjunction with the compounds of the present invention are fully described, for example, in <ref type="patent">U.S. Patent Nos. 5,162,339, 5,232,929, 5,242,930, 5,373,003, 5,387,595, 5,459,270, 5,494,926, 5,496,833, 5,637,699, 5,719,147</ref>; <ref type="patent">European Patent Publication Nos.
+ EP 0 360 390, 0 394 989, 0 428 434, 0 429 366, 0 430 771, 0 436 334, 0 443 132, 0 482 539, 0 498 069, 0 499 313, 0 512 901, 0 512 902, 0 514 273, 0 514 274, 0 514 275, 0 514 276, 0 515 681, 0 517 589, 0 520 555, 0 522 808, 0 528 495, 0 532 456, 0 533 280, 0 536 817, 0 545 478, 0 558 156, 0 577 394, 0 585 913,0 590 152, 0 599 538, 0 610 793, 0 634 402, 0 686 629, 0 693 489, 0 694 535, 0 699 655, 0 699 674, 0 707 006, 0 708 101, 0 709 375, 0 709 376, 0 714 891, 0 723 959, 0 733 632 and 0 776 893</ref>; PCT International Patent Publication Nos. 
+<ref type="patent">WO 90/05525, 90/05729, 91/09844, 91/18899, 92/01688, 92/06079, 92/12151, 92/15585, 92/17449, 92/20661, 92/20676, 92/21677, 92/22569, 93/00330, 93/00331, 93/01159, 93/01165, 93/01169, 93/01170, 93/06099, 93/09116, 93/10073, 93/14084, 93/14113, 93/18023, 93/19064, 93/21155, 93/21181, 93/23380, 93/24465, 94/00440, 94/01402, 94/02461, 94/02595, 94/03429, 94/03445, 94/04494, 94/04496, 94/05625, 94/07843, 94/08997, 94/10165, 94/10167, 94/10168, 94/10170, 94/11368, 94/13639, 94/13663, 94/14767, 94/15903, 94/19320, 94/19323, 94/20500, 94/26735, 94/26740, 94/29309, 95/02595, 95/04040, 95/04042, 95/06645, 95/07886, 95/07908, 95/08549, 95/11880, 95/14017, 95/15311, 95/16679, 95/17382, 95/18124, 95/18129, 95/19344, 95/20575, 95/21819, 95/22525, 95/23798, 95/26338, 95/28418, 95/30674, 95/30687, 95/33744, 96/05181, 96/05193, 96/05203, 96/06094, 96/07649, 96/10562, 96/16939, 96/18643, 96/20197,
+ 96/21661, 96/29304, 96/29317, 96/29326, 96/29328, 96/31214, 96/32385, 96/37489, 97/01553, 97/01554, 97/03066, 97/08144, 97/14671, 97/17362, 97/18206, 97/19084, 97/19942 and 97/21702</ref>; and in <ref type="patent">British Patent Publication Nos. 2 266 529, 2 268 931, 2 269 170, 2 269 590, 2 271 774, 2 292 144, 2 293 168, 2 293 169, and 2 302 689</ref>. The preparation of such compounds is fully described in the aforementioned patents and publications, which are incorporated herein by reference.
+
+In an embodiment, the neurokinin- 1 receptor antagonist for use in conjunction with the compounds of the present invention is selected from: 2-(R)-(I -(R)-(3,5- bis(trifluoromethyl)phenyl)ethoxy)-3-(S)-(4-fluorophenyl)-4-(3-(5-oxo-lH,4H-l,2,4- triazolo)methyl)morpholine, or a pharmaceutically acceptable salt thereof, which is described in <ref type="patent">U.S.
+ Patent No. 5,719,147</ref>.
+
+A compound of the instant invention may also be administered with an agent useful in the treatment of anemia. Such an anemia treatment agent is, for example, a continuous eythropoiesis receptor activator (such as epoetin alfa). A compound of the instant invention may also be administered with an agent useful in the treatment of neutropenia. Such a neutropenia treatment agent is, for example, a hematopoietic growth factor which regulates the production and function of neutrophils such as a human granulocyte colony stimulating factor, (G-CSF). Examples of a G-CSF include filgrastim.
+ A compound of the instant invention may also be administered with an immunologic-enhancing drug, such as levamisole, isoprinosine and Zadaxin.
+
+A compound of the instant invention may also be useful for treating or preventing cancer in combination with P450 inhibitors including: xenobiotics, quinidine, tyramine, ketoconazole, testosterone, quinine, methyrapone, caffeine, phenelzine, doxorubicin, troleandomycin, cyclobenzaprine, erythromycin, cocaine, furafyline, cimetidine, dextromethorphan, ritonavir, indinavir, amprenavir, diltiazem, terfenadine, verapamil, Cortisol, itraconazole, mibefradil, nefazodone and nelfinavir.
+
+A compound of the instant invention may also be useful for treating or preventing cancer in combination with Pgp and/or BCRP inhibitors including:
+ cyclosporin A, PSC833, GF120918, cremophorEL, fumitremorgin C, Kol32, Kol34, Iressa, Imatnib mesylate, EKI-785, C11033, novobiocin, diethylstilbestrol, tamoxifen, resperpine, VX-710, tryprostatin A, flavonoids, ritonavir, saquinavir, nelfinavir, omeprazole, quinidine, verapamil, terfenadine, ketoconazole, nifidepine, FK506, amiodarone, XR9576, indinavir, amprenavir, Cortisol, testosterone, LY335979, OC144-093, erythromycin, vincristine, digoxin and talinolol. A compound of the instant invention may also be useful for treating or preventing cancer, including bone cancer, in combination with bisphosphonates (understood to include bisphosphonates, diphosphonates, bisphosphonic acids and diphosphonic acids).
+ Examples of bisphosphonates include but are not limited to: etidronate (Didronel), pamidronate (Aredia), alendronate (Fosamax), risedronate (Actonel), zoledronate (Zometa), ibandronate (Boniva), incadronate or cimadronate, clodronate, EB-1053, minodronate, neridronate, piridronate and tiludronate including any and all pharmaceutically acceptable salts, derivatives, hydrates and mixtures thereof. A compound of the instant invention may also be useful for treating or preventing breast cancer in combination with aromatase inhibitors. Examples of aromatase inhibitors include but are not limited to: anastrozole, letrozole and exemestane.
+
+A compound of the instant invention may also be useful for treating or preventing cancer in combination with siRNA therapeutics.
+ The compounds of the instant invention may also be administered in combination with [gamma]-secretase inhibitors and/or inhibitors of NOTCH signaling. Such inhibitors include compounds described in <ref type="patent">WO 01/90084</ref>, <ref type="patent">WO 02/30912</ref>, <ref type="patent">WO 01/70677</ref>, <ref type="patent">WO 03/013506</ref>, <ref type="patent">WO 02/36555</ref>, <ref type="patent">WO 03/093252</ref>, <ref type="patent">WO 03/093264</ref>, <ref type="patent">WO 03/093251</ref>, <ref type="patent">WO 03/093253</ref>, <ref type="patent">WO 2004/039800</ref>, <ref type="patent">WO 2004/039370</ref>, <ref type="patent">WO 2005/030731</ref>, <ref type="patent">WO 2005/014553</ref>, <ref type="patent">USSN 10/957,251</ref>, <ref type="patent">WO 2004/089911</ref>, <ref type="patent">WO 02/081435</ref>, <ref type="patent">WO 02/081433</ref>, <ref type="patent">WO 03/018543</ref>, <ref type="patent">WO 2004/031137</ref>, <ref type="patent">WO 2004/031139</ref>, <ref type="patent">WO 2004/031138</ref>, <ref type="patent">WO 2004/101538</ref>, <ref type="patent">WO 2004/101539</ref> and <ref type="patent">WO 02/47671</ref> (including LY-450139).
+
+Inhibitors of Akt, as disclosed in the following publications;
+ <ref type="patent">WO 02/083064</ref>, <ref type="patent">WO 02/083139</ref>, <ref type="patent">WO 02/083140</ref>, <ref type="patent">US 2004-0116432</ref>, <ref type="patent">WO 02/083138</ref>, <ref type="patent">US 2004-0102360</ref>, <ref type="patent">WO 03/086404</ref>, <ref type="patent">WO 03/086279</ref>, <ref type="patent">WO 03/086394</ref>, <ref type="patent">WO 03/084473</ref>, <ref type="patent">WO 03/086403</ref>, <ref type="patent">WO 2004/041162</ref>, <ref type="patent">WO 2004/096131</ref>, <ref type="patent">WO 2004/096129</ref>, <ref type="patent">WO 2004/096135</ref>, <ref type="patent">WO 2004/096130</ref>, <ref type="patent">WO 2005/100356</ref>, <ref type="patent">WO 2005/100344</ref>, <ref type="patent">US 2005/029941</ref>, <ref type="patent">US 2005/44294</ref>, <ref type="patent">US 2005/43361, 60/734188, 60/652737, 60/670469</ref>, and including compounds of the instant invention, are also useful in combination with potassium salts, magnesium salts, beta-blockers (such as atenolol) and endothelin-a (ETa)antagonists with the goal of maintaining cardiovascular homeostasis.
+ Inhibitors of Akt, as disclosed in the following publications; <ref type="patent">WO 02/083064</ref>, <ref type="patent">WO
+
+02/083139</ref>, <ref type="patent">WO 02/083140</ref>, <ref type="patent">US 2004-0116432</ref>, <ref type="patent">WO 02/083138</ref>, <ref type="patent">US 2004-0102360</ref>, <ref type="patent">WO 03/086404</ref>, <ref type="patent">WO 03/086279</ref>, <ref type="patent">WO 03/086394</ref>, <ref type="patent">WO 03/084473</ref>, <ref type="patent">WO 03/086403</ref>, <ref type="patent">WO 2004/041162</ref>, <ref type="patent">WO 2004/096131</ref>, <ref type="patent">WO 2004/096129</ref>, <ref type="patent">WO 2004/096135</ref>, <ref type="patent">WO 2004/096130</ref>, <ref type="patent">WO 2005/100356</ref>, <ref type="patent">WO 2005/100344</ref>, <ref type="patent">US 2005/029941</ref>, <ref type="patent">US 2005/44294</ref>, <ref type="patent">US 2005/43361, 60/734188, 60/652737, 60/670469</ref>, and including compounds of the instant invention, are also useful in combination with insulin, insulin secretagogues, PPAR-gamma agonists, metformin, somatostatin receptor agonists such as octreotide, DPP4 inhibitors,
+ sulfonylureas and alpha- glucosidase inhibitors with the goal of maintaining glucose homeostasis.
+
+A compound of the instant invention may also be useful for treating or preventing cancer in combination with PARP inhibitors.
+
+A compound of the instant invention may also be useful for treating cancer in combination with the following therapeutic agents: abarelix (Plenaxis depot(R)); aldesleukin (Prokine(R)); Aldesleukin (Proleukin(R));
+ Alemtuzumabb (Campath(R)); alitretinoin (Panretin(R)); allopurinol (Zyloprim(R)); altretamine (Hexalen(R)); amifostine (Ethyol(R)); anastrozole (Arimidex(R)); arsenic trioxide (Trisenox(R)); asparaginase (Elspar(R)); azacitidine (Vidaza(R)); bevacuzimab (Avastin(R)); bexarotene capsules (Targretin(R)); bexarotene gel (Targretin(R)); bleomycin (Blenoxane(R)); bortezomib (Velcade(R)); busulfan intravenous (Busulfex(R)); busulfan oral (Myleran(R)); calusterone (Methosarb(R)); capecitabine (Xeloda(R)); carboplatin (Paraplatin(R)); carmustine (BCNU(R), BiCNU(R)); carmustine (Gliadel(R)); carmustine with Polifeprosan 20 Implant (Gliadel Wafer(R)); celecoxib (Celebrex(R)); cetuximab (Erbitux(R)); chlorambucil (Leukeran(R)); cisplatin (Platinol(R)); cladribine (Leustatin(R), 2-CdA(R)); clofarabine (Clolar(R)); cyclophosphamide (Cytoxan(R), Neosar(R));
+ cyclophosphamide (Cytoxan Injection(R)); cyclophosphamide (Cytoxan Tablet(R)); cytarabine (Cytosar-U(R)); cytarabine liposomal (DepoCyt(R)); dacarbazine (DTIC-Dome(R)); dactinomycin, actinomycin D (Cosmegen(R)); Darbepoetin alfa (Aranesp(R)); daunorubicin liposomal (DanuoXome(R)); daunorubicin, daunomycin (Daunorubicin(R)); daunorubicin, daunomycin (Cerubidine(R)); Denileukin diftitox (Ontak(R)); dexrazoxane (Zinecard(R)); docetaxel (Taxotere(R)); doxorubicin (Adriamycin PFS(R)); doxorubicin (Adriamycin(R), Rubex(R)); doxorubicin (Adriamycin PFS Injection(R)); doxorubicin liposomal (Doxil(R)); dromostanolone propionate (dromostanolone(R)); dromostanolone propionate (masterone injection(R)); Elliott's B Solution (Elliott's B Solution(R)); epirubicin (Ellence(R));
+ Epoetin alfa (epogen(R)); erlotinib (Tarceva(R)); estramustine (Emcyt(R)); etoposide phosphate (Etopophos(R)); etoposide, VP- 16 (Vepesid(R)); exemestane (Aromasin(R)); Filgrastim (Neupogen(R)); floxuridine (intraarterial) (FUDR(R)); fludarabine (Fludara(R)); fluorouracil, 5-FU (Adrucil(R)); fulvestrant (Faslodex(R)); gefitinib (Iressa(R)); gemcitabine (Gemzar(R)); gemtuzumab ozogamicin (Mylotarg(R)); goserelin acetate (Zoladex Implant(R)); goserelin acetate (Zoladex(R)); histrelin acetate (Histrelin implant(R)); hydroxyurea (Hydrea(R)); Ibritumomab Tiuxetan (Zevalin(R)); idarubicin (Idamycin(R)); ifosfamide (IFEX(R)); imatinib mesylate (Gleevec(R)); interferon alfa 2a (Roferon A(R)); Interferon alfa-2b (Intron A(R)); irinotecan (Camptosar(R)); lenalidomide (Revlimid(R)); letrozole (Femara(R)); leucovorin (Wellcovorin(R), Leucovorin(R));
+ Leuprolide Acetate (Eligard(R)); levamisole (Ergamisol(R)); lomustine, CCNU (CeeBU(R)); meclorethamine, nitrogen mustard (Mustargen(R)); megestrol acetate (Megace(R)); melphalan, L- PAM (Alkeran(R)); mercaptopurine, 6-MP (Purinethol(R)); mesna (Mesnex(R)); mesna (Mesnex tabs(R)); methotrexate (Methotrexate(R)); methoxsalen (Uvadex(R)); mitomycin C (Mutamycin(R)); mitotane (Lysodren(R)); mitoxantrone (Novantrone(R)); nandrolone phenpropionate (Durabolin- 50(R)); nelarabine (Arranon(R)); Nofetumomab (Verluma(R)); Oprelvekin (Neumega(R)); oxaliplatin (Eloxatin(R)); paclitaxel (Paxene(R)); paclitaxel (Taxol(R)); paclitaxel protein-bound particles (Abraxane(R)); palifermin (Kepivance(R)); pamidronate (Aredia(R)); pegademase (Adagen (Pegademase Bovine)(R)); pegaspargase (Oncaspar(R));
+ Pegfilgrastim (Neulasta(R)); pemetrexed disodium (Alimta(R)); pentostatin (Nipent(R)); pipobroman (Vercyte(R)); plicamycin, mithramycin (Mithracin(R)); porfimer sodium (Photofrin(R)); procarbazine (Matulane(R)); quinacrine (Atabrine(R)); Rasburicase (Elitek(R)); Rituximab (Rituxan(R)); sargramostim (Leukine(R)); Sargramostim (Prokine(R)); sorafenib (Nexavar(R)); streptozocin (Zanosar(R)); sunitinib maleate (Sutent(R)); talc (Sclerosol(R)); tamoxifen (Nolvadex(R)); temozolomide (Temodar(R)); teniposide, VM-26 (Vumon(R)); testolactone (Teslac(R)); thioguanine, 6-TG (Thioguanine(R)); thiotepa (Thioplex(R)); topotecan (Hycamtin(R)); toremifene (Fareston(R)); Tositumomab (Bexxar(R)); Tositumomab/I-131 tositumomab (Bexxar(R)); Trastuzumab (Herceptin(R)); tretinoin, ATRA (Vesanoid(R));
+ Uracil Mustard (Uracil Mustard Capsules(R)); valrubicin (Valstar(R)); vinblastine (Velban(R)); vincristine (Oncovin(R)); vinorelbine (Navelbine(R)); zoledronate (Zometa(R)) and vorinostat (Zolinza(R)).
+
+Thus, the scope of the instant invention encompasses the use of the instantly claimed compounds in combination with a second compound selected from:
+ an estrogen receptor modulator, an androgen receptor modulator, a retinoid receptor modulator, a cytotoxic/cytostatic agent, an antiproliferative agent, a prenyl-protein transferase inhibitor, an HMG-CoA reductase inhibitor, an HIV protease inhibitor, a reverse transcriptase inhibitor, an angiogenesis inhibitor, PPAR-[gamma] agonists, PPAR-[delta] agonists, an inhibitor of inherent multidrug resistance, an anti-emetic agent, an agent useful in the treatment of anemia, an agent useful in the treatment of neutropenia, an immunologic-enhancing drug, an inhibitor of cell proliferation and survival signaling, a bisphosphonate, an aromatase inhibitor, an siRNA therapeutic, [gamma]-secretase inhibitors, agents that interfere with receptor tyrosine kinases (RTKs), an agent that interferes with a cell cycle checkpoint and any of the therapeutic agents listed above.
+ The term "administration" and variants thereof (e.g., "administering" a compound) in reference to a compound of the invention means introducing the compound or a prodrug of the compound into the system of the animal in need of treatment. When a compound of the invention or prodrug thereof is provided in combination with one or more other active agents (e.g., a cytotoxic agent, etc.), "administration" and its variants are each understood to include concurrent and sequential introduction of the compound or prodrug thereof and other agents.
+
+As used herein, the term "composition" is intended to encompass a product comprising the specified ingredients in the specified amounts, as well as any product which results, directly or indirectly, from combination of the specified ingredients in the specified amounts.
+ The term "therapeutically effective amount" as used herein means that amount of active compound or pharmaceutical agent that elicits the biological or medicinal response in a tissue, system, animal or human that is being sought by a researcher, veterinarian, medical doctor or other clinician.
+
+The term "treating cancer" or "treatment of cancer" refers to administration to a mammal afflicted with a cancerous condition and refers to an effect that alleviates the cancerous condition by killing the cancerous cells, but also to an effect that results in the inhibition of growth and/or metastasis of the cancer.
+ In an embodiment, the angiogenesis inhibitor to be used as the second compound is selected from a tyrosine kinase inhibitor, an inhibitor of epidermal-derived growth factor, an inhibitor of fibroblast-derived growth factor, an inhibitor of platelet derived growth factor, an MMP (matrix metalloprotease) inhibitor, an integrin blocker, interferon-[alpha], interleukin-12, pentosan polysulfate, a cyclooxygenase inhibitor, carboxyamidotriazole, combretastatin A-4, squalamine, [omicron]-O-chloroacetyl-carbony^-fumagillol, thalidomide, angiostatin, troponin- 1, or an antibody to VEGF.
+ In an embodiment, the estrogen receptor modulator is tamoxifen or raloxifene.
+
+Also included in the scope of the claims is a method of treating cancer that comprises administering a therapeutically effective amount of a compound of the instant invention in combination with radiation therapy and/or in combination with a second compound selected from:
+ an estrogen receptor modulator, an androgen receptor modulator, a retinoid receptor modulator, a cytotoxiccytostatic agent, an antiproliferative agent, a prenyl-protein transferase inhibitor, an HMG-CoA reductase inhibitor, an HIV protease inhibitor, a reverse transcriptase inhibitor, an angiogenesis inhibitor, PPAR-[gamma] agonists, PPAR-[delta] agonists, an inhibitor of inherent multidrug resistance, an anti-emetic agent, an agent useful in the treatment of anemia, an agent useful in the treatment of neutropenia, an immunologic-enhancing drug, an inhibitor of cell proliferation and survival signaling, a bisphosphonate, an aromatase inhibitor, an siRNA therapeutic, [gamma]-secretase inhibitors, agents that interfere with receptor tyrosine kinases (RTKs),
+ an agent that interferes with a cell cycle checkpoint and any of the therapeutic agents listed above.
+
+And yet another embodiment of the invention is a method of treating cancer that comprises administering a therapeutically effective amount of a compound of the instant invention in combination with paclitaxel or trastuzumab.
+ The invention further encompasses a method of treating or preventing cancer that comprises administering a therapeutically effective amount of a compound of the instant invention in combination with a COX-2 inhibitor.
+
+The instant invention also includes a pharmaceutical composition useful for treating or preventing cancer that comprises a therapeutically effective amount of a compound of the instant invention and a second compound selected from:
+ an estrogen receptor modulator, an androgen receptor modulator, a retinoid receptor modulator, a cytotoxic/cytostatic agent, an antiproliferative agent, a prenyl-protein transferase inhibitor, an HMG-CoA reductase inhibitor, an HIV protease inhibitor, a reverse transcriptase inhibitor, an angiogenesis inhibitor, a PPAR-[gamma] agonist, a PPAR-[delta] agonist, an inhibitor of cell proliferation and survival signaling, a bisphosphonate, an aromatase inhibitor, an siRNA therapeutic, 7-secretase inhibitors, agents that interfere with receptor tyrosine kinases (RTKs), an agent that interferes with a cell cycle checkpoint and any of the therapeutic agents listed above.
+ All patents, publications and pending patent applications identified are hereby incorporated by reference.
+
+Abbreviations used in the description of the chemistry and in the Examples that follow are: AEBSF (p-aminoethylbenzenesulfonyl fluoride); BSA (bovine serum albumin); BuLi (n-Butyl lithium); CDCI3 (chloroform-d); CuI (copper iodide); CuS[theta]4 (copper sulfate); DCE
+
+(dichloroethane); DCM (dichloromethane); DEAD (diethyl azodicarboxylate); DMA (dimethylacetamide); DMF (N,N-dimethylformamide); DMSO (dimethyl sulfoxide); DPPA (diphenylphosphoryl azide); DTT (dithiothreitol); EDC (N-ethyl-N'-(3- dimethylaminopropyl)carbodiimide); EDTA (ethylene-diamine-tetra-acetic acid); EGTA (ethylene-glycol-tetra-acetic acid); EtOAc (ethyl acetate); EtOH (ethanol); HOAc (acetic acid); HPLC (high-performance liquid chromatography); HRMS (high resolution mass spectrum);
+ LCMS (liquid chromatograph-mass spectrometer); LHMDS (lithium bis(trimethylsilyl)amide); LRMS (low resolution mass spectrum); MeOH (methanol); MP-B(CN)H3 (Macroporous cyanoborohydride); NaHCO3 (sodium bicarbonate); Na2SO4 (sodium sulfate); Na(OAc)3BH (sodium triacetoxyborohydride); NH4OAC (ammonium acetate); NBS (N-bromosuccinamide);
+
+NMR (nuclear magnetic resonance); PBS (phosphate buffered saline); PCR (polymerase chain reaction); Pd(dppf) ([l,r-bis(diphenylphosphino)ferrocene] palladium); Pd(Ph3)4 (palladium(O) tetrakis-triphenylphosphine); POCI3 (phosphorous oxychloride); PS-DIEA (polystyrene diisopropylethylamine); PS-PPh3 (polystyrene-triphenyl phosphine); TBAF (tetrabutylammonium fluoride); THF (tetrahydrofuran); TFA (trifluoroacteic acid); TMSCH2N2 (trimethylsilyldiazomethane) and Ac (acetyl); BOC (t-butoxycarbonyl); Bu (butyl); CaI (calculated); Calc'd (calculated);
+ DIEA (diisopropylethylamine); DMAP (4- dimethylaminopyridine); EDC (N-ethyl-N'-(3-dimethylaminopropyl)carbodiimide); Eq (equivalents); Et (ethyl); HOBT (hydroxybenzotriazole); IPA (isopropanol); LC/MS (liquid chromatograph-mass spectrometer); Me (methyl); MeCN (acetonitrile); NMP (N- methylpyrrolidinone); Pr (propyl); Pyr (pyridine); Sat (saturated) and Tosic (p-toluenesulfonic acid).
+
+The compounds of this invention may be prepared by employing reactions as shown in the following Reaction Schemes, in addition to other standard manipulations that are known in the literature or exemplified in the experimental procedures. The illustrative Reaction Schemes below, therefore, are not limited by the compounds listed or by any particular substituents employed for illustrative purposes.
+ Substituent numbering as shown in the Reaction Schemes does not necessarily correlate to that used in the claims and often, for clarity, a single substituent is shown attached to the compound where multiple substituents are allowed under the definitions of Formula A hereinabove.
+
+Synopsis of Reaction Schemes Reaction Schemes I and [pi], provide useful details for preparing the the instant compounds. The requisite intermediates are in some cases commercially available or can be prepared according to literature procedures.
+
+As illustrated in Reaction Scheme I, a phenyl acetic acid derivative is first alkylated with 3-chloro-2-chloromethyl-l-propene using a base such as LHMDS to give 1-1. The olefin is then oxidatively cleaved, for example with ozone, to give ketone 1-2 which is reacted with a diol such as ethylene glycol to give 1-3.
+ Cyclization under basic conditions and a hydrolytic work-up then gives the cycloalkyl compound 1-4. Generation of the acyl azide followed by rearrangement and trapping of the resulting isocyanate with the appropriate alcohol gives carbamate 1-5. Cyanation, in this case catalysed by palladium, gives nitrile 1-6.
+
+Deprotonation of 1-6 followed by reaction with a nucleophilic benzyl Grignard reagent and hydrolytic work-up gives ketone 1-7. Condensation of 1-7 with aldehyde 1-8 under basic conditions gives the chloronaphthyridine 1-9. Displacement of the chlorine with hydrazine gives hydrazide 1-10. Acylation followed by cyclization in situ under acidic conditions gives the triazolonaphthyridine 1-11 and deprotection of the amine, in this case with TFA, generates 1-12.
+ Compounds of the instant invention in which R&lt;1&gt; is an aminoalkyl group may be prepared according to the procedures outlined in reaction Scheme [pi]. Hydrazide 1-10 is reacted with a carbodiimide to generate a urea which is cyclized in situ under acidic conditions to give the alkylaminotriazole H-I. Deprotection then gives II-2. 
+
+Reaction Scheme I
+
+ &lt;EMI ID=45.1&gt; 
+
+1-3 I -4 I-5
+
+ &lt;EMI ID=45.2&gt; 
+
+I-9 MO
+
+ &lt;EMI ID=45.3&gt; 
+
+1-11 1-12
+
+Reaction Scheme II
+
+ &lt;EMI ID=45.4&gt; 
+
+MO IM II-2 EXAMPLES
+
+Examples and schemes provided are intended to assist in a further understanding of the invention.
+ Particular materials employed, species and conditions are intended to be further illustrative of the invention and do not limit the reasonable scope thereof.
+
+SCHEME 1
+
+ &lt;EMI ID=46.1&gt; 
+ &lt;EMI ID=46.2&gt; 
+LiHMDS
+ &lt;EMI ID=46.3&gt; 
+
+ &lt;EMI ID=46.4&gt; 
+
+1-11 1-12
+
+Ethyl 2-(4-bromophenyl)-4-(chloromethyl)pent-4-enoate (1-1)
+
+To a solution of ethyl (4-bromophenyl)acetate (143 g, 588 mmol) in THF (800 mL) was added LHMDS (1.13 eq in THF) at -78&lt;0&gt;C. After 30 minutes, the reaction mixture was added to a solution of 3-chloro-2-chloromethyl-l-propene (147 g, 1180 mmol) in THF (500 mL) at -78[deg.]C via cannula. The reaction was allowed to slowly warm from -78[deg.]C to rt over 15 hours. The reaction mixture was poured into sodium bicarbonate, extracted with EtOAc, dried over sodium sulfate, filtered and concentrated.
+ The crude residue was purified by column chromatography eluting with 1-20% Etoac/Hexane. The appropriate fractions were combined and the solvent removed in vacuo to give benzyl 4-(1H-1 ,2,4-triazol-3-yl)piperidine-l-carboxylate (1- 1) as a clear oil. MS (M+[Eta]&lt;+&gt;): 332.5.
+
+Ethyl 2-(4-bromophenvD-5-chloro-4-oxopentanoate (1-2)
+
+Through a solution of ethyl 2-(4-bromophenyl)-4-(chloromethyl)pent-4-enoate (1- 1) (7.3 g, 25 mmol) in methanol (40 mL) and DCM (40 mL) at -78[deg.]C was bubbled O3 until the reaction turned slightly blue (6 hours). The reaction was allowed to stir for an additional 1 hour, at which time N2 gas was bubbled through the reaction mixture until the solution was colorless. Excess methyl sulfide (3.75 g, 60.3 mmol) was added to the reaction and the mixture was allowed to warm from -78 to rt.
+ The reaction mixture was poured into saturated sodium bicarbonate, extracted with DCM, dried over sodium sulfate filtered and concentrated. The crude residue was purified by column chromatography eluting with 1-20% EtOAc/Hexane. The appropriate fractions were combined and the solvent removed in vacuo to give ethyl 2-(4- bromophenyl)-5-chloro-4-oxopentanoate (1-2) as a solid. MS (M+H&lt;+&gt;): 153.2.
+
+Ethyl 2-(4-bromophenyl)-3-[2-(chloromethyl)-l ,3-dioxolan-2-yl]propanoate (1-3) To a solution of ethyl 2-(4-bromophenyl)-5-chloro-4-oxopentanoate (1-2) (35 g, 105 mmol) and ethylene glycol (19.5 g, 315 mmol) in toluene (300 mL) was added para- toluenesulfonic acid (100 mg) and the reaction was heated to reflux with a dean stark trap for 6 hours. The reaction mixture was concentrated was purified by column chromatography eluting with 0-50% EtOAc/Hexane.
+ The appropriate fractions were combined, concentrated, and the resulting solid was recrystallized from EtOAc and hexane to give ethyl 2-(4-bromophenyl)-3-[2- (chloromethyl)-l,3-dioxolan-2-yl]propanoate (1-3) as a white solid MS (M+H&lt;+&gt;): 378. 2-(4-Bromophenyl)-5,8-dioxaspiro[3.41octane-2-carboxylic acid (1-4) To a solution of ethyl 2-(4-bromophenyl)-3-[2-(chloromethyl)-l,3-dioxolan-2- yljpropanoate (1-3) (27 g, 71.5 mmol) cooled to -78[deg.]C in DMF (200 mL) was added NaH (8.58 g, 214 mmol) and the reaction was allowed to slowly warm from -78[deg.]C to rt. Once at rt, IN NaOH (100 mL) was added and the reaction mixture was stirred over night. The crude reaction mixture was poured into saturated sodium bicarbonate and washed with chloroform. The aqueous layer was acidified with HCl, extracted with chloroform, dried over sodium sulfate filtered and concentrated.
+ The crude residue was purified by column chromatography eluting with 1-50% EtOAc/Hexane. The appropriate fractions were concentrated and recrystallized from EtOAc/hexane to give 2-(4-bromophenyl)-5,8-dioxaspiro[3.4]octane-2-carboxylic acid (1-4) as a white solid. MS (M+H&lt;+&gt;): 314. tert-Butyl r2-(4-bromophenyl)-5,8-dioxaspiror3.41oct-2-yllcarbamate (1-5) To a solution of 2-(4-bromophenyl)-5,8-dioxaspiro[3.4]octane-2-carboxylic acid (1-4) (40.7 g, 130 mmol) in tert-butanol (231 mL, 3.25 mol)was added DPPA (35.8 g, 130 mmol) and the reaction was heated to 100[deg.]C overnight under N2. The reaction mixture was poured into saturated sodium bicarbonate, extracted with EtOAc, dried over sodium sulfate, filtered and concentrated. The crude residue was purified by column chromatography eluting with 7-50% EtOAc/Hexane.
+ The appropriate fractions were combined and the solvent removed in vacuo to give tert-butyl [2-(4-bromophenyl)-5,8-dioxaspiro[3.4]oct-2-yl]carbamate (1-5). MS (M+H&lt;+&gt;): 385. tert-butyl r2-(4-cyanophenyl)-5,8-dioxaspirof3.4]oct-2-yllcarbamate (1-6) To a solution of tert-buty\ [2-(4-bromophenyl)-5,8-dioxaspiro[3.4]oct-2- yl]carbamate (1-5) (21.3 g, 55.5 mmol) in dioxane (100 mL) and DMF (100 mL) was added zinc cyanide (6.52 g, 55.5 mmol) and bis(tri-t-butylphosphine)palladium(0) (2.84 g, 5.55 mmol) and the reaction was heated to 120[deg.]C under N2 for 1 hour. The reaction mixture was cooled to rt, filtered, and concentrated. The crude residue was purified by column chromatography eluting with 1-60% EtOAc/Hexane. The appropriate fractions were combined and the solvent removed in vacuo to give tert-butyl [2-(4-cyanophenyl)-5,8-dioxaspiro[3.4]oct-2-yl]carbamate (1-6).
+ MS (M+H&lt;+&gt;): 331. tert-butyl {2-[4-(phenylacetyl)phenyl]-5,8-dioxaspiro[3.4]oct-2-yl}carbamate (1-7) To a solution of tert-butyl [2-(4-cyanophenyl)-5,8-dioxaspiro[3.4]oct-2- yl]carbamate (1-6) (15.0 g, 45.4 mmol) in THF (150 mL) at -78[deg.]C was added isopropylmagnesium chloride (22.7 mL, 45.4 mmol, 2M in THF). After 1 hour, benzylmagnesium chloride (68 mL, 135 mmol, 2M in THF) was added and the reaction was allowed to slowly warm to rt over 5 hours. The reaction mixture was poured into saturated ammonium chloride, extracted with EtOAc, dried over sodium sulfate, filtered and concentrated. The crude residue was purified by column chromatography eluting with 1 -60% EtOAc/Hexane. The appropriate fractions were combined and the solvent removed in vacuo to give tert-butyl {2- [4-(phenylacetyl)phenyl]-5,8-dioxaspiro[3.4]oct-2-yl}carbamate (1-7).
+ MS (M+H&lt;+&gt;): 424. tert-butyl {2-[4-(5-chloro-3-phenyl- 1 ,6-naphthyridin-2-yl)phenyl]-5,8-dioxaspiro [3 ,41oct-2-vU carbamate (1-9)
+
+To a solution of tert-butyl {2-[4-(phenylacetyl)phenyl]-5,8-dioxaspiro[3.4]oct-2- yl}carbamate (1-7) (8.8 g, 20.8 mmol) in DMF (100 mL) was added potassium carbonate (14.4 g, 104 mmol) and 1-8 (5.33 g, 20.8 mmol) and the reaction mixture was heated 80[deg.]C over night. The reaction mixture was poured into saturated sodium bicarbonate, extracted with EtOAc, dried over sodium sulfate, filtered and concentrated. The crude residue was purified by column chromatography eluting with 1-80% EtOAc/Hexane. The appropriate fractions were combined and the solvent removed in vacuo to give tert-butyl {2-[4-(5-chloro-3-phenyl-l,6-naphthyridin-2- yl)phenyl]-5,8-dioxaspiro[3.4]oct-2-yl}carbamate (1-9).
+ MS (M+H&lt;+&gt;): 545. tert-butyl {2-[4-(5-hydrazino-3-phenyl-l,6-naphthyridin-2-yl)phenyl]-5,8- dioxaspiror3.41oct-2-yl}carbamate (l-10&lt;'&gt;)
+
+To a solution of tert-butyl {2-[4-(5-chloro-3-phenyl-l,6-naphthyridin-2- yl)phenyl]-5,8-dioxaspiro[3.4]oct-2-yl}carbamate (1-9) (5 g, 9.2 mmol) in dioxane (100 mL) was added hydrazine (3.0 g, 92 mmol) and the reaction mixture was heated to 100[deg.]C for 1 hour. The reaction mixture was poured into saturated sodium bicarbonate, extracted with chloroform, dried over sodium sulfate, filtered and concentrated to give tert-butyl {2-[4-(5-hydrazino-3-phenyl-l,6- naphthyridin-2-yl)phenyl]-5,8-dioxaspiro[3.4]oct-2-yl}carbamate (1-10) as a yellow solid.
+ MS (M+H&lt;+&gt;): 540. tert-butyl (2- {4-[3-(l -methyl- lH-imidazol-4-yl)-9-phenyl[l,2,4]tri
+
+1.6-naphthyridin-8-yllphenyl}-5,8-dioxaspiro»&lt;"&gt;3.41oct-2-yl)carbamate (l-ll) To a solution of 1 -methyl- l[Eta]-imidazole-4-carboxylic acid (7.0 g, 56 mmol) in DMA (200 mL) was added EDC (11 g, 56 mmol) and HOBt (8.5 g, 56 mmol) and the reaction mixture was stirred at 60&lt;0&gt;C for 1 hour. Then tert-butyl {2-[4-(5-hydrazino-3-phenyl-l,6- naphthyridin-2-yl)phenyl]-5,8-dioxaspiro[3.4]oct-2-yl}carbamate (1-10) (30 g, 56 mmol) was added and the reaction stirred at 60[deg.]C for an additional 2 hours at which time acetic acid (17 g, 280 mmol) was added and the reaction was stirred overnight at 80[deg.]C. The reaction mixture was cooled to rt, quenched with IN NaOH, poured into saturated sodium bicarbonate, extracted with chloroform, dried over sodium sulfate, filtered and concentrated.
+ The crude residue was purified by column chromatography eluting with 10% methanol in DCM. The appropriate fractions were concentrated and the resulting solid was recrystallized from methanol to give tert-butyl (2-{4-[3- ( 1 -methyl- lH-imidazol-4-yl)-9-phenyl[ 1 ,2,4]triazolo[3,4-/J- 1 ,6-naphthyridin-8-yl]phenyl} -5,8- dioxaspiro[3.4]oct-2-yl)carbamate (1-11) as a white solid. MS (M+[Eta]&lt;+&gt;): 630.
+
+2-{4-[3-(l-methyl-lH-imidazol-4-yl)-9-phenyl[l,2,4]triazolo[3,4-/J-l,6- naphthyridin-8-yl]phenvU-5,8-dioxaspiro[3.4]octan-2-amine (l-12)
+
+To a solution of tert-butyl (2- {4-[3-(l -methyl- lH-imidazol-4-yl)-9- phenyl[l,2,4]triazolo[3,4-/]-l,6-naphthyridin-8-yl]phenyl}-5,8-dioxaspiro[3.4]oct-2-yl) (l-ll) in DCM (50 mL) was added TFA (50 mL) at rt under N2 for 2 hours.
+ The reaction was quenched with IN NaOH (650 mL), poured into saturated sodium bicarbonate, extracted with chloroform, dried over sodium sulfate, filtered and concentrated. The crude residue was recrystallized from methanol to give 2-{4-[3-(l-methyl-lH-imidazol-4-yl)-9-phenyl[l,2,4]triazolo[3,4-/J-l,6- naphthyridin-8-yl]phenyl}-5,8-dioxaspiro[3.4]octan-2-amine (1-12) as a white solid. [Eta]RMS (M+[Eta]&lt;+&gt;): calculated = 530.2299, observed = 530.2315; &lt;1&gt;H NMR (CDCl3) [delta] 9.45-9.4 (m, IH), 9.05 (s, IH), 7.85 (s, IH), 7.60 (s, IH), 7.48-7.45 (m, 2H), 7.44-7.40 (m, IH) 7.38-7.3 (m, 7H), 4.03-3.98 (m, 2H), 3.9-3.88 (m, 2H), 3.85 (s, 3H), 2.90-2.85 (m, 2H), 2.55-2.48 (m, 2H), 1.88 (s, 2H).
+ The followin com ounds were re ared in a similar fashion to Exam le 1-12:
+
+ &lt;EMI ID=50.1&gt; 
+ 
+ &lt;EMI ID=51.1&gt; 
+ 
+ &lt;EMI ID=52.1&gt; 
+ 
+ &lt;EMI ID=53.1&gt; 
+ 
+ &lt;EMI ID=54.1&gt; 
+ 
+ &lt;EMI ID=55.1&gt; 
+ 
+ &lt;EMI ID=56.2&gt; 
+
+SCHEME 2
+
+ &lt;EMI ID=56.1&gt; 
+
+1-10 2-1 2-2
+
+ter/-Butyl (2-{4-[3-(ethylamino)-9-phenyl[l,2,4]triazolo[3,4-/J-l,6-naphthyridin-
+
+8-vnphenvU-5,8-dioxaspiror3.41oct-2-yl)carbamate (2-1)
+
+To a microwave vial was added tert-butyl {2-[4-(5-hydrazino-3-phenyl-l,6- naphthyridin-2-yl)phenyl]-5,8-dioxaspiro[3.4]oct-2-yl}carbamate (1-10) (1.8 g, 3.3 mmol), EDC (0.64 g, 3.3 mmol) and DMF (10 mL). The reaction mixture was heated under microwave irradiation for 5 minutes at 80[deg.]C (high absorption). Acetic acid (0.5 mL) was added and the reaction mixture was heated under microwave irradiation for 5 minutes at 80[deg.]C (high absorption).
+ The resulting residue was purified by reverse phase column chromatography (Sunfire C 18) eluting with 5 to 95% acetonitrile / (0.1% TFA / water) gradient. The appropriate fractions were free based by suspending in ethyl acetate, washed with a saturated solution of sodium bicarbonate, followed by water, brine, dried over sodium sulfate, filtered, and concentrated in vacuo to give tert-butyl (2-{4-[3-(ethylamino)-9-phenyl[l,2,4]triazolo[3,4-/J-l,6-naphthyridin-8-yl]phenyl}-5,8-dioxaspiro[3.4]oct-2-yl)carbamate (2-1) as a white solid. MS (M+H)&lt;+&gt;: 593.
+
+8-[4-(2-Amino-5,8-dioxaspiro[3.4]oct-2-yl)phenyl]-N-ethyl-9- phenviri,2,41triazolo[3,4:/]-l,6-naphthyridin-3-amine (2-2)
+
+To 2-1 (2.0 g, 3.3 mmol) was added TFA (10 mL) at room temperature.
+ After 0.5 hours the reaction mixture was concentrated in vacuo and purified by reverse phase column chromatography (Sunfire C18) eluting with 5 to 95% acetonitrile / (0.1% TFA / water) gradient. The appropriate fractions were free based by suspending in ethyl acetate, washed with a saturated solution of sodium bicarbonate, followed by water, brine, dried over sodium sulfate, filtered, concentrated, and recrystallized from methanol to give 8-[4-(2-amino-5,8-dioxaspiro[3.4]oct-2- yl)phenyl]-N-ethyl-9-phenyl[l,2,4]triazolo[3,4-/J-l,6-naphthyridin-3-amine (2-2) as a white solid.
+ HRMS (M+H)&lt;+&gt;: observed = 492.5723, calculated = 492.5698.
+
+Compound 2-3
+
+ &lt;EMI ID=57.1&gt; 
+
+N- {8-[4-(2-amino-5,8-dioxaspiro[3.4]oct-2-yl)phenyl]-9-phenyl[ 1 ,2,4]triazolo »&lt;"&gt;3,4-/]-l ,6-naphthyridin-3-vU-NJV-dimethylpropane-l ,3-diamine (2-3) Compound 2-3 was prepared in a manner similar to Example 2-2; HRMS (M+H)&lt;+&gt;: observed = 550.2925, calculated = 550.2964.
+
+SCHEME 3
+
+ &lt;EMI ID=57.2&gt; 
+
+1-10 3-1
+
+ &lt;EMI ID=57.3&gt; 
+
+1-18 tert-buty\ {2-[4-(9-phenyl-3-pyrimidin-2-yl[l,2,4]triazolo[3,4-/]-l,6-naphthy[tau]idin-
+
+8-yl)phenyl]-5,8-dioxaspiro[3.41oct-2-yl}carbamate (3-l)
+
+To a solution of pyrimidine-2-carboxylic acid (10.46 g, 46.8 mmol) in DMA (200 mL) was added EDC (8.98 g, 46.8 mmol) and HOBt (7.17 g, 46.8 mmol) and the reaction mixture was stirred at 60[deg.]C for 1 hour.
+ Then tert-butyl {2-[4-(5-hydrazino-3-phenyl-l,6- naphthyridin-2-yl)phenyl]-5,8-dioxaspiro[3.4]oct-2-yl}carbamate (1-10) (25.27 g, 46.8 mmol) was added and the reaction stirred at 60[deg.]C for an additional 2 hours at which time acetic acid (20.8 g, 460 mmol) was added and the reaction was stirred overnight at 80[deg.]C. The reaction mixture was cooled to rt, quenched with IN NaOH, poured into saturated sodium bicarbonate, extracted with chloroform, dried over sodium sulfate, filtered and concentrated. The crude residue was purified by column chromatography eluting with 10% methanol in DCM. The appropriate fractions were concentrated and the resulting solid was recrystallized from methanol to give tert-butyl {2-[4-(9-phenyl-3-pyrimidin-2-yl[l,2,4]triazolo[3,4-/]-l,6-naphthyridin-8- yl)phenyl]-5,8-dioxaspiro[3.4]oct-2-yl}carbamate (3-1) as a white solid.
+ MS (M+H&lt;+&gt;): 628. 2-[4-(9-phenyl-3-pyrimidin-2-yl[l,2,4]triazolo[3,4-/]-l,6-nap vDphenyll-5,8-dioxaspiro[3.4]octan-2-amine (1-18)
+
+To a solution tert-butyl {2-[4-(9-phenyl-3-pyrimidin-2-yl[l,2,4]triazolo[3,4-/J- l,6-naphthyridin-8-yl)phenyl]-5,8-dioxaspiro[3.4]oct-2-yl}carbamate (3-1) (5.0 g, 7.97 mmol) in DCM (50 mL) was added TFA (50 mL) at rt under N2 for 2 hours. The reaction was quenched with IN NaOH (650 mL), poured into saturated sodium bicarbonate, extracted with chloroform, dried over sodium sulfate, filtered and concentrated.
+ The crude residue was recrystallized from methanol to give 2-[4-(9-phenyl-3-pyrimidin-2-yl[l,2,4]triazolo[3,4-/J-l,6-naphthyridin-8- yl)phenyl]-5,8-dioxaspiro[3.4]octan-2-amine (1-18) as a white solid. &lt;1&gt;H NMR (CDCl3) [delta] 9.73- 9.68 (m, IH), 9.18 (s, IH), 9.05-9.00 (m, 2H), 7.60-7.58 (m, IH), 7.50-7.45 (m, 2H), 7.44- 7.40(m, IH) 7.38-7.3 (m, 7H), 4.05-3.98 (m, 2H), 3.92-3.85 (m, 2H), 2.94-2.85 (m, 2H), 2.55- 2.50 (m, 2H).
+
+EXAMPLE 1
+
+Cloning of the human Akt isoforms and APH- Aktl
+
+The pS2neo vector (deposited in the ATCC on April 3, 2001 as ATCC PTA- 3253) was prepared as follows: The pRmHA3 vector (prepared as described in Nucl. Acid Res. 16:1043-1061 (1988)) was cut with Bgi[pi] and a 2734 bp fragment was isolated. The pUChsneo vector (prepared as described in EMBO J. 4:167-171 (1985)) was also cut with Bgi[pi] and a 4029 bp band was isolated.
+ These two isolated fragments were ligated together to generate a vector termed pS2neo-l . This plasmid contains a polylinker between a metallothionine promoter and an alcohol dehydrogenase poly A addition site. It also has a neo resistance gene driven by a heat shock promoter. The pS2neo-l vector was cut with Psp5II and BsiWI. Two complementary oligonucleotides were synthesized and then annealed (CTGCGGCCGC (SEQ.ID.NO.: 1) and GTACGCGGCCGCAG (SEQ.ID.NO.: 2)). The cut pS2neo-l and the annealed oligonucleotides were ligated together to generate a second vector, pS2neo.
+ Added in this conversion was a NotI site to aid in the linearization prior to transfection into S2 cells.
+
+Human Aktl gene was amplified by PCR (Clontech) out of a human spleen cDNA (Clontech) using the 5' primer: 5 'CGCGAATTCAGATCTACCATGAGCGACGTGGCTATTGTG 3 ' (SEQ.ID.NO. : 3), and the 3' primer: 5'CGCTCTAGAGGATCCTCAGGCCGTGCTGCTGGCS' (SEQ.ID.NO.: 4). The 5' primer included an EcoRI and BgIII site. The 3' primer included an Xbal and BamHI site for cloning purposes. The resultant PCR product was subcloned into pGEM3Z (Promega) as an EcoRI/Xba I fragment. For expression/purification purposes, a middle T tag was added to the 5' end of the full length Aktl gene using the PCR primer:
+
+5'GTACGATGCTGAACGATATCTTCG S' (SEQ.ID.NO.: 5).
+ The resulting PCR product encompassed a 5' Kpnl site and a 3' BamHI site which were used to subclone the fragment in frame with a biotin tag containing insect cell expression vector, pS2neo.
+
+For the expression of a pleckstrin homology domain ( PH ) deleted ([Delta]aa 4-129, which includes deletion of a portion of the Aktl hinge region) version of Aktl, PCR deletion mutagenesis was done using the full length Aktl gene in the pS2neo vector as template. The PCR was carried out in 2 steps using overlapping internal primers (5 'GAATACATGCCGATGGAAAGCGACGGGGCTGAAGAGATGGAGGTG 3 ' (SEQ.ID.NO.: 6), and 5'CCCCTCCATCTCTTCAGCCCCGTCGCTTTCCATCGGCATG TATTC 3' (SEQ.ID.NO.: 7)) which encompassed the deletion and 5' and 3' flanking primers which encompassed the Kpnl site and middle T tag on the 5' end.
+ The final PCR product was digested with Kpnl and Smal and ligated into the pS2neo full length Aktl Kpnl/Smal cut vector, effectively replacing the 5' end of the clone with the deleted version.
+
+Human Akt3 gene was amplified by PCR of adult brain cDNA (Clontech) using the amino terminal oligo primer:
+
+5' GAATTCAGATCTACCATGAGCGATGTTACCATTGTG 3' (SEQ.ID.NO.: 8); and the carboxy terminal oligo primer :
+
+5' TCTAGATCTTATTCTCGTCCACTTGCAGAG 3'(SEQ.ID.NO.: 9). These primers included a 5' EcoRI/Bgi[pi] site and a 3' Xbal/Bgl[upsilon] site for cloning purposes. The resultant PCR product was cloned into the EcoRI and Xbal sites of pGEM4Z (Promega). For expression/purification purposes, a middle T tag was added to the 5' end of the full length Akt3 clone using the PCR primer: 5 'GGT ACC ATGGAAT AC ATGCCGATGGAAAGCGATGTT ACC ATTGTGAAG 3 '(SEQ.ID.NO.: 10).
+ The resultant PCR product encompassed a 5' Kpnl site which allowed in frame cloning with the biotin tag containing insect cell expression vector, pS2neo. Human Akt2 gene was amplified by PCR from human thymus cDNA (Clontech) using the amino terminal oligo primer:
+
+5' AAGCTTAGATCTACCATGAATGAGGTGTCTGTC 3' (SEQ.ID.NO.: 11); and the carboxy terminal oligo primer: 5 'GAATTCGGATCCTC ACTCGCGG ATGCTGGC 3' (SEQ.ID.NO.: 12). These primers included a 5' Hindi[pi]/Bgi[pi] site and a 3' EcoRI/BamHI site for cloning purposes. The resultant PCR product was subcloned into the HindEH/EcoRI sites of pGem3Z (Promega). For expression/purification purposes, a middle T tag was added to the 5' end of the full length Akt2 using the PCR primer: 5 'GGTACCATGGAATACATGCCGATGGAAAATGAGGTGTCTGTCATCAAAG 3 ' (SEQ.ID.NO.: 13).
+ The resultant PCR product was subcloned into the pS2neo vector as described above.
+
+EXAMPLE 2 Expression of human Akt isoforms and APH- Aktl The DNA containing the cloned Aktl , Akt2, Akt3 and [Delta]PH-Aktl genes in the pS2neo expression vector was purified and used to transfect Drosophila S2 cells (ATCC) by the calcium phosphate method. Pools of antibiotic (G418, 500 [mu]g/ml) resistant cells were selected. Cell were expanded to a 1.0 L volume (-7.0 x 10&lt;6&gt; / ml), biotin and CuSO4 were added to a final concentration of 50 [mu]M and 50 mM respectively. Cells were grown for 72 h at 27[deg.]C and harvested by centrifugation.
+ The cell paste was frozen at -70[deg.]C until needed.
+
+EXAMPLE 3
+
+Purification of human Akt isoforms and [Delta]PH-Aktl
+
+Cell paste from one liter of S2 cells, described in Example 2, was lysed by sonication with 50 mis 1% CHAPS in buffer A: (5OmM Tris pH 7.4, ImM EDTA, ImM EGTA, 0.2mM AEBSF, lO[mu]g/ml benzamidine, 5 [mu]g/ml of leupeptin, aprotinin and pepstatin each, 10% glycerol and ImM DTT). The soluble fraction was purified on a Protein G Sepharose fast flow (Pharmacia) column loaded with 9mg/ml anti-middle T monoclonal antibody and eluted with 75 [mu]M EYMPME (SEQ.ID.NO.: 14) peptide in buffer A containing 25% glycerol. Akt/PKB containing fractions were pooled and the protein purity evaluated by SDS-PAGE. The purified protein was quantitated using a standard Bradford protocol.
+ Purified protein was flash frozen on liquid nitrogen and stored at -70[deg.]C.
+
+Akt and Akt pleckstrin homology domain deletions purified from S2 cells required activation. Akt and Akt pleckstrin homology domain deletions were activated (<ref type="npl">Alessi et al. Current Biology 7:261-269</ref>) in a reaction containing 10 nM PDKl (Upstate Biotechnology, Inc.), lipid vesicles (10 [mu]M phosphatidylinositol-3,4,5-trisphosphate - Metreya, Inc, 100 [mu]M -phosphatidylcholine and 100 [mu]M phosphatidylserine - Avanti Polar lipids, Inc.) and activation buffer (50 mM Tris pH7.4, 1.0 mM DTT, 0.1 mM EGTA, 1.0 [mu]M Microcystin-LR, 0.1 mM ATP, 10 mM MgCl2, 333 [mu]g/ml BSA and 0.ImM EDTA). The reaction was incubated at 22[deg.]C for 4 hours. Aliquots were flash frozen in liquid nitrogen.
+ EXAMPLE 4
+
+Akt Kinase Assays
+
+Activated Akt isoforms and pleckstrin homology domain deletion constructs were assayed utilizing a GSK-derived biotinylated peptide substrate. The extent of peptide phosphorylation was determined by Homogeneous Time Resolved Fluorescence (HTRF) using a lanthanide chelate(Lance)-coupled monoclonal antibody specific for the phosphopeptide in combination with a streptavidin-linked allophycocyanin (SA-APC) fluorophore which will bind to the biotin moiety on the peptide. When the Lance and APC are in proximity (i.e. bound to the same phosphopeptide molecule), a non-radiative energy transfer takes place from the Lance to the APC, followed by emission of light from APC at 665 run. Materials required for the assay:
+
+A. Activated Akt isozyme or pleckstrin homology domain deleted construct
+
+B.
+ Akt peptide substrate: GSK3[alpha] (S21 ) Peptide #3928 biotin-GGRARTSSFAEPG (SEQ.ID.NO.:15), Macromolecular Resources.
+
+C. Lance labeled anti-phospho GSK3[alpha] monoclonal antibody (Cell Signaling Technology, clone # 27).
+
+D. SA-APC (Prozyme catalog no. PJ25S lot # 896067).
+
+E. Microfluor&lt;(R)&gt;B U Bottom Microtiter Plates (Dynex Technologies, Catalog no. 7205).
+
+F. Discovery(R) HTRF Microplate Analyzer, Packard Instrument Company.
+
+G. 100 X Protease Inhibitor Cocktail (PIC): 1 mg/ml benzamidine, 0.5 mg/ml pepstatin, 0.5 mg/ml leupeptin, 0.5 mg/ml aprotinin.
+
+H. 1 OX Assay Buffer: 500 mJVI HEPES, pH 7.5, 1 % PEG, mM EDTA, 1 mM EGTA, 1 % BSA, 20 mM 3-Glycerol phosphate.
+
+I. Quench Buffer: 50 mM HEPES pH 7.3, 16.6 mM EDTA, 0.1% BSA, 0.1% Triton
+
+X-100, 0.17 nM Lance labeled monoclonal antibody clone # 27, 0.0067 mg/ml SA-APC J.
+ ATPMgCl2 working solution: IX Assay buffer, 1 mM DTT, IX PIC, 125 mM
+
+KCl, 5% Glycerol, 25 mM MgCl2, 375 TM ATP K. Enzyme working solution: IX Assay buffer, 1 mM DTT, IX PIC, 5% Glycerol, active Akt. The final enzyme concentrations were selected so that the assay was in a linear response range.
+
+L. Peptide working solution: IX Assay buffer, 1 mM DTT, IX PIC, 5% Glycerol, 2
+
+TM GSK3 biotinylated peptide # 3928 The reaction is assembled by adding 16 TL of the ATP/MgCl2 working solution to the appropriate wells of a 96-well microtiter plate. Inhibitor or vehicle (1.0 Tl ) is added followed by 10 Tl of peptide working solution. The reaction is started by adding 13 Tl of the enzyme working solution and mixing. The reaction is allowed to proceed for 50 min and then stopped by the addition of 60 Tl HTRF quench buffer.
+ The stopped reactions were incubated at room temperature for at least 30 min and then read on the Discovery instrument. Procedure for Streptavidin Flash Plate Assay: Step 1 : A 1 [mu]l solution of the test compound in 100% DMSO was added to 20 [mu]l of 2X substrate solution (20 uM GSK3 Peptide, 300 [mu]M ATP, 20 mM MgCl2, 20 [mu]Ci / ml [[gamma]&lt;33&gt;P] ATP,
+
+IX Assay Buffer, 5% glycerol, 1 mM DTT, IX PIC, 0.1% BSA and 100 mM KCl).
+
+Phosphorylation reactions were initiated by adding 19 [mu]l of 2X Enzyme solution (6.4 nM active Akt/PKB, IX Assay Buffer, 5% glycerol, 1 mM DTT, IX PIC and 0.1% BSA). The reactions were then incubated at room temperature for 45 minutes.
+
+Step 2:
+
+The reaction was stopped by adding 170 [mu]l of 125 mM EDTA. 200 [mu]l of stopped reaction was transferred to a Streptavidin Flashplate PLUS (NEN Life Sciences, catalog no. SMP 103).
+ The plate was incubated for &gt;10 minutes at room temperature on a plate shaker. The contents of each well was aspirated, and the wells rinsed 2 times with 200 [mu]l TBS per well. The wells were then washed 3 times for 5 minutes with 200 [mu]l TBS per well with the plates incubated at room temperature on a platform shaker during wash steps.
+
+The plates were covered with sealing tape and counted using the Packard TopCount with the appropriate settings for counting [&lt;33&gt;P] in Flashplates.
+
+Procedure for Streptavidin Filter Plate Assay:
+
+Step 1 :
+
+The enzymatic reactions as described in Step 1 of the Streptavidin Flash Plate
+
+Assay above were performed. Step 2:
+
+The reaction was stopped by adding 20 [mu]l of 7.5M Guanidine Hydrochloride. 50 [mu]l of the stopped reaction was transferred to the Streptavidin filter plate (SAM&lt;2(TM)&gt; Biotin Capture
+
+Plate, Promega, catalog no.
+ V7542) and the reaction was incubated on the filter for 1-2 minutes before applying vacuum. The plate was then washed using a vacuum manifold as follows: 1) 4 x 200 [mu]l/well of 2M NaCl; 2) 6 x 200 [mu]l/well of 2M NaCl with 1% H3PO4; 3) 2 x 200 [mu]l/well of diH20; and 4) 2 x 100 [mu]l/well of 95% Ethanol. The membranes were then allowed to air dry completely before adding scintillant.
+
+The bottom of the plate was sealed with white backing tape, 30 [mu]l/well of Microscint 20 (Packard Instruments, catalog no. 6013621) was added.
+ The top of the plate was sealed with clear sealing tape, and the plate then counted using the Packard TopCount with the appropriate settings for [&lt;33&gt;P] with liquid scintillant.
+
+Procedure for Phosphocellulose Filter Plate Assay:
+
+Step 1: The enzymatic reactions were performed as described in Step 1 of the Streptavidin
+
+Flash Plate Assay (above) utilizing KKGGRARTS SFAEPG (SEQ.ID.NO.: 16) as the substrate in place of biotin-GGRARTSSFAEPG.
+
+Step 2: The reaction was stopped by adding 20 [mu]l of 0.75% H3PO4. 50 [mu]l of stopped reaction was transferred to the filter plate (UNIFILTER(TM), Whatman P81 Strong Cation Exchanger, White Polystyrene 96 Well Plates, Polyfiltronics, catalog no. 7700-3312) and the reaction incubated on the filter for 1-2 minutes before applying vacuum.
+ The plate was then washed using a vacuum manifold as follows: 1) 9 x 200 [mu]l/well of 0.75% H3PO4; and 2) 2 x 200 [mu]l/well of diH20. The bottom of the plate was sealed with white backing tape, then 30 [mu]l/well of Microscint 20 was added. The top of the plate was sealed with clear sealing tape, and the plate counted using the Packard TopCount with the appropriate settings for [&lt;33&gt;P] and liquid scintillant. PKA assay:
+
+Each individual PKA assay consists of the following components:
+
+A. 5X PKA assay buffer (200 mM Tris pH7.5, 100 mM MgCl2, 5mM [beta]- mercaptoethanol, 0.5 mM EDTA)
+
+B. 50 [mu]M stock of Kemptide (Sigma) diluted in water C. &lt;33&gt;P-ATP prepared by diluting 1.0 [mu]l &lt;33&gt;P-ATP [ 10 mCi/ml] into 200 Tl of a 50 [mu]M stock of unlabeled ATP
+
+D. 10 [mu]l of a 70 nM stock of PKA catalytic subunit (UBI catalog # 14-114) diluted in 0.5 mg/ml BSA
+
+E.
+ PKA/Kemptide working solution: equal volumes of 5X PKA assay buffer, Kemptide solution and PKA catalytic subunit.
+
+The reaction is assembled in a 96 deep-well assay plate. The inhibitor or vehicle (10 Tl) is added to 10 Tl of the &lt;33&gt;P-ATP solution. The reaction is initiated by adding 30 Tl of the PKA/Kemptide working solution to each well. The reactions were mixed and incubated at room temperature for 20 min. The reactions were stopped by adding 50 Tl of 100 mM EDTA and 100 mM sodium pyrophosphate and mixing.
+
+The enzyme reaction product (phosphorylated Kemptide) was collected on p81 phosphocellulose 96 well filter plates (Millipore). To prepare the plate, each well of a p81 filter plate was filled with 75 mM phosphoric acid. The wells were emptied through the filter by applying a vacuum to the bottom of the plate. Phosphoric acid (75 mM, 170 [mu]l) was added to each well.
+ A 30 [mu]l aliquot from each stopped PKA reaction was added to corresponding wells on the filter plate containing the phosphoric acid. The peptide was trapped on the filter following the application of a vacuum and the filters were washed 5 times with 75 mM phosphoric acid. After the final wash, the filters were allowed to air dry. Scintillation fluid (30 [mu]l) was added to each well and the filters counted on a TopCount (Packard). PKC assay:
+
+Each PKC assay consists of the following components:
+
+A. 1 OX PKC co-activation buffer: 2.5 mM EGTA, 4mM CaCl2 B. 5X PKC activation buffer: 1.6 mg/ml phosphatidylserine, 0.16 mg/ml diacylglycerol, 100 mM Tris pH 7.5, 50 mM MgCl2, 5 mM /3-mercaptoethanol
+
+C. &lt;33&gt;P-ATP prepared by diluting 1.0 [mu]l &lt;33&gt;P-ATP [ 10 mCi/ml] into 1 OO[mu]l of a 100 [mu]M stock of unlabeled ATP D. Myelin basic protein (350 [mu]g/ml, UBI) diluted in water
+
+E.
+ PKC (50ng/ml, UBI catalog # 14-115) diluted into 0.5 mg/ml BSA
+
+F. PKC/Myelin Basic Protein working solution: Prepared by mixing 5 volumes each of PKC co-activation buffer and Myelin Basic protein with 10 volumes each of PKC activation buffer and PKC. The assays were assembled in 96 deep-well assay plates. Inhibitor or vehicle (10
+
+Tl) was added to 5.0 ul Of &lt;33&gt;P-ATP. Reactions were initiated with the addition of the PKC/Myelin Basic Protein working solution and mixing. Reactions were incubated at 30[deg.]C for 20 min. The reactions were stopped by adding 50 Tl of 100 mM EDTA and 100 mM sodium pyrophosphate and mixing.
+ Phosphorylated Mylein Basic Protein was collected on PVDF membranes in 96 well filter plates and quantitated by scintillation counting.
+
+Compounds of the instant invention described in the Schemes and Tables were tested in the assay described above and were found to have IC5O of &lt; 50 [mu]M against one or more ofAktl, Akt2 and Akt3.
+
+EXAMPLE 5 Cell based Assays to Determine Inhibition of Akt/PKB
+
+Cells (for example LnCaP or a PTEN&lt;("A)&gt;tumor cell line with activated Akt/PKB) were plated in 100 mM dishes. When the cells were approximately 70 to 80% confluent, the cells were refed with 5 mis of fresh media and the test compound added in solution. Controls included untreated cells, vehicle treated cells and cells treated with either LY294002 (Sigma) or wortmanin (Sigma) at 20 [mu]M or 200 nM, respectively.
+ The cells were incubated for 2, 4 or 6 hrs, and the media removed, the cells were washed with PBS, scraped and transferred to a centrifuge tube. They were pelleted and washed again with PBS. Finally, the cell pellet was resuspended in lysis buffer (20 mM Tris pH8, 140 mM NaCl, 2 mM EDTA, 1% Triton, 1 mM Na Pyrophosphate, 10 mM /3-Glycerol Phosphate, 10 mM NaF, 0.5 mm NaVO4, 1 [mu]M Microsystine, and Ix Protease Inhibitor Cocktail), placed on ice for 15 minutes and gently vortexed to lyse the cells. The lysate was spun in a Beckman tabletop ultra centrifuge at 100,000 x g at 4&lt;0&gt;C for 20min.
+ The supernatant protein was quantitated by a standard Bradford protocol (BioRad) and stored at -7O&lt;0&gt;C until needed.
+
+Proteins were immunoprecipitated (IP) from cleared lysates as follows: For Aktl/PKB[alpha], lysates are mixed with Santa Cruz sc-7126 (D-17) in NETN (10OmM NaCl, 2OmM Tris pH 8.0, ImM EDTA, 0.5% NP-40) and Protein A/G Agarose (Santa Cruz sc-2003) was added. For Akt2/PKB/3, lysates were mixed in NETN with anti-Akt2 agarose (Upstate Biotechnology #16-174) and for Akt3/PKB[gamma], lysates were mixed in NETN with anti-Akt3 agarose (Upstate Biotechnology #16-175).
+ The IPs were incubated overnight at 4&lt;0&gt;C, washed and seperated by SDS-PAGE.
+
+Western blots were used to analyze total Akt, pThr308 Aktl, pSer473 Aktl, and corresponding phosphorylation sites on Akt2 and Akt3, and downstream targets of Akt using specific antibodies (Cell Signaling Technology): Anti-Total Akt (cat. no. 9272), Anti-Phopho
+
+Akt Serine 473 (cat. no. 9271), and Anti-Phospho Akt Threonine 308 (cat. no. 9275). After incubating with the appropriate primary antibody diluted in PBS + 0.5% non-fat dry milk
+
+(NFDM) at 4 [deg.]C overnight, blots were washed, incubated with Horseradish peroxidase (HRP)- tagged secondary antibody in PBS + 0.5% NFDM for 1 hour at room temperature.
+ Proteins were detected with ECL Reagents (Amersham/Pharmacia Biotech RPN2134).
+
+EXAMPLE 6
+
+Heregulin Stimulated Akt Activation
+
+MCF7 cells (a human breast cancer line that is PTEN&lt;+7"1"&gt;) were plated at IxIO&lt;6&gt; cells per 10OmM plate. When the cells were 70 - 80% confluent, they were refed with 5 ml of serum free media and incubated overnight.
+ The following morning, compound was added and the cells were incubated for 1 - 2 hrs, after which time heregulin was added (to induce the activation of Akt) for 30 minutes and the cells were analyzed as described above.
+
+EXAMPLE 7
+
+Inhibition Of Tumor Growth In vivo efficacy of an inhibitor of the growth of cancer cells may be confirmed by several protocols well known in the art.
+
+Human tumor cell lines which exhibit a deregulation of the PI3K pathway (such as LnCaP, PC3, C33a, OVCAR-3, MDA-MB-468, A2780 or the like) are injected subcutaneously into the left flank of 6-10 week old female nude (also male mice [age 10-14 weeks] are used for prostate tumor xenografts [LnCaP and PC3]) mice (Harlan) on day 0. The mice are randomly assigned to a vehicle, compound or combination treatment group.
+ Daily subcutaneous administration begins on day 1 and continues for the duration of the experiment.
+
+Alternatively, the inhibitor test compound may be administered by a continuous infusion pump.
+
+Compound, compound combination or vehicle is delivered in a total volume of 0.2 ml. Tumors are excised and weighed when all of the vehicle-treated animals exhibited lesions of 0.5 - 1.0 cm in diameter, typically 4 to 5.5 weeks after the cells were injected. The average weight of the tumors in each treatment group for each cell line is calculated.
+
+EXAMPLE 8
+
+Spot Multiplex Assay This procedure describes a sandwich immunoassay used to detect multiple phosphorylated proteins in the same well of a 96 well format plate. Cell lysates are incubated in
+
+96-well plates on which different capture antibodies are placed on spatially distinct spots in the same well.
+ Phoshorylation-specific rabbit polyclonal antibodies are added and the complex is detected by an anti-rabbit antibody labeled with an electrochemiluminescent tag.
+
+96-Well LNCaP plates +/- Compounds:
+
+Spin in Beckman J6 1200 rpm 10 min, aspirate media. Add 50[mu]l/well: TBS (Pierce #28376-20mM Tris pH 7.5, 15OmM NaCl) + 1% Triton X-100 + Protease and
+
+Phosphatase Inhibitors. Wrap in plastic wrap, place in -70[deg.]C freezer until completely frozen.
+
+Block Multiplex Plates (Meso Scale Discovery, Gaithersburg, MD) with 3% Blocker A in IX
+
+Tris Wash Buffer, 150[mu]l/well. Cover with plate sealer, incubate on Micromix shaker RT 2h
+
+(minimum). Wash with IX RCM 51 (TTBS). Thaw cell lysate plates on ice, add 40[mu]l lysate/well into blocked plates. Cover with plate sealer, incubate on Micromix shaker 4[deg.]C O/N,
+
+Wash with IX RCM 51.
+ Dilute Secondary Antibodies in 1% Blocker A in IX Tris Wash Buffer:
+
+Anti phospho AKT (T308), Anti phospho Tuberin (T1462), alone or in combination. Add
+
+25[mu]l/well, cover with plate sealer, and incubate on Micromix shaker RT 3h. Wash with IX
+
+RCM 51. Dilute Ru-GAR in 1% Blocker A in IX Tris Wash Buffer. Add 25[mu]l/well, cover with plate sealer, and incubate on Micromix shaker RT 1 h. Wash with IX RCM 51.
+ Dilute 4X Read
+
+Buffer T to IX with Water, add 200[mu]l diluted Read Buffer/well
+
+Read on Sector 6000 Imager.
+
+Protease and Phosphatase Inhibitors:
+
+Microcystin-LR, Calbiochem # 475815 to 1 [mu]M final concentration (stock=500[mu]M) Calbiochem # 524624, 10OX Set I
+
+Calbiochem # 524625, IOOX Set II
+
+Calbiochem # 539134, IOOX Set IH
+
+Anti Phospho AKT (T308):
+
+Cell Signaling Technologies # 9275 Anti Phospho Tuberin (T 1462):
+
+Covance Affinity Purified (Rabbits MS 2731/2732)
+
+Ru-GAR = Ruthenylated Goat anti Rabbit
+
+IPX Tris Wash Buffer. Blocker A and 4X Read Buffer T
+
+IPX RCM 51 (IPX TTBS. RCM 51) IX = 2OmM Tris pH 7.5, 14OmM NaCl, 0.1% Tween-20
+
+EXAMPLE 9
+
+Cell-Based (In-vivo) Assay
+
+This procedure describes a cell-based (in vivo) activity assay for the Akt serine/threonine kinase.
+ Activated endogenous Akt is capable of phosphorylatinga specific Akt substrate (GSK3/3) peptide which is biotinylated. Detection is performed by Homogeneous Time Resolved Fluorescence (HTRF) using a Europium Kryptate [Eu(K)] coupled antibody specific for the phosphopeptide and streptavidin linked XL665 fluorophore which will bind to the biotin moiety on the peptide. When the [Eu(K)] and XL665 are in proximity (i.e. bound to the same phosphopeptide molecule) a non-radiative energy transfer takes place from the Eu(K) to the XL665, followed by emission of light from XL665 at 665 nm.
+
+The assay can be used to detect inhibitors of all three Akt isozymes (Aktl, Akt2, and Akt3) from multiple different species if specific antibodies to each exist. MATERIALS AND REAGENTS
+
+A. Cell Culture Microtiter Flat Bottom 96 well plates, Corning Costar, Catalog no. 3598
+
+B.
+ Reacti-Bind Protein A Coated 96-well plates, Pierce, Catalog no 15130.
+
+C. Reacti-Bind Protein G Coated 96-well plates, Pierce, Catalog no 15131. D. Micromix 5 Shaker.
+
+E. Micro fluor&lt;(R)&gt;B U Bottom Microtiter Plates, Dynex Technologies, Catalog no. 7205.
+
+F. 96 Well Plate Washer, Bio-Tek Instruments, Catalog no. EL 404.
+
+G. Discovery(R) HTRF Microplate Analyzer, Packard Instrument Company. BUFFER SOLUTIONS A. IP Kinase Cell Lysis Buffer: IX TBS; 0.2% Tween 20; IX Protease Inhibitor Cocktail m (Stock is 10OX, Calbiochem, 539134); IX Phosphatase Inhibitor Cocktail I (Stock is 10OX, Calbiochem, 524624); and IX Phosphatase Inhibitor Cocktail II (Stock is 10OX, Calbiochem, 524625).
+
+B. 1OX Assay Buffer: 500 niM Hepes pH 7.5; 1% PEG; 1 mM EDTA; 1 mM EGTA; and 20 mM /^-glycerophosphate.
+
+C.
+ IP Kinase Assay Buffer: IX Assay Buffer; 50 mM KCl; 150 [mu]M ATP; 10 mM MgCl2; 5% Glycerol; 1 mM DTT; 1 Tablet Protease Inhibitor Cocktail per 50 ml Assay Buffer; and 0.1% BSA
+
+D. GSK3/3 Substrate Solution: IP Kinase Assay Buffer; and 500 nM Biotinylated GSK30 peptide.
+
+E. Lance Buffer: 50 mM Hepes pH 7.5; 0.1% BSA; and 0.1%Triton X-100.
+
+F. Lance Stop Buffer: Lance Buffer; and 33.3 mM EDTA.
+
+G. Lance Detection Buffer: Lance Buffer; 13.3 [mu]g/ml SA-APC; and 0.665 nM EuK Ab a- phospho (Ser-21) GSK3[beta] Multi-Step Immunoprecipitation Akt Kinase Assay Dayl
+
+A. Seed C33a cells Step: Plate 60,000 C33a cells/well in 96 well microtiter plate.
+
+B. Incubate cells overnight at 37&lt;0&gt;C. Day 2 D. Compound Addition Step: Add compounds in fresh media (alpha-MEM/ 10% FBS, room temp) to 96 well plate from above and incubate for 5 hrs in tissue culture incubator. E.
+ Cell Lysis Step: Aspirate media and add 100 [mu]l of IP Kinase Cell Lysis Buffer. F. Freeze 96 well microtiter plate at -7O&lt;0&gt;C (NOTE: This step can be done for a minimum of 1 hour or overnight.)
+
+Day 3
+
+G. Coat Protein A/G 96 well plate Step: Add appropriate concentration of [alpha]-Akt antibody (Aktl, Akt2, or Akt3) in a 100 [mu]l of PBS to the following wells: [alpha]- Akt 1 (20 ng/well/10OuI) B2 """ BlO / rows B - G / Aktl plate [alpha]-Akt 2 (50 ng/well/10OuI) B2 """ BlO / rows B - G / Akt2 plate
+
+Rabbit-IgG (150 ng/well/100 ul): Bl 1 - Gl 1 on every plate (Aktl and Akt2) H. Incubate in the cold room (+4&lt;0&gt;C) for 4 hours on the Micromix 5 (Form 20; Attitude 2) (NOTE: Attitude depends on which Micromix 5 machine).
+
+I. Aspirate off [alpha]-Akt antibody solution and add 100 [mu]l of PBS to each well.
+
+J.
+ Akt Immunoprecipitation Step: To the 100 [mu]l of PBS from Step(I) add 5 [mu]l of thawed cell lystate for Aktl plates and 10 [mu]l of thawed cell lysate for Akt2 plates. NOTE: Thaw cell lysate on ice. Mix thawed lysate by pipetting up &amp; down 1OX before transferring to antibody plates. Keep the cell lysate plates on ice. After transfer of cell lysate to the antibody plates refreeze the cell lysate plates at -70&lt;0&gt;C.
+
+K. Incubate in the cold room (+4&lt;0&gt;C) overnight on Micromix 5 shaker (form 20, attitude 3).
+
+Day 4
+
+L. Immunoprecipitation Plate Wash Step: Wash 96 well plates IX with TTBS (RCM 51, IX = 2 cycles) using the 96-Well Plate Washer. Fill wells with TTBS and incubate for 10 minutes.
+
+Wash 96 well plates 2X with TTBS. (NOTE: Prime plate washer before use: 1. Check buffer reservoirs, making sure they are full and 2. empty waste containers.
+
+M.
+ Manual Plate Wash Step: Add 180 [mu]l of IP Kinase Assay buffer.
+
+N. Start Akt Enzyme Reaction: Aspirate supernatant. Add 60 [mu]l of GSK3/3 Substrate Solution. O. Incubate for 2.5 hours on Micromix 5 shaker @ RT. NOTE: Time of incubation should be adjusted so that the ratio of Column 10 /Column 11 is not &gt;10.
+
+P. Combine 30 [mu]l of Lance Detection Buffer with 30 [mu]l of Lance Stop Buffer (60 [mu]l total/well) and add to Microfluor U bottom 96 well black plates.
+
+Q. Stop Akt Enzyme Reaction: Transfer 40 [mu]l of Akt Enzyme Reaction Mix from Protein A/G 96 well plate from Step (O) to Microfluor U bottom 96 well black plates from Step (P).
+
+U.
+ Incubate at room temperature for 1-2 hrs on Micromix 5 shaker (form 20, attitude 3), then read with the Discovery HTRF Microplate Analyzer using Akt program.
+
+IP Kinase Cell Lysis Buffer
+
+100 l er well
+
+ &lt;EMI ID=68.1&gt; 
+ 
+ &lt;EMI ID=69.1&gt; 
+
+EP Kinase Assay Buffer 100 [mu]l per well
+
+ &lt;EMI ID=69.2&gt; 
+
+GSK3[beta] Substrate Solution 60 l er well
+
+ &lt;EMI ID=69.3&gt; 
+
+Lance Stop Buffer 30 l er well
+
+ &lt;EMI ID=69.4&gt; 
+
+Lance Detection Buffer 30 [mu]l per well 
+ &lt;EMI ID=70.1&gt; 
+
+</pre></p></description><claims lang="EN" load-source="epoque" status="new"><claim num="1"><claim-text>WHAT IS CLAIMED IS: 
+
+
+</claim-text><claim-text>1. A compound according to Formula A: 
+
+
+</claim-text><claim-text>
+ &lt;EMI ID=71.1&gt; 
+wherein: 
+
+</claim-text><claim-text>E, F, G, H, I, J, K, L and M are independently selected from: C or N, wherein each E, F, G, H, I, J, K, L and M is optionally substituted with Rl ; 
+
+</claim-text><claim-text>a is 0 or 1; b is 0 or 1; m is 0, 1 or 2; p is independently 0, 1, 2, 3, 4 or 5; 
+
+</claim-text><claim-text>Ring X is a 3-7 membered cycloalkyl or 4-7 membered heterocyclyl optionally substituted with one to five R3; 
+
+</claim-text><claim-text>Ring Y is 4-7 membered cycloalkyl or a 5-7 membered heterocyclyl optionally substituted with one to four R4; 
+
+</claim-text><claim-text>Ring Z is selected from: (C3-C8)cycloalkyl, aryl, heteroaryl and heterocyclyl; 
+
+</claim-text><claim-text>Rl is independently selected from: H, oxo, (C=O)3Ob(Ci -C io)alkyl, (C=O)aOb-aryl, (C=0)aOb(C2-Cio)alkenyl, (C=O)aOb (C2-C io)alkynyl, CO2H, halo, OH, Ob(Q- C6)perfluoroalkyl, (C=O)aNR7R8, CN, (C=O)aOb(C3-C8)cycloalkyl, S(O)mNR7R8, SH, S(0)m-(Ci-Cio)alkyl and (C=O)aOb-heterocyclyl, said alkyl, aryl, alkenyl, alkynyl, cycloalkyl, and heterocyclyl is optionally substituted with one or more substituents selected from R6; 
+
+</claim-text><claim-text>R2 is independently selected from: oxo, (C=0)aOb(Ci-Cio)alkyl, (C=O)aOb-aryl, (C=0)aOb(C2-Cio)alkenyl, (C=O)3Ob (C2-C io)alkynyl, CO2H, halo, OH, Ob(Q- C6)perfluoroalkyl, ,(C=O)aNR7R8, CN, (C=O)aOb(C3-C8)cycloalkyl, SH, S(O)mNR7R8, S(0)[pi]r(Ci-Ci[theta])alkyl and (C=O)aOb-heterocyclyl, said alkyl, aryl, alkenyl, alkynyl, cycloalkyl, and heterocyclyl is optionally substituted with one or more substituents selected from R6; IIS is independently selected from: oxo, (C=O)3Ob(Ci -C io)alkyl, (C=O)aOb-aryl, (C=0)aOb(C2-Cio)alkenyl, (C=O)aOb (C2-Cio)alkynyl, CO2H, halo, OH, Ob(Ci- C6)perfluoroalkyl, (C=O)aNR7R8, CN, (C=O)aOb(C3-C8)cycloalkyl, SH, S(O)mNR7R8, S(0)m-(Ci-Cio)alkyl and (C=O)aOb-heterocyclyl, said alkyl, aryl, alkenyl, alkynyl, cycloalkyl, and heterocyclyl is optionally substituted with one or more substituents selected from R6; 
+
+</claim-text><claim-text>R4 is independently selected from: oxo, (C=0)aOb(Ci-Cio)alkyl, (C=O)aOb-aryl, (C=0)aOb(C2-Cio)alkenyl, (C=O)aOb (C2-Cio)alkynyl, CO2H, halo, OH, Ob(Ci- C6)perfluoroalkyl, (C=O)aNR7R8, CN, (C=O)aOb(C3-C8)cycloalkyl, SH, S(O)mNR7R8, 
+
+</claim-text><claim-text>S(0)m-(Ci-Cio)alkyl and (C=O)aOb-heterocyclyl, said alkyl, aryl, alkenyl, alkynyl, cycloalkyl, and heterocyclyl is optionally substituted with one or more substituents selected from R6; 
+
+</claim-text><claim-text>R6 is: (CO)aObCi-Cio alkyl, (C=O)aObaryl, C2-C10 alkenyl, C2-C10 alkynyl, (C=O)aOb heterocyclyl, CO2H, halo, CN, OH, ObCi-C6 perfluoroalkyl,
+ &lt;EMI ID=72.1&gt; 
+O[chi]o, CHO, (N=O)R7R8, S(O)mNR7R8, SH, S(O)1n-(Cl -C io)alkyl or (C=O)aObC3-C8 cycloalkyl, said alkyl, aryl, alkenyl, alkynyl, heterocyclyl, and cycloalkyl optionally substituted with one or more substituents selected from R6a; 
+
+</claim-text><claim-text>R6a is selected from: (C=O)aOb(C 1 -C 1 o)alkyl, Oa(C 1 -C3)perfluoroalkyl, (C()-C6)alkylene- 
+
+</claim-text><claim-text>S(O)mRa, SH, oxo, OH, halo, CN, (C2-Cio)alkenyl, (C2-Cio)alkynyl, (C3-C6)cycloalkyl, (Co- C6)alkylene-aryl, (Co-C6)alkylene-heterocyclyl, (Co-C6)alkylene-N(Rb)2, C(O)R&lt;a&gt;, (Co- C6)alkylene-CO2R&lt;a&gt;, C(O)H, and (Co-C6)alkylene-C[theta]2H, said alkyl, alkenyl, alkynyl, cycloalkyl, aryl, and heterocyclyl is optionally substituted with up to three substituents selected from Rb, OH, (Ci-C6)alkoxy, halogen, CO2H, CN, Oa(C=O)b(Ci-C6)alkyl, oxo, and N(Rb)2; 
+
+</claim-text><claim-text>R7 and R8 are independently selected from: H, (C=O)aOb(Ci-Ci0)alkyl, (C=0)a0b(C3- C8)cycloalkyl, (C=O)aOb-aryl, (C=O)aOb-heterocyclyl, (C2-Cio)alkenyl, (C2-C io)alkynyl, SH, S[theta]2R&lt;a&gt;, and (C=O)aNRb2, said alkyl, cycloalkyl, aryl, heterocylyl, alkenyl, and alkynyl is optionally substituted with one or more substituents selected from R6a? Or R7 and R8 can be taken together with the nitrogen to which they are attached to form a monocyclic or bicyclic heterocycle with 3-7 members in each ring and optionally containing, in addition to the nitrogen, one or two additional heteroatoms selected from N, O and S, said monocylcic or bicyclic heterocycle optionally substituted with one or more substituents selected from R6a; 
+
+</claim-text><claim-text>R&lt;a&gt; is (Ci-C6)alkyl, (C3-C6)cycloalkyl, aryl, or heterocyclyl; and Rb is independently: H, (Ci-C6)alkyl, aryl, heterocyclyl, (C3-C6)cycloalkyl, (C=O)aOb(Ci- C6)alkyl, or S(O)mRa; 
+
+</claim-text><claim-text>or a pharmaceutically acceptable salt or a stereoisomer thereof. 
+
+
+</claim-text><claim-text>2. A compound according to Formula A, wherein: 
+
+
+</claim-text><claim-text>
+ &lt;EMI ID=73.1&gt; 
+from: 
+
+
+</claim-text><claim-text>
+ &lt;EMI ID=73.2&gt; 
+ and all other substituents and variables are as defined in Claim 1 ; 
+
+</claim-text><claim-text>or a pharmaceutically acceptable salt or a stereoisomer thereof. 
+
+
+</claim-text><claim-text>3. A compound according to Formula B: 
+
+
+</claim-text><claim-text>
+ &lt;EMI ID=74.1&gt; 
+wherein: 
+
+</claim-text><claim-text>p is 0, 1 or 2; 
+
+</claim-text><claim-text>R2 is independently selected from: (Ci-C6)alkyl, (Ci-C6)alkoxy, CO2H, halo, OH and NH2; 
+
+</claim-text><claim-text>all other substituents and variables are as defined in Claim 2; 
+
+</claim-text><claim-text>or a pharmaceutically acceptable salt or a stereoisomer thereof. 
+
+
+</claim-text><claim-text>4. A compound according to Formula C: 
+
+
+</claim-text><claim-text>
+ &lt;EMI ID=74.2&gt; 
+wherein: 
+
+</claim-text><claim-text>a is 0 or 1 ; b is 0 or 1 ; m is 0, 1 or 2; p is 0, 1 or 2; 
+
+</claim-text><claim-text>R2 is selected from: (Ci-C6)alkyl, (Ci-C6)alkoxy, CO2H, halo, OH and NH2; Ring X is a 3-7 membered cycloalkyl or 4-7 membered heterocyclyl optionally substituted with one to three R.3; 
+
+</claim-text><claim-text>Ring Y is 4-7 membered cycloalkyl or a 5-7 membered heterocyclyl optionally substituted with one to three R4; 
+
+</claim-text><claim-text>Rl is selected from: H, oxo, (C=0)aOb(Ci-Cio)alkyl, (C=O)aOb-aryl, (C=O)aOb(C2- Cio)alkenyl, (C=0)aOb(C2-Cio)alkynyl, CO2H, halo, OH, Ob(Ci-C6)perfluoroalkyl, (C=O)aNR7R8, CN, (C=O)aOb(C3-C8)cycloaIkyl, S(O)mNR7R8, SH, S(0)m-(Ci-Cio)alkyl and (C=O)aOb-heterocyclyl, said alkyl, aryl, alkenyl, alkynyl, cycloalkyl, and heterocyclyl is optionally substituted with one or more substituents selected from R6; 
+
+</claim-text><claim-text>R3 is independently selected from: (Ci-C6)alkyl, CO2H, halo, OH, (Ci-C6)alkoxy, (C2- Cio)alkenyl; 
+
+</claim-text><claim-text>R4 is independently selected from: (Ci-C6)alkyl, CO2H, halo, OH, (Ci-C6)alkoxy, (C2- Cio)alkenyl; 
+
+</claim-text><claim-text>R6 is: (C=0)aObCi-Cio alkyl, (C=O)aObaryl, C2-C10 alkenyl, C2-C10 alkynyl, (C=O)aOb heterocyclyl, CO2H, halo, CN, OH, ObCi-C6 perfluoroalkyl, Oa(C=O)bNR7R8, O[chi]o, CHO, (N=O)R7R8, S(O)mNR7R8, SH, S(O)1n-(Ci -C io)alkyl or (C=O)aObC3-C8 cycloalkyl, said alkyl, aryl, alkenyl, alkynyl, heterocyclyl, and cycloalkyl optionally substituted with one or more substituents selected from R6a; 
+
+</claim-text><claim-text>R6a is selected from: (C=0)aOb(Ci-Cio)alkyl, Oa(Ci-C3)perfluoroalkyl, (Co-C6)alkylene- S(O)1nRa, SH, oxo, OH, halo, CN, (C2-Cio)alkenyl, (C2-Cio)alkynyl, (C3-C6)cycloalkyl, (Co- C6)alkylene-aryl, (Co-C6)alkylene-heterocyclyl, (Co-C6)alkylene-N(Rb)2, C(O)R&lt;a&gt;, (Co- C6)alkylene-CO2R&lt;a&gt;, C(O)H, and (Co-C6)alkylene-C02H, said alkyl, alkenyl, alkynyl, cycloalkyl, aryl, and heterocyclyl is optionally substituted with up to three substituents selected from Rb, OH, (Ci-C6)alkoxy, halogen, CO2H, CN, Oa(C=O)b(Ci-C6)alkyl, oxo, and N(Rb)2; 
+
+</claim-text><claim-text>R7 and R8 are independently selected from: H, (C=0)aOb(Ci-Cio)alkyl, (C=0)a0b(C3- C8)cycloalkyl, (C=O)aOb-aryl, (C=O)aOb-heterocyclyl, (C2-C io)alkenyl, (C2-Cio)alkynyl, SH, S[theta]2R&lt;a&gt;, and (C=O)3NRb2, said alkyl, cycloalkyl, aryl, heterocylyl, alkenyl, and alkynyl is optionally substituted with one or more substituents selected from R6a, or R7 and R8 can be taken together with the nitrogen to which they are attached to form a monocyclic or bicyclic heterocycle with 3-7 members in each ring and optionally containing, in addition to the nitrogen, one or two additional heteroatoms selected from N, O and S, said monocylcic or bicyclic heterocycle optionally substituted with one or more substituents selected from R.6a; 
+
+</claim-text><claim-text>R&lt;a&gt; is (Ci-C6)alkyl, (C3-C6)cycloalkyl, aryl, or heterocyclyl; and 
+
+</claim-text><claim-text>Rb is independently: H, (Ci-C6)alkyl, aryl, heterocyclyl, (C3-C6)cycloalkyl, (C=O)aOb(Ci- C6)alkyl, or S(O)mRa; 
+
+</claim-text><claim-text>or a pharmaceutically acceptable salt or a stereoisomer thereof. 
+
+
+</claim-text><claim-text>5. A compound according to Formula D: 
+
+
+</claim-text><claim-text>
+ &lt;EMI ID=76.1&gt; 
+wherein: 
+
+</claim-text><claim-text>a is 0 or 1 ; b is 0 or 1 ; m is 0, 1 or 2; p is 0, 1 or 2; 
+
+</claim-text><claim-text>R2 is selected from: (Ci-C6)alkyl, (Ci-C6)alkoxy, CO2H, halo, OH and NH2; 
+
+</claim-text><claim-text>Rl is selected from: H, oxo, (C=0)aOb(Ci-Cio)alkyl, (C=O)aOb-aryl, (C=O)aOb(C2- Cio)alkenyl, (C=0)aOb(C2-Cio)alkynyl, CO2H, halo, OH, Ob(Ci-C6)perfluoroalkyl, 
+
+</claim-text><claim-text>(C=O)aNRVR8, CN, (C=O)aOb(C3-C8)cycloalkyl, S(O)mNR7R8, SH, S(0)m-(Ci-Cio)alkyl and (C=O)aOb-heterocyclyl, said alkyl, aryl, alkenyl, alkynyl, cycloalkyl, and heterocyclyl is optionally substituted with one or more substituents selected from R6; 
+
+</claim-text><claim-text>R6 is: (C=O)3ObCi-CiO alkyl, (C=O)aObaryl, C2-C10 alkenyl, C2-C10 alkynyl, (C=O)aOb heterocyclyl, CO2H, halo, CN, OH, ObCi -Co perfluoroalkyl, Oa(C=O)bNR7R8, O[chi]o, CHO, (N=O)R7R8, S(O)mNR7R8, SH, S(O)1n-(Ci -C io)alkyl or (C=O)aObC3-C8 cycloalkyl, said alkyl, aryl, alkenyl, alkynyl, heterocyclyl, and cycloalkyl optionally substituted with one or more substituents selected from R6a; R.6a is selected from:
+</claim-text><claim-text> (C=0)aOb(Ci-Ci[theta])alkyl, Oa(Ci-C3)perfluoroalkyl, (Co-C6)alkylene- S(O)1nRa, SH, oxo, OH, halo, CN, (C2-Cio)alkenyl, (C2-Cio)alkynyl, (C3-C6)cycloalkyl, (Co- C6)alkylene-aryl, (Co-C6)alkylene-heterocyclyl, (Co-C6)alkylene-N(Rb)2, C(O)R&lt;a&gt;, (Co- C6)alkylene-CO2R&lt;a&gt;, C(O)H, and (C[theta]-C6)alkylene-CO2H, said alkyl, alkenyl, alkynyl, cycloalkyl, aryl, and heterocyclyl is optionally substituted with up to three substituents selected from Rb, OH, (Ci-C6)alkoxy, halogen, CO2H, CN, Oa(C=O)b(Ci-C6)alkyl, oxo, and N(Rb)2; 
+
+</claim-text><claim-text>R7 and R8 are independently selected from: H, (CO)aOb(Ci-Cio)alkyl, (C=O)aOb(C3- C8)cycloalkyl, (C=O)aOb-aryl, (C=O)aOb-heterocyclyl, (C2-C io)alkenyl, (C2-Cio)alkynyl, SH, SO2R&lt;a&gt;, and (C=O)aNRb2, said alkyl, cycloalkyl, aryl, heterocylyl, alkenyl, and alkynyl is optionally substituted with one or more substituents selected from R6as or R? and R&amp; can be taken together with the nitrogen to which they are attached to form a monocyclic or bicyclic heterocycle with 3-7 members in each ring and optionally containing, in addition to the nitrogen, one or two additional heteroatoms selected from N, O and S, said monocylcic or bicyclic heterocycle optionally substituted with one or more substituents selected from R6a; 
+
+</claim-text><claim-text>R&lt;a&gt; is (Ci-C6)alkyl, (C3-C6)cycloalkyl, aryl, or heterocyclyl; and 
+
+</claim-text><claim-text>Rb is independently: H, (Ci-C6)alkyl, aryl, heterocyclyl, (C3-C6)cycloalkyl, (C=O)aOb(Ci- C6)alkyl, or S(O)mR&lt;a&gt;; 
+
+</claim-text><claim-text>or a pharmaceutically acceptable salt or stereoisomer thereof. 
+
+
+</claim-text><claim-text>6. A compound according to Formula E: 
+
+
+</claim-text><claim-text>
+ &lt;EMI ID=77.1&gt; 
+wherein: 
+
+</claim-text><claim-text>a is 0 or 1 ; b is 0 or 1 ; m is 0, 1 or 2; Rl is selected from: H, (C=O)3Ob(Ci -C io)alkyl, (C=O)aObaryl, OH, Ob(Ci-C6)perfluoroalkyl, (C=O)aOb(C3-C8)cycloalkyl, and (C=O)aOb-heterocyclyl, said alkyl, aryl, cycloalkyl, and heterocyclyl is optionally substituted with one or more substituents selected from R.6; 
+
+</claim-text><claim-text>R6 is: (C=O)aObC I -C I o alkyl, (C=O)aObaryl, C2-C 10 alkenyl, C2-C 10 alkynyl, (C=O)aOb heterocyclyl, CO2H, halo, CN, OH, ObCi-Co perfluoroalkyl, Oa(C=O)bNR7R8, O[chi]o, CHO, (N=O)R7R8, S(O)mNR7R8, SH, S(O)1n-(Ci -C io)alkyl or (C=O)aObC3-C8 cycloalkyl, said alkyl, aryl, alkenyl, alkynyl, heterocyclyl, and cycloalkyl optionally substituted with one or more substituents selected from R6a; 
+
+</claim-text><claim-text>R6a is selected from: (C=0)aOb(Ci-Cio)alkyl, Oa(Ci-C3)perfluoroalkyl, (C()-C6)alkylene- S(O)mRa, SH, oxo, OH, halo, CN, (C2-Cio)alkenyl, (C2-Cio)alkynyl, (C3-C6)cycloalkyl, (Co- C6)alkylene-aryl, (Co-C6)alkylene-heterocyclyl, (Co-C6)alkylene-N(Rb)2, C(O)R&lt;a&gt;, (Co- C6)alkylene-CO2R&lt;a&gt;, C(O)H, and (Co-C6)alkylene-C[theta]2H, said alkyl, alkenyl, alkynyl, cycloalkyl, aryl, and heterocyclyl is optionally substituted with up to three substituents selected from Rb, OH, (Ci-C6)alkoxy, halogen, CO2H, CN, Oa(C=O)b(Ci-C6)alkyl, oxo, and N(Rb)2; 
+
+</claim-text><claim-text>R&lt;a&gt; is (Ci-C6)alkyl, (C3-C6)cycloalkyl, aryl, or heterocyclyl; and 
+
+</claim-text><claim-text>Rb is independently: H, (Ci-C6)alkyl, aryl, heterocyclyl, (C3-C6)cycloalkyl, (C=O)aOb(Ci- C6)alkyl, or S(O)mRa; 
+
+</claim-text><claim-text>or a pharmaceutically acceptable salt or stereoisomer thereof. 
+
+
+</claim-text><claim-text>7. A compound which is selected from: 
+
+
+</claim-text><claim-text>2- {4-[3-(l -methyl-lH-imidazol-4-yl)-9-phenyl[ l,2,4]triazolo[3,4-/]-l ,6-naphthyridin-8- yl]phenyl}-5,8-dioxaspiro[3.4]octan-2-amine; 
+
+
+</claim-text><claim-text>2-[4-(9-phenyl[l,2,4]triazolo[3,4-/J-l,6-na[rho]hthyridin-8-yl)phenyl]-5,8-dioxaspiro[3.4]octan-2- amine; 
+
+
+</claim-text><claim-text>2-[4-(3-methyl-9-phenyl[l,2,4]triazolo[3,4-/J-l,6-naphthyridin-8-yl)phenyl]-5,8- dioxaspiro[3.4]octan-2-amine; 
+
+
+</claim-text><claim-text>2-[4-(3-ethyl-9-phenyl[l,2,4]triazolo[3,4-/J-l,6-naphthyridin-8-yl)phenyl]-5,8- dioxaspiro[3.4]octan-2-amine; 2-[4-(3-isopropyl-9-phenyl[l,2,4]triazolo[3,4-/]-l,6-naphthyridin-8-yl)phenyl]-5,8- dioxaspiro[3.4]octan-2-amine; 
+
+
+</claim-text><claim-text>2-[4-(3-cyclopropyl-9-phenyl[l,2,4]triazolo[3,4-/J-l,6-naphthyridin-8-yl)phenyl]-5,8- dioxaspiro[3.4]octan-2-amine; 
+
+2-[4-(9-phenyl-3-pyrimidin-2-yl[l,2,4]triazolo[3,4-/l-l,6-naphthyridin-8-yl)phenyl]-5,8- dioxaspiro[3.4]octan-2-amine; 
+
+
+</claim-text><claim-text>2-[4-(9-phenyl-3-[l,2,4]triazolo[l,5-a]pyrimidin-2-yl[l,2,4]triazolo[3,4-f]-l,6-naphthyridin-8- yl)phenyl]-5,8-dioxaspiro[3.4]octan-2-amine; 2-{4-[9-phenyl-3-(l,3-thiazol-4-yl)[l,2,4]triazolo[3,4-f]-l,6-naphthyridin-8-yl]phenyl}-5,8- dioxaspiro[3.4]octan-2-amine; 
+
+
+</claim-text><claim-text>8-[4-(2-amino-5,8-dioxaspiro[3.4]oct-2-yl)phenyl]-9-phenyl[l,2,4]triazolo[3,4-f]-l,6- naphthyridin-3 -ol ; 
+
+
+</claim-text><claim-text>2-{4-[3-(2-furyl)-9-phenyl[l,2,4]triazolo[3,4-f]-l,6-naphthyridin-8-yl]phenyl}-5,8- dioxaspiro[3.4]octan-2-amine; 
+
+
+</claim-text><claim-text>3-{8-[4-(2-amino-5,8-dioxaspiro[3.4]oct-2-yl)phenyl]-9-phenyl[l,2,4]triazolo[3,4-f]-l,6- naphthyridin-3 -yl} phenol; methyl 6-{8-[4-(2-amino-5,8-dioxaspiro[3.4]oct-2-yl)phenyl]-9-phenyl[l,2,4]triazolo[3,4-f]-l,6- naphthyridin-3-yl}pyridine-2-carboxylate; 2-[4-(9-phenyl-3-pyridin-2-yl[l,2,4]triazolo[3,4-f]-l,6-naphthyridin-8-yl)phenyl]-5,8- dioxaspiro[3.4]octan-2-amine; 
+
+
+</claim-text><claim-text>2-{4-[3-(lH-indol-5-yl)-9-phenyl[l,2,4]triazolo[3,4-f]-l,6-naphthyridin-8-yl]phenyl}-5,8- dioxaspiro[3.4]octan-2-amine; 
+
+
+</claim-text><claim-text>2-[4-(3-isoxazol-3-yl-9-phenyl[l,2,4]triazolo[3,4-f]-l,6-naphthyridin-8-yl)phenyl]-5,8- dioxaspiro[3.4]octan-2-amine; 
+
+
+</claim-text><claim-text>2-[4-(9-phenyl-3-pyrazin-2-yl[l,2,4]triazolo[3,4-f]-l,6-naphthyridin-8-yl)phenyl]-5,8- dioxaspiro[3.4]octan-2-amine; l-{8-[4-(2-amino-5,8-dioxaspiro[3.4]oct-2-yl)phenyl]-9-phenyl[l,2,4]triazolo[3,4-f]-l,6- naphthyridin-3-yl} ethanol; 2-[4-(9-phenyl-3-pyridin-3-yl[l,2,4]triazolo[3,4-f]-l,6-naphthyridin-8-yl)phenyl]-5,8- dioxaspiro[3.4]octan-2-amine; 
+
+
+</claim-text><claim-text>2-[4-(3-cyclobutyl-9-phenyl[l,2,4]triazolo[3,4-f]-l,6-naphthyridin-8-yl)phenyl]-5,8- dioxaspiro[3.4]octan-2-amine; 
+
+
+</claim-text><claim-text>2-{4-[3-(cyclopropylmethyl)-9-phenyl[l,2,4]triazolo[3,4-f]-l,6-naphthyridin-8-yl]phenyl}-5,8- dioxaspiro[3.4]octan-2-amine; 
+
+
+</claim-text><claim-text>2-[4-(9-phenyl-3-propyl[l,2,4]triazolo[3,4-f]-l,6-naphthyridin-8-yl)phenyl]-5,8- dioxaspiro[3.4]octan-2-amine; 
+
+
+</claim-text><claim-text>2-[4-(3-cyclopent-3-en-l-yl-9-phenyl[l,2,4]triazolo[3,4-f]-l,6-naphthyridin-8-yl)phenyl]-5,8- dioxaspiro[3.4]octan-2-amine; 2-[4-(9-phenyl-3-piperidin-2-yl[l,2,4]triazolo[3,4-f]-l,6-naphthyridin-8-yl)phenyl]-5,8- dioxaspiro[3.4]octan-2-amine; 
+
+
+</claim-text><claim-text>2-{4-[3-(4-methyl-l,3-thiazol-5-yl)-9-phenyl[l,2,4]triazolo[3,4-f]-l,6-naphthyridin-8- yl]phenyl}-5,8-dioxaspiro[3.4]octan-2-amine; 
+
+2-[4-(9-phenyl-3-pyridin-4-yl[l,2,4]triazolo[3,4-f]-l,6-naphthyridin-8-yl)phenyl]-5,8- dioxaspiro[3.4]octan-2-amine; 
+
+
+</claim-text><claim-text>2-{4-[9-phenyl-3-(tetrahydro-2H-pyran-4-yl)[l,2,4]triazolo[3,4-f]-l,6-naphthyridin-8- yl]phenyl}-5,8-dioxaspiro[3.4]octan-2-amine; 2-{4-[3-(l-benzyl-lH-indol-3-yl)-9-phenyl[l,2,4]triazolo[3,4-f]-l,6-naphthyridin-8-yl]phenyl}- 
+
+
+</claim-text><claim-text>5,8-dioxaspiro[3.4]octan-2-amine; l-{8-[4-(2-amino-5,8-dioxaspiro[3.4]oct-2-yl)phenyl]-9-phenyl[l,2,4]triazolo[3,4-f]-l,6- naphthyridin-3-yl}-2-methylpropan-2-ol; 
+
+
+</claim-text><claim-text>2-[4-(3-tert-butyl-9-phenyl[l,2,4]triazolo[3,4-f]-l,6-naphthyridin-8-yl)phenyl]-5,8- dioxaspiro[3.4]octan-2-amine; 
+
+
+</claim-text><claim-text>8-[4-(2-Amino-5,8-dioxaspiro[3.4]oct-2-yl)phenyl]-N-ethyl-9-phenyl[l,2,4]triazolo[3,4-/J-l,6- naphthyridin-3-amine; and 
+
+</claim-text><claim-text>N'-{8-[4-(2-amino-5,8-dioxaspiro[3.4]oct-2-yl)phenyl]-9-phenyl[l,2,4]triazolo[3,4-/J-l,6- naphthyridm-3-yl}-N,N-dimethylpropane-l,3-diamine; 
+
+</claim-text><claim-text>or a pharmaceutically acceptable salt or stereoisomer thereof. 
+
+
+</claim-text><claim-text>8. A compound which is: 2-{4-[3-(l-methyl-lH-imidazol-4-yl)-9-phenyl[l,2,4]triazolo[3,4-/J-l,6-naphthyridin-8- yl]phenyl}-5,8-dioxaspiro[3.4]octan-2-amine; or a pharmaceutically acceptable salt thereof. 
+
+
+</claim-text><claim-text>9. A compound which is: 8-[4-(2-Amino-5,8-dioxaspiro[3.4]oct-2-yl)phenyl]-N-ethyl-9-phenyl[l,2,4]triazolo[3,4-/J-l,6- naphthyridin-3-amine; or a pharmaceutically acceptable salt thereof. 
+
+
+</claim-text><claim-text>10. A compound which is: N'-{8-[4-(2-amino-5,8-dioxaspiro[3.4]oct-2-yl)phenyl]-9-phenyl[l,2,4]triazolo[3,4-/J-l,6- naphthyridin-3-yl} -N,N-dimethylpropane- 1 ,3-diamine; or a pharmaceutically acceptable salt thereof. 
+
+
+</claim-text><claim-text>11. A compound which is: 2-[4-(9-phenyl-3-pyrimidin-2-yl[l,2,4]triazolo[3,4-/J-l,6-naphthyridin-8-yl)phenyl]-5,8- dioxaspiro[3.4]octan-2-amine; or a pharmaceutically acceptable salt thereof. 
+
+
+</claim-text><claim-text>12. A pharmaceutical composition comprising a pharmaceutical carrier, and dispersed therein, a therapeutically effective amount of a compound of Claim 1. 
+
+
+</claim-text><claim-text>13. The use of the compound according to Claim 1 for the preparation of a medicament useful in the treatment or prevention of cancer in a mammal in need of such treatment.
+</claim-text></claim></claims><copyright>User acknowledges that Matrixware and its third party providers retain all right, title and interest in and to this xml under applicable copyright laws.  User acquires no ownership rights to this xml including but not limited to its format.  User hereby accepts the terms and conditions of the Licence Agreement set forth at http://www.matrixware.com/legal/marec/data_licence.html</copyright></patent-document>

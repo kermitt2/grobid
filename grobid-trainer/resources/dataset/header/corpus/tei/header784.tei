@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="785"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Optimal Solution of Off-line and On-line Generalized Caching <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Saied Hosseini-Khayat and Jerome R. Cox, Jr. <lb/></docAuthor></byline>
+		<byline><affiliation>Washington University in St. Louis <lb/></affiliation></byline>
+		<div type="abstract">Abstract. Network traffic can be reduced significantly if caching is utilized effectively. As an effort <lb/>in this direction we study the replacement problem <lb/>that arises in caching of multimedia objects. The size <lb/>of objects and the cost of cache misses are assumed <lb/>non-uniform. The non-uniformity of size is inherent in multimedia objects, and the non-uniformity of <lb/>cost is due to the non-uniformity of size and the fact <lb/>that the objects are scattered throughout the network. <lb/>Although a special case of this problem, i.e. the case <lb/>of uniform size and cost, has been extensively studied, the general case needs a great deal of study. We <lb/>present a dynamic programming method of optimally <lb/>solving the off-line and on-line versions of this problem, and discuss the complexity of this method. <lb/></div>
+		<keywords>Key words: Generalized caching, network traffic, <lb/>network caching, file caching, optimal replacement, <lb/>replacement algorithm. <lb/></keywords>
+		<div type="intro">I. Introduction</div>
+		</front>
+</text>
+</tei>

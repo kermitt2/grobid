@@ -1,0 +1,22 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="672"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<idno>ISSN 1360-1725 <lb/></idno>
+		<docTitle>
+			<titlePart type="main">The Test Matrix Toolbox for Matlab (Version 3.0) <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>N. J. Higham <lb/></docAuthor></byline>
+		<idno>Numerical Analysis Report No. 276 <lb/></idno>
+		<date>September 1995 <lb/></date>
+		<note type="other">Manchester Centre for Computational Mathematics <lb/>Numerical Analysis Reports <lb/>DEPARTMENTS OF MATHEMATICS <lb/>Reports available from: <lb/></note>
+		<byline><affiliation>Department of Mathematics <lb/>University of Manchester <lb/></affiliation></byline>
+		<address>Manchester M13 9PL <lb/>England <lb/></address>
+		<note type="other">And over the World-Wide Web from URLs <lb/></note>
+		<ptr type="web">http://www.ma.man.ac.uk/MCCM/MCCM.html <lb/>ftp://ftp.ma.man.ac.uk/pub/narep <lb/></ptr>
+		<pb/>
+		</front>
+</text>
+</tei>

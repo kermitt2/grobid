@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="412"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<byline><affiliation>INSTITUT NATIONAL DE RECHERCHE EN INFORMATIQUE ET EN AUTOMATIQUE <lb/></affiliation></byline>
+		<docTitle>
+			<titlePart type="main">Latch Optimization in Circuits Generated from High-level <lb/>Descriptions <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Ellen M. Sentovich, Horia Toma, Gerard Berry <lb/></docAuthor></byline>
+		<note type="other">N 2943 <lb/></note>
+		<date>Juillet 1996 <lb/></date>
+		<note type="other">THE ME 1 <lb/></note>
+		</front>
+</text>
+</tei>

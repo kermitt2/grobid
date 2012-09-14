@@ -1,0 +1,48 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005159"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<lb/>
+			<reference>Madhlopa, A. and Johnstone, C. (2008) Preliminary results from the testing of
+				an advanced passive<lb/> solar still incorporating a shielded condenser. In: 10th
+				World Renewable Energy Congress,<lb/> 19-25 July 2008, Glasgow, UK.<lb/></reference>
+			<ptr type="web">http://strathprints.strath.ac.uk/16432/<lb/></ptr>
+			<note type="copyright">Strathprints is designed to allow users to access the research
+				output of the University<lb/> of Strathclyde. Copyright © and Moral Rights for the
+				papers on this site are retained<lb/> by the individual authors and/or other
+				copyright owners. You may not engage in<lb/> further distribution of the material
+				for any profitmaking activities or any commercial<lb/> gain. You may freely
+				distribute both the url (http://strathprints.strath.ac.uk) and the<lb/> content of
+				this paper for research or study, educational, or not-for-profit purposes<lb/>
+				without prior permission or charge. You may freely distribute the url<lb/>
+				(http://strathprints.strath.ac.uk) of the Strathprints website.<lb/></note>
+			<note type="other">Any correspondence concerning this service should be sent to The<lb/>
+				Strathprints Administrator: eprints@cis.strath.ac.uk<lb/></note>
+
+			<pb/>
+
+			<docTitle>
+				<titlePart>Preliminary results from the testing of an advanced passive solar still
+					incorporating<lb/> a shielded condenser<lb/></titlePart>
+			</docTitle>
+			<note type="other">A paper presented at the World Renewable Energy Congress,
+				Glasgow,</note>
+			<date>19-25 July 2008<lb/></date>
+			<byline>
+				<docAuthor>Amos Madhlopa, Cameron Johnstone<lb/></docAuthor>
+			</byline>
+			<byline>
+				<affiliation>Energy Systems Research Unit, Dept. of Mechanical Engineering,
+					University of Strathclyde,</affiliation>
+			</byline>
+			<address>Glasgow, UK,</address>
+			<phone>Tel:<lb/> 44-141-548-3788, Fax: 44-141-552-5105, </phone>
+			<email>Email: esru@strath.ac.uk<lb/></email>
+			<note type="other">1</note>
+
+		</front>
+	</text>
+</tei>

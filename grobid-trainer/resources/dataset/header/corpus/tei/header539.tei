@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="542"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Proportional-Share Scheduling: Implementation and <lb/>Evaluation in a Widely-Deployed Operating System <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>David Petrou and John Milford <lb/></docAuthor></byline>
+		<email>dpetrou@cs.cmu.edu, </email> <email>jwm@csua.berkeley.edu <lb/></email>
+		<note type="other">Draft 12/20/1997. Send feedback to the authors. <lb/></note>
+		<div type="abstract">Abstract <lb/>This paper explores the feasibility of using lottery scheduling, a proportional-share resource management algorithm, <lb/>to schedule processes under the FreeBSD operating system. <lb/>Proportional-share scheduling enables flexible control over <lb/>relative process execution rates and processor load insulation among groups of processes. We show that a straight implementation of lottery scheduling performs worse than the <lb/>standard FreeBSD scheduler. This initial result prompted <lb/>us to extend lottery scheduling. Except for one test we <lb/>run, our resulting system performs within one percent of <lb/>the FreeBSD scheduler. We describe our design, evaluate <lb/>our implementation, and relate our experience in deploying <lb/>our lottery scheduler on production machines. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

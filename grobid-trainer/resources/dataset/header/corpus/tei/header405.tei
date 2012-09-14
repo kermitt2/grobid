@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="408"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Information Theory, <lb/>Inference, <lb/>and Learning Algorithms <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>David J.C. MacKay <lb/></docAuthor></byline>
+		<note type="copyright">c 1995, 1996, 1997, 1998 <lb/></note>
+		<note type="other">Draft 1.6.1</note>
+		<date>August 31, 1998 <lb/></date>
+		<pb/>
+		</front>
+</text>
+</tei>

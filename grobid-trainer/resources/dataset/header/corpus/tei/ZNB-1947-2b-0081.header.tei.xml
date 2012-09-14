@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="ZNB-1947-2b-0081"/>
+	</teiHeader>
+	<text xml:lang="de">
+		<front>
+			<reference>BAND 2b <space dim="horizontal"/> ZEITSCHRIFT FÜR NATURFORSCHUNG <space dim="horizontal"/> HEFT 3/4<lb/>
+			</reference>
+
+			<docTitle>
+				<titlePart>Zur Komplexchemie der Seltenen Erden.<lb/> Die polarographischen Strompotentialkuryen des Europiums<lb/> als Nachweismittel komplexer Bindung<lb/></titlePart>
+			</docTitle>
+
+			<byline>
+				<docAuthor>Von LUDWIG HOLLECK*<lb/></docAuthor>
+			</byline>
+
+			<reference>(Z. Naturforschg. 2 b, 81—89 [1947]</reference>
+
+			<note type="submission">^eingegangen am 13. Oktober 1946)<lb/></note>
+
+			<div type="abstract">Die Möglichkeit einer messenden Verfolgung von komplexen Bindungen Seltener Erden-<lb/>Ionen in Lösung auf polarographischem Wege wird aufgezeigt. Als für diese Zwecke geeignetstes<lb/> Element wird das Europium herangezogen, das gleichzeitig auch Aufschluß über das Kom-<lb/>plexbildungsverhalten der zweiwertigen Seltenen-Erden-Ionen zu geben vermag. Die Anionen<lb/> folgender organischer Oxysäuren ergeben in abnehmender Reihenfolge komplexe Bindungen<lb/> des dreiwertigen Ions, deren Maß aus der Größe der Verlagerung der polarographischen Reduktions-<lb/>stufe— der Kathodenreaktion Eu 3 + + © = Eu 2 + entsprechend — feststellbar ist: Citronensäure,<lb/> Weinsäure, Milchsäure, Apfelsäure, Mandelsäure und Salicylsäure. Die Komplexitätskonstante<lb/> der Citratkomplexbildung wird größenmäßig festgelegt. Auch in Acetatlösung ist die Europium-<lb/>Reduktionsstufe gegenüber der reinen Chloridlösung zu unedlerem Potentialwert verschoben.<lb/> Beim zweiwertigen Ion ist keine Neigung zur Bildung von Komplexen festzustellen, was sich<lb/> auch mit dem erdalkaliähnlichen Verhalten deckt. Mit Aminosäuren, die vielfach zur Bildung<lb/> innerer Komplexe führen, ist auch bei den dreiwertigen Seltenen-Erden-Ionen in den zugäng-<lb/>lichen Konzentrationsbereichen keine Komplexbildung nachzuweisen. Die Komplexbildungs-<lb/>affinität der in carbonatalkalischen Lösungen erhältlichen Carfconatkomplexe entspricht etwa<lb/> jener der in sauren Lösungen verfolgten Citratkomplexe.<lb/></div>
+
+		</front>
+	</text>
+</tei>

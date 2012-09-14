@@ -1,0 +1,30 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="501"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Stochastic Interaction and Linear Logic <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Patrick D. Lincoln John C. Mitchell Andre Scedrov x <lb/></docAuthor></byline>
+		<div type="abstract">Abstract <lb/>We present stochastic interactive semantics for propositional linear <lb/>logic without modalities. The framework is based on interactive <lb/>protocols considered in computational complexity theory, in which <lb/>a prover with unlimited power interacts with a verifier that can <lb/>only toss fair coins or perform simple tasks when presented with <lb/>the given formula or with subsequent messages from the prover. <lb/>The additive conjunction &amp; is described as random choice, which <lb/>reflects the intuitive idea that the verifier can perform only &quot;random spot checks&quot;. This stochastic interactive semantic framework <lb/>is shown to be sound and complete. Furthermore, the prover&apos;s <lb/>winning strategies are basically proofs of the given formula. In <lb/>this framework the multiplicative and additive connectives of linear logic are described by means of probabilistic operators, giving a <lb/>new basis for intuitive reasoning about linear logic and a potential <lb/>new tool in automated deduction. <lb/></div>
+		<note type="other">A revised version appears in : &quot;Advances in Linear Logic&quot;, ed. by J.-Y. Girard et <lb/>al., London Mathematical Society Lecture Notes Series, Volume 222, Cambridge University <lb/>Press, 1995, pp. 147-166. <lb/></note>
+		<email>lincoln@csl.sri.com</email>
+		<byline><affiliation>SRI International Computer Science Laboratory,</affiliation></byline>
+		<address>Menlo Park <lb/>CA 94025 USA.</address>
+		<note type="other">Work supported under NSF Grant CCR-9224858. <lb/></note>
+		<email>jcm@cs.stanford.edu</email>
+		<ptr type="web">http://theory.stanford.edu/people/jcm/home.html</ptr>
+		<byline><affiliation>Department of Computer Science, Stanford University,</affiliation></byline>
+		<address>Stanford, CA 94305.</address>
+		<note type="grant">Supported in part <lb/>by an NSF PYI Award, matching funds from Digital Equipment Corporation, the Pow-ell Foundation, and Xerox Corporation; and the Wallace F. and Lucille M. Davis Faculty <lb/>Scholarship. <lb/></note>
+		<email>andre@cis.upenn.edu</email>
+		<ptr type="web">http://www.cis.upenn.edu/~andre</ptr>
+		<byline><affiliation>Department of Mathematics, University of Pennsylvania,</affiliation></byline>
+		<address>Philadelphia, PA 19104-6395.</address>
+		<note type="grant">Partially supported by <lb/>NSF Grants CCR-91-02753 and CCR-94-00907 and by ONR Grant N00014-92-J-1916. Sce-drov is an American Mathematical Society Centennial Research Fellow. <lb/></note>
+		<pb/>
+		</front>
+</text>
+</tei>

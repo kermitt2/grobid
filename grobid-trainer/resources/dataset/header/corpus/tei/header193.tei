@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="194"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Multi-Agent Planning as a Dynamic Search for Social Consensus <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Eithan Ephrati <lb/>Jeffrey S. Rosenschein <lb/></docAuthor></byline>
+		<byline><affiliation>Computer Science Department <lb/>Hebrew University <lb/></affiliation></byline>
+		<address>Givat Ram, Jerusalem, Israel <lb/></address>
+		<div type="abstract">Abstract <lb/>When autonomous agents attempt to coordinate action, it is often necessary that they reach <lb/>some kind of consensus. Reaching consensus <lb/>has traditionally been dealt with in the Distributed Artificial Intelligence literature via negotiation. Another alternative is to have agents <lb/>use a voting mechanism; each agent expresses <lb/>its preferences, and a group choice mechanism <lb/>is used to select the result. Some choice mechanisms are better than others, and ideally we <lb/>would like one that cannot be manipulated by <lb/>untruthful agents. <lb/>Coordination of actions by a group of agents <lb/>corresponds to a group planning process. We <lb/>here introduce a new multi-agent planning <lb/>technique, that makes use of a dynamic, iterative search procedure. Through a process of <lb/>group constraint aggregation, agents incrementally construct a plan that brings the group to <lb/>a state maximizing social welfare. At each step, <lb/>agents vote about the next joint action in the <lb/>group plan (i.e., what the next transition state <lb/>will be in the emerging plan). Using this technique agents need not fully reveal their preferences, and the set of alternative final states <lb/>need not be generated in advance of a vote. <lb/>With a minor variation, the entire procedure <lb/>can be made resistant to untruthful agents. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,19 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="425"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Robust Meshes from Multiple Range Maps <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Kari Pulli * Tom Duchamp * Hugues Hoppe <lb/>John McDonald * Linda Shapiro * Werner Stuetzle * <lb/></docAuthor></byline>
+		<byline><affiliation>University of Washington,</affiliation></byline>
+		<address>Seattle, WA <lb/></address>
+		<byline><affiliation>Microsoft Research,</affiliation></byline>
+		<address>Redmond, WA <lb/></address>
+		<div type="abstract">Abstract <lb/>This paper presents a method for modeling the surface <lb/>of an object from a sequence of range maps. Our method <lb/>is based on a volumetric approach that produces a compact <lb/>surface without boundary. It provides robustness through <lb/>the use of interval analysis techniques and computational <lb/>efficiency through hierarchical processing using octrees. <lb/></div>
+		<div type="intro">1. Introduction</div>
+		</front>
+</text>
+</tei>

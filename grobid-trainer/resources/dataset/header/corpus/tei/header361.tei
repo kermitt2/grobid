@@ -1,0 +1,19 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="366"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<note type="reference">Appears in Proceedings of the 4 <lb/>th <lb/>International Conference on Knowledge Discovery and Data Mining, <lb/>AAAI Press, 1998, 359-363. <lb/></note>
+		<docTitle>
+			<titlePart type="main">Learning to Predict Rare Events in Event Sequences <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Gary M. Weiss <lb/>and Haym Hirsh <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science <lb/>Rutgers University <lb/></affiliation></byline>
+		<address>New Brunswick, NJ 08903 <lb/></address>
+		<email>gmweiss@att.com, hirsh@cs.rutgers.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>Learning to predict rare events from sequences of events <lb/>with categorical features is an important, real-world, <lb/>problem that existing statistical and machine learning <lb/>methods are not well suited to solve. This paper describes <lb/>timeweaver, a genetic algorithm based machine learning <lb/>system that predicts rare events by identifying predictive <lb/>temporal and sequential patterns. Timeweaver is applied to <lb/>the task of predicting telecommunication equipment failures <lb/>from 110,000 alarm messages and is shown to outperform <lb/>existing learning methods. <lb/></div>
+		<div type="intro">Introduction</div>
+		</front>
+</text>
+</tei>

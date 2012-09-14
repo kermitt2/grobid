@@ -1,0 +1,29 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="1085"/> 
+	</teiHeader>
+<text xml:lang="en">
+	<front> 
+		<note type="submission">Confidential:  not for distribution. Submitted to IOP Publishing for peer review </note>
+		<date type="submission">11 May 2010<lb/></date>
+		<docTitle>
+			<titlePart type="main">B-to-Glueball  form  factor and Glueball production in  B  decays<lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Wei  Wang   a   , Yue-Long Shen   b,c   and Cai-Dian Lü   a<lb/></docAuthor></byline>
+		
+		<byline><affiliation>a   Institute  of High Energy Physics and Theoretical Physics Center for Science Facilities,<lb/> Chinese Academy of Sciences,</affiliation></byline>
+		<address>Beijing 100049, People's Republic of China<lb/></address>
+		
+		<byline><affiliation>b   Institute of Physics, Academia Sinica, </affiliation></byline>
+		<address>Taipei, Taiwan115, Republic of China<lb/></address>
+		
+		<byline><affiliation>c   College of Information Science and Engineering, Ocean University of China, <lb/></affiliation></byline>
+		<address>Qingdao, Shandong 266100, People's Republic of China<lb/></address>
+		
+		<div type="abstract">We  investigate transition form factors of  B  meson decays into a scalar glueball in the light-cone<lb/> formalism. Compared with form factors of  B  to ordinary scalar mesons, the  B-to-glueball  form<lb/> factors have the same power in the expansion of 1/mB. Taking into account the leading twist light-<lb/> cone distribution amplitude, we find that they are numerically smaller than those form factors of<lb/>  B  to ordinary scalar mesons. Semileptonic  B  →  Gl¯ ν, B  →  Gl   +   l   −   and  Bs  →  Gl   +   l   −   decays are<lb/> subsequently investigated. We also analyze the production rates of scalar mesons in semileptonic<lb/>  B  decays in the presence of mixing between scalar ¯<lb/>  qq  and glueball states. The glueball production<lb/> in  Bc  meson decays is also investigated and the LHCb experiment may discover this channel. The<lb/> sizable branching fraction in  Bc  →  (π   +   π   −   )l   −   ¯<lb/>  ν, Bc  →  (K   +   K   −   )l   −   ¯<lb/>  ν  or  Bc  →  (π   +   π   −   π   +   π   −   )l   −   ¯<lb/>  ν  could<lb/> be a clear signal for a scalar glueball state.<lb/></div>
+		
+		<keywords>PACS  numbers: 13.25.Hw,12.39.Ki<lb/></keywords>
+		<introduction>I.  INTRODUCTION<lb/></introduction>
+    </front>
+</text>
+</tei>                              

@@ -1,0 +1,31 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="1121"/>  
+	</teiHeader>
+<text xml:lang="en"> 
+	<front>    
+    	<idno>DOI:  10.1002/zaac.200700517 <lb/></idno>
+    			
+		<docTitle>
+			<titlePart type="main">Synthesis and Crystal Structure of (CH  3  NH  3  )  2  [Cu(NO  3  )  4  ]: a Rare Example of<lb/> a Tetranitratocuprate(II) with a Light Cation of the Type M  2  [Cu(NO  3  )  4  ]<lb/></titlePart>
+		</docTitle> 
+		
+		<byline><docAuthor>Georg Steinhauser  a, b,  *, Konstantin Karaghiosoff  b  , and Thomas M. Klapötke  b,  *<lb/> </docAuthor></byline>
+		
+		<address>a   Vienna/Austria,  </address>  
+		<byline><affiliation>Vienna University of Technology, Atominstitut der Österreichischen Universitäten <lb/></affiliation></byline> 
+		
+		<address>b  Munich/Germany,  </address>  
+		<byline><affiliation>Department of Chemistry and Biochemistry, Ludwig-Maximilian University <lb/></affiliation></byline> 
+		
+		<note type="submission">Received November 14  th  , 2007.<lb/></note>
+		
+		<div type="abstract">Abstract. The reaction of methylammonium nitrate and copper(II)<lb/>  nitrate pentahemihydrate in concentrated nitric acid yields the<lb/>  novel bis(monomethylammonium) tetranitratocuprate(II). By<lb/>  evaporation of the nitric acid at elevated temperatures single crys-<lb/>  tals suitable for crystal structure analysis by X-ray diffraction were<lb/> obtained. The crystal structure shows a clear Jahn-Teller distortion<lb/> in the octahedral nitratocuprate anion.<lb/> </div>  
+
+		<keywords>Keywords: Coordination chemistry; Cuprates; Jahn-Teller distor-<lb/> tion; Nitratocuprates(II); Crystal structures<lb/></keywords>
+		
+		<introduction>Introduction <lb/></introduction>
+		
+    </front>
+</text>
+</tei>                              

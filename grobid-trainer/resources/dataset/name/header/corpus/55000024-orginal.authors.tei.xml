@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Ryoji</forename>
+								<surname>Yamada</surname>,
+								<marker>*</marker>
+							</persName>
+							<persName>
+								<forename>Hajime</forename>
+								<surname>Sano</surname>
+								<marker>,* ,1</marker>
+							</persName>
+							<persName>
+								<forename>Timothy</forename>
+								<surname>Hla</surname>,
+								<marker>†</marker>
+							</persName>
+							<persName>
+								<forename>Akira</forename>
+								<surname>Hashiramoto</surname>,
+								<marker>*</marker>
+							</persName>
+							<persName>
+								<forename>Yutaka</forename>
+								<surname>Kawahito</surname>,
+								<marker>*</marker>
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Shigehiko</forename>
+								<surname>Mukai</surname> ,
+								<marker>*</marker>
+							</persName>
+							<persName>
+								<forename>Masataka</forename>
+								<surname>Kohno</surname> ,
+								<marker>*</marker>
+							</persName>
+							<persName>
+								<forename>Yasunori</forename>
+								<surname>Tsubouchi</surname> ,
+								<marker>*</marker>
+							</persName>
+							<persName>
+								<forename>Miki</forename>
+								<surname>Inoue</surname> ,
+								<marker>*</marker>
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Akiko</forename>
+								<surname>Komatsu</surname>,
+								<marker>*</marker>
+							</persName>
+							<persName>
+								<forename>Ken- ichiro</forename>
+								<surname>Inoue</surname>,
+								<marker>*</marker>and
+							</persName>
+							<persName>
+								<forename>Motoharu</forename>
+								<surname>Kondo</surname>
+								<marker>*</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="ZNA-1947-2a-0048"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Die Abscheidung strömender Apiezonölnebel durch Thermodiffusion<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Von RICHARD WEBER *<lb/></docAuthor>
+	</byline>
+
+	<reference>(Z. Naturforscher. 2 a, 48—55 [1947];</reference>
+
+	<note type="submission">eingegangen am 5. Okt. 1946)<lb/></note>
+
+	<div type="abstract">Es wird eine apparative Anordnung angegeben, mit deren Hilfe hochverdünnte Apiezonöl-<lb/>nebel in reproduzierbarer Weise erzeugt werden können. Um die Konzentration dieser<lb/> Nebel zu verfolgen, werden dieselben unter dem Tyndallometer beobachtet und in konstanten<lb/> Zeitabständen von 2 min die Streulichtintensität gemessen. Hierbei bleibt die Streulicht-<lb/>intensität während einer Versuchsdauer von 1 Stde. konstant. — Anschließend wird die<lb/> Abscheidung der Nebel beim Durchgang durch ein Thermodiffusionsrohr studiert. Hierbei<lb/> gelingt es, die Abscheidung in Abhängigkeit von Temperaturgradient, Strömungsgeschwin<lb/> digkeit und Massenkonzentration quantitativ zu erfassen. Für kleine Strömungsgeschwindig-<lb/>keiten stimmt die im thermischen Felde resultierende Geschwindigkeit der Teilchen mit der<lb/> an Hand einer Gleichung von A. Einstein ermittelten überein.<lb/></div>
+
+	<div type="introduction">I m Rahmen einer Reihe von Arbeiten über die<lb/></div>
+
+		</front>
+	</text>
+</tei>

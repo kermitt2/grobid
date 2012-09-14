@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="536"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">A PRINCIPLED REPRESENTATION OF ATTRIBUTIVE DESCRIPTIONS <lb/>FOR GENERATING INTEGRATED TEXT AND INFORMATION <lb/>GRAPHICS PRESENTATIONS <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Nancy Green*, Giuseppe Carenini**, and Johanna Moore** <lb/></docAuthor></byline>
+		<byline><affiliation>*Carnegie Mellon University, **University of Pittsburgh <lb/></affiliation></byline>
+		<email>nancy.green@cs.cmu.edu, </email> <email>{jmoore,carenini}@cs.pitt.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>This paper describes a media-independent, compositional, plan-based approach to representing attributive descriptions for use in integrated text and graphics generation. An attributive <lb/>description&apos;s main function is to convey information directly contributing to the communicative <lb/>goals of a discourse, whereas a referential description&apos;s only function is to enable the audience <lb/>to identify a particular referent. This approach has been implemented as part of an architecture <lb/>for generating integrated text and information graphics. Uses of referential and attributive descriptions are represented as two distinct types of communicative acts in a media-independent <lb/>plan. It is particularly important to distinguish the two types of acts, since they have different <lb/>consequences for dialogue and text generation, and for graphic design. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

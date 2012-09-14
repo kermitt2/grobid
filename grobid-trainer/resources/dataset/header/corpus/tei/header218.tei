@@ -1,0 +1,19 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="219"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<note type="reference">Appears in the Proceedings of the ACM SIGMOD International Conference on Management of Data, San Jose, CA, May 1995 <lb/></note>
+		<docTitle>
+			<titlePart type="main">Efficient Optimistic Concurrency Control <lb/>Using Loosely Synchronized Clocks <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Atul Adya Robert Gruber Barbara Liskov Umesh Maheshwari <lb/></docAuthor></byline>
+		<byline><affiliation>Laboratory for Computer Science, <lb/>Massachusetts Institute of Technology, <lb/></affiliation></byline>
+		<address>545 Technology Square, Cambridge, MA 02139 <lb/></address>
+		<email>{fadya,gruber,liskov,umeshg}@lcs.mit.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>This paper describes an efficient optimistic concurrency control <lb/>scheme for use in distributed database systems in which objects are <lb/>cached and manipulated at client machines while persistent storage <lb/>and transactional support are provided by servers. The scheme <lb/>provides both serializability and external consistency for committed <lb/>transactions; it uses loosely synchronized clocks to achieve global <lb/>serialization. It stores only a single version of each object, and <lb/>avoids maintaining any concurrency control information on a per- <lb/>object basis; instead, it tracks recent invalidations on a per-client <lb/>basis, an approach that has low in-memory space overhead and no <lb/>per-object disk overhead. In addition to its low space overheads, <lb/>the scheme also performs well. The paper presents a simulation <lb/>study that compares the scheme to adaptive callback locking, the <lb/>best concurrency control scheme for client-server object-oriented <lb/>database systems studied to date. The study shows that our <lb/>scheme outperforms adaptive callback locking for low to moderate <lb/>contention workloads, and scales better with the number of clients. <lb/>For high contention workloads, optimism can result in a high abort <lb/>rate; the scheme presented here is a first step toward a hybrid scheme <lb/>that we expect to perform well across the full range of workloads. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

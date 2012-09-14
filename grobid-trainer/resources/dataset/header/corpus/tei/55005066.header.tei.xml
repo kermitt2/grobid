@@ -1,0 +1,50 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005066"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<lb/>
+			<reference>Computers Math. Applie. Vol. 20, No. 8, pp. 13-35, 1990</reference>
+			<space dim="horizontal"/>
+			<note type="other">009%4943/90 $3.00+0.00<lb/></note>
+			<note type="copyright">Printed in Great Britain. All rights reserved<space dim="horizontal"/> Copyright © 1990
+				Pergamon Press pie<lb/></note>
+
+			<docTitle>
+				<titlePart>THE BIFURCATION<lb/> INTERPRETER:<lb/> A STEP TOWARDS<lb/> THE
+					AUTOMATIC<lb/> ANALYSIS OF DYNAMICAL<lb/> SYSTEMS<lb/></titlePart>
+			</docTitle>
+
+			<byline>
+				<docAuthor>H. ABELSON<lb/></docAuthor>
+			</byline>
+
+			<byline>
+				<affiliation>Artificial Intelligence Laboratory, Massachusetts Institute of
+					Technology,</affiliation>
+			</byline>
+
+			<address>77 Massachusetts Ave,<lb/> Cambridge, MA 62139, U.S.A.<lb/></address>
+
+			<note type="submission">(Received 9 October 1989)<lb/></note>
+
+			<div type="abstract">Al~tract--The Bifurcation Interpreter is a computer program that
+				autonomously explores the steady-state<lb/> orbits of one-parameter families of
+				periodically-driven oscillators. To report its findings, the Interpreter<lb/>
+				generates schematic diagrams and English text descriptions similar to those
+				appearing in the science and<lb/> engineering research literature. Given a system of
+				equations as input, the Interpreter uses symbolic algebra<lb/> to automatically
+				generate numerical procedures that simulate the system. The Interpreter
+				incorporates<lb/> knowledge about dynamical systems theory, which it uses to guide
+				the simulations, to interpret the results<lb/> and to minimize the effects of
+				numerical error.<lb/>
+			</div>
+			<div type="introduction">
+				1. INTRODUCTION<lb/> 
+			</div>
+
+		</front>
+	</text>
+</tei>

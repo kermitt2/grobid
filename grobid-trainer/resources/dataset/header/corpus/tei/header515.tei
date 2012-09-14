@@ -1,0 +1,19 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="518"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Quality-of-Service Routing for <lb/>Traffic with Performance <lb/>Guarantees <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Qingming Ma and Peter Steenkiste <lb/></docAuthor></byline>
+		<byline><affiliation>Computer Science Department, Carnegie Mellon University <lb/></affiliation></byline>
+		<address>Pittsburgh, PA 15213, USA,</address>
+		<email>{qma, prs}@cs.cmu.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>Quality-of-Service (QoS) routing tries to select a path that satisfies a set of <lb/>QoS constraints, while also achieving overall network resource efficiency. We <lb/>present initial results on QoS path selection for traffic requiring bandwidth <lb/>and delay guarantees. For traffic with bandwidth guarantees, we found that <lb/>several routing algorithms that favor paths with fewer hops perform well. For <lb/>traffic with delay guarantees, we show that for a broad class of WFQ-like <lb/>scheduling algorithms, the problem of finding a path satisfying bandwidth, <lb/>delay, delay-jitter, and/or buffer space constraints while at the same time <lb/>deriving the bandwidth that has to be reserved to meet these constraints, is <lb/>solvable by a modified version of the Bellman-Ford shortest-path algorithm <lb/>in polynomial time. <lb/></div>
+		<keywords>Keywords <lb/>Routing, quality of service, integrated services networks <lb/></keywords>
+		<div type="intro">1 INTRODUCTION</div>
+		</front>
+</text>
+</tei>

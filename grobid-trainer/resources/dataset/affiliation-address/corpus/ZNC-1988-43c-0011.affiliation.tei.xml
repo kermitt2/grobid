@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">Institut für Chemie</orgName> der
+							<orgName type="institution">Universität Hohenheim</orgName>,
+							<address>
+								<postCode>D-7000</postCode>
+								<settlement>Stuttgart 70</settlement>,
+								<country>Bundesrepublik Deutschland</country>
+								<lb/> 
+							</address>
+						</affiliation>	
+						<affiliation>
+							<orgName type="department">FB 15, Botanik</orgName>,
+							<orgName type="institution">Universität des Saarlandes</orgName>,
+							<address>
+								<postCode>D-6600</postCode>
+								<settlement>Saarbrücken</settlement>,
+								<country>Bundesrepublik Deutschland</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,683 @@
+<?xml version="1.0" encoding="UTF-8"?><patent-document status="new" lang="DE" ucid="EP-1510561-A1" country="EP" doc-number="1510561" kind="A1" date="20050302"><bibliographic-data><publication-reference fvid="24287273" ucid="EP-1510561-A1" status="new"><document-id status="new" format="original"><country>EP</country><doc-number>1510561</doc-number><kind>A1</kind><date>20050302</date><lang>DE</lang></document-id></publication-reference><application-reference ucid="EP-04026973-A" status="new" is-representative="NO"><document-id format="epo" status="new"><country>EP</country><doc-number>04026973</doc-number><kind>A</kind><date>20000117</date><lang>DE</lang></document-id></application-reference><priority-claims status="new"><priority-claim ucid="DE-19903391-A" status="new"><document-id format="epo" status="new"><country>DE</country><doc-number>19903391</doc-number><kind>A</kind><date>19990129</date></document-id></priority-claim><priority-claim ucid="EP-00100234-A" status="new"><document-id format="epo" status="new"><country>EP</country><doc-number>00100234</doc-number><kind>A</kind><date>20000117</date></document-id></priority-claim></priority-claims><dates-of-public-availability status="new"/><term-of-grant/><technical-data status="new"><classifications-ipcr><classification-ipcr status="new">C08F 257/00        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">C08F 257/02        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">C08F 265/00        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">C08F 265/04        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">C08F 265/06        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">C08F 285/00        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">C08F 285/00        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">C08F 291/00        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">C08F 291/00        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">C08G  18/00        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">C08G  18/62        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">C08G  18/70        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">C08G  18/79        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">C09D 151/00        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">C09D 151/00        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">C09D 175/04        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">C09D 175/04        20060101C I20051008RMEP        </classification-ipcr></classifications-ipcr><classification-ecla status="new"><classification-symbol scheme="EC">C08F257/02</classification-symbol><classification-symbol scheme="EC">C08F265/04</classification-symbol><classification-symbol scheme="EC">C08F265/06</classification-symbol><classification-symbol scheme="EC">C08F285/00</classification-symbol><classification-symbol scheme="EC">C08F291/00</classification-symbol><classification-symbol scheme="EC">C08G18/62G6D</classification-symbol><classification-symbol scheme="EC">C08G18/70K5D</classification-symbol><classification-symbol scheme="EC">C08G18/79D4</classification-symbol><classification-symbol scheme="EC">C09D151/00B+B</classification-symbol><classification-symbol scheme="EC">C09D151/00B+B4</classification-symbol><classification-symbol scheme="EC">C09D175/04</classification-symbol></classification-ecla><invention-title lang="DE" status="new">Wässriges Überzugsmittel, Verfahren zu seiner Herstellung und seine Verwendung</invention-title><invention-title lang="EN" status="new">Aqueous coating composition, process for production and use thereof</invention-title><invention-title lang="FR" status="new">Composition de revêtement aqueuse, procédé de fabrication et d'utilisation correspondants</invention-title><citations><patent-citations><patcit ucid="DE-4322242-A1" source="SEA" category="AD" created-by-npl="N" status="new"><document-id format="epo" status="new"><country>DE</country><doc-number>4322242</doc-number><kind>A1</kind></document-id></patcit><patcit ucid="EP-0358979-A2" source="SEA" category="AD" created-by-npl="N" status="new"><document-id format="epo" status="new"><country>EP</country><doc-number>0358979</doc-number><kind>A2</kind></document-id></patcit><patcit ucid="EP-0363723-A1" source="SEA" category="AD" created-by-npl="N" status="new"><document-id format="epo" status="new"><country>EP</country><doc-number>0363723</doc-number><kind>A1</kind></document-id></patcit><patcit ucid="EP-0365775-A1" source="SEA" category="AD" created-by-npl="N" status="new"><document-id format="epo" status="new"><country>EP</country><doc-number>0365775</doc-number><kind>A1</kind></document-id></patcit><patcit ucid="US-3821145-A" source="SEA" category="A" created-by-npl="N" status="new"><document-id format="epo" status="new"><country>US</country><doc-number>3821145</doc-number><kind>A</kind></document-id></patcit><patcit ucid="US-4414283-A" source="SEA" category="A" created-by-npl="N" status="new"><document-id format="epo" status="new"><country>US</country><doc-number>4414283</doc-number><kind>A</kind></document-id></patcit><patcit ucid="WO-1994004581-A1" source="SEA" category="A" created-by-npl="N" status="new"><document-id format="epo" status="new"><country>WO</country><doc-number>1994004581</doc-number><kind>A1</kind></document-id></patcit><patcit ucid="WO-1999067339-A1" source="SEA" category="AP" created-by-npl="N" status="new"><document-id format="epo" status="new"><country>WO</country><doc-number>1999067339</doc-number><kind>A1</kind></document-id></patcit></patent-citations></citations><figures/></technical-data><parties><applicants><applicant format="epo" status="new"><addressbook><name>BAYER MATERIALSCIENCE AG</name><address><country>DE</country></address></addressbook></applicant><applicant format="intermediate" status="new"><addressbook><name>BAYER MATERIALSCIENCE AG</name><address><country/></address></addressbook></applicant><applicant format="original" status="new"><addressbook><last-name>Bayer MaterialScience AG</last-name><address><street/><city>51368 Leverkusen</city><country>DE</country></address></addressbook></applicant></applicants><inventors><inventor format="epo" status="new"><addressbook><name>NOBLE KARL-LUDWIG DR</name><address><country>DE</country></address></addressbook></inventor><inventor format="epo" status="new"><addressbook><name>BLUM HARALD DR</name><address><country>DE</country></address></addressbook></inventor><inventor format="epo" status="new"><addressbook><name>HOVESTADT WIELAND DR</name><address><country>DE</country></address></addressbook></inventor><inventor format="epo" status="new"><addressbook><name>MELCHIORS MARTIN DR</name><address><country>DE</country></address></addressbook></inventor><inventor format="epo" status="new"><addressbook><name>BACHMANN ROLF DR</name><address><country>DE</country></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>NOBLE, KARL-LUDWIG, DR.</name><address><country/></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>BLUM, HARALD, DR.</name><address><country/></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>HOVESTADT, WIELAND, DR.</name><address><country/></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>MELCHIORS, MARTIN, DR.</name><address><country/></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>BACHMANN, ROLF, DR.</name><address><country/></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>NOBLE, KARL-LUDWIG, DR.</last-name><address><street>Kuhlmannweg 27</street><city>51375 Leverkusen</city><country>DE</country></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>BACHMANN, ROLF, DR.</last-name><address><street>Dellbrücker Strasse 246</street><city>51469 Bergisch Gladbach</city><country>DE</country></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>BLUM, HARALD, DR.</last-name><address><street>Paul-Klee-Strasse 42</street><city>51375 Leverkusen</city><country>DE</country></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>HOVESTADT, WIELAND, DR.</last-name><address><street>Weissdornweg 13</street><city>42799 Leichlingen</city><country>DE</country></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>MELCHIORS, MARTIN, DR.</last-name><address><street>Am Sandberg 35</street><city>42799 Leichlingen</city><country>DE</country></address></addressbook></inventor></inventors></parties><international-convention-data><designated-states><ep-contracting-states><country>AT</country><country>BE</country><country>CH</country><country>CY</country><country>DE</country><country>DK</country><country>ES</country><country>FI</country><country>FR</country><country>GB</country><country>GR</country><country>IE</country><country>IT</country><country>LI</country><country>LU</country><country>MC</country><country>NL</country><country>PT</country><country>SE</country></ep-contracting-states></designated-states></international-convention-data></bibliographic-data><abstract lang="DE" source="EPO" status="new"><p>Die Erfindung betrifft neue wässrige Überzugsmittel, die diesen Überzugsmitteln zugrunde liegenden Copolymerisate, ein Verfahren zu deren Herstellung und ihre Verwendung in Beschichtungsmitteln.</p></abstract><abstract lang="DE" status="new"><p num="">Die Erfindung betrifft neue wässrige Überzugsmittel, die diesen Überzugsmitteln zugrunde liegenden
+Copolymerisate, ein Verfahren zu deren Herstellung und ihre Verwendung in Beschichtungsmitteln.</p></abstract><abstract lang="EN" source="transcript" status="new"><p>Production of copolymers (I), in aqueous dispersion and/or solution form, involves: (i) predosing a mixture of hydroxy-functional hydrophobic copolymer and an organic solvent, heated to the polymerization temperature, with a radical initiator (RI); (ii) dosing in parallel with a specific hydrophobic, (almost) carboxy group-free monomer mixture and RI; and (iii) dosing in parallel with a specific hydrophilic monomer mixture and RI. The copolymers (I) are new. - Production of copolymers (I), in aqueous dispersion and/or solution form, involves: - (1) providing (a) 0-40 wt. % (based on (I)) of a hydroxy-functional hydrophobic copolymer (A1) having acid index less than 10 mg KOH per g (insufficient for dissolution in water) and OH content 0.5-7% (both based on 100% resin), number average molecular weight (Mn) 1500-20000 and organic solvent content 0-60 wt. % (based on (A1)) and (b) 0-15% (based on (A1)) additional organic solvent (A2), the mixture of (A1) and (A2) being heated to the required polymerization temperature before or during formation; - (2) predosing with 5-40% (based on the sum of (B1), (C2) and (D2) (defined subsequently)) of a radical initiator (B1), optionally dissolved in an organic solvent; - (3) dosing in parallel with (a) 40-80% (based on (I)) of a hydrophobic, (almost) carboxy group-free monomer mixture (C1) of (c1) 30-90% (1-18C) alcohol (meth)acrylate, vinyl aromatic compound and/or vinyl ester, (c2) 10-60% hydroxy-functional monomers and (c3) 0-2% acid group containing monomers (the sum of the amounts of (c1), (c2) and (c3) being 100%) and (b) 5-40% (based on the sum of (B1), (C2) and (D2)) of a radical initiator (C2), optionally dissolved in an organic solvent; and - (4) dosing in parallel with (a) 5-50% (based on (I)) of a hydrophilic monomer mixture (D1) of (d1) 10-70% (1-18C) alcohol (meth)acrylate, vinyl aromatic compound and/or vinyl ester, (d2) 10-70% hydroxy-functional monomers and (d3) 5-30% acid group containing monomers (the sum of the amounts of (d1), (d2) and (d3) being 100%) and (b) 5-40% (based on the sum of (B1), (C2) and (D2)) of a radical initiator (D2), optionally dissolved in an organic solvent, the total amount of the initiators (B1), (C2) and (D2) being 0.8-5.0 wt. % based on (I). - Independent claims are included for: - (a) the copolymers (I) obtained by the process as new; and - (b) aqueous coating compositions containing (I) having acid index less than 30 mg KOH per g (as solid resin), optionally other dissolved or dispersed binder components and crosslinkers dispersible or soluble in water or in the aqueous binder dispersion.</p></abstract><description lang="DE" status="new"><p num="0001">Die Erfindung betrifft neue wässrige Überzugsmittel, die diesen Überzugsmitteln zugrunde liegenden
+Copolymerisate, ein Verfahren zu deren Herstellung und ihre Verwendung in Beschichtungsmitteln.</p><p num="0002">Aus einer Vielzahl von Veröffentlichungen und Patenten ist bekannt, Dispersionen auf Basis von
+Copolymerisaten in wasserverdünnbaren Lacken und Beschichtungsmitteln einzusetzen.</p><p num="0003">In der <ref type="patent">EP-A 0 225 612</ref> und <ref type="patent">DE-A 3 543 361</ref> werden beispielsweise physikalisch trocknende Polymerisatdispersionen
+beschrieben, die nach einem zweistufigen Polymerisationsverfahren hergestellt
+werden, wobei ausschließlich eine der beiden Stufen Carboxylgruppen aufweisende Monomere
+enthält. Zur Erzielung einer guten Wasserfestigkeit der Beschichtungen wird Ammoniak als
+Neutralisationsmittel eingesetzt, Zusätze anderer Neutralisationsmittel verschlechtern die Wasserfestigkeit
+der Filme. Auf die Verwendung Hydroxylgruppen aufweisender Monomere wird verzichtet,
+da diese die Wasserfestigkeit ungünstig beeinflussen können.</p><p num="0004">In den <ref type="patent">EP-A 0 363 723</ref>, <ref type="patent">DE-A 4 009 858</ref>, <ref type="patent">DE-A 4 009 931</ref>, <ref type="patent">EP-A 0 521 919</ref>, <ref type="patent">DE-A 4 009 932</ref>,
+<ref type="patent">EP-A 0 365 775</ref> werden jeweils Verfahren zur Herstellung mehrschichtiger Überzüge beschrieben,
+bei denen zunächst eine Basisschicht aufgebracht, daraus ein Polymerfilm gebildet, dann eine
+Deckschicht aufgebracht und anschließend Basisschicht und Deckschicht gemeinsam eingebrannt
+werden. Für Basis- bzw. Deckschicht werden dabei nach einem zweistufigen Herstellverfahren
+erhaltene Copolymerisatdispersionen, gegebenenfalls in Kombination mit Aminoplastharzen eingesetzt.
+Durch die Verwendung dieser speziellen Copolymerisatdispersionen sind höhere Schichtstärken
+und gute filmoptische Eigenschaften möglich. Nachteilig bei all diesen Dispersionen ist
+der hohe Anteil an carboxylfunktionellen Monomeren im hydrophilen Copolymerisatteil.</p><p num="0005">In der <ref type="patent">JP-A 80 082 166</ref> werden zweistufig hergestellte Polyacrylatdispersionen beschrieben, die in
+beiden Stufen Carboxylgruppen enthalten, dies führt zu Dispersionen mit relativ niedrigen Festkörpergehalten
+und zu Beschichtungen mit verminderter Wasserfestigkeit.</p><p num="0006">In der <ref type="patent">US-A 4 151 143</ref> werden zweistufig hergestellte Polyacrylatdispersionen beschrieben, wobei
+die 1. Stufe in organischer Lösung hergestellt, anschließend dispergiert und in Gegenwart der
+1. Stufe eine Emulsionspolymerisation durchgeführt wird. Dadurch resultieren Produkte mit hohen
+Molekulargewichten, ungünstiger Verfilmung und insgesamt anderen Eigenschaften als übliche
+Sekundärdispersionen.</p><p num="0007">In der <ref type="patent">EP-A 0 557 844</ref> werden wässrige 2Komponenten-Polyurethan-Beschichtungen beschrieben
+auf Basis von praktisch carboxylatgruppenfreien, durch externe Emulgatoren stabilisierten Emulsionscopolymerisaten 
+und hydrophilen Polyisocyanaten. Aufgrund der hohen Molgewichte der
+Polymeren und der bleibenden Hydrophilie bei externen Emulgatoren weisen solche Beschichtungssysteme
+für einige Anwendungen noch Defizite in Wasserfestigkeit, Pigmentbenetzung und
+Filmoptik auf.</p><p num="0008">In der <ref type="patent">EP-A 0 358 979</ref> werden wässrige 2Komponenten-Polyurethan-Reaktivsysteme beschrieben,
+die bereits ein gutes Eigenschaftsniveau aufweisen. Für manche Anwendungen sind jedoch Verbesserungen
+im Festkörpergehalt, in der Wasserfestigkeit und der Verarbeitungszeit bzw.
+Applikationssicherheit wünschenswert.</p><p num="0009">In der <ref type="patent">DE-A 4 439 669</ref>, <ref type="patent">DE-A 4 322 242</ref> und <ref type="patent">JP-A 4 001 245</ref> werden wässrige 2-Komponenten-Polyurethan-Reaktivsysteme
+auf Basis zweistufig herstellbarer, spezielle Monomere enthaltender
+Copolymerisate beschrieben. Die speziellen Monomeren sollen verbesserte Eigenschaften ergeben,
+führen aber dazu, dass die Produkte erheblich teurer werden, so dass die wirtschaftliche Anwendungsmöglichkeiten
+eingeschränkt sind.</p><p num="0010">Neben den bereits aufgeführten Nachteilen der Polymerisatdispersionen des Stands der Technik
+weisen viele dieser Dispersionen eine mangelnde Lagerstabilität bezüglich der Viskosität auf, d.h.
+die Viskosität der Bindemitteldispersion verringert sich deutlich bei Lagerung. Abhilfe lässt sich
+durch eine deutliche Anhebung der Säurezahl des Bindemittels schaffen; dies erhöht aber in unerwünschter
+Weise die Hydrophilie daraus hergestellter Filme und verschlechtert so die Beständigkeitseigenschaften
+des Lackfilms. Eine wichtige Aufgabe der vorliegenden Erfindung war daher
+die Bereitstellung einer Bindemitteldispersion mit guter Lagerstabilität, die eine Säurezahl, bezogen
+auf Festharz, von &lt; 30 mg KOH / g aufweist. Aufgrund der ständig steigenden Ansprüche an
+das Eigenschaftsniveau von Lacken und Beschichtungen werden von den Bindemitteldispersionen
+und den daraus hergestellten Lacken außer einer guten Lagerstabilität des Bindemittels insbesondere
+ein hoher Festkörpergehalt, eine hohe Reaktivität bei guter Topfzeit, gute Beständigkeitseigenschaften
+gegen Lösemittel, Wasser und Umwelteinflüsse sowie sehr gute Filmoptik (Glanz)
+und Mechanik (Härte, Flexibilität) gefordert. Um in möglichst vielen Anwendungsbereichen einsetzbar
+zu sein, ist eine gute Verträglichkeit mit möglichst vielen handelsüblichen Vernetzern unabdingbar.
+Beim Herstellverfahren sollte die Verwendung zeit- und kostenintensiver Prozesse, wie
+z.B. Destillationsschritte vermieden werden.</p><p num="0011">Überraschenderweise wurde jetzt gefunden, dass wässrige Überzugsmittel auf Basis ausgewählter
+Copolymerisate P mit einer speziellen einheitlichen Molekulargewichtsverteilung, die nach dem
+im folgenden beschriebenen mehrstufigen Verfahren hergestellt werden, in der Lage sind,
+die gestellten Anforderungen zu erfüllen. </p><p num="0012">Die spezielle Molekulargewichtsverteilung der Copolymerisate P wird durch ein definiertes Herstellverfahren
+erzeugt, welches die folgenden Schritte beinhaltet:
+<sl><li>A) Vorlegen eines hydrophoben Polymers welches OH-Gruppen enthält, gegebenenfalls in
+einem organischen Lösungsmittel gelöst, in ein Reaktionsgefäß,</li><li>B): vordosieren eines Radikalstarters, gegebenenfalls gelöst in einem organischen Lösemittel,
+in das gleiche Reaktionsgefäß,</li><li>C): Polymerisation eines hydrophoben, OH-Gruppen enthaltenden Monomergemischs in diesem
+Reaktionsgefäß bzw. in dieser Reaktionsmischung und</li><li>D): Polymerisation eines hydrophilen, OH-Gruppen und Säuregruppen enthaltenden Monomergemischs
+in diesem Reaktionsgefäß bzw. in dieser Reaktionsmischung.</li></sl></p><p num="0013">Dieses Herstellverfahren beinhaltet keinen aufwendigen Destillationsschritt oder ähnliche zeit- und
+kostenintensive Prozesse. Durch Anwendung des erfindungsgemäßen Herstellverfahrens kann man
+wässrige Bindemitteldispersionen mit geringer Viskositätsdrift bei Lagerung erhalten, wobei den
+Bindemitteln eine Säurezahl, bezogen auf Festharz, von &lt;30 mg KOH/g genügt, um diese gute
+Viskositätsstabilität zu erreichen.</p><p num="0014">Bevorzugte Gegenstände der Erfindung sind wässrige Überzugsmittel aus mindestens einem hydroxyfunktionellen
+in Wasser dispergiert oder gelöst vorliegenden Copolymerisat P mit einer Säurezahl,
+bezogen auf Festharz, von &lt; 30 mg KOH/g, gegebenenfalls weiteren in dieser Mischung
+gelöst oder dispergiert vorliegenden Bindemittelkomponenten sowie einem oder mehreren
+wasserlöslichen, wasserdispergierbaren bzw. in der wässrigen Bindemitteldispersion löslichen
+oder dispergierbaren Vernetzern, dadurch gekennzeichnet, dass das Copolymerisat P durch aufeinanderfolgendes
+Ausführen der Prozessschritte A) - D):
+<sl><li>A): Vorlegen von
+<sl><li>A1) 0 bis 40 Gew.-% (bezogen auf das Copolymerisat P) eines hydroxyfunktionellen
+hydrophoben Copolymerisats mit einer für Dispergierung oder Lösen von A1 in
+Wasser nicht ausreichenden Säurezahl &lt;10 mg KOH/g, einem OH-Gehalt von 0,5
+bis 7 % (bezogen jeweils auf 100 %iges Harz), einem Zahlenmittel des Molekulargewichts
+von 1500 bis 20 000 und einem Gehalt an organischen Lösemitteln von 0
+bis 60 % (bezogen auf die Masse von A1),
+
+und </li><li>A2) 0 bis 15 % (bezogen auf das Copolymerisat P) zusätzlichen organischen
+Lösemitteln,</li></sl>
+   wobei vor, während oder im Anschluss von Schritt A auf die gewünschte Polymerisationstemperatur
+aufgeheizt wird,</li><li>B): vordosieren von 5 bis 40 % (bezogen auf die Summe B1 + C2 + D2) eines Radikalstarters
+B1, gegebenenfalls gelöst in einem organischen Lösemittel,</li><li>C): paralleles Zudosieren von 40 bis 80 % (bezogen auf das Copolymerisat P) eines hydrophoben,
+im Wesentlichen carboxylgruppenfreien Monomergemischs C1, bestehend aus
+<sl><li>c1) 30 bis 90 % (Meth)acrylsäurester mit C<sub>1</sub> bis C<sub>18</sub>-Kohlenwasserstoffresten im Alkoholteil
+und/oder Vinylaromaten und/oder Vinylester,</li><li>c2) 10 bis 60 % hydroxyfunktionellen Monomeren,</li><li>c3) 0 bis 2 % säuregruppenhaltigen Monomeren,</li></sl>
+   wobei sich c1 + c2 + c3 zu 100 % addieren,
+
+   und einem Radikalstarter C2 in einer Menge, die 25 - 90 % der Summe (B1 + C2 + D2)
+entspricht, gegebenenfalls gelöst in einem organischen Lösemittel</li><li>D): paralleles Zudosieren von 5 bis 50 % (bezogen auf das Copolymerisat P) eines hydrophilen
+Monomergemischs D1, bestehend aus
+<sl><li>d1) 10 bis 70 % (Meth)acrylsäureester mit C<sub>1</sub> bis C<sub>18</sub>-Kohlenwasserstoffresten im Alkoholteil
+und/oder Vinylaromaten und/oder Vinylester,</li><li>d2) 10 bis 70 hydroxyfunktionellen Monomeren und</li><li>d3) 5 bis 30 % säurefunktionellen Monomeren,</li></sl>
+   wobei sich d1 + d2 + d3 zu 100 % addieren, und einem Radikalstarter D2 in einer Menge,
+die 5 bis 40 % der Summe (B1 + C2 + D2) entspricht, gegebenenfalls gelöst in einem organischen
+Lösemittel, wobei die Gesamtmenge (B1 + C2 + D2) des Radikalstarters (bezogen
+auf das Copolymerisat P) 0,8 bis 5,0 % beträgt,
+
+erhalten wird.</li></sl></p><p num="0015">Gegenstand der Erfindung sind auch die nach oben beschriebenen Verfahren hergestellten Copolymerisatdispersionen
+P.</p><p num="0016">Gegenstand der Erfindung ist auch ein Verfahren zur Herstellung der erfindungsgemäßen in Wasser
+dispergiert und/oder gelöst vorliegenden Copolymerisate P, die Säurezahlen, bezogen auf Festharz,
+von &lt;30 mg KOH/g aufweisen, dadurch gekennzeichnet, dass man aufeinanderfolgend die
+Prozessschritte A bis D
+<sl><li>A: Vorlegen von
+<sl><li>A1) 0 bis 40 Gew.-% (bezogen auf das Copolymerisat P) eines hydroxyfunktionellen
+hydrophoben Copolymerisats mit einer für Dispergierung oder Lösen von A1 in
+Wasser nicht ausreichenden Säurezahl &lt;10 mg KOH/g, einem OH-Gehalt von 0,5
+bis 7 % (bezogen jeweils auf 100 %iges Harz), einem Zahlenmittel des Molekulargewichts
+von 1500 bis 20 000 und einem Gehalt an organischen Lösemitteln von 0
+bis 60 % (bezogen auf die Masse von A1), und</li><li>A2) 0 bis 15 % (bezogen auf das Copolymerisat P) zusätzlichen organischen Lösemitteln,
+
+   wobei vor, während oder im Anschluss von Schritt A auf die gewünschte Polymerisationstemperatur
+aufgeheizt wird,</li></sl></li><li>B): vordosieren von 5 bis 40 % (bezogen auf die Summe B1 + C2 + D2) eines Radikalstarters
+B1, gegebenenfalls gelöst in einem organischen Lösemittel,</li><li>C): paralleles Zudosieren von 40 bis 80 % (bezogen auf das Copolymerisat P) eines hydrophoben,
+im Wesentlichen carboxylgruppenfreien Monomergemisch C1, bestehend aus
+<sl><li>c1) 30 bis 90 % (Meth)acrylsäurester mit C<sub>1</sub> bis C<sub>18</sub>-Kohlenwasserstoffresten im Alkoholteil
+und/oder Vinylaromaten und/oder Vinylester,</li><li>c2) 10 bis 60 % hydroxyfunktionellen Monomeren,</li><li>c3) 0 bis 2 % säuregruppenhaltigen Monomeren,</li></sl>
+   wobei sich c1 + c2 + c3 zu 100 % addieren,
+
+   und einem Radikalstarter C2 in einer Menge, die 25 - 90 % der Summe (B1 + C2 + D2)
+entspricht, gegebenenfalls gelöst in einem organischen Lösemittel </li><li>D): paralleles Zudosieren von 5 bis 50 % (bezogen auf das Copolymerisat P) eines hydrophilen
+Monomergemischs D1, bestehend aus
+<sl><li>d1) 10 bis 70 % (Meth)acrylsäureester mit C<sub>1</sub> bis C<sub>18</sub>-Kohlenwasserstoffresten im
+Alkoholteil und/oder Vinylaromaten und/oder Vinylester,</li><li>d2) 10 bis 70 hydroxyfunktionellen Monomeren und</li><li>d3) 5 bis 30 % säurefunktionellen Monomeren,</li></sl>
+   wobei sich d1 + d2 + d3 zu 100 % addieren,
+
+   und einem Radikalstarter D2 in einer Menge, die 5 bis 40 % der Summe (B1 + C2 + D2)
+entspricht, gegebenenfalls gelöst in einem organischen Lösemittel, wobei die Gesamtmenge
+(B1 + C2 + D2) des Radikalstarters (bezogen auf das Copolymerisat P) 0,8 bis 5,0 %
+beträgt,
+
+ausführt.</li></sl></p><p num="0017">Gegenstand der Erfindung ist auch die Verwendung der erfindungsgemäßen wässrigen Überzugsmittel
+für chemisch vernetzbare Lacke und Beschichtungen.</p><p num="0018">Die erfindungsgemäßen Copolymerisate P weisen eine spezielle, insbesondere eine sehr einheitliche
+Molekulargewichtsverteilung auf. Überraschenderweise findet man bei den auf diesen Copolymerisaten
+basierenden Bindemitteldispersionen eine sehr gute Lagerstabilität, d.h. geringe Viskositätsdrift
+der Dispersion bei Lagerung, bei hohem Festkörpergehalt in Kombination mit hervorragenden
+Lackeigenschaften der daraus hergestellten Lacke, wie z.B. hohe Reaktivität bei guter
+Topfzeit, eine gute Verträglichkeit mit möglichst vielen handelsüblichen Vernetzern, gute Beständigkeitseigenschaften
+gegen Lösemittel, Wasser und Umwelteinflüsse sowie sehr gute Filmoptik
+(Glanz) und Mechanik (Härte, Flexibilität).</p><p num="0019">Bei dem im <b><u style="single">Prozessschritt A</u></b> vorzulegenden hydrophoben Copolymerisat A1 handelt es sich um
+ein Harz mit einem mittleren Molekulargewicht M<sub>n</sub> von 1500 bis 20 000, bevorzugt 2000 bis 6000,
+das einen Hydroxylgruppengehalt von 0,5 bis 7 %, bevorzugt 1 bis 4 % und eine für eine Alleindispergierung
+in Wasser nicht ausreichende Säurezahl von &lt;10 mg KOH/g aufweist. Das Copolymerisat
+A1 kann hydroxy- und säuregruppenfreie Vinylmonomere M1, hydroxyfunktionelle Vinylmonomere
+M2 und carboxyfunktionelle Monomere M3 enthalten.</p><p num="0020">Beispiele für Monomere der Gruppe M1 sind (Meth)acrylsäurester mit C<sub>1</sub> bis C<sub>18</sub>-Kohlenwasserstoffresten
+im Alkoholteil (z.B. Ethylacrylat, n-Butylacrylat, iso-Butylacrylat, 2-Ethylhexylacrylat, 
+Methylmethacrylat, Ethylmethacrylat, Butylmethacrylat, 2-Ethylhexylmethacrylat),
+Styrol, Vinyltoluol, α-Methylstyrol, Vinylester, Alkylenoxideinheiten enthaltende Vinylmonomere
+wie z.B. Kondensationsprodukte von (Meth)acrylsäure mit Oligoalkylenoxidmonoalkylethern bzw.
+Mischungen dieser und anderer Monomere.</p><p num="0021">Als hydroxyfunktionelle Monomere M2 können z.B. Hydroxyethylmethacrylat, Hydroxypropylmethacrylat,
+Hydroxyethylacrylat, Hydroxypropylacrylat, Hydroxybutylacrylat, Hydroxybutylmethacrylat
+oder Alkylenoxideinheiten enthaltende Hydroxymonomere, wie z.B. Additionsprodukte
+von Ethylenoxid, Propylenoxid oder Butylenoxid an (Meth) acrylsäure, verwendet werden.</p><p num="0022">Beispiele für erfindungsgemäß einzusetzende säurefunktionelle Monomere M3 sind z.B. Acrylsäure,
+Methacrylsäure, Maleinsäure(anhydrid) und andere carboxylfunktionelle oder anhydridfunktionelle
+copolymerisierbare Monomere.</p><p num="0023">Das Harz A1 wird in Mengen von 0 bis 40 %, bevorzugt von 10 bis 25 % (bezogen auf das Copolymerisat
+P) eingesetzt. Es kann lösemittelfrei oder bevorzugt gelöst in organischen Lösemitteln
+mit einem Festkörper von 40 bis 100 % vorliegen. Gegebenenfalls kann mit zusätzlichen organischen
+Lösemitteln A2 auf eine geeignete Viskosität verdünnt werden. Als Lösemittel kommen
+beliebige in der Lacktechnologie bekannte Lösemittel in Betracht, insbesondere solche, die üblicherweise
+als Colöser in wässrigen Dispersionen eingesetzt werden, wie z.B. Alkohole, Ether,
+Ethergruppen-haltige Alkohole, Ester, Ketone, N-Methylpyrrolidon oder unpolare Kohlenwasserstoffe
+bzw. Gemische dieser Lösemittel. Die organischen Lösemittel verbleiben in der Bindemitteldispersion,
+es erfolgt kein Destillationsschritt. Insbesondere wird Art und Menge der Komponente
+A2 so ausgewählt, dass eine ausreichende Kesselfüllhöhe und Wärmeabfuhr zu Beginn der
+Polymerisation von Teil C sichergestellt wird. Maximal werden als Komponente A2 15 %, bevorzugt
+3 bis 10 % (jeweils bezogen auf das Copolymerisat P) eingesetzt.</p><p num="0024">Bei der im <b><u style="single">Prozessschritt B</u></b> zuzugebenden Initiatorkomponente B1 handelt es sich um organische
+Peroxide wie z.B. Di-tert. Butylperoxid oder tert. Butylperoxy-2-ethylhexanoat und Azoverbindungen;
+B1 kann gegebenenfalls in einem organischen Lösemittel, das bevorzugt als Colöser in der
+fertigen Bindemitteldispersion verbleiben kann, als Lösung eingesetzt werden. Es ist erfindungswesentlich,
+dass 5 bis 40 %, bevorzugt 10 bis 25 % der insgesamt verwendeten Initiatormenge (B1
++ C2 + D2) als Komponente B1 vordosiert wird. Dies geschieht entweder bei Polymerisationstemperatur
+über einen Zeitraum von 5 bis 60 min, bevorzugt 10 bis 30 min, oder vor dem Aufheizen,
+wobei dann die A1, gegebenenfalls A2 und B1 enthaltende Mischung 5 bis 60 min, bevorzugt
+10 bis 30 min bei Polymerisationstemperatur gehalten wird, bevor mit der Dosierung der Komponenten
+C1 und C2 begonnen wird. </p><p num="0025">Anschließend werden im <b><u style="single">Prozessschritt C</u></b> parallel eine hydrophobe Monomermischung C1 und
+eine Initiatorkomponente C2 zudosiert.</p><p num="0026">Die Monomermischung C1 besteht aus
+<sl><li>c1) 30 bis 90 %, bevorzugt 40 - 80 % Monomeren der Gruppe M1, und</li><li>c2) 10 bis 60 %, bevorzugt 10 - 30 % hydroxyfunktionellen Monomeren der Gruppe M2
+
+und ist im Wesentlichen carboxylgruppenfrei. C1 kann aber auch</li><li>c3) 0 bis 2 %, bevorzugt 0 - 1 % säuregruppenhaltiger Monomere der Gruppe M3 enthalten,
+
+wobei die durch diese Monomere verursachte Säurezahl nicht für eine Dispergierung oder gar Lösen
+eines durch Polymerisation von C1 erhaltenen Harzes in Wasser ausreicht, und wobei sich c1 +
+c2 + c3 zu 100 % addieren.</li></sl></p><p num="0027">Die Gesamtmenge der hydrophoben Monomermischung C1 (bezogen auf das Copolymerisat P)
+beträgt 40 bis 80 %, bevorzugt 45 bis 70 %.</p><p num="0028">Bei der Initiatorkomponente C2 handelt es sich um Peroxid- oder Azoverbindungen der unter B1
+beschriebenen Art, gegebenenfalls gelöst in organischen Lösemitteln. Bevorzugt, aber nicht notwendigerweise
+wird als Komponente C2 die gleiche Initiatorverbindung wie in B1 eingesetzt. C2
+wird in einer Menge von 25 bis 90 %, bevorzugt 50 bis 80 % der insgesamt verwendeten Initiatormenge
+(B1 + C2 + D2) eingesetzt.</p><p num="0029">Im <b><u style="single">Prozessschritt D</u></b> dosiert man dann parallel eine hydrophile Monomermischung D1 und eine
+Initiatorkomponente D2 zu.</p><p num="0030">Die Monomermischung D1 besteht aus
+<sl><li>d1) 10 bis 70 %, bevorzugt 30 bis 70 % Monomeren der Gruppe M1,</li><li>d2) 10 bis 70 %, bevorzugt 20 bis 60 % hydroxyfunktionellen Monomeren der Gruppe M2 und</li><li>d3) 5 bis 30 %, bevorzugt 8 bis 20 % säuregruppenhaltigen Monomeren der Gruppe M3,</li></sl>
+wobei sich d1 + d2 + d3 zu 100 % addieren.</p><p num="0031">Bei der Initiatorkomponente D2 handelt es sich um Peroxid- oder Azoverbindungen der unter B1
+beschriebenen Art, gegebenenfalls gelöst in organischen Lösemitteln. Bevorzugt, aber nicht notwendigerweise
+wird als Komponente D2 die gleiche Initiatorverbindung wie in B1 und/oder C2 
+eingesetzt. D2 wird in einer Menge von 5 bis 40 %, bevorzugt 10 bis 25 % der insgesamt verwendeten
+Initiatormenge (B1 + C2 + D2) eingesetzt.</p><p num="0032">Die Gesamtmenge (B1 + C2 + D2) an eingesetztem Initiator beträgt 0,8 bis 5,0 %, bevorzugt 1,5
+bis 3,5 %, jeweils bezogen auf das Copolymerisat P. Die Polymerisation kann bei Temperaturen
+zwischen Raumtemperatur und 200°C, bevorzugt zwischen 50°C und 150°C durchgeführt werden.</p><p num="0033">Zur Herstellung eines erfindungsgemäßen Copolymerisats P werden die Dosierströme und Dosierzeiten
+von Monomer- und Initiatorkomponenten sowie die Polymerisationstemperatur im jeweiligen
+Prozessschritt so bemessen, dass das entstehende Copolymerisat ein mittleres Molekulargewicht
+M<sub>n</sub> von 3000 bis 7000, ein mittleres Molekulargewicht M<sub>w</sub> von 10 000 bis 25 000 und eine
+Molekulargewichtsverteilung M<sub>w</sub>/M<sub>n</sub> von 2,5 bis 4,0 aufweist. In einer bevorzugten Ausführungsform
+weist das erfindungsgemäß hergestellte Copolymerisat P ein mittleres Molekulargewicht M<sub>n</sub>
+von 3500 bis 5500, ein mittleres Molekulargewicht M<sub>w</sub> von 11 000 bis 20 000 und eine Molekulargewichtsverteilung
+M<sub>w</sub>/M<sub>n</sub> von 3,0 bis 4,0 auf. Ein besonders hohes Eigenschaftsniveau wird
+erreicht, wenn durch Anwendung des erfindungsgemäßen Verfahrens die nach den Prozessschritten
+C) und D) erhaltenen Werte von M<sub>n</sub> um weniger als 1500, bevorzugt um weniger als 800, und
+von M<sub>w</sub>/M<sub>n</sub> um weniger als 1,0, bevorzugt um weniger als 0,5 voneinander abweichen. Idealerweise
+weisen die im Prozessschritt D) aufgebauten Polymerketten ein mittleres Molekulargewicht M<sub>n</sub>
+von 3000 bis 4500 auf.</p><p num="0034">Die Copolymere P beinhalten sowohl ein Gemisch von Polymerketten, die in den Verfahrensschritten
+A, C und D gebildet werden als auch Mischungen von Copolymeren aus Bausteinen A1 und
+den Monomermischungen B1 und/oder C1 oder Mischungen von Copolymeren aus Monomermischungen
+von B1 und C1. Solche gemischten Copolymere werden durch radikalische Pfropfung
+oder Umesterungsreaktionen erzeugt. Sie sind für die Stabilität der wässrigen Dispersionen der
+Copolymere P hilfreich.</p><p num="0035">Die Molekulargewichtsverteilung wird mittels Gelpermeationschromatographie in THF, Fluss
+1 ml/min, kalibriert gegen Polystyrol-Eichstandards gemessen.</p><p num="0036">Wesentlich für die Eigenschaften der erfindungsgemäß hergestellten Copolymerisate P bzw. der
+daraus formulierten wässrigen Überzugsmittel ist es auch, dass die Prozessschritte A) - D) im Zusammenhang
+ausgeführt werden, d.h. dass die hydrophobe Monomermischung C1 in Gegenwart
+der Komponenten A1, gegebenenfalls A2 und B1 polymerisiert und die hydrophile Monomermischung
+D1 in Gegenwart des bis einschließlich Prozessschritt C) hergestellten Copolymers polymerisiert
+wird. Andere Vorgehensweisen, wie z.B. eine Umkehrung der Reihenfolge der Prozessschritte 
+C) und D) oder ein isoliertes Herstellen einzelner Teile des Copolymerisats P führen zu
+qualitativ schlechteren Dispersionen.</p><p num="0037">Der OH-Gehalt der 100 %igen Copolymerisate P beträgt 1 bis 8%, vorzugsweise 1,5 bis 5,5 %,
+und wird durch relative Menge der eingesetzten hydroxyfunktionellen Monomere M2 in den Prozessschritten
+C) und D) sowie durch die Wahl des im Prozessschritt A) eingesetzten hydrophoben
+Copolymerisats A1 eingestellt. Die Säurezahl des 100 %igen Copolymerisats P beträgt 12 bis 30,
+bevorzugt 15 bis 25 mg KOH/g, und wird durch die relative Menge der eingesetzten säurefunktionellen
+Monomere M3 in den Prozessschritten C) und D) sowie durch die Wahl des im Prozessschritt
+A) eingesetzten hydrophoben Copolymerisats A1 eingestellt. Erfindungswesentlich werden
+mindestens 60 %, bevorzugt mindestens 80 % der insgesamt eingebauten Säuregruppen im Prozessschritt
+D) in das Copolymerisat P eingebracht. Gegebenfalls kann das Copolymerisat P zur
+Hydrophilierung zusätzlich zu den Säuregruppen anteilig alkylenoxidhaltige Monomereinheiten in
+eingebauter Form oder auch externe Emulgatoren enthalten. Bevorzugt werden die Copolymerisate
+P aber nur durch Säuregruppen hydrophiliert.</p><p num="0038">Die erfindungsgemäßen Copolymerisate P enthalten 0 - 30 %, bevorzugt 5 - 20 % organische Lösemittel,
+die in der wässrigen Lieferform verbleiben. Als Lösemittel kommen beliebige in der
+Lacktechnologie bekannte Lösemittel in Betracht, insbesondere solche, die üblicherweise als Colöser
+in wässrigen Dispersionen eingesetzt werden, wie z.B. Alkohole, Ether, Ethergruppen-haltige
+Alkohole, Ester, Ketone, N-Methylpyrrolidon oder unpolare Kohlenwasserstoffe bzw. Gemische
+dieser Lösemittel. Bevorzugt kommt in den Copolymerisate P eine Lösemittelmischung aus 30 bis
+95, bevorzugt 50 bis 80 Gew.-% eines hydrophoben, nicht wassermischbaren, unverseifbaren Lösemittels
+i), wie z. B. Xylol, Toluol, Solvent Naphta, technische Kohlenwasserstoffgemische wie
+z.B. Isopar®, Terapin®, Kristallöl, Testbenzin, bzw. Mischungen dieser und anderer hydrophober
+Lösemittel sowie ii) 5 bis 70, bevorzugt 20 bis 50 Gew.-% wassermischbarer bzw. wasserlöslicher,
+unverseifbarer Lösemittel wie z.B. Butylglykol, Methoxypropanol, Butyldiglykol, Diethylenglykol,
+Dipropylenglykol, Ethylglykol, Propylglykol, Methyldiglykol bzw. Mischungen dieser und anderer
+wassermischbarer bzw. wasserlöslicher unverseifbarer Lösemittel zum Einsatz. Die Herstellung
+der Copolymerisate P erfolgt dabei vorzugsweise unter Ausschluss von Wasser, nur in organischen
+Lösemitteln.</p><p num="0039">Art und Menge des eingesetzten organischen Lösemittels bzw. Lösemittelgemischs wird so bemessen,
+dass einerseits die gewünschten Eigenschaften des Lacks wie z.B. Verlauf, Trocknung oder
+VOC-Wert erreicht und andererseits eine ausreichende Kesselfüllhöhe und Wärmeabfuhr zu Beginn
+der Polymerisation von Teil C sichergestellt wird. </p><p num="0040">Zur Neutralisation der im Copolymerisat P einpolymerisierten Carboxylgruppen können organische
+Amine oder wasserlösliche anorganische Basen eingesetzt werden. Bevorzugt sind N-Methylmorpholin,
+Triethylamin, Dimethylethanolamin, Dimethylisopropanolamin, Methyldiethanolamin.
+Ebenfalls geeignet sind Diethylethanolamin, Butanolamin, Morpholin, 2-Aminomethyl-2-methylpropanol,
+Isophorondiamin. Weniger gut geeignet, jedoch mitverwendbar ist Ammoniak.
+Das Neutralisationsmittel wird in solchen Mengen zugesetzt, dass 70 bis 170 %, vorzugsweise
+mehr als 90 % der Carboxylgruppen in Salzform vorliegen. Es wurde gefunden, dass bei diesem
+Neutralisationsgrad Dispersionsstabilität, Lackstabilität, Pigmentbenetzung und die filmoptischen
+Eigenschaften deutlich verbessert werden können.</p><p num="0041">Der pH-Wert der wässrigen Dispersion beträgt 6,0 bis 11,0, vorzugsweise 7,0 bis 9,0.</p><p num="0042">Die wässrigen Bindemitteldispersionen (= Dispersionen der Copolymerisate P) wiesen einen Festkörpergehalt
+von 30 bis 60 %, bevorzugt 40 bis 50 % sowie einen Gehalt an organischen Lösemitteln
+von 0 bis 15 %, bevorzugt 3 bis 10 % auf. Sollten besonders niedrige Lösemittelgehalte erforderlich
+sein, können die eingesetzten Lösemittel natürlich auch durch eine Destillation wieder
+teilweise entfernt werden; die Durchführung des erfindungsgemäßen Verfahrens wird dadurch aber
+nicht beeinträchtigt.</p><p num="0043">Die erfindungsgemäßen in Wasser dispergiert und/oder gelöst vorliegenden Copolymerisate P
+werden gegebenenfalls zusammen mit anderen Bindemitteln oder Dispersionen, z.B. auf Basis von
+Polyestern, Polyurethanen, Polyethern, Polyepoxiden oder Polyacrylaten in Kombination mit Vernetzerharzen
+und gegebenenfalls Pigmenten und sonstigen in der Lackindustrie bekannten Hilfsund
+Zusatzstoffen in oder als Lack bzw. Beschichtungsmittel eingesetzt. 50 bis 95 Gew.-%, vorzugsweise
+65 bis 90 Gew.-% Copolymerisat P, gegebenenfalls in Abmischung mit anderen Bindemitteln
+oder Dispersionen werden dabei mit 5 bis 50, vorzugsweise 10 bis 35 Gew.-% Vernetzerharz
+bzw. Mischungen verschiedener Vernetzerharze kombiniert.</p><p num="0044">Durch Kombination mit Vernetzern können dabei, je nach Reaktivität oder ggf. Blockierung der
+Vernetzer, sowohl Einkomponentenlacke als auch Zweikomponentenlacke formuliert werden. Unter
+Einkomponentenlacken im Sinne der vorliegenden Erfindung sind dabei Überzugsmittel zu
+verstehen, bei denen Bindemittelkomponente und Vernetzerkomponente zusammen gelagert werden
+können, ohne dass eine Vernetzungsreaktion in merklichen bzw. für die spätere Applikation
+schädlichen Ausmaß stattfindet. Die Vernetzungsreaktion findet erst bei Applikation nach einer
+Aktivierung des Vernetzers statt; diese Aktivierung kann z.B. durch Temperatursteigerung bewirkt
+werden. Unter Zweikomponentenlacken im Sinne der vorliegenden Erfindung versteht man Überzugsmittel,
+bei denen Bindemittelkomponente und Vernetzerkomponente aufgrund ihrer hohen
+Reaktivität in getrennten Gefäßen gelagert werden müssen. Die beiden Komponenten werden erst 
+kurz vor Applikation gemischt und reagieren dann im Allgemeinen ohne zusätzliche Aktivierung;
+zur Beschleunigung der Vernetzungsreaktion können aber auch Katalysatoren eingesetzt oder höhere
+Temperaturen angewendet werden.</p><p num="0045">Als Vernetzerharze eignen sich beispielsweise Amid- und Amin-Formaldehydharze, Phenolharze,
+Aldehyd- und Ketonharze, wie z. B. Phenol-Formaldehydharze, Resole, Furanharze, Hamstoffharze,
+Carbamidsäureesterharze, Triazinharze, Melaminharze, Benzoguanaminharze, Cyanamidharze,
+Anilinharze, wie sie in "Lackkunstharze", H. Wagner, H.F. Sarx, Carl Hanser Verlag München,
+1971, beschrieben sind.</p><p num="0046">Gut geeignet als Vernetzerharze sind auch blockierte Polyisocyanate, beispielsweise auf Basis von
+Isophorondiisocyanat, Hexamethylendiisocyanat, 1,4-Diisocyanatocyclohexan, Bis-(4-isocyanatocyclohexan)-methan
+oder 1,3-Diisocyanatobenzol oder auf Basis von Lackpolyisocyanaten wie
+Biuret- oder Isocyanuratgruppen aufweisende Polyisocyanate von 1,6-Diisocyanatohexan, Isophorondiisocyanat
+oder Bis-(4-isocyanatocyclohexan)-methan, oder Urethangruppen aufweisenden
+Lackpolyisocyanaten auf Basis von 2,4- und/oder 2,6-Diisocyanatotoluol oder Isophorondiisocyanat
+einerseits und niedermolekularen Polyhydroxylverbindungen wie Trimethylolpropan, den
+isomeren Propandiolen oder Butandiolen oder beliebigen Gemischen derartigen Polyhydroxylverbindungen
+andererseits.</p><p num="0047">Geeignete Blockierungsmittel für diese Polyisocyanate sind beispielsweise einwertige Alkohole
+wie Methanol, Ethanol, Butanol, Hexanol, Cyclohexanol, Benzylalkohol, Oxime wie Acetoxim,
+Methylethylketoxim, Cyclohexanonoxim, Lactame wie ε-Caprolactam, Phenole, Amine wie Diisopropylamin
+oder Dibutylamin, Dimethylpyrazol oder Triazol sowie Malonsäuredimethylester,
+Malonsäurediethylester oder Malonsäuredibutylester.</p><p num="0048">Die hydrophile Modifizierung der Copolymerisatkomponente A) reicht im allgemeinen aus, um
+auch die Dispergierbarkeit der Vernetzerharze, soweit es sich nicht ohnehin um wasserlösliche
+oder -dispergierbare Substanzen handelt, zu gewährleisten.</p><p num="0049">Wasserlösliche bzw. dispergierbare, blockierte Polyisocyanate sind z.B. durch Modifikation mit
+Carboxylat- und/oder Polyethylenoxidgruppen und/oder Polyethylenoxid/Polypropylenoxidgruppen
+erhältlich.</p><p num="0050">Ebenfalls geeignete Vernetzerharze sind niedrigviskose, hydrophobe oder hydrophile Polyisocyanate
+mit freien Isocyanatgruppen auf Basis aliphatischer, cycloaliphatischer, araliphatischer
+und/oder aromatischer Isocyanate. Diese Polyisocyanate weisen bei 23°C im allgemeinen eine
+Viskosität von 10 bis 3500 mPas auf. Falls erforderlich, können die Polyisocyanate in Abmischung 
+mit geringen Mengen an inerten Lösemitteln zum Einsatz gelangen, um die Viskosität auf einen
+Wert innerhalb des genannten Bereiches abzusenken.</p><p num="0051">Eine Hydrophilierung der Polyisocyanate ist z.B. durch Umsetzung mit unterschüssigen Mengen
+an einwertigen, hydrophilen Polyetheralkoholen möglich. Die Herstellung derartiger hydrophilierter
+Polyisocyanate ist beispielsweise in der <ref type="patent">EP-A 0 540 985</ref> beschrieben. Besonders gut geeignet
+sind auch die in der <ref type="patent">DE-A 19 822 891</ref> beschriebenen Allophanatgruppen enthaltenden Polyisocyanate,
+die durch Umsetzung monomerenarmer Polyisocyanate mit Polyethylenoxidpolyetheralkoholen
+unter Allophanatisierungsbedingungen hergestellt werden. Ebenso möglich ist die
+Hydrophilierung durch Zusatz handelsüblicher Emulgatoren.</p><p num="0052">Es können auch Mischungen verschiedener Vernetzerharze eingesetzt werden.</p><p num="0053">In einer bevorzugten Ausführungsform werden Mischungen eines hydrophilen und eines niedrigviskosen
+hydrophoben Polyisocyanats in Kombination mit den erfindungsgemäßen Dispersionen in
+wässrigen 2Komponenten-Systemen, welche bei Raumtemperatur reaktiv sind, eingesetzt. Bevorzugte
+Mischungen sind dabei Mischungen aus 30 bis 90 Gew.-% eines hydrophil modifizierten,
+gegebenenfalls Allophanatgruppen enthaltenden Polyisocyanats auf Basis Hexamethylendiisocyanat
+und 70 bis 10 Gew.-% eines nicht hydrophil modifizierten Polyisocyanats auf Basis Hexamethylendiisocyanat
+und/oder Isophorondiisocyanat und/oder Bis-(4-isocyana-tocyclohexyl)-methan,
+sowie Mischungen aus 10 bis 65 Gew.-% eines niedrigviskosen, nicht hydrophil modifizierten
+Polyisocyanats auf Basis von Hexamethylendiisocyanat mit Isocyanurat-, Biuret-, Allophanat-
+und/oder Uretdionstruktureinheiten und 90 bis 35 Gew.-% eines hydrophil modifizierten,
+gegebenenfalls Allophanatgruppen enthaltenden Polyisocyanats auf Basis Isophorondiisocyanat.
+Unter niedrigviskos sind dabei vorzugsweise Viskositäten von 10 bis 1500 mPas/23°C zu verstehen.
+Auch Triisocyanatononan kann allein oder in Mischungen als Vernetzerkomponente eingesetzt
+werden.</p><p num="0054">In einer weiteren bevorzugten Ausführungsform werden Mischungen aus gegebenenfalls hydrophil
+modifizierten Polyisocyanaten mit freien Isocyanatgruppen und Aminovernetzerharzen, welche
+vorzugsweise keine freien Aminogruppen aufweisen, mit den erfindungsgemäßen Bindemitteldispersionen
+kombiniert und vorzugsweise bei Temperaturen von 60 bis 120°C ausgehärtet. Solche
+Mischungen enthalten vorzugsweise 25 bis 68 Gew.-% Polyisocyanate mit freien Isocyanatgruppen
+und 75 bis 32 Gew.-% Aminovernetzerharze.</p><p num="0055">Vor, während oder nach der Herstellung der wässrigen Bindemittelkombinationen durch Abmischung
+der Einzelkomponenten und auch im Fall der Herstellung von einkomponentig zu verarbeitenden
+Beschichtungsmitteln können die üblichen Hilfs- und Zusatzmittel der Lacktechnologie 
+zugesetzt werden, wie z.B. Entschäumungsmittel, Verdickungsmittel, Pigmente, Dispergierhilfsmittel,
+Katalysatoren, Hautverhinderungsmittel, Antiabsetzmittel, Emulgatoren.</p><p num="0056">Die so erhaltenen erfindungsgemäßen Beschichtungsmittel eignen sich für alle Einsatzgebiete, in
+denen wässrige Anstrich- und Beschichtungssysteme mit einem erhöhten Eigenschaftsprofil Verwendung
+finden, z.B. Beschichtung mineralischer Baustoff-Oberflächen, Lackierung und Versiegelung
+von Holz und Holzwerkstoffen, Beschichtung metallischer Oberflächen (Metallbeschichtung);
+Beschichtung und Lackierung asphalt- oder bitumenhaltiger Beläge, Lackierung und Versiegelung
+diverser Kunststoffoberflächen (Kunststoffbeschichtung) sowie Hochglanzlacke.</p><p num="0057">Bei den unter erfindungsgemäßer Verwendung der erfindungsgemäßen Bindemittelkombinationen
+hergestellten Lacken bzw. Beschichtungsmitteln handelt es sich um Grundierungen, Füller, pigmentierte
+oder transparente Decklacke, Klarlacke und Hochglanzlacke, sowie Einschichtlacke, die
+in der Einzel- und Serienapplikation, z.B. im Bereich der Industrielackierung, Automobil-Erst- und
+-Reparaturlackierung, Anwendung finden können.</p><p num="0058">Bevorzugte Verwendungen der erfindungsgemäßen in Wasser dispergiert und/oder gelöst vorliegenden
+Copolymerisate P ist in Kombination mit Polyisocyanaten bzw. besonders bevorzugt in
+Kombination mit Mischungen von hydrophilen und hydrophoben Polyisocyanaten zur Beschichtung
+bzw. Lackierung metallischer Oberflächen oder Kunststoffen bei Raumtemperatur bis 140°C,
+oder in Kombination mit Aminovernetzerharzen zur Beschichtung und Lackierung metallischer
+Oberflächen bei 110 bis 180°C in Form von Einschichtlacken oder als Decklacke.</p><p num="0059">Die Herstellung der Beschichtung kann nach den unterschiedlichen Spritzverfahren wie beispielsweise
+Luftdruck-, Airless- oder Elektrostatik-Spritzverfahren unter Verwendung von Ein- oder
+gegebenenfalls Zweikomponenten-Spritzanlagen erfolgen. Die erfindungsgemäß herzustellenden
+und zu verwendenden Lacke und Beschichtungsmassen können jedoch auch nach anderen
+Methoden, beispielsweise durch Streichen, Rollen oder Rakeln appliziert werden. </p><heading><b><u style="single">Beispiele</u></b></heading><p num="0060">Die folgenden Beispiele sollen die Erfindung näher erläutern, ohne sie jedoch einzuschränken.
+Alle Angaben in % beziehen sich auf das Gewicht. Viskositätsmessungen wurden in einem Kegel-Platte-Viskosimeter
+nach DIN 53019 bei einem Schergefälle von 40 s<sup>-1</sup> durchgeführt. GPC-Messungen
+wurden auf einer Säulenkombination der Firma Macherey &amp; Nagel, gefüllt mit teilvernetztem
+Polystyrol/Divinylbenzol-Gel (Nucleogel), durchgeführt:
+<sl><li>1. (Vorsäule) Nucleogel GPC 10P, 10 µm, 50 x 7,7 mm</li><li>2. Nucleogel GPC 106-10, 10 µm, 300 x 7,7 mm</li><li>3. Nucleogel GPC 104-10, 10 µm, 300 x 7,7 mm</li><li>4. Nucleogel GPC 500-10, 10 µm, 300 x 7,7 mm</li><li>5. Nucleogel GPC 100-10, 10 µm, 300 x 7,7 mm</li></sl>
+weitere Hardware-Komponenten:
+<sl><li>Säulenofen: Merck L 7360;</li><li>Pumpe, Injektor: Hewlett Packard 1050 Serie II;</li><li>Detektoren: DAD Hewlett Packard 1050 + RI-Detektor Hewlett Packard 1047 A</li></sl></p><p num="0061">Laufmittel ist THF mit einer Flussrate von 0,6 ml/min bei einem Druck von ca. 65 bar; Messtemperatur
+ist 30°C. Es werden 100 µl Probe mit einer Polymerkonzentration von ca. 5,0 g/l eingespritzt.
+Die Kalibrierung erfolgt mit eng verteilten Polystyrol-Eichstandards der Fa. Polymer-Standard-Service
+GmbH (PSS) des entsprechenden Molekulargewichtsbereichs.</p><heading><b><u style="single">Beispiel 1</u></b> (erfindungsgemäß):</heading><p num="0062">In einem 6 1-Reaktionsgefäß mit Rühr-, Kühl- und Heizvorrichtung werden 515 g eines hydrophoben
+Polyacrylatharzes (Desmophen® A 160, Bayer AG), 60 Gew. %-ig gelöst in Solvent Naphtha
+100, mit einem OH-Gehalt (100 %ig) von 2,6 %, einer Säurezahl (100 %ig) von 5 mg KOH / g,
+einem mittleren Molekulargewicht M<sub>n</sub> von 4800 und einer Polydispersität M<sub>w</sub>/M<sub>n</sub> von 2,9, zusammen
+mit 172 g n-Butoxypropanol (A2) vorgelegt und auf 138°C aufgeheizt. Bei dieser Temperatur
+gibt man eine Lösung (B1) aus 8 g Di-<i>tert</i>.butylperoxid in 8 g n-Butoxypropanol in 20 min zu.
+Im Anschluss daran dosiert man eine Monomermischung (C1) aus 762 g Methylmethacrylat, 355 g
+Butylmethacrylat, 52 g Butylacrylat und 507 g Hydroxyethylmethacrylat sowie parallel dazu eine
+Lösung (C2) von 32,5 g Di-<i>tert</i>.butylperoxid in 35 g n-Butoxypropanol bei dieser Temperatur innerhalb
+von 4 Stunden 30 min zu. Man hält die Mischung 30 min bei 138°C und dosiert anschließend
+eine Mischung (D1) aus 128 g Methylmethacrylat, 100 g Butylacrylat, 180 g Hydroxyethylmethacrylat 
+und 60 g Acrylsäure sowie parallel dazu eine Lösung (D2) von 8 g Di-<i>tert</i>.butylperoxid
+in 20 g n-Butoxypropanol in 90 min zu. Nach einer weiteren Stunde Rühren bei 138°C
+wird auf 90°C abgekühlt, 78 g Dimethylethanolamin zugegeben, homogenisiert und in 2400 g
+Wasser dispergiert. Man erhält ein in Wasser dispergiert vorliegendes Copolymerisat P mit einem
+OH-Gehalt (100 %ig) von 3,9 %, einer Säurezahl (100 %ig) von 20 mg KOH/g und einem Festkörpergehalt
+von 47 % bei einer Viskosität (frisch hergestellt) von ca.1500 mPas (23°C, Schergefälle
+40<sup>-1</sup> ). Der pH-Wert (10 %ig in Wasser) beträgt 8,4, der Neutralisationsgrad beträgt 105 %.
+Die Dispersion ist gut filtrierbar und weist eine mittlere Teilchengröße von ca. 200 nm auf. Nach
+6 Wochen Lagerung bei Raumtemperatur beträgt die Viskosität der Dispersion 1200 mPas.</p><heading><b><u style="single">Beispiel 2</u></b> (erfindungsgemäß):</heading><p num="0063">Man verfährt wie in Bsp. 1, mit dem Unterschied, dass als Monomermischung C1 ein Gemisch aus
+438 g Methylmethacrylat, 410 g Butylmethacrylat, 437 g Isobutylmethacrylat und 390 g Hydroxyethylmethacrylat
+zudosiert wird. Die zur Dispergierung und Viskositätseinstellung notwendige
+Wassermenge beträgt hier ca. 2600 g. Man erhält ein in Wasser dispergiert vorliegendes Copolymerisat
+P mit einem OH-Gehalt (100 %ig) von 3,3 %, einer Säurezahl (100 %ig) von 21 mg
+KOH/g und einem Festkörpergehalt von 45 % bei einer Viskosität (frisch hergestellt) von
+ca.1450 mPas (23°C, Schergefälle 40<sup>-1</sup>). Der pH-Wert (10 %ig in Wasser) beträgt 8,3, der Neutralisationsgrad
+beträgt 105 %. Die Dispersion weist eine mittlere Teilchengröße von ca.170 nm auf.
+Nach 6 Wochen Lagerung bei Raumtemperatur beträgt die Viskosität der Dispersion 1100 mPas.</p><heading><b><u style="single">Beispiel 3</u></b> (erfindungsgemäß):</heading><p num="0064">Man verfährt wie in Bsp. 1, mit dem Unterschied, dass als Monomermischung C1 ein Gemisch aus
+135 g Methylmethacrylat, 525 g Butylmethacrylat, 625 g Isobomylmethacrylat und 390 g Hydroxyethylmethacrylat
+zudosiert wird. Die zur Dispergierung und Viskositätseinstellung notwendige
+Wassermenge beträgt hier ca. 2900 g. Man erhält ein in Wasser dispergiert vorliegendes Copolymerisat
+P mit einem OH-Gehalt (100 %ig) von 3,3 %, einer Säurezahl (100 %ig) von 21 mg
+KOH/g und einem Festkörpergehalt von 43 % bei einer Viskosität (frisch hergestellt) von
+ca.1400 mPas (23°C, Schergefälle 40<sup>-1</sup>). Der pH-Wert (10 %ig in Wasser) beträgt 8,3, der Neutralisationsgrad
+beträgt 105 %. Die Dispersion weist eine mittlere Teilchengröße von ca.160 nm auf.
+Nach 6 Wochen Lagerung bei Raumtemperatur beträgt die Viskosität der Dispersion 1050 mPas.</p><heading><b><u style="single">Beispiel 4</u></b> (erfindungsgemäß):</heading><p num="0065">In einem 6 1-Reaktionsgefäß mit Rühr-, Kühl- und Heizvorrichtung werden 515 g eines hydrophoben
+Polyacrylatharzes (Desmophen® A 160, Bayer AG), 60 %ig gelöst in Solvent Naphtha 100, 
+mit einem OH-Gehalt (100 %ig) von 2,6 %, einer Säurezahl (100 %ig) von 5 mg KOH / g, einem
+mittleren Molekulargewicht M<sub>n</sub> von 4800 und einer Polydispersität M<sub>w</sub>/M<sub>n</sub> von 2,9, zusammen mit
+einem Gemisch (A2) aus 88 g Butylglykol und 94 g Solvent Naphtha 100 vorgelegt und auf 143°C
+aufgeheizt. Bei dieser Temperatur gibt man eine Lösung (B1) aus 9 g Di-<i>tert</i>.butylperoxid in 9 g
+Solvent Naphtha 100 in 20 min zu. Im Anschluss daran dosiert man eine Monomermischung (C1)
+aus 234 g Methylmethacrylat, 295 g Butylmethacrylat, 544 g Butylacrylat und 698 g Hydroxypropylmethacrylat
+sowie parallel dazu eine Lösung (C2) von 35 g Di-<i>tert</i>.butylperoxid in 35 g Solvent
+Naphtha 100 bei dieser Temperatur innerhalb von 4 Stunden 30 min zu. Man hält die Mischung
+30 min bei 143°C und dosiert anschließend eine Mischung (D1) aus 113 g Butylacrylat, 187 g Hydroxypropylmethacrylat
+und 68 g Acrylsäure sowie parallel dazu eine Lösung (D2) von 9 g Di<i>tert</i>.butylperoxid
+in 9 g Solvent Naphtha 100 in 90 min zu. Nach einer weiteren Stunde Rühren
+bei 143°C wird auf 90°C abgekühlt, 83 g Dimethylethanolamin zugegeben, homogenisiert und in
+2400 g Wasser dispergiert. Man erhält ein in Wasser dispergiert vorliegendes Copolymerisat P mit
+einem OH-Gehalt (100 %ig) von 4,5 %, einer Säurezahl (100 %ig) von 24 mg KOH/g und einem
+Festkörpergehalt von 46 % bei einer Viskosität (frisch hergestellt) von ca.1700 mPas (23°C,
+Schergefälle 40<sup>-1</sup>). Der pH-Wert (10 %ig in Wasser) beträgt 8,5, der Neutralisationsgrad beträgt
+100 %. Die Dispersion ist gut filtrierbar und weist eine mittlere Teilchengröße von ca. 115 nm auf.
+Nach 6 Wochen Lagerung bei Raumtemperatur beträgt die Viskosität der Dispersion 1530 mPas.</p><heading><b><u style="single">Beispiel 5</u></b> (erfindungsgemäß):</heading><p num="0066">In einem 6 1-Reaktionsgefäß mit Rühr-, Kühl- und Heizvorrichtung werden 515 g eines hydrophoben
+Polyacrylatharzes (Desmophen® A 160, Bayer AG), 60 %ig gelöst in Solvent Naphtha 100,
+mit einem OH-Gehalt (100 %ig) von 2,6 %, einer Säurezahl (100 %ig) von 5 mg KOH/g, einem
+mittleren Molekulargewicht M<sub>n</sub> von 4800 und einer Polydispersität M<sub>w</sub>/M<sub>n</sub> von 2,9, zusammen mit
+172 g Butylglykol vorgelegt und auf 138°C aufgeheizt. Bei dieser Temperatur gibt man eine Lösung
+aus 8 g Di-<i>tert</i>.butylperoxid in 8 g Butylglykol in 20 min zu. Im Anschluss daran dosiert man
+eine Mischung aus 678 g Methylmethacrylat, 106 g Styrol, 503 g Butylacrylat und 390 g Hydroxyethylmethacrylat
+sowie parallel dazu eine Lösung von 32,5 g Di-<i>tert</i>.butylperoxid in 35 g Butylglykol
+bei dieser Temperatur innerhalb von 4 h zu. Man hält die Mischung 30 min bei 138°C und
+dosiert anschließend eine Mischung aus 128 g Methylmethacrylat, 100 g Butylacrylat, 180 g
+Hydroxyethylmethacrylat und 58 g Acrylsäure sowie parallel dazu eine Lösung von 8 g Di<i>tert</i>.butylperoxid
+in 20 g Butylglykol in 90 min zu. Nach einer weiteren Stunde Rühren bei 138°C
+wird auf 90°C abgekühlt, 78 g Dimethylethanolamin zugegeben, homogenisiert und in 2300 g
+Wasser dispergiert. Man erhält ein in Wasser dispergiert vorliegendes Copolymerisat P mit einem
+OH-Gehalt (100 %ig) von 3,3 %, einer Säurezahl (100 %ig) von 20 mg KOH/g und einem Festkörpergehalt
+von 47 % bei einer Viskosität (frisch hergestellt) von ca.1500 mPas (23°C, Schergefälle 
+40<sup>-1</sup> ). Der pH-Wert (10 %ig in Wasser) beträgt 8,5, der Neutralisationsgrad beträgt 105 %.
+Die Dispersion ist gut filtrierbar und weist eine mittlere Teilchengröße von ca.120 nm auf. Nach
+6 Wochen Lagerung bei Raumtemperatur beträgt die Viskosität der Dispersion 1270 mPas.</p><heading><b><u style="single">Beispiel 6</u></b> (nicht erfindungsgemäß):</heading><p num="0067">In einem 6 1-Reaktionsgefäß mit Rühr-, Kühl- und Heizvorrichtung werden 515 g eines hydrophoben
+Polyacrylatharzes (Desmophen® A 160, Bayer AG), 60 %ig gelöst in Solvent Naphtha 100,
+mit einem OH-Gehalt (100 %ig) von 2,6 %, einer Säurezahl (100 %ig) von 5 mg KOH/g, einem
+mittleren Molekulargewicht M<sub>n</sub> von 4800 und einer Polydispersität M<sub>w</sub>/M<sub>n</sub> von 2,9, zusammen mit
+156 g Butylglykol vorgelegt und auf 138°C aufgeheizt. Bei dieser Temperatur dosiert man zunächst
+eine Mischung aus 756 g Methylmethacrylat, 500 g Butylacrylat und 390 g Hydroxyethylmethacrylat
+in 3 h und, nach 30 min Halten der Temperatur, daran anschließend in weiteren
+90 min eine Mischung aus 127 g Methylmethacrylat, 100 g Butylacrylat, 180 g Hydroxyethylmethacrylat
+und 58 g Acrylsäure zu. Parallel zur Monomerdosierung gibt man eine Lösung von
+80 g Di-<i>tert</i>.butylperoxid in 80 g Butylglykol in einer solchen Geschwindigkeit zu, dass die Peroxid-Dosierung
+40 min nach Beendigung der Monomerdosierung abgeschlossen ist; während der
+30-minütigen Dosierpause zwischen den Monomerströmen wird auch die Peroxiddosierung unterbrochen.
+Nach Beendigung der Monomer- und Peroxidzugabe wird noch 2 h bei 138°C gerührt,
+auf 90°C abgekühlt, 78 g Dimethylethanolamin zugegeben, homogenisiert und in 2600 g Wasser
+dispergiert. Man erhält eine wässrige Copolymerisat-Dispersion mit einem OH-Gehalt (100 %ig)
+von 3,3 %, einer Säurezahl (100 %ig) von 20 mg KOH/g und einem Festkörpergehalt von 45 % bei
+einer Viskosität (frisch hergestellt) von ca.1500 mPas (23°C, Schergefälle 40<sup>-1</sup> ). Der pH-Wert
+(10 %ig in Wasser) beträgt 8,5, der Neutralisationsgrad beträgt 105 %. Die Dispersion ist gut filtrierbar
+und weist eine mittlere Teilchengröße von ca.140 nm auf. Nach 6 Wochen Lagerung bei
+Raumtemperatur beträgt die Viskosität der Dispersion 680 mPas.</p><heading><b><u style="single">Beispiel 7</u></b> (nicht erfindungsgemäß)</heading><p num="0068">In einem 6 1-Reaktionsgefäß mit Rühr-, Kühl- und Heizvorrichtung werden 186 g Butylglykol und
+186 g Solvent Naphta eingewogen und auf 143°C erhitzt. Dann wird eine Mischung I) aus 750 g
+Methylmethacrylat, 125 g Styrol, 445 g Hydroxyethylmethacrylat, 538 g Butylacrylat und 87 g
+Butylmethacrylat in 3 Stunden und direkt im Anschluss daran eine Mischung II) aus 128 g Methylmethacrylat,
+180 g Hydroxyethylmethacrylat, 100 g Butylacrylat und 60 g Acrylsäure in 1½ Stunden
+zudosiert. Parallel dazu werden in 5 Stunden 88 g Di-tert. Butylperoxid in 70 g einer 1:1 Mischung
+von Butylglykol und Solvent Naphta zudosiert. Nach weiteren 2 Stunden Rühren bei 145°C
+wird auf 100°C abgekühlt, 76 g Dimethylethanolamin zugegeben, homogenisiert und in 2700 g
+Wasser dispergiert. Man erhält ein in Wasser dispergiert vorliegendes Copolymerisat mit einem 
+OH-Gehalt (100 %ig) von 3,3 %, einer Säurezahl (100 %ig) von 21 mg KOH/g und einem Festkörpergehalt
+von 44 % bei einer Viskosität (frisch hergestellt) von ca.800 mPas (23°C, Schergefälle
+40<sup>-1</sup> ). Der pH-Wert (10 %ig in Wasser) beträgt 8,1, der Neutralisationsgrad beträgt 105 %. Die
+Dispersion ist gut filtrierbar und weist eine mittlere Teilchengröße von ca.105 nm auf. Nach
+6 Wochen Lagerung bei Raumtemperatur beträgt die Viskosität der Dispersion 360 mPas.</p><heading><b><u style="single">Beispiel 8</u></b> (nicht erfindungsgemäß):</heading><p num="0069">Man verfährt wie bei Beispiel 9, dispergiert jedoch nur in ca. 2600 g Wasser. Man erhält eine Dispersion
+mit einem OH-Gehalt (100 %ig) von 3,3 %, einer Säurezahl (100 %ig) von 21 mg KOH/g
+und einem Festkörpergehalt von ca. 45 % bei einer Viskosität (frisch hergestellt) von ca.1500
+mPas (23°C, Schergefälle 40<sup>-1</sup>). Der pH-Wert (10 %ig in Wasser) beträgt 8,1, der Neutralisationsgrad
+beträgt 105 %. Die Dispersion ist gut filtrierbar und weist eine mittlere Teilchengröße von
+ca.110 nm auf. Nach 6 Wochen Lagerung bei Raumtemperatur beträgt die Viskosität der Dispersion
+600 mPas.</p><heading><b><u style="single">Beispiel 9</u></b> (nicht erfindungsgemäß, entspricht Bsp. A1 aus <ref type="patent">EP-A 0 358 979</ref>):</heading><p num="0070">In einem 4 1-Reaktionsgefäß mit Rühr-, Kühl- und Heizvorrichtung werden 900 g Butylacetat vorgelegt
+und auf 110°C erhitzt. Dann wird eine Mischung aus 381 g Methylmethacrylat, 459 g
+Hydroxyethylmethacrylat, 450 g Butylacrylat, 150 g Acrylsäure und 50 g AIBN in 4 Stunden
+gleichmäßig zudosiert. Man hält 30 min bei 110°C und gibt anschließend 10 g <i>tert</i>.Butylperoctoat
+in 110 g Butylacetat zu. Nach weiteren 6 Stunden Nachrühren bei 110°C destilliert man
+bei 200 bis 400 mbar ca. 100 ml Butylacetat ab; diese abdestillierte Menge wird durch frisches
+Butylacetat ersetzt.</p><p num="0071">In einem 6 1-Reaktionsgefäß mit Rühr-, Kühl- und Heizvorrichtung und Destillationsbrücke legt
+man dann eine auf 95°C erwärmte Lösung von 143 g 25 %iger Ammoniaklösung in 3500 g dest.
+Wasser vor. Man lässt nun die Polymerlösung in einer Stunde in die wässrige Ammoniaklösung
+fließen und destilliert das Butylacetat azeotrop ab. Die Menge des mit Butylacetat abdestillierten
+Wassers wird kontinuierlich ersetzt. Man erhält ein in Wasser dispergiert vorliegendes Copolymerisat
+mit einem OH-Gehalt (100 %ig) von 4,0 %, einer Säurezahl (100 %ig) von 90 mg KOH/g und
+einem Festkörpergehalt von 28 % bei einer Viskosität (frisch hergestellt) von ca.2000 mPas (23°C,
+Schergefälle 40<sup>-1</sup>). Der pH-Wert (10 %ig in Wasser) beträgt 6,4, der Neutralisationsgrad beträgt
+101 %. Die Dispersion weist eine mittlere Teilchengröße von ca. 30 nm auf. Nach 6 Wochen Lagerung
+bei Raumtemperatur ist die Viskosität der Dispersion auf 3100 mPas angestiegen. </p><heading><b><u style="single">Beispiel 10</u></b> (nicht erfindungsgemäß, entspricht Bsp. P6 aus <ref type="patent">EP-A 0 365 775</ref>):</heading><p num="0072">In einem 6 1-Reaktionsgefäß mit Rühr-, Kühl- und Heizvorrichtung werden 500 g Butylglykol eingewogen
+und auf 140°C erhitzt. Dann wird eine Mischung aus 750 g Methylmethacrylat, 575 g
+Hydroxypropylacrylat, 550 g Butylacrylat und 500 g Butylmethacrylat in 3 Stunden 50 min und
+direkt im Anschluss daran 125 g Acrylsäure in 20 min zudosiert. Parallel dazu wird in 4 Stunden
+30 min eine Lösung von 112,5 g tert.Butylperbenzoat in 125 g Butylglykol zudosiert. Nach Beendigung
+der Zugabe der Initiatorlösung rührt man 1 weitere Stunde bei 140°C; dann wird auf 95°C
+abgekühlt, 124 g Dimethylethanolamin zugegeben, homogenisiert und in 2900 g Wasser dispergiert.
+Man erhält ein in Wasser dispergiert vorliegendes Copolymerisat mit einem OH-Gehalt
+(100 %ig) von 3,0 %, einer Säurezahl (100 %ig) von 39 mg KOH/g und einem Festkörpergehalt
+von 43 % bei einer Viskosität (frisch hergestellt) von ca. 1600 mPas (23°C, Schergefälle 40<sup>-1</sup>). Der
+pH-Wert (10 %ig in Wasser) beträgt 7,4, der Neutralisationsgrad beträgt 80 %. Die Dispersion
+weist eine mittlere Teilchengröße von ca. 135 nm auf. Mit einem Gehalt von 10,3 % bezogen auf
+Lieferform an Butylglykol weist die Dispersion einen sehr hohen Gehalt organischer Colöser auf.
+Nach 6 Wochen Lagerung bei Raumtemperatur beträgt die Viskosität der Dispersion 1270 mPas.</p><heading><b><u style="single">Beispiel 11</u></b> (nicht erfindungsgemäß, entspricht Bsp. P2 aus <ref type="patent">EP-A 0 363 723</ref>):</heading><p num="0073">In einem 6 1-Reaktionsgefäß mit Rühr-, Kühl- und Heizvorrichtung werden 500 g Butylglykol eingewogen
+und auf 140°C erhitzt. Dann wird eine Mischung aus 187 g Methylmethacrylat, 187 g
+Styrol, 288 g Hydroxypropylacrylat, 275 g Butylacrylat und 250 g Butylmethacrylat in 1 Stunden
+53 min und direkt im Anschluss daran 62,5 g Acrylsäure in 7min zudosiert. Anschließend wird
+erneut eine Mischung aus 187 g Methylmethacrylat, 187 g Styrol, 288 g Hydroxypropylacrylat,
+275 g Butylacrylat und 250 g Butylmethacrylat in 1 Stunden 52 min und direkt im Anschluss daran
+62,5 g Acrylsäure in 8 min zudosiert. Parallel dazu wird in 4 Stunden 30 min, beginnend mit dem
+Start des ersten Monomerzulaufs, eine Lösung von 112,5 g tert.Butylperbenzoat in 125 g Butylglykol
+zudosiert. Nach Beendigung der Zugabe der Initiatorlösung rührt man 1 weitere Stunde bei
+140°C; dann wird auf 95°C abgekühlt, 124 g Dimethylethanolamin zugegeben, homogenisiert und
+in 2950 g Wasser dispergiert. Man erhält ein in Wasser dispergiert vorliegendes Copolymerisat mit
+einem OH-Gehalt (100 %ig) von 3,0 %, einer Säurezahl (100 %ig) von 40 mg KOH/g und einem
+Festkörpergehalt von 42 % bei einer Viskosität (frisch hergestellt) von ca.1400 mPas (23°C,
+Schergefälle 40<sup>-1</sup>). Der pH-Wert (10 %ig in Wasser) beträgt 7,7, der Neutralisationsgrad beträgt
+80 %. Die Dispersion weist eine mittlere Teilchengröße von ca. 190 nm auf. Mit einem Gehalt von
+10,1 % bezogen auf Lieferform an Butylglykol weist die Dispersion einen sehr hohen Gehalt organischer
+Colöser auf. Nach ca. 4 Wochen Lagerung bei Raumtemperatur zeigt die Dispersion Phasentrennung. </p><heading><b><u style="single">Beispiel 12</u></b> (nicht erfindungsgemäß, entspricht Bsp. A2 aus <ref type="patent">DE-A 4 322 242</ref>):</heading><p num="0074">In einem 6 1-Reaktionsgefäß mit Rühr-, Kühl- und Heizvorrichtung werden 480 g Ethoxyethylpropionat
+und 200 g Cardura® E 10 (Glycidylester der Versaticsäure, Shell Chem.) eingewogen und
+auf 120°C erhitzt. Dann wird eine Mischung aus 160 g Methylmethacrylat, 154g Styrol, 220 g
+Hydroxyethylmethacrylat, 100 g 2-Ethylhexylacrylat und 200 g Butylmethacrylat in 2 Stunden und
+direkt im Anschluss daran eine Mischung aus 160 g Methylmethacrylat, 154g Styrol, 220 g Hydroxyethylmethacrylat,
+100 g 2-Ethylhexylacrylat, 200 g Butylmethacrylat und 132 g Acrylsäure in
+2 Stunden zudosiert. Parallel dazu wird in 4 Stunden 30 min, beginnend mit dem Start des ersten
+Monomerzulaufs, 245 g einer 49 %igen Lösung tert.Butylper(ethylhexanoat) in Butylacetat zudosiert.
+Nach Beendigung der Zugabe der Initiatorlösung rührt man weitere 90 min bei 120°C; dann
+wird auf 80°C abgekühlt, in 30 min 55 g Dimethylethanolamin zugegeben, homogenisiert und mit
+2700 g Wasser dispergiert. Aus dieser Dispersion wird das organische Lösemittel weitgehend im
+Vakuum azeotrop abdestilliert; per GC wurde ein Restgehalt von 6 % nachgewiesen. Das abdestillierte
+Wasser wird zurückgeführt. Man erhält ein in Wasser dispergiert vorliegendes Copolymerisat
+mit einem OH-Gehalt (100 %ig) von 3,5 %, einer Säurezahl (100 %ig) von 33 mg KOH/g und
+einem Festkörpergehalt von 46 % bei einer Viskosität (frisch hergestellt) von ca. 1300 mPas
+(23°C, Schergefälle 40<sup>-1</sup>). Der pH-Wert (10 %ig in Wasser) beträgt 7,8, der Neutralisationsgrad
+beträgt 60 %. Die Dispersion weist eine mittlere Teilchengröße von ca. 200 nm auf. Bereits nach
+einer Lagerzeit von 3 Wochen bei Raumtemperatur zeigt die Dispersion Phasentrennung.</p><p num="0075">Folgende Vernetzerharze werden in den Anwendungsbeispielen als Härter verwendet, alle Additive
+in den Präparationen können durch ähnliche, dem Fachmann bekannte Additive entsprechender
+Funktion ersetzt werden:</p><heading><b><i>Polyisocyanat H1</i>:</b></heading><p num="0076">Niedrigviskoses hydrophobes Polyisocyanat mit Isocyanuratstruktureinheiten auf Basis von Hexamethylendiisocyanat,
+Viskosität bei 23°C: ca. 1200 mPas, NCO-Gehalt: ca. 23,5 % (Desmodur® N
+3600 (Bayer AG))</p><heading><b><i>Polyisocyanat H2:</i></b></heading><p num="0077">Hydrophiliertes Polyisocyanat mit Isocyanuratstruktureinheiten auf Basis von Hexamethylendiisocyanat,
+Viskosität bei 23°C: ca. 3500 mPas, NCO-Gehalt: ca. 17% (Bayhydur® 3100
+(Bayer AG)) </p><heading><b><i>Aminovernetzerharz H3:</i></b></heading><p num="0078">Handelsübliches Melaminharz Cymel® 327 (Cytec)</p><heading><b><i>Polyisocyanat H4:</i></b></heading><p num="0079">40 %ige wässrige Dispersion eines blockiertes Polyisocyanatvernetzers (Bayhydur® BL 5140, Bayer
+AG)</p><heading><b><u style="single">Anwendungsbeispiel 1:</u></b></heading><heading><u style="single">Herstellung eines pigmentierten Decklacks (Tabelle 1)</u></heading><p num="0080">220 g Bindemittel-Dispersion aus Beispiel 1, 5 g Surfynol® 104 (Air Products), 30 g dest. Wasser,
+186 g Titandioxid Bayertitan® R-KB-4 (Bayer AG) werden in einem Schüttler angerieben. 150 g
+des so erhaltenen Mahlguts werden mit 34 g Dispersion aus Bsp. 1, 0,44 g Byk® 346 (Byk Chemie),
+0,67 g Byk® 380 (Byk Chemie) 1,2 g Acrysol® RM8 (20 % in Ethanol, Rohm &amp; Haas),
+15,9 g des Polyisocyanats H1 und 21,7 g des Polyisocyanats H2 in einem Dissolver vermischt und
+mit ca. 38 g dest. Wasser auf eine Viskosität von ca. 30 Sekunden bei 23°C im DIN 4 Auslaufbecher
+eingestellt. Der Lackfestkörper liegt bei 54 %, der pH-Wert bei 8,2. Das NCO:OH-Verhältnis
+beträgt 1,5:1. Nach Applikation auf ein entfettetes Stahlblech wird der Lack bei Raumtemperatur
+getrocknet. Man erhält einen hochglänzenden harten Lackfilm. Kenndaten und Prüfergebnisse
+siehe Tabelle 1.</p><heading><b><u style="single">Anwendungsbeispiele 2 - 4 und Vgl.5 - Vgl. 9</u></b></heading><heading><u style="single">Herstellung von pigmentierten Decklacken (Tabelle 1)</u></heading><p num="0081">Man verfährt wie bei Anwendungsbeispiel 1 mit dem Unterschied, dass Bindemitteldispersionen
+entsprechend Tabelle 1 zur Lackformulierung eingesetzt werden. Das NCO:OH-Verhältnis wird
+jeweils auf 1,5:1 eingestellt, die Viskosität auf 30 Sekunden / DIN4-Becher. <img file="00230001.tif" id="img-EP-1511361-A2-00230001" he="192" wi="162" img-format="tif" img-content="tb" orientation="unknown" inline="no"/></p><p num="0082">Man erkennt an Tabelle 1, dass die erfindungsgemäßen Anwendungsbeispiele 1 - 4 sehr gute
+Lackeigenschaften in Kombination mit guter Lagerstabilität der Bindemittel-Dispersion aufweisen.
+Bei den nicht erfindungsgemäß hergestellten Vergleichsbeispielen 5 - 7 ist die Polydispersität mit
+M<sub>w</sub>/M<sub>n</sub> ≈ 6 deutlich größer und die Viskosität der Bindemitteldispersionen fallen bei Lagerung
+stark ab. Beim Vergleichsbeispiel 8 weist die Bindemitteldispersion neben einer breiten Molekulargewichtsverteilung
+auch eine hohe (nicht erfindungsgemäße) Säurezahl auf; hier findet man
+zwar keinen Abfall in der Bindemittel-Viskosität, dafür aber Nachteile in Wasserfestigkeit und 
+Lösemittelbeständigkeit des Lackfilms. Die in Anwendungsbeispiel 9 eingesetzte Dispersion liegt
+zwar mit ihrer Polydispersität im erfindungsgemäßen Bereich; die Dispersion wird aber nicht nach
+dem erfindungsgemäßen Verfahren hergestellt. So liegt z.B. die Säurezahl mit 33 über dem erfindungsgemäß
+erlaubten Bereich; trotzdem reicht diese nicht aus, um die Dispersion zu stabilisieren:
+nach kurzer Lagerzeit zeigt die Dispersion Phasentrennung. Außerdem weisen nach Vgl. Beispiel 9
+hergestellte Lackfilme schlechte Lösemittelbeständigkeit auf.</p><heading><b><u style="single">Anwendungsbeispiele 10 - 13 und Vgl.14, Vgl. 15:</u></b></heading><heading><u style="single">Herstellung von pigmentierten Decklacken (Tabelle 2)</u></heading><p num="0083">Man verfährt wie bei Anwendungsbeispiel 1 mit dem Unterschied, dass Bindemitteldispersionen
+entsprechend Tabelle 2 zur Lackformulierung eingesetzt werden, und die Lacke statt bei Raumtemperatur
+hier 30 Minuten bei 80°C forciert getrocknet werden. Das NCO:OH-Verhältnis wird
+jeweils auf 1,5:1 eingestellt, die Viskosität auf 30 Sekunden/DIN4-Becher.</p><p num="0084">Man erkennt an Tabelle 2, dass die erfindungsgemäßen Anwendungsbeispiele 9 - 12 sehr gute
+Lackeigenschaften in Kombination mit guter Lagerstabilität der Bindemittel-Dispersion aufweisen.
+Bei den nicht erfindungsgemäß hergestellten Vergleichsbeispielen 13 und 14 ist die Polydispersität
+mit M<sub>w</sub>/M<sub>n</sub> = 3,2 zwar im Bereich der erfindungsgemäßen Dispersionen; die Dispersion dieser
+Vergleichsbeispiele werden aber nicht nach dem erfindungsgemäßen Verfahren hergestellt und
+ihre Säurezahlen liegen oberhalb des erfindungsgemäß erlaubten Bereichs. Bei beiden Vergleichsbeispielen
+findet man im Vergleich zu den erfindungsgemäßen Anwendungsbeispielen 9 - 12
+Lackfilme mit deutlich geringerer Härte und Lösemittelbeständigkeit. Die dem Vgl. Beispiel 13
+zugrundeliegende Dispersion zeigt auch deutlich Nachteile in der Wasserfestigkeit, während die
+dem Vgl. Beispiel 14 zugrundeliegende Dispersion nicht lagerstabil ist und sich nach kurzer Lagerzeit
+in 2 Phasen trennt. <img file="00250001.tif" id="img-EP-1511361-A2-00250001" he="171" wi="163" img-format="tif" img-content="tb" orientation="unknown" inline="no"/></p><heading><b><u style="single">Anwendungsbeispiel 16:</u></b></heading><heading><u style="single">Herstellung eines pigmentierten Decklacks</u></heading><p num="0085">220 g Bindemittel-Dispersion aus Beispiel 5, 5 g Surfynol® 104 (Air Products), 30 g dest. Wasser,
+186 g Titandioxid Bayertitan® R-KB-4 (Bayer AG) werden in einem Schüttler angerieben. 150 g
+des so erhaltenen Mahlguts werden mit 28 g Dispersion aus Beispiel 5, 0,44 g Byk® 346 (Byk
+Chemie), 0,66 g Byk® 380 (Byk Chemie) 1,2 g Acrysol® RM8 (20 % in Ethanol, Rohm &amp; Haas),
+und 41,1 g des Polyisocyanats H2 in einem Dissolver vermischt und mit ca. 29 g dest. Wasser auf
+eine Viskosität von ca. 30 Sekunden bei 23°C im DIN 4 Auslaufbecher eingestellt. Der Lackfestkörper
+liegt bei 54 %, der pH-Wert bei 8,2. Das NCO:OH-Verhältnis beträgt 1,5:1. Nach Applikation
+auf ein entfettetes Stahlblech wird der Lack bei Raumtemperatur getrocknet. Man erhält einen
+hochglänzenden harten Lackfilm, der eine gute Lösemittel- und Wasserfestigkeit aufweist. Durch
+forcierte Trocknung lässt sich das Beständigkeitsniveau des Lackfilms auf sehr gute Werte weiter
+verbessern.</p><heading><b><u style="single">Anwendungsbeispiel 17:</u></b></heading><heading><u style="single">Herstellung eines pigmentierten Decklacks</u></heading><p num="0086">351 g Bindemittel-Dispersion aus Beispiel 5, 8 g Surfynol® 104 (Air Products), 48 g Wasser und
+297 g Titandioxid Bayertitan® R-KB-4 (Bayer AG) werden in einem Schüttler angerieben. Das so
+erhaltene Mahlgut wird mit 177 g Bindemittel-Dispersion aus Beispiel 5, 66 g Aminovernetzerharz
+H3, 6,3 g Acrysol® RM8 (20 % in Ethanol, Rohm &amp; Haas) und 10,5 g Byk® 011 (Byk
+Chemie) vermischt und mit Wasser auf eine Viskosität von ca. 30 Sekunden bei 23°C im DIN 4
+Auslaufbecher eingestellt. Der Lackfestkörper beträgt ca. 56 %; die Lagerstabilität des Lacks ist
+&gt;6 Monate. Nach Applikation auf entfettetes Stahlblech wird der Lack für 10 Minuten bei 160°C
+eingebrannt, die Trockenfilmstärke beträgt ca. 35 µm. Man erhält einen harten Lackfilm (Pendelhärte
+170 sec.) mit hohem Glanz und guter Lösemittelbeständigkeit.</p><heading><b><u style="single">Anwendungsbeispiel 18:</u></b></heading><heading><u style="single">Herstellung eines pigmentierten Decklacks</u></heading><p num="0087">230 g Bindemittel-Dispersion aus Beispiel 5, 7,35 g einer 20 %igen Lösung von Dimethylethanolamin
+in Wasser, 41 g Wasser und 184g Titandioxid Bayertitan® R-KB-4 (Bayer AG) werden in
+einem Schüttler angerieben. Das so erhaltene Mahlgut wird mit 17,5 g Bindemittel-Dispersion aus
+Beispiel 5, 66,5 g Vernetzerharz H4, 4,9 g Lancoflow W (25 Gew.%-ig in Wasser; Lubrizol),
+4,4 g NMP und 2,3 g einer 20 %igen Lösung von Dimethylethanolamin in Wasser vermischt und 
+mit Wasser auf eine Viskosität von ca. 30 Sekunden bei 23°C im DIN 4 Auslaufbecher eingestellt.
+Der Lackfestkörper beträgt ca. 48 %; der pH-Wert 9,2. Nach Applikation auf entfettetes Stahlblech
+wird der Lack für 30 Minuten bei 150°C eingebrannt, die Trockenfilmstärke beträgt ca. 35 µm.
+Man erhält einen harten Lackfilm (Pendelhärte 175 sec.) mit hohem Glanz und guter Lösemittelbeständigkeit.</p><heading><b><u style="single">Anwendungsbeispiel 19:</u></b></heading><heading><u style="single">Herstellung eines Klarlacks</u></heading><p num="0088">378 g der Bindemittel-Dispersion aus Beispiel 4 werden mit 12,2 g Tinuvin® 1130 (50 % in Butylglykolacetat,
+Ciba Geigy), 6,1 g Tinuvin® 292 (50 % in Butylglykolacetat, Ciba Geigy), 3,1 g Baysilon®
+OL 44 (10 % in Butylglykolacetat, Bayer AG), 62,1 g Butyldiglykolacetat und 111,9 g dest.
+Wasser vermischt (Komponente A). Die Härterkomponente B), bestehend aus 127 g Polyisocyanatvemetzer
+H1, wird mittels Düsenstrahl-Dispergierung in die Komponente A) eingearbeitet. Das
+so erhaltene reaktive 2-Komponenten-Polyurethansystem hat einen Festkörpergehalt von 45 %, das
+NCO:OH-Verhältnis beträgt ca. 1,5:1. Die Topfzeit beträgt &gt;6 Stunden, die Viskosität bleibt in
+diesem Zeitraum annähernd konstant.</p><p num="0089">Der Klarlack wurde auf ein mit einem Basislack beschichteten Aluminiumblech bzw. auf Glasplatte
+durch Spritzapplikation aufgetragen und 5 Minuten bei Raumtemperatur abgelüftet. Nach Vortrocknung
+für 10 Minuten bei 80°C wurde der Lack 30 Minuten bei 130°C ausgehärtet. Man erhält
+einen klaren, hochglänzenden Lackfilm; Glanz (20°) = 85. Der Film weist eine sehr hohe Pendelhärte
+von 203 Sek., eine sehr gute Lösemittelbeständigkeit gegen Xylol, Methoxypropylacetat,
+Ethylacetat und Aceton sowie eine gute Beständigkeit gegen Wasser, verdünnte Schwefelsäure und
+verdünnte Natronlauge auf.</p></description><claims lang="DE" status="new"><claim num="xx"><claim-text>Verfahren zur Herstellung von in Wasser dispergiert und/oder gelöst vorliegenden Copolymerisaten
+P, dadurch gekennzeichnet, dass man aufeinanderfolgend die Prozessschritte A
+bis D
+<claim-text><claim-text>A) Vorlegen von
+<claim-text><claim-text>A1) 0 bis 40 Gew.-% (bezogen auf das Copolymerisat P) eines hydroxyfunktionellen
+hydrophoben Copolymerisats mit einer für Dispergierung
+oder Lösen von A1 in Wasser nicht ausreichenden Säurezahl &lt;10 mg
+KOH/g, einem OH-Gehalt von 0,5 bis 7 % (bezogen jeweils auf 100 %iges
+Harz), einem Zahlenmittel des Molekulargewichts von 1500 bis 20 000
+und einem Gehalt an organischen Lösemitteln von 0 bis 60 % (bezogen
+auf die Masse von A1), und</claim-text><claim-text>A2) 0 bis 15 % (bezogen auf das Copolymerisat P) zusätzlichen organischen
+Lösemitteln,
+wobei vor während oder im Anschluss von Schritt A auf die gewünschte Polymerisationstemperatur
+aufgeheizt wird,</claim-text></claim-text></claim-text><claim-text>B) vordosieren von 5 bis 40 % (bezogen auf die Summe B1 + C2 + D2) eines Radikalstarters
+B1, gegebenenfalls gelöst in einem organischen Lösemittel,</claim-text><claim-text>C) paralleles Zudosieren von 40 bis 80 % (bezogen auf das Copolymerisat P) eines
+hydrophoben, im Wesentlichen carboxylgruppenfreien Monomergemisch C1, bestehend
+aus
+<claim-text><claim-text>C1) 30 bis 90 % (Meth)acrylsäurester mit C1 bis C18-Kohlenwasserstoffresten
+im Alkoholteil und/oder Vinylaromaten und/oder Vinylester,</claim-text><claim-text>C2) 10 bis 60 % hydroxyfunktionellen Monomeren,</claim-text><claim-text>C3) 0 bis 2 % säuregruppenhaltigen Monomeren,
+wobei sich C1 + C2 + C3 zu 100 % addieren,</claim-text></claim-text>
+und einem Radikalstarter C2 in einer Menge, die 25 - 90 % der Summe (B1 + C2 + D2)
+entspricht, gegebenenfalls gelöst in einem organ. Lösemittel</claim-text><claim-text>D) paralleles Zudosieren von 5 bis 50 % (bezogen auf das Copolymerisat P) eines
+hydrophilen Monomergemischs D1, bestehend aus
+<claim-text><claim-text>d1) 10 bis 70 % (Meth)acrylsäureester mit C1 bis C18-Kohlenwasserstoffresten
+im Alkoholteil und/oder Vinylaromaten und/oder Vinylester,</claim-text><claim-text>d2) 10 bis 70 hydroxyfunktionellen Monomeren und</claim-text><claim-text>d3) 5 bis 30 % säurefunktionellen Monomeren,</claim-text></claim-text>
+wobei sich d1 + d2 + d3 zu 100 % addieren, und einem Radikalstarter D2 in einer Menge,
+die 5 bis 40 % der Summe (B 1 + C2 + D2) entspricht, gegebenenfalls gelöst in einem organischen
+Lösemittel, wobei die Gesamtmenge (B1 + C2 + D2) des Radikalstarters (bezogen
+auf das Copolymerisat P) 0,8 bis 5,0 % beträgt,
+ausführt.</claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>Copolymerisat P erhältlich gemäß Anspruch 1.</claim-text></claim><claim num="xx"><claim-text>Copolymerisat P gemäß Anspruch 2, dadurch gekennzeichnet, dass das Copolymerisat ein
+mittleres Molekulargewicht Mn von 3000 bis 7000, ein mittleres Molekulargewicht Mw
+von 10000 bis 25000 und eine Molekulargewichtsverteilung Mw/Mn von 2,5 bis 4,0 aufweist.</claim-text></claim><claim num="xx"><claim-text>Copolymerisat P gemäß Anspruch 2, dadurch gekennzeichnet, dass das Copolymerisat ein
+mittleres Molekulargewicht Mn von 3500 bis 5500, ein mittleres Molekulargewicht Mw
+von 11000 bis 20000 und eine Molekulargewichtsverteilung Mw/Mn von 3,0 bis 4,0 aufweist.</claim-text></claim><claim num="xx"><claim-text>Copolymerisat P nach Anspruch 2, dadurch gekennzeichnet, dass die nach den Schritten C)
+und D) erhaltenen Werte von Mn um weniger als 1500 und von Mw/Mn um weniger als 1,0
+voneinander abweichen.</claim-text></claim><claim num="xx"><claim-text>Copolymerisat P nach Anspruch 2, dadurch gekennzeichnet, dass die in Schritt D) aufgebauten
+Polymerketten ein mittleres Molekulargewicht Mn von 3000 - 4500 aufweisen.</claim-text></claim><claim num="xx"><claim-text>Wässriges Überzugsmittel aus mindestens einem hydroxyfunktionellen in Wasser dispergiert
+oder gelöst vorliegenden Copolymerisat P gemäß Anspruch 2 mit einer Säurezahl,
+bezogen auf Festharz, von &lt;30 mg KOH/g, gegebenenfalls weiteren in dieser Mischung
+gelöst oder dispergiert vorliegenden Bindemittelkomponenten sowie einem oder
+mehreren wasserlöslichen, wasserdispergierbaren bzw. in der wässrigen Bindemitteldispersion
+löslichen oder dispergierbaren Vernetzern.</claim-text></claim><claim num="xx"><claim-text>Wässriges Überzugsmittel enthaltend Copolymerisate P nach Anspruch 2, dadurch
+gekennzeichnet, dass es eine oder mehrere nicht wasserdispergierbare/ -lösliche
+und/oder wasserdispergierbare Vernetzerkomponenten mit freien Isocyanatgruppen enthält.</claim-text></claim><claim num="xx"><claim-text>Wässriges Überzugsmittel enthaltend Copolymerisate P nach Anspruch 2, dadurch
+gekennzeichnet, dass es eine oder mehrere hydrophil modifizierte Vemetzerkomponenten
+mit freien Isocyanatgruppen enthält.</claim-text></claim><claim num="xx"><claim-text>Wässriges Überzugsmittel enthaltend Copolymerisate P nach Anspruch 2, dadurch
+gekennzeichnet, dass es eine oder mehrere nicht wasserdispergierbare/ -lösliche
+und/oder wasserdispergierbare Vernetzerkomponenten mit blockierten Isocyanatgruppen
+enthält.</claim-text></claim><claim num="xx"><claim-text>Wässriges Überzugsmittel enthaltend Copolymerisate P nach Anspruch 2, dadurch
+gekennzeichnet, dass es eine oder mehrere hydrophil modifizierte Vemetzerkomponenten
+mit blockierten Isocyanatgruppen enthält.</claim-text></claim><claim num="xx"><claim-text>Wässriges Überzugsmittel enthaltend Copolymerisate P nach Anspruch 2, dadurch
+gekennzeichnet, dass es eine oder mehrere Vernetzerkomponenten aus der Gruppe
+der Aminoplastharze enthält.</claim-text></claim><claim num="xx"><claim-text>Wässriges Überzugsmittel enthaltend Copolymerisate P nach Anspruch 2, dadurch
+gekennzeichnet, dass es eine Kombination von mindestens 2 Vernetzerkomponenten,
+ausgewählt aus der Gruppe: hydrophil modifizierte Polyisocyanatvernetzer mit freien
+NCO-Gruppen, hydrophobe Polyisocyanatvernetzer mit freien NCO-Gruppen, hydrophil
+modifizierte blockierte Polyisocyanatvernetzer, hydrophobe blockierte Polyisocyanatvernetzer
+und Aminoplastharze enthält.</claim-text></claim><claim num="xx"><claim-text>Verwendung von wässrigen Überzugsmitteln enthaltend Copolymerisate P nach Anspruch
+2 in oder als bei Raumtemperatur bis 80°C aushärtbaren Lacken und Beschichtungen
+für Holz, Metall, Glas, Kunststoffe, mineralische Untergründe und Textil.</claim-text></claim><claim num="xx"><claim-text>Verwendung von wässrigen Überzugsmitteln enthaltend Copolymerisate P nach Anspruch
+2 in oder als bei 80°C bis 220°C aushärtbaren Einbrennlacken für Metall, Glas,
+Textil oder Kunststoffe.</claim-text></claim><claim num="xx"><claim-text>Verwendung von wässrigen Überzugsmitteln enthaltend Copolymerisate P nach Anspruch
+2 in oder als wässrige Zweikomponenten-Polyurethanlacke für die Metallbeschichtung.</claim-text></claim><claim num="xx"><claim-text>Verwendung von wässrigen Überzugsmitteln enthaltend Copolymerisate P nach Anspruch
+2 in oder als wässrige Zweikomponenten-Polyurethanlacke für die Kunststoffbeschichtung.</claim-text></claim><claim num="xx"><claim-text>Verwendung von wässrigen Überzugsmitteln enthaltend Copolymerisate P nach Anspruch
+2 in oder als wässrige Zweikomponenten-Polyurethanlack für Klarlacke.</claim-text></claim><claim num="xx"><claim-text>Verwendung von wässrigen Überzugsmitteln enthaltend Copolymerisate P nach Anspruch
+2 in oder als wässrige Zweikomponenten-Polyurethansysteme für pigmentierte
+Hochglanzlacke.</claim-text></claim><claim num="xx"><claim-text>Verwendung von wässrigen Überzugsmitteln enthaltend Copolymerisate P nach Anspruch
+2 in oder als wässrige Einbrennlacke für die Metallbeschichtung.</claim-text></claim></claims><legal-status status="new"><legal-event country="EP" code="AKX" date="20051123"><legal-event-body><event-title>PAYMENT OF DESIGNATION FEES</event-title><event-attributes><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>ATBECHCYDEDKESFIFRGBGRIEITLILUMCNLPTSE</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="17P" date="20051102"><legal-event-body><event-title>REQUEST FOR EXAMINATION FILED</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20050902</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AC" date="20050302"><legal-event-body><event-title>DIVISIONAL APPLICATION (ART. 76) OF:</event-title><event-attributes><event-attribute><event-attribute-label>Ref Document Number </event-attribute-label><event-attribute-value>1024184</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Country of Ref Document </event-attribute-label><event-attribute-value>EP</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>P</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20050302"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>A1</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>ATBECHCYDEDKESFIFRGBGRIEITLILUMCNLPTSE</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event></legal-status></patent-document>

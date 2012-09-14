@@ -1,0 +1,16 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="815"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">TIME-FREQUENCY SIGNAL MODELS FOR MUSIC ANALYSIS, <lb/>TRANSFORMATION, AND SYNTHESIS <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Michael Goodwin Martin Vetterli <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Electrical Engineering and Computer Science &amp; Center for New Music and Audio Technologies <lb/>University of California at Berkeley <lb/></affiliation></byline>
+		<div type="abstract">ABSTRACT <lb/>In signal analysis-synthesis, the analysis derives a set of parameters that the synthesis uses to reconstruct the original <lb/>signal. In musical applications, this reconstruction should <lb/>be perceptually accurate, and the parameterization should <lb/>allow for such desirable signal modifications as time-scaling, <lb/>pitch-shifting, and cross-synthesis; the analysis parameters <lb/>should correspond to a signal model that is flexible enough <lb/>to allow these transformations. Sinusoidal modeling meets <lb/>this flexibility requirement, but has difficulty representing <lb/>some salient features of musical signals such as attack transients and noiselike processes. In this paper, sinusoidal <lb/>modeling is reviewed and some variations are proposed to <lb/>account for its shortcomings; also, wavelet-based representations of musical signals are considered. <lb/></div>
+		<div type="intro">1. SIGNAL MODELING FOR MUSIC</div>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,30 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="1038"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">The Neogene Xiyu Formation, a diachronous prograding gravel wedge at <lb/> front of the Tianshan: Climatic and tectonic implications <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Julien Charreau a, b, , Charles Gumiaux c, , Jean-Philippe Avouac a, 1, , Romain Augier c, 2 , <lb/> Yan Chen c, 2, , Laurie Barrier d, 3, , Stuart Gilder e , Stéphane Dominguez f, 4, , Nicolas <lb/> Charles c, 2 and Qingchen Wang g, <lb/></docAuthor></byline>
+		<byline><affiliation>a <lb/>  Tectonics Observatory, California Institute of Technology,</affiliation></byline>
+		<address>Mail Code 100-23, Pasadena CA <lb/> 91125, USA <lb/></address>
+		<byline><affiliation>b <lb/> Centre de Recherche Pétrographique et Géochimique,</affiliation></byline>
+		<address>15 rue Notre Dame des Pauvres, <lb/> 54501 Vandoeuvre lès Nancy, France <lb/></address>
+		<byline><affiliation>c <lb/> Université d&apos;Orléans, CNRS/INSU, Université François Rabelais ? Tours, Institut des <lb/> Sciences de la Terre d&apos;Orléans ? UMR 6113,</affiliation></byline>
+		<address>Campus Géosciences, 1A, rue de la Férollerie, <lb/> 45071 Orléans Cedex 2, France <lb/></address>
+		<byline><affiliation>d <lb/> Institut de Physique du Globe de Paris,</affiliation></byline>
+		<address>4 place Jussieu, 75252 Paris Cedex 05 France <lb/></address>
+		<byline><affiliation>e <lb/> Ludwig Maximilians University, Department of Earth and Environmental Sciences, <lb/> Geophysics Section,</affiliation></byline>
+		<address>Theresienstrasse 41, 80333 Munich, Germany <lb/></address>
+		<byline><affiliation>f <lb/> Laboratoire Dynamique de la Lithosphère; UMR CNRS/UMII 5573,</affiliation></byline>
+		<address>Batiment 22 [cc. 60] <lb/> Place Bataillon, 34095 Montpellier Cedex, France <lb/></address>
+		<byline><affiliation>g <lb/> State Key Laboratory of Lithospheric Evolution, Institute of Geology and Geophysics, <lb/> Chinese Academy of Sciences,</affiliation></byline>
+		<address>Beijing 100029, China <lb/></address>
+		<div type="abstract">Abstract <lb/> The Tarim and Junggar basins in central Asia are capped by a thick pile of conglomerates, <lb/> called the Xiyu Formation, that are commonly linked to a change in climate and/or <lb/> accelerated uplift near the Plio-Pleistocene boundary. In order to better understand their origin <lb/> and significance, we carried out a combined structural and magnetostratigraphic study in the <lb/> Quilitage syncline (southern Tianshan), where the base of the Xiyu conglomerates is observed <lb/> at both sides of the syncline. A balanced cross-section shows that, even at a local-scale, the <lb/> base of the Xiyu conglomerates cannot be regarded as a single continuous stratigraphic layer. <lb/> On the southern flank of the Quilitage syncline, we collected 172 samples collected for <lb/> magnetostratigraphic dating identify 17 polarity chrons that date the new section from 5.2 to <lb/> ~ 1.7 Ma and constrain the base of the Xiyu conglomerate here at ~ 1.7 Ma. This is 4.2 Ma <lb/> younger than the age of the Xiyu previously found on the northern limb of the same syncline. <lb/> Together with other magnetostratigraphic studies carried out around the Tianshan, our study <lb/> unambiguously demonstrates that the onset of deposition of the Xiyu conglomerates is <lb/> diachronous, and that the conglomerates are systematically younger toward the basin. <lb/> Consequently, the Xiyu Formation should not be considered as a chronostratigraphic marker <lb/> related to any particular tectonic or climatic event, but is instead a prograding gravel wedge <lb/> that has prograded over the underthrusting forelands. A synthesis of chronologic and <lb/> structural results yields progradation rates over the last 10 Ma on the order of ~ 2.0 mm/yr <lb/> and ~ 3.9 mm/yr south and north of the Tianshan Mountains respectively. These rates are <lb/> comparable to the shortening rate across the Tianshan range, suggesting that underthrusting is <lb/> the main factor governing the progradation rate of the Xiyu Formation. <lb/></div>
+		<keywords>Keywords: Xiyu Formation; magnetostratigraphy; Tianshan; gravel wedge progradation; <lb/> shortening rates <lb/></keywords>
+		<div type="intro">1. Introduction <lb/></div>
+		</front>
+</text>
+</tei>

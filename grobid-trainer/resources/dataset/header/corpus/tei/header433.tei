@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="436"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">RESTORATION OF LOSSY COMPRESSED NOISY IMAGES <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Osama K. Al-Shaykh 1 Russell M. Mersereau 2 <lb/></docAuthor></byline>
+		<byline><affiliation>School of Electrical and Computer Engineering <lb/>Georgia Institute of Technology <lb/></affiliation></byline>
+		<email>1 osamakl@eedsp.gatech.edu <lb/></email>
+		<email>2 rmm@eedsp.gatech.edu <lb/></email>
+		<div type="abstract">ABSTRACT <lb/>A restoration algorithm for estimating lossy compressed <lb/>images that are corrupted by data-dependent Poisson noise <lb/>is presented. The algorithm is based on modeling the image <lb/>as a Markov random field (MRF) that penalizes the blocking artifact. The effectiveness of the proposed algorithm is <lb/>illustrated using synthetic and real images. <lb/></div>
+		<div type="intro">1. INTRODUCTION</div>
+		</front>
+</text>
+</tei>

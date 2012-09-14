@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="795"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Experience with MPI: &apos;Converting <lb/>pvmmake to mpimake under LAM&apos; <lb/>and &apos;MPI and Parallel Genetic <lb/>Programming&apos; <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Judith Ellen Devaney <lb/></docAuthor></byline>
+		<byline><affiliation>NIST <lb/></affiliation></byline>
+		<email>jdevaney@nist.gov <lb/></email>
+		<date>June 1995 <lb/></date>
+		<div type="abstract">Abstract <lb/>This looks at the issues which arose in porting the pvmmake utility <lb/>from PVM to MPI. Pvmmake is a PVM application which allows <lb/>a user to send files, execute commands, and receive results from a <lb/>single machine on any machine in the virtual machine. Its actions are <lb/>controlled by the contents of a configuration file. Its most common <lb/>use is to enable management of the development of a parallel program <lb/>in a heterogeneous environment. A utility with the same features, <lb/>mpimake, was coded up to run under LAM. <lb/>Genetic programming is an algorithm which evolves an algorithm <lb/>in the form of a program to solve your input problem. The implementation under MPI requires the transfer of dynamic data structures <lb/>such as lists and trees. This paper discusses the match between the <lb/>requirements of this algorithm and the datatype feature in MPI. A <lb/>new library, MPI DataStruct is being developed which can transfer <lb/>dynamic data structures, created with pointers, without intervention <lb/>by the user. <lb/></div>
+		<pb/>
+		</front>
+</text>
+</tei>

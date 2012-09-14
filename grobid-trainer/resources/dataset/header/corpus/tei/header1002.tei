@@ -1,0 +1,22 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="1071"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Study  of strange particle production in pp collisions<lb/> with the ALICE detector<lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Hélène Ricaud   1   , Alexander Kalweit   1   and Antonin Maire   2<lb/></docAuthor></byline>
+		<note type="other">(for<lb/> the ALICE Collaboration)<lb/></note>
+		<byline><affiliation>1   Technical  University of Darmstadt, Institut fuer Kernphysik,</affiliation></byline>
+		<address>Schlossgartenstrasse 9,<lb/> D-64289 Darmstadt, Germany<lb/></address>    
+		<byline><affiliation>2   Institut Pluridisciplinaire Hubert Curien, </affiliation></byline>
+		<address>23 rue du Loess, F-67037 Strasbourg,<lb/>France<lb/></address>
+		<email>E-mail:  H.Ricaud@gsi.de<lb/></email>
+		<div type="abstract">Abstract.  ALICE is well suited for strange particles production studies since it has<lb/> very good reconstruction capabilities in the low transverse momentum (p   t   ) region and<lb/> it also allows to extend the identification up to quite high  p   t   . Charged strange mesons<lb/> (K   +   , K   −   ,) are reconstructed via energy loss measurements whereas neutral strange<lb/> mesons (K   0<lb/> s   ) and strange hyperons (Λ, Ξ, Ω) are identified via vertex reconstruction.<lb/> All these particles carry important information: first, the measurement of production<lb/> yields and the particle ratio within the statistical models can help to understand the<lb/> medium created and secondly the dynamics at intermediate  p   t   investigated via the<lb/> baryon over meson ratio (Λ/K   0<lb/> s   ) allows a better understanding of the hadronization<lb/> mechanisms and of the underlying event processes. We present these two aspects of<lb/> the strange particles analysis in pp collisions using simulated data.<lb/></div>
+		<note type="title">Study  of strange particle production in pp collisions with the ALICE detector<lb/>2<lb/></note>
+		<introduction>1. Introduction<lb/></introduction>
+        </front>
+</text>
+</tei>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="ZFN-A-035-03-0332"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<titlePage>
+				<docTitle>
+					<titlePart type="main">Kinetics of the Solid State Reaction between CuO and WO<lb/></titlePart>
+				</docTitle>
+				<byline><docAuthor>and WO, M. Lazzari, L. Peraldo Bicelli, and B. Rivolta</docAuthor><lb/></byline>
+				<byline><affiliation>Centra di Studio sui Processi Elettrodici del C.N.R., Istituto di Chimica Fisica, <lb/>Elettrochimica e Metallurgia del Politecnico</affiliation>, <address>Milan , Italy</address> <lb/></byline>
+				<reference>Z. Naturforsch. 85 a, 332—335 (1980); </reference>
+				<note type="submission">received November 24  1979 <lb/></note>
+			</titlePage>
+			<div type="abstract">The solid state reaction of CH1WO4-X formation from CuO and WO3 was studied by the contact <lb/>
+method in air and nitrogen. The results showed that the reaction is governed by the diffusion <lb/>
+of the W*+ and 02~ ions and that the rate determining step is the diffusion of oxygen ions in the <lb/>
+reaction product. This is in agreement with the defect structure of copper tungstate, an n-type <lb/>
+semiconductor with oxygen vacancies through which the diffusion process is possible. <lb/></div>
+			<div type="intro">The formation of the tungstates of magnesium <lb/></div>
+		</front>
+	</text>
+</tei>

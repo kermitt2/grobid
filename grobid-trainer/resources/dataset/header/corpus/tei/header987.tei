@@ -1,0 +1,21 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="1056"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<note type="other">Short Communications <lb/></note>
+		<idno>DOI: 10.1002/zaac.200700528 <lb/></idno>
+		<docTitle>
+			<titlePart type="main">Crystal Structure and Disorder Phenomena of the Adduct of Neutral C 60 and <lb/> the Ionic Gold Complex (Ptol 3 ) 2 AuNO 3 <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Martin Schulz-Dobrick and Martin Jansen* <lb/></docAuthor></byline>
+		<address>Stuttgart,</address>
+		<byline><affiliation>Max Planck Institute for Solid State Research,</affiliation></byline>
+		<address>Germany <lb/></address>
+		<date>Received November 26th, 2007. <lb/></date>
+		<div type="abstract">Abstract. The adduct C 60 � (Ptol 3 ) 2 AuNO 3 has been crystallized <lb/> from toluene solutions of C 60 and (Ptol 3 ) 2 AuNO 3 as violet, trigonal <lb/>  plate-shaped crystals. The compound was studied by single-crystal <lb/>  x-ray diffraction (P3 � 1c, a &lt;U+6E129&gt; 1278.17(3), c &lt;U+6E129&gt; 2282.92(6) pm). The <lb/>  gold complex is dissociated into [(Ptol 3 ) 2 Au]  &lt;U+6E129&gt;  cations, which <lb/>  encapsulate the neutral C 60 molecules, and nitrate anions. The in- <lb/>  termolecular interactions between the fullerene molecules and the <lb/>  gold complex cations and the resulting disorder is investigated. The <lb/>  crystal structure of C 60 � (Ptol 3 ) 2 AuNO 3 is providing an instructive <lb/>  example, demonstrating that symmetry-matching is not always <lb/> sufficient for avoiding disorder. <lb/></div>
+		<keywords>Keywords: Fullerenes; Gold; Co-crystals; Solid-state structures; <lb/> Supramolecular chemistry; Crystal engineering <lb/></keywords>
+		</front>
+</text>
+</tei>

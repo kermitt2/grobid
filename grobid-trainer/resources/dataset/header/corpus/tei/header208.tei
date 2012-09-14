@@ -1,0 +1,30 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="209"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">On-line Load Balancing for <lb/>Related Machines <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Piotr Berman <lb/>Moses Charikar <lb/>Marek Karpinski <lb/></docAuthor></byline>
+		<idno>TR-97-007 <lb/></idno>
+		<date>January 1997 <lb/></date>
+		<div type="abstract">Abstract <lb/>We consider the problem of scheduling permanent jobs on related machines in an <lb/>on-line fashion. We design a new algorithm that achieves the competitive ratio of 3 + <lb/>p <lb/>8 5:828 for the deterministic version, and 3:31= ln 2:155 4:311 for its randomized <lb/>variant, improving the previous competitive ratios of 8 and 2e 5:436. We also prove <lb/>lower bounds of 2:4380 on the competitive ratio of deterministic algorithms and 1:8372 <lb/>on the competitive ratio of randomized algorithms for this problem. <lb/></div>
+		<byline><affiliation>Dept. of Computer Science &amp; Eng., Pennsylvania State University,</affiliation></byline>
+		<address>University Park, PA16802, USA <lb/></address>
+		<email>Email:berman@cse.psu.edu <lb/></email>
+		<byline><affiliation>Department of Computer Science, Stanford University,</affiliation></byline>
+		<address>Stanford, CA 94305-9045.</address>
+		<note type="other">Supported by Stanford <lb/>School of Engineering Groswith Fellowship, an ARO MURI Grant DAAH04-96-1-0007 and NSF Award <lb/>CCR-9357849, with matching funds from IBM, Schlumberger Foundation, Shell Foundation, and Xerox <lb/>Corporation.</note>
+		<email>E-mail: moses@cs.stanford.edu. <lb/></email>
+		<byline><affiliation>Dept. of Computer Science, University of Bonn,</affiliation></byline>
+		<address>53117 Bonn,</address>
+		<byline><affiliation>and International Computer Science Institute,</affiliation></byline>
+		<address>Berkeley.</address>
+		<note type="grant">This research was partially supported by the DFG Grant KA 673/4-1, by the ESPRIT BR <lb/>Grants 7097 and EC-US 030.</note>
+		<email>Email:marek@cs.uni-bonn.de <lb/></email>
+		<pb/>
+		</front>
+</text>
+</tei>

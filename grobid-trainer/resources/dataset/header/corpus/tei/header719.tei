@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="720"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">View-Dependent Simplification Of Arbitrary Polygonal Environments <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>David Luebke, Carl Erikson <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science <lb/>University of North Carolina at Chapel Hill <lb/></affiliation></byline>
+		<div type="abstract">1. ABSTRACT <lb/>Hierarchical dynamic simplification (HDS) is a new approach to <lb/>the problem of simplifying arbitrary polygonal environments. <lb/>HDS operates dynamically, retessellating the scene continuously <lb/>as the users viewing position shifts, and adaptively, processing <lb/>the entire database without first decomposing the environment <lb/>into individual objects. The resulting system allows real-time <lb/>display of very complex polygonal CAD models consisting of <lb/>thousands of parts and hundreds of thousands of polygons. HDS <lb/>supports various preprocessing algorithms and various runtime <lb/>criteria, providing a general framework for dynamic view-dependent simplification. <lb/>Briefly, HDS works by clustering vertices together in a <lb/>hierarchical fashion. The simplification process continuously <lb/>queries this hierarchy to generate a scene containing only those <lb/>polygons that are important from the current viewpoint. When <lb/>the volume of space associated with a vertex cluster occupies less <lb/>than a userspecified amount of the screen, all vertices within <lb/>that cluster are collapsed together and degenerate polygons <lb/>filtered out. HDS maintains an active list of visible polygons for <lb/>rendering. Since frame-to-frame movements typically involve <lb/>small changes in viewpoint, and therefore modify the active list <lb/>by only a few polygons, the method takes advantage of temporal <lb/>coherence for greater speed. <lb/></div>
+		<keywords>CR Categories: I.3.5 [Computer Graphics]: Computational Geometry and <lb/>Object Modeling - surfaces and object representations. <lb/>Additional Keywords: polygonal simplification, level of detail, view <lb/>dependent rendering. <lb/></keywords>
+		<div type="intro">2. INTRODUCTION</div>
+		</front>
+</text>
+</tei>

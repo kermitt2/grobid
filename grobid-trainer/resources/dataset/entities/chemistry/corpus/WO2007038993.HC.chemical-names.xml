@@ -1,0 +1,908 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<nite:root nite:id="WO2007038993.HC.chemical-names" xmlns:nite="http://nite.sourceforge.net/">
+   <chem-name nite:id="WO2007038993.HC.chemical-names.1" comment="" name="Methylparaben" relevant="false" chebi-id="WO2007038993:999988" epochem-id="EPOCHEM:NEW:COMPOUND:248">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5204)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.2" comment="" name="Methylparaben" relevant="false" chebi-id="WO2007038993:999988" epochem-id="EPOCHEM:NEW:COMPOUND:248">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5599)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.3" comment="" name="Methylparaben" relevant="false" chebi-id="WO2007038993:999988" epochem-id="EPOCHEM:NEW:COMPOUND:248">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5854)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.4" comment="" name="Methylparaben" relevant="false" chebi-id="WO2007038993:999988" epochem-id="EPOCHEM:NEW:COMPOUND:248">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6133)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.5" comment="" name="Methylparaben" relevant="false" chebi-id="WO2007038993:999988" epochem-id="EPOCHEM:NEW:COMPOUND:248">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6355)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.6" comment="" name="Ethylparaben" relevant="false" chebi-id="WO2007038993:376289" epochem-id="EPOCHEM:NEW:COMPOUND:249">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5211)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.7" comment="" name="Ethylparaben" relevant="false" chebi-id="WO2007038993:376289" epochem-id="EPOCHEM:NEW:COMPOUND:249">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5606)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.8" comment="" name="Ethylparaben" relevant="false" chebi-id="WO2007038993:376289" epochem-id="EPOCHEM:NEW:COMPOUND:249">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5861)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.9" comment="" name="Ethylparaben" relevant="false" chebi-id="WO2007038993:376289" epochem-id="EPOCHEM:NEW:COMPOUND:249">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6140)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.10" comment="" name="Ethylparaben" relevant="false" chebi-id="WO2007038993:376289" epochem-id="EPOCHEM:NEW:COMPOUND:249">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6362)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.11" comment="" name="Propylparaben" relevant="false" chebi-id="WO2007038993:740583" epochem-id="EPOCHEM:NEW:COMPOUND:250">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5218)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.12" comment="" name="Propylparaben" relevant="false" chebi-id="WO2007038993:740583" epochem-id="EPOCHEM:NEW:COMPOUND:250">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5613)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.13" comment="" name="Propylparaben" relevant="false" chebi-id="WO2007038993:740583" epochem-id="EPOCHEM:NEW:COMPOUND:250">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5868)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.14" comment="" name="Propylparaben" relevant="false" chebi-id="WO2007038993:740583" epochem-id="EPOCHEM:NEW:COMPOUND:250">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6147)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.15" comment="" name="Propylparaben" relevant="false" chebi-id="WO2007038993:740583" epochem-id="EPOCHEM:NEW:COMPOUND:250">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6366)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.16" comment="" name="Tocopherol" relevant="false" chebi-id="CHEBI:27013" epochem-id="EPOCHEM:NEW:COMPOUND:10">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5229)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.17" comment="" name="Tocopherol" relevant="false" chebi-id="CHEBI:27013" epochem-id="EPOCHEM:NEW:COMPOUND:10">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5330)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.18" comment="" name="Tocopherol" relevant="false" chebi-id="CHEBI:27013" epochem-id="EPOCHEM:NEW:COMPOUND:10">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5627)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.19" comment="" name="Tocopherol" relevant="false" chebi-id="CHEBI:27013" epochem-id="EPOCHEM:NEW:COMPOUND:10">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5879)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.20" comment="" name="Tocopherol" relevant="false" chebi-id="CHEBI:27013" epochem-id="EPOCHEM:NEW:COMPOUND:10">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6161)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.21" comment="" name="water" relevant="false" chebi-id="CHEBI:15377" epochem-id="EPOCHEM:COMPOUND:5421">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_188)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.22" comment="" name="water" relevant="false" chebi-id="CHEBI:15377" epochem-id="EPOCHEM:COMPOUND:5421">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_447)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.23" comment="" name="water" relevant="false" chebi-id="CHEBI:15377" epochem-id="EPOCHEM:COMPOUND:5421">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_466)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.24" comment="" name="water" relevant="false" chebi-id="CHEBI:15377" epochem-id="EPOCHEM:COMPOUND:5421">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_479)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.25" comment="" name="water" relevant="false" chebi-id="CHEBI:15377" epochem-id="EPOCHEM:COMPOUND:5421">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_594)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.26" comment="" name="water" relevant="false" chebi-id="CHEBI:15377" epochem-id="EPOCHEM:COMPOUND:5421">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_599)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.27" comment="" name="water" relevant="false" chebi-id="CHEBI:15377" epochem-id="EPOCHEM:COMPOUND:5421">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_628)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.28" comment="" name="water" relevant="false" chebi-id="CHEBI:15377" epochem-id="EPOCHEM:COMPOUND:5421">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_674)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.29" comment="" name="water" relevant="false" chebi-id="CHEBI:15377" epochem-id="EPOCHEM:COMPOUND:5421">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_699)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.30" comment="" name="water" relevant="false" chebi-id="CHEBI:15377" epochem-id="EPOCHEM:COMPOUND:5421">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_764)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.31" comment="" name="water" relevant="false" chebi-id="CHEBI:15377" epochem-id="EPOCHEM:COMPOUND:5421">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_786)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.32" comment="" name="water" relevant="false" chebi-id="CHEBI:15377" epochem-id="EPOCHEM:COMPOUND:5421">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_820)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.33" comment="" name="water" relevant="false" chebi-id="CHEBI:15377" epochem-id="EPOCHEM:COMPOUND:5421">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_1346)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.34" comment="" name="water" relevant="false" chebi-id="CHEBI:15377" epochem-id="EPOCHEM:COMPOUND:5421">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_1405)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.35" comment="" name="water" relevant="false" chebi-id="CHEBI:15377" epochem-id="EPOCHEM:COMPOUND:5421">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_1460)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.36" comment="" name="water" relevant="false" chebi-id="CHEBI:15377" epochem-id="EPOCHEM:COMPOUND:5421">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_1504)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.37" comment="" name="water" relevant="false" chebi-id="CHEBI:15377" epochem-id="EPOCHEM:COMPOUND:5421">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_1619)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.38" comment="" name="water" relevant="false" chebi-id="CHEBI:15377" epochem-id="EPOCHEM:COMPOUND:5421">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_2927)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.39" comment="" name="water" relevant="false" chebi-id="CHEBI:15377" epochem-id="EPOCHEM:COMPOUND:5421">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_2936)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.40" comment="" name="water" relevant="false" chebi-id="CHEBI:15377" epochem-id="EPOCHEM:COMPOUND:5421">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_2990)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.41" comment="" name="water" relevant="false" chebi-id="CHEBI:15377" epochem-id="EPOCHEM:COMPOUND:5421">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3025)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.42" comment="" name="water" relevant="false" chebi-id="CHEBI:15377" epochem-id="EPOCHEM:COMPOUND:5421">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3047)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.43" comment="" name="water" relevant="false" chebi-id="CHEBI:15377" epochem-id="EPOCHEM:COMPOUND:5421">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3154)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.44" comment="" name="water" relevant="false" chebi-id="CHEBI:15377" epochem-id="EPOCHEM:COMPOUND:5421">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3282)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.45" comment="" name="water" relevant="false" chebi-id="CHEBI:15377" epochem-id="EPOCHEM:COMPOUND:5421">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_4685)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.46" comment="" name="water" relevant="false" chebi-id="CHEBI:15377" epochem-id="EPOCHEM:COMPOUND:5421">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_4839)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.47" comment="" name="water" relevant="false" chebi-id="CHEBI:15377" epochem-id="EPOCHEM:COMPOUND:5421">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_4880)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.48" comment="" name="water" relevant="false" chebi-id="CHEBI:15377" epochem-id="EPOCHEM:COMPOUND:5421">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5238)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.49" comment="" name="water" relevant="false" chebi-id="CHEBI:15377" epochem-id="EPOCHEM:COMPOUND:5421">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5391)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.50" comment="" name="water" relevant="false" chebi-id="CHEBI:15377" epochem-id="EPOCHEM:COMPOUND:5421">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5649)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.51" comment="" name="water" relevant="false" chebi-id="CHEBI:15377" epochem-id="EPOCHEM:COMPOUND:5421">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5888)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.52" comment="" name="water" relevant="false" chebi-id="CHEBI:15377" epochem-id="EPOCHEM:COMPOUND:5421">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6167)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.53" comment="" name="water" relevant="false" chebi-id="CHEBI:15377" epochem-id="EPOCHEM:COMPOUND:5421">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6384)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.54" comment="" name="water" relevant="false" chebi-id="CHEBI:15377" epochem-id="EPOCHEM:COMPOUND:5421">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_7269)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.55" comment="" name="water" relevant="false" chebi-id="CHEBI:15377" epochem-id="EPOCHEM:COMPOUND:5421">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_7377)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.56" comment="" name="Aqua" relevant="false" chebi-id="CHEBI:15377" epochem-id="EPOCHEM:NEW:COMPOUND:1458">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5236)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.57" comment="" name="Aqua" relevant="false" chebi-id="CHEBI:15377" epochem-id="EPOCHEM:NEW:COMPOUND:1458">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5647)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.58" comment="" name="Aqua" relevant="false" chebi-id="CHEBI:15377" epochem-id="EPOCHEM:NEW:COMPOUND:1458">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5886)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.59" comment="" name="Aqua" relevant="false" chebi-id="CHEBI:15377" epochem-id="EPOCHEM:NEW:COMPOUND:1458">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6165)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.60" comment="" name="Aqua" relevant="false" chebi-id="CHEBI:15377" epochem-id="EPOCHEM:NEW:COMPOUND:1458">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6382)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.87" comment="" name="Boron nitride" relevant="false" chebi-id="WO2007038993:167477" epochem-id="EPOCHEM:NEW:COMPOUND:1461">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6019)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6018)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.88" comment="" name="lsostearyl isostearate" relevant="false" chebi-id="WO2007038993:999650" epochem-id="EPOCHEM:NEW:COMPOUND:1462">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5778)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5777)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.89" comment="" name="lsostearyl isostearate" relevant="false" chebi-id="WO2007038993:999650" epochem-id="EPOCHEM:NEW:COMPOUND:1462">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6023)..id(WO2007038993_w_6024)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.90" comment="" name="Titanium dioxide" relevant="false" chebi-id="CHEBI:32234" epochem-id="EPOCHEM:NEW:COMPOUND:1463">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3418)..id(WO2007038993_w_3419)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.91" comment="" name="Titanium dioxide" relevant="false" chebi-id="CHEBI:32234" epochem-id="EPOCHEM:NEW:COMPOUND:1463">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3450)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3449)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.92" comment="" name="Titanium dioxide" relevant="false" chebi-id="CHEBI:32234" epochem-id="EPOCHEM:NEW:COMPOUND:1463">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3460)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3459)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.93" comment="" name="Titanium dioxide" relevant="false" chebi-id="CHEBI:32234" epochem-id="EPOCHEM:NEW:COMPOUND:1463">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3763)..id(WO2007038993_w_3764)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.94" comment="" name="Titanium dioxide" relevant="false" chebi-id="CHEBI:32234" epochem-id="EPOCHEM:NEW:COMPOUND:1463">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5106)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5105)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.95" comment="" name="Titanium dioxide" relevant="false" chebi-id="CHEBI:32234" epochem-id="EPOCHEM:NEW:COMPOUND:1463">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5516)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5515)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.96" comment="" name="Titanium dioxide" relevant="false" chebi-id="CHEBI:32234" epochem-id="EPOCHEM:NEW:COMPOUND:1463">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5532)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5531)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.97" comment="" name="Titanium dioxide" relevant="false" chebi-id="CHEBI:32234" epochem-id="EPOCHEM:NEW:COMPOUND:1463">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5784)..id(WO2007038993_w_5785)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.98" comment="" name="Titanium dioxide" relevant="false" chebi-id="CHEBI:32234" epochem-id="EPOCHEM:NEW:COMPOUND:1463">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6031)..id(WO2007038993_w_6032)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.99" comment="" name="Titanium dioxide" relevant="false" chebi-id="CHEBI:32234" epochem-id="EPOCHEM:NEW:COMPOUND:1463">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6296)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6295)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.100" comment="" name="lsodecyl neopentanoate" relevant="false" chebi-id="WO2007038993:145728" epochem-id="EPOCHEM:NEW:COMPOUND:1464">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6108)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6107)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.101" comment="" name="lsodecyl neopentanoate" relevant="false" chebi-id="WO2007038993:145728" epochem-id="EPOCHEM:NEW:COMPOUND:1464">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6326)..id(WO2007038993_w_6327)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.102" comment="" name="stearalkonium bentonite" relevant="false" chebi-id="WO2007038993:633035" epochem-id="EPOCHEM:NEW:COMPOUND:1465">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5183)..id(WO2007038993_w_5184)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.103" comment="" name="stearalkonium bentonite" relevant="false" chebi-id="WO2007038993:633035" epochem-id="EPOCHEM:NEW:COMPOUND:1465">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6112)..id(WO2007038993_w_6113)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.104" comment="" name="stearalkonium bentonite" relevant="false" chebi-id="WO2007038993:633035" epochem-id="EPOCHEM:NEW:COMPOUND:1465">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6332)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6331)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.105" comment="" name="propylene glycol" relevant="false" chebi-id="CHEBI:16997" epochem-id="EPOCHEM:NEW:COMPOUND:25">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5187)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5186)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.106" comment="" name="propylene glycol" relevant="false" chebi-id="CHEBI:16997" epochem-id="EPOCHEM:NEW:COMPOUND:25">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6116)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6115)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.107" comment="" name="propylene glycol" relevant="false" chebi-id="CHEBI:16997" epochem-id="EPOCHEM:NEW:COMPOUND:25">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6335)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6334)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.128" comment="" name="vinyldimethicone" relevant="false" chebi-id="WO2007038993:480688" epochem-id="EPOCHEM:NEW:COMPOUND:1466">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5192)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5191)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.129" comment="" name="vinyldimethicone" relevant="false" chebi-id="WO2007038993:480688" epochem-id="EPOCHEM:NEW:COMPOUND:1466">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6120)..id(WO2007038993_w_6121)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.130" comment="" name="vinyldimethicone" relevant="false" chebi-id="WO2007038993:480688" epochem-id="EPOCHEM:NEW:COMPOUND:1466">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6340)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6339)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.151" comment="" name="Disodium distyrylbiphenyl disulfonate" relevant="false" chebi-id="WO2007038993:453925" epochem-id="EPOCHEM:NEW:COMPOUND:1468">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6370)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6372)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6371)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.152" comment="" name="sodium chloride" relevant="false" chebi-id="CHEBI:26710" epochem-id="EPOCHEM:COMPOUND:6837">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6374)..id(WO2007038993_w_6375)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.153" comment="" name="cyclomethicone" relevant="false" chebi-id="WO2007038993:56257" epochem-id="EPOCHEM:NEW:COMPOUND:1469">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6734)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.154" comment="" name="dimethyl siloxane" relevant="false" chebi-id="WO2007038993:29378" epochem-id="EPOCHEM:NEW:COMPOUND:1470">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_1696)..id(WO2007038993_w_1697)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.155" comment="" name="dimethyl siloxane" relevant="false" chebi-id="WO2007038993:29378" epochem-id="EPOCHEM:NEW:COMPOUND:1470">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_1741)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_1740)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.156" comment="" name="dimethyl siloxane" relevant="false" chebi-id="WO2007038993:29378" epochem-id="EPOCHEM:NEW:COMPOUND:1470">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_2081)..id(WO2007038993_w_2082)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.157" comment="" name="dimethyl siloxane" relevant="false" chebi-id="WO2007038993:29378" epochem-id="EPOCHEM:NEW:COMPOUND:1470">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6729)..id(WO2007038993_w_6730)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.158" comment="" name="dimethyl siloxane" relevant="false" chebi-id="WO2007038993:29378" epochem-id="EPOCHEM:NEW:COMPOUND:1470">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6740)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6739)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.159" comment="" name="hexamethyl cyclotrisiloxane" relevant="false" chebi-id="WO2007038993:744110" epochem-id="EPOCHEM:NEW:COMPOUND:1471">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_1704)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_1703)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.160" comment="" name="hexamethyl cyclotrisiloxane" relevant="false" chebi-id="WO2007038993:744110" epochem-id="EPOCHEM:NEW:COMPOUND:1471">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6764)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6763)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.161" comment="" name="octamethyl cyclotetrasiloxane" relevant="false" chebi-id="WO2007038993:761928" epochem-id="EPOCHEM:NEW:COMPOUND:1472">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_1712)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_1711)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.162" comment="" name="octamethyl cyclotetrasiloxane" relevant="false" chebi-id="WO2007038993:761928" epochem-id="EPOCHEM:NEW:COMPOUND:1472">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6766)..id(WO2007038993_w_6767)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.163" comment="" name="decamethyl cyclopentasiloxane" relevant="false" chebi-id="WO2007038993:187354" epochem-id="EPOCHEM:NEW:COMPOUND:1473">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6769)..id(WO2007038993_w_6770)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.164" comment="" name="dodecamethyl cyclohexasiloxane" relevant="false" chebi-id="WO2007038993:23816" epochem-id="EPOCHEM:NEW:COMPOUND:1474">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_1726)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_1725)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.165" comment="" name="dodecamethyl cyclohexasiloxane" relevant="false" chebi-id="WO2007038993:23816" epochem-id="EPOCHEM:NEW:COMPOUND:1474">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6773)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6772)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.166" comment="" name="hexamethyl disiloxane" relevant="false" chebi-id="WO2007038993:528328" epochem-id="EPOCHEM:NEW:COMPOUND:1475">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_1746)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_1745)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.167" comment="" name="hexamethyl disiloxane" relevant="false" chebi-id="WO2007038993:528328" epochem-id="EPOCHEM:NEW:COMPOUND:1475">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6775)..id(WO2007038993_w_6776)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.168" comment="" name="octamethyl trisiloxane" relevant="false" chebi-id="WO2007038993:794983" epochem-id="EPOCHEM:NEW:COMPOUND:1476">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_1748)..id(WO2007038993_w_1749)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.169" comment="" name="octamethyl trisiloxane" relevant="false" chebi-id="WO2007038993:794983" epochem-id="EPOCHEM:NEW:COMPOUND:1476">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6778)..id(WO2007038993_w_6779)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.170" comment="" name="decamethyl tetrasiloxane" relevant="false" chebi-id="WO2007038993:994704" epochem-id="EPOCHEM:NEW:COMPOUND:1477">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_1752)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_1751)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.171" comment="" name="decamethyl tetrasiloxane" relevant="false" chebi-id="WO2007038993:994704" epochem-id="EPOCHEM:NEW:COMPOUND:1477">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6782)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6781)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.172" comment="" name="dodecamethyl pentasiloxane" relevant="false" chebi-id="WO2007038993:668889" epochem-id="EPOCHEM:NEW:COMPOUND:1478">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6784)..id(WO2007038993_w_6785)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.173" comment="" name="Cyclopentasiloxane" relevant="false" chebi-id="WO2007038993:934366" epochem-id="EPOCHEM:NEW:COMPOUND:1479">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_1715)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.174" comment="" name="Cyclopentasiloxane" relevant="false" chebi-id="WO2007038993:934366" epochem-id="EPOCHEM:NEW:COMPOUND:1479">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_2186)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.175" comment="" name="Cyclopentasiloxane" relevant="false" chebi-id="WO2007038993:934366" epochem-id="EPOCHEM:NEW:COMPOUND:1479">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_2196)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.176" comment="" name="Cyclopentasiloxane" relevant="false" chebi-id="WO2007038993:934366" epochem-id="EPOCHEM:NEW:COMPOUND:1479">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5072)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.177" comment="" name="Cyclopentasiloxane" relevant="false" chebi-id="WO2007038993:934366" epochem-id="EPOCHEM:NEW:COMPOUND:1479">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5165)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.178" comment="" name="Cyclopentasiloxane" relevant="false" chebi-id="WO2007038993:934366" epochem-id="EPOCHEM:NEW:COMPOUND:1479">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5181)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.179" comment="" name="Cyclopentasiloxane" relevant="false" chebi-id="WO2007038993:934366" epochem-id="EPOCHEM:NEW:COMPOUND:1479">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5264)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.180" comment="" name="Cyclopentasiloxane" relevant="false" chebi-id="WO2007038993:934366" epochem-id="EPOCHEM:NEW:COMPOUND:1479">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5308)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.181" comment="" name="Cyclopentasiloxane" relevant="false" chebi-id="WO2007038993:934366" epochem-id="EPOCHEM:NEW:COMPOUND:1479">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5451)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.182" comment="" name="Cyclopentasiloxane" relevant="false" chebi-id="WO2007038993:934366" epochem-id="EPOCHEM:NEW:COMPOUND:1479">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5585)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.183" comment="" name="Cyclopentasiloxane" relevant="false" chebi-id="WO2007038993:934366" epochem-id="EPOCHEM:NEW:COMPOUND:1479">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5741)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.184" comment="" name="Cyclopentasiloxane" relevant="false" chebi-id="WO2007038993:934366" epochem-id="EPOCHEM:NEW:COMPOUND:1479">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5840)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.185" comment="" name="Cyclopentasiloxane" relevant="false" chebi-id="WO2007038993:934366" epochem-id="EPOCHEM:NEW:COMPOUND:1479">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5982)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.186" comment="" name="Cyclopentasiloxane" relevant="false" chebi-id="WO2007038993:934366" epochem-id="EPOCHEM:NEW:COMPOUND:1479">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6110)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.187" comment="" name="Cyclopentasiloxane" relevant="false" chebi-id="WO2007038993:934366" epochem-id="EPOCHEM:NEW:COMPOUND:1479">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6282)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.188" comment="" name="Cyclopentasiloxane" relevant="false" chebi-id="WO2007038993:934366" epochem-id="EPOCHEM:NEW:COMPOUND:1479">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6329)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.189" comment="" name="Cyclopentasiloxane" relevant="false" chebi-id="WO2007038993:934366" epochem-id="EPOCHEM:NEW:COMPOUND:1479">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6770)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.190" comment="" name="Trisiloxane" relevant="false" chebi-id="WO2007038993:808206" epochem-id="EPOCHEM:NEW:COMPOUND:1480">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_1749)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.191" comment="" name="Trisiloxane" relevant="false" chebi-id="CHEBI:48151" epochem-id="EPOCHEM:NEW:COMPOUND:1480">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_2000)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.192" comment="" name="Trisiloxane" relevant="false" chebi-id="CHEBI:48151" epochem-id="EPOCHEM:NEW:COMPOUND:1480">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5079)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.193" comment="" name="Trisiloxane" relevant="false" chebi-id="CHEBI:48151" epochem-id="EPOCHEM:NEW:COMPOUND:1480">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5372)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.194" comment="" name="Trisiloxane" relevant="false" chebi-id="CHEBI:48151" epochem-id="EPOCHEM:NEW:COMPOUND:1480">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5458)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.195" comment="" name="Trisiloxane" relevant="false" chebi-id="CHEBI:48151" epochem-id="EPOCHEM:NEW:COMPOUND:1480">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5748)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.196" comment="" name="Trisiloxane" relevant="false" chebi-id="CHEBI:48151" epochem-id="EPOCHEM:NEW:COMPOUND:1480">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5989)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.197" comment="" name="Trisiloxane" relevant="false" chebi-id="CHEBI:48151" epochem-id="EPOCHEM:NEW:COMPOUND:1480">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6289)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.198" comment="" name="Trisiloxane" relevant="false" chebi-id="WO2007038993:808206" epochem-id="EPOCHEM:NEW:COMPOUND:1480">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6779)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.199" comment="" name="Phenoxyethanol" relevant="false" chebi-id="WO2007038993:578244" epochem-id="EPOCHEM:NEW:COMPOUND:247">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5197)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.200" comment="" name="Phenoxyethanol" relevant="false" chebi-id="WO2007038993:578244" epochem-id="EPOCHEM:NEW:COMPOUND:247">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5335)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.201" comment="" name="Phenoxyethanol" relevant="false" chebi-id="WO2007038993:578244" epochem-id="EPOCHEM:NEW:COMPOUND:247">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5595)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.202" comment="" name="Phenoxyethanol" relevant="false" chebi-id="WO2007038993:578244" epochem-id="EPOCHEM:NEW:COMPOUND:247">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5847)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.203" comment="" name="Phenoxyethanol" relevant="false" chebi-id="WO2007038993:578244" epochem-id="EPOCHEM:NEW:COMPOUND:247">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6129)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.204" comment="" name="Phenoxyethanol" relevant="false" chebi-id="WO2007038993:578244" epochem-id="EPOCHEM:NEW:COMPOUND:247">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6348)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.205" comment="" name="Silica" relevant="false" chebi-id="CHEBI:30563" epochem-id="EPOCHEM:NEW:COMPOUND:1434">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5155)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.206" comment="" name="Silica" relevant="false" chebi-id="CHEBI:30563" epochem-id="EPOCHEM:NEW:COMPOUND:1434">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5279)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.207" comment="" name="Silica" relevant="false" chebi-id="CHEBI:30563" epochem-id="EPOCHEM:NEW:COMPOUND:1434">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5578)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.208" comment="" name="Silica" relevant="false" chebi-id="CHEBI:30563" epochem-id="EPOCHEM:NEW:COMPOUND:1434">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5833)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.209" comment="" name="Silica" relevant="false" chebi-id="CHEBI:30563" epochem-id="EPOCHEM:NEW:COMPOUND:1434">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6103)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.210" comment="" name="Silica" relevant="false" chebi-id="CHEBI:30563" epochem-id="EPOCHEM:NEW:COMPOUND:1434">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6322)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.213" comment="" name="disteardimonium hectorite" relevant="false" chebi-id="WO2007038993:548183" epochem-id="EPOCHEM:NEW:COMPOUND:1482">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5168)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5167)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.214" comment="" name="disteardimonium hectorite" relevant="false" chebi-id="WO2007038993:548183" epochem-id="EPOCHEM:NEW:COMPOUND:1482">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5588)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5587)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.215" comment="" name="disteardimonium hectorite" relevant="false" chebi-id="WO2007038993:548183" epochem-id="EPOCHEM:NEW:COMPOUND:1482">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5842)..id(WO2007038993_w_5843)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.216" comment="" name="Ultramarines" relevant="false" chebi-id="WO2007038993:783395" epochem-id="EPOCHEM:NEW:COMPOUND:1483">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5800)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.217" comment="" name="Chromium hydroxide green" relevant="false" chebi-id="WO2007038993:789321" epochem-id="EPOCHEM:NEW:COMPOUND:1484">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5815)..id(WO2007038993_w_5817)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.218" comment="" name="Retinyl palmitate" relevant="false" chebi-id="CHEBI:17616" epochem-id="EPOCHEM:NEW:COMPOUND:1485">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5639)..id(WO2007038993_w_5640)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.219" comment="" name="Bisabolol" relevant="false" chebi-id="WO2007038993:537355" epochem-id="EPOCHEM:NEW:COMPOUND:173">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5632)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.220" comment="" name="lsopropyl isostearate" relevant="false" chebi-id="WO2007038993:310123" epochem-id="EPOCHEM:NEW:COMPOUND:1486">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5506)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5505)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.221" comment="" name="isodecyl neopentanoate" relevant="false" chebi-id="WO2007038993:257582" epochem-id="EPOCHEM:NEW:COMPOUND:1487">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_2511)..id(WO2007038993_w_2512)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.222" comment="" name="isodecyl neopentanoate" relevant="false" chebi-id="WO2007038993:257582" epochem-id="EPOCHEM:NEW:COMPOUND:1487">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5178)..id(WO2007038993_w_5179)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.223" comment="" name="kaolin" relevant="false" chebi-id="WO2007038993:435053" epochem-id="EPOCHEM:NEW:COMPOUND:383">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3965)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.224" comment="" name="kaolin" relevant="false" chebi-id="WO2007038993:435053" epochem-id="EPOCHEM:NEW:COMPOUND:383">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6096)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.225" comment="" name="aluminium oxide" relevant="false" chebi-id="CHEBI:30187" epochem-id="EPOCHEM:NEW:COMPOUND:1488">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3967)..id(WO2007038993_w_3968)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.226" comment="" name="silicon oxide" relevant="false" chebi-id="CHEBI:46727" epochem-id="EPOCHEM:NEW:COMPOUND:1489">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3971)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3970)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.227" comment="" name="hectorite" relevant="false" chebi-id="WO2007038993:461484" epochem-id="EPOCHEM:NEW:COMPOUND:1490">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_4006)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.228" comment="" name="hectorite" relevant="false" chebi-id="WO2007038993:461484" epochem-id="EPOCHEM:NEW:COMPOUND:1490">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5168)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.229" comment="" name="hectorite" relevant="false" chebi-id="WO2007038993:461484" epochem-id="EPOCHEM:NEW:COMPOUND:1490">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5588)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.230" comment="" name="hectorite" relevant="false" chebi-id="WO2007038993:461484" epochem-id="EPOCHEM:NEW:COMPOUND:1490">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5843)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.231" comment="" name="bentonite" relevant="false" chebi-id="WO2007038993:465128" epochem-id="EPOCHEM:NEW:COMPOUND:439">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_4008)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.232" comment="" name="bentonite" relevant="false" chebi-id="WO2007038993:465128" epochem-id="EPOCHEM:NEW:COMPOUND:439">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5184)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.233" comment="" name="bentonite" relevant="false" chebi-id="WO2007038993:465128" epochem-id="EPOCHEM:NEW:COMPOUND:439">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6113)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.234" comment="" name="bentonite" relevant="false" chebi-id="WO2007038993:465128" epochem-id="EPOCHEM:NEW:COMPOUND:439">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6332)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.235" comment="" name="montmorrillonite" relevant="false" chebi-id="WO2007038993:683459" epochem-id="EPOCHEM:NEW:COMPOUND:1491">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_4010)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.236" comment="" name="bismuth oxychloride" relevant="false" chebi-id="WO2007038993:559634" epochem-id="EPOCHEM:NEW:COMPOUND:1492">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3465)..id(WO2007038993_w_3466)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.237" comment="" name="bismuth oxychloride" relevant="false" chebi-id="WO2007038993:559634" epochem-id="EPOCHEM:NEW:COMPOUND:1492">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3469)..id(WO2007038993_w_3470)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.238" comment="" name="aluminium" relevant="false" chebi-id="CHEBI:28984" epochem-id="EPOCHEM:COMPOUND:7108">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3478)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.239" comment="" name="aluminium" relevant="false" chebi-id="CHEBI:28984" epochem-id="EPOCHEM:COMPOUND:7108">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3531)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.240" comment="" name="aluminium" relevant="false" chebi-id="CHEBI:28984" epochem-id="EPOCHEM:COMPOUND:7108">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3967)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.241" comment="" name="zirconium" relevant="false" chebi-id="CHEBI:33342" epochem-id="EPOCHEM:COMPOUND:7443">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3533)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.242" comment="" name="barium" relevant="false" chebi-id="CHEBI:32594" epochem-id="EPOCHEM:COMPOUND:7094">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3535)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.243" comment="" name="calcium" relevant="false" chebi-id="CHEBI:22984" epochem-id="EPOCHEM:COMPOUND:7090">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3537)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.244" comment="" name="strontium" relevant="false" chebi-id="CHEBI:33324" epochem-id="EPOCHEM:COMPOUND:7093">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3539)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.245" comment="" name="zinc oxide" relevant="false" chebi-id="CHEBI:36560" epochem-id="EPOCHEM:COMPOUND:7673">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3421)..id(WO2007038993_w_3422)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.246" comment="" name="zinc oxide" relevant="false" chebi-id="CHEBI:36560" epochem-id="EPOCHEM:COMPOUND:7673">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3768)..id(WO2007038993_w_3769)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.247" comment="" name="chromium oxide" relevant="false" chebi-id="WO2007038993:176909" epochem-id="EPOCHEM:NEW:COMPOUND:1493">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3427)..id(WO2007038993_w_3428)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.248" comment="" name="chromium hydroxide" relevant="false" chebi-id="WO2007038993:254958" epochem-id="EPOCHEM:NEW:COMPOUND:1494">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3431)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3430)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.249" comment="" name="chromium hydroxide" relevant="false" chebi-id="WO2007038993:254958" epochem-id="EPOCHEM:NEW:COMPOUND:1494">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5815)..id(WO2007038993_w_5816)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.250" comment="" name="ultramarine" relevant="false" chebi-id="WO2007038993:537904" epochem-id="EPOCHEM:NEW:COMPOUND:1495">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3433)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.251" comment="" name="Berlin Blue" relevant="false" chebi-id="WO2007038993:68683" epochem-id="EPOCHEM:NEW:COMPOUND:1496">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3436)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3435)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.252" comment="" name="ferricblue" relevant="false" chebi-id="WO2007038993:85139" epochem-id="EPOCHEM:NEW:COMPOUND:1497">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3439)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3438)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.253" comment="" name="trimethylpentane diol" relevant="false" chebi-id="WO2007038993:378893" epochem-id="EPOCHEM:NEW:COMPOUND:1498">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3135)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3134)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.254" comment="" name="dipropylene glycol" relevant="false" chebi-id="WO2007038993:76047" epochem-id="EPOCHEM:NEW:COMPOUND:1499">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3064)..id(WO2007038993_w_3065)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.255" comment="" name="tripropylene glycol" relevant="false" chebi-id="WO2007038993:676280" epochem-id="EPOCHEM:NEW:COMPOUND:1500">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3068)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3067)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.256" comment="" name="glycerine" relevant="false" chebi-id="CHEBI:17754" epochem-id="EPOCHEM:NEW:COMPOUND:875">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3070)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.257" comment="" name="diglycerine" relevant="false" chebi-id="WO2007038993:649401" epochem-id="EPOCHEM:NEW:COMPOUND:1501">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3072)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.259" comment="" name="propylene-1 ,2-glycol" relevant="false" chebi-id="WO2007038993:614016" epochem-id="EPOCHEM:NEW:COMPOUND:1502">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3056)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3060)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3059)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3061)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3057)..id(WO2007038993_w_3058)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3062)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.260" comment="" name="ethanol" relevant="false" chebi-id="CHEBI:16236" epochem-id="EPOCHEM:COMPOUND:4765">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_495)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.261" comment="" name="ethanol" relevant="false" chebi-id="CHEBI:16236" epochem-id="EPOCHEM:COMPOUND:4765">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_540)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.262" comment="" name="ethanol" relevant="false" chebi-id="CHEBI:16236" epochem-id="EPOCHEM:COMPOUND:4765">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3054)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.263" comment="" name="butane-1 ,2-, - 1 ,3-, -1 ,4-diol" relevant="false" chebi-id="WO2007038993:627693" epochem-id="EPOCHEM:NEW:COMPOUND:1503">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3097)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3096)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3085)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3083)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3087)..id(WO2007038993_w_3088)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3093)..id(WO2007038993_w_3094)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3089)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3082)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3099)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3090)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3098)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3086)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3084)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3081)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3091)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3095)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3092)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.264" comment="" name="hexane-1 ,2-, -1 ,3-, -1 ,4- or -1 ,6-diol" relevant="false" chebi-id="WO2007038993:136281" epochem-id="EPOCHEM:NEW:COMPOUND:1504">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3111)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3126)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3130)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3124)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3128)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3107)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3116)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3123)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3120)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3115)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3119)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3118)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3121)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3108)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3127)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3113)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3131)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3112)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3129)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3110)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3117)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3125)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3122)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3114)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3109)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.265" comment="" name="behenyl behenate" relevant="false" chebi-id="WO2007038993:842614" epochem-id="EPOCHEM:NEW:COMPOUND:1505">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_2860)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_2859)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.266" comment="" name="behenyl stearate" relevant="false" chebi-id="WO2007038993:397440" epochem-id="EPOCHEM:NEW:COMPOUND:1506">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_2857)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_2856)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.267" comment="" name="myristyl myristate" relevant="false" chebi-id="WO2007038993:416648" epochem-id="EPOCHEM:NEW:COMPOUND:1507">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_2847)..id(WO2007038993_w_2848)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.268" comment="" name="cetyl palmitate" relevant="false" chebi-id="WO2007038993:767460" epochem-id="EPOCHEM:NEW:COMPOUND:1508">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_2851)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_2850)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.269" comment="" name="stearyl stearate" relevant="false" chebi-id="WO2007038993:928765" epochem-id="EPOCHEM:NEW:COMPOUND:1509">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_2853)..id(WO2007038993_w_2854)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.270" comment="" name="cetyl alcohol" relevant="false" chebi-id="CHEBI:16125" epochem-id="EPOCHEM:NEW:COMPOUND:246">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_2608)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_2607)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.271" comment="" name="stearyl alcohol" relevant="false" chebi-id="CHEBI:32154" epochem-id="EPOCHEM:NEW:COMPOUND:1026">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_2610)..id(WO2007038993_w_2611)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.272" comment="" name="behenyl alcohol" relevant="false" chebi-id="CHEBI:31000" epochem-id="EPOCHEM:NEW:COMPOUND:1347">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_2613)..id(WO2007038993_w_2614)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.273" comment="" name="palmitic acid" relevant="false" chebi-id="CHEBI:15756" epochem-id="EPOCHEM:COMPOUND:690">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_2620)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_2619)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.274" comment="" name="stearic acid" relevant="false" chebi-id="CHEBI:28842" epochem-id="EPOCHEM:COMPOUND:693">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_2623)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_2622)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.275" comment="" name="behenic acid" relevant="false" chebi-id="CHEBI:28941" epochem-id="EPOCHEM:COMPOUND:712">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_2625)..id(WO2007038993_w_2626)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.276" comment="" name="melissic acid" relevant="false" chebi-id="CHEBI:31003" epochem-id="EPOCHEM:COMPOUND:2887">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_2628)..id(WO2007038993_w_2629)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.277" comment="" name="oleyl erucate" relevant="false" chebi-id="WO2007038993:266978" epochem-id="EPOCHEM:NEW:COMPOUND:1510">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_2515)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_2514)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.278" comment="" name="oleyl oleate" relevant="false" chebi-id="WO2007038993:386569" epochem-id="EPOCHEM:NEW:COMPOUND:1511">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_2518)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_2517)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.279" comment="" name="diethyl sebacate" relevant="false" chebi-id="WO2007038993:387088" epochem-id="EPOCHEM:NEW:COMPOUND:1512">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_2520)..id(WO2007038993_w_2521)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.280" comment="" name="hexyl laurate" relevant="false" chebi-id="WO2007038993:4448" epochem-id="EPOCHEM:NEW:COMPOUND:1513">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_2523)..id(WO2007038993_w_2524)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.281" comment="" name="ethylhexyl dodecanol" relevant="false" chebi-id="WO2007038993:689473" epochem-id="EPOCHEM:NEW:COMPOUND:1514">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_2534)..id(WO2007038993_w_2535)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.282" comment="" name="capricacid" relevant="false" chebi-id="WO2007038993:253812" epochem-id="EPOCHEM:NEW:COMPOUND:1515">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_2540)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_2539)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.283" comment="" name="isopropyl myristate" relevant="false" chebi-id="WO2007038993:48675" epochem-id="EPOCHEM:NEW:COMPOUND:1516">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_2497)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_2496)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.284" comment="" name="isopropyl palmitate" relevant="false" chebi-id="WO2007038993:227825" epochem-id="EPOCHEM:NEW:COMPOUND:1517">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_2500)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_2499)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.285" comment="" name="isopropyl isostearate" relevant="false" chebi-id="WO2007038993:503513" epochem-id="EPOCHEM:NEW:COMPOUND:1518">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_2503)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_2502)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.286" comment="" name="isopropyl isostearate" relevant="false" chebi-id="WO2007038993:503513" epochem-id="EPOCHEM:NEW:COMPOUND:1518">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_2509)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_2508)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.287" comment="" name="butyl stearate" relevant="false" chebi-id="WO2007038993:589109" epochem-id="EPOCHEM:NEW:COMPOUND:1519">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_2506)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_2505)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.288" comment="" name="PPG-5-laureth-5" relevant="false" chebi-id="WO2007038993:121258" epochem-id="EPOCHEM:NEW:COMPOUND:1520">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_2527)..id(WO2007038993_w_2528)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_2532)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_2530)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_2529)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_2531)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_2526)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.295" comment="" name="Caprylyl trimethicone" relevant="false" chebi-id="WO2007038993:752956" epochem-id="EPOCHEM:NEW:COMPOUND:1521">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_2004)..id(WO2007038993_w_2005)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.296" comment="" name="lauryl trimethicone" relevant="false" chebi-id="WO2007038993:612932" epochem-id="EPOCHEM:NEW:COMPOUND:1522">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_2007)..id(WO2007038993_w_2008)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.297" comment="" name="stearyl trimethicone" relevant="false" chebi-id="WO2007038993:525024" epochem-id="EPOCHEM:NEW:COMPOUND:1523">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_2011)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_2010)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.304" comment="" name="phenyl trimethicone" relevant="false" chebi-id="WO2007038993:991438" epochem-id="EPOCHEM:NEW:COMPOUND:1524">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_1929)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_1928)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.305" comment="" name="decamethylcyclopen -tasiloxane" relevant="false" chebi-id="WO2007038993:825472" epochem-id="EPOCHEM:NEW:COMPOUND:1525">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_1718)..id(WO2007038993_w_1719)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_1717)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_1720)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.306" comment="" name="diphenyl dimethicone" relevant="false" chebi-id="WO2007038993:810801" epochem-id="EPOCHEM:NEW:COMPOUND:1526">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_1932)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_1931)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.307" comment="" name="trimethicone" relevant="false" chebi-id="WO2007038993:666976" epochem-id="EPOCHEM:NEW:COMPOUND:1527">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_1929)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.308" comment="" name="trimethicone" relevant="false" chebi-id="WO2007038993:666976" epochem-id="EPOCHEM:NEW:COMPOUND:1527">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_2002)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.309" comment="" name="trimethicone" relevant="false" chebi-id="WO2007038993:666976" epochem-id="EPOCHEM:NEW:COMPOUND:1527">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_2005)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.310" comment="" name="trimethicone" relevant="false" chebi-id="WO2007038993:666976" epochem-id="EPOCHEM:NEW:COMPOUND:1527">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_2008)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.311" comment="" name="trimethicone" relevant="false" chebi-id="WO2007038993:666976" epochem-id="EPOCHEM:NEW:COMPOUND:1527">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_2011)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.312" comment="" name="trimethicone" relevant="false" chebi-id="WO2007038993:666976" epochem-id="EPOCHEM:NEW:COMPOUND:1527">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6673)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.313" comment="" name="cyclotet- rasiloxane" relevant="false" chebi-id="WO2007038993:321190" epochem-id="EPOCHEM:NEW:COMPOUND:1528">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_1708)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_1707)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_1709)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.314" comment="" name="cyclotrisiloxane" relevant="false" chebi-id="CHEBI:48146" epochem-id="EPOCHEM:NEW:COMPOUND:1529">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_1701)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.315" comment="" name="cyclotrisiloxane" relevant="false" chebi-id="WO2007038993:791276" epochem-id="EPOCHEM:NEW:COMPOUND:1529">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_1704)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.316" comment="" name="cyclotrisiloxane" relevant="false" chebi-id="WO2007038993:791276" epochem-id="EPOCHEM:NEW:COMPOUND:1529">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6764)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.317" comment="" name="cyclohexasiloxane" relevant="false" chebi-id="WO2007038993:757224" epochem-id="EPOCHEM:NEW:COMPOUND:1530">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_1723)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.318" comment="" name="cyclohexasiloxane" relevant="false" chebi-id="WO2007038993:757224" epochem-id="EPOCHEM:NEW:COMPOUND:1530">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_1726)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.319" comment="" name="cyclohexasiloxane" relevant="false" chebi-id="WO2007038993:757224" epochem-id="EPOCHEM:NEW:COMPOUND:1530">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6773)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.320" comment="" name="dodecamethyl pentasilox- ane" relevant="false" chebi-id="WO2007038993:866724" epochem-id="EPOCHEM:NEW:COMPOUND:1531">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_1757)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_1756)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_1754)..id(WO2007038993_w_1755)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.324" comment="" name="ethyl alcohol" relevant="false" chebi-id="CHEBI:16236" epochem-id="EPOCHEM:NEW:COMPOUND:426">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_468)..id(WO2007038993_w_469)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.325" comment="" name="ethyl alcohol" relevant="false" chebi-id="CHEBI:16236" epochem-id="EPOCHEM:NEW:COMPOUND:426">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_481)..id(WO2007038993_w_482)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.326" comment="" name="cerium oxide" relevant="false" chebi-id="WO2007038993:443901" epochem-id="EPOCHEM:NEW:COMPOUND:1978">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3761)"/>
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3760)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.327" comment="" name="dimethicone" relevant="false" chebi-id="CHEBI:31498" epochem-id="EPOCHEM:NEW:COMPOUND:1936">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_1047)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.328" comment="" name="dimethicone" relevant="false" chebi-id="CHEBI:31498" epochem-id="EPOCHEM:NEW:COMPOUND:1936">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_1926)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.329" comment="" name="dimethicone" relevant="false" chebi-id="WO2007038993:684440" epochem-id="EPOCHEM:NEW:COMPOUND:1936">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_1932)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.330" comment="" name="dimethicone" relevant="false" chebi-id="CHEBI:31498" epochem-id="EPOCHEM:NEW:COMPOUND:1936">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_2194)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.331" comment="" name="dimethicone" relevant="false" chebi-id="CHEBI:31498" epochem-id="EPOCHEM:NEW:COMPOUND:1936">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_2204)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.332" comment="" name="dimethicone" relevant="false" chebi-id="CHEBI:31498" epochem-id="EPOCHEM:NEW:COMPOUND:1936">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5065)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.333" comment="" name="dimethicone" relevant="false" chebi-id="CHEBI:31498" epochem-id="EPOCHEM:NEW:COMPOUND:1936">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5189)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.334" comment="" name="dimethicone" relevant="false" chebi-id="WO2007038993:684440" epochem-id="EPOCHEM:NEW:COMPOUND:1936">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5192)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.335" comment="" name="dimethicone" relevant="false" chebi-id="CHEBI:31498" epochem-id="EPOCHEM:NEW:COMPOUND:1936">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5257)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.336" comment="" name="dimethicone" relevant="false" chebi-id="CHEBI:31498" epochem-id="EPOCHEM:NEW:COMPOUND:1936">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5444)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.337" comment="" name="dimethicone" relevant="false" chebi-id="CHEBI:31498" epochem-id="EPOCHEM:NEW:COMPOUND:1936">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5737)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.338" comment="" name="dimethicone" relevant="false" chebi-id="CHEBI:31498" epochem-id="EPOCHEM:NEW:COMPOUND:1936">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5975)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.339" comment="" name="dimethicone" relevant="false" chebi-id="CHEBI:31498" epochem-id="EPOCHEM:NEW:COMPOUND:1936">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6118)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.340" comment="" name="dimethicone" relevant="false" chebi-id="WO2007038993:684440" epochem-id="EPOCHEM:NEW:COMPOUND:1936">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6121)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.341" comment="" name="dimethicone" relevant="false" chebi-id="CHEBI:31498" epochem-id="EPOCHEM:NEW:COMPOUND:1936">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6275)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.342" comment="" name="dimethicone" relevant="false" chebi-id="CHEBI:31498" epochem-id="EPOCHEM:NEW:COMPOUND:1936">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6337)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.343" comment="" name="dimethicone" relevant="false" chebi-id="WO2007038993:684440" epochem-id="EPOCHEM:NEW:COMPOUND:1936">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6340)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.344" comment="" name="dimethicone" relevant="false" chebi-id="CHEBI:31498" epochem-id="EPOCHEM:NEW:COMPOUND:1936">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6482)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.345" comment="" name="dimethicone" relevant="false" chebi-id="CHEBI:31498" epochem-id="EPOCHEM:NEW:COMPOUND:1936">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_6701)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.346" comment="" name="copper" relevant="false" chebi-id="CHEBI:28694" epochem-id="EPOCHEM:COMPOUND:7465">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3484)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.347" comment="" name="copper" relevant="false" chebi-id="CHEBI:28694" epochem-id="EPOCHEM:COMPOUND:7465">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_5401)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.348" comment="" name="silver" relevant="false" chebi-id="CHEBI:30512" epochem-id="EPOCHEM:COMPOUND:7466">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3486)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038993.HC.chemical-names.349" comment="" name="gold" relevant="false" chebi-id="CHEBI:29287" epochem-id="EPOCHEM:COMPOUND:7467">
+      <nite:child href="WO2007038993.words.xml#id(WO2007038993_w_3488)"/>
+   </chem-name>
+</nite:root>

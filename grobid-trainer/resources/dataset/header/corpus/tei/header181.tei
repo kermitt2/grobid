@@ -1,0 +1,30 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="182"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Refining Abstract Machine Specifications of the <lb/>Steam Boiler Control to Well Documented <lb/>Executable Code <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Christoph Beierle, Egon Borger, Igor D - urd -anovic, Uwe Glasser, Elvinia <lb/>Riccobene <lb/></docAuthor></byline>
+		<byline><affiliation>1 Fernuniversitat-GH Hagen,</affiliation></byline>
+		<address>Germany,</address>
+		<email>christoph.beierle@fernuni-hagen.de <lb/></email>
+		<byline><affiliation>2 Universita di Pisa,</affiliation></byline>
+		<address>Italy,</address>
+		<email>boerger@di.unipi.it <lb/></email>
+		<byline><affiliation>3 Universitat-GH Paderborn,</affiliation></byline>
+		<address>Germany,</address>
+		<email>igor@uni-paderborn.de <lb/></email>
+		<byline><affiliation>4 Universitat-GH Paderborn,</affiliation></byline>
+		<address>Germany,</address>
+		<email>glaesser@uni-paderborn.de <lb/></email>
+		<byline><affiliation>5 Universita di Catania,</affiliation></byline>
+		<address>Italy,</address>
+		<email>riccobene@dipmat.unict.it <lb/></email>
+		<div type="abstract">Abstract. We use the steam boiler control specification problem to illustrate how the evolving algebra approach to the specification and the <lb/>verification of complex systems can be exploited for a reliable and well <lb/>documented development of executable, but formally inspectable and <lb/>systematically modifiable code. A hierarchy of stepwise refined abstract <lb/>machine models is developed, the ground version of which can be checked <lb/>for whether it faithfully reflects the informally given problem. The sequence of machine models yields various abstract views of the system, <lb/>making the various design decisions transparent, and leads to a C++ <lb/>program. This program has been demonstrated during the Dagstuhl-Meeting on Methods for Semantics and Specification, in June 1995, to <lb/>control the Karlsruhe steam boiler simulator satisfactorily. <lb/>The abstract machines are evolving algebras and thereby have a rigorous <lb/>semantical foundation, allowing us to formalize and prove, under precisely stated assumptions, some typical sample properties of the system. <lb/>This provides insight into the structure of the system which supports <lb/>easily maintainable extensions and modifications of both the abstract <lb/>specification and the implementation. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

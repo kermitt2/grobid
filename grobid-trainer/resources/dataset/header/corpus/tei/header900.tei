@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="unknown"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Using a DEM to Determine Geospatial Object Trajectories <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Robert T. Collins, Yanghai Tsin, J. Ryan Miller and Alan J. Lipton <lb/></docAuthor></byline>
+		<byline><affiliation>The Robotics Institute, Carnegie Mellon University,</affiliation></byline>
+		<address>Pittsburgh, PA. 15213 <lb/></address>
+		<email>Email: frcollins,ytsin,jmce,ajlgcs.cmu.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>This paper addresses the estimation of moving object trajectories within a geospatial coordinate system, <lb/>using a network of video sensors. A high-resolution <lb/>(0.5m grid spacing) digital elevation map (DEM) has <lb/>been constructed using a helicopter-based laser range-finder. Object locations are estimated by intersecting viewing rays from a calibrated sensor platform <lb/>with the DEM. Continuous object trajectories can then <lb/>be assembled from sequences of single-frame location <lb/>estimates using spatio-temporal filtering and domain <lb/>knowledge. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

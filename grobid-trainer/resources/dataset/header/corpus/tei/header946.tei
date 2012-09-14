@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="1015"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">A Language Model Approach to Keyphrase Extraction <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Takashi Tomokiyo and Matthew Hurst <lb/></docAuthor></byline>
+		<byline><affiliation>Applied Research Center <lb/> Intelliseek, Inc. <lb/></affiliation></byline>
+		<address>Pittsburgh, PA 15213 <lb/></address>
+		<email>ttomokiyo,mhurst¡ @intelliseek.com <lb/></email>
+		<div type="abstract">Abstract <lb/>We present a new approach to extracting <lb/>keyphrases based on statistical language <lb/>models. Our approach is to use <lb/>pointwise KL-divergence between multiple <lb/> language models for scoring both <lb/>phraseness and informativeness, which <lb/>can be unified into a single score to rank <lb/>extracted phrases. <lb/></div>
+		<div type="intro">1 Introduction <lb/></div>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+<listBibl>
+
+  	<bibl><title level="j">Applied Mathematics and Computation</title> <biblScope type="vol">192</biblScope> (<date>2007</date>) <biblScope type="pp">487–495</biblScope></bibl>
+
+</listBibl>
+</tei>

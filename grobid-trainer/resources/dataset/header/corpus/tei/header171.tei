@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="172"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Explaining Anomalies as a Basis for Knowledge Base Refinement <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Neli P. Zlatareva <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science <lb/>Central Connecticut State University <lb/></affiliation></byline>
+		<address>New Britain, CT 06050 <lb/></address>
+		<div type="abstract">Abstract <lb/>Explanations play a key role in operationalization-based anomaly detection techniques. In this paper <lb/>we show that their role is not limited to anomaly detection; they can also be used for guiding automated <lb/>knowledge base refinement. We introduce a refinement procedure which takes: (i) a small number of <lb/>refinement rules (rather than test cases), and (ii) explanations constructed in an attempt to reveal the <lb/>cause (or causes) for inconsistencies detected during <lb/>the verification process, and returns rule revisions <lb/>aiming to recover the consistency of the KB-theory. <lb/>Inconsistencies caused by more than one anomaly <lb/>are handled at the same time, which improves the <lb/>efficiency of the refinement process. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

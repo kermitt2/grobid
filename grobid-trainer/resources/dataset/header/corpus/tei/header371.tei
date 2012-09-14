@@ -1,0 +1,22 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="376"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Hybrid Control in Air Traffic Management Systems <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>S. Sastry, G. Meyer , C. Tomlin, J. Lygeros, D. Godbole and G. Pappas <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Electrical Engineering &amp; Computer Sciences, <lb/>University of California,</affiliation></byline>
+		<address>Berkeley, CA 94720 <lb/></address>
+		<address>MS 210-3,</address>
+		<byline><affiliation>NASA Ames Research Center,</affiliation></byline>
+		<address>Moffett Field CA 94035 <lb/></address>
+		<email>fsastry, gmeyer, clairet, lygeros, godbole, gpappas@eecs.berkeley.edug <lb/></email>
+		<div type="abstract">ABSTRACT <lb/>In a new collaborative project involving the University of California, Berkeley, NASA Ames Research <lb/>Center, and Honeywell Systems Research Center, we <lb/>have begun the study of hierarchical, hybrid control <lb/>systems in the framework of air traffic management <lb/>systems (ATMS). The need for a new ATMS arises <lb/>from the overcrowding of large urban airports and <lb/>the need to more efficiently land and take off larger <lb/>numbers of aircraft, without building new runways. <lb/>Technological advances that make a more advanced <lb/>air traffic control system a reality include the availability of relatively inexpensive and fast real time <lb/>computers (both on board the aircraft and in the control tower) and global positioning systems. The usefulness of these technological advances is currently <lb/>limited by today&apos;s air traffic control system, which <lb/>involves the use of &quot;freeways&quot; in the Terminal Radar <lb/>Approach Control (TRACON) region around urban <lb/>airports. These freeways are set approach patterns <lb/>to runways which do not allow for the possibility of <lb/>so-called &quot;free flight&quot; by an aircraft to its destination. <lb/>Limiting the aircraft trajectories in this manner results in the addition of both planned and unplanned <lb/>delays to air travel. <lb/></div>
+		<keywords>Keywords: hybrid systems, air traffic management, <lb/>flight control. <lb/></keywords>
+		<div type="intro">1. Introduction</div>
+		</front>
+</text>
+</tei>

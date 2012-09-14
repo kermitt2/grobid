@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../jsp/xmlverbatimwrapper.xsl"?> 
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<affiliation>
+								<orgName type="department">FIAS</orgName>,
+								 <orgName type="institution">J.W. Goethe Universität</orgName>,
+								<address>
+									<settlement>Frankfurt A.M</settlement>.,
+									<country key="DE">Germany</country>.<lb/>
+								</address>
+							</affiliation>
+							
+							<affiliation>
+								<orgName type="institution">Wayne State University</orgName>,
+								<address>
+									<settlement>Detroit</settlement>,
+									<region type="state" n="MI">Michigan</region>
+									<postCode>48201</postCode>,
+									<country key="US">USA<lb/></country>
+								</address>
+							</affiliation>
+							
+							<affiliation>
+								 <orgName type="institution">Texas A &amp; M University</orgName>,
+								<address>
+									<settlement>College Station</settlement>,
+									<region type="state" n="TX">Texas</region>
+									<postCode>77843</postCode>,
+									<country key="US">USA<lb/></country>
+								</address>
+							</affiliation>
+							
+							<affiliation>
+								<orgName type="institution">Michigan State University</orgName>,
+								<address>
+									<settlement>East Lansing</settlement>,
+									<region type="state" n="MI">Michigan</region>
+									<postCode>48824</postCode>,
+									<country key="US">USA<lb/></country>
+								</address>
+							</affiliation>
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</TEI>

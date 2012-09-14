@@ -1,0 +1,21 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="446"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<byline><affiliation>MASSACHUSETTS INSTITUTE OF TECHNOLOGY <lb/>ARTIFICIAL INTELLIGENCE LABORATORY <lb/></affiliation></byline>
+		<idno>A.I. Memo No. 1591</idno>
+		<date>November, 1996 <lb/></date>
+		<docTitle>
+			<titlePart type="main">Complex Feature Recognition: A <lb/>Bayesian Approach for Learning to <lb/>Recognize Objects <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Paul A. Viola <lb/></docAuthor></byline>
+		<note type="other">This publication can be retrieved by anonymous ftp to publications.ai.mit.edu. <lb/></note>
+		<div type="abstract">Abstract <lb/>We have developed a new Bayesian framework for visual object <lb/>recognition which is based on the insight that images of objects can be <lb/>modeled as a conjunction of local features. This framework can be used <lb/>to both derive an object recognition algorithm and an algorithm for <lb/>learning the features themselves. The overall approach, called complex <lb/>feature recognition or CFR, is unique for several reasons: it is broadly <lb/>applicable to a wide range of object types, it makes constructing object <lb/>models easy, it is capable of identifying either the class or the identity <lb/>of an object, and it is computationally efficient requiring time proportional to the size of the image. <lb/>Instead of a single simple feature such as an edge, CFR uses a large <lb/>set of complex features that are learned from experience with model <lb/>objects. The response of a single complex feature contains much more <lb/>class information than does a single edge. This significantly reduces the <lb/>number of possible correspondences between the model and the image. <lb/>In addition, CFR takes advantage of a type of image processing called <lb/>oriented energy. Oriented energy is used to efficiently pre-process the <lb/>image to eliminate some of the difficulties associated with changes in <lb/>lighting and pose. <lb/></div>
+		<note type="copyright">Copyright c Massachusetts Institute of Technology, 1996 <lb/></note>
+		<note type="grant">This report describes research done at the Artificial Intelligence Laboratory of the Massachusetts <lb/>Institute of Technology. Support for this research was provided in part by the Advanced Research <lb/>Projects Agency of the Department of Defense under Office of Naval Research contract N00014-96-1-0311. <lb/></note>
+		<pb/>
+		</front>
+</text>
+</tei>

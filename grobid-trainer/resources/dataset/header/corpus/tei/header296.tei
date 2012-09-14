@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="301"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">A Combinatorial Approach to Trajectory Planning for Binary <lb/>Manipulators <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>David S. Lees <lb/>Gregory S. Chirikjian <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Mechanical Engineering, Johns Hopkins University,</affiliation></byline>
+		<address>Baltimore, MD 21218 <lb/></address>
+		<div type="abstract">Abstract <lb/>Binary manipulators are powered by actuators <lb/>which have only two stable states. Therefore, they <lb/>can reach only a discrete (but possibly large) number <lb/>of locations. Compared to a manipulator built with <lb/>continuous actuators, a binary manipulator provides <lb/>reasonable performance, and is relatively inexpensive <lb/>(up to an order of magnitude cheaper). The number <lb/>of states of a binary manipulator grows exponentially <lb/>with the number of actuators. This makes the calculation of its inverse kinematics quite difficult. This <lb/>paper presents a combinatorial method for computing <lb/>the inverse kinematics of a binary manipulator that <lb/>reduces the search space to a manageable size. It also <lb/>creates extremely smooth motions that follow a specified trajectory very accurately (in both position and <lb/>orientation), despite the discrete nature of binary actuation. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

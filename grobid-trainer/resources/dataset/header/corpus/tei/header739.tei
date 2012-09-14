@@ -1,0 +1,23 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="740"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">What robots can do: <lb/>Robot programs and effective achievability <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Fangzhen Lin <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science <lb/>The Hong Kong University of Science and Technology <lb/></affiliation></byline>
+		<address>Clear Water Bay, Hong Kong <lb/></address>
+		<email>flin@cs.ust.hk <lb/></email>
+		<byline><docAuthor>Hector Levesque <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science <lb/>University of Toronto <lb/></affiliation></byline>
+		<address>Toronto, Canada M5S 3H5 <lb/></address>
+		<email>hector@ai.toronto.edu <lb/></email>
+		<date>May 15, 1997 <lb/></date>
+		<div type="abstract">Abstract <lb/>In this paper, we propose a definition of goal achievability: given a basic action theory describing an initial state of the world and some primitive actions available to a <lb/>robot, including some actions which return binary sensing information, what goals can <lb/>be achieved by the robot? The main technical result of the paper is a proof that a simple <lb/>robot programming language is universal, in that any effectively achievable goal can be <lb/>achieved by getting the robot to execute one of the robot programs. The significance of <lb/>this result is at least two fold. First, it is in many ways similar to the equivalence theorem between Turing machines and recursive functions, but applied to robots whose <lb/>actions are specified by an action theory. Secondly, it provides formal justifications for <lb/>using the simple robot programming language as a foundation for our work on robotics. <lb/></div>
+		<pb/>
+		</front>
+</text>
+</tei>

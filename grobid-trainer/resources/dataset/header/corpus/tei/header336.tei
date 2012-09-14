@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="341"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Importing Pre-packaged Software into Lisp: Experience with <lb/>Arbitrary-Precision Floating-Point Numbers <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Richard J. Fateman <lb/></docAuthor></byline>
+		<byline><affiliation>University of California at Berkeley <lb/></affiliation></byline>
+		<date>July 6, 2000</date>
+		<div type="abstract">Abstract <lb/>We advocate the use of Common Lisp as a powerful glue for <lb/>building scientific computing environments. Naturally one <lb/>then has to address mixing pre-existing (non Lisp) code into <lb/>this system. We provide a specific example as an elaborate <lb/>FORTRAN system written by David Bailey for arbitrary-precision floating-point numeric calculation. We discuss the <lb/>advantages and disadvantages of wholesale importing into <lb/>Lisp. A major advantage is being able to use state-of-the <lb/>art packaged software sooner, while overcoming the disadvantages caused by FORTRAN&apos;s traditional batch orientation and weak storage model. In this paper we emphasize in <lb/>particular how effective use of imported systems may require <lb/>one to address the contrast between the functional (Lisp-like) versus state-transition-based (Fortran-like) approaches <lb/>to dealing with compound objects. While our example is <lb/>high-precision floats, other highly useful packages including those for simulation, PDE solutions, signal processing, <lb/>statistical computation, etc. may also benefit by similar <lb/>consideration. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

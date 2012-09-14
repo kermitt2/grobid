@@ -1,0 +1,19 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="717"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">AN ALGORITHM FOR GENERATING EXECUTABLE <lb/>ASSERTIONS FOR FAULT TOLERANCE <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Martina Schollmeyer, Hanan Lutfiyya and Bruce McMillin <lb/></docAuthor></byline>
+		<idno>CSC-92-01 <lb/></idno>
+		<date>March 21, 1992 <lb/></date>
+		<byline><affiliation>Department of Computer Science <lb/>University of Missouri at Rolla <lb/></affiliation></byline>
+		<address>Rolla, Missouri 65401 <lb/></address>
+		<note type="grant">This work was supported in part by the National Science Foundation under Grant Numbers MIP-8909749 and CDA-8820714, and in part by the AMOCO Faculty Development <lb/>Program. <lb/></note>
+		<pb/>
+		</front>
+</text>
+</tei>

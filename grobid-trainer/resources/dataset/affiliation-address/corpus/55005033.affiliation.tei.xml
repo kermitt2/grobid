@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>a</marker>
+							<orgName type="department" key="1">ME</orgName>,
+							<orgName type="department" key="2">Department of Mechanical Engineering</orgName>,
+							<orgName type="institution" key="1">AAU/</orgName>
+							<orgName type="institution" key="2">Aalborg University</orgName>,
+							<address>
+								<addrLine>Pontoppidanstraede 101</addrLine>,
+								<postCode>DK-9220</postCode>
+								<settlement>Aalborg East</settlement>,
+								<country>Denmark</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>b</marker>
+							<orgName type="laboratory">DEMEGI</orgName>,
+							<orgName type="department">Faculdade de Engenharia</orgName>,
+							<orgName type="institution">Universidade do Porto</orgName>,
+							<address>
+								<addrLine>Rua Dr. Roberto Frias</addrLine>,
+								<postCode>4200-465</postCode>
+								<settlement>Porto</settlement>,
+								<country>Portugal</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

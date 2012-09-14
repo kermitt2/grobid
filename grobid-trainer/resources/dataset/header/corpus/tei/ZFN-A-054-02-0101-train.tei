@@ -1,0 +1,28 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="ZFN-A-054-02-0101"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<titlePage>
+				<docTitle>
+					<titlePart type="main">A Simplified Approach to the Density Functional Theory of Molecules<lb/></titlePart>
+				</docTitle>
+				<byline><docAuthor>Christian Kollmar</docAuthor><lb/></byline>
+				<byline><affiliation>Organisch-Chemisches Institut</affiliation>, <address>Winterthurerstr. 190</address>, <affiliation>Universität Zürich</affiliation>, <address>CH-8057 Zürich</address> <lb/></byline>
+				<reference>Z. Naturforsch.54 a, 101-109 (1999); </reference>
+				<note type="submission">received December 2, 1998)<lb/></note>
+			</titlePage>
+			<div type="abstract">A simplified molecular orbital (MO) formalism based on density functional theory is developed. <lb/>
+Starting from the same energy expression as Kohn-Sham theory the electronic density is expanded <lb/>
+in terms of atomic mono-center densities. Application of the variational principle leads to a secular <lb/>
+matrix with a particularly transparent su-ucture which allows the definition of a resonance integral <lb/>
+taking into account the effect of interference in a natural way. The construction of the secular maUix <lb/>
+scales formally as A^^ instead of A^^in the Kohn-Sham formalism with N being the dimension of <lb/>
+the atomic orbital (AO) basis set. <lb/></div>
+    	   	   	<keywords>Key words: Density Functional Theory; Molecular Orbital; Kohn-Sham Theory; <lb/>
+Ruedenberg Approximation; Resonance Integral. <lb/></keywords>
+			<div type="intro">1. Introduction<lb/></div>
+		</front>
+	</text>
+</tei>

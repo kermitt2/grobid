@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="ZNC-1988-43c-0133"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Nucleotide Binding and ATPase Activity of Membrane Bound<lb/> Chloroplast Coupling Factor (CFj)<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Bernhard Huchzermeyer<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Botanisches Institut, Tierärztliche Hochschule,</affiliation>
+	</byline>
+
+	<address>Bünteweg 17d,<lb/> D-3000 Hannover 71, Bundesrepublik Deutschland<lb/></address>
+
+	<reference>Z. Naturforsch. 43c, 133-139 (1988);</reference>
+
+	<note type="submission">received June 19, 1987<lb/></note>
+
+	<keyword>Chloroplasts, CF 0 CF,, Light Triggered ATPase Activity, Regulation. Mechanism of Inactivation<lb/></keyword>
+
+	<div type="abstract">It has been found that the decay of light triggered ATPase activity is paralleled by non-<lb/>exchangeable type of binding of one ADP per mol of CF,. Inactivation of light triggered ATPase<lb/> activity is a continuous process. It can be described mathematically as shown in this paper. Three<lb/> simplified reaction schemes are described, each of them describing the mode of ATPase inactiva-<lb/>tion in a mechanistic way. A computer simulation of each model was performed and the results<lb/> were compared to the observed experimental data.<lb/> In the presence of phosphate our results were explained best by a model assuming that there is<lb/> at first a rapid binding of ADP to "exchangeable" sites. Due to a slowly occurring change in the<lb/> CF, protein with prolonged incubation, an increasing portion of the nucleotides can be found<lb/> bound in a non-exchangeable way after some seconds of incubation. Our model does not rule out<lb/> that this reaction sequence might be a part of a catalytic cycle in vivo. — Another result was the<lb/> finding that there is an additional diminution of ATPase activity when phosphate is lacking.</div>
+
+		</front>
+	</text>
+</tei>

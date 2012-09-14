@@ -1,0 +1,20 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="506"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Decomposition Techniques for Planning in Stochastic Domains <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Thomas Dean Shieu-Hong Lin <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science <lb/></affiliation></byline>
+		<address>Box 1910,</address>
+		<byline><affiliation>Brown University <lb/></affiliation></byline>
+		<address>Providence, RI 02906, USA <lb/></address>
+		<email>Email: {tld,shl}@cs.brown.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>This paper is concerned with modeling <lb/>planning problems involving uncertainty as <lb/>discrete-time, finite-state stochastic automata. <lb/>Solving planning problems is reduced to computing policies for Markov decision processes. <lb/>Classical methods for solving Markov decision <lb/>processes cannot cope with the size of the <lb/>state spaces for typical problems encountered <lb/>in practice. As an alternative, we investigate <lb/>methods that decompose global planning problems into a number of local problems, solve the <lb/>local problems separately, and then combine <lb/>the local solutions to generate a global solution. We present algorithms that decompose <lb/>planning problems into smaller problems given <lb/>an arbitrary partition of the state space. The <lb/>local problems are interpreted as Markov decision processes and solutions to the local problems are interpreted as policies restricted to the <lb/>subsets of the state space defined by the partition. One algorithm relies on constructing and <lb/>solving an abstract version of the original decision problem. A second algorithm iteratively <lb/>approximates parameters of the local problems <lb/>to converge to an optimal solution. We show <lb/>how properties of a specified partition affect the <lb/>time and storage required for these algorithms. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

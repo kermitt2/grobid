@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005134"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<lb/>
+			<docTitle>
+				<titlePart>Comparison of Kalman Filter Estimation Approaches for<lb/> State Space
+					Models with Nonlinear Measurements<lb/></titlePart>
+			</docTitle>
+
+			<byline>
+				<docAuthor>Fredrik Orderud<lb/></docAuthor>
+			</byline>
+
+			<address>Sem Saelands vei 7-9, NO-7491 Trondheim<lb/></address>
+
+			<div type="abstract">Abstract<lb/> The Extended Kalman Filter (EKF) has long been
+				the<lb/> de-facto standard for nonlinear state space estimation<lb/> [11], primarily
+				due to its simplicity, robustness and<lb/> suitability for realtime implementations.
+				However, an<lb/> alternative approach has emerged over the last few<lb/> years,
+				namely the unscented Kalman filter (UKF). This<lb/> filter claims both higher
+				accuracy and robustness for<lb/> nonlinear models. Several papers have investigated
+				the<lb/> accuracy of UKF for nonlinear process models, but<lb/> none has addresses
+				the accuracy for nonlinear mea-<lb/> surement models in particular. This paper
+				claims to<lb/> bridge this gap by comparing the performance of EKF<lb/> to UKF for
+				two tracking models having nonlinear mea-<lb/> surements.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,80 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005083"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<lb/>
+			<docTitle>
+				<titlePart>Plasma-enhanced chemical vapor deposition of nanocrystalline
+					diamond<lb/></titlePart>
+			</docTitle>
+			<note type="other">This article has been downloaded from IOPscience. Please scroll down
+				to see the full text article.</note>
+			<reference>2007 Sci. Technol. Adv. Mater. 8 624<lb/></reference>
+			<ptr type="web">(http://iopscience.iop.org/1468-6996/8/7-8/A12)<lb/></ptr>
+			<note type="other">View the table of contents for this issue, or go to the journal
+				homepage for more<lb/></note>
+			<note type="other"> Download details:<lb/> IP Address: 145.64.134.245<lb/> The article
+				was downloaded on 29/03/2011 at 14:00<lb/>
+			</note>
+			<note type="other">Please note that terms and conditions apply.<lb/></note>
+
+			<pb/>
+
+			<note type="other">ARTICLE IN PRESS<lb/></note>
+			<note type="other">The STAM archive is now available from the IOP Publishing
+				website</note>
+			<space dim="horizontal"/>
+			<ptr type="web">http://www.iop.org/journals/STAM<lb/></ptr>
+			<reference>Science and Technology of Advanced Materials 8 (2007)
+				624–634<lb/></reference>
+			<ptr type="web">www.elsevier.com/locate/stam<lb/></ptr>
+			<note type="articleType">Review<lb/></note>
+			<docTitle>
+				<titlePart>Plasma-enhanced chemical vapor deposition<lb/> of nanocrystalline
+					diamond<lb/></titlePart>
+			</docTitle>
+			<byline>
+				<docAuthor>Katsuyuki Okada *</docAuthor>
+			</byline>
+			<byline>
+				<affiliation>National Institute for Materials Science, </affiliation>
+			</byline>
+			<address>1-1 Namiki, Tsukuba, Ibaraki 305-0044, Japan<lb/></address>
+			<note type="submission">Received 12 June 2007; received in revised form 8 August 2007;
+				accepted 27 August 2007<lb/></note> 
+				
+			<date>Available online 22 October 2007<lb/></date>
+			
+			<div type="abstract"> Abstract<lb/> Nanocrystalline diamond films have attracted
+				considerable attention because they have a low coefficient of friction and a low
+				electron<lb/> emission threshold voltage. In this paper, the author reviews the
+				plasma-enhanced chemical vapor deposition (PE-CVD) of<lb/> nanocrystalline diamond
+				and mainly focuses on the growth of nanocrystalline diamond by low-pressure PE-CVD.
+				Nanocrystalline<lb/> diamond particles of 200–700 nm diameter have been prepared in
+				a 13.56 MHz low-pressure inductively coupled CH4/CO/H2 plasma.<lb/> The bonding
+				state of carbon atoms was investigated by ultraviolet-excited Raman spectroscopy.
+				Electron energy loss spectroscopy<lb/> identified sp2-bonded carbons around the
+				20–50 nm subgrains of nanocrystalline diamond particles. Plasma diagnostics using
+				a<lb/> Langmuir probe and the comparison with plasma simulation are also reviewed.
+				The electron energy distribution functions are discussed<lb/> by considering
+				different inelastic interaction channels between electrons and heavy particles in a
+				molecular CH4/H2 plasma.<lb/>
+			</div>
+			<note type="copyright">&#169; 2007 NIMS and Elsevier Ltd. All rights
+				reserved.<lb/></note>
+			<keywords>Keywords: Low-pressure inductively coupled plasma; Nanocrystalline diamond; UV
+				Raman spectroscopy; Resonance Raman scattering; High-resolution<lb/> electron energy
+				loss spectroscopy; Electron energy loss spectroscopy; sp2/sp3 chemical mapping;
+				Langmuir probe; Direct simulation Monte Carlo;<lb/> Electron energy distribution
+				function<lb/>
+			</keywords>
+			<note type="other">1468-6996/$ - see front matter</note>
+			<note type="copyright">&#169; 2007 NIMS and Elsevier Ltd. All rights
+				reserved.<lb/></note>
+			<idno>doi:10.1016/j.stam.2007.08.008<lb/></idno>
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="ZFN-A-035-11-1271"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<titlePage>
+				<docTitle>
+					<titlePart type="main">Magnetic Field Dependence of Molecular Quantum <lb/>Beat: Biacetyl <lb/></titlePart>
+				</docTitle>
+				<byline><docAuthor>W. Henke, H. L. Selzle, T. R. Hays, <lb/> and E. W. Schlag</docAuthor><lb/></byline>
+				<byline><affiliation>Institut für Physikalische Chemie der Technischen Uni-<lb/> versität München</affiliation>, <address>Garching</address> <lb/></byline>
+				<reference>Z. Naturforsch. 35a, 1271-1272 (1980); <lb/></reference>
+				<note type="submission">received October 17  1980 <lb/></note>
+			</titlePage>
+			<div type="abstract">The effect of an external magnetic field on the decay of <lb/>an excited single rotational state of the l A u electronic state <lb/>of biacetyl is observed in a hypersonic jet experiment after <lb/>narrow bandwidth laser excitation- The lifetime of the ex- <lb/>cited state decreases already at low magnetic fields and <lb/>the molecular quantum beat vanishes.<lb/></div>
+			<div type="intro">Biacetyl at room temperature shows a broad<lb/></div>
+		</front>
+	</text>
+</tei>

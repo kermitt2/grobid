@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005082"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<reference>Autotransformer - Wikipedia, the free encyclopedia</reference>
+			<space dim="horizontal"/>
+			<ptr type="web">http://en.wikipedia.org/wiki/Autotransformer</ptr>
+			<lb/>
+			<docTitle>
+				<titlePart>Autotransformer<lb/></titlePart>
+			</docTitle>
+			<note type="other">From Wikipedia, the free encyclopedia<lb/></note>
+
+			<div type="abstract">
+				An autotransformer (sometimes called autoformer) [1] is an electrical transformer with
+				only one winding.<lb/> The auto prefix refers to the single coil rather than any
+				automatic mechanism. In an autotransformer portions<lb/> of the same winding act as
+				both the primary and secondary. The winding has at least three taps where<lb/>
+				electrical connections are made. An autotransformer can be smaller, lighter and
+				cheaper than a standard<lb/> dual-winding transformer however the autotransformer
+				does not provide electrical isolation.<lb/> Autotransformers are often used to step
+				up or down between voltages in the 110-117-120 volt range and<lb/> voltages in the
+				220-230-240 volt range, e.g., to output either 110 or 120V (with taps) from 230V
+				input,<lb/> allowing equipment from a 100 or 120V region to be used in a 230V
+				region.<lb/></div>
+
+		</front>
+	</text>
+</tei>

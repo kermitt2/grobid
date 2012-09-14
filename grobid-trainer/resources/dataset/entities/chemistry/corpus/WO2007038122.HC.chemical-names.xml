@@ -1,0 +1,859 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<nite:root nite:id="WO2007038122.HC.chemical-names" xmlns:nite="http://nite.sourceforge.net/">
+   <chem-name nite:id="WO2007038122.HC.chemical-names.1" comment="" name="serine" relevant="false" chebi-id="CHEBI:17822" epochem-id="EPOCHEM:COMPOUND:1066">
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_672)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038122.HC.chemical-names.2" comment="" name="threonine" relevant="false" chebi-id="CHEBI:26986" epochem-id="EPOCHEM:COMPOUND:1060">
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_674)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038122.HC.chemical-names.3" comment="http://www.ncbi.nlm.nih.gov/sites/entrez?db=pubmed&amp;cmd=retrieve&amp;list_uids=14617187" name="pseudaminic acid" relevant="false" chebi-id="WO2007038122:849639" epochem-id="EPOCHEM:NEW:COMPOUND:1380">
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_682)..id(WO2007038122_w_683)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038122.HC.chemical-names.4" comment="http://www.ncbi.nlm.nih.gov/sites/entrez?db=pubmed&amp;cmd=retrieve&amp;list_uids=14617187" name="pseudaminic acid" relevant="false" chebi-id="WO2007038122:849639" epochem-id="EPOCHEM:NEW:COMPOUND:1380">
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_687)..id(WO2007038122_w_688)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038122.HC.chemical-names.5" comment="http://www.ncbi.nlm.nih.gov/sites/entrez?db=pubmed&amp;cmd=retrieve&amp;list_uids=14617187" name="pseudaminic acid" relevant="false" chebi-id="WO2007038122:849639" epochem-id="EPOCHEM:NEW:COMPOUND:1380">
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_699)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_698)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038122.HC.chemical-names.6" comment="http://www.ncbi.nlm.nih.gov/sites/entrez?db=pubmed&amp;cmd=retrieve&amp;list_uids=14617187" name="pseudaminic acid" relevant="false" chebi-id="WO2007038122:849639" epochem-id="EPOCHEM:NEW:COMPOUND:1380">
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_5266)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_5265)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038122.HC.chemical-names.14" comment="" name="D-glucose" relevant="false" chebi-id="WO2007038122:29213" epochem-id="EPOCHEM:COMPOUND:1933">
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_853)..id(WO2007038122_w_854)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_852)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038122.HC.chemical-names.15" comment="6-deoxy-[alpha]-D-altro-heptose" name="6-deoxy-[alpha]-D-[alpha][Lambda]ro-heptose" relevant="false" chebi-id="WO2007038122:108620" epochem-id="EPOCHEM:NEW:COMPOUND:1383">
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1212)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1201)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1216)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1204)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1218)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1214)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1210)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1205)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1211)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1213)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1202)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1215)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1208)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1207)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1203)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1209)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1217)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1206)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1200)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038122.HC.chemical-names.16" comment="D-glycero-[alpha]-D-altro-heptose" name="D-glycero-[alpha]-D-[alpha]/^ro- heptose" relevant="false" chebi-id="WO2007038122:526938" epochem-id="EPOCHEM:NEW:COMPOUND:1384">
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1237)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1227)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1234)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1221)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1230)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1222)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1236)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1235)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1223)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1231)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1226)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1225)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1232)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1229)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1224)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1220)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1228)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1233)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038122.HC.chemical-names.17" comment="6-deoxy-3-Me-[alpha]-D-altro-heptose" name=",6 -deoxy-3-Me-[alpha]-D-[alpha]ftro-heptose" relevant="false" chebi-id="WO2007038122:321885" epochem-id="EPOCHEM:NEW:COMPOUND:1385">
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1251)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1255)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1242)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1238)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1252)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1241)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1243)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1254)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1249)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1246)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1240)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1248)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1244)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1250)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1257)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1247)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1245)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1258)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1239)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1256)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1253)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038122.HC.chemical-names.18" comment="3-Me-D-glycero-[alpha]-D-altro-heptose" name="3-Me-D-glycero-[alpha]-D-[alpha]/tro-heptose" relevant="false" chebi-id="WO2007038122:199415" epochem-id="EPOCHEM:NEW:COMPOUND:1386">
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1264)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1279)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1261)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1268)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1281)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1276)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1270)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1278)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1275)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1280)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1274)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1262)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1271)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1273)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1266)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1265)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1269)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1263)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1272)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1277)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1267)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038122.HC.chemical-names.19" comment="" name="O-methyl-phosphoramidate" relevant="false" chebi-id="WO2007038122:53757" epochem-id="EPOCHEM:NEW:COMPOUND:1387">
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1895)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1897)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1896)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1898)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1894)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038122.HC.chemical-names.20" comment="" name="O-methyl-phosphoramidate" relevant="false" chebi-id="WO2007038122:53757" epochem-id="EPOCHEM:NEW:COMPOUND:1387">
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2421)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2423)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2425)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2422)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2424)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038122.HC.chemical-names.21" comment="" name="water" relevant="false" chebi-id="CHEBI:15377" epochem-id="EPOCHEM:COMPOUND:5421">
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2185)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038122.HC.chemical-names.22" comment="" name="phenol" relevant="false" chebi-id="CHEBI:15882" epochem-id="EPOCHEM:COMPOUND:4254">
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2187)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038122.HC.chemical-names.23" comment="" name="[alpha]-D-Gal (1-2)- [alpha]-6-deoxy-3-Me-D-altro-heptose" relevant="false" chebi-id="WO2007038122:793508" epochem-id="EPOCHEM:NEW:COMPOUND:1388">
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2321)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2297)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2314)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2305)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2318)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2308)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2319)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2306)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2299)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2322)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2291)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2293)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2307)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2310)..id(WO2007038122_w_2311)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2317)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2312)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2316)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2296)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2294)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2301)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2290)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2298)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2292)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2304)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2300)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2320)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2302)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2313)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2303)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2315)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2295)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2309)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038122.HC.chemical-names.35" comment="" name="[beta]-D-acetyl-glucosamine" relevant="false" chebi-id="WO2007038122:370751" epochem-id="EPOCHEM:NEW:COMPOUND:1389">
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2334)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2336)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2330)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2328)..id(WO2007038122_w_2329)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2331)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2333)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2335)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2332)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038122.HC.chemical-names.36" comment="" name="Aluminum hydroxide" relevant="false" chebi-id="CHEBI:33130" epochem-id="EPOCHEM:NEW:COMPOUND:433">
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2863)..id(WO2007038122_w_2864)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038122.HC.chemical-names.37" comment="" name="Aluminum hydroxide" relevant="false" chebi-id="CHEBI:33130" epochem-id="EPOCHEM:NEW:COMPOUND:433">
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_4511)..id(WO2007038122_w_4512)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038122.HC.chemical-names.38" comment="" name="Aluminum hydroxide" relevant="false" chebi-id="CHEBI:33130" epochem-id="EPOCHEM:NEW:COMPOUND:433">
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_8033)..id(WO2007038122_w_8034)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038122.HC.chemical-names.39" comment="" name="aluminum phosphate" relevant="false" chebi-id="WO2007038122:621947" epochem-id="EPOCHEM:NEW:COMPOUND:1390">
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2882)..id(WO2007038122_w_2883)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038122.HC.chemical-names.40" comment="" name="aluminum phosphate" relevant="false" chebi-id="WO2007038122:621947" epochem-id="EPOCHEM:NEW:COMPOUND:1390">
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_4530)..id(WO2007038122_w_4531)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038122.HC.chemical-names.41" comment="" name="aluminum phosphate" relevant="false" chebi-id="WO2007038122:621947" epochem-id="EPOCHEM:NEW:COMPOUND:1390">
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_8053)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_8052)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038122.HC.chemical-names.56" comment="" name="bacillosamine" relevant="false" chebi-id="CHEBI:32538" epochem-id="EPOCHEM:COMPOUND:8377">
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_842)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038122.HC.chemical-names.57" comment="" name="phosphate" relevant="false" chebi-id="WO2007038122:771282" epochem-id="EPOCHEM:NEW:COMPOUND:2003">
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2587)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038122.HC.chemical-names.58" comment="" name="phosphate" relevant="false" chebi-id="WO2007038122:771282" epochem-id="EPOCHEM:NEW:COMPOUND:2003">
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2883)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038122.HC.chemical-names.59" comment="" name="phosphate" relevant="false" chebi-id="WO2007038122:771282" epochem-id="EPOCHEM:NEW:COMPOUND:2003">
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_3386)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038122.HC.chemical-names.60" comment="" name="phosphate" relevant="false" chebi-id="WO2007038122:771282" epochem-id="EPOCHEM:NEW:COMPOUND:2003">
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_3498)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038122.HC.chemical-names.61" comment="" name="phosphate" relevant="false" chebi-id="WO2007038122:771282" epochem-id="EPOCHEM:NEW:COMPOUND:2003">
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_4531)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038122.HC.chemical-names.62" comment="" name="phosphate" relevant="false" chebi-id="WO2007038122:771282" epochem-id="EPOCHEM:NEW:COMPOUND:2003">
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_8053)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038122.HC.chemical-names.65" comment="" name="-&gt;3)-[alpha]-6-deoxy-D-ido-Heptose (l-&gt;4)-[beta]-D-GlcNAc-(l-&gt;" relevant="false" chebi-id="WO2007038122:980167" epochem-id="EPOCHEM:NEW:COMPOUND:2074">
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7022)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7009)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7016)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7019)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_6999)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7032)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7012)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7000)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7033)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7031)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7003)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7008)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7023)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7007)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7006)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7005)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7001)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7018)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7017)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_6997)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7020)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7011)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_6998)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7021)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7026)..id(WO2007038122_w_7027)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7002)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7029)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7014)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7028)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7004)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7015)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7025)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7013)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7010)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7024)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7030)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038122.HC.chemical-names.66" comment="" name="-&gt;3)-[alpha]-D-Gal-(l-&gt;2)-6d-[alpha]-D-[alpha]/tro-Me -Hep-(l-&gt;3)-[beta]-D-GlcNAc-(l-&gt;]n" relevant="false" chebi-id="WO2007038122:339538" epochem-id="EPOCHEM:NEW:COMPOUND:2075">
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_6962)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_6964)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_6947)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_6955)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_6940)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_6967)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_6937)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_6921)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_6932)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_6926)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_6916)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_6971)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_6918)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_6970)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_6920)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_6930)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_6925)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_6934)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_6924)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_6936)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_6963)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_6961)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_6954)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_6950)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_6960)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_6948)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_6945)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_6929)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_6969)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_6919)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_6922)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_6958)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_6941)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_6968)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_6957)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_6972)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_6917)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_6927)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_6973)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_6946)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_6935)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_6956)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_6943)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_6966)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_6942)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_6928)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_6938)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_6965)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_6959)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_6974)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_6952)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_6951)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_6933)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_6949)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_6931)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_6953)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_6944)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_6923)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_6939)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038122.HC.chemical-names.67" comment="" name="-&gt;3) -[alpha]-6- deoxy-D-ido-He[rho]tose-(l -&gt;4)-[beta]-D-GlcNAc-(l -&gt;" relevant="false" chebi-id="WO2007038122:470915" epochem-id="EPOCHEM:NEW:COMPOUND:2076">
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2463)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2497)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2466)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2483)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2462)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2468)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2470)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2465)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2487)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2495)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2472)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2459)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2485)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2493)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2461)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2484)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2475)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2488)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2492)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2458)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2480)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2482)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2490)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2476)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2491)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2489)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2499)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2479)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2460)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2464)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2467)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2473)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2478)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2481)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2474)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2477)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2486)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2494)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2496)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2471)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2498)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2469)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038122.HC.chemical-names.68" comment="" name="[-&gt;3)-[alpha]-D-Gal-(l- &gt;2)-6d-a-D-altro- Me-Hep-(l-&gt;3)-[beta]-D-GlcNAc-(l-&gt;]n" relevant="false" chebi-id="WO2007038122:378518" epochem-id="EPOCHEM:NEW:COMPOUND:2077">
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7164)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7171)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7201)..id(WO2007038122_w_7202)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7192)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7206)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7170)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7157)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7163)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7173)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7178)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7160)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7183)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7195)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7191)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7199)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7182)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7179)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7205)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7166)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7158)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7180)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7185)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7210)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7172)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7168)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7196)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7208)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7161)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7209)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7167)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7169)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7181)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7188)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7200)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7197)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7203)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7189)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7174)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7176)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7175)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7187)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7198)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7194)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7159)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7177)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7204)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7207)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7193)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7186)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7190)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7184)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7162)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7165)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038122.HC.chemical-names.69" comment="" name="-&gt;3)-[alpha]-6-deoxy-D-ido-Heptose - (l-&gt;4)-[beta]-D-GlcNAc-(l-&gt;" relevant="false" chebi-id="WO2007038122:584470" epochem-id="EPOCHEM:NEW:COMPOUND:2078">
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7252)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7247)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7236)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7249)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7259)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7261)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7242)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7262)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7255)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7238)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7245)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7244)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7265)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7241)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7266)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7240)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7246)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7254)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7239)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7263)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7253)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7256)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7251)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7257)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7271)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7234)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7237)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7243)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7250)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7269)..id(WO2007038122_w_7270)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7267)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7235)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7258)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7268)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7264)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7260)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7248)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038122.HC.chemical-names.70" comment="" name="[-&gt;3)-[alpha]-D-Gal-(l-&gt;2)-6d-[alpha]-D-[alpha]/#O- Me-Hep-(l-&gt;3)-[beta]-D-GlcNAc-(l--&gt;]n" relevant="false" chebi-id="WO2007038122:72105" epochem-id="EPOCHEM:NEW:COMPOUND:2079">
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7307)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7325)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7341)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7304)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7323)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7337)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7340)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7330)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7329)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7343)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7319)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7331)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7354)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7318)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7299)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7297)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7308)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7344)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7348)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7314)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7342)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7310)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7352)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7306)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7347)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7349)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7302)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7298)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7356)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7345)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7312)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7301)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7295)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7322)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7303)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7327)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7321)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7334)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7350)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7355)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7317)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7315)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7338)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7326)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7313)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7339)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7346)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7300)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7324)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7305)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7351)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7353)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7336)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7320)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7333)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7309)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7316)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7335)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7311)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7296)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7328)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7332)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038122.HC.chemical-names.71" comment="" name="-&gt;3)-[alpha]-6-deoxy-D-ido-Heptose (l-&gt;4)-[beta]-D-GlcNAc-(l --&gt;" relevant="false" chebi-id="WO2007038122:26949" epochem-id="EPOCHEM:NEW:COMPOUND:2080">
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7415)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7418)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7410)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7405)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7413)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7396)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7402)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7395)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7403)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7409)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7397)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7393)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7384)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7391)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7382)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7392)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7383)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7419)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7417)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7399)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7386)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7398)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7412)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7385)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7400)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7414)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7394)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7406)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7387)..id(WO2007038122_w_7388)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7407)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7401)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7404)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7408)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7411)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7389)..id(WO2007038122_w_7390)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7416)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038122.HC.chemical-names.72" comment="" name="[-&gt;3)-[alpha]-D-Gal-(1-&gt;2)-6d-[alpha]-D-[alpha]/#O-Me-Hep- (1-&gt;3)-[beta]-D-GlcNAc (1-&gt;]n" relevant="false" chebi-id="WO2007038122:439142" epochem-id="EPOCHEM:NEW:COMPOUND:2081">
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7632)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7607)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7631)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7635)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7653)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7637)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7648)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7625)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7638)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7609)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7649)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7633)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7640)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7620)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7651)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7665)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7656)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7641)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7617)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7615)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7659)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7630)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7623)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7652)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7614)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7639)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7657)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7654)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7621)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7646)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7628)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7622)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7613)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7619)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7662)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7627)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7626)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7660)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7658)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7611)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7616)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7661)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7643)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7618)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7642)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7624)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7634)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7644)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7647)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7650)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7612)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7655)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7610)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7645)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7664)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7606)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7629)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7663)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7636)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7608)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038122.HC.chemical-names.73" comment="" name="[-&gt;3)-[alpha]-D-Gal-(1-&gt;2)-6d-[alpha]-D-[alpha]/#O-Me-Hep- (1-&gt;3)-[beta]-D-GlcNAc (1-&gt;]n" relevant="false" chebi-id="WO2007038122:439142" epochem-id="EPOCHEM:NEW:COMPOUND:2081">
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7920)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7942)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7934)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7900)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7949)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7926)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7922)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7935)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7931)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7911)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7904)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7893)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7925)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7932)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7945)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7948)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7924)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7950)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7917)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7903)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7928)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7927)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7938)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7907)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7914)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7951)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7921)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7943)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7908)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7898)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7902)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7923)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7940)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7918)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7946)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7936)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7944)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7913)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7939)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7933)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7916)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7947)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7912)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7901)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7941)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7896)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7929)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7910)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7894)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7892)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7909)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7895)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7906)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7915)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7905)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7897)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7930)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7919)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7899)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7937)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038122.HC.chemical-names.74" comment="-&gt;3)-[alpha]-6-deoxy-D-ido-Heptose (1 -&gt;4)-[beta]-D- GlcNAc-(1 -&gt;" name="-&gt;3)-[alpha]-6-deoxy-D-ido-Heptose (1 -&gt;4)-[beta]-D- GIcNAc-(I -&gt;" relevant="false" chebi-id="WO2007038122:129512" epochem-id="EPOCHEM:NEW:COMPOUND:2082">
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7694)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7691)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7690)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7716)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7715)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7689)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7705)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7717)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7719)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7692)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7710)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7704)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7688)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7723)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7721)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7696)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7718)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7701)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7713)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7702)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7711)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7698)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7709)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7697)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7695)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7706)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7724)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7722)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7707)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7693)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7712)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7703)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7699)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7714)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7708)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7700)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7720)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038122.HC.chemical-names.75" comment="" name="[-&gt;3)-[alpha]-D-Gal-(l-&gt;2)~6d-[alpha]-D-[alpha]/[pound]ro-Me-Hep- (l-&gt;3)-[beta]-D-GlcNAc (H]n" relevant="false" chebi-id="WO2007038122:851849" epochem-id="EPOCHEM:NEW:COMPOUND:2083">
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7803)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7785)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7797)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7765)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7747)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7796)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7766)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7772)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7804)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7754)..id(WO2007038122_w_7755)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7778)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7751)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7801)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7799)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7767)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7790)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7769)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7759)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7761)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7789)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7787)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7806)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7802)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7788)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7805)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7784)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7756)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7771)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7752)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7781)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7764)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7800)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7786)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7798)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7762)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7794)..id(WO2007038122_w_7795)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7757)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7777)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7791)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7768)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7758)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7753)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7779)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7783)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7770)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7773)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7749)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7748)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7763)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7774)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7750)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7780)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7782)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7793)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7776)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7792)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7775)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7760)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038122.HC.chemical-names.76" comment="-&gt;3)-[alpha]-6-deoxy-D-ido-He[rho]tose (1-&gt;4)-[beta]-D- GlcNAc-(1-&gt;" name="-&gt;3)-[alpha]-6-deoxy-D-ido-He[rho]tose (l-&gt;4)-[beta]-D- GlcNAc-(l-&gt;" relevant="false" chebi-id="WO2007038122:559523" epochem-id="EPOCHEM:NEW:COMPOUND:2084">
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7852)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7839)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7830)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7859)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7846)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7869)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7853)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7851)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7847)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7835)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7831)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7858)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7845)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7848)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7857)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7833)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7838)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7832)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7861)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7867)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7844)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7837)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7842)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7863)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7862)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7854)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7840)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7865)..id(WO2007038122_w_7866)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7849)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7843)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7834)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7855)..id(WO2007038122_w_7856)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7860)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7850)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7868)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7836)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7829)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7864)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7841)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007038122.HC.chemical-names.77" comment="- &gt;3)-[alpha]-6-deoxy-D-ido-Heptose (1-&gt;4)-[beta]-D- GlcNAc-(1 -&gt;" name="- &quot;3)-[alpha]-6-deoxy-D-ido-Heptose (l-&gt;4)-[beta]-D- GIcNAc-(I -&gt;" relevant="false" chebi-id="WO2007038122:771775" epochem-id="EPOCHEM:NEW:COMPOUND:2085">
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_8001)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7994)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7978)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_8007)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7988)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_8009)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7983)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7997)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7991)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_8003)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_8005)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7984)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_8006)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7976)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7993)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_8002)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7992)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7975)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7980)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7985)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7996)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7982)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7989)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7998)..id(WO2007038122_w_7999)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_8008)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7981)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_8010)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_8000)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7987)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7977)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7990)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7995)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_8004)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7974)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7979)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_7986)"/>
+   </chem-name>
+</nite:root>

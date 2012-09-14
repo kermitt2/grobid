@@ -1,0 +1,19 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="111"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Humans Plus Agents <lb/>Maintain Schedules Better <lb/>than Either Alone <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Tim Oates and Paul R. Cohen <lb/></docAuthor></byline>
+		<idno>Computer Science Technical Report 94-03 <lb/></idno>
+		<byline><affiliation>Experimental Knowledge Systems Laboratory <lb/>Department of Computer Science, Box 34610 <lb/>Lederle Graduate Research Center <lb/>University of Massachusetts <lb/></affiliation></byline>
+		<address>Amherst, MA 01003-4610 <lb/></address>
+		<div type="abstract">Abstract <lb/>Tracking and evaluating the progress of large, complex plans or <lb/>schedules as they unfold in real time is extremely difficult for humans. <lb/>In this paper we present a mixed-initiative system for the task of schedule maintenance in a simulated shipping network. A schedule maintenance agent monitors the network, predicting the occurrence of states <lb/>that may result in reduced throughput and formulating schedule modifications to avoid those states. The goal is to maximize throughput <lb/>while minimizing disruptions to the original schedule. We present results of experiments in which human subjects attempt to obtain that <lb/>goal both with and without the aid of the agent. We found that the human and the agent working together are able to achieve better results <lb/>than either one working alone. In addition to looking at global performance measures such as throughput, we analyze individual schedule <lb/>modification decisions made by subjects in an attempt to assign credit <lb/>for the improvements in performance. <lb/></div>
+		<note type="grant">This research is supported by ARPA-AFOSR contract F30602-91-C-0076. <lb/></note>
+		<pb/>
+		</front>
+</text>
+</tei>

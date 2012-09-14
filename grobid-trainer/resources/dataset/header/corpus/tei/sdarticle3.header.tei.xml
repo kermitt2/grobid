@@ -1,0 +1,108 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="sdarticle3"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<lb/>
+			<note type="articleType">Special Article<lb/></note>
+
+			<docTitle>
+				<titlePart>Consensus Recommendations<lb/> for the Management of Constipation<lb/> in
+					Patients with Advanced, Progressive Illness<lb/></titlePart>
+			</docTitle>
+
+			<byline>
+				<docAuthor>S. Lawrence Librach , MD, CCFP, FCFP,<lb/> Maryse Bouvette, RN, BScN,
+					MEd, CON (C), CHPCN(C),<lb/> Carlo De Angelis, PharmD, Justine Farley, MD,
+					Doreen Oneschuk, MD,<lb/> Jose uis Pereira, MBChB, DA, CCFP, MSc, and Ann Syme,
+					RN, PhD(cand);<lb/>
+				</docAuthor>
+			</byline>
+
+			<note type="other">The Canadian Consensus Development Group for Constipation in Patients
+					with<lb/> Advanced Progressive Illness<lb/></note>
+
+			<byline>
+				<affiliation>Division of Palliative Care (S.L.L.), University of Toronto, and Temmy
+					Latner Centre for Palliative<lb/> Care (S.L.L.),
+			 Toronto, Ontario; Pain and Symptom Management Team/Community
+				Consultation<lb/> Service (M.B.), Palliative Care Program, SCO Health Service,
+				Ottawa, Ontario; Department of<lb/> Pharmacy (C.D.A.), Odette Cancer Centre,
+				Sunnybrook Health Sciences Centre, Toronto, Ontario;<lb/> Palliative Care Division
+				(J.F.), St. Mary's Hospital Center, and Department of Oncology (J.F.), McGill<lb/>
+				University, Montreal, Quebec; Edmonton Regional Palliative Medicine Program (D.O.),
+				and Division<lb/> of Palliative Medicine (D.O.), Department of Oncology, University
+				of Alberta, Edmonton, Alberta;<lb/> Division of Palliative Care (J.L.P.), University
+				of Ottawa, and Bruye `re Continuing Care/The Ottawa<lb/> Hospital (J.L.P.), Ottawa,
+				Ontario; and Pain &amp; Symptom Management/Palliative Care (A.S.), BC<lb/> Cancer
+				Agency, Vancouver; School of Nursing (A.S.), University of Victoria, Victoria; and
+				Division of<lb/> Palliative Care-Family Practice (A.S.), University of British Columbia, Vancouver, British Columbia,<lb/> Canada<lb/>
+				</affiliation>
+			</byline>
+
+			<div type="abstract">Abstract Constipation is a highly prevalent and distressing symptom
+				in patients with advanced,<lb/> progressive illnesses. Although opioids are one of
+				the most common causes of constipation in<lb/> patients with advanced, progressive
+				illness, it is important to note that there are many other<lb/> potential etiologies
+				and combinations of causes that should be taken into consideration when<lb/> making
+				treatment decisions. Management approaches involve a combination of good<lb/>
+				assessment techniques, preventive regimens, appropriate pharmacological treatment
+				of<lb/> established constipation, and frequent monitoring. In this vulnerable
+				patient population,<lb/> maintenance of comfort and respect for individual
+				preferences and sensitivities should be<lb/> overriding considerations when making
+				clinical decisions. This consensus document was<lb/> developed by a
+				multidisciplinary group of leading Canadian palliative care specialists in an<lb/>
+				effort to define best practices in palliative constipation management that will be
+				relevant and<lb/> useful to health care professionals. Although a wide range of
+				options exists to help treat<lb/></div>
+
+			<note type="other">Members of the Canadian Consensus Editorial<lb/>
+			Group: Paul Daeninck, MD, MSc, FRCPC, Debbie<lb/> Gravelle, RN, BScN, MHS, Philippa H. Hawley,<lb/> BMed, FRCPC, Lynn Kachuik, RN, BA,
+			MS, CON(C),<lb/> CHPCN(C), and Jeff Myers, MD, CCFP, MSEd.<lb/></note>
+
+			<note type="other">Address correspondence to: S. Lawrence Librach
+
+			, MD,<lb/> CCFP, FCFP,</note>
+
+			<byline>
+				<affiliation>Division of Palliative Care, University<lb/> of Toronto, Temmy Latner
+					Centre for Palliative<lb/>
+				</affiliation>
+			</byline>
+
+			<address>Care, 60 Murray St., Room L4-000, Box 13, Toronto,<lb/> Ontario, M5T 3L9, Canada.</address>
+
+			<email>E-mail: larry.librach@<lb/> utoronto.ca<lb/></email>
+
+			<note type="sybmission">Accepted for publication: March 11, 2010.<lb/></note>
+			
+			<note type="copyright">&#169; 2010 U.S. Cancer Pain Relief
+				Committee<lb/> Published by Elsevier Inc. All rights reserved.<lb/></note>
+
+			<note type="other">0885-3924/$ - see front matter<lb/></note>
+			
+			<idno>doi:10.1016/j.jpainsymman.2010.03.026<lb/></idno>
+			
+			<reference>Vol. 40 No. 5 November 2010<lb/> Journal
+					of Pain and Symptom Management 761<lb/></reference>
+					
+			<div type="abstract">constipation and prevent its development or
+				recurrence, there is a limited body of evidence<lb/> evaluating pharmacological
+				interventions. These recommendations are, therefore, based on<lb/> the best of the
+				available evidence, combined with expert opinion derived from experience in<lb/>
+				clinical practice. This underscores the need for further clinical evaluation of the
+				available<lb/> agents to create a robust, evidence-based foundation for treatment
+				decisions in the<lb/> management of constipation in patients with advanced,
+				progressive illness. J Pain<lb/> Symptom Manage 2010;40:761e773.</div>
+
+			<note type="copyright">&#169; 2010 U.S. Cancer Pain Relief Committee.<lb/> Published by Elsevier Inc. All
+				rights reserved.<lb/></note>
+
+			<keyword>Key Words<lb/> Constipation, palliative care, advanced illness, laxatives,
+				mu-opioid antagonists,<lb/> management, guidelines<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+<listBibl>
+
+	<bibl>
+		<title level="j">Biostatistics</title> (<date>2003</date>). <biblScope type="vol">4</biblScope>, <biblScope type="issue">2</biblScope>, pp. <biblScope type="pp">195–206</biblScope>
+    </bibl>
+
+</listBibl>
+</tei>

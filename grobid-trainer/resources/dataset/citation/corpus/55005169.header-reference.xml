@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+<listBibl>
+
+  	<bibl><title level="m">Reliability of Photovoltaic Cells, Modules, Components, and Systems III</title>, edited by<lb/> <editor>Neelkanth G. Dhere, John H. Wohlgemuth, Kevin Lynn</editor>, <title level="j">Proc. of SPIE</title> Vol. <biblScope type="vol">7773</biblScope>,<lb/> <biblScope type="pp">777302</biblScope></bibl>
+
+  	<bibl><title level="j">Proc. of SPIE</title> Vol. <biblScope type="vol">7773</biblScope> <biblScope type="pp">777302-1</biblScope><lb/></bibl>
+
+</listBibl>
+</tei>

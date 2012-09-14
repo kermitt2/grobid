@@ -1,0 +1,19 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="752"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Automatic Dynamic Compilation Support for <lb/>Event Dispatching in Extensible Systems <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Craig Chambers, Susan J. Eggers, <lb/>Joel Auslander, Matthai Philipose, Markus Mock, Przemyslaw Pardyak <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science and Engineering <lb/>University of Washington <lb/></affiliation></byline>
+		<address>Box 352350, Seattle, WA 98195-2350 <lb/></address>
+		<note type="phone">(206) 685-2094; fax: (206) 543-2969 <lb/></note>
+		<email>{chambers, eggers,ausland,matthai,mock,pardy}@cs.washington.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>This paper describes extensions to an automatic dynamic compilation framework to support <lb/>optimized event dispatching in the SPIN extensible operating system. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

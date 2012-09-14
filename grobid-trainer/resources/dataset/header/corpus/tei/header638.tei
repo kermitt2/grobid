@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="640"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">A Color-based Technique for Measuring Visible Loss for Use <lb/>in Image Data Communication 1 <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Melliyal Annamalai, Aurobindo Sundaram and Bharat Bhargava <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Sciences <lb/>Purdue University <lb/></affiliation></byline>
+		<address>W. Lafayette, IN 47906, USA <lb/></address>
+		<email>{melli,auro,bb}@cs.purdue.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>The concept of the global information infrastructure and specifically that of the World <lb/>Wide Web (WWW) has led to users accessing data of different media including images <lb/>and video data over a wide area network. These data objects have sizes the order of <lb/>megabytes and communication time is very large. The data size can be reduced without <lb/>losing information by applying loss-inducing techniques and this will lead to reduction in <lb/>communication time. Several loss-inducing techniques have been developed and each image <lb/>is treated differently by each technique. In some cases an acceptable quality of the image <lb/>is obtained and in some cases it is not. In this paper we develop a color-based technique <lb/>to quantify the data loss when a loss-inducing technique is applied to an image. This will <lb/>result in estimating whether the resulting image is indistinguishable from the original with <lb/>respect to the human eye. We illustrate its use to classify images according to the loss they <lb/>can tolerate. This avoids redundant communication of a high quality image when a lower <lb/>quality image can satisfy the application resulting in the conservation and better usage <lb/>of network resources. We present the technique, the communication time saved, and an <lb/>experimental evaluation to prove the validity of the technique. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../jsp/xmlverbatimwrapper.xsl"?> 
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<!--Dept. de Fisica e Quimica, UNESP, Ilha Solteira ;-->
+    <teiHeader xml:lang="pt">
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<affiliation>
+								<orgName type="department">Dept. de Fisica e Quimica</orgName>,
+								<orgName type="institution">UNESP</orgName>,
+								<address>
+								    <settlement>Ilha Solteira </settlement>;
+                                </address>
+							</affiliation>
+						</author>			
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</TEI>

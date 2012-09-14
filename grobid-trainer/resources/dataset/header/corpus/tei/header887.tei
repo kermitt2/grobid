@@ -1,0 +1,30 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="unknown"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Designing Distributed Applications <lb/>with Mobile Code Paradigms <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Antonio Carzaniga <lb/></docAuthor></byline>
+		<byline><affiliation>Politecnico di Milano <lb/></affiliation></byline>
+		<address>Piazza Leonardo da Vinci, 32 <lb/>20133 Milano, Italy <lb/></address>
+		<note type="phone">+39-2-2399-3638 <lb/></note>
+		<email>carzaniga@elet.polimi.it <lb/></email>
+		<byline><docAuthor>Gian Pietro Picco <lb/></docAuthor></byline>
+		<byline><affiliation>Politecnico di Torino <lb/></affiliation></byline>
+		<address>Corso Duca degli Abruzzi, 24 <lb/>10129 Torino, Italy <lb/></address>
+		<note type="phone">+39-11-564-7008 <lb/></note>
+		<email>picco@athena.polito.it <lb/></email>
+		<byline><docAuthor>Giovanni Vigna <lb/></docAuthor></byline>
+		<byline><affiliation>Politecnico di Milano <lb/></affiliation></byline>
+		<address>Piazza Leonardo da Vinci, 32 <lb/>20133 Milano, Italy <lb/></address>
+		<note type="phone">+39-2-2399-3666 <lb/></note>
+		<email>vigna@elet.polimi.it <lb/></email>
+		<div type="abstract">ABSTRACT <lb/>Large scale distributed systems are becoming of <lb/>paramount importance, due to the evolution of technology and to the interest of market. Their development, <lb/>however, is not yet supported by a sound technological and methodological background, as the results developed for small size distributed systems often do not <lb/>scale up. Recently, mobile code languages (MCLs) have <lb/>been proposed as a technological answer to the problem. <lb/>In this work, we abstract away from the details of these <lb/>languages by deriving design paradigms exploiting code <lb/>mobility that are independent of any particular technology. We present such design paradigms, together <lb/>with a discussion of their features, their application domain, and some hints about the selection of the correct <lb/>paradigm for a given distributed application. <lb/></div>
+		<keywords>Keywords <lb/>Mobile code, design paradigms, distributed applications. <lb/></keywords>
+		<div type="intro">INTRODUCTION</div>
+		</front>
+</text>
+</tei>

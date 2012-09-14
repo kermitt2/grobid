@@ -1,0 +1,67 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005124"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<lb/>
+			<reference>Progress in Aerospace Sciences 46 (2010) 1–27<lb/></reference>
+			<note type="other">Contents lists available at ScienceDirect<lb/></note>
+			<note type="other">Progress in Aerospace Sciences<lb/></note>
+			<ptr type="web">journal homepage: www.elsevier.com/locate/paerosci<lb/></ptr>
+			
+			<note type="other">ARTICLE IN PRESS<lb/></note>
+			<docTitle>
+				<titlePart>Review of state of the art in smart rotor control research for wind turbines<lb/></titlePart>
+			</docTitle>
+
+			<byline>
+				<docAuthor>T.K. Barlas Ã, G.A.M. van Kuik<lb/></docAuthor>
+			</byline>
+
+			<byline>
+				<affiliation>Delft University Wind Energy Research Institute (DUWIND), Wind Energy
+					Group, Faculty of Aerospace Engineering,</affiliation>
+			</byline>
+
+			<address>Kluyverweg 1, 2629 HS Delft, The Netherlands<lb/></address>
+
+			<note type="other">a r t i c l e i n f o<lb/></note>
+			<note type="submission">Available online 15 September 2009<lb/></note>
+			<keywords>Keywords:<lb/> Wind turbine<lb/> Smart rotor<lb/> Active control<lb/> Load
+				reduction<lb/></keywords> 
+			<space dim="horizontal"/>
+			<div type="abstract">	
+				a b s t r a c t<lb/> This article presents a review of the state of
+				the art and present status of active aeroelastic rotor control<lb/> research for
+				wind turbines. Using advanced control concepts to reduce loads on the rotor can
+				offer great<lb/> reduction to the total cost of wind turbines. With the increasing
+				size of wind turbine blades, the need for<lb/> more sophisticated load control
+				techniques has induced the interest for locally distributed aerodynamic<lb/> control
+				systems with build-in intelligence on the blades. Such concepts are often named in
+				popular terms<lb/> 'smart structures' or 'smart rotor control'. The review covers
+				the full span of the subject, starting from the<lb/> need for more advanced control
+				systems emerging from the operating conditions of modern wind<lb/> turbines and
+				current load reduction control capabilities. An overview of available knowledge and
+				up-to<lb/> date progress in application of active aerodynamic control is provided,
+				starting from concepts, methods<lb/> and achieved results in aerospace and
+				helicopter research. Moreover, a thorough analysis on different<lb/> concepts for
+				smart rotor control applications for wind turbines is performed, evaluating
+				available options<lb/> for aerodynamic control surfaces, actuators (including smart
+				materials), sensors and control techniques.<lb/> Next, feasibility studies for wind
+				turbine applications, preliminary performance evaluation and novel<lb/>
+				computational and experimental research approaches are reviewed. The potential of
+				load reduction<lb/> using smart rotor control concepts is shown and key issues are
+				discussed. Finally, existing knowledge and<lb/> future requirements on modeling
+				issues of smart wind turbine rotors are discussed. This study provides<lb/> an
+				overview of smart rotor control for wind turbines, discusses feasibility of future
+				implementation,<lb/> quantifies key parameters and shows the challenges associated
+				with such an approach.<lb/>
+			</div>
+
+			<note type="copyright">&#169; 2009 Elsevier Ltd. All rights reserved.<lb/> Contents</note>
+
+		</front>
+	</text>
+</tei>

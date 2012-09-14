@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+<listBibl>
+
+  	<bibl><editor>C.S. Hong et al.</editor> (Eds.) <title level="m">APNOMS 2009</title>, <title level="j">LNCS</title> <biblScope type="vol">5787</biblScope>, pp. <biblScope type="pp">486–489</biblScope>, <date>2009</date>.</bibl>
+
+</listBibl>
+</tei>

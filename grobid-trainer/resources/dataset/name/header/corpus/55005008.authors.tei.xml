@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Frank</forename>
+								<surname>Schnütgen</surname>
+								<marker>a</marker>,
+							</persName>
+							<persName>
+								<forename>Franziska</forename>
+								<surname>Ehrmann</surname>
+								<marker>a</marker>,
+							</persName>
+							<persName>
+								<forename>Patricia</forename>
+								<surname>Ruiz-Noppinger</surname>
+								<marker>b</marker>,
+							</persName>
+							<persName>
+								<forename>Harald</forename>
+								<surname>von Melchner</surname>
+								<marker>a,⇑</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,21 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="266"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Space-time domain decomposition for parabolic <lb/>problems <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Eldar Giladi <lb/></docAuthor></byline>
+		<byline><affiliation>Applied Mathematics 217-50 <lb/>Caltech,</affiliation></byline>
+		<address>Pasadena CA 91125. <lb/></address>
+		<byline><docAuthor>Herbert B. Keller <lb/></docAuthor></byline>
+		<byline><affiliation>Applied Mathematics 217-50 <lb/>Caltech,</affiliation></byline>
+		<address>Pasadena CA 91125. <lb/></address>
+		<date>March 25, 1997 <lb/></date>
+		<div type="abstract">Abstract <lb/>We analyze a space-time domain decomposition iteration, for a model advection <lb/>diffusion equation in one and two dimensions. The asymptotic convergence rate is <lb/>superlinear, and it is governed by the diffusion of the error across the overlap between <lb/>subdomains. Hence, it depends on both the size of this overlap and the diffusion <lb/>coefficient in the equation. However, it is independent of the number of subdomains. <lb/>The convergence rate for the heat equation in a large time window is initially linear and <lb/>it deteriorates as the number of subdomains increases. The duration of the transient <lb/>linear regime is proportional to the length of the time window. For advection dominated <lb/>problems, the convergence rate is initially linear and it improves as the the ratio of <lb/>advection to diffusion increases. Moreover, it is independent of the size of the time <lb/>window and of the number of subdomains. In two space dimensions, the iteration <lb/>possesses the smoothing property: high modes of the error are damped much faster <lb/>then low modes. This is a result of the natural smoothing property of the heat equation. <lb/>Numerical calculations illustrate our analysis. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

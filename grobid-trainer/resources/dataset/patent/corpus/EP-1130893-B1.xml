@@ -1,0 +1,666 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<patent-document status="new" lang="EN" ucid="EP-1130893-B1" country="EP" doc-number="1130893" kind="B1" date="20050413"><bibliographic-data><publication-reference fvid="23210318" ucid="EP-1130893-B1" status="new"><document-id status="new" format="original"><country>EP</country><doc-number>1130893</doc-number><kind>B1</kind><date>20050413</date><lang>EN</lang></document-id></publication-reference><application-reference ucid="EP-01301421-A" status="new" is-representative="NO"><document-id format="epo" status="new"><country>EP</country><doc-number>01301421</doc-number><kind>A</kind><date>20010219</date><lang>EN</lang></document-id></application-reference><priority-claims status="new"><priority-claim ucid="US-516267" status="new"><document-id format="original" status="new"><country>US</country><doc-number>516267</doc-number><date>20000229</date></document-id></priority-claim><priority-claim ucid="US-51626700-A" status="new"><document-id format="epo" status="new"><country>US</country><doc-number>51626700</doc-number><kind>A</kind><date>20000229</date></document-id></priority-claim></priority-claims><dates-of-public-availability status="new"><intention-to-grant-date><date>20041029</date></intention-to-grant-date></dates-of-public-availability><term-of-grant /><technical-data status="new"><classifications-ipcr><classification-ipcr status="new">G06F   3/16        20060101AFI20051220RMJP        </classification-ipcr><classification-ipcr status="new">G06F   3/16        20060101CFI20051220RMJP        </classification-ipcr><classification-ipcr status="new">G06F  13/00        20060101ALI20051220RMJP        </classification-ipcr><classification-ipcr status="new">G06F  13/00        20060101CLI20051220RMJP        </classification-ipcr><classification-ipcr status="new">H04L  12/58        20060101ALI20051220RMJP        </classification-ipcr><classification-ipcr status="new">H04L  12/58        20060101CLI20051220RMJP        </classification-ipcr><classification-ipcr status="new">H04M   3/42        20060101ALI20051220RMJP        </classification-ipcr><classification-ipcr status="new">H04M   3/42        20060101CLI20051220RMJP        </classification-ipcr><classification-ipcr status="new">H04M   3/50        20060101CLI20051220RMJP        </classification-ipcr><classification-ipcr status="new">H04M   3/53        20060101ALI20051220RMJP        </classification-ipcr><classification-ipcr status="new">H04M   7/00        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">H04M   7/00        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">H04Q   3/00        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">H04Q   3/00        20060101C I20051008RMEP        </classification-ipcr></classifications-ipcr><classification-ecla status="new"><classification-symbol scheme="EC">H04M7/00B4</classification-symbol><classification-symbol scheme="EC">H04Q3/00D3</classification-symbol><classification-symbol scheme="ICO">T04M201:60</classification-symbol><classification-symbol scheme="ICO">T04M242:22</classification-symbol><classification-symbol scheme="ICO">T04M3:53T</classification-symbol></classification-ecla><invention-title lang="DE" status="new">Vorrichtung in einem intelligenten Netzwerk zum Benachrichtigen und zum Hören ausgewählter e-Mails über ein öffentliches Telefonnetzwerk</invention-title><invention-title lang="EN" status="new">Intelligent-networked system with service for notifying and hearing selected e-mails via a public switched telephone network</invention-title><invention-title lang="FR" status="new">Système dans un réseau téléphonique intelligent permettant de notifier et écouter, via un réseau téléphonique publique, des messages éléctroniques (e-mails) séléctionnés</invention-title><citations /><figures /></technical-data><parties><applicants><applicant format="epo" status="new"><addressbook><name>LUCENT TECHNOLOGIES INC</name><address><country>US</country></address></addressbook></applicant><applicant format="intermediate" status="new"><addressbook><name>LUCENT TECHNOLOGIES INC.</name><address><country /></address></addressbook></applicant></applicants><inventors><inventor format="epo" status="new"><addressbook><name>CAI YIGANG</name><address><country>US</country></address></addressbook></inventor><inventor format="epo" status="new"><addressbook><name>HUA SHIYAN</name><address><country>US</country></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>CAI, YIGANG</name><address><country /></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>HUA, SHIYAN</name><address><country /></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>CAI, YIGANG</last-name><address><street>1919 Nutmeg Lane</street><city>Naperville, Illinois 60565</city><country>US</country></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>HUA, SHIYAN</last-name><address><street>3011 Tangley Oaks Trail, Lisle</street><city>Dupage, Illinois 60532</city><country>US</country></address></addressbook></inventor></inventors><assignees><assignee format="original" status="new"><addressbook><last-name>LUCENT TECHNOLOGIES INC.</last-name><address><street>600 Mountain Avenue</street><city>Murray Hill, New Jersey 07974-0636</city><country>US</country></address></addressbook></assignee></assignees><agents><agent format="original" status="new"><addressbook><last-name>Watts, Christopher Malcolm Kelway, Dr.</last-name><address><street>Lucent Technologies (UK) Ltd, 5 Mornington Road</street><city>Woodford Green Essex IG8 OTU</city><country>GB</country></address></addressbook></agent></agents></parties><international-convention-data><designated-states><ep-contracting-states><country>DE</country><country>FR</country><country>GB</country></ep-contracting-states></designated-states></international-convention-data></bibliographic-data><abstract lang="EN" source="EPO" status="new"><p>An intelligent-networked telecommunication system for audio playing of Electronic Mail (   E-Mail    ) messages uses the Service Control Point (SCP) of the Intelligent Network (IN) to route e-mail messages directed to subscribing customers to the customer's telephone number when the e-mail header matches the limitations stored in the subscribing customer's profile. The text of the e-mail message is converted to an audio message which can either be heard by the customer when a call is answered, or stored on an answering machine or in a voice mailbox. The present-inventive Notifying and Hearing Selective E-Mails (NHSE) system and method also includes features such as the subscribing customer being able to specify that audio e-mail messages will be truncated to a specified length, sending a special Caller ID message identifying the e-mail sender and subject of the message when the customer also has Caller ID service, and preceding the transmission of the audio e-mail message with a distinctive ringing pattern, to allow a subscribing customer the option of going     off-hook     to listen to the message, or allow the call to go directly to voice mail or an answering machine. &lt;IMAGE&gt;</p></abstract><abstract lang="EN" status="new"><p num="">An intelligent-networked telecommunication system for
+audio playing of Electronic Mail (<img file="80000001.tif" id="img-EP-1130782-A2-80000001" he="4" wi="4" img-format="tif" img-content="ff" orientation="unknown" inline="no" /> 
+E-Mail <img file="80010001.tif" id="img-EP-1130782-A2-80010001" he="4" wi="4" img-format="tif" img-content="ff" orientation="unknown" inline="no" />) messages uses
+the Service Control Point (SCP) of the Intelligent Network
+(IN) to route e-mail messages directed to subscribing customers
+to the customer's telephone number when the e-mail
+header matches the limitations stored in the subscribing
+customer's profile. The text of the e-mail message is converted
+to an audio message which can either be heard by the
+customer when a call is answered, or stored on an answering
+machine or in a voice mailbox. The present-inventive Notifying
+and Hearing Selective E-Mails (NHSE) system and method
+also includes features such as the subscribing customer being
+able to specify that audio e-mail messages will be truncated
+to a specified length, sending a special Caller ID
+message identifying the e-mail sender and subject of the
+message when the customer also has Caller ID service, and
+preceding the transmission of the audio e-mail message with
+a distinctive ringing pattern, to allow a subscribing customer 
+the option of going <img file="80020001.tif" id="img-EP-1130782-A2-80020001" he="4" wi="4" img-format="tif" img-content="ff" orientation="unknown" inline="no" /> off-hook <img file="80030001.tif" id="img-EP-1130782-A2-80030001" he="4" wi="4" img-format="tif" img-content="ff" orientation="unknown" inline="no" /> to listen to the message,
+or allow the call to go directly to voice mail or an
+answering machine.
+<img file="00000001.tif" id="img-EP-1130782-A2-00000001" he="73" wi="96" img-format="tif" img-content="ad" orientation="unknown" inline="no" /></p></abstract><description lang="EN" status="new"><heading><b>BACKGROUND OF THE INVENTION</b></heading><heading><b>1. Field of the Invention</b></heading><p num="0001">The present invention generally relates to networks for
+providing telephone calls, and networks for providing Electronic
+Mail messages.</p><heading><b>2. Background</b></heading><p num="0002">As is well known in the art, Electronic Mail (&quot;E-Mail&quot;)
+consists of computer generated messages and files by
+a sending party, which are intended to be electronically
+transmitted and read by a receiving party.</p><p num="0003">It is desirable to allow telephone customers to have
+access to e-mail messages in audio form while they are away
+from computers. The prior art has attempted to fill this
+need by providing such systems as the Octel™ Unified Messenger
+System belonging to Lucent Technologies, Inc. Among the
+noticeable limitations of that system and others is the fact
+that e-mail messages are only available through a paging
+system when a computer is not available to receive the e-mail
+message. Additionally, these systems require the use
+of Private Branch Exchange (PBX) systems tied into a server
+having special software compatible with the particular audio
+e-mail system. As a result of the special hardware and
+software requirements, prior art audio e-mail systems are
+not available for general Public Switched Telephone Network
+(PSTN) customers.</p><p num="0004">To that end, it is desirable to provide an audio e-mail
+system for converting text messages to audio messages, which 
+system is potentially available to the masses of PSTN customers who have e-mail
+accounts. And, this system should not require the customer to install any special
+hardware or software.</p><p num="0005"><ref type="patent">EP-A-0 924 946</ref> (SIEMENS AG) discloses a system and method for exchanging
+information between an e-mail service and a subscriber in a telecommunication
+network. However, <ref type="patent">EP-A-0 924 946</ref> does not involve using a service control point
+(SCP) to route the e-mail messages and calls. Further, it does not disclose storing a
+subscriber's e-mail handling instructions or using such handling instructions and
+information in the e-mail messages in order to route e-mail messages, see <ref type="patent">AT 410 377</ref>, <ref type="patent">CH 682 798</ref>, <ref type="patent">DE 44 29 353</ref>.</p><heading><b><u style="single">SUMMARY OF THE INVENTION</u></b></heading><p num="0006">A method and system according to the invention are as set out in the
+independent claims. Preferred forms are set out in the dependent claims.</p><p num="0007">In view of the aforementioned problems and deficiencies of the prior art, the
+present invention provides in a telecommunication system, a method of providing to a
+subscriber, an audio message converted from an electronic text message. The several
+steps of the method include providing a plurality of telephonic devices for initiating and
+receiving telephone calls, and providing an automated intelligent network (IN) for the
+automated processing of telephone calls in the telecommunication system. The IN at
+least includes a service control point (SCP) at least including control logic and an SCP
+database, and the IN at least includes a plurality of switches coupled to telephone
+devices.</p><p num="0008">The method further includes the steps of, via the switches, routing calls
+authorized by the SCP to a destination number specified by a calling party, via the IN
+and the SCP, receiving an electronic mail (e-mail) message specifying a subscriber as
+the intended recipient of the e-mail message, and terminating a telephone call generated
+by the IN to a telephone number specified by the subscriber in the SCP database.</p><p num="0009">The method also includes the steps of converting text in the e-mail message to
+an audio message, and transmitting during the telephone call, an outgoing message at
+least including the audio message.</p><p num="0010">The present invention also provides a telecommunication system adapted to
+provide to a subscriber, an audio message converted from an electronic text message.
+The system has 
+several elements, including a plurality of telephonic devices
+adapted to initiate and receive telephone calls, and
+an IN adapted to automatically process telephone calls in
+the telecommunication system, the IN at least including an
+SCP having control logic and an SCP database, and the IN at
+least including a plurality of switches coupled to telephone
+devices. The system also at least includes a text-to-audio
+converter adapted to convert text in an e-mail message to an
+audio message.</p><p num="0011">The switches are adapted to route calls authorized by
+the SCP to a destination number specified by a calling
+party, while the IN and SCP are adapted to receive an e-mail
+message specifying a subscriber as the intended recipient of
+the e-mail message. The IN is also adapted to generate and
+terminate a telephone call to a telephone number specified
+by the subscriber in the SCP database, and to cause to be
+transmitted during the telephone call, an outgoing message
+at least including the audio message.</p><heading><b>BRIEF DESCRIPTION OF THE DRAWING FIGURES</b></heading><p num="0012">Features and advantages of the present invention will
+become apparent to those skilled in the art from the description
+below, with reference to the following drawing
+figures, in which:
+<sl><li>Figure 1 is a schematic block diagram of the basic
+hardware for the intelligent-networked telecommunication
+system for implementing the present-inventive service for
+Notifying and Hearing Selected E-mails (NHSE);</li><li>Figure 2 is a schematic block diagram the Service Control
+Point (SCP) of the Intelligent Network (IN) of the present-inventive
+telecommunication system; and </li><li>Figure 3 is a flowchart/algorithm detailing the handling
+of an e-mail message by the present-inventive telecommunication
+system.</li></sl></p><heading><b>DESCRIPTION OF THE PREFERRED EMBODIMENTS</b></heading><heading><b>1. NHSE Basic Hardware and Operation</b></heading><p num="0013">The basic hardware of the telephone service system
+100/180 capable of implementing Notifying and Hearing Selected
+E-Mails (NHSE) service is illustrated in Figure 1.
+The present invention is compatible with PSTNs, and requires
+no additional hardware or software for telephone customers
+subscribing to the service.</p><p num="0014">Used in this specification, the terms &quot;termination&quot;
+and &quot;terminating&quot; refer to connecting a call to a destination
+number.</p><p num="0015">The system 100/180 combines a domestic network 100, as
+in the United States, for example, and a foreign network
+180, as in Europe, for example. The system 100/180 includes
+a variety of telephonic devices as would be common in a general
+telephone system. For example, a user can connect to
+the network 100 using such devices as common telephones 102,
+130 and 186. Also, a user can attempt to complete a telephone
+call using a telephone that is part of a private
+branch exchange (PBX) 126 as is known in the art. The telephones
+typically include alphanumeric keypads for inputting
+Dual-Tone-Multi-Frequency (DTMF) signals, or the like, as is
+common.</p><p num="0016">The telephone lines in the system 100/180 are initially
+connected to Local Exchange Centers (LECs), 104, 128, etc.,
+as is also known in the art.</p><p num="0017">The system 100/180 includes intelligent networks 110
+and 182. Intelligent Networks (INs) are software and hardware
+hybrids that are used to automatically process telephone 
+calls in a telephone system. A service control point
+(SCP) 118 in the IN provides the logic that governs call
+handling, etc., and contains a database that stores useful
+information needed for various transactions. The IN also
+contains several switches (e.g., 112, 124 and 184) for both
+receiving calls to the network and physically routing calls
+to destination numbers. Each switch contains a Service
+Switching Point (SSP) such as the one 116 for interfacing
+with calling parties and performing the actual call routing
+under the instruction of the SCP.</p><p num="0018">The SCP and SSP may be connected with a high-speed link
+utilizing, for example, the Intelligent Network Application
+Protocol (INAP), as approved by the European Telecommunications
+Standards Institute (ETSI) or International Telecommunication
+Unit (ITU). It will be appreciated by those
+skilled in the art that the SCP 118 can be implemented as a
+networked database, not limited-to one geographic location.</p><p num="0019">A Service Management System (SMS) 120 is used by customers
+to establish parameters for various services available
+(such as the NHSE service of the present invention),
+security codes, and any restrictions on the use of a telephone
+line or account.</p><p num="0020">An Originating Call Processor (OCP) such as the one 115
+is part of each switch, and transfers a received call to the
+switch's SSP. A Terminating Call Processor (TCP) such as
+the one 114 is also part of each switch, and handles the
+termination of call processing to connect it to the destination
+number. The interface between the SSP 116 and the OCP
+115, and the interface between the SSP and TCP use a switch
+internal message flow, or a common channel signaling link or
+any type of protocol, as will be appreciated by those
+skilled in the art. </p><p num="0021">As is common in present-day telephone systems, a voice
+mailbox 106 allows the calling party of unanswered terminated
+calls to leave a voice mail message for the called
+party.</p><p num="0022">The switches (112, 124, 184, etc.) also have associated
+Intelligent Peripherals (IPs) for the purpose of playing announcement
+messages and prompting and collecting user information.
+The IPs can be stand-alone units (125), or units
+integrated (123) within the associated switch, or a unit
+within the Service Node (SN) (not shown in Figure 1). In
+the preferred embodiment, the functions of the IPs include
+converting the text of e-mail messages to audio messages,
+and played back to the intended subscribing customer.</p><p num="0023">As can be seen from Figures 1 and 2, the SCP 118 is
+connected to a wide area network such as the Internet 210 to
+monitor e-mail transmissions for those e-mail messages intended
+for customers subscribing to the present-inventive
+NHSE service. The SCP 118 connects to the Internet 210 by
+way of an e-mail server 204. An SCP database 206 stores information
+for the operation of the SCP and various services,
+including NHSE. The SCP database also contains custom data
+entered by subscribing customers reflecting the customers'
+choices for handling e-mail messages received by the system
+100/180. A service processor or SCP Control Unit 206 controls
+the operation of the SCP and various services including
+the present-inventive NHSE service.</p><p num="0024">When a customer subscribes to the present-inventive
+NHSE service, he/she may establish service by following instructions
+after dialing a predetermined telephone number;
+or by sending a registration e-mail to the SCP or the SMS e-mail
+server, or registration through a service web site on
+the Internet. The customer can choose from among various
+menu items after receiving prompts. A subscribing customer 
+establishes an NHSE list to be stored in the SCP database.
+In the preferred embodiment, the subscriber's NHSE list includes
+his/her e-mail address, the telephone number where e-mail
+messages are to be forwarded, e-mail truncation information
+indicating whether the subscriber desires that e-mail
+messages transmitted shall be truncated, and the truncation
+length, and other selective information.</p><p num="0025">The selective information includes various items such
+as a list of senders' e-mail addresses for messages from
+those senders that the subscriber would like to have converted
+and transmitted by the NHSE service, if desired, keywords
+in the sender's e-mail address that will activate the
+service, keywords in a received e-mail's subject or body
+that will activate the service, the sending date or keywords
+in the sending date of the e-mail which will activate the
+service, and which level or priority will activate the service
+(for example, the subscriber may desire that only messages
+marked &quot;urgent&quot; should be forwarded by the NHSE
+service). It will be appreciated by those skilled in the
+art having read the above description that the subscriber
+may simply elect to have all e-mail messages forwarded under
+the present-inventive NHSE service, if desired.</p><p num="0026">After the audio e-mail message is played during a terminated
+telephone call, the system can give the subscriber
+the opportunity to input a code from a menu to have the message
+stored directly into voice mail for customers also having
+a voice mailbox maintained by the system. For example,
+the announcement after the audio e-mail message can state:
+&quot;If you would like to save this e-mail message in your
+voice mailbox, please press '9'.&quot;</p><p num="0027">The system can also give the customer the opportunity
+to have the e-mail message repeated one or more times. This 
+may allow customers who have integrated telephone/answering
+machines to record the next playing of the e-mail message.</p><p num="0028">The present inventive system and method briefly operate
+as follows. When the SCP detects an e-mail message intended
+for one of the NHSE subscribers, the SCP database is queried
+for handling instructions. The header information in the e-mail
+message is compared with the intended customer's NHSE
+list to determine whether a match exists. If a match exists,
+the SCP determines whether the subscriber also has
+Caller ID service. If so, the SCP constructs Caller ID
+header information to send to the subscriber's telephone
+number. The Caller ID information can include an indication
+that an e-mail message is being sent, the sender's e-mail
+address, and the subject of the e-mail (which can be truncated
+if necessary).</p><p num="0029">When the e-mail is forwarded to the subscriber's telephone
+number, it is preceded by a distinctive ringing pattern,
+allowing a subscriber to either answer the telephone
+and hear the e-mail message, or ignore the call and have the
+message stored by an answering device or in voice mail.
+Along with the distinctive ringing pattern, the subscriber's
+telephone number also receives Caller ID information identifying
+the e-mail sender's address and the e-mail subject.</p><p num="0030">If the subscriber has chosen a truncation option, the
+e-mail message is truncated according to the subscriber's
+truncation instructions.</p><p num="0031">The intelligent peripheral of the SSP serving the subscriber
+converts the text of the e-mail message into an
+audio message. After a call from the SCP to the subscriber
+is &quot;terminated,&quot; the audio version of the e-mail message
+is played for the subscriber (or to default mechanisms such
+as an answering machine or voice mail) by the intelligent
+peripheral. </p><heading><b>2. NHSE Algorithm Description</b></heading><p num="0032">The handling of an e-mail message by the present-inventive
+Notifying and Hearing Selected E-Mails (NHSE)
+service is detailed below, with reference to the flowchart
+of Figure 3.</p><p num="0033">At the beginning step (302) of the algorithm 300, the
+SCP receives an e-mail message from the Internet indicating
+an NHSE subscriber as the intended recipient. In Step 304,
+the SCP determines whether information in the e-mail header
+meets the forwarding requirements in the subscriber's NHSE
+list information. If not, the e-mail is discarded by the
+NHSE system (although the e-mail is still passed to the appropriate
+Internet Service Provider in the preferred embodiment)
+in Steps 306 and 322, with no further action.</p><p num="0034">If the e-mail message is to be forwarded to the customer,
+the SCP checks the truncation option, and truncates
+the e-mail message accordingly (Steps 308 and 310). The e-mail
+header information is deleted in Step 312. To begin
+the transfer of the e-mail message to the subscriber, the
+SCP sends an InitialCallAttempt operation to the SSP (Step
+314). Included in the InitialCallAttempt are the Destination
+Routing Address (DestinationRoutingAddress), which is
+the telephone number designated by the subscriber for receiving
+NHSE e-mail messages, and the Alerting Pattern
+(AlertingPattern) in the form of a distinctive ringing pattern
+indicating that a telephone call contains an NHSE e-mail
+message. The SCP also sends a RequestReportBCSM operation
+to the SSP requesting an answer event report.</p><p num="0035">In response to the operations sent to it in Step 314,
+the SSP uses the Destination Routing Address to originate
+and route a telephone call to the subscriber (Step 316). In
+Step 318 the TCP determines whether the subscriber also has
+Caller ID service. If so, the TCP prepares a Caller ID information 
+header including the e-mail sender's e-mail address
+as the originating telephone number, and the e-mail
+subject in place of the calling party's name (Step 320).</p><p num="0036">In Step 322 the subscriber's telephone rings with the
+distinctive ringing pattern for the NHSE service. When the
+telephone is answered in Step 324 (either by the subscriber,
+an answering machine, or voice mail, for example), the SSP
+sends an EventReportBCSM operation to the SCP (Step 326).
+Upon receiving this latter operation, the SCP sends ConnectToResource
+and PlayAnnouncement operations back to the
+SSP (Step 328). Along with these operations, the SCP also
+sends the e-mail message text. The ConnectToResource operation
+connects the subscriber's line to the intelligent peripheral.
+The PlayAnnouncement operation causes the IP to
+convert the text of the e-mail message into an audio message,
+and to playback the message to the subscriber (Step
+330).</p><p num="0037">The NHSE algorithm 300 ends with Step 332. After the
+audio e-mail message is played, the call can continue to be
+processed as any other call.</p><p num="0038">Variations and modifications of the present invention
+are possible, given the above description.</p><p num="0039">It is noted that nothing in the present invention is
+inconsistent with, nor need interfere with normal e-mail operation.
+That is, all e-mails sent over the Internet will
+also continue to be handled by Internet Service Providers
+(ISPs) and forwarded to a subscriber's computer or server as
+per usual, unless the subscriber dictates otherwise. Therefore,
+the present-inventive NHSE service is a supplement to 
+typical e-mail service in its preferred use, although NHSE
+service may serve as a subscriber's primary means of e-mail
+receipt in alternative uses.</p></description><claims lang="DE" status="new"><claim num="xx"><claim-text>Verfahren zum Bereitstellen eines e-Mail-Nachrichtenzustellungsdienstes
+(electronic mail -
+elektronische Post) für einen Teilnehmer am PSTN-Dienst
+(öffentliches Telefonwählnetz), wobei das
+PSTN ein intelligentes Netz für die automatisierte
+Bearbeitung von Telefongesprächen enthält, wobei
+das intelligente Netz einen Dienstesteuerungspunkt
+SCP (service control point) und eine SCP-Datenbank
+umfaßt, dadurch gekennzeichnet, daß das Verfahren
+folgende Schritte umfaßt:
+<claim-text><claim-text>Speichern der e-Mail-Bearbeitungsanweisungen des
+Teilnehmers in der SCP-Datenbank, wobei die
+Bearbeitungsanweisungen vom Teilnehmer kundenspezifisch
+eingestellt werden können und die e-Mail-Adresse
+des Teilnehmers, das vom Teilnehmer
+bezeichnete Telefon für den Empfang von
+Tonnachrichten und die e-Mail-Kürzungsanweisungen
+des Teilnehmers umfassen;</claim-text><claim-text>über den SCP Empfangen einer e-Mail-Nachricht von
+einem Sender über ein Netzelement, wobei die
+Nachricht Kopfteilinformationen enthält und den
+Teilnehmer als Zielempfänger der e-Mail-Nachricht
+angibt;</claim-text><claim-text>Vergleichen von Informationen in der e-Mail-Nachricht
+mit den in der SCP-Datenbank für den
+Teilnehmer gespeicherten Bearbeitungsanweisungen;</claim-text><claim-text>Umwandeln des Textgehalts in der e-Mail-Nachricht
+in eine Sprachnachricht gemäß den
+Kürzungsanweisungen, und Herstellen einer
+Verbindung mit dem vom Teilnehmer vorher
+bezeichneten Telefon; und übertragen der
+Sprachnachricht zu dem Teilnehmer über das vom
+Teilnehmer bezeichnete Telefon.</claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>Verfahren nach Anspruch 1, wobei die
+Bearbeitungsanweisungen weiterhin mindestens eine
+aus einer Liste von e-Mail-Adressen von Sendern
+für Nachrichten von denjenigen Sendern umfassen,
+die der Teilnehmer gerne umgewandelt und zum
+Telefon des Teilnehmers übertragen haben möchte;
+eine Mehrzahl von Schlüsselworten in dem
+Gegenstand oder Körper einer empfangenen e-Mail-Nachricht,
+die den Dienst aktivieren werden, das
+Sendedatum oder Schlüsselworte in dem Sendedatum
+der Nachricht, die den Dienst aktivieren werden,
+oder welche Prioritätsstufe den Dienst aktivieren
+wird.</claim-text></claim><claim num="xx"><claim-text>Verfahren nach Anspruch 1, wobei die e-Mail-Nachricht
+gemäß den vom Teilnehmer angegebenen
+Kürzungsanweisungen gekürzt wird.</claim-text></claim><claim num="xx"><claim-text>Verfahren nach Anspruch 1, weiterhin mit folgenden
+Schritten:
+<claim-text><claim-text>Bestimmen, ob der Teilnehmer auch an einem Anrufererkennungsdienst
+zur Bereitstellung von Anrufererkennungsinformationen
+teilnimmt; und</claim-text><claim-text>Übertragen von Anrufererkennungsinformationen zu
+dem vom Teilnehmer bezeichneten Telefon, wobei die
+Informationen eine Anzeige enthalten, daß ein vom
+Teilnehmer empfangener Telefonanruf eine e-Mail-Nachricht
+enthält.</claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>Verfahren nach Anspruch 4, wobei die Anrufererkennungsinformationen
+weiterhin die Identität
+des Senders der e-Mail-Nachricht umfassen.</claim-text></claim><claim num="xx"><claim-text>Verfahren nach Anspruch 4, wobei die Anrufererkennungsinformationen
+weiterhin eine Gegenstandskennung
+der e-Mail-Nachricht umfassen.</claim-text></claim><claim num="xx"><claim-text>Verfahren nach Anspruch 4, wobei die Anrufererkennungsinformationen
+weiterhin einen Teil des
+Texts der e-Mail-Nachricht umfassen.</claim-text></claim><claim num="xx"><claim-text>Verfahren nach Anspruch 1, weiterhin mit dem
+Schritt des Sendens eines ausgeprägten Ruftonmusters
+entsprechend der Einschließung einer e-Mail-Nachricht
+in dem Anruf.</claim-text></claim><claim num="xx"><claim-text>Verfahren nach Anspruch 1, wobei die e-Mail-Nachricht
+nur dann zu einem Teilnehmer übertragen
+wird, wenn die Kopfteilinformationen in der e-Mail-Nachricht
+anzeigen, daß die Nachricht
+dringend ist.</claim-text></claim><claim num="xx"><claim-text>Verfahren nach Anspruch 1, weiterhin mit folgenden
+Schritten:
+<claim-text><claim-text>Auffordern des Teilnehmers zur Eingabe eines Codes,
+wobei der Code ein Signal an das intelligente Netz
+zum Speichern der Sprachnachricht in einem
+Sprachspeicher umfaßt; und</claim-text><claim-text>Speichern der Sprachnachricht in einem Sprachspeicher
+bei Empfang des Codes.</claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>Verfahren nach Anspruch 1, weiterhin mit folgenden
+Schritten:<claim-text><claim-text>Auffordern des Teilnehmers zur Eingabe eines
+Codes, wobei der Code ein Signal an das
+intelligente Netz zum Wiederholen des Abspielens
+der Sprachnachricht umfaßt; und</claim-text><claim-text>Wiederholen des Abspielens der Sprachnachricht bei
+Empfang des Codes.</claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>System zum Bereitstellen einer von einer e-Mail-Nachricht
+umgewandelten Sprachnachricht für einen
+Telekommunikationsteilnehmer, mit folgendem:
+<claim-text><claim-text>einem intelligenten Netz für die automatisierte
+Verarbeitung von Telefongesprächen, wobei das
+intelligente Netz einen Dienstesteuerungspunkt SCP
+(service control point) und eine SCP-Datenbank
+umfaßt; dadurch gekennzeichnet, daß</claim-text><claim-text>der SCP Verbindungsverarbeitungs-Steuerlogik und
+eine SCP-Datenbank zum Speichern von Verbindungsbearbeitungsinformationen
+und e-Mail-Bearbeitungsanweisungen
+aufweist, wobei der SCP zum Empfangen
+einer e-Mail-Nachricht geeignet ist, zum
+Vergleichen von Kopfteilinformationen in dieser e-Mail-Nachricht
+mit in der SCP-Datenbank gespeicherten
+e-Mail-Bearbeitungsanweisungen und zum
+Leiten der e-Mail-Nachricht zu einer durch einen
+Ziel-Teilnehmer angegebenen Telefonnummer, wenn
+dies von den Bearbeitungsanweisungen angezeigt
+ist, wobei die e-Mail-Bearbeitungsanweisungen vom
+Teilnehmer kundenspezifisch eingestellt werden
+können und die e-Mail-Adresse des Teilnehmers, das
+vom Teilnehmer bezeichnete Telefon zum Empfangen
+von Sprachnachrichten und die e-Mail-Kürzungsanweisungen
+des Teilnehmers umfassen; und</claim-text><claim-text>das intelligente Netz weiterhin einen Text-zu-Sprache-Wandler
+zum Umwandeln von Text in dieser
+e-Mail-Nachricht in eine Sprachnachricht umfaßt.</claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>System nach Anspruch 12, wobei die Bearbeitungsanweisungen
+weiterhin mindestens eine aus einer
+Liste von e-Mail-Adressen von Sendern für
+Nachrichten von denjenigen Sendern umfassen, die
+der Teilnehmer gerne umgewandelt und zum Telefon
+des Teilnehmers übertragen haben möchte; eine
+Mehrzahl von Schlüsselworten in dem Gegenstand
+oder Körper einer empfangenen e-Mail-Nachricht,
+die den Dienst aktivieren werden, das Sendedatum
+oder Schlüsselworte in dem Sendedatum der
+Nachricht, die den Dienst aktivieren werden, oder
+welche Prioritätsstufe den Dienst aktivieren wird.</claim-text></claim><claim num="xx"><claim-text>System nach Anspruch 12, wobei die e-Mail-Nachricht
+gemäß den vom Teilnehmer angegebenen
+Kürzungsanweisungen gekürzt wird.</claim-text></claim><claim num="xx"><claim-text>System nach Anspruch 12, wobei der Dienstesteuerungspunkt
+weiterhin geeignet ist, zu
+bestimmen, ob der Teilnehmer an einem Anrufererkennungsdienst
+zum Bereitstellen von Anrufererkennungsinformationen
+und zum Übertragen von
+Anrufererkennungsinformationen zu dem von
+Teilnehmer bezeichneten Telefon teilnimmt, wobei
+die Informationen eine Anzeige enthalten, daß ein
+vom Teilnehmer empfangener Telefonanruf eine e-Mail-Nachricht
+enthält.</claim-text></claim><claim num="xx"><claim-text>System nach Anspruch 15, wobei die Anrufererkennungsinformationen
+weiterhin die Identität
+des Senders der e-Mail-Nachricht umfassen.</claim-text></claim><claim num="xx"><claim-text>System nach Anspruch 16, wobei die Anrufererkennungsinformationen
+weiterhin eine Gegenstandskennung
+der e-Mail-Nachricht umfassen.</claim-text></claim><claim num="xx"><claim-text>System nach Anspruch 17, wobei die Anrufererkennungsinformationen
+weiterhin einen Teil des
+Texts der e-Mail-Nachricht umfassen.</claim-text></claim><claim num="xx"><claim-text>System nach Anspruch 12, wobei der Dienstesteuerungspunkt
+weiterhin geeignet ist, ein
+ausgeprägtes Ruftonmuster entsprechend der
+Einschließung einer e-Mail-Nachricht in dem Anruf
+zu senden.</claim-text></claim><claim num="xx"><claim-text>System nach Anspruch 13, wobei die e-Mail-Nachricht
+nur dann zu einem Teilnehmer übertragen
+wird, wenn die Kopfteilinformationen in der e-Mail-Nachricht
+anzeigen, daß die Nachricht
+dringend ist.</claim-text></claim><claim num="xx"><claim-text>System nach Anspruch 12, weiterhin mit folgendem:
+<claim-text><claim-text>einer intelligenten Peripherie zum Auffordern des
+Teilnehmers zur Eingabe eines Codes, wobei der
+Code ein Signal an das Kommunikationssystem zum
+Speichern der Sprachnachricht in einem Sprachspeicher
+umfaßt; und</claim-text><claim-text>einem Sprachspeicher zum Speichern der Sprachnachricht
+bei Empfang des Codes.</claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>System nach Anspruch 12, weiterhin mit folgendem:
+<claim-text><claim-text>einer intelligenten Peripherie zum Auffordern des
+Teilnehmers zur Eingabe eines Codes, wobei der
+Code ein Signal an das Telekommunikationssystem
+zum Wiederholen des Abspielens der Sprachnachricht
+umfaßt; und</claim-text><claim-text>einem Sprachspeicher zum Wiederholen des Abspielens
+der Sprachnachricht bei Empfang des Codes.</claim-text></claim-text></claim-text></claim></claims><claims lang="EN" status="new"><claim num="xx"><claim-text>A method for providing an electronic mail e-mail message delivery service
+for a subscriber to Public Switched Telephone Network PSTN service, the PSTN
+including an intelligent network for the automated processing of telephone calls, the
+intelligent network comprising a service control point SCP and an SCP database,
+   CHARACTERIZED BY:
+<claim-text><claim-text>the method comprising the steps of:
+<claim-text><claim-text>storing in the SCP database the subscriber's e-mail handling instructions, wherein the
+handling instructions are customizable by the subscriber and comprise the subscriber's
+e-mail address, the subscriber's designated telephone for receiving audio messages, and
+the subscriber's e-mail truncation instructions;</claim-text><claim-text>via said SCP, receiving an e-mail message from a sender via a network element, the message
+including header information and specifying the subscriber as an intended recipient of
+the e-mail message;</claim-text><claim-text>comparing information in the e-mail message to the handling instructions stored
+in the SCP database for the subscriber;</claim-text><claim-text>converting textual content in the e-mail message to an audio message according to said truncation intructions;</claim-text><claim-text>establishing a call to the telephone previously designated by the subscriber; and</claim-text><claim-text>transmitting the audio message to the subscriber via the telephone designated by
+the subscriber.</claim-text></claim-text></claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>The method defined in claim 1, wherein the handling instructions further
+comprise at least one of a list of senders' e-mail addresses for messages from those
+senders that the subscriber would like to have converted and transmitted to the
+subscriber's telephone, a plurality of keywords in a received e-mail message's subject
+or body that will activate the service, the sending date or keywords in the sending date
+of the message that will activate the service, or which level of priority will activate the
+service.</claim-text></claim><claim num="xx"><claim-text>The method defined in claim 1, wherein the e-mail message is truncated
+according to the truncation instructions specified by the subscriber.</claim-text></claim><claim num="xx"><claim-text>The method defined in claim 1, further comprising the steps of:<claim-text><claim-text>determining of whether the subscriber also subscribes to a caller identification
+service for providing caller identification information; and</claim-text><claim-text>transmitting caller identification information to the telephone designated by the
+subscriber, the information including an indication that a telephone call received by the
+subscriber contains an e-mail message.</claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>The method defined in claim 4, wherein the caller identification information
+further comprises the identity of the sender of the e-mail message.</claim-text></claim><claim num="xx"><claim-text>The method defined in claim 4, wherein the caller identification information
+further comprises a subject matter identifier of the e-mail message.</claim-text></claim><claim num="xx"><claim-text>The method defined in claim 4, wherein the caller identification information
+further comprises a portion of the text of the e-mail message.</claim-text></claim><claim num="xx"><claim-text>The method defined in claim 1, further comprising the step of sending a
+distinctive ringing pattern corresponding to the inclusion of an e-mail message in the
+call.</claim-text></claim><claim num="xx"><claim-text>The method defined in claim 1, wherein the e-mail message is not transmitted
+to a subscriber unless header information in the e-mail message indicates that the
+message is urgent.</claim-text></claim><claim num="xx"><claim-text>The method defined in claim 1, further comprising the steps of:
+<claim-text><claim-text>prompting the subscriber to enter a code, the code comprising
+a signal to the intelligent network to store the audio message in a voice mailbox; and</claim-text><claim-text>storing the audio message in a voice mailbox upon receiving the code.</claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>The method defined in claim 1, further comprising the steps of:
+<claim-text><claim-text>prompting the subscriber to enter a code, the code comprising
+a signal to the intelligent network to repeat the playing of the audio message; and</claim-text><claim-text>repeating the playing of the audio message upon receiving the
+code.</claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>A system for providing to a telecommunications subscriber an audio
+message converted from an e-mail message, the system comprising:<claim-text><claim-text>an intelligent network for the automated processing of telephone calls, the
+intelligent network comprising a service control point SCP and an SCP database;</claim-text></claim-text>
+   CHARACTERIZED BY:
+<claim-text><claim-text>the SCP having call handling control logic and an SCP database for storing call
+handling information and e-mail handling instructions, the SCP being adapted to receive an e-mail message, to
+compare header information in said e-mail message
+to e-mail handling instructions stored in the SCP database and to route the e-mail message to
+a telephone number specified by an intended subscriber when the handling instructions
+so indicate, wherein the e-mail handling instructions are customizable by the subscriber
+and comprise the subscriber's email address, the subscriber's designated telephone for
+receiving audio messages, and the subscriber's e-mail truncation instructions; and</claim-text><claim-text>the intelligent network further comprises a text-to-audio converter adapted to
+convert text in said e-mail message to an audio message.</claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>The system defined in claim 12, wherein the handling instructions further
+comprise at least one of a list of senders' e-mail addresses for messages from those
+senders that the subscriber would like to have converted and transmitted to the
+subscriber's telephone, a plurality of keywords in a received e-mail message's subject
+or body that will activate the service, the sending date or keywords in the sending date
+of the message that will activate the service, or which level of priority will activate the
+service.</claim-text></claim><claim num="xx"><claim-text>The system defined in claim 12, wherein the e-mail message is truncated
+according to the truncation instructions specified by the subscriber.</claim-text></claim><claim num="xx"><claim-text>The system defined in claim 12, wherein the service control point is further
+adapted to determine whether the subscriber subscribes to a caller identification service
+for providing caller identification information and to transmit caller identification
+information to the telephone designated by the subscriber, the information including an
+indication that a telephone call received by the subscriber contains an e-mail message.</claim-text></claim><claim num="xx"><claim-text>The system defined in claim 15, wherein the caller identification
+information further comprises the identity of the sender of the e-mail message.</claim-text></claim><claim num="xx"><claim-text>The system defined in claim 16, wherein the caller identification
+information further comprises a subject matter identifier of the e-mail message.</claim-text></claim><claim num="xx"><claim-text>The system defined in claim 17, wherein the caller identification
+information further comprises a portion of the text of the e-mail message.</claim-text></claim><claim num="xx"><claim-text>The system defined in claim 12, wherein the service control point is further
+adapted to send a distinctive ringing pattern corresponding to the inclusion of an e-mail
+message in the call.</claim-text></claim><claim num="xx"><claim-text>The system defined in claim 13, wherein the email message is not
+transmitted to a subscriber unless header information in the e-mail message indicates
+that the message is urgent.</claim-text></claim><claim num="xx"><claim-text>The system defined in claim 12, further comprising:
+<claim-text><claim-text>an intelligent peripheral adapted to prompt the subscriber to enter a
+code, the code comprising a signal to the telecommunication system to store
+the audio message in a voice mailbox; and</claim-text><claim-text>a voice mailbox adapted to store the audio message upon receiving the code.</claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>The system defined in claim 12, further comprising:
+<claim-text><claim-text>an intelligent peripheral adapted to prompt the subscriber to enter a
+code, the code comprising a signal to the telecommunication system to repeat
+the playing of the audio message; and</claim-text><claim-text>a voice mailbox adapted to repeat the playing of the audio message upon
+receiving the code.</claim-text></claim-text></claim-text></claim></claims><claims lang="FR" status="new"><claim num="xx"><claim-text>Procédé de fourniture d'un service de livraison de
+messages de courriel de courrier électronique pour
+un abonné au service de réseau téléphonique public
+commuté PSTN, le PSTN comprenant un réseau
+intelligent pour le traitement automatisé des
+appels téléphoniques, le réseau intelligent
+comprenant un point de commande de services SCP et
+une base de données SCP,CARACTERISE PAR :
+<claim-text><claim-text>le procédé comprenant les étapes consistant à :
+<claim-text><claim-text>mémoriser dans la base de données SCP les
+instructions de gestion de courriel de l'abonné,
+dans lequel les instructions de gestion sont
+personnalisables par l'abonné et comprennent
+l'adresse de courriel de l'abonné, le téléphone
+désigné de l'abonné pour recevoir des messages
+audio, et les instructions de troncature de
+courriel de l'abonné ;</claim-text><claim-text>par ledit SCP, recevoir un message de courriel
+d'un envoyeur par l'intermédiaire d'un élément de
+réseau, le message comprenant des informations
+d'en-tête et spécifiant l'abonné tel qu'un
+destinataire prévu du message de courriel ;</claim-text><claim-text>comparer des informations dans le message de
+courriel aux instructions de gestion mémorisées
+dans la base de données SCP pour l'abonné ;</claim-text><claim-text>convertir du contenu textuel dans le message de
+courriel en un message audio selon lesdites
+instructions de troncature ;</claim-text><claim-text>établir un appel au téléphone précédemment désigné
+par l'abonné ; et</claim-text><claim-text>transmettre le message audio à l'abonné par
+l'intermédiaire du téléphone désigné par l'abonné.</claim-text></claim-text></claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>Procédé défini selon la revendication 1, dans
+lequel les instruction de gestion comprennent en
+outre au moins une d'une liste d'adresses de
+courriel d'envoyeurs pour des messages provenant
+de ces envoyeurs que l'abonné aimerait avoir
+convertis et transmis au téléphone de l'abonné,
+une pluralité de mots-clés dans le sujet ou le
+corps d'un message de courriel reçu qui activeront
+le service, la date d'envoi ou des mots-clés dans
+la date d'envoi du message qui activeront le
+service, ou dont le niveau de priorité activera le
+service.</claim-text></claim><claim num="xx"><claim-text>Procédé défini selon la revendication 1, dans
+lequel le message de courriel est tronqué selon
+les instructions de troncature spécifiées par
+l'abonné.</claim-text></claim><claim num="xx"><claim-text>Procédé défini selon la revendication 1,
+comprenant en outre les étapes consistant à :
+<claim-text><claim-text>déterminer si l'abonné souscrit également à un
+service d'identification d'appelant pour fournir
+des informations d'identification d'appelant ; et</claim-text><claim-text>transmettre des informations d'identification
+d'appelant au téléphone désigné par l'abonné, les
+informations comprenant une indication qu'un appel
+téléphonique reçu par l'abonné contient un message
+de courriel.</claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>Procédé défini selon la revendication 4, dans
+lequel les informations d'identification
+d'appelant comprennent en outre l'identité de
+l'envoyeur du message de courriel.</claim-text></claim><claim num="xx"><claim-text>Procédé défini selon la revendication 4, dans
+lequel les informations d'identification
+d'appelant comprennent en outre un identifiant de
+thème de sujet du message de courriel.</claim-text></claim><claim num="xx"><claim-text>Procédé défini selon la revendication 4, dans
+lequel les informations d'identification
+d'appelant comprennent en outre une partie du
+texte du message de courriel.</claim-text></claim><claim num="xx"><claim-text>Procédé défini selon la revendication 1,
+comprenant en outre l'étape d'envoi d'un modèle de
+sonnerie distinctif correspondant à l'inclusion
+d'un message de courriel dans l'appel.</claim-text></claim><claim num="xx"><claim-text>Procédé défini selon la revendication 1, dans
+lequel le message de courriel n'est pas transmis à
+moins que des informations d'en-tête dans le
+message de courriel indiquent que le message est
+urgent.</claim-text></claim><claim num="xx"><claim-text>Procédé défini selon la revendication 1,
+comprenant en outre les étapes consistant à :
+<claim-text><claim-text>inciter l'abonné à entrer un code, le code
+comprenant un signal au réseau intelligent pour
+mémoriser le message audio dans une boíte vocale ;
+et à</claim-text><claim-text>mémoriser le message audio dans une boíte vocale
+dès la réception du code.</claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>Procédé défini selon la revendication 1,
+comprenant en outre les étapes consistant à :
+<claim-text><claim-text>inciter l'abonné à entrer un code, le code
+comprenant un signal au réseau intelligent pour
+répéter le passage du message audio ; et à</claim-text><claim-text>répéter le passage du message audio dès la
+réception du code.</claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>Système de fourniture à un abonné de
+télécommunication d'un message audio converti à
+partir d'un message de courriel, le système
+comprenant :
+<claim-text><claim-text>un réseau intelligent pour le traitement
+automatisé d'appels téléphoniques, le réseau
+intelligent comprenant un point de commande de
+services SCP et une base de données SCP,</claim-text></claim-text>CARACTERISE PAR :
+<claim-text><claim-text>le SCP ayant la logique de commande de gestion
+d'appel et une base de données SCP pour mémoriser
+des informations de gestion d'appel et les
+instructions de gestion de courriel, le SCP étant
+adapté pour recevoir un message de courriel, pour
+comparer des informations d'en-tête dans ledit
+message de courriel à des instructions de gestion
+de courriel mémorisées dans la base de données SCP
+et pour acheminer le message de courriel au numéro
+de téléphone spécifié par un abonné prévu lorsque
+les instructions de gestion l'indiquent, dans
+lequel les instructions de gestion de courriel
+sont personnalisables par l'abonné et comprennent
+l'adresse de courriel de l'abonné, le téléphone
+désigné de l'abonné pour recevoir des messages
+audio, et les instructions de troncature de
+courriel de l'abonné ; et</claim-text><claim-text>le réseau intelligent comprend en outre un
+convertisseur de texte vers audio adapté pour
+convertir du texte dans ledit message de courriel
+en un message audio.</claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>Système défini selon la revendication 12, dans
+lequel les instructions de gestion comprennent en
+outre au moins une d'une liste d'adresses de
+courriel d'envoyeurs pour des messages provenant
+de ces envoyeurs que l'abonné aimerait avoir
+convertis et transmis au téléphone de l'abonné,
+une pluralité de mots-clés dans le sujet ou le
+corps d'un message de courriel reçu qui activeront
+le service, la date d'envoi ou des mots-clés dans
+la date d'envoi du message qui activeront le
+service, ou dont le niveau de priorité activera le
+service.</claim-text></claim><claim num="xx"><claim-text>Système défini selon la revendication 12, dans
+lequel le message de courriel est tronqué selon
+les instructions de troncature spécifiées par
+l'abonné.</claim-text></claim><claim num="xx"><claim-text>Système défini selon la revendication 12, dans
+lequel le point de commande de services est en
+outre adapté pour déterminer si l'abonné souscrit
+à un service d'identification d'appelant pour
+fournir des informations d'identification
+d'appelant et pour transmettre des informations
+d'identification d'appelant au téléphone désigné
+par l'abonné, les informations comprenant une
+indication qu'un appel téléphonique reçu par
+l'abonné contient un message de courriel.</claim-text></claim><claim num="xx"><claim-text>Système défini selon la revendication 15, dans
+lequel les informations d'identification
+d'appelant comprennent en outre l'identité de
+l'envoyeur du message de courriel.</claim-text></claim><claim num="xx"><claim-text>Système défini selon la revendication 16, dans
+lequel les informations d'identification
+d'appelant comprennent en outre un identifiant de
+thème de sujet du message de courriel.</claim-text></claim><claim num="xx"><claim-text>Système défini selon la revendication 17, dans
+lequel les informations d'identification
+d'appelant comprennent en outre une partie du
+texte du message de courriel.</claim-text></claim><claim num="xx"><claim-text>Système défini selon la revendication 12, dans
+lequel le point de commande de services est en
+outre adapté pour envoyer un modèle de sonnerie
+distinctif correspondant à l'inclusion d'un
+message de courriel dans l'appel.</claim-text></claim><claim num="xx"><claim-text>Système défini selon la revendication 13, dans
+lequel le message de courriel n'est pas transmis à
+un abonné à moins que des informations d'en-tête
+dans le message de courriel indiquent que le
+message est urgent.</claim-text></claim><claim num="xx"><claim-text>Système défini selon la revendication 12,
+comprenant en outre:
+<claim-text><claim-text>un périphérique intelligent adapté pour inciter
+l'abonné à entrer un code, le code comprenant un
+signal au système de télécommunication pour
+mémoriser le message audio dans une boíte vocale;
+et</claim-text><claim-text>une boíte vocale adaptée pour mémoriser le message
+audio dès la réception du code.</claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>Système défini selon la revendication 12,
+comprenant en outre :
+<claim-text><claim-text>un périphérique intelligent adapté pour inciter
+l'abonné à entrer un code, le code comprenant un
+signal au système de télécommunication pour
+répéter le passage du message audio ; et</claim-text><claim-text>une boíte vocale adaptée pour répéter le passage
+du message audio dès la réception du code.</claim-text></claim-text></claim-text></claim></claims><legal-status status="new"><legal-event country="EP" code="26N" date="20060405"><legal-event-body><event-title>NO OPPOSITION FILED</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20060116</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="ET" date="20060303"><legal-event-body><event-title>FR: TRANSLATION FILED</event-title></legal-event-body></legal-event><legal-event country="EP" code="REF" date="20050519"><legal-event-body><event-title>CORRESPONDS TO:</event-title><event-attributes><event-attribute><event-attribute-label>Ref Document Number </event-attribute-label><event-attribute-value>60109973</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Country of Ref Document </event-attribute-label><event-attribute-value>DE</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Date of Ref Document </event-attribute-label><event-attribute-value>20050519</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>P</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REG" date="20050518"><legal-event-body><event-title>REFERENCE TO A NATIONAL CODE</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>IE</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Legal Event Code </event-attribute-label><event-attribute-value>FG4D</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20050413"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>B1</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>DEFRGB</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REG" date="20050413"><legal-event-body><event-title>REFERENCE TO A NATIONAL CODE</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>GB</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Legal Event Code </event-attribute-label><event-attribute-value>FG4D</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AKX" date="20040506"><legal-event-body><event-title>PAYMENT OF DESIGNATION FEES</event-title><event-attributes><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>DEFRGB</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="17Q" date="20040421"><legal-event-body><event-title>FIRST EXAMINATION REPORT</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20040305</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="17P" date="20040331"><legal-event-body><event-title>REQUEST FOR EXAMINATION FILED</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20040203</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20030813"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>ATBECHCYDEDKESFIFRGBGRIEITLILUMCNLPTSETR</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AX" date="20030813"><legal-event-body><event-title>EXTENSION OF THE EUROPEAN PATENT TO</event-title><event-attributes><event-attribute><event-attribute-label>Countries concerned </event-attribute-label><event-attribute-value>ALLTLVMKROSI</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20010905"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>A2</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>ATBECHCYDEDKESFIFRGBGRIEITLILUMCNLPTSETR</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AX" date="20010905"><legal-event-body><event-title>EXTENSION OF THE EUROPEAN PATENT TO</event-title><event-attributes><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>AL;LT;LV;MK;RO;SI</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event></legal-status></patent-document>

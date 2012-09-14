@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="41"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">A Knowledge-Sharing Strategy <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>David Goldstein and Albert Esterline <lb/></docAuthor></byline>
+		<byline><affiliation>North Carolina A&amp;T State University <lb/></affiliation></byline>
+		<address>Greensboro, North Carolina <lb/></address>
+		<email>goldstn @ncat.edu, </email> <email>esterlin@ncat.edu <lb/></email>
+		<div type="intro">Introduction</div>
+		</front>
+</text>
+</tei>

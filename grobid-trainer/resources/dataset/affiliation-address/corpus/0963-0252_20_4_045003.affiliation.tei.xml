@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="laboratory">Plasma and Coatings Physics Division</orgName>,
+							<orgName type="department">IFM-Materials Physics</orgName>,
+							<orgName type="institution">Linköping University</orgName>,
+							<address>
+								<postCode>SE-581 83</postCode>
+								<settlement>Linköping</settlement>,
+								<country>Sweden</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="laboratory">Division of Space and Plasma Physics</orgName>,
+							<orgName type="department">School of Electrical Engineering</orgName>,
+							<orgName type="institution">Royal Institute of Technology</orgName>,
+							<address>
+								<postCode>SE-100 44</postCode>
+								<settlement>Stockholm</settlement>,
+								<country>Sweden</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

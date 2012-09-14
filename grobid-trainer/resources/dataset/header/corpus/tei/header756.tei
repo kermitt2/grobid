@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="757"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Partition Based Spatial-Merge Join <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Jignesh M. Patel David J. DeWitt <lb/></docAuthor></byline>
+		<byline><affiliation>Computer Sciences Department, <lb/>University of Wisconsin, Madison <lb/></affiliation></byline>
+		<email>{jignesh, dewitt}@cs.wisc.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>This paper describes PBSM (Partition Based Spatial-Merge), a new algorithm for performing spatial join operation. This algorithm is especially effective when neither of the inputs to the join have an index on the joining <lb/>attribute. Such a situation could arise if both inputs to the join are intermediate results in a complex query, or in <lb/>a parallel environment where the inputs must be dynamically redistributed. The PBSM algorithm partitions the <lb/>inputs into manageable chunks, and joins them using a computational geometry based plane-sweeping technique. This paper also presents a performance study comparing the the traditional indexed nested loops join <lb/>algorithm, a spatial join algorithm based on joining spatial indices, and the PBSM algorithm. These comparisons <lb/>are based on complete implementations of these algorithms in Paradise, a database system for handling GIS applications. Using real data sets, the performance study examines the behavior of these spatial join algorithms in a <lb/>variety of situations, including the cases when both, one, or none of the inputs to the join have an suitable index. <lb/>The study also examines the effect of clustering the join inputs on the performance of these join algorithms. The <lb/>performance comparisons demonstrates the feasibility, and applicability of the PBSM join algorithm. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

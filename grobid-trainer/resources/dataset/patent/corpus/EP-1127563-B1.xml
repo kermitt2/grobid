@@ -1,0 +1,604 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<patent-document status="new" lang="EN" ucid="EP-1127563-B1" country="EP" doc-number="1127563" kind="B1" date="20050427"><bibliographic-data><publication-reference fvid="23216770" ucid="EP-1127563-B1" status="new"><document-id status="new" format="original"><country>EP</country><doc-number>1127563</doc-number><kind>B1</kind><date>20050427</date><lang>EN</lang></document-id></publication-reference><application-reference ucid="EP-01104292-A" status="new" is-representative="NO"><document-id format="epo" status="new"><country>EP</country><doc-number>01104292</doc-number><kind>A</kind><date>20010222</date><lang>EN</lang></document-id></application-reference><priority-claims status="new"><priority-claim ucid="JP-2000052587-A" status="new"><document-id format="epo" status="new"><country>JP</country><doc-number>2000052587</doc-number><kind>A</kind><date>20000228</date></document-id></priority-claim><priority-claim ucid="JP-2000094230-A" status="new"><document-id format="epo" status="new"><country>JP</country><doc-number>2000094230</doc-number><kind>A</kind><date>20000330</date></document-id></priority-claim></priority-claims><dates-of-public-availability status="new"><intention-to-grant-date><date>20041018</date></intention-to-grant-date></dates-of-public-availability><term-of-grant /><technical-data status="new"><classifications-ipcr><classification-ipcr status="new">A61F  13/15        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">A61F  13/15        20060101C I20051008RMEP        </classification-ipcr></classifications-ipcr><classification-ecla status="new"><classification-symbol scheme="EC">A61F13/15B1D</classification-symbol><classification-symbol scheme="EC">A61F13/15E2</classification-symbol><classification-symbol scheme="EC">A61F13/15J</classification-symbol></classification-ecla><invention-title lang="DE" status="new">Blatt für einen absorbierenden Artikel und absorbierender Artikel mit einem solchen Blatt</invention-title><invention-title lang="EN" status="new">Sheet for absorbent article and absorbent article using the same</invention-title><invention-title lang="FR" status="new">Couvrez pour l'article absorbant et l'article absorbant en utilisant la même chose</invention-title><citations /><figures /></technical-data><parties><applicants><applicant format="epo" status="new"><addressbook><name>KAO CORP</name><address><country>JP</country></address></addressbook></applicant><applicant format="intermediate" status="new"><addressbook><name>KAO CORPORATION</name><address><country /></address></addressbook></applicant></applicants><inventors><inventor format="epo" status="new"><addressbook><name>TANAKA MASAHITO</name><address><country>JP</country></address></addressbook></inventor><inventor format="epo" status="new"><addressbook><name>KANEDA MANABU</name><address><country>JP</country></address></addressbook></inventor><inventor format="epo" status="new"><addressbook><name>NAKANISHI MINORU</name><address><country>JP</country></address></addressbook></inventor><inventor format="epo" status="new"><addressbook><name>KOMORI YASUHIRO</name><address><country>JP</country></address></addressbook></inventor><inventor format="epo" status="new"><addressbook><name>TANEICHI SHOICHI</name><address><country>JP</country></address></addressbook></inventor><inventor format="epo" status="new"><addressbook><name>FUKUHARA YAYOI</name><address><country>JP</country></address></addressbook></inventor><inventor format="epo" status="new"><addressbook><name>NAGAHARA SHINSUKE</name><address><country>JP</country></address></addressbook></inventor><inventor format="epo" status="new"><addressbook><name>KIGATA TETSUYUKI</name><address><country>JP</country></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>TANAKA, MASAHITO</name><address><country /></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>KANEDA, MANABU</name><address><country /></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>NAKANISHI, MINORU</name><address><country /></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>KOMORI, YASUHIRO</name><address><country /></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>FUKUHARA, YAYOI</name><address><country /></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>TANEICHI, SHOICHI</name><address><country /></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>KIGATA, TETSUYUKI</name><address><country /></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>NAGAHARA, SHINSUKE</name><address><country /></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>TANAKA, MASAHITO</last-name><address><street>c/o Kao Corp., Research Laborat., 2606, Akabane</street><city>Ichikai-machi, Haga-gun, Tochigi</city><country>JP</country></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>KOMORI, YASUHIRO</last-name><address><street>c/o Kao Corp., Research Laborat., 2606, Akabane</street><city>Ichikai-machi, Haga-gun, Tochigi</city><country>JP</country></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>KANEDA, MANABU</last-name><address><street>c/o Kao Corp., Research Laborat., 2606, Akabane</street><city>Ichikai-machi, Haga-gun, Tochigi</city><country>JP</country></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>NAKANISHI, MINORU</last-name><address><street>c/o Kao Corp., Research Laborat., 2606, Akabane</street><city>Ichikai-machi, Haga-gun, Tochigi</city><country>JP</country></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>FUKUHARA, YAYOI</last-name><address><street>c/o Kao Corp., Research Laborat., 2606, Akabane</street><city>Ichikai-machi, Haga-gun, Tochigi</city><country>JP</country></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>TANEICHI, SHOICHI</last-name><address><street>c/o Kao Corp., Research Laborat., 2606, Akabane</street><city>Ichikai-machi, Haga-gun, Tochigi</city><country>JP</country></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>KIGATA, TETSUYUKI</last-name><address><street>c/o Kao Corp., Research Laborat., 2606, Akabane</street><city>Ichikai-machi, Haga-gun, Tochigi</city><country>JP</country></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>NAGAHARA, SHINSUKE</last-name><address><street>c/o Kao Corp., Research Laborat., 2606, Akabane</street><city>Ichikai-machi, Haga-gun, Tochigi</city><country>JP</country></address></addressbook></inventor></inventors><assignees><assignee format="original" status="new"><addressbook><last-name>KAO CORPORATION</last-name><address><street>14-10, Nihonbashi Kayaba-cho, 1-chome</street><city>Chuo-ku Tokyo</city><country>JP</country></address></addressbook></assignee></assignees><agents><agent format="original" status="new"><addressbook><last-name>Grünecker, Kinkeldey, Stockmair &amp;amp; Schwanhäusser Anwaltssozietät</last-name><address><street>Maximilianstrasse 58</street><city>80538 München</city><country>DE</country></address></addressbook></agent></agents></parties><international-convention-data><designated-states><ep-contracting-states><country>DE</country><country>FR</country><country>GB</country><country>SE</country></ep-contracting-states></designated-states></international-convention-data></bibliographic-data><abstract lang="EN" source="EPO" status="new"><p>A sheet which gives an absorbent article improved recovery from distortion is disclosed. The sheet has a recovery force of 0.7 cN or more in the cross direction, a compressive strength of 100 cN or less, and a basis weight of 20 g/m&lt;2&gt; or more. &lt;IMAGE&gt;</p></abstract><abstract lang="EN" status="new"><p num="">A sheet which gives an absorbent article improved recovery from distortion is
+disclosed. The sheet has a recovery force of 0.7 cN or more in the cross direction, a
+compressive strength of 100 cN or less, and a basis weight of 20 g/m<sup>2</sup> or more.
+<img file="00000001.tif" id="img-EP-1127391-A1-00000001" he="98" wi="157" img-format="tif" img-content="ad" orientation="unknown" inline="no" /></p></abstract><description lang="EN" status="new"><heading>Field of the Invention:</heading><p num="0001">The present invention relates to a sheet for absorbent articles. More particularly, it
+relates to a sheet which can provide absorbent articles, such as sanitary napkins, panty liners,
+and adult incontinence pads, which are prevented from distortion while worn, have an
+improved fit to a wearer's body, and hardly cause leakage. The present invention also relates
+to an absorbent article using the same.</p><heading>Description of the Related Art:</heading><p num="0002">Various types of sheets for use in absorbent articles have been proposed aiming at
+preventing absorbent articles from distortion. For example, <ref type="patent">Japanese Patent Laid-Open No.
+24289/96</ref> proposes using nonwoven fabric comprising hollow synthetic fibers having a
+specific average diameter as a material making an absorbent member to provide an absorbent
+article resistant to distortion. While the proposed nonwoven fabric is capable of producing a
+cushioning effect in the thickness direction, it fails to improve resistance to distortion in the
+planar direction, still involving reduction in fit to a wearer's body and in leakproofness due to
+the distortion. <ref type="patent">EP 0 858 791 A2</ref> discloses an absorbent article comprising thermally
+fusible fibers <ref type="patent">US 5,591,150</ref> discloses an absorbent article having a body conforming
+portion or component.</p><p num="0003">Various improvements have been added to absorbent articles for improving resistance
+to distortion and preventing leakage, such as use of nonwoven fabric comprising fibers having
+elasticity recovery properties (<ref type="patent">24289/96 <i>supra</i></ref>) and disposition of a second sheet having a
+high rate of absorption between a topsheet and an absorbent member (<ref type="patent">Japanese Patent Laid-Open
+No. 192259/99</ref>). However, none of the absorbent articles heretofore proposed is not
+sufficient for prevention of distortion while it is worn, which has led to loss of fit to-a wearer's
+body and leakproofness.</p><heading>SUMMARY OF THE INVENTION</heading><p num="0004">An object of the present invention is to provide a sheet for an absorbent article which,
+when used in an absorbent article, is capable of effectively preventing the absorbent article
+from being distorted or twisted in the planar direction as worn thereby securing comfort, a 
+good fit to a wearer's body, and leakproofness; a process of producing the sheet; and an
+absorbent article using the same.</p><p num="0005">The inventors of the present invention have found that a sheet exhibiting excellent
+recovery in a specific direction, when used in an absorbent article, is effective to prevent
+distortion of the article.</p><p num="0006">The present invention, completed based on the above finding, includes first to third
+aspects. The first aspect of the present invention relates to a sheet that can provide an
+absorbent article with improved recovery from distortion, which sheet has a recovery force of
+0.7 cN or more in the cross direction (CD), a compressive strength of 100 cN or less, and a
+basis weight of 20 g/m<sup>2</sup> or more.</p><p num="0007">The second aspect of the present invention relates to a process of producing a sheet for
+an absorbent article, which sheet comprises thermally bonded nonwoven fabric comprising
+70% by weight or more of specific core-sheath type thermally bonding conjugate fibers,
+which are thermally fused together at their intersections, wherein the process includes a step
+of heat treating a fiber web and a step of compressing (a) the fiber web before being heat-treated
+or (b) a thermally bonded nonwoven fabric obtained by heating the fiber web to reduce
+the thickness of the fiber web (a) or the thermally bonded nonwoven fabric (b) to 20 to 80%
+of the original thickness.</p><p num="0008">The third aspect of the present invention relates to an absorbent article comprising a
+liquid retentive absorbent layer and a liquid impermeable leakproof layer, wherein the
+absorbent layer has the above-described sheet.</p><p num="0009">Another object of the invention is to provide an absorbent article which is not distorted
+while worn thereby securing a good fit to a wearer's body, and leakproofness.</p><p num="0010">The above object is accomplished by a fourth aspect of the invention. The fourth
+aspect of the invention relates to an absorbent article which has substantially longitudinal
+shape and comprises a liquid retentive absorbent layer and a liquid impermeable leakproof
+layer, wherein the absorbent layer has a surface layer that is to be brought into contact with a 
+wearer's skin and an elastic layer disposed under the surface layer, the elastic layer having an
+elastic recovery force of 0.7 cN or more, and the absorbent article has a compressive strain of
+less than 5% in the width direction thereof.</p><p num="0011">The sheet according to the first aspect of the invention provides an absorbent article
+which is resistant to distortion in the planar direction, feels comfortable to wear, and has
+improved leakproofness.</p><p num="0012">The process of producing the sheet of the first aspect, which constitutes the second
+aspect of the present invention, makes it possible to prepare an absorbent article which has the
+above described excellency easily and simply without causing buckling in roll or stiffness
+reduction.</p><p num="0013">The absorbent article according to the third and fourth aspects of the invention is not
+liable to distortion while worn, securing a good fit to a wearer's body and leakproofness. According to the above the present invention provides the subject matter as defined in claims 1 to 9.</p><heading>BRIEF DESCRIPTION OF THE DRAWINGS</heading><p num="0014">The present invention will be more particularly described with reference to the
+accompanying drawings, in which:
+<sl><li>Fig. 1 is a plan view of an embodiment of the present invention;</li><li>Fig. 2 is a cross section of Fig. 1 along X-X line;</li><li>Fig. 3 is a plan view of another embodiment of the present invention; and</li><li>Fig. 4 is a cross section of Fig. 3 along X-X line.</li></sl></p><heading>DETAILED DESCRIPTION OF THE PREFERRED EMBODIMENTS</heading><p num="0015">The first to third aspects of the present invention will be described. The sheet for
+absorbent articles according to the present invention serves to improve recovery of an
+absorbent article from distortion.</p><p num="0016">The term &quot;recovery from distortion&quot; as used herein means a property of an absorbent
+article for restoring the initial shape even when it is warped, turned up or twisted by external
+force while being worn. </p><p num="0017">The sheet for absorbent articles has a recovery force of 0.7 cN or more, preferably 2.0
+to 6.0 cN in the cross direction (CD), a compressive strength of 100 cN or less, preferably 10
+to 100 cN, and a basis weight of 20 g/m<sup>2</sup> or more, preferably 20 to 50 g/m<sup>2</sup>, still preferably 30
+to 45 g/m<sup>2</sup>.</p><p num="0018">If the recovery force in the CD is less than 0.7 cN, the effect on recovery from
+distortion is not sufficient. If the compressive strength is more than 100 cN, the comfort and
+the fit on wearing reduce.</p><p num="0019">If the basis weight is less than 20 g/m<sup>2</sup>, the effect on recovery from distortion is not
+manifested. From the standpoint of productivity and cost, the basis weight is preferably less
+than 50 g/m<sup>2</sup>.</p><p num="0020">The sheet for absorbent articles preferably has a thickness of 1.0 mm or smaller,
+particularly 0.3 to 0.8 mm, for securing the comfort on wearing and the fit to a wearer's body.</p><p num="0021">The recovery force in CD, thickness, and compressive strength of the sheet according
+to the present invention are measured as follows. The term &quot;cross direction (CD)&quot; as used
+herein means a direction substantially perpendicular to the fiber orientation direction
+(machine direction; MD). That is, the sheet of the present invention exhibits a recovery
+property from deformation in the CD.</p><heading>Measurement of recovery force in CD:</heading><p num="0022">A 45 mm wide and 145 mm long strip is cut out of a sheet with the width direction of
+the strip agreeing with the CD of the sheet. The strip is rolled with its length in the
+peripheral direction to make a cylinder of 40 mm in diameter. The lap is fastened with
+staples at three positions 10 mm apart from each other.</p><p num="0023">The cylindrical test specimen is set on a compression tester RTM-100, manufactured
+by Toyo Baldwin, (initial specimen height: 45 mm) and compressed under a compression
+plate at a compressing speed of 50 mm/min in the axial direction of the cylinder
+(downstroke). After compressing the specimen by a 15 mm downstroke, the compressing
+plate was then moved upward to the initial sample height of 45 mm (upstroke). The load vs.
+the stroke distance in the up-and-down double stroke was recorded, and the load at 2 mm 
+before the distance of zero load in the upstroke is read, which is taken as a recovery force in
+the CD.</p><heading>Measurement of thickness:</heading><p num="0024">The thickness of the sheet was measured with a thickness meter (a constant load
+thickness meter PG-11, manufactured by Techloc) under a constant load of 0.36 kPa.</p><heading>Measurement of compressive strength:</heading><p num="0025">A cylindrical test specimen prepared in the same manner as described above is set in a
+compression tester (initial sample height: 45 mm). The specimen was compressed with a
+compressing plate at a speed of 50 mm/min, and the maximum load applied was measured.</p><p num="0026">The sheet satisfying all the above requirements preferably includes,
+nonwoven fabric A or nonwoven fabric B described below.</p><heading>Nonwoven fabric A:</heading><p num="0027">Thermally bonded nonwoven fabric comprising 70% by weight or more of core-sheath
+type thermally bonding conjugate fibers which are thermally fused together at their
+intersections, wherein the core comprises an olefin polymer, polyester, or polyamide, and the
+sheath comprises (1) a copolymer mainly comprising propylene, (2) a copolymer mainly
+comprising ethylene, or (3) low-density polyethylene.</p><heading>Nonwoven fabric B:</heading><p num="0028">Thermally bonded nonwoven fabric comprising 70% by weight or more of core-sheath
+type thermally bonding conjugate fibers which are thermally fused together at their
+intersections, wherein the core comprises polyester or polyamide, the sheath comprises high-density
+polyethylene, and the conjugate fibers have an average fineness of 6.6 dtex to 22 dtex.</p><p num="0029">Nonwoven fabrics A and B will be described below. First, nonwoven fabric A will
+be described. The olefin polymer which can be used as a core of the core-sheath type
+thermally bonding fibers making up nonwoven fabric A includes a propylene homopolymer
+and a copolymer mainly comprising propylene and, as a minor component, ethylene or other
+α-olefins and having a degree of crystallinity of 40% or more. </p><p num="0030">The polyester which can be used as a core of the thermally bonding fibers making
+nonwoven fabric A includes polyethylene terephthalate, polybutylene terephthalate,
+polyethylene naphthalate, polyhexamethylene terephthalate, polytetramethylene terephthalate,
+poly-1,4-dimethylcyclohexane terephthalate, and polypivalolactone t, and copolyesters
+comprising any one or more of the monomers constituting these homopolymers. These
+polyester resins can be used either individually or in combination of two or more thereof.</p><p num="0031">The polyamide which can be used as a core of the thermally bonding fibers making up
+nonwoven fabric A includes nylon 6, nylon 66, nylon 2, nylon 3, nylon 4, nylon 7, nylon 11,
+nylon 12, nylon 610, and copolymers comprising any one or more of the monomers
+constituting these homopolymers. These polyamide resins can be used either individually or
+as a combination of two or more thereof.</p><p num="0032">The sheath can be made of the polymers (1) to (3) described above either individually
+or as a mixture of two or more thereof. Mixtures comprising at least one of these polymers
+and at least one of polypropylene, polyethylene, and α-olefin polymers are also useful.</p><p num="0033">The copolymer mainly comprising propylene (1) includes an ethylene-propylene
+copolymer, an ethylene-butene-1-propylene terpolymer, and the like, each having a propylene
+content of 80 to 98% by weight and an ethylene content of 2 to 20% by weight. These
+propylene copolymers can be used either individually or in a combination of two or more
+thereof.</p><p num="0034">The copolymer mainly comprising ethylene (2) includes an ethylene-vinyl acetate
+copolymer, an ethylene-ethyl acrylate copolymer, and an ethylene-methyl acrylate copolymer,
+with an ethylene-ethyl acrylate copolymer having an ethylene content of 70 to 95% by weight
+and an ethyl acrylate content of 5 to 30% by weight being preferred. These ethylene
+copolymers can be used either individually or as a combination of two or more thereof.</p><p num="0035">The low-density polyethylene (3) includes high pressure processed low-density
+polyethylene, a linear low-density polyethylene that is an ethylene-α-olefin copolymer, and
+low-density polyethylene or an ethylene-α-olefin copolymer that are produced by use of a
+single site catalyst. An ethylene homopolymer and an ethylene-α-olefin copolymer which 
+are produced by use of a single site catalyst and have a density of 0.85 to 0.94 g/cm<sup>3</sup>,
+particularly 0.86 to 0.88 g/cm<sup>3</sup>, are preferred. They can be used either individually or as a
+combination of two or more thereof.</p><p num="0036">The core-sheath type thermally bonding conjugate fibers making nonwoven fabric A
+preferably have a core to sheath volume ratio of 1:0.25 to 4, still preferably 1:0.5 to 1.5, and a
+fineness of 0.5 to 25 dtex, particularly 2 to 15 dtex.</p><p num="0037">Next, nonwoven fabric B will be described. The polyester which can be used as a
+core of the core-sheath type thermally bonding conjugate fibers making up nonwoven fabric
+B includes polyethylene terephthalate, polybutylene terephthalate, polyethylene naphthalate,
+polyhexamethylene terephthalate, polytetramethylene terephthalate, poly-1,4-dimethylcyclohexane
+terephthalate, polypivalolactone t, and copolyesters comprising any one
+or more of the monomers constituting these homopolymers. These polyester resins can be
+used either individually or in combination of two or more thereof.</p><p num="0038">The polyamide which can be used as a core of the thermally bonding fibers making
+nonwoven fabric B includes nylon 6, nylon 66, nylon 2, nylon 3, nylon 4, nylon 7, nylon 11,
+nylon 12, nylon 610, and copolymers comprising any one or more of the monomers
+constituting these homopolymers. These polyamide resins can be used either individually or
+as a combination of two or more thereof.</p><p num="0039">The high-density polyethylene which can be used as a sheath preferably has a melt
+flow rate of 20 g/10 min or more, particularly 25 to 50g/10 min, and a density of 0.92 to
+0.97 g/cm<sup>3</sup>.</p><p num="0040">The core-sheath type thermally bonding conjugate fibers making nonwoven fabric B
+preferably have an average fineness of 6.6 to 25 dtex, particularly 8 to 15 dtex.</p><p num="0041">Nonwoven fabrics A and B are each thermally bonded nonwoven fabric in which the
+individual core-sheath type thermally bonding conjugate fibers are heat-bonded at their
+intersections. More specifically, the sheaths of the conjugate fibers are heat-fused to each
+other at the intersections. </p><p num="0042">The sheet for absorbent articles according to the present invention can be used as a
+member of an absorbent layer of an absorbent article, for example.</p><p num="0043">Having the above-described constitution, the sheet of the present invention, when used
+in an absorbent article, is capable of effectively preventing the absorbent article from being
+distorted or twisted in the planar direction as worn thereby securing a good fit to a wearer's
+body and leakproofness.</p><p num="0044">Where used in an absorbent layer of an absorbent article, the sheet may be disposed
+with either of its MD (the direction of fiber orientation) or CD being in the longitudinal
+direction of the absorbent layer. With productivity taken into consideration, it is preferred
+for the sheet to be disposed with its MD in the longitudinal direction of the absorbent layer
+(absorbent member).</p><p num="0045">A preferred process for producing the sheet for absorbent articles according to the
+present invention will be described with reference to the sheet comprising nonwoven fabric A
+or B.</p><p num="0046">The sheet can be produced by a process including a step of heat treating a fiber web
+and a step of compressing (a) the fiber web before being heat-treated or (b) a thermally
+bonded nonwoven fabric obtained by heating the fiber web to reduce the thickness of the fiber
+web (a) or the thermally bonded nonwoven fabric (b) to 20 to 80% of the original thickness.
+If the degree of compression is less than 20%, no effect is produced on improvement of
+recovery. If it exceeds 80%, the sheet is shaped like film and, when used in an absorbent
+article, will give poor fit and discomfort while worn.</p><p num="0047">The step of heat treating is carried out by an air-through method which is usually
+practiced in the manufacture of thermally bonded nonwoven fabric.</p><p num="0048">The step of compressing (hereinafter sometimes referred to as a thickness control step)
+is applied to either (a) a fiber web before being heat treated or (b) a sheet obtained by
+thermally bonding the fiber web by, for example, an air-through method. The thickness
+control step is carried out by applying pressure to (a) the fiber web or (b) the thermally 
+bonded sheet with an embossing roll and a like means usually employed for pressing
+nonwoven fabric with no particular restriction. The configuration of projections (bosses) on
+the embossing roll is not particularly limited.</p><p num="0049">Where the fiber web or the thermally bonded sheet is pressed with a flat roll in the
+thickness control step, the linear pressure to be given is preferably 5 to 80 cN/cm. Where an
+embossing roll is used for pressing, the linear pressure is preferably 100 to 500 N/cm.</p><p num="0050">It is preferred that the embossing roll be heated to a temperature Tr in a range:
+(T-80)°C&lt;Tr°C&lt;T°C, wherein T is the melting point of the sheath of the core-sheath type
+thermally bonding conjugate fibers.</p><p num="0051">The third aspect of the present invention, i.e., an absorbent article, is described below
+with particular reference to a panty liner.</p><p num="0052">The panty liner 1 shown in Figs. 1 and 2 has a substantially rectangular shape and
+comprises a liquid retentive absorbent layer 2 and a liquid impermeable leakproof layer 3,
+wherein the absorbent layer 2 has a sheet 23 which is the above-described sheet for absorbent
+articles according to the present invention.</p><p num="0053">The sheet 23 is disposed under the surface layer forming the wearer's body side 24 of
+the panty liner 1. In detail, the absorbing layer 2 comprises a liquid permeable topsheet 21, a
+liquid retentive absorbent member 22, and the sheet 23 sandwiched in between the topsheet
+21 and the absorbent member 22. The leakproof layer 3 comprises a moisture permeable
+and liquid impermeable back sheet 31. The topsheet 21 is fixed to the back sheet 31 at all
+the periphery thereof so that the absorbent layer 2 and the leakproof layer 3 are fixed together.
+While not shown, a pressure-sensitive adhesive is applied onto the back side of the leakproof
+layer 3 to attach the panty liner 1 to underwear on use.</p><p num="0054">The topsheet 21, the back sheet 31, and the absorbent member 22 of the panty liner 1
+can be fabricated of the materials commonly employed in general sanitary napkins.</p><p num="0055">The panty liner 1 provided in this embodiment can be used as attached to underwear in 
+the same manner as with general panty liners. While worn, the panty liner 1 having the
+above-described constitution is prevented from being distorted, ensuring a good fit to a
+wearer's body and causing no leakage.</p><p num="0056">The panty liner 1 can be produced by superposing on the back sheet 31, the absorbent
+member 22, the sheet 23, and the topsheet 21 in this order in the same manner as with general
+panty liners, and adhering the topsheet 21 and the back sheet 31 at the periphery by heat
+sealing, etc.</p><p num="0057">Another preferred embodiment of the absorbent article according to the present
+invention (fourth aspect) will be described with reference to the panty liner.</p><p num="0058">As shown in Figs. 3 and 4, the panty liner 101 is substantially rectangular and has a
+liquid retentive absorbent layer 102 and a liquid impermeable leakproof layer 103, wherein
+the absorbent layer 102 comprises an elastic layer 123 which is disposed under the surface
+layer forming the wearer's body side 124 of the panty liner 101.</p><p num="0059">The elastic layer 123 has an elastic recovery force of 0.7 cN or more, preferably 0.8 to
+4 cN, still preferably 1 to 2 cN, and the panty liner 101 has a compressive strain of less than
+5%, preferably 1 to 4%, in the width direction thereof. If the elastic recovery force of the
+elastic layer is less than 0.7 cN, the absorbent article has poor conformity to the contour of a
+wearer's body, giving poor fit. If the compressive strain of the absorbent article in the width
+direction exceeds 5%, it hardly restores from a distorted state, leaving untidy folds.</p><p num="0060">The elastic recovery force and the compressive strain in the width direction can be
+measured as follows.</p><heading>Measurement of elastic recovery force:</heading><p num="0061">A 45 mm wide and 140 mm long strip is cut out of an elastic sheet of an absorbent
+article with the longitudinal direction of the strip agreeing with the longitudinal direction of
+the absorbent article. Because of the limited size of a sample article, the longitudinal edges
+of the strip may have a semicircular or trapezoidal shape. The strip is rolled with its length
+in the peripheral direction to make a cylinder having a lap of about 5 mm width. The lap is 
+fastened with staples (No 10-1M, available from Max Co., Ltd.) at three positions 10 mm
+apart from each other, the staples being in parallel with the peripheral direction.</p><p num="0062">The cylindrical specimen (initial height: 45 mm) is set on a Tensilon compression
+tester (RTM-25, supplied by Toyo Baldwin) and compressed with a compression plate
+initially set a little higher than the specimen (at a height of about 47 mm) at a compressing
+speed of 50 mm/min in the axial direction of the cylinder. After compressing the specimen
+to a height of 30 mm (downstroke), the compressing plate was then moved upward to the
+initial position at the same speed to let the specimen restore the height (upstroke). The up-and-down
+double stroke makes one measurement. The measurement was made on at least
+two specimens per sample. The stress at a height of 40 mm in the upstroke is recorded, and
+an average of the results obtained from two or more specimens is taken as an elastic recovery
+force.</p><heading>Measurement of compressive strain in width direction:</heading><p num="0063">A 45 mm width and 140 mm long strip is cut out of an absorbent article with its
+longitudinal direction agreeing with the longitudinal direction of the absorbent article and
+made into a cylindrical specimen in the same manner as in the measurement of elastic
+recovery force. The specimen was given an up-and-down stroke of compression in the same
+manner, and the stress of the specimen vs. the position of the plate in the double stroke was
+recorded to make a chart. The difference between the height of the compression starting
+position in the downstroke (45 mm) and the height at a stress relaxation point (a position
+where the stress of the specimen becomes zero) in the upstroke is read from the chart. The
+measurement is made on at least two specimens per sample, and an average (mm) of the
+measured values is applied to the following equation to obtain a compressive stress in the
+width direction.
+<st32:df xmlns:st32="http://www.matrixware.com/ns/st32/" align="center">Compressive stress in the width direction = <st32:frac align="center">average of measured values<st32:over>45 mm</st32:over></st32:frac> × 100</st32:df></p><p num="0064">It is preferred for the panty liner 101 as an absorbent article to have an elastic recovery
+force of 4 cN or more, particularly 9 cN or more, especially 12 cN or more, for obtaining
+improved fit to a wearer's body. The elastic recovery force of an absorbent article will
+hereinafter be referred to as a product elastic recovery force. The product elastic recovery
+force is measured as follows. </p><heading>Measurement of product elastic recovery force:</heading><p num="0065">A specimen was prepared in the same manner as in the measurement of compressive
+strain in the width direction and given an up-and-down stroke of compression in the same
+manner to prepare a chart of the stress of the specimen vs. the position of the plate in the
+double stroke. The stress at a height of 40 mm in the upstroke is read. The measurement is
+made on at least two specimens per sample, and an average of the measured values is taken as
+a product elastic recovery force. In case where an absorbent article has compressed parts as
+in the embodiment hereinafter described, the measurements of compressive strain in the width
+direction (of the absorbent article) and the product elastic recovery force are made on
+specimens-having the compressed parts, while the elastic recovery force of the elastic layer
+and the buckling strength (of the elastic layer) hereinafter described are measured on
+specimens having no such compressed parts if possible.</p><p num="0066">In the panty liner 101, the absorbent layer 102 comprises a liquid permeable topsheet
+121, which forms the surface layer, a liquid retentive absorbent member 122, and the elastic
+layer 123 which lies between the topsheet 121 and the absorbent member 122. Interposed
+between the topsheet 121 and the absorbent member 122, the elastic layer 123 brings about
+improved touch and cushioning properties. The leakproof layer 103 comprises a liquid
+impermeable back sheet 131. The topsheet 121 is fixed to the back sheet 131 at all the
+periphery thereof so that the absorbent layer 102 and the leakproof layer 103 are fixed
+together. The absorbent member 122 is made slightly smaller in size than the topsheet 121
+so that the topsheet 121 and the back sheet 131 may be joined directly to form peripheral
+portion 105 having no absorbent member 122 around the panty liner 101. While not shown,
+a pressure-sensitive adhesive is applied onto the back side of the leakproof layer 103 for
+fixing the panty liner 101 to underwear.</p><p num="0067">In order for the elastic layer 123 to have the above-specified elastic recovery force
+and/or for the panty liner 101 to have the above-specified compressive strain in the width
+direction, it is preferred that the elastic layer 123 be made of a foamed material, a dry
+processed pulp sheet, nonwoven fabric, etc. In particular, the nonwoven fabric for use as the
+elastic layer is preferably made up of one or more kinds of known resin fibers, such as
+polyethylene, polypropylene, polyester, nylon, and polyamide. From the aspect of
+production process, thermally bonded nonwoven fabric, spunbonded nonwoven fabric, needle
+punched nonwoven fabric and the like can be used. Preferred is thermally bonded 
+nonwoven fabric comprising conjugate fibers (e.g., core-sheath type conjugate fiber) having a
+fineness of 1 to 10 dtex, preferably 3 to 7 dtex.</p><p num="0068">It is preferred that the nonwoven fabric for use as the elastic layer 123 has increased
+elasticity and/or increased stiffness by any one of, preferably two or more, of the methods (i)
+to (iv) described below, in which &quot;elasticity/stiffness&quot; means elasticity and/or stiffness.
+<sl><li>i) Elasticity/stiffness by fiber
+Fiber of resins with high elasticity/stiffness, such as polypropylene, polyester and
+polyurethane, are used to obtain improved elasticity/stiffness (effect by fiber).</li><li>ii) Uniformity in fiber orientation
+Since the elasticity/stiffness of nonwoven fabric depends on the orientation direction
+of constituent fibers, the elasticity/stiffness can be improved by orienting the constituent
+fibers in all directions at random (effect by sheet structure).</li><li>iii) Recovery of network structure
+The network structure surrounding the bonded intersections of fibers is strengthened
+and/or immobilized to enhance the recover properties of the free portions between the bonded
+intersections, thereby improving the elasticity/stiffness (effect by sheet structure).</li><li>iv) Densifying of sheet
+The sheet is densified by using crimped fibers having a three-dimensional structure,
+making the fiber orientation uniform, and increasing the fiber intersections to be bonded,
+thereby improving elasticity/stiffness (effect by fiber).</li></sl></p><p num="0069">While any one of the methods (i) to (iv) realizes the above-specified elastic recovery
+properties of the elastic layer, it is particularly preferred to use a combination of (i) and (iii), a
+combination of (i) and (iv) or a combination of (ii) and (iv), which produces both the effect by
+fiber and the effect by sheet structure.</p><p num="0070">It is preferred for the nonwoven fabric for use as the elastic layer 123 be hydrophilic.
+Hydrophilic nonwoven fabric can be obtained by a method comprising using fibers 
+previously treated with a hydrophilic lubricant, a method comprising incorporating a
+hydrophilic lubricant into the fiber-forming resin (the lubricant bleeds out), a method
+comprising treating nonwoven fabric with a hydrophilic lubricant, or a like method. The
+hydrophilic nonwoven fabric preferably has a contact angle with ion-exchanged water of 70°
+or smaller, particularly 50° or smaller. The contact angle is measured as follows.</p><heading>Measurement of contact angle:</heading><p num="0071">Measurement is made with a contact angle meter (CA-S Micron 2, supplied by Kyowa
+Kaimen Kagaku K.K.) according to a fiber method (at a magnification of 300). A camera
+(Nicon F80) is set on the meter in the prescribed manner and focused on a sample fiber.
+Water is sprayed onto the fiber. Five seconds later, a photograph is taken of the fiber on an
+ASA 100 film. The contact angle is measured on selected five sites showing a water droplet
+clearly (both ends of a droplet are clear) to obtain an average.</p><p num="0072">Where nonwoven fabric having improved elasticity/stiffness by the method (ii) alone
+or in combination with other method is used to make the elastic layer 123, it is preferred for
+the nonwoven fabric to have a ratio of the buckling strength in the CD (hereinafter &quot;CD
+buckling strength&quot;) to that in the MD (hereinafter &quot;MD buckling strength&quot;) of 0.4 to 2.5,
+particularly 0.8 to 1.5. While the orientation-state of fibers can be measured with, for
+example, an orientation meter, the above-described CD/MD buckling strength ratio is used in
+the present invention as an index of the fiber orientation direction because nonwoven fabric
+generally shows higher bending resistance in the orientation direction of the constituent
+fibers. The buckling strength is to be a quantitative value representing the bending
+resistance of the elastic layer. The buckling strength is measured as follows.</p><heading>Measurement of buckling strength:</heading><p num="0073">In the above-described measurement of elastic recovery force of an elastic layer, an
+average maximum stress reached in the downstroke is taken as a CD buckling strength. An
+MD buckling strength is measured in the same manner as for the CD buckling strength,
+except that the 45 mm wide and 140 mm long strip for making the specimen is cut out of the
+nonwoven fabric with its width direction being along the longitudinal direction of an
+absorbent article. </p><p num="0074">As shown in Fig. 4, the absorbent layer 102 has a plurality of compressed parts 104
+formed on the wearer's body side 124 by compressing at least the elastic layer 123 to bring the
+topsheet 121, the absorbent member 122, and the elastic layer 123 into one body. The
+compressed parts 104 are effective to prevent the elastic layer 123 from causing reduction in
+liquid attracting properties. The compressed parts 104 not only bring about improved liquid
+attracting properties but facilitate attraction of highly viscous matter into the absorbent
+member.</p><p num="0075">In this embodiment, the compressed parts 104, each having a leaf pattern, are formed
+by pressing the panty liner 101 from its surface side 124 to press the whole thickness of the
+absorbent layer 102, which also produces a decorative effect.</p><p num="0076">In general, an increased density increases the liquid attracting force but, in turn,
+decreases liquid permeability for passing the absorbed liquid to the lower layers. Therefore,
+it is desirable that the topsheet 121 on at least the compressed parts 104 be perforated to
+exhibit excellent absorption performance. In this particular embodiment shown, the topsheet
+121 is perforated to have a large number of through-holes 125 over the entire area thereof
+except the peripheral portion 105.</p><p num="0077">The compressed parts 104 preferably have a total area of 5 to 50% based on the entire
+area of the wearer's skin side 124 except the peripheral portion 105. With this lower limit,
+improvement on liquid attracting properties can be secured to prevent any liquid from
+remaining on the surface. With the above upper limit, deterioration in liquid permeability
+and touch (cushioning) can be minimized.</p><p num="0078">The compressed parts 104 each preferably have a base area (defined below) of 0.5 to
+50 mm<sup>2</sup>. With this lower limit, effective manifestation of the effect on liquid attracting
+properties is secured. With the above upper limit, hindrance to liquid passage can be
+minimized. The term &quot;base area&quot; as used herein denotes the area of the compressed part at
+the deepest, i.e., the area of the bottom of the depression.</p><p num="0079">While, in the embodiment shown in Fig. 3, the compressed parts 104 are made on both
+lateral side portions of the panty liner 101, they can be provided over the entire surface side, 
+for example, in a dot pattern by embossing. To form the compressed parts 104 over the
+entire surface is advantageous for liquid attraction, while localizing the compressed parts on
+side portions as shown in Fig. 3 is advantageous for obtaining liquid attracting properties on
+the side portions and cushioning properties in the middle portion.</p><p num="0080">The effects as expected in the present invention are particularly pronounced in
+absorbent articles having a thickness of 4 mm or smaller, particularly 3 mm or smaller,
+especially 2 mm or smaller. Conventional absorbent articles with a thickness of 4 mm or
+less are very likely to be distorted or twisted while worn. In the present invention, the
+above-described construction effectively prevents such distortion from happening even if the
+thickness is so reduced. Further, such a thin absorbent article has improved fit, giving
+comfort to a wearer.</p><p num="0081">The topsheet 121, the back sheet 131, and the absorbent member 122 of the panty liner
+101 can be fabricated of the same materials as commonly employed in general sanitary
+napkins.</p><p num="0082">The panty liner 101 provided in the above-described embodiment can be used as
+attached to underwear in the same manner as with general panty liners. While worn, the
+panty liner 101 having the above-described structure is prevented from being distorted by the
+action of the elastic layer, ensuring good fit to a wearer's body and causing no leak during use.</p><p num="0083">The panty liner 101 can be produced by, for example, superposing the topsheet 121 on
+the elastic layer 123, partially hot-pressing the laminate from the topsheet 121 side to form
+compressed parts 104 of prescribed shape in a prescribed pattern, superposing on the back
+sheet 131 the absorbent member 122 and the hot-pressed laminate, and adhering the topsheet
+121 and the back sheet 131 at the periphery by, for example, heat sealing.</p><p num="0084">While the present invention has been described with particular embodiments of the
+first to fourth aspects, these embodiments should not be deemed as limiting the invention, and
+various changes and modifications can be made therein. For example, the present invention
+is applicable to sanitary napkins, disposable diapers, and adult incontinence pads as well as
+panty liners. The position of the sheet 23 or the elastic layer 123 in the absorbent layer 2 or 
+102, respectively, is not particularly limited, provided that it should not form the surface side
+24 or 124 which is to be brought into contact with a wearer's skin. That is, the sheet 23 or
+the elastic layer 123 can be the undermost layer in the absorbing layer 2 or 102. Further, a
+laminate of the absorbent member 22 or 122 and the sheet 23 (which may be backed with
+another sheeting) or the elastic layer 123 is bent along the longitudinal direction to make an
+inverted &quot;V&quot; shape when seen from the edge side, and the periphery of the inverted V-shaped
+laminate is joined with a flat back sheet 31 or 131 to produce a sanitary napkin whose cross
+section has an inverted &quot;V&quot; shape. The particulars of the above-described embodiments are
+interchangeable among themselves.</p><p num="0085">The present invention will now be illustrated in greater detail by way of Examples.</p><heading>Examples of 1st to third aspect:</heading><heading>EXAMPLES 1 TO 4 AND COMPARATIVE EXAMPLE 1</heading><p num="0086">A fiber web having the fiber composition shown in Table 1 below was thermally fused
+by an air-through method at the heating temperature shown in Table 1 to prepare nonwoven
+fabric.</p><p num="0087">An absorbent article shown in Fig. 1 was prepared by using the resulting nonwoven
+fabric as a sheet 23 and tested organoleptically. As a result, the absorbent articles of
+Examples 1 to 4 did not undergo distortion nor twist while worn, retaining good fit or comfort
+and excellent leakproofness. To the contrary, the product of Comparative Example 1 was
+distorted while being worn, giving discomfort to a wearer.</p><heading>EXAMPLE 5</heading><p num="0088">A fiber web having the fiber composition shown in Table 1 was thermally fused by an
+air-through method at the heating temperature shown in Table 1. The resulting sheet was
+50% compressed with a flat roll under a linear pressure of 40 g/cm to prepare nonwoven
+fabric as a sheet for absorbent articles.</p><p num="0089">An absorbent article shown in Fig. 1 was prepared by using the resulting sheet and 
+tested organoleptically. As a result, the absorbent article did not undergo distortion nor twist
+while worn, retaining good fit or comfort and excellent leakproofness.</p><p num="0090">Abbreviations used in Table 1 have the following meanings.
+<sl><li>PET: polyethylene terephthalate</li><li>E-P: ethylene-propylene copolymer having a propylene content of 95.5 wt% and an
+ethylene content of 4.5 wt%</li><li>EEA: ethylene-ethyl acrylate copolymer having an ethylene content of 80 wt% and
+an ethyl acrylate content of 20 wt%</li><li>PP: polypropylene</li><li>VLDPE: mixture of an ethylene-α-olefin copolymer obtained by using a single site
+catalyst and polyethylene</li><li>PE20: polyethylene having an MFR of 20 g/10 min.</li><li>PE12: polyethylene having an MFR of 12 g/10 min.</li></sl><img file="00190001.tif" id="img-EP-1128367-A3-00190001" he="212" wi="108" img-format="tif" img-content="tb" orientation="unknown" inline="no" /></p><heading>Examples and Comparative Examples of the 4th aspect:</heading><heading>EXAMPLES 6 TO 11 AND COMPARATIVE EXAMPLES 2 TO 4</heading><p num="0091">The members described below and shown in Table 2 below were superposed in the top-to-bottom
+order of a topsheet, an elastic layer, and an absorbent member (Examples 6 to 11
+and Comparative Examples 2 and 4) or a topsheet and an absorbent member (Comparative
+Example 3). A breathable and leakproof sheet (KTF-37, available from Mitsubishi
+Chemical Corp.) was disposed under the absorbent member. Every adjacent members were
+adhered by applying 5 g/m<sup>2</sup> of a hot-melt adhesive in a spiral pattern (a hot-melt adhesive
+applied to a strippable substrate in a spiral pattern could be transferred) to make a 57 mm
+wide and 140 mm long absorbent article having the shape shown in Fig. 3. The absorbent
+articles of Examples 8 to 11 had compressed parts 104 as shown in Fig. 3, except that the
+individual compressed parts of Examples 8, 9 and 11 had a circular shape (the individual
+compressed parts of Example 10 had a leaf shape). The ratio of the total area of the
+compressed parts to the entire area of the wearer's skin side was obtained. The results are
+shown in Table 2.
+
+Members used in the absorbent articles:
+<tables><table><tgroup cols="2"><tbody><row><entry align="left">Topsheet 1</entry><entry align="left">Nonwoven fabric comprising PET/PE fibers having a basis weight of 25 g/m<sup>2</sup>, the same member as used as a topsheet of a commercially available panty liner (Lone Panty Liner (non-fragrant type), available from Kao Corp.)</entry></row><row><entry align="left">Topsheet 2</entry><entry align="left">Commercially available nonwoven fabric (CotAce C03OS/A25, available from Unitika, Ltd.)</entry></row><row><entry align="left">Elastic layer 1</entry><entry align="left">Nonwoven fabric prepared by thermally fusing a web of fibers NBF(SH), available from Daiwabo Co., Ltd (fineness: 4.4 dtex; average length: 51 mm), having a basis weight of 40 g/m<sup>2</sup> by an air-through method at a temperature of 148°C and treating the nonwoven fabric with a hydrophilic lubricant according to <ref type="patent">Japanese Patent Laid-Open No. 309111/93</ref>. The resulting nonwoven fabric (elastic layer 1) had a thickness of 0.57 mm, an elastic recovery force of 0.78 cN, and a CD/MD buckling strength ratio of 0.29. The nonwoven fabric had improved elasticity/stiffness according to the above-described method (i). </entry></row><row><entry align="left">Elastic layer 2</entry><entry align="left">Nonwoven fabric prepared in the same manner as for elastic layer 1, except for using a web of fibers NBF(SP) (available from Daiwabo Co., Ltd.; fineness: 4.4 dtex; average length: 51 mm) having a basics weight of 40 g/m<sup>2</sup>. The nonwoven fabric (elastic layer 2) had a thickness of 0.55 mm, an elastic recovery force of 1.18 cN, and a CD/MD buckling strength ratio of 0.30. Elastic layer 2 had improved elasticity/stiffness according to the above-described methods (i) and (iii).</entry></row><row><entry align="left">Elastic layer 3</entry><entry align="left">Nonwoven fabric prepared as follows. A web of fibers NBF(SH) (available from Daiwabo Co., Ltd., fineness: 2.2 dtex; average length. 51 mm) having a basis weight of 10 g/m<sup>2</sup> and a web of fibers NBF(SP) (available from Daiwabo Co., Ltd.; fineness: 4.4 dtex; average length: 51 mm) having a basis weight of 20 g/m<sup>2</sup> were superposed on each other to prepare a laminate web having a total basis weight of 30 g/m<sup>2</sup>. The laminate web was thermally fused by an air-through method at a heating temperature of 148°C to prepare nonwoven fabric, which was then treated with a hydrophilic lubricant in the same manner as for elastic layer 1. Elastic layer 3 had a thickness of 0.48 mm, an elastic recovery force of 0.88 cN, and a CD/MD buckling strength ratio of 0.34. Elastic layer 3 had improved elasticity/stiffness by the above-described methods (i) and (iii).</entry></row><row><entry align="left">Elastic layer 4</entry><entry align="left">Nonwoven fabric prepared as follows. A web of fibers NBF(SH) (available from Daiwabo Co., Ltd.; fineness: 2.2 dtex; average length: 51 mm) having a basis weight of 10 g/m<sup>2</sup> and a web of 1:1 mixed fibers of NBF(SH) (available from Daiwabo Co., Ltd.; fineness: 2.2 dtex; average length: 51 mm; three-dimensional crimped fibers) and PET fibers Tetoron (available from Teijin Ltd.; fineness: 8.8 dtex; average length: 51 mm) and having a basis weight of 30 g/m<sup>2</sup> were superposed on each other to prepare a laminate web having a total basis weight of 40 g/m<sup>2</sup>. The laminate web was thermally fused by an air-through method at a heating temperature of 148°C to prepare nonwoven fabric, which was then treated with a hydrophilic lubricant in the same manner as for elastic layer 1. Elastic layer 4 thus prepared had a thickness of 0.65 mm, an elastic recovery force </entry></row><row><entry align="left" /><entry align="left">of 1.76 cN, and a CD/MD buckling strength ratio of 1.06. Elastic layer 4 had improved elasticity/stiffness by the above-described methods (i) to (iv).</entry></row><row><entry align="left">Elastic layer 5</entry><entry align="left">Nonwoven fabric prepared by thermally fusing a web of fibers NBF(SH) (available from Daiwabo Co., Ltd.; fineness: 2.2 dtex; average length: 51 mm) having a basis weight of 25 g/m<sup>2</sup> by an air-through method at a temperature of 148°C to prepare nonwoven fabric and treating the resulting nonwoven fabric with a hydrophilic lubricant in the same manner as for elastic layer 1. Elastic layer 5 thus prepared had a thickness of 0.26 mm, an elastic recovery force of 0.2 cN, and a CD/MD buckling strength ratio of 0.29.</entry></row></tbody></tgroup></table></tables><tables><table><tgroup cols="2"><tbody><row><entry align="left">Absorbent member 1</entry><entry align="left">Paper having a basis weight of 16 g/m<sup>2</sup> and a craping ratio of 10%.</entry></row><row><entry align="left">Absorbent member 2</entry><entry align="left">Dry-processed pulp sheet having a basis weight of 45 g/m<sup>2</sup> (JS45HDW, available from J Soft K.K.)</entry></row><row><entry align="left">Absorbent member 3</entry><entry align="left">Two-ply paper (30 mm x 120 mm) having a basis weight of 35 g/m<sup>2</sup>, each ply having a craping ratio of 20%.</entry></row><row><entry align="left">Absorbent member 4</entry><entry align="left">A laminate sheet having a basis weight of 50 g/m<sup>2</sup>, made of a pair of pulp webs (30 mm x 60 mm) having 10 g/m<sup>2</sup> of superabsorbent polymer particles (Aquaric CAW-4, available from Nippon Shokubai Co., Ltd.) scattered therebetween.</entry></row></tbody></tgroup></table></tables></p><p num="0092">Each of elastic layers 1 to 4 had a contact angle between 50° and 60°. The thickness
+of elastic layers I to 5 and the final products (absorbent articles) was measured with a
+thickness gauge ID-C112CB (supplied by Mitsutoyo K.K.) to which a measuring part of
+30 mm in diameter was attached to give a load of about 10 cN.</p><p num="0093">The compressive strain in the width direction and the product elastic recovery force of
+the absorbent articles obtained in Examples 6 to 11 and Comparative Examples 2 to 4 were
+measured according to the methods previously described. Further, the absorbent articles
+were evaluated for non-liability to distortion and absorption performance in accordance with
+the following test methods. The results of the measurement and evaluation are shown in 
+Table 2.</p><heading>Evaluation of non-liability to distortion:</heading><p num="0094">A ten member panel were asked to use the absorbent articles of Examples 6 to 11 and
+Comparative Examples 2 to 4 (test sample) and, for reference, Lorie Panty Liner (non-fragrant
+type, &quot;non-distortion stitches&quot;, available from Kao Corp. July, 1999), to make a judgement
+which of the test sample and the reference sample is less liable to distortion and to grade on
+the following A-to-E scale. Two articles per sample were used by each panel member.
+<sl><li>A: The test sample is less liable to distortion.</li><li>B: The test sample is somewhat less liable to distortion.</li><li>C: The test sample and the reference sample are equal in liability to distortion.</li><li>D: The reference sample is somewhat less liable to distortion.</li><li>E: The reference sample is less liable to distortion.</li></sl></p><p num="0095">The difference between the number of panel members who graded A or B (the number
+of panel members who approved of the test sample) and the number of panel members who
+graded D or E (the number of panel members who approved of the reference sample) (the
+former - the latter) was taken-as an index for judging non-liability to distortion. The index of
+5 or greater was rated &quot;excellent&quot;, 3 to 4 &quot;good&quot;, 1 to 2 &quot;medium&quot;, and 0 or smaller &quot;bad&quot;</p><heading>Evaluation of absorption performance:</heading><p num="0096">The absorbent articles prepared in Examples 6 to 11 and Comparative Examples 2 to 4,
+which had the laminate structure of topsheet/(elastic layer)/absorbent member/back sheet
+(hereinafter referred to type A), and those having the same structure as type A but the
+absorbent member removed therefrom (hereinafter referred to type B) were tested as follows.</p><p num="0097">Five drops of a 65 wt% glycerol solution to which 0.5 wt% of food colorant Blue 1
+(available from Aizen K.K.) had been added were dropped on the same point of the topsheet
+of the test sample from a height of 10 mm. After 5 minutes from the completion of
+dropping, the contour of the spread blue solution was marked and scanned with a scanning
+system comprising a light source (Sunlight SL-230K2, available from LPL), a stand (Copy
+Stand CS-5, available from LPL), a lens (24 mm/F2.8 Nikkor Lens), a CCD camera (HV-D37, 
+available from Hitachi Electronics, Ltd.; the lens connected with an F-mount connector),
+and a video board (Spectra 3200, available from Canopus Co., Ltd.). The digital image
+information obtained were processed on image analyzing software supplied by NEXUS (ver
+3.08) to obtain the area of the spread.</p><p num="0098">The ratio of the spread area on an A type sample to that on a corresponding B type
+sample was obtained. The ratio of 0.8 or less was graded &quot;good&quot;, more than 0.8 and less
+than 0.9 &quot;medium&quot;, and 0.91 or more &quot;bad&quot;. <img file="00250001.tif" id="img-EP-1128367-A3-00250001" he="247" wi="83" img-format="tif" img-content="tb" orientation="unknown" inline="no" /></p><p num="0099">In Examples 6 to 11, the elastic recovery force of the elastic layer and the width
+direction compressive strain of the panty liner are within the respective ranges specified in the
+present invention so that the absorbent articles exhibit satisfactory resistance against
+distortion while worn. In particular, the absorbent articles of Examples 8 to 10 have a width
+direction compressive strain of 3% or less by virtue of the effects of the compressed parts and
+the topsheet and were highly approved of by the panel members. Further, the absorbent
+articles of Examples 8 to 11 which have compressed parts exhibited satisfactory absorption
+performance.</p><p num="0100">On the other hand, Comparative Example 2 in which the elastic layer has a low elastic
+recovery force and Comparative Example 3 having no elastic layer were not exactly approved
+of by users with regard to liability to distortion. The absorbent article of Comparative
+Example 4 which has a large compressive strain in the width direction did not find much
+approval, either.</p></description><claims lang="DE" status="new"><claim num="xx"><claim-text>Lage bzw. Schicht (23, 123), die einem absorptionsfähigen Artikel bzw. Gegenstand
+(1, 101) eine verbesserte Erholung von einer Verformung verleiht und eine
+Erholungskraft von 0,7 cN oder mehr in der Querrichtung, eine Druckfestigkeit von
+100 cN oder weniger und ein Flächengewicht von 20 g/m2 oder mehr aufweist, die
+umfasst einen thermisch gebundenen Vliesstoff, der 70 Gew.-% oder mehr thermisch
+bindungsfähige Konjugatfasern vom Kern-Hüllen-Typ enthält, die an ihren
+Überkreuzungsstellen thermisch miteinander fusioniert sind, wobei der Kern ein Olefinpolymer,
+einen Polyester oder ein Polyamid umfasst und die Hülle ein Copolymer,
+das hauptsächlich Propylen umfasst, ein Copolymer, das hauptsächlich Ethylen
+umfasst, oder Polyethylen mit niedriger Dichte umfasst.</claim-text></claim><claim num="xx"><claim-text>Lage bzw. Schicht (23, 123), die einem absorptionsfähigen Artikel bzw. Gegenstand
+(1, 101) eine verbesserte Erholung von einer Verformung verleiht und eine
+Erholungskraft von 0,7 cN oder mehr in der Quer-Richtung, eine Druckfestigkeit von
+100 cN oder weniger und ein Flächengewicht von 20 g/m2 oder mehr aufweist, die
+umfasst einen thermisch gebundenen Vliesstoff, der 70 Gew.-% oder mehr thermisch
+bindungsfähige Konjugatfasern vom Kern-Hüllen-Typ enthält, die an ihren
+Überkreuzungsstellen thermisch miteinander fusioniert sind, wobei der Kern einen
+Polyester oder ein Polyamid umfasst, die Hülle ein Polyethylen mit hoher Dichte
+umfasst und die Konjugatfasern eine durchschnittliche Feinheit von 6,6 bis 22 dtex
+aufweisen.</claim-text></claim><claim num="xx"><claim-text>Verfahren zur Herstellung einer Lage bzw. Schicht (23, 123) für einen absorptionsfähigen
+Artikel bzw. Gegenstand (1, 101), wie sie in Anspruch 1 beschrieben ist,
+das umfasst eine Stufe der Wärmebehandlung einer Faserbahn und eine Stufe der
+Komprimierung (a) der Faserbahn vor der Wärmebehandlung oder (b) eines thermisch
+gebundenen Vliesstoffes, der durch Erhitzen der Faserbahn hergestellt worden
+ist, um die Dicke der Faserbahn (a) zu verringern oder um die Dicke des thermisch
+gebundenen Vliesstoffes (b) auf 20 bis 80 % der ursprünglichen Dicke zu verringern.</claim-text></claim><claim num="xx"><claim-text>Absorptionsfähiger Artikel bzw. Gegenstand (1, 101), der umfasst eine Flüssigkeit
+zurückhaltende absorptionsfähige Schicht (2, 102) und eine für Flüssigkeit
+undurchlässige auslaufdichte Schicht (3, 103), worin die absorptionsfähige Schicht
+(2, 102) die Lage bzw. Schicht (23, 123) für einen absorptionsfähigen Artikel bzw.
+Gegenstand, wie sie in Anspruch 1 beschrieben ist, aufweist.</claim-text></claim><claim num="xx"><claim-text>Absorptionsfähiger Artikel bzw. Gegenstand (1, 101), der eine Flüssigkeit zurückhaltende
+absorptionsfähige Schicht (2, 102) und eine für Flüssigkeit undurchlässige
+auslaufdichte Schicht (3, 103) umfasst, worin die absorptionsfähige Schicht die
+Lage bzw. Schicht (23, 123) für einen absorptionsfähigen Artikel bzw. Gegenstand,
+wie sie in Anspruch 2 beschrieben ist, aufweist.</claim-text></claim><claim num="xx"><claim-text>Absorptionsfähiger Artikel bzw. Gegenstand, der eine im Wesentlichen longitudinale
+Gestalt hat und umfasst eine Flüssigkeit zurückhaltende absorptionsfähige
+Schicht (2, 102) und eine für Flüssigkeit undurchlässige auslaufdichte Schicht (3,
+103), worin die absorptionsfähige Schicht (2, 102) eine Oberflächenschicht (21, 121),
+die mit der Haut eines Trägers in Kontakt gebracht werden soll, und eine elastische
+Schicht (23, 123) aufweist, die unterhalb der Oberflächenschicht angeordnet ist, wobei
+die elastische Schicht (23, 123) eine elastische Erholungskraft von 0,7 cN oder
+mehr aufweist und der absorptionsfähige Artikel bzw. Gegenstand (1, 101) eine
+Druckverformung von weniger als 5 % in der Breiten-Richtung aufweist, wobei die
+elastische Schicht ein thermisch gebundener Vliesstoff ist, der 70 Gew.-% oder mehr
+thermisch bindungsfähige Konjugatfasern vom Kern-Hüllen-Typ enthält, die an ihren
+Überkreuzungsstellen thermisch miteinander fusioniert sind, wobei der Kern ein Olefinpolymer,
+einen Polyester oder ein Polyamid umfasst und die Hülle ein Copolymer,
+das hauptsächlich Propylen umfasst, ein Copolymer, das hauptsächlich Ethylen
+umfasst, oder ein Polyethylen mit niedriger Dichte umfasst.</claim-text></claim><claim num="xx"><claim-text>Absorptionsfähiger Artikel bzw. Gegenstand nach Anspruch 6, worin die absorptionsfähige
+Schicht (2, 102) umfasst eine für Flüssigkeit durchlässige Decklage
+(21, 121), welche die Oberflächenschicht bildet, ein Flüssigkeit zurückhaltendes absorptionsfähiges
+Element (22, 122) und die elastische Schicht (23, 123), die zwischen
+der Decklage (21, 121) und dem absorptionsfähigen Element (22, 122) angeordnet
+ist.</claim-text></claim><claim num="xx"><claim-text>Absorptionsfähiger Artikel bzw. Gegenstand nach Anspruch 7, worin die absorptionsfähige
+Schicht (102) eine Vielzahl von komprimierten Teilen (104) auf der
+Seite der Oberflächenschicht (121) aufweist, wobei die komprimierten Teile (104)
+durch Komprimieren mindestens der elastischen Schicht (123) gebildet worden sind,
+um die Decklage (121), das absorptionsfähige Element (122) und die elastische
+Schicht (123) in den Teilen zu einem Körper zu vereinigen.</claim-text></claim><claim num="xx"><claim-text>Absorptionsfähiger Artikel bzw. Gegenstand nach Anspruch 6, der eine Dicke
+von 4 mm oder weniger aufweist.</claim-text></claim></claims><claims lang="EN" status="new"><claim num="xx"><claim-text>A sheet (23, 123) which gives an absorbent article (1, 101) improved recovery from distortion, which
+sheet (23, 123) has a recovery force of 0.7 cN or more in the cross direction, a compressive
+strength of 100 cN or less, and a basis weight of 20 g/m2 or more, comprising thermally
+bonded nonwoven fabric containing 70% by weight or more of core-sheath type thermally
+bonding conjugate fibers which are thermally fused together at their intersections, wherein
+the core comprises an olefin polymer, polyester, or polyamide, and the sheath comprises
+a copolymer mainly comprising propylene, a copolymer mainly comprising ethylene, or
+low-density polyethylene.</claim-text></claim><claim num="xx"><claim-text>A sheet (23, 123) which gives an absorbent article (1, 101) improved recovery from distortion, which
+sheet (23, 123) has a recovery force of 0.7 cN or more in the cross direction, a compressive
+strength of 100 cN or less and a basis weight of 20 g/m2 or more, comprising thermally
+bonded nonwoven fabric containing 70% by weight or more of core-sheath type thermally
+bonding conjugate fibers which are thermally fused together at their intersections, wherein
+the core comprises polyester or polyamide, the sheath comprises high-density
+polyethylene, and the conjugate fibers have an average fineness of 6.6 dtex to 22 dtex.</claim-text></claim><claim num="xx"><claim-text>A process of producing the sheet (23, 123) for an absorbent article (1, 101) described in claim 1,
+which includes a step of heat treating a fiber web and a step of compressing (a) said fiber
+web before being heat-treated or (b) a thermally bonded nonwoven fabric obtained by
+heating said fiber web to reduce the thickness of said fiber web (a) or said thermally
+bonded nonwoven fabric (b) to 20 to 80% of the original thickness.</claim-text></claim><claim num="xx"><claim-text>An absorbent article (1, 101) comprising a liquid retentive absorbent layer (2, 102) and a liquid
+impermeable leakproof layer (3, 103), wherein said absorbent layer (2, 102) has the sheet (23, 123) for an
+absorbent article described in claim 1.</claim-text></claim><claim num="xx"><claim-text>An absorbent article (1, 101) comprising a liquid retentive absorbent layer (2, 102) and a liquid
+impermeable leakproof layer (3, 103), wherein said absorbent layer has the sheet (23, 123) for an
+absorbent article described in claim 2.</claim-text></claim><claim num="xx"><claim-text>An absorbent article which has substantially longitudinal shape and comprises a
+liquid retentive absorbent layer (2, 102) and a liquid impermeable leakproof layer (3, 103), wherein said
+absorbent layer (2, 102) has a surface layer (21, 121) that is to be brought into contact with a wearer's skin
+and an elastic layer (23, 123) disposed under said surface layer, said elastic layer (23, 123) having an elastic
+recovery force of 0.7 cN or more, and said absorbent article (1,101) has a compressive strain of
+less than 5% in the width direction, said elastic layer being a thermally bonded nonwoven
+fabric containing 70% by weight or more of core-sheath type thermally bonding conjugate
+fibers which are thermally fused together at their intersections, wherein the core
+comprises an olefin polymer, polyester, or polyamide, and the sheath comprises a
+copolymer mainly comprising propylene, a copolymer mainly comprising ethylene, or low-density
+polyethylene.</claim-text></claim><claim num="xx"><claim-text>The absorbent article according to claim 6, wherein said absorbent layer (2, 102)
+comprises a liquid permeable topsheet (21, 121) which forms said surface layer, a liquid retentive
+absorbent member (22, 122), and said elastic layer (23, 123) lying between said topsheet (21, 121) and said absorbent
+member (22, 122).</claim-text></claim><claim num="xx"><claim-text>The absorbent article according to claim 7, wherein said absorbent layer (102) has a
+plurality of compressed parts (104) on the side of said surface layer (121), said compressed parts (104)
+being formed by compressing at least said elastic layer (123) to unite said topsheet (121), said
+absorbent member (122) and said elastic layer (123) into one body in said parts.</claim-text></claim><claim num="xx"><claim-text>The absorbent article according to claim 6, which has a thickness of 4 mm or
+smaller.</claim-text></claim></claims><claims lang="FR" status="new"><claim num="xx"><claim-text>Feuille (23, 123) qui donne une recouvrance
+élastique améliorée après déformation à un article
+absorbant (1, 101), laquelle feuille (23, 123) a une
+force de recouvrance élastique de 0,7 cN ou plus dans
+le sens travers, une résistance à la compression de
+100 cN ou moins et une masse surfacique de 20 g/m2 ou
+plus, comprenant un tissu non tissé lié thermiquement
+contenant 70% en poids ou plus de fibres conjuguées à
+liaison thermique de type coeur/enveloppe qui sont
+fusionnées ensemble thermiquement au niveau de leurs
+intersections, dans lequel le coeur comprend un polymère
+oléfine, un polyester ou un polyamide, et l'enveloppe
+comprend un copolymère comprenant principalement du
+propylène, un copolymère comprenant principalement de
+l'éthylène, ou du polyéthylène basse densité.</claim-text></claim><claim num="xx"><claim-text>Feuille (23, 123) qui donne une recouvrance
+élastique améliorée après déformation à un article
+absorbant (1, 101), laquelle feuille (23, 123) a une
+force de recouvrance élastique de 0,7 cN ou plus dans
+le sens travers, une résistance à la compression de
+100 cN ou moins et une masse surfacique de 20 g/m2 ou
+plus, comprenant un tissu non tissé lié thermiquement
+contenant 70% en poids ou plus de fibres conjuguées à
+liaison thermique de type coeur/enveloppe qui sont
+fusionnées ensemble thermiquement au niveau de leurs
+intersections, dans lequel le coeur comprend du
+polyester ou du polyamide, l'enveloppe comprend du
+polyéthylène haute densité et les fibres conjuguées ont
+une finesse moyenne de 6,6 dtex à 22 dtex.</claim-text></claim><claim num="xx"><claim-text>Procédé de production de la feuille (23, 123)
+pour un article absorbant (1, 101) décrite dans la
+revendication 1, qui inclut une étape de traitement par
+la chaleur d'une toile de fibres et une étape de
+compression (a) de ladite toile de fibres avant qu'elle
+ne soit traitée par la chaleur ou (b) d'un tissu non
+tissé lié thermiquement obtenu en chauffant ladite
+toile de fibres pour réduire l'épaisseur de ladite
+toile de fibres (a) ou dudit tissu non tissé lié
+thermiquement (b) à une épaisseur de 20% à 80% de
+celle d'origine.</claim-text></claim><claim num="xx"><claim-text>Article absorbant (1, 101) comprenant une
+couche absorbante retenant les liquides (2, 102) et une
+couche étanche imperméable aux liquides (3, 103), dans
+lequel ladite couche absorbante (2, 102) a la feuille
+(23, 123) pour un article absorbant décrite dans la
+revendication 1.</claim-text></claim><claim num="xx"><claim-text>Article absorbant (1, 101) comprenant une
+couche absorbante retenant les liquides (2, 102) et une
+couche étanche imperméable aux liquides (3, 103), dans
+lequel ladite couche absorbante a la feuille (23, 123)
+pour un article absorbant décrite dans la revendication
+2.</claim-text></claim><claim num="xx"><claim-text>Article absorbant qui a une forme
+essentiellement allongée et qui comprend une couche
+absorbante retenant les liquides (2, 102) et une couche
+étanche imperméable aux liquides (3, 103), dans lequel
+ladite couche absorbante (2, 102) a une couche de
+surface (21, 121) qui est destinée à venir en contact
+avec la peau d'un porteur et une couche élastique (23,
+123) disposée sous ladite couche de surface, ladite
+couche élastique (23, 123) ayant une force de
+recouvrance élastique de 0,7 cN ou plus, et ledit
+article absorbant (1, 101) a une déformation de
+compression inférieure à 5% dans le sens de la largeur,
+ladite couche élastique étant un tissu non tissé lié
+thermiquement contenant 70% en poids ou plus de fibres
+conjuguées à liaison thermique de type coeur/enveloppe
+qui sont fusionnées ensemble thermiquement au niveau de
+leurs intersections, dans lequel le coeur comprend un
+polymère oléfine, un polyester ou un polyamide et
+l'enveloppe comprend un copolymère comprenant
+principalement du propylène, un copolymère comprenant
+principalement de l'éthylène, ou du polyéthylène basse
+densité.</claim-text></claim><claim num="xx"><claim-text>Article absorbant selon la revendication 6,
+dans lequel ladite couche absorbante (2, 102) comprend
+une feuille supérieure perméable aux liquides (21, 121)
+qui forme ladite couche de surface, un élément
+absorbant retenant les liquides (22, 122), et ladite
+couche élastique (23, 123) disposée entre ladite
+feuille supérieure (21, 121) et ledit élément absorbant
+(22, 122).</claim-text></claim><claim num="xx"><claim-text>Article absorbant selon la revendication 7,
+dans lequel ladite couche absorbante (102) a une
+pluralité de parties comprimées (104) sur la face de
+ladite couche de surface (121), lesdites parties
+comprimées (104) étant formées en comprimant au moins
+ladite couche élastique (123) pour unir ladite feuille
+supérieure (121), ledit élément absorbant (122) et
+ladite couche élastique (123) en un corps dans lesdites
+parties.</claim-text></claim><claim num="xx"><claim-text>Article absorbant selon la revendication 6,
+qui a une épaisseur de 4 mm ou moins.</claim-text></claim></claims><legal-status status="new"><legal-event country="EP" code="EN" date="20060623"><legal-event-body><event-title>FR: TRANSLATION NOT FILED</event-title></legal-event-body></legal-event><legal-event country="EP" code="26N" date="20060419"><legal-event-body><event-title>NO OPPOSITION FILED</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20060130</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REF" date="20050602"><legal-event-body><event-title>CORRESPONDS TO:</event-title><event-attributes><event-attribute><event-attribute-label>Ref Document Number </event-attribute-label><event-attribute-value>60110290</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Country of Ref Document </event-attribute-label><event-attribute-value>DE</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Date of Ref Document </event-attribute-label><event-attribute-value>20050602</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>P</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20050427"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>B1</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>DEFRGBSE</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REG" date="20050427"><legal-event-body><event-title>REFERENCE TO A NATIONAL CODE</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>GB</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Legal Event Code </event-attribute-label><event-attribute-value>FG4D</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="17Q" date="20040225"><legal-event-body><event-title>FIRST EXAMINATION REPORT</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20031218</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AKX" date="20020807"><legal-event-body><event-title>PAYMENT OF DESIGNATION FEES</event-title><event-attributes><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>DE FR GB SE</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="17P" date="20020227"><legal-event-body><event-title>REQUEST FOR EXAMINATION FILED</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20011221</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20011121"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>A3</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>ATBECHCYDEDKESFIFRGBGRIEITLILUMCNLPTSETR</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AX" date="20011121"><legal-event-body><event-title>EXTENSION OF THE EUROPEAN PATENT TO</event-title><event-attributes><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>AL;LT;LV;MK;RO;SI</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20010829"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>A2</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>A2</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>ATBECHCYDEDKESFIFRGBGRIEITLILUMCNLPTSETR</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>DEFRGBSE</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AX" date="20010829"><legal-event-body><event-title>EXTENSION OF THE EUROPEAN PATENT TO</event-title><event-attributes><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>AL;LT;LV;MK;RO;SI</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event></legal-status></patent-document>

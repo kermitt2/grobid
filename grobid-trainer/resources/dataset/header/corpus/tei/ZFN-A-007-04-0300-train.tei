@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="ZFN-A-007-04-0300"/>
+	</teiHeader>
+	<text xml:lang="de">
+		<front>
+			<titlePage>
+				<docTitle>
+					<titlePart type="main">Die Absorption von Ultraschall in verdünnten Losungen <lb/>von Phenol in Tetrachlorkohlenstoff<lb/></titlePart>
+				</docTitle>
+				<byline><docAuthor>Von Wilhelm* Maier und Arthur Mez</docAuthor><lb/></byline>
+				<byline><affiliation>Physikalisches Institut der Universität <lb/>Freiburg/Br.</affiliation>, <address></address> <lb/></byline>
+				<reference>(Z. Naturforschg. 7a, 300-301 [1952]; </reference>
+				<note type="submission">eingeg. am 10. !klärz 1952)<lb/></note>
+			</titlePage>
+			<div type="abstract">Wir fassen zusammen : Def osmotische Druck <lb/>hängt von der Höhe ab. Er ist durch diese Abhängig- <lb/>keit stets auf die Zustandsgrößen der Lösung ( Kon- <lb/>zentration und Druck ) bezogen, die im Sedimenta- <lb/>tionsgleichgewicht in der betrachteten Höhe vor- <lb/>liegen. <lb/>Die Absorption von Ultraschall in verdünnten Losungen <lb/>von Phenol ) <lb/>Wir haben den Absorptionskoeffizienten a für <lb/>Ultraschall von 12,3 MHz an Lösungen von Phenol <lb/>in CGI4 bei kleinen Phenolkonzentrationen nach der <lb/>bekannten optischen Methode ^ gemessen. Die rela- <lb/>tive Genauigkeit der a-Werte ist besser als ± 2 % ; <lb/>die Absolutgenauigkeit ist bekanntlich schwer abzu- <lb/>schätzen und für das vorliegende Problem auch von <lb/>geringerer Bedeutung. Der von uns für reinen Tetra- <lb/>chlorkohlenstoff gefundeneWert von a/i'^ = 527 10-1 '<lb/></div>
+		</front>
+	</text>
+</tei>

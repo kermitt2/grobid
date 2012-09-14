@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="ZFN-A-036-04-0301"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<titlePage>
+				<docTitle>
+					<titlePart type="main">B2 Diagrams and Bhabha Equation with Mass Matrix * <lb/></titlePart>
+				</docTitle>
+				<byline><docAuthor>L. Jansen</docAuthor><lb/></byline>
+				<byline><affiliation>Institut fur Theoretische Physik I der Universität Münster</affiliation> <lb/></byline>
+				<reference>Z. Naturforsch. 86», 301-310 (1981); </reference>
+				<note type="submission">received February 16  1Ö81 <lb/></note>
+			</titlePage>
+			<div type="abstract">Till now nearly all papers about the Bhabba equation treat equations with a mass term ml. <lb/>This is merely a matter of mathematical simplicity, because we will see in this work that important <lb/>physical fields can only be described by a mass term 4= ml. The second aim of this publication is <lb/>to derive a constructive procedure for the calculation of the representations of the Bhabha equa- <lb/>tion and the tensor and spinor field equations, which are equivalent to them. <lb/></div>
+			<div type="intro">1. Invariant Wave Equations <lb/></div>
+		</front>
+	</text>
+</tei>

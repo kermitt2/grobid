@@ -1,0 +1,19 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="630"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Working Sets, Cache Sizes, and Node Granularity Issues <lb/>for Large-Scale Multiprocessors <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Edward Rothberg Jaswinder Pal Singh and Anoop Gupta <lb/></docAuthor></byline>
+		<byline><affiliation>Intel Supercomputer Systems Division Computer Systems Laboratory <lb/></affiliation></byline>
+		<address>14924 N.W. Greenbrier Parkway</address>
+		<byline><affiliation>Stanford University <lb/></affiliation></byline>
+		<address>Beaverton, OR 97006 Stanford, CA 94305 <lb/></address>
+		<div type="abstract">Abstract <lb/>The distribution of resources among processors, memory and <lb/>caches is a crucial question faced by designers of large-scale <lb/>parallel machines. If a machine is to solve problems with a <lb/>certain data set size, should it be built with a large number of <lb/>processors each with a small amount of memory, or a smaller <lb/>number of processors each with a large amount of memory? <lb/>How much cache memory should be provided per processor for <lb/>cost-effectiveness? And how do these decisions change as larger <lb/>problems are run on larger machines? <lb/>In this paper, we explore the above questions based on the <lb/>characteristics of five important classes of large-scale parallel scientific applications. We first show that all the applications have a hierarchy of well-defined per-processor working <lb/>sets, whose size, performance impact and scaling characteristics <lb/>can help determine how large different levels of a multiprocessor&apos;s cache hierarchy should be. Then, we use these working sets together with certain other important characteristics of <lb/>the applications|such as communication to computation ratios, <lb/>concurrency, and load balancing behavior|to reflect upon the <lb/>broader question of the granularity of processing nodes in high-performance multiprocessors. <lb/>We find that very small caches whose sizes do not increase <lb/>with the problem or machine size are adequate for all but two of <lb/>the application classes. Even in the two exceptions, the working <lb/>sets scale quite slowly with problem size, and the cache sizes <lb/>needed for problems that will be run in the foreseeable future <lb/>are small. We also find that relatively fine-grained machines, <lb/>with large numbers of processors and quite small amounts of <lb/>memory per processor, are appropriate for all the applications. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

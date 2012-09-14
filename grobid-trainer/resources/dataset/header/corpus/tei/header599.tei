@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="601"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">An Executable Semantics for a <lb/>Formalized Data Flow Diagram <lb/>Specification Language <lb/></titlePart>
+		</docTitle>
+		<idno>TR93-27 <lb/></idno>
+		<byline><docAuthor>Tim Wahls, Albert L. Baker, and Gary T. Leavens <lb/></docAuthor></byline>
+		<date>November 15, 1993 <lb/></date>
+		<byline><affiliation>Iowa State University of Science and Technology <lb/>Department of Computer Science <lb/></affiliation></byline>
+		<address>226 Atanasoff <lb/>Ames, IA 50011 <lb/></address>
+		<pb/>
+		</front>
+</text>
+</tei>

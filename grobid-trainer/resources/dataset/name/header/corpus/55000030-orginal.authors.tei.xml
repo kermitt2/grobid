@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Frederico</forename>
+								<middlename>F</middlename>.
+								<surname>Miranda</surname>
+								<marker>a,b,1</marker> ,
+							</persName>
+							<persName>
+								<forename>Elodie</forename>
+								<surname>Brient-Litzler</surname>
+								<marker>a,b,1</marker> ,
+							</persName>
+							<persName>
+								<forename>Nora</forename>
+								<surname>Zidane</surname>
+								<marker>a,b</marker> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Frédéric</forename>
+								<surname>Pecorari</surname>
+								<marker>c ,d</marker>,
+							</persName>
+							<persName>
+								<forename>Hugues</forename>
+								<surname>Bedouelle</surname>
+								<marker>a ,b,*</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

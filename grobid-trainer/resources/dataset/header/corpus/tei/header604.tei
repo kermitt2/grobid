@@ -1,0 +1,19 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="606"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Using Goals and Experience to Guide Abduction <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>David B. Leake <lb/></docAuthor></byline>
+		<email>leake@cs.indiana.edu <lb/></email>
+		<idno>Technical Report #359 <lb/></idno>
+		<byline><affiliation>Department of Computer Science, Indiana University <lb/></affiliation></byline>
+		<address>Lindley Hall 215, Bloomington, IN 47405 <lb/></address>
+		<div type="abstract">Abstract <lb/>Standard methods for abductive understanding are neutral to prior experience and current goals. <lb/>Candidate explanations are built from scratch by backwards chaining, without considering how <lb/>similar situations were previously explained, and selection of the candidate to accept is based on its <lb/>likelihood, without considering the information needs beyond routine understanding. Problems arise <lb/>when applying these methods to everyday understanding: The vast range of possible explanations <lb/>makes it difficult to control the cost of explanation construction and to assure that the explanations <lb/>generated will actually be useful. <lb/>We argue that these problems can be overcome by using goals and experience to guide both <lb/>explanation generation and evaluation. Our work is within the framework of case-based explanation, which builds explanations by retrieving and adapting prior explanations stored in memory. <lb/>We substantiate our model by describing mechanisms that enable it to effectively generate good <lb/>explanations. First, we demonstrate that there exists a theory of anomaly and explanation that can <lb/>guide retrieval of relevant explanations. Second, we present a plausibility evaluation process that <lb/>efficiently detects conflicts and confirmations of an explanation&apos;s assumptions by prior patterns, <lb/>making it possible to focus explanation adaptation when retrieved explanations are implausible. <lb/>Third, we present methods for judging whether explanations provide the information needed to satisfy explainer goals beyond routine understanding. By reflecting experience and goals in the search <lb/>for explanations, case-based explanation provides a practical mechanism for guiding search towards <lb/>explanations that are both plausible and useful. <lb/></div>
+		<note type="grant">1 The work described here was supported in part by the Defense Advanced Research Projects Agency,</note>
+		</front>
+</text>
+</tei>

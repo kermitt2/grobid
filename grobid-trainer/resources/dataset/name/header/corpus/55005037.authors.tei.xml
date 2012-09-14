@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.tei-c.org/ns/1.0"
+   xmlns:mml="http://www.w3.org/1998/Math/MathML">
+   <teiHeader>
+      <fileDesc>
+         <sourceDesc>
+            <biblStruct>
+               <analytic>
+                  <author>
+                     <persName>
+                        <forenname>Salvatore</forenname>
+                        <middlename>A</middlename>. <surname>Velardi</surname>
+                        <marker>a</marker> , 
+                     </persName>
+                     <persName>
+                        <forename>Hassan</forename>
+                        <surname>Hammouri</surname>
+                        <marker>b,c</marker>, 
+                     </persName>
+                     <persName>
+                        <forename>Antonello</forename>
+                        <middlename>A</middlename>. <surname>Barresi</surname>
+                        <marker>a,∗</marker>
+                     </persName>
+                  </author>
+               </analytic>
+            </biblStruct>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+</TEI>

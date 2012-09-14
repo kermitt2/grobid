@@ -1,0 +1,31 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="1124"/>  
+	</teiHeader>
+<text xml:lang="en"> 
+	<front>    
+    	<idno>DOI:  10.1002/zaac.200700523 <lb/></idno>
+    			
+		<docTitle>
+			<titlePart type="main">Structural Investigations and Thermal Behavior of (NH  4  )[Cr(C  2  O  4  )  2  ] · 2H  2  O<lb/></titlePart>
+		</docTitle> 
+		
+		<byline><docAuthor>V. Kahlenberg  a,  *, W. Wertl  a  , A. Kremenovic ´  , P. Schuster  c  , and H. Schottenberger  c<lb/> </docAuthor></byline>
+		
+		<address>Innsbruck/Austria,   </address>  
+		<byline><affiliation>a  Institute of Mineralogy and Petrography and  c  Institute of General, Inorganic and Theoretical Chemistry, University<lb/> of Innsbruck <lb/></affiliation></byline> 
+		
+		<address>b  Belgrade/Serbia,   </address>  
+		<byline><affiliation>Faculty of Mining and Geology, Laboratory of Crystallography, University of Belgrade <lb/></affiliation></byline>
+		
+		<note type="submission">Received November, 16  th  2007.<lb/></note>
+		
+		<div type="abstract">Abstract. Single crystals of ammonium chromium(III) dioxalate di-<lb/> hydrate (or ammonium diaquo bis(μ-oxalato)chromate(III)) have<lb/> been obtained from aqueous solution of oxalic acid and am-<lb/> monium dichromate. A pale violet crystal of good optical quality<lb/> was used for the structure determination at  񮽙100(2)  and 25(2)  °C,<lb/>  respectively. The basic crystallographic data for the low tempera-<lb/> ture data set are as follows: monoclinic, space group  C2/m,  a  񮽙<lb/>  6.597(2) A  b  񮽙  7.301(2) A  c  񮽙  9.983(3) A   β  񮽙  92.32(2)°, V  񮽙<lb/>  480.5(2) A ˚  . The structure was solved by direct methods and re-<lb/> fined (using anisotropic displacement parameters for all non-hydro-<lb/> gen atoms) to a final residual of R1  񮽙  0.032 for 503 independent<lb/> observed reflections (I>2σ(I)). The compound is isotypic with the<lb/> corresponding rubidium salt. The structure is built up from alter-<lb/> nating layers parallel to (001) containing (NH  4  )   񮽙   ions or<lb/> Cr(C  2  O  4  )  2  (H  2  O)  2  octahedra, respectively. The corners of the oc-<lb/>  tahedra consist of four O atoms from two oxalate groups and two<lb/> additional water molecules. The ammonium cations (occupying<lb/>  Wyckoff-site 2a) are disordered among two possible orientations.<lb/>  They provide linkage between different octahedral layers by hydro-<lb/>  gen bridging. The water molecules in turn form hydrogen bridges<lb/>  with adjacent octahedra within the same layer. Further structural<lb/>  characterization included infrared spectroscopy. According to<lb/>  DTA/TG experiments the present compound shows several thermal<lb/>  processes in the range between room temperature and 900  °C. <lb/></div>  
+
+		<keywords>Keywords: Chromium; Ammonium chromium(III) dioxalate dihy- drate; Crystal structures; Thermal analysis<lb/></keywords>
+		
+		<introduction>Introduction <lb/></introduction>
+		
+    </front>
+</text>
+</tei>                              

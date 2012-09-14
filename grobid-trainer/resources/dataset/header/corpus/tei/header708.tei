@@ -1,0 +1,21 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="710"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Compiler Support for Maintaining Cache <lb/>Coherence Using Data Prefetching ? <lb/></titlePart>
+		</docTitle>
+		<note type="other">(Extended Abstract) <lb/></note>
+		<byline><docAuthor>Hock-Beng Lim 1 , Lynn Choi 2 and Pen-Chung Yew 3 <lb/></docAuthor></byline>
+		<byline><affiliation>1 Center for Supercomputing R &amp; D, Univ. of Illinois,</affiliation></byline>
+		<address>Urbana, IL 61801 <lb/></address>
+		<byline><affiliation>2 Microprocessor Group, Intel Corporation,</affiliation></byline>
+		<address>Santa Clara, CA 95095 <lb/></address>
+		<byline><affiliation>3 Dept. of Computer Science, Univ. of Minnesota,</affiliation></byline>
+		<address>Minneapolis, MN 55455 <lb/></address>
+		<div type="intro">1 Introduction and Motivation</div>
+		</front>
+</text>
+</tei>

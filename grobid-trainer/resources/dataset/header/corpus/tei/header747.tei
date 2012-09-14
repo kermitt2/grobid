@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="748"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Scheduling and Page Migration for Multiprocessor Compute Servers <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Rohit Chandra, Scott Devine, Ben Verghese, <lb/>Anoop Gupta, and Mendel Rosenblum <lb/></docAuthor></byline>
+		<byline><affiliation>Computer Systems Laboratory <lb/>Stanford University,</affiliation></byline>
+		<address>Stanford CA 94305 <lb/></address>
+		<div type="abstract">Abstract <lb/>Several cache-coherent shared-memory multiprocessors have been <lb/>developed that are scalable and offer a very tight coupling between <lb/>the processing resources. They are therefore quite attractive for <lb/>use as compute servers for multiprogramming and parallel application workloads. Process scheduling and memory management, <lb/>however, remain challenging due to the distributed main memory found on such machines. This paper examines the effects of <lb/>OS scheduling and page migration policies on the performance <lb/>of such compute servers. Our experiments are done on the Stan-ford DASH, a distributed-memory cache-coherent multiprocessor. <lb/>We show that for our multiprogramming workloads consisting of <lb/>sequential jobs, the traditional Unix scheduling policy does very <lb/>poorly. In contrast, a policy incorporating cluster and cache affinity along with a simple page-migration algorithm offers up to twofold performance improvement. For our workloads consisting of <lb/>multiple parallel applications, we compare space-sharing policies <lb/>that divide the processors among the applications to time-slicing <lb/>policies such as standard Unix or gang scheduling. We show <lb/>that space-sharing policies can achieve better processor utilization <lb/>due to the operating point effect, but time-slicing policies benefit <lb/>strongly from user-level data distribution. Our initial experience <lb/>with automatic page migration suggests that policies based only <lb/>on TLB miss information can be quite effective, and useful for <lb/>addressing the data distribution problems of space-sharing sched-ulers. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

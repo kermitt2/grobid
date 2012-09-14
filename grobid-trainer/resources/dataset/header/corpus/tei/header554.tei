@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="557"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Exploiting Global Input/Output Access Pattern Classification <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Tara M. Madhyastha Daniel A. Reed <lb/></docAuthor></byline>
+		<email>{tara,reed}@cs.uiuc.edu <lb/></email>
+		<byline><affiliation>Department of Computer Science <lb/>University of Illinois <lb/></affiliation></byline>
+		<address>Urbana, Illinois 61801 <lb/></address>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

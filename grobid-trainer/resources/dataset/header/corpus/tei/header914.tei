@@ -1,0 +1,22 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="unknown"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Bayesian Analysis of Variance Component Models via Rejection <lb/>Sampling <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Russell D. Wolfinger <lb/></docAuthor></byline>
+		<byline><affiliation>SAS Institute Inc.,</affiliation></byline>
+		<address>SAS Campus Drive, <lb/>Cary, NC 27513, U.S.A. <lb/></address>
+		<byline><docAuthor>and Robert E. Kass <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Statistics, Carnegie Mellon University <lb/></affiliation></byline>
+		<address>Pittsburgh, PA 15213, U.S.A. <lb/></address>
+		<date>January, 1996 <lb/></date>
+		<div type="abstract">Abstract <lb/>We consider the usual Normal linear mixed model for &quot;components of variance&quot; from a Bayesian <lb/>viewpoint. Instead of using Gibbs sampling or other Markov Chain schemes that rely on full <lb/>conditional distributions, we propose and investigate a method for simulating from posterior distributions based on rejection sampling. The method applies with arbitrary prior distributions but <lb/>we also employ as a default reference prior a version of Jeffreys&apos;s prior based on the integrated <lb/>(&quot;restricted&quot;) likelihood. We demonstrate the ease of application and flexibility of this approach <lb/>in several familiar settings, even in the presence of unbalanced data. A program implementing the <lb/>algorithm discussed here will be available in the SAS MIXED procedure. <lb/></div>
+		<keywords>Some key words: Jeffreys&apos;s prior, Mixed model, Posterior simulation, Reference prior, REML. <lb/></keywords>
+		<pb/>
+		</front>
+</text>
+</tei>

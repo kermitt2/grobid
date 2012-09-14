@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<patent-document status="new" lang="EN" ucid="EP-1127865-B1" country="EP" doc-number="1127865" kind="B1" date="20051102"><bibliographic-data><publication-reference fvid="23215807" ucid="EP-1127865-B1" status="new"><document-id status="new" format="original"><country>EP</country><doc-number>1127865</doc-number><kind>B1</kind><date>20051102</date><lang>EN</lang></document-id></publication-reference><application-reference ucid="EP-01104164-A" status="new" is-representative="NO"><document-id format="epo" status="new"><country>EP</country><doc-number>01104164</doc-number><kind>A</kind><date>20010221</date><lang>EN</lang></document-id></application-reference><priority-claims status="new"><priority-claim ucid="JP-2000043869-A" status="new"><document-id format="epo" status="new"><country>JP</country><doc-number>2000043869</doc-number><kind>A</kind><date>20000222</date></document-id></priority-claim><priority-claim ucid="JP-2000309649-A" status="new"><document-id format="epo" status="new"><country>JP</country><doc-number>2000309649</doc-number><kind>A</kind><date>20001010</date></document-id></priority-claim></priority-claims><dates-of-public-availability status="new"><intention-to-grant-date><date>20050425</date></intention-to-grant-date></dates-of-public-availability><term-of-grant /><technical-data status="new"><classifications-ipcr><classification-ipcr status="new">C07B  61/00        20060101ALI20051220RMJP        </classification-ipcr><classification-ipcr status="new">C07B  61/00        20060101CLI20051220RMJP        </classification-ipcr><classification-ipcr status="new">C07C  45/00        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">C07C  45/61        20060101AFI20051220RMJP        </classification-ipcr><classification-ipcr status="new">C07C  45/65        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">C07C  49/00        20060101CLI20051220RMJP        </classification-ipcr><classification-ipcr status="new">C07C  49/167       20060101ALI20051220RMJP        </classification-ipcr></classifications-ipcr><classification-ecla status="new"><classification-symbol scheme="EC">C07C45/65+49/167</classification-symbol></classification-ecla><invention-title lang="DE" status="new">Verfahren zur Herstellung von 1,1,1-Trifluoraceton</invention-title><invention-title lang="EN" status="new">Process for producing 1,1,1-Trifluoroacetone</invention-title><invention-title lang="FR" status="new">Procédé de préparation de 1,1,1-Trifluoroacétone</invention-title><citations /><figures /></technical-data><parties><applicants><applicant format="epo" status="new"><addressbook><name>CENTRAL GLASS CO LTD</name><address><country>JP</country></address></addressbook></applicant><applicant format="intermediate" status="new"><addressbook><name>CENTRAL GLASS COMPANY, LIMITED</name><address><country /></address></addressbook></applicant></applicants><inventors><inventor format="epo" status="new"><addressbook><name>GOTO YOSHIHIKO</name><address><country>JP</country></address></addressbook></inventor><inventor format="epo" status="new"><addressbook><name>NISHIMIYA TAKAYUKI</name><address><country>JP</country></address></addressbook></inventor><inventor format="epo" status="new"><addressbook><name>NADANO RYO</name><address><country>JP</country></address></addressbook></inventor><inventor format="epo" status="new"><addressbook><name>SAKAYA TAKASHI</name><address><country>JP</country></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>GOTO, YOSHIHIKO</name><address><country /></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>NADANO, RYO</name><address><country /></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>NISHIMIYA, TAKAYUKI</name><address><country /></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>SAKAYA TAKASHI</name><address><country /></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>Nadano, Ryo, c/o Chemical Research Center of</last-name><address><street>Central Glass Company,Ltd., 2805, Imafukunakadai</street><city>Kawagoe-shi, Saitama 350-1151</city><country>JP</country></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>Nishimiya, Takayuki, Chemical Research Center of</last-name><address><street>Central Glass Company,Ltd., 2805, Imafukunakadai</street><city>Kawagoe-shi, Saitama 350-1151</city><country>JP</country></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>Goto, Yoshihiko, Chemical Research Center of</last-name><address><street>Central Glass Company,Ltd., 2805, Imafukunakadai</street><city>Kawagoe-shi, Saitama 350-1151</city><country>JP</country></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>Sakaya Takashi, c/o Chemical Research Center of</last-name><address><street>Central Glass Company,Ltd., 2805, Imafukunakadai</street><city>Kawagoe-shi, Saitama 350-1151</city><country>JP</country></address></addressbook></inventor></inventors><assignees><assignee format="original" status="new"><addressbook><last-name>Central Glass Company, Limited</last-name><address><street>5253 Oaza Okiube</street><city>Ube-shi, Yamaguchi 755-0001</city><country>JP</country></address></addressbook></assignee></assignees><agents><agent format="original" status="new"><addressbook><last-name>Manitz, Finsterwald &amp;amp; Partner Gbr</last-name><address><street>Postfach 31 02 20</street><city>80102 München</city><country>DE</country></address></addressbook></agent></agents></parties><international-convention-data><designated-states><ep-contracting-states><country>DE</country><country>FR</country><country>GB</country><country>IT</country></ep-contracting-states></designated-states></international-convention-data></bibliographic-data><abstract lang="EN" source="EPO" status="new"><p>A process for producing 1,1,1-trifluoroacetone includes the step of conducting a hydrogenolysis of a halogenated trifluoroacetone, which is represented by the general formula (1), by a hydrogen gas in the presence of a catalyst containing a transition metal, &lt;CHEM&gt; where X represents a chlorine, bromine or iodine, and n represents an integer from 1 to 3. It is possible to obtain 1,1,1-trifluoroacetone with a high yield by using the special catalyst.</p></abstract><abstract lang="EN" status="new"><p num="">A process for producing 1,1,1-trifluoroacetone includes the
+step of conducting a hydrogenolysis of a halogenated
+trifluoroacetone, which is represented by the general formula (1),
+by a hydrogen gas in the presence of a catalyst containing a
+transition metal,
+<img file="80000001.tif" id="img-EP-1127937-A1-80000001" he="19" wi="74" img-format="tif" img-content="cf" orientation="unknown" inline="no" />
+where X represents a chlorine, bromine or iodine, and n represents
+an integer from 1 to 3. It is possible to obtain
+1,1,1-trifluoroacetone with a high yield by using the special
+catalyst.</p></abstract><description lang="EN" status="new"><heading><u style="single">BACKGROUND OF THE INVENTION</u></heading><p num="0001">The present invention relates to a process for producing
+1,1,1-trifluoroacetone that is useful as an intermediate of
+pharmaceuticals and agricultural chemicals, or as a reagent for
+introducing fluorine-containing groups.</p><p num="0002">1,1,1-trifluoroacetone is known to be obtained by various
+methods. It is described in <ref type="npl">J. Chem. Soc. (Lond.) 1956, 835</ref> that
+1,1,1-trifluoroacetone is synthesized by a Grignard reaction
+between trifluoroacetic acid and magnesium methyliodide. This
+Grignard reaction must be conducted in an anhydrous state. In
+addition, it is also described in <ref type="npl">Tetrahedron, 20, 2163 (1964)</ref> that
+trifluoroacetone can be synthesized by decarbonating
+trifluoroacetoethyl acetate in sulfuric acid. It is described in
+<ref type="npl">Tetrahedron Lett. Vol. 24 (No. 5), 507-510, 1983</ref> that
+difluoromethylketones are obtained at considerably high yield as a
+result of reducing chlorodifluoroketones, which are represented by
+GF<sub>2</sub>ClC(=O)R (wherein R is a group not containing halogen) by
+zinc and methanol in tetrahydrofuran.</p><p num="0003"><ref type="patent">Japanese Patent Publication 2000-336057A</ref>, corresponding to
+<ref type="patent">Japanese Patent Application 11-147670</ref>, discloses a process for
+producing 1,1,1-trifluoroacetone by reacting
+3,3-dichloro-1,1,1-trifluoroacetone with zinc in a solvent of a
+proton donor. In this process, it is necessary to have a relatively
+large amount of zinc. </p><p num="0004"><ref type="patent">WO 97/19056 A</ref> describes a method of preparing
+2-trifluoromethoxybenzene sulphonamide by reacting
+halogenated 2-trifluoromethoxybenzene sulphonamide
+with hydrogen in the presence of a catalyst, e.g.
+supported palladium, and a diluant, e.g. water,
+and optionally in the presence of an acid acceptor.</p><p num="0005"><ref type="patent">DE 196 20 798 A1</ref> discloses a method of preparing
+2-fluoro-1-cyclopropionic acid by reacting 2-halogen-2-fluoro-1-cyclopropionic
+acid with metals,
+e.g. Raney nickel, in a protic solvent in the presence
+of a base and optionally hydrogen.</p><p num="0006"><ref type="patent">EP 0 598 338 A1</ref> concerns a method of preparing
+1,3-difluorobenzene by reacting 1,3-difluorohalogenbenzene
+with hydrogen in the presence of a
+palladium catalyst and an amine optionally in the
+presence of water or an inert organic solvent
+under pressure and at temperature in the range
+of 70 to 140°C.</p><p num="0007"><ref type="patent">EP 0 349 115 A1</ref> relates to a process for the manufacture
+of 1,1,1,2-tetrafluoroethane by reacting
+1,1,1,2-tetrafluorochloroethane with hydrogen in
+the gaseous phase at temperatures in the range of
+200 to 350°C in the presence of a supported palladium
+catalyst.</p><p num="0008"><ref type="patent">US 2 917 546 A</ref> discloses a process of preparing
+1,1,3,3-tetrafluoroacetone by reacting 1,1,3,3-tetrafluoro-1,3-dichloroacetone
+in the vapor
+phase with hydrogen at temperatures not less
+than 125°C in the presence of a supported palladium
+catalyst. </p><heading><u style="single">SUMMARY OF THE INVENTION</u></heading><p num="0009">It is an object of the present invention to provide a process for
+producing 1,1,1-trifluoroacetone, which is suitable for an
+industrial-scale production.</p><p num="0010">According to the present invention, there is provided a
+process for producing 1,1,1-trifluoroacetone. This process
+comprises conducting a hydrogenolysis of a halogenated
+trifluoroacetone, which is represented by the
+general formula (1) or the hydrate, alcohol
+addition product, gem-diol, acetal or hemiacetal
+thereof represented by the formulas (2), (3)
+and (4), by a hydrogen gas in the presence of
+a catalyst comprising a transition metal and
+in the presence of water,
+<img file="00030001.tif" id="img-EP-1128367-A3-00030001" he="21" wi="120" img-format="tif" img-content="cf" orientation="unknown" inline="no" /><img file="00030002.tif" id="img-EP-1128367-A3-00030002" he="18" wi="121" img-format="tif" img-content="cf" orientation="unknown" inline="no" />
+where X represents a chlorine, bromine or iodine,
+n represents an integer from 1 to 3, m represents
+an integer, R<sup>1</sup> represents an alkyl group, and
+each of R<sup>2</sup> independently represents a hydrogen
+atom or alkyl group. </p><p num="0011">According to the present invention, it is possible to obtain
+1,1,1-trifluoroacetone with a high yield by using the above special
+catalyst in hydrogenolysis of the halogenated trifluoroacetone (e.g.,
+3,3-dichloro-1,1,1-trifluoroacetone) by a hydrogen gas.</p><heading><u style="single">DESCRIPTION OF THE PREFERRED EMBODIMENTS</u></heading><p num="0012">The hydrogenolysis can be conducted by a gas phase reaction
+between the halogenated trifluoroacetone (gas) and a hydrogen
+gas using a reactor for flow method.</p><p num="0013">The halogenated trifluoroacetone used as a starting material
+in the process of the present invention are defined above. They
+may be used as their aqueous
+or alcohol solutions,
+although an aqueous solution of the hydrate is preferable due to
+its ease of handling.</p><p num="0014">The halogenated trifluoroacetone can be 
+3-chloro-1,1,1-trifluorocetone, 3,3-dichloro-1,1,1-trifluoroacetone,
+or 3,3,3-trichloro-1,1,1-trifluoroacetone. These compounds can be
+synthesized by known processes. For example, they can be
+obtained by fluorinating pentachloroacetone by hydrogen fluoride
+in the presence of a transition metal or the like as a catalyst.
+Furthermore, decarboxylation of a trifluoroacetoacetic ester is
+known.</p><p num="0015">As stated above, the halogenated trifluoroacetone used as a
+starting material in the process of the present invention may be a
+hydrate in which a halogenated trifluoroacetone represented by
+the general formula (1) has hydrated to have an arbitrary number
+of water molecules. In the process, it is preferable to use the
+halogenated trifluoroacetone in the form of an aqueous solution,
+since its handling is easy and thereby the reaction procedures can
+be simplified. The existence of water is not an obstacle to the
+reaction, but the existence of unnecessary water is not preferable
+from the viewpoint of energy consumption.</p><p num="0016">As stated above, the catalyst used in the hydrogenolysis
+comprises a transition metal. This transition metal is preferably
+a noble metal such as ruthenium, palladium, platinum, iridium,
+and rhodium. Further examples of the transition metal other
+than noble metal are nickel, copper and iron. Of these, palladium
+and platinum are preferable. The transition metal is preferably
+supported on a support such as activated carbon, alumina,
+silica-alumina, and silica. Of these, activated carbon is
+preferable. It is particularly preferable to use a catalyst
+containing an activated carbon supporting thereon palladium or
+platinum. The way of making the transition metal to be
+supported on the support is not particularly limited. For example,
+it is possible to immerse a support in a solution of a transition
+metal compound or to spray this solution to a support, followed by
+drying and then reduction with hydrogen gas. The transition
+metal compound may be in the form of chloride, bromide, fluoride, 
+oxide, nitrate, sulfate or carbonate. The transition metal may be
+in an amount of about 0.1-10 g, preferably 0.2-5 g, per 100 ml of
+the support. If it is less than 0.1 g, both conversion of the
+halogenated trifluoroacetone and yield of 1,1,1-trifluoroacetone
+may become too low. An amount of greater than 5 g may not be
+preferable from the economical viewpoint.</p><p num="0017">The reaction temperature may be 50°C or higher, preferably
+70°C or higher, more preferably 90°C or higher, still more
+preferably 100°C or higher, further preferably 105°C or higher.
+Furthermore, the reaction temperature may be 350°C or lower,
+preferably 250°C or lower, more preferably 200°C or lower, still
+more preferably 150°C or lower, further preferably 120°C or lower.
+Therefore, the reaction temperature range may be 50-350°C,
+preferably 70-250°C, more preferably 90-120°C. If it is lower than
+50°C, both conversion of the halogenated trifluoroacetone and yield
+of 1,1,1-trifluoroacetone may be lowered. If it is higher than
+350°C, fluorine atom hydrogenolysis and/or hydrogenation of
+carbonyl group may proceed. With this, yield of
+1,1,1-trifluoroacetone may be lowered.</p><p num="0018">The molar ratio of hydrogen (hydrogen gas) to the
+halogenated trifluoroacetone may be varied depending on the
+number of the halogen atoms (other than fluorine) of the
+halogenated trifluoroacetone. This ratio may be in a range of
+1.5-50, preferably 2-10, more preferably 2.5-5. If it is less than
+1.5, conversion of the halogenated trifluoroacetone may not be
+sufficiently high. Even if it is greater than 50, conversion of the
+halogenated trifluoroacetone may not improve further.
+Furthermore, this is not preferable from the economical viewpoint,
+due to the necessity of recovering the unreacted hydrogen gas. It
+is optional to make nitrogen gas coexistent with the other reagents
+in the reaction system in order to adjust the reaction and to
+suppress the catalyst deterioration.</p><p num="0019">It is preferable that the hydrogenolysis is conducted by using 
+a reactor made of a material lined with a lining material selected
+from of borosilicate glasses, tetrafluoroethylene resins,
+chlorotrifluoroethylene resins, vinylidene fluoride resins,
+perfluoroalkyl vinyl ether (PFA) resins and carbon, when water
+exists in the reaction system.</p><p num="0020">The way of conducting the hydrogenolysis is not particularly
+limited. For example, it can be conducted by the following flow
+method. At first, a reactor for flow method, which is resistant
+against the reaction conditions of the hydrogenolysis, is charged
+with a transition metal supported catalyst. Then, the reactor is
+heated from outside, and hydrogen gas is allowed to flow through
+a reaction tube. When the reaction tube's inside temperature
+reaches a predetermined temperature, the halogenated
+trifluoroacetone is introduced into a vaporizer for vaporizing the
+same and then into the reaction tube together with the hydrogen
+gas. A mixture of gas and/or liquid flowing out of the reaction
+tube is absorbed into water. Alternatively, it is cooled down and
+collected in the form of liquid. It is optional to separately
+introduce the halogenated trifluoroacetone and water into the
+reaction tube.</p><p num="0021">The resulting 1, 1,1-trifluoroacetone can be purified by a
+conventional purification method used for hydrogenolysis products
+obtained from fluorinated compounds. For example, a reaction
+product containing 1,1,1-trifluoroacetone (in the form of liquid or
+gas), which has flowed out of the reactor together with hydrogen
+chloride, is cooled down. After that, hydrogen chloride is removed
+from the reaction product by distillation or gas-liquid phase
+separation. Then, the remaining acid component is removed from
+the product with a basic substance or the like. After that, the 
+target product, 1,1,1-trifluoroacetone of high purity, is obtained by
+rectification.</p><p num="0022">The following nonlimitative catalyst preparations are
+illustrative of the present invention.</p><heading>CATALYST PREPARATION 1</heading><p num="0023">At first, a 200-ml eggplant-type flask was charged with 35 g
+of a granular activated carbon (a coconut husk carbon of a particle
+diameter of 4-6 mm) made by Takeda Chemical Industries, Ltd.
+having a trade name of GRANULAR SHIRO SAGI G2X-4/6.
+Then, about 120 ml of an about 20% nitric acid aqueous solution
+was added to the flask. After that, the flask was allowed to stand
+still for about 3 hr, thereby to conduct a nitric acid treatment of
+the activated carbon. Separately, 0.83 g of palladium (II) chloride,
+PdCl<sub>2</sub>, was dissolved in 5 g of a 24% hydrochloric acid, to prepare a
+palladium chloride solution. This palladium chloride solution
+was poured on the activated carbon contained in the flask. Then,
+this flask was allowed to stand still for 2 days. Then, the
+activated carbon, impregnated with the palladium chloride
+solution, was subjected to vacuum drying with an evaporator by
+increasing the bath temperature to 150°C. Then, the dried
+activated carbon was put into a reaction tube having a diameter of
+25 mm, an axial length of 400 mm, and a capacity of about 200 ml.
+Then, while nitrogen was allowed to flow through the reaction
+tube at a rate of 200-300 ml/min, the reaction tube was heated
+from 150°C to 300°C by increasing the set temperature of the
+reaction tube stepwise by 50°C, in order to bake the activated
+carbon. The reaction tube temperature was maintained at 300°C
+for 1 hr in order to further bake the same, and then the set
+temperature was decreased to 150°C. After that, while nitrogen
+and hydrogen were allowed to flow therethrough at respective
+rates of 50 ml/min and 50 ml/min, the reaction tube temperature
+was increased again to 300°C by increasing its set temperature
+stepwise by 30°C for conducting reduction. With this, there was 
+prepared a first catalyst having an activated carbon carrying
+thereon 0.5% of palladium, based on the weight of the activated
+carbon.</p><heading>CATALYST PREPARATION 2</heading><p num="0024">At first, a 200-ml eggplant-type flask was charged with 35 g
+of the same granular activated carbon as that of Catalyst
+Preparation 1. Separately, 0.46 g of hexachloroplatinic (IV) acid
+hexahydrate, H<sub>2</sub>PtCl<sub>6</sub> · 6H<sub>2</sub>O, was dissolved in 100 ml of 30%
+hydrochloric acid, to prepare a hexachloroplatinic acid solution.
+This solution was poured on the activated carbon contained in the
+flask. Then, this flask was allowed to stand still for 2 days.
+Then, the same procedures as those of Catalyst Preparation 1
+were conducted, thereby preparing a second catalyst having an
+activated carbon carrying thereon 0.5% of platinum, based on the
+weight of the activated carbon.</p><p num="0025">The following nonlimitative examples are illustrative of the
+present invention.</p><heading>EXAMPLE 1</heading><p num="0026">At first, a tubular reactor made of glass was charged with 50
+ml of the first catalyst (0.5% Pd on activated carbon) obtained in
+Catalyst Preparation 1. Then, the reactor was heated to 110°C,
+while hydrogen gas was allowed to flow through the reactor at a
+rate of 80 ml/min by downflow. A
+3,3-dichloro-1,1,1-trifluoroacetone aqueous solution (water
+content: 25%) was introduced into a vaporizer at a rate of 0.2
+g/min, thereby vaporizing this solution. The resulting vapor was
+mixed with hydrogen, and the mixture was introduced into the
+reactor after the reactor's inside temperature became stable.
+Then, the reaction was conducted for 5 hr. During the reaction,
+liquid and gas flowing out of the reactor were introduced into 10 g
+of water cooled at 0°C, thereby collecting them. The collected
+product in an amount of 47.2 g was found by Karl Fischer's
+method to contain 52.4% of water. Furthermore, it was found by 
+gas chromatography to contain organic components of 98.4% of
+1,1,1-trifluoroacetone, 0.1% of 1,1-difluoroacetone, 0.5% of
+1-fluoroacetone, 0.4% of acetone and others. These percentages
+are areal percentages in chromatogram.</p><heading>EXAMPLE 2</heading><p num="0027">Example 1 was repeated except in that the flow rate of
+hydrogen gas was 65 ml/min, thereby collecting 53.8 g of a product.
+The collected product was found by Karl Fischer's method to
+contain 42.3% of water. Furthermore, it was found by gas
+chromatography to contain organic components of 97.7% of
+1,1,1-trifluoroacetone, 0.4% of 1,1-difluoroacetone, 1.3% of
+1-fluoroacetone, 0.3% of acetone and others.</p><heading>EXAMPLE 3</heading><p num="0028">Example 1 was repeated except in that the flow rate of
+hydrogen gas was 100 ml/min, thereby collecting 49.1 g of a
+product. The collected product was found by Karl Fischer's
+method to contain 52.8% of water. Furthermore, it was found by
+gas chromatography to contain organic components of 97.5% of
+1,1,1-trifluoroacetone, 1.1% of 1,1 difluoroacetone, 0.5% of
+1-fluoroacetone, 0.4% of acetone and others.</p><heading>EXAMPLE 4</heading><p num="0029">At first, a tubular reactor made of glass was charged with 50
+ml of the first catalyst (0.5% Pd on activated carbon) obtained in
+Catalyst Preparation 1. Then, the reactor was heated to 110°C,
+while hydrogen gas was allowed to flow through the reactor at a
+rate of 80 ml/min by downflow. An aqueous solution (water
+content: 15%) of a raw material mixture containing 8.2% of
+3-chloro-1,1,1-trifluoroacetone, 88.8% of
+3,3-dichloro-1,1,1-trifluoroacetone, and 2.4% of
+3,3,3-trichloro-1,1,1-trifluoroacetone was introduced into a
+vaporizer at a rate of 0.2 g/min, thereby vaporizing this solution.
+The resulting vapor was mixed with hydrogen, and the mixture
+was introduced into the reactor after the reactor's inside 
+temperature became stable. Then, the reaction was conducted for
+5 hr. During the reaction, liquid and gas flowing out of the
+reactor were introduced into 20 g of water cooled at 0°C, thereby
+collecting them. The collected product in an amount of 56.9 g was
+found by Karl Fischer's method to contain 45.6% of water.
+Furthermore, it was found by gas chromatography to contain
+organic components of 97.9% of 1,1,1-trifluoroacetone, 0.4% of
+1,1-difluoroacetone, 0.5% of 1-fluoroacetone, 0.6% of acetone and
+others.</p><heading>EXAMPLE 5</heading><p num="0030">Example 1 was repeated except in that the first catalyst was
+replaced with the second catalyst (0.5% Pt on activated carbon)
+obtained in Catalyst Preparation 2 and that the water cooled at
+0°C was in an amount of 14 g, thereby collecting 64.2 g of a
+product. The collected product was found by Karl Fischer's
+method to contain 46.3% of water. Furthermore, it was found by
+gas chromatography to contain organic components of 99.0% of
+1,1,1-trifluoroacetone, 0.1% of 1,1-difluoroacetone, 0.1% of
+1-fluoroacetone, 0.3% of acetone and others. </p><heading>EXAMPLE 6</heading><p num="0031">At first, a tubular reactor made of glass was charged with 10
+ml of the second catalyst (0.5% Pt on activated carbon) obtained in
+Catalyst Preparation 2. Then, the reactor was heated to 110°C,
+while hydrogen gas was allowed to flow through the reactor at a
+rate of 80 ml/min by downflow. An aqueous solution (water
+content: 15%) of a raw material mixture containing 8.2% of
+3-chloro-1,1,1-trifluoroacetone, 88.8% of
+3,3-dichloro-1,1,1-trifluoroacetone, and 2.4% of
+3,3,3-trichloro-1,1,1-trifluoroacetone was introduced into a
+vaporizer at a rate of 0.16 g/min, thereby vaporizing the mixture.
+The resulting vapor was mixed with hydrogen, and the mixture
+was introduced into the reactor after the reactor's inside
+temperature became stable. Then, the reaction was conducted for
+1 hr. During the reaction, liquid and gas flowing out of the
+reactor were introduced into 10 g of water cooled at 0°C, thereby
+collecting them. The collected product in an amount of 16.1 g was
+found by Karl Fischer's method to contain 61.2% of water.
+Furthermore, it was found by gas chromatography to contain
+organic components of 96.7% of 1,1,1-trifluoroacetone, 1.5% of
+3-chloro-1,1,1-trifluoroacetone, and others.</p></description><claims lang="DE" status="new"><claim num="xx"><claim-text>Verfahren zum Herstellen von 1,1,1-Trifluoraceton umfassend
+Durchführen einer Hydrogenolyse eines halogenierten Trifluoracetons,
+welcher durch die allgemeine Formel (I) repräsentiert wird,
+oder des Hydrats, Alkohol-Additionsprodukts, gem-Diols, Acetals
+oder Halbacetals hiervon repräsentiert durch die Formeln (2), (3)
+und (4) durch ein Wasserstoffgas in der Anwesenheit eines Katalysators
+enthaltend ein Übergangsmetall und in der Anwesenheit von
+Wasser,
+
+worin X Chlor, Brom oder Jod repräsentiert, n eine ganze Zahl von 1
+bis 3 repräsentiert, m eine ganze Zahl repräsentiert, R1 eine Alkylgruppe
+repräsentiert und jedes R2 unabhängig voneinander ein
+Wasserstoffatom oder eine Alkylgruppe repräsentiert.</claim-text></claim><claim num="xx"><claim-text>Verfahren nach Anspruch 1, wobei das Übergangsmetall aus der
+aus Ruthenium, Palladium, Platin, Iridium, Rhodium, Nickel, Kupfer
+und Eisen bestehenden Gruppe ausgewählt ist.</claim-text></claim><claim num="xx"><claim-text>Verfahren nach Anspruch 2, wobei das Übergangsmetall aus der
+aus Ruthenium, Palladium, Platin, Iridium und Rhodium bestehenden
+Gruppe ausgewählt ist.</claim-text></claim><claim num="xx"><claim-text>Verfahren nach Anspruch 1, wobei der Katalysator des weiteren einen
+das Übergangsmetall hierauf tragenden Träger enthält.</claim-text></claim><claim num="xx"><claim-text>Verfahren nach Anspruch 4, wobei der Träger aus der aus Aktivkohle,
+Aluminium, Silica-Aluminium sowie Silica bestehenden Gruppe
+ausgewählt ist.</claim-text></claim><claim num="xx"><claim-text>Verfahren nach Anspruch 5, wobei der Träger Aktivkohle ist, welcher
+das Übergangsmetall, welches Palladium oder Platin ist, hierauf
+trägt.</claim-text></claim><claim num="xx"><claim-text>Verfahren nach Anspruch 4, wobei das Übergangsmetall in einer
+Menge von 0,1 - 10 g pro 100 ml des Trägers vorliegt.</claim-text></claim><claim num="xx"><claim-text>Verfahren nach Anspruch 1, wobei ein Hydrat des halogenierten
+Trifluoracetons als ein Rohmaterial zum Durchführen der Hydrogenolyse
+verwendet wird.</claim-text></claim><claim num="xx"><claim-text>Verfahren nach Anspruch 1, wobei eine wässrige Lösung eines Hydrats
+des halogenierten Trifluoracetons als ein Rohmaterial zum
+Durchführen der Hydrogenolyse eingesetzt wird.</claim-text></claim><claim num="xx"><claim-text>Verfahren nach Anspruch 1, wobei eine wässrige Lösung des halogenierten
+Trifluoracetons als ein Rohmaterial zum Durchführen der
+Hydrogenolyse eingesetzt wird.</claim-text></claim><claim num="xx"><claim-text>Verfahren nach Anspruch 1, wobei die Hydrogenolyse als eine Gasphasenreaktion
+durchgeführt wird.</claim-text></claim><claim num="xx"><claim-text>Verfahren nach Anspruch 1, wobei das halogenierte Trifluoraceton
+aus der aus 3-Chlor-1,1,1-trifluoraceton, 3,3-Dichlor-1,1,1-trifluoraceton
+sowie 3,3,3-Trichlor-1,1,1-trifluoraceton bestehenden Gruppe
+ausgewählt ist.</claim-text></claim><claim num="xx"><claim-text>Verfahren nach Anspruch 1, wobei die Hydrogenolyse bei einer
+Temperatur von 50-350°C durchgeführt wird.</claim-text></claim><claim num="xx"><claim-text>Verfahren nach Anspruch 1, wobei das molare Verhältnis des Wasserstoffgases
+zu dem halogenierten Trifluoraceton 1,5 bis 50 beträgt.</claim-text></claim><claim num="xx"><claim-text>Verfahren nach Anspruch 13, wobei die Hydrogenolyse bei einer
+Temperatur von 90-120°C durchgeführt wird.</claim-text></claim></claims><claims lang="EN" status="new"><claim num="xx"><claim-text>A process for producing 1,1,1-trifluoroacetone, comprising
+conducting a hydrogenolysis of a halogenated trifluoroacetone, which
+is represented by the general formula (1) or the hydrate, alcohol
+addition product, gem-diol, acetal or hemiacetal thereof represented
+by the formulas (2), (3) and (4), by a hydrogen gas in the presence
+of a catalyst comprising a transition metal and in the presence of
+water,
+
+where X represents a chlorine, bromine or iodine, n represents an
+integer from 1 to 3, m represents an integer, R1 represents an alkyl
+group, and each of R2 independently represents a hydrogen atom or alkyl
+group.</claim-text></claim><claim num="xx"><claim-text>A process according to claim 1, wherein said transition metal
+is selected from the group consisting of ruthenium, palladium,
+platinum, iridium, rhodium, nickel, copper, and iron.</claim-text></claim><claim num="xx"><claim-text>A process according to claim 2, wherein said transition metal
+is selected from the group consisting of ruthenium, palladium,
+platinum, iridium, and rhodium.</claim-text></claim><claim num="xx"><claim-text>A process according to claim 1, wherein said catalyst further
+comprises a support supporting thereon said transition metal.</claim-text></claim><claim num="xx"><claim-text>A process according to claim 4, wherein said support is
+selected from the group consisting of activated carbon, alumina,
+silica-alumina, and silica.</claim-text></claim><claim num="xx"><claim-text>A process according to claim 5, wherein said support is
+activated carbon supporting thereon said transition metal that is
+palladium or platinum.</claim-text></claim><claim num="xx"><claim-text>A process according to claim 4, wherein said transition metal
+is in an amount of 0.1-10 g per 100 ml of said support.</claim-text></claim><claim num="xx"><claim-text>A process according to claim 1, wherein a hydrate of said
+halogenated trifluoroacetone is used as a raw material for
+conducting said hydrogenolysis.</claim-text></claim><claim num="xx"><claim-text>A process according to claim 1, wherein an aqueous solution
+of a hydrate of said halogenated trifluoroacetone is used as a raw
+material for conducting said hydrogenolysis.</claim-text></claim><claim num="xx"><claim-text>A process according to claim 1, wherein an aqueous solution
+of said halogenated trifluoroacetone is used as a raw material for
+conducting said hydrogenolysis.</claim-text></claim><claim num="xx"><claim-text>A process according to claim 1, said hydrogenolysis is
+conducted by a gas phase reaction.</claim-text></claim><claim num="xx"><claim-text>A process according to claim 1, wherein said halogenated
+trifluoroacetone is selected from the group consisting of
+3-chloro-1,1,1-trifluoroacetone, 3,3-dichloro-1,1,1-trifluoroacetone,
+and 3,3,3-trichloro-1,1,1-trifluoroacetone.</claim-text></claim><claim num="xx"><claim-text>A process according to claim 1, wherein said hydrogenolysis
+is conducted at a temperature of 50-350°C.</claim-text></claim><claim num="xx"><claim-text>A process according to claim 1, wherein the molar ratio of said
+hydrogen gas to said halogenated trifluoroacetone is 1.5 to 50.</claim-text></claim><claim num="xx"><claim-text>A process according to claim 13, wherein said hydrogenolysis is
+conducted at a temperature of 90-120°C.</claim-text></claim></claims><claims lang="FR" status="new"><claim num="xx"><claim-text>Procédé de production de 1,1,1-trifluoroacétone,
+comprenant l'exécution d'une hydrogénolyse d'une trifluoroacétone
+halogénée, qui est représentée par la formule
+générale (1), ou de son hydrate, produit d'addition
+d'alcool, gem-diol, acétal ou hémi-acétal, représentés par
+les formules (2), (3) et (4), par un gaz hydrogène en
+présence d'un catalyseur comprenant un métal de transition
+et en présence d'eau,
+
+où X représente un atome de chlore, brome ou iode, n représente
+un nombre entier de 1 à 3, m représente un nombre
+entier, R1 représente un groupe alkyle, et chaque R2
+représente indépendamment un atome d'hydrogène ou un groupe
+alkyle.</claim-text></claim><claim num="xx"><claim-text>Procédé selon la revendication 1, dans lequel
+ledit métal de transition est choisi dans le groupe formé
+par le ruthénium, le palladium, le platine, l'iridium, le
+rhodium, le nickel, le cuivre et le fer.</claim-text></claim><claim num="xx"><claim-text>Procédé selon la revendication 2, dans lequel
+ledit métal de transition est choisi dans le groupe formé
+par le ruthénium, le palladium, le platine, l'iridium et le
+rhodium.</claim-text></claim><claim num="xx"><claim-text>Procédé selon la revendication 1, dans lequel
+ledit catalyseur comprend de plus un support qui supporte
+ledit métal de transition.</claim-text></claim><claim num="xx"><claim-text>Procédé selon la revendication 4, dans lequel
+ledit support est choisi dans le groupe formé par le
+charbon activé, l'alumine, la silice-alumine et la silice.</claim-text></claim><claim num="xx"><claim-text>Procédé selon la revendication 5, dans lequel
+ledit support est du charbon activé supportant ledit métal
+de transition qui est le palladium ou le platine.</claim-text></claim><claim num="xx"><claim-text>Procédé selon la revendication 4, dans lequel la
+quantité dudit métal de transition est de 0,1 à 10 g pour
+100 ml dudit support.</claim-text></claim><claim num="xx"><claim-text>Procédé selon la revendication 1, dans lequel un
+hydrate de ladite trifluoroacétone halogénée est utilisé
+comme matière première pour exécuter ladite hydrogénolyse.</claim-text></claim><claim num="xx"><claim-text>Procédé selon la revendication 1, dans lequel
+une solution aqueuse d'un hydrate de ladite
+trifluoroacétone halogénée est utilisée comme matière
+première pour exécuter ladite hydrogénolyse.</claim-text></claim><claim num="xx"><claim-text>Procédé selon la revendication 1, dans lequel
+une solution aqueuse de ladite trifluoroacétone halogénée
+est utilisée comme matière première pour exécuter ladite
+hydrogénolyse.</claim-text></claim><claim num="xx"><claim-text>Procédé selon la revendication 1, dans lequel
+ladite hydrogénolyse est conduite par une réaction en phase
+gazeuse.</claim-text></claim><claim num="xx"><claim-text>Procédé selon la revendication 1, dans lequel
+ladite trifluoroacétone halogénée est choisie dans le
+groupe formé par la 3-chloro-1,1,1-trifluoroacétone, la
+3,3-dichloro-1,1,1-trifluoroacétone et la 3,3,3-trichloro-1,1,1-trifluoroacétone.</claim-text></claim><claim num="xx"><claim-text>Procédé selon la revendication 1, dans lequel
+ladite hydrogénolyse est conduite à une température de 50 à
+350°C.</claim-text></claim><claim num="xx"><claim-text>Procédé selon la revendication 1, dans lequel
+le rapport molaire dudit gaz hydrogène à ladite
+trifluoroacétone halogénée est de 1,5 à 50.</claim-text></claim><claim num="xx"><claim-text>Procédé selon la revendication 13, dans lequel
+ladite hydrogénolyse est conduite à une température de 90 à
+120°C.</claim-text></claim></claims><legal-status status="new"><legal-event country="EP" code="26N" date="20061011"><legal-event-body><event-title>NO OPPOSITION FILED</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20060803</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="ET" date="20060721"><legal-event-body><event-title>FR: TRANSLATION FILED</event-title></legal-event-body></legal-event><legal-event country="EP" code="REF" date="20051208"><legal-event-body><event-title>CORRESPONDS TO:</event-title><event-attributes><event-attribute><event-attribute-label>Ref Document Number </event-attribute-label><event-attribute-value>60114482</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Country of Ref Document </event-attribute-label><event-attribute-value>DE</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Date of Ref Document </event-attribute-label><event-attribute-value>20051208</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>P</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20051102"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>B1</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>DEFRGBIT</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REG" date="20051102"><legal-event-body><event-title>REFERENCE TO A NATIONAL CODE</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>GB</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Legal Event Code </event-attribute-label><event-attribute-value>FG4D</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="17Q" date="20030514"><legal-event-body><event-title>FIRST EXAMINATION REPORT</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20030327</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AKX" date="20020522"><legal-event-body><event-title>PAYMENT OF DESIGNATION FEES</event-title><event-attributes><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>DE FR GB IT</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="17P" date="20020424"><legal-event-body><event-title>REQUEST FOR EXAMINATION FILED</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20020208</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20010829"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>A1</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>A1</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>ATBECHCYDEDKESFIFRGBGRIEITLILUMCNLPTSETR</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>DEFRGBIT</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AX" date="20010829"><legal-event-body><event-title>EXTENSION OF THE EUROPEAN PATENT TO</event-title><event-attributes><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>AL;LT;LV;MK;RO;SI</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event></legal-status></patent-document>

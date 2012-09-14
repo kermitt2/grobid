@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<nite:root nite:id="WO2007041479.HC.substance-names" xmlns:nite="http://nite.sourceforge.net/">
+   <substance-name nite:id="WO2007041479.HC.substance-names.3" comment="" name="polyethylene glycol" relevant="false" chebi-id="CHEBI:46793" epochem-id="EPOCHEM:NEW:SUBSTANCE:2">
+      <nite:child href="WO2007041479.words.xml#id(WO2007041479_w_368)..id(WO2007041479_w_369)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007041479.HC.substance-names.4" comment="" name="polyvinyl pyrolidone" relevant="false" chebi-id="WO2007041479:266280" epochem-id="EPOCHEM:NEW:SUBSTANCE:83">
+      <nite:child href="WO2007041479.words.xml#id(WO2007041479_w_2336)"/>
+      <nite:child href="WO2007041479.words.xml#id(WO2007041479_w_2335)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007041479.HC.substance-names.5" comment="" name="Povidone" relevant="true" chebi-id="WO2007041479:472755" epochem-id="EPOCHEM:NEW:SUBSTANCE:84">
+      <nite:child href="WO2007041479.words.xml#id(WO2007041479_w_1333)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007041479.HC.substance-names.6" comment="" name="Povidone" relevant="true" chebi-id="WO2007041479:472755" epochem-id="EPOCHEM:NEW:SUBSTANCE:84">
+      <nite:child href="WO2007041479.words.xml#id(WO2007041479_w_1380)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007041479.HC.substance-names.7" comment="" name="Povidone" relevant="true" chebi-id="WO2007041479:472755" epochem-id="EPOCHEM:NEW:SUBSTANCE:84">
+      <nite:child href="WO2007041479.words.xml#id(WO2007041479_w_1401)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007041479.HC.substance-names.8" comment="" name="Povidone" relevant="true" chebi-id="WO2007041479:472755" epochem-id="EPOCHEM:NEW:SUBSTANCE:84">
+      <nite:child href="WO2007041479.words.xml#id(WO2007041479_w_1422)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007041479.HC.substance-names.9" comment="" name="Povidone" relevant="true" chebi-id="WO2007041479:472755" epochem-id="EPOCHEM:NEW:SUBSTANCE:84">
+      <nite:child href="WO2007041479.words.xml#id(WO2007041479_w_1445)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007041479.HC.substance-names.10" comment="" name="Povidone" relevant="true" chebi-id="WO2007041479:472755" epochem-id="EPOCHEM:NEW:SUBSTANCE:84">
+      <nite:child href="WO2007041479.words.xml#id(WO2007041479_w_1491)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007041479.HC.substance-names.11" comment="" name="Povidone" relevant="true" chebi-id="WO2007041479:472755" epochem-id="EPOCHEM:NEW:SUBSTANCE:84">
+      <nite:child href="WO2007041479.words.xml#id(WO2007041479_w_1513)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007041479.HC.substance-names.12" comment="" name="Povidone" relevant="true" chebi-id="WO2007041479:472755" epochem-id="EPOCHEM:NEW:SUBSTANCE:84">
+      <nite:child href="WO2007041479.words.xml#id(WO2007041479_w_1561)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007041479.HC.substance-names.13" comment="" name="Povidone" relevant="true" chebi-id="WO2007041479:472755" epochem-id="EPOCHEM:NEW:SUBSTANCE:84">
+      <nite:child href="WO2007041479.words.xml#id(WO2007041479_w_1615)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007041479.HC.substance-names.14" comment="" name="Povidone" relevant="true" chebi-id="WO2007041479:472755" epochem-id="EPOCHEM:NEW:SUBSTANCE:84">
+      <nite:child href="WO2007041479.words.xml#id(WO2007041479_w_1641)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007041479.HC.substance-names.15" comment="" name="Povidone" relevant="true" chebi-id="WO2007041479:472755" epochem-id="EPOCHEM:NEW:SUBSTANCE:84">
+      <nite:child href="WO2007041479.words.xml#id(WO2007041479_w_1667)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007041479.HC.substance-names.16" comment="" name="Povidone" relevant="true" chebi-id="WO2007041479:472755" epochem-id="EPOCHEM:NEW:SUBSTANCE:84">
+      <nite:child href="WO2007041479.words.xml#id(WO2007041479_w_1713)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007041479.HC.substance-names.17" comment="" name="Povidone" relevant="true" chebi-id="WO2007041479:472755" epochem-id="EPOCHEM:NEW:SUBSTANCE:84">
+      <nite:child href="WO2007041479.words.xml#id(WO2007041479_w_2330)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007041479.HC.substance-names.18" comment="" name="Povidone" relevant="true" chebi-id="WO2007041479:472755" epochem-id="EPOCHEM:NEW:SUBSTANCE:84">
+      <nite:child href="WO2007041479.words.xml#id(WO2007041479_w_2508)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007041479.HC.substance-names.19" comment="" name="Povidone" relevant="true" chebi-id="WO2007041479:472755" epochem-id="EPOCHEM:NEW:SUBSTANCE:84">
+      <nite:child href="WO2007041479.words.xml#id(WO2007041479_w_3215)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007041479.HC.substance-names.20" comment="" name="Povidone" relevant="true" chebi-id="WO2007041479:472755" epochem-id="EPOCHEM:NEW:SUBSTANCE:84">
+      <nite:child href="WO2007041479.words.xml#id(WO2007041479_w_3239)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007041479.HC.substance-names.21" comment="" name="Povidone" relevant="true" chebi-id="WO2007041479:472755" epochem-id="EPOCHEM:NEW:SUBSTANCE:84">
+      <nite:child href="WO2007041479.words.xml#id(WO2007041479_w_3262)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007041479.HC.substance-names.22" comment="" name="Povidone" relevant="true" chebi-id="WO2007041479:472755" epochem-id="EPOCHEM:NEW:SUBSTANCE:84">
+      <nite:child href="WO2007041479.words.xml#id(WO2007041479_w_3334)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007041479.HC.substance-names.23" comment="" name="Povidone" relevant="true" chebi-id="WO2007041479:472755" epochem-id="EPOCHEM:NEW:SUBSTANCE:84">
+      <nite:child href="WO2007041479.words.xml#id(WO2007041479_w_3358)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007041479.HC.substance-names.24" comment="" name="Povidone" relevant="true" chebi-id="WO2007041479:472755" epochem-id="EPOCHEM:NEW:SUBSTANCE:84">
+      <nite:child href="WO2007041479.words.xml#id(WO2007041479_w_3381)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007041479.HC.substance-names.25" comment="" name="Povidone" relevant="true" chebi-id="WO2007041479:472755" epochem-id="EPOCHEM:NEW:SUBSTANCE:84">
+      <nite:child href="WO2007041479.words.xml#id(WO2007041479_w_3950)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007041479.HC.substance-names.26" comment="" name="Povidone" relevant="true" chebi-id="WO2007041479:472755" epochem-id="EPOCHEM:NEW:SUBSTANCE:84">
+      <nite:child href="WO2007041479.words.xml#id(WO2007041479_w_5744)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007041479.HC.substance-names.27" comment="" name="Povidone" relevant="true" chebi-id="WO2007041479:472755" epochem-id="EPOCHEM:NEW:SUBSTANCE:84">
+      <nite:child href="WO2007041479.words.xml#id(WO2007041479_w_5990)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007041479.HC.substance-names.28" comment="" name="Povidone" relevant="true" chebi-id="WO2007041479:472755" epochem-id="EPOCHEM:NEW:SUBSTANCE:84">
+      <nite:child href="WO2007041479.words.xml#id(WO2007041479_w_6201)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007041479.HC.substance-names.29" comment="" name="Povidone" relevant="true" chebi-id="WO2007041479:472755" epochem-id="EPOCHEM:NEW:SUBSTANCE:84">
+      <nite:child href="WO2007041479.words.xml#id(WO2007041479_w_7038)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007041479.HC.substance-names.30" comment="" name="Povidone" relevant="true" chebi-id="WO2007041479:472755" epochem-id="EPOCHEM:NEW:SUBSTANCE:84">
+      <nite:child href="WO2007041479.words.xml#id(WO2007041479_w_7059)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007041479.HC.substance-names.31" comment="" name="Povidone" relevant="true" chebi-id="WO2007041479:472755" epochem-id="EPOCHEM:NEW:SUBSTANCE:84">
+      <nite:child href="WO2007041479.words.xml#id(WO2007041479_w_7079)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007041479.HC.substance-names.32" comment="" name="Povidone" relevant="true" chebi-id="WO2007041479:472755" epochem-id="EPOCHEM:NEW:SUBSTANCE:84">
+      <nite:child href="WO2007041479.words.xml#id(WO2007041479_w_7108)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007041479.HC.substance-names.33" comment="" name="Povidone" relevant="true" chebi-id="WO2007041479:472755" epochem-id="EPOCHEM:NEW:SUBSTANCE:84">
+      <nite:child href="WO2007041479.words.xml#id(WO2007041479_w_7137)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007041479.HC.substance-names.34" comment="" name="Povidone" relevant="true" chebi-id="WO2007041479:472755" epochem-id="EPOCHEM:NEW:SUBSTANCE:84">
+      <nite:child href="WO2007041479.words.xml#id(WO2007041479_w_7175)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007041479.HC.substance-names.35" comment="" name="Povidone" relevant="true" chebi-id="WO2007041479:472755" epochem-id="EPOCHEM:NEW:SUBSTANCE:84">
+      <nite:child href="WO2007041479.words.xml#id(WO2007041479_w_7208)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007041479.HC.substance-names.36" comment="" name="Povidone" relevant="true" chebi-id="WO2007041479:472755" epochem-id="EPOCHEM:NEW:SUBSTANCE:84">
+      <nite:child href="WO2007041479.words.xml#id(WO2007041479_w_7241)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007041479.HC.substance-names.37" comment="" name="Povidone" relevant="true" chebi-id="WO2007041479:472755" epochem-id="EPOCHEM:NEW:SUBSTANCE:84">
+      <nite:child href="WO2007041479.words.xml#id(WO2007041479_w_7513)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007041479.HC.substance-names.38" comment="" name="Povidone" relevant="true" chebi-id="WO2007041479:472755" epochem-id="EPOCHEM:NEW:SUBSTANCE:84">
+      <nite:child href="WO2007041479.words.xml#id(WO2007041479_w_7534)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007041479.HC.substance-names.39" comment="" name="Povidone" relevant="true" chebi-id="WO2007041479:472755" epochem-id="EPOCHEM:NEW:SUBSTANCE:84">
+      <nite:child href="WO2007041479.words.xml#id(WO2007041479_w_7554)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007041479.HC.substance-names.42" comment="" name="crospovidone" relevant="false" chebi-id="WO2007041479:555569" epochem-id="EPOCHEM:NEW:SUBSTANCE:86">
+      <nite:child href="WO2007041479.words.xml#id(WO2007041479_w_3645)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007041479.HC.substance-names.43" comment="" name="crospovidone" relevant="false" chebi-id="WO2007041479:555569" epochem-id="EPOCHEM:NEW:SUBSTANCE:86">
+      <nite:child href="WO2007041479.words.xml#id(WO2007041479_w_3870)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007041479.HC.substance-names.44" comment="" name="crospovidone" relevant="false" chebi-id="WO2007041479:555569" epochem-id="EPOCHEM:NEW:SUBSTANCE:86">
+      <nite:child href="WO2007041479.words.xml#id(WO2007041479_w_3985)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007041479.HC.substance-names.45" comment="" name="hydroxyethylcellulose" relevant="false" chebi-id="WO2007041479:956930" epochem-id="EPOCHEM:NEW:SUBSTANCE:64">
+      <nite:child href="WO2007041479.words.xml#id(WO2007041479_w_4030)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007041479.HC.substance-names.46" comment="" name="carboxymethylcellulose" relevant="false" chebi-id="WO2007041479:986810" epochem-id="EPOCHEM:NEW:SUBSTANCE:87">
+      <nite:child href="WO2007041479.words.xml#id(WO2007041479_w_4032)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007041479.HC.substance-names.47" comment="" name="Cellulose" relevant="false" chebi-id="WO2007041479:192145" epochem-id="EPOCHEM:NEW:SUBSTANCE:129">
+      <nite:child href="WO2007041479.words.xml#id(WO2007041479_w_3659)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007041479.HC.substance-names.48" comment="" name="Cellulose" relevant="false" chebi-id="WO2007041479:192145" epochem-id="EPOCHEM:NEW:SUBSTANCE:129">
+      <nite:child href="WO2007041479.words.xml#id(WO2007041479_w_3819)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007041479.HC.substance-names.49" comment="" name="Cellulose" relevant="false" chebi-id="WO2007041479:192145" epochem-id="EPOCHEM:NEW:SUBSTANCE:129">
+      <nite:child href="WO2007041479.words.xml#id(WO2007041479_w_3969)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007041479.HC.substance-names.51" comment="" name="gelatin" relevant="false" chebi-id="WO2007041479:967177" epochem-id="EPOCHEM:NEW:SUBSTANCE:5">
+      <nite:child href="WO2007041479.words.xml#id(WO2007041479_w_3577)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007041479.HC.substance-names.52" comment="" name="gelatin" relevant="false" chebi-id="WO2007041479:967177" epochem-id="EPOCHEM:NEW:SUBSTANCE:5">
+      <nite:child href="WO2007041479.words.xml#id(WO2007041479_w_4028)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007041479.HC.substance-names.53" comment="" name="starch" relevant="false" chebi-id="CHEBI:28017" epochem-id="EPOCHEM:NEW:SUBSTANCE:127">
+      <nite:child href="WO2007041479.words.xml#id(WO2007041479_w_3581)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007041479.HC.substance-names.54" comment="" name="starch" relevant="false" chebi-id="CHEBI:28017" epochem-id="EPOCHEM:NEW:SUBSTANCE:127">
+      <nite:child href="WO2007041479.words.xml#id(WO2007041479_w_3601)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007041479.HC.substance-names.55" comment="" name="starch" relevant="false" chebi-id="CHEBI:28017" epochem-id="EPOCHEM:NEW:SUBSTANCE:127">
+      <nite:child href="WO2007041479.words.xml#id(WO2007041479_w_3643)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007041479.HC.substance-names.56" comment="" name="syrup" relevant="false" chebi-id="WO2007041479:795712" epochem-id="EPOCHEM:NEW:SUBSTANCE:302">
+      <nite:child href="WO2007041479.words.xml#id(WO2007041479_w_3573)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007041479.HC.substance-names.57" comment="" name="syrup" relevant="false" chebi-id="WO2007041479:795712" epochem-id="EPOCHEM:NEW:SUBSTANCE:302">
+      <nite:child href="WO2007041479.words.xml#id(WO2007041479_w_4023)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007041479.HC.substance-names.60" comment="" name="PVP" relevant="false" chebi-id="WO2007041479:462458" epochem-id="EPOCHEM:NEW:SUBSTANCE:278">
+      <nite:child href="WO2007041479.words.xml#id(WO2007041479_w_2338)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007041479.HC.substance-names.61" comment="" name="PVP" relevant="false" chebi-id="WO2007041479:462458" epochem-id="EPOCHEM:NEW:SUBSTANCE:278">
+      <nite:child href="WO2007041479.words.xml#id(WO2007041479_w_3583)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007041479.HC.substance-names.62" comment="" name="HPMC" relevant="false" chebi-id="WO2007041479:322212" epochem-id="EPOCHEM:NEW:SUBSTANCE:304">
+      <nite:child href="WO2007041479.words.xml#id(WO2007041479_w_3585)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007041479.HC.substance-names.63" comment="" name="tragacanth" relevant="false" chebi-id="WO2007041479:717548" epochem-id="EPOCHEM:NEW:SUBSTANCE:305">
+      <nite:child href="WO2007041479.words.xml#id(WO2007041479_w_3588)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007041479.HC.substance-names.64" comment="" name="methyl cellulose" relevant="false" chebi-id="WO2007041479:440536" epochem-id="EPOCHEM:NEW:SUBSTANCE:114">
+      <nite:child href="WO2007041479.words.xml#id(WO2007041479_w_4025)..id(WO2007041479_w_4026)"/>
+   </substance-name>
+</nite:root>

@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="311"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">On computing global similarity in images <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>S. Ravela and R. Manmatha <lb/></docAuthor></byline>
+		<byline><affiliation>Computer Science Department <lb/>University of Massachusetts,</affiliation></byline>
+		<address>Amherst, MA 01003 <lb/></address>
+		<email>Email: {ravela,manmatha}@cs.umass.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>The retrieval of images based on their visual similarity <lb/>to an example image is an important and fascinating area of <lb/>research. Here, a method to characterize visual appearance <lb/>for determining global similarity in images is described. <lb/>Images are filtered with Gaussian derivatives and geometric features are computed from the filtered images. <lb/>The geometric features used here are curvature and phase. <lb/>Two images may be said to be similar if they have similar distributions of such features. Global similarity may, <lb/>therefore, be deduced by comparing histograms of these <lb/>features. This allows for rapid retrieval and examples from <lb/>collection of gray-level and trademark images are shown. <lb/></div>
+		<div type="intro">1 Introduction<lb/></div>
+		</front>
+</text>
+</tei>

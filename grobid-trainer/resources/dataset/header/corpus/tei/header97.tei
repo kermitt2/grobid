@@ -1,0 +1,20 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="98"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Performance of Temporal Reasoning Systems <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Ed Yampratoom James F. Allen <lb/></docAuthor></byline>
+		<byline><affiliation>The University of Rochester <lb/>Computer Science Department <lb/></affiliation></byline>
+		<address>Rochester, New York 14627 <lb/></address>
+		<idno>TRAINS Technical Note 93-1 <lb/></idno>
+		<date>May 1993 <lb/></date>
+		<div type="abstract">Abstract <lb/>This paper describes the performance evaluation of six temporal reasoning systems. <lb/>We show that if you are working with large temporal datasets where information <lb/>is added incrementally throughout the execution of the program, systems using incompletely connected graphs (i.e., TMM, TimeGraph and TimeGraph-II) seem the <lb/>best option. While they do not offer the constant query time of systems using fully <lb/>connected graphs (i.e. the systems based on constraint satisfaction), the savings at <lb/>assertion time are so substantial that the relatively small performance penalty for <lb/>queries is a reasonable tradeoff. Of course, these systems do not offer the expressiv <lb/>ity of the interval-based systems as they only handle point-based relations. Of the <lb/>three, TimeGraph-II offers a wider range of qualitative relations as it handles point <lb/>inequality. It does not currently handle metric information, however, as do TMM <lb/>and TimeGraph. Thus decisions between these three may be more determined by the <lb/>reasoning capabilities required rather than raw performance. <lb/></div>
+		<note type="grant">This material is based upon work supported in part by U.S. Air Force-Rome Laboratory research <lb/>contract no. F30602-91-C-0010. <lb/></note>
+		<pb/>
+		</front>
+</text>
+</tei>

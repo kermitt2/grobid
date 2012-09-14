@@ -1,0 +1,19 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="unknown"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<idno>Working Paper IS-98-01 (Information Systems) <lb/></idno>
+		<byline><affiliation>Leonard N. Stern School of Business, New York University. <lb/></affiliation></byline>
+		<note type="reference">In: Proceedings of the IEEE/IAFE/INFORMS Conference on Computational Intelligence for Financial Engineering <lb/>(CIFEr&apos;98, New York, March 1998) <lb/></note>
+		<ptr type="web">http://www.stern.nyu.edu/~aweigend/Research/Papers/TradeStyles <lb/></ptr>
+		<docTitle>
+			<titlePart type="main">Uncovering Hidden Structure in Bond Futures Trading <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Fei CHEN , Stephen FIGLEWSKI , <lb/>Jeffrey HEISLER zz , Andreas S. WEIGEND <lb/></docAuthor></byline>
+		<div type="abstract">Abstract. This study uncovers trading styles in the transaction records of US Treasury bond futures. <lb/>It uses transaction-by-transaction data from the Commodity Futures Trading Commissions&apos; (CFTC) <lb/>Computerized Trade Reconstruction (CTR) records. The data set consists of 30 million transaction| <lb/>the complete US T-bond futures market for 3 years. Each transaction record consists of time (by the <lb/>minute), price, volume, buy/sell, and an identifier of the specific account. <lb/>We use statistical clustering techniques to group together trades that are similar. Two sets of <lb/>assumptions have to be made: (1) What is a trade? We define a trade to begin when an account opens <lb/>a position, and to end when its position size returns to zero. We describe each trade by several trade-specific variables (e.g., length of trade, maximum position size, opening move, long or short) and several <lb/>exogenous, market-specific variables (e.g., price, volatility, trading volume). (2) What process generated <lb/>the data? We assume a mixture of Gaussians. An observed trade is interpreted as a noisy realization of <lb/>one of the mixture components. This paper assumes identity covariance matrices. Furthermore, each <lb/>trade is fully assigned to a single cluster. We compare this approach to diagonal and to full covariance <lb/>structure with probabilistic assignments. <lb/>Trade profit was held back in the clustering process. It turns out that the clusters differ significantly in their profit and risk characteristics. Using conditional distributions, we summarize features <lb/>of profitable trading styles and contrast them with losing strategies. We find that profitable styles tend <lb/>to hold trades longer, trade at higher volatility, and trade earlier in the contracts. We also show how <lb/>some clusters uncover &quot;technical&quot; traders. Using the information about the individual accounts, the <lb/>assignments of accounts to clusters are described by entropy, and the transitions of a given account <lb/>through clusters is modeled by a first order Markov model. <lb/></div>
+		<div type="intro">1 Motivation and Overview</div>
+		</front>
+</text>
+</tei>

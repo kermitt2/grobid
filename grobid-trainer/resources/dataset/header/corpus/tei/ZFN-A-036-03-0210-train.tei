@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="ZFN-A-036-03-0210"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<titlePage>
+				<docTitle>
+					<titlePart type="main">Monte Carlo Calculations on Molten TlCl, TlBr and Til<lb/></titlePart>
+				</docTitle>
+				<byline><docAuthor>Chiara Margheritis</docAuthor><lb/></byline>
+				<byline><affiliation>Centre» di Studio per la termodinamica ed elettrochlmica dei sistemi salini fusi e solidi del CNR <lb/>Istituto di Chimica Fisica ed Elettrochimica, Universita di Pavia</affiliation>, <address>Italy</address> <lb/></byline>
+				<reference>Z. Naturforsch. Mft, 210—212 (1981); </reference>
+				<note type="submission">received January 14  1981 <lb/></note>
+			</titlePage>
+			<div type="abstract">Molten TIC1, TlBr and Til were computer simulated at two different temperatures using the <lb/>interionic pair potentials obtained by Mayer on the corresponding solids. The calculated molar <lb/>volumes in comparison with the experimental ones show that the simulated molten TlCl and <lb/>TlBr are only slightly relaxed ( 1—2, 2—3%, respectively ). On the contrary, molten Til is strongly <lb/>relaxed ( 23—27% ) and behaves as if an important cohesive force like the homopolar one would <lb/>be lacking.<lb/></div>
+			<div type="intro">In recent years, the Monte Carlo (MC) method<lb/></div>
+		</front>
+	</text>
+</tei>

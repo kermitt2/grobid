@@ -1,0 +1,26 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="ZFN-A-007-06-0401"/>
+	</teiHeader>
+	<text xml:lang="de">
+		<front>
+			<titlePage>
+				<docTitle>
+					<titlePart type="main">Die Lebensdauer isomerer Kerne<lb/></titlePart>
+				</docTitle>
+				<byline>Von <docAuthor>Berthold Stech</docAuthor><lb/></byline>
+				<byline>Aus dem <affiliation>Institut für theoretische Physik der Universität Heidelberg<lb/></affiliation></byline>
+				<reference>(Z. Naturforschg. 7a, 401-410 [1952]; </reference>
+				<note type="submission">eingegangen am 23. Januar 1952)<lb/></note>
+			</titlePage>
+			<div type="abstract">Auf der Grundlage des EinteüchenmodeUs der Kerne werden Formeln für. die elektri- <lb/>
+sche und magnetische Multipolstrahlung eines Nukleons abgeleitet und die vorkommen- <lb/>
+den Integrale berechnet. Die Zuordnung der Terme nach dem Einteilchenmodell mit <lb/>
+starker Spin-Bahn-Kopplung führt insbesondere bei den magnetischen 2*-Pol-Übergängen <lb/>
+(gg/ 2 —^ Pl/ 2 5 hj ^/ 2 dg/ 2; il 3/ 2 f 5/ 2) zu cluer mit den Experimenten übereinstimmen- <lb/>
+den Energieabhängigkeit der Ubergangswahrscheinlichkeit. Die theoretischen Übergangs- <lb/>
+wahrscheinlichkeiten sind jedoch um einen nahezu konstanten Faktor 30) zu groß. <lb/></div>
+			<div type="intro">D ie Existenz isomerer Kerne beruht nach <lb/></div>
+		</front>
+	</text>
+</tei>

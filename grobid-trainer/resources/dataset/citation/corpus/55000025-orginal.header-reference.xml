@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+<listBibl>
+
+	<bibl><title level="j" type="short">Int. J. Cancer</title>:<biblScope type="vol">86</biblScope>, <biblScope type="pp">667– 671</biblScope> <date>(2000)</date></bibl>
+	
+	<bibl><title level="j" type="short">Int. J. Cancer</title> <biblScope type="vol">86</biblScope>:<biblScope type="pp">667– 671</biblScope>,<lb/> <date>2000</date>.</bibl>
+
+</listBibl>
+</tei>

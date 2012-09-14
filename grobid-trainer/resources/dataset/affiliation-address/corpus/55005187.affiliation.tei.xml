@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="institution">Carnegie Mellon University</orgName>
+							<orgName type="department">Department of Electrical and Computer Engineering Pittsburgh</orgName>,
+							<address>
+								<settlement>Pittsburgh</settlement>,
+								<region>PA</region>
+								<postCode>15213-3890</postCode>
+								<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<orgName type="institution">Portland State University</orgName>
+							<orgName type="department">Department of Electrical and Computer Engineering Portland</orgName>,
+							<address>
+								<settlement>Portland</settlement>,
+								<region>OR</region>
+								<postCode>97201</postCode>
+								<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<orgName type="institution">Washington State University</orgName>
+							<orgName type="department">School of Electrical Engineering and Computer Science</orgName>,
+							<address>
+								<settlement>Pullman</settlement>,
+								<region>WA</region>
+								<postCode>99164</postCode>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,27 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="342"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Modeling and Optimization of a Multiresolution <lb/>Image Retrieval System <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Antonio Ortega , <lb/></docAuthor></byline>
+		<byline><affiliation>Dept. of Electrical Eng.-Systems <lb/>University of Southern California <lb/></affiliation></byline>
+		<address>Los Angeles, California <lb/></address>
+		<byline><docAuthor>Zhensheng Zhang, <lb/></docAuthor></byline>
+		<byline><affiliation>Dept. of Electrical Engineering and Center for Telecom. Research <lb/>Columbia University,</affiliation></byline>
+		<address>New York <lb/></address>
+		<byline><docAuthor>Martin Vetterli <lb/></docAuthor></byline>
+		<byline><affiliation>Dept. of Electrical Engineering and Computer Science <lb/>University of California, <lb/></affiliation></byline>
+		<address>Berkeley, California <lb/></address>
+		<date>July 15, 1994 <lb/></date>
+		<note type="submission">IEEE/ACM Transactions on Networking, Submitted, July 1994 <lb/></note>
+		<div type="abstract">Abstract <lb/>In this paper, we study the tradeoffs involved in choosing the bit allocation in a <lb/>multiresolution remote image retrieval system. Such a system uses a multiresolution <lb/>image coding scheme so that a user accessing the database will first see a coarse <lb/>version of the images and will be able to accept or discard a given image faster, <lb/>without needing to receive all the image data. We formalize the problem of choosing <lb/>the bit allocation (e.g., in the two resolution case, how many bits should be given <lb/>to the coarse image and the additional information, respectively?) so that the <lb/>overall delay in the query is minimized. We provide analytical methods to find the <lb/>optimal solution under different configurations and show how a good choice of the <lb/>bit allocation results in a significant reduction of the overall delay in the query (by <lb/>up to a factor of two in some cases). <lb/></div>
+		<note type="reference">This work was presented in part at the IS&amp;T/SPIE Symp. on Electronic Imaging Science &amp; Tech <lb/>nology &apos;94, San Jose, CA, Feb. 94 and at Infocom &apos;94, Toronto, Canada, Jun. 94. <lb/></note>
+		<note type="grant">Work supported in part by the Fulbright Commission and the Ministry of Education of Spain. This <lb/>work was done while at the Dept. of Electrical Eng. and Center for Telecom. Research, Columbia <lb/>University. <lb/></note>
+		<pb/>
+		</front>
+</text>
+</tei>

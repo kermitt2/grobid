@@ -1,0 +1,25 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="543"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Operant Conditioning in Skinnerbots <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>David S. Touretzky <lb/></docAuthor></byline>
+		<byline><affiliation>Computer Science Department &amp; <lb/>Center for the Neural Basis of Cognition <lb/>Carnegie Mellon University <lb/></affiliation></byline>
+		<address>Pittsburgh, PA 15213-3891 <lb/></address>
+		<email>dst@cs.cmu.edu <lb/></email>
+		<byline><docAuthor>Lisa M. Saksida <lb/></docAuthor></byline>
+		<byline><affiliation>Robotics Institute &amp; <lb/>Center for the Neural Basis of Cognition <lb/>Carnegie Mellon University <lb/></affiliation></byline>
+		<address>Pittsburgh, PA 15213-3891 <lb/></address>
+		<email>saksida@ri.cmu.edu <lb/></email>
+		<note type="reference">To appear in Adaptive Behavior 5(3/4), 1997. <lb/>Copyright c 1997 The MIT Press. <lb/></note>
+		<div type="abstract">Abstract <lb/>Instrumental (or operant) conditioning, a form of animal learning, is similar to reinforcement learning <lb/>(Watkins, 1989) in that it allows an agent to adapt its actions to gain maximally from the environment <lb/>while only being rewarded for correct performance. But animals learn much more complicated behaviors <lb/>through instrumental conditioning than robots presently acquire through reinforcement learning. We <lb/>describe a new computational model of the conditioning process that attempts to capture some of the <lb/>aspects that are missing from simple reinforcement learning: conditioned reinforcers, shifting reinforcement contingencies, explicit action sequencing, and state space refinement. We apply our model to a task <lb/>commonly used to study working memory in rats and monkeys: the DMTS (Delayed Match to Sample) <lb/>task. Animals learn this task in stages. In simulation, our model also acquires the task in stages, in a <lb/>similar manner. We have used the model to train an RWI B21 robot. <lb/></div>
+		<keywords>Keywords: operant conditioning, instrumental learning, shaping, chaining, learning robots <lb/></keywords>
+		<note type="other">Running Head: Operant Conditioning in Skinnerbots <lb/></note>
+		<pb/>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="unknown"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Simulation of Simplicity: <lb/>A Technique to Cope with Degenerate Cases <lb/>in Geometric Algorithms 1 <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Herbert Edelsbrunner 2 and Ernst Peter Mucke 2 <lb/></docAuthor></byline>
+		<div type="abstract">Abstract <lb/>This paper describes a general-purpose programming technique, called the Simulation of <lb/>Simplicity, which can be used to cope with degenerate input data for geometric algorithms. <lb/>It relieves the programmer from the task to provide a consistent treatment for every single <lb/>special case that can occur. The programs that use the technique tend to be considerably <lb/>smaller and more robust than those that do not use it. We believe that this technique will <lb/>become a standard tool in writing geometric software. <lb/></div>
+		<keywords>Keywords: Computational geometry, degenerate data, implementation, programming <lb/>tool, perturbation, determinants, symbolic computation. <lb/></keywords>
+		<note type="reference">ACM Transactions on Graphics, 9(1):66-104, 1990. <lb/></note>
+		<note type="grant">1 Research of both authors was supported by Amoco Foundation Faculty Development Grant CS 1-6-44862. It</note>
+		</front>
+</text>
+</tei>

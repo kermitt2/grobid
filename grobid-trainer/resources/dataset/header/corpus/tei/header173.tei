@@ -1,0 +1,20 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="174"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Assessing Responses to Situated Cognition <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Tim Menzies <lb/></docAuthor></byline>
+		<byline><affiliation>Dept. of Artifical Intelligence, School of Computer Science and Engineering, <lb/>The University of New South Wales,</affiliation></byline>
+		<address>Sydney, Australia, 2052 <lb/></address>
+		<email>timm@cse.unsw.edu.au;</email>
+		<ptr type="web">http://www.cse.unsw.edu.au/~timm <lb/></ptr>
+		<date>September 17, 1996 <lb/></date>
+		<div type="abstract">Abstract <lb/>Situated cognition (SC) claims that knowledge is mostly context-dependent and that symbolic descriptions elicited prior to direct experience are less important than functional units developed via direct <lb/>experience with the current problem. If this were true, then we would need to modify the knowledge <lb/>modeling approaches of KA which assume that re-using old symbolic descriptions are a productivity tool <lb/>for new applications. There are numerous tools which, if added to conventional knowledge modeling, <lb/>could be said to handle SC (e.g. machine learning, abduction, verification &amp; validation tools, repertory <lb/>grids, certain frameworks for decision support systems, expert critiquing systems, and ripple-down-rules). <lb/>However, we require an experiment to assess the effectiveness of these tools as a response to SC. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

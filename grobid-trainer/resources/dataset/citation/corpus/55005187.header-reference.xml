@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+<listBibl>
+
+  	<bibl><title level="m">CODES/ISSS’10</title>, <date>October 24–29, 2010</date>, <pubPlace>Scottsdale, Arizona, USA</pubPlace>.<lb/> <publisher>ACM</publisher> <idno>978-1-60558-905-3/10/10</idno>.<lb/>
+    
+   </bibl>
+
+</listBibl>
+</tei>

@@ -1,0 +1,22 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="221"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Context-Insensitive Alias Analysis <lb/>Reconsidered <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Erik Ruf <lb/></docAuthor></byline>
+		<email>erikruf@microsoft.com <lb/></email>
+		<date>May 16, 1995 <lb/></date>
+		<idno>Technical Report <lb/>MSR-TR-95-20 <lb/></idno>
+		<byline><affiliation>Microsoft Research <lb/>Advanced Technology Division <lb/>Microsoft Corporation <lb/></affiliation></byline>
+		<address>One Microsoft Way <lb/>Redmond, WA 98052 <lb/></address>
+		<note type="other">This report is a preprint of the paper </note>
+		<note type="reference">&quot;Context-Insensitive Alias Analysis Reconsidered,&quot; to appear in ACM SIGPLAN <lb/>&apos;95 Conference on Programming Language Design and Implementation (PLDI&apos;95), La Jolla, California, June 1995. <lb/></note>
+		<note type="copyright">Copyright c 1995 by the Association for Computing Machinery, Inc. Permission to make digital or hard copies of all or <lb/>part of this work for personal or classroom use is granted without fee provided that copies are not made or distributed <lb/>for profit or commercial advantage and that copies bear this notice and the full citation on the first page. Copyrights <lb/>for components of this work owned by others than ACM must be honored. Abstracting with credit is permitted. To <lb/>copy otherwise, to republish, to post on servers, or to redistribute to lists, requires prior specific permission and/or a <lb/>fee. Request permissions from Publications Dept, ACM Inc., fax + 1 (212) 869-0481, or permissions@acm.org. <lb/></note>
+		<pb/>
+		</front>
+</text>
+</tei>

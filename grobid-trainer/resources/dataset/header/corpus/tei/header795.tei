@@ -1,0 +1,21 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="796"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">An Object-Oriented Approach to Interoperation of <lb/>Heterogeneous Information Sources <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Ling Liu 1 and Calton Pu 2 <lb/></docAuthor></byline>
+		<byline><affiliation>1 University of Alberta,</affiliation></byline>
+		<address>Edmonton, Alberta T6G 2H1 Canada <lb/></address>
+		<email>email: lingliu@cs.ualberta.ca <lb/></email>
+		<byline><affiliation>2 Oregon Graduate Institute,</affiliation></byline>
+		<address>Portland, Oregon 97291-1000 USA <lb/></address>
+		<email>email: calton@cse.ogi.edu <lb/></email>
+		<div type="abstract">Abstract. In the modern Internet environment, various types of <lb/>data sources have become accessible, including multimedia data and web <lb/>pages. Some of the fundamental assumptions in traditional databases, <lb/>such as the existence of a global schema and data consistency maintained <lb/>by a Data Base Administrator, are no longer true in many of the new <lb/>data sources. We outline the DIOM [LP95b] object-oriented approach <lb/>to build interoperable heterogeneous information systems despite the <lb/>absence of global schema and the presence of data inconsistency. We describe the metadata catalog management component of DIOM, a key service in the support for interoperation among heterogeneous information <lb/>sources. To support a flexible and customizable conection between information consumers and information producers, DIOM metadata catalog <lb/>development utilizes the adaptive specification mechanisms, provided in <lb/>DIOM interface description language, for explicit description of information consumers&apos; domain query requirements and for object-oriented <lb/>abstractions of information producers&apos; information sources. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

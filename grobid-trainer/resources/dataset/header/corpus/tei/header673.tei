@@ -1,0 +1,20 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="675"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Semantics-based Failure Recovery in Distributed Systems <lb/>with Optimistic Message Logging <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Hong Va Leong Divyakant Agrawal <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science <lb/>University of California <lb/></affiliation></byline>
+		<address>Santa Barbara, CA 93106 <lb/></address>
+		<div type="abstract">Abstract <lb/>Recovery from failures is important in distributed computing. A common technique to support <lb/>recovery is asynchronous checkpointing, coupled with optimistic message logging. These schemes have <lb/>low overheads during failure-free operations and can provide an acceptable degree of fault-tolerance. <lb/>Central to these protocols is the determination of a maximal consistent global state, which is recoverable. <lb/>Message semantics is not exploited in most existing recovery protocols to determine the recoverable state. <lb/>We propose to identify messages that are not influential in the computation through message semantics. <lb/>These messages can be logically removed from the computation without changing its meaning or result. <lb/>In this paper, we illustrate with examples how the removal of these messages improves the theoretical <lb/>maximal consistent global state. Taking semantics into account, recovery protocols are then developed <lb/>to realize the idea. The semantics in object-oriented databases is adapted to special processes acting as <lb/>servers for further improvements. This technique can also be applied to ensure a more timely commitment <lb/>for output in a distributed computation. <lb/></div>
+		<keywords>Keywords: message semantics, commutativity, recovery, optimistic message logging, asynchronous <lb/>checkpointing <lb/></keywords>
+		<note type="other">An abridged version of this paper appears in the </note> <note type="reference">Proceedings of the 14th International Conference on Distributed Computing <lb/>Systems as Using Message Semantics to Reduce Rollback in Optimistic Message Logging Recovery Schemes. <lb/></note>
+		<note type="grant">This research is supported in part by the NSF under grant number IRI-9117094. <lb/></note>
+		<pb/>
+		</front>
+</text>
+</tei>

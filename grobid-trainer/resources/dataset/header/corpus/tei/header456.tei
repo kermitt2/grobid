@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="459"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">The State of the Art in Ontology Design: <lb/>A Survey and Comparative Review <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Natalya Fridman Noy <lb/>Carole D. Hafner <lb/></docAuthor></byline>
+		<byline><affiliation>College of Computer Science <lb/>Northeastern University <lb/></affiliation></byline>
+		<address>Boston, MA 02115 <lb/></address>
+		<email>-natasha, hafner-@ccs.neu.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>In this paper we develop a framework for comparing <lb/>ontologies, and place a number of the more <lb/>prominent ontologies into it. We have selected 10 <lb/>specific projects for this study, including general <lb/>ontologies, domain specific ones, and one knowledge <lb/>representation system. The comparison framework <lb/>includes general characteristics such as the purpose of <lb/>an ontology, its coverage (general or domain-specific), its size, and the formalism used. It also <lb/>includes the design process used in creating an <lb/>ontology and the methods used to evaluate it. <lb/>Characteristics that describe the content of an <lb/>ontology include taxonomic organization, types of <lb/>concepts covered, top-level divisions, internal <lb/>structure of concepts, representation of part-whole <lb/>relations, and the presence and nature of additional <lb/>axioms. Finally we consider what experiments or <lb/>applications have used the ontologies. Knowledge <lb/>sharing and reuse will require a common framework <lb/>to support interoperability of independently created <lb/>ontologies. Our study shows there is great diversity <lb/>in the way ontologies are designed and the way they <lb/>represent the world. By identifying the similarities <lb/>and differences among existing ontologies, we clarify <lb/>the range of alternatives in creating a standard <lb/>framework for ontology design. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

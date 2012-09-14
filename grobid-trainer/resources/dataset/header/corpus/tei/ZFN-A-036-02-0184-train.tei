@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="ZFN-A-036-02-0184"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<titlePage>
+				<docTitle>
+					<titlePart type="main">Lattice Vibration Spectra XXIV *<lb/>Far-Infrared Reflection Spectra, Optical and Dielectric Constants, and Effective<lb/>Charges of the Pyrite Type Compounds FeS*, MnS*, MnSe*, and MnTe, <lb/></titlePart>
+				</docTitle>
+				<byline><docAuthor>H. D. Lutz *, G. Kliche, and H. Haeuseler</docAuthor><lb/></byline>
+				<byline><affiliation>Laboratorium für anorganische Chemie der Universität Siegen</affiliation> <lb/></byline>
+				<reference>Z. Naturforsch. S6a, 184—100 (1981); </reference>
+				<note type="submission">received December 8  1080 <lb/></note>
+			</titlePage>
+			<div type="abstract">From the far-infrared reflection spectra of the pyrite type compounds Fe$2, M11S2, MnSe^, <lb/>and MnTe2 we determined the TO and LO phonon frequencies at wave vector j\q \ f%t 0 by both <lb/>Kramers*Kronig analysts and classical oscillator fit method. In the case of MnSea and MnTe2 <lb/>we found for the first time all five group-theoretically allowed reststrahlen bands. The phonon <lb/>frequencies obtained from both single crystal and pressed pellet reflection measurements do not <lb/>show any significant differences. The calculated optical and dielectric constants however are <lb/>strongly affected by the surface quality of the sample. Effective ionic charges ( Born effective <lb/>charge, Szigeti charge ) were calculated from the experimentally determined TO/LO splittings. <lb/>They demonstrate an increasing ionicity in the order FeS2 MnTe2 MnSe2 MnS2.<lb/></div>
+			<div type="intro">The transition metal dichalcogenides with pyrite<lb/></div>
+		</front>
+	</text>
+</tei>

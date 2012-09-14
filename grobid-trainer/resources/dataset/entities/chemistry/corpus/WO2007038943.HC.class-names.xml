@@ -1,0 +1,1325 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<nite:root nite:id="WO2007038943.HC.class-names" xmlns:nite="http://nite.sourceforge.net/">
+   <class-name nite:id="WO2007038943.HC.class-names.1" comment="" name="glycosaminoglycan" relevant="false" chebi-id="CHEBI:18085" epochem-id="EPOCHEM:NEW:CLASS:374">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_2345)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.2" comment="" name="glycosaminoglycan" relevant="false" chebi-id="CHEBI:18085" epochem-id="EPOCHEM:NEW:CLASS:374">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_3167)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.3" comment="" name="glycosaminoglycan" relevant="false" chebi-id="CHEBI:18085" epochem-id="EPOCHEM:NEW:CLASS:374">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4428)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.4" comment="" name="glycosaminoglycan" relevant="false" chebi-id="CHEBI:18085" epochem-id="EPOCHEM:NEW:CLASS:374">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_14251)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.5" comment="" name="glycosaminoglycan" relevant="false" chebi-id="CHEBI:18085" epochem-id="EPOCHEM:NEW:CLASS:374">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_14433)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.11" comment="" name="small amino acids" relevant="false" chebi-id="WO2007038943:69192" epochem-id="EPOCHEM:NEW:CLASS:228">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_2825)..id(WO2007038943_w_2826)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_2824)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.12" comment="" name="acidic amino acids" relevant="false" chebi-id="WO2007038943:494187" epochem-id="EPOCHEM:NEW:CLASS:229">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_2828)..id(WO2007038943_w_2830)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.13" comment="" name="polar amino acids" relevant="false" chebi-id="CHEBI:26167" epochem-id="EPOCHEM:NEW:CLASS:230">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_2832)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_2834)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_2833)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.14" comment="" name="basic amino acids" relevant="false" chebi-id="WO2007038943:380361" epochem-id="EPOCHEM:NEW:CLASS:231">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_2837)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_2836)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_2838)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.15" comment="" name="basic amino acids" relevant="false" chebi-id="WO2007038943:380361" epochem-id="EPOCHEM:NEW:CLASS:231">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4479)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4478)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4477)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.16" comment="" name="hydrophobic amino acids" relevant="false" chebi-id="WO2007038943:842142" epochem-id="EPOCHEM:NEW:CLASS:232">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_2840)..id(WO2007038943_w_2842)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.17" comment="" name="aromatic amino acids" relevant="false" chebi-id="CHEBI:33856" epochem-id="EPOCHEM:NEW:CLASS:233">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_2844)..id(WO2007038943_w_2846)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.18" comment="" name="non-natural alpha amino acids" relevant="false" chebi-id="WO2007038943:908011" epochem-id="EPOCHEM:NEW:CLASS:377">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_2878)..id(WO2007038943_w_2879)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_2883)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_2880)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_2882)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_2881)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.32" comment="" name="thioether" relevant="false" chebi-id="CHEBI:16385" epochem-id="EPOCHEM:NEW:CLASS:379">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_3404)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.33" comment="" name="thioether" relevant="false" chebi-id="CHEBI:16385" epochem-id="EPOCHEM:NEW:CLASS:379">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_14569)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.34" comment="" name="ester" relevant="false" chebi-id="CHEBI:35701" epochem-id="EPOCHEM:NEW:CLASS:185">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_3408)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.35" comment="" name="ester" relevant="false" chebi-id="CHEBI:35701" epochem-id="EPOCHEM:NEW:CLASS:185">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_14573)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.36" comment="" name="amide" relevant="false" chebi-id="CHEBI:29337" epochem-id="EPOCHEM:NEW:CLASS:138">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_3410)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.37" comment="" name="amide" relevant="false" chebi-id="CHEBI:29337" epochem-id="EPOCHEM:NEW:CLASS:138">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4204)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.38" comment="" name="amide" relevant="false" chebi-id="CHEBI:29337" epochem-id="EPOCHEM:NEW:CLASS:138">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_10906)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.39" comment="" name="amide" relevant="false" chebi-id="CHEBI:29337" epochem-id="EPOCHEM:NEW:CLASS:138">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_11463)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.40" comment="" name="amide" relevant="false" chebi-id="CHEBI:29337" epochem-id="EPOCHEM:NEW:CLASS:138">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_14575)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.41" comment="" name="amide" relevant="false" chebi-id="CHEBI:29337" epochem-id="EPOCHEM:NEW:CLASS:138">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15171)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.42" comment="" name="amide" relevant="false" chebi-id="CHEBI:29337" epochem-id="EPOCHEM:NEW:CLASS:138">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15268)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.78" comment="" name="PP-fold family of peptides" relevant="false" chebi-id="WO2007038943:207805" epochem-id="EPOCHEM:NEW:CLASS:782">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_103)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_101)..id(WO2007038943_w_102)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_99)..id(WO2007038943_w_100)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_104)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.92" comment="" name="PP-fold peptide" relevant="false" chebi-id="WO2007038943:484519" epochem-id="EPOCHEM:NEW:CLASS:783">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_600)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_599)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_598)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_601)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.93" comment="" name="PP-fold peptide" relevant="false" chebi-id="WO2007038943:484519" epochem-id="EPOCHEM:NEW:CLASS:783">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_1254)..id(WO2007038943_w_1255)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_1253)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_1252)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.94" comment="" name="PP-fold peptide" relevant="false" chebi-id="WO2007038943:484519" epochem-id="EPOCHEM:NEW:CLASS:783">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_1270)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_1268)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_1267)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_1269)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.95" comment="" name="PP-fold peptide" relevant="false" chebi-id="WO2007038943:484519" epochem-id="EPOCHEM:NEW:CLASS:783">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_1779)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_1778)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_1780)..id(WO2007038943_w_1781)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.96" comment="" name="PP-fold peptide" relevant="false" chebi-id="WO2007038943:484519" epochem-id="EPOCHEM:NEW:CLASS:783">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4844)..id(WO2007038943_w_4846)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4843)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.97" comment="" name="PP-fold peptides" relevant="false" chebi-id="WO2007038943:622894" epochem-id="EPOCHEM:NEW:CLASS:784">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_804)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_802)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_801)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_803)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.98" comment="" name="PP-fold peptides" relevant="false" chebi-id="WO2007038943:622894" epochem-id="EPOCHEM:NEW:CLASS:784">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_1541)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_1540)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_1542)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_1539)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.99" comment="" name="PP-fold peptides" relevant="false" chebi-id="WO2007038943:622894" epochem-id="EPOCHEM:NEW:CLASS:784">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_1706)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_1703)..id(WO2007038943_w_1705)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.100" comment="" name="PP-fold peptides" relevant="false" chebi-id="WO2007038943:622894" epochem-id="EPOCHEM:NEW:CLASS:784">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_1774)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_1776)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_1773)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_1775)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.101" comment="" name="basic amino acid residue" relevant="false" chebi-id="WO2007038943:896096" epochem-id="EPOCHEM:NEW:CLASS:785">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4070)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4068)..id(WO2007038943_w_4069)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4067)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.102" comment="" name="basic amino acid residue" relevant="false" chebi-id="WO2007038943:896096" epochem-id="EPOCHEM:NEW:CLASS:785">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4350)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4352)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4351)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4353)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.103" comment="" name="basic amino acid residue" relevant="false" chebi-id="WO2007038943:896096" epochem-id="EPOCHEM:NEW:CLASS:785">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4380)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4383)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4381)..id(WO2007038943_w_4382)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.104" comment="" name="basic amino acid residue" relevant="false" chebi-id="WO2007038943:896096" epochem-id="EPOCHEM:NEW:CLASS:785">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15086)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15083)..id(WO2007038943_w_15085)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.105" comment="" name="basic amino acid residue" relevant="false" chebi-id="WO2007038943:896096" epochem-id="EPOCHEM:NEW:CLASS:785">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15399)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15402)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15401)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15400)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.106" comment="" name="basic amino acid residue" relevant="false" chebi-id="WO2007038943:896096" epochem-id="EPOCHEM:NEW:CLASS:785">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15455)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15453)..id(WO2007038943_w_15454)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15456)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.107" comment="" name="amino acid residue" relevant="false" chebi-id="WO2007038943:472446" epochem-id="EPOCHEM:NEW:CLASS:786">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_3249)..id(WO2007038943_w_3251)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.108" comment="" name="amino acid residue" relevant="false" chebi-id="WO2007038943:472446" epochem-id="EPOCHEM:NEW:CLASS:786">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_3418)..id(WO2007038943_w_3420)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.109" comment="" name="amino acid residue" relevant="false" chebi-id="WO2007038943:472446" epochem-id="EPOCHEM:NEW:CLASS:786">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4070)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4068)..id(WO2007038943_w_4069)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.110" comment="" name="amino acid residue" relevant="false" chebi-id="WO2007038943:472446" epochem-id="EPOCHEM:NEW:CLASS:786">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4075)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4077)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4076)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.111" comment="" name="amino acid residue" relevant="false" chebi-id="WO2007038943:472446" epochem-id="EPOCHEM:NEW:CLASS:786">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4352)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4351)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4353)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.112" comment="" name="amino acid residue" relevant="false" chebi-id="WO2007038943:472446" epochem-id="EPOCHEM:NEW:CLASS:786">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4360)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4359)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4358)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.113" comment="" name="amino acid residue" relevant="false" chebi-id="WO2007038943:472446" epochem-id="EPOCHEM:NEW:CLASS:786">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4383)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4381)..id(WO2007038943_w_4382)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.114" comment="" name="amino acid residue" relevant="false" chebi-id="WO2007038943:472446" epochem-id="EPOCHEM:NEW:CLASS:786">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4390)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4389)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4388)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.115" comment="" name="amino acid residue" relevant="false" chebi-id="WO2007038943:472446" epochem-id="EPOCHEM:NEW:CLASS:786">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4994)..id(WO2007038943_w_4996)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.116" comment="" name="amino acid residue" relevant="false" chebi-id="WO2007038943:472446" epochem-id="EPOCHEM:NEW:CLASS:786">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_5082)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_5081)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_5080)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.117" comment="" name="amino acid residue" relevant="false" chebi-id="WO2007038943:472446" epochem-id="EPOCHEM:NEW:CLASS:786">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15086)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15084)..id(WO2007038943_w_15085)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.118" comment="" name="amino acid residue" relevant="false" chebi-id="WO2007038943:472446" epochem-id="EPOCHEM:NEW:CLASS:786">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15093)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15091)..id(WO2007038943_w_15092)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.119" comment="" name="amino acid residue" relevant="false" chebi-id="WO2007038943:472446" epochem-id="EPOCHEM:NEW:CLASS:786">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15402)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15401)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15400)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.120" comment="" name="amino acid residue" relevant="false" chebi-id="WO2007038943:472446" epochem-id="EPOCHEM:NEW:CLASS:786">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15408)..id(WO2007038943_w_15409)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15407)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.121" comment="" name="amino acid residue" relevant="false" chebi-id="WO2007038943:472446" epochem-id="EPOCHEM:NEW:CLASS:786">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15455)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15454)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15456)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.122" comment="" name="amino acid residue" relevant="false" chebi-id="WO2007038943:472446" epochem-id="EPOCHEM:NEW:CLASS:786">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15461)..id(WO2007038943_w_15463)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.123" comment="" name="polyethylene glycol" relevant="false" chebi-id="CHEBI:46793" epochem-id="EPOCHEM:NEW:CLASS:787">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_5185)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_5184)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.124" comment="" name="polyethylene glycol" relevant="false" chebi-id="CHEBI:46793" epochem-id="EPOCHEM:NEW:CLASS:787">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15530)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15529)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.125" comment="" name="polyethylene oxide" relevant="false" chebi-id="WO2007038943:592449" epochem-id="EPOCHEM:NEW:CLASS:788">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15533)..id(WO2007038943_w_15534)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.126" comment="" name="phospholipids" relevant="false" chebi-id="CHEBI:16247" epochem-id="EPOCHEM:NEW:CLASS:142">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_10187)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.127" comment="" name="GAG" relevant="false" chebi-id="WO2007038943:623436" epochem-id="EPOCHEM:NEW:CLASS:789">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_3169)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.128" comment="" name="GAG" relevant="false" chebi-id="WO2007038943:623436" epochem-id="EPOCHEM:NEW:CLASS:789">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_3990)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.129" comment="" name="GAG" relevant="false" chebi-id="WO2007038943:623436" epochem-id="EPOCHEM:NEW:CLASS:789">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4022)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.130" comment="" name="GAG" relevant="false" chebi-id="WO2007038943:623436" epochem-id="EPOCHEM:NEW:CLASS:789">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4043)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.131" comment="" name="GAG" relevant="false" chebi-id="WO2007038943:623436" epochem-id="EPOCHEM:NEW:CLASS:789">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4109)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.132" comment="" name="GAG" relevant="false" chebi-id="WO2007038943:623436" epochem-id="EPOCHEM:NEW:CLASS:789">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4215)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.133" comment="" name="GAG" relevant="false" chebi-id="WO2007038943:623436" epochem-id="EPOCHEM:NEW:CLASS:789">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4298)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.134" comment="" name="GAG" relevant="false" chebi-id="WO2007038943:623436" epochem-id="EPOCHEM:NEW:CLASS:789">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4330)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.135" comment="" name="GAG" relevant="false" chebi-id="WO2007038943:623436" epochem-id="EPOCHEM:NEW:CLASS:789">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4430)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.136" comment="" name="GAG" relevant="false" chebi-id="WO2007038943:623436" epochem-id="EPOCHEM:NEW:CLASS:789">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4550)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.137" comment="" name="GAG" relevant="false" chebi-id="WO2007038943:623436" epochem-id="EPOCHEM:NEW:CLASS:789">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4757)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.138" comment="" name="GAG" relevant="false" chebi-id="WO2007038943:623436" epochem-id="EPOCHEM:NEW:CLASS:789">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4807)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.139" comment="" name="GAG" relevant="false" chebi-id="WO2007038943:623436" epochem-id="EPOCHEM:NEW:CLASS:789">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4850)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.140" comment="" name="GAG" relevant="false" chebi-id="WO2007038943:623436" epochem-id="EPOCHEM:NEW:CLASS:789">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_5410)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.141" comment="" name="GAG" relevant="false" chebi-id="WO2007038943:623436" epochem-id="EPOCHEM:NEW:CLASS:789">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_5432)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.142" comment="" name="GAG" relevant="false" chebi-id="WO2007038943:623436" epochem-id="EPOCHEM:NEW:CLASS:789">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_5446)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.143" comment="" name="GAG" relevant="false" chebi-id="WO2007038943:623436" epochem-id="EPOCHEM:NEW:CLASS:789">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_6175)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.144" comment="" name="GAG" relevant="false" chebi-id="WO2007038943:623436" epochem-id="EPOCHEM:NEW:CLASS:789">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_7698)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.145" comment="" name="GAG" relevant="false" chebi-id="WO2007038943:623436" epochem-id="EPOCHEM:NEW:CLASS:789">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_7736)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.146" comment="" name="GAG" relevant="false" chebi-id="WO2007038943:623436" epochem-id="EPOCHEM:NEW:CLASS:789">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_7812)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.147" comment="" name="GAG" relevant="false" chebi-id="WO2007038943:623436" epochem-id="EPOCHEM:NEW:CLASS:789">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_7963)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.148" comment="" name="GAG" relevant="false" chebi-id="WO2007038943:623436" epochem-id="EPOCHEM:NEW:CLASS:789">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_8306)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.149" comment="" name="GAG" relevant="false" chebi-id="WO2007038943:623436" epochem-id="EPOCHEM:NEW:CLASS:789">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_8431)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.150" comment="" name="GAG" relevant="false" chebi-id="WO2007038943:623436" epochem-id="EPOCHEM:NEW:CLASS:789">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_8537)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.151" comment="" name="GAG" relevant="false" chebi-id="WO2007038943:623436" epochem-id="EPOCHEM:NEW:CLASS:789">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_14435)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.152" comment="" name="GAG" relevant="false" chebi-id="WO2007038943:623436" epochem-id="EPOCHEM:NEW:CLASS:789">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15027)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.153" comment="" name="GAG" relevant="false" chebi-id="WO2007038943:623436" epochem-id="EPOCHEM:NEW:CLASS:789">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15064)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.154" comment="" name="GAG" relevant="false" chebi-id="WO2007038943:623436" epochem-id="EPOCHEM:NEW:CLASS:789">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15108)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.155" comment="" name="GAG" relevant="false" chebi-id="WO2007038943:623436" epochem-id="EPOCHEM:NEW:CLASS:789">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15132)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.156" comment="" name="GAG" relevant="false" chebi-id="WO2007038943:623436" epochem-id="EPOCHEM:NEW:CLASS:789">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15182)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.157" comment="" name="GAG" relevant="false" chebi-id="WO2007038943:623436" epochem-id="EPOCHEM:NEW:CLASS:789">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15213)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.158" comment="" name="GAG" relevant="false" chebi-id="WO2007038943:623436" epochem-id="EPOCHEM:NEW:CLASS:789">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15279)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.159" comment="" name="GAG" relevant="false" chebi-id="WO2007038943:623436" epochem-id="EPOCHEM:NEW:CLASS:789">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15307)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.160" comment="" name="GAG" relevant="false" chebi-id="WO2007038943:623436" epochem-id="EPOCHEM:NEW:CLASS:789">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15344)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.161" comment="" name="GAG" relevant="false" chebi-id="WO2007038943:623436" epochem-id="EPOCHEM:NEW:CLASS:789">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15380)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.162" comment="" name="GAG" relevant="false" chebi-id="WO2007038943:623436" epochem-id="EPOCHEM:NEW:CLASS:789">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15430)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.163" comment="" name="GAG" relevant="false" chebi-id="WO2007038943:623436" epochem-id="EPOCHEM:NEW:CLASS:789">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15476)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.164" comment="" name="GAG" relevant="false" chebi-id="WO2007038943:623436" epochem-id="EPOCHEM:NEW:CLASS:789">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15966)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.165" comment="" name="PEG" relevant="false" chebi-id="CHEBI:46793" epochem-id="EPOCHEM:NEW:CLASS:790">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4968)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.166" comment="" name="PEG" relevant="false" chebi-id="CHEBI:46793" epochem-id="EPOCHEM:NEW:CLASS:790">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4976)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.167" comment="" name="PEG" relevant="false" chebi-id="CHEBI:46793" epochem-id="EPOCHEM:NEW:CLASS:790">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_5037)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.168" comment="" name="PEG" relevant="false" chebi-id="CHEBI:46793" epochem-id="EPOCHEM:NEW:CLASS:790">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_5187)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.169" comment="" name="PEG" relevant="false" chebi-id="CHEBI:46793" epochem-id="EPOCHEM:NEW:CLASS:790">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_5202)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.170" comment="" name="PEG" relevant="false" chebi-id="CHEBI:46793" epochem-id="EPOCHEM:NEW:CLASS:790">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_5206)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.171" comment="" name="PEG" relevant="false" chebi-id="CHEBI:46793" epochem-id="EPOCHEM:NEW:CLASS:790">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_5268)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.172" comment="" name="PEG" relevant="false" chebi-id="CHEBI:46793" epochem-id="EPOCHEM:NEW:CLASS:790">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_5280)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.173" comment="" name="PEG" relevant="false" chebi-id="CHEBI:46793" epochem-id="EPOCHEM:NEW:CLASS:790">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_5302)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.174" comment="" name="PEG" relevant="false" chebi-id="CHEBI:46793" epochem-id="EPOCHEM:NEW:CLASS:790">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_5306)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.175" comment="" name="PEG" relevant="false" chebi-id="CHEBI:46793" epochem-id="EPOCHEM:NEW:CLASS:790">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_5310)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.176" comment="" name="PEG" relevant="false" chebi-id="CHEBI:46793" epochem-id="EPOCHEM:NEW:CLASS:790">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_5326)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.177" comment="" name="PEG" relevant="false" chebi-id="CHEBI:46793" epochem-id="EPOCHEM:NEW:CLASS:790">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_5348)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.178" comment="" name="PEG" relevant="false" chebi-id="CHEBI:46793" epochem-id="EPOCHEM:NEW:CLASS:790">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_5412)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.179" comment="" name="PEG" relevant="false" chebi-id="CHEBI:46793" epochem-id="EPOCHEM:NEW:CLASS:790">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_5451)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.180" comment="" name="PEG" relevant="false" chebi-id="CHEBI:46793" epochem-id="EPOCHEM:NEW:CLASS:790">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15526)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.181" comment="" name="PEG" relevant="false" chebi-id="CHEBI:46793" epochem-id="EPOCHEM:NEW:CLASS:790">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15558)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.182" comment="" name="satiety hormone" relevant="false" chebi-id="WO2007038943:390234" epochem-id="EPOCHEM:NEW:CLASS:791">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_1030)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_1029)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.183" comment="" name="hormones" relevant="false" chebi-id="CHEBI:24621" epochem-id="EPOCHEM:NEW:CLASS:792">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_1096)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.184" comment="" name="hormones" relevant="false" chebi-id="CHEBI:24621" epochem-id="EPOCHEM:NEW:CLASS:792">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4782)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.185" comment="" name="a dipeptide" relevant="false" chebi-id="WO2007038943:5042" epochem-id="EPOCHEM:NEW:CLASS:793">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_777)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_776)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.190" comment="" name="glycosaminoglycans" relevant="false" chebi-id="CHEBI:18085" epochem-id="EPOCHEM:NEW:CLASS:144">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_7734)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.191" comment="" name="GAGs" relevant="false" chebi-id="WO2007038943:40913" epochem-id="EPOCHEM:NEW:CLASS:796">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4446)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.192" comment="" name="GAGs" relevant="false" chebi-id="WO2007038943:40913" epochem-id="EPOCHEM:NEW:CLASS:796">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4473)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.193" comment="" name="GAGs" relevant="false" chebi-id="WO2007038943:40913" epochem-id="EPOCHEM:NEW:CLASS:796">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4489)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.194" comment="" name="GAGs" relevant="false" chebi-id="WO2007038943:40913" epochem-id="EPOCHEM:NEW:CLASS:796">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4608)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.195" comment="" name="GAGs" relevant="false" chebi-id="WO2007038943:40913" epochem-id="EPOCHEM:NEW:CLASS:796">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_7746)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.196" comment="" name="GAGs" relevant="false" chebi-id="WO2007038943:40913" epochem-id="EPOCHEM:NEW:CLASS:796">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_7822)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.197" comment="" name="GAGs" relevant="false" chebi-id="WO2007038943:40913" epochem-id="EPOCHEM:NEW:CLASS:796">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_8326)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.198" comment="" name="GAGs" relevant="false" chebi-id="WO2007038943:40913" epochem-id="EPOCHEM:NEW:CLASS:796">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_13984)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.199" comment="" name="GAGs" relevant="false" chebi-id="WO2007038943:40913" epochem-id="EPOCHEM:NEW:CLASS:796">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_13997)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.200" comment="" name="growth factors" relevant="false" chebi-id="WO2007038943:729475" epochem-id="EPOCHEM:NEW:CLASS:762">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4467)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4466)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.201" comment="" name="growth factors" relevant="false" chebi-id="WO2007038943:729475" epochem-id="EPOCHEM:NEW:CLASS:762">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4498)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4497)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.202" comment="" name="growth factors" relevant="false" chebi-id="WO2007038943:729475" epochem-id="EPOCHEM:NEW:CLASS:762">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4726)..id(WO2007038943_w_4727)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.203" comment="" name="growth factors" relevant="false" chebi-id="WO2007038943:729475" epochem-id="EPOCHEM:NEW:CLASS:762">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4829)..id(WO2007038943_w_4830)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.204" comment="" name="growth factors" relevant="false" chebi-id="WO2007038943:729475" epochem-id="EPOCHEM:NEW:CLASS:762">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_7723)..id(WO2007038943_w_7724)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.205" comment="" name="growth factor" relevant="false" chebi-id="WO2007038943:789372" epochem-id="EPOCHEM:NEW:CLASS:797">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_7564)..id(WO2007038943_w_7565)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.206" comment="" name="growth factor" relevant="false" chebi-id="WO2007038943:789372" epochem-id="EPOCHEM:NEW:CLASS:797">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_7611)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_7610)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.207" comment="" name="GLYCOSAMINO GLYCANS" relevant="false" chebi-id="WO2007038943:319383" epochem-id="EPOCHEM:NEW:CLASS:1013">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_13982)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_13981)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.208" comment="" name="amino acid residues" relevant="false" chebi-id="WO2007038943:565346" epochem-id="EPOCHEM:NEW:CLASS:773">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_2814)..id(WO2007038943_w_2815)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_2813)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.209" comment="" name="amino acid residues" relevant="false" chebi-id="WO2007038943:565346" epochem-id="EPOCHEM:NEW:CLASS:773">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_5824)..id(WO2007038943_w_5825)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_5823)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.210" comment="" name="amino acid residues" relevant="false" chebi-id="WO2007038943:565346" epochem-id="EPOCHEM:NEW:CLASS:773">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_5847)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_5846)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_5848)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.211" comment="" name="amino acid residues" relevant="false" chebi-id="WO2007038943:565346" epochem-id="EPOCHEM:NEW:CLASS:773">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15666)..id(WO2007038943_w_15668)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.212" comment="" name="amino acid residues" relevant="false" chebi-id="WO2007038943:565346" epochem-id="EPOCHEM:NEW:CLASS:773">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15704)..id(WO2007038943_w_15706)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.213" comment="" name="amino acid" relevant="false" chebi-id="CHEBI:33709" epochem-id="EPOCHEM:NEW:CLASS:972">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_165)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_164)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.214" comment="" name="amino acid" relevant="false" chebi-id="CHEBI:33709" epochem-id="EPOCHEM:NEW:CLASS:972">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_2719)..id(WO2007038943_w_2720)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.215" comment="" name="amino acid" relevant="false" chebi-id="CHEBI:33709" epochem-id="EPOCHEM:NEW:CLASS:972">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_2742)..id(WO2007038943_w_2743)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.216" comment="" name="amino acid" relevant="false" chebi-id="CHEBI:33709" epochem-id="EPOCHEM:NEW:CLASS:972">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_2814)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_2813)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.217" comment="" name="amino acid" relevant="false" chebi-id="CHEBI:33709" epochem-id="EPOCHEM:NEW:CLASS:972">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_2855)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_2854)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.218" comment="" name="amino acid" relevant="false" chebi-id="CHEBI:33709" epochem-id="EPOCHEM:NEW:CLASS:972">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_2930)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_2929)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.219" comment="" name="amino acid" relevant="false" chebi-id="CHEBI:33709" epochem-id="EPOCHEM:NEW:CLASS:972">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_3249)..id(WO2007038943_w_3250)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.220" comment="" name="amino acid" relevant="false" chebi-id="CHEBI:33709" epochem-id="EPOCHEM:NEW:CLASS:972">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_3418)..id(WO2007038943_w_3419)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.221" comment="" name="amino acid" relevant="false" chebi-id="CHEBI:33709" epochem-id="EPOCHEM:NEW:CLASS:972">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4055)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4054)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.222" comment="" name="amino acid" relevant="false" chebi-id="CHEBI:33709" epochem-id="EPOCHEM:NEW:CLASS:972">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4068)..id(WO2007038943_w_4069)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.223" comment="" name="amino acid" relevant="false" chebi-id="CHEBI:33709" epochem-id="EPOCHEM:NEW:CLASS:972">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4075)..id(WO2007038943_w_4076)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.224" comment="" name="amino acid" relevant="false" chebi-id="CHEBI:33709" epochem-id="EPOCHEM:NEW:CLASS:972">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4231)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4230)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.225" comment="" name="amino acid" relevant="false" chebi-id="CHEBI:33709" epochem-id="EPOCHEM:NEW:CLASS:972">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4337)..id(WO2007038943_w_4338)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.226" comment="" name="amino acid" relevant="false" chebi-id="CHEBI:33709" epochem-id="EPOCHEM:NEW:CLASS:972">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4352)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4351)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.227" comment="" name="amino acid" relevant="false" chebi-id="CHEBI:33709" epochem-id="EPOCHEM:NEW:CLASS:972">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4359)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4358)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.228" comment="" name="amino acid" relevant="false" chebi-id="CHEBI:33709" epochem-id="EPOCHEM:NEW:CLASS:972">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4381)..id(WO2007038943_w_4382)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.229" comment="" name="amino acid" relevant="false" chebi-id="CHEBI:33709" epochem-id="EPOCHEM:NEW:CLASS:972">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4388)..id(WO2007038943_w_4389)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.230" comment="" name="amino acid" relevant="false" chebi-id="CHEBI:33709" epochem-id="EPOCHEM:NEW:CLASS:972">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4995)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4994)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.231" comment="" name="amino acid" relevant="false" chebi-id="CHEBI:33709" epochem-id="EPOCHEM:NEW:CLASS:972">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_5081)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_5080)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.232" comment="" name="amino acid" relevant="false" chebi-id="CHEBI:33709" epochem-id="EPOCHEM:NEW:CLASS:972">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_5824)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_5823)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.233" comment="" name="amino acid" relevant="false" chebi-id="CHEBI:33709" epochem-id="EPOCHEM:NEW:CLASS:972">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_5847)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_5846)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.234" comment="" name="amino acid" relevant="false" chebi-id="CHEBI:33709" epochem-id="EPOCHEM:NEW:CLASS:972">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_11021)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_11020)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.235" comment="" name="amino acid" relevant="false" chebi-id="CHEBI:33709" epochem-id="EPOCHEM:NEW:CLASS:972">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_11072)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_11071)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.236" comment="" name="amino acid" relevant="false" chebi-id="CHEBI:33709" epochem-id="EPOCHEM:NEW:CLASS:972">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15033)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15032)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.237" comment="" name="amino acid" relevant="false" chebi-id="CHEBI:33709" epochem-id="EPOCHEM:NEW:CLASS:972">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15070)..id(WO2007038943_w_15071)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.238" comment="" name="amino acid" relevant="false" chebi-id="CHEBI:33709" epochem-id="EPOCHEM:NEW:CLASS:972">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15084)..id(WO2007038943_w_15085)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.239" comment="" name="amino acid" relevant="false" chebi-id="CHEBI:33709" epochem-id="EPOCHEM:NEW:CLASS:972">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15092)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15091)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.240" comment="" name="amino acid" relevant="false" chebi-id="CHEBI:33709" epochem-id="EPOCHEM:NEW:CLASS:972">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15386)..id(WO2007038943_w_15387)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.241" comment="" name="amino acid" relevant="false" chebi-id="CHEBI:33709" epochem-id="EPOCHEM:NEW:CLASS:972">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15400)..id(WO2007038943_w_15401)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.242" comment="" name="amino acid" relevant="false" chebi-id="CHEBI:33709" epochem-id="EPOCHEM:NEW:CLASS:972">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15407)..id(WO2007038943_w_15408)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.243" comment="" name="amino acid" relevant="false" chebi-id="CHEBI:33709" epochem-id="EPOCHEM:NEW:CLASS:972">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15436)..id(WO2007038943_w_15437)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.244" comment="" name="amino acid" relevant="false" chebi-id="CHEBI:33709" epochem-id="EPOCHEM:NEW:CLASS:972">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15454)..id(WO2007038943_w_15455)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.245" comment="" name="amino acid" relevant="false" chebi-id="CHEBI:33709" epochem-id="EPOCHEM:NEW:CLASS:972">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15461)..id(WO2007038943_w_15462)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.246" comment="" name="amino acid" relevant="false" chebi-id="CHEBI:33709" epochem-id="EPOCHEM:NEW:CLASS:972">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15666)..id(WO2007038943_w_15667)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.247" comment="" name="amino acid" relevant="false" chebi-id="CHEBI:33709" epochem-id="EPOCHEM:NEW:CLASS:972">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15704)..id(WO2007038943_w_15705)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.248" comment="" name="amino acids" relevant="false" chebi-id="CHEBI:33709" epochem-id="EPOCHEM:NEW:CLASS:986">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_2589)..id(WO2007038943_w_2590)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.249" comment="" name="amino acids" relevant="false" chebi-id="CHEBI:33709" epochem-id="EPOCHEM:NEW:CLASS:986">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_2798)..id(WO2007038943_w_2799)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.250" comment="" name="amino acids" relevant="false" chebi-id="CHEBI:33709" epochem-id="EPOCHEM:NEW:CLASS:986">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_2826)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_2825)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.251" comment="" name="amino acids" relevant="false" chebi-id="CHEBI:33709" epochem-id="EPOCHEM:NEW:CLASS:986">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_2829)..id(WO2007038943_w_2830)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.252" comment="" name="amino acids" relevant="false" chebi-id="CHEBI:33709" epochem-id="EPOCHEM:NEW:CLASS:986">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_2833)..id(WO2007038943_w_2834)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.253" comment="" name="amino acids" relevant="false" chebi-id="CHEBI:33709" epochem-id="EPOCHEM:NEW:CLASS:986">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_2838)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_2837)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.254" comment="" name="amino acids" relevant="false" chebi-id="CHEBI:33709" epochem-id="EPOCHEM:NEW:CLASS:986">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_2841)..id(WO2007038943_w_2842)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.255" comment="" name="amino acids" relevant="false" chebi-id="CHEBI:33709" epochem-id="EPOCHEM:NEW:CLASS:986">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_2845)..id(WO2007038943_w_2846)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.256" comment="" name="amino acids" relevant="false" chebi-id="CHEBI:33709" epochem-id="EPOCHEM:NEW:CLASS:986">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_2882)..id(WO2007038943_w_2883)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.257" comment="" name="amino acids" relevant="false" chebi-id="CHEBI:33709" epochem-id="EPOCHEM:NEW:CLASS:986">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4478)..id(WO2007038943_w_4479)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.258" comment="" name="amino acids" relevant="false" chebi-id="CHEBI:33709" epochem-id="EPOCHEM:NEW:CLASS:986">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_10899)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_10898)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.259" comment="" name="amino acids" relevant="false" chebi-id="CHEBI:33709" epochem-id="EPOCHEM:NEW:CLASS:986">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_10954)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_10953)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.260" comment="" name="amino acids" relevant="false" chebi-id="CHEBI:33709" epochem-id="EPOCHEM:NEW:CLASS:986">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_10964)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_10963)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.261" comment="" name="amino acids" relevant="false" chebi-id="CHEBI:33709" epochem-id="EPOCHEM:NEW:CLASS:986">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_10981)..id(WO2007038943_w_10982)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.262" comment="" name="amino acids" relevant="false" chebi-id="CHEBI:33709" epochem-id="EPOCHEM:NEW:CLASS:986">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_11515)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_11514)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.263" comment="" name="amino acids" relevant="false" chebi-id="CHEBI:33709" epochem-id="EPOCHEM:NEW:CLASS:986">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_11622)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_11621)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.266" comment="" name="antioxidants" relevant="false" chebi-id="CHEBI:22586" epochem-id="EPOCHEM:NEW:CLASS:26">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_9900)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.267" comment="" name="antioxidants" relevant="false" chebi-id="CHEBI:22586" epochem-id="EPOCHEM:NEW:CLASS:26">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_10792)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.268" comment="" name="surface active agents" relevant="false" chebi-id="WO2007038943:918722" epochem-id="EPOCHEM:NEW:CLASS:1014">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_10788)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_10786)..id(WO2007038943_w_10787)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.269" comment="" name="acetate" relevant="false" chebi-id="CHEBI:30089" epochem-id="EPOCHEM:NEW:CLASS:1015">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_10262)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.270" comment="" name="citrate" relevant="false" chebi-id="CHEBI:16947" epochem-id="EPOCHEM:NEW:CLASS:1016">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_10264)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.271" comment="" name="phosphate" relevant="false" chebi-id="CHEBI:35853" epochem-id="EPOCHEM:NEW:CLASS:1017">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_10266)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.272" comment="" name="phosphate" relevant="false" chebi-id="CHEBI:35853" epochem-id="EPOCHEM:NEW:CLASS:1017">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_12244)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.274" comment="" name="borate" relevant="false" chebi-id="CHEBI:22908" epochem-id="EPOCHEM:NEW:CLASS:1018">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_10268)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.275" comment="" name="carbonate" relevant="false" chebi-id="CHEBI:41609" epochem-id="EPOCHEM:NEW:CLASS:1019">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_10270)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.276" comment="" name="preservatives" relevant="false" chebi-id="WO2007038943:282871" epochem-id="EPOCHEM:NEW:CLASS:420">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_9898)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.277" comment="" name="preservatives" relevant="false" chebi-id="WO2007038943:282871" epochem-id="EPOCHEM:NEW:CLASS:420">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_10790)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.278" comment="" name="buffers" relevant="false" chebi-id="WO2007038943:180048" epochem-id="EPOCHEM:NEW:CLASS:876">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_10297)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.279" comment="" name="buffer" relevant="false" chebi-id="CHEBI:35225" epochem-id="EPOCHEM:NEW:CLASS:844">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_10211)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.280" comment="" name="buffer" relevant="false" chebi-id="CHEBI:35225" epochem-id="EPOCHEM:NEW:CLASS:844">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_10259)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.281" comment="" name="buffer" relevant="false" chebi-id="CHEBI:35225" epochem-id="EPOCHEM:NEW:CLASS:844">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_12245)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.282" comment="" name="buffer" relevant="false" chebi-id="CHEBI:35225" epochem-id="EPOCHEM:NEW:CLASS:844">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_12661)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.283" comment="" name="buffer" relevant="false" chebi-id="CHEBI:35225" epochem-id="EPOCHEM:NEW:CLASS:844">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_12737)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.284" comment="" name="buffer" relevant="false" chebi-id="CHEBI:35225" epochem-id="EPOCHEM:NEW:CLASS:844">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_12747)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.285" comment="" name="buffer" relevant="false" chebi-id="CHEBI:35225" epochem-id="EPOCHEM:NEW:CLASS:844">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_13452)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.286" comment="" name="buffer" relevant="false" chebi-id="CHEBI:35225" epochem-id="EPOCHEM:NEW:CLASS:844">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_13506)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.287" comment="" name="buffer" relevant="false" chebi-id="CHEBI:35225" epochem-id="EPOCHEM:NEW:CLASS:844">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_14095)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.288" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_28)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.289" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_601)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.290" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_741)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.291" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_785)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.292" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_1255)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.293" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_1270)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.294" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_1781)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.295" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_2202)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.296" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_2362)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.297" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_2380)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.298" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_2426)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.299" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_2524)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.300" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_3262)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.301" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_3268)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.302" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_3278)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.303" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4667)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.304" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4846)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.305" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_5616)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.306" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_5653)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.307" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_5682)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.308" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_5687)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.309" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_5817)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.310" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_5852)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.311" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_5897)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.312" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_5944)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.313" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_5953)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.314" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_6016)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.315" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_7779)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.316" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_7935)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.317" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_7983)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.318" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_7992)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.319" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_8322)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.320" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_10868)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.321" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_10974)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.322" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_10978)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.323" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_11251)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.324" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_11271)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.325" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_11288)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.326" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_11311)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.327" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_11368)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.328" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_11496)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.329" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_11608)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.330" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_11762)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.331" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_11792)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.332" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_11802)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.333" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_11814)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.334" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_11973)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.335" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_12002)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.336" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_12019)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.337" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_12195)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.338" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_12262)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.339" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_12282)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.340" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_12355)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.341" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_12386)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.342" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_13528)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.343" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_14121)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.344" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_14267)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.345" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_14285)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.346" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_14310)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.347" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_14327)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.348" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_14348)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.349" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_14396)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.350" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_14414)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.351" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_14453)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.352" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_14474)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.353" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_14509)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.354" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_14538)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.355" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_14543)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.356" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_14581)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.357" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_14897)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.358" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_14939)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.359" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_14944)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.360" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_14979)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.361" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_14984)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.362" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15013)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.363" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15018)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.364" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15051)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.365" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15056)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.366" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15097)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.367" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15120)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.368" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15197)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.369" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15294)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.370" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15299)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.371" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15323)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.372" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15336)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.373" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15364)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.374" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15369)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.375" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15414)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.376" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15468)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.377" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15513)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.378" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15518)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.379" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15549)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.380" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15571)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.381" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15575)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.382" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15585)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.383" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15613)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.384" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15623)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.385" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15648)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.386" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15661)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.387" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15767)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.388" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15780)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.389" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15793)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.390" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15827)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.391" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15882)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.392" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15963)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.393" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_15999)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.394" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_16035)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.395" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_16152)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.396" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_16188)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.397" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_16333)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.398" comment="" name="peptide" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:8">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_16360)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.399" comment="" name="C-terminally amidated peptides" relevant="false" chebi-id="WO2007038943:36899" epochem-id="EPOCHEM:NEW:CLASS:1030">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_171)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_169)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_167)..id(WO2007038943_w_168)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_170)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.400" comment="" name="peptides" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:31">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_104)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.401" comment="" name="peptides" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:31">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_171)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.402" comment="" name="peptides" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:31">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_208)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.403" comment="" name="peptides" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:31">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_508)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.404" comment="" name="peptides" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:31">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_804)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.405" comment="" name="peptides" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:31">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_817)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.406" comment="" name="peptides" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:31">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_1542)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.407" comment="" name="peptides" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:31">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_1580)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.408" comment="" name="peptides" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:31">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_1610)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.409" comment="" name="peptides" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:31">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_1663)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.410" comment="" name="peptides" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:31">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_1706)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.411" comment="" name="peptides" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:31">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_1776)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.412" comment="" name="peptides" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:31">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_2166)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.413" comment="" name="peptides" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:31">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_2540)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.414" comment="" name="peptides" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:31">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_2905)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.415" comment="" name="peptides" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:31">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_2940)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.416" comment="" name="peptides" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:31">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4773)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.417" comment="" name="peptides" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:31">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_5628)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.418" comment="" name="peptides" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:31">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_5772)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.419" comment="" name="peptides" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:31">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_7666)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.420" comment="" name="peptides" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:31">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_7777)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.421" comment="" name="peptides" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:31">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_7807)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.422" comment="" name="peptides" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:31">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_8214)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.423" comment="" name="peptides" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:31">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_8296)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.424" comment="" name="peptides" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:31">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_8426)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.425" comment="" name="peptides" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:31">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_8532)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.426" comment="" name="peptides" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:31">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_10157)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.427" comment="" name="peptides" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:31">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_10847)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.428" comment="" name="peptides" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:31">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_11126)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.429" comment="" name="peptides" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:31">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_11177)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.430" comment="" name="peptides" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:31">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_11672)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.431" comment="" name="peptides" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:31">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_12492)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.432" comment="" name="peptides" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:31">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_13256)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.433" comment="" name="peptides" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:31">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_13938)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.434" comment="" name="peptides" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:31">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_16393)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.435" comment="" name="peptides" relevant="false" chebi-id="CHEBI:16670" epochem-id="EPOCHEM:NEW:CLASS:31">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_16419)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.436" comment="" name="sulfoxide" relevant="false" chebi-id="CHEBI:35813" epochem-id="EPOCHEM:NEW:CLASS:1031">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_2501)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.437" comment="" name="sulfoxide" relevant="false" chebi-id="CHEBI:35813" epochem-id="EPOCHEM:NEW:CLASS:1031">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_2533)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.438" comment="" name="sulfoxide" relevant="false" chebi-id="CHEBI:35813" epochem-id="EPOCHEM:NEW:CLASS:1031">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_12332)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.439" comment="" name="sulfoxide" relevant="false" chebi-id="CHEBI:35813" epochem-id="EPOCHEM:NEW:CLASS:1031">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_14322)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.440" comment="" name="sulfone" relevant="false" chebi-id="CHEBI:35850" epochem-id="EPOCHEM:NEW:CLASS:1032">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_2508)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.441" comment="" name="polyethyleneglycol" relevant="false" chebi-id="WO2007038943:275998" epochem-id="EPOCHEM:NEW:CLASS:1033">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4964)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.442" comment="" name="polyalkyleneoxide" relevant="false" chebi-id="WO2007038943:426657" epochem-id="EPOCHEM:NEW:CLASS:1034">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4911)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.443" comment="" name="polyalkyleneoxide" relevant="false" chebi-id="WO2007038943:426657" epochem-id="EPOCHEM:NEW:CLASS:1034">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_4951)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.444" comment="" name="oxidized carbohydrate moieties" relevant="false" chebi-id="WO2007038943:808263" epochem-id="EPOCHEM:NEW:CLASS:1035">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_5167)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_5165)..id(WO2007038943_w_5166)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.445" comment="" name="neuropeptide" relevant="false" chebi-id="WO2007038943:826651" epochem-id="EPOCHEM:NEW:CLASS:1036">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_220)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.446" comment="" name="neuropeptide" relevant="false" chebi-id="WO2007038943:826651" epochem-id="EPOCHEM:NEW:CLASS:1036">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_7605)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.447" comment="" name="viscosity adjusting agents" relevant="false" chebi-id="WO2007038943:519913" epochem-id="EPOCHEM:NEW:CLASS:1037">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_9887)..id(WO2007038943_w_9889)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.448" comment="" name="suspending agents" relevant="false" chebi-id="WO2007038943:819546" epochem-id="EPOCHEM:NEW:CLASS:421">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_9892)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_9891)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.449" comment="" name="suspending agents" relevant="false" chebi-id="WO2007038943:819546" epochem-id="EPOCHEM:NEW:CLASS:421">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_10766)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_10765)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.450" comment="" name="emulsifiers" relevant="false" chebi-id="WO2007038943:412500" epochem-id="EPOCHEM:NEW:CLASS:1038">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_9894)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.451" comment="" name="stabilizers" relevant="false" chebi-id="WO2007038943:83897" epochem-id="EPOCHEM:NEW:CLASS:1039">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_9896)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.452" comment="" name="stabilizers" relevant="false" chebi-id="WO2007038943:83897" epochem-id="EPOCHEM:NEW:CLASS:1039">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_10768)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.453" comment="" name="polyethylene glycols" relevant="false" chebi-id="CHEBI:46793" epochem-id="EPOCHEM:NEW:CLASS:129">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_9932)..id(WO2007038943_w_9933)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.454" comment="" name="glycofurol" relevant="false" chebi-id="WO2007038943:711450" epochem-id="EPOCHEM:NEW:CLASS:1040">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_9935)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.455" comment="" name="lipids" relevant="false" chebi-id="CHEBI:18059" epochem-id="EPOCHEM:NEW:CLASS:322">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_10178)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.456" comment="" name="lipids" relevant="false" chebi-id="CHEBI:18059" epochem-id="EPOCHEM:NEW:CLASS:322">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_10388)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.457" comment="" name="fillers" relevant="false" chebi-id="WO2007038943:162697" epochem-id="EPOCHEM:NEW:CLASS:224">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_10750)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.458" comment="" name="binders" relevant="false" chebi-id="WO2007038943:355338" epochem-id="EPOCHEM:NEW:CLASS:1041">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_10752)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.459" comment="" name="disintegrants" relevant="false" chebi-id="WO2007038943:74673" epochem-id="EPOCHEM:NEW:CLASS:1042">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_10754)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.460" comment="" name="diluents" relevant="false" chebi-id="WO2007038943:716413" epochem-id="EPOCHEM:NEW:CLASS:1043">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_10756)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.461" comment="" name="glidants" relevant="false" chebi-id="WO2007038943:77301" epochem-id="EPOCHEM:NEW:CLASS:1044">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_10758)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.462" comment="" name="solvents" relevant="false" chebi-id="CHEBI:46787" epochem-id="EPOCHEM:NEW:CLASS:769">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_9811)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.463" comment="" name="solvents" relevant="false" chebi-id="CHEBI:46787" epochem-id="EPOCHEM:NEW:CLASS:769">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_10760)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.464" comment="" name="solvents" relevant="false" chebi-id="CHEBI:46787" epochem-id="EPOCHEM:NEW:CLASS:769">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_11577)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.465" comment="" name="solvents" relevant="false" chebi-id="CHEBI:46787" epochem-id="EPOCHEM:NEW:CLASS:769">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_11891)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.466" comment="" name="emulsifying agents" relevant="false" chebi-id="WO2007038943:3789" epochem-id="EPOCHEM:NEW:CLASS:422">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_10763)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_10762)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.467" comment="" name="enhancers" relevant="false" chebi-id="WO2007038943:799984" epochem-id="EPOCHEM:NEW:CLASS:1045">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_9943)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.468" comment="" name="enhancers" relevant="false" chebi-id="WO2007038943:799984" epochem-id="EPOCHEM:NEW:CLASS:1045">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_10770)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.469" comment="" name="flavours" relevant="false" chebi-id="WO2007038943:935542" epochem-id="EPOCHEM:NEW:CLASS:1046">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_10772)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.470" comment="" name="colors" relevant="false" chebi-id="WO2007038943:559604" epochem-id="EPOCHEM:NEW:CLASS:1047">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_10774)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.471" comment="" name="pH adjusting agents" relevant="false" chebi-id="WO2007038943:171996" epochem-id="EPOCHEM:NEW:CLASS:1048">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_9862)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_9864)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_9863)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.472" comment="" name="pH adjusting agents" relevant="false" chebi-id="WO2007038943:171996" epochem-id="EPOCHEM:NEW:CLASS:1048">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_10778)"/>
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_10776)..id(WO2007038943_w_10777)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.473" comment="" name="retarding agents" relevant="false" chebi-id="WO2007038943:37388" epochem-id="EPOCHEM:NEW:CLASS:1049">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_10780)..id(WO2007038943_w_10781)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.474" comment="" name="wetting agents" relevant="false" chebi-id="WO2007038943:275179" epochem-id="EPOCHEM:NEW:CLASS:127">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_10783)..id(WO2007038943_w_10784)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.475" comment="" name="inositol phosphate" relevant="false" chebi-id="WO2007038943:468633" epochem-id="EPOCHEM:NEW:CLASS:1050">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_13354)..id(WO2007038943_w_13355)"/>
+   </class-name>
+   <class-name nite:id="WO2007038943.HC.class-names.476" comment="" name="Phosphatidylinositol" relevant="false" chebi-id="WO2007038943:297296" epochem-id="EPOCHEM:NEW:CLASS:1051">
+      <nite:child href="WO2007038943.words.xml#id(WO2007038943_w_13361)"/>
+   </class-name>
+</nite:root>

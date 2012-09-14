@@ -1,0 +1,21 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="734"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Design Goals for ACL2 <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Matt Kaufmann and J Strother Moore <lb/></docAuthor></byline>
+		<idno>Technical Report 101</idno>
+		<date>August, 1994 <lb/></date>
+		<byline><affiliation>Computational Logic, Inc. <lb/></affiliation></byline>
+		<address>1717 West Sixth Street, Suite 290 <lb/>Austin, Texas 78703-4776 <lb/></address>
+		<note type="phone">TEL: +1 512 322 9951 <lb/></note>
+		<email>EMAIL: kaufmann@cli.com and </email> <email>moore@cli.com <lb/></email>
+		<note type="grant">This work was supported in part at Computational Logic, Inc., by the Defense <lb/>Advanced Research Projects Agency, ARPA Order 7406. The views and conclusions contained in this document are those of the author(s) and should not <lb/>be interpreted as representing the official policies, either expressed or implied, <lb/>of Computational Logic, Inc., the Defense Advanced Research Projects Agency <lb/>or the U.S. Government. <lb/></note>
+		<pb/>
+		</front>
+</text>
+</tei>

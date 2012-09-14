@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+<listBibl>
+
+		<bibl><author>K. C. Je, In-Chul Shin, J. Kim, and K. Kyhm</author>, <title level="j">Appl. Phys. Lett.</title> <biblScope type="vol">97</biblScope>, <biblScope type="pp">103110</biblScope> (<date>2010</date>).</bibl>
+
+		<bibl><author>K. Kyhm and J. Kim</author>, <idno>Korea Patent 10-0979953</idno> (<note>registered</note>).</bibl>
+
+		<bibl><author>S. Kim, F. Sun, H. Chen, K. Koh, K. Kyhm, and J. Lee</author>, <title level="j">J. Nanoscience and Nanotechnology</title>. <biblScope type="vol">9</biblScope>, <biblScope type="pp">7061</biblScope> (<date>2009</date>).</bibl>
+
+		<bibl><author>J. B. Lee, P. Hernandez, A. Govorov, and N. Kotov</author>, <title level="j">Nature Materials,</title> <biblScope type="vol">6</biblScope>, <biblScope type="pp">291</biblScope> (<date>2007</date>).</bibl>
+
+</listBibl>
+</tei>

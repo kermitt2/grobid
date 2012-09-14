@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../jsp/xmlverbatimwrapper.xsl"?> 
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							
+							<marker>1</marker> 
+							<affiliation>
+								<orgName type="department">Department of Physics</orgName>,
+								<address>
+								<addrLine>Post Office Box 35 (YFL)</addrLine>,
+								<postCode>FI-40014</postCode>
+								<orgName type="institution">University of <lb/>Jyväskylä</orgName>
+								<country key="FI">Finland<lb/></country>
+								</address>			
+							</affiliation>	
+							
+							<marker>2</marker> 
+							<affiliation>
+								<orgName type="department">Department of Physics and Astronomy</orgName>,
+								<orgName type="institution">University of Tennessee</orgName>,
+								<address>
+								<settlement>Knoxville</settlement>,<lb/>
+								<region type="state" n="TN">Tennessee</region>
+								<postCode>37996</postCode>,
+								<country key="US">USA<lb/></country>
+								</address>				
+							</affiliation>
+							
+							<marker>3</marker> 
+							<affiliation>
+								<orgName type="department">Physics Division</orgName>,
+								<orgName type="institution">Oak Ridge National Laboratory</orgName>,
+								<address>
+									<settlement>Oak Ridge</settlement>,
+									<region type="state" n="TN">Tennessee</region>
+									<postCode>37831</postCode>,<lb/>
+									<country key="US">USA<lb/></country>
+								</address>
+							</affiliation>
+							
+							<marker>4</marker> 
+							<affiliation>
+									<orgName type="department">Institute of Theoretical Physics</orgName>,
+									<orgName type="institution">University of Warsaw</orgName>,
+								<address>
+								<addrLine>ul. Hoża 69</addrLine>,
+								<postCode>PL-00-681<lb/></postCode>
+								<settlement>Warsaw</settlement>,
+								<country key="PL">Poland<lb/></country>
+								</address>		
+							</affiliation>
+							
+							<marker>5</marker> 
+							<affiliation>
+									<orgName type="department">Institute of Nuclear Physics</orgName>,
+									<orgName type="institution">Polish Academy of Sciences</orgName>,
+								<address>
+								<addrLine>Radzikowskiego 152</addrLine>,<lb/>
+								<postCode>PL-31342</postCode>
+								<settlement>Kraków</settlement>,
+								<country key="PL">Poland<lb/></country>
+								</address>				
+							</affiliation>
+					
+							<marker>6</marker> 
+							<affiliation>
+								<orgName type="laboratory">Grand Accélérateur National d'Ions Lourds (GANIL)</orgName>,
+								<orgName type="institution" key="instit1" >CEA/DSM</orgName> -
+								<orgName type="institution" key="instit2" >CNRS/IN2P3</orgName>,<lb/>
+								<address>
+								<addrLine>BP 55027</addrLine>,
+								<postCode>F-14076</postCode>
+								<settlement>Caen Cedex</settlement>,
+								<country>France<lb/></country>
+								</address>					
+							</affiliation>
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</TEI>

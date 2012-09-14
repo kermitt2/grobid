@@ -1,0 +1,23 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="unknown"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Signal and Image Processing in Java <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Jonathan Campbell and Fionn Murtagh <lb/></docAuthor></byline>
+		<byline><affiliation>University of Ulster, Magee College,</affiliation></byline>
+		<address>Derry, BT48 7JL <lb/></address>
+		<email>email: jg.campbell@ulst.ac.uk. <lb/></email>
+		<note type="other">Revisions available from <lb/></note>
+		<ptr type="web">http://www.infm.ulst.ac.uk/research/preprints.html <lb/></ptr>
+		<note type="other">Original paper presented at </note><note type="reference">IMVIP &apos;97 <lb/>University of Ulster, Magee College, Derry <lb/>10-13 September 1997. <lb/></note>
+		<date>9 September 1997 <lb/></date>
+		<note type="other">Revised 20 September 1997 <lb/>Revised 6 November 1997 <lb/></note>
+		<div type="abstract">Abstract <lb/>We describe the implementation of a multi-purpose data analysis laboratory, DataLab-J, in <lb/>the programming language Java. We briefly trace the stages of the evolution of DataLab from a <lb/>FORTRAN-IV system in 1973 to the current Java development. Description of this evolution allows <lb/>us to discuss some key design and functionality decisions and issues that arose throughout the years; <lb/>many of these issues remain topical, so, in addition to an evaluation of Java, we identify and discuss <lb/>what are for us the major issues in the design of such software. Moreover, we address questions <lb/>raised by the need to convert legacy systems, e.g. those programmed in C and various versions of <lb/>FORTRAN. The experience of redesign and implementation in Java is described, together with a <lb/>brief evaluation of the suitability of Java for &apos;number-crunching&apos;. Overall conclusions are drawn, <lb/>regarding design of such software, lessons learned, traps to avoid, and on Java itself. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

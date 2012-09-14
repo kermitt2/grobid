@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Linda</forename>
+								<middlename>B</middlename>
+								<surname>Piller</surname>
+								<marker>* 1</marker>,
+							</persName>
+							<persName>
+								<forename>Barry</forename>
+								<middlename>R</middlename>
+								<surname>Davis</surname>
+								<marker>1</marker>,
+							</persName>
+							<persName>
+								<forename>Jeffrey</forename>
+								<middlename>A</middlename>
+								<surname>Cutler</surname>
+								<marker>2</marker>,
+							</persName>
+							<persName>
+								<forename>William</forename>
+								<middlename>C</middlename>
+								<surname>Cushman</surname>
+								<marker>3</marker>,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Jackson</forename>
+								<middlename>T</middlename>
+							   <surname>Wright Jr</surname>
+								<marker>4</marker>,
+							</persName>
+							<persName>
+								<forename>Jeff</forename>
+								<middlename>D</middlename>
+								<surname>Williamson</surname>
+								<marker>5</marker>,
+							</persName>
+							<persName>
+								<forename>Frans</forename>
+								<middlename>HH</middlename>
+								<surname>Leenen</surname>
+								<marker>6</marker>,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Paula</forename>
+								<middlename>T</middlename>
+								<surname>Einhorn</surname>
+								<marker>2</marker>,
+							</persName>
+							<persName>
+								<forename>Otelio</forename>
+								<middlename>S</middlename>
+								<surname>Randall</surname>
+								<marker>7</marker>,
+							</persName>
+							<persName>
+								<forename>John</forename>
+								<middlename>S</middlename>
+								<surname>Golden</surname>
+								<marker>8</marker> and
+							</persName>
+							<persName>
+								<forename>L</forename>
+								<middlename>Julian</middlename>
+								<surname>Haywood</surname>
+								<marker>9</marker>;
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,26 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="651"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<note type="reference">Reprinted from International Journal in Computer Simulation, Vol. 1, pp. 31-58 (1991) <lb/></note>
+		<docTitle>
+			<titlePart type="main">The Efficient Simulation of Parallel Computer Systems <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>R. G. Covington <lb/></docAuthor></byline>
+		<byline><affiliation>Jet Propulsion Laboratory,</affiliation></byline>
+		<address>125-233 <lb/>4800 Oak Grove Drive <lb/>Pasadena, CA 91109 <lb/></address>
+		<byline><docAuthor>S. Dwarkadas, J. R. Jump, and J. B. Sinclair <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Electrical and Computer Engineering <lb/>Rice University <lb/></affiliation></byline>
+		<address>Houston, Texas 77251 <lb/></address>
+		<byline><docAuthor>S. Madala <lb/></docAuthor></byline>
+		<byline><affiliation>Coherent Systems, Inc. <lb/></affiliation></byline>
+		<address>1000 Bay Area Blvd., Suite 206 <lb/>Houston, TX 77058 <lb/></address>
+		<div type="abstract">Abstract: An ongoing research project involves the design and evaluation of a software system <lb/>for simulating parallel computers. A major goal in the development of this system was to avoid the <lb/>high overhead associated with the conventional instruction-level simulation of sequential <lb/>computers, but to retain the accuracy of that technique derived from its use of the execution of real <lb/>programs. The resulting system is program-driven, but the overhead is significantly reduced by <lb/>profiling the program to get timing estimates for its basic blocks, which are then used at run time to <lb/>generate process execution times dynamically while avoiding a detailed emulation of each <lb/>instruction&apos;s execution. A number of experiments dealing with message-passing computer <lb/>systems have been performed in order to determine the level of accuracy that can be expected from <lb/>its performance predictions and to measure its overhead. <lb/></div>
+		<keywords>Index Terms - Architecture models, efficiency, parallel computers, parallel programs, <lb/>performance, simulation, testbed, validation. <lb/></keywords>
+		<note type="grant">This research was supported by Texas Instruments Grant No. TI720845RJ, NSF/ONR Grant No. N00014-87-K <lb/>0324, SDSU/SDIO Contract No. N66001-85-D-0203, NASA Grant No. NAG 0-208, and a Shell Doctoral <lb/>Fellowship. <lb/></note>
+		<pb/>
+		</front>
+</text>
+</tei>

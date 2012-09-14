@@ -1,0 +1,891 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<nite:root nite:id="WO2007031904.HC.chemical-names" xmlns:nite="http://nite.sourceforge.net/">
+   <chem-name nite:id="WO2007031904.HC.chemical-names.1" comment="2, 3, 6, 8A-Tetramethyl-3, 4, 4 A, 5, 8, 8A-hexahydro-1(2H)-naphthalenone" name="2, 3, 6, 8A-Tetramethyl-3, 4, 4 A, 5, 8, 8A-hexahydro-l (2H)-naphthalenone" relevant="false" chebi-id="WO2007031904:676404" epochem-id="EPOCHEM:NEW:COMPOUND:1737">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4043)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4047)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4059)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4048)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4064)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4037)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4054)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4058)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4055)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4044)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4065)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4060)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4041)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4053)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4050)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4057)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4042)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4040)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4056)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4035)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4063)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4061)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4045)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4062)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4036)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4046)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4049)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4051)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4038)..id(WO2007031904_w_4039)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4052)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.2" comment="2,5,6-Trimethyl-2-cyclohexen-1-one" name="2,5,6-Trimethyl-2-cyclohexen-l-one" relevant="false" chebi-id="WO2007031904:374183" epochem-id="EPOCHEM:NEW:COMPOUND:1738">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4090)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4081)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4088)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4076)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4079)..id(WO2007031904_w_4080)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4086)..id(WO2007031904_w_4087)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4085)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4078)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4077)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4083)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4082)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4084)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4089)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.3" comment="" name="Aluminium trichloride" relevant="false" chebi-id="CHEBI:30114" epochem-id="EPOCHEM:NEW:COMPOUND:1739">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4103)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4102)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.4" comment="" name="Isoprene" relevant="false" chebi-id="CHEBI:35194" epochem-id="EPOCHEM:NEW:COMPOUND:1740">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4115)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.5" comment="" name="Toluene" relevant="false" chebi-id="CHEBI:17578" epochem-id="EPOCHEM:NEW:COMPOUND:1741">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3926)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.6" comment="" name="Toluene" relevant="false" chebi-id="CHEBI:17578" epochem-id="EPOCHEM:NEW:COMPOUND:1741">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4125)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.7" comment="perhydro-2,3,8a-trimethyl-1-naphthalenone" name="perhydro-2,3,8a-trimethyl-l-naphthalenone" relevant="true" chebi-id="WO2007031904:233351" epochem-id="EPOCHEM:NEW:COMPOUND:1742">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_604)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_607)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_599)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_601)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_597)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_602)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_605)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_598)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_595)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_600)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_603)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_606)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_596)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.8" comment="perhydro-2,3,8a-trimethyl-1-naphthalenone" name="perhydro-2,3,8a-trimethyl-l-naphthalenone" relevant="true" chebi-id="WO2007031904:233351" epochem-id="EPOCHEM:NEW:COMPOUND:1742">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3642)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3646)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3641)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3638)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3647)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3644)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3639)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3648)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3643)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3640)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3645)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3649)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3637)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.9" comment="perhydro-2,3,8a-trimethyl-1-naphthalenone" name="perhydro-2,3,8a-trimethyl-l-naphthalenone" relevant="true" chebi-id="WO2007031904:233351" epochem-id="EPOCHEM:NEW:COMPOUND:1742">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5323)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5327)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5317)..id(WO2007031904_w_5318)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5320)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5329)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5325)..id(WO2007031904_w_5326)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5321)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5319)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5324)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5328)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5322)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.10" comment="perhydro-2,3,8a-trimethyl-1-naphthalenone" name="perhydro-2,3,8a-trimethyl-l-naphthalenone" relevant="true" chebi-id="WO2007031904:233351" epochem-id="EPOCHEM:NEW:COMPOUND:1742">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5604)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5599)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5598)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5605)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5607)..id(WO2007031904_w_5609)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5601)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5606)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5600)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5603)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5610)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5602)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.11" comment="2,3,8a-trimethyl-3,4,4a,5,8,8a-hexahydro-1(2H)-naphthalenone" name="2,3,8a-trimethyl-3,4,4a,5,8,8a-hexahydro-l(2H)-naphthalenone" relevant="false" chebi-id="WO2007031904:709133" epochem-id="EPOCHEM:NEW:COMPOUND:1743">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_748)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_737)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_731)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_736)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_747)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_746)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_733)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_752)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_751)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_726)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_741)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_739)..id(WO2007031904_w_740)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_745)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_729)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_735)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_734)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_732)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_730)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_727)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_738)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_744)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_750)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_749)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_728)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_743)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_725)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_742)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.12" comment="2,3,8a-trimethyl-3,4,4a,5,8,8a-hexahydro-1(2H)-naphthalenone" name="2,3,8a-trimethyl-3,4,4a,5,8,8a-hexahydro-l(2H)-naphthalenone" relevant="false" chebi-id="WO2007031904:709133" epochem-id="EPOCHEM:NEW:COMPOUND:1743">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3179)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3174)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3168)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3176)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3178)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3169)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3173)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3193)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3175)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3190)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3185)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3171)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3181)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3191)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3172)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3166)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3182)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3187)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3180)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3170)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3189)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3184)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3188)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3177)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3167)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3186)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3192)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3183)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.13" comment="2,3,8a-trimethyl-3,4,4a,5,8,8a-hexahydro-1(2H)-naphthalenone" name="2,3,8a-trimethyl-3,4,4a,5,8,8a-hexahydro-l(2H)-naphthalenone" relevant="false" chebi-id="WO2007031904:709133" epochem-id="EPOCHEM:NEW:COMPOUND:1743">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3658)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3675)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3654)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3667)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3670)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3653)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3680)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3668)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3662)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3679)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3676)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3669)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3663)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3666)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3656)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3672)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3665)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3677)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3657)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3678)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3660)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3659)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3655)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3664)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3674)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3673)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3661)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3671)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.14" comment="" name="ethyl acetate" relevant="false" chebi-id="CHEBI:27750" epochem-id="EPOCHEM:COMPOUND:4306">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3379)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3378)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.15" comment="" name="ethyl acetate" relevant="false" chebi-id="CHEBI:27750" epochem-id="EPOCHEM:COMPOUND:4306">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3700)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3699)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.16" comment="" name="ethyl acetate" relevant="false" chebi-id="CHEBI:27750" epochem-id="EPOCHEM:COMPOUND:4306">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4662)..id(WO2007031904_w_4663)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.17" comment="2, 2, 3, 8A-Tetramethyl-3, 4, 4 A, 5, 8, 8A-hexahydro-1(2H)-naphthalenone" name="2, 2, 3, 8A-Tetramethyl-3, 4, 4 A, 5, 8, 8A-hexahydro-l (2H)-naphthalenone" relevant="false" chebi-id="WO2007031904:894834" epochem-id="EPOCHEM:NEW:COMPOUND:1744">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4269)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4246)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4260)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4249)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4263)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4250)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4244)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4256)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4245)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4265)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4252)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4254)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4272)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4261)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4248)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4273)..id(WO2007031904_w_4274)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4251)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4257)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4268)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4271)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4247)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4267)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4266)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4253)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4262)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4264)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4259)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4255)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4258)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4270)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.18" comment="2,5,6, 6-Tetramethyl-2-cyclohexen-1-one" name="2,5,6, 6-Tetramethyl-2-cyclohexen-l-one" relevant="false" chebi-id="WO2007031904:192105" epochem-id="EPOCHEM:NEW:COMPOUND:1745">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4286)..id(WO2007031904_w_4287)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4298)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4295)..id(WO2007031904_w_4296)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4289)..id(WO2007031904_w_4290)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4288)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4294)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4302)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4291)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4300)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4293)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4299)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4292)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4297)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4301)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.19" comment="" name="Ethyl aluminium dichloride" relevant="false" chebi-id="WO2007031904:619000" epochem-id="EPOCHEM:NEW:COMPOUND:1746">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4319)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4318)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4317)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.20" comment="" name="Butadiene" relevant="false" chebi-id="CHEBI:39479" epochem-id="EPOCHEM:NEW:COMPOUND:810">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3291)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.21" comment="" name="Butadiene" relevant="false" chebi-id="CHEBI:39479" epochem-id="EPOCHEM:NEW:COMPOUND:810">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4338)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.22" comment="" name="Dichloromethane" relevant="false" chebi-id="CHEBI:15767" epochem-id="EPOCHEM:NEW:COMPOUND:1747">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4351)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.48" comment="perhydro-2,2,8a-trimethyl-1-naphthalenone" name="perhydro-2,2,8a-trimethyl-l-naphthalenone" relevant="false" chebi-id="WO2007031904:909457" epochem-id="EPOCHEM:NEW:COMPOUND:1749">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5408)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5415)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5413)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5411)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5409)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5417)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5412)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5410)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5407)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5416)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5419)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5414)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5418)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.49" comment="" name="( 1 S, 1 'R)-2- [1 -(3',3'-dimethyl- 1 '-cyclohexyl)ethoxy] -2-methylpropyl propanoate" relevant="false" chebi-id="WO2007031904:420631" epochem-id="EPOCHEM:NEW:COMPOUND:1750">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5170)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5155)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5165)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5162)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5168)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5185)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5167)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5158)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5169)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5176)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5182)..id(WO2007031904_w_5183)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5186)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5172)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5177)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5189)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5180)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5156)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5160)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5184)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5174)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5179)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5187)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5157)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5178)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5181)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5166)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5171)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5175)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5188)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5164)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5161)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5173)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5159)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5163)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.50" comment="" name="3-(4-Hydroxy-4-methylpentyl)-3-cyclohexene-l-carbaldehyde" relevant="false" chebi-id="WO2007031904:104747" epochem-id="EPOCHEM:NEW:COMPOUND:1751">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5203)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5212)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5211)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5214)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5221)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5218)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5210)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5209)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5213)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5205)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5207)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5215)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5208)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5217)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5219)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5206)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5204)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5216)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5220)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.51" comment="2(4)-(5,5,6-Trimethylbicyclo[2.2.1]hept-2-yl)-1-cyclohexanol" name="2(4)-(5,5,6-Trimethylbicyclo[2.2.1]hept-2-yl)-l-cyclohexanol" relevant="false" chebi-id="WO2007031904:474687" epochem-id="EPOCHEM:NEW:COMPOUND:1752">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5249)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5236)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5247)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5239)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5242)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5259)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5265)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5262)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5257)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5244)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5264)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5256)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5251)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5261)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5253)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5243)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5252)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5238)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5254)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5260)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5255)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5263)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5241)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5245)..id(WO2007031904_w_5246)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5248)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5237)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5250)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5240)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5258)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.52" comment="" name="Propyl (S)-2-(l,l-dimethylpropoxy)propanoate" relevant="false" chebi-id="WO2007031904:802651" epochem-id="EPOCHEM:NEW:COMPOUND:1753">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5286)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5293)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5295)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5292)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5296)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5287)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5294)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5283)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5289)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5291)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5288)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5285)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5290)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5284)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5282)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.53" comment="" name="dipropyleneglycol" relevant="false" chebi-id="WO2007031904:485768" epochem-id="EPOCHEM:NEW:COMPOUND:1754">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1556)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.54" comment="" name="dipropyleneglycol" relevant="false" chebi-id="WO2007031904:485768" epochem-id="EPOCHEM:NEW:COMPOUND:1754">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5121)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.55" comment="" name="Cis-3-Hexenol salicylate" relevant="false" chebi-id="WO2007031904:72959" epochem-id="EPOCHEM:NEW:COMPOUND:1755">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5078)..id(WO2007031904_w_5079)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5082)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5080)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5083)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5081)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.56" comment="" name="2-Ethoxy-2,6,6-trimethyl-9-methylene-bicyclo[3.3.1]nonane" relevant="false" chebi-id="WO2007031904:152478" epochem-id="EPOCHEM:NEW:COMPOUND:1756">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5046)..id(WO2007031904_w_5047)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5067)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5061)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5051)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5066)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5053)..id(WO2007031904_w_5054)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5049)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5059)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5055)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5065)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5052)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5045)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5056)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5048)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5060)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5050)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5057)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5063)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5068)..id(WO2007031904_w_5069)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5058)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5062)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5064)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.57" comment="" name="Citral" relevant="false" chebi-id="CHEBI:23316" epochem-id="EPOCHEM:NEW:COMPOUND:1757">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4905)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.58" comment="2-Methyl-4-(2,2,3-trimethyl-3-cyclopenten-l-yl)-4-penten-1-ol" name="2-Methyl-4-(2,2,3-trimethyl-3-cyclopenten-l-yl)-4-penten-l-ol" relevant="false" chebi-id="WO2007031904:898156" epochem-id="EPOCHEM:NEW:COMPOUND:1758">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4920)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4924)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4919)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4941)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4930)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4925)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4933)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4937)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4922)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4932)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4931)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4928)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4921)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4929)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4945)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4918)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4944)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4942)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4936)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4917)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4926)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4940)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4943)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4927)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4923)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4939)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4935)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4947)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4934)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4946)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4938)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.59" comment=" perhydro-2,2, 3 alpha,8a alpha-tetramethyl-4a alpha-H-1 -naphthalenone" name="- perky dro-2,2, 3 a,8aa-tetramethyl-4aa-H-l -naphthalenone" relevant="false" chebi-id="WO2007031904:68120" epochem-id="EPOCHEM:NEW:COMPOUND:1759">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4748)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4729)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4743)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4734)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4746)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4742)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4730)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4736)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4738)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4728)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4739)..id(WO2007031904_w_4740)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4733)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4747)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4744)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4737)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4732)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4731)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4735)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4745)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4749)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4741)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.60" comment="2,2,3,8A-Tetramethyl-3,4,4A,5,8,8A-hexahydro-1(2H)- naphthalenone" name="2,2,3,8A-Tetramethyl-3,4,4A,5,8,8A-hexahydro-l(2H)- naphthalenone" relevant="true" chebi-id="WO2007031904:178892" epochem-id="EPOCHEM:NEW:COMPOUND:1760">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4781)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4756)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4771)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4761)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4766)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4765)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4770)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4767)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4777)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4760)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4779)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4768)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4762)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4769)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4776)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4778)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4763)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4774)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4783)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4782)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4784)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4772)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4764)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4785)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4773)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4775)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4758)..id(WO2007031904_w_4759)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4757)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4780)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.61" comment="" name="1 , 1 -Dimethyl-2-phenylethyl acetate" relevant="false" chebi-id="WO2007031904:532505" epochem-id="EPOCHEM:NEW:COMPOUND:1761">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4856)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4863)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4862)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4861)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4857)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4859)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4864)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4860)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4865)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4858)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.62" comment="" name="Geranyl acetate" relevant="false" chebi-id="WO2007031904:125805" epochem-id="EPOCHEM:NEW:COMPOUND:1762">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4871)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4870)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.63" comment="" name="4- (4-Hydroxy- 1 -phenyl)-2-butanone" relevant="false" chebi-id="WO2007031904:507974" epochem-id="EPOCHEM:NEW:COMPOUND:1763">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4885)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4891)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4888)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4879)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4882)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4881)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4889)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4886)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4883)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4887)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4884)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4893)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4890)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4880)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4892)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.64" comment="" name="Lyral" relevant="false" chebi-id="WO2007031904:260600" epochem-id="EPOCHEM:NEW:COMPOUND:1764">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5009)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.65" comment="" name="Linalol" relevant="false" chebi-id="WO2007031904:39180" epochem-id="EPOCHEM:NEW:COMPOUND:1765">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5004)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.66" comment="" name="Sclareolate" relevant="false" chebi-id="WO2007031904:457297" epochem-id="EPOCHEM:NEW:COMPOUND:1766">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5097)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.67" comment="" name="Pentadecenolide" relevant="false" chebi-id="WO2007031904:282510" epochem-id="EPOCHEM:NEW:COMPOUND:1767">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5140)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.92" comment="" name="diethyl phthalate" relevant="false" chebi-id="CHEBI:34698" epochem-id="EPOCHEM:COMPOUND:4365">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1558)..id(WO2007031904_w_1559)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.93" comment="" name="isopropyl myristate" relevant="false" chebi-id="WO2007031904:722676" epochem-id="EPOCHEM:NEW:COMPOUND:1516">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1562)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1561)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.94" comment="" name="benzyl benzoate" relevant="false" chebi-id="CHEBI:41237" epochem-id="EPOCHEM:NEW:COMPOUND:429">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1565)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1564)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.95" comment="" name="2-(2- ethoxyethoxy)-l-ethanol" relevant="false" chebi-id="WO2007031904:393403" epochem-id="EPOCHEM:NEW:COMPOUND:1769">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1577)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1568)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1571)..id(WO2007031904_w_1573)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1569)..id(WO2007031904_w_1570)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1567)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1575)..id(WO2007031904_w_1576)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1574)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.96" comment="" name="ethyl citrate" relevant="false" chebi-id="WO2007031904:780003" epochem-id="EPOCHEM:NEW:COMPOUND:1770">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1580)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1579)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.97" comment="" name="limonene" relevant="false" chebi-id="CHEBI:15384" epochem-id="EPOCHEM:COMPOUND:3492">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_2120)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.98" comment="" name="ethanol" relevant="false" chebi-id="CHEBI:16236" epochem-id="EPOCHEM:COMPOUND:4765">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1577)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.99" comment="" name="ethanol" relevant="false" chebi-id="CHEBI:16236" epochem-id="EPOCHEM:COMPOUND:4765">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_2113)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.100" comment="" name="ethanol" relevant="false" chebi-id="CHEBI:16236" epochem-id="EPOCHEM:COMPOUND:4765">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_2117)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.101" comment="" name="water" relevant="false" chebi-id="CHEBI:15377" epochem-id="EPOCHEM:COMPOUND:5421">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_2115)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.102" comment="" name="water" relevant="false" chebi-id="CHEBI:15377" epochem-id="EPOCHEM:COMPOUND:5421">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3347)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.103" comment="" name="water" relevant="false" chebi-id="CHEBI:15377" epochem-id="EPOCHEM:COMPOUND:5421">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3998)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.104" comment="" name="water" relevant="false" chebi-id="CHEBI:15377" epochem-id="EPOCHEM:COMPOUND:5421">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5829)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.105" comment="" name="2,5,6-trimethylcyclohex-2-en-l-one" relevant="false" chebi-id="WO2007031904:533010" epochem-id="EPOCHEM:NEW:COMPOUND:1771">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3249)..id(WO2007031904_w_3250)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3254)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3243)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3241)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3253)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3247)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3246)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3242)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3252)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3245)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3244)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3251)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3248)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3240)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.106" comment="" name="perhydro-2,3,8a- trimethyl-1-naphthalenone" relevant="true" chebi-id="WO2007031904:721680" epochem-id="EPOCHEM:NEW:COMPOUND:1772">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_462)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_456)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_463)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_458)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_464)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_459)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_468)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_460)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_465)..id(WO2007031904_w_467)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_457)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_461)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.107" comment="2,2,8a-trimethyl-3,4,4a,5,8,8a-hexahydro- 1(2H)-naphthalenone" name="2,2,8a-trimethyl-3,4,4a,5,8,8a-hexahydro- l(2H)-naphthalenone" relevant="false" chebi-id="WO2007031904:814490" epochem-id="EPOCHEM:NEW:COMPOUND:1777">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_807)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_791)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_798)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_795)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_801)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_809)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_789)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_811)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_792)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_806)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_787)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_805)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_812)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_794)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_785)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_804)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_808)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_797)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_786)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_802)..id(WO2007031904_w_803)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_796)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_788)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_799)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_790)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_793)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_800)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_810)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.108" comment="2,3,6,8a-tetramethyl-3,4,4a,5,8,8a-hexahydro-1(2H)-naphthalenone" name="2,3,6,8a-tetramethyl-3,4,4a,5,8,8a-hexahydro-l(2H)-naphthalenone" relevant="true" chebi-id="WO2007031904:760292" epochem-id="EPOCHEM:NEW:COMPOUND:1774">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_899)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_906)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_918)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_895)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_897)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_920)..id(WO2007031904_w_921)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_910)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_922)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_915)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_914)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_903)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_900)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_917)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_894)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_908)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_911)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_916)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_905)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_896)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_907)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_898)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_901)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_909)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_912)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_893)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_913)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_902)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_919)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_904)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.109" comment="2,2,5/6, 8a-tetramethyl-3,4,4a,5, 8, 8a-hexahydro-1(2H)-naphthalenone" name="2,2,5/6, 8a-tetramethyl-3,4,4a,5, 8, 8a-hexahydro-l(2H)-naphthalenone" relevant="false" chebi-id="WO2007031904:293841" epochem-id="EPOCHEM:NEW:COMPOUND:1775">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_958)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_952)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_954)..id(WO2007031904_w_955)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_950)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_966)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_960)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_973)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_956)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_968)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_964)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_963)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_959)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_977)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_953)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_979)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_972)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_967)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_969)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_957)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_951)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_961)..id(WO2007031904_w_962)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_949)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_971)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_974)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_976)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_965)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_978)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_970)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_948)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_975)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.110" comment="is 2,2,3[alpha],8a[alpha]-tetramethyl-3,4,4a[alpha],5,8,8a-hexahydro-1(2H)- naphthalenone" name="is 2,2,3[alpha],8a[alpha]-tetramethyl-3,4,4a[alpha],5,8,8a-hexahydro-l(2H)- naphthalenone" relevant="true" chebi-id="WO2007031904:494654" epochem-id="EPOCHEM:NEW:COMPOUND:1776">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1002)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1025)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1032)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1016)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_994)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1014)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_998)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1027)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_995)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1021)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1009)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1023)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1026)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_996)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1029)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1024)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1004)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1001)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_997)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1022)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1003)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1006)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1000)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1019)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1011)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1020)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1028)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1015)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1031)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1017)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1010)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1012)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1018)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1008)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1007)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1013)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1033)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1030)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_999)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1005)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.111" comment="2,2,8a-trimethyl-3,4,4a,5,8,8a-hexahydro- 1(2H)-naphthalenone" name="2,2,8a-trimethyl-3,4,4a,5,8,8a-hexahydro- l(2H)-naphthalenone" relevant="false" chebi-id="WO2007031904:814490" epochem-id="EPOCHEM:NEW:COMPOUND:1777">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1058)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1067)..id(WO2007031904_w_1068)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1074)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1066)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1077)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1060)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1084)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1070)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1057)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1080)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1072)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1064)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1082)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1078)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1071)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1083)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1079)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1081)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1063)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1061)..id(WO2007031904_w_1062)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1069)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1065)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1059)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1073)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1076)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1075)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.112" comment="perhydro-2,2,3[alpha],8a[alpha]-tetramethyl-4a[alpha]-H-1- naphthalenone" name="perhydro-2,2,3[alpha],8a[alpha]-tetramethyl-4a[alpha]-H-l- naphthalenone" relevant="true" chebi-id="WO2007031904:769054" epochem-id="EPOCHEM:NEW:COMPOUND:1778">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1112)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1110)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1117)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1137)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1115)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1114)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1116)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1125)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1124)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1127)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1119)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1133)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1113)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1126)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1134)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1121)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1131)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1136)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1129)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1122)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1120)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1123)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1130)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1111)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1132)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1135)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1128)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1118)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.113" comment="" name="perhydro-2,2,8a-trimethyl-4a-H- 1-naphthalenone" relevant="false" chebi-id="WO2007031904:983149" epochem-id="EPOCHEM:NEW:COMPOUND:1779">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1164)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1166)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1176)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1168)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1177)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1165)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1171)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1170)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1169)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1173)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1175)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1162)..id(WO2007031904_w_1163)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1172)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1178)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1167)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_1174)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.114" comment="" name="cyclohexenone" relevant="false" chebi-id="CHEBI:48951" epochem-id="EPOCHEM:NEW:COMPOUND:1780">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3941)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.115" comment="" name="heptane" relevant="false" chebi-id="CHEBI:43098" epochem-id="EPOCHEM:NEW:COMPOUND:771">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3376)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.116" comment="" name="heptane" relevant="false" chebi-id="CHEBI:43098" epochem-id="EPOCHEM:NEW:COMPOUND:771">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4017)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.117" comment="" name="sodium sulfate" relevant="false" chebi-id="CHEBI:32149" epochem-id="EPOCHEM:COMPOUND:6847">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3355)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3354)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.118" comment="" name="hydrogen" relevant="false" chebi-id="CHEBI:24634" epochem-id="EPOCHEM:COMPOUND:7665">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_4702)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.119" comment="" name="camphor" relevant="false" chebi-id="CHEBI:36773" epochem-id="EPOCHEM:COMPOUND:5335">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_636)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.120" comment="" name="camphor" relevant="false" chebi-id="CHEBI:36773" epochem-id="EPOCHEM:COMPOUND:5335">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_823)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.121" comment="" name="TMS" relevant="false" chebi-id="WO2007031904:306364" epochem-id="EPOCHEM:NEW:COMPOUND:2134">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3133)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.122" comment="" name="BHT" relevant="false" chebi-id="CHEBI:34247" epochem-id="EPOCHEM:NEW:COMPOUND:2135">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3216)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007031904.HC.chemical-names.123" comment="" name="BHT" relevant="false" chebi-id="CHEBI:34247" epochem-id="EPOCHEM:NEW:COMPOUND:2135">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_3924)"/>
+   </chem-name>
+</nite:root>

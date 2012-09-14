@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../jsp/xmlverbatimwrapper.xsl"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink"
+        xmlns:mml="http://www.w3.org/1998/Math/MathML">
+    <!-- Department of Pathology, Tufts University School of Medicine and New England Medical Center, 136 Harrison Avenue, Boston, MA 02111, USA;
+    Department of Pathology University of Colorado Health Sciences Center, Denver, CO, USA. -->
+    <teiHeader xml:lang="en">
+        <fileDesc>
+            <sourceDesc>
+                <biblStruct>
+                    <analytic>
+                        <author>
+							<affiliation>
+								<orgName type="department">Department of Pathology</orgName>,
+								<orgName type="institution">Tufts University School of Medicine</orgName> and
+								<orgName type="institution">New England Medical Center</orgName>,
+								<address>
+									<addrLine>136 Harrison Avenue</addrLine>
+                                    <settlement>Boston</settlement>,
+                                    <region type="state">MA</region>
+                                    <postCode>02111</postCode>,
+                                    <country key="US">USA</country>;
+								</address>
+							</affiliation>
+                            <affiliation>
+                                <orgName type="department">Department of Pathology</orgName>,
+                                <orgName type="institution">University of Colorado Health Sciences Center</orgName>,
+                                <address>
+                                    <settlement>Denver</settlement>,
+                                    <region type="state">CO</region>
+                                    <country key="US">USA</country>.
+                                </address>
+                            </affiliation>
+
+						</author>
+					
+					</analytic>
+
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</TEI>

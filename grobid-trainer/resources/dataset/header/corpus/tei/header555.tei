@@ -1,0 +1,19 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="558"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<note type="reference">In: Proceedings of EURASIP Workshop, February 15-17, 1990, Portugal <lb/></note>
+		<docTitle>
+			<titlePart type="main">INVERSION IN TIME <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Sebastian Thrun Alexander Linden <lb/></docAuthor></byline>
+		<byline><affiliation>Gesellschaft fur Mathematik und Datenverarbeitung mbH <lb/></affiliation></byline>
+		<address>D-5205 St. Augustin, West Germany <lb/></address>
+		<div type="abstract">Abstract <lb/>Inversion of multilayer synchronous networks is a method which tries to answer questions <lb/>like &quot;What kind of input will give a desired output?&quot; or &quot;Is it possible to get a desired <lb/>output (under special input/output constraints)?&quot;. <lb/>We will describe two methods of inverting a connectionist network. Firstly, we extend <lb/>inversion via backpropagation (Linden/Kindermann [4], Williams [11]) to recurrent (El-man [1], Jordan [3], Mozer [5], Williams/Zipser [10]), time-delayed (Waibel at al. [9]) <lb/>and discrete versions of continuous networks (Pineda [7], Pearlmutter [6]). The result <lb/>of inversion is an input vector. The corresponding output vector is equal to the target <lb/>vector except a small remainder. The knowledge of those attractors may help to understand the function and the generalization qualities of connectionist systems of this <lb/>kind. <lb/>Secondly, we introduce a new inversion method for proving the non-existence of an <lb/>input combination under special constraints, e.g. in a subspace of the input space. This <lb/>method works by iterative exclusion of invalid activation values. It might be a helpful <lb/>way to judge the properties of a trained network. <lb/>We conclude with simulation results of three different tasks: XOR, morse signal decoding <lb/>and handwritten digit recognition. <lb/></div>
+		<keywords>Keywords: connectionist systems, backpropagation, inversion, recurrent neural networks, digit recognition <lb/></keywords>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="714"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Optimizing Multi-Join Queries in Parallel Relational Databases <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Jaideep Srivastava <lb/>Gary Elsesser <lb/></docAuthor></byline>
+		<byline><affiliation>Computer Science Department <lb/>University of Minnesota <lb/></affiliation></byline>
+		<address>Minneapolis, MN 55455 <lb/></address>
+		<div type="abstract">Abstract <lb/>Query optimization for parallel machines needs to <lb/>consider machine architecture, processor and memory <lb/>resources available, and different types of parallelism, <lb/>making the search space much larger than the sequential case. In this paper our aim is to determine a plan <lb/>that makes the execution of an individual query very <lb/>fast, making minimizing parallel execution time the <lb/>right objective. This creates the following circular dependence: a plan tree is needed for effective resource <lb/>assignment, which is needed to estimate the parallel <lb/>execution time, and this is needed for the cost-based <lb/>search for a good plan tree. In this paper we propose <lb/>a new search heuristic that breaks the cycle by constructing the plan tree layer by layer in a bottom-up <lb/>manner. To select nodes at the next level, the lower <lb/>and upper bounds on the execution time for plans consistent with the decisions made so far are estimated <lb/>and are used to guide the search. A query plan representation for intra- and inter-operator parallelism, <lb/>pipelining, and processor and memory assignment is <lb/>proposed. Also proposed is a new approach to estimating the parallel execution time of a plan that considers <lb/>sum and max of operators working sequentially and <lb/>in parallel, respectively. The results obtained from a <lb/>prototype optimizer are presented. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

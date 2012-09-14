@@ -1,0 +1,36 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="576"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Experimental Study of Minimum Cut Algorithms <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Chandra S. Chekuri <lb/></docAuthor></byline>
+		<byline><affiliation>Computer Science Department <lb/>Stanford University <lb/></affiliation></byline>
+		<address>Stanford, CA 94305 <lb/></address>
+		<email>chekuri@theory.stanford.edu <lb/></email>
+		<byline><docAuthor>Andrew V. Goldberg <lb/></docAuthor></byline>
+		<byline><affiliation>NEC Research Institute <lb/></affiliation></byline>
+		<address>Princeton, NJ 08540 <lb/></address>
+		<email>avg@research.nj.nec.com <lb/></email>
+		<byline><docAuthor>David R. Karger <lb/></docAuthor></byline>
+		<byline><affiliation>Laboratory for Computer Science <lb/>MIT <lb/></affiliation></byline>
+		<address>Cambridge, MA 02139 <lb/></address>
+		<email>karger@theory.lcs.mit.edu <lb/></email>
+		<byline><docAuthor>Matthew S. Levine <lb/></docAuthor></byline>
+		<byline><affiliation>Laboratory for Computer Science <lb/>MIT <lb/></affiliation></byline>
+		<address>Cambridge, MA 02139 <lb/></address>
+		<email>mslevine@theory.lcs.mit.edu <lb/></email>
+		<byline><docAuthor>Cliff Stein x <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science <lb/>Dartmouth College <lb/></affiliation></byline>
+		<address>Hanover, NH, 03755 <lb/></address>
+		<email>cliff@cs.dartmouth.edu. <lb/></email>
+		<date>October 1996 <lb/></date>
+		<div type="abstract">Abstract <lb/>Recently, several new algorithms have been developed for the minimum cut problem. <lb/>These algorithms are very different from the earlier ones and from each other and substantially improve worst-case time bounds for the problem. We conduct experimental evaluation <lb/>the relative performance of these algorithms. In the process, we develop heuristics and data <lb/>structures that substantially improve practical performance of the algorithms. We also develop problem families for testing minimum cut algorithms. Our work leads to a better <lb/>understanding of practical performance of the minimum cut algorithms and produces very <lb/>efficient codes for the problem. <lb/></div>
+		<note type="grant">Supported by NSF Award CCR-9357849, with matching funds from IBM, Mitsubishi, Schlumberger Foun <lb/>dation, Shell Foundation, and Xerox Corporation. <lb/>Research partly supported by ARPA contract N00014-95-1-1246. <lb/>Research partly supported by a grant from the World Wide Web Consortium. Some of this work was done <lb/>while visiting the second author at NEC. <lb/>x Research partly supported by NSF Award CCR-9308701, a Walter Burke Research Initiation Award and a <lb/>Dartmouth College Research Initiation Award. Some of this work was done while visiting the second author at <lb/>NEC, and while visiting Stanford University. <lb/></note>
+		<pb/>
+		</front>
+</text>
+</tei>

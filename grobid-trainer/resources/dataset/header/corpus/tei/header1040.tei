@@ -1,0 +1,41 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="1109"/>  
+	</teiHeader>
+<text xml:lang="en"> 
+	<front>
+		<note type="submission">Confidential:  not for distribution. Submitted to IOP Publishing for peer review </note>
+        <date type="submission">6 June 2010<lb/></date>
+        
+		<docTitle>
+			<titlePart type="main">Search  for the 2   +   Excitation of the Hoyle State in<lb/> 12<lb/>C Using the   12   C(   12   C,3α)   12   C Reaction<lb/></titlePart>
+		</docTitle> 
+		
+		<byline><docAuthor>T  Muñoz-Britton   1   , M Freer   1   , N I Ashwood   1   , T A D Brown   2   ,<lb/> W N Catford   3   , N Curtis   1   , S P Fox   2   , B R Fulton   2   , C W Harlin   3   ,<lb/> A M Laird   2   , P Mumby-Croft   2   , A St. J Murphy   4   , P Papka   2   ,<lb/> D L Price   1   , K Vaughan   2   ,  D L Watson   2   and D C Weisser   5<lb/> </docAuthor></byline>
+		
+		<byline><affiliation>1   School  of Physics and Astronomy, University of Birmingham,  </affiliation></byline> 
+		<address>Edgbaston,<lb/> Birmingham, B15 2TT, United Kingdom<lb/></address> 
+		
+		<byline><affiliation>2   Department of Physics, University of York,  </affiliation></byline> 
+		<address>Heslington, York, YO10 5DD, United<lb/> Kingdom <lb/></address> 
+		
+		<byline><affiliation>3   Department of Physics, Faculty of Engineering &amp; Physical Sciences, University of<lb/> Surrey,  </affiliation></byline> 
+		<address>Guildford, GU2 7XH, United Kingdom <lb/></address> 
+		
+		<byline><affiliation>3   School of Physics and Astronomy, The University of Edinburgh,   </affiliation></byline> 
+		<address>James Clerk<lb/> Maxwell Building, Mayfield Road, Edinburgh, EH9 3JZ, United Kingdom<lb/></address> 
+		
+		<byline><affiliation>5   The Research School of Physics and Engineering, </affiliation></byline> 
+		<address>Building 60, </address> 
+		<byline><affiliation>The Australian<lb/> National University, </affiliation></byline> 
+		<address>Canberra, ACT 0200, Australia<lb/></address> 
+		
+		<div type="abstract"> Abstract.  A search for the 2   +   excitation of the Hoyle state in   12   C has been<lb/> performed using the   12   C(   12   C,3α)   12   C reaction at a beam energy of 101.5 MeV. An<lb/> angular correlation analysis was used to suppress known contributions to the excitation<lb/> energy spectrum, enhancing the experimental sensitivity. No strong evidence was found<lb/> for new states in   12   C between 9 and 11 MeV; rather upper limits for their excitation<lb/> in the   12   C+   12   C inelastic scattering reaction are determined. <lb/></div> 	
+		
+		<keywords type="pacs"> PACS numbers: 21.10.-k, 23.60.+e, 27.20.+n<lb/></keywords>
+		 
+		<introduction>1. Introduction<lb/></introduction> 
+		
+    </front>
+</text>
+</tei>                              

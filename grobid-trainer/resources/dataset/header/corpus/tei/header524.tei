@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="527"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">New Approximation Techniques for Some Ordering Problems <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Satish Rao Andrea W. Richa <lb/></docAuthor></byline>
+		<div type="abstract">Abstract <lb/>We describe logarithmic times optimal approximation <lb/>algorithms for the NP-hard graph optimization problems of minimum linear arrangement, minimum containing interval graph, and minimum storage-time <lb/>product. This improves on the best previous approximation bounds of Even, Naor, Rao, and Schieber for <lb/>these problems by an (log log n) factor. <lb/>Even, Naor, Rao, and Schieber defined &quot;spreading <lb/>metrics&quot; for each of the ordering problems above (and <lb/>to other problems); for each of these problems, they <lb/>provided a spreading metric of volume W , such that W <lb/>is a lower bound on the cost of a solution to the problem. <lb/>They used this spreading metric to find a solution of <lb/>cost O(W log n log log n) (for simplicity, assume that <lb/>all tasks have unit processing time in the minimum <lb/>storage-time product problem). In this paper, we show <lb/>how to find a solution within a logarithmic factor times <lb/>W for these problems. <lb/>We develop a recursion where at each level we <lb/>identify cost which, if incurred, yields subproblems <lb/>with reduced spreading metric volume. Specifically, we <lb/>present a divide-and-conquer strategy where the cost of <lb/>a solution to a problem at a recursive level is C plus the <lb/>cost of a solution to the subproblems at this level, and <lb/>where the spreading metric volume on the subproblems <lb/>is less than the original volume by (C= log n). This <lb/>ensures that the resulting solution has cost O(log n) <lb/>times the original spreading metric volume. <lb/>We note that this is an existentially tight bound on <lb/>the relationship between the spreading metric volume <lb/>W and the true optimal values for these problems. <lb/>For planar graphs, we combine a structural theorem <lb/>of Klein, Plotkin, and Rao with our new recursion technique to show that the spreading metric cost volumes <lb/>are within an O(log log n) factor of the cost of an optimal solution for the minimum linear arrangement, and <lb/>the minimum containing interval graph problems. <lb/></div>
+		<note type="reference">To appear in Proceedings of Ninth Annual ACM-SIAM Symposium on Discrete Algorithms (SODA), January 1998. <lb/></note>
+		<note type="grant">Research supported by NEC Research Institute, 4 Independence Way, Princeton, NJ 08540; satish@research.nj.nec.com. <lb/>Research supported in part by NSF NYI Award No. CCR-9457766, ARPA Contract F33615-93-1-1330, NEC Research Institute, and DIMACS. School of Computer Science, Carnegie Mellon <lb/>University, Pittsburgh, PA 15213, aricha@cs.cmu.edu. <lb/></note>
+		<div type="intro">1 Introduction.</div>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="585"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Scalable Mining for Classification Rules <lb/>in Relational Databases <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Min Wang Bala Iyer Jeffrey Scott Vitter <lb/></docAuthor></byline>
+		<byline><affiliation>Dept. of Computer Science Database Technology Institute Dept. of Computer Science <lb/>Duke University IBM Santa Teresa Lab Duke University <lb/></affiliation></byline>
+		<address>Durham, NC 27708 San Jose, CA 95161 Durham, NC 27708 <lb/></address>
+		<div type="abstract">Abstract <lb/>Classification is a key function of many &quot;business <lb/>intelligence&quot; toolkits and a fundamental building block <lb/>in data mining. Immense data may be needed to train <lb/>a classifier for good accuracy. The state-of-art classifiers [21, 25] need an in-memory data structure of <lb/>size O(N ), where N is the size of the training data, <lb/>to achieve efficiency. For large data sets, such a data <lb/>structure will not fit in the internal memory. The best <lb/>previously known classifier does a quadratic number of <lb/>I/Os for large N . <lb/>In this paper, we propose a novel classification algorithm (classifier) called MIND (MINing in <lb/>Databases). MIND can be phrased in such a way that <lb/>its implementation is very easy using the extended relational calculus SQL, and this in turn allows the classifier to be built into a relational database system directly. MIND is truly scalable with respect to I/O efficiency, which is important since scalability is a key <lb/>requirement for any data mining algorithm. <lb/>We built a prototype of MIND in the relational <lb/>database manager DB2 and benchmarked its performance. We describe the working prototype and report <lb/>the measured performance with respect to the previous <lb/>method of choice. MIND scales not only with the size <lb/>of the datasets but also with the number of processors <lb/>on an IBM SP2 computer system. Even on uniproces-sors, MIND scales well beyond the dataset sizes previously published for classifiers. We also give some <lb/>insights that may have an impact on the evolution of <lb/>the extended relational calculus SQL. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

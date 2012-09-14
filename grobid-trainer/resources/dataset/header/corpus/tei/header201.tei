@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="202"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Parallel Sorting With Limited <lb/>Bandwidth <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Micah Adler John W Byers Richard M Karp <lb/></docAuthor></byline>
+		<idno>TR-TR-95-031 <lb/></idno>
+		<date>July 1995 <lb/></date>
+		<div type="abstract">Abstract <lb/>We study the problem of sorting on a parallel computer with limited communication <lb/>bandwidth. By using the recently proposed PRAM(m) model, where p processors <lb/>communicate through a small, globally shared memory consisting of m bits, we focus <lb/>on the trade-off between the amount of local computation and the amount of inter-processor communication required for parallel sorting algorithms. We prove a lower <lb/>bound of ( n log m <lb/>m ) on the time to sort n numbers in an exclusive-read variant of <lb/>the PRAM(m) model. We show that Leighton&apos;s Columnsort can be used to give <lb/>an asymptotically matching upper bound in the case where m grows as a fractional <lb/>power of n. The bounds are of a surprising form, in that they have little dependence <lb/>on the parameter p. This implies that attempting to distribute the workload across <lb/>more processors while holding the problem size and the size of the shared memory <lb/>fixed will not improve the optimal running time of sorting in this model. We also <lb/>show that both the upper and the lower bound can be adapted to bridging models <lb/>that address the issue of limited communication bandwidth: the LogP model and <lb/>the BSP model. The lower bounds provide convincing evidence that efficient parallel <lb/>algorithms for sorting rely strongly on high communication bandwidth. <lb/></div>
+		<note type="grant">Supported by a Schlumberger Foundation Graduate Fellowship. <lb/>Supported by a GAANN Graduate Fellowship. <lb/>Supported by NSF grant number CCR-9005448 <lb/></note>
+		<pb/>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="ZNC-1988-43c-0073"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Topography of the Phytochrome Molecule as Determined from<lb/> Chemical Modification of SH-Groups<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Petra H. Eilfeld, Gabriele Widerer, Heike Malinowski, Wolfhart Rüdiger, and<lb/> Peter G. Eilfeld<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Botanisches Institut der Universität München,</affiliation>
+	</byline>
+
+	<address>Menzinger Straße 67, D-8000 München,<lb/> Bundesrepublik Deutschland<lb/></address>
+
+	<reference>Z. Naturforsch. 43c, 63-73 (1988);</reference>
+
+	<note type="submission">received August 31, 1987<lb/></note>
+
+	<keyword>Oat, Avena sativa L., Mercurials, 124 kDa Phytochrome, Reporter Group<lb/></keyword>
+
+	<div type="abstract">124 kDa phytochrome has been isolated from etiolated oat seedlings. Specific chemical modifi-<lb/>cation of SH-groups has been performed using several agents, especially mercurials. These proce-<lb/>dures allowed covalent fluorescence labelling of phytochrome. Bleaching of the tetrapyrrole<lb/> chromophore and reduced photoreversibility has been investigated and analyzed in terms of steric<lb/> effects, i.e. size of the reagents and number of modified residues. The Pr form was found to<lb/> exhibit two highly reactive SH-groups, the Pfr form three, however. Two highly reactive groups<lb/> have been localized on the 55 kDa C-terminal half of the protein. The 3rd group predominantly<lb/> reacting in the Pfr form has been localized on a 39 kDa chromopeptide, i.e. on the N-terminal<lb/> half. The covalently attached fluoresceine chromophores were used as reporter groups. The envi-<lb/>ronment of the fluoresceine chromophore is more hydrophobic in the Pfr form than in the Pr<lb/> form, indicating that conformational changes take place during photoconversion.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:mml="http://www.w3.org/1998/Math/MathML">
+   <teiHeader>
+      <fileDesc>
+         <sourceDesc>
+            <biblStruct>
+               <analytic>
+                  <author>
+                     <persName>
+                        <surname>TAO</surname> 
+                        <forename>Yong</forename>(陶勇)
+                        <marker>1,2</marker>,
+                     </persName>
+                     <persName>
+                        <surname>GONG</surname> 
+                        <forename>Zheng-hu</forename>(龚正虎)
+                        <marker>2</marker>,
+                     </persName>
+                     <persName>
+                        <surname>LIN</surname> 
+                        <forename>Ya-ping</forename>(林亚平)
+                        <marker>1</marker>, 
+                     </persName>
+                     <persName>
+                        <surname>ZHOU</surname> 
+                        <forename>Si-wang</forename>(周四望)
+                        <marker>1</marker>
+                     </persName>
+                  </author>
+               </analytic>
+            </biblStruct>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+</TEI>

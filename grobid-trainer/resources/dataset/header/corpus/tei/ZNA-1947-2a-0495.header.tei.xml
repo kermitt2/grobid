@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="ZNA-1947-2a-0495"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Ergebnisse der Tieftemperaturforschung<lb/>IV. Molwärmen, Umwandlungs-und Schmelzwärmen sowie Entropien<lb/> von DC1, DBr und DJ 1,2<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Von KLAUS CLUSIUS und GERHARD WOLF<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Aus dem Physikalisch-chemischen Institut der Universität München<lb/></affiliation>
+	</byline>
+
+	<reference>(Z. Naturforschg. 2 a, 495—504 [1947];</reference>
+
+	<note type="submission">eingegangen am 9. Januar 1947)</note>
+
+		</front>
+	</text>
+</tei>

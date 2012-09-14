@@ -1,0 +1,23 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="unknown"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Rule Revision with Recurrent Neural Networks <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Christian W. Omlin a;b and C.L. Giles a;c <lb/></docAuthor></byline>
+		<byline><affiliation>a NEC Research Institute,</affiliation></byline>
+		<address>4 Independence Way, Princeton, New Jersey <lb/></address>
+		<byline><affiliation>b Computer Science Department, Rensselaer Polytechnic Institute,</affiliation></byline>
+		<address>Troy, New York <lb/></address>
+		<byline><affiliation>c Institute for Advanced Computer Studies, University of Maryland,</affiliation></byline>
+		<address>College Park, Maryland <lb/></address>
+		<div type="abstract">Abstract <lb/>Recurrent neural networks readily process, recognize and generate temporal sequences. By encoding <lb/>grammatical strings as temporal sequences, recurrent neural networks can be trained to behave like deterministic sequential finite-state automata. Algorithms have been developed for extracting grammatical <lb/>rules from trained networks. Using a simple method for inserting prior knowledge (or rules) into recurrent <lb/>neural networks, we show that recurrent neural networks are able to perform rule revision. Rule revision <lb/>is performed by comparing the inserted rules with the rules in the finite-state automata extracted from <lb/>trained networks. The results from training a recurrent neural network to recognize a known non-trivial, <lb/>randomly generated regular grammar show that not only do the networks preserve correct rules but that <lb/>they are able to correct through training inserted rules which were initially incorrect. (By incorrect, we <lb/>mean that the rules were not the ones in the randomly generated grammar.) <lb/></div>
+		<keywords>Index Terms: Deterministic Finite-State Automata, Genuine and Incorrect Rules, Knowledge Insertion <lb/>and Extraction, Recurrent Neural Networks, Regular Languages, Rule Revision. <lb/></keywords>
+		<note type="reference">Published in IEEE Trans. on Knowledge and Data Engineering, vol. 8, no. 1, p. 183, 1996. Copyright IEEE. <lb/></note>
+		<pb/>
+		</front>
+</text>
+</tei>

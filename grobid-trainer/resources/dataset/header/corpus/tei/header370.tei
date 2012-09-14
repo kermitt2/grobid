@@ -1,0 +1,24 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="375"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<note type="reference">Proceedings of the 35th <lb/>Conference on Decision and Control <lb/>Kobe, Japan</note>
+		<date>December 1996 <lb/></date>
+		<idno>WA05 10:20 <lb/></idno>
+		<docTitle>
+			<titlePart type="main">Construction of Fuzzy Linguistic Model <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Tak-Kuen John Koo <lb/></docAuthor></byline>
+		<byline><affiliation>Robotics and Intelligent Machines Laboratory <lb/></affiliation></byline>
+		<address>211-85 Cory Hall,</address>
+		<byline><affiliation>Department of EECS <lb/></affiliation></byline>
+		<byline><affiliation>University of California at Berkeley <lb/></affiliation></byline>
+		<address>Berkeley, CA94720 <lb/></address>
+		<email>koo@robotics.eecs.berkeley.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>Using linguistic variables to describe the behavior of a <lb/>hybrid system, which consists of a discrete event system and a continuous system, could make the design <lb/>of the controller and verification of the system perform <lb/>on an unified framework. In this paper, we show the <lb/>construction of a fuzzy linguistic model from a given <lb/>mathematical model of a physical system. By considering the state-space realization of the model, the system <lb/>construction problem can be transformed into a function approximation problem. We propose to use projection theorem in obtaining an optimal fuzzy system <lb/>which is the best approximation of a given nonlinear <lb/>function in L 2 (U ) space. We show that the existence <lb/>and uniqueness of the optimal solution is assured when <lb/>the Fuzzy Basis Functions(FBFs) are linearly independent. We demonstrate that the dependence of the basis <lb/>functions can be examined by checking the condition of <lb/>the Gram determinant associated to the FBFs. Finally, <lb/>a method is proposed in converting the optimal coefficients into fuzzy sets to obtain a fuzzy linguistic model. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,16 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="30"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Location Independent Names for Nomadic Computers <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>David C. Steere, Mark Morrissey, Peter Geib, Calton Pu, and Jonathan Walpole <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science and Engineering <lb/> Oregon Graduate Institute <lb/></affiliation></byline>
+		<div type="abstract">Abstract <lb/>Recent advances in the Domain Name System (DNS) and the Dynamic Host Configuration <lb/>Protocol (DHCP) have enabled a new approach to supporting mobile users: location independent <lb/>naming. In this approach, machines use the same hostname from any internet location, but use an <lb/>IP address that corresponds to their current location. We describe a protocol that implements <lb/>location independent naming for nomadic computers, i.e., machines that do not need transparent <lb/>mobility. Our protocol allows hosts to move across security domains, uses existing protocols, and <lb/>preserves existing trust relationships. Therefore, it preserves the performance and security of <lb/>normal IP for nomadic computers at the expense of not providing the transparent mobility of <lb/>Mobile IP. We contend that this is a reasonable tradeoff for nomadic computing. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="791"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">GEMMW: A PORTABLE LEVEL 3 BLAS WINOGRAD VARIANT OF <lb/>STRASSEN&apos;S MATRIX-MATRIX MULTIPLY ALGORITHM * <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>CRAIG C. DOUGLAS , MICHAEL HEROUX , GORDON SLISHMAN x AND ROGER M. <lb/>SMITH - <lb/></docAuthor></byline>
+		<div type="abstract">Abstract. Matrix-matrix multiplication is normally computed using one of the BLAS or a <lb/>reinvention of part of the BLAS. Unfortunately, the BLAS were designed with small matrices in <lb/>mind. When huge, well conditioned matrices are multiplied together, the BLAS perform like the <lb/>blahs, even on vector machines. For matrices where the coefficients are well conditioned, Winograd&apos;s <lb/>variant of Strassen&apos;s algorithm offers some relief, but is rarely available in a quality form on most <lb/>computers. We reconsider this method and offer a highly portable solution based on the Level 3 <lb/>BLAS interface. <lb/></div>
+		<keywords>Key Words. Level 3 BLAS, matrix multiplication, Winograd&apos;s variant of Strassen&apos;s algorithm, <lb/>multilevel algorithms <lb/></keywords>
+		<keywords type="classes">AMS(MOS) subject classification. Numerical Analysis: Numerical Linear Algebra <lb/></keywords>
+		<div type="intro">1. Preliminaries. Matrix-matrix multiplication is a very basic computer oper</div>
+		</front>
+</text>
+</tei>

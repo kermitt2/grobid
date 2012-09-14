@@ -1,0 +1,16 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="614"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">The Royal Tree Problem, a Benchmark for Single and <lb/>Multi-population Genetic Programming <lb/></titlePart>
+		</docTitle>
+		<note type="reference">appears in &quot;Advances in Genetic Programming II&quot;, MIT Press, Pete Angeline and <lb/>Kim Kinnear, editors <lb/></note>
+		<byline><docAuthor>Bill Punch, Doug Zongker, and Erik Goodman <lb/></docAuthor></byline>
+		<div type="abstract">We report on work done to develop a benchmark problem for genetic programming, both <lb/>as a difficult problem to test GP abilities and as a platform for tuning GP parameters. <lb/>This benchmark, the royal tree, is a function that accounts for tree shape as part of its <lb/>evaluation function, thus it controls for a parameter not often found in the GP literature. <lb/>It also is a progressive function, allowing the user to set the difficulty of the problem <lb/>attempted. We not only describe the function, but also report on results of using island <lb/>parallelism for solving GP problems. The results obtained are somewhat surprising, as it <lb/>appears that a single large population outperforms a group of smaller populations under <lb/>all the conditions tested. <lb/></div>
+		<div type="intro">15.1 Introduction</div>
+		</front>
+</text>
+</tei>

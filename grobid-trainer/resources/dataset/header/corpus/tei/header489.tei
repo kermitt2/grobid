@@ -1,0 +1,26 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="492"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">First-Order Conditional Logic Revisited <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Nir Friedman <lb/></docAuthor></byline>
+		<byline><affiliation>Dept. of Computer Science <lb/>Stanford University <lb/></affiliation></byline>
+		<address>Gates Building 1A <lb/>Stanford, CA 94305-9010 <lb/></address>
+		<email>nir@cs.stanford.edu <lb/></email>
+		<byline><docAuthor>Joseph Y. Halpern <lb/></docAuthor></byline>
+		<byline><affiliation>IBM Almaden Research Center <lb/></affiliation></byline>
+		<address>650 Harry Road <lb/>San Jose, CA 95120-6099 <lb/></address>
+		<email>halpern@almaden.ibm.com <lb/></email>
+		<byline><docAuthor>Daphne Koller <lb/></docAuthor></byline>
+		<byline><affiliation>Dept. of Computer Science <lb/>Stanford University <lb/></affiliation></byline>
+		<address>Gates Building 1A <lb/>Stanford, CA 94305-9010 <lb/></address>
+		<email>koller@cs.stanford.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>Conditional logics play an important role in recent attempts <lb/>to investigate default reasoning. This paper investigates first-order conditional logic. We show that, as for first-order <lb/>probabilistic logic, it is important not to confound statistical conditionals over the domain (such as most birds fly), <lb/>and subjective conditionals over possible worlds (such as I <lb/>believe that Tweety is unlikely to fly). We then address <lb/>the issue of ascribing semantics to first-order conditional <lb/>logic. As in the propositional case, there are many possible semantics. To study the problem in a coherent way, we <lb/>use plausibility structures. These provide us with a general <lb/>framework in which many of the standard approaches can be <lb/>embedded. We show that while these standard approaches <lb/>are all the same at the propositional level, they are significantly different in the context of a first-order language. We <lb/>show that plausibilities provide the most natural extension of <lb/>conditional logic to the first-order case: We provide a sound <lb/>and complete axiomatization that contains only the KLM <lb/>properties and standard axioms of first-order modal logic. <lb/>We show that most of the other approaches have additional <lb/>properties, which result in an inappropriate treatment of an <lb/>infinitary version of the lottery paradox. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

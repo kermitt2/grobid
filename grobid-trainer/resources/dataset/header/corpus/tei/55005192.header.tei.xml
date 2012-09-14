@@ -1,0 +1,60 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005192"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<lb/>
+			
+			<reference>Psychiatry Research: Neuroimaging Section 107 2001 173&#x6ef59;177<lb/></reference>
+			
+			<note type="articleType">Case report<lb/></note>
+
+			<docTitle>
+				<titlePart>Cannabis induced dopamine release: an in-vivo SPECT<lb/>
+					study<lb/></titlePart>
+			</docTitle>
+
+			<byline>
+				<docAuthor>Lakshmi N.P. Voruganti a,b,U , Piotr Slomka b , Pamela Zabel b ,<lb/>
+					Adel Mattar b , A. George Awad a<lb/></docAuthor>
+			</byline>
+
+			<byline>
+				<affiliation>a Institute of Medical Science, Uni¨ersity of Toronto,</affiliation>
+			</byline>
+
+			<address>Toronto, ON, Canada<lb/></address>
+
+			<byline>
+				<affiliation>b Departments of Psychiatry &amp; Nuclear Medicine, Uni¨ersity of Western
+					Ontario,</affiliation>
+			</byline>
+
+			<address>London, ON, Canada<lb/></address>
+
+			<note type="submission">Received 29 January 2001; received in revised form 6 June 2001; accepted 25 June
+				2001<lb/></note>
+
+			<div type="abstract">
+				Abstract<lb/>
+				In a research study aimed at examining the alterations in dopaminergic function in schizophrenia, the authors<lb/>
+				identified a surreptitious case scenario which provided new insights into the subjective and neurochemical effects of<lb/>
+				cannabis. A 38-year-old drug-free schizophrenic patient took part in a single photon emission computerized<lb/>
+				tomographic ŽSPECT. study of the brain, and smoked cannabis secretively during a pause in the course of an imaging<lb/>
+				session. Cannabis had an immediate calming effect, followed by a worsening of psychotic symptoms a few hours later.<lb/>
+				A comparison of the two sets of images, obtained before and immediately after smoking cannabis, indicated a 20%<lb/>
+				decrease in the striatal dopamine D 2 receptor binding ratio, suggestive of increased synaptic dopaminergic activity.<lb/>
+				This observation offers a plausible biological explanation for the psychotogenic effects of cannabis in vulnerable<lb/>
+				individuals, and also raises speculations about an interaction between cannabinoid and dopaminergic systems in the<lb/>
+				brain reward pathways.
+			</div>
+			<note type="copyright">&#169; 2001 Elsevier Science Ireland Ltd. All rights reserved.<lb/></note>
+			<keywords>Keywords: Psychosis; Cannabinoids; Schizophrenia; Neuroimaging<lb/></keywords>
+				
+			
+
+		</front>
+	</text>
+</tei>

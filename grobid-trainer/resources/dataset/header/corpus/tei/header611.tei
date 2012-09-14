@@ -1,0 +1,19 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="613"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<note type="reference">Appears in Machine Learning: Proceedings of the Tenth International Conference, <lb/>P. E. Utgoff (editor), Morgan Kaufmann, San Mateo, CA, 1993 <lb/></note>
+		<docTitle>
+			<titlePart type="main">Learning Symbolic Rules Using Artificial Neural Networks <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Mark W. Craven and Jude W. Shavlik <lb/></docAuthor></byline>
+		<byline><affiliation>Computer Sciences Department <lb/>University of Wisconsin <lb/></affiliation></byline>
+		<address>1210 West Dayton St. <lb/>Madison, WI 53706 <lb/></address>
+		<email>email: fcraven, shavlikg@cs.wisc.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>A distinct advantage of symbolic learning <lb/>algorithms over artificial neural networks is <lb/>that typically the concept representations <lb/>they form are more easily understood by humans. One approach to understanding the <lb/>representations formed by neural networks is <lb/>to extract symbolic rules from trained networks. In this paper we describe and investigate an approach for extracting rules from <lb/>networks that uses (1) the NofM extraction algorithm, and (2) the network training <lb/>method of soft weight-sharing. Previously, <lb/>the NofM algorithm had been successfully <lb/>applied only to knowledge-based neural networks. Our experiments demonstrate that <lb/>our extracted rules generalize better than <lb/>rules learned using the C4.5 system. In addition to being accurate, our extracted rules <lb/>are also reasonably comprehensible. <lb/></div>
+		<div type="intro">1 INTRODUCTION</div>
+		</front>
+</text>
+</tei>

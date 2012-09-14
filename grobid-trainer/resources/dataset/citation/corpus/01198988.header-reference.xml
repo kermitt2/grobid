@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+<listBibl>
+
+		<bibl><title level="m">Proceedings of the 9th International Conference on Neural Information Processing (ICONIP'02)</title>, Vol. <biblScope type="vol">4</biblScope> <lb/> <editor>Lipo Wang, Jagath C. Rajapakse, Kunihiko Fukushima, <lb/>Soo-Young Lee, and Xin Yao</editor> (Editors)<lb/></bibl>
+
+</listBibl>
+</tei>

@@ -1,0 +1,23 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="32"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<idno>DIMACS Technical Report 96-47 <lb/></idno>
+		<date>October 1996 <lb/></date>
+		<docTitle>
+			<titlePart type="main">On independent domination number of graphs <lb/>with given minimum degree <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>by <lb/>N. I. Glebov 1 <lb/></docAuthor></byline>
+		<byline><affiliation>Institute of Mathematics <lb/></affiliation></byline>
+		<address>630090 Novosibirsk, Russia <lb/></address>
+		<byline><docAuthor>A. V. Kostochka 2 <lb/></docAuthor></byline>
+		<byline><affiliation>Institute of Mathematics <lb/></affiliation></byline>
+		<address>630090 Novosibirsk, Russia <lb/></address>
+		<note type="other">DIMACS is a partnership of Rutgers University, Princeton University, AT&amp;T <lb/>Research, Bellcore, and Bell Laboratories. <lb/></note>
+		<note type="grant">DIMACS is an NSF Science and Technology Center, funded under contract <lb/>STC-91-19999; and also receives support from the New Jersey Commission <lb/>on Science and Technology. <lb/></note>
+		<pb/>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,20 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="unknown"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Where Do SE-trees Perform? (Part I) <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Ron Rymon <lb/></docAuthor></byline>
+		<byline><affiliation>Intelligent Systems Program <lb/></affiliation></byline>
+		<address>901 Cathedral of Learning <lb/></address>
+		<byline><affiliation>University of Pittsburgh <lb/></affiliation></byline>
+		<address>Pittsburgh, PA 15260 <lb/></address>
+		<email>E-mail: Rymon@ISP.Pitt.edu <lb/></email>
+		<date>March 5, 1995 <lb/></date>
+		<div type="abstract">Abstract <lb/>As a classifier, a Set Enumeration (SE) tree can be viewed as a generalization of <lb/>decision trees. We empirically characterize domains in which SE-trees are particularly <lb/>advantageous relative to decision trees. Specifically, we show that: <lb/>1. SE-trees excel in domains in which relatively few examples are available; and</div>
+		</front>
+</text>
+</tei>

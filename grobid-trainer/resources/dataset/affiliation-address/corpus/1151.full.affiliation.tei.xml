@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="laboratory">European Laboratory for Structural Assessment Unit</orgName>,
+							<orgName type="institution">Joint Research Centre–Institute for the Protection and Security of the Citizen</orgName>,
+							<address>
+								<settlement>Ispra</settlement>,
+								<country>Italy.</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="laboratory">External Security Unit</orgName>,
+							<orgName type="institution">Joint Research Centre–Institute for the Protection and Security of the Citizen</orgName>,
+							<address>
+								<settlement>Ispra</settlement>,
+								<country>Italy.</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>3</marker>
+							<orgName type="laboratory">Inland Marine Waters Unit</orgName>,
+							<orgName type="institution" key="inst1">Joint Research Centre–Institute for Environment and Sustainability</orgName>,
+							<orgName type="institution" key="inst2">Commission of the European Communities</orgName>,
+							<address>
+								<settlement>Ispra</settlement>,
+								<country>Italy.</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../jsp/xmlverbatimwrapper.xsl"?> 
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<!-- Dept. de Genie Phys., Ecole Polytech., Montreal Univ., Que.; -->
+    <teiHeader xml:lang="fr">
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<affiliation>
+								<orgName type="department">Dept. de Genie Phys.</orgName>,
+								<orgName type="department">Ecole Polytech.</orgName>,
+								<orgName type="institution">Montreal Univ.</orgName>,
+								<address>
+									<region type="state">Que.</region>;
+								</address>
+							</affiliation>
+						</author>			
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</TEI>

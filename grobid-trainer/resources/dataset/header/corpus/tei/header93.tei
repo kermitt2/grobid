@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="94"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Animal and Robot Navigation <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Ulrich Nehmzow <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science <lb/>Manchester University <lb/></affiliation></byline>
+		<address>Manchester M13 9PL <lb/>United Kingdom <lb/></address>
+		<email>u.nehmzow@cs.man.ac.uk <lb/></email>
+		<div type="abstract">Abstract <lb/>It is argued that the following three properties are foundations of robust robot <lb/>navigation: <lb/>* The use of landmarks (and, in particular, the use of a compass sense), <lb/>* the use of canonical paths, and <lb/>* the use of topological rather than geometrical maps. <lb/>Some examples of successful animal navigation are presented that support this view. <lb/>We have performed initial experiments with mobile robots to investigate mechanisms <lb/>suitable to implement such navigational architectures. Experiments concerning navigation by dead reckoning are presented, and a differential light compass is introduced <lb/>to aid robot navigation. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

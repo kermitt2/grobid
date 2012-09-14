@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="regensburg2_12"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Perfiuormethyl-Element-Liganden, XXTV [1]-<lb/>Organozinnyerbindimgen als Reagenzien, El [2]<lb/> Spaltungsreaktionen der Element-Element-Bindung in Verbindungen des Typs<lb/> RnE—ERTO (R = CH3, CF3 @BULLET E = P, As, Se, Te @BULLET it,m=1, 2)<lb/></titlePart>
+	</docTitle>
+
+	<note type="english-title">Perfluormethyl Element Ligands, XXIV [1];<lb/> Organotin Compounds as Reagents, III [2]<lb/> Cleavage Reactions of the Element-Element-Bond in Compounds of the Type<lb/> R"E-ERm (R = CH3CF3; E = P, As, S, Se, Te; n,m=l,<lb/> 2)<lb/></note>
+
+	<byline>
+	<docAuthor>Peter Dehnert, Joseph Grobe* und Due Le Van<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Eduard-Zintl-Institut der Technischen Hochschule Darmstadt,</affiliation>
+	</byline>
+
+	<address>Hochschulstraße 4, D-6100 Darmstadt<lb/></address>
+
+	<reference>Z. Naturforsch. 36b, 48-54 (1981);</reference>
+
+	<note type="submission">eingegangen am 14. August 1980<lb/></note>
+
+	<keyword>Organoelement-Element Compounds, Perfluoromethyl Derivatives, NMR Spectra<lb/></keyword>
+
+	<div type="abstract">A systematic study of the cleavage of element-element bonds in compounds of the type<lb/> R"E-ERm (R = CH3, CF3; E = P, As, S, Se, Te; n,m = 1, 2) by the group IV A element<lb/> hydrides Me3M'H (M'= Si, Ge, Sn; Me = CH3) has been carried out. To evaluate the<lb/> reaction pathway, for a number of compounds the attack of H2O, CH3OH, HBr and HI<lb/> has been investigated. Possible reaction intermediates have been synthesized by in-<lb/>dependent routes and tested under comparable conditions.</div>
+
+		</front>
+	</text>
+</tei>

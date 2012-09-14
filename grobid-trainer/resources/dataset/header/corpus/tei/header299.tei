@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="304"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Distributed Simulation of DEVS-Based Multiformalism Models <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Herbert Praehofer and Gernot Reisinger <lb/></docAuthor></byline>
+		<byline><affiliation>Institute of Systems Science <lb/>Systems Theory and Information Engineering <lb/>Johannes Kepler University Linz <lb/></affiliation></byline>
+		<address>A-4040 Linz, Austria <lb/></address>
+		<div type="abstract">Abstract <lb/>In this paper we introduce a new approach for parallel, distributed simulation of modular, hierarchical <lb/>DEVS and DEVS-based combined discrete/continuous <lb/>multiformalism models. The algorithm combines <lb/>conservative and optimistic distributed simulation <lb/>strategies and is able to optimally exploit lookahead <lb/>capabilities of the model. The object oriented implementation in C++ is intended to serve as a powerful <lb/>simulator in the STIMS modeling and simulation environment. <lb/></div>
+		<div type="intro">1 Introduction and Motivation</div>
+		</front>
+</text>
+</tei>

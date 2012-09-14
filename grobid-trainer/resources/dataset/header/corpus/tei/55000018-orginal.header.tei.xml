@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000018-orginal"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			
+			<lb/>
+			<reference>Cytokine and Growth Factor Reviews 12 (2001) 361– 373<lb/></reference>
+			<ptr type="web">www.elsevier.com/locate/cytogfr<lb/></ptr>
+			
+			<note type="articleType">Survey<lb/></note>
+
+			<docTitle>
+				<titlePart>The GDNF/RET signaling pathway and human diseases<lb/></titlePart>
+			</docTitle>
+
+			<byline>
+				<docAuthor>Masahide Takahashi *<lb/></docAuthor>
+			</byline>
+
+			<byline>
+				<affiliation>Department of Pathology, Nagoya Uni6ersity Graduate School of
+					Medicine,</affiliation>
+			</byline>
+
+			<address>65 Tsurumai-cho, Showa-ku, Nagoya 466-8550, Japan<lb/></address>
+
+			<div type="abstract">Abstract<lb/> Glial cell line-derived neurotrophic factor (GDNF)
+				and related molecules, neurturin, artemin and persephin, signal through a<lb/>
+				unique multicomponent receptor system consisting of RET tyrosine kinase and
+				glycosyl-phosphatidylinositol-anchored coreceptor<lb/> (GFRa1–4). These neurotrophic
+				factors promote the survival of various neurons including peripheral autonomic and
+				sensory<lb/> neurons as well as central motor and dopamine neurons, and have been
+				expected as therapeutic agents for neurodegenerative<lb/> diseases. In addition, it
+				turned out that the GDNF/RET signaling plays a crucial role in renal development and
+				regulation of<lb/> spermatogonia differentiation. RET mutations cause several human
+				diseases such as papillary thyroid carcinoma, multiple<lb/> endocrine neoplasia
+				types 2A and 2B, and Hirschsprung's disease. The mutations resulted in RET
+				activation or inactivation by<lb/> various mechanisms and the biological properties
+				of mutant proteins appeared to be correlated with disease phenotypes. The<lb/>
+				signaling pathways activated by GDNF or mutant RET are being extensively
+				investigated to understand the molecular<lb/> mechanisms of disease development and
+				the physiological roles of the GDNF family ligands.</div>
+
+			<note type="copyright">© 2001 Elsevier Science Ltd. All<lb/> rights reserved.<lb/></note>
+
+			<keywords>Keywords: RET proto-oncogene; Glial cell line-derived neurotrophic factor;
+				Papillary thyroid carcinoma; Multiple endocrine neoplasia 2;<lb/> Hirschsprung's
+				disease<lb/></keywords>
+
+		</front>
+	</text>
+</tei>

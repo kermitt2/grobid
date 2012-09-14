@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="465"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">AUCTION-DRIVEN COORDINATION FOR <lb/>PLANTWIDE OPTIMIZATION <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Rinaldo A. Jose and Lyle H. Ungar <lb/></docAuthor></byline>
+		<byline><affiliation>University of Pennsylvania <lb/></affiliation></byline>
+		<address>Philadelphia, PA 19104 <lb/></address>
+		<div type="abstract">Abstract <lb/>Model predictive control strategies generally focus on controlling plant outputs to setpoints; in <lb/>industry, however, a more desirable goal is maximizing a plants profitability. In principle, this can be <lb/>done by creating a plant model and maximizing profit with respect to the market prices of the plants <lb/>inputs and outputs, but in practice, such centralized approaches often cannot effectively be applied at <lb/>the operations time scale due to the size and complexity of the problem. One solution is to use <lb/>decentralized optimization at the unit operations level by tearing process streams and coordinating the <lb/>resulting pieces. Such optimization, however, requires that unit inputs and outputs be priced. We show <lb/>that a traditional Lagrangean-based approach to this pricing fails for simple systems. Instead, we define <lb/>slack resources over the torn process streams and price them using auctions. Unlike Lagrange <lb/>multipliers, slack resource prices contain useful information and can be used to make decisions <lb/>regarding capital improvements, thus providing a strong tie between the operations and management <lb/>layers in chemical plants. <lb/></div>
+		<keywords>Keywords <lb/>auctions, distributed optimization, resource prices, process decomposition, optimal coordination, <lb/>penalty-based methods, Lagrangean decomposition <lb/></keywords>
+		<div type="intro">Introduction</div>
+		</front>
+</text>
+</tei>

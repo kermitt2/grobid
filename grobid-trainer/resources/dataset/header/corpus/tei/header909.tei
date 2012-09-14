@@ -1,0 +1,20 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="unknown"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">TOLERATING LATENCY THROUGH <lb/>SOFTWARE-CONTROLLED DATA PREFETCHING <lb/></titlePart>
+		</docTitle>
+		<note type="degree">a dissertation <lb/>submitted to the</note>
+		<byline><affiliation>department of electrical engineering <lb/></affiliation></byline>
+		<note type="degree">and the committee on graduate studies <lb/>of</note>
+		<byline><affiliation>stanford university <lb/></affiliation></byline>
+		<note type="degree">in partial fulfillment of the requirements <lb/>for the degree of <lb/>doctor of philosophy <lb/></note>
+		<byline><docAuthor>By <lb/>Todd C. Mowry <lb/></docAuthor></byline>
+		<date>March 1994 <lb/></date>
+		<pb/>
+		</front>
+</text>
+</tei>

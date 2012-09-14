@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="ZNA-1947-2a-0009"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Anreicherung des schweren Silberisotops durch Ionenwanderung in «-AgJ<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Von ALFRED KLEMM<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Aus dem Kaiser-Wilhelm-Institut für Chemie,</affiliation>
+	</byline>
+ 
+	<address>Tailfingen<lb/></address>
+
+	<reference>(Z. Naturforschg. 2 a, 9—16 [1947];</reference>
+
+	<note type="submission">eingegangen am 15. Aug. 1946)<lb/></note>
+
+	<div type="abstract">Festes ct-AgJ wurde bei 230 ° C zwischen einem Stück Kohle als Anode und einem<lb/> Silberblech als Kathode während 20 Stdn. mit einer anodischen Stromdichte von 2 A/cm-<lb/>elektrolysiert. Das nach der Elektrolyse übriggebliebene Silberjodid in der Nähe der<lb/> Anode wurde massenspektrographisch untersucht. Unmittelbar an der Anode bestand<lb/> das Silber aus 49% 107 Ag und 51% 10fl Ag. Die Zusammensetzung des Silbers ging mit<lb/> zunehmendem Abstand von der Anode kontinuierlich in die natürliche (52% 107 Ag und<lb/> 48% 109 Ag) über, die ungefähr 2,3 cm von der Anode entfernt erreicht wurde. Zwischen<lb/> der relativen Massendifferenz der Silberionen und der relativen Differenz ihrer Wan-<lb/>derungsgeschwindigkeiten im a-AgJ ergab sich daraus die Beziehung (wi — w3)lw<lb/> = —0,11 (mi — m2) Im. Aus älteren, negativ verlaufenen Anreicherungsversuchen folgt<lb/> für Ionenwanderung in Wasser: (wt — w2)/w &lt;—0,018 (wii — m2)lm.<lb/></div>
+
+	<div type="intro">V<lb/> r ersuche, Isotope durch Ionenwanderung zu<lb/></div>
+
+		</front>
+	</text>
+</tei>

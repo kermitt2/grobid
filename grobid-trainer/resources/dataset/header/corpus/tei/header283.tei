@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="288"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">An Improved Algorithm for Performance Optimal Technology <lb/>Mapping with Retiming in LUT-Based FPGA Design <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Jason Cong and Chang Wu <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science <lb/>University of California,</affiliation></byline>
+		<address>Los Angeles, CA 90024 <lb/></address>
+		<div type="abstract">Abstract <lb/>A novel algorithm, named SeqMapII, of technology <lb/>mapping with retiming for optimal clock period for K-LUT based FPGAs was recently proposed by Pan and <lb/>Liu [13]. The time complexity of their algorithm, however, is O(K 3 n 4 log(Kn 2 ) log n) for sequential circuits <lb/>with n gates, which is too high for medium and large <lb/>size designs in practice. In this paper, we present <lb/>three strategies to improve the performance of the approach in [13]: 1) efficient label update with single <lb/>K-cut computation based on the monotone property <lb/>of labels that we showed for sequential circuits, 2) a <lb/>novel approach for the K-cut computation on partial <lb/>flow networks, which are much smaller in practice, 3) <lb/>SCC (strongly connected component) partition to further speedup the algorithm. In practice, our algorithm <lb/>works in O(K 2 n 3 log n) time and O(Kn) space according to our experimental results. It is 2fi10 4 times faster <lb/>than SeqMapII-opt for computing optimal solutions and <lb/>2 times faster than SeqMapII-heu which uses very small <lb/>expanded circuits as a heuristic. <lb/></div>
+		<div type="intro">1. Introduction</div>
+		</front>
+</text>
+</tei>

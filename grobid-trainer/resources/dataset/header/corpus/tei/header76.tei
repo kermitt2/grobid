@@ -1,0 +1,19 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="77"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Predictive Dynamic Load Balancing of Parallel and Distributed Rule <lb/>and Query Processing <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Hasanat M. Dewan Salvatore J. Stolfo <lb/> Mauricio Hernandez Jae-Jun Hwang <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science <lb/> Columbia University,</affiliation></byline>
+		<address>New York, NY 10027 <lb/></address>
+		<idno>CUCS-025-94 <lb/></idno>
+		<note type="other">(This paper appeared in the Proceedings of the 1994 ACM SIGMOD Conference.) <lb/></note>
+		<div type="abstract">Abstract <lb/>Expert Databases are environments that support the processing of rule programs against a disk resident database. <lb/>They occupy a position intermediate between active and deductive databases, with respect to the level of abstraction <lb/>of the underlying rule language. The operational semantics <lb/>of the rule language influences the problem solving strategy, <lb/>while the architecture of the processing environment determines efficiency and scalability. <lb/>In this paper, we present elements of the PARADISER <lb/>architecture and its kernel rule language, PARULEL. The <lb/>PARADISER environment provides support for parallel and <lb/>distributed evaluation of rule programs, as well as static <lb/>and dynamic load balancing protocols that predictively <lb/>balance a computation at runtime. This combination of <lb/>features results in a scalable database rule and complex <lb/>query processing architecture. We validate our claims by <lb/>analyzing the performance of the system for two realistic <lb/>test cases. In particular, we show how the performance of a <lb/>parallel implementation of transitive closure is significantly <lb/>improved by predictive dynamic load balancing. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+<listBibl>
+
+		<bibl><author>I.A. Shelykh et al.</author>, <title level="j">Phys. Rev. Lett.</title> <biblScope type="vol">97</biblScope> (<date>2006</date>), pp. <biblScope type="pp">066402</biblScope></bibl>
+
+		<bibl><author>K.V. Kavokin et al.</author>, <title level="j">Phys. Rev. Lett.</title>, <biblScope type="vol">92</biblScope> (<date>2004</date>), pp. <biblScope type="pp">017401</biblScope></bibl>
+
+		<bibl><author>I.G. Savenko, E.B. Magnusson and I.A. Shelykh</author>, <idno>arXiv:1101.3711v1</idno>[cond-mat.mes-hall] (<date>2010</date>)</bibl>
+		
+</listBibl>
+</tei>

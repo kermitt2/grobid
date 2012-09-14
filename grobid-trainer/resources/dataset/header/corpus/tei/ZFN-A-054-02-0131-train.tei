@@ -1,0 +1,26 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="ZFN-A-054-02-0131"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<titlePage>
+				<docTitle>
+					<titlePart type="main">Pure Rotational Spectra of CS<lb/></titlePart>
+				</docTitle>
+				<byline><docAuthor>V. Ahrens and G, Winnewisser</docAuthor><lb/></byline>
+				<byline><affiliation>1. PhysikaUsches Institut der Universität zu Köln</affiliation>, <address>D-50937 Cologne</address><lb/></byline>
+				<reference>Z. Naturforsch. 54 a, 131-136 (1999); </reference>
+				<note type="submission">received November 21, 1998<lb/></note>
+			</titlePage>
+			<div type="abstract">The pure rotational spectra of CS and its isotopomers '^C^^S, '^C^'S, '^C^^S, ^^C"S, '^C^^S <lb/>
+including the very rare isotopomer ^^C^^S were observed. The rotational spectra include ground <lb/>
+and vibrationally excited transitions up to v = 16. The new measurements have been performed <lb/>
+with the Cologne terahertz spectrometer covering the frequency region from 259 to 1075 GHz. <lb/>
+These newly observed rotational transitions together with earlier data were fitted to a Dunham- <lb/>
+type Hamiltonian. The obtained isotopically invariant parameters include vibrational and rotational <lb/>
+expansion coefficients. <lb/></div>
+			<div type="intro">1. Introduction<lb/></div>
+		</front>
+	</text>
+</tei>

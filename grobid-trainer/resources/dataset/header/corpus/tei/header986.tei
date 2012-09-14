@@ -1,0 +1,24 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="1055"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<idno>DOI: 10.1002/zaac.200700532 <lb/></idno>
+		<docTitle>
+			<titlePart type="main">Catalytic Induced Thermal Conversion of Amorphous Carbon into Single <lb/> Walled Carbon Nanotubes <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Ravi Joshi a,b , Roland Schierholz c , Jörg J. Schneider* ,a , and Prathap Haridoss c <lb/></docAuthor></byline>
+		<address>Darmstadt,</address>
+		<byline><affiliation>Technische Universität Darmstadt,</affiliation></byline>
+		<byline><affiliation>a Eduard-Zintl-Institut für Anorganische und Physikalische Chemie b Fachbereich Chemie <lb/></affiliation></byline>
+		<address>c Madras, Chennai/India,</address>
+		<byline><affiliation>Indian Institute of Technology, Department of Metallurgy and Materials Engineering <lb/></affiliation></byline>
+		<date>Received October 31 st , 2007. <lb/></date>
+		<note type="other">Dedicated to ProfessorKlaus Hafner on the Occasion of his 80 th Birthday <lb/></note>
+		<div type="abstract">Abstract. Single walled carbon nanotubes (SWNTs) have caught <lb/> extensive attention in the field of material science and electronics. <lb/> Their formation typically uses plasma arc or CVD techniques. <lb/> So far, formation of SWCNTs just by thermal conversion <lb/> of amorphous, non graphitic carbon which is a nearly ubiquitous <lb/> carbon source is challenging but has not been reported so far. We <lb/> herein demonstrate the catalytic growth of SWNTs from an <lb/>  amorphous carbon source (activated charcoal powder, &apos;Aktiv- <lb/> kohle&apos;) mediated by three different catalytically active metals; met- <lb/> allic nickel, nickel derived from bis(? 5 -cyclopentadienyl)nickel <lb/> (nickelocene) and yttrium formed in situ from yttrium oxide. <lb/></div>
+		<keywords>Keywords: Carbon nanotubes; Nickel; Yttrium; Catalysis; Carbon <lb/> amorphous <lb/></keywords>
+		<div type="intro">Introduction <lb/></div>
+		</front>
+</text>
+</tei>

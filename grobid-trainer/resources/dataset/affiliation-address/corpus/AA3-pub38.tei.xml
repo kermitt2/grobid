@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../jsp/xmlverbatimwrapper.xsl"?> 
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<!--Naval Air Warefare Center, Patuxent River, MD;-->
+    <teiHeader xml:lang="en">
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<affiliation>
+								<orgName type="institution">Naval Air Warefare Center</orgName>,
+								<address>
+								    <settlement>Patuxent River</settlement>,
+								    <region type="state">MD</region>;
+                                </address>
+							</affiliation>
+						</author>			
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</TEI>

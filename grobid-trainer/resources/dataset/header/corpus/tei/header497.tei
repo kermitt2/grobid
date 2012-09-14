@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="500"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Qualia Structure and the <lb/>Compositional Interpretation of Compounds <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Michael Johnston and Federica Busa <lb/></docAuthor></byline>
+		<byline><affiliation>Research Lab for Linguistics and Computation, <lb/>Computer Science Department, <lb/>Volen Center for Complex Systems, <lb/>Brandeis University, <lb/></affiliation></byline>
+		<address>Waltham, MA 02254 <lb/></address>
+		<email>johnston@cs.brandeis.edu </email> <email>federica@cs.brandeis.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>The analysis of nominal compound constructions has proven to be a recalcitrant problem <lb/>for linguistic semantics and poses serious challenges for natural language processing systems. <lb/>We argue for a compositional treatment of compound constructions which limits the need for <lb/>listing of compounds in the lexicon. We argue that the development of a practical model of <lb/>compound interpretation crucially depends on issues of lexicon design. The Generative Lexicon <lb/>(Pustejovsky 1995) provides us with a model of the lexicon which couples sufficiently expressive <lb/>lexical semantic representations with mechanisms which capture the relationship between those <lb/>representations and their syntactic expression. In our approach, the qualia structures of the <lb/>nouns in a compound provide relational structure enabling compositional interpretation of the <lb/>modification of the head noun by the modifying noun. This brings compound interpretation <lb/>under the same rubric as other forms of composition in natural language, including argument <lb/>selection, adjectival modification, and type coercion (Pustejovsky (1991,1995), Bouillon 1995). <lb/>We examine data from both English and Italian and develop analyses for both languages which use <lb/>phrase structure schemata to account for the connections between lexical semantic representation <lb/>and syntactic expression. In addition to applications in natural language understanding, machine <lb/>translation, and generation, the model of compound interpretation developed here can be applied <lb/>to multi-lingual information extraction tasks. <lb/></div>
+		<div type="intro">1 Introduction <lb/></div>
+		</front>
+</text>
+</tei>

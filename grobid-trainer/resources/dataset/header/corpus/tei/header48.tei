@@ -1,0 +1,20 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="49"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Selection Predicate Indexing for Active Databases <lb/>Using Interval Skip Lists <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Eric N. Hanson <lb/>Theodore Johnson <lb/></docAuthor></byline>
+		<byline><affiliation>Computer and Information Sciences Department <lb/> University of Florida <lb/></affiliation></byline>
+		<address>Gainesville, FL 32611 <lb/></address>
+		<email>fhanson,tedg@cis.ufl.edu <lb/></email>
+		<idno>TR94-017 <lb/></idno>
+		<date>15 April 1994 <lb/>(revised 13 October 1994) <lb/></date>
+		<div type="abstract">Abstract <lb/>A new, efficient selection predicate indexing scheme for active database systems is introduced. <lb/>The selection predicate index proposed uses an interval index on an attribute of a relation or <lb/>object collection when one or more rule condition clauses are defined on that attribute. The <lb/>selection predicate index uses a new type of interval index called the interval skip list (IS-list). <lb/>The IS-list is designed to allow efficient retrieval of all intervals that overlap a point, while allowing <lb/>dynamic insertion and deletion of intervals. IS-list algorithms are described in detail. The IS-list <lb/>allows efficient on-line searches, insertions, and deletions, yet is much simpler to implement than <lb/>other comparable interval index data structures such as the priority search tree and balanced <lb/>interval binary search tree (IBS-tree). IS-lists require only one third as much code to implement <lb/>as balanced IBS-trees. The combination of simplicity, performance, and dynamic updateability <lb/>of the IS-list is unmatched by any other interval index data structure. This makes the IS-list a <lb/>good interval index structure for implementation in an active database predicate index. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

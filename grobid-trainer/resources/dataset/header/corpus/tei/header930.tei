@@ -1,0 +1,16 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="unknown"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Adaptive Information Filtering using Evolutionary Computation <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>D.R. Tauritz &amp; J.N. Kok &amp; I.G. Sprinkhuizen-Kuyper <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science, Leiden University <lb/></affiliation></byline>
+		<address>P.O. Box 9512, 2300 RA Leiden, The Netherlands <lb/></address>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

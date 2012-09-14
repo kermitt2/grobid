@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="305"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Building Scalable Parallel Processors Using <lb/>Networked Computers - A Tutorial For <lb/>Synergy V2.0 <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Yuan Shi <lb/></docAuthor></byline>
+		<date>January 1994 <lb/></date>
+		<date>@1994</date>
+		<byline><affiliation>Temple University <lb/>SYNERGY <lb/></affiliation></byline>
+		<pb/>
+		</front>
+</text>
+</tei>

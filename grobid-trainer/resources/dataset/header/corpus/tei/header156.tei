@@ -1,0 +1,16 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="157"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">The Error in Polynomial Tensor-Product, <lb/>and Chung-Yao, Interpolation <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Carl de Boor <lb/></docAuthor></byline>
+		<div type="abstract">Abstract. A formula for the error in Chung-Yao interpolation announced earlier is proved (by induction). In the process, a bivariate divided difference identity of independent interest is proved. Also, an inductive proof of an error formula for polynomial interpolation by tensor-products is given. The main tool is a (convenient notation for a) multi-variate divided difference. <lb/></div>
+		<note type="reference">Surface Fitting and Multiresolution Methods 35 <lb/>A. Le Mehaute, C. Rabut, and L. L. Schumaker (eds.), pp. 35-50. <lb/></note><note type="copyright">Copyright o c 1997 by Vanderbilt University Press, Nashville, TN. <lb/></note><idno>ISBN 0-8265-1294-1.</idno> <lb/><note type="copyright">All rights of reproduction in any form reserved. <lb/></note>
+		<pb/>
+		</front>
+</text>
+</tei>

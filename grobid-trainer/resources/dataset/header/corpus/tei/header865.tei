@@ -1,0 +1,26 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="unknown"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Global Stabilization of Linear Discrete-Time Systems <lb/>with Bounded Feedback <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Yudi Yang <lb/></docAuthor></byline>
+		<byline><affiliation>IBM,</affiliation></byline>
+		<address>MD340 <lb/>1311 Mamaroneck Ave <lb/>White Plains, NY 10605 <lb/></address>
+		<email>yudiy@vnet.ibm.com <lb/></email>
+		<byline><docAuthor>Eduardo D. Sontag <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Mathematics <lb/>Rutgers University <lb/></affiliation></byline>
+		<address>New Brunswick, NJ 08903 <lb/></address>
+		<email>sontag@hilbert.rutgers.edu <lb/></email>
+		<byline><docAuthor>Hector J. Sussmann <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Mathematics <lb/>Rutgers University <lb/></affiliation></byline>
+		<address>New Brunswick, NJ 08903 <lb/></address>
+		<email>sussmann@hilbert.rutgers.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>This paper deals with the problem of global stabilization of linear discrete time systems by means of <lb/>bounded feedback laws. The main result proved is an analog of one proved for the continuous time case <lb/>by the authors, and shows that such stabilization is possible if and only if the system is stabilizable <lb/>with arbitrary controls and the transition matrix has spectral radius less or equal to one. The proof <lb/>provides in principle an algorithm for the construction of such feedback laws, which can be implemented <lb/>either as cascades or as parallel connections (&quot;single hidden layer neural networks&quot;) of simple saturation <lb/>functions. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

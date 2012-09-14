@@ -1,0 +1,31 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="774"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<note type="other">, , 1{19 () <lb/></note>
+		<note type="copyright">c Kluwer Academic Publishers, Boston. Manufactured in The Netherlands. <lb/></note>
+		<docTitle>
+			<titlePart type="main">A Comparison of Large Scale Mixed <lb/>Complementarity Problem Solvers * <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>STEPHEN C. BILLUPS</docAuthor></byline>
+		<email>sbillups@carbon.cudenver.edu <lb/></email>
+		<byline><affiliation>Mathematics Department, University of Colorado,</affiliation></byline>
+		<address>Denver, Colorado 80217 <lb/></address>
+		<byline><docAuthor>STEVEN P. DIRKSE</docAuthor></byline>
+		<email>steve@gams.com <lb/></email>
+		<byline><affiliation>GAMS Development Corporation,</affiliation></byline>
+		<address>Washington, DC 20007 <lb/></address>
+		<byline><docAuthor>MICHAEL C. FERRIS</docAuthor></byline>
+		<email>ferris@cs.wisc.edu <lb/></email>
+		<byline><affiliation>Computer Sciences Department, University of Wisconsin,</affiliation></byline>
+		<address>Madison, Wisconsin 53706 <lb/></address>
+		<date>Received Oct 1, 1995; Revised March 22, 1996 <lb/></date>
+		<note type="other">Editor: <lb/></note>
+		<div type="abstract">Abstract. This paper provides a means for comparing various computer codes for solving large <lb/>scale mixed complementarity problems. We discuss inadequacies in how solvers are currently <lb/>compared, and present a testing environment that addresses these inadequacies. This testing <lb/>environment consists of a library of test problems, along with GAMS and MATLAB interfaces that <lb/>allow these problems to be easily accessed. The environment is intended for use as a tool by other <lb/>researchers to better understand both their algorithms and their implementations, and to direct <lb/>research toward problem classes that are currently the most challenging. As an initial benchmark, <lb/>eight different algorithm implementations for large scale mixed complementarity problems are <lb/>briefly described and tested with default parameter settings using the new testing environment. <lb/></div>
+		<keywords>Keywords: complementarity problems, variational inequalities, computation, algorithms <lb/></keywords>
+		<div type="intro">1. Introduction</div>
+		</front>
+</text>
+</tei>

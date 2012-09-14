@@ -1,0 +1,618 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<patent-document status="new" lang="EN" ucid="EP-1130005-B1" country="EP" doc-number="1130005" kind="B1" date="20040804"><bibliographic-data><publication-reference fvid="23211563" ucid="EP-1130005-B1" status="new"><document-id status="new" format="original"><country>EP</country><doc-number>1130005</doc-number><kind>B1</kind><date>20040804</date><lang>EN</lang></document-id></publication-reference><application-reference ucid="EP-01103316-A" status="new" is-representative="NO"><document-id format="epo" status="new"><country>EP</country><doc-number>01103316</doc-number><kind>A</kind><date>20010213</date><lang>EN</lang></document-id></application-reference><priority-claims status="new"><priority-claim ucid="IT-MI000379" status="new"><document-id format="original" status="new"><country>IT</country><doc-number>MI000379</doc-number><date>20000229</date></document-id></priority-claim><priority-claim ucid="IT-MI20000379-A" status="new"><document-id format="epo" status="new"><country>IT</country><doc-number>MI20000379</doc-number><kind>A</kind><date>20000229</date></document-id></priority-claim></priority-claims><dates-of-public-availability status="new"><intention-to-grant-date><date>20040219</date></intention-to-grant-date></dates-of-public-availability><term-of-grant /><technical-data status="new"><classifications-ipcr><classification-ipcr status="new">C04B  41/45        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">C04B  41/48        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">C04B  41/82        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">C04B  41/83        20060101A I20051008RMEP        </classification-ipcr></classifications-ipcr><classification-ecla status="new"><classification-symbol scheme="EC">C04B41/48M2P</classification-symbol><classification-symbol scheme="EC">C04B41/83</classification-symbol></classification-ecla><invention-title lang="DE" status="new">Verwendung von mono- und bifunktionalen (Per)Fluoropolyetherderivaten zur Behandlung von keramischen Werkstoffen</invention-title><invention-title lang="EN" status="new">Use of mono- and bifunctional (per)fluoropolyether derivates in the treatment of ceramic materials</invention-title><invention-title lang="FR" status="new">Utilisation de dérivés de polyethers (per)fluorés mono-et bifonctionnels pour le traitment de matériaux céramiques</invention-title><citations /><figures /></technical-data><parties><applicants><applicant format="epo" status="new"><addressbook><name>SOLVAY SOLEXIS SPA</name><address><country>IT</country></address></addressbook></applicant><applicant format="intermediate" status="new"><addressbook><name>SOLVAY SOLEXIS S.P.A.</name><address><country /></address></addressbook></applicant></applicants><inventors><inventor format="epo" status="new"><addressbook><name>DE DOMINICIS MATTIA</name><address><country>IT</country></address></addressbook></inventor><inventor format="epo" status="new"><addressbook><name>CARIGNANO GABRIELLA</name><address><country>IT</country></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>DE DOMINICIS, MATTIA</name><address><country /></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>CARIGNANO, GABRIELLA</name><address><country /></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>DE DOMINICIS, MATTIA</last-name><address><street>Via Saetta 24, Int. 29</street><city>35100 Padova</city><country>IT</country></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>CARIGNANO, GABRIELLA</last-name><address><street>Via XXV Aprile 15/A</street><city>20020 Arese, Milano</city><country>IT</country></address></addressbook></inventor></inventors><assignees><assignee format="original" status="new"><addressbook><last-name>Solvay Solexis S.p.A.</last-name><address><street>Via Turati, 12</street><city>20121 Milano</city><country>IT</country></address></addressbook></assignee></assignees><agents><agent format="original" status="new"><addressbook><last-name>Sama, Daniele, Dr.</last-name><address><street>Sama Patents, Via G.B. Morgagni, 2</street><city>20129 Milano</city><country>IT</country></address></addressbook></agent></agents></parties><international-convention-data><designated-states><ep-contracting-states><country>DE</country><country>ES</country><country>FR</country><country>GB</country><country>IT</country></ep-contracting-states></designated-states></international-convention-data></bibliographic-data><abstract lang="EN" source="EPO" status="new"><p>Use in the treatment of ceramic materials for obtaining an easy stain removal, of mono- and bifunctional (per)fluoropolyether derivatives having the following structures: ÄRf-CFY-L-OÜmP(O)(O&lt;-&gt;Z&lt;+&gt;)3-m (O&lt;-&gt;Z&lt;+&gt;)2P(O) ÄO-L-YFC-O-Rf-CFY-L-O-P(O) (O&lt;-&gt;Z&lt;+&gt;)Üm'- - ÄO-L-YFC-O-Rf-CFY-L-OÜP(O) (O&lt;-&gt;Z&lt;+&gt;)2 (B) Rf-CFY-L-W W-L-YFC-O-Rf-CFY-L-W wherein     m' is an integer from 0 to 20, preferably from 0 to 4;   m' is an integer from 0 to 20, preferably from 0 to 4; L is an organic group selected from -CH2-(OCH2CH2)n-, -CO-NR'-(CH2)q-, with R'=H or C1-C4 alkyl group;   n=0-8, preferably 1-3, q=1-8, preferably 1-3;   Z= H, alkaline metal or NR4 group with R=H or C1-C4 alkyl group;   Y=F, CF3; m=1,2,3, preferably 1,2; W is a -Si(R1) alpha (OR2)3- alpha  group with  alpha =0,1,2, R1 and R2 equal to or different from each other are C1-C6 alkyl groups, optionally containing one or more ether O, C6-C10 aryl groups, C7-C12 alkyl-aryl or aryl-alkyl groups.</p></abstract><abstract lang="EN" status="new"><p num="">Use in the treatment of ceramic materials for obtaining an
+easy stain removal, of mono- and bifunctional (per)fluoropolyether
+derivatives having the following structures:
+<st32:che xmlns:st32="http://www.matrixware.com/ns/st32/">[R<sub>f</sub>-CFY-L-O]<sub>m</sub>P(O)(O<sup>-</sup>Z<sup>+</sup>)<sub>3-m</sub></st32:che><st32:che xmlns:st32="http://www.matrixware.com/ns/st32/">(O<sup>-</sup>Z<sup>+</sup>)<sub>2</sub>P(O) [O-L-YFC-O-R<sub>f</sub>-CFY-L-O-P(O) (O<sup>-</sup>Z<sup>+</sup>)]<sub>m'</sub>-
+
+- [O-L-YFC-O-R<sub>f</sub>-CFY-L-O]P(O) (O<sup>-</sup>Z<sup>+</sup>)<sub>2</sub> (B)</st32:che><st32:che xmlns:st32="http://www.matrixware.com/ns/st32/">R<sub>f</sub>-CFY-L-W</st32:che><st32:che xmlns:st32="http://www.matrixware.com/ns/st32/">W-L-YFC-O-R<sub>f</sub>-CFY-L-W</st32:che>
+wherein
+<sl><li>m' is an integer from 0 to 20, preferably from 0 to 4;</li><li>m' is an integer from 0 to 20, preferably from 0 to 4;</li><li>L is an organic group selected from -CH<sub>2</sub>-(OCH<sub>2</sub>CH<sub>2</sub>)<sub>n</sub>-,
+-CO-NR'-(CH<sub>2</sub>)<sub>q</sub>-, with R'=H or C<sub>1</sub>-C<sub>4</sub> alkyl group;</li><li>n=0-8, preferably 1-3, q=1-8, preferably 1-3;</li><li>Z= H, alkaline metal or NR<sub>4</sub> group with R=H or C<sub>1</sub>-C<sub>4</sub> alkyl
+group;</li><li>Y=F, CF<sub>3</sub>; m=1,2,3, preferably 1,2;</li><li>W is a -Si(R<sub>1</sub>)<sub>α</sub>(OR<sub>2</sub>)<sub>3-α</sub> group with α=0,1,2, R<sub>1</sub> and R<sub>2</sub> equal to or
+different from each other are C<sub>1</sub>-C<sub>6</sub> alkyl groups, optionally
+containing one or more ether O, C<sub>6</sub>-C<sub>10</sub> aryl groups, C<sub>7</sub>-C<sub>12</sub>
+alkyl-aryl or aryl-alkyl groups.</li></sl></p></abstract><description lang="EN" status="new"><p num="0001">The present invention relates to the use of compounds for
+the protective treatment of ceramic materials towards stains.</p><p num="0002">Specifically, the invention relates to the application on
+ceramic surfaces of specific (per)fluoropolyether compounds
+able to supply an easy stain removal. Said compounds are
+effectively usable at very low surface concentrations, without
+modifying the surface aspect of the ceramic material. The
+stains which are to be removed are represented by wine,
+coffee, coca-cola, vinegar, marking pens, potassium
+permanganate, iodine tincture, sealing agents, etc.
+Preferably, the materials on which the compounds of the
+invention are applied are the so called porcelainized gres
+which due to their surface structure show particular problems
+as regards the removal of the above mentioned stains.</p><p num="0003">The technical problem which the present invention intends
+to solve is not the one which considers oil- and hydro-repellent
+protective coatings, but the one which warrants an
+easy stain removal, once the porcelainized gres after
+treatment with the compounds of the invention, has been
+dirtied by stains. High hydro- and oil-repellence values of 
+a protective surface treatment do not necessarily represent a
+sufficient condition to warrant an easy removal of the above
+mentiond stains, once penetrated into the ceramic material
+porosities.</p><p num="0004">It is well known that the ceramic material dirtability is
+connected to their porosity and therefore to the stain penetration
+inside the pores. The removal of said agents, once
+penetrated, is then not possible with the usual washing
+systems and requires the use of aggresive chemical agents
+which can damage the ceramic material and must be carefully
+handled.</p><p num="0005">Various systems for the protective treatment of ceramic
+materials are known in the prior art. The surface protection
+can be obtained through polymer coatings which tend to form a
+protective film on the material surface, or by the formation
+of glass coatings obtained by a baking phase. Another method
+consists in the impregnation of the surface porosities with
+formulations containing polymer derivatives and silicate
+particles.</p><p num="0006">The use of polymer coatings to confer protection to
+ceramic surfaces is described for example in <ref type="patent">USP 5,919,527</ref>
+wherein a coating based on fluorinated acrylic polymers is
+used to give hydro- and oil-repellence and anti-stain properties
+to hard surfaces, such as for example marbles, granites, 
+ceramics. The method described in this patent causes the
+formation of polymer films which tend to close the surface
+porosities of the ceramic material. Said system has the
+drawback to modify the surface aspect of the ceramic material,
+besides, due to wear effect, cracking phenomena of the polymer
+film can take place. They furtherly worsen the surface aspect
+of the ceramic material.</p><p num="0007">The surface protection by glass coatings is described for
+example in <ref type="patent">USP 5,702,761</ref> wherein the protection of porous
+ceramic articles is obtained by the formation of a silica
+particle layer containing binding agents. After this first
+step, a baking at high temperature (T=370-550°C) is carried
+out which allows to obtain a protective glass coating. Such
+application system involves an high energy consumption and it
+generally implies the change of the surface aspect of the ceramic
+material due to the refraction index variation caused by
+the presence of the glass surface layer.</p><p num="0008">In <ref type="patent">USP 5,356,716</ref> porous materials, such as stones, cements,
+ceramics are treated by impregnation of the porosities
+by using a formulation consisting of a mixture comprising
+polyurethane, silicone resins and silicates. With said a
+system an improved hydro-repellence is obtained. No mention is
+made to the easy removal of the above mentioned stains. </p><p num="0009">Likewise <ref type="patent">EP 0 603 697</ref> discloses a process for imparting oil
+and water repellency to the surface of a porous ceramic
+material that relies on the application of phosphoric
+monoesters containing a monofunctional R<sub>f</sub> group. </p><p num="0010">The surface treatment of various types of material with 
+(per)fluoropolyether compounds having non reactive or
+functionalized end groups, is also known. Generally values
+referred to the hydro- and oil-repellence properties are
+reported, but examples on the easy removal of the above
+mentioned stains on ceramic materials, in particular
+porcelainized gres, are not reported.</p><p num="0011">The protective systems of the prior art allow to confer
+hydro- and oil-repellence properties to various supports, but
+they do not give indications on the easy stain removal from
+ceramic supports, in particular porcelainized gres, of stains,
+such as for example wine, vinegar, marking pen, etc. as above
+mentioned.</p><p num="0012">The need was therefore felt to have available a
+protection coating of porous ceramic supports, in particular
+porcelainized gres, able to supply an easy stain removal,
+avoiding to change the surface aspect of the ceramic material,
+without having the above mentioned drawbacks of the prior art
+systems.</p><p num="0013">It is therefore an object of the invention the use in the
+treatment of ceramic materials for obtaining an easy stain
+removal, of mono- and bifunctional (per)fluoropolyether derivatives
+having the following structures:
+<st32:che xmlns:st32="http://www.matrixware.com/ns/st32/">[R<sub>f</sub>-CFY-L-O]<sub>m</sub>P(O) (O<sup>-</sup>Z<sup>+</sup>)<sub>3-m</sub></st32:che><st32:che xmlns:st32="http://www.matrixware.com/ns/st32/">(O<sup>-</sup>Z<sup>+</sup>)<sub>2</sub>P(O) [O-L-YFC-O-R<sub>f</sub>-CFY-L-O-P(O) (O<sup>-</sup>Z<sup>+</sup>)]<sub>m'</sub>-</st32:che><st32:che xmlns:st32="http://www.matrixware.com/ns/st32/">-[O-L-YFC-O-R<sub>f</sub>-CFY-L-O]P(O)(O<sup>-</sup>Z<sup>+</sup>)<sub>2</sub></st32:che><st32:che xmlns:st32="http://www.matrixware.com/ns/st32/">R<sub>f</sub>-CFY-L-W</st32:che><st32:che xmlns:st32="http://www.matrixware.com/ns/st32/">W-L-YFC-O-R<sub>f</sub>-CFY-L-W</st32:che>
+wherein:
+<sl><li>m' is an integer from 0 to 20, preferably from 0 to 4;</li><li>L is an organic group selected from -CH<sub>2</sub>-(OCH<sub>2</sub>CH<sub>2</sub>)<sub>n</sub>-,</li><li>- CO-NR'-(CH<sub>2</sub>)<sub>q</sub>-, with R' =H or C<sub>1</sub>-C<sub>4</sub> alkyl group;</li><li>n=0-8, preferably 1-3, q=1-8, preferably 1-3;</li><li>Z= H, alkaline metal or NR<sub>4</sub> group with R=H or C<sub>1</sub>-C<sub>4</sub> alkyl
+group;</li><li>Y=F, CF<sub>3</sub>;</li><li>m=1,2,3, preferably 1,2;</li><li>W is a group -Si(R<sub>1</sub>)<sub>α</sub>(OR<sub>2</sub>)<sub>3-α</sub> with α=0,1,2, R<sub>1</sub> and R<sub>2</sub> equal to or
+different from each other are C<sub>1</sub>-C<sub>6</sub> alkyl groups, optionally
+containing one or more ether O, C<sub>6</sub>-C<sub>10</sub> aryl groups, C<sub>7</sub>-C<sub>12</sub>
+alkyl-aryl or aryl-alkyl groups;</li><li>Rf has a number average molecular weight in the range 350-8,000,
+preferably 500-3,000 and comprises repeating units
+having at least one of the following structures, statistically
+placed along the chain:</li></sl><st32:che xmlns:st32="http://www.matrixware.com/ns/st32/">(CFXO), (CF<sub>2</sub>CF<sub>2</sub>O), (CF<sub>2</sub>CF<sub>2</sub>CF<sub>2</sub>O), (CF<sub>2</sub>CF<sub>2</sub>CF<sub>2</sub>CF<sub>2</sub>O),</st32:che><st32:che xmlns:st32="http://www.matrixware.com/ns/st32/">(CR<sub>4</sub>R<sub>5</sub>CF<sub>2</sub>CF<sub>2</sub>O), (CF(CF<sub>3</sub>)CF<sub>2</sub>O), (CF<sub>2</sub>CF(CF<sub>3</sub>)O),</st32:che>
+where
+<sl><li>X = F, CF<sub>3</sub>; </li><li>R<sub>4</sub> and R<sub>5</sub>, equal to or different from each other, are selected
+from H, Cl, or perfluoroalkyl from 1 to 4 carbon atoms.</li></sl></p><p num="0014">In particular Rf can have one of the following structures:
+<st32:che xmlns:st32="http://www.matrixware.com/ns/st32/">1)   -(CF<sub>2</sub>O)<sub>a'</sub>-(CF<sub>2</sub>CF<sub>2</sub>O)<sub>b'</sub>-</st32:che>
+with a'/b' in the range 0.5-2, extremes included, a' and
+
+b' being integers such as to give the above mentioned
+molecular weight;
+<st32:che xmlns:st32="http://www.matrixware.com/ns/st32/">2)   -(C<sub>3</sub>F<sub>6</sub>O)<sub>r</sub>- (C<sub>2</sub>F<sub>4</sub>O)<sub>b</sub>-(CFXO)<sub>t</sub>-</st32:che>
+with r/b = 0.5-2.0; (r+b)/t is in the range 10-30,
+
+b, r and t being integers such as to give the above mentioned
+molecular weight, X has the above mentioned
+meaning;
+<st32:che xmlns:st32="http://www.matrixware.com/ns/st32/">3)   -(C<sub>3</sub>F<sub>6</sub>O)<sub>r'</sub>-(CFXO)<sub>t'</sub>-</st32:che>
+t' can be 0;
+
+when t' is different from 0 then r'/t' = 10-30,
+
+r' and t' being integers such as to give the above mentioned
+molecular weight; X has the above mentioned
+meaning;
+<st32:che xmlns:st32="http://www.matrixware.com/ns/st32/">4)   -(OCF<sub>2</sub>CF(CF<sub>3</sub>))<sub>z</sub>-OCF<sub>2</sub>(R'f)<sub>y</sub>-CF<sub>2</sub>O-(CF(CF<sub>3</sub>)CF<sub>2</sub>O)<sub>z</sub>-</st32:che>
+wherein z is an integer such that the molecular weight is
+the above mentioned one;
+
+y is an integer between 0 and 1 and R'f is a fluoroalkylene
+group having for example 1-4 carbon atoms; <st32:che xmlns:st32="http://www.matrixware.com/ns/st32/">5)   -(OCF<sub>2</sub>CF<sub>2</sub>CR<sub>4</sub>R<sub>5</sub>)<sub>q</sub>-OCF<sub>2</sub>(R'f)<sub>y</sub>-CF<sub>2</sub>O-(CR<sub>4</sub>R<sub>5</sub>CF<sub>2</sub>CF<sub>2</sub>O)<sub>e</sub>-</st32:che>
+wherein:
+
+q and s are integers such that the molecular weight is
+the above mentioned one;
+
+R<sub>4</sub>, R<sub>5</sub>, R'f, y have the above mentioned meaning;
+<st32:che xmlns:st32="http://www.matrixware.com/ns/st32/">6)   -(C<sub>3</sub>F<sub>6</sub>O)<sub>r'''</sub>(CFXO)<sub>t'''</sub>-OCF<sub>2</sub>(R'f)<sub>y</sub>-CF<sub>2</sub>O(CF(CF<sub>3</sub>)CF<sub>2</sub>O)<sub>r'''</sub>(CFXO)<sub>t'''</sub>-</st32:che>
+wherein r'''/t''' = 10-30,
+
+r''' and t''' being integers such as to give the above
+mentioned molecular weight;
+
+R'f and y having the above mentioned meaning.
+
+In the above indicated formulas:
+
+-(C<sub>3</sub>F<sub>6</sub>O)- can represent units of formula
+
+- (CF (CF<sub>3</sub>)CF<sub>2</sub>O)- and/or - (CF<sub>2</sub>-CF(CF<sub>3</sub>)O)-</p><p num="0015">In the structures (A) and (C) wherein Rf is
+monofunctional, the other end group is of the T-O- type,
+wherein T is a (per)fluoroalkyl group selected from: -CF<sub>3</sub>,
+-C<sub>2</sub>F<sub>5</sub>, -C<sub>3</sub>F<sub>7</sub>, -CF<sub>2</sub>Cl, -C<sub>2</sub>F<sub>4</sub>Cl, -C<sub>3</sub>F<sub>6</sub>Cl; optionally one or two F
+atoms, preferably one, can be replaced by H.</p><p num="0016">Also binary, ternary and quaternary mixtures of the above
+indicated compounds (A), (B), (C) and (D) can be used.</p><p num="0017">The above fluoropolyethers are obtainable by the well
+known processes in the prior art, see for example the following
+patents herein incorporated by reference: <ref type="patent">USP 3,665,041,
+2,242,218, 3,715,378</ref>, and <ref type="patent">EP 239123</ref>. The functionalized fluoropolyethers 
+having hydroxyl termination are for example
+obtained according to <ref type="patent">EP 148482</ref>, <ref type="patent">USP 3,810,874</ref>.</p><p num="0018">The monofunctional (per)fluoropolyether phosphates
+synthesis of structure (A) can be carried out by reacting the
+corresponding hydroxy-terminated (per)fluoroalkylenoxides
+with POCl<sub>3</sub>. To obtain the monoester derivative (m=1) it is
+necessary to use a molar ratio POCl<sub>3</sub>/hydroxy-terminated
+compound in the range 2/1-10/1, preferably 6/1-8/1. The
+reaction is carried out by slowly dropping the hydroxy-terminated
+compound in POCl<sub>3</sub>, at a temperature between 50 and 1-00°C,
+preferably between 70 and 80°C, removing the HCl vapours
+by a KOH trap. The POCl<sub>3</sub> excess is removed by distillation
+while the formed adduct is hydrolysed by H<sub>2</sub>O. The separation
+of the obtained product takes place by extraction with a suitable
+organic solvent, such as for example ethyl acetate. The
+compound of structure (A) with m=1 is separated from the
+organic phase according to known techniques, for example by
+solvent evaporation.</p><p num="0019">To obtain the biester derivative (m=2) of formula (A) one
+proceeds as in the monoester case with the difference that
+after the POCl<sub>3</sub> removal, the reaction adduct is furtherly
+reacted with an equimolar amount of hydroxy-terminated
+compound. Subsequently hydrolysis is carried out and one
+proceeds as above described. </p><p num="0020">To obtain the triester derivative (m=3) of formula (A)
+one proceeds as in the monoester case with the difference that
+after the POCl<sub>3</sub> removal, the reaction adduct is furtherly
+reacted with a bimolar amount of hydroxy-terminated compound.
+Subsequently hydrolysis is carried out and one proceeds as
+above described.</p><p num="0021">The preparation of the bifunctional (per)fluoropolyether
+phosphates of structure (B) can be carried out by reacting the
+corresponding di-hydroxy-terminated (per)fluoroalkylenoxides
+with POCl<sub>3</sub>. To obtain the derivative with m'=0, it is necessary
+to use a molar ratio POCl<sub>3</sub>/di-hydroxy-terminated compound
+in the range 4/1-20/1, preferably 12/1-16/1.
+
+The reaction is carried out by slowly dropping the hydroxy-terminated
+compound in POCl<sub>3</sub>, at a temperature between 50 and
+100°C, preferably between 70 and 80°C, removing the HCl vapours
+by a KOH trap. The POCl<sub>3</sub> excess is removed by distillation
+while the formed adduct is hydrolysed by H<sub>2</sub>O. The
+separation of the compound (B) with m'=0 takes place by
+extraction with a suitable organic solvent, such as for
+example ethyl acetate. The compound is separated from the
+organic phase according to known thecniques, for example by
+solvent evaporation.</p><p num="0022">To obtain the compound of structure (B) with m'&gt;0, one
+proceeds as in the case m'=0 with the difference that after 
+the POCl<sub>3</sub> removal, the reaction adduct is furtherly reacted
+with variable amounts of the di-hydroxy-terminated compound.
+Subsequently hydrolysis is carried out and the above described
+procedure is performed.</p><p num="0023">The (per)fluoropolyether silanes of structures (C) and
+(D) are known compounds, and can be prepared for example
+according to <ref type="patent">USP 4,094,911</ref>, <ref type="patent">USP 4,818,619</ref>.</p><p num="0024">The Applicant has surprisingly found that by using the
+above defined (per) fluoropolyether derivatives, it is possible
+to obtain an effective removal of the stains of ceramic
+materials, without using filming polymer coatings and obtaining
+an high durability of the protective treatment, even over
+6 months. Without to be bound to any theory, the Applicant
+thinks that the results of the invention are due to the
+capability of the compounds to penetrate into the porosities
+of the ceramic materials, to chemically interact with the
+metal ions present in the ceramic material, thus obtaining a
+lasting protection.</p><p num="0025">The (per)fluoropolyether derivatives of the invention
+exert a very effective protective action in the case of stains
+represented for example by wine, coffee, coca-cola, vinegar,
+black marking pen, potassium permanganate (see the Examples).
+The most aggressive agents are the black marking pen, which
+can be considered as the most meaningful stain, and KMnO<sub>4</sub>. 
+Other stains towards which the use of the (per)fluoropolyether
+compounds of the invention has given positive results are the
+iodic solution commonly used in hospitals as a disinfectant
+and the material used as sealing agent for the tile
+interstices.</p><p num="0026">In particular for all the above mentioned stains, the
+best results are obtained by using the bifunctional (per)-fluoropolyether
+phosphates of structure (B) wherein m' is preferably
+0 or 1 and R<sub>f</sub> has structure 1).</p><p num="0027">The (per)fluoropolyether compounds of the invention can
+be easily applied by brushing, spraying, padding by using
+formulations comprising water or solvents having a low
+environmenmental impact. The application easiness of the
+(per)fluoro-polyethers of the invention, the obtained high
+protective results and the maintaining of the external aspect
+of the ceramic material, allow to use such invention in
+various application fields from the industrial ones to the
+domestic ones, where the protective treatment relates to the
+tile protection, or bath and kitchen accessories in ceramic
+material.</p><p num="0028">The (per)fluoropolyether phosphates of structure (A) and
+(B) can be used both in acid form (Z<sup>+</sup>= H<sup>+</sup>), and salified with
+an alkaline metal hydroxide (Z<sup>+</sup> = M<sup>+</sup>, with M = Li, Na, K, etc.)
+or with ammonia or with an amine (Z<sup>+</sup>= N(R)<sub>4</sub><sup>+</sup>). </p><p num="0029">The (per)fluoropolyether phosphates of structure (A) and
+(B) can be formulated in water, in solvents or in water/solvent
+mixtures. Solvents, or mixtures of solvents, suitable to
+the purpose can be selected from the following classes: aliphatic
+alcohols having from 1 to 6 carbon atoms; aliphatic
+glycols having from 2 to 8 carbon aoms, optionally having an
+esterified hydroxyl; ketones or esters having from 3 to 10
+carbon atoms, etc. Solvent/water mixtures, such as for example
+ketone/water or alcohol/water mixtures in ratios in the range
+10:90 - 90:10 by volume can also be used.</p><p num="0030">In the above mentioned formulations the concentration of
+(per)fluoropolyether phosphates is in the range 0.1-30% by
+weight with an amount of (per) fluoropolyether compound applied
+to the ceramic surface in the range 0.1-20 g/m<sup>2</sup>, depending on
+the porosity of the material and on the target barrier
+properties.</p><p num="0031">The formulated compound can be applied according to the
+conventional dipping, spraying, brushing, padding methods.
+After the application the compound is allowed to penetrate
+into the porosities of the ceramic material for a time ranging
+from 10 seconds to 2 hours depending on the type of
+application and of the used formulation. After the solvent
+evaporation the surface excess of applied compound can be
+removed by brushing. </p><p num="0032">The (per)fluoropolyether silanes of structure (C) and (D)
+can be applied from formulations containing polar solvents,
+for example alcohols, glycols, or hydrocarbon solvents, wherein
+the concentration of the compounds of the invention is in
+the range 0.1-10% by weight. Also in this case, the amount of
+(per)fluoropolyether compound applied to the ceramic surface
+is in the range 0.1-20 g/m<sup>2</sup>. To obtain the best results it is
+preferable that the polar solvent is combined with a small
+amount of water, optionally in the presence of a silanization
+catalyst. Alternatively, a thermal treatment cycle can be used
+to favour the crosslinking of the applied compound of
+structure (C) and (D).</p><p num="0033">In order to favour the removal of the solvent present in
+the porosities after the application of the formulations
+comprising the compounds of the invention (A),(B),(C),(D), an
+additional thermal treatment of the treated surface at a
+temperature in the range 60-150°C can follow.</p><p num="0034">The present invention will be better illustrated by the
+following Examples, which have a merely indicative but not
+limitative purpose of the scope of the invention itself.</p><heading><b>EXAMPLES</b></heading><heading><u style="single">Characterization</u></heading><heading><u style="single">Evaluation of the anti-stain properties</u></heading><p num="0035">The performances of the perfluoropolyether compounds of 
+the invention, deposited by brushing on porcelainized gres
+tiles at different surface concentrations, are evaluated in
+terms of easy removal of various stains such as wine, coffee,
+coca-cola, vinegar and black marking pen (Pentel Pen N50 by
+Pentel CO., LTD), potassium permanganate KMnO<sub>4</sub> (0.1 N solution).
+The most aggressive agents are the black marking pen,
+which can be considered as the most meaningful stain and
+KMnO<sub>4</sub>.</p><p num="0036">The stain removal easiness has been evaluated in two
+different cases by using as removal agents water or ethyl
+alcohol. A letter concerning the used removal agent is
+associated: A (water) and S (ethyl alcohol).</p><p num="0037">The performances concerning the removal easiness of the
+above mentioned stains have been evaluated by building a
+visual evaluation scale referred to the stain removal
+percentage, as shown in Table 1. <tables><table><tgroup cols="2"><tbody><row><entry align="center">Stain removal percentage (%)</entry><entry align="center">Associated Number</entry></row><row><entry align="center">20</entry><entry align="center">2</entry></row><row><entry align="center">30</entry><entry align="center">3</entry></row><row><entry align="center">40</entry><entry align="center">4</entry></row><row><entry align="center">50</entry><entry align="center">5</entry></row><row><entry align="center">60</entry><entry align="center">6</entry></row><row><entry align="center">70</entry><entry align="center">7</entry></row><row><entry align="center">80</entry><entry align="center">8</entry></row><row><entry align="center">90</entry><entry align="center">9</entry></row><row><entry align="center">100</entry><entry align="center">10</entry></row></tbody></tgroup></table></tables></p><heading><u style="single">EXAMPLE 1</u></heading><p num="0038">A monofunctional perfluoropolyether (PFPE) phosphate
+having the structure:
+<st32:che xmlns:st32="http://www.matrixware.com/ns/st32/">[Cl(C<sub>3</sub>F<sub>6</sub>O)<sub>p</sub>CF<sub>2</sub>CH<sub>2</sub>O(CH<sub>2</sub>CH<sub>2</sub>O)<sub>n</sub>]<sub>m</sub>P(O) (OH)<sub>3-m</sub></st32:che>
+with p=2-5, n=1-4, m=1-3, is used.</p><p num="0039">The above indicated perfluoropolyether is dispersed at
+10% by weight in isopropyl alcohol and applied to smooth
+porcelainized gres tiles having 5x5 sizes, at room temperature.</p><p num="0040">For the application of the dispersion a 2.5 ml syringe
+has been used, depositing different amounts of compound so as
+to have different final concentrations of the perfluoropolyether
+for surface unit. In particular the effectiveness of the
+invention compound in favouring the stain removal has been 
+evaluated at concentrations equal to 0.1 g/m<sup>2</sup>, 0.5 g/m<sup>2</sup>,
+1 g/m<sup>2</sup>, 5 g/m<sup>2</sup> and 10 g/m<sup>2</sup>.</p><p num="0041">After the application step, the compound is allowed to
+penetrate into the material porosities for 30 seconds, at the
+end of which the excess of the compound remained on the
+surface is removed by brushing.</p><p num="0042">The stain tests are carried out after about 12 hours
+from the treatment, so as to allow the complete evaporation of
+the solvent still present in the porosities of the ceramic material.
+The stains are deposited on the ceramic material and
+removed after 24 hours by cloth with water (A) or ethyl
+alcohol (S) when water is not sufficient. The results of the
+tests are illustrated in Table 2. <tables><table><tgroup cols="6"><tbody><row><entry namest="1" align="center">Stain</entry><entry namest="2" nameend="6" align="center">PFPE Phosphate Concentrations</entry></row><row><entry align="center" /><entry align="left">0.1 g/m<sup>2</sup></entry><entry align="left">0.5 g/m<sup>2</sup></entry><entry align="left">1 g/m<sup>2</sup></entry><entry align="left">5 g/m<sup>2</sup></entry><entry align="left">10 g/m<sup>2</sup></entry></row><row><entry align="left">Wine</entry><entry align="left">5A</entry><entry align="left">6A</entry><entry align="left">7A</entry><entry align="left">8A</entry><entry align="left">10A</entry></row><row><entry align="left">Coffee</entry><entry align="left">7A</entry><entry align="left">8A</entry><entry align="left">8A</entry><entry align="left">9A</entry><entry align="left">10A</entry></row><row><entry align="left">KMnO<sub>4</sub> (0.1N)</entry><entry align="left">5S</entry><entry align="left">6S</entry><entry align="left">6S</entry><entry align="left">7S</entry><entry align="left">7S</entry></row><row><entry align="left">Coca-cola</entry><entry align="left">7A</entry><entry align="left">9A</entry><entry align="left">10A</entry><entry align="left">10A</entry><entry align="left">10A</entry></row><row><entry align="left">Vinegar</entry><entry align="left">8A</entry><entry align="left">9A</entry><entry align="left">10A</entry><entry align="left">10A</entry><entry align="left">10A</entry></row><row><entry align="left">Black Marking pen</entry><entry align="left">6A,7S</entry><entry align="left">7A,8S</entry><entry align="left">7A,8A</entry><entry align="left">8A,8S</entry><entry align="left">8A,9S</entry></row></tbody></tgroup></table></tables></p><heading><u style="single">EXAMPLE 2</u></heading><p num="0043">A bifunctional perfluoropolyether (PFPE) phosphate is
+used which is a mixture of the structures reported below:
+<st32:che xmlns:st32="http://www.matrixware.com/ns/st32/">1)   (HO)<sub>2</sub>(O)PO(C<sub>2</sub>H<sub>4</sub>O)<sub>p</sub>CH<sub>2</sub>CF<sub>2</sub>O(C<sub>2</sub>F<sub>4</sub>O)<sub>n</sub>(CF<sub>2</sub>O)<sub>m</sub>CF<sub>2</sub>CH<sub>2</sub>(OC<sub>2</sub>H<sub>4</sub>)<sub>p</sub>OP(O)(OH)<sub>2</sub></st32:che><st32:che xmlns:st32="http://www.matrixware.com/ns/st32/">2)   [(HO)<sub>2</sub>(O)PO(C<sub>2</sub>H<sub>4</sub>O)<sub>p</sub>CH<sub>2</sub>CF<sub>2</sub>O(C<sub>2</sub>F<sub>4</sub>O)<sub>n</sub>(CF<sub>2</sub>O)<sub>m</sub>CF<sub>2</sub>CH<sub>2</sub>(OC<sub>2</sub>H<sub>4</sub>)<sub>p</sub>O]<sub>2</sub>P(O)OH</st32:che>
+wherein p=1-4, n=2-4, m=2-6
+
+wherein the compound 1) represents 90% by moles and compound
+2) 10% by moles.</p><p num="0044">The above indicated perfluoropolyether is dispersed at
+10% by weight in isopropyl alcohol and applied to smooth
+porcelainized gres tiles having 5x5 sizes, at room temperature.</p><p num="0045">The compound application conditions and the stain tests
+have been carried out likewise to Example 1. The results are
+illustrated in Table 3. <tables><table><tgroup cols="6"><tbody><row><entry namest="1" align="center">Stain</entry><entry namest="2" nameend="6" align="center">PFPE Phosphate Concentrations</entry></row><row><entry align="center" /><entry align="left">0.1 g/m<sup>2</sup></entry><entry align="left">0.5 g/m<sup>2</sup></entry><entry align="left">1 g/m<sup>2</sup></entry><entry align="left">5 g/m<sup>2</sup></entry><entry align="left">10 g/m<sup>2</sup></entry></row><row><entry align="left">Wine</entry><entry align="left">7A</entry><entry align="left">7A</entry><entry align="left">7A</entry><entry align="left">10A</entry><entry align="left">10A</entry></row><row><entry align="left">Coffee</entry><entry align="left">8A</entry><entry align="left">8A</entry><entry align="left">9A</entry><entry align="left">10A</entry><entry align="left">10A</entry></row><row><entry align="left">KMnO<sub>4</sub> (0.1N)</entry><entry align="left">6S</entry><entry align="left">6S</entry><entry align="left">7S</entry><entry align="left">8S</entry><entry align="left">8S</entry></row><row><entry align="left">Coca-cola</entry><entry align="left">8A</entry><entry align="left">10A</entry><entry align="left">10A</entry><entry align="left">10A</entry><entry align="left">10A</entry></row><row><entry align="left">Vinegar</entry><entry align="left">8A</entry><entry align="left">10A</entry><entry align="left">10A</entry><entry align="left">10A</entry><entry align="left">10A</entry></row><row><entry align="left">Black marking pen</entry><entry align="left">6A,7S</entry><entry align="left">7A,8S</entry><entry align="left">7A,10S</entry><entry align="left">8A,10S</entry><entry align="left">9A,10S</entry></row></tbody></tgroup></table></tables></p><heading><u style="single">EXAMPLE 3</u></heading><p num="0046">A monofunctional perfluoropolyether silane having the
+structure reported below is used:
+<st32:che xmlns:st32="http://www.matrixware.com/ns/st32/">Cl(C<sub>3</sub>F<sub>6</sub>O)<sub>p</sub>CF<sub>2</sub>-CONH(CH<sub>2</sub>)<sub>3</sub>Si(OC<sub>2</sub>H<sub>5</sub>)<sub>3</sub></st32:che>
+wherein p=2-5.</p><p num="0047">The above mentioned perfluoropolyether is dispersed at
+10% by weight in isopropyl alcohol and applied to smooth
+porcelainized gres tiles having 5x5 sizes, at room temperature.</p><p num="0048">The compound application conditions have been carried out
+likewise Example 1, with the difference that after the
+compound application a thermal treatment is carried out which
+implies the heating of the ceramic sample in stove at T=80°C
+for 2 hours. After such time interval it is possible to remove
+the surface excess and carry out the stain tests as described 
+in Example 1. The test results are illustrated in Table 4.
+<tables><table><tgroup cols="6"><tbody><row><entry namest="1" align="center">Stain</entry><entry namest="2" nameend="6" align="center">PFPE Silane Concentrtions</entry></row><row><entry align="center" /><entry align="left">0.1 g/m<sup>2</sup></entry><entry align="left">0.5 g/m<sup>2</sup></entry><entry align="left">1 g/m<sup>2</sup></entry><entry align="left">5 g/m<sup>2</sup></entry><entry align="left">10 g/m<sup>2</sup></entry></row><row><entry align="left">Wine</entry><entry align="left">5A</entry><entry align="left">5A</entry><entry align="left">7A</entry><entry align="left">8A</entry><entry align="left">9A</entry></row><row><entry align="left">Coffee</entry><entry align="left">7A</entry><entry align="left">8A</entry><entry align="left">8A</entry><entry align="left">9A</entry><entry align="left">10A</entry></row><row><entry align="left">KMnO<sub>4</sub> (0.1N)</entry><entry align="left">4S</entry><entry align="left">5S</entry><entry align="left">5S</entry><entry align="left">6S</entry><entry align="left">6S</entry></row><row><entry align="left">Coca-cola</entry><entry align="left">8A</entry><entry align="left">9A</entry><entry align="left">10A</entry><entry align="left">10A</entry><entry align="left">10A</entry></row><row><entry align="left">Vinegar</entry><entry align="left">8A</entry><entry align="left">9A</entry><entry align="left">10A</entry><entry align="left">10A</entry><entry align="left">10A</entry></row><row><entry align="left">Black marking pen</entry><entry align="left">6A,7S</entry><entry align="left">6A,7S</entry><entry align="left">7A,8S</entry><entry align="left">7A,8S</entry><entry align="left">7A,8S</entry></row></tbody></tgroup></table></tables></p><heading><u style="single">EXAMPLE 4</u></heading><p num="0049">A bifunctional perfluoropolyether (PFPE) silane having
+the structure reported below is used:
+<st32:che xmlns:st32="http://www.matrixware.com/ns/st32/">(C<sub>2</sub>H<sub>5</sub>O)<sub>3</sub>Si(CH<sub>2</sub>)<sub>3</sub>HNOC-CF<sub>2</sub>O(CF<sub>2</sub>CF<sub>2</sub>O)<sub>m</sub>(CF<sub>2</sub>O)<sub>n</sub>CF<sub>2</sub>-CONH(CH<sub>2</sub>)<sub>3</sub>Si(OC<sub>2</sub>H<sub>5</sub>)<sub>3</sub></st32:che>
+wherein n=2-4, m=2-6</p><p num="0050">The above mentioned perfluoropolyether is dispersed at
+10% by weight in isopropyl alcohol and applied to smooth
+porcelainized gres tiles having 5x5 sizes, at room temperature.</p><p num="0051">The compound application conditions and the stain tests
+have been carried out likewise to Example 3. The results are
+illustrated in Table 5. <tables><table><tgroup cols="6"><tbody><row><entry namest="1" align="center">Stain</entry><entry namest="2" nameend="6" align="center">PFPE Silane Concentrations</entry></row><row><entry align="center" /><entry align="left">0.1 g/m<sup>2</sup></entry><entry align="left">0.5 g/m<sup>2</sup></entry><entry align="left">1 g/m<sup>2</sup></entry><entry align="left">5 g/m<sup>2</sup></entry><entry align="left">10 g/m<sup>2</sup></entry></row><row><entry align="left">Wine</entry><entry align="left">5A</entry><entry align="left">7A</entry><entry align="left">7A</entry><entry align="left">8A</entry><entry align="left">9A</entry></row><row><entry align="left">Coffee</entry><entry align="left">7A</entry><entry align="left">8A</entry><entry align="left">9A</entry><entry align="left">9A</entry><entry align="left">10A</entry></row><row><entry align="left">KMnO<sub>4</sub> (0.1N)</entry><entry align="left">4S</entry><entry align="left">5S</entry><entry align="left">5S</entry><entry align="left">6S</entry><entry align="left">7S</entry></row><row><entry align="left">Coca-cola</entry><entry align="left">8A</entry><entry align="left">10A</entry><entry align="left">10A</entry><entry align="left">10A</entry><entry align="left">10A</entry></row><row><entry align="left">Vinegar</entry><entry align="left">8A</entry><entry align="left">9A</entry><entry align="left">10A</entry><entry align="left">10A</entry><entry align="left">10A</entry></row><row><entry align="left">Black marking pen</entry><entry align="left">6A,7S</entry><entry align="left">6A,7S</entry><entry align="left">7A,8S</entry><entry align="left">7A,8S</entry><entry align="left">7A,8S</entry></row></tbody></tgroup></table></tables></p><p num="0052">From the results shown in Tables 2-5 it is noticed that
+the bifunctional perfluoropolyether phosphate results to be
+the most effective compound in favouring the stain removal
+from the porcelainized gres tile.</p><heading>EXAMPLE 5 (comparative)</heading><p num="0053">A silicone hydrogenated compound Wacker 090L produced by
+Wacker Chemie is used.</p><p num="0054">The above mentioned commercial compound is dispersed at
+10% by weight in isopropyl alcohol and applied to smooth
+porcelainized gres tiles having 5x5 sizes, at room temperature.</p><p num="0055">The compound application conditions and the stain tests
+have been carried out likewise to Example 1. The results are
+illustrated in Table 6, where the results of the stain removal
+tests are reported in the case of untreated tiles and in the 
+case of tiles treated with said commercial hydrogenated
+silicone.
+<tables><table><tgroup cols="4"><tbody><row><entry align="center">Stain</entry><entry align="center">Untreated Tile</entry><entry align="center">Tile treated with silicone Wacker</entry><entry align="center">Tile treated with silicone Wacker</entry></row><row><entry align="center" /><entry align="left">-</entry><entry align="center">5 g/m<sup>2</sup></entry><entry align="center">10 g/m<sup>2</sup></entry></row><row><entry align="left">Wine</entry><entry align="center">3A</entry><entry align="center">5A</entry><entry align="center">8A</entry></row><row><entry align="left">Coffee</entry><entry align="center">5A</entry><entry align="center">6A</entry><entry align="center">8A</entry></row><row><entry align="left">KMnO<sub>4</sub> (0.1N)</entry><entry align="center">2S</entry><entry align="center">3S</entry><entry align="center">5S</entry></row><row><entry align="left">Coca-cola</entry><entry align="center">5A</entry><entry align="center">7A</entry><entry align="center">9A</entry></row><row><entry align="left">Vinegar</entry><entry align="center">5A</entry><entry align="center">7A</entry><entry align="center">9A</entry></row><row><entry align="left">Black marking pen</entry><entry align="center">2A,3S</entry><entry align="center">3A,5S</entry><entry align="center">5A,7S</entry></row></tbody></tgroup></table></tables></p><p num="0056">Silicone tends to make a film on the tile surface and
+tested at a concentration lower than (5 g/m<sup>2</sup>) has given
+results not meaningfully superior to those of the untreated
+tile.</p></description><claims lang="DE" status="new"><claim num="xx"><claim-text>Verwendung von mono- und bifunktionellen (Per)fluorpolyether-Derivaten mit
+den folgenden Strukturen:
+[Rf-CFY-L-O]mP(O) (O-Z+)3-m(O-Z+)2P(O) [O-L-YFC-O-Rf-CFY-L-O-P(O)(O-Z+)]m'-
+-[O-L-YFC-O-Rf-CFY-L-O]P(O) (O-Z+)2Rf-CFY-L-WW-L-YFC-O-Rf-CFY-L-W
+worin:
+<claim-text><claim-text>m' eine ganze Zahl von 0 bis 20, vorzugsweise 0 bis 4, ist;</claim-text><claim-text>L eine organische Gruppe ausgewählt aus -CH2-(OCH2CH2)n-,</claim-text><claim-text>-CO-NR'-(CH2)q-, worin R' = H oder eine C1-C4-Alkylgruppe, ist;</claim-text><claim-text>n = 0 - 8, vorzugsweise 1 - 3, q = 1 - 8, vorzugsweise 1 - 3;</claim-text><claim-text>Z = H, Alkalimetall oder NR4-Gruppe mit R = H oder eine C1-C4-Alkylgruppe;</claim-text><claim-text>Y = F, CF3;</claim-text><claim-text>m = 1, 2, 3, vorzugsweise 1, 2;</claim-text><claim-text>W eine Gruppe -Si(R1)α(OR2)3-α mit α = 0, 1, 2, wobei R1 und R2 gleich oder
+verschieden voneinander C1-C6-Alkylgruppen, gegebenenfalls enthaltend
+einen oder mehrere Ether-O, C6-C10-Arylgruppen, C7-C12-Alkylaryl- oder
+- Arylalkylgruppen sind, ist;</claim-text><claim-text>Rf ein Zahlenmittel des Molekulargewichts im Bereich von 350 bis 8.000,
+vorzugsweise 500 bis 3.000, aufweist und Struktureinheiten mit mindestens
+einer der folgenden Strukturen umfasst, die statistisch entlang der Kette verteilt
+sind:</claim-text></claim-text>(CFXO), (CF2CF2O), (CF2CF2CF2O), (CF2CF2CF2CF2O),(CR4R5CF2CF2O), (CF(CF3)CF2O), (CF2CF(CF3)O),
+worin X = F, CF3;
+R4 und R5, die gleich oder verschieden voneinander sind, aus H, Cl oder
+Perfluoralkyl mit 1 bis 4 Kohlenstoffatomen ausgewählt werden,
+bei der Behandlung von keramischen Materialien zur Erzielung einer leichten
+Fleckentfernung.</claim-text></claim><claim num="xx"><claim-text>Verwendung nach Anspruch 1, worin Rf ausgewählt wird aus einer der
+folgenden Strukturen:
+1)   -(CF2O)a'-(CF2CF2O)b'-
+mit a'/b' im Bereich von 0,5 bis 2, einschließlich der Grenzwerte, wobei
+a' und b' solche ganze Zahlen sind, dass sich das vorstehend angegebene
+Molekulargewicht ergibt;
+2)   -(C3F6O)r-(C2F4O)b-(CFXO)t-
+mit r/b = 0,5 - 2,0; wobei (r+b)/t im Bereich von 10 - 30 ist, b, r und t solche
+ganze Zahlen sind, dass sich das vorstehend angegebene Molekulargewicht
+ergibt, und X die vorstehend angegebene Bedeutung hat;
+3)   -(C3F6O)r'-(CFXO)t'-
+t' kann 0 sein;
+wenn t' verschieden von 0, dann r'/t' = 10 - 30,
+wobei r' und t' solche ganze Zahlen sind, dass sich das vorstehend
+angegebene Molekulargewicht ergibt; und X die vorstehend angegebene
+Bedeutung hat;
+4)   -(OCF2CF(CF3))z-OCF2(R'f)y-CF2O- (CF(CF3)CF2O)z-
+worin z eine solche ganze Zahl ist, dass das Molekulargewicht dem
+vorstehend angegebenen entspricht; y eine ganze Zahl zwischen 0 und
+1 ist und R'f eine Fluoralkylengruppe mit z.B. 1 bis 4 Kohlenstoffatomen
+ist;
+5)   -(OCF2CF2CR4R5)q-OCF2(R'f)y-CF2O- (CR4R5CF2CF2O)s-
+worin q und s solche ganze Zahlen sind, dass das Molekulargewicht
+dem vorstehend angegebenen entspricht; und R4, R5, R'f und y die
+vorstehend angegebene Bedeutung haben;
+6)   -(C3F6O)r'''(CFXO)t'''-OCF2(R'f)y-CF2O(CF(CF3)CF2O)r'''(CFXO)t'''-
+worin r'''/t''' = 10 - 30,
+wobei r''' und t''' solche ganze Zahlen sind, dass sich das vorstehend
+angegebene Molekulargewicht ergibt; und R'f und y die vorstehend
+angegebene Bedeutung haben.</claim-text></claim><claim num="xx"><claim-text>Verwendung nach den Ansprüchen 1 bis 2, worin in den Strukturen (A) und
+(C), worin Rf monofunktionell ist, die andere Endgruppe vom Typ T-O- ist,
+worin T eine (Per)fluoralkylgruppe ist, ausgewählt aus: -CF3, -C2F5, -C3F7,
+-CF2Cl, -C2F4Cl, -C3F6Cl; gegebenenfalls können ein oder zwei F-Atome,
+vorzugsweise eins, durch H ersetzt sein.</claim-text></claim><claim num="xx"><claim-text>Verwendung nach den Ansprüchen 1 bis 3, worin binäre, ternäre und quaternäre
+Mischungen der Verbindungen (A), (B), (C) und (D) verwendet werden.</claim-text></claim><claim num="xx"><claim-text>Verwendung nach den Ansprüchen 1 bis 4, worin die Flecken ausgewählt sind
+aus Wein, Kaffee, Coca-Cola, Essig, schwarzem Markierungsstift, Kaliumpermanganat,
+lod-Desinfektionslösung und Dichtungsmittel für Fliesenzwischenräume</claim-text></claim><claim num="xx"><claim-text>Verwendung nach den Ansprüchen 1 bis 5, worin die bifunktionellen (Per)-fluorpolyetherphosphate
+der Struktur (B) verwendet werden, worin m' bevorzugt
+0 bis 1 ist und Rf die Struktur 1) hat.</claim-text></claim><claim num="xx"><claim-text>Verwendung nach den Ansprüchen 1 bis 6, worin die Verbindungen der Struktur
+(A), (B), (C) und (D) durch Bürsten, Tauchen, Sprühen, Klotzen unter
+Verwendung von Formulierungen umfassend Wasser oder Lösungsmittel mit
+geringer Umweltbelastung aufgebracht werden.</claim-text></claim><claim num="xx"><claim-text>Verwendung nach Anspruch 7, worin die (Per)fluorpolyetherphosphate der
+Struktur (A) und (B) in Wasser, in Lösungsmitteln oder in Wasser/Lösungsmittel-Mischungen
+formuliert werden.</claim-text></claim><claim num="xx"><claim-text>Verwendung nach den Ansprüchen 7 bis 8, worin die Lösungsmittel ausgewählt
+werden aus den folgenden Klassen: aliphatischen Alkoholen mit 1 bis 6
+Kohlenstoffatomen; aliphatischen Glycolen mit 2 bis 8 Kohlenstoffatomen,
+gegebenenfalls mit verestertem Hydroxyl; Ketonen oder Estern mit 3 bis 10
+Kohlenstoffatomen.</claim-text></claim><claim num="xx"><claim-text>Verwendung nach den Ansprüchen 7 bis 9, worin Keton/Wasser- oder
+Alkohol/Wasser-Mischungen in Volumenverhältnissen im Bereich von 10:90 bis 90:10
+verwendet werden.</claim-text></claim><claim num="xx"><claim-text>Verwendung nach den Ansprüchen 1 bis 10, worin die Konzentration der
+(Per)fluorpolyetherphosphate (A) und (B) in den Formulierungen im Bereich
+von 0,1 bis 30 Gew.-% liegt und die Verbindungsmenge, die auf die
+Keramikoberfläche aufgebracht wird, im Bereich von 0,1 bis 20 g/m2 liegt.</claim-text></claim><claim num="xx"><claim-text>Verwendung nach den Ansprüchen 1 bis 10, worin die (Per)fluorpolyethersilane
+der Struktur (C) und (D) aus Formulierungen aufgebracht werden, die
+polare Lösungsmittel ausgewählt aus Alkoholen, Glycolen oder Kohlenwasserstoff-Lösungsmitteln
+enthalten, wobei die Konzentration der Verbindungen in
+der Formulierung im Bereich von 0,1 bis 10 Gew.-% liegt und die Verbindungsmenge,
+die auf die Keramikoberfläche aufgebracht wird, im Bereich von
+0,1 bis 20 g/m2 liegt.</claim-text></claim><claim num="xx"><claim-text>Verwendung nach Anspruch 12, worin das polare Lösungsmittel kombiniert
+wird mit einer geringen Menge an Wasser, gegebenenfalls in Anwesenheit
+eines Silanisierungskatalysators.</claim-text></claim><claim num="xx"><claim-text>Verwendung nach den Ansprüchen 1 bis 13, worin das behandelte Keramikmaterial
+porzellanartig gebranntes Steingut (porcelainized gres) ist.</claim-text></claim></claims><claims lang="EN" status="new"><claim num="xx"><claim-text>Use in the treatment of ceramic materials to obtain an
+easy stain removal, of mono- and bifunctional (per)fluoropolyether
+derivative having the following structures:
+[Rf-CFY-L-O] mP(O)(O-Z+)3-m(O-Z+)2P(O)[O-L-YFC-O-Rf-CFY-L-O-P(O) (O-Z+)]m' -
+-[O-L-YFC-O-Rf-CFY-L-O]P(O)(O-Z+)2Rf-CFY-L-WW-L-YFC-O-Rf-CFY-L-W
+wherein:
+<claim-text><claim-text>m' is an integer from 0 to 20, preferably from 0 to 4;</claim-text><claim-text>L is an organic group selected from -CH2-(OCH2CH2)n-,
+-CO-NR'-(CH2)q-, with R'=H or C1-C4 alkyl group;</claim-text><claim-text>n=0-8, preferably 1-3, q=1-8, preferably 1-3;</claim-text><claim-text>Z= H, alkaline metal or NR4 group with R=H or C1-C4 alkyl
+group;</claim-text><claim-text>Y=F, CF3;</claim-text><claim-text>m=1,2,3, preferably 1,2;</claim-text><claim-text>W is a -Si(R1)α(OR2)3-α group with α=0,1,2, R1 and R2 equal
+to or different from each other are C1-C6 alkyl groups,
+optionally containing one or more ether 0, C6-C10 aryl
+groups, C7-C12 alkyl-aryl or aryl-alkyl groups;</claim-text><claim-text>Rf has a number average molecular weight in the range
+350- 8,000, preferably 500-3,000 and comprises repeating
+units having at least one of the following structures,
+statistically placed along the chain:</claim-text></claim-text>
+(CFXO), (CF2CF2O), (CF2CF2CF2O), (CF2CF2CF2CF2O),
+(CR4R5CF2CF2O), (CF (CF3)CF2O), (CF2CF(CF3)O),
+wherein X = F, CF3;
+R4 and R5, equal to or different from each other, are selected
+from H, Cl, or perfluoroalkyl from 1 to 4 carbon
+atoms.</claim-text></claim><claim num="xx"><claim-text>Use according to claim 1, wherein Rf is selected from one
+of the following structures:
+1)   -(CF2O)a'-(CF2CF2O)b'-
+with a'/b' in the range 0.5-2, extremes included, a'
+and b' being integers such as to give the above mentioned
+molecular weight;
+2)   -(C3F6O)r-(C2F4O)b- (CFXO)t-
+with r/b = 0.5-2.0; (r+b)/t is in the range 10-30,
+b, r and t being integers such as to give the above
+mentioned molecular weight, X has the above mentioned
+meaning;
+3)   -(C3F6O)r'-(CFXO)t'-
+t' can be 0;
+when t' is different from 0 then r'/t' = 10-30,
+r' and t' being integers such as to give the above
+mentioned molecular weight; X has the above
+mentioned meaning;
+4)   -(OCF2CF(CF3))z-OCF2(R'f)y-CF2O- (CF(CF3)CF2O)z-
+wherein z is an integer such that the molecular
+weight is the above mentioned one;
+y is an integer between 0 and 1 and R'f is fluoroalkylene
+group for example having 1-4 carbon atoms;
+5)   -(OCF2CF2CR4RS)q-OCF2(R'f)y-CF2O- (CR4R5CF2CF2O)s-
+wherein q and s are integers such that the molecular
+weight is the above mentioned one;
+R4, R5, R'f, y have the above mentioned meaning;
+6)   -(C3F6O)r'''(CFXO)t'''-OCF2(R'f)y-CF2O(CF(CF3)CF2O)r'''(CFXO)t'''-
+wherein r&quot;'/t&quot;' = 10-30,
+r''' and t''' being integers such as to give the
+above mentioned molecular weight;
+R'f and y having the above mentioned meaning.</claim-text></claim><claim num="xx"><claim-text>Use according to claims 1-2, wherein in the structures
+(A) and (C) wherein Rf is monofunctional, the other end
+group is of the T-O- type, wherein T is a (per)fluoroalkyl
+group selected from: -CF3, -C2F5, -C3F7, -CF2Cl,
+-C2F4Cl, -C3F6Cl; optionally one or two F atoms,
+preferably one, can be replaced by H.</claim-text></claim><claim num="xx"><claim-text>Use according to claims 1-3, wherein binary, ternary and
+quaternary mixtures of the compounds (A), (B), (C) and
+(D) are used.</claim-text></claim><claim num="xx"><claim-text>Use according to claims 1-4, wherein the stains are
+selected from wine, coffee, coca-cola, vinegar, black
+marking pen, potassium permanganate, iodic disinfectant
+solution and the sealing agent for the tile flights.</claim-text></claim><claim num="xx"><claim-text>Use according to claims 1-5, wherein the bifunctional
+(per)fluoropolyether phosphates of structure (B) wherein
+m' is preferably 0-1 and Rf has structure 1) are used.</claim-text></claim><claim num="xx"><claim-text>Use according to claims 1-6, wherein the compounds of
+structure (A), (B), (C), (D) are applied by brushing,
+dipping, spraying, padding using formulations comprising
+water or solvents having a low environmental impact.</claim-text></claim><claim num="xx"><claim-text>Use according to claim 7, wherein the (per)fluoropolyether
+phosphates of structure (A) and (B) are formulated
+in water, in solvents or in water/solvent mixtures.</claim-text></claim><claim num="xx"><claim-text>Use according to claims 7-8, wherein the solvents are
+selected from the following classes: aliphatic alcohols
+having from 1 to 6 carbon atoms; aliphatic glycols having
+from 2 to 8 carbon aoms, optionally having an esterified
+hydroxyl; ketones or esters having from 3 to 10 carbon
+atoms.</claim-text></claim><claim num="xx"><claim-text>Use according to claims 7-9, wherein ketone/water or
+alcohol/water mixtures in ratios in the range 10:90 -
+90:10 by volume are used.</claim-text></claim><claim num="xx"><claim-text>Use according to claims 1-10, wherein the concentration
+of (per)fluoropolyether phosphates (A) and (B) in the
+formulations is in the range 0.1-30% by weight, the
+compound amount applied to the ceramic surface in the
+range 0.1-20 g/m2.</claim-text></claim><claim num="xx"><claim-text>Use according to claims 1-10, wherein the (per)fluoropolyether
+silanes of structure (C) and (D) are applied
+from formulations containing polar solvents, selected
+from alcohols, glycols, or hydrocarbon solvents, wherein
+the concentration of the compounds in the formulation is
+in the range 0.1-10% by weight, the compound amount applied
+to the ceramic surface is in the range 0.1-20 g/m2.</claim-text></claim><claim num="xx"><claim-text>Use according to claim 12, wherein the polar solvent is
+combined with a small amount of water, optionally in the
+presence of a silanization catalyst.</claim-text></claim><claim num="xx"><claim-text>Use according to claims 1-13, wherein the treated ceramic
+material is porcelainized gres.</claim-text></claim></claims><claims lang="FR" status="new"><claim num="xx"><claim-text>Utilisation dans le traitement de matériaux céramiques pour
+obtenir une élimination facile des taches, de dérivés perfluoropolyéther
+mono- et bi-fonctionnels ayant les structures suivantes :
+[Rf-CFY-L-O]mP(O)(O'Z+)3-m(O-Z+)2P(O)[O-L-YFC-O-Rf-CFY-L-O-P(O)(O-Z+)]m
+-[O-L-YFC-O-Rf-CFY-L-O]P(O)(O-Z+)2Rf-CFY-L-WW-L-YFC-O-Rf-CFY-L-W
+dans lesquelles
+   m' est un entier de 0 à 20, de préférence de 0 à 4 ;
+   L est un groupe organique choisi parmi -CH2-(OCH2CH2)n-,
+   -CO-NR'-(CH2)q-, avec R' = H ou un groupe alkyle en C1 à C4 ;
+   n = 0 à 8, de préférence 1 à 3, q = 1 à 8, de preférence de 1 à 3 ;
+   Z = H, un métal alcalin ou un groupe NR4 avec R = H ou un
+groupe alkyle en C1 à C4 ;
+   Y = F, CF3 ;
+   m = 1,2,3, de préférence 1,2 ;
+   W est un groupe -Si(R1)α(OR2)3-α avec α=0,1,2, R1 et R2 sont egaux
+ou différents l'un de l'autre et sont des groupes alkyle en C1 à C3,
+contenant facultativement un ou plusieurs groupes ether oxyde, aryle
+en C6 à C10, alkylaryle ou arylalkyle en C7 à C12;
+   Rf a une masse moléculaire moyenne en nombre dans la gamme
+de 350 à 8 000, de préférence de 500 à 3 000 et comprend des motifs
+répétés ayant au moins l'une des structures suivantes, statistiquement
+placées le long de la chaíne :
+(CFXO), (CF2CF2O) (CF2CF2CF2O), (CF2CF3CF2CF2O),
+(CR4R5CF2CF2O), (CF(CF3)CF2O), (CF2CF(CF3)O)2
+   dans laquelle X = F, CF3 ;
+   R4 et R5, égaux ou différents l'un de l'autre, sont choisis parmi H,
+Cl, ou un groupe perfluoroalkyle de 1 à 4 atomes de carbone.</claim-text></claim><claim num="xx"><claim-text>Utilisation selon la revendication 1, dans laquelle Rf est choisi
+parmi l'une des structures suivantes :
+1)   -(CF2O)a-(CF2CF2O)b-
+avec a'/b' compris dans la gamme de 0,5 à 2, les extrêmes
+inclus, a' et b' étant des entiers de façon à donner la masse
+moléculaire mentionnée ci-dessus ;2)   -(C3F6O)r-(C2F4O)b-(CFXO)t-
+avec r/b = 0,5 à 2,0 ; (r+b)/t est dans la gamme de 10 à 30,
+b, r et t étant des entiers de façon à donner la masse
+moléculaire mentionnée ci-dessus, X a la signification
+mentionnée ci-dessus ;
+3)   -(C3F6O)r'-(CFXO)r'-
+t' peut valoir 0 ;
+lorsque t' est différent de 0 alors r'/t' = 10 à 30, r' et t' étant;
+des entiers qui donnent la masse moléculaire mentionnée
+ci-dessus ; X a la signification mentionnée ci-dessus ;
+4)   -(OCF2CF(CF3))z-OCF2(R'f)y-CF2O- (CF(CF3)CF2O]
+dans laquelle z est un entier tel que la masse moléculaire
+est celle mentionnée ci-dessus ;
+y est un entier entre 0 et 1 et R'f est un groupe
+fluoroalkylène, ayant par exemple 1 à 4 atomes de carbon ;
+5)   -(OCF2CF2CR4R5)q-OCF2(R'f)y-CF2O-(CR1R5CF2CR2O)-
+dans laquelle q et s sont des entiers tels que la masse
+moléculaire est celle mentionnée ci-dessus ;
+R4, R5, R'f et y ont la signification memtionnée ci-dessus ;
+6)   (C3F6O)r''(CFXO)r'''-OCF2(R'f)y-CF2O(CF(CF3)CF2O)r'''(CFXO)t'''
+   dans laquelle r'''/t''' = 10 à 30,
+r''' et t''' étant des entiers qui donnent la masse molculaire
+mentionnée ci-dessus ;
+R'f et y ayant la signification mentionnée ci-dessus.</claim-text></claim><claim num="xx"><claim-text>Utilisation selon les revendications 1 et 2, dans laquelle, dans
+les structures (A) et (C) où Rf est monofonctionnel l'autre groupe
+d'extrémité est du type T-O-, dans lequel T est un groupe
+(per)fluoroalkyle choisi parmi : -CF3, -C2F6, -C3F7, -CF2Cl, -C2F4Cl,
+-C3F6Cl ; facultativement un ou deux atomes de fluor, de préférence un
+seul, pouvant être remplacé par un atome d'hydrogène.</claim-text></claim><claim num="xx"><claim-text>Utilisation selon les revendications 1 à 3, dans laquelle les
+mélanges binaire, ternaire et quaternaire des composés (A), (B), (C) et (D)
+sont utilisés.</claim-text></claim><claim num="xx"><claim-text>Utilisation selon les revendications 1 à 4, dans laquelle les
+taches sont choisies parmi le vin, le café, le coca-cola, le vinaigre, un
+marqueur noir, le permanganate de potassium, une solution
+désinfectante iodée et l'adhésif contre le détachement de carreaux.</claim-text></claim><claim num="xx"><claim-text>Utilisation selon les revendications 1 à 5, dans laquelle on
+utilise les phosphates de (per)fluoropolyether bifonctionnnels de
+structure (B) où m' est de préférence de 0 à 1 et Rf à la structure 1).</claim-text></claim><claim num="xx"><claim-text>Utilisation selon les revendications 1 à 6, dans lesquels les
+composés de structure (A), (B), (C), (D) sont appliqués par brassage
+immersion, pulvérisation, application au tampon en utilisant des
+formulations comprenant de l'eau, ou des solvants ayant un faible
+impact environnemental.</claim-text></claim><claim num="xx"><claim-text>Utilisation selon la revendication 7, dans laquelle les
+phosphates de (per)fluoropolyéther de structure (A) et (B) sont formules
+dans l'eau, dans des solvants ou dans des mélanges eau/solvant.</claim-text></claim><claim num="xx"><claim-text>Utilisation selon les revendications 7 à 8, dans laquelle les
+solvants sont choisis parmi les classes suivantes les alcools
+aliphatiques ayant de 1 à 6 atomes de carbone ; les glycols aliphatiques
+ayant de 2 à 8 atomes de carbone, ayant facultativement un groupe
+hydroxy estérifié ; les cétones et les esters ayant de 3 à 10 atomes de
+carbone.</claim-text></claim><claim num="xx"><claim-text>Utilisation selon les revendications 7 à 9, dans laquelle on
+utilise des mélanges cétone/eau ou alcool/eau en des rapports
+volumiques compris dans la gamme de 10 : 90 à 90 : 10.</claim-text></claim><claim num="xx"><claim-text>Utilisation selon les revendications 1 à 10, dans laquelle la
+concentration en phosphates de (per)fluoropolyéther (A) et (B) dans les
+formulations est dans la gamme de 0,1 à 3 %, en poids, la quantité de
+composé appliqué à la surface en céramique étant dans la gamme de
+0,1 à 20 g/m2.</claim-text></claim><claim num="xx"><claim-text>Utilisation selon les revendications 1 à 10, dans laquelle les
+silanes de (per)fluoropolyéther de structure (C) et (D) sont appliqués à
+partir de formulations contenant des solvants polaires, choisis parmi les
+alcools, les glycols ou des solvants d'hydrocarbures, dans lesquels la
+concentration des composés dans la formulation est dans la gamme de
+0,1 à 10 % en poids, la quantité de composé appliqué à la surface en
+céramique étant dans la gamme de 0,1 à 20 g/m2.</claim-text></claim><claim num="xx"><claim-text>Utilisation selon la revendication 12, dans laquelle le solvant
+polaire est combiné avec de petites quantités d'eau, facultativement en
+présence d'un catalyseur de silanisation.</claim-text></claim><claim num="xx"><claim-text>Utilisation selon l'une quelconque des revendications 1 à 13,
+dans laquelle le matériau céramique traité est un grès porcelanisé.</claim-text></claim></claims><legal-status status="new"><legal-event country="EP" code="26N" date="20050727"><legal-event-body><event-title>NO OPPOSITION FILED</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20050506</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="ET" date="20050513"><legal-event-body><event-title>FR: TRANSLATION FILED</event-title></legal-event-body></legal-event><legal-event country="EP" code="REG" date="20050316"><legal-event-body><event-title>REFERENCE TO A NATIONAL CODE</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>ES</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Legal Event Code </event-attribute-label><event-attribute-value>FG2A</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Document Number </event-attribute-label><event-attribute-value>2225320</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>T3</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REF" date="20040909"><legal-event-body><event-title>CORRESPONDS TO:</event-title><event-attributes><event-attribute><event-attribute-label>Ref Document Number </event-attribute-label><event-attribute-value>60104577</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Country of Ref Document </event-attribute-label><event-attribute-value>DE</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Date of Ref Document </event-attribute-label><event-attribute-value>20040909</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>P</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REG" date="20040908"><legal-event-body><event-title>REFERENCE TO A NATIONAL CODE</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>IE</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Legal Event Code </event-attribute-label><event-attribute-value>FG4D</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20040804"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>B1</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>DEESFRGBIT</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REG" date="20040804"><legal-event-body><event-title>REFERENCE TO A NATIONAL CODE</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>GB</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Legal Event Code </event-attribute-label><event-attribute-value>FG4D</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="RAP1" date="20030402"><legal-event-body><event-title>APPLICANT REASSIGNMENT (CORRECTION)</event-title><event-attributes><event-attribute><event-attribute-label>Owner name </event-attribute-label><event-attribute-value>SOLVAY SOLEXIS S.P.A.</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="RAP1" date="20030326"><legal-event-body><event-title>APPLICANT REASSIGNMENT (CORRECTION)</event-title><event-attributes><event-attribute><event-attribute-label>Owner name </event-attribute-label><event-attribute-value>AGORA' S.P.A.</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AKX" date="20030205"><legal-event-body><event-title>PAYMENT OF DESIGNATION FEES</event-title><event-attributes><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>DEESFRGBIT</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="17Q" date="20030115"><legal-event-body><event-title>FIRST EXAMINATION REPORT</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20021127</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="17P" date="20021211"><legal-event-body><event-title>REQUEST FOR EXAMINATION FILED</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20021011</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20020515"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>A3</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>ATBECHCYDEDKESFIFRGBGRIEITLILUMCNLPTSETR</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AX" date="20020515"><legal-event-body><event-title>EXTENSION OF THE EUROPEAN PATENT TO</event-title><event-attributes><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>AL;LT;LV;MK;RO;SI</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20010905"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>A2</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>ATBECHCYDEDKESFIFRGBGRIEITLILUMCNLPTSETR</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AX" date="20010905"><legal-event-body><event-title>EXTENSION OF THE EUROPEAN PATENT TO</event-title><event-attributes><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>AL;LT;LV;MK;RO;SI</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event></legal-status></patent-document>

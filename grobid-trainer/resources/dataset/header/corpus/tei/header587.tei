@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="589"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">A Protocol for Efficient Transfer of Data over Fiber/Cable Systems <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Dolors Sala John O. Limb <lb/></docAuthor></byline>
+		<byline><affiliation>School of Electrical College of Computing <lb/>and Computer Engineering <lb/>Georgia Institute of Technology <lb/></affiliation></byline>
+		<address>Atlanta, GA 30332-0280 <lb/></address>
+		<email>E-mail: (dolors,limb)@cc.gatech.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>A revolution is occurring in the scope and range <lb/>of information, communication and education services <lb/>that will be made available to schools, libraries, town-halls, clinics and, most importantly, residences. These <lb/>services will be provided initially, primarily over hybrid fiber-cable systems, either by telephone companies <lb/>or cable companies. The old cable plant is being upgraded and used in totally new ways. <lb/>The topology and physical characteristics of the upstream channel present new challenges for efficient <lb/>channel access. We present a media access protocol <lb/>that efficiently transfers data on this channel. A primary goal in the design was to keep the portion of the <lb/>protocol resident in the station as simple as possible. <lb/>Thus we use centralized control located in the cable <lb/>head-end and minimize intelligence in the station. We <lb/>refer to this protocol as Centralized Priority Reservation or CPR. A station wishing to transmit sends a request to the head-end using a contention channel. The <lb/>head-end acknowledges the request and then schedules <lb/>the request, informing the station by means of a grant <lb/>message when to transmit. <lb/>The protocol performs well under heavy load. Performance is affected little by the number of stations, <lb/>the speed of the system and the physical length of the <lb/>system. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

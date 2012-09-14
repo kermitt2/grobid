@@ -1,0 +1,19 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="682"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Scintilla: Cluster Computing with SCI <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Max Ibel, Klaus E. Schauser, Chris J. Scheiman, and Michael Schmitt <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science <lb/>University of California, Santa Barbara <lb/></affiliation></byline>
+		<address>Santa Barbara, CA 93106 <lb/></address>
+		<email>fibel,schauser,chriss,schmittmg@cs.ucsb.edu <lb/></email>
+		<ptr type="web">http://www.cs.ucsb.edu/research/scintilla <lb/></ptr>
+		<div type="abstract">Abstract <lb/>The Scintilla project at UCSB studies SCI-based cluster <lb/>computing. The Scalable Coherent Interface (SCI) is a <lb/>recent communication standard for cluster interconnects. <lb/>We focus on non-coherent SCI, using our cluster setup <lb/>of SBus-based and PCI-based workstations connected via <lb/>Dolphin SCI adapters. Our motivation for choosing SCI as <lb/>network fabric is the very low latency and high bandwidth. <lb/>We study how to map a variety of programming models efficiently onto the SCI hardware, focusing on message <lb/>passing and global address space support, implementing <lb/>Active Messages and Split-C. We present implementation <lb/>trade-offs, present performance measurements and compare the PCI and SBus adapters. <lb/>We found that the user-level load/store programming interface of SCI is very convenient to use, achieves low latencies, and is fully virtualized, simultaneously supporting <lb/>multiple parallel programs and communication channels. <lb/>On the other hand, neither of the programming models <lb/>studied maps directly to SCI. Issues such as notification, <lb/>atomic operations, and virtual address space limitations <lb/>represent major implementation challenges, which we address with a combination of compiler and run-time support. Overall, we found the SCI network a good substrate <lb/>for high-performance cluster computing. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

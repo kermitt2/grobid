@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="715"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<idno>CS/TR-92-80 <lb/></idno>
+		<docTitle>
+			<titlePart type="main">The COOL architecture and abstractions for object-oriented <lb/>distributed operating systems <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Rodger Lea, Christian Jacquemot <lb/></docAuthor></byline>
+		<note type="other">approved by: <lb/>distribution: COOL <lb/></note>
+		<div type="abstract">abstract: Building distributed operating systems benefits from the micro-kernel approach by allowing better support for modularization. However, we believe <lb/>that we need to take this support a step further. A more modular, or object <lb/>oriented approach is needed if we wish to cross the barrier of complexity that <lb/>is holding back distributed operating system development. The Chorus Ob <lb/>ject Oriented Layer (COOL) is a layer built above the Chorus micro-kernel <lb/>designed to extend the micro-kernel abstractions with support for object oriented systems. COOL v2, the second iteration of this layer provides generic <lb/>support for clusters of objects, in a distributed virtual memory model. It is <lb/>built as a layered system where the lowest layer support only clusters and the <lb/>upper layers support objects. <lb/></div>
+		<note type="copyright">c Chorus systemes, 1992 <lb/>c Chorus systemes, 1992</note> <date>September 21, 1992 <lb/></date>
+		<pb/>
+		</front>
+</text>
+</tei>

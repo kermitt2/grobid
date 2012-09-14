@@ -1,0 +1,22 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="480"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">A Study of the Structure and Performance <lb/>of MMU Handling Software <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Yousef A. Khalidi <lb/>Vikram P. Joshi <lb/>Dock Williams <lb/></docAuthor></byline>
+		<idno>SMLI TR-94-28</idno>
+		<date>June 1994 <lb/></date>
+		<div type="abstract">Abstract: <lb/>Modern operating systems provide a rich set of interfaces for mapping, sharing, and protecting memory. Different <lb/>memory management unit (MMU) architectures provide different mechanisms for managing memory translations. <lb/>Since the same OS usually runs on different MMU architectures, a software hardware address translation (hat) <lb/>layer that abstracts the MMU architecture is normally implemented between MMU hardware and the virtual memory system of the OS. In this paper, we study the impact of the OS and the MMU on the structure and performance <lb/>of the hat layer. In particular, we concentrate on the role of the hat layer on the scalability of system performance <lb/>on symmetric multiprocessors with 2-12 CPUs. The results show that, unlike single-user applications, multi-user <lb/>applications require very careful multi-threading of the hat layer to achieve system performance that scales with <lb/>the number of CPUs. In addition, multi-threading the hat can result in better performance in lesser amounts of <lb/>physical memory. <lb/></div>
+		<note type="other">email addresses: <lb/></note>
+		<email>yousef.khalidi@eng.sun.com <lb/></email> 
+		<email>vikram.joshi@eng.sun.com <lb/></email> 
+		<email>dock.williams@eng.sun.com <lb/></email>
+		<address>M/S 29-01 <lb/>2550 Garcia Avenue <lb/>Mountain View, CA 94043 <lb/></address>
+		<pb/>
+		</front>
+</text>
+</tei>

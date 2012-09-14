@@ -1,0 +1,59 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000025-orginal"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<lb/>
+			<reference>Int. J. Cancer: 86, 667– 671 (2000)<lb/></reference>
+			<note type="copyright">© 2000 Wiley-Liss, Inc.</note>
+			<space dim="horizontal"/>
+			<reference>Publication of the International Union Against Cancer<lb/></reference>
+
+			<docTitle>
+				<titlePart>ENHANCED EXPRESSION OF CYCLOOXYGENASE (COX)-2 IN HUMAN SKIN<lb/>
+					EPIDERMAL CANCER CELLS: EVIDENCE FOR GROWTH SUPPRESSION<lb/> BY INHIBITING COX-2
+					EXPRESSION<lb/></titlePart>
+			</docTitle>
+
+			<byline>
+				<docAuthor>Yuko HIGASHI, Takuro KANEKURA* and Tamotsu KANZAKI<lb/></docAuthor>
+			</byline>
+
+			<byline>
+				<affiliation>Department of Dermatology, Kagoshima University Faculty of
+					Medicine,</affiliation>
+			</byline>
+
+			<address>Kagoshima, Japan<lb/></address>
+
+			<div type="abstract">Cyclooxygenase (COX)-2 is one of the rate-limiting en-<lb/>zymes in
+				the conversion of arachidonic acid to prostaglandins<lb/> and other eicosanoids.
+				Recent studies have shown enhanced<lb/> expression of COX-2 in cancer cells of
+				several tissues. We<lb/> investigated the expression of COX-2 and prostaglandin
+				(PG)<lb/> E<lb/> 2<lb/> production in two human skin epidermal cancer cell
+				lines:<lb/> cutaneous squamous cell carcinoma, HSC-5, and eccrine car-<lb/>cinoma,
+				EcCa. Both COX-2 expression and PGE<lb/> 2<lb/> production were significantly
+				enhanced in cancer cell lines compared<lb/> with the non-tumorigenic human
+				keratinocyte cell line,<lb/> HaCaT. In order to determine the role of COX-2 in
+				the<lb/> proliferation of HSC-5 and EcCa, the growth of untreated<lb/> cells and
+				cells transfected with COX-2 antisense oligonucle-<lb/>otide was compared using the
+				MTT assay. Transfection with<lb/> the antisense oligonucleotide suppressed COX-2
+				protein ex-<lb/>pression and significantly inhibited cell growth. The effect of<lb/>
+				a selective inhibitor of COX-2, NS398, was compared with<lb/> the effect of the
+				antisense oligonucleotide in order to see<lb/> whether COX-2 expression and
+				prostaglandins have selec-<lb/>tive effects on cell growth. COX-2 expression was
+				unchanged<lb/> by NS398 treatment, whereas NS398 inhibited cell growth to<lb/> a
+				certain extent. The degree of growth inhibition was greater<lb/> with the antisense
+				oligonucleotide than with NS398. Our<lb/> findings indicate that COX-2 protein
+				expression is enhanced<lb/> in skin epidermal cancer cells and that COX-2 plays a
+				pivotal<lb/> role in regulating cell growth. Furthermore, inhibition of<lb/> COX-2
+				expression had a more significant effect on growth<lb/> suppression than inhibition
+				of COX-2 catalytic activity, sug-<lb/>gesting the existence of two different signal
+				pathways via<lb/> COX-2 in regulating cell growth.</div>
+			<reference>Int. J. Cancer 86:667– 671,<lb/> 2000.<lb/></reference>
+			<note type="copyright">© 2000 Wiley-Liss, Inc.<lb/></note>
+		</front>
+	</text>
+</tei>

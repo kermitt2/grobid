@@ -1,0 +1,39 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="1104"/>  
+	</teiHeader>
+<text xml:lang="en"> 
+	<front>
+	
+		<docTitle>
+			<titlePart type="main"> Depth-resolved  analysis of spontaneous phase separation in<lb/>  the growth of lattice-matched AlInN<lb/></titlePart>
+		</docTitle> 
+		
+		<byline><docAuthor>A. Redondo-Cubero  1,2,*  , K. Lorenz  3  , R. Gago  4  , N. Franco  3  , M.-A. di Forte Poisson  5  , E.<lb/> Alves  3  and E. Muñoz  1 <lb/></docAuthor></byline>
+		
+		<byline><affiliation>1  ISOM and Dpt. de Ingeniería Electrónica, ETSI Telecomunicación, Universidad Politécnica de <lb/> Madrid,  </affiliation></byline> 
+		<address>E-28040 Madrid, Spain. <lb/></address> 
+		
+		<byline><affiliation>2  Centro de Micro-Análisis de Materiales, Universidad Autónoma de Madrid,  </affiliation></byline> 
+		<address>E-28049 Madrid, Spain. <lb/></address>
+				
+		<byline><affiliation>3  Instituto Tecnológico e Nuclear,   </affiliation></byline> 
+		<address>Estrada nacional 10, 2686-953 Sacavém, Portugal. <lb/></address>
+		
+		<byline><affiliation>4  Instituto de Ciencia de Materiales de Madrid (CSIC), </affiliation></byline> 
+		<address>E-28049 Madrid, Spain. <lb/></address>                  
+		
+		<byline><affiliation>5  Thales Research &amp; Technology/TIGER, </affiliation></byline> 
+		<address>91461 Marcoussis Cedex, France. <lb/></address>  
+				
+		<div type="abstract">ABSTRACT:<lb/> We report the detection of phase separation of an Al  1-x  In  x  N/GaN heterojunction grown<lb/> close to lattice matched conditions (x∼0.18) by means of Rutherford backscattering<lb/> spectrometry in channeling geometry and high resolution x-ray diffraction. An initial<lb/> pseudomorphic growth of the film was found, with good single crystalline quality, the<lb/>  nominal composition and very low strain state. After ~50 nm, a critical thickness is<lb/> reached at which the InN molar fraction of the films drops to ~15 % and at the same<lb/> time the single crystalline quality of the films degrade drastically. This spontaneous<lb/> effect cannot be ascribed to strain relaxation mechanisms since both techniques show a<lb/> good single crystalline growth of the ternary under lattice matched conditions. <lb/></div> 
+
+		<keywords>Keywords: RBS, channeling, AlInN, strain, XRD <lb/></keywords>		 
+
+		<note>* Corresponding author:</note> <email>andres.redondo@uam.es <lb/></email>
+
+  		<introduction>1.  INTRODUCTION<lb/></introduction>
+		
+    </front>
+</text>
+</tei>                              

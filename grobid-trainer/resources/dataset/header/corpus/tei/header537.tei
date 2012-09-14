@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="540"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<note type="reference">To appear in the Proceedings of the 16th ACM Symposium on Operating System Principles <lb/></note>
+		<docTitle>
+			<titlePart type="main">Agile Application-Aware Adaptation for Mobility <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Brian D. Noble, M. Satyanarayanan, Dushyanth Narayanan, James Eric Tilton, Jason Flinn, Kevin R. Walker <lb/></docAuthor></byline>
+		<byline><affiliation>School of Computer Science <lb/>Carnegie Mellon University <lb/></affiliation></byline>
+		<div type="abstract">Abstract <lb/>In this paper we show that application-aware adaptation, a <lb/>collaborative partnership between the operating system and <lb/>applications, offers the most general and effective approach <lb/>to mobile information access. We describe the design of <lb/>Odyssey, a prototype implementing this approach, and show <lb/>how it supports concurrent execution of diverse mobile applications. We identify agility as a key attribute of adaptive systems, and describe how to quantify and measure it. <lb/>We present the results of our evaluation of Odyssey, indicating performance improvements up to a factor of 5 on a <lb/>benchmark of three applications concurrently using remote <lb/>services over a network with highly variable bandwidth. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

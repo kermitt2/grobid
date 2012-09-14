@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../jsp/xmlverbatimwrapper.xsl"?> 
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<affiliation>
+								<orgName type="department">Department of Physics and Astronomy</orgName>,
+								<orgName type="institution">University of Tennessee</orgName>,
+								<address>
+									<settlement>Knoxville</settlement>,
+									<region type="state" n="TN">TN<lb/></region>
+									<postCode>37996</postCode>,
+									<country key="US">USA<lb/></country>
+								</address>
+							</affiliation>
+							
+							<affiliation>
+								<orgName type="department">Physics Division</orgName>,
+								<orgName type="institution">Oak Ridge National Laboratory</orgName>,
+								<address>
+									<settlement>Oak Ridge</settlement>,
+									<region type="state" n="TN">TN</region>
+									<postCode>37831</postCode>,
+									<country key="US">USA<lb/></country>
+								</address>
+							</affiliation>
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</TEI>

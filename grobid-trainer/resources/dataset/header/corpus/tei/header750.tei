@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="751"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">PCp <lb/>3 : A C Front End for <lb/>Preprocessor Analysis and Transformation <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Greg J. Badros * <lb/></docAuthor></byline>
+		<email>gjb@cs.washington.edu <lb/></email>
+		<date>16 October 1997 <lb/></date>
+		<div type="abstract">Abstract <lb/>Though the C preprocessor provides necessary language features, it does so in an unstructured way. The lexical nature of cpp creates numerous problems for software engineers <lb/>and their tools, all stemming from the chasm between the engineer&apos;s view of the source code <lb/>and the compiler&apos;s view. The simplest way to reduce this problem is to minimize use of the <lb/>preprocessor. In light of the data collected in a prior empirical analysis, this paper describes <lb/>a tool to aid the software engineer in analyses targeted at replacing preprocessor constructs <lb/>with language features. Existing tools for analyzing C source in the context of the preprocessor are unsuitable for such transformations. This work introduces a new approach: tightly <lb/>integrating the preprocessor with a C language parser, permitting the code to be analyzed at <lb/>both the preprocessor and syntactic levels simultaneously. The front-end framework, called <lb/>PCp 3 , combines a preprocessor, a parser, and arbitrary Perl subroutine &quot;hooks&quot; invoked upon <lb/>various preprocessor and parser events. PCp 3 &apos;s strengths and weaknesses are discussed in the <lb/>context of several program understanding and transformation tools, including a conservative <lb/>analysis to support replacing cpp&apos;s #define directives with C++ language features. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

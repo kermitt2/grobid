@@ -1,0 +1,16 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="469"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Type classes in Haskell <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Cordelia Hall, Kevin Hammond, Simon Peyton Jones <lb/>and Philip Wadler <lb/></docAuthor></byline>
+		<byline><affiliation>Glasgow University <lb/></affiliation></byline>
+		<div type="abstract">Abstract <lb/>This paper defines a set of type inference rules for resolving overloading introduced by type classes. Programs including type classes <lb/>are transformed into ones which may be typed by the Hindley-Milner inference rules. In contrast to other work on type classes, the <lb/>rules presented here relate directly to user programs. An innovative <lb/>aspect of this work is the use of second-order lambda calculus to <lb/>record type information in the program. <lb/></div>
+		<div type="intro">1. Introduction</div>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005093"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<lb/>
+			<docTitle>
+				<titlePart>Antoni Gaudi's Computational Legacy<lb/></titlePart>
+			</docTitle>
+
+			<byline>
+				<docAuthor>Mark Buny<lb/></docAuthor>
+			</byline>
+
+			<byline>
+				<affiliation>Spatial Information Architecture<lb/> School ofArchitecture and
+					Design<lb/> W I T UniversiQ<lb/></affiliation>
+			</byline>
+
+			<email>mark. bury@rmit. edu.au<lb/></email>
+
+			<div type="abstract">Abstract<lb/> The Catalan architect Antoni Gaudi died in 1926 aged
+				74 when, at best, he had completed 10 percent of his magnum<lb/> opus, the Sagrada
+				Familia Church, on which he had worked for 43 years. He left for his successors a
+				conundrum that is<lb/> still being played out today. Given that the building is so
+				manijestl-v a complex building task, it seems extraordinary that<lb/> he succeeded
+				in leaving behind a codex s@cient!v comprehensive that his successors have been able
+				to bring the project<lb/> signi$cantly forward towards conclusion with accuracy. The
+				codex is based on second order surface geomety, and while<lb/> the geomety may be
+				interpreted without the use of the computer, the demands today are tempered by
+				expectations<lb/> racked-up to make the contribution of the computer non-negotiable.
+				Professor Mark Burry has been working on the<lb/> project since 1979 both pre and
+				post digitalcv. His lecture will look at the implications of introducing the
+				computer to<lb/> assist solving the underlying geometry that regulates the entire
+				unbuilt sections. In doing so he will discuss the gains and<lb/> potential losses
+				that have resultedfrom more than ten years use of high end aeronautical design
+				sofiare to aid the task<lb/> of completion of a building too demanding for software
+				designed for the architecture sector.<lb/>
+			</div>
+
+		</front>
+	</text>
+</tei>

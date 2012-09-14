@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="ZFN-A-054-0304-0213"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<titlePage>
+				<docTitle>
+					<titlePart type="main">On the Ambiguity of Molecular Complexes Formed <lb/> by Two Molecules<lb/></titlePart>
+				</docTitle>
+				<byline><docAuthor>S. Kassi and H. Dreizler^</docAuthor><lb/></byline>
+				<byline><affiliation>Laboratoire de Physique des Lasers , Atomes et Molecules , Universite des Sciences et Technologies <lb/> de Lille </affiliation>, <address>F-59655 Villeneuve d'Ascq </address> <lb/> </byline>
+				<byline> <affiliation>" Permanent address : Institut für Physikalische Chemie, Chrisdan-Albrechts-Universität </affiliation>, <address> Olshausenstr . 40 , D-24098 Kiel</address> <lb/></byline>
+				<reference>Z. Naturforsch. 54a, 213-217 (1999); </reference>
+				<note type="submission">received December 16  1998 <lb/></note>
+			</titlePage>
+			<div type="abstract">We present a general consideradon how many stmctural conformers are compauble with one set of <lb/>
+rotadonal constants if one rotauonal spectmm of a dimer is invesUgated . A selecdon of a certain con- <lb/>
+former should be guided by the invesUgadon of isotopomers , quantum chemical calculadons or other <lb/>
+arguments. <lb/></div>
+			<div type="intro">Introduction<lb/></div>
+		</front>
+	</text>
+</tei>

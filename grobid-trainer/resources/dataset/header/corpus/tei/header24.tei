@@ -1,0 +1,21 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="25"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Evolving Visually Guided Robots <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>D. Cliff, P. Husbands, I. Harvey <lb/></docAuthor></byline>
+		<idno>CSRP 220,</idno>
+		<date>July 1992 <lb/></date>
+		<idno>Cognitive Science Research Paper <lb/>Serial No. CSRP 220 <lb/></idno>
+		<byline><affiliation>The University of Sussex <lb/> School of Cognitive and Computing Sciences <lb/></affiliation></byline>
+		<address>Falmer <lb/>Brighton BN1 9QH <lb/>England, U.K. <lb/></address>
+		<note type="other">A version of this paper appears in: <lb/></note>
+		<note type="reference">Proceedings of SAB92, <lb/>the Second International Conference on Simulation of Adaptive Behaviour <lb/>J.-A. Meyer, H. Roitblat, and S. Wilson, editors, <lb/>MIT Press Bradford Books, Cambridge, MA, 1993. <lb/></note>
+		<pb/>
+		</front>
+</text>
+</tei>

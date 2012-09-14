@@ -1,0 +1,1020 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<patent-document status="new" lang="EN" ucid="EP-1132442-B1" country="EP" doc-number="1132442" kind="B1" date="20030319"><bibliographic-data><publication-reference fvid="23245214" ucid="EP-1132442-B1" status="new"><document-id status="new" format="original"><country>EP</country><doc-number>1132442</doc-number><kind>B1</kind><date>20030319</date><lang>EN</lang></document-id></publication-reference><application-reference ucid="EP-01104755-A" status="new" is-representative="NO"><document-id format="epo" status="new"><country>EP</country><doc-number>01104755</doc-number><kind>A</kind><date>20010226</date><lang>EN</lang></document-id></application-reference><priority-claims status="new"><priority-claim ucid="JP-2000050933-A" status="new"><document-id format="epo" status="new"><country>JP</country><doc-number>2000050933</doc-number><kind>A</kind><date>20000228</date></document-id></priority-claim></priority-claims><dates-of-public-availability status="new" /><term-of-grant /><technical-data status="new"><classifications-ipcr><classification-ipcr status="new">C08G  59/00        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">C08G  59/42        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">C08L  73/00        20060101C N20051008RMEP        </classification-ipcr><classification-ipcr status="new">C08L  73/02        20060101A N20051008RMEP        </classification-ipcr><classification-ipcr status="new">C09D 133/06        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">C09D 133/06        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">C09D 163/00        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">C09D 163/00        20060101C I20051008RMEP        </classification-ipcr></classifications-ipcr><classification-ecla status="new"><classification-symbol scheme="EC">C08G59/42B</classification-symbol><classification-symbol scheme="EC">C09D133/06B6+B4</classification-symbol><classification-symbol scheme="EC">C09D163/00</classification-symbol><classification-symbol scheme="ICO">M08L73:02</classification-symbol></classification-ecla><invention-title lang="DE" status="new">Hitzehärtbare Pulverbeschichtungszusammensetzung und Verfahren zum Herstellen einer Deckbeschichtung mit derselben</invention-title><invention-title lang="EN" status="new">Thermosetting powder coating composition and method for forming a topcoat using the same</invention-title><invention-title lang="FR" status="new">Composition de revêtement pulvérulente thermodurcissable et procédé de préparation d'une couche de finition avec celle-ci</invention-title><citations /><figures /></technical-data><parties><applicants><applicant format="epo" status="new"><addressbook><name>KANSAI PAINT CO LTD</name><address><country>JP</country></address></addressbook></applicant><applicant format="intermediate" status="new"><addressbook><name>KANSAI PAINT CO. LTD.</name><address><country /></address></addressbook></applicant></applicants><inventors><inventor format="epo" status="new"><addressbook><name>HARAKAWA HIROMI</name><address><country>JP</country></address></addressbook></inventor><inventor format="epo" status="new"><addressbook><name>KAWAMOTO YUGEN</name><address><country>JP</country></address></addressbook></inventor><inventor format="epo" status="new"><addressbook><name>ADACHI TAKATO</name><address><country>JP</country></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>HARAKAWA, HIROMI</name><address><country /></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>ADACHI, TAKATO</name><address><country /></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>KAWAMOTO, YUGEN</name><address><country /></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>HARAKAWA, HIROMI</last-name><address><street>242-7, Nagamochi</street><city>Hiratsuka-shi, Kanagawa-ken</city><country>JP</country></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>KAWAMOTO, YUGEN</last-name><address><street>Kansai Paint Shataku 2-36, 580, Shindo</street><city>Hiratsuka-shi, Kanagawa-ken</city><country>JP</country></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>ADACHI, TAKATO</last-name><address><street>Kansai Paint Shataku 2-36, 580, Shindo</street><city>Hiratsuka-shi, Kanagawa-ken</city><country>JP</country></address></addressbook></inventor></inventors><assignees><assignee format="original" status="new"><addressbook><last-name>KANSAI PAINT CO. LTD.</last-name><address><street>33-1, Kanzaki-cho</street><city>Amagasaki-shi Hyogo-ken</city><country>JP</country></address></addressbook></assignee></assignees><agents><agent format="original" status="new"><addressbook><last-name>R.A. KUHNEN &amp;amp; P.A. WACKER</last-name><address><street>Patentanwaltsgesellschaft dbR Postfach 19 64</street><city>85319 Freising</city><country>DE</country></address></addressbook></agent></agents></parties><international-convention-data><designated-states><ep-contracting-states><country>DE</country><country>FR</country><country>GB</country></ep-contracting-states></designated-states></international-convention-data></bibliographic-data><abstract lang="EN" source="EPO" status="new"><p>The present invention provides a thermosetting powder coating composition comprising:     (A) an epoxy-containing resin; and (B) a curing agent containing, as an essential ingredient, an acid anhydride (a) represented by the formula HOOC- (CH2)m-ÄCOO-CO-(CH2)mÜn-COOR1 wherein R1 represents a C1-10 monovalent saturated hydrocarbon group, m is an integer of 6 to 18, and n is a number of 1 to 20 on average, the molar ratio of carboxyl groups to acid anhydride groups in the curing agent being in the range from 0.15:1 to 2.0:1, the molar ratio of the total of carboxyl groups and acid anhydride groups in the curing agent (B) to epoxy groups in the epoxy-containing resin (A) being in the range from 0.7:1 to 1.2:1. The present invention further provides a method for forming a topcoat according to a 2-coat 1-bake system comprising the steps of applying to a substrate a thermosetting aqueous colored base coating composition, applying to the uncured surface of the base coat a clear coating composition, and curing the two coats by heating, wherein the clear coating composition is the above thermosetting powder coating composition.</p></abstract><abstract lang="EN" status="new"><p num="">The present invention provides a thermosetting
+powder coating composition comprising:
+<sl><li>(A) an epoxy-containing resin; and</li><li>(B) a curing agent containing, as an essential ingredient, an
+acid anhydride (a) represented by the formula
+<st32:che xmlns:st32="http://www.matrixware.com/ns/st32/">HOOC- (CH<sub>2</sub>)<sub>m</sub>-[COO-CO-(CH<sub>2</sub>)<sub>m</sub>]<sub>n</sub>-COOR<sub>1</sub></st32:che>
+wherein R<sub>1</sub> represents a C<sub>1-10</sub> monovalent saturated hydrocarbon
+group, m is an integer of 6 to 18, and n is a number of 1 to
+20 on average, the molar ratio of carboxyl groups to acid
+anhydride groups in the curing agent being in the range from
+0.15:1 to 2.0:1,
+
+the molar ratio of the total of carboxyl groups and acid
+anhydride groups in the curing agent (B) to epoxy groups in
+the epoxy-containing resin (A) being in the range from 0.7:1
+to 1.2:1. The present invention further provides a method for
+forming a topcoat according to a 2-coat 1-bake system
+comprising the steps of applying to a substrate a
+thermosetting aqueous colored base coating composition,
+applying to the uncured surface of the base coat a clear
+coating composition, and curing the two coats by heating,
+wherein the clear coating composition is the above
+thermosetting powder coating composition.</li></sl></p></abstract><description lang="EN" status="new"><p num="0001">The present invention relates to a novel
+thermosetting powder coating composition and a method for
+forming a topcoat using the same.</p><p num="0002">Topcoats for coating substrates such as
+automotive exterior panels are required to have excellent
+finished appearance such as surface smoothness and
+excellent coating properties such as weather resistance,
+solvent resistance, acid resistance, etc., in view of uses.
+In recent years, the required levels have been getting
+even higher.</p><p num="0003">Thermosetting powder coating compositions are
+conventionally used as clear coating compositions for
+forming topcoats by 2-coat 1-bake systems, etc. From the
+viewpoints of environmental protection and energy saving,
+it is desired that the thermosetting aqueous coating
+compositions be used as base coating compositions.</p><p num="0004">However, the thermosetting powder coating
+compositions have the following problems. When surface
+smoothness of the coating film is improved, other coating
+properties such as weather resistance, solvent resistance
+and acid resistance are impaired. On the other hand, when
+the other properties are improved, surface smoothness is 
+reduced. It has been difficult to achieve a proper
+balance therebetween. When conventional thermosetting
+powder clear coating compositions are applied to surfaces
+of aqueous base coats, such problems develop to a serious
+level, and it has been difficult to form a topcoat that
+excels in both surface smoothness and the above-mentioned
+other coating properties.</p><p num="0005">For example, a 2-coat 1-bake coating method for
+forming a topcoat is known from <ref type="patent">U.S. Patent No. 5,565,146</ref>.
+This method comprises the steps of applying to a substrate
+a thermosetting aqueous base coating composition
+comprising a hydroxyl- and carboxyl-containing resin and
+an alkyletherified methylol melamine resin, applying to
+the uncured surface of the base coat a thermosetting
+powder clear coating composition comprising an epoxy-containing
+acrylic resin and a dibasic acid such as
+dodecanoic diacid or acid anhydride thereof as a curing
+agent, followed by curing the two coats by heating.</p><p num="0006">However, in the above 2-coat 1-bake coating
+method, when the coat of the aqueous base coating
+composition and the coat of the powder clear coating
+composition are heated for curing at the same time, a
+reaction between the hydroxyl group and the alkylether
+group in the aqueous coat produces an alcohol as a
+byproduct. When the alcohol evaporates out through the 
+thermally fused powder coat, it causes cratering due to
+popping on the surface of powder coat, thereby impairing
+surface smoothness, distinctness-of-image gloss, and
+physical properties of the coating film. When the aqueous
+coat comprises a flaky metallic pigment, orientation of
+the pigment flakes is altered, thus impairing metallic
+effects, etc.</p><p num="0007">In the above method, if curing initiation time
+is delayed so as to fully melt and flow the powder coat
+particles by heating with the purpose of improving coating
+surface smoothness, etc., an insufficiently crosslinked
+powder coat will result, thus impairing coating properties
+such as weather resistance, solvent resistance and acid
+resistance.</p><p num="0008">The document <ref type="patent">EP-A 1 059 343</ref> provides a thermosetting powder coating
+composition comprising: an epoxy-containing resin and a curing agent containing an
+acid anhydride (a) and at least one species selected from the group consisting of an acid
+anhydride (b) and a dibasic acid (c). The material, when applied to a surface, excels in
+finished appearance such as surface smoothness and also in other coating properties.
+The acid anhydride (a) can be prepared by conventionally known methods, thus
+resulting into an acid anhydride having ester groups at both ends.</p><p num="0009">The document <ref type="patent">EP-A 0 696 622</ref> discloses a thermosetting powder paint
+comprising, as essential components, (A) a copolymer, and, as curing agents capable of
+reacting with the component (A) to crosslink the component (A), (B) an aliphatic
+polycarboxylic acid and (C) a linear anhydride of an aliphatic polycarboxylic acid.</p><p num="0010">An object of the present invention is to provide
+a novel thermosetting powder coating composition that
+excels in finished appearance such as surface smoothness
+and also in other coating properties such as weather
+resistance, solvent resistance and acid resistance.</p><p num="0011">Another object of the invention is to provide a
+method for forming a topcoat using the above-mentioned
+thermosetting powder coating composition.</p><p num="0012">Other objects and features of the invention will
+become apparent from the following description.</p><p num="0013">The present invention provides the following  
+thermosetting powder coating composition and method for
+forming a topcoat using the composition:
+<sl><li>1. A thermosetting powder coating composition comprising:
+<sl><li>(A) an epoxy-containing resin; and</li><li>(B) a curing agent containing, as an essential ingredient,
+an acid anhydride (a) represented by the formula
+<st32:che xmlns:st32="http://www.matrixware.com/ns/st32/">HOOC- (CH<sub>2</sub>)<sub>m</sub>- [COO-CO- (CH<sub>2</sub>)<sub>m</sub>]<sub>n</sub>-COOR<sub>1</sub></st32:che>
+wherein R<sub>1</sub> represents a C<sub>1-10</sub> monovalent saturated
+hydrocarbon group, m is an integer of 6 to 18, and n is a
+number of 1 to 20 on average, the molar ratio of carboxyl
+groups to acid anhydride groups in the curing agent being
+in the range from 0.15:1 to 2.0:1,
+the molar ratio of COOR<sub>1</sub> groups in the curing agent (B) to the total of carboxyl
+groups and acid anhydride groups in the curing agent (B) being in the range from 0.01 :
+1 to 0.1 : 1; and
+
+the molar ratio of the total of carboxyl groups and acid
+anhydride groups in the curing agent (B) to epoxy groups
+in the epoxy-containing resin (A) being in the range from
+0.7:1 to 1.2:1.</li></sl></li><li>2. The powder coating composition according to item 1
+wherein the epoxy-containing resin (A) is an epoxy-containing
+copolymer prepared by copolymerizing an epoxy-containing
+vinyl monomer and at least one other
+polymerizable vinyl monomer.</li><li>3. The powder coating composition according to item 2
+wherein the epoxy-containing resin (A) comprises 20 to 70%
+by weight of an epoxy-containing vinyl monomer as a
+monomer component of the epoxy-containing copolymer.  </li><li>4. The powder coating composition according to item 1
+wherein the epoxy-containing resin (A) has a glass
+transition temperature of 40°C to 80°C.</li><li>5. The powder coating composition according to item 1
+wherein the epoxy-containing resin (A) has a number
+average molecular weight of 1,000 to 10,000.</li><li>6. The powder coating composition according to item 1
+wherein the curing agent (B) contains acid anhydride (a)
+and at least one species selected from the group
+consisting of acid anhydride (b) and dibasic acid (c),
+the acid anhydride (b) being represented by the formula
+<st32:che xmlns:st32="http://www.matrixware.com/ns/st32/">R<sub>2</sub>OOC- (CH<sub>2</sub>)<sub>p</sub>- [COO-CO- (CH<sub>2</sub>)<sub>p</sub>]<sub>q</sub>-COOR<sub>2</sub></st32:che>
+wherein R<sub>2</sub> represents a C<sub>1-10</sub> monovalent saturated
+hydrocarbon group; p is an integer of 6 to 18; and q is a
+number of 1 to 20 on average, and
+the dibasic acid (c) being represented by the formula
+<st32:che xmlns:st32="http://www.matrixware.com/ns/st32/">HOOC- (CH<sub>2</sub>)<sub>r</sub> - [COO-CO-(CH<sub>2</sub>)<sub>r</sub>]<sub>s</sub>-COOH</st32:che>
+wherein r is an integer of 6 to 18; and s is a number of 0
+to 20 on average,
+the molar ratio of the total of COOR<sub>1</sub> groups and COOR<sub>2</sub> groups in the curing agent
+(B) to the total of carboxyl groups and acid anhydride groups in the curing agent (B)
+being in the range from 0.01 : 1 to 0.1 : 1.  </li><li>7. The powder coating composition according to item 1
+wherein the acid anhydride (a) in the curing agent (B) has
+a melting point of 60°C or higher.</li><li>8. The powder coating composition according to item 6
+wherein the acid anhydride (b) and dibasic acid (c) in the
+curing agent (B) have melting points of 60°C or higher.</li><li>9. The powder coating composition according to item 6
+wherein the mixture of acid anhydride (a) with acid
+anhydride (b) and/or dibasic acid (c) has a melting point
+of 60°C or higher.</li><li>10. A method for forming a topcoat according to a 2-coat
+1-bake system comprising the steps of applying to a
+substrate a thermosetting aqueous colored base coating
+composition, applying to the uncured surface of the base
+coat a clear coating composition, and curing the two coats
+by heating, wherein the clear coating composition is the
+thermosetting powder coating composition according to item
+1.</li></sl></p><p num="0014">The present inventors carried out intensive
+research to overcome the prior art defects and found that
+the above objects can be achieved with a thermosetting
+powder coating composition which comprises, as a curing
+agent for an epoxy-containing resin, a curing agent
+essentially containing the above specified acid anhydride
+(a). Stated more specifically, the present inventors 
+found that the above powder coating composition is
+excellent in curability, and when it is used as a clear
+coating composition in a 2-coat 1-bake coating method
+using an aqueous base coating composition, a fully
+crosslinked powder coat will be formed even with the
+curing initiation time being delayed, thus preventing
+popping and providing a topcoat with excellent finished
+appearance such as smoothness and excellent coating
+properties such as weather resistance, solvent resistance
+and acid resistance. The present invention has been
+accomplished based on this novel finding.</p><p num="0015">The epoxy-containing resin (A) used in the
+thermosetting powder coating composition of the invention
+may be selected from any known resin that is solid and has
+an average of at least one epoxy group, preferably at
+least two epoxy groups, per molecule.</p><p num="0016">Examples of resins usable as the epoxy-containing
+resin (A) are bisphenol epoxy resins such as
+&quot;EPIKOTE 1001&quot; (with an epoxy equivalent of 450 to 500,
+product of Shell Chemical Co., Ltd., trade name), &quot;EPIKOTE
+1004&quot; (with an epoxy equivalent of 875 to 975, product of
+Shell Chemical Co., Ltd., trade name), and &quot;EPIKOTE 1007&quot;
+(with an epoxy equivalent of 1,750 to 2,200, Shell Chemical
+Co., Ltd., trade name); and epoxy-containing copolymers
+each prepared by copolymerizing an epoxy-containing vinyl 
+monomer and at least one other polymerizable vinyl monomer.</p><p num="0017">The polymerization method for preparing such
+epoxy-containing copolymers is not limited specifically,
+but radical polymerization is usually preferred. Examples
+of useful epoxy-containing vinyl monomers include glycidyl
+(meth)acrylate, allyl glycidyl ether, 3,4-epoxycyclohexyl
+(meth)acrylate and β-methylglycidyl (meth)acrylate. The
+monomers can be used singly or in combination of two or
+more. Particularly preferred are glycidyl (meth)acrylate
+and β-methylglycidyl (meth)acrylate.</p><p num="0018">Examples of other polymerizable vinyl monomers
+are vinyl aromatic compounds such as styrene, α-methylstyrene,
+vinyltoluene and α-chlorostyrene; and
+C<sub>1-24</sub> alkyl esters or cycloalkyl esters of acrylic or
+methacrylic acids, such as methyl (meth)acrylate, ethyl
+(meth)acrylate, n-butyl (meth)acrylate, isobutyl
+(meth)acrylate, t-butyl (meth)acrylate, 2-ethylhexyl
+(meth)acrylate, n-octyl (meth)acrylate, decyl
+(meth)acrylate, lauryl (meth)acrylate, stearyl
+(meth)acrylate, cyclohexyl (meth)acrylate, isobornyl
+(meth)acrylate and tricyclodecanyl (meth)acrylate.</p><p num="0019">Of the monomers constituting the epoxy-containing
+copolymer, the epoxy-containing vinyl monomer
+is used preferably in a proportion of 20 to 70% by weight,
+more preferably in a proportion of 30 to 60% by weight. 
+An epoxy-containing vinyl monomer content of less than 20
+wt.% in the copolymer reduces acid resistance, weather
+resistance and solvent resistance of the coating film. On
+the other hand, an epoxy-containing vinyl monomer content
+of more than 70 wt.% impairs storage stability of the
+coating composition and finished appearance such as
+surface smoothness of the coating film. Therefore, any
+epoxy-containing vinyl monomer content outside said range
+is undesirable.</p><p num="0020">It is preferable for the epoxy-containing resin
+(A) to have a glass transition temperature of 40°C to 80°C,
+particularly 50°C to 70°C. A glass transition temperature
+of lower than 40°C causes particles in the powder coating
+composition to weld together, thereby reducing blocking
+resistance. On the other hand, when the glass transition
+temperature is higher than 80°C, the viscosity of the
+powder coating composition increases at the time of
+flowing of the powder coat particles by heating, thus
+impairing finished appearance of the coating film.
+Therefore, any glass transition temperature outside said
+range is undesirable. The glass transition temperature
+can be measured by DSC (differential scanning calorimeter).</p><p num="0021">It is preferable for the epoxy-containing resin
+(A) to have a number average molecular weight of 1,000 to
+10,000, particularly 2,000 to 6,000. A number average 
+molecular weight of less than 1,000 reduces blocking
+resistance of the powder coating composition and impairs
+coating properties such as solvent resistance and acid
+resistance. On the other hand, a number average molecular
+weight of more than 10,000 impairs finished appearance
+such as surface smoothness of the coating film. Therefore,
+any number average molecular weight outside said range is
+undesirable.</p><p num="0022">The curing agent (B) contains acid anhydride (a)
+of the formula (1) as an essential curing ingredient and
+optionally contains at least one species selected from the
+group consisting of acid anhydride (b) of the formula (2)
+and dibasic acid (c) of the formula (3).</p><p num="0023">The molar ratio of carboxyl groups to acid
+anhydride groups in the curing agent (B) must be in the
+range from 0.15:1 to 2.0:1, preferably from 0.2:1 to 1.8:1.
+When the molar ratio of carboxyl group/acid anhydride
+group is lower than 0.15, satisfactory curability is not
+provided. When the molar ratio of carboxyl group/acid
+anhydride group is higher than 2.0, the curing initiation
+time occurs earlier, thus causing popping on the coating
+film and impairing surface smoothness of the coating film.
+Therefore, any molar ratio outside said range is
+undesirable.</p><p num="0024">The molar ratio of COOR<sub>1</sub> groups or the total of 
+COOR<sub>1</sub> groups and COOR<sub>2</sub> groups in the curing agent (B) to
+the total of carboxyl groups and acid anhydride groups in
+the curing agent (B) is preferably in the range from
+0.01:1 to 0.1:1, more preferably in the range from 0.12:1
+to 0.06:1. If the molar ratio is lower than 0.01, the
+curing initiation time occurs earlier, giving inferior
+finished appearance. On the other hand, if the molar
+ratio is higher than 0.1, the cured coat will have low
+crosslinking density, thus impairing coating properties
+such as acid resistance and solvent resistance. Therefore,
+any molar ratio outside said range is undesirable.</p><p num="0025">The acid anhydride (a) of the formula (1) is an
+acid anhydride having a carboxyl group at one end and an
+ester group at the other end, wherein R<sub>1</sub> included in the
+ester group is a C<sub>1-10</sub> monovalent saturated hydrocarbon
+group. When the saturated hydrocarbon group has 11 or
+more carbon atoms, the resulting coating composition has
+inferior coating properties such as acid resistance and
+solvent resistance, and hazing occurs on the coating
+surface, thus being undesirable.</p><p num="0026">In the formula (1), examples of C<sub>1-10</sub> monovalent
+saturated hydrocarbon groups represented by R<sub>1</sub> include
+monovalent aliphatic hydrocarbon groups, monovalent
+alicyclic hydrocarbon groups and a combination thereof.
+Specific examples are methyl, ethyl, n-propyl, iso-propyl, 
+n-butyl, iso-butyl, sec-butyl, amyl, n-hexyl, n-octyl, 2-ethylhexyl,
+n-decanyl, cyclohexyl, methylcyclohexyl and
+the like.</p><p num="0027">In the formula (1), m must be an integer of 6 to
+18. If m is 5 or less, the coating composition is cured
+too quickly, giving inferior finished appearance. On the
+other hand, if m is 19 or more, the cured coat has low
+crosslinking density, thus impairing coating properties
+such as acid resistance and solvent resistance. Therefore,
+any integer outside said range is undesirable.</p><p num="0028">In the formula (1), n represents the degree of
+polymerization, which must be in the range of 1 to 20,
+preferably 2 to 12, on average. If n is less than 1, the
+cured coat has low crosslinking density, thus impairing
+coating properties such as acid resistance and solvent
+resistance. On the other hand, if n is more than 20, the
+viscosity of the powder coating composition increases when
+thermally fused, providing a coating film with inferior
+finished appearance such as low surface smoothness. Hence
+any degree of polymerization outside said range is
+undesirable.</p><p num="0029">The acid anhydride (a) of the formula (1) can be
+prepared by conventional methods. For example, the
+compound can be prepared by heating dibasic acid in the
+presence of an acid anhydride, followed by monoesterifying 
+part of acid anhydride groups in the resulting product
+with an alcohol, thus providing an acid anhydride having
+an ester group at one end. A mixture of acid anhydride
+(a), acid anhydride (b) and dibasic acid (c) is often
+obtained. Such a mixture per se may also be used as a
+curing agent (B). Acid anhydrides usually used in the
+above reaction are, for example, acetic anhydride and the
+like.</p><p num="0030">Examples of alcohols used in the reaction are
+methanol, ethanol, iso-propanol, n-butanol, iso-butanol,
+sec-butanol, n-pentanol, n-hexanol, n-octanol, 2-ethylhexanol,
+cyclohexanol and methylcyclohexanol.</p><p num="0031">Examples of dibasic acids are aliphatic dibasic
+acids such as suberic acid, azelaic acid, sebacic acid,
+undecanoic diacid, dodecanoic diacid, tridecanoic diacid,
+tetradecanoic diacid, pentadecanoic diacid and eicosanoic
+diacid.</p><p num="0032">In the curing agent (B) of the invention, the
+acid anhydride (b) of the formula (2) is an acid anhydride
+having ester groups at both ends. The C<sub>1-10</sub> monovalent
+saturated hydrocarbon group represented by R<sub>2</sub> is the same
+as R<sub>1</sub> in the formula (1).</p><p num="0033">In the formula (2), p must be an integer of 6 to
+18. If p is 5 or less, the coating composition is cured
+too quickly, giving inferior finished appearance. On the 
+other hand, if p is 19 or more, the cured coat will have
+low crosslinking density, thus impairing coating
+properties such as acid resistance and solvent resistance.
+Therefore, any integer outside said range is undesirable.</p><p num="0034">In the formula (2), q represents the degree of
+polymerization, which must be in the range of 1 to 20,
+preferably 2 to 12, on average. If q is less than 1, the
+cured coat will have low crosslinking density, thus
+impairing coating properties such as acid resistance and
+solvent resistance. On the other hand, if q is more than
+20, the viscosity of the powder coating composition
+increases when thermally fused, providing a coating film
+with inferior finished appearance such as low surface
+smoothness. Hence any degree of polymerization outside
+said range is undesirable.</p><p num="0035">The acid anhydride (b) of the formula (2) can be
+prepared by conventional methods. For example, the
+compound can be prepared by heating dibasic acid in the
+presence of an acid anhydride and monoesterifying part of
+acid anhydride groups in the intermediate with an alcohol,
+followed by further heating the intermediate in the
+presence of an acid anhydride, thus giving an acid
+anhydride having ester groups at both ends. Acid
+anhydrides usually used in the above reaction are, for
+example, acetic anhydride and the like. Useful alcohols 
+and dibasic acids are the same as used in the preparation
+of the acid anhydride (a).</p><p num="0036">The dibasic acid (c) of the formula (3) used in
+the curing agent (B) of the invention has carboxyl groups
+at both ends.</p><p num="0037">Dibasic acids of the formula (3) wherein s is 1
+to 20 have one or more acid anhydride groups. Such
+dibasic acids can be prepared, for example, by heating an
+aliphatic dibasic acid such as suberic acid, azelaic acid,
+sebacic acid, undecanoic diacid, dodecanoic diacid,
+tridecanoic diacid, tetradecanoic diacid, pentadecanoic
+diacid, eicosanoic diacid and the like in the presence of
+an acid anhydride. Usually used as an acid anhydride in
+the above reaction is acetic anhydride or the like.
+Dibasic acids of the formula (3) wherein s is 0 include,
+for example, the above-mentioned aliphatic dibasic acids.</p><p num="0038">In the formula (3), r is an integer of 6 to 18.
+If r is 5 or less, the curing initiation time occurs
+earlier, thus giving inferior finished appearance. On the
+other hand, if r is 19 or more, the cured coat will have
+low crosslinking density, thus impairing coating
+properties such as acid resistance and solvent resistance.
+Therefore, any integer outside said range is undesirable.
+In the formula (3), s represents the degree of
+polymerization, which must be in the range of 0 to 20, 
+preferably 2 to 12, on average. If s is more than 20, the
+viscosity of the powder coating composition increases when
+thermally fused, providing a coating film with inferior
+finished appearance such as low surface smoothness. Hence
+any degree of polymerization outside said range is
+undesirable.</p><p num="0039">It is preferable for each of the acid anhydride
+(a), acid anhydride (b) and dibasic acid (c) in the curing
+agent (B) of the invention to have a melting point of 60°C
+or higher, more preferably 70°C to 140°C. If the melting
+points are lower than 60°C, the powder coating composition
+will have poor blocking resistance, thus being undesirable.
+Even when the curing agent (B) is a mixture of acid
+anhydride (a) with acid anhydride (b) and/or dibasic acid
+(c), it is preferable for the mixture to have a melting
+point of 60°C or higher.</p><p num="0040">The curing agent (B) of the invention contains
+acid anhydride (a) of the formula (1) as an essential
+curing ingredient and optionally contains at least one
+species selected from the group consisting of acid
+anhydride (b) of the formula (2) and dibasic acid (c) of
+the formula (3). When the acid anhydride (a) and optional
+ingredient(s) are used together, the proportions are not
+limited specifically but can be selected from a wide range.
+It is usually preferable that acid anhydride (b) and/or 
+dibasic acid (c) be used in amount of about 0 to about
+3,000 parts by weight per 100 parts by weight of acid
+anhydride (a). The acid anhydride (b) and/or dibasic acid
+(c) may be prepared separately, or unreacted compounds or
+byproducts produced by the process of preparing the acid
+anhydride (a) may be used.</p><p num="0041">The thermosetting powder coating composition of
+the invention contains an epoxy-containing resin (A) and a
+curing agent (B) as essential components. The curing
+agent (B) contains acid anhydride (a) as an essential
+ingredient and acid anhydride (b) and/or dibasic acid (c)
+as optional ingredients.</p><p num="0042">The proportions of the epoxy-containing resin
+(A) and curing agent (B) should be selected from the range
+that the molar ratio of the total of carboxyl groups and
+acid anhydride groups in the curing agent (B) to epoxy
+groups in the epoxy-containing resin (A) will be in the
+range from 0.7:1 to 1.2:1. If the molar ratio of the
+total of carboxyl groups and acid anhydride groups in the
+curing agent (B) to epoxy groups in the resin (A) is lower
+than 0.7, coating properties such as acid resistance and
+solvent resistance will be impaired. On the other hand,
+if the molar ratio is higher than 1.2, inferior finished
+appearance such as low surface smoothness will result.
+Therefore, any molar ratio outside said range is 
+undesirable.</p><p num="0043">The thermosetting powder coating composition of
+the invention may contain additives, for example,
+antipopping agents, surface modifiers, oxidation
+inhibitors, UV absorbers, UV stabilizers, antiblocking
+agents, fluidity modifiers, antistatic agents, coloring
+pigments, metallic pigments, interference pigments,
+fillers and curing accelerators.</p><p num="0044">The method for preparing the thermosetting
+powder coating composition of the invention is not limited
+specifically and the composition can be prepared by
+conventional methods. For example, a typical method
+comprises dryblending an epoxy-containing resin (A), a
+curing agent (B) and optionally other components in a
+mixer or the like, and melting and kneading the dryblend
+with heating, followed by cooling, coarse grinding, fine
+grinding and sieving.</p><p num="0045">The thermosetting powder coating composition of
+the invention may be used as a thermosetting clear powder
+coating composition or as a thermosetting colored powder
+coating composition comprising at least one pigment
+selected from coloring pigments, metallic pigments and
+interference pigments in the clear powder coating
+composition. The thermosetting clear powder coating
+composition may contain such pigments in any amount that 
+the under coat will be seen through or substantially not
+be seen through the coating.</p><p num="0046">The thermosetting powder coating composition of
+the invention is applied to a substrate by powder coating
+and baked to form a cured coating film. It is preferable
+that the baking be performed at a temperature of about
+120°C to about 180°C for about 10 to about 50 minutes.</p><p num="0047">The substrate to be coated may be any known
+material that is powder coatable. Examples of useful
+substrates are metals, surface-treated metals, plastics,
+or coated these materials.</p><p num="0048">The powder coating may be performed by
+conventional methods, for example, preferably
+electrostatic powder coating methods or frictionally
+electrified powder coating methods. There is no
+limitation on the coating film thickness. However, it is
+preferable for the obtained film to have a coating
+thickness of about 20 to about 1,000 µm, more preferably
+about 20 to about 80 µm.</p><p num="0049">The thermosetting powder coating composition of
+the invention can be used for vehicles such as automobiles,
+electric appliances, steel furniture, office equipment and
+stationery, construction materials and the like where
+conventional powder coating compositions are used.
+Particularly, the thermosetting powder coating composition 
+of the invention is suitable for automotive exterior
+panels or interior panels where high surface smoothness of
+the coating film is required.</p><p num="0050">Described below is a method for forming a
+topcoat on the surface of vehicles or the like, using the
+thermosetting powder coating composition of the invention.</p><p num="0051">The method for forming a topcoat using the
+present invention may be a 1-coat system or a 2-coat
+system. The 1-coat system comprises applying the
+thermosetting powder coating composition of the invention
+to metallic or plastic substrates for vehicles or the like,
+or to the metallic or plastic substrates coated with a
+primer such as a cationic electrocoating composition and
+optionally coated with an intercoat. The 2-coat system
+comprises applying a colored base coating composition to
+the substrates and applying the thermosetting powder clear
+coating composition of the invention to the coated
+substrate.</p><p num="0052">The thermosetting powder coating composition of
+the present invention produces particularly remarkable
+effects, when used as a clear coating composition in the
+method for forming a topcoat according to a 2-coat 1-bake
+system, which comprises applying a thermosetting aqueous
+colored base coating composition to a substrate, applying
+a clear coating composition to the uncured surface of the 
+base coat, and curing the two coats by heating.</p><p num="0053">Examples of thermosetting aqueous colored base
+coating compositions preferably used are aqueous colored
+coating compositions, aqueous metallic coating
+compositions, aqueous interference pattern coating
+compositions, aqueous colored metallic coating
+compositions and aqueous colored interference pattern
+coating compositions.</p><p num="0054">According to the 2-coat 1-bake coating method of
+the invention, a desirable topcoat can be formed by the
+method comprising the following steps:
+<sl><li>i) applying an aqueous colored base coating composition
+having a solids content of 10 to 60 wt.% (when applied)
+to the substrate to a coating thickness of about 10 to
+about 60 µm, preferably about 10 to about 40 µm, when
+cured, by spray coating such as airless spray coating,
+air spray coating or electrostatic coating;</li><li>ii) allowing the coated substrate to stand at room
+temperature for about 1 to about 10 minutes or drying the
+coated substrate at about 50°C to about 100°C for about 1
+to about 10 minutes;</li><li>iii) applying the thermosetting powder clear coating
+composition according to the invention to the uncured
+surface of the base coat to a coating thickness of about
+20 to about 100 µm, more preferably about 20 to about 80 
+µm, when cured, by powder coating such as electrostatic
+powder coating or frictionally electrified powder coating;
+and</li><li>iv) curing the two coats (base coat and clear coat) at
+the same time by heating at about 120°C to about 180°C for
+about 10 to about 50 minutes.</li></sl></p><p num="0055">The aqueous colored base coating composition may
+be selected from the conventional aqueous colored base
+coating composition for vehicles, etc. without limitation,
+of which melamine-curing aqueous colored base coating
+compositions are particularly preferred.</p><p num="0056">Preferably, the melamine-curing aqueous colored
+base coating composition comprises (i) a hydroxyl- and
+carboxyl-containing resin and (ii) a melamine resin, as
+curable resin components.</p><p num="0057">Examples of resins preferably used as the resin
+(i) include hydroxyl- and carboxyl-containing acrylic
+resins and polyester resins.</p><p num="0058">The hydroxyl- and carboxyl-containing acrylic
+resin can be prepared by copolymerizing a hydroxyl-containing
+unsaturated monomer, a carboxyl-containing
+unsaturated monomer, and optionally one or more other
+vinyl unsaturated monomers. Examples of useful hydroxyl-containing
+unsaturated monomers are C<sub>2-20</sub> hydroxyalkyl
+esters of acrylic or methacrylic acids, such as 
+hydroxyethyl (meth)acrylate, hydroxypropyl (meth)acrylate
+and hydroxybutyl (meth)acrylate. Example of useful
+carboxyl-containing unsaturated monomers are
+monocarboxylic acids such as acrylic acid and methacrylic
+acid; dicarboxylic acids such as maleic acid, itaconic
+acid, fumaric acid and mesaconic acid; and anhydrides of
+the dicarboxylic acids or half-esterified or otherwise
+modified ones. Examples of vinyl unsaturated monomers
+optionally used are C<sub>1-22</sub> alkyl esters of acrylic or
+methacrylic acids such as methyl (meth)acrylate, ethyl
+(meth)acrylate, propyl (meth)acrylate, butyl
+(meth)acrylate and hexyl (meth)acrylate; styrene,
+acrylonitrile and the like. It is preferable for the
+acrylic resin to have a number average molecular weight of
+about 5,000 to about 100,000, particularly about 15,000 to
+about 80,000. Preferably, the acrylic resin has a
+hydroxyl value of about 20 to about 200 mg KOH/g,
+particularly 40 to 150 mg KOH/g. It is preferable for the
+acrylic resin to have an acid value of about 10 to about
+150 mg KOH/g, particularly 20 to 100 mg KOH/g.</p><p num="0059">The hydroxyl- and carboxyl-containing polyester
+resin can be produced by esterification reaction between
+polybasic acid and polyhydric alcohol. Examples of useful
+polybasic acids are phthalic acid, isophthalic acid,
+terephthalic acid, succinic acid, adipic acid, azelaic 
+acid, sebacic acid, tetrahydrophthalic acid,
+hexahydrophthalic acid, HET acid, maleic acid, fumaric
+acid, itaconic acid, trimellitic acid and anhydrides of
+these acids. Examples of useful polyhydric alcohols are
+ethylene glycol, propylene glycol, butylene glycol,
+hexanediol, diethylene glycol, dipropylene glycol,
+neopentylglycol, triethyleneglycol, glycerin,
+trimethylolethane, trimethylolpropane and pentaerythritol.
+It is preferable for the polyester resin to have a number
+average molecular weight of about 2,000 to about 100,000,
+preferably 3,000 to 80,000. Preferably, the polyester
+resin has a hydroxyl value of about 30 to 120 mg KOH/g,
+particularly 50 to 80 mg KOH/g. It is preferable for the
+polyester resin to have an acid value of about 15 to about
+100 mg KOH/g, particularly 30 to 50 mg KOH/g.</p><p num="0060">Resins preferably used as the melamine resin
+(ii), which is a curing agent, are partially or fully
+etherified methylol melamine resins prepared by the method
+described below and having 1 to 5 triazine rings in one
+molecule and having a molecular weight of about 300 to
+about 3,000, particularly 500 to 2,000. The method for
+preparing the partially or fully etherified methylol
+melamine resin comprises partially or fully methylolating
+a melamine resin and partially or fully etherifying the
+methylol groups of the melamine resin using a C<sub>1-8</sub> alcohol, 
+such as methanol, ethanol, propanol or butanol. The
+melamine resin may be hydrophobic or hydrophilic.</p><p num="0061">The aqueous colored base coating composition may
+contain, in addition to the components (i) and (ii), at
+least one pigment selected from the group consisting of
+coloring pigments, metallic pigments and interference
+pigments. The aqueous colored base coating composition
+may further contain oxazoline-containing compounds,
+extenders, organic solvents, catalysts, sedimentation
+inhibitors, UV absorbers, etc.</p><p num="0062">In the case of conventional thermosetting powder
+coating compositions, when surface smoothness of the
+coating film is improved, other coating properties such as
+weather resistance, solvent resistance and acid resistance
+are impaired. On the other hand, when these coating
+properties are improved, surface smoothness of the coating
+film is reduced. It has been difficult to achieve a
+proper balance therebetween. When the conventional
+thermosetting powder coating compositions are used as
+clear coating compositions in 2-coat 1-bake systems using
+aqueous base coating compositions, such problems develop
+to a serious level. Therefore, it has been difficult to
+form a topcoat that excels in both surface smoothness and
+the above-mentioned other coating properties.</p><p num="0063">In contrast to the conventional compositions, 
+the thermosetting powder coating composition of the
+present invention comprises, in addition to an epoxy-containing
+resin, a curing agent containing acid anhydride
+groups and carboxyl groups in specific proportions. The
+powder coating composition comprising such a specific
+curing agent is cured after being fully melted and flowed
+and therefore excels in both surface smoothness and other
+properties of the coating film, even when used as a clear
+coating composition in 2-coat 1-bake systems using aqueous
+base coating compositions, thus achieving remarkable
+effects.</p><p num="0064">The thermosetting powder coating composition of
+the present invention comprises, as a curing agent for the
+epoxy-containing resin, an acid anhydride (a) having a
+carboxyl group at one end and a specific ester group at
+the other end and containing a straight chain acid
+anhydride group in the main chain, and thereby achieves
+the following effects.
+<sl><li>(1) The acid anhydride (a) before heating has only one
+carboxyl group and therefore, the powder coating
+composition does not cure during storage, thus being free
+of the problems of decreased fluidity after storage and
+impaired surface smoothness of the coating.</li><li>(2) At an early stage in the heating process, the acid
+anhydride (a) has only one carboxyl group reactable with 
+the epoxy-containing organic resin (A) and therefore, the
+powder coating composition does not cure but fully melts
+and flows, thus providing a coating film with excellent
+surface smoothness.</li><li>(3) After the powder coating composition sufficiently
+flows and forms a coating film as described above in (2),
+the carboxyl group of acid anhydride (a) reacts with the
+epoxy-containing resin (A) and the resulting hydroxyl
+group and acid anhydride group react with each other to
+generate a carboxyl group which reacts with the epoxy-containing
+resin (A) to thereby provide a coating with
+high crosslinking density. Therefore, the powder coating
+composition provides a coating film with excellent
+finished appearance such as surface smoothness and
+excellent coating properties such as weather resistance,
+solvent resistance, acid resistance, etc.</li></sl></p><p num="0065">The present invention will be described below in
+more detail with reference to Preparation Examples,
+Examples and Comparative Examples, wherein the parts and
+percentages are all by weight unless otherwise specified.</p><heading>Preparation Example 1</heading><heading>Preparation of epoxy-containing resin (A-1) for powder
+coating composition</heading><p num="0066">60 parts of toluene was placed in a reactor
+equipped with a thermometer, a thermostat, a stirrer, a 
+condenser and a dropping device, and heated to 105°C while
+blowing nitrogen gas thereinto. A mixture of 15 parts of
+styrene, 30 parts of methyl methacrylate, 20 parts of iso-butyl
+methacrylate, 35 parts of glycidyl methacrylate and
+4 parts of azobisisobutylonitrile was added dropwise over
+a period of about 3 hours. After completion of the
+addition, the mixture was allowed to stand at 105°C for 1
+hour. Further, a mixture of 0.5 part of
+azobisisobutylonitrile and 10 parts of toluene was added
+dropwise over a period of 1 hour. After completion of the
+addition, the mixture was allowed to stand at 105°C for 1
+hour, thus completing the copolymerization reaction. The
+solvent was then removed from the reaction system under
+reduced pressure, thus giving an epoxy-containing resin
+(A-1). The resin obtained had a glass transition
+temperature of 54°C and a number average molecular weight
+of 3,500.</p><heading>Preparation Example 2</heading><heading>Preparation of epoxy-containing resin (A-2) for powder
+coating composition</heading><p num="0067">An epoxy-containing resin (A-2) was prepared in
+the same manner as in Preparation Example 1 with the
+exception of using, as monomers, 15 parts of styrene, 40
+parts of methyl methacrylate, 30 parts of iso-butyl
+methacrylate and 15 parts of glycidyl methacrylate. The 
+resin obtained had a glass transition temperature of 52°C
+and a number average molecular weight of 3,600.</p><heading>Preparation Example 3</heading><heading>Preparation of epoxy-containing resin (A-3) for powder
+coating composition</heading><p num="0068">An epoxy-containing resin (A-3) was prepared in
+the same manner as in Preparation Example 1 with the
+exception of using, as monomers, 15 parts of styrene, 5
+parts of methyl methacrylate and 80 parts of glycidyl
+methacrylate. The resin obtained had a glass transition
+temperature of 43°C and a number average molecular weight
+of 3,700.</p><heading>Preparation Example 4</heading><heading>Preparation of curing agent (B-1)</heading><p num="0069">230 parts of dodecanoic diacid and 87 parts of
+acetic anhydride were placed in a reactor equipped with a
+thermometer, a thermostat, a stirrer and a condenser, and
+heated to 170°C with stirring while distilling off acetic
+acid. After the distillation of acetic acid had ceased,
+pressure was reduced to 30 mmHg at 170°C, followed by
+cooling the reaction mixture to 100°C. 0.8 part of
+methanol was added dropwise over a period of 1 hour and an
+esterification reaction was further allowed to proceed for
+1 hour, followed by cooling the reaction mixture, thus
+giving a curing agent (B-1). </p><p num="0070">The curing agent (B-1) was a solid mixture of
+acid anhydride (a), acid anhydride (b) and dibasic acid
+(c) and had a melting point of 82°C. The mixture was
+composed of the compounds of the formulas (1), (2) and (3)
+wherein R<sub>1</sub> and R<sub>2</sub> are methyl, m, p and r are an integer of
+10, and n, q and s (polymerization degree) are 2.7 on
+average (determined by <sup>1</sup>H-NMR analysis).</p><heading>Preparation Examples 5-17</heading><heading>Preparation of curing agents (B-2) to (B-14)</heading><p num="0071">Curing agents (B-2) to (B-14) were prepared in a
+similar manner as in Preparation Example 4, using the
+starting materials shown in Table 1.</p><heading>Preparation Example 18</heading><heading>Preparation of curing agent (B-15)</heading><p num="0072">230 parts of dodecanoic diacid and 87 parts of
+acetic anhydride were placed in a reactor equipped with a
+thermometer, a thermostat, a stirrer and a condenser, and
+heated to 170°C with stirring while distilling off acetic
+acid. After the distillation of acetic acid had ceased,
+pressure was reduced to 30 mmHg at 170°C, followed by
+cooling the reaction mixture, thus giving a curing agent
+(B-15).</p><p num="0073">The curing agent (B-15) obtained was an acid
+anhydride group-containing dibasic acid (c) in the form of
+a solid and had a melting point of 87°C. The dibasic acid 
+was an acid anhydride of the formula (3) wherein r is 10,
+s (polymerization degree) is 4.1 on average (determined by
+<sup>1</sup>H-NMR analysis) and had carboxyl groups at both ends.</p><p num="0074">Table 1 shows the starting material compositions,
+melting points (°C), contents and structures of the curing
+agents (B-1) to (B-15). <img file="00350001.tif" id="img-EP-1134802-A3-00350001" he="214" wi="100" img-format="tif" img-content="tb" orientation="unknown" inline="no" /><img file="00360001.tif" id="img-EP-1134802-A3-00360001" he="189" wi="100" img-format="tif" img-content="tb" orientation="unknown" inline="no" /></p><heading>Example 1</heading><heading>Preparation of powder coating composition 1 of the present
+invention</heading><p num="0075">100 parts of an epoxy-containing resin (A-1),
+38.6 parts of an curing agent (B-1) and 0.5 part of
+benzoin (as an antipopping agent) were dry-blended at room
+temperature using a Henschel mixer. The blend of the
+components was fused and kneaded in an extruder, cooled,
+finely ground in a pin disc mill and passed through a 150-mesh
+sieve, giving a thermosetting powder coating
+composition of the invention. In the curing agent (B-1),
+the molar ratio of carboxyl groups to acid anhydride
+groups was 0.72, and the molar ratio of ester groups to
+the total of carboxyl groups and acid anhydride groups was
+0.020.</p><p num="0076">In this composition, the molar ratio of the
+total of carboxyl groups and acid anhydride groups in the
+curing agent (B-1) to epoxy groups in the epoxy-containing
+resin (A-1) was 0.9:1.</p><heading>Examples 2-8 and Comparative Examples 1-12</heading><heading>Preparation of powder coating compositions 2-8 of the
+present invention and comparative powder coating
+compositions 1-12</heading><p num="0077">Thermosetting powder coating compositions 2-8 of
+the present invention and comparative thermosetting powder 
+coating compositions 1-12 were prepared in the same manner
+as in Example 1, blending components in various
+proportions as shown in Table 2. In the compositions, the
+molar ratio of the total of carboxyl groups and acid
+anhydride groups in the curing agent (B) to epoxy groups
+in the epoxy-containing resin (A) was all 0.9:1. In Table
+2, the amounts of components are expressed in &quot;parts by
+weight&quot;. <img file="00390001.tif" id="img-EP-1134802-A3-00390001" he="247" wi="115" img-format="tif" img-content="tb" orientation="unknown" inline="no" /><img file="00400001.tif" id="img-EP-1134802-A3-00400001" he="250" wi="112" img-format="tif" img-content="tb" orientation="unknown" inline="no" /><img file="00410001.tif" id="img-EP-1134802-A3-00410001" he="215" wi="107" img-format="tif" img-content="tb" orientation="unknown" inline="no" /></p><heading>Preparation Example 19</heading><heading>Preparation of aqueous base coating composition</heading><heading>(1) Preparation of aqueous acrylic resin (C-1)</heading><p num="0078">70 parts of butyl cellosolve was placed in a
+reactor equipped with a thermometer, a thermostat, a stirrer,
+a condenser and a dropping device, and heated to 115°C while
+blowing nitrogen gas thereinto. A mixture of 30 parts of
+styrene, 15 parts of methyl methacrylate, 16.7 parts of n-butyl
+acrylate, 20 parts of 2-ethylhexyl acrylate, 12 parts of
+hydroxyethyl methacrylate, 6.3 parts of acrylic acid and 1
+part of azobisisobutylonitrile was added dropwise over a
+period of about 3 hours. After completion of the addition,
+the mixture was allowed to stand at 115°C for 1 hour. A
+mixture of 0.3 part of azobisisobutylonitrile and 10 parts of
+butyl cellosolve was further added over a period of 1 hour.
+After completion of the addition, the mixture was allowed to
+stand at 115°C for 1 hour to complete the copolymerization
+reaction, giving a carboxyl- and hydroxyl-containing acrylic
+resin solution with a solids content of 65%. The acrylic
+resin had an acid value of 50 mg KOH/g, a hydroxyl value of 50
+mg KOH/g, a number average molecular weight of 45,000. The
+carboxyl group of the acrylic resin was neutralized with an
+equivalent amount of dimethylaminoethanol and diluted with
+water, thus giving an acrylic resin (C-1) aqueous solution
+having a solids content of 55%. </p><heading>(2) Preparation of water-dispersible polyester resin (C-2)</heading><p num="0079">35.95 parts of neopentylglycol, 11.68 parts of
+trimethylolpropane, 25.34 parts of phthalic anhydride and
+31.24 parts of adipic acid were placed in a reactor equipped
+with a thermometer, a thermostat, a stirrer, a Dean-Stark
+water separator and a condenser. The mixture was heated to
+230°C over a period of 3 hours while distilling off water. A
+small amount of xylene was added and a reaction was continued
+under reflux for 5 hours while distilling off water using the
+water separator. Then 6.57 parts of trimellitic anhydride was
+added and a reaction was allowed to proceed at 180°C for 1
+hour. Butyl cellosolve was added, giving a carboxyl- and
+hydroxyl-containing polyester resin solution having a nonvolatile
+content of 70%. The resin obtained had an acid value
+of 40 mg KOH/g, a hydroxyl value of 80 mg KOH/g, a number
+average molecular weight of 6,000. The polyester resin
+solution was neutralized with an equivalent amount of
+dimethylaminoethanol, followed by addition of deionized water,
+thus giving a polyester resin (C-2) emulsion having a solids
+content of 35%.</p><heading>(3) Melamine resin (C-3)</heading><p num="0080">A butyl etherified methylol melamine resin &quot;U-Van
+28-60&quot; (product of Mitsui Chemicals, Inc., trade name) was
+used as melamine resin (C-3).</p><heading>(4) Metallic pigment</heading><p num="0081">&quot;Alpaste #7680&quot; (product of Toyo Aluminum K.K.,
+trade name) was used as a metallic pigment.</p><heading>(5) Blue organic pigment</heading><p num="0082">&quot;Heliogen Blue L6900&quot; (product of BASF, trade name,
+Cyanine Blue) was used as a blue organic pigment.</p><heading>(6) Preparation of aqueous base coating composition</heading><p num="0083">A thermosetting aqueous colored base coating
+composition was prepared by mixing and dispersing 45 parts
+(solids) of the aqueous acrylic resin (C-1), 30 parts (solids)
+of the water-dispersible polyester resin (C-2), 25 parts of
+the melamine resin (C-3), 10 parts of the metallic pigment and
+2 parts of the blue organic pigment.</p><heading>Examples 9-16 and Comparative Examples 13-24</heading><p num="0084">Coated panels I and II were prepared by a method
+for forming a topcoat according to a 2-coat 1-bake system
+using, as clear coating compositions, thermosetting powder
+coating compositions 1-8 of the present invention obtained in
+Examples 1-8 and comparative thermosetting powder coating
+compositions 1-12 obtained in Comparative Examples 1-12, as
+shown below.</p><heading>(1) Preparation of coated panel I (using a solvent-based base
+coating composition)</heading><p num="0085">A dull steel panel of 0.8 mm thickness treated by
+chemical conversion with zinc phosphate was coated with an
+epoxy-based cationic electrodepositable coating composition by 
+electrocoating to form a coat of 20 µm thickness (when baked).
+The coated panel was baked and further coated by air spray
+coating with an alkyd resin/amino resin solvent-based
+intercoating surfacer for automobiles to form a coat of 20 µm
+thickness (when cured). The coated panel was baked at 140°C
+for 20 minutes, wet sanded with #400 sandpaper and dehydrated
+for drying, giving a test substrate.</p><p num="0086">&quot;Magicron Basecoat HM-22&quot; (product of Kansai Paint
+Co., Ltd., a metallic coating composition, trade name) was
+applied to the test substrate to form a coat of about 15 µm
+thickness (when cured), and cured by baking at 140°C for 30
+minutes in a dryer. Each powder coating composition prepared
+above was applied to the base coated substrate by
+electrostatic coating to form a coat of about 70 µm thickness
+(when cured). The coat was cured by heating in a dryer at
+160°C for 30 minutes, thus forming a topcoat according to a 2-coat
+2-bake system.</p><heading>(2) Preparation of coated panel II (using an aqueous base
+coating composition)</heading><p num="0087">A dull steel panel of 0.8 mm thickness treated by
+chemical conversion with zinc phosphate was coated with an
+epoxy-based cationic electrodepositable coating composition by
+electrocoating to form a coat of 20 µm thickness (when baked).
+The coated panel was baked and further coated by air spray
+coating with an alkyd resin/amino resin solvent-based 
+intercoating surfacer for automobiles to form a coat of 25 µm
+thickness (when cured). The coated panel was baked at 140°C
+for 30 minutes, wet sanded with #400 sandpaper, dehydrated for
+drying, and degreased by wiping with petroleum benzine, giving
+a test substrate.</p><p num="0088">The thermosetting aqueous colored base coating
+composition obtained in Preparation Example 19 was adjusted to
+a viscosity of 45 seconds (Fordcup #4/20°C), and applied to
+the test substrate by air spray coating to a thickness of 15±3
+µm (when cured), followed by drying at 70°C for 10 minutes.
+Each powder coating composition prepared above was applied to
+the uncured coated surface by electrostatic coating to form a
+coat of about 70 µm thickness (when cured). The coated
+substrate was heated at 160°C for 30 minutes to cure the two
+coats (base coat and clear coat) at the same time, thus
+forming a topcoat according to a 2-coat 1-bake system.</p><p num="0089">The topcoats of the multi-layer coat thus formed
+were tested for finished appearance and coating properties.
+The finished appearance was observed by the naked eye and
+tested for centerline average surface roughness (Ra), popping,
+whiteness (IV value) and flip-flop effect. The coating
+properties were tested for acid resistance, gasoline
+resistance and xylene resistance. The test methods are shown
+below.</p><heading>Finished appearance of coat observed by the naked eye:</heading><p num="0090">The appearance of the coat was evaluated for gloss
+and surface smoothness according to the following criteria:
+<sl><li>A: Good appearance</li><li>B: Slightly poor appearance</li><li>C: Poor appearance.</li></sl></p><heading>Centerline average surface roughness Ra:</heading><p num="0091">The centerline average surface roughness Ra (µm) of
+the coat was determined using a surface roughness measuring
+device (&quot;Surfcom&quot;, trade name, product of Tokyo Seimitsu Co.,
+Ltd.). The smaller the value is, the higher the surface
+smoothness is.</p><heading>Popping:</heading><p num="0092">The surface of the coat was observed by the naked
+eye and checked for cratering due to foaming, etc. The
+degrees of cratering were evaluated according to the following
+criteria:
+<sl><li>A: No cratering; exhibiting high surface smoothness</li><li>B: Small cratering; exhibiting slightly low surface
+smoothness</li><li>C: Large and many cratering; exhibiting significantly low
+surface smoothness.</li></sl></p><heading>Whiteness (IV value) and flip-flop effect (FF value):</heading><p num="0093">The IV value and flip-flop effect (FF value) of the
+coat were determined using &quot;ALCOPELMR-100&quot; (trade name, a
+product of Fuji Kogyo Co., Ltd.). These measurements 
+demonstrate finished appearance in the following aspects. IV
+value is an index of whiteness achieved by aluminium flakes in
+the coating film. The more closely metallic flakes are
+oriented to be parallel to the coating surface, the whiter the
+flakes look, thereby achieving a higher IV value. Flip-flop
+effect (FF value) is a degree of change in brilliancy
+depending on the angle of view. The more closely metallic
+flakes are oriented to be parallel to the coating surface, the
+greater brilliancy varies even with a slight change in the
+angle of view, thereby achieving a higher FF value.</p><heading>Acid resistance:</heading><p num="0094">0.4 ml of a 40% sulfuric acid solution was applied
+dropwise to the coated panel, followed by heating on a hot
+plate at 85°C for 15 minutes. After washing the coated panel
+with water, the surface of the coated panel was observed by
+the naked eye and evaluated according to the following
+criteria:
+<sl><li>A: No change; exhibiting high resistance to acid</li><li>B: A difference in film thickness between the solution-applied
+portion and the controlled (unapplied)
+portion; exhibiting slightly poor resistance to acid</li><li>C: Blushing on the coating surface; exhibiting poor
+resistance to acid.</li></sl></p><heading>Gasoline resistance:</heading><p num="0095">The coated panel was immersed in automobile 
+gasoline (JIS K 2202) for 2 hours. The surface of the coat
+was observed by the naked eye and evaluated according to the
+following criteria;
+<sl><li>A: Free of blisters and blushing; exhibiting good
+resistance to gasoline</li><li>B: Slight blistering or blushing; exhibiting slightly
+poor resistance to gasoline</li><li>C: Marked blistering and dulling; exhibiting poor
+resistance to gasoline.</li></sl></p><heading>Xylene resistance:</heading><p num="0096">0.5 ml of xylene was dropped onto the coated panel,
+and the coated panel was left to stand at room temperature for
+30 minutes. After wiping the xylene off with a gauze, the
+surface of the coating was observed by the naked eye and
+evaluated according to the following criteria;
+<dl tsize="2" compact="compact"><dt>A:</dt><dd>No spots; exhibiting good resistance to xylene</dd><dt>B:</dt><dd>The outline of spots visually detected; exhibiting
+poor resistance to xylene</dd><dt>C:</dt><dd>Marked swelling on the spots; exhibiting extremely
+poor resistance to xylene.</dd></dl></p><p num="0097">Table 3 shows the test results. <img file="00500001.tif" id="img-EP-1134802-A3-00500001" he="230" wi="92" img-format="tif" img-content="tb" orientation="unknown" inline="no" /><img file="00510001.tif" id="img-EP-1134802-A3-00510001" he="224" wi="92" img-format="tif" img-content="tb" orientation="unknown" inline="no" /></p></description><claims lang="DE" status="new"><claim num="xx"><claim-text>Duroplastische Pulverbeschichtungs-Zusammensetzung, umfassend:
+<claim-text><claim-text>(A) ein Epoxidharz und</claim-text><claim-text>(B) ein Härtungsmittel, das als wesentlichen Inhaltsstoff ein Säureanhydrid (a)
+enthält, dargestellt durch die Formel
+HOOC-(CH2)m-[COO-CO-(CH2)m]n-COOR1
+worin R1 eine einwertige, gesättigte C1-10-Kohlenwasserstoff-Gruppe darstellt,
+m eine ganze Zahl von 6 bis 18 ist, und n durchschnittlich eine Zahl von 2 bis
+12 ist;</claim-text></claim-text>
+wobei das Molverhältnis der Carboxylgruppen zu den Säureanhydridgruppen
+im Härtungsmittel im Bereich von 0,15 : 1 bis 2,0 : 1 liegt;
+   wobei das Molverhältnis der COOR1-Gruppen im Härtungsmittel (B) zur
+Gesamtheit der Carboxylgruppen und Säureanhydridgruppen im Härtungsmittel
+(B) im Bereich von 0,01 : 1 bis 0,1 : 1 liegt, und
+wobei das Molverhältnis der Gesamtheit der Carboxylgruppen und Säureanhydridgruppen
+im Härtungsmittel (B) zu den Epoxidgruppen im epoxidhaltigen
+Harz (A) im Bereich von 0,7 : 1 bis 1,2 : 1 liegt.</claim-text></claim><claim num="xx"><claim-text>Pulverbeschichtungs-Zusammensetzung nach Anspruch 1, wobei das epoxidhaltige
+Harz (A) ein epoxidhaltiges Copolymer ist, das durch Copolymerisieren
+eines epoxidhaltigen Vinylmonomers und mindestens eines weiteren polymerisierbaren
+Vinylmonomers hergestellt wird.</claim-text></claim><claim num="xx"><claim-text>Pulverbeschichtungs-Zusammensetzung nach Anspruch 2, wobei das epoxidhaltige
+Harz (A) zu 20 bis 70 Gew.-% aus einem epoxidhaltigen Vinylmonomer
+besteht, das eine Monomerkomponente des epoxidhaltigen Copolymers darstellt.</claim-text></claim><claim num="xx"><claim-text>Pulverbeschichtungs-Zusammensetzung nach Anspruch 1, wobei das epoxidhaltige
+Harz (A) eine Glasübergangstemperatur von 40 °C bis 80 °C aufweist.</claim-text></claim><claim num="xx"><claim-text>Pulverbeschichtungs-Zusammensetzung nach Anspruch 1, wobei das epoxidhaltige
+Harz (A) ein Zahlenmittel des Molekulargewichts von 1000 bis 10 000
+aufweist.</claim-text></claim><claim num="xx"><claim-text>Pulverbeschichtungs-Zusammensetzung nach Anspruch 1, wobei das Härtungsmittel
+(B) Säureanhydrid (a) und mindestens eine Spezies enthält, die ausgewähltist
+aus der Gruppe bestehend aus Säureanhydrid (b) und zweibasiger Säure (c);
+wobei das Säureanhydrid (b) durch die Formel
+R2OOC-(CH2)p-[COO-CO-(CH2)p]q-COOR2
+dargestellt wird, worin R2 eine einwertige, gesättigte C1-10-Kohlenwasserstoff-Gruppe
+darstellt; p eine ganze Zahl von 6 bis 18 ist, und q eine durchschnittliche
+Zahl von 1 bis 20 ist; und wobei die zweibasige Säure (c) durch die Formel
+HOOC-(CH2)r-[COO-CO-(CH2)r]s-COOH
+dargestellt wird, worin r eine ganze Zahl von 6 bis 18 ist, und s eine durchschnittliche
+Zahl von 0 bis 20 ist;
+wobei das Molverhältnis der Gesamtheit der COOR1-Gruppen und COOR2-Gruppen
+im Härtungsmittel (B) zur Gesamtheit der Carboxylgruppen und Säureanhydridgruppen
+im Härtungsmittel (B) im Bereich von 0,01 : 1 bis 0,1 : 1 liegt.</claim-text></claim><claim num="xx"><claim-text>Pulverbeschichtungs-Zusammensetzung nach Anspruch 1, wobei das Säureanhydrid
+(a) im Härtungsmittel (B) einen Schmelzpunkt von 60 °C oder höher
+aufweist.</claim-text></claim><claim num="xx"><claim-text>Pulverbeschichtungs-Zusammensetzung nach Anspruch 6, wobei das Säureanhydrid
+(b) und die zweibasige Säure (c) im Härtungsmittel (B) Schmelzpunkte
+von 60 °C oder höher aufweisen.</claim-text></claim><claim num="xx"><claim-text>Pulverbeschichtungs-Zusammensetzung nach Anspruch 6, wobei die Mischung
+aus Säureanhydrid (a) mit Säureanhydrid (b) und/oder zweibasiger Säure (c) einen
+Schmelzpunkt von 60 ° oder höher aufweist.</claim-text></claim><claim num="xx"><claim-text>Verfahren zur Bildung eines Decklacks gemäß einem 2 x Beschichten/1 x Brennen-System,
+die Schritte umfassend: Auftragen einer wäßrigen, farbigen Grundbeschichtungs-Zusammensetzung
+auf ein Substrat, Auftragen einer klaren Beschichtungs-Zusammensetzung
+auf die ungehärtete Oberfläche der Grundbeschichtungs-Zusammensetzung
+und Härten der beiden Überzüge durch Erwärmen,
+wobei die klare Beschichtungs-Zusammensetzung die duroplastische
+Pulverbeschichtungs-Zusammensetzung nach Anspruch 1 ist.</claim-text></claim></claims><claims lang="EN" status="new"><claim num="xx"><claim-text>A thermosetting powder coating composition comprising:
+<claim-text><claim-text>(A) an epoxy-resin; and</claim-text><claim-text>(B) a curing agent containing, as an essential ingredient, an acid anhydride (a)
+represented by the formula
+HOOC - (CH2)m - [COO - CO - (CH2)m]n - COOR1
+wherein R1 represents a C1-10 monovalent saturated hydrocarbon group, m is an
+integer of 6 to 18, and n is a number of 2 to 12 on average;
+the molar ratio of carboxyl groups to acid anhydride groups in the curing agent
+being in the range from 0.15 : 1 to 2.0 : 1;the molar ratio of COOR1 groups in the curing agent (B) to the total of carboxyl
+groups and acid anhydride groups in the curing agent (B) being in the range from
+0.01 : 1 to 0.1 : 1; and
+the molar ratio of the total of carboxyl groups and acid anhydride groups in the
+curing agent (B) to epoxy groups in the epoxy-containing resin (A) being in the
+range from 0.7 : 1 to 1.2 : 1.</claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>The powder coating composition according to claim 1 wherein the epoxy-containing
+resin (A) is an epoxy-containing copolymer prepared by
+copolymerizing an epoxy-containing vinyl monomer and at least one other
+polymerizable vinyl monomer.</claim-text></claim><claim num="xx"><claim-text>The powder coating composition according to claim 2 wherein the epoxy-containing
+resin (A) comprises 20 to 70 % weight of an epoxy-containing vinyl
+monomer as a monomer component of the epoxy-containing copolymer.</claim-text></claim><claim num="xx"><claim-text>The powder coating composition according to claim 1 wherein the epoxy-containing
+resin (A) has a glass transition temperature of 40 °C to 80 °C.</claim-text></claim><claim num="xx"><claim-text>The powder coating composition according to claim 1 wherein the epoxy-containing
+resin (A) has a number average molecular weight of 1,000 to 10,000.</claim-text></claim><claim num="xx"><claim-text>The powder coating composition according to claim 1 wherein the curing agent
+(B) contains acid anhydride (a) and at least one species selected from the group
+consisting of acid anhydride (b) and dibasic acid (c), the acid anhydride (b) being
+represented by the formula
+R2OOC - (CH2)p - [COO - CO - (CH2)p]q - COOR2
+wherein R2 represents a C1-10 monovalent saturated hydrocarbon group; p is an
+integer of 6 to 18; and q is a number of 1 to 20 on average; and
+the dibasic acid (c) being represented by the formula
+HOOC - (CH2)r - [COO - CO - (CH2)r]s - COOH
+wherein r is an integer of 6 to 18; and s is a number of 0 to 20 on average;
+the molar ratio of the total of COOR1 groups and COOR2 groups in the curing
+agent (B) to the total of carboxyl groups and acid anhydride groups in the curing
+agent (B) being in the range from 0.01 : 1 to 0.1 : 1.</claim-text></claim><claim num="xx"><claim-text>The powder coating composition according to claim 1 wherein the acid
+anhydride (a) in the curing agent (B) has a melting point of 60 °C or higher.</claim-text></claim><claim num="xx"><claim-text>The powder coating composition according to claim 6 wherein the acid
+anhydride (b) and dibasic acid (c) in the curing agent (B) have melting points of
+60 °C or higher.</claim-text></claim><claim num="xx"><claim-text>The powder coating composition according to claim 6 wherein the mixture of
+acid anhydride (a) with acid anhydride (b) and/or dibasic acid (c) has a melting
+point of 60 °C or higher.</claim-text></claim><claim num="xx"><claim-text>A method for forming a topcoat according to a 2-coat 1-bake system comprising
+the steps of applying to a substrate a thermosetting aqueous coloured base coating
+composition, applying to the uncured surface of the base coat a clear coating
+composition, and curing the two coats by heating, wherein the clear coating
+composition is the thermosetting powder coating composition defined in claim 1.</claim-text></claim></claims><claims lang="FR" status="new"><claim num="xx"><claim-text>Composition de revêtement pulvérulente
+thermodurcissable comprenant :
+<claim-text><claim-text>(A) une résine époxy ; et</claim-text><claim-text>(B) un agent de vulcanisation contenant, comme
+ingrédient essentiel, un anhydride d'acide (a) représenté
+par la formule
+HOOC- (CH2)m- [COO-CO- (CH2)m]n-COOR1
+   dans laquelle R1 représente un groupe hydrocarbure
+monovalent saturé en C1-10, m est un entier de 6 à 18 et n
+est un nombre de 2 à 12 en moyenne ;
+   le rapport molaire des groupes carboxyle aux groupes
+anhydride d'acide dans l'agent de vulcanisation étant
+dans la gamme de 0,15/1 à 2,0/1 ;
+   le rapport molaire des groupes COOR1 dans l'agent de
+vulcanisation (B) au total des groupes carboxyle et des
+groupes anhydride d'acide dans l'agent de vulcanisation
+(B) étant dans la gamme de 0,01/1 à 0,1/1 ; et
+   le rapport molaire du total des groupes carboxyle et
+des groupes anhydride d'acide dans l'agent de
+vulcanisation (B) aux groupes époxy dans la résine
+contenant un époxy (A) étant dans la gamme de 0,7/1 à
+1,2/1.</claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>Composition de revêtement pulvérulente selon la
+revendication 1, dans laquelle la résine contenant un
+époxy (A) est un copolymère contenant un époxy préparé
+par copolymérisation d'un monomère de vinyle contenant un
+époxy et au moins un autre monomère de vinyle
+polymérisable.</claim-text></claim><claim num="xx"><claim-text>Composition de revêtement pulvérulente selon la
+revendication 2, dans laquelle la résine contenant un
+époxy (A) comporte 20 à 70 % en poids d'un monomère de
+vinyle contenant un époxy en tant que composé monomère du
+copolymère contenant un époxy.</claim-text></claim><claim num="xx"><claim-text>Composition de revêtement pulvérulente selon la
+revendication 1, dans laquelle la résine contenant un
+époxy (A) a une température de transition vitreuse de
+40° C à 80° C.</claim-text></claim><claim num="xx"><claim-text>Composition de revêtement pulvérulente selon la
+revendication 1, dans laquelle la résine contenant un
+époxy (A) a un poids moléculaire moyen en nombre de 1 000
+à 10 000.</claim-text></claim><claim num="xx"><claim-text>Composition de revêtement pulvérulente selon la
+revendication 1, dans laquelle l'agent de vulcanisation
+(B) contient un anhydride d'acide (a) et au moins une
+espèce choisie dans le groupe constitué d'anhydride
+d'acide (b) et d'acide dibasique (c) ; l'anhydride
+d'acide (b) étant représenté par la formule
+R2OOC-(CH2)p-[COO-CO(CH2)p]q-COOR2
+   dans laquelle R2 représente un groupe hydrocarbure
+monovalent saturé en C1-10 ; p est un entier de 6 à 18 ;
+et q est un nombre de 1 à 20 en moyenne ; et
+   l'acide dibasique (c) étant représenté par la
+formule
+HOOC-(CH2)r-[COO-CO-(CH2)r]s-COOH
+   dans laquelle r est un entier de 6 à 18 ; et s est
+un nombre de 0 à 20 en moyenne ;
+   le rapport molaire du total des groupes COOR1 et des
+groupes COOR2 dans l'agent de vulcanisation (B) au total
+des groupes carboxyle et des groupes anhydride d'acide
+dans l'agent de vulcanisation (B) étant dans la gamme de
+0,01/1 à 0,1/1.</claim-text></claim><claim num="xx"><claim-text>Composition de revêtement pulvérulente selon la
+revendication 1, dans laquelle l'anhydride d'acide (a)
+dans l'agent de vulcanisation (B) a un point de fusion de
+60° C ou plus.</claim-text></claim><claim num="xx"><claim-text>Composition de revêtement pulvérulente selon la
+revendication 6, dans laquelle l'anhydride d'acide (b) et
+l'acide dibasique (c) dans l'agent de vulcanisation (B)
+ont des points de fusion de 60° C ou plus.</claim-text></claim><claim num="xx"><claim-text>Composition de revêtement pulvérulente selon la
+revendication 6, dans laquelle le mélange d'anhydride
+d'acide (a) avec l'anhydride d'acide (b) et/ou l'acide
+dibasique (c) a un point de fusion de 60° C ou plus.</claim-text></claim><claim num="xx"><claim-text>Procédé de préparation d'une couche de finition
+selon un système 2 couches et 1 cuisson comprenant les
+étapes consistant à appliquer à un substrat une
+composition de revêtement de base colorée, aqueuse et
+thermodurcissable, à appliquer à la surface non
+vulcanisée de la couche de base une composition de
+revêtement transparente, et à vulcaniser les deux couches
+par chauffage, la composition de revêtement transparente
+étant la composition de revêtement pulvérulente
+thermodurcissable définie dans la revendication 1.</claim-text></claim></claims><legal-status status="new"><legal-event country="EP" code="26N" date="20040310"><legal-event-body><event-title>NO OPPOSITION FILED</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20031222</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="ET" date="20031205"><legal-event-body><event-title>FR: TRANSLATION FILED</event-title></legal-event-body></legal-event><legal-event country="EP" code="REF" date="20030424"><legal-event-body><event-title>CORRESPONDS TO:</event-title><event-attributes><event-attribute><event-attribute-label>Ref Document Number </event-attribute-label><event-attribute-value>60100123</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Country of Ref Document </event-attribute-label><event-attribute-value>DE</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Date of Ref Document </event-attribute-label><event-attribute-value>20030424</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>P</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20030319"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>DEFRGB</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REG" date="20030319"><legal-event-body><event-title>REFERENCE TO A NATIONAL CODE</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>GB</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Legal Event Code </event-attribute-label><event-attribute-value>FG4D</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AKX" date="20020605"><legal-event-body><event-title>PAYMENT OF DESIGNATION FEES</event-title><event-attributes><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>DE FR GB</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="17Q" date="20020417"><legal-event-body><event-title>FIRST EXAMINATION REPORT</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20020301</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="17P" date="20011212"><legal-event-body><event-title>REQUEST FOR EXAMINATION FILED</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20011012</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20010912"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>A1</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>A1</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>ATBECHCYDEDKESFIFRGBGRIEITLILUMCNLPTSETR</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>DEFRGB</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AX" date="20010912"><legal-event-body><event-title>EXTENSION OF THE EUROPEAN PATENT TO</event-title><event-attributes><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>AL;LT;LV;MK;RO;SI</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event></legal-status></patent-document>

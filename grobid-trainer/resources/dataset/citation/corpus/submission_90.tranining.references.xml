@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+<listBibl>
+
+		<bibl><author>A. Amo, et al.</author>, <title level="j">Nature</title>, <biblScope type="vol">457</biblScope>, <biblScope type="pp">273</biblScope> (<date>2009</date>).</bibl>
+
+		<bibl><author>T. K. Paraiso, et al.</author>, <title level="j">Nature Materials</title>. <biblScope type="vol">9</biblScope>, <biblScope type="pp">655</biblScope> (<date>2010</date>).</bibl>
+
+		<bibl><author>E. Cancellieri, et al.</author>, <title level="j">Phys. Rev. B</title> <biblScope type="vol">82</biblScope>, <biblScope type="pp">224512</biblScope> (<date>2010</date>).</bibl>
+
+		<bibl><author>E. Cancellieri, et al.</author>, <idno>arXiv:1101.1783</idno>.</bibl>
+		
+</listBibl>
+</tei>

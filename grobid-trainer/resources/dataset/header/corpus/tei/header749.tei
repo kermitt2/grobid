@@ -1,0 +1,21 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="750"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Semantic Query Optimization in Datalog Programs <lb/></titlePart>
+		</docTitle>
+		<note type="other">(Extended Abstract) <lb/></note>
+		<byline><docAuthor>Alon Y. Levy <lb/></docAuthor></byline>
+		<byline><affiliation>AT&amp;T Bell Laboratories <lb/></affiliation></byline>
+		<email>levy@research.att.com <lb/></email>
+		<byline><docAuthor>Yehoshua Sagiv <lb/></docAuthor></byline>
+		<byline><affiliation>Hebrew University, Jerusalem <lb/></affiliation></byline>
+		<email>sagiv@cs.huji.ac.il <lb/></email>
+		<div type="abstract">Abstract <lb/>Semantic query optimization refers to the process of using <lb/>integrity constraints (ic&apos;s) in order to optimize the evaluation <lb/>of queries. The process is well understood in the case <lb/>of unions of select-project-join queries (i.e., nonrecursive <lb/>datalog). For arbitrary datalog programs, however, the <lb/>issue has largely remained an unsolved problem. This <lb/>paper studies this problem and shows when semantic query <lb/>optimization can be completely done in recursive rules <lb/>provided that order constraints and negated EDB subgoals <lb/>appear only in the recursive rules, but not in the ic&apos;s. <lb/>If either order constraints or negated EDB subgoals are <lb/>introduced in ic&apos;s, then the problem of semantic query <lb/>optimization becomes undecidable. Since semantic query <lb/>optimization is closely related to the containment problem <lb/>of a datalog program in a union of conjunctive queries, our <lb/>results also imply new decidability and undecidability results <lb/>for that problem when order constraints and negated EDB <lb/>subgoals are used. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

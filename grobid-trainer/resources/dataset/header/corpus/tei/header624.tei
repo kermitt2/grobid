@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="626"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">The Development of the C Language <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Dennis M. Ritchie <lb/></docAuthor></byline>
+		<byline><affiliation>AT&amp;T Bell Laboratories <lb/></affiliation></byline>
+		<address>Murray Hill, NJ 07974 USA <lb/></address>
+		<email>dmr@research.att.com <lb/></email>
+		<div type="abstract">ABSTRACT <lb/>The C programming language was devised in the early 1970s as a system <lb/>implementation language for the nascent Unix operating system. Derived from <lb/>the typeless language BCPL, it evolved a type structure; created on a tiny <lb/>machine as a tool to improve a meager programming environment, it has become <lb/>one of the dominant languages of today. This paper studies its evolution. <lb/></div>
+		<div type="intro">Introduction <lb/></div>
+		</front>
+</text>
+</tei>

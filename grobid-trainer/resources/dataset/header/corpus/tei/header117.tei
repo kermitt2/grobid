@@ -1,0 +1,19 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="118"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<idno>TR-1923</idno>
+		<date>September 1987 <lb/></date>
+		<docTitle>
+			<titlePart type="main">Invariant Subspaces <lb/>and <lb/>Capital Punishment <lb/>(A Participatory Paper) <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>G. W. Stewart <lb/></docAuthor></byline>
+		<div type="abstract">abstract <lb/>The notion of invariant subspaces is useful in a number of theoretical and practical applications. In this paper we give an <lb/>elementary treatment of invariant subspaces that stresses their <lb/>connection with simple eigenvalues and their eigenvectors. <lb/></div>
+		<byline><affiliation>Department of Computer Science and Institute for Physical Science and Technology, <lb/>University of Maryland,</affiliation></byline>
+		<address>College Park, MD 20742. <lb/></address>
+		<pb/>
+		</front>
+</text>
+</tei>

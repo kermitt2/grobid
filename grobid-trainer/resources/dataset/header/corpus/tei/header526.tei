@@ -1,0 +1,20 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="529"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Implementing Distributed Server Groups for the <lb/>World Wide Web <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Michael Garland, Sebastian Grassia, Robert Monroe, Siddhartha Puri <lb/></docAuthor></byline>
+		<date>25 January 1995 <lb/></date>
+		<idno>CMU-CS-95-114 <lb/></idno>
+		<byline><affiliation>School of Computer Science <lb/>Carnegie Mellon University <lb/></affiliation></byline>
+		<address>Pittsburgh, Pennsylvania 15213-3890 <lb/></address>
+		<div type="abstract">Abstract <lb/>The World Wide Web (WWW) has recently become a very popular facility for the dissemination of <lb/>information. As a result of this popularity, it is experiencing rapidly increasing traffic load. Single <lb/>machine servers cannot keep pace with the ever greater load being placed upon them. To alleviate this <lb/>problem, we have implemented a distributed Web server group. The server group can effectively balance request load amongst its members (within about 10% of optimal), and client response time is no <lb/>worse than in the single server case. Client response time was not improved because the measured client traffic consumed all available network throughput. The distributed operation of the server groups is <lb/>completely transparent to standard Web clients. <lb/></div>
+		<note type="grant">This research is sponsored in part by the Wright Laboratory, Aeronautical SystemsCenter, Air Force Materiel Command, USAF, <lb/>and the Advanced Research Projects Agency (ARPA) under grant F33615-93-1-1330. The US Government is authorized to reproduce and distribute reprints for Government purposes, notwithstanding any copyright notation thereon. Support also came from the <lb/>Air Force Materiel Command under contract number F19628-93-C-0171. Views and conclusions contained in this document are <lb/>those of the authors and should not be interpreted as representing the official policies, either expressed or implied, of Wright Laboratory or the United States Government. <lb/></note>
+		<pb/>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="ZNB-1947-2b-0072"/>
+	</teiHeader>
+	<text xml:lang="de">
+		<front>
+			<lb/>
+			<docTitle>
+				<titlePart>Über die Lokalisation der embryonalen Gelenke<lb/></titlePart>
+			</docTitle>
+
+			<byline>
+				<docAuthor>Von ERICH BLECHSCHMIDT<lb/></docAuthor>
+			</byline>
+
+			<byline>
+				<affiliation>Aus dem Anatomischen Institut der Universität Göttingen<lb/></affiliation>
+			</byline>
+
+			<reference>(Z. Naturforschg. 2b, 72—73 [1947];</reference>
+
+			<note type="submission">eingegangen am 18. November 1946)<lb/></note>
+
+		</front>
+	</text>
+</tei>

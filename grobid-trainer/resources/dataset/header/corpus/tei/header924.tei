@@ -1,0 +1,20 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="unknown"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Augmenting Collective Adaptation <lb/>with Simple Process Agents <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Thomas Haynes <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Mathematical &amp; Computer Sciences <lb/></affiliation></byline>
+		<address>600 South College Ave. <lb/></address>
+		<byline><affiliation>The University of Tulsa <lb/></affiliation></byline>
+		<address>Tulsa, OK 74104-3189 <lb/></address>
+		<email>e-mail: haynes@euler.mcs.utulsa.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>We have integrated the distributed search of genetic <lb/>programming based systems with collective memory <lb/>to form a collective adaptation search method. Such a <lb/>system significantly improves search as problem complexity is increased. However, there is still considerable scope for improvement. In collective adaptation, search agents gather knowledge of their environment and deposit it in a central information repository. Process agents are then able to manipulate that <lb/>focused knowledge, exploiting the exploration of the <lb/>search agents. We examine the utility of increasing <lb/>the capabilities of the centralized process agents. <lb/></div>
+		<div type="intro">Introduction</div>
+		</front>
+</text>
+</tei>

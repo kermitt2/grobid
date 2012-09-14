@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">Department of Statistics</orgName>,
+							<orgName type="institution">University of Missouri</orgName>,
+							<address>
+								<addrLine>146 Middlebush Hall</addrLine>,
+								<settlement>Columbia</settlement>,
+								<region>MO</region>
+								<postCode>65211-6100</postCode>,
+								<country>USA</country>
+							<lb/>
+							</address>
+							<orgName type="department">Department of Statistics</orgName>,
+							<orgName type="institution">Beijing Normal University</orgName>,
+							<address>
+								<settlement>Beijing</settlement>
+								<postCode>100875</postCode>,
+								<country>People&apos;s Republic of China</country>
+							<lb/>
+							</address>
+							<orgName type="department">Department of Statistics</orgName>,
+							<orgName type="institution">University of Missouri</orgName>,
+							<address>
+								<addrLine>146 Middlebush Hall</addrLine>,
+								<settlement>Columbia</settlement>,
+								<region>MO</region>
+								<postCode>65211-6100</postCode>,
+								<country>USA</country>
+							<lb/>
+							</address>
+							<orgName type="department">Department of Statistics and Actuarial Sciences</orgName>,
+							<orgName type="institution">University of Waterloo</orgName>,
+							<address>
+								<settlement>Waterloo</settlement>,
+								<region>Ontario</region>,
+								<country>Canada</country>
+								<postCode>N2L3G1</postCode>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

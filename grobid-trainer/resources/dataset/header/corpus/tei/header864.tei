@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="unknown"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">NEURAL NETWORKS FOR CONTROL <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Eduardo D. Sontag <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Mathematics, Rutgers University <lb/></affiliation></byline>
+		<address>New Brunswick, NJ 08903, USA <lb/></address>
+		<div type="abstract">Abstract <lb/>This paper starts by placing neural net techniques in a general nonlinear <lb/>control framework. After that, several basic theoretical results on networks <lb/>are surveyed. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

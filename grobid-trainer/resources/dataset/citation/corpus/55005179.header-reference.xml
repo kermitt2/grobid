@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+<listBibl>
+
+  	<bibl><date>2010</date> <title level="j">J. Phys. B: At. Mol. Opt. Phys.</title> <biblScope type="vol">43</biblScope> <biblScope type="pp">215208</biblScope><lb/></bibl>
+
+  	<bibl><title level="j">J. Phys. B: At. Mol. Opt. Phys.</title> <biblScope type="vol">43</biblScope> (<date>2010</date>) <biblScope type="pp">215208</biblScope> (<biblScope type="pp">8pp</biblScope>)<lb/></bibl>
+
+</listBibl>
+</tei>

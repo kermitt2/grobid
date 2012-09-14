@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:mml="http://www.w3.org/1998/Math/MathML">
+   <teiHeader>
+      <fileDesc>
+         <sourceDesc>
+            <biblStruct>
+               <analytic>
+                  <author>
+                     
+                     <affiliation>
+                        <orgName type="institution">Aristotle University of Thessaloniki</orgName>, 
+                        <orgName type="department">Physics Department</orgName> 
+                        <orgName type="laboratory">Lab for Thin
+                           Films-Nanosystems and Nanometrology</orgName>,
+						<lb/>
+                        <address>
+                           <postCode>54124</postCode> 
+                           <settlement>Thessaloniki</settlement>, 
+                           <country>Greece</country>
+						   <lb/>
+                        </address>
+                     </affiliation>
+                     
+                  </author>
+               </analytic>
+            </biblStruct>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+</TEI>

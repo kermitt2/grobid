@@ -1,0 +1,16 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="574"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">On-Line Search in a Simple Polygon <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Jon M. Kleinberg <lb/></docAuthor></byline>
+		<div type="abstract">Abstract <lb/>We consider a number of search and exploration problems, from the perspective of <lb/>robot navigation in a simple polygon. These problems are &quot;on-line&quot; in the sense that <lb/>the robot does not have access to the map of the polygon; it must make decisions as it <lb/>proceeds, based only on what it has seen so far. For the problem of exploring a simple <lb/>rectilinear polygon (under the L 1 norm), Deng, Kameda, and Papadimitriou give a <lb/>2-competitive deterministic algorithm; we present a randomized exploration algorithm <lb/>which is 5=4-competitive. Using similar techniques, we are able to give an algorithm <lb/>for searching an arbitrary, unknown rectilinear polygon. No constant competitive ratio <lb/>is attainable in this case, but our algorithm is within a constant factor of optimal in <lb/>the worst case; in a sense, it is a generalization of some of the strategies of Baeza-Yates, Culberson, and Rawlins to a much more general class of search spaces. Finally, <lb/>we examine a type of polygon for which competitive search is possible | the class of <lb/>&quot;streets&quot; considered by Klein, who gave a 1 + 3 <lb/>2 -competitive algorithm for the search <lb/>problem in this case. We present a simple algorithm with a competitive ratio of at <lb/>most <lb/>q <lb/>p <lb/>8 (~ 2:61); in rectilinear streets it achieves the optimal competitive ratio <lb/>of <lb/>2. <lb/></div>
+		<note type="grant">This work was supported in part by the Sloan Fellowship and NSF PYI award of Eva Tardos. Author <lb/>is supported by an ONR Graduate Fellowship <lb/>Laboratory for Computer Science, MIT, Cambridge MA 02139 USA. <lb/></note>
+		<pb/>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,22 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="737"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Anatomy of a Parallel Out-of-Core Dense Linear Solver <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Kenneth Klimkowski <lb/></docAuthor></byline>
+		<byline><affiliation>Texas Institute for Computational <lb/>and Applied Mathematics <lb/>The University of Texas at Austin <lb/></affiliation></byline>
+		<address>Austin, Texas 78712 <lb/></address>
+		<email>ken@ticam.utexas.edu <lb/></email>
+		<byline><docAuthor>Robert A. van de Geijn <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Sciences <lb/>The University of Texas at Austin <lb/></affiliation></byline>
+		<address>Austin, Texas 78712 <lb/></address>
+		<email>rvdg@cs.utexas.edu <lb/></email>
+		<div type="abstract">Abstract In this paper, we describe the design <lb/>and implementation of the Platform Independent <lb/>Parallel Solver (PIPSolver) package for the out-of-core (OOC) solution of complex dense linear systems. Our approach is unique in that it allows essentially all of RAM to be filled with the current <lb/>portion of the matrix (slab) to be updated and factored, thereby greatly improving the computation to <lb/>I/O ratio over previous approaches. Experiences <lb/>and performance are reported for the Cray T3D <lb/>system. <lb/></div>
+		<div type="intro">INTRODUCTION</div>
+		</front>
+</text>
+</tei>

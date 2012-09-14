@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>STEFFEN</forename>
+								<surname>FIEUWS</surname>
+								<marker>*</marker>,
+							</persName>
+							<persName>
+								<forename>GEERT</forename> 
+								<surname>VERBEKE</surname>
+							</persName>
+							<persName>
+								<forename>BART</forename> 
+								<surname>MAES</surname>
+							</persName>
+							<persName>
+								<forename>YVES</forename> 
+								<surname>VANRENTERGHEM</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

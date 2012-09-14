@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="ZFN-A-007-06-0390"/>
+	</teiHeader>
+	<text xml:lang="de">
+		<front>
+			<titlePage>
+				<docTitle>
+					<titlePart type="main">Die Einzelstreuung von Elektronen an Atomkernen<lb/></titlePart>
+				</docTitle>
+				<byline><docAuthor>Von E. KINZIISTGER* und W. BOTHE</docAuthor><lb/></byline>
+				<byline>Au8 dem <affiliation>Institut für Pliysik im Max-Planck-Institut für medizinische Forschung und <lb/> dem I . Physikalischen Institut der Universität Heidelberg</affiliation><lb/></byline>
+				<reference>(Z. Naturforschg. 7 tt, 390-401 [11952]; </reference> 
+				<note type="submission">eingegangen am 19. l'ebruar 1952)<lb/></note>
+			</titlePage>
+			<div type="abstract">Es werden Messungen der Einzelstreuung von 245-keV-Elektronen in Metallfolien <lb/>beschrieben. Die Elektronenstrahlen wurden mit einem Bandgenerator erzeugt. Der <lb/>Einfluß der Vielfachstreuung wurde experimentell und theoretisch diskutiert. Die Einzel- <lb/>streumessungen wurden durchgeführt als Belativmessungen von Ni, Ag und Au zu AI, als <lb/>Messung der Winkelverteilung für AI und als Absolutmessung des Streuquerschnittes von <lb/>AI für den Streuwinkel 50^. Ergebnisse : Fiir AI werden die Mottschen Absolutwerte des <lb/>* Streuquerschnittes über den Winkelbereich <lb/>= 30^— 150*^ bestätigt, für die höheren <lb/>Elemente ebenso für i^  70*. Für die höheren Elemente und für #  70^ sind die gemes- <lb/>senen Streuquerschnitte kleiner als die theoretischen. Die Abweichungen nehmen mit <lb/># und Z zu und erreichen 37% für Au bei 150°. Die möglichen Ursachen für diese Ab- <lb/>weichungen werden diskutiert.<lb/></div>
+			<div type="intro">I. Ziel der Untersuchung <lb/></div>
+		</front>
+	</text>
+</tei>

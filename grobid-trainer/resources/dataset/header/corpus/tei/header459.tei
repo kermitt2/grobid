@@ -1,0 +1,26 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="462"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">A Volumetric Approach to Virtual Simulation <lb/>of Functional Endoscopic Sinus Surgery <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Gregory J. Wiet 1,2 , Roni Yagel 3 , Don Stredney 2 , Petra Schmalbrock 4 , <lb/></docAuthor></byline>
+		<byline><docAuthor>Dennis J. Sessanna 2 , Yair Kurzion 3 , Louis Rosenberg 5 , Michael Levin 5 , Kenneth Martin 5 <lb/></docAuthor></byline>
+		<byline><affiliation>1 Department of Otolaryngology, The Ohio State University Hospitals,</affiliation></byline>
+		<address>Columbus, OH <lb/></address>
+		<byline><affiliation>2 The Ohio Supercomputer Center,</affiliation></byline>
+		<address>Columbus, OH <lb/></address>
+		<byline><affiliation>3 Department of Computer and Information Science, The Ohio State University,</affiliation></byline>
+		<address>Columbus, OH <lb/></address>
+		<byline><affiliation>4 Department of Radiology, The Ohio State University Hospitals,</affiliation></byline>
+		<address>Columbus, OH <lb/></address>
+		<byline><affiliation>5 Immersion Corporation,</affiliation></byline>
+		<address>San Jose, CA <lb/></address>
+		<div type="abstract">Abstract <lb/>Advanced display technologies have made the virtual exploration of relatively complex models feasible <lb/>in many applications. Unfortunately, only a few human interfaces allow natural interaction with the <lb/>environment. Moreover, in surgical applications, such realistic interaction requires real-time rendering <lb/>of volumetric data - placing an overwhelming performance burden on the system. We report on a <lb/>collaboration of an interdisciplinary group developing a virtual reality system that provides intuitive <lb/>interaction with volume data by employing real-time volume rendering and force feedback (haptic) <lb/>sensations. We describe our rendering methods and the haptic devices and explain its utility of this <lb/>system in the real-world application of Endoscopic Sinus Surgery (ESS) simulation. <lb/></div>
+		<div type="intro">1. Introduction</div>
+		</front>
+</text>
+</tei>

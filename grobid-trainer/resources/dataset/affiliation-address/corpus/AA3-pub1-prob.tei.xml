@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../jsp/xmlverbatimwrapper.xsl"?> 
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<!-- Technische Hochschule Darmstadt, West Germany Dominique Borrione, Universite de Provence; -->
+    <teiHeader xml:lang="en">
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<affiliation>
+								<orgName type="institution" key="instit1">Technische Hochschule Darmstadt</orgName>,
+								<address>
+									<region>West Germany</region>
+								</address>																
+							</affiliation>
+							Dominique Borrione,
+							<affiliation>
+								<orgName type="institution" key="instit2">Universite de Provence</orgName>;
+							</affiliation>
+						</author>			
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</TEI>

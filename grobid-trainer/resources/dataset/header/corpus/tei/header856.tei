@@ -1,0 +1,19 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="unknown"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Adaptive Agent Tracking in Real-world <lb/>Multi-Agent Domains: A Preliminary Report <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Milind Tambe, Lewis Johnson and Wei-Min Shen <lb/></docAuthor></byline>
+		<byline><affiliation>Information Sciences Institute and Computer Science Department <lb/>University of Southern California <lb/></affiliation></byline>
+		<address>4676 Admiralty Way, Marina del Rey, CA 90292 <lb/></address>
+		<email>ftambe,johnson,sheng@isi.edu <lb/></email>
+		<date>October 30, 1996 <lb/></date>
+		<div type="abstract">Abstract <lb/>Intelligent interaction in multi-agent domains frequently requires an agent to track other <lb/>agents&apos; mental states: their current goals, beliefs, and intentions. Accuracy in this agent <lb/>tracking task is critically dependent on the accuracy of the tracker&apos;s (tracking agent&apos;s) model <lb/>of the trackee (tracked agent). Unfortunately, in real-world situations, model imperfections <lb/>arise due to the tracker&apos;s resource and information constraints, as well as due to trackees&apos; <lb/>dynamic behavior modification. While such model imperfections are unavoidable, a tracker <lb/>must nonetheless attempt to be adaptive in its agent tracking. This article identifies key issues <lb/>in adaptive agent tracking and presents an approach called DEFT. At its core, DEFT is based <lb/>on discrimination-based learning. The main idea is to identify the deficiency of a model based <lb/>on tracking failures, and revise the model by using features that are critical in discriminating <lb/>successful and failed tracking episodes. Because in real-world situations the set of candidate <lb/>discriminating features is very large, DEFT relies on knowledge-based focusing to limit the <lb/>discrimination to those features that it determines were relevant in successful tracking episodes <lb/>with an autonomous explanation capability as a major source of this knowledge. This article <lb/>reports on experiments with an implementation of key aspects of DEFT in a complex synthetic <lb/>air-to-air combat domain. <lb/></div>
+		<pb/>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,20 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="649"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Carlsberg: A Distributed Execution Environment <lb/>Providing Coherent Shared Memory and <lb/>Integrated Message Passing <lb/></titlePart>
+		</docTitle>
+		<note type="reference">A Position/Work-in-Progress Paper presented at <lb/>Nordic Workshop on Programming Environment Research, NWPER&apos;94, <lb/>Lund, Sweden, June, 1994 <lb/></note>
+		<byline><docAuthor>Povl T. Koch Robert J. Fowler <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science, University of Copenhagen (DIKU) <lb/></affiliation></byline>
+		<address>Universitetsparken 1, 2100 Copenhagen, Denmark <lb/></address>
+		<note type="phone">Tel: +45 35 32 14 18 Fax: +45 35 32 14 01</note>
+		<email>E-mail: koch,fowler@diku.dk <lb/></email>
+		<div type="abstract">Abstract <lb/>The Carlsberg prototype is a distributed operating system designed to provide efficient support for distributed-parallel applications on a cluster of high-performance workstations. A unique feature of Carlsberg is the integration of <lb/>coherent shared memory, multithreading, and message passing in one system. <lb/>In this paper we discuss the motivation for the Carlsberg system and we present <lb/>aspects of its design. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

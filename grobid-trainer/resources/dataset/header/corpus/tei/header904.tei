@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="unknown"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Geometric Sensing of Known Planar Shapes <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Yan-Bin Jia Michael Erdmann <lb/></docAuthor></byline>
+		<byline><affiliation>The Robotics Institute and School of Computer Science <lb/>Carnegie Mellon University <lb/></affiliation></byline>
+		<address>Pittsburgh, Pennsylvania 15213-3891 <lb/></address>
+		<date>March 12, 1995 <lb/></date>
+		<note type="reference">International Journal of Robotics Research, 15(4):365-392, 1996. <lb/></note>
+		<pb/>
+		</front>
+</text>
+</tei>

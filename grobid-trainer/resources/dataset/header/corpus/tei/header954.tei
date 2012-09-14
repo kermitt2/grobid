@@ -1,0 +1,27 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="1023"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<date>April 24, 2008</date>
+		<note type="other">16:2 WSPC/142-IJMPD <lb/> 01219 <lb/>  </note>
+		<note type="reference">International Journal of Modern Physics D <lb/>   Vol. 17, Nos. 3 &amp; 4 (2008) 519?523 <lb/> </note>
+		<note type="copyright">c World Scientific Publishing Company <lb/></note>
+		<docTitle>
+			<titlePart type="main">THE INEQUALITY BETWEEN MASS AND <lb/>  ANGULAR MOMENTUM FOR AXIALLY <lb/> SYMMETRIC BLACK HOLES  * <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>SERGIO DAIN <lb/></docAuthor></byline>
+		<byline><affiliation>Facultad de Matemática, Astronoma y Fsica, <lb/></affiliation></byline>
+		<address>Universidad Nacional de Córdoba, <lb/> Ciudad Universitaria, <lb/> (5000) Córdoba, Argentina <lb/></address>
+		<byline><affiliation>Max Planck Institute for Gravitational Physics, <lb/> (Albert Einstein Institute),</affiliation></byline>
+		<address>Am Mühlenberg 1, <lb/> D-14476 Potsdam, Germany <lb/></address>
+		<email>dain@famaf.unc.edu.ar <lb/></email>
+		<date>Received 01 December 2007 <lb/></date>
+		<note type="other">Communicated by D. V. Ahluwalia-Khalilova <lb/></note>
+		<div type="abstract">In this essay I first discuss the physical relevance of the inequality m ? <lb/>  p <lb/>  |J| for axially <lb/> symmetric (nonstationary) black holes, where m is the mass and J the angular momentum <lb/> of the space?time. Then, I present a proof of this inequality for the case of one <lb/> spinning black hole. The proof involves a remarkable characterization of the extreme <lb/> Kerr black hole as an absolute minimum of the total mass. Finally, I conjecture about <lb/> the physical implications of this characterization for the nonlinear stability problem for <lb/> black holes. <lb/></div>
+		<keywords>Keywords: Black holes; axial symmetry; angular momentum; mass; extreme Kerr. <lb/></keywords>
+		<div type="intro">1. Introduction <lb/></div>
+		</front>
+</text>
+</tei>

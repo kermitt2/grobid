@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="449"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Parametric Models are Versatile: <lb/>The Case of Model Based Optimization <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>P. Fua <lb/></docAuthor></byline>
+		<byline><affiliation>Artificial Intelligence Center <lb/>SRI International <lb/></affiliation></byline>
+		<address>333 Ravenswood Avenue <lb/>Menlo Park, California 94025 <lb/></address>
+		<div type="abstract">Abstract <lb/>Model-Based Optimization (MBO) is a paradigm in which an objective function is used to express <lb/>both geometric and photometric constraints on features of interest. A parametric model of a feature <lb/>(such as a road, a building, or coastline) is extracted from one or more images by adjusting the model&apos;s <lb/>state variables until a minimum value of the objective function is obtained. The optimization procedure <lb/>yields a description that simultaneously satisfies (or nearly satisfies) all constraints, and, as a result, is <lb/>likely to be a good model of the feature. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

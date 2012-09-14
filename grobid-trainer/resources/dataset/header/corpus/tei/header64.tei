@@ -1,0 +1,19 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="65"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">A General Approach to <lb/>Performance Analysis and Optimization <lb/>of Asynchronous Circuits <lb/></titlePart>
+		</docTitle>
+		<note type="degree">Thesis by <lb/></note>
+		<byline><docAuthor>Tak Kwan Lee <lb/></docAuthor></byline>
+		<note type="degree">In Partial Fulfillment of the Requirements <lb/>for the Degree of <lb/>Doctor of Philosophy <lb/></note>
+		<byline><affiliation>California Institute of Technology <lb/></affiliation></byline>
+		<address>Pasadena, California <lb/></address>
+		<date>1995 <lb/>(Submitted May 18, 1995) <lb/></date>
+		<pb/>
+		</front>
+</text>
+</tei>

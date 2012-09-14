@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="unknown"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">A Whole Sentence <lb/>Maximum Entropy Language Model <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>R. Rosenfeld <lb/></docAuthor></byline>
+		<byline><affiliation>School of Computer Science <lb/>Carnegie Mellon University <lb/></affiliation></byline>
+		<address>Pittsburgh, PA 15213 <lb/></address>
+		<div type="abstract">Abstract We introduce a new kind of language model, which models whole sentences or utterances directly using the Maximum Entropy <lb/>paradigm. The new model is conceptually simpler, and more naturally <lb/>suited to modeling whole-sentence phenomena, than the conditional ME <lb/>models proposed to date. By avoiding the chain rule, the model treats <lb/>each sentence or utterance as a &quot;bag of features&quot;, where features are <lb/>arbitrary computable properties of the sentence. The model is unnor-malizable, but this does not interfere with training (done via sampling) <lb/>or with use. Using the model is computationally straightforward. The <lb/>main computational cost of training the model is in generating sample <lb/>sentences from a Gibbs distribution. Interestingly, this cost has different dependencies, and is potentially lower, than in the comparable <lb/>conditional ME model. <lb/></div>
+		<div type="intro">1 Motivation</div>
+		</front>
+</text>
+</tei>

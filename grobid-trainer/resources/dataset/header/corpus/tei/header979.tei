@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="1048"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Exploiting Cooccurrence on Corpus and <lb/> Document Level for Fair Crosslanguage Retrieval <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Andreas Juffinger, Roman Kern and Michael Granitzer <lb/></docAuthor></byline>
+		<byline><affiliation>Know-Center, Graz <lb/></affiliation></byline>
+		<email>ajuffinger,rkern,mgranitzer@know-center.at <lb/></email>
+		<div type="abstract">Abstract <lb/>  In this paper we describe the methodology, architecture and implementation of the <lb/> information retrieval system we have developed for the Robust WSD Task at CLEF <lb/> 2008. Our system is based on an extensive query preprocessing step for homogeni- <lb/> sation of the corpus queries. The preprocessing of queries includes: firstly, an query <lb/> expansion step based on Wordnet Synonsyms or an Associative Index, secondly a query <lb/> translation step based on corpus article cooccurrence in Wikipedia, and thirdly a stan- <lb/> dard disjunct index search in the CLEF corpus. The crosslanguage enabled system <lb/> behaves thereby as much as possible fair over different languages. We apply the same <lb/> preprocessing steps, independent of the query and corpus language, to all queries. <lb/></div>
+		<keywords>Categories and Subject Descriptors <lb/>  H.3 [Information Storage and Retrieval]: H.3.1 Content Analysis and Indexing; H.3.3 Infor- <lb/> mation Search and Retrieval; H.3.4 Systems and Software; H.3.7 Digital Libraries; H.2.3 [Database <lb/>  Managment]: Languages <lb/>  General Terms <lb/>  Measurement, Performance, Experimentation <lb/>  Keywords <lb/>    Information Retrieval, Associative Thesaurus, Word Sense Disambiguation, Crosslanguage Re- <lb/> trieval <lb/></keywords>
+		<div type="intro">1 Introduction <lb/></div>
+		</front>
+</text>
+</tei>

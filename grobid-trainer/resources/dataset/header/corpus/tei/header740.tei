@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="741"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">An Ordering on Subgoals for Planning <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Fangzhen Lin <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science <lb/>The Hong Kong University of Science and Technology <lb/></affiliation></byline>
+		<address>Clear Water Bay, Kowloon, Hong Kong <lb/></address>
+		<email>fl@cs.ust.hk <lb/></email>
+		<div type="abstract">Abstract <lb/>Subgoal ordering is a type of control information that has received much attention <lb/>in AI planning community. In this paper we formulate precisely a subgoal ordering <lb/>in the situation calculus. We show how information about this subgoal ordering can <lb/>be deduced from the background action theory. We also show for both linear and <lb/>nonlinear planners how knowledge about this ordering can be used in a provably <lb/>correct way to avoid unnecessary backtracking. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

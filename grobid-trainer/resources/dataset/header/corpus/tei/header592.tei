@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="594"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<byline><affiliation>Department of Computer Science <lb/></affiliation></byline>
+		<note type="other">Series of Publications C <lb/></note>
+		<idno>Report C-1997-15 <lb/></idno>
+		<docTitle>
+			<titlePart type="main">Discovery of frequent episodes in event sequences <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Heikki Mannila, Hannu Toivonen, and A. Inkeri Verkamo <lb/></docAuthor></byline>
+		<byline><affiliation>University of Helsinki <lb/>Finland <lb/></affiliation></byline>
+		<pb/>
+		</front>
+</text>
+</tei>

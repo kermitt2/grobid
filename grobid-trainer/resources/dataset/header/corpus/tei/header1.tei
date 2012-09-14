@@ -1,0 +1,20 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="2"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<idno>GIT-CC-92/60 <lb/></idno>
+		<docTitle>
+			<titlePart type="main">A Model-Based Approach to <lb/>Analogical Reasoning and Learning in Design <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Sambasiva R. Bhatta <lb/></docAuthor></byline>
+		<email>bhatta@cc.gatech.edu <lb/></email>
+		<note type="degree">A THESIS PROPOSAL <lb/>Presented to <lb/>The Academic Faculty <lb/>In Partial Fulfillment <lb/>of the Requirements for the Degree <lb/>Doctor of Philosophy <lb/>in Information and Computer Science <lb/>The Committee: <lb/>Dr. Ashok Goel (Advisor) <lb/>Dr. Richard Catrambone (Psy) <lb/>Dr. T. Govindaraj (ISyE) <lb/>Dr. Janet Kolodner <lb/>Dr. Ashwin Ram <lb/></note>
+		<byline><affiliation>Georgia Institute of Technology <lb/></affiliation></byline>
+		<date>November 1992 <lb/></date>
+		<note type="grant">This work has been supported by research grants from the Office of Naval Research (contract <lb/>N00014-92-J-1234) and NSF, a CER grant from NSF (grant CCR-86-19886), and equipment <lb/>donated by IBM, NCR, and Symbolics. <lb/></note>
+		<pb/>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,66 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005036"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<lb/>
+			<note type="other">YEXCR-08688; No. of pages: 8; 4C: 2, 3<lb/></note>
+			<note type="other">E XP E RI ME N T AL C E L L R E S EA RC H XX (2 0 11 ) XX X–
+				XXX<lb/></note>
+			<ptr type="web">available at www.sciencedirect.com<lb/></ptr>
+			<ptr type="web">www.elsevier.com/locate/yexcr<lb/></ptr>
+			<note type="articleType">Review Article<lb/></note>
+			<docTitle><titlePart>BAFF inhibition: A new class of drugs for the treatment<lb/>of
+					autoimmunity</titlePart></docTitle>
+			<byline>
+				<docAuthor>Zheng Liu, Anne Davidson⁎</docAuthor>
+			</byline>
+			<byline>
+				<affiliation>Center for Autoimmune and Musculoskeletal Diseases, Feinstein
+					Institute for Medical Research,</affiliation>
+			</byline>
+			<address>350 Community Drive,<lb/>Manhasset, NY 11030, USA</address>
+			<note type="other">A R T I C L E I N F O R M A T I O N <lb/></note>
+			<note type="submission"> Article Chronology:<lb/> Received 5 January 2011<lb/> Revised
+				version received<lb/> 7 February 2011<lb/> Accepted 9 February 2011<lb/>
+			</note>
+			<keywords> Keywords:<lb/> Autoimmunity<lb/> Systemic lupus erythematosus<lb/> B
+				cells<lb/> BAFF<lb/>
+			</keywords>
+			<space dim="horizontal"/>
+			<div type="abstract"> A B S T R A C T<lb/> BAFF (BLyS) and APRIL are TNF-like cytokines
+				that support survival and differentiation of B cells.<lb/> Recent studies have
+				discovered a role for BAFF in augmenting both innate and adaptive immune<lb/>
+				responses as well as in collaborating with other inflammatory cytokines to promote
+				the activation<lb/> and differentiation of effector immune cells. BAFF is an
+				important pathogenic factor in lupus<lb/> mouse models and BAFF inhibition
+				successfully delays disease onset in these mice, although the<lb/> responsiveness to
+				BAFF inhibition varies among different strains. These results have led to the<lb/>
+				development of inhibitors targeting BAFF and APRIL in humans. An anti-BAFF antibody
+				has shown<lb/> significant but modest efficacy in two Phase III clinical trials for
+				moderately active SLE and other<lb/> inhibitors are being developed or at early
+				stages of clinical testing.<lb/>
+			</div>
+			<note type="copyright">© 2011 Elsevier Inc. All rights reserved.<lb/></note>
+			<note type="other">⁎ Corresponding author. Fax: + 1 516 562 2953.<lb/></note>
+			<email>E-mail address: adavidson1@nshs.edu (A. Davidson)<lb/></email>. <note
+				type="other"> Abbreviations: SLE, systemic lupus erythematosus; APRIL, a
+				proliferation inducing ligand; BAFF, B cell activating factor belonging to the
+				TNF<lb/> family (also known as BLyS B lymphocyte stimulator); TACI, transmembrane
+				activator and calcium modulator ligand interactor; BCMA, B cell<lb/> maturation
+				antigen; BAFF-R, BAFF receptor; HSPG, heparan sulfate proteoglycan; TLR, toll like
+				receptor; IFN, interferon; BCR, B-cell receptor; RA,<lb/> rheumatoid arthritis; MS,
+				multiple sclerosis<lb/>
+			</note>
+			<note type="other">0014-4827/$– see front matter</note>
+			<note type="copyright">© 2011 Elsevier Inc. All rights reserved.<lb/></note>
+			<idno>doi:10.1016/j.yexcr.2011.02.005<lb/></idno>
+			<note type="other">Please cite this article as:</note>
+			<reference>Z. Liu, A. Davidson, BAFF inhibition: A new class of drugs for the treatment
+				of autoimmunity, Exp. Cell. Res.<lb/> (2011),</reference> 
+			<idno>doi:10.1016/j.yexcr.2011.02.005</idno>
+		</front>
+	</text>
+</tei>

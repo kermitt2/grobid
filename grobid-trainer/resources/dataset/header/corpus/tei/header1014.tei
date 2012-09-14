@@ -1,0 +1,31 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="1083"/> 
+	</teiHeader>
+<text xml:lang="en">
+	<front> 
+		<docTitle>
+			<titlePart type="main">Open  problems in theory of nuclear open quantum<lb/> systems<lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>N. Michel   1   , W. Nazarewicz   2−4   , J. Oko lowicz   5   and M.<lb/> P loszajczak   6<lb/></docAuthor></byline>
+		<byline><affiliation>1   Department  of Physics,  </affiliation></byline>
+		<address>Post Office Box 35 (YFL), FI-40014 </address>
+		<byline><affiliation>University of<lb/> Jyväskylä, </affiliation></byline>
+		<address>Finland<lb/></address>        
+		<byline><affiliation>2   Department of Physics and Astronomy, University of Tennessee, </affiliation></byline>
+		<address>Knoxville,<lb/>Tennessee 37996, USA <lb/></address>
+		<byline><affiliation>3   Physics Division, Oak Ridge National Laboratory, </affiliation></byline>
+		<address>Oak Ridge, Tennessee 37831,<lb/> USA <lb/></address>
+		<byline><affiliation> 4   Institute of Theoretical Physics, University of Warsaw, </affiliation></byline>
+		<address>ul. Ho˙ za 69, PL-00-681<lb/> Warsaw, Poland<lb/></address>
+		<byline><affiliation> 5   Institute of Nuclear Physics, Polish Academy of Sciences, </affiliation></byline>
+		<address>Radzikowskiego 152,<lb/> PL-31342 Kraków, Poland<lb/></address>
+		<byline><affiliation> 6   Grand Accélérateur National d'Ions Lourds (GANIL), CEA/DSM - CNRS/IN2P3, <lb/></affiliation></byline>
+		<address>BP 55027, F-14076 Caen Cedex, France<lb/></address>
+	    <email>E-mail:  witek@utk.edu, </email> <email>ploszajczak@ganil.fr<lb/></email>
+		<div type="abstract">Abstract.  Is there a connection between the branch point singularity at the particle<lb/> emission threshold and the appearance of cluster states which reveal the structure of<lb/> a corresponding reaction channel? Which nuclear states are most impacted by the<lb/> coupling to the scattering continuum? What should be the most important steps in<lb/> developing the theory that will truly unify nuclear structure and nuclear reactions?<lb/> The common denominator of these questions is the continuum shell-model approach<lb/> to bound and unbound nuclear states, nuclear decays, and reactions.<lb/></div>
+		<note type="title">Open  problems in theory of nuclear open quantum systems<lb/>2<lb/></note>
+		<introduction>1. Introduction<lb/></introduction>
+    </front>
+</text>
+</tei>

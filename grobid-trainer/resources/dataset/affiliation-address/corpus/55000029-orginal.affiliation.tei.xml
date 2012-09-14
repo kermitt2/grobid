@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+,
+						<affiliation>
+							<marker>†</marker>
+							<orgName type="laboratory">Grupo de Polıeros USB</orgName>,
+							<orgName type="department">Departamento de Ciencia de los Materiales</orgName>,
+							<orgName type="institution">Universidad Sim on Bolıar</orgName>,
+							<lb/>
+							<address>
+								<settlement>Apartado</settlement>
+								<postCode>89000</postCode>,
+								<settlement>Caracas</settlement>
+								<postCode>1080-A</postCode>,
+								<country>Venezuela</country>,
+							</address>
+						</affiliation>
+						<affiliation>
+							<orgName type="department">Department of Chemistry</orgName>,
+							<orgName type="institution">University of Reading</orgName>,
+							<lb/>
+							<address>
+								<settlement>Reading</settlement>
+								<postCode>RG6 6AD</postCode>,
+								<country>United Kingdom</country>,
+							</address>
+						</affiliation>
+						<affiliation>
+							<orgName type="laboratory">Laboratory of Polymeric and Composite Materials</orgName>,
+							<orgName type="department">Center of Innovation and Research in Materials &amp; Polymers (CIRMAP)</orgName>,
+							<orgName type="institution">University of Mons-Hainaut</orgName>,
+							<lb/>
+							<address>
+								<addrLine>Place duParc20</addrLine>,
+								<settlement>Mons</settlement>
+								<postCode>B-7000</postCode>,
+								<country>Belgium</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

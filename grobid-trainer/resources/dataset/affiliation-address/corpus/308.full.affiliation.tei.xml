@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="department">Medizinische Klinik und Poliklinik I</orgName>,
+							<orgName type="institution">Universitätsklinikum Carl Gustav Carus der TU-Dresden</orgName>,
+							<address>
+								<settlement>Dresden</settlement>,
+								<country>Germany</country>;
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="department">The Cancer Research Company Section of Medicine and the GI Unit</orgName>,
+							<orgName type="institution">The Royal Marsden Hospital</orgName>,
+							<address>
+								<settlement>Sutton</settlement>,
+								<country>UK</country>;
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>3</marker>
+							<orgName type="department">Department of Internal Medicine and Oncology</orgName>,
+							<orgName type="institution">Azienda Ospedaliera S. Maria</orgName>,
+							<address>
+								<settlement>Terni</settlement>,
+								<country>Italy</country>;
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>4</marker>
+							<orgName type="institution">University Hospital</orgName>,
+							<orgName type="department">Department of Oncology</orgName>,
+							<address>
+								<settlement>Uppsala</settlement>,
+								<country>Sweden</country>;
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>5</marker>
+							<orgName type="institution">Academisch Ziekenhuis Utrecht</orgName>,
+							<orgName type="department">Department of Internal Medicine</orgName>,
+							<address>
+								<settlement>Utrecht</settlement>,
+								<country>The Netherlands</country>;
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>6</marker>
+							<orgName type="institution">Hospital Universitario &apos;Reina Sofia&apos;</orgName>,
+							<address>
+								<settlement>Cordoba</settlement>,
+								<country>Spain</country>;
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>7</marker>
+							<orgName type="institution">University Hospital</orgName>,
+							<orgName type="department">Department of Internal Medicine</orgName>,
+							<address>
+								<settlement>Vienna</settlement>,
+								<country>Austria</country>;
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>8</marker>
+							<orgName type="institution">Hôpital Ambroise Paré</orgName>,
+							<orgName type="department">Service de Hepato-Gastroent. Concologie Digestive</orgName>,
+							<address>
+								<settlement>Boulogne Cedex</settlement>,
+								<country>France</country>;
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>9</marker>
+							<orgName type="institution">ASTRA-ZENECA Pharmaceuticals</orgName>,
+							<address>
+								<settlement>Macclesfield</settlement>,
+								<country>UK</country>;
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>10</marker>
+							<orgName type="institution">Laurentius Hospital</orgName>,
+							<address>
+								<settlement>Roermond</settlement>,
+								<country>The Netherlands</country>;
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>11</marker>
+							<orgName type="institution">EORTC Data Center</orgName>,
+							<address>
+								<settlement>Brussels</settlement>,
+								<country>Belgium</country>;
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>12</marker>
+							<orgName type="institution">Medical School Hannover</orgName>,
+							<orgName type="department">Department of Internal Medicine</orgName>,
+							<address>
+								<settlement>Hannover</settlement>;
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>13</marker>
+							<orgName type="institution">Robert-Rössle-Clinic Charité</orgName>,
+							<address>
+								<addrLine>Campus Berlin-Buch</addrLine>,
+								<settlement>Berlin</settlement>,
+								<country>Germany</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

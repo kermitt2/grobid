@@ -1,0 +1,16 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="102"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">THE COMPLEXITY OF COMPUTING <lb/>MAXIMAL WORD FUNCTIONS <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Eric Allender, Danilo Bruschi <lb/>and Giovanni Pighizzini <lb/></docAuthor></byline>
+		<div type="abstract">Abstract. Maximal word functions occur in data retrieval applications <lb/>and have connections with ranking problems, which in turn were first <lb/>investigated in relation to data compression [21]. By the &quot;maximal word <lb/>function&quot; of a language L , we mean the problem of finding, on <lb/>input x, the lexicographically largest word belonging to L that is smaller <lb/>than or equal to x. <lb/>In this paper we present a parallel algorithm for computing maximal <lb/>word functions for languages recognized by one-way nondeterministic <lb/>auxiliary pushdown automata (and hence for the class of context-free <lb/>languages). <lb/>This paper is a continuation of a stream of research focusing on the <lb/>problem of identifying properties others than membership which are <lb/>easily computable for certain classes of languages. For a survey, see [24]. <lb/></div>
+		<keywords type="classes">Subject classifications. 68Q15,68Q25,68Q45. <lb/></keywords>
+		<div type="intro">1. Introduction</div>
+		</front>
+</text>
+</tei>

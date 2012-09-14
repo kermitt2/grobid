@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="685"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">The Institution of order-sorted equational logic <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Grigore Ro~su <lb/></docAuthor></byline>
+		<byline><affiliation>University of Bucharest, Faculty of Mathematics, <lb/>Department of Computer Science <lb/></affiliation></byline>
+		<address>Str. Academiei 14, R70109, ROMANIA <lb/></address>
+		<div type="abstract">Abstract <lb/>The paper provides an organisation of order-sorted equational logic as <lb/>an Institution. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

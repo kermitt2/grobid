@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>CHRISTOPH</forename>
+								<surname>LANGE</surname>
+								<marker>*</marker>
+							</persName>
+							<persName>
+								<forename>EDWIN</forename>
+								<middlename>K</middlename>
+								<surname>SILVERMAN</surname>
+							</persName>
+							<persName>
+								<forename>XIN</forename>
+								<surname>XU</surname>
+							</persName>
+							<persName>
+								<forename>SCOTT</forename>
+								<middlename>T</middlename>.
+								<surname>WEISS</surname>
+							</persName>
+							<persName>
+								<forename>NAN</forename>
+								<middlename>M</middlename>.
+								<surename>LAIRD</surename>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

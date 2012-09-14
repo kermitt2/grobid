@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="414"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">An Assume-Guarantee Rule <lb/> For Checking Simulation <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Thomas A. Henzinger Shaz Qadeer Sriram K. Rajamani <lb/> and Serdar Tasiran <lb/></docAuthor></byline>
+		<byline><affiliation>University of California, Berkeley <lb/></affiliation></byline>
+		<div type="abstract">The simulation preorder on state transition systems is widely accepted as a useful notion of refinement, <lb/>both in its own right and as an efficiently checkable sufficient condition for trace containment. <lb/>For composite systems, due to the exponential explosion of the state space, there is a need for decomposing <lb/>a simulation check of the form P �s Q, denoting �P is simulated by Q,� into simpler <lb/>simulation checks on the components of P and Q. We present an assume-guarantee rule that <lb/>enables such a decomposition. To the best of our knowledge, this is the first assume-guarantee <lb/>rule that applies to a refinement relation different from trace containment. Our rule is circular, <lb/>and its soundness proof requires induction on trace trees. The proof is constructive: given simulation <lb/>relations that witness the simulation preorder between corresponding components of P <lb/>and Q, we provide a procedure for constructing a witness relation for P �s Q. We also extend our <lb/>assume-guarantee rule to account for fairness constraints on transition systems. <lb/></div>
+		<keywords>Categories and Subject Descriptors: D.2.4 [Software Engineering]: Software/Program Verification� <lb/>formal methods; F.3.1 [Logics and Meanings of Programs]: Specifying and Verifying and <lb/>Reasoning about Programs <lb/>General Terms: Verification <lb/>Additional Key Words and Phrases: Simulation relations, verification rules</keywords>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,22 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="463"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Refining Interactions in a Distributed System <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Neelam Soundarajan <lb/></docAuthor></byline>
+		<byline><affiliation>Computer and Information Science <lb/>The Ohio State University <lb/></affiliation></byline>
+		<address>2015 Neil Avenue <lb/>Columbus, OH 43210 <lb/>USA <lb/></address>
+		<email>e-mail: neelam@cis.ohio-state.edu <lb/></email>
+		<docTitle>
+			<titlePart type="main">Re?ning Interactions in a Distributed System <lb/></titlePart>
+		</docTitle>
+		<div type="abstract">Abstract: <lb/> We identify a type of re?nement called interaction re?nement that is useful in designing distributed <lb/> systems. In a step of interaction re?nement, a system designer re?nes a ?hi gh-level? interaction <lb/> into a sequence of ?low-level? interactions. In doing this, the designer is not re?ning the internal <lb/> structure of the processes; rather he1 is implementing a high-level interaction between two (or <lb/> more) processes in terms of a sequence of low-level communications between them. <lb/> We motivate the idea of interaction re?nement with simple examples and develop a preliminary <lb/> formalism that can be used to establish correctness of systems developed using interaction re?ne- <lb/> ment. We apply the formalism to validate some communication protocols. <lb/></div>
+		<keywords>Keywords: Interaction re?nement, Communication traces, Speci?cation and veri?cation, Com- <lb/> munication protocols. <lb/></keywords>
+		<div type="intro">1 Introduction and Motivation <lb/></div>
+		</front>
+</text>
+</tei>

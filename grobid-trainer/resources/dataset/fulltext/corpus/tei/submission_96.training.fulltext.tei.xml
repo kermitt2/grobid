@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="290"/>
+	</teiHeader>
+	<text xml:lang="en">
+			<front>CONTROLLING THE DYNAMICS OF A COUPLED ATOM-CAVITY<lb/> SYSTEM BY PURE DEPHASING : BASICS AND APPLICATIONS IN<lb/> NANOPHOTONICS<lb/> A. Auffèves 1 , D. Gerace 2 , J.M. Gérard 3 , M.P. França Santos 4 , L.C. Andreani 3 , J.P. Poizat 1<lb/> 1 CEA/CNRS/UJF Joint team &quot;Nanophysics and Semiconductors,&quot; Institut Néel-CNRS, BP 166, 25 rue des<lb/> Martyrs, 38042 Grenoble Cedex 9, France<lb/> 2 Dipartimento di Fisica &quot;Alessandro Volta&quot; and UdR CNISM, Università di Pavia, via Bassi 6, 27100 Pavia,<lb/> Italy 3 CEA/CNRS/UJF Joint team &quot;Nanophysics and Semiconductors,&quot; CEA/INAC/SP2M, 17 rue des Martyrs,<lb/> 38054 Grenoble, France<lb/> 4 Departamento de Física, Universidade Federal de Minas Gerais, Caixa Postal 702, 30123-970 Belo Horizonte,<lb/> MG, Brazil<lb/></front>
+
+			<p>Thanks to technological progresses in the field of solid-state physics, a wide range of quantum optics<lb/> experiments previously restricted to atomic physics can now be implemented using solid-state emitters like<lb/> quantum dots (QD) and optical semi-conducting cavities. Still, QDs are subjected to intrinsic decoherence<lb/> processes like pure dephasing, that unavoidably broaden the emission linewidth and make them very different<lb/> from isolated atoms. At the same time, very high quality factors are achieved for state of the art cavities. These<lb/> new conditions open an unexplored regime for cavity quantum electrodynamics (CQED) so far, where the<lb/> emitter&apos;s linewidth can be of the same order of magnitude, or even broader than the cavity mode one. In that<lb/> regime, unsual phenomena can happen. In particular, we have shown <ref type="biblio">[1]</ref> that photons spontaneously emitted by<lb/> a QD coupled to a detuned cavity can efficiently by emitted at the cavity frequency, even if the detuning is<lb/> large. We have then systematically studied the influence of pure dephasing on the dynamics of the coupling<lb/> between a two-level atom and a cavity <ref type="biblio">[2]</ref>. We have derived an effective atom-cavity coupling rate that is shown<lb/> to be a key parameter in the physics of the problem, allowing to generalize the known expression for the Purcell<lb/> factor to the case of broad emitters, and to define strategies to optimize the performances of broad emitter-based<lb/> single-photon sources. Moreover, pure dephasing is shown to be able to restore lasing in presence of detuning, a<lb/> further demonstration that decoherence can be seen as a fundamental resource in solid-state cavity quantum<lb/> electrodynamics, offering appealing perspectives in the context of advanced nanophotonic devices. We finally<lb/> propose experimental strategies to develop a versatile device that can be operated either as a single-photon<lb/> source or as a laser, based on the control by decoherence of the coupling between a single quantum dot and a<lb/> solid-state cavity.<lb/></p>
+
+			<head>References<lb/></head>
+
+			<bibl> <label>[1]</label> &quot;Pure emitter&apos;s dephasing : a resource for advanced single photon sources&quot;, A. Auffèves, J.M. Gérard and<lb/> J.P. Poizat, PRA 79, 053838 (2009).<lb/></bibl>
+
+			<bibl> <label>[2]</label> &quot;Controlling the dynamics of a coupled atom-cavity system by pure dephasing : basics and applications in<lb/> nanophotonics&quot;, A. Auffèves, D. Gerace, J.M. Gérard, M.P. França Santos, L.C. Andreani and J.P. Poizat, PRB<lb/> 81, 245419 (2010).</bibl>
+
+
+	</text>
+</tei>

@@ -1,0 +1,19 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="42"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">PORTS: Experiences with a Scheduler for Dynamic Real-Time <lb/>Systems <lb/></titlePart>
+		</docTitle>
+		<note type="other">(Extended Abstract) <lb/></note>
+		<byline><docAuthor>Kaushik Ghosh, Richard M. Fujimoto, and Karsten Schwan <lb/></docAuthor></byline>
+		<byline><affiliation>College of Computing <lb/> Georgia Institute of Technology <lb/></affiliation></byline>
+		<address>Atlanta, GA, 30332. <lb/></address>
+		<date>June 24, 1994 <lb/></date>
+		<div type="abstract">Abstract <lb/>This paper describes several of our experiences with a real-time scheduler. Using a robot control application program, we motivate the importance of supporting multiple schedulers within the same application <lb/>program. We demonstrate the utility of speculative task execution in dynamic real-time systems, and describe the implementation of a scheduler for performing speculative execution and recovery. We show that <lb/>existing real-time scheduler interfaces have scope for improvement, especially when scheduling latency must <lb/>be low and when multiple schedulers used by a single application must co-exist on a single processor. A new <lb/>scheduler interface is specified and its basic costs are evaluated experimentally. Preliminary measurements on <lb/>a KSR-1 machine are quoted. The measurements demonstrate how the execution times of temporal queries <lb/>may be reduced by use of access structures to scheduler data structures. Finally, there are several overheads <lb/>associated with speculative execution, and multiple schedulers in a single application. We consider the problem of on-line reconfiguration of the several overheads associated with the speculative-execution paradigm <lb/>for optimal performance in the face of these overheads. Initial performance measurements of the PORTS <lb/>scheduler indicate that it is possible to perform real-time scheduling with latencies approximating those of <lb/>proposed specialized scheduling co-processors. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

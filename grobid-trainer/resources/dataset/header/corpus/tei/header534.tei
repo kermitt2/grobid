@@ -1,0 +1,23 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="537"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<note type="other">, , 1-8 () <lb/></note>
+		<note type="copyright">c Kluwer Academic Publishers, Boston. Manufactured in The Netherlands. <lb/></note>
+		<docTitle>
+			<titlePart type="main">A Note on Learning from Multiple-Instance <lb/> Examples <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>AVRIM BLUM</docAuthor></byline>
+		<email>avrim+@cs.cmu.edu <lb/></email>
+		<byline><docAuthor>ADAM KALAI</docAuthor></byline>
+		<email>akalai+@cs.cmu.edu <lb/></email>
+		<byline><affiliation>School of Computer Science, Carnegie Mellon University,</affiliation></byline>
+		<address>Pittsburgh, PA 15213 <lb/></address>
+		<div type="abstract">Abstract. <lb/>We describe a simple reduction from the problem of PAC-learning from multiple-instance examples to that of PAC-learning with one-sided random classification noise. Thus, all concept classes <lb/>learnable with one-sided noise, which includes all concepts learnable in the usual 2-sided random <lb/>noise model plus others such as the parity function, are learnable from multiple-instance examples. We also describe a more efficient (and somewhat technically more involved) reduction to <lb/>the Statistical-Query model that results in a polynomial-time algorithm for learning axis-parallel <lb/>rectangles with sample complexity ~ O(d 2 r=* 2 ), saving roughly a factor of r over the results of Auer <lb/>et al. (1997). <lb/></div>
+		<keywords>Keywords: Multiple-instance examples, classification noise, statistical queries <lb/></keywords>
+		<div type="intro">1. Introduction and Definitions</div>
+		</front>
+</text>
+</tei>

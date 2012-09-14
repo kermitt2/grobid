@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="108"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Evaluating Weak Memories with Maya <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Divyakant Agrawal Manhoi Choy Hong Va Leong Ambuj K. Singh <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science <lb/>University of California at Santa Barbara <lb/></affiliation></byline>
+		<address>Santa Barbara, CA 93106 <lb/></address>
+		<div type="abstract">Abstract <lb/>Maya is a simulation platform for evaluating the performance of parallel programs on parallel architectures with different memory coherence protocols. Rapid prototyping of different memory protocols <lb/>supporting varying degrees of coherence is possible and the impact of these protocols on the performance <lb/>of application programs can be studied. Implementations of existing weak memories along with some <lb/>new primitives using Maya are presented. The results of running some user applications are summarized <lb/>and the impact of weak memories on the efficiency of parallel programs is discussed. <lb/></div>
+		<keywords>Keywords: distributed shared memory, memory consistency, parallel programming, weak <lb/>memories <lb/></keywords>
+		<pb/>
+		</front>
+</text>
+</tei>

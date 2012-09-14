@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="580"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">A Hyperconcentrator Switch <lb/>for Routing Bit-Serial Messages <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Thomas H. Cormen <lb/>Charles E. Leiserson <lb/></docAuthor></byline>
+		<byline><affiliation>Laboratory for Computer Science <lb/>Massachusetts Institute of Technology <lb/></affiliation></byline>
+		<address>Cambridge, Massachusetts 02139 <lb/></address>
+		<note type="grant">Supported in part by the Defense Advanced Research Projects Agency under Contracts N00014-80-C-0622 and N00014-87-K-0825 and by a National Science Foundation <lb/>Fellowship. <lb/>Supported in part by the Defense Advanced Research Projects Agency under Contracts <lb/>N00014-80-C-0622 and N00014-87-K-0825 and by an NSF Presidential Young Investigator Award with matching funds provided by AT&amp;T Bell Laboratories, IBM Corporation, <lb/>and Xerox Corporation. <lb/></note>
+		<pb/>
+		</front>
+</text>
+</tei>

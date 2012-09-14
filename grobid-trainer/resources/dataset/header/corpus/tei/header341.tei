@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="346"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<date>May 17, 1993 <lb/></date>
+		<docTitle>
+			<titlePart type="main">An Efficient Network <lb/>Interface for the RAID-II <lb/>File Server <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Srinivasan Seshan <lb/></docAuthor></byline>
+		<note type="other">A masters report <lb/></note>
+		<div type="abstract">1.0 Abstract <lb/>Distributed systems in use today depend heavily on network communications between clients and servers. In this report, we describe the <lb/>design and implementation of the network architecture (hardware, software and protocols) of the RAID-II system. RAID-II is a high speed network file server connected to an UltraNetwork. In order to support high <lb/>bandwidth network transfers with the RAID-II server, we partitioned the <lb/>networking software among the various processors in the system. Measurements of the system show that the RAID-II server can sustain 21MB/ <lb/>s of data bandwidth to the Ultranet. <lb/></div>
+		<div type="intro">2.0 Introduction</div>
+		</front>
+</text>
+</tei>

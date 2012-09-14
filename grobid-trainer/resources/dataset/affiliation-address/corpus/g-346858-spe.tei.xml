@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../jsp/xmlverbatimwrapper.xsl"?> 
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+							<affiliation>
+								<orgName type="department">IRFU/SPhN,</orgName>
+								<orgName type="institution">CEA Saclay</orgName>,
+								<address>
+									<postCode>91191</postCode>
+									<settlement>Gif-sur-Yvette Cedex</settlement>,
+									<country key="FR">France<lb/></country>
+									</address>
+							</affiliation>
+							
+							<affiliation>
+								<orgName type="department">Departamento de Física de Partículas</orgName>,
+								<orgName type="institution">Universidad de Santiago de Compostela</orgName>,<lb/>
+								<address>
+									<postCode>15782</postCode>
+									<settlement>Santiago de Compostela</settlement>,
+									<country key="ES">Spain<lb/></country>
+								</address>
+							</affiliation>
+							
+							<affiliation>
+								<orgName type="laboratory">Laboratoire Leprince Ringuet</orgName>,
+								<orgName type="institution" key="instit1">Ecole Polytechnique</orgName>,
+								<orgName type="institution" key="instit2">CNRS-IN2P3</orgName>,
+								<address>
+									<postCode>91128</postCode>
+									<settlement>Palaiseau</settlement>,<lb/>
+									<country key="FR">France<lb/></country>
+								</address>
+							</affiliation>
+						
+							<affiliation>
+								<orgName type="laboratory">Centre de Physique Théorique</orgName>,
+								<orgName type="institution" key="instit1">École Polytechnique</orgName>,
+								<orgName type="institution" key="instit2">CNRS</orgName>,
+								<address>
+									<postCode>91128</postCode>
+									<settlement>Palaiseau</settlement>,<lb/>
+									<country key="FR">France<lb/></country>
+								</address>
+							</affiliation>
+						</author>
+						
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</TEI>

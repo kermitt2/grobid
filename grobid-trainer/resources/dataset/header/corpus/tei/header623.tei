@@ -1,0 +1,16 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="625"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Toward the Automation of the Card-Playing <lb/>Component of Bridge <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Ming-Sheng Chang <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science <lb/>Courant Institute of Mathematical Sciences <lb/>New York University <lb/></affiliation></byline>
+		<div type="abstract">Abstract <lb/>In comparision with other games, particularly chess, the research in computer bridge is <lb/>immature, and the best bridge-playing programs are mediocre. We propose to study the <lb/>automation of the card-playing segment of bridge (omitting bidding), using a number of <lb/>different techniques. In this paper we first give an introduction to the state of computer <lb/>bridge. Next, we propose two possible architectures for solving double-dummy bridge <lb/>(i.e., a simplified bridge game with perfect information): The first is based on the <lb/>combination of And-OR search and heuristic evaluation. The second forms a global plan <lb/>by merging subplans for each individual suit. Next, to deal with uncertain information in <lb/>real bridge, we present a new mechanism that combines the concepts of both minimax <lb/>search and possible worlds. Finally we give a brief description of further work toward <lb/>automating card-playing in real bridge. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

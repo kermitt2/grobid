@@ -1,0 +1,25 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="ZFN-A-054-01-0083"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<titlePage>
+				<docTitle>
+					<titlePart type="main">Symmetrie and Asymmetrie Nuclear Matter <lb/> in the Thomas-Fermi Model at Finite Temperatures* <lb/></titlePart>
+				</docTitle>
+				<byline><docAuthor>K. Strobel, R Weber, and M. K. Weigel</docAuthor><lb/></byline>
+				<byline><affiliation>Sektion Physik, Universität München</affiliation>, <address>Am Coulombwall 1, D-85748 Garching</address><lb/></byline>
+				<reference>Z. Naturforsch. 54a, 83-90 (1999); </reference>
+				<note type="submission">received July 29, 1998<lb/></note>
+			</titlePage>
+			<div type="abstract">The properties of warm symmetric and asymmetric nuclear matter are investigated in the frame of <lb/>
+the Thomas-Fermi approximation using a recent modem parameterization of the effective nucleon-nu- <lb/>
+cleon interaction of Myers and Swi^tecki. Special attention is paid to the liquid-gas phase transition, <lb/>
+which is of special interest in modem nuclear physics. We have determined the critical temperature, crit- <lb/>
+ical density and the so-called flash temperature. Furthermore, the equation of state for cold neutron star matter is calculated. <lb/></div>
+     	     	     	<keywords>PACS: Numbers: 21.65.+f, 21.10.Dr, 21.60.-n, 25.75-q. <lb/></keywords>
+			<div type="intro">1. Introduction<lb/></div>
+		</front>
+	</text>
+</tei>

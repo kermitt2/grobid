@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<nite:root nite:id="WO2007031823.HC.class-names" xmlns:nite="http://nite.sourceforge.net/">
+   <class-name nite:id="WO2007031823.HC.class-names.1" comment="" name="alkaline earth metal oxide" relevant="false" chebi-id="WO2007031823:731285" epochem-id="EPOCHEM:NEW:CLASS:641">
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_1064)..id(WO2007031823_w_1065)"/>
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_1063)"/>
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_1062)"/>
+   </class-name>
+   <class-name nite:id="WO2007031823.HC.class-names.2" comment="" name="alkaline earth metal oxide" relevant="false" chebi-id="WO2007031823:731285" epochem-id="EPOCHEM:NEW:CLASS:641">
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_1122)"/>
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_1124)"/>
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_1121)"/>
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_1123)"/>
+   </class-name>
+   <class-name nite:id="WO2007031823.HC.class-names.3" comment="" name="alkaline earth metal oxide" relevant="false" chebi-id="WO2007031823:731285" epochem-id="EPOCHEM:NEW:CLASS:641">
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_1221)..id(WO2007031823_w_1224)"/>
+   </class-name>
+   <class-name nite:id="WO2007031823.HC.class-names.4" comment="" name="alkaline earth metal oxide" relevant="false" chebi-id="WO2007031823:731285" epochem-id="EPOCHEM:NEW:CLASS:641">
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_2771)"/>
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_2773)..id(WO2007031823_w_2774)"/>
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_2772)"/>
+   </class-name>
+   <class-name nite:id="WO2007031823.HC.class-names.12" comment="" name="2-(2-ethoxyphenoxy)ethyl halide" relevant="false" chebi-id="WO2007031823:313552" epochem-id="EPOCHEM:NEW:CLASS:643">
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_720)"/>
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_724)"/>
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_718)..id(WO2007031823_w_719)"/>
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_722)..id(WO2007031823_w_723)"/>
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_721)"/>
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_725)"/>
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_717)"/>
+   </class-name>
+   <class-name nite:id="WO2007031823.HC.class-names.13" comment="" name="ethoxy phenoxy halide" relevant="false" chebi-id="WO2007031823:155604" epochem-id="EPOCHEM:NEW:CLASS:644">
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_776)..id(WO2007031823_w_778)"/>
+   </class-name>
+   <class-name nite:id="WO2007031823.HC.class-names.14" comment="" name="sulfonamide amine" relevant="false" chebi-id="WO2007031823:490158" epochem-id="EPOCHEM:NEW:CLASS:645">
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_315)..id(WO2007031823_w_316)"/>
+   </class-name>
+   <class-name nite:id="WO2007031823.HC.class-names.15" comment="" name="phenoxy amine" relevant="false" chebi-id="WO2007031823:773395" epochem-id="EPOCHEM:NEW:CLASS:646">
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_245)..id(WO2007031823_w_246)"/>
+   </class-name>
+   <class-name nite:id="WO2007031823.HC.class-names.16" comment="" name="benzyl methyl ketone" relevant="false" chebi-id="WO2007031823:324963" epochem-id="EPOCHEM:NEW:CLASS:647">
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_241)"/>
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_239)..id(WO2007031823_w_240)"/>
+   </class-name>
+   <class-name nite:id="WO2007031823.HC.class-names.17" comment="" name="alkaline earth metal oxides" relevant="false" chebi-id="WO2007031823:259850" epochem-id="EPOCHEM:NEW:CLASS:950">
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_862)"/>
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_864)..id(WO2007031823_w_865)"/>
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_863)"/>
+   </class-name>
+   <class-name nite:id="WO2007031823.HC.class-names.18" comment="" name="Alkaline earth metal salts" relevant="false" chebi-id="WO2007031823:47688" epochem-id="EPOCHEM:NEW:CLASS:951">
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_1240)"/>
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_1239)"/>
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_1238)"/>
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_1237)"/>
+   </class-name>
+   <class-name nite:id="WO2007031823.HC.class-names.19" comment="" name="hydrochloride salt" relevant="false" chebi-id="WO2007031823:710264" epochem-id="EPOCHEM:NEW:CLASS:952">
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_141)..id(WO2007031823_w_142)"/>
+   </class-name>
+   <class-name nite:id="WO2007031823.HC.class-names.20" comment="" name="hydrochloride salt" relevant="false" chebi-id="WO2007031823:710264" epochem-id="EPOCHEM:NEW:CLASS:952">
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_343)"/>
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_342)"/>
+   </class-name>
+   <class-name nite:id="WO2007031823.HC.class-names.21" comment="" name="hydrochloride salt" relevant="false" chebi-id="WO2007031823:710264" epochem-id="EPOCHEM:NEW:CLASS:952">
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_808)..id(WO2007031823_w_809)"/>
+   </class-name>
+   <class-name nite:id="WO2007031823.HC.class-names.22" comment="" name="hydrochloride salt" relevant="false" chebi-id="WO2007031823:710264" epochem-id="EPOCHEM:NEW:CLASS:952">
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_1081)..id(WO2007031823_w_1082)"/>
+   </class-name>
+   <class-name nite:id="WO2007031823.HC.class-names.23" comment="" name="hydrochloride salt" relevant="false" chebi-id="WO2007031823:710264" epochem-id="EPOCHEM:NEW:CLASS:952">
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_2788)"/>
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_2787)"/>
+   </class-name>
+   <class-name nite:id="WO2007031823.HC.class-names.24" comment="" name="acid chloride" relevant="false" chebi-id="WO2007031823:226790" epochem-id="EPOCHEM:NEW:CLASS:1141">
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_487)..id(WO2007031823_w_488)"/>
+   </class-name>
+   <class-name nite:id="WO2007031823.HC.class-names.25" comment="" name="acid chloride" relevant="false" chebi-id="WO2007031823:226790" epochem-id="EPOCHEM:NEW:CLASS:1141">
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_517)"/>
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_516)"/>
+   </class-name>
+   <class-name nite:id="WO2007031823.HC.class-names.26" comment="" name="acid" relevant="false" chebi-id="CHEBI:37527" epochem-id="EPOCHEM:NEW:CLASS:1073">
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_483)"/>
+   </class-name>
+   <class-name nite:id="WO2007031823.HC.class-names.27" comment="" name="acid" relevant="false" chebi-id="CHEBI:37527" epochem-id="EPOCHEM:NEW:CLASS:1073">
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_487)"/>
+   </class-name>
+   <class-name nite:id="WO2007031823.HC.class-names.28" comment="" name="acid" relevant="false" chebi-id="CHEBI:37527" epochem-id="EPOCHEM:NEW:CLASS:1073">
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_514)"/>
+   </class-name>
+   <class-name nite:id="WO2007031823.HC.class-names.29" comment="" name="acid" relevant="false" chebi-id="CHEBI:37527" epochem-id="EPOCHEM:NEW:CLASS:1073">
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_516)"/>
+   </class-name>
+   <class-name nite:id="WO2007031823.HC.class-names.30" comment="" name="acid" relevant="false" chebi-id="CHEBI:37527" epochem-id="EPOCHEM:NEW:CLASS:1073">
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_867)"/>
+   </class-name>
+   <class-name nite:id="WO2007031823.HC.class-names.31" comment="" name="acid" relevant="false" chebi-id="CHEBI:37527" epochem-id="EPOCHEM:NEW:CLASS:1073">
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_1227)"/>
+   </class-name>
+   <class-name nite:id="WO2007031823.HC.class-names.32" comment="" name="anhydride" relevant="false" chebi-id="WO2007031823:872489" epochem-id="EPOCHEM:NEW:CLASS:136">
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_491)"/>
+   </class-name>
+   <class-name nite:id="WO2007031823.HC.class-names.33" comment="" name="anhydride" relevant="false" chebi-id="WO2007031823:872489" epochem-id="EPOCHEM:NEW:CLASS:136">
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_519)"/>
+   </class-name>
+   <class-name nite:id="WO2007031823.HC.class-names.34" comment="C1-4 alcohol" name="Ci-4 alcohol" relevant="false" chebi-id="WO2007031823:794759" epochem-id="EPOCHEM:NEW:CLASS:1154">
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_1288)..id(WO2007031823_w_1289)"/>
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_1287)"/>
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_1290)"/>
+   </class-name>
+   <class-name nite:id="WO2007031823.HC.class-names.35" comment="C1-4 alcohol" name="Ci-4 alcohol" relevant="false" chebi-id="WO2007031823:794759" epochem-id="EPOCHEM:NEW:CLASS:1154">
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_2843)"/>
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_2846)"/>
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_2845)"/>
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_2844)"/>
+   </class-name>
+   <class-name nite:id="WO2007031823.HC.class-names.36" comment="C1-4 alcohol" name="Ci-4 alcohol" relevant="false" chebi-id="WO2007031823:794759" epochem-id="EPOCHEM:NEW:CLASS:1154">
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_2931)"/>
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_2933)"/>
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_2930)"/>
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_2932)"/>
+   </class-name>
+   <class-name nite:id="WO2007031823.HC.class-names.37" comment="C1-4 alcohol" name="Ci-4 alcohol" relevant="false" chebi-id="WO2007031823:794759" epochem-id="EPOCHEM:NEW:CLASS:1154">
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_2974)"/>
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_2973)"/>
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_2975)"/>
+      <nite:child href="WO2007031823.words.xml#id(WO2007031823_w_2972)"/>
+   </class-name>
+</nite:root>

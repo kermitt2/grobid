@@ -1,0 +1,19 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="587"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<byline><affiliation>M.I.T Media Laboratory Perceptual Computing Section </affiliation></byline><idno>Technical Report No. 279</idno>
+		<note type="other">(Replaces TR-228) <lb/></note>
+		<note type="reference">Appears in the IEEE Transactions on Image Processing Special Issue: Image Sequence Compression, <lb/>vol 3, no. 5, p. 625-638, September 1994. Revised: May, 1994 <lb/></note>
+		<docTitle>
+			<titlePart type="main">Representing Moving Images with Layers <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>John Y. A. Wang AND Edward H. Adelson <lb/></docAuthor></byline>
+		<div type="abstract">Abstract <lb/>We describe a system for representing moving <lb/>images with sets of overlapping layers. Each <lb/>layer contains an intensity map that defines the <lb/>additive values of each pixel, along with an alpha <lb/>map that serves as a mask indicating the transparency. The layers are ordered in depth and <lb/>they occlude each other in accord with the rules <lb/>of compositing. Velocity maps define how the <lb/>layers are to be warped over time. The layered <lb/>representation is more flexible than standard image transforms and can capture many important <lb/>properties of natural image sequences. We describe some methods for decomposing image sequences into layers using motion analysis, and we <lb/>discuss how the representation may be used for <lb/>image coding and other applications. <lb/></div>
+		<keywords>Keywords| Image coding, motion analysis, image <lb/>segmentation, image representation, robust estimation. <lb/></keywords>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

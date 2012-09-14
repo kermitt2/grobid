@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="regensburg2_28"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Eine nicht erwartete intramolekulare<lb/> Photoreaktion eines<lb/> HexacbJoroctahydrodimethanonaphthalins<lb/> </titlePart>
+	</docTitle>
+
+	<note type="english-title">An Unexpected Intramolecular Photoreaction<lb/> of a Hexachlorooctahydrodimethano-<lb/>naphthaline<lb/></note>
+
+	<byline>
+	<docAuthor>H. Parlar + * und Y. Inanici++<lb/> +<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institut für Ökologische Chemie der Gesell-<lb/>schaft für Strahlen-und Umweltforschung mbH<lb/></affiliation>
+	</byline>
+
+	<address>München, Schulstraße 10, D-8050 Freising -<lb/>Attaching<lb/></address>
+
+	<byline>
+	<affiliation>++ Chemische Fakultät der Universität Istanbul<lb/></affiliation>
+	</byline>
+
+	<reference>Z. Naturforsch. 36b, 125-126 (1981);<lb/></reference>
+
+	<note type="submission">eingegangen am 12. August 1980<lb/></note>
+
+	<keyword>Photochemistry, Isomerisation Reactions,<lb/> Hexachlorooctahydrodimethanonaphthalines<lb/> </keyword>
+
+	<div type="abstract">Photoreactions of<lb/> 1,2,3,4,10,10-hexachloro-<lb/>6,7-epoxy-l,4,4a,5,6,7,8,8a-octahydro-l,4-endo,<lb/> endo-5,8-dimethano-naphthaline (1) were stud-<lb/>ied in acetone with wavelengths above 290 nm.<lb/> With the help of column chromatography an<lb/> unusual isomerisation product (4) could be<lb/> isolated, whose structure was established by<lb/> spectral data obtained by mass spectrometry<lb/> infrared spectroscopy, X H and 13 C nuclear<lb/> magnetic resonance measurements.<lb/> Hexachloroctahydrodimethanonaphthahne gehö -<lb/>ren zu den bekanntesten Cyclodieninsektiziden,</div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,19 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="764"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Practical Comparison of call string and functional Approach in <lb/>Data Flow Analysis * <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Martin Alt Florian Martin <lb/></docAuthor></byline>
+		<byline><affiliation>Universit�t des Saarlandes,</affiliation></byline>
+		<address>P.O. Box 151150, 66041 Saarbr�cken, <lb/></address>
+		<email>{alt�floriang}@cs.uni-sb.de <lb/></email>
+		<date>June 10, 1997 <lb/></date>
+		<div type="abstract">Abstract <lb/>The techniques which are used to implement interprocedural data flow analyzers can be generally <lb/>divided into two parts: the call string and the functional approach [18]. Both differ in their time and space <lb/>complexity as well as in the preciseness due to properties of the abstract domains and transfer functions. <lb/>We have developed a data flow analyzer generator PAG [2] which is able to produce interprocedural <lb/>analyzers for both techniques. We specified two variants of constant propagation working in an ANSI-C <lb/>compiler; a copy constant propagation that uses distributive transfer function and can be solved precisely, <lb/>even interprocedurally [13], and a full constant propagator which includes an interpreter for expressions <lb/>of the language. We present the practical relevant results applying both analyzers to a rather fair set of <lb/>real-world programs and compare the space/time consumption of the analyzers versus their preciseness. <lb/></div>
+		<div type="intro">1 Introduction <lb/></div>
+		</front>
+</text>
+</tei>

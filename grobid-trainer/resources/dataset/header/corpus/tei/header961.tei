@@ -1,0 +1,25 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="1030"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Taste for Variety and Endogenous Fluctuations in a <lb/> Monopolistic Competition Model <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Thomas Seegmuller <lb/></docAuthor></byline>
+		<byline><affiliation>CNRS and Centre d&apos;Economie de la Sorbonne, <lb/> Paris School of Economics, Université Paris 1, <lb/></affiliation></byline>
+		<address>106-112 Boulevard de l&apos;Hôpital 75647 Paris Cedex 13, France. <lb/></address>
+		<note type="phone">Tel: (33) 1 44 07 81 99 <lb/> Fax: (33) 1 44 07 82 31 <lb/></note>
+		<email>E-mail: seegmu@univ-paris1.fr <lb/></email>
+		<idno>halshs-00266722,  version 1 -</idno>
+		<date>25 Mar 2008 <lb/></date>
+		<note type="other">Author manuscript, published in &quot;Macroeconomic Dynamics (2008) xx-xx&quot; <lb/></note>
+		<div type="abstract">Abstract <lb/>  In past years, imperfect competition has been introduced in several dy- <lb/> namic models to show how mark-up variability, increasing returns (decreas- <lb/> ing marginal cost), and monopoly prots aect the occurrence of endogenous <lb/> uctuations. In this paper, we focus on another possible feature of imper- <lb/> fectly competitive economies: consumers&apos; taste for variety due to endoge- <lb/> nous product diversity. Introducing monopolistic competition (Dixit and <lb/> Stiglitz (1977), Benassy (1996)) in an overlapping generations model where <lb/> consumers have taste for variety, we show that local indeterminacy can occur <lb/> under the three following conditions: a high substitution between capital and <lb/> labor, increasing returns arbitrarily small and a not too elastic labor supply. <lb/> The key mechanism for this result is based on the fact that, due to taste for <lb/> variety, the aggregate price decreases with the pro-cyclical product diversity, <lb/> which has a direct inuence on the real wage and the real interest rate. <lb/>  Résumé <lb/>  Dans les années passées, la concurrence imparfaite a été introduite dans <lb/> des modèles dynamiques pour montrer comment la variabilité du taux de <lb/> marge, les rendements croissants (cout marginal décroissant), et les prof- <lb/> its de monopole aectent l&apos;apparition de fluctuations endogènes. Dans ce <lb/> papier, nous nous intéressons à une autre caractéristique des économies im- <lb/> parfaitement concurrentielles : le gout pour la variété de la diversité en- <lb/> dogène des produits. Introduisant de la concurrence monopolistique (Dixit <lb/> et Stiglitz (1977), Benassy (1996)) dans un modèle à générations imbriquées <lb/> dans lequel les consommateurs ont du gout pour la variété, nous montrons <lb/> que de l&apos;indétermination locale peut apparaitre sous les trois conditions suiv- <lb/> antes : une substitution entre le capital et le travail élevée, des rendements <lb/> croissants arbitrairement faibles et une ore de travail pas trop fortement <lb/> élastique. Le mécanisme clé pour ce résultat repose sur le fait que, du au <lb/> gout pour la variété, le prix agrégé décroit avec la diversité pro-cyclique des <lb/> produits, ce qui influence directement le salaire et le taux d&apos;intérêt réels. <lb/></div>
+		<keywords>Mots-clés: Fluctuations endogènes, gout pour la variété, concurrence imparfaite. <lb/>  Keywords: Endogenous uctuations, taste for variety, imperfect competition. <lb/>  JEL classication: C62, D43, E32. <lb/></keywords>
+		<idno>halshs-00266722,  version 1 -</idno>
+		<date>25 Mar 2008 <lb/></date>
+		<div type="intro">1 Introduction <lb/></div>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,20 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="52"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Times of Cryptographic Parameter Generation, and <lb/>Key Computation and Distribution for the Star-based <lb/>and Ring-based Conference Authentication Facilities 1 <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Damien De Paoli and Andrzej Goscinski <lb/></docAuthor></byline>
+		<email>(ddp@deakin.edu.au, ang@deakin.edu.au) <lb/></email>
+		<byline><affiliation>School of Computing and Mathematics <lb/> Deakin University <lb/></affiliation></byline>
+		<address>Geelong, Victoria 3217 <lb/></address>
+		<date>September 8, 1994 <lb/></date>
+		<div type="abstract">Abstract <lb/>Two-way authentication methods are inefficient when used to authenticate multiple users who wish to communicate securely with each other. M-way, also called conference authentication, is designed to efficiently authenticate many users and distribute a secure common conference key. Unfortunately, few if any conference <lb/>authentication schemes have been developed and/or performance tested in a real distributed system. This report <lb/>attempts to rectify this problem. Specifically, it presents the performance of both a star and a ring-based conference authentication scheme that has been developed for the RHODOS distributed operating system. As with most <lb/>systems, RHODOS does not have any special hardware, thus, a software based solution is utilised. This report <lb/>also attempts to shed some light upon how viable and secure a conference authentication scheme would be when <lb/>used in a distributed system. <lb/></div>
+		<keywords>Keywords: Conference Authentication, Distributed Systems. <lb/></keywords>
+		<note type="grant">1. This work was supported by the Australian Research Council under Grant A48831034, Australian</note>
+		</front>
+</text>
+</tei>

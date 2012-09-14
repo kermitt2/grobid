@@ -1,0 +1,22 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="31"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Comparison of Statistical and Neural Classifiers <lb/>and Their Applications to <lb/>Optical Character Recognition and Speech Classification <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Ethem Alpaydn, Fikret Gurgen <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Engineering <lb/> Bogazi~ci University <lb/></affiliation></byline>
+		<idno>TR-80815</idno>
+		<address>_ Istanbul Turkey <lb/></address>
+		<email>falpaydin,gurgeng@boun.edu.tr <lb/></email>
+		<note type="other">Neural Network Systems Techniques and Applications (in print) <lb/>C. T. Leondes (Ed.), c flACADEMIC Press <lb/></note>
+		<date>October 24, 1996 <lb/></date>
+		<div type="abstract">Abstract <lb/>We give a review of basic statistical and neural techniques for classification. Statistical techniques are based on the idea of estimating class-conditional likelihoods and using Bayes rule <lb/>to convert these to posterior class probabilities whereas neural techniques estimate directly the <lb/>posteriors. Statistical techniques include (i) Parametric (Gaussian) Bayes classifiers, (ii) Non-parametric kernel-based density estimators like k-nearest neighbor and Parzen windows, and <lb/>(iii) mixtures of (Gaussian) densities (a special case of which is the Learning Vector Quantization). As neural classifiers, we include simple perceptrons and multilayer perceptrons with <lb/>sigmoid and Gaussian hidden units. The neural and statistical techniques are quite similar in <lb/>many respects and many approaches have been discovered independently twice, once in 1960s <lb/>by statisticians and once in 1980s by the neural network researchers. One of the aims of this article is to make this link more apparent. We also discuss two, most popular, pattern recognition <lb/>applications: Optical character recognition and speech recognition. Though they seem different, <lb/>in many respects, the two applications are similar and in the past, almost the same techniques <lb/>have been applied for their implementation. We implement the well known statistical and neural <lb/>classification techniques for two datasets of these applications and compare them in terms of <lb/>generalization accuracy, memory requirement and learning time. We especially advise to take <lb/>into account statistics of the sample even if a neural classifier is to be used. The similarity <lb/>between statistical and neural techniques is greater than generally agreed and simple statistical <lb/>methods like k-NN perform generally quite well and much of the functionality of neural networks like distributed parallel computation can be obtained by such methods without requiring <lb/>complicated computation and precise error minimization procedures. <lb/></div>
+		<keywords>Keywords| Statistical pattern recognition, artificial neural networks, optical character recog <lb/>nition, speech recognition, Bayes decision theory, nonparametric estimation. <lb/></keywords>
+		<pb/>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,23 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="ZFN-A-007-01-0144"/>
+	</teiHeader>
+	<text xml:lang="de">
+		<front>
+			<titlePage>
+				<note>ZUSAMMENFASSUNGEN AUS BAND yb<lb/></note>
+				<docTitle>
+					<titlePart type="main">Ein neues Verfahren bei der Trennung von gelösten Stoffen<lb/>durch Thermodilfiision in der Flüssigkeit* <lb/></titlePart>
+				</docTitle>
+				<byline>Von <docAuthor>H.K or s chin g</docAuthor><lb/></byline>
+				<note type="dedication">We rner H eisenherg zum 50. Gehurtstag <lb/></note>
+			</titlePage>
+			<div type="abstract">Es wird eine Methode beschrieben, die die Trennung <lb/>
+zweier gelöster Stoffe in gleiche Anteile mit etwa <lb/>
+gleicher Trennung erlaubt. Eine dazu geeignete <lb/>
+Apparatur wird angegeben und ihre Wirkungsweise <lb/>
+bei dem Gemisch Phenanthren-9-Brom-phenanthren <lb/>
+in Benzol beschrieben.<lb/></div>
+		</front>
+	</text>
+</tei>

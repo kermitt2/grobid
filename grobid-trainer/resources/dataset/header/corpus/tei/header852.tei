@@ -1,0 +1,20 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="unknown"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Information Gathering Plans With Sensing Actions <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Naveen Ashish and Craig A. Knoblock Alon Levy <lb/></docAuthor></byline>
+		<byline><affiliation>Information Sciences Institute and AT&amp;T Bell Laboratories <lb/>Department of Computer Science AI Principles Research Dept. <lb/></affiliation></byline>
+		<byline><affiliation>University of Southern California</affiliation></byline>
+		<address>600 Mountain Ave., Room 2A-440 <lb/>4676 Admiralty Way Murray Hill, NJ 07974 <lb/>Marina del Rey, CA 90292</address>
+		<email>levy@research.att.com <lb/></email> <email>fashish,knoblockg@isi.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>Information gathering agents can automate the task of retrieving and integrating data <lb/>from a large number of diverse information sources. The key issue in their performance is <lb/>efficient query planning that minimizes the number of information sources used to answer <lb/>a query. Previous work on query planning has considered generating information gathering <lb/>plans solely based on compile-time analysis of the query and the models of the information <lb/>sources. We argue that at compile-time it may not be possible to generate an efficient <lb/>plan for retrieving the requested information because of the large number of possibly <lb/>relevant sources. We describe an approach that naturally extends query planning to use <lb/>run-time information to optimize queries that involve many sources. First, we describe an <lb/>algorithm for generating a discrimination matrix, which is a data structure that identifies <lb/>the information that can be sensed at run-time to optimize a query plan. Next, we describe <lb/>how the discrimination matrix is used to decide which of the possible run-time sensing <lb/>actions to perform. Finally, we demonstrate that this approach yields significant savings <lb/>(over 90% for some queries) in a real-world task. <lb/></div>
+		<note type="grant">The first and second authors is supported in part by Rome Laboratory of the Air Force Systems Command <lb/>and the Advanced Research Projects Agency under contract no. F30602-94-C-0210, and in part by the National <lb/>Science Foundation under grant number IRI-9313993. The views and conclusions contained in this paper are the <lb/>author&apos;s and should not be interpreted as representing the official opinion or policy of ARPA, RL, NSF, AT&amp;T <lb/>Labs, or any person or agency connected with them. <lb/></note>
+		<pb/>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,25 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="192"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Eaton&apos;s Markov Chain, its Conjugate Partner <lb/>and P-admissibility <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>James P. Hobert <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Statistics <lb/>University of Florida <lb/></affiliation></byline>
+		<address>Gainesville, FL 32611 <lb/></address>
+		<email>jhobert@stat.ufl.edu <lb/></email>
+		<byline><docAuthor>C. P. Robert <lb/></docAuthor></byline>
+		<byline><affiliation>Laboratoire de Statistique <lb/>CREST, INSEE <lb/></affiliation></byline>
+		<address>75675 Paris cedex 14, France <lb/></address>
+		<email>robert@ensae.fr <lb/></email>
+		<date>August 1997 <lb/></date>
+		<note type="other">The first author acknowledges partial support from the Center for Research in Economics and <lb/>Statistics (CREST) at the French National Institute of Statistics and Economic Studies (INSEE), <lb/>Paris, France. <lb/></note>
+		<keywords type="classes">AMS 1991 subject classifications. Primary 62C15; secondary 60J05 <lb/></keywords>
+		<keywords>Key words and phrases. Bilinear model, Branching process with immigration, Exponential <lb/>family, Improper prior, Null recurrence, Random walk, Stochastic difference equation, Transience <lb/>Abbreviated title. Markov Chains and P-admissibility <lb/></keywords>
+		<pb/>
+		</front>
+</text>
+</tei>

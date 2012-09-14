@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="216"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Representation Requirements for Supporting <lb/>Decision Model Formulation <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Tze-Yun Leong <lb/></docAuthor></byline>
+		<byline><affiliation>MIT Laboratory for Computer Science <lb/></affiliation></byline>
+		<address>545 Technology Square, room 420 <lb/>Cambridge, MA 02139 <lb/></address>
+		<email>(leong@lcs.mit.edu) <lb/></email>
+		<div type="abstract">Abstract <lb/>This paper outlines a methodology for <lb/>analyzing the representational support <lb/>for knowledge-based decision-modeling <lb/>in a broad domain. A relevant set of inference <lb/>patterns and knowledge types are identified. <lb/>By comparing the analysis results to existing representations, some insights are gained <lb/>into a design approach for integrating categorical and uncertain knowledge in a context <lb/>sensitive manner. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

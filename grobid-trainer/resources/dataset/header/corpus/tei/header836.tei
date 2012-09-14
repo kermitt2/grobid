@@ -1,0 +1,19 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="unknown"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Storage of Two and Three Dimensional Raster Type Data for <lb/>Optimized Retrieval of One, Two or Three Dimensional Features <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Kjell Bratbergsengen <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Systems and Information Science <lb/>Norwegian University of Science and Technology,</affiliation></byline>
+		<address>Trondheim, Norway <lb/></address>
+		<email>email: kjellb@idi.ntnu.no <lb/></email>
+		<div type="abstract">Abstract <lb/>We are analyzing storage structures for two and three dimensional raster type data which are used <lb/>for feature retrieval. The features are one, two or three dimensional objects with regular outlines <lb/>like a rectangle or a prism. The features could be parts of a map or image, an area of special <lb/>interest for searching after oil, a sequence of ultra sound images, and so on. The storage medium <lb/>is magnetic disk. The data are stored in chunks or blocks representing a regular part of the source <lb/>object. We analyze the shape and the size to minimize the cost of retrieval. The optimization is <lb/>based on minimum time to do retrieval. We have five combinations: Lines and areas from areas and <lb/>volumes, and volumes from volumes. The optimal block sizes for random retrieval varies, with case, <lb/>feature size and disk characteristics. One general observation is that longer disk tracks gives larger <lb/>blocks. For line retrieval the optimal block size is only depending on disk track length. For other <lb/>cases it is also depending on the feature size. For partly sequential retrieval the block size is not the <lb/>actual block size used during retrieval, but the smallest addressing unit, and the optimal addressing <lb/>unit could be rather small. <lb/>The analysis reveals that using too small blocks could be very costly. The time could easily <lb/>double or triple if small blocks are used. In many cases the optimal block size is several tracks. <lb/></div>
+		<keywords>Keywords: storage and retrieval, matrix, optimization <lb/></keywords>
+		<div type="intro">1 Problem Introduction</div>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,16 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="186"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">PENALIZED LIKELIHOOD EMISSION IMAGE RECONSTRUCTION <lb/>WITH UNCERTAIN BOUNDARY INFORMATION <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Stephen R. Titus, Alfred O. Hero III, Jeffrey A. Fessler <lb/></docAuthor></byline>
+		<address>4401 EECS, University of Michigan, Ann Arbor, MI 48109 <lb/></address>
+		<div type="abstract">ABSTRACT <lb/>In this paper, a method is introduced for incorporating perfectly registered MRI boundary information into <lb/>a penalized likelihood emission reconstruction scheme. <lb/>The boundary curve is modeled as a periodic spline <lb/>whose coefficients are estimated from the MRI image. <lb/>The resulting boundary estimate is mapped to a spatially variant set of Gibbs weights. When incorporated into a quadratic roughness penalty, these weights <lb/>improve emission reconstruction bias/variance performance by preventing smoothing across the estimated <lb/>boundary. <lb/></div>
+		<div type="intro">1. INTRODUCTION</div>
+		</front>
+</text>
+</tei>

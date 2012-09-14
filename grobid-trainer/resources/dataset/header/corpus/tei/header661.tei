@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="663"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Distributed parallel shooting for BVODEs <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>K.L. Chow and W.H. Enright <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science, University of Toronto <lb/></affiliation></byline>
+		<email>E-mail : chow@cs.toronto.edu and </email> <email>enright@cs.toronto.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>Many important scientific problems can be formulated as systems of ordinary differential equations with two-point boundary value constraints (BVODE). Multiple shooting <lb/>is one of the most widely used numerical techniques for solving BVODE problems. <lb/>In this work, we present a new distributed parallel numerical algorithm for BVODEs <lb/>which is based on multiple shooting. We investigate the numerical stability of this <lb/>new distributed algorithm and identify difficulties that can arise. We propose a new <lb/>parallel iterative refinement scheme to cope with some specific numerical difficulties <lb/>identified in our investigation. Computational experience is presented to demonstrate <lb/>the potential effectiveness of our approach. <lb/></div>
+		<keywords>Keywords: Distributed parallel algorithm, boundary value problems, multiple shooting <lb/></keywords>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

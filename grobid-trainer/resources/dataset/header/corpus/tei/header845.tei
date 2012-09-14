@@ -1,0 +1,22 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="unknown"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">A Monotonic Measure for Optimal <lb/>Feature Selection <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Huan Liu 1 and Hiroshi Motoda 2 and Manoranjan Dash 3 <lb/></docAuthor></byline>
+		<byline><affiliation>1 Dept of Info Sys &amp; Comp Sci, National University of Singapore,</affiliation></byline>
+		<address>Singapore 119260. <lb/></address>
+		<byline><affiliation>2 Division of Intelligent Sys Sci, Osaka University,</affiliation></byline>
+		<address>Ibaraki, Osaka 567, Japan. <lb/></address>
+		<byline><affiliation>3 BioInformatics Centre, National University of Singapore,</affiliation></byline>
+		<address>Singapore 119074. <lb/></address>
+		<email>fliuh, manoranjg@iscs.nus.edu.sg </email> <email>motoda@sanken.osaka-u.ac.jp <lb/></email>
+		<div type="abstract">Abstract. Feature selection is a problem of choosing a subset of relevant <lb/>features. In general, only exhaustive search can bring about the optimal <lb/>subset. With a monotonic measure, exhaustive search can be avoided <lb/>without sacrificing optimality. Unfortunately, most error- or distance-based measures are not monotonic. A new measure is employed in this <lb/>work that is monotonic and fast to compute. The search for relevant <lb/>features according to this measure is guaranteed to be complete but not <lb/>exhaustive. Experiments are conducted for verification. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

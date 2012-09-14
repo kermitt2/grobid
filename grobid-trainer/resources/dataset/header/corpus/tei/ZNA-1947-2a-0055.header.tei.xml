@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="ZNA-1947-2a-0055"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Widerstandsnormale bei hohen Frequenzen<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Von HANS HEINRICH MEINKE<lb/></docAuthor>
+	</byline>
+
+	<reference>(Z. Naturforschg. 2 a, 55—59 [1947];</reference>
+
+	<note type="submission">aus Hamburg eingegangen am 3. Juli 1946)<lb/></note>
+
+	<div type="abstract">Als Widerstandsnormal wird der Wellenwiderstand einer Leitung benutzt, der in<lb/> einigen Fällen sehr genau berechnet und mit Genauigkeiten bis zu etwa 2°/00 praktisch<lb/> dargestellt werden kann. Ein Meßverfahren zum Abgleich nicht berechenbarer Wellen-<lb/>widerstände wird angegeben.<lb/></div>
+
+	<div type="introduction">D ie Einheit des Widerstandes ist bei Gleich-</div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,61 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005064"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<lb/>
+			
+			<reference>Science of Computer Programming 17 (1991) 3- 14<lb/></reference>
+			
+			<note type="other">Elsevier<lb/></note>
+			
+			<docTitle>
+				<titlePart>Automatic autoprojection of higher<lb/>
+					order recursive equations - -<lb/>
+				</titlePart>
+			</docTitle>
+			
+			<byline>
+				<docAuthor>
+					Anders Bondorf *
+				</docAuthor>
+			</byline>
+			
+			<byline>
+				<affiliation>DIK U, Department of Computer Science, University qf Copenhagen, </affiliation>	
+			</byline>
+			
+			<address>Vniversitetsparken 1.<lb/>DK-2100 Copenhagen @, Denmnrk<lb/></address>
+			
+			<note type="submission">
+				Communicated by N.D Jones<lb/>
+				Revised March ’ 991
+			</note>
+			
+			<reference>
+				Bondorf, A., Automatic autoprojqctior of higher order recursive equations, Science of Computer Programming 17 (1991) 3-34.
+			</reference>
+			
+			<div type="abstract">
+				Autoprojection, or self-applicable partial evaluation, has been implemented for first order func-<lb/>
+				tional languages for some years now. This paper descT:bes an approach to treat a higher order<lb/>
+				subset of the Scheme language. The system has been implemented as an extension to the existing<lb/>
+				autoprojector Similix [6,7] that treats a first order Scheme subset. To our knowledge, our system<lb/>
+				is the first fully automatic and implemented autoprojector for a higher order language.<lb/>
+				We describe a new automatic binding time analysis for higher order programs. The analysis<lb/>
+				requires no type information. It is based on a closure analysis [34], which for any application<lb/>
+				point finds the set of lambda abstractions that can possibly be applied at tnat point. The binding<lb/>
+				time analysis has the interesting property that no structured binding time values are needed.<lb/>
+				Since our language is higher order, interpreters written in a higher order style can be partially<lb/>
+				evaluated. To exemplify this, we present arid partially evaluate four versions of an interpreter for<lb/>
+				a lambda calculus language: one written in direct style, one written in continuation passing style,<lb/>
+				one implementing call-by-name reduction, and one implementing call-by-need reduction. The<lb/>
+				three latter interpreters are heavily based on higher order functions. To our knowledge, this is<lb/>
+				the first time autoprojection has been used to generate compilers from so sophisticated interpreters.<lb/>
+			</div>
+			
+		</front>
+	</text>
+</tei>

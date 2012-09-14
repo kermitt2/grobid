@@ -1,0 +1,25 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="ZFN-A-007-01-0141"/>
+	</teiHeader>
+	<text xml:lang="de">
+		<front>
+			<titlePage>
+				<docTitle>
+					<titlePart type="main">Eine Frage über die Rolle der quadratischen Metrik<lb/> 
+in der Physik<lb/></titlePart>
+				</docTitle>
+				<byline>Von <docAuthor>G. F. V.Weizsäcker</docAuthor><lb/></byline>
+				<byline><affiliation>Max-Planck-Institut für Physik</affiliation>, <address>Göttingen</address><lb/></byline>
+				<reference>(Z. Naturforschg. 7 a, 141 [1952]; </reference>
+				<note type="submission">eingegangen am 11. Sept. 1951)<lb/></note>
+				<note type="dedication">Werner H eis enh er g zum 50, Geburtstag<lb/></note>
+			</titlePage>
+			<div type="abstract">Es wird nach der Möglichkeit einer über H e 1 m - <lb/>
+h 011 z und Weyl hinausgehenden Begründung der <lb/>
+quadratischen Metrik gefragt, die auch die Metrik des <lb/>
+quantewürde. <lb/></div>
+			<div type="intro">Beim Versuch, fundamentale Naturgesetze aufzu- <lb/></div>
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,21 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="107"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Gap-Definable Counting Classes <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Stephen A. Fenner <lb/></docAuthor></byline>
+		<byline><affiliation>Computer Science Department <lb/>University of Southern Maine <lb/></affiliation></byline>
+		<address>96 Falmouth Street <lb/>Portland, Maine 04103 <lb/></address>
+		<byline><docAuthor>Lance J. Fortnow <lb/>Stuart A. Kurtz <lb/></docAuthor></byline>
+		<byline><affiliation>Computer Science Department <lb/>University of Chicago <lb/></affiliation></byline>
+		<address>1100 East Fifty-eighth Street <lb/>Chicago, Illinois 60637 <lb/></address>
+		<date>July 12, 1992 <lb/></date>
+		<note type="grant">Work done while the first author was a graduate student at the University of Chicago Computer Science Depart <lb/>ment, supported in part by a University of Chicago Fellowship. <lb/>Supported by NSF Grant CCR-9009936 <lb/></note>
+		<pb/>
+		</front>
+</text>
+</tei>

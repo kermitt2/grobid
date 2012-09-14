@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="ZFN-A-035-02-0244"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<titlePage>
+				<docTitle>
+					<titlePart type="main">The Change in the Pref actor Exponent with Valence<lb/>for Percolation in 3 and 4 Dimensions <lb/></titlePart>
+Imperial College,<lb/>Prince Consort Road, London SW 7 U.K.
+
+				</docTitle>
+				<byline><docAuthor>J. A. M. S. Duarte</docAuthor><lb/></byline>
+				<byline><affiliation>Solid State Group-Physics Department, Imperial College,<lb/></affiliation>, <address>Prince Consort Road, London SW 7 U.K.</address> <lb/></byline>
+                                <byline><docAuthor>and H. J. Ruskin</docAuthor><lb/></byline>
+                                <byline><affiliation>Metabolic Unit, Hunts House, Guy's Hospital, Medical School, <lb/></affiliation>, <address>London SEI, U.K.</address> <lb/></byline>
+				<reference>Z. Naturforsch. S5», 244—246 (1980); </reference>
+				<note type="submission">received November 18  1979 <lb/></note>
+			</titlePage>
+			<div type="abstract">The change of the prefactor exponent for restricted valence percolation in 3 and 4 dimensions <lb/>is shown to occur between valences 2 and 3 as in 2 dimensions. For valence 2 the exponent is <lb/>SAW-like and after the change it assumes the normal peroolative value for each dimension.<lb/></div>
+			<div type="intro">One of the specializations of percolation in recent <lb/></div>
+		</front>
+	</text>
+</tei>

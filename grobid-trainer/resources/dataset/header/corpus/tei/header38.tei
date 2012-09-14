@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="39"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Discovering Compressive Partial Determinations <lb/>in Mixed Numerical and Symbolic Domains <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Bernhard Pfahringer and Stefan Kramer <lb/></docAuthor></byline>
+		<byline><affiliation>Austrian Research Institute for Artificial Intelligence <lb/></affiliation></byline>
+		<address>Schottengasse 3 <lb/>A-1010 Vienna, Austria <lb/></address>
+		<email>fbernhard, stefang@ai.univie.ac.at <lb/></email>
+		<div type="abstract">Abstract <lb/>Partial determinations are an interesting <lb/>form of dependency between attributes in a <lb/>relation. They generalize functional dependencies by allowing exceptions. We modify a known MDL formula for evaluating <lb/>such partial determinations to allow for its <lb/>use in an admissible heuristic in exhaustive <lb/>search. Furthermore we describe an efficient <lb/>preprocessing-based approach for handling <lb/>numerical attributes. An empirical investigation tries to evaluate the viability of the <lb/>presented ideas. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

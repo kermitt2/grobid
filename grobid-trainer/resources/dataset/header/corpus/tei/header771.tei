@@ -1,0 +1,23 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="772"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Interconvertibility of Set Constraints and <lb/>Context-Free Language Reachability <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>David Melski Thomas Reps <lb/></docAuthor></byline>
+		<date>November 18, 1996 <lb/></date>
+		<div type="abstract">Abstract <lb/>We show the interconvertibility of context-free-language reachability problems and a class <lb/>of set-constraint problems: given a context-free-language reachability problem, we show how to <lb/>construct a set-constraint problem whose answer gives a solution to the reachability problem; <lb/>given a set-constraint problem, we show how to construct a context-free-language reachability <lb/>problem whose answer gives a solution to the set-constraint problem. The interconvertibility <lb/>of these two formalisms offers an conceptual advantage akin to the advantage gained from the <lb/>interconvertibility of finite-state automata and regular expressions in language theory, namely, <lb/>a problem can be formulated in whichever formalism is most natural. It also offers some insight into the &quot;O(n 3 ) bottleneck&quot; for different types of program-analysis problems, and allows <lb/>results previously obtained for context-free-language reachability problems to be applied to set <lb/>constraint problems. <lb/></div>
+		<byline><docAuthor>David Melski Thomas Reps <lb/></docAuthor></byline>
+		<byline><affiliation>Computer Sciences Department Computer Sciences Department <lb/>University of Wisconsin University of Wisconsin <lb/></affiliation></byline>
+		<address>1210 W. Dayton St. 1210 W. Dayton St. <lb/>Madison, WI 53706 Madison, WI 53706 <lb/></address>
+		<note type="phone">608/262-0016 608/262-2091 <lb/></note>
+		<email>melski@cs.wisc.edu</email>
+		<note type="phone">608/262-9777 (fax) <lb/></note>
+		<email>reps@cs.wisc.edu <lb/></email>
+		<pb/>
+		</front>
+</text>
+</tei>

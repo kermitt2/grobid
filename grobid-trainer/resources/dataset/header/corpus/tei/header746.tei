@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="747"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Non-Tree Routing <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Bernard A. McCoy and Gabriel Robins <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science, University of Virginia,</affiliation></byline>
+		<address>Charlottesville, VA 22903-2442 <lb/></address>
+		<note type="reference">Appeared in: IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems, <lb/>Vol. 14, No. 6, June 1995, pp. 780-784. <lb/></note>
+		<div type="abstract">Abstract <lb/>An implicit premise of existing routing methods is that the routing topology must correspond to a <lb/>tree (i.e., it does not contain cycles). In this paper we investigate the consequences of abandoning this <lb/>basic axiom, and instead we allow routing topologies that correspond to arbitrary graphs (i.e., where <lb/>cycles are allowed). We show that non-tree routing can significantly improve signal propagation delay, <lb/>reduce signal skew, and afford increased reliability with respect to open faults that may be caused by <lb/>manufacturing defects and electro-migration. Simulations on uniformly-distributed nets indicate that <lb/>depending on net size and technology parameters, our non-tree routing construction reduces maximum <lb/>sourse-sink SPICE delay by an average of up to 62%, and reduces signal skew by an average of up to <lb/>63%, as compared with Steiner routing. Moreover, up to 77% of the total wirelength in non-trees can <lb/>tolerate an open fault without disconnecting the circuit. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>a</marker>
+							<orgName type="department">Department for Molecular Hematology</orgName>,
+							<orgName type="institution">University of Frankfurt</orgName>,
+							<orgName type="department">Medical School</orgName>,
+							<address>
+								<addrLine>Theodor-Stern-Kai 7</addrLine>,
+								<settlement>Frankfurt am Main</settlement>,
+								<country>Germany</country>
+								<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>b</marker>
+							<orgName type="department">Center for Cardiovascular Research</orgName>,
+							<orgName type="institution">Charité</orgName>,
+							<orgName type="institution">University of Berlin</orgName>
+							<orgName type="department">Medical School</orgName>,
+							<address>
+								<settlement>Berlin</settlement>,
+								<country>Germany</country>
+								<lb/>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

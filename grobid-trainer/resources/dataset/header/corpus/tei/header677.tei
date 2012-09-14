@@ -1,0 +1,16 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="679"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Jade: A High-Level, Machine-Independent Language for Parallel <lb/>Programming <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Martin C. Rinard, Daniel J. Scales and Monica S. Lam <lb/></docAuthor></byline>
+		<byline><affiliation>Computer Systems Laboratory <lb/>Stanford University,</affiliation></byline>
+		<address>CA 94305 <lb/></address>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

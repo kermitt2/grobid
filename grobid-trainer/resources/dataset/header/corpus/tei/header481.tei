@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="484"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">RUNTIME SUPPORT FOR PORTABLE DISTRIBUTED DATA STRUCTURES <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Chih-Po Wen, Soumen Chakrabarti, Etienne Deprit, <lb/> Arvind Krishnamurthy, Katherine Yelick <lb/></docAuthor></byline>
+		<byline><affiliation>Computer Science Division, Department of EECS <lb/>University of California,</affiliation></byline>
+		<address>Berkeley, California 94720 <lb/> USA <lb/></address>
+		<div type="abstract">ABSTRACT <lb/>Multipol is a library of distributed data structures designed for irregular applications, including those with asynchronous communication patterns. In this paper, <lb/>we describe the Multipol runtime layer, which provides an efficient and portable abstraction underlying the data structures. It contains a thread system to express <lb/>computations with varying degrees of parallelism and to support multiple threads <lb/>per processor for hiding communication latency. To simplify programming in a mul-tithreaded environment, Multipol threads are small, finite-length computations that <lb/>are executed atomically. Rather than enforcing a single scheduling policy on threads, <lb/>users may write their own schedulers or choose one of the schedulers provided by <lb/>Multipol. The system is designed for distributed memory architectures and performs <lb/>communication optimizations such as message aggregation to improve efficiency on <lb/>machines with high communication startup overhead. The runtime system currently <lb/>runs on the Thinking Machines CM5, Intel Paragon, and IBM SP1, and is being <lb/>ported to a network of workstations. Multipol applications include an event-driven <lb/>timing simulator [1], an eigenvalue solver [2], and a program that solves the phylogeny <lb/>problem [3]. <lb/></div>
+		<div type="intro">1 INTRODUCTION</div>
+		</front>
+</text>
+</tei>

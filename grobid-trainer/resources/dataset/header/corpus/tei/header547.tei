@@ -1,0 +1,24 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="550"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<note type="submission">Submitted to the Future Generation Computer Systems special issue on Data Mining. <lb/></note>
+		<docTitle>
+			<titlePart type="main">Using Neural Networks for Data Mining <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Mark W. Craven <lb/></docAuthor></byline>
+		<byline><affiliation>School of Computer Science <lb/>Carnegie Mellon University <lb/></affiliation></byline>
+		<address>Pittsburgh, PA 15213-3891 <lb/></address>
+		<email>mark.craven@cs.cmu.edu <lb/></email>
+		<byline><docAuthor>Jude W. Shavlik <lb/></docAuthor></byline>
+		<byline><affiliation>Computer Sciences Department <lb/>University of Wisconsin-Madison <lb/></affiliation></byline>
+		<address>Madison, WI 53706-1685 <lb/></address>
+		<email>shavlik@cs.wisc.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>Neural networks have been successfully applied in a wide range of supervised and unsupervised learning applications. Neural-network methods are not commonly used for data-mining <lb/>tasks, however, because they often produce incomprehensible models and require long training <lb/>times. In this article, we describe neural-network learning algorithms that are able to produce <lb/>comprehensible models, and that do not require excessive training times. Specifically, we discuss <lb/>two classes of approaches for data mining with neural networks. The first type of approach, <lb/>often called rule extraction, involves extracting symbolic models from trained neural networks. <lb/>The second approach is to directly learn simple, easy-to-understand networks. We argue that, <lb/>given the current state of the art, neural-network methods deserve a place in the tool boxes of <lb/>data-mining specialists. <lb/></div>
+		<keywords>Keywords: machine learning, neural networks, rule extraction, comprehensible <lb/>models, decision trees, perceptrons <lb/></keywords>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

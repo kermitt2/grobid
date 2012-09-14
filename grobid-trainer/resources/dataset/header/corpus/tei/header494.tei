@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="497"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">The Interaction of Parallel and Sequential Workloads on a <lb/>Network of Workstations <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Remzi H. Arpaci, Andrea C. Dusseau, Amin M. Vahdat, <lb/>Lok T. Liu, Thomas E. Anderson, and David A. Patterson <lb/></docAuthor></byline>
+		<byline><affiliation>Computer Science Division <lb/>University of California, Berkeley <lb/></affiliation></byline>
+		<address>Berkeley, CA 94720 <lb/></address>
+		<div type="abstract">Abstract <lb/>This paper examines the plausibility of using a network of <lb/>workstations (NOW) for a mixture of parallel and sequential <lb/>jobs. Through simulations, our study examines issues that arise <lb/>when combining these two workloads on a single platform. Starting from a dedicated NOW just for parallel programs, we incrementally relax uniprogramming restrictions until we have a <lb/>multi-programmed, multi-user NOW for both interactive sequential users and parallel programs. We show that a number of issues <lb/>associated with the distributed NOW environment (e.g., daemon <lb/>activity, coscheduling skew) can have a small but noticeable effect on parallel program performance. We also find that efficient <lb/>migration to idle workstations is necessary to maintain acceptable parallel application performance. Furthermore, we present a <lb/>methodology for deriving an optimal delay time for recruiting idle <lb/>machines for use by parallel programs; this recruitment threshold <lb/>was just 3 minutes for the research cluster we measured. Finally, <lb/>we quantify the effects of the additional parallel load upon interactive users by keeping track of the potential number of user <lb/>delays in our simulations. When we limit the maximum number <lb/>of delays per user, we can still maintain acceptable parallel program performance. In summary, we find that for our workloads a <lb/>2:1 rule applies: a NOW cluster of approximately 60 machines can <lb/>sustain a 32-node parallel workload in addition to the sequential <lb/>load placed upon it by interactive users. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

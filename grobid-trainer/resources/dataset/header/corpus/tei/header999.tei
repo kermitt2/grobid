@@ -1,0 +1,25 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="1068"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+        <note type="submission">Confidential:  not for distribution. Submitted to IOP Publishing for peer review </note>
+        <date type="submission">19 March 2010<lb/></date>
+		<docTitle>
+			<titlePart type="main">   Statistical  hadronization phenomenology in  K/π<lb/>  fluctuations at ultra-relativistic energies <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>   Giorgio  Torrieri   a   ,Rene Bellwied   b   ,Christina Markert   c   ,Gary<lb/> Westfall   a,d<lb/></docAuthor></byline>
+		<byline><affiliation>   a   FIAS,  J.W. Goethe Universität, </affiliation></byline>
+		<address>Frankfurt A.M., Germany.<lb/></address>    
+		<byline><affiliation>   b   Wayne State University, </affiliation></byline>
+		<address>Detroit, Michigan 48201, USA<lb/></address>
+        <byline><affiliation> c   Texas A&amp;M University, </affiliation></byline>
+        <address>College Station, Texas 77843, USA<lb/></address>
+		<byline><affiliation>d   Michigan State University, </affiliation></byline>
+		<address>East Lansing, Michigan 48824, USA</address>
+		<note type="title">Statistical  hadronization phenomenology in  K/π  fluctuations at ultra-relativistic energies2<lb/></note>
+		<div type="abstract">    Abstract.  We  discuss the information that can be obtained from an analysis<lb/> of fluctuations in heavy ion collisions within the context of the statistical model<lb/> of particle production. We then examine the recently published experimental<lb/> data on ratio fluctuations, and use it to obtain constraints on the statistical<lb/> properties (physically relevant ensemble, degree of chemical equilibration, scaling<lb/> across energies and system sizes) and freeze-out dynamics (amount of reinteraction<lb/> between chemical and thermal freeze-out) of the system.<lb/></div>
+        </front>
+</text>
+</tei>

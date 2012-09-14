@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../jsp/xmlverbatimwrapper.xsl"?> 
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+ 	<!-- Blackett Lab., Imperial College, Univ. of London, London, England; -->
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<affiliation>
+								<orgName type="department">Blackett Lab.</orgName>,
+								<orgName type="institution" key="instit1">Imperial College</orgName>,
+								<orgName type="institution" key="instit2">Univ. of London</orgName>,
+								<address>
+									<settlement>London</settlement>,
+									<country key="GB">England</country>;
+								</address>
+							</affiliation>
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</TEI>
+					

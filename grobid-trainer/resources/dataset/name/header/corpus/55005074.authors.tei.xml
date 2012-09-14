@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.tei-c.org/ns/1.0"
+   xmlns:mml="http://www.w3.org/1998/Math/MathML">
+   <teiHeader>
+      <fileDesc>
+         <sourceDesc>
+            <biblStruct>
+               <analytic>
+                  <author>
+                     <persName>
+                        <forename>D</forename>. <surname>Georgiou</surname>, 
+					</persName>
+                     <persName>
+                        <forename>A</forename>. <surname>Laskarakis</surname>, 
+					</persName>
+                     <persName>
+                        <forename>C</forename>. <surname>Koidis</surname>
+                        <marker>*</marker>, 
+					</persName>
+                     <persName>
+                        <forename>N</forename>. <surname>Goktsis</surname>, and 
+					</persName>
+                     <persName>
+                        <forename>S</forename>. <surname>Logothetidis</surname>
+                     </persName>
+                  </author>
+               </analytic>
+            </biblStruct>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+</TEI>

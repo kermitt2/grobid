@@ -1,0 +1,30 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="1041"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Grouping synonyms by definitions <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Ingrid Falk  * <lb/></docAuthor></byline>
+		<byline><affiliation>INRIA / Université Nancy 2 <lb/></affiliation></byline>
+		<email>ingrid.falk @loria.fr <lb/></email>
+		<byline><docAuthor>Claire Gardent <lb/></docAuthor></byline>
+		<byline><affiliation>CNRS / LORIA,</affiliation></byline>
+		<address>Nancy <lb/></address>
+		<email>claire.gardent@loria.fr <lb/></email>
+		<byline><docAuthor>Evelyne Jacquey <lb/></docAuthor></byline>
+		<byline><affiliation>CNRS / ATILF,</affiliation></byline>
+		<address>Nancy <lb/></address>
+		<email>evelyne.jacquey@atilf.fr <lb/></email>
+		<byline><docAuthor>Fabienne Venant <lb/></docAuthor></byline>
+		<byline><affiliation>Université Nancy 2 / LORIA,</affiliation></byline>
+		<address>Nancy <lb/></address>
+		<email>fabienne.venant@loria.fr <lb/></email>
+		<div type="abstract">Abstract <lb/>  We present a method for grouping the synonyms <lb/> of a lemma according to its dictionary senses. <lb/> The senses are defined by a large machine read- <lb/> able dictionary for French, the TLFi (Trésor <lb/> de la langue française informatisé) and the syn- <lb/> onyms are given by 5 synonym dictionaries (also <lb/> for French). To evaluate the proposed method, <lb/> we manually constructed a gold standard where <lb/> for each (word, definition) pair and given the <lb/> set of synonyms defined for that word by the <lb/> 5 synonym dictionaries, 4 lexicographers speci- <lb/> fied the set of synonyms they judge adequate. <lb/> While inter-annotator agreement ranges on that <lb/> task from 67% to at best 88% depending on the <lb/> annotator pair and on the synonym dictionary <lb/> being considered, the automatic procedure we <lb/> propose scores a precision of 67% and a recall <lb/> of 71%. The proposed method is compared with <lb/> related work namely, word sense disambiguation, <lb/> synonym lexicon acquisition and WordNet con- <lb/> struction. <lb/></div>
+		<keywords>Keywords <lb/>  Similarity measures, Synonyms, Lexical Acquisition <lb/></keywords>
+		<div type="intro">1 Introduction <lb/></div>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="168"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">PIECEWISE LINEAR HOMOTOPIES AND <lb/>AFFINE VARIATIONAL INEQUALITIES <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>By <lb/>Menglin Cao <lb/></docAuthor></byline>
+		<note type="degree">A thesis submitted in partial fulfillment of the <lb/>requirements for the degree of <lb/>Doctor of Philosophy <lb/>(Computer Sciences) <lb/>at the <lb/></note>
+		<byline><affiliation>UNIVERSITY OF WISCONSIN - MADISON <lb/></affiliation></byline>
+		<date>1994 <lb/></date>
+		<pb/>
+		</front>
+</text>
+</tei>

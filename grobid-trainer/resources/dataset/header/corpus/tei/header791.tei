@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="792"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<byline><affiliation>Yale University <lb/>Department of Computer Science <lb/></affiliation></byline>
+		<docTitle>
+			<titlePart type="main">Dynamic Fault Diagnosis <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>William Hurwood <lb/></docAuthor></byline>
+		<idno>YALEU/DCS/TR-1056 <lb/></idno>
+		<date>December 1994 <lb/></date>
+		<pb/>
+		</front>
+</text>
+</tei>

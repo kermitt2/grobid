@@ -1,0 +1,35 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="ZFN-A-054-02-0146"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<titlePage>
+				<docTitle>
+					<titlePart type="main">Parasites and Pattern Formation<lb/></titlePart>
+				</docTitle>
+				<byline><docAuthor>J. Ackermann and T. Kimer</docAuthor><lb/></byline>
+				<byline><affiliation>InsdOite of Molecular Biotechnology (1MB), Department of Molecular Information Processing</affiliation>, <lb/></byline>
+				<byline><address>Beutenbergsu-.l 1. D-07745 Jena<lb/></address></byline>
+				<reference>Z. Naturforsch. 54 a, 146-152 (1999); </reference>
+				<note type="submission">received December 15, 1998<lb/></note>
+			</titlePage>
+			<div type="abstract">Biological informadon is coded in replicating molecules. To maintain a given amount of in- <lb/>
+formarion a cooperative interaction between diese molecules is essential. The main problem for <lb/>
+die stability of a system of prebiodc replicators are emerging parasites. Stabilization against such <lb/>
+parasites is possible if space is introduced in die model. Complex patterns like spiral waves and <lb/>
+self-replicating spot patterns have been shown to stabilize such systems. Stability of replicating <lb/>
+systems, however, occurs only in parameter regions were such complex patterns occur. We show <lb/>
+diat parasites are able to push such systems into a parameter region were life is possible. To <lb/>
+demonsUrate diis influence of parasites on such systems, we inu-oduce a parasitic species in die <lb/>
+Gray-Scott model. The growing concentradon of parasites will kill the system, and the cooperative <lb/>
+Gray-Scott system will be diluted out in a well mixed flow reactor. While considering space, in the <lb/>
+model stabilizing pattern formation in a narrow parameter region is possible. We demonstrate that <lb/>
+die concenüadon of the parasidc species is able to push die system into a region were stabihzing <lb/>
+patterns emerge. <lb/></div>
+			<keywords>Keywords: Pattern Formadon; Reaction-Diffusion; Molecular Evolution; Parasites; Coevoluuon; <lb/>
+Cooperation. <lb/></keywords>
+			<div type="intro">1. Introduction<lb/></div>
+		</front>
+	</text>
+</tei>

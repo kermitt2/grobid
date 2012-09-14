@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>a</marker>
+							<orgName type="laboratory">Laboratory of Chemical and Environmental Engineering (LEQUIA)</orgName>,
+							<orgName type="department">Institute of the Environment</orgName>,
+							<orgName type="institution">University of Girona</orgName>,
+							<address>
+								<addrLine>Campus Montilivi s/n</addrLine>,
+								<addrLine>Facultat de Ciències</addrLine>,<lb/>
+								<postCode>E-17071</postCode>
+								<settlement>Girona</settlement>,
+								<region>Catalonia</region>,
+								<country>Spain</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>b</marker>
+							<orgName type="laboratory">Laboratory of Molecular Microbial Ecology</orgName>,
+							<orgName type="department">Institute of Aquatic Ecology</orgName>,
+							<orgName type="institution">University of Girona</orgName>,
+							<address>
+								<addrLine>Campus Montilivi s/n</addrLine>,
+								<postCode>E-17071</postCode>
+								<settlement>Girona</settlement>,
+								<region>Catalonia</region>,
+								<country>Spain</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

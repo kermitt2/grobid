@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../jsp/xmlverbatimwrapper.xsl"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink"
+        xmlns:mml="http://www.w3.org/1998/Math/MathML">
+    <!-- Department of Chemistry and Biochemistry, Miami University Oxford, OH -->
+    <teiHeader xml:lang="en">
+        <fileDesc>
+            <sourceDesc>
+                <biblStruct>
+                    <analytic>
+                        <author>
+							<affiliation>
+								<orgName type="department">Department of Chemistry and Biochemistry</orgName>,
+								<orgName type="institution">Miami University</orgName>
+								<address>
+									<settlement>Oxford</settlement>,
+                                    <region type="state">OH</region>;
+								</address>
+							</affiliation>
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</TEI>

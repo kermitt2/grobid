@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<nite:root nite:id="WO2007038122.HC.substance-names" xmlns:nite="http://nite.sourceforge.net/">
+   <substance-name nite:id="WO2007038122.HC.substance-names.2" comment="" name="bovine serum albumin" relevant="false" chebi-id="WO2007038122:498158" epochem-id="EPOCHEM:NEW:SUBSTANCE:251">
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2621)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2620)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2622)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038122.HC.substance-names.3" comment="" name="BSA" relevant="false" chebi-id="WO2007038122:617726" epochem-id="EPOCHEM:NEW:SUBSTANCE:252">
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_2624)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007038122.HC.substance-names.4" comment="" name="lipopolysaccharide O" relevant="false" chebi-id="WO2007038122:966244" epochem-id="EPOCHEM:NEW:SUBSTANCE:253">
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1052)"/>
+      <nite:child href="WO2007038122.words.xml#id(WO2007038122_w_1051)"/>
+   </substance-name>
+</nite:root>

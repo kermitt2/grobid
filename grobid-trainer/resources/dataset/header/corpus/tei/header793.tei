@@ -1,0 +1,22 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="794"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Facilitating Worst-Case Execution Times Analysis for Optimized Code <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Jakob Engblom 1 Andreas Ermedahl 1 Peter Altenbernd 2 <lb/></docAuthor></byline>
+		<email>1 {jakob,ebbe}@docs.uu.se,</email>
+		<byline><affiliation>Department of Computer Systems (DoCS), <lb/>Uppsala University,</affiliation></byline>
+		<address>P.O. Box 325, S-751 05 Uppsala, Sweden,</address>
+		<note type="phone">Fax: +46-(0)18-550225 <lb/></note>
+		<email>2 peter@c-lab.de,</email>
+		<byline><affiliation>C-LAB,</affiliation></byline>
+		<address>D-33094 Paderborn, Germany <lb/></address>
+		<div type="abstract">Abstract <lb/>In this paper we present co-transformation, a novel approach to the mapping of execution information from the <lb/>source code of a program to the object code for the purpose of worst-case execution time (WCET) analysis. Our <lb/>approach is designed to handle the problems introduced by <lb/>optimizing compilers, i.e. that the structure of the object <lb/>code is very different from the structure of the source code. <lb/>The co-transformer allows us to keep track of how different compiler transformations, including optimizations, influence the execution time of a program. This allows us to <lb/>statically calculate the execution time of a program at the <lb/>object code level, using information about the program execution obtained at the source code level. <lb/></div>
+		<div type="intro">1. Introduction</div>
+		</front>
+</text>
+</tei>

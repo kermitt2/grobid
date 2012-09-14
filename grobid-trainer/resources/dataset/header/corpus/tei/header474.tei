@@ -1,0 +1,22 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="477"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<note type="other">Draft 16</note>
+		<date>Nov 94</date>
+		<note type="reference">- 1 - To appear IEEE MICRO Feb 1995 <lb/></note>
+		<docTitle>
+			<titlePart type="main">Myrinet - A Gigabit-per-Second Local-Area Network <lb/></titlePart>
+		</docTitle>
+		<note type="other">(Based on a keynote talk presented by Charles L. Seitz) <lb/></note>
+		<byline><docAuthor>Nanette J. Boden, Danny Cohen, Robert E. Felderman, <lb/>Alan E. Kulawik, Charles L. Seitz, Jakov N. Seizovic, and Wen-King Su <lb/></docAuthor></byline>
+		<byline><affiliation>Myricom, Inc. <lb/></affiliation></byline>
+		<address>325 N. Santa Anita Ave. <lb/>Arcadia, CA 91006 <lb/></address>
+		<ptr type="web">(http://www.myri.com) <lb/></ptr>
+		<div type="abstract">Abstract. Myrinet is a new type of local-area network (LAN) based on the <lb/>technology used for packet communication and switching within &quot;massively-parallel processors&quot; (MPPs). Think of Myrinet as an MPP message-passing <lb/>network that can span campus dimensions, rather than as a wide-area <lb/>telecommunications network that is operating in close quarters. The <lb/>technical steps toward making Myrinet a reality included the development <lb/>of (1) robust, 25m communication channels with flow control, packet <lb/>framing, and error control; (2) self-initializing, low-latency, cut-through <lb/>switches; (3) host interfaces that can map the network, select routes, and <lb/>translate from network addresses to routes, as well as handle packet traffic; <lb/>and (4) streamlined host software that allows direct communication <lb/>between user processes and the network. <lb/></div>
+		<div type="intro">Background.</div>
+		</front>
+</text>
+</tei>

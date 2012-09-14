@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="398"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Regression shrinkage and selection via the lasso * <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Robert Tibshirani <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Statistics <lb/>and <lb/>Division of Biostatistics <lb/>Stanford University <lb/></affiliation></byline>
+		<div type="abstract">Abstract <lb/>We propose a new method for estimation in linear models. The &quot;lasso&quot; <lb/>minimizes the residual sum of squares subject to the sum of the absolute <lb/>value of the coefficients being less than a constant. Because of the nature <lb/>of this constraint it tends to produce some coefficients that are exactly zero <lb/>and hence gives interpretable models. Our simulation studies suggest that <lb/>the lasso enjoys some of the favourable properties of both subset selection <lb/>and ridge regression. It produces interpretable models like subset selection <lb/>and exhibits the stability of ridge regression. There is also an interesting <lb/>relationship with recent work in adaptive function estimation by Donoho <lb/>and Johnstone. The lasso idea is quite general and can be applied in a <lb/>variety of statistical models: extensions to generalized regression models <lb/>and tree-based models are briefly described. <lb/></div>
+		<keywords>Keywords: regression, subset selection, shrinkage, quadratic programming. <lb/></keywords>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

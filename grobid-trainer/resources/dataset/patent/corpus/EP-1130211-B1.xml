@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<patent-document status="new" lang="EN" ucid="EP-1130211-B1" country="EP" doc-number="1130211" kind="B1" date="20040428"><bibliographic-data><publication-reference fvid="23211093" ucid="EP-1130211-B1" status="new"><document-id status="new" format="original"><country>EP</country><doc-number>1130211</doc-number><kind>B1</kind><date>20040428</date><lang>EN</lang></document-id></publication-reference><application-reference ucid="EP-01500031-A" status="new" is-representative="NO"><document-id format="epo" status="new"><country>EP</country><doc-number>01500031</doc-number><kind>A</kind><date>20010201</date><lang>ES</lang></document-id></application-reference><priority-claims status="new"><priority-claim ucid="ES-200000222-A" status="new"><document-id format="epo" status="new"><country>ES</country><doc-number>200000222</doc-number><kind>A</kind><date>20000202</date></document-id></priority-claim></priority-claims><dates-of-public-availability status="new" /><term-of-grant /><technical-data status="new"><classifications-ipcr><classification-ipcr status="new">E06B   9/28        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">E06B   9/322       20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">E06B   9/80        20060101A N20051008RMEP        </classification-ipcr><classification-ipcr status="new">E06B   9/80        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">E06B   9/88        20060101A I20051008RMEP        </classification-ipcr></classifications-ipcr><classification-ecla status="new"><classification-symbol scheme="EC">E06B9/322</classification-symbol><classification-symbol scheme="EC">E06B9/88</classification-symbol></classification-ecla><invention-title lang="DE" status="new">Motorisierte Antriebsvorrichtung von beweglichen Einrichtungen wie Rollos od.dgl. und Methode zur Bedienung</invention-title><invention-title lang="EN" status="new">Motor-reducing device for winding blinds and awnings and method of operation</invention-title><invention-title lang="FR" status="new">Dispositif d'entraînement pour volets roulant, jalousies ou autres semblables et méthode d'opération.</invention-title><citations /><figures /></technical-data><parties><applicants><applicant format="epo" status="new"><addressbook><name>VILAPLANA LAURI SONIA</name><address><country>ES</country></address></addressbook></applicant><applicant format="intermediate" status="new"><addressbook><name>VILAPLANA LAURI, SONIA</name><address><country /></address></addressbook></applicant></applicants><inventors><inventor format="epo" status="new"><addressbook><name>VICENTE MARTIN PINA</name><address><country>ES</country></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>VICENTE MARTIN, PINA</name><address><country /></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>VICENTE MARTIN, PINA</last-name><address><street>Tibi, 8 - 3 C</street><city>03440 Ibi, Alicante</city><country>ES</country></address></addressbook></inventor></inventors><assignees><assignee format="original" status="new"><addressbook><last-name>Vilaplana Lauri, Sonia</last-name><address><street>Tibi, 8</street><city>03440 Ibi, Alicante</city><country>ES</country></address></addressbook></assignee></assignees><agents><agent format="original" status="new"><addressbook><last-name>Del Santo Abril, Natividad</last-name><address><street>Oficina Garcia Cabrerizo, S.L., Vitruvio, 23</street><city>28006 Madrid</city><country>ES</country></address></addressbook></agent></agents></parties><international-convention-data><designated-states><ep-contracting-states><country>DE</country><country>FR</country><country>GR</country><country>IT</country><country>MC</country><country>PT</country></ep-contracting-states></designated-states></international-convention-data></bibliographic-data><abstract lang="EN" source="EPO" status="new"><p>Consisting of an external tube (3) inside which an electric motor (14) is installed which acts through an electro-brake (13) and a planetary reducer (15) on a matrix ferrule (4) which is coupled to the inside of a polygonal drum (17) to which it transmits its movement, and in which the winding up/down of a blind or awning (18) takes place, its position being controlled by a linear potentiometer (16) joined to a prisoner nut (10) that can travel longitudinally in both directions with respect to a threaded rod (19) that is solidary with a toothed wheel (7) that is geared by the inside of a control ferrule (2) which received the movement from the polygonal drum (17) to the inside of which it is coupled. A printed circuit (11) memorises the extreme raising/lowering positions of the first operations carried out after having activated a restoration microswitch (5). &lt;IMAGE&gt;</p></abstract><abstract lang="EN" status="new"><p num="">Consisting of an external tube (3) inside which an
+electric motor (14) is installed which acts through an
+electro-brake (13) and a planetary reducer (15) on a
+matrix ferrule (4) which is coupled to the inside of a
+polygonal drum (17) to which it transmits its movement,
+and in which the winding up/down of a blind or awning
+(18) takes place, its position being controlled by a
+linear potentiometer (16) joined to a prisoner nut (10)
+that can travel longitudinally in both directions with
+respect to a threaded rod (19) that is solidary with a
+toothed wheel (7) that is geared by the inside of a
+control ferrule (2) which received the movement from the
+polygonal drum (17) to the inside of which it is coupled.
+A printed circuit (11) memorises the extreme
+raising/lowering positions of the first operations
+carried out after having activated a restoration microswitch
+(5).
+<img file="00000001.tif" id="img-EP-1130782-A2-00000001" he="92" wi="162" img-format="tif" img-content="ad" orientation="unknown" inline="no" /></p></abstract><description lang="EN" status="new"><p num="0001">This invention refers to an electronic system for 
+the adjustment of stops and start-up of blind and awning 
+automatic winding motor-reducers and more specifically to a motor-reducing device for winding blinds and awnings as to a method of operation. The adjustment of the 
+maximum stops for lowering and raising is carried out by 
+means of an electronic plate controlled by a micro-processor 
+with a single pressing action in each sense, 
+from the final users control mechanism. The system is 
+capable of adjusting the stops in such a way that cannot 
+be cancelled from the control used by the final user. </p><p num="0002">There are adjustment systems that operate 
+mechanically on the motor-reducer itself, which have 
+serious disadvantages, such as the lack of space and the 
+use of additional tools, which makes adjustment 
+difficult. </p><p num="0003">German patent <ref type="patent">DE-A-4038923</ref> describes a motorization 
+for blind winders that uses a prisoner nut to activate 
+two extreme position stops. The stops are also installed 
+on prisoner nuts so that their position can be altered by 
+turning the'screws on which they are mounted. This system 
+has two serious problems: on the one hand, the linear 
+movement of the prisoner nut has to be transmitted to the 
+opposite side of the motor-reducer device, which is 
+performed by a flat metal strip that occupies space and 
+restricts the size of the activation motor; and, on the 
+other hand, the prisoner nut cannot move a great distance 
+and because the micro-switches that are the extreme stops 
+are relatively large, the assembly lacks prevision. It is 
+also a totally mechanical device, subject to 
+maladjustment and wear, and consequently to faults. </p><p num="0004">A considerable improvement on the previous system is 
+the device described in US patent <ref type="patent">US-A-5.709.349</ref>. In this case 
+the transmission of the linear movement of the prisoner  
+ 
+bolt and the micro-switches that are the extreme stops 
+have been eliminated. Instead, the mechanical blocking of 
+a prisoner nut is used to produce an overload for the 
+motor, which is detected by an electronic circuit. The 
+system is more reliable from a mechanical viewpoint, but 
+it implies the use of a costly electronic circuit to 
+detect the motor overload. Adjustment is made by turning 
+the casing that contains the prisoner nut, which is not 
+very convenient. </p><p num="0005">A further step in the development of mechanically 
+controlled motor-reducers is the device described in 
+document <ref type="patent">EP-A-0 940 552</ref>. Here, the concept of interrupting 
+the electric supply to the motor when the blind has 
+reached its extreme positions has disappeared. Instead, 
+it presents mechanical clutches that allow the motor to 
+run in a vacuum, when the blind reaches the end of its 
+path or meets with an obstacle on the way. This device 
+has the least electric complication with the greatest 
+mechanical complication. Although on paper it is very 
+attractive, its reliability over time is to be doubted. </p><p num="0006">In view of the serious problems presented by 
+mechanically controlled motor-reducer systems, there have 
+been different attempts to use electronic controls of 
+different kinds: document <ref type="patent">EP-A-0 552 459</ref> describes the use 
+of virtual electronic stops by the use of an electronic 
+control device in programming mode. The position of blind 
+is determined by an impulse counter. The impulses are 
+generated by a fixed Reed relay and numerous permanent 
+magnets around the blind's winding drum. The control 
+device has a programming mode and an operating mode and, 
+consequently, the possibility of the final consumer 
+acting on the motor-reducer is perfectly accessible, 
+which is in no case convenient. </p><p num="0007">Along this line of electronic motor-reducer control, 
+the device described in document <ref type="patent">US-A-5.540.264</ref> is possibly  
+ 
+one of the most sophisticated systems. Here the impulse 
+counter is abandoned and replaced with a series of 
+inductive end stops, the position of which on the side 
+guides of the blind is adjustable, and which are 
+activated by permanent magnets on the' end of the blind. A 
+linear inductive sensor, positioned along one of the side 
+guides of the blind, produces an electro-driving force in 
+proportion to its speed. Thus, there is total control 
+over the movement of the blind, eliminating the impulse 
+counter, in exchange for complex external wiring, which 
+makes the system inappropriate for motorising existing 
+installations. </p><p num="0008"><ref type="patent">DE-A-4 333 996</ref> describes a device provided with regulation potentiometers disposed in a remote control panel, adjacent to directional switches. </p><p num="0009">Other motor-reducers in which the adjustment is 
+carried our from the final user's control mechanism work 
+in the following way: 
+<ul list-style="bullet"><li>Press the control mechanism levers at the same time 
+for more than 15 seconds (this operation automatically 
+cancels previous adjustments). </li><li>Release the levers. </li><li>Press the raising lever and keep it pressed until the 
+blind is in the desired position. </li><li>Release the lever. </li><li>Press both levers at the same time for more than one 
+second. Release the lowering lever, keeping the 
+raising lever pressed for more than one second. This 
+operation memorises the upper stop limit. </li><li>Press the lowering lever and keep it pressed until the 
+blind is in the desired position. </li><li>Release the lever. </li><li>Press both levers at the same time for more than one 
+second. Release the raising lever, keeping the 
+lowering lever pressed for more than one second. This 
+operations memorises the lower stop limit. </li></ul></p><p num="0010">This system has a series of disadvantages, such as 
+the fact that it is complicated, slow, and the stops can  
+ 
+be cancelled by the final user's control mechanism. This 
+can be very dangerous, because if a piece of furniture or 
+any other object accidentally presses the control levers, 
+the system would be out of control. This system also 
+requires the use of an independent two-lever control 
+device, which is more costly that opposite double-lever 
+controls. </p><p num="0011">The motor-reducing device according to claim 1 and the related method of operation according to claim 2 
+solve the disadvantages previously described, 
+providing total control over the movement of the blind, 
+but with adjustment operations independent from the final 
+user's control operations. </p><p num="0012">The motor-reducing device that is the object of this 
+invention incorporates a linear potentiometer that is an 
+electric, virtual representation of the blind's position. 
+This potentiometer is activated by a prisoner nut that 
+receives the movement from a polygonal control ferrule 
+adjusted to the inside of the blind drum, which in turn 
+receives the movement from a matrix ferrule activated by 
+an electric motor and a planetary reducer. This allows 
+the matrix ferrule and the control ferrule to be 
+positioned on opposite ends of the motor-reducing device, 
+since the drum of the blind is used as the element that 
+solidarises both ferrules. In this way, practically all 
+the interior volume of the drum of the blind is used, 
+which allows us to use larger components, gaining 
+manoeuvring power and adjustment precision. </p><p num="0013">On the same end where the control ferrule is 
+positioned, there is a restoration micro-switch, easily 
+accessible from outside the motor-reducing device, but 
+which can not be manipulated by the final user during 
+normal operations. </p><p num="0014">With the device that is the object of this 
+invention, the adjustment operation is simplified as 
+follows:  <ul list-style="bullet"><li>We press and release the restoration micro-switch. </li><li>We press and release the raising or lowering control 
+lever, depending on which of the stops we wish to 
+memorise. </li><li>When we reach the desired stop position, we press 
+either of the levers. The end position for raising or 
+lowering is memorised. </li></ul></p><p num="0015">Consequently, the memorisation of the two upper and 
+lower stops is carried out automatically in the two 
+operations that immediately follow pressing the 
+restoration micro-switch. </p><p num="0016">The device that is the object of this invention 
+ensures, by means of the micro-processor, protection 
+against possible accident during domestic use: 
+<ul list-style="bullet"><li>Detection of the motor-reducer failing to turn, which 
+could be brought about by overloads or blockage. </li><li>Detection of the motor overheating, by means of a heat 
+relay. </li></ul></p><p num="0017">The motor-reducing device that is the object of this 
+invention ensures the availability of: 
+<ul list-style="bullet"><li>A compact motor-reducing device, fully assembled, 
+ready to install, that only requires being introduced 
+inside the drum of the blind and connected to the 
+electric supply. </li><li>A motor-reducing device with extremely simple and 
+easy-to-control adjustment operations. </li><li>A motor-reducing device for which the adjustment 
+operations can not be modified in an untimely manner 
+by the final user. </li></ul></p><p num="0018">To complete the previous description and with a view 
+to providing a better understanding of the 
+characteristics of the invention, following is a detailed 
+description based on a set of drawings that are attached 
+to this description, where the following has been 
+represented (orientatively, without limitation) :  <sl><li>Figure 1 shows a side section view of the device 
+that is the object of the invention. </li><li>Figure 2 shows an upper section view of the device 
+that is the object of the invention. </li><li>Figure 3 shows a III-III transversal section 
+following the transmission of the movement from the 
+control ferrule to the prisoner nut. </li><li>Figure 4 shows a IV-IV transversal section in which 
+we see the transmission of the movement from the prisoner 
+nut to the sliding potentiometer. </li><li>Figure 5 shows a V-V transversal section in which we 
+see the recurring position of the planetary reducer and 
+the coupling of the matrix ferrule to the inside of the 
+drum of the blind. </li><li>Figure 6 shows the printed circuit electric diagram 
+that contains the sliding potentiometer and the micro-processor. </li></sl></p><p num="0019">In these figures, the numerical references 
+correspond to: 
+<sl><li>1.- Motor-reducer support </li><li>2.- Control ferrule </li><li>3.- Exterior tube </li><li>4.- Matrix ferrule </li><li>5.- Restoration micro-switch </li><li>6.- External support of the printed circuit and threaded 
+rod </li><li>7.- Gearing that activates the threaded rod </li><li>9.- Internal support of the printed circuit and threaded 
+rod </li><li>10.- Prisoner nut </li><li>11.- Printed circuit </li><li>12.- Motor starter condenser </li><li>13.- Electro-brake </li><li>14.- Alternate current motor </li><li>15.- Planetary reducer  </li><li>16.- Potentiometer </li><li>17.- Winding drum </li><li>18.- Blind </li><li>19.- Threaded rod </li><li>20.- Control button </li><li>21.- Support guides for the prisoner nut </li><li>22.- Stabilising circuit </li><li>23.- Support for prisoner nut </li><li>24.- Micro-processor </li><li>25.- Planetary gearing </li><li>27.- Central pinion </li><li>29.- Toothed crown </li><li>33.- ADC converter </li></sl></p><p num="0020">As can be seen from figures 1 and 2, inside the drum 
+(17) in which the blind is rolled, a tube (3) is 
+introduced, inside which the entire motor-reducing device 
+is positioned. This device consists of an electric motor 
+(14) coupled to a planetary reducer (15) which transmits 
+the movement to driving matrix (4) which is able to 
+revolve around the fixed external tube (3), and is 
+therefore liable to be coupled to the inside of the drum 
+(17) in which the blind (18) is rolled. The control 
+ferrule (2) has internal teeth that links to a gearing 
+(17) which is solidary with a threaded rod (19) liable to 
+cause the movement of a prisoner nut (10), which is 
+lodged in a prisoner nut support (23) and slides along 
+two guides (21), transmitting the movement to a linear 
+potentiometer (16) which thus constitutes an electric 
+representation of the physical position of the blind. A 
+restoration micro-switch (5) is fixed to an external 
+printed circuit and threaded rod support (6), and this 
+end of the device is covered by the motor-reducer support 
+(1), solidary with the external tube (3) which 
+immobilised this assembly but allows the control ferrule 
+(2) and the matrix ferrule (4) to turn freely.  </p><p num="0021">Two printed circuit and threaded rod supports (6) 
+(9) are used for the assembly of the above mentioned 
+items, made up of two metal plates, one of which also 
+acts as an earthing connection, joining the printed 
+circuit (11) on which the linear potentiometer (16) is 
+installed to the external tube (3). On the internal 
+printed circuit and threaded rod support (9) the electric 
+motor (14) starter condenser (12) is installed. The 
+external printed circuit and threaded rod support (6) 
+fastens the restoration micro-switch (5) to the motor-reducer, 
+also preventing the threaded rod activating 
+mechanism (7) from moving out of place. </p><p num="0022">As can be seen from figures 1 and 5, the 
+conventional design planetary reducer (15) has three 
+recurring stages, of a similar structure, to attain 
+global reduction of 150:1. Each of the stages consists of 
+three planetary gearings (25) moved by a central pinion 
+(27), which in turn revolve on a toothed crown (29) 
+attached to the external tube (3) which is the casing for 
+the motor-reducing device assembly that is the object of 
+the invention. This circular movement of the shafts of 
+the planetary gearings (25) is transmitted to the 
+following central pinion (27) which links to the 
+planetary gearings for the following stage. The matrix 
+ferrule (4) is solidary with the shafts on which the 
+planetary gearings (25) for the third and final stage are 
+mounted. </p><p num="0023">Both the electric motor (14) and the electro-brake 
+(13) are conventional and any of those available on the 
+market can be used, with the only condition that they 
+adjust as well as possible to the diameter of the 
+external tube (3). </p><p num="0024">The printed circuit (11) contains a source of 
+supply, a stabilising circuit and a micro-processor 
+detection and control circuit. See figure 6.  </p><p num="0025">The source of supply is capable of generating 
+sufficient voltage and current to support the entire 
+electronic system. The different components used in the 
+source of supply establish a current that will always 
+circulate through the circuit. Both the resistances R1, 
+R2, the condenser C1 and the diodes D1, D2, D3 and D4 are 
+in charge of this function. Resistances R3 and R4 are for 
+discharging the condenser C1 if there is no input 
+current. </p><p num="0026">The stabilising circuit consists of condenser C2. 
+Condenser C3 is made of polyester and rather than to 
+stabilise the voltage it is used to avoid possible high 
+frequency alterations. At this point of the circuit we 
+will have a maximum stable voltage of 15 V. A 
+conventional stabilising circuit (22) of the &quot;7805&quot; type 
+stabilises the voltage at 5 V, and together with 
+condenser C4, it avoids small signal alterations. </p><p num="0027">In the micro-processor detection and control 
+circuit, from a stable voltage like we have now we will 
+feed the ADC converter (analogic-digital converter) (33), 
+the micro-processor and the linear potentiometer (16) 
+which will give us the electric signal that is the 
+reflection of the physical position of the blind. The ADC 
+converter (33), taking into account the live value of the 
+linear potentiometer (16), generates an output 
+combination which the micro-processor (24) collects. 
+Three levers are in charge of controlling the entire 
+system. Marked as P1 and P3 in figure 6, these correspond 
+to the control lever (20) and P2 corresponds to the 
+restoration micro-switch (5). As can be seen on the 
+drawing, there is a union between the input to lever P2 
+and the pin WR of the ADC converter (33). This is due to 
+the fact that the microprocessor (24) will at times act 
+as input and at others as output, providing a signal to 
+activate the internal register of the ADC converter (33).  
+ 
+Resistances R7 and R8 are microprocessor outlets (24) 
+with activate transistors T1 and T2. These in tun 
+activate relays REL1 and REL2, respectively. Each relay 
+is in charge of activating the motor in one sense or the 
+other. In this system there is a small current absorption 
+system. When one of the relays works, consumption is 
+correct and therefore none of the components of the 
+source of supply become heated. When no relay is 
+functioning, the diodes of the source of supply could 
+burn (not if they are of the right power rating). To 
+avoid this, and for safety purposes, a system of T3 and 
+T4 is installed, activated by resistances R6 and R15, 
+which will work when no relay is functioning. They will 
+thus drive the current through resistance R16, which will 
+emulate the consumption of the relay. </p><p num="0028">One of the advantages of this system is the 
+possibility of using, to manoeuvre the motor-reducing 
+device, any of the dual control levers available on the 
+market, since the electronic system is capable of 
+absorbing an incorrect pressing or a double pressing. In 
+a preferred embodiment, we have decided to use a SIMON 
+ref. 31331-30 double control and its accessories, which 
+is perfectly integrated in the style of electric switches 
+used in homes and offices. </p><p num="0029">In the sample embodiment we have used an ADC 
+converter (33) of the AD 0803/4-1 type, from PHILIPS 
+SEMICONDUTORS and a micro-processor (24) of the PIC 16FBX 
+type marketed by MICROCHIP TECHNOLOGY INC. </p><p num="0030">The motor-reducing device that is the object of the 
+invention works as follows: </p><p num="0031">When the raising lever of the control mechanism (20) 
+is released after being pressed, this simultaneously 
+activates the electro-brake (13) and the motor (14) and 
+the motor (14) will transmit the movement to the 
+planetary reducer (15) which will turn the matrix ferrule  
+ 
+(4). In turn, the matrix ferrule (4) makes the drum (17) 
+turn that rolls the blind or awning (18), which transmits 
+the movement to the control ferrule (2). The control 
+ferrule (2) has internal teeth that makes the threaded 
+rod activator gearing (7) turn. This gearing and the 
+threaded rod (19) are solidary. The prisoner nut (10) 
+moves sideways in one direction or the other depending on 
+the direction in which the motor (14) is turning, moving 
+the linear potentiometer (16) mounted on the printed 
+circuit (11) where the signal adapter components are. 
+Thus the entire system moves until either of the two 
+levers on the control mechanism (26) are pressed, when 
+the upper extreme position will be memorised. If we later 
+attempted to raise the blind further, the manoeuvre would 
+not be possible, since the upper stop has been recorded. </p><p num="0032">When the lowering lever is released after being 
+pressed, all the above will happen as described, but 
+turning in the opposite direction, and therefore 
+recording the lower stop. From that moment, the mechanism 
+is adjusted and we can proceed to use it normally. We can 
+also stop the motor-reducer at any point that we wish 
+between both stops, proceeding as previously described, 
+but in this case these intermediate positions are not 
+memorised. </p><p num="0033">As for the industrial application of the device that 
+is the object of this invention, the motor-reducer will 
+be presented as a compact assembly fully mounted inside 
+the external tube (3) liable to be fixed to a wall by its 
+solidary support (1). See figure 1. From this compact 
+assembly the only projections are the restoration micro-switch 
+(5) and the matrix (4) and control ferrules (2), 
+and this is connected by a cable to the control mechanism 
+(20). The assembly is introduced into the drum (17) of 
+the blind (18), for which the matrix ferrule (4) has a 
+light surface with a view to reducing the resistance  
+ 
+produced by friction when this operation is performed. 
+After introducing all the external tube (3) of the motor-reducer 
+into the drum (17), the operation is completed by 
+coupling the control ferrule (2) to the inside of the 
+drum (17). The motor-reducer support (1) is attached to 
+the wall by a set of screws, as can be seen in figure 4, 
+thus immobilising the assembly. </p><p num="0034">Although in figure 1 the matrix ferrule (4) has been 
+represented as if it nearly reaches the right-hand side 
+of the blind, it is evident that its position will depend 
+on the width of the blind. As long as the control ferrule 
+(2) is always at one end of the drum (17), the matrix 
+ferrule (4) will penetrate more or less into the drum(17) 
+depending on its length. </p></description><claims lang="DE" status="new"><claim num="xx"><claim-text>Getriebemotor-Vorrichtung zum Aufrollen von 
+Jalousien und Markisen bestehend aus einer externen Röhre 
+(3) in deren Innerem ein Elektromotor (14) eingebaut ist, 
+der mittels einer Elektrobremse (13) und einem 
+Planetengetriebe (15) auf einer Basisschiene (4) 
+funktioniert, das an einem Ende der Röhre angebracht ist 
+und sich im Verhältnis zu dieser externen Röhre (3) frei 
+drehen kann, wobei die Basisschiene (4) mit dem Inneren 
+einer polygonalen Trommel (17) verbunden ist, an welche 
+sie Ihre Bewegung überträgt und auf der sich eine 
+Jalousie oder eine Markise (18) auf- und abrollen kann, 
+Geräten zur elektrischen Darstellung der Position der 
+Jalousie, die sich im Inneren der externen Röhre (3) 
+befinden, einer Kontrollschiene (2) die an dem Ende, das 
+der Basisschiene (4) der äußeren Röhre (3) 
+gegenüberliegt, angebracht ist, und die durch die 
+genannte polygonale Trommel (17) eine Bewegung erfährt, 
+da sie mit dem Inneren dieser Trommel so verbunden ist, 
+dass sie sich dreht und die Bewegung auf die Geräte zur 
+elektrischen Darstellung der Position der Jalousie 
+überträgt, gekennzeichnet dadurch, dass die genannte 
+Getriebemotor-Vorrichtung mit einem Mikroschalter zum 
+Wiederherstellen der Ausgangskonfiguration (5) 
+ausgestattet ist, der sich am gleichen Ende der externen 
+Röhre (3) befindet wie die Kontrollschiene (2); in der 
+Art dass beim ersten Auf- und Abrollvorgang mit der 
+Vorrichtung nach Betätigen des Reset-Mikroschalters (5) 
+die Endpositionen gespeichert werden. </claim-text></claim><claim num="xx"><claim-text>Verfahren zum Bedienen für eine Getriebemotor-Vorrichtung 
+zum Aufrollen von Jalousien und Markisen, 
+gekennzeichnet dadurch, dass eine Leiterplatte (11) beim 
+ersten Auf- und Abrollvorgang mit der Vorrichtung nach 
+ 
+Aktivierung eines Reset-Mikroschalters (5) die 
+Endpositionen speichert, in der Art, dass bei den darauf 
+folgenden Auf- und Abrollvorgängen die Auf- und 
+Abrollendpositionen, die gespeichert wurden, nicht mehr 
+geändert werden können, bis der Reset-Mikroschalter (5) 
+erneut betätigt wird. </claim-text></claim></claims><claims lang="EN" status="new"><claim num="xx"><claim-text>Motor-reducing device for winding blinds and awnings 
+comprising an external tube (3) inside which an electric 
+motor (14) is installed which acts through an electro-brake 
+(13) and a planetary reducer (15) on a matrix 
+ferrule (4) positioned at one end and that can freely 
+turn in relation to cited external tube (3), and being 
+the matrix ferrule (4) coupled to the inside of a 
+polygonal drum (17) to which it transmits its movement, 
+and in which a blind or awning (18) is wound up or down, 
+means of electric representation of the position of the 
+blind positioned inside the external tube (3), a control 
+ferrule (2) positioned at the opposite end of the matrix 
+ferrule (4) of the external tube (3) which, receiving 
+movement from cited polygonal drum (17), to the inside of 
+which is coupled in a rotating way, and transmitting the 
+movement to the means of electric representation of the 
+position of the blind, characterised in that said motor-reducing device comprises 
+a restoration micro-switch (5) positioned on the same end 
+of the external tube (3) in which is positioned the 
+control ferrule (2); in such a way that it allows to 
+memorise the extreme positions in the first 
+raising/lowering operations carried out with the device 
+after having activated the restoration micro-switch (5). </claim-text></claim><claim num="xx"><claim-text>Method of operation for a motor-reducing device for 
+winding blinds and awnings, characterised in that a 
+printed circuit (11) memorises the extreme positions of 
+the first raising/lowering operations carried out after 
+having activated a restoration micro-switch (5), so that 
+in subsequent raising/lowering operations the extreme 
+raising/lowering positions that have been memorised can 
+not be altered until the restoration micro-switch (5) is 
+activated again. </claim-text></claim></claims><claims lang="FR" status="new"><claim num="xx"><claim-text>Dispositif moto-réducteur pour enrouler les 
+persiennes et les bâches comprenant un tube externe (3) à 
+l'intérieur duquel est installé un moteur électrique (14) 
+fonctionnant au moyen d'un électro frein (13) et d'un 
+réducteur planétaire (15) sur une férule motrice (4), 
+situé à une extrémité et qui peut tourner librement par 
+rapport au dit tube externe (3) ; la férule motrice (4) 
+étant raccordée à l'intérieur d'un tambour polygonal (17) 
+auquel elle transmet son mouvement, et sur lequel une 
+persienne ou une bâche (18) s'enroulent ou se déroulent, 
+des moyens de représentation électrique de la position de 
+la persienne situés à l'intérieur du tube externe (3), 
+une férule de contrôle (2) placée à l'extrémité opposée 
+de la férule motrice (4) du tube externe (3) qui, en 
+recevant le mouvement du dit tambour polygonal (17), est 
+raccordée à l'intérieur de ce dernier de façon rotative, 
+et transmet le mouvement aux moyens de représentation 
+électrique de la position de la persienne, caractérisé en 
+ce que le dit dispositif moto-réducteur comprend un 
+micro-interrupteur de restauration (5) situé à 
+l'extrémité même du tube externe (3) où se situe la 
+férule de contrôle (2); de telle sorte qu'il permet de 
+mémoriser les positions extrêmes lors de premières 
+opérations de montée/descente effectuées avec le 
+dispositif après avoir activé le micro-interrupteur de 
+restauration (5). </claim-text></claim><claim num="xx"><claim-text>Procédé d'opération pour un dispositif moto-réducteur 
+pour enrouler des persiennes et des bâches, 
+caractérisé en ce qu'un circuit imprimé (11) mémorise les 
+positions extrêmes des premières opérations de 
+montée/descente effectuées après avoir activé un micro-interrupteur 
+de restauration (5), de façon à ce que, lors 
+ 
+des opérations de montée/descente suivantes, les 
+positions extrêmes de montée/descente mémorisées ne 
+peuvent varier que lors de la prochaine activation du 
+micro-interrupteur de restauration (5). </claim-text></claim></claims><legal-status status="new"><legal-event country="EP" code="26N" date="20050420"><legal-event-body><event-title>NO OPPOSITION FILED</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20050131</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="ET" date="20050121"><legal-event-body><event-title>FR: TRANSLATION FILED</event-title></legal-event-body></legal-event><legal-event country="EP" code="REG" date="20040930"><legal-event-body><event-title>REFERENCE TO A NATIONAL CODE</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>PT</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Legal Event Code </event-attribute-label><event-attribute-value>SC4A</event-attribute-value></event-attribute><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>AVAILABILITY OF NATIONAL TRANSLATION</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20040727</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REF" date="20040603"><legal-event-body><event-title>CORRESPONDS TO:</event-title><event-attributes><event-attribute><event-attribute-label>Ref Document Number </event-attribute-label><event-attribute-value>60102961</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Country of Ref Document </event-attribute-label><event-attribute-value>DE</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Date of Ref Document </event-attribute-label><event-attribute-value>20040603</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>P</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20040428"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>B1</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>DEFRGRITMCPT</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="RIN1" date="20040428"><legal-event-body><event-title>INVENTOR (CORRECTION)</event-title><event-attributes><event-attribute><event-attribute-label>inventor name </event-attribute-label><event-attribute-value>VICENTE MARTIN, PINA</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="17Q" date="20030326"><legal-event-body><event-title>FIRST EXAMINATION REPORT</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20030206</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AKX" date="20020522"><legal-event-body><event-title>PAYMENT OF DESIGNATION FEES</event-title><event-attributes><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>DE FR GR IT MC PT</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="17P" date="20020515"><legal-event-body><event-title>REQUEST FOR EXAMINATION FILED</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20020301</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20010905"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>A1</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>ATBECHCYDEDKESFIFRGBGRIEITLILUMCNLPTSETR</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AX" date="20010905"><legal-event-body><event-title>EXTENSION OF THE EUROPEAN PATENT TO</event-title><event-attributes><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>AL;LT;LV;MK;RO;SI</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event></legal-status></patent-document>

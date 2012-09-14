@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="ZFN-A-035-08-0828"/>
+	</teiHeader>
+	<text xml:lang="de">
+		<front>
+			<titlePage>
+				<docTitle>
+					<titlePart type="main">Die spezifische Verbreiterung der Fel-Resonanzlinie 3859,91 Ä<lb/>durch Stöße mit Argonatomen bei hohen Temperaturen<lb/></titlePart>
+				</docTitle>
+				<byline><docAuthor>J. Steinwandel, V. E. Joos, M. Hauser, and Th. Dietz</docAuthor><lb/></byline>
+				<byline><affiliation>Institut für Physikalische Chemie der Universität Stuttgart</affiliation>, <address></address> <lb/></byline>
+				<reference>Z. Naturforsch. 35a, 828-831 (1980); </reference>
+				<note type="submission">eingegangen am 10. April 1980 <lb/></note>
+				<note type="english-title">Specific Line-Broadening of the Iron-Resonance-Line 3859,91 A by Collisions with Argon Atoms at <lb/>
+Mgh Temperatures <lb/></note>
+			</titlePage>
+			<div type="abstract">The specific line-broadening cross section of the Fel-resonance transition at 3859.91 A by <lb/>collision with argon atoms was measured in the temperature range of 2000 K ^ 2* 5^3500 K in <lb/>a shock tube. <lb/>Driving gas was Helium, shock wave carrier gas and collision partner was Argon. The free <lb/>iron atoms were produced by the unimolecular decomposition of ironpentacarbonyl in the front <lb/>of the incident shock wave. <lb/>The initially produced iron condensate evaporates completely in the reflected shock wave to <lb/>form free atoms. They are present behind the reflected shock wave in the form of a thermody- <lb/>namically well defined undersaturated vapour. Thermodynamic quantities of the vapour do not <lb/>change during the observation time. <lb/>The line-broadening cross section a^T ) was measured by the method of integral atomic line <lb/>absorption spectroscopy on the Fel-resonance line at 3859.91 A to ( 10.05 ±1.40 ) x 10 -15 cm 2. <lb/>Temperature variations in a^ are smaller than experimental errors.<lb/></div>
+			<div type="intro">Einleitung<lb/></div>
+		</front>
+	</text>
+</tei>

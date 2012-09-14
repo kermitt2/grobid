@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="798"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Defining and Measuring Conflicts <lb/>in Optimistic Replication <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>John Heidemann Ashvin Goel Gerald Popek <lb/></docAuthor></byline>
+		<byline><affiliation>University of California, Los Angeles <lb/></affiliation></byline>
+		<idno>Technical report UCLA-CSD-950033 <lb/></idno>
+		<div type="abstract">Abstract <lb/>Optimistic replication is often viewed as essential for <lb/>large scale systems and for supporting mobile computing. In optimistic replication, updates can be made concurrently to different file replicas, resulting in multiple <lb/>versions of the file. To recover from these conflicting <lb/>updates, after-the fact conflict resolution actions are <lb/>required to recombine multiple versions into one. This <lb/>paper defines these concepts and discusses approaches <lb/>to measure them in optimistically replicated systems. <lb/>Measurement of the number of conflicting updates <lb/>and conflict resolution is important to judge the practicality of optimistic replication. An environment <lb/>where conflicting updates are frequent will not be attractive since users cannot assume they have up-to-date <lb/>data. Although many conflicts can be automatically <lb/>resolved, some conflicts require user intervention; such <lb/>conflicts cannot be too common. This paper shows an <lb/>approach to measure the number of conflicting updates. <lb/>From this measurement we derive the actual amount of <lb/>work done by the user or system to resolve conflicts <lb/>and the minimum amount of work required to resolve <lb/>conflicts. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,19 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="385"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">GEN++ | an analyzer generator for C++ programs <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Prem Devanbu <lb/></docAuthor></byline>
+		<byline><affiliation>Articifial Intelligence Principles Research Department <lb/></affiliation></byline>
+		<email>prem@research.att.com <lb/></email>
+		<byline><docAuthor>Laura Eaves <lb/></docAuthor></byline>
+		<byline><affiliation>Object Oriented and Artificial Intelligence Technologies Group, <lb/></affiliation></byline>
+		<email>laurae@mozart.att.com <lb/></email>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

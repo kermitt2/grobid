@@ -1,0 +1,19 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="567"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Internet Telephony: A (Partial) Research Agenda <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Jonathan Rosenberg <lb/></docAuthor></byline>
+		<byline><affiliation>Bell Laboratories and Columbia U. <lb/></affiliation></byline>
+		<address>Rm. 4C-526 <lb/>101 Crawfords Corner Rd. <lb/>Holmdel, NJ 07733 <lb/></address>
+		<email>jdrosen@bell-labs.com <lb/></email>
+		<note type="phone">TEL: +1 908 949-6418 <lb/></note>
+		<date>October 17, 1997 <lb/></date>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

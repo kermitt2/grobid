@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+<listBibl>
+
+		<bibl><author>Mehran Bagheri and Farshad Ebrahimi</author>, <title level="j">Phys. Rev. B</title> <biblScope type="vol">78</biblScope>, <biblScope type="pp">045312</biblScope> (<date>2008</date>).</bibl>
+
+		<bibl><author>Mehran Bagheri</author>, <title level="j">Journal of Applied Physics</title> <biblScope type="vol">107</biblScope>, <biblScope type="pp">114305</biblScope> (<date>2010</date>).</bibl>
+
+		<bibl><author>Mehran Bagheri</author>, <title level="j">Journal of Physics D Applied Physics</title> <biblScope type="vol">43</biblScope>, <biblScope type="pp">272003</biblScope> (<date>2010</date>).</bibl>
+
+		<bibl><author>H. Haug and S. W.</author> <title level="a">Koch semiconductors</title> (<title level="j">World Scientific</title>, <pubPlace>Singapore</pubPlace>,<date>2004</date>).</bibl><citations>
+
+</citations>
+</listBibl>
+</tei>

@@ -1,0 +1,28 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="ZFN-A-035-02-0145"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<titlePage>
+				<docTitle>
+					<titlePart type="main">129I/127I: A Puzzling Early Solar System Chronometer<lb/></titlePart>
+				</docTitle>
+				<byline><docAuthor>J. Jordan</docAuthor>, <docAuthor>T. Kirsten</docAuthor>, and <docAuthor>H. Richter</docAuthor><lb/></byline>
+				<byline><affiliation>Max-Planck-Institut für Kernphysik</affiliation>, <address>Heidelberg, Germany</address></byline>
+				<reference>Z. Naturforsch. 85a, 145-170 (1980); </reference>
+				<note type="submission">received November 12, 1979<lb/></note>
+				<note type="dedication">Dedicated to Prof, H. Hintenberger on the occasion of his 70th birthday<lb/></note>
+			</titlePage>
+			<div type="abstract">We report I-Xe ages and other relevant xenon data for seven ordinary chondrites from H and <lb/>
+L-groups of petrologic types 4—6, which were selected on the basis of minimum weathering <lb/>
+and shock effects. Nevertheless, no chronological order with respect to the I-Xe ages exists <lb/>
+among the different petrologic types. We demonstrate, however, that the degree to which the <lb/>
+I-Xe record is preserved in these chondrites, but not necessarily the age, is dependent on the <lb/>
+thermal metamorphic history. In order to explain the lack of chronological order among the <lb/>
+chondrites, spatiotemporal variations in the condensation-accretion process or inhomogeneities <lb/>
+in the isotopic composition of iodine in the solar nebula is required. <lb/></div>
+			<div type="intro">Introduction <lb/></div>
+		</front>
+	</text>
+</tei>

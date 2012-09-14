@@ -1,0 +1,22 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="708"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Reducing False Sharing on Shared Memory Multiprocessors <lb/>through Compile Time Data Transformations <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Tor E. Jeremiassen <lb/></docAuthor></byline>
+		<byline><affiliation>AT&amp;T Bell Laboratories <lb/></affiliation></byline>
+		<address>600 Mountain Ave. <lb/>Murray Hill, New Jersey 07974 <lb/></address>
+		<email>tor@research.att.com <lb/></email>
+		<byline><docAuthor>Susan J. Eggers <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science and Engineering <lb/>University of Washington <lb/></affiliation></byline>
+		<address>Seattle, Washington 98195 <lb/></address>
+		<email>eggers@cs.washington.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>We have developed compiler algorithms that analyze explicitly parallel programs and restructure their shared data to <lb/>reduce the number of false sharing misses. The algorithms <lb/>analyze per-process shared data accesses, pinpoint the data <lb/>structures that are susceptible to false sharing and choose <lb/>an appropriate transformation to reduce it. The transformations either group data that is accessed by the same processor or separate individual data items that are shared. <lb/>This paper evaluates that technique. We show through <lb/>simulation that our analysis successfully identifies the data <lb/>structures that are responsible for most false sharing misses, <lb/>and then transforms them without unduly decreasing spatial <lb/>locality. The reduction in false sharing positively impacts <lb/>both execution time and program scalability when executed <lb/>on a KSR2. Both factors combine to increase the maximum <lb/>achievable speedup for all programs, more than doubling <lb/>it for several. Despite being able to only approximate actual inter-processor memory accesses, the compiler-directed <lb/>transformations always outperform programmer efforts to <lb/>eliminate false sharing. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

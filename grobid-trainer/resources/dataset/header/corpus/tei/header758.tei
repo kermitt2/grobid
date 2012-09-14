@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="759"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Maximal-Munch Tokenization in Linear Time <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>THOMAS REPS <lb/></docAuthor></byline>
+		<byline><affiliation>University of Wisconsin <lb/></affiliation></byline>
+		<div type="abstract">The lexical-analysis (or scanning) phase of a compiler attempts to partition the input stream into a sequence of tokens. <lb/>The convention in most languages is that the input is scanned left to right, and each token identified is a maximal <lb/>munch of the remaining inputthe longest prefix of the remaining input that is a token of the language. Most textbooks on compiling have extensive discussions of lexical analysis in terms of finite-state automata and regular expressions: Token classes are defined by a set of regular expressions R i , 1 i k, and the lexical analyzer is based on some <lb/>form of finite-state automaton for recognizing the language L (R 1 + R 2 + . . . + R k ). However, the treatment is unsatisfactory in one respect: The theory of finite-state automata assumes that the end of the input stringi.e., the right-hand-side boundary of the candidate for recognitionis known a priori, whereas a scanner must identify the next token <lb/>without knowing a definite bound on the extent of the token. <lb/>Although most of the standard compiler textbooks discuss this issue, the solution they sketch out is one thatfor <lb/>certain sets of token definitionscan cause the scanner to exhibit quadratic behavior in the worst case. This property is <lb/>not only dissatisfying, it blemishes an otherwise elegant treatment of lexical analysis. <lb/>In this paper, we rectify this defect: We show that, given a deterministic finite-state automaton that recognizes the <lb/>tokens of a language, maximal-munch tokenization can always be performed in time linear in the size of the input. <lb/></div>
+		<keywords>CR Categories and Subject Descriptors: D.3.1 [Programming Languages]: Formal Definitions and Theory syntax; <lb/>D.3.4 [Programming Languages]: Processors compilers; F.1.1 [Computation by Abstract Devices]: Models of <lb/>Computation automata; F.2.2 [Analysis of Algorithms and Problem Complexity]: Nonnumerical Algorithms and <lb/>Problems pattern matching; I.2.8 [Artificial Intelligence]: Problem Solving, Control Methods, and Search backtracking, dynamic programming; I.5.4 [Pattern Recognition]: Applications text processing <lb/>General Terms: Algorithms, Theory <lb/>Additional Key Words and Phrases: memoization, tabulation, tokenization <lb/></keywords>
+		<div type="intro">1. INTRODUCTION</div>
+		</front>
+</text>
+</tei>

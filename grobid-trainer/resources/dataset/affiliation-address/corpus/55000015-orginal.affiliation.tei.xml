@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="department">Department of Mechanical Engineering</orgName>,
+							<orgName type="institution">University of Colorado at Boulder</orgName>,
+							<address>
+								<region>CO</region>
+								<postCode>80309</postCode>,
+								<country>USA</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="department">Institute for Critical Technology and Applied Science</orgName>,
+							<orgName type="institution">Virginia Polytechnic Institute and State University</orgName>,
+							<address>
+								<settlement>Blacksburg</settlement>,
+								<region>VA</region>
+								<postCode>24061</postCode>,
+								<country>USA</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>3</marker>
+							<orgName type="department">Department of Mechanical Engineering</orgName>,
+							<orgName type="institution">Virginia Polytechnic Institute and State University</orgName>,
+							<address>
+								<settlement>Blacksburg</settlement>,
+								<region>VA</region>
+								<postCode>24061</postCode>,
+								<country>USA</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>4</marker>
+							<orgName type="department">Department of Engineering Science Mechanics</orgName>,
+							<orgName type="institution">Virginia Polytechnic Institute and State University</orgName>,
+							<address>
+								<settlement>Blacksburg</settlement>,
+								<region>VA</region>
+								<postCode>24061</postCode>,
+								<country>USA</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>5</marker>
+							<orgName type="department">Department of Molecular, Cellular and Developmental Biology</orgName>,
+							<orgName type="institution">University of Colorado at Boulder</orgName>,
+							<address>
+								<region>CO</region>
+								<postCode>80309</postCode>,
+								<country>USA</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

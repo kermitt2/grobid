@@ -1,0 +1,75 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005048"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<lb/>
+
+			<reference>Bioresource Technology 100 (2009) 1246–1251<lb/></reference>
+			
+			<note type="other">Contents lists available at ScienceDirect<lb/></note>
+			<note type="other">Bioresource Technology<lb/></note>
+			<ptr type="web">journal homepage: www.elsevier.com/locate/biortech<lb/></ptr>
+			
+
+			<docTitle>
+				<titlePart>A plant fiber reinforced polymer composite prepared by a twin-screw
+					extruder<lb/></titlePart>
+			</docTitle>
+
+			<byline>
+				<docAuthor>G. Sui a,b , M.A. Fuqua a , C.A. Ulven a , W.H. Zhong
+					a,*<lb/></docAuthor>
+			</byline>
+
+			<byline>
+				<affiliation>a Department of Mechanical Engineering and Applied Mechanics, North
+					Dakota State University,</affiliation>
+			</byline>
+
+			<address>Fargo, ND 58105, USA<lb/></address>
+
+			<byline>
+				<affiliation>b The Key Laboratory of Beijing City on Preparation and Processing of
+					Novel Polymer Materials, Beijing University of Chemical
+					Technology,</affiliation>
+			</byline>
+
+			<address>Beijing 100029, China<lb/></address>
+
+			<note type="other">a r t i c l e i n f o<lb/></note>
+
+			<note type="submission"> Article history:<lb/> Received 2 March 2007<lb/> Received in
+				revised form 6 March 2008<lb/> Accepted 6 March 2008<lb/></note> 
+				
+			<date>Available online 7 October 2008<lb/></date>
+			
+
+			<keywords> Keywords:<lb/> Sunflower Composites<lb/> Crystallization Flexural properties<lb/>
+			</keywords>
+			
+			<space dim="horizontal"/>
+
+			<div type="abstract"> a b s t r a c t<lb/> Polypropylene (PP) composites reinforced
+				using a novel plant fiber, sunflower hull sanding dust (SHSD),<lb/> were prepared
+				using a twin-screw extruder. Thermal and mechanical properties of the SHSD/PP
+				compos-<lb/> ites were characterized and compared to an organically modified clay
+				(organo-clay)/PP composite. Differ-<lb/> ential scanning calorimetry (DSC) analysis
+				showed that the crystallization temperature and the degree of<lb/> crystallinity of
+				PP exhibited changes with addition of SHSD and organo-clay. Mechanical properties of
+				the<lb/> PP were enhanced with the addition of SHSDs. Both the flexural strength and
+				flexural modulus of the PP<lb/> composites containing 5% (w/w) SHSD were comparable
+				to that of the 5% (w/w) organo-clay reinforced<lb/> PP. Scanning electron microscope
+				(SEM) observation showed that no obvious agglomeration of SHSD<lb/> existed in the
+				PP matrix. Compared to the neat PP and organo-clay/PP, the SHSD/PP composites
+				exhibited<lb/> a relatively decreasing rate of thermal degradation with increase in
+				temperature. Experimental results<lb/> suggest that SHSD, as a sunflower processing
+				byproduct, may find promising applications in composite<lb/> materials.<lb/>
+			</div>
+			<note type="copyright">&#169; 2008 Published by Elsevier Ltd.<lb/></note>
+
+		</front>
+	</text>
+</tei>

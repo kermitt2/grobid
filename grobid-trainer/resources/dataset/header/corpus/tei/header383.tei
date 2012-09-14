@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="388"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<note type="reference">5th Midwest Artificial Intelligence and Cognitive Science Conference <lb/></note>
+		<docTitle>
+			<titlePart type="main">Identifying Language from Raw Speech <lb/>An Application of Recurrent Neural Networks <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Weilan Wu, Stan C. Kwasny, Barry L. Kalman, E. Maynard Engebretson <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science <lb/>Washington Unversity <lb/></affiliation></byline>
+		<address>St. Louis, MO 63130 <lb/></address>
+		<div type="abstract">Abstract <lb/>People can differentiate spoken languages <lb/>without understanding them, and, in some <lb/>sense, this differentiation can only be done <lb/>without understanding the language. When <lb/>we consider a multi-lingual person trying to <lb/>understand an utterance spoken in one of the <lb/>languages with which they are familiar, they <lb/>will first decide which language this utterance <lb/>belongs to, before trying to interpret it. <lb/>The language identification task is one <lb/>example of high-level feature abstraction from <lb/>raw speech. Speech samples are classified <lb/>into categories according to what language <lb/>was spoken. We conjecture that this classification can be performed reliably and in real <lb/>time. To be successful, such a system should <lb/>be speaker-independent as well as context-independent. A large amount of training is <lb/>required to achieve a satisfactory level of performance. <lb/>We present a continuation of previous <lb/>work (Kwasny et al., 1992) which introduces <lb/>two important improvements to the system: <lb/>(1) replacement of the non-recurrent, feed-forward network with a recurrent one, which <lb/>is smaller, but still classifies correctly; (2) <lb/>development of a frontend processor on a <lb/>Nextfi workstation to facilitate sample <lb/>recording and data acquisition. This is important for large-scale data acquisition, training, <lb/>and testing of the network. <lb/></div>
+		<div type="intro">Introduction</div>
+		</front>
+</text>
+</tei>

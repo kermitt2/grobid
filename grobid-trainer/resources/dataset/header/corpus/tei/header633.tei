@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="635"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Simulating the Madness of Crowds: <lb/>Price Bubbles in an Auction-Mediated Robot Market <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Ken Steiglitz and Daniel Shapiro <lb/></docAuthor></byline>
+		<byline><affiliation>Dept. of Computer Science, Princeton University <lb/></affiliation></byline>
+		<address>Princeton, NJ 08544 <lb/></address>
+		<date>May 5, 1997 <lb/></date>
+		<div type="abstract">Abstract <lb/>We simulate a multiagent market with production, consumption, and exchange <lb/>mediated by a sealed-bid double auction. Marked price bubbles and subsequent <lb/>crashes occur when value-based (fundamentals-driven) and trend-based traders are <lb/>both present, and the market equilibrium price is ramped up exogenously. Similarly, <lb/>negative price bubbles and recoveries occur when the equilibrium price is ramped <lb/>down. Because the simulated market is auction-mediated, we can observe the operations of traders during these events, and study the interactions that produce and <lb/>resolve bubbles. Some preliminary circuit-breaker experiments are described, in which <lb/>bubbles are interrupted during their formation. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

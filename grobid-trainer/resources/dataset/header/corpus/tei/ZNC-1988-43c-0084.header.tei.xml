@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="ZNC-1988-43c-0084"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Degree of Saturation of Blood Plasma in Vertebrates<lb/> with Octocalcium Phosphate<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>F. C. M. Driessens*, R. M. H. Verbeeck**, J. W. E. van Dijk***,<lb/> and J. M. P. M. Borggreven*<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>* Department of Oral Biomaterials, Catholic University,</affiliation>
+	</byline>
+
+	<address>P.O. Box 9101,<lb/> 6500 HB Nijmegen, The Netherlands<lb/></address>
+
+	<byline>
+	<affiliation>** Research Associate NFSR. Laboratory for Analytical Chemistry, State University,<lb/></affiliation>
+	</byline>
+
+	<address>Gent, Belgium<lb/></address>
+
+	<byline>
+	<affiliation>*** Caries Research Unit TNO,</affiliation>
+	</byline>
+
+	<address>Utrecht. The Netherlands<lb/></address>
+
+	<reference>Z. Naturforsch. 43c, 74-76 (1988);</reference>
+
+	<note type="submission">received April 23/November 2, 1987<lb/></note>
+
+	<keyword>Calcium Homeostasis, Phosphate Homeostasis, Vertebrates<lb/></keyword>
+
+	<div type="abstract">In previous papers it has been shown that octocalcium phospate OCP occurs in bone mineral of<lb/> vertebrates. Although this compound is not stable, there is a continuous new-formation of OCP<lb/> due to bone turnover. Literature data of the calcium and phosphate concentrations in the blood<lb/> plasma of vertebrates were collected and the degree of saturation with OCP was calculated. The<lb/> results show that blood plasma of vertebrates is almost saturated with OCP. This fact indicates<lb/> that OCP is the solubility controlling phase in the mineral of vertebrates. Further it verifies the<lb/> expectation based on physicochemical theory that the interaction between body fluids and bone<lb/> mineral is important in the calcium and phosphate homeostasis.<lb/></div>
+
+		</front>
+	</text>
+</tei>

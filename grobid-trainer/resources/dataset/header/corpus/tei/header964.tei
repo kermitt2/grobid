@@ -1,0 +1,28 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="1033"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<idno>hal-00126489,  version 1 -</idno>
+		<date>25 Jan 2007 <lb/></date>
+		<docTitle>
+			<titlePart type="main">Uniform limit theorems for the integrated periodogram of weakly <lb/> dependent time series and their applications to Whittle&apos;s estimate <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Jean-Marc Bardet  a*  , Paul Doukhan  ab  , José Rafael Léon  c? <lb/></docAuthor></byline>
+		<byline><affiliation>a  SAMOS-MATISSE-CES, Université e Paris I,</affiliation></byline>
+		<address>90 rue de Tolbiac, 75013 Paris, FRANCE <lb/></address>
+		<email>bardet@univ-paris1.fr <lb/></email>
+		<byline><affiliation>b  LS-CREST,</affiliation></byline>
+		<address>Timbre J340, 3 avenue Pierre Larousse, 92240 Malakoff, FRANCE <lb/></address>
+		<email>doukhan@ensae.fr <lb/></email>
+		<byline><affiliation>c  Universidad Central de Venezuela, Escuela de Matemática. <lb/></affiliation></byline>
+		<address>Ap. 47197 Los Chaguaramos, Caracas 1041-A VENEZUELA <lb/></address>
+		<email>jleon@euler.ciens.ucv.ve <lb/></email>
+		<div type="abstract">Abstract <lb/>  We prove uniform convergence results for the integrated periodogram of a weakly dependent time series, <lb/> namely a law of large numbers and a central limit theorem. These results are applied to Whittle&apos;s parametric <lb/> estimation. Under general weak-dependence assumptions we derive uniform limit theorems and asymptotic <lb/> normality of Whittle&apos;s estimate for a large class of models. For instance the causal ?-weak dependence <lb/> property allows a new and unified proof of those results for ARCH(?) and bilinear processes. Non causal <lb/>  ?-weak dependence yields the same limit theorems for two-sided linear (with dependent inputs) or Volterra <lb/> processes. <lb/></div>
+		<keywords>Key words: Periodogram, Weak dependence, Whittle estimate. <lb/> AMS Subject Classification: 60F17, 60F25, 62M09, 62M10, 62M15. <lb/></keywords>
+		<note type="other">Running title: Uniform limit theorems for the integrated periodogram and Whittle&apos;s estimate. <lb/></note>
+		<div type="intro">1 Introduction <lb/></div>
+		</front>
+</text>
+</tei>

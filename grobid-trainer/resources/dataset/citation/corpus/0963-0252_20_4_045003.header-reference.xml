@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+<listBibl>
+
+	<bibl>
+        <date>2011</date>
+        <title level="j">Plasma Sources Sci. Technol.</title>
+        <biblScope type="vol">20</biblScope>
+        <biblScope type="pp">045003</biblScope>
+    </bibl>
+
+    <bibl>
+        <title level="j">Plasma Sources Sci. Technol.</title>
+        <biblScope type="vol">20</biblScope>
+        (<date>2011</date>)
+        <biblScope type="pp">045003 (9pp)</biblScope>
+    </bibl>
+
+</listBibl>
+</tei>
+	

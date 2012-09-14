@@ -1,0 +1,15 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="361"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">System Administration: Monitoring, Diagnosing, and Repairing <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Eric Anderson <lb/></docAuthor></byline>
+		<div type="abstract">We first describe the general goals of system administration explaining the <lb/>relationship to monitoring, diagnosing, and repairing (MDR). Then, we describe the <lb/>functional and environmental concerns for a MDR system, and use these concerns to <lb/>explain how previous approaches have failed to fully address the problem. Next, we <lb/>describe the major pieces of our approach, and identify the research questions <lb/>associated with each piece. Finally we present a method for testing the system when <lb/>it is created. <lb/></div>
+		<div type="intro">Introduction</div>
+		</front>
+</text>
+</tei>

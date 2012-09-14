@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005184"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<lb/>
+			<docTitle>
+				<titlePart>Handling Incompatibilities<lb/> between Services deployed on<lb/>
+					IP-based Networks<lb/></titlePart>
+			</docTitle>
+
+			<byline>
+				<docAuthor>Mario Kolberg and Evan H. Magill<lb/></docAuthor>
+			</byline>
+
+			<byline>
+				<affiliation>University of Stirling<lb/></affiliation>
+			</byline>
+
+			<email>{mko,ehm}@cs.stir.ac.uk<lb/></email>
+
+			<div type="abstract">The Telecommunications Industry has undergone major paradigm shifts
+				in<lb/> the previous years[4]. One of these is the shift from circuit-switched<lb/>
+				networks towards packet-switched networks. There is hardly any doubt<lb/> anymore
+				that IP will be the ubiquitous transport protocol for multimedia of<lb/> the
+				future.<lb/> At present the work towards Internet telephony has attracted a lot
+				of<lb/> attention. Two standards have been developed: SIP [1] by the Internet<lb/>
+				Engineering Task Force (IETF) and H.323 [2] by the International<lb/>
+				Telecommunications Union (ITU).<lb/> As has been shown by an initial study[5] the
+				rapid deployment of services<lb/> on top of SIP is hindered by a well known problem
+				- Feature Interactions.<lb/> As in traditional telephony networks Feature
+				Interactions are also a serious<lb/> problem between services deployed on IP-based
+				networks. In this paper, the<lb/> technological changes in SIP compared to the
+				traditional telephony network<lb/> are highlighted as well as the impact of the
+				changed business environment.<lb/> In a multi-service provider environment (as
+				encouraged by a SIP<lb/> environment) the feature interaction problem is regarded to
+				be an even<lb/> more pressing issue. Services of different providers from a
+				multitude of<lb/> service creators are likely to interwork. This in turn leads to
+				the fact that the<lb/> ad-hoc approaches to service interaction handling commonly
+				applied in the<lb/> industry today will not be sufficient anymore.<lb/> In this
+				paper a new approach addressing these changes is introduced and the<lb/> results of
+				a case study are presented.<lb/></div>
+			
+			<note type="other">0-7803-7047-3/01/$10.00 </note>
+			<note type="copyright">(C) 2001 IEEE<lb/></note>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<nite:root nite:id="WO2007045478.HC.class-names" xmlns:nite="http://nite.sourceforge.net/">
+   <class-name nite:id="WO2007045478.HC.class-names.1" comment="" name="1-AZA B I C YCLOALKYL" relevant="true" chebi-id="WO2007045478:683551" epochem-id="EPOCHEM:NEW:CLASS:565">
+      <nite:child href="WO2007045478.words.xml#id(WO2007045478_w_8)"/>
+      <nite:child href="WO2007045478.words.xml#id(WO2007045478_w_11)"/>
+      <nite:child href="WO2007045478.words.xml#id(WO2007045478_w_13)"/>
+      <nite:child href="WO2007045478.words.xml#id(WO2007045478_w_10)"/>
+      <nite:child href="WO2007045478.words.xml#id(WO2007045478_w_12)"/>
+      <nite:child href="WO2007045478.words.xml#id(WO2007045478_w_14)"/>
+      <nite:child href="WO2007045478.words.xml#id(WO2007045478_w_9)"/>
+   </class-name>
+   <class-name nite:id="WO2007045478.HC.class-names.2" comment="" name="1-aza-bicycloalkyl" relevant="true" chebi-id="WO2007045478:327963" epochem-id="EPOCHEM:NEW:CLASS:566">
+      <nite:child href="WO2007045478.words.xml#id(WO2007045478_w_36)"/>
+      <nite:child href="WO2007045478.words.xml#id(WO2007045478_w_39)..id(WO2007045478_w_40)"/>
+      <nite:child href="WO2007045478.words.xml#id(WO2007045478_w_37)..id(WO2007045478_w_38)"/>
+   </class-name>
+   <class-name nite:id="WO2007045478.HC.class-names.3" comment="" name="Aza-bicycloethers" relevant="false" chebi-id="WO2007045478:634423" epochem-id="EPOCHEM:NEW:CLASS:567">
+      <nite:child href="WO2007045478.words.xml#id(WO2007045478_w_67)..id(WO2007045478_w_69)"/>
+   </class-name>
+   <class-name nite:id="WO2007045478.HC.class-names.4" comment="" name="nic-alpha 7 agonists" relevant="false" chebi-id="WO2007045478:25665" epochem-id="EPOCHEM:NEW:CLASS:568">
+      <nite:child href="WO2007045478.words.xml#id(WO2007045478_w_75)"/>
+      <nite:child href="WO2007045478.words.xml#id(WO2007045478_w_77)"/>
+      <nite:child href="WO2007045478.words.xml#id(WO2007045478_w_74)"/>
+      <nite:child href="WO2007045478.words.xml#id(WO2007045478_w_78)"/>
+      <nite:child href="WO2007045478.words.xml#id(WO2007045478_w_76)"/>
+   </class-name>
+   <class-name nite:id="WO2007045478.HC.class-names.5" comment="" name="nic-alpha 7 agonists" relevant="false" chebi-id="WO2007045478:25665" epochem-id="EPOCHEM:NEW:CLASS:568">
+      <nite:child href="WO2007045478.words.xml#id(WO2007045478_w_113)..id(WO2007045478_w_114)"/>
+      <nite:child href="WO2007045478.words.xml#id(WO2007045478_w_110)..id(WO2007045478_w_112)"/>
+   </class-name>
+   <class-name nite:id="WO2007045478.HC.class-names.6" comment="" name="fluorescent calcium sensitve dye" relevant="false" chebi-id="WO2007045478:906880" epochem-id="EPOCHEM:NEW:CLASS:569">
+      <nite:child href="WO2007045478.words.xml#id(WO2007045478_w_4924)"/>
+      <nite:child href="WO2007045478.words.xml#id(WO2007045478_w_4926)"/>
+      <nite:child href="WO2007045478.words.xml#id(WO2007045478_w_4923)"/>
+      <nite:child href="WO2007045478.words.xml#id(WO2007045478_w_4925)"/>
+   </class-name>
+</nite:root>

@@ -1,0 +1,19 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="231"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<note type="reference">To appear in Proc. IEEE INFOCOM, March 1996 <lb/></note>
+		<docTitle>
+			<titlePart type="main">The Effectiveness of Affinity-Based Scheduling in Multiprocessor Networking <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>James D. Salehi, James F. Kurose, and Don Towsley <lb/></docAuthor></byline>
+		<byline><affiliation>Computer Science Department, University of Massachusetts,</affiliation></byline>
+		<address>Amherst MA 01003, USA <lb/></address>
+		<email>-salehi,kurose,towsley-@cs.umass.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>Techniques for avoiding the high memory overheads found on <lb/>many modern shared-memory multiprocessors are of increasing <lb/>importance in the development of high-performance multiprocessor protocol implementations. One such technique is processor-cache affinity scheduling, which can significantly lower packet <lb/>latency and substantially increase protocol processing throughput <lb/>[20]. In this paper, we evaluate several aspects of the effectiveness of affinity-based scheduling in multiprocessor network <lb/>protocol processing, under packet-level and connection-level par-allelization approaches. Specifically, we evaluate the performance <lb/>of the scheduling technique 1) when a large number of streams are <lb/>concurrently supported, 2) when processing includes copying of <lb/>uncached packet data, 3) as applied to send-side protocol processing, and 4) in the presence of stream burstiness and source locality, two well-known properties of network traffic. We find that <lb/>affinity-based scheduling performs well under these conditions, <lb/>emphasizing its robustness and general effectiveness in multiprocessor network processing. In addition, we explore a technique <lb/>which improves the caching behavior and available packet-level <lb/>concurrency under connection-level parallelism, and find performance improves dramatically. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

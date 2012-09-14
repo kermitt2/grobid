@@ -1,0 +1,20 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="10"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Alleviating Consumption Channel Bottleneck <lb/>in Wormhole-Routed k-ary n-cube Systems 1 <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Debashis Basak and Dhabaleswar K. Panda <lb/></docAuthor></byline>
+		<byline><affiliation>Dept. of Computer and Information Science <lb/> The Ohio State University <lb/></affiliation></byline>
+		<address>Columbus, OH 43210-1277 <lb/></address>
+		<note type="phone">Tel: (614)-292-5199, Fax: (614)-292-2911 <lb/></note>
+		<email>Email: fbasak,pandag@cis.ohio-state.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>This paper identifies performance degradation in wormhole routed k-ary n-cube networks due <lb/>to limited number of router-to-processor consumption channels at each node. Many recent research <lb/>in wormhole routing have advocated the advantages of adaptive routing and virtual channel flow <lb/>control schemes to deliver better network performance. This paper indicates that the advantages <lb/>associated with these schemes can not be realized with limited consumption capacity. To alleviate <lb/>such performance bottleneck, a new network interface design using multiple consumption channels <lb/>is proposed. To match virtual multiplexing on network channels, we also propose each consumption <lb/>channel to support multiple virtual consumption channels. The impact of message arrival rate at <lb/>a node on the required number of consumption channel is studied analytically. It is shown that <lb/>wormhole networks with higher routing adaptivity, dimensionality, degree of hot-spot traffic, and <lb/>number of virtual lanes have to take advantage of multiple consumption channels to deliver better <lb/>performance. The interplay between system topology, routing algorithm, number of virtual lanes, <lb/>messaging overheads, and communication traffic is studied through simulation to derive the effective <lb/>number of consumption channels required in a system. Using the on-going technological trend, it is <lb/>shown that wormhole-routed systems can use up to 2-4 consumption channels per node to deliver <lb/>better system performance. <lb/></div>
+		<keywords>Keywords: Parallel computer architecture, wormhole routing, k-ary n-cube, consumption Channel, virtual Channel, deterministic routing, adaptive routing, hot-spot traffic, performance evaluation, and interprocessor communication. <lb/></keywords>
+		<note type="grant">1 This research is supported in part by NSF Grant MIP-9309627, Faculty Early Career Development Award MIP-9502294, and an Ohio State University Presidential Fellowship. A preliminary version of this paper[4] has been</note>
+		</front>
+</text>
+</tei>

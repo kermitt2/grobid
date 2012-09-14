@@ -1,0 +1,16 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="591"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Storage Systems for Movies-on-Demand Video Servers <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Ann L. Chervenak <lb/></docAuthor></byline>
+		<date>April 7, 1995 <lb/></date>
+		<div type="abstract">1 Abstract <lb/>In this paper, we evaluate storage system alternatives for movies-on-demand video servers. We begin by <lb/>characterizing the movies-on-demand workload. Then we study disk farms in which one movie is stored per <lb/>disk. This is a simple scheme, but it wastes substantial disk bandwidth, since disks holding less popular <lb/>movies are under-utilized; also, good performance requires that movies be replicated to reflect the user <lb/>request pattern. Next, we examine disk farms in which movies are striped across disks, and find that <lb/>striped video servers offer close to full utilization of the disks by achieving better load balancing. Finally, we <lb/>evaluate the use of storage hierarchies for video service that include a tertiary library along with a disk farm. <lb/>Unfortunately, we show that the performance of neither magnetic tape libraries nor optical disk jukeboxes <lb/>as part of a storage hierarchy is adequate to service the predicted distribution of movie accesses. We suggest <lb/>changes to tertiary libraries that would make them better-suited to these applications. <lb/></div>
+		<div type="intro">2 Introduction</div>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000026-orginal"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<lb/>
+			<reference>ANTISENSE &amp; NUCLEIC ACID DRUG DEVELOPMENT 11:199–207 (2001)<lb/></reference> 
+			<note type="other">Mary Ann Liebert, Inc.<lb/></note>
+
+			<docTitle>
+				<titlePart>In Vivo Inhibition of Cyclooxygenase-2 by a Selective<lb/>
+					Phosphorothioated Oligonucleotide<lb/></titlePart>
+			</docTitle>
+
+			<byline>
+				<docAuthor>ISLAM KHAN, FARIDA M. AL-AWADI, and NANCY THOMAS<lb/></docAuthor>
+			</byline>
+
+			<div type="abstract">ABSTRACT<lb/> Inhibition of cyclooxygenase-2 (cox-2) is considered
+				to be anti-inflammatory, whereas inhibition of the consti-<lb/>tutive isozyme cox-1
+				causes renal and gastrointestinal toxicity. Therefore, to achieve an optimal
+				anti-inflam-<lb/>matory effect, an inhibitor should be cox-2 selective without
+				inhibiting cox-1. For this purpose, 10 different<lb/> cox-2-selective
+				phosphorothioated oligonucleotides (S-oligos) were tested to inhibit the cox-2
+				enzyme selectively<lb/> in vivo. An aqueous solution of these S-oligos (3 mg/kg body
+				weight) was injected intraperitoneally (i.p.) into<lb/> male Sprague-Dawley rats
+				with colitis induced by trinitrobenzene sulfonic acid (TNBS). The colonic levels
+				of<lb/> cox-2 protein, mRNA, myeloperoxidase (MPO), and prostaglandin E 2 (PGE 2 )
+				were increased significantly on<lb/> day 1 and remained significantly elevated until
+				day 7 post-TNBS administration, whereas cox-1 remained un-<lb/>altered. Two S-oligos
+				were found to be effective in reducing the level of cox-2 protein selectively
+				without any ef-<lb/>fect on the cox-1. The effective S-oligo, but not the mismatched
+				control oligo, reduced the tissue levels of PGE 2<lb/> and MPO activity
+				significantly. The effective S-oligo reduced the level of cox-2 but not the cox-1
+				mRNA signif-<lb/>icantly, whereas a mismatched or a sense control oligo did not
+				affect the levels of these isoforms. M-fold analy-<lb/>sis demonstrated extensive
+				secondary structure formation in the cox-2 mRNA. These findings demonstrate<lb/>
+				that only a few selected sites in the cox-2 target mRNA are accessible in vivo,
+				probably because of the presence<lb/> of secondary structures. Suppression of cox-2
+				protein, PGE 2 , and MPO activity by the S-oligo might prove to<lb/> be an
+				anti-inflammatory property.<lb/></div>
+
+		</front>
+	</text>
+</tei>

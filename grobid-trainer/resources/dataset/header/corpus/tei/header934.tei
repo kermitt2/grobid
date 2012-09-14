@@ -1,0 +1,23 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="1003"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<idno>arXiv:0908.0095v1 [astro-ph.CO]</idno>
+		<date>1 Aug 2009 <lb/></date>
+		<docTitle>
+			<titlePart type="main">Can MONDian vector theories explain the cosmic speed up ? <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Vincenzo F. Cardone  1,2*  , Ninfa Radicella  2,3? <lb/></docAuthor></byline>
+		<byline><affiliation>1  Dipartimento di Fisica Generale &quot;Amedeo Avogadro&quot;,</affiliation></byline>
+		<address>Via Pietro Giuria 1, 10125 - Torino, Italy <lb/></address>
+		<byline><affiliation>2  I.N.F.N.</affiliation></byline>
+		<address>Sezione di Torino, Via Pietro Giuria 1, 10125 - Torino, Italy and <lb/></address>
+		<byline><affiliation>3  Dipartimento di Fisica,</affiliation></byline>
+		<address>Politecnico di Torino, Corso Duca degli Abruzzi 24, 10129 - Torino, Italy <lb/></address>
+		<div type="abstract">Generalized Einstein - Aether vector field models have been shown to provide, in the weak field <lb/>regime, modifications to gravity which can be reconciled with the successfull MOND proposal. Very <lb/>little is known, however, on the function F(K) defining the vector field Lagrangian so that an <lb/>analysis of the viability of such theories at the cosmological scales has never been performed. As <lb/>a first step along this route, we rely on the relation between F(K) and the MOND interpolating <lb/>function �(a/a0) to assign the vector field Lagrangian thus obtaining what we refer to as MONDian <lb/>vector models. Since they are able by construction to recover the MOND successes on galaxy scales, <lb/>we investigate whether they can also drive the observed accelerated expansion by fitting the models <lb/>to the Type Ia Supernovae data. Should be this the case, we have a unified framework where both <lb/>dark energy and dark matter can be seen as different manifestations of a single vector field. It <lb/>turns out that both MONDian vector models are able to well fit the low redshift data on Type Ia <lb/>Supernovae, while some tension could be present in the high z regime. <lb/></div>
+		<keywords type="pacs">PACS numbers: 98.80.-k, 98.80.Es, 95.36.+d, 95.36.+x <lb/></keywords>
+		</front>
+</text>
+</tei>

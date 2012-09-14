@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005046"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+
+			<lb/>
+			<byline>
+				<affiliation>Lehrstuhl für Mensch-Maschine-Kommunikation<lb/></affiliation>
+			</byline>
+			<docTitle>
+				<titlePart>
+					Entwicklung und Bewertung eines<lb/>
+					Rapid-Prototyping Ansatzes zur multimodalen<lb/>
+					Mensch-Maschine-Interaktion im Kraftfahrzeug<lb/>
+				</titlePart>
+			</docTitle>
+			
+			<byline>
+				<docAuthor>Franz Bernhard Niedermaier<lb/></docAuthor>
+			</byline>
+			<note type="degree"> Vollständiger Abdruck der von der </note>
+				
+			<byline><affiliation>Fakultät für Elektrotechnik und Informationstechnik der<lb/>
+				Technischen Universität München</affiliation></byline>
+				
+			<note type="degree">zur Erlangung des akademischen Grades eines<lb/>
+				Doktor-Ingenieurs<lb/>
+				genehmigten Dissertation.<lb/>
+				Vorsitzender:<lb/>
+				Prüfer der Dissertation:<lb/>
+				Univ.-Prof. Dr.-Ing. Ingolf Ruge<lb/>
+				1. Univ.-Prof. Dr. rer. nat. Manfred K. Lang, i.R.<lb/>
+				2. Univ.-Prof. Dr.-Ing., Dr.-Ing. E.h. Günther Schmidt<lb/>
+			</note>
+			<note type="submission">
+				Die Dissertation wurde am 19.08.2002 bei der Technischen Universität München eingereicht
+				und durch die Fakultät für Elektrotechnik und Informationstechnik am 27.01.2003 angenommen.<lb/>
+			</note>
+
+		</front>
+	</text>
+</tei>

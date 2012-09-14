@@ -1,0 +1,16 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="396"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">The Design and Implementation of SOLAR, <lb/>a Portable Library for Scalable Out-of-Core Linear Algebra Computations <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Sivan Toledo Fred G. Gustavson <lb/></docAuthor></byline>
+		<byline><affiliation>IBM T.J. Watson Research Center <lb/></affiliation></byline>
+		<div type="abstract">Abstract <lb/>SOLAR is a portable high-performance library for out-of-core dense <lb/>matrix computations. It combines portability with high performance <lb/>by using existing high-performance in-core subroutine libraries and <lb/>by using an optimized matrix input-output library. SOLAR works on <lb/>parallel computers, workstations, and personal computers. It supports <lb/>in-core computations on both shared-memory and distributed-memory <lb/>machines, and its matrix input-output library supports both conventional I/O interfaces and parallel I/O interfaces. This paper discusses <lb/>the overall design of SOLAR, its interfaces, and the design of several <lb/>important subroutines. Experimental results show that SOLAR can <lb/>factor on a single workstation an out-of-core positive-definite symmetric matrix at a rate exceeding 215 Mflops, and an out-of-core general <lb/>matrix at a rate exceeding 195 Mflops. Less than 16% of the running <lb/>time is spent on I/O in these computations. These results indicate <lb/>that SOLAR&apos;s portability does not compromise its performance. We <lb/>expect that the combination of portability, modularity, and the use of <lb/>a high-level I/O interface will make the library an important platform <lb/>for research on out-of-core algorithms and on parallel I/O. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

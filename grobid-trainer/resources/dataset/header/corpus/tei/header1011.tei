@@ -1,0 +1,22 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="1080"/>
+	</teiHeader>
+<text xml:lang="en">
+	<front>
+        <note type="submission">Confidential:  not for distribution. Submitted to IOP Publishing for peer review</note>
+        <date type="submission">23 March 2010<lb/></date>
+		<docTitle>
+			<titlePart type="main">Implications  of space-momentum correlations and<lb/> geometric fluctuations in heavy-ion collisions<lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Paul  Sorensen<lb/></docAuthor></byline>
+		<byline><affiliation>Brookhaven  National Laboratory,</affiliation></byline>
+		<address>P.O. Box 5000, Upton, NY 11973<lb/></address>
+	    <email>E-mail:  prsorensen@bnl.gov<lb/></email>
+		<div type="abstract">Abstract.  The standard picture of heavy-ion collisions includes a collective<lb/> expansion. If the initial energy density in the collisions is lumpy, then the expansion<lb/> can convert the spatial lumpiness into correlations between final-state particles.<lb/> Correlations in heavy-ion collisions show prominent features not present in p+p<lb/> collisions. I argue that many features of these correlations are related to the<lb/> transference of over-densities from the initial overlap region into momentum-space<lb/> during the QGP phase of the expansion. I show results from a toy Monte-Carlo to<lb/> illustrate the consequences of lumpy initial conditions and a collective expansion.<lb/></div>
+		<keywords type="pacs">PACS numbers: 25.75.-q, 25.75.Ld<lb/></keywords>
+		<note type="submission">Submitted  to:  J.  Phys. G: Nucl. Phys.<lb/></note>
+		<introduction>1. Introduction<lb/></introduction>
+    </front>
+</text>
+</tei>

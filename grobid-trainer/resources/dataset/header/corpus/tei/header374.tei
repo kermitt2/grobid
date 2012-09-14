@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="379"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">SmartATMS : A SIMULATOR FOR AIR TRAFFIC MANAGEMENT SYSTEMS <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Tak-Kuen John Koo <lb/>Yi Ma <lb/>George J. Pappas <lb/>Claire Tomlin <lb/></docAuthor></byline>
+		<byline><affiliation>Robotics and Intelligent Machines Laboratory <lb/>Department of Electrical Engineering and Computer Sciences <lb/>University of California at Berkeley <lb/></affiliation></byline>
+		<address>Berkeley, CA 94720 <lb/></address>
+		<email>koo,mayi,gpappas,clairet@eecs.berkeley.edu <lb/></email>
+		<div type="abstract">ABSTRACT <lb/>Air Traffic Management Systems (ATMS) of the future will feature Free Flight, in which aircraft choose <lb/>their own routes, altitude, and speed, and automated conflict resolution methods in which aircraft <lb/>will coordinate to resolve conflicts. The resulting distributed control architecture is a hybrid system, with <lb/>mixed discrete event and continuous time dynamics. <lb/>SmartATMS is an object oriented modeling and simulation facility which accounts for these hybrid issues <lb/>and will serve as a uniform modeling framework for <lb/>the design and evaluation of various ATMS concepts. <lb/></div>
+		<div type="intro">1 INTRODUCTION</div>
+		</front>
+</text>
+</tei>

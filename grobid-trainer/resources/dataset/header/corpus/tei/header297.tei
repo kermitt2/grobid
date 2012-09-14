@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="302"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">An Overview of a Compiler for <lb/>Scalable Parallel Machines <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Saman P. Amarasinghe, Jennifer M. Anderson, <lb/>Monica S. Lam and Amy W. Lim <lb/></docAuthor></byline>
+		<byline><affiliation>Computer Systems Laboratory <lb/>Stanford University,</affiliation></byline>
+		<address>CA 94305 <lb/></address>
+		<div type="abstract">Abstract. This paper presents an overview of a parallelizing compiler <lb/>to automatically generate efficient code for large-scale parallel architectures from sequential input programs. This research focuses on loop-level <lb/>parallelism in dense matrix computations. We illustrate the basic techniques the compiler uses by describing the entire compilation process for <lb/>a simple example. <lb/>Our compiler is organized into three major phases: analyzing array references, allocating the computation and data to the processors to optimize <lb/>parallelism and locality, and generating code. <lb/>An optimizing compiler for scalable parallel machines requires more sophisticated program analysis than the traditional data dependence analysis. Our compiler uses a precise data-flow analysis technique to identify <lb/>the producer of the value read by each instance of a read access. In order to allocate the computation and data to the processors, the compiler <lb/>first transforms the program to expose loop-level parallelism in the computation. It then finds a decomposition of the computation and data <lb/>such that parallelism is exploited and the communication overhead is <lb/>minimized. The compiler will trade off extra degrees of parallelism to <lb/>reduce or eliminate communication. Finally, the compiler generates code <lb/>to manage the multiple address spaces and to communicate data across <lb/>processors. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

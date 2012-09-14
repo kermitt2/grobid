@@ -1,0 +1,21 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="251"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<byline><affiliation>MASSACHUSETTS INSTITUTE OF TECHNOLOGY <lb/>ARTIFICIAL INTELLIGENCE LABORATORY <lb/>and <lb/>CENTER FOR BIOLOGICAL INFORMATION PROCESSING <lb/>WHITAKER COLLEGE <lb/></affiliation></byline>
+		<idno>A.I. Memo No. 1164</idno>
+		<date>October 1989 <lb/></date>
+		<idno>C.B.I.P. Paper No. 45 <lb/></idno>
+		<docTitle>
+			<titlePart type="main">Networks and the Best Approximation Property <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Federico Girosi and Tomaso Poggio <lb/></docAuthor></byline>
+		<div type="abstract">Abstract <lb/>Networks can be considered as approximation schemes. Multilayer networks of the <lb/>backpropagation type can approximate arbitrarily well continuous functions (Cybenko, <lb/>1989; Funahashi, 1989; Stinchcombe and White, 1989). We prove that networks derived from regularization theory and including Radial Basis Functions (Poggio and <lb/>Girosi, 1989), have a similar property. From the point of view of approximation theory, however, the property of approximating continuous functions arbitrarily well is not <lb/>sufficient for characterizing good approximation schemes. More critical is the property <lb/>of best approximation. The main result of this paper is that multilayer networks, of the <lb/>type used in backpropagation, are not best approximation. For regularization networks <lb/>(in particular Radial Basis Function networks) we prove existence and uniqueness of <lb/>best approximation. <lb/></div>
+		<note type="copyright">c Massachusetts Institute of Technology,1994 <lb/>This paper describes research done within the Center for Biological Information Processing, in the Department of Brain and Cognitive Sciences, and at the Artificial Intelligence <lb/>Laboratory. </note>
+		<note type="grant">This research is sponsored by a grant from the Office of Naval Research <lb/>(ONR), Cognitive and Neural Sciences Division; by the Artificial Intelligence Center of <lb/>Hughes Aircraft Corporation; by the Alfred P. Sloan Foundation; by the National Science Foundation. Support for the A. I. Laboratory&apos;s artificial intelligence research is provided by the Advanced Research Projects Agency of the Department of Defense under <lb/>Army contract DACA76-85-C-0010, and in part by ONR contract N00014-85-K-0124. <lb/></note>
+		<pb/>
+		</front>
+</text>
+</tei>

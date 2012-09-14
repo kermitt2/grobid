@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="421"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Higher Bandwidth X <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>John Danskin * <lb/></docAuthor></byline>
+		<byline><affiliation>Princeton University <lb/>Computer Science Department <lb/></affiliation></byline>
+		<address>Princeton NJ, 08540 <lb/></address>
+		<email>jmd@cs.princeton.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>Network bandwidth has always been a key issue for multimedia protocols. Many potential users of networked multimedia protocols will continue to have low bandwidth network <lb/>connections for some time: copper wire ISDN, infra-red, cellular modems, etc.. Compression provides potential relief for users of slow networks by increasing effective bandwidth. <lb/>HBX introduces a new technique, based on arithmetic coding and statistical modeling, for <lb/>compressing structured data. Applied to the X networked graphics protocol, this technique <lb/>yields 4.5:1 compression across a representative set of traces, performing twice as well as the <lb/>popular LZW-based Xremote compression protocol. HBX&apos;s coding techniques are generally <lb/>applicable to the graphics and imaging subset of multimedia protocols. Future work will <lb/>determine whether HBX&apos;s coding techniques can be applied to audio and video streams as <lb/>well. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

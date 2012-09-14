@@ -1,0 +1,20 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="353"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Generation of task-specific segmentation <lb/>procedures as a model selection task <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Ralf Herbrich and Tobias Scheffer <lb/></docAuthor></byline>
+		<byline><affiliation>Technische Universitat Berlin, <lb/>Artificial Intelligence Research Group,</affiliation></byline>
+		<address>Sekr. FR 5-8, <lb/>Franklinstr. 28/29. D-10587 Berlin, Germany <lb/></address>
+		<email>email: ralfh|scheffer@cs.tu-berlin.de <lb/></email>
+		<date>December 1, 1997 <lb/></date>
+		<div type="abstract">Abstract <lb/>In image segmentation problems, there is usually a vast amount of filter <lb/>operations available, a subset of which has to be selected and instantiated <lb/>in order to obtain a satisfactory segmentation procedure for a particular domain. In supervised segmentation, a mapping from features, such as filter <lb/>outputs for individual pixels, to classes is induced automatically. However, <lb/>since the sample size required for supervised learning grows exponentially <lb/>in the number of features it is not feasible to learn a segmentation procedure <lb/>from a large amount of possible filters. But we argue that automatic model <lb/>selection methods are able to select a region model in terms of some filters. <lb/>We propose a wrapper algorithm that performs this task. We present results <lb/>on artificial textured images (Brodatz) and report on our experiences with <lb/>x-ray images. <lb/></div>
+		<keywords>Keywords: model based image segmentation, automatic model selection, <lb/>learning pixel classifier, texture segmentation <lb/></keywords>
+		<pb/>
+		</front>
+</text>
+</tei>

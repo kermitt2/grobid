@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="237"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Supporting Irregular Distributions in FORTRAN 90D/HPF <lb/>Compilers <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Ravi Ponnusamy yz Yuan-Shin Hwang Raja Das <lb/>Joel Saltz Alok Choudhary Geoffrey Fox <lb/></docAuthor></byline>
+		<byline><affiliation>UMIACS and Computer Science Department Northeast Parallel Architectures Center <lb/>University of Maryland Syracuse University <lb/></affiliation></byline>
+		<address>College Park, MD 20742 Syracuse, NY 13244 <lb/></address>
+		<div type="abstract">Abstract <lb/>This paper presents methods that make it possible to efficiently support irregular problems using data <lb/>parallel languages. The approach involves the use of a portable, compiler-independent, runtime support <lb/>library called CHAOS. The CHAOS runtime support library contains procedures that <lb/>* support static and dynamic distributed array partitioning, <lb/>* partition loop iterations and indirection arrays, <lb/>* remap arrays from one distribution to another, and <lb/>* carry out index translation, buffer allocation and communication schedule generation. <lb/>The CHAOS runtime procedures are used by a prototype Fortran 90D compiler as runtime support for irregular problems. This paper also presents performance results of compiler-generated and <lb/>hand-parallelized versions of two stripped down applications codes. The first code is derived from <lb/>an unstructured mesh computational fluid dynamics flow solver and the second is derived from the <lb/>molecular dynamics code CHARMM. <lb/>A method is described that makes it possible to emulate irregular distributions in HPF by reordering elements of data arrays and renumbering indirection arrays. The results suggest that an HPF <lb/>compiler could use reordering and renumbering extrinsic functions to obtain performance comparable <lb/>to that achieved by a compiler for a language (such as Fortran 90D) that directly supports irregular <lb/>distributions. <lb/></div>
+		<note type="grant">This work was sponsored in part by ARPA (NAG-1-1485), NSF (ASC 9213821), and ONR (SC292-1-22913). <lb/></note>
+		<pb/>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,68 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005154"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<reference>international journal of hydrogen energy 35 (2010)
+				10719–10724<lb/></reference>
+			<ptr type="web">Available at www.sciencedirect.com<lb/></ptr>
+			<ptr type="web">journal homepage: www.elsevier.com/locate/he<lb/></ptr>
+			<docTitle>
+				<titlePart>State estimation of a batch hydrogen production process<lb/> using the
+					photosynthetic bacteria Rhodobacter capsulatus<lb/></titlePart>
+			</docTitle>
+			<byline>
+				<docAuthor>Jamila Obeid a, Jean-Marie Flaus b, Olivier Adrot b, Jean-Pierre Magnin
+					a,*, John C. Willison c</docAuthor>
+			</byline>
+			<byline>
+				<affiliation>a Grenoble University, LEPMI, UMR 5631 (CNRS-INPG-UJF), Laboratoire
+					d’Electrochimie et de Physico chimie des Mat ́riaux et Interfaces,
+					<lb/></affiliation>
+			</byline>
+			<address>BP 75, 38402 St. Martin d’H`res, France<lb/></address>
+			<byline>
+				<affiliation>b Grenoble University, G-SCOP UMR 272 (CNRS-INPG-UJF), Laboratoire des
+					Sciences pour la Conception, l’Optimisation et la
+					Production,<lb/></affiliation>
+			</byline>
+			<address>46, avenue Félix Viallet, 38031 Grenoble, France</address>
+			<byline>
+				<affiliation>c Laboratoire de Chimie et Biologie des Métaux (UMR 5249
+					CEA-CNRS-UJF), iRTSV/LCBM, CEA-Grenoble,</affiliation>
+			</byline>
+			<address>38054 Grenoble, France<lb/></address>
+			<note type="other">article info<lb/></note>
+			<note type="submission"> Article history:<lb/> Received 1 October 2009<lb/> Received in
+				revised form<lb/> 29 January 2010<lb/> Accepted 10 February 2010<lb/> 
+			</note>
+			<date>Available online 2 April 2010<lb/></date>
+			
+			<keywords> Keywords:<lb/> Hydrogen production<lb/> Photobioreactor<lb/> Rhodobacter
+				capsulatus<lb/> Moving-horizon estimation state<lb/> MSHE<lb/>
+			</keywords>
+			<space dim="horizontal"/>
+			<div type="abstract"> abstract<lb/> This paper addresses the problem of estimating the
+				states of an anaerobic photosynthetic<lb/> process used for biohydrogen production
+				by the photosynthetic bacterium Rhodobacter<lb/> capsulatus. The process is
+				described by a non-linear, time-discrete model and the state<lb/> estimation is
+				solved using an observer based on the Moving-Horizon State Estimation<lb/> Method
+				(MHSE). This approach is based on the minimization of a criterion (a non-linear<lb/>
+				function), in this case, the difference between the estimated output and the
+				measured<lb/> output of the system over a considered time horizon, where the
+				solution is computed by<lb/> using a numerical interval method. The observer was
+				successfully applied to hydrogen<lb/> production by R. capsulatus strain B10 in a
+				batch process.<lb/>
+			</div>
+			<note type="copyright">&#169; 2010 Professor T. Nejat Veziroglu. Published by Elsevier
+				Ltd. All rights reserved.<lb/></note>
+			<phone>* Corresponding author. Fax: þ33 4 76 82 67 77.<lb/></phone>
+			<email>E-mail address: Jean-Pierre.Magnin@lepmi.grenoble-inp.fr (J.-P. Magnin).<lb/></email>
+			<note type="other">0360-3199/$ – see front matter a 2010 Professor T. Nejat Veziroglu.</note> 
+			<note type="copyright">Published by Elsevier Ltd. All rights reserved.<lb/></note>
+			<idno>doi:10.1016/j.ijhydene.2010.02.051</idno>
+		</front>
+	</text>
+</tei>

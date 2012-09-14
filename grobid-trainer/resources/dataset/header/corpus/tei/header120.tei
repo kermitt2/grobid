@@ -1,0 +1,25 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="121"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Finite State Machines and Recurrent Neural Networks - <lb/>Automata and Dynamical Systems Approaches <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Peter Tino a;b , Bill G. Horne b , C. Lee Giles b;c <lb/></docAuthor></byline>
+		<byline><affiliation>a Department of Computer Science and Engineering <lb/>Slovak Technical University <lb/></affiliation></byline>
+		<address>Ilkovicova 3, 812 19 Bratislava, Slovakia <lb/></address>
+		<email>Email: tino@decef.elf.stuba.sk <lb/></email>
+		<byline><affiliation>b NEC Research Institute <lb/></affiliation></byline>
+		<address>4 Independence Way <lb/>Princeton, NJ 08540 <lb/></address>
+		<email>Email: <lb/>ftino,horne,gilesg@research.nj.nec.com <lb/></email>
+		<byline><affiliation>c Institute for Advanced Computer Studies <lb/>University of Maryland <lb/></affiliation></byline>
+		<address>College Park, MD 20742 <lb/></address>
+		<idno>Technical Report <lb/>UMIACS-TR-95-1 and CS-TR-3396 <lb/></idno>
+		<byline><affiliation>Institute for Advanced Computer Studies <lb/>University of Maryland <lb/></affiliation></byline>
+		<address>College Park, MD 20742 <lb/></address>
+		<pb/>
+		</front>
+</text>
+</tei>

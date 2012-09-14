@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="275"/>
+	</teiHeader>
+	<text xml:lang="en">
+			<front>EXCITON POLARIZATION, FINE STRUCTURE SPLITTING AND<lb/> QUANTUM DOTS ASYMMETRY UNDER UNIAXIAL STRESS<lb/> Lixin He 1* , Ming Gong 1 , Weiwei Zhang 1 , and Guang-Can Guo 1<lb/> 1 Key<lb/> laboratory of quantum information, University of Science and Technology of China, Hefei, Anhui, 230026, China<lb/></front>
+
+			<p>We derive a general relation between the fine structure splitting (FSS) and the exciton polarization angle of<lb/> self-assembled quantum dots (QDs) under uniaxial stress. We show that the FSS lower bound under external<lb/> stress can be predicted by the exciton polarization angle and FSS under zero stress. The critical stress can also<lb/> be determined by monitoring the change of exciton polarization angle. We confirm the theory by the atomistic<lb/> pseudopotential calculations on the InAs/GaAs QDs. The work provides a deep insight into the dots asymmetry<lb/> and their optical properties, and a useful guidance for selecting QDs with smallest FSS which is crucial for<lb/> entangled photon sources applications.</p>
+
+			<note place="footnote">* corresponding author : helx@ustc.edu.cn</note>
+
+
+	</text>
+</tei>

@@ -1,0 +1,15 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="393"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Finding Maximum Flows in Undirected Graphs Seems Easier than <lb/>Bipartite Matching <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>David R. Karger * and Matthew S. Levine * <lb/></docAuthor></byline>
+		<div type="abstract">Abstract <lb/>Consider an n-vertex, m-edge, undirected graph with maximum flow value v. We give a method to find augmenting <lb/>paths in such a graph in amortized sub-linear (O(n <lb/>p <lb/>v)) time <lb/>per path. This lets us improve the time bound of the classic augmenting path algorithm to O(m + nv 3=2 ) on simple <lb/>graphs. The addition of a blocking flow subroutine gives a <lb/>simple, deterministic O(nm 2=3 v 1=6 )-time algorithm. We also <lb/>use our technique to improve known randomized algorithms, <lb/>giving O(m+nv 5=4 )-time and O(m+n 11=9 v)-time algorithms <lb/>for capacitated undirected graphs. For simple graphs, in <lb/>which v n, the last bound is O(n 2:2 ), improving on the best <lb/>previous bound of O(n 2:5 ), which is also the best known time <lb/>bound for bipartite matching. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>*</marker>
+							<orgName type="department">First Department of Internal Medicine</orgName>,
+							<orgName type="institution">Kyoto Prefectural University of Medicine</orgName>,
+							<address>
+								<addrLine>Kamigyo-ku</addrLine>,
+								<settlement>Kyoto</settlement>,
+								<postCode>602-8566</postCode>,
+								<country>Japan</country>;
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							and <marker>†</marker>
+							<orgName type="laboratory">Center for Vascular Biology</orgName>,
+							<orgName type="department">Department of Physiology</orgName>,
+							<orgName type="institution">University of Connecticut School of Medicine</orgName>,
+							<address>
+								<settlement>Farmington</settlement>,
+								<country>Connecticut</country>
+								<postCode>06030</postCode>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

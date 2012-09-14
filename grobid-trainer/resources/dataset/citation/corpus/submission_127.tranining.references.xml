@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+<listBibl>
+
+		<bibl><author>H. E. Türeci et al.</author>, <title level="j">Phys. Rev. Lett.</title> <biblScope type="vol">106</biblScope>, <biblScope type="pp">107402</biblScope> (<date>2011</date>).</bibl>
+
+		<bibl><title level="j">Physics Synopsis</title>, "<title level="a">Kondo effect lights up</title>",  <ptr type="web">http://physics.aps.org/synopsis-for/10.1103/PhysRevLett.106.107402</ptr>.</bibl>
+
+		<bibl><author>C. Latta et al.</author>, <ptr type="web">http://arXiv.org/abs/1007.3733</ptr> (<note>OECS12 Invited Talk, A. Imamoglu</note>).</bibl>
+		
+</listBibl>
+</tei>

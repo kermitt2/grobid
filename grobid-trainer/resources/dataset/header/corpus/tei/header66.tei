@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="67"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">A Facilitator Method for Upstream Design Activities <lb/>with Diverse Stakeholders <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Regina M. Gonzales and Alexander L. Wolf <lb/></docAuthor></byline>
+		<byline><affiliation>Software Engineering Research Laboratory <lb/> Department of Computer Science <lb/> University of Colorado <lb/></affiliation></byline>
+		<address>Boulder, CO 80309 USA <lb/></address>
+		<email>fregina.gonzales,alwg@cs.colorado.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>This paper presents a method that can be used for <lb/>the elicitation and specification of requirements and <lb/>high-level design. It supports stakeholder-based modeling, rapid feasibility feedback to marketing, and the <lb/>interpersonal dynamics that are necessary to develop <lb/>a product. The method centers on the role of the facilitator, an independent agent whose purpose is to build <lb/>the Integrated System Model (ISM). The ISM is the result of merging the independent system views from all <lb/>stakeholders at any given abstraction level. Formulation of this method was based on the real-world experience of developing a complex, high-technology medical <lb/>product with critical time-to-market pressures. It has <lb/>proven to be a practical approach to the evolution of <lb/>requirements definition and provides a necessary link <lb/>to the marketing aspect of a product. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="ZNB-1947-2b-0029"/>
+	</teiHeader>
+	<text xml:lang="de">
+		<front>
+			<lb/>
+			<docTitle>
+				<titlePart>Über die Yermehrungs-und Ausbreitungsgeschwindigkeit<lb/> des X-Virus im Blattparenchym<lb/></titlePart>
+			</docTitle>
+
+			<byline>
+				<docAuthor>Von ERICH KÖHLER<lb/></docAuthor>
+			</byline>
+
+			<byline>
+				<affiliation>Aus dem Botanischen Institut für Virusforschung der Biologischen Zentralanstalt</affiliation>
+			</byline>
+
+			<address>in Celle<lb/></address>
+
+			<reference>(Z. Naturforschg. 2 b, 29—34 [1947];</reference>
+
+			<note type="submission">eingegangen am 2. November 1946)<lb/></note>
+
+			<div type="abstract">Die-Geschwindigkeit, mit der sich das Kartoffel-X-Virus im Blatt-Parenchym anfälliger<lb/> Wirtspflanzen ausbreitet, wurde durch vergleichende Messungen an kreisförmigen Infektions-<lb/>herden verschiedenen Alters ermittelt. Die gefundenen Werte betragen rund 0,3 mm im Blatt<lb/> der Tabaksorte Samsun, 0,2 mm im Blatt der Tabaksorte Xanthia und 0,1 mm im Blatt von<lb/> Datum Stramonium innerhalb 24 Stunden. Im nerv^nständigen Parenchym erfolgt die Aus-<lb/>breitung erheblich schneller, wodurch die stärkeren Abweichungen von der Kreisform Zustande-<lb/>kommen.<lb/> Ferner wird gezeigt, daß die Vermehrung (Konzentrationszunahme) des X-Virus im ge-<lb/>impften Blatt unter bestimmten Voraussetzungen der Zunahme einer stetig wachsenden Kreis-<lb/>fläche gleichgesetzt werden kann und daß die Ausbreitung in den latenten Infektionsherden der<lb/> Blätter von Atropa Belladonna mit derselben Geschwindigkeit erfolgt wie beim Samsun-T&amp;bak.<lb/> Die Frage nach dem Mechanismus der Virusausbreitung im Parenchym wird kurz gestreift, sie<lb/> bedarf noch eingehender Erörterung und experimenteller
+				Prüfung.<lb/></div>
+
+		</front>
+	</text>
+</tei>

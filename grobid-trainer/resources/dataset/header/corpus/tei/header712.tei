@@ -1,0 +1,26 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="713"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<note type="other">A short version of this paper appears in </note> 
+		<note type="reference">Supercomputing 1996 <lb/></note> 
+		<note type="other">The serial algorithms described in this paper are implemented by the <lb/>`METIS: Unstructured Graph Partitioning and Sparse Matrix Ordering System&apos;. <lb/>METIS is available on WWW at URL:</note>
+		<ptr type="web">http://www.cs.umn.edu/karypis/metis/metis.html <lb/></ptr>
+		<docTitle>
+			<titlePart type="main">Parallel Multilevel k -way Partitioning Scheme for <lb/>Irregular Graphs <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>George Karypis and Vipin Kumar <lb/></docAuthor></byline>
+		<byline><affiliation>University of Minnesota, Department of Computer Science <lb/></affiliation></byline>
+		<address>Minneapolis, MN 55455,</address>
+		<idno>Technical Report: 96-036 <lb/></idno>
+		<email>fkarypis, kumarg@cs.umn.edu <lb/></email>
+		<note type="other">Last updated on October 24, 1996 at 9:02am <lb/></note>
+		<div type="abstract">Abstract <lb/>In this paper we present a parallel formulation of a multilevel k-way graph partitioning algorithm. The multilevel <lb/>k-way partitioning algorithm reduces the size of the graph by collapsing vertices and edges (coarsening phase), finds <lb/>a k-way partitioning of the smaller graph, and then it constructs a k-way partitioning for the original graph by projecting and refining the partition to successively finer graphs (uncoarsening phase). A key innovative feature of our <lb/>parallel formulation is that it utilizes graph coloring to effectively parallelize both the coarsening and the refinement <lb/>during the uncoarsening phase. Our algorithm is able to achieve a high degree of concurrency, while maintaining the <lb/>high quality partitions produced by the serial algorithm. We test our scheme on a large number of graphs from finite <lb/>element methods, and transportation domains. For graphs with a million vertices, our parallel formulation produces <lb/>high quality 128-way partitions on 128 processors in a little over two seconds, on Cray T3D. Thus our parallel algorithm makes it feasible to perform frequent dynamic graph partition in adaptive computations without compromising <lb/>quality. <lb/></div>
+		<keywords>Keywords: Parallel Graph Partitioning, Multilevel Partitioning Methods, Spectral Partitioning Methods, <lb/>Kernighan-Lin Heuristic, Parallel Sparse Matrix Algorithms. <lb/></keywords>
+		<note type="grant">This work was supported by NSF CCR-9423082 and by Army Research Office contract DA/DAAH04-95-1-0538, and by Army High Performance Computing Research Center under the auspices of the Department of the Army, Army Research Laboratory cooperative agreement <lb/>number DAAH04-95-2-0003/contract number DAAH04-95-C-0008, the content of which does not necessarily reflect the position or the policy of the government, and no official endorsement should be inferred. Access to computing facilities was provided by AHPCRC, Minnesota <lb/>Supercomputer Institute, Cray Research Inc, and by the Pittsburgh Supercomputing Center. Related papers are available via WWW at URL: <lb/>http://www.cs.umn.edu/karypis <lb/></note>
+		<pb/>
+		</front>
+</text>
+</tei>

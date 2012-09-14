@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="department">Institute of Electrical Engineering</orgName>,
+							<orgName type="institution">Slovak Academy of Sciences</orgName>,
+							<address>
+								<addrLine>Dubravska cesta 9</addrLine>,
+								<postCode>841 04</postCode>
+								<settlement>Bratislava</settlement>,
+								<country>Slovakia</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="institution">Karlsruhe Institute of Technology</orgName>,
+							<orgName type="department">Institute for Technical Physics</orgName>,
+							<address>
+								<addrLine>Hermann-von-Helmholtz-Platz 1</addrLine>,
+								<postCode>76344</postCode>
+								<settlement>Eggenstein-Leopoldshafen</settlement>,
+								<country>Germany</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

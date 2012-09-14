@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<nite:root nite:id="WO2007045192.HC.substance-names" xmlns:nite="http://nite.sourceforge.net/">
+   <substance-name nite:id="WO2007045192.HC.substance-names.1" comment="" name="silica gel" relevant="false" chebi-id="WO2007045192:415358" epochem-id="EPOCHEM:NEW:SUBSTANCE:326">
+      <nite:child href="WO2007045192.words.xml#id(WO2007045192_w_3271)"/>
+      <nite:child href="WO2007045192.words.xml#id(WO2007045192_w_3270)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007045192.HC.substance-names.2" comment="" name="silica gel" relevant="false" chebi-id="WO2007045192:415358" epochem-id="EPOCHEM:NEW:SUBSTANCE:326">
+      <nite:child href="WO2007045192.words.xml#id(WO2007045192_w_4011)"/>
+      <nite:child href="WO2007045192.words.xml#id(WO2007045192_w_4010)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007045192.HC.substance-names.3" comment="" name="silica gel" relevant="false" chebi-id="WO2007045192:415358" epochem-id="EPOCHEM:NEW:SUBSTANCE:326">
+      <nite:child href="WO2007045192.words.xml#id(WO2007045192_w_7054)"/>
+      <nite:child href="WO2007045192.words.xml#id(WO2007045192_w_7053)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007045192.HC.substance-names.4" comment="" name="silica gel" relevant="false" chebi-id="WO2007045192:415358" epochem-id="EPOCHEM:NEW:SUBSTANCE:326">
+      <nite:child href="WO2007045192.words.xml#id(WO2007045192_w_7446)..id(WO2007045192_w_7447)"/>
+   </substance-name>
+   <substance-name nite:id="WO2007045192.HC.substance-names.5" comment="" name="silica gel" relevant="false" chebi-id="WO2007045192:415358" epochem-id="EPOCHEM:NEW:SUBSTANCE:326">
+      <nite:child href="WO2007045192.words.xml#id(WO2007045192_w_7806)..id(WO2007045192_w_7807)"/>
+   </substance-name>
+</nite:root>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<nite:root nite:id="WO2007031904.HC.ligand-names" xmlns:nite="http://nite.sourceforge.net/">
+   <ligand-name nite:id="WO2007031904.HC.ligand-names.1" comment="" name="2,3,8a-trimethyl" relevant="true" chebi-id="WO2007031904:547679" epochem-id="EPOCHEM:NEW:LIGAND:485">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_55)..id(WO2007031904_w_56)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_59)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_54)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_58)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_57)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_53)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007031904.HC.ligand-names.8" comment="" name="hydrogen atom" relevant="false" chebi-id="CHEBI:29305" epochem-id="EPOCHEM:NEW:LIGAND:494">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_313)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_312)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007031904.HC.ligand-names.9" comment="" name="hydrogen atom" relevant="false" chebi-id="CHEBI:29305" epochem-id="EPOCHEM:NEW:LIGAND:494">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_325)..id(WO2007031904_w_326)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007031904.HC.ligand-names.10" comment="" name="hydrogen atom" relevant="false" chebi-id="CHEBI:29305" epochem-id="EPOCHEM:NEW:LIGAND:494">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_383)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_382)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007031904.HC.ligand-names.11" comment="" name="hydrogen atom" relevant="false" chebi-id="CHEBI:29305" epochem-id="EPOCHEM:NEW:LIGAND:494">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_389)..id(WO2007031904_w_390)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007031904.HC.ligand-names.12" comment="" name="hydrogen atom" relevant="false" chebi-id="CHEBI:29305" epochem-id="EPOCHEM:NEW:LIGAND:494">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5494)..id(WO2007031904_w_5495)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007031904.HC.ligand-names.13" comment="" name="hydrogen atom" relevant="false" chebi-id="CHEBI:29305" epochem-id="EPOCHEM:NEW:LIGAND:494">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5508)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5507)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007031904.HC.ligand-names.14" comment="" name="hydrogen atom" relevant="false" chebi-id="CHEBI:29305" epochem-id="EPOCHEM:NEW:LIGAND:494">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5544)..id(WO2007031904_w_5545)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007031904.HC.ligand-names.15" comment="" name="hydrogen atom" relevant="false" chebi-id="CHEBI:29305" epochem-id="EPOCHEM:NEW:LIGAND:494">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5552)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5551)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007031904.HC.ligand-names.16" comment="" name="methyl" relevant="false" chebi-id="CHEBI:29309" epochem-id="EPOCHEM:NEW:LIGAND:457">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_308)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007031904.HC.ligand-names.17" comment="" name="methyl" relevant="false" chebi-id="CHEBI:29309" epochem-id="EPOCHEM:NEW:LIGAND:457">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_321)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007031904.HC.ligand-names.18" comment="" name="methyl" relevant="false" chebi-id="CHEBI:29309" epochem-id="EPOCHEM:NEW:LIGAND:457">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_393)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007031904.HC.ligand-names.19" comment="" name="methyl" relevant="false" chebi-id="CHEBI:29309" epochem-id="EPOCHEM:NEW:LIGAND:457">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5490)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007031904.HC.ligand-names.20" comment="" name="methyl" relevant="false" chebi-id="CHEBI:29309" epochem-id="EPOCHEM:NEW:LIGAND:457">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5503)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007031904.HC.ligand-names.21" comment="" name="methyl" relevant="false" chebi-id="CHEBI:29309" epochem-id="EPOCHEM:NEW:LIGAND:457">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_5555)"/>
+   </ligand-name>
+   <ligand-name nite:id="WO2007031904.HC.ligand-names.22" comment="" name="2,2,8a-trimethyl" relevant="false" chebi-id="WO2007031904:201338" epochem-id="EPOCHEM:NEW:LIGAND:627">
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_146)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_148)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_145)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_142)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_144)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_147)"/>
+      <nite:child href="WO2007031904.words.xml#id(WO2007031904_w_143)"/>
+   </ligand-name>
+</nite:root>

@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="352"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Automated Decomposition of Model-based Learning Problems <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Brian C. Williams and Bill Millar <lb/></docAuthor></byline>
+		<byline><affiliation>Recom Technologies, Caelum Research <lb/>NASA Ames Research Center,</affiliation></byline>
+		<address>MS 269-2 <lb/>Moffett Field, CA 94305 USA <lb/></address>
+		<email>E-mail: williams, millar@ptolemy.arc.nasa.gov <lb/></email>
+		<div type="abstract">Abstract <lb/>A new generation of sensor rich, massively distributed <lb/>autonomous systems is being developed that has <lb/>the potential for unprecedented performance, such <lb/>as smart buildings, reconfigurable factories, adaptive <lb/>traffic systems and remote earth ecosystem monitoring. To achieve high performance these massive systems will need to accurately model themselves and <lb/>their environment from sensor information. Accomplishing this on a grand scale requires automating the <lb/>art of large-scale modeling. This paper presents a <lb/>formalization of decompositional, model-based learning <lb/>(DML), a method developed by observing a modeler&apos;s <lb/>expertise at decomposing large scale model estimation <lb/>tasks. The method exploits a striking analogy between <lb/>learning and consistency-based diagnosis. Moriarty, <lb/>an implementation of DML, has been applied to thermal modeling of a smart building, demonstrating a <lb/>significant improvement in learning rate. <lb/></div>
+		<div type="intro">Introduction</div>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="218"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Multilayer perceptrons may learn simple rules quickly <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>R. Urbanczik <lb/></docAuthor></byline>
+		<byline><affiliation>Institut fur theoretische Physik <lb/>Universitat Wurzburg <lb/></affiliation></byline>
+		<address>Am Hubland <lb/>D-97074 Wurzburg <lb/>Germany <lb/></address>
+		<date>November 27, 1997 <lb/></date>
+		<div type="abstract">Abstract <lb/>Zero temperature Gibbs learning is considered for a connected committee machine <lb/>with K hidden units. For large K, the scale of the learning curve strongly depends <lb/>on the target rule. When learning a perceptron, the sample size P needed for optimal <lb/>generalization scales so that N t P t KN, where N is the dimension of the input. <lb/>This even holds for a noisy perceptron rule if a new input is classified by the majority <lb/>vote of all students in the version space. When learning a committee machine with M <lb/>hidden units, 1 t M t K, optimal generalization requires <lb/>p <lb/></div>
+		<pb/>
+		</front>
+</text>
+</tei>

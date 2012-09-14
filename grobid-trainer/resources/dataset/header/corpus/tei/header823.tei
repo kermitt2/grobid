@@ -1,0 +1,19 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="unknown"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<note type="reference">To Appear in AI Magazine, <lb/>Summer/Fall 1994. <lb/></note>
+		<docTitle>
+			<titlePart type="main">An Introduction to Least Commitment <lb/>Planning <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Daniel S. Weld 1 <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science and Engineering <lb/>University of Washington <lb/></affiliation></byline>
+		<address>Seattle, WA 98195 <lb/></address>
+		<email>weld@cs.washington.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>Recent developments have clarified the process of generating partially ordered, partially specified sequences of actions whose execution <lb/>will achive an agent&apos;s goal. This paper summarizes a progression of <lb/>least commitment planners, starting with one that handles the sim <lb/>ple strips representation, and ending with one that manages actions <lb/>with disjunctive precondition, conditional effects and universal quantification over dynamic universes. Along the way we explain how <lb/>Chapman&apos;s formulation of the Modal Truth Criterion is misleading <lb/>and why his NP-completeness result for reasoning about plans with <lb/>conditional effects does not apply to our planner. <lb/></div>
+		<note type="other">1 I thank Franz Amador, Tony Barrett, Darren Cronquist, Denise Draper, Ernie Davis,</note>
+		</front>
+</text>
+</tei>

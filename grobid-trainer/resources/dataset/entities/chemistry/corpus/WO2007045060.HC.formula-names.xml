@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<nite:root nite:id="WO2007045060.HC.formula-names" xmlns:nite="http://nite.sourceforge.net/">
+   <formula-name nite:id="WO2007045060.HC.formula-names.1" comment="" name="EtOH" relevant="false" chebi-id="CHEBI:16236" epochem-id="EPOCHEM:NEW:FORMULA:6">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_2583)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007045060.HC.formula-names.2" comment="" name="H2O" relevant="false" chebi-id="CHEBI:15377" epochem-id="EPOCHEM:NEW:FORMULA:7">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_2585)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007045060.HC.formula-names.3" comment="CHCl3" name="CHCI3" relevant="false" chebi-id="WO2007045060:236784" epochem-id="EPOCHEM:NEW:FORMULA:8">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_2733)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007045060.HC.formula-names.4" comment="CHCl3" name="CHCI3" relevant="false" chebi-id="WO2007045060:236784" epochem-id="EPOCHEM:NEW:FORMULA:8">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_2797)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007045060.HC.formula-names.5" comment="CHCl3" name="CHCI3" relevant="false" chebi-id="WO2007045060:236784" epochem-id="EPOCHEM:NEW:FORMULA:8">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_2989)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007045060.HC.formula-names.6" comment="CHCl3" name="CHCI3" relevant="false" chebi-id="WO2007045060:236784" epochem-id="EPOCHEM:NEW:FORMULA:8">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_3040)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007045060.HC.formula-names.7" comment="" name="NH4OH" relevant="false" chebi-id="CHEBI:18219" epochem-id="EPOCHEM:NEW:FORMULA:9">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_2775)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007045060.HC.formula-names.8" comment="" name="NH4OH" relevant="false" chebi-id="CHEBI:18219" epochem-id="EPOCHEM:NEW:FORMULA:9">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_3160)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007045060.HC.formula-names.9" comment="" name="MeOH" relevant="false" chebi-id="CHEBI:17790" epochem-id="EPOCHEM:NEW:FORMULA:10">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_2911)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007045060.HC.formula-names.10" comment="" name="MeOH" relevant="false" chebi-id="CHEBI:17790" epochem-id="EPOCHEM:NEW:FORMULA:10">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_2991)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007045060.HC.formula-names.11" comment="" name="MeOH" relevant="false" chebi-id="CHEBI:17790" epochem-id="EPOCHEM:NEW:FORMULA:10">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_3042)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007045060.HC.formula-names.12" comment="CDCl3" name="CDCI3" relevant="false" chebi-id="WO2007045060:771206" epochem-id="EPOCHEM:NEW:FORMULA:11">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_3261)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007045060.HC.formula-names.13" comment="CDCl3" name="CDCI3" relevant="false" chebi-id="WO2007045060:771206" epochem-id="EPOCHEM:NEW:FORMULA:11">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_4173)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007045060.HC.formula-names.14" comment="NaCl" name="NaCI" relevant="false" chebi-id="WO2007045060:697205" epochem-id="EPOCHEM:NEW:FORMULA:12">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_3526)"/>
+   </formula-name>
+   <formula-name nite:id="WO2007045060.HC.formula-names.15" comment="NaCl" name="NaCI" relevant="false" chebi-id="WO2007045060:697205" epochem-id="EPOCHEM:NEW:FORMULA:12">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_3543)"/>
+   </formula-name>
+</nite:root>

@@ -1,0 +1,2413 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+					
+						<author>
+							<affiliation>
+								<orgName type="department">Dept. of Computer and Information Science</orgName>
+								<orgName type="institution">The Ohio State University</orgName>,
+								<address>
+									<settlement>Columbus</settlement>,
+									<region type="state" n="OH">OH</region>
+									<postCode>43210-1277</postCode>
+								</address>
+							</affiliation>
+						</author>
+						
+						<author>
+							<affiliation>
+								<orgName type="department">Dept. of Computer Science </orgName>
+								<orgName type="institution">University of Maryland </orgName>
+								<address>
+									<addrLine>5401 Wilkens Avenue <lb/></addrLine>
+									<settlement>Baltimore</settlement>,
+									<region type="state" n="MD">MD</region>
+								</address>
+							</affiliation>
+						</author>
+						
+						<author>
+							<affiliation>
+								<orgName type="department">Department of Computer and Information Science<lb/> </orgName>
+								<orgName type="institution">The Ohio State University <lb/> </orgName>
+								<address>
+									<settlement>Columbus</settlement>,
+									<region type="state" n="MD">OH</region>								
+									<postCode>43210 <lb/></postCode>
+								</address>
+							</affiliation>
+						</author>
+						
+						<author>
+							<affiliation>
+								<orgName type="laboratory">Artificial Intelligence, Robotics, and Vision Laboratory <lb/> </orgName>
+								<orgName type="institution">The Ohio State University<lb/></orgName>
+								<address>
+									<settlement>Columbus</settlement>, 
+									<region type="state" n="MD">OH</region>								
+									<postCode>43210 <lb/></postCode>
+								</address>
+							</affiliation>	
+						</author>
+						
+						<author>
+							<affiliation>
+								<orgName type="laboratory">Theoretical Physics Group</orgName>, 
+								<orgName type="department">School of Physics and Astronomy</orgName>,<lb/>
+								<orgName type="institution">The University of Manchester</orgName>,  <lb/> 
+								<address>
+									<settlement>Manchester</settlement>, 
+									<postCode>M13 9PL</postCode>, 
+									<country>UK<lb/></country>
+								</address>
+							</affiliation>	
+						</author>		
+								
+						<author>
+							<marker>1</marker> 
+							<affiliation>
+								<orgName type="department">Institute  of Nuclear Research</orgName> 
+								of the 
+								<orgName type="institution">Hungarian Academy of Sciences</orgName>, 
+								<address>
+									<settlement>Debrecen</settlement>, <lb/>
+									<addrLine>Bem tér 18/c</addrLine>, 
+									<country>Hungary</country>
+									<postCode>H-4026<lb/></postCode>
+								</address>
+							</affiliation>	
+							<marker>2</marker> 
+							<affiliation>
+								<orgName type="institution">University of Debrecen<lb/></orgName>
+								<orgName type="department">Faculty of Informatics</orgName>,
+								<address>
+									<settlement>Debrecen</settlement>, 
+									<postBox>P.O.Box 12</postBox>,
+									<country>Hungary</country>
+									<postCode>H-4010<lb/></postCode>
+								</address>
+							</affiliation>
+						</author>	
+						
+						<author>
+							<marker>1</marker> 
+							<affiliation>
+								<orgName type="institution">INFN-Laboratori Nazionali del Sud</orgName>, 
+								<address>
+									<addrLine>Via S.Sofia 62</addrLine>, 
+									<postCode>I95123</postCode> 
+									<region>Catania</region>, 
+									<country>Italy<lb/></country>
+								</address>
+							</affiliation>
+							<marker>2</marker> 
+							<affiliation>
+								<orgName type="department">Dipartimento di Metodologie Fisiche e Chimiche per l'Ingegneria</orgName>, 
+								<orgName type="institution">Università di Catania</orgName>,
+								<address>
+									<postCode>I95123</postCode>
+									<region>Catania</region>,
+									<country key="IT">Italy<lb/></country>
+								</address>
+							</affiliation>
+							<marker>3</marker> 
+							<affiliation>
+								<orgName type="department">Institut fur Physik mit Ionenstrahlen</orgName>
+								<orgName type="institution">Ruhr-Universitat Bochum</orgName>,
+								<address>
+									<settlement>Bochum</settlement>,
+									<country key="DE">Germany<lb/></country>
+								</address>
+							</affiliation>
+							<marker>4</marker> 
+							<affiliation>
+								<orgName type="department">Dipartimento di Fisica e Astronomia</orgName>,
+								<orgName type="institution">Università di Catania</orgName>,
+								<address>
+									<postCode>I95123</postCode>
+									<settlement>Catania</settlement>,
+									<country key="IT">Italy<lb/></country>
+								</address>
+							</affiliation>
+   							<marker>5</marker> 
+							<affiliation>
+								<orgName type="department">INFN-Sezione di Bari</orgName>,
+								<address>
+									<addrLine>Via Orabona 4</addrLine>, 
+									<postCode>I70126</postCode>
+									<settlement>Bari</settlement>,
+									<country>Italy<lb/></country>
+								</address>
+							</affiliation>
+							<marker>6</marker> 
+							<affiliation>
+								<orgName type="institution">Università Kore</orgName>,
+								<address>
+									<settlement>Enna</settlement>,
+									<country>Italy<lb/></country>
+								</address>
+							</affiliation>
+						</author>	
+						
+						<author>
+							<marker>1</marker> 
+							<affiliation>
+								<orgName type="department">Dept  of Electronic and Electrical Engineering</orgName>, 
+								<orgName type="institution">Loughborough University</orgName>, 
+								<address>
+									<settlement>Leics</settlement>
+									<postCode>LE11, 3TU</postCode>,
+									<country>UK<lb/></country>
+								</address>
+							</affiliation>
+							<marker>2</marker> 
+							<affiliation>
+								<orgName type="laboratory">State Key Lab of Electrical Insulation and Power Equipments</orgName>,
+								<orgName type="institution">Xi'an Jiaotong University</orgName>,  
+								<address>
+									<postCode>710049</postCode>,
+									<country>P.<lb/>R. China<lb/></country>
+								</address>
+							</affiliation>
+						</author>	
+							
+						<author>
+							<marker>1</marker> 
+							<affiliation>
+								<orgName type="department">Inst. Phys</orgName>., 
+								<orgName type="department">Fac. Sci</orgName>.,  
+								<orgName type="institution">UPJS</orgName>, 
+								<address>
+									<addrLine>Park Angelinum 9</addrLine>, 
+									<postCode>041 54</postCode>
+									<settlement>Kosice</settlement>
+									<country>Slovakia<lb/></country>
+								</address>
+							</affiliation>
+							<marker>2</marker>
+							<affiliation>
+								<orgName type="department">Inst. Exp. Physics</orgName>, 
+								<orgName type="institution">SAS</orgName>
+								<address>
+									<addrLine>Watsonova 47</addrLine>, 
+									<postCode>040 01</postCode>
+									<settlement>Kosice</settlement>, 
+									<country>Slovakia<lb/></country>
+								</address>
+							</affiliation>
+							<marker>3</marker>
+							<affiliation>
+								<orgName type="department">Dept. of Physics</orgName>, 
+								<orgName type="institution">FEI TUKE</orgName>,
+								<address>		
+									<addrLine>Park Komenskeho 2</addrLine>, 
+									<postCode>042 00</postCode>
+									<settlement>Kosice</settlement>, 
+									<country>Slovakia<lb/></country>
+								</address>
+							</affiliation>
+							<marker>4</marker>
+							<affiliation>
+								<orgName type="institution">ICMM CSIC</orgName>,
+								<address>		
+									<addrLine>Campus de Cantoblanco</addrLine>, 
+									<postCode>28049</postCode>
+									<settlement>Madrid</settlement>, 
+									<country>Spain<lb/></country>
+								</address>
+							</affiliation>
+						</author>	
+						
+						<author>
+							<marker>1</marker> 
+							<affiliation>
+								<orgName type="department">Department  of Engineering Sciences</orgName>, 
+								<address>
+									<postBox>Box 534</postBox>, 
+								</address>
+								<orgName type="laboratory">Ångström Laboratory</orgName>, 
+								<orgName type="institution">Uppsala<lb/> University</orgName>, 
+								<address>
+									<postCode>751 21</postCode>
+									<settlement>Uppsala</settlement>, 
+									<country>Sweden</country>.<lb/>
+								</address>
+							</affiliation>
+							<marker>2</marker> 
+							<affiliation>
+								<orgName type="department">Department of Physics and Materials Science</orgName>,  
+								<address>
+									<postBox>Box 534</postBox>,
+								</address>
+								<orgName type="laboratory">Ångström Laboratory</orgName>, <lb/>
+								<orgName type="institution">Uppsala University</orgName>, 
+								<address>
+									<postCode>751 21</postCode>
+									<settlement>Uppsala</settlement>,
+									<country>Sweden</country>.<lb/>
+								</address>
+							</affiliation>
+							<marker>3</marker> 
+							<affiliation>
+								<orgName type="department">Department of Materials Chemistry</orgName>,  
+								<address>
+									<postBox>Box 534</postBox>, 
+								</address>
+								<orgName type="laboratory">Ångström Laboratory</orgName>, 
+								<orgName type="institution">Uppsala<lb/>University</orgName>, 
+								<address>
+									<postCode>751 21</postCode>
+									<settlement>Uppsala</settlement>, 
+									<country>Sweden</country>.<lb/>
+								</address>
+							</affiliation>
+							<marker>4</marker> 
+							<affiliation>
+								<orgName type="department">Department of Biochemistry and Organic Chemistry</orgName>,  
+								<address>
+									<postBox>Box 576</postBox>,  
+								</address>
+								<orgName type="institution">Uppsala University</orgName>, <lb/> 
+								<address>
+									<postCode> 751 23</postCode>
+									<settlement>Uppsala</settlement>, 
+									<country>Sweden</country>.<lb/>
+								</address>
+							</affiliation>
+							<marker>5</marker> 
+							<affiliation>
+								<orgName type="department">Department of Applied Science</orgName>,  
+								<orgName type="department"> College of William and Mary</orgName>, <lb/> 
+								<address>
+									<addrLine>325 McGlothin<lb/> Street Hall</addrLine>, 
+									<settlement>Williamsburg</settlement>, 
+									<postCode> 23187</postCode>, 
+									<region>Virginia</region>, 
+									<country>USA</country>.<lb/>
+								</address>
+							</affiliation>
+							<marker>6</marker> 
+							<affiliation>
+								<orgName type="institution">Luna Innovations Incorporated</orgName>, 
+								<orgName type="department">NanoWorks Division</orgName>,  <lb/> 
+								<address>
+									<addrLine>521 Bridge Street</addrLine>,  
+									<settlement>Danville</settlement>, 
+									<postCode> 24541</postCode>, 
+									<region>Virginia</region>, 
+									<country>USA</country>.<lb/>
+								</address>
+							</affiliation>
+						</author>	
+						
+						<author>
+							<marker>1</marker> 
+							<affiliation>
+								<orgName type="institution">Laboratorio Nazionale MDM CNR-INFM</orgName>, 
+								<address>
+									<addrLine>Via C. Olivetti 2</addrLine>, 
+									<postCode>20041</postCode>
+									<settlement>Agrate Brianza</settlement>
+									<region>(MI)</region>, 
+									<country>Italy</country>.<lb/>
+								</address>
+							</affiliation>
+							<marker>2<lb/></marker> 
+							<affiliation>
+								<orgName type="department">Dipartimento di Scienza dei Materiali</orgName>, 
+								<orgName type="institution">Università di Milano Bicocca</orgName>, 
+								<address>
+									<settlement>Milano</settlement>, 
+									<country>Italy<lb/></country>
+								</address>
+							</affiliation>
+						</author>	
+
+						<author>
+							<marker>1</marker> 
+							<affiliation>
+								<orgName type="institution">Università degli Studi della Calabria</orgName>,
+								<orgName type="department">Dipartimento di Fisica </orgName> 
+								<address>
+									<postCode>87036</postCode>
+									<settlement>Rende</settlement>
+									<region>(Cs)</region>,<lb/>
+									<country>Italy<lb/></country>
+								</address>
+							</affiliation>
+							<marker>2<lb/></marker> 
+							<affiliation>
+								<orgName type="department">Departamento de Fisica de la Materia Condensada</orgName>, 
+								<orgName type="institution">Universidad Autónoma de<lb/> Madrid </orgName> 
+								<address>
+									<postCode>28049</postCode>
+									<settlement>Madrid</settlement>, 
+									<country>Spain</country>.<lb/>
+								</address>
+							</affiliation>
+							<marker>3<lb/></marker> 
+							<affiliation>
+								<orgName type="institution">Instituto Madrileño de Estudios Avanzados (IMDEA) en Nanociencia</orgName> 
+								<address>
+									<postCode>28049<lb/></postCode>
+									<settlement>Madrid</settlement>, 
+									<country>Spain<lb/></country>
+								</address>
+							</affiliation>
+							<marker>4<lb/></marker> 
+							<affiliation>
+								<orgName type="institution">CNISM, Consorzio Nazionale Interuniversitario per le Scienze Fisiche della<lb/> Materia</orgName>, 
+								<address>
+									<addrLine>via della Vasca Navale 84</addrLine>, 
+									<postCode>00146<lb/></postCode>
+									<settlement>Roma</settlement>, 
+									<country>Italy<lb/></country>
+								</address>
+							</affiliation>
+						</author>	
+
+						<author>
+							<marker>1</marker> 
+							<affiliation>
+                            	<orgName type="department">Fachbereich  Physik</orgName>, 
+                            	<orgName type="institution">Universität Konstanz</orgName>,  
+                                <address>
+                                	<addrLine>Universitätsstrasse 10</addrLine>, 
+                                	<postCode>D-78457</postCode>, <lb/>
+                                	<country>Germany</country>.<lb/>
+                                </address> 
+                            </affiliation>
+                            <marker>2</marker> 
+                            <affiliation>
+                            	<orgName type="laboratory">Laboratory for Micro- and Nanotechnology</orgName>, 
+                            	<orgName type="institution">Paul Scherrer Institut</orgName>, 
+                                <address>
+                                	<postCode>CH-5232<lb/></postCode>
+                                	<settlement>Villigen PSI</settlement>, 
+                                	<country>Switzerland</country>.<lb/>
+                                </address>
+                            </affiliation>
+							<marker>3</marker>
+							<affiliation>
+                            	<orgName type="department">Samsung Electronics</orgName>, 
+                                <address>
+                                	<addrLine>San 14-1 Nongseo-dong</addrLine>, 
+                                	<addrLine>Giheung-gu</addrLine>, 
+                                	<settlement>Yongin-si</settlement>, 
+                                	<region>Gyeonggi-do</region>, <lb/>
+                                	<country>Korea</country>. <lb/>
+                                </address>
+                            </affiliation>
+						</author>
+						
+						<author>
+							<marker>1</marker> 
+							<affiliation>
+                            	<orgName type="department">Low Temperature Physics and Superconductivity Department </orgName>,
+                            	<orgName type="institution">Moscow State University</orgName>, 
+                                <address>
+                                	<settlement>Moscow</settlement>, 
+                                	<postCode>119991</postCode>, 
+                                	<country>Russia</country>.<lb/>
+                                </address> 
+                            </affiliation>
+                            <marker>2</marker> 
+                            <affiliation>
+                            	<orgName type="department">IFW Dresden</orgName>, 
+                            	<orgName type="laboratory">Institute for Metallic Materials</orgName>, 
+                                <address>
+                                	<postBox>P.O. Box 27 01 16</postBox>, 
+                                	<postCode>01171</postCode>, 
+                                   	<settlement>Dresden</settlement>, 
+                                	<country>Germany<lb/></country>
+                                </address> 
+                            </affiliation>
+                            <marker>3</marker> 
+                            <affiliation>
+                            	<orgName type="department">Institute of Physics</orgName>, 
+                            	<orgName type="institution">Academy of Sciences of Czech Republic</orgName>,  
+                                <address>
+                                	<addrLine>Na Slovance 2</addrLine>,  
+                                   	<settlement>Prague</settlement>, 
+                                	<country>Czech<lb/>Republic<lb/></country>
+                                </address> 
+                            </affiliation>
+                            <marker>4</marker> 
+                            <affiliation>
+                            	<orgName type="department">IMRAM</orgName>, 
+                            	<orgName type="institution">Tohoku University</orgName>,  
+                                <address>
+                                	<addrLine>6-6-02 Aoba-yama</addrLine>,  
+                                   	<settlement>Sendai</settlement>
+                                   	<postCode>980-8579</postCode>, 
+                                	<country>Japan<lb/></country>
+                                </address> 
+                            </affiliation>
+                            <marker>5</marker> 
+                            <affiliation>
+                            	<orgName type="department">Department of Materials Science</orgName>,  
+                            	<orgName type="department">Graduate School of Engineering</orgName>,  
+                            	<orgName type="institution">Tohoku University</orgName>,  
+                                <address>
+                                	<addrLine>6-6-02 <lb/> Aoba-yama</addrLine>,  
+                                   	<settlement>Sendai</settlement>
+                                   	<postCode>980-8579</postCode>, 
+                                	<country>Japan<lb/></country>
+                                </address> 
+                            </affiliation>
+						</author>
+						
+						<author>
+							<affiliation>
+                            	<orgName type="department">Institute  of Thermomechanics AS CR, v.v.i</orgName>.,  
+                            	<orgName type="institution">Academy of Sciences of the Czech Republic</orgName>, <lb/>
+                                <address>
+                                	<addrLine>Dolejškova 5</addrLine>, ,  
+                                	<postCode>182 00 </postCode>
+                                	<settlement>Praha 8</settlement>,  	
+                                	<country>Czech Republic<lb/></country>
+                                </address> 
+                            </affiliation>
+						</author>
+						
+						<author>
+							<marker>1</marker> 
+							<affiliation>
+                            	<orgName type="department">Department of Physics</orgName>, 
+                            	<orgName type="institution">Lancaster University</orgName>, 
+                                <address>
+                                	<settlement>Lancaster</settlement> 	
+                                	<postCode>LA1 4YB</postCode>, 
+                                	<country>United Kingdom<lb/></country>
+                                </address> 
+                            </affiliation>
+                            <marker>2</marker> 
+							<affiliation>
+                            	<orgName type="department">INPAC-Institute for Nanoscale Physics and Chemistry</orgName>,
+                            	<orgName type="laboratory">Pulsed Fields Group</orgName>, 
+                            	
+                            	<orgName type="institution">KU Leuven</orgName>,  <lb/>
+                                <address>
+                                	<addrLine>Celestijnenlaan 200D</addrLine>,  
+                                	<postCode>B-3001 </postCode>
+                                	<settlement>Leuven</settlement>,	
+                                	<country>Belgium<lb/></country>
+                                </address> 
+                            </affiliation>
+                            <marker>3</marker> 
+							<affiliation>
+                            	<orgName type="institution">CNR-Istituto per lo Studio dei Materiali Nanostrutturati </orgName>,
+                                <address>
+                                	<addrLine>Via P. Gobetti 101</addrLine>, 
+                                	<postCode>I-40129 </postCode>
+                                	<settlement>Bologna</settlement>, 	
+                                	<country>Italy<lb/></country>
+                                </address> 
+                            </affiliation>
+						</author>
+						
+						<author>
+							<marker>1</marker> 
+							<affiliation>
+                            	<orgName type="department">Surface  Engineering Institute</orgName>,  
+                            	<orgName type="institution">RWTH Aachen University</orgName>,  
+                                <address>
+                                	<addrLine>Augustinerbach 4-22</addrLine>, <lb/>
+                                	<postCode>D-52062 </postCode>
+                                	<settlement>Aachen</settlement>, 	                                	
+                                	<country>Germany<lb/></country>
+                                </address> 
+                            </affiliation>
+                            <marker>2</marker> 
+							<affiliation>
+                            	<orgName type="department">Institute for Electrical Engineering and Plasma Technology   </orgName>,
+                            	<orgName type="institution">Ruhr-Universität <lb/>Bochum</orgName>, 
+                                <address>
+                                	<postCode>D-44780</postCode>
+                                	<settlement>Bochum</settlement>,  	                                	
+                                	<country>Germany<lb/></country>
+                                </address> 
+                            </affiliation>
+						</author>
+						
+						<author>
+							<marker>1</marker> 
+							<affiliation>
+								<orgName type="department">Institute of Solid State Physics, E-138</orgName>,   
+                            	<orgName type="institution">Vienna University of Technology</orgName>,  
+                                <address>
+                                	<addrLine>Wiedner<lb/>  Hauptstrasse 8-10</addrLine>, 
+                                	<settlement>Vienna</settlement>,  	                                	
+                                	<postCode>A-1040</postCode>, 
+                                	<country>Austria<lb/></country>
+                                </address> 
+                            </affiliation>
+                            <marker>2</marker> 
+                            <affiliation>
+								<orgName type="department">Department for Solid State Sciences</orgName>,    
+                            	<orgName type="institution">Ghent University</orgName>,  
+                                <address>
+                                	<addrLine>Krijgslaan 281 (S1) 9000</addrLine>, 
+                                	<settlement>Ghent <lb/> </settlement> 	                                	
+                                	<postCode>9000</postCode>, 
+                                	<country>Belgium<lb/></country>
+                                </address> 
+                            </affiliation>
+                        </author>
+
+                        <author>
+							<marker>1<lb/></marker> 
+							<affiliation>
+								<orgName type="department">Groupe de Physique des Matériaux</orgName>,    
+								<orgName type="laboratory">UMR CNRS 6634</orgName>, 
+                            	<orgName type="institution">Université de Rouen <lb/>  </orgName>
+                                <address>
+                                	<postCode>76801 </postCode>
+                                	<settlement>Saint Etienne du Rouvray</settlement>, 	                                	
+                                	
+                                	<country>France<lb/></country>
+                                </address> 
+                            </affiliation>
+                            <marker>2</marker> 
+                            <affiliation>
+								<orgName type="department">Faculty of Physics</orgName>, 
+                            	<orgName type="institution">Babes-Bolyai University</orgName>, <lb/>
+                                <address>
+                                	<postCode>400084</postCode>
+                                	<settlement>Cluj-Napoca</settlement>,  	                                	
+                                	<country>Romania<lb/></country>
+                                </address> 
+                            </affiliation>
+                            <marker>3</marker> 
+                            <affiliation>
+								<orgName type="department">Institut Néel</orgName>, 
+                            	<orgName type="institution">CNRS et Université Joseph Fourier</orgName>, <lb/>  
+                                <address>
+                                	<postBox>BP 166</postBox>
+                                	<postCode>38042</postCode>
+                                	<settlement>Grenoble cedex 9</settlement>, 	                                	                                	
+                                	<country>France<lb/></country>
+                                </address> 
+                            </affiliation>
+                            <marker>5</marker> 
+                            <affiliation>
+								<orgName type="department">Materials Science and Technology Dept</orgName>., 
+                            	<orgName type="institution">Technical University of Cluj-Napoca</orgName>, <lb/>
+                                <address>
+                                	<addrLine>103- <lb/> 105 Bd. Muncii</addrLine>. 
+                                	<postCode>400641</postCode>
+                                	<settlement>Cluj-Napoca</settlement>,  	                                	                                	
+                                	<country>Romania<lb/></country>
+                                </address> 
+                            </affiliation>
+                        </author> 
+                         
+                        <author>
+							<affiliation>
+								<orgName type="department">Department of Physics</orgName>,  
+                            	<orgName type="institution">University of Surrey</orgName>,   
+                                <address>
+                                    <settlement>Guildford</settlement>,   	   
+                                	<postCode>GU2 7XH</postCode>, 
+                                	<region>Surrey</region>, 
+                                	<country>UK<lb/></country>
+                                </address> 
+                            </affiliation>
+                        </author>    
+                         
+						<author>
+							<marker>1<lb/></marker> 
+							<affiliation>
+								<orgName type="laboratory">LumiLab</orgName>, 
+								<orgName type="department">Department of Solid State Sciences</orgName>,     
+                            	<orgName type="institution">Ghent University</orgName>,  <lb/>  
+                                <address>
+                                	<settlement>Gent<lb/> </settlement> 	                                	
+                                	<country>(Belgium)<lb/></country>
+                                </address> 
+                            </affiliation>
+                            <marker>2</marker> 
+                            <affiliation>
+								<orgName type="department"> Institute of Experimental Physics</orgName>,     
+                            	<orgName type="institution">Otto-von-Guericke-University <lb/>  </orgName>
+                                <address>
+                                	<settlement>Magdeburg</settlement> 	                                	
+                                	<country>(Germany)<lb/></country>
+                                </address> 
+                            </affiliation>
+                        </author>   
+                        
+                        <author>
+							<marker>1<lb/></marker> 
+							<affiliation>
+								<orgName type="laboratory">Laboratorio  de Materiales y Superficie (Unidad Asociada al CSIC)</orgName>, 
+								<orgName type="department">Dpto. Física Aplicada I &amp; Dpto. Ingeniería Química    </orgName>
+                            	<orgName type="institution">Universidad de Málaga</orgName>,  <lb/>  
+                                <address>
+                                 	<postCode>E-29071</postCode>
+                                    <settlement>Málaga</settlement>, <lb/>
+                                    <country key="ES">Spain<lb/></country>
+                                </address> 
+                            </affiliation>
+                            <marker>2</marker> 
+                            <affiliation>
+                            	<orgName type="department" key="dep1">Instituto de Física</orgName>, 
+                                <orgName type="department" key="dep2">Facultad de Ingeniería</orgName>, 
+                                <orgName type="institution">Universidad de la Republica</orgName>,
+                                <address>
+                                	<addrLine>Herrera y <lb/> Reissig 565, C.C. 30</addrLine> 
+                                	<postBox>C.C. 30</postBox>, 
+                                	<postCode>11000</postCode>
+                                	<settlement>Montevideo</settlement>
+                                	<country key="UY">Uruguay<lb/></country>
+                                </address>
+                            </affiliation>
+                    	</author>  
+                    	
+                    	<author>
+							<affiliation>
+								<orgName type="department">Dipartimento  di Ingegneria delle Costruzioni Meccaniche, Nucleari, Aeronautiche e di <lb/> Metallurgia (DIEM)</orgName>,
+								<orgName type="department">Alma Mater Studiorum</orgName>
+								- 
+                            	<orgName type="institution">Università di Bologna  </orgName>
+                                <address>
+                                	<addrLine>Via Saragozza <lb/> 8</addrLine>, 
+                                	<postCode>40123</postCode>
+                                	<settlement>Bologna</settlement>,  	   
+                                	<country>Italy<lb/></country>
+                                </address> 
+                            </affiliation>
+                        </author>  
+
+                        <author>
+							<marker>†<lb/></marker> 
+							<affiliation>
+								<orgName type="department">Leibniz  Institute of Plasma Science and Technology</orgName>,
+                                <address>
+                                	<addrLine>Felix-Hausdorff-Str. 2</addrLine>, <lb/>
+                                 	<postCode>D-17489</postCode>
+                                    <settlement>Greifswald</settlement>, <lb/>
+                                    <country>Germany<lb/></country>
+                                </address> 
+                            </affiliation>
+                            <marker>‡</marker> 
+                            <affiliation>
+								<orgName type="institution">Charité – Universitymedicine Berlin</orgName>,  
+								<orgName type="laboratory">Sleep Research &amp; Clinical Chronobiology, Gr</orgName>. <lb/>
+                                <address>
+                                	<addrLine>Hamburger Str. 5-11</addrLine> , 
+                                 	<postCode>D-10115</postCode>
+                                    <settlement>Berlin</settlement>, <lb/>
+                                    <country>Germany<lb/></country>
+                                </address> 
+                            </affiliation>
+                        </author>  
+                        
+                         <author>
+							<affiliation>
+								<orgName type="institution">Louisiana State University (LSU) <lb/> </orgName>
+								<orgName type="department">Center for Computation &amp; Technology (CCT) <lb/> </orgName>
+                                <address>
+                                	<addrLine>235 Johnston Hall <lb/></addrLine> 
+                                	<region>LA</region>
+                                 	<postCode>70803</postCode>,
+                                    <country>USA<lb/></country>
+                                </address> 
+                                &amp; 
+                                <lb/>
+                            </affiliation>
+                            <affiliation>
+								<orgName type="department">Max Planck Institute for Gravitational Physics <lb/> </orgName>
+								<orgName type="institution">Albert Einstein Institute (AEI) <lb/> </orgName>
+                                <address>
+                                	<addrLine>Am Mühlenberg 1 <lb/></addrLine> 
+                                 	<postCode>D-14476</postCode>
+                                 	<settlement>Potsdam</settlement>, 
+                                    <country>Germany<lb/></country>
+                                </address> 
+                            </affiliation>
+                         </author>  
+                         
+                        <author>
+	                        <marker>1</marker> 
+							<affiliation>
+								<orgName type="department">Centre  for Cold Matter</orgName>, 
+								<orgName type="laboratory">Blackett Laboratory</orgName>, 
+								<orgName type="institution">Imperial College</orgName>,  
+                                <address>
+                                	<addrLine>Prince Consort <lb/> Road</addrLine>,   
+                                	<settlement>London</settlement>
+                                 	<postCode>SW7 2BW</postCode>, 
+                                    <country>United Kingdom <lb/></country>
+                                </address> 
+                            </affiliation>
+                            <marker>2</marker> 
+							<affiliation>
+								<orgName type="department">School of Electronics and Computer Science</orgName>,  
+								<orgName type="institution">University of Southampton</orgName>,   
+                                <address>
+                                	<addrLine>Highfield</addrLine>, <lb/> 
+                                	<settlement>Southampton</settlement>, 
+                                 	<postCode>SO17 1BJ</postCode>, 
+                                    <country>United Kingdom <lb/></country>
+                                </address> 
+                            </affiliation>
+                        </author>    
+						
+                        <author>
+	                        <marker>1</marker> 
+							<affiliation>
+								<orgName type="department">Institute  of Nuclear Research</orgName>
+								of the 
+								<orgName type="institution">Hungarian Academy of Sciences</orgName>,
+                                <address>
+                                	<settlement>Debrecen</settlement>, <lb/>
+                                	<addrLine>Bem tér 18/c</addrLine>, 
+                                    <country>Hungary</country>
+                                    <postCode>H-4026</postCode>, <lb/>
+                                </address> 
+                            </affiliation>
+                            <marker>2</marker> 
+							<affiliation>
+								<orgName type="institution">University of Debrecen <lb/>   </orgName>
+								<orgName type="department">Faculty of Informatics</orgName>,
+                                <address>
+                                	<settlement>Debrecen</settlement>,  
+                                	<postBox>P.O.Box 12</postBox>, 
+                                	<country>Hungary</country>
+                                    <postCode>H-4026<lb/></postCode>
+                                </address> 
+                            </affiliation>
+                        </author>   
+                       
+                        <author>
+	                        <marker>1</marker> 
+							<affiliation>
+								<orgName type="department">School  of Physics and Astronomy</orgName>,  
+								<orgName type="institution">University of Birmingham</orgName>, 
+                                <address>
+                                	<addrLine>Edgbaston</addrLine>, <lb/> 
+                                	<settlement>Birmingham</settlement>, <lb/>
+                                	<postCode>B15 2TT</postCode>, 
+                                    <country>United Kingdom<lb/></country>
+                                </address> 
+                            </affiliation>
+                            <marker>2</marker> 
+							<affiliation>
+								<orgName type="department">Department of Physics</orgName>, 
+								<orgName type="institution">University of York</orgName>, <lb/> 
+                                <address>
+                                	<settlement>Heslington</settlement>, <lb/>
+                                	<region>York</region>, 
+                                	<postCode>YO10 5DD</postCode>,  
+                                    <country>United <lb/>Kingdom<lb/></country>
+                                </address> 
+                            </affiliation>
+                            <marker>3</marker> 
+							<affiliation>
+								<orgName type="department">Department of Physics</orgName>, 
+								<orgName type="department">Faculty of Engineering &amp; Physical Sciences</orgName>,  
+								<orgName type="institution">University of<lb/>  Surrey</orgName>,    
+                                <address>
+                                	<settlement>Guildford</settlement>, <lb/>
+                                	<postCode>GU2 7XH</postCode>,  
+                                    <country>United Kingdom<lb/></country>
+                                </address> 
+                            </affiliation>
+                            <marker>3</marker> 
+							<affiliation>
+								<orgName type="department">School of Physics and Astronomy</orgName>, 
+								<orgName type="institution">The University of Edinburgh</orgName>, 
+                                <address>
+                                	<addrLine>James Clerk <lb/> Maxwell Building, Mayfield Road</addrLine>, 
+                                	<settlement>Edinburgh</settlement>, <lb/>
+                                	<postCode>EH9 3JZ</postCode>,  
+                                    <country>United Kingdom<lb/></country>
+                                </address> 
+                            </affiliation>
+                            <marker>5</marker> 
+							<affiliation>
+								<orgName type="department">The Research School of Physics and Engineering</orgName>, 
+								<address>
+                                	<addrLine>Building 60</addrLine>,  
+                                </address> 	
+								<orgName type="institution">The Australian<lb/> National University</orgName>,  
+                                <address>
+                                	<settlement>Canberra</settlement>, <lb/>
+                                	<postCode>ACT 0200</postCode>,  
+                                    <country>Australia<lb/></country>
+                                </address> 
+                            </affiliation>
+                        </author>   
+                        
+                        <author>
+	                        <marker>1</marker> 
+							<affiliation>
+								<orgName type="department">Laboratory  of Nuclear Problems</orgName>, 
+								<orgName type="institution">Joint Institute for Nuclear Research</orgName>, 
+                                <address>
+                                   	<postCode>RU-141980 <lb/></postCode>
+                                    <settlement>Dubna</settlement>, 
+                                    <country>Russia<lb/></country>
+                                </address> 
+                            </affiliation>
+                            <marker>2</marker> 
+							<affiliation>
+								<orgName type="department">Institut für Kernphysik</orgName>
+								and
+								<orgName type="department">Jülich Centre for Hadron Physics</orgName>
+								<orgName type="institution">Forschungszentrum <lb/>Jülich</orgName>
+                                <address>
+	                                <postCode>D-52425</postCode>
+                                	<settlement>Jülich</settlement>,  
+                                	<country>Germany<lb/></country>
+                                </address> 
+                            </affiliation>
+                            <marker>3</marker> 
+							<affiliation>
+								<orgName type="department">High Energy Physics Institute</orgName>, 
+								<orgName type="institution">Tbilisi State University</orgName>, 
+                                <address>
+	                                <postCode>0186 </postCode>
+                                	<settlement>Tbilisi</settlement>,  
+                                	<country>Georgia<lb/></country>
+                                </address> 
+                            </affiliation>
+                            <marker>4</marker> 
+							<affiliation>
+								<orgName type="department">Physikalisches Institut II</orgName>,  
+								<orgName type="institution">Universität Erlangen-Nürnberg </orgName>
+                                <address>
+	                                <postCode>D-91058</postCode>
+                                	<settlement>Erlangen</settlement>, <lb/> 
+                                	<country>Germany<lb/></country>
+                                </address> 
+                            </affiliation>
+                            <marker>5</marker> 
+							<affiliation>
+								<orgName type="department">High Energy Physics Department</orgName>,   
+								<orgName type="institution">Petersburg Nuclear Physics Institute</orgName>, 
+                                <address>
+	                                <postCode> RU-188350<lb/> </postCode>
+                                	<settlement>Gatchina</settlement>, 
+                                	<country>Russia<lb/></country>
+                                </address> 
+                            </affiliation>
+                            <marker>6</marker> 
+							<affiliation>
+								<orgName type="department">Institut für Kernphysik</orgName>, 
+								<orgName type="institution">Universität Münster</orgName>, 
+                                <address>
+	                                <postCode> D-48149 </postCode>
+                                	<settlement>Münster</settlement>, 
+                                	<country>Germany<lb/></country>
+                                </address> 
+                            </affiliation>
+                            <marker>7</marker> 
+							<affiliation>
+								<orgName type="department">Physics and Astronomy Department</orgName>, 
+								<orgName type="institution"> UCL</orgName>, 
+                                <address>
+                                	<settlement>London</settlement>, 
+                                	<postCode> WC1E 6BT</postCode>, 
+                                	<country>United Kingdom<lb/></country>
+                                </address> 
+                            </affiliation>
+                        </author>   
+
+                        <author>
+	                        <marker>1</marker> 
+							<affiliation>
+								<orgName type="department">Institut für Theoretische Physik </orgName>
+								<orgName type="institution">Johann Wolfgang Goethe-Universität Frankfurt <lb/></orgName>
+                                <address>
+                                	<addrLine>Max-von-Laue-Str.1</addrLine>,  
+                                	<postCode>D-60438</postCode>
+                                    <settlement>Frankfurt am Main</settlement>, 
+                                	<country>Germany<lb/></country>
+                                </address> 
+                            </affiliation>
+                            <marker>2</marker> 
+							<affiliation>
+								<orgName type="department">Department of Physics</orgName>,   
+								<orgName type="institution">Columbia University</orgName>, 
+                                <address>
+                                	<addrLine>538 West 120   th   Street</addrLine>, 
+                                    <settlement>New York</settlement>,  
+                                    <region>NY<lb/></region>
+                                    <postCode>10027</postCode>, 
+                                	<country>USA<lb/></country>
+                                </address> 
+                            </affiliation>
+                        </author>   
+                        
+                       	<author>
+                       		<affiliation>
+								<orgName type="department">School of Physics</orgName>
+								and 
+								<orgName type="department">CRANN</orgName>,  
+								<orgName type="institution"> Trinity College</orgName>, 
+                                <address>
+                                    <settlement>Dublin</settlement>,
+                                	<country>Ireland</country>.<lb/>
+                                </address> 
+                            </affiliation>
+                       	</author>   
+                        
+                       	<author>
+                       		<affiliation>
+								<orgName type="department">Institut FEMTO-ST</orgName>, 
+								<orgName type="institution">Université de Franche-Comté</orgName>,   
+								<orgName type="institution">CNRS</orgName>, 
+								<orgName type="institution">ENSMM</orgName>, 
+								<orgName type="institution">UTBM</orgName>; 
+                                <address>
+                                	<addrLine>32 <lb/>avenue de l'Observatoire</addrLine>
+                                	<postCode>F-25044</postCode> 
+                                    <settlement>Besançon</settlement>,
+                                	<country>France<lb/></country>
+                                </address> 
+                            </affiliation>
+                       	</author>
+                       	
+                       	<author>
+                       		<affiliation>
+                       			<address>
+                                    <settlement>Darmstadt</settlement>,
+                                </address> 
+                                <orgName type="institution">Technische Universität Darmstadt</orgName>, 
+                                <marker>a</marker>
+								<orgName type="department">Eduard-Zintl-Institut für Anorganische und Physikalische Chemie</orgName>
+								<marker>b</marker>
+								<orgName type="department">Fachbereich Chemie<lb/></orgName>
+								<marker>c</marker>
+								<address>
+                                    <settlement>Madras</settlement>,
+                                    <region>Chennai</region>
+ 									/
+                                    <country>India</country>,<lb/>
+                                </address> 
+                                <orgName type="institution">Indian Institute of Technology</orgName>,  
+								<orgName type="department">Department of Metallurgy and Materials Engineering<lb/>  </orgName>
+                            </affiliation>
+                       	</author>
+                       	
+                       	<author>
+                       		<affiliation>
+	                       		<address>
+                                    <settlement>Dresden,</settlement>
+                                </address> 
+								<orgName type="department">Technische Universität <lb/></orgName>
+                            </affiliation>
+                       	</author> 
+
+                        <author>
+	                        <marker>a</marker> 
+							<affiliation>
+								<orgName type="department">Department  of Community Health Sciences</orgName>,  
+								<orgName type="department">DFaculty of Medicine</orgName>,<lb/>  
+								<orgName type="institution">University of Manitoba</orgName>, <lb/>
+                                <address>
+                                	<addrLine>408-727 <lb/>McDermot Avenue</addrLine>,  
+                                	<settlement>Winnipeg</settlement>,  
+                                	<region>Man</region>., 
+                                	<country>Canada</country>
+                                	<postCode>R3E 3P5 <lb/></postCode>
+                                </address> 
+                            </affiliation>
+                            <marker>b</marker> 
+							<affiliation>
+								<orgName type="department">Department of Psychology</orgName>,  
+								<orgName type="institution">University of Manitoba</orgName>,  
+                                <address>
+                                    <settlement>Winnipeg</settlement>,  
+                                    <region>Man</region>.,
+                                    <country>Canada</country>
+                                    <postCode>R3T 2N2<lb/> </postCode>
+                                </address> 
+                            </affiliation>
+                        </author>   
+                       	
+                        <author>
+	                        <marker>a</marker> 
+							<affiliation>
+								<address>
+									<settlement>Köln</settlement>, 
+								</address> 
+								<orgName type="department">Institut für Anorganische Chemie</orgName>
+								der  
+								<orgName type="institution">Universität zu Köln<lb/></orgName>
+                            </affiliation>
+                            <marker>b</marker> 
+							<affiliation>
+								<address>
+									<settlement>Wroclaw</settlement>
+									/ 
+									<country>Poland</country>,
+								</address> 
+								<orgName type="department">Faculty of Chemistry </orgName>
+								of the    
+								<orgName type="institution">University of Wroclaw<lb/></orgName>
+                            </affiliation>
+                            <marker>c</marker> 
+							<affiliation>
+								<address>
+									<settlement>Bochum</settlement>, 
+								</address> 
+								<orgName type="department">Anorganische Chemie</orgName> 
+								an der
+								<orgName type="institution">Ruhr-Universität Bochum<lb/></orgName>
+                            </affiliation>
+                        </author>   
+                        
+                        <author>
+	                        <marker>1</marker> 
+							<affiliation>
+								<orgName type="laboratory">I3N</orgName>,   
+								<orgName type="department">Departamento de Física</orgName>, 
+								<orgName type="institution">Universidade de Aveiro</orgName>, 
+								<address>
+									<addrLine>Campus Universitário de Santiago</addrLine>, <lb/>
+                                	<postCode>3810-193</postCode> 
+									<settlement>Aveiro</settlement>, 
+									<country>Portugal<lb/></country>
+								</address> 
+                            </affiliation>
+                            <marker>2</marker> 
+							<affiliation>
+								<orgName type="department">Departamento de Física</orgName>, 
+								<orgName type="institution">Instituto Superior de Engenharia do Porto</orgName>, 
+								<orgName type="institution">Instituto Politécnico do<lb/> Porto</orgName>,  
+								<address>
+									<addrLine>Rua Dr. António Bernardino de Almeida, 431</addrLine>, 
+									<postCode>4200-072</postCode> 
+									<settlement>Porto</settlement>,
+									<country>Portugal<lb/></country>
+								</address> 
+                            </affiliation>
+                        </author>   
+
+                        <author>
+                       		<affiliation>
+	                       		<orgName type="laboratory">Division  of Environmental Physics</orgName>,  
+								<orgName type="department">Faculty of Mathematics, Physics and Informatics</orgName>, 
+								<orgName type="institution">Comenius<lb/> University</orgName>,   
+								<address>
+									<addrLine>Mlynská dolina</addrLine>, 
+									<postCode>84248</postCode> 
+                                    <settlement>Bratislava</settlement>,
+                                    <country>Slovakia<lb/></country>
+                                </address> 
+                            </affiliation>
+                       	</author> 
+                        
+                       	<author>
+	                        <marker>1</marker> 
+							<affiliation>
+								<orgName type="department">Institute  for Plasma and Atomic Physics</orgName>,  
+								<orgName type="institution">Ruhr-University Bochum</orgName>, 
+								<address>
+									<country>Germany<lb/></country>
+								</address> 
+                            </affiliation>
+                            <marker>2</marker> 
+							<affiliation>
+								<orgName type="department">Research Institute for Solid State Physics and Optics </orgName>
+								 of the
+								<orgName type="institution">Hungarian Academy of<lb/>
+ Science</orgName>, 
+								<address>
+									<settlement>Budapest</settlement>,
+									<country>Hungary<lb/></country>
+								</address> 
+                            </affiliation>
+                        </author>   
+
+                        <author>
+                       		<affiliation>
+	                       		<orgName type="institution">ENEA</orgName>,   
+								<orgName type="department">Department of Physical Technologies and New Materials </orgName>,
+								<address>
+									<addrLine>SS7, Appia, km 706</addrLine>,  
+									<postCode>72100</postCode> 
+                                    <settlement>Brindisi</settlement>,
+                                    <country>Italy<lb/></country>
+                                </address> 
+                            </affiliation>
+                       	</author>
+                        
+                        <author>
+                       		<affiliation>
+	                       		<orgName type="department">Institute of Physics</orgName>,  
+								<orgName type="institution">Academy of Sciences of the Czech Republic</orgName>, 
+								<address>
+									<addrLine>Cukrovarnická 10</addrLine>,  
+									<postCode>162 53</postCode>
+                                    <settlement>Prague</settlement>,
+                                    <country key="CZ">Czech Republic<lb/></country>
+                                </address> 
+                            </affiliation>
+                       	</author>
+                        
+                        <author>
+                       		<affiliation>
+	                       		<orgName type="laboratory">Laboratoire d'Etudes Aérodynamiques<lb/> </orgName>
+								<address>
+									<addrLine>Boulevard Pierre et Marie Curie</addrLine>,  
+									<postBox>BP 30179</postBox>,<lb/>
+									<postCode>86962</postCode>
+                                    <settlement>Futuroscope-Chasseneuil</settlement>, 
+                                    <country>France<lb/></country>
+                                </address> 
+                            </affiliation>
+                       	</author>
+                       	
+						<author>
+	                        <marker>1</marker> 
+							<affiliation>
+								<orgName type="laboratory">Lightlabs</orgName>,  
+								<orgName type="institution">Philips Lighting</orgName>, 
+								<address>
+									<settlement>Eindhoven</settlement>,
+									<country>the Netherlands<lb/></country>
+								</address> 
+                            </affiliation>
+                            <marker>2</marker> 
+							<affiliation>
+								<orgName type="institution">Hamburg University of Applied Sciences</orgName>, 
+								<address>
+									<settlement>Hamburg</settlement>,
+									<country>Germany<lb/></country>
+								</address> 
+                            </affiliation>
+                            <marker>3</marker> 
+							<affiliation>
+								<orgName type="institution">Université de Toulouse</orgName>,  
+							</affiliation>
+                            <marker>4</marker> 	
+                            <affiliation>
+								<orgName type="institution">CNRS</orgName>;                       
+								<orgName type="laboratory">LAPLACE</orgName>, 
+								<address>
+									<settlement>Toulouse</settlement>,
+									<country>France<lb/></country>
+								</address> 
+                            </affiliation>
+                            <marker>5</marker> 	
+                            <affiliation>
+								<orgName type="institution">National Institute of Nuclear Research</orgName>,                        
+								<address>
+									<addrLine>Salazar</addrLine>,
+									<settlement>Ocoyoacac</settlement>,
+									<country>Mexico<lb/></country>
+								</address> 
+                            </affiliation>
+                            <marker>*</marker> 	
+                            <affiliation>                     
+								<address>
+									<addrLine>Mathildelaan 1</addrLine>,
+									<postCode>5600 JM</postCode>
+									<settlement>Eindhoven</settlement>,
+									<country>The Netherlands</country>, <lb/>
+								</address> 
+                            </affiliation>
+                        </author>    	
+
+                       	<author>
+	                        <marker>1</marker> 
+							<affiliation>
+								<orgName type="laboratory">LighLabs</orgName>, 
+								<orgName type="institution">Philips Lighting</orgName>, 
+								<address>
+									<addrLine>Mathildelaan 1</addrLine>,
+									<postCode>5611 BD</postCode>
+									<settlement>Eindhoven</settlement>,
+									<country>The Netherlands <lb/></country>
+								</address> 
+                            </affiliation>
+                            <marker>2</marker> 
+							<affiliation>
+								<orgName type="institution">Eindhoven University of Technology</orgName>, 
+								<orgName type="department">Department of Applied Physics</orgName>, 
+								<address>
+									<postBox>PO box 513</postBox>, 
+									<postCode>5600 MB</postCode>
+									<settlement>Eindhoven</settlement>,
+									<country>The<lb/> Netherlands<lb/></country>
+								</address> 
+                            </affiliation>
+                        </author>
+
+                        <author>
+	                        <marker>1</marker> 
+							<affiliation>
+								<orgName type="institution">Université de Toulouse</orgName>,, 
+								<orgName type="institution">UPS</orgName>,  
+								<orgName type="laboratory">LAPLACE (Laboratoire Plasma et Conversion <lb/> d'Energie) </orgName>,
+								<address>
+									<addrLine>118 route de Narbonne</addrLine>, 
+									<postCode>F-31062 </postCode>
+									<settlement>Toulouse Cedex 9</settlement>,
+									<country>France <lb/></country>
+								</address> 
+                            </affiliation>
+                            <marker>2</marker> 
+							<affiliation>
+								<orgName type="institution">CNRS</orgName>
+								<orgName type="laboratory">LAPLACE</orgName>,  
+								<address>
+									<postCode>F-31062</postCode>
+									<settlement>Toulouse</settlement>,
+									<country>France<lb/></country>
+								</address> 
+                            </affiliation>
+                            <marker>3</marker> 
+							<affiliation>
+								<orgName type="institution">LED Engineering Development</orgName>, 
+								<address>
+									<addrLine>11 rue du Mont Dore</addrLine>, 
+									<postCode>F-31100</postCode>
+									<settlement>Toulouse</settlement>,
+									<country>France<lb/></country>
+								</address> 
+                            </affiliation>
+                            <marker>4</marker> 
+							<affiliation>
+								<orgName type="institution">SAES Getters S.p.A</orgName>,  
+								<address>
+									<addrLine>Viale Italia</addrLine>, 
+									<postCode>20020</postCode>
+									<settlement>Lainate</settlement>,
+									<region>Milan</region>,
+									<country>Italy<lb/></country>
+								</address> 
+                            </affiliation>
+                        </author>
+                        
+                        <author>
+	                        <marker>†</marker> 
+							<affiliation>
+								<orgName type="institution">Leibniz  Institute of Plasma Science and Technology </orgName>,
+								<address>
+									<addrLine>Felix-Hausdorff-Str. 2</addrLine>,<lb/>
+									<postCode>D-17489</postCode>
+									<settlement>Greifswald</settlement>,
+									<country>Germany <lb/></country>
+								</address> 
+                            </affiliation>
+                            <marker>‡</marker> 
+							<affiliation>
+								<orgName type="institution">Charité – Universitymedicine Berlin</orgName>,  
+								<orgName type="department">Sleep Research &amp; Clinical Chronobiology</orgName>, 
+								<address>
+									<addrLine>Gr. <lb/>Hamburger Str. 5-11</addrLine>, 
+									<postCode>D-10115</postCode>
+									<settlement>Berlin</settlement>,
+									<country>Germany<lb/></country>
+								</address> 
+                            </affiliation>
+                        </author>
+                        
+                        <author>
+                       		<affiliation>
+	                       		<orgName type="department">Department of Electronic and Electrical Engineering<lb/> </orgName>
+	                       		<orgName type="institution">Sheffield University<lb/> </orgName>
+								<address>
+                                    <settlement>Sheffield</settlement>
+                                    <postCode>S1 3JD<lb/></postCode>
+                                </address> 
+                            </affiliation>
+                       	</author>
+
+                       	<author>
+	                        <marker>1</marker> 
+							<affiliation>
+								<orgName type="laboratory">CNR-SPIN  Salerno</orgName>
+								and 
+								<orgName type="department">Dipartimento di Matematica e Informatica</orgName>, 
+								<orgName type="institution">Università di <lb/> Salerno</orgName>, 
+								<address>
+									<settlement>Fisciano</settlement> ,
+									<region>(SA)</region>,
+									<country>Italy <lb/></country>
+								</address> 
+                            </affiliation>
+                            <marker>2</marker> 
+							<affiliation>
+								<orgName type="laboratory">CNR-SPIN Salerno and  </orgName>
+								<orgName type="department">Dipartimento di Fisica "E.R. Caianiello"</orgName>,  
+								<orgName type="institution">Università di <lb/> Salerno</orgName>, 
+								<address>
+									<settlement>Fisciano</settlement>,
+									<region>(SA)</region>,
+									<country>Italy <lb/></country>
+								</address> 
+                            </affiliation>
+                            <marker>3</marker> 
+							<affiliation>
+								<orgName type="laboratory">NEST</orgName>
+								<orgName type="department">CNR-INFM</orgName>
+								and 
+								<orgName type="institution">Scuola Normale Superiore</orgName>, 
+								<address>
+									<postCode>I-56126</postCode>
+									<settlement>Pisa</settlement>, 
+									<country>Italy<lb/></country>
+								</address> 
+                            </affiliation>
+                        </author>
+                       	
+                       	<author>
+	                        <marker>1<lb/></marker> 
+							<affiliation>
+								<orgName type="department">Analytical Science Division</orgName>,  
+								<orgName type="institution">National Physical Laboratory</orgName>,  
+								<address>
+									<settlement>Teddington</settlement>,
+									<region>Middlesex</region>
+									<postCode>TW11<lb/> 0LW</postCode>, 
+									<country>UK</country>, <lb/>
+								</address> 
+                            </affiliation>
+                            <marker>2<lb/></marker> 
+							<affiliation>
+								<orgName type="institution">Thermo Fisher Scientific</orgName>,  
+								<address>
+									<addrLine>The Birches Industrial Estate</addrLine>,  
+									<addrLine>Imberhorne Lane</addrLine>,  
+									<settlement>East Grinstead</settlement>,,
+									<region>West Sussex</region>
+									<postCode>RH19 1UB</postCode>, 
+									<country>UK<lb/></country>
+								</address> 
+                            </affiliation>
+                        </author>
+                        
+                        <author>
+	                        <marker>1</marker>.-
+							<affiliation>
+								<orgName type="laboratory">Institut des Nanotechnologies de Lyon (INL)</orgName>,   
+								<orgName type="institution">CNRS</orgName>
+								<orgName type="laboratory">UMR-5270</orgName>,  
+								<orgName type="institution">Université de Lyon</orgName>
+								<orgName type="institution">INSA-LYON</orgName>
+								<address>
+									<addrLine>7, avenue <lb/> Jean Capelle, Bât. Blaise Pascal</addrLine>,
+                                	<postCode>69621</postCode>
+                                    <settlement>Villeurbanne</settlement>,
+                                    <country key="FR">France</country>.
+                                </address>
+                            </affiliation>
+                            <marker>2</marker>.- 
+							<affiliation>
+								<orgName type="laboratory">Laboratoire d'Electrochimie et de Physico-chimie des Matériaux et des Interfaces</orgName>
+								<orgName type="laboratory">UMR-5631</orgName>,  
+								<orgName type="institution"> (INPG– <lb/>CNRS)</orgName>,  
+								<address>
+									<postBox>BP75</postBox>, 
+									<postCode>38042</postCode>
+									<settlement>Saint Martin d'Hères Cedex</settlement>,
+                                    <country>France</country>.<lb/>
+								</address> 
+                            </affiliation>
+                        </author>
+
+                        <author>
+	                        <marker>1<lb/></marker> 
+							<affiliation>
+								<orgName type="department">CCADET</orgName>,   
+								<orgName type="institution">Universidad Nacional Autónoma de México (UNAM)</orgName>. 
+								<address>
+									<addrLine>Circuito Exterior</addrLine>, <lb/>
+									<addrLine>Ciudad Universitaria</addrLine>, 
+									<postBox>Apdo. Postal 70-186</postBox>
+									<postCode>C. P. 04510</postCode>, 
+									<settlement>México</settlement>, 
+									<region>D.F</region>. <lb/>
+								</address> 
+                            </affiliation>
+                            <marker>2<lb/></marker> 
+							<affiliation>
+								<orgName type="department">IIM,  </orgName>
+								<orgName type="institution">Universidad Nacional Autónoma de México (UNAM)</orgName>. 
+								<address>
+									<addrLine>Circuito Exterior</addrLine>, <lb/>
+									<addrLine>Ciudad Universitaria</addrLine>, 
+									<postBox>Apdo. Postal 70-284 </postBox>
+									<postCode>C. P. 04510</postCode>, 
+									<settlement>México</settlement>, 
+									<region>D.F</region>. <lb/>
+								</address> 
+                            </affiliation>
+                            <marker>3<lb/></marker> 
+							<affiliation>
+								<orgName type="department">Blackett Laboratory</orgName>,  
+								<orgName type="institution">Imperial College</orgName>, 
+								<address>
+									<settlement>London</settlement>, 
+									<postCode>SW7 2BZ</postCode>, 
+									<country>UK<lb/></country>
+								</address> 
+                            </affiliation>
+                        </author> 
+                        
+                        <author>
+                       		<affiliation>
+	                       		<orgName type="laboratory"> Radiation Research Division</orgName>, <lb/> 
+	                       		<orgName type="department">Risø National Laboratory for Sustainable Energy<lb/> </orgName>
+	                       		<orgName type="institution"> Technical University of Denmark</orgName>, <lb/>
+								<address>
+									<postCode>DK-4000</postCode>
+                                    <settlement>Roskilde</settlement>,
+                                    <country>Denmark</country>. <lb/>
+                                </address> 
+                            </affiliation>
+                       	</author>
+                        
+                       	<author>
+	                        <marker>a</marker> 
+							<affiliation>
+								<address>
+									<settlement>Hangzhou</settlement>
+									/ 
+									<country>China</country>, 
+								</address> 
+								<orgName type="department">Department of Chemistry</orgName>, 
+								<orgName type="institution">Zhejiang University<lb/></orgName>
+                            </affiliation>
+                            <marker>b</marker> 
+							<affiliation>
+								<address>
+									<settlement>Wenzhou</settlement>
+									/ 
+									<country>China</country>,
+								</address> 
+								<orgName type="department">School of Chemistry and Materials Science</orgName>,   
+								<orgName type="institution">Wenzhou University<lb/></orgName>
+                            </affiliation>
+                        </author>   
+                  
+                        <author>
+							<affiliation>
+								<address>
+									<settlement>Stuttgart</settlement>
+									/ 
+									<country>Germany</country>, 
+								</address> 
+								<orgName type="department">Max-Planck-Institut für Festkörperforschung</orgName>
+								und 
+								<orgName type="department">Institut für Anorganische Chemie</orgName>
+								der 
+								<orgName type="institution">Universität Stuttgart<lb/></orgName>
+                            </affiliation>
+                        </author>  
+                        
+                        <author>
+							<affiliation>
+								<address>
+									<settlement>Stuttgart</settlement>, 
+								</address> 
+								<orgName type="department">Max-Planck-Institut für Festkörperforschung<lb/> </orgName>
+                            </affiliation>
+                        </author>  
+
+                        <author>
+							<affiliation>
+								<address>
+									<settlement>Munich</settlement>
+									/ 
+									<country>Germany</country>, 
+								</address> 
+								<orgName type="institution">Ludwig-Maximilian University</orgName>,  
+								<orgName type="department">Department of Chemistry and Biochemistry</orgName>,  
+								<orgName type="department">Energetic Materials Research<lb/></orgName>
+                            </affiliation>
+                        </author>  
+
+                        <author>
+							<affiliation>
+								<address>
+									<settlement>Leipzig</settlement>, 
+								</address> 
+								<orgName type="department">Institut für Anorganische Chemie der Universität <lb/></orgName>
+                            </affiliation>
+                        </author>  
+                        
+                        <author>
+							<affiliation>
+								<address>
+									<settlement>Calgary</settlement>
+									/ 
+									<region>AB</region>
+									/ 
+									<country>Canada</country>, 
+								</address> 
+								<orgName type="institution">University of Calgary</orgName>,  
+								<orgName type="department">Department of Chemistry<lb/>  </orgName>
+                            </affiliation>
+                        </author>  
+                        
+                        <author>
+							<affiliation>
+								<address>
+									<settlement>Madrid</settlement>/ 
+									<country>Spain</country>, 
+								</address> 
+								<orgName type="department">Departamento de  Química</orgName>,  
+								<orgName type="institution">Universidad San Pablo-CEU<lb/>  </orgName>
+                            </affiliation>
+                        </author>  
+                        
+                        <author>
+	                        <marker>a</marker> 
+							<affiliation>
+								<address>
+									<settlement>East Lansing</settlement>
+									<region>MI</region>
+									/ 
+									<country>USA</country>, 
+								</address> 
+								<orgName type="institution">Michigan State University</orgName>,    
+								<orgName type="department">Lyman Briggs College and Department of Chemistry<lb/></orgName>
+                            </affiliation>
+                            <marker>b</marker> 
+							<affiliation>
+								<address>
+									<settlement>Wilkes-Barre</settlement>, 
+									<region>PA</region> 
+									/ 
+									<country>USA</country>,
+								</address> 
+								<orgName type="institution">King's College</orgName>,   
+								<orgName type="department">Department of Chemistry and Physics<lb/></orgName>
+                            </affiliation>
+                            <marker>c</marker> 
+							<affiliation>
+								<address>
+									<settlement>Syracuse</settlement>, 
+									<region>NY</region>
+									/ 
+									<country>USA</country>,
+								</address> 
+								<orgName type="institution">Syracuse University</orgName>,  
+								<orgName type="department">Department of Chemistry<lb/></orgName>
+                            </affiliation>
+                        </author>   
+                        
+                        <author>
+	                        <marker>a</marker> 
+							<affiliation>
+								<address>
+									<settlement>Vienna</settlement> 
+									/ 
+									<country>Austria</country>, 
+								</address> 
+								<orgName type="institution">Vienna University of Technology</orgName>,  
+								<orgName type="department">Atominstitut der Österreichischen Universitäten<lb/></orgName>
+                            </affiliation>
+                            <marker>b</marker> 
+							<affiliation>
+								<address>
+									<settlement>Munich</settlement>
+									/ 
+									<country>Germany</country>,
+								</address> 
+								<orgName type="department">Department of Chemistry and Biochemistry</orgName>, 
+								<orgName type="institution">Ludwig-Maximilian University<lb/></orgName>
+                            </affiliation>
+                        </author>
+                     	
+						<author>
+	                        <marker>a</marker> 
+							<affiliation>
+								<address>
+									<settlement>Kassel</settlement>, 
+								</address> 
+								<orgName type="department">Institut für Chemie der Universität<lb/></orgName>
+                            </affiliation>
+                            <marker>b</marker> 
+							<affiliation>
+								<address>
+									<settlement>Marburg</settlement>, 
+								</address> 
+								<orgName type="department">Fachbereich Chemie der Philipps-Universität<lb/></orgName>
+                            </affiliation>
+                        </author>
+                        
+                        <author>
+	                        <marker>a</marker> 
+							<affiliation>
+								<address>
+									<settlement>Kaunas</settlement>
+									/ 
+									<country>Lithuania</country>, 
+								</address> 
+								<orgName type="department">Faculty of Chemical Technology</orgName>,  
+								<orgName type="institution">Kaunas University of Technology<lb/></orgName>
+                            </affiliation>
+                            <marker>b</marker> 
+							<affiliation>
+								<address>
+									<settlement>Bayreuth</settlement> 
+									/ 
+									<country>Germany</country>,
+								</address> 
+								<orgName type="laboratory">Laboratory of Inorganic Chemistry</orgName>, 
+								<orgName type="institution">University of Bayreuth<lb/></orgName>
+                            </affiliation>
+                        </author>
+
+                        <author>
+	                        <marker>a</marker> 
+							<affiliation>
+								<address>
+									<settlement>Kaunas</settlement>
+									/ 
+									<country>Lithuania</country>, 
+								</address> 
+								<orgName type="department">Faculty of Chemical Technology</orgName>,  
+								<orgName type="institution">Kaunas University of Technology<lb/></orgName>
+                            </affiliation>
+                            <marker>b</marker> 
+							<affiliation>
+								<address>
+									<settlement>Brno</settlement>
+									/ 
+									<country>Czech Republic</country>,
+								</address> 
+								<orgName type="department">Department of Chemistry</orgName>, 
+								<orgName type="department">Faculty of Science</orgName>,  
+								<orgName type="institution">Masaryk University<lb/></orgName>
+                            </affiliation>
+                        </author>
+                        
+                        <author>
+                        	<affiliation>
+								<address>
+									<settlement>Darmstadt</settlement>, 
+								</address> 
+								<orgName type="institution">Technische Universität Darmstadt</orgName>, 
+							</affiliation>	
+	                        <marker>a</marker> 
+							<affiliation>
+								<orgName type="department">Eduard-Zintl-Institut für Anorganische und Physikalische Chemie</orgName>
+                            </affiliation>
+                            <marker>b</marker> 
+							<affiliation>
+								<orgName type="department">Fachbereich Chemie</orgName>
+                            </affiliation>
+                            <marker>c</marker> 
+							<affiliation>
+								<address>
+									<settlement>Madras</settlement>, 
+									<region>Chennai</region>
+									/
+									<country>India</country>,
+								</address> 
+								<orgName type="institution">Indian Institute of Technology</orgName>,  
+								<orgName type="department">Department of Metallurgy and Materials Engineering <lb/></orgName>
+                            </affiliation>
+                        </author>
+                        
+                        <author>
+                        	<affiliation>
+								<address>
+									<settlement>Changchun</settlement>
+									/ 
+									<country>P R China</country>,
+								</address> 
+							</affiliation>	
+	                        <marker>a</marker> 
+							<affiliation>
+								<orgName type="department">College of Chemistry</orgName>,  
+								<orgName type="institution">Northeast Normal University</orgName>
+                            </affiliation>
+ 							and 
+                            <marker>b</marker> 
+							<affiliation>
+								<orgName type="department">State Key Laboratory of Inorganic Synthesis and<lb/> Preparative Chemistry</orgName>, 
+								<orgName type="institution">College of Chemistry</orgName>, 
+								<orgName type="institution"> Jilin University<lb/> </orgName>
+                            </affiliation>
+                        </author>
+                        
+                        <author>
+                        	<affiliation>
+								<address>
+									<settlement>Innsbruck</settlement>
+									/ 
+									<country>Austria</country>,
+								</address> 
+							</affiliation>	
+	                        <marker>a</marker> 
+							<affiliation>
+								<orgName type="department">Institute of Mineralogy and Petrography</orgName>
+                            </affiliation>
+ 							and 
+                            <marker>c</marker> 
+							<affiliation>
+								<orgName type="department">Inorganic and Theoretical Chemistry</orgName>,  
+								<orgName type="institution">University<lb/> of Innsbruck <lb/></orgName>
+                            </affiliation>
+                            <marker>b</marker> 
+							<affiliation>
+								<address>
+									<settlement>Belgrade</settlement>
+									/ 
+									<country>Serbia</country>,
+								</address> 
+								<orgName type="department">Faculty of Mining and Geology</orgName>,  
+								<orgName type="laboratory">Laboratory of Crystallography</orgName>, 
+								<orgName type="institution">University of Belgrade <lb/></orgName>
+                            </affiliation>
+                        </author>
+                        
+                        <author>
+							<affiliation>
+								<address>
+									<settlement>Anqing</settlement>
+									/ 
+									<country>P. R. China</country>,  
+								</address> 
+								<orgName type="department">Provincial Key Laboratory of Functional Coordination Chemistry</orgName>,  
+								<orgName type="department">College of Chemistry and Chemical<lb/> Engineering</orgName>, 
+						 		<orgName type="institution">Anqing Normal University<lb/></orgName>
+                            </affiliation>
+                        </author> 
+                        
+                        <author>
+	                        <marker>a</marker> 
+							<affiliation>
+								<address>
+									<settlement>Amritsar</settlement>
+									/ 
+									<country>India</country>, 
+								</address> 
+								<orgName type="department">Department of Chemistry</orgName>,  
+								<orgName type="institution">Guru Nanak Dev University<lb/></orgName>
+                            </affiliation>
+                            <marker>b</marker> 
+							<affiliation>
+								<address>
+									<settlement>Youngstown</settlement>
+									/ 
+									<country>USA</country>,
+								</address> 
+								<orgName type="department">Department of Chemistry</orgName>,  
+								<orgName type="institution">Youngstown Universitry<lb/></orgName>
+                            </affiliation>
+                        </author>
+                        
+                        <author>
+							<affiliation>
+								<orgName type="institution">Ruhr-Universität  Bochum</orgName>,   
+								<orgName type="department">Anorganische Chemie I</orgName>
+								 － 
+						 		<orgName type="department">Festkörperchemie und Materialien <lb/> </orgName>
+                            </affiliation>
+                        </author> 
+                        
+						<author>
+							<affiliation>
+								<address>
+									<settlement>Leipzig</settlement>, 
+								</address> 
+								<orgName type="department">Institut für Anorganische Chemie der Universität <lb/>  </orgName>
+                            </affiliation>
+                        </author>
+
+                        <author>
+							<affiliation>
+								<address>
+									<settlement>Marburg</settlement>, 
+								</address> 
+								<orgName type="department">Fachbereich Chemie</orgName> 
+								der 
+								<orgName type="institution">Philipps-Universität <lb/> </orgName>
+                            </affiliation>
+                        </author>
+
+                        <author>
+                        	<affiliation>
+								<address>
+									<settlement>Beijing</settlement>
+									/ 
+									<country>P. R. China</country>, 
+								</address> 
+							</affiliation>	
+	                        <marker>a</marker> 
+							<affiliation>
+								<orgName type="department">Department of Chemistry</orgName>,  
+								<orgName type="institution">University of Science and Technology Beijing</orgName>,  
+                            </affiliation>
+                            <marker>b</marker> 
+							<affiliation>
+								<orgName type="department">Analytical and Testing Center</orgName>
+								, and<lb/> 
+							</affiliation>
+                            <marker>c</marker> 
+							<affiliation>	
+								<orgName type="department">School of Chemistry</orgName>, 
+								<orgName type="institution"> Beijing Normal University<lb/> </orgName>
+                            </affiliation>
+                        </author>
+  
+                        <author>
+							<affiliation>
+								<address>
+									<settlement>Zarqa</settlement>
+									/ 
+									<country>Jordan</country>, 
+								</address> 
+								<orgName type="institution">Hashemite University</orgName>,    
+								<orgName type="department">Department of Chemistry <lb/></orgName>
+                            </affiliation>
+                        </author> 
+                        
+                        <author>
+							<affiliation>
+								<address>
+									<settlement>Freiburg</settlement>
+									/ 
+									<country>Germany</country>, 
+								</address> 
+								<orgName type="department">Institut für Anorganische und Analytische Chemie <lb/></orgName>
+                            </affiliation>
+                        </author> 
+                        
+                        <author>
+                        	<affiliation>
+								<address>
+									<settlement>Kazan</settlement>
+									/ 
+									<country>Russian  Federation</country>,  
+								</address> 
+								<orgName type="institution">Kazan State University</orgName>, 
+							</affiliation>	
+	                        <marker>a</marker> 
+							<affiliation>
+								<orgName type="department">A. M. Butlerov Chemistry Institute</orgName>
+                            </affiliation>
+							and  
+                            <marker>b</marker> 
+							<affiliation>
+								<orgName type="department">A. E. Arbuzov Institute of Organic and
+ Physical Chemistry<lb/> </orgName>
+							</affiliation>
+                        </author>
+                        
+                        <author>
+	                        <marker>a</marker> 
+							<affiliation>
+								<address>
+									<settlement>Mashhad</settlement>
+									/ 
+									<country>Iran</country>, 
+								</address> 
+								<orgName type="department">Department of Chemistry</orgName>,  
+								<orgName type="department">Faculty of Sciences</orgName>,  
+								<orgName type="institution">Ferdowsi University of Mashhad<lb/></orgName>
+                            </affiliation>
+                            <marker>b</marker> 
+							<affiliation>
+								<address>
+									<settlement>Tehran</settlement> / 
+									<country>Iran</country>
+									,
+								</address> 
+								<orgName type="department">Department of Chemistry </orgName>
+								, 
+								<orgName type="institution">Azzahra University<lb/></orgName>
+                            </affiliation>
+                            <marker>c</marker> 
+							<affiliation>
+								<address>
+									<settlement>Düsseldorf</settlement>
+									/ 
+									<country>Germany</country>,
+								</address> 
+								<orgName type="department">Institut für Anorganische Chemie und Strukturchemie</orgName>, 
+								<orgName type="department">Lehrstuhl II</orgName>, 
+								<orgName type="institution">Heinrich-Heine-Universität Düsseldorf<lb/></orgName>
+                            </affiliation>
+                        </author>
+                        
+                        <author>
+							<affiliation>
+								<address>
+									<settlement>Changchun</settlement>
+									/ 
+									<country>P.  R. China</country>,  
+								</address> 
+								<orgName type="department">Key Laboratory of Polyoxometalates Science of Ministry of Education</orgName>,   
+								<orgName type="department">College of Chemistry</orgName>, 
+								<orgName type="department">Northeast<lb/> Normal University <lb/></orgName>
+                            </affiliation>
+                        </author> 
+
+                        <author>
+                        	<marker>1</marker>
+                        	<affiliation>
+                            	<orgName type="department">Institute of Physical Chemistry and Electrochemistry </orgName>,
+                                <orgName type="institution">Leibniz University Hannover</orgName>, <lb/>
+                                <address>
+                                	<addrLine>Callinstr. 3a</addrLine>,
+                                    <postCode>D-30167</postCode>
+                                    <settlement>Hannover</settlement>, 
+                                    <country key="DE">Germany<lb/></country>
+                                </address>
+                            </affiliation>
+                        	<marker>2</marker> 
+                        	<affiliation>
+                            	<orgName type="department" key="dep1">Department of Chemistry</orgName>, 
+                                <orgName type="laboratory" key="dep2">Inorganic Chemistry</orgName>, 
+                                <orgName type="institution">University of Köln</orgName>, 
+                                <address>
+                                	<addrLine>Greinstr. 6</addrLine>, <lb/>
+                                    <postCode>D-50939</postCode>
+                                    <settlement>Köln</settlement>, 
+                                    <country key="DE">Germany<lb/></country>
+                                </address>
+                           </affiliation>
+                       </author>  
+                        
+                       <author>
+                       		<affiliation>
+                            	<orgName type="laboratory" key="dep1">Center for Atomic-scale Materials Design</orgName>,
+                                <orgName type="department" key="dep2">Department of Physics</orgName>, 
+                                <orgName type="institution">Technical <lb/>University of Denmark</orgName>, 
+                                <address>
+                                   	<postCode>DK-2800</postCode>
+                                    <settlement>Kgs. Lyngby</settlement>, 
+                                 	<country key="DK">Denmark<lb/></country>
+                                </address>
+                            </affiliation>
+                       </author>
+                       
+                       <author>
+                       		<affiliation>
+                            	<orgName type="department">FYSIKUM</orgName>, 
+                            	<orgName type="institution" key="instit1">Stockholm University</orgName>, 
+                                <orgName type="department" key="instit2">Albanova University Center</orgName>, 
+                                <address>
+                                	<postCode>SE-10691 <lb/></postCode>
+                                	<settlement>Stockholm</settlement>, 
+                                	<country key="SE">Sweden<lb/></country>
+                                </address>
+                             </affiliation>
+                       </author>
+                       
+                       <author>
+						   <affiliation>
+								<orgName type="department">Departments of Physics and Chemistry</orgName>, 
+								<orgName type="department">Nanoscience Center</orgName>, 
+								<orgName type="institution">University of <lb/> Jyväskylä</orgName>, 
+								<address>
+									<postBox>P.O. Box 35 (YFL)</postBox>, 
+									<postCode>FI-40014</postCode>
+									<country key="FI">Finland<lb/></country>
+								</address>
+						   </affiliation>
+                       </author>
+                        
+                       <author>
+                       		<affiliation>
+                            	<orgName type="laboratory">Physical Chemistry of Luminescent Materials</orgName>, 
+                            	<orgName type="institution" key="instit1">University of Lyon</orgName>, 
+                            	<orgName type="institution" key="instit2">Claude Bernard/ Lyon1<lb/> University</orgName>, 
+                               	<orgName type="laboratory">UMR CNRS 5620</orgName>, 
+                                <address>
+                              		<addrLine>La Doua</addrLine>,  
+                              		<settlement>Villeurbanne</settlement>, 
+                              		<postCode>69622</postCode>, 
+                              		<country key="FR">France<lb/></country>
+                               	</address>
+                           	</affiliation>
+                       </author>
+                       
+                       <author>
+                       		<affiliation>
+                            	<orgName type="department">Institute of Physics</orgName>, 
+                            	<orgName type="institution">University of Tartu</orgName>, 
+                                <address>
+                                	<addrLine>Riia 142</addrLine>, 
+                                	<settlement>Tartu</settlement>
+                                	<postCode>51014</postCode>,
+                                 	<country key="EE">Estonia<lb/></country>
+                                </address>
+                           	</affiliation>
+                       </author>
+                       
+                       <author>
+						   <affiliation>
+								<orgName type="department">Institute of Physics</orgName>, 
+								<orgName type="institution">University of Bydgoszcz</orgName>, 
+								<address>
+									<addrLine>Weyssenhoffa 11</addrLine>, 
+									<settlement>Bydgoszcz</settlement>
+									<postCode>85-072</postCode>, 
+									<country key="PL">Poland<lb/></country>
+								</address>
+							</affiliation>
+                       	</author>
+                       
+                       	<author>						
+							<affiliation>
+                            	<orgName type="department">Laboratory of Solid-State Physics</orgName> 
+ 								and    
+                            	<orgName type="department">Institute for Nanoscale Physics and Chemistry (INPAC)</orgName>, <lb/>
+                                <address>
+                                	<postCode>BE-3001</postCode>
+                                	<settlement>Leuven</settlement>, 
+                                 	<country key="BE">Belgium<lb/> </country>
+                                </address>
+                            </affiliation>
+                       	</author>
+
+                       	<author>	
+                       		<affiliation>
+                            	<orgName type="department">Institut UTINAM</orgName>, 
+                                <orgName type="institution">Université de Franche-Comté</orgName>, <lb/>
+                                <orgName type="institution">UMR CNRS 6213</orgName>, 
+                                <address>
+                                	<postCode>25030</postCode>
+                                	<settlement>Besançon cedex</settlement>, 
+                                	<country key="FR">France</country>. <lb/>
+                                </address>
+                        	</affiliation>
+                       	</author>
+                       	
+                       	<author>	
+                       	 	<affiliation>
+                            	<orgName type="department">Institute of Physics and Nanotechnology Center</orgName>, <lb/>
+                                <orgName type="institution">M. Curie - skłodowska University</orgName>, 
+                                <address>
+                                	<postCode>20-031</postCode>
+                                    <settlement>Lublin</settlement>,
+                                  	<country key="PL">Poland<lb/></country>
+                                </address>
+                            </affiliation>
+                       	</author>
+                       	
+                       	<author>	
+                       		<marker>a</marker>
+                       	 	<affiliation>
+                            	<orgName type="department">Max-Planck-Institut  für Gravitationsphysik</orgName>, 
+                                <orgName type="department">Albert-Einstein-Institut</orgName>, 
+                                <address>
+                                	<postCode>14476</postCode>
+                                    <settlement>Golm</settlement>,
+                                  	<country>Germany<lb/></country>
+                                </address>
+                            </affiliation>
+                            <marker>b</marker>
+                       	 	<affiliation>
+                            	<orgName type="department">Perimeter Institute for Theoretical Physics</orgName>, 
+                                <address>
+                                	<region>Ontario</region>
+                                    <postCode>N2J 2W9</postCode>,
+                                  	<country>Canada<lb/></country>
+                                </address>
+                            </affiliation>
+                            <marker>c</marker>
+                       	 	<affiliation>
+                            	<orgName type="department">Department of Physics</orgName>, 
+                            	<orgName type="institution">University of Waterloo</orgName>
+                                <address>
+                                	<settlement>Waterloo</settlement>,
+                                	<region>Ontario</region>
+                                    <postCode>N2L 3G1</postCode>,
+                                  	<country>Canada<lb/></country>
+                                </address>
+                            </affiliation>
+                            <marker>d</marker>
+                       	 	<affiliation>
+                            	<orgName type="department">Department of Physics and Astronomy</orgName>, 
+                            	<orgName type="institution">University of British Columbia</orgName>,
+                                <address>
+                                	<settlement>Vancouver</settlement>,
+                                  	<country>Canada<lb/></country>
+                                </address>
+                            </affiliation>
+                       	</author>
+                       	
+                       	<author>	
+                       		<marker>1</marker>
+                       		<affiliation>
+                            	<orgName type="department">Department of Physics</orgName>, 
+                                <orgName type="institution">University of Padova</orgName>  
+								and
+                                <orgName type="institution">INFN Padova</orgName>, 
+                                <address>
+                                	<addrLine>via Marzolo <lb/>8</addrLine>, 
+                                    <postCode>I-35131</postCode>
+                                    <settlement>Padova</settlement>, 
+                                    <country key="IT">Italy<lb/></country>
+                                </address>
+                            </affiliation>
+                            <marker>2</marker>
+                            <affiliation>
+                            	<orgName type="department">Department of Physics</orgName>, 
+                                <orgName type="institution">University of Trento</orgName> 
+								and 
+                                <orgName type="institution">INFN Trento</orgName>, 
+                                <address>
+                                	<postCode>I-38100</postCode>
+                                    <settlement>Povo <lb/> (Trento)</settlement>,
+                                    <country key="IT">Italy<lb/></country>
+                                </address>
+                          	</affiliation>
+                          	<marker>3</marker>
+                       		<affiliation>
+                            	<orgName type="department">Department of Physics</orgName>, 
+                                <orgName type="institution">University of Parma</orgName>
+								and
+                                <orgName type="institution">INFN Parma</orgName>, 
+                                <address>
+                                    <postCode>I-43100</postCode>
+                                    <settlement>Parma</settlement>, <lb/>
+                                    <country key="IT">Italy <lb/></country>
+                                </address>
+                            </affiliation>
+                            <marker>4</marker>
+                            <affiliation>
+                            	<orgName type="department">Institute of Theoretical Physics</orgName>, 
+                                <orgName type="institution">University of Zürich</orgName>, 
+                                <address>
+                                	<addrLine>Winterhurerstrasse 190</addrLine>,<lb/>
+                                    <postCode>8057</postCode> 
+                                    <settlement>Zürich</settlement>,
+                                    <country key="CH">Switzerland<lb/></country>
+                                </address>
+                            </affiliation>
+                            <marker>6</marker>
+                            <affiliation>
+                            	<orgName type="institution">INFN Laboratori Nazionali di Legnaro</orgName>, 
+                                <address>
+                                	<addrLine>Viale dell'Università</addrLine>
+                                	<postCode>35020</postCode> 
+                                    <settlement> Legnaro (Padova)</settlement>, 
+                                    <country key="IT">Italy<lb/></country>
+                                </address>
+                            </affiliation>
+                            <marker>7</marker>
+                            <affiliation>
+                            	<orgName type="department">Dipartimento di Fisica</orgName>, 
+                            	<orgName type="institution">Politecnico di Torino</orgName>, 
+                                <address>
+                                    <addrLine>Corso Duca degli Abruzzi 24<lb/></addrLine>, 
+                                    <postCode>10129</postCode>
+                                    <settlement>Torino</settlement>, 
+                                    <country>Italia<lb/></country>
+                               	</address>
+                           	</affiliation>
+                       	</author>
+                       	
+                       	<author>	
+                       		<marker>1</marker>
+                       		<affiliation>
+                            	<orgName type="department" key="dep1">Dipartimento di Scienze Fisiche</orgName>, 
+                            	<orgName type="institution" key="instit1">Università di Napoli " Federico II "</orgName>,
+                            	<orgName type="institution" key="instit2">INFN Sez. di Napoli</orgName>,<lb/>
+                                <orgName type="department" key="dep2">Compl. Univ. di Monte S. Angelo</orgName>,
+                              	<address>
+                                	<addrLine>Edificio G, Via Cinthia</addrLine>, 
+                                	<postCode>I-80126</postCode>, 
+                                  	<settlement>Napoli</settlement>,
+                                   	<country key="IT">Italy<lb/></country>
+                                </address>
+                             </affiliation>
+                             <marker>2</marker>                   
+                             <affiliation>
+                             	<orgName type="department">Dipartimento di Ingegneria</orgName>, 
+                             	<orgName type="institution">Università del Sannio</orgName>, <lb/> 
+                             	<address>
+                             		<region>Benevento</region>, 
+                                  	<addrLine>C.so Garibaldi 107</addrLine>, 
+                                  	<postCode>I-80125</postCode>
+                                  	<settlement>Benevento</settlement>, 
+                                   	<country key="IT">Italy<lb/></country>
+                                </address>
+                             </affiliation>
+                        </author>                      
+                       	
+                       	<author>	
+                       		<marker>a</marker>
+                       		<affiliation>
+                            	<orgName type="department">School of Mathematical Sciences<lb/></orgName>
+                                <orgName type="institution">Nottingham University<lb/></orgName>
+                                <address>
+                                 	<addrLine>University Park<lb/></addrLine>
+                                 	<settlement>Nottingham</settlement>
+                                 	<postCode>NG7 2RD<lb/></postCode>
+                                  	<country key="UK">UK<lb/></country>
+                               	</address>
+                             </affiliation>
+                             <marker>b</marker>                   
+                             <affiliation>
+                              	<orgName type="laboratory">Centre de Physique Théorique<lb/></orgName>
+                               	<address>
+                                  	<addrLine>Luminy</addrLine>
+                                   	<postBox>Case 907<lb/></postBox> 
+                                   	<postCode>13288</postCode>
+                                   	<settlement>Marseille - Cedex 9<lb/></settlement>
+                                   	<country key="FR">France<lb/></country>
+                              	</address>
+                             </affiliation>
+                        </author>                      
+                       	
+                        <author>	
+                       		<affiliation>
+                       			<orgName type="department">Leibniz Institute for Plasma Science and Technology (INP) </orgName>,
+                                <address>
+                                 	<addrLine> Felix-Hausdorff-Str. 2</addrLine>,
+                                 	<postCode>17489</postCode>
+                                 	<settlement>Greifswald</settlement>, 
+                                   	<country>Germany<lb/></country>
+                              	</address>
+                             </affiliation>
+                        </author>        
+
+                        <author>	
+                       		<affiliation>
+								<marker>1</marker>
+								<institution>Saarland University</institution>
+								<address>
+									<postCode>66123</postCode>
+									<settlement>Saarbrücken</settlement>,
+									<country>Germany<lb/></country>
+								</address>
+							</affiliation>
+							<affiliation>
+								<marker>2</marker>
+                       			<orgName type="department"> LT-Lab</orgName>, 
+								<orgName type="institution">DFKI</orgName>
+                                <address>
+                                 	<addrLine>Stuhlsatzenhausweg 3</addrLine>, 
+                                 	<postCode>66123</postCode>
+                                 	<settlement>Saarbrücken</settlement>, 
+                                   	<country>Germany<lb/></country>
+                              	</address>
+                             </affiliation>
+                        </author>
+                        
+						<author>
+							<affiliation>
+								Aus dem
+								<orgName type="department">Institut für theoretische Physik</orgName>
+								der
+								<orgName type="institution">Universität Göttingen</orgName>
+							</affiliation>
+						</author>
+                        
+						<author>
+							<affiliation>
+								Aus dem 
+								<orgName type="department">Kaiser-Wilhelm-Institut für Chemie</orgName>,
+								<address>
+									<country>Tailfingen</country>
+								</address>	
+							</affiliation>
+						</author>
+							
+						<author>
+							<affiliation>
+								Aus dem 
+								<orgName type="department">Physikalisch-Chemischen Institut</orgName>
+								der
+								<orgName type="institution">Universität Tübingen</orgName>
+							</affiliation>
+						</author>	
+						
+						<author>	
+							<affiliation>
+								<orgName type="department">Institut für anorganische Chemie</orgName>
+								der 
+								<orgName type="institution">Christian-Albrechts-Universität</orgName>,
+								<address>
+									<addrLine>Olshausenstraße 40-60</addrLine>,
+									<postCode>D-2300</postCode>
+									<settlement>Kiel</settlement>
+								</address>
+							</affiliation>
+						</author>	
+														
+						<author>	
+							<affiliation>
+								<orgName type="department">Lehrstuhl für Anorganische Chemie II</orgName>
+								der 
+								<orgName type="institution">Universität Dortmund</orgName>,
+								<address>
+									<postBox>Postfach 500500</postBox>,
+									<postCode>D-4600</postCode>
+									<settlement>Dortmund 50</settlement>
+								</address>
+							</affiliation>
+						</author>	
+									
+						<author>	
+							<affiliation>
+								<orgName type="department">Institut für Anorganische und Analytische Chemie</orgName>
+								der 
+								<orgName type="institution">Technischen Universität Berlin</orgName>,
+								<address>
+									<addrLine>Straße des 17. Juni 135</addrLine>,
+									<postCode>D-1000</postCode>
+									<settlement>Berlin 12</settlement>
+								</address>
+							</affiliation>
+						</author>
+						
+						<author>
+							<affiliation>
+								<orgName type="department">Lehrstuhl für Organische Chemie I</orgName>
+								der
+								<orgName type="institution">Universität Ulm</orgName>,
+								<address>
+									<addrLine>Oberer Eselsberg</addrLine>,
+									<postCode>D-7900</postCode>
+									<settlement>Ulm</settlement>
+								</address>
+							</affiliation>	
+						</author>
+						
+						<author>
+							<affiliation>
+								<orgName type="department">Sektion Röntgen- und Elektronenbeugung</orgName>
+								der
+								<orgName type="institution">Universität Ulm</orgName>,
+								<address>
+									<addrLine>Oberer Eselsberg</addrLine>,
+									<postCode>D-7900</postCode>
+									<settlement>Ulm</settlement>
+								</address>
+							</affiliation>	
+						</author>
+				
+						<author>	
+							<affiliation>
+								<orgName type="department">Theoretical and Physical Chemistry Institute</orgName>,
+								<orgName type="institution">The National Hellenic Research Foundation</orgName>,
+								<address>
+									<addrLine>48, Vass. Constantinou Ave.</addrLine>,
+									<settlement>Athens</settlement>
+									<postCode>501/1</postCode>,
+									<country>Greece</country>
+								</address>
+							</affiliation>
+						</author>
+						
+							
+							
+							
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</TEI>

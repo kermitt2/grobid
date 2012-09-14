@@ -1,0 +1,19 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="671"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<note type="reference">SIAM J. NUMER. ANAL. <lb/>c 2000 Society for Industrial and Applied Mathematics <lb/>Vol. 37, No. 5, pp. 1571?1589 <lb/></note>
+		<docTitle>
+			<titlePart type="main">A VARIABLE TIME STEP METHOD FOR AN AGE-DEPENDENT <lb/>POPULATION MODEL WITH NONLINEAR DIFFUSION <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>BRUCE P. AYATI <lb/></docAuthor></byline>
+		<div type="abstract">Abstract. We propose a method for solving a model of age-dependent population diusion <lb/>with random dispersal. This method, unlike previous methods, allows for variable time steps and <lb/>independent age and time discretizations. We use a moving age discretization that transforms the <lb/>problem to a system of parabolic equations. The system is then solved by backward dierences in <lb/>time and a Galerkin approximation in space; the equations that need to be solved at each step treat <lb/>each age group separately. A priori L 2 error estimates are obtained by an energy analysis. These <lb/>estimates are superconvergent in the age variable. We present a postprocessing technique which <lb/>capitalizes on the superconvergence. <lb/></div>
+		<keywords>Key words. population dynamics, age-dependence, nonlinear diusion, variable time steps, <lb/>superconvergence, postprocessing. <lb/> </keywords>
+		<keywords type="classes">AMS subject classitcations. 35Q80, 65M06, 65M15, 65M60, 92D25. <lb/></keywords>
+		<idno>PII. S003614299733010X</idno>
+		<div type="intro">1. Introduction.</div>
+		</front>
+</text>
+</tei>

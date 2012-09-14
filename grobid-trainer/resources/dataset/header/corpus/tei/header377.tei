@@ -1,0 +1,20 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="382"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<note type="reference">From: KDD-97 Proceedings. </note>
+		<note type="copyright">Copyright � 1997, AAAI (www.aaai.org). All rights reserved. <lb/></note>
+		<docTitle>
+			<titlePart type="main">MineSet: An Integrated System for Data Mining <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Cliff Brunk James Kelly Ron Kohavi <lb/></docAuthor></byline>
+		<byline><affiliation>Data Mining and Visualization <lb/>Silicon Graphics, Inc. <lb/></affiliation></byline>
+		<address>2011 N. Shoreline Blvd <lb/>Mountain View, CA 94043-1389 <lb/></address>
+		<email>fbrunk,jkelly,ronnykg@engr.sgi.com <lb/></email>
+		<div type="abstract">Abstract <lb/>MineSet TM , Silicon Graphics&apos; interactive system for <lb/>data mining, integrates three powerful technologies: <lb/>database access, analytical data mining, and data visualization. It supports the knowledge discovery process from data access and preparation through iterative analysis and visualization to deployment. Mine-Set is based on a client-server architecture that scales <lb/>to large databases. The database access component <lb/>provides a rich set of operators that can be used to <lb/>preprocess and transform the stored data into forms <lb/>appropriate for visualization and analytical mining. <lb/>The 3D visualization capabilities allow direct data visualization for exploratory analysis, including tools <lb/>for displaying high-dimensional data containing geographical and hierarchical information. The analytical mining algorithms help identify potentially interesting models of the data, which can be viewed using <lb/>visualization tools specialized for the learned models. <lb/>Third party vendors can interface to the MineSet tools <lb/>for model deployment and for integration with other <lb/>packages. <lb/></div>
+		<div type="intro">Introduction</div>
+		</front>
+</text>
+</tei>

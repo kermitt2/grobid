@@ -1,0 +1,726 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<patent-document status="new" lang="EN" ucid="EP-1128071-B1" country="EP" doc-number="1128071" kind="B1" date="20051012"><bibliographic-data><publication-reference fvid="23215391" ucid="EP-1128071-B1" status="new"><document-id status="new" format="original"><country>EP</country><doc-number>1128071</doc-number><kind>B1</kind><date>20051012</date><lang>EN</lang></document-id></publication-reference><application-reference ucid="EP-01102875-A" status="new" is-representative="NO"><document-id format="epo" status="new"><country>EP</country><doc-number>01102875</doc-number><kind>A</kind><date>20010214</date><lang>EN</lang></document-id></application-reference><priority-claims status="new"><priority-claim ucid="JP-2000050278-A" status="new"><document-id format="epo" status="new"><country>JP</country><doc-number>2000050278</doc-number><kind>A</kind><date>20000225</date></document-id></priority-claim><priority-claim ucid="JP-2000130953-A" status="new"><document-id format="epo" status="new"><country>JP</country><doc-number>2000130953</doc-number><kind>A</kind><date>20000428</date></document-id></priority-claim></priority-claims><dates-of-public-availability status="new"><intention-to-grant-date><date>20050426</date></intention-to-grant-date></dates-of-public-availability><term-of-grant /><technical-data status="new"><classifications-ipcr><classification-ipcr status="new">F04D  29/40        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">F04D  29/54        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">F04D  29/66        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">F04D  29/66        20060101C I20051008RMEP        </classification-ipcr></classifications-ipcr><classification-ecla status="new"><classification-symbol scheme="EC">F04D29/54C3</classification-symbol><classification-symbol scheme="EC">F04D29/66C4C</classification-symbol></classification-ecla><invention-title lang="DE" status="new">Lüfterzarge mit integriertem Resonator</invention-title><invention-title lang="EN" status="new">Resonator-integrated fan shroud</invention-title><invention-title lang="FR" status="new">Buse de ventilateur avec résonateur intégré</invention-title><citations /><figures /></technical-data><parties><applicants><applicant format="epo" status="new"><addressbook><name>INOUE MTP KK</name><address><country>JP</country></address></addressbook></applicant><applicant format="intermediate" status="new"><addressbook><name>INOAC CORPORATION</name><address><country /></address></addressbook></applicant></applicants><inventors><inventor format="epo" status="new"><addressbook><name>NAKAMURA KENTARO</name><address><country>JP</country></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>NAKAMURA, KENTARO</name><address><country /></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>Nakamura, Kentaro, Inoac Corporation</last-name><address><street>Sakurai Works, 8-1, Higashichosen, Fujii-cho</street><city>Anjo-shi, Aichi</city><country>JP</country></address></addressbook></inventor></inventors><assignees><assignee format="original" status="new"><addressbook><last-name>INOAC CORPORATION</last-name><address><street>13-4, Meiekiminami 2 chome, Nakamura-ku Nagoya-shi</street><city>Aichi 450-0003</city><country>JP</country></address></addressbook></assignee></assignees><agents><agent format="original" status="new"><addressbook><last-name>HOFFMANN - EITLE</last-name><address><street>Patent- und Rechtsanwälte Arabellastrasse 4</street><city>81925 München</city><country>DE</country></address></addressbook></agent></agents></parties><international-convention-data><designated-states><ep-contracting-states><country>DE</country><country>FR</country><country>GB</country><country>IT</country></ep-contracting-states></designated-states></international-convention-data></bibliographic-data><abstract lang="EN" source="EPO" status="new"><p>A hollow vessel 1 which is partitioned into one or a plurality of hollow chambers S by blow molding is used as a resonator 2, and the hollow vessel 1 is arranged to form a fan shroud body 3, and that a drain hole 13 is formed in a bottom portion and/or a lower side portion of the hollow vessel 1, and a communicating pipe 4 fitted to the hollow vessel 1 and an air intake duct 5 connected to the communicating pipe 4 are formed integrally with the hollow vessel 1. &lt;IMAGE&gt;</p></abstract><abstract lang="EN" status="new"><p num="">A hollow vessel 1 which is partitioned into one or
+a plurality of hollow chambers S by blow molding is used as
+a resonator 2, and the hollow vessel 1 is arranged to form
+a fan shroud body 3, and that a drain hole 13 is formed in
+a bottom portion and/or a lower side portion of the hollow
+vessel 1, and a communicating pipe 4 fitted to the hollow vessel
+1 and an air intake duct 5 connected to the communicating pipe
+4 are formed integrally with the hollow vessel 1.
+<img file="00000001.tif" id="img-EP-1128415-A2-00000001" he="118" wi="139" img-format="tif" img-content="ad" orientation="unknown" inline="no" /></p></abstract><description lang="EN" status="new"><p num="0001">The present invention relates to a fan shroud for
+installation in an engine compartment of a vehicle.</p><p num="0002"><ref type="patent">EP-A-0 995 895</ref> (a reference under Art. 54(3) EPC)
+describes a fan shroud and air intake arrangement for a
+vehicle.</p><p num="0003"><ref type="patent">US-A-5,649,587</ref> describes another fan shroud and air
+intake for a vehicle.</p><p num="0004">Recently, a demand for reducing noise of an automobile
+to a low level has heightened year by year, and has become
+particularly stringent concerning an intake system of an engine
+77 (Figs. 14 to 17). A resonator 80, a side branch, or the
+like has hitherto been used as a means for reducing the noise
+from the intake system. Recently, however, in conjunction
+with a reduction in the number of component parts and a tendency
+toward a smaller space, the capacity of a muffler such as the
+resonator 80 has tended to become small or to be disused.
+Further, development of a substitute item such as a tuning
+hole for a high-frequency band (100 Hz or higher) is under
+way. In Figs. 14 to 17, reference numeral 70 denotes a fan;
+reference numerals 71 and 72 denote air intake ducts; reference
+numeral 73 denotes an air cleaner; reference numeral 74 denotes
+an air intake duct (air cleaner hose); reference numeral 75 
+denotes an intake connector; reference numeral 76 denotes
+an intake manifold; reference numeral 78 denotes a radiator;
+and reference numeral 79 denotes a fan shroud.</p><p num="0005">For example, <ref type="patent">US-A-5,649,587</ref> discloses automotive
+radiator fan shrouds and, more particularly such shrouds
+which are blow molded to include hollow compartments which
+serve as reservoirs for fluids, such as coolant fluid, and/or
+window and headlamp washer fluids, including air and other
+gasses.</p><p num="0006">However, the situation is such that if an attempt is
+made to reduce the noise in the low-frequency band (100 Hz
+or lower), the large-capacity resonator must be still used.
+The reason for this is that the increase in the capacity lowers
+the frequency to be attenuated, and the amount of attenuation
+can be made large.</p><p num="0007">Due to its large capacity, the low-frequency resonator
+80 could be conventionally installed in a very limited specific
+position inside the engine compartment. In addition, since
+there is a limitation and the like in the installation of the
+equipment, there has been a problem in that the intake passages
+71, 72, and 74 become long. Further, with the conventional
+resonator 80 made by injection molding or the like, only two
+hollow chambers (chambers having two kinds of resonance
+frequencies) at most could be formed. Additionally, since
+the resonator 80 is fabricated separately, the cost tended 
+to be high.</p><p num="0008">According to a first aspect of the invention, there
+is provided a resonator-integrated fan shroud comprising
+a fan shroud body containing a hollow chamber arranged to
+function as a resonator, and a drain hole formed in a
+bottom portion and/or a lower side portion of the hollow
+chamber.</p><p num="0009">According to a first variant of the invention, the
+resonator-integrated fan shroud may further comprise a
+plurality of hollow chambers.</p><p num="0010">According to a second variant of the invention, a
+hollow vessel forms the fan shroud body.</p><p num="0011">According to a third variant of the invention, the
+hollow vessel may be partitioned into a plurality of
+hollow chambers.</p><p num="0012">According to a fourth variant of the invention, the
+resonator-integrated fan shroud further comprises a cover
+member, which is formed in a vessel shape and has an
+opening in one side, and which is joined to and
+integrated with the fan shroud body to cover the opening
+of the cover member, whereby the hollow chamber is formed
+by the cover member and the fan shroud body.</p><p num="0013">According to a fifth variant of the invention, a
+communicating pipe may be connected to an air intake
+duct, wherein the communicating pipe is formed integrally
+with the hollow chamber.</p><p num="0014">For a better understanding of the invention and to
+show how the same may be carried into effect, reference 
+will now be made, by way of example, to the accompanying
+drawings, in which:
+<sl><li>Fig. 1 is a perspective view of a first embodiment
+of a resonator-integrated fan shroud in accordance with the
+invention;</li><li>Fig. 2 is a perspective view of the resonator-integrated
+fan shroud in accordance with a variation of the first embodiment,
+in which two circular holes are provided ;</li><li>Fig. 3 is a perspective view of the resonator-integrated
+fan shroud in accordance with another variation of the first
+embodiment ;</li><li>Fig. 4 is a perspective view of the resonator-integrated
+fan shroud in accordance with a still another variation of
+the first embodiment;</li><li>Fig. 5 is a perspective view of the resonator-integrated
+fan shroud in accordance with a still another variation of
+the first embodiment;</li><li>Fig. 6 is a perspective view of a second embodiment
+of a resonator-integrated fan shroud with an air intake duct
+in accordance with the invention;</li><li>Fig. 7 is a perspective view of the resonator-integrated
+fan shroud with an air intake duct in accordance with a variation
+of the second embodiment;</li><li>Fig. 8 is a perspective view of the resonator-integrated
+fan shroud with an air intake duct in accordance with another
+variation of the second embodiment; </li><li>Fig. 9 is a perspective view of the resonator-integrated
+fan shroud with an air intake duct in accordance with a still
+another variation of the second embodiment;</li><li>Fig. 10 is an exploded perspective view of a third
+embodiment of a resonator-integrated fan shroud in accordance
+with the invention;</li><li>Fig. 11 is a perspective view in which the
+resonator-integrated fan shroud shown in Fig. 10 is completed;</li><li>Fig. 12A is a cross-sectional view prior to joining
+a cover member to a fan shroud body.</li><li>Fig. 12B is a cross-sectional view of a state in which
+the cover member is joined to the fan shroud body.</li><li>Fig. 13 is a perspective viewof the resonator-integrated
+fan shroud in accordance with a variation of the third embodiment.</li><li>Fig. 14 is an exploded perspective view explaining
+the conventional art;</li><li>Fig. 15 is a plan view explaining Fig. 14;</li><li>Fig. 16 is a perspective view explaining the conventional
+art ; and</li><li>Fig. 17 is a plan view explaining Fig. 16.</li></sl></p><p num="0015">The following describes a resonator-integrated fan
+shroud with an air intake duct, in which a hollow vessel which
+is partitioned into one or a plurality of hollow chambers by
+blow molding is used as a resonator, and the hollow vessel is
+arranged to form a fan shroud body, a drain hole
+is formed in a bottom portion of the hollow vessel, and a
+communicating pipe fitted to the hollow vessel and an air intake
+duct connected to the communicating pipe are formed integrally
+with the hollow vessel. </p><p num="0016">If the hollow vessel is used as the resonator, and
+the hollow vessel is arranged to form the fan shroud body,
+practically no space is required for installing the resonator
+in addition to the fan shroud.</p><p num="0017">If the communicating pipe and the air intake duct are
+integrally formed by blow molding or the like, the number of
+component parts is reduced, leading to a reduction in the cost.</p><p num="0018">A drain hole makes it possible to easily
+drain water and the like which entered the air intake duct
+and condensed.</p><p num="0019">The following also describes a resonator-integrated fan shroud
+comprising a fan shroud body and a cover member formed in the
+shape of a vessel and having one side formed as an opening,
+wherein a hollow box whose interior is hollow is formed as
+the cover member is joined to and integrated with the fan shroud
+body in a state in which the opening of the cover member is
+oriented toward a wall surface of the fan shroud body, and
+the hollow box is used as a resonator.</p><p num="0020">The resonator-integrated fan shroud may have a
+communicating pipe to be connected to an air intake duct
+formed integrally with the hollow vessel.</p><p num="0021">If the hollow box formed as the cover member is
+joined to and integrated with the fan
+shroud body in a state in which the opening of the cover member
+is oriented toward the wall surface of the fan shroud body,
+and this hollow box is used as a resonator, practically no
+space is required for installing the resonator in addition
+to the fan shroud. </p><p num="0022">If the communicating pipe is integrally formed, the
+number of component parts is reduced, leading to a reduction
+in the cost.</p><heading><u style="single">First Embodiment</u></heading><p num="0023">Figs. 1 to 5 are perspective views illustrating
+resonator-integrated fan shrouds according to a first embodiment
+of the present invention, and variants thereof.</p><p num="0024">This resonator-integrated fan shroud is a hollow vessel
+1 fabricated by blow molding, the fan shroud which is
+conventionally plate-shaped is formed in the shape of a hollow
+box, and this hollow vessel 1 is used as a resonator 2.</p><p num="0025">First, a description will be given of the
+resonator-integrated fan shroud of Fig. 1 according to the
+present invention. A fan shroud body 3 concerning the fan
+shroud is fabricated by blow molding, and the hollow vessel 
+1 having a hollow interior is formed at this time. A hollow
+chamber S is formed by resin-made plate portions (a front plate
+portion 1a, a rear plate portion 1b, an upper plate portion
+1c, a bottom plate portion 1d, left and right side plate portions
+1e and 1f, and a cylindrical plate portion 1g in Fig. 1) with
+a predetermined thickness t (see Fig. 9), which are obtained
+by blow molding by blowing air in a state in which a parison
+is clamped in a mold. The hollow chamber S having a space
+in its interior is formed by making the depth D (D » t) of the
+fan shroud body 3 larger than the plate thickness of the
+conventional plate-shaped fan shroud. Although the hollow
+vessel 1 may be formed by ordinary blow molding, the hollow
+vessel 1 is formed by deep-drawing blow molding in a case where
+the depth D is large. As for the fan shroud body 3, even if
+the depth D is made somewhat large, no problem is generally
+presented, and in many cases there is a spacewise leeway inside
+a narrow engine compartment. This hollow chamber S is used
+as a resonance box of the resonator 2.</p><p num="0026">A drain hole 13 is appropriately formed in the bottom
+plate portion 1d, as necessary. The drain hole 13 can be formed
+by post-processing, or may be also formed as a blow hole during
+molding. By providing the drain hole 13, water which entered
+the interior of the resonator 2, i.e., the hollow vessel 1,
+through an air intake duct 5 (Fig. 6) and condensed water
+can be smoothly drained outside the resonator. </p><p num="0027">Meanwhile, the hollow vessel 1 has a shape in which
+the outer shape is cubic and a large circular hole O is formed
+in the center, as shown. By making use of this circular hole
+O, a cooling fan of a radiator can be attached to the hollow
+vessel 1, and the hollow vessel 1 makes up the fan shroud body
+3. Namely, the hollow vessel 1 is adapted to be used jointly
+as a protector which is the fan shroud installed around the
+cooling fan of the radiator. The shroud body 3 is appropriately
+provided with screw holes B for attaching this fan shroud to
+an unillustrated mating member, a fan attaching guide hole
+P, ribs R for improving the efficiency of the fan, guides,
+and the like (see Fig. 14).</p><p num="0028">In the fan shroud body 3 shown in Fig. 1, a hollow
+cylindrical communicating pipe 4 is attached to a position
+close to an upper end of the side plate portion le by one-piece
+molding during blow molding. The communicating pipe 4 in this
+case has a shape in which it is bent in an L-shape. To obtain
+necessary performance and the like, the communicating pipe
+4 can be molded as a separate piece, and can be assembled in
+post-processing. Reference numeral 12 denotes a hole for a
+communicating hole formed in the side plate portion le
+corresponding to a proximal end portion of the communicating
+pipe 4. Reference characters PL denote a parting line in blow
+molding.</p><p num="0029">The resonator-integrated fan shroud may be formed in 
+a shape such as the one shown in Fig. 2. Fig. 2 is a perspective
+view of the resonator-integrated fan shroud according to one
+variation of the first embodiment in which the
+resonator-integrated fan shroud shown in Fig. 1 is modified.
+This resonator-integrated fan shroud is provided with two
+large circular holes O in which fans for cooling the radiator
+are accommodated.</p><p num="0030">When the fan shroud body 3 concerning the fan shroud
+is fabricated by blow molding, the plate portions (the front
+plate portion 1a, the rear plate portion 1b, the upper plate
+portion 1c, the bottom plate portion 1d, the left and right
+side plate portions 1e and 1f, and the cylindrical plate portions
+1g and 1h) with the predetermined thickness t (see Fig. 9)
+are formed from the parison so as to form the hollow vessel
+1. Further, during the blow molding of the hollow vessel 1
+(it is, of course, possible to employ a method using vibrational
+welding, thermal fusion, or the like in post-processing), upper
+and lower central portions of the parisons of the hollow
+cylindrical plate portions 1g and 1h are pushed and pressed
+while forming partition walls 11, and are fused to parison
+portions opposing thereto. Crushed portions 18 which have
+been fused and joined are located at two portions in upper
+and lower positions (four portions in total) of each of the
+two hollow cylindrical plate portions 1g and 1h. The fan shroud
+body 3 is divided into three partitioned hollow chambers S<sub>1</sub>, 
+S<sub>2</sub>, and S<sub>3</sub> by the formation of the partition walls 11 and the
+crushed portions 18. It should be noted that, in Fig. 2
+(similarly in Figs. 6 and 8), the crushed portions 18 are
+illustrated by hatching to facilitate an understanding.</p><p num="0031">The communicating pipes 4 are respectively attached
+to positions on the upper plate portion 1c corresponding to
+the three hollow chambers S<sub>1</sub>, S<sub>2</sub>, and S<sub>3</sub> by one-piece molding
+with the fan shroud body 3. The holes 12 are necessarily formed
+at the joints between the hollow chambers S<sub>1</sub>, S<sub>2</sub>, and S<sub>3</sub> and
+the communicating pipes 4 by blow molding, allowing the hollow
+chambers S and the communicating pipes 4 to communicate with
+each other. The hollow chambers S in Fig. 2 respectively serve
+as resonance boxes for the resonator 2. If the capacities
+of the three hollow chambers S<sub>1</sub>, S<sub>2</sub>, and S<sub>3</sub> are made different,
+the hollow vessel 1 (resonator 2) having three resonance
+frequencies can be formed.</p><p num="0032">Meanwhile, the shape of the hollow vessel 1 is such
+as to form the fan shroud body 3 which makes it possible to
+incorporate two fans, thereby forming the resonator-integrated
+fan shroud.</p><p num="0033">In addition, the resonator-integrated fan shroud may
+be also formed as the hollow vessel 1 having a hollow interior,
+as shown in Fig. 3. Fig. 3 is a perspective view of the
+resonator-integrated fan shroud according to another variation
+of the first embodiment in which the resonator-integrated fan 
+shroud shown in Fig. 1 is modified.</p><p num="0034">Necessary equipment and the like are installed around
+the fan shroud, and there are cases where there is a portion
+19 where the depth D of the fan shroud body 3 cannot be made
+large. This resonator-integrated fan shroud is designed to
+cope with such a case, and the depth E is made small where
+the necessary equipment and the like are present, while the
+depth of the remaining portion is set as the depth D (D &gt; E).
+Further, in a case where it is impossible to obtain a resonator
+capacity commensurate with the frequency to be attenuated,
+the hollow vessel 1 is jutted out in a direction in which space
+can be secured, e.g., in a lateral direction, so as to secure
+a necessary capacity 14, thereby reducing the noise. If an
+empty space is available around the fan shroud, the shape of
+the hollow vessel 1 is deformed to make effective use of the
+empty space. The communicating pipe 4 is formed by a short
+pipe, and is provided on the right side plate portion 1f in
+Fig. 3. The other arrangements are similar to those of the
+resonator-integrated fan shroud shown in Fig. 1, and a
+description thereof will be omitted. The same reference
+numerals as those in Fig. 1 denote identical portions or
+corresponding portions.</p><p num="0035">In addition, the resonator-integrated fan shroud may
+be formed in a shape such as the one shown in Fig. 3. Fig.
+4 is a perspective view of the resonator-integrated fan shroud 
+in which an upper half portion of the fan shroud is formed
+as the hollow vessel 1 so as to be used jointly as the resonator
+2. A lower half 6 of the fan shroud is formed as a separate
+piece, the hollow vessel 1 formed by blow molding is used as
+the resonator 2, and the hollow vessel 1 is made to carry the
+shroud body 3 of the upper half of the fan shroud.</p><p num="0036">Fig. 5 shows a resonator-integrated fan shroud in which
+the resonator-integrated fan shroud shown in Fig. 4 is further
+developed, and during the blow molding of the hollow vessel
+1, both upper corner ends of parison are crushed to integrally
+form attaching portions 15. Reference numeral 151 denotes
+a hole for attaching the fan shroud to a mating member. The
+other arrangements of the resonator-integrated fan shroud in
+Figs. 4 and 5 are similar to those of the resonator-integrated
+fan shroud shown in Fig. 1, and a description thereof will
+be omitted. The same reference numerals as those in Fig. 1
+denote identical portions or corresponding portions.</p><heading><u style="single">Second embodiment</u></heading><p num="0037">Figs. 6 to 9 are perspective views illustrating
+resonator-integrated fan shrouds each with an air intake duct
+according to a second embodiment of the invention, and
+variants thereof.</p><p num="0038">This resonator-integrated fan shroud with an air intake
+duct is one in which the air intake duct 5 is further integrated
+with the resonator-integrated fan shroud, such as the one shown 
+in one of Figs. 1 to 5, by blow molding.</p><p num="0039">For example, the resonator-integrated fan shroud with
+an air intake duct may be formed as shown in Fig. 6. In Fig.
+6, the hollow vessel 1 which is partitioned and formed into
+two hollow chambers S by blow molding is made to function as
+the resonator 2, and the hollow vessel 1 is made to carry the
+shroud body 3. Then, the communicating pipe 4 is attached
+to the hollow vessel 1, and the air intake duct 5 is connected
+to the communicating pipe 4 by one-piece molding.</p><p num="0040">The hollow vessel 1 has a lower center cut out to form
+a passage 17 for the circular hole O. During the blow molding
+of the hollow vessel 1, an upper central portion of the parison
+of the hollow cylindrical plate portion 1g is pushed while
+forming the partition wall 11, and is fused to a parison portion
+opposing thereto, thereby forming the crushed portion 18 at
+the same time. The fan shroud body 3 is divided into two
+partitioned hollow chambers S<sub>1</sub> and S<sub>2</sub> by the formation of the
+partition wall 11 and the crushed portion 18. The communicating
+pipes 4 communicating with the respective hollow chambers S
+are provided on the upper plate portion 1c by one-piece molding,
+and the other end portions of the communicating pipes 4 are
+set in a state of being joined to the air intake duct 5. The
+air intake duct 5 shown in Fig. 6 is arranged parallel to the
+upper plate portion 1c, and its right end is formed as an intake
+port 51, while its left end is formed as an air-cleaner-side 
+connecting port 52. The rectilinear air intake duct 5 having
+an air passage 55 formed therein is made to communicate with
+the hollow vessel 1 through each communicating pipe 4.</p><p num="0041">As shown in Fig. 7, in the resonator-integrated fan
+shroud with an air intake duct, the air intake duct 5 may be
+also formed integrally with the communicating pipe 4 of the
+resonator-integrated fan shroud shown in Fig. 1. The
+communicating pipe 4 shown in Fig. 7 is a straight short pipe
+different from the one shown in Fig. 1, but the other portion
+s (those of the resonator-integrated fan shroud) are similar
+to those shown in Fig. 1, so that a description thereof will
+be omitted. The air intake duct 5 with the air passage 55
+formed therein has a form in which it extends along the left
+side plate portion le shown in Fig. 7, and its upper end is
+formed as the intake port 51, while its lower end is formed
+as the air-cleaner-side connecting port 52.</p><p num="0042">In addition, the resonator-integrated fan shroud with
+an air intake duct may be formed as shown in Fig. 8. This
+resonator-integrated fan shroud with an air intake duct is
+formed as the hollow vessel 1 having the shape of a box whose
+lower side is cut away in an inverse U-shape, and four
+communicating pipes 4 are formed integrally at predetermined
+intervals on the upper plate portion 1c and the left side plate
+portion le shown in Fig. 8. Further, the air intake duct 5
+which extends along the upper plate portion 1c and the left 
+side plate portion le shown in Fig. 8 is formed integrally
+with the hollow vessel 1 and the communicating pipes 4. This
+resonator-integrated fan shroud with an air intake duct is
+formed by blow molding as the resonator 2 (shroud body 3) having
+a single hollow chamber S as shown by the solid lines in Fig.
+8. Subsequently, thermal fusion tools or the like are pressed
+in the directions of unfilled arrows in the drawing in
+post-processing so as to form the crushed portions 18 in the
+same way as in Fig. 1, thereby partitioning the inner chamber
+into the three chambers S<sub>1</sub>, S<sub>2</sub>, and S<sub>3</sub>. One communicating pipe
+4 is made to communicate with each of the hollow chambers S<sub>1</sub>
+and S<sub>3</sub>, and two communicating pipes 4 are made to communicate
+with the hollow chamber S<sub>2</sub>.</p><p num="0043">In addition, the resonator-integrated fan shroud with
+an air intake duct may be formed as shown in Fig. 9. In this
+resonator-integrated fan shroud with an air intake duct, the
+air intake duct 5 is attached by one-piece molding to a modified
+article of the resonator-integrated fan shroud shown in Fig.
+4. The upper half of the hollow vessel 1 making up the shroud
+body 3 is fabricated by blow molding, but at that tie the upper
+half of the hollow vessel 1 is further split into two parts
+of left and right sides. Reference character K denotes a split
+interval between the left and right hollow vessels 1.</p><p num="0044">The hollow vessel 1 having a hollow interior S is
+fabricated by plate portions with the predetermined thickness 
+t corresponding to the thickness of a parison. If the size
+of the two hollow vessels 1 is varied, it is possible to obtain
+the resonator 2 capable of attenuating different frequencies.
+Further, the communicating pipe 4 is formed integrally on
+the upper plate portion 1c with respect to the left and right
+hollow vessels 1, and the other end of the communicating pipe
+4 is integrally joined to the air intake duct 5. The air intake
+duct 5 is disposed in parallel to the upper plate portion 1c.
+Since the other arrangements are substantially similar to
+those of Fig. 4, a description thereof will be omitted.</p><p num="0045">With the resonator-integrated fan shroud and the
+resonator-integrated fan shroud with an air intake duct thus
+constructed, the fan shroud body 3 which is conventionally
+formed in a plate shape is formed as the hollow vessel 1, and
+is jointly used as the resonator 2 for the air intake duct
+5, and this arrangement is extremely effective in view of the
+present situation where it is difficult to secure the space
+for the resonator 2 in the engine compartment for which stepped-up
+efforts are being made for making the space compact. The
+resonator 2 having a large capacity can be obtained in the
+limited space, and the silencing effect becomes large. The
+resonator-integrated fan shroud and the resonator-integrated
+fan shroud with an air intake duct in accordance with the invention
+demonstrate power in the reduction of noise in a low-frequency
+band which can be solved only by the inevitable use of the 
+large-capacity resonator 2.</p><p num="0046">Since the fan shroud body 3 normally becomes large
+as compared with the resonator capacity, if the hollow chamber
+S is partitioned and formed into two or more chambers, it is
+possible to reduce the noise in mutually different low-frequency
+bands by varying the capacities of the hollow chambers, and
+it is possible to further enhance its effect. It becomes possible
+to provide tuning corresponding to various frequency bands
+depending on the method of fitting between the hollow vessel
+1 and the air intake duct 5 and by such as the adjustment of
+the capacity of the hollow vessel 1, i.e., the resonator 2.
+Tuning is possible not only for the low-frequency bands but
+also for high-frequency bands.</p><p num="0047">Further, since the air intake duct 5 is essentially
+disposed close to the fan shroud, the air intake passage is
+favorably prevented from becoming long.</p><p num="0048">In addition, since the shroud body 3 is fabricated
+by the blow-molded hollow vessel 1, and is jointly used as
+the resonator 2, the manufacturing cost becomes lower than
+the resonator 2 which is conventionally fabricated as a separate
+piece. The communicating pipe 4 and the air intake duct 5
+(primary-side air intake) can be integrally molded with the
+hollow vessel 1, and, when so done, the manufacturing cost
+can be further lowered. The number of components decreases,
+and inventory control is facilitated. </p><p num="0049">It should be noted that the invention is not limited
+to the ones shown in the foregoing first and second embodiments,
+and various modifications are possible within the scope of
+the invention depending on the object and applications. The
+shapes, sizes, the number, the material, and the like of the
+hollow vessel 1, the communicating pipe 4, the air intake duct
+5, and the like may be appropriately selected in accordance
+with the application. Although in the first and second
+embodiments a description has been given of only the hollow
+chamber S which is partitioned and formed into one to three
+chambers, it goes without saying that the hollow vessel 1
+partitioned and formed into a greater number of chambers may
+be used as the resonator 2, and the hollow vessel 1 may be
+formed as the shroud body 3. Although the hollow vessels 1
+shown in Figs. 1 to 9 have shapes in which the fan attaching
+hole or holes O are open in a cubic body, their shapes are
+not limited to the same. In addition, although the
+resonator-integrated fan shroud and the resonator-integrated
+fan shroud with an air intake duct in accordance with the
+embodiments are fabricated by blow molding, the invention is
+not limited to the same, and they may be fabricated by assembling
+component parts fabricated by, for instance, injection molding
+or the like.</p><heading><u style="single">Third Embodiment</u></heading><p num="0050">Figs. 10 to 13 are diagrams illustrating a
+resonator-integrated fan shroud according to a third
+embodiment of the invention, and variants thereof. Fig.
+10 is an exploded perspective view thereof,
+Fig. 11 is an overall perspective view thereof, Fig. 12 is
+a cross-sectional view of a state in which a fan shroud body
+and a cover member are joined and fixed, and Fig. 13 is a
+perspective view of the resonator-integrated fan shroud
+according to a variation of the third embodiment.</p><p num="0051">In this resonator-integrated fan shroud, a pair of
+cover members 106 each formed in the shape of a vessel and
+having one side formed as an opening 106a are fitted to a side
+wall of a fan shroud body 103 fabricated by injection molding,
+blow molding, or the like, and the respective members are
+integrated and formed into hollow shapes. Then, these hollow
+boxes 101 are used as a resonator 102. This resonator-integrated
+fan shroud is provided with two hollow chambers S<sub>1</sub> and S<sub>2</sub>.</p><p num="0052">The resonator-integrated fan shroud has the fan shroud
+body 103 and the cover members 106.</p><p num="0053">The fan shroud body 103 is a surrounding plate installed
+around a cooling fan of a radiator. Here, the fan shroud body
+103 is a frame member forming an upper half portion of the
+fan shroud, and has a base plate 131, left and right plate
+portions 103e and 103f, and an upper plate portion 103c, as
+shown in Fig. 10.</p><p num="0054">The base plate 131 is a plate-shaped member whose lower 
+edge is cut away in a semicircular shape, and a relatively
+wide and smooth surface is secured for it. An upper half portion
+of a fan 170 is disposed in this cut-away semicircular hole
+O<sub>1</sub>. The plate-shaped left and right plate portions 103e and
+103f and upper plate portion 103c of predetermined widths are
+formed by being bent orthogonally with respect to the base
+plate 131 at left and right side edges and an upper edge portion
+of the base plate 131 so as to protect the fan 170 and secure
+mechanical strength. The shroud body 103 is appropriately
+provided with screw holes B for attaching the fan shroud body
+103 to an unillustrated mating member, a fan attaching guide
+hole P, ribs R for improving the efficiency of the fan, guides,
+and the like (see Fig. 14).</p><p num="0055">A half-split tubular portion 134 is formed uprightly
+at a position close to the right-hand side on the upper plate
+portion 103c of the fan shroud body 103 shown in Fig. 10.
+A base plate portion 311 contiguous to proximal edges of the
+half-split tubular portion 134 is curved such that this side
+thereof in the drawing becomes convex in such a manner as to
+surround the half-split tubular portion 134. The cover members
+106 are respectively fitted to a rear surface of the base plate
+at two positions and are joined thereto. However, as shown
+in Fig. 12, a protrusion 133 where a portion corresponding
+to the peripheral edge of the opening of each cover member
+106 is built up by a predetermined height is formed. The two 
+hollow boxes 101 are formed by respectively joining and fixing
+the cover members 106 to the two protrusions 133 by welding
+or the like.</p><p num="0056">It should be noted that, in the third embodiment, the
+rear surface of the base plate (or the rear surface of the
+fan shroud body 103) refers to the rear surface of the base
+plate 31 (the fan shroud body 103) with respect to a radiator
+178. An unillustrated radiator is disposed on the lower
+left-hand side of Figs. 10 and 13, and the surface of the base
+plate 131 opposing thereto is a front surface of the base plate
+131, and the opposite surface is the rear surface of the base
+plate. Similarly, the surface of the fan shroud body 103 opposing
+the radiator is its front surface, and the opposite surface
+is its rear surface.</p><p num="0057">The cover member 106 is a vessel-shaped member having
+one side formed as the opening 106a. In the third embodiment,
+two cover members 106 are used in Fig. 10, and each cover member
+106 forms a box-shaped vessel whose one side is formed as the
+opening 106a by means of a rear plate portion 106b at an innermost
+position in the drawing, an upper plate portion 106c, a bottom
+plate portion 106d, a left plate portion 106e, a right plate
+portion 106f, and a slanting plate portion 106g. The cover
+member 106 has its surface on this side in the drawing open.</p><p num="0058">A half-split tubular portion 164 is provided on the
+upper plate portion 106c of the right-hand cover member 106 
+at a position corresponding to the aforementioned half-split
+tubular portion 134 in a mutually opposing manner. If the
+half-split tubular portion 164 is joined to and integrated
+with the half-split tubular portion 134 so as to be combined
+in a state in which the opening 106a of the right-hand cover
+member 106 is oriented toward the wall surface of the base
+plate, the half-split tubular portions 164 and 134 form a hollow
+cylindrical portion, and at the same time the hollow box 101
+with its interior formed as a hollow S is formed by the cover
+member 106 and the fan shroud body 103 (Fig. 11). This hollow
+box 101 can be used as a resonance box of the resonator 102,
+and the hollow cylindrical portion serves as a communicating
+tube 104 allowing an unillustrated air intake duct and the
+hollow box 101 to communicate with each other. On the upper
+plate portion 106c of the left-hand cover member 106 shown
+in Fig. 15, a communicating tube 104 formed of a hollow cylindrical
+short pipe communicating with the interior of the vessel is
+integrally formed with the cover member 106 from the outset.
+As for the left-hand cover member 106 as well, if it is joined
+to and integrated with the fan shroud body 103 in a state in
+which its opening 106a is oriented toward a predetermined wall
+surface of the base plate 131, the hollow box 101 with its
+interior formed as the hollow S is formed by the cover member
+106 and the fan shroud body 103.</p><p num="0059">A joining portion 161 at a peripheral edge of the opening 
+of the cover body 106 for being joined and fixed to the fan
+shroud body 103 is slightly protruded, as shown in Fig. 12,
+thereby facilitating the joining operation such as welding
+or the like. As the joining portion 161 at the peripheral
+edge of the opening 106a of the cover member 106 and the protruded
+portion 133 are made to abut against each other, thereby
+positively sealing the opening 106a. It should be noted that,
+in Fig. 10, the opening 106a and its surrounding portions are
+illustrated in a simplified form, and a detailed illustration
+of the joining portion 161 is omitted.</p><p num="0060">A drain hole is appropriately formed in the bottom
+plate portion 106d, as necessary. The drain hole can be formed
+in post-processing, or may be also formed as a blow hole during
+molding. By providing the drain hole 163, water which entered
+the interior of the resonator 102, i.e., the hollow vessel
+101, through an air intake duct and condensed water can be
+smoothly drained outside the system.</p><p num="0061">In the resonator-integrated fan shroud in accordance
+with the invention, the fan shroud body 103 and the cover members
+106 are molded in advance as separate pieces, and the respective
+members are joined and integrated later. An empty space can
+be secured around the fan shroud even in a narrow engine
+compartment. Accordingly, the hollow boxes 101 for the
+resonators are formed so as to allow the fan shroud body 103
+to form portions of the resonators 102. Effective use is made 
+of the vacant space on the rear surface side of the base plate
+of the fan shroud body 103, and the base plate 131 is made
+to play a partial role of forming the resonator 102, thereby
+making maximum use of the space and effecting a reduction in
+the cost.</p><p num="0062">In addition, with this resonator-integrated fan shroud,
+the hollow box 101 may be formed either on the rear surface
+or the front surface of the base plate 131, and may be formed
+as shown in Fig. 13, for example. Although, in Figs. 10 to
+12, the cover members 106 are joined to and integrated with
+the rear surface of the fan shroud body 103 (base plate 131)
+to form the hollow boxes 101, the hollow box 101 in this case
+is provided on the front surface of the base plate 131, as shown
+in Fig. 13. Not only the base plate 131 of the fan shroud
+body 103 but also the upper plate portion 103c and the right
+plate portion 103f also constitute portions of the hollow box
+101.</p><p num="0063">In the same way as in Fig. 10, the cover member 106
+forms a box-shaped vessel whose one side is formed as the opening
+106a in which this side thereof in the drawing is open by
+means of the rear plate portion 106b at an innermost position
+in the drawing, the upper plate portion 106c, the bottom plate
+portion 106d, and the left and right plate portions 106e and
+106f (Fig. 13). However, widths of the upper plate portion
+106c and the right plate portion 106f (the left plate portion 
+in the exploded perspective view in Fig. 13) are smaller than
+widths of the bottom plate portion 106d and the left plate
+portion 106e (the right plate portion in the exploded perspective
+view in Fig. 13) so that the hollow box 101 can be formed by
+being joined and fixed to an upper right corner of the fan
+shroud body 103. When joining is effected with the opening
+6a of the cover member 106 oriented toward the wall surface
+of the base plate 131 of the fan shroud body 103, the peripheral
+edge of the opening 106a of the cover member 106 can be brought
+into contact with the base plate 131, and the peripheral edge
+of the opening of the cover member can be made to abut against
+side edges of the upper plate portion 103c and the right plate
+portion 103f.</p><p num="0064">When the cover member 106 and the fan shroud body 103
+are joined and integrated, the hollow box 101 serving as the
+resonator 102 is formed, and at the same time the half-split
+tubular portion 164 fixed uprightly on the upper plate portion
+106c of the cover member 106 forms a hollow cylinder in cooperation
+with the half-split tubular portion 134 fixed uprightly on
+the upper plate portion 103c of the fan shroud body 103, thereby
+forming the communicating pipe 104. An open end of the
+communicating pipe 104 is connected to an unillustrated air
+intake duct, and the communicating pipe 104 allows the air
+intake duct and the resonator 102 to communicate with each
+other. It should be noted that, in Fig. 13, the protruded 
+joining portion 161 and the protrusion 133 such as those shown
+in Fig. 12 are not provided. The other arrangements are similar
+to those of the resonator-integrated fan shroud shown in Figs.
+10 to 12, so that a description thereof will be omitted.</p><p num="0065">With the resonator-integrated fan shroud thus
+constructed, since a portion of the fan shroud body 103 is
+jointly used as it is as a portion of the hollow box 101 so
+as to form the resonator 102 for the air intake duct, it is
+possible to make use of a narrow vacant space around the fan
+shroud body 103. This arrangement is extremely effective in
+view of the present situation where it is difficult to secure
+the space for the resonator 102 in the engine compartment for
+which stepped-up efforts are being made for making the space
+compact. By making use of the base plate 131 of the fan shroud
+body 103 which occupies a relatively large area, it is possible
+to fabricate the resonator 102 having a large capacity, and
+the silencing effect becomes large. The resonator-integrated
+fan shroud in accordance with the invention demonstrates power
+in the reduction of noise in a low-frequency band which can
+be solved only by the inevitable use of the large-capacity
+resonator 102. If the hollow chamber S is partitioned and
+formed into two or more chambers, it is possible to reduce
+the noise in mutually different low-frequency bands by varying
+the capacities of the hollow chambers S, and it is possible
+to further enhance its effect. It becomes possible to provide 
+tuning corresponding to various frequency bands by such as
+the adjustment of the capacity of the hollow vessel 101, i.e.,
+the resonator 102. Tuning is possible not only for the
+low-frequency bands but also for high-frequency bands.</p><p num="0066">Further, since the air intake duct is essentially
+disposed close to the fan shroud, the air intake passage can
+be favorably made short.</p><p num="0067">In addition, since a portion of the shroud body 103
+is jointly used as the resonator 102, the manufacturing cost
+becomes lower than the resonator 102 which is conventionally
+fabricated as a separate piece. The communicating pipe 104
+and a portion of the air intake duct (primary-side air intake)
+can be integrally molded with the hollow vessel 101, and, when
+so done, the manufacturing cost can be further lowered. The
+number of components decreases, and inventory control is
+facilitated.</p><p num="0068">As described above, the resonator-integrated fan shroud
+and the resonator-integrated fan shroud with an air intake
+duct in accordance with the invention make it possible to install
+the resonator contributing to the reduction of noise in a
+low-frequency band without taking up much space for installing
+the resonator and without making the intake passages long,
+and are extremely useful for the engine compartment for which
+stepped-up efforts are being made for making the space compact.</p><p num="0069">In addition, the present invention
+provides a fan shroud which makes it possible to install 
+a resonator without taking up much space and without
+making the intake passages long.</p><p num="0070">It should be noted that the invention is not limited
+to the disclosure of the foregoing embodiment, and various
+modifications are possible within the scope of the invention
+depending on the object and applications. The shapes, sizes,
+the number, the material, and the like of the hollow vessel
+101, the fan shroud body 103, the communicating pipe 104, and
+the like may be appropriately selected in accordance with the
+application. Although in the embodiment a description has
+been given of only the hollow chamber S which is partitioned
+and formed into one or two chambers, it goes without saying
+that the hollow vessel 101 partitioned and formed into a greater
+number of chambers may be used as the resonator 102, and the
+hollow vessel 101 may be formed as the shroud body 103.</p></description><claims lang="DE" status="new"><claim num="xx"><claim-text>Lüfterhaube mit integriertem Resonator umfassend:
+<claim-text><claim-text>einen Lüfterhaubenkörper (3; 103), der eine Hohlkammer
+(S; 1; 101) enthält, die angeordnet ist, um als
+Resonator (S; 2; 102) zu wirken; und</claim-text><claim-text>eine Ablassöffnung (13; 163), die in einem Bodenteil
+und/oder einem unteren Seitenteil der Hohlkammer (S; 1;
+101) angeordnet ist.</claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>Lüfterhaube mit integriertem Resonator nach Anspruch 1,
+weiter umfassend eine Vielzahl an Hohlkammern (S; S1;
+S2; S3; 1; 101).</claim-text></claim><claim num="xx"><claim-text>Lüfterhaube mit integriertem Resonator nach Anspruch 1
+oder 2, wobei ein Hohlgefäß (1) den genannten
+Lüfterhaubenkörper (3; 103) bildet.</claim-text></claim><claim num="xx"><claim-text>Lüfterhaube mit integriertem Resonator nach Anspruch 3,
+rückbezogen auf Anspruch 2, wobei das Hohlgefäß (1) in
+eine Vielzahl an Hohlkammern (S; S1; S2; S3) unterteilt
+ist.</claim-text></claim><claim num="xx"><claim-text>Lüfterhaube mit integriertem Resonator nach Anspruch 1,
+weiter umfassend:
+<claim-text><claim-text>ein Abdeckelement (106), das in einer Gefäßform gebildet
+ist und an einer Seite eine Öffnung (10a) aufweist, und
+das mit dem Lüfterhaubenkörper (103) verbunden und in
+diesen eingebaut ist, so dass die Öffnung (10a) des
+Abdeckelements (10) abgedeckt ist, wobei die genannte
+Hohlkammer (S; 101) durch das Abdeckelement (10) und den
+Lüfterhaubenkörper (103) gebildet ist.</claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>Lüfterhaube mit integriertem Resonator nach einem der
+vorhergehenden Ansprüche, weiter umfassend ein
+Verbindungsrohr (4; 104), das mit einem Lufteinlasskanal
+(5) verbindbar ist, wobei das Verbindungsrohr (4; 104)
+fest mit der genannten Hohlkammer (S; 1; 101) verbunden
+ist.</claim-text></claim><claim num="xx"><claim-text>Lüfterhaube mit integriertem Resonator nach Anspruch 6,
+wobei der genannte Lufteinlasskanal (5) fest mit dem
+Verbindungsrohr (4) verbunden ist.</claim-text></claim><claim num="xx"><claim-text>Lüfterhaube mit integriertem Resonator nach Anspruch 6
+oder 7, wobei die Hohlkammer (S; 1; 101) ein geblasenes
+Formteil ist.</claim-text></claim><claim num="xx"><claim-text>Fahrzeugmotorraum, ausgerüstet mit einem Lüfter und
+einer Lüfterhaube gemäß einem der vorangehenden
+Ansprüche.</claim-text></claim></claims><claims lang="EN" status="new"><claim num="xx"><claim-text>A resonator-integrated fan shroud comprising:
+<claim-text><claim-text>a fan shroud body (3; 103) containing a hollow
+chamber (S; 1; 101) arranged to function as a resonator
+(S; 2; 102); and</claim-text><claim-text>a drain hole (13; 163) formed in a bottom portion
+and/or a lower side portion of the hollow chamber (S; 1;
+101).</claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>The resonator-integrated fan shroud according to
+Claim 1, further comprising a plurality of hollow
+chambers (S; S1; S2; S3; 1; 101).</claim-text></claim><claim num="xx"><claim-text>A resonator-integrated fan shroud according to Claim
+1 or 2, wherein a hollow vessel (1) forms said fan shroud
+body (3; 103).</claim-text></claim><claim num="xx"><claim-text>The resonator-integrated fan shroud according to
+Claim 3 as dependent on Claim 2, wherein the hollow
+vessel (1) is partitioned into a plurality of hollow
+chambers (S; S1; S2; S3).</claim-text></claim><claim num="xx"><claim-text>A resonator-integrated fan shroud according to Claim
+1, further comprising:
+<claim-text><claim-text>a cover member (106), which is formed in a vessel
+shape and has an opening (106a) in one side, and which is
+joined to and integrated with the fan shroud body (103)
+to cover the opening of the cover member (106), whereby
+said hollow chamber (S;101) is formed by the cover member
+(106) and said fan shroud body (103).</claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>The resonator-integrated fan shroud according to any
+preceding claim, further comprising a communicating pipe
+(4;104) to be connected to an air intake duct (5), and
+wherein the communicating pipe (4;104) is integrally
+formed with said hollow chamber (S; 1; 101).</claim-text></claim><claim num="xx"><claim-text>The resonator-integrated fan shroud according to
+Claims 6, wherein said air intake duct (5) is integrally
+connected to the communicating pipe (4).</claim-text></claim><claim num="xx"><claim-text>The resonator-integrated fan shroud according to
+Claim 6 or 7, wherein the hollow chamber (S; 1; 101) is a
+blow molding.</claim-text></claim><claim num="xx"><claim-text>A vehicle engine compartment provided with a fan and
+a fan shroud according to any preceding claim.</claim-text></claim></claims><claims lang="FR" status="new"><claim num="xx"><claim-text>Buse de ventilateur avec résonateur intégré,
+comprenant :
+<claim-text><claim-text>un corps de buse de ventilateur (3 ; 103) contenant
+une chambre creuse (S ; 1 ; 101) disposée pour
+fonctionner comme un résonateur (S ; 2 ; 102), et</claim-text><claim-text>un trou de vidange (13 ; 163) formé dans une partie
+inférieure et/ou une partie latérale inférieure de la
+chambre creuse (S ; 1 ; 101).</claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>Buse de ventilateur avec résonateur intégré selon
+la revendication 1, comprenant en outre, une série de
+chambres creuses (S ; S1 ; S2 ; S3 ; 1 ; 101).</claim-text></claim><claim num="xx"><claim-text>Buse de ventilateur avec résonateur intégré selon
+la revendication 1 ou 2, où un réservoir creux (1) forme
+ledit corps de buse de ventilateur (3 ; 103).</claim-text></claim><claim num="xx"><claim-text>Buse de ventilateur avec résonateur intégré selon
+la revendication 3 comme dépendant de la revendication 2;
+où le réservoir creux (1) est divisé en une série de
+chambres creuses (S ; S1 ; S2 ; S3).</claim-text></claim><claim num="xx"><claim-text>Buse de ventilateur avec résonateur intégré selon
+la revendication 1; comprenant en outre :
+<claim-text><claim-text>un élément de recouvrement (106), qui est formé en
+forme de récipient et qui a une ouverture (106a) sur une
+face, et qui est joint à et intégré au corps de buse de
+ventilateur (103), pour couvrir l'ouverture du membre de
+recouvrement (106), où ladite chambre creuse (S ; 101)
+est formée par le membre de recouvrement (106) et ledit
+corps de buse de ventilateur (103).</claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>Buse de ventilateur avec résonateur intégré selon
+l'une quelconque des revendications précédentes,
+comprenant en outre, un tuyau de communication (4 ; 104)
+à connecter à une conduite d'amenée d'air (5) et dans
+laquelle le tuyau de communication (4 ; 104) est formé de
+manière solidaire à ladite chambre creuse (S ; 1 ; 101).</claim-text></claim><claim num="xx"><claim-text>Buse de ventilateur avec résonateur intégré selon
+la revendication 6, où ladite conduite d'amenée d'air (5)
+est connectée de manière solidaire au tuyau de
+communication (4).</claim-text></claim><claim num="xx"><claim-text>Buse de ventilateur avec résonateur intégré selon
+la revendication 6 ou 7, où la chambre creuse (S ; 1 ;
+101) est un moulage par soufflage.</claim-text></claim><claim num="xx"><claim-text>Compartiment moteur d'un véhicule, muni d'un
+ventilateur et d'une buse de ventilateur selon l'une
+quelconque des revendications précédentes.</claim-text></claim></claims><legal-status status="new"><legal-event country="EP" code="25" date="20061220"><legal-event-body><event-title>LAPSED IN A CONTRACTING STATE ANNOUNCED VIA POSTGRANT INFORM. FROM NAT. OFFICE TO EPO</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>DE</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20060113</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="EN" date="20061201"><legal-event-body><event-title>FR: TRANSLATION NOT FILED</event-title></legal-event-body></legal-event><legal-event country="EP" code="26N" date="20060920"><legal-event-body><event-title>NO OPPOSITION FILED</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20060713</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REF" date="20060223"><legal-event-body><event-title>CORRESPONDS TO:</event-title><event-attributes><event-attribute><event-attribute-label>Ref Document Number </event-attribute-label><event-attribute-value>60113893</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Country of Ref Document </event-attribute-label><event-attribute-value>DE</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Date of Ref Document </event-attribute-label><event-attribute-value>20060223</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>P</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20051012"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>B1</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>DEFRGBIT</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REG" date="20051012"><legal-event-body><event-title>REFERENCE TO A NATIONAL CODE</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>GB</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Legal Event Code </event-attribute-label><event-attribute-value>FG4D</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="17Q" date="20040519"><legal-event-body><event-title>FIRST EXAMINATION REPORT</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20040402</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AKX" date="20030305"><legal-event-body><event-title>PAYMENT OF DESIGNATION FEES</event-title><event-attributes><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>DEFRGBIT</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="17P" date="20021030"><legal-event-body><event-title>REQUEST FOR EXAMINATION FILED</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20020827</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20020612"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>A3</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>ATBECHCYDEDKESFIFRGBGRIEITLILUMCNLPTSETR</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AX" date="20020612"><legal-event-body><event-title>EXTENSION OF THE EUROPEAN PATENT TO</event-title><event-attributes><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>AL;LT;LV;MK;RO;SI</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20010829"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>A2</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>ATBECHCYDEDKESFIFRGBGRIEITLILUMCNLPTSETR</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AX" date="20010829"><legal-event-body><event-title>EXTENSION OF THE EUROPEAN PATENT TO</event-title><event-attributes><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>AL;LT;LV;MK;RO;SI</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event></legal-status></patent-document>

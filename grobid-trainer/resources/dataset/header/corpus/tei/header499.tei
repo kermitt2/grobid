@@ -1,0 +1,33 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="502"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">An Experimental Comparison of <lb/>Three Graph Drawing Algorithms <lb/></titlePart>
+		</docTitle>
+		<note type="other">(Extended Abstract) <lb/></note>
+		<byline><docAuthor>Giuseppe Di Battista <lb/></docAuthor></byline>
+		<email>dibattista@iasi.rm.cnr.it <lb/></email>
+		<byline><docAuthor>Roberto Tamassia <lb/></docAuthor></byline>
+		<email>rt@cs.brown.edu <lb/></email>
+		<byline><affiliation>D. I. F. A. <lb/>Univ. della Basilicata <lb/></affiliation></byline>
+		<address>85100 Potenza <lb/>Italy <lb/></address>
+		<byline><docAuthor>Ashim Garg <lb/></docAuthor></byline>
+		<email>ag@cs.brown.edu <lb/></email>
+		<byline><docAuthor>Emanuele Tassinari x <lb/></docAuthor></byline>
+		<email>tassinar@dis.uniroma1.it <lb/></email>
+		<byline><affiliation>Dept. of Computer Science <lb/>Brown University <lb/></affiliation></byline>
+		<address>Providence, RI 02912-1910 <lb/>USA <lb/></address>
+		<byline><docAuthor>Giuseppe Liotta <lb/></docAuthor></byline>
+		<email>liotta@dis.uniroma1.it <lb/></email>
+		<byline><docAuthor>Francesco Vargiu <lb/></docAuthor></byline>
+		<email>vargiu@dis.uniroma1.it <lb/></email>
+		<byline><affiliation>Dip. Informatica e Sistemistica <lb/>Univ. di Roma &quot;La Sapienza&quot; <lb/></affiliation></byline>
+		<address>00198 Roma <lb/>Italy <lb/></address>
+		<div type="abstract">Abstract <lb/>In this paper we present an extensive experimental study comparing three general-purpose graph <lb/>drawing algorithms. The three algorithms take as <lb/>input general graphs (with no restrictions whatsoever on the connectivity, planarity, etc.) and construct orthogonal grid drawings, which are widely <lb/>used in software and database visualization applications. The test data (available by anonymous <lb/>ftp) are 11,582 graphs, ranging from 10 to 100 <lb/>vertices, which have been generated from a core <lb/>set of 112 graphs used in &quot;real-life&quot; software engineering and database applications. The experiments provide a detailed quantitative evaluation of <lb/>the performance of the three algorithms, and show <lb/>that they exhibit trade-offs between &quot;aesthetic&quot; <lb/>properties (e.g., crossings, bends, edge length) and <lb/>running time. The observed practical behavior of <lb/>the algorithms is consistent with their theoretical <lb/>properties. <lb/>Research supported in part by the US National Science Foundation, by the US Army Research Office, by the US Office of <lb/>Naval Research and the Advanced Research Projects Agency, by <lb/>the NATO Scientific Affairs Division, by the &quot;Progetto Finalizzato <lb/>Sistemi Informatici e Calcolo Parallelo (Sottoprogetto 6, Infokit)&quot; <lb/>and Grant 94.23.CT07 of the Italian National Research Council <lb/>(CNR), and by the ESPRIT II Basic Research Actions Program of <lb/>the European Community (project ALgorithms and Complexity). <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

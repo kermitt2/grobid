@@ -1,0 +1,20 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="551"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">A Simple Algorithm for Finding the <lb/>Maximum Recoverable System State in <lb/>Optimistic Rollback Recovery Methods <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>David B. Johnson <lb/>Peter J. Keleher <lb/>Willy Zwaenepoel <lb/></docAuthor></byline>
+		<idno>Rice COMP TR90-125 <lb/></idno>
+		<date>July 1990 <lb/></date>
+		<byline><affiliation>Department of Computer Science <lb/>Rice University <lb/></affiliation></byline>
+		<address>P.O. Box 1892 <lb/>Houston, Texas 77251-1892 <lb/></address>
+		<note type="phone">(713) 527-4834 <lb/></note>
+		<note type="grant">This research was supported in part by the National Science Foundation under grants CCR-8716914 and <lb/>CDA-8619893, and by the Office of Naval Research under contract ONR N00014-88-K-0140. <lb/></note>
+		<pb/>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000014-orginal"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<lb/>
+			<reference>THE REVIEW OF SCIENTIFIC INSTRUMENTS<lb/></reference>
+			
+			<reference>VOLUME 38, NUMBER 4<lb/> APRIL 1967<lb/></reference>
+			
+			<docTitle>
+				<titlePart>Production of Monodisperse Sprays*<lb/></titlePart>
+			</docTitle>
+			
+			<byline>
+				<docAuthor>E. K. DABoRA<lb/></docAuthor>
+			</byline>
+			
+			<byline>
+				<affiliation>Department of Aerospace Engineering, University of
+					Michigan,</affiliation>
+			</byline>
+			
+			<address>Ann Arbor, Michigan 48105<lb/></address>
+			
+			<note type="submission">(Received 22 November 1966; and in final form, 8 December 1966)<lb/></note>
+			
+			<div type="abstract">A technique for producing monodisperse sprays is described. The
+				technique makes use of Rayleigh's criterion for<lb/> the breakup of capillary jets
+				by mechanically vibrating a number of uniform size capillary needles arranged
+				in<lb/> parallel. It was used to produce sprays in the size range of 290-950 IL, but
+				in principle there is no reason why this<lb/> range cannot be extended. The regime
+				of spray sizes where drop coalescence is likely to take place is delineated,
+				and<lb/> methods of minimizing coalescence are described.<lb/></div>
+			
+		</front>
+	</text>
+</tei>
+

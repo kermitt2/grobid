@@ -1,0 +1,24 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="ZFN-A-036-01-0023"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<titlePage>
+				<docTitle>
+					<titlePart type="main">Diode Laser Spectrum of HCCCN near 5 tun * <lb/> The Hot Band <lb/></titlePart>
+				</docTitle>
+				<byline><docAuthor>Koichi Yamada and Gisbert Winnewisser</docAuthor><lb/></byline>
+				<byline><affiliation>I. Physikalisches Institut, Universität zu Köln<lb/></affiliation></byline>
+				<reference>Z. Naturforsch. S6a, 23—29 (1981); </reference>
+				<note type="submission">received November 26, 1980 <lb/></note>
+			</titlePage>
+			<div type="abstract">Two hot bands associated with the vs vibration-rotation band of cyanoaoetylene, HC3N, <lb/>
+have been measured with a diode laser spectrometer in the 2060—2100 cm-1 range. Since the <lb/>
+width of the observed lines is essentially determined by Doppler broadening, the splitting of the <lb/>
+hot band rovibrational transitions due to /-type doubling could be resolved and was assigned. <lb/>
+Improved spectral parameters were obtained, including the anharmonicity parameters. <lb/></div>
+			<div type="intro">Introduction<lb/></div>
+		</front>
+	</text>
+</tei>

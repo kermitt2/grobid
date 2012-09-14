@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+<listBibl>
+
+		<bibl><author>J. Ph. Karr, A. Baas, R. Houdre, and E. Giacobino</author>, <title level="j">Phys. Rev. A</title>, <biblScope type="vol">69</biblScope>, <biblScope type="pp">031802(R)</biblScope>(<date>2004</date>).</bibl>
+
+		<bibl><author>S. Savasta, O. Di Stefano, V. Savona, and W. Langbein</author>, <title level="j">Phys. Rev. Lett.</title>, <biblScope type="vol">94</biblScope>, <biblScope type="pp">246401</biblScope> (<date>2005</date>).</bibl>
+
+		<bibl><author>S. Savasta, R. Girlanda, and G. Martino, Phys.</author> <title level="j">Status Solidi a</title>, <biblScope type="vol">164</biblScope>, <biblScope type="pp">85</biblScope> (<date>1997</date>);</bibl>
+
+		<bibl><author>P Schwendimann, C Ciuti, andA Quattropani</author> ,<title level="j">Phys .Rev .B</title> ,<biblScope type="vol">68</biblScope> , <biblScope type="pp">165324</biblScope> ( <date>2003</date>);</bibl>
+
+		<bibl><author>J. Ph. Karr, A. Baas, and E Giacobino</author>, <title level="j">Phys. Rev. A</title>, <biblScope type="vol">69</biblScope>, <biblScope type="pp">063807</biblScope> ( <date>2004</date>).</bibl>
+
+		<bibl><author>A. Verger, C Ciuti, and I Carusotto</author>, <title level="j">Phys. Rev. B</title>, <biblScope type="vol">73</biblScope>, <biblScope type="pp">193306</biblScope> (<date>2006</date>).</bibl>
+
+		<bibl><author>T. C. H. Liew and V. Savona</author>, <title level="j">Phys. Rev. Lett.</title>, <biblScope type="vol">104</biblScope>, <biblScope type="pp">183601</biblScope> (<date>2010</date>).</bibl>
+
+		<bibl><author>M. Bamba, A. Imamoglu, I. Carusotto, and C. Ciuti</author>, <idno type="vol">arXiv:1007.1605v1</idno> (<date>2010</date>).</bibl>
+
+		<bibl><author>R. Raussendorf and H. J. Briegel</author>, <title level="j">Phys. Rev. Lett.</title>, <biblScope type="vol">86</biblScope>, <biblScope type="pp">5188</biblScope> (<date>2001</date>).</bibl><citations>
+
+</citations>
+</listBibl>
+</tei>

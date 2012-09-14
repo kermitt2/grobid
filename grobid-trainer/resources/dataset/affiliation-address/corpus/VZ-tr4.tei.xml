@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../jsp/xmlverbatimwrapper.xsl"?> 
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<!-- Dept. of Comput. Sci., North Carolina Univ., Chapel Hill, NC; -->
+    <teiHeader xml:lang="en">
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<affiliation>
+								<orgName type="department">Dept. of Comput. Sci.</orgName>,
+								<orgName type="institution">North Carolina Univ.</orgName>,
+								<address>
+									<settlement>Chapel Hill</settlement>,
+                                    <region type="state">NC</region>;
+								</address>
+							</affiliation>
+						</author>
+					
+					</analytic>
+
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</TEI>

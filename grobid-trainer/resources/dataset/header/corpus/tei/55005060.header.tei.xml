@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005060"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<lb/>
+			<reference>PRL 97, 144507 (2006) PHYSICAL REVIEW LETTERS</reference>
+			
+			<date>week ending<lb/>6 OCTOBER 2006<lb/></date>
+			
+			<docTitle>
+				<titlePart>Lagrangian Measurements of Inertial Particle Accelerations<lb/> in Grid
+					Generated Wind Tunnel Turbulence<lb/></titlePart>
+			</docTitle>
+
+			<byline>
+				<docAuthor>S. Ayyalasomayajula,1 A. Gylfason,1,* L. R. Collins, E. Bodenschatz,1,† and Z. Warhaft1,‡
+					<lb/></docAuthor>
+			</byline>
+
+			<byline>
+				<affiliation>1 Mechanical &amp; Aerospace Engineering, Cornell University,</affiliation>
+			</byline>
+
+			<address>Ithaca, New York, USA<lb/></address>
+
+			<note type="submission">(Received 7 February 2006; </note>
+			<date>published 5 October 2006)<lb/></date>
+
+			<div type="abstract">We describe Lagrangian measurements of water droplets in grid
+				generated wind tunnel turbulence at a<lb/> Taylor Reynolds number of R  250 and an
+				average Stokes number (hSti) of approximately 0.1. The<lb/> inertial particles are
+				tracked by a high speed camera moving along the side of the tunnel at the mean
+				flow<lb/> speed. The standardized acceleration probability density functions of the
+				particles have spread exponential<lb/> tails that are narrower than those of a fluid
+				particles (St 0) and there is a decrease in the acceleration<lb/> variance with
+				increasing Stokes number. A simple vortex model shows that the inertial
+				particles<lb/> selectively sample the fluid field and are less likely to experience
+				regions of the fluid undergoing the<lb/> largest accelerations. Recent direct
+				numerical simulations compare favorably with these first measure-<lb/> ments of
+				Lagrangian statistics of inertial particles in highly turbulent flows.<lb/> 
+			</div>
+			<idno>DOI: 10.1103/PhysRevLett.97.144507</idno> 
+			<space dim="horizontal"/>
+			<keywords type="pacs">PACS numbers: 47.27.-i, 05.10.-a, 47.11.-j<lb/></keywords>
+
+		</front>
+	</text>
+</tei>

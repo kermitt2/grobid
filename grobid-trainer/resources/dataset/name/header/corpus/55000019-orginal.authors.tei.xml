@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Laura</forename>
+								<surname>Ricco</surname> and
+							</persName>
+							<persName>
+								<forename>Saverio</forename>
+								<surname>Russo</surname>
+								<marker>*</marker>
+							</persName>
+							<persName>
+								<forename>Giustino</forename>
+								<surname>Orefice</surname> and
+							</persName>
+							<persName>
+								<forename>Fernando</forename>
+								<surname>Riva</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

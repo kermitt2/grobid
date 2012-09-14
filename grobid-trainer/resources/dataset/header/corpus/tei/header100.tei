@@ -1,0 +1,19 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="101"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Scalable Atomic Primitives for Distributed <lb/>Shared Memory Multiprocessors <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Maged M. Michael Michael L. Scott <lb/></docAuthor></byline>
+		<byline><affiliation>Computer Science Department <lb/>University of Rochester <lb/></affiliation></byline>
+		<address>Rochester, NY 14627-0226 <lb/></address>
+		<email>{michael,scott}@cs.rochester.edu <lb/></email>
+		<date>July 1994</date>
+		<div type="abstract">Abstract <lb/>Our research addresses the general topic of atomic update of shared data <lb/>structures on large-scale shared-memory multiprocessors. In this paper <lb/>we consider alternative implementations of the general-purpose single-address atomic primitives fetch and , compare and swap, load linked, <lb/>and store conditional. These primitives have proven popular on small-scale bus-based machines, but have yet to become widely available on <lb/>large-scale, distributed shared memory machines. We propose several alternative hardware implementations of these primitives, and then analyze <lb/>the performance of these implementations for various data sharing patterns. Our results indicate that good overall performance can be obtained <lb/>by implementing compare and swap in the cache controllers, and by pro <lb/>viding an additional instruction to load an exclusive copy of a cache line. <lb/></div>
+		<div type="intro">1 INTRODUCTION</div>
+		</front>
+</text>
+</tei>

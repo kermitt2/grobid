@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="95"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Error-Correcting Output Codes: <lb/>A General Method for Improving <lb/>Multiclass Inductive Learning Programs <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Thomas G. Dietterich and Ghulum Bakiri <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science <lb/>Oregon State University <lb/></affiliation></byline>
+		<address>Corvallis, OR 97331-3202 <lb/></address>
+		<div type="abstract">Abstract <lb/>Multiclass learning problems involve finding a definition for an unknown function f(x) whose range is a <lb/>discrete set containing k &amp;gt; 2 values (i.e., k &quot;classes&quot;). <lb/>The definition is acquired by studying large collections <lb/>of training examples of the form hx i ; f(x i )i. Existing <lb/>approaches to this problem include (a) direct application of multiclass algorithms such as the decision-tree <lb/>algorithms ID3 and CART, (b) application of binary <lb/>concept learning algorithms to learn individual binary <lb/>functions for each of the k classes, and (c) application <lb/>of binary concept learning algorithms with distributed <lb/>output codes such as those employed by Sejnowski and <lb/>Rosenberg in the NETtalk system. This paper compares these three approaches to a new technique in <lb/>which BCH error-correcting codes are employed as a <lb/>distributed output representation. We show that these <lb/>output representations improve the performance of ID3 <lb/>on the NETtalk task and of backpropagation on an <lb/>isolated-letter speech-recognition task. These results <lb/>demonstrate that error-correcting output codes provide a general-purpose method for improving the performance of inductive learning programs on multiclass <lb/>problems. <lb/></div>
+		<div type="intro">Introduction</div>
+		</front>
+</text>
+</tei>

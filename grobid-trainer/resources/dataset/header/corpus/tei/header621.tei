@@ -1,0 +1,16 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="623"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Mixed Semidefinite-Quadratic-Linear Programs <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Jean-Pierre Haeberly Madhu V. Nayakkankuppam <lb/>Michael L. Overton <lb/></docAuthor></byline>
+		<date>September 23, 1998 <lb/></date>
+		<div type="abstract">Abstract <lb/>We consider mixed semidefinite-quadratic-linear programs. These are <lb/>linear optimization problems with three kinds of cone constraints, namely: <lb/>the semidefinite cone, the quadratic cone and the nonnegative orthant. We <lb/>outline a primal-dual path following method to solve these problems and <lb/>highlight the main features of SDPpack, a Matlab package which solves <lb/>such programs. We give some examples where such mixed programs arise, <lb/>and provide numerical results on benchmark problems. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

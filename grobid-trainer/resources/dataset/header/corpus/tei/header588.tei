@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="590"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">PARALLEL AND DISTRIBUTED SIMULATION <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Richard M. Fujimoto <lb/></docAuthor></byline>
+		<byline><affiliation>College of Computing <lb/>Georgia Institute of Technology <lb/></affiliation></byline>
+		<address>Atlanta, Georgia 30332-0280, U.S.A. <lb/></address>
+		<div type="abstract">ABSTRACT <lb/>Research and development efforts in the parallel and <lb/>distributed simulation field over the last 15 years <lb/>has progressed, largely independently, in two separate camps: the largely academic high performance <lb/>Parallel And Distributed (discrete event) Simulation (PADS) community, and the DoD-centered Distributed Interactive Simulation (DIS) community. <lb/>This tutorial gives an overview and comparison of <lb/>work in these two areas, emphasizing issues related to <lb/>distributed execution where these fields have the most <lb/>overlap. Differences in the fundamental assumptions <lb/>routinely used within each community are contrasted, <lb/>followed by overviews of work in each community. <lb/></div>
+		<div type="intro">1 INTRODUCTION</div>
+		</front>
+</text>
+</tei>

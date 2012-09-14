@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="18"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Extraction of Keyphrases from Text: <lb/>Evaluation of Four Algorithms <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>P. Turney <lb/></docAuthor></byline>
+		<date>October 23, 1997 <lb/></date>
+		<byline><affiliation>National Research <lb/>Council Canada <lb/>Institute for <lb/>Information Technology <lb/>Conseil national <lb/>de recherches Canada <lb/>Institut de technologie <lb/>de linformation <lb/></affiliation></byline>
+		<idno>ERB-1051 <lb/></idno>
+		<note type="copyright">Copyright 1997 by <lb/>National Research Council of Canada <lb/>Permission is granted to quote short excerpts and to reproduce figures and tables from this report, <lb/>provided that the source of such material is fully acknowledged. <lb/></note>
+		<pb/>
+		</front>
+</text>
+</tei>

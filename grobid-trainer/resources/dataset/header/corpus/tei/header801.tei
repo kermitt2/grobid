@@ -1,0 +1,25 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="802"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Verifying a Self-Stabilizing Mutual Exclusion Algorithm <lb/></titlePart>
+		</docTitle>
+		<note type="other">To Appear in the Proceedings of PROCOMET&apos;98 <lb/></note>
+		<byline><docAuthor>Shaz Qadeer <lb/></docAuthor></byline>
+		<byline><affiliation>Department of EECS <lb/>University of California at Berkeley <lb/></affiliation></byline>
+		<address>Berkeley CA 94720 <lb/></address>
+		<note type="phone">Phone: (510)642-1490 <lb/></note>
+		<email>shaz@eecs.berkeley.edu <lb/></email>
+		<byline><docAuthor>Natarajan Shankar <lb/></docAuthor></byline>
+		<byline><affiliation>Computer Science Laboratory <lb/>SRI International <lb/></affiliation></byline>
+		<address>Menlo Park CA 94025 <lb/></address>
+		<note type="phone">Phone: (415)859-5272 <lb/></note>
+		<email>shankar@csl.sri.com <lb/></email>
+		<div type="abstract">Abstract <lb/>We present a detailed description of a machine-assisted verification of an algorithm <lb/>for self-stabilizing mutual exclusion that is due to Dijkstra [Dij74]. This verification was <lb/>constructed using PVS. We compare the mechanical verification to the informal proof <lb/>sketch on which it is based. This comparison yields several observations regarding the <lb/>challenges of formalizing and mechanically verifying distributed algorithms in general. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,35 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="79"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<note type="submission">Submitted for review to Discrete and Computational Geometry, September 1997. <lb/></note>
+		<docTitle>
+			<titlePart type="main">On the Area Bisectors of a Polygon <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Karl-Friedrich Bohringer <lb/></docAuthor></byline>
+		<byline><affiliation>Cornell University <lb/></affiliation></byline>
+		<byline><docAuthor>Bruce Randall Donald <lb/></docAuthor></byline>
+		<byline><affiliation>Dartmouth College <lb/></affiliation></byline>
+		<byline><docAuthor>Dan Halperin x <lb/></docAuthor></byline>
+		<byline><affiliation>Tel Aviv University <lb/></affiliation></byline>
+		<div type="abstract">Abstract <lb/>We consider the family of lines that are area bisectors of a polygon (possibly with <lb/>holes) in the plane. We say that two bisectors of a polygon P are combinatorially <lb/>distinct if they induce different partitionings of the vertices of P . We derive an algebraic <lb/>characterization of area bisectors. We then show that there are simple polygons with n <lb/>vertices that have (n 2 ) combinatorially distinct area bisectors (matching the obvious <lb/>upper bound), and present an output-sensitive algorithm for computing an explicit <lb/>representation of all the bisectors of a given polygon. Our study is motivated by the <lb/>development of novel, flexible feeding devices for parts positioning and orienting. The <lb/>question of determining all the bisectors of polygonal parts arises in connection with <lb/>the development of efficient part positioning strategies when using these devices. <lb/></div>
+		<note type="grant">Work on this paper by Karl-Friedrich Bohringer and Bruce Randall Donald has been supported in <lb/>part by the National Science Foundation under grants No. IRI-8802390, IRI-9000532, IRI-9201699, and <lb/>by a Presidential Young Investigator award to Bruce Donald, in part by NSF/ARPA Special Grant for <lb/>Experimental Research No. IRI-9403903, and in part by the Air Force Office of Sponsored Research, the <lb/>Mathematical Sciences Institute, Intel Corporation, and AT&amp;T Bell laboratories. Work on this paper by <lb/>Dan Halperin has been supported in part by an Alon Fellowship, by ESPRIT IV LTR Project No. 21957 <lb/>(CGAL), by the USA-Israel Binational Science Foundation, and by the Hermann Minkowski - Minerva <lb/>Center for Geometry at Tel Aviv University. A preliminary and abridged version of the paper appeared in <lb/></note>
+		<note type="reference">proc. 13th ACM Symp. on Computational Geometry, Nice, 1997, pp. 457-459. <lb/></note>
+		<byline><affiliation>Robotics &amp; Vision Laboratory,  Department of Computer Science,  Cornell University.</affiliation></byline>
+		<address>Author&apos;s current <lb/>address:</address>
+		<byline><affiliation>ALPHA laboratory,  Dept. of Ind. Eng. and Op. Research,  University of California, Berkeley.</affiliation></byline>
+		<email>Email <lb/>address: karl@IEOR.Berkeley.EDU. <lb/></email>
+		<byline><affiliation>Dept. of Computer Science,  Dartmouth College,</affiliation></byline>
+		<address>6211 Sudikoff Laboratory, Hanover, NH 03755-3510. <lb/></address>
+		<email>brd@cs.dartmouth.edu,</email>
+		<ptr type="web">http://www.cs.dartmouth.edu/?brd/. <lb/></ptr>
+		<byline><affiliation>x Department of Computer Science,  Tel Aviv University,</affiliation></byline>
+		<address>Tel Aviv 69978, ISRAEL.</address>
+		<email>Email address: <lb/>halperin@math.tau.ac.il.</email>
+		<note type="other">Part of the work on this paper was carried out while D.H. was at the Robotics <lb/>Laboratory, Department of Computer Science, Stanford University. <lb/></note>
+		<pb/>
+		</front>
+</text>
+</tei>

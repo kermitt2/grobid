@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<nite:root nite:id="WO2007031390.HC.class-names" xmlns:nite="http://nite.sourceforge.net/">
+   <class-name nite:id="WO2007031390.HC.class-names.1" comment="" name="carboxylate alkaline" relevant="true" chebi-id="WO2007031390:459755" epochem-id="EPOCHEM:NEW:CLASS:517">
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_1431)"/>
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_1430)"/>
+   </class-name>
+   <class-name nite:id="WO2007031390.HC.class-names.2" comment="" name="carboxylate alkaline" relevant="true" chebi-id="WO2007031390:459755" epochem-id="EPOCHEM:NEW:CLASS:517">
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_2037)"/>
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_2036)"/>
+   </class-name>
+   <class-name nite:id="WO2007031390.HC.class-names.3" comment="" name="carboxylate alkaline" relevant="true" chebi-id="WO2007031390:459755" epochem-id="EPOCHEM:NEW:CLASS:517">
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_6761)"/>
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_6760)"/>
+   </class-name>
+   <class-name nite:id="WO2007031390.HC.class-names.4" comment="" name="alkaline-earth metals hydroxides" relevant="false" chebi-id="WO2007031390:2328" epochem-id="EPOCHEM:NEW:CLASS:518">
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_1855)"/>
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_1857)"/>
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_1856)"/>
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_1858)"/>
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_1854)"/>
+   </class-name>
+   <class-name nite:id="WO2007031390.HC.class-names.5" comment="" name="alkaline-earth metals hydroxides" relevant="false" chebi-id="WO2007031390:2328" epochem-id="EPOCHEM:NEW:CLASS:518">
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_7007)"/>
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_7004)"/>
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_7003)"/>
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_7005)..id(WO2007031390_w_7006)"/>
+   </class-name>
+   <class-name nite:id="WO2007031390.HC.class-names.6" comment="" name="alkaline" relevant="false" chebi-id="WO2007031390:670090" epochem-id="EPOCHEM:NEW:CLASS:519">
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_809)"/>
+   </class-name>
+   <class-name nite:id="WO2007031390.HC.class-names.7" comment="" name="alkaline" relevant="false" chebi-id="WO2007031390:670090" epochem-id="EPOCHEM:NEW:CLASS:519">
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_1431)"/>
+   </class-name>
+   <class-name nite:id="WO2007031390.HC.class-names.8" comment="" name="alkaline" relevant="false" chebi-id="WO2007031390:670090" epochem-id="EPOCHEM:NEW:CLASS:519">
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_1852)"/>
+   </class-name>
+   <class-name nite:id="WO2007031390.HC.class-names.9" comment="" name="alkaline" relevant="false" chebi-id="WO2007031390:670090" epochem-id="EPOCHEM:NEW:CLASS:519">
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_1854)"/>
+   </class-name>
+   <class-name nite:id="WO2007031390.HC.class-names.10" comment="" name="alkaline" relevant="false" chebi-id="WO2007031390:670090" epochem-id="EPOCHEM:NEW:CLASS:519">
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_2037)"/>
+   </class-name>
+   <class-name nite:id="WO2007031390.HC.class-names.11" comment="" name="alkaline" relevant="false" chebi-id="WO2007031390:670090" epochem-id="EPOCHEM:NEW:CLASS:519">
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_6761)"/>
+   </class-name>
+   <class-name nite:id="WO2007031390.HC.class-names.12" comment="" name="alkaline" relevant="false" chebi-id="WO2007031390:670090" epochem-id="EPOCHEM:NEW:CLASS:519">
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_7001)"/>
+   </class-name>
+   <class-name nite:id="WO2007031390.HC.class-names.13" comment="" name="alkaline" relevant="false" chebi-id="WO2007031390:670090" epochem-id="EPOCHEM:NEW:CLASS:519">
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_7003)"/>
+   </class-name>
+   <class-name nite:id="WO2007031390.HC.class-names.14" comment="" name="amine" relevant="false" chebi-id="CHEBI:32952" epochem-id="EPOCHEM:NEW:CLASS:493">
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_4551)"/>
+   </class-name>
+   <class-name nite:id="WO2007031390.HC.class-names.15" comment="" name="amine" relevant="false" chebi-id="CHEBI:32952" epochem-id="EPOCHEM:NEW:CLASS:493">
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_4624)"/>
+   </class-name>
+   <class-name nite:id="WO2007031390.HC.class-names.16" comment="" name="amine" relevant="false" chebi-id="CHEBI:32952" epochem-id="EPOCHEM:NEW:CLASS:493">
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_7541)"/>
+   </class-name>
+   <class-name nite:id="WO2007031390.HC.class-names.17" comment="" name="halogen" relevant="false" chebi-id="CHEBI:24473" epochem-id="EPOCHEM:NEW:CLASS:132">
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_1454)"/>
+   </class-name>
+   <class-name nite:id="WO2007031390.HC.class-names.18" comment="" name="halogen" relevant="false" chebi-id="CHEBI:24473" epochem-id="EPOCHEM:NEW:CLASS:132">
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_1775)"/>
+   </class-name>
+   <class-name nite:id="WO2007031390.HC.class-names.19" comment="" name="halogen" relevant="false" chebi-id="CHEBI:24473" epochem-id="EPOCHEM:NEW:CLASS:132">
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_4692)"/>
+   </class-name>
+   <class-name nite:id="WO2007031390.HC.class-names.20" comment="" name="halogen" relevant="false" chebi-id="CHEBI:24473" epochem-id="EPOCHEM:NEW:CLASS:132">
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_6781)"/>
+   </class-name>
+   <class-name nite:id="WO2007031390.HC.class-names.21" comment="" name="halogen" relevant="false" chebi-id="CHEBI:24473" epochem-id="EPOCHEM:NEW:CLASS:132">
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_7606)"/>
+   </class-name>
+   <class-name nite:id="WO2007031390.HC.class-names.22" comment="" name="branched hydrocarbon" relevant="false" chebi-id="WO2007031390:908369" epochem-id="EPOCHEM:NEW:CLASS:520">
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_4878)"/>
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_4877)"/>
+   </class-name>
+   <class-name nite:id="WO2007031390.HC.class-names.23" comment="" name="branched hydrocarbon" relevant="false" chebi-id="WO2007031390:908369" epochem-id="EPOCHEM:NEW:CLASS:520">
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_7804)..id(WO2007031390_w_7805)"/>
+   </class-name>
+   <class-name nite:id="WO2007031390.HC.class-names.24" comment="" name="CONTRAST AGENTS" relevant="true" chebi-id="WO2007031390:512766" epochem-id="EPOCHEM:NEW:CLASS:521">
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_12)..id(WO2007031390_w_13)"/>
+   </class-name>
+   <class-name nite:id="WO2007031390.HC.class-names.25" comment="" name="CONTRAST AGENTS" relevant="true" chebi-id="WO2007031390:512766" epochem-id="EPOCHEM:NEW:CLASS:521">
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_30)"/>
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_29)"/>
+   </class-name>
+   <class-name nite:id="WO2007031390.HC.class-names.26" comment="" name="CONTRAST AGENTS" relevant="true" chebi-id="WO2007031390:512766" epochem-id="EPOCHEM:NEW:CLASS:521">
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_119)..id(WO2007031390_w_120)"/>
+   </class-name>
+   <class-name nite:id="WO2007031390.HC.class-names.27" comment="" name="chelating agent" relevant="false" chebi-id="CHEBI:38161" epochem-id="EPOCHEM:NEW:CLASS:867">
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_259)..id(WO2007031390_w_260)"/>
+   </class-name>
+   <class-name nite:id="WO2007031390.HC.class-names.28" comment="" name="chelating agent" relevant="false" chebi-id="CHEBI:38161" epochem-id="EPOCHEM:NEW:CLASS:867">
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_474)..id(WO2007031390_w_475)"/>
+   </class-name>
+   <class-name nite:id="WO2007031390.HC.class-names.29" comment="" name="alkylating compound" relevant="false" chebi-id="WO2007031390:683438" epochem-id="EPOCHEM:NEW:CLASS:868">
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_2222)..id(WO2007031390_w_2223)"/>
+   </class-name>
+   <class-name nite:id="WO2007031390.HC.class-names.30" comment="" name="alkylating agent" relevant="false" chebi-id="WO2007031390:515714" epochem-id="EPOCHEM:NEW:CLASS:869">
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_1802)..id(WO2007031390_w_1803)"/>
+   </class-name>
+   <class-name nite:id="WO2007031390.HC.class-names.31" comment="" name="alkylating agent" relevant="false" chebi-id="WO2007031390:515714" epochem-id="EPOCHEM:NEW:CLASS:869">
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_2307)"/>
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_2306)"/>
+   </class-name>
+   <class-name nite:id="WO2007031390.HC.class-names.32" comment="" name="alkylating agent" relevant="false" chebi-id="WO2007031390:515714" epochem-id="EPOCHEM:NEW:CLASS:869">
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_2606)"/>
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_2605)"/>
+   </class-name>
+   <class-name nite:id="WO2007031390.HC.class-names.33" comment="" name="alkylating agent" relevant="false" chebi-id="WO2007031390:515714" epochem-id="EPOCHEM:NEW:CLASS:869">
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_2969)"/>
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_2968)"/>
+   </class-name>
+   <class-name nite:id="WO2007031390.HC.class-names.34" comment="" name="alkylating agent" relevant="false" chebi-id="WO2007031390:515714" epochem-id="EPOCHEM:NEW:CLASS:869">
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_4234)"/>
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_4233)"/>
+   </class-name>
+   <class-name nite:id="WO2007031390.HC.class-names.35" comment="" name="alkylating agent" relevant="false" chebi-id="WO2007031390:515714" epochem-id="EPOCHEM:NEW:CLASS:869">
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_4427)..id(WO2007031390_w_4428)"/>
+   </class-name>
+   <class-name nite:id="WO2007031390.HC.class-names.36" comment="" name="alkylating agent" relevant="false" chebi-id="WO2007031390:515714" epochem-id="EPOCHEM:NEW:CLASS:869">
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_6395)"/>
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_6394)"/>
+   </class-name>
+   <class-name nite:id="WO2007031390.HC.class-names.37" comment="" name="alkylating agent" relevant="false" chebi-id="WO2007031390:515714" epochem-id="EPOCHEM:NEW:CLASS:869">
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_6422)..id(WO2007031390_w_6423)"/>
+   </class-name>
+   <class-name nite:id="WO2007031390.HC.class-names.38" comment="" name="carboxylate" relevant="false" chebi-id="CHEBI:35757" epochem-id="EPOCHEM:NEW:CLASS:1131">
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_810)"/>
+   </class-name>
+   <class-name nite:id="WO2007031390.HC.class-names.39" comment="" name="carboxylate" relevant="false" chebi-id="WO2007031390:867626" epochem-id="EPOCHEM:NEW:CLASS:1131">
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_1430)"/>
+   </class-name>
+   <class-name nite:id="WO2007031390.HC.class-names.40" comment="" name="carboxylate" relevant="false" chebi-id="WO2007031390:867626" epochem-id="EPOCHEM:NEW:CLASS:1131">
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_2036)"/>
+   </class-name>
+   <class-name nite:id="WO2007031390.HC.class-names.42" comment="" name="carboxylate sodium salt" relevant="false" chebi-id="WO2007031390:683442" epochem-id="EPOCHEM:NEW:CLASS:1132">
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_5125)"/>
+   </class-name>
+   <class-name nite:id="WO2007031390.HC.class-names.43" comment="" name="carboxylate sodium salt" relevant="false" chebi-id="WO2007031390:683442" epochem-id="EPOCHEM:NEW:CLASS:1132">
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_5385)"/>
+   </class-name>
+   <class-name nite:id="WO2007031390.HC.class-names.44" comment="" name="carboxylate sodium salt" relevant="false" chebi-id="WO2007031390:683442" epochem-id="EPOCHEM:NEW:CLASS:1132">
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_5901)"/>
+   </class-name>
+   <class-name nite:id="WO2007031390.HC.class-names.45" comment="" name="carboxylate sodium salt" relevant="false" chebi-id="WO2007031390:683442" epochem-id="EPOCHEM:NEW:CLASS:1132">
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_5940)"/>
+   </class-name>
+   <class-name nite:id="WO2007031390.HC.class-names.46" comment="" name="carboxylate" relevant="false" chebi-id="WO2007031390:867626" epochem-id="EPOCHEM:NEW:CLASS:1131">
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_6760)"/>
+   </class-name>
+   <class-name nite:id="WO2007031390.HC.class-names.47" comment="" name="carboxylate sodium salt" relevant="false" chebi-id="WO2007031390:683442" epochem-id="EPOCHEM:NEW:CLASS:1132">
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_7043)"/>
+   </class-name>
+   <class-name nite:id="WO2007031390.HC.class-names.48" comment="" name="carboxylate sodium salt" relevant="false" chebi-id="WO2007031390:683442" epochem-id="EPOCHEM:NEW:CLASS:1132">
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_2045)"/>
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_2047)"/>
+      <nite:child href="WO2007031390.words.xml#id(WO2007031390_w_2046)"/>
+   </class-name>
+</nite:root>

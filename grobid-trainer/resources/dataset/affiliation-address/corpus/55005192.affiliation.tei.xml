@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>a</marker>
+							<orgName type="department">Institute of Medical Science</orgName>,
+							<orgName type="institution">University of Toronto</orgName>,
+							<address>
+								<settlement>Toronto</settlement>,
+								<region>ON</region>,
+								<country>Canada</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>b</marker>
+							<orgName type="department">Departments of Psychiatry &amp; Nuclear Medicine</orgName>,
+							<orgName type="institution">University of Western Ontario</orgName>,
+							<address>
+								<settlement>London</settlement>,
+								<region>ON</region>,
+								<country>Canada</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

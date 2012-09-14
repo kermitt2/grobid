@@ -1,0 +1,32 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="1098"/> 
+	</teiHeader>
+<text xml:lang="en"> 
+	<front> 
+		<docTitle>
+			<titlePart type="main">Current  induced domain wall motion in Ni   80   Fe   20<lb/> nanowires with low depinning fields<lb/></titlePart>
+		</docTitle> 
+		 
+		<byline><docAuthor>Grégory Malinowski  1 , Andreas Lörincz  1 , Stephen Krzyk  1  ,<lb/> Philipp Möhrke   1   , Daniel Bedau   1,3   , Olivier Boulle   1   , Jan<lb/> Rhensius   1,2   , Laura J. Heyderman   2   , Young Jin Cho   3   , Sunae Seo   3<lb/>   and Mathias Kläui   1<lb/></docAuthor></byline>
+		
+		<byline><affiliation>1   Fachbereich  Physik, Universität Konstanz, </affiliation></byline> 
+		<address>Universitätsstrasse 10, D-78457,<lb/> Germany.<lb/></address>
+				
+		<byline><affiliation>2   Laboratory for Micro- and Nanotechnology, Paul Scherrer Institut,   </affiliation></byline> 
+		<address>CH-5232<lb/> Villigen PSI, Switzerland.<lb/></address>
+		
+		<byline><affiliation>3   Samsung Electronics, </affiliation></byline> 
+		<address>San 14-1 Nongseo-dong, Giheung-gu, Yongin-si, Gyeonggi-do,<lb/> Korea.<lb/></address>
+		
+		<email>E-mail:  gregory.malinowski@uni-konstanz.de<lb/></email>
+		
+		<div type="abstract">Abstract.<lb/>  In this paper, we report on domain wall motion induced by current pulses at variable<lb/> temperature in 900 nm wide and 25 nm thick Ni   80   Fe   20   wires with low pinning fields.<lb/> By using Ar ion milling to pattern our wires rather than the conventional lift-off<lb/> technique, a depinning field as low as  ∼  2  −  3 Oe at room temperature is obtained.<lb/> Comparison with previous results acquired on similar wires with much higher pinning<lb/> shows that the critical current density scales with the depinning field, leading to a<lb/> critical current density of  ∼  2.5  ×  10   11   A/m   2   at 250 K. Moreover, when a current pulse<lb/> with a current density larger than the critical current density is injected, the domain<lb/> wall is not necessarily depinned but it can undergo a modification of its spin structure<lb/> which hinders current-induced domain wall motion. Hence, reliable propagation of the<lb/> domain wall requires an accurate adjustment of the pulsed current density.<lb/></div> 
+		
+		<note type="title">Current  induced domain wall motion in Ni   80   Fe   20   nanowires with low depinning fields  2<lb/></note>
+		
+   		<introduction>1.  Introduction<lb/></introduction>
+		
+    </front>
+</text>
+</tei>                              

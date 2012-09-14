@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="426"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Constraint Satisfaction Problem as a Causal Theory <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Robert Rodosek <lb/></docAuthor></byline>
+		<byline><affiliation>University of Munich, Department of Computer Science <lb/></affiliation></byline>
+		<address>Theresienstrae 39, 80333 Munich, Germany <lb/></address>
+		<email>rodosek@informatik.uni-muenchen.de <lb/></email>
+		<div type="abstract">Abstract <lb/>The aim of this paper is to identify and to characterize the features that render one class <lb/>of the Constraint Satisfaction Problem (CSP) computationally more efficient. Our approach <lb/>is to search for a causal structure not only in the topology of the subsets of variables upon <lb/>which the constraints are specified, but also in the nature of the constraints. Basically, there <lb/>should exist an ordering of variables in the system such that an assignment of the variables <lb/>can be reached without backtracking. First, an approach of a causal structure is formulated, <lb/>and second, an efficient procedure is provided (i) for deciding if such an ordering of variables <lb/>exists and, (ii) for identifying such an ordering whenever possible. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

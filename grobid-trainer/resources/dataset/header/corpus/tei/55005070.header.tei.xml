@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005070"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<lb/>
+			<reference>Energy for Sustainable Development 13 (2009) 159–165<lb/></reference>
+			<note type="other">Contents lists available at ScienceDirect<lb/></note>
+			<note type="other">Energy for Sustainable Development<lb/></note>
+
+			<docTitle>
+				<titlePart>Building a wind turbine for rural home<lb/></titlePart>
+			</docTitle>
+
+			<byline>
+				<docAuthor>Ibrahim Al-Bahadly<lb/></docAuthor>
+			</byline>
+
+			<byline>
+				<affiliation>School of Engineering and Advanced Technology, Massey
+					University,</affiliation>
+			</byline>
+
+			<address>Palmerston North, New Zealand<lb/></address>
+
+			<note type="other">a r t i c l e<space dim="horizontal"/>i n f o<lb/></note>
+			<note type="submission"> Article history:<lb/> Received 17 March 2009<lb/> Revised 8
+				June 2009<lb/> Accepted 8 June 2009<lb/>
+			</note>
+			<keywords> Keywords:<lb/> Wind energy<lb/> Rural application<lb/> Vertical axis
+				turbine<lb/> Savonius rotor<lb/>
+			</keywords>
+			<space dim="horizontal"/>
+			<div type="abstract"> a b s t r a c t<lb/> The main objective of this work is to
+				determine and design a suitable wind turbine which could be employed<lb/> for rural
+				homes or other small-scale applications. A variety of horizontal and vertical axis
+				wind turbines exist,<lb/> each possessing a number of advantages and disadvantages
+				which needed to be taken into account before a<lb/> basis for the design is
+				selected. A small robust design which is relatively simple and cheap to construct is
+				in<lb/> essence the main criteria for wind turbine selection. A Savonius type rotor,
+				which is a rotor based on a<lb/> modification of the ‘S’ rotor, is selected as it
+				best fitted the design criteria. A small prototype 1.5 m tall with a<lb/> rotor
+				diameter of 0.65 m is designed and built. The finished prototype is used to estimate
+				the power<lb/> obtainable under normal operating conditions.<lb/>
+			</div>
+			<note type="copyright">&#169; 2009 International Energy Initiative. Published by Elsevier
+				Inc. All rights reserved.<lb/></note>
+
+		</front>
+	</text>
+</tei>

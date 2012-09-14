@@ -1,0 +1,83 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005171"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<lb/>
+			<note type="other">1962</note>
+			<space dim="horizontal"/>
+			<reference>IEEE TRANSACTIONS ON WIRELESS COMMUNICATIONS, VOL. 8, NO. 4, APRIL
+				2009<lb/></reference>
+
+			<docTitle>
+				<titlePart>Fast Multiple Access Selection through<lb/> Variable Power
+					Transmissions<lb/></titlePart>
+			</docTitle>
+
+			<byline>
+				<docAuthor>Raymond Yim, Member, IEEE, Neelesh B. Mehta, Senior Member, IEEE,<lb/>
+					and Andreas F. Molisch, Fellow, IEEE<lb/></docAuthor>
+			</byline>
+
+			<div type="abstract">Abstract—Many wireless applications demand a fast mech-<lb/> anism
+				to detect the packet from a node with the highest<lb/> priority ("best node") only,
+				while packets from nodes with lower<lb/> priority are irrelevant. In this paper, we
+				introduce an extremely<lb/> fast contention-based multiple access algorithm that
+				selects the<lb/> best node and requires only local information of the
+				priorities<lb/> of the nodes. The algorithm, which we call Variable Power<lb/>
+				Multiple Access Selection (VP-MAS), uses the local channel state<lb/> information
+				from the accessing nodes to the receiver, and maps<lb/> the priorities onto the
+				receive power. It is based on a key result<lb/> that shows that mapping onto a set
+				of discrete receive power levels<lb/> is optimal, when the power levels are chosen
+				to exploit packet<lb/> capture that inherently occurs in a wireless physical layer.
+				The<lb/> VP-MAS algorithm adjusts the expected number of users that<lb/> contend in
+				each step and their respective transmission powers,<lb/> depending on whether
+				previous transmission attempts resulted<lb/> in capture, idle channel, or collision.
+				We also show how reliable<lb/> information regarding the total received power at the
+				receiver<lb/> can be used to improve the algorithm by enhancing the feedback<lb/>
+				mechanism. The algorithm detects the packet from the best node<lb/> in 1.5 to 2.1
+				slots, which is considerably lower than the 2.43 slot<lb/> average achieved by the
+				best algorithm known to date.<lb/>
+			</div>
+			<keywords> Index Terms—Multiuser diversity, splitting algorithms, multi-<lb/> ple
+				access, capture, collision, relay selection, power control.<lb/>
+			</keywords>
+			<div type="introduction">I. INTRODUCTION<lb/> 
+			</div>
+			
+			<note type="submission"> Manuscript received February 28, 2008; revised July 14, 2008
+				and October<lb/> 17, 2008; accepted December 17, 2008. The associate editor
+				coordinating the<lb/> review of this paper and approving it for publication was V.
+				K. N. Lau.<lb/>
+			</note>
+
+			<byline>
+				<affiliation>R. Yim is with Mitsubishi Electric Research Labs
+					(MERL),</affiliation>
+			</byline>
+			<address>Cambridge,<lb/> MA, USA</address>
+			<email>(e-mail: yim@merl.com).<lb/></email>
+			<byline>
+				<affiliation>N. B. Mehta is with the Indian Institute of Science
+					(IISc),<lb/></affiliation>
+			</byline>
+			<address>Bangalore, India.<lb/></address>
+			<byline>
+				<affiliation>A. F. Molisch is with the University of Southern
+					California,</affiliation>
+			</byline>
+			<address>Los Angeles,<lb/> USA.</address>
+
+			<byline>
+				<affiliation>At the time of this work he was with MERL,<lb/></affiliation>
+			</byline>
+			<address>Cambridge, MA, USA.<lb/></address>
+
+			<note type="other">A part of this work was presented at ICC 2008.<lb/></note>
+			<idno>Digital Object Identifier 10.1109/TWC.2009.080260</idno>
+
+		</front>
+	</text>
+</tei>

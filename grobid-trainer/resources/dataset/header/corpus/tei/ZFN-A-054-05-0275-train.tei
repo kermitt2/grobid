@@ -1,0 +1,37 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="ZFN-A-054-05-0275"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<titlePage>
+				<docTitle>
+					<titlePart type="main">High Pressure Dielectric Studies of 8CB in the Isotropic, Nematic, <lb/>
+and Smectic A Phases <lb/></titlePart>
+				</docTitle>
+				<byline><docAuthor>Phineus Markwick, StanisJaw Urban^, and Albert Würflinger^</docAuthor><lb/></byline>
+				<byline><affiliation>Department of Physics, University of Edinburgh</affiliation>, <address>U. K.</address><lb/></byline>
+				<byline><affiliation>^ Institute of Physics, Jagellonian University</affiliation>, <address>Reymonta 4, 30-059 Krakow, Poland</address><lb/></byline>
+				<byline><affiliation>^ Institute of Physical Chemistry II, Ruhr University</affiliation>, <address>D-44780 Bochum, Germany</address><lb/></byline>
+				<note>Reprint requests to Prof. A. W., Fax: -»49 234 7094 183, <lb/></note>
+				<email>E-mail: Albert.Wuerflinger.ruhr-uni-bochum.de<lb/></email>
+				<reference>Z. Naturforsch. 54 a, 275-280 (1999); </reference>
+				<note type="submission">received March 13, 1999<lb/></note>
+			</titlePage>
+			<div type="abstract">The static and complex permittivity of 4-«-octyl-4'-cyanobiphenyl (8CB) has been measured for <lb/>
+the isotropic, nemadc and smectic A phases as funcdons of temperature and pressure. The ranges <lb/>
+of 297 - 361 K, 0.1 - 220 MPa, and 0.1 -13 MHz, were covered. Only die parallel component of the <lb/>
+complex permittivity, = €'{f) — i£"(f)y was measured. The relaxation times r\\(p, T) as well <lb/>
+as Ti^ip.T) were analysed at constant temperature, pressure and volume^ yielding the acdvadon <lb/>
+volume, A^V(T), acdvation enthalpy A^/f(p), and activadon energy AW{V\ respectively. All <lb/>
+acdvation parameters calculated for die smectic A phase of 8CB are smaller than those obtained <lb/>
+for the nematic phase. The activadon energy consdtutes approximately half of the activadon <lb/>
+enthalpy value in all diree phases studied. The pressure study allowed to calculate the pressure <lb/>
+dependence of the retardation factor g^(p,T), from which die nemadc potendal q(p,T) can be <lb/>
+derived. Using the reladonships between g\\ and q/RT proposed by Kalmykov and Coffey, the <lb/>
+order parameter {Piip, T)) was calculated as a funcdon of pressure. <lb/></div>
+      		        <keywords>Key words: Liquid Crystals; 8CB; High Pressure; Dielectric; Thermodynamics; Order Parameter. <lb/></keywords>
+			<div type="intro">1. Introduction<lb/></div>
+		</front>
+	</text>
+</tei>

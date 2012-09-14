@@ -1,0 +1,25 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="ZFN-A-054-02-0091"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<titlePage>
+				<docTitle>
+					<titlePart type="main">Structure and Dynamic Properties of Molten Lanthanum THbromide<lb/></titlePart>
+				</docTitle>
+				<byline><docAuthor>Yoshihiro Okamoto and Torn Ogawa</docAuthor><lb/></byline>
+				<byline><affiliation>Japan Atomic Energy Research Institute (JAERI)</affiliation>, <address>Tokai-mura, Naka-gun, Ibaraki-ken, 319-1106, Japan<lb/></address></byline>
+				<reference>Z. Naturforsch. 54a, 91 -94 (1999); </reference>
+				<note type="submission">received November 27, 1998<lb/></note>
+			</titlePage>
+			<div type="abstract">The structure of molten LaBr3 was investigated by X-ray diffraction and molecular dynamics simu- <lb/>
+lations. It was found that the short range structure of molten LaBr3 is very similar to that of molten <lb/>
+LaCl^, except for some structural features such as interionic distances based on the difference of anion <lb/>
+sizes. In the MD simulation, the shear viscosity of molten LaBr-^ was estimated from the structurally- <lb/>
+optimized MD calculations. <lb/></div>
+	     		<keywords>Key words: Molten Salt; Rare Earth Halide; X-ray Diffraction; Molecular Dynamics.<lb/></keywords>
+			<div type="intro">1. Introduction<lb/></div>
+		</front>
+	</text>
+</tei>

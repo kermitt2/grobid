@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<patent-document status="new" lang="EN" ucid="EP-1122087-B1" country="EP" doc-number="1122087" kind="B1" date="20030423"><bibliographic-data><publication-reference fvid="23188936" ucid="EP-1122087-B1" status="new"><document-id status="new" format="original"><country>EP</country><doc-number>1122087</doc-number><kind>B1</kind><date>20030423</date><lang>EN</lang></document-id></publication-reference><application-reference ucid="EP-01200254-A" status="new" is-representative="NO"><document-id format="epo" status="new"><country>EP</country><doc-number>01200254</doc-number><kind>A</kind><date>20010124</date><lang>EN</lang></document-id></application-reference><priority-claims status="new"><priority-claim ucid="US-498575" status="new"><document-id format="original" status="new"><country>US</country><doc-number>498575</doc-number><date>20000204</date></document-id></priority-claim><priority-claim ucid="US-49857500-A" status="new"><document-id format="epo" status="new"><country>US</country><doc-number>49857500</doc-number><kind>A</kind><date>20000204</date></document-id></priority-claim></priority-claims><dates-of-public-availability status="new" /><term-of-grant /><technical-data status="new"><classifications-ipcr><classification-ipcr status="new">B32B  27/20        20060101ALI20051220RMJP        </classification-ipcr><classification-ipcr status="new">B32B  27/20        20060101CLI20051220RMJP        </classification-ipcr><classification-ipcr status="new">B41J   2/01        20060101AFI20051220RMJP        </classification-ipcr><classification-ipcr status="new">B41J   2/01        20060101CFI20051220RMJP        </classification-ipcr><classification-ipcr status="new">B41M   5/00        20060101ALI20051220RMJP        </classification-ipcr><classification-ipcr status="new">B41M   5/00        20060101CLI20051220RMJP        </classification-ipcr><classification-ipcr status="new">B41M   7/00        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">B41M   7/00        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">G03C  11/00        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">G03C  11/08        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">G03G   8/00        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">G03G   8/00        20060101C I20051008RMEP        </classification-ipcr></classifications-ipcr><classification-ecla status="new"><classification-symbol scheme="EC">B41M7/00C</classification-symbol><classification-symbol scheme="EC">G03C11/08</classification-symbol><classification-symbol scheme="EC">G03G8/00</classification-symbol></classification-ecla><invention-title lang="DE" status="new">Bildschutzschicht für die thermische Übertragung</invention-title><invention-title lang="EN" status="new">Thermally transferable image-protecting layer</invention-title><invention-title lang="FR" status="new">Couche protectrice d'images pour transfert par la chaleur</invention-title><citations /><figures /></technical-data><parties><applicants><applicant format="epo" status="new"><addressbook><name>EASTMAN KODAK CO</name><address><country>US</country></address></addressbook></applicant><applicant format="intermediate" status="new"><addressbook><name>EASTMAN KODAK COMPANY</name><address><country /></address></addressbook></applicant></applicants><inventors><inventor format="epo" status="new"><addressbook><name>WEXLER ALLAN</name><address><country>US</country></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>WEXLER, ALLAN</name><address><country /></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>Wexler, Allan, Eastman Kodak Company</last-name><address><street>Patent Legal Staff, 343 State Street</street><city>Rochester, New York 14650-2201</city><country>US</country></address></addressbook></inventor></inventors><assignees><assignee format="original" status="new"><addressbook><last-name>EASTMAN KODAK COMPANY</last-name><address><street>343 State Street</street><city>Rochester, New York 14650</city><country>US</country></address></addressbook></assignee></assignees><agents><agent format="original" status="new"><addressbook><last-name>Haile, Helen Cynthia</last-name><address><street>Kodak Limited Patent, W92-3A, Headstone Drive</street><city>Harrow, Middlesex HA1 4TY</city><country>GB</country></address></addressbook></agent></agents></parties><international-convention-data><designated-states><ep-contracting-states><country>DE</country><country>FR</country><country>GB</country></ep-contracting-states></designated-states></international-convention-data></bibliographic-data><abstract lang="EN" source="EPO" status="new"><p>A transfer laminating element for laminating ink jet prints comprising a flexible, polymeric support having thereon a porous, fusible, transferable protection layer comprising fusible, thermoplastic polymeric particles in a polymeric binder, the protection layer having a thickness of between 2 and 100  mu m and a particle-to-binder ratio of between 95:5 and 70:30, the thermoplastic polymeric particles having a particle size of less than 10  mu m and a Tm or softening point of greater than 50 DEG C. and the polymeric binder having a Tg of less than 20  DEG  C.</p></abstract><abstract lang="EN" status="new"><p num="">A transfer laminating element for laminating ink jet prints
+comprising a flexible, polymeric support having thereon a porous, fusible,
+transferable protection layer comprising fusible, thermoplastic polymeric particles
+in a polymeric binder, the protection layer having a thickness of between 2 and
+100 µm and a particle-to-binder ratio of between 95:5 and 70:30, the
+thermoplastic polymeric particles having a particle size of less than 10 µm and a
+Tm or softening point of greater than 50°C. and the polymeric binder having a Tg
+of less than 20 ° C.</p></abstract><description lang="EN" status="new"><p num="0001">This invention relates to an element for laminating ink jet prints,
+more particularly to a polymeric support having thereon a porous, fusible,
+transferable protection layer.</p><p num="0002">In a typical ink jet recording or printing system, ink droplets are
+ejected from a nozzle at high speed towards a recording element or medium to
+produce an image on the medium. The ink droplets, or recording liquid, generally
+comprise a recording agent, such as a dye or pigment, and a large amount of
+solvent. The solvent, or carrier liquid, typically is made up of water, an organic
+material such as a monohydric alcohol, a polyhydric alcohol or mixtures thereof.</p><p num="0003">An ink jet recording element typically comprises a support
+having on at least one surface thereof a base layer for absorbing fluid and an
+ink-receiving or image-forming layer, and includes those intended for
+reflection viewing, which have an opaque support, and those intended for
+viewing by transmitted light, which have a transparent support.</p><p num="0004">Ink jet prints prepared by printing onto ink jet recording
+elements are subject to environmental degradation such as water smearing and
+light fade. For example, since ink jet dyes are water-soluble, they can migrate
+from their location in the ink-receiving layer when water comes in contact
+with the recording element after imaging.</p><p num="0005">To reduce the vulnerability of prints to degradation and to
+enhance gloss, ink jet prints are often laminated. Typically, such
+conventional lamination is a process whereby a continuous polymeric film
+bearing an adhesive is brought into contact with the surface of the print. Heat
+and/or pressure is then used to affix the continuous polymeric film to the print
+surface. The continuous polymeric film then serves as a barrier layer that is
+impermeable to water and further acts to diminish the fading of the print
+image caused by light.</p><p num="0006">However, there is a problem with prior art laminating films
+since they are typically supplied in roll format and must be cut, or less 
+desirably torn, to separate the laminated print from the continuous roll of
+laminating film. A requirement to cut adds expense to a laminator design that
+is required to run in a continuous mode.</p><p num="0007"><ref typ="patent">US-A-5,662,976</ref> discloses an assembly for creating laminated
+cards which comprises a sheet of card stock with a release coating and a sheet
+of laminating film adhering to the release coating. A card form is cut into the
+sheet of card stock, and a lamination strip, which is sufficiently large to fold
+over so as to laminate both surfaces of the card, is cut into the lamination
+sheet. After printing, the card and the lamination strip are removed, and the
+lamination strip folded over to laminate the card. However, there is a problem
+with this laminating film in that expensive cutting and perforating steps are
+required to prepare the laminated card.</p><p num="0008"><ref typ="patent">US-A-5,387,573</ref> discloses a dye-donor element for thermal dye
+transfer comprising a support and a transferable protection layer wherein the
+transferable protection layer is less than 1µm thick and contains particles in an
+amount of up to 75% of the transferable protection layer. However, there is
+no disclosure in this patent that the protection layer can be used with ink jet
+prints.</p><p num="0009"><ref typ="patent">EP-A-0 943 453</ref> relates to a thermal transfer sheet having a
+releasable protective laminate prepared by laminating a protective layer composed
+mainly of solvent-insoluble organic fine particles and a binder resin. However,
+these organic fine particles are not capable of being fused to form a substantially
+continuous film which is optically clear upon the application of heat and pressure.</p><p num="0010"><ref typ="patent">EP-A-0 487 727</ref> relates to a thermal transfer cover sheet containing
+uan ionizing radiation-curing resin, silicone-modified resin and wax-containing
+resin. However, there is no disclosure of particles which are capable of being
+fused to form a substantially continuous film which is optically clear upon the
+application of heat and pressure. </p><p num="0011"><ref typ="npl">Research Disclosure (1996) March, No. 383, Emsworth, Great
+Britain, pp. 169-172, &quot;Protective layers for imaged transparent thermal dye
+transfer receivers&quot;</ref> relates to a protective layer for imaged transparent thermal dye
+transfer receivers comprising porous beads. However, there is no disclosure of
+particles which are capable of being fused to form a substantially continuous film
+which is optically clear upon the application of heat and pressure.</p><p num="0012">It is an object of the invention to provide a transfer laminating
+element for laminating ink jet prints wherein the protection layer is
+sufficiently thick to protect ink jet images from degradation by water, and yet
+can be employed without resort to expensive cutting steps. It is another object
+to provide a transfer laminating element for laminating an ink jet print of
+arbitrary geometric shape. It is still another object to provide a transfer
+laminating element that allows for the direct visual distinction between
+laminated and unlaminated regions of the print.</p><p num="0013">These and other objects are provided by the present invention which
+comprises a transfer laminating element for laminating inkjet prints
+comprising a flexible, polymeric support having thereon a porous, fusible,
+transferable protection layer comprising fusible, thermoplastic polymeric particles
+in a polymeric binder, the protection layer having a thickness of between 2 and 
+100 µm and a particle-to-binder ratio of between 95:5 and 70:30, the
+thermoplastic polymeric particles having a particle size of less than 10 µm and a
+Tm or softening point of greater than 50°C. and the polymeric binder having a Tg
+of less than 20 ° C, said porous, fusible, transferable protection layer being capable
+of forming a continuous film which is optically clear upon the
+application of heat and pressure.</p><p num="0014">In using the invention, the transfer laminating element is contacted
+with an ink jet image using heat and pressure to form a fused composite. Within the
+composite, the porous, fusible, transferable protection layer fuses to become a
+continuous film which is optically clear. After cooling below the Tg of
+the polymer used to make the particles, the support is peeled from the composite.
+The continuous film easily separates, without cutting, from the unfused
+porous region, thereby forming a protection layer on the surface of the ink jet image.</p><p num="0015">As noted above, the particle-to-binder ratio in the protection layer
+is between 95:5 and 70:30. If the particle-to-binder ratio is above the range stated,
+the layer will not have any cohesive strength. If the particle-to-binder ratio is
+below the range stated, the layer will not be porous, and on peeling the support
+away from the cooled composite after laminating, a continuous film is present
+which must be cut.</p><p num="0016">It is believed that when a fusible, transferable protection layer is
+used which is porous, cutting is obviated by the weak cohesive strength at the
+interface between the area of the continuous film formed on fusing
+and the unfused, porous area. Thus, the interface acts as a micro-perforated edge
+of the film that facilitates a clean rupture. Further, during the fusing step,
+otherwise entrained air escapes via the interface between the
+continuous film and the unfused, porous area.</p><p num="0017">The polymer used to make the fusible, thermoplastic polymeric
+particles employed in the invention may be an amorphous polymer which has
+softening point greater than 50°C., such as an amorphous polyester, e.g., Kao C ®
+(Kao Corp.) or an acrylic polymer such as Carboset 526 ® (BF Goodrich Specialy
+Chemicals); or a partially crystalline polymer having a Tm greater than 50°C.,
+such as a partially crystalline polyester, e.g., Griltex Polyester® (EMS 
+American Grilon Corp) or an ethylene-vinyl acetate copolymer such as Elvax ®
+(DuPont Corp.); or a thermoplastic, modified cellulose such as Ethocel ® (Dow
+Chemical Co.), etc. In a preferred embodiment, the fusible, thermoplastic
+polymeric particles are made from an amorphous polyester having a silica shell.
+In another preferred embodiment, the fusible, thermoplastic polymeric particles
+contain a UV-absorber.</p><p num="0018">The fusible, thermoplastic polymeric particles used in the invention
+may be made using various techniques, such as, for example, evaporative limited
+coalescence as described in <ref typ="patent">US-A-4,833,060</ref>, limited coalescence as described in
+<ref typ="patent">US-A-5,354,799</ref>, grinding as described in <ref typ="patent">US-A-4,304,360</ref>, or cryogenic grinding
+as described in <ref typ="patent">US-A-4,273,294</ref>.</p><p num="0019">As noted above, the polymer used to make the fusible,
+thermoplastic particles will have a Tm or softening point greater than 50°C,
+preferably between 60°C and 150°C. The Tm is measured using a differential
+scanning calorimeter (DSC). In a preferred embodiment, the Tm is between 60°C
+and 120 ° C. A softening point of a polymer can be measured by the Ring and Ball
+method as described in ASTM E28. In addition, the polymer used to make the
+fusible, thermoplastic particles usually will have a Tg of less than 100°C,
+preferably between 0°C and 90°C.</p><p num="0020">As noted above, the polymeric binder used in the invention has a
+Tg of less than 20° C., preferably between -60°C and 20°C. The polymeric
+binder used in the invention may be, for example, a polyurethane such as a
+Witcobond ® Aqueous Urethane Dispersion (Witco Corp.), a vinyl acetate-ethylene
+copolymer emulsion, an ethylene-vinyl chloride copolymer emulsion, a
+vinyl acetate-vinyl chloride-ethylene terpolymer emulsion such as Airflex ® (Air
+Products Corp.), or an acrylic emulsion such as Flexbond® (Air Products Corp).
+In a preferred embodiment, the binder comprises a polyurethane.</p><p num="0021">A subbing/release layer may also be used to provide adhesion
+between the porous, fusible, transferable protection layer and the support. The
+subbing/release layer must be capable of initially adhering the protection layer to
+the support and must be capable of subsequently releasing the protection layer 
+from the support upon application of heat and pressure followed by cooling. Any
+material that performs this adhesion/release function can be used. In general, a
+coated subbing/release layer has a final coating weight of 90 mg/m<sup>2</sup>. Suitable
+materials include, for example, lattices such as a terpolymer latex of acrylonitrile,
+vinylidene chloride and acrylic acid, or partially hydrolyzed vinyl chloride-vinyl
+acetate copolymers. Alternatively, a subbing/release layer can be generated
+directly on the support surface by corona-discharge-treatment of the support prior
+to applying the porous, fusible, transferable protection layer.</p><p num="0022">As the flexible, polymeric support for the invention, there may be
+used, for example, various plastics including a polyester-type resin such as
+poly(ethylene terephthalate), poly(ethylene naphthalate), polycarbonate resins,
+polystyrene resins, polysulfone resins, methacrylic resins, cellophane, acetate
+plastics, cellulose diacetate, cellulose triacetate, vinyl chloride resins and
+polyester diacetate. The thickness of the support may be, for example, from 12 to
+500 µm, preferably from 75 to 300 µm. In a preferred embodiment, the support is
+a transparent poly(ethylene terephthalate) film.</p><p num="0023">Since the transfer lamination element may come in contact with
+other image recording articles or the drive or transport mechanisms of laminating
+devices, additives such as surfactants, lubricants, matte particles and the like may
+be added to the element to the extent that they do not degrade the properties of
+interest.</p><p num="0024">The protection layer described above may be coated by
+conventional coating means onto the support such as wound wire rod coating, slot
+coating, slide hopper coating, gravure, curtain coating and the like.</p><p num="0025">Ink jet inks used to prepare the images to be laminated by the
+transfer lamination element of the invention are well-known in the art. The ink
+compositions used in ink jet printing typically are liquid compositions comprising
+a solvent or carrier liquid, dyes or pigments, humectants, organic solvents,
+detergents, thickeners, preservatives, and the like. The solvent or carrier liquid
+can be solely water or can be water mixed with other water-miscible solvents such
+as polyhydric alcohols. Inks in which organic materials such as polyhydric 
+alcohols are the predominant carrier or solvent liquid may also be used.
+Particularly useful are mixed solvents of water and polyhydric alcohols. The dyes
+used in such compositions are typically water-soluble direct or acid type dyes.
+Such liquid compositions have been described extensively in the prior art
+including, for example, <ref typ="patent">US-A-4,381,946</ref>; <ref typ="patent">US-A-4,239,543</ref> and <ref typ="patent">US-A-4,781,758</ref>.</p><p num="0026">Although the elements disclosed herein have been referred to
+primarily as being useful for laminating ink jet prints, they also can be used to
+protect images created employing other technologies such as photographic prints,
+laser printer prints, prints made via offset lithography and the like.</p><p num="0027">The following examples further illustrates the invention.</p><heading><u style="single">Example 1 -Lamination Test</u></heading><heading><u style="single">Preparation of Thermoplastic Polymeric Particles</u></heading><p num="0028">To 225 g ethyl acetate was added 22.5 g of Kao C® polyester resin
+and 2.5 g UV absorber Escalol® 597 (ISP Corp.) and stirred to solution.
+Separately, an aqueous solution was prepared of 375 g pH 4 buffer, 21 g Ludox
+TM® colloidal silica (DuPont Corp.), and 4.5g of 10% poly(adipic acid-comethylaminoethanol).
+The aqueous phase was placed in a Silverson mixer, the
+organic phase was added and emulsified at 3,000 s<sup>-1</sup> (rev/min) for one minute.
+The emulsion was then passed through a Microfluidizer (Microfluidics
+Manufacturing model 110T) to further reduce the emulsion droplet size. After
+evaporating the ethyl acetate, there was obtained a narrowly distributed population
+of silica coated polyester beads, µm= 3.0 +/- .36 µm, with incorporated UV
+absorber. Sufficient water was decanted to give a dispersion with 30% solids.</p><heading><u style="single">Coating Solutions</u></heading><p num="0029">A series of coating solutions at 24% solids were prepared, at
+the particle-to-binder ratios shown in Table 1, by mixing the above polyester
+particles and a polyurethane binder, Witcobond® 215, a 35% aqueous
+polyurethane dispersion. </p><heading><u style="single">Solution 1 of the Invention (Particle:Binder 90:10)</u></heading><p num="0030">14.4 g of thermoplastic polymeric particles, 1.37 g of binder and
+4.23 g of deionized water were mixed together to form a coating solution with a
+particle-to-binder ratio of 90:10.</p><heading><u style="single">Solution 2 of the Invention (Particle:Binder 75:25)</u></heading><p num="0031">12.0 g of thermoplastic polymeric particles, 3.43 g of binder and
+4.57 g of deionized water were mixed together to form a coating solution with a
+particle-to-binder ratio of 75:25.</p><heading><u style="single">Control Solution 1 (Particle:Binder 50:50)</u></heading><p num="0032">8.0 g of thermoplastic polymeric particles, 6.86 g of binder and
+5.14 g of deionized water were mixed together to form a coating solution with a
+particle-to-binder ratio of 50:50.</p><heading><u style="single">Control Solution 2 (Particle:Binder 25:75)</u></heading><p num="0033">4.0 g of thermoplastic polymeric particles, 10.28 g of binder
+and 5.72 g of deionized water were mixed together to form a coating solution with
+a particle-to-binder ratio of 25:75.</p><heading><u style="single">Control Solution 3 (Particle:Binder 5:95)</u></heading><p num="0034">0.8 g of thermoplastic polymeric particles, 13.03 g of binder and
+6.17 g of deionized water were mixed together to form a coating solution with a
+particle-to-binder ratio of 5:95.</p><heading><u style="single">Coating</u></heading><p num="0035">Each of the above solutions were coated on 100µm thick, poly(ethylene
+terephthalate) support using a wire wound rod, calibrated to give a wet laydown of
+120µm. The support had been previously subbed with a terpolymer latex of
+acrylonitrile, vinylidene chloride and acrylic acid. The coatings were air dried
+forming Elements 1 and 2 of the invention with an unfused porous layer 
+thickness of 57µm, and non-porous Control Elements 1-3 with a layer thickness of
+30µm. All the elements were then cut to give 9.5 cm wide by 28 cm long
+segments.</p><heading><u style="single">Lamination Test</u></heading><p num="0036">Ink jet images for lamination testing were printed on an ink jet receiver
+consisting of a resin-coated paper receiver with an 102 mg/m<sup>2</sup> ink receiving layer,
+comprised of 75% gelatin, 15% polyvinylpyrrolidone and 10% of a cationic latex
+mordant. After imaging, a 9.5 cm wide by 28 cm long segment was cut from the
+receiver. The protection layer of each of the above elements was then contacted
+with the ink jet image and laminated by passing through the nip of a pair of heated
+rollers. Laminating speed was 46 cm/minute, with the upper roller at 150°C and
+at nip pressure of 0.41 MPa.</p><p num="0037">Only 10 cm of the 28 cm long segments, corresponding to the length of the
+image, were passed into the nip. The fused composites were allowed to cool to
+room temperature, and the support was then peeled away from the fused
+composite. After fusing, the transferred protection layers from porous Elements 1
+and 2 of the invention, having been compressed under heat and pressure, formed a
+34µm thick non-porous continuous layer.</p><p num="0038">The same size image was also laminated with a 75µm thick commercial
+laminating film, Seal ThermaShield R ®(Hunt Graphics Americas Co.) to provide
+an additional Element, Control 4.</p><p num="0039">The elements were then evaluated for peel. Peel ratings from 1 to 5 are
+listed below. A peel rating of 1 corresponds to a continuous film that extends
+beyond the edge of the fused area and must be cut to separate it from the image,
+i.e., failure. A rating of 5 corresponds to a clean break at the interface. The
+following results were obtained: <tables><table><tgroup cols="4"><tbody><row><entry align="center">Element</entry><entry align="center">Particle/Binder Ratio</entry><entry align="center">Peel Rating</entry><entry align="left">Comment</entry></row><row><entry align="center">1</entry><entry align="center">90/10</entry><entry align="center">5</entry><entry align="left">Clean break at interface</entry></row><row><entry align="center">2</entry><entry align="center">75/25</entry><entry align="center">4</entry><entry align="left">Breaks at interface</entry></row><row><entry align="center">Control 1</entry><entry align="center">50/50</entry><entry align="center">1</entry><entry align="left">Continuous film that requires cutting</entry></row><row><entry align="center">Control 2</entry><entry align="center">25/75</entry><entry align="center">1</entry><entry align="left">Continuous film that requires cutting</entry></row><row><entry align="center">Control 3</entry><entry align="center">5/95</entry><entry align="center">1</entry><entry align="left">Continuous film that requires cutting</entry></row><row><entry align="center">Control 4</entry><entry align="center">0/100</entry><entry align="center">1</entry><entry align="left">Continuous film that requires cutting</entry></row></tbody></tgroup></table></tables></p><p num="0040">The above results show that costly cutting steps can be eliminated using
+the transfer laminating element employed in the process of the invention.</p><heading><u style="single">Example 2 (Arbitrary Shaped Lamination Without Cutting)</u></heading><p num="0041">Circular images having a 4.4 cm diameter were printed on commercial
+Kodak® photographic ink jet media using a Hewlett Packard® 895 printer. The
+transfer laminating Element 1 prepared above was placed on top of the circular
+image. A 5.1 cm diameter circular steel disk heated to 150°C was placed on the
+laminating element, centered over the image, and pressed at 0.70 MPa for ten
+seconds. After cooling, the laminating element was peeled from the composite,
+leaving a fused circular film layer over the circular ink jet image. The above
+process was repeated using Control Elements 1-4 described above. However, they
+could not be separated from the circular image without cutting.</p><p num="0042">This example shows that the laminating element employed in the process
+of the invention can be used to deposit protective layers in varying geometries
+without requiring a cutting step. </p><heading><u style="single">Example 3 (Waterfastness of the Transferred Protection Layer)</u></heading><p num="0043">A pair of ink jet images was printed using each of five commercially
+available ink jet printers on commercially available Kodak® photographic quality
+ink jet paper. One member of the pair was then contacted with Element 1 of the
+invention and passed through the nip of a pair of rollers. The other image was not
+laminated. Laminating speed was 46 cm minute, with the upper roller at 150°C
+and at nip pressure of 0.41 MPa. The composite was allowed to cool. Peeling
+easily separated the support layer of the transfer laminate from the composite to
+afford a laminated image.</p><heading><u style="single">Waterfastness and Smudge Tests</u></heading><p num="0044">With the prints laying image side up and on a flat surface, one drop of
+water was placed near the left edge of the print and 2.54 cm from the top edge.
+Likewise, a drop was place near the right edge of the print and 2.54 cm from the
+top. After a minute exposure to the water drops, the right drop is wiped with a
+Kim Wipe ® using light pressure (smudge test) and immediately afterward the
+print is turned upright allowing the water drop on the left side to run to the bottom
+of the print (drip test). The tested prints are hung and allowed to dry. They are
+then rated on a subjective scale ranging from 1-No visible smearing or running to
+5- Catastrophic running and/or smearing (image ruined) and reported below. <tables><table><tgroup cols="4"><tbody><row><entry align="center"><u style="single">Laminated</u></entry><entry align="center"><u style="single">Printer</u></entry><entry align="center"><u style="single">Smudge</u></entry><entry align="center"><u style="single">Drip</u></entry></row><row><entry align="center">Yes</entry><entry align="center">HP 895</entry><entry align="center">1</entry><entry align="center">1</entry></row><row><entry align="center">No</entry><entry align="center">HP 895</entry><entry align="center">5</entry><entry align="center">5</entry></row><row><entry align="center">Yes</entry><entry align="center">Epson 900</entry><entry align="center">1</entry><entry align="center">1</entry></row><row><entry align="center">No</entry><entry align="center">Epson 900</entry><entry align="center">5</entry><entry align="center">5</entry></row><row><entry align="center">Yes</entry><entry align="center">Lexmark 5700</entry><entry align="center">1</entry><entry align="center">1</entry></row><row><entry align="center">No</entry><entry align="center">Lexmark 5700</entry><entry align="center">5</entry><entry align="center">5</entry></row><row><entry align="center">Yes</entry><entry align="center">Canon 4400</entry><entry align="center">1</entry><entry align="center">1</entry></row><row><entry align="center">No</entry><entry align="center">Canon 4400</entry><entry align="center">5</entry><entry align="center">5</entry></row></tbody></tgroup></table></tables></p><p num="0045">The above results show that the polymeric particles fuse and transfer to
+form a continuous protective layer which functions as a barrier to effectively resist
+water penetration into the ink jet prints.</p></description><claims lang="DE" status="new"><claim num="xx"><claim-text>Übertragungslaminierelement zum Laminieren von Tintenstrahldrucken, das
+einen flexiblen Polymerträger mit einer darauf angeordneten porösen, schmelzbaren,
+übertragbaren Schutzschicht umfasst, die ihrerseits thermoplastische
+Polymerpartikel in einem polymeren Bindemittel umfasst, wobei die Schutzschicht
+eine Dicke zwischen 2 und 100 µm aufweist und ein Verhältnis von
+Partikeln zu Bindemittel zwischen 95:5 und 70:30, wobei die thermoplastischen
+Polymerpartikel eine Partikelgröße von kleiner als 10 um aufweisen und einen
+Erweichungs- oder Tm-Punkt von größer als 50°C und wobei das polymere
+Bindemittel eine Tg oder Glasübergangstemperatur von kleiner als 20°C
+aufweist, wobei die poröse, schmelzbare, übertragbare Schutzschicht in der
+Lage ist, einen Endlosfilm auszubilden, der bei Beaufschlagung mit Wärme und
+Druck optisch klar ist.</claim-text></claim><claim num="xx"><claim-text>Übertragungslaminierelement nach Anspruch 1, dadurch gekennzeichnet, dass
+eine Substrat-/Trennschicht zwischen dem Träger und der Schutzschicht angeordnet
+ist, und dass die Substrat-/Trennschicht in der Lage ist, die Schutzschicht
+an dem Träger festzuhalten und anschließend die Schutzschicht von
+dem Träger bei Beaufschlagung mit Wärme und Druck sowie nachfolgender
+Kühlung zu trennen.</claim-text></claim><claim num="xx"><claim-text>Übertragungslaminierelement nach Anspruch 1, dadurch gekennzeichnet, dass
+der Träger Poly(ethylenterephthalat) ist.</claim-text></claim><claim num="xx"><claim-text>Übertragungslaminierelement nach Anspruch 1, dadurch gekennzeichnet, dass
+die thermoplastischen Polymerpartikel ein amorphes Polyester, ein teilweise
+kristallines Polyester, ein Acrylpolymer, ein Ethylenvinylacetat-Copolymer oder
+eine thermoplastische, modifizierte Cellulose umfassen.</claim-text></claim><claim num="xx"><claim-text>Übertragungslaminierelement nach Anspruch 1, dadurch gekennzeichnet, dass
+die thermoplastischen Polymerpartikel ein amorphes Polyester mit einem Siliciumdioxidmantel
+umfassen.</claim-text></claim><claim num="xx"><claim-text>Übertragungslaminierelement nach Anspruch 1, dadurch gekennzeichnet, dass
+die thermoplastischen Polymerpartikel ein UV-Absorbens enthalten.</claim-text></claim><claim num="xx"><claim-text>Übertragungslaminierelement nach Anspruch 1, dadurch gekennzeichnet, dass
+das polymere Bindemittel ein Polyurethan, ein Vinylacetatethylen-Copolymer,
+ein Ethylenvinylchlorid-Copolymer, ein Vinylacetat-Vinylchloridethylen-Terpolymer
+oder ein Acrylpolymer ist.</claim-text></claim><claim num="xx"><claim-text>Übertragungslaminierelement nach Anspruch 1, dadurch gekennzeichnet, dass
+das polymere Bindemittel ein Polyurethan ist.</claim-text></claim></claims><claims lang="EN" status="new"><claim num="xx"><claim-text>A transfer laminating element for laminating ink jet prints
+comprising a flexible, polymeric support having thereon a porous, fusible,
+transferable protection layer comprising fusible, thermoplastic polymeric particles
+in a polymeric binder, said protection layer having a thickness of between 2
+and 100 µm and a particle-to-binder ratio of between 95:5 and
+70:30, said thermoplastic polymeric particles having a particle size of less than
+10 µm and a Tm or softening point of greater than 50 ° C. and said
+polymeric binder having a Tg of less than 20°C, said porous, fusible,
+transferable protection layer being capable of forming a continuous
+film which is optically clear upon the application of heat and pressure.</claim-text></claim><claim num="xx"><claim-text>The element of Claim 1 wherein a subbing/release layer is
+present between said support and said protection layer, said subbing/release layer
+being capable of initially adhering said protection layer to said support and being
+capable of subsequently releasing said protection layer from said support upon
+application of heat and pressure followed by cooling.</claim-text></claim><claim num="xx"><claim-text>The element of Claim 1 wherein said support is poly(ethylene
+terephthalate).</claim-text></claim><claim num="xx"><claim-text>The element of Claim 1 wherein said fusible, thermoplastic
+polymeric particles comprise an amorphous polyester, a partially crystalline
+polyester, an acrylic polymer, an ethylene-vinyl acetate copolymer or a
+thermoplastic, modified cellulose.</claim-text></claim><claim num="xx"><claim-text>The element of Claim 1 wherein said fusible, thermoplastic
+polymeric particles comprise an amorphous polyester having a silica shell.</claim-text></claim><claim num="xx"><claim-text>The element of Claim 1 wherein said fusible, thermoplastic
+polymeric particles contain a UV-absorber.</claim-text></claim><claim num="xx"><claim-text>The element of Claim 1 wherein said polymeric binder is
+a polyurethane, a vinyl acetate-ethylene copolymer, an ethylene-vinyl chloride
+copolymer, a vinyl acetate-vinyl chloride-ethylene terpolymer or an acrylic
+polymer.</claim-text></claim><claim num="xx"><claim-text>The element of Claim 1 wherein said polymeric binder is
+a polyurethane.</claim-text></claim></claims><claims lang="FR" status="new"><claim num="xx"><claim-text>Elément de lamination par transfert permettant de
+laminer des épreuves pour jet d'encre comprenant un
+support polymère souple revêtu d'une couche
+protectrice transférable fusible poreuse comprenant
+des particules polymères thermoplastiques fusibles
+dans un liant polymère, ladite couche protectrice
+ayant une épaisseur comprise entre 2 et 100 µm et un
+rapport de particules au liant compris entre 95:5 et
+70:30, lesdites particules polymères thermoplastiques
+ayant une taille de particules inférieure à 10 µm et
+une Tm ou point de ramollissement supérieur à 50°C et
+ledit liant polymère ayant une Tg inférieure à 20°C,
+ladite couche protectrice transférable fusible
+poreuse étant capable de former un film continu
+optiquement transparent après application d'une
+source de chaleur et de pression.</claim-text></claim><claim num="xx"><claim-text>Elément selon la revendication 1, dans lequel on
+utilise une couche substratante/pelliculable entre
+ledit support et ladite couche protectrice, ladite
+couche substratante/pelliculable étant capable de
+faire adhérer au départ ladite couche protectrice sur
+ledit support et étant capable ultérieurement de
+pelliculer ladite couche protectrice dudit support
+après application d'une source de chaleur et de
+pression suivie d'une étape de refroidissement.</claim-text></claim><claim num="xx"><claim-text>Elément selon la revendication 1, dans lequel ledit
+support est du polytéréphtalate d'éthylène.</claim-text></claim><claim num="xx"><claim-text>Elément selon la revendication 1, dans lequel
+lesdites particules polymères thermoplastiques
+fusibles comprennent un polyester amorphe, un
+polyester partiellement cristallin, un polymère
+acrylique, un copolymère d'acétate vinylique et
+d'éthylène ou de la cellulose modifiée
+thermoplastique.</claim-text></claim><claim num="xx"><claim-text>Elément selon la revendication 1, dans lequel
+lesdites particules polymères thermoplastiques
+fusibles comprennent un polyester amorphe ayant une
+coque de silice.</claim-text></claim><claim num="xx"><claim-text>Elément selon la revendication 1, dans lequel
+lesdites particules polymères thermoplastiques
+fusibles contiennent une substance absorbant dans
+l'UV.</claim-text></claim><claim num="xx"><claim-text>Elément selon la revendication 1, dans lequel ledit
+liant polymère est un polyuréthane, un copolymère
+d'acétate de vinyle et d'éthylène, un copolymère
+d'éthylène et de chlorure de vinyle, un terpolymère
+d'acétate de vinyle, de chlorure de vinyle et
+d'éthylène ou un polymère acrylique.</claim-text></claim><claim num="xx"><claim-text>Elément selon la revendication 1, dans lequel ledit
+liant polymère est un polyuréthane.</claim-text></claim></claims><legal-status status="new"><legal-event country="EP" code="26N" date="20040414"><legal-event-body><event-title>NO OPPOSITION FILED</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20040126</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="ET" date="20040116"><legal-event-body><event-title>FR: TRANSLATION FILED</event-title></legal-event-body></legal-event><legal-event country="EP" code="REF" date="20030528"><legal-event-body><event-title>CORRESPONDS TO:</event-title><event-attributes><event-attribute><event-attribute-label>Ref Document Number </event-attribute-label><event-attribute-value>60100195</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Country of Ref Document </event-attribute-label><event-attribute-value>DE</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Date of Ref Document </event-attribute-label><event-attribute-value>20030528</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>P</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20030423"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>DEFRGB</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REG" date="20030423"><legal-event-body><event-title>REFERENCE TO A NATIONAL CODE</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>GB</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Legal Event Code </event-attribute-label><event-attribute-value>FG4D</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AKX" date="20020502"><legal-event-body><event-title>PAYMENT OF DESIGNATION FEES</event-title><event-attributes><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>DE FR GB</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="17Q" date="20020417"><legal-event-body><event-title>FIRST EXAMINATION REPORT</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20020228</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="17P" date="20020227"><legal-event-body><event-title>REQUEST FOR EXAMINATION FILED</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20011218</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20010808"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>A1</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>DEFRGB</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AX" date="20010808"><legal-event-body><event-title>EXTENSION OF THE EUROPEAN PATENT TO</event-title><event-attributes><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>AL;LT;LV;MK;RO;SI</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event></legal-status></patent-document>

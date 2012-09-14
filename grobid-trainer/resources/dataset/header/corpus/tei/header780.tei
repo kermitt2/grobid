@@ -1,0 +1,20 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="781"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Storage Estimation for Multidimensional Aggregates in <lb/>the Presence of Hierarchies <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Amit Shukla Prasad M. Deshpande <lb/>Jeffrey F. Naughton Karthikeyan Ramasamy <lb/></docAuthor></byline>
+		<email>{amit,pmd,naughton,karthik}@cs.wisc.edu <lb/></email>
+		<byline><affiliation>Computer Sciences Department <lb/>University of Wisconsin -</affiliation></byline>
+		<address>Madison <lb/></address>
+		<div type="abstract">Abstract <lb/>To speed up multidimensional data analysis, <lb/>database systems frequently precompute aggregates on some subsets of dimensions and <lb/>their corresponding hierarchies. This improves <lb/>query response time. However, the decision of <lb/>what and how much to precompute is a difficult one. It is further complicated by the fact <lb/>that precomputation in the presence of hierarchies can result in an unintuitively large increase in the amount of storage required by the <lb/>database. Hence, it is interesting and useful <lb/>to estimate the storage blowup that will result from a proposed set of precomputations <lb/>without actually computing them. We propose <lb/>three strategies for this problem: one based on <lb/>sampling, one based on mathematical approximation, and one based on probabilistic counting. We investigate the accuracy of these algorithms in estimating the blowup for different <lb/>data distributions and database schemas. The <lb/>algorithm based upon probabilistic counting is <lb/>particularly attractive, since it estimates the <lb/>storage blowup to within provable error bounds <lb/>while performing only a single scan of the data. <lb/></div>
+		<note type="grant">Work supported by an IBM CAS Fellowship, NSF grant IRI-9157357, and a grant from IBM under the University Partnership <lb/>Program. <lb/>Permission to copy without fee all or part of this material is <lb/>granted provided that the copies are not made or distributed for <lb/>direct commercial advantage, the VLDB copyright notice and <lb/>the title of the publication and its date appear, and notice is <lb/>given that copying is by permission of the Very Large Data Base <lb/>Endowment. To copy otherwise, or to republish, requires a fee <lb/>and/or special permission from the Endowment. <lb/></note>
+		<note type="reference">Proceedings of the 22nd VLDB Conference <lb/>Mumbai (Bombay), India, 1996 <lb/></note>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>a</marker>
+							<orgName type="department">Department of Pharmaceutical Sciences</orgName>,
+							<orgName type="institution">Northeastern Ohio Universities Colleges of Medicine and Pharmacy</orgName>,
+							<address>
+								<addrLine>4209 State Route 44</addrLine>,
+								<settlement>Rootstown</settlement>,
+								<region>OH</region>
+								<postCode>44272</postCode>,
+								<country>USA</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>b</marker>
+							<orgName type="department">Technion-Rappaport Family-Faculty of Medicine</orgName>,
+							<orgName type="institution">Eve Topf and US National Parkinson Foundation Centers of Excellence for Neurodegenerative Diseases</orgName>,
+							<address>
+								<settlement>Haifa</settlement>,
+								<country>Israel</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>c</marker>
+							<orgName type="department">Department of Biology</orgName>,
+							<orgName type="institution">Yonsei World Central University</orgName>,
+							<address>
+								<settlement>Seoul</settlement>,
+								<country>South Korea</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="ZNB-1947-2b-0019"/>
+	</teiHeader>
+	<text xml:lang="de">
+		<front>
+			<lb/>
+			<docTitle>
+				<titlePart>Zur Biochemie der Schilddrüsenfunktion V 1 :<lb/> Der Einfluß substituierter Thioharnstoffe auf dieKaninchenthyreoidea<lb/></titlePart>
+			</docTitle>
+
+			<byline>
+				<docAuthor>Von FEIEDEICH HÜTEE<lb/></docAuthor>
+			</byline>
+
+			<byline>
+				<affiliation>Aus der Biochemischen Abteilung des Forschungsinstitutes für Chemotherapie, "Georg-Speyer-Haus",</affiliation>
+			</byline>
+
+			<address>Frankfurt a. M.<lb/></address>
+
+			<reference>(Z. Naturforschg. 2 b, 19—25 [1947];</reference>
+
+			<note type="submission">eingegangen am 22. Oktober 1946)<lb/></note>
+
+			<div type="abstract">Bei langdauernder Injektion von Benzylthioharnstoff, der -schwer resorbiert wird, entsteht<lb/> beim Kaninchen keine Struma basedowificata, sondern nur ein Präbasedow-Zustand. Eine Ak-<lb/>tivierung der Schilddrüsen(SD)-Follikel tritt bei kurzfristiger Verfütterung von Benzylthio-<lb/>harnstoff auf.<lb/> Der symm. Dibenzylthioharnstoff erzeugt bei täglicher Injektion ein Vorstadium der Struma<lb/> diffusa parenchymatosa. Seine Resorption ist schlecht.<lb/> Die Isothioharnstoffe sind für den Tierversuch wahrscheinlich zu giftig.<lb/> Thiouracil, subcutan gespritzt, ruft SD-Vergrößerung hervor und ist bei weitem nicht so to-<lb/>xisch wie Allylthioharnstoff. Die Größen der entarteten Drüsen sind den zugeführten Thiouracil-<lb/>mengen nicht proportional und meines Erachtens von der Konstitution der Versuchstiere<lb/> weitgehend abhängig.<lb/> 2-Thio-barbitur'säure wirkt bei einer Injektion über drei Monate schwach schilddrüsenaktiv.<lb/> Die Natriumsalze des £-Kupfer-2V-Allyl-iV'-[TO-carboxyphenyl]-iso-thioharnstoffes 			(Cuprion)<lb/> und des Ä-Gold-A T -Allyl-A v -[m-carboxyphenyl]-iso-thioharnstoffes (Lopion), parenteral gegeben,<lb/> üben einen nachteiligen Einfluß auf die Schilddrüse aus. Lopion wird besser als Cuprion vertragen.<lb/> Der N-Allyl-N'-[m-carboxyphenyl]-iso-thioharnstoff<lb/> wird offenbar schnell vom Körper 				ausgeschie-<lb/>den, weshalb große Mengen des Grundkörpers erforderlich sind, um eine stärkere SD-Aktivität<lb/> hervorzurufen. <pb/> Sulfanilylthioharnstoff verändert ein wenig die Kaninchen-SD, wenn er über zwei Monate<lb/> verabfolgt wird.<lb/> Mengt man Sulfanilylguanidin dem Futtei» bei, dann wird die SD in geringem Grade akti-<lb/> viert. Eine leichte Hypertrophie der Drüse wurde bei subcutaner Behandlung eines Tieres fest-<lb/> gestellt.<lb/> Möglicherweise führen unter gewissen Bedingungen Benzylthioharnstoff, Sulfanilylguanidin,<lb/> Cupro-jV-Allyl-iy'- [m-carboxyphenyl]-iso-thioharnstoff und Thiouracil, in dieser Reihe zunehmend<lb/> wirksam, zu einer SD-Hypertrophie.<lb/> Die Art und Weise, wie die Kaninchen auf die schilddrüsenwirksamen Substanzen reagierten,<lb/> weist auf die Entwicklung eines anormalen Zustandes der Thyreoidea hin. Unsere Befunde<lb/> stehen mit der Erklärung der thyreostatischen Wirksamkeit chemischer Verbindungen durch<lb/> amerikanische Autoren in Einklang.<lb/> </div>
+
+		</front>
+	</text>
+</tei>

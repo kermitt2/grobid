@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="unknown"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Video Server on an ATM Connected Cluster of Workstations <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Olav Sandsta, Stein Langrgen, and Roger Midtstraum <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer and Information Science <lb/>Norwegian University of Science and Technology <lb/></affiliation></byline>
+		<address>N-7034 Trondheim, Norway <lb/></address>
+		<email>folavsa, steinl, rogerg@idi.ntnu.no <lb/></email>
+		<div type="abstract">Abstract <lb/>Video servers are important for applications which make <lb/>use of digital video. The video servers should provide better <lb/>functionality than most of today&apos;s video servers offer, - e.g., <lb/>support of flexible and instant user interactions, delivery of <lb/>multiple video formats and support of virtual video documents. In this paper we discuss the requirements that video <lb/>servers should fulfill and we describe the design and implementation of the Elvira video server. The Elvira video server <lb/>is built on a cluster of standard UNIX workstations interconnected by an ATM switch. The capacity of the Elvira server <lb/>is evaluated and we show the effects of different strategies <lb/>for allocation of video data across nodes and disks. <lb/></div>
+		<div type="intro">1. Introduction</div>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,21 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="76"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">The complexity of multivariate elliptic problems with analytic data <lb/></titlePart>
+		</docTitle>
+		<idno>Technical Report CUCS-016-94 <lb/></idno>
+		<byline><docAuthor>Arthur G. Werschulz <lb/></docAuthor></byline>
+		<byline><affiliation>Division of Science and Mathematics,  Fordham University <lb/></affiliation></byline>
+		<address>College at Lincoln Center <lb/>New York, NY 10023 <lb/></address>
+		<byline><affiliation>and <lb/>Department of Computer Science <lb/> Columbia University <lb/></affiliation></byline>
+		<address>New York, NY 10023 <lb/></address>
+		<date>June 28, 1994 <lb/></date>
+		<div type="abstract">Abstract. Let F be a class of functions defined on a d-dimensional domain. Our task is <lb/>to compute H m -norm &quot;-approximations to solutions of 2mth-order elliptic boundary-value <lb/>problems Lu = f for a fixed L and for f 2 F . We assume that the only information we <lb/>can compute about f 2 F is the value of a finite number of continuous linear functionals <lb/>of f, each evaluation having cost c(d). Previous work has assumed that F was the unit <lb/>ball of a Sobolev space H r of fixed smoothness r, and it was found that the complexity of <lb/>computing an &quot;-approximation was comp(&quot;; d) = fi(c(d)(1=&quot;) d=(r+m) ). Since the exponent <lb/>of 1=&quot; depends on d, we see that the problem is intractable in 1=&quot; for any such F of fixed <lb/>smoothness r. In this paper, we ask whether we can break intractability by letting F be the <lb/>unit ball of a space of infinite smoothness. To be specific, we let F be the unit ball of a <lb/>Hardy space of analytic functions defined over a complex d-dimensional ball of radius greater <lb/>than one. We then show that the problem is tractable in 1=&quot;. More precisely, we prove that <lb/>comp(&quot;; d) = fi(c(d)(ln 1=&quot;) d ), where the fi-constant depends on d. Since for any p &amp;gt; 0, there <lb/>is a function K() such that comp(&quot;; d) c(d)K(d)(1=&quot;) p for sufficiently small &quot;, we see that <lb/>the problem is tractable, with (minimal) exponent 0. Furthermore, we show how to construct <lb/>a finite element p-method (in the sense of Babuska) that can compute an &quot;-approximation <lb/>with cost fi(c(d)(ln 1=&quot;) d ). Hence this finite element method is a nearly optimal complexity <lb/>algorithm for d-dimensional elliptic problems with analytic data. <lb/></div>
+		<div type="intro">1. Introduction</div>
+		</front>
+</text>
+</tei>

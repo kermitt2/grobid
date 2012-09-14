@@ -1,0 +1,19 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="160"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<note type="reference">Appears in Working Notes, Integrating Multiple Learned Models for Improving and Scaling Machine Learning Algorithms <lb/>Workshop, Thirteenth National Conference on Artificial Intelligence, Portland, OR: AAAI Press (1996). <lb/></note>
+		<docTitle>
+			<titlePart type="main">Human Expert-Level Performance on a Scientific Image Analysis Task <lb/> by a System Using Combined Artificial Neural Networks <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Kevin J. Cherkauer <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Sciences <lb/>University of Wisconsin-Madison <lb/></affiliation></byline>
+		<address>1210 West Dayton Street <lb/>Madison, WI 53706, USA <lb/></address>
+		<email>cherkauer@cs.wisc.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>This paper presents the Plannett system, which <lb/>combines artificial neural networks to achieve expert- <lb/>level accuracy on the difficult scientific task of recognizing volcanos in radar images of the surface of the <lb/>planet Venus. Plannett uses ANNs that vary along <lb/>two dimensions: the set of input features used to train <lb/>and the number of hidden units. The ANNs are combined simply by averaging their output activations. <lb/>When Plannett is used as the classification module <lb/>of a three-stage image analysis system called JAR- <lb/>tool, the end-to-end accuracy (sensitivity and specificity) is as good as that of a human planetary geologist on a four-image test suite. JARtool-Plannett <lb/>also achieves the best algorithmic accuracy on these <lb/>images to date. <lb/></div>
+		<div type="intro">Introduction</div>
+		</front>
+</text>
+</tei>

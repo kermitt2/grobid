@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="sdarticle5"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+			<reference>Intensive and Critical Care Nursing (2005) 21, 140—148<lb/></reference> 
+			
+			<note type="articleType">ORIGINAL ARTICLE</note><lb/>
+
+	<docTitle>
+	<titlePart>Discovering the nature of advanced nursing<lb/> practice in high dependency care: a critical care<lb/> nurse consultant's experience<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Debra Fairley *<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Surgical High Dependency Unit, C/O Intensive Care Office, St. James's University Hospital,<lb/></affiliation>
+	</byline>
+
+	<address>Beckett Street, Leeds LS9 7TF, UK<lb/></address>
+
+	<note type="submission">Accepted 1 September 2004<lb/></note>
+
+	<keyword>KEYWORDS<lb/> Nurse consultants;<lb/> Advanced nursing<lb/> practice;<lb/> Critical care<lb/></keyword>
+
+	<div type="abstract">Summary This paper describes how a critical care nurse consultant's clinical role<lb/> has evolved within a surgical high dependency unit (SHDU) in a large teaching hos-<lb/> pitals trust. In order to provide some background to role development, an overview<lb/> of the research exploring the nature of advanced nursing practice in the context of<lb/> critical care will be presented. From the outset, advanced nursing practice was not<lb/> perceived as the acquisition and application of technical procedures usually under-<lb/> taken by doctors, but possibly an integration of medicine and nursing where holis-<lb/> tic nursing assessment is combined with symptom-focused physical examination. A<lb/> reflective account of practical problems encountered relating to role integration,<lb/> professional autonomy, legal and consent issues, non-medical prescribing, and role<lb/> evaluation will be presented. A model of working that can be applied to high de-<lb/> pendency units, integrating the role of the advanced nurse practitioner within the<lb/> clinical team, will be described.<lb/></div>
+
+	<note type="copyright">© 2004 Elsevier Ltd. All rights reserved.<lb/></note>
+
+		</front>
+	</text>
+</tei>

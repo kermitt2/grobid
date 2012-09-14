@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="565"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Efficient Indexing for Object Recognition Using Large Networks <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Mark R. Stevens Charles W. Anderson J. Ross Beveridge <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science <lb/>Colorado State University <lb/></affiliation></byline>
+		<address>Fort Collins, CO 80523 <lb/></address>
+		<email>{stevensm,anderson,ross}@cs.colostate.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>Template matching is an effective means of locating vehicles in outdoor scenes, but it tends to be <lb/>a computationally expensive. To reduce processing time, we use large neural networks to predict, or <lb/>index, a small subset of templates that are likely to match each window in an image. Results on actual <lb/>LADAR range images show that limiting the templates to those selected by the neural networks reduces <lb/>the computation time by a factor of 5 without sacrificing the accuracy of the results. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

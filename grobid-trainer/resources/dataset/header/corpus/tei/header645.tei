@@ -1,0 +1,17 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="647"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Efficient Finite-State Approximation of Context <lb/>Free Grammars <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>C.M. Rood <lb/></docAuthor></byline>
+		<byline><affiliation>Computer Laboratory <lb/>University of Cambridge <lb/></affiliation></byline>
+		<email>cmr1001@cl.cam.ac.uk <lb/></email>
+		<div type="abstract">Abstract. This paper introduces a novel method for constructing finite-state machines recognising context free (CF) <lb/>grammars. The method utilizes the idea of a path through <lb/>a finite-state machine (FSM). Certain paths form the basis <lb/>for an unfolding process which is applied to the LR(0) characteristic finite-state machine (CFSM) corresponding to the <lb/>grammar. The next section discusses the approximation algorithm, including this unfolding process, in more detail, and <lb/>section 3 introduces the concept of an unfolding criterion. <lb/>Section 4 proves the soundness of the approximation method, <lb/>and its exactness to arbitrary, fixed recursive depths. Section <lb/>5 presents initial computational figures resulting from an implementation of the method. A variation of the method that <lb/>is more computationally feasible is discussed. The final section compares the method with existing research on finite-state approximation of CF grammars, and presents preliminary conclusions regarding the method. <lb/></div>
+		<div type="intro">1 THE APPROXIMATION</div>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,20 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="644"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Authorship Analysis: Identifying The <lb/>Author of a Program 1 <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Ivan Krsul <lb/></docAuthor></byline>
+		<byline><affiliation>The COAST Project <lb/>Department of Computer Sciences <lb/>Purdue University <lb/></affiliation></byline>
+		<address>West Lafayette, IN 47907-1398 <lb/></address>
+		<email>krsul@cs.purdue.edu <lb/></email>
+		<date>May 3, 1994 <lb/></date>
+		<idno>Technical Report CSD-TR-94-030 <lb/></idno>
+		<note type="other">1 This paper was originally written as a Master&apos;s thesis at Purdue University. <lb/></note>
+		<pb/>
+		</front>
+</text>
+</tei>

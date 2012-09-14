@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="208"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Design and Implementation <lb/>of a Web-based Tool for <lb/>ATM Connection Management <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Martin Bernhardt <lb/></docAuthor></byline>
+		<email>mbhard@icsi.berkeley.edu <lb/></email>
+		<idno>TR-96-041 <lb/></idno>
+		<date>August 1996 <lb/></date>
+		<div type="abstract">Abstract <lb/>At the International Computer Science Institute (ICSI), there is an ongoing effort <lb/>to gain experience on ATM and multi-media applications. ICSI is participating in <lb/>two ATM pilots called Bay Area Gigabit Network (BAGNet) and Multimedia Applications on Intercontinental Highway (MAY). Beside these wide-area trial ICSI&apos;s <lb/>ATM network is used for local multi-media experiments. The ATM environment at <lb/>ICSI is heterogeneous. Both, local and long distance traffic is based on permanent <lb/>virtual connections. The management of this environment has often been cumbersome and time-consuming for a number of reasons: The ATM devices have to be <lb/>accessed separately in an unintegrated manner. Different vendor-specific tools with <lb/>different user interfaces are used. Configuration data is stored unstructured, redundant and not centralized. Users cannot setup or verify a connection without knowing <lb/>device-specific details. Hence, the need for a software tool arose that can minimize the <lb/>administrative work spent on connection management. This technical report contains <lb/>my master&apos;s thesis which is about the design and implementation of TOMCAD a <lb/>tool for monitoring and configuration of ATM devices. Being a web-based software <lb/>tool it can support local and wide-area connectivity and provide access for local and <lb/>remote users. <lb/></div>
+		<pb/>
+		</front>
+</text>
+</tei>

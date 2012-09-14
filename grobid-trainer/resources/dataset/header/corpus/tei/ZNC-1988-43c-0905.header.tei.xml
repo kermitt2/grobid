@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="ZNC-1988-43c-0905"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Hämaktivierte Oxidationen mit dem Chlorit-Sauerstoff-Komplex "TCDO"<lb/> (OXOFERIN®) -eine Übersicht<lb/></titlePart>
+	</docTitle>
+
+	<note type="english-title">Heme-Activated Oxidations by the Chlorite-Oxygen Complex "TCDO" (OXOFERIN®)<lb/></note>
+
+	<byline>
+	<docAuthor>Erich F. Elstner<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Biochemisches Labor, Institut für Botanik und Mikrobiologie, Technische Universität München,<lb/></affiliation>
+	</byline>
+
+	<address>D-8000 München 2, Arcisstraße 21, Bundesrepublik Deutschland<lb/></address>
+
+	<reference>Z. Naturforsch. 43c, 893-902 (1988);</reference>
+
+	<note type="submission">received March 4, 1988<lb/></note>
+
+	<keyword>Chlorooxygen Compounds, Activated Oxygen, Hydrogen Peroxide, Biological Oxidants, Fenton<lb/> Oxidants<lb/></keyword>
+
+	<div type="abstract">Several chlorooxygen compounds, hydrogen peroxide and reducing molecules in the presence<lb/> of chelated iron (Fenton systems) are oxidants of biological relevance. These compounds are<lb/> either produced in living tissues or are in use as desinfectants or drugs. Tetrachlorodecaoxide as the<lb/> active principle in the drug OXOFERIN® can be differentiated from the above mentioned oxi-<lb/>dants by means of simple biochemical test systems where different activators and detector mole-<lb/>cules are used.</div>
+
+		</front>
+	</text>
+</tei>

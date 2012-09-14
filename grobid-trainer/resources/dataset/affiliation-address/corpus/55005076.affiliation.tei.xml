@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="department">Discovery Research</orgName>,
+							<orgName type="institution">Nuvelo Inc.</orgName>,
+							<address>
+								<settlement>San Carlos</settlement>,
+								<region>CA</region>,
+								<country>USA;</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="department">Department of Clinical Pathology</orgName>,
+							<orgName type="institution">Cleveland Clinic</orgName>,
+							<address>
+								<settlement>Cleveland</settlement>,
+								<region>OH</region>,
+								<country>USA</country>
+							<lb/>
+							</address>
+							<orgName type="department">Cancer Center</orgName>,
+							<orgName type="institution">University of Rochester School of Medicine</orgName>,
+							<address>
+								<settlement>Rochester</settlement>,
+								<region>NY</region>,
+								<country>USA</country> and
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>4</marker>
+							<orgName type="department">Stanford Cancer Center</orgName>,
+							<address>
+								<settlement>Stanford</settlement>,
+								<region>CA</region>,
+								<country>USA</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+<listBibl>
+
+	<bibl>
+        <date>2011</date> 
+        <title level="j">Nonlinearity</title> 
+        <biblScope type="vol">24</biblScope> 
+        <biblScope type="pp">1975</biblScope>
+    </bibl>
+
+    <bibl>
+        <title level="j">Nonlinearity</title>
+        <biblScope type="vol">24</biblScope>
+        (<date>2011</date>) 
+        <biblScope type="pp">1975–1986</biblScope>
+    </bibl>
+
+</listBibl>
+</tei>
+	

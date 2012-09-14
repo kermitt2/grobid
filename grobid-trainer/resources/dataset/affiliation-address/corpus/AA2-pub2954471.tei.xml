@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../jsp/xmlverbatimwrapper.xsl"?> 
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<!-- Dept. of Electr. & Comput. Eng., Ecole Polytech. de Montreal, Que.; -->
+    <teiHeader xml:lang="fr">
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<affiliation>
+								<orgName type="department">Dept. of Electr. &amp; Comput. Eng.</orgName>,
+								<orgName type="institution">Ecole Polytech. de Montreal</orgName>,
+								<address>
+                                    <region type="state">Que.</region>;
+								</address>
+							</affiliation>
+						</author>			
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</TEI>

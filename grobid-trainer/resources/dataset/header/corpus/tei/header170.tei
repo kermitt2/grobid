@@ -1,0 +1,20 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="171"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<note type="reference">In Proc. 8th IASTED Int&apos;l Conf. on Parallel and Distributed Computing and Systems (Chicago, IL, USA), <lb/>c IASTED/ACTA Press (Anaheim/Calgary/Z urich), pp. 144-148, Oct. 1996. [ISBN: 0-88986-213-3] <lb/></note>
+		<docTitle>
+			<titlePart type="main">HPF and MPI Implementation of the NAS Parallel Benchmarks <lb/> Supported by Integrated Program Engineering Tools <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Christian Cl emencon Karsten M. Decker Vaibhav R. Deshpande <lb/> Akiyoshi Endo Josef Fritscher Paulo A. R. Lorenzo <lb/>Norio Masuda Andreas Muller Roland R uhl <lb/>William Sawyer Brian J. N. Wylie Frank Zimmermann <lb/></docAuthor></byline>
+		<byline><affiliation>Centro Svizzero di Calcolo Scientifico (CSCS/SCSC) and <lb/>NEC European Supercomputer Systems, Swiss Branch <lb/></affiliation></byline>
+		<address>CH-6928 Manno, Switzerland <lb/></address>
+		<ptr type="web">http://www.cscs.ch/Official/Project CSCS-NEC.html <lb/></ptr>
+		<div type="abstract">Abstract: High Performance Fortran (HPF) compilers <lb/>and communication libraries with the standardized Message Passing Interface (MPI) are becoming widely available, easing the development of portable parallel applications on distributed-memory parallel processor systems. <lb/>The recently developed Annai tool environment supports <lb/>programming, debugging and tuning of both HPF- and <lb/>MPI-based applications. Considering code development <lb/>and subsequent maintenance time to be as important as ultimate performance, we address how sequential Fortran-77 <lb/>versions of the familiar NAS Parallel Benchmark kernels <lb/>can be expediently parallelized with appropriate tool support. While automatic parallelization of scientific applications written in traditional sequential languages remains <lb/>largely impractical, Annai provides users with high-level <lb/>language extensions and integrated program engineering <lb/>support tools. In this paper, Annai support is demonstrated primarily focusing on the MG (multigrid) kernel, <lb/>with complementary examples selected from the other four <lb/>kernels. Respectable performance and good scalability <lb/>in most cases are obtained with this straightforward par-allelization strategy, even without recourse to platform-specific optimizations or major program transformations. <lb/></div>
+		<keywords>Keywords: HPF &amp; MPI parallelization; parallel program <lb/>engineering tools. <lb/></keywords>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="314"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Transis: A Communication Sub-System <lb/>for <lb/>High Availability <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Yair Amir, Danny Dolev, Shlomo Kramer, Dalia Malki <lb/></docAuthor></byline>
+		<byline><affiliation>Computer Science department <lb/>The Hebrew University of Jerusalem <lb/></affiliation></byline>
+		<address>Jerusalem, Israel <lb/></address>
+		<idno>Technical Report CS91-13 <lb/></idno>
+		<date>April 30, 1992 <lb/></date>
+		<pb/>
+		</front>
+</text>
+</tei>

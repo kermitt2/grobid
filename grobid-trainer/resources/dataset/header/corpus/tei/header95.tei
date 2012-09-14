@@ -1,0 +1,21 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="96"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Bezier Nets, Convexity and Subdivision on Higher <lb/>Dimensional Simplices <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Tim Goodman <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Mathematics <lb/>and Computer Sciences <lb/>The University of Dundee <lb/></affiliation></byline>
+		<address>Dundee DD1 4HN, Scotland <lb/></address>
+		<byline><docAuthor>Jorg Peters 1 <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Sciences <lb/>Purdue University <lb/></affiliation></byline>
+		<address>W-Lafayette, IN 47907-1398 <lb/>USA <lb/></address>
+		<date>October 26, 1994 <lb/></date>
+		<note type="grant">1 supported by NSF grant 9396164-CCR <lb/></note>
+		<pb/>
+		</front>
+</text>
+</tei>

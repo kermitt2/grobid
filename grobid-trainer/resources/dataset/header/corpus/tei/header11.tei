@@ -1,0 +1,20 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="12"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">A Certificate Path Generation Algorithm for <lb/>Authenticated Signaling in ATM Networks <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Jun Xu Mukesh Singhal <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer and Information Science <lb/> The Ohio State University <lb/></affiliation></byline>
+		<address>Columbus, OH 43210 <lb/></address>
+		<email>fjun,singhalg@cis.ohio-state.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>ATM Forum specifies public key cryptography to be the default ATM authentication mechanism and directory services like X.509 to be the infrastructure for public <lb/>key distribution and certification. Authenticated signaling, widely acknowledged <lb/>as a necessary security feature of ATM network, requires the signaling message to <lb/>be authenticated with a digital signature signed by the private key of the calling <lb/>party. To verify the digital signature, the called party needs to obtain the public <lb/>key of the calling party and a proof of the calling party&apos;s ownership to that public <lb/>key. In X.509, the standard form of such a proof is a chain of public key certificates, called the certificate path between two parties. Certificate exchange protocol <lb/>(CEP), proposed by ATM Forum, requires that another bi-directional connection <lb/>be established between two parties to exchange public keys and certificate paths <lb/>before an authenticated connection can be set up, which is not an ideal approach. <lb/>We propose an algorithm which is embedded into ATM routing protocols to generate a certificate path inside a signaling message on-the-fly as the signaling message <lb/>travels through the ATM network. In this approach, all that a calling party needs <lb/>to know for authentication purpose is its own public key certificate and the ATM <lb/>network builds the rest of the certificate path for it. Related issues like distribution <lb/>of public key certificates and optimization of CA hierarchy are also addressed in <lb/>this paper. <lb/></div>
+		<keywords>Keywords: ATM, P-NNI, authenticated signaling, certificate path. <lb/></keywords>
+		<note type="grant">This work was partially supported by NSA Grant MDA904-96-1-0111. <lb/></note>
+		<pb/>
+		</front>
+</text>
+</tei>

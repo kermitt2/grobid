@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.tei-c.org/ns/1.0"
+   xmlns:mml="http://www.w3.org/1998/Math/MathML">
+   <teiHeader>
+      <fileDesc>
+         <sourceDesc>
+            <biblStruct>
+               <analytic>
+                  <author>
+                     <affiliation>
+                        <marker>1</marker> 
+						Corresponding author: 
+						<orgName type="department">Department of Environmental Hydrology &amp; Microbiology</orgName>,
+                        <orgName type="laboratory">Zuckerberg Institute for Water Research</orgName>, 
+						<orgName type="department">Blaustein Institute for Desert Studies</orgName>, 
+						<orgName type="institution">Ben Gurion University of the Negev</orgName>,
+                        <address>
+                           <settlement>Sede Boqer</settlement> 
+                           <postCode>84990</postCode>, 
+                           <country>Israel</country>;
+                        </address>
+                     </affiliation>
+
+                     <affiliation>
+                        <marker>2</marker>
+                        <orgName type="institution">Geological Survey of Israel</orgName>,
+                        <address>
+                           <addrLine>30 Malkhe Israel St.</addrLine>, 
+                           <settlement>Jerusalem</settlement><lb/>
+                           <postCode>95501</postCode>, 
+                           <country>Israel</country>.
+                        </address><lb/>
+                     </affiliation>
+
+                     <affiliation>
+                        <marker>3</marker>
+                        <orgName type="department">Institute of Soil, Water and Environmental Sciences</orgName>,<lb/>
+                        <orgName type="institution" key="instit1">Agricultural Research Organization</orgName>,
+                           <orgName type="institution" key="instit1">Volcani Center</orgName>,
+                        <address>
+                           <settlement>Bet Dagan</settlement><lb/>
+   			               <postCode>50250</postCode>, 
+                           <country>Israel</country>.
+                        </address>
+                     </affiliation>
+                  </author>
+               </analytic>
+            </biblStruct>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+</TEI>

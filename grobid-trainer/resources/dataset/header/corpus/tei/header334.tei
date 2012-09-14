@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="339"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Using Global Consistency to Recognise Euclidean Objects with an <lb/>Uncalibrated Camera <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>D.A. Forsyth J.L. Mundy A. Zisserman C.A. Rothwell <lb/></docAuthor></byline>
+		<byline><affiliation>Computer Science General Electric Robotics Research Group Robotics Research Group <lb/>University of Iowa Center for Research and Development Oxford University Oxford University <lb/></affiliation></byline>
+		<address>Iowa City, IA 52242 Schenectady, NY 12345 Oxford, UK Oxford, UK <lb/></address>
+		<div type="abstract">Abstract <lb/>A recognition strategy consisting of a mixture of indexing on invariants and search, allows objects to be recog-nised up to a Euclidean ambiguity with an uncalibrated <lb/>camera. The approach works by using projective invariants to determine all the possible projectively equivalent <lb/>models for a particular imaged object; then a system of <lb/>global consistency constraints is used to determine which of <lb/>these projectively equivalent, but Euclidean distinct, models corresponds to the objects viewed. These constraints <lb/>follow from properties of the imaging geometry. In particular, a recognition hypothesis is equivalent to an assertion about, among other things, viewing conditions and geometric relationships between objects, and these assertions <lb/>must be consistent for hypotheses to be correct. The approach is demonstrated to work on images of real scenes <lb/>consisting of polygonal objects and polyhedra.</div>
+		<keywords>Keywords: <lb/>Recognition, Computer Vision, Invariant Theory, Indexing, Model-based Vision <lb/></keywords>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

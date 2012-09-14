@@ -1,0 +1,22 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="unknown"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">DESIGNING AN ECOLOGY OF DISTRIBUTED AGENTS <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>by <lb/>Nelson Minar <lb/></docAuthor></byline>
+		<note type="degree">B.A. Mathematics (1994) <lb/>Reed College <lb/></note>
+		<email>&amp;lt;nelson@media.mit.edu&amp;gt; <lb/></email>
+		<ptr type="web">http://www.media.mit.edu/nelson/ <lb/></ptr>
+		<note type="degree">Submitted to the Program in Media Arts and Sciences, School of Architecture and <lb/>Planning, in partial fulfillment of the requirements for the degree of Master of Science in <lb/>Media Arts and Sciences at the Massachusetts Institute of Technology <lb/></note>
+		<date>September 1998 <lb/></date>
+		<note type="other">c fl1998 Massachusetts Institute of Technology. All rights reserved. <lb/></note>
+		<note type="other">Author <lb/>Nelson Minar <lb/>Department of Media Arts and Sciences <lb/>August 7, 1998 <lb/></note>
+		<note type="degree">Certified by <lb/>Pattie Maes <lb/>Associate Professor of Media Arts and Sciences <lb/>MIT Media Lab <lb/>Accepted by <lb/>Stephen A. Benton <lb/>Professor of Media Arts and Sciences <lb/>Chair, Departmental Committee on Graduate Students <lb/>Program in Media Arts and Sciences <lb/></note>
+		<pb/>
+		</front>
+</text>
+</tei>

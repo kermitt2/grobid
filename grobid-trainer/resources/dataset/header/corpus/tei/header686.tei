@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="688"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<idno>TR - UCSD - CS96-484 <lb/></idno>
+		<docTitle>
+			<titlePart type="main">Mapping Parallel Applications to <lb/>Distributed Heterogeneous Systems <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Silvia M. Figueira 1 and Francine Berman 2 <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science and Engineering <lb/>University of California, San Diego <lb/></affiliation></byline>
+		<email>{silvia,berman}@cs.ucsd.edu <lb/></email>
+		<div type="abstract">Abstract <lb/>Fast networks have made it possible to coordinate distributed heterogeneous CPU, <lb/>memory and storage resources to provide a powerful platform for executing high-performance applications. However, the performance of parallel applications on such <lb/>systems is highly dependent on the mapping of application tasks to machines. In this <lb/>paper, we propose a mapping strategy for applications formed by multiple tasks targeted <lb/>to heterogeneous platforms. We first define a mapping model, the match-tree, which <lb/>reects the data movement and conversion costs of distributed algorithms and allows for <lb/>alternative implementations of individual tasks on different machines. We then define the <lb/>find-mapping and split-partition algorithms, based on the match-tree model, to <lb/>determine the best allocation of tasks to resources in heterogeneous systems. We <lb/>illustrate the use of these algorithms with a sample distributed application. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

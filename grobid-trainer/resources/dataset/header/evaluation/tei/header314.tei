@@ -1,0 +1,20 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="319"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<idno>DIMACS Technical Report 93-8 <lb/></idno>
+		<date>February 1993 <lb/></date>
+		<docTitle>
+			<titlePart type="main">Hilbert Series of Group Representations and <lb/>Grobner Bases for Generic Modules <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>by <lb/>Shmuel Onn 1 <lb/></docAuthor></byline>
+		<byline><affiliation>DIMACS <lb/>Rutgers University <lb/></affiliation></byline>
+		<address>Piscataway, New Jersey 08855-1179 <lb/></address>
+		<email>E-mail: onn@dimacs.rutgers.edu <lb/></email>
+		<note type="other">1 Research was supported by the Mittag-Le*er Institute, by the Mathematical Sciences Institute <lb/>at Cornell University, and by the Center for Discrete Mathematics and Theoretical Computer <lb/>Science at Rutgers University. <lb/>DIMACS is a cooperative project of Rutgers University, Princeton University, AT&amp;T Bell <lb/>Laboratories and Bellcore. <lb/>DIMACS is an NSF Science and Technology Center, funded under contract STC-88-09648; <lb/>and also receives support from the New Jersey Commission on Science and Technology. <lb/></note>
+		<pb/>
+		</front>
+</text>
+</tei>

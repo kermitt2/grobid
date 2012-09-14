@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../jsp/xmlverbatimwrapper.xsl"?> 
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+					
+							<marker>a</marker>) 
+								<affiliation>
+								<orgName type="institution">Institute of Physics and Nuclear Engineering</orgName>,
+								<address>
+									<settlement>Bucharest</settlement>,
+									<postBox>POB MG6</postBox>,
+									<country key="RO">Romania<lb/></country>
+								</address>
+							</affiliation>
+					
+							<marker>b</marker>) 
+							<affiliation>
+								<orgName type="institution">Academy of Romanian Scientists</orgName>,
+								<address>
+									<addrLine>54 Splaiul Independentei</addrLine>,
+									<settlement>Bucharest</settlement>
+									<postCode>050094</postCode>,
+									<country key="RO">Romania<lb/></country>
+								</address>
+							</affiliation>
+					
+							<marker>c</marker>)
+							<affiliation>
+								<orgName type="department">Institut für Theoretische Physik</orgName>
+								der
+								<orgName type="institution">Universität Tubingen</orgName>,<lb/>
+								<address>
+									<addrLine>Auf der Morgenstelle 14</addrLine>,
+									<postCode>D-72076</postCode>
+									<settlement>Tübingen</settlement>,
+									<country key="DE">Germany<lb/></country>
+								</address>
+							</affiliation>
+					
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</TEI>

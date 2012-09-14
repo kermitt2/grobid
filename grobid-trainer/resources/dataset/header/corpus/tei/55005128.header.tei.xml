@@ -1,0 +1,58 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005128"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<lb/>
+
+			<reference>Journal of Process Control 21 (2011) 119–129<lb/></reference>
+
+			<note type="other">Contents lists available at ScienceDirect<lb/></note>
+			<note type="other">Journal of Process Control<lb/></note>
+			<ptr type="web">journal homepage: www.elsevier.com/locate/jprocont<lb/></ptr>
+
+			<docTitle>
+				<titlePart>Incorporating delayed and infrequent measurements in Extended Kalman
+					Filter<lb/> based nonlinear state estimation<lb/></titlePart>
+			</docTitle>
+			<byline>
+				<docAuthor>Ajit Gopalakrishnan, Niket S. Kaisare, Shankar Narasimhan ∗<lb/></docAuthor>
+			</byline>
+			<byline>
+				<affiliation>Department of Chemical Engineering, Indian Institute of
+					Technology-Madras,</affiliation>
+			</byline>
+			<address>Chennai 600-036, India<lb/></address>
+			<note type="other">a r t i c l e<lb/>i n f o<lb/></note>
+			<note type="submission">Article history:<lb/> Received 26 December 2009<lb/> Received in
+				revised form 19 October 2010<lb/> Accepted 20 October 2010<lb/>
+			</note>
+			<keywords> Keywords:<lb/> Measurement delay<lb/> Multi-rate filtering<lb/> Extended
+				Kalman Filter<lb/> State augmentation<lb/>
+			</keywords>
+			<div type="abstract">a b s t r a c t<lb/> This work deals with state estimation in the
+				presence of delayed and infrequent measurements. While<lb/> most measurements
+				(referred to as secondary measurements) are available frequently and instanta-<lb/>
+				neously, there might be a delay associated with acquiring other measurements
+				(primary measurements)<lb/> due to long analysis times involved. The primary
+				measurements are usually sampled at irregular inter-<lb/> vals and the exact delay
+				is also unknown. The traditional fixed-lag smoothing algorithm, which has been<lb/>
+				applied for a variety of chemical processes systems, can be computationally
+				inefficient for such situations<lb/> and alternate methods to handle delays are
+				necessary. In this paper, we analyze several existing methods<lb/> to incorporate
+				measurement delays and reinterpret their results under a common unified
+				framework<lb/> (for Extended Kalman Filter). Extensions to handle time-varying and
+				uncertain delays, as well as out of<lb/> sequence measurement arrival are also
+				presented. Simulation studies on a linear distillation column and<lb/> a nonlinear
+				polymerization reactor are used to compare the performance of these methods based
+				on<lb/> RMSE values and computation times. A large scale nonlinear reactive
+				distillation column example is also<lb/> used to illustrate the practicality of the
+				suggested method.<lb/>
+			</div>
+			<note type="copyright">© 2010 Elsevier Ltd. All rights reserved.<lb/></note>
+
+		</front>
+	</text>
+</tei>

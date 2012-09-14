@@ -1,0 +1,18 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="332"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Theory and Design of Multidimensional QMF Sub-Band Filters From <lb/>1-D Filters and Polynomials Using Transforms <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>I.A. Shah A.A.C. Kalker <lb/></docAuthor></byline>
+		<byline><affiliation>Philips Research Laboratories, <lb/></affiliation></byline>
+		<address>P.O. Box 80.000, 5600 JA Eindhoven, The Netherlands <lb/></address>
+		<email>Net: kalker@prl.philips.nl, </email> <email>shah@prl.philips.nl <lb/></email>
+		<div type="abstract">Abstract <lb/>The paper presents the general theory of designing multidimensional Quadrature Mirror Filters (QMF), <lb/>for use in sub-band coding (SBC) systems, using the McClellan transform [1]. It was recently shown that <lb/>McClellan transform could be used to generate 2-D diamond shape QMF filters [2]. In this paper we will <lb/>formalize the proofs of the diamond shape case, and generalize it to other shapes, sampling rasters and <lb/>dimensions. <lb/>Moreover we show that we do not really need the 1-D QMF filters: it is also possible and even more <lb/>convenient to design QMF filter banks by performing transformations on a class of real valued polynomials. <lb/>Examples are given of two dimensional diamond and fan-shape filters and three dimensional tetrad filters <lb/>designed using this transformation technique. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

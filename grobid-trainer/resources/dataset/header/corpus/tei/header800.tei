@@ -1,0 +1,24 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="801"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Realistic Parsing: <lb/>Practical Solutions of Difficult Problems <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>SYLVAIN DELISLE a &amp; STAN SZPAKOWICZ b <lb/></docAuthor></byline>
+		<byline><affiliation>a Département de mathématiques et dinformatique <lb/>Université du Québec à Trois-Rivières <lb/></affiliation></byline> 
+		<address>Trois-Rivières, Québec, Canada G9A 5H7 <lb/></address>
+		<email>email: Sylvain_Delisle@uqtr.uquebec.ca,</email>
+		<note type="phone">phone +1 819 376 5125; fax +1 819 376 5185 <lb/></note>
+		<byline><affiliation>b Department of Computer Science <lb/>University of Ottawa <lb/></affiliation></byline>
+		<address>Ottawa, Ontario, Canada K1N 6N5 <lb/></address>
+		<email>email: szpak@csi.uottawa.ca,</email>
+		<note type="phone">phone +1 613 562 5800 ext. 6687; fax +1 613 562 5187 <lb/></note>
+		<div type="abstract">Abstract <lb/>This paper describes work on the linguistic <lb/>analysis of texts within a project devoted to <lb/>knowledge acquisition from text. We focus <lb/>on syntactic processing and present some <lb/>key elements of the projects parser that <lb/>allow it to deal successfully with technical <lb/>texts. The parser is fully implemented and <lb/>tested on a variety of real texts; <lb/>improvements and enhancements are in <lb/>progress. Because our knowledge acquisition <lb/>method assumes no a priori model of the <lb/>domain of the source text, the parser relies <lb/>as much as possible on lexical and syntactic <lb/>clues. That is why it strives for full <lb/>syntactic analysis rather than some form of <lb/>text skimming. We present a practical <lb/>approach to four acknowledged difficult <lb/>problems which to date have no generally <lb/>acceptable answers: phrase attachment; time <lb/>constraints for problematic input (how to <lb/>avoid long and unproductive computation); <lb/>parsing conjoined structures (how to <lb/>preserve broad coverage without losing <lb/>control of the parsing process); and the <lb/>treatment of fragmentary input or fragments <lb/>that are a byproduct of a fallback parsing <lb/>strategy. We review recent related work and <lb/>conclude by listing several future work <lb/>items. <lb/></div>
+		<keywords>Key Words <lb/>Text processing, knowledge acquisition from <lb/>text, broad-coverage parsing, parsing conjoined <lb/>structures. <lb/></keywords>
+		<div type="intro">1. Introduction</div>
+		</front>
+</text>
+</tei>

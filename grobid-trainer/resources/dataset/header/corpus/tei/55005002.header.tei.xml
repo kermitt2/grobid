@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005002"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			
+			<lb/>
+			<reference>C. Baranauskas et al. (Eds.): INTERACT 2007, LNCS 4662, Part I, pp. 235–238, 2007.<lb/></reference>
+			
+			<note type="copyright">© IFIP International Federation for Information Processing
+				2007<lb/></note>
+			
+
+			<docTitle>
+				<titlePart>Supporting the Planning and Organization of Multiple<lb/> Activities in
+					the Workplace<lb/></titlePart>
+			</docTitle>
+
+			<byline>
+				<docAuthor>Victor M. González 1 , Leonardo Galicia 2 , and Jesús Favela
+					2<lb/></docAuthor>
+			</byline>
+
+			<byline>
+				<affiliation>1 Manchester Business School, University of Manchester,</affiliation>
+			</byline>
+
+			<address>United Kingdom<lb/></address>
+
+			<byline>
+				<affiliation>2 CICESE Research Center,</affiliation>
+			</byline>
+
+			<address>México<lb/></address>
+
+			<email>vmgonz@manchester.ac.uk,{lgalicia, favela}@cicese.mx<lb/></email>
+
+			<div type="abstract">Abstract. Many studies have shown how knowledge workers face
+				challenges<lb/> while multi-tasking among several projects and initiatives at the
+				workplace.<lb/> Researchers and consultants of personal productivity have identified
+				practical<lb/> strategies and processes that people use to face, plan and manage
+				their<lb/> activities. Our work is based on the analysis of those processes and
+				strategies<lb/> involved in personal activity management (PAM), emphasizing the
+				planning<lb/> aspects of it, with the goal of designing appropriate supportive
+				information<lb/> technology.<lb/></div>
+
+			<keyword>Keywords: Personal Activity Management, Planning Activities, Personal<lb/>
+				Productivity, Knowledge Workers, Information Technology.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="ZNB-1947-2b-0012"/>
+	</teiHeader>
+	<text xml:lang="de">
+		<front>
+			<lb/>
+			<docTitle>
+				<titlePart>Über die Rolle des Wasserstoff-Peroxyds bei der Inhibition<lb/> nach Dold<lb/></titlePart>
+			</docTitle>
+
+			<byline>
+				<docAuthor>von JÖRN BETHGE, KLAUS SOEHRING und RUDOLF TSCHESCHE<lb/></docAuthor>
+			</byline>
+
+			<byline>
+				<affiliation>Aus der Chirurgischen Klinik, dem Pharmakologischen Institut und der Kinderklinik des Universitäts-Krankenhauses Eppendorf,<lb/></affiliation>
+			</byline>
+
+			<address>Hamburg<lb/></address>
+
+			<reference>(Z. Naturforschg. 2b, 12—13 [1947];</reference>
+
+			<note type="submission">eingegangen am 13. Dezember 1946)<lb/></note>
+
+			<div type="abstract">Aus Mundstreptoc-occenkulturen läßt sich mit Äther ein Extrakt gewinnen, der gegenüber<lb/> Diphtheriebakterien und Staphylococcen wachstumshemmend ist. Diese Wirkung wird auf<lb/> seinen Gehalt an Wasserstoff-Peroxyd zurückgeführt. Die Bedeutung dieser Feststellung<lb/> für die Inhibition nach Dold wird erörtert.<lb/></div>
+
+		</front>
+	</text>
+</tei>

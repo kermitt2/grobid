@@ -1,0 +1,22 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="521"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<note type="other">Final Version, </note><date>94-Mar-17,</date><note type="other">1of 9 <lb/></note>
+		<docTitle>
+			<titlePart type="main">Automation Tools for <lb/>NonDestructive Inspection of Aircraft: <lb/>Promise of Technology Transfer from the <lb/>Civilian to the Military Sector <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Chris Seher 1 , Mel Siegel 2 , and William M. Kaufman 3 <lb/></docAuthor></byline>
+		<byline><affiliation>1 Federal Aviation Administration, Technical Center,</affiliation></byline>
+		<address>Atlantic City NJ 08201 <lb/></address>
+		<byline><affiliation>2 Carnegie Mellon University, Robotics Institute,</affiliation></byline>
+		<address>Pittsburgh PA 15213 <lb/></address>
+		<byline><affiliation>3 Carnegie Mellon University, CMRI,</affiliation></byline>
+		<address>Pittsburgh PA 15213 <lb/></address>
+		<div type="abstract">Abstract <lb/>The FAA Aging Aircraft Research Program is <lb/>supporting the development of a robotic mobile <lb/>nondestructive inspection (NDI) instrument <lb/>deployment tool at Carnegie Mellon University <lb/>(CMU) with the active participation of USAir. The <lb/>program has spawned several new relationships <lb/>and entities: an alliance with an ARPA-funded <lb/>research program at CMU having the capability to <lb/>add 3D-stereoscopic enhanced visual inspection <lb/>capability, a start-up company organized to <lb/>commercialize the combined technologies, and <lb/>State of Pennsylvania funding to foster this <lb/>commercialization. As a result of these activities <lb/>and connections the civilian sector appears to be <lb/>ahead of the military sector in important aspects of <lb/>automation for deployment of aircraft inspection <lb/>equipment. A partnership between the university <lb/>researchers, the airline operator, the start-up <lb/>company, and the state government is thus <lb/>emerging as the likely agent for transfer of the <lb/>civilian-developed technology to the military sector. <lb/></div>
+		<div type="intro">1. Introduction</div>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,23 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="1089"/> 
+	</teiHeader>
+<text xml:lang="en">
+	<front> 
+		<docTitle>
+			<titlePart type="main">The  Color Glass Condensate framework in p+p and<lb/> Pb+p interactions at the ALICE experiment<lb/></titlePart>
+		</docTitle> 
+		<byline><docAuthor>J.D. Tapia Takaki</docAuthor></byline>
+		<note type="other">(for the ALICE Collaboration)<lb/></note>
+		
+		<byline><affiliation>Institut  de Physique Nucléaire d'Orsay (IPNO).<lb/> CNRS: UMR8608 - IN2P3 - Université Paris Sud - Paris XI. <lb/></affiliation></byline>		
+				
+		<email>E-mail:  Daniel.Tapia.Takaki@cern.ch<lb/></email>
+		 
+		<div type="abstract">Abstract.  It is believed that the Color Glass Condensate (CGC) can describe the<lb/> increase of parton density at very high energies or small values of the Bjorken-x.<lb/> In this paper, the principal features of the CGC framework are outlined. Special<lb/> attention is given to the prospects of observing gluon saturation effects at the LHC. In<lb/> particular, heavy flavour and charmonium production are discussed in terms of physics<lb/> performance studies of the ALICE Forward Muon Spectrometer.<lb/></div>
+		
+		<note type="title">The  CGC framework in p+p and Pb+p interactions at ALICE<lb/>2<lb/></note> 
+		<introduction>1.  Introduction<lb/></introduction>
+    </front>
+</text>
+</tei>                              

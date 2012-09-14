@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>a</marker>
+							<orgName type="institution">Université de Nice-Sophia Antipolis</orgName>,
+							<orgName type="laboratory">Laboratoire de Physique de la Matière Condensée</orgName>,
+							<orgName type="institution">CNRS</orgName>, 
+							<orgName type="laboratory">UMR 6622</orgName>,
+							<address>
+								<addrLine>Parc Valrose</addrLine>,
+								<postCode>06108</postCode>
+								<settlement>Nice</settlement>
+								<postCode>Cedex 2</postCode>,
+								<country>France</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>b</marker>
+							<orgName type="institution">Université de Montpellier II</orgName>,
+							<orgName type="department">Institut d&apos;Electronique du Sud (IES)</orgName>,
+							<address>
+								<addrLine>place Eugène Bataillon</addrLine>,
+								<postCode>34095</postCode>
+								<settlement>Montpellier</settlement>
+								<postCode>cedex 5</postCode>,
+								<country>France</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>c</marker>
+							<orgName type="department">Centre Antoine Lacassagne</orgName>,
+							<address>
+								<addrLine>33 Avenue Valombrose</addrLine>,
+								<postCode>06189</postCode>
+								<settlement>Nice</settlement>
+								<postCode>cedex 2</postCode>,								
+								<country>France</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>d</marker>
+							<orgName type="department">Institut Néel</orgName>,
+							<orgName type="institution">CNRS</orgName> and
+							<orgName type="institution">Université Joseph Fourier</orgName>,
+							<address>
+								<addrLine>25 avenue des Martyrs</addrLine>,
+								<postCode>BP166</postCode>,
+								<postCode>38042</postCode>
+								<settlement>Grenoble</settlement>
+								<postCode>Cedex 9</postCode>,
+								<country>France</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Kirsten</forename>
+								<surname>Müller-Vahl</surname>,
+								<roleName>MD</roleName>,
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>Ines</forename>
+								<surname>Dodel</surname>,
+								<roleName>MD</roleName>,
+								<marker>2</marker>
+							</persName>
+							<persName>
+								<forename>Norbert</forename>
+								<surname>Müller</surname>,
+								<roleName>MD</roleName>,
+								<marker>3</marker>
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Alexander</forename>
+								<surname>Münchau</surname> ,
+								<roleName>MD</roleName>,
+								<marker>4</marker>
+							</persName>
+							<persName>
+								<forename>Jens</forename>
+								<middlename>Peter</middlename>
+								<surname>Reese</surname> ,
+								<roleName>PhD ,MPH</roleName>,
+								<marker>2</marker>
+							</persName>
+							<persName>
+								<forename>Monika</forename>
+								<surname>Balzer-Geldsetzer</surname>,
+								<roleName>PhD</roleName>,
+								<marker>2</marker>
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Richard</forename>
+								<surname>Dodel</surname>,
+								<roleName>MD, MPH</roleName>,
+								<marker>2*</marker> and
+							</persName>
+							<persName>
+								<forename>Wolfgang</forename>
+								<middlename>H</middlename> .
+								<surname>Oertel</surname>,
+								<roleName>MD</roleName>
+								<marker>2</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

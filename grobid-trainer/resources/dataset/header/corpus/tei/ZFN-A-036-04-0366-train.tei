@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="ZFN-A-036-04-0366"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<titlePage>
+				<docTitle>
+					<titlePart type="main">Improved Construction of Coupling Operator<lb/></titlePart>
+				</docTitle>
+				<byline><docAuthor>Yasuyuki Ishikawa</docAuthor><lb/></byline>
+				<byline><affiliation>Department of Chemistry , Simon Fräser University</affiliation>, <address>Burnaby» British Columbia , Canada</address> <lb/></byline>
+				<reference>Z. Naturforsch. 86a, 366—368 (1981); </reference>
+				<note type="submission">received November 26  1980 <lb/></note>
+			</titlePage>
+			<div type="abstract">The construction of the coupling operator given by Adams is examined from the standpoint <lb/>of SCF convergency. A unified, hermitian coupling operator is derived by taking into account <lb/>optimum mixing for the pairs of occupied orbitals as well as the correct variational conditions.<lb/></div>
+			<div type="intro">1. Introduction <lb/></div>
+		</front>
+	</text>
+</tei>

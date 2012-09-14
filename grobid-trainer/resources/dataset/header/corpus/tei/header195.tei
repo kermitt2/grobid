@@ -1,0 +1,22 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="196"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Experiences with CLARE: a Computer-Supported <lb/>Collaborative Learning Environment <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Dadong Wan <lb/></docAuthor></byline>
+		<byline><affiliation>Center for Information Technology &amp; Management <lb/>Walter A. Haas School of Business <lb/>University of California <lb/></affiliation></byline>
+		<address>Berkeley, CA 94720-1900, USA <lb/></address>
+		<byline><docAuthor>Philip M. Johnson <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Information and Computer Sciences <lb/>University of Hawaii <lb/></affiliation></byline>
+		<address>Honolulu, HI 96822, USA <lb/></address>
+		<date>September 2, 1994 <lb/></date>
+		<div type="abstract">Abstract <lb/>Current collaborative learning systems focus on maximizing shared information. <lb/>However, meaningful learning is not simply information sharing but also knowledge <lb/>construction. CLARE is a computer-supported learning environment that facilitates <lb/>meaningful learning through collaborative knowledge construction. It provides a semiformal representation language called RESRA and an explicit process model called <lb/>SECAI. Experimental evaluation through 300 hours of classroom usage indicates that <lb/>CLARE does support meaningful learning. It also shows that a major bottleneck to <lb/>computer-mediated knowledge construction is summarization. Lessons learned through <lb/>the design and evaluation of CLARE provide new insights into both collaborative learning <lb/>systems and collaborative learning theories. <lb/></div>
+		<note type="other">This paper is a revised and expanded version of one appearing in the </note> <note type="reference">Proceedings of the 1994 ACM <lb/>Conference on Computer Supported Cooperative Work, October 22-26, 1994, Chapel Hill, North Carolina, <lb/>U.S.A. <lb/></note>
+		<pb/>
+		</front>
+</text>
+</tei>

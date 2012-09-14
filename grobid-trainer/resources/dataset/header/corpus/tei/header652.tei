@@ -1,0 +1,20 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="654"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">On GDM&apos;s: Geometrically Deformed Models for the Extraction of Closed <lb/>Shapes from Volume Data <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>By <lb/>James Vradenburg Miller <lb/></docAuthor></byline>
+		<note type="degree">A Thesis Submitted to the Graduate <lb/>Faculty of</note>
+		<byline><affiliation>Rensselaer Polytechnic Institute <lb/></affiliation></byline>
+		<note type="degree">in Partial Fulfillment of the <lb/>Requirements for the Degree of <lb/>Master of Science <lb/>Approved: <lb/>Dr. Michael J. Wozny <lb/>Thesis Adviser <lb/></note>
+		<byline><affiliation>Rensselaer Polytechnic Institute <lb/></affiliation></byline>
+		<address>Troy, New York <lb/></address>
+		<date>December 1990 <lb/></date>
+		<pb/>
+		</front>
+</text>
+</tei>

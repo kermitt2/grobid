@@ -1,0 +1,20 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="525"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">A Simplified Account of Polymorphic References <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Robert Harper <lb/></docAuthor></byline>
+		<date>June, 1993 <lb/></date>
+		<idno>CMU-CS-93-169 <lb/></idno>
+		<byline><affiliation>School of Computer Science <lb/>Carnegie Mellon University <lb/></affiliation></byline>
+		<address>Pittsburgh, PA 15213 <lb/></address>
+		<div type="abstract">Abstract <lb/>A proof of the soundness of Tofte&apos;s imperative type discipline with respect to a structured operational <lb/>semantics is given. The presentation is based on a semantic formalism that combines the benefits of the <lb/>approaches considered by Wright and Felleisen, and by Tofte, leading to a particularly simple proof of <lb/>soundness of Tofte&apos;s type discipline. <lb/></div>
+		<note type="grant">This research was sponsored by the Defense Advanced Research Projects Agency, CSTO, under the title &quot;The Fox <lb/>Project: Advanced Development of Systems Software&quot;, ARPA Order No. 8313, issued by ESD/AVS under Contract <lb/>No. F19628-91-C-0168. <lb/>The views and conclusions contained in this document are those of the author and should not be interpreted as <lb/>representing official policies, either expressed or implied, of the Defense Advanced Research Projects Agency or the <lb/>U.S. Government. <lb/></note>
+		<div type="intro">1 Introduction <lb/></div>
+		</front>
+</text>
+</tei>

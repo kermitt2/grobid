@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>a</marker>
+							<orgName type="department">Fuel Cell Institute</orgName>,
+							<orgName type="institution">Universiti Kebangsaan Malaysia</orgName>,
+							<address>
+								<postCode>43600</postCode>
+								<addrLine>UKM</addrLine>
+								<settlement>Bangi</settlement>,
+								<region>Selangor</region>,
+								<country>Malaysia</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>b</marker>
+							<orgName type="department">Department of Chemical and Process Engineering</orgName>,
+							<orgName type="institution">Universiti Kebangsaan Malaysia</orgName>,
+							<address>
+								<postCode>43600</postCode>
+								<addrLine>UKM</addrLine> 
+								<settlement>Bangi</settlement>,
+								<region>Selangor</region>,
+								<country>Malaysia</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

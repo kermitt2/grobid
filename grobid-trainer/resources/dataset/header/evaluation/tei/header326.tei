@@ -1,0 +1,19 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="331"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Belief Networks, Hidden Markov Models, and Markov <lb/>Random Fields: a Unifying View <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Padhraic Smyth <lb/></docAuthor></byline>
+		<byline><affiliation>Information and Computer Science Department <lb/>University of California, Irvine <lb/></affiliation></byline>
+		<address>CA 92697-3425. <lb/></address>
+		<email>smyth@ics.uci.edu <lb/></email>
+		<date>March 20, 1998 <lb/></date>
+		<div type="abstract">Abstract <lb/>The use of graphs to represent independence structure in multivariate probability <lb/>models has been pursued in a relatively independent fashion across a wide variety of <lb/>research disciplines since the beginning of this century. This paper provides a brief <lb/>overview of the current status of such research with particular attention to recent developments which have served to unify such seemingly disparate topics as probabilistic <lb/>expert systems, statistical physics, image analysis, genetics, decoding of error-correcting <lb/>codes, Kalman filters, and speech recognition with Markov models. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

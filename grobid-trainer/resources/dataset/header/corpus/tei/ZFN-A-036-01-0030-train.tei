@@ -1,0 +1,29 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="ZFN-A-036-01-0030"/>
+	</teiHeader>
+	<text xml:lang="de">
+		<front>
+			<titlePage>
+				<docTitle>
+					<titlePart type="main">Interpretation der Absorptionsspektren von Aza- und <lb/>
+Azinium-substituierten Anthracenen<lb/></titlePart>
+				</docTitle>
+				<byline><docAuthor>J. Bendig und D. Kreysig</docAuthor><lb/></byline>
+				<byline><affiliation>Sektion Chemie der Humboldt-Universität Berlin</affiliation> (<address>DDR</address>)<lb/></byline>
+                                <byline><docAuthor>A. Kawski</docAuthor><lb/></byline>
+                                <byline><affiliation>Lumineszenz-Forechungsgruppe, Institut fur Physik der Universität Gdansk</affiliation>, <address>Polen</address><lb/></byline>
+				<reference>Z. Naturforsch. 86a, 30—93 (1981); </reference>
+				<note type="submission">eingegangen am 4. November 1980<lb/></note>
+				<note type="english-title">The Interpretation of Absorption Spectra of Aza- and Azinium-Substituted Anthracenes<lb/></note>
+			</titlePage>
+			<div type="abstract">The absorption spectra of the 3 isomeric aza- and the 4 isomeric azinium-anthraoenes are dis- <lb/>
+cussed on the basis of the absorption anisotropy, the oscillator strenght and the fluorescence <lb/>
+decay times. The influence of endocyclic substitution depends on the position of the aza- and <lb/>
+azininrngroup, respectively. In the case of acridine, acridinium» benzo[g]quinolinium and benzoff]- <lb/>
+isoquinolinium the So -> Sa-transition is observable. The spectra of benzo[g]quinoline, benzo[f)* <lb/>
+isoquinoline and acridizinium are similar to those of anthracene. <lb/></div>
+			<div type="intro">Einleitung<lb/></div>
+		</front>
+	</text>
+</tei>

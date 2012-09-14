@@ -1,0 +1,21 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="104"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Generative Models for Discovering Sparse Distributed <lb/>Representations <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Geoffrey E. Hinton and Zoubin Ghahramani <lb/></docAuthor></byline>
+		<byline><affiliation>Department of Computer Science <lb/>University of Toronto <lb/></affiliation></byline>
+		<address>Toronto, Ontario, M5S 1A4, Canada <lb/></address>
+		<email>hinton@cs.toronto.edu,</email> 
+		<email>zoubin@cs.toronto.edu <lb/></email>
+		<date>May 9, 1997 <lb/></date>
+		<note type="other">A modified version to appear in </note><note type="reference">Philosophical Transactions of the Royal Society B, 1997. <lb/></note>
+		<div type="abstract">Abstract <lb/>We describe a hierarchical, generative model that can be viewed as a non-linear generalization of factor analysis and can be implemented in a neural network. The model uses <lb/>bottom-up, top-down and lateral connections to perform Bayesian perceptual inference correctly. Once perceptual inference has been performed the connection strengths can be updated <lb/>using a very simple learning rule that only requires locally available information. We demon <lb/>strate that the network learns to extract sparse, distributed, hierarchical representations. <lb/></div>
+		<div type="intro">1 Introduction</div>
+		</front>
+</text>
+</tei>

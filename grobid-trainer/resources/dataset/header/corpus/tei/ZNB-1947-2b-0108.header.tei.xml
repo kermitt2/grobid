@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="ZNB-1947-2b-0108"/>
+	</teiHeader>
+	<text xml:lang="de">
+		<front>
+			<lb/>
+			<docTitle>
+				<titlePart>Über das Molekulargewicht des Tabakmosaikvirus<lb/></titlePart>
+			</docTitle>
+
+			<byline>
+				<docAuthor>Von GERHARD SCHRAMM und GERNOT BERGOLD<lb/></docAuthor>
+			</byline>
+
+			<byline>
+				<affiliation>Aus dem Kaiser-Wilhelm-Institut für Biochemie, Abteilung Virusforschung,</affiliation>
+			</byline>
+
+			<address>Tübingen<lb/></address>
+
+			<reference>(Z. Naturforschg. 2b, 108—112 [1947];</reference>
+
+			<note type="submission">eingegangen am 30. November 1946)<lb/></note>
+
+			<div type="abstract">Unter Berücksichtigung verschiedener Fehlerquellen wird das Molekulargewicht des Tabak-<lb/>mosaikvirus aus der Sedimentations-und Diffusionskonstante zu 40,7 * 10 6 bestimmt.<lb/></div>
+
+		</front>
+	</text>
+</tei>

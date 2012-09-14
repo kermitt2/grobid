@@ -1,0 +1,16 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="255"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">SEQUOIA 2000 -- A REFLECTION ON THE FIRST THREE YEARS <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Michael Stonebraker <lb/></docAuthor></byline>
+		<byline><affiliation>EECS Department <lb/>University of California, Berkeley <lb/></affiliation></byline>
+		<div type="abstract">Abstract <lb/>This paper describes the SEQUOIA 2000 project <lb/>and its implementation efforts during the first three years. <lb/>Included are the objectives we had, how we chose to <lb/>address them and some of the lessons we learned from <lb/>this endeavor. <lb/></div>
+		<div type="intro">1. INTRODUCTION</div>
+		</front>
+</text>
+</tei>

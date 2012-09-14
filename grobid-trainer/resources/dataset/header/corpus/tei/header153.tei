@@ -1,0 +1,28 @@
+<tei>
+	<teiHeader>
+	<fileDesc xml:id="154"/>
+	</teiHeader>
+<text xml:lang="en">
+		<front>
+		<docTitle>
+			<titlePart type="main">Emerging Opportunities for Theoretical Computer Science <lb/></titlePart>
+		</docTitle>
+		<byline><docAuthor>Alfred V. Aho <lb/></docAuthor></byline>
+		<byline><affiliation>Columbia University <lb/></affiliation></byline>
+		<byline><docAuthor>David S. Johnson <lb/></docAuthor></byline>
+		<byline><affiliation>AT &amp; T Research <lb/></affiliation></byline>
+		<byline><docAuthor>Richard M. Karp (Chair) <lb/></docAuthor></byline>
+		<byline><affiliation>University of Washington <lb/></affiliation></byline>
+		<byline><docAuthor>S. Rao Kosaraju <lb/></docAuthor></byline>
+		<byline><affiliation>Johns Hopkins University <lb/></affiliation></byline>
+		<byline><docAuthor>Catherine C. McGeoch <lb/></docAuthor></byline>
+		<byline><affiliation>Amherst College <lb/></affiliation></byline>
+		<byline><docAuthor>Christos H. Papadimitriou <lb/></docAuthor></byline>
+		<byline><affiliation>University of California at Berkeley <lb/></affiliation></byline>
+		<byline><docAuthor>Pavel Pevzner <lb/></docAuthor></byline>
+		<byline><affiliation>University of Southern California <lb/></affiliation></byline>
+		<date>October 15, 1996 <lb/></date>
+		<div type="abstract">Abstract <lb/>The principles underlying this report can be summarized as follows: <lb/>1. A strong theoretical foundation is vital to computer science.</div>
+		</front>
+</text>
+</tei>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Prasad</forename>
+								<surname>Kaparaju</surname>
+								<marker>a</marker> ,
+							</persName>
+							<persName>
+								<forename>Inmaculada</forename>
+								<surname>Buendia</surname>
+								<marker>a,1</marker> ,
+							</persName>
+							<persName>
+								<forename>Lars</forename>
+								<surname>Ellegaard</surname>
+								<marker>b</marker> ,
+							</persName>
+							<persName>
+								<forename>Irini</forename>
+								<surname>Angelidakia</surname>
+								<marker>a,*</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

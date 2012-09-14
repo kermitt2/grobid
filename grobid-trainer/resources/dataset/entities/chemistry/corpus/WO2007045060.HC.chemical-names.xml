@@ -1,0 +1,657 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<nite:root nite:id="WO2007045060.HC.chemical-names" xmlns:nite="http://nite.sourceforge.net/">
+   <chem-name nite:id="WO2007045060.HC.chemical-names.1" comment="" name="erythroidine" relevant="false" chebi-id="WO2007045060:900289" epochem-id="EPOCHEM:NEW:COMPOUND:282">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_562)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.2" comment="" name="erythroidine" relevant="false" chebi-id="WO2007045060:900289" epochem-id="EPOCHEM:NEW:COMPOUND:282">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_595)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.5" comment="" name="-erythroidine" relevant="false" chebi-id="WO2007045060:109324" epochem-id="EPOCHEM:NEW:COMPOUND:2116">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_669)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.9" comment="" name="erythrartine" relevant="true" chebi-id="WO2007045060:169967" epochem-id="EPOCHEM:NEW:COMPOUND:283">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_1108)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.11" comment="" name="erythrartine" relevant="true" chebi-id="WO2007045060:169967" epochem-id="EPOCHEM:NEW:COMPOUND:283">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_2327)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.12" comment="" name="erythrartine" relevant="true" chebi-id="WO2007045060:169967" epochem-id="EPOCHEM:NEW:COMPOUND:283">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_2454)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.13" comment="" name="erythrartine" relevant="true" chebi-id="WO2007045060:169967" epochem-id="EPOCHEM:NEW:COMPOUND:283">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_3450)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.14" comment="" name="erythrartine" relevant="true" chebi-id="WO2007045060:169967" epochem-id="EPOCHEM:NEW:COMPOUND:283">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_4434)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.15" comment="" name="erythrartine" relevant="true" chebi-id="WO2007045060:169967" epochem-id="EPOCHEM:NEW:COMPOUND:283">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_4444)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.16" comment="" name="erythrartine" relevant="true" chebi-id="WO2007045060:169967" epochem-id="EPOCHEM:NEW:COMPOUND:283">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_4982)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.17" comment="" name="erythrartine" relevant="true" chebi-id="WO2007045060:169967" epochem-id="EPOCHEM:NEW:COMPOUND:283">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5118)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.18" comment="" name="erythrartine" relevant="true" chebi-id="WO2007045060:169967" epochem-id="EPOCHEM:NEW:COMPOUND:283">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5187)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.19" comment="" name="erythrartine" relevant="true" chebi-id="WO2007045060:169967" epochem-id="EPOCHEM:NEW:COMPOUND:283">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5525)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.20" comment="" name="erythrartine" relevant="true" chebi-id="WO2007045060:169967" epochem-id="EPOCHEM:NEW:COMPOUND:283">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_8788)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.21" comment="" name="erythrartine" relevant="true" chebi-id="WO2007045060:169967" epochem-id="EPOCHEM:NEW:COMPOUND:283">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_8803)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.22" comment="" name="erythrartine" relevant="true" chebi-id="WO2007045060:169967" epochem-id="EPOCHEM:NEW:COMPOUND:283">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_8951)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.23" comment="" name="erythrartine" relevant="true" chebi-id="WO2007045060:169967" epochem-id="EPOCHEM:NEW:COMPOUND:283">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_9822)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.24" comment="" name="erythrartine" relevant="true" chebi-id="WO2007045060:169967" epochem-id="EPOCHEM:NEW:COMPOUND:283">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_10115)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.25" comment="" name="erythrartine" relevant="true" chebi-id="WO2007045060:169967" epochem-id="EPOCHEM:NEW:COMPOUND:283">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_10391)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.26" comment="" name="erythrartine" relevant="true" chebi-id="WO2007045060:169967" epochem-id="EPOCHEM:NEW:COMPOUND:283">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_10878)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.27" comment="" name="erythrartine" relevant="true" chebi-id="WO2007045060:169967" epochem-id="EPOCHEM:NEW:COMPOUND:283">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_11034)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.63" comment="" name="[beta]- erythroidine" relevant="false" chebi-id="WO2007045060:919013" epochem-id="EPOCHEM:NEW:COMPOUND:285">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_610)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_608)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_611)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_609)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_612)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.64" comment="" name="erysodienone" relevant="false" chebi-id="WO2007045060:612721" epochem-id="EPOCHEM:NEW:COMPOUND:286">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_1014)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.65" comment="" name="3-desmethoxy erythratidinone" relevant="false" chebi-id="WO2007045060:821147" epochem-id="EPOCHEM:NEW:COMPOUND:287">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_1018)..id(WO2007045060_w_1019)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_1017)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_1016)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.66" comment="" name="[alpha]-erythroidine" relevant="false" chebi-id="WO2007045060:13255" epochem-id="EPOCHEM:NEW:COMPOUND:288">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_1024)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_1023)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_1022)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_1025)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_1021)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.67" comment="" name="-erythroidine" relevant="false" chebi-id="WO2007045060:109324" epochem-id="EPOCHEM:NEW:COMPOUND:2116">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_612)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.68" comment="" name="-erythroidine" relevant="false" chebi-id="WO2007045060:109324" epochem-id="EPOCHEM:NEW:COMPOUND:2116">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_1025)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.70" comment="" name="orientaline" relevant="false" chebi-id="WO2007045060:364976" epochem-id="EPOCHEM:NEW:COMPOUND:290">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_1049)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.71" comment="" name="protosinomenine" relevant="false" chebi-id="WO2007045060:850280" epochem-id="EPOCHEM:NEW:COMPOUND:291">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_1058)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.72" comment="N-Norprotosinomenine" name="W-Norprotosinomenine" relevant="false" chebi-id="WO2007045060:989878" epochem-id="EPOCHEM:NEW:COMPOUND:292">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_1060)..id(WO2007045060_w_1062)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.74" comment="" name="isoboldine" relevant="false" chebi-id="WO2007045060:944682" epochem-id="EPOCHEM:NEW:COMPOUND:294">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_1064)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.75" comment="" name="erybidine" relevant="false" chebi-id="WO2007045060:726445" epochem-id="EPOCHEM:NEW:COMPOUND:295">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_1066)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.76" comment="" name="scoureline" relevant="false" chebi-id="WO2007045060:849880" epochem-id="EPOCHEM:NEW:COMPOUND:296">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_1068)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.77" comment="" name="coreximine" relevant="false" chebi-id="WO2007045060:569619" epochem-id="EPOCHEM:NEW:COMPOUND:297">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_1070)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.78" comment="" name="hypaforin" relevant="false" chebi-id="WO2007045060:85943" epochem-id="EPOCHEM:NEW:COMPOUND:298">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_1072)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.79" comment="" name="hypaforin" relevant="false" chebi-id="WO2007045060:85943" epochem-id="EPOCHEM:NEW:COMPOUND:298">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_1118)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.80" comment="" name="coline" relevant="false" chebi-id="WO2007045060:160982" epochem-id="EPOCHEM:NEW:COMPOUND:299">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_1074)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.81" comment="" name="erysothrina" relevant="false" chebi-id="WO2007045060:17811" epochem-id="EPOCHEM:NEW:COMPOUND:300">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_1098)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.83" comment="N-erysothrina oxide" name="[Lambda]/-erysothrina oxide" relevant="false" chebi-id="WO2007045060:122815" epochem-id="EPOCHEM:NEW:COMPOUND:301">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_1105)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_1103)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_1100)..id(WO2007045060_w_1102)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_1106)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_1104)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.84" comment="N-erythrarine oxide" name="[Lambda]/-erythrartine oxide" relevant="false" chebi-id="WO2007045060:477276" epochem-id="EPOCHEM:NEW:COMPOUND:302">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_1110)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_1113)..id(WO2007045060_w_1116)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_1111)..id(WO2007045060_w_1112)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.86" comment="dihydro-&#946;-erythroidine" name="dihydro-/?-erythroidine" relevant="false" chebi-id="WO2007045060:205807" epochem-id="EPOCHEM:NEW:COMPOUND:303">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_1280)..id(WO2007045060_w_1281)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_1283)..id(WO2007045060_w_1285)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_1282)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.87" comment="" name="nicotine" relevant="false" chebi-id="CHEBI:18723" epochem-id="EPOCHEM:COMPOUND:6020">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_1291)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.88" comment="" name="DHBE" relevant="false" chebi-id="WO2007045060:999576" epochem-id="EPOCHEM:NEW:COMPOUND:304">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_1287)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.89" comment="" name="DHBE" relevant="false" chebi-id="WO2007045060:999576" epochem-id="EPOCHEM:NEW:COMPOUND:304">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_1345)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.90" comment="" name="pentobarbital" relevant="false" chebi-id="CHEBI:7983" epochem-id="EPOCHEM:COMPOUND:5394">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_1564)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.91" comment="" name="pilocarpine" relevant="false" chebi-id="CHEBI:39462" epochem-id="EPOCHEM:NEW:COMPOUND:305">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_1572)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.92" comment="" name="diazepam" relevant="false" chebi-id="CHEBI:4494" epochem-id="EPOCHEM:COMPOUND:5609">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_1653)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.93" comment="" name="diazepam" relevant="false" chebi-id="CHEBI:4494" epochem-id="EPOCHEM:COMPOUND:5609">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_1719)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.94" comment="" name="diazepam" relevant="false" chebi-id="CHEBI:4494" epochem-id="EPOCHEM:COMPOUND:5609">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_3480)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.95" comment="" name="diazepam" relevant="false" chebi-id="CHEBI:4494" epochem-id="EPOCHEM:COMPOUND:5609">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_3535)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.96" comment="" name="diazepam" relevant="false" chebi-id="CHEBI:4494" epochem-id="EPOCHEM:COMPOUND:5609">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_9499)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.97" comment="" name="11-hydroxierytravine" relevant="false" chebi-id="WO2007045060:881823" epochem-id="EPOCHEM:NEW:COMPOUND:306">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_2003)..id(WO2007045060_w_2005)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.98" comment="" name="erytrartine" relevant="false" chebi-id="WO2007045060:479082" epochem-id="EPOCHEM:NEW:COMPOUND:307">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_1999)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.99" comment="" name="erytravine" relevant="false" chebi-id="WO2007045060:926316" epochem-id="EPOCHEM:NEW:COMPOUND:308">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_2001)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.100" comment="" name="erytravine" relevant="false" chebi-id="WO2007045060:926316" epochem-id="EPOCHEM:NEW:COMPOUND:308">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_2655)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.101" comment="" name="erytravine" relevant="false" chebi-id="WO2007045060:926316" epochem-id="EPOCHEM:NEW:COMPOUND:308">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_2850)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.102" comment="" name="ethanol" relevant="false" chebi-id="CHEBI:16236" epochem-id="EPOCHEM:COMPOUND:4765">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_1087)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.103" comment="" name="ethanol" relevant="false" chebi-id="CHEBI:16236" epochem-id="EPOCHEM:COMPOUND:4765">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_2579)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.104" comment="" name="ethanol" relevant="false" chebi-id="CHEBI:16236" epochem-id="EPOCHEM:COMPOUND:4765">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_3158)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.105" comment="" name="ethanol" relevant="false" chebi-id="CHEBI:16236" epochem-id="EPOCHEM:COMPOUND:4765">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_3767)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.106" comment="" name="water" relevant="false" chebi-id="CHEBI:15377" epochem-id="EPOCHEM:COMPOUND:5421">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_2581)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.107" comment="" name="water" relevant="false" chebi-id="CHEBI:15377" epochem-id="EPOCHEM:COMPOUND:5421">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_3335)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.108" comment="" name="acetic acid" relevant="false" chebi-id="CHEBI:15366" epochem-id="EPOCHEM:COMPOUND:445">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_2717)..id(WO2007045060_w_2718)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.109" comment="" name="chloroform" relevant="false" chebi-id="CHEBI:35255" epochem-id="EPOCHEM:NEW:COMPOUND:309">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_2730)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.110" comment="" name="chloroform" relevant="false" chebi-id="CHEBI:35255" epochem-id="EPOCHEM:NEW:COMPOUND:309">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_2740)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.111" comment="" name="chloroform" relevant="false" chebi-id="CHEBI:35255" epochem-id="EPOCHEM:NEW:COMPOUND:309">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_2800)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.113" comment="" name="ammonium hydroxide" relevant="false" chebi-id="CHEBI:18219" epochem-id="EPOCHEM:COMPOUND:7361">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_2773)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_2772)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.114" comment="fluoresceine" name="fiuoresceine" relevant="false" chebi-id="WO2007045060:718859" epochem-id="EPOCHEM:NEW:COMPOUND:310">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_3144)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.115" comment="" name="toluene" relevant="false" chebi-id="CHEBI:17578" epochem-id="EPOCHEM:COMPOUND:5618">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_3154)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.116" comment="" name="acetone" relevant="false" chebi-id="CHEBI:15347" epochem-id="EPOCHEM:COMPOUND:5316">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_3156)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.117" comment="" name="eritrartine" relevant="false" chebi-id="WO2007045060:976234" epochem-id="EPOCHEM:NEW:COMPOUND:311">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_3179)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.118" comment="" name="eritravine" relevant="false" chebi-id="WO2007045060:155731" epochem-id="EPOCHEM:NEW:COMPOUND:312">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_3193)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.119" comment="" name="11- OH-eritravina" relevant="false" chebi-id="WO2007045060:629640" epochem-id="EPOCHEM:NEW:COMPOUND:313">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_3214)..id(WO2007045060_w_3215)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_3213)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_3212)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_3216)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.120" comment="" name="Deuterated chloroform" relevant="false" chebi-id="WO2007045060:917096" epochem-id="EPOCHEM:NEW:COMPOUND:314">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_3258)..id(WO2007045060_w_3259)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.121" comment="" name="11-OH-erythravine" relevant="true" chebi-id="WO2007045060:54810" epochem-id="EPOCHEM:NEW:COMPOUND:315">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_3454)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_3458)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_3456)..id(WO2007045060_w_3457)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_3455)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.122" comment="" name="sodium chlorate" relevant="false" chebi-id="WO2007045060:160127" epochem-id="EPOCHEM:NEW:COMPOUND:316">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_3515)..id(WO2007045060_w_3516)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.123" comment="" name="11-OH-erythravine" relevant="true" chebi-id="WO2007045060:54810" epochem-id="EPOCHEM:NEW:COMPOUND:315">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_2334)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_2332)..id(WO2007045060_w_2333)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_2331)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_2335)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.124" comment="" name="11-OH-erythravine" relevant="true" chebi-id="WO2007045060:54810" epochem-id="EPOCHEM:NEW:COMPOUND:315">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_2437)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_2436)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_2435)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_2434)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_2433)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.125" comment="" name="11-OH-erythravine" relevant="true" chebi-id="WO2007045060:54810" epochem-id="EPOCHEM:NEW:COMPOUND:315">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_4442)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_4438)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_4441)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_4439)..id(WO2007045060_w_4440)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.126" comment="" name="11-OH-erythravine" relevant="true" chebi-id="WO2007045060:54810" epochem-id="EPOCHEM:NEW:COMPOUND:315">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5445)..id(WO2007045060_w_5446)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5444)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5447)..id(WO2007045060_w_5448)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.127" comment="" name="11-OH-erythravine" relevant="true" chebi-id="WO2007045060:54810" epochem-id="EPOCHEM:NEW:COMPOUND:315">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5464)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5463)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5466)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5465)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5467)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.128" comment="" name="11-OH-erythravine" relevant="true" chebi-id="WO2007045060:54810" epochem-id="EPOCHEM:NEW:COMPOUND:315">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5611)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5614)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5613)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5610)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5612)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.129" comment="" name="11-OH-erythravine" relevant="true" chebi-id="WO2007045060:54810" epochem-id="EPOCHEM:NEW:COMPOUND:315">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5891)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5894)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5890)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5893)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5892)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.130" comment="" name="11-OH-erythravine" relevant="true" chebi-id="WO2007045060:54810" epochem-id="EPOCHEM:NEW:COMPOUND:315">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_8430)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_8427)..id(WO2007045060_w_8428)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_8431)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_8429)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.131" comment="" name="11-hydroxy-erythravine" relevant="false" chebi-id="WO2007045060:564604" epochem-id="EPOCHEM:NEW:COMPOUND:317">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5442)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5439)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5438)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5441)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5440)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.132" comment="" name="oxygen" relevant="false" chebi-id="CHEBI:25805" epochem-id="EPOCHEM:NEW:COMPOUND:318">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5046)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.133" comment="" name="oxygen" relevant="false" chebi-id="CHEBI:25805" epochem-id="EPOCHEM:NEW:COMPOUND:318">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5293)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.134" comment="" name="Erythravine" relevant="true" chebi-id="WO2007045060:270936" epochem-id="EPOCHEM:NEW:COMPOUND:319">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_2329)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.135" comment="" name="Erythravine" relevant="true" chebi-id="WO2007045060:270936" epochem-id="EPOCHEM:NEW:COMPOUND:319">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_2335)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.136" comment="" name="Erythravine" relevant="true" chebi-id="WO2007045060:270936" epochem-id="EPOCHEM:NEW:COMPOUND:319">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_2437)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.137" comment="" name="Erythravine" relevant="true" chebi-id="WO2007045060:270936" epochem-id="EPOCHEM:NEW:COMPOUND:319">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_2458)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.138" comment="" name="Erythravine" relevant="true" chebi-id="WO2007045060:270936" epochem-id="EPOCHEM:NEW:COMPOUND:319">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_3452)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.139" comment="" name="Erythravine" relevant="true" chebi-id="WO2007045060:270936" epochem-id="EPOCHEM:NEW:COMPOUND:319">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_3458)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.140" comment="" name="Erythravine" relevant="true" chebi-id="WO2007045060:270936" epochem-id="EPOCHEM:NEW:COMPOUND:319">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_4436)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.141" comment="" name="Erythravine" relevant="true" chebi-id="WO2007045060:270936" epochem-id="EPOCHEM:NEW:COMPOUND:319">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_4442)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.142" comment="" name="Erythravine" relevant="true" chebi-id="WO2007045060:270936" epochem-id="EPOCHEM:NEW:COMPOUND:319">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_4445)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.143" comment="" name="Erythravine" relevant="true" chebi-id="WO2007045060:270936" epochem-id="EPOCHEM:NEW:COMPOUND:319">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5217)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.144" comment="" name="Erythravine" relevant="true" chebi-id="WO2007045060:270936" epochem-id="EPOCHEM:NEW:COMPOUND:319">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5382)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.145" comment="" name="Erythravine" relevant="true" chebi-id="WO2007045060:270936" epochem-id="EPOCHEM:NEW:COMPOUND:319">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5442)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.146" comment="" name="Erythravine" relevant="true" chebi-id="WO2007045060:270936" epochem-id="EPOCHEM:NEW:COMPOUND:319">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5448)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.147" comment="" name="Erythravine" relevant="true" chebi-id="WO2007045060:270936" epochem-id="EPOCHEM:NEW:COMPOUND:319">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5467)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.148" comment="" name="Erythravine" relevant="true" chebi-id="WO2007045060:270936" epochem-id="EPOCHEM:NEW:COMPOUND:319">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5475)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.149" comment="" name="11-hidroxi-erythravine" relevant="false" chebi-id="WO2007045060:239639" epochem-id="EPOCHEM:NEW:COMPOUND:319">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5608)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.150" comment="" name="Erythravine" relevant="true" chebi-id="WO2007045060:270936" epochem-id="EPOCHEM:NEW:COMPOUND:319">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5614)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.151" comment="" name="Erythravine" relevant="true" chebi-id="WO2007045060:270936" epochem-id="EPOCHEM:NEW:COMPOUND:319">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5894)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.152" comment="" name="Erythravine" relevant="true" chebi-id="WO2007045060:270936" epochem-id="EPOCHEM:NEW:COMPOUND:319">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_8108)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.153" comment="" name="Erythravine" relevant="true" chebi-id="WO2007045060:270936" epochem-id="EPOCHEM:NEW:COMPOUND:319">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_8199)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.154" comment="" name="Erythravine" relevant="true" chebi-id="WO2007045060:270936" epochem-id="EPOCHEM:NEW:COMPOUND:319">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_8271)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.155" comment="" name="Erythravine" relevant="true" chebi-id="WO2007045060:270936" epochem-id="EPOCHEM:NEW:COMPOUND:319">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_8431)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.157" comment="11-hydroxy-erythravine" name="11-hidroxi-erythravine" relevant="false" chebi-id="WO2007045060:239639" epochem-id="EPOCHEM:NEW:COMPOUND:2119">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_8595)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.159" comment="" name="Erythravine" relevant="true" chebi-id="WO2007045060:270936" epochem-id="EPOCHEM:NEW:COMPOUND:319">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_9204)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.160" comment="" name="Erythravine" relevant="true" chebi-id="WO2007045060:270936" epochem-id="EPOCHEM:NEW:COMPOUND:319">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_9824)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.161" comment="" name="Erythravine" relevant="true" chebi-id="WO2007045060:270936" epochem-id="EPOCHEM:NEW:COMPOUND:319">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_9857)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.162" comment="" name="Erythravine" relevant="true" chebi-id="WO2007045060:270936" epochem-id="EPOCHEM:NEW:COMPOUND:319">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_10113)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.164" comment="" name="Erythravine" relevant="true" chebi-id="WO2007045060:270936" epochem-id="EPOCHEM:NEW:COMPOUND:319">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_10283)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.165" comment="" name="Erythravine" relevant="true" chebi-id="WO2007045060:270936" epochem-id="EPOCHEM:NEW:COMPOUND:319">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_10389)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.166" comment="" name="Erythravine" relevant="true" chebi-id="WO2007045060:270936" epochem-id="EPOCHEM:NEW:COMPOUND:319">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_10777)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.167" comment="" name="Erythravine" relevant="true" chebi-id="WO2007045060:270936" epochem-id="EPOCHEM:NEW:COMPOUND:319">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_10882)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.168" comment="" name="Erythravine" relevant="true" chebi-id="WO2007045060:270936" epochem-id="EPOCHEM:NEW:COMPOUND:319">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_11038)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.169" comment="11-hydroxy-erythravine" name="11-hidroxi-erythravine" relevant="false" chebi-id="WO2007045060:239639" epochem-id="EPOCHEM:NEW:COMPOUND:2119">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_8627)..id(WO2007045060_w_8631)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.170" comment="11-0H-erythravine" name="11 -OH- erhytravine" relevant="false" chebi-id="WO2007045060:553762" epochem-id="EPOCHEM:NEW:COMPOUND:321">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_9117)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_9115)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_9114)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_9116)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_9113)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.171" comment="11-0H-erythravine" name="11 -OH- erhytravine" relevant="false" chebi-id="WO2007045060:553762" epochem-id="EPOCHEM:NEW:COMPOUND:321">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_9258)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_9255)..id(WO2007045060_w_9256)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_9254)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_9257)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.172" comment="11-0H-erythravine" name="11 -OH- erhytravine" relevant="false" chebi-id="WO2007045060:553762" epochem-id="EPOCHEM:NEW:COMPOUND:321">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_9827)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_9826)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_9829)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_9828)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_9830)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.173" comment="11-0H-erythravine" name="11 -OH- erhytravine" relevant="false" chebi-id="WO2007045060:553762" epochem-id="EPOCHEM:NEW:COMPOUND:321">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_10107)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_10110)..id(WO2007045060_w_10111)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_10108)..id(WO2007045060_w_10109)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.174" comment="11-0H-erythravine" name="11 -OH- erhytravine" relevant="false" chebi-id="WO2007045060:553762" epochem-id="EPOCHEM:NEW:COMPOUND:321">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_10279)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_10276)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_10280)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_10278)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_10277)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.175" comment="11-0H-erythravine" name="11 -OH- erhytravine" relevant="false" chebi-id="WO2007045060:553762" epochem-id="EPOCHEM:NEW:COMPOUND:321">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_10384)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_10386)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_10383)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_10385)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_10387)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.176" comment="" name="erythratine" relevant="false" chebi-id="WO2007045060:683412" epochem-id="EPOCHEM:NEW:COMPOUND:322">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_9134)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.177" comment="11-hydroxy-erythravine" name="11- hidroxi-erhytravine" relevant="false" chebi-id="WO2007045060:414528" epochem-id="EPOCHEM:NEW:COMPOUND:323">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_9867)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_9871)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_9868)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_9870)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_9869)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.178" comment="11-hydroxy-erythravine" name="11- hidroxi-erhytravine" relevant="false" chebi-id="WO2007045060:414528" epochem-id="EPOCHEM:NEW:COMPOUND:323">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_9975)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_9971)..id(WO2007045060_w_9974)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.179" comment="" name="erythrartine" relevant="true" chebi-id="WO2007045060:169967" epochem-id="EPOCHEM:NEW:COMPOUND:283">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_1115)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.180" comment="" name="Erythravine" relevant="true" chebi-id="WO2007045060:270936" epochem-id="EPOCHEM:NEW:COMPOUND:319">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_8631)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.181" comment="" name="erhysotrine" relevant="false" chebi-id="WO2007045060:786311" epochem-id="EPOCHEM:NEW:COMPOUND:1586">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_9148)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.182" comment="N-oxido-erythratine" name="[Lambda]/-[omicron]xido-erhytrartine" relevant="false" chebi-id="WO2007045060:784278" epochem-id="EPOCHEM:NEW:COMPOUND:1587">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_9141)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_9143)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_9136)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_9138)..id(WO2007045060_w_9139)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_9142)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_9137)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_9140)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_9144)..id(WO2007045060_w_9146)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.183" comment="N-oxido-erysothrine" name="[Lambda]/-[omicron]xido- erysothrine" relevant="false" chebi-id="WO2007045060:520989" epochem-id="EPOCHEM:NEW:COMPOUND:1588">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_9159)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_9157)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_9155)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_9153)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_9156)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_9158)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_9160)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_9154)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_9150)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_9152)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_9151)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.184" comment="" name="methanol" relevant="false" chebi-id="CHEBI:17790" epochem-id="EPOCHEM:COMPOUND:4792">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_9163)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.185" comment="" name="d-tubocurarine" relevant="false" chebi-id="WO2007045060:172334" epochem-id="EPOCHEM:NEW:COMPOUND:2048">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_418)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_420)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_419)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.186" comment="" name="d-tubocurarine" relevant="false" chebi-id="WO2007045060:172334" epochem-id="EPOCHEM:NEW:COMPOUND:2048">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_573)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_572)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_574)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.187" comment="" name="d-tubocurarine" relevant="false" chebi-id="WO2007045060:172334" epochem-id="EPOCHEM:NEW:COMPOUND:2048">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_1244)..id(WO2007045060_w_1246)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.188" comment="" name="calcium" relevant="false" chebi-id="CHEBI:22984" epochem-id="EPOCHEM:COMPOUND:7090">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_1403)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.189" comment="" name="&lt;13&gt;C" relevant="false" chebi-id="CHEBI:36928" epochem-id="EPOCHEM:NEW:COMPOUND:2035">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_3933)..id(WO2007045060_w_3934)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_3932)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_3931)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.190" comment="" name="&lt;13&gt;C" relevant="false" chebi-id="CHEBI:36928" epochem-id="EPOCHEM:NEW:COMPOUND:2035">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_4167)..id(WO2007045060_w_4168)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_4166)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_4169)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.191" comment="" name="&lt;13&gt;C" relevant="false" chebi-id="CHEBI:36928" epochem-id="EPOCHEM:NEW:COMPOUND:2035">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_4428)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_4427)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_4426)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_4425)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.192" comment="" name="&lt;13&gt;C" relevant="false" chebi-id="CHEBI:36928" epochem-id="EPOCHEM:NEW:COMPOUND:2035">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5087)..id(WO2007045060_w_5088)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5090)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5089)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.193" comment="" name="&lt;13&gt;C" relevant="false" chebi-id="CHEBI:36928" epochem-id="EPOCHEM:NEW:COMPOUND:2035">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5286)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5284)..id(WO2007045060_w_5285)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5287)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.194" comment="" name="&lt;13&gt;C" relevant="false" chebi-id="CHEBI:36928" epochem-id="EPOCHEM:NEW:COMPOUND:2035">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5539)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5537)..id(WO2007045060_w_5538)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5540)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.195" comment="" name="&lt;1&gt;H" relevant="false" chebi-id="CHEBI:29236" epochem-id="EPOCHEM:NEW:COMPOUND:2008">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_3927)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_3926)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_3928)..id(WO2007045060_w_3929)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.196" comment="" name="&lt;1&gt;H" relevant="false" chebi-id="CHEBI:29236" epochem-id="EPOCHEM:NEW:COMPOUND:2008">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_4161)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_4163)..id(WO2007045060_w_4164)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_4162)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.197" comment="" name="&lt;1&gt;H" relevant="false" chebi-id="CHEBI:29236" epochem-id="EPOCHEM:NEW:COMPOUND:2008">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_4421)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_4420)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_4422)..id(WO2007045060_w_4423)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.198" comment="" name="&lt;1&gt;H" relevant="false" chebi-id="CHEBI:29236" epochem-id="EPOCHEM:NEW:COMPOUND:2008">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5073)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5072)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5070)..id(WO2007045060_w_5071)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.199" comment="" name="&lt;1&gt;H" relevant="false" chebi-id="CHEBI:29236" epochem-id="EPOCHEM:NEW:COMPOUND:2008">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5230)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5228)..id(WO2007045060_w_5229)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5231)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.200" comment="" name="&lt;1&gt;H" relevant="false" chebi-id="CHEBI:29236" epochem-id="EPOCHEM:NEW:COMPOUND:2008">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5459)..id(WO2007045060_w_5461)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5458)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.201" comment="" name="&lt;1&gt;H" relevant="false" chebi-id="CHEBI:29236" epochem-id="EPOCHEM:NEW:COMPOUND:2008">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5531)..id(WO2007045060_w_5532)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5534)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5533)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.202" comment="serotonin" name="serotonine" relevant="false" chebi-id="CHEBI:28790" epochem-id="EPOCHEM:NEW:COMPOUND:2049">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_1409)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.203" comment="" name="erhytravine" relevant="false" chebi-id="WO2007045060:962195" epochem-id="EPOCHEM:NEW:COMPOUND:2050">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_5409)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.204" comment="" name="erhytravine" relevant="false" chebi-id="WO2007045060:962195" epochem-id="EPOCHEM:NEW:COMPOUND:2050">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_8100)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.205" comment="" name="erhytravine" relevant="false" chebi-id="WO2007045060:962195" epochem-id="EPOCHEM:NEW:COMPOUND:2050">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_8446)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.206" comment="" name="erhytravine" relevant="false" chebi-id="WO2007045060:962195" epochem-id="EPOCHEM:NEW:COMPOUND:2050">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_9111)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.207" comment="" name="erhytravine" relevant="false" chebi-id="WO2007045060:962195" epochem-id="EPOCHEM:NEW:COMPOUND:2050">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_9117)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.208" comment="" name="erhytravine" relevant="false" chebi-id="WO2007045060:962195" epochem-id="EPOCHEM:NEW:COMPOUND:2050">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_9258)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.209" comment="" name="erhytravine" relevant="false" chebi-id="WO2007045060:962195" epochem-id="EPOCHEM:NEW:COMPOUND:2050">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_9830)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.210" comment="" name="erhytravine" relevant="false" chebi-id="WO2007045060:962195" epochem-id="EPOCHEM:NEW:COMPOUND:2050">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_9871)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.211" comment="" name="erhytravine" relevant="false" chebi-id="WO2007045060:962195" epochem-id="EPOCHEM:NEW:COMPOUND:2050">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_9975)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.212" comment="" name="erhytravine" relevant="false" chebi-id="WO2007045060:962195" epochem-id="EPOCHEM:NEW:COMPOUND:2050">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_10111)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.213" comment="" name="erhytravine" relevant="false" chebi-id="WO2007045060:962195" epochem-id="EPOCHEM:NEW:COMPOUND:2050">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_10280)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.214" comment="" name="erhytravine" relevant="false" chebi-id="WO2007045060:962195" epochem-id="EPOCHEM:NEW:COMPOUND:2050">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_10387)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.215" comment="" name="-erythroidine" relevant="false" chebi-id="WO2007045060:109324" epochem-id="EPOCHEM:NEW:COMPOUND:2116">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_605)..id(WO2007045060_w_606)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.217" comment="" name="-erythroidine" relevant="false" chebi-id="WO2007045060:109324" epochem-id="EPOCHEM:NEW:COMPOUND:2116">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_1285)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_1284)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.218" comment="[beta]-erythroidine" name="/3-erythroidine" relevant="false" chebi-id="WO2007045060:860624" epochem-id="EPOCHEM:NEW:COMPOUND:2117">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_1027)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_1029)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_1028)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_1030)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.219" comment="N-Noorientaline" name="[Lambda]/-Noorientaline" relevant="false" chebi-id="WO2007045060:448795" epochem-id="EPOCHEM:NEW:COMPOUND:293">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_1052)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_1056)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_1055)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_1053)..id(WO2007045060_w_1054)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_1051)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.220" comment="" name="fithol" relevant="false" chebi-id="WO2007045060:166394" epochem-id="EPOCHEM:NEW:COMPOUND:2118">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_1124)"/>
+   </chem-name>
+   <chem-name nite:id="WO2007045060.HC.chemical-names.221" comment="11-hydroxy-erythravine" name="11-hidroxi-erythravine" relevant="false" chebi-id="WO2007045060:239639" epochem-id="EPOCHEM:NEW:COMPOUND:2119">
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_8540)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_8539)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_8538)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_8537)"/>
+      <nite:child href="WO2007045060.words.xml#id(WO2007045060_w_8541)"/>
+   </chem-name>
+</nite:root>

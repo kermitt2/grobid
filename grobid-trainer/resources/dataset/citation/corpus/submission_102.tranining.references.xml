@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+<listBibl>
+
+		<bibl><author>K. V. Kavokin et al</author>, <title level="j">Appl. Phys. Lett</title> <date>2010</date>, <biblScope type="vol">97</biblScope>, pp. <biblScope type="pp">201111</biblScope></bibl>
+
+		<bibl><author>I. G. Savenko, E. B. Magnusson and I. A. Shelykh</author>, <idno>arXiv:1101.3711</idno>, <date>2010</date>.</bibl>
+
+		<bibl><author>I. G. Savenko, I. A. Shelykh and M. A. Kaliteevski</author> <idno>arXiv:1103.1336</idno>, <date>2011</date>.</bibl>
+
+</listBibl>
+</tei>
