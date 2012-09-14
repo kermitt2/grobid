@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.grobid</groupId>
+  <artifactId>grobid-parent</artifactId>
+  <name>${project.artifactId}</name>
+  <version>0.1.3-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <licenses>
+    <license>
+      <name>Apache License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+    </license>
+  </licenses>
+  <modules>
+    <module>grobid-home</module>
+    <module>grobid-core</module>
+    <module>grobid-trainer</module>
+    <!--module>grobid-models</module-->
+    <module>grobid-service</module>
+  </modules>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <grobid.groupId>org.grobid</grobid.groupId>
+    <grobid.home.version>0.1.3-SNAPSHOT</grobid.home.version>
+    <grobid.core.version>0.1.3-SNAPSHOT</grobid.core.version>
+    <grobid.trainer.version>0.0.3-SNAPSHOT</grobid.trainer.version>
+  </properties>
+  <contributors>
+    <contributor>
+      <name>Patrice Lopez</name>
+      <url>https://sourceforge.net/users/kermitt2</url>
+      <roles>
+        <role>Project leader</role>
+      </roles>
+    </contributor>
+    <contributor>
+      <name>Florian Zipser</name>
+      <url>https://sourceforge.net/users/florianzipser</url>
+      <roles>
+        <role>Project developer</role>
+      </roles>
+    </contributor>
+    <contributor>
+      <name>Dmitry Katsubo</name>
+      <url>https://sourceforge.net/users/dma_k</url>
+      <roles>
+        <role>Project developer</role>
+      </roles>
+    </contributor>
+  	<contributor>
+    <name>Vyacheslav Zholudev</name>
+    <url>https://sourceforge.net/users/detonator413</url>
+    <roles>
+      <role>Project developer</role>
+    </roles>
+  </contributor>
+  <contributor>
+    <name>Damien Ridereau</name>
+    <url>http://sourceforge.net/users/damien-sf</url>
+    <roles>
+      <role>Project developer</role>
+    </roles>
+  </contributor>
+</contributors>
+</project>
