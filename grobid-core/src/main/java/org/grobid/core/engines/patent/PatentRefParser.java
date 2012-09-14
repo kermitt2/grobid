@@ -1,0 +1,1056 @@
+package org.grobid.core.engines.patent;
+
+import java.util.*;
+import java.util.regex.*;
+
+import org.grobid.core.data.PatentItem;
+
+/**
+ * Parser for patent references based on regular language rewriting.
+ * Input raw references are WISIWIG references (i.e. reference string as
+ * they appear). Expected ouput is the patent reference in the EPO Epoque
+ * format.
+ *
+ * @author Patrice Lopez
+ */
+
+public class PatentRefParser {
+    private String rawText = null;
+    private int rawTextOffset = 0; // starting offset of the current raw text
+    private Pattern patent_pattern = null;
+    private Pattern number_pattern = null;
+
+    // this is the complete list of existing authorities that was identified in the nature
+    static public List<String> authorities = Arrays.asList("AP", "AL", "DZ", "AR", "AU", "AT", "BE", "BX",
+            "BR", "BG", "CA", "CL", "CN",
+            "CO", "HR", "CU", "CY", "CZ", "CS", "DK", "EG", "EA", "EP", "DE", "DD", "FI", "FR", "GB", "GR", "HK",
+            "HU", "IS", "IN", "ID", "IB", "TP", "IR", "IQ", "IE", "IL", "IT", "JP", "JO", "KE", "KP", "KR", "LV",
+            "LT", "LU", "MW", "MY", "MX", "MD", "MC", "MN", "MA", "NL", "NZ", "NG", "NO", "OA", "WO", "PE", "PH",
+            "PL", "PT", "RD", "RO", "RU", "SA", "SG", "SK", "SI", "ZA", "SU", "ES", "LK", "SE", "CH", "TW", "TH",
+            "TT", "TN", "TR", "UA", "GB", "US", "UY", "VE", "VN", "YU", "ZM", "ZW");
+
+    private Pattern EP_pattern = null;
+    private Pattern DE_pattern = null;
+    private Pattern US_pattern = null;
+    private Pattern FR_pattern = null;
+    private Pattern UK_pattern = null;
+    private Pattern BE_pattern = null;
+    private Pattern WO_pattern = null;
+    private Pattern JP_pattern = null;
+    private Pattern CA_pattern = null;
+    private Pattern CH_pattern = null;
+    private Pattern AT_pattern = null;
+    private Pattern AU_pattern = null;
+    private Pattern KR_pattern = null;
+    private Pattern RU_pattern = null;
+    private Pattern FI_pattern = null;
+    private Pattern NL_pattern = null;
+    private Pattern SE_pattern = null;
+    private Pattern IT_pattern = null;
+    private Pattern ES_pattern = null;
+    private Pattern DK_pattern = null;
+    private Pattern DD_pattern = null;
+
+    private Pattern application_pattern = null;
+    private Pattern publication_pattern = null;
+    private Pattern pct_application_pattern = null;
+    private Pattern provisional_pattern = null;
+    private Pattern non_provisional_pattern = null;
+    private Pattern us_serial_pattern = null;
+    private Pattern translation_pattern = null;
+    private Pattern utility_pattern = null;
+    private Pattern kindcode_pattern1 = null;
+    private Pattern kindcode_pattern2 = null;
+    private Pattern jp_kokai_pattern = null;
+    private Pattern jp_heisei_pattern = null;
+
+    public PatentRefParser() {
+        patent_pattern = Pattern.compile("([UEWDJFA])[\\.\\s]?([SPOERKU])[\\.\\s]?-?(A|B|C)?\\s?-?([\\s,0-9/-]+(A|B|C)?[\\s,0-9/-]?)");
+
+        EP_pattern = Pattern.compile("((\\s|,|\\.|^|\\-)EPO?)|(E\\.(\\s)?P)|((E|e)uropean)|(européen)|(europ)");
+        DE_pattern = Pattern.compile("((\\s|,|\\.|^|\\-)DE)|(D\\.(\\s)?E)|((G|g)erman)|((D|d)eutsch)|(allemand)");
+        US_pattern = Pattern.compile("((\\s|,|\\.|^|\\-)US)|(U\\.(\\s)?S)|((U|u)nited(\\s|-)*(S|s)tate)|(USA)");
+        FR_pattern = Pattern.compile("((\\s|,|\\.|^|\\-)FR)|(F\\.(\\s)?R)|((F|f)rench)|((F|f)rance)|(français)|(F|f)ranz");
+        UK_pattern = Pattern.compile("((\\s|,|\\.|^|\\-)UK)|(U\\.(\\s)?K)|(GB)|(G\\.B)|((b|B)ritish)|((e|E)nglish)|((U|u)nited(\\s|-)*(K|k)ingdom)|((g|G)reat(\\s|-)(B|b)ritain)");
+        BE_pattern =
+                Pattern.compile("((\\s|,|\\.|^|\\-)BE)|(B\\.(\\s)?E)|((B|b)elgian)|((B|b)elge)|((B|b)elgique)|((B|b)elgium)|((B|b)elgisch)|((B|b)elgie)");
+        WO_pattern = Pattern.compile("((\\s|,|\\.|^|\\-)W(O|0))|(W\\.(\\s)?O)|(PCT)|(WIPO)|((w|W)orld(\\s|-)(p|P)atent)");
+        JP_pattern = Pattern.compile("((\\s|,|\\.|^|\\-)JP)|(J\\.(\\s)?P)|((J|j)apan)|((J|j)apon)|(Nippon)|(HEI)");
+        CA_pattern = Pattern.compile("((\\s|,|\\.|^|\\-)CA)|(C\\.(\\s)?A)|((C|c)anadian)|((C|c)anada)|((c|C)anadien)|((K|k)anad)");
+        CH_pattern = Pattern.compile("((\\s|,|\\.|^|\\-)CH)|(C\\.(\\s)?H)|((S|w)iss)|((S|s)wizerland)|((s|S)uisse)|((H|h)elveti)|((S|s)chweiz)");
+        AT_pattern = Pattern.compile("((\\s|,|\\.|^|\\-)AT)|(A\\.(\\s)?T)|((A|a)ustria)|((A|a)utrich)|((Ö|ö)sterreich)");
+        AU_pattern = Pattern.compile("((\\s|,|\\.|^|\\-)AU)|(A\\.(\\s)?U)|((A|a)ustralia)|((A|a)ustrali)");
+        KR_pattern = Pattern.compile("((\\s|,|\\.|^|\\-)KR)|(K\\.(\\s)?R)|((K|k)orean)|((K|k)orea)|((C|c)orée)|((S|s)üdkorea)|Sud(\\.|-)?Korea");
+        RU_pattern = Pattern.compile("((\\s|,|\\.|^|\\-)RU)|(R\\.(\\s)?U)|((R|r)ussia)|((R|r)usse)|((R|r)usse)|((R|r)ussisch)");
+        FI_pattern = Pattern.compile("((\\s|,|\\.|^|\\-)FI)|(R\\.(\\s)?U)|((R|r)ussia)|((R|r)usse)|((R|r)usse)|((R|r)ussisch)");
+        NL_pattern =
+                Pattern.compile("((\\s|,|\\.|^|\\-)NL)|(N\\.(\\s)?L)|((H|h)olland)|((N|n)etherland)|((P|p)ays(\\.|-)bas)|((D|d)eutch)|((h|H)olländisch)");
+        SE_pattern = Pattern.compile("((\\s|,|\\.|^|\\-)SE)|(S\\.(\\s)?E)|((S|s)weden)|((S|s)wedish)|((S|s)wedisch)|((S|s)u\\.de)|((S|s)u\\.dois)");
+        IT_pattern = Pattern.compile("((\\s|,|\\.|^|\\-)IT)|(I\\.(\\s)?T)|((I|i)taly)|((I|i)tali(a|e)n)|((I|i)talie)");
+        ES_pattern = Pattern.compile("((\\s|,|\\.|^|\\-)ES)|(E\\.(\\s)?S)|((S|s)panish)|((S|s)panie)|((E|e)spagnol)|((S|s)pain)");
+        DK_pattern = Pattern.compile("((\\s|,|\\.|^|\\-)DK)|(D\\.(\\s)?K)|((D|d)anish)|((D|d)anois)|((d|D)(a|ä)nemark)|(dänisch)");
+        DD_pattern = Pattern.compile("((\\s|,|\\.|^|\\-)DD)|(D\\.(\\s)?D)|(DDR)");
+
+        //number_pattern = Pattern.compile("[ABC]?([\\s,0-9/-]*)+[ABC]?([\\s,0-9/-])*[ABC]?");
+        number_pattern = Pattern.compile("((RE|PP)[\\s,0-9/\\-\\.\\\\]*)|(PCT(/|\\\\)[A-Z][A-Z]([\\s,0-9/\\-\\.\\\\]*))|([ABC]?([0-9][\\s,0-9/\\-\\.\\\\]*)+[ABCUT]?([\\s,0-9/\\-\\.\\\\])*[ABCUT]?)");
+        //number_pattern = Pattern.compile("((RE|PP)[\\s,0-9/\\-\\.\\\\]*)|(PCT(/|\\\\)[A-Z][A-Z]([\\s,0-9/\\-\\.\\\\]*))|([ABC]?([0-9][\\s,0-9/\\-\\.\\\\]*)+[ABCUT][0-9])|([ABC]?([0-9][\\s,0-9/\\-\\.\\\\]*)+[ABCUT])|([ABC]?([0-9][\\s,0-9/\\-\\.\\\\]*)+)");
+        //number_pattern = Pattern.compile("((RE|PP)[\\s,0-9/\\-\\.\\\\]*)|(PCT(/|\\\\)[A-Z][A-Z]([\\s,0-9/\\-\\.\\\\]*))|([ABC]?([\\s,0-9/\\-\\.\\\\ABC])+[ABCUT]?)");
+        kindcode_pattern1 = Pattern.compile("([ABC][0-9]?)[0-9][\\s,0-9/\\-\\.\\\\]+");
+        kindcode_pattern2 = Pattern.compile("[0-9][\\s,0-9/\\-\\.\\\\]+([ABCUT][0-9]?)");
+
+        application_pattern = Pattern.compile("((A|a)pplicat)|((a|A)ppln)");
+        publication_pattern = Pattern.compile("((P|p)ublicat)|((p|P)ub)");
+        pct_application_pattern = Pattern.compile("(PCT/(GB|EP|US|JP|DE|FR|UK|BE|CA|CH|AT|AU|KR|RU|FI|NL|SE|ES|DK|DD)/?([0-9][0-9]([0-9][0-9])?))");
+        provisional_pattern = Pattern.compile("((P|p)rovisional)");
+        non_provisional_pattern = Pattern.compile("((n|N)on.(P|p)rovisional)");
+        translation_pattern = Pattern.compile("((T|t)ranslation)");
+        utility_pattern = Pattern.compile("((U|u)tility)");
+
+        us_serial_pattern = Pattern.compile("((S|s)erial(\\s|-)+((n|N)o(\\.)?)(\\s|-)*[0-9]*/)");
+
+        jp_kokai_pattern = Pattern.compile("(k|K)oka(l|i)");
+        jp_heisei_pattern = Pattern.compile("(H|h)(E|e)(I|i)");
+    }
+
+    public void setRawRefText(String s) {
+        rawText = s;
+    }
+
+    public void setRawRefTextOffset(int s) {
+        rawTextOffset = s;
+    }
+
+    public ArrayList<PatentItem> processRawRefText() {
+        ArrayList<PatentItem> res = new ArrayList<PatentItem>();
+        //System.out.println(rawText);
+        String country = null;
+        while (true) {
+            Matcher fitCountry = WO_pattern.matcher(rawText);
+            if (fitCountry.find()) {
+                country = "WO";
+                break;
+            }
+            fitCountry = EP_pattern.matcher(rawText);
+            if (fitCountry.find()) {
+                country = "EP";
+                break;
+            }
+            fitCountry = US_pattern.matcher(rawText);
+            if (fitCountry.find()) {
+                country = "US";
+                break;
+            }
+            fitCountry = us_serial_pattern.matcher(rawText);
+            if (fitCountry.find()) {
+                country = "US";
+                break;
+            }
+            fitCountry = JP_pattern.matcher(rawText);
+            if (fitCountry.find()) {
+                country = "JP";
+                break;
+            }
+            fitCountry = DE_pattern.matcher(rawText);
+            if (fitCountry.find()) {
+                country = "DE";
+                break;
+            }
+            fitCountry = FR_pattern.matcher(rawText);
+            if (fitCountry.find()) {
+                country = "FR";
+                break;
+            }
+            fitCountry = UK_pattern.matcher(rawText);
+            if (fitCountry.find()) {
+                country = "GB";
+                break;
+            }
+            fitCountry = BE_pattern.matcher(rawText);
+            if (fitCountry.find()) {
+                country = "BE";
+                break;
+            }
+            fitCountry = CA_pattern.matcher(rawText);
+            if (fitCountry.find()) {
+                country = "CA";
+                break;
+            }
+            fitCountry = CH_pattern.matcher(rawText);
+            if (fitCountry.find()) {
+                country = "CH";
+                break;
+            }
+            fitCountry = AT_pattern.matcher(rawText);
+            if (fitCountry.find()) {
+                country = "AT";
+                break;
+            }
+            fitCountry = AU_pattern.matcher(rawText);
+            if (fitCountry.find()) {
+                country = "AU";
+                break;
+            }
+            fitCountry = KR_pattern.matcher(rawText);
+            if (fitCountry.find()) {
+                country = "KR";
+                break;
+            }
+            fitCountry = RU_pattern.matcher(rawText);
+            if (fitCountry.find()) {
+                country = "RU";
+                break;
+            }
+            fitCountry = FI_pattern.matcher(rawText);
+            if (fitCountry.find()) {
+                country = "FI";
+                break;
+            }
+            fitCountry = NL_pattern.matcher(rawText);
+            if (fitCountry.find()) {
+                country = "NL";
+                break;
+            }
+            fitCountry = SE_pattern.matcher(rawText);
+            if (fitCountry.find()) {
+                country = "SE";
+                break;
+            }
+            fitCountry = IT_pattern.matcher(rawText);
+            if (fitCountry.find()) {
+                country = "IT";
+                break;
+            }
+            fitCountry = ES_pattern.matcher(rawText);
+            if (fitCountry.find()) {
+                country = "ES";
+                break;
+            }
+            fitCountry = DK_pattern.matcher(rawText);
+            if (fitCountry.find()) {
+                country = "DK";
+                break;
+            }
+            fitCountry = DD_pattern.matcher(rawText);
+            if (fitCountry.find()) {
+                country = "DD";
+                break;
+            }
+
+            break;
+        }
+
+        if (country != null) {
+            ArrayList<String> numbers = new ArrayList<String>();
+            ArrayList<Integer> offsets_begin = new ArrayList<Integer>();
+            ArrayList<Integer> offsets_end = new ArrayList<Integer>();
+            Matcher fitNumber = number_pattern.matcher(rawText);
+            while (fitNumber.find()) {
+                String toto = fitNumber.group(0);
+
+                int inde_begin = rawText.indexOf(toto) + rawTextOffset;
+                int inde_end = inde_begin + toto.length();
+                //toto = toto.replaceAll("(A|B|C|\\s|-|/)", "");
+                //toto = toto.replaceAll("(-)", "");
+                toto = toto.replaceAll("()", "");
+                if (toto.length() > 0) {
+                    boolean notPieces = true;
+                    // additional tests are necessary for , and .
+                    if (toto.length() > 14) {
+                        // we have mostlikely two patents separated by a ,
+                        // count the number of ,
+                        int countComma = 0;
+                        String[] pieces = null;
+                        pieces = toto.split(",");
+                        countComma = pieces.length - 1;
+
+                        if (countComma > 0) {
+                            // we split depending on number of comma
+                            double ratio = (double) toto.length() / countComma;
+                            if (ratio < 10)
+                                pieces = toto.split(", ");
+                            if (pieces.length == 2) {
+                                if (((pieces[0].length() > pieces[1].length()) &&
+                                        (pieces[0].length() - pieces[1].length() < 4)) ||
+                                        ((pieces[0].length() <= pieces[1].length()) &&
+                                                (pieces[1].length() - pieces[0].length() < 4))
+                                        ) {
+                                    for (int i = 0; i < 2; i++) {
+                                        String toto0 = pieces[i];
+                                        addNumber(numbers, offsets_begin, offsets_end, toto0, inde_begin, inde_end);
+                                    }
+                                    notPieces = false;
+                                }
+                            } else if ((toto.length() > (6 * pieces.length))) {
+                                for (int i = 0; i < pieces.length; i++) {
+                                    String toto0 = pieces[i];
+                                    addNumber(numbers, offsets_begin, offsets_end, toto0, inde_begin, inde_end);
+                                }
+                                notPieces = false;
+                            }
+                        }
+
+                    }
+
+                    if (notPieces) {
+                        addNumber(numbers, offsets_begin, offsets_end, toto, inde_begin, inde_end);
+                    }
+                }
+            }
+
+            ArrayList<Boolean> applications = new ArrayList<Boolean>();
+            ArrayList<Boolean> provisionals = new ArrayList<Boolean>();
+            ArrayList<Boolean> pctapps = new ArrayList<Boolean>();
+            ArrayList<Boolean> designs = new ArrayList<Boolean>();
+            ArrayList<Boolean> reissueds = new ArrayList<Boolean>();
+            ArrayList<Boolean> plants = new ArrayList<Boolean>();
+            ArrayList<String> kindcodes = new ArrayList<String>();
+
+            for (String number : numbers) {
+                applications.add(new Boolean(false));
+                provisionals.add(new Boolean(false));
+                pctapps.add(new Boolean(false));
+                designs.add(new Boolean(false));
+                reissueds.add(new Boolean(false));
+                plants.add(new Boolean(false));
+                kindcodes.add(null);
+            }
+
+            ArrayList<String> newNumbers = new ArrayList<String>();
+            int i = 0;
+            for (String number : numbers) {
+                String originalNumber = number;
+                number = number.replace("-", "");
+                // do we have an application or a patent publication?
+                if (country.equals("WO")) {
+                    number = number.replaceAll("[\\.\\s]", "");
+                    // in case of usual typo W0 for WO
+                    String numm = number.replaceAll("[/,\\.]", "").trim();
+                    if ((numm.startsWith("0")) && (numm.length() == 11)) {
+                        // a useless zero has been inserted
+                        number = number.substring(1, number.length());
+                    } else if (((numm.startsWith("09")) && (numm.length() == 8)) ||
+                            ((numm.startsWith("00")) && (numm.length() == 8))
+                            ) {
+                        // a useless zero has been inserted (WO format before July 2002!)
+                        number = number.substring(1, number.length());
+                    }
+                    // PCT application checking
+                    Matcher fitApplication = pct_application_pattern.matcher(number);
+                    if (fitApplication.find()) {
+                        String titi = fitApplication.group(0);
+                        int move = titi.length();
+                        boolean application = true;
+                        titi = titi.replace("PCT/", "");
+                        if (titi.length() > 2) {
+                            String countr = titi.substring(0, 2);
+                            String year = null;
+                            if (titi.charAt(2) != '/')
+                                year = titi.substring(2, titi.length());
+                            else
+                                year = titi.substring(3, titi.length());
+                            if (year.length() == 2) {
+                                if ((year.charAt(0) == '7') || (year.charAt(0) == '8') || (year.charAt(0) == '9')) {
+                                    year = "19" + year;
+                                } else {
+                                    year = "20" + year;
+                                }
+                            } else if ((year.length() != 4) && (year.length() > 1)) {
+                                year = year.substring(0, 2);
+                                if ((year.charAt(0) == '7') || (year.charAt(0) == '8') || (year.charAt(0) == '9')) {
+                                    year = "19" + year;
+                                } else {
+                                    year = "20" + year;
+                                }
+                            } else if ((titi.charAt(2) == '/') && (year.length() == 4) && (year.length() > 1)) {
+                                year = year.substring(0, 2);
+                                move = move - 1;
+                                if ((year.charAt(0) == '7') || (year.charAt(0) == '8') || (year.charAt(0) == '9')) {
+                                    year = "19" + year;
+                                } else {
+                                    year = "20" + year;
+                                }
+                            }
+                            number = year + countr + number.substring(move, number.length());
+                            number = number.replaceAll("[/,\\.]", "").trim();
+                            if (number.length() == 12) {
+                                if (number.charAt(6) == '0')
+                                    number = number.substring(0, 6) + number.substring(7, 12);
+                            }
+                        }
+                        applications.set(i, new Boolean(true));
+                        pctapps.set(i, new Boolean(true));
+                    }
+
+                } else {
+                    Matcher fitApplication = application_pattern.matcher(rawText);
+                    Matcher fitPublication = publication_pattern.matcher(rawText);
+
+                    boolean appli = fitApplication.find();
+                    boolean publi = fitPublication.find();
+
+                    if (appli && !publi) {
+                        applications.set(i, new Boolean(true));
+                    }
+                    if (publi) {
+                        applications.set(i, new Boolean(false));
+                    }
+
+                    if (country.equals("EP")) {
+                        String numm = number.replaceAll("[ABCU,\\.\\s/]", "").trim();
+                        if ((numm.length() == 8)) {
+                            applications.set(i, new Boolean(true));
+                            if (numm.startsWith("0")) {
+                                number = "20" + numm.substring(0, 2) + "0" + numm.substring(2, numm.length());
+                            } else //if (numm.startsWith("9") || numm.startsWith("8") || numm.startsWith("7"))
+                            {
+                                number = "19" + numm.substring(0, 2) + "0" + numm.substring(2, numm.length());
+                            }
+                        } else if (numm.length() <= 7) {
+                            applications.set(i, new Boolean(false));
+
+                            // try to get the kind code
+                            Matcher fitKindCode = kindcode_pattern1.matcher(number);
+                            if (fitKindCode.find()) {
+                                String tata = fitKindCode.group(0);
+                                kindcodes.set(i, tata);
+                            } else {
+                                fitKindCode = kindcode_pattern2.matcher(number);
+                                if (fitKindCode.find()) {
+                                    String tata = fitKindCode.group(0);
+                                    kindcodes.set(i, tata);
+                                }
+                            }
+                        }
+                    }
+                    if (country.equals("US")) {
+                        // do we have a provisional?
+                        Matcher fitProvisional = provisional_pattern.matcher(rawText);
+                        Matcher fitNonProvisional = non_provisional_pattern.matcher(rawText);
+
+                        if ((fitProvisional.find()) && (!fitNonProvisional.find())) {
+                            provisionals.set(i, new Boolean(true));
+                        }
+
+                        // interpretation of prefix "serial code" is given here:
+                        // http://www.uspto.gov/patents/process/search/filingyr.jsp
+                        // we need to identify the year based on the serial number range
+
+                        // provisional starts with 60 or 61
+                        if (number.startsWith("60")) {
+                            applications.set(i, new Boolean(true));
+                            provisionals.set(i, new Boolean(true));
+                            number = number.substring(3, number.length());
+                            number = number.replaceAll("[\\.\\s/,]", "");
+                            // we check the range of the number for deciding about a year
+                            int numb = Integer.parseInt(number);
+                            String year = null;
+                            if (numb < 9474)
+                                year = "1995";
+                            else if (numb < 34487)
+                                year = "1996";
+                            else if (numb < 70310)
+                                year = "1997";
+                            else if (numb < 113787)
+                                year = "1998";
+                            else if (numb < 173038)
+                                year = "1999";
+                            else if (numb < 256730)
+                                year = "2000";
+                            else if (numb < 343564)
+                                year = "2001";
+                            else if (numb < 437173)
+                                year = "2002";
+                            else if (numb < 532638)
+                                year = "2003";
+                            else if (numb < 639450)
+                                year = "2004";
+                            else if (numb < 754464)
+                                year = "2005";
+                            else if (numb < 877460)
+                                year = "2006";
+                            else if (numb < 999999)
+                                year = "2007";
+                            number = year + "0" + number;
+                        } else if (number.startsWith("61")) {  // same as for 60 but the ranges are different
+                            applications.set(i, new Boolean(true));
+                            provisionals.set(i, new Boolean(true));
+                            number = number.substring(3, number.length());
+                            number = number.replaceAll("[\\.\\s/,]", "");
+                            // we check the range of the number for deciding about a year
+                            int numb = Integer.parseInt(number);
+                            String year = null;
+                            if (numb < 9389)
+                                year = "2007";
+                            else if (numb < 203947)
+                                year = "2008";
+                            else
+                                year = "2009";
+                            number = year + "0" + number;
+                        } else if (number.startsWith("29")) {
+                            // design patent application starts with 29
+                            applications.set(i, new Boolean(true));
+                            provisionals.set(i, new Boolean(false));
+                            designs.set(i, new Boolean(true));
+                            number = number.substring(3, number.length());
+                            number = number.replaceAll("[\\.\\s/,]", "");
+                            // we check the range of the number for deciding about a year
+                            int numb = Integer.parseInt(number);
+                            String year = null;
+                            if (numb < 3180)
+                                year = "1992";
+                            else if (numb < 16976)
+                                year = "1993";
+                            else if (numb < 32919)
+                                year = "1994";
+                            else if (numb < 48507)
+                                year = "1995";
+                            else if (numb < 64454)
+                                year = "1996";
+                            else if (numb < 81426)
+                                year = "1997";
+                            else if (numb < 98302)
+                                year = "1998";
+                            else if (numb < 116135)
+                                year = "1999";
+                            else if (numb < 134406)
+                                year = "2000";
+                            else if (numb < 152739)
+                                year = "2001";
+                            else if (numb < 173499)
+                                year = "2002";
+                            else if (numb < 196307)
+                                year = "2003";
+                            else if (numb < 220177)
+                                year = "2004";
+                            else if (numb < 245663)
+                                year = "2005";
+                            else if (numb < 270581)
+                                year = "2006";
+                            else if (numb < 294213)
+                                year = "2007";
+                            else if (numb < 313375)
+                                year = "2008";
+                            else
+                                year = "2009";
+                            number = year + "0" + number;
+                        } else if (number.startsWith("12")) {
+                            // standard patent application, most recent serial code
+                            applications.set(i, new Boolean(true));
+                            provisionals.set(i, new Boolean(false));
+                            number = number.substring(3, number.length());
+                            number = number.replaceAll("[\\.\\s/,]", "");
+                            // we check the range of the number for deciding about a year
+                            int numb = Integer.parseInt(number);
+                            String year = null;
+                            if (numb < 5841)
+                                year = "2007";
+                            else if (numb < 317884)
+                                year = "2008";
+                            else
+                                year = "2009";
+                            number = year + "0" + number;
+                        } else if (number.startsWith("11")) {
+                            // standard patent application
+                            applications.set(i, new Boolean(true));
+                            provisionals.set(i, new Boolean(false));
+                            number = number.substring(3, number.length());
+                            number = number.replaceAll("[\\.\\s/,]", "");
+                            // we check the range of the number for deciding about a year
+                            int numb = Integer.parseInt(number);
+                            String year = null;
+                            if (numb < 023305)
+                                year = "2004";
+                            else if (numb < 320178)
+                                year = "2005";
+                            else if (numb < 646743)
+                                year = "2006";
+                            else
+                                year = "2007";
+                            number = year + "0" + number;
+                        } else if (number.startsWith("10")) {
+                            // standard patent application
+                            applications.set(i, new Boolean(true));
+                            provisionals.set(i, new Boolean(false));
+                            number = number.substring(3, number.length());
+                            number = number.replaceAll("[\\.\\s/,]", "");
+                            // we check the range of the number for deciding about a year
+                            int numb = Integer.parseInt(number);
+                            String year = null;
+                            if (numb < 32443)
+                                year = "2001";
+                            else if (numb < 334164)
+                                year = "2002";
+                            else if (numb < 746297)
+                                year = "2003";
+                            else
+                                year = "2004";
+                            number = year + "0" + number;
+                        } else if (number.startsWith("9/") || number.startsWith("09/")) {
+                            // standard patent application
+                            applications.set(i, new Boolean(true));
+                            provisionals.set(i, new Boolean(false));
+                            if (number.startsWith("9/"))
+                                number = number.substring(2, number.length());
+                            else
+                                number = number.substring(3, number.length());
+                            number = number.replaceAll("[\\.\\s/,]", "");
+                            // we check the range of the number for deciding about a year
+                            int numb = Integer.parseInt(number);
+                            String year = null;
+                            if (numb < 219723)
+                                year = "1998";
+                            else if (numb < 471932)
+                                year = "1999";
+                            else if (numb < 740756)
+                                year = "2000";
+                            else
+                                year = "2001";
+                            number = year + "0" + number;
+                        } else if (number.startsWith("8/") || number.startsWith("08/")) {
+                            // standard patent application
+                            applications.set(i, new Boolean(true));
+                            provisionals.set(i, new Boolean(false));
+                            if (number.startsWith("8/"))
+                                number = number.substring(2, number.length());
+                            else
+                                number = number.substring(3, number.length());
+                            number = number.replaceAll("[\\.\\s/,]", "");
+                            // we check the range of the number for deciding about a year
+                            int numb = Integer.parseInt(number);
+                            String year = null;
+                            if (numb < 176047)
+                                year = "1993";
+                            else if (numb < 367542)
+                                year = "1994";
+                            else if (numb < 581739)
+                                year = "1995";
+                            else if (numb < 777991)
+                                year = "1996";
+                            else
+                                year = "1997";
+                            number = year + "0" + number;
+                        } else if (number.startsWith("7/") || number.startsWith("07/")) {
+                            // standard patent application
+                            applications.set(i, new Boolean(true));
+                            provisionals.set(i, new Boolean(false));
+                            if (number.startsWith("7/"))
+                                number = number.substring(2, number.length());
+                            else
+                                number = number.substring(3, number.length());
+                            number = number.replaceAll("[\\.\\s/,]", "");
+                            // we check the range of the number for deciding about a year
+                            int numb = Integer.parseInt(number);
+                            String year = null;
+                            if (numb < 140321)
+                                year = "1987";
+                            else if (numb < 292671)
+                                year = "1988";
+                            else if (numb < 459413)
+                                year = "1989";
+                            else if (numb < 636609)
+                                year = "1990";
+                            else if (numb < 815501)
+                                year = "1991";
+                            else
+                                year = "1992";
+                            number = year + "0" + number;
+                        } else if (number.startsWith("6/") || number.startsWith("06/")) {
+                            // standard patent application
+                            applications.set(i, new Boolean(true));
+                            provisionals.set(i, new Boolean(false));
+                            if (number.startsWith("6/"))
+                                number = number.substring(2, number.length());
+                            else
+                                number = number.substring(3, number.length());
+                            number = number.replaceAll("[\\.\\s/,]", "");
+                            // we check the range of the number for deciding about a year
+                            int numb = Integer.parseInt(number);
+                            String year = null;
+                            if (numb < 108971)
+                                year = "1979";
+                            else if (numb < 221957)
+                                year = "1980";
+                            else if (numb < 336510)
+                                year = "1981";
+                            else if (numb < 454954)
+                                year = "1982";
+                            else if (numb < 567457)
+                                year = "1983";
+                            else if (numb < 688174)
+                                year = "1984";
+                            else if (numb < 815454)
+                                year = "1985";
+                            else
+                                year = "1986";
+                            number = year + "0" + number;
+                        } else if (number.startsWith("5/") || number.startsWith("05/")) {
+                            // standard patent application
+                            applications.set(i, new Boolean(true));
+                            provisionals.set(i, new Boolean(false));
+                            if (number.startsWith("5/"))
+                                number = number.substring(2, number.length());
+                            else
+                                number = number.substring(3, number.length());
+                            number = number.replaceAll("[\\.\\s/,]", "");
+                            // we check the range of the number for deciding about a year
+                            int numb = Integer.parseInt(number);
+                            String year = null;
+                            if (numb < 103000)
+                                year = "1970";
+                            else if (numb < 214538)
+                                year = "1971";
+                            else if (numb < 319971)
+                                year = "1972";
+                            else if (numb < 429701)
+                                year = "1973";
+                            else if (numb < 537821)
+                                year = "1974";
+                            else if (numb < 645931)
+                                year = "1975";
+                            else if (numb < 756051)
+                                year = "1976";
+                            else if (numb < 866211)
+                                year = "1977";
+                            else
+                                year = "1978";
+                            number = year + "0" + number;
+                        } else if (number.startsWith("4/") || number.startsWith("04/")) {
+                            // standard patent application
+                            applications.set(i, new Boolean(true));
+                            provisionals.set(i, new Boolean(false));
+                            if (number.startsWith("4/"))
+                                number = number.substring(2, number.length());
+                            else
+                                number = number.substring(3, number.length());
+                            number = number.replaceAll("[\\.\\s/,]", "");
+                            // we check the range of the number for deciding about a year
+                            int numb = Integer.parseInt(number);
+                            String year = null;
+                            if (numb < 80000)
+                                year = "1960";
+                            else if (numb < 163000)
+                                year = "1961";
+                            else if (numb < 248000)
+                                year = "1962";
+                            else if (numb < 335000)
+                                year = "1963";
+                            else if (numb < 423000)
+                                year = "1964";
+                            else if (numb < 518000)
+                                year = "1965";
+                            else if (numb < 606000)
+                                year = "1966";
+                            else if (numb < 695000)
+                                year = "1967";
+                            else if (numb < 788000)
+                                year = "1968";
+                            else
+                                year = "1969";
+                            number = year + "0" + number;
+                        } else if (number.startsWith("3/") || number.startsWith("03/")) {
+                            applications.set(i, new Boolean(true));
+                            provisionals.set(i, new Boolean(false));
+                            if (number.startsWith("3/"))
+                                number = number.substring(2, number.length());
+                            else
+                                number = number.substring(3, number.length());
+                            number = number.replaceAll("[\\.\\s/,]", "");
+                            // we check the range of the number for deciding about a year
+                            int numb = Integer.parseInt(number);
+                            String year = null;
+                            if (numb < 68000)
+                                year = "1948";
+                            else if (numb < 136000)
+                                year = "1949";
+                            else if (numb < 204000)
+                                year = "1950";
+                            else if (numb < 264000)
+                                year = "1951";
+                            else if (numb < 329000)
+                                year = "1952";
+                            else if (numb < 401000)
+                                year = "1953";
+                            else if (numb < 479000)
+                                year = "1954";
+                            else if (numb < 557000)
+                                year = "1955";
+                            else if (numb < 632000)
+                                year = "1956";
+                            else if (numb < 706000)
+                                year = "1957";
+                            else if (numb < 784000)
+                                year = "1958";
+                            else
+                                year = "1959";
+                        } else if (number.startsWith("2/") || number.startsWith("02/")) {
+                            applications.set(i, new Boolean(true));
+                            provisionals.set(i, new Boolean(false));
+                            if (number.startsWith("2/"))
+                                number = number.substring(2, number.length());
+                            else
+                                number = number.substring(3, number.length());
+                            number = number.replaceAll("[\\.\\s/,]", "");
+                            // we check the range of the number for deciding about a year
+                            int numb = Integer.parseInt(number);
+                            String year = null;
+                            if (numb < 57000)
+                                year = "1935";
+                            else if (numb < 119000)
+                                year = "1936";
+                            else if (numb < 183000)
+                                year = "1937";
+                            else if (numb < 249000)
+                                year = "1938";
+                            else if (numb < 312000)
+                                year = "1939";
+                            else if (numb < 372000)
+                                year = "1940";
+                            else if (numb < 425000)
+                                year = "1941";
+                            else if (numb < 471000)
+                                year = "1942";
+                            else if (numb < 516000)
+                                year = "1943";
+                            else if (numb < 570000)
+                                year = "1944";
+                            else if (numb < 638000)
+                                year = "1945";
+                            else if (numb < 719000)
+                                year = "1946";
+                            else
+                                year = "1947";
+
+                        } else if (number.startsWith("1/") || number.startsWith("01/")) {
+                            applications.set(i, new Boolean(true));
+                            provisionals.set(i, new Boolean(false));
+                            if (number.startsWith("1/"))
+                                number = number.substring(2, number.length());
+                            else
+                                number = number.substring(3, number.length());
+                            number = number.replaceAll("[\\.\\s/,]", "");
+                            // we check the range of the number for deciding about a year
+                            int numb = Integer.parseInt(number);
+                            String year = null;
+                            /*if (numb < 70000)
+                                        year = "1915";
+                                    else if (numb < 140000)
+                                        year = "1916";
+                                    else if (numb < 210000)
+                                        year = "1917";
+                                    else if (numb < 270000)
+                                        year = "1918";
+                                    else if (numb < 349000)
+                                        year = "1919";
+                                    else if (numb < 435000)
+                                        year = "1920";
+                                    else if (numb < 526000)
+                                        year = "1921";
+                                    else if (numb < 610000)
+                                        year = "1922";
+                                    else if (numb < 684000)
+                                        year = "1923";
+                                    else if (numb < )
+                                        year = "1924";
+                                    else */
+                            if (numb < 78000)
+                                year = "1925";
+                            else if (numb < 158000)
+                                year = "1926";
+                            else if (numb < 244000)
+                                year = "1927";
+                            else if (numb < 330000)
+                                year = "1928";
+                            else if (numb < 418000)
+                                year = "1929";
+                            else if (numb < 506000)
+                                year = "1930";
+                            else if (numb < 584000)
+                                year = "1931";
+                            else if (numb < 650000)
+                                year = "1932";
+                            else if (numb < 705000)
+                                year = "1933";
+                            else
+                                year = "1934";
+                        } else if (number.startsWith("RE")) {
+                            // we have a reissued patent USRE with 5 digits number normally
+                            reissueds.set(i, new Boolean(true));
+                            applications.set(i, new Boolean(false));
+                            provisionals.set(i, new Boolean(false));
+                        } else if (number.startsWith("PP")) {
+                            // we have a plant patent USPP
+                            plants.set(i, new Boolean(true));
+                            applications.set(i, new Boolean(false));
+                            provisionals.set(i, new Boolean(false));
+                        } else {
+                            // even if it is indicated as an application, the serial coding indicates
+                            // that it is maybe not !
+                            // access to OPS would be necessary to decide but heuristitics can help !
+                            String numm = number.replaceAll("[ABCU,\\.\\s/\\\\]", "").trim();
+                            if ((numm.length() == 10) || (numm.length() == 11)) {
+                                applications.set(i, new Boolean(false));
+                                provisionals.set(i, new Boolean(false));
+
+                                //if (publi && (numm.length() == 11)) {
+                                if ((!applications.get(i).booleanValue()) && (numm.length() == 11)) {
+                                    if (numm.charAt(4) == '0') {
+                                        number = numm.substring(0, 4) + numm.substring(5, numm.length());
+                                    }
+                                }
+
+                                // try to get the kind code, if any
+                                Matcher fitKindCode = kindcode_pattern1.matcher(number);
+                                if (fitKindCode.find()) {
+                                    String tata = fitKindCode.group(0);
+                                    kindcodes.set(i, tata);
+                                } else {
+                                    fitKindCode = kindcode_pattern2.matcher(number);
+                                    if (fitKindCode.find()) {
+                                        String tata = fitKindCode.group(0);
+                                        kindcodes.set(i, tata);
+                                    }
+                                }
+                            } else if ((number.indexOf("/") != -1) && !publi) {
+                                applications.set(i, new Boolean(true));
+                            }
+                        }
+                    } else if (country.equals("JP")) {
+                        String numm = number.replaceAll("[ABCU,\\.\\s/]", "").trim();
+                        if ((numm.length() == 10)) {
+                            applications.set(i, new Boolean(false));
+                            provisionals.set(i, new Boolean(false));
+                        }
+                        // first do we have a modern numbering
+                        if ((numm.length() == 9) && (numm.startsWith("20") || numm.startsWith("19"))) {
+                            // publication, we need to add a 0 after the 4 digit year
+                            number = numm.substring(0, 4) + "0" + numm.substring(4, numm.length());
+                        }
+                        //else if ((numm.length() == 7)) {
+
+                        //}
+                        else if (applications.get(i)
+                                && ((numm.length() == 7) || (numm.length() == 8))) {
+                            // for application !
+                            // emperor reign post processing
+                            // we need to get the prefix in the original number
+                            String prefix = "" + number.charAt(0);
+                            int move = 0;
+                            if ((prefix.equals("A")) || (prefix.equals("B")) || (prefix.equals("C"))) {
+                                // kind code
+                                kindcodes.set(i, prefix);
+                                prefix = null;
+                                move = 1;
+                                applications.set(i, new Boolean(false));
+                                // it was not an application number but a publication !
+                            } else if (Character.isDigit(prefix.charAt(0))) {
+                                if ((originalNumber.charAt(1) == '-') ||
+                                        (originalNumber.charAt(1) == '/')) {
+                                    move = 1;
+                                } else if (Character.isDigit(number.charAt(1))) {
+                                    prefix += number.charAt(1);
+                                    move = 2;
+                                } else
+                                    move = 1;
+                            } else {
+                                if (Character.isDigit(number.charAt(1))) {
+                                    prefix = "" + number.charAt(1);
+                                    move = 2;
+                                } else
+                                    prefix = null;
+                            }
+                            if (prefix != null) {
+                                String year = null;
+                                // this is an heuristics: for small numbers (<25) we have Heisei reign
+                                // for higher, we have Showa reign... this works from 1950
+                                int emperorYear = Integer.parseInt(prefix);
+                                if (emperorYear <= 25) {
+                                    year = "" + (emperorYear + 1988);
+                                } else if (emperorYear <= 63) {
+                                    year = "" + (emperorYear + 1925);
+                                }
+                                number = year + number.substring(move, number.length());
+                            }
+                        }
+
+                    } else if (country.equals("DE")) {
+
+                    } else if (country.equals("GB")) {
+                        if (applications.get(i).booleanValue()) {
+                            String numm = number.replaceAll("[ABCU,\\.\\s/]", "").trim();
+                            if (numm.length() == 7) {
+                                String year = numm.substring(0, 2);
+                                if ((year.charAt(0) == '7') || (year.charAt(0) == '8') || (year.charAt(0) == '9')) {
+                                    year = "19" + year;
+                                } else {
+                                    year = "20" + year;
+                                }
+                                number = year + "00" + numm.substring(2, numm.length());
+                            }
+                        }
+                    }
+                }
+                newNumbers.add(number);
+                i++;
+            }
+
+            numbers = newNumbers;
+            i = 0;
+            for (String number : numbers) {
+                if (number != null) {
+                    PatentItem res0 = new PatentItem();
+                    res0.setAuthority(country);
+                    res0.setApplication(applications.get(i).booleanValue());
+                    res0.setProvisional(provisionals.get(i).booleanValue());
+                    res0.setReissued(reissueds.get(i).booleanValue());
+                    res0.setPlant(plants.get(i).booleanValue());
+                    if (pctapps.get(i).booleanValue())
+                        res0.setNumber(number.replaceAll("[\\.\\s/\\\\]", ""));
+                    else
+                        res0.setNumber(number.replaceAll("[ABCU,\\.\\s/\\\\]", ""));
+
+                    // number completion
+                    if (country.equals("EP")) {
+                        if (!res0.getApplication()) {
+                            while (res0.getNumber().length() < 7) {
+                                res0.setNumber("0" + res0.getNumber());
+                            }
+                        }
+                    }
+
+                    res0.setKindCode(kindcodes.get(i));
+
+                    res0.setOffsetBegin(offsets_begin.get(i).intValue());
+                    res0.setOffsetEnd(offsets_end.get(i).intValue());
+                    res.add(res0);
+                }
+                i++;
+            }
+        }
+
+        return res;
+    }
+
+    private void addNumber(ArrayList<String> numbers, ArrayList<Integer> offsets_begin,
+                           ArrayList<Integer> offsets_end, String toto, int offset_begin, int offset_end) {
+        // we have to check if we have a check code at the end of the number
+        toto = toto.trim();
+        if (toto.length() > 2) {
+            if ((toto.charAt(toto.length() - 2) == '.') && (Character.isDigit(toto.charAt(toto.length() - 1)))) {
+                toto = toto.substring(0, toto.length() - 2);
+            }
+            if (((toto.charAt(toto.length() - 2) == 'A') ||
+                    (toto.charAt(toto.length() - 2) == 'B') ||
+                    (toto.charAt(toto.length() - 2) == 'C'))
+                    & (Character.isDigit(toto.charAt(toto.length() - 1)))) {
+                toto = toto.substring(0, toto.length() - 2);
+            }
+        }
+
+        if ((toto.length() > 4) && toto.length() < 20) {
+            numbers.add(toto.trim());
+            offsets_begin.add(new Integer(offset_begin));
+            offsets_end.add(new Integer(offset_end));
+        }
+    }
+
+}

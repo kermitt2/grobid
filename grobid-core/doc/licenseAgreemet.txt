@@ -1,0 +1,44 @@
+This document has been created to keep track about the exchange between grobid team and pdf2xml team about license agreement.
+
+------------------------------------------------
+Request sent to pdf2xml team on 22nd of August :
+Hello,
+
+   I am part of a project named grobid (hosted on source forge) under Apache license. Pdf2xml is under gpl license. For license
+compatibility, the tool pdf2xml is not distributed with grobid and has to be installed man ually by the user/developer.
+   We thought that a good idea would be to deploy pdf2xml on a public maven repository, so that is will be disponible to use it. To
+respect the license with pdf2xml, it is possible to add a specific profile for the maven build of grobid (if you specify that specific
+profile it will download it else not). So if you add that profile in your build it means you accept the license agreement.
+   For information the archive would be a simple zip of that structure :
+pdf2xml
+  |_win-32
+      |_pdftoxml.exe
+      |_zlib1.dll
+  |_mac-64
+      |_pdf2xml (build on and for mac-64 platfom)
+  |_lin-32
+      |_pdf2xml (build on and for lin-32 platfom)
+ |_lin-64
+      |_pdf2xml (build on and for mac-32 platfom)
+
+We would like to know your opinion on the subject.
+
+Thank you in advance for the answer to your request.
+
+Regards,
+
+
+Damien ridereau
+------------------------------------------------
+
+
+-----------------------------------
+Answer recieved on 29th of August :
+Hello,
+
+It shouldn't be a problem. Pdf2xml is under gpl since it's
+based on xpdf, but I don't care much about the licence.
+
+Hervé
+-----------------------------------
+
