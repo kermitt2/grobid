@@ -1,0 +1,188 @@
+package org.grobid.core.lexicon;
+
+import org.grobid.core.exceptions.GrobidException;
+import org.grobid.core.exceptions.GrobidResourceException;
+import org.grobid.core.utilities.TextUtilities;
+import org.grobid.core.utilities.OffsetPosition;
+
+import java.util.*;
+import java.io.*;
+
+/**
+ * Class for fast matching of word sequences over text stream.
+ *
+ * @author Patrice Lopez
+ */
+public final class FastMatcher {
+    private Map terms = null;
+
+    public FastMatcher(File file) {
+        if (!file.exists()) {
+            throw new GrobidResourceException("Cannot add term to matcher, because file '" +
+                    file.getAbsolutePath() + "' does not exists.");
+        }
+        if (!file.canRead()) {
+            throw new GrobidResourceException("Cannot add terms to matcher, because cannot read file '" +
+                    file.getAbsolutePath() + "'.");
+        }
+        try {
+            loadTerms(file);
+        } catch (Exception e) {
+            throw new GrobidException("An exception occured while running Grobid.", e);
+        }
+    }
+
+    public int loadTerms(File file) throws IOException, ClassNotFoundException,
+            InstantiationException, IllegalAccessException {
+        FileInputStream fileIn = new FileInputStream(file);
+        InputStreamReader reader = new InputStreamReader(fileIn, "UTF-8");
+        BufferedReader bufReader = new BufferedReader(reader);
+        String line;
+        if (terms == null) {
+            terms = new HashMap();
+        }
+        Map t = terms;
+        int nbTerms = 0;
+		String token = null;
+        while ((line = bufReader.readLine()) != null) {
+            if (line.length() == 0) continue;
+			line = line.toLowerCase();
+            StringTokenizer st = new StringTokenizer(line, " \n\t" + TextUtilities.fullPunctuations, false);
+            while (st.hasMoreTokens()) {
+				token = st.nextToken();
+                if (token.length() == 0) {
+                    continue;
+                }
+                Map t2 = (Map) t.get(token);
+                if (t2 == null) {
+                    t2 = new HashMap();
+                    t.put(token, t2);
+                }
+                t = t2;
+            }
+            // end of the term
+            if (t != terms) {
+                Map t2 = (Map) t.get("#");
+                if (t2 == null) {
+                    t2 = new HashMap();
+                    t.put("#", t2);
+                }
+                nbTerms++;
+                t = terms;
+            }
+        }
+        bufReader.close();
+        reader.close();
+
+        return nbTerms;
+    }
+
+    private static String delimiters = " \n\t" + TextUtilities.fullPunctuations;
+
+    /**
+     * Identify terms in a piece of text and gives corresponding token positions.
+     * All the matches are returned.
+     *
+     * @param text: the text to be processed
+     * @return the list of offset positions of the matches, an empty list if no match have been found
+     */
+    public List<OffsetPosition> matcher(String text) {
+        List<OffsetPosition> results = new ArrayList<OffsetPosition>();
+        List<Integer> startPos = new ArrayList<Integer>();
+        List<Integer> lastNonSeparatorPos = new ArrayList<Integer>();
+        List<Map> t = new ArrayList<Map>();
+        int currentPos = 0;
+        StringTokenizer st = new StringTokenizer(text, delimiters, true);
+        while (st.hasMoreTokens()) {
+            String token = st.nextToken();
+            if (token.equals(" ")) {
+                continue;
+            }
+            if (delimiters.indexOf(token) != -1) {
+                currentPos++;
+                continue;
+            }
+            if ((token.charAt(0) == '<') && (token.charAt(token.length() - 1) == '>')) {
+                currentPos++;
+                continue;
+            }
+            token = token.toLowerCase();
+
+            // we try to complete opened matching
+            int i = 0;
+            List<Map> new_t = new ArrayList<Map>();
+            List<Integer> new_startPos = new ArrayList<Integer>();
+            List<Integer> new_lastNonSeparatorPos = new ArrayList<Integer>();
+            // continuation of current opened matching
+            for (Map tt : t) {
+                Map t2 = (Map) tt.get(token);
+                if (t2 != null) {
+                    new_t.add(t2);
+                    new_startPos.add(startPos.get(i));
+                    new_lastNonSeparatorPos.add(currentPos);
+                }
+                //else
+                {
+                    t2 = (Map) tt.get("#");
+                    if (t2 != null) {
+                        // end of the current term, matching sucesssful
+                        OffsetPosition ofp = new OffsetPosition();
+                        ofp.start = startPos.get(i).intValue();
+                        ofp.end = lastNonSeparatorPos.get(i).intValue();
+                        results.add(ofp);
+                    }
+                }
+                i++;
+            }
+
+            // we start new matching starting at the current token
+            Map t2 = (Map) terms.get(token);
+            if (t2 != null) {
+                new_t.add(t2);
+                new_startPos.add(new Integer(currentPos));
+                new_lastNonSeparatorPos.add(currentPos);
+            }
+
+            t = new_t;
+            startPos = new_startPos;
+            lastNonSeparatorPos = new_lastNonSeparatorPos;
+            currentPos++;
+        }
+
+        // test if the end of the string correspond to the end of a term
+        int i = 0;
+        if (t != null) {
+            for (Map tt : t) {
+                Map t2 = (Map) tt.get("#");
+                if (t2 != null) {
+                    // end of the current term, matching sucesssful
+                    OffsetPosition ofp = new OffsetPosition();
+                    ofp.start = startPos.get(i).intValue();
+                    ofp.end = lastNonSeparatorPos.get(i).intValue();
+                    results.add(ofp);
+                }
+                i++;
+            }
+        }
+
+        return results;
+    }
+
+    /**
+     * Identify terms in a piece of text and gives corresponding token positions.
+     * All the matches are returned.
+     *
+     * @param tokens: the text to be processed
+     * @return the list of offset positions of the matches, an empty list if no match have been found
+     */
+    public List<OffsetPosition> matcher(List<String> tokens) {
+        String text = "";
+        for (String token : tokens) {
+            if (!token.trim().equals("@newline")) {
+                text += " " + token;
+            }
+        }
+        return matcher(text);
+    }
+}
+

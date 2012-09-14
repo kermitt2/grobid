@@ -1,0 +1,42 @@
+<assembly xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.0 http://maven.apache.org/xsd/assembly-1.1.0.xsd">
+  <id>grobid to go</id>
+  <formats>
+    <format>zip</format>
+  </formats>
+  <includeBaseDirectory>false</includeBaseDirectory>
+  
+  <fileSets>
+  <!-- Include grobid war -->
+  	<fileSet>
+  		<outputDirectory>.</outputDirectory>
+  		<directory>${basedir}/target</directory>
+  		<includes>
+  			<include>${package.file}</include>
+  		</includes>
+  	</fileSet>
+  	<!-- Include license and notice file -->
+  	<fileSet>
+  		<outputDirectory></outputDirectory>
+  		<includes>
+  			<include>${license.file}</include>
+  			<!-- <include>${notice.file}</include> -->
+  		</includes>
+  	</fileSet>
+  	
+  	<!-- Include content path of environment variable -->
+  	<fileSet>
+  		<outputDirectory>.</outputDirectory>
+  		<directory>resources/</directory>
+  		<includes>
+  			<include>GROBID_HOME/**</include>
+  		</includes>
+  		<excludes>
+        	<exclude>**/GROBID_HOME/jobs/**</exclude>
+        	<exclude>**/GROBID_HOME/log/**</exclude>
+        	<exclude>**/GROBID_HOME/tmp/**</exclude>
+      	</excludes>
+  	</fileSet>
+  	</fileSets>
+</assembly>
