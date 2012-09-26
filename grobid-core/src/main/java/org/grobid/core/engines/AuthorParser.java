@@ -697,6 +697,8 @@ public class AuthorParser implements Closeable {
 
     @Override
     public void close() throws IOException {
+    	taggerHeader.clear();
+        taggerCitation.clear();
         taggerHeader.delete();
         taggerCitation.delete();
         taggerHeader = null;

@@ -26,7 +26,7 @@ public interface GrobidPathes {
 	/**
 	 * path extension for grobid service.
 	 */
-	public static final String PATH_GROBID= "grobid";
+	public static final String PATH_GROBID= "/";
 	
 	/**
 	 * path extension for is alive request.

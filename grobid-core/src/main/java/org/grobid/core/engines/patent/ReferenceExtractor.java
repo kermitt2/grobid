@@ -1120,6 +1120,9 @@ public class ReferenceExtractor implements Closeable {
 
     @Override
     public void close() throws IOException {
+    	taggerAll.clear();
+        taggerNPL.clear();
+        taggerPatent.clear();
         taggerAll.delete();
         taggerNPL.delete();
         taggerPatent.delete();

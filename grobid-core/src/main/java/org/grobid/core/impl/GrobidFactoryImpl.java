@@ -6,43 +6,58 @@ import org.grobid.core.main.LibraryLoader;
 
 public class GrobidFactoryImpl implements GrobidFactory {
 
-    /**
-     * {@inheritDoc GrobidFactory#instance}
-     */
-    public static GrobidFactory instance() {
-        if (factory == null)
-            factory = newInstance();
-        return (factory);
-    }
+	private static Engine engine = null;
 
-    /**
-     * {@inheritDoc GrobidFactory#newInstance}
-     */
-    public static GrobidFactory newInstance() {
-    	init();
-        return new GrobidFactoryImpl();
-    }
+	/**
+	 * {@inheritDoc GrobidFactory#instance}
+	 */
+	public static GrobidFactory instance() {
+		if (factory == null)
+			factory = newInstance();
+		return (factory);
+	}
 
-    private static GrobidFactory factory = null;
-    private static boolean isInited = false;
+	/**
+	 * {@inheritDoc GrobidFactory#newInstance}
+	 */
+	public static GrobidFactory newInstance() {
+		init();
+		return new GrobidFactoryImpl();
+	}
 
-    /**
-     * Initializes all necessary things for starting grobid. For instance the environmaent
-     * variable {@link GrobidFactory#ENV_GROBID_HOME} is checked.
-     */
-    public static boolean init() {
-        if (!isInited) {
-            LibraryLoader.load();
-            isInited = true;
-        }
+	private static GrobidFactory factory = null;
+	private static boolean isInited = false;
 
-        return isInited;
-    }
+	/**
+	 * Initializes all necessary things for starting grobid. For instance the
+	 * environmaent variable {@link GrobidFactory#ENV_GROBID_HOME} is checked.
+	 */
+	public static boolean init() {
+		if (!isInited) {
+			LibraryLoader.load();
+			isInited = true;
+		}
 
-    public Engine createEngine() {
-        Engine retVal = null;
-        retVal = new Engine();
+		return isInited;
+	}
 
-        return (retVal);
-    }
+	public Engine createEngine() {
+		Engine retVal = null;
+		retVal = new Engine();
+		return (retVal);
+	}
+
+	// public Engine createEngine() {
+	// if (engine == null) {
+	// engine = new Engine();
+	// }
+	// return engine;
+	// }
+
+	public static Engine getEngine() {
+		if (engine == null) {
+			engine = new Engine();
+		}
+		return new Engine();
+	}
 }
