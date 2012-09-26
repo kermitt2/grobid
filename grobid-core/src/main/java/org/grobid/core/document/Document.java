@@ -190,6 +190,7 @@ public class Document {
                           String pdfPath,
                           String tmpPath,
                           boolean full) throws Exception {
+    	LOGGER.debug("start pdf2xml");
         String pdftoxml0;
         if (full) {
             pdftoxml0 = pdftoxml2;
@@ -235,6 +236,7 @@ public class Document {
                 worker.interrupt();
             }
         }
+        LOGGER.debug("end pdf2xml");
         return tmpPathXML;
     }
 

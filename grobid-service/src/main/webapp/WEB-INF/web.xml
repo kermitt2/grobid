@@ -17,13 +17,55 @@
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
+    
+    <servlet>
+		<servlet-name>welcome</servlet-name>
+		<servlet-class>org.grobid.service.Welcome</servlet-class>
+	</servlet>
+
+
+
     <servlet-mapping>
         <servlet-name>grobid-service</servlet-name>
-        <url-pattern>/*</url-pattern>
+        <url-pattern>/admin/*</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>grobid-service</servlet-name>
+        <url-pattern>/grobid</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>grobid-service</servlet-name>
+        <url-pattern>/processHeaderDocument</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>grobid-service</servlet-name>
+        <url-pattern>/processFulltextDocument</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>grobid-service</servlet-name>
+        <url-pattern>/processDate</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>grobid-service</servlet-name>
+        <url-pattern>/processHeaderNames</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>grobid-service</servlet-name>
+        <url-pattern>/processCitationNames</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>grobid-service</servlet-name>
+        <url-pattern>/processAffiliations</url-pattern>
+    </servlet-mapping>
+    
+    <!-- servlet-mapping>
+		<servlet-name>welcome</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping-->
+    
+    
+    
     <welcome-file-list>
-    	<welcome-file>index.html</welcome-file>
-    	<welcome-file>index.htm</welcome-file>
     	<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
 	

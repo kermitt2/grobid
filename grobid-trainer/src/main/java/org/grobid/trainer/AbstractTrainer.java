@@ -51,11 +51,11 @@ public abstract class AbstractTrainer implements Trainer {
                 tempModelPath.getAbsolutePath(),
                 GrobidProperties.getInstance().getNBThreads());
 
-        /*if (!crfppTrainer.what().isEmpty()) {
+        if (!crfppTrainer.what().isEmpty()) {
             LOGGER.warn("CRF++ Trainer warnings:\n" + crfppTrainer.what());
         } else {
             LOGGER.info("No CRF++ Trainer warnings!");
-        }*/
+        }
         //if we are here, that means that training succeeded
         renameModels(oldModelPath, tempModelPath);
     }

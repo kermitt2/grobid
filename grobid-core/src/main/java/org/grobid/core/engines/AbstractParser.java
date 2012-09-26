@@ -64,34 +64,29 @@ public abstract class AbstractParser implements Closeable {
 	}
 
 	public static Tagger createTagger(GrobidModels model) {
-		File modelPath = GrobidProperties.getInstance().getModelPath(model);
-		// featureFactory = FeatureFactory.getInstance();
+		/*File modelPath = GrobidProperties.getInstance().getModelPath(model);
+        //featureFactory = FeatureFactory.getInstance();
 
-		if (!modelPath.exists()) {
-			throw new RuntimeException("The file path to the " + model.name()
-					+ " CRF model is invalid: " + modelPath.getAbsolutePath());
-		}
-		String cmd = "-m " + modelPath.getAbsolutePath() + " ";
-		LOGGER.info("Parameters to CRF++ tagger for model {}: '{}'",
-				model.name(), cmd);
-		Tagger tagger;
-		try {
-			tagger = new Tagger(cmd);
-		} catch (NoClassDefFoundError e) {
-			throw new GrobidException(
-					"Cannot instantiate a tagger for command '" + cmd + "'.");
-		} catch (Throwable thb) {
-			throw new GrobidException(
-					"Cannot instantiate a tagger for command '" + cmd + "': "
-							+ thb);
-		}
+        if (!modelPath.exists()) {
+            throw new RuntimeException("The file path to the " + model.name() + " CRF model is invalid: " + modelPath.getAbsolutePath());
+        }
+        String cmd = "-m " + modelPath.getAbsolutePath() + " ";
+        LOGGER.info("Parameters to CRF++ tagger for model {}: '{}'", model.name(), cmd);
+        Tagger tagger;
+        try {
+            tagger = new Tagger(cmd);
+        } catch (NoClassDefFoundError e) {
+            throw new GrobidException("Cannot instantiate a tagger for command '" + cmd + "'.");
+        }
 
-		return tagger;
+        return tagger;*/
+		return ModelMap.getTagger(model);
 	}
 
 	@Override
 	public void close() throws IOException {
 		if (tagger != null) {
+			tagger.clear();
 			tagger.delete();
 		}
 		tagger = null;

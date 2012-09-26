@@ -262,7 +262,7 @@ public class Engine implements Closeable {
                 try {
                     close();
                 } catch (IOException e) {
-                    LOGGER.warn("Failed to close all resources: " + e);
+                    LOGGER.error("Failed to close all resources: " + e);
                 }
             }
         });
@@ -1146,7 +1146,7 @@ public class Engine implements Closeable {
 
     @Override
     public synchronized void close() throws IOException {
-        LOGGER.info("Closing all resources");
+        LOGGER.info("==> Closing all resources...");
         if (authorParser != null) {
             authorParser.close();
             authorParser = null;
@@ -1185,5 +1185,6 @@ public class Engine implements Closeable {
             chemicalParser.close();
             chemicalParser = null;
         }
+        LOGGER.info("==>All resources closed");
     }
 }

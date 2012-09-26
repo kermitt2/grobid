@@ -39,10 +39,12 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 import javax.ws.rs.core.UriInfo;
 
+import org.grobid.core.EngineFactory;
 import org.grobid.core.GrobidFactory;
 import org.grobid.core.data.Affiliation;
 import org.grobid.core.data.Date;
 import org.grobid.core.data.Person;
+import org.grobid.core.impl.GrobidFactoryImpl;
 import org.grobid.service.exceptions.GrobidServiceException;
 import org.grobid.service.util.GrobidServiceProperties;
 import org.slf4j.Logger;
@@ -117,6 +119,7 @@ public class GrobidRestService implements GrobidPathes
 	 */
 	@Produces(MediaType.TEXT_HTML)
 	@GET
+	@Path("grobid")
 	public Response getDescription_html(@Context UriInfo uriInfo)
 	{
 		Response response= null;
@@ -347,8 +350,13 @@ public class GrobidRestService implements GrobidPathes
 				}
 		    }
 		    
-		    //starts conversion process
+		    // starts conversion process
 			retVal = GrobidFactory.instance.createEngine().fullTextToTEI(originFile.getAbsolutePath(), false, false);
+			System.gc();
+//			GrobidFactoryImpl.newInstance();
+//			retVal = GrobidFactoryImpl.getEngine().fullTextToTEI(originFile.getAbsolutePath(), false, false);
+//			GrobidFactoryImpl.getEngine().close();
+			// retVal = EngineFactory.getEngine().fullTextToTEI(originFile.getAbsolutePath(), false, false);
 			
 			if ( (retVal== null) || (retVal.isEmpty()) ) {
 				response= Response.status(Status.NO_CONTENT).build();
@@ -372,7 +380,7 @@ public class GrobidRestService implements GrobidPathes
 	 */
 	@Path(PATH_DATE)
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-	@Produces(MediaType.APPLICATION_XML)
+	@Produces(MediaType.TEXT_PLAIN)
 	@POST
 	public Response processDate_post(@FormParam("date") String date) {
 		return(processDate(date));
@@ -385,7 +393,7 @@ public class GrobidRestService implements GrobidPathes
 	 */
 	@Path(PATH_DATE)
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-	@Produces(MediaType.APPLICATION_XML)
+	@Produces(MediaType.TEXT_PLAIN)
 	@PUT
 	public Response processDate(@FormParam("date") String date) {
 		LOGGER.debug(">> "+this.getClass().getName()+"."+Thread.currentThread().getStackTrace()[1]
@@ -409,7 +417,7 @@ public class GrobidRestService implements GrobidPathes
 				response = Response.status(Status.NO_CONTENT).build();
 			}
 			else {
-				response = Response.status(Status.OK).entity(retVal).type(MediaType.APPLICATION_XML).build();
+				response = Response.status(Status.OK).entity(retVal).type(MediaType.TEXT_PLAIN).build();
 			}
 		}
 		catch (Exception e) {
