@@ -1,14 +1,12 @@
 package org.grobid.core.engines;
 
 import java.io.Closeable;
-import java.io.File;
 import java.io.IOException;
 import java.util.StringTokenizer;
 
 import org.chasen.crfpp.Tagger;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.exceptions.GrobidException;
-import org.grobid.core.utilities.GrobidProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -64,22 +62,6 @@ public abstract class AbstractParser implements Closeable {
 	}
 
 	public static Tagger createTagger(GrobidModels model) {
-		/*File modelPath = GrobidProperties.getInstance().getModelPath(model);
-        //featureFactory = FeatureFactory.getInstance();
-
-        if (!modelPath.exists()) {
-            throw new RuntimeException("The file path to the " + model.name() + " CRF model is invalid: " + modelPath.getAbsolutePath());
-        }
-        String cmd = "-m " + modelPath.getAbsolutePath() + " ";
-        LOGGER.info("Parameters to CRF++ tagger for model {}: '{}'", model.name(), cmd);
-        Tagger tagger;
-        try {
-            tagger = new Tagger(cmd);
-        } catch (NoClassDefFoundError e) {
-            throw new GrobidException("Cannot instantiate a tagger for command '" + cmd + "'.");
-        }
-
-        return tagger;*/
 		return ModelMap.getTagger(model);
 	}
 

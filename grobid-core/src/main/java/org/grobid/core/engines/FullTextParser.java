@@ -25,6 +25,8 @@ import java.util.StringTokenizer;
 public class FullTextParser extends AbstractParser {
     private static final Logger LOGGER = LoggerFactory.getLogger(FullTextParser.class);
 
+    private LanguageUtilities languageUtilities = LanguageUtilities.getInstance();
+    
     private HeaderParser headerParser = null;
     private CitationParser citationParser = null;
     //	private String tmpPathName = null;
@@ -89,7 +91,6 @@ public class FullTextParser extends AbstractParser {
                 citationParser = new CitationParser();
             }
 
-            @SuppressWarnings({"NullableProblems"})
             String tei = doc.toTEI(headerParser, citationParser, consolidateHeader, consolidateCitations,
                     false, null, false, false);
             LOGGER.debug(tei);
@@ -168,7 +169,7 @@ public class FullTextParser extends AbstractParser {
             headerParser.processingHeaderBlock(consolidateHeader, doc, resHeader);
             // the language identification is normally done during the header parsing, but only
             // based on header information.
-            LanguageUtilities languageUtilities = LanguageUtilities.getInstance();
+            // LanguageUtilities languageUtilities = LanguageUtilities.getInstance();
             Language langu = languageUtilities.runLanguageId(resHeader.getTitle() + "\n" + doc.getBody());
             if (langu != null) {
                 String lang = langu.getLangId();

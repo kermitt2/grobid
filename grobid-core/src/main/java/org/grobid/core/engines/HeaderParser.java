@@ -29,6 +29,8 @@ import org.slf4j.LoggerFactory;
  */
 public class HeaderParser extends AbstractParser {
     private static final Logger LOGGER = LoggerFactory.getLogger(HeaderParser.class);
+    
+    private LanguageUtilities languageUtilities = LanguageUtilities.getInstance();
 
     private AuthorParser authorParser = null;
     private DateParser dateParser = null;
@@ -103,7 +105,7 @@ public class HeaderParser extends AbstractParser {
 
             resHeader = resultExtraction(res.toString(), true, tokenizations, resHeader);
 
-            LanguageUtilities languageUtilities = LanguageUtilities.getInstance();
+            // LanguageUtilities languageUtilities = LanguageUtilities.getInstance();
             Language langu = languageUtilities.runLanguageId(resHeader.getTitle() + "\n" +
                     resHeader.getKeywords() + "\n" + resHeader.getAbstract());
             if (langu != null) {
@@ -339,7 +341,7 @@ public class HeaderParser extends AbstractParser {
             String rese = res.toString();
             StringBuilder bufferHeader = trainingExtraction(rese, true, tokenizations);
 
-            LanguageUtilities languageUtilities = LanguageUtilities.getInstance();
+            // LanguageUtilities languageUtilities = LanguageUtilities.getInstance();
             Language lang = languageUtilities.runLanguageId(doc.getBody());
 
             if (lang != null) {

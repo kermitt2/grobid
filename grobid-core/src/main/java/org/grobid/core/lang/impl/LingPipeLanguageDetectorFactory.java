@@ -2,6 +2,8 @@ package org.grobid.core.lang.impl;
 
 import org.grobid.core.lang.LanguageDetector;
 import org.grobid.core.lang.LanguageDetectorFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * User: zholudev
@@ -9,14 +11,24 @@ import org.grobid.core.lang.LanguageDetectorFactory;
  * Time: 11:10 AM
  */
 public class LingPipeLanguageDetectorFactory implements LanguageDetectorFactory{
+	private static final Logger LOGGER = LoggerFactory
+			.getLogger(LingPipeLanguageDetectorFactory.class);
     private static LanguageDetector instance = null;
 
     public LanguageDetector getInstance() {
-        synchronized (this.getClass()) {
+    	// synchronized (this.getClass()) {
             if (instance == null) {
-                instance = new LingPipeLanguageDetector();
+                getNewInstance();
             }
-        }
+        // }
         return instance;
     }
+
+    /**
+     * return new instance.
+     */
+	private synchronized void getNewInstance() {
+		LOGGER.debug("synchronized getNewInstance");
+		instance = new LingPipeLanguageDetector();
+	}
 }

@@ -6,22 +6,27 @@ import org.grobid.core.data.Person;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.features.FeaturesVectorName;
 import org.grobid.core.utilities.TextUtilities;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.Closeable;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.StringTokenizer;
+import java.util.Timer;
 
 /**
  * @author Patrice Lopez
  */
 public class AuthorParser implements Closeable {
+	private static Logger LOGGER = LoggerFactory.getLogger(AuthorParser.class);
     private Tagger taggerHeader = null;
     private Tagger taggerCitation = null;
 
     public AuthorParser() {
-        taggerHeader = AbstractParser.createTagger(GrobidModels.NAMES_HEADER);
+    	taggerHeader = AbstractParser.createTagger(GrobidModels.NAMES_HEADER);
         taggerCitation = AbstractParser.createTagger(GrobidModels.NAMES_CITATION);
     }
 

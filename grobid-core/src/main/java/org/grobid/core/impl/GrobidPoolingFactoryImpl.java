@@ -4,6 +4,8 @@ import org.apache.commons.pool.impl.GenericObjectPool;
 import org.grobid.core.GrobidPoolingFactory;
 import org.grobid.core.engines.Engine;
 import org.grobid.core.main.LibraryLoader;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class GrobidPoolingFactoryImpl implements GrobidPoolingFactory {
 
@@ -12,6 +14,8 @@ public class GrobidPoolingFactoryImpl implements GrobidPoolingFactory {
 	 */
 	private static volatile GenericObjectPool grobidEnginePool = null;
 	private static volatile Boolean grobidEnginePoolControl = false;
+	private static final Logger LOGGER = LoggerFactory
+			.getLogger(GrobidPoolingFactoryImpl.class);
 
 	/**
 	 * Creates a pool for {@link Engine} objects. So a number of objects is
@@ -22,6 +26,7 @@ public class GrobidPoolingFactoryImpl implements GrobidPoolingFactory {
 	public static GenericObjectPool newPoolInstance() {
 		if (grobidEnginePool == null) {
 			// initialize grobidEnginePool
+			LOGGER.debug("synchronized newPoolInstance");
 			synchronized (grobidEnginePoolControl) {
 				if (grobidEnginePool == null) {
 					// TODO check if settings make sence in real application
@@ -57,7 +62,7 @@ public class GrobidPoolingFactoryImpl implements GrobidPoolingFactory {
 
 	/**
 	 * Initializes all necessary things for starting grobid. For instance the
-	 * environmaent variable GrobidPoolingFactory.ENV_GROBID_HOME is checked.
+	 * environmaent variable _GrobidPoolingFactory.ENV_GROBID_HOME is checked.
 	 */
 	public static boolean init() {
 		if (!isInited) {

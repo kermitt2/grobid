@@ -1,12 +1,5 @@
 package org.grobid.core.lexicon;
 
-import org.grobid.core.exceptions.GrobidException;
-import org.grobid.core.exceptions.GrobidResourceException;
-import org.grobid.core.lang.Language;
-import org.grobid.core.sax.CountryCodeSaxParser;
-import org.grobid.core.utilities.GrobidProperties;
-import org.grobid.core.utilities.OffsetPosition;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -14,7 +7,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -26,13 +18,24 @@ import java.util.regex.PatternSyntaxException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
+import org.grobid.core.exceptions.GrobidException;
+import org.grobid.core.exceptions.GrobidResourceException;
+import org.grobid.core.lang.Language;
+import org.grobid.core.sax.CountryCodeSaxParser;
+import org.grobid.core.utilities.GrobidProperties;
+import org.grobid.core.utilities.OffsetPosition;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * Class for managing all the lexical resources.
  *
  * @author Patrice Lopez
  */
 public class Lexicon {
-    private static volatile Boolean instanceController = false;
+	private static final Logger LOGGER = LoggerFactory
+			.getLogger(Lexicon.class);
+    // private static volatile Boolean instanceController = false;
     private static volatile Lexicon instance;
 
     private Set<String> dictionary_en = null;
@@ -51,13 +54,22 @@ public class Lexicon {
     public static Lexicon getInstance() {
         if (instance == null) {
             //double check idiom
-            synchronized (instanceController) {
+            // synchronized (instanceController) {
                 if (instance == null)
-                    instance = new Lexicon();
-            }
+					getNewInstance();
+            // }
         }
         return instance;
     }
+
+    /**
+     * Creates a new instance.
+     */
+	private static synchronized void getNewInstance() {
+		LOGGER.debug("Get new instance of Lexicon");
+		GrobidProperties.getInstance();
+		instance = new Lexicon();
+	}
 
     /**
      * Hidden constructor
@@ -65,7 +77,6 @@ public class Lexicon {
     private Lexicon() {
         initDictionary();
         initNames();
-        GrobidProperties.getInstance();
 		// the loading of the journal and conference names is lazy
         addDictionary(GrobidProperties.getGrobidHomePath() + "/lexicon/wordforms/english.wf", Language.EN);
         addDictionary(GrobidProperties.getGrobidHomePath() + "/lexicon/wordforms/german.wf", Language.EN);
@@ -78,8 +89,10 @@ public class Lexicon {
     }
 
     private void initDictionary() {
+    	LOGGER.info("Initiating dictionary");
         dictionary_en = new HashSet<String>();
         dictionary_de = new HashSet<String>();
+        LOGGER.info("End of Initialization of dictionary");
     }
 
     public final void addDictionary(String path, String lang) {
@@ -96,7 +109,7 @@ public class Lexicon {
         InputStreamReader isr = null;
         BufferedReader dis = null;
         try {
-            if (GrobidProperties.getInstance().isResourcesInHome())
+            if (GrobidProperties.isResourcesInHome())
                 ist = new FileInputStream(file);
             else
                 ist = getClass().getResourceAsStream(path);
@@ -157,13 +170,17 @@ public class Lexicon {
     }
 
     private void initNames() {
+    	LOGGER.info("Initiating names");
         firstNames = new HashSet<String>();
         lastNames = new HashSet<String>();
+        LOGGER.info("End of initialization of names");
     }
 
     private void initCountryCodes() {
+    	LOGGER.info("Initiating country codes");
         countryCodes = new HashMap<String, String>();
         countries = new HashSet<String>();
+        LOGGER.info("End of initialization of country codes");
     }
 
     private void addCountryCodes(String path) {
@@ -180,7 +197,7 @@ public class Lexicon {
         InputStreamReader isr = null;
         BufferedReader dis = null;
         try {
-            if (GrobidProperties.getInstance().isResourcesInHome())
+            if (GrobidProperties.isResourcesInHome())
                 ist = new FileInputStream(file);
             else
                 ist = getClass().getResourceAsStream(path);
@@ -228,7 +245,7 @@ public class Lexicon {
         InputStream ist = null;
         BufferedReader dis = null;
         try {
-            if (GrobidProperties.getInstance().isResourcesInHome()) {
+            if (GrobidProperties.isResourcesInHome()) {
                 ist = new FileInputStream(file);
             } else {
                 ist = getClass().getResourceAsStream(path);
@@ -278,7 +295,7 @@ public class Lexicon {
         InputStream ist = null;
         BufferedReader dis = null;
         try {
-            if (GrobidProperties.getInstance().isResourcesInHome())
+            if (GrobidProperties.isResourcesInHome())
                 ist = new FileInputStream(file);
             else
                 ist = getClass().getResourceAsStream(path);
@@ -372,10 +389,10 @@ public class Lexicon {
     public void initJournals() {
         try {
             abbrevJournalPattern = new FastMatcher(new
-                    File(GrobidProperties.getInstance().getGrobidHomePath() + "/lexicon/journals/abbrev_journals.txt"));
+                    File(GrobidProperties.getGrobidHomePath() + "/lexicon/journals/abbrev_journals.txt"));
 
             journalPattern = new FastMatcher(new
-                    File(GrobidProperties.getInstance().getGrobidHomePath() + "/lexicon/journals/journals.txt"));
+                    File(GrobidProperties.getGrobidHomePath() + "/lexicon/journals/journals.txt"));
         } catch (PatternSyntaxException e) {
             throw new GrobidResourceException(
                     "Error when compiling lexicon regular expression for abbreviated journal names.", e);
@@ -383,10 +400,10 @@ public class Lexicon {
     }
 
     public void initConferences() {
-        ArrayList<String> conferences = new ArrayList<String>();
+        // ArrayList<String> conferences = new ArrayList<String>();
         try {
             conferencePattern = new FastMatcher(new
-                    File(GrobidProperties.getInstance().getGrobidHomePath() + "/lexicon/journals/proceedings.txt"));
+                    File(GrobidProperties.getGrobidHomePath() + "/lexicon/journals/proceedings.txt"));
         } catch (PatternSyntaxException e) {
             throw new GrobidResourceException("Error when compiling lexicon regular expression for conference names.", e);
         }
@@ -395,7 +412,7 @@ public class Lexicon {
     public void initPublishers() {
         try {
             publisherPattern = new FastMatcher(new
-                    File(GrobidProperties.getInstance().getGrobidHomePath() + "/lexicon/publishers/publishers.txt"));
+                    File(GrobidProperties.getGrobidHomePath() + "/lexicon/publishers/publishers.txt"));
         } catch (PatternSyntaxException e) {
             throw new GrobidResourceException("Error when compiling lexicon regular expression for conference names.", e);
         }
@@ -404,7 +421,7 @@ public class Lexicon {
     public void initCities() {
         try {
             cityPattern = new FastMatcher(new
-                    File(GrobidProperties.getInstance().getGrobidHomePath() + "/lexicon/places/cities15000.txt"));
+                    File(GrobidProperties.getGrobidHomePath() + "/lexicon/places/cities15000.txt"));
         } catch (PatternSyntaxException e) {
             throw new GrobidResourceException("Error when compiling lexicon regular expression for cities.", e);
         }

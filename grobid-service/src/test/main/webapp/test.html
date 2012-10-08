@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+<meta charset="utf-8">
+<title>Welcome</title>
+<script src="jquery-1.8.1.min.js">
+	
+</script>
+</head>
+
+<body>
+	<h1>Welcome to grobid</h1>
+	<h2>Access to grobid params</h2>
+
+	<h2>Send a request</h2>
+	<form method="post" action="" enctype="" id="gbdForm">
+		<table border="1">
+			<tr>
+				<td colspan="2"><select id="selectedService">
+						<option value="processHeaderDocument" selected>Process
+							Header Document</option>
+						<option value="processFulltextDocument">Process Fulltext
+							Document</option>
+						<option value="processDate">Process Date</option>
+						<option value="processHeaderNames">Process Header Names</option>
+						<option value="processCitationNames">Process Citation
+							Names</option>
+						<option value="processAffiliations">Process Affiliations</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td><span id="label"></span></td>
+				<td><input id="field" type="hidden" name="" /></td>
+			</tr>
+			<tr>
+				<td colspan="2>"><input type="submit" value="Submit" /></td>
+		</table>
+	</form>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("#selectedService").change(function() {
+				var test = $('#tst').attr('value', 'changed');
+				processChange();
+				return false;
+			});
+		});
+
+		function processChange() {
+			var selected = $('#selectedService').attr('value');
+			if (selected == "processHeaderDocument") {
+				$('#field').attr('type', 'file');
+				$('#label').html('Select a pdf file ');
+				$('#gbdForm').attr('enctype', 'multipart/form-data');
+			}
+		}
+	</script>
+</body>
+</html>

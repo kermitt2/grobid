@@ -7,10 +7,13 @@ import org.apache.commons.pool.impl.GenericObjectPool;
 import org.grobid.core.impl.GrobidPoolingFactoryImpl;
 
 public interface GrobidPoolingFactory extends PoolableObjectFactory {
-    public GenericObjectPool newPoolInstance = GrobidPoolingFactoryImpl.newPoolInstance();
+	public GenericObjectPool newPoolInstance = GrobidPoolingFactoryImpl
+			.newPoolInstance();
 
-    public GrobidPoolingFactory newInstance = org.grobid.core.impl.GrobidPoolingFactoryImpl.newInstance();
-    public Boolean startUp = org.grobid.core.impl.GrobidPoolingFactoryImpl.init();
+	public GrobidPoolingFactory newInstance = GrobidPoolingFactoryImpl
+			.newInstance();
+	public Boolean startUp = org.grobid.core.impl.GrobidPoolingFactoryImpl
+			.init();
 
-    public Engine createEngine();
+	public Engine createEngine();
 }

@@ -2,9 +2,11 @@ package org.grobid.core.test;
 
 import static org.junit.Assert.assertNotNull;
 
+import org.grobid.core.impl.GrobidFactory;
 import org.grobid.core.main.GrobidConstants;
 import org.grobid.core.utilities.GrobidProperties;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 /**
@@ -15,9 +17,14 @@ public class TestFullTextParser extends EngineTest {
 	private String testPath = null;
 	private String newTrainingPath = null;
 	
+	@BeforeClass
+	public static void init(){
+		GrobidProperties.getInstance();
+	}
+	
 	@Before
 	public void setUp() {
-		newTrainingPath = GrobidProperties.getInstance().getTempPath().getAbsolutePath();
+		newTrainingPath = GrobidProperties.getTempPath().getAbsolutePath();
 	}
 	
 	private void getTestResourcePath() {
@@ -54,28 +61,28 @@ public class TestFullTextParser extends EngineTest {
 
 		String pdfPath = testPath + "/Wang-paperAVE2008.pdf";
 		
-		String tei = engine.fullTextToTEI(pdfPath, false, false, 1);
+		String tei = GrobidFactory.getInstance().createEngine().fullTextToTEI(pdfPath, false, false, 1);
 		assertNotNull(tei);
  		//System.out.println(tei);
 		
 		pdfPath = testPath + "/1001._0908.0054.pdf";
 		
-		tei = engine.fullTextToTEI(pdfPath, false, false, 1);
+		tei = GrobidFactory.getInstance().createEngine().fullTextToTEI(pdfPath, false, false, 1);
 		assertNotNull(tei);
  		//System.out.println(tei);
 
 		pdfPath = testPath + "/submission_161.pdf";
-		tei = engine.fullTextToTEI(pdfPath, false, false, 1);
+		tei = GrobidFactory.getInstance().createEngine().fullTextToTEI(pdfPath, false, false, 1);
 		assertNotNull(tei);
  		//System.out.println(tei);
 
 		pdfPath = testPath + "/submission_363.pdf";
-		tei = engine.fullTextToTEI(pdfPath, false, false, 1);
+		tei = GrobidFactory.getInstance().createEngine().fullTextToTEI(pdfPath, false, false, 1);
 		assertNotNull(tei);
  		//System.out.println(tei);
 
 		pdfPath = testPath + "/ApplPhysLett_98_082505.pdf";
-		tei = engine.fullTextToTEI(pdfPath, false, false, 1);
+		tei = GrobidFactory.getInstance().createEngine().fullTextToTEI(pdfPath, false, false, 1);
 		assertNotNull(tei);
 		//System.out.println(tei);
 	}

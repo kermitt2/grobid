@@ -6,12 +6,19 @@ import static org.junit.Assert.assertNotNull;
 import java.util.List;
 
 import org.grobid.core.data.Affiliation;
+import org.grobid.core.engines.Engine;
+import org.junit.Before;
 import org.junit.Test;
 
 /**
  *  @author Patrice Lopez
  */
 public class TestAffiliationAddressParser extends EngineTest{
+	
+	@Before
+	public void init(){
+		engine = new Engine();
+	}
 	
 	@Test
 	public void testParser() throws Exception {
@@ -29,12 +36,15 @@ public class TestAffiliationAddressParser extends EngineTest{
 			assertEquals(res.get(0).getCountry(), "Poland");
 			assertEquals(res.get(0).getAddrLine(), "Narutowicza 11/12");
 		}
-		
+	}
+	
+	@Test
+	public void testParser2() throws Exception {
 		String affiliationSequence2 = "Faculty of Health, School of Biomedical Sciences, " + 
-			"University of Newcastle, New South Wales, Australia.";
-		List<Affiliation> res2 = engine.processAffiliation(affiliationSequence2);	
-		if (res2.size() > 0) {
-			assertNotNull(res.get(0).getInstitutions());
-		}
+				"University of Newcastle, New South Wales, Australia.";
+			List<Affiliation> res = engine.processAffiliation(affiliationSequence2);	
+			if (res.size() > 0) {
+				assertNotNull(res.get(0).getInstitutions());
+			}
 	}
 }
