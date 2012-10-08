@@ -62,6 +62,11 @@ public interface GrobidPropertyKeys {
 	 * name of the property setting the admin password
 	 */
 	public static final String PROP_GROBID_SERVICE_ADMIN_PW = "org.grobid.service.admin.pw";
+	
+	/**
+	 * If set to true, parallel execution will be done, else a queuing of requests will be done.
+	 */
+	public static final String PROP_GROBID_SERVICE_IS_PARALLEL_EXEC = "org.grobid.service.is.parallel.execution";
 
 	/**
 	 * The defined paths to create.

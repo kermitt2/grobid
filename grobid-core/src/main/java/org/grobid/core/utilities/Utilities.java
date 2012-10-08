@@ -1,5 +1,6 @@
 package org.grobid.core.utilities;
 
+import org.apache.commons.lang3.StringUtils;
 import org.grobid.core.data.BiblioItem;
 import org.grobid.core.exceptions.GrobidException;
 
@@ -303,6 +304,25 @@ public class Utilities {
 				.toLowerCase().substring(0, 3);
 		String archPart = System.getProperty("sun.arch.data.model");
 		return String.format("%s-%s", osPart, archPart);
+	}
+
+	/**
+	 * Convert a string to boolean.
+	 * 
+	 * @param value
+	 *            the value to convert
+	 * @return true if the string value is "true", false is it equals to
+	 *         "false". <br>
+	 *         If the value does not correspond to one of these 2 values, return
+	 *         false.
+	 */
+	public static boolean stringToBoolean(String value) {
+		boolean res = false;
+		if (StringUtils.isNotBlank(value)
+				&& Boolean.toString(true).equalsIgnoreCase(value.trim())) {
+			res = true;
+		}
+		return res;
 	}
 
 } // end of class

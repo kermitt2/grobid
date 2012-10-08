@@ -24,11 +24,6 @@ public class ModelMap {
 			.getLogger(ModelMap.class);
 
 	/**
-	 * Contains all the taggers corresponding to theirs models.
-	 */
-	// private static Map<String, Tagger> taggers = null;
-
-	/**
 	 * Map that contains all the models loaded in memory.
 	 */
 	private static Map<String, Model> models = null;
@@ -47,13 +42,29 @@ public class ModelMap {
 			models = new HashMap<String, Model>();
 		}
 		if (models.get(modelPath) == null) {
-			LOGGER.info("Loading model " + modelPath + " in memory");
-			models.put(modelPath, new Model("-m " + modelPath + " "));
+			getNewModel(modelPath);
 		}
 		LOGGER.debug("end getModel");
 		return models.get(modelPath);
 	}
 
+	/**
+	 * Set models with a new model.
+	 * 
+	 * @param modelPath
+	 *            The path of the model to use.
+	 */
+	private static synchronized void getNewModel(String modelPath) {
+		LOGGER.info("Loading model " + modelPath + " in memory");
+		models.put(modelPath, new Model("-m " + modelPath + " "));
+	}
+
+	/**
+	 * Return a tagger created corresponding to the model given in argument.
+	 * 
+	 * @param grobidModel the model to use for the creation of the tagger.
+	 * @return Tagger
+	 */
 	public static Tagger getTagger(GrobidModels grobidModel) {
 		LOGGER.debug("start getTagger");
 		Tagger tagger;
@@ -67,26 +78,15 @@ public class ModelMap {
 		return tagger;
 	}
 
-	/*
-	 * public static Tagger getTaggerOld(GrobidModels model) {
-	 * LOGGER.debug("start getTagger"); if (taggers == null) { taggers = new
-	 * HashMap<String, Tagger>(); } if (taggers.get(model) == null) {
-	 * GrobidProperties.getInstance(); File modelPath =
-	 * GrobidProperties.getModelPath(model);
-	 * 
-	 * if (!modelPath.exists()) { throw new
-	 * RuntimeException("The file path to the " + model.name() +
-	 * " CRF model is invalid: " + modelPath.getAbsolutePath()); } String cmd =
-	 * "-m " + modelPath.getAbsolutePath() + " ";
-	 * LOGGER.info("Parameters to CRF++ tagger for model {}: '{}'",
-	 * model.name(), cmd); Tagger tagger; try { tagger = new Tagger(cmd);
-	 * taggers.put(model.getModelName(), tagger);
-	 * LOGGER.info("new Tagger added to TaggerMap: " + tagger); } catch
-	 * (NoClassDefFoundError e) { throw new GrobidException(
-	 * "Cannot instantiate a tagger for command '" + cmd + "'."); } catch
-	 * (Throwable thb) { throw new GrobidException(
-	 * "Cannot instantiate a tagger for command '" + cmd + "': " + thb); } }
-	 * LOGGER.debug("end getTagger"); return taggers.get(model); }
+	/**
+	 * Loading of the models.
 	 */
-
+	public static synchronized void initModels() {
+		LOGGER.info("Loading models");
+		GrobidModels[] models = GrobidModels.values();
+		for (GrobidModels model : models) {
+			getModel(model.getModelPath());
+		}
+		LOGGER.info("Models loaded");
+	}
 }

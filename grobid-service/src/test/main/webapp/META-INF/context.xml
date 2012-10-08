@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context 
+        path="/jndi-web-sample"
+        reloadable="true"
+        antiResourceLocking="true" 
+        antiJARLocking="true"
+        privileged="false">
+        
+        <ResourceLink name="url/properties"
+                      global="/web-sample/jdbc/DB"
+                      type="java.net.URL"/>
+</Context>

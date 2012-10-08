@@ -4,8 +4,8 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 
-import org.grobid.core.GrobidFactory;
 import org.grobid.core.data.BiblioItem;
+import org.grobid.core.impl.GrobidFactory;
 import org.junit.Test;
 
 /**
@@ -15,7 +15,7 @@ public class TestCitationParser extends EngineTest {
 	
 	@Test
 	public void testCitationParser() throws Exception {
-        GrobidFactory.instance.createEngine();
+        GrobidFactory.getInstance().createEngine();
 		String citation1 = "A. Cau, R. Kuiper, and W.-P. de Roever. Formalising Dijkstra's development "+
 		"strategy within Stark's formalism. In C. B. Jones, R. C. Shaw, and " +
 		"T. Denvir, editors, Proc. 5th. BCS-FACS Refinement Workshop, London, UK, 1992.";			

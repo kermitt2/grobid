@@ -1,7 +1,7 @@
 package org.grobid.core.test;
 
 
-import org.grobid.core.impl._GrobidPoolingFactoryImpl;
+import org.grobid.core.impl.GrobidPoolingFactoryImpl;
 import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
 import org.junit.runner.notification.Failure;
@@ -13,7 +13,7 @@ import org.junit.runner.notification.Failure;
 public class Runner {
 	
 	public static void main(String[] args) {
-		_GrobidPoolingFactoryImpl.init();
+		GrobidPoolingFactoryImpl.init();
 		int totalTestRuns = 0;
 		int totalFailures = 0;
 		

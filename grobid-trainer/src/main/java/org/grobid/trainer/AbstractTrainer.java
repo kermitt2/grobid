@@ -1,18 +1,18 @@
 package org.grobid.trainer;
 
+import java.io.File;
+import java.io.IOException;
+
 import org.chasen.crfpp.CRFPPTrainer;
 import org.chasen.crfpp.Tagger;
-import org.grobid.core.GrobidFactory;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.engines.AbstractParser;
 import org.grobid.core.exceptions.GrobidException;
+import org.grobid.core.impl.GrobidFactory;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.trainer.evaluation.EvaluationUtilities;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.io.File;
-import java.io.IOException;
 
 /**
  * User: zholudev
@@ -32,7 +32,7 @@ public abstract class AbstractTrainer implements Trainer {
     private Tagger tagger;
 
     public AbstractTrainer(GrobidModels model) {
-        GrobidFactory.instance.createEngine();
+    	GrobidFactory.getInstance().createEngine();
         crfppTrainer = new CRFPPTrainer();
         this.model = model;
         this.trainDataPath = getTempTrainingDataPath();

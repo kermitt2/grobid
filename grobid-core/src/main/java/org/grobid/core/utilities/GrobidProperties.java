@@ -94,9 +94,9 @@ public class GrobidProperties {
 	 */
 	public static GrobidProperties getInstance() {
 		if (grobidProperties == null)
-			return (getNewInstance());
+			return getNewInstance();
 		else
-			return (grobidProperties);
+			return grobidProperties;
 	}
 
 	/**
@@ -106,6 +106,7 @@ public class GrobidProperties {
 	 * @return GrobidProperties
 	 */
 	public static synchronized GrobidProperties getNewInstance() {
+		LOGGER.debug("synchronized getNewInstance");
 		grobidProperties = new GrobidProperties();
 		return grobidProperties;
 	}
@@ -120,11 +121,11 @@ public class GrobidProperties {
 	}
 
 	/**
-	 * @param props
+	 * @param pProps
 	 *            the props to set
 	 */
-	protected static void setProps(Properties props) {
-		GrobidProperties.props = props;
+	protected static void setProps(Properties pProps) {
+		props = pProps;
 	}
 
 	/**
@@ -139,11 +140,11 @@ public class GrobidProperties {
 	/**
 	 * Set the context.
 	 * 
-	 * @param context
+	 * @param pContext
 	 *            the context.
 	 */
-	public static void setContext(Context context) {
-		GrobidProperties.context = context;
+	public static void setContext(Context pContext) {
+		context = pContext;
 	}
 
 	/**
@@ -358,14 +359,14 @@ public class GrobidProperties {
 	public GrobidProperties() {
 		init();
 	}
-	
+
 	public GrobidProperties(Context pContext) {
 		init(pContext);
 	}
 
-	protected static void init(Context pContext){
+	protected static void init(Context pContext) {
 		setContext(pContext);
-		
+
 		setProps(new Properties());
 
 		load_GROBID_HOME_PATH();
@@ -387,13 +388,13 @@ public class GrobidProperties {
 		checkProperties();
 		loadPdf2XMLPath();
 	}
-	
+
 	/**
 	 * Loads all properties given in property file {@link #GROBID_HOME_PATH}.
 	 */
 	protected static void init() {
 		LOGGER.debug("Initiating property loading");
-		
+
 		Context ctxt;
 		try {
 			ctxt = new InitialContext();
@@ -748,8 +749,8 @@ public class GrobidProperties {
 	 * @return true if a language id shall be used
 	 */
 	public static Boolean isUseLanguageId() {
-		return Boolean
-				.valueOf(getPropertyValue(GrobidPropertyKeys.PROP_USE_LANG_ID));
+		return Utilities
+				.stringToBoolean(getPropertyValue(GrobidPropertyKeys.PROP_USE_LANG_ID));
 	}
 
 	public static String getLanguageDetectorFactory() {
@@ -779,7 +780,7 @@ public class GrobidProperties {
 	 * @return true if a language id shall be used
 	 */
 	public static Boolean isResourcesInHome() {
-		return Boolean.valueOf(getPropertyValue(
+		return Utilities.stringToBoolean(getPropertyValue(
 				GrobidPropertyKeys.PROP_RESOURCE_INHOME, "true"));
 	}
 

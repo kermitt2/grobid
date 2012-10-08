@@ -5,33 +5,33 @@ import java.io.FileFilter;
 
 import javax.naming.InitialContext;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.GrobidPropertyKeys;
 import org.grobid.core.utilities.Utilities;
 import org.grobid.mock.MockContext;
+import org.slf4j.LoggerFactory;
 
 /**
  * User: zholudev Date: 11/17/11 Time: 1:49 PM
  */
 public class LibraryLoader {
 
-	private static Log logger = LogFactory.getLog(LibraryLoader.class);
+	private static org.slf4j.Logger logger = LoggerFactory
+			.getLogger(LibraryLoader.class);
 
 	private static boolean loaded = false;
 
 	private static boolean isContextMocked = false;
 
 	public static void load() {
-		logger.debug("staring load");
 		if (!loaded) {
+			logger.info("Loading external library crfpp");
 			mockContextIfNotSet();
 			logger.debug(getLibraryFolder());
 			File libraryFolder = new File(getLibraryFolder());
 			if (!libraryFolder.exists() || !libraryFolder.isDirectory()) {
-				logger.fatal("Unable to find a native CRF++ library: Folder "
+				logger.error("Unable to find a native CRF++ library: Folder "
 						+ libraryFolder + " does not exist");
 				throw new RuntimeException(
 						"Unable to find a native CRF++ library: Folder "
@@ -46,7 +46,7 @@ public class LibraryLoader {
 			});
 
 			if (files.length == 0) {
-				logger.fatal("Unable to find a native CRF++ library: No files starting with "
+				logger.error("Unable to find a native CRF++ library: No files starting with "
 						+ GrobidConstants.CRFPP_NATIVE_LIB_NAME
 						+ " are in folder " + libraryFolder);
 				throw new RuntimeException(
@@ -56,7 +56,7 @@ public class LibraryLoader {
 			}
 
 			if (files.length > 1) {
-				logger.fatal("Unable to load a native CRF++ library: More than 1 library exists in "
+				logger.error("Unable to load a native CRF++ library: More than 1 library exists in "
 						+ libraryFolder);
 				throw new RuntimeException(
 						"Unable to load a native CRF++ library: More than 1 library exists in "
@@ -69,7 +69,7 @@ public class LibraryLoader {
 			try {
 				System.load(libPath);
 			} catch (Exception e) {
-				logger.fatal("Unable to load a native CRF++ library, although it was found under path "
+				logger.error("Unable to load a native CRF++ library, although it was found under path "
 						+ libPath);
 				throw new RuntimeException(
 						"Unable to load a native CRF++ library, although it was found under path "
@@ -77,19 +77,18 @@ public class LibraryLoader {
 			}
 
 			loaded = true;
-			
-			if(isContextMocked){
+
+			if (isContextMocked) {
 				try {
 					MockContext.destroyInitialContext();
 				} catch (Exception exp) {
 					logger.error("Could not unmock the context." + exp);
 					new GrobidException("Could not unmock the context." + exp);
 				}
-				isContextMocked=false;
+				isContextMocked = false;
 			}
-				
+			logger.info("Library crfpp loaded");
 		}
-		logger.debug("finishing load");
 	}
 
 	/**
@@ -116,10 +115,10 @@ public class LibraryLoader {
 	}
 
 	private static String getLibraryFolder() {
-		GrobidProperties
-				.getInstance();
+		GrobidProperties.getInstance();
 		// TODO: change to fetching the basic dir from GrobidProperties object
-		return String.format("%s" + File.separator + "%s", GrobidProperties.getNativeLibraryPath().getAbsolutePath(),
-				Utilities.getOsNameAndArch());
+		return String.format("%s" + File.separator + "%s", GrobidProperties
+				.getNativeLibraryPath().getAbsolutePath(), Utilities
+				.getOsNameAndArch());
 	}
 }
