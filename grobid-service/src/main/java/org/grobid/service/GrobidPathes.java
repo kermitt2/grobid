@@ -35,7 +35,7 @@ public interface GrobidPathes {
 	/**
 	 * path extension for grobid admin pages.
 	 */
-	public static final String PATH_ADMIN= "admin/{pw}";
+	public static final String PATH_ADMIN= "admin";
 	
 	/**
 	 * path extension for processing document headers.
@@ -61,4 +61,8 @@ public interface GrobidPathes {
 	 * path extension for processing affiliation in document headers.
 	 */
 	public static final String PATH_AFFILIATION= "processAffiliations";
+	/**
+	 * path extension for processing sha1.
+	 */
+	public static final String PATH_SHA1= "sha1";
 }

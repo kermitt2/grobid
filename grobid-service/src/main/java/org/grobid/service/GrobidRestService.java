@@ -17,13 +17,7 @@
  */
 package org.grobid.service;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.InputStream;
-import java.io.OutputStream;
-import java.util.List;
-import java.util.Properties;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.FormParam;
@@ -31,568 +25,254 @@ import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import javax.ws.rs.core.Response.Status;
 import javax.ws.rs.core.UriInfo;
 
-import org.grobid.core.EngineFactory;
-import org.grobid.core.GrobidFactory;
-import org.grobid.core.data.Affiliation;
-import org.grobid.core.data.Date;
-import org.grobid.core.data.Person;
-import org.grobid.core.impl.GrobidFactoryImpl;
-import org.grobid.service.exceptions.GrobidServiceException;
+import org.grobid.core.impl.GrobidFactory;
+import org.grobid.service.process.GrobidRestProcessAdmin;
+import org.grobid.service.process.GrobidRestProcessFiles;
+import org.grobid.service.process.GrobidRestProcessGeneric;
+import org.grobid.service.process.GrobidRestProcessString;
 import org.grobid.service.util.GrobidServiceProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.sun.jersey.spi.resource.Singleton;
+
 /**
  * RESTful service for the GROBID system.
+ * 
  * @author FloZi
- *
+ * 
  */
+@Singleton
 @Path(GrobidPathes.PATH_GROBID)
-public class GrobidRestService implements GrobidPathes
-{
-	private static final Logger LOGGER = LoggerFactory.getLogger(GrobidRestService.class);
-	
-	public GrobidRestService()
-	{
-		GrobidServiceProperties.getInstance();
-	}
-	
+public class GrobidRestService implements GrobidPathes {
 	/**
-	 * Creates a new not used temprorary folder and returns it.
-	 * @return
+	 * The class Logger.
 	 */
-	protected static File newTempDir()
-	{
-		File generalTmpDir= new File(System.getProperty("java.io.tmpdir"));
-		if (!generalTmpDir.exists())
-			throw new GrobidServiceException("Cannot create a temprorary folder, because the base temprorary path requested from the os does not exist.");
-		File retVal= new File(generalTmpDir.getAbsolutePath()+"/"+System.nanoTime());
-		if (!retVal.mkdir())
-			throw new GrobidServiceException("Cannot create a temprorary folder, '"+retVal.getAbsolutePath()+"'.");
-		return(retVal);
+	private static final Logger LOGGER = LoggerFactory
+			.getLogger(GrobidRestService.class);
+
+	private static final String NAMES = "names";
+	private static final String DATE = "date";
+	private static final String AFFILIATIONS = "affiliations";
+
+
+	public GrobidRestService() {
+		LOGGER.info("Initiating Sevlet GrobidRestService");
+		GrobidServiceProperties.getInstance();
+		GrobidFactory.getInstance();
+		LOGGER.info("Initiating of Sevlet GrobidRestService finished.");
 	}
-	
+
 	/**
-	 * Returns a string containing true, if the service is alive.
-	 * @return returns a response object containing the string true if service is alive. 
+	 * @see org.grobid.service.process.GrobidRestProcessGeneric#isAlive()
 	 */
 	@Path(GrobidPathes.PATH_IS_ALIVE)
 	@Produces(MediaType.TEXT_PLAIN)
 	@GET
-	public Response isAlive()
-	{
-		Response response= null;
-		try
-		{
-			LOGGER.debug("called isAlive()...");
-			
-			String retVal= null;
-			try
-			{
-				retVal= Boolean.valueOf(true).toString();
-			}
-			catch (Exception e)
-			{
-				LOGGER.error("COSMATService is not alive, because of: ", e);
-				retVal= Boolean.valueOf(false).toString();
-			}
-			response= Response.status(Status.OK).entity(retVal).build();
-		} catch (Exception e) 
-		{
-			LOGGER.error(""+e);
-			response= Response.status(Status.INTERNAL_SERVER_ERROR).build();
-		}
-		return(response);
+	public Response isAlive() {
+		return GrobidRestProcessGeneric.isAlive();
 	}
-	
+
 	/**
-	 * Returns the description of how to use the grobid-service in a human readable way (html).
-	 * @return returns a response object containing a html description
+	 * 
+	 * @see org.grobid.service.process.GrobidRestProcessGeneric#getDescription_html(UriInfo)
 	 */
 	@Produces(MediaType.TEXT_HTML)
 	@GET
 	@Path("grobid")
-	public Response getDescription_html(@Context UriInfo uriInfo)
-	{
-		Response response= null;
-		try{
-			LOGGER.debug("called getDescription_html()...");
-			
-			StringBuffer htmlCode= new StringBuffer();
-			
-			htmlCode.append("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">");
-			htmlCode.append("<html>");
-			htmlCode.append("<head>");
-			htmlCode.append("<title>grobid-service - description</title>");
-			htmlCode.append("</head>");
-			htmlCode.append("<body>");
-			htmlCode.append("<h1>grobid-service documentation</h1>");
-			htmlCode.append("This service provides a RESTful interface for using the grobid system. grobid extracts data from pdf files. For more information see: ");
-			htmlCode.append("<a href=\"http://hal.inria.fr/inria-00493437_v1/\">http://hal.inria.fr/inria-00493437_v1/</a>");
-			htmlCode.append("<br/>");
-			String link= null;
-			if (	(uriInfo != null) &&
-					(uriInfo.getAbsolutePath()!= null)&&
-					(uriInfo.getAbsolutePath().toString().endsWith("/")))
-			{
-				link= "../application.wadl";
-			}
-			else link= "application.wadl";
-			htmlCode.append("A more detailed technical description of the grobid-service can be found here (<a href=\""+link+"\">application.wadl</a>)");
-			htmlCode.append("</body>");
-			htmlCode.append("</html>");
-	
-			response= Response.status(Status.OK).entity(htmlCode.toString()).type(MediaType.TEXT_HTML).build();
-		} catch (Exception e) 
-		{
-			LOGGER.error("Cannot response the description for grobid-service. ", e);
-			response= Response.status(Status.INTERNAL_SERVER_ERROR).build();
-		}
-		return(response);
+	public Response getDescription_html(@Context UriInfo uriInfo) {
+		return GrobidRestProcessGeneric.getDescription_html(uriInfo);
 	}
-	
+
 	/**
-	 * Returns the admin view of all properties used for running grobid.
-	 * @return returns a response object containing the admin infos in html syntax. 
+	 * @see org.grobid.service.process.GrobidRestProcessAdmin#getAdminParams(String)
 	 */
-	@Produces(MediaType.TEXT_HTML)
 	@Path(PATH_ADMIN)
-	@GET
-	public Response getAdmin_html(	@PathParam("pw") String pw,
-									@Context UriInfo uriInfo)
-	{
-		Response response= null;
-		try{
-			LOGGER.debug("called getDescription_html()...");
-			GrobidServiceProperties.getInstance();
-			if (	(GrobidServiceProperties.getAdminPw()!= null)&&
-					(GrobidServiceProperties.getAdminPw().equals(pw)))
-			{
-				StringBuffer htmlCode= new StringBuffer();
-				
-				htmlCode.append("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">");
-				htmlCode.append("<html>");
-				htmlCode.append("<head>");
-				htmlCode.append("<title>grobid-service - admin</title>");
-				htmlCode.append("</head>");
-				htmlCode.append("<body>");
-				htmlCode.append("<table border=\"1\">");
-				htmlCode.append("<tr><td>property</td><td>value</td></tr>");
-				htmlCode.append("<tr><td colspan=\"2\">java properties</td></tr>");
-				htmlCode.append("<tr><td>os name</td><td>"+System.getProperty("os.name")+"</td></tr>");
-				htmlCode.append("<tr><td>os version</td><td>"+System.getProperty("sun.arch.data.model")+"</td></tr>");
-				htmlCode.append("<tr><td colspan=\"2\">grobid properties</td></tr>");
-				
-				GrobidServiceProperties.getInstance();
-				Properties props = GrobidServiceProperties.getProps();
-				for (Object property: props.keySet())
-				{
-					htmlCode.append("<tr><td>"+property+"</td><td>"+props.getProperty((String)property)+"</td></tr>");
-				}
-				htmlCode.append("</table>");
-				htmlCode.append("</body>");
-				htmlCode.append("</html>");
-		
-				response= Response.status(Status.OK).entity(htmlCode.toString()).type(MediaType.TEXT_HTML).build();
-			}
-			else
-				response= Response.status(Status.FORBIDDEN).build();
-		} catch (Exception e) 
-		{
-			LOGGER.error("Cannot response the description for grobid-service. ", e);
-			response= Response.status(Status.INTERNAL_SERVER_ERROR).build();
-		}
-		return(response);
+	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+	@Produces(MediaType.TEXT_HTML)
+	@POST
+	public Response getAdmin_htmlPost(@FormParam("sha1") String sha1) {
+		return GrobidRestProcessAdmin.getAdminParams(sha1);
 	}
-	
+
 	/**
-	 * Uploads the origin document which shall be extracted into TEI and extracts only the header data. 
-	 * @param inputStream the data of origin document
-	 * @return a response object which contains a TEI representation of the header part
+	 * @see org.grobid.service.process.GrobidRestProcessAdmin#getAdminParams(String)
+	 */
+	@Path(PATH_ADMIN)
+	@Consumes(MediaType.TEXT_PLAIN)
+	@Produces(MediaType.TEXT_HTML)
+	@GET
+	public Response getAdmin_htmlGet(@QueryParam("sha1") String sha1) {
+		return GrobidRestProcessAdmin.getAdminParams(sha1);
+	}
+
+	/**
+	 * @see org.grobid.service.process.GrobidRestProcessFiles#processStatelessHeaderDocument(InputStream)
 	 */
 	@Path(PATH_HEADER)
 	@Consumes(MediaType.MULTIPART_FORM_DATA)
 	@Produces(MediaType.APPLICATION_XML)
 	@POST
 	public Response processHeaderDocument_post(InputStream inputStream) {
-		return(processStatelessHeaderDocument(inputStream));
+		return GrobidRestProcessFiles
+				.processStatelessHeaderDocument(inputStream);
 	}
-	
+
 	/**
-	 * Uploads the origin document which shall be extracted into TEI and extracts only the header data. 
-	 * @param inputStream the data of origin document
-	 * @return a response object which contains a TEI representation of the header part
+	 * @see org.grobid.service.process.GrobidRestProcessFiles#processStatelessHeaderDocument(InputStream)
 	 */
 	@Path(PATH_HEADER)
 	@Consumes(MediaType.MULTIPART_FORM_DATA)
 	@Produces(MediaType.APPLICATION_XML)
 	@PUT
 	public Response processStatelessHeaderDocument(InputStream inputStream) {
-		LOGGER.debug(">> "+this.getClass().getName()+"."+Thread.currentThread().getStackTrace()[1]
-			.getMethodName());
-		Response response= null;
-		String retVal = null;
-		try {
-			LOGGER.debug(">> set origin document for stateless service'...");
-			File originFile = new File(newTempDir()+"/"+"origin_header.pdf");
-		    OutputStream out = null;
-			try {
-				out = new FileOutputStream(originFile);
-			
-			    byte buf[]=new byte[1024];
-			    int len;
-			    while((len=inputStream.read(buf))>0) {
-			    	out.write(buf,0,len);
-				}
-		    }
-			catch (IOException e) {
-				LOGGER.error("An internal error occurs, while writing to disk (file to write '" + 
-					originFile+"').", e);
-				response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
-			}
-			finally {
-				try {
-					if (out!= null)
-						out.close();
-					inputStream.close();
-				} 
-				catch (IOException e) {
-					String msg= "An internal error occurs, while writing to disk (file to write '"+originFile+"').";
-					LOGGER.error(msg);
-					response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
-				}
-		    }
-		    
-		    //starts conversion process
-			retVal = GrobidFactory.instance.createEngine().processHeader(originFile.getAbsolutePath(), false, null);
-
-			if ( (retVal== null) || (retVal.isEmpty()) ) {
-				response= Response.status(Status.NO_CONTENT).build();
-			}
-			else {
-				response= Response.status(Status.OK).entity(retVal).type(MediaType.APPLICATION_XML).build();
-			}
-		}
-		catch (Exception e) {
-			//e.printStackTrace();
-			LOGGER.error("An unexpected exception occurs. ",e);
-		}
-		LOGGER.debug("<< "+this.getClass().getName()+"."+Thread.currentThread().getStackTrace()[1]
-			.getMethodName());
-		return(response);
+		return GrobidRestProcessFiles
+				.processStatelessHeaderDocument(inputStream);
 	}
-	
+
 	/**
-	 * Uploads the origin document which shall be extracted into TEI.
-	 * @param inputStream the data of origin document
-	 * @return a response object mainly contain the TEI representation of the full text
+	 * @see org.grobid.service.process.GrobidRestProcessFiles#processStatelessFulltextDocument(InputStream)
 	 */
 	@Path(PATH_FULL_TEXT)
 	@Consumes(MediaType.MULTIPART_FORM_DATA)
 	@Produces(MediaType.APPLICATION_XML)
 	@POST
 	public Response processFulltextDocument_post(InputStream inputStream) {
-		return(processStatelessFulltextDocument(inputStream));
+		return GrobidRestProcessFiles
+				.processStatelessFulltextDocument(inputStream);
 	}
-	
+
 	/**
-	 * Uploads the origin document which shall be extracted into TEI.
-	 * @param inputStream the data of origin document
-	 * @return a response object mainly contain the TEI representation of the full text
+	 * @see org.grobid.service.process.GrobidRestProcessFiles#processStatelessFulltextDocument(InputStream)
 	 */
 	@Path(PATH_FULL_TEXT)
 	@Consumes(MediaType.MULTIPART_FORM_DATA)
 	@Produces(MediaType.APPLICATION_XML)
 	@PUT
 	public Response processStatelessFulltextDocument(InputStream inputStream) {
-		LOGGER.debug(">> "+this.getClass().getName()+"."+Thread.currentThread().getStackTrace()[1]
-			.getMethodName());
-		Response response= null;
-		String retVal = null;
-		try {
-			LOGGER.debug(">> set origin document for stateless service'...");
+		return GrobidRestProcessFiles
+				.processStatelessFulltextDocument(inputStream);
+	}
 
-			File originFile = new File(newTempDir()+"/"+"origin.pdf");
-		    OutputStream out = null;
-			try {
-				out = new FileOutputStream(originFile);
-			
-			    byte buf[] = new byte[1024];
-			    int len;
-			    while((len=inputStream.read(buf))>0) {
-			    	out.write(buf,0,len);
-				}
-		    }
-			catch (IOException e) {
-				LOGGER.error("An internal error occurs, while writing to disk (file to write '" + 
-					originFile+"').", e);
-				response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
-			}
-			finally {
-				try {
-					if (out!= null) {
-						out.close();
-					}
-					inputStream.close();
-				} 
-				catch (IOException e) {
-					String msg= "An internal error occurs, while writing to disk (file to write '"+originFile+"').";
-					LOGGER.error(msg);
-					response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
-				}
-		    }
-		    
-		    // starts conversion process
-			retVal = GrobidFactory.instance.createEngine().fullTextToTEI(originFile.getAbsolutePath(), false, false);
-			System.gc();
-//			GrobidFactoryImpl.newInstance();
-//			retVal = GrobidFactoryImpl.getEngine().fullTextToTEI(originFile.getAbsolutePath(), false, false);
-//			GrobidFactoryImpl.getEngine().close();
-			// retVal = EngineFactory.getEngine().fullTextToTEI(originFile.getAbsolutePath(), false, false);
-			
-			if ( (retVal== null) || (retVal.isEmpty()) ) {
-				response= Response.status(Status.NO_CONTENT).build();
-			}
-			else {
-				response= Response.status(Status.OK).entity(retVal).type(MediaType.APPLICATION_XML).build();
-			}
-		}
-		catch (Exception e) {
-			//e.printStackTrace();
-			LOGGER.error("An unexpected exception occurs. ",e);
-		}
-		LOGGER.debug("<< "+this.getClass().getName()+"."+Thread.currentThread().getStackTrace()[1].getMethodName());
-		return(response);
-	}
-	
 	/**
-	 * Parse a raw date and return the corresponding normalized date.
-	 * @param the raw date string
-	 * @return a response object containing the structured xml representation of the date 
+	 * @see org.grobid.service.process.GrobidRestProcessString#processDate(String)
 	 */
 	@Path(PATH_DATE)
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
 	@Produces(MediaType.TEXT_PLAIN)
 	@POST
-	public Response processDate_post(@FormParam("date") String date) {
-		return(processDate(date));
+	public Response processDate_post(@FormParam(DATE) String date) {
+		return GrobidRestProcessString.processDate(date);
 	}
-	
+
 	/**
-	 * Parse a raw date and return the corresponding normalized date.
-	 * @param the raw date string
-	 * @return a response object containing the structured xml representation of the date 
+	 * @see org.grobid.service.process.GrobidRestProcessString#processDate(String)
 	 */
 	@Path(PATH_DATE)
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
 	@Produces(MediaType.TEXT_PLAIN)
 	@PUT
-	public Response processDate(@FormParam("date") String date) {
-		LOGGER.debug(">> "+this.getClass().getName()+"."+Thread.currentThread().getStackTrace()[1]
-			.getMethodName());
-		Response response= null;
-		String retVal = null;
-		try {
-			LOGGER.debug(">> set raw date for stateless service'...");
-			
-		    //starts process
-			List<Date> dates= GrobidFactory.instance.createEngine().processDate(date); 
-			if (dates!= null)
-			{
-				if (dates.size()==1)
-					retVal= dates.get(0).toString();
-				else
-					retVal = dates.toString();
-			}
-			
-			if ( (retVal == null) || (retVal.isEmpty()) ) {
-				response = Response.status(Status.NO_CONTENT).build();
-			}
-			else {
-				response = Response.status(Status.OK).entity(retVal).type(MediaType.TEXT_PLAIN).build();
-			}
-		}
-		catch (Exception e) {
-			//e.printStackTrace();
-			LOGGER.error("An unexpected exception occurs. ",e);
-		}
-		LOGGER.debug("<< "+this.getClass().getName()+"."+Thread.currentThread().getStackTrace()[1]
-			.getMethodName());
-		return(response);
+	public Response processDate(@FormParam(DATE) String date) {
+		return GrobidRestProcessString.processDate(date);
 	}
-	
+
 	/**
-	 * Parse a raw sequence of names from a header section and return the corresponding normalized authors.
-	 * @param the string of the raw sequence of header authors 
-	 * @return a response object containing the structured xml representation of the authors 
+	 * @see org.grobid.service.process.GrobidRestProcessString#processNamesHeader(String)
 	 */
 	@Path(PATH_HEADER_NAMES)
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-	@Produces(MediaType.APPLICATION_XML)
+	@Produces(MediaType.TEXT_PLAIN)
 	@POST
-	public Response processNamesHeader_post(@FormParam("names") String names) {
-		return(processNamesHeader(names));
+	public Response processNamesHeader_post(@FormParam(NAMES) String names) {
+		return GrobidRestProcessString.processNamesHeader(names);
 	}
-	
+
 	/**
-	 * Parse a raw sequence of names from a header section and return the corresponding normalized authors.
-	 * @param the string of the raw sequence of header authors 
-	 * @return a response object containing the structured xml representation of the authors 
+	 * @see org.grobid.service.process.GrobidRestProcessString#processNamesHeader(String)
 	 */
 	@Path(PATH_HEADER_NAMES)
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-	@Produces(MediaType.APPLICATION_XML)
+	@Produces(MediaType.TEXT_PLAIN)
 	@PUT
-	public Response processNamesHeader(@FormParam("names") String names) {
-		LOGGER.debug(">> "+this.getClass().getName()+"."+Thread.currentThread().getStackTrace()[1]
-			.getMethodName());
-		Response response = null;
-		String retVal = null;
-		try {
-			LOGGER.debug(">> set raw header author sequence for stateless service'...");
-			
-		    //starts process
-			List<Person> authors= GrobidFactory.instance.createEngine().processAuthorsHeader(names); 
-			if (authors!= null)
-			{
-				if (authors.size()==1)
-					retVal= authors.get(0).toString();
-				else
-					retVal = authors.toString();
-			}
-			
-			if ( (retVal == null) || (retVal.isEmpty()) ) {
-				response = Response.status(Status.NO_CONTENT).build();
-			}
-			else {
-				response = Response.status(Status.OK).entity(retVal).type(MediaType.APPLICATION_XML).build();
-			}
-		}
-		catch (Exception e) {
-			//e.printStackTrace();
-			LOGGER.error("An unexpected exception occurs. ",e);
-		}
-		LOGGER.debug("<< "+this.getClass().getName()+"."+Thread.currentThread().getStackTrace()[1]
-			.getMethodName());
-		return(response);
+	public Response processNamesHeader(@FormParam(NAMES) String names) {
+		return GrobidRestProcessString.processNamesHeader(names);
 	}
-	
+
 	/**
-	 * Parse a raw sequence of names from a header section and return the corresponding normalized authors.
-	 * @param the string of the raw sequence of header authors 
-	 * @return a response object containing the structured xml representation of the authors 
+	 * @see org.grobid.service.process.GrobidRestProcessString#processNamesCitation(String)
 	 */
 	@Path(PATH_CITE_NAMES)
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-	@Produces(MediaType.APPLICATION_XML)
+	@Produces(MediaType.TEXT_PLAIN)
 	@POST
-	public Response processNamesCitation_post(@FormParam("names") String names) {
-		return(processNamesCitation(names));
+	public Response processNamesCitation_post(@FormParam(NAMES) String names) {
+		return GrobidRestProcessString.processNamesCitation(names);
 	}
-	
+
 	/**
-	 * Parse a raw sequence of names from a header section and return the corresponding normalized authors.
-	 * @param the string of the raw sequence of header authors 
-	 * @return a response object containing the structured xml representation of the authors 
+	 * @see org.grobid.service.process.GrobidRestProcessString#processNamesCitation(String)
 	 */
 	@Path(PATH_CITE_NAMES)
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-	@Produces(MediaType.APPLICATION_XML)
+	@Produces(MediaType.TEXT_PLAIN)
 	@PUT
-	public Response processNamesCitation(@FormParam("names") String names) {
-		LOGGER.debug(">> "+this.getClass().getName()+"."+Thread.currentThread().getStackTrace()[1]
-			.getMethodName());
-		Response response = null;
-		String retVal = null;
-		try {
-			LOGGER.debug(">> set raw citation author sequence for stateless service'...");
-			
-		    //starts process
-			List<Person> authors= GrobidFactory.instance.createEngine().processAuthorsCitation(names); 
-			if (authors!= null)
-			{
-				if (authors.size()==1)
-					retVal= authors.get(0).toString();
-				else
-					retVal = authors.toString();
-			}
-			
-			if ( (retVal == null) || (retVal.isEmpty()) ) {
-				response = Response.status(Status.NO_CONTENT).build();
-			}
-			else {
-				response = Response.status(Status.OK).entity(retVal).type(MediaType.APPLICATION_XML).build();
-			}
-		}
-		catch (Exception e) {
-			//e.printStackTrace();
-			LOGGER.error("An unexpected exception occurs. ",e);
-		}
-		LOGGER.debug("<< "+this.getClass().getName()+"."+Thread.currentThread().getStackTrace()[1]
-			.getMethodName());
-		return(response);
+	public Response processNamesCitation(@FormParam(NAMES) String names) {
+		return GrobidRestProcessString.processNamesCitation(names);
 	}
-	
+
 	/**
-	 * Parse a raw sequence of affiliations and return the corresponding normalized affiliations with address.
-	 * @param the string of the raw sequence of affiliation+address
-	 * @return a response object containing the structured xml representation of the affiliatoin 
+	 * @see org.grobid.service.process.GrobidRestProcessString#processAffiliations(String)
 	 */
 	@Path(PATH_AFFILIATION)
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-	@Produces(MediaType.APPLICATION_XML)
+	@Produces(MediaType.TEXT_PLAIN)
 	@POST
-	public Response processAffiliations_post(@FormParam("affiliations") String affiliations) {
-		return(processAffiliations(affiliations));
+	public Response processAffiliations_post(
+			@FormParam(AFFILIATIONS) String affiliations) {
+		return GrobidRestProcessString.processAffiliations(affiliations);
 	}
-	
+
 	/**
-	 * Parse a raw sequence of affiliations and return the corresponding normalized affiliations with address.
-	 * @param the string of the raw sequence of affiliation+address
-	 * @return a response object containing the structured xml representation of the affiliation 
+	 * @see org.grobid.service.process.GrobidRestProcessString#processAffiliations(String)
 	 */
 	@Path(PATH_AFFILIATION)
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-	@Produces(MediaType.APPLICATION_XML)
+	@Produces(MediaType.TEXT_PLAIN)
 	@PUT
-	public Response processAffiliations(@FormParam("affiliation") String affiliation) {
-		LOGGER.debug(">> "+this.getClass().getName()+"."+Thread.currentThread().getStackTrace()[1]
-			.getMethodName());
-		Response response = null;
-		String retVal = null;
-		try {
-			LOGGER.debug(">> set raw affiliation + address blocks for stateless service'...");
-			
-		    //starts process
-			List<Affiliation> affiliationList= GrobidFactory.instance.createEngine().processAffiliation(affiliation); 
-			if (affiliationList!= null)
-			{
-				if (affiliationList.size()==1)
-					retVal= affiliationList.get(0).toString();
-				else
-					retVal = affiliationList.toString();
-			}
-			if ( (retVal == null) || (retVal.isEmpty()) ) {
-				response = Response.status(Status.NO_CONTENT).build();
-			}
-			else {
-				response = Response.status(Status.OK).entity(retVal).type(MediaType.APPLICATION_XML).build();
-			}
-		}
-		catch (Exception e) {
-			//e.printStackTrace();
-			LOGGER.error("An unexpected exception occurs. ",e);
-		}
-		LOGGER.debug("<< "+this.getClass().getName()+"."+Thread.currentThread().getStackTrace()[1]
-			.getMethodName());
-		return(response);
+	public Response processAffiliations(
+			@FormParam(AFFILIATIONS) String affiliation) {
+		return GrobidRestProcessString.processAffiliations(affiliation);
 	}
+
+	
+
+	/**
+	 * @see org.grobid.service.process.GrobidRestProcessAdmin#processSHA1(String)
+	 */
+	@Path(PATH_SHA1)
+	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+	@Produces(MediaType.TEXT_PLAIN)
+	@POST
+	public Response processSHA1Post(@FormParam("sha1") String sha1) {
+		return GrobidRestProcessAdmin.processSHA1(sha1);
+	}
+
+	/**
+	 * @see org.grobid.service.process.GrobidRestProcessAdmin#processSHA1(String)
+	 */
+	@Path(PATH_SHA1)
+	@Consumes(MediaType.TEXT_PLAIN)
+	@Produces(MediaType.TEXT_PLAIN)
+	@GET
+	public Response processSHA1Get(@QueryParam("sha1") String sha1) {
+		return GrobidRestProcessAdmin.processSHA1(sha1);
+	}
+
 }
