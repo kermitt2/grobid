@@ -29,6 +29,39 @@ public class ModelMap {
 	private static Map<String, Model> models = null;
 
 	/**
+	 * Return a tagger created corresponding to the model given in argument.
+	 * 
+	 * @param grobidModel
+	 *            the model to use for the creation of the tagger.
+	 * @return Tagger
+	 */
+	public static Tagger getTagger(GrobidModels grobidModel) {
+		LOGGER.debug("start getTagger");
+		Tagger tagger;
+		try {
+			LOGGER.info("Creating tagger");
+			Model model = getModel(grobidModel.getModelPath());
+			tagger = model.createTagger();
+		} catch (Throwable thb) {
+			throw new GrobidException("Cannot instantiate a tagger: " + thb);
+		}
+		LOGGER.debug("end getTagger");
+		return tagger;
+	}
+
+	/**
+	 * Loading of the models.
+	 */
+	public static synchronized void initModels() {
+		LOGGER.info("Loading models");
+		GrobidModels[] models = GrobidModels.values();
+		for (GrobidModels model : models) {
+			getModel(model.getModelPath());
+		}
+		LOGGER.info("Models loaded");
+	}
+	
+	/**
 	 * Return the model corresponding to the given path. Models are loaded in
 	 * memory if they don't exist.
 	 * 
@@ -54,39 +87,8 @@ public class ModelMap {
 	 * @param modelPath
 	 *            The path of the model to use.
 	 */
-	private static synchronized void getNewModel(String modelPath) {
+	protected static synchronized void getNewModel(String modelPath) {
 		LOGGER.info("Loading model " + modelPath + " in memory");
 		models.put(modelPath, new Model("-m " + modelPath + " "));
-	}
-
-	/**
-	 * Return a tagger created corresponding to the model given in argument.
-	 * 
-	 * @param grobidModel the model to use for the creation of the tagger.
-	 * @return Tagger
-	 */
-	public static Tagger getTagger(GrobidModels grobidModel) {
-		LOGGER.debug("start getTagger");
-		Tagger tagger;
-		try {
-			Model model = getModel(grobidModel.getModelPath());
-			tagger = model.createTagger();
-		} catch (Throwable thb) {
-			throw new GrobidException("Cannot instantiate a tagger: " + thb);
-		}
-		LOGGER.debug("end getTagger");
-		return tagger;
-	}
-
-	/**
-	 * Loading of the models.
-	 */
-	public static synchronized void initModels() {
-		LOGGER.info("Loading models");
-		GrobidModels[] models = GrobidModels.values();
-		for (GrobidModels model : models) {
-			getModel(model.getModelPath());
-		}
-		LOGGER.info("Models loaded");
 	}
 }

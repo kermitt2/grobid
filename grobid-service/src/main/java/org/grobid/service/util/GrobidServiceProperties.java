@@ -6,12 +6,14 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
+import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
 import org.grobid.core.exceptions.GrobidPropertyException;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.GrobidPropertyKeys;
+import org.grobid.core.utilities.Utilities;
 import org.grobid.service.exceptions.GrobidServicePropertyException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -30,13 +32,23 @@ import org.slf4j.LoggerFactory;
  * @author Florian Zipser
  * 
  */
-public class GrobidServiceProperties extends GrobidProperties {
+public class GrobidServiceProperties {
 
 	/**
 	 * The Logger.
 	 */
 	public static final Logger LOGGER = LoggerFactory
 			.getLogger(GrobidServiceProperties.class);
+	
+	/**
+	 * Internal property object, where all properties are defined.
+	 */
+	protected static Properties props = null;
+	
+	/**
+	 * The context of the application.
+	 */
+	protected static Context context;
 
 	/**
 	 * A static {@link GrobidProperties} object containing all properties used
@@ -52,9 +64,9 @@ public class GrobidServiceProperties extends GrobidProperties {
 	 */
 	public static GrobidServiceProperties getInstance() {
 		if (grobidServiceProperties == null)
-			return (getNewInstance());
+			return getNewInstance();
 		else
-			return (grobidServiceProperties);
+			return grobidServiceProperties;
 	}
 
 	/**
@@ -66,7 +78,8 @@ public class GrobidServiceProperties extends GrobidProperties {
 	 * 
 	 * @return
 	 */
-	public static synchronized GrobidServiceProperties getNewInstance() {
+	protected static synchronized GrobidServiceProperties getNewInstance() {
+		LOGGER.debug("Start GrobidServiceProperties.getNewInstance");
 		try {
 			grobidServiceProperties = new GrobidServiceProperties();
 		} catch (NamingException nexp) {
@@ -74,6 +87,55 @@ public class GrobidServiceProperties extends GrobidProperties {
 					"Could not get the initial context", nexp);
 		}
 		return grobidServiceProperties;
+	}
+	
+	/**
+	 * Returns all grobid-properties.
+	 * 
+	 * @return properties object
+	 */
+	public static Properties getProps() {
+		return props;
+	}
+
+	/**
+	 * @param props
+	 *            the props to set
+	 */
+	protected static void setProps(Properties pProps) {
+		props = pProps;
+	}
+	
+	/**
+	 * Return the context.
+	 * 
+	 * @return the context.
+	 */
+	public static Context getContext() {
+		return context;
+	}
+
+	/**
+	 * Set the context.
+	 * 
+	 * @param pContext
+	 *            the context.
+	 */
+	public static void setContext(Context pContext) {
+		context = pContext;
+	}
+	
+	/**
+	 * Loads all properties given in property file {@link #GROBID_HOME_PATH}.
+	 */
+	protected static void init() {
+		LOGGER.debug("Initiating property loading");
+		try {
+			setContext(new InitialContext());
+		} catch (NamingException nexp) {
+			throw new GrobidPropertyException(
+					"Could not get the initial context", nexp);
+		}
 	}
 
 	/**
@@ -84,8 +146,9 @@ public class GrobidServiceProperties extends GrobidProperties {
 	 * 
 	 */
 	public GrobidServiceProperties() throws NamingException {
-		super(new InitialContext(null));
 		LOGGER.debug("Instanciating GrobidServiceProperties");
+		init();
+		setProps(new Properties());
 		String grobidServicePath;
 		try {
 			grobidServicePath = (String) context.lookup("java:comp/env/"
@@ -118,6 +181,28 @@ public class GrobidServiceProperties extends GrobidProperties {
 					"Cannot load properties from file " + grobidServicePropFile
 							+ "''.");
 		}
+	}
+	
+	/**
+	 * Return the value corresponding to the property key. If this value is
+	 * null, return the default value.
+	 * 
+	 * @param pkey
+	 *            the property key
+	 * @return the value of the property.
+	 */
+	protected static String getPropertyValue(String pkey) {
+		return getProps().getProperty(pkey);
+	}
+	
+	/**
+	 * Returns the password for admin page given by property
+	 * {@value #PROP_GROBID_SERVICE_ADMIN_PW}.
+	 * 
+	 * @return if the execution is parallel
+	 */
+	public static boolean isParallelExec() {
+		return Utilities.stringToBoolean(getPropertyValue(GrobidPropertyKeys.PROP_GROBID_SERVICE_IS_PARALLEL_EXEC));
 	}
 
 	/**
