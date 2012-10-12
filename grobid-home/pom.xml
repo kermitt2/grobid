@@ -5,13 +5,13 @@
 	<parent>
 		<groupId>org.grobid</groupId>
 		<artifactId>grobid-parent</artifactId>
-		<version>0.1.3-SNAPSHOT</version>
+		<version>0.2.1-SNAPSHOT</version>
 		<relativePath>../pom.xml</relativePath>
 	</parent>
 
-	<groupId>${grobid.groupId}</groupId>
+	<groupId>org.grobid</groupId>
 	<artifactId>grobid-home</artifactId>
-	<version>${grobid.home.version}</version>
+	<version>0.2.0-SNAPSHOT</version>
 	<name>${project.artifactId}</name>
 
 	<profiles>
@@ -30,7 +30,7 @@
 							<descriptors>
 								<descriptor>${basedir}/assembly/assembly.xml</descriptor>
 							</descriptors>
-							<finalName>grobid-home-${pom.version}</finalName>
+							<finalName>grobid-home-${project.version}</finalName>
 							<appendAssemblyId>false</appendAssemblyId>
 						</configuration>
 						<executions>
@@ -55,7 +55,7 @@
 						<artifactId>maven-assembly-plugin</artifactId>
 						<configuration>
 							<descriptor>assembly/assemblyNoProps.xml</descriptor>
-							<finalName>grobid-home-${pom.version}</finalName>
+							<finalName>grobid-home-${project.version}</finalName>
 							<appendAssemblyId>false</appendAssemblyId>
 						</configuration>
 						<executions>
