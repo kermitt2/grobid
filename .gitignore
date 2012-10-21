@@ -1,1 +1,5 @@
 grobid-core/target
+grobid-home/target
+grobid-home/tmp
+grobid-service/target
+grobid-trainer/target
