@@ -95,7 +95,14 @@ public class TEIFormater {
                     }
                 }
                 tei.append("\t\t\t\t<date type=\"published\" when=\"");
-                tei.append(when + "\" />\n");
+                tei.append(when + "\">");
+				if (biblio.getPublicationDate() != null) {
+					tei.append(biblio.getPublicationDate());
+				}
+				else {
+					tei.append(when);
+				}
+				tei.append("</date>\n");
             } else if (biblio.getYear() != null) {
                 String when = biblio.getYear();
                 if (biblio.getMonth() != null) {
@@ -105,7 +112,14 @@ public class TEIFormater {
                     }
                 }
                 tei.append("\t\t\t\t<date type=\"published\" when=\"");
-                tei.append(when + "\" />\n");
+                tei.append(when + "\" />");
+				if (biblio.getPublicationDate() != null) {
+					tei.append(biblio.getPublicationDate());
+				}
+				else {
+					tei.append(when);
+				}
+				tei.append("</date>\n");
             } else if (biblio.getE_Year() != null) {
                 String when = biblio.getE_Year();
                 if (biblio.getE_Month() != null) {
@@ -115,11 +129,18 @@ public class TEIFormater {
                     }
                 }
                 tei.append("\t\t\t\t<date type=\"ePublished\" when=\"");
-                tei.append(when + "\" />\n");
+                tei.append(when + "\" />");
+				if (biblio.getPublicationDate() != null) {
+					tei.append(biblio.getPublicationDate());
+				}
+				else {
+					tei.append(when);
+				}
+				tei.append("</date>\n");
             } else if (biblio.getPublicationDate() != null) {
                 tei.append("\t\t\t\t<date type=\"published\">");
                 tei.append(TextUtilities.HTMLEncode(biblio.getPublicationDate())
-                        + "</date>\n");
+                        + "</date>");
             }
             tei.append("\t\t\t</publicationStmt>\n");
         } else {
@@ -337,8 +358,16 @@ public class TEIFormater {
                                 when += "-" + day;
                             }
                         }
-                        tei.append("\t\t\t\t\t\t\t<date type=\"published\" when=\"");
-                        tei.append(when + "\" />\n");
+						if (biblio.getPublicationDate() != null) {
+                        	tei.append("\t\t\t\t\t\t\t<date type=\"published\" when=\"");
+                        	tei.append(when + "\">");
+							tei.append(TextUtilities.HTMLEncode(biblio.getPublicationDate())
+	                                + "</date>\n");
+						}
+						else {
+                        	tei.append("\t\t\t\t\t\t\t<date type=\"published\" when=\"");
+                        	tei.append(when + "\" />\n");
+						}
                     } else if (biblio.getYear() != null) {
                         String when = biblio.getYear();
                         if (biblio.getMonth() != null) {
@@ -347,8 +376,16 @@ public class TEIFormater {
                                 when += "-" + biblio.getDay();
                             }
                         }
-                        tei.append("\t\t\t\t\t\t\t<date type=\"published\" when=\"");
-                        tei.append(when + "\" />\n");
+						if (biblio.getPublicationDate() != null) {
+							tei.append("\t\t\t\t\t\t\t<date type=\"published\" when=\"");
+                        	tei.append(when + "\">");
+							tei.append(TextUtilities.HTMLEncode(biblio.getPublicationDate())
+	                                + "</date>\n");
+						} 
+						else {
+                        	tei.append("\t\t\t\t\t\t\t<date type=\"published\" when=\"");
+                        	tei.append(when + "\" />\n");
+						}
                     } else if (biblio.getE_Year() != null) {
                         String when = biblio.getE_Year();
                         if (biblio.getE_Month() != null) {
@@ -360,7 +397,7 @@ public class TEIFormater {
                         tei.append("\t\t\t\t\t\t\t<date type=\"ePublished\" when=\"");
                         tei.append(when + "\" />\n");
                     } else if (biblio.getPublicationDate() != null) {
-                        tei.append("\t\t\t\t\t\t\t<date type=\"Published\">");
+                        tei.append("\t\t\t\t\t\t\t<date type=\"published\">");
                         tei.append(TextUtilities.HTMLEncode(biblio.getPublicationDate())
                                 + "</date>\n");
                     }
@@ -405,15 +442,58 @@ public class TEIFormater {
 
         tei.append("\t\t\t\t</biblStruct>\n");
 
+		if (biblio.getURL() != null) {
+			tei.append("\t\t\t\t<ref target=\"" + biblio.getURL() + "\" />\n");
+		}
+		
         tei.append("\t\t\t</sourceDesc>\n");
         tei.append("\t\t</fileDesc>\n");
 
-        // keywords here !!
-        if (biblio.getKeyword() != null) {
-            tei.append("\t\t<profileDesc>\n");
-            tei.append("\t\t\t<textClass>\n");
-            String keywords = biblio.getKeyword();
+		boolean profileDescWritten = false;
 
+        // keywords here !!
+		if (biblio.getKeywords() != null) {
+			if (biblio.getKeywords().size() > 0) {
+				profileDescWritten = true;
+				tei.append("\t\t<profileDesc>\n");
+	            tei.append("\t\t\t<textClass>\n");
+				tei.append("\t\t\t\t<keywords type=\"author\">");
+				tei.append("\n\t\t\t\t\t<list>\n");
+			
+				List<String> keywords = biblio.getKeywords();
+			
+				int pos = 0;
+				for(String keyw : keywords) {
+					tei.append("\t\t\t\t\t\t<item>\n");
+					String res = keyw.trim();
+					if (res.startsWith(":")) {
+			            res = res.substring(1);
+			        }
+					if (pos == (keywords.size()-1)) {
+						if (res.endsWith(".")) {
+				            res = res.substring(0, res.length()-1);
+				        }
+					}
+	                tei.append("\t\t\t\t\t\t\t<term>" +
+	                        TextUtilities.HTMLEncode(res) +
+	                        "</term>\n");
+	                tei.append("\t\t\t\t\t\t</item>\n");
+					pos++;
+				}
+			
+				tei.append("\t\t\t\t\t</list>\n");
+	            tei.append("\t\t\t\t</keywords>\n");
+			
+				//tei.append("\t\t\t</textClass>\n");
+	            //tei.append("\t\t</profileDesc>\n");
+			}
+		}
+		else if (biblio.getKeyword() != null) {
+          	String keywords = biblio.getKeyword();
+			profileDescWritten = true;
+			tei.append("\t\t<profileDesc>\n");
+            tei.append("\t\t\t<textClass>\n");
+			
 			// Note: to be cleaned...
             if (keywords.startsWith("Categories and Subject Descriptors")) {
                 tei.append("\t\t\t\t<keywords type=\"subject-headers\">");
@@ -427,21 +507,28 @@ public class TEIFormater {
                 tei.append("\t\t\t\t<keywords type=\"pacs\">");
                 keywords = keywords.replace("PACS", "").trim();
             } else
-                tei.append("\t\t\t\t<keywords>");
-
+                tei.append("\t\t\t\t<keywords type=\"author\">");
+			
             int start = keywords.indexOf("Keywords");
             if (start != -1) {
                 //String keywords1 = keywords.substring(0, start-1);
                 keywords = keywords.substring(start + 9, keywords.length());
             }
-
+			if (keywords.endsWith(".")) {
+		          keywords = keywords.substring(0, keywords.length()-1);
+			}
+			
             StringTokenizer st1 = new StringTokenizer(keywords, ";");
             if (st1.countTokens() > 2) {
                 tei.append("\n\t\t\t\t\t<list>\n");
                 while (st1.hasMoreTokens()) {
                     tei.append("\t\t\t\t\t\t<item>\n");
+					String res = st1.nextToken().trim();
+					if (res.startsWith(":")) {
+			            res = res.substring(1);
+			        }
                     tei.append("\t\t\t\t\t\t\t<term>" +
-                            TextUtilities.HTMLEncode(st1.nextToken().trim()) +
+                            TextUtilities.HTMLEncode(res) +
                             "</term>\n");
                     tei.append("\t\t\t\t\t\t</item>\n");
                 }
@@ -453,8 +540,12 @@ public class TEIFormater {
                     tei.append("\n\t\t\t\t\t<list>\n");
                     while (st1.hasMoreTokens()) {
                         tei.append("\t\t\t\t\t\t<item>\n");
+						String res = st1.nextToken().trim();
+						if (res.startsWith(":")) {
+				            res = res.substring(1);
+				        }
                         tei.append("\t\t\t\t\t\t\t<term>" +
-                                TextUtilities.HTMLEncode(st1.nextToken().trim()) +
+                                TextUtilities.HTMLEncode(res) +
                                 "</term>\n");
                         tei.append("\t\t\t\t\t\t</item>\n");
                     }
@@ -464,10 +555,32 @@ public class TEIFormater {
                     tei.append(TextUtilities.HTMLEncode(biblio.getKeyword())).append("</keywords>\n");
                 }
             }
-
-            tei.append("\t\t\t</textClass>\n");
-            tei.append("\t\t</profileDesc>\n");
+		}
+		
+        if (biblio.getCategories() != null) {
+			if (!profileDescWritten) {
+				profileDescWritten = true;
+            	tei.append("\t\t<profileDesc>\n");
+            	tei.append("\t\t\t<textClass>\n");
+			}
+			List<String> categories = biblio.getCategories();
+			tei.append("\t\t\t\t<keywords type=\"category\">");
+			tei.append("\n\t\t\t\t\t<list>\n");
+            for (String category : categories) {
+                tei.append("\t\t\t\t\t\t<item>\n");
+                tei.append("\t\t\t\t\t\t\t<term>" +
+                        TextUtilities.HTMLEncode(category.trim()) +
+                        "</term>\n");
+                tei.append("\t\t\t\t\t\t</item>\n");
+            }
+            tei.append("\t\t\t\t\t</list>\n");
+            tei.append("\t\t\t\t</keywords>\n");
         }
+
+		if (profileDescWritten) {
+			tei.append("\t\t\t</textClass>\n");
+            tei.append("\t\t</profileDesc>\n");
+		}
 
         if ((biblio.getA_Year() != null) |
                 (biblio.getS_Year() != null) |
@@ -764,13 +877,18 @@ public class TEIFormater {
             tei.append("<listBibl>");
 
             int p = 0;
-            for (BibDataSet bib : bds) {
-                BiblioItem bit = bib.getResBib();
-                //bit.setPath(doc.getPDFPath());
-                //bit.postProcessingAuthors(doc.getPDFPath());
-                tei.append("\n" + bit.toTEI(p));
-                p++;
-            }
+			if (bds != null) {
+           	 	for (BibDataSet bib : bds) {
+	                BiblioItem bit = bib.getResBib();
+					if (bit == null) {
+						continue;
+					}
+	                //bit.setPath(doc.getPDFPath());
+	                //bit.postProcessingAuthors(doc.getPDFPath());
+	                tei.append("\n" + bit.toTEI(p));
+	                p++;
+	            }
+			}
 
             tei.append("</listBibl>\n");
             tei.append("\t\t\t</div>\n");
@@ -2434,86 +2552,92 @@ public class TEIFormater {
         String res = "";
         int p = 0;
         //text = TextUtilities.HTMLEncode(text);
-        for (BibDataSet bib : bds) {
-            List<String> contexts = bib.getSourceBib();
-            String marker = TextUtilities.HTMLEncode(bib.getRefSymbol());
-            BiblioItem resBib = bib.getResBib();
+		if (bds != null) {
+	        for (BibDataSet bib : bds) {
+	            List<String> contexts = bib.getSourceBib();
+	            String marker = TextUtilities.HTMLEncode(bib.getRefSymbol());
+	            BiblioItem resBib = bib.getResBib();
 
-            // search for first author and date
-            String author = resBib.getFirstAuthorSurname();
-            if (author != null) {
-                author = author.toLowerCase();
-            }
-            String year = null;
-            Date datt = resBib.getNormalizedPublicationDate();
-            if (datt != null) {
-                if (datt.getYear() != -1) {
-                    year = "" + datt.getYear();
-                }
-            }
-            //System.out.println(author + " " + year);
+				if (resBib == null) {
+					continue;
+				}
 
-            if (marker != null) {
-                Matcher m = numberRef.matcher(marker);
-                if (m.find()) {
-                    int ind = text.indexOf(marker);
-                    if (ind != -1) {
-                        text = text.substring(0, ind) +
-                                "<ref type=\"bibr\" target=\"#b" + p + "\">" + marker
-                                + "</ref>" + text.substring(ind + marker.length(), text.length());
-                    }
-                }
-            }
-            //else 
-            {
-                if ((author != null) & (year != null)) {
-                    int indi1 = -1;
-                    int indi2 = -1;
-                    int i = 0;
-                    boolean end = false;
-                    while (!end) {
-                        indi1 = text.toLowerCase().indexOf(author, i);
-                        indi2 = text.indexOf(year, i);
-                        int added = 1;
+	            // search for first author and date
+	            String author = resBib.getFirstAuthorSurname();
+	            if (author != null) {
+	                author = author.toLowerCase();
+	            }
+	            String year = null;
+	            Date datt = resBib.getNormalizedPublicationDate();
+	            if (datt != null) {
+	                if (datt.getYear() != -1) {
+	                    year = "" + datt.getYear();
+	                }
+	            }
+	            //System.out.println(author + " " + year);
 
-                        if ((indi1 == -1) | (indi2 == -1))
-                            end = true;
-                        else if ((indi1 != -1) & (indi2 != -1) & (indi1 < indi2) &
-                                (indi2 - indi1 > author.length())) {
-                            // we check if we don't have another instance of the author between the two indices
-                            int indi1bis = text.toLowerCase().indexOf(author, indi1 + author.length());
-                            if (indi1bis == -1) {
-                                String reference = text.substring(indi1, indi2 + 4);
-                                boolean extended = false;
-                                if (text.length() > indi2 + 5) {
-                                    if ((text.charAt(indi2 + 5) == ')') |
-                                            (text.charAt(indi2 + 5) == ']')) {
-                                        reference += text.charAt(indi2 + 5);
-                                        extended = true;
-                                    }
-                                }
-                                if (extended) {
-                                    text = text.substring(0, indi1) +
-                                            "<ref type=\"bibr\" target=\"#b" + p + "\">" + reference + "</ref>" +
-                                            text.substring(indi2 + 5, text.length());
-                                    added = 31;
-                                } else {
-                                    text = text.substring(0, indi1) +
-                                            "<ref type=\"bibr\" target=\"#b" + p + "\">" + reference + "</ref>" +
-                                            text.substring(indi2 + 4, text.length());
-                                    added = 31;
-                                }
-                            }
-                        }
-                        i = indi1 + author.length() + added;
-                        if (i >= text.length()) {
-                            end = true;
-                        }
-                    }
-                }
-            }
-            p++;
-        }
+	            if (marker != null) {
+	                Matcher m = numberRef.matcher(marker);
+	                if (m.find()) {
+	                    int ind = text.indexOf(marker);
+	                    if (ind != -1) {
+	                        text = text.substring(0, ind) +
+	                                "<ref type=\"bibr\" target=\"#b" + p + "\">" + marker
+	                                + "</ref>" + text.substring(ind + marker.length(), text.length());
+	                    }
+	                }
+	            }
+	            //else 
+	            {
+	                if ((author != null) & (year != null)) {
+	                    int indi1 = -1;
+	                    int indi2 = -1;
+	                    int i = 0;
+	                    boolean end = false;
+	                    while (!end) {
+	                        indi1 = text.toLowerCase().indexOf(author, i);
+	                        indi2 = text.indexOf(year, i);
+	                        int added = 1;
+
+	                        if ((indi1 == -1) | (indi2 == -1))
+	                            end = true;
+	                        else if ((indi1 != -1) & (indi2 != -1) & (indi1 < indi2) &
+	                                (indi2 - indi1 > author.length())) {
+	                            // we check if we don't have another instance of the author between the two indices
+	                            int indi1bis = text.toLowerCase().indexOf(author, indi1 + author.length());
+	                            if (indi1bis == -1) {
+	                                String reference = text.substring(indi1, indi2 + 4);
+	                                boolean extended = false;
+	                                if (text.length() > indi2 + 5) {
+	                                    if ((text.charAt(indi2 + 5) == ')') |
+	                                            (text.charAt(indi2 + 5) == ']')) {
+	                                        reference += text.charAt(indi2 + 5);
+	                                        extended = true;
+	                                    }
+	                                }
+	                                if (extended) {
+	                                    text = text.substring(0, indi1) +
+	                                            "<ref type=\"bibr\" target=\"#b" + p + "\">" + reference + "</ref>" +
+	                                            text.substring(indi2 + 5, text.length());
+	                                    added = 31;
+	                                } else {
+	                                    text = text.substring(0, indi1) +
+	                                            "<ref type=\"bibr\" target=\"#b" + p + "\">" + reference + "</ref>" +
+	                                            text.substring(indi2 + 4, text.length());
+	                                    added = 31;
+	                                }
+	                            }
+	                        }
+	                        i = indi1 + author.length() + added;
+	                        if (i >= text.length()) {
+	                            end = true;
+	                        }
+	                    }
+	                }
+	            }
+	            p++;
+	        }
+		}
         //System.out.println(text);
         return text;
     }
