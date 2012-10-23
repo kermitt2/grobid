@@ -2,6 +2,8 @@ package org.grobid.trainer;
 
 import org.grobid.core.GrobidModels;
 import org.grobid.core.exceptions.GrobidException;
+import org.grobid.core.utilities.GrobidProperties;
+import org.grobid.mock.MockContext;
 import org.grobid.trainer.sax.TEIFulltextSaxParser;
 
 import javax.xml.parsers.SAXParser;
@@ -143,9 +145,13 @@ public class FulltextTrainer extends AbstractTrainer{
      * Command line execution.
      *
      * @param args Command line arguments.
+     * @throws Exception 
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
+    	MockContext.setInitialContext();
+    	GrobidProperties.getInstance();
         AbstractTrainer.runTraining(new FulltextTrainer());
         AbstractTrainer.runEvaluation(new FulltextTrainer());
+        MockContext.destroyInitialContext();
     }
 }	

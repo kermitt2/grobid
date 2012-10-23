@@ -54,12 +54,6 @@
 								</goals>
 								<configuration>
 									<mainClass>org.grobid.trainer.NameHeaderTrainer</mainClass>
-									<systemProperties>
-										<systemProperty>
-											<key>org.grobid.home</key>
-											<value>../grobid-home</value>
-										</systemProperty>
-									</systemProperties>
 								</configuration>
 							</execution>
 						</executions>
@@ -84,12 +78,6 @@
 								</goals>
 								<configuration>
 									<mainClass>org.grobid.trainer.NameCitationTrainer</mainClass>
-									<systemProperties>
-										<systemProperty>
-											<key>org.grobid.home</key>
-											<value>../grobid-home</value>
-										</systemProperty>
-									</systemProperties>
 								</configuration>
 							</execution>
 						</executions>
@@ -114,12 +102,6 @@
 								</goals>
 								<configuration>
 									<mainClass>org.grobid.trainer.AffiliationAddressTrainer</mainClass>
-									<systemProperties>
-										<systemProperty>
-											<key>org.grobid.home</key>
-											<value>../grobid-home</value>
-										</systemProperty>
-									</systemProperties>
 								</configuration>
 							</execution>
 						</executions>
@@ -143,12 +125,6 @@
 								</goals>
 								<configuration>
 									<mainClass>org.grobid.trainer.HeaderTrainer</mainClass>
-									<systemProperties>
-										<systemProperty>
-											<key>org.grobid.home</key>
-											<value>../grobid-home</value>
-										</systemProperty>
-									</systemProperties>
 								</configuration>
 							</execution>
 						</executions>
@@ -172,12 +148,6 @@
 								</goals>
 								<configuration>
 									<mainClass>org.grobid.trainer.FulltextTrainer</mainClass>
-									<systemProperties>
-										<systemProperty>
-											<key>org.grobid.home</key>
-											<value>../grobid-home</value>
-										</systemProperty>
-									</systemProperties>
 								</configuration>
 							</execution>
 						</executions>
@@ -201,12 +171,6 @@
 								</goals>
 								<configuration>
 									<mainClass>org.grobid.trainer.CitationTrainer</mainClass>
-									<systemProperties>
-										<systemProperty>
-											<key>org.grobid.home</key>
-											<value>../grobid-home</value>
-										</systemProperty>
-									</systemProperties>
 								</configuration>
 							</execution>
 						</executions>
@@ -230,12 +194,6 @@
 								</goals>
 								<configuration>
 									<mainClass>org.grobid.trainer.DateTrainer</mainClass>
-									<systemProperties>
-										<systemProperty>
-											<key>org.grobid.home</key>
-											<value>../grobid-home</value>
-										</systemProperty>
-									</systemProperties>
 								</configuration>
 							</execution>
 						</executions>
@@ -259,12 +217,6 @@
 								</goals>
 								<configuration>
 									<mainClass>org.grobid.trainer.EbookTrainer</mainClass>
-									<systemProperties>
-										<systemProperty>
-											<key>org.grobid.home</key>
-											<value>../grobid-home</value>
-										</systemProperty>
-									</systemProperties>
 								</configuration>
 							</execution>
 						</executions>
@@ -288,12 +240,6 @@
 								</goals>
 								<configuration>
 									<mainClass>org.grobid.trainer.PatentParserTrainer</mainClass>
-									<systemProperties>
-										<systemProperty>
-											<key>org.grobid.home</key>
-											<value>../grobid-home</value>
-										</systemProperty>
-									</systemProperties>
 								</configuration>
 							</execution>
 						</executions>

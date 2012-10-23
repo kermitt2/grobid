@@ -1,5 +1,17 @@
 package org.grobid.trainer;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.StringTokenizer;
+
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
+
 import org.grobid.core.GrobidModels;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.features.FeaturesVectorReference;
@@ -7,14 +19,8 @@ import org.grobid.core.sax.MarecSaxParser;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.core.utilities.TextUtilities;
+import org.grobid.mock.MockContext;
 import org.grobid.trainer.evaluation.PatentEvaluation;
-
-import javax.xml.parsers.SAXParser;
-import javax.xml.parsers.SAXParserFactory;
-import java.io.*;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.StringTokenizer;
 
 
 /**
@@ -26,7 +32,6 @@ public class PatentParserTrainer extends AbstractTrainer{
         super(GrobidModels.PATENT_PATENT);
     }
 
-    @SuppressWarnings({"NullableProblems"})
     public int createTrainingData(String trainingDataDir) {
         int nb = 0;
         try {
@@ -46,33 +51,33 @@ public class PatentParserTrainer extends AbstractTrainer{
     }
 
     public void train() {
-        createTrainingData(GrobidProperties.getInstance().getTempPath().getAbsolutePath());
+        createTrainingData(GrobidProperties.getTempPath().getAbsolutePath());
 
         String path = new File(new File("resources/dataset/patent/crfpp-templates/").getAbsolutePath()).getAbsolutePath();
 
         // train the resulting training files with features (based external command line, no JNI
         // binding for the training functions of CRF++)
-        String trainingDataPath1 = GrobidProperties.getInstance().getTempPath() + "/npl.train";
-        String trainingDataPath2 = GrobidProperties.getInstance().getTempPath() + "/patent.train";
-        String trainingDataPath3 = GrobidProperties.getInstance().getTempPath() + "/all.train";
+        String trainingDataPath1 = GrobidProperties.getTempPath() + "/npl.train";
+        String trainingDataPath2 = GrobidProperties.getTempPath() + "/patent.train";
+        String trainingDataPath3 = GrobidProperties.getTempPath() + "/all.train";
 
         String templatePath1 = path + "/text.npl.references.template";
         String templatePath2 = path + "/text.patent.references.template";
         String templatePath3 = path + "/text.references.template";
 
 
-        String modelPath1 = GrobidProperties.getInstance().getModelPath(GrobidModels.PATENT_NPL).getAbsolutePath() + NEW_MODEL_EXT;
-        String modelPath2 = GrobidProperties.getInstance().getModelPath(GrobidModels.PATENT_PATENT).getAbsolutePath() + NEW_MODEL_EXT;
-        String modelPath3 = GrobidProperties.getInstance().getModelPath(GrobidModels.PATENT_ALL).getAbsolutePath() + NEW_MODEL_EXT;
+        String modelPath1 = GrobidProperties.getModelPath(GrobidModels.PATENT_NPL).getAbsolutePath() + NEW_MODEL_EXT;
+        String modelPath2 = GrobidProperties.getModelPath(GrobidModels.PATENT_PATENT).getAbsolutePath() + NEW_MODEL_EXT;
+        String modelPath3 = GrobidProperties.getModelPath(GrobidModels.PATENT_ALL).getAbsolutePath() + NEW_MODEL_EXT;
 
-        crfppTrainer.train(templatePath1, trainingDataPath1, modelPath1, GrobidProperties.getInstance().getNBThreads());
-        crfppTrainer.train(templatePath2, trainingDataPath2, modelPath2, GrobidProperties.getInstance().getNBThreads());
-        crfppTrainer.train(templatePath3, trainingDataPath3, modelPath3, GrobidProperties.getInstance().getNBThreads());
+        crfppTrainer.train(templatePath1, trainingDataPath1, modelPath1, GrobidProperties.getNBThreads());
+        crfppTrainer.train(templatePath2, trainingDataPath2, modelPath2, GrobidProperties.getNBThreads());
+        crfppTrainer.train(templatePath3, trainingDataPath3, modelPath3, GrobidProperties.getNBThreads());
 
         //renaming
-        renameModels(GrobidProperties.getInstance().getModelPath(GrobidModels.PATENT_NPL), new File(modelPath1));
-        renameModels(GrobidProperties.getInstance().getModelPath(GrobidModels.PATENT_PATENT), new File(modelPath2));
-        renameModels(GrobidProperties.getInstance().getModelPath(GrobidModels.PATENT_ALL), new File(modelPath3));
+        renameModels(GrobidProperties.getModelPath(GrobidModels.PATENT_NPL), new File(modelPath1));
+        renameModels(GrobidProperties.getModelPath(GrobidModels.PATENT_PATENT), new File(modelPath2));
+        renameModels(GrobidProperties.getModelPath(GrobidModels.PATENT_ALL), new File(modelPath3));
     }
 
 
@@ -557,9 +562,13 @@ public class PatentParserTrainer extends AbstractTrainer{
      * Command line execution.
      *
      * @param args Command line arguments.
+     * @throws Exception 
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
+    	MockContext.setInitialContext();
+		GrobidProperties.getInstance();
         AbstractTrainer.runTraining(new PatentParserTrainer());
+        MockContext.destroyInitialContext();
     }
 
 }
