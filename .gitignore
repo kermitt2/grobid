@@ -3,3 +3,4 @@ grobid-home/target
 grobid-home/tmp
 grobid-service/target
 grobid-trainer/target
+grobid-core/src/main/java/org/grobid/core/.DS_Store
