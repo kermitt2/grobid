@@ -13,17 +13,13 @@ import java.util.List;
  */
 public class Affiliation {
 
-    //private String sigle = null;
+    private String acronym = null;
     private String name = null;
     private String url = null;
     private List<String> institutions = null; // for additional institutions
     private List<String> departments = null; // for additional departments
     private List<String> laboratories = null; // for additional laboratories
 
-    // via affiliation+address model
-    //private String department = null;
-    //private String institution = null;
-    //private String laboratory = null;
     private String country = null;
     private String postCode = null;
     private String postBox = null;
@@ -41,7 +37,7 @@ public class Affiliation {
     }
 
     public Affiliation(org.grobid.core.data.Affiliation aff) {
-        //sigle = aff.getSigle();
+        acronym = aff.getAcronym();
         name = aff.getName();
         url = aff.getURL();
         addressString = aff.getAddressString();
@@ -59,7 +55,10 @@ public class Affiliation {
         affiliationString = aff.getAffiliationString();
     }
 
-    //public String getSigle() { return sigle; }
+    public String getAcronym() { 
+		return acronym; 
+	}
+	
     public String getName() {
         return name;
     }
@@ -116,7 +115,10 @@ public class Affiliation {
         return departments;
     }
 
-    //public void setSigle(String s) { sigle = s; }
+    public void setAcronym(String s) { 
+		acronym = s; 
+	}
+	
     public void setName(String s) {
         name = s;
     }

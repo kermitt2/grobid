@@ -187,7 +187,7 @@ public class BiblioItem {
     private String review = null;
     private List<String> keywords;
     private List<String> subjects;
-    private String categories;
+    private List<String> categories;
     private String type = null; // book, journal, proceedings, in book, etc
     private String typeDescription = null;
     private String book_type = null;
@@ -410,7 +410,7 @@ public class BiblioItem {
         return this.review;
     }
 
-    public String getCategories() {
+    public List<String> getCategories() {
         return this.categories;
     }
 
@@ -803,8 +803,15 @@ public class BiblioItem {
         this.publisherPlace = p;
     }
 
-    public void setCategories(String cat) {
+    public void setCategories(List<String> cat) {
         this.categories = cat;
+    }
+
+	public void addCategory(String cat) {
+        if (categories == null) {
+			categories = new ArrayList<String>();
+		} 
+		categories.add(cat);
     }
 
     public void setNbPages(int nb) {
@@ -1409,15 +1416,25 @@ public class BiblioItem {
         if (string.length() == 0)
             return string;
         String res = string.trim();
-
-        if (res.startsWith("Keywords")) {
+		String resLow = res.toLowerCase();
+        if (resLow.startsWith("keywords")) {
             res = res.substring(8);
-        } else if (res.startsWith("Key words")) {
+        } else if (resLow.startsWith("key words")) {
             res = res.substring(9);
-        }
+        } else if (resLow.startsWith("mots clés")) {
+			res = res.substring(9);
+		} else if (resLow.startsWith("mots cles")) {
+			res = res.substring(9);	
+		} else if (resLow.startsWith("mots clefs")) {
+			res = res.substring(10);
+		}
+		
         res = res.trim();
         if (res.startsWith(":")) {
             res = res.substring(1);
+        }
+		if (res.endsWith(".")) {
+            res = res.substring(0,res.length()-1);
         }
 
         return res.trim();
@@ -2813,7 +2830,6 @@ public class BiblioItem {
     }
 
     public String toTEIAuthorBlock(int nbTag, boolean peer) {
-
         StringBuffer tei = new StringBuffer();
         int nbAuthors = 0;
         int nbAffiliations = 0;
@@ -2838,7 +2854,8 @@ public class BiblioItem {
             nbAuthors = auts.size();
         boolean failAffiliation = true;
 
-        if (getAuthors() != null) {
+        //if (getAuthors() != null) {
+		if (auts != null) {
             failAffiliation = false;
             if (nbAuthors > 0) {
                 int autRank = 0;
