@@ -4,7 +4,7 @@
   <groupId>org.grobid</groupId>
   <artifactId>grobid-parent</artifactId>
   <name>${project.artifactId}</name>
-  <version>0.2.1-SNAPSHOT</version>
+  <version>0.2.2</version>
   <packaging>pom</packaging>
   <licenses>
     <license>
@@ -16,15 +16,10 @@
     <module>grobid-home</module>
     <module>grobid-core</module>
     <module>grobid-trainer</module>
-    <!--module>grobid-models</module-->
     <module>grobid-service</module>
   </modules>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <!-- grobid.groupId>org.grobid</grobid.groupId>
-    <grobid.home.version>0.2.0-SNAPSHOT</grobid.home.version>
-    <grobid.core.version>0.1.4-SNAPSHOT</grobid.core.version>
-    <grobid.trainer.version>0.0.3-SNAPSHOT</grobid.trainer.version-->
   </properties>
   <contributors>
     <contributor>
