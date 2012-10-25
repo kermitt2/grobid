@@ -86,6 +86,8 @@ public class Document {
 
 	public DocumentNode top = null;
 
+	private BiblioItem resHeader = null;
+
 	public Document() {
 		top = new DocumentNode("top", "0");
 	}
@@ -101,6 +103,10 @@ public class Document {
 
 	public String getLanguage() {
 		return lang;
+	}
+
+	public BiblioItem getResHeader() {
+		return resHeader;
 	}
 
 	public ArrayList<Block> getBlocks() {

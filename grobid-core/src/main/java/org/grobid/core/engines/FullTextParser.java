@@ -33,6 +33,7 @@ public class FullTextParser extends AbstractParser {
     private Document doc = null;
     private File tmpPath = null;
     private String pathXML = null;
+	private BiblioItem resHeader = null;  
 
     /**
      * TODO some documentation...
@@ -93,6 +94,7 @@ public class FullTextParser extends AbstractParser {
 
             String tei = doc.toTEI(headerParser, citationParser, consolidateHeader, consolidateCitations,
                     false, null, false, false);
+			resHeader = doc.getResHeader();
             LOGGER.debug(tei);
             return tei;
         } catch (Exception e) {
@@ -165,7 +167,7 @@ public class FullTextParser extends AbstractParser {
             if (headerParser == null) {
                 headerParser = new HeaderParser();
             }
-            BiblioItem resHeader = new BiblioItem();
+            resHeader = new BiblioItem();
             headerParser.processingHeaderBlock(consolidateHeader, doc, resHeader);
             // the language identification is normally done during the header parsing, but only
             // based on header information.
@@ -363,6 +365,13 @@ public class FullTextParser extends AbstractParser {
      */
     public Document getDoc() {
         return doc;
+    }
+
+	/**
+     * Return the Biblio object corresponding to the last processed pdf file.
+     */
+    public BiblioItem getResHeader() {
+        return resHeader;
     }
 
     /**
