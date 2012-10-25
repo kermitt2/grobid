@@ -60,8 +60,10 @@
                         <cell role="name" xml:lang="fr">ALLEMAGNE</cell>
                         <cell role="name" xml:lang="en">GERMANY</cell>
                         <cell role="nameAlt" xml:lang="en">Germany</cell>
+						<cell role="nameAlt" xml:lang="en">Germany (BRD)</cell>
                         <cell role="nameAlt" xml:lang="de">Deutschland</cell>
 						<cell role="nameAlt" xml:lang="de">Bundesrepublik Deutschland</cell>
+						<cell role="nameAlt" xml:lang="de">Republik Deutschland</cell>
                     </row>
                     <row>
                         <cell role="a2code">AD</cell>
@@ -118,6 +120,7 @@
                         <cell role="name" xml:lang="fr">ARGENTINE</cell>
                         <cell role="name" xml:lang="en">ARGENTINA</cell>
                         <cell role="nameAlt" xml:lang="en">Argentina</cell>
+						<cell role="nameAlt" xml:lang="es">República Argentina</cell>
                     </row>
                     <row>
                         <cell role="a2code">AM</cell>
@@ -146,6 +149,7 @@
                         <cell role="name" xml:lang="fr">AUTRICHE</cell>
                         <cell role="name" xml:lang="en">AUSTRIA</cell>
                         <cell role="nameAlt" xml:lang="en">Austria</cell>
+						<cell role="name" xml:lang="de">Österreich</cell>
                     </row>
                     <row>
                         <cell role="a2code">AZ</cell>
@@ -251,6 +255,7 @@
                         <cell role="name" xml:lang="fr">BRÉSIL</cell>
                         <cell role="name" xml:lang="en">BRAZIL</cell>
                         <cell role="name" xml:lang="en">Brazil</cell>
+						<cell role="name" xml:lang="de">Brasil</cell>
                     </row>
                     <row>
                         <cell role="a2code">BN</cell>
@@ -783,6 +788,7 @@
                         <cell role="name" xml:lang="en">ITALY</cell>
                         <cell role="nameAlt" xml:lang="en">Italy</cell>
 						<cell role="name" xml:lang="it">Italia</cell>
+						<cell role="name" xml:lang="de">Italien</cell>
                     </row>
                     <row>
                         <cell role="a2code">JM</cell>
@@ -1118,6 +1124,7 @@
                         <cell role="name" xml:lang="fr">NORVÈGE</cell>
                         <cell role="name" xml:lang="en">NORWAY</cell>
                         <cell role="name" xml:lang="en">Norway</cell>
+						<cell role="name" xml:lang="de">Norwegen</cell>
                     </row>
                     <row>
                         <cell role="a2code">NC</cell>
@@ -1233,6 +1240,8 @@
                         <cell role="a3code">POL</cell>
                         <cell role="name" xml:lang="fr">POLOGNE</cell>
                         <cell role="name" xml:lang="en">POLAND</cell>
+						<cell role="name" xml:lang="de">Polen</cell>
+						<cell role="nameAlt" xml:lang="pl">Polska</cell>
                         <cell role="nameAlt" xml:lang="en">Poland</cell>
                     </row>
                     <row>
@@ -1283,10 +1292,15 @@
                         <cell role="name" xml:lang="en">UNITED KINGDOM</cell>
                         <cell role="nameAlt" xml:lang="en">United Kingdom</cell>
                         <cell role="nameAlt" xml:lang="en">Northern Ireland, UK</cell>
+						<cell role="nameAlt" xml:lang="en">Northern Ireland</cell>
                         <cell role="nameAlt" xml:lang="en">Scotland, UK</cell>
+						<cell role="nameAlt" xml:lang="en">Scotland</cell>
+						<cell role="nameAlt" xml:lang="en">England</cell>
+						<cell role="nameAlt" xml:lang="en">Wales</cell>
                         <cell role="nameAlt" xml:lang="en">UK</cell>
                         <cell role="nameAlt" xml:lang="en">U.K</cell>
 						<cell role="nameAlt" xml:lang="en">U. K</cell>
+						<cell role="nameAlt" xml:lang="en">Great Britain</cell>
                    </row>
                     <row>
                         <cell role="a2code">RU</cell>
@@ -1459,6 +1473,7 @@
                         <cell role="a3code">SWE</cell>
                         <cell role="name" xml:lang="fr">SUÈDE</cell>
                         <cell role="name" xml:lang="en">SWEDEN</cell>
+						<cell role="name" xml:lang="de">Schweden</cell>
                         <cell role="nameAlt" xml:lang="en">Sweden</cell>
                     </row>
                     <row>
@@ -1466,6 +1481,7 @@
                         <cell role="a3code">CHE</cell>
                         <cell role="name" xml:lang="fr">SUISSE</cell>
                         <cell role="name" xml:lang="en">SWITZERLAND</cell>
+						<cell role="name" xml:lang="de">Schweiz</cell>
                         <cell role="nameAlt" xml:lang="en">Switzerland</cell>
                     </row>
                     <row>
@@ -1668,6 +1684,63 @@
                         <cell role="name" xml:lang="fr">ZIMBABWE</cell>
                         <cell role="name" xml:lang="en">ZIMBABWE</cell>
                         <cell role="nameAlt" xml:lang="en">Zimbabwe</cell>
+                    </row>
+					<row>
+                        <cell role="a2code">DDDE</cell>
+                        <cell role="a3code">DDDE</cell>
+                        <cell role="name" xml:lang="fr">ALLEMAGNE DE L'EST</cell>
+						<cell role="name" xml:lang="fr">République démocratique allemande</cell>
+                        <cell role="name" xml:lang="en">EAST GERMANY</cell>
+                        <cell role="nameAlt" xml:lang="en">East Germany</cell>
+						<cell role="nameAlt" xml:lang="en">German Democratic Republic</cell>
+						<cell role="nameAlt" xml:lang="en">Federal Republic of Germany</cell>
+						<cell role="nameAlt" xml:lang="de">Ostdeutschland</cell>
+                        <cell role="nameAlt" xml:lang="de">DDR</cell>
+						<cell role="nameAlt" xml:lang="de">GDR</cell>
+						<cell role="nameAlt" xml:lang="de">Deutsche Demokratische Republik</cell>
+                    </row>
+					<row>
+                        <cell role="a2code">YUCS</cell>
+                        <cell role="a3code">YUCS</cell>
+                        <cell role="name" xml:lang="fr">Yougoslavie</cell>
+						<cell role="name" xml:lang="fr">Fédération démocratique de Yougoslavie</cell>
+						<cell role="name" xml:lang="fr">République fédérative socialiste de Yougoslavie</cell>
+                        <cell role="name" xml:lang="en">Yugoslavia</cell>
+                        <cell role="nameAlt" xml:lang="en">Socialist Federal Republic of Yugoslavia</cell>
+						<cell role="nameAlt" xml:lang="en">SFR Yugoslavia</cell>
+						<cell role="nameAlt" xml:lang="de">Jugoslawien</cell>
+						<cell role="nameAlt" xml:lang="de">Jugoslavien</cell>
+                        <cell role="nameAlt" xml:lang="de">Sozialistische Föderative Republik Jugoslawien</cell>
+						<cell role="nameAlt" xml:lang="de">Föderative Volksrepublik Jugoslawien</cell>
+                    </row>
+					<row>
+                        <cell role="a2code">CSHH</cell>
+                        <cell role="a3code">CSHH</cell>
+                        <cell role="name" xml:lang="fr">Tchécoslovaquie</cell>
+						<cell role="name" xml:lang="fr">République fédérale tchèque et slovaque</cell>
+						<cell role="name" xml:lang="fr">République socialiste tchécoslovaque</cell>
+                        <cell role="name" xml:lang="en">Czechoslovakia</cell>
+                        <cell role="nameAlt" xml:lang="en">Czechoslovak Republic</cell>
+						<cell role="nameAlt" xml:lang="en">Czechoslovak Socialist Republic</cell>
+						<cell role="nameAlt" xml:lang="en">Czechoslovak Federal Republic</cell>
+						<cell role="nameAlt" xml:lang="en">ČSSR</cell>
+						<cell role="nameAlt" xml:lang="de">Tschechoslowakei</cell>
+                        <cell role="nameAlt" xml:lang="de">Tschechoslowakische Sozialistische Republik</cell>
+						<cell role="nameAlt" xml:lang="de">Tschechische und Slowakische Föderative Republik</cell>
+                    </row>
+					<row>
+                        <cell role="a2code">SUHH</cell>
+                        <cell role="a3code">SUHH</cell>
+                        <cell role="name" xml:lang="fr">Union des républiques socialistes soviétiques</cell>
+						<cell role="name" xml:lang="fr">Union soviétique</cell>
+                        <cell role="name" xml:lang="en">USSR</cell>
+                        <cell role="nameAlt" xml:lang="en">Soviet Union</cell>
+						<cell role="nameAlt" xml:lang="en">CCCP</cell>
+						<cell role="nameAlt" xml:lang="en">Union of Soviet Socialist Republics</cell>
+						<cell role="nameAlt" xml:lang="de">Sowjetunion</cell>
+                        <cell role="nameAlt" xml:lang="de">Union der Sozialistischen Sowjetrepubliken</cell>
+						<cell role="nameAlt" xml:lang="de">UdSSR</cell>
+						<cell role="nameAlt" xml:lang="de">SSSR</cell>
                     </row>
                 </table>
             </div>
