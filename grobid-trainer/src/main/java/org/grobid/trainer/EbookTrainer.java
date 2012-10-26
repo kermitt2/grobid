@@ -2,8 +2,8 @@ package org.grobid.trainer;
 
 import org.grobid.core.GrobidModels;
 import org.grobid.core.exceptions.GrobidException;
+import org.grobid.core.mock.MockContext;
 import org.grobid.core.utilities.GrobidProperties;
-import org.grobid.mock.MockContext;
 import org.grobid.trainer.sax.TEIEbookSaxParser;
 
 import javax.xml.parsers.SAXParser;
