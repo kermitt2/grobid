@@ -851,4 +851,24 @@ public class GrobidProperties {
 		return new File(get_GROBID_HOME_PATH(), "lexicon").getAbsolutePath();
 	}
 
+	/**
+	 * Returns the maximum parallel connections allowed in the pool.
+	 * 
+	 * @return the number of connections
+	 */
+	public static int getMaxPoolConnections() {
+		return Integer
+				.parseInt(getPropertyValue(GrobidPropertyKeys.PROP_GROBID_MAX_CONNECTIONS));
+	}
+
+	/**
+	 * Returns maximum time to wait before timeout when the pool is full.
+	 * 
+	 * @return time to wait in milliseconds.
+	 */
+	public static int getPoolMaxWait() {
+		return Integer
+				.parseInt(getPropertyValue(GrobidPropertyKeys.PROP_GROBID_POOL_MAX_WAIT)) * 1000;
+	}
+
 }

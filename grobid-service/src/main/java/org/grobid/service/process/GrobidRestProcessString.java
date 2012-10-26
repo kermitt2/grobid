@@ -1,6 +1,7 @@
 package org.grobid.service.process;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -10,6 +11,7 @@ import org.grobid.core.data.Affiliation;
 import org.grobid.core.data.Date;
 import org.grobid.core.data.Person;
 import org.grobid.core.engines.Engine;
+import org.grobid.core.factory.GrobidPoolingFactory;
 import org.grobid.service.util.GrobidServiceProperties;
 import org.grobid.service.utils.GrobidRestUtils;
 import org.slf4j.Logger;
@@ -48,7 +50,7 @@ public class GrobidRestProcessString {
 			List<Date> dates;
 			if (isparallelExec) {
 				dates = engine.processDate(date);
-				engine.close();
+				GrobidPoolingFactory.returnEngine(engine);
 			} else {
 				synchronized (engine) {
 					dates = engine.processDate(date);
@@ -67,6 +69,9 @@ public class GrobidRestProcessString {
 				response = Response.status(Status.OK).entity(retVal)
 						.type(MediaType.TEXT_PLAIN).build();
 			}
+		} catch (NoSuchElementException nseExp) {
+			LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
+			response = Response.status(Status.SERVICE_UNAVAILABLE).build();
 		} catch (Exception e) {
 			LOGGER.error("An unexpected exception occurs. ", e);
 			response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
@@ -96,7 +101,7 @@ public class GrobidRestProcessString {
 			List<Person> authors;
 			if (isparallelExec) {
 				authors = engine.processAuthorsHeader(names);
-				engine.close();
+				GrobidPoolingFactory.returnEngine(engine);
 			} else {
 				synchronized (engine) {
 					authors = engine.processAuthorsHeader(names);
@@ -116,6 +121,9 @@ public class GrobidRestProcessString {
 				response = Response.status(Status.OK).entity(retVal)
 						.type(MediaType.TEXT_PLAIN).build();
 			}
+		} catch (NoSuchElementException nseExp) {
+			LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
+			response = Response.status(Status.SERVICE_UNAVAILABLE).build();
 		} catch (Exception e) {
 			LOGGER.error("An unexpected exception occurs. ", e);
 			response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
@@ -145,7 +153,7 @@ public class GrobidRestProcessString {
 			List<Person> authors;
 			if (isparallelExec) {
 				authors = engine.processAuthorsCitation(names);
-				engine.close();
+				GrobidPoolingFactory.returnEngine(engine);
 			} else {
 				synchronized (engine) {
 					authors = engine.processAuthorsCitation(names);
@@ -165,6 +173,9 @@ public class GrobidRestProcessString {
 				response = Response.status(Status.OK).entity(retVal)
 						.type(MediaType.TEXT_PLAIN).build();
 			}
+		} catch (NoSuchElementException nseExp) {
+			LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
+			response = Response.status(Status.SERVICE_UNAVAILABLE).build();
 		} catch (Exception e) {
 			LOGGER.error("An unexpected exception occurs. ", e);
 			response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
@@ -194,7 +205,7 @@ public class GrobidRestProcessString {
 			List<Affiliation> affiliationList;
 			if (isparallelExec) {
 				affiliationList = engine.processAffiliation(affiliation);
-				engine.close();
+				GrobidPoolingFactory.returnEngine(engine);
 			} else {
 				synchronized (engine) {
 					affiliationList = engine.processAffiliation(affiliation);
@@ -213,6 +224,9 @@ public class GrobidRestProcessString {
 				response = Response.status(Status.OK).entity(retVal)
 						.type(MediaType.TEXT_PLAIN).build();
 			}
+		} catch (NoSuchElementException nseExp) {
+			LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
+			response = Response.status(Status.SERVICE_UNAVAILABLE).build();
 		} catch (Exception e) {
 			LOGGER.error("An unexpected exception occurs. ", e);
 			response = Response.status(Status.INTERNAL_SERVER_ERROR).build();

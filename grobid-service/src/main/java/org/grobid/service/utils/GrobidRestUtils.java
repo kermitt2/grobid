@@ -8,7 +8,8 @@ import java.io.OutputStream;
 
 import org.apache.commons.lang3.StringUtils;
 import org.grobid.core.engines.Engine;
-import org.grobid.core.impl.GrobidFactory;
+import org.grobid.core.factory.GrobidFactory;
+import org.grobid.core.factory.GrobidPoolingFactory;
 import org.grobid.service.exceptions.GrobidServiceException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -50,7 +51,7 @@ public class GrobidRestUtils {
 		File originFile = null;
 		OutputStream out = null;
 		try {
-			originFile = newTempDir("origin", "pdf");
+			originFile = newTempFile("origin", "pdf");
 
 			out = new FileOutputStream(originFile);
 
@@ -80,11 +81,11 @@ public class GrobidRestUtils {
 	}
 
 	/**
-	 * Creates a new not used temprorary folder and returns it.
+	 * Creates a new not used temprorary file and returns it.
 	 * 
 	 * @return
 	 */
-	public static File newTempDir(String fileName, String extension) {
+	public static File newTempFile(String fileName, String extension) {
 		try {
 			return File.createTempFile(fileName, extension);
 		} catch (IOException e) {
@@ -115,7 +116,7 @@ public class GrobidRestUtils {
 	 *         else return the instance of engine.
 	 */
 	public static Engine getEngine(boolean isparallelExec) {
-		return isparallelExec ? GrobidFactory.getInstance().createEngine()
+		return isparallelExec ? GrobidPoolingFactory.getEngineFromPool()
 				: GrobidFactory.getInstance().getEngine();
 	}
 

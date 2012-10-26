@@ -70,14 +70,6 @@ public class GrobidRestProcessGeneric {
 			htmlCode.append("This service provides a RESTful interface for using the grobid system. grobid extracts data from pdf files. For more information see: ");
 			htmlCode.append("<a href=\"http://hal.inria.fr/inria-00493437_v1/\">http://hal.inria.fr/inria-00493437_v1/</a>");
 			htmlCode.append("<br/>");
-			String link = null;
-			if ((uriInfo != null) && (uriInfo.getAbsolutePath() != null)
-					&& (uriInfo.getAbsolutePath().toString().endsWith("/"))) {
-				link = "../application.wadl";
-			} else
-				link = "application.wadl";
-			htmlCode.append("A more detailed technical description of the grobid-service can be found here (<a href=\""
-					+ link + "\">application.wadl</a>)");
 			htmlCode.append("</body>");
 			htmlCode.append("</html>");
 

@@ -39,7 +39,7 @@ public class ModelMap {
 		LOGGER.debug("start getTagger");
 		Tagger tagger;
 		try {
-			LOGGER.info("Creating tagger");
+			LOGGER.debug("Creating tagger");
 			Model model = getModel(grobidModel.getModelPath());
 			tagger = model.createTagger();
 		} catch (Throwable thb) {

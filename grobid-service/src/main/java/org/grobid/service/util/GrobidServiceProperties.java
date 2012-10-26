@@ -39,12 +39,12 @@ public class GrobidServiceProperties {
 	 */
 	public static final Logger LOGGER = LoggerFactory
 			.getLogger(GrobidServiceProperties.class);
-	
+
 	/**
 	 * Internal property object, where all properties are defined.
 	 */
 	protected static Properties props = null;
-	
+
 	/**
 	 * The context of the application.
 	 */
@@ -88,7 +88,7 @@ public class GrobidServiceProperties {
 		}
 		return grobidServiceProperties;
 	}
-	
+
 	/**
 	 * Returns all grobid-properties.
 	 * 
@@ -105,7 +105,7 @@ public class GrobidServiceProperties {
 	protected static void setProps(Properties pProps) {
 		props = pProps;
 	}
-	
+
 	/**
 	 * Return the context.
 	 * 
@@ -124,7 +124,7 @@ public class GrobidServiceProperties {
 	public static void setContext(Context pContext) {
 		context = pContext;
 	}
-	
+
 	/**
 	 * Loads all properties given in property file {@link #GROBID_HOME_PATH}.
 	 */
@@ -182,7 +182,7 @@ public class GrobidServiceProperties {
 							+ "''.");
 		}
 	}
-	
+
 	/**
 	 * Return the value corresponding to the property key. If this value is
 	 * null, return the default value.
@@ -194,16 +194,6 @@ public class GrobidServiceProperties {
 	protected static String getPropertyValue(String pkey) {
 		return getProps().getProperty(pkey);
 	}
-	
-	/**
-	 * Returns the password for admin page given by property
-	 * {@value #PROP_GROBID_SERVICE_ADMIN_PW}.
-	 * 
-	 * @return if the execution is parallel
-	 */
-	public static boolean isParallelExec() {
-		return Utilities.stringToBoolean(getPropertyValue(GrobidPropertyKeys.PROP_GROBID_SERVICE_IS_PARALLEL_EXEC));
-	}
 
 	/**
 	 * Returns the password for admin page given by property
@@ -213,6 +203,17 @@ public class GrobidServiceProperties {
 	 */
 	public static String getAdminPw() {
 		return getPropertyValue(GrobidPropertyKeys.PROP_GROBID_SERVICE_ADMIN_PW);
+	}
+
+	/**
+	 * Returns the password for admin page given by property
+	 * {@value #PROP_GROBID_SERVICE_ADMIN_PW}.
+	 * 
+	 * @return if the execution is parallel
+	 */
+	public static boolean isParallelExec() {
+		return Utilities
+				.stringToBoolean(getPropertyValue(GrobidPropertyKeys.PROP_GROBID_SERVICE_IS_PARALLEL_EXEC));
 	}
 
 }
