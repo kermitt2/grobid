@@ -8,7 +8,7 @@ import org.chasen.crfpp.Tagger;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.engines.AbstractParser;
 import org.grobid.core.exceptions.GrobidException;
-import org.grobid.core.impl.GrobidFactory;
+import org.grobid.core.factory.GrobidFactory;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.trainer.evaluation.EvaluationUtilities;
 import org.slf4j.Logger;

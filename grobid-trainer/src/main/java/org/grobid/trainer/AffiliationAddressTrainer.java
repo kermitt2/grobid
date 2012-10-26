@@ -3,9 +3,9 @@ package org.grobid.trainer;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.features.FeaturesVectorAffiliationAddress;
+import org.grobid.core.mock.MockContext;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.OffsetPosition;
-import org.grobid.mock.MockContext;
 import org.grobid.trainer.sax.TEIAffiliationAddressSaxParser;
 
 import javax.xml.parsers.SAXParser;
