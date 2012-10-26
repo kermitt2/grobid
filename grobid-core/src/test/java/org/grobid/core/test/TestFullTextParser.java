@@ -2,7 +2,7 @@ package org.grobid.core.test;
 
 import static org.junit.Assert.assertNotNull;
 
-import org.grobid.core.impl.GrobidFactory;
+import org.grobid.core.factory.GrobidFactory;
 import org.grobid.core.main.GrobidConstants;
 import org.grobid.core.utilities.GrobidProperties;
 import org.junit.Before;

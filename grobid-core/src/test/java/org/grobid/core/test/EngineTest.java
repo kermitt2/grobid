@@ -1,8 +1,8 @@
 package org.grobid.core.test;
 
 import org.grobid.core.engines.Engine;
-import org.grobid.core.impl.GrobidFactory;
-import org.grobid.mock.MockContext;
+import org.grobid.core.factory.GrobidFactory;
+import org.grobid.core.mock.MockContext;
 import org.junit.AfterClass;
 
 /**
