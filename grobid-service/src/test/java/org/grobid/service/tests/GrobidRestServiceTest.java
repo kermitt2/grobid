@@ -30,9 +30,9 @@ import java.util.List;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.MultivaluedMap;
 
+import org.grobid.core.mock.MockContext;
 import org.grobid.core.utilities.GrobidPropertyKeys;
 import org.grobid.core.utilities.TextUtilities;
-import org.grobid.mock.MockContext;
 import org.grobid.service.GrobidPathes;
 import org.junit.After;
 import org.junit.AfterClass;

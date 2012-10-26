@@ -2,8 +2,8 @@ package org.grobid.core.lexicon;
 
 import java.io.File;
 
+import org.grobid.core.mock.MockContext;
 import org.grobid.core.utilities.GrobidProperties;
-import org.grobid.mock.MockContext;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;

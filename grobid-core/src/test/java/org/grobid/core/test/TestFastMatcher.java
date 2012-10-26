@@ -6,8 +6,8 @@ import static org.junit.Assert.assertNotNull;
 import java.util.List;
 
 import org.grobid.core.lexicon.Lexicon;
+import org.grobid.core.mock.MockContext;
 import org.grobid.core.utilities.OffsetPosition;
-import org.grobid.mock.MockContext;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;

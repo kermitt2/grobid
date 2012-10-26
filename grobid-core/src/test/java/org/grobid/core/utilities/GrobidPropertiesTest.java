@@ -14,7 +14,7 @@ import javax.naming.NamingException;
 import org.apache.commons.lang3.StringUtils;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.exceptions.GrobidPropertyException;
-import org.grobid.mock.MockContext;
+import org.grobid.core.mock.MockContext;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
