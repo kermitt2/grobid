@@ -325,4 +325,4 @@ public class Utilities {
 		return res;
 	}
 
-} // end of class
+}

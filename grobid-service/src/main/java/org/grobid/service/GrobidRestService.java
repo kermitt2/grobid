@@ -32,7 +32,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 
-import org.grobid.core.impl.GrobidFactory;
+import org.grobid.core.factory.GrobidFactory;
 import org.grobid.service.process.GrobidRestProcessAdmin;
 import org.grobid.service.process.GrobidRestProcessFiles;
 import org.grobid.service.process.GrobidRestProcessGeneric;

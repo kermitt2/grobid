@@ -2,12 +2,14 @@ package org.grobid.service.process;
 
 import java.io.File;
 import java.io.InputStream;
+import java.util.NoSuchElementException;
 
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
 import org.grobid.core.engines.Engine;
+import org.grobid.core.factory.GrobidPoolingFactory;
 import org.grobid.service.util.GrobidServiceProperties;
 import org.grobid.service.utils.GrobidRestUtils;
 import org.slf4j.Logger;
@@ -53,7 +55,7 @@ public class GrobidRestProcessFiles {
 				if (isparallelExec) {
 					retVal = engine.processHeader(originFile.getAbsolutePath(),
 							false, null);
-					engine.close();
+					GrobidPoolingFactory.returnEngine(engine);
 				} else {
 					synchronized (engine) {
 						retVal = engine.processHeader(
@@ -70,12 +72,39 @@ public class GrobidRestProcessFiles {
 							.type(MediaType.APPLICATION_XML).build();
 				}
 			}
+		} catch (NoSuchElementException nseExp) {
+			LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
+			response = Response.status(Status.SERVICE_UNAVAILABLE).build();
 		} catch (Exception e) {
-			// e.printStackTrace();
 			LOGGER.error("An unexpected exception occurs. ", e);
 			response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
 		}
 		LOGGER.debug(methodLogOut());
+		return response;
+	}
+
+	/**
+	 * Uploads the zip file, extract pdf files and extract them into TEI. Only
+	 * the header data is extracted.
+	 * 
+	 * @param inputStream
+	 *            zip containing the datas of origin document.
+	 * @return Response containing the TEI files representing the header part.
+	 */
+	public static Response processStatelessBulkHeaderDocument(
+			InputStream inputStream) {
+		LOGGER.debug(methodLogIn());
+		Response response = null;
+		LOGGER.debug(methodLogIn());
+		try {
+			File originFile = GrobidRestUtils.writeInputFile(inputStream);
+			LOGGER.info("originFile=" + originFile);
+		} catch (Exception e) {
+			LOGGER.error("An unexpected exception occurs. ", e);
+			response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
+		}
+		LOGGER.debug(methodLogOut());
+
 		return response;
 	}
 
@@ -105,7 +134,7 @@ public class GrobidRestProcessFiles {
 				if (isparallelExec) {
 					retVal = engine.fullTextToTEI(originFile.getAbsolutePath(),
 							false, false);
-					engine.close();
+					GrobidPoolingFactory.returnEngine(engine);
 				} else {
 					synchronized (engine) {
 						retVal = engine.fullTextToTEI(
@@ -122,6 +151,9 @@ public class GrobidRestProcessFiles {
 							.type(MediaType.APPLICATION_XML).build();
 				}
 			}
+		} catch (NoSuchElementException nseExp) {
+			LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
+			response = Response.status(Status.SERVICE_UNAVAILABLE).build();
 		} catch (Throwable e) {
 			LOGGER.error("An unexpected exception occurs. ", e);
 			response = Response.status(Status.INTERNAL_SERVER_ERROR).build();

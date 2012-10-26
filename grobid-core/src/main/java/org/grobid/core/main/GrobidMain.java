@@ -1,7 +1,7 @@
 package org.grobid.core.main;
 
 import org.grobid.core.engines.Engine;
-import org.grobid.core.impl.GrobidFactory;
+import org.grobid.core.factory.GrobidFactory;
 
 /**
  * The entrance point, to start grobid from command line

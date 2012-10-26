@@ -29,6 +29,11 @@ public interface GrobidPathes {
 	public static final String PATH_GROBID= "/";
 	
 	/**
+	 * path extension for grobid adm.
+	 */
+	public static final String PATH_ADM= "/adm";
+	
+	/**
 	 * path extension for is alive request.
 	 */
 	public static final String PATH_IS_ALIVE= "isalive";
@@ -41,6 +46,12 @@ public interface GrobidPathes {
 	 * path extension for processing document headers.
 	 */
 	public static final String PATH_HEADER= "processHeaderDocument";
+	
+	/**
+	 * path extension for processing bulck document headers.
+	 */
+	public static final String PATH_BULCK_HEADER= "processBulckHeaderDocument";
+	
 	/**
 	 * path extension for processing full text of documents.
 	 */

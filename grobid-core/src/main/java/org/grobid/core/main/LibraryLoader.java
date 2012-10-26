@@ -6,10 +6,10 @@ import java.io.FileFilter;
 import javax.naming.InitialContext;
 
 import org.grobid.core.exceptions.GrobidException;
+import org.grobid.core.mock.MockContext;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.GrobidPropertyKeys;
 import org.grobid.core.utilities.Utilities;
-import org.grobid.mock.MockContext;
 import org.slf4j.LoggerFactory;
 
 /**

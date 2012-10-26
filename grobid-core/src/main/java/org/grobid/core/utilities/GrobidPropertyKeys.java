@@ -1,6 +1,5 @@
 package org.grobid.core.utilities;
 
-
 /**
  * This class contains all the keys of the properties files.
  * 
@@ -32,6 +31,9 @@ public interface GrobidPropertyKeys {
 	public static final String PROP_PROXY_PORT = "grobid.proxy_port";
 
 	public static final String PROP_NB_THREADS = "grobid.nb_threads";
+	
+	public static final String PROP_GROBID_MAX_CONNECTIONS = "org.grobid.max.connections";
+	public static final String PROP_GROBID_POOL_MAX_WAIT = "org.grobid.pool.max.wait";
 
 	/**
 	 * Determines if properties like the firstnames, lastnames country codes and
@@ -51,20 +53,21 @@ public interface GrobidPropertyKeys {
 	 * grobid.propeties path is set.
 	 */
 	public static final String PROP_GROBID_PROPERTY = "org.grobid.property";
-	
+
 	/**
 	 * The name of the system property, via which the grobid home folder can be
 	 * located.
 	 */
 	public static final String PROP_GROBID_SERVICE_PROPERTY = "org.grobid.property.service";
-	
+
 	/**
 	 * name of the property setting the admin password
 	 */
 	public static final String PROP_GROBID_SERVICE_ADMIN_PW = "org.grobid.service.admin.pw";
-	
+
 	/**
-	 * If set to true, parallel execution will be done, else a queuing of requests will be done.
+	 * If set to true, parallel execution will be done, else a queuing of
+	 * requests will be done.
 	 */
 	public static final String PROP_GROBID_SERVICE_IS_PARALLEL_EXEC = "org.grobid.service.is.parallel.execution";
 
