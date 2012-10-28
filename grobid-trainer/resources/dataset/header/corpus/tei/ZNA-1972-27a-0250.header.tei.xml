@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="ZNA-1972-27a-0250"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Schubni kow—de Haas-Effekt und Bandstruktur-Untersuchungen<lb/> an Wi smut—Anti mon-Legi erungen *<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>DETLEF SCHNEIDER<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institut für Technische Physik der Technischen Universität Braunschweig<lb/></affiliation>
+	</byline>
+
+	<reference>(Z. Naturforsch. 27 a, 250—270 [1972] ;</reference>
+
+	<note type="submission">eingegangen am 3. November 1971)<lb/></note>
+
+	<note type="english-title">SHUBNIKOV-(LE HAAS-EFFECT AND BAND STRUCTURE INVESTIGATIONS IN BISMUTH — ANTIMONY ALLOYS *<lb/></note>
+
+	<div type="abstract">Magnetoresistance, Hall effect, and susceptibility have been investigated in Te-doped Bi95Sb3<lb/> single crystals. The experimental results establish the occurrence of both longitudinal and transver-<lb/>sal SdH-oscillations over a wide temperature range up to 7=77 °K. Dingle-temperatures, cyclotron<lb/> masses, spin splitting, and the effective mass tensor of the electrons at the Fermi level and the<lb/> band edge were calculated from the temperature and angular dependence of the SdH-oscillations.<lb/> The results are discussed in respect of various models of the electron band structure. The behaviour<lb/> of the small Fermi surface cross sections is in agreement with the ENP-model, however in the long<lb/> direction of the quasi ellipsoids a slight variation of the effective mass must be assumed.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="ZNA-1972-27a-0188"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Atom-gj -Faktoren und Lebensdauern der z 3 F-Terme im Titan I-Spektrum *<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>A. HESE<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institut für Kernphysik der Technischen Universität Berlin<lb/></affiliation>
+	</byline>
+
+	<reference>(Z. Naturforsch. 27 a, 188—191 [1972] ;</reference>
+
+	<note type="submission">eingegangen am 10. November 1971)<lb/></note>
+
+	<note type="english-title">Atomic gj-Values and, Lifetimes of the z 3 F-States in the Titanium 1-Spectrum<lb/></note>
+
+	<div type="abstract">Stimulated by a complete theoretical investigation of the odd configurations in the Titanium I-<lb/>spectrum the optical double resonance method has been applied to measure the atomic 7y-values<lb/> and lifetimes of the excited 3d 2 4s 4p z 3 F2,3,4-states. Using a Titanium atomic beam in natural<lb/> isotope composition the following values were deduced from the position and the width of the<lb/> radiofrequency transition signals:<lb/> z 3 F4:<lb/> 9J ~ 1.2542(5),<lb/> r = 205 (13) ns ,<lb/> z3F3.<lb/> gj =<lb/> 1.0884(5),<lb/> t = 140 (11) ns ,<lb/> z3F2.<lb/> gj =</div>
+
+		</front>
+	</text>
+</tei>

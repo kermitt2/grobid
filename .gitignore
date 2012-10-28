@@ -4,3 +4,13 @@ grobid-home/tmp
 grobid-service/target
 grobid-trainer/target
 grobid-core/src/main/java/org/grobid/core/.DS_Store
+
+grobid-trainer/resources/.DS_Store
+
+grobid-trainer/resources/dataset/.DS_Store
+
+grobid-trainer/resources/dataset/affiliation-address/.DS_Store
+
+grobid-trainer/resources/dataset/header/.DS_Store
+
+grobid-trainer/resources/dataset/header/corpus/.DS_Store
