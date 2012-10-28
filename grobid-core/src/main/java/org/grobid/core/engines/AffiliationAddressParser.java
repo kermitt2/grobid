@@ -114,7 +114,7 @@ public class AffiliationAddressParser extends AbstractParser {
         while (st.hasMoreTokens()) {
             String toke = tokenizations.get(p);
             List<String> tokes = new ArrayList<String>();
-            while ((toke.equals(" ") || toke.equals("\n") || (toke.length() == 0)) && (p < tokenizations.size())) {
+            while ((toke.equals(" ") || toke.equals("\n") || (toke.length() == 0)) && ((p+1) < tokenizations.size())) {
                 p++;
                 if (toke.length() == 0) {
                     toke = tokenizations.get(p);
