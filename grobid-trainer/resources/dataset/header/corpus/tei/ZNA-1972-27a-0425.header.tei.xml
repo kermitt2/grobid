@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="ZNA-1972-27a-0425"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Dynami cal Interaction of El ectron Waves in a Perfect Si ngl e Crystal<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>G. LEHMPFUHL<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Fritz-Haber-Institut der Max-Planck-Gesellschaft,</affiliation>
+	</byline>
+
+	<address>Berlin-Dahlem<lb/></address>
+
+	<reference>(Z. Naturforsch. 27 a, 425—433 [1972] ;</reference>
+
+	<note type="submission">received 11 November 1971)<lb/></note>
+	
+	<note type="dedication">Dedicated to Prof. Dr. K. MOLIERE on his 60-th birthday<lb/></note>
+
+	<div type="abstract">Electron diffraction from a perfect single crystal shows the influence of many-beam interaction.<lb/> Investigations with a single crystal wedge allow a direct analysis of the Bloch-waves which are dis-<lb/>played into their partial waves. The strength of the dynamical interactions in a MgO crystal wedge<lb/> was investigated by comparing the photographic record of a section through the dispersion surface<lb/> with many-beam calculations. For a direction of the incident beam near the [110] zone axis the<lb/> interaction of at least 50 beams has to be taken into account. Using a 50-beam calculation the<lb/> structure potential V1U was determined to 1.80 volts ±3%.<lb/> The influence of many-beam interactions on the absorption and the extinction fringe profiles in<lb/> electron micrographs is discussed. Analysis of extinction fringes on the basis of a 50-beam approxi-<lb/>mation allowed the determination of the mean absorbing potential F0 im of MgO to 0.7 volts ±10%.</div>
+
+		</front>
+	</text>
+</tei>

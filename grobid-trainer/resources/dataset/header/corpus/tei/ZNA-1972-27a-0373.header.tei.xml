@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="ZNA-1972-27a-0373"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Low-Energy Electron Diffraction Amplitudes for a "Bare-Substrate" Model<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>E. G. MCRAE<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Bell Laboratories,</affiliation>
+	</byline>
+
+	<address>Murray Hill, New Jersey<lb/></address>
+
+	<reference>(Z. Naturforsch. 27 a, 373—382 [1972] ;</reference>
+
+	<note type="submission">received 16 November 1971)<lb/></note>
+
+	<note type="dedication">Dedicated to Prof. Dr. K. MOLIERE on his 60-th<lb/> birthday<lb/> </note>
+
+	<div type="abstract">A theory of low-energy electron diffraction (LEED) amplitudes is developed for a model in<lb/> which the crystal surface is represented by a step-function termination of the bulk crystal potential<lb/> ("bare-substrate" model). The crystal is considered to be centro-symmetric and it is assumed that<lb/> either the crystal has a two-fold axis of rotation normal to the surface or the primay beam is<lb/> normally incident on the surface. The origin of coordinates is taken to lie at a center of symmetry<lb/> of the substrate crystal. The diffraction amplitude is considered as a function of complex electron<lb/> energy. For a real potential it is shown to have the following properties:<lb/> 1. The imaginary part of the amplitude vanishes at each branch point of the amplitude function;<lb/> 2. There are certain segments of the real-energy axis, called "inactive" segments, throughout<lb/> which the imaginary part of the amplitude vanishes approximately.<lb/> The theoretical results are illustrated by a numerical example. It is suggested that the diffrac-<lb/>tion amplitude can be represented by a simple expression that has the correct functional form<lb/> and that satisfies the appropriate dispersion relation. One such expression is proposed and discussed<lb/> in comparison with exact computational results.<lb/></div>
+
+		</front>
+	</text>
+</tei>

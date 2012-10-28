@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="ZNA-1972-27a-0092"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Gl ei chzei ti ge Messung von Hyperfeinstruktur, Stark-Effekt und Zeeman-Effekt<lb/> des 87 RbF mit ei ner Mol ekül strahl -Resonanzapparatur<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>J. HEITBAUM und R. SCHÖNWASSER *<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Physikalisches Institut der Universität Bonn<lb/></affiliation>
+	</byline>
+
+	<reference>(Z. Naturforsch. 27 a, 92—99 [1972] ;</reference>
+
+	<note type="submission">eingegangen am 27. September 1971)<lb/></note>
+
+	<note type="english-title">Simultaneous Measurement<lb/> of Hyperfine Structure, Stark-Effect<lb/> and Zeeman-Effect<lb/> of 87 RbF<lb/> with a Molecular<lb/> Beam Resonance<lb/> Apparatus<lb/></note>
+	
+	<div type="abstract">The electric and magnetic properties of the molecule 87 RbF in the rotational state / = 1 and the<lb/> vibrational states i; = 0, 1 were studied by a molecular beam resonance apparatus. The rotational<lb/> state (/, mj) was separated by an electric quadrupole lense as A-field and focused to the detector<lb/> by a similar lense as B-field. The vibrational states could be resolved by their different Stark-effect-<lb/>energies. In the transition region homogeneous electric and magnetic fields were superimposed.<lb/> The observed {AMJ=<lb/> + transitions were induced electrically.<lb/> The measured spectra permitted the calculation of the following molecular constants: the elec-<lb/>tric dipole moment //el  the rotational magnetic dipole moment /uj/J, the scalar and tensor nuclear<lb/> dipole-dipole-interaction ds and c?t » the nuclear spin-rotational interactions CRb and cf , the nuclear<lb/> quadrupole interaction e g Qrb the nuclear magnetic moment /(1 — Os)Rb the anisotropy of the<lb/> diamagnetic susceptibility<lb/> — f||)» the anisotropy of the diamagnetic shielding of the external<lb/> field by the electrons at the position of the nuclei (a — a |]) -<lb/>The results were (/=!, v = 0) :<lb/> /uei<lb/> = 8,5453 (60)<lb/> deb ,<lb/> fxjj]<lb/> — —0,04170(15) kHz/G,<lb/> dB/h<lb/> = 0,86(40)<lb/> kHz,<lb/> dj/h<lb/> = 2,45(37)<lb/> kHz,<lb/> CRb/Ä =<lb/> 1.68(26)<lb/> kHz,<lb/> cF/h<lb/> = 10,37(14)<lb/> kHz,</div>
+
+		</front>
+	</text>
+</tei>
