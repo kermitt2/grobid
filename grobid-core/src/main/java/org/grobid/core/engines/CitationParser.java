@@ -254,17 +254,34 @@ public class CitationParser extends AbstractParser {
 				last = bestMatcher.end();
 			} else {
 				int newLast = bestMatcher.start();
-				results.add(references.substring(last, newLast));
+				String lastRef = references.substring(last, newLast);
+				if (testCitationProfile(lastRef)) {
+					results.add(lastRef);	
+				}
 				last = bestMatcher.end();
 			}
 			i++;
 		}
 		// the last one - if at least one, has not been considered
 		if (i > 0) {
-			results.add(references.substring(last, references.length()));
+			String lastRef = references.substring(last, references.length());
+			if (testCitationProfile(lastRef)) {
+				results.add(lastRef);
+			}
 		}
 
 		return results;
+	}
+	
+	private boolean testCitationProfile(String lastRef) {
+		if (lastRef.length() < 400) {
+			// we assume that a reference extracted from a full text cannot be be more than 400 characters 
+			StringTokenizer st = new StringTokenizer(lastRef, "\n");
+			if (st.countTokens() < 9) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	/**
