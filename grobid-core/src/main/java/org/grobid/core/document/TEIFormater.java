@@ -2589,7 +2589,7 @@ public class TEIFormater {
 	            }
 	            //else 
 	            {
-	                if ((author != null) & (year != null)) {
+	                if ((author != null) && (year != null) && (author.length()>1)) {
 	                    int indi1 = -1;
 	                    int indi2 = -1;
 	                    int i = 0;
@@ -2599,9 +2599,9 @@ public class TEIFormater {
 	                        indi2 = text.indexOf(year, i);
 	                        int added = 1;
 
-	                        if ((indi1 == -1) | (indi2 == -1))
+	                        if ((indi1 == -1) || (indi2 == -1))
 	                            end = true;
-	                        else if ((indi1 != -1) & (indi2 != -1) & (indi1 < indi2) &
+	                        else if ((indi1 != -1) && (indi2 != -1) && (indi1 < indi2) &&
 	                                (indi2 - indi1 > author.length())) {
 	                            // we check if we don't have another instance of the author between the two indices
 	                            int indi1bis = text.toLowerCase().indexOf(author, indi1 + author.length());
@@ -2609,7 +2609,7 @@ public class TEIFormater {
 	                                String reference = text.substring(indi1, indi2 + 4);
 	                                boolean extended = false;
 	                                if (text.length() > indi2 + 5) {
-	                                    if ((text.charAt(indi2 + 5) == ')') |
+	                                    if ((text.charAt(indi2 + 5) == ')') ||
 	                                            (text.charAt(indi2 + 5) == ']')) {
 	                                        reference += text.charAt(indi2 + 5);
 	                                        extended = true;
