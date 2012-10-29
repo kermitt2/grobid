@@ -67,6 +67,7 @@ public class CitationParser extends AbstractParser {
 
 			input = TextUtilities.dehyphenize(input);
 			input = input.replace("\n", " ");
+			input = input.replaceAll("\\p{Cntrl}"," ").trim();
 			StringTokenizer st = new StringTokenizer(input,
 					TextUtilities.fullPunctuations, true);
 
