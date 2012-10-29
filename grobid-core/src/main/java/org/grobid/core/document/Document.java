@@ -176,25 +176,18 @@ public class Document {
 		return path;
 	}
 
-	// private static String pdftoxml =
-	// GrobidProperties.getInstance().getBinPath() +
-	// "/xpdf/pdftoxml -blocks -noImage -noImageInline ";
-	// private static String pdftoxml2 =
-	// GrobidProperties.getInstance().getBinPath() +
-	// "/xpdf/pdftoxml -blocks -noImageInline ";
-
-	private static String pdftoxml = GrobidProperties.getInstance()
-			.getPdf2XMLPath().getAbsolutePath()
+	private static String pdftoxml = GrobidProperties.getPdf2XMLPath()
+			.getAbsolutePath()
 			+ "/pdftoxml -blocks -noImage -noImageInline -fullFontName ";
-	private static String pdftoxml2 = GrobidProperties.getInstance()
-			.getPdf2XMLPath().getAbsolutePath()
+	private static String pdftoxml2 = GrobidProperties.getPdf2XMLPath()
+			.getAbsolutePath()
 			+ "/pdftoxml -blocks -noImageInline -fullFontName ";
 
-	private static final long timeout = 600000; // timeout 20 second for
-												// producing the low
-
-	// level xml representation of a pdf
-	// WARNING: it might be too short for ebook !
+	private static final long timeout = 20000; // timeout 20 second for
+												// producing the low level xml
+												// representation of a pdf
+												// WARNING: it might be too
+												// short for ebook !
 
 	/**
 	 * Create an XML representation from a pdf file. If tout is true (default),
@@ -228,44 +221,98 @@ public class Document {
 
 		if ((!f.exists()) || force) {
 			String cmd = pdftoxml0 + pdfPath + " " + tmpPathXML;
-			LOGGER.debug("Executing: " + cmd);
-//			ProcessRunner worker = new ProcessRunner(cmd, "pdf2xml[" + pdfPath
-//					+ "]", true);
-//			ProcessRunner worker = new ProcessRunner(cmd, "pdf2xml[" + pdfPath
-//					+ "]", false);
-			ProcessPdf2Xml worker = new ProcessPdf2Xml(cmd, "pdf2xml[" +
-			pdfPath + "]", true);
-			// worker.start();
-			worker.process();
-
-			try {
-				/*if (tout) {
-					worker.join(timeout);
-				} else {
-					worker.join(600000); // max 10 minutes even without
-											// predefined timeout
-				}*/
-				if (worker.getExitStatus() == null) {
-					tmpPathXML = null;
-					throw new RuntimeException(
-							"PDF to XML conversion timed out");
-				}
-
-				if (worker.getExitStatus() != 0) {
-					throw new RuntimeException(
-							"PDF to XML conversion failed due to: "
-									+ worker.getErrorStreamContents());
-				}
-			} /*catch (InterruptedException ex) {
-				tmpPathXML = null;
-				worker.interrupt();
-				Thread.currentThread().interrupt();
-			}*/ finally {
-				//worker.interrupt();
+			if (GrobidProperties.isContextExecutionServer()) {
+				tmpPathXML = processPdf2Xml(pdfPath, tmpPathXML, cmd);
+			} else {
+				tmpPathXML = processPdf2XmlThreadMode(tout, pdfPath,
+						tmpPathXML, cmd);
 			}
+
 		}
 		LOGGER.debug("end pdf2xml. Time to process:"
 				+ (System.currentTimeMillis() - time) + "ms");
+		return tmpPathXML;
+	}
+
+	/**
+	 * Process the conversion of pdf to xml format using thread calling native
+	 * executable.
+	 * 
+	 * @param tout
+	 * @param pdfPath
+	 *            path to pdf
+	 * @param tmpPathXML
+	 *            temporary path to save the converted file
+	 * @param cmd
+	 *            arguments to call the executable pdf2xml
+	 * @return the path the the converted file.
+	 */
+	protected String processPdf2XmlThreadMode(boolean tout, String pdfPath,
+			String tmpPathXML, String cmd) {
+		LOGGER.debug("Executing: " + cmd);
+		ProcessRunner worker = new ProcessRunner(cmd, "pdf2xml[" + pdfPath
+				+ "]", true);
+
+		worker.start();
+
+		try {
+			if (tout) {
+				worker.join(timeout);
+			} else {
+				worker.join(50000); // max 50 second even without predefined
+									// timeout
+			}
+			if (worker.getExitStatus() == null) {
+				tmpPathXML = null;
+				throw new RuntimeException("PDF to XML conversion timed out");
+			}
+
+			if (worker.getExitStatus() != 0) {
+				throw new RuntimeException(
+						"PDF to XML conversion failed due to: "
+								+ worker.getErrorStreamContents());
+			}
+		} catch (InterruptedException ex) {
+			tmpPathXML = null;
+			worker.interrupt();
+			Thread.currentThread().interrupt();
+		} finally {
+			worker.interrupt();
+		}
+		return tmpPathXML;
+	}
+
+	/**
+	 * Process the conversion of pdf to xml format calling native executable. No
+	 * thread used for the execution.
+	 * 
+	 * @param pdfPath
+	 *            path to pdf
+	 * @param tmpPathXML
+	 *            temporary path to save the converted file
+	 * @param cmd
+	 *            arguments to call the executable pdf2xml
+	 * @return the path the the converted file.
+	 */
+	protected String processPdf2Xml(String pdfPath, String tmpPathXML,
+			String cmd) {
+		LOGGER.debug("Executing: " + cmd);
+
+		ProcessPdf2Xml worker = new ProcessPdf2Xml(cmd, "pdf2xml[" + pdfPath
+				+ "]", true);
+
+		worker.process();
+
+		if (worker.getExitStatus() == null) {
+			tmpPathXML = null;
+			throw new RuntimeException("PDF to XML conversion timed out");
+		}
+
+		if (worker.getExitStatus() != 0) {
+			throw new RuntimeException("PDF to XML conversion failed due to: "
+					+ worker.getErrorStreamContents());
+		}
+
 		return tmpPathXML;
 	}
 
