@@ -8,6 +8,8 @@ package org.grobid.core.utilities;
  */
 public interface GrobidPropertyKeys {
 
+	public static final String PROP_GROBID_IS_CONTEXT_SERVER = "grobid.is.context.server";
+
 	public static final String PROP_TMP_PATH = "grobid.temp.path";
 	public static final String PROP_BIN_PATH = "grobid.bin.path";
 	public static final String PROP_NATIVE_LIB_PATH = "grobid.nativelibrary.path";
@@ -31,7 +33,7 @@ public interface GrobidPropertyKeys {
 	public static final String PROP_PROXY_PORT = "grobid.proxy_port";
 
 	public static final String PROP_NB_THREADS = "grobid.nb_threads";
-	
+
 	public static final String PROP_GROBID_MAX_CONNECTIONS = "org.grobid.max.connections";
 	public static final String PROP_GROBID_POOL_MAX_WAIT = "org.grobid.pool.max.wait";
 
