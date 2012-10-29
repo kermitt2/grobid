@@ -871,4 +871,15 @@ public class GrobidProperties {
 				.parseInt(getPropertyValue(GrobidPropertyKeys.PROP_GROBID_POOL_MAX_WAIT)) * 1000;
 	}
 
+	/**
+	 * Returns if the execution context is stand alone or server.
+	 * 
+	 * @return the context of execution. Return false if the property value is
+	 *         not readable.
+	 */
+	public static Boolean isContextExecutionServer() {
+		return Utilities.stringToBoolean(getPropertyValue(
+				GrobidPropertyKeys.PROP_GROBID_IS_CONTEXT_SERVER, "false"));
+	}
+
 }
