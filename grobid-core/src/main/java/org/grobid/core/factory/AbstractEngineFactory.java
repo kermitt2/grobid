@@ -45,17 +45,17 @@ public class AbstractEngineFactory {
 	/**
 	 * Initializes all necessary things for starting grobid. 
 	 */
-	protected static void init() {
-		LibraryLoader.load();
+	public static void init() {
 		GrobidProperties.getInstance();
+		LibraryLoader.load();
 	}
 	
 	/**
 	 * Initializes all necessary things for starting grobid. .
 	 */
-	protected static void fullInit() {
+	public static void fullInit() {
+		init();
 		ModelMap.initModels();
 		Lexicon.getInstance();
-		init();
 	}
 }

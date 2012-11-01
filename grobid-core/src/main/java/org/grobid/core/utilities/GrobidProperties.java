@@ -371,6 +371,7 @@ public class GrobidProperties {
 
 		load_GROBID_HOME_PATH();
 		loadGrobidPropertiesPath();
+		setContextExecutionServer(false);
 
 		try {
 			getProps().load(new FileInputStream(getGrobidPropertiesPath()));
@@ -880,6 +881,17 @@ public class GrobidProperties {
 	public static Boolean isContextExecutionServer() {
 		return Utilities.stringToBoolean(getPropertyValue(
 				GrobidPropertyKeys.PROP_GROBID_IS_CONTEXT_SERVER, "false"));
+	}
+
+	/**
+	 * Set if the execution context is stand alone or server.
+	 * 
+	 * @param state
+	 *            true to set the context of execution to server, false else.
+	 */
+	public static void setContextExecutionServer(Boolean state) {
+		setPropertyValue(GrobidPropertyKeys.PROP_GROBID_IS_CONTEXT_SERVER,
+				state.toString());
 	}
 
 }
