@@ -42,6 +42,7 @@
 						<option value="processCitationNames">Process Citation
 							Names</option>
 						<option value="processAffiliations">Process Affiliations</option>
+						<option value="processCitations">Process Citations</option>
                     </select></td>
                 </tr>
                 <tr>
@@ -92,8 +93,10 @@
                 } else if (selected == 'processAffiliations') {
                     createInputText('affiliations');
                     $('#gbdForm').attr('action', getBaseUrl()+'/processAffiliations');
+                } else if (selected == 'processCitations') {
+                    createInputText('citations');
+                    $('#gbdForm').attr('action', getBaseUrl()+'/processCitations');
                 }
-                // alert($("div").html());
             }
             
             function createInputFile(){

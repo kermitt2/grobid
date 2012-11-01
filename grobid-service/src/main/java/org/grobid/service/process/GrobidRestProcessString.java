@@ -8,6 +8,7 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
 import org.grobid.core.data.Affiliation;
+import org.grobid.core.data.BiblioItem;
 import org.grobid.core.data.Date;
 import org.grobid.core.data.Person;
 import org.grobid.core.engines.Engine;
@@ -183,7 +184,7 @@ public class GrobidRestProcessString {
 		LOGGER.debug(methodLogOut());
 		return response;
 	}
-	
+
 	/**
 	 * Parse a raw sequence of affiliations and return the corresponding
 	 * normalized affiliations with address.
@@ -222,6 +223,50 @@ public class GrobidRestProcessString {
 				response = Response.status(Status.NO_CONTENT).build();
 			} else {
 				response = Response.status(Status.OK).entity(retVal)
+						.type(MediaType.TEXT_PLAIN).build();
+			}
+		} catch (NoSuchElementException nseExp) {
+			LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
+			response = Response.status(Status.SERVICE_UNAVAILABLE).build();
+		} catch (Exception e) {
+			LOGGER.error("An unexpected exception occurs. ", e);
+			response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
+		}
+		LOGGER.debug(methodLogOut());
+		return response;
+	}
+
+	/**
+	 * Parse a raw sequence of affiliations and return the corresponding
+	 * normalized affiliations with address.
+	 * 
+	 * @param the
+	 *            string of the raw sequence of affiliation+address
+	 * @return a response object containing the structured xml representation of
+	 *         the affiliation
+	 */
+	public static Response processCitations(String citation) {
+		LOGGER.debug(methodLogIn());
+		Response response = null;
+
+		boolean isparallelExec = GrobidServiceProperties.isParallelExec();
+		try {
+			Engine engine = GrobidRestUtils.getEngine(isparallelExec);
+			BiblioItem biblioItem;
+			if (isparallelExec) {
+				biblioItem = engine.processRawReference(citation, false);
+				GrobidPoolingFactory.returnEngine(engine);
+			} else {
+				synchronized (engine) {
+					biblioItem = engine.processRawReference(citation, false);
+				}
+			}
+
+			if (biblioItem == null) {
+				response = Response.status(Status.NO_CONTENT).build();
+			} else {
+				response = Response.status(Status.OK)
+						.entity(biblioItem.toString())
 						.type(MediaType.TEXT_PLAIN).build();
 			}
 		} catch (NoSuchElementException nseExp) {
