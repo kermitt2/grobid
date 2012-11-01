@@ -4,9 +4,14 @@ import org.apache.commons.lang3.StringUtils;
 import org.grobid.core.data.BiblioItem;
 import org.grobid.core.exceptions.GrobidException;
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.InputStream;
+import java.lang.reflect.Method;
 import java.net.URL;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -323,6 +328,90 @@ public class Utilities {
 			res = true;
 		}
 		return res;
+	}
+
+	/**
+	 * Call a java method using the method name given in string.
+	 * 
+	 * @param obj
+	 *            Class in which the method is.
+	 * @param args
+	 *            the arguments of the method.
+	 * @param methodName
+	 *            the name of the method.
+	 * @return result of the called method.
+	 * @throws Exception
+	 */
+	@SuppressWarnings("rawtypes")
+	public static Object launchMethod(Object obj, Object[] args,
+			String methodName) throws Exception {
+		Class[] paramTypes = null;
+		if (args != null) {
+			paramTypes = new Class[args.length];
+			for (int i = 0; i < args.length; ++i) {
+				paramTypes[i] = args[i].getClass();
+			}
+		}
+		return getMethod(obj, paramTypes, methodName).invoke(obj, args);
+	}
+
+	/**
+	 * Call a java method using the method name given in string.
+	 * 
+	 * @param obj
+	 *            Class in which the method is.
+	 * @param args
+	 *            the arguments of the method.
+	 * @param paramTypes
+	 *            types of the arguments.
+	 * @param methodName
+	 *            the name of the method.
+	 * @return result of the called method.
+	 * @throws Exception
+	 */
+	@SuppressWarnings("rawtypes")
+	public static Object launchMethod(Object obj, Object[] args,
+			Class[] paramTypes, String methodName) throws Exception {
+		return getMethod(obj, paramTypes, methodName).invoke(obj, args);
+	}
+
+	/**
+	 * Get the method given in string in input corresponding to the given
+	 * arguments.
+	 * 
+	 * @param obj
+	 *            Class in which the method is.
+	 * @param paramTypes
+	 *            types of the arguments.
+	 * @param methodName
+	 *            the name of the method.
+	 * @return Methood
+	 * 
+	 * @throws NoSuchMethodException
+	 */
+	@SuppressWarnings("rawtypes")
+	public static Method getMethod(Object obj, Class[] paramTypes,
+			String methodName) throws NoSuchMethodException {
+		Method method = obj.getClass().getMethod(methodName, paramTypes);
+		return method;
+	}
+
+	/**
+	 * Creates a file and writes some content in it.
+	 * 
+	 * @param file
+	 *            The file to write in.
+	 * @param content
+	 *            the content to write
+	 * @throws FileNotFoundException
+	 * @throws IOException
+	 */
+	public static void writeInFile(String file, String content)
+			throws FileNotFoundException, IOException {
+		FileWriter filew = new FileWriter(new File(file));
+		BufferedWriter buffw = new BufferedWriter(filew);
+		buffw.write(content);
+		buffw.close();
 	}
 
 }

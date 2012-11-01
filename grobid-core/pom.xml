@@ -106,7 +106,7 @@
 			<artifactId>slf4j-jdk14</artifactId>
 			<version>1.6.1</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>directory-naming</groupId>
 			<artifactId>naming-java</artifactId>
@@ -171,13 +171,13 @@
 				<configuration> <archive> <manifest> <mainClass>org.grobid.core.engines.Engine</mainClass> 
 				</manifest> </archive> </configuration> </plugin -->
 			<plugin>
-				<groupId>org.dstovall</groupId>
+				<groupId>com.jolira</groupId>
 				<artifactId>onejar-maven-plugin</artifactId>
 				<version>1.4.4</version>
 				<executions>
 					<execution>
 						<configuration>
-							<mainClass>org.grobid.core.engines.Engine</mainClass>
+							<mainClass>org.grobid.core.main.batch.GrobidMain</mainClass>
 							<!-- Optional -->
 							<onejarVersion>0.97</onejarVersion>
 							<!-- Optional, use only if you need to include native libraries (dll's) -->
@@ -239,11 +239,8 @@
 		<!--/pluginManagement -->
 	</build>
 
-	<pluginRepositories>
-		<pluginRepository>
-			<id>onejar-maven-plugin.googlecode.com</id>
-			<url>http://onejar-maven-plugin.googlecode.com/svn/mavenrepo</url>
-		</pluginRepository>
-	</pluginRepositories>
+	<!-- pluginRepositories> <pluginRepository> <id>onejar-maven-plugin.googlecode.com</id> 
+		<url>http://onejar-maven-plugin.googlecode.com/svn/mavenrepo</url> </pluginRepository> 
+		</pluginRepositories -->
 
 </project>
