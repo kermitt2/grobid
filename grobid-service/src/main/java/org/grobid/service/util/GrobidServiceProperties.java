@@ -181,6 +181,8 @@ public class GrobidServiceProperties {
 					"Cannot load properties from file " + grobidServicePropFile
 							+ "''.");
 		}
+		
+		GrobidProperties.setContextExecutionServer(true);
 	}
 
 	/**
