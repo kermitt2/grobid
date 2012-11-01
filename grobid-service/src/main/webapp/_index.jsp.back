@@ -1,0 +1,6 @@
+<%@page import="org.grobid.service.GrobidRestService"%>
+<%@ page import="org.grobid.core.cypher.SHA1"%> 
+
+<%@ taglib uri='/WEB-INF/grobid/taglib/taglib.tld' prefix='tg' %>
+
+<tg:page-template pageName="/WEB-INF/grobid/test.jsp"/>
