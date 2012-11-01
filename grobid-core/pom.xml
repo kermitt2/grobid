@@ -171,7 +171,7 @@
 				<configuration> <archive> <manifest> <mainClass>org.grobid.core.engines.Engine</mainClass> 
 				</manifest> </archive> </configuration> </plugin -->
 			<plugin>
-				<groupId>org.dstovall</groupId>
+				<groupId>com.jolira</groupId>
 				<artifactId>onejar-maven-plugin</artifactId>
 				<version>1.4.4</version>
 				<executions>
@@ -239,11 +239,11 @@
 		<!--/pluginManagement -->
 	</build>
 
-	<pluginRepositories>
+	<!--pluginRepositories>
 		<pluginRepository>
 			<id>onejar-maven-plugin.googlecode.com</id>
 			<url>http://onejar-maven-plugin.googlecode.com/svn/mavenrepo</url>
 		</pluginRepository>
-	</pluginRepositories>
+	</pluginRepositories-->
 
 </project>
