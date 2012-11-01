@@ -73,6 +73,10 @@ public interface GrobidPathes {
 	 */
 	public static final String PATH_AFFILIATION= "processAffiliations";
 	/**
+	 * path extension for processing citations in document headers.
+	 */
+	public static final String PATH_CITATIONS= "processCitations";
+	/**
 	 * path extension for processing sha1.
 	 */
 	public static final String PATH_SHA1= "sha1";

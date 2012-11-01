@@ -61,6 +61,7 @@ public class GrobidRestService implements GrobidPathes {
 	private static final String NAMES = "names";
 	private static final String DATE = "date";
 	private static final String AFFILIATIONS = "affiliations";
+	private static final String CITATIONS = "citations";
 
 
 	public GrobidRestService() {
@@ -250,7 +251,30 @@ public class GrobidRestService implements GrobidPathes {
 			@FormParam(AFFILIATIONS) String affiliation) {
 		return GrobidRestProcessString.processAffiliations(affiliation);
 	}
+	
+	/**
+	 * @see org.grobid.service.process.GrobidRestProcessString#processCitations(String)
+	 */
+	@Path(PATH_CITATIONS)
+	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+	@Produces(MediaType.TEXT_PLAIN)
+	@POST
+	public Response processCitations_post(
+			@FormParam(CITATIONS) String citation) {
+		return GrobidRestProcessString.processCitations(citation);
+	}
 
+	/**
+	 * @see org.grobid.service.process.GrobidRestProcessString#processCitations(String)
+	 */
+	@Path(PATH_CITATIONS)
+	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+	@Produces(MediaType.TEXT_PLAIN)
+	@PUT
+	public Response processCitations(
+			@FormParam(CITATIONS) String citation) {
+		return GrobidRestProcessString.processCitations(citation);
+	}
 	
 
 	/**
