@@ -1,17 +1,4 @@
-<%@page import="org.grobid.service.GrobidRestService"%>
-<%@ page import="org.grobid.core.cypher.SHA1"%> 
-
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Welcome</title>
-        <script src="resources/js/jquery-1.8.1.min.js">
-        </script>
-    </head>
-    
-    <body>
-        <h1>Welcome to grobid</h1>
+<h1>Welcome to grobid</h1>
         <h2>Access to grobid documentation</h2>
         <a href='<%=request.getContextPath()+"/grobid"%>'>grobid documentation</a>
         <h2>Access to grobid params</h2>
@@ -114,5 +101,3 @@
             
             
         </script>
-    </body>
-</html>

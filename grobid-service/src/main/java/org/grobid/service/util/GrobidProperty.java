@@ -1,7 +1,11 @@
 package org.grobid.service.util;
 
+import java.io.File;
+
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.grobid.core.utilities.GrobidPropertyKeys;
 
 /**
  * 
@@ -41,13 +45,11 @@ public class GrobidProperty {
 	 *            the key
 	 * @param pValue
 	 *            the value
-	 * @param pType
-	 *            the type
 	 */
-	public GrobidProperty(String pKey, String pValue, TYPE pType) {
-		key = pKey;
-		value = pValue;
-		type = pType;
+	public GrobidProperty(String pKey, String pValue) {
+		setKey(pKey);
+		setValue(pValue);
+		type = inferType(pKey, pValue);
 	}
 
 	/**
@@ -100,6 +102,65 @@ public class GrobidProperty {
 		HashCodeBuilder hcb = new HashCodeBuilder();
 		hcb.append(key);
 		return hcb.toHashCode();
+	}
+	
+	@Override
+	public boolean equals(Object arg0) {
+		GrobidProperty prop = (GrobidProperty)arg0;
+		EqualsBuilder eqb = new EqualsBuilder();
+		eqb.append(key, prop.getKey());
+		eqb.append(value, prop.getValue());
+		eqb.append(type, prop.getType());
+		return eqb.build();
+	}
+
+	/**
+	 * Return whether the type is String, boolean, integer or file.
+	 * 
+	 * @param pKey
+	 *            The key of the parameter.
+	 * @param pValue
+	 *            The value of the parameter.
+	 * @return One type of {@link GrobidProperty.TYPE}, empty string if pValue
+	 *         is null or empty.
+	 */
+	protected static TYPE inferType(String pKey, String pValue) {
+		TYPE type = TYPE.UNKNOWN;
+		if (GrobidPropertyKeys.PROP_GROBID_SERVICE_ADMIN_PW
+				.equalsIgnoreCase(pKey)) {
+			type = TYPE.PASSWORD;
+		} else if (StringUtils.isNotBlank(pValue)) {
+			pValue = pValue.trim();
+			if (isBoolean(pValue))
+				type = TYPE.BOOLEAN;
+			else if (isInteger(pValue))
+				type = TYPE.INTEGER;
+			else if (isFile(pValue))
+				type = TYPE.FILE;
+			else
+				type = TYPE.STRING;
+		}
+
+		return type;
+	}
+
+	private static boolean isBoolean(String pValue) {
+		return StringUtils.equalsIgnoreCase(pValue, "TRUE")
+				|| StringUtils.equalsIgnoreCase(pValue, "FALSE");
+	}
+
+	private static boolean isInteger(String pValue) {
+		try {
+			Integer.parseInt(pValue);
+		} catch (NumberFormatException nfe) {
+			return false;
+		}
+		return true;
+	}
+
+	private static boolean isFile(String pValue) {
+		File file = new File(pValue);
+		return file.exists();
 	}
 
 }
