@@ -60,19 +60,10 @@ public class GrobidRestProcessGeneric {
 
 			StringBuffer htmlCode = new StringBuffer();
 
-			htmlCode.append("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">");
-			htmlCode.append("<html>");
-			htmlCode.append("<head>");
-			htmlCode.append("<title>grobid-service - description</title>");
-			htmlCode.append("</head>");
-			htmlCode.append("<body>");
-			htmlCode.append("<h1>grobid-service documentation</h1>");
+			htmlCode.append("<h4>grobid-service documentation</h4>");
 			htmlCode.append("This service provides a RESTful interface for using the grobid system. grobid extracts data from pdf files. For more information see: ");
 			htmlCode.append("<a href=\"http://hal.inria.fr/inria-00493437_v1/\">http://hal.inria.fr/inria-00493437_v1/</a>");
-			htmlCode.append("<br/>");
-			htmlCode.append("</body>");
-			htmlCode.append("</html>");
-
+			
 			response = Response.status(Status.OK).entity(htmlCode.toString())
 					.type(MediaType.TEXT_HTML).build();
 		} catch (Exception e) {
