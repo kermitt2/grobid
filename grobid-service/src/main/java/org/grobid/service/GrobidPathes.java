@@ -80,4 +80,12 @@ public interface GrobidPathes {
 	 * path extension for processing sha1.
 	 */
 	public static final String PATH_SHA1= "sha1";
+	/**
+	 * path extension for getting all properties.
+	 */
+	public static final String PATH_ALL_PROPS= "allProperties";
+	/**
+	 * path extension to update property value.
+	 */
+	public static final String PATH_CHANGE_PROPERTY_VALUE= "changePropertyValue";
 }
