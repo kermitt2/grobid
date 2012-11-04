@@ -10,6 +10,7 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
+import org.apache.commons.lang3.StringUtils;
 import org.grobid.core.exceptions.GrobidPropertyException;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.GrobidPropertyKeys;
@@ -44,6 +45,11 @@ public class GrobidServiceProperties {
 	 * Internal property object, where all properties are defined.
 	 */
 	protected static Properties props = null;
+
+	/**
+	 * Path to grobid_service.property.
+	 */
+	protected static File GROBID_SERIVCE_PROPERTY_PATH = null;
 
 	/**
 	 * The context of the application.
@@ -169,6 +175,8 @@ public class GrobidServiceProperties {
 
 		// load server properties and copy them to this properties
 		try {
+			GROBID_SERIVCE_PROPERTY_PATH = grobidServicePropFile
+					.getCanonicalFile();
 			Properties serviceProps = new Properties();
 			serviceProps.load(new FileInputStream(grobidServicePropFile));
 			getProps().putAll(serviceProps);
@@ -181,8 +189,12 @@ public class GrobidServiceProperties {
 					"Cannot load properties from file " + grobidServicePropFile
 							+ "''.");
 		}
-		
+
 		GrobidProperties.setContextExecutionServer(true);
+	}
+
+	public static File getGrobidPropertiesPath() {
+		return GROBID_SERIVCE_PROPERTY_PATH;
 	}
 
 	/**
@@ -195,6 +207,21 @@ public class GrobidServiceProperties {
 	 */
 	protected static String getPropertyValue(String pkey) {
 		return getProps().getProperty(pkey);
+	}
+
+	/**
+	 * Return the value corresponding to the property key. If this value is
+	 * null, return the default value.
+	 * 
+	 * @param pkey
+	 *            the property key
+	 * @return the value of the property.
+	 */
+	public static void setPropertyValue(String pkey, String pValue) {
+		if (StringUtils.isBlank(pValue))
+			throw new GrobidPropertyException("Cannot set property '" + pkey
+					+ "' to null or empty.");
+		getProps().put(pkey, pValue);
 	}
 
 	/**
@@ -216,6 +243,21 @@ public class GrobidServiceProperties {
 	public static boolean isParallelExec() {
 		return Utilities
 				.stringToBoolean(getPropertyValue(GrobidPropertyKeys.PROP_GROBID_SERVICE_IS_PARALLEL_EXEC));
+	}
+
+	/**
+	 * Update grobid.properties with the key and value given as argument.
+	 * 
+	 * @param pKey
+	 *            key to replace
+	 * @param pValue
+	 *            value to replace
+	 * @throws IOException
+	 */
+	public static void updatePropertyFile(String pKey, String pValue)
+			throws IOException {
+		GrobidProperties.updatePropertyFile(getGrobidPropertiesPath(), pKey,
+				pValue);
 	}
 
 }

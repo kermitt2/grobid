@@ -1,7 +1,10 @@
 package org.grobid.core.utilities;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Enumeration;
 import java.util.Properties;
@@ -340,7 +343,7 @@ public class GrobidProperties {
 	 *            the property key
 	 * @return the value of the property.
 	 */
-	protected static void setPropertyValue(String pkey, String pValue) {
+	public static void setPropertyValue(String pkey, String pValue) {
 		if (StringUtils.isBlank(pValue))
 			throw new GrobidPropertyException("Cannot set property '" + pkey
 					+ "' to null or empty.");
@@ -892,6 +895,53 @@ public class GrobidProperties {
 	public static void setContextExecutionServer(Boolean state) {
 		setPropertyValue(GrobidPropertyKeys.PROP_GROBID_IS_CONTEXT_SERVER,
 				state.toString());
+	}
+
+	/**
+	 * Update the input file with the key and value given as argument.
+	 * 
+	 * @param pPropertyFile
+	 *            file to update.
+	 * 
+	 * @param pKey
+	 *            key to replace
+	 * @param pValue
+	 *            value to replace
+	 * @throws IOException
+	 */
+	public static void updatePropertyFile(File pPropertyFile, String pKey,
+			String pValue) throws IOException {
+		File propFile = pPropertyFile;
+		BufferedReader reader = new BufferedReader(new FileReader(propFile));
+		String line = StringUtils.EMPTY, content = StringUtils.EMPTY, lineToReplace = StringUtils.EMPTY;
+		while ((line = reader.readLine()) != null) {
+			if (line.contains(pKey)) {
+				lineToReplace = line;
+			}
+			content += line + "\r\n";
+		}
+		reader.close();
+
+		String newContent = content.replaceAll(lineToReplace, pKey + "="
+				+ pValue);
+
+		FileWriter writer = new FileWriter(pPropertyFile.getAbsoluteFile());
+		writer.write(newContent);
+		writer.close();
+	}
+
+	/**
+	 * Update grobid.properties with the key and value given as argument.
+	 * 
+	 * @param pKey
+	 *            key to replace
+	 * @param pValue
+	 *            value to replace
+	 * @throws IOException
+	 */
+	public static void updatePropertyFile(String pKey, String pValue)
+			throws IOException {
+		updatePropertyFile(getGrobidPropertiesPath(), pKey, pValue);
 	}
 
 }
