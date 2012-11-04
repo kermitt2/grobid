@@ -49,6 +49,7 @@ public class GrobidRestProcessString {
 
 			Engine engine = GrobidRestUtils.getEngine(isparallelExec);
 			List<Date> dates;
+			date = date.replaceAll("\\n", " ").replaceAll("\\t", " ");
 			if (isparallelExec) {
 				dates = engine.processDate(date);
 				GrobidPoolingFactory.returnEngine(engine);
@@ -100,6 +101,7 @@ public class GrobidRestProcessString {
 
 			Engine engine = GrobidRestUtils.getEngine(isparallelExec);
 			List<Person> authors;
+			names = names.replaceAll("\\n", " ").replaceAll("\\t", " ");
 			if (isparallelExec) {
 				authors = engine.processAuthorsHeader(names);
 				GrobidPoolingFactory.returnEngine(engine);
@@ -152,6 +154,7 @@ public class GrobidRestProcessString {
 
 			Engine engine = GrobidRestUtils.getEngine(isparallelExec);
 			List<Person> authors;
+			names = names.replaceAll("\\n", " ").replaceAll("\\t", " ");
 			if (isparallelExec) {
 				authors = engine.processAuthorsCitation(names);
 				GrobidPoolingFactory.returnEngine(engine);
@@ -204,6 +207,7 @@ public class GrobidRestProcessString {
 
 			Engine engine = GrobidRestUtils.getEngine(isparallelExec);
 			List<Affiliation> affiliationList;
+			affiliation = affiliation.replaceAll("\\n", " ").replaceAll("\\t", " ");
 			if (isparallelExec) {
 				affiliationList = engine.processAffiliation(affiliation);
 				GrobidPoolingFactory.returnEngine(engine);
@@ -253,6 +257,7 @@ public class GrobidRestProcessString {
 		try {
 			Engine engine = GrobidRestUtils.getEngine(isparallelExec);
 			BiblioItem biblioItem;
+			citation = citation.replaceAll("\\n", " ").replaceAll("\\t", " ");
 			if (isparallelExec) {
 				biblioItem = engine.processRawReference(citation, false);
 				GrobidPoolingFactory.returnEngine(engine);
