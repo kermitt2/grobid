@@ -1,15 +1,49 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE html>
+<html lang='en'>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 <body>
 	<table>
-		<tr>
-			<td>About</td>
-			<td>Test Rest Interface</td>
-			<td>Administration</td>
-		</tr>
+		<tbody valign="top">
+			<tr>
+				<td width="50px"><a id="about" href="#">About</a></td>
+			</tr>
+			<tr>
+				<td width="50px"><a id="restI" href="#">Test Rest Interface</a></td>
+			</tr>
+			<tr>
+				<td width="50px"><a id="admin" href="#">Administration</a></td>
+			</tr>
+		</tbody>
 	</table>
 </body>
+
+<script type="text/javascript">
+
+	$(document).ready(function() {
+		$("#about").click(function() {
+			$("#subTitle").html("About");
+			$("#divAbout").show();
+			$("#divRestI").hide();
+			$("#divAdmin").hide();
+			return false;
+		});
+		$("#restI").click(function() {
+			$("#subTitle").html("Send a request");
+			$("#divRestI").show();
+			$("#divAbout").hide();
+			$("#divAdmin").hide();
+			return false;
+		});
+		$("#admin").click(function() {
+			$("#subTitle").html("Administration");
+			$("#divAdmin").show();
+			$("#divAbout").hide();
+			$("#divRestI").hide();
+			return false;
+		});
+	});
+    
+</script>
 </html>
