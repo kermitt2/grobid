@@ -58,7 +58,14 @@
         <servlet-name>grobid-service</servlet-name>
         <url-pattern>/sha1</url-pattern>
     </servlet-mapping>
-    
+    <servlet-mapping>
+        <servlet-name>grobid-service</servlet-name>
+        <url-pattern>/allProperties</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>grobid-service</servlet-name>
+        <url-pattern>/changePropertyValue</url-pattern>
+    </servlet-mapping>
     
     <welcome-file-list>
     	<welcome-file>index.jsp</welcome-file>
