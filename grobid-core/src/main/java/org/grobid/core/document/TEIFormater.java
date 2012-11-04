@@ -2628,10 +2628,12 @@ public class TEIFormater {
 	                                }
 	                            }
 	                        }
-	                        i = indi1 + author.length() + added;
-	                        if (i >= text.length()) {
-	                            end = true;
-	                        }
+							if (!end) {
+	                        	i = indi1 + author.length() + added;
+	                        	if (i >= text.length()) {
+	                            	end = true;
+	                        	}
+							}
 	                    }
 	                }
 	            }

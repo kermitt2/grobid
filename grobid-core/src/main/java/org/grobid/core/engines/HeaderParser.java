@@ -177,7 +177,7 @@ public class HeaderParser extends AbstractParser {
 								if (pers.getMarkers() != null) {
 									hasMarker = true;
 								}
-								authorsBlocks.add(k);
+								authorsBlocks.add(new Integer(k));
 							}
 						}
 					}
@@ -196,9 +196,13 @@ public class HeaderParser extends AbstractParser {
 							if (resHeader.getFullAffiliations().size() == authorSegments.length) {
 								int k = 0;
 								for (Person pers : resHeader.getFullAuthors()) {
-									pers.addAffiliation(resHeader
-											.getFullAffiliations().get(
-													authorsBlocks.get(k)));
+									if (k < authorsBlocks.size()) {
+										int indd = authorsBlocks.get(k).intValue();
+										if (indd < resHeader.getFullAffiliations().size()) {
+											pers.addAffiliation(
+											 	resHeader.getFullAffiliations().get(indd));
+										}
+									}
 									k++;
 								}
 								attached = true;
@@ -825,7 +829,7 @@ public class HeaderParser extends AbstractParser {
 					|| (s1.equals("I-<affiliation>"))) {
 				// affiliation **makers** should be marked SINGLECHAR LINESTART
 				if (biblio.getAffiliation() != null) {
-					if (s1.equals(lastTag) || lastTag.equals("I-<affiliation>")) {
+					if ( (lastTag != null) && (s1.equals(lastTag) || lastTag.equals("I-<affiliation>")) ) {
 						if (s1.equals("I-<affiliation>")) {
 							biblio.setAffiliation(biblio.getAffiliation()
 									+ " ; " + s2);
