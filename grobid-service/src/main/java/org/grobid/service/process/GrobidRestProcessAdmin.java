@@ -9,6 +9,9 @@ import javax.ws.rs.core.Response.Status;
 import org.apache.commons.lang3.StringUtils;
 import org.grobid.core.cypher.SHA1;
 import org.grobid.core.utilities.GrobidProperties;
+import org.grobid.service.parser.ChangePropertyParser;
+import org.grobid.service.util.GrobidPropertiesUtil;
+import org.grobid.service.util.GrobidProperty;
 import org.grobid.service.util.GrobidServiceProperties;
 import org.grobid.service.utils.GrobidRestUtils;
 import org.slf4j.Logger;
@@ -92,7 +95,7 @@ public class GrobidRestProcessAdmin {
 		}
 		return response;
 	}
-	
+
 	/**
 	 * Process SHA1.
 	 * 
@@ -121,4 +124,96 @@ public class GrobidRestProcessAdmin {
 		return response;
 	}
 
+	/**
+	 * Return all properties key/value/type in xml format.
+	 * 
+	 * @param sha1
+	 *            password
+	 * @return Response containing the properties.
+	 */
+	public static Response getAllPropertiesValues(String sha1) {
+		LOGGER.debug(">> getAllPropertiesValues");
+		Response response = null;
+		String retVal = null;
+		try {
+			if (StringUtils.equals(GrobidServiceProperties.getAdminPw(),
+					SHA1.getSHA1(sha1))) {
+				retVal = GrobidPropertiesUtil.getAllPropertiesListXml();
+				response = Response.status(Status.OK).entity(retVal)
+						.type(MediaType.TEXT_PLAIN).build();
+			} else {
+				response = Response.status(Status.FORBIDDEN).build();
+			}
+		} catch (Exception exp) {
+			LOGGER.error("An unexpected exception occurs. ", exp);
+			response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
+		}
+		LOGGER.debug("<< getAllPropertiesValues");
+		return response;
+	}
+
+	/**
+	 * Dynamically update the value of the property given in XML input file.
+	 * Also update the property file.
+	 * 
+	 * @param pXml
+	 *            the xml containing the changes. Xml has to follow that schema:
+	 *            <code>
+	 * 	<changeProperty>
+	 * 		<password>password</password>
+	 * 		<property>
+	 * 			<key>key</key>
+	 * 			<value>value</value>
+	 * 			<type>type</type>
+	 * 		</property>
+	 * 	</changeProperty>
+	 * </code>
+	 * @return the changed value if processing was a success. HTTP error code
+	 *         else.
+	 */
+	public static Response changePropertyValue(String pXml) {
+		LOGGER.debug(">> changePropertyValue");
+		Response response = null;
+		try {
+			String result = StringUtils.EMPTY;
+			ChangePropertyParser parser = new ChangePropertyParser(pXml);
+			if (StringUtils.equals(GrobidServiceProperties.getAdminPw(),
+					SHA1.getSHA1(parser.getPassword()))) {
+
+				if (parser.getKey().contains("org.grobid.service")) {
+					if (StringUtils.equals(parser.getType(),
+							GrobidProperty.TYPE.PASSWORD.toString())) {
+						String newPwd = SHA1.getSHA1(parser.getValue());
+						GrobidServiceProperties.setPropertyValue(
+								parser.getKey(), newPwd);
+						GrobidServiceProperties.updatePropertyFile(
+								parser.getKey(), newPwd);
+						result = newPwd;
+					} else {
+						GrobidServiceProperties.setPropertyValue(
+								parser.getKey(), parser.getValue());
+						GrobidServiceProperties.updatePropertyFile(
+								parser.getKey(), parser.getValue());
+						result = parser.getValue();
+					}
+				} else {
+					GrobidProperties.setPropertyValue(parser.getKey(),
+							parser.getValue());
+					GrobidProperties.updatePropertyFile(parser.getKey(),
+							parser.getValue());
+					result = parser.getValue();
+				}
+				response = Response.status(Status.OK).entity(result)
+						.type(MediaType.TEXT_PLAIN).build();
+
+			} else {
+				response = Response.status(Status.FORBIDDEN).build();
+			}
+		} catch (Exception exp) {
+			LOGGER.error("An unexpected exception occurs. ", exp);
+			response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
+		}
+		LOGGER.debug("<< changePropertyValue");
+		return response;
+	}
 }
