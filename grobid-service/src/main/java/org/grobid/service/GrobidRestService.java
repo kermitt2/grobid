@@ -298,5 +298,49 @@ public class GrobidRestService implements GrobidPathes {
 	public Response processSHA1Get(@QueryParam("sha1") String sha1) {
 		return GrobidRestProcessAdmin.processSHA1(sha1);
 	}
+	
+	/**
+	 * @see org.grobid.service.process.GrobidRestProcessAdmin#getAllPropertiesValues(String)
+	 */
+	@Path(PATH_ALL_PROPS)
+	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+	@Produces(MediaType.TEXT_PLAIN)
+	@POST
+	public Response getAllPropertiesValuesPost(@FormParam("sha1") String sha1) {
+		return GrobidRestProcessAdmin.getAllPropertiesValues(sha1);
+	}
+	
+	/**
+	 * @see org.grobid.service.process.GrobidRestProcessAdmin#getAllPropertiesValues(String)
+	 */
+	@Path(PATH_ALL_PROPS)
+	@Consumes(MediaType.TEXT_PLAIN)
+	@Produces(MediaType.TEXT_PLAIN)
+	@GET
+	public Response getAllPropertiesValuesGet(@QueryParam("sha1") String sha1) {
+		return GrobidRestProcessAdmin.getAllPropertiesValues(sha1);
+	}
+	
+	/**
+	 * @see org.grobid.service.process.GrobidRestProcessAdmin#changePropertyValue(String)
+	 */
+	@Path(PATH_CHANGE_PROPERTY_VALUE)
+	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+	@Produces(MediaType.TEXT_PLAIN)
+	@POST
+	public Response changePropertyValuePost(@FormParam("xml") String xml) {
+		return GrobidRestProcessAdmin.changePropertyValue(xml);
+	}
+	
+	/**
+	 * @see org.grobid.service.process.GrobidRestProcessAdmin#changePropertyValue(String)
+	 */
+	@Path(PATH_CHANGE_PROPERTY_VALUE)
+	@Consumes(MediaType.TEXT_PLAIN)
+	@Produces(MediaType.TEXT_PLAIN)
+	@GET
+	public Response changePropertyValueGet(@QueryParam("xml") String xml) {
+		return GrobidRestProcessAdmin.changePropertyValue(xml);
+	}
 
 }
