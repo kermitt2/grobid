@@ -6,6 +6,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.grobid.core.utilities.GrobidPropertyKeys;
+import org.grobid.core.utilities.XmlUtils;
 
 /**
  * 
@@ -112,6 +113,17 @@ public class GrobidProperty {
 		eqb.append(value, prop.getValue());
 		eqb.append(type, prop.getType());
 		return eqb.build();
+	}
+	
+	@Override
+	public String toString(){
+		StringBuilder str = new StringBuilder();
+		str.append(XmlUtils.startTag("property"));
+		str.append(XmlUtils.fullTag("key", getKey()));
+		str.append(XmlUtils.fullTag("value", getValue()));
+		str.append(XmlUtils.fullTag("type", getType().toString()));
+		str.append(XmlUtils.endTag("property"));
+		return str.toString();
 	}
 
 	/**
