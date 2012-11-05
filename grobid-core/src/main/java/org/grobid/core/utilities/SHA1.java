@@ -1,4 +1,4 @@
-package org.grobid.core.cypher;
+package org.grobid.core.utilities;
 
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
