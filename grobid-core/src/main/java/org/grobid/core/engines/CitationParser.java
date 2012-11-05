@@ -1,5 +1,14 @@
 package org.grobid.core.engines;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.StringTokenizer;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import org.apache.commons.lang3.StringUtils;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.BiblioItem;
@@ -12,14 +21,6 @@ import org.grobid.core.utilities.Consolidation;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.core.utilities.TextUtilities;
-
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.StringTokenizer;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  * @author Patrice Lopez
@@ -36,7 +37,7 @@ public class CitationParser extends AbstractParser {
 
 	public CitationParser() {
 		super(GrobidModels.CITATION);
-		tmpPath = GrobidProperties.getInstance().getTempPath();
+		tmpPath = GrobidProperties.getTempPath();
 	}
 
 	public String taggerRun(String ress) throws Exception {
@@ -58,7 +59,7 @@ public class CitationParser extends AbstractParser {
 
 	public BiblioItem processing(String input, boolean consolidate) {
 		BiblioItem resCitation;
-		if (input == null || input.trim().isEmpty()) {
+		if (StringUtils.isBlank(input)) {
 			return null;
 		}
 
