@@ -7,8 +7,8 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
 import org.apache.commons.lang3.StringUtils;
-import org.grobid.core.cypher.SHA1;
 import org.grobid.core.utilities.GrobidProperties;
+import org.grobid.core.utilities.SHA1;
 import org.grobid.service.parser.ChangePropertyParser;
 import org.grobid.service.util.GrobidPropertiesUtil;
 import org.grobid.service.util.GrobidProperty;
