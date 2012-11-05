@@ -13,8 +13,10 @@ public class GrobidPropertiesUtilTest {
 	@BeforeClass
 	public static void setInitialContext() throws Exception {
 		MockContext.setInitialContext();
-		GrobidServiceProperties.getInstance();
 		GrobidProperties.getInstance();
+		GrobidServiceProperties.getInstance();
+		
+		
 	}
 
 	@AfterClass
