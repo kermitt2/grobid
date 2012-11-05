@@ -512,7 +512,7 @@ public class TEIFormater {
             int start = keywords.indexOf("Keywords");
             if (start != -1) {
                 //String keywords1 = keywords.substring(0, start-1);
-                keywords = keywords.substring(start + 9, keywords.length());
+                keywords = keywords.substring(start + 8, keywords.length());
             }
 			if (keywords.endsWith(".")) {
 		          keywords = keywords.substring(0, keywords.length()-1);
