@@ -922,12 +922,13 @@ public class GrobidProperties {
 		}
 		reader.close();
 
-		String newContent = content.replaceAll(lineToReplace, pKey + "="
-				+ pValue);
-
-		FileWriter writer = new FileWriter(pPropertyFile.getAbsoluteFile());
-		writer.write(newContent);
-		writer.close();
+		if (!StringUtils.EMPTY.equals(lineToReplace)) {
+			String newContent = content.replaceAll(lineToReplace, pKey + "="
+					+ pValue);
+			FileWriter writer = new FileWriter(pPropertyFile.getAbsoluteFile());
+			writer.write(newContent);
+			writer.close();
+		}
 	}
 
 	/**
