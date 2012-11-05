@@ -77,7 +77,7 @@ public class CitationParser extends AbstractParser {
 
 			ArrayList<String> tokenizations = new ArrayList<String>();
 			while (st.hasMoreTokens()) {
-				String tok = st.nextToken();
+				final String tok = st.nextToken();
 				tokenizations.add(tok);
 				if (!tok.equals(" ")) {
 					citationBlocks.add(tok + " <citation>");
