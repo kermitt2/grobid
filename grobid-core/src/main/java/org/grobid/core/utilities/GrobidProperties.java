@@ -101,6 +101,13 @@ public class GrobidProperties {
 		else
 			return grobidProperties;
 	}
+	
+	/**
+	 * Reload GrobidServiceProperties.
+	 */
+	public static void reload() {
+		getNewInstance();
+	}
 
 	/**
 	 * Creates a new {@link GrobidProperties} object, initializes it and returns
@@ -108,7 +115,7 @@ public class GrobidProperties {
 	 * 
 	 * @return GrobidProperties
 	 */
-	public static synchronized GrobidProperties getNewInstance() {
+	protected static synchronized GrobidProperties getNewInstance() {
 		LOGGER.debug("synchronized getNewInstance");
 		grobidProperties = new GrobidProperties();
 		return grobidProperties;

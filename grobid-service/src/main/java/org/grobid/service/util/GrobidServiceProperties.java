@@ -74,6 +74,13 @@ public class GrobidServiceProperties {
 		else
 			return grobidServiceProperties;
 	}
+	
+	/**
+	 * Reload GrobidServiceProperties.
+	 */
+	public static void reload() {
+		getNewInstance();
+	}
 
 	/**
 	 * Creates a new {@link GrobidServiceProperties} object, initializes it and
