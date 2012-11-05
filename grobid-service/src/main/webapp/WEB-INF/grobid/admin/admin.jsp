@@ -27,17 +27,16 @@
 	
 	function adminShowRequest(formData, jqForm, options) {
 		$('#TabAdminProps').show();
-		$('#TabAdminProps').html('<font color="grey">Requesting server...</font>');
+		$('#admMessage').html('<font color="grey">Requesting server...</font>');
 	    return true;
 	}
 
 	function adminAjaxError() {
-		$('#TabAdminProps').show();
-		$('#TabAdminProps').html("<font color='red'>Autentication error.</font>");
+		$('#admMessage').html("<font color='red'>Autentication error.</font>");
 	}
 
 	function adminSubmitSuccesful(responseText, statusText) {
-		// $('#TabAdminProps').text(responseText);
+		$('#admMessage').html("");
 		parseXml(responseText);
 		rowEvent();
 	}
