@@ -17,17 +17,10 @@
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
-    
-    <servlet>
-		<servlet-name>welcome</servlet-name>
-		<servlet-class>org.grobid.service.Welcome</servlet-class>
-	</servlet>
-
-
 
     <servlet-mapping>
         <servlet-name>grobid-service</servlet-name>
-        <url-pattern>/admin/*</url-pattern>
+        <url-pattern>/admin</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>grobid-service</servlet-name>
@@ -57,13 +50,22 @@
         <servlet-name>grobid-service</servlet-name>
         <url-pattern>/processAffiliations</url-pattern>
     </servlet-mapping>
-    
-    <!-- servlet-mapping>
-		<servlet-name>welcome</servlet-name>
-		<url-pattern>/</url-pattern>
-	</servlet-mapping-->
-    
-    
+    <servlet-mapping>
+        <servlet-name>grobid-service</servlet-name>
+        <url-pattern>/processCitations</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>grobid-service</servlet-name>
+        <url-pattern>/sha1</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>grobid-service</servlet-name>
+        <url-pattern>/allProperties</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>grobid-service</servlet-name>
+        <url-pattern>/changePropertyValue</url-pattern>
+    </servlet-mapping>
     
     <welcome-file-list>
     	<welcome-file>index.jsp</welcome-file>
