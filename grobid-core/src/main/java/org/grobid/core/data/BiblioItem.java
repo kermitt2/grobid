@@ -914,7 +914,7 @@ public class BiblioItem {
             authors += " ; " + aut;
 
         if (authorList == null)
-            authorList = new ArrayList();
+            authorList = new ArrayList<String>();
         if (!authorList.contains(aut))
             authorList.add(aut);
     }
@@ -940,7 +940,7 @@ public class BiblioItem {
             editors += " ; " + aut;
 
         if (editorList == null)
-            editorList = new ArrayList();
+            editorList = new ArrayList<String>();
         if (!editorList.contains(aut))
             editorList.add(aut);
     }
@@ -2377,7 +2377,7 @@ public class BiblioItem {
 
             if (DOI != null) {
                 //openurl += "&rft.doi=" + HTMLEncode(DOI);
-                openurl += "&rft_id=info:doi/" + URLEncoder.encode(DOI);
+                openurl += "&rft_id=info:doi/" + URLEncoder.encode(DOI, "UTF-8");
                 //openurl += "&rft.doi=" + URLEncoder.encode(DOI,"UTF-8");
                 // we can finish here
                 openurl += "&url_ctx_fmt=info:ofi/fmt:kev:mtx:ctx&rft.genre=article ";
@@ -2834,9 +2834,9 @@ public class BiblioItem {
         int nbAuthors = 0;
         int nbAffiliations = 0;
         int nbAddresses = 0;
-        int nbEmails = 0;
-        int nbPhones = 0;
-        int nbWebs = 0;
+        // int nbEmails = 0;
+        // int nbPhones = 0;
+        //int nbWebs = 0;
 
         List<Person> auts = fullAuthors;
 
