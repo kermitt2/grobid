@@ -184,24 +184,24 @@ public class GrobidRestProcessAdmin {
 					if (StringUtils.equals(parser.getType(),
 							GrobidProperty.TYPE.PASSWORD.toString())) {
 						String newPwd = SHA1.getSHA1(parser.getValue());
-						GrobidServiceProperties.setPropertyValue(
-								parser.getKey(), newPwd);
 						GrobidServiceProperties.updatePropertyFile(
 								parser.getKey(), newPwd);
+						GrobidServiceProperties.reload();
 						result = newPwd;
 					} else {
-						GrobidServiceProperties.setPropertyValue(
-								parser.getKey(), parser.getValue());
 						GrobidServiceProperties.updatePropertyFile(
 								parser.getKey(), parser.getValue());
-						result = parser.getValue();
+						GrobidServiceProperties.reload();
+						result = GrobidServiceProperties.getProps().getProperty(parser.getKey(), StringUtils.EMPTY);
 					}
+					
 				} else {
 					GrobidProperties.setPropertyValue(parser.getKey(),
 							parser.getValue());
 					GrobidProperties.updatePropertyFile(parser.getKey(),
 							parser.getValue());
-					result = parser.getValue();
+					GrobidProperties.reload();
+					result = GrobidProperties.getProps().getProperty(parser.getKey(), StringUtils.EMPTY);
 				}
 				response = Response.status(Status.OK).entity(result)
 						.type(MediaType.TEXT_PLAIN).build();
