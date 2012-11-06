@@ -10,8 +10,8 @@ import javax.ws.rs.core.Response.Status;
 
 import org.grobid.core.engines.Engine;
 import org.grobid.core.factory.GrobidPoolingFactory;
+import org.grobid.service.util.GrobidRestUtils;
 import org.grobid.service.util.GrobidServiceProperties;
-import org.grobid.service.utils.GrobidRestUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

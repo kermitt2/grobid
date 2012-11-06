@@ -1,4 +1,4 @@
-package org.grobid.service.utils;
+package org.grobid.service.util;
 
 import java.io.File;
 import java.io.FileOutputStream;
