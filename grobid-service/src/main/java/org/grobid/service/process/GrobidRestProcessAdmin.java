@@ -12,8 +12,8 @@ import org.grobid.core.utilities.SHA1;
 import org.grobid.service.parser.ChangePropertyParser;
 import org.grobid.service.util.GrobidPropertiesUtil;
 import org.grobid.service.util.GrobidProperty;
+import org.grobid.service.util.GrobidRestUtils;
 import org.grobid.service.util.GrobidServiceProperties;
-import org.grobid.service.utils.GrobidRestUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
