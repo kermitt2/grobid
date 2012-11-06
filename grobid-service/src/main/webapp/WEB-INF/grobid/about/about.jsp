@@ -3,7 +3,7 @@
 <script type="text/javascript">
 	
 $(document).ready(function() {
-	$.get('<%=request.getRequestURL() +"grobid"%>', {}, function(data) {
+	$.get($(location).attr('href') +"grobid", {}, function(data) {
 		$("#divAbout").html(data);
 	});
 });

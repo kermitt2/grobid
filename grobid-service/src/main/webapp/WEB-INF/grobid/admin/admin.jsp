@@ -1,5 +1,5 @@
 <div id="divAdmin">
-	<form method="post" action='<%=request.getContextPath()+"/allProperties"%>' id="adminForm">
+	<form method="post" action="" id="adminForm">
 		<span>Enter administrator password</span>
 		<input type="password" name="sha1" id="admPwd"/> 
 		<input type="submit" value="Log in" class="btn"/>
@@ -16,6 +16,7 @@
 	var selectedAdmKey="", selectedAdmValue, selectedAdmType;
 
 	$(document).ready(function() {
+		$('#adminForm').attr("action",$(location).attr('href')+"allProperties");
 		$('#TabAdminProps').hide();
 		$('#adminForm').ajaxForm({
 	        beforeSubmit: adminShowRequest,
@@ -90,7 +91,7 @@
 		}
 		$.ajax({
 			  type: 'POST',
-			  url: '<%=request.getContextPath()+"/changePropertyValue"%>',
+			  url: $(location).attr('href')+"changePropertyValue",
 			  data: {xml: xmlReq},
 			  success: changePropertySuccesful,
 			  error: changePropertyError
