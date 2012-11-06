@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Properties;
 
 import org.grobid.core.utilities.GrobidProperties;
+import org.grobid.core.utilities.GrobidPropertyKeys;
 import org.grobid.core.utilities.XmlUtils;
 
 /**
@@ -47,7 +48,9 @@ public class GrobidPropertiesUtil {
 		StringBuilder gbdProperties = new StringBuilder();
 		gbdProperties.append(XmlUtils.startTag("properties"));
 		for (GrobidProperty currProp : getAllPropertiesList()) {
-			gbdProperties.append(currProp.toString());
+			if(!GrobidPropertyKeys.PROP_GROBID_IS_CONTEXT_SERVER.equals(currProp.getKey())){
+				gbdProperties.append(currProp.toString());
+			}
 		}
 		gbdProperties.append(XmlUtils.endTag("properties"));
 		return gbdProperties.toString();
