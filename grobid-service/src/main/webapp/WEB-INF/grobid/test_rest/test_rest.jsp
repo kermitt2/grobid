@@ -33,7 +33,7 @@
 <script type="text/javascript">
 	
 	function setBaseUrl(ext) {
-		var baseUrl = '<%=request.getRequestURL()%>'+ext;
+		var baseUrl = $(location).attr('href')+ext;
 		$('#gbdForm').attr('action', baseUrl);
 	}
 
