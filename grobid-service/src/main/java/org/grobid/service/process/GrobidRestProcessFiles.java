@@ -1,6 +1,8 @@
 package org.grobid.service.process;
 
+import java.io.ByteArrayInputStream;
 import java.io.File;
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.NoSuchElementException;
 
@@ -10,10 +12,15 @@ import javax.ws.rs.core.Response.Status;
 
 import org.grobid.core.engines.Engine;
 import org.grobid.core.factory.GrobidPoolingFactory;
+import org.grobid.service.parser.Xml2HtmlParser;
 import org.grobid.service.util.GrobidRestUtils;
 import org.grobid.service.util.GrobidServiceProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.xml.sax.InputSource;
+import org.xml.sax.SAXException;
+import org.xml.sax.XMLReader;
+import org.xml.sax.helpers.XMLReaderFactory;
 
 /**
  * 
@@ -33,12 +40,14 @@ public class GrobidRestProcessFiles {
 	 * extracts only the header data.
 	 * 
 	 * @param inputStream
-	 *            the data of origin document
+	 *            - the data of origin document
+	 * @param htmlFormat
+	 *            - if the result has to be formatted to be displayed as html.
 	 * @return a response object which contains a TEI representation of the
 	 *         header part
 	 */
 	public static Response processStatelessHeaderDocument(
-			InputStream inputStream) {
+			InputStream inputStream, boolean htmlFormat) {
 		LOGGER.debug(methodLogIn());
 		Response response = null;
 		String retVal = null;
@@ -51,25 +60,19 @@ public class GrobidRestProcessFiles {
 						.build();
 			} else {
 				// starts conversion process
-				Engine engine = GrobidRestUtils.getEngine(isparallelExec);
-				if (isparallelExec) {
-					retVal = engine.processHeader(originFile.getAbsolutePath(),
-							false, null);
-					GrobidPoolingFactory.returnEngine(engine);
-				} else {
-					synchronized (engine) {
-						retVal = engine.processHeader(
-								originFile.getAbsolutePath(), false, null);
-					}
-				}
-
-				GrobidRestUtils.removeTempFile(originFile);
+				retVal = extractHeader(isparallelExec, originFile);
 
 				if ((retVal == null) || (retVal.isEmpty())) {
 					response = Response.status(Status.NO_CONTENT).build();
 				} else {
-					response = Response.status(Status.OK).entity(retVal)
-							.type(MediaType.APPLICATION_XML).build();
+					if (htmlFormat) {
+						response = Response.status(Status.OK)
+								.entity(formatAsHTML(retVal))
+								.type(MediaType.APPLICATION_XML).build();
+					} else {
+						response = Response.status(Status.OK).entity(retVal)
+								.type(MediaType.APPLICATION_XML).build();
+					}
 				}
 			}
 		} catch (NoSuchElementException nseExp) {
@@ -81,6 +84,55 @@ public class GrobidRestProcessFiles {
 		}
 		LOGGER.debug(methodLogOut());
 		return response;
+	}
+
+	/**
+	 * Return the tei formatted to be displayed in html.
+	 * 
+	 * @param tei
+	 *            the xml input.
+	 * @return html formatted String.
+	 * @throws SAXException
+	 * @throws IOException
+	 */
+	protected static String formatAsHTML(String tei) throws SAXException,
+			IOException {
+		XMLReader xmlr = XMLReaderFactory.createXMLReader();
+		Xml2HtmlParser parser = new Xml2HtmlParser();
+		xmlr.setContentHandler(parser);
+		xmlr.setErrorHandler(parser);
+		InputStream xmlStream = new ByteArrayInputStream(tei.getBytes("UTF-8"));
+		xmlr.parse(new InputSource(xmlStream));
+		return parser.getHTML();
+	}
+
+	/**
+	 * Extract the header by calling engine.
+	 * 
+	 * @param isparallelExec
+	 *            if it is a parallel execution.
+	 * @param originFile
+	 *            the file to process.
+	 * @return the result in String.
+	 * @throws Exception
+	 */
+	protected static String extractHeader(boolean isparallelExec,
+			File originFile) throws Exception {
+		String retVal;
+		Engine engine = GrobidRestUtils.getEngine(isparallelExec);
+		if (isparallelExec) {
+			retVal = engine.processHeader(originFile.getAbsolutePath(), false,
+					null);
+			GrobidPoolingFactory.returnEngine(engine);
+		} else {
+			synchronized (engine) {
+				retVal = engine.processHeader(originFile.getAbsolutePath(),
+						false, null);
+			}
+		}
+
+		GrobidRestUtils.removeTempFile(originFile);
+		return retVal;
 	}
 
 	/**
@@ -113,11 +165,13 @@ public class GrobidRestProcessFiles {
 	 * 
 	 * @param inputStream
 	 *            the data of origin document
+	 * @param htmlFormat
+	 *            - if the result has to be formatted to be displayed as html.
 	 * @return a response object mainly contain the TEI representation of the
 	 *         full text
 	 */
 	public static Response processStatelessFulltextDocument(
-			InputStream inputStream) {
+			InputStream inputStream, boolean htmlFormat) {
 		LOGGER.debug(methodLogIn());
 		Response response = null;
 		String retVal = null;
@@ -147,8 +201,14 @@ public class GrobidRestProcessFiles {
 				if (!GrobidRestUtils.isResultOK(retVal)) {
 					response = Response.status(Status.NO_CONTENT).build();
 				} else {
-					response = Response.status(Status.OK).entity(retVal)
-							.type(MediaType.APPLICATION_XML).build();
+					if (htmlFormat) {
+						response = Response.status(Status.OK)
+								.entity(formatAsHTML(retVal))
+								.type(MediaType.APPLICATION_XML).build();
+					} else {
+						response = Response.status(Status.OK).entity(retVal)
+								.type(MediaType.APPLICATION_XML).build();
+					}
 				}
 			}
 		} catch (NoSuchElementException nseExp) {
