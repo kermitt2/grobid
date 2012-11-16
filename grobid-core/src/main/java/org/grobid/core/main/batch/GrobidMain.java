@@ -3,12 +3,14 @@ package org.grobid.core.main.batch;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
 import org.grobid.core.data.BiblioItem;
 import org.grobid.core.engines.Engine;
+import org.grobid.core.engines.ProcessEngine;
 import org.grobid.core.factory.GrobidFactory;
 import org.grobid.core.mock.MockContext;
 import org.grobid.core.utilities.GrobidProperties;
@@ -198,6 +200,7 @@ public class GrobidMain {
 	 *            arguments
 	 */
 	public static void main(String[] args) throws Exception {
+		//System.out.println(ProcessEngine.getMethods());
 		if (processArgs(args)) {
 			initProcess();
 
