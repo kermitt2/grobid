@@ -5,13 +5,13 @@
 	<parent>
 		<groupId>org.grobid</groupId>
 		<artifactId>grobid-parent</artifactId>
-		<version>0.2.5</version>
+		<version>0.2.6</version>
 		<relativePath>../pom.xml</relativePath>
 	</parent>
 
 	<groupId>org.grobid</groupId>
 	<artifactId>grobid-home</artifactId>
-	<version>0.2.5</version>
+	<version>0.2.6</version>
 	<name>${project.artifactId}</name>
 
 	<profiles>

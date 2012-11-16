@@ -76,6 +76,7 @@ public class ReferenceExtractorTest {
 		assertEquals("8303618", patents.get(0).getNumber());
 	}
 	
+	@Ignore
 	@Test
 	public void extractAllReferencesXmlST36() {
 		ReferenceExtractor extractor = new ReferenceExtractor();
