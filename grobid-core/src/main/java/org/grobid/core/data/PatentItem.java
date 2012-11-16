@@ -5,7 +5,7 @@ package org.grobid.core.data;
  *
  * @author Patrice Lopez
  */
-public class PatentItem implements Comparable {
+public class PatentItem implements Comparable<PatentItem> {
     // attribute
     private String authority = null;
     private String number = null;
@@ -139,8 +139,8 @@ public class PatentItem implements Comparable {
         design = b;
     }
 
-    public int compareTo(Object another) {
-        return number.compareTo(((PatentItem) another).getNumber());
+    public int compareTo(PatentItem another) {
+        return number.compareTo(another.getNumber());
     }
 
     private final static String espacenet = "http://v3.espacenet.com/publicationDetails/biblio?DB=EPODOC";
@@ -204,4 +204,17 @@ public class PatentItem implements Comparable {
             design = true;
         }
     }
+
+	@Override
+	public String toString() {
+		return "PatentItem [authority=" + authority + ", number=" + number
+				+ ", kindCode=" + kindCode + ", application=" + application
+				+ ", provisional=" + provisional + ", reissued=" + reissued
+				+ ", plant=" + plant + ", design=" + design + ", conf=" + conf
+				+ ", confidence=" + confidence + ", offset_begin="
+				+ offset_begin + ", offset_end=" + offset_end + ", offset_raw="
+				+ offset_raw + ", context=" + context + "]";
+	}
+    
+    
 }
