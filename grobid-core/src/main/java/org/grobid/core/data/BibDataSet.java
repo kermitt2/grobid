@@ -86,4 +86,13 @@ public class BibDataSet {
     public List<Integer> getOffsets() {
         return offsets;
     }
+
+	@Override
+	public String toString() {
+		return "BibDataSet [resBib=" + resBib.toString() + ", sourceBib=" + sourceBib
+				+ ", refSymbol=" + refSymbol + ", rawBib=" + rawBib
+				+ ", confidence=" + confidence + ", offsets=" + offsets + "]";
+	}
+    
+    
 }
