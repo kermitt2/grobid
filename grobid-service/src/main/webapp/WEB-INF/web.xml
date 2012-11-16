@@ -32,7 +32,15 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>grobid-service</servlet-name>
+        <url-pattern>/processHeaderDocumentHTML</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>grobid-service</servlet-name>
         <url-pattern>/processFulltextDocument</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>grobid-service</servlet-name>
+        <url-pattern>/processFulltextDocumentHTML</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>grobid-service</servlet-name>
