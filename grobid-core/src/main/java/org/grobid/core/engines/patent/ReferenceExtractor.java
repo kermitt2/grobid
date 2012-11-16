@@ -177,6 +177,7 @@ public class ReferenceExtractor implements Closeable {
             PatentDocument doc = new PatentDocument();
             int startPage = -1;
             int endPage = -1;
+            tmpPath = GrobidProperties.getTempPath().getAbsolutePath();
             pathXML = doc.pdf2xml(true, false, startPage, endPage, inputFile, tmpPath, false); //with timeout,
             //no force pdf reloading
             // inputFile is the pdf file, tmpPath is the tmp directory for the lxml file,
