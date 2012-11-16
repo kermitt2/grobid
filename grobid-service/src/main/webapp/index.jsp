@@ -16,9 +16,9 @@
 				<tr>
 					<td valign="top"><%@include file='/WEB-INF/grobid/navigation/side-bar.html'%></td>
 					<td rowspan="3">
-						<%@include file='/WEB-INF/grobid/about/about.jsp'%>
-						<%@include file='/WEB-INF/grobid/admin/admin.jsp'%>
-						<%@include file='/WEB-INF/grobid/test_rest/test_rest.jsp'%>
+						<%@include file='/WEB-INF/grobid/about/about.html'%>
+						<%@include file='/WEB-INF/grobid/admin/admin.html'%>
+						<%@include file='/WEB-INF/grobid/test_rest/test_rest.html'%>
 					</td>
 				</tr>
 			</tbody>
