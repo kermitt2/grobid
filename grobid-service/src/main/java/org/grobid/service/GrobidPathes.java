@@ -48,6 +48,11 @@ public interface GrobidPathes {
 	public static final String PATH_HEADER= "processHeaderDocument";
 	
 	/**
+	 * path extension for processing document headers HTML.
+	 */
+	public static final String PATH_HEADER_HTML= "processHeaderDocumentHTML";
+	
+	/**
 	 * path extension for processing bulck document headers.
 	 */
 	public static final String PATH_BULCK_HEADER= "processBulckHeaderDocument";
@@ -56,6 +61,12 @@ public interface GrobidPathes {
 	 * path extension for processing full text of documents.
 	 */
 	public static final String PATH_FULL_TEXT= "processFulltextDocument";
+	
+	/**
+	 * path extension for processing full text of documents.
+	 */
+	public static final String PATH_FULL_TEXT_HTML= "processFulltextDocumentHTML";
+	
 	/**
 	 * path extension for processing dates.
 	 */
