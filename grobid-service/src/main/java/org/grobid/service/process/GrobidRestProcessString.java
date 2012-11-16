@@ -271,7 +271,7 @@ public class GrobidRestProcessString {
 				response = Response.status(Status.NO_CONTENT).build();
 			} else {
 				response = Response.status(Status.OK)
-						.entity(biblioItem.toString())
+						.entity(biblioItem.toTEI(-1))
 						.type(MediaType.TEXT_PLAIN).build();
 			}
 		} catch (NoSuchElementException nseExp) {
