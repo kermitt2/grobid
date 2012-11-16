@@ -39,7 +39,7 @@
 
 	$(document).ready(function() {
 		createInputFile();
-		setBaseUrl('processHeaderDocument');
+		setBaseUrl('processHeaderDocumentHTML');
 		$('#selectedService').change(function() {
 			processChange();
 			return true;
@@ -64,7 +64,10 @@
 	}
 
 	function SubmitSuccesful(responseText, statusText) {
-		$('#requestResult').text(responseText);
+		var display = "<div style='width:800px; height:400px; overflow-x:scroll; overflow-y:auto; border:solid 1px black;'>";
+		display+=responseText;
+		display+="</div>";
+		$('#requestResult').html(display);
 	}
 
 
@@ -74,10 +77,10 @@
 
 		if (selected == 'processHeaderDocument') {
 			createInputFile();
-			setBaseUrl('processHeaderDocument');
+			setBaseUrl('processHeaderDocumentHTML');
 		} else if (selected == 'processFulltextDocument') {
 			createInputFile();
-			setBaseUrl('processFulltextDocument');
+			setBaseUrl('processFulltextDocumentHTML');
 		} else if (selected == 'processDate') {
 			createInputTextArea('date');
 			setBaseUrl('processDate');
