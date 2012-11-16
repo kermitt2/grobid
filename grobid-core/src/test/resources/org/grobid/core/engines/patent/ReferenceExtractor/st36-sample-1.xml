@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE patent-document SYSTEM "patent-document-v1-3.dtd">
+<patent-document id="example01" file="043551.xml" country="WO" docnumber="043551" kind="A1" date-published="20040527" dtd-version="v1.3 2005-01-01"
+lang="en">
+   <bibliographic-data id="bibl" country="WO" lang="en">
+      <plain-language-designation>INTERNATIONAL APPLICATION PUBLISHED UNDER THE
+PATENT COOPERATION TREATY (PCT)</plain-language-designation>
+      <publication-reference>
+         <document-id>
+            <country>WO</country>
+            <doc-number>043551</doc-number>
+            <kind>A1</kind>
+            <date>20040527</date>
+         </document-id>
+      </publication-reference>
+      <classification-ipc id="ipc7">
+         <edition>7</edition>
+         <main-classification>A63B 57/00</main-classification>
+      </classification-ipc>
+      <application-reference appl-type="PCT">
+         <document-id>
+            <country>GB</country>
+            <doc-number>004926</doc-number>
+            <date>20031113</date>
+         </document-id>
+      </application-reference>
+      <language-of-filing>en</language-of-filing>
+      <language-of-publication>en</language-of-publication>
+      <priority-claims>
+         <priority-claim>
+            <country>GB</country>
+            <doc-number>0226470.3</doc-number>
+            <date>20021113</date>
+         </priority-claim>
+      </priority-claims>
+      <parties>
+         <applicants>
+            <applicant sequence="1" designation="all-except-us" apptype="applicant">
+               <addressbook>
+                  <orgname>WORLD GOLF SYSTEMS LTD (GB)</orgname>
+                  <address>
+                     <street>Axis 4 Rhodes Way</street>
+                     <city>Watford</city>
+                     <county>Herts</county>
+                     <postcode>WD24 4YW</postcode>
+                     <country>GB</country>
+                  </address>     
+               </addressbook>
+            </applicant>
+            <applicant sequence="2" designation="us-only" app-type="applicantinventor">
+               <addressbook>
+                  <last-name>THIRKETTLE</last-name>
+                  <first-name>John</first-name>
+                  <address>Somewhere over the rainbow</address>     
+               </addressbook>
+            </applicant>
+            <applicant sequence="3" designation="us-only" app-type="applicantinventor">
+               <addressbook>
+                  <last-name>EMMERSON</last-name>
+                  <first-name>Geoffrey</first-name>
+                  <address>34 Ralph Waldo Pond</address>     
+               </addressbook>
+            </applicant>
+         </applicants>
+         <agents>
+            <agent sequence="1" rep-type="agent">
+               <addressbook>
+                  <last-name>POWELL</last-name>
+                  <first-name>Stephen</first-name>
+                  <middle-name>David</middle-name>
+                  <suffix>et al</suffix>
+                  <orgname>Williams Powell</orgname>
+                  <address>
+                     <building>Morley House</building>
+                     <street>35 Kings Row</street>
+                  </address>     
+               </addressbook>
+            </agent>
+         </agents>
+      </parties>
+      <designation-of-states>
+         <designation-pct>
+            <national>
+               <country>AE</country>  
+               <country>AG</country>
+            </national>
+            <regional>
+               <region>
+               <country>AP</country>     
+                  <country>BW</country>  
+                  <country>GH</country>
+               </region>
+               <region>
+               <country>EA</country>     
+                  <country>AM</country>  
+                  <country>AZ</country>
+               </region>
+            </regional>
+         </designation-pct>
+      </designation-of-states>
+      <invention-title lang="en">GOLF TEE DEVICE
+      </invention-title>
+   </bibliographic-data>
+   <abstract id="abst" lang="en">
+      <p id="p01a">A golf tee device comprises a tee (4) which has external
+buttress threading (5) for insertion into the corresponding threading (2) of a
+housing (1) so that the height of the tee can be adjusted. The top of the threading
+indicates that the tee (4) is at its maximum working height.
+         <img id="abs-fig01" file="043551-abs.tif" he="71" wi="120" imgcontent="drawing" img-format="tif"/>
+      </p>
+   </abstract>
+   <description id="desc" lang="en">
+      <invention-title lang="en">GOLF TEE DEVICE</invention-title>
+      <p id="p0001" num="0001">The present invention relates to a golf tee
+device.</p>
+      <p id="p0002" num="0002">Golf driving ranges are popularly used to practise
+long shots that may be used during a game of golf . . .</p>
+      <p id="p0003" num="0003">The tees currently provided in driving ranges tend
+to be:
+      <ol>
+         <li>the conventional tee as used on a golf course:
+            <ol>
+               <li><i>plastic</i></li>
+               <li><i>wood</i></li>
+               <li><i>fibre-glass, etc</i></li>
+            </ol>
+         </li>
+         <li>fixed-height rubber tees.</li>
+      </ol></p>
+      <p id="p0004" num="0004">Conventional tees can:
+      <ul list-style="bullet">
+         <li><b>fly</b> out of their holder when the golf ball is struck</li>
+         <li><b>break</b></li>
+         <li><b>be lost</b></li>
+      </ul></p>
+      <heading id="h01" level="1"><b>Other patents of relevance</b></heading>
+      <p id="p0005" num="0005">
+         <patcit dnum="WO09937368" id="pcit01" num="001">
+            <document-id>
+               <country>WO</country>
+               <doc-number>09937368</doc-number>
+            </document-id>
+         </patcit> discloses a height-adjustable tee. However, this tee is located
+into a base . .
+      </p>
+      <p id="p0006" num="0006">
+         <patcit dnum="US6083121" id="pcit02" num="002">
+            <document-id>
+               <country>US</country>
+               <doc-number>6083121</doc-number>
+            </document-id>
+         </patcit>discloses a height-adjustable tee based on a vertically moveable
+piston within a housing. However, this tee is of a relatively complex construction
+. . .
+      </p>
+      <p id="p0007" num="0007">The following table contains relevant data:
+         <tables id="tab0001" num="0001">
+            <table frame="all">
+               <title><b>Table 1</b></title>
+               <tgroup cols="3"><colspec colnum="1" colname="col1"
+colwidth="2215"></colspec><colspec colnum="2" colname="col2"
+colwidth="1907"></colspec><colspec colnum="3" colname="col3"
+colwidth="1372"></colspec>
+               <thead>
+               <row><entry align="left" namest="col1" nameend="col1" colsep="yes"
+rowsep="yes" morerows="0" valign="top"><b>Tee type</b></entry>
+               <entry align="left" namest="col2" nameend="col2" colsep="yes"
+rowsep="yes" morerows="0" valign="top"><b><i>Length (mm)</i></b></entry>
+               <entry align="left" namest="col3" nameend="col3" colsep="yes"
+rowsep="yes" morerows="0" valign="top"><b><i>Colour</i></b>
+               </entry></row></thead>
+               <tbody>
+               <row><entry align="left" namest="col1" nameend="col1" colsep="yes"
+rowsep="yes" morerows="0" valign="top">Wooden</entry><entry align="left"
+namest="col2" nameend="col2" colsep="yes" rowsep="yes" morerows="0"
+valign="top">40.4</entry><entry align="left" namest="col3" nameend="col3"
+colsep="yes" rowsep="yes" morerows="0" valign="top">red</entry></row>
+               <row><entry align="left" namest="col1" nameend="col1" colsep="yes"
+rowsep="yes" morerows="0" valign="top">Plastic</entry><entry align="left"
+namest="col2" nameend="col2" colsep="yes" rowsep="yes" morerows="0"
+valign="top">35</entry><entry align="left" namest="col3" nameend="col3"
+colsep="yes" rowsep="yes" morerows="0" valign="top">blue</entry></row>
+               </tbody>
+               </tgroup>
+            </table>
+         </tables>
+      </p>
+      <p id="p0008" num="0008">The following formula.<br/>
+         <img id="i0001" wi="48" he="31" img-content="chemistry" img-format="tif"
+orientation="portrait" file="img0001.tif"/>
+         <br/>can be taken as an example.
+      </p>
+      <p id="p0009" num="0009">The following formula.
+         <chemistry id="chem0001" num="0001">
+            <img id="i0002" wi="48" he="31" img-content="drawing" img-format="tif"
+orientation="portrait" file="img0002.tif"/>
+         </chemistry>can be taken as an example.
+      </p>
+   </description>
+   <claims id="claim">
+      <claim id="c0001" num="0001">
+         <claim-text>A golf tee device comprising a tee member removably supported
+in a holder member, wherein the tee member is movable in a continuous manner in a
+substantially vertical direction relative to the holder member, and wherein there
+is provided means to prevent movement between the tee member and the holder member
+on striking of a golf ball supported by the tee member.
+         </claim-text>
+      </claim>
+      <claim id="c0002" num="0002">
+         <claim-text>A device according to claim 1, wherein the means to prevent
+movement prevents axial movement of the tee member relative to the holder member.
+         </claim-text>
+      </claim>
+      <claim id="c0003" num="0003">
+         <claim-text>A device according to claim 1 or 2, wherein the tee member is
+supported by means of threading provided along at least a part of the length of the
+exterior of the tee member and/or at least a part of the length of the interior of
+the holder member.
+         </claim-text>
+      </claim>
+   </claims>
+   <drawings id="draw">
+<figure id="f0001" num="0001">
+<img id="i0003" wi="113" he="147" img-content="drawing" imgformat="tif" orientation="portrait" file="img0003.tif"/>
+</figure>
+   </drawings>
+   <search-report-data id="srep" lang="en" srep-type="ISR" srep-office="ep">
+      <srep-for-pub>
+         <classification-ipc>
+            <edition>7</edition>
+            <main-classification>A63B 57/00</main-classification>
+         </classification-ipc>
+         <srep-fields-searched>
+            <minimum-documentation>
+               <classification-ipc>
+                  <edition>7</edition>
+                  <main-classification>A63B</main-classification>
+               </classification-ipc>
+            </minimum-documentation>
+            <database-searched>
+               <text>EPO internal, PAJ</text>
+            </database-searched>
+         </srep-fields-searched>
+         <srep-citations>
+            <citation>
+               <patcit dnum="GB2364924" id="sr-pcit0001" num="0001">
+                  <document-id>
+                     <country>GB</country>
+                     <doc-number>2364924</doc-number>
+                     <kind>A</kind>
+                     <name>HILLAN GRAHAM CARLYLE</name>
+                     <date>20020213</date>
+                  </document-id>
+                  <rel-passage>
+                     <passage>
+	page 5, line 22 - page 6, line 13; figures 1-
+	4</passage>
+                     <passage>abstract</passage>
+                  </rel-passage>
+                  <category>X</category>
+                  <rel-claims>1-11</rel-claims>
+               </patcit>
+            </citation>
+            <citation>
+               <patcit dnum="US5248144" id="sr-pcit0002" num="0002">
+                  <document-id>
+                     <country>US</country>
+                     <doc-number>5248144</doc-number>
+                     <kind>A</kind>
+                     <name>ULLERICH SCOTT R</name>
+                     <date>19930928</date>
+                  </document-id>
+                  <rel-passage>
+                     <passage>column 3, line 14 - line 68; figures 1-5</passage>
+                  </rel-passage>
+                  <category>X</category>
+                  <rel-claims>1-11</rel-claims>
+               </patcit>
+            </citation>
+         </srep-citations>
+         <srep-admin>
+            <examiners>
+               <primary-examiner>
+                  <name>Gelschläger, H</name>
+               </primary-examiner>
+            </examiners>
+            <srep-office>
+               <addressbook>
+                  <orgname>European Patent Office</orgname>
+                  <address>
+                     <pobox>P.B.5818</pobox>
+                     <street>Patentlaan 2</street>
+                     <city>Rijswijk</city>
+                     <postcode>NL - 2280 HV</postcode>
+                     <country>NL</country>
+                  </address>
+                  <phone>(+31 70) 340 2040</phone>
+                  <fax>(+31 70) 340 3016</fax>     
+               </addressbook>
+            </srep-office>
+            <completion-date>
+               <date>20040310</date>
+            </completion-date>
+            <date-of-mailing>
+               <date>20040317</date>
+            </date-of-mailing>
+         </srep-admin>
+         <srep-patent-family>
+            <patent-family>
+               <priority-application>
+                  <document-id>
+                     <country>GB</country>
+                     <doc-number>2364924</doc-number>
+                     <kind>A</kind>
+                     <date>20020213</date>
+                  </document-id>
+                  <text>None</text>
+               </priority-application>
+            </patent-family>
+            <patent-family>
+               <priority-application>
+                  <document-id>
+                     <country>US</country>
+                     <doc-number>5248144</doc-number>
+                     <kind>A</kind>
+                     <date>19930928</date>
+                  </document-id>
+                  <text>None</text>
+               </priority-application>
+            </patent-family>
+            <patent-family>
+               <priority-application>
+                     <document-id>
+                        <country>US</country>
+                        <doc-number>5720677</doc-number>
+                        <kind>A</kind>
+                        <date>19980224</date>
+                     </document-id>
+                  <family-member>
+                     <document-id>
+                        <country>AU</country>
+                        <doc-number>694738</doc-number>
+                        <kind>B2</kind>
+                        <date>19980730</date>
+                     </document-id>
+                  </family-member>
+               </priority-application>
+            </patent-family>
+         </srep-patent-family>
+      </srep-for-pub>
+   </search-report-data>
+</patent-document>
