@@ -63,7 +63,6 @@ public class GrobidRestService implements GrobidPathes {
 	private static final String AFFILIATIONS = "affiliations";
 	private static final String CITATIONS = "citations";
 
-
 	public GrobidRestService() {
 		LOGGER.info("Initiating Sevlet GrobidRestService");
 		AbstractEngineFactory.fullInit();
@@ -115,51 +114,99 @@ public class GrobidRestService implements GrobidPathes {
 	}
 
 	/**
-	 * @see org.grobid.service.process.GrobidRestProcessFiles#processStatelessHeaderDocument(InputStream)
+	 * @see org.grobid.service.process.GrobidRestProcessFiles#processStatelessHeaderDocument(InputStream,boolean)
 	 */
 	@Path(PATH_HEADER)
 	@Consumes(MediaType.MULTIPART_FORM_DATA)
 	@Produces(MediaType.APPLICATION_XML)
 	@POST
 	public Response processHeaderDocument_post(InputStream inputStream) {
-		return GrobidRestProcessFiles
-				.processStatelessHeaderDocument(inputStream);
+		return GrobidRestProcessFiles.processStatelessHeaderDocument(
+				inputStream, false);
 	}
 
 	/**
-	 * @see org.grobid.service.process.GrobidRestProcessFiles#processStatelessHeaderDocument(InputStream)
+	 * @see org.grobid.service.process.GrobidRestProcessFiles#processStatelessHeaderDocument(InputStream,boolean)
 	 */
 	@Path(PATH_HEADER)
 	@Consumes(MediaType.MULTIPART_FORM_DATA)
 	@Produces(MediaType.APPLICATION_XML)
 	@PUT
 	public Response processStatelessHeaderDocument(InputStream inputStream) {
-		return GrobidRestProcessFiles
-				.processStatelessHeaderDocument(inputStream);
+		return GrobidRestProcessFiles.processStatelessHeaderDocument(
+				inputStream, false);
 	}
 
 	/**
-	 * @see org.grobid.service.process.GrobidRestProcessFiles#processStatelessFulltextDocument(InputStream)
+	 * @see org.grobid.service.process.GrobidRestProcessFiles#processStatelessHeaderDocument(InputStream,boolean)
+	 */
+	@Path(PATH_HEADER_HTML)
+	@Consumes(MediaType.MULTIPART_FORM_DATA)
+	@Produces(MediaType.APPLICATION_XML)
+	@POST
+	public Response processHeaderDocument_postHTML(InputStream inputStream) {
+		return GrobidRestProcessFiles.processStatelessHeaderDocument(
+				inputStream, true);
+	}
+
+	/**
+	 * @see org.grobid.service.process.GrobidRestProcessFiles#processStatelessHeaderDocument(InputStream,boolean)
+	 */
+	@Path(PATH_HEADER_HTML)
+	@Consumes(MediaType.MULTIPART_FORM_DATA)
+	@Produces(MediaType.APPLICATION_XML)
+	@PUT
+	public Response processStatelessHeaderDocumentHTML(InputStream inputStream) {
+		return GrobidRestProcessFiles.processStatelessHeaderDocument(
+				inputStream, true);
+	}
+
+	/**
+	 * @see org.grobid.service.process.GrobidRestProcessFiles#processStatelessFulltextDocument(InputStream,boolean)
 	 */
 	@Path(PATH_FULL_TEXT)
 	@Consumes(MediaType.MULTIPART_FORM_DATA)
 	@Produces(MediaType.APPLICATION_XML)
 	@POST
 	public Response processFulltextDocument_post(InputStream inputStream) {
-		return GrobidRestProcessFiles
-				.processStatelessFulltextDocument(inputStream);
+		return GrobidRestProcessFiles.processStatelessFulltextDocument(
+				inputStream, false);
 	}
 
 	/**
-	 * @see org.grobid.service.process.GrobidRestProcessFiles#processStatelessFulltextDocument(InputStream)
+	 * @see org.grobid.service.process.GrobidRestProcessFiles#processStatelessFulltextDocument(InputStream,boolean)
 	 */
 	@Path(PATH_FULL_TEXT)
 	@Consumes(MediaType.MULTIPART_FORM_DATA)
 	@Produces(MediaType.APPLICATION_XML)
 	@PUT
 	public Response processStatelessFulltextDocument(InputStream inputStream) {
-		return GrobidRestProcessFiles
-				.processStatelessFulltextDocument(inputStream);
+		return GrobidRestProcessFiles.processStatelessFulltextDocument(
+				inputStream, false);
+	}
+
+	/**
+	 * @see org.grobid.service.process.GrobidRestProcessFiles#processStatelessFulltextDocument(InputStream,boolean)
+	 */
+	@Path(PATH_FULL_TEXT_HTML)
+	@Consumes(MediaType.MULTIPART_FORM_DATA)
+	@Produces(MediaType.APPLICATION_XML)
+	@POST
+	public Response processFulltextDocument_postHTML(InputStream inputStream) {
+		return GrobidRestProcessFiles.processStatelessFulltextDocument(
+				inputStream, true);
+	}
+
+	/**
+	 * @see org.grobid.service.process.GrobidRestProcessFiles#processStatelessFulltextDocument(InputStream,boolean)
+	 */
+	@Path(PATH_FULL_TEXT_HTML)
+	@Consumes(MediaType.MULTIPART_FORM_DATA)
+	@Produces(MediaType.APPLICATION_XML)
+	@PUT
+	public Response processStatelessFulltextDocumentHTML(InputStream inputStream) {
+		return GrobidRestProcessFiles.processStatelessFulltextDocument(
+				inputStream, true);
 	}
 
 	/**
@@ -251,7 +298,7 @@ public class GrobidRestService implements GrobidPathes {
 			@FormParam(AFFILIATIONS) String affiliation) {
 		return GrobidRestProcessString.processAffiliations(affiliation);
 	}
-	
+
 	/**
 	 * @see org.grobid.service.process.GrobidRestProcessString#processCitations(String)
 	 */
@@ -259,8 +306,7 @@ public class GrobidRestService implements GrobidPathes {
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
 	@Produces(MediaType.TEXT_PLAIN)
 	@POST
-	public Response processCitations_post(
-			@FormParam(CITATIONS) String citation) {
+	public Response processCitations_post(@FormParam(CITATIONS) String citation) {
 		return GrobidRestProcessString.processCitations(citation);
 	}
 
@@ -271,11 +317,9 @@ public class GrobidRestService implements GrobidPathes {
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
 	@Produces(MediaType.TEXT_PLAIN)
 	@PUT
-	public Response processCitations(
-			@FormParam(CITATIONS) String citation) {
+	public Response processCitations(@FormParam(CITATIONS) String citation) {
 		return GrobidRestProcessString.processCitations(citation);
 	}
-	
 
 	/**
 	 * @see org.grobid.service.process.GrobidRestProcessAdmin#processSHA1(String)
@@ -298,7 +342,7 @@ public class GrobidRestService implements GrobidPathes {
 	public Response processSHA1Get(@QueryParam("sha1") String sha1) {
 		return GrobidRestProcessAdmin.processSHA1(sha1);
 	}
-	
+
 	/**
 	 * @see org.grobid.service.process.GrobidRestProcessAdmin#getAllPropertiesValues(String)
 	 */
@@ -309,7 +353,7 @@ public class GrobidRestService implements GrobidPathes {
 	public Response getAllPropertiesValuesPost(@FormParam("sha1") String sha1) {
 		return GrobidRestProcessAdmin.getAllPropertiesValues(sha1);
 	}
-	
+
 	/**
 	 * @see org.grobid.service.process.GrobidRestProcessAdmin#getAllPropertiesValues(String)
 	 */
@@ -320,7 +364,7 @@ public class GrobidRestService implements GrobidPathes {
 	public Response getAllPropertiesValuesGet(@QueryParam("sha1") String sha1) {
 		return GrobidRestProcessAdmin.getAllPropertiesValues(sha1);
 	}
-	
+
 	/**
 	 * @see org.grobid.service.process.GrobidRestProcessAdmin#changePropertyValue(String)
 	 */
@@ -331,7 +375,7 @@ public class GrobidRestService implements GrobidPathes {
 	public Response changePropertyValuePost(@FormParam("xml") String xml) {
 		return GrobidRestProcessAdmin.changePropertyValue(xml);
 	}
-	
+
 	/**
 	 * @see org.grobid.service.process.GrobidRestProcessAdmin#changePropertyValue(String)
 	 */
