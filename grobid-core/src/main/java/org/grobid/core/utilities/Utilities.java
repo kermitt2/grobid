@@ -1,11 +1,9 @@
 package org.grobid.core.utilities;
 
-import org.apache.commons.lang3.StringUtils;
-import org.grobid.core.data.BiblioItem;
-import org.grobid.core.exceptions.GrobidException;
-
 import java.io.BufferedWriter;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
@@ -15,6 +13,10 @@ import java.lang.reflect.Method;
 import java.net.URL;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import org.apache.commons.lang3.StringUtils;
+import org.grobid.core.data.BiblioItem;
+import org.grobid.core.exceptions.GrobidException;
 
 /**
  * Some utilities methods that I don't know where to put.
@@ -412,6 +414,30 @@ public class Utilities {
 		BufferedWriter buffw = new BufferedWriter(filew);
 		buffw.write(content);
 		buffw.close();
+	}
+
+	/**
+	 * Read a file and return the content.
+	 * 
+	 * @param pPathToFile
+	 *            path to file to read.
+	 * @return String contained in the document.
+	 * @throws IOException
+	 */
+	public static String readFile(String pPathToFile) throws IOException {
+		StringBuffer out = new StringBuffer();
+		FileInputStream inputStrem = new FileInputStream(new File(pPathToFile));
+		ByteArrayOutputStream outStream = new ByteArrayOutputStream();
+		byte buf[] = new byte[1024];
+		int len;
+		while ((len = inputStrem.read(buf)) > 0) {
+			outStream.write(buf, 0, len);
+			out.append(outStream.toString());
+		}
+		inputStrem.close();
+		outStream.close();
+
+		return out.toString();
 	}
 
 }
