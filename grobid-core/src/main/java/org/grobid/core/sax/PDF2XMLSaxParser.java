@@ -406,7 +406,7 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 
 								if (leftClass != ModifierClass.NOT_A_MODIFIER) {
 									if (rightClass != ModifierClass.NOT_A_MODIFIER) {
-										assert false;
+										//assert false;
 										// keeping characters, but setting class
 										// to not a modifier
 										baseChar = leftChar;
