@@ -15,7 +15,8 @@ In addition, depending on the metadata available in the article's header, the fo
 Annotations
 -----------
 
-Example of existing annotations can be found under examples_annotations.
+Example of existing annotations can be found under grobid-trainer/resources/dataset/header/corpus.
+The tagset used for the encoding of the training data is as follow:
 
 * For the affiliation+address annotations, see the file guidelines-affiliation_address.pdf
 Affiliation markers are annotated with the tag <marker>

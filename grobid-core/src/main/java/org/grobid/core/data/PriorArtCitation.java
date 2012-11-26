@@ -77,5 +77,7 @@ public class PriorArtCitation {
     public void setRawClaims(String raw) {
         rawClaims = raw;
     }
+
+	// TODO: TEI based encoding
 }
 

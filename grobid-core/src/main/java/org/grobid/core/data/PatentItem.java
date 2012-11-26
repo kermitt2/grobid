@@ -17,7 +17,8 @@ public class PatentItem implements Comparable<PatentItem> {
     private Boolean reissued = false;
     private Boolean plant = false;
     private Boolean design = false;
-
+	private Boolean utility = false;
+	
     // scores
     private double conf = 0.0;
     private String confidence = null;
@@ -61,6 +62,10 @@ public class PatentItem implements Comparable<PatentItem> {
     }
 
     public Boolean getDesign() {
+        return design;
+    }
+
+	public Boolean getUtility() {
         return design;
     }
 
@@ -139,6 +144,10 @@ public class PatentItem implements Comparable<PatentItem> {
         design = b;
     }
 
+	public void setUtility(boolean b) {
+        utility = b;
+    }
+
     public int compareTo(PatentItem another) {
         return number.compareTo(another.getNumber());
     }
@@ -204,7 +213,7 @@ public class PatentItem implements Comparable<PatentItem> {
             design = true;
         }
     }
-
+	
 	@Override
 	public String toString() {
 		return "PatentItem [authority=" + authority + ", number=" + number
@@ -216,5 +225,86 @@ public class PatentItem implements Comparable<PatentItem> {
 				+ offset_raw + ", context=" + context + "]";
 	}
     
+	public String toTEI() {
+		return toTEI(null);
+	}
+	public String toTEI(String date) {
+		/* TEI for patent bilbiographical data is as follow (After the TEI guideline update of October 2012):
+		<biblStruct type="patent¦utilityModel¦designPatent¦plant" status="application¦publication">
+		<monogr>
+		<authority>
+		<orgName type="national¦regional">[name of patent office]<orgName> (mandatory)
+		</authority>
+		<idno type="docNumber">[patent document number]</idno> (mandatory)
+		<imprint> (optional)
+		<classCode scheme="kindCode">[kind code]</classCode> (optional)
+		<date>[date]</date> (optional)
+		</imprint>
+		</monogr>
+		</biblStruct>
+		*/
+		StringBuffer biblStruct = new StringBuffer();
+		
+		// type of patent
+		biblStruct.append("<biblStruct type=\"");
+		if (design) {
+			biblStruct.append("designPatent");
+		}
+		else if (plant) {
+			biblStruct.append("plant");
+		}
+		else if (utility) {
+			biblStruct.append("utilityModel");
+		}
+		else {
+			biblStruct.append("patent");
+		}
+		
+		// status
+		biblStruct.append("\" status=\"");				
+		if (application) {
+			biblStruct.append("application");
+		}
+		else if (provisional) {
+			biblStruct.append("provisional");
+		}
+		else if (reissued) {
+			biblStruct.append("reissued");
+		}
+		else {
+			biblStruct.append("publication");
+		}
+		biblStruct.append("\">");
+		
+		biblStruct.append("<monogr><authority><orgName type=\"");
+		if (authority.equals("EP") || authority.equals("WO") || authority.equals("XN") 
+			|| authority.equals("XN") || authority.equals("GC") || authority.equals("EA") ) { 
+			// XN is the Nordic Patent Institute
+			// OA is the African Intellectual Property Organization (OAPI)
+			// GC is the Gulf Cooperation Council 
+			// EA Eurasian Patent Organization
+			biblStruct.append("regional");
+		}
+		else {
+			biblStruct.append("national");
+		}
+		biblStruct.append("\">"+authority+"<orgName></authority>");
+		biblStruct.append("<idno type=\"docNumber\">"+number+"</idno>");
+		
+		if ((kindCode != null) || (date != null)) {
+			biblStruct.append("<imprint>");
+			if (kindCode != null) {
+				biblStruct.append("<classCode scheme=\"kindCode\">"+kindCode+"</classCode>");
+			}
+			if (date != null) {
+				biblStruct.append("<date>"+date+"</date>");
+			}
+			biblStruct.append("</imprint>");
+		}
+		
+		biblStruct.append("</monogr></biblStruct>");
+		
+		return biblStruct.toString();
+	}
     
 }
