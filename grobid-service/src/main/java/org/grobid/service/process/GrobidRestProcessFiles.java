@@ -52,15 +52,26 @@ public class GrobidRestProcessFiles {
 		Response response = null;
 		String retVal = null;
 		boolean isparallelExec = GrobidServiceProperties.isParallelExec();
+		File originFile = null;
+		Engine engine = null;
 		try {
-			File originFile = GrobidRestUtils.writeInputFile(inputStream);
+			originFile = GrobidRestUtils.writeInputFile(inputStream);
 
 			if (originFile == null) {
 				response = Response.status(Status.INTERNAL_SERVER_ERROR)
 						.build();
 			} else {
 				// starts conversion process
-				retVal = extractHeader(isparallelExec, originFile);
+				engine = GrobidRestUtils.getEngine(isparallelExec);
+				if (isparallelExec) {
+					retVal = engine.processHeader(originFile.getAbsolutePath(),
+							false, null);
+				} else {
+					synchronized (engine) {
+						retVal = engine.processHeader(
+								originFile.getAbsolutePath(), false, null);
+					}
+				}
 
 				if ((retVal == null) || (retVal.isEmpty())) {
 					response = Response.status(Status.NO_CONTENT).build();
@@ -81,6 +92,11 @@ public class GrobidRestProcessFiles {
 		} catch (Exception e) {
 			LOGGER.error("An unexpected exception occurs. ", e);
 			response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
+		} finally {
+			GrobidRestUtils.removeTempFile(originFile);
+			if (isparallelExec && engine != null) {
+				GrobidPoolingFactory.returnEngine(engine);
+			}
 		}
 		LOGGER.debug(methodLogOut());
 		return response;
@@ -104,35 +120,6 @@ public class GrobidRestProcessFiles {
 		InputStream xmlStream = new ByteArrayInputStream(tei.getBytes("UTF-8"));
 		xmlr.parse(new InputSource(xmlStream));
 		return parser.getHTML();
-	}
-
-	/**
-	 * Extract the header by calling engine.
-	 * 
-	 * @param isparallelExec
-	 *            if it is a parallel execution.
-	 * @param originFile
-	 *            the file to process.
-	 * @return the result in String.
-	 * @throws Exception
-	 */
-	protected static String extractHeader(boolean isparallelExec,
-			File originFile) throws Exception {
-		String retVal;
-		Engine engine = GrobidRestUtils.getEngine(isparallelExec);
-		if (isparallelExec) {
-			retVal = engine.processHeader(originFile.getAbsolutePath(), false,
-					null);
-			GrobidPoolingFactory.returnEngine(engine);
-		} else {
-			synchronized (engine) {
-				retVal = engine.processHeader(originFile.getAbsolutePath(),
-						false, null);
-			}
-		}
-
-		GrobidRestUtils.removeTempFile(originFile);
-		return retVal;
 	}
 
 	/**
@@ -176,15 +163,17 @@ public class GrobidRestProcessFiles {
 		Response response = null;
 		String retVal = null;
 		boolean isparallelExec = GrobidServiceProperties.isParallelExec();
+		File originFile = null;
+		Engine engine = null;
 		try {
-			File originFile = GrobidRestUtils.writeInputFile(inputStream);
+			originFile = GrobidRestUtils.writeInputFile(inputStream);
 
 			if (originFile == null) {
 				response = Response.status(Status.INTERNAL_SERVER_ERROR)
 						.build();
 			} else {
 				// starts conversion process
-				Engine engine = GrobidRestUtils.getEngine(isparallelExec);
+				engine = GrobidRestUtils.getEngine(isparallelExec);
 				if (isparallelExec) {
 					retVal = engine.fullTextToTEI(originFile.getAbsolutePath(),
 							false, false);
@@ -217,6 +206,11 @@ public class GrobidRestProcessFiles {
 		} catch (Throwable e) {
 			LOGGER.error("An unexpected exception occurs. ", e);
 			response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
+		} finally {
+			GrobidRestUtils.removeTempFile(originFile);
+			if (isparallelExec && engine != null) {
+				GrobidPoolingFactory.returnEngine(engine);
+			}
 		}
 		LOGGER.debug(methodLogOut());
 		return response;
