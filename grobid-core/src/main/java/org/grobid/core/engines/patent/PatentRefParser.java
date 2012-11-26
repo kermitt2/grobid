@@ -122,7 +122,7 @@ public class PatentRefParser {
 
     public ArrayList<PatentItem> processRawRefText() {
         ArrayList<PatentItem> res = new ArrayList<PatentItem>();
-        //System.out.println(rawText);
+        System.out.println("processRawRefText: " + rawText);
         String country = null;
         while (true) {
             Matcher fitCountry = WO_pattern.matcher(rawText);
@@ -436,7 +436,7 @@ public class PatentRefParser {
                         // we need to identify the year based on the serial number range
 
                         // provisional starts with 60 or 61
-                        if (number.startsWith("60")) {
+                        if (number.startsWith("60") && (appli || number.startsWith("60/"))) {
                             applications.set(i, new Boolean(true));
                             provisionals.set(i, new Boolean(true));
                             number = number.substring(3, number.length());
@@ -471,7 +471,7 @@ public class PatentRefParser {
                             else if (numb < 999999)
                                 year = "2007";
                             number = year + "0" + number;
-                        } else if (number.startsWith("61")) {  // same as for 60 but the ranges are different
+                        } else if (number.startsWith("61") && (appli || number.startsWith("61/"))) {  // same as for 60 but the ranges are different
                             applications.set(i, new Boolean(true));
                             provisionals.set(i, new Boolean(true));
                             number = number.substring(3, number.length());
@@ -486,7 +486,7 @@ public class PatentRefParser {
                             else
                                 year = "2009";
                             number = year + "0" + number;
-                        } else if (number.startsWith("29")) {
+                        } else if (number.startsWith("29") && (appli || number.startsWith("29/"))) {
                             // design patent application starts with 29
                             applications.set(i, new Boolean(true));
                             provisionals.set(i, new Boolean(false));
@@ -533,7 +533,7 @@ public class PatentRefParser {
                             else
                                 year = "2009";
                             number = year + "0" + number;
-                        } else if (number.startsWith("12")) {
+                        } else if (number.startsWith("12") && (appli || number.startsWith("12/"))) {
                             // standard patent application, most recent serial code
                             applications.set(i, new Boolean(true));
                             provisionals.set(i, new Boolean(false));
@@ -549,7 +549,7 @@ public class PatentRefParser {
                             else
                                 year = "2009";
                             number = year + "0" + number;
-                        } else if (number.startsWith("11")) {
+                        } else if (number.startsWith("11") && (appli || number.startsWith("11/"))) {
                             // standard patent application
                             applications.set(i, new Boolean(true));
                             provisionals.set(i, new Boolean(false));
@@ -567,7 +567,7 @@ public class PatentRefParser {
                             else
                                 year = "2007";
                             number = year + "0" + number;
-                        } else if (number.startsWith("10")) {
+                        } else if (number.startsWith("10") && (appli || number.startsWith("10/"))) {
                             // standard patent application
                             applications.set(i, new Boolean(true));
                             provisionals.set(i, new Boolean(false));

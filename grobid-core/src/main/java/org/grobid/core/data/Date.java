@@ -178,6 +178,7 @@ public class Date implements Comparable {
     }
 
     public String toTEI() {
+		// TEI uses ISO 8601 for date encoding
         String theDate = "<date when=\"";
         if (year != -1) {
             theDate += year;
@@ -188,8 +189,14 @@ public class Date implements Comparable {
         if (day != -1) {
             theDate += "-" + day;
         }
-        theDate += "\"/>";
 
+		if (rawDate != null) {
+        	theDate += "\">"+rawDate+"</date>";
+		}
+		else {
+			theDate += "\" />";
+		}
+			
         return theDate;
     }
 

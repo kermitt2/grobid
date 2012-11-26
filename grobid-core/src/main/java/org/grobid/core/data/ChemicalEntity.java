@@ -69,4 +69,6 @@ public class ChemicalEntity {
         buffer.append(rawName + "\t" + inchi + "\t" + smiles + "\t" + offsets.toString());
         return buffer.toString();
     }
+
+	// TODO: CML encoding
 }
