@@ -89,8 +89,8 @@ public class GrobidRestProcessFiles {
 		} catch (NoSuchElementException nseExp) {
 			LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
 			response = Response.status(Status.SERVICE_UNAVAILABLE).build();
-		} catch (Throwable thb) {
-			LOGGER.error("An unexpected exception occured: "+ thb);
+		} catch (Exception exp) {
+			LOGGER.error("An unexpected exception occured: "+ exp);
 			response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
 		} finally {
 			GrobidRestUtils.removeTempFile(originFile);
@@ -203,8 +203,8 @@ public class GrobidRestProcessFiles {
 		} catch (NoSuchElementException nseExp) {
 			LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
 			response = Response.status(Status.SERVICE_UNAVAILABLE).build();
-		} catch (Throwable e) {
-			LOGGER.error("An unexpected exception occurs. ", e);
+		} catch (Exception exp) {
+			LOGGER.error("An unexpected exception occurs. ", exp);
 			response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
 		} finally {
 			GrobidRestUtils.removeTempFile(originFile);
