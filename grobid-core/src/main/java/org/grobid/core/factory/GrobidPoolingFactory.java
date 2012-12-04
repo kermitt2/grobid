@@ -72,7 +72,7 @@ public class GrobidPoolingFactory extends AbstractEngineFactory implements
 			engine = (Engine) grobidEnginePool.borrowObject();
 		} catch (NoSuchElementException nseExp) {
 			throw new NoSuchElementException();
-		} catch (Throwable exp) {
+		} catch (Exception exp) {
 			throw new GrobidException(
 					"An error occured while getting an engine from the engine pool: "
 							+ exp);
@@ -91,7 +91,7 @@ public class GrobidPoolingFactory extends AbstractEngineFactory implements
 		try {
 			engine.close();
 			grobidEnginePool.returnObject(engine);
-		} catch (Throwable exp) {
+		} catch (Exception exp) {
 			throw new GrobidException(
 					"An error occured while returning an engine from the engine pool: "
 							+ exp);
