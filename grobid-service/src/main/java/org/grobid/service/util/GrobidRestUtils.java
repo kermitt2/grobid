@@ -101,13 +101,12 @@ public class GrobidRestUtils {
 	 * @param file
 	 *            the file to delete.
 	 */
-	public static void removeTempFile(File file) {
+	public static void removeTempFile(final File file) {
 		try {
 			LOGGER.debug("Removing " + file.getAbsolutePath());
 			file.delete();
-		} catch (Exception exp) {
-			LOGGER.error("Error while deleting the temporary file "
-					+ file.getName() + ": " + exp);
+		} catch (Throwable exp) {
+			LOGGER.error("Error while deleting the temporary file: " + exp);
 		}
 	}
 
