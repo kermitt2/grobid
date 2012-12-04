@@ -50,6 +50,7 @@ public class GrobidPoolingFactory extends AbstractEngineFactory implements
 					grobidEnginePool.setTestWhileIdle(false);
 					grobidEnginePool.setLifo(false);
 					grobidEnginePool.setTimeBetweenEvictionRunsMillis(1000);
+					grobidEnginePool.setMaxIdle(0);
 				}
 			}
 		}
@@ -71,7 +72,7 @@ public class GrobidPoolingFactory extends AbstractEngineFactory implements
 			engine = (Engine) grobidEnginePool.borrowObject();
 		} catch (NoSuchElementException nseExp) {
 			throw new NoSuchElementException();
-		} catch (Exception exp) {
+		} catch (Throwable exp) {
 			throw new GrobidException(
 					"An error occured while getting an engine from the engine pool: "
 							+ exp);
@@ -90,7 +91,7 @@ public class GrobidPoolingFactory extends AbstractEngineFactory implements
 		try {
 			engine.close();
 			grobidEnginePool.returnObject(engine);
-		} catch (Exception exp) {
+		} catch (Throwable exp) {
 			throw new GrobidException(
 					"An error occured while returning an engine from the engine pool: "
 							+ exp);
