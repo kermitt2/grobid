@@ -105,7 +105,7 @@ public class GrobidRestUtils {
 		try {
 			LOGGER.debug("Removing " + file.getAbsolutePath());
 			file.delete();
-		} catch (Throwable exp) {
+		} catch (Exception exp) {
 			LOGGER.error("Error while deleting the temporary file: " + exp);
 		}
 	}
