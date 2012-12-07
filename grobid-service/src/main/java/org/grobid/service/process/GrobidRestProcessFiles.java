@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.NoSuchElementException;
+import java.util.concurrent.TimeoutException;
 
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -89,8 +90,11 @@ public class GrobidRestProcessFiles {
 		} catch (NoSuchElementException nseExp) {
 			LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
 			response = Response.status(Status.SERVICE_UNAVAILABLE).build();
+		} catch (TimeoutException timeoutExp) {
+			LOGGER.error("Grobid timed out: " + timeoutExp);
+			response = Response.status(408).build();
 		} catch (Exception exp) {
-			LOGGER.error("An unexpected exception occured: "+ exp);
+			LOGGER.error("An unexpected exception occured: " + exp);
 			response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
 		} finally {
 			GrobidRestUtils.removeTempFile(originFile);
