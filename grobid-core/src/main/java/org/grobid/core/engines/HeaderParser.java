@@ -8,6 +8,7 @@ import java.io.Writer;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
+import java.util.concurrent.TimeoutException;
 
 import org.grobid.core.GrobidModels;
 import org.grobid.core.data.BiblioItem;
@@ -51,7 +52,7 @@ public class HeaderParser extends AbstractParser {
 	}
 
 	public String processing(String input, boolean consolidate,
-			BiblioItem resHeader, int startPage, int endPage) {
+			BiblioItem resHeader, int startPage, int endPage) throws TimeoutException {
 		doc = new Document(input, tmpPath.getAbsolutePath());
 		try {
 			// int startPage = 0;
@@ -76,11 +77,13 @@ public class HeaderParser extends AbstractParser {
 			}
 
 			return processingHeaderBlock(consolidate, doc, resHeader);
-		} catch (Exception e) {
-			// e.printStackTrace();
+		} catch (TimeoutException timeoutExp){
+			throw new TimeoutException("A time out occured");
+		}
+		catch (Exception exp) {
 			throw new GrobidException(
-					"An exception occurred while running Grobid with tmpPath "
-							+ pathXML, e);
+					"An exception occurred while running Grobid on file "
+							+ tmpPath.getAbsolutePath(), exp);
 		} finally {
 			doc.cleanLxmlFile(pathXML, true);
 		}
