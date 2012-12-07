@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
+import java.util.concurrent.TimeoutException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -46,9 +47,16 @@ import org.xml.sax.SAXException;
  */
 
 public class Document {
+
 	private static final Logger LOGGER = LoggerFactory
 			.getLogger(Document.class);
 
+	/**
+	 * Exit code got when pdf2xml took too much time and has been killed by
+	 * pdf2xml_server.
+	 */
+	private static final int KILLED_DUE_2_TIMEOUT = 143;
+	
 	private String path = null; // path where the pdf file is stored
 
 	private String pathXML = null; // XML representation of the current PDF file
@@ -176,18 +184,34 @@ public class Document {
 		return path;
 	}
 
-	private static String pdftoxml = GrobidProperties.getPdf2XMLPath()
-			.getAbsolutePath()
-			+ "/pdftoxml -blocks -noImage -noImageInline -fullFontName ";
-	private static String pdftoxml2 = GrobidProperties.getPdf2XMLPath()
-			.getAbsolutePath()
-			+ "/pdftoxml -blocks -noImageInline -fullFontName ";
+	/*
+	 * private static String pdftoxml = GrobidProperties.getPdf2XMLPath()
+	 * .getAbsolutePath() +
+	 * "/pdftoxml -blocks -noImage -noImageInline -fullFontName "; private
+	 * static String pdftoxml2 = GrobidProperties.getPdf2XMLPath()
+	 * .getAbsolutePath() + "/pdftoxml -blocks -noImageInline -fullFontName ";
+	 */
 
 	private static final long timeout = 20000; // timeout 20 second for
 												// producing the low level xml
 												// representation of a pdf
 												// WARNING: it might be too
 												// short for ebook !
+
+	protected static String getPdf2xml(boolean full) {
+		String pdf2xml = GrobidProperties.getPdf2XMLPath().getAbsolutePath();
+
+		pdf2xml += GrobidProperties.isContextExecutionServer() ? "/pdftoxml_server"
+				: "/pdftoxml";
+
+		if (full) {
+			pdf2xml += " -blocks -noImageInline -fullFontName ";
+		} else {
+			pdf2xml += " -blocks -noImage -noImageInline -fullFontName ";
+		}
+
+		return pdf2xml;
+	}
 
 	/**
 	 * Create an XML representation from a pdf file. If tout is true (default),
@@ -202,11 +226,11 @@ public class Document {
 		LOGGER.debug("start pdf2xml");
 		long time = System.currentTimeMillis();
 		String pdftoxml0;
-		if (full) {
-			pdftoxml0 = pdftoxml2;
-		} else {
-			pdftoxml0 = pdftoxml;
-		}
+
+		pdftoxml0 = getPdf2xml(full);
+		/*
+		 * if (full) { pdftoxml0 = pdftoxml2; } else { pdftoxml0 = pdftoxml; }
+		 */
 
 		if (startPage > 0)
 			pdftoxml0 += " -f " + startPage + " ";
@@ -293,24 +317,23 @@ public class Document {
 	 * @param cmd
 	 *            arguments to call the executable pdf2xml
 	 * @return the path the the converted file.
+	 * @throws TimeoutException 
 	 */
 	protected String processPdf2Xml(String pdfPath, String tmpPathXML,
-			String cmd) {
+			final String cmd) throws TimeoutException {
 		LOGGER.debug("Executing: " + cmd);
 
-		ProcessPdf2Xml worker = new ProcessPdf2Xml(cmd, "pdf2xml[" + pdfPath
-				+ "]", true);
+		Integer exitCode = ProcessPdf2Xml.process(cmd);
 
-		worker.process();
-
-		if (worker.getExitStatus() == null) {
+		if (exitCode == null) {
 			tmpPathXML = null;
-			throw new RuntimeException("PDF to XML conversion timed out");
-		}
-
-		if (worker.getExitStatus() != 0) {
-			throw new RuntimeException("PDF to XML conversion failed due to: "
-					+ worker.getErrorStreamContents());
+			throw new RuntimeException("An error occured while converting pdf "
+					+ pdfPath);
+		} else if (exitCode == KILLED_DUE_2_TIMEOUT) {
+			throw new TimeoutException("PDF to XML conversion timed out");
+		} else if (exitCode != 0) {
+			throw new RuntimeException(
+					"PDF to XML conversion failed with error code: " + exitCode);
 		}
 
 		return tmpPathXML;
