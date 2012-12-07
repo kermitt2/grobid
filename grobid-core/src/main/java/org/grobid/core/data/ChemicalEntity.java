@@ -3,7 +3,7 @@ package org.grobid.core.data;
 import org.grobid.core.utilities.OffsetPosition;
 
 /**
- * Class for managing patent bibliographical references.
+ * Class for managing chemical entities.
  *
  * @author Patrice Lopez
  */
