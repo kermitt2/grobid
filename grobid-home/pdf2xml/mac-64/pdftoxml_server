@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Timeout.
-timeout=2   # minutes
+timeout=20   # 20 seconds
 # Interval between checks if the process is still alive.
 interval=1
 # Delay between posting the SIGTERM signal and destroying the process by SIGKILL.
