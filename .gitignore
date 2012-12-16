@@ -5,3 +5,13 @@ grobid-home/tmp
 .settings
 .classpath
 
+
+*.log
+
+grobid-core/log/debug.log
+
+*.log
+
+grobid-core/log/error.log
+
+grobid-core/log/warn.log
