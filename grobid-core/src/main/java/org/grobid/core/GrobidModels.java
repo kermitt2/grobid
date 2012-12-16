@@ -12,6 +12,7 @@ public enum GrobidModels {
 	DATE("date"), 
 	EBOOK("ebook"), 
 	ENTITIES_CHEMISTRY("entities/chemistry"), 
+//	ENTITIES_BIOTECH("entities/biotech"), 
 	FULLTEXT("fulltext"), 
 	HEADER("header"), 
 	NAMES_CITATION("name/citation"), 
