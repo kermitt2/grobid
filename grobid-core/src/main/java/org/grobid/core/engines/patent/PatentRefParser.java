@@ -319,7 +319,7 @@ public class PatentRefParser {
             int i = 0;
             for (String number : numbers) {
                 String originalNumber = number;
-                number = number.replace("-", " ");
+                number = number.replace("-", "");
                 // do we have an application or a patent publication?
                 if (country.equals("WO")) {
                     number = number.replaceAll("[\\.\\s]", "");
