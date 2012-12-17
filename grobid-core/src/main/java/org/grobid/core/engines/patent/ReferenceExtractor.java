@@ -232,7 +232,7 @@ public class ReferenceExtractor implements Closeable {
             //text = TextUtilities.dehyphenize(text); // to be reviewed!
             text = text.replace("\n", " ");
             text = text.replace("\t", " ");
-            text = text.replace("  ", " ");
+            //text = text.replace("  ", " ");
             //StringTokenizer st = new StringTokenizer(text, "(["+ TextUtilities.punctuations, true);
             StringTokenizer st = new StringTokenizer(text, delimiters, true);
             int offset = 0;
@@ -410,6 +410,7 @@ public class ReferenceExtractor implements Closeable {
             String reference = null;
             offset = 0;
             int currentOffset = 0;
+			int addedOffset = 0;
             String label = null; // label
             String actual = null; // token
             int p = 0; // iterator for the tokenizations for restauring the original tokenization with
@@ -423,6 +424,7 @@ public class ReferenceExtractor implements Closeable {
                 StringTokenizer st2 = new StringTokenizer(line, "\t");
                 boolean start = true;
                 boolean addSpace = false;
+				String separator = "";
                 label = null;
                 actual = null;
                 while (st2.hasMoreTokens()) {
@@ -433,8 +435,10 @@ public class ReferenceExtractor implements Closeable {
                         boolean strop = false;
                         while ((!strop) && (p < tokenizations.size())) {
                             String tokOriginal = tokenizations.get(p);
+							addedOffset += tokOriginal.length();
                             if (tokOriginal.equals(" ")) {
                                 addSpace = true;
+								separator += tokOriginal;
                             } else if (tokOriginal.equals(actual)) {
                                 strop = true;
                             }
@@ -446,13 +450,18 @@ public class ReferenceExtractor implements Closeable {
                 }
 
                 if (label == null) {
+					offset += addedOffset;
+					addedOffset = 0;
                     continue;
                 }
 
                 if (actual != null) {
                     if (label.endsWith("<refPatent>")) {
                         if (reference == null) {
-                            reference = actual;
+							if (addSpace) {
+                                reference = separator + actual;
+							} else
+                            	reference = actual;
                             currentOffset = offset;
                             currentPatent = true;
                         } else {
@@ -462,12 +471,15 @@ public class ReferenceExtractor implements Closeable {
                                     offsets_patent.add(currentOffset);
 
                                     currentPatent = true;
-                                    reference = actual;
+									if (addSpace) {
+		                                reference = separator + actual;
+									} else
+                                    	reference = actual;
                                     currentOffset = offset;
                                 } else {
                                     //if (offsets.contains(new Integer(offset))) {
                                     if (addSpace) {
-                                        reference += " " + actual;
+                                        reference += separator + actual;
                                     } else
                                         reference += actual;
                                 }
@@ -476,13 +488,19 @@ public class ReferenceExtractor implements Closeable {
                                 offsets_NPL.add(currentOffset);
 
                                 currentPatent = true;
-                                reference = actual;
+								if (addSpace) {
+	                                reference = separator + actual;
+								} else
+                                	reference = actual;
                                 currentOffset = offset;
                             }
                         }
                     } else if (label.endsWith("<refNPL>")) {
                         if (reference == null) {
-                            reference = actual;
+							if (addSpace) {
+                                reference = separator + actual;
+							} else
+                            	reference = actual;
                             currentOffset = offset;
                             currentPatent = false;
                         } else {
@@ -491,7 +509,10 @@ public class ReferenceExtractor implements Closeable {
                                 offsets_patent.add(currentOffset);
 
                                 currentPatent = false;
-                                reference = actual;
+								if (addSpace) {
+	                                reference = separator + actual;
+								} else
+                                	reference = actual;
                                 currentOffset = offset;
                             } else {
                                 if (label.equals("I-<refNPL>")) {
@@ -499,12 +520,15 @@ public class ReferenceExtractor implements Closeable {
                                     offsets_NPL.add(currentOffset);
 
                                     currentPatent = false;
-                                    reference = actual;
+									if (addSpace) {
+		                                reference = separator + actual;
+									} else
+                                    	reference = actual;
                                     currentOffset = offset;
                                 } else {
                                     //if (offsets.contains(new Integer(offset))) {
                                     if (addSpace) {
-                                        reference += " " + actual;
+                                        reference += separator + actual;
                                     } else
                                         reference += actual;
                                 }
@@ -524,7 +548,8 @@ public class ReferenceExtractor implements Closeable {
                         reference = null;
                     }
                 }
-                offset++;
+				offset += addedOffset;
+				addedOffset = 0;
             }
 
             // run reference patent parser in isolation, and produce some traces

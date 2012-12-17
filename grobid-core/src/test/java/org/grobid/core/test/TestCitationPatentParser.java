@@ -4,17 +4,23 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertEquals;
+
 import org.apache.commons.io.FileUtils;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.PatentItem;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.utilities.GrobidProperties;
 import org.junit.Ignore;
+import org.junit.Test;
 
 /**
  *  @author Patrice Lopez
  */
-@Ignore
+//@Ignore
 public class TestCitationPatentParser extends EngineTest {
 	private String newTrainingPath = null;
 	
@@ -80,5 +86,43 @@ public class TestCitationPatentParser extends EngineTest {
 			
 		xmlPath = this.getResourceDir("./src/test/resources/").getAbsoluteFile()+"/patents/sample2.xml";
 		engine.createTrainingPatentCitations(xmlPath, newTrainingPath);
+	}
+	
+	@Test
+	public void testCitationPatentParserFromText() throws Exception {
+		String text = "this patent refers to US-8303618, 	and filed in continuation of US patent 8153667 and  European Patent publications 1000000 and    1000001. ";
+		System.out.println("text to parse: " + text);
+		
+		List<BibDataSet> articles = new ArrayList<BibDataSet>();
+		List<PatentItem> patents = new ArrayList<PatentItem>();
+		boolean consolidateCitations = false;
+		engine.processAllCitationsInPatent(text, articles, patents, consolidateCitations);
+		
+		assertEquals(4, patents.size());
+		assertEquals(0, articles.size());
+
+		PatentItem patent = patents.get(0);
+		assertEquals("8303618", patent.getNumber());
+		System.out.println("context=" + patent.getContext());
+		System.out.println("offset start/end/raw=" + patent.getOffsetBegin() + "/"+ patent.getOffsetEnd()+"/"+patent.getOffsetRaw());
+		System.out.println("corresponding span: " + text.substring(patent.getOffsetBegin(), patent.getOffsetEnd()+1));
+		
+		patent = patents.get(1);
+		assertEquals("8153667", patent.getNumber());
+		System.out.println("context=" + patent.getContext());
+		System.out.println("offset start/end/raw=" + patent.getOffsetBegin() + "/"+ patent.getOffsetEnd()+"/"+patent.getOffsetRaw());
+		System.out.println("corresponding span: " + text.substring(patent.getOffsetBegin(), patent.getOffsetEnd()+1));
+		
+		patent = patents.get(2);
+		assertEquals("1000000", patent.getNumber());
+		System.out.println("context=" + patent.getContext());
+		System.out.println("offset start/end/raw=" + patent.getOffsetBegin() + "/"+ patent.getOffsetEnd()+"/"+patent.getOffsetRaw());
+		System.out.println("corresponding span: " + text.substring(patent.getOffsetBegin(), patent.getOffsetEnd()+1));
+		
+		patent = patents.get(3);
+		assertEquals("1000001", patent.getNumber());
+		System.out.println("context=" + patent.getContext());
+		System.out.println("offset start/end/raw=" + patent.getOffsetBegin() + "/"+ patent.getOffsetEnd()+"/"+patent.getOffsetRaw());
+		System.out.println("corresponding span: " + text.substring(patent.getOffsetBegin(), patent.getOffsetEnd()+1));
 	}
 }

@@ -122,7 +122,7 @@ public class PatentRefParser {
 
     public ArrayList<PatentItem> processRawRefText() {
         ArrayList<PatentItem> res = new ArrayList<PatentItem>();
-        System.out.println("processRawRefText: " + rawText);
+        //System.out.println("processRawRefText: " + rawText);
         String country = null;
         while (true) {
             Matcher fitCountry = WO_pattern.matcher(rawText);
@@ -248,7 +248,7 @@ public class PatentRefParser {
                 String toto = fitNumber.group(0);
 
                 int inde_begin = rawText.indexOf(toto) + rawTextOffset;
-                int inde_end = inde_begin + toto.length();
+                int inde_end = inde_begin + toto.length() -1;
                 //toto = toto.replaceAll("(A|B|C|\\s|-|/)", "");
                 //toto = toto.replaceAll("(-)", "");
                 toto = toto.replaceAll("()", "");
@@ -319,7 +319,7 @@ public class PatentRefParser {
             int i = 0;
             for (String number : numbers) {
                 String originalNumber = number;
-                number = number.replace("-", "");
+                number = number.replace("-", " ");
                 // do we have an application or a patent publication?
                 if (country.equals("WO")) {
                     number = number.replaceAll("[\\.\\s]", "");
