@@ -423,7 +423,6 @@ public class ReferenceExtractor implements Closeable {
 
                 StringTokenizer st2 = new StringTokenizer(line, "\t");
                 boolean start = true;
-                boolean addSpace = false;
 				String separator = "";
                 label = null;
                 actual = null;
@@ -437,7 +436,6 @@ public class ReferenceExtractor implements Closeable {
                             String tokOriginal = tokenizations.get(p);
 							addedOffset += tokOriginal.length();
                             if (tokOriginal.equals(" ")) {
-                                addSpace = true;
 								separator += tokOriginal;
                             } else if (tokOriginal.equals(actual)) {
                                 strop = true;
@@ -458,10 +456,7 @@ public class ReferenceExtractor implements Closeable {
                 if (actual != null) {
                     if (label.endsWith("<refPatent>")) {
                         if (reference == null) {
-							if (addSpace) {
-                                reference = separator + actual;
-							} else
-                            	reference = actual;
+                            reference = separator + actual;
                             currentOffset = offset;
                             currentPatent = true;
                         } else {
@@ -471,36 +466,23 @@ public class ReferenceExtractor implements Closeable {
                                     offsets_patent.add(currentOffset);
 
                                     currentPatent = true;
-									if (addSpace) {
-		                                reference = separator + actual;
-									} else
-                                    	reference = actual;
+		                            reference = separator + actual;
                                     currentOffset = offset;
                                 } else {
-                                    //if (offsets.contains(new Integer(offset))) {
-                                    if (addSpace) {
-                                        reference += separator + actual;
-                                    } else
-                                        reference += actual;
+                                    reference += separator + actual;
                                 }
                             } else {
                                 referencesNPL.add(reference);
                                 offsets_NPL.add(currentOffset);
 
                                 currentPatent = true;
-								if (addSpace) {
-	                                reference = separator + actual;
-								} else
-                                	reference = actual;
+	                            reference = separator + actual;
                                 currentOffset = offset;
                             }
                         }
                     } else if (label.endsWith("<refNPL>")) {
                         if (reference == null) {
-							if (addSpace) {
-                                reference = separator + actual;
-							} else
-                            	reference = actual;
+                            reference = separator + actual;
                             currentOffset = offset;
                             currentPatent = false;
                         } else {
@@ -509,10 +491,7 @@ public class ReferenceExtractor implements Closeable {
                                 offsets_patent.add(currentOffset);
 
                                 currentPatent = false;
-								if (addSpace) {
-	                                reference = separator + actual;
-								} else
-                                	reference = actual;
+	                            reference = separator + actual;
                                 currentOffset = offset;
                             } else {
                                 if (label.equals("I-<refNPL>")) {
@@ -520,17 +499,10 @@ public class ReferenceExtractor implements Closeable {
                                     offsets_NPL.add(currentOffset);
 
                                     currentPatent = false;
-									if (addSpace) {
-		                                reference = separator + actual;
-									} else
-                                    	reference = actual;
+		                            reference = separator + actual;
                                     currentOffset = offset;
                                 } else {
-                                    //if (offsets.contains(new Integer(offset))) {
-                                    if (addSpace) {
-                                        reference += separator + actual;
-                                    } else
-                                        reference += actual;
+                                    reference += separator + actual;
                                 }
                             }
                         }
