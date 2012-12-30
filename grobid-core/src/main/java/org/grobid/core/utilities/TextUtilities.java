@@ -21,8 +21,28 @@ import java.util.StringTokenizer;
  */
 public class TextUtilities {
 
-    public static final String punctuations = " ,:;?.!)-–\"“”‘’'`]*\u2666\u2665\u2663\u2660";
+	public static final String punctuations = " ,:;?.!)-–\"“”‘’'`]*\u2666\u2665\u2663\u2660";
     public static final String fullPunctuations = "([ ,:;?.!/)-–\"“”‘’'`]*\u2666\u2665\u2663\u2660";
+    public static String delimiters = " \n\t" + fullPunctuations;
+
+	public static final String OR = "|";
+	public static final String NEW_LINE = "\n";
+    public static final String SPACE = " ";
+    public static final String COMMA = ",";
+    public static final String QUOTE = "'";
+    public static final String END_BRACKET = ")";
+    public static final String START_BRACKET = "(";
+    public static final String SHARP = "#";
+    public static final String COLON = ":";
+    public static final String DOUBLE_QUOTE="\"";
+    public static final String ESC_DOUBLE_QUOTE="&quot;";
+	public static final String LESS_THAN = "<";
+	public static final String ESC_LESS_THAN = "&lt;";
+	public static final String GREATER_THAN = ">";
+	public static final String ESC_GREATER_THAN = "&gt;";
+	public static final String AND = "&";
+	public static final String ESC_AND = "&amp;";
+	public static final String SLASH = "/";
 
     /**
      * Replace numbers in the string by a dummy character for string distance evaluations
@@ -126,7 +146,7 @@ public class TextUtilities {
                     if (ind0 != -1) {
                         lastToken = line.substring(ind0 + 1, line.length() - 1);
                         line = line.substring(0, ind0 + 1);
-                        res += " " + line;
+                        res += SPACE + line;
                     } else
                         lastToken = line.substring(0, line.length() - 1);
                 } else {
@@ -134,11 +154,11 @@ public class TextUtilities {
                         res += line;
                         failure = false;
                     } else
-                        res += " " + line;
+                        res += SPACE + line;
                 }
             }
         }
-        res = res.replace("  ", " ");
+        res = res.replace("  ", SPACE);
         return res;
     }
 
@@ -157,7 +177,7 @@ public class TextUtilities {
         String res = "";
 
 
-        text.replaceAll("\n", " ");
+        text.replaceAll("\n", SPACE);
 
         StringTokenizer st = new StringTokenizer(text, "-");
         boolean hyphen = false;
@@ -210,11 +230,11 @@ public class TextUtilities {
                 res += section;
                 failure = false;
             } else
-                res += " " + section;
+                res += SPACE + section;
         }
 
         res = res.replace(" . ", ". ");
-        res = res.replace("  ", " ");
+        res = res.replace("  ", SPACE);
 
         return res.trim();
     }
@@ -524,7 +544,7 @@ public class TextUtilities {
             while (!stop) {
                 stop = true;
                 for (String word : stopwords) {
-                    if (input.endsWith(" " + word)) {
+                    if (input.endsWith(SPACE + word)) {
                         input = input.substring(0, input.length() - word.length()).trim();
                         stop = false;
                         break;
@@ -881,27 +901,27 @@ public class TextUtilities {
                 }
                 // typical author/affiliation markers
                 case '\u2020': {
-                    res += " ";
+                    res += SPACE;
                     break;
                 }
                 case '\u2021': {
-                    res += " ";
+                    res += SPACE;
                     break;
                 }
                 case '\u00A7': {
-                    res += " ";
+                    res += SPACE;
                     break;
                 }
                 case '\u00B6': {
-                    res += " ";
+                    res += SPACE;
                     break;
                 }
                 case '\u204B': {
-                    res += " ";
+                    res += SPACE;
                     break;
                 }
                 case '\u01C2': {
-                    res += " ";
+                    res += SPACE;
                     break;
                 }
                 // default
@@ -959,20 +979,20 @@ public class TextUtilities {
             variants.add(lastName);
 
             if (firstName != null) {
-                variants.add(firstName + " " + lastName);
-                variants.add(lastName + " " + firstName);
+                variants.add(firstName + SPACE + lastName);
+                variants.add(lastName + SPACE + firstName);
 
                 if (firstName.length()>1) {
                     String firstInitial = firstName.substring(0,1);
 
-                    variants.add(firstInitial + " " + lastName);
-                    variants.add(lastName + " " + firstInitial);
+                    variants.add(firstInitial + SPACE + lastName);
+                    variants.add(lastName + SPACE + firstInitial);
                 }
 
                 if (lastName.length()>1) {
                     String lastInitial = lastName.substring(0,1);
 
-                    variants.add(firstName + " " + lastInitial);
+                    variants.add(firstName + SPACE + lastInitial);
                 }
             }
         } else {
