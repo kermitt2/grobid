@@ -55,8 +55,7 @@ public class GrobidRestService implements GrobidPathes {
 	/**
 	 * The class Logger.
 	 */
-	private static final Logger LOGGER = LoggerFactory
-			.getLogger(GrobidRestService.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(GrobidRestService.class);
 
 	private static final String NAMES = "names";
 	private static final String DATE = "date";
@@ -120,9 +119,8 @@ public class GrobidRestService implements GrobidPathes {
 	@Consumes(MediaType.MULTIPART_FORM_DATA)
 	@Produces(MediaType.APPLICATION_XML)
 	@POST
-	public Response processHeaderDocument_post(InputStream inputStream) {
-		return GrobidRestProcessFiles.processStatelessHeaderDocument(
-				inputStream, false);
+	public Response processHeaderDocument_post(InputStream inputStream) throws Exception {
+		return GrobidRestProcessFiles.processStatelessHeaderDocument(inputStream, false);
 	}
 
 	/**
@@ -133,8 +131,7 @@ public class GrobidRestService implements GrobidPathes {
 	@Produces(MediaType.APPLICATION_XML)
 	@PUT
 	public Response processStatelessHeaderDocument(InputStream inputStream) {
-		return GrobidRestProcessFiles.processStatelessHeaderDocument(
-				inputStream, false);
+		return GrobidRestProcessFiles.processStatelessHeaderDocument(inputStream, false);
 	}
 
 	/**
@@ -145,8 +142,7 @@ public class GrobidRestService implements GrobidPathes {
 	@Produces(MediaType.APPLICATION_XML)
 	@POST
 	public Response processHeaderDocument_postHTML(InputStream inputStream) {
-		return GrobidRestProcessFiles.processStatelessHeaderDocument(
-				inputStream, true);
+		return GrobidRestProcessFiles.processStatelessHeaderDocument(inputStream, true);
 	}
 
 	/**
@@ -157,8 +153,7 @@ public class GrobidRestService implements GrobidPathes {
 	@Produces(MediaType.APPLICATION_XML)
 	@PUT
 	public Response processStatelessHeaderDocumentHTML(InputStream inputStream) {
-		return GrobidRestProcessFiles.processStatelessHeaderDocument(
-				inputStream, true);
+		return GrobidRestProcessFiles.processStatelessHeaderDocument(inputStream, true);
 	}
 
 	/**
@@ -169,8 +164,7 @@ public class GrobidRestService implements GrobidPathes {
 	@Produces(MediaType.APPLICATION_XML)
 	@POST
 	public Response processFulltextDocument_post(InputStream inputStream) {
-		return GrobidRestProcessFiles.processStatelessFulltextDocument(
-				inputStream, false);
+		return GrobidRestProcessFiles.processStatelessFulltextDocument(inputStream, false);
 	}
 
 	/**
@@ -181,8 +175,7 @@ public class GrobidRestService implements GrobidPathes {
 	@Produces(MediaType.APPLICATION_XML)
 	@PUT
 	public Response processStatelessFulltextDocument(InputStream inputStream) {
-		return GrobidRestProcessFiles.processStatelessFulltextDocument(
-				inputStream, false);
+		return GrobidRestProcessFiles.processStatelessFulltextDocument(inputStream, false);
 	}
 
 	/**
@@ -193,8 +186,7 @@ public class GrobidRestService implements GrobidPathes {
 	@Produces(MediaType.APPLICATION_XML)
 	@POST
 	public Response processFulltextDocument_postHTML(InputStream inputStream) {
-		return GrobidRestProcessFiles.processStatelessFulltextDocument(
-				inputStream, true);
+		return GrobidRestProcessFiles.processStatelessFulltextDocument(inputStream, true);
 	}
 
 	/**
@@ -205,8 +197,7 @@ public class GrobidRestService implements GrobidPathes {
 	@Produces(MediaType.APPLICATION_XML)
 	@PUT
 	public Response processStatelessFulltextDocumentHTML(InputStream inputStream) {
-		return GrobidRestProcessFiles.processStatelessFulltextDocument(
-				inputStream, true);
+		return GrobidRestProcessFiles.processStatelessFulltextDocument(inputStream, true);
 	}
 
 	/**
@@ -282,8 +273,7 @@ public class GrobidRestService implements GrobidPathes {
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
 	@Produces(MediaType.TEXT_PLAIN)
 	@POST
-	public Response processAffiliations_post(
-			@FormParam(AFFILIATIONS) String affiliations) {
+	public Response processAffiliations_post(@FormParam(AFFILIATIONS) String affiliations) {
 		return GrobidRestProcessString.processAffiliations(affiliations);
 	}
 
@@ -294,8 +284,7 @@ public class GrobidRestService implements GrobidPathes {
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
 	@Produces(MediaType.TEXT_PLAIN)
 	@PUT
-	public Response processAffiliations(
-			@FormParam(AFFILIATIONS) String affiliation) {
+	public Response processAffiliations(@FormParam(AFFILIATIONS) String affiliation) {
 		return GrobidRestProcessString.processAffiliations(affiliation);
 	}
 
