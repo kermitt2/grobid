@@ -33,8 +33,7 @@ public class GrobidRestProcessFiles {
 	/**
 	 * The class Logger.
 	 */
-	private static final Logger LOGGER = LoggerFactory
-			.getLogger(GrobidRestProcessFiles.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(GrobidRestProcessFiles.class);
 
 	/**
 	 * Uploads the origin document which shall be extracted into TEI and
@@ -47,8 +46,7 @@ public class GrobidRestProcessFiles {
 	 * @return a response object which contains a TEI representation of the
 	 *         header part
 	 */
-	public static Response processStatelessHeaderDocument(
-			InputStream inputStream, boolean htmlFormat) {
+	public static Response processStatelessHeaderDocument(InputStream inputStream, boolean htmlFormat) {
 		LOGGER.debug(methodLogIn());
 		Response response = null;
 		String retVal = null;
@@ -59,18 +57,15 @@ public class GrobidRestProcessFiles {
 			originFile = GrobidRestUtils.writeInputFile(inputStream);
 
 			if (originFile == null) {
-				response = Response.status(Status.INTERNAL_SERVER_ERROR)
-						.build();
+				response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
 			} else {
 				// starts conversion process
 				engine = GrobidRestUtils.getEngine(isparallelExec);
 				if (isparallelExec) {
-					retVal = engine.processHeader(originFile.getAbsolutePath(),
-							false, null);
+					retVal = engine.processHeader(originFile.getAbsolutePath(), false, null);
 				} else {
 					synchronized (engine) {
-						retVal = engine.processHeader(
-								originFile.getAbsolutePath(), false, null);
+						retVal = engine.processHeader(originFile.getAbsolutePath(), false, null);
 					}
 				}
 
@@ -78,12 +73,9 @@ public class GrobidRestProcessFiles {
 					response = Response.status(Status.NO_CONTENT).build();
 				} else {
 					if (htmlFormat) {
-						response = Response.status(Status.OK)
-								.entity(formatAsHTML(retVal))
-								.type(MediaType.APPLICATION_XML).build();
+						response = Response.status(Status.OK).entity(formatAsHTML(retVal)).type(MediaType.APPLICATION_XML).build();
 					} else {
-						response = Response.status(Status.OK).entity(retVal)
-								.type(MediaType.APPLICATION_XML).build();
+						response = Response.status(Status.OK).entity(retVal).type(MediaType.APPLICATION_XML).build();
 					}
 				}
 			}
@@ -115,8 +107,7 @@ public class GrobidRestProcessFiles {
 	 * @throws SAXException
 	 * @throws IOException
 	 */
-	protected static String formatAsHTML(String tei) throws SAXException,
-			IOException {
+	protected static String formatAsHTML(String tei) throws SAXException, IOException {
 		XMLReader xmlr = XMLReaderFactory.createXMLReader();
 		Xml2HtmlParser parser = new Xml2HtmlParser();
 		xmlr.setContentHandler(parser);
@@ -134,8 +125,7 @@ public class GrobidRestProcessFiles {
 	 *            zip containing the datas of origin document.
 	 * @return Response containing the TEI files representing the header part.
 	 */
-	public static Response processStatelessBulkHeaderDocument(
-			InputStream inputStream) {
+	public static Response processStatelessBulkHeaderDocument(InputStream inputStream) {
 		LOGGER.debug(methodLogIn());
 		Response response = null;
 		LOGGER.debug(methodLogIn());
@@ -161,8 +151,7 @@ public class GrobidRestProcessFiles {
 	 * @return a response object mainly contain the TEI representation of the
 	 *         full text
 	 */
-	public static Response processStatelessFulltextDocument(
-			InputStream inputStream, boolean htmlFormat) {
+	public static Response processStatelessFulltextDocument(InputStream inputStream, boolean htmlFormat) {
 		LOGGER.debug(methodLogIn());
 		Response response = null;
 		String retVal = null;
@@ -173,19 +162,16 @@ public class GrobidRestProcessFiles {
 			originFile = GrobidRestUtils.writeInputFile(inputStream);
 
 			if (originFile == null) {
-				response = Response.status(Status.INTERNAL_SERVER_ERROR)
-						.build();
+				response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
 			} else {
 				// starts conversion process
 				engine = GrobidRestUtils.getEngine(isparallelExec);
 				if (isparallelExec) {
-					retVal = engine.fullTextToTEI(originFile.getAbsolutePath(),
-							false, false);
+					retVal = engine.fullTextToTEI(originFile.getAbsolutePath(), false, false);
 					GrobidPoolingFactory.returnEngine(engine);
 				} else {
 					synchronized (engine) {
-						retVal = engine.fullTextToTEI(
-								originFile.getAbsolutePath(), false, false);
+						retVal = engine.fullTextToTEI(originFile.getAbsolutePath(), false, false);
 					}
 				}
 
@@ -195,12 +181,9 @@ public class GrobidRestProcessFiles {
 					response = Response.status(Status.NO_CONTENT).build();
 				} else {
 					if (htmlFormat) {
-						response = Response.status(Status.OK)
-								.entity(formatAsHTML(retVal))
-								.type(MediaType.APPLICATION_XML).build();
+						response = Response.status(Status.OK).entity(formatAsHTML(retVal)).type(MediaType.APPLICATION_XML).build();
 					} else {
-						response = Response.status(Status.OK).entity(retVal)
-								.type(MediaType.APPLICATION_XML).build();
+						response = Response.status(Status.OK).entity(retVal).type(MediaType.APPLICATION_XML).build();
 					}
 				}
 			}
@@ -224,16 +207,14 @@ public class GrobidRestProcessFiles {
 	 * @return
 	 */
 	public static String methodLogIn() {
-		return ">> " + GrobidRestProcessFiles.class.getName() + "."
-				+ Thread.currentThread().getStackTrace()[1].getMethodName();
+		return ">> " + GrobidRestProcessFiles.class.getName() + "." + Thread.currentThread().getStackTrace()[1].getMethodName();
 	}
 
 	/**
 	 * @return
 	 */
 	public static String methodLogOut() {
-		return "<< " + GrobidRestProcessFiles.class.getName() + "."
-				+ Thread.currentThread().getStackTrace()[1].getMethodName();
+		return "<< " + GrobidRestProcessFiles.class.getName() + "." + Thread.currentThread().getStackTrace()[1].getMethodName();
 	}
 
 }
