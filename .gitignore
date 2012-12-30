@@ -1,23 +1,18 @@
 target
 grobid-home/tmp
 .DS_Store
+Thumbs.db
 .project
 .settings
 .classpath
-
-
 *.log
 
-grobid-core/log/debug.log
+# *.log
+# grobid-core/log/debug.log
+# *.log
+# grobid-core/log/error.log
+# grobid-core/log/warn.log
+# grobid-core/log/debug.log
+# grobid-core/log/error.log
+# grobid-core/log/warn.log
 
-*.log
-
-grobid-core/log/error.log
-
-grobid-core/log/warn.log
-
-grobid-core/log/debug.log
-
-grobid-core/log/error.log
-
-grobid-core/log/warn.log
