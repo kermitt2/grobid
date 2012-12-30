@@ -288,7 +288,7 @@ public class PatentItem implements Comparable<PatentItem> {
 		else {
 			biblStruct.append("national");
 		}
-		biblStruct.append("\">"+authority+"<orgName></authority>");
+		biblStruct.append("\">"+authority+"</orgName></authority>");
 		biblStruct.append("<idno type=\"docNumber\">"+number+"</idno>");
 		
 		if ((kindCode != null) || (date != null)) {
