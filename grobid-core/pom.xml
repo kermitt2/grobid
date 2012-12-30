@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
@@ -135,6 +134,11 @@
 			<version>1.4.12</version>
 		</dependency>
 
+		<dependency>
+			<groupId>xmlunit</groupId>
+			<artifactId>xmlunit</artifactId>
+			<version>1.3</version>
+		</dependency>
 
 	</dependencies>
 
@@ -191,9 +195,8 @@
 
 		<!--pluginManagement -->
 		<plugins>
-			<!--plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-jar-plugin</artifactId> 
-				<configuration> <archive> <manifest> <mainClass>org.grobid.core.engines.Engine</mainClass> 
-				</manifest> </archive> </configuration> </plugin -->
+			<!--plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-jar-plugin</artifactId> <configuration> <archive> <manifest> <mainClass>org.grobid.core.engines.Engine</mainClass> </manifest> 
+				</archive> </configuration> </plugin -->
 			<plugin>
 				<groupId>com.jolira</groupId>
 				<artifactId>onejar-maven-plugin</artifactId>
@@ -205,8 +208,7 @@
 							<!-- Optional -->
 							<onejarVersion>0.97</onejarVersion>
 							<!-- Optional, use only if you need to include native libraries (dll's) -->
-							<!--binlibs> <fileSet> <directory>${project.build.directory}/dllextract</directory> 
-								<includes> <include>test.dll</include> </includes> </fileSet> </binlibs -->
+							<!--binlibs> <fileSet> <directory>${project.build.directory}/dllextract</directory> <includes> <include>test.dll</include> </includes> </fileSet> </binlibs -->
 							<!-- Optional, default is false -->
 							<attachToBuild>true</attachToBuild>
 							<!-- Optional, default is "onejar" -->
@@ -254,17 +256,13 @@
 					<systemPropertyVariables>
 						<log4j.configuration>log4j-test.properties</log4j.configuration>
 					</systemPropertyVariables>
-					<!--argLine>-Djava.library.path=${basedir}/lib/</argLine> <systemProperties> 
-						<property> <name>java.library.path</name> <value>lib/</value> </property> 
-						</systemProperties -->
+					<!--argLine>-Djava.library.path=${basedir}/lib/</argLine> <systemProperties> <property> <name>java.library.path</name> <value>lib/</value> </property> </systemProperties -->
 				</configuration>
 			</plugin>
 		</plugins>
 		<!--/pluginManagement -->
 	</build>
 
-	<!-- pluginRepositories> <pluginRepository> <id>onejar-maven-plugin.googlecode.com</id> 
-		<url>http://onejar-maven-plugin.googlecode.com/svn/mavenrepo</url> </pluginRepository> 
-		</pluginRepositories -->
+	<!-- pluginRepositories> <pluginRepository> <id>onejar-maven-plugin.googlecode.com</id> <url>http://onejar-maven-plugin.googlecode.com/svn/mavenrepo</url> </pluginRepository> </pluginRepositories -->
 
 </project>
