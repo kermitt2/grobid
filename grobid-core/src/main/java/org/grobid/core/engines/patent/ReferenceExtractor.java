@@ -50,7 +50,7 @@ public class ReferenceExtractor implements Closeable {
     private String tmpPath = null;
     private String pathXML = null;
 
-    public boolean debug = true;
+    public boolean debug = false;
 
     public Lexicon lexicon = Lexicon.getInstance();
     public String currentPatentNumber = null;
