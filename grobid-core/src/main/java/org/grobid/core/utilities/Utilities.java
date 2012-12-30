@@ -11,6 +11,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Method;
 import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -438,6 +440,18 @@ public class Utilities {
 		outStream.close();
 
 		return out.toString();
+	}
+	
+	/**
+	 * Format a date in string using pFormat.
+	 * @param pDate - the date to parse.
+	 * @param pFormat - the format to use following SimpleDateFormat patterns.
+	 * 
+	 * @return the formatted date.
+	 */
+	public static String dateToString(Date pDate, String pFormat){
+		SimpleDateFormat dateFormat = new SimpleDateFormat(pFormat);
+		return dateFormat.format(pDate);
 	}
 
 }
