@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teiCorpus xmlns:ng="http://relaxng.org/ns/structure/1.0" xmlns:exch="http://www.epo.org/exchange" xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader type="family">
+        <fileDesc>
+            <titleStmt>
+                <title>Patent family information</title>
+                <funder>European Patent Office</funder>
+                <sponsor>AM DG1</sponsor>
+            </titleStmt>
+            <publicationStmt>
+                <authority>European Patent Office</authority>
+                <availability status="restricted">
+                    <p>Available with prior consent of the European Patent Office.</p>
+                </availability>
+            </publicationStmt>
+            <sourceDesc>
+                <bibl type="patent-family">
+                    <idno type="family-id">20000006</idno>
+                </bibl>
+                <listBibl type="priority-claims">
+                    <biblStruct status="application" subtype="docdb" rend="1" type="patent">
+                        <monogr>
+                            <authority>
+                                <orgName type="national">PL</orgName>
+                            </authority>
+                            <idno>22037979</idno>
+                            <imprint>
+                                <idno type="kindCode">A</idno>
+                            </imprint>
+                            <date>19791213</date>
+                        </monogr>
+                        <idno type="exch:priority-active-indicator">Y</idno>
+                    </biblStruct>
+                </listBibl>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <teiCorpus>
+        <teiHeader type="application">
+            <fileDesc>
+                <titleStmt>
+                    <title>Patent application information</title>
+                </titleStmt>
+                <publicationStmt>
+                    <authority>European Patent Office</authority>
+                </publicationStmt>
+                <sourceDesc>
+                    <biblStruct status="application" subtype="docdb" type="patent">
+                        <monogr>
+                            <authority>
+                                <orgName type="national">PL</orgName>
+                            </authority>
+                            <idno>22037979</idno>
+                            <imprint>
+                                <idno type="kindCode">A</idno>
+                            </imprint>
+                            <date>19791213</date>
+                        </monogr>
+                        <idno type="doc-id">42338149</idno>
+                        <idno type="is-representative">NO</idno>
+                    </biblStruct>
+                    <biblStruct status="application" subtype="epodoc" type="patent">
+                        <monogr>
+                            <idno>PL19790220379</idno>
+                        </monogr>
+                    </biblStruct>
+                    <biblStruct status="application" subtype="original" type="patent">
+                        <monogr>
+                            <idno>1979      220379</idno>
+                        </monogr>
+                    </biblStruct>
+                </sourceDesc>
+            </fileDesc>
+        </teiHeader>
+        <TEI>
+            <teiHeader type="publication">
+                <fileDesc>
+                    <titleStmt>
+                        <title subtype="docdba" xml:lang="en" type="invention-title">WAVEGUIDE LOOP COUPLER</title>
+                    </titleStmt>
+                    <publicationStmt>
+                        <authority>European Patent Office</authority>
+                    </publicationStmt>
+                    <notesStmt>
+                        <note type="exchange-document">
+                            <idno type="country">PL</idno>
+                            <idno type="doc-number">126124</idno>
+                            <idno type="kind">B1</idno>
+                            <idno type="date-publ">19830730</idno>
+                            <idno type="family-id">20000006</idno>
+                            <idno type="is-representative">NO</idno>
+                            <idno type="date-of-last-exchange">20120202</idno>
+                            <idno type="date-added-docdb">20021026</idno>
+                            <idno type="originating-office">EP</idno>
+                        </note>
+                    </notesStmt>
+                    <sourceDesc>
+                        <biblStruct status="publication" subtype="docdb" type="patent">
+                            <monogr>
+                                <authority>
+                                    <orgName type="national">PL</orgName>
+                                </authority>
+                                <idno>126124</idno>
+                                <imprint>
+                                    <idno type="kindCode">B1</idno>
+                                </imprint>
+                                <date>19830730</date>
+                            </monogr>
+                        </biblStruct>
+                        <biblStruct status="publication" subtype="epodoc" type="patent">
+                            <monogr>
+                                <idno>PL126124B</idno>
+                            </monogr>
+                        </biblStruct>
+                        <listBibl type="priority-claims">
+                            <biblStruct status="application" subtype="docdb" rend="1" type="patent">
+                                <monogr>
+                                    <authority>
+                                        <orgName type="national">PL</orgName>
+                                    </authority>
+                                    <idno>22037979</idno>
+                                    <imprint>
+                                        <idno type="kindCode">A</idno>
+                                    </imprint>
+                                    <date>19791213</date>
+                                </monogr>
+                                <idno type="exch:priority-active-indicator">Y</idno>
+                            </biblStruct>
+                            <biblStruct status="application" subtype="epodoc" rend="1" type="patent">
+                                <monogr>
+                                    <idno>PL19790220379</idno>
+                                </monogr>
+                            </biblStruct>
+                            <biblStruct status="application" subtype="original" rend="1" type="patent">
+                                <monogr>
+                                    <idno>1979      220379</idno>
+                                </monogr>
+                            </biblStruct>
+                        </listBibl>
+                        <list type="additional-bibliographic-information">
+                            <item type="dates-of-public-availability">
+                                <list>
+                                    <item type="printed-with-grant">
+                                        <biblStruct>
+                                            <monogr>
+                                                <date>19830730</date>
+                                            </monogr>
+                                        </biblStruct>
+                                    </item>
+                                </list>
+                            </item>
+                        </list>
+                    </sourceDesc>
+                </fileDesc>
+                <profileDesc>
+                    <textClass type="classification-ipc">
+                        <classCode scheme="ipc">
+                            <term type="main-classification">H 01P   5/18   A</term>
+                        </classCode>
+                    </textClass>
+                    <textClass type="classifications-ipcr">
+                        <classCode scheme="ipcr" rend="1">
+                            <idno type="text">H01P               20060101S I20051110RMEP</idno>
+                        </classCode>
+                        <classCode scheme="ipcr" rend="2">
+                            <idno type="text">H01P   5/18        20060101A I20051110RMEP</idno>
+                        </classCode>
+                    </textClass>
+                </profileDesc>
+            </teiHeader>
+            <text>
+                <front/>
+                <body>
+                    <p/>
+                </body>
+            </text>
+        </TEI>
+        <TEI>
+            <teiHeader type="publication">
+                <fileDesc>
+                    <titleStmt>
+                        <title>Patent publication information</title>
+                    </titleStmt>
+                    <publicationStmt>
+                        <authority>European Patent Office</authority>
+                    </publicationStmt>
+                    <notesStmt>
+                        <note type="exchange-document">
+                            <idno type="country">PL</idno>
+                            <idno type="doc-number">220379</idno>
+                            <idno type="kind">A1</idno>
+                            <idno type="date-publ">19810619</idno>
+                            <idno type="family-id">20000006</idno>
+                            <idno type="is-representative">YES</idno>
+                            <idno type="date-of-last-exchange">20120202</idno>
+                            <idno type="date-added-docdb">20000424</idno>
+                            <idno type="originating-office">EP</idno>
+                        </note>
+                    </notesStmt>
+                    <sourceDesc>
+                        <biblStruct status="publication" subtype="docdb" type="patent">
+                            <monogr>
+                                <authority>
+                                    <orgName type="national">PL</orgName>
+                                </authority>
+                                <idno>220379</idno>
+                                <imprint>
+                                    <idno type="kindCode">A1</idno>
+                                </imprint>
+                                <date>19810619</date>
+                            </monogr>
+                        </biblStruct>
+                        <biblStruct status="publication" subtype="epodoc" type="patent">
+                            <monogr>
+                                <idno>PL220379</idno>
+                            </monogr>
+                        </biblStruct>
+                        <listBibl type="priority-claims">
+                            <biblStruct status="application" subtype="docdb" rend="1" type="patent">
+                                <monogr>
+                                    <authority>
+                                        <orgName type="national">PL</orgName>
+                                    </authority>
+                                    <idno>22037979</idno>
+                                    <imprint>
+                                        <idno type="kindCode">A</idno>
+                                    </imprint>
+                                    <date>19791213</date>
+                                </monogr>
+                                <idno type="exch:priority-active-indicator">Y</idno>
+                            </biblStruct>
+                            <biblStruct status="application" subtype="epodoc" rend="1" type="patent">
+                                <monogr>
+                                    <idno>PL19790220379</idno>
+                                </monogr>
+                            </biblStruct>
+                        </listBibl>
+                        <list type="additional-bibliographic-information">
+                            <item type="parties">
+                                <listPerson type="inventors">
+                                    <person rend="1" role="inventor" type="docdb">
+                                        <persName>KULINSKI JOZEF</persName>
+                                    </person>
+                                </listPerson>
+                                <list type="applicants">
+                                    <item rend="1" type="docdb">
+                                        <name>PRZEMYSLOWY INST TELEKOMUN</name>
+                                        <country subtype="residence" type="national">PL</country>
+                                    </item>
+                                </list>
+                            </item>
+                            <item type="dates-of-public-availability">
+                                <list>
+                                    <item type="unexamined-not-printed-without-grant">
+                                        <biblStruct>
+                                            <monogr>
+                                                <date>19810619</date>
+                                            </monogr>
+                                        </biblStruct>
+                                    </item>
+                                </list>
+                            </item>
+                        </list>
+                    </sourceDesc>
+                </fileDesc>
+                <profileDesc>
+                    <textClass type="classification-ipc">
+                        <classCode scheme="ipc">
+                            <term type="main-classification">H 01P    /     A</term>
+                        </classCode>
+                    </textClass>
+                    <textClass type="classifications-ipcr">
+                        <classCode scheme="ipcr" rend="1">
+                            <idno type="text">H01P               20060101S I20051110RMEP</idno>
+                        </classCode>
+                        <classCode scheme="ipcr" rend="2">
+                            <idno type="text">H01P   5/18        20060101A I20051110RMEP</idno>
+                        </classCode>
+                    </textClass>
+                </profileDesc>
+            </teiHeader>
+            <text>
+                <front/>
+                <body>
+                    <p/>
+                </body>
+            </text>
+        </TEI>
+    </teiCorpus>
+</teiCorpus>
