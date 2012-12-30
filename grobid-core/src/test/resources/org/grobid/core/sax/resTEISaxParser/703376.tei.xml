@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teiCorpus xmlns:ng="http://relaxng.org/ns/structure/1.0" xmlns:exch="http://www.epo.org/exchange" xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader type="family">
+        <fileDesc>
+            <titleStmt>
+                <title>Patent family information</title>
+                <funder>European Patent Office</funder>
+                <sponsor>AM DG1</sponsor>
+            </titleStmt>
+            <publicationStmt>
+                <authority>European Patent Office</authority>
+                <availability status="restricted">
+                    <p>Available with prior consent of the European Patent Office.</p>
+                </availability>
+            </publicationStmt>
+            <sourceDesc>
+                <bibl type="patent-family">
+                    <idno type="family-id">703376</idno>
+                </bibl>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <teiCorpus>
+        <teiHeader type="application">
+            <fileDesc>
+                <titleStmt>
+                    <title>Patent application information</title>
+                </titleStmt>
+                <publicationStmt>
+                    <authority>European Patent Office</authority>
+                </publicationStmt>
+                <sourceDesc>
+                    <biblStruct status="application" subtype="docdb" type="patent">
+                        <monogr>
+                            <authority>
+                                <orgName type="national">DE</orgName>
+                            </authority>
+                            <idno>1391753D</idno>
+                            <imprint>
+                                <idno type="kindCode">U</idno>
+                            </imprint>
+                        </monogr>
+                        <idno type="doc-id">13238773</idno>
+                        <idno type="is-representative">YES</idno>
+                    </biblStruct>
+                    <biblStruct status="application" subtype="epodoc" type="patent">
+                        <monogr>
+                            <idno>DED1391753U</idno>
+                        </monogr>
+                    </biblStruct>
+                </sourceDesc>
+            </fileDesc>
+        </teiHeader>
+        <TEI>
+            <teiHeader type="publication">
+                <fileDesc>
+                    <titleStmt>
+                        <title>Patent publication information</title>
+                    </titleStmt>
+                    <publicationStmt>
+                        <authority>European Patent Office</authority>
+                    </publicationStmt>
+                    <notesStmt>
+                        <note type="exchange-document">
+                            <idno type="country">DE</idno>
+                            <idno type="doc-number">1391753</idno>
+                            <idno type="kind">U</idno>
+                            <idno type="family-id">703376</idno>
+                            <idno type="is-representative">YES</idno>
+                            <idno type="date-of-last-exchange">20120202</idno>
+                            <idno type="date-added-docdb">20010818</idno>
+                            <idno type="originating-office">EP</idno>
+                        </note>
+                    </notesStmt>
+                    <sourceDesc>
+                        <biblStruct status="publication" subtype="docdb" type="patent">
+                            <monogr>
+                                <authority>
+                                    <orgName type="national">DE</orgName>
+                                </authority>
+                                <idno>1391753</idno>
+                                <imprint>
+                                    <idno type="kindCode">U</idno>
+                                </imprint>
+                            </monogr>
+                        </biblStruct>
+                        <biblStruct status="publication" subtype="epodoc" type="patent">
+                            <monogr>
+                                <idno>DE1391753U</idno>
+                            </monogr>
+                        </biblStruct>
+                    </sourceDesc>
+                </fileDesc>
+            </teiHeader>
+            <text>
+                <front/>
+                <body>
+                    <p/>
+                </body>
+            </text>
+        </TEI>
+    </teiCorpus>
+</teiCorpus>

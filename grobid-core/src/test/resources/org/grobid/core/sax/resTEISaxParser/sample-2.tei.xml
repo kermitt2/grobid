@@ -1,0 +1,205 @@
+<teiCorpus xmlns:ng="http://relaxng.org/ns/structure/1.0"
+	xmlns:exch="http://www.epo.org/exchange" xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader type="family">...</teiHeader>
+	<teiCorpus>
+		<teiHeader type="application">...</teiHeader>
+		<TEI>
+			<teiHeader type="publication">
+				<fileDesc>
+					<titleStmt>...</titleStmt>
+					<publicationStmt>...</publicationStmt>
+					<notesStmt>
+						<note type="exchange-document">
+							<idno type="country">US</idno>
+							<idno type="doc-number">4014076</idno>
+							<idno type="kind">A</idno>
+							<idno type="date-publ">19770329</idno>
+							<idno type="family-id">24514352</idno>
+							<idno type="is-representative">YES</idno>
+							<idno type="date-of-last-exchange">20120202</idno>
+							<idno type="date-added-docdb">20000501</idno>
+							<idno type="originating-office">EP</idno>
+						</note>
+						<note type="abstract-information">
+							<idno type="lang">en</idno>
+							<idno type="data-format">docdba</idno>
+							<idno type="abstract-source">translation</idno>
+						</note>
+						<note type="standoff-annotation" subtype="automatic">
+							<author>author</author>
+							<date>date</date>
+							<ptr>the pointer</ptr>
+							Some annotation
+						</note>
+					</notesStmt>
+				</fileDesc>
+				<profileDesc>
+					<textClass type="classification-ipc">
+						<classCode scheme="ipc">
+							<term type="main-classification">D 01G 9/16 A</term>
+						</classCode>
+					</textClass>
+					<textClass type="classifications-ipcr">
+						<classCode scheme="ipcr" rend="1">
+							<idno type="text">D01G 9/06 20060101A I20051008RMEP</idno>
+						</classCode>
+					</textClass>
+					<textClass type="classification-national">
+						<classCode scheme="national">
+							<idno type="text">19 96</idno>
+						</classCode>
+					</textClass>
+				</profileDesc>
+			</teiHeader>
+			<text>
+				<body xmlns:ng="http://relaxng.org/ns/structure/1.0"
+					xmlns:exch="http://www.epo.org/exchange" xmlns="http://www.tei-c.org/ns/1.0"
+					xmlns:xalan="http://xml.apache.org/xalan">
+					
+					<div xml:lang="en" type="description">
+						<p xml:lang="en">First description.</p>
+   						<p xml:lang="en">This desciption was </p>
+   						<p xml:lang="en">published by ABBS Editorial Office in association with Oxford University Press on behalf of the Institute of Biochemistry and Cell Biology, Shanghai Institutes for Biological Sciences, Chinese Academy of Sciences.</p>
+					   	<p xml:lang="en">Some other description. </p>
+					   	<p xml:lang="en">ref. US 2011/0155847 A1 aerodynamic and applied physics. </p>
+					   	<p xml:id="ptId1" xml:lang="en">This patent, ref. US 7930197 says data mining of personal data is patented.</p>
+					   	<p xml:lang="en" xml:id="1">That article refers to Economic Development Quarterly November 2011 25: 353-365, first published on August 25, 2011.</p>
+   						<p xml:lang="en">Third description.</p>
+   						<p xml:lang="en">First description.</p>
+   						<p xml:lang="en">This desciption was </p>
+   						<p xml:lang="en">published by ABBS Editorial Office in association with Oxford University Press on behalf of the Institute of Biochemistry and Cell Biology, Shanghai Institutes for Biological Sciences, Chinese Academy of Sciences.</p>
+   						<p xml:lang="en">Some other description. </p>
+					</div>
+					<div xml:lang="en" type="description2">
+					</div>
+					<div xml:lang="en" type="description3">
+						<p>Some description.</p>
+					</div>
+				</body>
+			</text>
+		</TEI>
+		<TEI>
+			<teiHeader type="publication">
+				<fileDesc>
+					<titleStmt>...</titleStmt>
+					<publicationStmt>...</publicationStmt>
+					<notesStmt>
+						<note type="exchange-document">
+							<idno type="country">US</idno>
+							<idno type="doc-number">5014076</idno>
+							<idno type="kind">A</idno>
+							<idno type="date-publ">19770329</idno>
+							<idno type="family-id">24514352</idno>
+							<idno type="is-representative">YES</idno>
+							<idno type="date-of-last-exchange">20120202</idno>
+							<idno type="date-added-docdb">20000501</idno>
+							<idno type="originating-office">EP</idno>
+						</note>
+						<note type="abstract-information">
+							<idno type="lang">en</idno>
+							<idno type="data-format">docdba</idno>
+							<idno type="abstract-source">translation</idno>
+						</note>
+					</notesStmt>
+				</fileDesc>
+				<profileDesc>
+					<textClass type="classification-ipc">
+						<classCode scheme="ipc">
+							<term type="main-classification">D 01G 9/16 A</term>
+						</classCode>
+					</textClass>
+					<textClass type="classifications-ipcr">
+						<classCode scheme="ipcr" rend="1">
+							<idno type="text">D01G 9/06 20060101A I20051008RMEP</idno>
+						</classCode>
+					</textClass>
+					<textClass type="classification-national">
+						<classCode scheme="national">
+							<idno type="text">19 96</idno>
+						</classCode>
+					</textClass>
+				</profileDesc>
+			</teiHeader>
+			<text>
+				<body xmlns:ng="http://relaxng.org/ns/structure/1.0"
+					xmlns:exch="http://www.epo.org/exchange" xmlns="http://www.tei-c.org/ns/1.0"
+					xmlns:xalan="http://xml.apache.org/xalan">
+					<div xml:lang="en" type="description">
+						<p xml:lang="en">First description.</p>
+   						<p xml:lang="en">This desciption was </p>
+   						<p xml:lang="en">published by ABBS Editorial Office in association with Oxford University Press on behalf of the Institute of Biochemistry and Cell Biology, Shanghai Institutes for Biological Sciences, Chinese Academy of Sciences.</p>
+					   	<p xml:lang="en">Some other description. </p>
+					</div>
+				</body>
+			</text>
+		</TEI>
+	</teiCorpus>
+
+	<teiCorpus>
+		<teiHeader type="application">...</teiHeader>
+		<TEI>
+			<teiHeader type="publication">
+				<fileDesc>
+					<titleStmt>...</titleStmt>
+					<publicationStmt>...</publicationStmt>
+					<notesStmt>
+						<note type="exchange-document">
+							<idno type="country">US</idno>
+							<idno type="doc-number">6664076</idno>
+							<idno type="kind">A</idno>
+							<idno type="date-publ">19770329</idno>
+							<idno type="family-id">24514352</idno>
+							<idno type="is-representative">YES</idno>
+							<idno type="date-of-last-exchange">20120202</idno>
+							<idno type="date-added-docdb">20000501</idno>
+							<idno type="originating-office">EP</idno>
+						</note>
+						<note type="abstract-information">
+							<idno type="lang">en</idno>
+							<idno type="data-format">docdba</idno>
+							<idno type="abstract-source">translation</idno>
+						</note>
+					</notesStmt>
+				</fileDesc>
+				<profileDesc>
+					<textClass type="classification-ipc">
+						<classCode scheme="ipc">
+							<term type="main-classification">D 01G 9/16 A</term>
+						</classCode>
+					</textClass>
+					<textClass type="classifications-ipcr">
+						<classCode scheme="ipcr" rend="1">
+							<idno type="text">D01G 9/06 20060101A I20051008RMEP</idno>
+						</classCode>
+					</textClass>
+					<textClass type="classification-national">
+						<classCode scheme="national">
+							<idno type="text">19 96</idno>
+						</classCode>
+					</textClass>
+				</profileDesc>
+			</teiHeader>
+			<text>
+				<body xmlns:ng="http://relaxng.org/ns/structure/1.0"
+					xmlns:exch="http://www.epo.org/exchange" xmlns="http://www.tei-c.org/ns/1.0"
+					xmlns:xalan="http://xml.apache.org/xalan">
+					<div xml:lang="en" type="description">
+					   	<p xml:lang="en">ref. US 2011/0155847 A1 aerodynamic and applied physics. </p>
+					   	<p xml:id="ptId1" xml:lang="en">This patent, ref. US 7930197 says data mining of personal data is patented.</p>
+					   	<p xml:lang="en" xml:id="1">That article refers to Economic Development Quarterly November 2011 25: 353-365, first published on August 25, 2011.</p>
+   						<p xml:lang="en">Third description.</p>
+   						<p xml:lang="en">First description.</p>
+   						<p xml:lang="en">First description.</p>
+   						<p xml:lang="en">This desciption was </p>
+   						<p xml:lang="en">published by ABBS Editorial Office in association with Oxford University Press on behalf of the Institute of Biochemistry and Cell Biology, Shanghai Institutes for Biological Sciences, Chinese Academy of Sciences.</p>
+					   	<p xml:lang="en">Some other description. </p>
+   						<p xml:lang="en">This desciption was </p>
+   						<p xml:lang="en">published by ABBS Editorial Office in association with Oxford University Press on behalf of the Institute of Biochemistry and Cell Biology, Shanghai Institutes for Biological Sciences, Chinese Academy of Sciences.</p>
+   						<p xml:lang="en">Some other description. </p>
+					</div>
+				</body>
+			</text>
+		</TEI>
+	</teiCorpus>
+
+</teiCorpus>
