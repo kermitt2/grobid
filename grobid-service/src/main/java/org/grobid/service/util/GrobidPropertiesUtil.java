@@ -27,14 +27,12 @@ public class GrobidPropertiesUtil {
 		Properties props = GrobidServiceProperties.getProps();
 		for (Object property : props.keySet()) {
 			final String currProperty = (String) property;
-			gbdProperties.add(new GrobidProperty(currProperty, props
-					.getProperty(currProperty)));
+			gbdProperties.add(new GrobidProperty(currProperty, props.getProperty(currProperty)));
 		}
 		props = GrobidProperties.getProps();
 		for (Object property : props.keySet()) {
 			final String currProperty = (String) property;
-			gbdProperties.add(new GrobidProperty(currProperty, props
-					.getProperty(currProperty)));
+			gbdProperties.add(new GrobidProperty(currProperty, props.getProperty(currProperty)));
 		}
 		return gbdProperties;
 	}
@@ -48,7 +46,7 @@ public class GrobidPropertiesUtil {
 		StringBuilder gbdProperties = new StringBuilder();
 		gbdProperties.append(XmlUtils.startTag("properties"));
 		for (GrobidProperty currProp : getAllPropertiesList()) {
-			if(!GrobidPropertyKeys.PROP_GROBID_IS_CONTEXT_SERVER.equals(currProp.getKey())){
+			if (!GrobidPropertyKeys.PROP_GROBID_IS_CONTEXT_SERVER.equals(currProp.getKey())) {
 				gbdProperties.append(currProp.toString());
 			}
 		}
