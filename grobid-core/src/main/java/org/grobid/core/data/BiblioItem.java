@@ -1547,41 +1547,41 @@ public class BiblioItem {
             if (language != null) {
                 if (n == -1) {
                     if (pubnum != null) {
-                        tei.append(" xml:lang=\"" + language + "\" xml:id=\"" + pubnum + "\">\n");
+						tei.append(" xml:lang=\"" + language + "\" xml:id=\"" + pubnum + "\">");
                     } else
-                        tei.append(" xml:lang=\"" + language + ">\n");
+						tei.append(" xml:lang=\"" + language + ">");
                 } else {
-                    tei.append(" xml:lang=\"" + language + "\" xml:id=\"b" + n + "\">\n");
+					tei.append(" xml:lang=\"" + language + "\" xml:id=\"b" + n + "\">");
                 }
                 // TBD: the language should be normalized following xml lang attributes !
             } else {
                 if (n == -1) {
                     if (pubnum != null) {
-                        tei.append(" xml:id=\"" + pubnum + "\">\n");
+						tei.append(" xml:id=\"" + pubnum + "\">");
                     } else
-                        tei.append(">\n");
+						tei.append(">");
                 } else
-                    tei.append(" xml:id=\"b" + n + "\">\n");
+					tei.append(" xml:id=\"b" + n + "\">");
             }
 
             if ((bookTitle == null) && (journal == null)) {
-                tei.append("\t<monogr>\n");
+				tei.append("<monogr>");
             } else {
-                tei.append("\t<analytic>\n");
+				tei.append("<analytic>");
             }
 
             // title
             if (title != null) {
-                tei.append("\t\t<title");
+				tei.append("<title");
                 if ((bookTitle == null) && (journal == null)) {
                     tei.append(" level=\"m\" type=\"main\"");
                 } else
                     tei.append(" level=\"a\" type=\"main\"");
                 // here check the language ?
                 if (english_title == null) {
-                    tei.append(">").append(TextUtilities.HTMLEncode(title)).append("</title>\n");
+					tei.append(">").append(TextUtilities.HTMLEncode(title)).append("</title>");
                 } else {
-                    tei.append(" xml:lang=\"").append(language).append("\">").append(TextUtilities.HTMLEncode(title)).append("</title>\n");
+					tei.append(" xml:lang=\"").append(language).append("\">").append(TextUtilities.HTMLEncode(title)).append("</title>");
                 }
             }
 
@@ -1594,14 +1594,14 @@ public class BiblioItem {
                     String resL = resLang.getLangId();
                     if (resL.equals(Language.EN)) {
                         hasEnglishTitle = true;
-                        tei.append("\t\t<title");
+						tei.append("<title");
                         if ((bookTitle == null) && (journal == null)) {
                             tei.append(" level=\"m\"");
                         } else {
                             tei.append(" level=\"a\"");
                         }
 
-                        tei.append(" xml:lang=\"en\">").append(TextUtilities.HTMLEncode(english_title)).append("</title>\n");
+						tei.append(" xml:lang=\"en\">").append(TextUtilities.HTMLEncode(english_title)).append("</title>");
                     }
                 }
                 // if it's not something in English, we will write it anyway as note without type at the end
@@ -1610,12 +1610,12 @@ public class BiblioItem {
             tei.append(toTEIAuthorBlock(2, false));
 
             if ((bookTitle != null) || (journal != null)) {
-                tei.append("\t</analytic>\n");
-                tei.append("\t<monogr>\n");
+				tei.append("</analytic>");
+				tei.append("<monogr>");
             }
 
             if (bookTitle != null) {
-                tei.append("\t\t<title level=\"m\">" + TextUtilities.HTMLEncode(bookTitle) + "</title>\n");
+				tei.append("<title level=\"m\">" + TextUtilities.HTMLEncode(bookTitle) + "</title>");
 
                 if (editors != null) {
                     //postProcessingEditors();
@@ -1626,11 +1626,11 @@ public class BiblioItem {
                             String editor = st.nextToken();
                             if (editor != null)
                                 editor = editor.trim();
-                            tei.append("\t\t<editor>" + TextUtilities.HTMLEncode(editor) + "</editor>\n");
+							tei.append("<editor>" + TextUtilities.HTMLEncode(editor) + "</editor>");
                         }
                     } else {
                         if (editors != null)
-                            tei.append("\t\t<editor>" + TextUtilities.HTMLEncode(editors) + "</editor>\n");
+							tei.append("<editor>" + TextUtilities.HTMLEncode(editors) + "</editor>");
                     }
                 }
 
@@ -1645,7 +1645,7 @@ public class BiblioItem {
                         if (meeting.startsWith(prefix)) {
                             meeting = meeting.replace(prefix, "");
                             meeting = meeting.trim();
-                            tei.append("\t\t<meeting>" + TextUtilities.HTMLEncode(meeting));
+							tei.append("<meeting>" + TextUtilities.HTMLEncode(meeting));
                             if ((location != null) || (town != null) || (country != null)) {
                                 tei.append("<address>");
                                 if (town != null) {
@@ -1660,7 +1660,7 @@ public class BiblioItem {
                                 tei.append("</address>");
                                 meetLoc = true;
                             }
-                            tei.append("</meeting>\n");
+							tei.append("</meeting>");
                             break;
                         }
                         //break;
@@ -1668,7 +1668,7 @@ public class BiblioItem {
                 }
 
                 if (((location != null) || (town != null) || (country != null)) && (!meetLoc)) {
-                    tei.append("\t\t<meeting>");
+					tei.append("<meeting>");
                     tei.append("<address>");
                     if (town != null) {
                         tei.append("<settlement>" + town + "</settlement>");
@@ -1680,31 +1680,33 @@ public class BiblioItem {
                         tei.append(TextUtilities.HTMLEncode(location));
                     }
                     tei.append("</address>");
-                    tei.append("</meeting>\n");
+					tei.append("</meeting>");
                 }
 
                 if ((publication_date != null) || (pageRange != null) || (publisher != null)) {
-                    tei.append("\t\t<imprint>\n");
+					tei.append("<imprint>");
                 }
                 if (publisher != null) {
-                    tei.append("\t\t\t<publisher>" + TextUtilities.HTMLEncode(publisher) + "</publisher>\n");
+					tei.append("<publisher>" + TextUtilities.HTMLEncode(publisher) + "</publisher>");
                 }
 
                 if (normalized_publication_date != null) {
                     if ((normalized_publication_date.getDay() != -1) ||
                             (normalized_publication_date.getMonth() != -1) ||
                             (normalized_publication_date.getYear() != -1)) {
-                        /*tei.append("\t\t\t<date>\n");
-					if (normalized_publication_date.getDay() != -1) {
-						tei.append("\t\t\t\t<day>" + normalized_publication_date.getDay() + "</day>\n");
-					}
-					if (normalized_publication_date.getMonth() != -1) {
-						tei.append("\t\t\t\t<month>" + normalized_publication_date.getMonth() + "</month>\n");
-					}
-					if (normalized_publication_date.getYear() != -1) {
-						tei.append("\t\t\t\t<year>" + normalized_publication_date.getYear() + "</year>\n");
-					}
-					tei.append("\t\t\t</date>\n");*/
+						/*
+						 * tei.append("<date>"); if
+						 * (normalized_publication_date.getDay() != -1) {
+						 * tei.append("<day>" +
+						 * normalized_publication_date.getDay() + "</day>"); }
+						 * if (normalized_publication_date.getMonth() != -1) {
+						 * tei.append("<month>" +
+						 * normalized_publication_date.getMonth() + "</month>");
+						 * } if (normalized_publication_date.getYear() != -1) {
+						 * tei.append("<year>" +
+						 * normalized_publication_date.getYear() + "</year>"); }
+						 * tei.append("</date>");
+						 */
 
                         int year = normalized_publication_date.getYear();
                         int month = normalized_publication_date.getMonth();
@@ -1717,8 +1719,8 @@ public class BiblioItem {
                                 when += "-" + day;
                             }
                         }
-                        tei.append("\t\t\t\t<date type=\"published\" when=\"");
-                        tei.append(when + "\" />\n");
+						tei.append("<date type=\"published\" when=\"");
+						tei.append(when + "\" />");
                     } else if (this.getYear() != null) {
                         String when = this.getYear();
                         if (this.getMonth() != null) {
@@ -1727,33 +1729,32 @@ public class BiblioItem {
                                 when += "-" + this.getDay();
                             }
                         }
-                        tei.append("\t\t\t<date type=\"published\" when=\"");
-                        tei.append(when + "\" />\n");
+						tei.append("<date type=\"published\" when=\"");
+						tei.append(when + "\" />");
                     } else {
-                        tei.append("\t\t\t<date>" + TextUtilities.HTMLEncode(publication_date) + "</date>\n");
+						tei.append("<date>" + TextUtilities.HTMLEncode(publication_date) + "</date>");
                     }
                 } else if (publication_date != null) {
-                    tei.append("\t\t\t<date>" + TextUtilities.HTMLEncode(publication_date) + "</date>\n");
+					tei.append("<date>" + TextUtilities.HTMLEncode(publication_date) + "</date>");
                 }
 
                 if (pageRange != null) {
                     StringTokenizer st = new StringTokenizer(pageRange, "--");
                     if (st.countTokens() == 2) {
-                        tei.append("\t\t\t<biblScope type=\"fpage\">" + st.nextToken() + "</biblScope>\n");
-                        tei.append("\t\t\t<biblScope type=\"lpage\">" + st.nextToken() + "</biblScope>\n");
+						tei.append("<biblScope type=\"fpage\">" + st.nextToken() + "</biblScope>");
+						tei.append("<biblScope type=\"lpage\">" + st.nextToken() + "</biblScope>");
                     } else
-                        tei.append("\t\t\t<biblScope type=\"pp\">" + TextUtilities.HTMLEncode(pageRange)
-                                + "</biblScope>\n");
+						tei.append("<biblScope type=\"pp\">" + TextUtilities.HTMLEncode(pageRange) + "</biblScope>");
                 }
                 if ((publication_date != null) || (pageRange != null) || (publisher != null))
-                    tei.append("\t\t</imprint>\n");
+					tei.append("</imprint>");
             } else if (journal != null) {
-                tei.append("\t\t<title level=\"j\">" + TextUtilities.HTMLEncode(journal) + "</title>\n");
+				tei.append("<title level=\"j\">" + TextUtilities.HTMLEncode(journal) + "</title>");
 
                 if (getJournalAbbrev() != null) {
-                    tei.append("\t\t<title level=\"j\" type=\"abbrev\">"
+					tei.append("<title level=\"j\" type=\"abbrev\">"
                             + TextUtilities.HTMLEncode(getJournalAbbrev())
-                            + "</title>\n");
+ + "</title>");
                 }
 
                 if (editors != null) {
@@ -1765,46 +1766,43 @@ public class BiblioItem {
                             String editor = st.nextToken();
                             if (editor != null)
                                 editor = editor.trim();
-                            tei.append("\t\t<editor>" + TextUtilities.HTMLEncode(editor) + "</editor>\n");
+							tei.append("<editor>" + TextUtilities.HTMLEncode(editor) + "</editor>");
                         }
                     } else {
                         if (editors != null)
-                            tei.append("\t\t<editor>" + TextUtilities.HTMLEncode(editors) + "</editor>\n");
+							tei.append("<editor>" + TextUtilities.HTMLEncode(editors) + "</editor>");
                     }
                 }
 
                 if (getISSN() != null) {
-                    tei.append("\t\t<idno type=\"ISSN\">" + getISSN() + "</idno>\n");
+					tei.append("<idno type=\"ISSN\">" + getISSN() + "</idno>");
                 }
 
                 if (getISSNe() != null) {
                     if (!getISSNe().equals(getISSN()))
-                        tei.append("\t\t<idno type=\"ISSNe\">" + getISSNe() + "</idno>\n");
+						tei.append("<idno type=\"ISSNe\">" + getISSNe() + "</idno>");
                 }
 
 
                 if ((volumeBlock != null) | (issue != null) || (pageRange != null) || (publication_date != null)
                         || (publisher != null)) {
-                    tei.append("\t\t<imprint>\n");
+					tei.append("<imprint>");
                     if (publisher != null) {
-                        tei.append("\t\t\t<publisher>" + TextUtilities.HTMLEncode(publisher) + "</publisher>\n");
+						tei.append("<publisher>" + TextUtilities.HTMLEncode(publisher) + "</publisher>");
                     }
                     if (volumeBlock != null) {
-                        tei.append("\t\t\t<biblScope type=\"vol\">" + TextUtilities.HTMLEncode(volumeBlock)
-                                + "</biblScope>\n");
+						tei.append("<biblScope type=\"vol\">" + TextUtilities.HTMLEncode(volumeBlock) + "</biblScope>");
                     }
                     if (issue != null) {
-                        tei.append("\t\t\t<biblScope type=\"issue\">" + TextUtilities.HTMLEncode(issue)
-                                + "</biblScope>\n");
+						tei.append("<biblScope type=\"issue\">" + TextUtilities.HTMLEncode(issue) + "</biblScope>");
                     }
                     if (pageRange != null) {
                         StringTokenizer st = new StringTokenizer(pageRange, "--");
                         if (st.countTokens() == 2) {
-                            tei.append("\t\t\t<biblScope type=\"fpage\">" + st.nextToken() + "</biblScope>\n");
-                            tei.append("\t\t\t<biblScope type=\"lpage\">" + st.nextToken() + "</biblScope>\n");
+							tei.append("<biblScope type=\"fpage\">" + st.nextToken() + "</biblScope>");
+							tei.append("<biblScope type=\"lpage\">" + st.nextToken() + "</biblScope>");
                         } else {
-                            tei.append("\t\t\t<biblScope type=\"pp\">" + TextUtilities.HTMLEncode(pageRange)
-                                    + "</biblScope>\n");
+							tei.append("<biblScope type=\"pp\">" + TextUtilities.HTMLEncode(pageRange) + "</biblScope>");
                         }
                     }
 
@@ -1824,8 +1822,8 @@ public class BiblioItem {
                                     when += "-" + day;
                                 }
                             }
-                            tei.append("\t\t\t\t<date type=\"published\" when=\"");
-                            tei.append(when + "\" />\n");
+							tei.append("<date type=\"published\" when=\"");
+							tei.append(when + "\" />");
                         } else if (this.getYear() != null) {
                             String when = this.getYear();
                             if (this.getMonth() != null) {
@@ -1834,20 +1832,20 @@ public class BiblioItem {
                                     when += "-" + this.getDay();
                                 }
                             }
-                            tei.append("\t\t\t\t<date type=\"published\" when=\"");
-                            tei.append(when + "\" />\n");
+							tei.append("<date type=\"published\" when=\"");
+							tei.append(when + "\" />");
                         } else {
-                            tei.append("\t\t\t<date>" + TextUtilities.HTMLEncode(publication_date) + "</date>\n");
+							tei.append("<date>" + TextUtilities.HTMLEncode(publication_date) + "</date>");
                         }
                     } else if (publication_date != null) {
-                        tei.append("\t\t\t<date>" + TextUtilities.HTMLEncode(publication_date) + "</date>\n");
+						tei.append("<date>" + TextUtilities.HTMLEncode(publication_date) + "</date>");
                     }
 
                     if (getPublisher() != null) {
-                        tei.append("\t\t<publisher>" + TextUtilities.HTMLEncode(getPublisher()) + "</publisher>\n");
+						tei.append("<publisher>" + TextUtilities.HTMLEncode(getPublisher()) + "</publisher>");
                     }
 
-                    tei.append("\t\t</imprint>\n");
+					tei.append("</imprint>");
                 }
             } else {
                 // not a journal and not something in a book...
@@ -1860,16 +1858,16 @@ public class BiblioItem {
                             String editor = st.nextToken();
                             if (editor != null)
                                 editor = editor.trim();
-                            tei.append("\t\t<editor>" + TextUtilities.HTMLEncode(editor) + "</editor>\n");
+							tei.append("<editor>" + TextUtilities.HTMLEncode(editor) + "</editor>");
                         }
                     } else {
                         if (editors != null)
-                            tei.append("\t\t<editor>" + TextUtilities.HTMLEncode(editors) + "</editor>\n");
+							tei.append("<editor>" + TextUtilities.HTMLEncode(editors) + "</editor>");
                     }
                 }
 
                 if ((publication_date != null) || (pageRange != null) || (location != null) || (publisher != null))
-                    tei.append("\t\t<imprint>\n");
+					tei.append("<imprint>");
                 // date
                 if (normalized_publication_date != null) {
                     if ((normalized_publication_date.getDay() != -1) |
@@ -1886,8 +1884,8 @@ public class BiblioItem {
                                 when += "-" + day;
                             }
                         }
-                        tei.append("\t\t\t\t<date type=\"published\" when=\"");
-                        tei.append(when + "\" />\n");
+						tei.append("<date type=\"published\" when=\"");
+						tei.append(when + "\" />");
                     } else if (this.getYear() != null) {
                         String when = this.getYear();
                         if (this.getMonth() != null) {
@@ -1896,65 +1894,62 @@ public class BiblioItem {
                                 when += "-" + this.getDay();
                             }
                         }
-                        tei.append("\t\t\t\t<date type=\"published\" when=\"");
-                        tei.append(when + "\" />\n");
+						tei.append("<date type=\"published\" when=\"");
+						tei.append(when + "\" />");
                     } else {
-                        tei.append("\t\t\t<date>" + TextUtilities.HTMLEncode(publication_date) + "</date>\n");
+						tei.append("<date>" + TextUtilities.HTMLEncode(publication_date) + "</date>");
                     }
                 } else if (publication_date != null) {
-                    tei.append("\t\t\t<date>" + TextUtilities.HTMLEncode(publication_date) + "</date>\n");
+					tei.append("<date>" + TextUtilities.HTMLEncode(publication_date) + "</date>");
                 }
 
                 if (publisher != null) {
-                    tei.append("\t\t\t<publisher>" + TextUtilities.HTMLEncode(publisher) + "</publisher>\n");
+					tei.append("<publisher>" + TextUtilities.HTMLEncode(publisher) + "</publisher>");
                 }
                 if (pageRange != null) {
                     StringTokenizer st = new StringTokenizer(pageRange, "--");
                     if (st.countTokens() == 2) {
-                        tei.append("\t\t\t<biblScope type=\"fpage\">" + st.nextToken() + "</biblScope>\n");
-                        tei.append("\t\t\t<biblScope type=\"lpage\">" + st.nextToken() + "</biblScope>\n");
+						tei.append("<biblScope type=\"fpage\">" + st.nextToken() + "</biblScope>");
+						tei.append("<biblScope type=\"lpage\">" + st.nextToken() + "</biblScope>");
                     } else {
-                        tei.append("\t\t\t<biblScope type=\"pp\">" + TextUtilities.HTMLEncode(pageRange)
-                                + "</biblScope>\n");
+						tei.append("<biblScope type=\"pp\">" + TextUtilities.HTMLEncode(pageRange) + "</biblScope>");
                     }
                 }
                 if (location != null)
-                    tei.append("\t\t\t<pubPlace>" + TextUtilities.HTMLEncode(location) + "</pubPlace>\n");
+					tei.append("<pubPlace>" + TextUtilities.HTMLEncode(location) + "</pubPlace>");
 
                 if ((publication_date != null) || (pageRange != null) || (location != null) || (publisher != null))
-                    tei.append("\t\t</imprint>\n");
+					tei.append("</imprint>");
             }
 
-            tei.append("\t</monogr>\n");
+			tei.append("</monogr>");
 
             if (submission != null) {
-                tei.append("\t<note type=\"submission\">" + TextUtilities.HTMLEncode(submission)
-                        + "</note>\n");
+				tei.append("<note type=\"submission\">" + TextUtilities.HTMLEncode(submission) + "</note>");
             }
             if (getSubmissionDate() != null) {
-                tei.append("\t<date type=\"submission\">" + TextUtilities.HTMLEncode(getSubmissionDate())
-                        + "</date>\n");
+				tei.append("<date type=\"submission\">" + TextUtilities.HTMLEncode(getSubmissionDate()) + "</date>");
             }
 
             if (dedication != null) {
-                tei.append("\t<note type=\"dedication\">" + TextUtilities.HTMLEncode(dedication) + "</note>\n");
+				tei.append("<note type=\"dedication\">" + TextUtilities.HTMLEncode(dedication) + "</note>");
             }
 
             if (note != null) {
-                tei.append("\t<note>" + TextUtilities.HTMLEncode(note) + "</note>\n");
+				tei.append("<note>" + TextUtilities.HTMLEncode(note) + "</note>");
             }
 
             if ((english_title != null) && (!hasEnglishTitle)) {
-                tei.append("\t<note>" + TextUtilities.HTMLEncode(english_title) + "</note>\n");
+				tei.append("<note>" + TextUtilities.HTMLEncode(english_title) + "</note>");
             }
 
             if (subjects != null) {
                 if (subjects.size() > 0) {
-                    tei.append("\t<keywords scheme=\"hal\">\n\t\t<list>\n");
+					tei.append("<keywords scheme=\"hal\"><list>");
                     for (String subject : subjects) {
-                        tei.append("\t\t\t<item>" + subject + "</item>\n");
+						tei.append("<item>" + subject + "</item>");
                     }
-                    tei.append("\t\t</list>\n\t</keywords>\n");
+					tei.append("</list></keywords>");
                 }
             }
 
@@ -1966,40 +1961,40 @@ public class BiblioItem {
                     if (start != -1) {
                         String keywords1 = keywords.substring(0, start - 1);
                         String keywords2 = keywords.substring(start + 9, keywords.length());
-                        tei.append("\t<keywords type=\"subject-headers\">" + keywords1 + "</keywords>\n");
-                        tei.append("\t<keywords>" + TextUtilities.HTMLEncode(keywords2) + "</keywords>\n");
+						tei.append("<keywords type=\"subject-headers\">" + keywords1 + "</keywords>");
+						tei.append("<keywords>" + TextUtilities.HTMLEncode(keywords2) + "</keywords>");
                     } else {
-                        tei.append("\t<keywords>" + TextUtilities.HTMLEncode(getKeyword()) + "</keywords>\n");
+						tei.append("<keywords>" + TextUtilities.HTMLEncode(getKeyword()) + "</keywords>");
                     }
                 } else
-                    tei.append("\t<keywords>" + TextUtilities.HTMLEncode(getKeyword()) + "</keywords>\n");
+					tei.append("<keywords>" + TextUtilities.HTMLEncode(getKeyword()) + "</keywords>");
             }
 
             if (DOI != null) {
-                tei.append("\t<idno type=\"doi\">" + DOI + "</idno>\n");
+				tei.append("<idno type=\"doi\">" + DOI + "</idno>");
             }
 
             if (uri != null) {
                 if (uri.startsWith("http://hal.")) {
-                    tei.append("\t<idno type=\"HALid\">" + uri + "</idno>\n");
+					tei.append("<idno type=\"HALid\">" + uri + "</idno>");
                 } else {
-                    tei.append("\t<idno>" + uri + "</idno>\n");
+					tei.append("<idno>" + uri + "</idno>");
                 }
             }
 
             if (url != null) {
                 if (url.startsWith("http://hal.")) {
-                    tei.append("\t<idno type=\"HALFile\">" + url + "</idno>\n");
+					tei.append("<idno type=\"HALFile\">" + url + "</idno>");
                 }
             }
 
             if (abstract_ != null) {
                 if (abstract_.length() > 0) {
-                    tei.append("\t<div type=\"abstract\">" + abstract_ + "</div>\n");
+					tei.append("<div type=\"abstract\">" + abstract_ + "</div>");
                 }
             }
 
-            tei.append("</biblStruct>\n");
+			tei.append("</biblStruct>");
         } catch (Exception e) {
             throw new GrobidException("Cannot convert  bibliographical item into a TEI, " +
                     "because of nested exception.", e);
