@@ -52,7 +52,8 @@ public class HeaderParser extends AbstractParser {
 	}
 
 	public String processing(String input, boolean consolidate,
-			BiblioItem resHeader, int startPage, int endPage) throws TimeoutException {
+			BiblioItem resHeader, int startPage, int endPage)
+			throws TimeoutException {
 		doc = new Document(input, tmpPath.getAbsolutePath());
 		try {
 			// int startPage = 0;
@@ -77,13 +78,12 @@ public class HeaderParser extends AbstractParser {
 			}
 
 			return processingHeaderBlock(consolidate, doc, resHeader);
-		} catch (TimeoutException timeoutExp){
+		} catch (TimeoutException timeoutExp) {
 			throw new TimeoutException("A time out occured");
-		}
-		catch (Exception exp) {
+		} catch (Exception exp) {
 			throw new GrobidException(
 					"An exception occurred while running Grobid on file "
-							+ tmpPath.getAbsolutePath(), exp);
+							+ tmpPath.getAbsolutePath() + exp);
 		} finally {
 			doc.cleanLxmlFile(pathXML, true);
 		}
@@ -200,10 +200,13 @@ public class HeaderParser extends AbstractParser {
 								int k = 0;
 								for (Person pers : resHeader.getFullAuthors()) {
 									if (k < authorsBlocks.size()) {
-										int indd = authorsBlocks.get(k).intValue();
-										if (indd < resHeader.getFullAffiliations().size()) {
-											pers.addAffiliation(
-											 	resHeader.getFullAffiliations().get(indd));
+										int indd = authorsBlocks.get(k)
+												.intValue();
+										if (indd < resHeader
+												.getFullAffiliations().size()) {
+											pers.addAffiliation(resHeader
+													.getFullAffiliations().get(
+															indd));
 										}
 									}
 									k++;
@@ -832,7 +835,9 @@ public class HeaderParser extends AbstractParser {
 					|| (s1.equals("I-<affiliation>"))) {
 				// affiliation **makers** should be marked SINGLECHAR LINESTART
 				if (biblio.getAffiliation() != null) {
-					if ( (lastTag != null) && (s1.equals(lastTag) || lastTag.equals("I-<affiliation>")) ) {
+					if ((lastTag != null)
+							&& (s1.equals(lastTag) || lastTag
+									.equals("I-<affiliation>"))) {
 						if (s1.equals("I-<affiliation>")) {
 							biblio.setAffiliation(biblio.getAffiliation()
 									+ " ; " + s2);
