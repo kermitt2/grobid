@@ -76,7 +76,12 @@ public interface GrobidPathes {
 	 */
 	public static final String PATH_HEADER_NAMES= "processHeaderNames";
 	/**
-	 * path extension for processing names as citations in full text part of documents.
+	 * path extension for processing citation annotations.
+	 */
+	public static final String PATH_CITATION_ANNOTATION = "citationAnnotation";
+	/**
+	 * path extension for processing names as citations in full text part of
+	 * documents.
 	 */
 	public static final String PATH_CITE_NAMES= "processCitationNames";
 	/**
