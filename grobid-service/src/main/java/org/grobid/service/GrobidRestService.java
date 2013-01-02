@@ -17,6 +17,8 @@
  */
 package org.grobid.service;
 
+import java.io.File;
+import java.io.IOException;
 import java.io.InputStream;
 
 import javax.ws.rs.Consumes;
@@ -30,17 +32,21 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.StreamingOutput;
 import javax.ws.rs.core.UriInfo;
+import javax.ws.rs.core.Response.Status;
 
 import org.grobid.core.factory.AbstractEngineFactory;
 import org.grobid.service.process.GrobidRestProcessAdmin;
 import org.grobid.service.process.GrobidRestProcessFiles;
 import org.grobid.service.process.GrobidRestProcessGeneric;
 import org.grobid.service.process.GrobidRestProcessString;
+import org.grobid.service.util.GrobidRestUtils;
 import org.grobid.service.util.GrobidServiceProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.sun.jersey.multipart.FormDataParam;
 import com.sun.jersey.spi.resource.Singleton;
 
 /**
@@ -52,6 +58,9 @@ import com.sun.jersey.spi.resource.Singleton;
 @Singleton
 @Path(GrobidPathes.PATH_GROBID)
 public class GrobidRestService implements GrobidPathes {
+
+
+
 	/**
 	 * The class Logger.
 	 */
@@ -61,6 +70,9 @@ public class GrobidRestService implements GrobidPathes {
 	private static final String DATE = "date";
 	private static final String AFFILIATIONS = "affiliations";
 	private static final String CITATIONS = "citations";
+	private static final String SHA1 = "sha1";
+	private static final String XML = "xml";
+	private static final String INPUT = "input";
 
 	public GrobidRestService() {
 		LOGGER.info("Initiating Sevlet GrobidRestService");
@@ -97,7 +109,7 @@ public class GrobidRestService implements GrobidPathes {
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
 	@Produces(MediaType.TEXT_HTML)
 	@POST
-	public Response getAdmin_htmlPost(@FormParam("sha1") String sha1) {
+	public Response getAdmin_htmlPost(@FormParam(SHA1) String sha1) {
 		return GrobidRestProcessAdmin.getAdminParams(sha1);
 	}
 
@@ -108,7 +120,7 @@ public class GrobidRestService implements GrobidPathes {
 	@Consumes(MediaType.TEXT_PLAIN)
 	@Produces(MediaType.TEXT_HTML)
 	@GET
-	public Response getAdmin_htmlGet(@QueryParam("sha1") String sha1) {
+	public Response getAdmin_htmlGet(@QueryParam(SHA1) String sha1) {
 		return GrobidRestProcessAdmin.getAdminParams(sha1);
 	}
 
@@ -198,6 +210,17 @@ public class GrobidRestService implements GrobidPathes {
 	@PUT
 	public Response processStatelessFulltextDocumentHTML(InputStream inputStream) {
 		return GrobidRestProcessFiles.processStatelessFulltextDocument(inputStream, true);
+	}
+
+	/**
+	 * @see org.grobid.service.process.GrobidRestProcessFiles#processCitationAnnotation(InputStream)
+	 */
+	@Path(PATH_CITATION_ANNOTATION)
+	@Consumes(MediaType.MULTIPART_FORM_DATA)
+	@Produces(MediaType.APPLICATION_XML)
+	@POST
+	public StreamingOutput processCitationAnnotation(@FormDataParam(INPUT) InputStream pInputStream) throws Exception {
+		return GrobidRestProcessFiles.processCitationAnnotation(pInputStream);
 	}
 
 	/**
@@ -317,7 +340,7 @@ public class GrobidRestService implements GrobidPathes {
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
 	@Produces(MediaType.TEXT_PLAIN)
 	@POST
-	public Response processSHA1Post(@FormParam("sha1") String sha1) {
+	public Response processSHA1Post(@FormParam(SHA1) String sha1) {
 		return GrobidRestProcessAdmin.processSHA1(sha1);
 	}
 
@@ -328,7 +351,7 @@ public class GrobidRestService implements GrobidPathes {
 	@Consumes(MediaType.TEXT_PLAIN)
 	@Produces(MediaType.TEXT_PLAIN)
 	@GET
-	public Response processSHA1Get(@QueryParam("sha1") String sha1) {
+	public Response processSHA1Get(@QueryParam(SHA1) String sha1) {
 		return GrobidRestProcessAdmin.processSHA1(sha1);
 	}
 
@@ -339,7 +362,7 @@ public class GrobidRestService implements GrobidPathes {
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
 	@Produces(MediaType.TEXT_PLAIN)
 	@POST
-	public Response getAllPropertiesValuesPost(@FormParam("sha1") String sha1) {
+	public Response getAllPropertiesValuesPost(@FormParam(SHA1) String sha1) {
 		return GrobidRestProcessAdmin.getAllPropertiesValues(sha1);
 	}
 
@@ -350,7 +373,7 @@ public class GrobidRestService implements GrobidPathes {
 	@Consumes(MediaType.TEXT_PLAIN)
 	@Produces(MediaType.TEXT_PLAIN)
 	@GET
-	public Response getAllPropertiesValuesGet(@QueryParam("sha1") String sha1) {
+	public Response getAllPropertiesValuesGet(@QueryParam(SHA1) String sha1) {
 		return GrobidRestProcessAdmin.getAllPropertiesValues(sha1);
 	}
 
@@ -361,7 +384,7 @@ public class GrobidRestService implements GrobidPathes {
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
 	@Produces(MediaType.TEXT_PLAIN)
 	@POST
-	public Response changePropertyValuePost(@FormParam("xml") String xml) {
+	public Response changePropertyValuePost(@FormParam(XML) String xml) {
 		return GrobidRestProcessAdmin.changePropertyValue(xml);
 	}
 
@@ -372,7 +395,7 @@ public class GrobidRestService implements GrobidPathes {
 	@Consumes(MediaType.TEXT_PLAIN)
 	@Produces(MediaType.TEXT_PLAIN)
 	@GET
-	public Response changePropertyValueGet(@QueryParam("xml") String xml) {
+	public Response changePropertyValueGet(@QueryParam(XML) String xml) {
 		return GrobidRestProcessAdmin.changePropertyValue(xml);
 	}
 
