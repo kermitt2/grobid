@@ -181,7 +181,7 @@ public class TeiStAXParser {
 	 * @throws XMLStreamException
 	 * @throws IOException
 	 */
-	public OutputStream parse() throws XMLStreamException, IOException {
+	public void parse() throws XMLStreamException, IOException {
 		int eventType;
 		XMLEvent event;
 		while (reader.hasNext()) {
@@ -209,7 +209,6 @@ public class TeiStAXParser {
 
 		logTimeProcessing();
 
-		return outputStream;
 	}
 
 	/**
