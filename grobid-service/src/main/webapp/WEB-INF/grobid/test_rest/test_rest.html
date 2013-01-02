@@ -14,6 +14,7 @@
 							Names</option>
 						<option value="processAffiliations">Process Affiliations</option>
 						<option value="processCitations">Process Citations</option>
+						<option value="citationAnnotation">Process Citation annotations</option>
 				</select></td>
 			</tr>
 			<tr>
@@ -64,10 +65,16 @@
 	}
 
 	function SubmitSuccesful(responseText, statusText) {
-		var display = "<div style='width:800px; height:400px; overflow-x:scroll; overflow-y:auto; border:solid 1px black;'>";
-		display+=responseText;
-		display+="</div>";
-		$('#requestResult').html(display);
+		var selected = $('#selectedService').attr('value');
+		if(selected == 'citationAnnotation') {
+			$('#requestResult').text(responseText);
+		} else {
+			var display = "<div style='width:800px; height:400px; overflow-x:scroll; overflow-y:auto; border:solid 1px black;'>";
+			display+=responseText;
+			display+="</div>";
+			$('#requestResult').html(display);
+		}
+		
 	}
 
 
@@ -96,6 +103,9 @@
 		} else if (selected == 'processCitations') {
 			createInputTextArea('citations');
 			setBaseUrl('processCitations');
+		} else if (selected == 'citationAnnotation') {
+			createInputFile();
+			setBaseUrl('citationAnnotation');
 		}
 	}
 
