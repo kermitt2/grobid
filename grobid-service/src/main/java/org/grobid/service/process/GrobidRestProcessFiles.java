@@ -4,13 +4,17 @@ import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeoutException;
 
+import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
+import javax.ws.rs.core.StreamingOutput;
 
+import org.grobid.core.annotations.TeiStAXParser;
 import org.grobid.core.engines.Engine;
 import org.grobid.core.factory.GrobidPoolingFactory;
 import org.grobid.service.parser.Xml2HtmlParser;
@@ -46,7 +50,7 @@ public class GrobidRestProcessFiles {
 	 * @return a response object which contains a TEI representation of the
 	 *         header part
 	 */
-	public static Response processStatelessHeaderDocument(InputStream inputStream, boolean htmlFormat) {
+	public static Response processStatelessHeaderDocument(final InputStream inputStream, final boolean htmlFormat) {
 		LOGGER.debug(methodLogIn());
 		Response response = null;
 		String retVal = null;
@@ -107,7 +111,7 @@ public class GrobidRestProcessFiles {
 	 * @throws SAXException
 	 * @throws IOException
 	 */
-	protected static String formatAsHTML(String tei) throws SAXException, IOException {
+	protected static String formatAsHTML(final String tei) throws SAXException, IOException {
 		XMLReader xmlr = XMLReaderFactory.createXMLReader();
 		Xml2HtmlParser parser = new Xml2HtmlParser();
 		xmlr.setContentHandler(parser);
@@ -125,7 +129,7 @@ public class GrobidRestProcessFiles {
 	 *            zip containing the datas of origin document.
 	 * @return Response containing the TEI files representing the header part.
 	 */
-	public static Response processStatelessBulkHeaderDocument(InputStream inputStream) {
+	public static Response processStatelessBulkHeaderDocument(final InputStream inputStream) {
 		LOGGER.debug(methodLogIn());
 		Response response = null;
 		LOGGER.debug(methodLogIn());
@@ -151,7 +155,7 @@ public class GrobidRestProcessFiles {
 	 * @return a response object mainly contain the TEI representation of the
 	 *         full text
 	 */
-	public static Response processStatelessFulltextDocument(InputStream inputStream, boolean htmlFormat) {
+	public static Response processStatelessFulltextDocument(final InputStream inputStream, final boolean htmlFormat) {
 		LOGGER.debug(methodLogIn());
 		Response response = null;
 		String retVal = null;
@@ -201,6 +205,29 @@ public class GrobidRestProcessFiles {
 		}
 		LOGGER.debug(methodLogOut());
 		return response;
+	}
+
+	/**
+	 * Process the annotation of TEI documents for citations.
+	 * 
+	 * @param pInputStream
+	 *            - The input stream to process.
+	 * 
+	 * @return StreamingOutput wrapping the response in streaming while parsing
+	 *         the input.
+	 */
+	public static StreamingOutput processCitationAnnotation(final InputStream pInputStream) {
+		LOGGER.debug(methodLogIn());
+		return new StreamingOutput() {
+			public void write(OutputStream output) throws IOException, WebApplicationException {
+				try {
+					final TeiStAXParser parser = new TeiStAXParser(pInputStream, output, false);
+					parser.parse();
+				} catch (Exception exp) {
+					throw new WebApplicationException(exp);
+				}
+			}
+		};
 	}
 
 	/**
