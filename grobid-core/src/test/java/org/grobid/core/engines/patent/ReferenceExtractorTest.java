@@ -65,8 +65,8 @@ public class ReferenceExtractorTest {
 		timer.stop("STOP");
 		System.out.println(timer.getElapsedTimeFromStartFormated("STOP"));
 		LOGGER.info("BibDataSet: " + articles.toString());
-		assertEquals(0, patents.size());
-		assertEquals(1, articles.size());
+		assertEquals(2, patents.size());
+		assertEquals(2, articles.size());
 		LOGGER.info(articles.get(0).getOffsets().toString());
 	}
 
@@ -133,7 +133,6 @@ public class ReferenceExtractorTest {
 				+ "/" + patent.getOffsetEnd() + "/" + patent.getOffsetRaw());
 	}
 
-	@Ignore
 	@Test
 	public void extractAllReferencesXmlST36() {
 		ReferenceExtractor extractor = new ReferenceExtractor();
@@ -152,7 +151,6 @@ public class ReferenceExtractorTest {
 		assertEquals("6083121", patents.get(1).getNumber());
 	}
 
-	@Test
 	@Ignore
 	public void extractAllReferencesPdf() {
 		ReferenceExtractor extractor = new ReferenceExtractor();
