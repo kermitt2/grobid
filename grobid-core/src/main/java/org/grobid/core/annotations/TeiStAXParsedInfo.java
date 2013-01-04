@@ -36,11 +36,6 @@ public class TeiStAXParsedInfo {
 	protected GornIndex gorn;
 
 	/**
-	 * The full annotation that will be inserted in the publication header.
-	 */
-	protected StringBuffer fullHeaderAnnotation;
-
-	/**
 	 * List of some tags in which the parser is.
 	 */
 	protected List<String> tags;
@@ -59,7 +54,6 @@ public class TeiStAXParsedInfo {
 	public TeiStAXParsedInfo(final boolean pIndent) {
 		gorn = new GornIndex();
 		tags = new ArrayList<String>();
-		fullHeaderAnnotation = new StringBuffer();
 		description = new Description(pIndent);
 	}
 
@@ -68,7 +62,6 @@ public class TeiStAXParsedInfo {
 	 * done. Has to be called before continuing to parse the full document.
 	 */
 	public void reset() {
-		fullHeaderAnnotation = new StringBuffer();
 		tags = new ArrayList<String>();
 	}
 
