@@ -30,17 +30,14 @@ public class TeiStAXParsedInfoTest {
 		final TeiStAXParsedInfo infos = new TeiStAXParsedInfo(false);
 		assertNotNull("should not be null", infos.gorn);
 		assertNotNull("should not be null", infos.tags);
-		assertNotNull("should not be null", infos.fullHeaderAnnotation);
 		assertNotNull("should not be null", infos.description);
 	}
 
 	@Test
 	public void testReset() {
 		final TeiStAXParsedInfo infos = new TeiStAXParsedInfo(false);
-		infos.fullHeaderAnnotation.append("some value");
 		infos.tags.add("some tag");
 		infos.reset();
-		assertEquals("fullHeaderAnnotation should be empty", "", infos.fullHeaderAnnotation.toString());
 		assertTrue("tags should be empty", infos.tags.isEmpty());
 	}
 
