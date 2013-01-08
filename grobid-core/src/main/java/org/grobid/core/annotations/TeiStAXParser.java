@@ -39,8 +39,8 @@ import org.slf4j.LoggerFactory;
 
 /**
  * StAX parser which parses an input tei, and inserts the Citations of patents
- * and NPL of description (<code><div type="description">...</div></code>) if
- * found in that document.
+ * and NPL of description ({@code <div type="description">...</div>}) if found
+ * in that document.
  * 
  * @author Damien
  */
