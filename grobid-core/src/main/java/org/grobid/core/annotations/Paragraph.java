@@ -10,6 +10,12 @@ import javax.xml.stream.events.StartElement;
 
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
+/**
+ * Contains the information of a paragraph.
+ * 
+ * @author Damien
+ * 
+ */
 public class Paragraph implements Cloneable {
 
 	/**
