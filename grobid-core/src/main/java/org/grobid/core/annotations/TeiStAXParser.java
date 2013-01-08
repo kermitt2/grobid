@@ -121,10 +121,10 @@ public class TeiStAXParser {
 	 * Constructor.
 	 * 
 	 * @param pInput
-	 *            - The input file.
+	 *            The input file.
 	 * 
 	 * @param pOutputStream
-	 *            - The output stream
+	 *            The output stream
 	 */
 	public TeiStAXParser(final InputStream pInputStream, OutputStream pOutputStream) {
 		this(pInputStream, pOutputStream, true, new ReferenceExtractor());
@@ -135,11 +135,11 @@ public class TeiStAXParser {
 	 * Constructor.
 	 * 
 	 * @param pInput
-	 *            - The input file.
+	 *            The input file.
 	 * @param pOutputStream
-	 *            - The output stream
+	 *            The output stream
 	 * @param pIsIndented
-	 *            - If the output has to be indented.
+	 *            If the output has to be indented.
 	 */
 	public TeiStAXParser(final InputStream pInputStream, OutputStream pOutputStream, final boolean pIsIndented) {
 		this(pInputStream, pOutputStream, pIsIndented, new ReferenceExtractor());
@@ -150,13 +150,13 @@ public class TeiStAXParser {
 	 * Constructor.
 	 * 
 	 * @param pInput
-	 *            - The input file.
+	 *            The input file.
 	 * @param pOutputStream
-	 *            - The output stream
+	 *            The output stream
 	 * @param pIsIndented
-	 *            - If the output has to be indented.
+	 *            If the output has to be indented.
 	 * @param pExtractor
-	 *            - The ReferenceExtractor object used to extract the citations.
+	 *            The ReferenceExtractor object used to extract the citations.
 	 */
 	public TeiStAXParser(final InputStream pInputStream, OutputStream pOutputStream, final boolean pIsIndented,
 			final ReferenceExtractor pExtractor) {
@@ -232,7 +232,7 @@ public class TeiStAXParser {
 	 * Append {@code pStart} to {@link #teiBuffer}.
 	 * 
 	 * @param pStart
-	 *            - The {@link StartElement} to append.
+	 *            The {@link StartElement} to append.
 	 */
 	protected void writeInTeiBufferStart(final StartElement pStart) {
 		teiBuffer.append(pStart.toString().replaceAll(QUOTE, DOUBLE_QUOTE));
@@ -242,7 +242,7 @@ public class TeiStAXParser {
 	 * Append {@code pChars} to {@link #teiBuffer}.
 	 * 
 	 * @param pChars
-	 *            - The {@link Characters} to append.
+	 *            The {@link Characters} to append.
 	 */
 	protected void writeInTeiBufferCharacters(final Characters pChars) {
 		teiBuffer.append(pChars.getData().replaceAll(AND, ESC_AND));
@@ -252,7 +252,7 @@ public class TeiStAXParser {
 	 * Append {@code pEnd} to {@link #teiBuffer}.
 	 * 
 	 * @param pEnd
-	 *            - The {@link EndElement} to append.
+	 *            The {@link EndElement} to append.
 	 */
 	protected void writeInTeiBufferEnd(final EndElement pEnd) {
 		teiBuffer.append(pEnd.toString());
@@ -262,7 +262,7 @@ public class TeiStAXParser {
 	 * Append in {@link #teiBuffer} {@link pTei}.
 	 * 
 	 * @param pTei
-	 *            - The Sting to append.
+	 *            The Sting to append.
 	 */
 	protected void writeInTeiBufferRaw(final String pTei) {
 		teiBuffer.append(pTei);
@@ -272,7 +272,7 @@ public class TeiStAXParser {
 	 * Process start tag.
 	 * 
 	 * @param pEvent
-	 *            - The current event.
+	 *            The current event.
 	 * 
 	 * @throws IOException
 	 * @throws XMLStreamException
@@ -297,7 +297,7 @@ public class TeiStAXParser {
 	 * Process end tag.
 	 * 
 	 * @param pEvent
-	 *            - The current event.
+	 *            The current event.
 	 * 
 	 * @throws XMLStreamException
 	 * @throws IOException
@@ -413,7 +413,7 @@ public class TeiStAXParser {
 	 * Append {@code pContent} to the output stream.
 	 * 
 	 * @param pContent
-	 *            - The content to append.
+	 *            The content to append.
 	 */
 	protected void appendOutputStream(final String pContent) {
 		try {
@@ -437,7 +437,7 @@ public class TeiStAXParser {
 	 * Pause the {@code pGbdTimer} if the logger is in DEBUG mode.
 	 * 
 	 * @param pGbdTimer
-	 *            - The timer to pause.
+	 *            The timer to pause.
 	 */
 	private void pauseTimer(final GrobidTimer pGbdTimer) {
 		if (isDebug) {
@@ -449,7 +449,7 @@ public class TeiStAXParser {
 	 * Restart the {@code pGbdTimer} if the logger is in DEBUG mode.
 	 * 
 	 * @param pGbdTimer
-	 *            - The timer to restart.
+	 *            The timer to restart.
 	 */
 	private void restartTimer(final GrobidTimer pGbdTimer) {
 		if (isDebug) {
@@ -461,7 +461,7 @@ public class TeiStAXParser {
 	 * Stop the {@code pGbdTimer} if the logger is in DEBUG mode.
 	 * 
 	 * @param pGbdTimer
-	 *            - The timer to stop.
+	 *            The timer to stop.
 	 */
 	private void stopTimer(final GrobidTimer pGbdTimer) {
 		if (isDebug) {

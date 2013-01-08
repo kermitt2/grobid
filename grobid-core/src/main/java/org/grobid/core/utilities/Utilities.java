@@ -444,8 +444,11 @@ public class Utilities {
 	
 	/**
 	 * Format a date in string using pFormat.
-	 * @param pDate - the date to parse.
-	 * @param pFormat - the format to use following SimpleDateFormat patterns.
+	 * 
+	 * @param pDate
+	 *            the date to parse.
+	 * @param pFormat
+	 *            the format to use following SimpleDateFormat patterns.
 	 * 
 	 * @return the formatted date.
 	 */

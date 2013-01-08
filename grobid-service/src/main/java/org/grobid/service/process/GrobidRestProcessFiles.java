@@ -44,9 +44,9 @@ public class GrobidRestProcessFiles {
 	 * extracts only the header data.
 	 * 
 	 * @param inputStream
-	 *            - the data of origin document
+	 *            the data of origin document
 	 * @param htmlFormat
-	 *            - if the result has to be formatted to be displayed as html.
+	 *            if the result has to be formatted to be displayed as html.
 	 * @return a response object which contains a TEI representation of the
 	 *         header part
 	 */
@@ -151,7 +151,7 @@ public class GrobidRestProcessFiles {
 	 * @param inputStream
 	 *            the data of origin document
 	 * @param htmlFormat
-	 *            - if the result has to be formatted to be displayed as html.
+	 *            if the result has to be formatted to be displayed as html.
 	 * @return a response object mainly contain the TEI representation of the
 	 *         full text
 	 */
@@ -211,7 +211,7 @@ public class GrobidRestProcessFiles {
 	 * Process the annotation of TEI documents for citations.
 	 * 
 	 * @param pInputStream
-	 *            - The input stream to process.
+	 *            The input stream to process.
 	 * 
 	 * @return StreamingOutput wrapping the response in streaming while parsing
 	 *         the input.

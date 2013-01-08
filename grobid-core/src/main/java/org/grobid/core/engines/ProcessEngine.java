@@ -42,7 +42,7 @@ public class ProcessEngine {
 	 * Process the headers using pGbdArgs parameters.
 	 * 
 	 * @param pGbdArgs
-	 *            - The parameters.
+	 *            The parameters.
 	 * @throws Exception
 	 */
 	public void processHeader(final GrobidMainArgs pGbdArgs) throws Exception {
@@ -68,7 +68,7 @@ public class ProcessEngine {
 	 * Process the full text using pGbdArgs parameters.
 	 * 
 	 * @param pGbdArgs
-	 *            - The parameters.
+	 *            The parameters.
 	 * @throws Exception
 	 */
 	public void processFullText(final GrobidMainArgs pGbdArgs) throws Exception {
@@ -94,7 +94,7 @@ public class ProcessEngine {
 	 * Process the date using pGbdArgs parameters.
 	 * 
 	 * @param pGbdArgs
-	 *            - The parameters.
+	 *            The parameters.
 	 * @throws Exception
 	 */
 	public void processDate(final GrobidMainArgs pGbdArgs) throws Exception {
@@ -108,7 +108,7 @@ public class ProcessEngine {
 	 * Process the author header using pGbdArgs parameters.
 	 * 
 	 * @param pGbdArgs
-	 *            - The parameters.
+	 *            The parameters.
 	 * @throws Exception
 	 */
 	public void processAuthorsHeader(final GrobidMainArgs pGbdArgs) throws Exception {
@@ -122,7 +122,7 @@ public class ProcessEngine {
 	 * Process the author citation using pGbdArgs parameters.
 	 * 
 	 * @param pGbdArgs
-	 *            - The parameters.
+	 *            The parameters.
 	 * @throws Exception
 	 */
 	public void processAuthorsCitation(final GrobidMainArgs pGbdArgs) throws Exception {
@@ -136,7 +136,7 @@ public class ProcessEngine {
 	 * Process the affiliation using pGbdArgs parameters.
 	 * 
 	 * @param pGbdArgs
-	 *            - The parameters.
+	 *            The parameters.
 	 * @throws Exception
 	 */
 	public void processAffiliation(final GrobidMainArgs pGbdArgs) throws Exception {
@@ -150,7 +150,7 @@ public class ProcessEngine {
 	 * Process the raw reference using pGbdArgs parameters.
 	 * 
 	 * @param pGbdArgs
-	 *            - The parameters.
+	 *            The parameters.
 	 * @throws Exception
 	 */
 	public void processRawReference(final GrobidMainArgs pGbdArgs) throws Exception {
@@ -164,7 +164,7 @@ public class ProcessEngine {
 	 * Train the header.
 	 * 
 	 * @param pGbdArgs
-	 *            - The parameters.
+	 *            The parameters.
 	 */
 	public void createTrainingHeader(final GrobidMainArgs pGbdArgs) {
 		inferPdfInputPath(pGbdArgs);
@@ -177,7 +177,7 @@ public class ProcessEngine {
 	 * Train the full text.
 	 * 
 	 * @param pGbdArgs
-	 *            - The parameters.
+	 *            The parameters.
 	 */
 	public void createTrainingFulltext(final GrobidMainArgs pGbdArgs) {
 		inferPdfInputPath(pGbdArgs);
@@ -190,7 +190,7 @@ public class ProcessEngine {
 	 * Train the full text.
 	 * 
 	 * @param pGbdArgs
-	 *            - The parameters.
+	 *            The parameters.
 	 * @throws Exception
 	 */
 	public void createTrainingPatentcitations(final GrobidMainArgs pGbdArgs) throws Exception {
@@ -242,7 +242,7 @@ public class ProcessEngine {
 	 * Infer the input path for pdfs if not given in arguments.
 	 * 
 	 * @param pGbdArgs
-	 *            - The GrobidArgs.
+	 *            The GrobidArgs.
 	 */
 	protected final static void inferPdfInputPath(final GrobidMainArgs pGbdArgs) {
 		String tmpFilePath;
@@ -257,7 +257,7 @@ public class ProcessEngine {
 	 * Infer the output path if not given in arguments.
 	 * 
 	 * @param pGbdArgs
-	 *            - The GrobidArgs.
+	 *            The GrobidArgs.
 	 */
 	protected final static void inferOutputPath(final GrobidMainArgs pGbdArgs) {
 		String tmpFilePath;

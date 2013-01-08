@@ -88,11 +88,11 @@ public class Annotation {
 	 * The constructor.
 	 * 
 	 * @param pPatents
-	 *            - The list of patents.
+	 *            The list of patents.
 	 * @param pArticles
-	 *            - The list of articles.
+	 *            The list of articles.
 	 * @param pDescription
-	 *            - The description.
+	 *            The description.
 	 */
 	public Annotation(final List<PatentItem> pPatents, final List<BibDataSet> pArticles, final Description pDescription) {
 		patents = pPatents;
@@ -148,7 +148,7 @@ public class Annotation {
 	 * pCurrItem has to be either an instance of PatentItem or BibDataSet.
 	 * 
 	 * @param pCurrItem
-	 *            - either an instance of PatentItem or BibDataSet.
+	 *            either an instance of PatentItem or BibDataSet.
 	 * @throws XMLStreamException
 	 * @throws GrobidException
 	 */
@@ -167,13 +167,13 @@ public class Annotation {
 	 * Generate the item in TEI format.
 	 * 
 	 * @param pTei
-	 *            - The TEI of the item.
+	 *            The TEI of the item.
 	 * @param pPointer
-	 *            - The TEI pointer.
+	 *            The TEI pointer.
 	 * @param pConfidence
-	 *            - The degree of confidence.
+	 *            The degree of confidence.
 	 * @param pStrConfidence
-	 *            - The label of degree of confidence.
+	 *            The label of degree of confidence.
 	 * @throws XMLStreamException
 	 */
 	protected void buildItem(final String pTei, final String pPointer, final double pConfidence, final String pStrConfidence,
@@ -212,7 +212,7 @@ public class Annotation {
 	 * Get the biblStruct generated tag.
 	 * 
 	 * @param pItem
-	 *            - either an instance of PatentItem or BibDataSet.
+	 *            either an instance of PatentItem or BibDataSet.
 	 * @return "<biblStruct>...</biblStruct>" annotation element.
 	 */
 	protected static String getTeiFromItem(final Object pItem) {
@@ -234,7 +234,7 @@ public class Annotation {
 	 * Get the confidence rate of the item.
 	 * 
 	 * @param pItem
-	 *            - either an instance of PatentItem or BibDataSet
+	 *            either an instance of PatentItem or BibDataSet
 	 * @return the confidence rate.
 	 */
 	protected static double getConfidenceRateFromItem(final Object pItem) {
@@ -256,7 +256,7 @@ public class Annotation {
 	 * Convert the confidence rate to String sentence.
 	 * 
 	 * @param pConfidence
-	 *            - the confidence rate in percent.
+	 *            the confidence rate in percent.
 	 * @return the sentence corresponding to the confidence rate.
 	 */
 	protected static String confidenceRateToString(final double pConfidence) {

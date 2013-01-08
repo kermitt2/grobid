@@ -65,15 +65,15 @@ public class Paragraph implements Cloneable {
 	 * Constructor.
 	 * 
 	 * @param pId
-	 *            - The id.
+	 *            The id.
 	 * @param pGornIdx
-	 *            - The gorn index.
+	 *            The gorn index.
 	 * @param pAttributes
-	 *            - The attributes.
+	 *            The attributes.
 	 * @param pPositionStart
-	 *            - the start position.
+	 *            the start position.
 	 * @param pPositionEnd
-	 *            - The end position.
+	 *            The end position.
 	 */
 	public Paragraph(final String pId, final String pGornIdx, final int pPositionStart, int pPositionEnd, final StartElement pStartTag,
 			final boolean pIsAnnotated) {
@@ -90,7 +90,7 @@ public class Paragraph implements Cloneable {
 	 * done to get the paragraph corresponding to the description pointer.
 	 * 
 	 * @param pDescriptionPointer
-	 *            - The pointer of Description.
+	 *            The pointer of Description.
 	 */
 	public Paragraph(final int pDescriptionPointer) {
 		descriptionPointer = pDescriptionPointer;
@@ -198,7 +198,7 @@ public class Paragraph implements Cloneable {
 	 * Get the id value of the paragraph.
 	 * 
 	 * @param pStartTag
-	 *            - The StartElement of the paragraph.
+	 *            The StartElement of the paragraph.
 	 * @return the id value if found, null else.
 	 */
 	public String getIdFromAttributes() {
