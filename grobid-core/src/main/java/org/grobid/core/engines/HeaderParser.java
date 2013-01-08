@@ -29,11 +29,9 @@ import org.slf4j.LoggerFactory;
  * @author Patrice Lopez
  */
 public class HeaderParser extends AbstractParser {
-	private static final Logger LOGGER = LoggerFactory
-			.getLogger(HeaderParser.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(HeaderParser.class);
 
-	private LanguageUtilities languageUtilities = LanguageUtilities
-			.getInstance();
+	private LanguageUtilities languageUtilities = LanguageUtilities.getInstance();
 
 	private AuthorParser authorParser = null;
 	private DateParser dateParser = null;
@@ -51,16 +49,14 @@ public class HeaderParser extends AbstractParser {
 		tmpPath = GrobidProperties.getTempPath();
 	}
 
-	public String processing(String input, boolean consolidate,
-			BiblioItem resHeader, int startPage, int endPage)
-			throws TimeoutException {
+	public String processing(String input, boolean consolidate, BiblioItem resHeader, int startPage, int endPage) throws TimeoutException {
 		doc = new Document(input, tmpPath.getAbsolutePath());
 		try {
 			// int startPage = 0;
 			// //int endPage = 1;
 			// int endPage = 2;
-			pathXML = doc.pdf2xml(true, false, startPage, endPage, input,
-					tmpPath.getAbsolutePath(), false); // with timeout,
+			pathXML = doc.pdf2xml(true, false, startPage, endPage, input, tmpPath.getAbsolutePath(), false); // with
+																												// timeout,
 			// no force pdf reloading
 			// input is the pdf file, tmpPath is the tmp directory for the lxml
 			// file,
@@ -73,24 +69,20 @@ public class HeaderParser extends AbstractParser {
 			doc.addFeaturesDocument();
 
 			if (doc.getBlocks() == null) {
-				throw new GrobidException(
-						"PDF parsing resulted in empty content");
+				throw new GrobidException("PDF parsing resulted in empty content");
 			}
 
 			return processingHeaderBlock(consolidate, doc, resHeader);
 		} catch (TimeoutException timeoutExp) {
 			throw new TimeoutException("A time out occured");
-		} catch (Exception exp) {
-			throw new GrobidException(
-					"An exception occurred while running Grobid on file "
-							+ tmpPath.getAbsolutePath() + exp);
+		} catch (final Exception exp) {
+			throw new GrobidException("An exception occurred while running Grobid on file " + tmpPath.getAbsolutePath() + ": " + exp);
 		} finally {
 			doc.cleanLxmlFile(pathXML, true);
 		}
 	}
 
-	public String processingHeaderBlock(boolean consolidate, Document doc,
-			BiblioItem resHeader) {
+	public String processingHeaderBlock(boolean consolidate, Document doc, BiblioItem resHeader) {
 		try {
 			String header;
 			if (doc.blockDocumentHeaders == null) {
@@ -113,16 +105,11 @@ public class HeaderParser extends AbstractParser {
 				res.append("\n");
 			}
 
-			resHeader = resultExtraction(res.toString(), true, tokenizations,
-					resHeader);
+			resHeader = resultExtraction(res.toString(), true, tokenizations, resHeader);
 
 			// LanguageUtilities languageUtilities =
 			// LanguageUtilities.getInstance();
-			Language langu = languageUtilities.runLanguageId(resHeader
-					.getTitle()
-					+ "\n"
-					+ resHeader.getKeywords()
-					+ "\n"
+			Language langu = languageUtilities.runLanguageId(resHeader.getTitle() + "\n" + resHeader.getKeywords() + "\n"
 					+ resHeader.getAbstract());
 			if (langu != null) {
 				String lang = langu.getLangId();
@@ -133,15 +120,13 @@ public class HeaderParser extends AbstractParser {
 			if (resHeader != null) {
 				if (resHeader.getAbstract() != null) {
 					// resHeader.setAbstract(utilities.dehyphenizeHard(resHeader.getAbstract()));
-					resHeader.setAbstract(TextUtilities.dehyphenize(resHeader
-							.getAbstract()));
+					resHeader.setAbstract(TextUtilities.dehyphenize(resHeader.getAbstract()));
 				}
 				BiblioItem.cleanTitles(resHeader);
 				if (resHeader.getTitle() != null) {
 					// String temp =
 					// utilities.dehyphenizeHard(resHeader.getTitle());
-					String temp = TextUtilities.dehyphenize(resHeader
-							.getTitle());
+					String temp = TextUtilities.dehyphenize(resHeader.getTitle());
 					temp = temp.trim();
 					if (temp.length() > 1) {
 						if (temp.startsWith("1"))
@@ -151,8 +136,7 @@ public class HeaderParser extends AbstractParser {
 					resHeader.setTitle(temp);
 				}
 				if (resHeader.getBookTitle() != null) {
-					resHeader.setBookTitle(TextUtilities.dehyphenize(resHeader
-							.getBookTitle()));
+					resHeader.setBookTitle(TextUtilities.dehyphenize(resHeader.getBookTitle()));
 				}
 
 				resHeader.setOriginalAuthors(resHeader.getAuthors());
@@ -172,8 +156,7 @@ public class HeaderParser extends AbstractParser {
 					for (int k = 0; k < authorSegments.length; k++) {
 						auts = new ArrayList<String>();
 						auts.add(authorSegments[k]);
-						List<Person> localAuthors = authorParser
-								.processingHeader(auts);
+						List<Person> localAuthors = authorParser.processingHeader(auts);
 						if (localAuthors != null) {
 							for (Person pers : localAuthors) {
 								resHeader.addFullAuthor(pers);
@@ -189,8 +172,7 @@ public class HeaderParser extends AbstractParser {
 				if (affiliationAddressParser == null) {
 					affiliationAddressParser = new AffiliationAddressParser();
 				}
-				resHeader.setFullAffiliations(affiliationAddressParser
-						.processReflow(res.toString(), tokenizations));
+				resHeader.setFullAffiliations(affiliationAddressParser.processReflow(res.toString(), tokenizations));
 				resHeader.attachEmails();
 				boolean attached = false;
 				if (fragmentedAuthors && !hasMarker) {
@@ -200,13 +182,9 @@ public class HeaderParser extends AbstractParser {
 								int k = 0;
 								for (Person pers : resHeader.getFullAuthors()) {
 									if (k < authorsBlocks.size()) {
-										int indd = authorsBlocks.get(k)
-												.intValue();
-										if (indd < resHeader
-												.getFullAffiliations().size()) {
-											pers.addAffiliation(resHeader
-													.getFullAffiliations().get(
-															indd));
+										int indd = authorsBlocks.get(k).intValue();
+										if (indd < resHeader.getFullAffiliations().size()) {
+											pers.addAffiliation(resHeader.getFullAffiliations().get(indd));
 										}
 									}
 									k++;
@@ -229,8 +207,7 @@ public class HeaderParser extends AbstractParser {
 					if (authorParser == null) {
 						authorParser = new AuthorParser();
 					}
-					resHeader.setFullEditors(authorParser
-							.processingHeader(edits));
+					resHeader.setFullEditors(authorParser.processingHeader(edits));
 					// resHeader.setFullEditors(authorParser.processingCitation(edits));
 				}
 
@@ -238,8 +215,7 @@ public class HeaderParser extends AbstractParser {
 					if (citationParser == null) {
 						citationParser = new CitationParser();
 					}
-					BiblioItem refer = citationParser.processing(
-							resHeader.getReference(), false);
+					BiblioItem refer = citationParser.processing(resHeader.getReference(), false);
 					BiblioItem.correct(resHeader, refer);
 				}
 			}
@@ -262,14 +238,12 @@ public class HeaderParser extends AbstractParser {
 					if (dateParser == null) {
 						dateParser = new DateParser();
 					}
-					ArrayList<Date> dates = dateParser.processing(resHeader
-							.getPublicationDate());
+					ArrayList<Date> dates = dateParser.processing(resHeader.getPublicationDate());
 					// most basic heuristic, we take the first date - to be
 					// revised...
 					if (dates != null) {
 						if (dates.size() > 0) {
-							resHeader
-									.setNormalizedPublicationDate(dates.get(0));
+							resHeader.setNormalizedPublicationDate(dates.get(0));
 						}
 					}
 				}
@@ -278,8 +252,7 @@ public class HeaderParser extends AbstractParser {
 					if (dateParser == null) {
 						dateParser = new DateParser();
 					}
-					ArrayList<Date> dates = dateParser.processing(resHeader
-							.getSubmissionDate());
+					ArrayList<Date> dates = dateParser.processing(resHeader.getSubmissionDate());
 					if (dates != null) {
 						if (dates.size() > 0) {
 							resHeader.setNormalizedSubmissionDate(dates.get(0));
@@ -289,14 +262,11 @@ public class HeaderParser extends AbstractParser {
 			}
 
 			TEIFormater teiFormater = new TEIFormater(doc);
-			@SuppressWarnings({ "NullableProblems" })
-			String tei = teiFormater.toTEIBody(resHeader, null, true, false,
-					true);
+			String tei = teiFormater.toTEIBody(resHeader, null, true, false, true);
 			LOGGER.debug(tei);
 			return tei;
 		} catch (Exception e) {
-			throw new GrobidException(
-					"An exception occured while running Grobid.", e);
+			throw new GrobidException("An exception occured while running Grobid.", e);
 		}
 	}
 
@@ -320,8 +290,7 @@ public class HeaderParser extends AbstractParser {
 	 * @param pathTEI
 	 *            path to TEI
 	 */
-	public void createTrainingHeader(String inputFile, String pathHeader,
-			String pathTEI) {
+	public void createTrainingHeader(String inputFile, String pathHeader, String pathTEI) {
 		doc = new Document(inputFile, tmpPath.getAbsolutePath());
 		try {
 			int startPage = 0;
@@ -329,8 +298,8 @@ public class HeaderParser extends AbstractParser {
 			int endPage = 2;
 			File file = new File(inputFile);
 			String PDFFileName = file.getName();
-			pathXML = doc.pdf2xml(true, false, startPage, endPage, inputFile,
-					tmpPath.getAbsolutePath(), false); // with timeout,
+			pathXML = doc.pdf2xml(true, false, startPage, endPage, inputFile, tmpPath.getAbsolutePath(), false); // with
+																													// timeout,
 			// no force pdf reloading
 			// pathPDF is the pdf file, tmpPath is the tmp directory for the
 			// lxml file,
@@ -343,18 +312,15 @@ public class HeaderParser extends AbstractParser {
 			doc.addFeaturesDocument();
 
 			if (doc.getBlocks() == null) {
-				throw new GrobidException(
-						"PDF parsing resulted in empty content");
+				throw new GrobidException("PDF parsing resulted in empty content");
 			}
 
 			String header = doc.getHeaderFeatured(true, true, true);
 			ArrayList<String> tokenizations = doc.getTokenizationsHeader();
 
 			// we write the header untagged
-			String outPathHeader = pathHeader + "/"
-					+ PDFFileName.replace(".pdf", ".header");
-			Writer writer = new OutputStreamWriter(new FileOutputStream(
-					new File(outPathHeader), false), "UTF-8");
+			String outPathHeader = pathHeader + "/" + PDFFileName.replace(".pdf", ".header");
+			Writer writer = new OutputStreamWriter(new FileOutputStream(new File(outPathHeader), false), "UTF-8");
 			writer.write(header + "\n");
 			writer.close();
 
@@ -386,8 +352,7 @@ public class HeaderParser extends AbstractParser {
 
 			// buffer for the header block
 			String rese = res.toString();
-			StringBuilder bufferHeader = trainingExtraction(rese, true,
-					tokenizations);
+			StringBuilder bufferHeader = trainingExtraction(rese, true, tokenizations);
 
 			// LanguageUtilities languageUtilities =
 			// LanguageUtilities.getInstance();
@@ -401,8 +366,7 @@ public class HeaderParser extends AbstractParser {
 			if (affiliationAddressParser == null) {
 				affiliationAddressParser = new AffiliationAddressParser();
 			}
-			StringBuffer bufferAffiliation = affiliationAddressParser
-					.trainingExtraction(rese, tokenizations);
+			StringBuffer bufferAffiliation = affiliationAddressParser.trainingExtraction(rese, tokenizations);
 			// buffer for the date block
 			StringBuffer bufferDate = null;
 			// we need to rebuild the found date string as it appears
@@ -413,8 +377,7 @@ public class HeaderParser extends AbstractParser {
 				String line = st.nextToken();
 				String theTotalTok = tokenizations.get(q);
 				String theTok = tokenizations.get(q);
-				while (theTok.equals(" ") || theTok.equals("\t")
-						|| theTok.equals("\n")) {
+				while (theTok.equals(" ") || theTok.equals("\t") || theTok.equals("\n")) {
 					q++;
 					theTok = tokenizations.get(q);
 					theTotalTok += theTok;
@@ -443,8 +406,7 @@ public class HeaderParser extends AbstractParser {
 				String line = st.nextToken();
 				String theTotalTok = tokenizations.get(q);
 				String theTok = tokenizations.get(q);
-				while (theTok.equals(" ") || theTok.equals("\t")
-						|| theTok.equals("\n")) {
+				while (theTok.equals(" ") || theTok.equals("\t") || theTok.equals("\n")) {
 					q++;
 					theTok = tokenizations.get(q);
 					theTotalTok += theTok;
@@ -473,8 +435,7 @@ public class HeaderParser extends AbstractParser {
 				String line = st.nextToken();
 				String theTotalTok = tokenizations.get(q);
 				String theTok = tokenizations.get(q);
-				while (theTok.equals(" ") || theTok.equals("\t")
-						|| theTok.equals("\n")) {
+				while (theTok.equals(" ") || theTok.equals("\t") || theTok.equals("\n")) {
 					q++;
 					theTok = tokenizations.get(q);
 					theTotalTok += theTok;
@@ -495,14 +456,9 @@ public class HeaderParser extends AbstractParser {
 
 			// write the TEI file to reflect the extract layout of the text as
 			// extracted from the pdf
-			writer = new OutputStreamWriter(new FileOutputStream(new File(
-					pathTEI
-							+ "/"
-							+ PDFFileName.replace(".pdf",
-									GrobidProperties.FILE_ENDING_TEI_HEADER)),
-					false), "UTF-8");
-			writer.write("<?xml version=\"1.0\" ?>\n<tei>\n\t<teiHeader>\n\t\t<fileDesc xml:id=\""
-					+ PDFFileName.replace(".pdf", "")
+			writer = new OutputStreamWriter(new FileOutputStream(new File(pathTEI + "/"
+					+ PDFFileName.replace(".pdf", GrobidProperties.FILE_ENDING_TEI_HEADER)), false), "UTF-8");
+			writer.write("<?xml version=\"1.0\" ?>\n<tei>\n\t<teiHeader>\n\t\t<fileDesc xml:id=\"" + PDFFileName.replace(".pdf", "")
 					+ "\"/>\n\t</teiHeader>\n\t<text");
 
 			if (lang != null) {
@@ -517,29 +473,18 @@ public class HeaderParser extends AbstractParser {
 
 			if (bufferAffiliation != null) {
 				if (bufferAffiliation.length() > 0) {
-					Writer writerAffiliation = new OutputStreamWriter(
-							new FileOutputStream(new File(pathTEI
-									+ "/"
-									+ PDFFileName.replace(".pdf",
-											".affiliation.tei.xml")), false),
-							"UTF-8");
-					writerAffiliation
-							.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
-					writerAffiliation
-							.write("\n<tei xmlns=\"http://www.tei-c.org/ns/1.0\""
-									+ " xmlns:xlink=\"http://www.w3.org/1999/xlink\" "
-									+ "xmlns:mml=\"http://www.w3.org/1998/Math/MathML\">");
-					writerAffiliation
-							.write("\n\t<teiHeader>\n\t\t<fileDesc>\n\t\t\t<sourceDesc>");
-					writerAffiliation
-							.write("\n\t\t\t\t<biblStruct>\n\t\t\t\t\t<analytic>\n\t\t\t\t\t\t<author>\n\n");
+					Writer writerAffiliation = new OutputStreamWriter(new FileOutputStream(new File(pathTEI + "/"
+							+ PDFFileName.replace(".pdf", ".affiliation.tei.xml")), false), "UTF-8");
+					writerAffiliation.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
+					writerAffiliation.write("\n<tei xmlns=\"http://www.tei-c.org/ns/1.0\""
+							+ " xmlns:xlink=\"http://www.w3.org/1999/xlink\" " + "xmlns:mml=\"http://www.w3.org/1998/Math/MathML\">");
+					writerAffiliation.write("\n\t<teiHeader>\n\t\t<fileDesc>\n\t\t\t<sourceDesc>");
+					writerAffiliation.write("\n\t\t\t\t<biblStruct>\n\t\t\t\t\t<analytic>\n\t\t\t\t\t\t<author>\n\n");
 
 					writerAffiliation.write(bufferAffiliation.toString());
 
-					writerAffiliation
-							.write("\n\t\t\t\t\t\t</author>\n\t\t\t\t\t</analytic>");
-					writerAffiliation
-							.write("\n\t\t\t\t</biblStruct>\n\t\t\t</sourceDesc>\n\t\t</fileDesc>");
+					writerAffiliation.write("\n\t\t\t\t\t\t</author>\n\t\t\t\t\t</analytic>");
+					writerAffiliation.write("\n\t\t\t\t</biblStruct>\n\t\t\t</sourceDesc>\n\t\t</fileDesc>");
 					writerAffiliation.write("\n\t</teiHeader>\n</tei>\n");
 					writerAffiliation.close();
 				}
@@ -547,15 +492,9 @@ public class HeaderParser extends AbstractParser {
 
 			if (bufferDate != null) {
 				if (bufferDate.length() > 0) {
-					Writer writerDate = new OutputStreamWriter(
-							new FileOutputStream(
-									new File(pathTEI
-											+ "/"
-											+ PDFFileName.replace(".pdf",
-													".date.xml")), false),
-							"UTF-8");
-					writerDate
-							.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
+					Writer writerDate = new OutputStreamWriter(new FileOutputStream(new File(pathTEI + "/"
+							+ PDFFileName.replace(".pdf", ".date.xml")), false), "UTF-8");
+					writerDate.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
 					writerDate.write("<dates>\n");
 
 					writerDate.write(bufferDate.toString());
@@ -567,31 +506,20 @@ public class HeaderParser extends AbstractParser {
 
 			if (bufferName != null) {
 				if (bufferName.length() > 0) {
-					Writer writerName = new OutputStreamWriter(
-							new FileOutputStream(new File(pathTEI
-									+ "/"
-									+ PDFFileName.replace(".pdf",
-											".authors.tei.xml")), false),
-							"UTF-8");
-					writerName
-							.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
-					writerName
-							.write("\n<tei xmlns=\"http://www.tei-c.org/ns/1.0\""
-									+ " xmlns:xlink=\"http://www.w3.org/1999/xlink\" "
-									+ "xmlns:mml=\"http://www.w3.org/1998/Math/MathML\">");
-					writerName
-							.write("\n\t<teiHeader>\n\t\t<fileDesc>\n\t\t\t<sourceDesc>");
-					writerName
-							.write("\n\t\t\t\t<biblStruct>\n\t\t\t\t\t<analytic>\n\n\t\t\t\t\t\t<author>");
+					Writer writerName = new OutputStreamWriter(new FileOutputStream(new File(pathTEI + "/"
+							+ PDFFileName.replace(".pdf", ".authors.tei.xml")), false), "UTF-8");
+					writerName.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
+					writerName.write("\n<tei xmlns=\"http://www.tei-c.org/ns/1.0\"" + " xmlns:xlink=\"http://www.w3.org/1999/xlink\" "
+							+ "xmlns:mml=\"http://www.w3.org/1998/Math/MathML\">");
+					writerName.write("\n\t<teiHeader>\n\t\t<fileDesc>\n\t\t\t<sourceDesc>");
+					writerName.write("\n\t\t\t\t<biblStruct>\n\t\t\t\t\t<analytic>\n\n\t\t\t\t\t\t<author>");
 					writerName.write("\n\t\t\t\t\t\t\t<persName>\n");
 
 					writerName.write(bufferName.toString());
 
 					writerName.write("\t\t\t\t\t\t\t</persName>\n");
-					writerName
-							.write("\t\t\t\t\t\t</author>\n\n\t\t\t\t\t</analytic>");
-					writerName
-							.write("\n\t\t\t\t</biblStruct>\n\t\t\t</sourceDesc>\n\t\t</fileDesc>");
+					writerName.write("\t\t\t\t\t\t</author>\n\n\t\t\t\t\t</analytic>");
+					writerName.write("\n\t\t\t\t</biblStruct>\n\t\t\t</sourceDesc>\n\t\t</fileDesc>");
 					writerName.write("\n\t</teiHeader>\n</tei>\n");
 					writerName.close();
 				}
@@ -599,14 +527,9 @@ public class HeaderParser extends AbstractParser {
 
 			if (bufferReference != null) {
 				if (bufferReference.length() > 0) {
-					Writer writerReference = new OutputStreamWriter(
-							new FileOutputStream(new File(pathTEI
-									+ "/"
-									+ PDFFileName.replace(".pdf",
-											".header-reference.xml")), false),
-							"UTF-8");
-					writerReference
-							.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
+					Writer writerReference = new OutputStreamWriter(new FileOutputStream(new File(pathTEI + "/"
+							+ PDFFileName.replace(".pdf", ".header-reference.xml")), false), "UTF-8");
+					writerReference.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
 					writerReference.write("<citations>\n");
 
 					writerReference.write(bufferReference.toString());
@@ -616,8 +539,7 @@ public class HeaderParser extends AbstractParser {
 				}
 			}
 		} catch (Exception e) {
-			throw new GrobidException(
-					"An exception occurred while running Grobid.", e);
+			throw new GrobidException("An exception occurred while running Grobid.", e);
 		} finally {
 			doc.cleanLxmlFile(pathXML, true);
 		}
@@ -638,8 +560,7 @@ public class HeaderParser extends AbstractParser {
 	 *            biblio item
 	 * @return a biblio item
 	 */
-	public BiblioItem resultExtraction(String result, boolean intro,
-			ArrayList<String> tokenizations, BiblioItem biblio) {
+	public BiblioItem resultExtraction(String result, boolean intro, ArrayList<String> tokenizations, BiblioItem biblio) {
 		StringTokenizer st = new StringTokenizer(result, "\n");
 		String s1 = null;
 		String s2 = null;
@@ -697,8 +618,7 @@ public class HeaderParser extends AbstractParser {
 				} else
 					biblio.setTitle(s2);
 			} else if ((s1.equals("<author>")) || (s1.equals("I-<author>"))) {
-				if ((lastTag == null)
-						|| ((lastTag != null) && (lastTag.endsWith("<author>")))) {
+				if ((lastTag == null) || ((lastTag != null) && (lastTag.endsWith("<author>")))) {
 					if (biblio.getAuthors() != null) {
 						if (addSpace) {
 							biblio.setAuthors(biblio.getAuthors() + " " + s2);
@@ -739,30 +659,24 @@ public class HeaderParser extends AbstractParser {
 
 				if (biblio.getPublicationDate() != null) {
 					if (addSpace) {
-						biblio.setPublicationDate(biblio.getPublicationDate()
-								+ " " + s2);
+						biblio.setPublicationDate(biblio.getPublicationDate() + " " + s2);
 					} else
-						biblio.setPublicationDate(biblio.getPublicationDate()
-								+ s2);
+						biblio.setPublicationDate(biblio.getPublicationDate() + s2);
 				} else
 					biblio.setPublicationDate(s2);
-			} else if ((s1.equals("<date-submission>"))
-					|| (s1.equals("I-<date-submission>"))) {
+			} else if ((s1.equals("<date-submission>")) || (s1.equals("I-<date-submission>"))) {
 				// it appears that the same date is quite often repeated,
 				// we should check, before adding a new date segment, if it is
 				// not already present
 
 				if (biblio.getSubmissionDate() != null) {
 					if (addSpace) {
-						biblio.setSubmissionDate(biblio.getSubmissionDate()
-								+ " " + s2);
+						biblio.setSubmissionDate(biblio.getSubmissionDate() + " " + s2);
 					} else
-						biblio.setSubmissionDate(biblio.getSubmissionDate()
-								+ s2);
+						biblio.setSubmissionDate(biblio.getSubmissionDate() + s2);
 				} else
 					biblio.setSubmissionDate(s2);
-			} else if ((s1.equals("<pages>")) || (s1.equals("<page>"))
-					| (s1.equals("I-<pages>")) || (s1.equals("I-<page>"))) {
+			} else if ((s1.equals("<pages>")) || (s1.equals("<page>")) | (s1.equals("I-<pages>")) || (s1.equals("I-<page>"))) {
 				if (biblio.getPageRange() != null) {
 					if (addSpace) {
 						biblio.setPageRange(biblio.getPageRange() + " " + s2);
@@ -779,12 +693,10 @@ public class HeaderParser extends AbstractParser {
 					}
 				} else
 					biblio.setEditors(s2);
-			} else if ((s1.equals("<institution>"))
-					|| (s1.equals("I-<institution>"))) {
+			} else if ((s1.equals("<institution>")) || (s1.equals("I-<institution>"))) {
 				if (biblio.getInstitution() != null) {
 					if (addSpace) {
-						biblio.setInstitution(biblio.getInstitution() + "; "
-								+ s2);
+						biblio.setInstitution(biblio.getInstitution() + "; " + s2);
 					} else
 						biblio.setInstitution(biblio.getInstitution() + s2);
 				} else
@@ -805,8 +717,7 @@ public class HeaderParser extends AbstractParser {
 						biblio.setAbstract(biblio.getAbstract() + s2);
 				} else
 					biblio.setAbstract(s2);
-			} else if ((s1.equals("<reference>"))
-					|| (s1.equals("I-<reference>"))) {
+			} else if ((s1.equals("<reference>")) || (s1.equals("I-<reference>"))) {
 				if (biblio.getReference() != null) {
 					if (addSpace) {
 						biblio.setReference(biblio.getReference() + " " + s2);
@@ -822,8 +733,7 @@ public class HeaderParser extends AbstractParser {
 						biblio.setGrant(biblio.getGrant() + s2);
 				} else
 					biblio.setGrant(s2);
-			} else if ((s1.equals("<copyright>"))
-					|| (s1.equals("I-<copyright>"))) {
+			} else if ((s1.equals("<copyright>")) || (s1.equals("I-<copyright>"))) {
 				if (biblio.getCopyright() != null) {
 					if (addSpace) {
 						biblio.setCopyright(biblio.getCopyright() + " " + s2);
@@ -831,24 +741,18 @@ public class HeaderParser extends AbstractParser {
 						biblio.setCopyright(biblio.getCopyright() + s2);
 				} else
 					biblio.setCopyright(s2);
-			} else if ((s1.equals("<affiliation>"))
-					|| (s1.equals("I-<affiliation>"))) {
+			} else if ((s1.equals("<affiliation>")) || (s1.equals("I-<affiliation>"))) {
 				// affiliation **makers** should be marked SINGLECHAR LINESTART
 				if (biblio.getAffiliation() != null) {
-					if ((lastTag != null)
-							&& (s1.equals(lastTag) || lastTag
-									.equals("I-<affiliation>"))) {
+					if ((lastTag != null) && (s1.equals(lastTag) || lastTag.equals("I-<affiliation>"))) {
 						if (s1.equals("I-<affiliation>")) {
-							biblio.setAffiliation(biblio.getAffiliation()
-									+ " ; " + s2);
+							biblio.setAffiliation(biblio.getAffiliation() + " ; " + s2);
 						} else if (addSpace) {
-							biblio.setAffiliation(biblio.getAffiliation() + " "
-									+ s2);
+							biblio.setAffiliation(biblio.getAffiliation() + " " + s2);
 						} else
 							biblio.setAffiliation(biblio.getAffiliation() + s2);
 					} else
-						biblio.setAffiliation(biblio.getAffiliation() + " ; "
-								+ s2);
+						biblio.setAffiliation(biblio.getAffiliation() + " ; " + s2);
 				} else
 					biblio.setAffiliation(s2);
 			} else if ((s1.equals("<address>")) || (s1.equals("I-<address>"))) {
@@ -909,8 +813,7 @@ public class HeaderParser extends AbstractParser {
 						biblio.setWeb(biblio.getWeb() + s2);
 				} else
 					biblio.setWeb(s2);
-			} else if ((s1.equals("<dedication>"))
-					|| (s1.equals("I-<dedication>"))) {
+			} else if ((s1.equals("<dedication>")) || (s1.equals("I-<dedication>"))) {
 				if (biblio.getDedication() != null) {
 					if (addSpace)
 						biblio.setDedication(biblio.getDedication() + " " + s2);
@@ -918,8 +821,7 @@ public class HeaderParser extends AbstractParser {
 						biblio.setDedication(biblio.getDedication() + s2);
 				} else
 					biblio.setDedication(s2);
-			} else if ((s1.equals("<submission>"))
-					|| (s1.equals("I-<submission>"))) {
+			} else if ((s1.equals("<submission>")) || (s1.equals("I-<submission>"))) {
 				if (biblio.getSubmission() != null) {
 					if (addSpace)
 						biblio.setSubmission(biblio.getSubmission() + " " + s2);
@@ -931,21 +833,16 @@ public class HeaderParser extends AbstractParser {
 				if (biblio.getEnglishTitle() != null) {
 					if (s1.equals(lastTag)) {
 						if (localFeatures.contains("LINESTART")) {
-							biblio.setEnglishTitle(biblio.getEnglishTitle()
-									+ " " + s2);
+							biblio.setEnglishTitle(biblio.getEnglishTitle() + " " + s2);
 						} else if (addSpace)
-							biblio.setEnglishTitle(biblio.getEnglishTitle()
-									+ " " + s2);
+							biblio.setEnglishTitle(biblio.getEnglishTitle() + " " + s2);
 						else
-							biblio.setEnglishTitle(biblio.getEnglishTitle()
-									+ s2);
+							biblio.setEnglishTitle(biblio.getEnglishTitle() + s2);
 					} else
-						biblio.setEnglishTitle(biblio.getEnglishTitle() + " ; "
-								+ s2);
+						biblio.setEnglishTitle(biblio.getEnglishTitle() + " ; " + s2);
 				} else
 					biblio.setEnglishTitle(s2);
-			} else if (((s1.equals("<intro>")) || (s1.equals("I-<intro>")))
-					&& intro) {
+			} else if (((s1.equals("<intro>")) || (s1.equals("I-<intro>"))) && intro) {
 				return biblio;
 			}
 			lastTag = s1;
@@ -966,8 +863,7 @@ public class HeaderParser extends AbstractParser {
 	 *            list of tokens
 	 * @return a result
 	 */
-	private StringBuilder trainingExtraction(String result, boolean intro,
-			ArrayList<String> tokenizations) {
+	private StringBuilder trainingExtraction(String result, boolean intro, ArrayList<String> tokenizations) {
 		// this is the main buffer for the whole header
 		StringBuilder buffer = new StringBuilder();
 
@@ -1043,117 +939,88 @@ public class HeaderParser extends AbstractParser {
 
 			boolean output;
 
-			output = writeField(buffer, s1, lastTag0, s2, "<title>",
-					"<docTitle>\n\t<titlePart>", addSpace);
+			output = writeField(buffer, s1, lastTag0, s2, "<title>", "<docTitle>\n\t<titlePart>", addSpace);
 			if (!output) {
-				output = writeField(buffer, s1, lastTag0, s2, "<author>",
-						"<byline>\n\t<docAuthor>", addSpace);
+				output = writeField(buffer, s1, lastTag0, s2, "<author>", "<byline>\n\t<docAuthor>", addSpace);
 			}
 			if (!output) {
-				output = writeField(buffer, s1, lastTag0, s2, "<location>",
-						"<address>", addSpace);
+				output = writeField(buffer, s1, lastTag0, s2, "<location>", "<address>", addSpace);
 			}
 			if (!output) {
-				output = writeField(buffer, s1, lastTag0, s2, "<address>",
-						"<address>", addSpace);
+				output = writeField(buffer, s1, lastTag0, s2, "<address>", "<address>", addSpace);
 			}
 			if (!output) {
-				output = writeField(buffer, s1, lastTag0, s2, "<date>",
-						"<date>", addSpace);
+				output = writeField(buffer, s1, lastTag0, s2, "<date>", "<date>", addSpace);
 			}
 			if (!output) {
-				output = writeField(buffer, s1, lastTag0, s2,
-						"<date-submission>", "<date type=\"submission\">",
-						addSpace);
+				output = writeField(buffer, s1, lastTag0, s2, "<date-submission>", "<date type=\"submission\">", addSpace);
 			}
 			if (!output) {
-				output = writeField(buffer, s1, lastTag0, s2, "<booktitle>",
-						"<booktitle>", addSpace);
+				output = writeField(buffer, s1, lastTag0, s2, "<booktitle>", "<booktitle>", addSpace);
 			}
 			if (!output) {
-				output = writeField(buffer, s1, lastTag0, s2, "<pages>",
-						"<pages>", addSpace);
+				output = writeField(buffer, s1, lastTag0, s2, "<pages>", "<pages>", addSpace);
 			}
 			if (!output) {
-				output = writeField(buffer, s1, lastTag0, s2, "<publisher>",
-						"<publisher>", addSpace);
+				output = writeField(buffer, s1, lastTag0, s2, "<publisher>", "<publisher>", addSpace);
 			}
 			if (!output) {
-				output = writeField(buffer, s1, lastTag0, s2, "<journal>",
-						"<journal>", addSpace);
+				output = writeField(buffer, s1, lastTag0, s2, "<journal>", "<journal>", addSpace);
 			}
 			if (!output) {
-				output = writeField(buffer, s1, lastTag0, s2, "<institution>",
-						"<byline>\n\t<affiliation>", addSpace);
+				output = writeField(buffer, s1, lastTag0, s2, "<institution>", "<byline>\n\t<affiliation>", addSpace);
 			}
 			if (!output) {
-				output = writeField(buffer, s1, lastTag0, s2, "<affiliation>",
-						"<byline>\n\t<affiliation>", addSpace);
+				output = writeField(buffer, s1, lastTag0, s2, "<affiliation>", "<byline>\n\t<affiliation>", addSpace);
 			}
 			if (!output) {
-				output = writeField(buffer, s1, lastTag0, s2, "<volume>",
-						"<volume>", addSpace);
+				output = writeField(buffer, s1, lastTag0, s2, "<volume>", "<volume>", addSpace);
 			}
 			if (!output) {
-				output = writeField(buffer, s1, lastTag0, s2, "<editor>",
-						"<editor>", addSpace);
+				output = writeField(buffer, s1, lastTag0, s2, "<editor>", "<editor>", addSpace);
 			}
 			if (!output) {
-				output = writeField(buffer, s1, lastTag0, s2, "<note>",
-						"<note type=\"other\">", addSpace);
+				output = writeField(buffer, s1, lastTag0, s2, "<note>", "<note type=\"other\">", addSpace);
 			}
 			if (!output) {
-				output = writeField(buffer, s1, lastTag0, s2, "<abstract>",
-						"<div type=\"abstract\">", addSpace);
+				output = writeField(buffer, s1, lastTag0, s2, "<abstract>", "<div type=\"abstract\">", addSpace);
 			}
 			if (!output) {
-				output = writeField(buffer, s1, lastTag0, s2, "<email>",
-						"<email>", addSpace);
+				output = writeField(buffer, s1, lastTag0, s2, "<email>", "<email>", addSpace);
 			}
 			if (!output) {
-				output = writeField(buffer, s1, lastTag0, s2, "<pubnum>",
-						"<pubnum>", addSpace);
+				output = writeField(buffer, s1, lastTag0, s2, "<pubnum>", "<pubnum>", addSpace);
 			}
 			if (!output) {
-				output = writeField(buffer, s1, lastTag0, s2, "<keyword>",
-						"<keyword>", addSpace);
+				output = writeField(buffer, s1, lastTag0, s2, "<keyword>", "<keyword>", addSpace);
 			}
 			if (!output) {
-				output = writeField(buffer, s1, lastTag0, s2, "<phone>",
-						"<phone>", addSpace);
+				output = writeField(buffer, s1, lastTag0, s2, "<phone>", "<phone>", addSpace);
 			}
 			if (!output) {
-				output = writeField(buffer, s1, lastTag0, s2, "<degree>",
-						"<degree>", addSpace);
+				output = writeField(buffer, s1, lastTag0, s2, "<degree>", "<degree>", addSpace);
 			}
 			if (!output) {
-				output = writeField(buffer, s1, lastTag0, s2, "<web>",
-						"<ptr type=\"web\">", addSpace);
+				output = writeField(buffer, s1, lastTag0, s2, "<web>", "<ptr type=\"web\">", addSpace);
 			}
 			if (!output) {
-				output = writeField(buffer, s1, lastTag0, s2, "<dedication>",
-						"<dedication>", addSpace);
+				output = writeField(buffer, s1, lastTag0, s2, "<dedication>", "<dedication>", addSpace);
 			}
 			if (!output) {
-				output = writeField(buffer, s1, lastTag0, s2, "<submission>",
-						"<note type=\"submission\">", addSpace);
+				output = writeField(buffer, s1, lastTag0, s2, "<submission>", "<note type=\"submission\">", addSpace);
 			}
 			if (!output) {
-				output = writeField(buffer, s1, lastTag0, s2, "<entitle>",
-						"<note type=\"title\">", addSpace);
+				output = writeField(buffer, s1, lastTag0, s2, "<entitle>", "<note type=\"title\">", addSpace);
 			}
 			if (!output) {
-				output = writeField(buffer, s1, lastTag0, s2, "<reference>",
-						"<reference>", addSpace);
+				output = writeField(buffer, s1, lastTag0, s2, "<reference>", "<reference>", addSpace);
 			}
 			if (!output) {
-				output = writeField(buffer, s1, lastTag0, s2, "<copyright>",
-						"<note type=\"copyright\">", addSpace);
+				output = writeField(buffer, s1, lastTag0, s2, "<copyright>", "<note type=\"copyright\">", addSpace);
 			}
 			if (!output) {
 				// noinspection UnusedAssignment
-				output = writeField(buffer, s1, lastTag0, s2, "<grant>",
-						"<note type=\"grant\">", addSpace);
+				output = writeField(buffer, s1, lastTag0, s2, "<grant>", "<note type=\"grant\">", addSpace);
 			}
 
 			if (((s1.equals("<intro>")) || (s1.equals("I-<intro>"))) && intro) {
@@ -1172,8 +1039,7 @@ public class HeaderParser extends AbstractParser {
 		return buffer;
 	}
 
-	private void testClosingTag(StringBuilder buffer, String currentTag0,
-			String lastTag0) {
+	private void testClosingTag(StringBuilder buffer, String currentTag0, String lastTag0) {
 		if (!currentTag0.equals(lastTag0)) {
 			// we close the current tag
 			if (lastTag0.equals("<title>")) {
@@ -1226,9 +1092,7 @@ public class HeaderParser extends AbstractParser {
 		}
 	}
 
-	private boolean writeField(StringBuilder buffer, String s1,
-			String lastTag0, String s2, String field, String outField,
-			boolean addSpace) {
+	private boolean writeField(StringBuilder buffer, String s1, String lastTag0, String s2, String field, String outField, boolean addSpace) {
 		boolean result = false;
 		if ((s1.equals(field)) || (s1.equals("I-" + field))) {
 			result = true;
@@ -1258,8 +1122,7 @@ public class HeaderParser extends AbstractParser {
 			}
 			consolidator.openDb();
 			ArrayList<BiblioItem> bibis = new ArrayList<BiblioItem>();
-			boolean valid = consolidator.consolidateCrossrefGet(resHeader,
-					bibis);
+			boolean valid = consolidator.consolidateCrossrefGet(resHeader, bibis);
 			if ((valid) && (bibis.size() > 0)) {
 				BiblioItem bibo = bibis.get(0);
 				if (bibo != null) {
@@ -1269,8 +1132,7 @@ public class HeaderParser extends AbstractParser {
 			consolidator.closeDb();
 		} catch (Exception e) {
 			// e.printStackTrace();
-			throw new GrobidException(
-					"An exception occured while running Grobid.", e);
+			throw new GrobidException("An exception occured while running Grobid.", e);
 		}
 		return resHeader;
 	}
