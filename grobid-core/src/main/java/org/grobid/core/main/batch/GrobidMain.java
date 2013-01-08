@@ -1,17 +1,9 @@
 package org.grobid.core.main.batch;
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.lang.reflect.Method;
-import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.commons.lang3.StringUtils;
-import org.grobid.core.data.BiblioItem;
-import org.grobid.core.engines.Engine;
 import org.grobid.core.engines.ProcessEngine;
-import org.grobid.core.factory.GrobidFactory;
 import org.grobid.core.mock.MockContext;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.Utilities;
@@ -24,128 +16,114 @@ import org.grobid.core.utilities.Utilities;
  */
 public class GrobidMain {
 
-	private static enum commandList {
-		processHeader, fullTextToTEI, processDate, processAuthorsHeader, processAuthorsCitation, processAffiliation, processRawReference
-	};
-
-	/**
-	 * The engine used for processing.
-	 */
-	private static Engine engine;
+	private static List<String> availableCommands;
 
 	/**
 	 * Arguments of the batch.
 	 */
-	private static GrobidMainArgs gbdArgs = new GrobidMainArgs();
+	private static GrobidMainArgs gbdArgs;
 
-	protected static List<String> commandListToList() {
-		List<String> list = new ArrayList<String>();
-		for (commandList currValue : commandList.values()) {
-			list.add(currValue.toString());
-		}
-		return list;
-	}
-
+	/**
+	 * Infer some parameters not given in arguments.
+	 */
 	protected static void inferParamsNotSet() {
+		String tmpFilePath;
 		if (gbdArgs.getPath2grobidHome() == null) {
-			gbdArgs.setPath2grobidHome(new File("grobid-home").getAbsolutePath());
+			tmpFilePath = new File("grobid-home").getAbsolutePath();
+			System.out.println("No path set for grobid-home. Using: " + tmpFilePath);
+			gbdArgs.setPath2grobidHome(tmpFilePath);
 		}
 		if (gbdArgs.getPath2grobidProperty() == null) {
-			gbdArgs.setPath2grobidProperty(new File("grobid.properties").getAbsolutePath());
-		}
-		if (gbdArgs.getPath2pdfs() == null) {
-			gbdArgs.setPath2pdfs(new File(".").getAbsolutePath());
-		}
-		if (gbdArgs.getPath2Output() == null) {
-			gbdArgs.setPath2Output(new File(".").getAbsolutePath());
+			tmpFilePath = new File("grobid.properties").getAbsolutePath();
+			System.out.println("No path set for grobid.properties. Using: " + tmpFilePath);
+			gbdArgs.setPath2grobidProperty(tmpFilePath);
 		}
 	}
 
+	/**
+	 * Initialize the batch.
+	 */
 	protected static void initProcess() {
 		try {
-			inferParamsNotSet();
-			MockContext.setInitialContext(gbdArgs.getPath2grobidHome(),
-					gbdArgs.getPath2grobidProperty());
-		} catch (Exception e) {
-			System.err.println("Grobid initialisation failed");
+			MockContext.setInitialContext(gbdArgs.getPath2grobidHome(), gbdArgs.getPath2grobidProperty());
+		} catch (final Exception exp) {
+			System.err.println("Grobid initialisation failed: " + exp);
 		}
 		GrobidProperties.getInstance();
-		engine = GrobidFactory.getInstance().createEngine();
 	}
 
 	/**
 	 * @return String to display for help.
 	 */
 	protected static String getHelp() {
-		StringBuffer help = new StringBuffer();
+		final StringBuffer help = new StringBuffer();
 		help.append("HELP GROBID\n");
-		help.append("-h: display help\n");
-		help.append("-gH: give the path to grobid home directory\n");
-		help.append("-gP: give the path  to grobid.properties\n");
-		help.append("-dPdf: give the path to the directory where input pdf are saved. Needed only for pdf conversion methods.\n");
-		help.append("-dOut: give the path to the directory where results are saved. Output directory is the curent directory if not set.\n");
-		help.append("-exe: give the command to execute on the pdf. The Value should be one of these:\n");
-		help.append("\t" + commandListToList() + "\n");
+		help.append("-h: displays help\n");
+		help.append("-gH: gives the path to grobid home directory\n");
+		help.append("-gP: gives the path  to grobid.properties\n");
+		help.append("-dIn: gives the path to the directory where inputs are saved. To use only when the called method needs it.\n");
+		help.append("-dOut: gives the path to the directory where results are saved. Output directory is the curent directory if not set.\n");
+		help.append("-s: is the parameter used for process using string as input and not file.\n");
+		help.append("-exe: gives the command to execute. The Value should be one of these:\n");
+		help.append("\t" + availableCommands + "\n");
 		return help.toString();
 	}
 
 	/**
 	 * Process batch given the args.
 	 * 
-	 * @param args
-	 *            batch args
+	 * @param pArgs
+	 *            - The arguments given to the batch.
 	 */
-	protected static boolean processArgs(String[] args) {
+	protected static boolean processArgs(final String[] pArgs) {
 		boolean result = true;
-		if (args.length == 0) {
+		if (pArgs.length == 0) {
 			System.out.println(getHelp());
 			result = false;
 		} else {
 			String currArg;
-			for (int i = 0; i < args.length; i++) {
-				currArg = args[i];
+			for (int i = 0; i < pArgs.length; i++) {
+				currArg = pArgs[i];
 				if (currArg.equals("-h")) {
 					System.out.println(getHelp());
+					result = false;
 					break;
 				}
 				if (currArg.equals("-gH")) {
-					gbdArgs.setPath2grobidHome(args[i + 1]);
+					gbdArgs.setPath2grobidHome(pArgs[i + 1]);
 					i++;
 					continue;
 				}
 				if (currArg.equals("-gP")) {
-					gbdArgs.setPath2grobidProperty(args[i + 1]);
+					gbdArgs.setPath2grobidProperty(pArgs[i + 1]);
 					i++;
 					continue;
 				}
-				if (currArg.equals("-dPdf")) {
-					gbdArgs.setPath2pdfs(args[i + 1]);
+				if (currArg.equals("-dIn")) {
+					gbdArgs.setPath2Input(pArgs[i + 1]);
 					gbdArgs.setPdf(true);
 					i++;
 					continue;
 				}
 				if (currArg.equals("-s")) {
-					gbdArgs.setInput(args[i + 1]);
+					gbdArgs.setInput(pArgs[i + 1]);
 					gbdArgs.setPdf(false);
 					i++;
 					continue;
 				}
 				if (currArg.equals("-dOut")) {
-					gbdArgs.setPath2Output(args[i + 1]);
+					gbdArgs.setPath2Output(pArgs[i + 1]);
 					i++;
 					continue;
 				}
 				if (currArg.equals("-exe")) {
-					final String command = args[i + 1];
-					if (commandListToList().contains(command)) {
-						commandList.valueOf(command);
+					final String command = pArgs[i + 1];
+					if (availableCommands.contains(command)) {
 						gbdArgs.setProcessMethodName(command);
 						i++;
 						continue;
 					} else {
-						System.err
-								.println("-exe value should be one value from this list: "
-										+ commandListToList());
+						System.err.println("-exe value should be one value from this list: " + availableCommands);
 						result = false;
 						break;
 					}
@@ -156,73 +134,21 @@ public class GrobidMain {
 		return result;
 	}
 
-	protected static void processPdf() throws Exception, NoSuchMethodException,
-			FileNotFoundException, IOException {
-		Object result = Utilities.launchMethod(engine,
-				new Object[] { gbdArgs.getPath2pdfs(), false, null },
-				new Class[] { String.class, boolean.class, BiblioItem.class },
-				gbdArgs.getProcessMethodName());
-
-		Utilities.writeInFile(
-				gbdArgs.getPath2Output()
-						+ File.separator
-						+ new File(gbdArgs.getPath2pdfs()).getName().replace(
-								"pdf", "tei.xml"), result.toString());
-	}
-
-	protected static void processInputString() throws Exception,
-			NoSuchMethodException, FileNotFoundException, IOException {
-		Object result = Utilities.launchMethod(engine,
-				new Object[] { gbdArgs.getInput() },
-				new Class[] { String.class }, gbdArgs.getProcessMethodName());
-
-		Utilities.writeInFile(gbdArgs.getPath2Output() + File.separator
-				+ "result", result.toString());
-		System.out.println(result.toString());
-	}
-
-	protected static void processRawReference() throws Exception,
-			NoSuchMethodException, FileNotFoundException, IOException {
-		Object result = Utilities.launchMethod(engine,
-				new Object[] { gbdArgs.getInput(), false }, new Class[] {
-						String.class, boolean.class },
-				gbdArgs.getProcessMethodName());
-
-		Utilities.writeInFile(gbdArgs.getPath2Output() + File.separator
-				+ "result", result.toString());
-		System.out.println(result.toString());
-	}
-
 	/**
-	 * Starts grobid from command line using the following parameters:
+	 * Starts Grobid from command line using the following parameters:
 	 * 
 	 * @param args
-	 *            arguments
+	 *            - The arguments
 	 */
-	public static void main(String[] args) throws Exception {
-		//System.out.println(ProcessEngine.getMethods());
-		if (processArgs(args)) {
-			initProcess();
+	public static void main(final String[] args) throws Exception {
+		gbdArgs = new GrobidMainArgs();
+		availableCommands = ProcessEngine.getUsableMethods();
 
-			if (StringUtils.equals(commandList.processHeader.toString(),
-					gbdArgs.getProcessMethodName())
-					|| StringUtils.equals(commandList.fullTextToTEI.toString(),
-							gbdArgs.getProcessMethodName())) {
-				File pdfDirectory = new File(gbdArgs.getPath2pdfs());
-				for (File currPdf : pdfDirectory.listFiles()) {
-					if(currPdf.getName().contains(".pdf")){
-						gbdArgs.setPath2pdfs(currPdf.getAbsolutePath());
-						processPdf();
-					}
-				}
-			} else if (StringUtils.equals(
-					commandList.processRawReference.toString(),
-					gbdArgs.getProcessMethodName())) {
-				processRawReference();
-			} else {
-				processInputString();
-			}
-			engine.close();
+		if (processArgs(args)) {
+			inferParamsNotSet();
+			initProcess();
+			ProcessEngine processEngine = new ProcessEngine();
+			Utilities.launchMethod(processEngine, new Object[] { gbdArgs }, gbdArgs.getProcessMethodName());
 		}
 
 	}
