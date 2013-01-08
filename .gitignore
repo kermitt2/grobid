@@ -6,6 +6,7 @@ Thumbs.db
 .settings
 .classpath
 *.log
+*.log.*
 
 # *.log
 # grobid-core/log/debug.log
