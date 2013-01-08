@@ -102,8 +102,7 @@ public class Engine implements Closeable {
 	 *            - the string corresponding to a raw sequence of names
 	 * @return the list of structured author object
 	 */
-	public List<Person> processAuthorsHeader(String authorSequence)
-			throws Exception {
+	public List<Person> processAuthorsHeader(String authorSequence) throws Exception {
 		List<String> inputs = new ArrayList<String>();
 		inputs.add(authorSequence);
 		if (authorParser == null) {
@@ -122,8 +121,7 @@ public class Engine implements Closeable {
 	 *            - the string corresponding to a raw sequence of names
 	 * @return the list of structured author object
 	 */
-	public List<Person> processAuthorsCitation(String authorSequence)
-			throws Exception {
+	public List<Person> processAuthorsCitation(String authorSequence) throws Exception {
 		List<String> inputs = new ArrayList<String>();
 		inputs.add(authorSequence);
 		if (authorParser == null) {
@@ -143,8 +141,7 @@ public class Engine implements Closeable {
 	 * @return the list of all recognized structured author objects for each
 	 *         sequence of authors.
 	 */
-	public List<List<Person>> processAuthorsCitationLists(
-			List<String> authorSequences) throws Exception {
+	public List<List<Person>> processAuthorsCitationLists(List<String> authorSequences) throws Exception {
 		return null;
 	}
 
@@ -156,13 +153,11 @@ public class Engine implements Closeable {
 	 * @return the list of all recognized structured affiliation objects.
 	 * @throws IOException
 	 */
-	public List<Affiliation> processAffiliation(String addressBlock)
-			throws IOException {
+	public List<Affiliation> processAffiliation(String addressBlock) throws IOException {
 		if (affiliationAddressParser == null) {
 			affiliationAddressParser = new AffiliationAddressParser();
 		}
-		List<Affiliation> result = affiliationAddressParser
-				.processing(addressBlock);
+		List<Affiliation> result = affiliationAddressParser.processing(addressBlock);
 		return result;
 	}
 
@@ -175,15 +170,13 @@ public class Engine implements Closeable {
 	 * @return the list of all recognized structured affiliation objects for
 	 *         each sequence of affiliation + address block.
 	 */
-	public List<List<Affiliation>> processAffiliations(
-			List<String> addressBlocks) throws Exception {
+	public List<List<Affiliation>> processAffiliations(List<String> addressBlocks) throws Exception {
 		if (affiliationAddressParser == null) {
 			affiliationAddressParser = new AffiliationAddressParser();
 		}
 		List<List<Affiliation>> results = null;
 		for (String addressBlock : addressBlocks) {
-			List<Affiliation> localRes = affiliationAddressParser
-					.processing(addressBlock);
+			List<Affiliation> localRes = affiliationAddressParser.processing(addressBlock);
 			if (results == null) {
 				results = new ArrayList<List<Affiliation>>();
 			}
@@ -200,13 +193,11 @@ public class Engine implements Closeable {
 	 * @return the list of all structured date objects recognized in the string.
 	 * @throws IOException
 	 */
-	public List<org.grobid.core.data.Date> processDate(String dateBlock)
-			throws IOException {
+	public List<org.grobid.core.data.Date> processDate(String dateBlock) throws IOException {
 		if (dateParser == null) {
 			dateParser = new DateParser();
 		}
-		List<org.grobid.core.data.Date> result = dateParser
-				.processing(dateBlock);
+		List<org.grobid.core.data.Date> result = dateParser.processing(dateBlock);
 		close();
 		return result;
 	}
@@ -219,8 +210,7 @@ public class Engine implements Closeable {
 	 * @return the list of all structured date objects recognized in the string
 	 *         for each inputed string.
 	 */
-	public List<List<org.grobid.core.data.Date>> processDates(
-			List<String> dateBlocks) {
+	public List<List<org.grobid.core.data.Date>> processDates(List<String> dateBlocks) {
 		return null;
 	}
 
@@ -255,8 +245,7 @@ public class Engine implements Closeable {
 	 *            web services for improving header information
 	 * @return the list of recognized bibliographical objects
 	 */
-	public List<BiblioItem> processRawReferences(List<String> references,
-			boolean consolidate) throws Exception {
+	public List<BiblioItem> processRawReferences(List<String> references, boolean consolidate) throws Exception {
 		if (references == null)
 			return null;
 		if (references.size() == 0)
@@ -302,16 +291,12 @@ public class Engine implements Closeable {
 	 * Constructor for the Grobid engine instance.
 	 */
 	public Engine() {
-		/*Runtime.getRuntime().addShutdownHook(new Thread() {
-			@Override
-			public void run() {
-				try {
-					close();
-				} catch (IOException e) {
-					LOGGER.error("Failed to close all resources: " + e);
-				}
-			}
-		});*/
+		/*
+		 * Runtime.getRuntime().addShutdownHook(new Thread() {
+		 * 
+		 * @Override public void run() { try { close(); } catch (IOException e)
+		 * { LOGGER.error("Failed to close all resources: " + e); } } });
+		 */
 	}
 
 	/**
@@ -325,13 +310,11 @@ public class Engine implements Closeable {
 	 * @return the list of parsed references as bibliographical objects enriched
 	 *         with citation contexts
 	 */
-	public List<BibDataSet> processReferences(String inputFile,
-			boolean consolidate) throws Exception {
+	public List<BibDataSet> processReferences(String inputFile, boolean consolidate) throws Exception {
 		if (citationParser == null) {
 			citationParser = new CitationParser();
 		}
-		List<org.grobid.core.data.BibDataSet> bits = citationParser
-				.processingReferenceSection(inputFile, consolidate);
+		List<org.grobid.core.data.BibDataSet> bits = citationParser.processingReferenceSection(inputFile, consolidate);
 		return bits;
 	}
 
@@ -386,8 +369,7 @@ public class Engine implements Closeable {
 			// first characters,
 			// which should give a ~100% accuracy for the supported languages
 			String text = "";
-			FileInputStream fileIn = new FileInputStream(path
-					+ fileName.substring(0, fileName.length() - 3) + ext);
+			FileInputStream fileIn = new FileInputStream(path + fileName.substring(0, fileName.length() - 3) + ext);
 			InputStreamReader reader = new InputStreamReader(fileIn, "UTF-8");
 			BufferedReader bufReader = new BufferedReader(reader);
 			String line;
@@ -400,12 +382,10 @@ public class Engine implements Closeable {
 				nbChar += line.length();
 			}
 			bufReader.close();
-			LanguageUtilities languageUtilities = LanguageUtilities
-					.getInstance();
+			LanguageUtilities languageUtilities = LanguageUtilities.getInstance();
 			return languageUtilities.runLanguageId(text);
 		} catch (IOException e) {
-			throw new GrobidException(
-					"An exception occurred while running Grobid.", e);
+			throw new GrobidException("An exception occurred while running Grobid.", e);
 		}
 	}
 
@@ -435,8 +415,7 @@ public class Engine implements Closeable {
 	 * @throws Exception
 	 *             if sth went wrong
 	 */
-	public String processHeader(String inputFile, boolean consolidate,
-			BiblioItem result) throws Exception {
+	public String processHeader(String inputFile, boolean consolidate, BiblioItem result) throws Exception {
 		return processHeader(inputFile, consolidate, 0, 2, result);
 	}
 
@@ -460,8 +439,7 @@ public class Engine implements Closeable {
 	 * @throws Exception
 	 *             if sth went wrong
 	 */
-	public String processHeader(String inputFile, boolean consolidate,
-			int startPage, int endPage, BiblioItem result) throws Exception {
+	public String processHeader(String inputFile, boolean consolidate, int startPage, int endPage, BiblioItem result) throws Exception {
 		if (headerParser == null) {
 			headerParser = new HeaderParser();
 		}
@@ -473,8 +451,7 @@ public class Engine implements Closeable {
 			result = new BiblioItem();
 		}
 
-		String resultTEI = headerParser.processing(inputFile, consolidate,
-				result, startPage, endPage);
+		String resultTEI = headerParser.processing(inputFile, consolidate, result, startPage, endPage);
 		doc = headerParser.getDoc();
 		close();
 		return resultTEI;
@@ -495,8 +472,7 @@ public class Engine implements Closeable {
 	 *            : an optional ID to be used in the TEI file and the header
 	 *            file
 	 */
-	public void createTrainingHeader(String inputFile, String pathHeader,
-			String pathTEI, int id) {
+	public void createTrainingHeader(String inputFile, String pathHeader, String pathTEI, int id) {
 		if (headerParser == null) {
 			headerParser = new HeaderParser();
 		}
@@ -519,13 +495,11 @@ public class Engine implements Closeable {
 	 *            : an optional ID to be used in the TEI file and the full text
 	 *            file
 	 */
-	public void createTrainingFullText(String inputFile, String pathFullText,
-			String pathTEI, int id) {
+	public void createTrainingFullText(String inputFile, String pathFullText, String pathTEI, int id) {
 		if (fullTextParser == null) {
 			fullTextParser = new FullTextParser();
 		}
-		fullTextParser.createTrainingFullText(inputFile, pathFullText, pathTEI,
-				id);
+		fullTextParser.createTrainingFullText(inputFile, pathFullText, pathTEI, id);
 		doc = fullTextParser.getDoc();
 	}
 
@@ -543,10 +517,8 @@ public class Engine implements Closeable {
 	 *            - the consolidation option allows GROBID to exploit Crossref
 	 *            web services for improving citations information
 	 */
-	public String fullTextToTEI(String inputFile, boolean consolidateHeader,
-			boolean consolidateCitations) throws Exception {
-		return fullTextToTEI(inputFile, consolidateHeader,
-				consolidateCitations, 0);
+	public String fullTextToTEI(String inputFile, boolean consolidateHeader, boolean consolidateCitations) throws Exception {
+		return fullTextToTEI(inputFile, consolidateHeader, consolidateCitations, 0);
 	}
 
 	/**
@@ -566,23 +538,20 @@ public class Engine implements Closeable {
 	 *            - if method is 0, a rule-based is used for the full text part,
 	 *            otherwise a machine learning approach is used.
 	 */
-	public String fullTextToTEI(String inputFile, boolean consolidateHeader,
-			boolean consolidateCitations, int method) throws Exception {
+	public String fullTextToTEI(String inputFile, boolean consolidateHeader, boolean consolidateCitations, int method) throws Exception {
 		if (fullTextParser == null) {
 			fullTextParser = new FullTextParser();
 		}
 		// replace by the commented version for the new full ML text parser
 		String resultTEI = null;
-		LOGGER.debug("Starting processing fullTextToTEI on "+inputFile);
+		LOGGER.debug("Starting processing fullTextToTEI on " + inputFile);
 		long time = System.currentTimeMillis();
 		if (method == 0) {
-			resultTEI = fullTextParser.processing(inputFile, consolidateHeader,
-					consolidateCitations);
+			resultTEI = fullTextParser.processing(inputFile, consolidateHeader, consolidateCitations);
 		} else {
-			resultTEI = fullTextParser.processing2(inputFile,
-					consolidateHeader, consolidateCitations);
+			resultTEI = fullTextParser.processing2(inputFile, consolidateHeader, consolidateCitations);
 		}
-		LOGGER.debug("Ending processing fullTextToTEI on "+inputFile+". Time to process: "+(System.currentTimeMillis()-time)+"ms");
+		LOGGER.debug("Ending processing fullTextToTEI on " + inputFile + ". Time to process: " + (System.currentTimeMillis() - time) + "ms");
 		doc = fullTextParser.getDoc();
 		resHeader = fullTextParser.getResHeader();
 		return resultTEI;
@@ -605,8 +574,7 @@ public class Engine implements Closeable {
 	 *            will be included if ind = -1
 	 * @return the number of processed files.
 	 */
-	public int batchCreateTrainingHeader(String directoryPath,
-			String resultPath, int ind) {
+	public int batchCreateTrainingHeader(String directoryPath, String resultPath, int ind) {
 		return batchCreateTraining(directoryPath, resultPath, ind, 0);
 	}
 
@@ -627,13 +595,11 @@ public class Engine implements Closeable {
 	 *            will be included if ind = -1
 	 * @return the number of processed files.
 	 */
-	public int batchCreateTrainingFulltext(String directoryPath,
-			String resultPath, int ind) {
+	public int batchCreateTrainingFulltext(String directoryPath, String resultPath, int ind) {
 		return batchCreateTraining(directoryPath, resultPath, ind, 1);
 	}
 
-	private int batchCreateTraining(String directoryPath, String resultPath,
-			int ind, int type) {
+	private int batchCreateTraining(String directoryPath, String resultPath, int ind, int type) {
 		try {
 			File path = new File(directoryPath);
 			// we process all pdf files in the directory
@@ -652,26 +618,27 @@ public class Engine implements Closeable {
 			// System.out.println(refFiles.length + " files to be processed.");
 
 			int n = 0;
-			for (; n < refFiles.length; n++) {
-				File pdfFile = refFiles[n];
-				if (type == 0) {
-					createTrainingHeader(pdfFile.getPath(), resultPath,
-							resultPath, ind + n);
-				} else if (type == 1) {
-					createTrainingFullText(pdfFile.getPath(), resultPath,
-							resultPath, ind + n);
-				}
-				/*
-				 * else if (type == 2) {
-				 * createTrainingCitations(pdfFile.getPath(), resultPath,
-				 * resultPath, ind+n); }
-				 */
+			// for (; n < refFiles.length; n++) {
+			for (final File pdfFile : refFiles) {
+				// File pdfFile = refFiles[n];
+				// if (pdfFile.getAbsolutePath().endsWith(".pdf")) {
+					if (type == 0) {
+						createTrainingHeader(pdfFile.getPath(), resultPath, resultPath, ind + n);
+					} else if (type == 1) {
+						createTrainingFullText(pdfFile.getPath(), resultPath, resultPath, ind + n);
+					}
+					/*
+					 * else if (type == 2) {
+					 * createTrainingCitations(pdfFile.getPath(), resultPath,
+					 * resultPath, ind+n); }
+					 */
+				// }
+
 			}
 
 			return refFiles.length;
-		} catch (Exception e) {
-			throw new GrobidException(
-					"An exception occured while running Grobid batch.", e);
+		} catch (final Exception exp) {
+			throw new GrobidException("An exception occured while running Grobid batch.", exp);
 		}
 	}
 
@@ -689,10 +656,8 @@ public class Engine implements Closeable {
 	 *            web services for improving header information
 	 * @return the number of processed files.
 	 */
-	public int batchProcessHeader(String directoryPath, String resultPath,
-			boolean consolidate) throws Exception {
-		return batchProcess(directoryPath, resultPath, consolidate,
-				consolidate, 0);
+	public int batchProcessHeader(String directoryPath, String resultPath, boolean consolidate) throws Exception {
+		return batchProcess(directoryPath, resultPath, consolidate, consolidate, 0);
 	}
 
 	/**
@@ -712,10 +677,8 @@ public class Engine implements Closeable {
 	 *            web services for improving citations information
 	 * @return the number of processed files.
 	 */
-	public int batchProcessFulltext(String directoryPath, String resultPath,
-			boolean consolidateHeader, boolean consolidateCitations) {
-		return batchProcess(directoryPath, resultPath, consolidateHeader,
-				consolidateCitations, 1);
+	public int batchProcessFulltext(String directoryPath, String resultPath, boolean consolidateHeader, boolean consolidateCitations) {
+		return batchProcess(directoryPath, resultPath, consolidateHeader, consolidateCitations, 1);
 	}
 
 	/**
@@ -729,32 +692,25 @@ public class Engine implements Closeable {
 	 * @param type
 	 * @return
 	 */
-	private int batchProcess(String directoryPath, String resultPath,
-			boolean consolidateHeader, boolean consolidateCitations, int type) {
+	private int batchProcess(String directoryPath, String resultPath, boolean consolidateHeader, boolean consolidateCitations, int type) {
 		if (directoryPath == null) {
-			throw new GrobidResourceException(
-					"Cannot start parsing, because the input path, "
-							+ "where the pdf files are supposed to be located is null.");
+			throw new GrobidResourceException("Cannot start parsing, because the input path, "
+					+ "where the pdf files are supposed to be located is null.");
 		}
 		if (resultPath == null) {
-			throw new GrobidResourceException(
-					"Cannot start parsing, because the output path, "
-							+ "where the tei files will be written to is null.");
+			throw new GrobidResourceException("Cannot start parsing, because the output path, "
+					+ "where the tei files will be written to is null.");
 		}
 		File path = new File(directoryPath);
 		if (!path.exists()) {
-			throw new GrobidResourceException(
-					"Cannot start parsing, because the input path, "
-							+ "where the pdf files are supposed to be located '"
-							+ path.getAbsolutePath() + "' does not exists.");
+			throw new GrobidResourceException("Cannot start parsing, because the input path, "
+					+ "where the pdf files are supposed to be located '" + path.getAbsolutePath() + "' does not exists.");
 		}
 		File resultPathFile = new File(resultPath);
 		if (!resultPathFile.exists()) {
 			if (!resultPathFile.mkdirs()) {
-				throw new GrobidResourceException(
-						"Cannot start parsing, because cannot create "
-								+ "output path for tei files on location '"
-								+ resultPathFile.getAbsolutePath() + "'.");
+				throw new GrobidResourceException("Cannot start parsing, because cannot create "
+						+ "output path for tei files on location '" + resultPathFile.getAbsolutePath() + "'.");
 			}
 		}
 
@@ -778,47 +734,27 @@ public class Engine implements Closeable {
 			for (; n < refFiles.length; n++) {
 				File pdfFile = refFiles[n];
 				if (!pdfFile.exists()) {
-					throw new GrobidResourceException(
-							"A problem occurs in reading pdf file '"
-									+ pdfFile.getAbsolutePath()
-									+ "'. The file does not exists. ");
+					throw new GrobidResourceException("A problem occurs in reading pdf file '" + pdfFile.getAbsolutePath()
+							+ "'. The file does not exists. ");
 				}
 				if (type == 0) {
 					// BiblioItem res = processHeader(pdfFile.getPath(),
 					// consolidateHeader);
 					BiblioItem res = new BiblioItem();
-					String tei = processHeader(pdfFile.getPath(),
-							consolidateHeader, res);
+					String tei = processHeader(pdfFile.getPath(), consolidateHeader, res);
 					// if (res!= null) {
 					if (tei != null) {
-						String outPath = resultPath
-								+ "/"
-								+ pdfFile
-										.getName()
-										.replace(
-												".pdf",
-												GrobidProperties.FILE_ENDING_TEI_HEADER);
-						Writer writer = new OutputStreamWriter(
-								new FileOutputStream(new File(outPath), false),
-								"UTF-8");
+						String outPath = resultPath + "/" + pdfFile.getName().replace(".pdf", GrobidProperties.FILE_ENDING_TEI_HEADER);
+						Writer writer = new OutputStreamWriter(new FileOutputStream(new File(outPath), false), "UTF-8");
 						// writer.write(res.toTEI(0) + "\n");
 						writer.write(tei + "\n");
 						writer.close();
 					}
 				} else if (type == 1) {
-					String tei = fullTextToTEI(pdfFile.getPath(),
-							consolidateHeader, consolidateCitations, 0);
+					String tei = fullTextToTEI(pdfFile.getPath(), consolidateHeader, consolidateCitations, 0);
 					if (tei != null) {
-						String outPath = resultPath
-								+ "/"
-								+ pdfFile
-										.getName()
-										.replace(
-												".pdf",
-												GrobidProperties.FILE_ENDING_TEI_FULLTEXT);
-						Writer writer = new OutputStreamWriter(
-								new FileOutputStream(new File(outPath), false),
-								"UTF-8");
+						String outPath = resultPath + "/" + pdfFile.getName().replace(".pdf", GrobidProperties.FILE_ENDING_TEI_FULLTEXT);
+						Writer writer = new OutputStreamWriter(new FileOutputStream(new File(outPath), false), "UTF-8");
 						writer.write(tei + "\n");
 						writer.close();
 					}
@@ -831,8 +767,7 @@ public class Engine implements Closeable {
 
 			return refFiles.length;
 		} catch (Exception e) {
-			throw new GrobidException(
-					"An exception occured while running Grobid.", e);
+			throw new GrobidException("An exception occured while running Grobid.", e);
 		}
 	}
 
@@ -855,8 +790,7 @@ public class Engine implements Closeable {
 		BiblioSet bs = new BiblioSet();
 		resRef.buildBiblioSet(bs, path);
 		result.append(bs.toTEI());
-		result.append("<listbibl>\n\n" + resRef.toTEI2(bs)
-				+ "\n</listbibl>\n</tei>\n");
+		result.append("<listbibl>\n\n" + resRef.toTEI2(bs) + "\n</listbibl>\n</tei>\n");
 
 		return result.toString();
 	}
@@ -997,8 +931,7 @@ public class Engine implements Closeable {
 	 * @return the list of extracted and parserd patent references as PatentItem
 	 *         object.
 	 */
-	public List<PatentItem> processPatentCitationsInPatent(String text)
-			throws Exception {
+	public List<PatentItem> processPatentCitationsInPatent(String text) throws Exception {
 		if (referenceExtractor == null) {
 			referenceExtractor = new ReferenceExtractor();
 		}
@@ -1006,8 +939,7 @@ public class Engine implements Closeable {
 		// we initialize the attribute individually for readability...
 		boolean filterDuplicate = false;
 		boolean consolidate = false;
-		referenceExtractor.extractAllReferencesString(text, filterDuplicate,
-				consolidate, patents, null);
+		referenceExtractor.extractAllReferencesString(text, filterDuplicate, consolidate, patents, null);
 		return patents;
 	}
 
@@ -1024,16 +956,14 @@ public class Engine implements Closeable {
 	 * @return the list of extracted and parserd non patent references as
 	 *         BiblioItem object.
 	 */
-	public List<BibDataSet> processNPLCitationsInPatent(String text,
-			boolean consolidateCitations) throws Exception {
+	public List<BibDataSet> processNPLCitationsInPatent(String text, boolean consolidateCitations) throws Exception {
 		if (referenceExtractor == null) {
 			referenceExtractor = new ReferenceExtractor();
 		}
 		List<BibDataSet> articles = new ArrayList<BibDataSet>();
 		// we initialize the attribute individually for readability...
 		boolean filterDuplicate = false;
-		referenceExtractor.extractAllReferencesString(text, filterDuplicate,
-				consolidateCitations, null, articles);
+		referenceExtractor.extractAllReferencesString(text, filterDuplicate, consolidateCitations, null, articles);
 		return articles;
 	}
 
@@ -1060,8 +990,7 @@ public class Engine implements Closeable {
 	 *            - the consolidation option allows GROBID to exploit Crossref
 	 *            web services for improving citations information
 	 */
-	public void processAllCitationsInPatent(String text,
-			List<BibDataSet> nplResults, List<PatentItem> patentResults,
+	public void processAllCitationsInPatent(String text, List<BibDataSet> nplResults, List<PatentItem> patentResults,
 			boolean consolidateCitations) throws Exception {
 		if ((nplResults == null) && (patentResults == null)) {
 			return;
@@ -1071,8 +1000,7 @@ public class Engine implements Closeable {
 		}
 		// we initialize the attribute individually for readability...
 		boolean filterDuplicate = false;
-		referenceExtractor.extractAllReferencesString(text, filterDuplicate,
-				consolidateCitations, patentResults, nplResults);
+		referenceExtractor.extractAllReferencesString(text, filterDuplicate, consolidateCitations, patentResults, nplResults);
 	}
 
 	/**
@@ -1100,8 +1028,7 @@ public class Engine implements Closeable {
 	 * @throws Exception
 	 *             if sth. went wrong
 	 */
-	public void processAllCitationsInXMLPatent(String xmlPath,
-			List<BibDataSet> nplResults, List<PatentItem> patentResults,
+	public void processAllCitationsInXMLPatent(String xmlPath, List<BibDataSet> nplResults, List<PatentItem> patentResults,
 			boolean consolidateCitations) throws Exception {
 		if ((nplResults == null) && (patentResults == null)) {
 			return;
@@ -1111,9 +1038,7 @@ public class Engine implements Closeable {
 		}
 		// we initialize the attribute individually for readability...
 		boolean filterDuplicate = false;
-		referenceExtractor.extractAllReferencesXMLFile(xmlPath,
-				filterDuplicate, consolidateCitations, patentResults,
-				nplResults);
+		referenceExtractor.extractAllReferencesXMLFile(xmlPath, filterDuplicate, consolidateCitations, patentResults, nplResults);
 	}
 
 	/**
@@ -1128,8 +1053,7 @@ public class Engine implements Closeable {
 	 *            - the path to the directory where the results as XML files
 	 *            shall be written.
 	 */
-	public void createTrainingPatentCitations(String pathXML, String resultPath)
-			throws Exception {
+	public void createTrainingPatentCitations(String pathXML, String resultPath) throws Exception {
 		if (referenceExtractor == null) {
 			referenceExtractor = new ReferenceExtractor();
 		}
@@ -1150,8 +1074,7 @@ public class Engine implements Closeable {
 	 *            shall be written.
 	 * @return the number of processed files.
 	 */
-	public int batchCreateTrainingPatentcitations(String directoryPath,
-			String resultPath) throws Exception {
+	public int batchCreateTrainingPatentcitations(String directoryPath, String resultPath) throws Exception {
 		try {
 			File path = new File(directoryPath);
 			// we process all pdf files in the directory
@@ -1177,8 +1100,7 @@ public class Engine implements Closeable {
 
 			return refFiles.length;
 		} catch (Exception e) {
-			throw new GrobidException(
-					"An exception occured while running Grobid.", e);
+			throw new GrobidException("An exception occured while running Grobid.", e);
 		}
 	}
 
@@ -1189,8 +1111,7 @@ public class Engine implements Closeable {
 	 *            - text to be processed.
 	 * @return List of chemical entites as POJO.
 	 */
-	public List<ChemicalEntity> extractChemicalEntities(String text)
-			throws Exception {
+	public List<ChemicalEntity> extractChemicalEntities(String text) throws Exception {
 		if (chemicalParser == null) {
 			chemicalParser = new ChemicalParser();
 		}
@@ -1209,8 +1130,7 @@ public class Engine implements Closeable {
 	 * toIgnore1 th blocks (default is 0) and the blocks after toIgnore2 th
 	 * (included, default is -1)
 	 */
-	public String getAllBlocksClean(int toIgnore1, int toIgnore2)
-			throws Exception {
+	public String getAllBlocksClean(int toIgnore1, int toIgnore2) throws Exception {
 		return doc.getAllBlocksClean(toIgnore1, toIgnore2);
 	}
 
