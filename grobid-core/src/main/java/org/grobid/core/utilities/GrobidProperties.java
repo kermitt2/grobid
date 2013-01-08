@@ -209,7 +209,7 @@ public class GrobidProperties {
 	 * 
 	 * @return
 	 */
-	public static void set_GROBID_HOME_PATH(String pGROBID_HOME_PATH) {
+	public static void set_GROBID_HOME_PATH(final String pGROBID_HOME_PATH) {
 		if (StringUtils.isBlank(pGROBID_HOME_PATH))
 			throw new GrobidPropertyException("Cannot set property '" + pGROBID_HOME_PATH + "' to null or empty.");
 
@@ -269,7 +269,7 @@ public class GrobidProperties {
 	 * 
 	 * @return
 	 */
-	public static void setGrobidPropertiesPath(String pGrobidPropertiesPath) {
+	public static void setGrobidPropertiesPath(final String pGrobidPropertiesPath) {
 		if (StringUtils.isBlank(pGrobidPropertiesPath))
 			throw new GrobidPropertyException("Cannot set property '" + pGrobidPropertiesPath + "' to null or empty.");
 
@@ -295,7 +295,7 @@ public class GrobidProperties {
 	 *            the property key
 	 * @return the value of the property.
 	 */
-	protected static String getPropertyValue(String pkey) {
+	protected static String getPropertyValue(final String pkey) {
 		return getProps().getProperty(pkey);
 	}
 
@@ -309,7 +309,7 @@ public class GrobidProperties {
 	 *            the default value
 	 * @return the value of the property, pDefaultVal else.
 	 */
-	protected static String getPropertyValue(String pkey, String pDefaultVal) {
+	protected static String getPropertyValue(final String pkey, final String pDefaultVal) {
 		String prop = getProps().getProperty(pkey);
 		return StringUtils.isNotBlank(prop) ? prop.trim() : pDefaultVal;
 	}
@@ -322,7 +322,7 @@ public class GrobidProperties {
 	 *            the property key
 	 * @return the value of the property.
 	 */
-	public static void setPropertyValue(String pkey, String pValue) {
+	public static void setPropertyValue(final String pkey, final String pValue) {
 		if (StringUtils.isBlank(pValue))
 			throw new GrobidPropertyException("Cannot set property '" + pkey + "' to null or empty.");
 		getProps().put(pkey, pValue);
@@ -341,11 +341,11 @@ public class GrobidProperties {
 		init();
 	}
 
-	public GrobidProperties(Context pContext) {
+	public GrobidProperties(final Context pContext) {
 		init(pContext);
 	}
 
-	protected static void init(Context pContext) {
+	protected static void init(final Context pContext) {
 		setContext(pContext);
 
 		setProps(new Properties());
@@ -446,7 +446,7 @@ public class GrobidProperties {
 		return new File(getPropertyValue(GrobidPropertyKeys.PROP_TMP_PATH, System.getProperty("java.io.tmpdir")));
 	}
 
-	public static void setNativeLibraryPath(String nativeLibPath) {
+	public static void setNativeLibraryPath(final String nativeLibPath) {
 		setPropertyValue(GrobidPropertyKeys.PROP_NATIVE_LIB_PATH, nativeLibPath);
 	}
 
@@ -477,7 +477,7 @@ public class GrobidProperties {
 	 * @param id
 	 *            for connecting crossref
 	 */
-	public static void setCrossrefId(String id) {
+	public static void setCrossrefId(final String id) {
 		setPropertyValue(GrobidPropertyKeys.PROP_CROSSREF_ID, id);
 	}
 
@@ -498,7 +498,7 @@ public class GrobidProperties {
 	 * @param password
 	 *            for connecting crossref
 	 */
-	public static void setCrossrefPw(String password) {
+	public static void setCrossrefPw(final String password) {
 		setPropertyValue(GrobidPropertyKeys.PROP_CROSSREF_PW, password);
 	}
 
@@ -519,7 +519,7 @@ public class GrobidProperties {
 	 * @param host
 	 *            for connecting crossref
 	 */
-	public static void setCrossrefHost(String host) {
+	public static void setCrossrefHost(final String host) {
 		setPropertyValue(GrobidPropertyKeys.PROP_CROSSREF_HOST, host);
 	}
 
@@ -540,7 +540,7 @@ public class GrobidProperties {
 	 * @param port
 	 *            for connecting crossref
 	 */
-	public static void setCrossrefPort(String port) {
+	public static void setCrossrefPort(final String port) {
 		setPropertyValue(GrobidPropertyKeys.PROP_CROSSREF_PORT, port);
 	}
 
@@ -560,7 +560,7 @@ public class GrobidProperties {
 	 * @param host
 	 *            for connecting crossref
 	 */
-	public static void setProxyHost(String host) {
+	public static void setProxyHost(final String host) {
 		setPropertyValue(GrobidPropertyKeys.PROP_PROXY_HOST, host);
 	}
 
@@ -580,7 +580,7 @@ public class GrobidProperties {
 	 * @param port
 	 *            for connecting crossref
 	 */
-	public static void setProxyPort(String port) {
+	public static void setProxyPort(final String port) {
 		setPropertyValue(GrobidPropertyKeys.PROP_PROXY_PORT, port);
 	}
 
@@ -601,7 +601,7 @@ public class GrobidProperties {
 	 * @param dbName
 	 *            for connecting mysql
 	 */
-	public static void setMySQLDBName(String dbName) {
+	public static void setMySQLDBName(final String dbName) {
 		setPropertyValue(GrobidPropertyKeys.PROP_MYSQL_DB_NAME, dbName);
 	}
 
@@ -622,7 +622,7 @@ public class GrobidProperties {
 	 * @param username
 	 *            for connecting mysql
 	 */
-	public static void setMySQLUsername(String username) {
+	public static void setMySQLUsername(final String username) {
 		setPropertyValue(GrobidPropertyKeys.PROP_MYSQL_USERNAME, username);
 	}
 
@@ -642,7 +642,7 @@ public class GrobidProperties {
 	 * @param password
 	 *            for connecting mysql
 	 */
-	public static void setMySQLPw(String password) {
+	public static void setMySQLPw(final String password) {
 		setPropertyValue(GrobidPropertyKeys.PROP_MYSQL_PW, password);
 	}
 
@@ -662,7 +662,7 @@ public class GrobidProperties {
 	 * @param host
 	 *            for connecting mysql
 	 */
-	public static void setMySQLHost(String host) {
+	public static void setMySQLHost(final String host) {
 		setPropertyValue(GrobidPropertyKeys.PROP_MYSQL_HOST, host);
 	}
 
@@ -702,7 +702,7 @@ public class GrobidProperties {
 	 * @param nbThreads
 	 *            umber of threads
 	 */
-	public static void setNBThreads(String nbThreads) {
+	public static void setNBThreads(final String nbThreads) {
 		setPropertyValue(GrobidPropertyKeys.PROP_MYSQL_PORT, nbThreads);
 	}
 
@@ -730,7 +730,7 @@ public class GrobidProperties {
 	 * @param useLanguageId
 	 *            true, if a language id shall be used
 	 */
-	public static void setUseLanguageId(String useLanguageId) {
+	public static void setUseLanguageId(final String useLanguageId) {
 		setPropertyValue(GrobidPropertyKeys.PROP_USE_LANG_ID, useLanguageId);
 	}
 
@@ -752,7 +752,7 @@ public class GrobidProperties {
 	 * @param resourceInHome
 	 *            true, if a language id shall be used
 	 */
-	public static void setResourcesInHome(String resourceInHome) {
+	public static void setResourcesInHome(final String resourceInHome) {
 		setPropertyValue(GrobidPropertyKeys.PROP_RESOURCE_INHOME, resourceInHome);
 	}
 
@@ -785,20 +785,20 @@ public class GrobidProperties {
 		return pathToPdf2Xml;
 	}
 
-	public static File getModelPath(GrobidModels model) {
+	public static File getModelPath(final GrobidModels model) {
 		return new File(get_GROBID_HOME_PATH(), FOLDER_NAME_MODELS + File.separator + model.getFolderName() + File.separator
 				+ FILE_NAME_MODEL);
 	}
 
-	public static File getTemplatePath(File resourcesDir, GrobidModels model) {
+	public static File getTemplatePath(final File resourcesDir, final GrobidModels model) {
 		return new File(resourcesDir, "dataset/" + model.getFolderName() + "/crfpp-templates/" + model.getTemplateName());
 	}
 
-	public static File getEvalCorpusPath(File resourcesDir, GrobidModels model) {
+	public static File getEvalCorpusPath(final File resourcesDir, final GrobidModels model) {
 		return new File(resourcesDir, "dataset/" + model.getFolderName() + "/evaluation/");
 	}
 
-	public static File getCorpusPath(File resourcesDir, GrobidModels model) {
+	public static File getCorpusPath(final File resourcesDir, final GrobidModels model) {
 		return new File(resourcesDir, "dataset/" + model.getFolderName() + "/corpus");
 	}
 
