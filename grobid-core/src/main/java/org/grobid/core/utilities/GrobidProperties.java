@@ -30,8 +30,7 @@ import org.slf4j.LoggerFactory;
  */
 public class GrobidProperties {
 
-	public static final Logger LOGGER = LoggerFactory
-			.getLogger(GrobidProperties.class);
+	public static final Logger LOGGER = LoggerFactory.getLogger(GrobidProperties.class);
 
 	/**
 	 * The context of the application.
@@ -101,7 +100,7 @@ public class GrobidProperties {
 		else
 			return grobidProperties;
 	}
-	
+
 	/**
 	 * Reload GrobidServiceProperties.
 	 */
@@ -134,7 +133,7 @@ public class GrobidProperties {
 	 * @param pProps
 	 *            the props to set
 	 */
-	protected static void setProps(Properties pProps) {
+	protected static void setProps(final Properties pProps) {
 		props = pProps;
 	}
 
@@ -153,7 +152,7 @@ public class GrobidProperties {
 	 * @param pContext
 	 *            the context.
 	 */
-	public static void setContext(Context pContext) {
+	public static void setContext(final Context pContext) {
 		context = pContext;
 	}
 
@@ -166,38 +165,28 @@ public class GrobidProperties {
 		if (GROBID_HOME_PATH == null) {
 			String grobidHomePath;
 			try {
-				grobidHomePath = (String) context.lookup("java:comp/env/"
-						+ GrobidPropertyKeys.PROP_GROBID_HOME);
-			} catch (Exception exp) {
-				throw new GrobidPropertyException("Could not set GROBD_HOME",
-						exp);
+				grobidHomePath = (String) context.lookup("java:comp/env/" + GrobidPropertyKeys.PROP_GROBID_HOME);
+			} catch (final Exception exp) {
+				throw new GrobidPropertyException("Could not set GROBD_HOME", exp);
 			}
 			File pathToGrobidHome = new File(grobidHomePath);
 
 			try {
 				if (pathToGrobidHome == null || !pathToGrobidHome.exists()) {
-					LOGGER.error(
-							"Cannot set grobid home path to the given one '{}', because it does not exist.",
-							GROBID_HOME_PATH);
-					throw new GrobidPropertyException(
-							"Cannot set grobid home path to the given one '"
-									+ GROBID_HOME_PATH
-									+ "', because it does not exist.");
+					LOGGER.error("Cannot set grobid home path to the given one '{}', because it does not exist.", GROBID_HOME_PATH);
+					throw new GrobidPropertyException("Cannot set grobid home path to the given one '" + GROBID_HOME_PATH
+							+ "', because it does not exist.");
 				}
 
-			} catch (SecurityException e) {
-				throw new GrobidPropertyException(
-						"Cannot access the set grobid home path '"
-								+ pathToGrobidHome.getAbsolutePath()
-								+ "', because of an access permission.", e);
+			} catch (final SecurityException scExp) {
+				throw new GrobidPropertyException("Cannot access the set grobid home path '" + pathToGrobidHome.getAbsolutePath()
+						+ "', because of an access permission.", scExp);
 			}
 			try {
 				GROBID_HOME_PATH = pathToGrobidHome.getCanonicalFile();
-			} catch (IOException e) {
-				throw new GrobidPropertyException(
-						"Cannot set grobid home path to the given one '"
-								+ GROBID_HOME_PATH.getAbsolutePath()
-								+ "', because it does not exist.");
+			} catch (final IOException ioExp) {
+				throw new GrobidPropertyException("Cannot set grobid home path to the given one '" + GROBID_HOME_PATH.getAbsolutePath()
+						+ "', because it does not exist.");
 			}
 		}
 	}
@@ -222,24 +211,19 @@ public class GrobidProperties {
 	 */
 	public static void set_GROBID_HOME_PATH(String pGROBID_HOME_PATH) {
 		if (StringUtils.isBlank(pGROBID_HOME_PATH))
-			throw new GrobidPropertyException("Cannot set property '"
-					+ pGROBID_HOME_PATH + "' to null or empty.");
+			throw new GrobidPropertyException("Cannot set property '" + pGROBID_HOME_PATH + "' to null or empty.");
 
 		File grobidHome = new File(pGROBID_HOME_PATH);
 		// exception if prop file does not exist
 		if (grobidHome == null || !grobidHome.exists()) {
-			throw new GrobidPropertyException(
-					"Could not read GROBID_HOME, the directory '" + grobidHome
-							+ "' does not exist.");
+			throw new GrobidPropertyException("Could not read GROBID_HOME, the directory '" + grobidHome + "' does not exist.");
 		}
 
 		try {
 			GROBID_HOME_PATH = grobidHome.getCanonicalFile();
 		} catch (IOException e) {
-			throw new GrobidPropertyException(
-					"Cannot set grobid home path to the given one '"
-							+ GROBID_HOME_PATH.getAbsolutePath()
-							+ "', because it does not exist.");
+			throw new GrobidPropertyException("Cannot set grobid home path to the given one '" + GROBID_HOME_PATH.getAbsolutePath()
+					+ "', because it does not exist.");
 		}
 	}
 
@@ -251,29 +235,22 @@ public class GrobidProperties {
 		if (GROBID_PROPERTY_PATH == null) {
 			String grobidPropertyPath;
 			try {
-				grobidPropertyPath = (String) context.lookup("java:comp/env/"
-						+ GrobidPropertyKeys.PROP_GROBID_PROPERTY);
+				grobidPropertyPath = (String) context.lookup("java:comp/env/" + GrobidPropertyKeys.PROP_GROBID_PROPERTY);
 			} catch (Exception exp) {
-				throw new GrobidPropertyException(
-						"Could not load the path to grobid.properties from the context",
-						exp);
+				throw new GrobidPropertyException("Could not load the path to grobid.properties from the context", exp);
 			}
 			File grobidPropertyFile = new File(grobidPropertyPath);
 
 			// exception if prop file does not exist
 			if (grobidPropertyFile == null || !grobidPropertyFile.exists()) {
-				throw new GrobidPropertyException(
-						"Could not read grobid.properties, the file '"
-								+ grobidPropertyFile + "' does not exist.");
+				throw new GrobidPropertyException("Could not read grobid.properties, the file '" + grobidPropertyFile + "' does not exist.");
 			}
 
 			try {
 				GROBID_PROPERTY_PATH = grobidPropertyFile.getCanonicalFile();
 			} catch (IOException e) {
-				throw new GrobidPropertyException(
-						"Cannot set grobid home path to the given one '"
-								+ GROBID_HOME_PATH.getAbsolutePath()
-								+ "', because it does not exist.");
+				throw new GrobidPropertyException("Cannot set grobid home path to the given one '" + GROBID_HOME_PATH.getAbsolutePath()
+						+ "', because it does not exist.");
 			}
 		}
 	}
@@ -294,24 +271,19 @@ public class GrobidProperties {
 	 */
 	public static void setGrobidPropertiesPath(String pGrobidPropertiesPath) {
 		if (StringUtils.isBlank(pGrobidPropertiesPath))
-			throw new GrobidPropertyException("Cannot set property '"
-					+ pGrobidPropertiesPath + "' to null or empty.");
+			throw new GrobidPropertyException("Cannot set property '" + pGrobidPropertiesPath + "' to null or empty.");
 
 		File grobidPropPath = new File(pGrobidPropertiesPath);
 		// exception if prop file does not exist
 		if (grobidPropPath == null || !grobidPropPath.exists()) {
-			throw new GrobidPropertyException(
-					"Could not read grobid.properties, the file '"
-							+ grobidPropPath + "' does not exist.");
+			throw new GrobidPropertyException("Could not read grobid.properties, the file '" + grobidPropPath + "' does not exist.");
 		}
 
 		try {
 			GROBID_PROPERTY_PATH = grobidPropPath.getCanonicalFile();
 		} catch (IOException e) {
-			throw new GrobidPropertyException(
-					"Cannot set grobid home path to the given one '"
-							+ GROBID_HOME_PATH.getAbsolutePath()
-							+ "', because it does not exist.");
+			throw new GrobidPropertyException("Cannot set grobid home path to the given one '" + GROBID_HOME_PATH.getAbsolutePath()
+					+ "', because it does not exist.");
 		}
 	}
 
@@ -352,8 +324,7 @@ public class GrobidProperties {
 	 */
 	public static void setPropertyValue(String pkey, String pValue) {
 		if (StringUtils.isBlank(pValue))
-			throw new GrobidPropertyException("Cannot set property '" + pkey
-					+ "' to null or empty.");
+			throw new GrobidPropertyException("Cannot set property '" + pkey + "' to null or empty.");
 		getProps().put(pkey, pValue);
 	}
 
@@ -386,13 +357,10 @@ public class GrobidProperties {
 		try {
 			getProps().load(new FileInputStream(getGrobidPropertiesPath()));
 		} catch (IOException exp) {
-			throw new GrobidPropertyException(
-					"Cannot open file of grobid.properties at location'"
-							+ GROBID_PROPERTY_PATH.getAbsolutePath() + "'", exp);
+			throw new GrobidPropertyException("Cannot open file of grobid.properties at location'" + GROBID_PROPERTY_PATH.getAbsolutePath()
+					+ "'", exp);
 		} catch (Exception exp) {
-			throw new GrobidPropertyException(
-					"Cannot open file of grobid properties"
-							+ getGrobidPropertiesPath().getAbsolutePath(), exp);
+			throw new GrobidPropertyException("Cannot open file of grobid properties" + getGrobidPropertiesPath().getAbsolutePath(), exp);
 		}
 
 		initializePaths();
@@ -410,8 +378,7 @@ public class GrobidProperties {
 		try {
 			ctxt = new InitialContext();
 		} catch (NamingException nexp) {
-			throw new GrobidPropertyException(
-					"Could not get the initial context", nexp);
+			throw new GrobidPropertyException("Could not get the initial context", nexp);
 		}
 		init(ctxt);
 	}
@@ -429,14 +396,10 @@ public class GrobidProperties {
 				File path = new File(propVal.toString());
 				if (!path.isAbsolute()) {
 					try {
-						getProps().put(
-								propKey,
-								new File(get_GROBID_HOME_PATH()
-										.getAbsoluteFile(), path.getPath())
-										.getCanonicalFile().toString());
+						getProps().put(propKey,
+								new File(get_GROBID_HOME_PATH().getAbsoluteFile(), path.getPath()).getCanonicalFile().toString());
 					} catch (IOException e) {
-						throw new GrobidResourceException(
-								"Cannot read the path of '" + propKey + "'.");
+						throw new GrobidResourceException("Cannot read the path of '" + propKey + "'.");
 					}
 				}
 			}
@@ -450,9 +413,7 @@ public class GrobidProperties {
 				if (!path.exists()) {
 					LOGGER.debug("creating directory {}", path);
 					if (!path.mkdirs())
-						throw new GrobidResourceException(
-								"Cannot create the folder '"
-										+ path.getAbsolutePath() + "'.");
+						throw new GrobidResourceException("Cannot create the folder '" + path.getAbsolutePath() + "'.");
 				}
 			}
 		}
@@ -471,8 +432,7 @@ public class GrobidProperties {
 			propKey = (String) properties.nextElement();
 			String propVal = getPropertyValue(propKey, StringUtils.EMPTY);
 			if (StringUtils.isBlank(propVal)) {
-				throw new GrobidPropertyException("The property '" + propKey
-						+ "' is null or empty. Please set this value.");
+				throw new GrobidPropertyException("The property '" + propKey + "' is null or empty. Please set this value.");
 			}
 		}
 	}
@@ -483,8 +443,7 @@ public class GrobidProperties {
 	 * @return a directory for temp files
 	 */
 	public static File getTempPath() {
-		return new File(getPropertyValue(GrobidPropertyKeys.PROP_TMP_PATH,
-				System.getProperty("java.io.tmpdir")));
+		return new File(getPropertyValue(GrobidPropertyKeys.PROP_TMP_PATH, System.getProperty("java.io.tmpdir")));
 	}
 
 	public static void setNativeLibraryPath(String nativeLibPath) {
@@ -498,8 +457,7 @@ public class GrobidProperties {
 	 * @return folder that contains all libraries
 	 */
 	public static File getNativeLibraryPath() {
-		return new File(
-				getPropertyValue(GrobidPropertyKeys.PROP_NATIVE_LIB_PATH));
+		return new File(getPropertyValue(GrobidPropertyKeys.PROP_NATIVE_LIB_PATH));
 	}
 
 	/**
@@ -551,8 +509,7 @@ public class GrobidProperties {
 	 * @return host for connecting crossref
 	 */
 	public static String getCrossrefHost() {
-		return getPropertyValue(GrobidPropertyKeys.PROP_CROSSREF_HOST)
-				.toString();
+		return getPropertyValue(GrobidPropertyKeys.PROP_CROSSREF_HOST).toString();
 	}
 
 	/**
@@ -573,8 +530,7 @@ public class GrobidProperties {
 	 * @return port for connecting crossref
 	 */
 	public static Integer getCrossrefPort() {
-		return (Integer
-				.valueOf(getPropertyValue(GrobidPropertyKeys.PROP_CROSSREF_PORT)));
+		return (Integer.valueOf(getPropertyValue(GrobidPropertyKeys.PROP_CROSSREF_PORT)));
 	}
 
 	/**
@@ -615,8 +571,7 @@ public class GrobidProperties {
 	 * @return port for connecting crossref
 	 */
 	public static Integer getProxyPort() {
-		return Integer
-				.valueOf(getPropertyValue(GrobidPropertyKeys.PROP_PROXY_PORT));
+		return Integer.valueOf(getPropertyValue(GrobidPropertyKeys.PROP_PROXY_PORT));
 	}
 
 	/**
@@ -718,8 +673,7 @@ public class GrobidProperties {
 	 * @return port for connecting mysql
 	 */
 	public static Integer getMySQLPort() {
-		return Integer
-				.valueOf(getPropertyValue(GrobidPropertyKeys.PROP_MYSQL_PORT));
+		return Integer.valueOf(getPropertyValue(GrobidPropertyKeys.PROP_MYSQL_PORT));
 	}
 
 	/**
@@ -739,8 +693,7 @@ public class GrobidProperties {
 	 * @return number of threads
 	 */
 	public static Integer getNBThreads() {
-		return Integer
-				.valueOf(getPropertyValue(GrobidPropertyKeys.PROP_NB_THREADS));
+		return Integer.valueOf(getPropertyValue(GrobidPropertyKeys.PROP_NB_THREADS));
 	}
 
 	/**
@@ -760,15 +713,13 @@ public class GrobidProperties {
 	 * @return true if a language id shall be used
 	 */
 	public static Boolean isUseLanguageId() {
-		return Utilities
-				.stringToBoolean(getPropertyValue(GrobidPropertyKeys.PROP_USE_LANG_ID));
+		return Utilities.stringToBoolean(getPropertyValue(GrobidPropertyKeys.PROP_USE_LANG_ID));
 	}
 
 	public static String getLanguageDetectorFactory() {
 		String factoryClassName = getPropertyValue(GrobidPropertyKeys.PROP_LANG_DETECTOR_FACTORY);
 		if (isUseLanguageId() && (StringUtils.isBlank(factoryClassName))) {
-			throw new GrobidPropertyException(
-					"Language detection is enabled but a factory class name is not provided");
+			throw new GrobidPropertyException("Language detection is enabled but a factory class name is not provided");
 		}
 		return factoryClassName;
 	}
@@ -791,8 +742,7 @@ public class GrobidProperties {
 	 * @return true if a language id shall be used
 	 */
 	public static Boolean isResourcesInHome() {
-		return Utilities.stringToBoolean(getPropertyValue(
-				GrobidPropertyKeys.PROP_RESOURCE_INHOME, "true"));
+		return Utilities.stringToBoolean(getPropertyValue(GrobidPropertyKeys.PROP_RESOURCE_INHOME, "true"));
 	}
 
 	/**
@@ -803,8 +753,7 @@ public class GrobidProperties {
 	 *            true, if a language id shall be used
 	 */
 	public static void setResourcesInHome(String resourceInHome) {
-		setPropertyValue(GrobidPropertyKeys.PROP_RESOURCE_INHOME,
-				resourceInHome);
+		setPropertyValue(GrobidPropertyKeys.PROP_RESOURCE_INHOME, resourceInHome);
 	}
 
 	/**
@@ -824,8 +773,7 @@ public class GrobidProperties {
 
 		pathToPdf2Xml = new File(pathToPdf2Xml, Utilities.getOsNameAndArch());
 
-		LOGGER.debug("pdf2xml home directory set to "
-				+ pathToPdf2Xml.getAbsolutePath());
+		LOGGER.debug("pdf2xml home directory set to " + pathToPdf2Xml.getAbsolutePath());
 	}
 
 	/**
@@ -838,24 +786,20 @@ public class GrobidProperties {
 	}
 
 	public static File getModelPath(GrobidModels model) {
-		return new File(get_GROBID_HOME_PATH(), FOLDER_NAME_MODELS
-				+ File.separator + model.getFolderName() + File.separator
+		return new File(get_GROBID_HOME_PATH(), FOLDER_NAME_MODELS + File.separator + model.getFolderName() + File.separator
 				+ FILE_NAME_MODEL);
 	}
 
 	public static File getTemplatePath(File resourcesDir, GrobidModels model) {
-		return new File(resourcesDir, "dataset/" + model.getFolderName()
-				+ "/crfpp-templates/" + model.getTemplateName());
+		return new File(resourcesDir, "dataset/" + model.getFolderName() + "/crfpp-templates/" + model.getTemplateName());
 	}
 
 	public static File getEvalCorpusPath(File resourcesDir, GrobidModels model) {
-		return new File(resourcesDir, "dataset/" + model.getFolderName()
-				+ "/evaluation/");
+		return new File(resourcesDir, "dataset/" + model.getFolderName() + "/evaluation/");
 	}
 
 	public static File getCorpusPath(File resourcesDir, GrobidModels model) {
-		return new File(resourcesDir, "dataset/" + model.getFolderName()
-				+ "/corpus");
+		return new File(resourcesDir, "dataset/" + model.getFolderName() + "/corpus");
 	}
 
 	public static String getLexiconPath() {
@@ -868,8 +812,7 @@ public class GrobidProperties {
 	 * @return the number of connections
 	 */
 	public static int getMaxPoolConnections() {
-		return Integer
-				.parseInt(getPropertyValue(GrobidPropertyKeys.PROP_GROBID_MAX_CONNECTIONS));
+		return Integer.parseInt(getPropertyValue(GrobidPropertyKeys.PROP_GROBID_MAX_CONNECTIONS));
 	}
 
 	/**
@@ -878,8 +821,7 @@ public class GrobidProperties {
 	 * @return time to wait in milliseconds.
 	 */
 	public static int getPoolMaxWait() {
-		return Integer
-				.parseInt(getPropertyValue(GrobidPropertyKeys.PROP_GROBID_POOL_MAX_WAIT)) * 1000;
+		return Integer.parseInt(getPropertyValue(GrobidPropertyKeys.PROP_GROBID_POOL_MAX_WAIT)) * 1000;
 	}
 
 	/**
@@ -889,8 +831,7 @@ public class GrobidProperties {
 	 *         not readable.
 	 */
 	public static Boolean isContextExecutionServer() {
-		return Utilities.stringToBoolean(getPropertyValue(
-				GrobidPropertyKeys.PROP_GROBID_IS_CONTEXT_SERVER, "false"));
+		return Utilities.stringToBoolean(getPropertyValue(GrobidPropertyKeys.PROP_GROBID_IS_CONTEXT_SERVER, "false"));
 	}
 
 	/**
@@ -900,8 +841,7 @@ public class GrobidProperties {
 	 *            true to set the context of execution to server, false else.
 	 */
 	public static void setContextExecutionServer(Boolean state) {
-		setPropertyValue(GrobidPropertyKeys.PROP_GROBID_IS_CONTEXT_SERVER,
-				state.toString());
+		setPropertyValue(GrobidPropertyKeys.PROP_GROBID_IS_CONTEXT_SERVER, state.toString());
 	}
 
 	/**
@@ -916,8 +856,7 @@ public class GrobidProperties {
 	 *            value to replace
 	 * @throws IOException
 	 */
-	public static void updatePropertyFile(File pPropertyFile, String pKey,
-			String pValue) throws IOException {
+	public static void updatePropertyFile(File pPropertyFile, String pKey, String pValue) throws IOException {
 		File propFile = pPropertyFile;
 		BufferedReader reader = new BufferedReader(new FileReader(propFile));
 		String line = StringUtils.EMPTY, content = StringUtils.EMPTY, lineToReplace = StringUtils.EMPTY;
@@ -930,8 +869,7 @@ public class GrobidProperties {
 		reader.close();
 
 		if (!StringUtils.EMPTY.equals(lineToReplace)) {
-			String newContent = content.replaceAll(lineToReplace, pKey + "="
-					+ pValue);
+			String newContent = content.replaceAll(lineToReplace, pKey + "=" + pValue);
 			FileWriter writer = new FileWriter(pPropertyFile.getAbsoluteFile());
 			writer.write(newContent);
 			writer.close();
@@ -947,8 +885,7 @@ public class GrobidProperties {
 	 *            value to replace
 	 * @throws IOException
 	 */
-	public static void updatePropertyFile(String pKey, String pValue)
-			throws IOException {
+	public static void updatePropertyFile(String pKey, String pValue) throws IOException {
 		updatePropertyFile(getGrobidPropertiesPath(), pKey, pValue);
 	}
 
