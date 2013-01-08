@@ -1,7 +1,7 @@
 package org.grobid.core.main.batch;
 
 /**
- * Class containing args of the batch {@link GrobidMain}
+ * Class containing args of the batch {@link GrobidMain}.
  * 
  * @author Damien
  * 
@@ -12,7 +12,7 @@ public class GrobidMainArgs {
 
 	private String path2grobidProperty;
 
-	private String path2pdfs;
+	private String path2Input;
 
 	private String path2Output;
 
@@ -25,106 +25,106 @@ public class GrobidMainArgs {
 	/**
 	 * @return the path2grobidHome
 	 */
-	public String getPath2grobidHome() {
+	public final String getPath2grobidHome() {
 		return path2grobidHome;
 	}
 
 	/**
-	 * @param path2grobidHome
+	 * @param pPath2grobidHome
 	 *            the path2grobidHome to set
 	 */
-	public void setPath2grobidHome(String path2grobidHome) {
-		this.path2grobidHome = path2grobidHome;
+	public final void setPath2grobidHome(final String pPath2grobidHome) {
+		path2grobidHome = pPath2grobidHome;
 	}
 
 	/**
 	 * @return the path2grobidProperty
 	 */
-	public String getPath2grobidProperty() {
+	public final String getPath2grobidProperty() {
 		return path2grobidProperty;
 	}
 
 	/**
-	 * @param path2grobidProperty
+	 * @param pPath2grobidProperty
 	 *            the path2grobidProperty to set
 	 */
-	public void setPath2grobidProperty(String path2grobidProperty) {
-		this.path2grobidProperty = path2grobidProperty;
+	public final void setPath2grobidProperty(final String pPath2grobidProperty) {
+		path2grobidProperty = pPath2grobidProperty;
 	}
 
 	/**
-	 * @return the path2pdfs
+	 * @return the path2input
 	 */
-	public String getPath2pdfs() {
-		return path2pdfs;
+	public final String getPath2Input() {
+		return path2Input;
 	}
 
 	/**
-	 * @param path2pdfs
-	 *            the path2pdfs to set
+	 * @param pPath2input
+	 *            the path2input to set
 	 */
-	public void setPath2pdfs(String path2pdfs) {
-		this.path2pdfs = path2pdfs;
+	public final void setPath2Input(final String pPath2input) {
+		path2Input = pPath2input;
 	}
 
 	/**
 	 * @return the path2Output
 	 */
-	public String getPath2Output() {
+	public final String getPath2Output() {
 		return path2Output;
 	}
 
 	/**
-	 * @param path2Output
+	 * @param pPath2Output
 	 *            the path2Output to set
 	 */
-	public void setPath2Output(String path2Output) {
-		this.path2Output = path2Output;
+	public final void setPath2Output(final String pPath2Output) {
+		path2Output = pPath2Output;
 	}
 
 	/**
 	 * @return the processMethodName
 	 */
-	public String getProcessMethodName() {
+	public final String getProcessMethodName() {
 		return processMethodName;
 	}
 
 	/**
-	 * @param processMethodName
+	 * @param pProcessMethodName
 	 *            the processMethodName to set
 	 */
-	public void setProcessMethodName(String processMethodName) {
-		this.processMethodName = processMethodName;
+	public final void setProcessMethodName(final String pProcessMethodName) {
+		processMethodName = pProcessMethodName;
 	}
 
 	/**
 	 * @return the input
 	 */
-	public String getInput() {
+	public final String getInput() {
 		return input;
 	}
 
 	/**
-	 * @param input
+	 * @param pInput
 	 *            the input to set
 	 */
-	public void setInput(String input) {
-		this.input = input;
+	public final void setInput(final String pInput) {
+		input = pInput;
 	}
 
 	/**
 	 * @return the isPdf
 	 */
-	public boolean isPdf() {
+	public final boolean isPdf() {
 		return isPdf;
 	}
 
 	/**
-	 * @param isPdf
+	 * @param pIsPdf
 	 *            the isPdf to set
 	 */
-	public void setPdf(boolean isPdf) {
-		this.isPdf = isPdf;
+	public final void setPdf(final boolean pIsPdf) {
+		isPdf = pIsPdf;
 	}
 
 }
