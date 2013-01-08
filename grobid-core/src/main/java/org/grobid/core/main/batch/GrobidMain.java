@@ -24,6 +24,17 @@ public class GrobidMain {
 	private static GrobidMainArgs gbdArgs;
 
 	/**
+	 * Build the path to grobid.properties from the path to grobid-home.
+	 * 
+	 * @param pPath2GbdHome
+	 *            - The path to Grobid home.
+	 * @return the path to grobid.properties.
+	 */
+	protected final static String getPath2GbdProperties(final String pPath2GbdHome) {
+		return pPath2GbdHome + File.separator + "config" + File.separator + "grobid.properties";
+	}
+
+	/**
 	 * Infer some parameters not given in arguments.
 	 */
 	protected static void inferParamsNotSet() {
@@ -32,11 +43,7 @@ public class GrobidMain {
 			tmpFilePath = new File("grobid-home").getAbsolutePath();
 			System.out.println("No path set for grobid-home. Using: " + tmpFilePath);
 			gbdArgs.setPath2grobidHome(tmpFilePath);
-		}
-		if (gbdArgs.getPath2grobidProperty() == null) {
-			tmpFilePath = new File("grobid.properties").getAbsolutePath();
-			System.out.println("No path set for grobid.properties. Using: " + tmpFilePath);
-			gbdArgs.setPath2grobidProperty(tmpFilePath);
+			gbdArgs.setPath2grobidProperty(new File("grobid.properties").getAbsolutePath());
 		}
 	}
 
@@ -60,7 +67,6 @@ public class GrobidMain {
 		help.append("HELP GROBID\n");
 		help.append("-h: displays help\n");
 		help.append("-gH: gives the path to grobid home directory\n");
-		help.append("-gP: gives the path  to grobid.properties\n");
 		help.append("-dIn: gives the path to the directory where inputs are saved. To use only when the called method needs it.\n");
 		help.append("-dOut: gives the path to the directory where results are saved. Output directory is the curent directory if not set.\n");
 		help.append("-s: is the parameter used for process using string as input and not file.\n");
@@ -91,11 +97,9 @@ public class GrobidMain {
 				}
 				if (currArg.equals("-gH")) {
 					gbdArgs.setPath2grobidHome(pArgs[i + 1]);
-					i++;
-					continue;
-				}
-				if (currArg.equals("-gP")) {
-					gbdArgs.setPath2grobidProperty(pArgs[i + 1]);
+					if (pArgs[i + 1] != null) {
+						gbdArgs.setPath2grobidProperty(getPath2GbdProperties(pArgs[i + 1]));
+					}
 					i++;
 					continue;
 				}
