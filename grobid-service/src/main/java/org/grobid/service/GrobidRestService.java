@@ -17,8 +17,6 @@
  */
 package org.grobid.service;
 
-import java.io.File;
-import java.io.IOException;
 import java.io.InputStream;
 
 import javax.ws.rs.Consumes;
@@ -34,14 +32,12 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.StreamingOutput;
 import javax.ws.rs.core.UriInfo;
-import javax.ws.rs.core.Response.Status;
 
 import org.grobid.core.factory.AbstractEngineFactory;
 import org.grobid.service.process.GrobidRestProcessAdmin;
 import org.grobid.service.process.GrobidRestProcessFiles;
 import org.grobid.service.process.GrobidRestProcessGeneric;
 import org.grobid.service.process.GrobidRestProcessString;
-import org.grobid.service.util.GrobidRestUtils;
 import org.grobid.service.util.GrobidServiceProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -53,6 +49,7 @@ import com.sun.jersey.spi.resource.Singleton;
  * RESTful service for the GROBID system.
  * 
  * @author FloZi
+ * @version 2.1
  * 
  */
 @Singleton
