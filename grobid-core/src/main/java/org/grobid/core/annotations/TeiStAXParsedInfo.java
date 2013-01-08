@@ -49,7 +49,7 @@ public class TeiStAXParsedInfo {
 	 * Constructor.
 	 * 
 	 * @param pIndent
-	 *            - If the description has to be indented.
+	 *            If the description has to be indented.
 	 */
 	public TeiStAXParsedInfo(final boolean pIndent) {
 		gorn = new GornIndex();
@@ -76,7 +76,7 @@ public class TeiStAXParsedInfo {
 	 * Adds the tag {@code pTagName} to the tags List.
 	 * 
 	 * @param pTagName
-	 *            - The tag name to add.
+	 *            The tag name to add.
 	 */
 	public void appendTagName(final String pTagName) {
 		tags.add(pTagName);
@@ -86,7 +86,7 @@ public class TeiStAXParsedInfo {
 	 * Removes the tag {@code pTagName} to the tags List.
 	 * 
 	 * @param pTagName
-	 *            - The tag name to remove.
+	 *            The tag name to remove.
 	 */
 	public void removeTagName(final String pTagName) {
 		tags.remove(pTagName);
@@ -98,9 +98,9 @@ public class TeiStAXParsedInfo {
 	 * is initiated.
 	 * 
 	 * @param pTagName
-	 *            - The tag name.
+	 *            The tag name.
 	 * @param pAttributtes
-	 *            - The attributes of the tage name.
+	 *            The attributes of the tage name.
 	 * 
 	 * @return true if the current tag is a description, false else.
 	 */
@@ -122,7 +122,7 @@ public class TeiStAXParsedInfo {
 	 * processed.
 	 * 
 	 * @param pStart
-	 *            - the StartElement to process.
+	 *            the StartElement to process.
 	 * @return true if the StartElement was a paragraph.
 	 */
 	public boolean processParagraphStartTag(final StartElement pStart) {
@@ -142,7 +142,7 @@ public class TeiStAXParsedInfo {
 	 * not.
 	 * 
 	 * @param pTagName
-	 *            - The name of the tag.
+	 *            The name of the tag.
 	 * 
 	 * @return true if the ending tag is a paragraph, false else.
 	 */
@@ -161,7 +161,7 @@ public class TeiStAXParsedInfo {
 	 * called to add some content to the {@link #description}.
 	 * 
 	 * @param pContent
-	 *            - The content to add.
+	 *            The content to add.
 	 */
 	public void appendDescriptionContent(final String pContent) {
 		description.appendParagraphContent(pContent);
@@ -200,7 +200,7 @@ public class TeiStAXParsedInfo {
 	 * type="description".
 	 * 
 	 * @param pStartTag
-	 *            - the StartElement.
+	 *            the StartElement.
 	 * 
 	 * @return true if it is a description, false else.
 	 */

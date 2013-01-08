@@ -25,7 +25,7 @@ public class GrobidTimer {
 	 * The tag under which the start time is saved.
 	 */
 	public static final String START = "START";
-	
+
 	/**
 	 * The tag end.
 	 */
@@ -57,7 +57,7 @@ public class GrobidTimer {
 	 * Constructor.
 	 * 
 	 * @param pStartNow
-	 *            - if true the timer will be started from now, else the start
+	 *            if true the timer will be started from now, else the start
 	 *            method will have to be called.
 	 */
 	public GrobidTimer(final boolean pStartNow) {
@@ -78,7 +78,7 @@ public class GrobidTimer {
 	 * Store the current time with the name pTag.
 	 * 
 	 * @param pTag
-	 *            - the name under which the current time will be saved.
+	 *            the name under which the current time will be saved.
 	 */
 	public void stop(final String pTag) {
 		times.put(pTag, System.currentTimeMillis());
@@ -89,7 +89,7 @@ public class GrobidTimer {
 	 * time.
 	 * 
 	 * @param pTag
-	 *            - the tag of the stop time.
+	 *            the tag of the stop time.
 	 * @return the time elapsed from start to stop.
 	 */
 	public Long getElapsedTimeFromStart(final String pTag) {
@@ -100,9 +100,9 @@ public class GrobidTimer {
 	 * Compute the time elapsed between pTagStart and pTagStop.
 	 * 
 	 * @param pTagStart
-	 *            - the tag of the start time.
+	 *            the tag of the start time.
 	 * @param pTagStop
-	 *            - the tag of the stop time.
+	 *            the tag of the stop time.
 	 * @return the time elapsed from start to stop.
 	 */
 	public Long getElapsedTime(final String pTagStart, final String pTagStop) {
@@ -125,7 +125,7 @@ public class GrobidTimer {
 	 * Return the time formatted: {@link #MIN_SEC_MILI}.
 	 * 
 	 * @param pTag
-	 *            - the tag of the stop time.
+	 *            the tag of the stop time.
 	 * @return the time elapsed from start to stop.
 	 */
 	public String getElapsedTimeFromStartFormated(final String pTag) {
@@ -137,13 +137,12 @@ public class GrobidTimer {
 	 * Return the time formatted: {@link #MIN_SEC_MILI}.
 	 * 
 	 * @param pTagStart
-	 *            - the tag of the start time.
+	 *            the tag of the start time.
 	 * @param pTagStop
-	 *            - the tag of the stop time.
+	 *            the tag of the stop time.
 	 * @return the time elapsed from start to stop.
 	 */
-	public String getElapsedTimeFormated(final String pTagStart,
-			final String pTagStop) {
+	public String getElapsedTimeFormated(final String pTagStart, final String pTagStop) {
 		return formatTime(getElapsedTime(pTagStart, pTagStop));
 	}
 
@@ -169,7 +168,7 @@ public class GrobidTimer {
 	 * Restart the timer when it has been paused by {@link #pauseTimer()}.
 	 */
 	public void restartTimer() {
-		times.put(START, times.get(START) + (System.currentTimeMillis()-timePauseStarted));
+		times.put(START, times.get(START) + (System.currentTimeMillis() - timePauseStarted));
 	}
 
 	/**
@@ -186,7 +185,7 @@ public class GrobidTimer {
 	 * {@link #MIN_SEC_MILI}.
 	 * 
 	 * @param pTime
-	 *            - the time to format.
+	 *            the time to format.
 	 * @return formatted time.
 	 */
 	public static String formatTime(final Long pTime) {

@@ -96,7 +96,7 @@ public class Description {
 	 * Constructor.
 	 * 
 	 * @param pIsIndented
-	 *            - If the output will be indented.
+	 *            If the output will be indented.
 	 */
 	public Description(final boolean pIsIndented) {
 		isIndented = pIsIndented;
@@ -108,9 +108,9 @@ public class Description {
 	 * Process the start of the description.
 	 * 
 	 * @param pDescriptionTag
-	 *            - The StartElement of the description.
+	 *            The StartElement of the description.
 	 * @param pGornIdxStart
-	 *            - The gorn index of the description.
+	 *            The gorn index of the description.
 	 */
 	public void appendStartDescription(final StartElement pDescriptionTag, final String pGornIdxStart) {
 		descriptionTag = pDescriptionTag;
@@ -121,7 +121,7 @@ public class Description {
 	 * Process the start of a paragraph.
 	 * 
 	 * @param pStart
-	 *            - The StartElement of the current paragraph parsed.
+	 *            The StartElement of the current paragraph parsed.
 	 */
 	public void appendParagraphStartTag(final StartElement pStart) {
 		currParagraph = new Paragraph();
@@ -133,7 +133,7 @@ public class Description {
 	 * Append the content of the paragraph to {@code pContent}.
 	 * 
 	 * @param pContent
-	 *            - the content to append.
+	 *            the content to append.
 	 */
 	public void appendParagraphContent(String pContent) {
 		if (Pattern.matches(CHARS2ESCAPE, pContent)) {
@@ -189,7 +189,7 @@ public class Description {
 	 * Generate the tag ptr that give the position of the annotation.
 	 * 
 	 * @param pItem
-	 *            - Object instance of either PatentItem or BibDataSet.
+	 *            Object instance of either PatentItem or BibDataSet.
 	 * 
 	 * @return Null if the information got are not sufficient to generate the
 	 *         pointer.
@@ -294,11 +294,11 @@ public class Description {
 	 * Build the tag ptr with the input parameters.
 	 * 
 	 * @param pIdParagraph
-	 *            - The id of the annotated paragraph.
+	 *            The id of the annotated paragraph.
 	 * @param pCharPointer
-	 *            - The offset of the start character.
+	 *            The offset of the start character.
 	 * @param pCharOffset
-	 *            - The lenght of the annatated citation.
+	 *            The lenght of the annatated citation.
 	 * @return the built ptr tag.
 	 */
 	protected String buildPointer(final String pIdParagraph, final int pCharPointer, final int pCharOffset) {

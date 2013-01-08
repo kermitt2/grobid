@@ -153,7 +153,7 @@ public class Xml2HtmlParser extends DefaultHandler {
 	 * Add space to xml.
 	 * 
 	 * @param sapce
-	 *            - number of spaces.
+	 *            number of spaces.
 	 */
 	private void space(int nbSpace) {
 		for (int i = 0; i < nbSpace; i++) {

@@ -27,7 +27,7 @@ public class GrobidMain {
 	 * Build the path to grobid.properties from the path to grobid-home.
 	 * 
 	 * @param pPath2GbdHome
-	 *            - The path to Grobid home.
+	 *            The path to Grobid home.
 	 * @return the path to grobid.properties.
 	 */
 	protected final static String getPath2GbdProperties(final String pPath2GbdHome) {
@@ -79,7 +79,7 @@ public class GrobidMain {
 	 * Process batch given the args.
 	 * 
 	 * @param pArgs
-	 *            - The arguments given to the batch.
+	 *            The arguments given to the batch.
 	 */
 	protected static boolean processArgs(final String[] pArgs) {
 		boolean result = true;
@@ -142,7 +142,7 @@ public class GrobidMain {
 	 * Starts Grobid from command line using the following parameters:
 	 * 
 	 * @param args
-	 *            - The arguments
+	 *            The arguments
 	 */
 	public static void main(final String[] args) throws Exception {
 		gbdArgs = new GrobidMainArgs();
