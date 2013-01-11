@@ -6,9 +6,7 @@ import static org.grobid.core.utilities.TeiValues.TAG_DIV;
 import static org.grobid.core.utilities.TeiValues.TAG_P;
 import static org.grobid.core.utilities.TeiValues.VAL_DESCRIPTION;
 
-import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 
 import javax.xml.namespace.QName;
 import javax.xml.stream.events.Attribute;
@@ -36,11 +34,6 @@ public class TeiStAXParsedInfo {
 	protected GornIndex gorn;
 
 	/**
-	 * List of some tags in which the parser is.
-	 */
-	protected List<String> tags;
-
-	/**
 	 * Content of the description.
 	 */
 	protected Description description;
@@ -53,16 +46,7 @@ public class TeiStAXParsedInfo {
 	 */
 	public TeiStAXParsedInfo(final boolean pIndent) {
 		gorn = new GornIndex();
-		tags = new ArrayList<String>();
 		description = new Description(pIndent);
-	}
-
-	/**
-	 * Method to reset the current object when the parsing of a publication is
-	 * done. Has to be called before continuing to parse the full document.
-	 */
-	public void reset() {
-		tags = new ArrayList<String>();
 	}
 
 	/**
@@ -70,26 +54,6 @@ public class TeiStAXParsedInfo {
 	 */
 	public void resetDescription() {
 		description.resetDescription();
-	}
-
-	/**
-	 * Adds the tag {@code pTagName} to the tags List.
-	 * 
-	 * @param pTagName
-	 *            The tag name to add.
-	 */
-	public void appendTagName(final String pTagName) {
-		tags.add(pTagName);
-	}
-
-	/**
-	 * Removes the tag {@code pTagName} to the tags List.
-	 * 
-	 * @param pTagName
-	 *            The tag name to remove.
-	 */
-	public void removeTagName(final String pTagName) {
-		tags.remove(pTagName);
 	}
 
 	/**
@@ -128,7 +92,6 @@ public class TeiStAXParsedInfo {
 	public boolean processParagraphStartTag(final StartElement pStart) {
 		final String pTagName = pStart.getName().getLocalPart();
 		if (TAG_P.equals(pTagName)) {
-			tags.add(TAG_P);
 			description.appendParagraphStartTag(pStart);
 			return true;
 		}
@@ -148,7 +111,6 @@ public class TeiStAXParsedInfo {
 	 */
 	public boolean processParagraphEndTag(final String pTagName) {
 		if (TAG_P.equals(pTagName)) {
-			tags.remove(TAG_P);
 			description.appendParagraphEndTag();
 			return true;
 		}
