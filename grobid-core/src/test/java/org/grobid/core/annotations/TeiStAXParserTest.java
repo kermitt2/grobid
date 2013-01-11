@@ -3,6 +3,7 @@ package org.grobid.core.annotations;
 import java.io.ByteArrayInputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -205,19 +206,24 @@ public class TeiStAXParserTest extends XMLTestCase {
 		ReferenceExtractor extractor = new ReferenceExtractor();
 		OutputStream out;
 		TeiStAXParser stax;
-		// out =
-		// getOutputStreamFromFile("src/test/resources/org/grobid/core/sax/resTEISaxParser/out.tei.xml");
+		out = getOutputStreamFromFile("src/test/resources/org/grobid/core/annotations/resTeiStAXParser/out.tei.xml");
 		out = System.out;
 		// ByteArrayOutputStream baos = new ByteArrayOutputStream();
 
-		stax = new TeiStAXParser(getInputStreamFromFile("src/test/resources/org/grobid/core/sax/resTEISaxParser/sample-4.tei.xml"), out,
-				true, extractor);
+		stax = new TeiStAXParser(
+				getInputStreamFromFile("src/test/resources/org/grobid/core/annotations/resTeiStAXParser/sample-4.tei.xml"),
+				out, true,
+				extractor);
 
 		stax.parse();
 	}
 
 	private static FileInputStream getInputStreamFromFile(final String pFileName) throws FileNotFoundException {
 		return new FileInputStream(pFileName);
+	}
+
+	private static FileOutputStream getOutputStreamFromFile(final String pFileName) throws FileNotFoundException {
+		return new FileOutputStream(pFileName);
 	}
 
 	private InputStream createInputStream(final String str) throws java.io.UnsupportedEncodingException {
