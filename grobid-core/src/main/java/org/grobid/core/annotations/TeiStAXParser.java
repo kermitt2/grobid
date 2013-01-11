@@ -286,7 +286,6 @@ public class TeiStAXParser {
 			processDescription();
 			currTEIParsedInfo.resetDescription();
 		} else if (TAG_TEI.equals(tagName)) {
-			currTEIParsedInfo.appendTagName(TAG_TEI);
 			writeInTeiBufferStart(pEvent.asStartElement());
 		} else {
 			writeInTeiBufferStart(pEvent.asStartElement());
@@ -312,7 +311,6 @@ public class TeiStAXParser {
 			appendOutputStream(TAG_END_NOTES_STMT);
 			appendOutputStream();
 			reinit();
-			currTEIParsedInfo.removeTagName(TAG_TEI);
 		} else if (TAG_NOTES_STMT.equals(endTag)) {
 			appendOutputStream();
 		} else {
@@ -393,7 +391,6 @@ public class TeiStAXParser {
 	 * Reinitialize some objects to use them for the next elements to parse.
 	 */
 	protected void reinit() {
-		currTEIParsedInfo.reset();
 		headerAnnotation = new StringBuffer();
 	}
 
