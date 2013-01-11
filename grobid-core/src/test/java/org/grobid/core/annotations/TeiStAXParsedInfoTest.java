@@ -29,16 +29,7 @@ public class TeiStAXParsedInfoTest {
 	public void testConstructor() {
 		final TeiStAXParsedInfo infos = new TeiStAXParsedInfo(false);
 		assertNotNull("should not be null", infos.gorn);
-		assertNotNull("should not be null", infos.tags);
 		assertNotNull("should not be null", infos.description);
-	}
-
-	@Test
-	public void testReset() {
-		final TeiStAXParsedInfo infos = new TeiStAXParsedInfo(false);
-		infos.tags.add("some tag");
-		infos.reset();
-		assertTrue("tags should be empty", infos.tags.isEmpty());
 	}
 
 	@Test
@@ -47,15 +38,6 @@ public class TeiStAXParsedInfoTest {
 		infos.description.rawDescription.append("raw description");
 		infos.resetDescription();
 		assertEquals("rawDescription of description should be empty", "", infos.description.rawDescription.toString());
-	}
-
-	@Test
-	public void testAppendRemoveTagName() {
-		final TeiStAXParsedInfo infos = new TeiStAXParsedInfo(false);
-		infos.appendTagName("TAG");
-		assertEquals("tags should have 1 element: TAG", "TAG", infos.tags.get(0));
-		infos.removeTagName("TAG");
-		assertTrue("tags should be empty", infos.tags.isEmpty());
 	}
 
 	@Test
@@ -104,7 +86,6 @@ public class TeiStAXParsedInfoTest {
 	@Test
 	public void testProcessParagraphEndTagTrue() {
 		final TeiStAXParsedInfo infos = new TeiStAXParsedInfo(false);
-		infos.tags.add(TeiValues.TAG_P);
 		final QName qName = getQName("", TeiValues.TAG_P, "");
 		final StartElement start = createStartElement(qName, null, null);
 		// Add paragraph to avoid NullPointerException.
