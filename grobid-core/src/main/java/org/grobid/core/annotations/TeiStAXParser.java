@@ -285,8 +285,6 @@ public class TeiStAXParser {
 		if (TAG_DIV.equals(tagName) && currTEIParsedInfo.checkIfDescription(startTag)) {
 			processDescription();
 			currTEIParsedInfo.resetDescription();
-		} else if (TAG_TEI.equals(tagName)) {
-			writeInTeiBufferStart(pEvent.asStartElement());
 		} else {
 			writeInTeiBufferStart(pEvent.asStartElement());
 		}
