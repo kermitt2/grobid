@@ -28,8 +28,7 @@ public class GrobidRestProcessString {
 	/**
 	 * The class Logger.
 	 */
-	private static final Logger LOGGER = LoggerFactory
-			.getLogger(GrobidRestProcessString.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(GrobidRestProcessString.class);
 
 	/**
 	 * Parse a raw date and return the corresponding normalized date.
@@ -68,8 +67,7 @@ public class GrobidRestProcessString {
 			if (!GrobidRestUtils.isResultOK(retVal)) {
 				response = Response.status(Status.NO_CONTENT).build();
 			} else {
-				response = Response.status(Status.OK).entity(retVal)
-						.type(MediaType.TEXT_PLAIN).build();
+				response = Response.status(Status.OK).entity(retVal).type(MediaType.TEXT_PLAIN).build();
 			}
 		} catch (NoSuchElementException nseExp) {
 			LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
@@ -121,8 +119,7 @@ public class GrobidRestProcessString {
 			if (!GrobidRestUtils.isResultOK(retVal)) {
 				response = Response.status(Status.NO_CONTENT).build();
 			} else {
-				response = Response.status(Status.OK).entity(retVal)
-						.type(MediaType.TEXT_PLAIN).build();
+				response = Response.status(Status.OK).entity(retVal).type(MediaType.TEXT_PLAIN).build();
 			}
 		} catch (NoSuchElementException nseExp) {
 			LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
@@ -174,8 +171,7 @@ public class GrobidRestProcessString {
 			if (!GrobidRestUtils.isResultOK(retVal)) {
 				response = Response.status(Status.NO_CONTENT).build();
 			} else {
-				response = Response.status(Status.OK).entity(retVal)
-						.type(MediaType.TEXT_PLAIN).build();
+				response = Response.status(Status.OK).entity(retVal).type(MediaType.TEXT_PLAIN).build();
 			}
 		} catch (NoSuchElementException nseExp) {
 			LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
@@ -226,8 +222,7 @@ public class GrobidRestProcessString {
 			if (!GrobidRestUtils.isResultOK(retVal)) {
 				response = Response.status(Status.NO_CONTENT).build();
 			} else {
-				response = Response.status(Status.OK).entity(retVal)
-						.type(MediaType.TEXT_PLAIN).build();
+				response = Response.status(Status.OK).entity(retVal).type(MediaType.TEXT_PLAIN).build();
 			}
 		} catch (NoSuchElementException nseExp) {
 			LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
@@ -270,9 +265,7 @@ public class GrobidRestProcessString {
 			if (biblioItem == null) {
 				response = Response.status(Status.NO_CONTENT).build();
 			} else {
-				response = Response.status(Status.OK)
-						.entity(biblioItem.toTEI(-1))
-						.type(MediaType.TEXT_PLAIN).build();
+				response = Response.status(Status.OK).entity(biblioItem.toTEI(-1)).type(MediaType.APPLICATION_XML).build();
 			}
 		} catch (NoSuchElementException nseExp) {
 			LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
@@ -289,16 +282,14 @@ public class GrobidRestProcessString {
 	 * @return
 	 */
 	public static String methodLogIn() {
-		return ">> " + GrobidRestProcessString.class.getName() + "."
-				+ Thread.currentThread().getStackTrace()[1].getMethodName();
+		return ">> " + GrobidRestProcessString.class.getName() + "." + Thread.currentThread().getStackTrace()[1].getMethodName();
 	}
 
 	/**
 	 * @return
 	 */
 	public static String methodLogOut() {
-		return "<< " + GrobidRestProcessString.class.getName() + "."
-				+ Thread.currentThread().getStackTrace()[1].getMethodName();
+		return "<< " + GrobidRestProcessString.class.getName() + "." + Thread.currentThread().getStackTrace()[1].getMethodName();
 	}
 
 }
