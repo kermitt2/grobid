@@ -313,7 +313,7 @@ public class GrobidRestService implements GrobidPathes {
 	 */
 	@Path(PATH_CITATIONS)
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-	@Produces(MediaType.TEXT_PLAIN)
+	@Produces(MediaType.APPLICATION_XML)
 	@POST
 	public Response processCitations_post(@FormParam(CITATIONS) String citation) {
 		return GrobidRestProcessString.processCitations(citation);
@@ -324,7 +324,7 @@ public class GrobidRestService implements GrobidPathes {
 	 */
 	@Path(PATH_CITATIONS)
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-	@Produces(MediaType.TEXT_PLAIN)
+	@Produces(MediaType.APPLICATION_XML)
 	@PUT
 	public Response processCitations(@FormParam(CITATIONS) String citation) {
 		return GrobidRestProcessString.processCitations(citation);
