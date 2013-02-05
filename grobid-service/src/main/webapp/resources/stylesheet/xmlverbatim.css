@@ -1,0 +1,13 @@
+.xmlverb-default          { color: #333333; background-color: #ffffff;
+                            font-family: monospace }
+.xmlverb-element-name     { color: #990000 }
+.xmlverb-element-nsprefix { color: #666600 }
+.xmlverb-attr-name        { color: #660000 }
+.xmlverb-attr-content     { color: #000099; font-weight: bold }
+.xmlverb-ns-name          { color: #666600 }
+.xmlverb-ns-uri           { color: #330099 }
+.xmlverb-text             { color: #000000; font-weight: bold }
+.xmlverb-comment          { color: #006600; font-style: italic }
+.xmlverb-pi-name          { color: #006600; font-style: italic }
+.xmlverb-pi-content       { color: #006666; font-style: italic }
+
