@@ -5,21 +5,21 @@
 	<parent>
 		<groupId>org.grobid</groupId>
 		<artifactId>grobid-parent</artifactId>
-		<version>0.2.11</version>
+		<version>0.2.12</version>
 		<relativePath>../pom.xml</relativePath>
 	</parent>
 
 	<groupId>org.grobid</groupId>
 	<artifactId>grobid-trainer</artifactId>
 	<name>${project.artifactId}</name>
-	<version>0.0.14</version>
+	<version>0.0.15</version>
 	<packaging>jar</packaging>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.grobid</groupId>
 			<artifactId>grobid-core</artifactId>
-			<version>0.2.6</version>
+			<version>0.2.7</version>
 		</dependency>
 	</dependencies>
 
