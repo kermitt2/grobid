@@ -17,3 +17,5 @@ Thumbs.db
 # grobid-core/log/error.log
 # grobid-core/log/warn.log
 
+
+grobid-core/src/test/resources/org/grobid/core/annotations/resTeiStAXParser/out.tei.xml
