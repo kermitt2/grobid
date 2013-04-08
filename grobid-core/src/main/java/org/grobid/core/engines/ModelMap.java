@@ -3,10 +3,13 @@ package org.grobid.core.engines;
 import java.util.HashMap;
 import java.util.Map;
 
+import java.io.File;
+
 import org.chasen.crfpp.Model;
 import org.chasen.crfpp.Tagger;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.exceptions.GrobidException;
+import org.grobid.core.utilities.GrobidProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -56,7 +59,13 @@ public class ModelMap {
 		LOGGER.info("Loading models");
 		GrobidModels[] models = GrobidModels.values();
 		for (GrobidModels model : models) {
-			getModel(model.getModelPath());
+			File path = GrobidProperties.getModelPath(model);
+			if (path.exists()) {
+				getModel(model.getModelPath());
+			}
+			else {
+				LOGGER.info("Loading model " + model.getModelPath() + " failed because the path is not valid.");
+			}
 		}
 		LOGGER.info("Models loaded");
 	}

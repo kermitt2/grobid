@@ -51,7 +51,7 @@ public class AbstractEngineFactory {
 	}
 	
 	/**
-	 * Initializes all necessary things for starting grobid. .
+	 * Initializes all necessary things for starting grobid.
 	 */
 	public static void fullInit() {
 		init();
