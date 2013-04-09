@@ -620,8 +620,9 @@ public class Engine implements Closeable {
 			int n = 0;
 			// for (; n < refFiles.length; n++) {
 			for (final File pdfFile : refFiles) {
-				// File pdfFile = refFiles[n];
-				// if (pdfFile.getAbsolutePath().endsWith(".pdf")) {
+				try {
+					// File pdfFile = refFiles[n];
+					// if (pdfFile.getAbsolutePath().endsWith(".pdf")) {
 					if (type == 0) {
 						createTrainingHeader(pdfFile.getPath(), resultPath, resultPath, ind + n);
 					} else if (type == 1) {
@@ -632,8 +633,10 @@ public class Engine implements Closeable {
 					 * createTrainingCitations(pdfFile.getPath(), resultPath,
 					 * resultPath, ind+n); }
 					 */
-				// }
-
+					// }
+				} catch (final Exception exp) {
+					LOGGER.error("An error occured while processing the following pdf: " + pdfFile.getPath() + ": " + exp);
+				}
 			}
 
 			return refFiles.length;
