@@ -5,6 +5,8 @@ Thumbs.db
 .project
 .settings
 .classpath
+.idea
+*.iml
 *.log
 *.log.*
 
