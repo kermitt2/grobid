@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Timeout.
 timeout=20   # 20 seconds
