@@ -4,18 +4,20 @@ import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.lang.ProcessBuilder;
 import java.io.IOException;
+import java.util.List;
 
 /**
  * Date: 6/26/12
  * Time: 3:55 PM
  *
- * @author Vyacheslav Zholudev
+ * @author Vyacheslav Zholudev, Patrice Lopez
  */
 public class ProcessRunner extends Thread {
     private static final Logger LOGGER = LoggerFactory.getLogger(ProcessRunner.class);
 
-    private String cmd;
+    private List<String> cmd;
     private Integer exit;
 
     public String getErrorStreamContents() {
@@ -28,7 +30,7 @@ public class ProcessRunner extends Thread {
     StreamGobbler sgIn;
     StreamGobbler sgErr;
 
-    public ProcessRunner(String cmd, String name, boolean useStreamGobbler) {
+    public ProcessRunner(List<String> cmd, String name, boolean useStreamGobbler) {
         super(name);
         this.cmd = cmd;
         this.useStreamGobbler = useStreamGobbler;
@@ -36,8 +38,12 @@ public class ProcessRunner extends Thread {
 
     public void run() {
         Process process = null;
+		ProcessBuilder builder = null;
         try {
-            process = Runtime.getRuntime().exec(cmd);
+			builder = new ProcessBuilder(cmd);
+			process = builder.start();
+	
+            //process = Runtime.getRuntime().exec(cmd);
 
             if (useStreamGobbler) {
                 sgIn = new StreamGobbler(process.getInputStream());
@@ -45,11 +51,14 @@ public class ProcessRunner extends Thread {
             }
 
             exit = process.waitFor();
-        } catch (InterruptedException ignore) {
+        } 
+		catch (InterruptedException ignore) {
             //Process needs to be destroyed -- it's done in the finally block
-        } catch (IOException e) {
+        } 
+		catch (IOException e) {
             LOGGER.error("IOException while launching the command {} : {}", cmd, e.getMessage());
-        } finally {
+        } 
+		finally {
             if (process != null) {
                 IOUtils.closeQuietly(process.getInputStream());
                 IOUtils.closeQuietly(process.getOutputStream());
