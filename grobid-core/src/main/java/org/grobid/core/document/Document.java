@@ -3,6 +3,7 @@ package org.grobid.core.document;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.lang.ProcessBuilder;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
@@ -198,19 +199,21 @@ public class Document {
 												// WARNING: it might be too
 												// short for ebook !
 
-	protected static String getPdf2xml(boolean full) {
+	protected static List<String> getPdf2xml(boolean full) {
 		String pdf2xml = GrobidProperties.getPdf2XMLPath().getAbsolutePath();
 
 		pdf2xml += GrobidProperties.isContextExecutionServer() ? "/pdftoxml_server"
 				: "/pdftoxml";
-
+		List<String> cmd = new ArrayList<String>();
+		cmd.add(pdf2xml);
+		cmd.add("-blocks");
 		if (full) {
-			pdf2xml += " -blocks -noImageInline -fullFontName ";
-		} else {
-			pdf2xml += " -blocks -noImage -noImageInline -fullFontName ";
+			cmd.add("-noImage");			
 		}
-
-		return pdf2xml;
+		cmd.add("-noImageInline");
+		cmd.add("-fullFontName");
+		
+		return cmd;
 	}
 
 	/**
@@ -225,18 +228,17 @@ public class Document {
 			throws Exception {
 		LOGGER.debug("start pdf2xml");
 		long time = System.currentTimeMillis();
-		String pdftoxml0;
-
-		pdftoxml0 = getPdf2xml(full);
-		/*
-		 * if (full) { pdftoxml0 = pdftoxml2; } else { pdftoxml0 = pdftoxml; }
-		 */
-
-		if (startPage > 0)
-			pdftoxml0 += " -f " + startPage + " ";
-		if (endPage > 0)
-			pdftoxml0 += " -l " + endPage + " ";
-
+		List<String> cmd = getPdf2xml(full);
+		
+		if (startPage > 0) {
+			cmd.add("-f");
+			cmd.add(""+startPage);
+		}
+		if (endPage > 0) {
+			cmd.add("-l");
+			cmd.add(""+endPage);
+		}
+		
 		// if the XML representation already exists, no need to redo the
 		// conversion,
 		// except if the force parameter is set to true
@@ -244,12 +246,13 @@ public class Document {
 		File f = new File(tmpPathXML);
 
 		if ((!f.exists()) || force) {
-			String cmd = pdftoxml0 + pdfPath + " " + tmpPathXML;
+			cmd.add(pdfPath);
+			cmd.add(tmpPathXML);
 			if (GrobidProperties.isContextExecutionServer()) {
 				tmpPathXML = processPdf2Xml(pdfPath, tmpPathXML, cmd);
-			} else {
-				tmpPathXML = processPdf2XmlThreadMode(tout, pdfPath,
-						tmpPathXML, cmd);
+			} 
+			else {
+				tmpPathXML = processPdf2XmlThreadMode(tout, pdfPath, tmpPathXML, cmd);
 			}
 
 		}
@@ -272,7 +275,7 @@ public class Document {
 	 * @return the path the the converted file.
 	 */
 	protected String processPdf2XmlThreadMode(boolean tout, String pdfPath,
-			String tmpPathXML, String cmd) {
+			String tmpPathXML, List<String> cmd) {
 		LOGGER.debug("Executing: " + cmd);
 		ProcessRunner worker = new ProcessRunner(cmd, "pdf2xml[" + pdfPath
 				+ "]", true);
@@ -320,7 +323,7 @@ public class Document {
 	 * @throws TimeoutException 
 	 */
 	protected String processPdf2Xml(String pdfPath, String tmpPathXML,
-			final String cmd) throws TimeoutException {
+			final List<String> cmd) throws TimeoutException {
 		LOGGER.debug("Executing: " + cmd);
 
 		Integer exitCode = ProcessPdf2Xml.process(cmd);

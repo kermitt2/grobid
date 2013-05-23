@@ -50,7 +50,6 @@
 			<groupId>org.chasen</groupId>
 			<artifactId>crfpp</artifactId>
 			<version>1.0.2</version>
-			<scope>compile</scope>
 		</dependency>
 
 		<dependency>
