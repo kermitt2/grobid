@@ -56,8 +56,6 @@ import com.sun.jersey.spi.resource.Singleton;
 @Path(GrobidPathes.PATH_GROBID)
 public class GrobidRestService implements GrobidPathes {
 
-
-
 	/**
 	 * The class Logger.
 	 */
@@ -72,10 +70,10 @@ public class GrobidRestService implements GrobidPathes {
 	private static final String INPUT = "input";
 
 	public GrobidRestService() {
-		LOGGER.info("Initiating Sevlet GrobidRestService");
+		LOGGER.info("Initiating Servlet GrobidRestService");
 		AbstractEngineFactory.fullInit();
 		GrobidServiceProperties.getInstance();
-		LOGGER.info("Initiating of Sevlet GrobidRestService finished.");
+		LOGGER.info("Initiating of Servlet GrobidRestService finished.");
 	}
 
 	/**

@@ -3,7 +3,6 @@ package org.grobid.core.document;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.lang.ProcessBuilder;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
@@ -199,21 +198,18 @@ public class Document {
 												// WARNING: it might be too
 												// short for ebook !
 
-	protected static List<String> getPdf2xml(boolean full) {
+	protected String getPdf2xml(boolean full) {
 		String pdf2xml = GrobidProperties.getPdf2XMLPath().getAbsolutePath();
 
 		pdf2xml += GrobidProperties.isContextExecutionServer() ? "/pdftoxml_server"
 				: "/pdftoxml";
-		List<String> cmd = new ArrayList<String>();
-		cmd.add(pdf2xml);
-		cmd.add("-blocks");
+
 		if (full) {
-			cmd.add("-noImage");			
+			pdf2xml += " -blocks -noImageInline -fullFontName ";
+		} else {
+			pdf2xml += " -blocks -noImage -noImageInline -fullFontName ";
 		}
-		cmd.add("-noImageInline");
-		cmd.add("-fullFontName");
-		
-		return cmd;
+		return pdf2xml;
 	}
 
 	/**
@@ -228,17 +224,15 @@ public class Document {
 			throws Exception {
 		LOGGER.debug("start pdf2xml");
 		long time = System.currentTimeMillis();
-		List<String> cmd = getPdf2xml(full);
-		
-		if (startPage > 0) {
-			cmd.add("-f");
-			cmd.add(""+startPage);
-		}
-		if (endPage > 0) {
-			cmd.add("-l");
-			cmd.add(""+endPage);
-		}
-		
+		String pdftoxml0;
+
+		pdftoxml0 = getPdf2xml(full);
+
+		if (startPage > 0)
+			pdftoxml0 += " -f " + startPage + " ";
+		if (endPage > 0)
+			pdftoxml0 += " -l " + endPage + " ";
+
 		// if the XML representation already exists, no need to redo the
 		// conversion,
 		// except if the force parameter is set to true
@@ -246,13 +240,19 @@ public class Document {
 		File f = new File(tmpPathXML);
 
 		if ((!f.exists()) || force) {
+			List<String> cmd = new ArrayList<String>();
+			String[] tokens = pdftoxml0.split(" ");
+			for(int i=0; i<tokens.length; i++) {
+				if (tokens[i].trim().length()> 0)
+					cmd.add(tokens[i]);
+			}
 			cmd.add(pdfPath);
 			cmd.add(tmpPathXML);
 			if (GrobidProperties.isContextExecutionServer()) {
 				tmpPathXML = processPdf2Xml(pdfPath, tmpPathXML, cmd);
-			} 
-			else {
-				tmpPathXML = processPdf2XmlThreadMode(tout, pdfPath, tmpPathXML, cmd);
+			} else {
+				tmpPathXML = processPdf2XmlThreadMode(tout, pdfPath,
+						tmpPathXML, cmd);
 			}
 
 		}
@@ -276,9 +276,9 @@ public class Document {
 	 */
 	protected String processPdf2XmlThreadMode(boolean tout, String pdfPath,
 			String tmpPathXML, List<String> cmd) {
-		LOGGER.debug("Executing: " + cmd);
-		ProcessRunner worker = new ProcessRunner(cmd, "pdf2xml[" + pdfPath
-				+ "]", true);
+		LOGGER.debug("Executing: " + cmd.toString());
+		org.grobid.core.process.ProcessRunner worker = 
+			new org.grobid.core.process.ProcessRunner(cmd, "pdf2xml[" + pdfPath + "]", true);
 
 		worker.start();
 
@@ -299,11 +299,13 @@ public class Document {
 						"PDF to XML conversion failed due to: "
 								+ worker.getErrorStreamContents());
 			}
-		} catch (InterruptedException ex) {
+		} 
+		catch (InterruptedException ex) {
 			tmpPathXML = null;
 			worker.interrupt();
 			Thread.currentThread().interrupt();
-		} finally {
+		} 
+		finally {
 			worker.interrupt();
 		}
 		return tmpPathXML;
@@ -323,18 +325,19 @@ public class Document {
 	 * @throws TimeoutException 
 	 */
 	protected String processPdf2Xml(String pdfPath, String tmpPathXML,
-			final List<String> cmd) throws TimeoutException {
-		LOGGER.debug("Executing: " + cmd);
-
-		Integer exitCode = ProcessPdf2Xml.process(cmd);
+			List<String> cmd) throws TimeoutException {
+		LOGGER.debug("Executing: " + cmd.toString());
+		Integer exitCode = org.grobid.core.process.ProcessPdf2Xml.process(cmd);
 
 		if (exitCode == null) {
 			tmpPathXML = null;
 			throw new RuntimeException("An error occured while converting pdf "
 					+ pdfPath);
-		} else if (exitCode == KILLED_DUE_2_TIMEOUT) {
+		} 
+		else if (exitCode == KILLED_DUE_2_TIMEOUT) {
 			throw new TimeoutException("PDF to XML conversion timed out");
-		} else if (exitCode != 0) {
+		} 
+		else if (exitCode != 0) {
 			throw new RuntimeException(
 					"PDF to XML conversion failed with error code: " + exitCode);
 		}

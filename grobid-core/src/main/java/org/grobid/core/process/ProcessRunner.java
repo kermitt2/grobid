@@ -4,9 +4,9 @@ import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.lang.ProcessBuilder;
 import java.io.IOException;
 import java.util.List;
+import java.util.ArrayList;
 
 /**
  * Date: 6/26/12
@@ -17,7 +17,7 @@ import java.util.List;
 public class ProcessRunner extends Thread {
     private static final Logger LOGGER = LoggerFactory.getLogger(ProcessRunner.class);
 
-    private List<String> cmd;
+	private List<String> cmd;
     private Integer exit;
 
     public String getErrorStreamContents() {
@@ -30,7 +30,7 @@ public class ProcessRunner extends Thread {
     StreamGobbler sgIn;
     StreamGobbler sgErr;
 
-    public ProcessRunner(List<String> cmd, String name, boolean useStreamGobbler) {
+	public ProcessRunner(List<String> cmd, String name, boolean useStreamGobbler) {
         super(name);
         this.cmd = cmd;
         this.useStreamGobbler = useStreamGobbler;
@@ -38,13 +38,10 @@ public class ProcessRunner extends Thread {
 
     public void run() {
         Process process = null;
-		ProcessBuilder builder = null;
         try {
-			builder = new ProcessBuilder(cmd);
+			ProcessBuilder builder = new ProcessBuilder(cmd);
 			process = builder.start();
-	
-            //process = Runtime.getRuntime().exec(cmd);
-
+			
             if (useStreamGobbler) {
                 sgIn = new StreamGobbler(process.getInputStream());
                 sgErr = new StreamGobbler(process.getErrorStream());
@@ -56,7 +53,7 @@ public class ProcessRunner extends Thread {
             //Process needs to be destroyed -- it's done in the finally block
         } 
 		catch (IOException e) {
-            LOGGER.error("IOException while launching the command {} : {}", cmd, e.getMessage());
+            LOGGER.error("IOException while launching the command {} : {}", cmd.toString(), e.getMessage());
         } 
 		finally {
             if (process != null) {
@@ -77,7 +74,8 @@ public class ProcessRunner extends Thread {
                     if (sgIn != null) {
                         sgIn.close();
                     }
-                } catch (IOException e) {
+                } 
+				catch (IOException e) {
                     LOGGER.error("IOException while closing the stream gobbler: {}", e);
                 }
 
@@ -85,7 +83,8 @@ public class ProcessRunner extends Thread {
                     if (sgErr != null) {
                         sgErr.close();
                     }
-                } catch (IOException e) {
+                } 
+				catch (IOException e) {
                     LOGGER.error("IOException while closing the stream gobbler: {}", e);
                 }
             }

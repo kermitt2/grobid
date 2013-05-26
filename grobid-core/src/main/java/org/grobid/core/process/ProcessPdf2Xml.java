@@ -1,38 +1,36 @@
 package org.grobid.core.process;
 
 import java.io.IOException;
-import java.lang.ProcessBuilder;
-import java.util.List;
 
 import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import java.util.List;
+import java.util.ArrayList;
 
 public class ProcessPdf2Xml {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(ProcessPdf2Xml.class);
+	private static final Logger LOGGER = LoggerFactory
+			.getLogger(ProcessPdf2Xml.class);
 
 	/**
 	 * Process the conversion.
 	 */
-	public static Integer process(final List<String> cmd) {
+	public static Integer process(List<String> cmd) {
 		Process process = null;
 		ProcessBuilder builder = null;
 		Integer exit = null;
 		try {
-			// int exit;
 			builder = new ProcessBuilder(cmd);
 			process = builder.start();
 			exit = process.waitFor();
-		} 
-		catch (InterruptedException ignore) {
+				
+		} catch (InterruptedException ignore) {
 			// Process needs to be destroyed -- it's done in the finally block
-		} 
-		catch (IOException ioExp) {
+		} catch (IOException ioExp) {
 			LOGGER.error("IOException while launching the command {} : {}",
 					cmd, ioExp.getMessage());
-		} 
-		finally {
+		} finally {
 			if (process != null) {
 				IOUtils.closeQuietly(process.getInputStream());
 				IOUtils.closeQuietly(process.getOutputStream());

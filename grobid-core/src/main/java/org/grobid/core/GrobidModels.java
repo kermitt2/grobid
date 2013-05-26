@@ -16,7 +16,7 @@ public enum GrobidModels {
 	CITATION("citation"), 
 	DATE("date"), 
 	EBOOK("ebook"), 
-//	ENTITIES_CHEMISTRY("entities/chemistry"), 
+	ENTITIES_CHEMISTRY("entities/chemistry"), 
 //	ENTITIES_BIOTECH("entities/biotech"), 
 	FULLTEXT("fulltext"), 
 	HEADER("header"), 
@@ -27,7 +27,7 @@ public enum GrobidModels {
 	PATENT_ALL("patent/all"),
 	PATENT_STRUCTURE("patent/structure"), 
 	PATENT_EDIT("patent/edit"), 
-	ENTITIES_CHEMISTRY("chemistry"),
+//	ENTITIES_CHEMISTRY("chemistry"),
 	ENTITIES_NER("ner"),
 	ENTITIES_QUANTITIES("quantities"),
 	ENTITIES_BIOTECH("bio");
