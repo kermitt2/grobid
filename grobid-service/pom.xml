@@ -29,8 +29,8 @@
 			</exclusions>
 		</dependency>
 		<dependency>
-			<!-- directory-naming exclude and reincluded with test scope ( to use 
-				for tests but not to embade in librariesof the war) -->
+			<!-- directory-naming included only with test scope (to use 
+				for tests but not to embed in libraries of the war) -->
 			<groupId>directory-naming</groupId>
 			<artifactId>naming-java</artifactId>
 			<version>0.8</version>
