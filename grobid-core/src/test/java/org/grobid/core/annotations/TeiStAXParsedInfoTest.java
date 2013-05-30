@@ -8,6 +8,7 @@ import static org.junit.Assert.assertTrue;
 import java.util.Iterator;
 import java.util.Set;
 import java.util.TreeSet;
+import java.util.Vector;
 
 import javax.xml.namespace.QName;
 import javax.xml.stream.XMLEventFactory;
@@ -139,7 +140,7 @@ public class TeiStAXParsedInfoTest {
 	}
 
 	private static Iterator<Attribute> getAttributes(final Attribute... pAttr) {
-		Set<Attribute> attributes = new TreeSet<Attribute>();
+		Vector<Attribute> attributes = new Vector<Attribute>();
 		for (final Attribute attr : pAttr) {
 			attributes.add(attr);
 		}

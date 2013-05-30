@@ -7,6 +7,7 @@ import static org.grobid.core.utilities.TeiValues.XML;
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.Set;
+import java.util.Vector;
 import java.util.TreeSet;
 
 import javax.xml.namespace.QName;
@@ -433,7 +434,7 @@ public class DescriptionTest extends XMLTestCase {
 	}
 
 	private static Iterator<Attribute> getAttributes(final Attribute... pAttr) {
-		Set<Attribute> attributes = new TreeSet<Attribute>();
+		Vector<Attribute> attributes = new Vector<Attribute>();
 		for (final Attribute attr : pAttr) {
 			attributes.add(attr);
 		}
