@@ -5,6 +5,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
+import java.util.Vector;
 
 import static org.grobid.core.utilities.TeiValues.ATTR_ID;
 import static org.grobid.core.utilities.TeiValues.W3C_NAMESPACE;
@@ -143,7 +144,7 @@ public class ParagraphTest {
 	}
 
 	private static Iterator<Attribute> getAttributes(final Attribute... pAttr) {
-		Set<Attribute> attributes = new TreeSet<Attribute>();
+		Vector<Attribute> attributes = new Vector<Attribute>();
 		for (final Attribute attr : pAttr) {
 			attributes.add(attr);
 		}
