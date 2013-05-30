@@ -79,8 +79,9 @@
         <url-pattern>/citationAnnotation</url-pattern>
     </servlet-mapping>
     
-    <welcome-file-list>
-    	<welcome-file>index.jsp</welcome-file>
+	<welcome-file-list>
+    	<welcome-file>grobid/index.html</welcome-file>
+		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>
 	
 	<!-- Path to properties files and GROBID_HOME -->

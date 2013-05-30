@@ -172,6 +172,9 @@
 							<maxIdleTime>60000</maxIdleTime>
 						</connector>
 					</connectors>
+					<resourceBases>
+					    <resourceBase>${basedir}/src/main/webapp</resourceBase>   
+			        </resourceBases>
 				</configuration>
 			</plugin>
 		</plugins>
