@@ -159,7 +159,6 @@ var grobid = (function($) {
   	}
 	
 	function SubmitSuccesful(responseText, statusText, xhr) {
-		console.log(responseText);
 		var selected = $('#selectedService option:selected').attr('value');
 		if (selected == 'citationAnnotation') {
 			$('#requestResult').text(responseText);
@@ -168,18 +167,9 @@ var grobid = (function($) {
 			//var display = '<pre style="background-color:#FEE9CC;width:90%;" id="displayXML">';  
 			
 			var display = "<pre class='prettyprint lang-xml' id='xmlCode'>";  
-			//var testStr = vkbeautify.xml(responseText);
 			var testStr = '<?xml version="1.0" encoding="UTF-8"?>' + vkbeautify.xml(responseText);
 			
 			display += htmll(testStr);
-//console.log(prettyPrintOne(htmll(testStr),'xml'));
-
-//console.log(prettyPrintOne(htmll('<root><node1><root>'), 'xml'));
-			//display += responseText; 
-			//display += '<?xml version="1.0" encoding="UTF-8"?><tata>\n<toto test="numb1">this is a test</toto>\n<tutu/>\n</tata>\n';    
-
-			//var testStr = prettyPrintOne('<?xml version="1.0" encoding="UTF-8"?><tata>\n<toto test="numb1">this is a test</toto>\n<tutu/>\n</tata>\n', 'xml');
-			//display += testStr;
 
 			display += "</pre>";
 			$('#requestResult').html(display);
@@ -290,7 +280,7 @@ var grobid = (function($) {
 	}
 	
 	function rowEvent(){
-		$('.admRow').click(function(){
+		$('.admRow').click(function() {
 			$("#"+selectedAdmKey).find("div").html($("#val"+selectedAdmKey).attr("value"));
 			selectedAdmKey=$(this).attr("id");
 			selectedAdmValue=$(this).find("div").text();
@@ -299,21 +289,20 @@ var grobid = (function($) {
 			$("#val"+selectedAdmKey).focus();
 		});
 		
-		$('.admRow').keypress(function(event){
+		$('.admRow').keypress(function(event) {
 			var keycode = (event.keyCode ? event.keyCode : event.which);
+			selectedAdmKey=$(this).attr("id");
 			// Enter key
-			if(keycode == '13'){
-				selectedAdmKey=$(this).attr("id");
+			if(keycode == '13') {				
 				var newVal = $("#val"+selectedAdmKey).val();	
 				$("#"+selectedAdmKey).find("div").html(newVal);
 				selectedAdmValue=newVal;
 				selectedAdmType=$(this).find("input").attr("value");				
-				//alert("key="+selectedAdmKey+"  value="+selectedAdmValue+"  type="+selectedAdmType);
 				generateXmlRequest();
 			}
 			// Escape key
-			if(keycode == '27'){
-				$("#"+selectedAdmKey).find("div").html($("#val"+selectedAdmKey).attr("value"));
+			if(keycode == '27') {
+				$("#"+selectedAdmKey).find("div").html(selectedAdmValue);
 			}
 		});
 	}
