@@ -99,8 +99,12 @@ public abstract class AbstractTrainer implements Trainer {
 	}
 
 	protected static final File getFilePath2Resources() {
-		return new File(GrobidProperties.get_GROBID_HOME_PATH().getAbsoluteFile() + File.separator + ".." + File.separator
+		File theFile = new File(GrobidProperties.get_GROBID_HOME_PATH().getAbsoluteFile() + File.separator + ".." + File.separator
 				+ "grobid-trainer" + File.separator + "resources");
+		if (!theFile.exists()) {
+			theFile = new File("resources");
+		}		
+		return theFile;		
 	}
 
 	protected final File getCorpusPath() {

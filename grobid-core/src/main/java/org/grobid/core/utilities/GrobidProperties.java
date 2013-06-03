@@ -791,15 +791,27 @@ public class GrobidProperties {
 	}
 
 	public static File getTemplatePath(final File resourcesDir, final GrobidModels model) {
-		return new File(resourcesDir, "dataset/" + model.getFolderName() + "/crfpp-templates/" + model.getTemplateName());
+		File theFile = new File(resourcesDir, "dataset/" + model.getFolderName() + "/crfpp-templates/" + model.getTemplateName());
+		if (!theFile.exists()) {
+			theFile = new File("resources/dataset/" + model.getFolderName() + "/crfpp-templates/" + model.getTemplateName());
+		}
+		return theFile;
 	}
 
 	public static File getEvalCorpusPath(final File resourcesDir, final GrobidModels model) {
-		return new File(resourcesDir, "dataset/" + model.getFolderName() + "/evaluation/");
+		File theFile = new File(resourcesDir, "dataset/" + model.getFolderName() + "/evaluation/");
+		if (!theFile.exists()) {
+			theFile = new File("resources/dataset/" + model.getFolderName() + "/evaluation/");
+		}
+		return theFile;
 	}
 
 	public static File getCorpusPath(final File resourcesDir, final GrobidModels model) {
-		return new File(resourcesDir, "dataset/" + model.getFolderName() + "/corpus");
+		File theFile = new File(resourcesDir, "dataset/" + model.getFolderName() + "/corpus");
+		if (!theFile.exists()) {
+			theFile = new File("resources/dataset/" + model.getFolderName() + "/corpus");
+		}
+		return theFile;
 	}
 
 	public static String getLexiconPath() {
