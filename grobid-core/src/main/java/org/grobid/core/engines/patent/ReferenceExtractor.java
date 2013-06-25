@@ -987,7 +987,7 @@ public class ReferenceExtractor implements Closeable {
                     if (allBufferReference.length() > 0) {
                         Writer writerReference = new OutputStreamWriter(new FileOutputStream(
                                 new File(newTrainingPath + "/" + currentPatentNumber +
-                                        ".tranining.references.xml"), false), "UTF-8");
+                                        ".training.references.xml"), false), "UTF-8");
                         writerReference.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
                         writerReference.write("<citations>\n");
 
