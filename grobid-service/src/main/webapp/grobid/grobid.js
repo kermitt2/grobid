@@ -188,11 +188,11 @@ var grobid = (function($) {
 		var selected = $('#selectedService option:selected').attr('value');
 
 		if (selected == 'processHeaderDocument') {
-			createInputFile();
+			createInputFile(selected);
 			setBaseUrl('processHeaderDocument');
 		} 
 		else if (selected == 'processFulltextDocument') {
-			createInputFile();
+			createInputFile(selected);
 			setBaseUrl('processFulltextDocument');
 		} 
 		else if (selected == 'processDate') {
@@ -216,12 +216,12 @@ var grobid = (function($) {
 			setBaseUrl('processCitations');
 		} 
 		else if (selected == 'citationAnnotation') {
-			createInputFile();
+			createInputFile(selected);
 			setBaseUrl('citationAnnotation');
 		}
 	}
 					
-	function createInputFile() {
+	function createInputFile(selected) {
 		//$('#label').html('&nbsp;'); 
 		$('#textInputDiv').hide();
 		//$('#fileInputDiv').fileupload({uploadtype:'file'});
@@ -234,7 +234,7 @@ var grobid = (function($) {
 	
 	function createInputTextArea(nameInput) {
 		//$('#label').html('&nbsp;'); 
-		$('#fileInputDiv').hide();					                   
+		$('#fileInputDiv').hide();
 		//$('#input').remove();
 		
 		//$('#field').html('<table><tr><td><textarea class="span7" rows="5" id="input" name="'+nameInput+'" /></td>'+
