@@ -341,7 +341,7 @@ public class FullTextParser extends AbstractParser {
             if (allBufferReference != null) {
                 if (allBufferReference.length() > 0) {
                     Writer writerReference = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
-                            "/" + PDFFileName.replace(".pdf", ".tranining.references.xml")), false), "UTF-8");
+                            "/" + PDFFileName.replace(".pdf", ".training.references.xml")), false), "UTF-8");
                     writerReference.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
                     writerReference.write("<citations>\n");
 
