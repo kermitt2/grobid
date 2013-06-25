@@ -173,19 +173,19 @@ public class GrobidProperties {
 
 			try {
 				if (pathToGrobidHome == null || !pathToGrobidHome.exists()) {
-					LOGGER.error("Cannot set grobid home path to the given one '{}', because it does not exist.", GROBID_HOME_PATH);
-					throw new GrobidPropertyException("Cannot set grobid home path to the given one '" + GROBID_HOME_PATH
+					LOGGER.error("Cannot set grobid home path to the given one '{}', because it does not exist.", grobidHomePath);
+					throw new GrobidPropertyException("Cannot set grobid home path to the given one '" + grobidHomePath
 							+ "', because it does not exist.");
 				}
 
 			} catch (final SecurityException scExp) {
-				throw new GrobidPropertyException("Cannot access the set grobid home path '" + pathToGrobidHome.getAbsolutePath()
+				throw new GrobidPropertyException("Cannot access the set grobid home path '" + grobidHomePath
 						+ "', because of an access permission.", scExp);
 			}
 			try {
 				GROBID_HOME_PATH = pathToGrobidHome.getCanonicalFile();
 			} catch (final IOException ioExp) {
-				throw new GrobidPropertyException("Cannot set grobid home path to the given one '" + GROBID_HOME_PATH.getAbsolutePath()
+				throw new GrobidPropertyException("Cannot set grobid home path to the given one '" + grobidHomePath
 						+ "', because it does not exist.");
 			}
 		}
@@ -216,13 +216,13 @@ public class GrobidProperties {
 		File grobidHome = new File(pGROBID_HOME_PATH);
 		// exception if prop file does not exist
 		if (grobidHome == null || !grobidHome.exists()) {
-			throw new GrobidPropertyException("Could not read GROBID_HOME, the directory '" + grobidHome + "' does not exist.");
+			throw new GrobidPropertyException("Could not read GROBID_HOME, the directory '" + pGROBID_HOME_PATH + "' does not exist.");
 		}
 
 		try {
 			GROBID_HOME_PATH = grobidHome.getCanonicalFile();
 		} catch (IOException e) {
-			throw new GrobidPropertyException("Cannot set grobid home path to the given one '" + GROBID_HOME_PATH.getAbsolutePath()
+			throw new GrobidPropertyException("Cannot set grobid home path to the given one '" + pGROBID_HOME_PATH
 					+ "', because it does not exist.");
 		}
 	}
@@ -243,13 +243,13 @@ public class GrobidProperties {
 
 			// exception if prop file does not exist
 			if (grobidPropertyFile == null || !grobidPropertyFile.exists()) {
-				throw new GrobidPropertyException("Could not read grobid.properties, the file '" + grobidPropertyFile + "' does not exist.");
+				throw new GrobidPropertyException("Could not read grobid.properties, the file '" + grobidPropertyPath + "' does not exist.");
 			}
 
 			try {
 				GROBID_PROPERTY_PATH = grobidPropertyFile.getCanonicalFile();
 			} catch (IOException e) {
-				throw new GrobidPropertyException("Cannot set grobid home path to the given one '" + GROBID_HOME_PATH.getAbsolutePath()
+				throw new GrobidPropertyException("Cannot set grobid home path to the given one '" + grobidPropertyPath
 						+ "', because it does not exist.");
 			}
 		}
@@ -276,13 +276,13 @@ public class GrobidProperties {
 		File grobidPropPath = new File(pGrobidPropertiesPath);
 		// exception if prop file does not exist
 		if (grobidPropPath == null || !grobidPropPath.exists()) {
-			throw new GrobidPropertyException("Could not read grobid.properties, the file '" + grobidPropPath + "' does not exist.");
+			throw new GrobidPropertyException("Could not read grobid.properties, the file '" + pGrobidPropertiesPath + "' does not exist.");
 		}
 
 		try {
 			GROBID_PROPERTY_PATH = grobidPropPath.getCanonicalFile();
 		} catch (IOException e) {
-			throw new GrobidPropertyException("Cannot set grobid home path to the given one '" + GROBID_HOME_PATH.getAbsolutePath()
+			throw new GrobidPropertyException("Cannot set grobid home path to the given one '" + pGrobidPropertiesPath
 					+ "', because it does not exist.");
 		}
 	}
