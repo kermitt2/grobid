@@ -66,9 +66,11 @@ public class GrobidRestProcessFiles {
 				// starts conversion process
 				engine = GrobidRestUtils.getEngine(isparallelExec);
 				if (isparallelExec) {
+					// TBD : consolidation parameter should be a parameter in the REST query
 					retVal = engine.processHeader(originFile.getAbsolutePath(), false, null);
 				} else {
 					synchronized (engine) {
+						// TBD : consolidation parameter should be a parameter in the REST query
 						retVal = engine.processHeader(originFile.getAbsolutePath(), false, null);
 					}
 				}
