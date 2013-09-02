@@ -2658,7 +2658,7 @@ public class TEIFormater {
         Pattern numberRefCompact =
                 Pattern.compile("(\\[|\\()((\\d)+(\\w)?(\\-\\d+\\w?)?,\\s?)+(\\d+\\w?)(\\-\\d+\\w?)?(\\)|\\])");
         //Pattern numberRefVeryCompact = Pattern.compile("(\\[|\\()(\\d)+-(\\d)+(\\)|\\])");
-        Pattern numberRefCompact2 = Pattern.compile("(\\[|\\()(\\d+)(-|√¢¬Ä¬ì|\u2013)(\\d+)(\\)|\\])");
+        Pattern numberRefCompact2 = Pattern.compile("(\\[|\\()(\\d+)(-|‒|–|—|―|\u2013)(\\d+)(\\)|\\])"); 
 
         boolean numerical = false;
 
