@@ -29,7 +29,7 @@ For headers (training files *.header.tei.xml), we try to follow the TEI and we u
 - <div type="abstract"> for the abstract block
 - <div type="introduction"> for the start of the introduction section (i.e. just after the header ends). 
 (note that you may see in the older part of the corpus, alternatives such as <div type="intro"> or even <introduction>, which are supported but not standard) 
-- <keywords> for the keyword field (including possibly the word Keywords:), an additional attribute can give some more information about the type of keywords (PACS, or classes for ACM)
+- <keyword> for the keyword field (including possibly the word Keywords:), an additional attribute can give some more information about the type of keywords (PACS, or classes for ACM)
 - <email>, for encoding the email address
 - <phone>, for encoding the contact phone number
 - <ptr> for web url corresponding to the processed document (e.g. where the document is available online). Other web address might appear in the header (for instance in a copyright section), but they won't be specifically encoded as web url.
@@ -132,14 +132,14 @@ For references (bibliographical citation typically present in the bibliographica
 - <biblScope type="pp"> the full range of pages
 - <biblScope type="vol"> the block for volume (e.g. <volume> vol. 7,</volume>)
 - <biblScope type="issue"> the block for the issue, also known as number, (e.g. no. <issue>3</issue>,)
-- <tech> the king of technical report/thesis information
 - <orgName>: the institution for thesis or technical reports
 - <publisher>
 - <pubPlace> publication place, or location of the "publishing" institution
 - <editor> for all the sequence of editors
 - <ptr> for web url
 - <idno> for the document-specific identifier, in particular DOI
-- <note> -> any indications related to the reference and not covered by one of the previous tags.
+- <note> any indications related to the reference and not covered by one of the previous tags. In the case of technical report, the indication of the document kind is encoded with the following attribute value <note type="report">
+
 
 Additional text/characters that do not belong to one of these elements (punctuations, syntactic sugar, etc.) has to be be left untagged under the <bibl> elements.
 
