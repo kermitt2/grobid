@@ -74,7 +74,7 @@ public class GrobidRestProcessFiles {
 						retVal = engine.processHeader(originFile.getAbsolutePath(), false, null);
 					}
 				}
-
+				
 				if ((retVal == null) || (retVal.isEmpty())) {
 					response = Response.status(Status.NO_CONTENT).build();
 				} else {

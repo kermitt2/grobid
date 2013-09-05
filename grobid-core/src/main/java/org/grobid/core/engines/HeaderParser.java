@@ -584,7 +584,7 @@ public class HeaderParser extends AbstractParser {
 			while (stt.hasMoreTokens()) {
 				String s = stt.nextToken().trim();
 				if (i == 0) {
-					// s2 = TextUtilities.HTMLEncode(s);
+					//s2 = TextUtilities.HTMLEncode(s);
 					s2 = s;
 
 					boolean strop = false;
@@ -890,7 +890,8 @@ public class HeaderParser extends AbstractParser {
 			while (stt.hasMoreTokens()) {
 				String s = stt.nextToken().trim();
 				if (i == 0) {
-					s2 = s;
+					s2 = TextUtilities.HTMLEncode(s);
+					//s2 = s;
 
 					boolean strop = false;
 					while ((!strop) && (p < tokenizations.size())) {

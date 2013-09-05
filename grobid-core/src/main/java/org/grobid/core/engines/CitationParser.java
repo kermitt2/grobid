@@ -606,8 +606,8 @@ public class CitationParser extends AbstractParser {
 				// boolean tagClosed = false;
 				int q = 0;
 				boolean addSpace;
-				String lastTag0;
-				String currentTag0;
+				String lastTag0 = null;
+				String currentTag0 = null;
 				while (st2.hasMoreTokens()) {
 					String line = st2.nextToken();
 					addSpace = false;
@@ -669,8 +669,9 @@ public class CitationParser extends AbstractParser {
 						}
 					}
 
-					// tagClosed = lastTag0 != null && testClosingTag(buffer,
-					// currentTag0, lastTag0);
+					//tagClosed = lastTag0 != null && 
+					if ( (lastTag0 != null) && (currentTag0 != null))
+						testClosingTag(buffer, currentTag0, lastTag0);
 
 					String output = writeField(s1, lastTag0, s2, "<title>",
 							"<title level=\"a\">", addSpace, 0);
