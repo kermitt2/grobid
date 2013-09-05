@@ -990,7 +990,7 @@ public class HeaderParser extends AbstractParser {
 				output = writeField(buffer, s1, lastTag0, s2, "<email>", "<email>", addSpace);
 			}
 			if (!output) {
-				output = writeField(buffer, s1, lastTag0, s2, "<pubnum>", "<pubnum>", addSpace);
+				output = writeField(buffer, s1, lastTag0, s2, "<pubnum>", "<idno>", addSpace);
 			}
 			if (!output) {
 				output = writeField(buffer, s1, lastTag0, s2, "<keyword>", "<keyword>", addSpace);
@@ -1089,6 +1089,8 @@ public class HeaderParser extends AbstractParser {
 				buffer.append("</ptr>\n");
 			} else if (lastTag0.equals("<phone>")) {
 				buffer.append("</phone>\n");
+			} else if (lastTag0.equals("<pubnum>")) {
+				buffer.append("</idno>\n");
 			}
 		}
 	}
