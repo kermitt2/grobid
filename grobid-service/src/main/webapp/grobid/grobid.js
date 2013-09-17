@@ -160,10 +160,11 @@ var grobid = (function($) {
 	
 	function SubmitSuccesful(responseText, statusText, xhr) {
 		var selected = $('#selectedService option:selected').attr('value');
-		if (selected == 'citationAnnotation') {
+		/*if (selected == 'citationAnnotation') {
 			$('#requestResult').text(responseText);
 		} 
-		else {
+		else */
+		{
 			//var display = '<pre style="background-color:#FEE9CC;width:90%;" id="displayXML">';  
 			
 			var display = "<pre class='prettyprint lang-xml' id='xmlCode'>";  

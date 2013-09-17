@@ -20,7 +20,7 @@ public class PatentItem implements Comparable<PatentItem> {
 	private Boolean utility = false;
 	
     // scores
-    private double conf = 0.0;
+    private double conf = 1.0;
     private String confidence = null;
 
     // position in document

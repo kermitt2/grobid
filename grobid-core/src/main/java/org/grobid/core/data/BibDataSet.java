@@ -14,7 +14,7 @@ public class BibDataSet {
     // the context window (raw text) where the bibliographical item is cited
     private String refSymbol = null; // reference marker in the text body
     private String rawBib = null; // raw text of the bibliographical item
-    private double confidence = 0.0; // confidence score of the extracted bibiliographical item
+    private double confidence = 1.0; // confidence score of the extracted bibiliographical item
     private List<Integer> offsets = null; // list of offsets corresponding to the position of the reference
 
     //private List<grisp.nlp.Term> terms = null;
