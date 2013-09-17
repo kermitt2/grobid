@@ -58,10 +58,12 @@ public class GrobidRestProcessString {
 				}
 			}
 			if (dates != null) {
-				if (dates.size() == 1)
-					retVal = dates.get(0).toString();
-				else
-					retVal = dates.toString();
+				for(Date theDate : dates)	{
+					if (retVal == null) {
+						retVal = "";
+					}
+					retVal += theDate.toTEI();
+				}
 			}
 
 			if (!GrobidRestUtils.isResultOK(retVal)) {
@@ -114,10 +116,12 @@ public class GrobidRestProcessString {
 			}
 
 			if (authors != null) {
-				if (authors.size() == 1)
-					retVal = authors.get(0).toString();
-				else
-					retVal = authors.toString();
+				for(Person person : authors) {
+					if (retVal == null) {
+						retVal = "";
+					}
+					retVal += person.toTEI();
+				}
 			}
 
 			if (!GrobidRestUtils.isResultOK(retVal)) {
@@ -170,10 +174,12 @@ public class GrobidRestProcessString {
 			}
 
 			if (authors != null) {
-				if (authors.size() == 1)
-					retVal = authors.get(0).toString();
-				else
-					retVal = authors.toString();
+				for(Person person : authors) {
+					if (retVal == null) {
+						retVal = "";
+					}
+					retVal += person.toTEI();
+				}
 			}
 
 			if (!GrobidRestUtils.isResultOK(retVal)) {
@@ -216,7 +222,8 @@ public class GrobidRestProcessString {
 
 			engine = GrobidRestUtils.getEngine(isparallelExec);
 			List<Affiliation> affiliationList;
-			affiliation = affiliation.replaceAll("\\n", " ").replaceAll("\\t", " ");
+			//affiliation = affiliation.replaceAll("\\n", " ").replaceAll("\\t", " ");
+			affiliation = affiliation.replaceAll("\\t", " ");
 			if (isparallelExec) {
 				affiliationList = engine.processAffiliation(affiliation);
 			} else {
@@ -225,11 +232,13 @@ public class GrobidRestProcessString {
 				}
 			}
 
-			if (affiliationList != null) {
-				if (affiliationList.size() == 1)
-					retVal = affiliationList.get(0).toString();
-				else
-					retVal = affiliationList.toString();
+			if (affiliationList != null) {				
+				for(Affiliation affi : affiliationList) {
+					if (retVal == null) {
+						retVal = "";
+					}
+					retVal += affi.toTEI();
+				}	
 			}
 			if (!GrobidRestUtils.isResultOK(retVal)) {
 				response = Response.status(Status.NO_CONTENT).build();
