@@ -193,11 +193,11 @@ public class Annotation {
 		writer.addEndElement(TAG_APPLICATION);
 		writer.addEndElement(TAG_APP_INFO);
 
-		writer.addStartElement(TAG_CERTAINTY, ATTR_CERT, String.valueOf(pConfidence));
+		/*writer.addStartElement(TAG_CERTAINTY, ATTR_CERT, String.valueOf(pConfidence));
 		writer.addStartElement(TAG_LABEL);
 		writer.addCharacters(pStrConfidence);
 		writer.addEndElement(TAG_LABEL);
-		writer.addEndElement(TAG_CERTAINTY);
+		writer.addEndElement(TAG_CERTAINTY);*/
 		writer.addEndElement(TAG_AUTHOR);
 
 		writer.addRaw(pTei);
@@ -219,7 +219,8 @@ public class Annotation {
 		String tei = null;
 		if (pItem instanceof PatentItem) {
 			final PatentItem patentItem = (PatentItem) pItem;
-			tei = patentItem.toTEI(Utilities.dateToString(new Date(), YYYY_MM_DD));
+			//tei = patentItem.toTEI(Utilities.dateToString(new Date(), YYYY_MM_DD));
+			tei = patentItem.toTEI(null);
 		} else if (pItem instanceof BibDataSet) {
 			final BibDataSet dataSet = (BibDataSet) pItem;
 			tei = dataSet.getResBib().toTEI(-1);
@@ -246,9 +247,9 @@ public class Annotation {
 			final BibDataSet dataSet = (BibDataSet) pItem;
 			confidence = dataSet.getConfidence();
 		}
-		if (confidence == -1) {
+		/*if (confidence == -1) {
 			throw new GrobidException("The item.confidence could not be determined.");
-		}
+		}*/
 		return confidence;
 	}
 

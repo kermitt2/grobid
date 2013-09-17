@@ -87,7 +87,7 @@ public class AnnotationTest extends XMLTestCase {
 				atn.getHeaderAnnotation(false));
 	}
 
-	@Test
+	/*@Test
 	public void testGetConfidenceRateFromItem() {
 		try {
 			Annotation.getConfidenceRateFromItem(new String());
@@ -95,7 +95,7 @@ public class AnnotationTest extends XMLTestCase {
 		} catch (GrobidException gbdExp) {
 			// OK GrobidException has been thrown.
 		}
-	}
+	}*/
 
 	@Test
 	public void testConfidenceRateToString() {
@@ -107,7 +107,7 @@ public class AnnotationTest extends XMLTestCase {
 		assertEquals(NO_CERTAINTY + DEGREE_OF_CONFIDENCE, Annotation.confidenceRateToString(200));
 	}
 
-	@Test
+	/*@Test
 	public void testBuildItem() throws XMLStreamException {
 		final Annotation atn = new Annotation(new ArrayList<PatentItem>(), new ArrayList<BibDataSet>(), new Description(false));
 		atn.writer = new XMLWriter();
@@ -115,6 +115,6 @@ public class AnnotationTest extends XMLTestCase {
 		assertEquals(
 				"<item><date when=\"DATE\"></date><author type=\"softwareApplication\"><appInfo><application version=\"1.0\" ident=\"GROBID\"><label>GROBID Annotator</label></application></appInfo><certainty cert=\"0.0\"><label>CONFIDENCE</label></certainty></author><someTEI/><ptr target=\"PTR\"></ptr></item>",
 				atn.writer.toString());
-	}
+	}*/
 
 }
