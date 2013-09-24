@@ -918,10 +918,6 @@ public class Engine implements Closeable {
 		return result.toString();
 	}
 
-	public void OCRMetadataCorrection() {
-		// utilities.OCRMetadataCorrection(resHeader);
-	}
-
 	/**
 	 * Extract and parse patent references within a patent. Result are provided
 	 * as PatentItem containing both "WISIWIG" results (the patent reference
@@ -992,18 +988,20 @@ public class Engine implements Closeable {
 	 * @param consolidateCitations
 	 *            - the consolidation option allows GROBID to exploit Crossref
 	 *            web services for improving citations information
+	 * @return the list of extracted and parserd patent and non-patent references 
+	 *         encoded in TEI.
 	 */
-	public void processAllCitationsInPatent(String text, List<BibDataSet> nplResults, List<PatentItem> patentResults,
+	public String processAllCitationsInPatent(String text, List<BibDataSet> nplResults, List<PatentItem> patentResults,
 			boolean consolidateCitations) throws Exception {
 		if ((nplResults == null) && (patentResults == null)) {
-			return;
+			return null;
 		}
 		if (referenceExtractor == null) {
 			referenceExtractor = new ReferenceExtractor();
 		}
 		// we initialize the attribute individually for readability...
 		boolean filterDuplicate = false;
-		referenceExtractor.extractAllReferencesString(text, filterDuplicate, consolidateCitations, patentResults, nplResults);
+		return referenceExtractor.extractAllReferencesString(text, filterDuplicate, consolidateCitations, patentResults, nplResults);
 	}
 
 	/**
@@ -1028,20 +1026,64 @@ public class Engine implements Closeable {
 	 * @param consolidateCitations
 	 *            - the consolidation option allows GROBID to exploit Crossref
 	 *            web services for improving citations information
+	 * @return the list of extracted and parserd patent and non-patent references 
+	 *         encoded in TEI.
 	 * @throws Exception
 	 *             if sth. went wrong
 	 */
-	public void processAllCitationsInXMLPatent(String xmlPath, List<BibDataSet> nplResults, List<PatentItem> patentResults,
+	public String processAllCitationsInXMLPatent(String xmlPath, List<BibDataSet> nplResults, List<PatentItem> patentResults,
 			boolean consolidateCitations) throws Exception {
 		if ((nplResults == null) && (patentResults == null)) {
-			return;
+			return null;
 		}
 		if (referenceExtractor == null) {
 			referenceExtractor = new ReferenceExtractor();
 		}
 		// we initialize the attribute individually for readability...
 		boolean filterDuplicate = false;
-		referenceExtractor.extractAllReferencesXMLFile(xmlPath, filterDuplicate, consolidateCitations, patentResults, nplResults);
+		return referenceExtractor.extractAllReferencesXMLFile(xmlPath, filterDuplicate, consolidateCitations, patentResults, nplResults);
+	}
+
+	/**
+	 * Extract and parse both patent and non patent references within a patent
+	 * in PDF format. Result are provided as a BibDataSet with offset position
+	 * instanciated relative to input text and as PatentItem containing both
+	 * "WISIWIG" results (the patent reference attributes as they appear in the
+	 * text) and the attributes in DOCDB format (format according to WIPO and
+	 * ISO standards). Patent references' offset positions are also given in the
+	 * PatentItem object.
+	 * 
+	 * @param pdfPath
+	 *            pdf path
+	 * @param nplResults
+	 *            - the list of extracted and parsed non patent references as
+	 *            BiblioItem object. This list must be instanciated before
+	 *            calling the method for receiving the results.
+	 * @param patentResults
+	 *            - the list of extracted and parsed patent references as
+	 *            PatentItem object. This list must be instanciated before
+	 *            calling the method for receiving the results.
+	 * @param consolidateCitations
+	 *            - the consolidation option allows GROBID to exploit Crossref
+	 *            web services for improving citations information
+	 * @return the list of extracted and parserd patent and non-patent references 
+	 *         encoded in TEI.
+	 * @throws Exception
+	 *             if sth. went wrong
+	 */
+	public String processAllCitationsInPDFPatent(String pdfPath, List<BibDataSet> nplResults, 
+			List<PatentItem> patentResults,
+			boolean consolidateCitations) throws Exception {
+		if ((nplResults == null) && (patentResults == null)) {
+			return null;
+		}
+		if (referenceExtractor == null) {
+			referenceExtractor = new ReferenceExtractor();
+		}
+		// we initialize the attribute individually for readability...
+		boolean filterDuplicate = false;
+		return referenceExtractor.extractAllReferencesPDFFile(pdfPath, filterDuplicate, 
+			consolidateCitations, patentResults, nplResults);
 	}
 
 	/**
@@ -1080,7 +1122,7 @@ public class Engine implements Closeable {
 	public int batchCreateTrainingPatentcitations(String directoryPath, String resultPath) throws Exception {
 		try {
 			File path = new File(directoryPath);
-			// we process all pdf files in the directory
+			// we process all xml files in the directory
 			File[] refFiles = path.listFiles(new FilenameFilter() {
 				public boolean accept(File dir, String name) {
 					if (name.endsWith(".xml") || name.endsWith(".XML"))

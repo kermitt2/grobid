@@ -118,6 +118,11 @@ public class TeiStAXParser {
 	protected boolean isIndented;
 
 	/**
+	 * Indicate if the citation should be consolidated with an external call to bibliographical databases
+     */
+	protected boolean consolidate = false;
+	
+	/**
 	 * Constructor.
 	 * 
 	 * @param pInput
@@ -126,8 +131,8 @@ public class TeiStAXParser {
 	 * @param pOutputStream
 	 *            The output stream
 	 */
-	public TeiStAXParser(final InputStream pInputStream, OutputStream pOutputStream) {
-		this(pInputStream, pOutputStream, true, new ReferenceExtractor());
+	public TeiStAXParser(final InputStream pInputStream, OutputStream pOutputStream, boolean consolidate) {
+		this(pInputStream, pOutputStream, true, new ReferenceExtractor(), consolidate);
 		isSelfInstanceRefExtractor = true;
 	}
 
@@ -141,8 +146,9 @@ public class TeiStAXParser {
 	 * @param pIsIndented
 	 *            If the output has to be indented.
 	 */
-	public TeiStAXParser(final InputStream pInputStream, OutputStream pOutputStream, final boolean pIsIndented) {
-		this(pInputStream, pOutputStream, pIsIndented, new ReferenceExtractor());
+	public TeiStAXParser(final InputStream pInputStream, OutputStream pOutputStream, 
+				final boolean pIsIndented, final boolean consolidate) {
+		this(pInputStream, pOutputStream, pIsIndented, new ReferenceExtractor(), consolidate);
 		isSelfInstanceRefExtractor = true;
 	}
 
@@ -159,7 +165,7 @@ public class TeiStAXParser {
 	 *            The ReferenceExtractor object used to extract the citations.
 	 */
 	public TeiStAXParser(final InputStream pInputStream, OutputStream pOutputStream, final boolean pIsIndented,
-			final ReferenceExtractor pExtractor) {
+			final ReferenceExtractor pExtractor, final boolean consolidate) {
 		initTimers();
 
 		extractor = pExtractor;
@@ -170,7 +176,8 @@ public class TeiStAXParser {
 		outputStream = pOutputStream;
 		teiBuffer = new StringWriter();
 		headerAnnotation = new StringBuffer();
-
+		this.consolidate = consolidate;
+		
 		initReader();
 	}
 
@@ -379,7 +386,7 @@ public class TeiStAXParser {
 		final List<PatentItem> patents = new ArrayList<PatentItem>();
 		final List<BibDataSet> articles = new ArrayList<BibDataSet>();
 		pauseTimer(gbdNoExtractTimer);
-		extractor.extractAllReferencesString(currTEIParsedInfo.getDescription().toRawString(), true, false, patents, articles);
+		extractor.extractAllReferencesString(currTEIParsedInfo.getDescription().toRawString(), true, consolidate, patents, articles);
 		restartTimer(gbdNoExtractTimer);
 		final Annotation annotation = new Annotation(patents, articles, currTEIParsedInfo.getDescription());
 		headerAnnotation.append(annotation.getHeaderAnnotation(isIndented));

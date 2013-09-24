@@ -19,7 +19,7 @@ package org.grobid.service;
 
 /**
  * This interface only contains the path extensions for accessing the grobid service.
- * @author Florian Zipser
+ * @author Florian, Damien, Patrice
  *
  */
 public interface GrobidPathes {
@@ -71,35 +71,62 @@ public interface GrobidPathes {
 	 * path extension for processing dates.
 	 */
 	public static final String PATH_DATE= "processDate";
+	
 	/**
 	 * path extension for processing names in header parts of documents headers.
 	 */
 	public static final String PATH_HEADER_NAMES= "processHeaderNames";
+	
+	/**
+	 * path extension for processing citation in patent documents in TEI.
+	 */
+	public static final String PATH_CITATION_PATENT_TEI = "processCitationPatentTEI";
+	
+	/**
+	 * path extension for processing citation in patent documents in ST.36.
+	 */
+	public static final String PATH_CITATION_PATENT_ST36 = "processCitationPatentST36";
+	
+	/**
+	 * path extension for processing citation in patent documents in PDF.
+	 */
+	public static final String PATH_CITATION_PATENT_PDF = "processCitationPatentPDF";
+	
+	/**
+	 * path extension for processing citation in patent documents in utf-8 txt .
+	 */
+	public static final String PATH_CITATION_PATENT_TXT = "processCitationPatentTXT";
+	
 	/**
 	 * path extension for processing citation annotations.
 	 */
-	public static final String PATH_CITATION_ANNOTATION = "citationAnnotation";
+	public static final String PATH_CITATION_ANNOTATION = "processCitationPatentTEI";
+	
 	/**
-	 * path extension for processing names as citations in full text part of
-	 * documents.
+	 * path extension for processing names as appearing in a citation (e.g. bibliographic section).
 	 */
 	public static final String PATH_CITE_NAMES= "processCitationNames";
+	
 	/**
 	 * path extension for processing affiliation in document headers.
 	 */
 	public static final String PATH_AFFILIATION= "processAffiliations";
+	
 	/**
-	 * path extension for processing citations in document headers.
+	 * path extension for processing isolated citation.
 	 */
-	public static final String PATH_CITATIONS= "processCitations";
+	public static final String PATH_CITATION= "processCitation";
+	
 	/**
 	 * path extension for processing sha1.
 	 */
 	public static final String PATH_SHA1= "sha1";
+	
 	/**
 	 * path extension for getting all properties.
 	 */
 	public static final String PATH_ALL_PROPS= "allProperties";
+	
 	/**
 	 * path extension to update property value.
 	 */

@@ -29,6 +29,7 @@ var grobid = (function($) {
 		$("#divAdmin").hide();
         $("#divRestI").hide();   
 		$("#divDoc").hide();
+		$('#consolidateBlock').show();
 		
 		createInputFile();
 		setBaseUrl('processHeaderDocument');             
@@ -160,23 +161,15 @@ var grobid = (function($) {
 	
 	function SubmitSuccesful(responseText, statusText, xhr) {
 		var selected = $('#selectedService option:selected').attr('value');
-		/*if (selected == 'citationAnnotation') {
-			$('#requestResult').text(responseText);
-		} 
-		else */
-		{
-			//var display = '<pre style="background-color:#FEE9CC;width:90%;" id="displayXML">';  
-			
-			var display = "<pre class='prettyprint lang-xml' id='xmlCode'>";  
-			var testStr = '<?xml version="1.0" encoding="UTF-8"?>' + vkbeautify.xml(responseText);
-			
-			display += htmll(testStr);
+		var display = "<pre class='prettyprint lang-xml' id='xmlCode'>";  
+		var testStr = vkbeautify.xml(responseText);
+		
+		display += htmll(testStr);
 
-			display += "</pre>";
-			$('#requestResult').html(display);
-			window.prettyPrint && prettyPrint();
-			$('#requestResult').show();
-		}
+		display += "</pre>";
+		$('#requestResult').html(display);
+		window.prettyPrint && prettyPrint();
+		$('#requestResult').show();
 	}
 	
 	$(document).ready(function() {
@@ -190,35 +183,58 @@ var grobid = (function($) {
 
 		if (selected == 'processHeaderDocument') {
 			createInputFile(selected);
+			$('#consolidateBlock').show();
 			setBaseUrl('processHeaderDocument');
 		} 
 		else if (selected == 'processFulltextDocument') {
 			createInputFile(selected);
+			$('#consolidateBlock').show();
 			setBaseUrl('processFulltextDocument');
 		} 
 		else if (selected == 'processDate') {
 			createInputTextArea('date');
+			$('#consolidateBlock').hide();
 			setBaseUrl('processDate');
 		} 
 		else if (selected == 'processHeaderNames') {
 			createInputTextArea('names');
+			$('#consolidateBlock').hide();
 			setBaseUrl('processHeaderNames');
 		} 
 		else if (selected == 'processCitationNames') {
 			createInputTextArea('names');
+			$('#consolidateBlock').hide();
 			setBaseUrl('processCitationNames');
 		} 
 		else if (selected == 'processAffiliations') {
 			createInputTextArea('affiliations');
+			$('#consolidateBlock').hide();
 			setBaseUrl('processAffiliations');
 		} 
 		else if (selected == 'processCitations') {
 			createInputTextArea('citations');
+			$('#consolidateBlock').show();
 			setBaseUrl('processCitations');
 		} 
-		else if (selected == 'citationAnnotation') {
+		else if (selected == 'processCitationPatentTEI') {
 			createInputFile(selected);
-			setBaseUrl('citationAnnotation');
+			$('#consolidateBlock').show();
+			setBaseUrl('processCitationPatentTEI');
+		}
+		else if (selected == 'processCitationPatentST36') {
+			createInputFile(selected);
+			$('#consolidateBlock').show();
+			setBaseUrl('processCitationPatentST36');
+		}
+		else if (selected == 'processCitationPatentPDF') {
+			createInputFile(selected);
+			$('#consolidateBlock').show();
+			setBaseUrl('processCitationPatentPDF');
+		}
+		else if (selected == 'processCitationPatentTXT') {
+			createInputTextArea('text');
+			$('#consolidateBlock').show();
+			setBaseUrl('processCitationPatentTXT');
 		}
 	}
 					

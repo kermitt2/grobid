@@ -27,6 +27,7 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
+import javax.ws.rs.DefaultValue;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -48,10 +49,10 @@ import com.sun.jersey.spi.resource.Singleton;
 /**
  * RESTful service for the GROBID system.
  * 
- * @author FloZi
- * @version 2.1
+ * @author FloZi, Damien, Patrice
  * 
  */
+
 @Singleton
 @Path(GrobidPathes.PATH_GROBID)
 public class GrobidRestService implements GrobidPathes {
@@ -64,7 +65,8 @@ public class GrobidRestService implements GrobidPathes {
 	private static final String NAMES = "names";
 	private static final String DATE = "date";
 	private static final String AFFILIATIONS = "affiliations";
-	private static final String CITATIONS = "citations";
+	private static final String CITATION = "citation";
+	private static final String TEXT = "text";
 	private static final String SHA1 = "sha1";
 	private static final String XML = "xml";
 	private static final String INPUT = "input";
@@ -120,102 +122,197 @@ public class GrobidRestService implements GrobidPathes {
 	}
 
 	/**
-	 * @see org.grobid.service.process.GrobidRestProcessFiles#processStatelessHeaderDocument(InputStream,boolean)
+	 * @see org.grobid.service.process.GrobidRestProcessFiles#processStatelessHeaderDocument(InputStream, String)
 	 */
 	@Path(PATH_HEADER)
 	@Consumes(MediaType.MULTIPART_FORM_DATA)
 	@Produces(MediaType.APPLICATION_XML)
 	@POST
-	public Response processHeaderDocument_post(InputStream inputStream) throws Exception {
-		return GrobidRestProcessFiles.processStatelessHeaderDocument(inputStream, false);
+	public Response processHeaderDocument_post(@FormDataParam(INPUT) InputStream inputStream, 
+	 	@FormDataParam("consolidate") String consolidate
+		) throws Exception {
+		boolean consol = false;
+		if ( (consolidate != null) && (consolidate.equals("1")) ) {
+			consol = true;
+		}
+		return GrobidRestProcessFiles.processStatelessHeaderDocument(inputStream, consol, false);
 	}
 
 	/**
-	 * @see org.grobid.service.process.GrobidRestProcessFiles#processStatelessHeaderDocument(InputStream,boolean)
+	 * @see org.grobid.service.process.GrobidRestProcessFiles#processStatelessHeaderDocument(InputStream, String)
 	 */
 	@Path(PATH_HEADER)
 	@Consumes(MediaType.MULTIPART_FORM_DATA)
 	@Produces(MediaType.APPLICATION_XML)
 	@PUT
-	public Response processStatelessHeaderDocument(InputStream inputStream) {
-		return GrobidRestProcessFiles.processStatelessHeaderDocument(inputStream, false);
+	public Response processStatelessHeaderDocument(@FormDataParam(INPUT) InputStream inputStream, 
+	 	@FormDataParam("consolidate") String consolidate
+		) {
+		boolean consol = false;
+		if ( (consolidate != null) && (consolidate.equals("1")) ) {
+			consol = true;
+		}
+		return GrobidRestProcessFiles.processStatelessHeaderDocument(inputStream, consol, false);
 	}
 
 	/**
-	 * @see org.grobid.service.process.GrobidRestProcessFiles#processStatelessHeaderDocument(InputStream,boolean)
+	 * @see org.grobid.service.process.GrobidRestProcessFiles#processStatelessHeaderDocument(InputStream, String)
 	 */
 	@Path(PATH_HEADER_HTML)
 	@Consumes(MediaType.MULTIPART_FORM_DATA)
 	@Produces(MediaType.APPLICATION_XML)
 	@POST
-	public Response processHeaderDocument_postHTML(InputStream inputStream) {
-		return GrobidRestProcessFiles.processStatelessHeaderDocument(inputStream, true);
+	public Response processHeaderDocument_postHTML(@FormDataParam(INPUT) InputStream inputStream, 
+	 	@FormDataParam("consolidate") String consolidate) {
+		boolean consol = false;
+		if ( (consolidate != null) && (consolidate.equals("1")) ) {
+			consol = true;
+		}
+		return GrobidRestProcessFiles.processStatelessHeaderDocument(inputStream, consol, true);
 	}
 
 	/**
-	 * @see org.grobid.service.process.GrobidRestProcessFiles#processStatelessHeaderDocument(InputStream,boolean)
+	 * @see org.grobid.service.process.GrobidRestProcessFiles#processStatelessHeaderDocument(InputStream, String)
 	 */
 	@Path(PATH_HEADER_HTML)
 	@Consumes(MediaType.MULTIPART_FORM_DATA)
 	@Produces(MediaType.APPLICATION_XML)
 	@PUT
-	public Response processStatelessHeaderDocumentHTML(InputStream inputStream) {
-		return GrobidRestProcessFiles.processStatelessHeaderDocument(inputStream, true);
+	public Response processStatelessHeaderDocumentHTML(@FormDataParam(INPUT) InputStream inputStream,
+	 	@FormDataParam("consolidate") String consolidate) {
+		boolean consol = false;
+		if ( (consolidate != null) && (consolidate.equals("1")) ) {
+			consol = true;
+		}
+		return GrobidRestProcessFiles.processStatelessHeaderDocument(inputStream, consol, true);
 	}
 
 	/**
-	 * @see org.grobid.service.process.GrobidRestProcessFiles#processStatelessFulltextDocument(InputStream,boolean)
+	 * @see org.grobid.service.process.GrobidRestProcessFiles#processStatelessFulltextDocument(InputStream, String)
 	 */
 	@Path(PATH_FULL_TEXT)
 	@Consumes(MediaType.MULTIPART_FORM_DATA)
 	@Produces(MediaType.APPLICATION_XML)
 	@POST
-	public Response processFulltextDocument_post(InputStream inputStream) {
-		return GrobidRestProcessFiles.processStatelessFulltextDocument(inputStream, false);
+	public Response processFulltextDocument_post(@FormDataParam(INPUT) InputStream inputStream,
+	 	@FormDataParam("consolidate") String consolidate) {
+		boolean consol = false;
+		if ( (consolidate != null) && (consolidate.equals("1")) ) {
+			consol = true;
+		}
+		return GrobidRestProcessFiles.processStatelessFulltextDocument(inputStream, consol, false);
 	}
 
 	/**
-	 * @see org.grobid.service.process.GrobidRestProcessFiles#processStatelessFulltextDocument(InputStream,boolean)
+	 * @see org.grobid.service.process.GrobidRestProcessFiles#processStatelessFulltextDocument(InputStream, String)
 	 */
 	@Path(PATH_FULL_TEXT)
 	@Consumes(MediaType.MULTIPART_FORM_DATA)
 	@Produces(MediaType.APPLICATION_XML)
 	@PUT
-	public Response processStatelessFulltextDocument(InputStream inputStream) {
-		return GrobidRestProcessFiles.processStatelessFulltextDocument(inputStream, false);
+	public Response processStatelessFulltextDocument(@FormDataParam(INPUT) InputStream inputStream,
+	 	@FormDataParam("consolidate") String consolidate) {
+		boolean consol = false;
+		if ( (consolidate != null) && (consolidate.equals("1")) ) {
+			consol = true;
+		}
+		return GrobidRestProcessFiles.processStatelessFulltextDocument(inputStream, consol, false);
 	}
 
 	/**
-	 * @see org.grobid.service.process.GrobidRestProcessFiles#processStatelessFulltextDocument(InputStream,boolean)
+	 * @see org.grobid.service.process.GrobidRestProcessFiles#processStatelessFulltextDocument(InputStream, String)
 	 */
 	@Path(PATH_FULL_TEXT_HTML)
 	@Consumes(MediaType.MULTIPART_FORM_DATA)
 	@Produces(MediaType.APPLICATION_XML)
 	@POST
-	public Response processFulltextDocument_postHTML(InputStream inputStream) {
-		return GrobidRestProcessFiles.processStatelessFulltextDocument(inputStream, true);
+	public Response processFulltextDocument_postHTML(@FormDataParam(INPUT) InputStream inputStream,
+	 	@FormDataParam("consolidate") String consolidate) {
+		boolean consol = false;
+		if ( (consolidate != null) && (consolidate.equals("1")) ) {
+			consol = true;
+		}
+		return GrobidRestProcessFiles.processStatelessFulltextDocument(inputStream, consol, true);
 	}
 
 	/**
-	 * @see org.grobid.service.process.GrobidRestProcessFiles#processStatelessFulltextDocument(InputStream,boolean)
+	 * @see org.grobid.service.process.GrobidRestProcessFiles#processStatelessFulltextDocument(InputStream, String)
 	 */
 	@Path(PATH_FULL_TEXT_HTML)
 	@Consumes(MediaType.MULTIPART_FORM_DATA)
 	@Produces(MediaType.APPLICATION_XML)
 	@PUT
-	public Response processStatelessFulltextDocumentHTML(InputStream inputStream) {
-		return GrobidRestProcessFiles.processStatelessFulltextDocument(inputStream, true);
+	public Response processStatelessFulltextDocumentHTML(@FormDataParam(INPUT) InputStream inputStream,
+	 	@FormDataParam("consolidate") String consolidate) {
+		boolean consol = false;
+		if ( (consolidate != null) && (consolidate.equals("1")) ) {
+			consol = true;
+		}
+		return GrobidRestProcessFiles.processStatelessFulltextDocument(inputStream, consol, true);
 	}
 
 	/**
-	 * @see org.grobid.service.process.GrobidRestProcessFiles#processCitationAnnotation(InputStream)
+	 * @see org.grobid.service.process.GrobidRestProcessFiles#processCitationPatentTEI(InputStream, String)
 	 */
-	@Path(PATH_CITATION_ANNOTATION)
+	@Path(PATH_CITATION_PATENT_TEI)
 	@Consumes(MediaType.MULTIPART_FORM_DATA)
 	@Produces(MediaType.APPLICATION_XML)
 	@POST
-	public StreamingOutput processCitationAnnotation(@FormDataParam(INPUT) InputStream pInputStream) throws Exception {
-		return GrobidRestProcessFiles.processCitationAnnotation(pInputStream);
+	public StreamingOutput processCitationPatentTEI(@FormDataParam(INPUT) InputStream pInputStream,
+	 	@FormDataParam("consolidate") String consolidate) throws Exception {
+		boolean consol = false;
+		if ( (consolidate != null) && (consolidate.equals("1")) ) {
+			consol = true;
+		}
+		return GrobidRestProcessFiles.processCitationPatentTEI(pInputStream, consol);
+	}
+	
+	/**
+	 * @see org.grobid.service.process.GrobidRestProcessFiles#processCitationPatentST36(InputStream, String)
+	 */
+	@Path(PATH_CITATION_PATENT_ST36)
+	@Consumes(MediaType.MULTIPART_FORM_DATA)
+	@Produces(MediaType.APPLICATION_XML)
+	@POST
+	public Response processCitationPatentST36(@FormDataParam(INPUT) InputStream pInputStream,
+	 	@FormDataParam("consolidate") String consolidate) throws Exception {
+		boolean consol = false;
+		if ( (consolidate != null) && (consolidate.equals("1")) ) {
+			consol = true;
+		}
+		return GrobidRestProcessFiles.processCitationPatentST36(pInputStream, consol);
+	}
+	
+	/**
+	 * @see org.grobid.service.process.GrobidRestProcessFiles#processCitationPatentPDF(InputStream, String)
+	 */
+	@Path(PATH_CITATION_PATENT_PDF)
+	@Consumes(MediaType.MULTIPART_FORM_DATA)
+	@Produces(MediaType.APPLICATION_XML)
+	@POST
+	public Response processCitationPatentPDF(@FormDataParam(INPUT) InputStream pInputStream,
+	 	@FormDataParam("consolidate") String consolidate) throws Exception {
+		boolean consol = false;
+		if ( (consolidate != null) && (consolidate.equals("1")) ) {
+			consol = true;
+		}
+		return GrobidRestProcessFiles.processCitationPatentPDF(pInputStream, consol);
+	}
+
+	/**
+	 * @see org.grobid.service.process.GrobidRestProcessString#processCitationPatentTXT(String, String)
+	 */
+	@Path(PATH_CITATION_PATENT_TXT)
+	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+	@Produces(MediaType.APPLICATION_XML)
+	@POST
+	public Response processCitationPatentTXT_post(@FormParam(TEXT) String text,
+	 	@FormParam("consolidate") String consolidate) {
+		boolean consol = false;
+		if ( (consolidate != null) && (consolidate.equals("1")) ) {
+			consol = true;
+		}
+		return GrobidRestProcessString.processCitationPatentTXT(text, consol);
 	}
 
 	/**
@@ -307,25 +404,35 @@ public class GrobidRestService implements GrobidPathes {
 	}
 
 	/**
-	 * @see org.grobid.service.process.GrobidRestProcessString#processCitations(String)
+	 * @see org.grobid.service.process.GrobidRestProcessString#processCitation(String, String)
 	 */
-	@Path(PATH_CITATIONS)
+	@Path(PATH_CITATION)
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
 	@Produces(MediaType.APPLICATION_XML)
 	@POST
-	public Response processCitations_post(@FormParam(CITATIONS) String citation) {
-		return GrobidRestProcessString.processCitations(citation);
+	public Response processCitation_post(@FormParam(CITATION) String citation,
+	 	@FormParam("consolidate") String consolidate) {
+		boolean consol = false;
+		if ( (consolidate != null) && (consolidate.equals("1")) ) {
+			consol = true;
+		}
+		return GrobidRestProcessString.processCitation(citation, consol);
 	}
 
 	/**
-	 * @see org.grobid.service.process.GrobidRestProcessString#processCitations(String)
+	 * @see org.grobid.service.process.GrobidRestProcessString#processCitation(String, String)
 	 */
-	@Path(PATH_CITATIONS)
+	@Path(PATH_CITATION)
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
 	@Produces(MediaType.APPLICATION_XML)
 	@PUT
-	public Response processCitations(@FormParam(CITATIONS) String citation) {
-		return GrobidRestProcessString.processCitations(citation);
+	public Response processCitation(@FormParam(CITATION) String citation,
+	 	@FormParam("consolidate") String consolidate) {
+		boolean consol = false;
+		if ( (consolidate != null) && (consolidate.equals("1")) ) {
+			consol = true;
+		}
+		return GrobidRestProcessString.processCitation(citation, consol);
 	}
 
 	/**

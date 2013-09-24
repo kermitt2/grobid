@@ -1,6 +1,7 @@
 package org.grobid.service.process;
 
 import java.util.List;
+import java.util.ArrayList;
 import java.util.NoSuchElementException;
 
 import javax.ws.rs.core.MediaType;
@@ -9,6 +10,8 @@ import javax.ws.rs.core.Response.Status;
 
 import org.grobid.core.data.Affiliation;
 import org.grobid.core.data.BiblioItem;
+import org.grobid.core.data.PatentItem;
+import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.Date;
 import org.grobid.core.data.Person;
 import org.grobid.core.engines.Engine;
@@ -20,7 +23,7 @@ import org.slf4j.LoggerFactory;
 
 /**
  * 
- * @author Damien
+ * @author Damien, Patrice
  * 
  */
 public class GrobidRestProcessString {
@@ -206,8 +209,7 @@ public class GrobidRestProcessString {
 	 * Parse a raw sequence of affiliations and return the corresponding
 	 * normalized affiliations with address.
 	 * 
-	 * @param the
-	 *            string of the raw sequence of affiliation+address
+	 * @param string of the raw sequence of affiliation+address
 	 * @return a response object containing the structured xml representation of
 	 *         the affiliation
 	 */
@@ -264,12 +266,14 @@ public class GrobidRestProcessString {
 	 * Parse a raw sequence of affiliations and return the corresponding
 	 * normalized affiliations with address.
 	 * 
-	 * @param the
-	 *            string of the raw sequence of affiliation+address
+	 * @param text 
+	 *			string of the raw sequence of affiliation+address
+	 * @param consolidate
+	 *            consolidation parameter for the parsed citation
 	 * @return a response object containing the structured xml representation of
 	 *         the affiliation
 	 */
-	public static Response processCitations(String citation) {
+	public static Response processCitation(String citation, boolean consolidate) {
 		LOGGER.debug(methodLogIn());
 		Response response = null;
 
@@ -280,10 +284,10 @@ public class GrobidRestProcessString {
 			BiblioItem biblioItem;
 			citation = citation.replaceAll("\\n", " ").replaceAll("\\t", " ");
 			if (isparallelExec) {
-				biblioItem = engine.processRawReference(citation, false);
+				biblioItem = engine.processRawReference(citation, consolidate);
 			} else {
 				synchronized (engine) {
-					biblioItem = engine.processRawReference(citation, false);
+					biblioItem = engine.processRawReference(citation, consolidate);
 				}
 			}
 
@@ -291,6 +295,59 @@ public class GrobidRestProcessString {
 				response = Response.status(Status.NO_CONTENT).build();
 			} else {
 				response = Response.status(Status.OK).entity(biblioItem.toTEI(-1)).type(MediaType.APPLICATION_XML).build();
+			}
+		} catch (NoSuchElementException nseExp) {
+			LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
+			response = Response.status(Status.SERVICE_UNAVAILABLE).build();
+		} catch (Exception e) {
+			LOGGER.error("An unexpected exception occurs. ", e);
+			response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
+		} finally {
+			if (isparallelExec && engine != null) {
+				GrobidPoolingFactory.returnEngine(engine);
+			}
+		}
+		LOGGER.debug(methodLogOut());
+		return response;
+	}
+
+	/**
+	 * Parse a patent description text and return the extracted and parsed patent and non-patent citations.
+	 * 
+	 * @param text
+	 *            string of the patent description text to be processed
+ 	 * @param consolidate
+	 *            consolidation parameter for the non patent extracted and parsed citation
+	 * 
+	 * @return a response object containing the structured xml representation of
+	 *         the affiliation
+	 */
+	public static Response processCitationPatentTXT(String text, boolean consolidate) {
+		LOGGER.debug(methodLogIn());
+		Response response = null;
+
+		boolean isparallelExec = GrobidServiceProperties.isParallelExec();
+		Engine engine = null;
+		try {
+			engine = GrobidRestUtils.getEngine(isparallelExec);
+			
+			List<PatentItem> patents = new ArrayList<PatentItem>();
+			List<BibDataSet> articles = new ArrayList<BibDataSet>();						
+			text = text.replaceAll("\\t", " ");
+			String result = null;
+			
+			if (isparallelExec) {
+				result = engine.processAllCitationsInPatent(text, articles, patents, consolidate);
+			} else {
+				synchronized (engine) {
+					result = engine.processAllCitationsInPatent(text, articles, patents, consolidate);
+				}
+			}
+
+			if (result == null) {
+				response = Response.status(Status.NO_CONTENT).build();
+			} else {
+				response = Response.status(Status.OK).entity(result).type(MediaType.APPLICATION_XML).build();
 			}
 		} catch (NoSuchElementException nseExp) {
 			LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");

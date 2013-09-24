@@ -7,6 +7,8 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeoutException;
+import java.util.List;
+import java.util.ArrayList;
 
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.MediaType;
@@ -16,6 +18,8 @@ import javax.ws.rs.core.StreamingOutput;
 
 import org.grobid.core.annotations.TeiStAXParser;
 import org.grobid.core.engines.Engine;
+import org.grobid.core.data.PatentItem;
+import org.grobid.core.data.BibDataSet;
 import org.grobid.core.factory.GrobidPoolingFactory;
 import org.grobid.service.parser.Xml2HtmlParser;
 import org.grobid.service.util.GrobidRestUtils;
@@ -29,7 +33,7 @@ import org.xml.sax.helpers.XMLReaderFactory;
 
 /**
  * 
- * @author Damien
+ * @author Damien, Patrice
  * 
  */
 public class GrobidRestProcessFiles {
@@ -45,12 +49,16 @@ public class GrobidRestProcessFiles {
 	 * 
 	 * @param inputStream
 	 *            the data of origin document
+	 * @param consolidate
+	 *            consolidation parameter for the header extraction
 	 * @param htmlFormat
-	 *            if the result has to be formatted to be displayed as html.
+	 *            if the result has to be formatted to be displayed as html
 	 * @return a response object which contains a TEI representation of the
 	 *         header part
 	 */
-	public static Response processStatelessHeaderDocument(final InputStream inputStream, final boolean htmlFormat) {
+	public static Response processStatelessHeaderDocument(final InputStream inputStream, 
+														final boolean consolidate,
+														final boolean htmlFormat) {
 		LOGGER.debug(methodLogIn());
 		Response response = null;
 		String retVal = null;
@@ -66,21 +74,21 @@ public class GrobidRestProcessFiles {
 				// starts conversion process
 				engine = GrobidRestUtils.getEngine(isparallelExec);
 				if (isparallelExec) {
-					// TBD : consolidation parameter should be a parameter in the REST query
-					retVal = engine.processHeader(originFile.getAbsolutePath(), false, null);
+					retVal = engine.processHeader(originFile.getAbsolutePath(), consolidate, null);
 				} else {
 					synchronized (engine) {
-						// TBD : consolidation parameter should be a parameter in the REST query
-						retVal = engine.processHeader(originFile.getAbsolutePath(), false, null);
+						retVal = engine.processHeader(originFile.getAbsolutePath(), consolidate, null);
 					}
 				}
 				
 				if ((retVal == null) || (retVal.isEmpty())) {
 					response = Response.status(Status.NO_CONTENT).build();
-				} else {
+				} 
+				else {
 					if (htmlFormat) {
 						response = Response.status(Status.OK).entity(formatAsHTML(retVal)).type(MediaType.APPLICATION_XML).build();
-					} else {
+					} 
+					else {
 						response = Response.status(Status.OK).entity(retVal).type(MediaType.APPLICATION_XML).build();
 					}
 				}
@@ -157,7 +165,9 @@ public class GrobidRestProcessFiles {
 	 * @return a response object mainly contain the TEI representation of the
 	 *         full text
 	 */
-	public static Response processStatelessFulltextDocument(final InputStream inputStream, final boolean htmlFormat) {
+	public static Response processStatelessFulltextDocument(final InputStream inputStream, 
+															final boolean consolidate,
+															final boolean htmlFormat) {
 		LOGGER.debug(methodLogIn());
 		Response response = null;
 		String retVal = null;
@@ -173,11 +183,11 @@ public class GrobidRestProcessFiles {
 				// starts conversion process
 				engine = GrobidRestUtils.getEngine(isparallelExec);
 				if (isparallelExec) {
-					retVal = engine.fullTextToTEI(originFile.getAbsolutePath(), false, false);
+					retVal = engine.fullTextToTEI(originFile.getAbsolutePath(), consolidate, false);
 					GrobidPoolingFactory.returnEngine(engine);
 				} else {
 					synchronized (engine) {
-						retVal = engine.fullTextToTEI(originFile.getAbsolutePath(), false, false);
+						retVal = engine.fullTextToTEI(originFile.getAbsolutePath(), consolidate, false);
 					}
 				}
 
@@ -210,7 +220,7 @@ public class GrobidRestProcessFiles {
 	}
 
 	/**
-	 * Process the annotation of TEI documents for citations.
+	 * Process a patent document encoded in TEI for extracting and parsing citations in the description body.
 	 * 
 	 * @param pInputStream
 	 *            The input stream to process.
@@ -218,12 +228,13 @@ public class GrobidRestProcessFiles {
 	 * @return StreamingOutput wrapping the response in streaming while parsing
 	 *         the input.
 	 */
-	public static StreamingOutput processCitationAnnotation(final InputStream pInputStream) {
+	public static StreamingOutput processCitationPatentTEI(final InputStream pInputStream, 
+															final boolean consolidate) {
 		LOGGER.debug(methodLogIn());
 		return new StreamingOutput() {
 			public void write(OutputStream output) throws IOException, WebApplicationException {
 				try {
-					final TeiStAXParser parser = new TeiStAXParser(pInputStream, output, false);
+					final TeiStAXParser parser = new TeiStAXParser(pInputStream, output, false, consolidate);
 					parser.parse();
 				} catch (Exception exp) {
 					throw new WebApplicationException(exp);
@@ -231,6 +242,131 @@ public class GrobidRestProcessFiles {
 			}
 		};
 	}
+
+	/**
+	 * Process a patent document in PDF for extracting and parsing citations in the description body.
+	 * 
+	 * @param inputStream
+	 *            the data of origin document
+	 * 
+	 * @return a response object mainly containing the TEI representation of the
+	 *         citation
+	 */
+	public static Response processCitationPatentPDF(final InputStream inputStream, 
+															final boolean consolidate) {
+		LOGGER.debug(methodLogIn());
+		Response response = null;
+		String retVal = null;
+		boolean isparallelExec = GrobidServiceProperties.isParallelExec();
+		File originFile = null;
+		Engine engine = null;
+		try {
+			originFile = GrobidRestUtils.writeInputFile(inputStream);
+
+			if (originFile == null) {
+				response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
+			} else {
+				// starts conversion process
+				engine = GrobidRestUtils.getEngine(isparallelExec);
+				List<PatentItem> patents = new ArrayList<PatentItem>();
+				List<BibDataSet> articles = new ArrayList<BibDataSet>();
+				if (isparallelExec) {
+					retVal = engine.processAllCitationsInPDFPatent(originFile.getAbsolutePath(), 
+						articles, patents, consolidate);
+					GrobidPoolingFactory.returnEngine(engine);
+				} else {
+					synchronized (engine) {
+						retVal = engine.processAllCitationsInPDFPatent(originFile.getAbsolutePath(), 
+							articles, patents, consolidate);
+					}
+				}
+
+				GrobidRestUtils.removeTempFile(originFile);
+
+				if (!GrobidRestUtils.isResultOK(retVal)) {
+					response = Response.status(Status.NO_CONTENT).build();
+				} else {
+					response = Response.status(Status.OK).entity(retVal).type(MediaType.APPLICATION_XML).build();
+				}
+			}
+		} catch (NoSuchElementException nseExp) {
+			LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
+			response = Response.status(Status.SERVICE_UNAVAILABLE).build();
+		} catch (Exception exp) {
+			LOGGER.error("An unexpected exception occurs. ", exp);
+			response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
+		} finally {
+			GrobidRestUtils.removeTempFile(originFile);
+			if (isparallelExec && engine != null) {
+				GrobidPoolingFactory.returnEngine(engine);
+			}
+		}
+		LOGGER.debug(methodLogOut());
+		return response;
+	}
+
+	/**
+	 * Process a patent document encoded in ST.36 for extracting and parsing citations in the description body.
+	 * 
+	 * @param inputStream
+	 *            the data of origin document
+	 * 
+	 * @return a response object mainly containing the TEI representation of the
+	 *         citation
+	 */
+	public static Response processCitationPatentST36(final InputStream inputStream, 
+															final boolean consolidate) {
+		LOGGER.debug(methodLogIn());
+		Response response = null;
+		String retVal = null;
+		boolean isparallelExec = GrobidServiceProperties.isParallelExec();
+		File originFile = null;
+		Engine engine = null;
+		try {
+			originFile = GrobidRestUtils.writeInputFile(inputStream);
+
+			if (originFile == null) {
+				response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
+			} else {
+				// starts conversion process
+				engine = GrobidRestUtils.getEngine(isparallelExec);
+				List<PatentItem> patents = new ArrayList<PatentItem>();
+				List<BibDataSet> articles = new ArrayList<BibDataSet>();
+				if (isparallelExec) {
+					retVal = engine.processAllCitationsInXMLPatent(originFile.getAbsolutePath(), 
+						articles, patents, consolidate);
+					GrobidPoolingFactory.returnEngine(engine);
+				} else {
+					synchronized (engine) {
+						retVal = engine.processAllCitationsInXMLPatent(originFile.getAbsolutePath(), 
+							articles, patents, consolidate);
+					}
+				}
+
+				GrobidRestUtils.removeTempFile(originFile);
+
+				if (!GrobidRestUtils.isResultOK(retVal)) {
+					response = Response.status(Status.NO_CONTENT).build();
+				} else {
+					response = Response.status(Status.OK).entity(retVal).type(MediaType.APPLICATION_XML).build();
+				}
+			}
+		} catch (NoSuchElementException nseExp) {
+			LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
+			response = Response.status(Status.SERVICE_UNAVAILABLE).build();
+		} catch (Exception exp) {
+			LOGGER.error("An unexpected exception occurs. ", exp);
+			response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
+		} finally {
+			GrobidRestUtils.removeTempFile(originFile);
+			if (isparallelExec && engine != null) {
+				GrobidPoolingFactory.returnEngine(engine);
+			}
+		}
+		LOGGER.debug(methodLogOut());
+		return response;
+	}
+
 
 	/**
 	 * @return
