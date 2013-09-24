@@ -1,5 +1,4 @@
 /**
- * Copyright 2010 INRIA.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,9 +29,9 @@ import java.util.List;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.MultivaluedMap;
 
-import org.grobid.core.mock.MockContext;
 import org.grobid.core.utilities.GrobidPropertyKeys;
 import org.grobid.core.utilities.TextUtilities;
+import org.grobid.core.mock.MockContext;
 import org.grobid.service.GrobidPathes;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -72,7 +71,7 @@ public class GrobidRestServiceTest {
 	public static void destroyInitialContext() throws Exception {
 		MockContext.destroyInitialContext();
 	}
-
+	
 	private static HttpServer server = null;
 	private static String host = null;
 
@@ -117,19 +116,6 @@ public class GrobidRestServiceTest {
 
 	@Before
 	public void setUp() throws Exception {
-
-		/*
-		 * if (
-		 * (System.getProperty(GrobidPropertyKeys.PROP_GROBID_HOME)==null)||
-		 * (System.getProperty(GrobidPropertyKeys.PROP_GROBID_HOME).isEmpty()))
-		 * {//set grobid home File grobidHome= new
-		 * File(System.getProperty("user.dir")+"/../grobid-core/GROBID_HOME/");
-		 * System.setProperty(GrobidPropertyKeys.PROP_GROBID_HOME,
-		 * grobidHome.getCanonicalPath());
-		 * logger.debug("System property '"+GrobidPropertyKeys
-		 * .PROP_GROBID_HOME+"' was not set. Now it is set to folder '"
-		 * +grobidHome.getAbsolutePath()+"'."); }
-		 */// set grobid home
 		try {
 			if (server == null) {
 				String host = null;
@@ -188,7 +174,8 @@ public class GrobidRestServiceTest {
 		assertTrue("Cannot run the test, because the sample file '" + pdfFile
 				+ "' does not exists.", pdfFile.exists());
 		FormDataMultiPart form = new FormDataMultiPart();
-		form.field("fileContent", pdfFile, MediaType.MULTIPART_FORM_DATA_TYPE);
+		form.field("input", pdfFile, MediaType.MULTIPART_FORM_DATA_TYPE);
+		form.field("consolidate", "0", MediaType.MULTIPART_FORM_DATA_TYPE);
 		logger.debug("calling " + this.getHost() + GrobidPathes.PATH_GROBID
 				+ "/" + GrobidPathes.PATH_HEADER);
 
@@ -219,7 +206,8 @@ public class GrobidRestServiceTest {
 		assertTrue("Cannot run the test, because the sample file '" + pdfFile
 				+ "' does not exists.", pdfFile.exists());
 		FormDataMultiPart form = new FormDataMultiPart();
-		form.field("fileContent", pdfFile, MediaType.MULTIPART_FORM_DATA_TYPE);
+		form.field("input", pdfFile, MediaType.MULTIPART_FORM_DATA_TYPE);
+		form.field("consolidate", "0", MediaType.MULTIPART_FORM_DATA_TYPE);
 		logger.debug("calling " + this.getHost() + GrobidPathes.PATH_GROBID
 				+ "/" + GrobidPathes.PATH_FULL_TEXT);
 
@@ -336,163 +324,4 @@ public class GrobidRestServiceTest {
 		logger.debug(postResp);
 	}
 
-	/**
-	 * Test the synchronous fully state less rest call
-	 */
-	/*@Test
-	public void testFullyRestLessFulltextDocumentLoop() throws Exception {
-		List<ReqThread> list = new ArrayList<GrobidRestServiceTest.ReqThread>();
-		for (int i = 0; i < 100; i++) {
-			ReqThread thread = new ReqThread();
-			list.add(thread);
-			thread.start();
-		}
-		
-		for(int i=0;i<list.size();i++){
-			ReqThread thread = list.get(i);
-			while (thread.isAlive()) {
-				// faire un traitement...
-				System.out.println("Thread " + i + " running");
-				try {
-					// et faire une pause
-					Thread.sleep(800);
-				} catch (InterruptedException ex) {
-				}
-			}
-		}
-		
-
-	}
-
-	private class ReqThread extends Thread {
-		public void run() {
-			long start = System.currentTimeMillis();
-			// boucle tant que la durée de vie du Thread est < à 5 secondes
-			while (System.currentTimeMillis() < (start + (1000 * 20))) {
-				// traitement
-				File pdfFile = new File(GrobidRestServiceTest.getResourceDir()
-						.getAbsoluteFile() + "/sample4/sample.pdf");
-				Client create = Client.create();
-				WebResource service = create.resource(getHost());
-				ClientResponse response = null;
-
-				assertTrue("Cannot run the test, because the sample file '"
-						+ pdfFile + "' does not exists.", pdfFile.exists());
-				FormDataMultiPart form = new FormDataMultiPart();
-				form.field("fileContent", pdfFile,
-						MediaType.MULTIPART_FORM_DATA_TYPE);
-				logger.debug("calling " + GrobidRestServiceTest.getHost()
-						+ GrobidPathes.PATH_GROBID + "/"
-						+ GrobidPathes.PATH_FULL_TEXT);
-
-				service = Client.create().resource(
-						GrobidRestServiceTest.getHost()
-								+ GrobidPathes.PATH_GROBID + "/"
-								+ GrobidPathes.PATH_FULL_TEXT);
-				response = service.type(MediaType.MULTIPART_FORM_DATA)
-						.accept(MediaType.APPLICATION_XML)
-						.post(ClientResponse.class, form);
-				assertEquals(Status.OK.getStatusCode(), response.getStatus());
-				try {
-					// pause
-					Thread.sleep(500);
-				} catch (InterruptedException ex) {
-				}
-			}
-		}
-	}*/
-
-	// private void readProperties() throws FileNotFoundException, IOException
-	// {
-	// File propFile= new
-	// File("./src/test/resources/grobidHost_private.properties");
-	// if (!propFile.exists()) {
-	// propFile= new File("./src/test/resources/grobidHost.properties");
-	// if (!propFile.exists()) {
-	// throw new
-	// GrobidException("Cannot run tests for grobid service, because the property file for"
-	// +
-	// " grobid tests does not exist.");
-	// }
-	// }
-	//
-	// propFileName = propFile.getAbsolutePath();
-	//
-	// Properties props= new Properties();
-	// FileInputStream in= null;
-	// try
-	// {
-	// in= new FileInputStream(propFile);
-	// props.load(in);
-	// }
-	// finally
-	// {
-	// in.close();
-	// }
-	//
-	// if ( (props.getProperty("grobidHost")!= null) &&
-	// (!props.getProperty("grobidHost").equals("")))
-	// this.setHost(props.getProperty("grobidHost"));
-	// else
-	// fail("cannot find the host for the grobidService, please check configuration file: "+
-	// propFileName);
-	// if ( (props.getProperty("createHost")!= null) &&
-	// (!props.getProperty("createHost").equals("")))
-	// {
-	// if (props.getProperty("createHost").equalsIgnoreCase("no"))
-	// createHost= false;
-	// }
-	// }
-	//
-	// private String getHost()
-	// {
-	// return(this.getHost()+ "grobid/");
-	// }
-	//
-	// private String resourceDir="./src/test/resources/";
-	// private String tmpDir= null;
-	//
-	// public File getResourceDir()
-	// {
-	// File file= new File(resourceDir);
-	// if (!file.exists())
-	// {
-	// if (!file.mkdirs())
-	// throw new GrobidServiceException("Cannot create folder for resources.");
-	// }
-	// return(file);
-	// }
-	//
-	// public File getTMPDir()
-	// {
-	// tmpDir= System.getProperty(GrobidPropertyKeys.PROP_TMP_PATH);
-	// if (tmpDir== null)
-	// throw new
-	// GrobidException("Cannot start test, because tmp folder is not set.");
-	// File file= new File(tmpDir);
-	// if (!file.exists())
-	// {
-	// if (!file.mkdirs())
-	// throw new GrobidServiceException("Cannot create temprorary folder.");
-	// }
-	// return(file);
-	// }
-	//
-	// /**
-	// * Checks if the service is alive, if this test fails, all the other will
-	// also fail.
-	// */
-	// @Test
-	// public void testIsAlive()
-	// {
-	// logger.debug("testIsAlive()...");
-	// Client create = Client.create();
-	// WebResource service = create.resource(getHost());
-	// ClientResponse response= null;
-	// response =
-	// service.path("isAlive").accept(MediaType.TEXT_PLAIN).get(ClientResponse.class);
-	// assertEquals(200, response.getStatus());
-	// String isAlive= response.getEntity(String.class);
-	// assertTrue(isAlive.equalsIgnoreCase("true"));
-	// }
 }

@@ -101,7 +101,10 @@
 				                        Names</option>
 				                    <option value="processAffiliations">Process Affiliations</option>
 				                    <option value="processCitations">Process Citations</option>
-				                    <option value="citationAnnotation">Process Citation patent annotations</option>
+				                    <option value="processCitationPatentTEI">Process Citation patent TEI</option>
+									<option value="processCitationPatentST36">Process Citation patent ST.36</option>
+									<option value="processCitationPatentTXT">Process Citation patent text</option>
+									<option value="processCitationPatentPDF">Process Citation patent PDF</option>
 								</select>
 							</td>
 						</tr>
@@ -110,12 +113,17 @@
 							<td><span id="label">&nbsp;</span></td>
 							<td>
 								<div id="field">
+									<label class="checkbox" id="consolidateBlock">
+										<input type="checkbox" id="consolidate" name="consolidate" value="1">Consolidate</input>
+									</label>
 									<div class="fileupload fileupload-new" data-provides="fileupload" id="fileInputDiv">
 									  <div class="input-append">
 									    <div class="uneditable-input span4" style="white-space:normal;">
 											<i class="icon-file fileupload-exists" style="white-space:normal;"></i>
 											<span class="fileupload-preview" style="white-space:normal;"></span>
 										</div>
+										<span class="">
+											
 										<span class="btn btn-file">
 											<span class="fileupload-new" id="labelFile">Select file</span>
 											<span class="fileupload-exists">Change</span>

@@ -79,7 +79,7 @@ public class ReferenceExtractor implements Closeable {
     /**
      * Extract all reference from the full text retrieve via OPS.
      */
-    public int extractAllReferencesOPS(boolean filterDuplicate,
+    public String extractAllReferencesOPS(boolean filterDuplicate,
                                        boolean consolidate,
                                        List<PatentItem> patents,
                                        List<BibDataSet> articles) {
@@ -94,13 +94,13 @@ public class ReferenceExtractor implements Closeable {
         } catch (Exception e) {
             throw new GrobidException(e);
         }
-        return 0;
+        return null;
     }
 
     /**
      * Extract all reference from a patent in XML ST.36 like.
      */
-    public int extractPatentReferencesXMLFile(String pathXML,
+    public String extractPatentReferencesXMLFile(String pathXML,
                                               boolean filterDuplicate,
                                               boolean consolidate,
                                               List<PatentItem> patents) {
@@ -114,7 +114,7 @@ public class ReferenceExtractor implements Closeable {
     /**
      * Extract all reference from an XML file in ST.36 or MAREC format.
      */
-    public int extractAllReferencesXMLFile(String pathXML,
+    public String extractAllReferencesXMLFile(String pathXML,
                                            boolean filterDuplicate,
                                            boolean consolidate,
                                            List<PatentItem> patents,
@@ -157,18 +157,18 @@ public class ReferenceExtractor implements Closeable {
                         patents,
                         articles);
             } else
-                return 0;
+                return null;
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return 0;
+        return null;
     }
 
 
     /**
      * Extract all reference from the PDF file of a patent publication.
      */
-    public int extractAllReferencesPDFFile(String inputFile,
+    public String extractAllReferencesPDFFile(String inputFile,
                                            boolean filterDuplicate,
                                            boolean consolidate,
                                            List<PatentItem> patents,
@@ -198,17 +198,17 @@ public class ReferenceExtractor implements Closeable {
                         patents,
                         articles);
             } else
-                return 0;
+                return null;
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return 0;
+        return null;
     }
 
     /**
      * Extract all reference from a simple piece of text.
      */
-    public int extractAllReferencesString(String text,
+    public String extractAllReferencesString(String text,
                                           boolean filterDuplicate,
                                           boolean consolidate,
                                           List<PatentItem> patents,
@@ -237,7 +237,7 @@ public class ReferenceExtractor implements Closeable {
             StringTokenizer st = new StringTokenizer(text, delimiters, true);
             int offset = 0;
             if (st.countTokens() == 0) {
-                return 0;
+                return null;
             }
             while (st.hasMoreTokens()) {
                 String tok = st.nextToken();
@@ -665,7 +665,32 @@ public class ReferenceExtractor implements Closeable {
         }
         if (articles != null)
             nbs += articles.size();
-        return nbs;
+
+		String resultTEI = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" + 
+						   "<TEI xmlns=\"http://www.tei-c.org/ns/1.0\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n";
+		
+		if ( (patents != null) || (articles != null) ) {
+			resultTEI += "<listBibl>\n";
+		}
+		
+		if (patents != null) {
+			for(PatentItem patentCitation : patents) {
+				resultTEI += patentCitation.toTEI() + "\n";
+			}
+		}
+		
+		if (articles != null) {
+			for(BibDataSet articleCitation : articles) {
+				resultTEI += articleCitation.toTEI() + "\n";
+			}
+		}
+		if ( (patents != null) || (articles != null) ) {
+			resultTEI += "</listBibl>\n";
+		}
+		
+		resultTEI += "</TEI>";
+
+        return resultTEI;
     }
 
     private String taggerRun(ArrayList<String> ress, Tagger tagger) throws Exception {

@@ -94,5 +94,8 @@ public class BibDataSet {
 				+ ", confidence=" + confidence + ", offsets=" + offsets + "]";
 	}
     
+	public String toTEI() {
+		return resBib.toTEI(-1);
+	}
     
 }

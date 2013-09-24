@@ -187,7 +187,7 @@ public class ProcessEngine {
 	}
 
 	/**
-	 * Train the full text.
+	 * Generate training data for citation extraction from patent documents.
 	 * 
 	 * @param pGbdArgs
 	 *            The parameters.
@@ -200,6 +200,21 @@ public class ProcessEngine {
 		LOGGER.info(result + " files processed.");
 	}
 
+	/**
+	 * Train the full text.
+	 * 
+	 * @param pGbdArgs
+	 *            The parameters.
+	 * @throws Exception
+	 */
+	/*public void processPatentcitations(final GrobidMainArgs pGbdArgs) throws Exception {
+		inferPdfInputPath(pGbdArgs);
+		inferOutputPath(pGbdArgs);
+		int result = getEngine().batchProcessPatentcitations(pGbdArgs.getPath2Input(), pGbdArgs.getPath2Output());
+		LOGGER.info(result + " files processed.");
+	}
+	*/
+	
 	/**
 	 * List the engine methods that can be called.
 	 * 
