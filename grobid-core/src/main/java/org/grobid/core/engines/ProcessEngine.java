@@ -4,6 +4,9 @@ import java.io.File;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
+import org.grobid.core.data.BibDataSet;
+import org.grobid.core.data.PatentItem;
+import org.apache.commons.io.FileUtils;
 
 import org.apache.commons.lang3.StringUtils;
 import org.grobid.core.data.Affiliation;
@@ -193,7 +196,7 @@ public class ProcessEngine {
 	 *            The parameters.
 	 * @throws Exception
 	 */
-	public void createTrainingPatentcitations(final GrobidMainArgs pGbdArgs) throws Exception {
+	public void createTrainingCitationPatent(final GrobidMainArgs pGbdArgs) throws Exception {
 		inferPdfInputPath(pGbdArgs);
 		inferOutputPath(pGbdArgs);
 		int result = getEngine().batchCreateTrainingPatentcitations(pGbdArgs.getPath2Input(), pGbdArgs.getPath2Output());
@@ -201,19 +204,121 @@ public class ProcessEngine {
 	}
 
 	/**
-	 * Train the full text.
+	 * Process a patent encoded in TEI using pGbdArgs parameters.
 	 * 
 	 * @param pGbdArgs
 	 *            The parameters.
 	 * @throws Exception
 	 */
-	/*public void processPatentcitations(final GrobidMainArgs pGbdArgs) throws Exception {
+	public void processCitationPatentTEI(final GrobidMainArgs pGbdArgs) throws Exception {
 		inferPdfInputPath(pGbdArgs);
 		inferOutputPath(pGbdArgs);
-		int result = getEngine().batchProcessPatentcitations(pGbdArgs.getPath2Input(), pGbdArgs.getPath2Output());
-		LOGGER.info(result + " files processed.");
+		
+		final File teiDirectory = new File(pGbdArgs.getPath2Input());
+		String result = StringUtils.EMPTY;
+		for (final File currTEI : teiDirectory.listFiles()) {
+			try {
+				if (currTEI.getName().toLowerCase().endsWith(".tei") || 
+					currTEI.getName().toLowerCase().endsWith(".tei.xml")) {
+					getEngine().processCitationPatentTEI(pGbdArgs.getPath2Input() + File.separator + currTEI.getName(), 
+						pGbdArgs.getPath2Output() + File.separator + currTEI.getName(), false);
+				}
+			} catch (final Exception exp) {
+				LOGGER.error("An error occured while processing the file " + currTEI.getAbsolutePath()
+						+ ". Continuing the process for the other files");
+			}
+		}
 	}
-	*/
+	
+	/**
+	 * Process a patent encoded in ST.36 using pGbdArgs parameters.
+	 * 
+	 * @param pGbdArgs
+	 *            The parameters.
+	 * @throws Exception
+	 */
+	public void processCitationPatentST36(final GrobidMainArgs pGbdArgs) throws Exception {
+		inferPdfInputPath(pGbdArgs);
+		inferOutputPath(pGbdArgs);
+		
+		final File xmlDirectory = new File(pGbdArgs.getPath2Input());
+		String result = StringUtils.EMPTY;
+		for (final File currXML : xmlDirectory.listFiles()) {
+			try {
+				if (currXML.getName().toLowerCase().endsWith(".xml")) {
+					List<BibDataSet> articles = new ArrayList<BibDataSet>();
+					List<PatentItem> patents = new ArrayList<PatentItem>();
+					result = getEngine().processAllCitationsInXMLPatent(pGbdArgs.getPath2Input() + File.separator + currXML.getName(), 
+						articles, patents, false);
+					Utilities.writeInFile(pGbdArgs.getPath2Output() + File.separator
+							+ new File(currXML.getAbsolutePath()).getName().replace(".xml", ".tei.xml"), result);
+				}
+			} catch (final Exception exp) {
+				LOGGER.error("An error occured while processing the file " + currXML.getAbsolutePath()
+						+ ". Continuing the process for the other files");
+			}
+		}
+	}
+	
+	/**
+	 * Process a patent in utf-8 text using pGbdArgs parameters.
+	 * 
+	 * @param pGbdArgs
+	 *            The parameters.
+	 * @throws Exception
+	 */
+	public void processCitationPatentTXT(final GrobidMainArgs pGbdArgs) throws Exception {
+		inferPdfInputPath(pGbdArgs);
+		inferOutputPath(pGbdArgs);
+		
+		final File txtDirectory = new File(pGbdArgs.getPath2Input());
+		String result = StringUtils.EMPTY;
+		for (final File currTXT : txtDirectory.listFiles()) {
+			try {
+				if (currTXT.getName().toLowerCase().endsWith(".txt")) {
+					String inputStr = FileUtils.readFileToString(currTXT, "UTF-8");
+					List<BibDataSet> articles = new ArrayList<BibDataSet>();
+					List<PatentItem> patents = new ArrayList<PatentItem>();
+					result = getEngine().processAllCitationsInPatent(inputStr, articles, patents, false);
+					Utilities.writeInFile(pGbdArgs.getPath2Output() + File.separator
+							+ new File(currTXT.getAbsolutePath()).getName().replace(".txt", ".tei.xml"), result);
+				}
+			} catch (final Exception exp) {
+				LOGGER.error("An error occured while processing the file " + currTXT.getAbsolutePath()
+						+ ". Continuing the process for the other files");
+			}
+		}
+	}
+	
+	/**
+	 * Process a patent available in PDF using pGbdArgs parameters.
+	 * 
+	 * @param pGbdArgs
+	 *            The parameters.
+	 * @throws Exception
+	 */
+	public void processCitationPatentPDF(final GrobidMainArgs pGbdArgs) throws Exception {
+		inferPdfInputPath(pGbdArgs);
+		inferOutputPath(pGbdArgs);
+		
+		final File pdfDirectory = new File(pGbdArgs.getPath2Input());
+		String result = StringUtils.EMPTY;
+		for (final File currPDF : pdfDirectory.listFiles()) {
+			try {
+				if (currPDF.getName().toLowerCase().endsWith(".pdf")) {
+					List<BibDataSet> articles = new ArrayList<BibDataSet>();
+					List<PatentItem> patents = new ArrayList<PatentItem>();
+					result = getEngine().processAllCitationsInPDFPatent(pGbdArgs.getPath2Input() + File.separator + currPDF.getName(),
+					articles, patents, false);
+					Utilities.writeInFile(pGbdArgs.getPath2Output() + File.separator
+							+ new File(currPDF.getAbsolutePath()).getName().replace(".pdf", ".tei.xml"), result);
+				}
+			} catch (final Exception exp) {
+				LOGGER.error("An error occured while processing the file " + currPDF.getAbsolutePath()
+						+ ". Continuing the process for the other files");
+			}
+		}
+	}
 	
 	/**
 	 * List the engine methods that can be called.

@@ -19,6 +19,8 @@ package org.grobid.core.engines;
 import java.io.BufferedReader;
 import java.io.Closeable;
 import java.io.File;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.FilenameFilter;
@@ -37,6 +39,7 @@ import org.grobid.core.data.ChemicalEntity;
 import org.grobid.core.data.PatentItem;
 import org.grobid.core.data.Person;
 import org.grobid.core.document.Document;
+import org.grobid.core.annotations.TeiStAXParser;
 import org.grobid.core.engines.entities.ChemicalParser;
 import org.grobid.core.engines.patent.ReferenceExtractor;
 import org.grobid.core.exceptions.GrobidException;
@@ -1085,6 +1088,21 @@ public class Engine implements Closeable {
 		return referenceExtractor.extractAllReferencesPDFFile(pdfPath, filterDuplicate, 
 			consolidateCitations, patentResults, nplResults);
 	}
+
+	public void processCitationPatentTEI(String teiPath, String outTeiPath,
+			boolean consolidateCitations) throws Exception {		
+		try {
+			InputStream inputStream = new FileInputStream(new File(teiPath)); 
+			OutputStream output = new FileOutputStream(new File(outTeiPath)); 
+			final TeiStAXParser parser = new TeiStAXParser(inputStream, output, false, consolidateCitations);
+			parser.parse();
+			inputStream.close();
+			output.close();
+		} catch (Exception e) {
+			throw new GrobidException("An exception occured while running Grobid.", e);
+		}
+	}
+
 
 	/**
 	 * Process an XML patent document with a patent citation extraction and

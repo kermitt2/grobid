@@ -179,7 +179,7 @@ public class ReferenceExtractor implements Closeable {
             int endPage = -1;
             tmpPath = GrobidProperties.getTempPath().getAbsolutePath();
             pathXML = doc.pdf2xml(true, false, startPage, endPage, inputFile, tmpPath, false); //with timeout,
-            //no force pdf reloading
+            // no force pdf reloading
             // inputFile is the pdf file, tmpPath is the tmp directory for the lxml file,
             // and we do not extract images in the PDF file
             if (pathXML == null) {
@@ -595,46 +595,6 @@ public class ReferenceExtractor implements Closeable {
                 }
             }
 
-            /*System.out.println("\nRFAP:");
-               for (PatentItem pat : patents) {
-                   if (!numberListe.contains(pat.getNumber())) {
-                       if (pat.getApplication()) {
-                           if (pat.getProvisional()) {
-                               System.out.println(" "+pat.getAuthority() + pat.getNumber() + "P");
-                               nbRes++;
-                           }
-                           else {
-                               System.out.println(" "+pat.getAuthority() + pat.getNumber());
-                               nbRes++;
-                           }
-                           numberListe.add(pat.getNumber());
-                       }
-                   }
-               }*/
-
-            /*System.out.println("\nRF:");
-               for (PatentItem pat : patents) {
-                   if (!numberListe.contains(pat.getNumber())) {
-                       if (pat.getReissued()) {
-                           if (pat.getAuthority().equals("US")) {
-                               System.out.println(" "+ pat.getAuthority() + pat.getNumber() + "E");
-                               nbRes++;
-                           }
-                       }
-                       else if (pat.getPlant()) {
-                           if (pat.getAuthority().equals("US")) {
-                               System.out.println(" "+pat.getAuthority() + "PP" + pat.getNumber());
-                               nbRes++;
-                           }
-                       }
-                       else {
-                           System.out.println(" "+pat.getAuthority() + pat.getNumber());
-                           nbRes++;
-                       }
-                       numberListe.add(pat.getNumber());
-                   }
-               }*/
-
             if (articles != null) {
                 int k = 0;
                 for (String ref : referencesNPL) {
@@ -644,14 +604,6 @@ public class ReferenceExtractor implements Closeable {
                     bds.setRawBib(ref);
                     bds.addOffset(offsets_NPL.get(k).intValue());
                     //bds.setConfidence(result.conf);
-                    /*System.out.println(bds.getRawBib());
-                         if (bds.getOffsets() != null) {
-                             for(Integer val : bds.getOffsets()) {
-                                 System.out.println(val.toString() + " " + (val.intValue() + ref.length()) );
-                             }
-                         }
-                         System.out.println(bds.getResBib().toTEI(0));
-                         System.out.println("\n");*/
                     articles.add(bds);
                     k++;
                 }
