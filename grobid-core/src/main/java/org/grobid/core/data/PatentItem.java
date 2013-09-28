@@ -226,9 +226,15 @@ public class PatentItem implements Comparable<PatentItem> {
 	}
     
 	public String toTEI() {
-		return toTEI(null);
+		return toTEI(null, false, null);
+	}
+	public String toTEI(boolean withPtr, String ptrVal) {
+		return toTEI(null, withPtr, ptrVal);
 	}
 	public String toTEI(String date) {
+		return toTEI(date, false, null);
+	}
+	public String toTEI(String date, boolean withPtr, String ptrVal) {
 		/* TEI for patent bilbiographical data is as follow (After the TEI guideline update of October 2012):
 		<biblStruct type="patent¦utilityModel¦designPatent¦plant" status="application¦publication">
 		<monogr>
@@ -300,6 +306,12 @@ public class PatentItem implements Comparable<PatentItem> {
 				biblStruct.append("<date>"+date+"</date>");
 			}
 			biblStruct.append("</imprint>");
+		}
+		
+		if (withPtr) {
+			biblStruct.append("<ptr target=\"#string-range('" + ptrVal + "',"+
+				offset_begin +","+ 
+				(offset_end - offset_begin + 1) +")\"></ptr>");
 		}
 		
 		biblStruct.append("</monogr></biblStruct>");

@@ -27,6 +27,7 @@ import org.grobid.core.utilities.Consolidation;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.core.utilities.TextUtilities;
+import org.grobid.core.utilities.KeyGen;
 import org.xml.sax.EntityResolver;
 import org.xml.sax.InputSource;
 import org.xml.sax.XMLReader;
@@ -621,13 +622,20 @@ public class ReferenceExtractor implements Closeable {
 		String resultTEI = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" + 
 						   "<TEI xmlns=\"http://www.tei-c.org/ns/1.0\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n";
 		
+		String divID = KeyGen.getKey().substring(0,7);
+		resultTEI += "<teiHeader />\n";
+		resultTEI += "<text>\n";
+		resultTEI += "<div id=\"_"+ divID +"\">\n";
+		resultTEI += TextUtilities.HTMLEncode(text);
+		resultTEI += "</div>\n";
+		resultTEI += "<div type=\"references\">\n";
 		if ( (patents != null) || (articles != null) ) {
 			resultTEI += "<listBibl>\n";
 		}
 		
 		if (patents != null) {
 			for(PatentItem patentCitation : patents) {
-				resultTEI += patentCitation.toTEI() + "\n";
+				resultTEI += patentCitation.toTEI(true, divID) + "\n"; // with offsets
 			}
 		}
 		
@@ -639,7 +647,8 @@ public class ReferenceExtractor implements Closeable {
 		if ( (patents != null) || (articles != null) ) {
 			resultTEI += "</listBibl>\n";
 		}
-		
+		resultTEI += "</div>\n";
+		resultTEI += "</text>\n";
 		resultTEI += "</TEI>";
 
         return resultTEI;

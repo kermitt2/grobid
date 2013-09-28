@@ -76,7 +76,7 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>grobid-service</servlet-name>
-        <url-pattern>/processCitationPaxtentTEI</url-pattern>
+        <url-pattern>/processCitationPatentTEI</url-pattern>
     </servlet-mapping>
 	<servlet-mapping>
         <servlet-name>grobid-service</servlet-name>
