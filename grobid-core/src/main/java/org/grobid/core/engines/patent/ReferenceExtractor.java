@@ -669,7 +669,7 @@ public class ReferenceExtractor implements Closeable {
             // throw an exception
             throw new Exception("CRF++ parsing failed.");
         }
-
+		
         StringBuilder res = new StringBuilder();
         for (int i = 0; i < tagger.size(); i++) {
             for (int j = 0; j < tagger.xsize(); j++) {
