@@ -19,7 +19,7 @@
 		<dependency>
 			<groupId>org.grobid</groupId>
 			<artifactId>grobid-core</artifactId>
-			<version>0.2.9</version>
+			<version>0.2.10</version>
 		</dependency>
 	</dependencies>
 
