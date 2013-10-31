@@ -9,6 +9,7 @@ Thumbs.db
 *.iml
 *.log
 *.log.*
+*.old
 
 # *.log
 # grobid-core/log/debug.log
