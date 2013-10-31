@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+ 							<marker>1</marker>
+							<orgName type="laboratory">ARC Centre for Functional Nanomaterials</orgName>,
+							<orgName type="department">Division of Chemical Engineering</orgName>,
+							<orgName type="institution">the University<lb/> of Queensland</orgName>,
+							<address>
+								<settlement>St Lucia</settlement>,
+								<country>Australia</country>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="department">School of Life Sciences and Chemical Technology</orgName>,
+							<orgName type="institution">Ngee Ann Polytechnic</orgName>,
+							<address>
+								<country>Singapore</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

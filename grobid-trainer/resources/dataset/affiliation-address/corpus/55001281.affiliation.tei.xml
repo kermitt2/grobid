@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>a</marker>
+							<orgName type="institution">University of Bath</orgName>,
+							<address>
+								<addrLine>Claverton Down</addrLine>,
+								<settlement>Bath</settlement>,
+								<postCode>BA2 7AY</postCode>,
+								<country>UK</country>
+								<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>b</marker>
+							<orgName type="laboratory">Laboratoire Photovoltaïque</orgName>,
+							<orgName type="institution">Université du Luxembourg</orgName>,
+							<address>
+								<addrLine>Campus Limpertsberg</addrLine>,
+								<addrLine>BS 1.1.7</addrLine>,
+								<addrLine>162a, avenue de la Faïencerie</addrLine>,
+								<postCode>L-1511</postCode>,
+								<country>Luxembourg</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

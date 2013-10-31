@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Ali</forename>
+								<surname>Asghar</surname>
+								<marker>Zafer</marker>
+							</persName>
+							<persName>
+								<forename>Clifford</forename>
+								<middlename>A</middlename>.
+								<surname>Shaffer</surname>,
+								<roleName>Chairman</roleName>
+							</persName>	
+							<persName>						
+								<forename>Roger</forename>
+								<middlename>W</middlename>.
+								<surname>Ehrich</surname>
+								<lb/>
+							</persName>	
+							<persName>
+								<forename>Manuel</forename>
+								<middlename>A</middlename>.
+								<surname>Pérez- Quiñones</surname>
+							</persName>	
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>a</marker>
+							<orgName type="department">Computer Science &amp; Engineering Department</orgName>
+							<lb/>
+							<orgName type="institution">University of California, Riverside</orgName>
+							<lb/>
+							<address>
+								<settlement>Riverside</settlement>,
+								<region>CA</region>
+								<postCode>92521</postCode>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>b</marker>
+							<orgName type="institution">The Aerospace Corporation</orgName>
+							<lb/>
+							<address>
+								<settlement>El Segundo</settlement>,
+								<region>CA</region>
+								<postCode>90245-4691</postCode>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

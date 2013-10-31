@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">D. I. Ivanovsky Institute of Virology</orgName>,
+							<address>
+								<postCode>123098</postCode>
+								<settlement>Moscow</settlement>,
+								<country>Russia</country>,
+							<lb/>
+							</address>
+							<marker>1</marker> and
+						</affiliation>
+						<affiliation>
+							<orgName type="department">Department of Infectious Diseases</orgName>,
+							<lb/>
+							<orgName type="institution">St. Jude Children&apos;s Research Hospital</orgName>,
+							<lb/>
+							<marker>2</marker> and
+						</affiliation>
+						<affiliation>							
+							<orgName type="department">Department of Pathology</orgName>,
+							<orgName type="institution">University of Tennessee</orgName>,
+							<marker>3</marker>
+							<address>
+								<settlement>Memphis</settlement>,
+								<region>Tennessee</region>
+								<postCode>38105</postCode>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

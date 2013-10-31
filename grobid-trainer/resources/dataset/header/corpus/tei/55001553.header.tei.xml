@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001553"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Fullerene Polymers: Synthesis and Properties<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Francesco Giacalone* , and Nazario Martín* ,<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Dipartimento di Chimica Organica &quot;E. Paternò&quot;, Università degli Studi di Palermo,</affiliation>
+	</byline>
+
+	<address>Parco d&apos;Orleans II, I-90128 Palermo, Italy and</address>
+
+	<byline>
+	<affiliation>Departamento de<lb/> Química Orgánica, Facultad de Ciencias Químicas, Universidad Complutense,</affiliation>
+	</byline>
+
+	<address>E-28040 Madrid, Spain<lb/></address>
+
+	<date>Received May 12, 2006<lb/></date>
+
+	<div type="introduction">Contents<lb/> 1. Introduction<lb/> 5136 2.
+
+	All-C 60 and Related Polymers<lb/> 5137 3. Cross-Linked Polymers<lb/> 5141 4. End-Capped Polymers<lb/> 5143 5. Star-Shaped Polymers<lb/> 5149 6. Main-Chain Polymers<lb/> 5151 7. Side-Chain Polymers<lb/> 5156 8. Double-Cable Polymers<lb/> 5167 9. Supramolecular Polymers<lb/> 5177 10. Summary and Outlook<lb/> 5185 11. Acknowledgment<lb/> 5185 12. References<lb/> 5185</div>
+
+		</front>
+	</text>
+</tei>

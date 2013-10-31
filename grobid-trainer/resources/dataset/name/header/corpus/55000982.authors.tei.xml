@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<middlename>A</middlename>.
+								<surname>MCCABE</surname>,
+								<roleName>Ph.D</roleName>.
+							</persName>
+							<persName>
+								By
+								<forename>A</forename>.
+								<surname>MCCABE</surname>,
+								<roleName>Ph.D</roleName>.
+							</persName>
+							COMMUNICATEDBY
+							<persName>
+								<roleName>PROF</roleName>.
+								<forename>N</forename>.
+								<middlename>H</middlename>.
+								<surname>JOHANNESEN</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

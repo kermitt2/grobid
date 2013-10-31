@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000662"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">1<lb/></note>
+
+	<note type="other">Project IEEE 802.21 Media Independent Handover Services<lb/></note>
+
+	<ptr>&lt;http://www.ieee802.org/21/&gt;<lb/> </ptr>
+
+	<docTitle>
+	<titlePart>Title Media Independent Handover – Discussion on IDs in primitives<lb/></titlePart>
+	</docTitle>
+
+	<date>Date Submitted<lb/> May 2006<lb/></date> 
+
+	<note type="other">Source(s) &lt;see list below&gt;<lb/> Re:<lb/></note>
+
+	<div type="abstract">Abstract Discussion on Acquiring Location Based Information over MIIS using TLV format</div>
+	
+	<div type="introduction"><lb/> Purpose<lb/> Notice<lb/> This document has been prepared to assist the IEEE 802.21 Working Group. It is offered as a basis for<lb/> discussion and is not binding on the contributing individual(s) or organization(s). The material in this<lb/> document is subject to change in form and content after further study. The contributor(s) reserve(s) the<lb/> right to add, amend or withdraw material contained herein.<lb/> Release</div>
+
+		</front>
+	</text>
+</tei>

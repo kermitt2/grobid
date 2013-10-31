@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Nigel</forename>
+								<surname>Mortimer</surname> and
+							</persName>
+							<persName>
+								<forename>Onemus</forename>
+								<surname>Mwabonje</surname> ( UK )
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Kerry- Ann</forename>
+								<surname>Adamson</surname>,)
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Thomas</forename>
+								<surname>Esdaile- Bouquet</surname>
+								( BE)
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Thomas</forename>
+								<surname>Feck</surname>and
+							</persName>
+							<persName>
+								<forename>Klaus</forename>
+								<surname>Stolzenburg</surname>
+								(DE)
+							</persName>
+							<persName>
+								<forename>Peter</forename>
+								<surname>Helby</surname> (DK)
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Eduardo</forename>
+								<surname>João</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

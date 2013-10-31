@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Xinhua</forename>
+								<surname>Yu</surname>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>Dirk</forename>
+								<surname>Koczan</surname>
+							<lb/>
+								<marker>2</marker>,
+							</persName>
+							<persName>
+								<forename>Anna -Maija</forename>
+								<surname>Sulonen</surname>
+								<marker>3</marker> ,
+							</persName>
+							<persName>
+								<forename>Denis</forename>
+								<middlename>A</middlename> .
+								<surname>Akkad</surname>
+							<lb/>
+								<marker>4</marker> ,
+							</persName>
+							<persName>
+								<forename>Antje</forename>
+								<surname>Kroner</surname>
+							<lb/>
+								<marker>5</marker> ,
+							</persName>
+							<persName>
+								<forename>Manuel</forename>
+								<surname>Comabella</surname>
+								<marker>6</marker> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Gianna</forename>
+								<surname>Costa</surname>
+							<lb/>
+								<marker>7</marker> ,
+							</persName>
+							<persName>
+								<forename>Daniela</forename>
+								<surname>Corongiu</surname>
+								<marker>7</marker>,
+							</persName>
+							<persName>
+								<forename>Robert</forename>
+								<surname>Goertsches</surname>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>Montserrat</forename>
+								<surname>Camina - Tato</surname>
+								<marker>6</marker> ,
+							</persName>
+							<persName>
+								<forename>Hans-Juergen</forename>
+							<lb/>
+								<surname>Thiesen</surname>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>Harald</forename>
+								<middlename>I</middlename> .
+								<surname>Nyland</surname>
+							<lb/>
+								<marker>8 , 9</marker> ,
+							</persName>
+							<persName>
+								<forename>Sverre</forename>
+								<middlename>J</middlename> .
+								<surname>Mørk</surname>
+								<marker>10</marker>,
+							</persName>
+							<persName>
+								<forename>Xavier</forename>
+								<surname>Montalban</surname>
+								<marker>6</marker>,
+							</persName>
+							<persName>
+								<forename>Peter</forename>
+								<surname>Rieckmann</surname>
+							<lb/>
+								<marker>5</marker> ,
+							</persName>
+							<persName>
+								<forename>Maria</forename>
+								<middlename>G</middlename> .
+								<surname>Marrosu</surname>
+								<marker>7</marker> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Kjell - Morten</forename>
+								<surname>Myhr</surname>
+							<lb/>
+								<marker>8 , 9</marker> ,
+							</persName>
+							<persName>
+								<forename>Joerg</forename>
+								<middlename>T</middlename>.
+								<surname>Epplen</surname>
+							<lb/>
+								<marker>4</marker> ,
+							</persName>
+							<persName>
+								<forename>Janna</forename>
+								<surname>Saarela</surname>
+							<lb/>
+								<marker>3</marker> ,
+							</persName>
+							<persName>
+								<forename>Saleh</forename>
+								<middlename>M</middlename>.
+								<surname>Ibrahim</surname>
+							<lb/>
+								<marker>1*</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

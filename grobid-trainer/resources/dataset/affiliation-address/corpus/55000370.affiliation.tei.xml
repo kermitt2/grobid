@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">Dept.of Nuclear Medicine</orgName>,
+							<orgName type="institution">The University of Massachusetts Medical Center</orgName>,
+							<address>
+								<addrLine>55<lb/> Lake Ave.</addrLine>,
+								<settlement>Worcester</settlement>,
+								<region>MA</region>
+								<postCode>01605-2397</postCode>
+							<lb/>
+							</address>
+						</affiliation>
+							
+						<affiliation>	
+							<orgName type="department">The Journal of Nuclear Medicine<lb/> Department ofNuclear Medicine</orgName>,
+							<orgName type="institution">The University ofMassachusetts Medical Center</orgName>,
+							<lb/>
+							<address>
+								<settlement>Worcester</settlement>,
+								<region>Massachusetts</region>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

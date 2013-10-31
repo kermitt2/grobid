@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000102"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Invited paper (European Materials Conference – Strasbourg – </note>
+	
+	<date>June 99)<lb/></date>
+
+	<docTitle>
+	<titlePart>Integrated optics based on organo-mineral materials<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>P. Coudray<lb/> 1 , P. Etienne<lb/> 2 , Y. Moreau<lb/>1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Centre de d&apos;Electronique et de Micro Opto Electronique<lb/> 2 Groupe matériaux, Laboratoire de Verres<lb/> Université de Montpellier II</affiliation>
+	</byline>
+
+	<address>34 095 Montpellier Cedex 5, France<lb/></address>
+
+	<div type="abstract">New technologies based on organic-inorganic materials are shown to be very flexible, while<lb/> they present interesting performance. The process needs only four steps, and the local<lb/> refractive index change necessary to guide light may be imprinted with a simple UV<lb/> exposure. Several solutions are given to design basic structure of guides and hence to make<lb/> optical circuits which cover the domain of power splitters to wavelength division<lb/> multiplexers, including directional couplers, gratings… Also optical amplification is shown<lb/> to be possible, and the connection problem is tackled.<lb/></div>
+
+	<keyword>Keywords : Integrated optics, organo-mineral material, sol gel process, optical waveguides<lb/></keyword>
+	
+	<div type="introduction"> Introduction :</div>
+	
+		</front>
+	</text>
+</tei>

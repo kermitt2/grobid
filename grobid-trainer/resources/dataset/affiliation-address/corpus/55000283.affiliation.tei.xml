@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="department">Department of Medical Genetics</orgName>,
+							<orgName type="institution">Haartman Institute and Helsinki University Central Hospital</orgName>,
+							<orgName type="institution">University of Helsinki</orgName>,
+							<address>
+								<settlement>Helsinki</settlement>,
+							<lb/>
+								<country>Finland</country>;
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="department">Department of Pathology</orgName>,
+							<orgName type="institution">Haartman Institute and Helsinki University Central Hospital</orgName>,
+							<orgName type="institution">University of Helsinki</orgName>,
+							<address>
+								<settlement>Helsinki</settlement>,
+							<lb/>
+								<country>Finland</country>;
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>3</marker>
+							<orgName type="laboratory">Laboratory of Computer and Information Science</orgName>,
+							<orgName type="institution">Helsinki University of Technology</orgName>,
+							<address>
+								<settlement>Espoo</settlement>,
+								<country>Finland</country>;
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>4</marker>
+							<orgName type="department">Department of<lb/> Occupational Medicine</orgName>,
+							<orgName type="institution">Finnish Institute of Occupational Health</orgName>,
+							<address>
+								<settlement>Helsinki</settlement>,
+								<country>Finland</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

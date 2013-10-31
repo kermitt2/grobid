@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">Chemistry and Life Sciences</orgName>,
+							<orgName type="institution">Research Triangle Institute</orgName>,
+							<address>
+								<settlement>Research Triangle Park</settlement>,
+								<region>North Carolina</region>
+								<postCode>27709</postCode>,
+							</address>
+						</affiliation>	
+						
+						<affiliation>	
+							<orgName type="department">Clinical<lb/> Psychopharmacology Section</orgName>,
+							<orgName type="department">NIDA Addiction Research Section</orgName>,
+							<address>
+								<postBox>P.O. Box 5180</postBox>,
+								<addrLine>Building C</addrLine>,
+								<addrLine>4980 Eastern Avenue</addrLine>,
+								<lb/>
+								<settlement>Baltimore</settlement>,
+								<settlement>Maryland</settlement>
+								<postCode>21224</postCode>, 
+							</address>
+							and 
+						</affiliation>
+							
+						<affiliation>	
+							<orgName type="laboratory">Lilly Research Laboratories</orgName>,
+							<orgName type="institution">Eli Lilly and Company</orgName>,
+							<orgName type="institution">Lilly Corporate Center</orgName>,
+							<lb/>
+							<address>
+								<settlement>Indianapolis</settlement>,
+								<region>Indiana</region>
+								<postCode>4628</postCode>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

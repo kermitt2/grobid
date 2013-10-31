@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001832"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>HIGHLIGHTS OF PRESCRIBING INFORMATION<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">These highlights do not include all the information needed to use TISSEEL safely and effectively.<lb/> See full prescribing information for TISSEEL.<lb/></div>
+
+	<div type="introduction"> TISSEEL [Fibrin Sealant]<lb/> For Topical Use Only<lb/> Frozen solution and lyophilized powder for solution for topical application<lb/> Initial U.
+
+	S. Approval: 1998<lb/> ––––––––––––––––––––––––––––––––– RECENT MAJOR CHANGES ––––––––––––––––––––––––––––––––––<lb/> Adverse Reactions; Post Marketing (6.3)<lb/> 11/2009<lb/> ––––––––––––––––––––––––––––––––––– INDICATIONS AND USAGE –––––––––––––––––––––––––––––––––––<lb/>
+
+	>@BULLET Hemostasis: TISSEEL is a fibrin sealant indicated for use as an adjunct to hemostasis in surgeries involving<lb/> cardiopulmonary bypass and treatment of blunt or penetrating splenic injuries when control of bleeding by<lb/> conventional surgical techniques, including suture, ligature, and cautery, is ineffective or impractical. TISSEEL is a<lb/> hemostatic agent that may be used in fully heparinized patients undergoing cardiopulmonary bypass (1.1)<lb/> @BULLET Sealing: TISSEEL is a fibrin sealant indicated as an adjunct to standard surgical techniques (such as suture and<lb/> ligature) to prevent leakage from colonic anastomoses following the reversal of temporary colostomies
+
+	(1.2)<lb/> –––––––––––––––––––––––––––––––– DOSAGE AND ADMINISTRATION ––––––––––––––––––––––––––––––––<lb/> For Topical Use Only. Do Not Inject (2)<lb/>
+
+	TISSEEL Kit (Freeze-Dried) requires reconstitution prior to use (2.1)<lb/> TISSEEL Pre-filled Syringe (Frozen) requires thawing prior to use (2.2)<lb/> Apply TISSEEL as a thin layer (2.3, 5.2)<lb/> Vials and pre-filled syringes are for single use only. Discard unused contents (2.3)<lb/> To ensure adequate mixing, expel and discard the first several drops from the cannula in cases where very small<lb/> volumes (1 – 2 drops) are applied (2.3)</div>
+
+		</front>
+	</text>
+</tei>

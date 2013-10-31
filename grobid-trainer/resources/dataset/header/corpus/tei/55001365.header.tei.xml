@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001365"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>C-3 Epimers Can Account for a Significant Proportion of<lb/> Total Circulating 25-Hydroxyvitamin D in Infants,<lb/> Complicating Accurate Measurement and Interpretation<lb/> of Vitamin D Status<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Ravinder J. Singh, Robert L. Taylor, G. Satyanarayana Reddy, and Stefan K. G. Grebe<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Departments of Laboratory Medicine and Pathology(R.J.S., R.L.T., S.K.G.G.) and Medicine (S.K.G.G.), Mayo Clinic,</affiliation>
+	</byline>
+	
+	<address><lb/> Rochester, Minnesota 55905; </address>
+
+	<affiliation>and Epimer, LLC (G.S.R.),</affiliation>
+	
+	<address><lb/> Providence, Rhode Island 02906<lb/></address>
+	
+	<div type="abstract">Context: We have recently introduced liquid chromatography-<lb/>tandem mass spectrometry (LC-MS/MS) for 25-hydroxyvitamin D 2<lb/> (25OHD 2 ) and 25OHD 3 testing. During subsequent clinical use, we<lb/> identified significantly elevated results in some infants. We hypoth-<lb/>esized this might represent assay interference caused by C-3 epimers<lb/> of 25OHD 2 or 25OHD 3 .<lb/> Objective: Our aims were to 1) determine the prevalence of C-3<lb/> epimers of 25OHD 2 or 25OHD 3 in human serum, and 2) identify the<lb/> patient populations that might be affected.</div>
+
+		</front>
+	</text>
+</tei>

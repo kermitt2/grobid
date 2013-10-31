@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Franz-Georg</forename>
+								<surname>Hanisch</surname> and
+							</persName>
+							<persName>
+								<forename>Gerhard</forename>
+								<surname>Uhlenbruck</surname>
+							</persName>
+							<persName>
+								<forename>Jasna</forename>
+								<surname>Peter-Katalinic</surname> and
+							</persName>
+							<persName>
+								<forename>Heinz</forename>
+								<surname>Egge</surname>
+							</persName>
+							<persName>
+								<forename>Janusz</forename>
+								<surname>Dabrowski</surname> and
+							</persName>
+							<persName>
+								<forename>Ursula</forename>
+								<surname>Dabrowski</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

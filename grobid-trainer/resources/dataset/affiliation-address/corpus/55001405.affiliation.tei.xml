@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="institution">JRC Institute for Energy</orgName>,
+							<orgName type="institution">Cleaner Energy Unit</orgName>,
+							<address>
+								<settlement>Petten</settlement>,
+								<country>The Netherlands</country>,
+							</address>
+							<orgName type="department">Institute for Nanotechnology</orgName>,
+							<lb/>
+							<address>
+								<postCode>FZ</postCode>
+								<settlement>Karlsruhe</settlement>,
+								<country>Germany</country>,
+							</address>
+							<orgName type="institution">Institute Laue-LangeVin</orgName>,
+							<address>
+								<settlement>Grenoble</settlement>,
+								<country>France</country>,
+							</address>
+							<orgName type="institution">and Institute for Materials Research</orgName>,
+							<lb/>
+							<orgName type="institution">UniVersity of Salford</orgName>,
+							<address>
+								<settlement>Salford</settlement>,
+								<country>U.K.</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

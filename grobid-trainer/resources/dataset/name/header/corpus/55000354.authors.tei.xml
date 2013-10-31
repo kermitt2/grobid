@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Shantidev</forename>
+								<surname>Mohanty</surname>,
+							</persName>
+							
+							<persName>
+								<forename>Xiangying</forename>
+								<surname>Yang</surname>,
+							</persName>
+							
+							<persName>
+								<forename>Muthaiah</forename>
+								<lb/>
+								<surname>Venkatachalam</surname>,
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

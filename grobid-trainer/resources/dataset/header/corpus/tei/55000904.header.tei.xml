@@ -1,0 +1,71 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000904"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>SLIT2 promoter methylation analysis in neuroblastoma, Wilms&apos;<lb/> tumour and renal cell carcinoma<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>D Astuti<lb/> 1,7<lb/> , NF da Silva<lb/> 1,2,7 , A Dallol<lb/> 1<lb/> , D Gentle<lb/> 1,2<lb/>
+	
+	, T Martinsson<lb/> 3<lb/> , P Kogner<lb/> 4<lb/> , R Grundy<lb/> 1,5<lb/>
+	
+	, T Kishida<lb/> 6<lb/> , M Yao<lb/> 6 ,<lb/> F Latif<lb/> 1,2 and ER Maher * ,1,2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1<lb/> Section of Medical and Molecular Genetics, Department of Paediatrics and Child Health, University of Birmingham, The Medical School, Edgbaston,<lb/></affiliation>
+	</byline>
+
+	<address>Birmingham B15 2TT, UK;<lb/></address>
+
+	<byline>
+	<affiliation>2<lb/> Cancer Research UK Renal Molecular Oncology Research Group, University of Birmingham, The Medical School, Edgbaston,<lb/></affiliation>
+	</byline>
+
+	<address>Birmingham B15 2TT, UK;<lb/></address>
+
+	<byline>
+	<affiliation>3<lb/> Department of Clinical Genetics, Gothenburg University, Sahlgrenska University Hospital/Ostra,</affiliation>
+	</byline>
+
+	<address>S-416 85 Gothenburg,<lb/> Sweden;<lb/></address>
+
+	<byline>
+	<affiliation>4 Childhood Cancer Research Unit, Department of Women and Child Health, Karolinska Institute,</affiliation>
+	</byline>
+
+	<address>Karolinska Hospital, S-171 76 Stockholm,<lb/> Sweden;<lb/></address>
+
+	<byline>
+	<affiliation>5 Department of Paediatric Oncology,</affiliation>
+	</byline>
+
+	<address>Birmingham Children&apos;s Hospital, UK;<lb/></address>
+
+	<byline>
+	<affiliation>6 Yokohama City University School of Medicine,</affiliation>
+	</byline>
+
+	<address>Yokohama, Japan<lb/></address>
+
+	<div type="abstract">The 3p21.3 RASSF1A tumour suppressor gene (TSG) provides a paradigm for TSGs inactivated by promoter methylation rather than<lb/> somatic mutations. Recently, we identified frequent promoter methylation without somatic mutations of SLIT2 in lung and breast<lb/> cancers, suggesting similarities between SLIT2 and RASSF1A TSGs. Epigenetic inactivation of RASSF1A was first described in lung and<lb/> breast cancers and subsequently in a wide range of human cancers including neuroblastoma, Wilms&apos; tumour and renal cell carcinoma<lb/> (RCC). These findings prompted us to investigate SLIT2 methylation in these three human cancers. We analysed 49 neuroblastomas<lb/> (NBs), 37 Wilms&apos; tumours and 48 RCC, and detected SLIT2 promoter methylation in 29% of NB, 38% of Wilms&apos; tumours and 25% of<lb/> RCC. Previously, we had demonstrated frequent RASSF1A methylation in the same tumour series and frequent CASP8 methylation in<lb/> the NB and Wilms&apos; tumour samples. However, there was no significant association between SLIT2 promoter methylation and<lb/> RASSF1A or CASP8 methylation in NB and RCC. In Wilms&apos; tumour, there was a trend for a negative association between RASSF1A and<lb/> SLIT2 methylation, although this did not reach statistical significance. No associations were detected between SLIT2 promoter<lb/> methylation and specific clinicopathological features in the tumours analysed. These findings implicate SLIT2 promoter methylation in<lb/> the pathogenesis of both paediatric and adult cancers and suggest that further investigations of SLIT2 in other tumour types should be<lb/> pursued. However, epigenetic inactivation of SLIT2 is less frequent than RASSF1A in the tumour types analysed.<lb/></div>
+
+	<reference>British Journal of Cancer (2004) 90, 515 – 521.</reference>
+
+	<idno type ="DOI">doi:10.1038/sj.bjc.6601447</idno>
+
+	<ptr>www.bjcancer.com<lb/></ptr>
+
+	<note type="other">&#169; 2004 Cancer Research UK<lb/></note>
+
+	<keyword>Keywords: neuroblastoma; Wilms&apos; tumour; renal cell carcinoma; epigenetics; SLIT2</keyword>
+
+		</front>
+	</text>
+</tei>

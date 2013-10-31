@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001504"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Laboratory diagnosis of the antiphospholipid syndrome: a<lb/> plethora of obstacles to overcome<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Katrien Devreese<lb/> 1 , Marc F. Hoylaerts<lb/> 2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Coagulation Laboratory, Department of Clinical Chemistry, Microbiology and Immunology, Ghent University Hospital,</affiliation>
+	</byline>
+
+	<address>Ghent;<lb/></address>
+
+	<byline>
+	<affiliation>2 Center for<lb/> Molecular and Vascular Biology, University of Leuven,</affiliation>
+	</byline>
+
+	<address>Leuven, Belgium<lb/></address>
+
+	<div type="introduction">The antiphospholipid syndrome (APS) is an autoimmune<lb/> disease characterised by recurrent vascular thrombosis<lb/> and ⁄ or pregnancy morbidity, associated with the pres-<lb/>ence in plasma of antiphospholipid antibodies (aPL).<lb/> APS requires the combination of at least one clinical and<lb/> one laboratory criterion (1).<lb/> Initially believed to be directed against phospholipids,<lb/> aPL are directed to plasma proteins with affinity for<lb/> anionic phospholipids. Antibodies against only two<lb/> plasma proteins, b2-glycoprotein I (b 2 GPI) and pro-<lb/>thrombin are found frequently enough in APS patient<lb/> plasma to attribute them a pathophysiological role,<lb/> today (2–4). Yet, correct diagnosis of this syndrome is<lb/> complicated by ongoing dilemmas on clinical features as<lb/> well as on laboratory methodologies applied (5–7).<lb/> As the incidence of clinical symptoms is high and<lb/> because these are often determined by underlying factors,<lb/> the diagnosis of APS relies predominantly on laboratory<lb/> results. The detection of aPL in the blood of patients<lb/> with a history of thrombosis or pregnancy complications<lb/> is an essential step, not only in the diagnosis but also in<lb/> the management of the APS (8). The laboratory diagno-<lb/>sis assigns patients with a common event (thrombosis) to<lb/> a group with a high risk for recurrence, which is a prere-<lb/>quisite for long-term oral anticoagulant therapy. Patients<lb/> with thrombosis and aPL may be given indefinite oral<lb/> anticoagulant treatment (9). Falsely diagnosed patients<lb/> may thus be exposed to a high risk of bleeding, without<lb/> having any benefit of such treatment.<lb/> An adequate laboratory detection of APS is therefore<lb/> clinically relevant. It is based on phospholipid-dependent<lb/> coagulation tests, which detect aPL as inhibitors of coag-<lb/>ulation, i.e. as lupus anticoagulants (LAC), and ⁄ or relies<lb/> on demonstration of the presence of anti-cardiolipin<lb/> (aCL) antibodies via an immunosorbent method (10, 11).<lb/> Most commonly used is the anticardiolipin enzyme-<lb/>linked immunosorbent assay (ELISA), which detects<lb/> antibodies reactive with b 2 GPI bound to immobilised<lb/> Abstract</div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="institution">North Carolina State University</orgName>,
+							<address>
+								<settlement>Raleigh</settlement>,
+								<region>NC</region>
+								<postCode>27695</postCode>
+								<lb/>
+							</address>
+						</affiliation>
+
+						<affiliation>
+							<orgName type="institution">NC State University Virtual Computing Laboratory (VCL</orgName>,
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

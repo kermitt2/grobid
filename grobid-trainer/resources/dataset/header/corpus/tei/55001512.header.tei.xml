@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001512"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+
+	<ptr type="web">Published on Gearwire (http://www.gearwire.com)<lb/></ptr>
+
+	<docTitle>
+	<titlePart>Moog Ethervox MIDI Theremin<lb/></titlePart>
+	</docTitle>
+
+	<docAuthor> By jwallace<lb/> </docAuthor>
+
+	<date>Created 2007-09-11 17:29</date>
+	
+	<div type="introduction"><lb/> Moog called its Ethervox the &quot;world&apos;s first MIDI theremin&quot;. It is a fairly impressive instrument;<lb/> handcrafted mahogany cabinet, state-of-the-art circuitry, and that classic Moog theremin sound<lb/> together with MIDI control. Ethervox MIDI information is playable through the Ethervox itself or any<lb/> MIDI sound generator that can handle wide-range pitch bending.<lb/> Features of the Moog Ethervox include three pitch ranges. Tenor (two octaves above middle C,) Alto (3<lb/> octaves), and Soprano (4 octaves). The Ethervox can produce any pitch from subaudio frequencies to<lb/> the highest note of the selected range. The Etherwave&apos;s MIDI circuitry generates continuous pitch and<lb/> volume information, with pitch data transmitted as a stream pitch bend messages. The unit has<lb/> waveform, brightness, and filter controls and digital memory for storing customized presets.<lb/> Sadly, the Ethervox didn&apos;t have much time in the spotlight, and according to some reports there are<lb/> fewer than fifty Moog Ethervox owners. The Moog Ethervox is discontinued, but Moog continues to<lb/> offer support for the instrument at MoogMusic.com. You can find diagrams, a manual, and tech specs.<lb/> Here&apos;s a look at the Ethervox in action, courtesy of YouTube.com:</div>
+
+		</front>
+	</text>
+</tei>

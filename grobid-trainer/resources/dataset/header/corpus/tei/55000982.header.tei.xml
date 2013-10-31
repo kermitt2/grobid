@@ -1,0 +1,58 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000982"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	
+	<note>MINISTRY OF AVIATION<lb/></note>
+	
+	<idno>R. &amp; M. No. 3440<lb/></idno>
+
+	<note>AERONAUTICAL RESEARCH COUNCIL<lb/> REPORTS AND MEMORANDA<lb/></note>
+
+	<docTitle>
+	<titlePart>Design of a Supersonic<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>By A. MCCABE, Ph.D.<lb/></docAuthor>
+	</byline>
+
+	<docTitle>
+	<titlePart>Nozzle<lb/></titlePart>
+	</docTitle>
+
+	<note>= -4<lb/></note>
+
+	<note type="other">cu<lb/> ~&quot; L, &apos;7¢<lb/></note>
+	
+	<note>LONDON: HER MAJESTY&apos;S STATIONERY OFFICE<lb/> 1967 VRICE 15s. 6d. NET<lb/></note>
+
+	<docTitle>
+	<titlePart>Design of a Supersonic Nozzle<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>By A. MCCABE, Ph.D.<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>The Mechanics of Fluids Department, University of Manchester<lb/></affiliation>
+	</byline>
+
+	<byline>
+	<docAuthor>COMMUNICATED BY PROF. N. H. JOHANNESEN<lb/></docAuthor>
+	</byline>
+
+	<note>Reports and Memoranda No. 3440*<lb/> </note>
+	
+	<date>March, 1964<lb/></date>
+	
+<div type="abstract"> Summary.--This paper presents a method of design of a supersonic nozzle which incorporates recent<lb/> developments in compressible flow theory. Continuous curvature of the contour is ensured by defining<lb/> a continuous gradient of Prandtl-Meyer angle along the nozzle axis. The flow in the throat was calculated<lb/> from results given by Hall (1962). A matching technique was used to determine a triplet of values for the<lb/> throat radius of curvature, the flow deflection at the inflection point and the Prandtl-Meyer angle at the<lb/> point on the nozzle axis where the left-running characteristic through the inflection point intersects the<lb/> nozzle axis.<lb/> The majority of the new work is to be found in the Appendices. Appendix B presents a method of deter-<lb/>mining the co-ordinates along a particular characteristic by inverting the results given by Hall 1 (1962).<lb/> Appendix C reviews the accuracy of the method of characteristics and, Appendix D suggests a method by<lb/> which it may be possible to increase the accuracy Without resorting to calculations made at very small<lb/> step sizes.<lb/> CONTENTS</div>
+
+		</front>
+	</text>
+</tei>

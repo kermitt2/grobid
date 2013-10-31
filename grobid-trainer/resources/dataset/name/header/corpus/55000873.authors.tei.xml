@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Mladen</forename>
+								<surname>Vouk</surname>,
+							</persName>
+							<persName>
+								<forename>Andy</forename>
+								<surname>Rindos</surname>
+								<marker>*</marker>,
+							</persName>
+							<persName>
+								<forename>Sam</forename>
+								<surname>Averitt</surname>,
+							</persName>
+							<persName>
+								<forename>John</forename>
+								<surname>Bass</surname>,
+							</persName>
+							<persName>
+								<forename>Michael</forename>
+								<surname>Bugaev</surname>,
+							</persName>
+							<persName>
+								<forename>Aaron</forename>
+								<surname>Peeler</surname>,
+							</persName>
+							<persName>
+								<forename>Henry</forename>
+								<surname>Schaffer</surname>,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Eric</forename>
+								<surname>Sills</surname> ,
+							</persName>
+							<persName>
+								<forename>Sarah</forename>
+								<surname>Stein</surname> ,
+							</persName>
+							<persName>
+								<forename>Josh</forename>
+								<surname>Thompson</surname> ,
+							</persName>
+							<persName>
+								<forename>Matthew</forename>
+								<middlename>P</middlename> .
+								<surname>Valenzisi</surname>
+								<marker>**</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

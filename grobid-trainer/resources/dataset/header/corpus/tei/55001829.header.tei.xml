@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001829"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Linux Bootup Time Reduction for Digital Still Camera<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Chanju Park<lb/></docAuthor>
+	</byline>
+	
+	<byline>
+	<affiliation> Samsung Electronics, Co.<lb/></affiliation>
+	</byline>
+
+	<email>bestworld@samsung.com<lb/></email>
+
+	<byline>
+	<docAuthor>Kyuhyung Kim<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Samsung Electronics, Co.<lb/></affiliation>
+	</byline>
+
+	<email>kyuhyung.kim@samsung.com<lb/></email>
+
+	<byline>
+	<docAuthor>Youngjun Jang<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Samsung Electronics, Co.<lb/></affiliation>
+	</byline>
+
+	<email>yj03.jang@samsung.com<lb/></email>
+
+	<byline>
+	<docAuthor>Kyungju Hyun<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Samsung Electronics, Co.<lb/></affiliation>
+	</byline>
+
+	<email>kyungju.hyun@samsung.com<lb/></email>
+
+	<div type="abstract">Abstract<lb/> Bootup time is a very important issue in the<lb/> DSC System because customers want to cap-<lb/>ture immediately specific image. In this paper,<lb/> we present the experience of the implementa-<lb/>tion methods and the performance evaluation<lb/> results for reduction of bootup time which was<lb/> used in SAMSUNG DSC platform. At first<lb/> we introduce the DSC platform and develop-<lb/>ment environments and next we explain the op-<lb/>timization method for the bootloader and the<lb/> kernel bootup time. We also describe root file<lb/> system, device driver module configuration and<lb/> DSC applications initialization for bootup time.<lb/> There are various techniques for linux bootup<lb/> time reduction and we explain the most impor-<lb/>tant differences.<lb/></div>
+
+		</front>
+	</text>
+</tei>

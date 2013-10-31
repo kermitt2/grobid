@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55002027"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Data Sheet -Preliminary<lb/></note>
+
+	<docTitle>
+	<titlePart>DiskOnChip<lb/>®<lb/> 2000 TSOP 16MB<lb/> MD2211-D16-V3<lb/> </titlePart>
+	</docTitle>
+
+	<date>MARCH-2001<lb/> </date>
+	
+	<idno>91-SR-002-32-8L REV. 0.1<lb/> MD2211-D16-V3 Data Sheet<lb/> 91-SR-002-32-8L Rev. 0.1<lb/></idno>
+
+	<div type="introduction">PRELIMINARY 2<lb/>Features Single-chip, easy-to-integrate, low cost<lb/> flash disk<lb/> Simple, easy-to-integrate interface<lb/> Low power, single 3.3V power supply<lb/> 16MByte (128 Mbit) capacity<lb/> State of the art 0.22 flash technology<lb/> Small form factor − standard 48-pin<lb/> TSOP-I package<lb/> Pinout compatible with future TSOP-I<lb/> DiskOnChip products<lb/> High reliability: EDC/ECC on the fly<lb/> Full boot capability with auto-loading<lb/> boot-block – can be the only non-<lb/>volatile device in the system!<lb/> (e.g. replace the BIOS chip)<lb/> Static operation — no clock required<lb/> Supports 3.3V Host I/F<lb/> (I/F is 5V tolerant)<lb/> Memory window size: 8KB<lb/> Embedded TrueFFS<lb/> ® software<lb/> provides:<lb/> — Full hard disk read/write emulation<lb/> — Third-generation wear leveling<lb/> — Automatic block management<lb/> Operates with DiskOnChip-OSAK in<lb/> O/S-less environments, ANSI-C source<lb/> code kit<lb/> Broad O/S support: DOS, Windows 3.X,<lb/> Windows 95, Windows NT4.0/5.
+
+	0,<lb/> Windows CE; Additional support<lb/> offered: pSOS+, QNX, VxWorks, BE<lb/> and others<lb/> Compatible with major processors: x86,<lb/> MediaGX, PowerPC, 68K, MIPS, SHx,<lb/> StrongARM, and others.<lb/> March 2001</div>
+
+		</front>
+	</text>
+</tei>

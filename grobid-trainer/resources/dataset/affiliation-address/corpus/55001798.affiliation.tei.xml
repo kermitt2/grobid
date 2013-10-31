@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="department">Microsystems, Components and Packaging Division</orgName>,
+							<orgName type="institution">IMEC vzw</orgName>,
+							<address>
+								<addrLine>Kapeldreef 75</addrLine>,
+								<postCode>3001</postCode>
+								<settlement>Leuven</settlement>,
+								<country>Belgium</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="institution">Umicore Electro-Optic Materials</orgName>,
+							<address>
+								<addrLine>Watertorenstraat 33</addrLine>,
+								<postCode>2250</postCode>
+								<settlement>Olen</settlement>,
+								<country>Belgium</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

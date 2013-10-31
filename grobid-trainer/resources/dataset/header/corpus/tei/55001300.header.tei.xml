@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001300"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">[Application Note]<lb/></note>
+
+	<div type="abstract">INT RODUC T ION<lb/>Several recent studies have shown that vitamin D deficiency<lb/> is common in adults and children in many parts of the world.<lb/> In addition to the well known effects of vitamin D deficiency such<lb/> as calcium malabsorption associated with rickets, osteoporosis<lb/> and osteomalacia, there is now growing evidence that vitamin<lb/> D deficiency may increase the risk of certain cancers and play<lb/> a role in many other diseases.<lb/> 1,2<lb/> Vitamin D exists in two forms;<lb/> vitamin D 3 (D3) which is produced in the skin on exposure to<lb/> sunlight and vitamin D 2 (D2) which is the plant derivative and is<lb/> found in many supplementation products. Vitamin D is metabo-<lb/>lised in the liver to form 25-hydroxyvitamin D, [25(OH)D] which<lb/> is further metabolised in the kidney to form the active metabolite<lb/> 1,25-dihydroxyvitamin D. The measurement of 25(OH)D is<lb/> accepted as the clinical indicator of vitamin D status.<lb/> 3<lb/> The assessment of vitamin D status is important in the diag-<lb/>nosis of vitamin D deficiency and monitoring supplementation<lb/> therapy. More recently, LC/MS/MS has gained popularity<lb/> over other methods such as the competitive binding assay,<lb/> immunoassay and HPLC to quantify 25(OH)D2 and 25(OH)D3<lb/> in an attempt to improve the quality of the assay and reduce<lb/> costs. The major issue with immunoassays is that they cannot<lb/> differentiate between 25(OH)D2 &amp; 25(OH)D3 and instead, rely<lb/> on the cross-reactivity of the antibody with 25(OH)D2 to measure<lb/> total 25(OH)D concentration. If that cross-reactivity is less than<lb/> 100% then D2 therapy may not be monitored effectively.<lb/> 4<lb/> Figure 1: System configuration of Waters ACQUITY UPLC / TQD<lb/></div>
+
+	<docTitle>
+	<titlePart>T H E A NA LYSIS O F 25 -H Y D ROX Y V ITAM IN D IN S E RUM USING U P L C / MS / MS<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Lisa J Calton, Scott D Gillingwater, Gareth W Hammond, Donald P Cooper<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Clinical Business Operations Group, Waters Corporation,</affiliation>
+	</byline>
+
+	<address>Atlas, Park, Manchester, UK<lb/></address>
+
+	<div type="introduction">E X P E RIM ENTAL<lb/>A Waters<lb/> ®<lb/> ACQUITY<lb/> ®<lb/> Tandem Quadrupole Detector (TQD) coupled to<lb/> an ACQUITY UPLC<lb/> ®<lb/> (Waters Corporation, Manchester, UK) was used<lb/> for all analyses. T he full system configuration is shown in Figure 1.<lb/> T he instrument was operated in positive electrospray ionisation mode<lb/> using MassLynx™ 4.1 software with auto data processing by the<lb/> QuanLynx™ Application Manager.<lb/> T he compound-dependent cone voltage was optimized to maximise<lb/> the abundance of the precursor ion entering the source and<lb/> selected to pass through the first quadrupole to the collision cell.<lb/> Collision-induced dissociation was facilitated by argon and collision<lb/> energy to produce characteristic product ions. Using this information<lb/> a specific Multiple Reaction Monitoring (MRM) experiment was<lb/> created as shown in Table 1.<lb/>
+
+	LC Conditions<lb/> LC System:<lb/> Waters ACQUIT Y UPLC System<lb/> Column:<lb/> ACQUIT Y UPLC BEH C8 Column<lb/> 2.1 x 50 mm, 1.7 μm<lb/> Column Temp:<lb/> 4C<lb/> Flow Rate:<lb/> 400 μL/min.<lb/> Mobile Phase A: 2mM ammonium acetate + 0.1%<lb/> formic acid in water<lb/> Mobile Phase B: 2mM ammonium acetate + 0.1%<lb/> formic acid in methanol<lb/> Gradient:<lb/> Hold 2min 73%B, 73-98%B in 1.5min<lb/>
+
+	MS Conditions<lb/>
+
+	MS System:<lb/> Waters ACQUITY TQD<lb/> Ionization Mode: ESI Positive<lb/> Capillary Voltage: 2.5 kV<lb/> Cone Voltage:<lb/> 24 V<lb/> Desolvation Temp: 40C<lb/> Desolvation Gas: 900 L/Hr<lb/> Source Temp:<lb/> 12C<lb/> Collision Gas Flow: 7.10x10<lb/> -3<lb/> mbar</div>
+
+		</front>
+	</text>
+</tei>

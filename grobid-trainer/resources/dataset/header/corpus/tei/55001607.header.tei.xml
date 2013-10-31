@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001607"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Codon optimization for high-level expression of HIV-1 subtype-C envelope<lb/> glycoprotein in vitro.<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Huang Y, Chen Z, Ip JE, Zhao X, Ho DD;</docAuthor>
+	</byline>
+
+	<reference> Conference on Retroviruses and<lb/> Opportunistic Infections.<lb/> 7th Conf Retrovir Oppor Infect Jan 30 Feb 2 2000 Conf Retrovir Oppor Infect 7th<lb/> 2000 San Franc Calif. 2000 Jan 30-Feb 2; 7: 225 (abstract 803).<lb/></reference>
+	
+	<note type="copyright"> Aaron Diamond AIDS Res. Ctr., The Rockefeller Univ., New York.<lb/></note>
+
+	<div type="introduction">Codon bias has been observed in many species. The preferential use of codons for a<lb/> given gene is positively correlated with its expression efficiency. In an attempt to<lb/> study the effects of codon usage in the context of DNA vaccination against HIV-1, we<lb/> have generated a synthetic HIV-1 subtype-C (CHN19) envelope gene in which the<lb/> codons of every single amino acid were optimized for high expression in human cells.<lb/> We then cloned our optimized gene into the pcDNA1.1 expression vector. In transient<lb/> expression assays, we showed that codon optimization significantly increases the<lb/> level of HIV-1 envelope expression (approximately 100 fold) as compared to that of<lb/> the wild-type sequence in vitro. Moreover, the enhanced expression of envelope<lb/> proteins also leads to an increase in the titer of retroviral pseudotypes (approximately<lb/> 10 fold). Furthermore, a chimeric SHIV-C bearing this codon-optimized HIV-1 gp120<lb/> is replication-competent with faster growth kinetics. These in vitro observations<lb/> suggest that optimization of HIV-1 envelope not only enhanced the envelope<lb/> expression, but also improved the functional characteristics of HIV-1 envelope<lb/> glycoprotein in vitro. The in vivo impact of this codon-optimized DNA vaccine will<lb/> be examined in rhesus macaques.</div>
+
+		</front>
+	</text>
+</tei>

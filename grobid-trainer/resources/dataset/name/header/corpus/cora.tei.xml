@@ -1987,7 +1987,7 @@ and
 	<forename>Richard</forename>
 	<middlename>M</middlename>.
 	<surname>Karp</surname>
-	<title>(Chair)</title>
+	(<roleName>Chair</roleName>)
 	<lb/>
 </persName>
 <persName>  
@@ -2671,7 +2671,7 @@ and
 	<forename>Alfred</forename>
 	<middlename>O</middlename>.
 	<surname>Hero</surname>
-	<title>III</title>
+	<suffix>III</suffix>
 </persName>
 <persName>
 , 
@@ -3191,7 +3191,7 @@ and
 	<forename>Kenneth</forename>
 	<middlename>E</middlename>.
 	<surname>Kinnear</surname>,
-	<suffix>Jr.</suffix>.
+	<suffix>Jr</suffix>.
 	<lb/>
 	</persName>
 </author>
@@ -4947,13 +4947,13 @@ and
 	<forename>Dhabaleswar</forename>
 	<middlename>K</middlename>.
 	<surname>Panda</surname>
-	<title>Member, IEEE</title>
+	<roleName>Member, IEEE</roleName>
 </persName>
 <persName>
 ,  and 
 	<forename>Ten-Hwang</forename>
 	<surname>Lai</surname>
-	<title>Member, IEEE</title>
+	<roleName>Member, IEEE</roleName>
 	<lb/>
 </persName>
 

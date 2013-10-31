@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001097"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Sabre Travel Network Enhances Offering for Fully<lb/> Automated Fare By Rule Capability to Air Pricing<lb/> Suite; Global Solution for Category 25 Provides<lb/> Airlines and Travel Agencies the Ability to<lb/> Automatically Accept and Process Discounted Fares.<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Geographic Code: 1USA<lb/> </note>
+	
+	<date>Date:<lb/> Apr 6, 2004<lb/></date>
+	 
+	<note type="other">Words:<lb/> 419 Publication:<lb/> PR Newswire<lb/></note>
+
+	<div type="introduction">SOUTHLAKE, Texas, April 6 /PRNewswire/ --Sabre Travel Network, the Sabre<lb/> Holdings business that connects travel suppliers and agents through the world&apos;s leading global<lb/> distribution system (GDS), announced today the global release of a newly enhanced automated<lb/> solution that further simplifies complicated negotiated fare contracts.<lb/> With the automated solution, airlines file published fares and rules via Airline Tariff Publishing<lb/> Company (ATPCo) using the Category 25 Fare by Rule process to attach corporate discount<lb/> formulas and client-specific fare rules to the fares they file. The Sabre GDS then accepts the<lb/> ATPCo Fare by Rule feeds, automatically calculating the appropriate fare.<lb/> &quot;We are committed to providing quality fare information, enhancing efficiency for agents and<lb/> guaranteeing fares that are auto-priced and auto-ticketed in the Sabre GDS,&quot; said John Stow,<lb/> president of Sabre Travel Network. &quot;This development allows more accurate and quicker filings,<lb/> decreasing the agent workload and the presence of human error.&quot;<lb/> The process virtually eliminates discrepancies caused by manual input of the rules because<lb/> there is no interpretation, just automation. The development also minimizes travel agency debit<lb/> memos, gives agents access to the most current negotiated fares, and provides integration with<lb/> all Sabre Travel Network productivity tools, such as Bargain Finder Plus and Flight Finder.</div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>D</forename>.
+								<surname>Cecilia</surname>,
+							</persName>
+							<persName>
+								<forename>C</forename>.
+								<surname>Kleeberger</surname>,
+							</persName>
+							<persName>
+								<forename>A</forename>.
+								<surname>Muñ oz</surname>,
+							</persName>
+							<persName>
+								<forename>Janis</forename>
+								<middlename>V</middlename>.
+								<surname>Giorgi</surname>,<lb/> and
+							</persName>
+							<persName>
+								<forename>Susan</forename>
+								<surname>Zolla -Pazner</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

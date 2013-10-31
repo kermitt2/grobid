@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">Dipartimento di Chimica Organica &quot;E. Paternò&quot;</orgName>,
+							<orgName type="institution">Università degli Studi di Palermo</orgName>,
+							<address>
+								<addrLine>Parco d&apos;Orleans II</addrLine>,
+								<postCode>I-90128</postCode>
+								<settlement>Palermo</settlement>,
+								<country>Italy</country> 
+								and
+							</address>
+							<orgName type="department">Departamento de<lb/> Química Orgánica</orgName>,
+							<orgName type="department">Facultad de Ciencias Químicas</orgName>,
+							<orgName type="institution">Universidad Complutense</orgName>,
+							<address>
+								<postCode>E-28040</postCode>
+								<settlement>Madrid</settlement>,
+								<country>Spain</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

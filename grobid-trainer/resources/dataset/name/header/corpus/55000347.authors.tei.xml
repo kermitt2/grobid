@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>B</forename>.
+								<surname>Huard</surname>,
+							</persName>
+							<persName>
+								<forename>J</forename>.
+								<middlename>A</middlename>.
+								<surname>Sulpizio</surname>,
+							</persName>
+							<persName>
+								<forename>N</forename>.
+								<surname>Stander</surname>,
+							</persName>
+							<persName>
+								<forename>K</forename>.
+								<surname>Todd</surname>,
+							</persName>
+							<persName>
+								<forename>B</forename>.
+								<surname>Yang</surname>, and
+							</persName>
+							<persName>
+								<forename>D</forename>.
+								<surname>Goldhaber-Gordon</surname>
+								<marker>*</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

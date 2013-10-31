@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">Department of Material Chemistry</orgName>,
+							<orgName type="department">Graduate School of Engineering</orgName>,
+							<orgName type="institution">Kyoto University</orgName>,
+							<address>
+								<addrLine>Nishikyo-ku</addrLine>,
+								<settlement>Kyoto</settlement>
+								<postCode>615-8510</postCode>,
+								<country>Japan</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="department">Optoelectronics Research Centre</orgName>,
+							<orgName type="institution">University of Southampton</orgName>,
+							<address>
+								<postCode>SO17 1BJ</postCode>,
+								<country>United Kingdom</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="department">Photon Craft Project</orgName>,
+							<orgName type="department">Shanghai Institute of Optics and Fine Mechanics</orgName>,
+							<lb/>
+							<orgName type="institution">Chinese Academy of Sciences and Japan Science and Technology Agency</orgName>,
+							<address>
+								<addrLine>Keihanna-Plaza</addrLine>,
+								<settlement>Kyoto</settlement>
+								<postCode>619-0237</postCode>,
+								<country>Japan</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

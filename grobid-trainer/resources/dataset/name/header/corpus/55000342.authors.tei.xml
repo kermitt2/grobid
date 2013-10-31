@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Hyung</forename>
+								<middlename>Ju</middlename>
+								<surname>Kim</surname>,
+							</persName>
+							<persName>
+								<forename>Sung</forename>
+								<middlename>Mook</middlename>
+								<surname>Choi</surname>,
+							</persName>
+							<persName>
+								<forename>Min</forename>
+								<middlename>Ho</middlename>
+								<surname>Seo</surname>,
+							</persName>
+							<persName>
+								<forename>Sara</forename>
+								<surname>Green</surname>,
+							</persName>
+							<persName>
+								<forename>George</forename>
+								<middlename>W</middlename>.
+							<lb/>
+								<surname>Huber</surname>,
+							</persName>
+							<persName>
+								<forename>Won</forename>
+								<surname>Bae</surname>
+							</persName>
+							<persName>
+								<forename>Kim</forename>
+								<middlename>Mook</middlename>
+								<surname>Choi</surname> ,
+							</persName>
+							<persName>
+								<forename>Min</forename>
+								<middlename>Ho</middlename>
+								<surname>Seo</surname> ,
+							</persName>
+							<persName>
+								<forename>Sara</forename>
+								<surname>Green</surname> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>George</forename>
+								<middlename>W</middlename>.
+								<surname>Huber</surname>,
+							</persName>
+							<persName>
+								<forename>Won</forename>
+								<middlename>Bae</middlename>
+								<surname>Kim</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

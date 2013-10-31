@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000304"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<ptr>pcworld.com<lb/></ptr>
+
+	<docTitle>
+		<titlePart>3 Social Media Aggregators That Bring It All<lb/> Together<lb/></titlePart>
+	</docTitle>
+
+	<date>A UG. 3, 20 09<lb/></date>
+
+	<div type="introduction">Thanks to Facebook, Flickr, Twitter, and a host of other social media services, people are more connected<lb/> than ever. But keeping up with all the tweets, posts, and status updates isn&apos;t easy, because they often<lb/> come from a variety of social media sites. So how do you connect the different services that keep you<lb/> connected? How do you steer all of that stuff to one spot on the Web where it&apos;s a snap to manage?<lb/> New tools called social media aggregators have risen to address that challenge. Their goal: to provide you<lb/> with one simple point of entry where you can keep track of the streams from any and all of the most<lb/> popular social networking sites. A bunch of social media aggregators (or &quot;life-streaming&quot; tools, as they&apos;re<lb/> sometimes called) have shown up in recent years, but some social media services don&apos;t always do the job<lb/> you need them to do. Here&apos;s a look at the three that, in our estimation, fulfill the promise of social media<lb/> aggregation most completely: Streamy, Flock, and FriendFeed.<lb/> Streamy<lb/> Streamy is a Web site designed to collect not just all of your favorite social media sites but also blogs and<lb/> instant messaging tools, putting them into one self-contained dashboard.<lb/> The first time you log in to Streamy, you won&apos;t see much of consequence--that&apos;s because you need to link<lb/> your services with Streamy first. Click on the Setup link on the top left, and you&apos;ll see nine different<lb/> services to choose from, ranging from Facebook and Twitter to Digg, Flickr, and even FriendFeed.<lb/> The Streamy Status Update tool can post updates to Facebook,<lb/> Twitter, or any other social service you add--or even to all of<lb/> them in one fell swoop.<lb/> Unlike Flock and FriendFeed, Streamy doesn&apos;t pull all of your<lb/> separate social sites into a single, aggregated river of social<lb/> updates. Instead it keeps each service in a separate &quot;tab,&quot;<lb/> which you can access by clicking on the icon for each service.<lb/> The nice thing about this arrangement is that Streamy allows<lb/> you to customize each service with advanced layouts and<lb/> widgets to keep up with custom searches (in Flickr or Twitter,<lb/> for example) or tagged photos or events (in Facebook).<lb/> As such, Streamy doesn&apos;t merely act as a dashboard for all of your social media sites; it also allows you to<lb/> create a custom dashboard for every site, offering a heads-up view of what&apos;s going on at each individual<lb/> site based on what&apos;s important to you.<lb/> Finally, Streamy makes it easy to post a status update to all of your sites in one fell swoop: You simply<lb/></div>
+	
+		</front>
+	</text>
+</tei>

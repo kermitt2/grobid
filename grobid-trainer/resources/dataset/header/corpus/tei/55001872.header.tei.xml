@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001872"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Ultrafast Ultraviolet Photodissociation at 193 nm and its<lb/> Applicability to Proteomic Workflows<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>James A. Madsen,<lb/> Daniel R. Boutz,<lb/> and Jennifer S. Brodbelt*<lb/> ,<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Chemistry and Biochemistry, The University of Texas at Austin, 1 University Station A5300,<lb/></affiliation>
+	</byline>
+
+	<address>Austin, Texas 78712, </address>
+
+	<byline>
+	<affiliation>and Center for Systems and Synthetic Biology, Institute for Cellular and Molecular<lb/> Biology, The University of Texas at Austin,</affiliation>
+	</byline>
+
+	<address>Austin, Texas 78712<lb/></address>
+
+	<note type="submission">Received May 21, 2010<lb/></note>
+
+	<div type="abstract">Ultraviolet photodissociation (UVPD) at 193 nm was implemented on a linear ion trap mass spectrometer<lb/> for high-throughput proteomic workflows. Upon irradiation by a single 5 ns laser pulse, efficient<lb/> photodissociation of tryptic peptides was achieved with production of a, b, c, x, y, and z sequence<lb/> ions, in addition to immonium ions and v and w side-chain loss ions. The factors that influence the<lb/> UVPD mass spectra and subsequent in silico database searching via SEQUEST were evaluated. Peptide<lb/> sequence aromaticity and the precursor charge state were found to influence photodissociation<lb/> efficiency more so than the number of amide chromophores, and the ion trap q-value and number of<lb/> laser pulses significantly affected the number and abundances of diagnostic product ions (e.g., sequence<lb/> and immonium ions). Also, photoionization background subtraction was shown to dramatically improve<lb/> SEQUEST results, especially when peptide signals were low. A liquid chromatography-mass<lb/> spectrometry (LC-MS)/UVPD strategy was implemented and yielded comparable or better results<lb/> relative to LC-MS/collision induced dissociation (CID) for analysis of proteolyzed bovine serum albumin<lb/> and lysed human HT-1080 cytosolic fibrosarcoma cells.<lb/></div>
+
+	<keyword>Keywords: ultraviolet photodissociation @BULLET proteomics @BULLET tryptic peptides @BULLET high-throughput<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

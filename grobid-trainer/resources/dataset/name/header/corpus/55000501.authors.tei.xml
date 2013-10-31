@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Keita</forename>
+								<surname>Kuraishi</surname>,
+								<lb/>
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>Hiroo</forename>
+								<surname>Iwata</surname> ,
+								<lb/>
+								<marker>2</marker>
+							</persName>
+							<persName>
+								<forename>Shigeyuki</forename>
+								<surname>Nakano</surname> ,
+								<lb/>
+								<marker>3</marker>
+							</persName>
+							<persName>
+								<forename>Shinichiro</forename>
+								<surname>Kubota</surname>,
+								<lb/>
+								<marker>4</marker>
+							</persName>
+							<persName>
+								<forename>Hiroyuki</forename>
+								<surname>Tonami</surname> ,
+								<marker>2</marker>
+							</persName>
+							<persName>
+								<forename>Mitsuaki</forename>
+								<surname>Toda</surname>,
+								<lb/>
+								<marker>2</marker>
+							</persName>
+							<persName>
+								<forename>Naoki</forename>
+								<surname>Toma</surname>,
+								<lb/>
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>Satoshi</forename>
+								<surname>Matsushima</surname> ,
+								<lb/>
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>Kazuhide</forename>
+								<surname>Hamada</surname> ,
+								<lb/>
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>Satoru</forename>
+								<surname>Ogawa</surname>,
+								<lb/>
+								<marker>5</marker>
+							</persName>
+							<persName>
+								<forename>Waro</forename>
+								<surname>Taki</surname>
+								<marker>1</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

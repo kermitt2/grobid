@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001373"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Pressure Transducers<lb/> 9000 Series -Pressure Scanning System &amp;<lb/> Data Acquisition<lb/> </titlePart>
+	</docTitle>
+
+	<div type="introduction">Features:<lb/> Compact Size<lb/> Networkable Comm.<lb/> Intelligent Scanning<lb/> Precision Measurements<lb/> Eng&apos;g Unit Conversion<lb/> Modular Configurations<lb/> Rackmount Mainframes<lb/>9010 9030<lb/>The 9000 Series components are an alternative to large centralized data acquisition systems. All<lb/> have 32-bit processing and control, output in engineering units and can be networked via<lb/> RS-485/RS-422 or Ethernet TCP/IP. They use standard protocols compatible with LabView™,<lb/> LabWindows™, AutoNet™ and other application software.<lb/> Model 9010/9015/9016 -Multipoint,<lb/> Pneumatic Press. Scanner<lb/> RS232, RS422 or Ethernet -8 or 16<lb/> pressure inputs direct to your PC!<lb/> Self-contained module for measurement of dry,<lb/> non-corrosive gases. Internally corrects for zero,<lb/> span, non-linearity and temperature errors. zero<lb/> and span calibration in the field. +/-0.05% FS<lb/> accuracy, +/-0.001%/°C thermal stability.<lb/> Range: 10°WC to 750 psid (2.5 to 5200 kPa)<lb/> Model 9020/ 9021 -Multipoint All-Media<lb/> Press. Scanner<lb/> RS232, RS422 or Ethernet -12 Chns of<lb/> distributed liquid pressures! Pre-eng.<lb/> solution for multiple liquid pressure transducer<lb/> measurements. (High Combined with PSI&apos;s<lb/> Model 9400/9401pressure transducers, it<lb/> internally corrects for zero, span, non-linearity<lb/> and temperature errors. +/-0.1% FS accuracy<lb/> +/-0.005%/°C thermal stability. range: 5 to<lb/> 10,000psi (35kpa to 69 Mpa) gage or absolute</div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000999"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>JOURNAL OF VIROLOGY, Dec. 2007, p. 12911–12917<lb/> Vol. 81, No. 23<lb/></reference>
+
+	<idno>0022-538X/07/$08.00ϩ0 doi:10.1128/JVI.01522-07<lb/></idno>
+
+	<note type="copyright">Copyright © 2007, American Society for Microbiology. All Rights Reserved.<lb/></note>
+
+	<docTitle>
+	<titlePart>Epitope Mapping of the Hemagglutinin Molecule of a Highly<lb/> Pathogenic H5N1 Influenza Virus by Using<lb/> Monoclonal Antibodies<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>ᰔ<lb/> Nikolai V. Kaverin,<lb/> 1 Irina A. Rudneva,<lb/> 1 Elena A. Govorkova,<lb/> 1,2 Tatyana A. Timofeeva,<lb/> 1<lb/> Aleksandr A. Shilov,<lb/> 1 Konstantin S. Kochergin-Nikitsky,<lb/> 1<lb/> Piotr S. Krylov,<lb/> 1 and Robert G. Webster<lb/>2,3<lb/> *<lb/> </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>D. I. Ivanovsky Institute of Virology,</affiliation>
+	</byline>
+
+	<address>123098 Moscow, Russia,<lb/></address>
+
+	<byline>
+	<affiliation>1 and Department of Infectious Diseases,<lb/>St. Jude Children&apos;s Research Hospital,<lb/></affiliation>
+	</byline>
+
+	<byline>
+	<affiliation>2 and Department of Pathology, University of Tennessee,<lb/></affiliation>
+	</byline>
+
+	<address>3<lb/> Memphis, Tennessee 38105<lb/></address>
+
+	<note type="submission">Received 11 July 2007/Accepted 9 September 2007<lb/></note>
+
+	<div type="abstract">We mapped the hemagglutinin (HA) antigenic epitopes of a highly pathogenic H5N1 influenza virus on the<lb/> three-dimensional HA structure by characterizing escape mutants of a recombinant virus containing A/Viet-<lb/>nam/1203/04 (H5N1) ⌬HA and neuraminidase genes in the genetic background of A/Puerto Rico/8/34 (H1N1)<lb/> virus. The mutants were selected with a panel of eight anti-HA monoclonal antibodies (MAbs), seven to<lb/> A/Vietnam/1203/04 (H5N1) virus and one to A/Chicken/Pennsylvania/8125/83 (H5N2) virus, and the mutants&apos;<lb/> HA genes were sequenced. The amino acid changes suggested three MAb groups: four MAbs reacted with the<lb/> complex epitope comprising parts of the antigenic site B of H3 HA and site Sa of H1 HA, two MAbs reacted<lb/> with the epitope corresponding to the antigenic site A in H3 HA, and two MAbs displayed unusual behavior:<lb/> each recognized amino acid changes at two widely separate antigenic sites. Five changes were detected in amino<lb/> acid residues not previously reported as changed in H5 escape mutants, and four others had substitutions not<lb/> previously described. The HA antigenic structure differs substantially between A/Vietnam/1203/04 (H5N1)<lb/> virus and the low-pathogenic A/Mallard/Pennsylvania/10218/84 (H5N2) virus we previously characterized<lb/> (N. V. Kaverin et al., J. Gen. Virol. 83:2497–2505, 2002). The hemagglutination inhibition reactions of the<lb/> MAbs with recent highly pathogenic H5N1 viruses were consistent with the antigenic-site amino acid changes<lb/> but not with clades and subclades based on H5 phylogenetic analysis. These results provide information on the<lb/> recognition sites of the MAbs widely used to study H5N1 viruses and demonstrate the involvement of the HA<lb/> antigenic sites in the evolution of highly pathogenic H5N1 viruses, findings that can be critical for character-<lb/>izing pathogenesis and vaccine design.<lb/></div>
+
+<div type="introduction"> Since 1997, highly pathogenic avian H5N1 influenza viruses<lb/> have caused serious outbreaks in poultry farms and markets<lb/> and have caused infection in humans with Ͼ50% mortality rate<lb/> (30). Between 2003 and 2007 H5N1 influenza viruses spread<lb/> rapidly through Southeast Asia and emerged in Western China<lb/> (3), Africa (9), Turkey (15), and Siberia (18). The rapid dis-<lb/>semination and ongoing evolution of avian H5N1 viruses, the<lb/> possibility of future interhuman transmissibility, and the ab-<lb/>sence of anti-H5 herd immunity in humans raise concern about<lb/> the pandemic potential of these viruses (13, 28) and lend new<lb/> urgency to elucidation of the structure and evolution of their<lb/> proteins.<lb/> The viral hemagglutinin (HA) surface glycoprotein is the<lb/> primary target of neutralizing antibodies. However, few of<lb/> the 16 HA subtypes have been characterized with respect to<lb/> the localization and structure of their antigenic sites on the<lb/> three-dimensional structure of the HA molecule. For many<lb/> years the three-dimensional structure of HA was available only<lb/> for the H3 subtype (29). The H3 structure was used to map<lb/> antigenic sites on the H1 (1) and H2 (27) HA molecules and to<lb/> begin characterizing the antigenic structure of the H5 HA<lb/> molecule (17). After the X-ray crystallographic structures of<lb/> H5 and H9 HA were reported (6, 7), the H5 HA molecule was<lb/> antigenically mapped in greater detail (10), and mapping of H9<lb/> HA was initiated (11). The localization and fine structure of<lb/> two H5 antigenic sites have been described (10). Site 1 is an<lb/> exposed loop comprising HA1 residues 140 to 145 (H3 num-<lb/>bering here and throughout the text) that corresponds to an-<lb/>tigenic sites A of H3 (29) and Ca2 of H1 (1), and site 2<lb/> comprises two subsites, one (HA1 residues 156 and 157) that<lb/> corresponds to site B in the H3 subtype (29) and one (HA1<lb/> residues 129 to 133) that corresponds to site Sa in the H1<lb/> subtype (1).<lb/> The recently defined three-dimensional HA structure of the<lb/> highly pathogenic H5N1 strain A/Vietnam/1203/04 (24) differs<lb/> from that of A/Duck/Singapore/3/97 (H5N3) virus (6, 7) and<lb/> bears some similarity to the HA of the H1N1 human 1918<lb/> pandemic virus. Because of the continuous evolution of H5N1<lb/> viruses (4, 13, 20, 23, 28) and the emergence of new antigenic<lb/> variants (8, 24), high-yield reassortant strains must be con-<lb/>stantly redefined for vaccine production (5, 14, 25, 26), and<lb/> immunologic diagnostic tests must be frequently updated (2).<lb/> We therefore antigenically mapped the HA molecule of the<lb/> A/Vietnam/1203/04 virus. We also characterized some mono-</div>
+
+		</front>
+	</text>
+</tei>

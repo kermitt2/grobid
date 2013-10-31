@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001467"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>3GPP TR 25.814 V7.0.0 (2006-06)<lb/></idno>
+	
+	<note type="other">Technical Report<lb/></note>
+
+	<docTitle>
+	<titlePart>3rd Generation Partnership Project;<lb/> Technical Specification Group Radio Access Network;<lb/> Physical layer aspects for<lb/> evolved Universal Terrestrial Radio Access (UTRA)<lb/> (Release 7)<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">The present document has been developed within the 3<lb/> rd Generation Partnership Project (3GPP<lb/> TM<lb/> ) and may be further elaborated for the purposes of 3GPP.<lb/> The present document has not been subject to any approval process by the 3GPP Organizational Partners and shall not be implemented.<lb/> This Specification is provided for future development work within 3GPP only. The Organizational Partners accept no liability for any use of this Specification.<lb/> Specifications and reports for implementation of the 3GPP<lb/> TM system should be obtained via the 3GPP Organizational Partners&apos; Publications Offices.</note>
+
+		</front>
+	</text>
+</tei>

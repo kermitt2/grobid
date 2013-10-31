@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>a</marker>
+							<orgName type="department">Department of Medical Biochemistry and Biophysics</orgName>,
+							<orgName type="institution">Karolinska Institute</orgName>,
+							<address>
+								<region>SE</region>
+								<postCode>17177</postCode>
+								<settlement>Stockholm</settlement>,
+							<lb/>
+								<country>Sweden</country>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>b</marker>
+							<orgName type="department">Department of Physics</orgName>,
+							<orgName type="institution">Royal Institute of Technology (KTH)</orgName>,
+							<address>
+								<region>SE</region>
+								<postCode>10691</postCode>
+								<settlement>Stockholm</settlement>,
+							<lb/>
+								<country>Sweden</country>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>c</marker>
+							<orgName type="department">Department of Medical Biochemistry</orgName>,
+							<orgName type="institution">Göteborg University</orgName>,
+							<address>
+								<addrLine>Box440</addrLine>,
+								<region>SE</region>
+								<postCode>40530</postCode>
+								<settlement>Göteborg</settlement>,
+								<country>Sweden</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

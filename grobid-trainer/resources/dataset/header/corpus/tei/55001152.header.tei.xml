@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001152"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>HD-A940/960/970 Series<lb/>*<lb/>User&apos;s Manual<lb/>HDD/DVD Recorder<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">* : HD-A940G,
+	
+
+	HD-A940GX, HD-A960G, HD-A960GX, HD-A970GX<lb/>
+
+	*Please refer to Model Comparison Chart on the back cover for the features supported by each model.<lb/> *The HDMI connection of this DVD recorder features HDCP technology for the purpose of content protection. Connecting the recorder to<lb/> a TV via an HDMI-to-DVI cable may lead to loss of signal if the TV is not DVI/HDCP-compliant.<lb/> DVD<lb/> +R/+RW/-R/-RW</note>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>D</forename>
+								<surname>Astuti</surname>
+								<marker>1,7</marker> ,
+							</persName>
+							<persName>
+								<forename>NF</forename>
+								<surname>da Silva</surname>
+							<lb/>
+								<marker>1,2,7</marker>,
+							</persName>
+							<persName>
+								<forename>A</forename>
+								<surname>Dallol</surname>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>D</forename>
+								<surname>Gentle</surname>
+								<marker>1 ,2</marker>,
+							</persName>
+							<persName>
+								<forename>T</forename>
+								<surname>Martinsson</surname>
+								<marker>3</marker> ,
+							</persName>
+							<persName>
+								<forename>P</forename>
+								<surname>Kogner</surname>
+								<marker>4</marker> ,
+							</persName>
+							<persName>
+								<forename>R</forename>
+								<surname>Grundy</surname>
+								<marker>1 ,5</marker>,
+							</persName>
+							<persName>
+								<forename>T</forename>
+								<surname>Kishida</surname>
+								<marker>6</marker> ,
+							</persName>
+							<persName>
+								<forename>M</forename>
+								<surname>Yao</surname>
+							<lb/>
+								<marker>6</marker> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>F</forename>
+								<surname>Latif</surname>
+							<lb/>
+								<marker>1, 2</marker> and
+							</persName>
+							<persName>
+								<forename>ER</forename>
+								<surname>Maher</surname>
+								<marker>* , 1 , 2</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

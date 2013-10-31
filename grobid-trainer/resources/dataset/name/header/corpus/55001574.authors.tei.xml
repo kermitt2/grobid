@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Andrew</forename>
+								<middlename>E</middlename>.
+								<surname>Teschendorff</surname>
+								<marker>1 *</marker>,
+							</persName>
+							<persName>
+								<forename>Usha</forename>
+								<surname>Menon</surname>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>Aleksandra</forename>
+								<surname>Gentry-Maharaj</surname>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>Susan</forename>
+								<middlename>J</middlename>.
+								<surname>Ramus</surname>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>Simon</forename>
+								<middlename>A</middlename>.
+								<lb/>
+								<surname>Gayther</surname>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>Sophia</forename>
+								<surname>Apostolidou</surname>
+							<lb/>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>Allison</forename>
+								<surname>Jones</surname>
+							<lb/>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>Matthias</forename>
+								<surname>Lechner</surname>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>Stephan</forename>
+								<surname>Beck</surname>
+							<lb/>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>Ian</forename>
+								<middlename>J</middlename>.
+								<surname>Jacobs</surname>
+							<lb/>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>Martin</forename>
+								<surname>Widschwendter</surname>
+								<lb/>
+								<marker>2*</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

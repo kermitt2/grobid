@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000685"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<div type="abstract">Abstract: Since the terrestrial digital sound and data<lb/> broadcasting system Digital Radio Mondiale (DRM) utilizes<lb/> a channel bandwidth up to 10 kHz only, a DRM software can<lb/> be implemented on a conventional personal computer (PC)<lb/> with a sound card. This paper presents a real-time MATLAB<lb/> based open source software radio called Diorama. In addi-<lb/>tion to offering many features for educational and research<lb/> purposes, Diorama includes synchronization for sampling<lb/> rate adjustment, frequency offset and channel estimation<lb/> based on all pilots and 2D-Wiener filtering as well as soft-<lb/>input multi-stage decoding.<lb/></div>
+
+		</front>
+	</text>
+</tei>

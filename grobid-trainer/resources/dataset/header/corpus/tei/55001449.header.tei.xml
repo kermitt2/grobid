@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001449"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Rheumatology 2004;43:692–695<lb/></reference>
+
+	<idno type="DOI">doi:10.1093/rheumatology/keh162<lb/></idno>
+
+	<date> Advance Access publication 2 March 2004<lb/></date>
+
+	<docTitle>
+	<titlePart>Vitamin D receptor, oestrogen receptor-a and<lb/> calcium-sensing receptor genotypes, bone mineral<lb/> density and biochemical markers in Paget&apos;s disease<lb/> of bone<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>J. Donah, G. Speer<lb/> 1 , G. Poo, P. Gergely Jr, A. Taba<lb/> 1 and P. Lakatos<lb/> 1</docAuthor>
+	</byline>
+
+	<div type="abstract">Objectives. The significance of genetic polymorphisms in the development of Paget&apos;s disease of bone is unclear at present.<lb/> Methods. We analysed the BsmI polymorphism of the vitamin D receptor (VDR) gene, the PvuII and XbaI polymorphisms of<lb/> the oestrogen receptor-a (ERa) gene, and the A986S polymorphism of the calcium-sensing receptor (CaSR) gene in 69 pagetic<lb/> patients and 120 healthy subjects. We also examined the relationship of these polymorphisms with lumbar spine and femoral<lb/> neck BMD as well as with biochemical parameters (serum alkaline phosphatase, osteocalcin and parathyroid hormone) in<lb/> Paget&apos;s disease.<lb/> Results. The XbaI and PvuII genotype distributions of the ERa gene were significantly different between patients with Paget&apos;s<lb/> disease and control subjects (P&lt;0.001). Also, the CaSR A986S genotype frequency was significantly different between pagetic<lb/> patients and controls (P&lt;0.01). No significant effect of gene polymorphisms on BMD or biochemical parameters of bone<lb/> turnover was observed.<lb/> Conclusion. Our results suggest that the ERa PvuII/XbaI and CaSR A986S polymorphisms may contribute to genetic<lb/> susceptibility to Paget&apos;s disease. However, further studies are required to investigate the underlying pathomechanism and to<lb/> replicate the associations.<lb/> </div>
+	
+	<keyword>KEY WORDS: Paget&apos;s disease, Genetic polymorphism, Oestrogen receptor gene, Vitamin D receptor gene, Calcium-sensing receptor gene.</keyword>
+
+	<div type="introduction"><lb/> Paget&apos;s disease is characterized by focal areas of increased bone<lb/> turnover at specific sites throughout the skeleton. Although the<lb/> biochemical and molecular basis of this process is unknown,<lb/> alterations in certain laboratory parameters, such as levels of<lb/> osteocalcin (OC), serum alkaline phosphatase (ALP) and serum<lb/> parathyroid hormone (PTH), can be used as markers of aberrant<lb/> bone metabolism in this disease. The disease is complex and both<lb/> its aetiology and pathogenesis remain unclear. However, recent<lb/> evidence suggests a significant genetic contribution to the<lb/> abnormal osteogenesis and development of the disease [1].<lb/> Paget&apos;s disease has a familial tendency, although few genetic<lb/> associations have been described [2]. The genetic background<lb/> seems to involve a variety of genes. Little is known about the exact<lb/> role of genetic factors in Paget&apos;s disease.<lb/> The vitamin D receptor (VDR) gene has long been thought to<lb/> play an important role in calcium and bone metabolism, because<lb/> vitamin D is required for normal bone mineralization, absorption<lb/> of calcium from the gut, the control of calcium and phosphate<lb/> homeostasis and the regulation of parathyroid hormone secretion.<lb/> Furthermore, genetic studies have also described polymorphic<lb/> regions, such as BsmI polymorphism at the VDR gene, and found<lb/> associations between osteoporosis and other diseases of bone and<lb/> cartilage metabolism with certain alleles of the gene [3–5]. BMD is<lb/> also, at least in part, influenced by genetic factors which, according<lb/> to epidemiological data, may contribute as much as 70–80% to the<lb/> variability of BMD [6].<lb/> The oestrogen receptor-(ER) gene has also been reported<lb/> to contribute to pathological conditions of calcium and bone meta-<lb/>bolism. The XbaI and PvuII restriction enzyme polymorphisms of<lb/> the ER gene are associated with the pathogenesis of different<lb/> diseases, such as osteoporosis and osteoarthritis [7, 8]. Certain<lb/> allelic combinations of the ER and VDR genes have been shown<lb/> to influence BMD more markedly than ER or VDR alone [9].<lb/> The A986S polymorphism of the calcium-sensing receptor<lb/> (CaSR) gene has been shown to affect serum calcium homeostasis<lb/> [10]. Data suggest that CaSR also plays a role in the pathogenesis<lb/> of primary hyperparathyroidism [11]. Furthermore, an association<lb/> has been reported between this polymorphism and BMD in healthy<lb/> subjects [12], although, a recent study could not corroborate this<lb/> finding in Hungarian postmenopausal women [13].<lb/> At present, no data are available on the possible roles of these<lb/> polymorphisms in Paget&apos;s disease of bone. In this study, we<lb/> investigated the potential relationship between BMD, the char-<lb/>acteristic laboratory parameters, such as serum OC, PTH and ALP<lb/> concentrations, and polymorphisms of these candidate genes in<lb/> Paget&apos;s disease of bone.</div>
+
+		</front>
+	</text>
+</tei>

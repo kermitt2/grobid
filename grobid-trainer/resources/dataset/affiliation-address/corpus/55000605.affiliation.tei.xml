@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="department">Section of Immunogenetics</orgName>,
+							<orgName type="institution">University of Rostock</orgName>,
+							<address>
+								<settlement>Rostock</settlement>,
+								<country>Germany</country>,
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="department">Department of Immunology</orgName>,
+							<orgName type="institution">University of Rostock</orgName>,
+							<address>
+								<settlement>Rostock</settlement>,
+								<country>Germany</country>,
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>3</marker>
+							<orgName type="department">Department of<lb/> Molecular Medicine</orgName>,
+							<orgName type="institution">National Public Health Institute</orgName>,
+							<address>
+								<settlement>Helsinki</settlement>,
+								<country>Finland</country>,
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>4</marker>
+							<orgName type="department">Department of Human Genetics</orgName>,
+							<orgName type="institution">Ruhr University</orgName>,
+							<orgName type="department">International Graduate School of Neuroscience<lb/> (IGSN)</orgName>,
+							<address>
+								<settlement>Bochum</settlement>,
+								<settlement>Germany</settlement>,
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>5</marker>
+							<orgName type="laboratory">Clinical Research Group for Multiple Sclerosis and Neuroimmunology</orgName>,
+							<orgName type="department">Department of Neurology</orgName>,
+							<orgName type="institution">University of Wü rzburg</orgName>,
+							<address>
+								<addrLine>Wü zburg</addrLine>,
+								<country>Germany</country>,
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>6</marker>
+							<orgName type="department">Unitat de Neuroimmunologia Clinica</orgName>,
+							<orgName type="institution">Hospital Universitari Vall d&apos;Hebron</orgName>,
+							<orgName type="institution">Universitat Autonoma de Barcelona</orgName>,
+							<address>
+								<settlement>Barcelona</settlement>,
+								<country>Spain</country>,
+							<lb/>
+							</address>
+						</affiliation>	
+						<affiliation>
+							<marker>7</marker>
+							<orgName type="laboratory">The Centro Sclerosi Multipla</orgName>,
+							<orgName type="department">Dipartimento di Scienze Cardiovascolari e Neurologiche</orgName>,
+							<orgName type="institution">University of Cagliari</orgName>,
+							<address>
+								<settlement>Cagliari</settlement>,
+								<settlement>Italy</settlement>,
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>8</marker>
+							<orgName type="department">Department of Neurology</orgName>,
+							<orgName type="institution">Haukeland University Hospital</orgName>,
+							<orgName type="institution">University of<lb/> Bergen</orgName>,
+							<address>
+								<settlement>Bergen</settlement>,
+								<country>Norway</country>,
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>9</marker>
+							<orgName type="department">Department of Clinical Medicine</orgName>,
+							<orgName type="institution">University of Bergen</orgName>,
+							<address>
+								<settlement>Bergen</settlement>,
+								<country>Norway</country>,
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>10</marker>
+							<orgName type="department">Department of Pathology</orgName>,
+							<orgName type="institution">Haukeland University Hospital</orgName>,
+							<orgName type="department">Gade&apos;s<lb/> Institute</orgName>,
+							<orgName type="institution">University of Bergen</orgName>,
+							<address>
+								<settlement>Bergen</settlement>,
+								<country>Norway</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

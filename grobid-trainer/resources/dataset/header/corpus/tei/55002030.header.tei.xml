@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55002030"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">1<lb/> </note>
+		
+	<idno>Preliminary Data Sheet, Rev. 1.1<lb/> 91-SR-011-05-8L<lb/></idno>
+
+	<docTitle>
+	<titlePart>Mobile DiskOnChip G3<lb/> 512Mbit/1Gbit Flash Disk with MLC NAND and<lb/> M-Systems&apos; x2 Technology<lb/> </titlePart>
+	</docTitle>
+	
+	<note type="other">Preliminary Data Sheet, </note>
+		
+	<date>September 2003<lb/> </date>
+
+	<div type="introduction">Highlights<lb/> Mobile DiskOnChip G3 is one of the industry&apos;s<lb/> most efficient storage solutions, using<lb/> Toshiba&apos;s 0.13 µm Multi-Level Cell (MLC)<lb/> NAND flash technology and x2 technology<lb/> from M-Systems. MLC NAND flash<lb/> technology provides the smallest die size by<lb/> storing 2 bits of information in a single memory<lb/> cell. x2 technology enables MLC NAND to<lb/> achieve highly reliable, high-performance data<lb/> and code storage with a specially designed error<lb/> detection and correction mechanism, optimized<lb/> file management, and proprietary algorithms for<lb/> enhanced performance.<lb/> Further cost benefits derive from the<lb/> cost-effective architecture of Mobile<lb/> DiskOnChip G3, which includes a boot block<lb/> that can replace expensive NOR flash, and<lb/> incorporates both the flash array and an<lb/> embedded thin controller in a single die.<lb/> Mobile DiskOnChip G3 provides:<lb/> Flash disk for both code and data storage<lb/> Low voltage: 1.8V or 3.3 I/O (auto-detect),<lb/> 3V Core<lb/> Hardware protection and security-enabling<lb/> features<lb/> High capacity: single die -512Mb (64MB),<lb/> dual die -1Gb (128MB)<lb/> Device cascade capacity: up to 2Gb<lb/> (256MB)<lb/> Enhanced Programmable Boot Block<lb/> enabling eXecute In Place (XIP)<lb/> functionality using 16-bit interface<lb/> Small form factors:<lb/> 512Mb (64MB) capacity (single die):<lb/> 48-pin TSOP-I package<lb/> 85-ball FBGA 7x10 mm package<lb/> 1Gb (128MB) capacity (dual die):<lb/> 69-ball FBGA 9x12 mm package<lb/> Enhanced performance by implementation<lb/> of:<lb/> Multi-plane operation<lb/> DMA support<lb/> MultiBurst operation<lb/> Turbo operation<lb/> Unrivaled data integrity with a robust Error<lb/> Detection Code/Error Correction Code<lb/> (EDC/ECC) tailored for MLC NAND flash<lb/> technology<lb/> Maximized flash endurance with TrueFFS<lb/> ®<lb/> 6.1 (and higher)<lb/> Support for major mobile operating systems<lb/> (OSs), including Symbian OS, Pocket PC<lb/> 2002/3, Smartphone 2002/3, Palm OS,<lb/> Nucleus, Linux, Windows CE, and more.<lb/> Compatible with major mobile CPUs,<lb/> including TI OMAP, XScale, Motorola<lb/> DragonBall MX1 and Qualcomm<lb/> MSMxxxx.</div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+ 							<marker>1</marker>
+							<orgName type="department">Dpto. Química</orgName>,
+							<orgName type="institution">Univ San Pablo CEU</orgName>,
+							<address>
+								<addrLine>Boadilla del Monte</addrLine>,
+								<postCode>E-28668</postCode>,
+								<settlement>Madrid</settlement>,
+								<country>Spain</country>.
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="department">Institute of Chemistry</orgName>,
+							<orgName type="institution">University of Białystok</orgName>,
+							<address>
+								<addrLine>Hurtowa St. 1</addrLine>,
+								<postCode>15-399</postCode>
+								<settlement>Białystok</settlement>,
+								<country>Poland</country>.
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>3</marker>
+							<orgName type="institution">Instituto Ciencia de Materiales de Madrid (CSIC)</orgName>,
+							<address>
+								<postCode>28049</postCode>
+								<settlement>Cantoblanco</settlement>,
+								<settlement>Madrid</settlement>,
+								<country>Spain</country>.
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

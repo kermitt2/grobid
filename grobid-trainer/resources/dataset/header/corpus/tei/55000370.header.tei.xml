@@ -1,0 +1,52 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000370"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<div type="introduction">significant improvement in the quality of single<lb/>
+	photon emission computed tomographic (SPECT) im<lb/> ages has been demonstrated through the use of two<lb/> dimensional prereconstruction filtering of the SPECT<lb/> projection (or acquisition) images (1â€&quot;5).To obtain the<lb/> maximum restoration of image quality, the restoration<lb/> filter should be designed to account for the image<lb/> blurring [modulation transfer function (MTF)], the<lb/> noise level, and the object which was imaged (1â€&quot;6).<lb/> Using the normalized mean square error as the opti<lb/> mization criterion, and images of the Alderson Organ<lb/> Scanning Phantom with liver and spleen inserts, a<lb/> count-dependent Metz filter has been previously devel<lb/> o_ for use in two-dimensional prereconstruction ff1-<lb/></div>
+
+	<date type="submission">ReceivedMay 29, 1986;revision accepted Jan. 30, 1987.<lb/></date>
+
+	<note type="other">For reprintscontact:MichaelA. King,PhD,</note>
+
+	<byline>
+	<affiliation>Dept.of Nuclear<lb/> Medicine, The University of Massachusetts Medical Center,</affiliation>
+	</byline>
+
+	<address>55<lb/> Lake Ave., Worcester, MA 01605-2397</address>
+
+	<div type="introduction">.<lb/> tering the SPECF liver and spleen studies (1). This filter<lb/> has been â€oeoptimizedâ€@BULLET for a number of imaging condi<lb/> tions (MTFs) (4,5). However, it was noted that altera<lb/> tion of the filter parameters from those determined<lb/> from the phantom studies was required to obtain the<lb/> most visually pleasing images for organ systems (ob<lb/> jects) which were quite different from the liver and<lb/> spleen studies for which the filter was optimized.<lb/> This paper describes a method which uses interactive<lb/> visual feedback (7-9) to allow an operator to select<lb/> from among a family of â€oeoptimalâ€@BULLET Metz filters (i.e.,<lb/> those designed for a particular MTF) the filter best<lb/> suited for the image being processed (i.e., object imaged<lb/> and noise level). The visual feedback comes from two<lb/> sources. The first is the viewer&apos;s subjective impression<lb/> of image quality (7-9). The second comes from a plot<lb/> of the frequency-domain filter overlayed onto the one<lb/> dimensional compression ofa smoothed estimate of the<lb/> power spectrum ofthe blurred object. We have observed<lb/></div>
+
+	<note type="page">1192</note>
+	
+	<note type="other">King, Glick, Penney etal<lb/></note>
+
+	<byline>
+	<reference>The Journal of Nuclear Medicine<lb/></reference>
+	</byline>
+
+	<docTitle>
+	<titlePart>Interactive Visual Optimization of SPECT<lb/> Prereconstruction Filtering<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Michael A. King, Stephen J. Glick, Bill C. Penney, Ronald B. Schwinger,<lb/> and Paul W. Doherty<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department ofNuclear Medicine, The University ofMassachusetts Medical Center,<lb/></affiliation>
+	</byline>
+
+	<address>Worcester, Massachusetts<lb/></address>
+
+	<div type="abstract">A numberof factorsmust be consideredwhen forminga digitalfifterto two-dimensionally<lb/> filtersingle photon emission computed tomographic (SPECT)acquisition images. In an effort<lb/> to providesubjectivelyoptimalfiltering,a programhas been developedwhichprovidesTMreal<lb/> timeâ€@BULLET visual feedback. This allows a user to select from among a family of Metz filters tailored<lb/> for the imaging conditions (i.e., formed to deconvolve scatter, septal penetration, and<lb/> combined collimator and intrinsic spatial resolution ksses). @Jso, a guideline for assisting the<lb/> userin selectingfrom amongthe possibleMetzfiftershas beenformulated.Thisguidelineis<lb/> based upon knov@4edge of the probability distribution of the noise power spectrum, and<lb/> consistsof choosingthe filter whichhasa valueof 1.0 whenthe one-dimensional<lb/> compressionof the imagepower spectrumequalsthe 90% confidencelimitfor noise<lb/> fluctuations. The programstarts by filteringa planerreferenceimagewith the Metzfilter<lb/> computedfor the radionudide,collimator,magnification, andcount-level of the image.This<lb/> filteris displayedbesidethe imagewhere it is ovetlayedon a plotof the logarithmof the one<lb/> dimensional compressionof the imagepowerspectrum.The useris thenallowedto varythe<lb/> filter parametersthroughmovementof a joystick.By doingthe filteringusingan array<lb/> processor, a new filtered image is formed and disp@yedless than a second after movement<lb/> of the joystick.Visualfeedbackfrom the seriesof filteredimagesthus producedas well as<lb/> the plots of the filter overlayed on the estimated blurred object power spectrum are used to<lb/> obtaina visuallyâ€oeoptimalâ€@BULLET filter.Thefilter can be adaptedto the visualpreferencesof the<lb/> individual reader,and servesas a usefulteachingtool on the effectsof filtering.<lb/></div>
+
+	<reference>J Nucl Med 28:1192-1198, 1987</reference>
+
+		</front>
+	</text>
+</tei>

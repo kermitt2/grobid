@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>M</forename>.
+								<surname>Antelius</surname>,
+							</persName>
+							<persName>
+								<forename>A</forename>.
+								<middlename>C</middlename>.
+								<surname>Fischer</surname>,
+							</persName>
+							<persName>
+								<forename>F</forename>.
+								<surname>Niklaus</surname>,
+							</persName>
+							<persName>
+								<forename>G</forename>.
+								<surname>Stemme</surname> and
+							</persName>
+							<persName>
+								<forename>N</forename>.
+								<surname>Roxhed</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

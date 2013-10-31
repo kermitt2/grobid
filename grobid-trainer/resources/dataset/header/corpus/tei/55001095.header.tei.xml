@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001095"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>GALILEO CONTINUES ITS LEAD IN FARING AUTOMATION<lb/></titlePart>
+	</docTitle>
+
+	<div type="introduction">On April 6, 2004, Sabre announced the release of a new automated solution that allows airlines to file published fares<lb/> and rules via ATPCO using the Category 25 Fare by Rule process.<lb/> Please note, that Galileo International&apos;s initial release of this functionality occurred in December 2001. Galileo 360°<lb/> Fares platform continues to be the leader in automated pricing solutions by encompassing more features of ATPCO<lb/> automated rule product than any other GDS. All rules are fully validated for:<lb/> @BULLET All North America Public Fares.<lb/> @BULLET All Airline Private Fares.<lb/> @BULLET All Agency Private Fares (2Q/3Q 04)<lb/> @BULLET All International Public Fares (4Q 04)<lb/> Galileo also supports automated rule categories that are used in conjunction with Cat 25, eliminating manual<lb/> interpretation in its entirety. Competing GDS&apos;s, although have automated Cat 25, have not automated all rule categories<lb/> that are used in conjunction with Cat 25 -thereby still relying on some manually interpreted data. Galileo, in contrast,<lb/> has implemented all Category 25 fields as per industry specifications.<lb/> Galileo 360° Fares system is a result of Galileo&apos;s strategic use of the most innovative artificial intelligence software and<lb/> the latest server-based technology. Advantages of Galileo 360° Fares, include:<lb/> @BULLET Significant reduction in debit memos;<lb/> @BULLET More Galileo-guaranteed fares than ever;<lb/> @BULLET Improved faring accuracy and productivity;<lb/> @BULLET No manual entries for ticket endorsements;<lb/> @BULLET Fast fare loading for immediate access, especially for short-lived fares;<lb/> @BULLET Airline filing of negotiated fares reduces agency risk;<lb/> @BULLET Airline filing of private fares resulting in reduced agency management and administration of negotiated fares;<lb/> @BULLET Ability to retrieve fares and rules for up to 90 days to assist with refunds, reissues, and billings<lb/> @BULLET Availability of the most competitive fares,</div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001389"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>functionout=sparseconv(x,f)<lb/> % SPARSECONV Speedy convolution of sparse vectors</titlePart>
+	</docTitle>
+
+	<div type="abstract"><lb/> % %<lb/> OUT = SPARSECONV(X, F) computes the convolution of the<lb/> % (sparse) input vectors X and F.<lb/> % %<lb/> </div>
+
+	<byline> 
+	<docAuthor>Gert Cuypers </docAuthor>
+	</byline> 
+		
+	<date>4/10/2001</date>
+
+	<div type ="introduction"><lb/> % Esat Sista KULeuven<lb/> [rij,kol]=size(x);<lb/> if kol&gt;1<lb/> x=x.&apos;;<lb/> end [rij,kol]=size(x);<lb/> if kol&gt;1<lb/> error(&apos;x moet vector zijn&apos;)<lb/> end<lb/> [rij,kol]=size(f);<lb/> if kol&gt;1<lb/> f=f.&apos;;<lb/> end<lb/> [rij,kol]=size(f);<lb/> if kol&gt;1<lb/> error(&apos;f moet vector zijn&apos;);<lb/> end xs=sparse(x);<lb/> [xrow, xcol, xval]=find(xs);<lb/> nietnulx=length(xrow);<lb/> fs=sparse(f);<lb/> [frow, fcol, fval]=find(fs);<lb/> nietnulf=length(frow);<lb/> xpos=zeros(nietnulf*nietnulx,1);<lb/> ypos=zeros(nietnulf*nietnulx,1);<lb/> elementen=zeros(nietnulf*nietnulx,1);<lb/> dummy=(frow)*ones(1,nietnulx);<lb/> ypos(:)=dummy;<lb/> xpos(:)=dummy+ones(nietnulf,1)*xrow.&apos;-1;<lb/> elementen(:)=ones(nietnulf,1)*xval.&apos;;<lb/> out=full(sparse(xpos,ypos,elementen,length(x)+length(f)-1,length(f))*fs);</div>
+
+		</front>
+	</text>
+</tei>

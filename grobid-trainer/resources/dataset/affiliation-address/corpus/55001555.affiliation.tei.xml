@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="laboratory">Position Location and Navigation Group (PLAN)</orgName>
+							<lb/>
+							<orgName type="department">Department of Geomatics Engineering</orgName>
+							<lb/> 
+							<orgName type="department">Schulich School of Engineering</orgName>
+							<lb/>
+							<orgName type="institution">University of Calgary</orgName>,
+							<address>
+								<addrLine>2500 University Drive N.W.</addrLine>
+								<settlement>Calgary</settlement>,
+								<region>Alberta</region>,
+								<country>CANADA</country>
+								<postCode>T2N 1N4</postCode>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

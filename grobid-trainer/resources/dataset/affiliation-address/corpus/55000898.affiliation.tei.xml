@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">Division of Hospital Infection</orgName>,
+							<orgName type="institution">Central Public Health Laboratory</orgName>,
+							<address>
+								<addrLine>61 Colindale Avenue</addrLine>,
+								<settlement>London</settlement>
+								<postCode>NW9 5HT</postCode>,
+								<country>United Kingdom</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

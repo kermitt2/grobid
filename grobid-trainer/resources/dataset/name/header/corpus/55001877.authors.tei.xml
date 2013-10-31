@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Bin</forename>
+								<surname>Hu</surname>,
+								<lb/>
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>Junaid</forename>
+								<middlename>A</middlename> .
+								<surname>Siddiqui</surname> ,
+								<lb/>
+								<marker>2</marker>
+							</persName>
+							<persName>
+								<forename>Raphael</forename>
+								<middlename>M</middlename> .
+								<surname>Ottenbrite</surname>
+								<marker>* 1</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

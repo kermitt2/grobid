@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001571"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Research &amp; Development Projects<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">DIAG3S</note>
+	
+	<div type="introduction">: AN AIDS PROGNOSTIC TEST<lb/> InnaVirVax is developing an innovative prognostic test that would allow predicting the rate of progression<lb/> towards AIDS in HIV-infected asymptomatic patients. This test is rather simple since it would be an ELISA<lb/> test against a conserved gp41 conserved epitope (named 3S), the corresponding peptide being responsible<lb/> for the loss of CD4+ T lymphocytes in HIV infected patients. There is a relationship between the level of<lb/> CD4+ T lymphocytes counts and the frequency of anti-3S antibody detection (P&lt; 0.0001) in HIV-infected<lb/> patients.<lb/> VAC3S : AN HIV AIDS THERAPEUTIC VACCINE<lb/> InnaVirVax is developing an innovative therapeutic vaccine for HIV infection that may have a major impact on<lb/> HIV therapies. A short and conserved peptide from the gp41 of the HIV-1 virusn named 3S, was shown to be<lb/> responsible for the loss of CD4+ T lymphocytes in HIV infected patients.A proof of concept has been<lb/> obtained in a monkey model of HIV infection. The vaccination preventively protected the animals from the<lb/> pathogenesis of the virus: the decrease of CD4+ T lymphocytes which is the cause of AIDS and ultimately<lb/> the mortality. This vaccine will not have a direct effect on the virus replication and propagation itself but will<lb/> delay/prevent the vaccinated patients to be subjected to a decrease of CD4+ T lymphocytes, therefore<lb/> keeping such patients in the asymptomatic phase, for which there is no associated morbidity. The vaccine<lb/> candidate will enter preclinical development by early 2010.This vaccine originates from Inserm, the French<lb/> Medical Research Council, the AH-AP, the largest European hospital, and University Pierre et Marie Curie of<lb/> Paris.<lb/> STOP3S : AN HIV BIOTHERAPY</div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="institution">Miele &amp; Cie. KG</orgName>,
+							<address>
+								<addrLine>Carl-Miele-<lb/>Str. 29</addrLine>,
+								<postCode>33332</postCode>
+								<settlement>Gütersloh</settlement>,
+								<country>Germany</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="institution">Hyg Cen GmbH</orgName>,
+							<address>
+								<addrLine>Bornhövedstr. 78</addrLine>,
+								<postCode>19055</postCode>
+								<settlement>Schwerin</settlement>,
+								<country>Germany</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="department">Ecolab GmbH &amp; Co. OHG</orgName>,
+							<address>
+								<addrLine>Reisholzer Werftstr. 38-42</addrLine>,
+							<lb/>
+								<postCode>40589</postCode>
+								<settlement>Düsseldorf</settlement>,
+								<country>Germany</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>3</marker>
+							<orgName type="institution">Schülke &amp; Mayr GmbH</orgName>.
+							<address>
+								<addrLine>Robert-Koch-Str. 2</addrLine>,
+								<postCode>22851</postCode>
+								<lb/>
+								<settlement>Norderstedt</settlement>,
+								<country>Germany</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>4</marker>
+							<orgName type="institution">Chemische Fabrik Dr. Weigert GmbH &amp; Co. KG</orgName>,
+							<address>
+								<addrLine>Müh-<lb/>lenhagen 85</addrLine>,
+								<postCode>20539</postCode>
+								<settlement>Hamburg</settlement>,
+								<country>Germany</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>5</marker>
+							<orgName type="department">SMP GmbH</orgName>,
+							<address>
+								<addrLine>Hechinger Str. 262</addrLine>,
+								<postCode>72072</postCode>
+								<settlement>Tübingen</settlement>,
+								<country>Germany</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

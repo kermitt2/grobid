@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>J</forename>.
+								<middlename>Y</middlename>.
+								<surname>Pierron</surname>
+								<lb/>
+								<marker>1</marker>,
+							</persName>
+							<persName>
+								<forename>A</forename> .
+								<surname>Lapitre</surname>
+								<lb/>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>J</forename> .
+								<middlename>P</middlename>.
+								<surname>Gallois</surname>
+								<lb/>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>S</forename>.
+								<surname>Devulder</surname>
+								<lb/>
+								<marker>2</marker>,
+							</persName>
+							<persName>
+								<forename>T</forename> .
+								<surname>Gueguen</surname>
+								<lb/>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>P</forename> .
+								<surname>LeCorre</surname>
+								<marker>3</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

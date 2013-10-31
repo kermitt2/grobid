@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>J</forename>.
+								<surname>Köhnlein</surname>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>R</forename>.
+								<surname>Glasmacher</surname>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>V</forename>.
+								<surname>Heide</surname>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>D</forename>.
+								<surname>Kunde</surname>
+								<marker>3</marker> ,
+							</persName>
+							<persName>
+								<forename>M</forename>.
+								<surname>Mohr</surname>
+								<marker>3</marker> ,
+							</persName>
+							<persName>
+								<forename>D</forename>.
+								<surname>Otto</surname>
+								<marker>4</marker> ,
+							</persName>
+							<persName>
+								<forename>K</forename>.
+								<surname>Roth</surname>
+								<marker>5</marker> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>J</forename>.
+								<surname>Staffeldt</surname>
+								<marker>4</marker> ,
+							</persName>
+							<persName>
+								<forename>P</forename> .
+								<surname>Tiarks</surname>
+								<marker>4</marker> ,
+							</persName>
+							<persName>
+								<forename>S</forename> .
+								<surname>Wagenknecht</surname>
+								<marker>5</marker> ,
+							</persName>
+							<persName>
+								<forename>H .-P</forename>.
+								<surname>Werner</surname>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>W</forename> .
+								<surname>Michels</surname>
+								<marker>*</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

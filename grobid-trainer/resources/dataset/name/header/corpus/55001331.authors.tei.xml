@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Fabio</forename>
+								<surname>Forghieri</surname>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>Leonardo</forename>
+								<surname>Potenza</surname>
+							<lb/>
+								<marker>1</marker>,
+							</persName>
+							<persName>
+								<forename>Monica</forename>
+								<surname>Morselli</surname>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>Monica</forename>
+								<surname>Maccaferri</surname>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>Letizia</forename>
+								<surname>Pedrazzi</surname>
+							<lb/>
+								<marker>1</marker> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Patrizia</forename>
+								<surname>Barozzi</surname>
+							<lb/>
+								<marker>1</marker>,
+							</persName>
+							<persName>
+								<forename>Daniela</forename>
+								<surname>Vallerini</surname>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>Giovanni</forename>
+								<surname>Riva</surname>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>Eleonora</forename>
+								<surname>Zanetti</surname>
+							<lb/>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>Chiara</forename>
+								<surname>Quadrelli</surname>
+							<lb/>
+								<marker>1</marker>,
+							</persName>
+							<persName>
+								<forename>Giulio</forename>
+								<surname>Rossi</surname>
+							<lb/>
+								<marker>2</marker> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Francesco</forename>
+								<surname>Rivasi</surname>
+							<lb/>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>Massimino</forename>
+								<surname>Messino &apos;</surname>
+							<lb/>
+								<marker>3</marker>,
+							</persName>
+							<persName>
+								<forename>Fabio</forename>
+								<surname>Rumpianesi</surname>
+								<marker>3</marker> ,
+							</persName>
+							<persName>
+								<forename>Antonella</forename>
+								<surname>Grottola</surname>
+							<lb/>
+								<marker>3</marker> ,
+							</persName>
+							<persName>
+								<forename>Claudia</forename>
+								<surname>Venturelli</surname>
+							<lb/>
+								<marker>3</marker> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Monica</forename>
+								<surname>Pecorari</surname>
+							<lb/>
+								<marker>3</marker> ,
+							</persName>
+							<persName>
+								<forename>Mauro</forename>
+								<surname>Codeluppi</surname>
+							<lb/>
+								<marker>4</marker> ,
+							</persName>
+							<persName>
+								<forename>Giuseppe</forename>
+								<surname>Torelli</surname>
+							<lb/>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>Mario</forename>
+								<surname>Luppi</surname>
+								<marker>1</marker>
+							</persName>
+							
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

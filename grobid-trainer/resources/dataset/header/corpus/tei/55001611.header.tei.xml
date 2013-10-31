@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001611"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Enabling an Energy-Efficient Future Internet<lb/> Through Selectively Connected End Systems *<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Mark Allman<lb/> , Ken Christensen<lb/> , Bruce Nordman<lb/> , Vern Paxson ,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>International Computer Science Institute,<lb/> University of South Florida<lb/> Lawrence Berkeley National Laboratory<lb/></affiliation>
+	</byline>
+
+	<div type="abstract">Abstract<lb/> The Internet&apos;s architecture largely and implicitly assumes<lb/> full-time connectivity, a notion that is embodied in key<lb/> networking principles including fate sharing, soft state,<lb/> and the end-to-end principle. In contrast, efforts to allow<lb/> for more graceful operation in the presence of forced dis-<lb/>connectedness have recently been undertaken that change<lb/> the underlying style of networking used by applications<lb/> to accommodate both host-level and hop-by-hop discon-<lb/>nectedness (e.g., for deep space networks where connec-<lb/>tivity depends on orbital mechanics). In this paper, we<lb/> offer an initial exploration of the architectural constructs<lb/> required to support selective connectivity, whereby a host<lb/> can choose whether to be &quot;connected&quot; or &quot;disconnected&quot;.<lb/> While we keep our notion of selective connectivity gen-<lb/>eral, the driver behind our thinking is to allow hosts to<lb/> go to sleep to realize energy savings while not sacrific-<lb/>ing their standing in the network. Studies show that en-<lb/>abling such sleeping offers large potential energy savings.<lb/> Specifically, we explore ideas related to assistants, soft<lb/> state, host-based control, and application primitives.<lb/></div>
+
+		</front>
+	</text>
+</tei>

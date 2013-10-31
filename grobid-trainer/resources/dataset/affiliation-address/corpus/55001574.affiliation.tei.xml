@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="department">Medical Genomics Group</orgName>,
+							<orgName type="institution">University College London Cancer Institute</orgName>,
+							<orgName type="institution">University College London</orgName>,
+							<address>
+								<settlement>London</settlement>,
+								<country>United Kingdom</country>,
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="department">Department of Gynecological Oncology</orgName>,
+							<lb/>
+							<orgName type="institution">University College London Elizabeth Garrett Anderson Institute for Women&apos;s Health</orgName>,
+							<orgName type="institution">University College London</orgName>,
+							<address>
+								<settlement>London</settlement>,
+								<country>United Kingdom</country>
+								<lb/>
+							</address>						
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

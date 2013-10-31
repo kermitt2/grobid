@@ -1,0 +1,71 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001301"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="copyright">© 2009 WILEY-VCH Verlag GmbH &amp; Co. KGaA, Weinheim<lb/></note>
+
+	<reference>Phys. Status Solidi A 206, No. 6, 1130– 1134 (2009)</reference>
+
+	<idno type="DOI">/ DOI 10.1002/pssa.200880911</idno>
+	
+	<note type="other"><lb/> p s s<lb/> applications and materials science<lb/> a<lb/> status solidi<lb/> www.pss-a.com<lb/>
+
+	physica<lb/></note>
+
+	<docTitle>
+	<titlePart>Nitride-based quantum structures<lb/> and devices on modified GaN substrates<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Piotr Perlin<lb/> *, 1, 2 , Gijs Franssen<lb/> 1 , Justyna Szeszko<lb/> 3 , R. Czernecki<lb/> 2 , Grzegorz Targowski<lb/> 1 , Marcin Kryśko<lb/> 1 ,<lb/> Szymon Grzanka<lb/> 2 , Grzegorz Nowak<lb/> 1 , Elżbieta Litwin-Staszewska<lb/> 1 , Ryszard Piotrzkowski<lb/> 1 ,<lb/> Mike Leszczyński<lb/> 1, 2 , Bolek Łucznik<lb/> 1<lb/> , Izabella Grzegory<lb/> 1, 2 , Rafał Jakieła<lb/> 4 , Martin Albrecht<lb/> 5 ,<lb/> and Tadek Suski<lb/> 1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Institute of High Pressure Physics, Polish Academy of Sciences,</affiliation>
+	</byline>
+
+	<address>Sokołowska 29/37, 01-142 Warszawa, Poland<lb/></address>
+
+	<byline>
+	<affiliation>2 TopGaN Ltd.,</affiliation>
+	</byline>
+
+	<address>Sokołowska 29/37 01-142 Warszawa, Poland<lb/></address>
+
+	<byline>
+	<affiliation>3 Faculty of Physics, Warsaw, University of Technology,</affiliation>
+	</byline>
+
+	<address>ul. Koszykowa 75, 00-662 Warszawa, Poland<lb/></address>
+
+	<byline>
+	<affiliation>4 Institute of Physics, Polish Academy of Sciences,</affiliation>
+	</byline>
+
+	<address>Al. Lotników 32, 02-668 Warszawa, Poland<lb/></address>
+
+	<byline>
+	<affiliation>5 Leibniz Institut für Kristallzüchtung,</affiliation>
+	</byline>
+
+	<address>Max-Born-Straße 2, 12489 Berlin, Germany<lb/></address>
+
+	<note type="submission">Received 11 September 2008, revised 29 November 2008, accepted 9 January 2009<lb/> Published online 25 March 2009<lb/></note>
+
+	<keyword type="PACS">PACS 68.65.Fg, 73.63.Ey, 78.67.De, 81.05.Ea, 81.07.St, 81.15.Kk<lb/></keyword>
+
+	<email>* Corresponding author: e-mail piotr@unipress.waw.pl,</email>
+	
+	<phone> Phone: +48228760312, Fax: +48228760314<lb/></phone>
+
+	<note type="copyright">© 2009 WILEY-VCH Verlag GmbH &amp; Co. KGaA, Weinheim<lb/></note>
+
+	<div type="introduction">1 Introduction It is well known that the preparation<lb/> of the substrate surface may have a tremendous influence<lb/> on the properties of the subsequent epitaxial layers. One of<lb/> the crucial parameters is the wafer miscut, a parameter of<lb/> importance for establishing the optimum growth conditions<lb/> [1, 2]. Wafer miscut predetermines the number of atomic<lb/> steps on the surface thus influencing the step flow mecha-<lb/>nism of growth (Fig. 1). In case of nitride structures<lb/> (GaN–InGaN–AlGaN) fabricated on bulk gallium nitride<lb/> substrates the knowledge of the influence of the surface tilt<lb/> on the physical properties of the grown layers is much lim-<lb/>ited due to the technical difficulty in preparation GaN<lb/> misoriented crystals. Most of the free-standing GaN crys-<lb/>tals are almost &quot;on axis&quot; with the respect to standard polar<lb/> c-plane. Polishing, or cutting under larger angle requires<lb/> boule-like crystals which are not yet easily available. There</div>
+
+		</front>
+	</text>
+</tei>

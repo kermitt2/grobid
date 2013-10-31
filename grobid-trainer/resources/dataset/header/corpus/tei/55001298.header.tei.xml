@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001298"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>An e w s em i -Au t om At e d s o l i d -p h A s e e x t r Ac t io n m e t h o d f o r t h e h ig h -t h ro u g h -<lb/>p u t A nA lys is o f 25 -h y d rox y v i tA m i n d i n s e ru m<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Billy J Molloy, Lisa J Calton PhD, Donald P Cooper PhD</docAuthor>
+	</byline>
+	
+	<byline>
+	<affiliation>(Waters Corporation, Manchester)<lb/></affiliation>
+	</byline>
+
+	<div type="introduction">INT RODUC T ION<lb/>In recent years the demand for serum 25-hydroxyvitamin D<lb/> (25OHD) analysis has increased considerably. In addition to the role<lb/> vitamin D plays in bone metabolism, several clinical studies now<lb/> link vitamin D deficiency with increased risk for certain cancers,<lb/> multiple sclerosis and heart disease.<lb/> 1,2<lb/> 25OHD concentration is<lb/> accepted as the clinical indicator for determining vitamin D status<lb/> 3<lb/> and is also important for monitoring supplementation therapy,<lb/> that is available in two forms, vitamin D2 and vitamin D3. Some<lb/> immunoassays may under-report the total 25OHD level for patients<lb/> on vitamin D2 supplementation owing to the cross-reactivity of<lb/> the antibody for 25-hydroxyvitamin D2 (25OHD2) being less than<lb/> 100%.<lb/> 4<lb/> Therefore, many clinical laboratories have now adopted<lb/> LC/MS/MS based methods for measuring 25OHD to enable the<lb/> reliable quantification of 25OHD2 and 25-hydroxyvitamin D3<lb/> (25OHD3). The analysis of 25OHD by LC/MS/MS requires sample<lb/> pre-treatment to release 25OHD from the vitamin D binding protein<lb/> and to minimize matrix effects. However, these steps are time-<lb/>consuming and sample transfer may be prone to human error.<lb/> This application note describes a semi-automated sample pre-<lb/>treatment protocol, with sample tracking from the primary tube to<lb/> processed results, using UPLC/MS/MS for the analysis of 25OHD.<lb/> Figure 1. System configuration of Waters ACQUITY TQD.<lb/> E X P E RIM ENTAL<lb/> A Waters<lb/> ®<lb/> ACQUITY<lb/> ®<lb/> TQD system (Waters Corporation,<lb/> Manchester, UK) was used for all analyses. The system configura-<lb/>tion is shown in Figure 1. The instrument was operated in positive<lb/> electrospray ionization mode using MassLynx™ 4.1 software with<lb/> auto data processing by the TargetLynx™ Application Manager.<lb/> The compound-dependent cone voltage was optimized to<lb/> maximize the abundance of the precursor ion entering the source<lb/> and selected to pass through the first quadrupole to the collision<lb/> cell. Collision-induced dissociation was facilitated by argon and<lb/> collision energy to produce characteristic product ions. Using<lb/> this information a specific Multiple Reaction Monitoring (MRM)<lb/> experiment was created as shown in Table 1.<lb/>
+
+	UPLC Conditions<lb/> UPLC System:<lb/> Waters ACQUITY UPLC<lb/> ®<lb/> System<lb/> Column:<lb/> ACQUITY UPLC BEH Phenyl Column<lb/> 2.1 x 50 mm, 1.7µm<lb/> Column Temp:<lb/> 35˚C<lb/> Flow Rate:<lb/> 450µL/min.<lb/> Mobile Phase A:<lb/> Water with 2mM ammonium acetate<lb/> and 0.1% formic acid<lb/> Mobile Phase B:<lb/> Methanol with 2mM ammonium acetate<lb/> and 0.1% formic acid<lb/> Gradient:<lb/> 65–85% B over 3 min<lb/> MS Conditions<lb/> MS System:<lb/> Waters<lb/> ®<lb/> TQ Detector<lb/> Ionization Mode:<lb/> ESI Positive<lb/> Capillary Voltage:<lb/> 0.8kV<lb/> Cone Voltage:<lb/> see Table 1<lb/> Desolvation Temp:<lb/> 400˚C<lb/> Desolvation Gas:<lb/> 1000L/Hr<lb/> Source Temp:<lb/> 120˚C<lb/> Acquisition:<lb/> MRM analysis (Table 1)<lb/>
+
+	Compound<lb/> MRM (m/z)<lb/> Cone Voltage (V)<lb/> Collision Energy (eV)<lb/> 25OHD3 401.35 &gt;159.
+
+	1<lb/> 24 28<lb/> 25OHD3*<lb/> 401.35 &gt;383.3<lb/> 24 10<lb/> d 6 -25OHD3<lb/> 407.35 &gt;159.1<lb/> 24 28<lb/> 25OHD2 413.35 &gt;355.3<lb/> 26 10<lb/> 25OHD2*<lb/> 413.35 &gt;83.1<lb/> 26 22<lb/> d 3 -25OHD2<lb/> 416.35 &gt;358.3<lb/> 26 10<lb/>
+
+	Table 1. The tuning parameters used when monitoring for 25OHD2 or 25OHD3<lb/> and the internal standards.</div>
+
+		</front>
+	</text>
+</tei>

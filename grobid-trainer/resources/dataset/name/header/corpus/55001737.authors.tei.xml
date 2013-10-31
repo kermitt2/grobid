@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<surname>Duke</surname>,
+								<forename>M</forename>.
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<surname>Lim</surname>,
+								<forename>A</forename>.
+								<marker>1,2</marker> ,
+							</persName>
+							<persName>
+								<surname>Dinizda Costa</surname>,
+								<forename>J</forename>.
+								<marker>1</marker>,
+							</persName>
+							<persName>
+								<surname>Nielsen</surname>,
+								<forename>L</forename>.
+								<marker>1</marker>
+								<lb/>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

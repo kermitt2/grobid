@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001405"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Hydrogenation Reaction Pathway in Li 2 Mg(NH) 2<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Eveline Weidner,*<lb/> , Francesco Dolci,<lb/> Jianjiang Hu,<lb/> Wiebke Lohstroh,<lb/> Thomas Hansen,<lb/> Daniel J. Bull,<lb/> | and Maximilian Fichtner<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>JRC Institute for Energy, Cleaner Energy Unit,</affiliation>
+	</byline>
+
+	<address>Petten, The Netherlands,</address>
+
+	<byline>
+	<affiliation>Institute for Nanotechnology,<lb/></affiliation>
+	</byline>
+
+	<address>FZ Karlsruhe, Germany, Institute Laue-LangeVin, Grenoble, France,</address>
+
+	<byline>
+	<affiliation>and Institute for Materials Research,<lb/> UniVersity of Salford,</affiliation>
+	</byline>
+
+	<address>Salford, U.K.<lb/></address>
+
+	<note type="submission">ReceiVed: April 16, 2009; ReVised Manuscript ReceiVed: July 17, 2009<lb/></note>
+
+	<div type="abstract">Results of the first time-resolved in situ neutron diffraction measurements during absorption of deuterium in<lb/> Li 2 Mg(ND) 2 reveal the occurrence of a two-stage reaction. The first stage involves the reaction to LiND 2 ,<lb/> LiD, and Li 2 Mg 2 (ND) 3 , with the second stage leading to full deuteration to Mg(ND 2 ) 2 and LiD. Since no<lb/> structural model for Li 2 Mg 2 (NH) 3 exists in the literature, its structure has been determined from refinement<lb/> of X-ray and neutron diffraction data. These new data provide key information toward the clarification of the<lb/> hydrogenation mechanism in this system.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="institution">IRISA Université de Rennes 1</orgName>
+							<lb/> 
+							<address>
+								<addrLine>6 rue de Kérampont</addrLine>
+								<postCode>22300</postCode>
+								<settlement>Lannion</settlement>,
+								<country>France</country>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="institution">SIC Université de Poitiers<lb/></orgName>
+							<address>
+								<addrLine>Bat SP2MI</addrLine>,
+								<addrLine>Bvd Marie et Pierre Curie</addrLine>,
+								<postCode>86962</postCode>
+								<settlement>Futuroscope Chasseneuil</settlement> ,
+								<country>France</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

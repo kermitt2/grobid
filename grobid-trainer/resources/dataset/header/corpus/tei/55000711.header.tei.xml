@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000711"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Filling the gap in LNA antisense oligo gapmers: the effects of unlocked<lb/> nucleic acid (UNA) and 4<lb/> 0<lb/> -C-hydroxymethyl-DNA modifications on<lb/> RNase H recruitment and efficacy of an LNA gapmer<lb/></titlePart>
+	</docTitle>
+	
+	<docAuthor>Kees Fluiter,*<lb/> a Olaf R. F. Mook,<lb/> a Jeroen Vreijling,<lb/> a Niels Langkjaer,<lb/> b<lb/> Torben Højland,<lb/> b Jesper Wengel<lb/> b and Frank Baas a<lb/></docAuthor>
+	
+	<note type="submission">Received 25th February 2009, Accepted 9th April 2009<lb/> First published as an Advance Article on the web 19th May 2009<lb/></note>
+
+	<idno type="DOI">DOI: 10.1039/b903922h<lb/></idno>
+
+	<div type="abstract">Stability against nucleases, affinity for the targeted mRNA and the ability to recruit RNase H are<lb/> prerequisites for antisense oligonucleotide (AON) applications where gene expression knockdown<lb/> is required. Typically chimeric gapmer AON designs are used with a central continuous stretch of<lb/> RNase H recruiting nucleotides (e.g. phosphorothioate DNA), flanked by affinity and stability-<lb/>enhancing modified nucleotides. However, many types of nucleotide modifications in the central<lb/> DNA gap can disturb RNase H function. Here we present studies into two different types of<lb/> nucleotide modifications, a flexible acyclic RNA analog named unlocked nucleic acid (UNA) and<lb/> 4 0 -C-hydroxymethyl-DNA in the gap of an LNA (locked nucleic acid) flanked gapmer. We<lb/> compared the efficacy of mRNA degradation by the gap modified LNA antisense gapmers in<lb/> cell-free assays and cultured cells. This study shows that both UNA and 4<lb/> 0 -C-hydroxymethyl-DNA<lb/> gap insertions are compatible with RNase H activity when used sparingly. However, multiple<lb/> 4 0 -C-hydroxymethyl-DNA modifications are better tolerated by RNase H than multiple UNA<lb/> modifications in the gap. Furthermore, this report shows that LNA gapmer AONs with multiple<lb/> 4 0 -C-hydroxymethyl-DNA moieties in the gap can mediate target knockdown in vivo.<lb/></div>
+
+		</front>
+	</text>
+</tei>

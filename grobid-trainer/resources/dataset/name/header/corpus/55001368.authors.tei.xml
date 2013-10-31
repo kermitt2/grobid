@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Ming</forename>
+								<surname>Zhang</surname>,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Nicolai</forename>
+								<surname>Maass</surname> ,
+								<marker>2</marker>
+							<lb/>
+							</persName>
+							<persName>
+								<forename>David</forename>
+								<surname>Magit</surname>, and
+							</persName>
+							<persName>
+								<forename>Ruth</forename>
+								<surname>Sagerr</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

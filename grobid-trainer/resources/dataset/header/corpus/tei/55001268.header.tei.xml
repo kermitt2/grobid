@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001268"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Studies of Cu 2 ZnSnS 4 films prepared by<lb/> sulfurisation of electrodeposited precursors<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Jonathan James Scragg<lb/></docAuthor>
+	</byline>
+
+	<degree>A thesis submitted for the degree of Doctor of Philosophy<lb/></degree>
+	
+	<byline>
+	<affiliation>University of Bath, Department of Chemistry<lb/></affiliation>
+	</byline>
+
+	<date>May 2010<lb/></date>
+
+	<note type="copyright">COPYRIGHT<lb/> Attention is drawn to the fact that copyright of this thesis rests with its author. A copy of<lb/> this thesis has been supplied on condition that anyone who consults it is understood to<lb/> recognise that its copyright rests with the author and they must not copy it or use<lb/> material from it except as permitted by law or with the consent of the author.<lb/> This thesis may be made available for consultation within the University Library and may<lb/> be photocopied or lent to other libraries for the purposes of consultation.<lb/></note>
+
+	.............................................<lb/>
+	<byline>
+	<docAuthor>Jonathan J. Scragg</docAuthor>
+	</byline>
+
+		</front>
+	</text>
+</tei>

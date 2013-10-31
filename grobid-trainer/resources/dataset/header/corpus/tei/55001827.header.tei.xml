@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001827"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>BPLRU: A Buffer Management Scheme for Improving Random Writes in<lb/> Flash Storage<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Hyojun Kim and Seongjun Ahn<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Software Laboratory of Samsung Electronics, Korea<lb/></affiliation>
+	</byline>
+
+	<email>{zartoven, seongjun.ahn}@samsung.com<lb/></email>
+
+	<div type="abstract">Abstract<lb/> Flash memory has become the most important storage<lb/> media in mobile devices, and is beginning to replace<lb/> hard disks in desktop systems. However, its relatively<lb/> poor random write performance may cause problems in<lb/> the desktop environment, which has much more compli-<lb/>cated requirements than mobile devices. While a RAM<lb/> buffer has been quite successful in hard disks to mask the<lb/> low efficiency of random writes, managing such a buffer<lb/> to fully exploit the characteristics of flash storage has<lb/> still not been resolved. In this paper, we propose a new<lb/> write buffer management scheme called Block Padding<lb/> Least Recently Used, which significantly improves the<lb/> random write performance of flash storage. We evalu-<lb/>ate the scheme using trace-driven simulations and exper-<lb/>iments with a prototype implementation. It shows about<lb/> 44% enhanced performance for the workload of MS Of-<lb/>fice 2003 installation.<lb/></div>
+
+		</front>
+	</text>
+</tei>

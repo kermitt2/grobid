@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000878"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>INVESTIGATION OF ISOPARAFFINIC AND NAPHTHENIC<lb/> HYDROCARBONS IN 450-470&quot;C DISTILLATE<lb/> FROM KOROBKI CRUDE OIL<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>A. Ya. Kuklinskii, R. A. Pushkina,<lb/> A. A. Simeonov, and K. I. Zimina<lb/></docAuthor>
+	</byline>
+
+	<idno>UDC 665.545.57 : 665.5<lb/></idno>
+
+	<div type="introduction">Information on the paraffinic and naphthenic hydrocarbons present in the 450-470&quot;C distillate fractions of<lb/> Korobki crude is of considerable interest, since this crude is widely used in lube oil production. The yield of these<lb/> hydrocarbons is about 20% of the finished oil. The narrow cuts used in this work were prepared by known methods<lb/> of vacuum distillation, adduct formation with urea, and chromatographic and thermal-diffusion separations [1].<lb/> The results from physicochemical analysis of the thermal-diffusion fractions are listed in Table 1. It will be<lb/> seen, that within a small interval of temperatures (20&quot;C), hydrocarbons with very significant differences in properties<lb/> are present. The transition from fraction 1 to fraction 10 is accompanied by a sharp increase in refractive index and<lb/> density, but only a very slight increase in molecular weight. The increase in the number of naphthenic rings in the<lb/> average hydrocarbon molecule parallels the refractive index and density trends. Judging by these data, the isoparaf-<lb/>fins and monocyclic and bicyclic naphthenes are concentrated in the first fractions, and the multi-ring naphthenes<lb/> in the last fractions. The physicochemical indices of the hydrocarbons in fraction 10 are similar to those of mono-<lb/>cyclic aromatics, even though no benzene rings could be detected by ultraviolet spectroscopy. Regutar changes are<lb/> also observed in the viscosity-temperature characteristics of the fractions. In going toward the lower part of the<lb/> column (fraction 10), there is a sharp increase in the hydrocarbon viscosity and a sharp decrease in viscosity index,<lb/> which becomes negative in fractions 9 and 10. About 60% of the relatively low-viscosity hydrocarbons have high<lb/> viscosity indices and, as they are low in volatility, will be good base stocks for formulating multigrade polymer-<lb/>compounded oils.<lb/> These properties of the thermal-diffusion fractions can be explained by the structure of the isoparaffinic and<lb/> naphthenic hydrocarbons making up these fractions, as determined by infrared molecular analysis (Table 2). The<lb/> analysis was performed in a UR-10 spectrophotometer. The spectra shown in Fig~ 1 were obtained in a sodium chlo-<lb/>ride cuvette with a light path of 0.115 ram. The methylene groups in chains were determined according to [2J in<lb/> the 720-780-cm-i region of the spectrum, and methylene groups in rings according to [3] in the 2900-3000-cm &quot;I re-</div>
+
+		</front>
+	</text>
+</tei>

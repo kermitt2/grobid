@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001815"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">1/19<lb/></note>
+
+	<date>May 2004<lb/></date>
+
+	<idno >APPLICATION NOTE<lb/> AN1935<lb/></idno>
+
+	<docTitle>
+	<titlePart>How to Boot from a 528 Byte/264 Word Page<lb/> NAND Flash Memory<lb/> </titlePart>
+	</docTitle>
+	
+	<div type="abstract">This Application Note describes how to boot from an ST NAND Flash memory, from the 528 Byte/ 264<lb/> Word Page family.<lb/></div>
+
+		</front>
+	</text>
+</tei>

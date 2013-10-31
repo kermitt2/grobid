@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="institution">Axela Inc.</orgName>,
+							<address>
+								<settlement>Toronto</settlement>,
+								<region>ON</region>,
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="department">Dept. of Medicine</orgName>,
+							<orgName type="department">Depts of Biological Chemistry, and Biomedical<lb/> Engineering</orgName> and
+							<orgName type="institution">Johns Hopkins Bayview Proteomics Center</orgName>,
+							<orgName type="institution">Johns Hopkins University</orgName>,
+							<lb/>
+							<address>
+								<settlement>Baltimore</settlement>,
+								<region>MD</region>,
+							</address>
+							and 
+						</affiliation>
+						<affiliation>	
+							<orgName type="institution">National Reference Centre for Parasitology</orgName>/
+							<orgName type="institution">McGill University</orgName>,
+							<address>
+								<settlement>Montreal</settlement>,
+								<lb/>
+								<region>QC</region>.
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>
