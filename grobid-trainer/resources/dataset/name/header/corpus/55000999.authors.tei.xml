@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Nikolai</forename>
+								<middlename>V</middlename>.
+								<surname>Kaverin</surname>,
+								<lb/>
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>Irina</forename>
+								<middlename>A</middlename> .
+								<surname>Rudneva</surname> ,
+								<lb/>
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>Elena</forename>
+								<middlename>A</middlename> .
+								<surname>Govorkova</surname>,
+								<lb/>
+								<marker>1, 2</marker>
+							</persName>
+							<persName>
+								<forename>Tatyana</forename>
+								<middlename>A</middlename>.
+								<surname>Timofeeva</surname> ,
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>Aleksandr</forename>
+								<middlename>A</middlename> .
+								<surname>Shilov</surname> ,
+								<lb/>
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>Konstantin</forename>
+								<middlename>S</middlename> .
+								<surname>Kochergin - Nikitsky</surname>,
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>Piotr</forename>
+								<middlename>S</middlename>.
+								<surname>Krylov</surname> ,
+								<lb/>
+								<marker>1</marker>and
+							</persName>
+							<persName>
+								<forename>Robert</forename>
+								<middlename>G</middlename> .
+								<surname>Webster</surname>
+								<marker>2,3*</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

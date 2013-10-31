@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001395"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">NATURALHY is an Integrated Project funded by the European Commission&apos;s Sixth Framework Programme (2002-2006) for Research, Technological Development and Demonstration (RTD) &quot;<lb/> &quot;Preparing for the Hydrogen Economy by Using the<lb/> Preparing for the Hydrogen Economy by Using the<lb/> Existing Natural Gas Network as a Catalyst<lb/> Existing Natural Gas Network as a Catalyst&quot; &quot;<lb/> </note>
+
+	<idno>Project Contract No. SES6/CT/2004/502661<lb/> Project Contract No. SES6/CT/2004/502661<lb/></idno>
+
+	<docTitle>
+	<titlePart>Life Cycle and Socio<lb/> Life Cycle and Socio -<lb/>-Economic Assessment<lb/> Economic Assessment<lb/> of the Natural Gas System in Transition<lb/> of the Natural Gas System in Transition<lb/> to Hydrogen<lb/> to Hydrogen<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Nigel Mortimer and Onemus Mwabonje (UK)<lb/> Kerry-Ann Adamson, Boris Heinz and Roland Monjau (DE)<lb/>Thomas Esdaile-Bouquet (BE)<lb/>Thomas Feck and Klaus Stolzenburg (DE)<lb/> Peter Helby (DK)<lb/> Eduardo João Silva and Clara Melo Santos (PT)</docAuthor>
+	</byline>
+
+		</front>
+	</text>
+</tei>

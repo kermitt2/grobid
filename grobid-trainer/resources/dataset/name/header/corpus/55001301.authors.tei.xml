@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Piotr</forename>
+								<surname>Perlin</surname>
+							<lb/>
+								<marker>*,1 ,2</marker> ,
+							</persName>
+							<persName>
+								<forename>Gijs</forename>
+								<surname>Franssen</surname>
+							<lb/>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>Justyna</forename>
+								<surname>Szeszko</surname>
+							<lb/>
+								<marker>3</marker> ,
+							</persName>
+							<persName>
+								<forename>R</forename>.
+								<surname>Czernecki</surname>
+							<lb/>
+								<marker>2</marker>,
+							</persName>
+							<persName>
+								<forename>Grzegorz</forename>
+								<surname>Targowski</surname>
+							<lb/>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>Marcin</forename>
+								<surname>Kryśko</surname>
+							<lb/>
+								<marker>1</marker>,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Szymon</forename>
+								<surname>Grzanka</surname>
+							<lb/>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>Grzegorz</forename>
+								<surname>Nowak</surname>
+							<lb/>
+								<marker>1</marker>,
+							</persName>
+							<persName>
+								<forename>Elżbieta</forename>
+								<surname>Litwin- Staszewska</surname>
+							<lb/>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>Ryszard</forename>
+								<surname>Piotrzkowski</surname>
+							<lb/>
+								<marker>1</marker> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Mike</forename>
+								<surname>Leszczyński</surname>
+							<lb/>
+								<marker>1 ,2</marker> ,
+							</persName>
+							<persName>
+								<forename>Bolek</forename>
+								<surname>Łucznik</surname>
+								<marker>1</marker>,
+							</persName>
+							<persName>
+								<forename>Izabella</forename>
+								<surname>Grzegory</surname>
+							<lb/>
+								<marker>1 , 2</marker>,
+							</persName>
+							<persName>
+								<forename>Rafał</forename>
+								<surname>Jakieła</surname>
+							<lb/>
+								<marker>4</marker> ,
+							</persName>
+							<persName>
+								<forename>Martin</forename>
+								<surname>Albrecht</surname>
+							<lb/>
+								<marker>5</marker> ,<lb/> and
+							</persName>
+							<persName>
+								<forename>Tadek</forename>
+								<surname>Suski</surname>
+								<marker>1</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

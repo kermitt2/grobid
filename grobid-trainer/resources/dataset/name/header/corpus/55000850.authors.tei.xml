@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Isabelle</forename>
+								<surname>Giuliani</surname>,
+								<lb/>
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>Franç ois</forename>
+								<surname>Rieunier</surname> ,
+								<lb/>
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>Catherine</forename>
+								<surname>Larue</surname> ,
+								<lb/>
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>Jean -Franç ois</forename>
+								<surname>Delagneau</surname>,
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>Claude</forename>
+								<surname>Granier</surname> ,
+								<lb/>
+								<marker>2</marker>
+							</persName>
+							<persName>
+								<forename>Bernard</forename>
+								<surname>Pau</surname> ,
+								<lb/>
+								<marker>3</marker>
+							</persName>
+							<persName>
+								<forename>Marc</forename>
+								<surname>Ferrière</surname>,
+								<lb/>
+								<marker>4</marker>
+							</persName>
+							<persName>
+								<forename>Max</forename>
+								<surname>Saussine</surname> ,
+								<lb/>
+								<marker>4</marker>
+							</persName>
+							<persName>
+								<forename>Jean- Paul</forename>
+								<surname>Cristol</surname>,
+								<marker>5</marker>
+							</persName>
+							<persName>
+								<forename>Anne -Marie</forename>
+								<surname>Dupuy</surname> ,
+								<lb/>
+								<marker>5</marker>
+							</persName>
+							<persName>
+								<forename>Emmanuel</forename>
+								<surname>Merigeon</surname>,
+								<lb/>
+								<marker>2</marker>
+							</persName>
+							<persName>
+								<forename>Delphine</forename>
+								<surname>Merle</surname> ,
+								<lb/>
+								<marker>2</marker> and
+							</persName>
+							<persName>
+								<forename>Sylvie</forename>
+								<surname>Villard</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

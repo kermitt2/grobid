@@ -1,0 +1,63 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001784"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">safety would appear to have a negative affect on the acceptability of<lb/> the procedure.<lb/></note>
+
+	<reference>Competing interests None.<lb/> 1. BSG guidelines on sedation, 2003.<lb/> 2. Scoping our practice NCEPOD report, 2004.<lb/></reference>
+
+	<docTitle>
+	<titlePart>OC-058 ALL-CAUSE MORTALITY FOLLOWING PERCUTANEOUS<lb/> ENDOSCOPIC GASTROSTOMY IN ENGLAND: ANALYSIS OF<lb/> HOSPITAL EPISODE STATISTICS LINKED TO DEATH<lb/> REGISTRATION DATA (2006e8)<lb/></titlePart>
+	</docTitle>
+
+	<idno type="DOI">doi:10.1136/gut.2009.208975f<lb/></idno>
+
+	<byline>
+	<docAuthor>1 K Bodger,<lb/> 2<lb/> K Bowering,<lb/> 3<lb/> E Thompson,<lb/> 3<lb/> M Pearson.<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1<lb/> Department of Medicine, Clinical<lb/> Sciences Centre,</affiliation>
+	</byline>
+
+	<address>Liverpool, UK;<lb/></address>
+
+	<byline>
+	<affiliation>2<lb/> Digestive Diseases Centre, University Hospital Aintree<lb/> NHS Foundation Trust,</affiliation>
+	</byline>
+
+	<address>Liverpool, UK;<lb/></address>
+
+	<byline>
+	<affiliation>3<lb/> Department of Clinical Evaluation, University of<lb/> Liverpool,</affiliation>
+	</byline>
+
+	<address>Liverpool, UK<lb/></address>
+
+	<div type="abstract">Introduction Doctors, patients and carers need realistic expectations<lb/> of outcome when considering percutaneous endoscopic gastrostomy<lb/> (PEG) placement but large-scale studies of patient factors associated<lb/> with mortality risk are lacking. Hospital Episode Statistics (HES)<lb/> contain details of all episodes of care undertaken in NHS hospitals in<lb/> England. We linked this data set to death registrations to perform a<lb/> national-level analysis.<lb/> Methods Aims:(a) Determine feasibility of analysing post-PEG<lb/> mortality (at 7 d and 30 d) using HES data linked to Office of<lb/> National Statistics (ONS) death certification; b) Identify factors<lb/> associated with mortality. We linked HES data for 2006/7 and 2007/8<lb/> to ONS status. Care episodes (incl. day cases) containing OPCS-4<lb/> codes for gastrostomy-related interventions were extracted and<lb/> deaths identified. Diagnostic fields (ICD-10 codes) were analysed for<lb/> indication and comorbidity. Factors associated with death were<lb/> identified by univariate and multiple logistic analyses. Crude<lb/> mortality rate at each hospital Trust was analysed vs PEG number to<lb/> explore &quot;volume&quot; effect.<lb/> Results 30 781 patients had gastrostomy-related procedure codes of<lb/> which 14 055 were coded with G44.5 (&quot;fibreoptic endoscopic percu-<lb/>taneous insertion of gastrostomy (PEG)&quot;). Excluding cancer (eg, PEG<lb/> pre-op for ENT surgery) yielded 10 952 PEG patients (mean age 68.4,<lb/> range 16e99 years); male, 51%; emergency admission, 72%; stroke,<lb/> 40%; motor neurone disease (MND), 7.2%; Parkinson&apos;s disease, 5.4%;<lb/> multiple sclerosis, 4.9%; dementia, 7.2%). All-cause mortality rate:<lb/> 4.2% (7 d) and 14.6% (30 d). Binary logistic regression identified<lb/> predictors of 30 d death (OR with 95% CI, p&lt;0.03 for all): age, 6.8<lb/> (5.3 to 8.7) for 85+ years vs &lt;55 years; male sex, 1.3 (1.1 to 1.4) vs<lb/> female; emergency admission, 2.2 (1.9 to 2.6) vs elective; MND<lb/> diagnosis, 1.3 (1.1 to 1.7) vs not MND; dementia diagnosis, 1.2 (1.03<lb/> to 1.5) vs not dementia. In elderly patients (85+) during emergency<lb/> admissions, dementia was associated with 7 d mortality of 14.6%<lb/> compared to 7.8% in stroke. No correlation for 30 d death vs PEG<lb/> volume at each NHS trust (Pearson r¼0.04).<lb/> Conclusion This national-scale linkage analysis provides real-world<lb/> estimates of prognosis in subjects selected for PEG in England and<lb/> identifies factors associated with all-cause death. Elderly subjects<lb/> with dementia are a high-risk group and present an ethical dilemma<lb/> for PEG placement. This is the largest-scale UK-based study avail-<lb/>able for all-cause mortality after PEG and provides a model for<lb/> predicting outcome using simple variables. Hospital-level data will<lb/> be shared with front-line teams to seek local interpretation of the<lb/> data.<lb/></div>
+
+	<note type="other">Funding NHS Information Centre.<lb/> Competing interests None.<lb/> OC-059 SCENT: FINAL REPORT OF THE FIRST UK PROSPECTIVE,<lb/> RANDOMISED, HEAD-TO-HEAD TRIAL OF TRANSNASAL VS<lb/> ORAL UPPER GASTROINTESTINAL ENDOSCOPY<lb/></note>
+
+	<idno type ="DOI" >doi:10.1136/gut.2009.208975g<lb/></idno>
+
+	<byline>
+	<docAuthor>E J Despott, M Baulf, J Bromley, S Gupta, C Fraser. </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Wolfson Unit for Endoscopy, St<lb/> Mark&apos;s Hospital and Academic Institute, Imperial College,</affiliation>
+	</byline>
+
+	<address>London, UK<lb/></address>
+
+	<div type="abstract">Introduction Transnasal upper GI endoscopy (TN-OGD) minimises<lb/> stimulation of the pharyngeal reflex by eliminating tongue contact;<lb/> this contrasts with conventional (oral) upper GI endoscopy<lb/> (C-OGD) which uses the root of the tongue as a fulcrum for<lb/> insertion and withdrawal. TN-OGD is a promising alternative to<lb/> C-OGD in view of its potential to improve patient experience and<lb/> obviate the need for sedation. SCENT (St Mark&apos;s Conventional<lb/> Endoscopy vs trans-Nasal endoscopy Trial) is the first prospective,<lb/> randomised head-to-head trial of TN-OGD vs C-OGD in a UK<lb/> cohort.<lb/> Methods Evaluation of patient experience, feasibility, safety and<lb/> diagnostic capability of TN-OGD as compared to C-OGD in a UK<lb/> setting. 200 patients fulfilling the study criteria were randomised to<lb/> TN-OGD or C-OGD. Standard (10 cm) visual analogue scales (VAS)<lb/> and Likert (5 point) scales were used. Patient safety was assessed by<lb/> recording vital parameters during and post-procedure. Doses of<lb/> sedation and topical anaesthetic, duration of patient preparation and<lb/> procedure and recovery times were documented. Endoscopic views of<lb/> each procedure were digitally recorded for evaluation of diagnostic<lb/> capability by a panel of expert endoscopists.<lb/> Results The final analyses of data from SCENT demonstrate<lb/> significant differences between TN-OGD (n¼94) and C-OGD<lb/> (n¼106) groups. VAS scores for overall patient discomfort (higher<lb/> score ¼ greater discomfort) were significantly lower in the TN-OGD<lb/> group compared to the C-OGD group (1.8 vs 4.0, respectively,<lb/> p&lt;0.001). VAS discomfort scores for TN-OGD were also signifi-<lb/>cantly lower than VAS scores for C-OGD done with a slim endoscope<lb/> (1.9 vs 3.2, respectively, p¼0.001). Mean patient preparation time<lb/> was longer for TN-OGD than for C-OGD (5.5 vs 4.6 min, respec-<lb/>tively, p&lt;0.001). Procedure duration was also longer for TN-OGD<lb/> than for C-OGD (10.0 vs 7.0 min, respectively, p¼0.004) but<lb/> recovery times after TN-OGD compared to C-OGD were signifi-<lb/>cantly shorter (5.0 vs 10.0 min, respectively, p&lt;0.001). There was no<lb/> significant difference between the overall diagnostic capability VAS<lb/> for TN-OGD and C-OGD scores (8.9 vs 9.1, respectively, p¼0.47).<lb/> Conclusion The final analysis of SCENT supports the findings of<lb/> previously reported studies and suggests that TN-OGD is feasible,<lb/> more comfortable for patients than C-OGD, avoids the need for<lb/> sedation and reduces recovery time. The results also suggest that it<lb/> is the TN route and not just the endoscope diameter that makes the<lb/> procedure more comfortable for patients.<lb/></div>
+
+	<note type="other">Competing interests EJD, Grant/Research Support (EUK/Fujinon).</note>
+
+		</front>
+	</text>
+</tei>

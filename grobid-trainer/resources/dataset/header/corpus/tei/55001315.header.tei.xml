@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001315"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>A PORTABLE SHORT VECTOR VERSION OF FFTW<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Franz Franchetti,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation> TU Vienna, Austria<lb/>Vienna University of Technology<lb/></affiliation>
+	</byline>
+
+	<address>Wiedner Hauptstrasse 8 – 10, A-1040 Wien, Austria<lb/></address>
+
+	<phone>Phone: +43 1 58801-11524, Fax: + 43 1 58801-11599<lb/></phone>
+
+	<email>email: franz.franchetti@tuwien.ac.at<lb/></email>
+
+	<div type="abstract">Abstract. This paper presents a portable short vector extension for the popular FFT library Fftw.<lb/> Fftw is a freely available portable FFT software-library that achieves top performance across a large<lb/> number of platforms.<lb/> The newly developed extension enables the utilization of short vector extensions like Intel&apos;s SSE and<lb/> SSE 2 as well as Motorola&apos;s AltiVec for any problem sizes. The method is independent of the machine&apos;s<lb/> vector length. Experimental results show good speed-up for arbitrary problem sizes and excellent speed-<lb/>up for problem sizes of powers of two and multiples of 16. The newly developed short vector version of<lb/> Fftw compares favorably with the hand-tuned vendor library Intel MKL on IA-32 compatible machines<lb/> (Intel Pentium III and 4, and AMD Athlon XP).<lb/></div>
+
+		</front>
+	</text>
+</tei>

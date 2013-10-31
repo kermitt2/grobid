@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001875"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Surface Modification of Poly(ethylene terephthalate) To<lb/> Prepare Surfaces with Silica-Like Reactivity<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Alexander Y. Fadeev 1 and Thomas J. McCarthy*<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Polymer Science and Engineering Department, University of Massachusetts,<lb/></affiliation>
+	</byline>
+
+	<address>Amherst, Massachusetts 01003<lb/></address>
+
+	<reference>Received May 1, 1998. In Final Form: July 14, 1998<lb/></reference>
+
+	<div type="abstract">Reactions of semicrystalline poly(ethylene terephthalate) (PET) film with 3-aminopropyltrialkoxysilanes<lb/> at the film-solution interface and subsequent hydrolysis render silanol (Si-OH) functionality that is<lb/> attached to the PET surface by amide linkages (PET-CONH(CH2)3Si(OH)3). Toluene was found to be the<lb/> preferred solvent for the initial amidation reaction, rendering a higher surface concentration of silanol<lb/> groups than that for other solvents. Polycondensation of tetraethyl orthosilicate on the surface of PET-<lb/>CONH(CH2)3Si(OH)3 produces thin silica films, the thickness of which can be controlled with reaction<lb/> time. The surface of this composite film (PET-(SiO2)X-OH) also contains reactive silanol groups. These<lb/> two reactive surfaces were further modified using other reactive silanes to introduce alkyl, perfluoroalkyl,<lb/> bromoalkyl, and aminoalkyl functionality to the PET film surface. The surface density of attached groups<lb/> was assessed by X-ray photoelectron spectroscopy, and wettability of the surfaces was determined using<lb/> contact angle analysis. The reactivity of these surfaces was compared to that of oxidized silicon wafers,<lb/> and we conclude that these PET modification procedures (amidation with 3-aminopropyltrialkoxysilanes<lb/> and polycondensation of tetraethyl orthosilicate) produce surfaces that react with the versatility of oxidized<lb/> silicon wafers.<lb/></div>
+
+		</front>
+	</text>
+</tei>

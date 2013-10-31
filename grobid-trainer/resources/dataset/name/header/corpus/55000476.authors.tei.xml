@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>YI</forename>
+								<surname>WANG</surname>
+								<marker>*</marker>,
+							</persName>
+							<persName>
+								<forename>ScoTT</forename>
+								<middlename>A</middlename>.
+								<surname>ROLLINS</surname>
+								<marker>*</marker>,
+							</persName>
+							<persName>
+								<forename>JOSEPH</forename>
+								<middlename>A</middlename>.
+								<surname>MADRIt</surname>,
+								AND
+							</persName>
+							<persName>
+								<forename>Louis</forename>
+								<middlename>A</middlename>.
+								<surname>MATIs</surname>
+								<marker>*</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

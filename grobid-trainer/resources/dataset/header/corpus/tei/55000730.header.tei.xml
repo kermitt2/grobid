@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000730"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>June 2004<lb/> Volume 7, Number 2<lb/></reference>
+
+	<note>A Quarterly Technical Publication for<lb/> Internet and Intranet Professionals<lb/>
+	In This Issue<lb/></note>
+
+	<note type="introduction">From the Editor .......................1<lb/> Content Networks ...................2<lb/> IPv6 Autoconfiguration .........12<lb/> DNSSEC ................................17<lb/> Book Review..........................29<lb/> Fragments ..............................31<lb/></note>
+	<div type="abstract">F r o m T h e E d i t o r<lb/> The Internet Protocol Journal continues to be a forum for discussion of<lb/> current and emerging technologies. In this issue, we first look at con-<lb/>tent networking. One can describe the Internet as a system of<lb/> interconnected devices, but equally as a collection of information, called<lb/> content, that resides on a distributed set of servers and is accessed by<lb/> numerous clients. Our first article is by Christophe Deleuze.<lb/> Engineers are hard at work planning for an eventual transition to the<lb/> next version of IP — IPv6. We&apos;ve published several articles about IPv6<lb/> in previous editions. This time, François Donzé describes the automatic<lb/> address configuration feature of IPv6. Of note is also the increasing glo-<lb/>bal support for IPv6 deployment, (refer to &quot;Fragments&quot; on page 31).<lb/> Our final article returns to our recurring theme: adding security to exist-<lb/>ing Internet protocols. Because many malicious attacks on the Internet<lb/> are perpetrated by &quot;spoofing&quot; information in one form or another, it<lb/> makes sense to look at the Domain Name System (DNS), a critical com-<lb/>ponent of the Internet infrastructure. Today, it is possible to create<lb/> systems which provide fake answers to DNS queries. Miek Gieben ex-<lb/>plains what is being done to address this issue in his tutorial on<lb/> DNSSEC, the secure version of the DNS protocols.<lb/> Please take a moment to renew or update your subscription to this jour-<lb/>nal. You can do so by visiting www.cisco.com/ipj and clicking on the<lb/> &quot;Subscription Information&quot; link on the left. You will need to supply<lb/> your subscription ID and e-mail address in order to gain access to your<lb/> database record. If you have any questions, please send a note to<lb/> ipj@cisco.com .<lb/> This is the 25th edition of IPJ. The journal now has more than 32,000<lb/> subscribers world-wide, and is available on paper and electronically on<lb/> our Website in PDF and HTML format. The Website, located at<lb/> www.cisco.com/ipj , contains all our back issues, and will soon offer<lb/> a cumulative index in ASCII format that will make it easier to find par-<lb/>ticular articles. As always, we welcome your feedback.<lb/> —Ole J. Jacobsen, Editor and Publisher<lb/> ole@cisco.com<lb/> You can download IPJ<lb/> back issues and find<lb/> subscription information at:<lb/> www.cisco.com/ipj<lb/> T h e I n t e r n e t P r o t o c o l J o u r n a l<lb/> 2<lb/> Content Networks</div>
+
+		</front>
+	</text>
+</tei>

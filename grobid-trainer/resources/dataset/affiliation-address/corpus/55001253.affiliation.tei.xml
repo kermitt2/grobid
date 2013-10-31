@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+ 							<marker>1</marker>
+							<orgName type="department">Delft Institute of Earth Observation and Space Systems (DEOS)</orgName>
+							<lb/>
+							<orgName type="institution">Delft University of Technology</orgName>,
+							<address>
+								<country>The Netherlands</country>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="laboratory">GNSS Research Lab</orgName>,
+							<orgName type="department">Spatial Sciences<lb/> </orgName>
+							<orgName type="institution">Curtin University of Technology</orgName>,
+							<address>
+								<settlement>Perth</settlement>,
+								<country>Australia</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

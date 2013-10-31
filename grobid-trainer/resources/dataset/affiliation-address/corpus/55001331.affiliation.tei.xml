@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="department">Department of Oncology, Haematology and Respiratory Diseases</orgName>,
+							<orgName type="institution">Section of Haematology</orgName>;
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="department">Department of Diagnostic and Laboratory Services<lb/> and Legal Medicine</orgName>,
+							<orgName type="department">Section of Pathology</orgName>;
+							<lb/>
+						</affiliation>
+						<affiliation>
+							<marker>3</marker>
+							<orgName type="department">Department of Diagnostic and Laboratory Services and Legal Medicine</orgName>,
+							<orgName type="department">Microbiology and Virology</orgName>
+							<lb/>
+						</affiliation>
+						<affiliation>
+							<marker>4</marker>
+							<orgName type="department">Department of Internal Medicine</orgName>,
+							<orgName type="department">Section of Infectious Diseases</orgName>,
+							<orgName type="institution">University of Modena and Reggio Emilia</orgName>,
+							<orgName type="institution">Azienda Ospedaliero-Universitaria Policlinico</orgName>,
+							<address>
+								<settlement>Modena</settlement>,
+								<country>Italy</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

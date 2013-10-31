@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>. 
+							<orgName type="institution">Kasturba Medical College</orgName>,
+							<orgName type="institution">Manipal University</orgName>,
+							<address>
+								<settlement>Manipal</settlement>,
+								<region>Karnataka</region>-
+								<postCode>576104</postCode>,
+								<country>India.</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="institution">Kasturba Medical College</orgName>,
+							<orgName type="institution">Manipal University</orgName>,
+							<address>
+								<settlement>Manipal</settlement>,
+								<region>Karnataka</region>-
+								<postCode>576104</postCode>,
+								<country>India</country>.
+								<lb/>
+							</address>
+							<orgName type="institution">Kasturba Medical College</orgName>,
+							<orgName type="institution">Manipal University</orgName>,
+							<address>
+								<settlement>Manipal</settlement>,
+								<region>Karnataka</region>-
+								<postCode>576104</postCode>,
+								<country>India.</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>4</marker>
+							<orgName type="institution">Perunthalaivar Kamaraj medical college</orgName>,
+							<address>
+								<settlement>Puducherry</settlement>,
+								<country>India</country>.
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>5</marker>	
+							<orgName type="institution">Kasturba Medical College</orgName>,
+							<orgName type="institution">Manipal University</orgName>,
+							<address>
+								<settlement>Manipal</settlement>,
+								<region>Karnataka</region>,
+								<country>India</country>.
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

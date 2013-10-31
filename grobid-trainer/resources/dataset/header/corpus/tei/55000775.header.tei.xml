@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000775"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Edge detection<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">(Trucco, Chapt 4 AND Jain et al., Chapt 5)<lb/></note>
+
+	<div type="introduction">@BULLET Definition of edges<lb/> -Edges are significant local changes of intensity in an image.<lb/> -Edges typically occur on the boundary between twodifferent regions in an image.<lb/> @BULLET Goal of edge detection<lb/> -Produce a line drawing of a scene from an image of that scene.<lb/> -I mportant features can be extracted from the edges of an image (e.g., corners,<lb/> lines, curves).<lb/> -These features are used by higher-levelcomputer vision algorithms (e.g., recogni-<lb/>tion).</div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Yasuhiko</forename>
+								<surname>SHIMOTSUMA</surname>
+								<lb/>
+								<marker>Ã</marker>,
+							</persName>
+							<persName>
+								<forename>Kazuyuki</forename>
+								<surname>HIRAO</surname> ,
+							</persName>
+							<persName>
+								<forename>Peter</forename>
+								<middlename>G</middlename> .
+								<surname>KAZANSKY</surname>
+								<lb/>
+								<marker>1</marker> and
+							</persName>
+							<persName>
+								<forename>Jiarong</forename>
+								<surname>QIU</surname>
+								<lb/>
+								<marker>2y</marker> 
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

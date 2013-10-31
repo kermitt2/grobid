@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000349"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Discovery of an Opioid K Receptor Selective Pure Antagonist from a Library of<lb/> N-Substituted 4-Methyl-5-(3-hydroxyphenyl)morphans<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>James B. Thomas, Robert N. Atkinson, Nivedita Namdev, Richard B. Rothman, Kenneth M. Gigstad,<lb/> Scott E. Fix, S. Wayne Mascarella, Jason P. Burgess, N. Ariane Vinson, Heng Xu, Christina M. Dersch,<lb/> Buddy E. Cantrell, Dennis M. Zimmerman, and F. Ivy Carroll* ,<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Chemistry and Life Sciences, Research Triangle Institute,</affiliation>
+	</byline>
+
+	<address>Research Triangle Park, North Carolina 27709, Clinical<lb/></address>
+
+	<byline>
+	<affiliation>Psychopharmacology Section, NIDA Addiction Research Section,</affiliation>
+	</byline>
+
+	<address>P.O. Box 5180, Building C, 4980 Eastern Avenue,<lb/> Baltimore, Maryland 21224,</address>
+
+	<byline>
+	<affiliation>and Lilly Research Laboratories, Eli Lilly and Company, Lilly Corporate Center,<lb/></affiliation>
+	</byline>
+
+	<address>Indianapolis, Indiana 4628<lb/></address>
+
+	<note type="submission">Received February 20, 2002<lb/></note>
+
+	<div type="abstract">A library of compounds biased toward opioid receptor antagonist activity was prepared by<lb/> incorporating N-phenylpropyl-4-methyl-5-(3-hydroxyphenyl)morphans as the core scaffold<lb/> using simultaneous solution phase synthetic methodology. From this library, N-phenylpropyl-<lb/>4-methyl-5-(3-hydroxyphenyl)-7R-[3-(1-piperidinyl)propanamido]morphan [(-)-3b] was identi-<lb/>fied as the first potent and selective κ opioid receptor antagonist from the 5-phenylmorphan<lb/> class of opioids.<lb/></div>
+
+		</front>
+	</text>
+</tei>

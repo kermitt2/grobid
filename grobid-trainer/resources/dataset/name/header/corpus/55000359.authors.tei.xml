@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Stelios</forename>
+								<surname>Perissakis</surname>,
+							</persName>
+							<persName>
+								<forename>Ilias</forename>
+								<surname>Panayiotopoulos</surname>,
+							</persName>
+							<persName>
+								<forename>Nikos</forename>
+								<lb/>
+								<surname>Skentos</surname>,
+							</persName>
+							<persName>
+								<forename>Nikos</forename>
+								<surname>Markos</surname> ,
+							</persName>
+							<persName>
+								<forename>Thanos</forename>
+								<surname>Dimitriou</surname> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Evangelia</forename>
+								<surname>Diamantakou</surname>,
+							</persName>
+							<persName>
+								<forename>Antonis</forename>
+								<surname>Valkanas</surname> ,
+								<lb/>
+							</persName>
+							<persName>
+								<forename>Patrick</forename>
+								<surname>Rosson</surname> ,
+							</persName>
+							<persName>
+								<forename>Jean -Baptiste</forename>
+								<surname>Dore</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

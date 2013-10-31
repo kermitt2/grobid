@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55002029"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Data Sheet<lb/></note>
+	
+	<note type="page">1</note>
+
+	<idno>Data Sheet, Rev. 1.7<lb/> 93-SR-002-03-8L<lb/></idno>
+
+	<docTitle>
+	<titlePart>DiskOnChip<lb/> ®<lb/> Millennium Plus<lb/> 16/32/64MByte<lb/>Flash Disk with Protection and Security-Enabling Features<lb/></titlePart>
+	</docTitle>
+
+	<div type="introduction">Highlights<lb/> DiskOnChip Millennium Plus is an award-winning<lb/> member of M-Systems&apos; family of DiskOnChip flash<lb/> disk products. To meet the needs of a growing<lb/> application base, M-Systems offers it in two form<lb/> factors, TSOP-I and BGA, in capacities of 16MByte<lb/> (128Mbit), 32MByte (256Mbit) and 64MByte<lb/> 1<lb/> (512Mbit).<lb/> DiskOnChip Millennium Plus, based on Toshiba&apos;s state-<lb/>of-the-art 0.16 µ NAND flash technology, features:<lb/> Advanced protection and security-enabling<lb/> features for data and code<lb/> Proprietary TrueFFS<lb/> ® technology for full<lb/> hard-disk emulation, high data reliability and<lb/> maximum flash lifetime<lb/> Device cascade options for up to 128MByte<lb/> (1Gbit) capacity<lb/> Small form factors: 48-pin TSOP-I and 69-ball<lb/> BGA<lb/> NAND-based flash technology that enables high<lb/> density and small die size<lb/> Single-die chip: 16MByte and 32MByte,<lb/> dual-die chip: 64MByte<lb/> Exceptional read, write and erase performance<lb/> Configurable for 8/16/32-bit bus interface<lb/> Programmable eXecute In Place (XIP) Boot Block<lb/> Data integrity with Reed-Solomon-based Error<lb/> Detection Code/Error Correction Code<lb/> (EDC/ECC)<lb/> Deep Power-Down mode for reduced power<lb/> consumption<lb/> Low voltage:<lb/> Core – 3V,<lb/> I/O – 1.8V/3V auto-detect (16MByte device)<lb/> Software tools for programming, duplicating,<lb/> testing and debugging<lb/> Support for all major OSs, including:<lb/> Symbian OS, VxWorks, Windows CE, Linux,<lb/> pSOS and QNX<lb/> 1 64MByte devices available in BGA 9x12 form factor only.<lb/> Performance<lb/> 32/64MByte<lb/> (256/512Mbit)<lb/> 16MByte (128Mbit)<lb/> Burst read/write<lb/> 20 MB/sec<lb/> 13.3 MB/sec<lb/> Sustained read<lb/> 3.1 MB/sec<lb/> 1.7 MB/sec<lb/> Sustained write<lb/> 1.3 MB/sec<lb/> 0.86 MB/sec<lb/> Protection and Security-Enabling<lb/> Features<lb/> 16-byte Unique Identification (UID) number<lb/> 6KB user-configurable One Time<lb/> Programmable (OTP) area<lb/> Two configurable write and read-protected<lb/> partitions for data and boot code<lb/> Hardware data and code protection:<lb/> Protection key and LOCK# signal<lb/> Sticky Lock option for boot partition lock<lb/> Protected Bad-Block Table<lb/> Boot Capability<lb/> Programmable Boot Block with XIP capability<lb/> to replace boot ROM<lb/> 1KByte for 16/32MByte devices<lb/> 2KByte for 64MByte devices<lb/> Download Engine (DE) for automatic download<lb/> of boot code from Programmable Boot Block<lb/> Boot capabilities:<lb/> CPU initialization<lb/> Platform initialization<lb/> OS boot<lb/> Asynchronous Boot mode to boot CPUs that<lb/> wake up in burst mode<lb/> The following abbreviations are used in this document: MB for<lb/> MByte, Mb for Mbit.</div>
+
+		</front>
+	</text>
+</tei>

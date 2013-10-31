@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>F</forename>.
+								<surname>Quevedo</surname>,
+							</persName>
+							<persName>
+								<forename>M</forename>.
+								<middlename>L</middlename>.
+								<surname>Ashdown</surname>,
+							</persName>
+							<persName>
+								<forename>V</forename>.
+								<middlename>J</middlename>.
+								<surname>Suman</surname>,
+							</persName>
+							<persName>
+								<forename>A</forename>.
+								<surname>Robinson</surname>,
+							</persName>
+							<persName>
+								<forename>L</forename>.
+								<middlename>A</middlename>.
+								<surname>Kottschade</surname>,
+							</persName>
+							<persName>
+								<forename>J</forename>.
+								<middlename>S</middlename>.
+								<surname>Kaur</surname>,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>E</forename>.
+								<middlename>T</middlename> .
+								<surname>Creagan</surname> ,
+							</persName>
+							<persName>
+								<forename>R</forename> .
+								<middlename>R</middlename> .
+								<surname>McWilliams</surname> and
+							</persName>
+							<persName>
+								<forename>S</forename> .
+								<middlename>N</middlename> .
+								<surname>Markovic</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

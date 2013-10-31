@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000141"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+		<titlePart>Ionized physical vapor deposition (IPVD): magnetron sputtering discharges<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">This article has been downloaded from IOPscience. Please scroll down to see the full text article.<lb/></note>
+
+	<reference>2008 J. Phys.: Conf. Ser. 100 082002<lb/></reference>
+
+	<ptr type="web">(http://iopscience.iop.org/1742-6596/100/8/082002)<lb/></ptr>
+
+	<note type="other">Download details:<lb/></note>
+
+	<note type="other">IP Address: 145.64.134.242<lb/></note>
+
+	<note type="other">The article was downloaded on 27/05/2011 at 15:53<lb/> Please note that terms and conditions apply.<lb/></note>
+	
+	<note type="other">View the table of contents for this issue, or go to the journal homepage for more<lb/> Home Search Collections Journals About Contact us My IOPscience<lb/></note>
+
+	<docTitle>
+		<titlePart>Ionized physical vapor deposition (IPVD):<lb/> Magnetron sputtering discharges<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+		<docAuthor>J T Gudmundsson<lb/></docAuthor>
+	</byline>
+
+	<byline>
+		<affiliation>Science Institute, University of Iceland,</affiliation>
+	</byline>
+
+	<address>Dunhaga 3, IS-107 Reykjavik, Iceland<lb/></address>
+
+	<byline>
+		<affiliation>Department of Electrical and Computer Engineering, University of Iceland,</affiliation>
+	</byline>
+
+	<address>Hjardarhaga 2-6,<lb/> IS-107 Reykjavik, Iceland<lb/></address>
+
+	<email>E-mail: tumi@hi.is<lb/></email>
+
+	<div type="abstract">Abstract. Over the past decade, various magnetron sputtering techniques have appeared<lb/> that provide a high degree of ionization of the sputtered vapor. Here, ionized physical vapor<lb/> deposition (IPVD) magnetron sputtering systems are reviewed. The application of a secondary<lb/> discharge to a magnetron sputtering discharge, either an inductively coupled plasma source<lb/> (ICP-MS) or a microwave amplified magnetron sputtering, is currently widely used. High power<lb/> impulse magnetron sputtering (HiPIMS) is a sputtering technique where a high density plasma<lb/> is created by applying high power pulses at low frequency and low duty cycle to a magnetron<lb/> sputtering device. Other methods such as the self-sustained sputtering (SSS), and the hollow<lb/> cathode magnetron (HCM) are discussed as well. Essential to these methods is a high electron<lb/> density which leads to a high degree of ionization of the sputtered vapor.<lb/></div>
+
+		</front>
+	</text>
+</tei>

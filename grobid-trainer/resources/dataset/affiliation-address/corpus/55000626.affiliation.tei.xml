@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="institution">Northwestern University</orgName>,
+							<orgName type="department">Departments<lb/> of Biomedical Engineering and Radiol-<lb/>ogy</orgName>,
+							<address>
+								<addrLine>448 E Ontario St</addrLine>,
+								<addrLine>Suite 700</addrLine>,
+								<settlement>Chicago</settlement>,
+							<lb/>
+								<region>IL</region>
+								<postCode>60611</postCode>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

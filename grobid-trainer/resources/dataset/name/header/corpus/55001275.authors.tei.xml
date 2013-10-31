@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>M</forename>.
+								<middlename>A</middlename>.
+								<surname>Anderson</surname>
+								<marker>5</marker> ,
+							</persName>
+							<persName>
+								<forename>A</forename>.
+								<surname>Tinsley-Bown</surname>
+							<lb/>
+								<marker>2</marker>,
+							</persName>
+							<persName>
+								<forename>P</forename> .
+								<surname>Allcock</surname>
+								<marker>3</marker> ,
+							</persName>
+							<persName>
+								<forename>E</forename> .
+								<middlename>A</middlename> .
+								<surname>Perkins</surname>
+							<lb/>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>P</forename> .
+								<surname>Snow</surname>
+							<lb/>
+								<marker>3</marker> ,
+							</persName>
+							<persName>
+								<forename>M</forename>.
+								<surname>Hollings</surname>
+							<lb/>
+								<marker>4</marker>,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>R</forename> .
+								<middlename>G</middlename> .
+								<surname>Smith</surname>
+							<lb/>
+								<marker>4</marker>,
+							</persName>
+							<persName>
+								<forename>C</forename>.
+								<surname>Reeves</surname>
+							<lb/>
+								<marker>1</marker>,
+							</persName>
+							<persName>
+								<forename>D</forename> .
+								<middlename>J</middlename> .
+								<surname>Squirrell</surname>
+							<lb/>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>S</forename>.
+								<surname>Nicklin</surname>
+								<marker>4</marker> , and
+							</persName>
+							<persName>
+								<forename>T</forename> .
+								<middlename>I</middlename>.
+								<surname>Cox</surname>
+								<marker>* , 1</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

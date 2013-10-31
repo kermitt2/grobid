@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Snehal</forename>
+								<surname>Naik</surname>,
+							</persName>
+							<persName>
+								<forename>Robin</forename>
+								<middlename>S</middlename>.
+								<surname>Dothager</surname>,
+							</persName>
+							<persName>
+								<forename>Jayne</forename>
+								<surname>Marasa</surname>,
+							</persName>
+							<persName>
+								<forename>Cory</forename>
+								<middlename>L</middlename>.
+								<surname>Lewis</surname> and
+							</persName>
+							<persName>
+								<forename>David</forename>
+								<surname>Piwnica-Worms</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

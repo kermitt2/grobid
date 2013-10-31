@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">Department of Chemistry</orgName>,
+							<orgName type="institution">The University of Edinburgh</orgName>,
+							<address>
+								<addrLine>King&apos;s Buildings</addrLine>,
+								<addrLine>West Mains Road</addrLine>,
+								<settlement>Edinburgh</settlement>
+								<postCode>EH9 3JJ</postCode>,
+								<country>Scotland</country>,
+								<country>UK</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

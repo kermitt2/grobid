@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55002017"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Data Sheet<lb/></note>
+
+	<note type="page">1</note>
+	
+	<idno>Preliminary Data Sheet, Rev. 1.2<lb/> 94-SR-002-08-8L<lb/></idno>
+
+	<docTitle>
+	<titlePart>DiskOnChip<lb/> ®<lb/> DIMM Plus<lb/>Flash Disk with Protection and Security-Enabling Features<lb/></titlePart>
+	</docTitle>
+
+	<div type="introduction">Highlights<lb/> DiskOnChip DIMM Plus is a member of M-Systems&apos;<lb/> growing family of DiskOnChip flash disk products.<lb/> Based on M-Systems&apos; award-winning DiskOnChip<lb/> Millennium Plus, it packages the most advanced flash<lb/> disk technology in an SO-DIMM form factor.<lb/> Using Toshiba&apos;s state-of-the-art 0.16µ NAND<lb/> technology, DiskOnChip DIMM Plus features:<lb/> Advanced protection and security-enabling<lb/> features for data and code<lb/> Proprietary TrueFFS<lb/> ® technology for full hard<lb/> disk emulation, high data reliability and<lb/> maximum flash lifetime<lb/> Capacities ranging from 32Mbyte (256Mbit) to<lb/> 128MByte (1,024Mbit)<lb/> 144-pin SO-DIMM package<lb/> NAND-based flash technology which enables<lb/> high density and small die size<lb/> Exceptional read, write and erase performance<lb/> with a unique, full 16-bit bus flash interface<lb/> Configurable for 8/16-bit bus interface<lb/> Programmable Boot Block (1KB)<lb/> Data integrity with Reed-Solomon Error<lb/> Detection Code/Error Correction Code<lb/> (EDC/ECC)<lb/> Deep Power-Down mode for reduced power<lb/> consumption<lb/> 3.3 V power supply<lb/> Software tools for programming, duplicating,<lb/> testing and debugging<lb/> Support for all major OSs, including VxWorks,<lb/> Windows CE, Linux, pSOS, QNX, etc.<lb/> Performance<lb/> Burst read/write speed: 20MB/sec<lb/> Sustained write speed: 1.5MB/sec<lb/> Sustained read speed: 3MB/sec<lb/> Protection and Security-Enabling<lb/> Features<lb/> Unique Identification (UID) number<lb/> User-configurable One Time Programmable<lb/> (OTP) area<lb/> Two configurable write and read-protected<lb/> partitions for data and boot code<lb/> Two levels of hardware data and code protection:<lb/> Protection Key and LOCK# signal<lb/> Boot Capability<lb/> Programmable Boot Block (1KB) with eXecute<lb/> In Place (XIP) capability to replace boot ROM<lb/> Download Engine (DE) for automatic download<lb/> of boot code<lb/> Boot capabilities<lb/> Platform initialization<lb/> OS boot</div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>BORISZ</forename>.
+								<surname>SIMKHOVXH</surname>
+								<marker>*</marker>,
+							</persName>
+							<persName>
+								<forename>ZHANNA</forename>
+								<middlename>V</middlename>.
+								<surname>SHUTENK~</surname>,
+							</persName>
+							<persName>
+								<forename>DAINWITEV</forename>.
+								<surname>MEII@NA</surname>,
+							</persName>
+							<persName>
+								<forename>KHAJAB</forename>.
+								<lb/>
+								<surname>KHAGI</surname>,
+							</persName>
+							<persName>
+								<forename>R~DOLFS</forename>
+								<middlename>J</middlename> .
+								<surname>ME$XPU&amp;E</surname> ,
+							</persName>
+							<persName>
+								<forename>TATYANA</forename>
+								<middlename>N</middlename> .
+								<surname>MOLODC~NA</surname> ,
+							</persName>
+							<persName>
+								<forename>IVARS</forename>
+								<middlename>J</middlename> .
+								<surname>KALVIX#</surname> and
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

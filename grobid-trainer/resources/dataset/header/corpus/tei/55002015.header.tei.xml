@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55002015"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Patient Information Leaflet<lb/> betamethasone valerate<lb/> IT IS IMPORTANT TO READ THIS CAREFULLY<lb/> BEFORE STARTING TREATMENT<lb/></titlePart>
+	</docTitle>
+
+	<div type="introduction">Following this advice gives the cream a chance to<lb/> work safely and effectively.<lb/> G What you should know about Betnovate-N cream<lb/> Betnovate -N cream is one of a group of medicines called topical steroids.<lb/> &quot;Topical&quot; means they are put on the skin. Topical steroids reduce the redness and itchiness of<lb/> certain skin problems. (They should not be confused with &quot;anabolic&quot; steroids misused by some<lb/> body builders and athletes and taken as tablets or injections).<lb/> Betnovate-N cream also contains neomycin which may help to prevent or clear up some<lb/> bacterial infections of the skin.<lb/> G What is in your cream<lb/> The cream contains:<lb/> The main active ingredient -betamethasone (as valerate) 0·1% w/w<lb/> an antibacterial agent -neomycin sulphate 0.5% w/w<lb/> a preservative -chlorocresol<lb/> in a base containing cetomacrogol 1000, cetostearyl alcohol,<lb/> white soft paraffin, liquid paraffin, sodium acid phosphate, phosphoric acid, sodium<lb/> hydroxide and purified water.<lb/> The cream is packed in 30g and 100g tubes.<lb/></div>
+
+		</front>
+	</text>
+</tei>

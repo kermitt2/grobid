@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001378"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Text Encoding Initiative<lb/> TEI: P4 Guidelines<lb/></titlePart>
+	</docTitle>
+
+	<div type="introduction">The TEI P4 Guidelines first appeared in print in June 2002. P4 was the first version<lb/> of the Guidelines to implement proper XML support, while ensuring backwards compatibility<lb/> with earlier TEI specifications.<lb/> P4 was superseded by the release of the P5 Guidelines in November 2007. To learn how to<lb/> migrate from P4 to P5, visit the migration page.<lb/>Getting the P4 Guidelines<lb/>Download<lb/> The text of the P4 Guidelines is available online, as HTML or PDF files.<lb/></div>
+
+	The TEI Guidelines are also provided as a modular, extensible, DTD (Document Type<lb/> Definition). The modules making up the TEI DTD can be configured for use either as an<lb/> SGML or an XML DTD. There are full details in the P4 DTD document.<lb/> You can view the DTD files online or download them as a bundled set in the form of a<lb/> compressed tar archive or zip archive, including both HTML and DTD.<lb/>
+
+	Order Print Copies<lb/>
+
+	The full P4 Guidelines are also still available in print, and can be ordered directly from the<lb/> University of Virginia Press. The regular price of $90 includes standard delivery charges. All<lb/> TEI Consortium members receive one free copy of the Guidelines automatically. Consortium<lb/> members and subscribers may purchase copies at a $30 discount, using the members&apos; order<lb/> form.<lb/>HTML View | XML View | Printable Version<lb/> TEI: P4 Guidelines<lb/>
+
+	<ptr type="web">http://www.tei-c.org/Guidelines/P4/index.xml?style=printable<lb/></ptr>
+
+	<note type="page">1 of 1<lb/></note>
+	
+	<note type="other">24-06-2011 15:15</note>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>A</forename>.
+								<surname>Kuhn</surname>
+							<lb/>
+								<marker>1</marker>,
+							</persName>
+							<persName>
+								<forename>A</forename> .
+								<surname>Basa</surname>
+							<lb/>
+								<marker>1 ,2</marker>,
+							</persName>
+							<persName>
+								<forename>E</forename> .
+								<middlename>C</middlename>.
+								<surname>Gonzalo</surname>
+							<lb/>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>F</forename>.
+								<surname>García -Alvarado</surname>
+							<lb/>
+								<marker>1</marker>,
+							</persName>
+							<persName>
+								<forename>I</forename> .
+								<surname>Sobrados</surname>
+								<lb/>
+								<marker>3</marker> and
+							</persName>
+							<persName>
+								<forename>J</forename> .
+								<surname>Sanz</surname>
+								<lb/>
+								<marker>3</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

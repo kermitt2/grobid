@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="department">Institute of High Pressure Physics</orgName>,
+							<orgName type="institution">Polish Academy of Sciences</orgName>,
+							<address>
+								<addrLine>Sokołowska 29/37</addrLine>,
+								<postCode>01-142</postCode>
+								<settlement>Warszawa</settlement>,
+								<country>Poland</country>
+								<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="institution">TopGaN Ltd.</orgName>,
+							<address>
+								<addrLine>Sokołowska 29/37</addrLine>
+								<postCode>01-142</postCode>
+								<settlement>Warszawa</settlement>,
+								<country>Poland</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>3</marker>
+							<orgName type="department">Faculty of Physics, Warsaw</orgName>
+							<orgName type="institution">University of Technology</orgName>,
+							<address>
+								<addrLine>ul. Koszykowa 75</addrLine>,
+								<postCode>00-662</postCode>
+								<settlement>Warszawa</settlement>,
+								<country>Poland</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>4</marker>
+							<orgName type="department">Institute of Physics</orgName>,
+							<orgName type="institution">Polish Academy of Sciences</orgName>,
+							<address>
+								<addrLine>Al. Lotników 32</addrLine>,
+								<postCode>02-668</postCode>
+								<settlement>Warszawa</settlement>,
+								<country>Poland</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>5</marker>
+							<orgName type="department">Leibniz Institut für Kristallzüchtung</orgName>,
+							<address>
+								<addrLine>Max-Born-Straße 2</addrLine>,
+								<postCode>12489</postCode>
+								<settlement>Berlin</settlement>,
+								<country>Germany</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Roumen</forename>
+								<middlename>A</middlename>.
+								<surname>Bogoev</surname>,
+							</persName>
+							<persName>
+								<forename>Raul</forename>
+								<middlename>L</middlename>.
+								<surname>Manzanedo</surname>,
+							</persName>
+							<persName>
+								<forename>Joseph</forename>
+								<middlename>W</middlename>.
+								<surname>Amshey</surname>, and
+							</persName>
+							<persName>
+								<forename>Barbara</forename>
+								<surname>Flynn</surname>,
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

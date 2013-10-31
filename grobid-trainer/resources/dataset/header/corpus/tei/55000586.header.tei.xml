@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000586"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Digital Hardware Aspects of<lb/> Multiantenna Algorithms<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Fredrik Edman<lb/></docAuthor>
+	</byline>
+	
+	<address>Lund </address>
+	
+	<date>2006</date>
+	
+
+		</front>
+	</text>
+</tei>

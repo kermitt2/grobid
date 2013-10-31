@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<surname>Lin</surname>
+								<forename>Y</forename>,
+							</persName>
+							<persName>
+								<surname>Bernstein</surname>
+								<forename>G</forename>,
+							</persName>
+							<persName>
+								<surname>Pak</surname>
+								<forename>BJ</forename>,
+							</persName>
+							<persName>
+								<surname>Fu</surname>
+								<forename>Q</forename>,
+							</persName>
+							<persName>
+								<surname>van Eyk</surname>
+								<forename>J</forename>,
+							</persName>
+							<persName>
+								<surname>Ndao</surname>
+								<forename>M</forename>,
+							</persName>
+							<persName>
+								<surname>Vasquez-Camargo</surname>
+								<forename>F</forename>,
+							<lb/>
+							</persName>
+							<persName>
+								<surname>Goyette</surname>
+								<forename>S</forename> ,
+							</persName>
+							<persName>
+								<surname>Ward</surname>
+								<forename>B</forename> .
+								<middlename>J</middlename>,
+							</persName>
+							<persName>
+								<surname>Hu</surname>
+								<forename>W</forename> and
+							</persName>
+							<persName>
+								<surname>Houle</surname>
+								<forename>JF</forename>.
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

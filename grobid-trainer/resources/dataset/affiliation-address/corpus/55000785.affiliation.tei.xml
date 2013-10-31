@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="institution">VTT Information Technology</orgName>
+							<lb/>
+							<address>
+								<postBox>P.O.Box 1203</postBox>,
+								<postCode>FIN-02044</postCode>
+								<settlement>VTT</settlement>,
+								<country>FINLAND</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="laboratory">VTT Information Technology</orgName>
+							<lb/>
+							<address>
+								<postBox>P.O.Box 1206</postBox>,
+								<postCode>FIN-33101</postCode>
+								<settlement>Tampere</settlement>,
+								<country>FINLAND</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

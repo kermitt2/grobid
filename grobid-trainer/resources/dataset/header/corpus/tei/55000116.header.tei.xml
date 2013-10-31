@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000116"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Assessment of Different Loudness Models for Perceived Speech Quality<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Nicolas Côté<lb/> 1,2 , Valérie Gautier-Turbin<lb/> 1 , Sebastian Möller<lb/> 2 , Alexander Raake<lb/> 2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 France Télécom R&amp;D,</affiliation>
+	</byline>
+
+	<address>22300 Lannion, France,</address>
+
+	<email>Email: nicolas.cote@orange-ftgroup.com<lb/></email>
+
+	<byline>
+	<affiliation>2 Deutsche Telekom Laboratories, TU-Berlin,</affiliation>
+	</byline>
+
+	<address>10587 Berlin, Deutschland<lb/></address>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000955"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>JOURNAL OF VIROLOGY, June 1990, P. 2941-2947<lb/></reference>
+
+	<idno>0022-538X/90/062941-07$02.00/0<lb/></idno>
+
+	<note type="copyright">Copyright © 1990, American Society for Microbiology<lb/></note>
+
+	<docTitle>
+	<titlePart>Hemagglutinin Mutations Related to Attenuation and Altered Cell<lb/> Tropism of a Virulent Avian Influenza A Virus<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>MATTHEW PHILPOTT,t CATARINA HIOE, MARTHA SHEERAR, AND VIRGINIA S. HINSHAW*<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Pathobiological Sciences, University of Wisconsin-Madison,</affiliation>
+	</byline>
+
+	<address>Madison, Wisconsin 53706<lb/></address>
+
+	<note type="submission">Received 21 December 1989/Accepted 13 March 1990<lb/></note>
+
+	<div type="abstract">The H5 hemagglutinin (HA) of a highly virulent avian influenza virus, A/Turkey/Ontario/7732/66 (H5N9),<lb/> was previously shown to have five neutralizing epitopes, and escape mutants within one epitope (group 1) were<lb/> markedly attenuated (M. Philpott, B. C. Easterday, and V. S. Hinshaw, J. Virol. 63:3453-3458, 1989). To<lb/> define the genetic changes related to these antigenic and biologic properties, the HA genes of mutants within<lb/> each of the epitope groups were sequenced by using the polymerase chain reaction. The mutations in the<lb/> attenuated group 1 mutants were located near the distal tip of the HA molecule in close proximity to the<lb/> receptor-binding site, on the basis of alignment with the three-dimensional structure of the H3 HA. All group<lb/> 1 mutations involved charged amino acids. The group 1 mutants, similar to the wild-type virus, spread<lb/> systemically and were recovered from the spleens of infected chickens but, unlike the wild-type virus, failed to<lb/> produce severe necrosis in the spleens. Viral replication in the spleens was investigated by in situ hybridization<lb/> of spleen sections from chickens infected with the wild-type or attenuated mutants. Wild-type virus replication<lb/> was demonstrated in large, mononuclear, macrophagelike cells; however, group 1 mutant virus was detected<lb/> attached only to erythrocytes within the red pulp. These results suggest that the attenuated mutants differ in<lb/> their cell tropism within the spleen.</div>
+<div type="introduction"><lb/> Highly virulent avian influenza viruses are an excellent<lb/> system for the elucidation of mechanisms of virulence and<lb/> are economically important to the poultry industry (1).<lb/> Virulence is known to involve the interaction of many viral<lb/> genes, but studies have demonstrated a pivotal role for viral<lb/> hemagglutinin (HA) (for a review, see reference 32). One<lb/> way HA contributes to severe disease is to promote the<lb/> systemic spread of virus, which is primarily determined by<lb/> the presence of multiple basic amino acids at the carboxyl<lb/> terminus of the HA1 polypeptide (4, 5, 8, 15). HAs with basic<lb/> amino acids at this location are efficiently cleaved by host<lb/> cell proteases (2, 4, 5, 15, 16), which is thought to allow the<lb/> production of infectious virus in many tissues. Other contri-<lb/>butions to influenza virus pathogenicity provided by HA are<lb/> not well understood.<lb/> During an investigation into the number and distribution of<lb/> neutralizing epitopes on the H5 HA, we observed the<lb/> following: (i) the H5 HA has five neutralizing epitopes, (ii) all<lb/> of the escape mutants selected with monoclonal antibodies<lb/> in one epitope group (designated group 1 mutants) were<lb/> attenuated relative to the wild-type virus, and (iii) attenua-<lb/>tion of these mutants was unrelated to the cleavage proper-<lb/>ties of their HAs (23). Unlike other highly virulent avian<lb/> influenza viruses, the wild-type A/Turkey/Ontario/7732/66<lb/> (H5N9) (Ty/Ont) produces severe necrosis of lymphoid<lb/> organs, especially the spleen (30). The group 1 epitope of the<lb/> H5 HA from Ty/Ont is a strain-specific epitope (23). Fur-<lb/>thermore, group 1 mutants failed to produce necrosis of the<lb/> spleen (23). Therefore, it was of interest to locate the genetic<lb/> changes responsible for the loss of antibody binding associ-<lb/>ated with these phenotypes and to investigate the cell types<lb/> infected in the spleens by examining the distribution of viral<lb/> RNA.<lb/> In this paper, the nature and location of the attenuating</div>
+
+		</front>
+	</text>
+</tei>

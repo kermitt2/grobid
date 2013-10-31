@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Scott</forename>
+								<surname>Freeto</surname>,
+							</persName>
+							<persName>
+								<forename>Crystal</forename>
+								<surname>Holt</surname>,
+							</persName>
+							<persName>
+								<forename>Donald</forename>
+								<surname>Cooper</surname>,
+							</persName>
+							<persName>
+								<forename>Lisa</forename>
+								<surname>Calton</surname> and
+							</persName>
+							<persName>
+								<forename>Billy</forename>
+								<surname>Molloy</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

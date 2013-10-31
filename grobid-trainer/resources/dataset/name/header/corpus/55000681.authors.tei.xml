@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Arthur</forename>
+								<surname>Callado</surname>,
+							</persName>
+							<persName>
+								<forename>Carlos</forename>
+								<surname>Kamienski</surname>
+								<roleName>Member, IEEE</roleName>,
+							</persName>
+							<persName>
+								<forename>Géza</forename>
+								<surname>Szabó</surname>,
+							</persName>
+							<persName>
+								<forename>Balázs</forename>
+								<middlename>Péter</middlename>
+								<surname>Ger˝o</surname>,
+							</persName>
+							<persName>
+								<forename>Judith</forename>
+								<surname>Kelner</surname>,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Stênio</forename>
+								<surname>Fernandes</surname>
+								<roleName>Member ,IEEE</roleName> , and
+							</persName>
+							<persName>
+								<forename>Djamel</forename>
+								<surname>Sadok</surname> ,
+								<roleName>Senior Member ,IEEE</roleName>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

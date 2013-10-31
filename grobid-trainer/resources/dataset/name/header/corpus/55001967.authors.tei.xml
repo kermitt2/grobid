@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							Contributor:
+							<persName>
+								<forename>William</forename>
+								<surname>Beauregard</surname>,
+							</persName>
+							<persName>
+								<forename>Timothy</forename>
+								<surname>Chorma</surname>,
+							</persName>
+							<persName>
+								<forename>Lory</forename>
+								<surname>Molesky</surname>,
+							</persName>
+							<persName>
+								<forename>Dieter</forename>
+								<surname>Gawlick</surname>,
+							</persName>
+							<persName>
+								<forename>Helen</forename>
+								<surname>Grembowicz</surname>,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Deborah</forename>
+								<surname>Owens</surname> ,and
+							</persName>
+							<persName>
+								<forename>Jagannathan</forename>
+								<surname>Srinivasan</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

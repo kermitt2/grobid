@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="department">Section of Medical and Molecular Genetics</orgName>,
+							<orgName type="department">Department of Paediatrics and Child Health</orgName>,
+							<orgName type="institution">University of Birmingham</orgName>,
+							<orgName type="department">The Medical School</orgName>,
+							<address>
+								<addrLine>Edgbaston</addrLine>,
+							<lb/>
+								<settlement>Birmingham</settlement>
+								<postCode>B15 2TT</postCode>,
+								<country>UK</country>;
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="laboratory">Cancer Research UK Renal Molecular Oncology Research Group</orgName>,
+							<orgName type="institution">University of Birmingham</orgName>,
+							<orgName type="department">The Medical School</orgName>,
+							<address>
+								<addrLine>Edgbaston</addrLine>,
+							<lb/>
+								<settlement>Birmingham</settlement>
+								<postCode>B15 2TT</postCode>,
+								<country>UK</country>;
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>3</marker>
+							<orgName type="department">Department of Clinical Genetics</orgName>,
+							<orgName type="institution">Gothenburg University</orgName>,
+							<orgName type="institution">Sahlgrenska University Hospital/Ostra</orgName>,
+							<address>
+								<postCode>S-416 85</postCode>
+								<settlement>Gothenburg</settlement>,
+								<lb/>
+								<settlement>Sweden</settlement>;
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>4</marker>
+							<orgName type="laboratory">Childhood Cancer Research Unit</orgName>,
+							<orgName type="department">Department of Women and Child Health</orgName>,
+							<orgName type="institution">Karolinska Institute</orgName>,
+							<orgName type="institution">Karolinska Hospital</orgName>,
+							<address>
+								<postCode>S-171 76</postCode>
+								<settlement>Stockholm</settlement>,
+								<lb/>
+								<country>Sweden</country>;
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>5</marker>
+							<orgName type="department">Department of Paediatric Oncology</orgName>,
+							<orgName type="institution">Birmingham Children&apos;s Hospital</orgName>,
+							<address>
+								<country>UK</country>;
+								<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>6</marker>
+							<orgName type="institution">Yokohama City University School of Medicine</orgName>,
+							<address>
+								<settlement>Yokohama</settlement>,
+								<country>Japan</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

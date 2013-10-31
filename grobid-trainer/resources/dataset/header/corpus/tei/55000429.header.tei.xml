@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000429"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Integrating the Healthcare Enterprise<lb/></note>
+
+	<note type="other">5<lb/> 10<lb/> 15<lb/> 20<lb/></note>
+
+	<docTitle>
+	<titlePart>IT Infrastructure<lb/> Technical Framework<lb/></titlePart>
+	</docTitle>
+	
+	<reference>Volume 2b<lb/> (ITI TF-2b)<lb/> Transactions Part B –<lb/> Sections 3.29 – 3.43<lb/></reference> 
+	
+	<note type="other">Revision 6.0 – Final Text<lb/></note>
+
+	<date>August 10, 2009<lb/></date>
+
+	<note type="copyright">Copyright © 2009 IHE International</note>
+
+		</front>
+	</text>
+</tei>

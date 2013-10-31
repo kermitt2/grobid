@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001737"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>High selectivity microporous silica membranes for lactic acid dehydration<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Duke, M.<lb/> 1<lb/> , Lim, A.<lb/> 1,2<lb/> , Diniz da Costa, J.<lb/> 1<lb/> , Nielsen, L.<lb/>1<lb/> </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1<lb/> ARC Centre for Functional Nanomaterials, Division of Chemical Engineering, the University<lb/> of Queensland,</affiliation>
+	</byline>
+
+	<address>St Lucia, Australia<lb/></address>
+
+	<byline>
+	<affiliation>2<lb/> School of Life Sciences and Chemical Technology,</affiliation>
+	</byline>
+
+	<address>Ngee Ann Polytechnic, Singapore<lb/></address>
+
+	<div type="abstract">Lactic acid (LA) has significant market potential for many industries including food,<lb/> cosmetics, pharmaceuticals, medical and biodegradable materials. Production of LA usually<lb/> begins with the fermentation of glucose but subsequent stages for the enrichment of lactic acid<lb/> are complex and energy intensive and could be minimised using water selective membrane<lb/> technology. In this work, we trialled a highly selective hydrostable carbonised template<lb/> molecular sieve silica (CTMSS) membrane for the dehydration of a 15 vol% aqueous lactic<lb/> acid solution with 0.1 vol% glucose. CTMSS membrane films were developed by dip-coating<lb/> ceramic substrates with silica sols made using the acid catalysed sol-gel process. Permeation<lb/> was performed by feeding LA/glucose solution to the membrane cell at 18°C in a standard<lb/> pervaporation setup. The membrane showed selective transport of water from the aqueous<lb/> feed to the permeate while glucose was not detected. CTMSS membrane permeate flux<lb/> stabilised at 0.2 kg.m<lb/> -2<lb/> .hr<lb/> -1<lb/> in 3.9 hours, and reduced LA to lower than 0.2 vol%. Flux through<lb/> the CTMSS micropores was activated, displaying increased initial flux to 1.58 kg.m<lb/> -2<lb/> .hr<lb/> -1<lb/> at 60°C. To enrich a 1 l.min<lb/> -1<lb/> stream to 85% LA in a single stage, a minimum membrane area of<lb/> 324 m<lb/> 2<lb/> would be required at 18°C. Increased operating temperature to 80°C significantly<lb/> reduced this area to 24 m<lb/> 2<lb/> but LA levels in the permeate stream increased to 0.5 vol%. The<lb/> highly selective CTMSS membrane technology is an ideal candidate for LA purification.<lb/> CTMSS membrane systems operate stably in aqueous systems leading to potential cost<lb/> reductions in LA processing for future markets.<lb/> </div>
+	
+<div type="introduction">Introduction Reducing the cost of purifying lactic acid (LA) could lead to a breakthrough in reduced<lb/> production costs of many commercial products. Many industries utilise LA in producing their<lb/> products. For the food industry, LA is considered safe and acts as a good preservative and<lb/> pickling agent, while esters have been used as emulsifying agents in baking foods. In fact, LA<lb/> has been used for a range of reasons in numerous applications including leather, textiles, food<lb/> packaging, polymers, solder flux, adhesives, electroplating, detergents, cosmetics and<lb/> medicines [1]. An interesting use of LA is in forming poly lactic acid, a readily biodegradable<lb/> polymer which is not derived from fossil fuels. The global demand for LA in 2001 was 86,000<lb/> tons with growth expected to be 14% per year should polylactides and lactate esters become<lb/> commercially successful [2]. LA is therefore seen as a major commercial product, with main<lb/> drivers in food safety, health and the environment [3].<lb/> Lactic acid is produced from the fermentation of carbohydrates which can be sourced<lb/> from renewables such as glucose or cornstarch. The carbohydrate undergoes fermentation<lb/> with calcium hydroxide to produce calcium lactate. Sulphuric acid is then used to hydrolyse the<lb/> lactate to lactic acid, leaving calcium sulphate to precipitate out. Lactic acid is then extracted</div>
+
+		</front>
+	</text>
+</tei>

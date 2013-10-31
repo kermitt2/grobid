@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Yusuke</forename>
+								<surname>Oji</surname>,
+							<lb/>
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>Hirofumi</forename>
+								<surname>Yamamoto</surname> ,
+							<lb/>
+								<marker>2</marker>
+							</persName>
+							<persName>
+								<forename>Masaya</forename>
+								<surname>Nomura</surname> ,
+							<lb/>
+								<marker>3</marker>
+							</persName>
+							<persName>
+								<forename>Yoko</forename>
+								<surname>Nakano</surname>,
+							<lb/>
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>Ai</forename>
+								<surname>Ikeba</surname> ,
+							<lb/>
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>Shin -ichi</forename>
+								<surname>Nakatsuka</surname>,
+							<lb/>
+								<marker>4</marker>
+							</persName>
+							<persName>
+								<forename>Sakie</forename>
+								<surname>Abeno</surname> ,
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>Eiji</forename>
+								<surname>Kiyotoh</surname> ,
+							<lb/>
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>Tanyarat</forename>
+								<surname>Jomgeow</surname> ,
+							<lb/>
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>Mitsugu</forename>
+								<surname>Sekimoto</surname>,
+							<lb/>
+								<marker>2</marker>
+							</persName>
+							<persName>
+								<forename>Riichiro</forename>
+								<surname>Nezu</surname> ,
+							<lb/>
+								<marker>5</marker>
+							</persName>
+							<persName>
+								<forename>Yukinobu</forename>
+								<surname>Yoshikawa</surname>,
+							<lb/>
+								<marker>3</marker>
+							</persName>
+							<persName>
+								<forename>Yoshifumi</forename>
+								<surname>Inoue</surname> ,
+								<marker>3</marker>
+							</persName>
+							<persName>
+								<forename>Naoki</forename>
+								<surname>Hosen</surname> ,
+							<lb/>
+								<marker>6</marker>
+							</persName>
+							<persName>
+								<forename>Manabu</forename>
+								<surname>Kawakami</surname>,
+							<lb/>
+								<marker>7</marker>
+							</persName>
+							<persName>
+								<forename>Akihiro</forename>
+								<surname>Tsuboi</surname> ,
+							<lb/>
+								<marker>7</marker>
+							</persName>
+							<persName>
+								<forename>Yoshihiro</forename>
+								<surname>Oka</surname> ,
+							<lb/>
+								<marker>6</marker>
+							</persName>
+							<persName>
+								<forename>Hiroyasu</forename>
+								<surname>Ogawa</surname>,
+							<lb/>
+								<marker>6</marker>
+							</persName>
+							<persName>
+								<forename>Shigeo</forename>
+								<surname>Souda</surname> ,
+							<lb/>
+								<marker>3</marker>
+							</persName>
+							<persName>
+								<forename>Katsuyuki</forename>
+								<lb/>
+								<surname>Aozasa</surname> ,
+								<marker>4</marker>
+							</persName>
+							<persName>
+								<forename>Morito</forename>
+								<surname>Monden</surname>
+								<marker>2</marker> and
+							</persName>
+							<persName>
+								<forename>Haruo</forename>
+								<surname>Sugiyama</surname>
+								<marker>1, 7 ,8</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

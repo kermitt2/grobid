@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001437"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>RIM BlackBerry 7100t<lb/> Photo 1 of 4<lb/> RIM BlackBerry 7100t -Photo 1 of 4 -Mobiledia<lb/></titlePart>
+	</docTitle>
+
+	<ptr type="web">http://www.mobiledia.com/phones/rim/blackberry-7100t/photo-1.html<lb/></ptr>
+
+	<note type="page">1 of 1<lb/></note>
+	
+	<note type="other">27-06-2011 13:21</note>
+
+		</front>
+	</text>
+</tei>

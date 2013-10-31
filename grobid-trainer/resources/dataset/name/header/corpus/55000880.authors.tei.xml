@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>A</forename>
+								<middlename>r</middlename> .
+								<surname>Ohlsson</surname>,
+							</persName>
+							<persName>
+								<forename>R</forename>.
+								<surname>Nordlander</surname>,
+							</persName>
+							<persName>
+								<forename>T</forename>.
+								<surname>Bennett</surname>
+								<marker>*</marker>,
+							</persName>
+							<persName>
+								<forename>C</forename>.
+								<surname>Bitkover</surname>,
+							</persName>
+							<persName>
+								<forename>B</forename>.
+								<surname>Kjellströ</surname>
+								<marker>m</marker>,
+							</persName>
+							<persName>
+								<forename>B</forename>.
+								<surname>Lee</surname>
+								<marker>*</marker> and
+							<lb/>
+							</persName>
+							<persName>
+								<forename>L</forename>.
+								<surname>Rydé</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

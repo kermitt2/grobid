@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">Department of Plant Cell Biotechnology</orgName>,
+							<orgName type="institution">Central Food Technological Research Institute</orgName>
+							[
+							<orgName type="laboratory">Constituent laboratory of CSIR</orgName>
+							<lb/> 
+							(
+							<orgName type="institution">Council of Scientific and Industrial Research</orgName>)],
+							<address>
+								<addrLine>Mysore-570 020</addrLine>,
+								<country>India</country>.
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="institution">Cisco Systems, Inc.</orgName>,
+							<address>
+								<addrLine>170 West Tasman Drive</addrLine>,
+								<settlement>San Jose</settlement>,
+								<region>CA</region>
+								<postCode>95134-1706</postCode>
+								<country>USA</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

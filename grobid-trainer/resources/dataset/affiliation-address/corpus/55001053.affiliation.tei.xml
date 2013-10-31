@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+ From the
+						<affiliation>
+							<orgName type="department">Department of Immurwbiology</orgName>,
+							<orgName type="institution">Medical University Clinic I of Cologne</orgName>,
+							<address>
+								<addrLine>Kerpener Strasse 15</addrLine>,
+								<postCode>0-5000</postCode>
+								<settlement>Cologne 41</settlement>,
+							</address>
+							<orgName type="institution">Federal Republic of Germany</orgName> From the
+							<orgName type="department">Institute of Physiological Chemistry</orgName>,
+							<orgName type="institution">University of Bonn</orgName>,
+							<address>
+								<addrLine>Nussallee 11</addrLine>,
+								<postCode>0-5300</postCode>
+								<settlement>Bonn 1</settlement>,
+								<country>Federal Republic of Germany</country> From the
+							</address>
+							<orgName type="department">Max Planck Institute of Medical Research</orgName>,
+							<address>
+								<addrLine>Jahnstrasse 29</addrLine>,
+								<postCode>0-6900</postCode>
+								<settlement>Heidelberg</settlement>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

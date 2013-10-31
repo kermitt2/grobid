@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="department">Department of Neurosurgery</orgName>,
+							<orgName type="institution">Mie University</orgName>,
+							<address>
+								<settlement>Mie</settlement>,
+								<country>Japan</country>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="department">Institute for Frontier Medical Sciences</orgName>,
+							<orgName type="institution">Kyoto University</orgName>,
+							<address>
+								<settlement>Kyoto</settlement>,
+								<country>Japan</country>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>3</marker>
+							<orgName type="institution">Hyogo Prefectural Institute of Technology</orgName>,
+							<orgName type="department">Technical Support Center for Textiles Industries</orgName>,
+							<lb/>
+							<address>
+								<settlement>Nishiwaki</settlement>,
+								<region>Hyogo</region>,
+								<country>Japan</country>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>4</marker>
+							<orgName type="department">Industrial Technology Center of Okayama Prefecture</orgName>,
+							<orgName type="department">Department of Mechanical Engineering</orgName>,
+							<address>
+								<settlement>Okayama</settlement>,
+								<country>Japan</country>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>5</marker>
+							<orgName type="department">Electron Microscopy Research Center</orgName>,
+							<orgName type="institution">Mie University</orgName>,
+							<address>
+								<settlement>Mie</settlement>,
+								<country>Japan</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

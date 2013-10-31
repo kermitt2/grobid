@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001907"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Thetechnique of measuring thrombin generationwithfluorescent<lb/> substrates:4.The H-transform,amathematical procedureto<lb/> obtain thrombinconcentrations without external calibration<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>H. Coen Hemker;Pieter W. Hemker;Raed Al Dieri<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>SynapseBV, Cardiovascular ResearchInstitute Maastricht,</affiliation>
+	</byline>
+
+	<address>Maastricht, TheNetherlands<lb/></address>
+
+	<div type="abstract">Summary In fluorogenic thrombin generation (TG)experiments,thrombin<lb/> concentrations cannot be easily calculatedfromthe rate of the<lb/> fluorescent signal increase,because thec alibration coefficient<lb/> increasesduring the experiment, duetosubstrateconsumption<lb/> and quenchingofthe fluorescent signal by the product.Continu-<lb/>ous,external calibration via an in aparallelsampletherefore was<lb/> hithertorequired foranaccurate calculation of the TG curve.A<lb/> techniqueispresented thatallows mathematicaltransformation<lb/> of experimentalfluorescence intensitiesinto &quot;ideal&quot;data, i.e. in<lb/> the datat hat would have been obtained if substratec onsump-<lb/>tion and quenchingb yt he product would not playar ole.The<lb/> Keywords Thrombin generation,fluorogenic methods, calibration<lb/> method applies to fluorescence intensities up to 90% of the<lb/> maximalf luorescent signal corresponding to totals ubstrate<lb/> conversion andthereby covers theentireregion of interest en-<lb/>counteredinpractice.Thefirstderivativeofthe transformedsig-<lb/>nal can thenb ec onverted into thrombin concentrations via a<lb/> conventional,fixed calibration factor.This calibrationfactor can<lb/> be obtained from aseparate experiment but also by measuring<lb/> thea midolytic activityo ft he α 2 macroglobulin-thrombin com-<lb/>plex presentinthe reaction mixture (&quot;serum&quot;) afterthrombin<lb/> generation is over.This method halvest he amount of sample<lb/> required perexperiment.<lb/></div>
+
+	<reference>ThrombHaemost 2009; 101: ■■■<lb/></reference>
+	
+	<note type="other">NewTechnologies, DiagnosticTools andDrugs<lb/></note>
+
+	<note type="other">Correspondence to:<lb/></note>
+
+	<byline>
+	<docAuthor>H. C. Hemker<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Synapse BV,CardiovascularResearch Institute CARIM<lb/></affiliation>
+	</byline>
+
+	<address>P. O. Box616, 6200 MD,Maastricht, TheNetherlands<lb/></address>
+
+	<phone>Te l: +31433881675, Fax: +31 43 3670916<lb/></phone>
+
+	<email>E-mail: hc.hemker@thrombin.com<lb/></email>
+
+	<note type="submission">Received: September 2, 2008<lb/> Accepted: October 15,2008<lb/></note>
+
+	<note type="other">Prepublished online: ■■<lb/></note>
+
+	<idno type="DOI">doi:10.1160/TH08-09-0562<lb/></idno>
+
+	<note type="page">1<lb/> </note>
+	
+	<note type="copyright">©2009 Schattauer GmbH,Stuttgart<lb/></note>
+
+		</front>
+	</text>
+</tei>

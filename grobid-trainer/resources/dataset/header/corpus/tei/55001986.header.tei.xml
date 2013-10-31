@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001986"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">technotes<lb/> TM<lb/></note>
+
+	<docTitle>
+	<titlePart>Moisture Conditioning of<lb/> VYDYNE<lb/> ®<lb/> Polyamide 66 Resins<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">28457 TECH NOTES MOISTURE CONDIT1 1<lb/> 3/1/07 2:16:38 PM<lb/></note>
+
+	<div type="introduction">Moisture Conditioning of VYDYNE PA66 Resins<lb/> Tech Notes<lb/>
+
+	Although not always necessary,<lb/> conditioning of nylon parts before use<lb/> is common practice. As illustrated<lb/> in Table 1, moisture increases<lb/> toughness, ductility, and dimensions<lb/> in nylon parts. In general, nylons<lb/> have a minimum moisture level that<lb/> prevents brittleness, providing the<lb/> nylon has not been degraded. This<lb/> level is approximately the level it<lb/> will be in equilibrium with a 50%<lb/> relative humidity environment. For<lb/> unreinforced Nylon 66, this moisture<lb/> level is 2% to 3%.<lb/> Methods for Moisture<lb/> Conditioning Nylon<lb/> Moisture conditioning of VYDYNE<lb/> nylon resins is commonly conducted<lb/> by one of three methods listed below.<lb/> It is important to remember that when<lb/> using any conditioning process, the<lb/> rate of moisture absorption will vary<lb/> with water temperature, as well as<lb/> part thickness. In general, this rate<lb/> will roughly double for each 2°C<lb/> increase in water temperature and<lb/> will vary inversely with the square of<lb/> the part thickness.<lb/> 1. Best – Exposure to a high humidity<lb/> environment at room temperature.<lb/> 2. Good – Immerse parts in water<lb/> at a temperature of 50-55°C.<lb/> 3. Not Recommended – Boil parts<lb/> in water.</div>
+
+		</front>
+	</text>
+</tei>

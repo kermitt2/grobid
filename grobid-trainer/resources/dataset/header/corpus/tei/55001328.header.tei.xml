@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001328"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Effect of Cu/(Zn +Sn) ratio on the properties of co-evaporated Cu 2 ZnSnSe 4<lb/> thin films<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Suresh Babu G., Kishore Kumar Y.B., Uday Bhaskar P., Sundara Raja Vanjari<lb/> n<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Sri Venkateswara University, Solar Energy Laboratory, Department of Physics, S.V.U.</affiliation>
+	</byline>
+
+	<address>Campus, Tirupati 517 502, India<lb/></address>
+
+	<note type="other">a r t i c l e i n f o<lb/></note>
+
+	<note type="submission">Article history:<lb/> Received 17 May 2008<lb/> Received in revised form<lb/> 1 May 2009<lb/> Accepted 8 September 2009<lb/></note>
+
+	<date>Available online 12 October 2009<lb/></date>
+
+	<keyword>Keywords:<lb/> Cu 2 ZnSnSe 4<lb/> Thin films<lb/> Co-evaporation<lb/> Characterization Solar cell absorber<lb/></keyword>
+
+	<div type="abstract">a b s t r a c t<lb/> The effect of Cu/(Zn+ Sn) ratio on the properties of Cu 2 ZnSnSe 4 (CZTSe) thin films is investigated. CZTSe<lb/> thin films with Cu/(Zn+ Sn) ratio in the range 0.85–1.15 are deposited using 4-source co-evaporation<lb/> technique onto glass substrates held at a substrate temperature T s = 623 K and post-deposition annealed<lb/> at T pa =723 K for 1 h in the selenium atmosphere. Powder X-ray diffraction (XRD) patterns reveal that<lb/> CZTSe films deposited with Cu/(Zn +Sn) ratio in the range 0.90–1.10 are single phase and polycrystalline.<lb/> CZTSe films, deposited with Cu/(Zn+ Sn) ratio of 0.85 contain ZnSe as secondary phase and films with<lb/> ratio of 1.15 contain Cu 2 À X Se as the secondary phase. The films are found to exhibit kesterite structure.<lb/> Band gap of the films is found to increase with decrease in Cu/(Zn +Sn) ratio. Electrical resistivity of the<lb/> films is found to lie in the range 0.02–23-O-cm depending on Cu/(Zn+ Sn) ratio.</div>
+<note type="copyright"><lb/> &amp; 2009 Elsevier B.V. All rights reserved.<lb/></note>
+
+		</front>
+	</text>
+</tei>

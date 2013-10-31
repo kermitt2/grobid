@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>a</marker>
+							<orgName type="department">Department of Biotechnology</orgName>,
+							<orgName type="institution">Delft University of Technology</orgName>,
+							<address>
+								<addrLine>Julianalaan 136</addrLine>,
+								<postCode>2628 BL</postCode>
+								<settlement>Delft</settlement>,
+								<country>The Netherlands</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

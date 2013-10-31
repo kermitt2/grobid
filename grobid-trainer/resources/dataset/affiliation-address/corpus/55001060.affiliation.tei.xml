@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="institution">Nanjing College of Pharmacy</orgName>,
+							<address>
+								<settlement>Nanjing</settlement>,
+								<country>China</country>;
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>*</marker>
+							<orgName type="department">Institute of Jingsu Industrial Chemical Research</orgName>,
+							<address>
+								<settlement>Nanjing</settlement>,
+								<country>China;</country>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>t</marker>
+							<orgName type="department">Faculty of Pharmacy</orgName>,
+							<orgName type="institution">Meijo University</orgName>,
+							<address>
+								<settlement>Tempaku</settlement>,
+								<settlement>Nagoya</settlement>
+								<postCode>468</postCode>,
+								<country>Japan</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

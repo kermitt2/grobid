@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000746"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>A LOCAL POSITIONING SYSTEM BASED ON PSEUDO-RANDOM SEQUENCE EMISSION<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>E. Martín Gorostiza, J. L. Lázaro Galilea, I. Bravo Muñoz, P. Revenga de Toro,<lb/> P. Ramos Sainz<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Dpt. of Electronics, Polytechnic School, University of Alcalá. </affiliation>
+	</byline>
+
+	<address>Alcalá de Henares,<lb/> Madrid, Spain. </address>
+	
+	<phone>Tel(s). +34 918856577 / 40;</phone>
+
+	<email>e-mail: Ernesto@depeca.alcala.es<lb/></email>
+
+	<div type="abstract">Abstract: A Local Positioning System for Autonomous Robot guidance aid is proposed,<lb/> based on the principles of GPS, but being the emitter placed on the Robot(s) and the<lb/> detectors placed in the environment. The emitted signal is an infrared laser signal ASK-<lb/>modulated with a Pseudo-Random Sequence. Auto-correlation is performed at a central<lb/> node. Distances to the reference points are computed in terms of differential phase shift<lb/> measurements. Using m-sequence-codes makes multiemission-working conditions<lb/> possible. High precision is achieved as it is shown in a final table. Copyright © 2002<lb/> IFAC.<lb/></div>
+
+	<keyword>Key words: Autonomous Robot, infrared detector, pseudo-random sequences.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001254"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>To What Extent Can Standard GNSS Ambiguity<lb/> Resolution Methods Be Used For Single-Frequency<lb/> Epoch-by-Epoch Attitude Determination?<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>P.J.G. Teunissen<lb/> (1) and G. Giorgi<lb/>(2)<lb/> </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>(1) Department of Spatial Sciences<lb/> Curtin University of Technology,</affiliation>
+	</byline>
+
+	<address>Perth, Australia<lb/></address>
+
+	<byline>
+	<affiliation>(2) Delft University of Technology<lb/> Delft Institute of Earth Observation and Space Systems<lb/></affiliation>
+	</byline>
+
+	<address>The Netherlands<lb/></address>
+
+	<email>P.Teunissen@curtin.edu.au; G.Giorgi@tudelft.nl<lb/></email>
+
+	<note type="other">BIOGRAPHY Peter Teunissen is full professor of Geodesy and Naviga-<lb/>tion, and Federation Fellow of the Australian Research<lb/> Council. He is the inventor of the LAMBDA method<lb/> and has 25 years of GNSS research experience. Gabriele<lb/> Giorgi is PhD students at the Mathematical Geodesy and<lb/> Positioning (MGP) group of the Delft Institute of Earth<lb/> Observation and Space Systems (DEOS). Their current<lb/> research focuses on investigating the capabilities of the<lb/> next generation GNSS for relative navigation, attitude de-<lb/>termination and formation flying.<lb/> </note>
+	
+	<div type="abstract">ABSTRACT In this contribution we study and compare the strength<lb/> of three different GNSS models for carrier-phase attitude<lb/> determination. These models are (1) the unconstrained<lb/> GNSS model, (2) a linear(ized) constrained GNSS model,<lb/> and (3) a nonlinear constrained GNSS model. The latter<lb/> model is the baseline-length constrained GNSS model,<lb/> while the second model is its linearized version. The<lb/> strongest of the three models is the third. The advan-<lb/>tage of the first model is, however, that one can apply any<lb/> standard ambiguity resolution (AR) method to it. This is<lb/> not true for the third model, as special precautions need<lb/> to be taken in order to rigorously incorporate the nonlin-<lb/>ear constraints. The strength of the second model ap-<lb/>proaches that of the third if the nonlinearity is negligi-<lb/>ble. The constrained LAMBDA method has been devel-<lb/>oped for the third model, while the standard LAMBDA<lb/> method can be directly applied to the first and the second<lb/> model. We show the preferred method for different mea-<lb/>surement scenarios and different baseline lengths. With<lb/> our results, a user will be able to determine for which<lb/> baseline length he/she needs to switch from the standard<lb/> LAMBDA method to the more advanced constrained ver-<lb/>sion. In our results we emphasize the most challenging<lb/> case, which is the single-frequency, epoch-by-epoch, un-<lb/>aided GNSS attitude determination.<lb/> </div>
+
+	<div type="introduction">1 INTRODUCTION<lb/> Global Navigation Satellite System (GNSS) ambiguity re-<lb/>solution is the process of resolving the unknown cycle<lb/> ambiguities of the carrier phase data as integers. The<lb/> sole purpose of ambiguity resolution is to use the inte-<lb/>ger ambiguity constraints as a means of improving signif-<lb/>icantly on the precision of the remaining model param-<lb/>eters. The LAMBDA-method [1] has become the stan-<lb/>dard AR-method for the majority of current GNSS mod-<lb/>els. The method is numerically efficient, it is applicable<lb/> to any GNSS and it has been proven to provide the highest<lb/> possible success rate [2].<lb/> The LAMBDA method is applicable to any GNSS model<lb/> that is linear or approximately linear. This is also true for<lb/> constrained GNSS models, provided the constraints are<lb/> linear or approximately linear. Most of the GNSS models<lb/> are only moderately nonlinear and can therefore easily be<lb/> linearized. This is however not per se the case for GNSS<lb/> attitude determination models. Hence, it is of importance<lb/> to know to what extend standard AR methods can be used<lb/> for GNSS attitude determination.<lb/> GNSS attitude determination is a rich field of current stud-<lb/>ies, with a wide variety of challenging (terrestrial, sea, air<lb/> and space) applications [3-11]. One of the challenges is<lb/> the use of single-frequency receivers for epoch-by-epoch</div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,81 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000605"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>mtDNA nt13708A Variant Increases the Risk of Multiple<lb/> Sclerosis<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Xinhua Yu<lb/> 1<lb/> , Dirk Koczan<lb/> 2 , Anna-Maija Sulonen<lb/> 3<lb/> , Denis A. Akkad<lb/> 4 , Antje Kroner<lb/> 5 , Manuel Comabella<lb/> 6<lb/> , Gianna Costa<lb/> 7 , Daniela Corongiu<lb/> 7<lb/> , Robert Goertsches<lb/> 2<lb/> , Montserrat Camina-Tato<lb/> 6<lb/> , Hans-Juergen<lb/> Thiesen<lb/> 2<lb/> , Harald I. Nyland<lb/> 8,9 , Sverre J. Mørk<lb/> 10<lb/> , Xavier Montalban<lb/> 6<lb/> , Peter Rieckmann<lb/> 5 , Maria G. Marrosu<lb/> 7<lb/> , Kjell-Morten Myhr<lb/> 8,9 , Joerg T. Epplen<lb/> 4 , Janna Saarela<lb/> 3 , Saleh M. Ibrahim<lb/> 1 *<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Section of Immunogenetics, University of Rostock,</affiliation>
+	</byline>
+
+	<address>Rostock, Germany,</address>
+
+	<byline>
+	<affiliation>2 Department of Immunology, University of Rostock,</affiliation>
+	</byline>
+
+	<address>Rostock, Germany,</address>
+
+	<byline>
+	<affiliation>3 Department of<lb/> Molecular Medicine, National Public Health Institute,</affiliation>
+	</byline>
+
+	<address> Helsinki, Finland,</address>
+
+	<byline>
+	<affiliation>4 Department of Human Genetics, Ruhr University, International Graduate School of Neuroscience<lb/> (IGSN),</affiliation>
+	</byline>
+
+	<address>Bochum, Germany,</address>
+
+	<byline>
+	<affiliation>5 Clinical Research Group for Multiple Sclerosis and Neuroimmunology, Department of Neurology, University of Wü rzburg,</affiliation>
+	</byline>
+
+	<address>Wü zburg, Germany,<lb/></address>
+
+	<byline>
+	<affiliation>6 Unitat de Neuroimmunologia Clinica, Hospital Universitari Vall d&apos;Hebron, Universitat Autonoma de Barcelona, </affiliation>
+	</byline>
+
+	<address>Barcelona, Spain, 7 The Centro Sclerosi Multipla,<lb/></address>
+
+	<byline>
+	<affiliation>Dipartimento di Scienze Cardiovascolari e Neurologiche, University of Cagliari,</affiliation>
+	</byline>
+
+	<address>Cagliari, Italy,</address>
+
+	<byline>
+	<affiliation>8 Department of Neurology, Haukeland University Hospital, University of<lb/> Bergen,</affiliation>
+	</byline>
+
+	<address>Bergen, Norway,</address>
+
+	<byline>
+	<affiliation>9 Department of Clinical Medicine, University of Bergen,</affiliation>
+	</byline>
+
+	<address>Bergen, Norway, 10</address>
+
+	<byline>
+	<affiliation>Department of Pathology, Haukeland University Hospital, Gade&apos;s<lb/> Institute, University of Bergen,</affiliation>
+	</byline>
+
+	<address>Bergen, Norway<lb/></address>
+
+	<div type="abstract">Abstract<lb/> Background: Mitochondrial DNA (mtDNA) polymorphism is a possible factor contributing to the maternal parent-of-origin<lb/> effect in multiple sclerosis (MS) susceptibility.</div>
+
+		</front>
+	</text>
+</tei>

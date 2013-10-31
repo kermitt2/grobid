@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001529"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">GPU Gems 2<lb/>
+	GPU Gems 2 is now available, right here, online. You can purchase a beautifully printed version of this book,<lb/> and others in the series, at a 30% discount courtesy of InformIT and Addison-Wesley.<lb/> Please visit our Recent Documents page to see all the latest whitepapers and conference presentations that<lb/> can help you with your projects.<lb/></note>>
+
+	<docTitle>
+	<titlePart>Chapter 40. Computer Vision on the GPU<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>James Fung<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University of Toronto<lb/></affiliation>
+	</byline>
+
+	<div type="abstract">Computer vision tasks are computationally intensive and repetitive, and they often exceed the real-time capabilities of the<lb/> CPU, leaving little time for higher-level tasks. However, many computer vision operations map efficiently onto the modern GPU,<lb/> whose programmability allows a wide variety of computer vision algorithms to be implemented. This chapter presents methods<lb/> of efficiently mapping common mathematical operations of computer vision onto modern computer graphics architecture.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000799"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>HERMETIC INTEGRATION OF LIQUIDS IN MEMS BY ROOM<lb/> TEMPERATURE, HIGH-SPEED PLUGGING OF LIQUID-FILLED CAVITIES<lb/> AT WAFER LEVEL<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>M. Antelius, A.C. Fischer, F. Niklaus, G. Stemme and N. Roxhed<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>KTH – Royal Institute of Technology,</affiliation>
+	</byline>
+
+	<address>Stockholm, Sweden<lb/></address>
+
+	<div type="abstract">ABSTRACT<lb/> This paper reports a novel room temperature hermetic<lb/> liquid sealing process based on wire bonded &quot;plugs&quot; over the<lb/> access ports of liquid-filled cavities. The method enables liq-<lb/>uids to be integrated already at the fabrication stage. Test<lb/> vehicles were manufactured and used to investigate the me-<lb/>chanical and hermetic properties of the seals. A helium leak<lb/> rate of better than 10 −10 mbarL/s was measured on the suc-<lb/>cessfully sealed structures. The bond strength of the &quot;plugs&quot;<lb/> were similar to standard wire bonds on flat surfaces.<lb/></div>
+
+		</front>
+	</text>
+</tei>

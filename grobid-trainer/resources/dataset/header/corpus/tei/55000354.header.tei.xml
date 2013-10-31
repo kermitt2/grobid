@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000354"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>IEEE C802.16m-09/3091<lb/></idno> 
+	
+	<note type="page">1<lb/></note>
+	
+	<note type="other">Project IEEE 802.16 Broadband Wireless Access Working Group &lt;http://ieee802.org/16&gt; <lb/> </note>
+
+	<docTitle>
+	<titlePart>Title Methods For DCR Mode Operation and Coverage Loss in IEEE 802.16m (16.2.18)<lb/></titlePart>
+	</docTitle>
+
+	<date type ="submission">Date Submitted<lb/> 2009-12-31<lb/></date>
+
+	<note type="other">Source(s)<lb/></note>
+
+	<byline>
+	<docAuthor>Shantidev Mohanty, Xiangying Yang, Muthaiah<lb/> Venkatachalam,<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Intel Corporation<lb/></affiliation>
+	</byline>
+
+	<email>E-mail: shantidev.mohanty@intel.com<lb/></email>
+
+	<note type="other">Re:<lb/> Call for LB #30b on &quot; P802.16m/D3&quot;:<lb/> Target topic: &quot; 16.2.18&quot;<lb/></note>
+
+	<div type="abstract">Abstract This contribution proposes methods using which AMS in sleep mode can ensure that it<lb/> has up-to-date system information in IEEE 802.16m.<lb/></div>
+	
+	<div type="introduction"> Purpose To be discussed and adopted by TGm for 802.16m Letter Ballot 30b.<lb/> Notice<lb/> This document does not represent the agreed views of the IEEE 802.16 Working Group or any of its<lb/> subgroups. It represents only the views of the participants listed in the &quot;Source(s)&quot; field above. It is<lb/> offered as a basis for discussion. It is not binding on the contributor(s), who reserve(s) the right to add,<lb/> amend or withdraw material contained herein.<lb/> Release</div>
+
+		</front>
+	</text>
+</tei>

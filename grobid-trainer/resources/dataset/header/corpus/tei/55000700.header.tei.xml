@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000700"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">
+	Advanced Search<lb/> Search our Site<lb/> Search<lb/> Home Tech Cells<lb/> Article Archive<lb/> Industry Directory<lb/> Subscriptions Advertise<lb/> Media Center<lb/> Login/Register<lb/> Metals/Materials Article<lb/> Order Reprint<lb/> Print Friendly<lb/>
+
+	Published in...<lb/>
+
+	Practical Welding Today®<lb/> Subscribe to PWT<lb/> View This Issue<lb/> Home \ Metals/Materials \ Articles \ Welding&apos;s effect on strengthening steel<lb/></note>
+
+	<docTitle>
+	<titlePart>Welding&apos;s effect on strengthening steel<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>By Bob Capudean<lb/></docAuthor>
+	</byline>
+
+	<date>December 11, 2003<lb/></date>
+
+	<div type="abstract">Welding can severely influence strengthened or hardened metals, depending on the hardening technique used. Because of this, post-<lb/>weld heat treatment is often very helpful in maintaining weld joint strength because it softens or tempers any martensite or bainite that<lb/> formed in the HAZ.<lb/> As I mentioned in the September/ October issue, welding can severely influence strengthened or hardened metals, depending on the hardening<lb/> technique used.<lb/></div>
+
+
+	<div type="abstract">Hardening Techniques and Welding Effects<lb/>Work-or strain-hardened metals exposed to the intense localized heat of welding tend to recrystallize and soften in the heat-affected zone (HAZ).<lb/> Assuming the correct filler metal is used, the only area affected is the HAZ. The admixture and filler metal don&apos;t suffer recrystallization and remain<lb/> as strong as the base metal. This explains why, when you&apos;re dealing with work-or strain-hardened steel, failures usually happen in the HAZ right<lb/> next to the weld joint, not directly in the joint.<lb/> This is especially true for cold-rolled steel, wrought iron, and drawn or rolled aluminum. When working with these materials, joint design is critical,<lb/> and you must take into account the amount of stress the finished piece will experience in service.<lb/> Precipitation-hardened metals go through a more complex change than work-hardened metals do, but the end result is similar, with the HAZ<lb/> going through an annealing cycle and becoming softer. That&apos;s because the precipitate that gives the metal its strength grows and agglomerates<lb/> with heat—it over-ages. This reduces the effects of precipitation hardening. The higher the heat, the faster the metal reaches the over-aged, or<lb/> weakened, state. Post-weld heat treatment can correct this, as long as you carefully select the filler metal to match the base metal&apos;s aging<lb/> characteristics.<lb/> Metals that have been solid-solution-hardened have the least amount of change when welded. There&apos;s a little grain growth at the fusion line, but<lb/> usually not enough to have any effect on the metal&apos;s properties.</div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">Department of Pharmaceutical Analysis</orgName>,
+							<orgName type="institution">Veerayatan Institute of Pharmacy</orgName>,
+							<address>
+								<settlement>Kutch</settlement>,
+								<region>Gujarat</region>,
+								<country>India</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="institution">Ramanbhai Patel College of Pharmacy</orgName>,
+							<address>
+								<settlement>Changa</settlement>,
+								<region>Gujarat</region>,
+								<country>India</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="laboratory">CRO</orgName>,
+							<address>
+								<settlement>Veeda</settlement>,
+								<settlement>Ahmedabad</settlement>,
+								<region>Gujarat</region>,
+								<country>India</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>3</marker>
+							<orgName type="department">A.R. College of Pharmacy</orgName>,
+							<address>
+								<settlement>Vallabh Vidhyanagar</settlement>,
+								<region>Gujarat</region>,
+								<country>India</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

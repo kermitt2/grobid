@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001089"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>MICROSOFT OFFICE WORD 97-2007<lb/> BINARY FILE FORMAT SPECIFICATION<lb/> [*.doc]<lb/> </titlePart>
+	</docTitle>
+	
+	<div type="abstract">Includes Binary File Format Documentation<lb/> Relevant To:<lb/>Microsoft Office Word 2007<lb/> Microsoft Office Word 2003<lb/> Microsoft Office Word 2002<lb/> Microsoft Office Word 2000<lb/> Microsoft Office Word 1997</div>
+
+		</front>
+	</text>
+</tei>

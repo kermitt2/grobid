@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000177"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other"> [Log in to get rid of this advertisement]<lb/> Go Job Hunting at the LQ Job Marketplace<lb/> Home Forums HCL Reviews Tutorials Articles Register Search Today&apos;s Posts Mark Forums Read<lb/>
+
+LinuxQuestions.org &gt; Forums &gt; Linux &gt; Linux -<lb/>Software<lb/></note>
+
+	<docTitle>
+		<titlePart> record dvb streams (with subtitles !!) from the command line<lb/> </titlePart>
+	</docTitle>
+
+	<div type="introduction">User Name<lb/> Remember Me?<lb/> Password<lb/> Linux -Software This forum is for Software issues.<lb/> Having a problem installing a new program? Want to know which application is best for the job? Post<lb/> your question in this forum.<lb/> Notices<lb/> Welcome to LinuxQuestions.org, a friendly and active Linux Community.<lb/> You are currently viewing LQ as a guest. By joining our community you will have the ability to post<lb/> topics, receive our newsletter, use the advanced search, subscribe to threads and access many other<lb/> special features. Registration is quick, simple and absolutely free. Join our community today!<lb/> Note that registered members see fewer ads, and ContentLink is completely disabled once you<lb/> log in.<lb/> Are you new to LinuxQuestions.org? Visit the following links:<lb/> Site Howto | Site FAQ | Sitemap | Register Now<lb/> If you have any problems with the registration process or your account login, please contact us. If you<lb/> need to reset your password, click here.<lb/> Thread Tools<lb/> 04-28-2008, 06:30 PM<lb/> #1<lb/> henning LQ Newbie<lb/> Registered: Apr 2008<lb/> Posts: 5<lb/> record dvb streams (with subtitles !!) from the command line<lb/> Hi<lb/> I have a server (debian) with a<lb/> dvb-interface (nova-t-usb2) and I need a way to record dvb streams<lb/> remotely. (I live in Denmark/europe)<lb/> Something like:<lb/> 1. ssh to the server<lb/> 2. execute commands to record<lb/> 3. transfer the file to where ever i want to view the file.<lb/> I&apos;ve (severe) problems at step 2.<lb/> Whatever I try I cant get a recording with subtitles. (I&apos;ve tried several<lb/> solutions that recorded video+audio just fine, but NO subtitles)<lb/> If I launch Kaffeine directly on my server (with a keyboard and screen<lb/> attatched and using the GUI) to record some dvb stream it works fine. well<lb/> it works perfectly, the recorded *.m2t file is just what I need -but how<lb/> can I do the same thing when I am physically away from my server. (I<lb/> only have ssh/telnet access -no keyboard, no GUI, no mouse)<lb/> Or in other words:<lb/> How does Kaffeine do the job ? which subrutines does Kaffeine use.<lb/> -dvbstream ?<lb/> -cat /dev/dvb/adapter0/dvr0 &gt; ...<lb/> -replex ...<lb/>Main Menu<lb/> Linux Forums<lb/> Search LQ Tags<lb/> Linux HCL<lb/> Linux Tutorials<lb/> LQ Job<lb/> Marketplace Linux Wiki<lb/> Distro Reviews<lb/> Book Reviews<lb/> Download Linux<lb/> Linux Bookmarks<lb/> Press Releases<lb/> Linux Podcast<lb/> Social Groups<lb/> LQ Blogs<lb/> LQ Radio<lb/> LQ Radio Jukebox<lb/> Home<lb/> My LQ<lb/>Login Register<lb/>Write for LQ<lb/> LinuxQuestions.org is<lb/> looking for people<lb/> interested in writing<lb/> Editorials, Articles,<lb/> Reviews, and more. If<lb/> you&apos;d like to contribute<lb/> content, let us know.<lb/> Main Menu<lb/> LQ Calendar<lb/> LQ Rules<lb/> LQ Sitemap<lb/> Site FAQ<lb/> Linux Links<lb/> View New Posts<lb/> View Latest Posts<lb/> Zero Reply<lb/> Threads LQ Wiki Most<lb/> Wanted Jeremy&apos;s Blog<lb/> Report LQ Bug<lb/> Tech Magazines<lb/> Tech Whitepapers<lb/> TreoQuestions.org<lb/> Treo Forum<lb/> Treo Downloads<lb/> record dvb streams (with subtitles !!) from the command line -LinuxQue... http://web.archive.org/web/20081207123857/http://www.linuxquestion...<lb/>1 of 3<lb/>06-06-2011 15:27</div>
+
+		</front>
+	</text>
+</tei>

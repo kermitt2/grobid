@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Hojoong</forename>
+								<surname>Kim</surname>,
+							</persName>
+							<persName>
+								<forename>Young</forename>
+								<middlename>Mi</middlename>
+								<surname>Kwon</surname>,
+							</persName>
+							<persName>
+								<forename>Jin</forename>
+								<middlename>Seuk</middlename>
+								<surname>Kim</surname>,
+							</persName>
+							<persName>
+								<forename>Haengbyoung</forename>
+								<surname>Lee</surname>,
+							</persName>
+							<persName>
+								<forename>Jung-Ho</forename>
+								<surname>Park</surname>,
+							</persName>
+							<persName>
+								<forename>Young</forename>
+								<middlename>Mog</middlename>
+								<surname>Shim</surname>,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Joungho</forename>
+								<surname>Han</surname> ,
+							</persName>
+							<persName>
+								<forename>Joobae</forename>
+								<surname>Park</surname> ,and
+							</persName>
+							<persName>
+								<forename>Duk -Hwan</forename>
+								<surname>Kim</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

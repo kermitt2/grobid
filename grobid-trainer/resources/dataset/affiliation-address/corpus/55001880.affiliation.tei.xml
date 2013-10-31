@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="institution">Hynix Semiconductor</orgName>
+							<lb/>
+							<orgName type="institution">Intel Corporation</orgName>
+							<lb/>
+							<orgName type="institution">Micron Technology, Inc</orgName>.
+							<lb/>
+							<orgName type="institution">Phison Electronics Corp</orgName>´.
+							<lb/>
+							<orgName type="institution">Sony Corporation</orgName>
+							<lb/>
+							<orgName type="institution">STMicroelectronics</orgName>
+							<lb/>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

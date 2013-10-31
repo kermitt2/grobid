@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>E</forename>.
+								<surname>Martín Gorostiza</surname>,
+							</persName>
+							<persName>
+								<forename>J</forename>.
+								<middlename>L</middlename>.
+								<surname>Lázaro Galilea</surname>,
+							</persName>
+							<persName>
+								<forename>I</forename>.
+								<surname>Bravo Muñoz</surname>,
+							</persName>
+							<persName>
+								<forename>P</forename>.
+								<surname>Revenga de Toro</surname>,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>P</forename>.
+								<surname>Ramos Sainz</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,89 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55002028"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>OpenFlow: Enabling Innovation in Campus Networks<lb/></titlePart>
+	</docTitle>
+
+	<date>March 14, 2008<lb/></date>
+
+	<byline>
+	<docAuthor>Nick McKeown<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Stanford University<lb/></affiliation>
+	</byline>
+
+	<byline>
+	<docAuthor>Tom Anderson<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University of Washington<lb/></affiliation>
+	</byline>
+
+	<byline>
+	<docAuthor>Hari Balakrishnan<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>MIT<lb/> </affiliation>
+	</byline>
+	
+	<byline>
+	<docAuthor>Guru Parulkar<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Stanford University<lb/></affiliation>
+	</byline>
+
+	<byline>
+	<docAuthor>Larry Peterson<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Princeton University<lb/></affiliation>
+	</byline>
+
+	<byline>
+	<docAuthor>Jennifer Rexford<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Princeton University<lb/></affiliation>
+	</byline>
+
+	<byline>
+	<docAuthor>Scott Shenker<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University of California,<lb/></affiliation>
+	</byline>
+
+	<address>Berkeley<lb/></address>
+
+	<byline>
+	<docAuthor>Jonathan Turner<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Washington University</affiliation>
+	</byline>
+	
+	<address> in<lb/> St. Louis<lb/></address>
+
+	<div type="abstract">ABSTRACT<lb/> This whitepaper proposes OpenFlow: a way for researchers<lb/> to run experimental protocols in the networks they use ev-<lb/>ery day. OpenFlow is based on an Ethernet switch, with<lb/> an internal flow-table, and a standardized interface to add<lb/> and remove flow entries. Our goal is to encourage network-<lb/>ing vendors to add OpenFlow to their switch products for<lb/> deployment in college campus backbones and wiring closets.<lb/> We believe that OpenFlow is a pragmatic compromise: on<lb/> one hand, it allows researchers to run experiments on hetero-<lb/>geneous switches in a uniform way at line-rate and with high<lb/> port-density; while on the other hand, vendors do not need<lb/> to expose the internal workings of their switches. In addition<lb/> to allowing researchers to evaluate their ideas in real-world<lb/> traffic settings, OpenFlow could serve as a useful campus<lb/> component in proposed large-scale testbeds like GENI. Two<lb/> buildings at Stanford University will soon run OpenFlow<lb/> networks, using commercial Ethernet switches and routers.<lb/> We will work to encourage deployment at other schools; and<lb/> We encourage you to consider deploying OpenFlow in your<lb/> university network too.<lb/></div>
+
+	<keyword>Categories and Subject Descriptors</keyword>
+
+		</front>
+	</text>
+</tei>

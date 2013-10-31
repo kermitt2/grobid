@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>M</forename>.
+								<middlename>C</middlename>.
+								<surname>Blanco-Loez</surname>,
+							</persName>
+							<persName>
+								<forename>M</forename>.
+								<middlename>J</middlename>.
+								<surname>Lobo-Castanõ</surname>,
+							</persName>
+							<persName>
+								<forename>A</forename>.
+								<middlename>J</middlename>.
+								<surname>Miranda-Ordieres</surname>,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>P</forename>.
+								<surname>Tunõ -Blanco</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>
