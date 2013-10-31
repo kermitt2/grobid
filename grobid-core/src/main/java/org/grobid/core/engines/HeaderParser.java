@@ -999,7 +999,7 @@ public class HeaderParser extends AbstractParser {
 				output = writeField(buffer, s1, lastTag0, s2, "<phone>", "<phone>", addSpace);
 			}
 			if (!output) {
-				output = writeField(buffer, s1, lastTag0, s2, "<degree>", "<degree>", addSpace);
+				output = writeField(buffer, s1, lastTag0, s2, "<degree>", "<note type=\"degree\">", addSpace);
 			}
 			if (!output) {
 				output = writeField(buffer, s1, lastTag0, s2, "<web>", "<ptr type=\"web\">", addSpace);
@@ -1091,6 +1091,8 @@ public class HeaderParser extends AbstractParser {
 				buffer.append("</phone>\n");
 			} else if (lastTag0.equals("<pubnum>")) {
 				buffer.append("</idno>\n");
+			} else if (lastTag0.equals("<degree>")) {
+				buffer.append("</note>\n");
 			}
 		}
 	}
@@ -1099,11 +1101,11 @@ public class HeaderParser extends AbstractParser {
 		boolean result = false;
 		if ((s1.equals(field)) || (s1.equals("I-" + field))) {
 			result = true;
-			if (s1.equals(lastTag0)) {
+			if (s1.equals(lastTag0) || (s1).equals("I-"+lastTag0)) {
 				if (addSpace)
 					buffer.append(" ").append(s2);
 				else
-					buffer.append(s2);
+					buffer.append(s2); 
 			} else
 				buffer.append("\n\t").append(outField).append(s2);
 		}
