@@ -211,10 +211,10 @@ var grobid = (function($) {
 			$('#consolidateBlock').hide();
 			setBaseUrl('processAffiliations');
 		} 
-		else if (selected == 'processCitations') {
+		else if (selected == 'processCitation') {
 			createInputTextArea('citations');
 			$('#consolidateBlock').show();
-			setBaseUrl('processCitations');
+			setBaseUrl('processCitation');
 		} 
 		else if (selected == 'processCitationPatentTEI') {
 			createInputFile(selected);

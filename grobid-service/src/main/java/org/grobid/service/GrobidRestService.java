@@ -65,7 +65,7 @@ public class GrobidRestService implements GrobidPathes {
 	private static final String NAMES = "names";
 	private static final String DATE = "date";
 	private static final String AFFILIATIONS = "affiliations";
-	private static final String CITATION = "citation";
+	private static final String CITATION = "citations";
 	private static final String TEXT = "text";
 	private static final String SHA1 = "sha1";
 	private static final String XML = "xml";
