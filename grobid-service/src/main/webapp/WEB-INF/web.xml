@@ -60,7 +60,7 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>grobid-service</servlet-name>
-        <url-pattern>/processCitations</url-pattern>
+        <url-pattern>/processCitation</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>grobid-service</servlet-name>
