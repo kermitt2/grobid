@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>a</marker>
+							<orgName type="institution">ENEA</orgName>,
+							<orgName type="laboratory">Applied Physics Technologies Dep. (FIS)</orgName>,
+							<orgName type="institution">Laser Application Section (LAS)</orgName>
+							<lb/>
+							<address>
+								<addrLine>Via Enrico Fermi 45</addrLine>,
+								<postCode>00044</postCode>
+								<settlement>Frascati (Rome)</settlement>,
+								<country>Italy</country>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>a</marker>
+							<orgName type="institution">Romanian Academy</orgName>,
+							<orgName type="department">Institute of Biology</orgName>,
+							<address>
+								<addrLine>Microbiology Centre 296</addrLine>,
+								<addrLine>Splaiul Independentei</addrLine>,
+							<lb/>
+								<postCode>79651</postCode>
+								<settlement>Bucharest</settlement>,
+								<country>Romania</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

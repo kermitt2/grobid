@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="institution">Consiglio Nazionale delle Ricerche</orgName> -
+							<orgName type="department">Istituto Ricerche sulla<lb/> Combustione</orgName>,
+							<address>
+								<country>Italy</country>
+								<lb/>
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="institution">CNR -Consiglio Nazionale delle Ricerche</orgName> -
+							<orgName type="department">Istituto di Ricerche sulla<lb/> Combustione (IT)</orgName>
+							<lb/> 
+						</affiliation>
+						<affiliation>	
+							<orgName type="institution">INETI -Instituto Nacional de Engenharia</orgName>,
+							<orgName type="department">Tecnologia e Inovação (PT)</orgName>
+							<lb/> 
+						</affiliation>	
+						<affiliation>	
+							<orgName type="institution">TUV -Vienna University of Technology</orgName>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

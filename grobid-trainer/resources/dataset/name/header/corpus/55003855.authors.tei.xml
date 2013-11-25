@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>David</forename>
+								<middlename>T</middlename>.
+								<surname>Martin</surname>
+								<lb/>
+								<marker>1</marker>,
+							</persName>
+							<persName>
+								<forename>Sergio</forename>
+								<surname>Sandoval</surname>
+								<lb/>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>Andy</forename>
+								<surname>Carter</surname>
+								<lb/>
+								<marker>3</marker> ,
+							</persName>
+							<persName>
+								<forename>Mark</forename>
+								<surname>Rodwell</surname>
+								<lb/>
+								<marker>3</marker> ,
+							</persName>
+							<persName>
+								<forename>Stefan</forename>
+								<surname>Smith</surname>
+								<lb/>
+								<marker>4</marker> ,
+							</persName>
+							<persName>
+								<forename>Andrew</forename>
+								<middlename>C</middlename> .
+								<lb/>
+								<surname>Kummel</surname>
+								<lb/>
+								<marker>5</marker> , and
+							</persName>
+							<persName>
+								<forename>Davorka</forename>
+								<surname>Messmer</surname>
+								<marker>6</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

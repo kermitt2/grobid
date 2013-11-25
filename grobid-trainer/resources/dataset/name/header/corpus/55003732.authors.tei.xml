@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>J</forename>.
+								<surname>Jacquens</surname>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>D</forename>.
+								<surname>Farrusseng</surname>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>S</forename>.
+								<surname>Georges</surname>
+								<marker>3</marker> ,
+							</persName>
+							<persName>
+								<forename>J.-P</forename>.
+								<surname>Viricelle</surname>
+								<marker>4</marker> ,
+							</persName>
+							<persName>
+								<forename>C</forename>.
+								<surname>Gaudillère</surname>
+								<marker>2,5</marker> ,
+							</persName>
+							<persName>
+								<forename>G</forename>.
+								<surname>Corbel</surname>
+								<marker>1</marker> ,<lb/> and
+							</persName>
+							<persName>
+								<forename>P</forename> .
+								<surname>Lacorre</surname>
+								<marker>1 *</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

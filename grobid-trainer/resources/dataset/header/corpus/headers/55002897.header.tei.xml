@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55002897"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note>Rev.0, 01/09, WK<lb/></note>
+	
+	<note type="page">Page 1 of 16<lb/></note>
+
+	<idno>MT-095<lb/></idno> 
+	
+	<note>TUTORIAL<lb/> </note>
+	
+	<docTitle>
+		<titlePart>EMI, RFI, and Shielding Concepts<lb/></titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

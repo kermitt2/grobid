@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="department">Discovery Neuroscience</orgName>,
+							<orgName type="institution">Wyeth Research</orgName>
+							<address>
+								<region>CN</region>
+								<postCode>8000</postCode>,
+								<settlement>Princeton</settlement>,
+								<country>New Jersey</country>
+								<postCode>08543</postCode>,
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="department">Medical Genetics Section</orgName>,
+							<orgName type="institution">University of Edinburgh</orgName>
+							<orgName type="department">Centre for Molecular<lb/> Medicine and The Institute of Genetics &amp; Molecular Medicine</orgName>,
+							<orgName type="institution">University of Edinburgh</orgName>,
+							<orgName type="institution">Western General Hospital</orgName>,
+							<address>
+								<settlement>Edinburgh</settlement>
+								<postCode>EH4 2XU</postCode>,
+								<country>United Kingdom</country>,
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>3</marker>
+							<orgName type="department">Department of Neuropathology</orgName>,
+							<orgName type="institution">University of Duesseldorf Medical School</orgName>,
+							<address>
+								<postCode>40225</postCode>
+								<settlement>Duesseldorf</settlement>,
+								<settlement>Germany</settlement>,
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>4</marker>
+							<orgName type="institution">Whitehead Institute for Biomedical Research</orgName>,
+							<lb/>
+						</affiliation>
+						<affiliation>
+							<marker>5</marker>
+							<orgName type="institution">Massachusetts Institute of Technology</orgName>, and
+						</affiliation>
+						<affiliation>
+							<marker>6</marker>
+							<orgName type="institution">Stanley Center for Psychiatric Research</orgName>,
+							<orgName type="institution">Broad Institute</orgName>,
+							<address>
+								<settlement>Cambridge</settlement>,
+								<region>Massachusetts</region>
+								<postCode>02142</postCode>,
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>7</marker>
+							<orgName type="department">Picower Institute<lb/> of Learning and Memory</orgName>,
+							<orgName type="institution">Massachusetts Institute of Technology</orgName>,
+							<address>
+								<settlement>Cambridge</settlement>,
+								<region>Massachusetts</region>
+								<postCode>02139</postCode>,
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="department">Molecular Medicine</orgName>,
+							<orgName type="institution">Johns Hopkins University School of Medicine</orgName>,
+							<address>
+								<settlement>Baltimore</settlement>,
+								<region>Maryland</region>
+								<postCode>21205</postCode>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

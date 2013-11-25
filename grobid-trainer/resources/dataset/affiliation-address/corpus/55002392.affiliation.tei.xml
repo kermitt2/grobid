@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>*</marker>
+							<orgName type="department">Ctr Exp Rheum</orgName>,
+							<address>
+								<settlement>Zurich</settlement>,
+								<country>Switzerland</country>
+								<lb/>
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="institution">Inst Physiol Univ Zurich</orgName>,
+							<address>
+								<settlement>Zurich</settlement>,
+								<country>Switzerland</country>
+								<lb/>
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="institution">Dept Med Sect Rheum</orgName>,
+							<address>
+								<settlement>Florence</settlement>,
+								<country>Italy</country>
+								<lb/>
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="department">Dept Int Med I</orgName>,
+							<orgName type="institution">Univ Hosp</orgName>,
+							<address>
+								<settlement>Regensburg</settlement>,
+								<country>Germany</country>
+								<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>*</marker>
+							<orgName type="department">Academic Medical Center</orgName>,
+							<address>
+								<settlement>Amsterdam</settlement>,
+								<country>The Netherlands</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="institution">Leiden University Medical Center</orgName>,
+							<address>
+								<settlement>Leiden</settlement>,
+								<country>The Netherlands</country>
+								<lb/> 
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="institution">Repatriation General Hospital</orgName>,
+							<address>
+								<addrLine>Daw Park</addrLine>,
+								<region>SA</region>,
+								<country>Australia</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

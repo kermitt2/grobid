@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>a</marker>
+							<orgName type="department">The Bradley Department of Electrical and Computer Engineering</orgName>
+						</affiliation>
+						<affiliation>
+							<marker>b</marker>
+							<orgName type="department">Materials Science and Engineering Department</orgName>
+						</affiliation>
+						<affiliation>
+							<marker>c</marker>
+							<orgName type="department">The Via Department of Civil and Environmental Engineering</orgName>
+							<lb/>
+							<orgName type="institution">Virginia Polytechnic Institute and State University</orgName>,
+							<address>
+								<settlement>Blacksburg</settlement>,
+								<region>VA</region>
+								<postCode>24060</postCode>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

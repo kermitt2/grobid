@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004011"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>White Paper<lb/> Blu-ray Disc<lb/> ™<lb/> Read-Only Format<lb/> 2.B Audio Visual Application<lb/> Format Specifications<lb/> for BD-ROM Version 2.5<lb/></titlePart>
+	</docTitle>
+
+	<date>July 2011</date>
+
+		</front>
+	</text>
+</tei>

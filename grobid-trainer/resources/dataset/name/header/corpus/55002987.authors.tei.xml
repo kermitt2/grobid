@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Marcello</forename>
+								<surname>Leopoldo</surname>
+								<marker>a, ⁎</marker>,
+							</persName>
+							<persName>
+								<forename>Enza</forename>
+								<surname>Lacivita</surname>
+								<marker>a</marker> ,
+							</persName>
+							<persName>
+								<forename>Francesco</forename>
+								<surname>Berardi</surname>
+								<marker>a</marker> ,
+							</persName>
+							<persName>
+								<forename>Roberto</forename>
+								<surname>Perrone</surname>
+								<lb/>
+								<marker>a</marker>,
+							</persName>
+							<persName>
+								<forename>Peter</forename>
+								<middlename>B</middlename> .
+								<surname>Hedlund</surname>
+								<marker>b</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

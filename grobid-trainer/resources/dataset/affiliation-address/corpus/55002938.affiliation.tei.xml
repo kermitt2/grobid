@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">Department of Physiology and Biophysics</orgName>,
+							<orgName type="institution">University of Alabama at Birmingham</orgName>,
+							<address>
+								<settlement>Birmingham</settlement>,
+								<settlement>Alabama</settlement>, and
+							</address>
+							<orgName type="department">Department of Cell Biology and<lb/> Physiology</orgName>,
+							<orgName type="institution">University of Pittsburgh School of Medicine</orgName>,
+							<address>
+								<settlement>Pittsburgh</settlement>,
+								<region>Pennsylvania</region>,
+								<country>USA</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

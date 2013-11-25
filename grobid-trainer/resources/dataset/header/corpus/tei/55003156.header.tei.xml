@@ -1,0 +1,50 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003156"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<date>July 2010<lb/></date>
+	
+
+	<byline>
+	<docAuthor>Michael Bahr, </docAuthor>
+	</byline>
+	
+	<byline>
+	<affiliation>Siemens AG<lb/> </affiliation>
+	</byline>
+
+	<note type="page">Slide 1<lb/></note>
+
+	<idno>doc.: IEEE 802.11-10/815r0<lb/></idno>
+
+	<note type="other">Submission<lb/> </note>
+	
+	<docTitle>
+	<titlePart>MCCAOP Advertisements<lb/></titlePart>
+	</docTitle>
+
+	<date>Date: 2010-07-14<lb/></date>
+
+	<note type="other">Name Affiliations Address<lb/> Phone email<lb/></note>
+
+	<byline>
+	<docAuthor>Michael Bahr<lb/> </docAuthor>
+	</byline>
+	 
+	<byline>
+	<affiliation>Siemens AG,<lb/> Corporate Technology<lb/></affiliation>
+	</byline>
+
+	<address>Otto-Hahn-Ring 6,<lb/> 80200 München,<lb/> Germany<lb/></address>
+
+	<email>bahr et siemens dod com<lb/></email>
+
+	<note type="other">Authors:</note>
+
+		</front>
+	</text>
+</tei>

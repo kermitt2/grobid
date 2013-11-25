@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">Optoelectronics Research Centre</orgName>,
+							<orgName type="institution">University of Southampton</orgName>,
+							<address>
+								<addrLine>Highfield</addrLine>,
+								<settlement>Southampton</settlement>,
+								<postCode>SO17 1BJ</postCode>,
+								<country>United Kingdom</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>*</marker>
+							<orgName type="institution">Mitsubishi Electric Corp.</orgName>,
+							<address>
+								<addrLine>5-1-1 Ofuna</addrLine>,
+								<settlement>Kamakura</settlement>,
+								<region>Kanagawa</region>,
+								<postCode>247-8501</postCode>,
+								<country>Japan</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

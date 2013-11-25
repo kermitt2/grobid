@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003058"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>NPC/VPC userguide and technical description<lb/></titlePart>
+	</docTitle>
+
+	<idno>2011-05-26 PsN 3.4.2<lb/> </idno>
+	
+<div type="introduction">NPC – Numerical Predictive Check – is a model diagnostics tool. VPC – Visual Predictive Check – is<lb/> another closely related diagnostics tool. A set of simulated datasets are generated using the model to be<lb/> evaluated. Afterwards the real data observations are compared with the distribution of the simulated<lb/> observations. By default no model estimation is ever performed. The input to the NPC script is the<lb/> model to be evaluated, the number of samples (simulated datasets) to generate, parameter values<lb/> options for the simulations, and stratification options for the evaluation. It is also possible to skip the<lb/> simulation step entirely by giving two already created tablefiles as input. The input to the VPC script is<lb/> the input to NPC plus an additional set of options. A large portion of the processing is identical<lb/> between the scripts.<lb/></div>
+
+		</front>
+	</text>
+</tei>

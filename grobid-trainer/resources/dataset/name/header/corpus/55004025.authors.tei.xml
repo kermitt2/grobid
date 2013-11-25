@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Philipp</forename>
+								<surname>Beckhove</surname> and
+							</persName>
+							<persName>
+								<forename>Matthias</forename>
+								<middlename>Theobald</middlename>
+								<surname>Kuball</surname>,
+							</persName>
+							<persName>
+								<forename>Margarete</forename>
+								<surname>Grabowski</surname>,
+							</persName>
+							<persName>
+								<forename>Renate</forename>
+								<surname>Engel</surname>,
+							</persName>
+							<persName>
+								<forename>Philippe</forename>
+								<surname>Guillaume</surname>,
+							</persName>
+							<persName>
+								<forename>Pedro</forename>
+								<surname>Romero</surname>,
+							</persName>
+							<persName>
+								<forename>Christoph</forename>
+								<surname>Huber</surname>,
+							</persName>
+							<persName>
+								<forename>Ralf-Holger</forename>
+								<surname>Voss</surname>,
+							</persName>
+							<persName>
+								<forename>Simone</forename>
+								<surname>Thomas</surname>,
+							</persName>
+							<persName>
+								<forename>Christina</forename>
+								<surname>Pfirschke</surname>,
+							</persName>
+							<persName>
+								<forename>Beate</forename>
+								<surname>Hauptrock</surname>,
+							</persName>
+							<persName>
+								<forename>Sebastian</forename>
+								<surname>Klobuch</surname>,
+							</persName>
+							<persName>
+								<forename>Jürgen</forename>
+								<marker>*</marker>
+							</persName>
+							<persName>
+								<forename>Ralf-Holger</forename>
+								<surname>Voss</surname>,
+								<marker>1 *</marker>
+							</persName>
+							<persName>
+								<forename>Simone</forename>
+								<surname>Thomas</surname>,
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>Christina</forename>
+								<surname>Pfirschke</surname>,
+								<marker>2</marker>
+							</persName>
+							<persName>
+								<forename>Beate</forename>
+								<surname>Hauptrock</surname>,
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>Sebastian</forename>
+								<surname>Klobuch</surname>,
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>Jü</forename>
+								<surname>rgen Kuball</surname>,
+								<marker>1</marker>
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Margarete</forename>
+								<surname>Grabowski</surname> ,
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>Renate</forename>
+								<surname>Engel</surname> ,
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>Philippe</forename>
+								<surname>Guillaume</surname> ,
+								<marker>3</marker>
+							</persName>
+							<persName>
+								<forename>Pedro</forename>
+								<surname>Romero</surname> ,
+								<marker>4</marker>
+							</persName>
+							<persName>
+								<forename>Christoph</forename>
+								<surname>Huber</surname> ,
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>Philipp</forename>
+								<surname>Beckhove</surname> ,
+								<marker>2</marker> and
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Matthias</forename>
+								<surname>Theobald</surname>
+								<marker>1</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

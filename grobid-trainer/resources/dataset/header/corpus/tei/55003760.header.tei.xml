@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003760"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+		<affiliation>Sasol North America Inc.<lb/> </affiliation>
+	</byline>
+	
+	<note type="other">Technical Data Sheet<lb/> </note>
+	
+	<docTitle>
+	<titlePart>ALFONIC<lb/> ®<lb/> TDA Ethoxylates From Iso-Tridecyl Alcohol<lb/></titlePart>
+	</docTitle>
+
+	<div type="introduction">Description<lb/> Sasol North America Inc.&apos;s ALFONIC<lb/> ® TDA Ethoxylates are biodegradable nonionics derived from Iso-<lb/>Tridecyl alcohol. They are essentially 100% active unless diluted with water and are ethoxylated to an<lb/> average of 3 to 15 moles of ethylene oxide.<lb/> The ALFONIC<lb/> ® TDA Ethoxylates vary in physical appearance from clear or slightly hazy, colorless liquids<lb/> to white solids, depending upon the level of ethoxylation.<lb/> ALFONIC ® TDA ethoxylates with 8 or fewer moles of ethylene oxide are sparingly soluble in water, but<lb/> they are soluble in hydrocarbon solvents. The high-mole ethoxylates (greater than 8 moles ethylene<lb/> oxide) usually are soluble in polar solvents such as xylene and kerosene.<lb/> In general, an increase in the ethylene oxide chain attached to the iso-tridecyl alcohol hydrophobe<lb/> increases the HLB value (water solubility), pour point, cloud point, density, viscosity, and flash point of the<lb/> ethoxylate. Typical properties of specific ALFONIC<lb/> ® TDA Ethoxylates are show in the Properties section<lb/> that follows.<lb/> ALFONIC ® TDA ethoxylates are made using NaOH ethoxylation catalyst. Narrow range, or &quot;peaked,&quot;<lb/> versions of these ethoxylates made from Sasol North America Inc.&apos;s patented Novel<lb/> ® II technology are<lb/> also available.<lb/> Applications<lb/> ALFONIC ® TDA Ethoxylates can be used &quot;as is&quot; in a wide range of applications, including:<lb/> @BULLET Emulsifiers<lb/> @BULLET Industrial and institutional cleaners<lb/> @BULLET Agricultural chemicals<lb/> @BULLET Textile and leather processing<lb/> @BULLET Metalworking systems<lb/> ALFONIC ® TDA Ethoxylates can be used as feedstocks to make alcohol ether sulfates and ether<lb/> carboxylates for use in mild shampoos and other personal care products, as well as other industrial and<lb/> agricultural applications. Alcohol ether sulfates can readily be produced from ALFONIC<lb/> ® TDA ethoxylates<lb/> using SO 3 or CISO 3 H. Alcohol ether carboxylates can be produced from the ALFONIC<lb/> ® TDA ethoxylates<lb/> using monochloroacetic acid.<lb/> ALFONIC ® TDA Ethoxylates can be used to make phosphate esters, which are useful as dispersants,<lb/> low-foam emulsifiers, and anti-static agents in the following applications:</div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55002701"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>A ROUND ROBIN EXERCISE ON ROAD TRANSPORTATION DATA.<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>D.P. Richards and B.E. Hibbert<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Hunting Engineering Ltd UK.<lb/></affiliation>
+	</byline>
+
+	<note type="other">Authors Biography<lb/> Brian Hibbert is the Engineering Director of Hunting<lb/> Engineering Ltd, Ampthill, UK. Hunting Engineering is an<lb/> aerospace company best known for the development of<lb/> airborne weapon systems. It is a member of the Hunting<lb/> group of companies. Brian is a past chairman of the UK<lb/> Society of Environmental Engineers and currently holds<lb/> the position of Vice-president. He is also the chairman of<lb/> the Transportation Stresses Working Party of the<lb/> Committee of European Environmental Engineering<lb/> Societies. In that role he was responsible for instigating<lb/> the work reported in this paper.<lb/> David Richards is the Head of Structural Dynamics at<lb/> Hunting Engineering Ltd. The Structural Dynamics group<lb/> undertakes structural dynamic analysis, vibration<lb/> assessment and dynamic loading analysis for both the<lb/> Company&apos;s products and other agencies. Dave has been<lb/> working in the field of structural dynamics and<lb/> environmental engineering for some 16 years. He is<lb/> chairman of the Joint MOD/Industry working group tasked<lb/> with compiling the mechanical and vibration aspects of<lb/> Defence Standard 00-35. He co-ordinated the day to day<lb/> activity of the round robin exercise and undertook the<lb/> assessment of the results.<lb/></note>
+
+	<div type="abstract">Abstract<lb/> This paper presents the results of a round robin exercise<lb/> recently undertaken under the auspices of the<lb/> Transportation Stresses working group of the Committee<lb/> of European Environmental Engineering Societies (CEEES).<lb/> A total of 22 agencies from 6 different European countries<lb/> participated in this work. Each participant undertook<lb/> analysis of an identical piece of measured data. The<lb/> majority of the participants reported analysis of the data,<lb/> many also derived test severities. This paper presents a<lb/> basic comparison of the responses and assesses the<lb/> results.<lb/></div>
+
+	<keyword>Keywords<lb/> Road Transportation, Vibration Analysis, Test Severity<lb/> Derivation, Comparison.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

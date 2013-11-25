@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>ARNAR</forename>
+								<surname>GEIRSSON</surname>,
+							<lb/>
+								<marker>2</marker>
+							</persName>
+							<persName>
+								<forename>INDU</forename>
+								<surname>PALIWAL</surname> ,
+							<lb/>
+								<marker>2</marker>
+							</persName>
+							<persName>
+								<forename>RAYMOND</forename>
+								<middlename>J</middlename> .
+								<surname>LYNCH</surname>,
+							<lb/>
+								<marker>2</marker>
+							</persName>
+							<persName>
+								<forename>ALFRED</forename>
+								<middlename>L</middlename>.
+								<middlename>M</middlename> .
+								<surname>BOTHWELL</surname> ,
+								<marker>3</marker> AND
+							</persName>
+							<persName>
+								<forename>GRAEME</forename>
+								<middlename>L</middlename> .
+								<surname>HAMMOND</surname>
+								<marker>2, 4</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

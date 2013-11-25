@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>a</marker>
+							<orgName type="department">Edward A Doisy Department of Biochemistry and Molecular Biology</orgName>,
+							<orgName type="institution">Saint Louis University School of Medicine</orgName>,
+							<address>
+								<addrLine>1402 S Grand Boulevard</addrLine>,
+							<lb/>
+								<settlement>Saint Louis</settlement>,
+								<region>MO</region>
+								<postCode>63104</postCode>,
+								<country>USA</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>b</marker>
+							<orgName type="department">Department of Molecular Microbiology and Immunology</orgName>,
+							<orgName type="institution">Saint Louis University School of Medicine</orgName>,
+							<address>
+								<addrLine>1402 S Grand Boulevard</addrLine>,
+							<lb/>
+								<settlement>Saint Louis</settlement>,
+								<region>MO</region>
+								<postCode>63104</postCode>,
+								<country>USA</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

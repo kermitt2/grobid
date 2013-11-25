@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003887"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Fungal Genetics and Biology 43 (2006) 531–544<lb/></reference>
+
+	<ptr type="web">www.elsevier.com/locate/yfgbi<lb/></ptr>
+
+	<note type="other">1087-1845/$ -see front matter</note>
+
+	<note type="copyright">© 2006 Elsevier Inc. All rights reserved.<lb/></note>
+
+	<idno type="DOI">doi:10.1016/j.fgb.2006.02.007<lb/></idno>
+
+	<note type="other">Technological Advancement<lb/></note>
+
+	<docTitle>
+	<titlePart>Improvements to gene deletion in the fungal pathogen Cryptococcus<lb/> neoformans: Absence of Ku proteins increases homologous<lb/> recombination, and co-transformation of independent DNA molecules<lb/> allows rapid complementation of deletion phenotypes<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Chelsey L. Goins<lb/> a,1<lb/> , Kimberly J. Gerik<lb/> a,1<lb/> , Jennifer K. Lodge<lb/> a,b,¤<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a Edward A Doisy Department of Biochemistry and Molecular Biology, Saint Louis University School of Medicine,</affiliation>
+	</byline>
+
+	<address>1402 S Grand Boulevard,<lb/> Saint Louis, MO 63104, USA<lb/></address>
+
+	<byline>
+	<affiliation>b Department of Molecular Microbiology and Immunology, Saint Louis University School of Medicine,</affiliation>
+	</byline>
+
+	<address>1402 S Grand Boulevard,<lb/> Saint Louis, MO 63104, USA<lb/></address>
+
+	<note type="submission">Received 22 October 2005; accepted 28 February 2006<lb/></note>
+
+	<date>Available online 22 May 2006<lb/></date>
+
+	<div type="abstract">Abstract<lb/> Cryptococcus neoformans is a pathogenic fungus that is relatively amenable to molecular genetic analysis, including gene deletion.<lb/> However, rates of homologous recombination can be low, so obtaining speciWc gene deletion transformants is challenging. We have uti-<lb/>lized two new technologies, cku deletion strains to improve the eYciency of gene deletions in this organism, and co-transformations. The<lb/> Ku70–Ku80 heterodimer is predicted to be an essential part of the non-homologous end-joining process in C. neoformans. Here we show<lb/> that a deletion in one or both of these proteins results in an increase in the rates of homologous recombination. Importantly, we demon-<lb/>strate that after generation of a strain with a particular deletion of interest, the cku deletion can be removed by mating and segregation.<lb/> We also utilize co-transformation of wild-type genes and selectable markers on separate linear DNA molecules to complement a deletion<lb/> event. We show that co-transformation results in the successful restoration of wild-type phenotype, though variations in this phenotype<lb/> often occur.<lb/></div>
+
+	<note type="copyright">© 2006 Elsevier Inc. All rights reserved.<lb/></note>
+
+	<keyword>Keywords: Homologous recombination; Non-homologous end joining; LAC1; CAP59<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

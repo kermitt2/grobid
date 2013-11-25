@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+ 
+						<affiliation>
+							<marker>1</marker>)
+							<orgName type="department">Institute of Crustal Dynamics</orgName>,
+							<address>
+								<country>China</country>
+							</address>
+							<orgName type="department">Earthquake Administration</orgName>,
+							<address>
+								<settlement>Beijing</settlement>,
+								<country>China</country>
+								<postCode>100085</postCode>;<lb/> (
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>)
+							<orgName type="department">Department of Remote Sensing</orgName>,
+							<orgName type="institution">Peking University</orgName>,
+							<address>
+								<settlement>Beijing</settlement>,
+								<country>China</country>
+								<postCode>100080</postCode>;
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

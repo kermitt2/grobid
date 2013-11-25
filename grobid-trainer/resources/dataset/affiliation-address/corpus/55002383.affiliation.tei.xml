@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>a</marker>
+							<orgName type="department">Department of Molecular Pathology</orgName>,
+							<orgName type="institution">The University of Texas</orgName>							
+							<address>
+								<addrLine>M. D. Anderson Cancer Center</addrLine>
+								<lb/>
+								<addrLine>1515, Holcombe Boulevard</addrLine>,
+								<settlement>Houston</settlement>,
+								<region>TX</region>
+								<postCode>77030</postCode>,
+								<country>USA</country>
+								<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>b</marker>
+							<orgName type="institution">University of California</orgName>, 
+							<orgName type="department">Davis</orgName>,
+							<orgName type="department">ECE Dept.</orgName>,
+							<address>
+								<settlement>Davis</settlement>,
+								<region>CA</region>
+								<postCode>95616</postCode>,
+								<country>USA</country>
+								<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>c</marker>
+							<orgName type="institution">Lawrence Livermore National Laboratory</orgName>,
+							<address>
+								<addrLine>7000 East Avenue</addrLine>,
+								<addrLine>M/S L-222</addrLine>,
+								<settlement>Livermore</settlement>,
+								<region>CA</region>
+								<lb/>
+								<postCode>94551</postCode>,
+								<country>USA</country>
+								<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>d</marker>
+							<orgName type="department">Lynntech Incorporated</orgName>,
+							<address>
+								<addrLine>1701 Rock Prairie Road</addrLine>,
+								<settlement>College Station</settlement>,
+								<region>TX</region>
+								<postCode>77845</postCode>,
+								<country>USA</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

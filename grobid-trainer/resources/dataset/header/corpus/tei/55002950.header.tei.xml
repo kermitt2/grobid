@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55002950"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">1<lb/></note>
+
+	<docTitle>
+	<titlePart>S C A N N I N G E L E C TRON M I C R O S C O P Y<lb/> and X-RAY<lb/> MICROANALYSIS<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Dick Briggs<lb/> John Brady<lb/> Bob Newton<lb/></docAuthor>
+	</byline>
+
+		</front>
+	</text>
+</tei>

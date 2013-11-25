@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>G</forename>.
+								<surname>Lupina</surname>,
+								<lb/>
+								<marker>a͒</marker>
+							</persName>
+							<persName>
+								<forename>G</forename> .
+								<surname>Kozłowski</surname> ,
+							</persName>
+							<persName>
+								<forename>J</forename> .
+								<surname>Dabrowski</surname> ,
+							</persName>
+							<persName>
+								<forename>P</forename> .
+								<surname>Dudek</surname> ,
+							</persName>
+							<persName>
+								<forename>G</forename> .
+								<surname>Lippert</surname> ,and
+							</persName>
+							<persName>
+								<forename>H .-J</forename>.
+								<surname>Müssig</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003521"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<affiliation>Institut Eurécom<lb/> Department of Corporate Communications<lb/></affiliation>
+	</byline>
+
+	<address>2229, route des Crêtes<lb/> B.P. 193<lb/> 06904 Sophia-Antipolis<lb/> FRANCE<lb/></address>
+
+	<idno>Research Report RR-09-227<lb/></idno>
+
+	<docTitle>
+	<titlePart>An Efficient Comparison Technique for Sanitized XML<lb/> Trees<lb/></titlePart>
+	</docTitle>
+
+	<date>May 5<lb/> th , 2009<lb/> </date>
+	
+	<note type="submission">Last update May 5<lb/> th , 2009<lb/></note>
+
+	<byline>
+	<docAuthor>Mohammad Ashiqur Rahaman, and Yves Roudier<lb/></docAuthor>
+	</byline>
+
+	<phone>Tel : (+33) 4 93 00 81 00<lb/> Fax : (+33) 4 93 00 82 00<lb/></phone>
+
+	<email>Email : {mohammad.rahaman,yves.roudier}@eurecom.fr<lb/></email>
+
+	<note type="grant">1 Institut Eurécom&apos;s research is partially supported by its industrial members: BMW Group Re-<lb/>search &amp;
+
+	Technology -BMW Group Company, Bouygues Télécom, Cisco Systems, France Télécom,<lb/> Hitachi Europe, SFR, Sharp, STMicroelectronics, Swisscom, Thales.</note>
+
+		</front>
+	</text>
+</tei>

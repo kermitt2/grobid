@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003185"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>MIS Application Notes<lb/> DRAFT Version Beta 0.5 – 1 March 2004<lb/></reference>
+
+	<note type="page">Page 1 of 12<lb/></note>
+
+	<docTitle>
+	<titlePart>MIS Workgroup<lb/> MIS Base ICS -Application Notes<lb/></titlePart>
+	</docTitle>
+
+	<date>Date: 1 March 2004<lb/></date>
+
+	<note>Version Beta 0.5<lb/> File: MIS_APPNOTE_Beta_0_5.doc<lb/> MIS Application Notes<lb/> DRAFT Version Beta 0.5 – 1 March 2004<lb/></note>
+	
+	<note type="page">Page 2 of 12<lb/></note>
+
+		</front>
+	</text>
+</tei>

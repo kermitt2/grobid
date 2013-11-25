@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55002841"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Vehicle Networks<lb/> Broadcast Systems<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Univ.-Prof. Dr. Thomas Strang, Dipl.-Inform. Matthias Röckl<lb/> </docAuthor>
+	</byline>
+	
+	<reference>Lecture Vehicle Networks,<lb/> Thomas Strang and Matthias Röckl, WS 2008/2009<lb/></reference>
+	
+	<div type="introduction">Outline<lb/> 
+	
+	Introduction: Wireless interconnections</div>
+
+		</front>
+	</text>
+</tei>

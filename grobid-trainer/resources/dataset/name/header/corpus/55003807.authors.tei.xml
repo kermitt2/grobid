@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Faina</forename>
+								<surname>Linkov</surname>
+							<lb/>
+								<marker>1</marker>,
+							</persName>
+							<persName>
+								<forename>Yian</forename>
+								<surname>Gu</surname>
+							<lb/>
+								<marker>4</marker> ,
+							</persName>
+							<persName>
+								<forename>Alan</forename>
+								<middlename>A</middlename> .
+								<surname>Arslan</surname>
+								<marker>2 , 3,4</marker>,
+							</persName>
+							<persName>
+								<forename>Mengling</forename>
+								<surname>Liu</surname>
+							<lb/>
+								<marker>4</marker> ,
+							</persName>
+							<persName>
+								<forename>Roy</forename>
+								<middlename>E</middlename> .
+								<surname>Shore</surname>
+							<lb/>
+								<marker>2, 5</marker> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Lyudmila</forename>
+								<surname>Velikokhatnaya</surname>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>Karen</forename>
+								<middlename>L</middlename> .
+								<surname>Koenig</surname>
+							<lb/>
+								<marker>2 , 4</marker>,
+							</persName>
+							<persName>
+								<forename>Paolo</forename>
+								<surname>Toniolo</surname>
+								<marker>3</marker>,
+							</persName>
+							<persName>
+								<forename>Adele</forename>
+								<surname>Marrangoni</surname>
+								<marker>1</marker> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Zoya</forename>
+								<surname>Yurkovetsky</surname>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>Anne</forename>
+								<surname>Zeleniuch -Jacquotte</surname>
+								<marker>2 , 4</marker> ,
+							</persName>
+							<persName>
+								<forename>Anna</forename>
+								<middlename>E</middlename>.
+								<surname>Lokshin</surname>
+								<marker>1, 6 , 7</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

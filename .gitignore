@@ -22,3 +22,7 @@ Thumbs.db
 
 
 grobid-core/src/test/resources/org/grobid/core/annotations/resTeiStAXParser/out.tei.xml
+
+grobid-home/models/affiliation-address/model.crf.old
+
+grobid-home/models/name/header/model.crf.old

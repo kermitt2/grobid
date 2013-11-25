@@ -1,0 +1,56 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003143"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<ptr>pubs.acs.org/Biochemistry<lb/> </ptr>
+	
+	<date>Published on Web 07/07/2009<lb/> </date>
+	
+	<note type="copyright">&#169; 2009 American Chemical Society<lb/> </note>
+	
+	<note type="page">7746 </note>
+	
+	<reference>Biochemistry 2009, 48, 7746–7755<lb/></reference>
+
+	<idno type="DOI">DOI: 10.1021/bi900901e<lb/></idno>
+
+	<docTitle>
+	<titlePart>Oligomer Assembly of the C-Terminal DISC1 Domain (640-854) Is Controlled by<lb/> Self-Association Motifs and Disease-Associated Polymorphism S704C<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>S. Rutger Leliveld,<lb/> ,,^ Philipp Hendriks,<lb/> ,^ Max Michel,<lb/> ,^ Gustavo Sajnani,<lb/> )<lb/> Verian Bader,<lb/> Svenja Trossbach,<lb/> Ingrid Prikulis,<lb/> Rudolf Hartmann,<lb/> Esther Jonas,<lb/> Dieter Willbold,<lb/> Jes us R. Requena,<lb/> )<lb/> and Carsten Korth*<lb/> ,</docAuthor>
+	</byline>
+
+	<byline> 
+	<affiliation>Department of Neuropathology, Heinrich-Heine University</affiliation>
+	</byline>
+
+	<address>Dusseldorf, 40225 Dusseldorf, Germany,<lb/></address>
+
+	<byline>
+	<affiliation>Institute for Structural<lb/> Biochemistry (ISB-3), Research Centre Julich,</affiliation>
+	</byline>
+
+	<address>52425 Julich, Germany, and<lb/>)<lb/> </address>
+
+	<byline>
+	<affiliation>Department of Medicine, University of Santiago de<lb/></affiliation>
+	</byline>
+
+	<address>Compostela, 15782 Santiago de Compostela, Spain<lb/></address>
+
+	<note type="other">^ These authors contributed equally<lb/></note>
+
+	<note type="submission">Received May 27, 2009; Revised Manuscript Received July 5, 2009<lb/></note>
+
+	<div type="abstract">ABSTRACT: Genetic studies have established a role of disrupted-in-schizophrenia-1 (DISC1) in chronic mental<lb/> diseases (CMD). Limited experimental data are available on the domain structure of the DISC1 protein<lb/> although multiple interaction partners are known including a self-association domain within the middle part<lb/> of DISC1 (residues 403-504). The DISC1 C-terminal domain is deleted in the original Scottish pedigree<lb/> where DISC1 harbors two coiled-coil domains and disease-associated polymorphisms at 607 and 704, as well<lb/> as the important nuclear distribution element-like 1 (NDEL1) binding site at residues 802-839. Here, we<lb/> performed mutagenesis studies of the C-terminal domain of the DISC1 protein (residues 640-854)<lb/> and analyzed the expressed constructs by biochemical and biophysical methods. We identified novel DISC1<lb/> self-association motifs and the necessity of their concerted action for orderly assembly: the region<lb/> 765-854 comprising a coiled-coil domain is a dimerization domain and the region 668-747 an oligomeriza-<lb/>tion domain; dimerization was found to be a prerequisite for orderly assembly of oligomers. Consistent with<lb/> this, disease-associated polymorphism C704 displayed a slightly higher oligomerization propensity. The<lb/> heterogeneity of DISC1 multimers in vitro was confirmed with a monoclonal antibody binding exclusively to<lb/> HMW multimers. We also identified C-terminal DISC1 fragments in human brains, suggesting that C-<lb/>terminal fragments could carry out DISC1-dependent functions. When the DISC1 C-terminal domain was<lb/> transiently expressed in cells, it assembled into a range of soluble and insoluble multimers with distinct<lb/> fractions selectively binding NDEL1, indicating functionality. Our results suggest that assembly of the C-<lb/>terminal domain is controlled by distinct domains including the disease-associated polymorphism 704 and is<lb/> functional in vivo.<lb/> </div>
+	<div type="introduction">The search for a specific molecular basis of chronic mental<lb/> diseaes (CMD), such as schizophrenia or affective disorders, has<lb/> been gaining momentum over the past decade. Among the<lb/> candidate genes that have been identified so far, disrupted-in-<lb/>schizophrenia-1 (DISC1)<lb/> 1 is widely considered as one of the most<lb/> promising targets (1, 2). The DISC1 gene was positionally cloned<lb/> following a long-term study of a Scottish family with a high<lb/> prevalence of psychiatric disease with mixed phenotypes (3, 4).<lb/> Mutation-bearing family members were found to carry a partial<lb/> DISC1 gene deletion due to a balanced translocation between<lb/> chromosomes 1 and 11 (4, 5). As a consequence, the DISC1 gene<lb/> consisting of thirteen exons is abrogated between exons 8 and 9,<lb/> corresponding to a C-terminally truncated DISC1 protein with<lb/> 597 instead of 854 residues (4).<lb/> Cell biological (6) and genetic studies in transgenic mouse lines<lb/> that express truncated DISC1 corresponding to the human<lb/> mutation (7-9) have shown clear cellular and behavioral phe-<lb/>notypes that are consistent with a dominant negative effect of<lb/> mutant DISC1. So far, such a shortened DISC1 gene product has<lb/> not been detected in lymphocytes of the familial patients (10),<lb/> although that does not exclude its existence in other tissues,<lb/> including the brain. As long as the expression of a truncated<lb/> DISC1 protein in human deletion carriers with CMDs has not<lb/> been demonstrated, the disease mechanism might therefore also<lb/> hinge on haploinsufficiency of DISC1 (2). These two models of a<lb/> disease mechanism are not mutually exclusive.<lb/> In addition to the Scottish pedigree with familial CMD, several<lb/> groups have reported an association of single nucleotide poly-<lb/>morphisms within the DISC1 locus with CMD (11-13). Findings<lb/> on the exonic polymorphism at residue 704 have not been<lb/> unequivocal so far: while serine at residue 704 (S704) was<lb/> reported to be associated with schizophrenia in one study (14),<lb/> other studies implicated cysteine at residue 704 (C704) in major<lb/> depression, a reduction of the amount of gray matter in the</div>
+
+		</front>
+	</text>
+</tei>

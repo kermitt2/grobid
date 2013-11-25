@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55002414"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Before the<lb/> FEDERAL COMMUNICATIONS COMMISSION<lb/> Washington, DC 20554<lb/> In the Matter of<lb/> ) )<lb/> Amendment of the Commission&apos;s Rules to<lb/> Provide Spectrum for the Operation of Medical<lb/> Body Area Networks<lb/> To: The Commission<lb/> ) )<lb/> ) )<lb/> ) )<lb/></note>
+
+	<idno>ET Docket No. 08-59<lb/></idno>
+
+	<docTitle>
+	<titlePart>REPLY COMMENTS OF<lb/> THE BOEING COMPANY<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Audrey L. Allison<lb/> Director,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Frequency Management Services<lb/></affiliation>
+	</byline>
+
+	<byline>
+	<affiliation>The Boeing Company<lb/> </affiliation>
+	</byline>
+		
+	<address>1200 Wilson Boulevard<lb/> Arlington, VA 22209<lb/></address>
+
+	<phone>(703) 465-3215<lb/></phone>
+
+	<byline>
+	<docAuthor>Bruce A. Olcott<lb/> Joshua T. Guyan<lb/> </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Squire, Sanders &amp; Dempsey L.L.P.<lb/></affiliation>
+	</byline>
+
+	<address>1201 Pennsylvania Avenue, N.W.<lb/> Washington, D.C. 20004<lb/></address>
+
+	<phone>(202) 626-6615<lb/></phone>
+
+	<note type="other">Its Attorneys<lb/></note>
+
+	<date>November 4, 2009</date>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55002130"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Dissolving microneedles for transdermal drug administration prepared<lb/> by stepwise controlled drawing of maltose<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Kwang Lee, Chang Yoel Lee, Hyungil Jung *<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Biotechnology, Yonsei University,</affiliation>
+	</byline>
+
+	<address>262 Seongsanno, Seodaemun-gu, Seoul 120-749, Republic of Korea<lb/></address>
+
+	<note type="other">a r t i c l e i n f o<lb/></note>
+
+	<note type="submission">Article history:<lb/> Received 16 December 2010<lb/> Accepted 5 January 2011<lb/></note>
+
+	<date>Available online 2 February 2011<lb/></date>
+
+	<keyword>Keywords:<lb/> Controlled drawing lithography<lb/> Dissolving microneedle<lb/> Transdermal drug delivery<lb/> Cutaneous depigmentation<lb/></keyword>
+
+	<div type="abstract">a b s t r a c t<lb/> Dissolving microneedles, three-dimensional polymer structures with microscale cross-sectional dimen-<lb/>sions, have been introduced as a means of safe transdermal drug delivery. Most dissolving microneedles<lb/> have been fabricated using a traditional micro-casting method that cures biopolymers within three-<lb/>dimensional mold, nevertheless, repeated molding process may cause damage to encapsulated drugs,<lb/> a critical hurdle for clinical application. Here, we describe the stepwise controlled drawing technique that<lb/> can directly fabricate dissolving microneedle from maltose by precise controlling the drawing time and the<lb/> viscosity of the maltose. Controlled drawing shaped the particular sharp-conical microneedles of 1200 mm<lb/> length with tip diameter of 60 mm, and dissolved within 20 min in-vivo after inserting to the skin. This<lb/> technique surpasses the limitations of micro-casting for dissolving microneedle. Furthermore, transdermal<lb/> delivery of impermeable hydrophilic molecules such as ascorbic acid-2-glucoside and niacinamide was<lb/> confirmed as inhibition of cutaneous hypermelanosis. We anticipate that controlled drawing technique will<lb/> be suitable to design dissolving microneedles for use in minimally invasive transcutaneous drug delivery to<lb/> patients.<lb/></div>
+
+	<note type="copyright">&#169; 2011 Elsevier Ltd. All rights reserved.<lb/></note>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003765"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">III<lb/> Paper III<lb/> </note>
+	
+	<docTitle>
+		<titlePart>Design of coupled SAW filters using<lb/> genetic and evolution algorithms<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>J. Meltaus, P. Hämäläinen,<lb/> and V. P. Plessky<lb/> </docAuthor>
+	</byline>
+
+	<note type="copyright"> © 2006 J. Meltaus, P. Hämäläinen, V. P. Plessky.<lb/></note>
+
+	<idno>Report TKK-F-A847<lb/></idno>
+
+	<note type="other">Submitted to IEEE Transactions on Evolutionary<lb/> Computation</note>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="department">Department of Metabolic Medicine</orgName>,
+							<orgName type="department">Graduate School of Medicine</orgName>,
+							<orgName type="institution">Osaka University</orgName>,
+							<address>
+								<settlement>Suita Osaka</settlement>
+								<postCode>565-0871</postCode>,
+								<country>Japan</country>
+								<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="department">Department of Cell Physiology</orgName>,
+							<orgName type="institution">National Institute for Physiological Sciences</orgName>,
+							<orgName type="institution">and Graduate University of Advanced Studies</orgName>,
+							<address>
+								<settlement>Myodaiji</settlement>,
+								<region>Okazaki</region>
+								<lb/>
+								<postCode>444-8787</postCode>,
+								<country>Japan</country>
+								<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>3</marker>
+							<orgName type="department">Precursory Research for Embryonic Science and Technology</orgName>,
+							<orgName type="institution">Japan Science and Technology Agency</orgName>,
+							<address>
+								<addrLine>4-1-8</addrLine>,
+								<settlement>Honcho</settlement>,
+								<region>Kawaguchi</region>
+								<postCode>332-0012</postCode>,
+								<lb/>
+								<settlement>Saitama</settlement>,
+								<country>Japan</country>
+								<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>4</marker>
+							<orgName type="department">Department of Cell Physiology and Metabolism</orgName>,
+							<orgName type="institution">University Medical Center</orgName>,
+							<address>
+								<postCode>CH-1211</postCode>
+								<settlement>Geneva 4</settlement>,
+								<country>Switzerland</country>
+								<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>5</marker>
+							<orgName type="department">Department of Medicine and Clinical Science</orgName>,
+							<orgName type="department">Graduate School of Medicine and Dentistry</orgName>,
+							<orgName type="institution">Okayama University</orgName>,
+							<address>
+								<settlement>Okayama</settlement>
+								<postCode>700-8558</postCode>,
+								<country>Japan</country>
+								<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>6</marker>
+							<orgName type="department">Joslin Diabetes Center</orgName>,
+							<orgName type="institution">One Joslin Place</orgName>,
+							<address>
+								<settlement>Boston</settlement>,
+								<region>Massachusetts</region>
+								<postCode>02215</postCode>
+								<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>7</marker>
+							<orgName type="department">Division of Biochemistry and Molecular Genetics</orgName>,
+							<orgName type="department">Department of Cellular and Molecular Biology</orgName>,
+							<orgName type="institution">Ehime University School of Medicine</orgName>,
+							<address>
+								<settlement>Ehime</settlement>
+								<lb/>
+								<postCode>791-0295</postCode>,
+								<country>Japan</country>
+								<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>8</marker>
+							<orgName type="laboratory">Laboratory of Metabolism</orgName>,
+							<orgName type="department">Center for Cancer Research</orgName>,
+							<orgName type="institution">National Cancer Institute, and National Institutes of Health</orgName>,
+							<address>
+								<settlement>Bethesda</settlement>,
+								<region>Maryland</region>
+								<postCode>20892</postCode>
+								<lb/>
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="department">Deaconess Medical Center</orgName>,
+							<orgName type="institution">Harvard Medical School</orgName>,
+							<address>
+								<settlement>Boston</settlement>,
+								<lb/>
+								<region>Massachusetts</region>
+								<postCode>02215</postCode>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003264"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Music workstation<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">From Wikipedia, the free encyclopedia<lb/></note>
+
+	<div type="abstract">This is an old revision of this page, as edited by 82.25.224.156 (talk) at 12:23, 5 December 2005. It<lb/> may differ significantly from the current revision </div>
+<ptr>(http://en.wikipedia.org<lb/> /wiki/Music_workstation) .<lb/> </ptr>
+<note type="other">(diff) ← Previous revision | Latest revision (diff) | Newer revision → (diff)<lb/> </note>
+<div type="introduction">A music workstation is piece of electronic musical equipment providing the facilities of:<lb/> a sound module,<lb/> a music sequencer and<lb/> (usually) a musical keyboard.<lb/> It enables a musician to compose electronic music using just one piece of equipment.<lb/> The sound module is generally a sample-playback synthesizer. The concept of a sequencer combined with a<lb/> synthesizer is not entirely new -the Sequential Circuits Six-Trak provided this already in a crude form. All<lb/> parts of it were purely based on subtractive synthesis; so no preset drum kits, a thing every sample-playback<lb/> synthesizer since the Roland D-50 featured.<lb/> However, the incarnation of the idea reached its maturity (and a boom in sales in the truest sense -250,000<lb/> sold, the most a synthesizer ever did!) with the Korg M1. Besides just a sequencer, it also provided a large<lb/> enough display, a vast array of sounds (with the woody Piano sound and the &quot;Universe&quot; patch being the most<lb/> famous), and built-in effects. Floppy disk drives were included on later machines, making it easy to store the<lb/> sequencing data (either as proprietary or Standard MIDI File format).<lb/> Nowadays, workstations have evolved to the point that they can either include a DSP-based synthesizer<lb/> upgrade (Korg MOSS board for Trinity and Triton workstations, Yamaha AN-PLG and DX-PLG plugin<lb/> boards), more multisamples and preset-memory locations(Roland JV/XP and SRV/XV series expansion<lb/> boards, Korg EXB-PCM expansion boards, various Yamaha PLG-boards) and even a complete sampler<lb/> (Korg sampling expansion for the Trinity) or a possibility for treating audio via the external inputs (Yamaha<lb/> VH-PLG plugin board).</div>
+
+		</front>
+	</text>
+</tei>

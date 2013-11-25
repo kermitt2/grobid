@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+Authors:
+								<forename>Matthew</forename>
+								<middlename>B</middlename>.
+								<surname>Boxer</surname>,
+								<marker>a</marker>
+							</persName>
+							<persName>
+								<forename>Jian-kang</forename>
+								<surname>Jiang</surname>,
+								<marker>a</marker>
+							</persName>
+							<persName>
+								<forename>Matthew</forename>
+								<middlename>G</middlename>.
+								<surname>Vander Heiden</surname>,
+								<marker>b,c</marker>
+							</persName>
+							<persName>
+								<forename>Min</forename>
+								<surname>Shen</surname>,
+								<marker>a</marker>
+							</persName>
+							<persName>
+								<forename>Henrike</forename>
+								<surname>Veith</surname>,
+								<marker>a</marker>
+							</persName>
+							<persName>
+								<forename>Lewis</forename>
+								<middlename>C</middlename>.
+								<surname>Cantley</surname>,
+								<marker>d,e</marker>
+							</persName>
+							<persName>
+								<forename>Craig</forename>
+								<middlename>J</middlename>.
+								<surname>Thomas</surname>
+								<marker>a a) c) d)</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

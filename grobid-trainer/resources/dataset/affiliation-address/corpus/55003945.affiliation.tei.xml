@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="institution">Bayer HealthCare Pharmaceuticals</orgName>,
+							<address>
+								<settlement>Montville</settlement>,
+								<region>NJ</region>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="department">Global Drug Discovery</orgName>,
+							<orgName type="institution">Bayer Schering Pharma AG</orgName>,
+							<address>
+								<settlement>Berlin</settlement>,
+								<country>Germany</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="institution">AstraZeneca Research Center</orgName>,
+							<address>
+								<settlement>Waltham</settlement>,
+								<region>MA</region>
+							<lb/>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

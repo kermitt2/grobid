@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003104"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>African Journal of Biotechnology Vol. 7 (8), pp. 931-935, 17 April, 2008<lb/></reference>
+
+	<note type="other">Available online at</note>
+
+	<ptr type="web">http://www.academicjournals.org/AJB<lb/></ptr>
+
+	<idno>ISSN 1684–5315</idno>
+
+	<note type="copyright">© 2008 Academic Journals<lb/></note>
+
+	<note type="other">Full Length Research Paper<lb/></note>
+
+	<docTitle>
+	<titlePart>First report of pathogenicity of Beauveria bassiana<lb/> RBL1034 to the malaria vector, Anopheles gambiae s.l.<lb/> (Diptera; Culicidae) in Cameroon<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Olivia Afa Achonduh* and Pierre Roger Tondje<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Regional Biological Control and Applied Microbiology Laboratory (RBL)/ Institute of Agricultural Research for<lb/> Development (IRAD),</affiliation>
+	</byline>
+
+	<address>Nkolbisson, P.O. Box 2067, Yaoundé, Cameroon.<lb/></address>
+
+	<note type="submission">Accepted 11 February, 2008<lb/></note>
+
+	<div type="abstract">Malaria vector control has been successfully achieved by the use of chemical insecticides. However,<lb/> the evolution of insecticide resistance is rendering the standard approaches unsustainable. Biological<lb/> control agents such as entomopathogenic fungi are being considered for adult African malaria vectors.<lb/> In the present study, laboratory trials were carried out to determine the pathogenicity of Beauveria<lb/> bassiana RBL1034 to adult Anopheles gambiae s.l. Both male and female A. gambiae were exposed to<lb/> targets inoculated with dry conidia of B. bassiana RBL1034 and the infection/mortality rates and<lb/> relationship with concentration of conidia per inoculated target were determined. B. bassiana RBL1034<lb/> was observed to be pathogenic to both male and female A. gambiae with an average mortality of 80% in<lb/> the treated compared to 10% in the untreated group. The median lethal time (MLT 50 ) in treated and<lb/> untreated groups was 8 days and &gt;10 days, respectively. Mosquito mortality increased as conidial<lb/> concentration increased. Fungal sporulation was observed in 87% of the mosquito cadavers in the<lb/> treated group while no sporulation was observed in the control. This study indicates that dry conidia of<lb/> B. bassiana RBL1034 are pathogenic to adult A. gambiae and could be a potential biological control<lb/> agent for these mosquitoes.<lb/></div>
+
+	<keyword>Key words: Entomopathogenic fungi, Pathogenicity, Beauveria bassiana RBL1034, Biological control,<lb/> Anopheles gambiae.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

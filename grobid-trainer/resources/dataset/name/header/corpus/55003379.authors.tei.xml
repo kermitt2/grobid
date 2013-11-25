@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Katrina</forename>
+								<middlename>A</middlename>.
+								<middlename>B</middlename>.
+								<surname>Goddard</surname>,
+								<lb/>
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>Penelope</forename>
+								<middlename>J</middlename> .
+								<surname>Hopkins</surname> ,
+								<lb/>
+								<marker>2</marker>
+							</persName>
+							<persName>
+								<forename>Jeff</forename>
+								<middlename>M</middlename> .
+								<surname>Hall</surname>,
+								<lb/>
+								<marker>2</marker>and
+							</persName>
+							<persName>
+								<forename>John</forename>
+								<middlename>S</middlename> .
+								<surname>Witte</surname>
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<roleName>Dr</roleName>.
+								<forename>Katrina</forename>
+								<middlename>A</middlename> .
+								<middlename>B</middlename> .
+								<surname>Goddard</surname> ,
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

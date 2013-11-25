@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003216"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>OPTIMAL REQUIREMENTS<lb/> OF A DATA ACQUISITION SYSTEM<lb/> FOR A QUADRUPOLAR PROBE<lb/> EMPLOYED IN ELECTRICAL SPECTROSCOPY<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>A. Settimi*, A. Zirizzotti, J. A. Baskaradas, C. Bianchi<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>INGV (Istituto Nazionale di Geofisica e Vulcanologia) –<lb/></affiliation>
+	</byline>
+
+	<address>via di Vigna Murata 605, I-00143 Rome, Italy<lb/></address>
+
+	<note type="other">*Corresponding author: </note>
+	
+	<byline>
+	<docAuthor>Dr. Alessandro Settimi<lb/></docAuthor>
+	</byline>
+		
+	<byline>
+	<affiliation>Istituto Nazionale di Geofisica e Vulcanologia (INGV)<lb/></affiliation>
+	</byline>
+
+	<address>Via di Vigna Murata 605<lb/> I-00143 Rome, Italy<lb/></address>
+
+	<phone>Tel: +39-0651860719<lb/> Fax: +39-0651860397<lb/></phone>
+
+	<email>Email: alessandro.settimi@ingv.it</email>
+
+		</front>
+	</text>
+</tei>

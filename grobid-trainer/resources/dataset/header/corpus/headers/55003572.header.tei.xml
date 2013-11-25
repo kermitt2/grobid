@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003572"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="copyright">© 2007 Dove Medical Press Limited. All rights reserved<lb/></note>
+
+	<reference>International Journal of Nanomedicine 2007:2(4) 675–688<lb/></reference>
+
+	<note type="page">675<lb/> </note>
+	
+	<note type="other">O R I G I N A L R E S E A R C H<lb/></note>
+
+	<docTitle>
+	<titlePart>Nano-liposomal dry powder inhaler of tacrolimus:<lb/> Preparation, characterization, and pulmonary<lb/> pharmacokinetics<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Mahavir Chougule<lb/> Bijay Padhi<lb/> Ambikanandan Misra<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>TIFAC-CORE in NDDS, Pharmacy<lb/> Department, Faculty of Technology<lb/> and Engineering, The Maharaja<lb/> Sayajirao University of Baroda,<lb/></affiliation>
+	</byline>
+
+	<address>Kalabhavan, Vadodara, India<lb/></address>
+
+	<byline>
+	<affiliation>Correspondence: Ambikanandan Misra<lb/> Pharmacy Department, TIFAC CORE<lb/> in NDDS, Faculty of Technology and<lb/> Engineering, Kalabhavan, The M. S.<lb/> University of Baroda,</affiliation>
+	</byline>
+
+	<address>Vadodara
+
+	– 390 001<lb/> (Gujarat), India<lb/> </address>
+	
+	<phone>Tel + 91 265 2434187(O),<lb/> + 91 94260 74870 (M)<lb/></phone>
+
+	<email>Email misraan@hotmail.com,<lb/> misraan@satyam.net.in<lb/></email>
+
+	<div type="abstract">Abstract: The studies were undertaken to evaluate feasibility of pulmonary delivery of<lb/> liposomaly encapsulated tacrolimus dry powder inhaler for prolonged drug retention in lungs<lb/> as rescue therapy to prevent refractory rejection of lungs after transplantation. Tacrolimus<lb/> encapsulated liposomes were prepared by thin fi lm evaporation technique and liposomal disper-<lb/>sion was passed through high pressure homogenizer. Tacrolimus nano-liposomes (NLs) were<lb/> separated by centrifugation and characterized. NLs were dispersed in phosphate buffer saline<lb/> (PBS) pH 7.4 containing different additives like lactose, sucrose, and trehalose, and L-leucine<lb/> as antiadherent. The dispersion was spray dried and spray dried powders were characterized. In<lb/> vitro and in vivo pulmonary deposition was performed using Andersen Cascade Impactor and<lb/> intratracheal instillation in rats respectively. NLs were found to have average size of 140 nm,<lb/> 96% ± 1.5% drug entrapment, and zeta potential of 1.107 mV. Trehalose based formulation<lb/> was found to have low density, good fl owability, particle size of 9.46 ± 0.8 μm, maximum fi ne<lb/> particle fraction (FPF) of 71.1 ± 2.5%, mean mass aerodynamic diameter (MMAD) 2.2 ± 0.1<lb/> μm, and geometric standard deviation (GSD) 1.7 ± 0.2. Developed formulations were found to<lb/> have in vitro prolonged drug release up to 18 hours, following Higuchi&apos;s Controlled Release<lb/> model. In vivo studies revealed maximal residence of tacrolimus within lungs of 24 hours,<lb/> suggesting slow clearance from the lungs. The investigation provides a practical approach for<lb/> direct delivery of tacrolimus encapsulated in NLs for controlled and prolonged retention at<lb/> the site of action. It may play a promising role as rescue therapy in reducing the risk of acute<lb/> rejection and chronic rejection.<lb/></div>
+
+	<keyword>Keywords: lung transplant rejection, tacrolimus, nano-liposomes, spray drying, dry powder<lb/> inhaler<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

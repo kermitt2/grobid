@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003519"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>POTENTIAL ROLE OF ELEVATORS DURING EMERGENCIES<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Louis Bialy, P.E., Director of World Wide Codes and Standards<lb/> Barry Blackaby, Manager Worldwide Electrical Codes<lb/></docAuthor> 
+	</byline>
+	
+	<affiliation>Otis Elevator Company, Farmington, CT<lb/></affiliation>
+
+	<div type="abstract">Abstract<lb/> The complex issue of occupant safety in buildings during emergencies has been the subject of<lb/> debate amongst enforcing authorities, building owners, emergency personnel and code bodies<lb/> for many years. The tragic events of September 11<lb/> th 2001 have added to the urgency for<lb/> developing solutions that will enhance occupant safety.<lb/> The elevators are the primary means of vertical transportation in most buildings and potentially<lb/> can play a vital role in the event of an emergency. The dominant practice around the world,<lb/> however, is to discourage the use of elevators by the public during these emergencies, except<lb/> when the elevator is under the control of qualified emergency workers, such as firefighters. The<lb/> major reason for this practice is the unpredictability of the emergency (e.g., fire) and the added<lb/> danger of entrapping passengers in the elevators due to the emergency condition.<lb/> As part of a broad safety evaluation by all stakeholders in the building industry, the elevator<lb/> segment is exploring the potential for enhancing the role of elevators in emergency<lb/> circumstances.</div>
+
+		</front>
+	</text>
+</tei>

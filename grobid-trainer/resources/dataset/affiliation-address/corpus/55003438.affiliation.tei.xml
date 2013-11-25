@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>a</marker>
+							<orgName type="department">Process Technology</orgName>,
+							<orgName type="institution">Flemish Institute for Technological Research (VITO)</orgName>,
+							<address>
+								<addrLine>Boeretang 200</addrLine>,
+								<postCode>2400</postCode>
+								<settlement>Mol</settlement>,
+								<country>Belgium</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>b</marker>
+							<orgName type="department">Institute of Organic and Polymer Technology</orgName>,
+							<orgName type="institution">Wroclaw University of Technology</orgName>,
+							<address>
+								<addrLine>Wybrzeze Wyspianskiego 27</addrLine>,
+								<postCode>50-370</postCode>
+								<settlement>Wroclaw</settlement>,
+								<country>Poland</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>c</marker>
+							<orgName type="laboratory">Centre for Surface Chemistry and Catalysis (COK)</orgName>,
+							<orgName type="department">Faculty of Bio-Engineering</orgName>,
+							<orgName type="institution">Katholieke Universiteit Leuven</orgName>,
+							<lb/>
+							<address>
+								<addrLine>Kasteelpark Arenberg 23</addrLine>,
+								<postCode>3001</postCode>
+								<settlement>Leuven</settlement>,
+								<country>Belgium</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

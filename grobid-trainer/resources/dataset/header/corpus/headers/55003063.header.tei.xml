@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003063"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note>MSDS No: PEG-UNL<lb/></note>
+
+	<note type="page">Page 1 of 13<lb/> </note>
+	
+	<date>03/05/2008<lb/></date>
+
+	<docTitle>
+	<titlePart>UNLEADED GASOLINE (ALL GRADES)<lb/> MATERIAL SAFETY DATA SHEET<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<affiliation>Petrocom Energy Group, LLC<lb/> </affiliation>
+	</byline>
+
+	<address>1330 Post Oak Blvd., Suite 2350<lb/> Houston, Texas 77056<lb/></address>
+
+	<phone>Phone: 713-418-3000<lb/> Fax: 713-418-3001<lb/></phone>
+
+	<note type="submission">Revision Date: 03/05/2008<lb/></note>
+
+	<docTitle>
+	<titlePart>Section 1: Product Identification<lb/></titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

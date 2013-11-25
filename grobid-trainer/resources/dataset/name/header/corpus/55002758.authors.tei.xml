@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>NIEVES</forename>
+								<surname>CASA~</surname>
+								<marker>*</marker>,
+							</persName>
+							<persName>
+								<forename>PEDRO</forename>
+								<surname>AMOROS</surname>,
+							</persName>
+							<persName>
+								<forename>RAFAEL</forename>
+								<surname>IBAlqEZ</surname>,
+							</persName>
+							<persName>
+								<forename>EDUARDO</forename>
+								<surname>MARTINEZ-<lb/>TAMAYO</surname>,
+							</persName>
+							<persName>
+								<forename>AURELIO </forename>
+								<surname>BELTRAN -PORTER</surname>,and
+							</persName>
+							<persName>
+								<forename>DANIEL</forename>
+								<surname>BELTR , ~N-PORTER</surname>
+								<marker>**</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

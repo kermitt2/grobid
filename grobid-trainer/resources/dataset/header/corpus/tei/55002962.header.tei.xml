@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55002962"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Electrochimica Acta 56 (2011) 6562– 6567<lb/></reference>
+
+	<note type="other">Contents lists available at ScienceDirect<lb/></note>
+	
+	<note type="other">Electrochimica Acta<lb/> </note>
+	
+	<ptr>j o u r n a l h o m e p a g e : w w w . e l s e v i e r . c o m / l o c a t e / e l e c t a c t a<lb/></ptr>
+
+	<docTitle>
+	<titlePart>Preparation and electrochemical properties of Cr-doped Li 9 V 3 (P 2 O 7 ) 3 (PO 4 ) 2 as<lb/> cathode materials for lithium-ion batteries<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Jiantie Xu<lb/> a , Yanming Zhao<lb/> a,b,* , Quan Kuang<lb/> a , Youzhong Dong<lb/> a<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a School of Material Science and Engineering, South China University of Technology,</affiliation>
+	</byline>
+
+	<address>Guangzhou 510640, China<lb/></address>
+
+	<byline>
+	<affiliation>b School of Physics, South China University of Technology,</affiliation>
+	</byline>
+
+	<address>Guangzhou 510640, China<lb/></address>
+
+	<note type="other">a r t i c l e i n f o<lb/></note>
+
+	<note type="submission">Article history:<lb/> Received 4 January 2011<lb/> Received in revised form 19 February 2011<lb/> Accepted 21 February 2011<lb/></note>
+
+	<date>Available online 31 March 2011<lb/></date>
+
+	<keyword>Keywords</keyword>
+
+	<div type="abstract">:<lb/> Lithium ion battery<lb/> Cathode material<lb/> Sol–gel<lb/> Li9V3−xCrx(P2O7)3(PO4)2<lb/> a b s t r a c t<lb/> Cr-doped Li 9 V 3−x Cr x (P 2 O 7 ) 3 (PO 4 ) 2 (x = 0.0–0.5) compounds have been prepared using sol–gel method.<lb/> The Rietveld refinement results indicate that single-phase Li 9 V 3−x Cr x (P 2 O 7 ) 3 (PO 4 ) 2 (x = 0.0–0.5) with trig-<lb/>onal structure can be obtained. Although the initial specific capacity decreased with Cr content at a lower<lb/> current rate, both cycle performance and rate capability have excited improvement with moderate Cr-<lb/>doping content. Li 9 V 2.8 Cr 0.2 (P 2 O 7 ) 3 (PO 4 ) 2 compound presents the good electrochemical rate and cyclic<lb/> ability. The enhancement of rate and cyclic capability may be attributed to the optimizing particle size,<lb/> morphologies, and structural stability during the proper amount of Cr-doping (x = 0.2) in V sites.<lb/></div>
+
+	<note type="copyright">© 2011 Elsevier Ltd. All rights reserved.<lb/></note>
+
+		</front>
+	</text>
+</tei>

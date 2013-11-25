@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55002612"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Ausarbeitung im Rahmen des Seminars<lb/> XML–Technologien<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>von Prof. Dr. Robert Tolksdorf<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Freie Universität Berlin, Institut für Informatik<lb/></affiliation>
+	</byline>
+
+	<docTitle>
+	<titlePart>Publishing mit XML:<lb/> Open eBook und DocBook<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Richard Cyganiak<lb/></docAuthor>
+	</byline>
+
+	<date>21. Februar 2003</date>
+
+		</front>
+	</text>
+</tei>

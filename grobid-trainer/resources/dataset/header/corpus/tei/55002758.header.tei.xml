@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55002758"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Journal oflnclusion Phenomena 6 (1988), 193-211.<lb/> </reference>
+	
+	<note type="page">193 9 </note>
+	
+	<note type="copyright">&#169;1988 Kluwer Academic Publishers.<lb/></note>
+
+	<docTitle>
+	<titlePart>Vanadyl Phosphate Dihydrate, a Solid Acid: The Role<lb/> of Water in VOPO4&quot;2H20 and its Sodium Derivatives<lb/> Nax(VWx Vv, -x O) PO4&quot;( 2 -x) H20<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>NIEVES CASA~*, PEDRO AMOROS, RAFAEL IBAlqEZ, EDUARDO MARTINEZ-<lb/>TAMAYO, AURELIO BELTRAN-PORTER, and DANIEL BELTR,~N-PORTER**<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>UIBCM, Departamento de Quimica Inorgdnica, Facultad de Quimicas, Universitat de ValOncia,<lb/></affiliation>
+	</byline>
+
+	<address>Dr. Moliner 50, 46100-Burjassot (Valkncia), Spain<lb/></address>
+
+	<note type="submission">(Received: 29 June 1987; in final form: 18 November 1987)<lb/></note>
+
+	<div type="abstract">Abstract. Sodium-containing intercalates having as general formula NaxVOPOP4.(2 -x)H20 (0.25 ~&lt; x &lt; 0.50)<lb/> have been obtained and characterized. Orthorhombic phases, which essentially maintain the structure of the<lb/> layered oxide hydrate VOPO4.2H20 result. Intercalated sodium ions act as &apos;pillars&apos;. The presence of n30 ions<lb/> in the parent VOPO4-2H20 and also in some reduced phases, is detected. The understanding of the structural role<lb/> of the water molecules is advanced and the topotactic dehydration/rehydration processes are studied. The<lb/> formation of a new metastable VOPO4.H20 phase is established.<lb/></div>
+
+	<keyword>Key words: Vanadyl phosphate, inclusion compounds, topotactic reactions, solid acids.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

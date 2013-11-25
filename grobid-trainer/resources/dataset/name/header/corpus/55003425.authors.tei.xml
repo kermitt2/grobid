@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Stefanie</forename>
+								<middlename>J</middlename>.
+								<middlename>W</middlename>.
+								<middlename>H</middlename>.
+								<surname>Oude Elferink</surname>
+								<marker>1*</marker> ,
+							</persName>
+							<persName>
+								<forename>Frank</forename>
+								<surname>Driehuis</surname>
+								<marker>1</marker> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Jan</forename>
+								<middlename>C</middlename> .
+								<surname>Gottschal</surname>
+								<marker>2</marker> , and
+							</persName>
+							<persName>
+								<forename>Sierk</forename>
+								<middlename>F</middlename> .
+								<surname>Spoelstra</surname>
+								<marker>2</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

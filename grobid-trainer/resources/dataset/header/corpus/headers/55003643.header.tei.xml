@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003643"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Effect of Y 2 O 3 Content on the Oxidation<lb/> Behavior of Fe-Cr-Al-Based ODS Alloys<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Anwar Ul-Hamid<lb/></docAuthor>
+	</byline>
+
+	<note type="submission">(Submitted 3 June 2002; in revised form 19 August 2002)<lb/></note>
+
+	<div type="abstract">A study was conducted to investigate the cyclic oxidation behavior of two oxide dispersion strengthened<lb/> (ODS) Fe-Cr-Al based alloys containing 0.17 wt.% and 0.7 wt.% Y 2 O 3 . The alloys were oxidized in air for<lb/> 100 h at 1200 °C based on a 24 h cycle period. X-ray diffraction (XRD) and analytical transmission electron<lb/> microscopy (TEM) were used to characterize the structure, morphology, and composition of the oxide<lb/> scales. Both alloys formed highly adherent and continuous layers of ␣-Al 2 O 3 exhibiting a morphology<lb/> indicative of inward scale growth. The role of Y 2 O 3 was to promote adherence by segregating to the grain<lb/> boundaries within the oxide. Concurrently, Y 2 O 3 generated micro-porosity resulting in a scale of com-<lb/>paratively higher thickness in the alloy with 0.7 wt.% Y 2 O 3 .<lb/></div>
+
+	<keyword>Keywords Fe-Cr-Al, MA956, oxidation, REE, TEM, Y 2 O 3<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

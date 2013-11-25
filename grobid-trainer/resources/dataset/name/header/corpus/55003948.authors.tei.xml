@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+Authors
+								:
+								<forename>M</forename>.
+								<surname>Jeffers</surname>
+							<lb/>
+								<marker>1</marker>,
+							</persName>
+							<persName>
+								<forename>D</forename> .
+								<middlename>I</middlename>.
+								<surname>Quinn</surname>
+							<lb/>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>H</forename> .
+								<surname>Joensuu</surname>
+								<marker>3</marker> ,
+							</persName>
+							<persName>
+								<forename>P</forename> .
+								<surname>Nathan</surname>
+								<marker>4</marker> ,
+							</persName>
+							<persName>
+								<forename>P</forename> .
+								<middlename>G</middlename>.
+								<surname>Harper</surname>
+							<lb/>
+								<marker>5</marker> ,
+							</persName>
+							<persName>
+								<forename>M</forename>.
+								<surname>Wojtukiewicz</surname>
+							<lb/>
+								<marker>6</marker>,
+							</persName>
+							<persName>
+								<forename>S</forename> .
+								<surname>Nicholson</surname>
+								<marker>7</marker> ,
+							</persName>
+							<persName>
+								<forename>A</forename> .
+								<surname>Bahl</surname>
+							<lb/>
+								<marker>8</marker> ,
+							</persName>
+							<persName>
+								<forename>P</forename> .
+								<surname>Tomczak</surname>
+							<lb/>
+								<marker>9</marker> ,
+							</persName>
+							<persName>
+								<forename>T</forename>.
+								<surname>Eisen</surname>
+							<lb/>
+								<marker>10</marker>;
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

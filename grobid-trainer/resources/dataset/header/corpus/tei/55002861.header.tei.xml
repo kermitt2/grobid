@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55002861"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">10<lb/> </note>
+	
+	<ptr>www.rfdesign.com<lb/></ptr>
+
+	<date>September 2006<lb/></date>
+
+	<div type="abstract">RFID straps provide today&apos;s manufacturers with a more flexible<lb/> packaging solution capable of increasing efficiency and decreasing cost.<lb/></div>
+
+	<note>RFID<lb/></note>
+
+	<docTitle>
+	<titlePart>Packaging innovation: From<lb/> smart labels to smart packages<lb/></titlePart>
+	</docTitle>
+	
+	<note> ����������������������������������������������������������������������������������������������������������������������������������������������<lb/> ���������� ������<lb/>
+	</note>
+
+	<byline>
+	<docAuthor>By Tony Sabetti<lb/></docAuthor>
+	</byline>
+
+	<div type="introduction">I<lb/> n the mid-1990s, flexible two-dimensional RFID inlays<lb/> were introduced to label-converting companies as the<lb/> basis for manufacturing smart labels. Today, smart la-<lb/>bels are used to track products in the supply chains of the<lb/> world&apos;s largest retailers and pharmaceutical manufacturers.<lb/> Wal-Mart, Target, Tesco and numerous other companies in<lb/> North America and Europe, as well as the U.S. Depart-<lb/>ment of Defense, are all in the process of changing over<lb/> their distribution and supply operations to include RFID.<lb/> Since the introduction of inlays less than a decade ago,<lb/> RFID usage has changed considerably. In these few years,<lb/> volume has grown from hundreds of thousands to hundreds<lb/> of millions of units. As the industry has grown and matured,<lb/> so has the need for consumer goods manufacturers and la-<lb/>bel converters to expand their product offerings. To provide<lb/> innovative and value-added RFID solutions, RFID label<lb/> design is moving from the traditional inlay model to a strap<lb/> form factor that provides lower cost and greater flexibility.<lb/> In order to understand straps, one first needs to understand<lb/> the evolution of RFID labeling, beginning with inlays and<lb/> smart labels. From this, straps and the benefits associated<lb/> with straps labeling will become apparent. As a more flex-<lb/>ible RFID packaging solution, it enables manufacturers to<lb/> better accommodate products tracked at both the item-and<lb/> case-levels in the global supply chain. Straps also provide a<lb/> tool for cost innovation with high-volume tag production in<lb/> the assembly line through lower per unit and capital costs.<lb/> RFID inlays<lb/> An RFID tag typically consists of a conduc-<lb/>tive metallic antenna with a low-power micro-<lb/>chip as seen in Figure 1. When passed within<lb/> range of an active RFID reader, the tag is wire-<lb/>lessly energized by energy transmitted by the<lb/> reader. It then communicates with the reader.<lb/> Today&apos;s RFID inlays are typically manufac-<lb/>tured on a reel-to-reel process. The thin micro-<lb/>chips are directly attached to a web of plastic<lb/> on which a series of 2D antennas have been</div>
+
+		</front>
+	</text>
+</tei>

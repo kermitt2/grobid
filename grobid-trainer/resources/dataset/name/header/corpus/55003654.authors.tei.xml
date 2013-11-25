@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Clara</forename>
+								<middlename>M</middlename>.
+								<surname>Yates</surname>,
+								<roleName>PhD</roleName>,
+							<lb/>
+								<marker>a</marker>
+							</persName>
+							<persName>
+								<forename>Mohamed</forename>
+								<surname>Abdelhamid</surname> ,
+							
+								<roleName>MSc</roleName> ,
+								<roleName>MRCSEd</roleName> ,
+							<lb/>
+								<marker>b</marker>
+							</persName>
+							<persName>
+								<forename>Donald</forename>
+								<middlename>J</middlename> .
+								<surname>Adam</surname>,
+								<roleName>MD</roleName>,
+								<roleName>FRCSEd</roleName>,
+								<marker>b</marker>
+							</persName>
+							<persName>
+								<forename>Gerard</forename>
+								<middlename>B</middlename> .
+								<surname>Nash</surname>,
+								<roleName>PhD</roleName>,
+								<lb/>
+								<marker>a</marker>
+							</persName>
+							<persName>
+								<forename>Andrew</forename>
+								<middlename>W</middlename>.
+								<surname>Bradbury</surname> ,
+								<roleName>BSc ,MBA ,MD</roleName> ,							
+								<roleName>FRCSEd</roleName> ,
+								<lb/>
+								<marker>b</marker> and
+								<lb/>
+							</persName>
+							<persName>
+								<forename>G</forename> .
+								<middlename>Ed</middlename>
+								<surname>Rainger</surname> ,
+								<roleName>PhD</roleName>,
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

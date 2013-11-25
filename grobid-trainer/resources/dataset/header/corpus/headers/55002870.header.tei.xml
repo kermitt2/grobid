@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55002870"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Ultra-Wideband (UWB) Technology<lb/></titlePart>
+	</docTitle>
+
+	<note>White Paper<lb/> Ultra-Wideband (UWB Technology)<lb/></note>
+	
+
+	<docTitle>
+	<titlePart>Enabling high-speed wireless personal area networks.<lb/> </titlePart>
+	</docTitle>
+	
+	<div type="abstract">Executive Summary<lb/> Wireless connectivity has enabled a new mobile lifestyle filled with<lb/> conveniences for mobile computing users. Consumers will soon<lb/> demand the same conveniences throughout their digital home,<lb/> connecting their PCs, personal digital recorders, MP3 recorders<lb/> and players, digital camcorders and digital cameras, high-definition<lb/> TVs (HDTVs), set-top boxes (STBs), gaming systems, personal<lb/> digital assistants (PDAs), and cell phones, to connect to each<lb/> other in a wireless personal area network (WPAN) in the home.<lb/> But today&apos;s wireless LAN and WPAN technologies cannot meet<lb/> the needs of tomorrow&apos;s connectivity of such a host of emerging<lb/> consumer electronic devices that require high bandwidth. A new<lb/> technology is needed to meet the needs of high-speed WPANs.<lb/> Ultra-wideband (UWB) technology offers a solution for the band-<lb/>width, cost, power consumption, and physical size requirements<lb/> of next-generation consumer electronic devices. UWB enables<lb/> wireless connectivity with consistent high data rates across multiple<lb/> devices and PCs within the digital home and the office. This<lb/> emerging technology provides the high bandwidth that multiple<lb/> digital video and audio streams require throughout the home.<lb/> With the support of industry workgroups, such as the wireless<lb/> universal serial bus (USB) workgroup, and technology leaders, like<lb/> Intel, UWB technology promises to make it easy to create high-<lb/>speed WPANs that can connect devices throughout the home.<lb/></div>
+
+		</front>
+	</text>
+</tei>

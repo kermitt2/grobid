@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003704"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>A Novel Digitizing Pen for the Analysis of Pen Pressure<lb/> and Inclination in Handwriting Biometrics<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Christian Hook, Juergen Kempf, Georg Scharfenberg<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University of Applied Sciences,</affiliation>
+	</byline>
+
+	<address>Postbox 120327, 93025 Regensburg, Germany<lb/></address>
+
+	<email>christian.hook@mathematik.fh-regensburg.de<lb/> juergen.kempf@mikro.fh-regensburg.de<lb/> georg.scharfenberg@e-technik.fh-regensburg.de<lb/></email>
+
+	<div type="abstract">Abstract. In this paper we introduce a novel multi-functional digitizing pen for<lb/> the verification and identification of individuals by means of handwritten<lb/> signatures, text or figures (biometric smart pen, BiSP). Different from most<lb/> conventional graphics tablets the device measures the kinematics and the<lb/> dynamics of hand movement during the writing process by recording the<lb/> pressure (Px, Py, Pz) and inclination (α, β) of the pen. Characteristic behavioral<lb/> patterns are numerically extracted from the signals and stored in a database.<lb/> Biometric test samples are compared against reference templates using a rapid<lb/> feature classification and matching algorithm. A first BiSP prototype based on<lb/> pressure sensors is available for presentation. Preliminary results obtained from<lb/> 3D pressure signals demonstrate a remarkable potential of the system for<lb/> person verification and identification, and suggest further applications in the<lb/> areas of neurology and psychiatry.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004048"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="copyright">&#169; 2005 Wiley-VCH Verlag GmbH &amp; Co. KGaA, Weinheim<lb/></note>
+
+	<note>10.1002/14356007.a06 157<lb/></note>
+
+	<docTitle>
+	<titlePart>Charcoal</titlePart>
+	</docTitle>
+	
+	<note type="page"> 1<lb/></note>
+	
+	<note type="other">Charcoal<lb/> See also Carbon, Chap. 5.<lb/></note>
+
+	<byline>
+	<docAuthor>Horst-<lb/> unter Brocksiepe,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Degussa AG, Werk Bodenfelde, </affiliation>
+	</byline>
+
+	<address>Federal Republic of Germany<lb/></address>
+
+		</front>
+	</text>
+</tei>

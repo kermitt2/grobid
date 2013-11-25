@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004042"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<affiliation>Carnegie Mellon University<lb/></affiliation>
+	</byline>
+
+	<note type="other">Research Showcase<lb/></note>
+
+	<byline>
+	<affiliation>Institute for Software Research<lb/> School of Computer Science<lb/></affiliation>
+	</byline>
+
+	<date>1-1-1997<lb/></date>
+
+	<docTitle>
+	<titlePart>Creating Dynamic World Wide Web Pages by<lb/> Demonstration<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Robert Miller<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Carnegie Mellon University<lb/></affiliation>
+	</byline>
+
+	<byline>
+	<docAuthor>Brad Myers<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Carnegie Mellon University,</affiliation>
+	</byline>
+
+	<email>bam@cs.cmu.edu<lb/></email>
+
+	<note type="other">This Technical Report is brought to you for free and open access by the School of Computer Science at Research Showcase. It has been accepted for<lb/> inclusion in Institute for Software Research by an authorized administrator of Research Showcase. For more information, please contact<lb/> kbehrman@andrew.cmu.edu.<lb/> Recommended Citation<lb/> Miller, Robert and Myers, Brad, &quot;Creating Dynamic World Wide Web Pages by Demonstration&quot; (1997). Institute for Software<lb/> Research. Paper 824.<lb/></note>
+
+	<ptr type="web">http://repository.cmu.edu/isr/824</ptr>
+
+		</front>
+	</text>
+</tei>

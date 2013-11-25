@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>HIDENORI</forename>
+								<surname>MATSUI</surname>,
+								<marker>t</marker>
+							</persName>
+							<persName>
+								<forename>YUMIKO</forename>
+								<surname>SANO</surname>,
+							</persName>
+							<persName>
+								<forename>HIROSHI</forename>
+								<surname>ISHIHARA</surname>,
+								<marker>4</marker> AND
+							</persName>
+							<persName>
+								<forename>TOMOYUKI</forename>
+								<surname>SHINOMIYA</surname>
+								<marker>*</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

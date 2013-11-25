@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003775"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>AFRL-IF-RS-TR-2004-100<lb/> </idno>
+	
+	<reference>Final Technical Report<lb/></reference>
+
+	<date>April 2004<lb/></date>
+
+	<docTitle>
+	<titlePart>SCALABLE PROTECTION AGAINST DDOS AND<lb/> WORM ATTACKS<lb/> </titlePart>
+	</docTitle>
+	
+	<note type="grant">Purdue University<lb/> Sponsored by<lb/> Defense Advanced Research Projects Agency<lb/> DARPA Order No. M097<lb/> APPROVED FOR PUBLIC RELEASE; DISTRIBUTION UNLIMITED.<lb/> The views and conclusions contained in this document are those of the authors and should not be<lb/> interpreted as necessarily representing the official policies, either expressed or implied, of the<lb/> Defense Advanced Research Projects Agency or the U.S. Government.<lb/></note>
+
+	<byline>
+	<affiliation>AIR FORCE RESEARCH LABORATORY<lb/> INFORMATION DIRECTORATE<lb/> ROME RESEARCH SITE<lb/> </affiliation>
+	</byline>
+		
+	<address>ROME, NEW YORK</address>
+	
+
+		</front>
+	</text>
+</tei>

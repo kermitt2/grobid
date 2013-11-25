@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003257"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Nutritional and Health Benefits of Inulin and Oligofructose<lb/> Inulin and Oligofructose: What Are They?<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>1<lb/> Kathy R. Niness<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Orafti Active Food Ingredients,</affiliation>
+	</byline>
+
+	<address>Malvern, PA 19355<lb/></address>
+
+	<div type="abstract">ABSTRACT Inulin is a term applied to a heterogeneous blend of fructose polymers found widely distributed in<lb/> nature as plant storage carbohydrates. Oligofructose is a subgroup of inulin, consisting of polymers with a degree<lb/> of polymerization (DP) Յ10. Inulin and oligofructose are not digested in the upper gastrointestinal tract; therefore,<lb/> they have a reduced caloric value. They stimulate the growth of intestinal bifidobacteria. They do not lead to a rise<lb/> in serum glucose or stimulate insulin secretion. Several commercial grades of inulin are available that have a<lb/> neutral, clean flavor and are used to improve the mouthfeel, stability and acceptability of low fat foods. Oligofruc-<lb/>tose has a sweet, pleasant flavor and is highly soluble. It can be used to fortify foods with fiber without contributing<lb/> any deleterious organoleptic effects, to improve the flavor and sweetness of low calorie foods and to improve the<lb/> texture of fat-reduced foods. Inulin and oligofructose possess several functional and nutritional properties, which<lb/> may be used to formulate innovative healthy foods for today&apos;s consumer.</div> 
+
+	<reference>J. Nutr. 129: 1402S–1406S, 1999.<lb/> </reference>
+
+	<keyword>KEY WORDS: ● inulin ● oligofructose ● dietary fiber ● prebiotic ● bifidogenic ● fat reduction<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

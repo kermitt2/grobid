@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003811"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Multispectral imaging of papyri:<lb/> area segregation by evaluation of their spectral signature correlation<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Alexander Kovalchuk<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Faculty of Classics, University of Oxford,</affiliation>
+	</byline>
+
+	<address>U.K.<lb/></address>
+
+	<div type="abstract">ABSTRACT<lb/> Multispectral imaging technology was applied to deteriorated ancient manuscripts. Monochrome images were<lb/> registered at twelve wavelengths. An image processing algorithm that utilises relative spectral intensity<lb/> distribution for the areas of the surface (rather than absolute values of intensity of the reflected light) was<lb/> evaluated. It was found that the areas in a cubed MSI image representing ink and papyrus were separable due<lb/> to their distinctive spectral signatures. The developed technique for enhancing the contrast of the inscriptions<lb/> was shown to work effectively over a large range of lightness for both ink and papyrus surface.<lb/> Multispectral imaging (MSI), image processing, material detection, ancient-text imaging, papyrus, Papyrology.<lb/></div>
+
+		</front>
+	</text>
+</tei>

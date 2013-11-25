@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003524"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Project number<lb/> 7810.2;4 LSPP-LS<lb/> Research unit<lb/> CTI<lb/></reference>
+
+	<docTitle>
+	<titlePart>Project title<lb/> Establishment and application of methods to follow protein dynamics by 4D live<lb/> imaging in zebrafish and Drosophila embryos using the SNAP-tag TM technology.<lb/> </titlePart>
+	</docTitle>
+	
+	<note type="english_title">Project title in English<lb/> Establishment and application of methods to follow protein dynamics by 4D live<lb/> imaging in zebrafish and Drosophila embryos using the SNAP-tag TM technology.<lb/></note>
+
+	<docTitle>
+	<titlePart>Texts for this project<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<note type="other">German French<lb/> Italian English<lb/></note>
+	</byline>
+
+	<note type="other">Short description<lb/> --<lb/>-<lb/></note>
+
+	<div type="abstract">Abstract -<lb/>--<lb/>Inserted texts<lb/> Category Text<lb/> Short description<lb/> (English)<lb/> Establishment and application of methods to follow protein dynamics<lb/> by 4D live imaging in zebrafish and Drosophila embryos using the<lb/> SNAP-tag TM technology.<lb/> Abstract (English)<lb/> The aim of this project is to establish methods and protocols for<lb/> application of the SNAP-tag for live imaging studies in developing<lb/> Drosophila and zebrafish organisms. Transgenic animals expressing<lb/> different proteins of interest fused to the SNAP-tag will be<lb/> generated to image the distribution and the dynamics of these<lb/> proteins during organ development using 4D confocal microscopy.<lb/> The ultimate aim of the project is to validate the SNAP-tag for live<lb/> studies in developing organisms, in particular the SNAP-tag¿s<lb/> potential for pulse-chase imaging.<lb/> SER -Hallwylstrasse 4 -3003 Bern -Disclaimer</div>
+
+		</front>
+	</text>
+</tei>

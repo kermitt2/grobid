@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003085"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<docAuthor>A. Maciejewska, H. Veringa, J. Sanders, S.D. Peteves<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>DG JRC<lb/> Institute for Energy<lb/></affiliation>
+	</byline>
+
+	<date>2006<lb/></date>
+
+	<docTitle>
+	<titlePart>CO-FIRING OF BIOMASS WITH COAL:<lb/> CONSTRAINTS AND ROLE<lb/> OF BIOMASS PRE-TREATMENT<lb/></titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

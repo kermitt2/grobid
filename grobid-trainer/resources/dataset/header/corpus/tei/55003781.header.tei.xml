@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003781"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>115~k IKANbALIIUNS ON BIOMEDICAL ENGINEERING, VOL 43, NO 9, SEPTEMBER 1996<lb/> </reference>
+	
+	<note type="page">919<lb/></note>
+
+	<docTitle>
+	<titlePart>Improved Estiimation of Low Velocities in Color<lb/> Doppler Imaging by Adapting the Mean Frequency<lb/> Estimator to the Clutter Rejection Filter<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Alain Herment,&quot; Guy Demoment, and Philippe Dumke<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Abstract-An adaptive mean frequencjr estimator is proposed<lb/> for color flow imaging. It is based on a series expansion of the first<lb/> derivative of the autocorrelation function (of the Doppler signal at<lb/> origin. Its bias can he reduced by shifting the integration bounds<lb/> in the series expansion and its variance adjusted by adapting<lb/> the coefficients of the serial development. This estimator can be<lb/> fitted to the specific characteristics of the clutter rejection filter<lb/> using the signal-to-noise ratio (SNR) of thie Doppler signal as an<lb/> adaptive parameter. Its performance is compared to that of the<lb/> usual correlation angle estimator, and its thresholded version,<lb/> as well as that of the general mean frequency estimator, using<lb/> a model of Doppler signal. The detection of low frequencies<lb/> was significantly improved. The mean square error (MSE) was<lb/> reduced an average 15 fold over a 25-dB range on the SNR,<lb/> compared to the correlation angle estimator (CAE) or the general<lb/> mean frequency estimator. A two-fold reduction in the MSE<lb/> was obtained compared to the thresholded correlation angle<lb/> estimator.<lb/></div>
+
+		</front>
+	</text>
+</tei>

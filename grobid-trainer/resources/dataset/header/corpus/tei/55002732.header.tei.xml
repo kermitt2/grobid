@@ -1,0 +1,97 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55002732"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">online </note>
+	
+	<note type="copyright">© ML Comm<lb/> </note>
+	
+	<note type="page">294 </note>
+	
+	<note type="copyright">Copyright &#169; 2009 Official Journal of Korean Neuropsychiatric Association<lb/> </note>
+	
+	<note>0ORIGINAL ARTICLE0<lb/></note>
+
+	<idno type="ISSN">Print ISSN 1738-3684 / On-line ISSN 1976-3026<lb/></idno>
+	
+	<note>OPEN ACCESS<lb/></note>
+
+	<idno type="DOI">DOI 10.4306/pi.2009.6.4.294<lb/></idno>
+
+	<docTitle>
+	<titlePart>The pNNx Heart Rate Variability Statistics:<lb/> An Application to Neuroautonomic Dysfunction<lb/> of Clozapine-Treated Subjects<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">ObjectiveaaThe percentage of successive normal cardiac interbeat intervals greater than 50<lb/> msec (pNN50) is a widely used heart rate variability measure, which is useful in identify-<lb/>ing the neuroautonomic dysfunction of psychiatric disorders. However, pNN50 is only one<lb/> member of a larger family of pNNx statistics, where x is greater than 0 msec. The potential<lb/> application of the general pNNx statistics has not yet been explored in the psychiatric field.<lb/> The authors examined the pNNx statistics in clozapine-treated subjects and normal controls<lb/> to evaluate the usefulness of the general pNNx statistics.<lb/> MethodsaaSixty-one schizophrenic patients treated with clozapine and fifty-nine normal<lb/> controls were evaluated. Probability values for the differences between the groups at each<lb/> pNN value (range: pNN1-pNN100) were calculated using data obtained from a 30-minute<lb/> electrocardiogram.<lb/> ResultsaaThe conventional pNN50 and pNNx values with x&lt;50 msec were all signifi-<lb/>cantly lower in the patient group (p&lt;0.05). The distinction between the two groups was more<lb/> prominent at pNN values less than 50 msec than that observed at pNN50. The maximum<lb/> separation between groups occurred at pNN5 (68.2±19.1 vs. 22.5±20.5, p&lt;10<lb/> -22 ).<lb/> ConclusionaaThe pNNx with x&lt;50 msec provided more robust discrimination between the<lb/> groups than the conventional pNN50, suggesting the importance of analyzing very small<lb/> variations of interbeat interval in discriminating normal and pathological heart rate pat-<lb/>terns. The results also suggest that the general pNNx statistics may be applied and useful in<lb/> evaluating the neuroautonomic dysfunction in patients treated with clozapine, complement-<lb/>ing the traditionally computed pNN50 value.<lb/></div>
+
+	<reference>Psychiatry Investig 2009 ; 6 : 294-298<lb/></reference>
+
+	<keyword>Key WordsaaHeart rate variability, pNNx statistics, Schizophrenia, Clozapine, Neuroauto-<lb/>nomic dysfunction.<lb/></keyword>
+
+	<note type="submission">Received: August 16, 2009 Revised: October 6, 2009 Accepted: October 27, 2009<lb/></note>
+
+	<date>Available online: November 9, 2009<lb/></date>
+
+	<byline>
+	<docAuthor>Jong-Hoon Kim<lb/> 1<lb/> Sang Hoon Yi<lb/> 2<lb/> Yong Min Ahn<lb/> 3,4<lb/> Kyu Young Lee<lb/> 5<lb/> Seung Ae Yang<lb/> 6<lb/> Yong Sik Kim<lb/> 3,4<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Department of Psychiatry,<lb/> Gil Medical Center, Gachon University<lb/> of Medicine &amp; Science,</affiliation>
+	</byline>
+
+	<address>Incheon,<lb/></address>
+
+	<byline>
+	<affiliation>2 Institute of Basic Science &amp; School<lb/> of Computer Aided Science,<lb/> Inje University,</affiliation>
+	</byline>
+
+	<address>Gimhae,<lb/></address>
+
+	<byline>
+	<affiliation>3 Department of Psychiatry and<lb/> Behavioral Science,<lb/> Seoul National University<lb/> College of Medicine,</affiliation>
+	</byline>
+
+	<address>Seoul,<lb/></address>
+
+	<byline>
+	<affiliation>4 Institute of Human<lb/> Behavioral Medicine,<lb/> Seoul National University,</affiliation>
+	</byline>
+
+	<address>Seoul,<lb/></address>
+
+	<byline>
+	<affiliation>5 Department of Psychiatry,<lb/> Eulji University School of Medicine,<lb/></affiliation>
+	</byline>
+
+	<address>Daejeon,<lb/></address>
+
+	<byline>
+	<affiliation>6 Clinical Research Institute,<lb/> Seoul National University Hospital,<lb/></affiliation>
+	</byline>
+
+	<address>Seoul, Korea<lb/></address>
+
+	<note type="other">Correspondence<lb/></note>
+
+	<byline>
+	<docAuthor>Yong Sik Kim, MD<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Psychiatry and<lb/> Behavioral Science,<lb/> Seoul National University<lb/> College of Medicine,<lb/></affiliation>
+	</byline>
+
+	<address>101 Daehak-ro, Jongno-gu,<lb/> Seoul 110-744, Korea<lb/></address>
+
+	<phone>Tel +82-2-2072-2204<lb/> Fax +82-2-744-7241<lb/></phone>
+
+	<email>E-mail kys@snu.ac.kr<lb/></email>
+
+		</front>
+	</text>
+</tei>

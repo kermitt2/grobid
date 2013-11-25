@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003698"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Chapter 78<lb/> Stanford Multiactuator–Receiver<lb/> Transduction (SMART) Layer Technology<lb/> and Its Applications<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Xinlin P. Qing<lb/> 1<lb/> , Shawn J. Beard<lb/> 1<lb/> , Amrita Kumar<lb/> 1<lb/> , Irene Li<lb/> 1<lb/> , Mark Lin<lb/> 2<lb/> and Fu-Kuo Chang<lb/> 2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Acellent Technologies, Inc.,</affiliation>
+	</byline>
+
+	<address>Sunnyvale, CA, USA<lb/></address>
+
+	<byline>
+	<affiliation>2 Department of Aeronautics and Astronautics, Stanford University,</affiliation>
+	</byline>
+
+	<address>Stanford, CA, USA<lb/></address>
+
+		</front>
+	</text>
+</tei>

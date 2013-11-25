@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003734"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Molecular Characterization<lb/> of Organic Aerosol<lb/></titlePart>
+	</docTitle>
+
+	<reference>ASR ALCWG 2010 Workshop<lb/> October 11-12, 2010<lb/></reference>
+
+	<byline>
+	<docAuthor>A. A. Laskin, J. Laskin, P.J. Roach<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Pacific Northwest National Laboratory,</affiliation>
+	</byline>
+
+	<address>Richland, WA<lb/></address>
+
+	<note type="other">A.<lb/></note>
+
+	<byline>
+	<docAuthor>S.A. Nizkorodov, A. Bateman, T. Nguyen, D.L. Bones<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University of California,</affiliation>
+	</byline>
+
+	<address>Irvine, CA</address>
+
+		</front>
+	</text>
+</tei>

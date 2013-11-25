@@ -1,0 +1,73 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004024"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Int. J. Mol. Sci. 2011, 12, 1-11;</reference>
+
+	<idno type="DOI">doi:10.3390/ijms12010001<lb/></idno>
+
+	<note type="other">International Journal of<lb/> Molecular Sciences<lb/></note>
+
+	<idno type="ISSN">ISSN 1422-0067<lb/></idno>
+
+	<ptr type="web">www.mdpi.com/journal/ijms<lb/> Article<lb/></ptr>
+
+	<docTitle>
+	<titlePart>Stabilization of the Single-Chain Fragment Variable by an<lb/> Interdomain Disulfide Bond and Its Effect on Antibody Affinity<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Jian-Xin Zhao<lb/> 1 , Lian Yang<lb/> 1,2 , Zhen-Nan Gu<lb/> 3 , Hai-Qin Chen<lb/> 1,2 , Feng-Wei Tian<lb/> 1,2 ,<lb/> Yong-Quan Chen<lb/> 3 , Hao Zhang<lb/> 2 and Wei Chen<lb/> 1, *<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 School of Food Science and Technology, Jiangnan University,</affiliation>
+	</byline>
+
+	<address>Wuxi, Jiangsu, 214122, China;<lb/></address>
+
+	<email>E-Mails: jxzhao@jiangnan.edu.cn (J.-X.Z.); yanglian27@yahoo.com.cn (L.Y.);<lb/> haiqinchen@jiangnan.edu.cn (H.-Q.C.); fwtian@jiangnan.edu.cn (F.-W.T.)<lb/></email>
+
+	<byline>
+	<affiliation>2 State Key Laboratory of Food Science and Technology, Jiangnan University,</affiliation>
+	</byline>
+
+	<address>Wuxi, Jiangsu,<lb/> 214122, China;</address>
+
+	<email>E-Mail: zhanghao@jiangnan.edu.cn (H.Z.)<lb/></email>
+
+	<byline>
+	<affiliation>3 Department of Cancer Biology, School of Medicine, Wake Forest University,</affiliation>
+	</byline>
+
+	<address>Winston Salem,<lb/> NC 27109, USA;</address>
+
+	<email>E-Mails: zgu@wfubmc.edu
+
+	(Z.-N.G.);<lb/></email>
+
+	<email>yqchen@wfubmc.edu
+
+	(Y.-Q.C.)<lb/> </email>
+	
+	<note type="other">* Author to whom correspondence should be addressed; E-Mail: </note>
+	
+	<email>weichen@jiangnan.edu.cn;<lb/> </email>
+	
+	<phone>Tel./Fax: +86-510-85912155.<lb/></phone>
+
+	<note type="submission">Received: 12 October 2010; in revised form: 8 December 2010 / Accepted: 16 December 2010 /<lb/> </note>
+
+	<date type="publication">Published: 23 December 2010<lb/></date>
+
+	<div type="abstract">Abstract: The interdomain instability of single-chain fragment variable (scFv) might<lb/> result in intermolecular aggregation and loss of function. In the present study, we stabilized<lb/> H4—an anti-aflatoxin B 1 (AFB 1 ) scFv—with an interdomain disulfide bond and studied<lb/> the effect of the disulfide bond on antibody affinity. With homology modeling and<lb/> molecular docking, we designed a scFv containing an interdomain disulfide bond between<lb/> the residues H44 and L100. The stability of scFv (H4) increased from a GdnHCl 50 of<lb/> 2.4 M to 4.2 M after addition of the H44-L100 disulfide bond. Size exclusion<lb/> chromatography revealed that the scFv (H44-L100) mutant existed primarily as a<lb/> monomer, and no aggregates were detected. An affinity assay indicated that scFv (H4) and<lb/> the scFv (H44-L100) mutant had similar IC 50 values and affinity to AFB 1 . Our results<lb/> indicate that interdomain disulfide bonds could stabilize scFv without affecting affinity.<lb/></div>
+
+	<keyword>Keywords: aflatoxin; affinity; disulfide bond; single-chain fragment variable; stability<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="institution">Company FatBoy Concepts</orgName>
+							<lb/>
+							<address>
+								<addrLine>151 Kalmus Drive</addrLine>,
+								<addrLine>Suite H-3</addrLine>,
+								<settlement>Costa Mesa</settlement>,
+								<region>California (CA)</region>,
+								<postCode>92626</postCode>,
+								<country>USA</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

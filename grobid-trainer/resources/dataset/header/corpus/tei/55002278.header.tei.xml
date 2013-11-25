@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55002278"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Comparative Evaluation of<lb/> Server-push and Client-pull Architectures for Multimedia Servers<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Sriram S. Rao<lb/> Harrick M. Vin<lb/> Ashis Tarafdar<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Distributed Multimedia Computing Laboratory<lb/> Department of Computer Sciences, University of Texas at Austin<lb/></affiliation>
+	</byline>
+
+	<address>Taylor Hall 2.124, Austin, Texas 78712-1188, USA<lb/></address>
+
+	<email>E-mail: fsriram,vin,ashisg@cs.utexas.edu,</email>
+
+	<phone>Telephone: (512) 471-9732, Fax: (512) 471-8885<lb/></phone>
+
+	<ptr type="web">URL: http://www.cs.utexas.edu/users/dmcl<lb/></ptr>
+
+	<div type="abstract">Abstract<lb/> Realizing a wide range of multimedia services will require<lb/> the development of high performance, integrated multime-<lb/>dia servers (or file systems) which can efficiently manage<lb/> the storage, access, and transmission of audio, video, and<lb/> textual objects. Traditionally storage servers have em-<lb/>ployed fundamentally different mechanisms for managing<lb/> the storage and access of each of these objects. Whereas<lb/> most conventional text file systems employ a client-pull ar-<lb/>chitecture, most video servers proposed in the literature<lb/> employ a server-push architecture. Hence, the most funda-<lb/>mental question is: what is an appropriate architecture for<lb/> integrated multimedia servers? In this paper, we take a step<lb/> towards addressing this question by outlining the qualita-<lb/>tive and quantitative differences between the server-push<lb/> and client-pull architectures.<lb/></div>
+
+		</front>
+	</text>
+</tei>

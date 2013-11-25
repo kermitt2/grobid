@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003646"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Compact 4Pi Beam Scanning Microscope for Imaging Cells with a<lb/> Sevenfold Increase in Axial Resolution<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Hilmar Gugel, Reiner Rygiel, Rafael Storz<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Leica Microsystems CMS GmbH,</affiliation>
+	</byline>
+
+	<address>Am Friedensplatz 3, 68165 Mannheim, Germany<lb/></address>
+
+	<div type="abstract">ABSTRACT<lb/> Confocal microscopy is the method of choice in biological 3D-imaging, however, the axial resolution is limited to<lb/> ~500 nm. During the last decade it has been successfully demonstrated that the axial resolution can be substantially<lb/> improved with 4Pi microscopy. We report a 4Pi microscope realized as a fast beam scanning system consisting of a 4Pi-<lb/>module linked to a state-of-the-art confocal microscope. As a result, the advantages of the confocal system such as<lb/> scanning, sensitive multicolor detection and imaging speed are combined with the superior resolution of 4Pi microscopy.<lb/> This novel microscope is eminently suited for biological applications. It is designed both for single-photon and for two-<lb/>photon picosecond excitation, and also enables joint coherent illumination and detection, i.e. 4Pi type C. The superior<lb/> PSF and OTF of the system enable 80 nm axial resolution in cells mounted in aqueous media. We present the optical<lb/> design of the system and demonstrate an up to 7-fold improved optical sectioning in live cells.<lb/></div>
+
+	<keyword>Keywords: 4Pi Microscopy, Confocal Microscopy, Two-Photon, Resolution, Beam Scanning, Type C<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

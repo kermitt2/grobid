@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003618"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>ieee transactions on ultrasonics, ferroelectrics, and frequency control, vol. 51, no. 1, january 2004<lb/></reference>
+
+	<note type="page">71<lb/></note>
+
+	<docTitle>
+	<titlePart>Bidirectional Axial Transmission Can Improve<lb/> Accuracy and Precision of Ultrasonic Velocity<lb/> Measurement in Cortical Bone: A Validation<lb/> on Test Materials<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Emmanuel Bossy, Maryline Talmant, Marielle Defontaine, Frédéric Patat, and Pascal Laugier<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Abstract—The axial transmission technique uses a linear<lb/> arrangement of ultrasonic emitters and receivers placed on<lb/> a same side of a cortical bone site in contact with the skin,<lb/> involving ultrasonic propagation along the axis of bone. The<lb/> velocity of the waves radiated from bone has been shown to<lb/> reflect bone status. The thickness and composition of soft<lb/> tissue may vary along the length of the bone, between dif-<lb/>ferent skeletal sites, or between subjects. Hence, accurate<lb/> estimates of velocity require first to eliminate the effect of<lb/> the overlying soft tissue that is traversed by the ultrasound<lb/> wave. To correct for such bias without measuring soft tis-<lb/>sue properties, we designed new ultrasonic probes in the<lb/> 1–2 MHz frequency range. It is based on propagation along<lb/> the bone surface in two opposite directions from two sources<lb/> placed on both sides of a unique group of receivers. The aim<lb/> is to obtain an unbiased estimate of the velocity without<lb/> any intermediate calculation of soft tissue properties, such<lb/> as thickness variation or velocity. Validation tests were per-<lb/>formed on academic material such as Perspex or aluminum.<lb/> We found that head wave velocity values could be biased<lb/> by more than 10% for inclination of a few degrees between<lb/> the test specimen surface and the probe. On test materials,<lb/> the compensation procedure implemented in our probe led<lb/> to a relative precision error on velocity measurement lower<lb/> than 0.2 to 0.3%. These results suggest that the correction<lb/> procedure allows measuring in vivo velocities independently<lb/> of soft tissue properties.<lb/></div>
+
+		</front>
+	</text>
+</tei>

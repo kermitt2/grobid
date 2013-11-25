@@ -1,0 +1,44 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003787"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">1 / 14<lb/></note>
+
+	<docTitle>
+	<titlePart>HYPERSPECTRAL IMAGING – A NOVEL NON-<lb/>DESTRUCTIVE ANALYTICAL TOOL IN PAPER AND<lb/> WRITING DURABILITY RESEARCH<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>1 J.H. Scholten,<lb/> 1 M.E. Klein,<lb/> 2 Th. A.G. Steemers,<lb/> 2 G. de Bruin<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Art Innovation BV,</affiliation>
+	</byline>
+
+	<address>Zutphenstraat 25, 7575 EJ Oldenzaal, The Netherlands<lb/></address>
+
+	<phone>Phone: +31 541570720; Fax: +31 541570721; </phone>
+	
+	<ptr>Website: www.art-innovation.nl<lb/></ptr>
+
+	<byline>
+	<affiliation>2 Nationaal Archief,</affiliation>
+	</byline>
+
+	<address>Den Haag, The Netherlands<lb/></address>
+
+	<docAuthor>Reference Author: M.E. Klein, </docAuthor>
+	
+	<email>E-mail: info@art-innovation.nl, Fax: +31 541570721<lb/></email>
+
+	<div type="abstract">Hyperspectral imaging (HSI) is a novel technique for fast, simple and truly non-destructive<lb/> analysis of historic documents. HSI provides a series of calibrated digital images of a<lb/> document at a large number (50-100) of different, well-defined optical wavelengths in the<lb/> ultra-violet, visible and near-infrared. Through a quantitative analysis of these spectral<lb/> reflectance images, HSI may be used, in particular, for identifying various types of ink and for<lb/> mapping their distribution on the paper in order to determine the condition and enhance the<lb/> legibility of a historic document.<lb/> We discuss the applicability of various HSI concepts in paper and writing durability research<lb/> and the setup and functionality of the instrument we are currently developing. Using a<lb/> laboratory setup of this HSI instrument operating in the 380 – 1100 nm wavelength range, we<lb/> performed initial experiments on distinguishing and mapping of inks and enhancing the<lb/> visibility of &quot;hidden&quot; features on historic documents. The unique combination of high spectral<lb/> (10 -15 nm) and high spatial (&lt;0.1 mm) resolution obtained from these HSI measurements is<lb/> exploited using contrast enhancing and mapping software algorithms, whose numeric results<lb/> are visualized with false-colour images.<lb/> </div>
+	<note type="page">2 / 14<lb/></note>
+
+		</front>
+	</text>
+</tei>

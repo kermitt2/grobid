@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003454"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Building reconstruction and visualization from LIDAR data<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>G. Forlani<lb/> a, C. Nardinocchi<lb/> b , M. Scaioni<lb/> c<lb/> , P. Zingaretti<lb/> d<lb/> a</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Dept. of Civil Engineering, University of Parma –</affiliation>
+	</byline>
+
+	<email>gianfranco.forlani@unipr.it<lb/></email>
+
+	<byline>
+	<affiliation>b Dept. ITS, University of Rome &quot;La Sapienza&quot; –</affiliation>
+	</byline>
+
+	<email>carla.nardinocchi@uniroma1.it<lb/></email>
+
+	<byline>
+	<affiliation>c Dept. IIAR, Politecnico of Milan –</affiliation>
+	</byline>
+
+	<email>marco.scaioni@polimi.it<lb/></email>
+
+	<byline>
+	<affiliation>d Dept. of Informatic, University of Ancona –</affiliation>
+	</byline>
+
+	<email>zinga@inform.unian.it<lb/></email>
+
+	<note type="other">Commission V, WG V/4 &amp; IC III/5<lb/></note>
+
+	<keyword>KEY WORDS: Range images, Segmentation, Terrain Classification, Building extraction and 3D reconstruction.<lb/></keyword>
+
+	<div type="abstract">ABSTRACT:<lb/> A strategy for building extraction and building reconstruction from dense LIDAR data is presented. Roofs are modeled as plane<lb/> surfaces, connected along ridges and bordered by the eaves lines. Initial segmentation of terrain and non-terrain features is<lb/> performed on grid data; after segmentation by region growing and region topology, classification is achieved based on a hierarchical<lb/> set of aggregation rules. Areas labelled as potential buildings are further segmented in plane surfaces (roofs slopes) based on<lb/> gradient orientation and plane fitting by RANSAC; a similar procedure applies to edge pixels to extract eaves lines. The topology of<lb/> the roof slopes and walls is reconstructed, deriving also roof ridges and roof corners. A 3D model of the building is thereafter<lb/> obtained which can be imported in CAD and visualization environments, such as those provided by the VTP group. Results from a<lb/> laser scanning survey with a ground resolution of 1 m are presented for a suburban area in Pavia.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>J</forename>
+								<surname>Boursier</surname>,
+							</persName>
+							<persName>
+								<forename>V</forename>
+								<surname>de Ledinghen</surname>,
+							</persName>
+							<persName>
+								<forename>V</forename>
+								<surname>Leroy</surname>,
+							</persName>
+							<persName>
+								<forename>L</forename>
+								<surname>Castera</surname>,
+							</persName>
+							<persName>
+								<forename>JP</forename>
+								<surname>Zarski</surname>,
+							</persName>
+							<persName>
+								<forename>F</forename>
+								<surname>Oberti</surname>,
+							</persName>
+							<persName>
+								<forename>S</forename>
+								<surname>Michalak</surname>,
+							</persName>
+							<persName>
+								<forename>Y</forename>
+								<surname>Gallois</surname>,
+							</persName>
+							<persName>
+								<forename>I</forename>							
+								<surname>Fouchard Hubert</surname>,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>N</forename>
+								<surname>Dib</surname> ,
+							</persName>
+							<persName>
+								<forename>MC</forename>
+								<surname>Rousselet</surname> ,
+							</persName>
+							<persName>
+								<forename>S</forename>
+								<surname>Bertrais</surname> ,
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

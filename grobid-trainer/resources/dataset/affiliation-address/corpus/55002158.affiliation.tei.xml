@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="institution">BioVigilant Systems, Inc.</orgName>
+							<lb/>
+							<address>
+								<addrLine>2005 W. Ruthrauff Road</addrLine>,
+								<addrLine>Suite 151</addrLine>,
+								<settlement>Tucson</settlement>,
+								<region>AZ</region>
+								<postCode>85705</postCode>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

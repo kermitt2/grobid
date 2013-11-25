@@ -1,0 +1,50 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55002596"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">Page 1<lb/></note>
+	
+	<byline>
+	<affiliation>EUROPEAN COMMISSION<lb/> RESEARCH DIRECTORATE-GENERAL -Directorate K – Energy<lb/> Research Fund for Coal and Steel<lb/> </affiliation>
+	</byline>
+	
+	<note>Project Fact Sheet<lb/></note>
+
+	<note type="submission">Created December 2009<lb/></note>
+
+	<docTitle>
+	<titlePart>NEAR ZERO EMISSION ADVANCED FLUIDISED BED GASIFICATION<lb/> (FLEXGAS)<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Technical group:<lb/> TGC2 -&quot;Coal preparation, conversion and upgrading&quot;<lb/> Contract number:<lb/> RFCR-CT-2007-0005<lb/> Status:<lb/> ongoing<lb/> Coordinator:<lb/></note>
+
+	<byline>
+	<docAuthor>Francesco Miccio<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<note type="other">Consiglio Nazionale delle Ricerche – Istituto Ricerche sulla<lb/> Combustione, </note>
+	</byline>
+
+	<address>Italy<lb/></address>
+
+	<email>E-mail: miccio@irc.cnr.it -Tel. +39</email>
+
+	<phone>081 5931567<lb/> </phone>
+	
+	<note type="other">Partners:<lb/></note>
+
+	<note type="other">CNR -Consiglio Nazionale delle Ricerche -Istituto di Ricerche sulla<lb/> Combustione (IT)<lb/> INETI -Instituto Nacional de Engenharia, Tecnologia e Inovação (PT)<lb/> TUV -Vienna University of Technology
+	(AT)<lb/> ICPF -Institute Chemical Process Fundamentals AS (CZ)<lb/> IC/DCE -Imperial College of Science, Technology and Medicine (UK)<lb/> CIEMAT -Centro de Investigaciones Energeticas, Medioambientales<lb/> Y Tecnologicas (ES)<lb/> AEN -Ansaldo Energia SPA (IT)<lb/> BKG -Biomasse Kraftwerk Güssing GmbH &amp; Co KG (AT)<lb/> REPOTEC -Renewable Power Technologies Umwelttechnik GmbH<lb/> (AT)<lb/></note>
+
+	<ptr>Website:<lb/> http://www.flexgas.cnr.it<lb/></ptr>
+
+	<div type="abstract">Objective:<lb/> To develop new schemes of gasification based on the concept of the<lb/> oxy-fuel process as well as the internal circulating fluidised bed (ICFB)<lb/> are studied<lb/> Adapting the concept of oxy-fuel firing for PF combustion to fluidised<lb/> bed gasification<lb/> Considering the potential of fluidised bed technology to produce H2<lb/> rich gas and CH4<lb/> Investigating the co-gasification of coal with biomass and/or waste in<lb/> fluidised beds and to consider the impact of scale of operation<lb/> Considering the impact of the above developments on the release of<lb/> tar, fuel N and S<lb/> Investigating alternative gas cleaning/separation options (e.g. for CO2<lb/> sequestration)<lb/> Benefits:<lb/> To valorise European coals along with biomass/wastes as alternative<lb/> energy source<lb/> Promoting the exploitation and utilisation of energy source that are<lb/> available within EU<lb/> Supporting the European and local policy on energy concerns.</div>
+
+		</front>
+	</text>
+</tei>

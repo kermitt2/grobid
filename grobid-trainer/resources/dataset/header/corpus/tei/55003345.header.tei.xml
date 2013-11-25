@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003345"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Transp Porous Med (2010) 85:841–865<lb/></reference>
+
+	<idno type="DOI">DOI 10.1007/s11242-010-9595-7<lb/></idno>
+
+	<docTitle>
+	<titlePart>Underground Storage of Hydrogen: In Situ<lb/> Self-Organisation and Methane Generation<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Mikhail Panfilov<lb/></docAuthor>
+	</byline>
+
+	<note type="submission">Received: 13 February 2010 / Accepted: 12 May 2010 / Published online: 5 June 2010<lb/></note>
+
+	<note type="copyright">© Springer Science+Business Media B.V. 2010<lb/></note>
+
+	<div type="abstract">Abstract In situ observations have shown that underground storage of hydrogen behaves<lb/> like a natural chemical reactor and generates methane. The mechanism of this generation is<lb/> the metabolic activity of methanogenic bacteria which consume hydrogen and carbon dioxide<lb/> and transform them into methane and water. The coupled mathematical model of the reactive<lb/> transport and population dynamics in a storage is suggested in this paper which also takes<lb/> into account the fact that the population growth rate depends on the structure of the bacte-<lb/>rium colony. The suggested system of equations is reduced to the Turing reaction-diffusion<lb/> model which proves the appearance of non-attenuating self-oscillations in time which are<lb/> uniform in space. These solutions are unstable and, once perturbed, generate regular spatial<lb/> stationary waves which correspond to the alternations of zones which are rich in CH 4 or CO 2 .<lb/> This result predicts the effect of a natural in situ separation of gases, which was observed<lb/> in practice. If the diffusivity of bacteria is neglected with respect to the effective diffusivity<lb/> of the injected gas, then only large-scale spatial waves arise. A low but non-zero bacterium<lb/> diffusivity causes the appearance of additional small-scale linear oscillations whose period<lb/> is the intrinsic parameter of the process and is proportional to the bacteria–gas diffusivity<lb/> ratio. The analysis is completed with numerical simulations of 2D problems and analytical<lb/> solutions of 1D problems obtained using the technique of two-scale asymptotic expansion.<lb/> The estimations for the parameters of the model were obtained.<lb/></div>
+
+	<keyword>Keywords Porous media · Hydrogen · Reactive transport · Bacteria ·<lb/> Population dynamics · Oscillations<lb/></keyword>
+
+	<byline>
+	<docAuthor>M. Panfilov (B)<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>LEMTA-UMR 7563: Laboratoire d&apos;Energétique et de Mécanique Théorique et Appliquée,<lb/></affiliation>
+	</byline>
+
+	<address>Nancy-Université, Nancy, France<lb/></address>
+
+	<email>e-mail: mikhail.panfilov@ensem.inpl-nancy.fr<lb/></email>
+
+	<note type="other">123<lb/> </note>
+	<note type="page">842<lb/> </note>
+	<docAuthor>M. Panfilov<lb/></docAuthor>
+
+		</front>
+	</text>
+</tei>

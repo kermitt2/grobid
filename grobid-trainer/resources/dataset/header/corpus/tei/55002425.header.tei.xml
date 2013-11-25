@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55002425"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<div type="abstract">Abstract<lb/> The use of magnetic materials for<lb/> wedging induction motor stator windings has<lb/> become more prevalent over the last decade.<lb/> The move to the use of these materials has<lb/> led to new reliability and maintenance<lb/> challenges. This paper briefly discusses the<lb/> function of stator wedging, the historical<lb/> development of magnetic wedge material,<lb/> the advantages of using magnetic wedges and<lb/> maintaining magnetic wedge integrity. A<lb/> case study will be presented outlining a<lb/> recent industry experience.<lb/></div>
+
+	<docTitle>
+	<titlePart>Function of Stator Wedging</titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Christine</forename>
+								<middlename>Nicole</middlename>							
+								<middlename>S</middlename>.
+								<surname>Santos</surname>
+							<lb/>
+								<marker>a</marker>,
+							</persName>
+							<persName>
+								<forename>Mattheos</forename>
+								<surname>Koffas</surname>
+							<lb/>
+								<marker>b</marker> ,
+							</persName>
+							<persName>
+								<forename>Gregory</forename>
+								<surname>Stephanopoulos</surname>
+								<marker>a , n</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

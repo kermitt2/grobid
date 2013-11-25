@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55002661"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>DETECTION OF ARTIFICIAL CORNER REFLECTOR ON SAR IMAGES<lb/> </titlePart>
+	</docTitle>
+	
+	<byline>
+	<docAuthor>Lixia Gong<lb/> (1)<lb/> Jingfa Zhang<lb/>(1)<lb/> Qiming Zeng<lb/> (2)<lb/> Yi Luo<lb/> (1)<lb/> Shiyong Yan<lb/> (1)<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>(1) Institute of Crustal Dynamics, China Earthquake Administration,</affiliation>
+	</byline>
+
+	<address>Beijing, China 100085;<lb/></address>
+
+	<byline>
+	<affiliation>(2) Department of Remote Sensing, Peking University,</affiliation>
+	</byline>
+
+	<address>Beijing, China 100080;<lb/></address>
+
+	<email>Email:Xiaolongzhu1900@hotmail.com<lb/></email>
+
+	<div type="abstract">ABSTRACT<lb/> Artificial corner reflector (ACR) is so stable on SAR<lb/> acquisitions that it helps to calibrate a SAR image and<lb/> also acts as a stable target in Persistent Scatter InSAR<lb/> （PSI） experiments. Six artificial corner reflectors are set<lb/> up in Dangxiong, Tibet to study the slight crustal activity<lb/> there. Complex terrain and ground objects make the<lb/> ACRs do not look like the simulated ones on SAR image.<lb/> So it is difficult to detect the reflectors properly. Firstly<lb/> the rough location of ACR is determined on intensity<lb/> image with the help of coarse coordinates provided by<lb/> portable GPS and relative position between the ACR and<lb/> typical ground objects. Then a slide window is used to<lb/> detect the possible targets which conform to the<lb/> simulated ACR images. Lastly relative position between<lb/> ACRs is used to adjust position of each ACR. ACR<lb/> detection is the basis of the following research.<lb/></div>
+
+	<keyword>Keyword: Artificial Corner Reflector, SAR<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

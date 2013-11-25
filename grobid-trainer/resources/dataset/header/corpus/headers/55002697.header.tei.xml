@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55002697"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>METHODS FOR ACCELERATING DYNAMIC<lb/> DURABILITY TESTS<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Dr. Andrew Halfpenny<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>nCode International Ltd.,</affiliation>
+	</byline>
+
+	<address>230 Woodbourn Road,<lb/> Sheffield S9 3LQ, England.</address>
+
+	<email>Email: andrew.halfpenny@ncode.com<lb/></email>
+
+		</front>
+	</text>
+</tei>

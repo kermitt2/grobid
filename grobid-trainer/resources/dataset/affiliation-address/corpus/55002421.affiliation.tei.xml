@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="institution">PHILIPS HEALTHCARE SYSTEMS</orgName>,
+							a Division of<lb/> 
+							<orgName type="institution">Philips Electronics North America Corporation</orgName>
+							<lb/>
+							<address>
+								<addrLine>3000 Minuteman Road MS 450</addrLine>
+								<lb/>
+								<settlement>Andover</settlement>,
+								<region>MA</region>
+								<postCode>01810</postCode>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

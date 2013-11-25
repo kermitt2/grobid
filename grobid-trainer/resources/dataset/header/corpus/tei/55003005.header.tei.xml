@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003005"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note>SANDIA REPORT<lb/></note>
+
+	<idno>SAND2010-6938<lb/></idno> 
+	
+	<note>Unlimited Release<lb/></note>
+
+	<date>Printed October 2010<lb/></date>
+
+	<docTitle>
+	<titlePart>A LIFE CYCLE COST ANALYSIS<lb/> FRAMEWORK FOR GEOLOGIC<lb/> STORAGE OF HYDROGEN:<lb/> A SCENARIO ANALYSIS<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Anna S. Lord, Peter H. Kobos and David J. Borns<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Prepared by<lb/> Sandia National Laboratories<lb/></affiliation>
+	</byline>
+
+	<address>Albuquerque, New Mexico 87185 and Livermore, California 94550<lb/></address>
+
+	<note type="other">Sandia National Laboratories is a multi-program laboratory managed and operated by Sandia Corporation, a wholly owned<lb/> subsidiary of Lockheed Martin Corporation, for the U.S. Department of Energy&apos;s National Nuclear Security Administration under<lb/> contract DE-AC04-94AL85000.</note>
+
+		</front>
+	</text>
+</tei>

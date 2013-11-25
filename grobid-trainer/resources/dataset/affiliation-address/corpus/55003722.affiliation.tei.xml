@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>*</marker>
+							<orgName type="department">Department of Vascular and Transplantation Surgery</orgName>,
+							<orgName type="institution">Leiden University Medical Center</orgName>,
+							<address>
+								<postCode>2300 RC</postCode>
+								<settlement>Leiden</settlement>,
+								<country>The Netherlands</country>,
+							<lb/>
+							</address>
+							<orgName type="department">Department of Pathology</orgName>,
+							<orgName type="institution">Leiden University Medical Center</orgName>,
+							<address>
+								<postCode>2300 RC</postCode>
+								<settlement>Leiden</settlement>,
+								<country>The Netherlands</country>,
+							</address>
+							<orgName type="department">Department of<lb/> Immunohematology and Blood Transfusion</orgName>,
+							<orgName type="institution">Leiden University Medical Center</orgName>,
+							<address>
+								<postCode>2300 RC</postCode>
+								<settlement>Leiden</settlement>,
+								<country>The Netherlands</country>, and
+							<lb/>
+							</address>
+							<orgName type="department">Department of Vascular and Metabolic Diseases</orgName>,
+							<orgName type="institution">TNO-Quality of Life</orgName>,
+							<address>
+								<postCode>2301 CE</postCode>
+								<settlement>Leiden</settlement>,
+								<country>The Netherlands</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

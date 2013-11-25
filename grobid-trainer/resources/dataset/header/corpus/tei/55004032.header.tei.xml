@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004032"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>VOLTAGE<lb/> COLOR<lb/> Model Numbering System: WSD-NL-[VOLTAGE]-[COLOR*]<lb/></titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

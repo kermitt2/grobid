@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Kenji</forename>
+								<surname>Fukui</surname>,
+							<lb/>
+								<marker>1,9</marker>
+							</persName>
+							<persName>
+								<forename>Qin</forename>
+								<surname>Yang</surname> ,
+							<lb/>
+								<marker>1 ,9,10</marker>
+							</persName>
+							<persName>
+								<forename>Yang</forename>
+								<surname>Cao</surname> ,
+							<lb/>
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>Noriko</forename>
+								<surname>Takahashi</surname>,
+							<lb/>
+								<marker>2 ,3</marker>
+							</persName>
+							<persName>
+								<forename>Hiroyasu</forename>
+								<surname>Hatakeyama</surname>,
+							<lb/>
+								<marker>2</marker>
+							</persName>
+							<persName>
+								<forename>Haiyan</forename>
+								<surname>Wang</surname>,
+							<lb/>
+								<marker>4</marker>
+							</persName>
+							<persName>
+								<forename>Jun</forename>
+								<surname>Wada</surname> ,
+								<marker>5</marker>
+							</persName>
+							<persName>
+								<forename>Yanling</forename>
+								<surname>Zhang</surname> ,
+							<lb/>
+								<marker>5</marker>
+							</persName>
+							<persName>
+								<forename>Lorella</forename>
+								<surname>Marselli</surname> ,
+							<lb/>
+								<marker>6</marker>
+							</persName>
+							<persName>
+								<forename>Takao</forename>
+								<surname>Nammo</surname>,
+							<lb/>
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>Kazue</forename>
+								<surname>Yoneda</surname> ,
+							<lb/>
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>Mineki</forename>
+								<surname>Onishi</surname>,
+							<lb/>
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>Shigeki</forename>
+								<surname>Higashiyama</surname> ,
+								<marker>3 ,7</marker>
+							</persName>
+							<persName>
+								<forename>Yuji</forename>
+								<surname>Matsuzawa</surname>,
+							<lb/>
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>Frank</forename>
+								<middlename>J</middlename> .
+								<surname>Gonzalez</surname> ,
+							<lb/>
+								<marker>8</marker>
+							</persName>
+							<persName>
+								<forename>Gordon</forename>
+								<middlename>C</middlename> .
+								<surname>Weir</surname> ,
+							<lb/>
+								<marker>6</marker>
+							</persName>
+							<persName>
+								<forename>Haruo</forename>
+								<surname>Kasai</surname>,
+							<lb/>
+								<marker>2</marker>
+							</persName>
+							<persName>
+								<forename>Iichiro</forename>
+								<surname>Shimomura</surname>,
+							<lb/>
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>Jun- ichiro</forename>
+								<surname>Miyagawa</surname> ,
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>Claes</forename>
+								<middlename>B</middlename>.
+								<surname>Wollheim</surname>,
+							<lb/>
+								<marker>4</marker> and
+							</persName>
+							<persName>
+								<forename>Kazuya</forename>
+								<surname>Yamagata</surname>
+								<marker>1 ,*</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

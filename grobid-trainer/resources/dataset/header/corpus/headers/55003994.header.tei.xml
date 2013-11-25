@@ -1,0 +1,65 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003994"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note>Ž<lb/> . </note>
+
+	<reference>Surface and Coatings Technology 133᎐134 2000 61᎐67<lb/></reference>
+
+	<docTitle>
+	<titlePart>Performance of chromium nitride based coatings under<lb/> plastic processing conditions<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>L. Cunha<lb/> a,U , M. Andritschky<lb/> a , K. Pischow<lb/> b , Z. Wang<lb/> b , A. Zarychta<lb/> c ,<lb/> A.S. Miranda<lb/> d , A.M. Cunha<lb/> e<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a Departamento de Fısica, Uni¨ersidade do Minho,</affiliation>
+	</byline>
+
+	<address>Campus de Gualtar, 4710-057 Braga, Portugaí<lb/></address>
+
+	<byline>
+	<affiliation>bSa¨corCoatingsOy,</affiliation>
+	</byline>
+
+	<address>Insinoorinkatu7,FIN-50100Mikkeli,Finlan<lb/></address>
+
+	<byline>
+	<affiliation>InstituteofEngineeringMaterialsandBiomaterials,SilesianUni¨ersityofTechnology,</affiliation>
+	</byline>
+
+	<address>ul.Konarskiego18a,44-100Gliwice,Poland<lb/></address>
+
+	<byline>
+	<affiliation>dDepartamentodeEngenhariaMecanica,Uni¨ersidadedoMinho,</affiliation>
+	</byline>
+
+	<address>CampusdeAzurem,4800-058Guimaraes,Portugã<lb/></address>
+
+	<byline>
+	<affiliation>eDepartamentodeEngenhariadePolımeros,Uni¨ersidadedoMinho,</affiliation>
+	</byline>
+
+	<address>CampusdeAzurem,4800-058Guimaraes,Portugã<lb/></address>
+
+	<div type="abstract">Abstract<lb/>Chromiumnitridebasedcoatingswereproducedintheformofmonolithicandmultilayercoatings,byDCandRFreactive<lb/>magnetronsputtering.Thesecoatingsweredepositedontostainlesssteelandtoolsteelsubstrates.Chromiumnitridecoatings<lb/>haveprovedtobewearandcorrosionresistant.Thecombinationofthesecharacteristicswasnecessarytoprotectsurfacesduring<lb/>plasticprocessing.Inordertoselectthebestcoatings,somemechanicalandtribologicaltestswereperformed.Hardnessand<lb/>Young&apos;smodulusoftheproducedcoatingsweremeasuredbynano-indentation,adhesionwasassessedbyscratchtest<lb/>experimentsandwearwasevaluatedbyperformingpin-on-discexperiments.Thebehaviourofthesecoatingsinchemically<lb/>aggressiveenvironmentswasstudiedbydifferentcorrosionexperiments.Thebehaviourofthesecoatingsinthermoplastic<lb/>processingequipmentwasalsostudied.Theabrasiveandcorrosivewearofchromiumnitridebasedcoatingswasassessedunder<lb/>relativelyhighpressuresandtemperaturesandwascomparedwiththesurfacewearofhardenedtoolsteelsubstratebyheat<lb/>treatment,nitridedbychemical-heattreatment,orprotectedbyhardchromiumcoatingdepositedinagalvanicway.Monolithic<lb/>coatingswereharder,andhadhigherYoungmodulusandadhesionwhencomparedwithmultilayeredcoatings.Theirwear<lb/>resistance,measuredbypin-on-disctest,wasbetweentwoandthreeordersofmagnitudehigher,butmultilayercoatingsshowed<lb/>significantlybettercorrosionresistance.Ingeneral,monolithicandmultilayercoatingshavesignificantlybetterbehaviourwhen<lb/>comparedwithtraditionalprocessesofprotectingfunctionalsurfacesforplastictransformationequipment.Themeasuredwear<lb/>ofthebestperformanceobtainedbychromiumnitridebasedcoatingscanbemorethantwoordersofmagnitudelowerthan<lb/>nitridedsurfacesorhardchromiumcoatedsamples</div>.
+	
+	<note type="copyright">ᮊ2000ElsevierScienceB.V.Allrightsreserved.<lb/></note>
+
+	<keyword>Keywords:Chromiumnitride;Monolithiccoatings;Multilayercoatings<lb/>UCorrespondingauthor.Tel.:q351</keyword>
+
+	<phone>-253-604-330;fax:q351-253-678-981.<lb/></phone>
+
+	<note type="other">Ž.<lb/></note>
+
+	<email>E-mailaddress:lcunha@fisica.uminho.pt</email>
+
+		</front>
+	</text>
+</tei>

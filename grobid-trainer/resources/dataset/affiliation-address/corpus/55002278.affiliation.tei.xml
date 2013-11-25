@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="laboratory">Distributed Multimedia Computing Laboratory</orgName>
+							<lb/>
+							<orgName type="department">Department of Computer Sciences</orgName>,
+							<orgName type="institution">University of Texas at Austin</orgName>
+							<lb/>
+							<address>
+								<addrLine>Taylor Hall 2.124</addrLine>,
+								<settlement>Austin</settlement>,
+								<region>Texas</region>
+								<postCode>78712-1188</postCode>,
+								<country>USA</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003368"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note>JAO; Reviewed:<lb/> SPOC</note> 
+	
+	<date>11/30/2009<lb/></date>
+
+	<note>Solution &amp; Interoperability Test Lab Application Notes<lb/> </note>
+	
+	<note type="copyright">©2009 Avaya Inc. All Rights Reserved.<lb/></note>
+
+		</front>
+	</text>
+</tei>

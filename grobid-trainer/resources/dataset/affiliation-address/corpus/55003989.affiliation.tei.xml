@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="institution">Ericsson Research Japan</orgName>,
+							<address>
+								<addrLine>Koraku Mori Bldg. 1-4-14 Koraku</addrLine>,
+								<addrLine>Bunkyo-ku</addrLine>,
+								<settlement>Tokyo</settlement>
+								<postCode>112-004</postCode>
+								<country>Japan</country>
+							<lb/>
+							</address>
+						</affiliation>	
+						<affiliation>	
+							<orgName type="department">Ericsson GmbH</orgName>,
+							<address>
+								<addrLine>Kackertstrasse 7-9</addrLine>,
+								<postCode>D-52072</postCode>
+								<settlement>Aachen</settlement>,
+								<country>Germany</country>
+							</address>	
+							<lb/>
+						</affiliation>	
+						<affiliation>	
+							<orgName type="institution">Ericsson AB</orgName>,
+							<address>	
+								<settlement>Torshamnsgatan 21-13</settlement>,
+								<postCode>164 80</postCode>
+								<settlement>Stockholm</settlement>,
+								<country>Sweden</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

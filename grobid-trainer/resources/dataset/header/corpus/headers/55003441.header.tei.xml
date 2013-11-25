@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003441"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<affiliation>EUROPEAN COMMISSION<lb/> HEALTH and CONSUMER PROTECTION DIRECTORATE-GENERAL<lb/> Directorate C -Scientific Opinions<lb/> C2 -Management of scientific committees; scientific co-operation and networks<lb/></affiliation>
+	</byline>
+	
+	<docTitle> 
+	<titlePart>Diagnostic Techniques and Vaccines for<lb/> Foot-and-Mouth Disease,<lb/> Classical Swine Fever, Avian Influenza<lb/> and some other important<lb/> OIE List A Diseases<lb/></titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="department">Center for Engineering in Medicine and Surgical Services</orgName>,
+							<orgName type="institution">Massachusetts General Hospital</orgName>,
+							<lb/>
+							<orgName type="department">Shriners Hospitals for Children and Harvard Medical School</orgName>,
+							<address>
+								<addrLine>51 Blossom Street</addrLine>,
+								<settlement>Boston</settlement>,
+							<lb/>
+								<region>Massachusetts</region>
+								<postCode>02114</postCode>,
+								<country>USA</country>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="department">Department of Surgery</orgName>,
+							<orgName type="institution">Okayama University Graduate School of Medicine and Dentistry</orgName>,
+							<address>
+								<addrLine>2-5-1<lb/> Shikata-cho</addrLine>,
+								<settlement>Okayama</settlement>,
+								<postCode>700-8558</postCode>,
+								<country>Japan</country>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>3</marker>
+							<orgName type="department">Department of Surgery</orgName>,
+							<orgName type="institution">Keio University School of Medicine</orgName>,
+							<address>
+								<addrLine>35 Shinanomachi</addrLine>,
+								<addrLine>Shinjuku-ku</addrLine>,
+								<settlement>Tokyo</settlement>
+							<lb/>
+								<postCode>160-8582</postCode>,
+								<country>Japan</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

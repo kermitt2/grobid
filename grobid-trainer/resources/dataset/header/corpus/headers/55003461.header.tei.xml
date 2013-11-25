@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003461"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>MedImmune In-Licenses from Japan Tobacco anti-ICOS<lb/> Monoclonal Antibody for Inflammatory Diseases<lb/></titlePart>
+	</docTitle>
+
+	<date>January 08, 2007<lb/></date>
+
+	<div type="introduction">MedImmune, Inc (GAITHERSBURG, Maryland) announced an exclusive license agreement with Japan Tobacco, Inc (JT), for a<lb/> human monoclonal antibody inhibiting inducible costimulator (ICOS), a protein associated with T-cell activation that plays a key<lb/> role in controlling adaptive immune responses. ICOS expression is induced on activated and memory T-cells, and ICOS<lb/> blockade may find clinical utility in the treatment of certain inflammatory diseases such as systemic lupus erythematosus (SLE),<lb/> Sjogrens syndrome, and rheumatoid arthritis (RA). MedImmune&apos;s initial efforts will focus on developing the lead antibody,<lb/> currently under preclinical study in Japan.<lb/> Under the terms of the agreement, JT will receive an undisclosed upfront payment, milestone payments, and royalties on any<lb/> future marketed products. JT retains exclusive development and marketing rights for the current lead antibody in Japan.<lb/> MedImmune has exclusive development and marketing rights to this antibody for the rest of world and certain rights worldwide<lb/> for other anti-ICOS antibodies developed as a result of the agreement.<lb/> Costimulatory molecules are cell surface glycoproteins that can direct, modulate, and fine-tune T-cell receptor signals and<lb/> thereby regulate T-cell dependent activation of B-cells. The best-characterized T-cell costimulatory pathway involves the CD28<lb/> receptor, the major costimulatory receptor for naive T-cells, which binds to two costimulatory molecules, B7-1 (CD80) and B7-2<lb/> (CD86). CD28 is constitutively expressed on 95% of CD4+ T-cells and 50% of CD8+ T-cells in humans. The interaction of B7-1<lb/> and B7-2 with CD28, together with T-cell receptor signaling, drives the expansion of antigen-stimulated T-cells and their<lb/> differentiation into effector and memory T-cells. CTLA-4 (cytotoxic T-lymphocyteâ€&quot;associated antigen 4) is a CD28 homologue<lb/> that also binds to B7-1 and B7-2, but is expressed in an inducible fashion after T-cell activation. Unlike CD28, CTLA-4 shuts off<lb/> T-cell responses by inhibiting IL-2 production and blocking cell-cycle progression. Thus, CTLA-4 is involved in the induction and<lb/> maintenance of T-cell tolerance.</div>
+
+		</front>
+	</text>
+</tei>

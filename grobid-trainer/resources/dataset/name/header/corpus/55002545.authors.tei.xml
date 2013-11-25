@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Hirotaka</forename>
+								<surname>Fukasawa</surname>,
+							</persName>
+							<persName>
+								<forename>Scott</forename>
+								<surname>Bornheimer</surname>,
+							</persName>
+							<persName>
+								<forename>Krystyna</forename>
+								<surname>Kudlicka</surname>, and
+							</persName>
+							<persName>
+								<forename>Marilyn</forename>
+								<middlename>G</middlename>.
+								<surname>Farquhar</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55002876"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Effect of numerical aperture on signal level in cylindrical<lb/> waveguide evanescent fluorosensors<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Thomas R. Glass, Steve Lackie, and Tomas Hirschfeld<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">The effect of numerical aperture on signal level from fluorescent substances or solutions in the evanescent<lb/> zone of a cylindrical waveguide is analyzed. The analysis applies to the case in which the fluorescence is<lb/> excited by the evanescent wave of a fiber and the fluorescence signal is that which tunnels back into the same<lb/> fiber. The analysis is for two cases: bulk fluorescence and fluorescence of a thin film layer. Experimental<lb/> results are also presented.<lb/></div>
+
+		</front>
+	</text>
+</tei>
