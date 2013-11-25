@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003057"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>NPC/VPC userguide and process description<lb/></titlePart>
+	</docTitle>
+
+	<date>2008-09</date>
+
+	<div type="introduction">-25<lb/> NPC – Numerical Predictive Check – is a model diagnostics tool. VPC – Visual Predictive Check – is<lb/> another closely related diagnostics tool. A set of simulated datasets are generated using the model to be<lb/> evaluated. Afterwards the real data observations are compared with the distribution of the simulated<lb/> observations. No model estimation is ever performed. The input to the NPC script is the model to be<lb/> evaluated, the number of samples (simulated datasets) to generate, parameter values options for the<lb/> simulations, and stratification options for the evaluation. It is also possible to skip the simulation step<lb/> entirely by giving two already created tablefiles as input. The input to the VPC script is the input for<lb/> the NPC plus an additional set of options. Under the surface it is largely the same program, but using<lb/> two different commands saves the user some writing.<lb/> Running NPC<lb/> Example: npc moxonidine.mod -lst=moxonidine.lst -samples=500<lb/> Input: a modelfile is required.<lb/> -samples=&lt;number&gt; is required, the number of simulated datasets to generate.<lb/> -msfo=&lt;file&gt; is optional, unless the model has $NONP record then an msfo-file is required<lb/> -lst=&lt;file&gt; is optional, but forbidden together with -msfo<lb/> -stratify_on=&lt;variable&gt; is optional. Either PRED, STRT, or a variable in the $INPUT record (not DV)<lb/> -no_of_strata=N is optional, only allowed when -stratify_on is used.<lb/> -dv=&lt;variable&gt; is optional, default is DV.<lb/> -orig_table=&lt;filename&gt; is optional, only allowed when -sim_table is also used. Skips simulation step.<lb/> -sim_table=&lt;filename&gt; is optional, only allowed when -orig_table is also used. Skips simulation step.<lb/> Simulation input details<lb/> The option -samples is required and must be at least 20, but it must be much higher in order for the<lb/> analysis to produce meaningful results. No model estimation is ever performed. There are three<lb/> different ways of choosing which parameter values are to be used in the simulations:<lb/> a) the initial estimates from the modelfile: this is the default, no command-line option used<lb/> b) the final estimates from an lst-file: use command-line option -lst=&lt;filename&gt;<lb/> c) the final estimates from an msfo-file: use command-line option -msfo=&lt;filename&gt;<lb/> The user may either skip the $SIMULATION record entirely and let the program produce it. Or the<lb/> user can include a complete $SIMULATION record, for example when using special random<lb/> distributions. If there is a user-defined $SIMULATION record, the program will replace the random<lb/> seeds, set NSUBPROBLEMS to the number of samples requested on the input line, check that<lb/> TRUE=FINAL is set in the case when the option -msfo is used, and set/unset ONLYSIMULATION to<lb/> be compatible with the internal variable do_estimation (see [3]).</div>
+
+		</front>
+	</text>
+</tei>

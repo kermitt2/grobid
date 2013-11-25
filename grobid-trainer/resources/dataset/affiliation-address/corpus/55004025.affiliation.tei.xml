@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker> 
+							<orgName type="department">Department of Hematology and Oncology</orgName>,
+							<orgName type="institution">University Medical Center</orgName>,
+							<address>
+								<settlement>Mainz</settlement>,
+								<country>Germany</country>;
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="department">Translational Immunology Unit</orgName>,
+							<orgName type="department">German Cancer Research Center<lb/> (DKFZ)</orgName>,
+							<address>
+								<settlement>Heidelberg</settlement>,
+								<country>Germany</country>;
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>3</marker>
+							<orgName type="institution">Ludwig Institute for Cancer Research</orgName>,
+							<orgName type="department">Lausanne Branch</orgName>,
+							<address>
+								<settlement>Epalinges</settlement>,
+								<country>Switzerland</country>; and
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>4</marker>
+							<orgName type="department">Division of Clinical Onco-Immunology</orgName>,
+							<lb/>
+							<orgName type="institution">Ludwig Institute for Cancer Research</orgName>,
+							<orgName type="department">Lausanne Branch</orgName>,
+							<orgName type="institution">Hô pital Orthopé dique</orgName>,
+							<address>
+								<settlement>Lausanne</settlement>,
+								<country>Switzerland</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

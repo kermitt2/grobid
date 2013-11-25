@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>PD</forename>
+								<surname>JELINEK</surname>,
+							</persName>
+							<persName>
+								<forename>LJ</forename>
+								<surname>DEPIAZZI</surname>,
+							</persName>
+							<persName>
+								<forename>DA</forename>
+								<surname>GALVIN</surname>,
+							</persName>
+							<persName>
+								<forename>IT</forename>
+								<surname>SPICER</surname>,
+							</persName>
+							<persName>
+								<forename>MA</forename>
+								<surname>PALMER</surname>
+								<marker>a</marker> and
+							</persName>
+							<persName>
+								<forename>DR</forename>
+								<surname>PITMAN</surname>
+								<marker>a</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

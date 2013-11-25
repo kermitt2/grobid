@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003859"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Deployment and Configuration of<lb/> Component-based Distributed<lb/> Applications Specification<lb/> </titlePart>
+	</docTitle>
+	
+	<note type="other">Working Draft<lb/></note>
+	
+
+	<note type="other">This document represents the adopted specification, ptc/03-07-08, with resolutions to issues 5953,
+
+	5954, 5955, 5956,<lb/> 5957, 5958, 5959, 5960, 5961, 5962, 5963, 5964, 5967, 5983, 5984, 5985, 5986, 6024, 6037, 6038, 6041, 6042, 6045,<lb/> 6046, 6048, 6051, 6053, 6270, 6383, 6384, 6385, 6386,</note>
+
+		</front>
+	</text>
+</tei>

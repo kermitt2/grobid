@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003575"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Drink of the Week<lb/> </titlePart>
+	</docTitle>
+	
+	<note type="other">Home Contact / Advertise<lb/> Site Map<lb/> E-Mail Newsletter<lb/> Browse Ingredients:<lb/> Brandy Gin<lb/> Rum Tequila<lb/> Vodka Whiskey<lb/> Liqueur Wine &amp; Beer<lb/> COCKTAIL BLOG<lb/> DRINK RECIPES<lb/> DIY Cocktails<lb/> Bar Supplies<lb/> COCKTAIL EATS<lb/> Party Tips<lb/> This Weeks Drink<lb/> Top Drinks<lb/> Drinks by Ingredient<lb/> Drinks A-Z<lb/> Drinks By Occasion<lb/></note>
+
+	<docTitle>
+	<titlePart>New Drink Recipes<lb/></titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

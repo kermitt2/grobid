@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">Thayer School of Engineering</orgName>,
+							<orgName type="institution">Dartmouth College</orgName>
+							<lb/>
+							<address>
+								<addrLine>8000 Cummings Hall</addrLine>
+								<lb/>
+								<settlement>Hanover</settlement>
+								<region>NH</region>
+								<postCode>03755</postCode>
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="department">Sound Innovations</orgName>,
+							<address>
+								Incorporated<lb/> 
+								<country>Lebanon</country>
+								<region>NH</region>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

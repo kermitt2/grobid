@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55002151"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Channel Selection Procedure using Riemannian distance for BCI<lb/> applications<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Alexandre Barachant, Stéphane Bonnet<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Abstract— This article describes a new algorithm to select a<lb/> subset of electrodes in BCI experiments. It is illustrated on a<lb/> two-class motor imagery paradigm. The proposed approach is<lb/> based on the Riemannian distance between spatial covariance<lb/> matrices which allows to indirectly assess the discriminability<lb/> between classes. Sensor selection is automatically done using a<lb/> backward elimination principle. The method is tested on the<lb/> dataset IVa from BCI competition III. The identified subsets are<lb/> both consistent with neurophysiological principles and effective,<lb/> achieving optimal performances with a reduced number of<lb/> channels.<lb/></div>
+
+		</front>
+	</text>
+</tei>

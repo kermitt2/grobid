@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55002600"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>High laser damage threshold porous silica antireflective<lb/> coating<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Ian M. Thomas<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">A quarterwave-thick narrow-bandwidth antireflective coating for fused silica optical components and KDP<lb/> crystals has been developed. The coating consists of porous silica prepared from a silica sol in ethanol. It is<lb/> applied by dip or spin from a solution at room temperature and requires no further treatment. The laser<lb/> damage threshold levels are about equal to the surface damage thresholds of the uncoated substrates.<lb/></div>
+
+		</front>
+	</text>
+</tei>

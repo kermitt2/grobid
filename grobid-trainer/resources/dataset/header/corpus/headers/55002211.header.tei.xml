@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55002211"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>High gain efficiency amplifier based on an<lb/> erbium doped aluminosilicate holey fiber<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>K. Furusawa, T. Kogure*, T. M. Monro, and D. J. Richardson<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Optoelectronics Research Centre, University of Southampton,</affiliation>
+	</byline>
+
+	<address>Highfield, Southampton, SO17 1BJ, United Kingdom<lb/></address>
+
+	<byline>
+	<affiliation>*Mitsubishi Electric Corp.,</affiliation>
+	</byline>
+
+	<address>5-1-1 Ofuna, Kamakura, Kanagawa, 247-8501, Japan<lb/></address>
+
+	<email>djr@orc.soton.ac.uk<lb/></email>
+
+	<div type="abstract">Abstract: We demonstrate an optical amplifier based on an erbium doped<lb/> holey fiber (EDHF) with a small core. Owing to the high NA, which is<lb/> readily achievable using holey fiber technology, and the tight physical<lb/> confinement of the erbium ions, we show that it is possible to achieve an<lb/> internal gain efficiency of &gt;8.5dB/mW using an aluminosilicate based glass<lb/> within the core. The dependence of the gain and noise figure performance<lb/> with respect to fiber length and wavelength are experimentally<lb/> characterized.<lb/> </div>
+
+	<note type="copyright">&#169;2004 Optical Society of America<lb/> </note>
+
+	<keyword>OCIS codes: (060.2270) Fiber characterization; (060.2280) Fiber design and fabrication;<lb/> (060.2410) Fibers, erbium.<lb/></keyword>
+
+	<note>References and links<lb/> 1. R.J. Mear, L. Reekie, I.M. Jauncey, D.N. Payne</note>
+
+		</front>
+	</text>
+</tei>

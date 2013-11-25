@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="institution">CEA</orgName>,
+							<orgName type="institution">LIST</orgName>,
+							<orgName type="laboratory">Sensory Interfaces Laboratory</orgName>,
+							<address>
+								<addrLine>18 Route du Panorama</addrLine>,
+								<postCode>92265</postCode>
+								<settlement>Fontenay-aux-Roses</settlement>,
+								<country>France</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="laboratory">LMSP (CNRS 8106)</orgName>,
+							<address>
+								<addrLine>Arts et Métiers ParisTech</addrLine>,
+								<addrLine>151 Boulevard de l&apos;Hôpital -</addrLine>
+								<postCode>75013</postCode>
+								<settlement>Paris</settlement>,
+								<country>France</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

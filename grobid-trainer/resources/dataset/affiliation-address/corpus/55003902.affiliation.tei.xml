@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="department">Department of Chemistry and Biochemistry</orgName>,
+							<orgName type="institution">University of South Carolina</orgName>,
+							<address>
+								<settlement>Columbia</settlement>,
+								<country>South<lb/> Carolina</country>
+								<postCode>29208</postCode>.
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							Present address:
+							<orgName type="department">Department of Chemistry and Biochemistry</orgName>,
+							<orgName type="institution">Suffolk University</orgName>,
+							<address>
+								<addrLine>41 Temple<lb/> Street</addrLine>,
+								<settlement>Boston</settlement>,
+								<region>MA</region>
+								<postCode>02114-4280</postCode>.
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

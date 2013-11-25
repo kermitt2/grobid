@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Johan</forename>
+								<surname>Hjelm</surname>
+							<lb/>
+								<marker>1</marker>,
+							</persName>
+							<persName>
+								<forename>Toshikane</forename>
+								<surname>Oda</surname>
+							<lb/>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>Andreas</forename>
+								<surname>Fasbender</surname>
+							<lb/>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>Shingo</forename>
+								<surname>Murakami</surname>
+							<lb/>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>Ayodele</forename>
+							<lb/>
+								<surname>Damola</surname>
+								<marker>3</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

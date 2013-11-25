@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55002987"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Associate Editor: J. A. Schetz<lb/></note>
+
+	<docTitle>
+	<titlePart>Serotonin 5-HT 7 receptor agents: Structure-activity relationships and potential<lb/> therapeutic applications in central nervous system disorders<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Marcello Leopoldo<lb/> a,<lb/> ⁎, Enza Lacivita<lb/> a , Francesco Berardi<lb/> a<lb/> , Roberto Perrone<lb/> a , Peter B. Hedlund<lb/> b<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a Dipartimento Farmaco-Chimico, Università degli Studi di Bari &quot;A. Moro&quot;,</affiliation>
+	</byline>
+
+	<address>via Orabona, 4, 70125 Bari, Italy<lb/></address>
+
+	<byline>
+	<affiliation>b Department of Molecular Biology, The Scripps Research Institute,</affiliation>
+	</byline>
+
+	<address>10550 North Torrey Pines Road, La Jolla, CA 92037, USA<lb/></address>
+
+	<note type="other">a b s t r a c t<lb/>	a r t i c l e i n f o<lb/></note>
+
+	<date>Available online 20 October 2010<lb/></date>
+
+	<keyword>Keywords:<lb/> Serotonin 5-HT 7 receptor<lb/> G-protein-coupled receptors<lb/> Structure-activity relationships<lb/> Depression Anxiety<lb/> Circadian rhythm<lb/></keyword>
+
+	<div type="abstract">Since its discovery in the 1940s in serum, the mammalian intestinal mucosa, and in the central nervous<lb/> system, serotonin (5-HT) has been shown to be involved in virtually all cognitive and behavioral human<lb/> functions, and alterations in its neurochemistry have been implicated in the etiology of a plethora of<lb/> neuropsychiatric disorders. The cloning of 5-HT receptor subtypes has been of importance in enabling them to<lb/> be classified as specific protein molecules encoded by specific genes. The 5-HT 7 receptor is the most recently<lb/> classified member of the serotonin receptor family. Since its identification, it has been the subject of intense<lb/> research efforts driven by its presence in functionally relevant regions of the brain. The availability of some<lb/> selective antagonists and agonists, in combination with genetically modified mice lacking the 5-HT 7 receptor,<lb/> has allowed for a better understanding of the pathophysiological role of this receptor. This paper reviews data<lb/> on localization and pharmacological properties of the 5-HT 7 receptor, and summarizes the results of<lb/> structure-activity relationship studies aimed at the discovery of selective 5-HT 7 receptor ligands. Additionally,<lb/> an overview of the potential therapeutic applications of 5-HT 7 receptor agonists and antagonists in central<lb/> nervous system disorders is presented.<lb/></div>
+
+	<note type="copyright">© 2010 Elsevier Inc. All rights reserved.<lb/></note>
+
+		</front>
+	</text>
+</tei>

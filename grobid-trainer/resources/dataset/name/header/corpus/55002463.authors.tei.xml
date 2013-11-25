@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Emanuela</forename>
+								<surname>Caci</surname>,
+							</persName>
+							<persName>
+								<forename>Raffaella</forename>
+								<surname>Melani</surname>,
+							</persName>
+							<persName>
+								<forename>Nicoletta</forename>
+								<surname>Pedemonte</surname>,
+							</persName>
+							<persName>
+								<forename>Guelnihal</forename>
+								<surname>Yueksekdag</surname>,
+							</persName>
+							<persName>
+								<forename>Roberto</forename>
+								<surname>Ravazzolo</surname>,
+							</persName>
+							<persName>
+								<forename>Joseph</forename>
+								<surname>Rosenecker</surname>,
+							</persName>
+							<persName>
+								<forename>Luis</forename>
+								<middlename>J</middlename>.
+								<middlename>V</middlename>.
+								<surname>Galietta</surname>, and
+							</persName>
+							<persName>
+								<forename>Olga</forename>
+								<surname>Zegarra-Moran</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

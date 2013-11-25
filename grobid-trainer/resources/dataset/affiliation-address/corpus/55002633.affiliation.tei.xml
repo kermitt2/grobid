@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">Emeritus Office</orgName>,
+							<lb/>
+							<address>
+								<addrLine>Plummer N10</addrLine>,
+							</address>
+							<orgName type="institution">Mayo Clinic</orgName>,
+							<address>
+								<addrLine>200 First Street SW</addrLine>,
+								<settlement>Rochester</settlement>,
+								<lb/>
+								<region>MN</region>
+								<postCode>55905</postCode>,
+								<country>USA;</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="department">Section of Endocrinology and Metabolism</orgName>,
+							<orgName type="department">Department of Internal Medicine</orgName>,
+							<lb/>
+							<orgName type="institution">National Cheng Kung University Hospital</orgName>,
+							<address>
+								<country>Taiwan, ROC</country>, and
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="department">Division of Clinical Biochemistry and Immunology</orgName>,
+							<orgName type="institution">Mayo Clinic</orgName>,
+							<address>
+								<settlement>Rochester</settlement>,
+								<region>Minnesota</region>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

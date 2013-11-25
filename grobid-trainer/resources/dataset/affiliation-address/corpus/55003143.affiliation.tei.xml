@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">Department of Neuropathology</orgName>,
+							<orgName type="institution">Heinrich-Heine University Dusseldorf</orgName>,
+							<address>
+								<postCode>40225</postCode>
+								<settlement>Dusseldorf</settlement>,
+								<country>Germany</country>,
+							<lb/>
+							</address>
+							<orgName type="department">Institute for Structural<lb/> Biochemistry (ISB-3)</orgName>,
+							<orgName type="institution">Research Centre Julich</orgName>,
+							<address>
+								<postCode>52425</postCode>
+								<settlement>Julich</settlement>,
+								<settlement>Germany</settlement>, and
+							</address>
+						</affiliation>
+						<affiliation>
+							<orgName type="department">Department of Medicine</orgName>,
+							<orgName type="institution">University of Santiago de<lb/> Compostela</orgName>,
+							<address>
+								<postCode>15782</postCode>
+								<settlement>Santiago de Compostela</settlement>,
+								<country>Spain</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

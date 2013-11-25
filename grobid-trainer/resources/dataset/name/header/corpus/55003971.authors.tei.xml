@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Oleg</forename>
+								<surname>Andreev</surname>
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Daniel</forename>
+								<surname>Arndt</surname>
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Jan</forename>
+								<surname>Beisenkamp</surname>
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Marcus</forename>
+								<surname>Rogério Blitz</surname>
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Martin</forename>
+								<surname>Had</surname>
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Da</forename>
+								<surname>He</surname>
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Christoph</forename>
+								<surname>Fiehe</surname>
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Julian</forename>
+								<surname>Flake</surname>
+							<lb/>
+							</persName>
+							<persName>
+								<forename>David</forename>
+								<surname>Kliczbor</surname>
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Nikinaz</forename>
+								<surname>Nazemi</surname>
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Mario</forename>
+								<surname>Wündsch</surname>
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Maxim</forename>
+								<surname>Zaks</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55002724"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<docAuthor>J. Mulzer, A. K. Kermanchahi, J. Buschmann, P. Luger<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<note type="page">531<lb/></note>
+	</byline>
+
+	<docTitle>
+	<titlePart>Asymmetric Synthesis of ent-Corey Lactone Alcohol and its 12-(all-cis)-and<lb/> 1 1-Epimers via Free Radical 5-exo-trig-C,C Cyclization<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Johann Mulzer&quot;&apos;, Abdul Kader KermanchahP, Jiirgen Buschmannb, and Peter Lugerb<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institut fur Organische Chemie der Freien Universitat Berlin&quot;,<lb/></affiliation>
+	</byline>
+
+	<address>TakustraDe 3, D-14195 Berlin<lb/></address>
+
+	<byline>
+	<affiliation>Institut fur Kristallographie und Mineralogie der Freien Universitat Berlinb,<lb/></affiliation>
+	</byline>
+
+	<address>TakustraBe 6, D-14195 Berlin<lb/></address>
+
+	<note type="submission">Received January 13, 1994<lb/></note>
+
+	<keyword>Key Words: Corey lactone I Prostaglandins I Free radical cyclization / Glyceraldehyde, (R)-isopropylidene I Radicals<lb/></keyword>
+
+	<div type="abstract">Asymmetric eight-step syntheses are reported for the ent-Co-<lb/>rey lactone alcohol derivatives 3a-d and their epimers 4a-d<lb/> and 14a, b from (R)-2,3-isopropylidene glyceraldehyde (5) as<lb/> the starting material. The key step of the synthesis is the free<lb/> radical cyclization of the butenolide thiocarbonates 11, 12<lb/> and 13. This reaction produces 3 and 4 in ratios between<lb/> 5 7 ~ 4 3 and 30:70 from 11 and 12, whereas 14a and 14b are<lb/> generated from 13 in a ratio of 19:81. From 3d the prostanoid<lb/> enone 18 is prepared via the configurationally stable alde-<lb/>hyde 17.<lb/> Corey lactone alcohol (1) and its 0-protected derivatives<lb/> have served as central intermediates in the total synthesis<lb/> of prostanoids for more than twenty years. In consequence,<lb/> an incredible number of synthetic approaches to these com-<lb/>pounds have been reported[&apos;]. However, there is only one<lb/> synthesis for 2, the all-cis epimer of 1I21, and other epimers<lb/> of 1 are unknown as yet. We describe a new method for the<lb/> preparation of 1, 2 and two other epimers in form of the<lb/> 0-protected unnatural enantiomers 3,4a-e and 14a, b. The<lb/> key step of our synthesis is the formation of the 8,12-bond<lb/> (prostanoid numbering) via a free radical cyclizati~n[~],<lb/> Scheme 1. Bn = benzyl, Bz = benzoyl, TBDMS = tert-butyldimeth-<lb/>ylsilyl, TBDPS = tert-butyldiphenylsilyl</div>
+
+		</front>
+	</text>
+</tei>

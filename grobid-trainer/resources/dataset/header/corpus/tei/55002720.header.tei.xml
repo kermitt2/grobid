@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55002720"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>SUPPLEMENTARY INFORMATION<lb/></reference>
+
+	<idno type="DOI">doi: 10.1038/nphoton.2009.69<lb/></idno>
+
+	<note>nature photonics | </note>
+	
+	<ptr>www.nature.com/naturephotonics<lb/></ptr>
+	
+	<note type="page">1<lb/></note>
+
+	<note>SUPPLEMENTARY INFORMATION<lb/> </note>
+	
+	<docTitle>
+	<titlePart>Bulk Heterojunction Solar Cells with<lb/> Internal Quantum Efficiency Approaching 100%<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Sung Heum Park, Anshuman Roy, Serge Beaupré, Shinuk Cho, Nelson Coates, Ji Sun Moon,<lb/> Daniel Moses, Mario Leclerc, Kwanghee Lee and Alan J. Heeger<lb/></docAuthor>
+	</byline>
+
+		</front>
+	</text>
+</tei>

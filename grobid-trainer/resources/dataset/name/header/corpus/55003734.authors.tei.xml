@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>A</forename>.
+								<surname>Laskin</surname>,
+							</persName>
+							<persName>
+								<forename>J</forename>.
+								<surname>Laskin</surname>,
+							</persName>
+							<persName>
+								<forename>P</forename>.
+								<middlename>J</middlename>.
+								<surname>Roach</surname>
+							</persName>
+							<persName>
+								<forename>S</forename>.
+								<middlename>A</middlename>.
+								<surname>Nizkorodov</surname>,
+							</persName>
+							<persName>
+								<forename>A</forename>.
+								<surname>Bateman</surname>,
+							</persName>
+							<persName>
+								<forename>T</forename>.
+								<surname>Nguyen</surname>,
+							</persName>
+							<persName>
+								<forename>D</forename>.
+								<middlename>L</middlename>.
+								<surname>Bones</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003379"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Am. J. Hum. Genet. 66:216–234, 2000<lb/></reference>
+
+	<note type="page">216<lb/></note>
+
+	<docTitle>
+	<titlePart>Linkage Disequilibrium and Allele-Frequency Distributions for 114<lb/> Single-Nucleotide Polymorphisms in Five Populations<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Katrina A. B. Goddard,<lb/> 1 Penelope J. Hopkins,<lb/> 2 Jeff M. Hall,<lb/> 2 and John S. Witte<lb/> 1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1<lb/> Case Western Reserve University, Cleveland; and<lb/> 2<lb/> PPGx, Inc.,</affiliation>
+	</byline>
+
+	<address>La Jolla, CA<lb/></address>
+
+	<div type="abstract">Summary<lb/> Single-nucleotide polymorphisms (SNPs) may be ex-<lb/>tremely important for deciphering the impact of genetic<lb/> variation on complex human diseases. The ultimate<lb/> value of SNPs for linkage and association mapping stud-<lb/>ies depends in part on the distribution of SNP allele<lb/> frequencies and intermarker linkage disequilibrium (LD)<lb/> across populations. Limited information is available<lb/> about these distributions on a genomewide scale, par-<lb/>ticularly for LD. Using 114 SNPs from 33 genes, we<lb/> compared these distributions in five American popula-<lb/>tions (727 individuals) of African, European, Chinese,<lb/> Hispanic, and Japanese descent. The allele frequencies<lb/> were highly correlated across populations but differed<lb/> by 120% for at least one pair of populations in 35%<lb/> of SNPs. The correlation in LD was high for some pairs<lb/> of populations but not for others (e.g., Chinese American<lb/> or Japanese American vs. any other population). Re-<lb/>gardless of population, average minor-allele frequencies<lb/> were significantly higher for SNPs in noncoding regions<lb/> (20%–25%) than for SNPs in coding regions<lb/> (12%–16%). Interestingly, we found that intermarker<lb/> LD may be strongest with pairs of SNPs in which both<lb/> markers are nonconservative substitutions, compared to<lb/> pairs of SNPs where at least one marker is a conservative<lb/> substitution. These results suggest that population dif-<lb/>ferences and marker location within the gene may be<lb/> important factors in the selection of SNPs for use in the<lb/> study of complex disease with linkage or association<lb/> mapping methods.<lb/></div>
+
+	<note type="submission">Received August 26, 1999; accepted for publication November 4,<lb/> 1999; electronically published January 11, 2000.<lb/></note>
+
+	<note type="other">Address for correspondence and reprints: </note>
+
+	<byline>
+	<docAuthor>Dr. Katrina A. B. Goddard,<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Epidemiology and Biostatistics, Case Western Reserve<lb/> University,</affiliation>
+	</byline>
+
+	<address>2500 MetroHealth Drive, Cleveland, OH 44109-1998.</address>
+
+	<email>E-<lb/>mail: katrina@darwin.cwru.edu<lb/></email>
+
+	<note type="copyright">&#169; 2000 by The American Society of Human Genetics. All rights reserved.<lb/></note>
+
+	<idno>0002-9297/2000/6601-0000$02.00<lb/></idno>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55002781"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>TIA-1121.003-1<lb/></idno>
+
+	<date>May 2009<lb/></date>
+
+	<docTitle>
+	<titlePart>Radio Link Layer for Ultra Mobile<lb/> Broadband (UMB) Air Interface<lb/> Specification</titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>F</forename>.
+								<surname>Colao</surname>,
+							</persName>
+							<persName>
+								<forename>R</forename>.
+								<surname>Fantoni</surname>,
+							</persName>
+							<persName>
+								<forename>L</forename>.
+								<surname>Fiorani</surname>
+								<marker>*</marker> ,
+							</persName>
+							<persName>
+								<forename>A</forename>.
+								<surname>Palucci</surname>,
+							</persName>
+							<persName>
+								<forename>I</forename>.
+								<surname>Gomoiu</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

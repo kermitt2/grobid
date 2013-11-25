@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003287"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Optimizing the affinity and specificity of proteins with molecular display<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>A. M. Levin<lb/> a and G. A. Weiss*<lb/> ab<lb/></docAuthor>
+	</byline>
+
+	<note type="submission">Received 18th August 2005, Accepted 20th October 2005<lb/></note>
+
+	<date>First published as an Advance Article on the web 8th November 2005<lb/></date>
+
+	<idno type="DOI">DOI: 10.1039/b511782h<lb/></idno>
+
+	<div type="abstract">Affinity maturation of receptor–ligand interactions represents an important area of academic and<lb/> pharmaceutical research. Improving affinity and specificity of proteins can tailor potency for both<lb/> in vivo and in vitro applications. A number of different display platforms including phage display,<lb/> bacterial and yeast display, ribosome display, and mRNA display can optimize protein affinity<lb/> and specificity. Here, we will review the advantages and disadvantages of these molecular display<lb/> methods with a focus on their suitability for protein affinity maturation.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55002277"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Ecological Modelling 120 (1999) 131 – 139<lb/></reference>
+
+	<docTitle>
+	<titlePart>Software sensor design based on empirical data<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Marie H. Masson<lb/> a,<lb/> *, Stéphane Canu<lb/> b<lb/> , Yves Grandvalet<lb/> a ,<lb/> Anders Lynggaard-Jensen<lb/> c<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a Heudiasyc, UMR CRNS 6599, UTC, </affiliation>
+	</byline>
+	
+	<address>France<lb/></address>
+
+	<byline>
+	<affiliation>b PSI, INSA de Rouen,</affiliation>
+	</byline>
+
+	<address>Rouen, France<lb/></address>
+
+	<byline>
+	<affiliation>c VKI Water Quality Institute,</affiliation>
+	</byline>
+
+	<address>A , rhus, Denmark<lb/></address>
+
+	<div type="abstract">Abstract<lb/> Software sensor design consists of building an estimate of some quantity of interest. This estimate can be used<lb/> either to replace a physical measurement, or to validate an existing one. This paper provides some general guidelines<lb/> for the design of software sensors based on empirical data. When the model is a priori unknown, the problem can<lb/> be stated in terms of non-parametric regression or black-box modelling. Complexity control is the main difficulty in<lb/> this setting. A trade-off must be achieved between two antagonist goals: the model should not be too simple, and<lb/> model identification should not be too variable. We propose to address this issue by a penalization algorithm, which<lb/> also estimates the relevance of input features in the identification process. A data-driven software sensor should also<lb/> provide accuracy and validity indexes of its prediction. We show how these indexes can be estimated for complex<lb/> non-parametric methods, such as neural networks. An application in environmental monitoring, the design of an<lb/> ammonia software sensor, illustrates each step of the approach.</div>
+
+	<note type="copyright">© 1999 Elsevier Science B.V. All rights reserved.<lb/></note>
+
+	<keyword>Keywords: Software sensor; Black-box modelling; Neural networks; Complexity control; Feature selection; Ammonia prediction<lb/></keyword>
+
+	<ptr type="web">www.elsevier.com/locate/ecomodel<lb/></ptr>
+
+		</front>
+	</text>
+</tei>

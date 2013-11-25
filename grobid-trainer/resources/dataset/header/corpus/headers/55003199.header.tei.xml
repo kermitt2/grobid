@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003199"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Optimization of a heterologous pathway for the production of flavonoids<lb/> from glucose<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Christine Nicole S. Santos<lb/> a , Mattheos Koffas<lb/> b , Gregory Stephanopoulos<lb/> a,n<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a Department of Chemical Engineering, Massachusetts Institute of Technology,</affiliation>
+	</byline>
+
+	<address>Room 56-469, Cambridge, MA 02139, USA<lb/></address>
+
+	<byline>
+	<affiliation>b Department of Chemical and Biological Engineering, University at Buffalo, State University of New York,</affiliation>
+	</byline>
+
+	<address>303 Clifford C. Furnas Hall, Buffalo, NY 14260, USA<lb/></address>
+
+	<note type="other">a r t i c l e i n f o<lb/></note>
+
+	<note type="submission">Article history:<lb/> Received 23 November 2010<lb/> Received in revised form<lb/> 1 February 2011<lb/> Accepted 4 February 2011<lb/></note>
+
+	<date>Available online 12 February 2011<lb/></date>
+
+	<keyword>Keywords:<lb/> Flavonoids Naringenin<lb/> Escherichia coli<lb/> Pathway balancing<lb/> Metabolic engineering<lb/></keyword>
+
+	<div type="abstract">a b s t r a c t<lb/> The development of efficient microbial processes for the production of flavonoids has been a metabolic<lb/> engineering goal for the past several years, primarily due to the purported health-promoting effects of<lb/> these compounds. Although significant strides have been made recently in improving strain titers and<lb/> yields, current fermentation strategies suffer from two major drawbacks—(1) the requirement for<lb/> expensive phenylpropanoic precursors supplemented into the media and (2) the need for two separate<lb/> media formulations for biomass/protein generation and flavonoid production. In this study, we detail<lb/> the construction of a series of strains capable of bypassing both of these problems. A four-step<lb/> heterologous pathway consisting of the enzymes tyrosine ammonia lyase (TAL), 4-coumarate:CoA<lb/> ligase (4CL), chalcone synthase (CHS), and chalcone isomerase (CHI) was assembled within two<lb/> engineered L-tyrosine Escherichia coli overproducers in order to enable the production of the main<lb/> flavonoid precursor naringenin directly from glucose. During the course of this investigation, we<lb/> discovered that extensive optimization of both enzyme sources and relative gene expression levels was<lb/> required to achieve high quantities of both p-coumaric acid and naringenin accumulation. Once this<lb/> metabolic balance was achieved, however, such strains were found to be capable of producing 29 mg/l<lb/> naringenin from glucose and up to 84 mg/l naringenin with the addition of the fatty acid enzyme<lb/> inhibitor, cerulenin. These results were obtained through cultivation of E. coli in a single minimal<lb/> medium formulation without additional precursor supplementation, thus paving the way for the<lb/> development of a simple and economical process for the microbial production of flavonoids directly<lb/> from glucose.<lb/></div>
+
+	<note type="copyright">&amp; 2011 Elsevier Inc. All rights reserved.<lb/></note>
+
+		</front>
+	</text>
+</tei>

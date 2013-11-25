@@ -1,0 +1,56 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55002335"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>MOLECULAR AND CELLULAR BIOLOGY, 
+	Sept. 1996, 
+	p. 4852–4861<lb/> 
+	Vol. 16, No. 9<lb/></reference>
+
+	<note type="other">0270-7306/96/$04.00ϩ0<lb/></note>
+
+	<note type="copyright">Copyright &#169; 1996, American Society for Microbiology<lb/></note>
+
+	<docTitle>
+	<titlePart>HHR23B, a Human Rad23 Homolog, Stimulates XPC Protein<lb/> in Nucleotide Excision Repair In Vitro<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>KAORU SUGASAWA,<lb/> 1,2 CHIKAHIDE MASUTANI,<lb/> 3 AKIO UCHIDA,<lb/> 1,3 TAKAFUMI MAEKAWA,<lb/> 3<lb/> PETER J. VAN DER SPEK,<lb/> 2 DIRK BOOTSMA,<lb/> 2 JAN H. J. HOEIJMAKERS,<lb/> 2<lb/> AND FUMIO HANAOKA<lb/> 1,3 *<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>The Institute of Physical and Chemical Research (RIKEN),</affiliation>
+	</byline>
+
+	<address>Wako-shi, Saitama 351-01,<lb/>1<lb/> and </address>
+
+	<byline>
+	<affiliation>Institute for Molecular and Cellular Biology, Osaka University,</affiliation>
+	</byline>
+
+	<address>Suita, Osaka 565,<lb/>3<lb/> Japan, and </address>
+
+	<byline>
+	<affiliation>Medical Genetic Centre, Erasmus University,<lb/></affiliation>
+	</byline>
+
+	<address>3000 DR Rotterdam, The Netherlands<lb/></address>
+
+	<byline>
+	<address>2<lb/></address>
+	</byline>
+
+	<note type="submission">Received 22 May 1996/Returned for modification 29 May 1996/Accepted 20 June 1996<lb/></note>
+
+	<div type="abstract">A protein complex which specifically complements defects of XP-C cell extracts in vitro was previously<lb/> purified to near homogeneity from HeLa cells. The complex consists of two tightly associated proteins: the XPC<lb/> gene product and HHR23B, one of two human homologs of the Saccharomyces cerevisiae repair gene product<lb/> Rad23 (Masutani et al., EMBO J. 13:1831–1843, 1994). To elucidate the roles of these proteins in &quot;genome-<lb/>overall&quot; repair, we expressed the XPC protein in a baculovirus system and purified it to near homogeneity. The<lb/> recombinant human XPC (rhXPC) protein exhibited a high level of affinity for single-stranded DNA and<lb/> corrected the repair defect in XP-C whole-cell extracts without extra addition of recombinant HHR23B<lb/> (rHHR23B) protein. However, Western blot (immunoblot) experiments revealed that XP-C cell extracts<lb/> contained excess endogenous HHR23B protein, which might be able to form a complex upon addition of the<lb/> rhXPC protein. To investigate the role of HHR23B, we fractionated the XP-C cell extracts and constructed a<lb/> reconstituted system in which neither endogenous XPC nor HHR23B proteins were present. In this assay<lb/> system, rhXPC alone weakly corrected the repair defect, while significant enhancement of the correcting<lb/> activity was observed upon coaddition of rHHR23B protein. Stimulation of XPC by HHR23B was found with<lb/> simian virus 40 minichromosomes as well as with naked plasmid DNA and with UV-as well as N-acetoxy-2-<lb/>acetylfluorene-induced DNA lesions, indicating a general role of HHR23B in XPC functioning in the genome-<lb/>overall nucleotide excision repair subpathway.<lb/> </div>
+	
+	<div type="introduction">Various environmental agents such as radiation and chem-<lb/>icals cause DNA damage, which may lead to alterations in<lb/> genetic information. DNA repair plays a crucial role in the<lb/> prevention of such mutagenesis and consequent carcinogenesis<lb/> and/or cell death. Nucleotide excision repair (NER) is one of<lb/> the most important DNA repair pathways because it eliminates<lb/> a wide variety of base lesions, including UV-induced cyclobu-<lb/>tane pyrimidine dimers and [6-4]photoproducts, as well as cer-<lb/>tain chemical adducts (8). The molecular mechanism of NER<lb/> in Escherichia coli is now understood in detail (9, 13, 21, 39). In<lb/> this organism, only six proteins, UvrA, UvrB, UvrC, UvrD,<lb/> DNA polymerase I, and DNA ligase, are sufficient to complete<lb/> the NER reactions in vitro, whereas a much greater number of<lb/> gene products are now known to be involved in eukaryotic<lb/> NER reactions (14). The eukaryotic NER system consists of at<lb/> least two distinct subpathways. One of these, transcription-<lb/>coupled repair, preferentially eliminates DNA damage which<lb/> hinders the advance of RNA polymerases on transcribed<lb/> strands (4, 12, 25). Damage to the rest of the genome is re-<lb/>paired more slowly and less efficiently for some lesions by the<lb/> &quot;genome-overall&quot; repair mechanism.<lb/> A number of NER gene products have been genetically<lb/> identified. Xeroderma pigmentosum (XP) is a human autoso-<lb/>mal recessive NER disease which is associated with extreme<lb/> sensitivity to sunlight and a high incidence of skin abnormali-<lb/>ties, including cancer. XP cells are hypersensitive to UV irra-<lb/>diation, and complementation analysis by cell fusion has iden-<lb/>tified at least seven complementation groups, XP-A to XP-G,<lb/> all of which show defects in early steps of the NER reaction<lb/> (37). Two genes implicated in XP, XPA and XPC, have been<lb/> cloned by transfection of XP cells with mouse genomic DNA<lb/> (36) or a human cDNA expression library (19). Another set of<lb/> mammalian NER mutants has been established with cultured<lb/> UV-sensitive rodent cell lines, in which at least 11 complemen-<lb/>tation groups have been identified (6). Several human genes<lb/> which phenotypically correct the UV sensitivity of these mu-<lb/>tants have been cloned. Among these, ERCC (excision repair<lb/> cross-complementing rodent repair deficiency) genes ERCC2,<lb/> ERCC3, and ERCC5 appeared to be identical to genes XPD,<lb/> XPB, and XPG, respectively (7, 28, 47). Additionally, the<lb/> ERCC6 gene has been shown to be responsible for comple-<lb/>mentation group B of another known NER disorder, Cock-<lb/>ayne&apos;s syndrome (38). The XPG protein was found to be an<lb/> endonuclease, implicated in the incision on the 3Ј side of DNA<lb/> adducts (27). Another cloned ERCC gene product, ERCC1,<lb/> has recently been suggested to be complexed with protein<lb/> factors which complement ERCC groups 4 and 11 and XP<lb/> group F (3, 40) and to be possibly involved in incision on the 5Ј<lb/> side of DNA damage (2). More recently, the XPB and XPD<lb/> proteins, both DNA helicases, were reported to be subunits of<lb/> TFIIH, one of the basal transcription factors required for tran-<lb/>scriptional initiation by eukaryotic RNA polymerase II (30,<lb/> 31), revealing a dual functioning of these proteins in basal<lb/> transcription and NER.<lb/> XP group C is unique in that its defect is limited to the<lb/> genome-overall NER subpathway, transcription-coupled re-<lb/>pair being normal (42). The converse is found in Cockayne&apos;s</div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003510"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Power–Efficient Mobile Backhaul Design for CoMP<lb/> Support in Future Wireless Access Systems<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Luca Scalia, Thorsten Biermann, Changsoon Choi, Kazuyuki Kozu, Wolfgang Kellerer<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>DOCOMO Euro-Labs,</affiliation>
+	</byline>
+
+	<address>Munich, Germany<lb/></address>
+
+	<email>{scalia, biermann, choi, kellerer, kozu}@docomolab-euro.com<lb/></email>
+
+	<div type="abstract">Abstract—Base Stations (BSs) cooperation techniques, also<lb/> referred to as Coordinated Multi-Point (CoMP) in the 3GPP<lb/> terminology, promise significant performance gains in future 4G<lb/> and beyond systems. The counterpart to such gains is represented<lb/> by the challenging requirements that CoMP puts on the backhaul<lb/> network, which may prevent the inclusion of certain BSs selected<lb/> for the cooperative cluster. The consequences of such a failure<lb/> can be relevant for the overall power consumption. Those BSs<lb/> which are not eligible for cooperation would be unnecessarily<lb/> included in the channel estimation process, which consumes<lb/> power both at the BS side (sending of reference pilots) and on the<lb/> backhaul network side (exchange of Channel State Information<lb/> (CSI) between BSs). To limit the detrimental effects of such<lb/> CoMP cluster &quot;unfeasibility&quot;, we discuss the benefits of a cross-<lb/>layer approach which relates wireless CoMP requests to the<lb/> backhaul network status. We show how the preemptive exclusion<lb/> of the non-eligible BSs results in a considerable saving of the<lb/> overall power consumption. We further complement our system<lb/> by proposing optical bypass techniques aimed at improving the<lb/> CoMP support from the backhaul perspective. This results, on<lb/> one side, in the enhancement of the overall CoMP feasibility<lb/> performance, and, on the other side, in the reduction of the<lb/> consumed power thanks to the offload of IP processing to the<lb/> switching layer<lb/> 1 .<lb/></div>
+
+		</front>
+	</text>
+</tei>

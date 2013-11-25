@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Yang</forename>
+								<surname>Xu</surname>
+								<lb/>
+								<marker>a</marker>,
+							</persName>
+							<persName>
+								<forename>Guangyin</forename>
+								<surname>Lei</surname>
+								<marker>b</marker> ,
+							</persName>
+							<persName>
+								<forename>Annette</forename>
+								<middlename>C</middlename> .
+								<surname>Booker</surname>
+								<marker>a</marker> ,
+							</persName>
+							<persName>
+								<forename>Katherine</forename>
+								<middlename>A</middlename> .
+								<surname>Linares</surname>
+								<marker>c</marker> ,
+							</persName>
+							<persName>
+								<forename>Dara</forename>
+								<surname>Fleming</surname>
+								<marker>b</marker> ,
+							</persName>
+							<persName>
+								<forename>Kathleen</forename>
+								<lb/>
+								<surname>Meehan</surname>
+								<marker>a*</marker> ,
+							</persName>
+							<persName>
+								<forename>Guo - Quan</forename>
+								<surname>Lu</surname>
+								<marker>b</marker> ,
+							</persName>
+							<persName>
+								<forename>Nancy</forename>
+								<middlename>G</middlename> .
+								<surname>Love</surname>
+								<marker>c</marker> , and
+							</persName>
+							<persName>
+								<forename>Brian</forename>
+								<middlename>J</middlename> .
+								<surname>Love</surname>
+								<marker>b</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

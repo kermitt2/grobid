@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="institution">Case Western Reserve University</orgName>,
+							<address>
+								<settlement>Cleveland</settlement>; and
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="institution">PPGx, Inc.</orgName>,
+							<address>
+								<settlement>La Jolla</settlement>,
+								<region>CA</region>
+							<lb/>
+							</address>
+							<orgName type="department">Department of Epidemiology and Biostatistics</orgName>,
+							<orgName type="institution">Case Western Reserve<lb/> University</orgName>,
+							<address>
+								<addrLine>2500 MetroHealth Drive</addrLine>,
+								<settlement>Cleveland</settlement>,
+								<region>OH</region>
+								<postCode>44109-1998</postCode>.
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

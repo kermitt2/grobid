@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003367"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>RTO-MP-HFM-123<lb/></reference>
+	
+	<note type="page">16 -1<lb/></note>
+
+	<docTitle>
+	<titlePart>Hybrid Feedforward-Feedback Active Noise Control for<lb/> Hearing Protection and Communication<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Laura E. Ray and Jason A. Solbeck<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Thayer School of Engineering, Dartmouth College<lb/></affiliation>
+	</byline>
+
+	<address>8000 Cummings Hall<lb/> Hanover NH 03755<lb/></address>
+
+	<byline>
+	<docAuthor>Robert D. Collier<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Sound Innovations, Incorporated<lb/> Lebanon NH<lb/></affiliation>
+	</byline>
+
+	<email>Laura.Ray@Dartmouth.edu<lb/></email>
+
+	<div type="abstract">ABSTRACT<lb/> Research over the past decade has demonstrated substantial increases in noise reduction performance for<lb/> circumaural hearing protectors through feedforward active noise reduction (ANR) based on least mean<lb/> square (LMS) methods. However, commercialization of feedforward ANR hearing protection devices has<lb/> yet to occur. This paper explores issues related to robust realization of feedforward ANR for hearing<lb/> protection. Specifically, the dynamic range of noise sources, the potential for leakage around<lb/> circumaural earcups, vibration conditions of high noise environments, and the need for communication<lb/> requires ANR algorithms that are robust to large variations in the acoustical dynamics of hearing<lb/> protectors. To meet this need, a hybrid ANR architecture that exhibits excellent stability margins and<lb/> performance for both stationary and non-stationary noise sources is presented. The hybrid system is<lb/> comprised of a Lyapunov-tuned leaky LMS feedforward component and a broadband digital feedback<lb/> ANR system. The contribution of each component to ANR performance is adjusted by individual<lb/> feedforward and feedback gain factors, and stability margins are defined by the net increase in these<lb/> gains that can be accommodated while maintaining system stability. Stability and noise reduction<lb/> performance of the hybrid system are validated experimentally using an earcup from a commercial<lb/> circumaural hearing protector and using a prototype active earplug. Experiments are performed through<lb/> flat plate or manikin testing using a DSP development system. Results demonstrate that stability margins<lb/> are increased, in some cases, by several orders of magnitude.<lb/></div>
+
+		</front>
+	</text>
+</tei>

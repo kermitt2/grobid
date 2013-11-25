@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>S</forename>.
+								<middlename>Rutger</middlename>
+								<surname>Leliveld</surname>,
+								<lb/>,,
+								<marker>^</marker>
+							</persName>
+							<persName>
+								<forename>Philipp</forename>
+								<surname>Hendriks</surname> ,<lb/>,
+								<marker>^</marker>
+							</persName>
+							<persName>
+								<forename>Max</forename>
+								<surname>Michel</surname> ,<lb/> ,
+								<marker>^</marker>
+							</persName>
+							<persName>
+								<forename>Gustavo</forename>
+								<surname>Sajnani</surname>, )
+							</persName>
+							<persName>
+								<forename>Verian</forename>
+								<surname>Bader</surname> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Svenja</forename>
+								<surname>Trossbach</surname>,
+							</persName>
+							<persName>
+								<forename>Ingrid</forename>
+								<surname>Prikulis</surname> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Rudolf</forename>
+								<surname>Hartmann</surname> ,
+							<lb/>
+							</persName> 
+							<persName>
+								<forename>Esther</forename>
+								<surname>Jonas</surname> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Dieter</forename>
+								<surname>Willbold</surname> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Jes us</forename>
+								<middlename>R</middlename>.
+								<surname>Requena</surname>,<lb/> )<lb/> and								 
+							</persName>
+							<persName>
+								<forename>Carsten</forename>
+								<surname>Korth</surname>
+								<marker>*</marker>,								 
+							</persName>
+							
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

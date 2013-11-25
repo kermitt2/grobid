@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+ Clopinet
+						<affiliation>
+							<address>
+								<addrLine>955 Creston Road<lb/> Berkeley</addrLine>,
+								<region>CA</region>
+								<postCode>94708-1501</postCode>,
+								<country>USA</country>
+							<lb/>
+							</address>
+							<orgName type="department">Empirical Inference for Machine Learning and Perception Department<lb/> Max Planck Institute for Biological Cybernetics</orgName>
+							<lb/>
+							<address>
+								<addrLine>Spemannstrasse 38</addrLine>
+							<lb/>
+								<postCode>72076</postCode>
+								<settlement>Tübingen</settlement>,
+								<country>Germany</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

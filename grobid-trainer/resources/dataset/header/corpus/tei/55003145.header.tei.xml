@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003145"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Programme<lb/>
+
+	Seventh Framework Programme<lb/> Strategic Objective<lb/> Information Security in Supply Chain Management<lb/> Integrated Project / Programme Title<lb/> Secure Supply Chain Management<lb/> ACRONYM<lb/> secureSCM<lb/></titlePart>
+	</docTitle>
+
+	<idno>Project No.<lb/> FP7-213531<lb/> WP No. /</idno>
+
+	<docTitle>
+	<titlePart>Work Package Title<lb/> WP3 Protocol Development<lb/> Deliverable No. / Deliverable Title<lb/> D3.2 Protocol Description V2<lb/> </titlePart>
+	</docTitle>
+	
+	<note type="other">Leading Partner: TUE<lb/> Security Classification: PUBLIC<lb/></note>
+
+	<date>Delivery: January 2010<lb/></date>
+
+	<note type="other">Version: 1.0</note>
+
+		</front>
+	</text>
+</tei>

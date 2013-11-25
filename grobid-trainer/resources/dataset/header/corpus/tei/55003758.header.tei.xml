@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003758"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Lötstopplack<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">aus Wikipedia, der freien Enzyklopädie<lb/> Dies ist eine alte Version dieser Seite, zuletzt bearbeitet am 15. Oktober 2009 um 09:31 Uhr<lb/> durch Biezl (Diskussion | Beiträge). Sie kann sich erheblich von der aktuellen Version unterscheiden.<lb/> (Unterschied) ← Nächstältere Version | Aktuelle Version (Unterschied) | Nächstjüngere Version →<lb/> (Unterschied)<lb/> Lötstopplack, Lötstoppmaske, Soldermask oder Stopplack<lb/> erfüllt auf einer Leiterplatte für elektronische Schaltungen<lb/> unterschiedliche Funktionen. Er dient zum Schutz der<lb/> Leiterplatte vor Korrosion, mechanischer Beschädigung und<lb/> verhindert beim Löten das Benetzen der mit ihm<lb/> überzogenen Flächen auf der Leiterplatte. Des Weiteren<lb/> verbessert Lötstopplack elektrische Eigenschaften wie die<lb/> Durchschlagsfestigkeit. Er wurde insbesondere für<lb/> Wellenlötanlagen entwickelt, um Lötbrücken zu vermeiden<lb/> und den Lötzinnverbrauch zu senken. Die häufigste Farbe ist<lb/> Grün, jedoch sind auch viele andere Farben möglich. Als Material für Lötstopplack kommt zum<lb/> Beispiel Epoxidharz in Frage.<lb/> Der Lötstopplack sollte mit dem verwendeten Flussmittel und Reinigungsmitteln harmonieren.</div>
+
+		</front>
+	</text>
+</tei>

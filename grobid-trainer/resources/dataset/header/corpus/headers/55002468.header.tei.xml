@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55002468"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Journal of Machine Learning Research 3 (2003) 1157-1182<lb/></reference>
+
+	<note type="submission">Submitted 11/02; </note>
+		
+	<date>Published 3/03<lb/></date>
+
+	<docTitle>
+	<titlePart>An Introduction to Variable and Feature Selection<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Isabelle Guyon<lb/></docAuthor>
+	</byline>
+
+	<email>isabelle@clopinet.com<lb/></email>
+
+	<address>Clopinet 955 Creston Road<lb/> Berkeley, CA 94708-1501, USA<lb/></address>
+
+	<byline>
+	<docAuthor>André Elisseeff<lb/></docAuthor>
+	</byline>
+
+	<email>andre@tuebingen.mpg.de<lb/></email>
+
+	<byline>
+	<affiliation>Empirical Inference for Machine Learning and Perception Department<lb/> Max Planck Institute for Biological Cybernetics<lb/></affiliation>
+	</byline>
+
+	<address>Spemannstrasse 38<lb/> 72076 Tübingen, Germany<lb/></address>
+
+	<note type="other">Editor: Leslie Pack Kaelbling<lb/></note>
+
+	<div type="abstract">Abstract<lb/> Variable and feature selection have become the focus of much research in areas of appli-<lb/>cation for which datasets with tens or hundreds of thousands of variables are available.<lb/> These areas include text processing of internet documents, gene expression array analysis,<lb/> and combinatorial chemistry. The objective of variable selection is three-fold: improving<lb/> the prediction performance of the predictors, providing faster and more cost-effective pre-<lb/>dictors, and providing a better understanding of the underlying process that generated the<lb/> data. The contributions of this special issue cover a wide range of aspects of such problems:<lb/> providing a better definition of the objective function, feature construction, feature rank-<lb/>ing, multivariate feature selection, efficient search methods, and feature validity assessment<lb/> methods.<lb/></div>
+
+	<keyword>Keywords: Variable selection, feature selection, space dimensionality reduction, pat-<lb/>tern discovery, filters, wrappers, clustering, information theory, support vector machines,<lb/> model selection, statistical testing, bioinformatics, computational biology, gene expression,<lb/> microarray, genomics, proteomics, QSAR, text classification, information retrieval.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

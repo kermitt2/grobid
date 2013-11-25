@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>a</marker>
+							<orgName type="department">Dipartimento Farmaco-Chimico</orgName>,
+							<orgName type="institution">Università degli Studi di Bari &quot;A. Moro&quot;</orgName>,
+							<address>
+								<addrLine>via Orabona, 4</addrLine>,
+								<postCode>70125</postCode>
+								<settlement>Bari</settlement>,
+								<country>Italy</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>b</marker>
+							<orgName type="department">Department of Molecular Biology</orgName>,
+							<orgName type="institution">The Scripps Research Institute</orgName>,
+							<address>
+								<addrLine>10550 North Torrey Pines Road</addrLine>,
+								<addrLine>La Jolla</addrLine>,
+								<region>CA</region>
+								<postCode>92037</postCode>,
+								<country>USA</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

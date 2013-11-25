@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>a</marker>
+							<orgName type="laboratory">Centre for Surface Chemistry and Catalysis</orgName>,
+							<orgName type="department">Department of Microbial and Molecular Systems</orgName>,
+							<orgName type="institution">Katholieke Universiteit Leuven</orgName>,
+							<lb/>
+							<address>
+								<addrLine>Kasteelpark Arenberg 23</addrLine>  – 
+								<postBox>Box 2461</postBox>,
+								<postCode>3001</postCode>
+								<settlement>Heverlee</settlement>,
+								<country>Belgium</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>b</marker>
+							<orgName type="department">Molecular and Nanomaterials</orgName>,
+							<orgName type="institution">Katholieke Universiteit Leuven</orgName>
+							<address>
+								<addrLine>Celestijnenlaan 200d</addrLine> – 
+								<postBox>Box 2425</postBox>,
+								<postCode>3001</postCode>
+								<settlement>Heverlee</settlement>,
+								<country>Belgium</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

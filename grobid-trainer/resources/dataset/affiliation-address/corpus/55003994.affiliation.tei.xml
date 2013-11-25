@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>a</marker>
+							<orgName type="department">Departamento de Fısica</orgName>,
+							<orgName type="institution">Uni¨ersidade do Minho</orgName>,
+							<address>
+								<addrLine>Campus de Gualtar</addrLine>,
+								<postCode>4710-057</postCode>
+								<settlement>Braga</settlement>,
+								<country>Portugaí</country>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>b</marker>
+							<orgName type="institution">Sa¨corCoatingsOy</orgName>,
+							<address>
+								<addrLine>Insinoorinkatu7</addrLine>,
+								<postCode>FIN-50100</postCode>
+								<settlement>Mikkeli</settlement>,
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="department">FinlanInstituteofEngineeringMaterialsandBiomaterials</orgName>,
+							<orgName type="institution">SilesianUni¨ersityofTechnology</orgName>,
+							<address>
+								<addrLine>ul.Konarskiego18a</addrLine>,
+								<postCode>44-100</postCode>
+								<settlement>Gliwice</settlement>,
+								<country>Poland</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>d</marker>
+							<orgName type="department">DepartamentodeEngenhariaMecanica</orgName>,
+							<orgName type="institution">Uni¨ersidadedoMinho</orgName>,
+							<address>
+								<addrLine>CampusdeAzurem</addrLine>,
+								<postCode>4800-058</postCode>
+								<settlement>Guimaraes</settlement>,
+								<country>Portugã</country>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>e</marker>
+							<orgName type="department">DepartamentodeEngenhariadePolımeros</orgName>,
+							<orgName type="institution">Uni¨ersidadedoMinho</orgName>,
+							<address>
+								<addrLine>CampusdeAzurem</addrLine>,
+								<postCode>4800-058</postCode>
+								<settlement>Guimaraes</settlement>,
+								<settlement>Portugã</settlement>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

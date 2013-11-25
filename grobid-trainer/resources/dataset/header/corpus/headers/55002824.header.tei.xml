@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55002824"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Acoustic Wave Approach for Multi-Touch Tactile Sensing<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Yuan LIU<lb/> *1,2<lb/> , Jean-Pierre Nikolovski<lb/> 1<lb/> , Moustapha Hafez<lb/> 1 , Nazih Mechbal<lb/> 2 , and Michel Vergé<lb/> 2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 CEA, LIST, Sensory Interfaces Laboratory,</affiliation>
+	</byline>
+
+	<address>18 Route du Panorama, 92265 Fontenay-aux-Roses, France<lb/></address>
+
+	<byline>
+	<affiliation>2 LMSP (CNRS 8106), Arts et Métiers ParisTech,</affiliation>
+	</byline>
+
+	<address>151 Boulevard de l&apos;Hôpital -75013 Paris, France<lb/></address>
+
+	<div type="abstract">Abstract:<lb/> In this communication, we present a high resolution<lb/> tactile plate that can localize one or two contact fingers.<lb/> The localization principle is based on Lamb wave<lb/> absorption. Fingers&apos; contact will generate absorption<lb/> signals while Lamb waves are propagating in a thin<lb/> finite copper plate. These signals can be related to the<lb/> contact positions and can be calibrated before the use of<lb/> tactile plate. Fingers&apos; contact positions are calculated by<lb/> finding the closest calibration signal to the measured<lb/> signal. Positions are carried out in less than 10 ms with<lb/> a spatial resolution of 2 mm for one finger localization.<lb/> Multi-points localization by this technology is developed<lb/> and a two-point case is initialized and tested. Several<lb/> optimization methods are also presented in this paper, as<lb/> the double validation check which could improve the<lb/> accuracy of single-point localization from 94.63% to<lb/> 99.5%. *<lb/></div>
+
+		</front>
+	</text>
+</tei>

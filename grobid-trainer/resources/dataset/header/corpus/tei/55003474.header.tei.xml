@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003474"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Purdue University<lb/> Purdue e-Pubs<lb/> LARS Technical Reports<lb/> Laboratory for Applications of Remote Sensing<lb/> 1-1-1972<lb/></reference>
+
+	<docTitle>
+	<titlePart>Minimum Distance Classification in Remote<lb/> Sensing<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>A. G. Wacker<lb/> D. A. Landgrebe<lb/></docAuthor>
+	</byline>
+
+	<note type="other">This document has been made available through Purdue e-Pubs, a service of the Purdue University Libraries. Please contact epubs@purdue.edu for<lb/> additional information.<lb/></note>
+
+	<byline>
+	<docAuthor>Wacker, A. G. and Landgrebe, D. A</docAuthor>
+	</byline>
+
+	<reference>., &quot;Minimum Distance Classification in Remote Sensing&quot; (1972). LARS Technical Reports. Paper<lb/> 25.<lb/></reference>
+
+	<ptr type="web">http://docs.lib.purdue.edu/larstech/25</ptr>
+
+		</front>
+	</text>
+</tei>

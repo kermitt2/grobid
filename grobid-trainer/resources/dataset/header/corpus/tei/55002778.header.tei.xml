@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55002778"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Finite Mixture Spectrogram Modeling for Multipitch Tracking Using A<lb/> Factorial Hidden Markov Model<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Michael Wohlmayr, Franz Pernkopf<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Signal Processing and Speech Communication Laboratory<lb/> Graz University of Technology, </affiliation>
+	</byline>
+
+	<address>Graz, Austria<lb/></address>
+
+	<email>michael.wohlmayr@tugraz.at, pernkopf@tugraz.at<lb/></email>
+
+	<div type="abstract">Abstract<lb/> In this paper, we present a simple and efficient feature modeling<lb/> approach for tracking the pitch of two speakers speaking simul-<lb/>taneously. We model the spectrogram features using Gaussian<lb/> Mixture Models (GMMs) in combination with the Minimum<lb/> Description Length (MDL) model selection criterion. This en-<lb/>ables to automatically determine the number of Gaussian com-<lb/>ponents depending on the available data for a specific pitch pair.<lb/> A factorial hidden Markov model (FHMM) is applied for track-<lb/>ing. We compare our approach to two methods based on cor-<lb/>relogram features [1]. Those methods either use a HMM [1] or<lb/> a FHMM [7] for tracking. Experimental results on the Mocha-<lb/>TIMIT database [2] show that our proposed approach signifi-<lb/>cantly outperforms the correlogram-based methods for speech<lb/> utterances mixed at 0dB. The superior performance even holds<lb/> when adding white Gaussian noise to the mixed speech utter-<lb/>ances during pitch tracking.<lb/></div>
+
+	<keyword>Index Terms: Factorial hidden Markov model, pitch estima-<lb/>tion, multipitch tracking, minimum description length<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

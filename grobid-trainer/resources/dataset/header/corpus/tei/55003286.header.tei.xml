@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003286"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>&quot;JSTUN&quot; -Java Simple Traversal of User Datagram Protocol (UDP) Through Network Address Translation (NAT)<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>(by Thomas King -</docAuthor>
+	</byline>
+		
+	<email>king[at]t-king.de -</email>
+	
+	<ptr>http://www.t-king.de)<lb/></ptr>
+
+	<div type="abstract">What is &quot;JSTUN&quot;?<lb/> &quot;JSTUN&quot; is a Java-based STUN (Simple Traversal of User Datagram Protocol (UDP) Through Network Address Translation (NAT)) implementation. STUN provides a mean for applications to discover the presence and type of firewalls<lb/> or NATs between them and the public internet. Additionally, in presence of a NAT STUN can be used by applications to learn the public Internet Protocol (IP) address assigned to the NAT.<lb/> So far, most of the message headers and attributes as standardized in RFC 3489 are part of &quot;JSTUN&quot;. The current &quot;JSTUN&quot; version also includes a STUN client and a STUN server. &quot;JSTUN&quot; is dual-licensed under GNU General Public<lb/> License iversion 2.0 and Apache License version 2.0.<lb/></div>
+
+	<docTitle>
+	<titlePart>How does it work?</titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

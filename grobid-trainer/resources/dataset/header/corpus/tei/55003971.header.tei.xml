@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003971"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>PG483 -Ubiquitous Media<lb/> Anhang textit<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Oleg Andreev<lb/> Daniel Arndt<lb/> Jan Beisenkamp<lb/> Marcus Rogério Blitz<lb/> Martin Had<lb/> Da He<lb/> Christoph Fiehe<lb/> Julian Flake<lb/> David Kliczbor<lb/> Nikinaz Nazemi<lb/> Mario Wündsch<lb/> Maxim Zaks<lb/></docAuthor>
+	</byline>
+
+	<date>28. September 2006</date>
+
+		</front>
+	</text>
+</tei>

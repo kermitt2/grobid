@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003439"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>ARTICLES<lb/> Visualization of the Degradation of a Disulfide Polymer, Linear Poly(ethylenimine<lb/> sulfide), for Gene Delivery<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Yan Lee, Heejung Mo, Heebeom Koo, Jong-Yeun Park, Min Yi Cho, Geun-woo Jin, and Jong-Sang Park*<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>School of Chemistry and Molecular Engineering, Seoul National University,</affiliation>
+	</byline>
+
+	<address>San 56-1, Gwanak-gu, Seoul, 151-742, Korea .<lb/></address>
+
+	<note type="submission">Received May 2, 2006; Revised Manuscript Received August 24, 2006<lb/></note>
+
+	<div type="abstract">Polyethylenimine (PEI) shows high transfection efficiency and cytoxicity due to its high amine density. The new<lb/> disulfide cationic polymer, linear poly(ethylenimine sulfide) (l-PEIS), was synthesized for efficient and safe gene<lb/> delivery. As the amine density of l-PEIS increased, the transfection efficiency also increased. l-PEIS-6 and l-PEIS-8<lb/> show transfection efficiencies that are similar to that of PEI. However, cytotoxicity of l-PEIS was not observed<lb/> due to the biodegradable disulfide bond. The disulfide bonds are stable in the oxidative extracellular condition<lb/> and can be degraded rapidly in the reductive intracellular condition. The degradation of l-PEIS in HeLa cells was<lb/> visualized by fluorescence microscopy using the probe-probe dequenching effect of BODIPY-FL fluorescence<lb/> dye. l-PEIS was degraded completely within 3 h.<lb/></div>
+
+		</front>
+	</text>
+</tei>

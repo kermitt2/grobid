@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003564"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Venous Thromboembolism in the Patient<lb/> With Cancer<lb/> Focus on Burden of Disease and Benefits of Thromboprophylaxis<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Gary H. Lyman, MD, MPH<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Venous thromboembolism (VTE) is a significant cause of morbidity and mortality in patients with cancer. The risk of<lb/> VTE varies over the natural history of cancer, with the highest risk occurring during hospitalization and after disease<lb/> recurrence. Patient and disease characteristics are associated with further increased risk of VTE in this setting. Spe-<lb/>cific factors include cancer type (eg, pancreatic cancer, brain cancer, lymphoma) and the presence of metastatic dis-<lb/>ease at the time of diagnosis. VTE is a significant predictor of increased mortality during the first year among all<lb/> types and stages of cancer, with metastatic disease reported to be the strongest predictor of mortality. VTE is also<lb/> associated with early death in ambulatory patients with cancer. These data highlight the need for close monitoring,<lb/> prompt treatment, and appropriate preventive strategies for VTE in patients with cancer. The American Society of<lb/> Clinical Oncology and the National Comprehensive Cancer Network have issued guidelines regarding the prophylaxis<lb/> and treatment of patients with cancer. This review summarizes the impact of VTE on patients with cancer, the effects<lb/> of VTE on clinical outcomes, the importance of thromboprophylaxis in this population, relevant ongoing clinical trials<lb/> examining the prevention of VTE, and new pharmacologic treatment options.</div>  
+	
+	<reference>Cancer 2011;117:1334–49.</reference>
+
+	<note type="copyright">&#169; 2010 American<lb/> Cancer Society.<lb/></note> 
+
+	<keyword>KEYWORDS: venous thromboembolism (VTE), cancer, thromboprophylaxis, anticoagulant, chemotherapy, low<lb/> molecular weight heparin (LMWH).<lb/></keyword> 
+
+	<div type="introduction">Venous thromboembolism (VTE), which includes deep vein thrombosis (DVT) and pulmonary embolism (PE), is a<lb/> major complication of cancer and one of the leading causes of death among cancer patients.<lb/> 1,2 Overall, approximately<lb/> 20% of all VTE cases occur in patients with cancer.<lb/> 3 In addition, VTE affects up to 20% of patients with cancer before<lb/> death and has been reported in up to half of cancer patients at the time of postmortem examination, highlighting the fact<lb/> that the true extent of this complication may be underestimated.<lb/> 4,5 Cancer-associated VTE has important clinical and eco-<lb/>nomic consequences, including increased morbidity resulting from hospitalization and anticoagulation use, bleeding com-<lb/>plications, increased risk of recurrent VTE, and cancer treatment delays.<lb/> 6 In 1 analysis, Prandoni et al reported that<lb/> patients with cancer and VTE were approximately 4 times more likely to develop recurrent thromboembolic complica-<lb/>tions and twice as likely to develop major bleeding while receiving anticoagulant treatment than those without malig-<lb/>nancy.<lb/> 7 The occurrence of VTE in patients with cancer may interfere with planned chemotherapy regimens, worsen<lb/> patient quality of life,<lb/> 8 and lead to the increased consumption of healthcare resources compared with patients without can-<lb/>cer who experience VTE. In a retrospective study of medical records from 529 cancer patients, the mean hospitalization<lb/> cost for DVT was $20,065 per episode (2002 US$)<lb/> 9 compared with a cost of $7712 to $10,804 per episode in a general<lb/> medical population with VTE.<lb/> 10</div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">Department of Agricultural Chemistry</orgName>,
+							<orgName type="institution">Oregon State University</orgName>,
+							<address>
+								<settlement>Corvallis</settlement>,
+								<settlement>Oregon</settlement>
+								<postCode>97331</postCode>, and 
+							</address>
+							<orgName type="department">Oregon Department of Agriculture</orgName>,
+							<address>
+								<settlement>Salem</settlement>,
+								<region>Oregon</region>
+								<postCode>97310</postCode>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

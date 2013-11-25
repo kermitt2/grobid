@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003074"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Magnetic resonance imaging measurement of iron overload<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>John C. Wood<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Divisions of Pediatric Cardiology and Radiology, Children&apos;s Hospital Los Angeles,</affiliation>
+	</byline>
+
+	<address>Los Angeles,<lb/> California, USA<lb/></address>
+
+	<div type="abstract">Abstract<lb/> Purpose of review—To highlight recent advances in magnetic resonance imaging estimation of<lb/> somatic iron overload. This review will discuss the need and principles of magnetic resonance<lb/> imaging-based iron measurements, the validation of liver and cardiac iron measurements, and the<lb/> key institutional requirements for implementation.<lb/> Recent findings—Magnetic resonance imaging assessment of liver and cardiac iron has achieved<lb/> critical levels of availability, utility, and validity to serve as the primary endpoint of clinical trials.<lb/> Calibration curves for the magnetic resonance imaging parameters R2 and R2* (or their reciprocals,<lb/> T2 and T2*) have been developed for the liver and the heart. Interscanner variability for these<lb/> techniques has proven to be on the order of 5–7%.<lb/> Summary—Magnetic resonance imaging assessment of tissue iron is becoming increasingly<lb/> important in the management of transfusional iron load because it is noninvasive, relatively widely<lb/> available and offers a window into presymptomatic organ dysfunction. The techniques are highly<lb/> reproducible within and across machines and have been chemically validated in the liver and the<lb/> heart. These techniques will become the standard of care as industry begins to support the acquisition<lb/> and postprocessing software.<lb/></div>
+
+	<keyword>Keywords<lb/> heart; iron overload; liver; magnetic resonance imaging; thalassemia<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

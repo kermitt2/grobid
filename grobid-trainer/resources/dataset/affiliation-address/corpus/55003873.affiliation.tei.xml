@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">Department of Chemistry</orgName>,
+							<orgName type="institution">Tokyo Gakugei University</orgName>,
+							<address>
+								<settlement>Koganei</settlement>,
+								<settlement>Tokyo</settlement>
+								<postCode>184</postCode>,
+								<country>Japan</country>
+								<lb/>
+							</address>
+							<orgName type="department">The Institute of Physical and Chemical Research (RIKEN)</orgName>,
+							<address>
+								<settlement>Wako</settlement>,
+								<region>Saitama</region>
+								<postCode>351-01</postCode>,
+								<country>Japan</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003437"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Zentraler Vorstand . Central Executive Committee . Bureau Central<lb/></note> 
+	
+	<date>23.11.2010<lb/></date>
+
+	<idno>ex10162cp -0.2.1<lb/></idno>
+
+	<docTitle>
+	<titlePart>Interview with Professor Peter Drahos<lb/> </titlePart>
+	</docTitle>
+	
+	<note type="other">Professor in Law and Director of the Centre for the Governance of Knowledge and Development at the<lb/> Australian National University<lb/> Chair in Intellectual Property at Queen Mary, University of London<lb/> Lawyer, Political Scientist and Philosopher<lb/></note>
+
+	<div type="introduction">Today&apos;s Global Patent System can&apos;t manage the worldwide challenges of our future &quot;Managing risks whether they are the risks of climate change, food security, loss of<lb/> biodiversity, or pandemics has become the principal task of international governance.<lb/> Historically speaking, the patent system evolved out of a beggar-thy-neighbour philosophy in<lb/> which states used the patent system to maximize trade gains and minimize trade losses. We<lb/> cannot afford this kind of systems philosophy at a time when global risk management will<lb/> require much more sharing and diffusion of knowledge and technology.&quot; &quot;The challenge for patent offices in the 21st century is whether they will take on more of a<lb/> leadership role in networks made up of civil society, health departments, competition<lb/> authorities and patent offices becoming champions of a people&apos;s social contract or whether<lb/> they will spend their time handing out customer satisfaction surveys to their multinational<lb/> clients and hoping for lots of ticks of approval. The latter, I predict, will do little for the morale<lb/> of their examiners.&quot;<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004052"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno type="DOI">10.1101/gad.1193404<lb/></idno>
+
+	<note type="other">Access the most recent version at doi:<lb/> </note>
+	
+	<reference>2004 18: 1606-1617<lb/> Genes Dev.<lb/></reference>
+
+	<byline>
+	<docAuthor>Chin Yan Lim, Buyung Santoso, Thomas Boulay, et al.<lb/></docAuthor>
+	</byline>
+
+	<docTitle>
+	<titlePart>polymerase II<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">The MTE, a new core promoter element for transcription by RNA<lb/> References<lb/> http://genesdev.cshlp.org/content/18/13/1606.full.html#related-urls<lb/> Article cited in:<lb/> http://genesdev.cshlp.org/content/18/13/1606.full.html#ref-list-1<lb/></div>
+
+	<note type="other">This article cites 32 articles, 17 of which can be accessed free at:<lb/></note>
+
+		</front>
+	</text>
+</tei>

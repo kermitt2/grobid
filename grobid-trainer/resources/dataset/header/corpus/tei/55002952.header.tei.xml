@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55002952"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>MULTIMEDIA CORE PLATFORM<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docTitle>
+	<titlePart>P E R F O R M A N C E<lb/></titlePart>
+	</docTitle>
+	</byline>
+
+	<email>www.starentnetworks.com<lb/></email>
+
+	<docTitle>
+	<titlePart>ST40<lb/></titlePart>
+	</docTitle>
+	
+	<docTitle>
+	<titlePart>I N T E L L I G E N T<lb/></titlePart>
+	</docTitle>
+
+	<div type="introduction">Today&apos;s mobile subscribers are responding to new dynamics in the market where content,<lb/> information, and entertainment are increasing their desire to stay connected. Subscribers<lb/> are no longer satisfied with basic data services; they want a superior experience that they<lb/> associate with a broadband multimedia environment.<lb/> As a mobile operator, you&apos;ve provided a multimedia environment with messaging, ring-<lb/>tones, Internet access, and initial video and audio service. As a result, you&apos;ve started to<lb/> realize gains in data average revenue per user (ARPU). However, this is just the beginning.<lb/> Advanced, interactive multimedia services, such as streaming music, video downloads,<lb/> mobile office, instant messaging, and IPTV, will further increase usage of multimedia<lb/> services and have the potential to become a substantial percentage of your profits.<lb/> In order to deliver a superior subscriber experience, you must build a high-capacity, broad-<lb/>band, 3G network, while significantly improving control of individual subscriber sessions.<lb/> This network must handle bandwidth intensive, real-time multimedia services, such as voice,<lb/> video, and TV — all the while preparing to transition to 4G technologies as they mature.<lb/> This network starts with the system intelligence and high performance of the Starent ST40<lb/> multimedia core platform.</div>
+
+		</front>
+	</text>
+</tei>

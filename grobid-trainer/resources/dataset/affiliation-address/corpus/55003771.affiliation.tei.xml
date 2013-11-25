@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>a</marker>
+							<orgName type="department">Department of Thoracic and Vascular Surgery</orgName>,
+							<orgName type="institution">UniÕersity of Ulm</orgName>,
+							<address>
+								<addrLine>SteinhoÕelstraße 9</addrLine>,
+								<postCode>89075</postCode>
+								<settlement>Ulm</settlement>,
+								<country>German</country>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>b</marker>
+							<orgName type="department">DepartmentofInternalMedicineII</orgName>,
+							<orgName type="institution">UniÕersityofUlm</orgName>,
+							<address>
+								<settlement>Ulm</settlement>,
+								<country>Germany</country>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>c</marker>
+							<lb/>
+							<orgName type="department">DepartmentofRadiology</orgName>,
+							<orgName type="institution">UniÕersityofUlm</orgName>,
+							<address>
+								<settlement>Ulm</settlement>,
+								<country>Germany</country>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>d</marker>
+							<lb/>
+							<orgName type="department">DepartmentofGeneralSurgery</orgName>,
+							<orgName type="institution">UniÕersityofUlm</orgName>,
+							<address>
+								<settlement>Ulm</settlement>,
+								<country>Germany</country>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>e</marker>
+							<lb/>
+							<orgName type="department">InstituteofClinicalChemistry</orgName>,
+							<orgName type="institution">UniÕersityofUlm</orgName>,
+							<address>
+								<settlement>Ulm</settlement>,
+								<country>Germany</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

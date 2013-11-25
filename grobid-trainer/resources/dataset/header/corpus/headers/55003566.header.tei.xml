@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003566"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	
+	<note type="other">NDB_No<lb/> Description Weight (g)<lb/> Common Measure<lb/> Content per<lb/> Measure<lb/></note> 
+	
+	<docTitle>
+	<titlePart>USDA National Nutrient Database for Standard Reference, Release 17<lb/></titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

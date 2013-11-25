@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>KAORU</forename>
+								<surname>SUGASAWA</surname>,
+								<lb/>
+								<marker>1,2</marker>
+							</persName>
+							<persName>
+								<forename>CHIKAHIDE</forename>
+								<surname>MASUTANI</surname> ,
+								<lb/>
+								<marker>3</marker>
+							</persName>
+							<persName>
+								<forename>AKIO</forename>
+								<surname>UCHIDA</surname> ,
+								<lb/>
+								<marker>1, 3</marker>
+							</persName>
+							<persName>
+								<forename>TAKAFUMI</forename>
+								<surname>MAEKAWA</surname>,
+								<marker>3</marker>
+							</persName>
+							<persName>
+								<forename>PETER</forename>
+								<middlename>J</middlename> .
+								<surname>VAN DER SPEK</surname> ,
+						 		<lb/>
+								<marker>2</marker>
+							</persName>
+							<persName>
+								<forename>DIRK</forename>
+								<surname>BOOTSMA</surname> ,
+								<lb/>
+								<marker>2</marker>
+							</persName>
+							<persName>
+								<forename>JAN</forename>
+								<middlename>H</middlename>.
+								<middlename>J</middlename>.
+								<surname>HOEIJMAKERS</surname> ,
+								<marker>2</marker> AND
+							</persName>
+							<persName>
+								<forename>FUMIO</forename>
+								<surname>HANAOKA</surname>
+								<lb/>
+								<marker>1 , 3 *</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

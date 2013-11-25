@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003478"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>VIDEO SYNCHRONIZATION VIA SPACE-TIME INTEREST POINT DISTRIBUTION<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Jingyu Yan and Marc Pollefeys<lb/></docAuthor>
+	</byline>
+
+	<email>{yan,marc}@cs.unc.edu<lb/></email>
+
+	<byline>
+	<affiliation>The University of North Carolina at Chapel Hill<lb/> Department of Computer Science<lb/></affiliation>
+	</byline>
+
+	<address>Chapel Hill, USA<lb/></address>
+
+	<div type="abstract">ABSTRACT<lb/> We propose a novel algorithm to synchronize video recording<lb/> the same scene from different viewpoints. Our method relies on<lb/> correlating space-time interest point distribution in time between<lb/> videos. Space-time interest points represent events in video that<lb/> have high variation in both space and time. These events are<lb/> unique in time and may pronounce themselves in videos from<lb/> different viewpoints. We show that by detecting, selecting space-<lb/>time interest points and correlating their distribution, videos from<lb/> different viewpoints can be automatically synchronized.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							Prepared by<lb/> 
+							<orgName type="department">Sandia National Laboratories<lb/> </orgName>
+							<address>
+								<settlement>Albuquerque</settlement>,
+								<region>New Mexico</region> 
+								<postCode>87185</postCode> and
+							</address>
+							<address>
+								<settlement>Livermore</settlement>,
+								<region>California</region>
+								<postCode>94550</postCode>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

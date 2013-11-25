@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004005"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>0041-1337/03/7602-387/0<lb/></idno>
+
+	<reference>TRANSPLANTATION<lb/> Vol. 76, 387–394, No. 2, July 27, 2003<lb/></reference>
+
+	<note type="copyright">Copyright © 2003 by Lippincott Williams &amp; Wilkins, Inc.<lb/></note>
+
+	<note type="other">Printed in U.S.A.<lb/></note>
+
+	<docTitle>
+	<titlePart>CLASS II TRANSACTIVATOR PROMOTER ACTIVITY IS<lb/> SUPPRESSED THROUGH REGULATION BY A TROPHOBLAST<lb/> NONCODING RNA<lb/>1<lb/> </titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>ARNAR GEIRSSON,<lb/> 2 INDU PALIWAL,<lb/> 2 RAYMOND J. LYNCH,<lb/> 2 ALFRED L. M. BOTHWELL,<lb/> 3 AND<lb/> GRAEME L. HAMMOND<lb/> 2,4<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Background. Trophoblasts lack expression of all<lb/> classic major histocompatibility complex (MHC) anti-<lb/>gens. Determination of the mechanism involved could<lb/> provide insight into selective gene suppression and<lb/> allograft tolerance. Suppression of class II expression<lb/> in trophoblasts is secondary to dominant negative<lb/> trans-acting factors that suppress class II transactiva-<lb/>tor (CIITA) transcription. We recently described a tro-<lb/>phoblast-derived noncoding RNA (TncRNA) that sup-<lb/>presses class II expression. We examined the effects of<lb/> TncRNA on the CIITA promoter, CIITA, and MHC class<lb/> II expression.<lb/> Methods. HeLa clones stably transfected with<lb/> TncRNA were analyzed for MHC class II and CIITA<lb/> expression by fluorescence-activated cell sorting,<lb/> Northern blots, and quantitative polymerase chain re-<lb/>action. Activity and functional dissection of CIITA<lb/> promoter IV (pIV) was assessed by transient co-trans-<lb/>fection of promoter-reporter constructs. Methylation<lb/> of pIV was assessed by Southern blots, fluorescence-<lb/>activated cell sorting, and quantitative polymerase<lb/> chain reaction.<lb/> Results. TncRNA suppressed interferon-␥–induced<lb/> human leukocyte antigen-DR and CIITA expression in<lb/> HeLa cells. The mechanism involves inhibition of CI-<lb/>ITA pIV through a defined inhibitory domain on the<lb/> promoter. The mechanism does not involve methyl-<lb/>ation of the promoter.<lb/> Conclusions. A novel method of CIITA suppression is<lb/> described where a noncoding RNA selectively medi-<lb/>ates the suppression of CIITA pIV possibly by comple-<lb/>mentary RNA-DNA binding to an inhibitory domain on<lb/> the promoter. Selective suppression of MHC class II<lb/> could have important implications in allograft toler-<lb/>ance and in developing class II-deficient cells or tis-<lb/>sues for the purpose of transplantation or drug deliv-<lb/>ery systems.<lb/> </div>
+<div type="introduction">Trophoblasts are placental endothelial cells that, in utero,<lb/> are in direct contact with maternal blood. As such, they act as<lb/> a barrier between the fetal and maternal immune systems<lb/> and are probably critical in maternal-fetal tolerance. They<lb/> lack expression of all major histocompatibility complex<lb/> (MHC) antigens, except HLA-G, and do not express MHC<lb/> antigens after interferon (IFN)-␥ stimulation (1). Because<lb/> other placental cells express the normal complement of MHC<lb/> antigens, understanding this control mechanism may pro-<lb/>vide insights into allograft tolerance and serve as a model for<lb/> developing strategies to suppress MHC expression in xeno-<lb/>graft tissues and cells (Drs. Paul Russell and Richard Sim-<lb/>monds were the first to show that trophoblastic tissue was<lb/> not rejected when implanted into allogenic recipient animals<lb/> preimmunized to the donor tissue (2)).<lb/> The exact mechanism of MHC suppression in trophoblasts<lb/> is unknown, but class II suppression results from inhibition<lb/> of class II transactivator (CIITA) (3). The CIITA promoter<lb/> consists of distinct promoter regions that are active in vari-<lb/>ous cell types (4). IFN-␥–induced CIITA expression occurs by<lb/> means of promoter IV (pIV) through the cis-acting elements<lb/> GAS site, E-box, and IRF site involving transcription factors<lb/> Stat-1, USF-1, and IRF-1. CIITA pIV is active in inducible<lb/> class II-expressing cells including endothelial cells and HeLa<lb/> cells (5, 6). Trophoblasts contain the IFN-␥ receptor and the<lb/> necessary transduction mechanism for IFN-␥ activation but<lb/> do not express CIITA or class II antigens after IFN-␥ treat-<lb/>ment (1, 3).<lb/> We previously reported that expression of all classic MHC<lb/> genes was completely suppressed in stable hybrid fusions<lb/> between constitutive MHC-expressing B cells and tropho-<lb/>blasts, indicating that trophoblasts induced dominant nega-<lb/>tive trans-acting suppression of the MHC genes contributed<lb/> by the B cells (3). We subsequently identified a 481-nucleo-<lb/>tide (nt) trophoblast-derived noncoding RNA by expression<lb/> cloning of a trophoblast cDNA library that suppressed con-<lb/>stitutive and inducible MHC class II expression when trans-<lb/>fected into cells that normally express class II antigens (7).<lb/> We now report a mechanism by which this TncRNA acts as a<lb/> CIITA suppressor by acting on pIV and developed a transient<lb/> co-transfection assay to define an approximately 30-base pair<lb/> (bp) inhibitory domain on pIV where the CIITA suppressor<lb/> acts.<lb/> MATERIALS AND METHODS</div>
+
+		</front>
+	</text>
+</tei>

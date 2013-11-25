@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003484"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Graphics and<lb/> Image Processing<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>J. D. Foley<lb/> Editor<lb/></docAuthor>
+	</byline>
+	
+	<docTitle>
+	<titlePart>Random Sample<lb/> Consensus: A<lb/> Paradigm for Model<lb/> Fitting with<lb/> Apphcatlons to Image<lb/> Analysis and<lb/> Automated Cartography<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Martin A. Fischler and Robert C. Bolles<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>SRI International<lb/></affiliation>
+	</byline>
+
+	<div type="abstract">A new paradigm, Random Sample Consensus<lb/> (RANSAC), for fitting a model to experimental data is<lb/> introduced. RANSAC is capable of interpreting/<lb/> smoothing data containing a significant percentage of<lb/> gross errors, and is thus ideally suited for applications<lb/> in automated image analysis where interpretation is<lb/> based on the data provided by error-prone feature<lb/> detectors. A major portion of this paper describes the<lb/> application of RANSAC to the Location Determination<lb/> Problem (LDP): Given an image depicting a set of<lb/> landmarks with known locations, determine that point<lb/> in space from which the image was obtained. In<lb/> response to a RANSAC requirement, new results are<lb/> derived on the minimum number of landmarks needed<lb/> to obtain a solution, and algorithms are presented for<lb/> computing these minimum-landmark solutions in closed<lb/> form. These results provide the basis for an automatic<lb/> system that can solve the LDP under difficult viewing<lb/></div>
+
+	<note type="copyright">Permission to copy without fee all or part of this material is<lb/> granted provided that the copies are not made or distributed for direct<lb/> commercial advantage, the ACM copyright notice and the title of the<lb/> publication and its date appear, and notice is given that copying is by<lb/> permission of the Association for Computing Machinery. To copy<lb/> otherwise, or to republish, requires a fee and/or specific permission.<lb/></note>
+
+	<note type="grant">The work reported herein was supported by the Defense Advanced<lb/> Research Projects Agency under Contract Nos. DAAG29-76-C-0057<lb/> and MDA903-79-C-0588.<lb/> Authors&apos; Present Address:</note>
+
+	<byline>
+	<docAuthor>Martin A. Fischler and Robert C.<lb/> Bolles,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Artificial Intelligence Center, SRI International,</affiliation>
+	</byline>
+
+	<address>Menlo Park<lb/> CA 94025.<lb/></address>
+
+	<note type="copyright">© 1981 ACM 0001</note>
+
+	<note type="other">-0782/81/0600-0381 $00.75<lb/></note>
+
+	<note type="page">381<lb/></note>
+
+	<div type="abstract">and analysis conditions. Implementation details and<lb/> computational examples are also presented.<lb/></div>
+
+	<keyword>Key Words and Phrases: model fitting, scene<lb/> analysis, camera calibration, image matching, location<lb/> determination, automated cartography.<lb/> CR Categories: 3.60, 3.61, 3.71, 5.0, 8.1, 8.2<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

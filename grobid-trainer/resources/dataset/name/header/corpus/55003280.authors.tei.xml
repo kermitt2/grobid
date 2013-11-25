@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+Contributors:
+							<persName>
+								<forename>Tom</forename>
+								<surname>Bychowski</surname>,
+							</persName>
+							<lb/>
+							<persName>
+								<forename>Jonathan</forename>							
+								<surname>Williams</surname> ,
+							</persName>
+							<lb/>
+							<persName>
+								<forename>Harry</forename>							
+								<surname>Niedzwiadek</surname>,
+							</persName>
+							<lb/>
+							<persName>
+								<forename>Yaser</forename>
+								<surname>Bishr</surname> ,
+							</persName>
+							<lb/>
+							<persName>
+								<forename>Jean - Francois</forename>							
+								<surname>Gaillet</surname>,
+							</persName>
+							<lb/>
+							<persName>
+								<forename>Neil</forename>							
+								<surname>Crisp</surname>,
+							</persName>
+							<lb/>
+							<persName>
+								<forename>Will</forename>
+								<surname>Wilbrink</surname> ,
+							</persName>
+							<lb/>
+							<persName>
+								<forename>Mike</forename>
+								<surname>Horhammer</surname>,
+							</persName>
+							<lb/>
+							<persName>
+								<forename>Greg</forename>							
+								<surname>Roy</surname> ,
+							</persName>
+							<lb/>
+							<persName>
+								<forename>Sergey</forename>							
+								<surname>Margoulis</surname> ,
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

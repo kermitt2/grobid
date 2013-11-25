@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003989"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Bringing IMS Services to the DLNA Connected Home<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Johan Hjelm<lb/> 1 , Toshikane Oda<lb/> 1 , Andreas Fasbender<lb/> 2 , Shingo Murakami<lb/> 1 , Ayodele<lb/> Damola<lb/> 3<lb/></docAuthor>
+	</byline>
+
+	<email>{firstname.lastname}@ericsson.com<lb/></email>
+
+	<byline>
+	<affiliation>Ericsson Research Japan,</affiliation>
+	</byline>
+
+	<address>Koraku Mori Bldg. 1-4-14 Koraku, Bunkyo-ku, Tokyo 112-004<lb/></address>
+
+	<byline>
+	<affiliation>Japan Ericsson GmbH,</affiliation>
+	</byline>
+
+	<address>Kackertstrasse 7-9, D-52072 Aachen, Germany<lb/></address>
+	
+	<byline>
+	<affiliation>Ericsson AB,</affiliation>
+	</byline>
+	
+	<address>Torshamnsgatan 21-13, 164 80 Stockholm, Sweden<lb/></address>
+
+	<div type="abstract">Abstract.<lb/> DLNA is a leading standard for consumer electronics devices. But it does not enable<lb/> remote devices to connect to services in the home, using the IMS-based networks now<lb/> being rolled out by telecom companies. We present a solution for interworking DLNA<lb/> and IMS, and discuss the implications. We also describe how to enable IMS services<lb/> on DLNA devices.<lb/></div>
+
+		</front>
+	</text>
+</tei>

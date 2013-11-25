@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>a</marker>
+							<address>
+								<settlement>Heudiasyc</settlement>,
+							</address>
+							<orgName type="laboratory">UMR CRNS 6599</orgName>,
+							<orgName type="institution">UTC</orgName>,
+							<address>
+								<country>France</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>b</marker>
+							<orgName type="laboratory">PSI</orgName>,
+							<orgName type="institution">INSA de Rouen</orgName>,
+							<address>
+								<settlement>Rouen</settlement>,
+								<country>France</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>c</marker>
+							<orgName type="institution">VKI Water Quality Institute</orgName>,
+							<address>
+								<region>A , rhus</region>,
+								<country>Denmark</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

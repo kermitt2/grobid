@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>E</forename>.
+								<surname>Bolke</surname>
+							<lb/>
+								<marker>a,),1</marker>,
+							</persName>
+							<persName>
+								<forename>P</forename> .
+								<middlename>M</middlename>.
+								<surname>Jehle</surname>
+							<lb/>
+								<marker>b ,1</marker>,
+							</persName>
+							<persName>
+								<forename>M</forename> .
+								<surname>Storck</surname>
+							<lb/>
+								<marker>a</marker> ,
+							</persName>
+							<persName>
+								<forename>C</forename>.
+								<surname>Braun</surname>
+							<lb/>
+								<marker>a</marker>,
+							</persName>
+							<persName>
+								<forename>S</forename> .
+								<surname>Schams</surname>
+							<lb/>
+								<marker>a</marker> ,
+							</persName>
+							<persName>
+								<forename>G</forename> .
+								<surname>Steinbach</surname>
+							<lb/>
+								<marker>e</marker> ,
+							</persName>
+							<persName>
+								<forename>K</forename>.
+								<surname>Orth</surname>
+							<lb/>
+								<marker>d</marker>,
+							</persName>
+							<persName>
+								<forename>J</forename> .
+								<surname>Gorich</surname>
+							<lb/>
+								<marker>c</marker> ,
+							</persName>
+							<persName>
+								<forename>R</forename> .
+								<surname>Scharrer- Pamler</surname>
+							<lb/>
+								<marker>a</marker>,
+							</persName>
+							<persName>
+								<forename>L</forename> .
+								<surname>Sunder -Plassmann</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

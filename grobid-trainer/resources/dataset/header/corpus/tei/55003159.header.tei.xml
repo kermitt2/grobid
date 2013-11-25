@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003159"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Domain Exchange between Human Toll-like Receptors 1 and 6<lb/> Reveals a Region Required for Lipopeptide Discrimination *<lb/></titlePart>
+	</docTitle>
+
+	<note type="submission">Received for publication, April 20, 2005, and in revised form
+
+	, July 21, 2005 </note>
+	
+	<date type="publication">Published, JBC Papers in Press, August 29, 2005,</date>
+
+	<idno type="DOI">DOI 10.1074/jbc.M504320200<lb/></idno>
+
+	<byline>
+	<docAuthor>Katherine O. Omueti<lb/> , John M. Beyer<lb/> , Christopher M. Johnson<lb/> , Elizabeth A. Lyle<lb/> , and Richard I. Tapping 1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>From the<lb/> Department of Biochemistry, the<lb/> Department of Microbiology, and the<lb/> College of Medicine, University of Illinois<lb/> at Urbana-Champaign,</affiliation>
+	</byline>
+
+	<address>Urbana, Illinois 61801<lb/></address>
+
+	<div type="abstract">Among the 10 human Toll-like receptors (TLRs), TLR2 appears<lb/> to be unique in its requirement for cooperation with other TLRs,<lb/> namely TLR1 and TLR6, to mediate cell signaling. Through recon-<lb/>stitution experiments, we have defined more precisely the function<lb/> of these human TLRs. Human colonic epithelial cells cotransfected<lb/> with TLR1 and -2 preferentially respond to a synthetic tripalmitoy-<lb/>lated bacterial lipopeptide analogue (Pam 3 CSK 4 ). However, exami-<lb/>nation of a wide variety of lipopeptide derivatives indicates that<lb/> recognition by human TLR1 and -2 does not strictly correlate with<lb/> the number or position of the acyl chains on the modified cysteine<lb/> residue. Conversely, human TLR2 and -6 exclusively respond to<lb/> lipopeptides possessing a diacylglycerol group. Most surprisingly,<lb/> we have found that an R stereoisomer of diacylated macrophage-<lb/>activating lipopeptide 2 (MALP-2) exclusively activates epithelial<lb/> cells through TLR6 and -2 but not through TLR1 and -2. These<lb/> results suggest that the chirality of the central carbon of the diacyl-<lb/>glycerol group of these agonists is a structural determinant for<lb/> human TLR recognition. Examination of chimeric receptors, gen-<lb/>erated by domain exchange between TLR1 and -6, has revealed that<lb/> leucine-rich repeats 9 –12 of the extracellular domain enable these<lb/> receptors to discriminate between structurally similar lipopeptides.<lb/> However, additional chimeric constructs reveal that this region<lb/> alone is not sufficient to generate receptors that can functionally<lb/> cooperate with TLR2. Our results support the idea that TLR1 and<lb/> TLR6 diverged during evolution to differentially recognize natural<lb/> lipoprotein structures and that this function has been conserved<lb/> with respect to the human receptors.<lb/></div> 
+	
+	<div type="introduction">The innate immune system is an evolutionarily conserved defense<lb/> system that comprises the first line of defense in response to an invading<lb/> pathogen. In vertebrates, the cellular innate immune response generates<lb/> a variety of pro-inflammatory mediators to combat infection while<lb/> simultaneously activating the adaptive immune system. The primary<lb/> triggers of this response are the Toll-like receptors (TLRs),<lb/> 2 a family of<lb/> cell surface innate immune sensors that exist in organisms ranging from<lb/> lower invertebrates to higher mammals. Mammalian TLRs alert the<lb/> host to the presence of infection through direct recognition of con-<lb/>served structural components of viruses, bacteria, or fungi. For example,<lb/> the agonists for TLR3–5 include molecules such as viral double-<lb/>stranded RNA, enteric bacterial lipopolysaccharide, and bacterial flagel-<lb/>lin, respectively (reviewed in Refs. 1 and 2).<lb/> In contrast to other TLRs, TLR2 appears to mediate cellular<lb/> responses to a much wider variety of microbes and microbial compo-<lb/>nents. In accord with this diverse recognition, TLR2-deficient mice<lb/> exhibit differential outcomes in a vast array of infection models<lb/> (reviewed in Ref. 3). At least part of the apparent versatility of TLR2 for<lb/> ligand recognition is afforded by additional TLR family members,<lb/> namely TLR1 or TLR6, that functionally cooperate with this receptor,<lb/> an act which presumably extends the ligand repertoire of this receptor<lb/> (4 – 8).<lb/> It is well established that TLR2 mediates cellular responses to bacte-<lb/>rial lipoproteins (9, 10). In bacteria, production of triacyl-lipoproteins<lb/> occurs through the addition of a diacylglycerol group to the sulfhydryl<lb/> group of cysteine followed by cleavage of the signal sequence and addi-<lb/>tion of a third acyl chain to the now free N-terminal group of the cys-<lb/>teine (11). Many bacterial species do not possess the gene encoding the<lb/> last enzyme in the pathway and therefore produce lipoproteins that lack<lb/> the third acyl chain. MALP-2, a proinflammatory lipopeptide from<lb/> Mycoplasma fermentans, is one such diacylated molecule (12). Studies<lb/> using peritoneal macrophages derived from TLR-deficient mice have<lb/> revealed that murine TLR1 and TLR6 predominantly mediate responses<lb/> to triacylated and diacylated lipopeptides, respectively (13–15). Thus,<lb/> murine TLR1 and TLR6 functionally cooperate with TLR2 and enable<lb/> this receptor to discriminate between these structurally similar<lb/> lipopeptides.<lb/> A number of studies have shown differences between murine and<lb/> human TLR homologues in the recognition of pathogen-derived ago-<lb/>nists. For example, murine and human TLR4 completely differ in their<lb/> ability to respond to lipid IVa, a biosynthetic precursor of LPS lacking<lb/> two secondary acyl chains, and to taxol, an LPS mimetic (16 –18). Addi-<lb/>tionally, murine and human TLR9 are found to differ in the sequence<lb/> context of the CpG motifs that they recognize (19). With respect to<lb/> TLR2, the murine receptor appears to recognize both tripalmitoylated<lb/> and trilauroylated lipopeptides, whereas the human receptor only rec-<lb/>ognizes the former but not the latter compound (20). Together, these<lb/> studies demonstrate that one cannot make strict inferences about spec-<lb/>ificity with respect to TLR recognition between mice and humans.<lb/> Here we have performed a systematic analysis of the structural fea-<lb/>tures of lipopeptides important for human TLR2/1 versus TLR2/6 dis-<lb/>crimination. As different bacterial species express different lipoprotein<lb/> structures and active lipopeptides can be chemically synthesized, these<lb/> molecules provide a means to examine the structural features of these<lb/> agonists essential for recognition by either TLR2/1 or TLR2/6 combi-<lb/>nations (21–23). Our studies have revealed that subtle changes in</div>
+
+		</front>
+	</text>
+</tei>

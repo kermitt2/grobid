@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55002067"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Data Sheet<lb/></note>
+
+	<docTitle>
+	<titlePart>DiskOnChip Millennium MD2800,<lb/> MD2810 8MB Single Chip Flash Disk<lb/> </titlePart>
+	</docTitle>
+	
+	<date>JUL 2000<lb/></date>
+	
+	<idno>93-SR-002-00-8L Rev. 2.1</idno>
+
+		</front>
+	</text>
+</tei>

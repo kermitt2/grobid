@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Luca</forename>
+								<surname>Scalia</surname>,
+							</persName>
+							<persName>
+								<forename>Thorsten</forename>
+								<surname>Biermann</surname>,
+							</persName>
+							<persName>
+								<forename>Changsoon</forename>
+								<surname>Choi</surname>,
+							</persName>
+							<persName>
+								<forename>Kazuyuki</forename>
+								<surname>Kozu</surname>,
+							</persName>
+							<persName>
+								<forename>Wolfgang</forename>
+								<surname>Kellerer</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

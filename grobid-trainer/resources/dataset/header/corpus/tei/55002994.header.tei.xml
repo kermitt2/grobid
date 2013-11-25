@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55002994"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note>STT® System – Innovator® Series<lb/></note>
+	
+	<docTitle>
+	<titlePart>Innovator®-100<lb/> Pilot Scale Production – External Heat Exchanger<lb/></titlePart>
+	</docTitle>
+
+	<div type="introduction">The STT® system is a combination of patented<lb/> processes and equipment for the manufacture of<lb/> chemicals and pharmaceuticals. The Innovator®<lb/> Series of reactors is well suited for pilot scale<lb/> production and process optimization.<lb/> The Innovator® 100 type reactor is designed for general early stage<lb/> research through development phase efforts where there is a need to<lb/> quickly identify and confirm the validity of a reaction as well as to obtain<lb/> significant amounts of product for testing and client evaluation. The<lb/> Innovator® 100 was developed to minimize the amounts of chemicals in<lb/> the reactor at any given time, so it is a good choice for applications where<lb/> the reactants are hazardous (explosive or toxic). Even though the reactor<lb/> is small, it has been constructed using the same design principles that<lb/> would be used for a commercial reactor, and processes can be easily<lb/> scaled to pilot plant through commercial sized production output.<lb/></div>
+
+		</front>
+	</text>
+</tei>

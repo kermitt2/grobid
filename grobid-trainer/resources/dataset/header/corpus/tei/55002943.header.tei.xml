@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55002943"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Digital Imaging and Communications in Medicine (DICOM)<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Supplement 28: Grayscale Standard Display Function<lb/> </note>
+
+	<note type="submission">Status:<lb/> Final Text -28 January, 1998<lb/> </note>
+
+	<note type="other">Published by:<lb/></note>
+
+	<byline>
+	<affiliation>National Electrical Manufacturers Association<lb/></affiliation>
+	</byline>
+
+	<address>1300 N. 17<lb/> th Street, Suite 1847<lb/> Rosslyn, Virginia 22209<lb/></address>
+
+	<note type="copyright">Copyright 1998 by National Electrical Manufacturers Association</note>
+
+		</front>
+	</text>
+</tei>

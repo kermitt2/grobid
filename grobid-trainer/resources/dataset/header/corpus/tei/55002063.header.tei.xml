@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55002063"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>A SIP-based Web Session Migration Service<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Michael Adeyeye, Neco Ventura and *David Humphrey<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Electrical Engineering, University of Cape Town,<lb/></affiliation>
+	</byline>
+
+	<address>Private Bag X3, Rondebosch 7701, South Africa<lb/></address>
+
+	<email>{micadeyeye; neco}@crg.ee.uct.ac.za<lb/></email>
+
+	<byline>
+	<affiliation>*School of Computer Studies, Seneca College,</affiliation>
+	</byline>
+
+	<address>Toronto, Canada<lb/></address>
+
+	<email>david.humphrey@senecac.on.ca<lb/></email>
+
+	<div type="abstract">Abstract-Web session handoff is one of the ways of improving<lb/> the web browsing experience; other ways include the use of<lb/> bookmarks and web history synchronization between two PCs.<lb/> This paper discusses the implementation and evaluation of a SIP-<lb/>based web session migration service. A graphical tool, which is<lb/> called Data Flow Diagram, is used to describe how the session<lb/> migration service works. This work is compared with other<lb/> existing web session migration approaches. In addition, the large<lb/> scale deployment and limitations of the service are also discussed.<lb/> Although all web sessions could not be migrated, the session<lb/> mobility service worked in a Peer-to-Peer environment and<lb/> offered SIP functionalities within web browsers. That is, a web<lb/> browser can now act as an adaptive User Agent Client to surf the<lb/> Internet and set-up multimedia sessions like a SIP client. In<lb/> summary, it is a novel approach to web session migration in<lb/> which SIP is used to transfer session data. It also borrowed SIP<lb/> Mobility mechanisms to introduce new service, namely content<lb/> sharing and session handoff, to the web browsing experience.<lb/></div>
+
+	<keyword>Keywords: Web Session Migration, SIP, HTTP, Web Browser<lb/> Extension<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Sung</forename>
+								<middlename>Heum</middlename>							
+								<surname>Park</surname>,
+							</persName>
+							<persName>
+								<forename>Anshuman</forename>
+								<surname>Roy</surname>,
+							</persName>
+							<persName>
+								<forename>Serge</forename>
+								<surname>Beaupré</surname>,
+							</persName>
+							<persName>
+								<forename>Shinuk</forename>
+								<surname>Cho</surname>,
+							</persName>
+							<persName>
+								<forename>Nelson</forename>
+								<surname>Coates</surname>,
+							</persName>
+							<persName>
+								<forename>Ji</forename>
+								<middlename>Sun</middlename>
+								<surname>Moon</surname>,
+							</persName>
+							<persName>
+								<forename>Daniel</forename>
+								<surname>Moses</surname>,
+							</persName>
+							<persName>
+								<forename>Mario</forename>
+								<surname>Leclerc</surname>,
+							</persName>
+							<persName>
+								<forename>Kwanghee</forename>
+								<surname>Lee</surname> and
+							</persName>
+							<persName>
+								<forename>Alan</forename>
+								<middlename>J</middlename>.
+								<surname>Heeger</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

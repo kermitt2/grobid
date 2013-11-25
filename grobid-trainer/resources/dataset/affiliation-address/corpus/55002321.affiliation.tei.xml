@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>a</marker>
+							<orgName type="department">Department of Chemistry</orgName>,
+							<orgName type="institution">Oregon State University</orgName>,
+							<address>
+								<settlement>Corvallis</settlement>,
+								<region>Oregon</region>
+								<postCode>97331</postCode>,
+								<country>USA</country>.
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>b</marker>
+							<orgName type="department">Department of Chemistry</orgName>,
+							<orgName type="institution">Colorado State University</orgName>,
+							<address>
+								<addrLine>Fort Collins</addrLine>,
+								<region>Colorado</region>
+								<postCode>80523</postCode>,
+								<country>USA</country>.
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>c</marker>
+							<orgName type="department">Department of Environmental and Molecular Toxicology</orgName>,
+							<orgName type="institution">Oregon State University</orgName>,
+							<lb/>
+							<address>
+								<settlement>Corvallis</settlement>,
+								<region>Oregon</region>
+								<postCode>97331</postCode>,
+								<country>USA</country>.
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

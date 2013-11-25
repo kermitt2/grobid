@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Shunya</forename>
+								<surname>Shindo</surname>,
+								<roleName>MD ·</roleName>
+							</persName>
+							<persName>
+								<forename>Koji</forename>
+								<surname>Ogata</surname>,
+								<roleName>MD</roleName>
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Kenji</forename>
+								<surname>Kubota</surname> ,
+								<roleName>MD ·</roleName>
+							</persName>
+							<persName>
+								<forename>Atsuo</forename>
+								<surname>Kojima</surname> ,
+								<roleName>MD</roleName>
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Masahiro</forename>
+								<surname>Kobayashi</surname>,
+								<roleName>MD·</roleName>
+							</persName>
+							<persName>
+								<forename>Yusuke</forename>
+								<surname>Tada</surname> ,
+								<roleName>MD</roleName>
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Katsumi</forename>
+								<surname>Okuyama</surname> ,							
+								<roleName>MD</roleName>
+							</persName>						
+							
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

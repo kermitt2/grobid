@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003603"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Product Information<lb/> </note>
+	
+	<date>08.09.06<lb/></date>
+
+	<docTitle>
+	<titlePart>IMWITOR ® 308 Glycerylmonocaprylate, Monoester &gt;80 %<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">…</note>
+
+	<byline>
+	<affiliation>Sasol Germany GmbH Oleochemicals</affiliation>
+	</byline>
+
+	<address>Arthur-Imhausen-Str. 92, 58453 Witten, Germany<lb/></address>
+
+	<note type="page">1/4<lb/></note>
+
+	<phone>Phone: +49 2302 925-251<lb/> Fax: +49 2302 925-358<lb/></phone>
+
+	<email>info@de.sasol.com<lb/> </email>
+	
+	<ptr>www.sasol.com<lb/></ptr>
+
+		</front>
+	</text>
+</tei>

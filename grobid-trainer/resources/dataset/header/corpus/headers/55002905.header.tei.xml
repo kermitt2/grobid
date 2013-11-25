@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55002905"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Second Edition<lb/> Handbook on Ontologies<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>@BULLET Steffen Staab Rudi Studer (Eds.)<lb/></docAuthor>
+	</byline>
+
+		</front>
+	</text>
+</tei>

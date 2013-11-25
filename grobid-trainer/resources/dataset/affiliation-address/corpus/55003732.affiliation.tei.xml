@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="laboratory">Laboratoire des Oxydes et Fluorures</orgName>,
+							<orgName type="laboratory">UMR CNRS 6010</orgName>,
+							<orgName type="institution">Université du Maine</orgName>,
+							<address>
+								<addrLine>Avenue Olivier Messiaen</addrLine>,
+								<postCode>72085</postCode>
+								<settlement>Le Mans cedex 9</settlement>,
+								<country>France</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="laboratory">IRCELYON</orgName>,
+							<orgName type="laboratory">Institut de Recherches sur la Catalyse et l&apos;Environnement de Lyon</orgName>,
+							<orgName type="laboratory">UMR CNRS 5256</orgName>,
+							<orgName type="institution">Université Lyon 1</orgName>,
+							<orgName type="institution">CNRS</orgName>,
+							<address>
+								<addrLine>2 avenue Albert Einstein</addrLine>,
+								<postCode>69626</postCode>
+								<settlement>Villeurbanne</settlement>,
+								<country>France</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>3</marker>
+							<orgName type="laboratory">Laboratoire d&apos;Electrochimie et de Physico-chimie des Matériaux et des Interfaces</orgName>,
+							<orgName type="laboratory">UMR CNRS 5631-INPG-UJF</orgName>,
+							<address>
+								<addrLine>BP 75</addrLine>,
+								<postCode>38402</postCode>
+								<settlement>Saint<lb/> Martin d&apos;Hères cedex</settlement>,
+								<country>France</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>4</marker>
+							<orgName type="institution">Ecole Nationale Supérieure des Mines</orgName>,
+							<orgName type="laboratory">LPMG-UMR CNRS 5148</orgName>,
+							<orgName type="department">Département Microsystèmes Instrumentation et Capteurs Chimiques</orgName>,
+							<lb/>
+							<orgName type="department">Centre SPIN</orgName>,
+							<address>
+								<addrLine>158 Cours Fauriel</addrLine>,
+								<addrLine>Saint-Etienne 42023</addrLine>,
+								<country>France</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>5</marker>
+							<orgName type="department">Institut Carnot de Bourgogne</orgName>,
+							<orgName type="laboratory">UMR CNRS 5209</orgName>,
+							<address>
+								<addrLine>9 Avenue Alain Savary</addrLine>,
+								<addrLine>BP 47870</addrLine>,
+								<postCode>21078</postCode>
+								<settlement>Dijon cedex</settlement>,
+								<country>France</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

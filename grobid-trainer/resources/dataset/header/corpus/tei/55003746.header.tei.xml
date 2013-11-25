@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003746"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>ITAL.J.ANIM.SCI. VOL. 6, 151-164, 2007<lb/></reference>
+
+	<note type="page">151<lb/></note>
+
+	<byline>
+	<docAuthor>Alessio Bonaldo<lb/> 1<lb/> , Kim D. Thompson<lb/> 2<lb/> , Amedeo Manfrin<lb/> 3<lb/> , Alexandra Adams<lb/> 2<lb/> , Erminio Murano<lb/> 4<lb/> , Attilio Luigi Mordenti<lb/> 1<lb/> , Pier Paolo Gatta<lb/> 1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Dipartimento di Morfofisiologia veterinaria e Produzioni animali. Università di Bologna,</affiliation>
+	</byline>
+
+	<address>Italy<lb/></address>
+
+	<byline>
+	<affiliation>2 Institute of Aquaculture. University of Stirling,</affiliation>
+	</byline>
+
+	<address>Scotland, UK<lb/></address>
+
+	<byline>
+	<affiliation>3 Istituto Zooprofilattico Sperimentale delle Venezie.</affiliation>
+	</byline>
+
+	<address>Padova, Italy<lb/></address>
+
+	<byline>
+	<affiliation>4 Protos Research Institute.</affiliation>
+	</byline>
+
+	<address>Trieste, Italy<lb/></address>
+
+	<docTitle>
+	<titlePart>The influence of dietary β β-glucans<lb/> on the adaptive and innate<lb/> immune responses of European<lb/> sea bass (Dicentrarchus labrax)<lb/> vaccinated against vibriosis<lb/> </titlePart>
+	</docTitle>
+
+	<div type="abstract">ABSTRACT<lb/> The effects of feeding 1,3/1,6 β-glucans on the innate and the adaptive immune responses of European<lb/> sea bass (Dicentrarchus labrax) was investigated. Two experiments were carried out during the study. In<lb/> the first, a number of non-specific immune parameters were examined at 4, 7, 10, 14, 21 and 25 days<lb/> of feeding fish with a semipurified diet containing Macrogard ©, a commercially available form of 1,3/1,6<lb/> β-glucans. The respiratory burst activity of head kidney macrophages isolated from the different groups<lb/> of fish fed the immunostimulant peaked and subsequently decreased at different times during the exper-<lb/>iment. Head kidney macrophages from fish fed 250 ppm β-glucans had a statistically higher level of res-<lb/>piratory burst activity at Day 21 of feeding compared with fish fed no immunostimulant. No statistical dif-<lb/>ferences were observed in lyzozyme activity during this trial.<lb/> In the second experiment, the effect of feeding 1,3/1,6 β-glucans on the immune response of fish to an<lb/> alginate-encapsulated Vibrio vaccine administered orally was examined. Respiratory burst of head kidney<lb/> macrophages and serum lysozyme activity decreased in all fish over the course of the trial, while serum<lb/> lysozyme activity was considerably lower than values obtained in the first experiment. Fish vaccinated<lb/> orally had significant increases in antibody response by Week 2 post-vaccination, but β-glucans did not<lb/> appear to affect these levels. Vaccination may have resulted in activating the immune system as a whole,<lb/> thus masking any difference in immunostimulation by the β-glucans. It may be that the optimal doses<lb/> and timing of β-glucans administration is different when the immunostimulant is administered alone or in<lb/> combination with the vaccine.<lb/> In conclusion, European sea bass can be immunomodulated with oral administration of β-glucan.<lb/> Optimal doses and administration times have been established when β-glucans are fed alone,<lb/> although further studies are needed to establish ideal feeding regimes for glucans administrated in<lb/> combination with vaccination.</div>
+
+		</front>
+	</text>
+</tei>

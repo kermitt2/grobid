@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003838"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Real-Time Sensor Anomaly Detection<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Christopher Quinonez<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Stennis Space Center<lb/></affiliation>
+	</byline>
+
+	<date>August, 20<lb/> th<lb/> , 2010<lb/></date>
+
+	<note type="other">Reviewed by: Fernando Figueroa,Ph.D.<lb/> Technology Development and Transfer Engineering Division<lb/></note>
+
+	<div type="abstract">Abstract<lb/> Improve signal anomaly detection for ISHM system, in which the system is self-monitoring. In<lb/> particular improve detection of spikes and noisy regions of signals. Researched statistical analysis of<lb/> measurements using kurtosis and skewness in order to develop algorithms to detect noise and spikes.<lb/> Also researched spectral analysis of signals, as well as statistical analysis of the spectral data in order to<lb/> develop algorithms. Two spike detection algorithms were created analyzing the spectral data, as well as<lb/> one noise detection algorithm. Skewness of measurements was useful in removing false positives from<lb/> detection for noise.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55002159"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Why Simultaneous Sizing and Fluorescence is Necessary in<lb/> Order to Do Microbial Detection<lb/></titlePart>
+	</docTitle>
+
+	<div type="introduction">Many devices detect the size of particles, many detect fluorescence, and some even do<lb/> each sequentially. This whitepaper explains why none of these methods is sufficient and<lb/> why is it necessary that size and fluorescence be measured simultaneously, and for each<lb/> particle individually.<lb/> The best way to approach this question is to consider what would happen if the<lb/> simultaneous determination of auto florescence and sizing were not possible. First, let&apos;s<lb/> consider what information is gained solely by sizing particles, as is done every day by a<lb/> variety of commercially available particle detectors, many of which are mandated for use<lb/> in areas such as pharmaceutical manufacturing facilities. As is shown in Fig. 1, the size<lb/> ranges of several biological and inert particles overlap (such as is the case with dust and<lb/> bacteria), so knowing that one or more particles exist, for example, in the 5 micron range<lb/> is not determinative of if the particle is bacteria or dust. As a result, particle counters<lb/> cannot unambiguously measure microbial contamination.<lb/> Fig. 1 Graph of particle size ranges of relevant substances.<lb/> Next, let&apos;s consider the case where only fluorescence is measured. Properly used, some<lb/> types of fluorescence are very useful to determine whether a particle is biological or inert.<lb/> This is also already done today. Let&apos;s say that one of these devices indicates that some<lb/> particles that have been examined contain florescence. However, this method alone does</div>
+
+		</front>
+	</text>
+</tei>

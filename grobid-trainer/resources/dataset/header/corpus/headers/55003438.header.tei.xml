@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003438"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Journal of Membrane Science 275 (2006) 212–219<lb/></reference>
+
+	<docTitle>
+	<titlePart>Plasma-treated PDMS-membranes in solvent resistant nanofiltration:<lb/> Characterization and study of transport mechanism<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>S. Aerts a,c , A. Vanhulsel a , A. Buekenhoudt a , H. Weyten a , S. Kuypers a , H. Chen a ,<lb/> M. Bryjak b , L.E.M. Gevers c , I.F.J. Vankelecom c,* , P.A. Jacobs c<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a Process Technology, Flemish Institute for Technological Research (VITO),</affiliation>
+	</byline>
+
+	<address>Boeretang 200, 2400 Mol, Belgium<lb/></address>
+
+	<byline>
+	<affiliation>b Institute of Organic and Polymer Technology, Wroclaw University of Technology,</affiliation>
+	</byline>
+
+	<address>Wybrzeze Wyspianskiego 27, 50-370 Wroclaw, Poland<lb/></address>
+
+	<byline>
+	<affiliation>c Centre for Surface Chemistry and Catalysis (COK), Faculty of Bio-Engineering, Katholieke Universiteit Leuven,<lb/></affiliation>
+	</byline>
+
+	<address>Kasteelpark Arenberg 23, 3001 Leuven, Belgium<lb/></address>
+
+	<note type="submission">Received 9 November 2004; received in revised form 15 August 2005; accepted 10 September 2005<lb/></note>
+
+	<date>Available online 25 October 2005<lb/></date>
+
+	<div type="abstract">Abstract<lb/> Laboratory-made polydimethylsiloxane (PDMS) membranes were subjected to plasma treatments with three different plasmas: an Ar, Ar-H 2 and<lb/> Ar-O 2 plasma. Two parameters of the Ar-O 2 treatment, the applied power and the treatment time, were evaluated. The effects of these treatments on<lb/> the PDMS-membranes were studied through the use of XPS-analysis, contact angle measurements and surface energy calculations. The plasma-<lb/>treated membranes were tested in the filtration of three selected dyes: methylene blue, methyl orange and disperse red 1. From these experiments<lb/> insight in the transport mechanism for solvent resistant nanofiltration (SRNF) through the plasma-treated membranes was gained.<lb/></div>
+
+	<note type="copyright">© 2005 Elsevier B.V. All rights reserved.<lb/></note>
+
+	<keyword>Keywords: Solvent resistant nanofiltration; Transport mechanism; Plasma treatment; PDMS; Membrane modification<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

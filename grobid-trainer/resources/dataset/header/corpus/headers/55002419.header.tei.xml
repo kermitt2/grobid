@@ -1,0 +1,56 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55002419"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Before the<lb/> FEDERAL COMMUNICATIONS COMMISSION<lb/> Washington, DC 20554<lb/> In the Matter of<lb/> )<lb/> Amendment of the Commission&apos;s Rules<lb/> to Provide Spectrum for the Operation of<lb/> Medical Body Area Networks<lb/> ) )<lb/> ) )<lb/></note>
+
+	<idno>ET Docket No. 08-59<lb/></idno>
+
+	<note type="other">To: The Commission<lb/></note>
+
+	<docTitle>
+	<titlePart>PHILIPS HEALTHCARE SYSTEMS<lb/> REPLY COMMENTS<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Delroy Smith<lb/> Engineering Project Leader<lb/></docAuthor> 
+	</byline>
+	
+	<byline>
+	<affiliation>PHILIPS HEALTHCARE SYSTEMS, a Division of<lb/> Philips Electronics North America Corporation<lb/></affiliation>
+	</byline>
+
+	<address>Andover, MA 01810<lb/></address>
+
+	<byline>
+	<docAuthor>Monisha Ghosh<lb/> Principal Member Research Staff<lb/> </docAuthor>
+	</byline>
+		
+	<byline>
+	<affiliation>Philips Research Labs<lb/> </affiliation>
+	</byline>
+	
+	<address>Briarcliff Manor, New York, NY 10510<lb/></address>
+
+	<date>November 4, 2009<lb/></date>
+
+	<byline>
+	<docAuthor>Dong Wang<lb/> Senior Member Research Staff<lb/></docAuthor>
+	</byline>
+		
+	<byline>
+	<affiliation>Philips Research Labs<lb/></affiliation>
+	</byline>
+
+	<address>Briarcliff Manor, New York, NY 10510<lb/></address>
+
+	<note type="other">TABLE OF CONTENTS<lb/></note>
+	<note type="other">Page<lb/> EXECUTIVE SUMMARY<lb/></note>
+
+		</front>
+	</text>
+</tei>

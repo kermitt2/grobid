@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003283"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note>SPE 115952<lb/> </note>
+	
+	<docTitle>
+	<titlePart>Is Reverse Osmosis Effective for Produced Water Purification?<lb/> Viability and Economic Analysis<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Shanker Muraleedaaran, SPE, Xinhua Li, SPE, Liangxiong Li, SPE, and Robert Lee, SPE,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Petroleum Recovery<lb/> Research Center, New Mexico Institute of Mining and Technology<lb/></affiliation>
+	</byline>
+
+	<note type="copyright">Copyright 2009, Society of Petroleum Engineers<lb/> </note>
+	
+	<note type="other">This paper was prepared for presentation at the </note>
+		
+	<reference>2009 SPE Western Regional Meeting held in San Jose, California, USA, 24–26 March 2009.<lb/></reference>
+
+	<note type="other">This paper was selected for presentation by an SPE program committee following review of information contained in an abstract submitted by the author(s). Contents of the paper have not been<lb/>
+
+	reviewed by the Society of Petroleum Engineers and are subject to correction by the author(s). The material does not necessarily reflect any position of the Society of Petroleum Engineers, its<lb/> officers, or members. Electronic reproduction, distribution, or storage of any part of this paper without the written consent of the Society of Petroleum Engineers is prohibited. Permission
+
+	to<lb/> reproduce in print is restricted to an abstract of not more than 300 words; illustrations may not be copied. The abstract must contain conspicuous acknowledgment of SPE copyright.<lb/></note> 
+	
+	<div type="abstract">Abstract The ultimate goal of produced water management is to remove dissolved components and use the desalinated<lb/> water for beneficial uses that can effectively alleviate environmental impact and water shortage. Presently, many of<lb/> the efforts have been focused on membrane technologies including reverse osmosis and electrodialysis.<lb/> Unfortunately, no large scale implication of produced water desalination by membranes has been reported. The<lb/> main obstacle against the deployment of desalination technologies for produced water purification has always been<lb/> the complicated chemical composition and associated high operating cost. Membrane technologies are generally<lb/> believed to be energy efficient due to single-phase operation comparing to thermal-based desalinations. However,<lb/> the presence of dissolved organics and scale deposition on membrane surfaces require sophisticated pretreatment<lb/> and frequent membrane replacement, adding to the water treatment costs.<lb/> Reverse osmosis membranes including polymeric membranes and molecular sieve zeolite membranes were<lb/> investigated for ion removal from produced water by a cross-flow RO process. Considerable flux decline with<lb/> elapsed operation time was observed from 11.5 to 6.8 L/m</div>
+
+		</front>
+	</text>
+</tei>

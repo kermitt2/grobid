@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Peter</forename>
+								<middlename>R</middlename>.
+								<middlename>C</middlename>.
+								<surname>Gascoyne</surname>,
+								<marker>* a</marker>
+							</persName>
+							<persName>
+								<forename>Jody</forename>
+								<middlename>V</middlename>.
+								<surname>Vykoukal</surname>,
+								<marker>a</marker>
+							</persName>
+							<persName>
+								<forename>Jon</forename>
+								<middlename>A</middlename>.
+								<surname>Schwartz</surname>,
+								<marker>a</marker>
+							</persName>
+							<persName>
+								<forename>Thomas</forename>
+								<middlename>J</middlename>.
+								<surname>Anderson</surname>,
+								<marker>a</marker>
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Daynene</forename>
+								<middlename>M</middlename> .
+								<surname>Vykoukal</surname> ,
+								<marker>a</marker>
+							</persName>
+							<persName>
+								<forename>K</forename> .
+								<middlename>Wayne</middlename>
+								<surname>Current</surname> ,
+								<marker>b</marker>
+							</persName>
+							<persName>
+								<forename>Charles</forename>
+								<surname>McConaghy</surname> ,
+								<marker>c</marker>
+							</persName>
+							<persName>
+								<forename>Frederick</forename>
+								<middlename>F</middlename> .
+								<surname>Becker</surname>
+								<marker>a</marker>
+								<lb/> 
+								and
+							</persName>
+							<persName>
+								<forename>Craig</forename>
+								<surname>Andrews</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

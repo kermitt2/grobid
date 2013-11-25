@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55002297"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">ESG<lb/> Engineering Services Group<lb/></note>
+
+	<docTitle>
+	<titlePart>1xEV-DO Revision A<lb/> Over-the-Air<lb/> QoS Configuration Example<lb/></titlePart>
+	</docTitle>
+
+	<date>August 30, 2007<lb/></date>
+
+	<idno>80-W1102-1 Rev B<lb/></idno>
+
+	<note type="other">QUALCOMM is a registered trademark of QUALCOMM Incorporated in the United States and may be<lb/> registered in other countries. Other product and brand names may be trademarks or registered trademarks<lb/> of their respective owners. CDMA2000 is a registered certification mark of the Telecommunications Industry<lb/> Association, used under license. ARM is a registered trademark of ARM Limited. QDSP is a registered<lb/> trademark of QUALCOMM Incorporated in the United States and other countries.<lb/> This technical data may be subject to U.S. export, re-export or transfer (&quot;export&quot;) laws. Diversion contrary to<lb/> U.S. law is prohibited.<lb/></note>
+
+	<byline>
+	<affiliation>QUALCOMM Incorporated<lb/></affiliation>
+	</byline>
+
+	<address>5775 Morehouse Drive<lb/> San Diego, CA 92121-1714<lb/> U.S.A.<lb/></address>
+
+	<note type="copyright">Copyright © 2007 QUALCOMM Incorporated.<lb/> All rights reserved</note>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55002132"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Determination of Fluorescence Cross-Sections of Biological<lb/> Aerosols<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Reiner Weichert, Walter Klemm, Kurt Legenhausen, Claudia Pawellek*<lb/></docAuthor>
+	</byline>
+
+	<note type="submission">(Received: 9 April 2002; accepted: 22 April 2002)<lb/></note>
+
+	<div type="abstract">Abstract<lb/> Biological aerosols like pollen or bacteria can be<lb/> differentiated from non-biological aerosols as dust by<lb/> fluorescence. Several organic substances contained in<lb/> biological particles emit fluorescence light if they are<lb/> illuminated with ultraviolet light. An instrument has<lb/> been developed which generates aerosols of individual<lb/> bacteria, illuminates them with light in the range of<lb/> wavelengths from 220 to 570 nm and detects the spectra<lb/> of fluorescence. The instrument has been tested on<lb/> different species of bacteria showing that their fluo-<lb/>rescence spectra are different.<lb/></div>
+
+	<keyword>Keywords: aerosol, bacteria, fluorescence<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

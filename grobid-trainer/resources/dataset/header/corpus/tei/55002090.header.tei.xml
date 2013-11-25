@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55002090"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">← History of this study<lb/> ↑ Current version of this study<lb/></note>
+
+	<docTitle>
+	<titlePart>View of NCT00434798 on 2007_03_01<lb/> </titlePart>
+	</docTitle>
+
+	<idno>ClinicalTrials Identifier:<lb/> NCT00434798<lb/> </idno>
+	
+	<note type="submission">Updated:<lb/> 2007_03_01<lb/></note>
+
+	<div type="abstract">Descriptive Information<lb/> Brief title<lb/> Campylobacter Jejuni Challenge Model<lb/> Development: Dose Ranging Study<lb/> Official title<lb/> Campylobacter Jejuni Challenge Model<lb/> Development: Dose Ranging Study<lb/></div>
+	
+
+		</front>
+	</text>
+</tei>

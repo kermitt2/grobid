@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003112"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<affiliation>GalvInfo Center<lb/></affiliation>
+	</byline>
+
+	<email>email: info@galvinfo.com<lb/></email>
+
+		</front>
+	</text>
+</tei>

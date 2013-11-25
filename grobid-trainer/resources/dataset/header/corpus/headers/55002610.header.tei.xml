@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55002610"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">1<lb/></note>
+
+	<docTitle>
+	<titlePart>DVIPS: A T E X Driver<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Tomas Rokicki,</docAuthor>
+	</byline>
+
+	<email>rokicki@cs.stanford.edu<lb/></email>
+
+		</front>
+	</text>
+</tei>

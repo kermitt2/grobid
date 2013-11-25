@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>C</forename>.
+								<surname>Warmsingh</surname>,
+							</persName>
+							<persName>
+								<forename>Y</forename>.
+								<surname>Yoshida</surname>, and
+							</persName>
+							<persName>
+								<forename>D</forename>.
+								<surname>Readey</surname>
+							</persName>
+							<persName>
+								<forename>J</forename>.
+								<surname>Perkins</surname>,
+							</persName>
+							<persName>
+								<forename>P</forename>.
+								<surname>Parilla</surname>,
+							</persName>
+							<persName>
+								<forename>C</forename>.
+								<surname>Teplin</surname>,
+							</persName>
+							<persName>
+								<forename>T</forename>.
+								<surname>Kaydanova</surname>,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>J</forename>.
+								<surname>Alleman</surname> ,
+							</persName>
+							<persName>
+								<forename>L</forename> .
+								<surname>Gedvilas</surname> ,
+							</persName>
+							<persName>
+								<forename>B</forename> .
+								<surname>Keyes</surname> ,
+							</persName>
+							<persName>
+								<forename>T</forename> .
+								<surname>Gessert</surname> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>T</forename> .
+								<surname>Coutts</surname>, and
+							</persName>
+							<persName>
+								<forename>D</forename> .
+								<surname>Ginley</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

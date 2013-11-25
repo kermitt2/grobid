@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003894"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">PAPER<lb/> </note>
+	
+	<ptr>www.rsc.org/dalton | </ptr>
+	
+	<affiliation>Dalton Transactions<lb/></affiliation>
+
+	<docTitle>
+	<titlePart>New crystal structure and characterization of lanthanum tungstate<lb/> &quot;La 6 WO 12 &quot; prepared by freeze-drying synthesis<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Anna Magrasó,*<lb/> a,b Carlos Frontera,<lb/> c David Marrero-López<lb/> a,d and Pedro Núñez<lb/>a<lb/></docAuthor>
+	</byline>
+
+	<note type="submission">Received 17th August 2009, Accepted 10th September 2009<lb/> </note>
+
+	<date>First published as an Advance Article on the web 29th September 2009<lb/></date>
+
+	<idno type="DOI">DOI: 10.1039/b916981b<lb/></idno>
+
+	<div type="abstract">Lanthanum tungstates with a La/W atomic ratio between 6 and 4.8 have been synthesized as<lb/> polycrystalline materials using the freeze-drying wet-chemical precursor method. Our results show that<lb/> a single phase material is obtained when the La/W ratio is between 5.3 and 5.7 (T = 1500<lb/> @BULLET C). Outside<lb/> this compositional range, segregation of either La 2 O 3 (La/W ≥ 5.8) or La 6 W 2 O 15 (La/W ≤ 5.2) are<lb/> found. We have solved the crystal structure for the composition with a La/W nominal atomic ratio of<lb/> 5.6 by combining powder X-ray and powder neutron diffraction techniques. This structure substantially<lb/> differs from that previously reported for Ln 6 WO 12 (Ln = Y, Ho). The main differences between the two<lb/> structure types are the crystal symmetry, the different coordination environment of the cations and the<lb/> formula unit. The formula unit can be written as La 6.63 W 1.17 O 13.43 (Z = 4; calculated density =<lb/> 6.395 g/cm<lb/> 3 ), well in accordance with the diffraction techniques, He-pycnometry and electron probe<lb/> microanalysis. These materials can be described as a face centred cubic structure with space group<lb/> F ¯<lb/> 43m. Lattice parameters vary between 11.173 and 11.188 Å , depending on composition. Dense<lb/> ceramic materials are obtained at 1400<lb/> @BULLET C, and microanalyses measurements indicate that no significant<lb/> tungsten evaporation occurs compared to the nominal values. Compositions with La 2 O 3 segregation<lb/> show similar conductivity values as the single phase ones, but those containing segregation of W-rich<lb/> phases show a considerable drop in conductivity with increasing content of the secondary phase.<lb/></div>
+
+		</front>
+	</text>
+</tei>

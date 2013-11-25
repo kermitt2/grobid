@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Scott</forename>
+								<middlename>M</middlename>.
+								<surname>Wilhelm</surname>
+							<lb/>
+								<marker>1</marker>,
+							</persName>
+							<persName>
+								<forename>Jacques</forename>
+								<surname>Dumas</surname>
+							<lb/>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>Lila</forename>
+								<surname>Adnane</surname>
+							<lb/>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>Mark</forename>
+								<surname>Lynch</surname>
+							<lb/>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>Christopher</forename>
+								<middlename>A</middlename>.
+								<surname>Carter</surname>
+							<lb/>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>Gunnar</forename>
+								<surname>Schütz</surname>
+							<lb/>
+								<marker>2</marker>,
+							</persName>
+							<persName>
+								<forename>Karl - Heinz</forename>
+								<surname>Thierauch</surname>
+							<lb/>
+								<marker>2</marker> and
+							</persName>
+							<persName>
+								<forename>Dieter</forename>
+								<surname>Zopf</surname>
+								<marker>2</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

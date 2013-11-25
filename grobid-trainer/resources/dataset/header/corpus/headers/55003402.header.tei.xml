@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003402"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">WiMAX FORUM PROPRIETARY<lb/></note>
+	
+	<note type="other">WiMAX Forum Proprietary<lb/></note>
+
+	<note type="copyright">Copyright © 2010 WiMAX Forum. All Rights Reserved.<lb/></note>
+
+	<docTitle>
+	<titlePart>WiMAX Forum<lb/> ® Network Architecture<lb/> Architecture, detailed Protocols and Procedures<lb/> Femtocells Core Specification<lb/></titlePart>
+	</docTitle> 
+	
+	<idno>WMF-T33-118-R016v01<lb/> </idno>
+	
+	<note type="other">WiMAX Forum<lb/> ® Approved<lb/> </note>
+	
+	<date>(2010-11-30)</date>
+	
+
+		</front>
+	</text>
+</tei>

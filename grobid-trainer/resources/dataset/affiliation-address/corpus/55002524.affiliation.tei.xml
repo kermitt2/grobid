@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+ From the
+						<affiliation>
+							<orgName type="department">Departments of Cellular and Molecular Medicine * and<lb/> Pathology</orgName>,
+							<lb/>
+							<orgName type="institution">University of California San Diego</orgName>,
+							<address>
+								<addrLine>La Jolla</addrLine>,
+								<settlement>California</settlement>; and the
+							</address>
+							<orgName type="department">Department of Bacteriology and<lb/> Immunology</orgName>,
+							<lb/>
+							<orgName type="institution">Haartman Institute</orgName>,
+							<orgName type="institution">University of Helsinki</orgName>,
+							<address>
+								<settlement>Helsinki</settlement>,
+								<country>Finland</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Heidi</forename>
+								<middlename>R</middlename>.
+								<surname>Bokesch</surname>,<lb/> ,
+							</persName>
+							<persName>
+								<forename>Antony</forename>
+								<surname>Wamiru</surname> ,<lb/>,
+							</persName>
+							<persName>
+								<forename>Stuart</forename>
+								<middlename>F</middlename> .
+								<middlename>J</middlename>.
+								<surname>LeGrice</surname> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>John</forename>
+								<middlename>A</middlename> .
+								<surname>Beutler</surname> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Tawnya</forename>
+								<middlename>C</middlename>.
+								<surname>McKee</surname> ,
+								<marker>*</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

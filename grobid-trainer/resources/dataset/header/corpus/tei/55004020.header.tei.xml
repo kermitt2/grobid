@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004020"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Vol. 175, No. 5<lb/> JOURNAL OF BACTERIOLOGY, Mar. 1993, p. 1257-1263<lb/></reference>
+
+	<note>0021-9193/93/051257-07$02.00/0<lb/></note>
+
+	<note type="copyright">Copyright © 1993, American Society for Microbiology<lb/></note>
+
+	<docTitle>
+	<titlePart>Regulation of Pyocin Genes in Pseudomonas aeruginosa by<lb/> Positive (prtN) and Negative (prtR) Regulatory Genes<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>HIDENORI MATSUI,t YUMIKO SANO, HIROSHI ISHIHARA,4 AND TOMOYUKI SHINOMIYA*<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Mitsubishi Kasei Institute of Life Sciences,</affiliation>
+	</byline>
+
+	<address>11 Minamiooya, Machida, Tokyo 194, Japan<lb/></address>
+
+	<note type="submission">Received 28 September 1992/Accepted 7 December 1992<lb/></note>
+
+	<div type="abstract">Most strains ofPseudomonas aeruginosa produce various types of bacteriocins (pyocins), namely, R-, F-, and<lb/> S-type pyocins. The production of all types of pyocins was shown to be regulated by positive (prtN) and negative<lb/> (prtR) regulatory genes. The prtN gene activates the expression of various pyocin genes, probably by the<lb/> interaction of its product with the DNA sequences conserved in the 5&apos; noncoding regions of the pyocin genes.<lb/> The prtR gene represses the expression of the prtN gene, and its product, predicted from the nucleotide<lb/> sequence, has a structure characteristic of phage repressors and seems to be inactivated by the RecA protein<lb/> activated by DNA damage. A model for the regulation of the pyocin genes is proposed.<lb/> </div>
+<div type="introduction">The production of pyocins in Pseudomonas aeruginosa is<lb/> inducible by treatments that cause damage to DNA and is<lb/> dependent on the recA gene (19, 24). Determination of the<lb/> nucleotide sequence of the recA gene in P. aeruginosa<lb/> revealed that a sequence homologous to the SOS box, the<lb/> binding site for the LexA protein of Escherichia coli, was<lb/> present in its 5&apos; noncoding region (19). These results sug-<lb/>gested that the production of pyocins may be regulated by a<lb/> system similar to the SOS system in E. coli, in which various<lb/> SOS genes and colicin genes are activated by cleavage of the<lb/> LexA repressor catalyzed by activated RecA protein (28).<lb/> However, the following recent findings suggested the<lb/> possibility that the inducible production of pyocins in P.<lb/> aeruginosa is regulated by a mechanism different from that</div>
+
+		</front>
+	</text>
+</tei>

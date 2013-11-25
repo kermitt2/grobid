@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">School of Chemistry and Molecular Engineering</orgName>,
+							<orgName type="institution">Seoul National University</orgName>,
+							<address>
+								<addrLine>San 56-1</addrLine>,
+								<addrLine>Gwanak-gu</addrLine>,
+								<settlement>Seoul</settlement>,
+								<postCode>151-742</postCode>,
+								<country>Korea</country>.
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

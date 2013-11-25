@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55002904"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>EMC Design<lb/> Fundamentals EMC Design<lb/> Fundamentals<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>James Colotti<lb/></docAuthor>
+	</byline>
+
+	<note type="other">EMC Certified by NARTE<lb/> Staff Analog Design Engineer<lb/></note>
+
+	<affiliation>Telephonics -Command Systems Division</affiliation>
+	
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Chao</forename>
+								<surname>Lin</surname>,
+							</persName>
+							<persName>
+								<forename>Zhiyuan</forename>
+								<surname>Zhong</surname>,
+								<marker>*</marker>
+							<lb/> .
+							</persName>
+							<persName>
+								<forename>Martin</forename>
+								<middlename>C</middlename> .
+								<surname>Lok</surname> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Xulin</forename>
+								<surname>Jiang</surname> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Wim</forename>
+								<middlename>E</middlename> .
+								<surname>Hennink</surname> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Jan</forename>
+								<surname>Feijen</surname>,<lb/> and
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Johan</forename>
+								<middlename>F</middlename>.
+								<middlename>J</middlename>.
+								<surname>Engbersen</surname>
+								<marker>*</marker>
+								,<lb/>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

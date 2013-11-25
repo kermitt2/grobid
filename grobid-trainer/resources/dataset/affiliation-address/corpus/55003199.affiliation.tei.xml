@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>a</marker>
+							<orgName type="department">Department of Chemical Engineering</orgName>,
+							<orgName type="institution">Massachusetts Institute of Technology</orgName>,
+							<address>
+								<addrLine>Room 56-469</addrLine>,
+								<settlement>Cambridge</settlement>,
+								<region>MA</region>
+								<postCode>02139</postCode>,
+								<country>USA</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>b</marker>
+							<orgName type="department">Department of Chemical and Biological Engineering</orgName>,
+							<orgName type="institution">University at Buffalo</orgName>,
+							<orgName type="institution">State University of New York</orgName>,
+							<address>
+								<addrLine>303 Clifford C. Furnas Hall</addrLine>,
+								<settlement>Buffalo</settlement>,
+								<region>NY</region>
+								<postCode>14260</postCode>,
+								<country>USA</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

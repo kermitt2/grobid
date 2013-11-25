@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="department">Department of Psychiatry</orgName>,
+							<lb/>
+							<orgName type="department">Gil Medical Center</orgName>,
+							<orgName type="institution">Gachon University<lb/> of Medicine &amp; Science</orgName>,
+							<address>
+								<settlement>Incheon</settlement>,
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="department">Institute of Basic Science &amp; School<lb/> of Computer Aided Science</orgName>,
+							<lb/>
+							<orgName type="institution">Inje University</orgName>,
+							<address>
+								<settlement>Gimhae</settlement>,
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>3</marker>
+							<orgName type="department">Department of Psychiatry and<lb/> Behavioral Science</orgName>,
+							<lb/>
+							<orgName type="institution">Seoul National University<lb/> College of Medicine</orgName>,
+							<address>
+								<settlement>Seoul</settlement>,
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>4</marker>
+							<orgName type="department">Institute of Human<lb/> Behavioral Medicine</orgName>,
+							<lb/>
+							<orgName type="institution">Seoul National University</orgName>,
+							<address>
+								<settlement>Seoul</settlement>,
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>5</marker>
+							<orgName type="department">Department of Psychiatry</orgName>,
+							<lb/>
+							<orgName type="institution">Eulji University School of Medicine</orgName>,
+							<lb/>
+							<address>
+								<settlement>Daejeon</settlement>,
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>6</marker>
+							<orgName type="department">Clinical Research Institute</orgName>,
+							<lb/>
+							<orgName type="institution">Seoul National University Hospital</orgName>,
+							<lb/>
+							<address>
+								<settlement>Seoul</settlement>,
+								<country>Korea</country>
+							<lb/>
+							</address>
+							<orgName type="department">Department of Psychiatry and<lb/> Behavioral Science</orgName>,
+							<lb/>
+							<orgName type="institution">Seoul National University<lb/> College of Medicine</orgName>,
+							<lb/>
+							<address>
+								<addrLine>101 Daehak-ro</addrLine>,
+								<addrLine>Jongno-gu</addrLine>,
+							<lb/>
+								<settlement>Seoul</settlement>
+								<postCode>110-744</postCode>,
+								<country>Korea</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

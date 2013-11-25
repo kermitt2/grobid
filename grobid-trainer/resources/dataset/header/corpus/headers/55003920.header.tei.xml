@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55003920"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>DETERMINATION OF SOLID-LIQUID EQUILIBRIA DATA FOR MIXTURES<lb/> OF HEAVY HYDROCARBONS IN A LIGHT SOLVENT<lb/> Final Report<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>By<lb/> F. V. Hanson (P.I.)<lb/> J. V. Fletcher (Co. P.I.)<lb/> Karthik R. (Graduate Student)<lb/></docAuthor>
+	</byline>
+
+	<date>June 2003<lb/></date>
+
+	<note type="grant">Work Performed under Contract No. DE-FG26-01NT41292<lb/></note>
+
+	<byline>
+	<affiliation>Department of Chemical and Fuels Engineering<lb/> University of Utah<lb/></affiliation>
+	</byline>
+
+	<address>Salt Lake City, Utah 84112</address>
+
+		</front>
+	</text>
+</tei>

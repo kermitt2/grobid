@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55002089"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">GRID<lb/> Chief Engineer, Systems<lb/></note>
+
+	<date>March 2011<lb/></date>
+
+	<docTitle>
+	<titlePart>HVDC Grids:<lb/> A View to Standardisation<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Carl Barker</docAuthor>
+	</byline>
+
+		</front>
+	</text>
+</tei>

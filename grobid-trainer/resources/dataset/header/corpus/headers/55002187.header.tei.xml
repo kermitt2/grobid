@@ -1,0 +1,79 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55002187"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>The HNF-1 target Collectrin controls insulin exocytosis<lb/> by SNARE complex formation<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Kenji Fukui,<lb/> 1,9 Qin Yang,<lb/> 1,9,10 Yang Cao,<lb/> 1 Noriko Takahashi,<lb/> 2,3 Hiroyasu Hatakeyama,<lb/> 2 Haiyan Wang,<lb/> 4 Jun Wada,<lb/> 5<lb/> Yanling Zhang,<lb/> 5 Lorella Marselli,<lb/> 6 Takao Nammo,<lb/> 1 Kazue Yoneda,<lb/> 1 Mineki Onishi,<lb/> 1 Shigeki Higashiyama,<lb/> 3,7<lb/> Yuji Matsuzawa,<lb/> 1 Frank J. Gonzalez,<lb/> 8 Gordon C. Weir,<lb/> 6 Haruo Kasai,<lb/> 2 Iichiro Shimomura,<lb/> 1 Jun-ichiro Miyagawa,<lb/> 1<lb/> Claes B. Wollheim,<lb/> 4 and Kazuya Yamagata<lb/> 1,<lb/> *<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Department of Metabolic Medicine, Graduate School of Medicine, Osaka University,</affiliation>
+	</byline>
+
+	<address>Suita Osaka 565-0871, Japan<lb/></address>
+
+	<byline>
+	<affiliation>2 Department of Cell Physiology, National Institute for Physiological Sciences, and Graduate University of Advanced Studies,</affiliation>
+	</byline>
+
+	<address>Myodaiji, Okazaki<lb/> 444-8787, Japan<lb/></address>
+
+	<byline>
+	<affiliation>3 Precursory Research for Embryonic Science and Technology, Japan Science and Technology Agency,</affiliation>
+	</byline>
+
+	<address>4-1-8, Honcho, Kawaguchi 332-0012,<lb/> Saitama, Japan<lb/></address>
+
+	<byline>
+	<affiliation>4 Department of Cell Physiology and Metabolism, University Medical Center,</affiliation>
+	</byline>
+
+	<address>CH-1211 Geneva 4, Switzerland<lb/></address>
+
+	<byline>
+	<affiliation>5 Department of Medicine and Clinical Science, Graduate School of Medicine and Dentistry, Okayama University,</affiliation>
+	</byline>
+
+	<address>Okayama 700-8558, Japan<lb/></address>
+
+	<byline>
+	<affiliation>6 Joslin Diabetes Center,</affiliation>
+	</byline>
+
+	<address>One Joslin Place, Boston, Massachusetts 02215<lb/></address>
+
+	<byline>
+	<affiliation>7 Division of Biochemistry and Molecular Genetics, Department of Cellular and Molecular Biology, Ehime University School of Medicine,</affiliation>
+	</byline>
+
+	<address>Ehime<lb/> 791-0295, Japan<lb/></address>
+
+	<byline>
+	<affiliation>8 Laboratory of Metabolism, Center for Cancer Research, National Cancer Institute, and National Institutes of Health,</affiliation>
+	</byline>
+
+	<address>Bethesda, Maryland 20892<lb/></address>
+
+	<note type="other">9 These authors contributed equally to this work.<lb/> 10 Present address: Division of Endocrinology, Diabetes, and Metabolism, Beth Israel</note>
+
+	<byline>
+	<affiliation>Deaconess Medical Center, Harvard Medical School,</affiliation>
+	</byline>
+
+	<address>Boston,<lb/> Massachusetts 02215<lb/></address>
+
+	<email>*Correspondence: kazu@imed2.med.osaka-u.ac.jp<lb/></email>
+
+	<div type="abstract">Summary<lb/> Defective glucose-stimulated insulin secretion is the main cause of hyperglycemia in type 2 diabetes mellitus. Mutations in<lb/> HNF-1a cause a monogenic form of type 2 diabetes, maturity-onset diabetes of the young (MODY), characterized by im-<lb/>paired insulin secretion. Here we report that collectrin, a recently cloned kidney-specific gene of unknown function, is a tar-<lb/>get of HNF-1a in pancreatic b cells. Expression of collectrin was decreased in the islets of HNF-1a (2/2) mice, but was in-<lb/>creased in obese hyperglycemic mice. Overexpression of collectrin in rat insulinoma INS-1 cells or in the b cells of transgenic<lb/> mice enhanced glucose-stimulated insulin exocytosis, without affecting Ca<lb/> 2+ influx. Conversely, suppression of collectrin<lb/> attenuated insulin secretion. Collectrin bound to SNARE complexes by interacting with snapin, a SNAP-25 binding protein,<lb/> and facilitated SNARE complex formation. Therefore, collectrin is a regulator of SNARE complex function, which thereby<lb/> controls insulin exocytosis.<lb/></div>
+
+		</front>
+	</text>
+</tei>

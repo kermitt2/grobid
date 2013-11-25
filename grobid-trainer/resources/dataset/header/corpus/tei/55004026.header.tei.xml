@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004026"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno type="DOI">doi:10.1182/blood-2009-11-254078<lb/></idno>
+
+	<date>Prepublished online April 8, 2010;<lb/> </date>
+	
+	<reference>2010 115: 5154-5163<lb/></reference>
+
+	<byline>
+	<docAuthor>Philipp Beckhove and Matthias Theobald<lb/> Kuball, Margarete Grabowski, Renate Engel, Philippe Guillaume, Pedro Romero, Christoph Huber,<lb/> Ralf-Holger Voss, Simone Thomas, Christina Pfirschke, Beate Hauptrock, Sebastian Klobuch, Jürgen<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">reactivity of single-chain TCR-transduced human T cells<lb/> domain triggers tumor<lb/> α Coexpression of the T-cell receptor constant<lb/> http://bloodjournal.hematologylibrary.org/content/115/25/5154.full.html<lb/> Updated information and services can be found at:<lb/> (482 articles)<lb/> Gene Therapy<lb/> (4524 articles)<lb/> Immunobiology Articles on similar topics can be found in the following Blood collections<lb/> http://bloodjournal.hematologylibrary.org/site/misc/rights.xhtml#repub_requests<lb/> Information about reproducing this article in parts or in its entirety may be found online at:<lb/> http://bloodjournal.hematologylibrary.org/site/misc/rights.xhtml#reprints<lb/> Information about ordering reprints may be found online at:<lb/> http://bloodjournal.hematologylibrary.org/site/subscriptions/index.xhtml<lb/> Information about subscriptions and ASH membership may be found online at:<lb/></div>
+
+	<note type="copyright">Copyright 2011 by The American Society of Hematology; all rights reserved.<lb/> Washington DC 20036.<lb/> by the American Society of Hematology, 2021 L St, NW, Suite 900,<lb/></note> 
+	
+		</front>
+	</text>
+</tei>

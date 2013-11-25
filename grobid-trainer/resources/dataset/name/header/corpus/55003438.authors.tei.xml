@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>S</forename>.
+								<surname>Aerts</surname>
+								<marker>a,c</marker> ,
+							</persName>
+							<persName>
+								<forename>A</forename>.
+								<surname>Vanhulsel</surname>
+								<marker>a</marker> ,
+							</persName>
+							<persName>
+								<forename>A</forename>.
+								<surname>Buekenhoudt</surname>
+								<marker>a</marker> ,
+							</persName>
+							<persName>
+								<forename>H</forename>.
+								<surname>Weyten</surname>
+								<marker>a</marker> ,
+							</persName>
+							<persName>
+								<forename>S</forename>.
+								<surname>Kuypers</surname>
+								<marker>a</marker> ,
+							</persName>
+							<persName>
+								<forename>H</forename>.
+								<surname>Chen</surname>
+								<marker>a</marker> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>M</forename>.
+								<surname>Bryjak</surname>
+								<marker>b</marker> ,
+							</persName>
+							<persName>
+								<forename>L</forename> .
+								<middlename>E</middlename>.
+								<middlename>M</middlename>.
+								<surname>Gevers</surname>
+								<marker>c</marker> ,
+							</persName>
+							<persName>
+								<forename>I</forename> .
+								<middlename>F</middlename>.
+								<middlename>J</middlename>.
+								<surname>Vankelecom</surname>
+								<marker>c ,*</marker>,
+							</persName>
+							<persName>
+								<forename>P</forename> .
+								<middlename>A</middlename>.
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

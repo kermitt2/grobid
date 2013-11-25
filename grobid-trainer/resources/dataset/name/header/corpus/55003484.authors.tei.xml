@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>J</forename>.
+								<middlename>D</middlename>.
+								<surname>Foley</surname>
+								<lb/>
+								<roleName>Editor</roleName>
+							</persName>	
+							<persName>
+								<forename>Martin</forename>
+								<middlename>A</middlename> .
+								<surname>Fischler</surname> and
+							</persName>
+							<persName>
+								<forename>Robert</forename>
+								<middlename>C</middlename> .
+								<surname>Bolles</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

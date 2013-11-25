@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55002158"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<affiliation>BioVigilant Systems, Inc.<lb/></affiliation>
+	</byline>
+
+	<address>2005 W. Ruthrauff Road, Suite 151, Tucson, AZ 85705<lb/></address>
+
+	<phone>Tel. (520) 292-2342 </phone>
+	
+	<ptr>www.biovigilant.com<lb/></ptr>
+
+	<docTitle>
+		<titlePart>Instantaneous Microbial Detection<lb/></titlePart>
+	</docTitle> 
+	
+	<div type="abstract">BioVigilant has invented an optical technology that can determine the quantity and size of very<lb/> small particles in liquid or air, and simultaneously determine whether each particle is inert or<lb/> biologic, all in real time. The result is that BioVigilant&apos;s instruments provide instantaneous and<lb/> continuous microbial detection, thereby creating wide-ranging and profound positive<lb/> consequences for pharmaceutical manufacturers.<lb/> This paper briefly discusses the problems BioVigilant&apos;s technology solves, how its technology<lb/> works, and how it is applied.<lb/></div>
+
+		</front>
+	</text>
+</tei>
