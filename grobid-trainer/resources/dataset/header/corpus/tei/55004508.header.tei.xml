@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004508"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">TECHNICAL DATA SHEET<lb/></note>
+	
+	<byline>
+	<affiliation>Lubrizol</affiliation>
+	</byline>
+
+	<note type="other">Advanced Materials, Inc. is a wholly owned subsidiary of The Lubrizol Corporation<lb/> * Trademark owned by The Lubrizol Corporation<lb/> </note>
+	
+	<note type="copyright">© Copyright 2009 / The Lubrizol Corporation<lb/></note>
+
+		</front>
+	</text>
+</tei>

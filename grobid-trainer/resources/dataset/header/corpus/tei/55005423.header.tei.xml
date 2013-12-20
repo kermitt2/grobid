@@ -1,0 +1,62 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005423"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>arXiv:0805.1367v1 [cond-mat.mes-hall]</idno>
+
+	<date>9 May 2008<lb/></date>
+
+	<docTitle>
+	<titlePart>High-sensitivity diamond magnetometer with nanoscale<lb/> resolution<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>J. M. Taylor<lb/> 1* , P. Cappellaro<lb/> 2,3* , L. Childress<lb/> 2,4 , L. Jiang<lb/> 2 , D.Budker<lb/> 5 , P. R. Hemmer<lb/> 6 , A.Yacoby<lb/> 2 ,<lb/> R. Walsworth<lb/> 2,3 , M. D. Lukin<lb/> 2,3<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Department of Physics, Massachusetts Institute of Technology,</affiliation>
+	</byline>
+
+	<address>Cambridge, MA 02139 USA<lb/></address>
+
+	<byline>
+	<affiliation>2 Department of Physics, Harvard University,</affiliation>
+	</byline>
+
+	<address>Cambridge, MA 02138 USA<lb/></address>
+
+	<byline>
+	<affiliation>3 Harvard-Smithsonian Center for Astrophysics,</affiliation>
+	</byline>
+
+	<address>Cambridge, MA 02138 USA<lb/></address>
+
+	<byline>
+	<affiliation>4 Department of Physics, Bates College,</affiliation>
+	</byline>
+
+	<address>Lewiston, ME 04240 USA<lb/></address>
+
+	<byline>
+	<affiliation>5 Department of Physics, University of California,</affiliation>
+	</byline>
+
+	<address>Berkeley, CA 94720, USA<lb/></address>
+
+	<byline>
+	<affiliation>6 Department of Electrical and Computer Engineering, Texas A&amp;M University,</affiliation>
+	</byline>
+
+	<address>College Station,<lb/> TX 77843 USA<lb/></address>
+
+	<div type="abstract">We present a novel approach to the detection of weak magnetic fields that takes advantage of<lb/> recently developed techniques for the coherent control of solid-state electron spin quantum<lb/> bits. Specifically, we investigate a magnetic sensor based on Nitrogen-Vacancy centers in<lb/> room-temperature diamond. We discuss two important applications of this technique: a<lb/> nanoscale magnetometer that could potentially detect precession of single nuclear spins and<lb/> an optical magnetic field imager combining spatial resolution ranging from micrometers to<lb/> millimeters with a sensitivity approaching few femtotesla/Hz<lb/> 1/2 .<lb/> </div>
+	<div type="introduction">The detection of weak magnetic fields with high spatial resolution is an important prob-<lb/>lem in diverse areas ranging from fundamental physics and material science to data storage and<lb/> 1</div>
+
+		</front>
+	</text>
+</tei>

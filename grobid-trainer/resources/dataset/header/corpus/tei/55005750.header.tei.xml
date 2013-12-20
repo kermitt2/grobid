@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005750"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	
+	<note type="other">SCIENTIFIC NOTES<lb/></note> 
+
+	<docTitle>
+	<titlePart>Modifications of the Automated Procedure<lb/> for Blood Phenylalanine<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>John B. Hill, George K. Summer, and Hoyle 0. Hill<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">The automated procedure for blood phenylalanine was modified by the use of glycyl-l-<lb/>Jeucine and a Corning glass filter No. 7-51. In addition, data were obtained showing<lb/> that dried blood spots were stable for 11 weeks and samples analyzed at rates of 30<lb/> and 60 per hour gave the same results.<lb/> </div>
+	
+	<div type="introduction">MODIFICATIONS<lb/> of tile automated<lb/> fluorirnetric pilellylalaIllne<lb/> pro-<lb/>edure (1), which may prove advantageous<lb/> to those analyzing<lb/> tile blood<lb/> of newborn<lb/> babies for phenylalanine<lb/> concentration,<lb/> have been studied<lb/> and are as follows:<lb/> 1. A 10-20 times less expensive<lb/> dipeptide,<lb/> glycyl-L-leucine<lb/> ((enera1<lb/> Biochemicals,<lb/> Chagrin Falls, Ohio, Mann Research<lb/> Laboratories,<lb/> Inc.,<lb/> New York, N. Y., and Sigma<lb/> Chemical Co., St. Louis, Mo.) may be<lb/> substituted for the L-leucyl-L-alanine.<lb/> 2. An increase<lb/> in sensitivity<lb/> of approximately<lb/> two and a half times<lb/> may be obtained<lb/> by substituting<lb/> a No. 7-51 Corning<lb/> glass filter for the<lb/> No. 7-60 filter.<lb/> In the process<lb/> of evaluating<lb/> the above modifications,<lb/> data were ob-<lb/>tained that increased<lb/> the length of time over that previously<lb/> reported (1) for the stability<lb/> of phenylalanine<lb/> in dried blood spots and which<lb/> validated a 60/hr. sampling<lb/> rate for the purposes<lb/> of screening.<lb/> The manual<lb/> method for serum phenylalanine<lb/> reported by McCaman<lb/></div>
+
+	<byline>
+	<affiliation>From the Laboratory<lb/> for<lb/> Study of Neurometabolic<lb/> Disorders and the Departments<lb/> of Pharmacology<lb/> and Biochemistry,<lb/> School of Medicine,<lb/> University of North<lb/> Carolina,<lb/></affiliation>
+	</byline>
+
+	<address>Chapel<lb/> Mill, N. C.<lb/></address>
+
+	<note type="grant">This investigation<lb/> was supported<lb/> by Grant<lb/> 12 :HS, Project<lb/> 236, from the Children&apos;s<lb/> Bureau,<lb/> Department of Health,<lb/> Education,<lb/> and Welfare,<lb/> and in part by Research<lb/> Career Development<lb/> Award 5-K3-AM-5058-02<lb/> from the National<lb/> Institute of Arthritis<lb/> and Metabolic<lb/> Diseases,<lb/> 13. 8. Public<lb/> Health Service,<lb/> to one of the authors<lb/> (GKS).<lb/> The authors<lb/> wish to thank<lb/> General Biochemicals,<lb/> Chagrin Falls,<lb/> Ohio, and Mann Research<lb/> Laboratories,<lb/> Inc., New York, N. Y., for their generous<lb/> gift of dipeptides<lb/> for this study and<lb/> the North<lb/> Carolina State Board<lb/> of Health<lb/> Laboratory,<lb/> Raleigh,<lb/> for the blood samples.<lb/> </note>
+	<note type="submission">Received for publication<lb/> Sept. 26, 1966; accepted<lb/> for publication<lb/> Oct. 28, 1966.<lb/></note>
+
+		</front>
+	</text>
+</tei>

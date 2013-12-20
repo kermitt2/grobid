@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004427"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>User &apos;s Guide<lb/> ®<lb/> Echoplex Digital Pro User&apos;s Guide<lb/> </titlePart>
+	</docTitle>
+	
+	<note type="other">C R E D I T S<lb/></note>
+	
+	<byline>
+	<docAuthor>W R I T T E N B Y W A R R E N S I R O T A<lb/></docAuthor> 
+	
+	<note type="other">L A Y O U T &amp; D E S I G N B Y W S D E S I G N S<lb/> E C H O P L E X D I G I T A L P R O I S A P R O D U C T O F O B E R H E I M ,<lb/> W H</note>
+	</byline>
+
+	<note type="other">I C H I S A D I V I S I O N O F G I B S O N G U I T A R<lb/></note>
+	
+	<byline>
+	<note type="other">E C H O P L E X D I G I T A L P R O D E S I G N E D B Y M A T T H I A S G R O B ,<lb/> W I T H M A J O R C O N T R I B U T I O N S F R O M K I M F L I N T , M A R K<lb/> L E A S , K E I T H M C M I L L E N , A N D E R I C O B E R M Ü H L N E R<lb/> S P E C I A L T H A N K S T O T H E S T A F F O F G -W I Z L A B S A N D</note>
+	</byline>
+
+		</front>
+	</text>
+</tei>

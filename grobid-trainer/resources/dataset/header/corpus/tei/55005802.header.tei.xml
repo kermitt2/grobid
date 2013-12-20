@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005802"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>MEASUREMENT OF ACTIVITY OF SINGLE MOLECULES<lb/> OF O-D-GALACTOSIDASE*<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>BY BORIS ROTMANt<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>DEPARTMENT OF GENETICS, STANFORD UNIVERSITY MEDICAL SCHOOL,</affiliation>
+	</byline>
+
+	<address>PALO ALTO, CALIFORNIA<lb/></address>
+
+	<note type="other">Communicated by Joshua Lederberg, </note>
+	
+	<date>October 16, 1961<lb/></date>
+
+	<div type="abstract">A method capable of measuring the activity of single enzyme molecules could<lb/> initiate studies of a number of biological problems not yet amenable to experimen-<lb/>tation. A technique for measuring f3-D-galactosidase in droplets of microscopic<lb/> size using a new fluorogenic substrate,-6-hydroxyfluoran-13-D-galactopyranoside<lb/> (6HFG) is described here. Results obtained by this technique indicate that it is<lb/> capable of detecting individual molecules of the enzyme.<lb/> As practical applications, the molecular weight and turnover number of f3-D-<lb/>galactosidase were determined by this method. The values obtained are compar-<lb/>able with those found by conventional techniques. Another application of this<lb/> method is in determining whether or not an enzyme is composed of a homogeneous<lb/> molecular species with respect to activity. This is exemplified here by experiments<lb/> with a genetically altered f3-D-galactosidase. We concluded that the altered<lb/> enzyme is a different species than normal f3-galactosidase. In contrast, thermal<lb/> inactivation leads to a mixture of fully-active and inactive enzyme molecules.<lb/> Materials and Methods.-The substrate 6HFG5 was synthesized by coupling 6-hydroxyfluoran<lb/> (6HF)1 and tetraacetyl-fD-galactopyranosylbromide2 in anhydrous benzene with silver oxide<lb/> present.3 The tetraacetyl galactoside was deacetylated with sodium methylate.4 The final<lb/> product, purified by ascendent paper chromatography in a 1-pentanol, 1-propanol, water system<lb/> (40:11:15), moved with an Rr of 0.17 on Whatman #1 paper at room temperature (220C). 6HF<lb/> was located by the strong greenish fluorescence of 6HF liberated after spraying a portion of the<lb/> paper with 6-D-galactosidase. A long wavelength &quot;Mineralight&quot; was used for excitation. UV<lb/> light of shorter wavelength decomposes 6HFG on paper, forming a compound with bluish fluo-<lb/>rescence. This can serve to locate 6HFG on chromatograms.<lb/> The purity of 6HFG was established by paper chromatography in three different solvent<lb/> systems at neutral, acid, and basic pH.5 Complete hydrolysis of 6HFG by a purified, crystalline<lb/> preparation of O-D-galactosidase from Escherichia coli (kindly supplied by Dr. D. Perrin) with</div>
+
+		</front>
+	</text>
+</tei>

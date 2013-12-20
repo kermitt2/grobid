@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004301"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Lindlar-Katalysator<lb/> 1<lb/></note>
+
+	<docTitle>
+	<titlePart>Lindlar-Katalysator<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<note type="other">Lindlar-Katalysator<lb/></note>
+	</byline>
+
+	<div type="abstract">Ein Lindlar-Katalysator ist ein Katalysator zur stereospezifischen Hydrierung von<lb/> Alkinen zu Alkenen. Beim Lindlar-Katalysator wird Palladium als Katalysator und<lb/> Calciumcarbonat als Trägerstoff eingesetzt. Der Wasserstoff wird gasförmig in den<lb/> Reaktor gegeben. Um die weitere Hydrierung zum Alkan zu verhindern, wird Bleiacetat<lb/> (oder Blei(II)-oxid) als Katalysatorgift eingesetzt. Dadurch wird die Reaktivität soweit<lb/> gemindert, dass das Alken nicht weiter reagiert. Der Katalysator ist nach Herbert Lindlar<lb/> (Hoffmann-La Roche) benannt.<lb/> </div>
+	<div type="introduction">Herstellung<lb/> Nach der Beschreibung des Erfinders<lb/> [1] [2] wird der Katalysator durch Reduktion von<lb/> Palladium(II)-chlorid in einer Anschlämmung von Calciumcarbonat hergestellt. Eine<lb/> erste Deaktivierung erfolgt durch Zugabe von Bleiacetat, danach wird mit Chinolin weiter deaktiviert, was die<lb/> Selektivität nochmals steigert. Als Beispiel für die selektive Hydrierung eines Alkins zu einem Styrolderivat siehe<lb/> [1]<lb/> .<lb/> Eigenschaften<lb/> Der Lindlar-Katalysator (auch als Palladium auf Calciumcarbonat, vergiftet bezeichnet) ist ein dunkelgrauer<lb/> Feststoff.<lb/> [3]<lb/> Verwendung<lb/> Bei der Hydrierung von Alkinen mit Lindlar-Katalysatoren entstehen stets cis-Alkene (Synonym: (Z)-Alkene), da im<lb/> ersten Reaktionsschritt das Alkin an dem metallischen Palladium gebunden wird. Danach wird im zweiten Schritt ein<lb/> H 2<lb/> -Molekül direkt an die Dreifachbindung in einer elektrophilen Additionsreaktion gebunden. Dadurch werden<lb/> beide Wasserstoffatome gleichzeitig und auf derselben Seite der Doppelbindung addiert. Anschließend löst sich das<lb/> entstandene Alken vom Palladium.<lb/> [4]<lb/> Ein Beispiel ist die Reaktion von Phenylacetylen zu Styrol:<lb/> Beispiel der Reaktion von Phenylacetylen zu Styrol<lb/> Ein bekanntes Beispiel ist auch eine Synthese von Vitamin<lb/> A, bei der eine Dreifachbindung mit einem<lb/> Lindlar-Katalysator selektiv zu einem (Z)-Alken hydriert<lb/> wird.</div>
+
+		</front>
+	</text>
+</tei>

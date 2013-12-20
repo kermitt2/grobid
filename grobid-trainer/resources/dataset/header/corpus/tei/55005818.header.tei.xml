@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005818"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Statistical-dynamical downscaling<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">DLR Home<lb/> Institute<lb/> regional climate<lb/> modeling<lb/></note>
+
+	<byline>
+	<docAuthor>Dr. habil. Dietrich Heimann<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institut für Physik der Atmosphäre<lb/> </affiliation>
+	</byline>
+
+	<address>DLR Oberpfaffenhofen<lb/> D-82234 Weßling, Germany<lb/></address>
+
+	<phone>Telephone: ++49-8153-28-2508<lb/> Telefax: ++49-8153-28-1841<lb/></phone>
+
+	<email>eMail: d.heimann@dlr.de<lb/></email>
+
+	<byline>
+	<docAuthor>Dr. Maria José Costa Zemsch<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institut für Physik der Atmosphäre<lb/> </affiliation>
+	</byline>
+
+	<address>DLR Oberpfaffenhofen<lb/> D-82234 Weßling, Germany<lb/></address>
+
+	<phone>Telephone: ++49-8153-28-2519<lb/> Telefax: ++49-8153-28-1841<lb/></phone>
+
+	<email>eMail: maria.zemsch@dlr.de<lb/></email>
+
+	<docTitle>
+	<titlePart>History Method<lb/> Episode downscaling<lb/> Examples References<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">History:<lb/> Long-term climate observations are rather expensive and therefore the number of climate<lb/> stations is limited. Moreover, the spatial representativeness of the stations is often restricted<lb/> to the close vicinity of the stations. Nevertheless, it is desirable to have area covering climate<lb/> information in a whole region. Upscaling, i.e. the transformation of the local climate<lb/> information of a station to its greater environment is not always possible in complex terrain.<lb/> However, the climate on the large scale is often well known since there are many climate<lb/> stations in an area of continental dimension. This opens the opportunity of downscaling, i.e.<lb/> the transformation of large-scale climate informations to smaller-scale regions. The<lb/> downscaling method, of course, must consider the specific topographical effects on the<lb/> climate in the region of interest. Climate observations of a future climate do of course not<lb/> exist. Only large-scale model simulations (GCM simulation) are available. In this case<lb/> downscaling is the only way to attain regional climate or climate-change informations.<lb/> Since the late seventies numerical mesoscale models are available. Given a large-scale<lb/> meteorological situations and the regional topography these models are capable of calculating<lb/> the corresponding mesoscale distribution of meteorological parameters. Since the early<lb/> eighties mesoscale models are used for statistical-dynamical downscaling, i.e. given a<lb/> large-scale climate and the regional topography these models calculate the corresponding<lb/> mesoscale distribution of climatological parameters.<lb/> Early applications aimed at the wind climatology (e.g. wind roses) in rather small areas. The<lb/> first &apos;downscaled&apos; wind rose was published by Wippermann and Gross (1981). An extended<lb/> rose-bed, i.e. a two-dimensional array of synthetic wind roses, was published by Heimann<lb/> (1986). Later applications followed, among them assessments of the regional wind-power<lb/> availability.</div>
+
+		</front>
+	</text>
+</tei>

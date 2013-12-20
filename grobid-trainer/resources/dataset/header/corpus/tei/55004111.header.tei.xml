@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004111"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">22<lb/> </note>
+	
+	<reference>CAN Newsletter Automotive Networks 2006<lb/></reference>
+	
+
+		</front>
+	</text>
+</tei>

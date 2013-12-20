@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004538"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Workshop IEA Bioenergy Task 32 –<lb/> New Biomass Co-firing Concepts<lb/></note>
+	
+	<address>Hamburg, </address>
+	
+	<date>June 30th 2009<lb/></date>
+
+	<docTitle>
+	<titlePart>Topell on torrefaction<lb/> </titlePart>
+	</docTitle>
+	
+	<note type="other">Contents</note>
+
+		</front>
+	</text>
+</tei>

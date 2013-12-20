@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005458"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">46</note>
+	
+	<note type="other">antriebstechnik </note>
+	
+	<date>3/2010<lb/> </date>
+	
+	<docAuthor>Peter Stipp<lb/></docAuthor>
+
+	<div type="abstract">Elastomer-oder Klauenkupplungen werden eingesetzt, wenn neben der<lb/> Übertragung eines definierten Drehmoments und dem Ausgleich des<lb/> Wellenversatzes auch Schwingungen reduziert werden sollen. Dämp-<lb/>fungsvermögen und Torsionssteifigkeit werden dabei über die Shore-<lb/>Härten der Zahnkränze eingestellt. Das funktioniert sehr gut, nur der<lb/> Einsatz bei hohen Temperaturen ist aufgrund des Kunststoffs problema-<lb/>tisch. In diesem Fall liefert eine Lösung mit gestrickten Drahtkissen die<lb/> optimale Dämpfung.<lb/> </div>
+	
+	<div type="introduction">mit der Temperatur verknüpft. So sinkt bei-<lb/>spielsweise bei 120 °C die Drehmomentka-<lb/>pazität der Kupplung auf zirka ein Drittel<lb/> der Werte, die bei 30 °C übertragen werden.<lb/> Anders ausgedrückt: Je besser die Dämp-<lb/>fung, umso höher der Verdrehwinkel, umso<lb/> geringer aber auch die maximal zulässige<lb/> Temperatur.<lb/> Hier setzt die Firma Buck mit ihren aus<lb/> Edelstahldraht gestrickten Produkten an.<lb/> Das Unternehmen mit Sitz im baden-würt-<lb/>tembergischen Bondorf ist auf die tech-<lb/>nische Strickerei von Edelstahldrähten so-<lb/>wie von Glas-, Kohle-und Keramikfasern<lb/> spezialisiert (Bild 2). &quot;Unsere zentrale Kom-<lb/>ponente ist die Strickmaschine. Sie ist mit<lb/> einem patentierten System ausgestattet, das<lb/> nach der so genannten Konträrtechnik ar-<lb/>beitet. Damit erreichen wir allein über die<lb/> Form und die Dichte des Materials eine de-<lb/>Dr. Peter Stipp ist freier Fachjournalist<lb/> aus Einhausen.</div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,89 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005434"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Poster Discussion Session II<lb/></note>
+	
+	<date>Friday, December 10, 2010,</date>
+
+	<note type="other">2:15 pm -2:15 pm<lb/> 36<lb/> </note>
+	
+	<docTitle>
+	<titlePart>Overall Survival and Progression Free Survival Results for a Randomized Phase 2 Trial of Ipilimumab (IPI) and Paclitaxel/Carboplatin<lb/> (P/C) in First-Line Stage IIIb/IV Non-small Cell Lung Cancer (NSCLC)<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>T. J. Lynch<lb/> 1 , J. Neal<lb/> 2<lb/> , I. Bondarenko<lb/> 3 , A. Luft<lb/> 4 , P. Serwatowski<lb/> 5 , F. Barlesi<lb/> 6<lb/> , R. Chacko<lb/> 7 , M. Sebastian<lb/> 8 , J. Cuillerot<lb/> 9 , M. Reck<lb/> 10 ,<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Yale Cancer<lb/> Center and Smilow Cancer Hospital,</affiliation>
+	</byline>
+
+	<address>New Haven, CT,<lb/></address>
+
+	<byline>
+	<affiliation>2<lb/> Massachusetts General Hospital Cancer Center,</affiliation>
+	</byline>
+
+	<address>Boston, MA,<lb/></address>
+
+	<byline>
+	<affiliation>3 Clinical Hospital<lb/> Dnipropetrovsk,</affiliation>
+	</byline>
+
+	<address>Dnepropetrovsk, Ukraine,<lb/></address>
+
+	<byline>
+	<affiliation>4<lb/> Leningrad Regional Clinical Hospital, St. Petersburg,</affiliation>
+	</byline>
+
+	<address>Russian Federation,<lb/></address>
+
+	<byline>
+	<affiliation>5 Oddzial Chemioterapii,<lb/></affiliation>
+	</byline>
+
+	<address>Szczecin, Poland,<lb/></address>
+
+	<byline>
+	<affiliation>6 University of Mediterranee, Assistance publique Hopitaux de Marseille,</affiliation>
+	</byline>
+
+	<address>Marseille, France,<lb/></address>
+
+	<byline>
+	<affiliation>7<lb/> Christian Medical College,<lb/></affiliation>
+	</byline>
+
+	<address>Vellore, India,<lb/></address>
+
+	<byline>
+	<affiliation>8 Universitaetsmedizin Mainz,</affiliation>
+	</byline>
+
+	<address>Mainz, Germany,<lb/></address>
+
+	<byline>
+	<affiliation>9 Bristol-Myers Squibb Research and Development,</affiliation>
+	</byline>
+
+	<address>Wallingford, CT,<lb/></address>
+
+	<byline>
+	<affiliation>10 Hospital<lb/> Grosshansdorf,</affiliation>
+	</byline>
+
+	<address>Grosshansdorf, Germany<lb/></address>
+
+	<div type="abstract">Title: Overall survival and progression free survival results for a randomized phase 2 trial of ipilimumab (IPI) and paclitaxel/carboplatin (P/C) in<lb/> first-line Stage IIIb/IV non-small cell lung cancer (NSCLC)<lb/> Abstract Background: IPI is a fully human monoclonal antibody that potentiates immune response by inhibiting CTLA-4. CA184-041 is a double-blind,<lb/> randomized phase 2 study of IPI combination with P/C in chemotherapy naïve recurrent/metastatic lung cancer.<lb/> Methods: 204 pts were randomized 1:1:1 to receive: IPI + concurrent schedule (CON) IV P/C (N=70), IPI + phased schedule (PHA) P/C (N=68),<lb/> or P/C alone (PBO) (N=66). IPI was administered at 10 mg/kg every 3weeks (wks) starting with cycle (c) 1 x 4 (CON) or starting with c 3 x 4<lb/> (PHA) then every 3 months. P/C was given as 175 mg/m<lb/> 2 and AUC=6 every 3wks x 6. Efficacy was assessed by immune-related response<lb/> criteria (irRC) and mWHO. The primary endpoint compared immune-related PFS (irPFS) between CON vs PBO and PHA vs PBO. One-sided<lb/> log-rank test (α=0.10) used to calculate statistical significance.<lb/> Results: Baseline characteristics were generally balanced. Ipilimumab in combination with P/C extended median irPFS for both the CON (5.52<lb/> mo [95% CI: 4.17, 6.74], p=0.094, HR=0.775 [95% CI: 0.53, 1.13] and PHA regimens (5.68 mo [95% CI: 4.76, 7.79], p=0.026, HR=0.686 [95%<lb/> CI: 0.47, 1.01]) compared to P/C alone (4.63 mo [95% CI: 4.14, 5.52]). IPI plus P/C extended mWHO PFS in the PHA arm only compared to P/C<lb/> alone (5.13 mo [95% CI: 4.17, 5.72], p=0.024, HR=0.691 [95% CI: 0.48, 1.00] vs. 4.21 mo [95% CI: 2.76, 5.32]). Interim median OS trended in<lb/> favor of the IPI arm for the PHA regimen (11.56 mo [95% CI: 9.26, 14.39], p=0.104, HR=0.748 [95% CI: 0.48, 1.18]) compared to P/C alone<lb/> (9.99 mo [95% CI: 6.97, 13.63]. IPI in combination with P/C did not appear to significantly extend interim median OS for the CON regimen<lb/> (11.01 mo [95% CI: 8.38, 12.75], p=0.429, HR=0.962 [95% CI: 0.63, 1.48]) compared to P/C alone 11.56 mo (95% CI: 9.26, 14.39). Final OS<lb/> results will be presented. IPI + P/C was generally well tolerated. Total gr 3/4 irAEs (pruritis, rash, alopecia, diarrhea, colitis) were 20% and 15%<lb/> for CON and PHA regimens, respectively; and were reversible in most cases. Gr 5 toxic epidermal necrolysis was seen in 1 pt for CON.<lb/> Conclusion: Ipilimumab in combination with P/C met its primary endpoint by demonstrating superiority in irPFS compared with P/C alone with<lb/> consistent findings across other efficacy endpoints. The PHA regimen appeared to demonstrate better efficacy than the CON regimen.<lb/> Ipilimumab did not increase P/C related toxicity. These results support further study of ipilimumab in NSCLC.<lb/></div>
+
+	<note type="other">T.J. Lynch, Bristol-Myers Squibb, F. Consulting/Advisory Board; J. Neal, None; I. Bondarenko, None; A. Luft, Bristol-Myers Squibb, B.<lb/> Research Grant; P. Serwatowski, None; F. Barlesi, Bristol-Myers Squibb, B. Research Grant; R. Chacko, None; M. Sebastian, None; J.<lb/> Cuillerot, Bristol-Myers Squibb, A. Employment; Bristol-Myers Squibb Stock, E. Ownership Interest; M. Reck, Hoffmann-La Roche, D.<lb/> Speaker&apos;s Bureau/Honoraria; Lilly, D. Speaker&apos;s Bureau/Honoraria; AstraZeneca, D. Speaker&apos;s Bureau/Honoraria; Merck, D. Speaker&apos;s<lb/> Bureau/Honoraria; Hoffmann-La Roche, F. Consulting/Advisory Board; Lilly, F. Consulting/Advisory Board; AstraZeneca, F.<lb/> Consulting/Advisory Board; Merck, F. Consulting/Advisory Board.</note>
+
+		</front>
+	</text>
+</tei>

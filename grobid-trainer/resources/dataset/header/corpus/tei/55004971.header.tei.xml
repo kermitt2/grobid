@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004971"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Flavor experiences during formula feeding are<lb/> related to preferences during childhood<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Julie A. Mennella * , Gary K. Beauchamp<lb/> 1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Monell Chemical Senses Center,</affiliation>
+	</byline>
+
+	<address>3500 Market Street, Philadelphia, PA 19104-3308, USA<lb/></address>
+
+	<note type="submission">Received 16 August 2001; received in revised form 16 January 2002; accepted 16 January 2002<lb/></note>
+
+	<div type="abstract">Abstract<lb/> As part of a program of research designed to investigate the long-term effects of early feeding<lb/> experiences, the present study exploited the substantial flavor variation inherent in three classes of<lb/> commercially available infant formulas and determined whether flavor preferences during childhood<lb/> differed as a function of the class of formula (i.e., milk, soy, hydrolysate) that 4-to 5-year-old<lb/> children were fed during their infancy. Age appropriate, game-like tasks that were fun for children<lb/> and minimized the impact of language development were used to examine their preferences for a<lb/> wide range of food-related odor qualities including infant formulas, as well as the flavor of milk-<lb/>based and hydrolysate formulas and plain, sour-and bitter-flavored apple juices. Formula type<lb/> influenced children&apos;s flavor preferences when tested several years after their last exposure to the<lb/> formula. When compared to children who were fed milk-based formulas (n = 27), children fed<lb/> protein hydrolysate formulas (n = 50) were more likely to prefer sour-flavored juices, as well as the<lb/> odor and flavor of formulas, and less likely to make negative facial expressions during the taste tests.<lb/> Those fed soy formulas (n = 27) preferred the bitter-flavored apple juice. That the effects of<lb/> differential formula feeding also modified children&apos;s food preferences is suggested by mothers&apos;<lb/> reports that children fed hydrolysate or soy formulas were significantly more likely to prefer broccoli<lb/> than were those fed milk formulas. These data are consistent with the hypothesis that flavor<lb/> experiences influence subsequent flavor preferences even several years following the early<lb/> experience.</div>
+
+	<note type="copyright">&#169; 2002 Elsevier Science Ireland Ltd. All rights reserved.<lb/></note>
+
+	<keyword>Keywords: Taste; Smell; Protein hydrolysate formula; Children; Preferences</keyword>
+
+		</front>
+	</text>
+</tei>

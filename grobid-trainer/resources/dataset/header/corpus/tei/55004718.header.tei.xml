@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004718"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Simple Modifications of Branched PEI Lead to Highly Efficient siRNA<lb/> Carriers with Low Toxicity<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Arkadi Zintchenko,* Alexander Philipp, Ali Dehshahri, and Ernst Wagner<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Center for Drug Research, Department of Pharmacy, Pharmaceutical Biology-Biotechnology, and Center for NanoScience<lb/> (CeNS), Ludwig-Maximilians-University,</affiliation>
+	</byline>
+
+	<address>Butenandstr. 5-13, D-81377 Munich, Germany.</address>
+
+	<note type="submission">Received February 19, 2008;<lb/> Revised Manuscript Received May 7, 2008<lb/></note>
+
+	<div type="abstract">Polymer carriers like PEI which proved their efficiency in DNA delivery were found to be far less effective for<lb/> the applications with siRNA. In the current study, we generated a number of nontoxic derivates of branched PEI<lb/> through modification of amines by ethyl acrylate, acetylation of primary amines, or introduction of negatively<lb/> charged propionic acid or succinic acid groups to the polymer structure. The resulting products showed high<lb/> efficiency in siRNA-mediated knockdown of target gene. In particular, succinylation of branched PEI resulted in<lb/> up to 10-fold lower polymer toxicity in comparison to unmodified PEI. Formulations of siRNA with succinylated<lb/> PEI were able to induce remarkable knockdown (80% relative to untreated cells) of target luciferase gene at the<lb/> lowest tested siRNA concentration of 50 nM in Neuro2ALuc cells. The polyplex stability assay revealed that<lb/> the efficiency of formulations which are stable in physiological saline is independent of the affinity of siRNA to<lb/> the polymer chain. The improved properties of modified PEI as siRNA carrier are largely a consequence of the<lb/> lower polymer toxicity. In order to achieve significant knockdown of target gene, the PEI-based polymer has to<lb/> be applied at higher concentrations, required most probably for sufficient accumulation and proton sponge effects<lb/> in endosomes. Unmodified PEI is highly toxic at such polymer concentrations. In contrast, the far less toxic<lb/> modified analogues can be applied in concentrations required for the knockdown of target genes without side<lb/> effects.<lb/></div>
+
+		</front>
+	</text>
+</tei>

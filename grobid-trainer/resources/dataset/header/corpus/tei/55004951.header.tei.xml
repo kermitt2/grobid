@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004951"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>PROCEEDINGS OF THE XXVII NATIONAL CONFERENCE<lb/> OF CYTOMETRY<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<note type="other">Centro Congressi Fiera<lb/></note>
+	</byline>
+
+	<address>Ferrara </address>
+	
+	<date>14—17 Ottobre 2009<lb/></date>
+
+	<byline>
+	<note type="other">EDITED BY<lb/> R. DE VITA and G. MAZZINI<lb/> Organizing Committee<lb/> F. Lanza (Ferrara)<lb/> R. De Vita (Roma)<lb/> G. Mazzini (Pavia)<lb/> L. Del Vecchio (Napoli)<lb/> E. Erba (Milano)<lb/> G. Pirozzi (Napoli)<lb/> Scientific Coordinators<lb/> P. Bianchini (Genova)<lb/> R. Casotti (Napoli)<lb/> G. Gaipa (Monza)<lb/> S. Lucretti (Roma)<lb/> S. Pepe (Napoli)<lb/> M. Span o (Roma)<lb/> G. Starace (Roma)<lb/> L. Zamai (Urbino)<lb/> Scientific Board<lb/> B. Baccarani (Bologna)<lb/> G.P. Bagnara (Bologna)<lb/> G. Basso (Padova)<lb/> P. Bonara (Milano)<lb/> B. Brando (Milano)<lb/> A. Calugi (Roma)<lb/> S. Capitani (Ferrara)<lb/> G. Carandina (Ferrara)<lb/> A. Cuneo (Ferrara)<lb/> M. Danova (Pavia)<lb/> A. Diaspro (Genova)<lb/> M. Dominici (Modena)<lb/> S. Garattini (Milano)<lb/> M. Girotto (Ivrea)<lb/> L. Gugliotta (R. Emilia)<lb/> A. Kunkl (Genova)<lb/> G. Lanza (Ferrara)<lb/> C. Ortolani (Venezia)<lb/> S. Papa (Urbino)<lb/> G. Pizzolo (Verona)<lb/> M. Rocchi (Bari)<lb/> R. Rossi (Ferrara)<lb/> A. Russo (Palermo)<lb/> L. Teodori (Roma)<lb/> D. Tirindelli (Roma)<lb/> C. Usai (Genova)<lb/> M. Valentini (Pesaro)<lb/> M. Vitale (Parma)<lb/> S. Volpe (Avellino)<lb/></note>
+	</byline>
+
+	<byline>
+	<affiliation>SOCIET ITALIANA DI CITOMETRIA<lb/> c/o Unità Tossicologia e Scienze Biomediche<lb/> ENEA Centro Ricerche</affiliation>
+	</byline>
+
+	<address>Casaccia s.p. 016<lb/> Via Anguillarese, 301 -00123 Roma<lb/></address>
+
+	<phone>tel.: 06 30484671 fax: 06 30484891<lb/></phone>
+
+	<email>e-mail: devita@enea.it<lb/></email>
+
+	<ptr type="web">http://biotec.casaccia.enea.it/GIC/</ptr>
+
+		</front>
+	</text>
+</tei>

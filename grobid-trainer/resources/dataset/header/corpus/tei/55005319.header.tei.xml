@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005319"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<affiliation>Auto -ID Center<lb/> Massachusetts Institute of Technology<lb/></affiliation>
+	</byline>
+
+	<address>77 Massachusetts Avenue<lb/> Cambridge, MA 02139<lb/></address>
+
+	<ptr type="web">http://auto-id.mit.edu/<lb/></ptr>
+
+	<idno>MIT-AUTOID -WH-003<lb/> ePC: 21.0000001.06003.XXXXXXXXXX<lb/></idno>
+
+	<docTitle>
+	<titlePart>The Physical Markup Language<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>David L. Brock<lb/></docAuthor>
+	</byline>
+
+	<date>February 2001<lb/></date>
+
+	<div type="abstract">Abstract – The Physical Markup Language (PML) is<lb/> intended to be a common &quot;language&quot; for describing<lb/> physical objects, processes and environments. Much<lb/> as the Hypertext Markup Language (HTML) has<lb/> standardized the way in which information is<lb/> presented on the Internet, PML is designed to<lb/> standardize descriptions of physical objects for use by<lb/> both humans and machines. The primary objective of<lb/> PML is to serve as a common base for software<lb/> applications, data storage and analytic tools for<lb/> industry and commerce. This paper presents some<lb/> fundamental issues in the design of the language, as<lb/> well as assumptions underlying its development and<lb/> implementation.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005631"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>A NEW EM ALGORITHM FOR UNDERDETERMINED CONVOLUTIVE<lb/> BLIND SOURCE SEPARATION<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Zaher El Chami<lb/> 1 , Antoine Dinh-Tuan Pham<lb/> 2 , ChristineServì ere<lb/> 3 , Alexandre Guerin<lb/> 1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Orange Labs -TECH/SSTP,</affiliation>
+	</byline>
+
+	<address>2 Avenue Pierre Marzin, 22307 Lannion Cedex, France<lb/></address>
+
+	<byline>
+	<affiliation>2 Laboratory of Modeling and Computation,</affiliation>
+	</byline>
+
+	<address>B.P 53X, 38041 Grenoble cedex 9, France<lb/></address>
+
+	<byline>
+	<affiliation>3 GIPSA-lab, Department of Images and Signals,</affiliation>
+	</byline>
+
+	<address>BP 46, 38402 St Martin d &apos;ereCedex,France<lb/></address>
+
+	<email>E-mail:{zaher.elchami;alexandre.guerin}@orange-ftgroup.com<lb/></email>
+	
+	<email>dinh-tuan.pham@imag.fr;christine.serviere@inpg.fr<lb/></email>
+
+	<div type="abstract">ABSTRACT<lb/>Thispaperpresentsanewstatisticalmethodforseparating<lb/>morethantwosoundsourcesfromatwochannelsrecording.<lb/>ItisbasedontheprobabilisticmodeloftheInterchannel<lb/>Level/PhaseDifferencepresentedin[1]andanExpectation-<lb/>Maximizationalgorithmforfindingthemaximumlikelihood<lb/>parametersofthatmodel.Sourceseparationisperformedby<lb/>softtime-frequencymaskingoftheobservation.Thesemasks<lb/>arederivedfromtheestimatedsourcepositionmodel.Al-<lb/>gorithmperformanceisevaluatedontherealandsynthetic<lb/>convolutivemixturesdataofthefirstaudiosourceevalua-<lb/>tioncampaign[2]aswellastheSignalSeparationEvalua-<lb/>tioncampaign(SiSEC)[10].Promisingresultsareobtained<lb/>whencomparingtotheothermethodspresentedinthesetwo<lb/>campaigns.<lb/></div>
+
+		</front>
+	</text>
+</tei>

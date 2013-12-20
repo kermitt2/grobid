@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004537"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Audio Watermarking Using Spectral Modifications<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Jyotsna Singh, Member, IEEE, Parul Garg, Member, IEEE and Alok Nath De, Senior Member, IEEE<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Abstract—In this paper, we present a non-blind technique of<lb/> adding the watermark to the Fourier spectral components of audio<lb/> signal in a way such that the modified amplitude does not exceed the<lb/> maximum amplitude spread (MAS). This MAS is due to individual<lb/> Discrete fourier transform (DFT) coefficients in that particular frame,<lb/> which is derived from the Energy Spreading function given by<lb/> Schroeder. Using this technique one can store double the information<lb/> within a given frame length i.e. overriding the watermark on the<lb/> host of equal length with least perceptual distortion. The watermark<lb/> is uniformly floating on the DFT components of original signal.<lb/> This helps in detecting any intentional manipulations done on the<lb/> watermarked audio. Also, the scheme is found robust to various signal<lb/> processing attacks like presence of multiple watermarks, Additive<lb/> white gaussian noise (AWGN) and mp3 compression.<lb/></div>
+
+	<keyword>Keywords—Discrete Fourier Transform, Spreading Function, Wa-<lb/>termark, Pseudo Noise Sequence, Spectral Masking Effect<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

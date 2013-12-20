@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004903"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="copyright">&#169; 2005 Wiley-VCH Verlag GmbH &amp; Co. KGaA, Weinheim<lb/></note>
+
+	<idno>10.1002/14356007.a25 635<lb/></idno>
+
+	<note type="other">Sulfuric Acid and Sulfur Trioxide<lb/> </note>
+	
+	<note type="page">1<lb/></note>
+
+	<docTitle>
+	<titlePart>Sulfuric Acid and Sulfur Trioxide<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Hermann uller,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Lurgi Metallurgie GmbH,</affiliation>
+	</byline>
+
+	<address>Frankfurt/Main, Federal Republic of Germany<lb/></address>
+
+		</front>
+	</text>
+</tei>

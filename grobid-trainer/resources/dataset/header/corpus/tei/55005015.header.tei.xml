@@ -5,16 +5,12 @@
 	</teiHeader>
 	<text xml:lang="en">
 		<front>
-			<lb/>
-			<docTitle>
-				<titlePart>14. Mechanical Design and Manufacturing<lb/></titlePart>
-			</docTitle>
-			
-			<reference>Michael Leyton (Ed.): A Generative Theory of Shape, LNCS 2145, pp. 299-363, 2001.<lb/></reference>
-			<note type="coypright">© Springer-Verlag Berlin Heidelberg</note> <date>2001<lb/></date>
-			
-			
-			
+<lb/>
+	<docTitle>
+	<titlePart>Futronics -ANPR Solutions, DVLA Approved Policing<lb/> Technology<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Homepage Products<lb/> Solutions Vehicle Mobile Data<lb/> ANPR Solution<lb/> About Futronics<lb/> News and Events<lb/> Public Relations<lb/> Partnerships Case Studies<lb/> Recent Press Releases<lb/> News Articles<lb/> Media Files<lb/> Contact Futronics<lb/> You are currently navigating: Home » eMACS -Products for Policing<lb/></note>
 
 		</front>
 	</text>

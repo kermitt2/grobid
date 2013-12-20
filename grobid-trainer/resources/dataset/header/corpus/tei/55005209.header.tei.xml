@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005209"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>J. Med. Microbiol. -Voi. 38 (1993), 384-387<lb/></reference>
+
+	<note type="copyright">&#169; 1993 The Pathological Society of Great Britain and Ireland<lb/></note>
+
+	<docTitle>
+	<titlePart>Detection of C/mtridium difficile enterotoxin gene in<lb/> clinical specimens by the polymerase chain reaction<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>HELEN S. BOONDEEKHUN, V. GURTLER&quot;, MARYANN L. ODD, VICKI A. WILSON and<lb/> B. C. MAYALL<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Microbiology, Heidelberg Repatriation Hospital,</affiliation>
+	</byline>
+
+	<address>Heidelberg West 308 I , Victoria, Australia<lb/></address>
+
+	<div type="abstract">Summary. A rapid assay was developed for detection of the Clostridium dzficile enterotoxin<lb/> gene in stool specimens by means of the polymerase chain reaction (PCR). The PCR primers<lb/> amplified a 63-bp repetitive sequence of the enterotoxin gene, thereby generating a distinctive<lb/> ladder pattern of DNA bands following electrophoresis. Crude DNA extracts from stools<lb/> containing C. dzficile produced one (63-bp) or more bands of the characteristic ladder. Of 172<lb/> stool specimens from 58 patients, 37 gave positive results by culture (15 specimens) or<lb/> cytotoxin assay (36 specimens). When 36 available &quot; positive&quot; specimens were tested by the<lb/> PCR assay, 34 (94%) gave positive results-24 by direct testing, and 10 after extraction of<lb/> DNA by the Qiagen procedure. Insufficient material of the remaining two specimens was<lb/> available for DNA extraction. Of 2 1 stools &quot; negative &quot; for C. dzficile by culture or cytotoxin<lb/> assay, one gave a positive result by PCR and seven produced atypical bands. The rapid PCR<lb/> detection technique for C. dzficile was more sensitive than standard culture, and of a<lb/> sensitivity similar to cytotoxin testing. The method has the potential for adoption in routine<lb/> laboratory practice.<lb/></div>
+
+		</front>
+	</text>
+</tei>

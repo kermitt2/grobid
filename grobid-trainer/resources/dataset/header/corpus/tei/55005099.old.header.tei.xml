@@ -1,0 +1,84 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005099"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<lb/>
+			<docTitle>
+				<titlePart>On electromagnetic characterization and homogenization of nanostructured metamaterials<lb/></titlePart>
+			</docTitle>
+			
+			<note type="other">This article has been downloaded from IOPscience. Please scroll down to see the full text article.<lb/></note>
+			<reference>2011 J. Opt. 13 013001<lb/></reference>
+			<ptr type="web">(http://iopscience.iop.org/2040-8986/13/1/013001)<lb/></ptr>
+			<note type="other">View the table of contents for this issue, or go to the journal homepage for more<lb/></note>
+			<note type="other">
+				Download details:<lb/>
+				IP Address: 145.64.134.245<lb/>
+				The article was downloaded on 31/03/2011 at 14:35<lb/>
+			</note>
+			<note type="other">Please note that terms and conditions apply.<lb/></note>
+			
+			<pb/>
+			
+			<note type="other">IOP PUBLISHING</note>
+			<space dim="horizontal"/>
+			<note type="other">JOURNAL OF OPTICS<lb/></note>
+			<reference>J. Opt. 13 (2011) 013001 (22pp)<lb/></reference>
+			<space dim="horizontal"/>
+			<idno>doi:10.1088/2040-8978/13/1/013001<lb/></idno>
+			<note type="articleType">REVIEW ARTICLE<lb/></note>
+			<docTitle>
+				<titlePart>On electromagnetic characterization and<lb/>
+					homogenization of nanostructured<lb/>
+					metamaterials<lb/></titlePart>
+			</docTitle>
+			<byline>
+				<docAuthor>C R Simovski</docAuthor>
+			</byline>
+			<byline>
+				<affiliation>Department of Radio Science and Engineering, School of Science and Technology,<lb/> Aalto University, </affiliation>
+			</byline>
+			<address>FI 00076 Aalto, Finland<lb/></address>
+			<note type="other">
+				Received 14 September 2009, accepted for publication 7 October 2010<lb/>
+			</note>
+			<date>	
+				Published 12 November 2010<lb/>
+			</date>	
+			<ptr type="web">Online at stacks.iop.org/JOpt/13/013001<lb/></ptr>
+			<div type="abstract">
+				Abstract<lb/>
+				In this overview paper the trends in the modern literature concerning the characterization of<lb/>
+				linear electromagnetic properties of nanostructured metamaterials are briefly discussed.<lb/>
+				Electromagnetic characterization of bulk and surface metamaterials is discussed. The problem<lb/>
+				of characterization of metamaterials with spatial dispersion effects is addressed. It is shown that<lb/>
+				for bulk metamaterials formed as orthorhombic dipole lattices experimental electromagnetic<lb/>
+			characterization (retrieval of material parameters) becomes possible. However, standard<lb/>
+				schemes of material parameter retrieval contain pitfalls even for this kind of material. To clarify<lb/>
+				these pitfalls the concept of characteristic material parameters is suggested which is clearer and<lb/>
+			more restrictive that the concept of effective material parameters. For a special but important<lb/>
+				class of metamaterials (called Bloch lattices by the author) bulk material parameters are<lb/>
+				obtained which probably fit the concept of electromagnetic characterization because they satisfy<lb/>
+				basic physical limitations. Further, the problem of the violation of Maxwell boundary<lb/>
+				conditions for a macroscopic field at the physical boundary of the metamaterial lattice is<lb/>
+				discussed. The role of transition layers (perhaps transition sheets) in the characterization of<lb/>
+				metamaterials is explained. Finally, a relevant numerical example is presented as an illustration<lb/>
+				of the theory.<lb/>
+			</div>
+			<keywords>Keywords: electromagnetic characterization, metamaterials, effective material parameters,<lb/>
+				characteristic material parameters, metasurfaces, Bloch impedance, antiresonance, Drude<lb/>
+				transition layers<lb/></keywords>
+			<note type="other">(Some figures in this article are in colour only in the electronic version)<lb/></note>
+			<note type="other">2040-8978/11/013001+22$33.00</note>
+			<space dim="horizontal"/>
+			<note type="other">1</note>
+			<space dim="horizontal"/>
+			<note type="copyright">© 2011 IOP Publishing Ltd Printed in the UK &amp; the USA<lb/></note>
+			
+			
+		</front>
+	</text>
+</tei>

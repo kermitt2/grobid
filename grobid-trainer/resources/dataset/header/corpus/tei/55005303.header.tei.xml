@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005303"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Forum Original Research Communication<lb/> Nitroproteomics of Peripheral Blood Mononuclear Cells<lb/> from Patients and a Rat Model of ALS<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Giovanni Nardo,<lb/> 1,2 Silvia Pozzi,<lb/> 1,3 Stefania Mantovani,<lb/> 4,5 Silvia Garbelli,<lb/> 4,5 Kalliopi Marinou,<lb/> 6<lb/> Manuela Basso,<lb/> 1,2 Gabriele Mora,<lb/> 4,6 Caterina Bendotti,<lb/> 3 and Valentina Bonetto<lb/> 1,2<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Abstract<lb/> Increased levels of 3-nitrotyrosine in the central nervous system have been found in patients and mouse models<lb/> of familial ALS (fALS), suggesting a possible use of nitrated proteins as biomarkers. We analyzed peripheral<lb/> blood mononuclear cells (PBMCs), easily accessible samples, from sporadic ALS (sALS) patients and a rat model<lb/> of fALS (a) to establish whether an increased level of nitrated proteins was present in PBMCs, too, and (b) to<lb/> identify possible candidate biomarkers. With a proteomic approach, we identified for the first time the major<lb/> overnitrated proteins in PBMCs from patients and rats at different disease stages. In the rats, their increased<lb/> levels already were measured at a presymptomatic stage. Among them, actin, ATP synthase, and vinculin<lb/> overlap between sALS patients and the rat model. Interestingly, in a previous study, actin and ATPase have been<lb/> found overnitrated in the spinal cord of a mouse model of fALS before disease onset, suggesting their possible<lb/> involvement in motor neuron degeneration. In conclusion, we observed that an increased level of nitrated<lb/> proteins was not restricted to the spinal cord but also was present in peripheral cells of patients and an animal<lb/> model, and that nitrated proteins are promising candidate biomarkers for early diagnosis of ALS. Antioxid. Redox<lb/> Signal. 11, 1559–1567.<lb/></div>
+
+		</front>
+	</text>
+</tei>

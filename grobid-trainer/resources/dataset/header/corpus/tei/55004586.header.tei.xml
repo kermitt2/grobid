@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004586"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Diacetyl production and growth of Lactobacillus rhamnosus on multiple substrates<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>B.D. Jyoti<lb/> 1 , A.K. Suresh<lb/> 1,2 and K.V. Venkatesh<lb/> 1,2, *<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Department of Chemical Engineering, Indian Institute of Technology,</affiliation>
+	</byline>
+
+	<address>Bombay, Powai, Mumbai 400076, India<lb/></address>
+
+	<byline>
+	<affiliation>2 BJM School of Biosciences and Bioengineering, Indian Institute of Technology,</affiliation>
+	</byline>
+
+	<address>Bombay, Powai, Mumbai 400076,<lb/> India</address>
+
+	<note type="other">*Author for correspondence: </note>
+	
+	<phone>Tel.:+91-22-5767233, Fax: +91-22-5726895,</phone>
+
+	<email>E-mail: venks@che.iitb.ac.in<lb/></email>
+
+	<note type="submission">Received 24 July 2002; accepted 6 February 2003<lb/></note>
+
+	<keyword>Keywords: Co-metabolism, diacetyl, diauxic growth, Lactobacillus rhamnosus, multiple substrates<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

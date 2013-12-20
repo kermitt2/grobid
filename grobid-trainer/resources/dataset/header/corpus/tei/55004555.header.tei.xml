@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004555"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>J . Sci. Food Agric. 1984, 35, 543-552<lb/></reference>
+
+	<docTitle>
+	<titlePart>Myrosinase Activity of Cruciferous Vegetables<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Andrew P. Wilkinson, Michael J. C. Rhodes and Roger G. Fenwick<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>AFRC Food Research Institute,</affiliation>
+	</byline>
+
+	<address>Colney Lane, Norwich NR4 7UA<lb/></address>
+
+	<note type="submission">(Manuscript received 28 September 1983)<lb/></note>
+
+	<div type="abstract">Myrosinase activity in partially purified extracts of 12 cruciferous vegetables and an<lb/> acetone powder preparation of Sinapis alba L. (white mustard) was determined by the<lb/> initial rate of glucose formation from glucosinolate hydrolysis using a coupled assay.<lb/> Of the species studied Raphanus sativus L. (radish, 12.8+0.7pmol min-&apos; g-&apos;<lb/> powdered tissue) had the greatest myrosinase activity, and Brassica campestris L. ssp.<lb/> rapifera (turnip) and Nasturtium officinalis R.Br. (watercress) ( 0 . 6 f 0 . 1 and<lb/> 0.8k0.03 pmol min-&apos; g-&apos; powdered tissue respectively) the least. The sub-species of<lb/> Brassica oleracea studied all had similar myrosinase activity (ca<lb/> 2.5-tO.2prnol min-&apos;g-&apos; powdered tissue) except B. oleracea L. var. gemmifera D.C.<lb/> (Brussels sprouts) and B. oleracea L. var. capitata L. (white cabbage) which had higher<lb/> activities (7.6f0.1 and 5.2+0.2pmol min-&apos; g-&apos; powdered tissue respectively). The<lb/> effect of ascorbate concentration upon the myrosinase activity of six of the crucifers<lb/> studied and the white mustard preparation, revealed that the ascorbate concentration<lb/> necessary to promote maximal activity vaned with species. A concentration of 0 . 9 m ~<lb/> ascorbate maximally activated radish and turnip myrosinase, while red cabbage,<lb/> watercress, white mustard and Brussels sprouts were maximally activated at 2.0, 3.0,<lb/> 5.0 and 0.7-1.0m~ ascorbate respectively. Two peaks of maximal myrosinase activity,<lb/> occurring between 0.9 and 1.OmM and at 3 . 0 m ~ ascorbate, were found for B. oleracea<lb/> L. var. botrytis L. subvar. cauliflora D.C. (cauliflower).<lb/></div>
+
+		</front>
+	</text>
+</tei>

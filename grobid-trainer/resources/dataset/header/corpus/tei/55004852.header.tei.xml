@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004852"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>ISSN 0249-6399<lb/> ISRN INRIA/RR--5241--FR+ENG<lb/></idno>
+
+	<note type="other">a p p o r t<lb/> d e r e c h e r c h e<lb/></note>
+	
+	<byline>
+	<note type="other">THÈME 1<lb/></note>
+	</byline>
+
+	<byline>
+	<affiliation>INSTITUT NATIONAL DE RECHERCHE EN INFORMATIQUE ET EN AUTOMATIQUE<lb/></affiliation>
+	</byline>
+
+	<docTitle>
+	<titlePart>The One-to-Many TCP Overlay:<lb/> A Scalable and Reliable Multicast Architecture<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>François Baccelli — Augustin Chaintreau — Zhen Liu — Anton Riabov<lb/></docAuthor>
+	</byline>
+
+		</front>
+	</text>
+</tei>

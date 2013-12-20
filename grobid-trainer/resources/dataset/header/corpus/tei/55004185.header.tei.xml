@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004185"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<affiliation>Momentum Data Systems </affiliation>
+	</byline>
+		
+	<address>17330 Brookhurst St., Suite 230, Fountain Valley, CA 92708 </address>
+	
+	<phone>Phone: 714-378-5805</phone>
+
+	<ptr type="web">http://www.mds.com<lb/>http://www.mds.com<lb/></ptr>
+
+	<docTitle>
+	<titlePart>Complete high performance development platform<lb/> for Set Top Box, IPTV, and embedded media pro-<lb/>cessing<lb/> </titlePart>
+	</docTitle>
+	
+	<div type="introduction">Based on NXP Semiconductor (formerly Philips) pnx8950<lb/> (pnx8550) Nexperia home entertainment engine, the MDS-<lb/>810 product offers a rich platform for the development of<lb/> video products needing support for analog and digital (SD<lb/> and HD) standards.<lb/> The system comes with video decoders that support:<lb/> @BULLET SD and HD MPEG2 decode (up to 1080i with ATSC or DVB<lb/> profiles)<lb/> @BULLET SD MPEG4 (ASP) and DivX<lb/> @BULLET SD WM9<lb/> as well as the corresponding audio formats including MP3,<lb/> WMA, and Dolby AC3.<lb/> Third party encoders for MPEG2 or MPEG4 and SD H264<lb/> decode (up to MP@L3 2mbps CABAC) are available as an<lb/> option to allow PVR capability of legacy analog NTSC/PAL<lb/> content.<lb/> The pnx8950 has a MIPS32 core and is supplied with a Linux<lb/> 2.6 kernel. Alternatively Monta Vista Linux can be used. The<lb/> pnx8950 includes dedicated hardware for video processing,<lb/> including:<lb/> @BULLET MBS -used for scaling and hugh quality deinterlacing<lb/> @BULLET QVCP -5 layer image composition processor supports<lb/> picture quality improvement for direct connection to out-<lb/>put device (LCD, etc.).<lb/> @BULLET Second (standard def) output allows HD content on main<lb/> output to be scaled.<lb/> @BULLET Two TriMedia cores allow custom algorithms<lb/> Standard Linux APIs are used to control video and audio<lb/> decoding and display.<lb/> The platform is based on Philips STB810 reference design,<lb/> and provides the following connectivity:<lb/> @BULLET Video input: CVBS or S video (NTSC/PAL)<lb/> @BULLET Video output: CVBS or S (NTSC/PAL), HDMI, or compo-<lb/>nent (720p/1080i)<lb/> @BULLET Audio input: Stereo analog and SPDIF<lb/> @BULLET Audio output: Stereo analog and SPDIF<lb/> @BULLET Connectivity: USB 2.0, 10/100 Ethernet, serial port<lb/> (RS232)<lb/> Internal to the system is an SATA interface for a disk drive<lb/> (supplied) to support PVR applications.<lb/> The box includes internal expansion options:<lb/> @BULLET dual transport stream or raw 656 style video inputs (for<lb/> tuner connection, for example)<lb/> @BULLET PCI slot is provided for general expansion<lb/> @BULLET miniPCI slot for 802.11 NIC<lb/> While in standby a small 8 bit micro allows the unit to meet<lb/> local governmental energy usage requirements.<lb/></div>
+
+		</front>
+	</text>
+</tei>

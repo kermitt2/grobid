@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005103"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Preservation solutions: canthey help expand<lb/> donorselection ?<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Prof.OlivierBoillot<lb/></docAuthor>
+	</byline>
+
+		</front>
+	</text>
+</tei>

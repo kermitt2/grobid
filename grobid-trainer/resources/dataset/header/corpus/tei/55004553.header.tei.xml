@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004553"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Perceptual Interfaces<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Matthew Turk and Mathias Kölsch<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University of California,</affiliation>
+	</byline>
+
+	<address>Santa Barbara<lb/></address>
+
+	<idno>UCSB Technical Report 2003-33<lb/></idno>
+
+	<div type="abstract">Abstract In recent years, perceptual interfaces have emerged as an increasingly important<lb/> research direction. The general focus of this area is to integrate multiple perceptual<lb/> modalities (such as computer vision, speech and sound processing, and haptic I/O)<lb/> into the user interface. Broadly defined, perceptual interfaces are highly interac-<lb/>tive, multimodal interfaces that enable rich, natural, and efficient interaction with<lb/> computers. More specifically, perceptual interfaces seek to leverage sensing (input)<lb/> and rendering (output) technologies in order to provide interactions not feasible<lb/> with standard interfaces and the common triumvirate of I/O devices: the keyboard,<lb/> mouse and monitor.<lb/> In this report, we seek to communicate the motivations and goals of percep-<lb/>tual interfaces, to enumerate the relevant technologies, to discuss the integration<lb/> of multiple modalities, and to describe in more detail the role of computer vision<lb/> in human-computer interaction. We cover vision problems, constraints, and ap-<lb/>proaches that are apropos to the area, survey the state of the art in computer vision<lb/> research and multi-modal interfaces, and take a look at other perceptual technolo-<lb/>gies such as brain-computer interfaces. We focus on their application to perceptual<lb/> interfaces, describe several near-term applications, and suggest promising research<lb/> directions.<lb/></div>
+
+		</front>
+	</text>
+</tei>

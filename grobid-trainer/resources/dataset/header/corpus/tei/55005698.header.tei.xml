@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005698"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">49<lb/> </note>
+	
+	<note type="other">Proceedings of MICCAI 2010 Workshop: Virtual Colonoscopy &amp; Abdominal Imaging<lb/></note>
+
+	<docTitle>
+	<titlePart>A Bayesian Approach for False Positive Reduction in<lb/> CTC CAD<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Xujiong Ye, Gareth Beddoe and Greg Slabaugh<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Medicsight PLC,</affiliation>
+	</byline>
+
+	<address>London, UK<lb/></address>
+
+	<div type="abstract">Abstract. This paper presents an automated detection method for identifying colonic<lb/> polyps and reducing false positives (FPs) in CT images. It formulates the problem of<lb/> polyp detection as a probability calculation through a unified Bayesian statistical model.<lb/> The polyp likelihood is modeled with a combination of shape and intensity features. A<lb/> second principal curvature PDE provides a shape model; and the partial volume effect is<lb/> considered in modeling of the polyp intensity distribution. The performance of the<lb/> method was evaluated on a large multi-center dataset of colonic CT scans. Both<lb/> qualitative and quantitative experimental results demonstrate the potential of the<lb/> proposed method.<lb/></div>
+
+	<keyword>Keywords: colon CAD, colonic polyp detection, Bayesian framework<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

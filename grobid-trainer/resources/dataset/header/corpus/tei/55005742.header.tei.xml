@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005742"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">297<lb/> </note>
+	
+	<note>1064-7562/02/1100-0297/0</note>
+
+	<note type="copyright">© 2003 Plenum Publishing Corporation<lb/></note>
+
+	<reference>Journal of Materials Synthesis and Processing, Vol. 10, No. 6, November 2002</reference>
+	
+	<note type="copyright"> (© 2003)<lb/></note>
+
+	<docTitle>
+	<titlePart>Synthesis and Characterization of Mesoporous<lb/> Manganese Oxides<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Xinlin Hong,<lb/> 1 Gaoyong Zhang,<lb/> 1,2,3 Hengquan Yang,<lb/> 1 and Yinyan Zhu<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">1<lb/> Mesoporous manganese oxide (MPMO) K 0.216 MnO 2 и 1.26H 2 O was synthesized by reduction of<lb/> KMnO 4 with maleic acid. Its composition and structure were analyzed and characterized by induc-<lb/>tive coupled plasma atomic emission spectrometry (ICP-AES), titration, X-ray powder diffractom-<lb/>etry (XRD), thermogravimetry (TG)-differential thermoanalysis (DTA). The morphology and pore<lb/> structure of the MPMO material were accomplished by means of high-resolution transmission elec-<lb/>tron microscopy (HRTEM) and N 2 sorptometry and transmission electron microscopy (TEM). The<lb/> results show that MPMO is a pseudocrystalline material with complex network pore structure; its<lb/> BET surface area is 261.6 m<lb/> 2 /g and pore diameter distribution is approximately in the range of<lb/> 2–10 nm. The MPMO material turns into a-MnO 2 when the calcinating temperature rises to 400°C.<lb/> KEY WORDS: Mesoporous manganese oxide (MPMO); pseudocrystalline; complex network pore structure.<lb/></div>
+
+	<byline>
+	<affiliation>1 School of Chemistry and Molecular Science, Wuhan University,<lb/></affiliation>
+	</byline>
+
+	<address>Wuhan 430072, P. R. China.<lb/></address>
+
+	<byline>
+	<affiliation>2 China Research Institute of Daily Chemical Industry,</affiliation>
+	</byline>
+
+	<address>Taiyuan<lb/> 030001, P. R. China.<lb/></address>
+
+	<note type="other">3 To whom all correspondence should be addressed.</note>
+
+	<email>e-mail:<lb/> RIDCI@public.ty.sx.cn<lb/></email>
+
+		</front>
+	</text>
+</tei>
