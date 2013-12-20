@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004807"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Multi-Camera Editing<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">EditStudio 6 has direct support for editing multi-camera footage. It uses some of<lb/> the unique EditStudio properties where the effect (here the multi-camera<lb/> switching) is applied in its own track and it never touches the underlying videos.<lb/> </div>
+	
+	<div type="introduction">Multi-camera recording, from the golden age of TV to your desktop<lb/> Using several cameras simultaneously recording events such as weddings, parties, live shows<lb/> etc. is a great way to make your final product stand up. In the past the equipment cost was<lb/> prohibitive for any larger multi-camera setup, but that is a non issue today.<lb/> Even using only two cameras constantly rolling from different angles will give you the ability to<lb/> make dynamic scene cuts during the long, slow yet for some reason important scenes, to<lb/> make sure the viewer will not fall asleep; an ultimate dream of any aspiring video maker.<lb/> However without a reasonable Multi-Camera workflow, the task of later editing multiple<lb/> camera shots can be a troublesome experience.<lb/> We try to address this with this new Multi-Camera plug-in in EditStudio.</div>
+
+		</front>
+	</text>
+</tei>

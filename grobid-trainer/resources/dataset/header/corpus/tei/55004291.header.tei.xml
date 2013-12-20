@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004291"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>ARTHRITIS &amp; RHEUMATISM<lb/> Vol. 63, No. 7, July 2011, pp 1961–1971<lb/></reference>
+
+	<idno type="DOI">DOI 10.1002/art.30344<lb/></idno>
+
+	<note type="copyright">© 2011, American College of Rheumatology<lb/></note>
+
+	<docTitle>
+	<titlePart>Correlation of Anti–Signal Recognition Particle Autoantibody<lb/> Levels With Creatine Kinase Activity in Patients With<lb/> Necrotizing Myopathy<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Olivier Benveniste,<lb/> 1 Laurent Drouot,<lb/> 2 Fabienne Jouen,<lb/> 3 Jean-Luc Charuel,<lb/> 4<lb/> Coralie Bloch-Queyrat,<lb/> 1 Anthony Behin,<lb/> 5 Zahir Amoura,<lb/> 4 Isabelle Marie,<lb/> 3<lb/> Marguerite Guiguet,<lb/> 6 Bruno Eymard,<lb/> 5 Danièle Gilbert,<lb/> 2 François Tron,<lb/> 3 Serge Herson,<lb/> 1<lb/> Lucile Musset,<lb/> 4 and Olivier Boyer<lb/> 3<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Objective. Anti–signal recognition particle (anti-<lb/>SRP) autoantibodies are associated with severe ac-<lb/>quired necrotizing myopathies. The role of these auto-<lb/>antibodies remains elusive, and the evolution of anti-<lb/>SRP levels over time is unknown. In this study, we<lb/> developed an addressable laser bead immunoassay<lb/> (ALBIA) technique to investigate a correlation between<lb/> anti-SRP levels, serum creatine kinase (CK) levels, and<lb/> muscle strength in patients with necrotizing myopathy.<lb/> Methods. The diagnostic value of the ALBIA<lb/> assay was determined by comparing serum levels of<lb/> anti-SRP autoantibodies in 31 anti-SRP immunodot–<lb/> positive patients to those in 190 healthy blood donors<lb/> and 199 control patients with different inflammatory/<lb/> autoimmune conditions or polyclonal hypergamma-<lb/>globulinemia. Among the 31 anti-SRP–positive patients,<lb/> serum samples from 8 patients were monitored over<lb/> time for levels of anti-SRP autoantibodies and levels of<lb/> CK (determined at least 3 times, consecutively, over a<lb/> mean followup period of 783 days). The relationship<lb/> between levels of anti-SRP autoantibodies and levels of<lb/> CK was tested using a linear mixed model.<lb/> Results. The assay yielded positive results for<lb/> anti-SRP in all anti-SRP immunodot–positive serum<lb/> samples tested, while all control sera tested negative.<lb/> The 8 anti-SRP–positive patients who were followed up<lb/> longitudinally were found to have normalized CK levels<lb/> and improved muscle strength. There was a striking<lb/> correlation between the degree of myolysis, as measured<lb/> by CK levels, in patients receiving therapy and the<lb/> anti-SRP54 autoantibody levels in these same patients<lb/> (P ‫؍‬ 0.002).<lb/> Conclusion. Anti-SRP–positive myositis appears<lb/> to be one of the few autoimmune diseases in which<lb/> specific autoantibody levels are correlated with surro-<lb/>gate disease activity markers. These results reveal the<lb/> usefulness of monitoring anti-SRP autoantibody levels<lb/> in patients receiving therapy, and may also suggest a<lb/> possible pathogenic role for anti-SRP autoantibodies in<lb/> the necrotizing myopathies.<lb/></div> <div type="introduction">Autoantibodies directed against signal recogni-<lb/>tion particles (anti-SRP) are present in a minority<lb/> (4–6%) of patients with acquired inflammatory and/or<lb/> necrotizing myopathies (1–5). Anti-SRP autoantibodies<lb/> are generally associated with severe clinical forms of the<lb/> disease, particularly those with heart and lung involve-<lb/>ment (6,7) and resistance to steroid therapy (8–10).</div>
+
+		</front>
+	</text>
+</tei>

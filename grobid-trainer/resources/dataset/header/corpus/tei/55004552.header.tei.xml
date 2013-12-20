@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004552"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>International Journal of Intelligent Systems Technologies and Applications, Vol. x,<lb/> No. x, xxxx<lb/> 1<lb/></reference>
+
+	<docTitle>
+	<titlePart>Gesture recognition with a time-of-flight<lb/> camera<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Eva Kollorz, Jochen Penne and Joachim<lb/> Hornegger<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institute of Pattern Recognition,<lb/> Friedrich-Alexander-University</affiliation>
+	</byline>
+
+	<address>Erlangen-Nuremberg, Germany<lb/></address>
+
+	<email>E-mail: Eva.Kollorz,Jochen.Penne@informatik.uni-erlangen.de<lb/></email>
+
+	<byline>
+	<docAuthor>Alexander Barke<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Applied Research,<lb/> Audi Electronics Venture GmbH,</affiliation>
+	</byline>
+
+	<address>Gaimersheim, Germany<lb/></address>
+
+	<email>E-mail: alexander.barke@audi.de<lb/></email>
+
+	<div type="abstract">Abstract: This paper presents a new approach for gesture classifica-<lb/>tion using x-and y-projections of the image and optional depth features.<lb/> The system uses a 3-D time-of-flight (TOF) sensor which has the big<lb/> advantage of simplifying hand segmentation. For the presented system,<lb/> a Photonic-Mixer-Device (PMD) camera with a resolution of 160 × 120<lb/> pixels and a frame rate of 15 frames per second is used. The goal of<lb/> our system is to recognise 12 different static hand gestures. The x-and<lb/> y-projections and the depth features of the captured image are good<lb/> enough to use a simple nearest neighbour classifier, resulting in a fast<lb/> classification. To evaluate the system, a set of 408 images is recorded,<lb/> 12 gestures from 34 persons. With a &apos;Leave-One-Out&apos; evaluation, the<lb/> recognition rate of the system is 94.61 %, and classification time is about<lb/> 30 ms on a standard PC.<lb/></div>
+
+	<keyword>Keywords: time-of-flight camera; projection features; gesture recognition<lb/></keyword>
+
+	<note type="other">Reference to this paper should be made as follows:</note>
+
+	<byline>
+	<docAuthor>E. Kollorz, J.<lb/> Penne, J. Hornegger and A. Barke</docAuthor>
+	</byline>
+
+		</front>
+	</text>
+</tei>

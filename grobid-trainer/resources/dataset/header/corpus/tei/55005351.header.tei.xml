@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005351"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">SCHWERPUNKT<lb/> Bilder: Vector<lb/></note>
+
+	<note type="other">Analyse im Testbetrieb: Flash-Prozesse<lb/> erfordern von Zulieferern oft einen Spagat<lb/> zwischen rationeller Fertigung und<lb/> detaillierten Kundenanforderungen.<lb/> </note>
+	
+	<docTitle>
+	<titlePart>Flash-Prozesse rationell handhaben<lb/> </titlePart>
+	</docTitle>
+	
+	<div type="abstract">Zulieferern wird bei der FLASH-PROGRAMMIERUNG viel Flexibilität abverlangt. Die teils sehr unter-<lb/>schiedlichen Randbedingungen in den verschiedenen Phasen des Produktlebenszyklus fordern je-<lb/>weils eine differenzierte Behandlung.<lb/> </div>
+	
+	<div type="introduction">V<lb/> on der Entwicklung über Ferti-<lb/>gung und Einsatzphase im Ziel-<lb/>fahrzeug bis zur Diagnose von<lb/> Rückläufern müssen Steuergeräte<lb/> mehr oder weniger häufig repro-<lb/>grammiert und analysiert werden.<lb/> Für Zulieferer besteht eine wesent-<lb/>liche Herausforderung darin, dass<lb/> Flashprozesse in der eigenen Ent-<lb/>wicklungs-und Produktionsphase ei-<lb/>nerseits möglichst rationell ablaufen<lb/> und andererseits nach der Ausliefe-<lb/>rung den Vorgaben des Fahrzeugher-<lb/>stellers gerecht werden.<lb/> Der Lösungsansatz bei Continental<lb/> Automotive Systems (CAS) zum Bei-<lb/>spiel sieht für Entwicklung und Ferti-<lb/>gung einen eigenen, herstellerspezifi-<lb/>schen Flashloader und für die Be-<lb/>triebsphase einen kundenspezifi-<lb/>schen Flashloader vor.<lb/> Der Fertigungs-Bootloader ist op-<lb/>timiert für standardisierte In-house-<lb/>Flashprozesse und wird am Ende des<lb/> Produktionsprozesses abgeschaltet,<lb/> sodass im normalen Betrieb nur noch<lb/> der Kunden-Flashloader aktiv ist.<lb/> Damit geht der Zulieferer möglichen<lb/> Problemen der Verträglichkeit des<lb/> Fertigungs-Bootloaders mit dem<lb/> Flashprozess des Kunden aus dem<lb/> Weg.</div>
+
+		</front>
+	</text>
+</tei>

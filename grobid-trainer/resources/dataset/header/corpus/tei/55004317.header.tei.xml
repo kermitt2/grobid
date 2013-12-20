@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004317"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Data Plane for Resilient<lb/> Network Interconnect<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>János Farkas<lb/> Balázs Péter Gerő<lb/> Panagiotis Saltsidis<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<div type="introduction">Data</div>
+	</byline>
+
+		</front>
+	</text>
+</tei>

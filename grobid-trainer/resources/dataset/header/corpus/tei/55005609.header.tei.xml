@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005609"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+
+	<byline>
+	<affiliation>US Environmental Protection Agency<lb/> Office of Pesticide Programs<lb/> </affiliation>
+	</byline>
+
+	<docTitle>
+	<titlePart>Reregistration Eligibility Decision (RED)<lb/> for Grotan (HHT)<lb/></titlePart>
+	</docTitle>
+
+	<date>June 27, 2008</date>
+
+		</front>
+	</text>
+</tei>

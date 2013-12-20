@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005576"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Personalised anti-aging skin care:<lb/> molecular and cellular basis.<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Toomas Neuman<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Tallinn University of Technology<lb/></affiliation>
+	</byline>
+
+	<address>FibroTx, LLC, Tallinn, ESTONIA<lb/></address>
+
+	<byline>
+	<address>London</address>
+	</byline>
+	
+	<date>June 2, 2010</date>
+
+		</front>
+	</text>
+</tei>

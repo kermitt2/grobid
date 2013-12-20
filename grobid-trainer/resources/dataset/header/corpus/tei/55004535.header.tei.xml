@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004535"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Digital Audio Watermarking by Magnitude Modification of<lb/> Frequency Components Using the CSPE Algorithm.<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Jian Wang</docAuthor>
+	</byline>
+
+	<email>(jwang@cs.nuim.ie), </email>
+	
+	<byline>
+	<docAuthor>Ron Healy </docAuthor>
+	</byline>
+	
+	<email>(rhealy@cs.nuim.ie), </email>
+	
+	<byline>
+	<docAuthor>Dr. Joseph Timoney </docAuthor>
+	</byline>
+	
+	<email>(jtimoney@cs.nuim.ie)<lb/></email>
+
+	<div type="abstract">ABSTRACT:<lb/> In this paper we describe a process whereby the<lb/> magnitude of either one or two frequency components of<lb/> a signal is modified in order that it may be used to<lb/> encode a hidden message within a signal in such a way as<lb/> the casual observer would have no way of noticing the<lb/> presence of a hidden message. Previous work has used<lb/> filtering and signal addition to achieve the same goals.<lb/> The current work improves on this by using a recent<lb/> super-resolution component-identification technique to<lb/> isolate the components to modify, limiting the impact on<lb/> the quality of the signal.<lb/></div>
+
+	<keyword>Keywords: Signal processing, digital audio watermarking,<lb/> data hiding, Steganography</keyword>
+
+		</front>
+	</text>
+</tei>

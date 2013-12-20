@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005616"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Tom&apos;s Hardware Worldwide<lb/> Search<lb/> OK<lb/> |<lb/> Join | Sign In<lb/> Reviews, News &amp; Product<lb/> Information Sponsored by Samsung SSD<lb/></note>
+	
+	<note type="other">Topic : Samsung SSD<lb/> intel raid controller two partitions<lb/> Search this thread<lb/></note>
+
+	<note type="other">rantsky </note>
+	
+	<date>10-05-2006</date>
+
+	<note type="other">at 05:51:21 PM<lb/> 0<lb/> Backup, data safety, fibre storage for audio and video industries.<lb/></note>
+
+	<note type="other">Codesmith </note>
+	
+	<date>10-05-2006</date>
+
+	<note type="other">at 08:37:03 PM<lb/> 0<lb/> Tom&apos;s Hardware &gt; Forum &gt; Storage &gt; Hard Drives &gt; Mixing RAID types in different partitions<lb/></note>
+
+	<docTitle>
+	<titlePart>Mixing RAID types in different partitions<lb/> </titlePart>
+	</docTitle>
+	
+	<note type="other">Forum Storage : Hard Drives -Mixing RAID types in different partitions<lb/></note>
+	
+		</front>
+	</text>
+</tei>

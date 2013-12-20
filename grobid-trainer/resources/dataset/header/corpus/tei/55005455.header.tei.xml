@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005455"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Table of Contents<lb/>Name<lb/> </note>
+
+	<docTitle>
+	<titlePart>X -a portable, network-transparent window system<lb/> </titlePart>
+	</docTitle>
+
+	<div type="abstract">Synopsis<lb/> The X Window System is a network transparent window system which runs on a wide range of computing<lb/> and graphics machines. It should be relatively straightforward to build the X.Org Foundation software<lb/> distribution on most ANSI C and POSIX compliant systems. Commercial implementations are also<lb/> available for a wide range of platforms.<lb/> The X.Org Foundation requests that the following names be used when referring to this software:<lb/> X X Window System<lb/> X Version 11<lb/> X Window System, Version 11<lb/> X11<lb/> X Window System is a trademark of The Open Group.<lb/> </div>
+	
+	<div type="introduction">Description<lb/> X Window System servers run on computers with bitmap displays. The server distributes user input to and<lb/> accepts output requests from various client programs through a variety of different interprocess<lb/> communication channels. Although the most common case is for the client programs to be running on the<lb/> same machine as the server, clients can be run transparently from other machines (including machines<lb/> with different architectures and operating systems) as well.<lb/> X supports overlapping hierarchical subwindows and text and graphics operations, on both monochrome<lb/> and color displays. For a full explanation of the functions that are available, see the Xlib -C Language X<lb/> Interface manual, the X Window System Protocol specification, the X Toolkit Intrinsics -C Language<lb/> Interface manual, and various toolkit documents.<lb/> The number of programs that use X is quite large. Programs provided in the core X.Org Foundation<lb/> distribution include: a terminal emulator, xterm; a window manager, twm; a display manager, xdm; a<lb/> console redirect program, xconsole; a mail interface, xmh; a bitmap editor, bitmap; resource<lb/> listing/manipulation tools, appres, editres; access control programs, xauth, xhost, and iceauth; user<lb/> preference setting programs, xrdb, xcmsdb, xset, xsetroot, xstdcmap, and xmodmap; clocks, xclock and<lb/> oclock; a font displayer, (xfd; utilities for listing information about fonts, windows, and displays, xlsfonts,<lb/> xwininfo, xlsclients, xdpyinfo, xlsatoms, and xprop; screen image manipulation utilities, xwd, xwud, and<lb/> xmag; a performance measurement utility, x11perf; a font compiler, bdftopcf; a font server and related<lb/> utilities, xfs, fsinfo, fslsfonts, fstobdf; a display server and related utilities, Xserver, rgb, mkfontdir; a print<lb/> server and related utilities, Xprt, xplsprinters; remote execution utilities, rstart and xon; a clipboard<lb/> manager, xclipboard; keyboard description compiler and related utilities, xkbcomp, xkbprint, xkbbell,<lb/> xkbevd, xkbvleds, and xkbwatch; a utility to terminate clients, xkill; an optimized X protocol proxy,<lb/> lbxproxy; a firewall security proxy, xfwp; a proxy manager to control them, proxymngr; a utility to find<lb/> proxies, xfindproxy; Netscape Navigator Plug-ins, libxrx.so and libxrxnest.so; an RX MIME-type helper<lb/> program, xrx; and a utility to cause part or all of the screen to be redrawn, xrefresh.</div>
+
+		</front>
+	</text>
+</tei>

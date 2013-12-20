@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005697"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Detection of Polyps via Shape and Appearance Modeling<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Paulo R. S. Mendonça,<lb/> 1 Rahul Bhotika,<lb/> 1 Fei Zhao,<lb/> 1<lb/> John Melonakos,<lb/> 2 and Saad Sirohey<lb/> 3<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 GE Global Research, One Research Circle,</affiliation>
+	</byline>
+
+	<address>Niskayuna, NY 12309, USA<lb/></address>
+
+	<byline>
+	<affiliation>2 School of ECE, Georgia Institute of Technology,</affiliation>
+	</byline>
+
+	<address>Atlanta, GA 30332, USA<lb/></address>
+
+	<byline>
+	<affiliation>3 GE Healthcare,</affiliation>
+	</byline>
+
+	<address>Waukesha, WI 53188, USA<lb/></address>
+
+	<div type="abstract">Abstract. This paper describes a CAD system for the detection of colorectal<lb/> polyps in CT. It is based on stochastic shape and appearance modeling of struc-<lb/>tures of the colon and rectum, in contrast to the data-driven approaches more<lb/> commonly found in the literature it derives predictive stochastic models for the<lb/> features used for classification. The method makes extensive use of medical do-<lb/>main knowledge in the design of the models and in the setting of their parameters.<lb/> The proposed approach was successfully tested on challenging datasets acquired<lb/> under a protocol with little colonic preparation; such protocol reduces patient<lb/> discomfort and potentially improves compliance.<lb/></div>
+
+		</front>
+	</text>
+</tei>

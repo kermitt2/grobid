@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005910"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>FAST RECONSTRUCTION OF CT IMAGES FROM PARSIMONIOUS ANGULAR<lb/> MEASUREMENTS VIA COMPRESSED SENSING<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>N. S. AYBAT * AND A. CHAKRABORTY<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Abstract. Computed Tomography (CT) is one of the most popular diagnostic tools available to medical professionals.<lb/> However, its diagnostic power comes at a cost to the patient-significant radiation exposure. Fixing the level of current in<lb/> the X-ray tube, the amount of radiation exposure increases linearly with the number of angular measurements necessary to<lb/> successfully reconstruct the imaged volume. Compressed sensing (CS) on the other hand is a technique that allows one to<lb/> reconstruct signals from a very limited set of samples provided that the target signal is compressible in a transform domain.<lb/> Combining the two gives clinicians the benefits of CT while at the same time limiting the risk posed by excessive radiation. In<lb/> this work we formulate the computed tomography reconstruction problem within a compressed sensing framework using partial<lb/> pseudo-polar Fourier transform. Simulated results indicate that the number of angular projections and hence the associated<lb/> radiation can be cut by a factor of 4 to 8 without noticeable loss of image quality.<lb/></div>
+
+		</front>
+	</text>
+</tei>

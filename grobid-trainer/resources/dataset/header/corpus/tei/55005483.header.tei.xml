@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005483"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<note type="other">Elektronische Bedienungsanleitung freigegeben gemäß &quot;Nokia Bedienungsanleitungen,</note>
+	</byline>
+
+	<note type="other">Richtlinien und Bedingun-<lb/>gen,</note>
+
+	<date>7. Juni 1998&quot; </date>
+	
+	<note type="other">(&quot;Nokia User&apos;s Guides Terms and Conditions, </note>
+	
+	<date>7th June, 1998&quot;.)<lb/></date>
+
+	<docTitle>
+	<titlePart>Bedienungsanleitung<lb/> </titlePart>
+	</docTitle>
+	
+	<note type="other">9352375 Ausgabe 2</note>
+
+		</front>
+	</text>
+</tei>

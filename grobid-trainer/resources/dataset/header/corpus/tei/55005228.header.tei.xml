@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005228"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Quantitative Methylation-Specific Polymerase Chain Reaction Gene Patterns in Urine<lb/> Sediment Distinguish Prostate Cancer Patients From Control Subjects<lb/> </titlePart>
+	</docTitle>
+	
+	<note type="other">Table 1. Supplementary Summary of Different Tests Based on Bayes Network Statistical Approach<lb/></note>
+	
+	<div type="introduction">No. of Markers<lb/> Sensitivity Specificity<lb/> 1 p16<lb/> 0.37<lb/> 1.00<lb/> 1 MGMT<lb/> 0.19<lb/> 1.00<lb/> 1 GSTP1<lb/> 0.48<lb/> 1.00<lb/> 1 ARF<lb/> 0.37<lb/> 1.00<lb/> 2 MGMT,p16<lb/> 0.48<lb/> 1.00<lb/> 2 GSTP1,TIMP3<lb/> 0.48<lb/> 1.00<lb/> 2 GSTP1,p16<lb/> 0.65<lb/> 1.00<lb/> 2 GSTP1,MGMT<lb/> 0.58<lb/> 1.00<lb/> 2 ARF,p16<lb/> 0.60<lb/> 1.00<lb/> 2 ARF,MGMT<lb/> 0.50<lb/> 1.00<lb/> 2 ARF,GSTP1<lb/> 0.69<lb/> 1.00<lb/> 3 MGMT,p16,TIMP3<lb/> 0.48<lb/> 1.00<lb/> 3 GSTP1,p16,TIMP3<lb/> 0.65<lb/> 1.00<lb/> 3 GSTP1,MGMT,TIMP3<lb/> 0.58<lb/> 1.00<lb/> 3 GSTP1,MGMT,p16<lb/> 0.73<lb/> 1.00<lb/> 3 ARF,p16,TIMP3<lb/> 0.60<lb/> 1.00<lb/> 3 ARF,MGMT,TIMP3<lb/> 0.50<lb/> 1.00<lb/> 3 ARF,MGMT,p16<lb/> 0.65<lb/> 1.00<lb/> 3 ARF,GSTP1,TIMP3<lb/> 0.69<lb/> 1.00<lb/> 3 ARF,GSTP1,p16<lb/> 0.83<lb/> 1.00<lb/> 3 ARF,GSTP1,MGMT<lb/> 0.75<lb/> 1.00<lb/> 4 GSTP1,MGMT,p16,TIMP3<lb/> 0.73<lb/> 1.00<lb/> 4 ARF,MGMT,p16,TIMP3<lb/> 0.65<lb/> 1.00<lb/> 4 ARF,GSTP1,p16,TIMP3<lb/> 0.83<lb/> 1.00<lb/> 4 ARF,GSTP1,MGMT,TIMP3<lb/> 0.75<lb/> 1.00<lb/> 4 ARF,GSTP1,MGMT,p16<lb/> 0.87<lb/> 1.00<lb/> 4 APC,ARF,GSTP1,p16<lb/> 0.83<lb/> 1.00<lb/> 5 ARF,GSTP1,MGMT,p16,TIMP3<lb/> 0.87<lb/> 1.00<lb/> 5 ARF,GSTP1,MGMT,p16,Rassf1A<lb/> 0.87<lb/> 1.00<lb/> 5 ARF,GSTP1,MGMT,p16,RAR<lb/> 0.83<lb/> 1.00<lb/> 5 APC,ARF,GSTP1,MGMT,p16<lb/> 0.85<lb/> 1.00<lb/> 6 ARF,CDH1,GSTP1,p16,RAR,TIMP3<lb/> 0.94<lb/> 1.00<lb/> 7 ARF,CDH1,GSTP1,MGMT,p16,RAR,TIMP3<lb/> 0.94<lb/> 1.00<lb/> 8 APC,ARF,CDH1,GSTP1,MGMT,p16,RAR,TIMP3<lb/> 0.94<lb/> 0.98<lb/> 4 ARF,GSTP1,p16,RAR<lb/> 0.79<lb/> 0.95<lb/> 6 ARF,CDH1,p16,RAR,Rassf1A,TIMP3<lb/> 0.98<lb/> 0.94<lb/> 6 ARF,CDH1,MGMT,p16,RAR,Rassf1A<lb/> 0.98<lb/> 0.94<lb/> 7 ARF,CDH1,MGMT,p16,RAR,Rassf1A,TIMP3<lb/> 0.98<lb/> 0.94<lb/> 7 ARF,CDH1,GSTP1,p16,RAR,Rassf1A,TIMP3<lb/> 0.98<lb/> 0.94<lb/> 7 ARF,CDH1,GSTP1,MGMT,RAR,Rassf1A,TIMP3<lb/> 0.98<lb/> 0.94<lb/> 7 ARF,CDH1,GSTP1,MGMT,p16,RAR,Rassf1A<lb/> 0.98<lb/> 0.94<lb/> 8 ARF,CDH1,GSTP1,MGMT,p16,RAR,Rassf1A,TIMP3<lb/> 0.98<lb/> 0.94<lb/> 8 APC,ARF,CDH1,MGMT,p16,RAR,Rassf1A,TIMP3<lb/> 0.98<lb/> 0.94<lb/> 7 APC,ARF,GSTP1,MGMT,p16,RAR,Rassf1A<lb/> 0.94<lb/> 0.94<lb/> 6 APC,ARF,GSTP1,MGMT,p16,TIMP3<lb/> 0.87<lb/> 0.94<lb/> 3 ARF,RAR,Rassf1A<lb/> 0.98<lb/> 0.93<lb/> 4 ARF,RAR,Rassf1A,TIMP3<lb/> 0.98<lb/> 0.93<lb/> 4 ARF,p16,RAR,Rassf1A<lb/> 0.98<lb/> 0.93<lb/> 4 ARF,MGMT,RAR,Rassf1A<lb/> 0.98<lb/> 0.93<lb/> 4 ARF,GSTP1,RAR,Rassf1A<lb/> 0.98<lb/> 0.93<lb/> 4 ARF,CDH1,RAR,Rassf1A<lb/> 0.98<lb/> 0.93<lb/> 5 ARF,p16,RAR,Rassf1A,TIMP3<lb/> 0.98<lb/> 0.93<lb/> 5 ARF,MGMT,RAR,Rassf1A,TIMP3<lb/> 0.98<lb/> 0.93<lb/> 5 ARF,MGMT,p16,RAR,Rassf1A<lb/> 0.98<lb/> 0.93<lb/> 5 ARF,GSTP1,RAR,Rassf1A,TIMP3<lb/> 0.98<lb/> 0.93<lb/> 5 ARF,GSTP1,p16,RAR,Rassf1A<lb/> 0.98<lb/> 0.93<lb/> 5 ARF,GSTP1,MGMT,RAR,Rassf1A<lb/> 0.98<lb/> 0.93<lb/> 5 ARF,CDH1,RAR,Rassf1A,TIMP3<lb/> 0.98<lb/> 0.93<lb/> 5 ARF,CDH1,p16,RAR,Rassf1A<lb/> 0.98<lb/> 0.93<lb/> 5 ARF,CDH1,MGMT,RAR,Rassf1A<lb/> 0.98<lb/> 0.93<lb/> 5 ARF,CDH1,GSTP1,RAR,Rassf1A<lb/> 0.98<lb/> 0.93<lb/> 5 APC,ARF,CDH1,RAR,Rassf1A<lb/> 0.98<lb/> 0.93<lb/> 6 ARF,MGMT,p16,RAR,Rassf1A,TIMP3<lb/> 0.98<lb/> 0.93<lb/> 6 ARF,GSTP1,MGMT,RAR,Rassf1A,TIMP3<lb/> 0.98<lb/> 0.93<lb/> 6 ARF,GSTP1,MGMT,p16,RAR,Rassf1A<lb/> 0.98<lb/> 0.93<lb/> 6 ARF,CDH1,MGMT,RAR,Rassf1A,TIMP3<lb/> 0.98<lb/> 0.93<lb/></div>
+
+	<note type="other">Quantitative Methylation-Specific Polymerase Chain Reaction</note>
+	
+	<byline>
+	<note type="other">Gene Pat...<lb/></note>
+	</byline>
+
+	<ptr type="web">http://www.jcojournal.org/content/23/27/6569/T4.expansion.html<lb/></ptr>
+
+	<note type="page">1 of 7<lb/> </note>
+	
+	<date>19-08-2011 </date>
+	
+	<note type="other">09:57<lb/> 6<lb/></note>
+
+	<div type="introduction">ARF,CDH1,GSTP1,RAR,Rassf1A,TIMP3<lb/> 0.98<lb/> 0.93<lb/> 6 ARF,CDH1,GSTP1,p16,RAR,Rassf1A<lb/> 0.98<lb/> 0.93<lb/> 6 ARF,CDH1,GSTP1,MGMT,RAR,Rassf1A<lb/> 0.98<lb/> 0.93<lb/> 6 APC,ARF,CDH1,RAR,Rassf1A,TIMP3<lb/> 0.98<lb/> 0.93<lb/> 6 APC,ARF,CDH1,p16,RAR,Rassf1A<lb/> 0.98<lb/> 0.93<lb/> 6 APC,ARF,CDH1,MGMT,RAR,Rassf1A<lb/> 0.98<lb/> 0.93<lb/> 6 APC,ARF,CDH1,GSTP1,RAR,Rassf1A<lb/> 0.98<lb/> 0.93<lb/> 7 ARF,GSTP1,MGMT,p16,RAR,Rassf1A,TIMP3<lb/> 0.98<lb/> 0.93<lb/> 7 APC,ARF,CDH1,p16,RAR,Rassf1A,TIMP3<lb/> 0.98<lb/> 0.93<lb/> 7 APC,ARF,CDH1,MGMT,RAR,Rassf1A,TIMP3<lb/> 0.98<lb/> 0.93<lb/> 7 APC,ARF,CDH1,MGMT,p16,RAR,Rassf1A<lb/> 0.98<lb/> 0.93<lb/> 7 APC,ARF,CDH1,GSTP1,RAR,Rassf1A,TIMP3<lb/> 0.98<lb/> 0.93<lb/> 7 APC,ARF,CDH1,GSTP1,p16,RAR,Rassf1A<lb/> 0.98<lb/> 0.93<lb/> 7 APC,ARF,CDH1,GSTP1,MGMT,RAR,Rassf1A<lb/> 0.98<lb/> 0.93<lb/> 8 APC,ARF,CDH1,GSTP1,p16,RAR,Rassf1A,TIMP3<lb/> 0.98<lb/> 0.93<lb/> 8 APC,ARF,CDH1,GSTP1,MGMT,RAR,Rassf1A,TIMP3<lb/> 0.98<lb/> 0.93<lb/> 8 APC,ARF,CDH1,GSTP1,MGMT,p16,RAR,Rassf1A<lb/> 0.98<lb/> 0.93<lb/> 3 RAR,Rassf1A,TIMP3<lb/> 0.96<lb/> 0.93<lb/> 4 MGMT,RAR,Rassf1A,TIMP3<lb/> 0.96<lb/> 0.93<lb/> 5 CDH1,p16,RAR,Rassf1A,TIMP3<lb/> 0.96<lb/> 0.93<lb/> 5 CDH1,GSTP1,RAR,Rassf1A,TIMP3<lb/> 0.96<lb/> 0.93<lb/> 5 ARF,CDH1,GSTP1,p16,TIMP3<lb/> 0.96<lb/> 0.93<lb/> 6 ARF,GSTP1,p16,RAR,Rassf1A,TIMP3<lb/> 0.96<lb/> 0.93<lb/> 6 ARF,CDH1,GSTP1,MGMT,p16,TIMP3<lb/> 0.96<lb/> 0.93<lb/> 6 APC,CDH1,p16,RAR,Rassf1A,TIMP3<lb/> 0.96<lb/> 0.93<lb/> 6 APC,CDH1,MGMT,RAR,Rassf1A,TIMP3<lb/> 0.96<lb/> 0.93<lb/> 8 APC,ARF,GSTP1,MGMT,p16,RAR,Rassf1A,TIMP3<lb/>0.96<lb/> 0.93<lb/> 2 RAR,Rassf1A<lb/> 0.94<lb/> 0.92<lb/> 3 p16,RAR,Rassf1A<lb/> 0.94<lb/> 0.92<lb/> 3 MGMT,RAR,Rassf1A<lb/> 0.94<lb/> 0.92<lb/> 3 GSTP1,RAR,Rassf1A<lb/> 0.94<lb/> 0.92<lb/> 4 p16,RAR,Rassf1A,TIMP3<lb/> 0.94<lb/> 0.92<lb/> 4 MGMT,p16,RAR,Rassf1A<lb/> 0.94<lb/> 0.92<lb/> 4 GSTP1,RAR,Rassf1A,TIMP3<lb/> 0.94<lb/> 0.92<lb/> 4 GSTP1,p16,RAR,Rassf1A<lb/> 0.94<lb/> 0.92<lb/> 4 GSTP1,MGMT,RAR,Rassf1A<lb/> 0.94<lb/> 0.92<lb/> 4 CDH1,p16,RAR,Rassf1A<lb/> 0.94<lb/> 0.92<lb/> 4 CDH1,GSTP1,RAR,Rassf1A<lb/> 0.94<lb/> 0.92<lb/> 4 APC,ARF,GSTP1,Rassf1A<lb/> 0.94<lb/> 0.92<lb/> 5 MGMT,p16,RAR,Rassf1A,TIMP3<lb/> 0.94<lb/> 0.92<lb/> 5 GSTP1,p16,RAR,Rassf1A,TIMP3<lb/> 0.94<lb/> 0.92<lb/> 5 GSTP1,MGMT,RAR,Rassf1A,TIMP3<lb/> 0.94<lb/> 0.92<lb/> 5 GSTP1,MGMT,p16,RAR,Rassf1A<lb/> 0.94<lb/> 0.92<lb/> 5 CDH1,MGMT,p16,RAR,Rassf1A<lb/> 0.94<lb/> 0.92<lb/> 5 CDH1,GSTP1,p16,RAR,Rassf1A<lb/> 0.94<lb/> 0.92<lb/> 5 CDH1,GSTP1,MGMT,RAR,Rassf1A<lb/> 0.94<lb/> 0.92<lb/> 5 APC,CDH1,p16,RAR,Rassf1A<lb/> 0.94<lb/> 0.92<lb/> 5 APC,CDH1,GSTP1,RAR,Rassf1A<lb/> 0.94<lb/> 0.92<lb/> 5 APC,ARF,GSTP1,Rassf1A,TIMP3<lb/> 0.94<lb/> 0.92<lb/> 5 APC,ARF,GSTP1,p16,Rassf1A<lb/> 0.94<lb/> 0.92<lb/> 5 APC,ARF,GSTP1,MGMT,Rassf1A<lb/> 0.94<lb/> 0.92<lb/> 6 GSTP1,MGMT,p16,RAR,Rassf1A,TIMP3<lb/> 0.94<lb/> 0.92<lb/> 6 CDH1,MGMT,p16,RAR,Rassf1A,TIMP3<lb/> 0.94<lb/> 0.92<lb/> 6 CDH1,GSTP1,p16,RAR,Rassf1A,TIMP3<lb/> 0.94<lb/> 0.92<lb/> 6 CDH1,GSTP1,MGMT,RAR,Rassf1A,TIMP3<lb/> 0.94<lb/> 0.92<lb/> 6 CDH1,GSTP1,MGMT,p16,RAR,Rassf1A<lb/> 0.94<lb/> 0.92<lb/> 6 APC,CDH1,MGMT,p16,RAR,Rassf1A<lb/> 0.94<lb/> 0.92<lb/> 6 APC,CDH1,GSTP1,RAR,Rassf1A,TIMP3<lb/> 0.94<lb/> 0.92<lb/> 6 APC,CDH1,GSTP1,p16,RAR,Rassf1A<lb/> 0.94<lb/> 0.92<lb/> 6 APC,CDH1,GSTP1,MGMT,RAR,Rassf1A<lb/> 0.94<lb/> 0.92<lb/> 6 APC,ARF,GSTP1,p16,Rassf1A,TIMP3<lb/> 0.94<lb/> 0.92<lb/> 6 APC,ARF,GSTP1,p16,RAR,Rassf1A<lb/> 0.94<lb/> 0.92<lb/> 6 APC,ARF,GSTP1,MGMT,Rassf1A,TIMP3<lb/> 0.94<lb/> 0.92<lb/> 6 APC,ARF,GSTP1,MGMT,p16,Rassf1A<lb/> 0.94<lb/> 0.92<lb/> 7 CDH1,GSTP1,MGMT,p16,RAR,Rassf1A,TIMP3<lb/> 0.94<lb/> 0.92<lb/> 7 APC,CDH1,MGMT,p16,RAR,Rassf1A,TIMP3<lb/> 0.94<lb/> 0.92<lb/> 7 APC,CDH1,GSTP1,p16,RAR,Rassf1A,TIMP3<lb/> 0.94<lb/> 0.92<lb/> 7 APC,CDH1,GSTP1,MGMT,RAR,Rassf1A,TIMP3<lb/> 0.94<lb/> 0.92<lb/> 7 APC,CDH1,GSTP1,MGMT,p16,RAR,Rassf1A<lb/> 0.94<lb/> 0.92<lb/> 7 APC,ARF,GSTP1,MGMT,p16,Rassf1A,TIMP3<lb/> 0.94<lb/> 0.92<lb/> 4 APC,ARF,p16,Rassf1A<lb/> 0.92<lb/> 0.92<lb/> 4 APC,ARF,MGMT,Rassf1A<lb/> 0.92<lb/> 0.92<lb/> 5 APC,ARF,MGMT,Rassf1A,TIMP3<lb/> 0.92<lb/> 0.92<lb/> 5 APC,ARF,MGMT,p16,Rassf1A<lb/> 0.92<lb/> 0.92<lb/> 6 APC,ARF,MGMT,p16,Rassf1A,TIMP3<lb/> 0.92<lb/> 0.92<lb/> 8 APC,CDH1,GSTP1,MGMT,p16,RAR,Rassf1A,TIMP3<lb/> 0.92<lb/> 0.92<lb/> 4 APC,GSTP1,p16,Rassf1A<lb/> 0.90<lb/> 0.92<lb/></div>
+
+	<docTitle>
+	<titlePart>Quantitative Methylation-Specific Polymerase Chain Reaction</titlePart>
+	</docTitle>
+
+	<byline>
+	<note type="other">Gene Pat...<lb/></note>
+	</byline>
+
+	<ptr type="web">http://www.jcojournal.org/content/23/27/6569/T4.expansion.html</ptr>
+
+		</front>
+	</text>
+</tei>

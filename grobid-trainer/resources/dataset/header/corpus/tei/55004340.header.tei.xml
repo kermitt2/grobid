@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004340"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Nanobiotechnology: A new strategy to develop non-toxic antimicrobial<lb/> textiles<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Isabel C. Gouveia<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>MTP, Research Unit of Textile and Paper Materials, Faculty of Engineering, UBI-University of Beira Interior, </affiliation>
+	</byline>
+
+	<address>Calçada<lb/> Fonte do Lameiro, 6200-358, Covilhã, Portugal<lb/></address>
+
+	<div type="abstract">Consumers&apos; attitude towards hygiene and active lifestyle has created a rapidly increasing market for a wide range of<lb/> antimicrobial textiles, which in turn has stimulated intensive research and development. As a result, the number of<lb/> biofunctional textiles with an antimicrobial activity has increased considerably over the last few years. In a near future,<lb/> biomedical products will perhaps be the largest application of antimicrobial textiles since they find applications for<lb/> prevention, as surgical lab coats, or therapy as wound dressings.<lb/> Several antimicrobial agents have been tested in textiles. They have powerful bactericidal activity as indicated by the MIC<lb/> value. However, the majority has a reduced spectrum of microbial inhibition and may cause skin irritation, ecotoxicity and<lb/> bacteria resistance. Moreover, the biocide can gradually lose activity during the use and launderings of the textile. In<lb/> addition, wearing these textiles in a continuous manner can lead to sensitization and bacteria resistance. As a result, and to<lb/> minimize such risks, there is a great demand for antimicrobial textiles based on non-toxic and ecofriendly agents.<lb/> Due to the relatively lower incidence of adverse reactions of natural products in comparison with synthetic<lb/> pharmaceuticals, they can be exploited as an attractive ecofriendly alternative for textile applications.</div>
+
+		</front>
+	</text>
+</tei>

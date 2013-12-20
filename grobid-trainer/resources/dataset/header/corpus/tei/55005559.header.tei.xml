@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005559"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Calcium Supplementation and Processing Variable Effects<lb/> on Orange Juice Quality<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>R.A. BAKER, P.G. CRANDALL, K.C. DAVIS, and L. WICKER<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">ABSTRACT<lb/> Untreated, pectinesterase treated, low pulp, and pectinase treated or-<lb/>ange juices were fortified to 20% RDA of calcium with calcium car-<lb/>bonate or calcium phosphate/lactate (75/Z). Neither calcium supplement<lb/> adversely affected flavor, cloud density, settling pulp, or viscosity in<lb/> untreated, low pulp, or pectinase treated juices. PME exposed orange<lb/> juice held 4 hr before pasteurization and calcium supplementation had<lb/> less cloudy density, increased viscosity and more settling pulp. Cal-<lb/>cium carbonate fortified PME exposed and pectinase treated juices<lb/> had lower flavor scores, while calcium phosphate suspensions caused<lb/> slightly lower color scores of all juices.<lb/></div>
+
+		</front>
+	</text>
+</tei>

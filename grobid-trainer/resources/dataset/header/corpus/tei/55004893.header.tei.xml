@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004893"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<affiliation>Department of Surgery<lb/> 1<lb/> , Department of Pharmacology &amp; Institute of Biomedical Sciences<lb/> 2<lb/> , Department of Internal Medicine<lb/> 3<lb/> , College of Medicine, Hanyang University, Seoul, South Korea; Department of Pathology and Laboratory Medicine<lb/> 4<lb/> , College of<lb/> Medicine, University of Pennsylvania,</affiliation>
+	</byline>
+
+	<address>Philadelphia, USA<lb/></address>
+
+	<docTitle>
+	<titlePart>A sensitive validated LC-MS/MS method for quantification<lb/> of itraconazole in human plasma for pharmacokinetic<lb/> and bioequivalence study in 24 Korean volunteers<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Si-Youn Rhim<lb/> 1<lb/> , Jin-Hee Park<lb/> 2<lb/> , Yoo-Sin Park<lb/> 2<lb/> , Dong-Sun Kim<lb/> 3<lb/> , Min-Ho Lee<lb/> 3<lb/> , Leslie M. Shaw<lb/> 4<lb/> , Ju-Seop Kang<lb/> 2<lb/></docAuthor>
+	</byline>
+
+	<note type="submission">Received October 24, 2007, accepted July 21, 2008<lb/></note>
+
+	<byline>
+	<docAuthor>Ju-Seop Kang,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Pharmacology &amp; Institute of Biomedical Sciences, College of Medicine;<lb/> Department of Bioengineering, Hanyang University,</affiliation>
+	</byline>
+
+	<address>Seoul 133–791, Korea<lb/></address>
+
+	<email>jskang@hanyang.ac.kr<lb/></email>
+
+	<reference>Pharmazie 64: 71–75 (2009)<lb/></reference>
+
+	<idno type="DOI">doi: 10.1691/ph.2009.7795<lb/></idno>
+
+	<div type="abstract">A rapid and highly sensitive liquid chromatography/ electrospray ionization tandem mass spectrometric<lb/> method (LC/ESI-MS/MS) for itraconazole determination in human plasma was validated and applied<lb/> to pharmacokinetic and bioequivalence study in humans. In a randomized crossover design with a<lb/> 1-week period, each subject received a 200 mg itraconazole capsule. The analytical procedures in-<lb/>volved a less time-consuming, simple protein precipitation with methyl t-butyl ether and separation by<lb/> HPLC. The ionization was optimized using electrospray ionization (ESI) with positive ion mode and<lb/> selectivity was achieved by MS/MS analysis, m/z 705.3 ! 392.4 and m/z 374.3 ! 141.0 for itracona-<lb/>zole and internal standard (IS), respectively. The standard calibration curves showed good linearity<lb/> within the range of 1 (LLOQ) to 500 ng/mL for itraconazole in human plasma with a correlation coeffi-<lb/>cient r ! 0.9952. The retention times of itraconazole (0.9 min) and IS (0.84 min) suggest the high<lb/> throughput of the proposed method. No significant metabolic compounds were found to interfere with<lb/> the analysis. The coefficient of variation values of both intra-and inter-day were below 13.7% and<lb/> 10.9%, respectively. Intra-and inter-day accuracies were 95.6–108.2% and 86.6–117.5%, respec-<lb/>tively. This method was successfully applied for pharmacokinetic and bioequivalence study in 24<lb/> healthy human subjects by analysis of blood samples taken up to 72 h after an oral dose of 200 mg of<lb/> itraconazole.<lb/></div>
+
+		</front>
+	</text>
+</tei>

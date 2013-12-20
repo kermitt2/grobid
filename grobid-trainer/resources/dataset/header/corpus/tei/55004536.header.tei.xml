@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004536"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">POWER SOLUTIONS<lb/></note>
+
+	<date>February 2003<lb/></date>
+
+	<note type="page">102<lb/> </note>
+	
+	<note type="other">DATA CENTER ENVIRONMENT<lb/></note>
+
+	<docTitle>
+	<titlePart>Building the Virtual Data Center<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">The advent of fine-grained modular computing and switch-fabric communication archi-<lb/>tectures is enabling the next evolution in enterprise server computing—the virtual data<lb/> center. This article describes how virtual data centers differ from traditional data cen-<lb/>ters and focuses on the many benefits of this emerging model.<lb/></div>
+
+		</front>
+	</text>
+</tei>

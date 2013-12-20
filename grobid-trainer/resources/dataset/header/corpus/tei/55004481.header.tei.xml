@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004481"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>PERSONAL CARE FORMULARY<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Formula # 690<lb/> </note>
+
+	<ptr type="web">www.mcintyregroup.com<lb/> </ptr>
+
+	<date>05/07<lb/></date>
+
+	<byline>
+	<affiliation>McIntyre Group Ltd (USA) McIntyre Group Ltd (UK) McIntyre Group Ltd (Brazil) McIntyre Group Singapore Pte Ltd<lb/></affiliation>
+	</byline>
+
+	<phone>Phone: +1-708-534-6200<lb/>Phone: +44-1422-312200 Phone: +55-11-3884-5193<lb/>Phone: +65-6-354-3547<lb/> Fax: +1-708-534-6216<lb/> Fax: +44-1422-312222<lb/> Fax: +55-11-8318-9775<lb/> Fax: +65-6-353-9068<lb/></phone>
+
+	<email>infoUS@mcintyregroup.com<lb/>infoUK@mcintyregroup.com<lb/>infoBR@mcintyregroup.com<lb/>mcintyre@pacific.net.sg<lb/></email>
+
+		</front>
+	</text>
+</tei>

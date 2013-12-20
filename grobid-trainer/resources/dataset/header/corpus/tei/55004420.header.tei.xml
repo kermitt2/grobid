@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004420"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>A Technical Overview of Digital Credentials<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Dr. Stefan Brands<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Credentica </affiliation>
+	</byline>
+		
+	<email>brands@credentica.com<lb/></email>
+
+	<date>February 20, 2002<lb/></date>
+
+	<div type="abstract">Abstract<lb/> Applications that involve the electronic transfer of credentials, value tokens, profiles, and<lb/> other sensitive information are quickly gaining momentum. Traditional attempts to introduce<lb/> electronic authentication, such as PKI and biometric verification, expose organizations to po-<lb/>tentially unlimited liability, lead to consumer fear, and stifle the adoption of new systems. To<lb/> overcome these barriers, innovative solutions are needed that address the entire spectrum of<lb/> security and privacy interests for all parties involved.<lb/> This paper is a technical overview of Digital Credentials. Digital Credentials are the digital<lb/> equivalent of paper documents, plastic tokens, and other tangible objects issued by trusted<lb/> parties. At the same time, they are much more powerful than their physical counterparts.<lb/> For example, individuals can selectively disclose properties of the data fields in their Digital<lb/> Credentials while hiding any other information. Digital Credentials also provide much greater<lb/> security. As a result, they can be used to securely implement objects that traditionally are made<lb/> identifiable in order to deal with certain kinds of fraud. Examples are diplomas, work permits,<lb/> access cards, and drivers&apos; licenses.<lb/></div>
+
+		</front>
+	</text>
+</tei>

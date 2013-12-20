@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004341"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Nike+ GPS App for Runners</titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>| Ben Schmidt<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<note type="page">2 of 3<lb/></note>
+	</byline>
+
+	<ptr type="web">http://www.benschmidt.com/2011/01/nike-iphone-app.html<lb/></ptr>
+
+	<date>08-08-2011 </date>
+	
+	<note type="other">15:21</note>
+
+		</front>
+	</text>
+</tei>

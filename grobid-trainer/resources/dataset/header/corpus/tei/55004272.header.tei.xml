@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004272"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Towards Massively Multi-user<lb/> Augmented Reality on Handheld Devices<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Daniel Wagner<lb/> 1 , Thomas Pintaric<lb/> 1 ,<lb/> Florian Ledermann<lb/> 2 and Dieter Schmalstieg<lb/> 1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Graz University of Technology,<lb/></affiliation>
+	</byline>
+
+	<email>{wagner, pintaric, schmalstieg}@icg.tu-graz.ac.at<lb/></email>
+
+	<byline>
+	<affiliation>2 Vienna University of Technology,<lb/></affiliation>
+	</byline>
+
+	<email>ledermann@ims.tuwien.ac.at<lb/></email>
+
+	<div type="abstract">Abstract. Augmented Reality (AR) can naturally complement mobile<lb/> computing on wearable devices by providing an intuitive interface to<lb/> a three-dimensional information space embedded within physical real-<lb/>ity. Unfortunately, current wearable AR systems are relatively complex,<lb/> expensive, fragile and heavy, rendering them unfit for large-scale de-<lb/>ployment involving untrained users outside constrained laboratory en-<lb/>vironments. Consequently, the scale of collaborative multi-user experi-<lb/>ments have not yet exceeded a handful of participants. In this paper, we<lb/> present a system architecture for interactive, infrastructure-independent<lb/> multi-user AR applications running on off-the-shelf handheld devices. We<lb/> implemented a four-user interactive game installation as an evaluation<lb/> setup to encourage playful engagement of participants in a cooperative<lb/> task. Over the course of five weeks, more than five thousand visitors<lb/> from a wide range of professional and socio-demographic backgrounds<lb/> interacted with our system at four different locations.<lb/></div>
+
+		</front>
+	</text>
+</tei>

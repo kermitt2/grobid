@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005578"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>FDA NEWS RELEASE<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">For Immediate Release:</note>
+
+	<date>July 13, 2009<lb/></date>
+
+	<note type="other">Media Inquiries: Christopher Kelly, </note>
+	
+	<phone>301-796-4676</phone>
+
+	<email>, christopher.kelly@fda.hhs.gov<lb/></email>
+
+	<note type="other">Consumer Inquiries: 888-INFO-FDA<lb/></note>
+
+	<docTitle>
+	<titlePart>FDA Issues Draft Guidance for Industry on Drug Anticounterfeiting<lb/> Focus on physical chemical identifiers<lb/></titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

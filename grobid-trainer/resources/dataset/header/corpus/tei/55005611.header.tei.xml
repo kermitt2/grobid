@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005611"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Concise Papers __________________________________________________________________________________________<lb/> </note>
+	
+	<docTitle>
+	<titlePart>Optimal Data Placement on Disks:<lb/> A Comprehensive Solution for<lb/> Different Technologies<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Peter Triantafillou, Stavros Christodoulakis, and<lb/> Costas Georgiadis<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">AbstractÐThe problem of optimally placing data on disks (ODP) to maximize<lb/> disk-access performance has long been recognized as important. Solutions to this<lb/> problem have been reported for some widely available disk technologies, such as<lb/> magnetic CAV and optical CLV disks. However, important new technologies such<lb/> as multizoned magnetic disks, have been recently introduced. For such<lb/> technologies no formal solution to the ODP problem has been reported. In this<lb/> paper, we first identify the fundamental characteristics of disk-device technologies<lb/> which influence the solution to the ODP problem. We develop a comprehensive<lb/> solution to the problem that covers all currently available disk technologies. We<lb/> show how our comprehensive solution can be reduced to the solutions for existing<lb/> disk technologies, contributing thus a solution to the ODP problem for multizoned<lb/> disks. Our analytical solution has been validated through simulations and through<lb/> its reduction to the known solutions for particular disks. Finally, we study how the<lb/> solution for multizoned disks is affected by the disk and data characteristics.<lb/></div>
+
+	<keyword>Index TermsÐPerformance modeling and prediction, disk technologies, zoned<lb/> disks, data placement.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

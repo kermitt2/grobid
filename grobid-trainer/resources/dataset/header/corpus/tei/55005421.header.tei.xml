@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005421"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Pilot{Symbol{Aided Channel Estimation<lb/> in Time and Frequency<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Peter Hoeher, Stefan Kaiser, and Patrick Robertson<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institute for Communications Technology, German Aerospace Research Establishment (DLR)<lb/></affiliation>
+	</byline>
+
+	<address>P.O. Box 1116, D-82230 Oberpfaaenhofen, Germany.</address>
+
+	<email>E-mail: Peter.Hoeher@dlr.de<lb/></email>
+
+	<div type="abstract">Abstract<lb/> The potentials of pilot-symbol-aided channel estimation in<lb/> two dimensions are explored for mobile radio and broadcast-<lb/>ing applications. In order to procure this goal, the discrete<lb/> shift-variant 2-D Wiener is analyzed given an arbitrary<lb/> sampling grid, an arbitrary (but possibly optimized) selec-<lb/>tion of observations, and the possibility of model mismatch.<lb/> In addition, the classical scheme using two separate 1-D FIR<lb/> lters is analysed. Filtering in two dimensions is revealed<lb/> to outperform in just one dimension with respect to<lb/> overhead, mean-square error performance and latency. Con-<lb/>ceptually, the discrete shift-variant 2-D Wiener lter is the<lb/> optimal linear estimator for the given problem, however, two<lb/> cascaded orthogonal 1-D are simpler to implement and<lb/> virtually as good as true 2-D lters. Analytical results are<lb/> presented, veriied by Monte-Carlo simulations.<lb/></div>
+
+		</front>
+	</text>
+</tei>

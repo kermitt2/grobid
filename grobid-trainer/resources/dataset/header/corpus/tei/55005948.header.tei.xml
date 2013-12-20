@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005948"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">VegasQSG.book Page 1 Monday,</note>
+
+	<date>June 16, 2008 </date>
+	
+	<note type="other">10:11 AM<lb/></note>
+
+	<docTitle>
+	<titlePart>Quick Start Manual</titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

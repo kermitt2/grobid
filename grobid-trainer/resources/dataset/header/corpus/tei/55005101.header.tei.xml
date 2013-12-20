@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005101"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">12 </note>
+	<reference>@BULLET Hepatobiliary Pancreat Dis Int，Vol 6，No 1 @BULLET </reference>
+	
+	
+	<date type="publication">February 15，2007 @BULLET </date>
+	
+	<ptr>www.hbpdint.com<lb/></ptr>
+
+	<byline>
+	<affiliation>Author Affiliations: University Department of Surgery, Al Zhraa<lb/> University Hospital, Cairo, Egypt (El-Wahsh M)<lb/></affiliation>
+	</byline>
+
+	<byline>
+	<docAuthor>Corresponding Author: Mohamed El-Wahsh, MD, </docAuthor>
+	</byline>
+
+	<affiliation>University<lb/></affiliation>
+
+	<byline>
+	<affiliation>Department of Surgery, Al Zhraa University Hospital,</affiliation>
+	</byline>
+
+	<address>Cairo, Egypt (</address>
+
+	<phone>Tel:<lb/> 00-2010-5000321; Fax: 00-202-2587748;</phone>
+
+	<email>Email: elwahsh@liverupdate.<lb/> com)<lb/></email>
+
+	<note type="copyright">© 2007, Hepatobiliary Pancreat Dis Int. All rights reserved.<lb/></note>
+
+	<div type="abstract">BACKGROUND: The quality of liver graft and outcome of<lb/> liver transplantation is affected by the length of ischemia<lb/> time during the donor operation. The retrieved graft<lb/> may have a serious damage during the time of stoppage<lb/> of the circulation in the donor until revascularization in<lb/> the recipient. It is very important to develop a suitable<lb/> preservation fluid to minimise the damage caused by the<lb/> ischemic period and to make the surgical procedure semi-<lb/>elective.<lb/> DATA SOURCES: An English-language literature search was<lb/> conducted using MEDLINE (1960-2006) on liver preservation<lb/> solution, liver transplantation, kidney transplantation and<lb/> other related subjects.<lb/> RESULTS: Since 1960 until 2006 many preservation<lb/> solutions have been introduced. Most of them are based<lb/> on the effect of hypothermia to minimise the metabolic<lb/> pathway in the liver graft. In the earlier studies electrolyte<lb/> solutions were used to perfuse the liver through the<lb/> portal vein. The first modification in preservation<lb/> solution was done by Collins who was able to extend<lb/> the kidney preservation time up to 30 hours. In recent<lb/> years, the introduction of University of Wisconsin (UW)<lb/> preservation solution has made a revolution in the field<lb/> of organ preservation. The UW solution is based on<lb/> lactobionate and raffinose as impermeants to suppress<lb/> hypothermic-induced tissue swelling, replacing glucose<lb/> and mannitol in Collin&apos;s solution and hypertonic citrate<lb/> respectively. Recently a research group in Kyoto University<lb/> works to produce a more reliable preservation solution.<lb/> They investigated the importance of saccharides and<lb/> electrolytes in lung preservation and developed their<lb/> original ET-Kyoto solution. However, more studies are still<lb/> needed to evaluate the new ET-Kyoto solution.<lb/> CONCLUSIONS: The development of new preservation<lb/> solutions represents a corner stone in the field of organ</div>
+
+		</front>
+	</text>
+</tei>

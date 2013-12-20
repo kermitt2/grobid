@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="ccr-200109-koodli"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Fast Handovers and Context Transfers in Mobile Networks<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Rajeev Koodli<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Nokia Research Center<lb/></affiliation>
+	</byline>
+
+	<address>313 Fairchild Drive<lb/> Mountain View, CA 94043<lb/></address>
+
+	<email>rajeev@iprg.nokia.com<lb/></email>
+
+	<byline>
+	<docAuthor>Charles E. Perkins<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Nokia Research Center<lb/></affiliation>
+	</byline>
+
+	<address>313 Fairchild Drive<lb/> Mountain View, CA 94043<lb/></address>
+
+	<email>charliep@iprg.nokia.com<lb/></email>
+
+	
+		</front>
+	</text>
+</tei>

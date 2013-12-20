@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004739"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>APPLIED AND ENVIRONMENTAL MICROBIOLOGY, July 2005, p. 3433–3441<lb/> Vol. 71, No. 7<lb/></reference>
+
+	<note type="other">0099-2240/05/$08.00ϩ0 </note>
+	
+	<idno type="DOI">doi:10.1128/AEM.71.7.3433–3441.2005<lb/></idno>
+
+	<note type="copyright">Copyright © 2005, American Society for Microbiology. All Rights Reserved.<lb/></note>
+
+	<docTitle>
+	<titlePart>Quantitative Detection of Legionella pneumophila in Water Samples by<lb/> Immunomagnetic Purification and Real-Time PCR Amplification of<lb/> the dotA Gene<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>M. A. Yáñez, C. Carrasco-Serrano, V. M. Barberá, and V. Catalán*<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Labaqua,</affiliation>
+	</byline>
+
+	<address>Alicante, Spain<lb/></address>
+
+	<note type="submission">Received 30 September 2004/Accepted 11 January 2005<lb/></note>
+
+	<div type="abstract">A new real-time PCR assay was developed and validated in combination with an immunomagnetic separation<lb/> system for the quantitative determination of Legionella pneumophila in water samples. Primers that amplify<lb/> simultaneously an 80-bp fragment of the dotA gene from L. pneumophila and a recombinant fragment including<lb/> a specific sequence of the gyrB gene from Aeromonas hydrophila, added as an internal positive control, were<lb/> used. The specificity, limit of detection, limit of quantification, repetitivity, reproducibility, and accuracy of the<lb/> method were calculated, and the values obtained confirmed the applicability of the method for the quantitative<lb/> detection of L. pneumophila. Moreover, the efficiency of immunomagnetic separation in the recovery of L.<lb/> pneumophila from different kinds of water was evaluated. The recovery rates decreased as the water contam-<lb/>ination increased (ranging from 59.9% for distilled water to 36% for cooling tower water), and the reproduc-<lb/>ibility also decreased in parallel to water complexity. The feasibility of the method was evaluated by cell culture<lb/> and real-time PCR analysis of 60 samples in parallel. All the samples found to be positive by cell culture were<lb/> also positive by real-time PCR, while only eight samples were found to be positive only by PCR. Finally, the<lb/> correlation of both methods showed that the number of cells calculated by PCR was 20-fold higher than the<lb/> culture values. In conclusion, the real-time PCR method combined with immunomagnetic separation provides<lb/> a sensitive, specific, and accurate method for the rapid quantification of L. pneumophila in water samples.<lb/> However, the recovery efficiency of immunomagnetic separation should be considered in complex samples.<lb/> </div>
+	
+	<div type="introduction">Legionella is one of the main causative agents of severe<lb/> atypical pneumonias, particularly among people with impaired<lb/> immune systems. Although the genus Legionella comprises<lb/> more than 40 species with 64 serogroups (6), L. pneumophila is<lb/> the most common pathogenic species, accounting for more<lb/> than 90% of legionellosis cases. Present in soil and natural<lb/> aquatic environments (12), legionellae sometimes survives as<lb/> an intracellular parasite of amoebae and ciliates (7). Legionel-<lb/>lae have also found a niche in several man-made aquatic en-<lb/>vironments such as potable water systems, cooling towers, and<lb/> wastewater systems (9, 10). Consequently, the possible pres-<lb/>ence of legionellae in bioaerosols generated from soil or<lb/> aquatic environments poses a significant hazard for human<lb/> health (34).<lb/> Outbreaks of L. pneumophila occur throughout the world<lb/> (39), impacting public health as well as various industrial, tour-<lb/>ist, and social activities. For these reasons some countries spe-<lb/>cifically regulate the surveillance and control of L. pneumo-<lb/>phila in water regularly and assess its presence by culture on a<lb/> selective medium (25). However, this monitoring technique is<lb/> time-consuming due to the slow growth rate of the bacterium,<lb/> the inability to detect viable noncultivable bacteria, and the<lb/> difficulty in isolating legionellae in samples contaminated with<lb/> high levels of other microbiota. To avoid these problems, nu-<lb/>cleic acid amplification techniques, mainly PCR, have been<lb/> described as useful tools for the detection of L. pneumophila in<lb/> clinical and environmental samples. Several PCR-based meth-<lb/>ods for the detection of L. pneumophila DNA have been de-<lb/>scribed, but most of them are based on the amplification of the<lb/> macrophage infectivity potentiator (mip) gene (4, 9) or the 16S<lb/> or 5S rRNA gene (17, 36, 45).<lb/> In this work we proposed amplification of an alternative L.<lb/> pneumophila gene, the defective organelle trafficking (dotA)<lb/> gene. This gene is involved in L. pneumophila virulence and is<lb/> regarded as a pathogenicity island, such as cagA in Helicobacter<lb/> pylori, hly in uropathogenic Escherichia coli, or the vir complex<lb/> in Agrobacterium tumefaciens (3). In this way, dotA and mip are<lb/> part of the mechanism that mediates the initial invasion of<lb/> eukaryotic cells and the subsequent intracellular survival and<lb/> multiplication (8). The dotA gene product also regulates traf-<lb/>ficking of the L. pneumophila phagosome, playing a fundamen-<lb/>tal role in regulating initial phagosome trafficking decisions<lb/> either during or immediately after macrophage uptake (38). L.<lb/> pneumophila strains that possess a mutation in dotA cannot<lb/> replicate intracellularly because they are unable to alter the<lb/> endocytic pathway of macrophages (21).<lb/> Despite the advantages of conventional PCR, two main ob-<lb/>stacles remain. One is the presence of PCR inhibitors, such as<lb/> humic and fulvic acids and metals, in environmental samples<lb/> that can produce false-negative results. The second is that<lb/> conventional PCR is a qualitative assay, informing only of the<lb/> presence or absence of the microorganism. Various methods<lb/> have been described that permit procurement of pure DNA<lb/> lacking PCR inhibitors. These methods include rapid gel fil-<lb/>tration to remove humic substances (1), filtration through che-<lb/>lating ion exchange resins to eliminate metal ions (19, 43),<lb/> addition of polyvinylpyrrolidone to remove polyphenols (23),<lb/> and cesium chloride density centrifugation to improve general</div>
+
+		</front>
+	</text>
+</tei>

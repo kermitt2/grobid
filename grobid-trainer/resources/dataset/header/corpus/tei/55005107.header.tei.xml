@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005107"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Cardiovascular Research 47 (2000) 556–566<lb/></reference>
+
+	<ptr type="web">www.elsevier.com / locate / cardiores<lb/> www.elsevier.nl / locate / cardiores<lb/></ptr>
+
+	<docTitle>
+	<titlePart>Reduction of oxidative stress by carvedilol: role in maintenance of<lb/> ischaemic myocardium viability<lb/> </titlePart>
+	</docTitle>
+	
+	<byline>
+	<docAuthor>a ,<lb/> b a<lb/> a c<lb/>* Anna Cargnoni , Claudio Ceconi , Palmira Bernocchi , Antonella Boraso , Giovanni Parrinello ,<lb/> b d<lb/> Salvatore Curello , Roberto Ferrari<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a Cardiovascular Research Centre,</affiliation>
+	</byline>
+
+	<address>Fondazione Salvatore Maugeri, IRCCS, Via Pinidolo 23, Gussago, Brescia, Italy<lb/></address>
+
+	<byline>
+	<affiliation>b Chair of Cardiology, University of Brescia,</affiliation>
+	</byline>
+
+	<address>Brescia, Italy<lb/></address>
+
+	<byline>
+	<affiliation>c Statistical Department, University of Brescia,</affiliation>
+	</byline>
+
+	<address>Brescia, Italy<lb/></address>
+
+	<byline>
+	<affiliation>d Chair of Cardiology, University of Ferrara,</affiliation>
+	</byline>
+
+	<address>Ferrara, Italy<lb/></address>
+
+	<note type="submission">Received 2 December 1999; accepted 23 March 2000<lb/></note>
+
+	<div type="abstract">Abstract<lb/> Objectives: To differentiate the impact of the b-blocking and the anti-oxidant activity of carvedilol in maintaining myocardium<lb/> viability. Methods: Isolated rabbit hearts, subjected to aerobic perfusion, or low-flow ischaemia followed by reperfusion, were treated<lb/> with two doses of carvedilol, one dose (2.0 mM) with marked negative inotropic effect due to b-blockage and the other (0.1 mM) with no<lb/> b-blockage nor negative inotropism. Carvedilol was compared with two doses of propranolol, 1.0 — without — and 5.0 mM — with<lb/> negative inotropic effect. Anti-oxidant activity was measured as the capacity to counteract the occurrence of oxidative stress and<lb/> myocardium viability as recovery of left ventricular function on reperfusion, membrane damage and energetic status. Results: Carvedilol<lb/> counteracted the ischemia and reperfusion induced oxidative stress: myocardial content of reduced glutathione, protein and non-protein<lb/> sulfhydryl groups after ischaemia and particularly after reperfusion, was higher in hearts treated with carvedilol, while the myocardial<lb/> content of oxidised glutathione was significantly reduced (0.3060.03 and 0.2160.02 vs. 0.3960.03 nmol / mg prot, both P,0.01, in 0.1<lb/> and 2.0 mM). At the same time, carvedilol improved myocardium viability independently from its b-blocking effect. On the contrary,<lb/> propranolol maintained viability only at the higher dose, although to a lesser extent than carvedilol. This suggests that the effects of<lb/> propranolol are dependent on energy saving due to negative inotropism. The extra-protection observed with carvedilol at both doses is<lb/> likely due to its anti-oxidant effect. Conclusions: Our data show that the anti-oxidant activity of carvedilol is relevant for the maintenance<lb/> of myocardium viability.</div>
+
+	<note type="copyright">© 2000 Elsevier Science B. V. All rights reserved.<lb/></note>
+
+	<keyword>Keywords: Adrenergic (ant)agonists; Free radicals; Ischemia; Ventricular function<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

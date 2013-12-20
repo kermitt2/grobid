@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005427"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Performance Evaluation of Frequent Events Detection Systems<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>X. Desurmont<lb/> a<lb/> , R. Sebbe<lb/> b<lb/> , F. Martin<lb/> a<lb/> , C. Machy<lb/> a<lb/> , J-F. Delaigle<lb/> a<lb/> </docAuthor>
+	</byline>
+	
+	<byline>
+	<affiliation>a<lb/> Multitel A.S.B.L.,</affiliation>
+	</byline>
+
+	<address>Av Copernic, 1, 7000 Mons, Belgium.<lb/></address>
+
+	<byline>
+	<affiliation>b<lb/> Faculté Polytechniques de Mons,</affiliation>
+	</byline>
+
+	<address>Mons, TCTS, Av Copernic, 1, 7000 Mons, Belgium.<lb/></address>
+
+	<div type="abstract">Abstract<lb/> In recent years, the demand on video analysis<lb/> applications [1, 2] such as video surveillance and<lb/> marketing is growing rapidly. A number of solutions<lb/> exist but they need to be evaluated. This point is very<lb/> important for two reasons: the proof of the objective<lb/> quality of the system for industrials, the possibility to<lb/> highlight improvement during research and thus to<lb/> understand better how the system works to improve it<lb/> adequately. This paper describes a new algorithm that<lb/> can evaluate a class of detection systems in the case of<lb/> frequent events; for example, people detection in a<lb/> corridor or cars on the motorways. To do so, we<lb/> introduce an automatic re-alignment between results<lb/> and ground truth by using dynamic programming. The<lb/> second point of the paper describes, as an example, a<lb/> practical implementation of a stand alone system that<lb/> can perform counting of people in a shopping center.<lb/> Finally we evaluate the performance of this system.<lb/></div>
+
+	<keyword>Keywords: Performance evaluation, event detection,<lb/> counting people, alignment, dynamic programming.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>
