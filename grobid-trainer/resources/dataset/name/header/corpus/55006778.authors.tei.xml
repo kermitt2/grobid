@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Konstantin</forename>
+								<surname>Lyashchenko</surname>
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>Peter</forename>
+								<surname>Andersen</surname>
+								<marker>4</marker>
+							</persName>
+							<persName>
+								<forename>Rena</forename>
+								<surname>Greenwald</surname>
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>Susan</forename>
+								<surname>Gibson</surname>
+								<marker>5</marker>
+							</persName>
+							<persName>
+								<forename>Javan</forename>
+								<surname>Esfandiari</surname>
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>Pete</forename>
+								<surname>Didier</surname>
+								<marker>6</marker>
+							</persName>
+							<persName>
+								<forename>Raymond</forename>
+								<surname>Houghton</surname>
+								<marker>2</marker>
+							</persName>
+							<persName>
+								<forename>Candace</forename>
+								<surname>McCombs</surname>
+								<marker>7</marker>
+							</persName>
+							<persName>
+								<forename>John</forename>
+								<surname>Pollock</surname>
+								<marker>3</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Shekman</forename>
+								<middlename>L</middlename>.
+								<surname>Wong</surname>
+								<marker>*</marker>,
+							</persName>
+							<persName>
+								<forename>Jeffrey</forename>
+								<surname>Drajesk</surname>,
+							</persName>
+							<persName>
+								<forename>Min</forename>
+								<middlename>S</middlename>.
+								<surname>Chang</surname>,
+							</persName>
+							<persName>
+								<forename>Galen</forename>
+								<surname>Witt</surname> and
+							</persName>
+							<persName>
+								<forename>Walid</forename>
+								<middlename>M</middlename>.
+								<surname>Awni</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

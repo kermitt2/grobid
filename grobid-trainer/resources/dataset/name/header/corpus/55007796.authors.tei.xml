@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Joo-Kyung</forename>
+								<surname>Sung</surname>,
+							</persName>
+							<persName>
+								<forename>Liyan</forename>
+								<surname>Miao</surname>,
+							</persName>
+							<persName>
+								<forename>John</forename>
+								<middlename>W</middlename>.
+								<surname>Calvert</surname>,
+							</persName>
+							<persName>
+								<forename>Lixin</forename>
+								<surname>Huang</surname>,
+							</persName>
+							<persName>
+								<forename>H</forename>.
+								<middlename>Louis</middlename>
+								<surname>Harkey</surname>,
+								<lb/>
+								<marker>*</marker>
+							<lb/>
+							</persName>
+							<persName>
+								<forename>John</forename>
+								<middlename>H</middlename>.
+								<surname>Zhang</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>D</forename>.
+								<middlename>E</middlename>.
+								<surname>Khoo&apos;</surname>,
+							</persName>
+							<persName>
+								<forename>B</forename>.
+								<surname>Fermor&apos;</surname>,
+							</persName>
+							<persName>
+								<forename>J</forename>.
+								<surname>Miller3</surname>,
+							</persName>
+							<persName>
+								<forename>C</forename>.
+								<middlename>B</middlename>.
+								<surname>Wood2</surname>,
+							</persName>
+							<persName>
+								<forename>K</forename>.
+								<surname>Apostolov&apos;</surname>,
+							</persName>
+							<persName>
+								<forename>W</forename>.
+								<surname>Barker&apos;</surname>,
+							</persName>
+							<persName>
+								<forename>R</forename>.
+								<middlename>C</middlename>.
+								<middlename>N</middlename>.
+								<surname>Williamson2</surname> &amp;
+							</persName>
+							<persName>
+								<forename>N</forename>.
+								<middlename>A</middlename>.
+								<surname>Habib&apos;</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

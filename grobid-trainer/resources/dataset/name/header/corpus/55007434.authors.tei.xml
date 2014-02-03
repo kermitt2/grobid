@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>J</forename>.
+								<middlename>M</middlename>.
+								<surname>Kroon</surname>
+								<lb/>
+								<marker>1,5</marker>,
+							</persName>
+							<persName>
+								<forename>S</forename> .
+								<middlename>C</middlename>.
+								<surname>Veenstra</surname>
+								<lb/>
+								<marker>1 ,5</marker>,
+							</persName>
+							<persName>
+								<forename>L</forename> .
+								<middlename>H</middlename>.
+								<surname>Slooff</surname>
+								<lb/>
+								<marker>1 , 5</marker>,
+							</persName>
+							<persName>
+								<forename>W</forename>.
+								<middlename>J</middlename> .
+								<middlename>H</middlename>.
+								<surname>Verhees</surname>
+								<lb/>
+								<marker>1, 5</marker> ,
+							</persName>
+							<persName>
+								<forename>M</forename>.
+								<middlename>M</middlename> .
+								<surname>Koetse</surname>
+								<lb/>
+								<marker>2,5</marker> ,
+							</persName>
+							<persName>
+								<forename>J</forename>.
+								<surname>Sweelssen</surname>
+								<lb/>
+								<marker>2 , 5</marker>,
+							</persName>
+							<persName>
+								<forename>H</forename> .
+								<middlename>F</middlename>.
+								<middlename>M</middlename> .
+								<surname>Schoo</surname>
+								<lb/>
+								<marker>2</marker>,
+							</persName>
+							<persName>
+								<forename>W</forename>.
+								<middlename>J</middlename> .
+								<middlename>E</middlename>.
+								<lb/>
+								<surname>Beek</surname>
+								<lb/>
+								<marker>3</marker>,
+							</persName>
+							<persName>
+								<forename>M</forename>.
+								<middlename>M</middlename>.
+								<surname>Wienk</surname>
+								<lb/>
+								<marker>3 ,5</marker> ,
+							</persName>
+							<persName>
+								<forename>R</forename>.
+								<middlename>A</middlename>.
+								<middlename>J</middlename> .
+								<surname>Janssen</surname>
+								<lb/>
+								<marker>3</marker>,
+							</persName>
+							<persName>
+								<forename>X</forename> .
+								<surname>Yang</surname>
+								<lb/>
+								<marker>3,5</marker>,
+							</persName>
+							<persName>
+								<forename>J</forename> .
+								<surname>Loos</surname>
+								<lb/>
+								<marker>3</marker> ,
+							</persName>
+							<persName>
+								<forename>V</forename> .
+								<middlename>D</middlename>.
+								<surname>Michailetchi</surname>
+								<lb/>
+								<marker>4</marker> ,
+							</persName>
+							<persName>
+								<forename>P</forename>.
+								<middlename>W</middlename> .
+								<middlename>M</middlename> .
+								<surname>Blom</surname>
+								<lb/>
+								<marker>4</marker>,
+							</persName>
+							<persName>
+								<forename>J</forename> .
+								<surname>Knol</surname>
+								<lb/>
+								<marker>4</marker> ,
+							</persName>
+							<persName>
+								<forename>J</forename>.
+								<middlename>C</middlename>.
+								<surname>Hummelen</surname>
+								<marker>4</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

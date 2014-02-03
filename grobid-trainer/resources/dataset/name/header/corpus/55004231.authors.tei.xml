@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Ming-Wang</forename>
+								<surname>Shao</surname>,
+							<lb/>
+								<marker>1,2</marker>
+							</persName>
+							<persName>
+								<forename>Ming -Liang</forename>
+								<surname>Zhang</surname> ,
+							<lb/>
+								<marker>2</marker>
+							</persName>
+							<persName>
+								<forename>Ning- Bew</forename>
+								<surname>Wong</surname>,
+							<lb/>
+								<marker>2, a͒</marker>
+							</persName>
+							<persName>
+								<forename>Dorothy</forename>
+								<surname>Duo- duo Ma</surname>,
+								<marker>3</marker>
+							</persName>
+							<persName>
+								<forename>Hui</forename>
+								<surname>Wang</surname> ,
+							<lb/>
+								<marker>3</marker>
+							</persName>
+							<persName>
+								<forename>Weiwei</forename>
+								<surname>Chen</surname> ,
+							<lb/>
+								<marker>3</marker> and
+							</persName>
+							<persName>
+								<forename>Shuit- Tong</forename>
+								<surname>Lee</surname>
+								<marker>3 ,a͒</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

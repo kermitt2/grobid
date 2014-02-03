@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Michael</forename>
+								<middlename>G</middlename>.
+								<surname>Franz</surname>,
+								<roleName>MD</roleName>,
+								<lb/>
+								<marker>a</marker>
+							</persName>
+							<persName>
+								<forename>Wyatt</forename>
+								<middlename>G</middlename> .
+								<surname>Payne</surname> ,
+								<roleName>MD</roleName> ,
+								<lb/>
+								<marker>b</marker>
+							</persName>
+							<persName>
+								<forename>Liyu</forename>
+								<surname>Xing</surname> ,
+								<roleName>PhD</roleName>,
+								<lb/>
+								<marker>a</marker>
+							</persName>
+							<persName>
+								<forename>D</forename> .
+								<middlename>K</middlename> .
+								<surname>Naidu</surname> ,
+								<roleName>MD</roleName> ,
+								<marker>b</marker>
+							</persName>
+							<persName>
+								<forename>R</forename>.
+								<middlename>E</middlename> .
+								<surname>Salas</surname> ,
+								<roleName>MD</roleName> ,
+								<lb/>
+								<marker>b</marker>
+							</persName>
+							<persName>
+								<forename>Vivienne</forename>
+								<middlename>S</middlename> .
+								<surname>Marshall</surname> ,
+								<roleName>PhD</roleName>,
+								<lb/>
+								<marker>c</marker>
+							</persName>
+							<persName>
+								<forename>C</forename> .
+								<middlename>J</middlename> .
+								<surname>Trumpower</surname> ,
+								<roleName>BS</roleName> ,
+								<marker>c</marker>
+							</persName>
+							<persName>
+								<forename>Charlotte</forename>
+								<middlename>A</middlename> .
+								<surname>Smith</surname> ,
+								<roleName>MS</roleName> ,
+								<lb/>
+								<marker>c</marker>
+							</persName>
+							<persName>
+								<forename>David</forename>
+								<middlename>L</middlename> .
+								<surname>Steed</surname> ,
+								<roleName>MD</roleName> ,
+								<lb/>
+								<marker>d</marker>and
+							</persName>
+							<persName>
+								<forename>M</forename>.
+								<middlename>C</middlename>.
+								<surname>Robson</surname>,
+								<roleName>MD</roleName>
+								<marker>b</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

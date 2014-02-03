@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>M</forename>.
+								<middlename>A</middlename>.
+								<surname>Yáñez</surname>,
+							</persName>
+							<persName>
+								<forename>C</forename>.
+								<surname>Carrasco-Serrano</surname>,
+							</persName>
+							<persName>
+								<forename>V</forename>.
+								<middlename>M</middlename>.
+								<surname>Barberá</surname>, and
+							</persName>
+							<persName>
+								<forename>V</forename>.
+								<surname>Catalán</surname>
+								<marker>*</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

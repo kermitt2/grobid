@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Lilac</forename>
+								<surname>Pnueli</surname>,
+								<marker>a</marker>
+							</persName>
+							<persName>
+								<forename>Dana</forename>
+								<surname>Hareven</surname>,&apos;
+							</persName>
+							<persName>
+								<forename>Steven</forename>
+								<middlename>D</middlename>.
+								<surname>Rounsley</surname>,
+								<marker>b</marker>
+							</persName>
+							<persName>
+								<forename>Martin</forename>
+								<middlename>F</middlename>.
+								<surname>Yanofsky</surname>,
+								<marker>b<lb/> an d</marker>
+							</persName>
+							<persName>
+								<forename>Eliezer</forename>
+								<surname>Lifschitz</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

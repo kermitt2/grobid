@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Zbigniew</forename>
+								<surname>Chamski</surname>
+								—
+							</persName>
+							<persName>
+								<forename>Albert</forename>
+								<surname>Cohen</surname>
+								—
+							</persName>
+							<persName>
+								<forename>Marc</forename>
+								<surname>Duranton</surname>
+								—
+							</persName>
+							<persName>
+								<forename>Christine</forename>
+								<surname>Eisenbeis</surname>
+								—
+							</persName>
+							<persName>
+								<forename>Paul</forename>
+								<surname>Feautrier</surname>
+								—
+							</persName>
+							<persName>
+								<forename>Daniela</forename>
+								<surname>Genius</surname>
+								—
+							</persName>
+							<persName>
+								<forename>Laurent</forename>
+								<surname>Pasquier</surname>
+								—
+							</persName>
+							<persName>
+								<forename>Valérie</forename>
+								<surname>Rivierre-Vier</surname>
+								—
+							</persName>
+							<persName>
+								<forename>François</forename>
+								<surname>Thomasset</surname>
+								—
+							</persName>
+							<persName>
+								<forename>Qin</forename>
+								<surname>Zhao</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

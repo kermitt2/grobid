@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Nels</forename>
+								<middlename>E</middlename>.
+								<surname>Jewell-Larsen</surname>
+								<lb/>
+								<marker>1,2</marker>,
+							</persName>
+							<persName>
+								<forename>Sergey</forename>
+								<middlename>V</middlename> .
+								<surname>Karpov</surname>
+								<lb/>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>Igor</forename>
+								<middlename>A</middlename> .
+								<surname>Krichtafovitch</surname>
+								<lb/>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>Vivi</forename>
+								<surname>Jayanty</surname>
+								<lb/>
+								<marker>1</marker> ,
+								<lb/>
+							</persName>
+							<persName>
+								<forename>Chih -Peng</forename>
+								<surname>Hsu</surname>
+								<marker>2</marker>,
+							</persName>
+							<persName>
+								<forename>Alexander</forename>
+								<middlename>V</middlename> .
+								<surname>Mamishev</surname>
+								<marker>2</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>R</forename>.
+								<middlename>J</middlename>.
+								<surname>Talling</surname>,
+							</persName>
+							<persName>
+								<forename>M</forename>.
+								<surname>Jackson</surname>,
+							</persName>
+							<persName>
+								<forename>R</forename>.
+								<surname>Dashwood</surname>,
+							</persName>
+							<persName>
+								<forename>L</forename>.
+								<surname>Iannucci</surname>,
+							</persName>
+							<persName>
+								<forename>D</forename>.
+								<surname>Dye</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName>
+								<forename>Jian</forename>
+								<surname>Wang</surname>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>Ron</forename>
+								<surname>Healy</surname>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>Joe</forename>
+								<surname>Timoney</surname>
+								<marker>3</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

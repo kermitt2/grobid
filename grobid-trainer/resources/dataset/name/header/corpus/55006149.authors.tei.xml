@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Wan</forename>
+								<middlename>Long</middlename>
+								<surname>Zhu</surname>,
+							</persName>
+							<persName>
+								<forename>Hongliang</forename>
+								<surname>Lan</surname>,
+							</persName>
+							<persName>
+								<forename>Yoonkyung</forename>
+								<surname>Park</surname>,
+							</persName>
+							<persName>
+								<forename>Sung-Tae</forename>
+								<surname>Yang</surname>,
+							</persName>
+							<persName>
+								<forename>Jae</forename>
+								<middlename>Il</middlename>
+								<surname>Kim</surname>,
+							</persName>
+							<persName>
+								<forename>Il-Seon</forename>
+								<surname>Park</surname>, ,
+							</persName>
+							<persName>
+								<forename>|</forename>
+								<surname>Ho</surname>
+							</persName>
+							<persName>
+								<forename>Jin</forename>
+								<surname>You</surname>,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>JungSup</forename>
+								<surname>Lee</surname> ,
+							</persName>
+							<persName>
+								<forename>Yong</forename>
+								<middlename>Sun</middlename>
+								<surname>Park</surname> ,
+								<marker>⊥</marker>
+							</persName>
+							<persName>	
+								<forename>Yangmee</forename>
+								<surname>Kim</surname> ,
+								<marker>@</marker>
+							</persName>
+							<persName>
+								<forename>Kyung -Soo</forename>
+								<surname>Hahm</surname> ,
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

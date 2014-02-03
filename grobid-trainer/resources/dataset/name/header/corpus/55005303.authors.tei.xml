@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Giovanni</forename>
+								<surname>Nardo</surname>,
+							<lb/>
+								<marker>1,2</marker>
+							</persName>
+							<persName>
+								<forename>Silvia</forename>
+								<surname>Pozzi</surname> ,
+							<lb/>
+								<marker>1 ,3</marker>
+							</persName>
+							<persName>
+								<forename>Stefania</forename>
+								<surname>Mantovani</surname> ,
+							<lb/>
+								<marker>4, 5</marker>
+							</persName>
+							<persName>
+								<forename>Silvia</forename>
+								<surname>Garbelli</surname>,
+							<lb/>
+								<marker>4 ,5</marker>
+							</persName>
+							<persName>
+								<forename>Kalliopi</forename>
+								<surname>Marinou</surname>,
+								<marker>6</marker>
+							</persName>
+							<persName>
+								<forename>Manuela</forename>
+								<surname>Basso</surname>,
+							<lb/>
+								<marker>1 , 2</marker>
+							</persName>
+							<persName>
+								<forename>Gabriele</forename>
+								<surname>Mora</surname>,
+							<lb/>
+								<marker>4</marker>,
+								<marker>6</marker>
+							</persName>
+							<persName>
+								<forename>Caterina</forename>
+								<surname>Bendotti</surname> ,
+							<lb/>
+								<marker>3</marker>and
+							</persName>
+							<persName>
+								<forename>Valentina</forename>
+								<surname>Bonetto</surname>
+								<marker>1, 2</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<surname>FANG</surname>
+								<middlename>TING</middlename>
+								<surname>LIANG</surname>,
+							<lb/>
+								<marker>1</marker>
+							</persName>
+							<persName>	
+								<forename>ALLEN</forename>
+								<middlename>C</middlename> .
+								<surname>STEERE</surname> ,
+							<lb/>
+								<marker>2</marker>
+							</persName>
+							<persName>	
+								<forename>ADRIANA</forename>
+								<middlename>R</middlename> .
+								<surname>MARQUES</surname>,
+								<marker>3</marker>
+							</persName>
+							<persName>	
+								<forename>BARBARA</forename>
+								<middlename>J</middlename> .
+								<middlename>B</middlename>.
+								<surname>JOHNSON</surname>,
+							<lb/>
+								<marker>4</marker>
+							</persName>
+							<persName>	
+								<forename>JAMES</forename>
+								<middlename>N</middlename>.
+								<surname>MILLER</surname> ,
+							<lb/>
+								<marker>5</marker> AND
+							</persName>
+							<persName>	
+								<forename>MARIO</forename>
+								<middlename>T</middlename>.
+								<surname>PHILIPP</surname>
+							<lb/>
+								<marker>1 *</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

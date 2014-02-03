@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Shashikant</forename>
+								<surname>Maheshwari</surname>,
+							</persName>
+							<persName>
+								<forename>Adrian</forename>
+								<surname>Boariu</surname>,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Yousuf</forename>
+								<surname>Saifullah</surname> ,
+							</persName>
+							<persName>
+								<forename>Haihong</forename>
+								<surname>Zheng</surname> ,
+							</persName>
+							<persName>
+								<forename>Peter</forename>
+								<lb/>
+								<surname>Wang</surname> ,
+							</persName>
+							<persName>
+								<forename>Aik</forename>
+								<surname>Chindapol</surname>
+								<lb/>
+								<roleName>NSN</roleName>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Y</forename>.
+								<surname>GAO</surname>,
+							</persName>
+							<persName>
+								<forename>A</forename>.
+								<middlename>G</middlename>.
+								<surname>HORTI</surname>,
+							</persName>
+							<persName>
+								<forename>H</forename>.
+								<middlename>T</middlename>.
+								<surname>RAVERT</surname>,
+							</persName>
+							<persName>
+								<forename>D</forename>.
+								<middlename>P</middlename>.
+								<surname>HOLT</surname>,
+							</persName>
+							<persName>
+								<forename>Z</forename>.
+								<surname>SZABO</surname>,
+							</persName>
+							<persName>
+								<forename>M</forename>.
+								<surname>ALEXANDER</surname>,
+							</persName>
+							<persName>
+								<forename>A</forename>.
+								<surname>KUMAR</surname>,
+							</persName>
+							<persName>
+								<forename>H</forename>.
+								<surname>KUWABARA</surname>,
+							</persName>
+							<persName>
+								<forename>D</forename>.
+								<middlename>F</middlename>.
+								<surname>WONG</surname> and
+							<lb/>
+							</persName>
+							<persName>
+								<forename>R</forename>.
+								<middlename>F</middlename>.
+								<surname>DANNALS</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

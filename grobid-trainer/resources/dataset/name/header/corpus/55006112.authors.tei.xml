@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>B</forename>.
+								<middlename>P</middlename>.
+								<surname>Bewlay</surname>
+								<marker>a,*</marker> ,
+							</persName>
+							<persName>
+								<forename>M</forename>.
+								<middlename>F</middlename>.
+								<middlename>X</middlename>.
+								<surname>Gigliotti</surname>
+							<lb/>
+								<marker>a</marker>,
+							</persName>
+							<persName>
+								<forename>C</forename> .
+								<middlename>U</middlename>.
+								<surname>Hardwicke</surname>
+							<lb/>
+								<marker>a</marker> ,
+							</persName>
+							<persName>
+								<forename>O</forename> .
+								<middlename>A</middlename>.
+								<surname>Kaibyshev</surname>
+							<lb/>
+								<marker>b</marker> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>F</forename>.
+								<middlename>Z</middlename> .
+								<surname>Utyashev</surname>
+								<marker>b</marker>,
+							</persName>
+							<persName>
+								<forename>G</forename> .
+								<middlename>A</middlename> .
+								<surname>Salischev</surname>
+								<marker>b</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

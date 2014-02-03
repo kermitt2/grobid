@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Klaus</forename>
+								<middlename>J</middlename>.
+								<surname>Busam</surname>,
+								<roleName>M.D</roleName>.,
+							</persName>
+							<persName>
+								<forename>Kristin</forename>
+								<surname>Iversen</surname>,
+								<roleName>B S</roleName>.,
+							</persName>
+							<persName>
+								<forename>Marianne</forename>
+								<surname>Berwick</surname>,
+								<roleName>Ph.D</roleName>,
+							</persName>
+							<persName>
+								<forename>Guilio</forename>
+								<middlename>C</middlename>.
+								<surname>Spagnoli</surname>,
+								<roleName>Ph.D</roleName>.,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Lloyd</forename>
+								<middlename>J</middlename> .
+								<surname>Old</surname> ,
+								<roleName>M .D</roleName>.,
+							</persName>
+							<persName>
+								<forename>Achim</forename>
+								<middlename>A</middlename> .
+								<surname>Jungbluth</surname> ,
+								<roleName>M .D</roleName>.
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>
