@@ -8,15 +8,12 @@
 						<author>
 
 						<affiliation>
-							<orgName type="institution">Institute for Communications Technology</orgName>
-							<lb/> 
-							<orgName type="department">German Aerospace Research Establishment (DLR)</orgName>
+							<orgName type="department">Cellular Infrastructure Systems</orgName> -
+							<orgName type="institution">Texas Instruments Incorporated</orgName>
 							<lb/>
 							<address>
-								<postBox>P.O. Box 1116</postBox>,
-								<postCode>D-82230</postCode>
-								<settlement>Wessling</settlement>,
-								<country>Germany</country>.
+								<settlement>Villeneuve-Loubet</settlement>
+								<country>France</country>
 							</address>
 						</affiliation>
 

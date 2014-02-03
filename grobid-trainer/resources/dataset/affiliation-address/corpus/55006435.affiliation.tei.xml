@@ -8,15 +8,13 @@
 						<author>
 
 						<affiliation>
-							<orgName type="institution">Institute for Communications Technology</orgName>
-							<lb/> 
-							<orgName type="department">German Aerospace Research Establishment (DLR)</orgName>
+							<orgName type="department">Department of Food Technology</orgName>,
+							<orgName type="department">Faculty of Engineering and Agro-Industry</orgName>,
 							<lb/>
+							<orgName type="institution">Maejo University</orgName>,
 							<address>
-								<postBox>P.O. Box 1116</postBox>,
-								<postCode>D-82230</postCode>
-								<settlement>Wessling</settlement>,
-								<country>Germany</country>.
+								<addrLine>Chiang Mai</addrLine>,
+								<country>Thailand</country>.
 							</address>
 						</affiliation>
 

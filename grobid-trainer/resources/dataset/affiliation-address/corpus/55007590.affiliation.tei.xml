@@ -8,15 +8,11 @@
 						<author>
 
 						<affiliation>
-							<orgName type="institution">Institute for Communications Technology</orgName>
-							<lb/> 
-							<orgName type="department">German Aerospace Research Establishment (DLR)</orgName>
-							<lb/>
+							<marker>a</marker>
+							<orgName type="department">Division of Aptuit</orgName>,
 							<address>
-								<postBox>P.O. Box 1116</postBox>,
-								<postCode>D-82230</postCode>
-								<settlement>Wessling</settlement>,
-								<country>Germany</country>.
+								<settlement>West Lafayette</settlement>,
+								<region>IN</region>
 							</address>
 						</affiliation>
 

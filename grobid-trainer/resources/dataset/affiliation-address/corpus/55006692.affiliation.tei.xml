@@ -8,15 +8,17 @@
 						<author>
 
 						<affiliation>
-							<orgName type="institution">Institute for Communications Technology</orgName>
-							<lb/> 
-							<orgName type="department">German Aerospace Research Establishment (DLR)</orgName>
+							<orgName type="institution">Beceem Communications, Inc.</orgName>
 							<lb/>
 							<address>
-								<postBox>P.O. Box 1116</postBox>,
-								<postCode>D-82230</postCode>
-								<settlement>Wessling</settlement>,
-								<country>Germany</country>.
+								<addrLine>3930 Freedom Circle</addrLine>,
+								<addrLine>Suite 101</addrLine>
+								<lb/>
+								<settlement>Santa Clara</settlement>,
+								<region>CA</region>
+								<postCode>95054</postCode>
+								<lb/>
+								<country>U.S.A.</country>
 							</address>
 						</affiliation>
 

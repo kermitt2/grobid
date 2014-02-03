@@ -8,15 +8,12 @@
 						<author>
 
 						<affiliation>
-							<orgName type="institution">Institute for Communications Technology</orgName>
-							<lb/> 
-							<orgName type="department">German Aerospace Research Establishment (DLR)</orgName>
-							<lb/>
+							<orgName type="department">Department of Microbiology</orgName>,
+							<orgName type="institution">Heidelberg Repatriation Hospital</orgName>,
 							<address>
-								<postBox>P.O. Box 1116</postBox>,
-								<postCode>D-82230</postCode>
-								<settlement>Wessling</settlement>,
-								<country>Germany</country>.
+								<addrLine>Heidelberg West 308 I</addrLine> ,
+								<settlement>Victoria</settlement>,
+								<country>Australia</country>
 							</address>
 						</affiliation>
 

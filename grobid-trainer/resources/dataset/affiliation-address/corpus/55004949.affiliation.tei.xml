@@ -8,16 +8,9 @@
 						<author>
 
 						<affiliation>
-							<orgName type="institution">Institute for Communications Technology</orgName>
+							<orgName type="department">Dipartimento di Medicina Clinica e Sperimentale</orgName>
 							<lb/> 
-							<orgName type="department">German Aerospace Research Establishment (DLR)</orgName>
-							<lb/>
-							<address>
-								<postBox>P.O. Box 1116</postBox>,
-								<postCode>D-82230</postCode>
-								<settlement>Wessling</settlement>,
-								<country>Germany</country>.
-							</address>
+							<orgName type="laboratory">Laboratorio Universitario di Ricerca Medica (LURM)</orgName>
 						</affiliation>
 
 						</author>

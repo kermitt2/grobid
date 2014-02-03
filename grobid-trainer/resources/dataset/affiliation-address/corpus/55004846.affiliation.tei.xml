@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<lb/> 
+							<orgName type="department">Research Department</orgName>,
+							<orgName type="institution">King Khaled Eye Specialist<lb/> Hospital</orgName>,
+							<address>
+								<settlement>Riyadh</settlement>,
+								<country>Saudi Arabia</country>;
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>A</marker>
+							<orgName type="institution">Comparative Medicine</orgName>,
+							<marker>B</marker>
+							<orgName type="department">Department<lb/> of Biological and Medical Research</orgName>,
+							<marker>2</marker>
+							<orgName type="department">King Faisal Specialist Hospital<lb/> and Research Centre</orgName>,
+							<address>
+								<settlement>Riyadh</settlement>,
+								<country>Saudi Arabia</country>.
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

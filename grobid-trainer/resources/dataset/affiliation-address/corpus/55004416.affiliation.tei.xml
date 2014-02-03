@@ -7,16 +7,16 @@
 					<analytic>
 						<author>
 
+ From the
 						<affiliation>
-							<orgName type="institution">Institute for Communications Technology</orgName>
-							<lb/> 
-							<orgName type="department">German Aerospace Research Establishment (DLR)</orgName>
+							<orgName type="department">Laboratory of Viral Diseases</orgName>,
+							<orgName type="institution">National Institute of Allergy and Infectious Diseases</orgName>,
 							<lb/>
+							<orgName type="institution">National Institutes of Health</orgName>,
 							<address>
-								<postBox>P.O. Box 1116</postBox>,
-								<postCode>D-82230</postCode>
-								<settlement>Wessling</settlement>,
-								<country>Germany</country>.
+								<settlement>Bethesda</settlement>,
+								<region>Maryland</region>
+								<postCode>20892</postCode>
 							</address>
 						</affiliation>
 

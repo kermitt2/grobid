@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">Centenary Institute of Cancer Medicine and Cell Biology</orgName>,
+							<address>
+								<settlement>Newtown</settlement>,
+								<region>New South Wales</region>
+								<postCode>2042</postCode>,
+							</address>							
+							<lb/>
+							<marker>1</marker> and
+						</affiliation>
+						<affiliation>
+							<orgName type="department">Department of<lb/> Medicine</orgName>,
+							<orgName type="institution">University of Sydney</orgName>,
+							<address>
+								<settlement>Sydney</settlement>,
+								<region>New South Wales</region>
+								<postCode>2006</postCode>,
+								<lb/>
+							</address>
+							<marker>2</marker>
+							<address>
+								<country>Australia</country>
+							</address>
+						</affiliation>
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

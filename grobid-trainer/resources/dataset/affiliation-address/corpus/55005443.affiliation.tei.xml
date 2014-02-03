@@ -8,15 +8,12 @@
 						<author>
 
 						<affiliation>
-							<orgName type="institution">Institute for Communications Technology</orgName>
-							<lb/> 
-							<orgName type="department">German Aerospace Research Establishment (DLR)</orgName>
-							<lb/>
 							<address>
-								<postBox>P.O. Box 1116</postBox>,
-								<postCode>D-82230</postCode>
-								<settlement>Wessling</settlement>,
-								<country>Germany</country>.
+								<postBox>P. O. Box 960</postBox>
+								<lb/>
+								<settlement>St. Charles</settlement>,
+								<region>MO</region>
+								<postCode>63302-0960</postCode>
 							</address>
 						</affiliation>
 

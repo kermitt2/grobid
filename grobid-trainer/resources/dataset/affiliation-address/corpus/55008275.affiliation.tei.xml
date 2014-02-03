@@ -8,15 +8,14 @@
 						<author>
 
 						<affiliation>
-							<orgName type="institution">Institute for Communications Technology</orgName>
-							<lb/> 
-							<orgName type="department">German Aerospace Research Establishment (DLR)</orgName>
+							<orgName type="department">Department of Biochemistry</orgName>,
+							<orgName type="institution">Tokushima<lb/> University School of Medicine</orgName>,
 							<lb/>
 							<address>
-								<postBox>P.O. Box 1116</postBox>,
-								<postCode>D-82230</postCode>
-								<settlement>Wessling</settlement>,
-								<country>Germany</country>.
+								<addrLine>Kuramoto-cho</addrLine>,
+								<settlement>Tokushima</settlement>
+								<lb/> (
+								<country>Japan)</country>
 							</address>
 						</affiliation>
 

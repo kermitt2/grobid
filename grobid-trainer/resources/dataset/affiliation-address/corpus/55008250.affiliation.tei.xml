@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">Sektion Chemie/Biologie dcr</orgName> 
+							<orgName type="institution">Padagogischen Hochschule ,, Karl Liebknecht&quot; </orgName>
+							<address>
+								<settlement>Potsdam</settlement>
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="department">Sektion Chemie</orgName> der
+							<orgName type="institution">Humboldt-Universitat zu Berlin</orgName>
+							<orgName type="department">Zentralinstitut fur physikalische Chemie der Akademie der Wissmschaften</orgName> der
+							<address>
+								<country>DDR</country>,
+								<settlement>Berlin</settlement>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

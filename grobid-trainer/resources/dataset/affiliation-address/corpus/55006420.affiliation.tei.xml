@@ -8,15 +8,14 @@
 						<author>
 
 						<affiliation>
-							<orgName type="institution">Institute for Communications Technology</orgName>
-							<lb/> 
-							<orgName type="department">German Aerospace Research Establishment (DLR)</orgName>
+							<orgName type="department">Department of Nutrition and Dietetics</orgName>,
+							<orgName type="department">Faculty of Medicine and Health Sciences</orgName>,
 							<lb/>
+							<orgName type="institution">Universiti Putra Malaysia</orgName>,
 							<address>
-								<postBox>P.O. Box 1116</postBox>,
-								<postCode>D-82230</postCode>
-								<settlement>Wessling</settlement>,
-								<country>Germany</country>.
+								<postCode>43400 UPM</postCode>,
+								<addrLine>Serdang Selangor</addrLine>,
+								<country>Malaysia</country>
 							</address>
 						</affiliation>
 

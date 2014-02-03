@@ -8,15 +8,19 @@
 						<author>
 
 						<affiliation>
-							<orgName type="institution">Institute for Communications Technology</orgName>
-							<lb/> 
-							<orgName type="department">German Aerospace Research Establishment (DLR)</orgName>
+							<orgName type="institution">Henkel Corporation</orgName>
+							<lb/>
+							<orgName type="institution">Aerospace Group</orgName>
 							<lb/>
 							<address>
-								<postBox>P.O. Box 1116</postBox>,
-								<postCode>D-82230</postCode>
-								<settlement>Wessling</settlement>,
-								<country>Germany</country>.
+								<addrLine>2850 Willow Pass Road</addrLine>
+							<lb/>
+								<postBox>P.O. Box 312</postBox>
+							<lb/>
+								<settlement>Bay Point</settlement>,
+								<region>CA</region>
+								<postCode>94565</postCode>
+								<country>USA</country>
 							</address>
 						</affiliation>
 

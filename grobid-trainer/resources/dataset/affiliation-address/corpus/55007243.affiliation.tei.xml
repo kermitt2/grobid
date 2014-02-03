@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">Division of Infectious Diseases</orgName>,
+							<orgName type="department">Department of Medicine and Department of Microbiology and Immunology</orgName>,
+							<lb/>
+							<orgName type="institution">Vanderbilt University School of Medicine</orgName>,
+							<address>
+								<settlement>Nashville</settlement>,
+								<region>Tennessee</region>
+								<postCode>37232</postCode>,
+								<lb/>
+								<marker>1</marker> and
+							</address>
+						</affiliation>
+						<affiliation>
+							<orgName type="department">Medical Service</orgName>,
+							<lb/>
+							<orgName type="department">Department of Veterans Affairs Medical Center</orgName>,
+							<address>
+								<settlement>Nashville</settlement>,
+								<region>Tennessee</region>
+								<postCode>37212</postCode>
+							</address>
+							<marker>2</marker>
+						</affiliation>
+						
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

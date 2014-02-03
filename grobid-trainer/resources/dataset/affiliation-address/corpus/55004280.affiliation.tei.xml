@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">Department of Pathology, Anatomy and Cell Biology</orgName>,
+							<orgName type="institution">Jefferson Medical College</orgName>,
+							<lb/>
+							<orgName type="institution">Thomas Jefferson University</orgName>,
+							<address>
+								<settlement>Philadelphia</settlement>,
+								<country>Pennsylvania</country>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="institution">Sbarro Institute for Cancer Research and Molecular Medicine</orgName>,
+							<orgName type="institution">Jefferson Medical College</orgName>,
+							<lb/>
+							<orgName type="institution">Thomas Jefferson University</orgName>,
+							<address>
+								<settlement>Philadelphia</settlement>,
+								<region>Pennsylvania</region>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

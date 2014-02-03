@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">Department of Bio-Materials</orgName>,
+							<orgName type="department">Graduate School and Research Center for Proteineous Materials</orgName>,
+							<orgName type="institution">Chosun UniVersity</orgName>,
+							<lb/>
+							<address>
+								<settlement>Gwangju</settlement>
+								<postCode>501-759</postCode>,
+								<country>Korea</country>,
+							</address>
+						</affiliation>
+						<affiliation> 	
+							<orgName type="department">Department of Life Science</orgName>,
+							<orgName type="institution">Gwangju Institute of Science and Technology</orgName>,
+							<address>
+								<settlement>Gwangju</settlement>
+								<postCode>500-712</postCode>,
+								<country>Korea</country>,
+							<lb/>
+							</address>
+						</affiliation>	
+						<affiliation>
+							<orgName type="department">Department of Cellular and Molecular Medicine</orgName>,
+							<orgName type="department">School of Medicine</orgName>,
+							<orgName type="institution">Chosun UniVersity</orgName>,
+							<address>
+								<settlement>Gwangju</settlement>
+								<postCode>501-759</postCode>,
+								<country>Korea</country>,
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>		
+							<orgName type="department">Department of Chemistry</orgName>,
+							<orgName type="institution">Konkuk UniVersity</orgName>,
+							<address>
+								<settlement>Seoul</settlement>
+								<postCode>143-701</postCode>,
+								<country>Korea</country>, and
+							</address>
+						</affiliation>
+						<affiliation>		
+							<orgName type="department">Department of Bioscience and Biotechnology</orgName>,
+							<lb/>
+							<orgName type="department">Bio/Molecular Informatics Center</orgName>,
+							<orgName type="institution">IBST</orgName>,
+							<orgName type="institution">Konkuk UniVersity</orgName>,
+							<address>
+								<settlement>Seoul</settlement>
+								<postCode>143-701</postCode>,
+								<country>Korea</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

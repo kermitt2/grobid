@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>*</marker>
+							<orgName type="department">Unité de Chirurgie Expérimentale</orgName>,
+							<orgName type="department">Département de génétique animale</orgName>,
+							<orgName type="institution">Institut National de la Recherche<lb/> Agronomique (INRA)</orgName>,
+							<address>
+								<addrLine>Le Magneraud</addrLine>,
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="department">Surgères and GRTMV</orgName>,
+							<orgName type="department">Faculté de Médecine</orgName>,
+							<orgName type="institution">Centre Hospitalo<lb/> Universitaire</orgName>,
+							<address>
+								<addrLine>La Milétrie</addrLine>,
+								<settlement>Poitiers</settlement>,
+								<country>France</country>;
+							<lb/>
+							</address>
+						</affiliation>	
+						<affiliation>	
+							<orgName type="laboratory">Laboratoire de RMN et Explorations Fonctionnelles</orgName>,
+							<orgName type="institution">Hôpital<lb/> Saint-Louis</orgName>,
+							<address>
+								<settlement>Paris</settlement>,
+								<country>France</country>;
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>		
+							<orgName type="institution">Institut National de la Santé et de la Recherche Médicale</orgName>,
+							<orgName type="department">Unité U478</orgName>,
+							<orgName type="department">Institut<lb/> Fédératif de Recherche 02</orgName>,
+							<orgName type="department">Faculté de Médecine Xavier Bichat</orgName>,
+							<address>
+								<settlement>Paris</settlement>,
+								<country>France</country>; and
+							<lb/>
+							</address>
+						</affiliation>	
+						<affiliation>	
+							<orgName type="department">Laboratoire de<lb/> Pharmacologie</orgName>,
+							<orgName type="department">Faculté de Médecine</orgName>,
+							<address>
+								<addrLine>Paris XII</addrLine>,
+								<settlement>Créteil</settlement>,
+								<country>France</country>.
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

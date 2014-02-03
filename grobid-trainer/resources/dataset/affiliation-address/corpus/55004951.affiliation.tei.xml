@@ -8,15 +8,16 @@
 						<author>
 
 						<affiliation>
-							<orgName type="institution">Institute for Communications Technology</orgName>
+							<orgName type="institution">SOCIET ITALIANA DI CITOMETRIA</orgName>
 							<lb/> 
-							<orgName type="department">German Aerospace Research Establishment (DLR)</orgName>
+							c/o 
+							<orgName type="department">Unità Tossicologia e Scienze Biomediche</orgName>
 							<lb/>
+							<orgName type="institution">ENEA Centro Ricerche</orgName>
 							<address>
-								<postBox>P.O. Box 1116</postBox>,
-								<postCode>D-82230</postCode>
-								<settlement>Wessling</settlement>,
-								<country>Germany</country>.
+								<addrLine>Casaccia s.p. 016<lb/> Via Anguillarese</addrLine>,
+								<postCode>301 -00123</postCode>
+								<settlement>Roma</settlement>
 							</address>
 						</affiliation>
 

@@ -8,15 +8,14 @@
 						<author>
 
 						<affiliation>
-							<orgName type="institution">Institute for Communications Technology</orgName>
-							<lb/> 
-							<orgName type="department">German Aerospace Research Establishment (DLR)</orgName>
-							<lb/>
+							<orgName type="laboratory">Laboratory of Molecular Biology</orgName>,
+							<orgName type="department">Division of Cancer Biology, Diagnosis, and Centers</orgName>,
+							<orgName type="institution">National Cancer Institute</orgName>,
+							<orgName type="institution">National Institutes of Health</orgName>,
 							<address>
-								<postBox>P.O. Box 1116</postBox>,
-								<postCode>D-82230</postCode>
-								<settlement>Wessling</settlement>,
-								<country>Germany</country>.
+								<settlement>Bethesda</settlement>,
+								<region>MD</region>
+								<postCode>20892</postCode>
 							</address>
 						</affiliation>
 

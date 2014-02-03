@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">Faculty of Health Science</orgName>,
+							<orgName type="institution">University of Manchester</orgName>,
+							<address>
+								<settlement>Manchester</settlement>,
+								<country>United Kingdom</country>
+								 (WNC)
+							</address>
+						</affiliation>
+						<affiliation>
+								<orgName type="institution">Private Practice</orgName>,
+							<address>
+								<settlement>Brisbane</settlement>,
+								<country>Australia</country>
+								(JM), <lb/>
+							</address>
+						</affiliation>
+						<affiliation>								
+							<orgName type="department">Visual and Ophthalmic Optics Group</orgName>, and
+							<orgName type="department">School of Optometry and Institute of Health and Biomedical Innovation</orgName>,
+							<orgName type="institution">Queensland University<lb/> of Technology</orgName>,
+							<address>
+								<settlement>Brisbane</settlement>,
+								<country>Australia</country>
+							</address>
+							(DAA, EM)
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

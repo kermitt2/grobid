@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+							<affiliation>
+								<orgName type="department">Department of Infectious Disease and Immunology</orgName>,
+								<orgName type="department">Okinawa-Asia Research Center of Medical Science</orgName>,
+								<orgName type="department">Faculty of Medicine</orgName>,
+								<lb/>
+								<orgName type="institution">University of the Ryukyus</orgName>,
+								<address>
+									<settlement>Okinawa</settlement>,
+								<lb/>
+								</address>
+								<marker>1</marker>
+							</affiliation>
+							<affiliation>
+								<orgName type="department">Department of Molecular Cell Biology</orgName>,
+								<orgName type="institution">Research Institute for Microbial Diseases</orgName>,
+								<lb/>
+								<orgName type="institution">Osaka University</orgName>,
+								<address>
+									<settlement>Osaka</settlement>,
+								<lb/>
+								</address>
+								<marker>2</marker>
+							</affiliation>
+							<affiliation>
+								<orgName type="department">Department of Molecular Virology</orgName>,
+								<orgName type="department">Bio-Response</orgName>,
+								<orgName type="department">Graduate School</orgName>,
+								<orgName type="institution">Tokyo Medical<lb/> and Dental University</orgName>,
+								<address>
+									<settlement>Tokyo</settlement>,
+									<lb/>
+								</address>
+								<marker>3</marker>
+								and
+							</affiliation>
+							<affiliation>							
+								<orgName type="department">Graduate School of Pharmaceutical Science</orgName>,
+								<orgName type="institution">Kyoto University</orgName>,
+								<address>
+									<settlement>Kyoto</settlement>
+								</address>
+								<marker>4</marker>,
+								<address>
+									<addrLine>Japan</addrLine>,
+								</address>
+							</affiliation>
+							<affiliation>
+								<orgName type="institution">and Henry Vogt Cancer Research Institute</orgName>,
+								<orgName type="institution">University of Louisville</orgName>,
+								<address>
+									<settlement>Louisville</settlement>,
+									<region>Kentucky</region>
+								</address>
+								<lb/>
+								<marker>5</marker>
+							</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

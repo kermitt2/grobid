@@ -7,16 +7,13 @@
 					<analytic>
 						<author>
 
+ From the
 						<affiliation>
-							<orgName type="institution">Institute for Communications Technology</orgName>
-							<lb/> 
-							<orgName type="department">German Aerospace Research Establishment (DLR)</orgName>
-							<lb/>
+							<orgName type="institution">James Bryant Conant Laboratory</orgName>,
+							<orgName type="institution">Harvard University</orgName>,
 							<address>
-								<postBox>P.O. Box 1116</postBox>,
-								<postCode>D-82230</postCode>
-								<settlement>Wessling</settlement>,
-								<country>Germany</country>.
+								<settlement>Cambridge</settlement>,
+								<region>Massachusetts</region>
 							</address>
 						</affiliation>
 

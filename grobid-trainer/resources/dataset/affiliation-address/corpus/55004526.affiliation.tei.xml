@@ -8,16 +8,15 @@
 						<author>
 
 						<affiliation>
-							<orgName type="institution">Institute for Communications Technology</orgName>
-							<lb/> 
-							<orgName type="department">German Aerospace Research Establishment (DLR)</orgName>
+							<orgName type="department">Computer Laboratory</orgName>
 							<lb/>
-							<address>
-								<postBox>P.O. Box 1116</postBox>,
-								<postCode>D-82230</postCode>
-								<settlement>Wessling</settlement>,
-								<country>Germany</country>.
-							</address>
+							<orgName type="institution">University of Cambridge</orgName>
+							<lb/>
+						</affiliation>
+						<affiliation>	
+							<orgName type="department">Computer Laboratory</orgName>
+							<lb/>
+							<orgName type="institution">University of Cambridge</orgName>
 						</affiliation>
 
 						</author>

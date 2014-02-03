@@ -8,15 +8,15 @@
 						<author>
 
 						<affiliation>
-							<orgName type="institution">Institute for Communications Technology</orgName>
-							<lb/> 
-							<orgName type="department">German Aerospace Research Establishment (DLR)</orgName>
+							<orgName type="department">Center for b~mthetic Bioorganic Chemistry</orgName>,
+							<orgName type="department">Department of Chemistry</orgName>,
 							<lb/>
+							<orgName type="institution">University of Copenhagen</orgName>,
 							<address>
-								<postBox>P.O. Box 1116</postBox>,
-								<postCode>D-82230</postCode>
-								<settlement>Wessling</settlement>,
-								<country>Germany</country>.
+								<addrLine>Universitetsparken 5</addrLine>,
+								<postCode>DK-2100</postCode>
+								<settlement>Copenhagen</settlement>,
+								<country>Denmark</country>
 							</address>
 						</affiliation>
 

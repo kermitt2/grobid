@@ -8,16 +8,10 @@
 						<author>
 
 						<affiliation>
-							<orgName type="institution">Institute for Communications Technology</orgName>
-							<lb/> 
-							<orgName type="department">German Aerospace Research Establishment (DLR)</orgName>
-							<lb/>
-							<address>
-								<postBox>P.O. Box 1116</postBox>,
-								<postCode>D-82230</postCode>
-								<settlement>Wessling</settlement>,
-								<country>Germany</country>.
-							</address>
+							<orgName type="institution">CCI de Strasbourg et du Bas-Rhin</orgName>,
+							<orgName type="institution">CCI de Colmar et du Centre Alsace</orgName>,
+							<orgName type="institution">CCI Sud-Alsace Mulhouse</orgName>,
+							<orgName type="institution">Chambre Régionale de Commerce et<lb/> d&apos;Industrie d&apos;Alsace</orgName>
 						</affiliation>
 
 						</author>

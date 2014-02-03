@@ -8,15 +8,12 @@
 						<author>
 
 						<affiliation>
-							<orgName type="institution">Institute for Communications Technology</orgName>
-							<lb/> 
-							<orgName type="department">German Aerospace Research Establishment (DLR)</orgName>
-							<lb/>
+							<orgName type="institution">IIMAS -National University of Mexico</orgName>,
 							<address>
-								<postBox>P.O. Box 1116</postBox>,
-								<postCode>D-82230</postCode>
-								<settlement>Wessling</settlement>,
-								<country>Germany</country>.
+								<addrLine>Apdo. Postal 20-726</addrLine>,
+								<settlement>Mexico</settlement>,
+								<region>D.F.</region>,
+								<postCode>01000</postCode>
 							</address>
 						</affiliation>
 

@@ -8,15 +8,14 @@
 						<author>
 
 						<affiliation>
-							<orgName type="institution">Institute for Communications Technology</orgName>
-							<lb/> 
-							<orgName type="department">German Aerospace Research Establishment (DLR)</orgName>
+							<orgName type="department">School of Computer Science</orgName>
+							<lb/>
+							<orgName type="institution">Carnegie Mellon University</orgName>
 							<lb/>
 							<address>
-								<postBox>P.O. Box 1116</postBox>,
-								<postCode>D-82230</postCode>
-								<settlement>Wessling</settlement>,
-								<country>Germany</country>.
+								<addrLine>5000 Forbes Avenue<lb/> Pittsburgh</addrLine>,
+								<region>PA</region>
+								<postCode>15213-3891</postCode>
 							</address>
 						</affiliation>
 

@@ -8,15 +8,15 @@
 						<author>
 
 						<affiliation>
-							<orgName type="institution">Institute for Communications Technology</orgName>
-							<lb/> 
-							<orgName type="department">German Aerospace Research Establishment (DLR)</orgName>
-							<lb/>
-							<address>
-								<postBox>P.O. Box 1116</postBox>,
-								<postCode>D-82230</postCode>
-								<settlement>Wessling</settlement>,
-								<country>Germany</country>.
+							<orgName type="department">Zentrum der Pharmakologie</orgName>,
+							<orgName type="department">Klinikum</orgName> 
+							der
+							<orgName type="institution">Johann Wolfgang Goethe-Universita$ t</orgName>
+							<address>								
+								<addrLine>Theodor-Stern-Kai 7</addrLine>,
+								<postCode>D-60590</postCode>
+								<settlement>Frankfurt am Main</settlement>,
+								<country>Germany</country>
 							</address>
 						</affiliation>
 

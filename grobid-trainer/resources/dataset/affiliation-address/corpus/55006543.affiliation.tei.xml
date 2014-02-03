@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">Systems Development Laboratory</orgName>,
+							<orgName type="institution">Hitachi Ldt</orgName>.
+							<lb/>
+							<address>
+								<addrLine>292, Yoshida-cho</addrLine>,
+								<addrLine>Totsuka-ku</addrLine>,
+								<addrLine>Yokohama-shi</addrLine>,
+								<settlement>Kanagawa</settlement>
+								<postCode>244-0817</postCode>,
+								<country>Japan</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<orgName type="laboratory">Central Research Laboratory</orgName>,
+							<orgName type="institution">Hitachi Ldt</orgName>.
+							<lb/>
+							<address>
+								<addrLine>1-280, Higashi-Koigakubo</addrLine>,
+								<addrLine>Kokubunji-shi</addrLine>,
+								<settlement>Tokyo</settlement>
+								<postCode>185-8601</postCode>,
+								<country>Japan</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -8,15 +8,13 @@
 						<author>
 
 						<affiliation>
-							<orgName type="institution">Institute for Communications Technology</orgName>
-							<lb/> 
-							<orgName type="department">German Aerospace Research Establishment (DLR)</orgName>
+							<orgName type="institution">United Technologies Research Center</orgName>
 							<lb/>
 							<address>
-								<postBox>P.O. Box 1116</postBox>,
-								<postCode>D-82230</postCode>
-								<settlement>Wessling</settlement>,
-								<country>Germany</country>.
+								<addrLine>East Hartford</addrLine>,
+								<region>CT</region>
+								<postCode>06108</postCode>,
+								<country>USA</country>
 							</address>
 						</affiliation>
 

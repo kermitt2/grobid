@@ -8,15 +8,14 @@
 						<author>
 
 						<affiliation>
-							<orgName type="institution">Institute for Communications Technology</orgName>
-							<lb/> 
-							<orgName type="department">German Aerospace Research Establishment (DLR)</orgName>
-							<lb/>
+							<marker>l</marker>
+							<orgName type="department">Department of Animat science and2Department of Plant science</orgName>,
+							<orgName type="institution">Nova scotia Agricultural college</orgName>,
 							<address>
-								<postBox>P.O. Box 1116</postBox>,
-								<postCode>D-82230</postCode>
-								<settlement>Wessling</settlement>,
-								<country>Germany</country>.
+								<settlement>Truro</settlement>,
+							    <region>Nova Scotia</region>,-
+								<country>Canada</country>
+								<postCode>B2N 5E3</postCode>.
 							</address>
 						</affiliation>
 

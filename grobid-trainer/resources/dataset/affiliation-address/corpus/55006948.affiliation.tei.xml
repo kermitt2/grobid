@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="institution">T-Com, Slovak Telekom,a.s. </orgName>
+							<lb/>
+							<address>
+								<addrLine>Jarabinkova 1</addrLine>,
+								<postCode>82109</postCode>
+								<settlement>Bratislava</settlement>
+								<country>Slovakia</country>
+								<lb/>
+							</address>
+						</affiliation>
+						<affiliation>		
+							<orgName type="institution">T-Systems ES GmbH</orgName>,
+							<address>
+								<addrLine>Deutsche-<lb/>Telekom-Allee 7</addrLine>
+								<lb/>
+								<postCode>64295</postCode>
+								<settlement>Darmstadt</settlement>,
+								<country>Germany</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>		
+							<orgName type="institution">City University London</orgName>
+							<lb/>
+							<address>
+								<addrLine>Northampton Square</addrLine>
+								<lb/>
+								<settlement>London</settlement>
+								<postCode>EC1V 0HB</postCode>,
+								<country>UK</country>
+							<lb/>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>
