@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Rendi</forename>
+								<surname>Murphree Bacon</surname>,
+							<lb/>
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>Brad</forename>
+								<middlename>J</middlename> .
+								<surname>Biggerstaff</surname> ,
+							<lb/>
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>Martin</forename>
+								<middlename>E</middlename> .
+								<surname>Schriefer</surname>,
+							<lb/>
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>Robert</forename>
+								<middlename>D</middlename>.
+								<surname>Gilmore</surname> ,
+								<suffix>Jr</suffix> .,
+							<lb/>
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>Mario</forename>
+								<middlename>T</middlename> .
+								<surname>Philipp</surname> ,
+								<marker>2</marker>
+							</persName>
+							<persName>
+								<forename>Allen</forename>
+								<middlename>C</middlename>.
+								<surname>Steere</surname> ,
+							<lb/>
+								<marker>3</marker>,
+								<marker>a</marker>
+							</persName>
+							<persName>
+								<forename>Gary</forename>
+								<middlename>P</middlename>.
+								<surname>Wormser</surname>,
+							<lb/>
+								<marker>4</marker>
+							</persName>
+							<persName>
+								<forename>Adriana</forename>
+								<middlename>R</middlename> .
+								<surname>Marques</surname> ,
+							<lb/>
+								<marker>5</marker> and
+							</persName>
+							<persName>
+								<forename>Barbara</forename>
+								<middlename>J</middlename> .
+								<middlename>B</middlename> .
+								<surname>Johnson</surname>
+								<marker>1</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

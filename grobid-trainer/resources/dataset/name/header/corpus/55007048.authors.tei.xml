@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Vassilios</forename>
+								<surname>Papadopoulos</surname>
+								<lb/>
+								<marker>1</marker>,
+							</persName>
+							<persName>
+								<forename>Mario</forename>
+								<surname>Baraldi</surname>
+								<lb/>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>Tomás</forename>
+								<middlename>R</middlename> .
+								<surname>Guilarte</surname>
+								<marker>3</marker> ,
+							</persName>
+							<persName>	
+								<forename>Thomas</forename>
+								<middlename>B</middlename> .
+								<surname>Knudsen</surname>
+								<marker>4</marker> ,
+								<lb/>
+							</persName>
+							<persName>	
+								<forename>Jean - Jacques</forename>
+								<surname>Lacapère</surname>
+								<lb/>
+								<marker>5</marker> ,
+							</persName>
+							<persName>	
+								<forename>Peter</forename>
+								<surname>Lindemann</surname>
+								<marker>6</marker> ,
+							</persName>
+							<persName>	
+								<forename>Michael</forename>
+								<middlename>D</middlename> .
+								<surname>Norenberg</surname>
+								<marker>7</marker> ,
+							</persName>
+							<persName>	
+								<forename>David</forename>
+								<surname>Nutt</surname>
+								<marker>8</marker> ,
+								<lb/>
+							</persName>
+							<persName>	
+								<forename>Abraham</forename>
+								<surname>Weizman</surname>
+								<lb/>
+								<marker>9</marker> ,
+							</persName>
+							<persName>	
+								<forename>Ming- Rong</forename>
+								<surname>Zhang</surname>
+								<lb/>
+								<marker>10</marker> and
+							</persName>
+							<persName>	
+								<forename>Moshe</forename>
+								<surname>Gavish</surname>
+								<marker>11</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

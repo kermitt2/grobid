@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Douglas</forename>
+								<middlename>J</middlename>.
+								<surname>Gardner</surname>,
+							</persName>
+							<persName>
+								<forename>Yousoo</forename>
+								<surname>Han</surname>,
+							</persName>
+							<persName>
+								<forename>Alper</forename>
+								<surname>Kiziltas</surname>, and
+							</persName>
+							<persName>
+								<forename>Yucheng</forename>
+								<surname>Peng</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Elizabeth</forename>
+								<middlename>M</middlename>.
+								<surname>Brunt</surname>,
+								<roleName>M.D</roleName>.,
+							</persName>
+							<persName>
+								<forename>Christine</forename>
+								<middlename>G</middlename>.
+								<surname>Janney</surname>,
+								<roleName>M.D</roleName>.,
+							</persName>
+							<persName>
+								<forename>Adrian</forename>
+								<middlename>M</middlename>.
+								<surname>Di Bisceglie</surname>,
+								<roleName>M.D</roleName>.,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Brent</forename>
+								<middlename>A</middlename> .
+								<surname>Neuschwander -Tetri</surname>,
+								<roleName>M .D</roleName>.,and
+							</persName>
+							<persName>
+								<forename>Bruce</forename>
+								<middlename>R</middlename> .
+								<surname>Bacon</surname> ,
+								<roleName>M .D</roleName>.
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

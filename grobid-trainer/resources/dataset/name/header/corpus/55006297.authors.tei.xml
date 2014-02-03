@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Oscar</forename>
+								<surname>Corcho</surname>,
+							</persName>
+							<persName>
+								<forename>Asunción</forename>
+								<surname>Gómez-Pérez</surname>,
+							</persName>
+							<persName>
+								<forename>Angel</forename>
+								<surname>López-Cima</surname>,
+							</persName>
+							<persName>
+								<forename>V</forename>.
+								<surname>López-García</surname>,<lb/> and
+							</persName>
+							<persName>
+								<forename>María</forename>
+								<surname>del Carmen Suárez -Figueroa</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

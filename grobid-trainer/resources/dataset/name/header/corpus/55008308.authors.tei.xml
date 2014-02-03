@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Paola</forename>
+								<surname>Ferro</surname>
+								<lb/>
+								<marker>a</marker>,
+							</persName>
+							<persName>
+								<forename>Maria</forename>
+								<middlename>G</middlename> .
+								<surname>Catalano</surname>
+								<lb/>
+								<marker>b</marker> ,
+							</persName>
+							<persName>
+								<forename>Raffaella</forename>
+								<surname>Dell &apos; Eva</surname>
+								<lb/>
+								<marker>a</marker>,
+							</persName>
+							<persName>
+								<forename>Nicoletta</forename>
+								<surname>Fortunati</surname>
+								<lb/>
+								<marker>b</marker> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Ulrich</forename>
+								<surname>Pfeffer</surname>
+								<lb/>
+								<marker>a , *</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

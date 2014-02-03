@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Olivier</forename>
+								<surname>Benveniste</surname>,
+							<lb/>
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>Laurent</forename>
+								<surname>Drouot</surname> ,
+							<lb/>
+								<marker>2</marker>
+							</persName>
+							<persName>
+								<forename>Fabienne</forename>
+								<surname>Jouen</surname> ,
+							<lb/>
+								<marker>3</marker>
+							</persName>
+							<persName>
+								<forename>Jean -Luc</forename>
+								<surname>Charuel</surname>,
+								<marker>4</marker>
+							</persName>
+							<persName>
+								<forename>Coralie</forename>
+								<surname>Bloch - Queyrat</surname> ,
+							<lb/>
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>Anthony</forename>
+								<surname>Behin</surname> ,
+							<lb/>
+								<marker>5</marker>
+							</persName>
+							<persName>
+								<forename>Zahir</forename>
+								<surname>Amoura</surname>,
+							<lb/>
+								<marker>4</marker>
+							</persName>
+							<persName>
+								<forename>Isabelle</forename>
+								<surname>Marie</surname> ,
+								<marker>3</marker>
+							</persName>
+							<persName>
+								<forename>Marguerite</forename>
+								<surname>Guiguet</surname> ,
+							<lb/>
+								<marker>6</marker>
+							</persName>
+							<persName>
+								<forename>Bruno</forename>
+								<surname>Eymard</surname> ,
+							<lb/>
+								<marker>5</marker>
+							</persName>
+							<persName>
+								<forename>Danièle</forename>
+								<surname>Gilbert</surname>,
+							<lb/>
+								<marker>2</marker>
+							</persName>
+							<persName>
+								<forename>François</forename>
+								<surname>Tron</surname> ,
+							<lb/>
+								<marker>3</marker>
+							</persName>
+							<persName>
+								<forename>Serge</forename>
+								<surname>Herson</surname>,
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>Lucile</forename>
+								<surname>Musset</surname> ,
+							<lb/>
+								<marker>4</marker> and
+							</persName>
+							<persName>
+								<forename>Olivier</forename>
+								<surname>Boyer</surname>
+								<marker>3</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

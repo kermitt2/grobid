@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>B</forename>.
+								<middlename>N</middlename>.
+								<surname>KRATH</surname>
+								<lb/>
+								<marker>1*</marker> ,
+							</persName>
+							<persName>
+								<forename>F</forename> .
+								<middlename>D</middlename> .
+								<surname>ERIKSEN</surname>
+								<lb/>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>B</forename> .
+								<middlename>H</middlename>.
+								<surname>PEDERSEN</surname>
+								<lb/>
+								<marker>3</marker> ,
+							</persName>
+							<persName>
+								<forename>L</forename>.
+								<middlename>J</middlename> .
+								<middlename>W</middlename> .
+								<middlename>J</middlename> .
+								<surname>GILISSEN</surname>
+								<marker>4</marker>,
+							</persName>
+							<persName>
+								<forename>W</forename> .
+								<middlename>E</middlename> .
+								<surname>VAN DE <lb/> WEG</surname>
+								<lb/>
+								<marker>4</marker> and
+							</persName>
+							<persName>
+								<forename>L</forename>.
+								<middlename>O</middlename>.
+								<surname>DRAGSTED</surname>
+								<marker>1</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

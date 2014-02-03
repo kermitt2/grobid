@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>William</forename>
+								<middlename>C</middlename>.
+								<surname>Hudson</surname>,
+							</persName>
+							<persName>
+								<forename>Ben</forename>
+								<surname>Yong</surname>,
+							</persName>
+							<persName>
+								<forename>Paul</forename>
+								<surname>Boguszewski</surname>,
+							</persName>
+							<persName>
+								<forename>Daniel</forename>
+								<surname>Tran</surname>, and
+							</persName>
+							<persName>
+								<forename>Yung-Lin</forename>
+								<surname>Chen</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

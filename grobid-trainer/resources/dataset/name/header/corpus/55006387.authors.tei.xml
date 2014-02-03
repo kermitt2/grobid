@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Timo</forename>
+								<surname>Weiss</surname>,
+							</persName>
+							<persName>
+								<forename>Joerg</forename>
+								<surname>Hillenbrand</surname>,
+							</persName>
+							<persName>
+								<forename>Albert</forename>
+								<surname>Krohn</surname> (
+								<roleName>IEEE Student sMembers</roleName>),
+							</persName>
+							<persName>
+								<forename>Friedrich</forename>
+								<middlename>K</middlename>.
+								<surname>Jondral</surname> (
+								<roleName>IEEE Senior Member</roleName>)
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

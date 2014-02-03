@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>CRISTINA</forename>
+								<surname>GIACINTI</surname>,
+							<lb/>
+								<marker>1,2</marker>
+							</persName>
+							<persName>
+								<forename>ANTONIO</forename>
+								<surname>MUSAR</surname> ,
+							<lb/>
+								<marker>2</marker>
+							</persName>
+							<persName>
+								<forename>GIULIA</forename>
+								<surname>DE FALCO</surname> ,
+								<marker>1, 3</marker>
+							</persName>
+							<persName>
+								<forename>ISABELLE</forename>
+								<surname>JOURDAN</surname> ,
+							<lb/>
+								<marker>2</marker>
+							</persName>
+							<persName>
+								<forename>MARIO</forename>
+								<surname>MOLINARO</surname>,
+							<lb/>
+								<marker>2</marker>
+							</persName>
+							<persName>
+								<forename>LUIGI</forename>
+								<surname>BAGELLA</surname> ,
+								<marker>1 , 4</marker>
+							</persName>
+							<persName>
+								<forename>CRISTIANO</forename>
+								<surname>SIMONE</surname>,
+							<lb/>
+								<marker>1 , 5*</marker> AND
+							</persName>
+							<persName>
+								<forename>ANTONIO</forename>
+								<surname>GIORDANO</surname>
+							<lb/>
+								<marker>1 , 3 *</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>R</forename>.
+								<middlename>A</middlename>.
+								<surname>BAKER</surname>,
+							</persName>
+							<persName>
+								<forename>P</forename>.
+								<middlename>G</middlename>.
+								<surname>CRANDALL</surname>,
+							</persName>
+							<persName>
+								<forename>K</forename>.
+								<middlename>C</middlename>.
+								<surname>DAVIS</surname>, and
+							</persName>
+							<persName>
+								<forename>L</forename>.
+								<surname>WICKER</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

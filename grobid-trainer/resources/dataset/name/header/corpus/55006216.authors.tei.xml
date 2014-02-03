@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Franz</forename>
+								<middlename>Josef</middlename>
+								<surname>Och</surname>,
+							</persName>
+							<persName>
+								<forename>Daniel</forename>
+								<surname>Gildea</surname>,
+							</persName>
+							<persName>
+								<forename>Sanjeev</forename>
+								<surname>Khudanpur</surname>,
+							</persName>
+							<persName>
+								<forename>Anoop</forename>
+								<lb/>
+								<surname>Sarkar</surname>,
+							</persName>
+							<persName>
+								<forename>Kenji</forename>
+								<surname>Yamada</surname> ,
+							</persName>
+							<persName>
+								<forename>Alex</forename>
+								<surname>Fraser</surname> ,
+							</persName>
+							<persName>
+								<forename>Shankar</forename>
+								<surname>Kumar</surname> ,
+							</persName>
+							<persName>
+								<forename>Libin</forename>
+							<lb/>
+								<surname>Shen</surname> ,
+							</persName>
+							<persName>
+								<forename>David</forename>
+								<surname>Smith</surname> ,
+							</persName>
+							<persName>
+								<forename>Katherine</forename>
+								<surname>Eng</surname> ,
+							</persName>
+							<persName> 
+								<forename>Viren</forename>
+								<surname>Jain</surname> ,
+							</persName>
+							<persName>
+								<forename>Zhen</forename>
+								<surname>Jin</surname> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Dragomir</forename>
+								<surname>Radev</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Simon</forename>
+								<surname>Chapman</surname>
+						 		<lb/>
+								<roleName>Professor</roleName> and
+							</persName>
+							<persName>
+								<forename>Antony</forename>
+								<surname>Balmain</surname>
+								<lb/>
+								<roleName>Journalist ,	Documentary
+								Director</roleName>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

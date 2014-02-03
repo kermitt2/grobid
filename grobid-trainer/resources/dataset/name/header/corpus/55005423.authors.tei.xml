@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>J</forename>.
+								<middlename>M</middlename>.
+								<surname>Taylor</surname>
+							<lb/>
+								<marker>1*</marker>,
+							</persName>
+							<persName>
+								<forename>P</forename> .
+								<surname>Cappellaro</surname>
+							<lb/>
+								<marker>2 ,3*</marker>,
+							</persName>
+							<persName>
+								<forename>L</forename> .
+								<surname>Childress</surname>
+							<lb/>
+								<marker>2 , 4</marker>,
+							</persName>
+							<persName>
+								<forename>L</forename>.
+								<surname>Jiang</surname>
+							<lb/>
+								<marker>2</marker>,
+							</persName>
+							<persName>
+								<forename>D</forename> .
+								<surname>Budker</surname>
+							<lb/>
+								<marker>5</marker> ,
+							</persName>
+							<persName>
+								<forename>P</forename>.
+								<middlename>R</middlename>.
+								<surname>Hemmer</surname>
+							<lb/>
+								<marker>6</marker>,
+							</persName>
+							<persName>
+								<forename>A</forename>.
+								<surname>Yacoby</surname>
+							<lb/>
+								<marker>2</marker>,
+							</persName>
+							<persName>
+								<forename>R</forename> .
+								<surname>Walsworth</surname>
+							<lb/>
+								<marker>2 ,3</marker> ,
+							</persName>
+							<persName>
+								<forename>M</forename>.
+								<middlename>D</middlename> .
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

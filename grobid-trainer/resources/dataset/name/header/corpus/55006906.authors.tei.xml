@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>ANNEKE</forename>
+								<middlename>M</middlename>.
+								<surname>ZEILLEMAKER</surname>,
+								<roleName>M.D</roleName>.,
+								<lb/>
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>ARTHUR</forename>
+								<middlename>A</middlename> .
+								<middlename>G</middlename> .
+								<middlename>M</middlename> .
+								<surname>HOYNCK VAN PAPENDRECHT</surname>
+								<roleName>M .D</roleName>.,
+							</persName>
+							<persName>
+								<forename>MARGREET</forename>
+								<middlename>H</middlename> .
+								<middlename>L</middlename> .
+								<surname>HART</surname> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>DIRK</forename>
+								<surname>ROOS</surname>,
+								<roleName>PH. D</roleName>.,
+							</persName>
+							<persName>
+								<forename>HENRI</forename>
+								<middlename>A</middlename> .
+								<surname>VERBRUGH</surname>,
+								<roleName>M. D</roleName>.,
+								<roleName>AND</roleName>
+							</persName>
+							<persName>
+								<forename>PIET</forename>
+								<surname>LEGUIT</surname> ,
+								<roleName>M. D</roleName>.
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

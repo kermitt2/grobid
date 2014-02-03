@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>A</forename>
+								<middlename>J</middlename>
+								<surname>PUECH</surname>,&apos;
+							</persName>
+							<persName>
+								<forename>Y</forename>
+								<surname>LECRUBIER2</surname> and
+							</persName>
+							<persName>
+								<forename>P</forename>
+								<surname>SIMON&apos;</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

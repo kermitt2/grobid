@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>THIERRY</forename>
+								<surname>HAUET</surname>,
+								<marker>*</marker>
+							<lb/>
+							</persName>
+							<persName>
+								<forename>JEAN -MICHEL</forename>
+								<surname>GOUJON</surname> ,
+								<marker>*</marker>
+							</persName>
+							<persName>
+								<forename>ALAIN</forename>
+								<surname>VANDEWALLE</surname> ,
+							</persName>
+							<persName>
+								<forename>HERVE</forename>
+								<surname>BAUMERT</surname> ,
+								<marker>*</marker>
+							</persName>
+							<persName>
+								<forename>LOUIS</forename>
+								<surname>LACOSTE</surname> ,
+								<marker>*</marker>
+							</persName>
+							<persName>
+								<forename>JEAN -PAUL</forename>
+								<surname>TILLEMENT</surname> ,
+							</persName>
+							<persName>
+								<forename>MICHEL</forename>
+								<surname>EUGENE</surname> ,
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

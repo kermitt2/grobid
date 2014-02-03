@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Kinson</forename>
+								<middlename>C</middlename>.
+								<surname>Kam</surname>,
+							</persName>
+							<persName>
+								<forename>Anti</forename>
+								<surname>Liivat</surname>,
+							</persName>
+							<persName>
+								<forename>David</forename>
+								<surname>Ensling</surname>,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Torbjörn</forename>
+								<surname>Gustafsson</surname> and
+							</persName>
+							<persName>
+								<forename>Josh</forename>
+								<surname>Thomas</surname>
+							<lb/>
+							</persName>
+							
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

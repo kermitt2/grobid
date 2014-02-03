@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>LUIGI</forename>
+								<surname>BAGELLA</surname>,
+							<lb/>
+								<marker>1,2</marker>
+							</persName>
+							<persName>
+								<forename>TIMOTHY</forename>
+								<middlename>K</middlename> .
+								<surname>MACLACHLAN</surname> ,
+							<lb/>
+								<marker>1 ,2</marker>
+							</persName>
+							<persName>
+								<forename>RUSSELL</forename>
+								<middlename>J</middlename> .
+								<surname>BUONO</surname>,
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>M</forename> .
+								<middlename>MICHELE</middlename>
+								<surname>PISANO</surname> ,
+							<lb/>
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>ANTONIO</forename>
+								<surname>GIORDANO</surname>,
+							<lb/>
+								<marker>1 ,2</marker> AND
+							</persName>
+							<persName>
+								<forename>ANTONIO</forename>
+								<surname>DELUCA</surname>
+								<marker>1 , 2 * 1</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

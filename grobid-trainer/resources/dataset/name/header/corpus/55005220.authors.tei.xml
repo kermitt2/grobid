@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>John</forename>
+								<middlename>A</middlename>.
+								<surname>Tucker</surname>,
+								<marker>* ,y</marker>
+							</persName>
+							<persName>
+								<forename>Terrance</forename>
+								<middlename>L</middlename>.
+								<surname>Clayton</surname>,
+							</persName>
+							<persName>
+								<forename>Connie</forename>
+								<middlename>G</middlename>.
+								<surname>Chidester</surname>,
+							</persName>
+							<persName>
+								<forename>Martin</forename>
+								<middlename>W</middlename>.
+								<surname>Schulz</surname>,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Leigh</forename>
+								<middlename>E</middlename> .
+								<surname>Harrington</surname> ,
+							</persName>
+							<persName>
+								<forename>Steven</forename>
+								<middlename>J</middlename> .
+								<surname>Conrad</surname> ,
+							</persName>
+							<persName>
+								<forename>Yoshihiko</forename>
+								<surname>Yagi</surname> ,
+							</persName>
+							<persName>
+								<forename>Nancee</forename>
+								<middlename>L</middlename> .
+								<surname>Oien</surname> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>David</forename>
+								<surname>Yurek</surname>and
+							</persName>
+							<persName>
+								<forename>Ming - Shang</forename>
+								<surname>Kuo</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>
