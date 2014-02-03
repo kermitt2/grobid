@@ -8,15 +8,14 @@
 						<author>
 
 						<affiliation>
-							<orgName type="institution">Institute for Communications Technology</orgName>
-							<lb/> 
-							<orgName type="department">German Aerospace Research Establishment (DLR)</orgName>
-							<lb/>
+							<orgName type="laboratory">Abbott Laboratories</orgName>,
 							<address>
-								<postBox>P.O. Box 1116</postBox>,
-								<postCode>D-82230</postCode>
-								<settlement>Wessling</settlement>,
-								<country>Germany</country>.
+								<addrLine>100 Abbott Park Road</addrLine>,
+								<addrLine>Abbott Park</addrLine>,
+								<settlement>Abbott Park</settlement>,
+								<region>IL</region>
+								<postCode>60064-3500</postCode>,
+								<country>USA</country>
 							</address>
 						</affiliation>
 

@@ -8,15 +8,12 @@
 						<author>
 
 						<affiliation>
-							<orgName type="institution">Institute for Communications Technology</orgName>
-							<lb/> 
-							<orgName type="department">German Aerospace Research Establishment (DLR)</orgName>
-							<lb/>
+							<orgName type="department">Department of Pathology and Division of Gastroenterology and Hepatology</orgName>,
+							<orgName type="department">Department of Internal<lb/> Medicine</orgName>,
+							<orgName type="institution">Saint Louis University School of Medicine</orgName>,
 							<address>
-								<postBox>P.O. Box 1116</postBox>,
-								<postCode>D-82230</postCode>
-								<settlement>Wessling</settlement>,
-								<country>Germany</country>.
+								<settlement>St. Louis</settlement>,
+								<region>Missouri</region>
 							</address>
 						</affiliation>
 

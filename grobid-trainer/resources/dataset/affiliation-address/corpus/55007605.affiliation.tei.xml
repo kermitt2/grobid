@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="institution">EPFL-IC-LBD</orgName>
+							<lb/>
+							<address>
+								<addrLine>INJ 237 Station 14</addrLine>
+								<lb/>
+								<settlement>CH</settlement>
+								<postCode>1015</postCode>
+								<settlement>Lausanne</settlement>
+								<lb/>
+							</address>
+						</affiliation>	
+						<affiliation>								
+							<orgName type="institution">EPFL-IC-LBD</orgName>
+							<lb/>
+							<address>
+								<addrLine>INJ 230 Station 14</addrLine>
+								<lb/>
+								<settlement>CH</settlement>
+								<postCode>1015</postCode>
+								<settlement>Lausanne</settlement>
+								<lb/>
+							</address>
+						</affiliation>	
+						<affiliation>	
+							<orgName type="institution">EPFL-IC-LBD</orgName>
+							<lb/>
+							<address>
+								<addrLine>INJ 236 Station 14</addrLine>
+								<lb/>
+								<settlement>CH</settlement>
+								<postCode>1015</postCode>
+								<settlement>Lausanne</settlement>
+								<lb/>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

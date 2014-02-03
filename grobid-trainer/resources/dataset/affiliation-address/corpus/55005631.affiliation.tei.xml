@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="institution">Orange Labs</orgName>-
+							<orgName type="department">TECH/SSTP</orgName>,
+							<address>
+								<addrLine>2 Avenue Pierre Marzin</addrLine>,
+								<postCode>22307</postCode>
+								<settlement>Lannion Cedex</settlement>,
+								<country>France</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="laboratory">Laboratory of Modeling and Computation</orgName>,
+							<address>
+								<addrLine>B.P 53X</addrLine>,
+								<postCode>38041</postCode>
+								<settlement>Grenoble cedex 9</settlement>,
+								<country>France</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>3</marker>
+							<orgName type="laboratory">GIPSA-lab</orgName>,
+							<orgName type="department">Department of Images and Signals</orgName>,
+							<address>
+								<addrLine>BP 46</addrLine>,
+								<postCode>38402</postCode>
+								<settlement>St Martin d &apos;ereCedex</settlement>,
+								<country>France</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

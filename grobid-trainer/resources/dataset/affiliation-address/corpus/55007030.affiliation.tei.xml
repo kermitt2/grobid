@@ -8,15 +8,18 @@
 						<author>
 
 						<affiliation>
-							<orgName type="institution">Institute for Communications Technology</orgName>
-							<lb/> 
-							<orgName type="department">German Aerospace Research Establishment (DLR)</orgName>
+							<orgName type="department">Molecular and Cellular Biology Program</orgName>
 							<lb/>
+							<marker>1</marker> and
+						</affiliation>
+						<affiliation>
+							<orgName type="department">Department of Microbiology</orgName>,
+							<marker>2</marker>
+							<orgName type="institution">Oregon State University</orgName>,
 							<address>
-								<postBox>P.O. Box 1116</postBox>,
-								<postCode>D-82230</postCode>
-								<settlement>Wessling</settlement>,
-								<country>Germany</country>.
+								<settlement>Corvallis</settlement>,
+								<region>Oregon</region>
+								<postCode>97331</postCode>
 							</address>
 						</affiliation>
 

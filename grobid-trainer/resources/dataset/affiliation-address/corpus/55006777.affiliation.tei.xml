@@ -8,15 +8,14 @@
 						<author>
 
 						<affiliation>
-							<orgName type="institution">Institute for Communications Technology</orgName>
-							<lb/> 
-							<orgName type="department">German Aerospace Research Establishment (DLR)</orgName>
+							<orgName type="institution">Clariant International Ltd</orgName>
 							<lb/>
 							<address>
-								<postBox>P.O. Box 1116</postBox>,
-								<postCode>D-82230</postCode>
-								<settlement>Wessling</settlement>,
-								<country>Germany</country>.
+								<addrLine>Rothausstrasse 61</addrLine>
+								<lb/>
+								<postCode>4132</postCode>
+								<settlement>Muttenz 1</settlement>
+								<country>Switzerland</country>
 							</address>
 						</affiliation>
 

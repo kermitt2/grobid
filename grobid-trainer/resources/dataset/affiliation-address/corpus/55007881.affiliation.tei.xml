@@ -8,15 +8,12 @@
 						<author>
 
 						<affiliation>
-							<orgName type="institution">Institute for Communications Technology</orgName>
-							<lb/> 
-							<orgName type="department">German Aerospace Research Establishment (DLR)</orgName>
-							<lb/>
+							<orgName type="department">Cosmetics Innovations &amp; Technologies </orgName>
 							<address>
-								<postBox>P.O. Box 1116</postBox>,
-								<postCode>D-82230</postCode>
-								<settlement>Wessling</settlement>,
-								<country>Germany</country>.
+								<addrLine>6 rue Jules Pasdeloup</addrLine> @BULLET
+								<postCode>28109</postCode>
+								<settlement>Dreux Cedex</settlement> @BULLET
+								<country>FRANCE</country>
 							</address>
 						</affiliation>
 

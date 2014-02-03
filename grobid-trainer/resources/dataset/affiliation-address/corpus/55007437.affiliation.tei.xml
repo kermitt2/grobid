@@ -8,15 +8,14 @@
 						<author>
 
 						<affiliation>
-							<orgName type="institution">Institute for Communications Technology</orgName>
-							<lb/> 
-							<orgName type="department">German Aerospace Research Establishment (DLR)</orgName>
+							<orgName type="department">Institute of Fermentation Technology and Microbiology</orgName>,
+							<orgName type="institution">Technical University of £ód</orgName>
 							<lb/>
 							<address>
-								<postBox>P.O. Box 1116</postBox>,
-								<postCode>D-82230</postCode>
-								<settlement>Wessling</settlement>,
-								<country>Germany</country>.
+								<addrLine>Wólczañska 171/173</addrLine>,
+								<postCode>90-924</postCode>
+								<settlement>£ód</settlement>,
+								<country>Poland</country>
 							</address>
 						</affiliation>
 

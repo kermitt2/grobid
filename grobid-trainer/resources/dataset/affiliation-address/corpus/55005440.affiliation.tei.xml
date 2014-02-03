@@ -8,15 +8,15 @@
 						<author>
 
 						<affiliation>
-							<orgName type="institution">Institute for Communications Technology</orgName>
-							<lb/> 
-							<orgName type="department">German Aerospace Research Establishment (DLR)</orgName>
+							<orgName type="institution">Queen Mary University of London</orgName>
+							<lb/>
+							<orgName type="department">Department of Computer Science</orgName>
 							<lb/>
 							<address>
-								<postBox>P.O. Box 1116</postBox>,
-								<postCode>D-82230</postCode>
-								<settlement>Wessling</settlement>,
-								<country>Germany</country>.
+								<addrLine>Mile End Road</addrLine>,
+								<postCode>E1 4NS</postCode>,
+								<settlement>London</settlement>,
+								<country>United Kingdom</country>
 							</address>
 						</affiliation>
 

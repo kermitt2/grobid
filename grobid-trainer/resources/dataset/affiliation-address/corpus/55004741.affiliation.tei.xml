@@ -8,15 +8,12 @@
 						<author>
 
 						<affiliation>
-							<orgName type="institution">Institute for Communications Technology</orgName>
-							<lb/> 
-							<orgName type="department">German Aerospace Research Establishment (DLR)</orgName>
-							<lb/>
+							<marker>&apos;</marker>
+							<orgName type="laboratory">Laboratory of Medical Allergology</orgName>,
+							<orgName type="department">Medical Dept</orgName>,
+							<orgName type="institution">TA, Rigshospital</orgName>,
 							<address>
-								<postBox>P.O. Box 1116</postBox>,
-								<postCode>D-82230</postCode>
-								<settlement>Wessling</settlement>,
-								<country>Germany</country>.
+								<settlement>Copenhagen</settlement>,
 							</address>
 						</affiliation>
 

@@ -8,15 +8,16 @@
 						<author>
 
 						<affiliation>
-							<orgName type="institution">Institute for Communications Technology</orgName>
-							<lb/> 
-							<orgName type="department">German Aerospace Research Establishment (DLR)</orgName>
+							<orgName type="department">Department of Materials Chemistry</orgName>,
 							<lb/>
+							<orgName type="institution">Uppsala University</orgName>,
 							<address>
-								<postBox>P.O. Box 1116</postBox>,
-								<postCode>D-82230</postCode>
-								<settlement>Wessling</settlement>,
-								<country>Germany</country>.
+								<postBox>Box 538</postBox>,
+								<lb/>
+								<region>SE</region>
+								<postCode>751-21</postCode>
+								<settlement>Uppsala</settlement>,
+								<country>Sweden</country>.
 							</address>
 						</affiliation>
 

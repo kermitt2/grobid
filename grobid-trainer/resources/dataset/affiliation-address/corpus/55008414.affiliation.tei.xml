@@ -8,15 +8,13 @@
 						<author>
 
 						<affiliation>
-							<orgName type="institution">Institute for Communications Technology</orgName>
-							<lb/> 
-							<orgName type="department">German Aerospace Research Establishment (DLR)</orgName>
-							<lb/>
+							<marker>1</marker>
+							<orgName type="department">Central Science Laboratory</orgName>,
 							<address>
-								<postBox>P.O. Box 1116</postBox>,
-								<postCode>D-82230</postCode>
-								<settlement>Wessling</settlement>,
-								<country>Germany</country>.
+								<addrLine>Sand Hutton</addrLine>,
+								<settlement>York</settlement>,
+								<postCode>YO41 1LZ</postCode>,
+								<country>UK</country>.
 							</address>
 						</affiliation>
 

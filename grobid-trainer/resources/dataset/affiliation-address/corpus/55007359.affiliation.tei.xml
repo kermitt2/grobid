@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">Department of Clinical and Experimental<lb/> Medicine</orgName>,
+							<orgName type="institution">University of Perugia</orgName>,
+							<address>
+								<addrLine>Via E dal Pozzo</addrLine>,
+								<postCode>06122</postCode>
+							<lb/>
+								<settlement>Perugia</settlement>,
+								<country>Italy</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>		
+							<orgName type="institution">Eleonora Distrutti</orgName>,
+							<orgName type="institution">Azienda Ospedaliera di Perugia</orgName>,
+							<address>
+								<addrLine>Ospedale<lb/> Santa Maria della Misericordia</addrLine>,
+								<postCode>06122</postCode>
+								<settlement>Perugia</settlement>,
+								<country>Italy</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="department">Department of Clinical<lb/> and Experimental Medicine</orgName>
+							<orgName type="institution">University of Perugia</orgName>,
+							<address>
+								<addrLine>Via E dal</addrLine>
+							<lb/>
+								<settlement>Pozzo</settlement>,
+								<postCode>06122</postCode>
+								<settlement>Perugia</settlement>,
+								<country>Italy</country>.
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="department">Division of Research and Education</orgName>,
+							<orgName type="department">Scott and White Hospital</orgName>
+							<lb/> and
+							<orgName type="institution">The Texas A&amp;M University System</orgName>,
+							<orgName type="department">Health Science Center<lb/> College of Medicine</orgName>,
+							<address>
+								<settlement>Temple</settlement>,
+								<region>Texas</region>
+								<postCode>76504</postCode>,
+								<country>United States</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

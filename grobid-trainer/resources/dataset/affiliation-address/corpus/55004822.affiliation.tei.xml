@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>a</marker>.
+							<orgName type="institution">Biótica, Bioquímica Analítica, S.L.</orgName>,
+							<orgName type="institution">Parque Científico Tecnológico y Empresarial</orgName>,
+							 de la 
+							<orgName type="institution">Universidad Jaume I-Edificio de Investigación I</orgName>,
+							<address>
+								<addrLine>2ª Planta</addrLine>,
+								<settlement>Castellón</settlement>-
+								<country>Spain</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>b</marker>.
+							<orgName type="institution">Merck Chimie SAS</orgName>,
+							<address>
+								<addrLine>Estapor Microspheres -201 rue Carnot -</addrLine>
+								<postCode>94126</postCode>
+								<settlement>Fontenay sous Bois Cedex</settlement> -
+								<country>France</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>c</marker>.	
+							<orgName type="institution">Iproma S.L.</orgName>,
+							<address>
+								<addrLine>Camino de la Raya</addrLine>,
+								<addrLine>No. 46</addrLine>,
+								<settlement>Castellón</settlement>-
+								<country>Spain</country>
+							<lb/>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

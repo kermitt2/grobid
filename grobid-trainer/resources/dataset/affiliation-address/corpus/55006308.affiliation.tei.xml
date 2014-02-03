@@ -8,17 +8,15 @@
 						<author>
 
 						<affiliation>
-							<orgName type="institution">Institute for Communications Technology</orgName>
-							<lb/> 
-							<orgName type="department">German Aerospace Research Establishment (DLR)</orgName>
+							<orgName type="department">Department of Energy &amp; Environment</orgName>
+							<lb/>
+							<orgName type="institution">Chalmers University of Technology</orgName>
 							<lb/>
 							<address>
-								<postBox>P.O. Box 1116</postBox>,
-								<postCode>D-82230</postCode>
-								<settlement>Wessling</settlement>,
-								<country>Germany</country>.
+								<settlement>Göteborg</settlement>,
+								<country>Sweden</country>
 							</address>
-						</affiliation>
+						</affiliation>				
 
 						</author>
 					</analytic>

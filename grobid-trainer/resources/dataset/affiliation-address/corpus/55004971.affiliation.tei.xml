@@ -8,15 +8,13 @@
 						<author>
 
 						<affiliation>
-							<orgName type="institution">Institute for Communications Technology</orgName>
-							<lb/> 
-							<orgName type="department">German Aerospace Research Establishment (DLR)</orgName>
-							<lb/>
+							<orgName type="department">Monell Chemical Senses Center</orgName>,
 							<address>
-								<postBox>P.O. Box 1116</postBox>,
-								<postCode>D-82230</postCode>
-								<settlement>Wessling</settlement>,
-								<country>Germany</country>.
+								<addrLine>3500 Market Street</addrLine>,
+								<settlement>Philadelphia</settlement>,
+								<region>PA</region>
+								<postCode>19104-3308</postCode>,
+								<country>USA</country>
 							</address>
 						</affiliation>
 

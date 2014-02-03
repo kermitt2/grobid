@@ -8,15 +8,13 @@
 						<author>
 
 						<affiliation>
-							<orgName type="institution">Institute for Communications Technology</orgName>
-							<lb/> 
-							<orgName type="department">German Aerospace Research Establishment (DLR)</orgName>
-							<lb/>
+							<orgName type="institution">AVM GmbH</orgName>,
+							<orgName type="department">Communication</orgName><lb/> 
 							<address>
-								<postBox>P.O. Box 1116</postBox>,
-								<postCode>D-82230</postCode>
-								<settlement>Wessling</settlement>,
-								<country>Germany</country>.
+								<addrLine>Alt-Moabit 95</addrLine>,
+								<postCode>10559</postCode>
+								<settlement>Berlin</settlement>
+								<country>Germany</country>
 							</address>
 						</affiliation>
 

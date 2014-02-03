@@ -8,15 +8,16 @@
 						<author>
 
 						<affiliation>
-							<orgName type="institution">Institute for Communications Technology</orgName>
-							<lb/> 
-							<orgName type="department">German Aerospace Research Establishment (DLR)</orgName>
+							<orgName type="department">Auto -ID Center</orgName>
+							<lb/>
+							<orgName type="institution">Massachusetts Institute of Technology</orgName>
 							<lb/>
 							<address>
-								<postBox>P.O. Box 1116</postBox>,
-								<postCode>D-82230</postCode>
-								<settlement>Wessling</settlement>,
-								<country>Germany</country>.
+								<addrLine>77 Massachusetts Avenue</addrLine>
+							<lb/>
+								<settlement>Cambridge</settlement>,
+								<region>MA</region>
+								<postCode>02139</postCode>
 							</address>
 						</affiliation>
 

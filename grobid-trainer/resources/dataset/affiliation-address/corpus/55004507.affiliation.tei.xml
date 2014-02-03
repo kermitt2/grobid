@@ -8,15 +8,15 @@
 						<author>
 
 						<affiliation>
-							<orgName type="institution">Institute for Communications Technology</orgName>
-							<lb/> 
-							<orgName type="department">German Aerospace Research Establishment (DLR)</orgName>
+							<orgName type="department">Centre for Sensor Systems</orgName>
+							<lb/>
+							<orgName type="institution">University of Siegen</orgName>
 							<lb/>
 							<address>
-								<postBox>P.O. Box 1116</postBox>,
-								<postCode>D-82230</postCode>
-								<settlement>Wessling</settlement>,
-								<country>Germany</country>.
+								<addrLine>Paul-Bonatz-Straße 6-8</addrLine>,
+								<postCode>57076</postCode>
+								<settlement>Siegen</settlement>
+								<country>Germany</country>
 							</address>
 						</affiliation>
 

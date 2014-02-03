@@ -8,15 +8,13 @@
 						<author>
 
 						<affiliation>
-							<orgName type="institution">Institute for Communications Technology</orgName>
-							<lb/> 
-							<orgName type="department">German Aerospace Research Establishment (DLR)</orgName>
-							<lb/>
+							<orgName type="institution">Bell Laboratories</orgName>,
+							<orgName type="institution">Lucent Technologies</orgName>,
 							<address>
-								<postBox>P.O. Box 1116</postBox>,
-								<postCode>D-82230</postCode>
-								<settlement>Wessling</settlement>,
-								<country>Germany</country>.
+								<addrLine>600 Mountain Avenue</addrLine>,
+								<settlement>Murray Hill</settlement>,
+								<region>New Jersey</region>,
+								<postCode>07974</postCode>
 							</address>
 						</affiliation>
 

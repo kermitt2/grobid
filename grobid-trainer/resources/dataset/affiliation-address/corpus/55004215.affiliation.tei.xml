@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="institution">Philips Research Europe -Hamburg</orgName>,
+							<address>
+								<addrLine>Roentgenstrasse 24-26</addrLine>
+								<postCode>22335</postCode>
+								<settlement>Hamburg</settlement>,
+								<country>Germany</country>
+							<lb/>
+							</address>
+						</affiliation>	
+						<affiliation>
+							<orgName type="department">Department of Radiology</orgName>,
+							<orgName type="institution">University Hospital Hamburg-Eppendorf</orgName>,
+							<address>
+								<addrLine>Martinistrasse 52</addrLine>,
+								<postCode>20246</postCode>
+								<settlement>Hamburg</settlement>,
+								<country>Germany</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

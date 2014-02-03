@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							A publication of the 
+							<orgName type="department">National Electronics Manufacturing Center of Excellence</orgName>
+							<lb/>
+						</affiliation>
+						<affiliation>	
+							<orgName type="institution">American Competitiveness Institute</orgName>
+							<lb/>
+						</affiliation>
+						<affiliation>	
+							<orgName type="department">The Boeing Company</orgName>
+							<lb/>
+							<orgName type="institution">ITT Industries</orgName>,
+							<orgName type="department">Avionics Division</orgName>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

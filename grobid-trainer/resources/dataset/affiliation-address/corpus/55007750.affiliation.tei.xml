@@ -8,15 +8,14 @@
 						<author>
 
 						<affiliation>
-							<orgName type="institution">Institute for Communications Technology</orgName>
-							<lb/> 
-							<orgName type="department">German Aerospace Research Establishment (DLR)</orgName>
-							<lb/>
+							<orgName type="department">Department of Chemistry</orgName>,
+							<orgName type="institution">Florida Institute of Technology</orgName>,
 							<address>
-								<postBox>P.O. Box 1116</postBox>,
-								<postCode>D-82230</postCode>
-								<settlement>Wessling</settlement>,
-								<country>Germany</country>.
+								<addrLine>150 West Uni¨ersity Boule¨ard</addrLine>,
+								<settlement>Melbourne</settlement>,
+								<region>FL</region>
+								<postCode>32901-6975</postCode>,
+								<country>USA</country>
 							</address>
 						</affiliation>
 

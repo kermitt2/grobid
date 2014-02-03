@@ -8,15 +8,11 @@
 						<author>
 
 						<affiliation>
-							<orgName type="institution">Institute for Communications Technology</orgName>
-							<lb/> 
-							<orgName type="department">German Aerospace Research Establishment (DLR)</orgName>
-							<lb/>
+							<orgName type="department">DEPARTMENT OF GENETICS</orgName>,
+							<orgName type="institution">STANFORD UNIVERSITY MEDICAL SCHOOL</orgName>,
 							<address>
-								<postBox>P.O. Box 1116</postBox>,
-								<postCode>D-82230</postCode>
-								<settlement>Wessling</settlement>,
-								<country>Germany</country>.
+								<settlement>PALO ALTO</settlement>,
+								<region>CALIFORNIA</region>
 							</address>
 						</affiliation>
 

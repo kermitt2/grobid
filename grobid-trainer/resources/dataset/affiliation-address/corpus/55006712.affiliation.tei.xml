@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+ From the
+						<affiliation>
+							<orgName type="department">Department of Pharmacology</orgName>,
+							<orgName type="department">Facult6 de Me&apos;decine Pitie-Salpe^triere</orgName>,
+							<address>
+								<addrLine>91, Bld de<lb/> I&apos;Hhpital</addrLine>,
+								<postCode>F-75634</postCode>
+								<settlement>PARIS CEDEX 13</settlement>,
+								<country>France</country>,
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="department">&apos; and Service de Psychiatrie</orgName>,
+							<orgName type="institution">Hhpital de la<lb/> Salpe^tri2re</orgName>,
+							<address>
+								<addrLine>47, Bld de I&apos;Hhpital</addrLine>,
+								<postCode>F-75013</postCode>
+								<settlement>PARIS</settlement>,
+								<settlement>Franck</settlement>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

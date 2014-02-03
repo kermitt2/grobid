@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="department">Sbarro Institute for Cancer Research and Molecular Medicine</orgName>,
+							<orgName type="institution">Temple University</orgName>,
+							<address>
+								<settlement>Philadelphia</settlement>,
+								<region>Pennsylvania</region>,
+								<region>PA</region>
+								<postCode>19122</postCode>
+								<country>USA</country>;
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="department">Department of Pathology, Anatomy and Cell Biology</orgName>,
+							<orgName type="institution">Thomas Jeerson University</orgName>,
+							<address>
+								<settlement>Philadelphia</settlement>,
+								<region>Pennsylvania</region>,
+								<region>PA</region>
+								<postCode>19107</postCode>
+								<country>USA</country>;
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>3</marker>
+							<orgName type="department">Department of Internal Medicine and Public Medicine</orgName>,
+							<orgName type="department">Division of Medical Genetics</orgName>,
+							<orgName type="institution">University of Bari</orgName>,
+							<address>
+								<settlement>Bari</settlement>
+								<postCode>70124</postCode>
+								<settlement>Italy</settlement>;
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>4</marker>
+							<orgName type="department">Institute of Pathologic Anatomy and Histology</orgName>,
+							<orgName type="institution">University of Siena</orgName>,
+							<address>
+								<settlement>Siena</settlement>
+								<postCode>53100</postCode>
+								<settlement>Italy</settlement>;
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>5</marker>
+							<orgName type="department">Institute of Topographical Anatomy</orgName>,
+							<lb/>
+							<orgName type="department">School of Medicine</orgName>,
+							<orgName type="institution">2nd University of Naples</orgName>,
+							<address>
+								<settlement>Naples</settlement>
+								<postCode>80138</postCode>
+								<settlement>Italy</settlement>;
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>6</marker>
+							<orgName type="laboratory">Laboratory of Gene Expression</orgName>,
+							<orgName type="institution">Fondazione Andrea Cesalpino</orgName>,
+							<lb/>
+							<orgName type="institution">University of RomèLa Sapienza&apos;</orgName>,
+							<address>
+								<postCode>0061</postCode>
+								<settlement>Rome</settlement>,
+								<country>Italy</country>;
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>7</marker>
+							<orgName type="laboratory">Clayton Foundation Laboratories for Peptide Biology</orgName>,
+							<orgName type="institution">The Salk Institute for<lb/> Biological Studies</orgName>,
+							<address>
+								<addrLine>La Jolla</addrLine>,
+								<region>California</region>,
+								<region>CA</region>
+								<postCode>92093</postCode>,
+								<country>USA</country>
+							<lb/>
+							</address>
+							<orgName type="institution">Sbarro Institute for Cancer Research<lb/> and Molecular Medicine</orgName>,
+							<orgName type="department">College of Science and Technology</orgName>,
+							<orgName type="institution">Temple<lb/> University</orgName>,
+							<address>
+								<addrLine>BioLife Science Bldg.</addrLine>,
+								<addrLine>Suite 333</addrLine>,
+								<addrLine>1900 N 12th Street</addrLine>,
+							<lb/>
+								<settlement>Philadelphia</settlement>,
+								<region>Pennsylvania</region>,
+								<region>PA</region>
+								<postCode>19122</postCode>
+								<country>USA</country>;
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

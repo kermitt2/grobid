@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="institution">Yale Cancer<lb/> Center</orgName> and
+							<orgName type="institution">Smilow Cancer Hospital</orgName>,
+							<address>
+								<settlement>New Haven</settlement>,
+								<region>CT</region>,
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="institution">Massachusetts General Hospital Cancer Center</orgName>,
+							<address>
+								<settlement>Boston</settlement>,
+								<region>MA</region>,
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>3</marker>
+							<orgName type="department">Clinical Hospital<lb/> Dnipropetrovsk</orgName>,
+							<address>
+								<settlement>Dnepropetrovsk</settlement>,
+								<country>Ukraine</country>,
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>4</marker>
+							<orgName type="institution">Leningrad Regional Clinical Hospital</orgName>,
+							<orgName type="institution">St. Petersburg</orgName>,
+							<address>
+								<country>Russian Federation</country>,
+								<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>5</marker>
+							<orgName type="institution">Oddzial Chemioterapii</orgName>,
+							<lb/>
+							<address>
+								<settlement>Szczecin</settlement>,
+								<country>Poland</country>,
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>6</marker>
+							<orgName type="institution">University of Mediterranee</orgName>,
+							<orgName type="institution">Assistance publique Hopitaux de Marseille</orgName>,
+							<address>
+								<settlement>Marseille</settlement>,
+								<country>France</country>,
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>7</marker>
+							<orgName type="institution">Christian Medical College</orgName>,
+							<lb/>
+							<address>
+								<settlement>Vellore</settlement>,
+								<country>India</country>,
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>8</marker>
+							<orgName type="institution">Universitaetsmedizin Mainz</orgName>,
+							<address>
+								<settlement>Mainz</settlement>,
+								<settlement>Germany</settlement>,
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>9</marker>
+							<orgName type="institution">Bristol-Myers Squibb Research and Development</orgName>,
+							<address>
+								<settlement>Wallingford</settlement>,
+								<region>CT</region>,
+							<lb/>
+								<addrLine>10 Hospital<lb/> Grosshansdorf</addrLine>,
+								<settlement>Grosshansdorf</settlement>,
+								<country>Germany</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

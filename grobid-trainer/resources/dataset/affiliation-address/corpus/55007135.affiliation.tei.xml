@@ -8,15 +8,16 @@
 						<author>
 
 						<affiliation>
-							<orgName type="institution">Institute for Communications Technology</orgName>
-							<lb/> 
-							<orgName type="department">German Aerospace Research Establishment (DLR)</orgName>
-							<lb/>
+							<orgName type="institution">New Materials Research Center</orgName>,
+							<orgName type="institution">Sanyo Electric Co., Ltd.</orgName>,
 							<address>
-								<postBox>P.O. Box 1116</postBox>,
-								<postCode>D-82230</postCode>
-								<settlement>Wessling</settlement>,
-								<country>Germany</country>.
+								<addrLine>1-18-13</addrLine>,
+								<addrLine>Hashiridani</addrLine>,
+								<settlement>Hirakata</settlement>,
+								<region>Osaka</region>,
+								<lb/>
+								<postCode>573-8534</postCode>,
+								<country>Japan</country>
 							</address>
 						</affiliation>
 

@@ -8,16 +8,10 @@
 						<author>
 
 						<affiliation>
-							<orgName type="institution">Institute for Communications Technology</orgName>
-							<lb/> 
-							<orgName type="department">German Aerospace Research Establishment (DLR)</orgName>
-							<lb/>
-							<address>
-								<postBox>P.O. Box 1116</postBox>,
-								<postCode>D-82230</postCode>
-								<settlement>Wessling</settlement>,
-								<country>Germany</country>.
-							</address>
+							<orgName type="department">Graduate School of Information Science</orgName>,
+							<orgName type="institution">NAIST Digital Library</orgName>,
+							<orgName type="institution">NAIST Information Technology Center</orgName>,
+							<orgName type="institution">NAIST</orgName>
 						</affiliation>
 
 						</author>

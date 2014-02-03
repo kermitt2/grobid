@@ -8,15 +8,13 @@
 						<author>
 
 						<affiliation>
-							<orgName type="institution">Institute for Communications Technology</orgName>
-							<lb/> 
-							<orgName type="department">German Aerospace Research Establishment (DLR)</orgName>
-							<lb/>
+							<orgName type="department">Molekulare Botanik</orgName>,
+							<orgName type="institution">Universität Ulm</orgName>,
 							<address>
-								<postBox>P.O. Box 1116</postBox>,
-								<postCode>D-82230</postCode>
-								<settlement>Wessling</settlement>,
-								<country>Germany</country>.
+								<addrLine>Albert-Einstein-Allee 11</addrLine>,
+								<postCode>89069</postCode>
+								<settlement>Ulm</settlement>,
+								<country>Germany</country>
 							</address>
 						</affiliation>
 

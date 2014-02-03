@@ -8,15 +8,13 @@
 						<author>
 
 						<affiliation>
-							<orgName type="institution">Institute for Communications Technology</orgName>
-							<lb/> 
-							<orgName type="department">German Aerospace Research Establishment (DLR)</orgName>
-							<lb/>
 							<address>
-								<postBox>P.O. Box 1116</postBox>,
-								<postCode>D-82230</postCode>
-								<settlement>Wessling</settlement>,
-								<country>Germany</country>.
+								<addrLine>One Technology Way</addrLine>,
+								<postBox>P.O. Box 9106</postBox>,
+								<settlement>Norwood</settlement>,
+								<region>MA</region>
+								<postCode>02062-9106</postCode>,
+								<country>U.S.A.</country>
 							</address>
 						</affiliation>
 

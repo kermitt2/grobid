@@ -8,15 +8,13 @@
 						<author>
 
 						<affiliation>
-							<orgName type="institution">Institute for Communications Technology</orgName>
-							<lb/> 
-							<orgName type="department">German Aerospace Research Establishment (DLR)</orgName>
-							<lb/>
+							<orgName type="department">Radiology/Nuclear Medicine</orgName>,
+							<orgName type="institution">Johns Hopkins University</orgName>,
+							<orgName type="department">School of Medicine</orgName>,
 							<address>
-								<postBox>P.O. Box 1116</postBox>,
-								<postCode>D-82230</postCode>
-								<settlement>Wessling</settlement>,
-								<country>Germany</country>.
+								<settlement>Baltimore</settlement>,
+								<region>MD</region>,
+								<country>USA</country>
 							</address>
 						</affiliation>
 

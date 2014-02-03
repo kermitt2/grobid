@@ -8,15 +8,14 @@
 						<author>
 
 						<affiliation>
-							<orgName type="institution">Institute for Communications Technology</orgName>
-							<lb/> 
-							<orgName type="department">German Aerospace Research Establishment (DLR)</orgName>
+							<orgName type="institution">Rank Brothers Ltd</orgName> 
 							<lb/>
 							<address>
-								<postBox>P.O. Box 1116</postBox>,
-								<postCode>D-82230</postCode>
-								<settlement>Wessling</settlement>,
-								<country>Germany</country>.
+								<addrLine>56, High Street, Bottisham</addrLine>,
+								<settlement>Cambridge</settlement>
+								<postCode>CB25 9DA</postCode>,
+								<country>England</country>
+							<lb/>
 							</address>
 						</affiliation>
 

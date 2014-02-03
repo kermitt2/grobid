@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>*</marker>
+							<orgName type="department">Corning Life Sciences</orgName>,
+							<orgName type="institution">Corning Inc</orgName>,
+							<address>
+								<settlement>Corning</settlement>,
+								<region>NY</region>
+								<postCode>14831</postCode>,
+								<country>USA</country>
+								<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>#</marker>
+							<orgName type="department">Screening Technologies</orgName>,
+							<orgName type="department">Pharma Research Penzberg</orgName>,
+							<orgName type="institution">Roche <lb/> Diagnostics GmbH</orgName>,
+							<address>
+								<addrLine>Nonnenwald 2</addrLine>,
+								<postCode>82377</postCode>
+								<settlement>Penzberg</settlement>,
+								<country>Germany</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

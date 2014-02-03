@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>a</marker>
+							<orgName type="institution">University of Pittsburgh/UPMC</orgName>,
+							<address>
+								<settlement>Pittsburgh</settlement>,
+								<region>PA</region>;
+								<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>b</marker> 
+							<orgName type="institution">Stemnion, Inc</orgName>.,
+							<address>
+								<settlement>Pittsburgh</settlement>,
+								<region>PA</region>;
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="institution">University of South<lb/> Florida</orgName>,
+							<address>
+								<settlement>Tampa</settlement>,
+								<region>FL</region>; and
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>d</marker>
+							<orgName type="institution">Institute for Tissue Regeneration, Repair, Rehabilitation</orgName>,
+							<address>
+								<addrLine>Bay Pines VA <lb/> Medical Center</addrLine>
+								<settlement>Bay Pines</settlement>,
+								<region>FL</region>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -8,15 +8,12 @@
 						<author>
 
 						<affiliation>
-							<orgName type="institution">Institute for Communications Technology</orgName>
-							<lb/> 
-							<orgName type="department">German Aerospace Research Establishment (DLR)</orgName>
+							<orgName type="institution">University of Maine</orgName>
 							<lb/>
+							<orgName type="department">Advanced Structures and Composites Center<lb/> Orono</orgName>,
 							<address>
-								<postBox>P.O. Box 1116</postBox>,
-								<postCode>D-82230</postCode>
-								<settlement>Wessling</settlement>,
-								<country>Germany</country>.
+								<settlement>Maine</settlement>
+								<postCode>04469</postCode>
 							</address>
 						</affiliation>
 

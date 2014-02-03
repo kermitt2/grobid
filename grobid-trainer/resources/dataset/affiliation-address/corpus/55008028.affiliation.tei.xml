@@ -8,15 +8,13 @@
 						<author>
 
 						<affiliation>
-							<orgName type="institution">Institute for Communications Technology</orgName>
-							<lb/> 
-							<orgName type="department">German Aerospace Research Establishment (DLR)</orgName>
+							<orgName type="institution">University of Ottawa</orgName>
 							<lb/>
 							<address>
-								<postBox>P.O. Box 1116</postBox>,
-								<postCode>D-82230</postCode>
-								<settlement>Wessling</settlement>,
-								<country>Germany</country>.
+								<addrLine>CHEO RI, 401 Smyth Road</addrLine><lb/> 
+								<settlement>Ottawa</settlement>,
+								<region>Ontario</region>
+								<postCode>K1H 8L1</postCode>
 							</address>
 						</affiliation>
 

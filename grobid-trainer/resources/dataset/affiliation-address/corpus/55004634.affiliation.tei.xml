@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">&apos;Academic Department of Surgery</orgName>,
+							<orgName type="institution">Royal Free Hospital</orgName>,
+							<address>
+								<addrLine>Pond Street</addrLine>,
+								<settlement>London</settlement>
+								<postCode>NW3 2QG</postCode>;
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="department">2Department of Surgery</orgName>,
+							<orgName type="department">Royal<lb/> Postgraduate Medical School</orgName>,
+							<orgName type="institution">Hammersmith Hospital</orgName>,
+							<address>
+								<settlement>London</settlement>
+								<postCode>W12 OHS</postCode>; and
+							</address>
+						</affiliation>
+						<affiliation>							
+							<orgName type="department">3Department of Surgery</orgName>,
+							<orgName type="institution">Bristol Royal Infirmary</orgName>,
+							<lb/>
+							<address>
+								<settlement>Bristol</settlement>
+								<postCode>BS2 8HW</postCode>,
+								<country>UK</country>.
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

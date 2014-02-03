@@ -8,15 +8,13 @@
 						<author>
 
 						<affiliation>
-							<orgName type="institution">Institute for Communications Technology</orgName>
-							<lb/> 
-							<orgName type="department">German Aerospace Research Establishment (DLR)</orgName>
-							<lb/>
+							<orgName type="institution">Orange Labs R&amp;D</orgName>,
 							<address>
-								<postBox>P.O. Box 1116</postBox>,
-								<postCode>D-82230</postCode>
-								<settlement>Wessling</settlement>,
-								<country>Germany</country>.
+								<addrLine>42 rue des Coutures</addrLine>,
+								<postCode>BP6243</postCode>,
+								<postCode>F-14066</postCode>
+								<settlement>Caen Cedex</settlement>,
+								<country>France</country>
 							</address>
 						</affiliation>
 

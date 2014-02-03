@@ -8,15 +8,11 @@
 						<author>
 
 						<affiliation>
-							<orgName type="institution">Institute for Communications Technology</orgName>
-							<lb/> 
-							<orgName type="department">German Aerospace Research Establishment (DLR)</orgName>
-							<lb/>
+							<orgName type="department">Department of Infectious Disease Immunology</orgName>,
+							<orgName type="institution">Statens Serum Institut</orgName>,
 							<address>
-								<postBox>P.O. Box 1116</postBox>,
-								<postCode>D-82230</postCode>
-								<settlement>Wessling</settlement>,
-								<country>Germany</country>.
+								<settlement>Copenhagen</settlement>,
+								<country>Denmark</country>
 							</address>
 						</affiliation>
 

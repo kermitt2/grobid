@@ -8,15 +8,13 @@
 						<author>
 
 						<affiliation>
-							<orgName type="institution">Institute for Communications Technology</orgName>
-							<lb/> 
-							<orgName type="department">German Aerospace Research Establishment (DLR)</orgName>
-							<lb/>
+							<orgName type="institution">Swedish Defence Research Agency</orgName>,
 							<address>
-								<postBox>P.O. Box 1116</postBox>,
-								<postCode>D-82230</postCode>
-								<settlement>Wessling</settlement>,
-								<country>Germany</country>.
+								<region>FOI</region>
+							<lb/>
+								<postCode>SE-164 90</postCode>
+								<settlement>Stockholm</settlement>,
+								<country>Sweden</country>
 							</address>
 						</affiliation>
 

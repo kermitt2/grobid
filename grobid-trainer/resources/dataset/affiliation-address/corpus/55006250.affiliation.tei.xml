@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="institution">CREANOVA GmbH</orgName>,
+							<address>
+								<addrLine>Werk Lülsdorf</addrLine>,
+								<settlement>Niederkassel</settlement>,
+								<country>Federal Republic of Germany</country><lb/>
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="institution">OxyTech Systems</orgName>,
+							<address>
+								<settlement>Chardon</settlement>,
+								<region>Ohio</region>,
+								<country>United States</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="institution">DeNora Deutschland GmbH</orgName>,
+							<address>
+								<settlement>Rodenbach</settlement>,
+								<country>Federal Republic of Germany</country>
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="institution">OxyTech Systems Inc.</orgName>,
+							<address>
+								<settlement>Chardon</settlement>,
+								<region>Ohio</region>,
+								<country>United States</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="institution">Technische Universität München</orgName>,
+							<address>
+								<settlement>München</settlement>,
+								<country>Federal Republic of Germany</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

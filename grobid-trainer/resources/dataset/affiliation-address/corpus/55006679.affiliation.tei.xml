@@ -8,15 +8,14 @@
 						<author>
 
 						<affiliation>
-							<orgName type="institution">Institute for Communications Technology</orgName>
-							<lb/> 
-							<orgName type="department">German Aerospace Research Establishment (DLR)</orgName>
+							<orgName type="department">Department of Electrical Engineering and Computer Science</orgName>
+							<lb/>
+							<orgName type="institution">University of Michigan</orgName>
 							<lb/>
 							<address>
-								<postBox>P.O. Box 1116</postBox>,
-								<postCode>D-82230</postCode>
-								<settlement>Wessling</settlement>,
-								<country>Germany</country>.
+								<settlement>Ann Arbor</settlement>,
+								<region>MI</region>
+								<postCode>48109-2122</postCode>
 							</address>
 						</affiliation>
 

@@ -8,15 +8,14 @@
 						<author>
 
 						<affiliation>
-							<orgName type="institution">Institute for Communications Technology</orgName>
-							<lb/> 
-							<orgName type="department">German Aerospace Research Establishment (DLR)</orgName>
+							<orgName type="department">Department of Chemistry</orgName>,
+							<lb/>
+							<orgName type="institution">New York University</orgName>,
 							<lb/>
 							<address>
-								<postBox>P.O. Box 1116</postBox>,
-								<postCode>D-82230</postCode>
-								<settlement>Wessling</settlement>,
-								<country>Germany</country>.
+								<settlement>New York</settlement>,
+								<region>NY</region>
+								<postCode>10003</postCode>
 							</address>
 						</affiliation>
 

@@ -8,15 +8,15 @@
 						<author>
 
 						<affiliation>
-							<orgName type="institution">Institute for Communications Technology</orgName>
-							<lb/> 
-							<orgName type="department">German Aerospace Research Establishment (DLR)</orgName>
+							<orgName type="department">Parkinson&apos;s Disease and Movement Disorders Center</orgName>,
 							<lb/>
+							<orgName type="institution">NeuroHealth</orgName>,
 							<address>
-								<postBox>P.O. Box 1116</postBox>,
-								<postCode>D-82230</postCode>
-								<settlement>Wessling</settlement>,
-								<country>Germany</country>.
+								<addrLine>227 Centerville Road</addrLine>,
+								<settlement>Warwick</settlement>,
+								<region>RI</region>
+								<postCode>02886</postCode>,
+								<country>USA</country>.
 							</address>
 						</affiliation>
 

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+ From the
+						<affiliation>
+							<orgName type="department">Department of Immunology</orgName>,
+							<orgName type="institution">Duke University Medical Center</orgName>,
+							<address>
+								<settlement>Durham</settlement>,
+								<region>North Carolina</region>
+								<postCode>27710</postCode> and the
+							<lb/>
+							</address>
+						</affiliation>	
+						<affiliation>	
+							<orgName type="department">$Department of Internal Medicine</orgName>,
+							<orgName type="department">Division of Allergic Diseases</orgName>,
+							<orgName type="institution">Mayo Clinic</orgName>,
+							<address>
+								<settlement>Rochester</settlement>,
+								<region>Minnesota</region>
+								<postCode>55905</postCode>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

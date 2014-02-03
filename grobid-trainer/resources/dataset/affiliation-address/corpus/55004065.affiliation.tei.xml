@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="institution">GSF-National Research Center for Environment and Health</orgName>,
+							<orgName type="department">Institute of Mammalian Genetics</orgName>,
+							<address>
+								<addrLine>Ingolstädter Landstra␤e 1</addrLine>,
+								<postCode>D-85764</postCode>
+								<settlement>Neuherberg</settlement>, and
+							<lb/>
+							</address>
+							<orgName type="institution">Genomatix Software GmbH</orgName>,
+							<address>
+								<addrLine>Karlstra␤e 55</addrLine>,
+								<postCode>D-80333</postCode>
+								<settlement>München</settlement>,
+								<country>Germany</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

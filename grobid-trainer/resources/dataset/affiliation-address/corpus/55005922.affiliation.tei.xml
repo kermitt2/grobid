@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>*</marker>
+							<orgName type="department">Department of Chemistry and Biochemistry and Laboratory of<lb/> Structural Biology and Molecular Medicine</orgName>,
+							<orgName type="institution">University of California Los<lb/> Angeles</orgName>,
+							<address>
+								<addrLine>405 Hilgard Avenue</addrLine>,
+								<settlement>Los Angeles</settlement>,
+								<region>CA</region>
+								<postCode>90095-1570</postCode>,
+								<country>USA</country>;
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="department">tDivision of Medicinal and Natural Products Chemistry and Department<lb/> of Chemical and Biochemical Engineering</orgName>,
+							<orgName type="institution">University of Iowa</orgName>,
+							<address>
+								<addrLine>Phar S-<lb/>328</addrLine>,
+								<settlement>Iowa City</settlement>,
+								<region>IA</region>
+								<postCode>52242</postCode>,
+								<country>USA</country>;
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="institution">SHoward Hughes Medical Institute</orgName>,
+							<orgName type="department">Division of Chemistry and<lb/> Chemical Engineering</orgName>,
+							<address>
+								<postCode>147-75CH</postCode>,
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="institution">California Institute of Technology</orgName>,
+							<lb/>
+							<address>
+								<settlement>Pasadena</settlement>,
+								<region>CA</region>
+								<postCode>91125</postCode>,
+								<country>USA</country>;
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>
