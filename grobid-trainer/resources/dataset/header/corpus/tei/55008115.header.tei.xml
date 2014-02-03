@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008115"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Gaussian function<lb/> 1<lb/></note>
+
+	<docTitle>
+	<titlePart>Gaussian function<lb/></titlePart>
+	</docTitle>
+
+	<div type="introduction">Normalized Gaussian curves with expected value μ and variance σ<lb/> 2 . The corresponding<lb/> parameters are a = 1/(σ√(2π)), b = μ, c = σ<lb/> In mathematics, a Gaussian function<lb/> (named after Carl Friedrich Gauss) is a<lb/> function of the form:<lb/> for some real constants a, b, c &gt; 0, and e ≈ 2.718281828 (Euler&apos;s number).<lb/> The graph of a Gaussian is a characteristic symmetric &quot;bell curve&quot; shape that quickly falls off towards plus/minus<lb/> infinity. The parameter a is the height of the curve&apos;s peak, b is the position of the centre of the peak, and c controls<lb/> the width of the &quot;bell&quot;.<lb/> Gaussian functions are widely used in statistics where they describe the normal distributions, in signal processing<lb/> where they serve to define Gaussian filters, in image processing where two-dimensional Gaussians are used for<lb/> Gaussian blurs, and in mathematics where they are used to solve heat equations and diffusion equations and to define<lb/> the Weierstrass transform.<lb/> Properties<lb/> Gaussian functions arise by applying the exponential function to a general quadratic function. The Gaussian<lb/> functions are thus those functions whose logarithm is a quadratic function.<lb/> The parameter c is related to the full width at half maximum (FWHM) of the peak according to<lb/> Alternatively, the parameter c can be interpreted by saying that the two inflection points of the function occur at<lb/> x=b−c and x=b+c.<lb/> Gaussian functions are analytic, and their limit as x→∞ is0.<lb/> Gaussian functions are among those functions that are elementary but lack elementary antiderivatives; the integral of<lb/> the Gaussian function is the error function. Nonetheless their improper integrals over the whole real line can be<lb/> evaluated exactly, using the Gaussian integral<lb/> and one obtains</div>
+
+		</front>
+	</text>
+</tei>

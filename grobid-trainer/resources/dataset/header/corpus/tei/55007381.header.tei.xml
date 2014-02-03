@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007381"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Sample-based synthesis<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">From Wikipedia, the free encyclopedia<lb/></note>
+
+	<note type="other">This is an old revision of this page, as edited by 70.49.181.153 (talk) at 21:12, 11 January 2010. It may differ significantly from the current revision (http://en.wikipedia.org/wiki/Sample-based_synthesis) .<lb/></note>
+
+	<note type="other">(diff) ← Previous revision | Latest revision (diff) | Newer revision → (diff)<lb/></note>
+
+		</front>
+	</text>
+</tei>

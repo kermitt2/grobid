@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55006320"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Vitamins To Improve Male Fertility | </note>
+	 
+	<byline>
+	<affiliation>LIVESTRONG.COM<lb/></affiliation>
+	</byline>
+
+	<ptr type="web">http://www.livestrong.com/article/98482-vitamins-improve-male-fertility/<lb/></ptr>
+
+	<note type="page">1 of 3<lb/> </note>
+	
+	<date>06-09-2011 </date>
+	
+	<note type="other">11:24</note>
+
+		</front>
+	</text>
+</tei>

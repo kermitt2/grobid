@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007145"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">ISL<lb/> </note>
+	
+	<docTitle>
+	<titlePart>TSD Editorial (text only)...<lb/> </titlePart>
+	</docTitle>
+	
+	<note type="other">[Home | Contents &amp; What&apos;s New | About | Products | Services | Technical Support | Links | Sales]<lb/> This document was first published in &apos;Insight&apos; June 1994, the Journal of the British Institute of NDT. The images have been deliberately omitted from this page to<lb/> improve display speed. The original document (including images) can be downloaded from the TSD Data Sheet.<lb/></note>
+
+		</front>
+	</text>
+</tei>

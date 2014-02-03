@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007661"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Pergamon<lb/> </note>
+	
+	<reference>Bioorganic &amp; Medicinal Chemistry Letters 8 (1998) 2219-2222<lb/> </reference>
+	
+	<note type="other">BIOORGANIC &amp;<lb/> MEDICINAL CHEMISTRY<lb/> LETTERS<lb/></note>
+
+	<docTitle>
+	<titlePart>THE FIRST ANALOGUES OF LNA (LOCKED NUCLEIC ACIDS):<lb/> PHOSPHOROTHIOATE-LNA AND 2&apos;-THIO-LNA<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Ravindra Kurnar, Sanjay K. Singh, Alexei A. Koshkin, Vivek K. Rajwanshi, Michael Meldgaard,<lb/> and Jesper Wengel*<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Center for b~mthetic Bioorganic Chemistry, Department of Chemistry,<lb/> University of Copenhagen,</affiliation>
+	</byline>
+
+	<address>Universitetsparken 5, DK-2100 Copenhagen, Denmark<lb/></address>
+
+	<note type="submission">Received 27 May 1998; accepted 14 July 1998<lb/></note>
+
+	<div type="abstract">Abstract: LNA (Locked Nucleic Acids, 1, X = O, Y = O) is a novel oligonucleotide analogue capable of<lb/> recognizing complementary DNA and RNA with unprecedented thermal affinities. Synthesis of the first chemicaily<lb/> modified LNA analogues is reported. A 9-mer phosphomthioate-LNA containing three LNA thymine monomers<lb/> (1, X = O, Y = S, Base = thymin-l-yl) and 9-mer LNAs containing one, three or five 2&apos;-thio-LNA monomers (1,<lb/> X = S, Y = O, Base = uraeil-l-yl) were able to recognize both complementary DNA and RNA with thermal<lb/> affinities comparable to those of parent LNA..</div>
+
+	<note type="copyright">© 1998 Elsevier Science Ltd. All rights reserved.<lb/></note>
+
+	<div type="introduction">Conformationally restricted oligonucleotide (ON) analogues containing bicyclic monomers have attracted<lb/> considerable attention due to their potential for formation of entropically favourable duplexesJ &quot;5 We have recently<lb/> introduced LNA (Locked Nucleic Adds, 1, X = O, Y = 0) 6,7 as a novel ON analogue containing one or more 2&apos;-0,4&apos;-<lb/>C-linked bieyelo[2.2.1]nueleoside LNA monomers locked in a Y-endo conformation. 6&quot;s The highly interesting<lb/> properties and characteristics of LNA are summarized below: 6&apos;7<lb/> LNA: 6,7<lb/> :l<lb/> Base Characteristics of<lb/> @BULLET Unprecedented thermal stabilities of duplexes towards<lb/> LNA:<lb/> X = O, Y --O<lb/> complementary DNA and RNA (AT m = +3 to +8 °C)<lb/> 2&apos;-Thio-LNA :<lb/> X = S, Y = O<lb/> 2&apos;-PhosphorothioatePLNA: X = O, Y = S<lb/> @BULLET Stability towards 3&apos;-exonucleolytic degradation<lb/></div>
+
+		</front>
+	</text>
+</tei>

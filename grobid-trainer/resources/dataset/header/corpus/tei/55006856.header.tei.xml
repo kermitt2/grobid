@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55006856"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>ISSN 0249-6399<lb/></idno>
+
+	<note type="other">ISRN INRIA/RR--4773--FR+ENG<lb/>apport<lb/> de recherchee<lb/>THÈME 1<lb/></note>
+
+	<byline>
+	<affiliation>INSTITUT NATIONAL DE RECHERCHE EN INFORMATIQUE ET EN AUTOMATIQUE<lb/></affiliation>
+	</byline>
+
+	<docTitle>
+	<titlePart>The SANDRA project: cooperative<lb/> architecture/compiler technology for embedded<lb/> real-time streaming applications<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Zbigniew Chamski — Albert Cohen — Marc Duranton — Christine Eisenbeis — Paul<lb/> Feautrier — Daniela Genius — Laurent Pasquier — Valérie Rivierre-Vier — François<lb/> Thomasset — Qin Zhao<lb/></docAuthor>
+	</byline>
+
+	<note type="other">N° 4773<lb/></note>
+
+	<date>Mars 2003</date>
+
+		</front>
+	</text>
+</tei>

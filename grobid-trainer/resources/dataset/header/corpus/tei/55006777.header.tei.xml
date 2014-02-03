@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55006777"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<ptr type="web">www.clariant.com<lb/></ptr>
+
+	<byline>
+	<affiliation>Clariant International Ltd<lb/></affiliation>
+	</byline>
+
+	<address>Rothausstrasse 61<lb/> 4132 Muttenz 1<lb/> Switzerland<lb/></address>
+
+	<date>May 3, 2004<lb/></date>
+
+		</front>
+	</text>
+</tei>

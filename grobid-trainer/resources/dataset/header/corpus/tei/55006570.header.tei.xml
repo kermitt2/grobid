@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55006570"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">178<lb/></note>
+
+	<reference>Trends Biomater. Artif. Organs, Vol 18 (2), January 2005<lb/></reference>
+
+	<ptr type="web">http://www.sbaoi.org<lb/></ptr>
+
+	<docTitle>
+	<titlePart>Comparison of Artificial Saliva Substitutes<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>A. Preetha and R. Banerjee<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>School of Bioscience and Bioengineering<lb/> Indian Institute of Technology,</affiliation>
+	</byline>
+
+	<address>Bombay<lb/> Powai, Mumbai-400076, India<lb/></address>
+
+	<email>E-mail: rinti@cc.iitb.ac.in<lb/></email>
+
+	<div type="abstract">Abstract:<lb/> Human saliva consists of water, glycoproteins, enzymes, antimicrobial substances and electrolytes. From<lb/> biophysical point of view, saliva is a viscoelastic fluid with distinct surface activity. Commercial artificial<lb/> saliva used in salivary gland disorders should resemble normal saliva in biophysical properties. In this<lb/> study we evaluated the biophysical properties of saliva and existing saliva substitutes. We compared<lb/> three existing substitutes Saliveze, Xialine 1, and Xialine 2. Saliveze is based on carboxymethylcellulose<lb/> and the others on xanthan gum. The choice of carbohydrate polymers is justifiable because of<lb/> mucoadhesive nature. Both Saliveze, and xialine 1 are Newtonian fluids (viscosity of 5.71 cP and1.36<lb/> cP respectively) where as normal saliva is non-Newtonian (15.51 cP – 2.75 cP at shear rates 0.5 -94.5<lb/> s<lb/> -1<lb/> ). Similar to normal saliva Xialine 2 is shear-thinning fluid but has a lower viscosity (6.60 -3.78 cP Vs<lb/> 15.51 -2.75 cP at shear rates 0.5 – 94.5 s<lb/> -1<lb/> ). Shear thinning property is essential to ensure proper flow<lb/> and cleansing action. The surface activity of both saliva and the substitutes has not been dealt with in the<lb/> literature. Minimum surface tension of saliveze, xialine 1 and xialine 2 are 64.17, 66.15 and 64.89 mN/<lb/> m respectively where as that of natural saliva is 24.85 mN/m. Also, unlike natural saliva, none of the<lb/> substitutes studied showed hysteresis in their surface tension -area isotherms. The low minimum surface<lb/> tension is essential for saliva film formation on the oral mucosa. The existing substitutes fall short of<lb/> required biophysical criteria and modifications are required to improve them. We need surface active,<lb/> shear thinning and mucoadhesive polymer as saliva substitute, possible additions could be surface-<lb/>active phospholipids, known to be present in saliva and/or mucin, the predominant surface-active protein<lb/> of natural saliva. Consideration of the biophysical criteria could lead to future development of improved<lb/> substitutes.<lb/></div>
+
+	<keyword>Keywords : Artificial saliva, Surface tension, Viscosity, Newtonian Fluid, Non-Newtonian Fluid<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

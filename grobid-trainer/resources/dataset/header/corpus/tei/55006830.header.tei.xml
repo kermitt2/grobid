@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55006830"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">1<lb/></note>
+
+	<docTitle>
+	<titlePart>Heavy Crude Oil<lb/> Flow Patterns<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Jan Nossen, IFE<lb/></docAuthor>
+	</byline>
+
+	<docTitle>
+	<titlePart>Heavy Oil Technology for Offshore Applications<lb/> Stavanger </titlePart>
+	</docTitle>
+	
+	<date>13 –	15 May 2009</date>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007135"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Red organic light-emitting diodes using an emitting assist dopant<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Yuji Hamada,<lb/> a) Hiroshi Kanno, Tsuyoshi Tsujioka, Hisakazu Takahashi,<lb/> and Tatsuro Usuki<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>New Materials Research Center, Sanyo Electric Co., Ltd.,</affiliation>
+	</byline>
+
+	<address>1-18-13, Hashiridani, Hirakata, Osaka,<lb/> 573-8534, Japan<lb/></address>
+
+	<note type="submission">͑Received 24 May 1999; accepted for publication 26 July 1999͒<lb/></note>
+
+	<div type="abstract">We propose an emitting assist ͑EA͒ dopant system for obtaining organic light-emitting diodes<lb/> ͑OLEDs͒ with pure red emission. The EA dopant ͑rubrene͒ did not itself emit but assisted the energy<lb/> transfer from the host (Alq 3 ) to the red emitting dopant ͑DCM2͒. The cell structure used was<lb/> ͕indium tin oxide/hole injection layer ͓͑20 nm͒, CuPc/hole transport layer ͑50 nm͒, NPB/emitting<lb/> layer ͑40 nm͒, Alq 3 ϩDCM2 (2%)ϩrubrene ͑5 wt %͔͒/MgIn͖. ͑CuPc: Copper ͑II͒ phthalocyanine,<lb/> NPB: N, NЈ-Di(naphthalen-1-yl)-N, NЈ-diphenyl-benzidine, DCM2: 4-Dicyanomethylene-<lb/>2-methyl-6-͓2-͑2,3,6,7-tetrahydro-1H,5H-benzo͓ij͔quinolizin-8-yl͒vinyl͔-4H-pyran͒. A stable red<lb/> emission ͑chromaticity coordinates: xϭ0.64, yϭ0.36͒ was obtained in this cell within the<lb/> luminance range of 100–4000 cd/m<lb/> 2 . When the cell was not doped with rubrene, the emission color<lb/> changed from red to orange as the luminance increased. The EA dopant system is a promising<lb/> method for obtaining red OLEDs.</div>
+
+	<note type="copyright">© 1999 American Institute of Physics.<lb/></note>
+
+	<idno>͓S0003-6951͑99͒04538-6͔<lb/></idno>
+
+	<div type="introduction">Organic light-emitting diodes ͑OLEDs͒ have been ex-<lb/>pected to find an application as a new type of display since<lb/> C. W. Tang and S. A. VanSlyke first reported on high-<lb/>performance OLEDs.<lb/> 1 The distinctive feature of OLEDs is<lb/> that they use organic fluorescent dyes as an emitter. There-<lb/>fore, they are able to produce various emission colors in<lb/> accordance with a wide selection of organic fluorescent dyes.<lb/> The green, yellow, and blue OLEDs have high luminance,<lb/> high efficiency, and long life times.<lb/> 2–4 However, red OLEDs<lb/> with high emitting performance and pure red emission have<lb/> not been reported.<lb/> Conventional red OLEDs have an emitting layer consist-<lb/>ing of one material during their early development.<lb/> 5 How-<lb/>ever, these devices are incapable of high luminance because<lb/> of concentration quenching in the emitting layer. Recently, a<lb/> doping system is often used in OLEDs in order to prevent<lb/> this concentration quenching.<lb/> 6 The doping system is com-<lb/>posed of a host material and a red dopant. When the host<lb/> layer is doped with a small quantity of the red dopant, which<lb/> is a fluorescent dye, the red dopant emits with high lumi-<lb/>nance and without concentration quenching. Tris͑8-<lb/>quinolinolato͒aluminum (Alq 3 ) is widely used as a host ma-<lb/>terial because it features good carrier transporting<lb/> characteristics, easy film formation, and high stability.<lb/> However, the emission obtained from such a doping sys-<lb/>tem is generally not red but orange. There is an emitting<lb/> peak of Alq 3 in addition to the red peak in this doping sys-<lb/>tem. Alq 3 exhibits strong green fluorescence ͑peak: 524 nm͒,<lb/> and the red dopant shows fluorescence in the range of 600–<lb/> 650 nm. Therefore, the orange emission was the result of a<lb/> mixture of the two emitting peaks. For this reason the doping<lb/> system consisting of a host material and a red dopant cannot<lb/> produce a pure red emission. The energy transfer from Alq 3<lb/> to the red dopant could not be made because the excitation<lb/> energy of Alq 3 differs greatly from that of the red dopant.<lb/> In this letter, we propose a new doping system that can<lb/> emit pure red with high luminance. An additional dopant,<lb/> called an emitting assist ͑EA͒ dopant, is used with a red<lb/> dopant in order to prevent the emission from Alq 3 . The EA<lb/> dopant acts as an intermediary since its excitation energy lies<lb/> between those of Alq 3 and the red dopant. The EA dopant<lb/> itself does not emit but assists the energy transfer from Alq 3<lb/> to the red dopant.<lb/> OLED cells were fabricated on indium tin oxide ͑ITO,<lb/> anode͒ substrates which were cleaned by an ultraviolet ozone<lb/> cleaner immediately before use. Organic layers and a cath-<lb/>ode layer (Mg 0.9 In 0.1 ) were deposited by conventional<lb/> vacuum vapor deposition in 5ϫ10<lb/> Ϫ6 Torr. The emitting area</div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55006518"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Polycyclic Aromatic Hydrocarbon Solute Probes. Part IX:<lb/> Evaluation of Additional Pentaphene, Pentacene, and<lb/> Pyranthrene Compounds as Possible Solvent Polarity Probes<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>SHERYL A. TUCKER, ANITA I. ZVAIGZNE, WILLIAM E. ACREE, JR.,* JOHN C.<lb/> FETZER, and MAXIMILIAN ZANDER<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Chemistry, University of North Texas,</affiliation>
+	</byline>
+
+	<address>Denton, Texas 76203-6068, U.S.A.(S.A.T., A.I.Z., W.E.A.); </address>
+	
+	<byline>
+	<affiliation>Chevron<lb/> Research Company, </affiliation>
+	</byline>
+	
+	<address>Richmond, California 94802-0627, U.S.A. (J. C.F.) ; </address>
+	
+	<byline>
+	<affiliation>and REtgerswerke A G , </affiliation>
+	</byline>
+	
+	<address>Kekuldstrasse 30, D-4620 Castrop-<lb/>Rauxel, F.R.G. (M.Z.).<lb/></address>
+
+	<div type="abstract">Fluorescence emission spectra are reported for benzolrst]dinaphtho[2,1,-<lb/>8,7defg;2&apos;,l&apos;,8&apos;,7&apos;ijkl]pentaphene, dibenzo[a, rst]naphtho[8,1,2cde]penta-<lb/>phene, dibenzo[fg, ij]pentaphene (also called dibenzo[b,n]perylene), di-<lb/>benzo[de, kl]naphtho[1,2,3,4rst]pentaphene, dibenzo[h,rst]pentaphene,<lb/> pyranthrene, tetrabenzo[de,hi,op,st]pentacene, and dinaphtho[2,1,8,7de<lb/> fg;2&apos;,l&apos;,8&apos;,7&apos;opqr]pentacene dissolved in various organic solvents. Results<lb/> of these measurements are used to screen PAHs for potential solvent<lb/> polarity behavior. Of the eight PAHs examined, only dibenzo-<lb/>[h,rst]pentaphene exhibited probe behavior as evidenced by selective,<lb/> systematic emission intensity enhancement of band I with increasing<lb/> solvent polarity.<lb/></div>
+
+	<keyword>Index Headings: Fluorescence; Spectroscopic techniques.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007993"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Digital Triaxial Vibration Sensor<lb/> with FFT Analysis and Storage<lb/> </titlePart>
+	</docTitle>
+	
+	<idno>ADIS16227<lb/> </idno>
+	
+	<note type="other">Rev. 0<lb/></note>
+	
+	<note>Information furnished by Analog Devices is believed to be accurate and reliable. However, no<lb/> responsibility is assumed by Analog Devices for its use, nor for any infringements of patents or other<lb/> rights of third parties that may result from its use. Specifications subject to change without notice. No<lb/> license is granted by implication or otherwise under any patent or patent rights of Analog Devices.<lb/> Trademarks and registered trademarks are the property of their respective owners.<lb/></note>
+
+	<address>One Technology Way, P.O. Box 9106, Norwood, MA 02062-9106, U.S.A.<lb/></address>
+
+	<phone>Tel: 781.329.4700<lb/></phone>
+
+	<ptr>www.analog.com<lb/> </ptr>
+	
+	<phone>Fax: 781.461.3113<lb/></phone>
+
+	<note type="copyright">©2010 Analog Devices, Inc. All rights reserved.<lb/></note>
+
+	<div type="abstract">FEATURES<lb/> Frequency domain triaxial vibration sensor<lb/> Digital acceleration data, ± 70 g measurement range<lb/> Digital range settings: 1 g, 5 g, 20 g, 70 g<lb/> Sample rate: 100.2 kHz, 4 decimation filter settings<lb/> FFT, 512 point, real valued, all three axes (x, y, z)<lb/> Windowing options: rectangular, Hanning, flat top<lb/> Programmable FFT averaging, up to 256 averages<lb/> Storage, 16 FFT records on all three axes (x, y, z)<lb/> Programmable alarms, 6 spectral bands<lb/> 2-level settings for warning and fault definition<lb/> Adjustable response delay to reduce false alarms<lb/> Trigger modes: SPI command, timer, external trigger<lb/> Multirecord capture for selected filter settings<lb/> Manual capture mode for time-domain data collection<lb/> Internal self-test with status flags<lb/> Digital temperature and power supply measurements<lb/> 2 auxiliary digital I/Os<lb/> SPI-compatible serial interface<lb/> Serial number and device ID<lb/> Single-supply operation: 3.15 V to 3.6 V<lb/> Operating temperature range: −40°C to +125°C<lb/> 15 mm × 15 mm × 15 mm aluminum package, flex connector<lb/> APPLICATIONS</div>
+
+		</front>
+	</text>
+</tei>

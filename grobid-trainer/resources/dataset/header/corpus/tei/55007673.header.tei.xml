@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007673"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>3GPP TS 23.401 V10.0.0 </idno>
+	
+	<date>(2010-06)<lb/></date>
+
+	<note type="other">Technical Specification<lb/></note>
+
+	<docTitle>
+	<titlePart>3rd Generation Partnership Project;<lb/> Technical Specification Group Services and System Aspects;<lb/> General Packet Radio Service (GPRS) enhancements for<lb/> Evolved Universal Terrestrial Radio Access Network<lb/> (E-UTRAN) access<lb/> (Release 10)<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">The present document has been developed within the 3rd Generation Partnership Project (3GPP<lb/> TM<lb/> ) and may be further elaborated for the purposes of 3GPP.<lb/> The present document has not been subject to any approval process by the 3GPP Organizational Partners and shall not be implemented.<lb/> This Specification is provided for future development work within 3GPP only. The Organizational Partners accept no liability for any use of this Specification.<lb/> Specifications and reports for implementation of the 3GPP<lb/> TM system should be obtained via the 3GPP Organizational Partners&apos; Publications Offices.</note>
+
+		</front>
+	</text>
+</tei>

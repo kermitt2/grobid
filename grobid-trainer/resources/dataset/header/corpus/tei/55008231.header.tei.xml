@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008231"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">1<lb/></note>
+
+	<note type="other">Bedienungsanleitung Operating Manual<lb/> Mode d&apos;emploi<lb/> Handleiding<lb/></note>
+	
+	<docTitle>
+	<titlePart>Comfort<lb/> </titlePart>
+	</docTitle>
+	
+	 <note type="other">Funk-Energiespar-Regler<lb/> für Heizkörper<lb/> (S. 2)<lb/> Radio energy-saving controller<lb/> for radiators<lb/> (p. 18)<lb/> Régulateur d&apos;économie d&apos;énergie<lb/> sans fil pour radiateurs<lb/> (p. 34)<lb/> Energiesparende, draadloze regelaar<lb/> voor radiatoren<lb/> (p. 50)</note>
+
+		</front>
+	</text>
+</tei>

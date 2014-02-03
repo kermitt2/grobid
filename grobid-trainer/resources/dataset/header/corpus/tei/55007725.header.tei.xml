@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007725"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	
+	<note type="other">of September 21, 2011<lb/> This information is current as<lb/> </note>
+	
+	<reference>2003;171;127-133<lb/> J Immunol<lb/></reference>
+
+	<byline>
+	<docAuthor>Offner, Richard Jones and Gregory G. Burrows<lb/> Zamora, Chunhe Wang, Jianya Huan, Lars Fugger, Halina<lb/> Arthur A. Vandenbark, Cathleen Rich, Jeff Mooney, Alex<lb/></docAuthor>
+	</byline>
+
+	<docTitle>
+	<titlePart>Encephalomyelitis in HLA-DR2 Transgenic Mice<lb/> Signs of Chronic Experimental Autoimmune<lb/> Peptide and Reverses Clinical and Histological<lb/> Myelin Oligodendrocyte Glycoprotein 35-55<lb/> Recombinant TCR Ligand Induces Tolerance to<lb/></titlePart>
+	</docTitle>
+
+	<ptr>References<lb/> http://www.jimmunol.org/content/171/1/127.full.html#related-urls<lb/> </ptr>
+	
+	<note type="other">Article cited in:<lb/></note>
+
+	<ptr type="web">http://www.jimmunol.org/content/171/1/127.full.html#ref-list-1<lb/></ptr>
+
+		</front>
+	</text>
+</tei>

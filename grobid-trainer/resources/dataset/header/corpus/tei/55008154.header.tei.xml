@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008154"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Secure and Scalable Mobile IP Registration Scheme<lb/> Using PKI<lb/></titlePart>
+	</docTitle>
+
+	<note>!<lb/></note> 
+
+	<byline>
+	<docAuthor>Jae-Pil Yoo 1 , Keecheon Kim<lb/> 1 , Hyunseung Choo<lb/> 2<lb/> , Jae-il Lee<lb/> 3<lb/> , Joo Seok Song<lb/> 4<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1<lb/> School of Computer Science &amp; Engineering. Konkuk University,<lb/></affiliation>
+	</byline>
+
+	<address>Seoul, Korea, </address>
+	
+	<phone>+82-2-450-3518<lb/></phone>
+
+	<byline>
+	<affiliation>2<lb/> School of Information and Communication Engineering, Sungkyunkwan University<lb/></affiliation>
+	</byline>
+
+	<address>Suwon, Korea<lb/></address>
+
+	<byline>
+	<affiliation>3<lb/> Korea Information Security Agency(KISA),</affiliation>
+	</byline>
+
+	<address>Seoul , Korea<lb/></address>
+
+	<byline>
+	<affiliation>4<lb/> School of Computer Science. Yonsei University,</affiliation>
+	</byline>
+
+	<address>Seoul , Korea<lb/></address>
+
+	<div type="abstract">Abstract. Mobile IP gets its firm position as a layer-3 mobility protocol for the<lb/> 3rd generation and beyond the 3rd generation communication system. Never-<lb/>theless, due to the security defects caused by adapting MIP for real service,<lb/> several systems such as AAA infrastructure have been introduced. On the other<lb/> hand, PKI infrastructure is considered to be a core standard infrastructure to<lb/> handle the authentication and secure channel for the present and future network.<lb/> In this paper, we suggest a secure registration scheme with authentication using<lb/> PKI infrastructure. Suggested scheme produces less static key management<lb/> overhead compared with legacy scheme and supports the previously deployed<lb/> standard authentication infrastructure. Especially, it has a feature that supports<lb/> mobile communication system. Secure re-distribution of dynamic session key<lb/> using asymmetric key and the optimized authentication roundtrip time for<lb/> handoffs shows such a feature.<lb/></div>
+
+		</front>
+	</text>
+</tei>

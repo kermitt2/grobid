@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55006697"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Architektur und Implementierung eines<lb/> kommerziellen Grid Resource Brokers auf Basis<lb/> der Globus Infrastruktur<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Michael Gerber<lb/></docAuthor>
+	</byline>
+
+	<date>23. Mai 2004</date>
+
+		</front>
+	</text>
+</tei>

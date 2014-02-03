@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007126"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<affiliation>NATIONAL PETROCHEMICAL &amp; REFINERS ASSOCIATION<lb/> </affiliation>
+
+	<address>1899 L STREET, NW, SUITE 1000<lb/> WASHINGTON, DC 20036<lb/></address>
+
+	<idno>MC-02-99<lb/></idno>
+
+	<docTitle>
+	<titlePart>INTEGRATED SYSTEM AND METHODOLOGY FOR BACK-PRESSURE TESTING<lb/> CATALYST-PACKED TUBES IN TUBULAR REACTOR VESSELS<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>By<lb/> Cliff Johns<lb/> President<lb/> Dan Sympson<lb/> Vice President<lb/> And<lb/> Ben Broderson<lb/> Principal Engineer<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>TubeMaster, Inc.<lb/></affiliation>
+	</byline>
+
+	<address>Louisville , KY<lb/></address>
+
+	<note type="other">Presented at the<lb/> NPRA 2002 Annual Refinery &amp; Petrochemical Plant<lb/> Maintenance Conference and Exhibition<lb/></note>
+
+	<date>May 7-10, 2002<lb/></date>
+
+	<byline>
+	<affiliation>San Antonio Convention Center<lb/></affiliation>
+	</byline>
+
+	<address>San Antonio, TX</address>
+
+		</front>
+	</text>
+</tei>

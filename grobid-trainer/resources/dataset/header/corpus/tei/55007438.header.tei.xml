@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007438"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Eardrum<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">Anatomy of the human ear.<lb/> Right tympanic membrane as seen through a speculum.<lb/></div>
+
+	<ptr type="web">//education.yahoo.com/reference/gray/subjects/subject?id=230#p1039)<lb/> http://www.nlm.nih.gov/cgi/mesh/2011/MB_cgi?mode=&amp;term=Tympanic+Membrane+Lydia)<lb/> p://www.mercksource.com/pp/us/cns/cns_hl_dorlands_split.jsp?pg=/ppdocs/us/common/dorlands/dorland/nine/000957950.htm)<lb/></ptr>
+
+	<docTitle>
+	<titlePart>Eardrum<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">From Wikipedia, the free encyclopedia<lb/></note>
+
+	<note type="other">This is an old revision of this page, as edited by Jmrowland (talk | contribs) at 19:04, 11 October<lb/> 2010. It may differ significantly from the current revision (http://en.wikipedia.org/wiki/Eardrum)<lb/> .<lb/> (diff) ← Previous revision | Latest revision (diff) | Newer revision → (diff)<lb/> </note>
+	
+	<div type="abstract">The tympanic membrane, or eardrum, is a thin membrane that separates the external ear from the middle<lb/> ear. Its function is to transmit sound from the air to the ossicles inside the middle ear. The malleus bone<lb/> bridges the gap between the eardrum and the other ossicles. Rupture or perforation of the eardrum can lead<lb/> to conductive hearing loss.<lb/></div>
+
+		</front>
+	</text>
+</tei>

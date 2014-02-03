@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55006900"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Modularization of Trees<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>A Fletcher and I. Pzrze,<lb/></docAuthor>
+	</byline>
+
+	<affiliation>Vetco Offshore Lunited<lb/></affiliation>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,89 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55006233"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">J O U R N A L O F<lb/> T O<lb/>	R<lb/> T H E E U R O P E A N<lb/> O P T I C A L S O C I E T Y<lb/> R A P I D P U B L I C A T I O N S<lb/></note>
+
+	<reference>Journal of the European Optical Society -Rapid Publications 4, 09028 (2009)<lb/></reference>
+
+	<ptr type="web">www.jeos.org<lb/></ptr>
+
+	<docTitle>
+	<titlePart>Marker-free cell discrimination by holographic optical<lb/> tweezers<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>F. Schaal<lb/></docAuthor>
+	</byline>
+
+	<email>schaal@ito.uni-stuttgart.de<lb/></email>
+
+	<byline>
+	<affiliation>University of Stuttgart, Institut<lb/> ur Technische Optik,</affiliation>
+	</byline>
+
+	<address>Stuttgart, 70569, Germany.<lb/></address>
+
+	<byline>
+	<docAuthor>M. Warber<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University of Stuttgart, Institut<lb/> ur Technische Optik,</affiliation>
+	</byline>
+
+	<address>Stuttgart, 70569, Germany.<lb/></address>
+
+	<byline>
+	<docAuthor>S. Zwick<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University of Stuttgart, Institut<lb/> ur Technische Optik,</affiliation>
+	</byline>
+
+	<address>Stuttgart, 70569, Germany.<lb/></address>
+
+	<byline>
+	<docAuthor>H. van der Kuip<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Dr. Margarete Fischer-Bosch Institute of Clinical Pharmacology and University<lb/> of Tuebingen,</affiliation>
+	</byline>
+
+	<address>70376, Germany.<lb/></address>
+
+	<byline>
+	<docAuthor>T. Haist<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University of Stuttgart, Institut<lb/> ur Technische Optik,</affiliation>
+	</byline>
+
+	<address>Stuttgart, 70569, Germany.<lb/></address>
+
+	<byline>
+	<docAuthor>W. Osten<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University of Stuttgart, Institut<lb/> ur Technische Optik,</affiliation>
+	</byline>
+
+	<address>Stuttgart, 70569, Germany.<lb/></address>
+
+	<div type="abstract">We introduce a method for marker-free cell discrimination based on optical tweezers. Cancerous, non-cancerous, and drug-treated cells<lb/> could be distinguished by measuring the trapping forces using holographic optical tweezers. We present trapping force measurements<lb/> on different cell lines: normal pre-B lymphocyte cells (BaF3; &quot;normal cells&quot;), their Bcr-Abl transformed counterparts (BaF3-p185; &quot;cancer<lb/> cells&quot;) as a model for chronic myeloid leukaemia (CML) and Imatinib treated BaF3-p185 cells. The results are compared with reference<lb/> measurements obtained by a commercial flow cytometry system.</div>
+
+	<idno type="DOI">[DOI: 10.2971/jeos.2009.09028]<lb/></idno>
+
+	<keyword>Keywords: optical tweezers, marker free cell discrimination, chronic myeloid leukaemia<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

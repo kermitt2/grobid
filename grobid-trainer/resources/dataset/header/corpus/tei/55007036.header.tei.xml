@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007036"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">CNS RECEPTORS </note>
+	
+	<note type="page">S71<lb/> </note>
+	
+	<docTitle>
+	<titlePart>[ 18 F]JHU86358, A NOVEL RADIOLIGAND WITH IMPROVED BRAIN KINETICS FOR PET IMAGING OF<lb/> EXTRATHALAMIC nAChR<lb/>
+	</titlePart></docTitle>
+
+	<byline>
+	<docAuthor>Y. GAO, A.G. HORTI, H.T. RAVERT, D.P. HOLT, Z. SZABO, M. ALEXANDER, A. KUMAR, H. KUWABARA, D.F. WONG and<lb/> R.F. DANNALS<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Radiology/Nuclear Medicine, Johns Hopkins University, School of Medicine,</affiliation>
+	</byline>
+
+	<address>Baltimore, MD, USA<lb/></address>
+
+	<div type="introduction">Introduction: Nicotinic acetylcholine receptors located in extrathalamic brain regions (EN) are important thera-<lb/>peutic targets. The ability to image EN in the human brain has been hampered by the lack of suitable radiotracers.<lb/> The radiotracers for imaging of the EN used previously in animals, display very slow brain kinetics requiring many<lb/> hours of PET imaging. Here we present a novel high affinity radioligand [<lb/> 18 F]JHU86358 with improved brain kinetics<lb/> and high regional binding potentials for imaging of EN.<lb/> Experimental: The in vitro inhibition binding assay of JHU86358, a novel fluorinated 5-aminoalkyl-3,3<lb/> -bipyridine<lb/> synthesized in our lab, was performed in duplicate using rat cortical membranes and [<lb/> 3 H]epibatidine. [<lb/> 18 F]JHU86358,<lb/> was prepared by radiofluorination of corresponding bromo precursor using GE box. Regional brain distribution of<lb/> [ 18 F]JHU86358 was studied by baboon PET.<lb/> Results and Discussion: Inhibition binding affinity of JHU86358 was Ki = 51 pM, whereas epibatidine, a potent<lb/> nAChR ligand, displayed a binding affinity of 43 pM in the same assay. [<lb/> 18 F]JHU86358 was obtained with radio-<lb/>chemical yield, radiochemical purity and the average specific activity of 50%, 99% and 580 GBq/μmol, respectively.<lb/> High radioligand uptake in the baboon brain was observed after injection of [<lb/> 18 F]JHU86358 using PET. The highest<lb/> accumulation of radioactivity occurred in the thalamus. Intermediate uptake was observed in the cortex and pons.<lb/> The lowest level of radioactivity was in the cerebellum. At 3 h after injection, region-to-cerebellum ratios values of<lb/> 6.1, 2.4 and 2.1 in thalamus, frontal cortex and pons, respectively, were calculated. The time to reach a steady-state<lb/> in the cortex and pons was about 2 h and it was more delayed in the thalamus. The distribution and kinetics of<lb/> [ 18 F]JHU86358 in brain regions were similar to those of 2-[<lb/> 18 F]FA and 6-[<lb/> 18 F]FA but the tissue/cerebellum ratios of<lb/> [ 18 F]JHU86358 were about 200-300% higher with the new radioligand. The brain kinetics of [<lb/> 18 F]JHU86358 were<lb/> also faster than those of [<lb/> 18 F]NIDA52189 and [<lb/> 18 F]NIDA522131 since the latter two required at least 8 h to reach<lb/> steady-state in the cortex.<lb/> Scheme. Left: Time-uptake curves of [ 18 F]JHU86358 in baboon brain. Right: Region/verebellum ratios of [ 18 F]JHU86358 in 180<lb/> min after injection.<lb/> Conclusion: [<lb/> 18 F]JHU86358 holds promise as a radioligand for studying extrathalamic regions in human brain. It<lb/> shows higher binding potential and shorter time to steady state than previously developed radioligands.<lb/></div>
+
+	<keyword>Keywords: nAChR, PET</keyword>
+
+		</front>
+	</text>
+</tei>

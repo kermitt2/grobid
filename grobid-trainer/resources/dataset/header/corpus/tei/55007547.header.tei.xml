@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007547"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>African Journal of Biotechnology Vol. 7 (10), pp. 1563-1570, 16 May, 2008<lb/></reference>
+
+	<note type="other">Available online at</note>
+
+	<ptr type="web">http://www.academicjournals.org/AJB<lb/></ptr>
+
+	<idno>ISSN 1684–5315</idno>
+
+	<note type="copyright">© 2008 Academic Journals<lb/></note>
+
+	<note type="other">Full Length Research Paper<lb/></note>
+
+	<docTitle>
+	<titlePart>Antibacterial and antioxidant activities of Origanum<lb/> compactum essential oil<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Bouhdid, S.<lb/> 1<lb/> *, Skali, S. N.<lb/> 1<lb/> , Idaomar, M.<lb/> 1<lb/> , Zhiri, A.<lb/> 2<lb/> , Baudoux, D.<lb/> 2<lb/> , Amensour, M.<lb/> 1<lb/> and Abrini, J.<lb/> 1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1<lb/> Laboratoire de Biologie et Santé, Equipe de Biotechnologies et Microbiologie Appliquée, Département de Biologie,<lb/> Faculté des Sciences, Université Abdelmalek Essaâdi,</affiliation>
+	</byline>
+
+	<address>BP 2121 93002, Tétouan. Maroc.<lb/></address>
+
+	<byline>
+	<affiliation>2<lb/> PRANAROM International S. A.</affiliation>
+	</byline>
+
+	<address>37, Avenue Des Artisans, B-7822, Ghislenghien, Belgique.<lb/></address>
+
+	<note type="submission">Accepted 13 March, 2008<lb/></note>
+
+	<div type="abstract">In the present study, essential oil of Origanum compactum was analysed and its chemical composition<lb/> was identified by gas chromatography coupled to mass spectrometry (GC-MS). Among thirty two<lb/> assayed constituents, carvacrol (30.53%), thymol (27.50%) and its precursor γ<lb/> γ γ<lb/> γ-terpinene (18.20%) were<lb/> found to be the major components. The oil was investigated for its in vitro antibacterial activity against<lb/> a panel of standard reference strains using well diffusion and broth dilution methods. In solid medium,<lb/> the oil was found to be remarkably active against all tested strains except Pseudomonas which showed<lb/> resistance. In liquid medium the Minimum Inhibitory Concentrations (MICs) and Minimum Bactericidal<lb/> Concentration (MBCs) ranged from 0.0078 to 0.25% (v/v). The antioxidant activity was investigated by<lb/> three different methods; 1,1-diphenyl-2-picryl-hydrasyl (DPPH) radical scavenging assay, -carotene<lb/> bleaching test and reducing power. The results of this study revealed evidence that the essential oil of<lb/> O. compactum possesses a good antioxidant effect with all assays; the antioxidant activity is<lb/> dependent on the oil concentration and can be attributed to the phenolic compounds present in the oil.<lb/></div>
+
+	<keyword>Key words: Essential oil, Origanum compactum, chemical analysis, antibacterial activity, antioxidant activity.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

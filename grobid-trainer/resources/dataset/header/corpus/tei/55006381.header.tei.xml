@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55006381"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">1<lb/></note>
+
+	<docTitle>
+	<titlePart>A Quantum Leap Forward for Li-Ion Battery Cathodes<lb/> GCEP Technical Report 2010 (Year 3)<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Investigators Josh Thomas (PI), Professor; Torbjörn Gustafsson, Lennart Häggström; Assistant Professors;<lb/> Anti Liivat, Mohammed Dahbi, Kinson Kam(*), David Ensling(**): Postdoctoral Researchers;<lb/> Meifang Lo: MSc student. Ångström</note>
+
+	<byline>
+	<affiliation>Advanced Battery Centre, Department of Materials<lb/> Chemistry, Uppsala University,</affiliation>
+	</byline>
+
+	<address>Uppsala, Sweden.<lb/></address>
+
+	<note type="other">* Recently moved to LBL<lb/> ** Moved to VARTA Batteries, Germany (Summer 2009)<lb/></note>
+
+	<div type="abstract">Abstract Our focus has been to develop a new silicate-based cathode material for large-scale,<lb/> environmentally friendly, low-cost, high energy-and power-density Li-ion batteries giving long<lb/> cycle-life over a wide-range of temperatures. The prime goal to extract &gt;1 electron per 3d-metal,<lb/> and thereby achieve a cathode material capacity ultimately well in excess 200 mAh/g. We<lb/> exploit a DFT-modeling based screening procedure – followed by efforts to synthesize what are<lb/> seen as the most promising candidate materials. Earlier theoretical screening work had<lb/> suggested three general strategies:<lb/> A: Non-stoichiometry -for capacity enhancement.<lb/> B: TM-ion substitution -for capacity enhancement and structural stabilization.<lb/> C: Polyanion substitution -for capacity and electronic conductivity enhancement.<lb/> New theoretical results included Li-ion diffusion calculations for &quot;un-mixed&quot; and &quot;mixed&quot;<lb/> Li/Fe-ion systems, which show Li<lb/> + diffusion to be two-dimensional in the Li 2 FeSiO 4 structure,<lb/> suggesting that Li-insertion/de-insertion kinetics (and hence cathode performance) can be<lb/> improved if the growth of rod-like particles can be promoted with their diffusion plane<lb/> perpendicular to the rod axis. This is being tested experimentally. It has also been found that<lb/> TM-ions can be incorporated into the non-stoichiometric structure, Li 2-2x Fe 1+x SiO 4, to give<lb/> shorter TM-TM ion distances, higher electron-hopping rates -and hence higher electronic<lb/> conductivities. Surprisingly, even 50% substitution of the Mn-site in Li 2 MnSiO 4 by different<lb/> inert &quot;bystander&quot; ions (Mg, Ni, Zn, Cu, Ca, …) was found to be unable to suppress the<lb/> problematical distortion found earlier in the Mn-coordination tetrahedral. Finally; 12.5%<lb/> substitution of VO 4<lb/> 3-into the SiO 4 site in Li 2 FeSiO 4 and Li 2 CoSiO 4 results in increased capacity<lb/> and electronic conductivity.<lb/> Synthetic techniques have been exploited further: hydrothermal synthesis is now able to give<lb/> first-cycle capacity as high as 160mAh/g in Li 2 FeSiO 4 , with stable cycling at ca. 140 mAh/g and<lb/> C/20 rate – even under sub-optimal conditions. A solvothermally-assisted sol-gel process has<lb/> also been used with considerable success to control particle-shape. It was noted earlier that<lb/> improved performance should result from a predominance of elongated particles. The solid-state<lb/> synthesis of Li 2 FeSiO 4 was also found to be highly sensitive to the type of reducing gas and<lb/> amount of carbon-additive used. Microwave-assisted synthesis has also shown dramatically fore-<lb/>shortened synthesis times: from days to minutes.</div>
+
+		</front>
+	</text>
+</tei>

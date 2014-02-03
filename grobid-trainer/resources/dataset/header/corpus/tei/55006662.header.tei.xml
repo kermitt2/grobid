@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55006662"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<ptr>www.openfabrics.org<lb/></ptr>
+
+	<docTitle>
+	<titlePart>SoftiWARP – Project Update<lb/> A Software iWARP Driver for OpenFabrics<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Bernard Metzler, Philip Frey, Animesh Trivedi<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>IBM Zurich Research Lab</affiliation>
+	</byline>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007515"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>nature photonics | VOL 2 | JUNE 2008 |</reference>
+
+	<ptr>www.nature.com/naturephotonics<lb/></ptr>
+	
+	<note type="page">341<lb/></note>
+
+	<note type="other">REVIEW ARTICLE<lb/></note>
+	
+	<byline>
+	<docAuthor>Phaedon avouris*, Marcus Freitag and<lb/> vasili Perebeinos<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>IBM T. J. Watson Research Center,</affiliation>
+	</byline>
+
+	<address>Yorktown Heights, New York 10598, USA<lb/></address>
+
+	<email>*e-mail: avouris@us.ibm.com<lb/></email>
+
+	<div type="introduction">Single-walled CNTs possess outstanding electrical and thermal<lb/> conductivities and enormous tensile strength, which make them<lb/> an engineer&apos;s dream<lb/> 1–3<lb/> . Despite the fact that all nanotubes are based<lb/> on a hexagonal honeycomb carbon lattice, different orientations<lb/> of this basic structure with respect to the nanotube axis lead to<lb/> materials with different properties. For example, depending on<lb/> this orientation, nanotubes can either behave as semiconductors<lb/> or metals<lb/> 1–3<lb/> (Box 1). Semiconductor nanotubes are the subject of<lb/> extensive studies in nano-electronics as a possible replacement<lb/> for silicon-based transistors<lb/> 4–6<lb/> . What is of particular interest for<lb/> photonics is that semiconducting nanotubes are direct-bandgap<lb/> materials that can be used to both generate and detect light. In<lb/> fact, it is possible to create a CNT device that can operate either as<lb/> a transistor, a light emitter or a light detector simply by changing<lb/> the applied voltage. Thus, nanotubes offer potential for building<lb/> a unified electronic and optoelectronic technology based on the<lb/> same material. Moreover, nanotubes provide a unique model<lb/> system to study basic optical and optoelectronic phenomena in<lb/> one dimension.<lb/> In the first part of this review we discuss the fundamental<lb/> optical properties of CNTs, including their radiative and<lb/> non-radiative decay rates, which determine their optical<lb/> efficiency, their optical properties under an external electric<lb/> field, and nonlinear optical phenomena. In the second part, we<lb/> review the transport properties of CNTs and electroluminescence<lb/> phenomena in ambipolar and unipolar regimes, and the<lb/> Carbon-nanotube photonics<lb/> and optoelectronics<lb/> Carbon nanotubes (CNTs) are nearly ideal one-dimensional (1D) systems, with diameters of only<lb/> 1–3nm and lengths that can be on the scale of centimetres. Depending on the arrangement of<lb/> the carbon-atom honeycomb structure with respect to their axis, CNTs can be direct bandgap<lb/> semiconductors, or metals with nearly ballistic conduction. The excited states of semiconducting<lb/> CNTs can be produced by either optical or electrical means and form strongly bound (with dissociation<lb/> energies of around 0.5eV), luminescent, 1D excitons. The single-atomic-layer structure makes the<lb/> optical properties of CNTs especially sensitive to their environment and external fields, and this can<lb/> be used to tune them. Here we review the nature and properties of CNT excited states, the optical<lb/> and electrical mechanisms of their production, their radiative and non-radiative modes of decay, the<lb/> role of external electric fields, and their possible technological use as nanometre-scale light sources,<lb/> photodetectors and photovoltaic devices.<lb/> possibility of using CNTs in LED applications. Finally, we review<lb/> their photoconductivity and photovoltage properties, which may<lb/> find applications in nanoscale photodetectors.<lb/> oPtical ProPerties oF carbon nanotubes<lb/> radiative and non-radiative decaY<lb/> The separation of CNT bundles by sonication (the use of ultrasonic<lb/> energy) followed by coating individual CNTs with surfactants<lb/> has provided a way of studying their luminescence properties<lb/> 7<lb/> and assigning the CNT&apos;s (n, m) indices<lb/> 8<lb/> — integers that describe<lb/> the direction with respect to the planar hexagonal lattice along<lb/> which the graphite sheet is rolled to form the tube. Early studies<lb/> of mixtures of surfactant-coated CNTs gave low fluorescence<lb/> quantum yields, Q F, of the order of 10<lb/> –3<lb/> −10<lb/> –4<lb/> . More recent studies<lb/> on individual, suspended nanotubes show yields as high as 10%<lb/> (ref. 9). These yields were measured by exciting CNTs to the state<lb/> E 22 and then observing the fluorescence from the state E 11 (see<lb/> Box 1 for further details of CNT states). Experimental studies<lb/> have also shown that the environment has a strong influence on<lb/> Q F (ref. 10).<lb/> At room temperature, the reported fluorescence lifetimes<lb/> of unconfined CNTs, τ F , are typically in the range of 10 ps to<lb/> 100 ps (refs 11–15). As 1/τ F = 1/τ R + 1/τ NR, where τ R and τ NR<lb/> are the radiative and non-radiative lifetimes, respectively,<lb/> and Q F = τ R<lb/> –1</div>
+
+		</front>
+	</text>
+</tei>

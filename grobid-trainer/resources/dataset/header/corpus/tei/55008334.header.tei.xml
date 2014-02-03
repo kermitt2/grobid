@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008334"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Crystallization in Binary Blends of Polytetrafluoroethylene<lb/> with Perfluorinated Tetrafluoroethylene Copolymer<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Masahiro ENDO,<lb/> y Aki OHNISHI, Shoichi KUTSUMIZU,<lb/> Tetsuo SHIMIZU,<lb/> Ã and Shinichi YANO<lb/> yy;yyy<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Chemistry, Faculty of Engineering, Gifu University,</affiliation>
+	</byline>
+
+	<address>Yanagido, Gifu 501-1193, Japan<lb/></address>
+
+	<byline>
+	<affiliation>Ã Daikin Industries Ltd.,</affiliation>
+	</byline>
+
+	<address>Nishihitotsuya, Settsu 566-8585, Japan<lb/></address>
+
+	<note type="submission">(Received February 24, 2004; Accepted June 14, 2004; Published September 15, 2004)<lb/></note>
+
+	<div type="abstract">ABSTRACT:<lb/> Miscibility and crystallization were studied for two binary blends of polytetrafluoroethylene (PTFE)<lb/> with poly(tetrafluoroethylene-co-10 mol % hexafluoropropylene) (FEP) and poly(tetrafluoroethylene-co-2 mol % per-<lb/>fluoropropylvinyl ether) (PFA), using DSC and X-Ray diffractometry. In FEP/PTFE blends, FEP and PTFE compo-<lb/>nents were separately crystallized to form their own crystallites, while in PFA/PTFE blends, PFA and PTFE compo-<lb/>nents were cocrystallized to form PTFE-type crystallites incorporating tetrafluoroethylene segments of PFA and PTFE.<lb/> The crystallization behavior in both blends is discussed in terms of chemical structure, molecular weight, crystallization<lb/> rate, blending method (how the two components are blended) and comonomer concentration.<lb/> </div>
+	
+	<idno type="DOI">[DOI 10.1295/polymj.36.716]<lb/> </idno>
+	
+	<keyword>KEY WORDS<lb/> Polytetrafluoroethylene / Poly(tetrafluoroethylene-co-10 mol % hexafluoropropyl-<lb/>ene) / Poly(tetrafluoroethylene-co-2 mol % perfluoropropylvinyl ether) / Blends / Crystallization /<lb/> </keyword>
+	
+	<div type="introduction">Polytetrafluoroethylene (PTFE) is a polymer with<lb/> good thermal stability up to 720 K, excellent chemical<lb/> resistance to many solvents, low surface energy, and<lb/> good electric insulation.<lb/> 1 However, PTFE used indus-<lb/>trially is generally required to have high molecular<lb/> weight (for example, Teflon 3170 has an average<lb/> number molecular weight, M n , of about 3:6 Â 10<lb/> 5 )<lb/> enough to avoid excess crystallization, but the high<lb/> molecular weight results in the high melt viscosity,<lb/> and hence special processing technology such as pow-<lb/>der sintering and paste extrusion is required to reform<lb/> PTFE powders, for example, into sheets. To overcome<lb/> the above undesirable properties of PTFE, fluorinated<lb/> copolymers of tetrafluoroethylene (TFE), such as poly-<lb/>(tetrafluoroethylene-co-hexafluoropropylene) (FEP)<lb/> and poly(tetrafluoroethylene-co-perfluoroalkylvinyl<lb/> ether) (PFAVE), have been developed. These copoly-<lb/>mers are semicrystalline polymers and their melt vis-<lb/>cosities are in general lowered by the introduction of<lb/> comonomer, compared with those of PTFE, allowing<lb/> their molding by usual melting extrusion and injection<lb/> molding technologies.<lb/> Recently, scientific interest has been paid to misci-<lb/>bility and crystallization in binary polymer blends.<lb/> 2 In<lb/> particular, it is important to clarify how and why mis-<lb/>cibility and crystallization occur in semicrystalline<lb/> polymer/semicrystalline polymer blends. Miscibility<lb/> and crystallization behavior has been investigated<lb/> for several binary blends of PTFE with perfluorinated<lb/> TFE copolymers.<lb/> 3–7 Runt et al.<lb/> 3 studied miscibility<lb/> and crystallization for binary blends of PTFE (Teflon<lb/> 3170) with poly(tetrafluoroethylene-co-perfluoropro-<lb/>pylvinyl ether) (trade name Teflon PFA335, but sim-<lb/>ply called PFA in this paper), using dynamic mechan-<lb/>ical (DM) spectroscopy and differential scanning<lb/> calorimetry (DSC), where the perfluoropropylvinyl<lb/> ether (PVE) content of the PFA was 1–2 mol %. DM<lb/> spectra as a function of temperature showed two peaks<lb/> labeled and , which were related to reorientational<lb/> motion of long segments above the glass transition<lb/> temperature (T g ) and room temperature crystal–crystal<lb/> transition,<lb/> 8 respectively. relaxation existed as a sin-<lb/>gle peak near 403 K for neat PTFE (100% PTFE), and<lb/> with increasing PFA content, moved to $373 K of<lb/> neat PFA, which suggests that PTFE and PFA compo-<lb/>nents mix in both amorphous region and molten state.<lb/> The DSC curves for neat PTFE and neat PFA showed<lb/> one melting and one crystallization peak in the heat-<lb/>ing and cooling processes, respectively. In PFA/PTFE<lb/> blends, there were two melting and two crystallization<lb/> peaks, originating from PTFE and PFA, except for a<lb/> very rapid crystallization condition under which only<lb/> one melting peak was observed. From these results,<lb/> they concluded that in the PFA/PTFE blends, PTFE<lb/> and PFA components mix in the amorphous region<lb/> but crystallites are separately formed under most crys-</div>
+
+		</front>
+	</text>
+</tei>

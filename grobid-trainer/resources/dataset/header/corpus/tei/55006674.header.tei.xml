@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55006674"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Passive Acoustic Detection and Classification of<lb/> Divers in Harbor Environments<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>R.K. Lennartsson, E. Dalberg, L. Persson, S. Petrovi<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Swedish Defence Research Agency, FOI<lb/> </affiliation>
+	</byline>
+	
+	<address>SE-164 90 Stockholm, Sweden<lb/></address>
+
+	<email>Email: {ron.lennartsson, eva.dalberg, leifp, stefan.petrovic}@foi.se<lb/></email>
+
+	<div type="abstract">Abstract— In this paper we focus on passive acoustic detection<lb/> and classification of divers with open circuit breathing systems.<lb/> We use a method that aims to find the fundamental breathing<lb/> frequency of a diver. For the analysis we have used data from<lb/> two different sea trials. One sea trial was conducted in a remote<lb/> area away from most anthropogenic activities and one sea trial<lb/> was conducted in the busy port of Gothenburg, Sweden. The<lb/> first data set is used to characterize the signature of the divers<lb/> with open breathing systems and tune the detection algorithm.<lb/> We estimate the detection performance as function of varying<lb/> signal-to-noise ratio levels. The detector is finally applied to data<lb/> from the second sea trial that was conducted in the port of<lb/> Gothenburg.<lb/></div>
+
+		</front>
+	</text>
+</tei>

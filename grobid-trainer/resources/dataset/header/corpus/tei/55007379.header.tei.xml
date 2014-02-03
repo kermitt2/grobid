@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007379"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>SELF-CROSSLINKING POLYMERIC DISPERSANTS AND THEIR USE IN<lb/> EMULSION POLYMERISATION<lb/></titlePart>
+	</docTitle>
+
+	<docAuthor>A J P Bückmann, T Nabuurs, G C Overbeek<lb/> </docAuthor>
+	
+	<byline>
+	<affiliation>NeoResins </affiliation>
+	</byline>
+		
+	<address>Sluisweg 12<lb/> POBox 123 5140AC<lb/> Waalwijk The Netherlands<lb/> </address>
+	
+	<note type="other">Presented at the<lb/></note>
+
+	<byline>
+	<affiliation>International Waterborne, High Solids, and Powder Coatings Symposium<lb/></affiliation>
+	</byline>
+	
+	<date>February 6-8, 2002<lb/> </date>
+	
+	<address>New Orleans, LA, USA<lb/></address>
+
+	<byline>
+	<affiliation>Symposium Sponsored by<lb/> The University of Southern Mississippi<lb/> Department of Polymer Science<lb/></affiliation>
+	</byline>
+
+	<div type="abstract">ABSTRACT<lb/> In this paper a novel self-crosslinking polymeric dispersant is described. The performance of<lb/> this dispersant is compared to conventional surfactants and to existing polymeric stabilisers.<lb/> The self–crosslinking dispersant is used to prepare surfactant free acrylic dispersions with a<lb/> core-shell particle morphology, where the shell polymer is the self-crosslinking polymeric<lb/> dispersant providing stabilisation of the polymer particle. The phase ratio&apos;s and the<lb/> magnitude in which the Tg&apos;s of the polymeric dispersant and the subsequently formed<lb/> polymer differ were found to be of crucial importance to obtain a very low MFT and hence<lb/> very good film formation combined with very high hardness and good anti blocking<lb/> properties. In addition films cast from these dispersions have excellent chemical resistances,<lb/> which make these dispersions very useful as binders for high performance coating systems.<lb/> Introduction:<lb/> Acrylic dispersions have found widespread use in modern coating technology.<lb/> They have excellent durability making them suitable for in and outdoor decorative<lb/> paints and can be formulated into high resistance coatings for industrial uses. In<lb/> general for high performance coatings in a variety of applications several key<lb/> properties are of importance such as:</div>
+
+		</front>
+	</text>
+</tei>

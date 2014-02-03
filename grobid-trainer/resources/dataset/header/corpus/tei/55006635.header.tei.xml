@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55006635"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Low Salinity Waterflooding<lb/> An Overview of Likely Mechanisms<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Jill Buckley<lb/>EORI contractor<lb/> Adjunct, </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Dept. of Chem. and Petroleum Eng.<lb/></affiliation>
+	</byline>
+
+	<date>15 January 2009</date>
+
+		</front>
+	</text>
+</tei>

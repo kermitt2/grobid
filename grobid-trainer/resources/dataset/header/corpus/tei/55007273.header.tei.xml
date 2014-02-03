@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007273"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">365<lb/> </note>
+	
+	<date>o c t o b e r 2 0 0 8 , </date>
+	
+	<note type="other">V o l . 6 6 , N o . 9<lb/></note>
+
+	<note type="copyright">© 2008 Van Zuiden Communications B.V. All rights reserved.<lb/></note>
+
+	<note type="other">s P E C i A l r E P o r T<lb/></note>
+
+	<docTitle>
+	<titlePart>Q fever in the Netherlands: a concise overview<lb/> and implications of the largest ongoing<lb/> outbreak<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>C.E. Delsing<lb/> *<lb/> , B.J. Kullberg<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of General Internal Medicine and Nijmegen University Centre for Infectious Diseases,<lb/> Radboud University Nijmegen Medical Centre,</affiliation>
+	</byline>
+
+	<address>Nijmegen, the Netherlands,<lb/></address>
+
+	<note type="other">*<lb/> corresponding author:<lb/></note>
+
+	<phone>tel.: +31(0)24-361 88 19,</phone>
+
+	<email>e-mail: c.delsing@aig.umcn.nl<lb/></email>
+
+	<div type="abstract">A b s T r A C T<lb/> Two outbreaks of Q fever were reported in the Netherlands<lb/> in 2007 and 2008. The ongoing 2008 outbreak in the<lb/> south-eastern part of the Netherlands is the largest<lb/> community outbreak ever described, with 808 cases<lb/> reported until August 2008. The changing epidemiology<lb/> of Q fever is most likely related to intensive goat farming,<lb/> and has important implications for the clinical care of<lb/> patients in endemic areas. Treatment of community-<lb/>acquired pneumonia has to take possible Q fever into<lb/> account, and the high incidence of Q fever endocarditis and<lb/> other manifestations of chronic Q fever require a specific<lb/> diagnostic and therapeutic approach.<lb/> </div>
+	
+	<div type="introduction">i N T r o d U C T i o N<lb/> In 2007, an outbreak of Q fever was reported in the<lb/> Netherlands, in particular around the town of Herpen.<lb/> In 2008, a remarkable further increase in Q fever cases<lb/> was noted around the city of Nijmegen, in the provinces<lb/> of Noord-Brabant and Gelderland, causing considerable<lb/> morbidity and a high number of hospital admissions. Until<lb/> 13 August 2008, 808 cases were notified, constituting the<lb/> largest community outbreak of Q fever reported in the<lb/> literature.<lb/></div>
+
+		</front>
+	</text>
+</tei>

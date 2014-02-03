@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55006455"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Enhanced Capacity from Non-Stoichiometric<lb/> Lithium Iron Silicate, Li 2-2x Fe 1+x SiO 4<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Kinson C. Kam, Anti Liivat, David Ensling,<lb/> Torbjörn Gustafsson and Josh Thomas<lb/> </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Ångström Advanced Battery Centre,<lb/> Department of Materials Chemistry,<lb/> Uppsala University,</affiliation>
+	</byline>
+
+	<address>Box 538,<lb/> SE 751-21 Uppsala, Sweden.<lb/></address>
+
+	<div type="abstract">There has been tremendous interest in recent years in the<lb/> development of new cathode materials for high-power<lb/> devices. These materials should be environmentally<lb/> friendly, low-cost, and provide high power-and energy-<lb/>density characteristics, combined with long cycle-life over<lb/> a wide-range of temperatures.<lb/> Li 2 FeSiO 4 has emerged as a promising new cathode<lb/> material for Li-ion battery applications.<lb/> 1-2 The Li-ion<lb/> extraction/re-insertion mechanism in the material has<lb/> been shown to involve structural rearrangement as a result<lb/> of Li/Fe disorder during the initial charge-discharge cycle<lb/> vs. Li/Li<lb/> + . This behaviour is supported by cyclic<lb/> voltammetry measurements. Subsequent work on these<lb/> orthosilicate materials involving Mn and Co have also<lb/> exhibited electrochemical activity with variable levels of<lb/> performance.<lb/> 4-5<lb/> In our efforts to optimize the utilization of lithium in the<lb/> formula unit and to better understand the properties and<lb/> mechanisms in this family of materials, we have focussed<lb/> on its non-stoichiometric analogue, Li 2-2x Fe 1+x SiO 4 , with a<lb/> theoretical capacity in excess of 200mAh/g. This<lb/> corresponds to ~15% increase in capacity.<lb/> Precursors for Li 2 FeSiO 4 /C and Li 2-2x Fe 1+x SiO 4 /C were<lb/> ball-milled together and then heat treated at elevated<lb/> temperature; typically 700°C in a reducing CO/CO 2<lb/> atmosphere. X-ray diffraction shows a small volume<lb/> expansion with respect to the stoichiometric phase, and<lb/> SEM images show the particles obtained to have an<lb/> average size of ~100 nm.</div>
+
+		</front>
+	</text>
+</tei>

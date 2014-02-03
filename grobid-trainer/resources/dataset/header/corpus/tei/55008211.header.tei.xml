@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008211"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>File format<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">From Wikipedia, the free encyclopedia<lb/> This is an old revision of this page, as edited by ClueBot NG (talk | contribs) at 04:42, 23<lb/> November 2010. It may differ significantly from the current revision (//en.wikipedia.org<lb/> /wiki/File_format) .<lb/> (diff) ← Previous revision | Latest revision (diff) | Newer revision → (diff)<lb/></note>
+
+	<div type="abstract">A file format is a particular way that information is encoded for storage in a computer file.<lb/> Since a disk drive, or indeed any computer storage, can store only bits, the computer must have some way of<lb/> converting information to 0s and 1s and vice-versa. There are different kinds of formats for different kinds of<lb/> information. Within any format type, e.g., word processor documents, there will typically be several different<lb/> formats. Sometimes these formats compete with each other.<lb/> File formats are divided into proprietary and open formats.<lb/></div>
+
+		</front>
+	</text>
+</tei>

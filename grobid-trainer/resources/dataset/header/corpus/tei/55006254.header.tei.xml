@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55006254"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>A Differential Approach to Graphical<lb/> Interaction<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Michael L. Gleicher<lb/></docAuthor>
+	</byline>
+
+	<date>November 18, 1994<lb/></date>
+
+	<idno>CMU-CS-94-217<lb/></idno>
+
+	<byline>
+	<affiliation>School of Computer Science<lb/> Carnegie Mellon University<lb/></affiliation>
+	</byline>
+
+	<address>5000 Forbes Avenue<lb/> Pittsburgh, PA 15213-3891<lb/></address>
+
+	<degree>Submitted in partial fulfillment of the requirements<lb/> for the degree of Doctor of Philosophy.<lb/> </degree>
+	
+	<note type="other">Thesis Committee:<lb/> Andrew Witkin, Chair<lb/> Paul Heckbert<lb/> Brad Myers<lb/> Robert Sproull, Sun Microsystems<lb/></note>
+
+	<note type="copyright">&#169; 1994 by Michael L. Gleicher<lb/></note>
+
+	<note type="grant">This research was supported in part by Apple Computer, an equipment grant from Silicon Graphics<lb/> Inc., and a fellowship from the Schlumberger Foundation. The views and conclusions contained in this<lb/> document are those of the author and should not be interpretted as representing the official policies, either<lb/> expressed or implied, of these companies.</note>
+
+		</front>
+	</text>
+</tei>

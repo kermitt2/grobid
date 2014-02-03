@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008308"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>The androgen receptor CAG repeat: a modifier of carcinogenesis?<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Paola Ferro<lb/> a , Maria G. Catalano<lb/> b , Raffaella Dell&apos;Eva<lb/> a , Nicoletta Fortunati<lb/> b ,<lb/> Ulrich Pfeffer<lb/> a, *<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a Laboratory of Molecular Biology, National Cancer Research Institute,</affiliation>
+	</byline>
+
+	<address>Largo R. Benzi 10, 16132 Genoa, Italy<lb/></address>
+
+	<byline>
+	<affiliation>b Laboratorio di Endocrinologia, II UOADU Medicina Generale, Azienda Ospedaliera S. Giovanni Battista and Dipartimento di Fisiopatologia Clinica,<lb/> Università di Torino,</affiliation>
+	</byline>
+
+	<address>Turin, Italy<lb/></address>
+
+	<div type="abstract">Abstract<lb/> The first exon of the human androgen receptor (AR) contains a translated CAG (poly-glutamine) repeat. The repeat length is<lb/> polymorphic in the normal population ranging from 8 to 35 repeats. Expansions to over 40 repeats lead to spinal bulbar muscular<lb/> atrophy (SBMA), a late onset neurodegenerative disease. The repeat is located between the two parts of a bipartite amino-terminal<lb/> transactivation function and the repeat length, also within in the normal range, is inversely correlated to the transactivation power<lb/> of the receptor. P160 type co-activators bind more strongly to shorter repeats. A correlation between AR CAG repeat length and<lb/> total risk, age at diagnosis, recurrence after surgery and aggressive growth has been reported for tumors of classical androgen target<lb/> tissues. In the prostate, where androgens exert a mitogenic effect, the cancer risk increases with decreasing AR-CAG repeat length.<lb/> In contrast, in the breast, where the hormone probably acts as anti-mitogen, a higher risk and earlier onset of breast cancer has been<lb/> reported for carriers of BRCA1 mutations who also have long CAG repeats in the receptor gene. Somatic alterations during<lb/> carcinogenesis appear to be frequent in endometrial and in colon cancer. In the endometrium the AR CAG repeat prevalently<lb/> undergoes expansions consistent with the putative protective function of androgens in this tissue. Frequent repeat reductions during<lb/> colon carcinogenesis would be consistent with a mitogenic effect of androgens. Analysis of AR protein expression by Western blot<lb/> reveals expression of the AR in healthy and neoplastic colon tissues. Normal mucosa of the colon expresses both AR-isoforms of<lb/> 110 and 87 kDa, while the tumor samples have lost the expression of the 110-kDa isoform. The 87-kDa isoform is devoid of the<lb/> amino-terminal portion of the receptor molecule that also contains the poly-glutamine tract. The temporal and causal relation<lb/> between isoform switch and somatic repeat reductions during colon carcinogenesis is as yet unclear, but the two events could both<lb/> enhance p160 mediated androgen signaling. The recent finding that smad3 interacts with the AR in a way similar to p160 links the<lb/> AR to TGFb signaling. Interruption of this signaling pathway is a frequent event in colon carcinogenesis. #</div>
+
+	<note type="copyright">&#169;2002 Elsevier Science<lb/> Ireland Ltd. All rights reserved.<lb/></note>
+
+	<keyword>Keywords: Androgen receptor; CAG repeat; Somatic mutation; Kennedy&apos;s disease; Colon cancer; Microsatellite instability; Low penetrance<lb/> susceptibility gene<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

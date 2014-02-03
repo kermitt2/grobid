@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007717"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Barrier Layers-<lb/></note>
+	
+	<docTitle>
+	<titlePart>Measurement and control<lb/> of barrier layers<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Peter G. Mercer<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Absorption of specific wuvelengths of near infrared radiation cun be used<lb/> to meuswe and control film thickness in mutliluyer puckuging matwiak.<lb/> </div>
+	
+	<div type="introduction">The 1980s saw many new developments in the packaging<lb/> industry brought about by ecological concerns, as well as<lb/> by conventional economic and marketing pressures. This<lb/> activity was paralleled in the instrument industry as<lb/> established companies improved their existing products<lb/> and as new suppliers sprang up to exploit any attractive<lb/> concept that promised a solution to some of the problems<lb/> resulting from the new packages. In the ensuing excite-<lb/>ment, some confusion has arisen regarding the methods<lb/> actually being used to measure the new products, the<lb/> merits of each method in a given application, and the<lb/> validity of some of the claims. The following paper is<lb/> presented in the hope of clarifying some of these topics.<lb/> Measuring techniques<lb/> The thickness of a film can be measured in many different<lb/> ways, but all of them can be classified into one of three<lb/> categories: mechanical contact, physical by optical<lb/> interference, or chemical by optical absorption related to<lb/> the chemical bonds (Fig. 1).<lb/> The mechanical category includes the simple microme-<lb/>ter and a number of on-line versions in which measuring<lb/> sensors contact both sides of the film. A way is found to<lb/> measure the separation of the two sensors, usually using<lb/> magnetic or inductive techniques. Sometimes the sensors<lb/> are made noncontacting by floating them on an air film<lb/> of constant thickness, or the sensors are replaced by light<lb/> beams that measure the position of each surface by<lb/> triangulation. In all cases, these devices measure total<lb/> thickness of a simple or composite film. Although they may<lb/> be usefully combined with other techniques to be<lb/> described, they do not fall within the topic of measuring<lb/> barrier layers.<lb/> The second category, interferometry, utilizes the mutual<lb/> interference of radiation reflected from surface boundar-<lb/>ies to give a measurement of the optical path length<lb/> between the surfaces and therefore a direct indication of<lb/> the film thickness. To obtain usable reflections, boundaries</div>
+
+		</front>
+	</text>
+</tei>
