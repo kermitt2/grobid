@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55006509"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<ptr type="web">http://web.archive.org/web/20080821165936/http://www.instrument.com/349.html<lb/></ptr>
+
+	<date>retrieved on 07-09-2011<lb/></date>
+
+	<docTitle>
+	<titlePart>Frequently Asked Questions<lb/></titlePart>
+	</docTitle>
+
+	<idno>EDAS-1002E /1031E Multifunction<lb/> EDAS-1001E Digital<lb/></idno>
+
+		</front>
+	</text>
+</tei>

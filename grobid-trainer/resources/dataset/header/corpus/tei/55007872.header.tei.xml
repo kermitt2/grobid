@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007872"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">WINDOWS<lb/></note>
+
+	<date>Jan 28, 2007<lb/></date>
+
+	<note type="other">My Digital Life Editorial Team<lb/> 4 Comments<lb/> Delicious<lb/> Stu @BULLET<lb/>0<lb/></note>
+
+	<docTitle>
+	<titlePart>View and Display Date Picture Taken and Camera<lb/> Model Metadata of Photos in Windows Explorer<lb/></titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

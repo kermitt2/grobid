@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007283"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Technical Note<lb/></note>
+
+	<docTitle>
+	<titlePart>ISP Protection against BlackListing<lb/> ∼ FORTIMAIL Deployment<lb/> for Outbound Spam Filtering<lb/> Rev 2.2<lb/></titlePart>
+	</docTitle>
+
+	<date>April 14, 2009</date>
+
+		</front>
+	</text>
+</tei>

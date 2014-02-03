@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55006420"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="copyright">© All Rights Reserved<lb/></note>
+
+	<note type="other">Corresponding author.<lb/></note>
+
+	<email>Email: asmah@medic.upm.edu.my<lb/></email>
+	
+	<phone>Tel. +603 89472470<lb/></phone>
+
+	<reference>International Food Research Journal 17: 417-423 (2010)<lb/></reference>
+
+	<byline>
+	<docAuthor>Yan, S.W. and *Asmah, R.<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Nutrition and Dietetics, Faculty of Medicine and Health Sciences,<lb/></affiliation>
+	</byline>
+
+	<affiliation>Universiti Putra Malaysia, </affiliation>
+	
+	<address>43400 UPM, Serdang Selangor, Malaysia<lb/></address>
+
+		</front>
+	</text>
+</tei>

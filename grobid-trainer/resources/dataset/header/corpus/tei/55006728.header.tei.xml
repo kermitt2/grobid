@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55006728"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<div type="abstract">The action of a	Caesar cipher is to replace each plaintext<lb/> letter with one a fixed number of places down the<lb/> alphabet. This example is with a shift of three, so that a B<lb/> in the plaintext becomes E in the ciphertext.<lb/></div>
+
+	<docTitle>
+	<titlePart>Caesar cipher<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">From Wikipedia, the free encyclopedia<lb/> This is an old revision of this page, as edited by Anton Rakitskiy (talk | contribs) at 08:51, 22<lb/> February 2007. It may differ significantly from the current revision (http://en.wikipedia.org<lb/> /wiki/Caesar_cipher) .<lb/> (diff) ← Previous revision | Latest revision (diff) | Newer revision → (diff)<lb/> </note>
+	
+	<div type="introduction">In cryptography, a Caesar cipher, also known as a<lb/> Caesar&apos;s cipher, the shift cipher, Caesar&apos;s Code or<lb/> Caesar Shift, is one of the simplest and most<lb/> widely-known encryption techniques. It is a type of<lb/> substitution cipher in which each letter in the<lb/> plaintext is replaced by a letter some fixed number of<lb/> positions further down the alphabet. For example,<lb/> with a shift of 3, A would be replaced by D, B would<lb/> become E, and so on. The method is named after<lb/> Julius Caesar, who used it to communicate with his<lb/> generals.<lb/> The encryption step performed by a Caesar cipher is<lb/> often incorporated as part of more complex schemes, such as the Vigenère cipher, and still has modern<lb/> application in the ROT13 system. As with all single alphabet substitution ciphers, the Caesar cipher is easily<lb/> broken and in practice offers essentially no communication security.<lb/></div>
+
+		</front>
+	</text>
+</tei>

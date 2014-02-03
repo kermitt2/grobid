@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008266"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Skin Optics<lb/> </titlePart>
+	</docTitle>
+	
+	<reference>Oregon Medical Laser Center News. Jan 1998.</reference>
+	
+	<byline>
+	<docAuthor>Steven L. Jacques<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">In response to requests for a summary of skin optical properties, this article presents how to choose<lb/> the approximate optical coefficients for absorption and reduced scattering of skin with variable<lb/> amounts of melanin and blood perfusion. It is merely an approximation and a starting point for<lb/> describing the skin optics of any particular individual.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007723"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">File:High Definition<lb/> Multimedia Interface<lb/> Plug.jpg<lb/> HDMI connector<lb/></note>
+
+	<docTitle>
+	<titlePart>HDMI<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">From Wikipedia, the free encyclopedia<lb/></note>
+
+	<note type="other">This is an old revision of this page, as edited by 64.105.231.22 (talk) at 02:56, 14 February 2006. It<lb/> may differ significantly from the current revision (http://en.wikipedia.org/wiki/HDMI) .<lb/></note>
+
+	<note type="other">(diff) ← Previous revision | Latest revision (diff) | Newer revision → (diff)<lb/></note>
+
+		</front>
+	</text>
+</tei>

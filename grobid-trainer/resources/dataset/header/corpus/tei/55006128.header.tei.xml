@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55006128"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Sanofi-aventis Press Release<lb/></note>
+	
+	<byline>
+	<affiliation>Sanofi-aventis </affiliation>
+	</byline>
+		
+	<ptr type="web">www.sanofi-aventis.com<lb/> </ptr>
+	
+	<note type="other">Media Relations: </note>
+	
+	<phone>Tél. : (+) 33 1 53 77 44 50 -</phone>
+
+	<email>E-mail : MR@sanofi-aventis.com<lb/></email>
+
+	<note type="other">Investor Relations :</note>
+
+	<phone>Tél. : (+) 33 1 53 77 45 45 -</phone>
+	
+	<email>E-mail : IR@sanofi-aventis.com<lb/></email>
+
+	<note type="page">1 /2<lb/></note>
+
+	<docTitle>
+	<titlePart>Lixisenatide Significantly Reduces HbA1c<lb/> Without Increasing Hypoglycemia in Patients<lb/> Uncontrolled on Sulfonylureas</titlePart>
+	</docTitle>
+
+	<div type="abstract">Paris, France – April 12, 2011 – Sanofi-aventis (EURONEXT: SAN and NYSE: SNY) announced<lb/> today that lixisenatide, a once-daily GLP-1 receptor agonist under development for people with<lb/> Type 2 diabetes, achieved its primary efficacy objective of significant HbA1c reduction and<lb/> improved glycemic control from baseline versus placebo. The top-line results also showed that<lb/> people treated with lixisenatide had a significant decrease in body weight.<lb/> The GetGoal-S trial, one of nine studies in the GetGoal Phase III clinical program, investigated the<lb/> efficacy and safety of lixisenatide as an add-on therapy for people with Type 2 diabetes whose<lb/> condition was inadequately controlled by sulfonylureas, with or without metformin. GetGoal-S was a<lb/> randomized (double-blind), placebo-controlled study with a 24-week main treatment period. A total<lb/> of 859 patients were randomized to receive either lixisenatide or placebo. Both groups received a<lb/> step-wise increase in dose, up to a maintenance dose of 20µg daily.<lb/> Top-line results of the GetGoal-S study showed that people in the lixisenatide group experienced a<lb/> significant reduction in their HbA1c levels, with a -0.74% difference versus placebo (p&lt;0.0001) at<lb/> week 24. Lixisenatide also significantly improved patients&apos; 2-hour post-prandial glucose (p&lt;0.0001)<lb/> and fasting plasma glucose (p&lt;0.0001) levels. In addition, people treated with lixisenatide had a<lb/> significant decrease in body weight (p&lt;0.0001), versus those receiving placebo.</div>
+
+		</front>
+	</text>
+</tei>

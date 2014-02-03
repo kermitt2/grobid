@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007016"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<docAuthor>Julia Levedag<lb/> </docAuthor>
+	</byline>
+	
+	<byline>	
+	<affiliation>SAP NetWeaverRIG, SAP AG<lb/></affiliation>
+	</byline>
+
+		</front>
+	</text>
+</tei>

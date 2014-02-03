@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007730"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	
+	<note type="other">of September 21, 2011<lb/> This information is current as<lb/> </note>
+	
+	<reference>2004;172;4556-4566<lb/> J Immunol<lb/></reference>
+
+	<byline>
+	<docAuthor>A. Vandenbark, Gregory G. Burrows and Halina Offner<lb/> Rich, Jason Link, Jeff Mooney, Dennis N. Bourdette, Arthur<lb/> Jianya Huan, Sandhya Subramanian, Richard Jones, Cathleen<lb/></docAuthor>
+	</byline>
+
+	<docTitle>
+	<titlePart>through Cytokine Switch<lb/> Autoimmune Encephalomyelitis in SJL/J Mice<lb/> Relapse Rate and Severity of Experimental<lb/> Monomeric Recombinant TCR Ligand Reduces<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">References<lb/> </note>
+	
+	<ptr>http://www.jimmunol.org/content/172/7/4556.full.html#related-urls<lb/> </ptr>
+	
+	<note type="other">Article cited in:<lb/></note>
+
+	<ptr type="web">http://www.jimmunol.org/content/172/7/4556.full.html#ref-list-1<lb/></ptr>
+
+	<note type="other">, 16 of which can be accessed free at:<lb/> cites 36 articles<lb/> This article<lb/></note>
+
+		</front>
+	</text>
+</tei>

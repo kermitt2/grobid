@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007097"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>INTERNATIONAL JOURNAL OF SYSTEMATIC BACTERIOLOGY, Oct. 1987, p. 465-468<lb/></reference>
+
+	<note type="copyright">Copyright &#169; 1987, International Union of Microbiological Societies<lb/></note>
+
+	<idno>0020-77 13/87/040465-04$02.00/0<lb/> </idno>
+	
+	<reference>Vol. 37, No. 4<lb/></reference>
+
+	<docTitle>
+	<titlePart>Request for an Opinion<lb/></titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

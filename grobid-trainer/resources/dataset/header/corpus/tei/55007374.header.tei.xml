@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007374"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">1<lb/></note>
+
+	<docTitle>
+	<titlePart>Quantum no-key protocol for direct and secure<lb/> transmission of quantum and classical messages<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Li Yang<lb/> *<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>State Key Laboratory of Information Security (Graduate School of Chinese Academy of<lb/> Sciences),</affiliation>
+	</byline>
+
+	<address>Beijing 100039, P. R. China<lb/></address>
+
+	<div type="abstract">Various protocols of quantum cryptography has been presented [1-4]. Some of them can be<lb/> used to transmit secret messages directly[5-7]. In this letter, we present a new kind of quantum<lb/> cryptography protocol for direct transmission of classical and quantum messages based on<lb/> Shamir&apos;s generic protocol on classical message encryption [8]. Though Shamir&apos;s original idea has<lb/> only realization of computational security in classical cryptology and will fall to a<lb/> man-in-the-middle attack, our protocol&apos;s security is theoretical based on properties of quantum<lb/> entanglement and Boolean function, and can resist the man-in-the-middle attack.<lb/> I. Protocol for quantum message transmission<lb/> A quantum message is a sequence of pure state:<lb/> } ,<lb/> , 2<lb/> , 1<lb/> {<lb/> ) (<lb/> ) (<lb/> ∑<lb/> = =<lb/> m<lb/> i m<lb/> n k<lb/> n i<lb/> m M<lb/> L<lb/> α<lb/> , (1)<lb/> where<lb/> ) (<lb/> 2 2<lb/> 1<lb/> ) ,<lb/> , ,<lb/> (<lb/> k k<lb/> F m<lb/> m m<lb/> m ∈<lb/> = L<lb/> if we choose<lb/> k<lb/> m m<lb/> m ⊗<lb/> ⊗ ⊗<lb/> L<lb/> 2 1<lb/> as base states. Let<lb/> us consider the secure transmission of a pure state<lb/> m<lb/> m<lb/> m<lb/> ∑ α . Here the word &apos;secure&apos; means<lb/> 1)Eve cannot get the state even when she has controlled the channel; 2)Bob can verify that the<lb/> state really comes from Alice; 3)Alice can verify that the receiver is Bob; 4)Bob know whether the<lb/> state has been changed in the channel. These are so called encryption, identification and<lb/> authentication. Here is the basic encryption protocol for quantum message without authentication:<lb/> 1. Alice chooses a n-dimensional Boolean function<lb/> ( )</div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007030"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>APPLIED AND ENVIRONMENTAL MICROBIOLOGY,<lb/> </reference>
+	
+	<note type="other">0099-2240/97/$04.00ϩ0<lb/> </note>
+	
+	<reference>Mar. 1997, p. 1118–1123<lb/> Vol. 63, No. 3<lb/></reference>
+
+	<note type="copyright">Copyright &#169; 1997, American Society for Microbiology<lb/></note>
+
+	<docTitle>
+	<titlePart>Identification of Bacterial Cells by Chromosomal Painting<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>BRIAN D. LANOIL<lb/> 1 AND STEPHEN J. GIOVANNONI<lb/>2<lb/> *<lb/> </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Molecular and Cellular Biology Program<lb/> 1 and Department of Microbiology,<lb/> 2<lb/>Oregon State University,</affiliation>
+	</byline>
+
+	<address>Corvallis, Oregon 97331<lb/></address>
+
+	<note type="submission">Received 26 August 1996/Accepted 5 December 1996<lb/></note>
+
+	<div type="abstract">Chromosomal painting is a technique for the microscopic localization of genetic material. It has been<lb/> applied at the subcellular level to identify regions of eukaryotic chromosomes. Here we describe the develop-<lb/>ment of bacterial chromosomal painting (BCP), a related technology for the identification of bacterial cells.<lb/> Purified genomic DNAs from six bacterial strains were labeled by nick translation with the fluorochrome<lb/> Fluor-X, Cy3, or Cy5. The average size of the labeled fragments was ca. 50 to 200 bp. The probes were<lb/> hybridized to formaldehyde-fixed microbial cells attached to slides and visualized by fluorescence microscopy.<lb/> In reciprocal comparisons, distantly related members of the class Proteobacteria (Escherichia coli and Oceano-<lb/>spirillum linum), different species of the genus Bacillus (B. subtilis and B. megaterium), and different serotypes<lb/> of the subspecies Salmonella choleraesuis subsp. choleraesuis (serotype typhimurium LT2 and serotype typhi<lb/> Ty2) could easily be distinguished. A combination of two probes, each labeled with a different fluorochrome,<lb/> was used successfully to simultaneously identify two cell types in a mixture. Lysozyme treatment was required<lb/> for the identification of Bacillus spp., and RNase digestion and pepsin digestion were found to enhance signal<lb/> strength and specificity for all cell types tested. Chromosome in situ suppression, a technique that removes<lb/> cross-hybridizing fragments from the probe, was necessary for the differentiation of the Salmonella serotypes<lb/> but was not required to distinguish the more distantly related taxa. BCP may have applications in diverse<lb/> branches of microbiology where the objective is the identification of bacterial cells.<lb/></div>
+
+		</front>
+	</text>
+</tei>

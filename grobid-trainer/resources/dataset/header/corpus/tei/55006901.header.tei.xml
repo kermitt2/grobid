@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55006901"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="copyright">Copyright 2004, Offshore Technology Conference<lb/></note>
+
+	<note type="other">This paper was prepared for presentation at </note>
+
+	<reference>the Offshore Technology Conference held in<lb/> Houston, Texas, U.S.A., 3–6 May 2004.<lb/></reference>
+
+	<note type="other">This paper was selected for presentation by an OTC Program Committee following review of<lb/> information contained in an abstract submitted by the author(s). Contents of the paper, as<lb/> presented, have not been reviewed by the Offshore Technology Conference and are subject to<lb/> correction by the author(s). The material, as presented, does not necessarily reflect any<lb/> position of the Offshore Technology Conference or its officers. Electronic reproduction,<lb/> distribution, or storage of any part of this paper for commercial purposes without the written<lb/> consent of the Offshore Technology Conference is prohibited. Permission to reproduce in print<lb/> is restricted to an abstract of not more than 300 words; illustrations may not be copied. The<lb/> abstract must contain conspicuous acknowledgment of where and by whom the paper was<lb/> presented.<lb/></note>
+
+	<div type="abstract">Abstract This paper discusses the planning and application of<lb/> expandable systems to provide effective open-hole sand<lb/> control with zonal isolation. It will present a case history of<lb/> the world&apos;s first completion set inside an expandable system to<lb/> provide a single selective well, where one could selectively<lb/> produce, or commingle from different zones. Control of the<lb/> formation sand was provided by expandable screen, open-hole<lb/> zonal isolation by expandable packers with solid pipe and a<lb/> conventional completion packer set inside expanded solid pipe<lb/> for selectivity. The expandable system was run in a synthetic<lb/> oil base drilling fluid that was used to inhibit swelling of<lb/> exposed shale.<lb/></div>
+
+		</front>
+	</text>
+</tei>

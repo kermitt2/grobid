@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55006300"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>INFECTION AND IMMUNITY, Oct. 2005, p. 6752–6762<lb/> Vol. 73, No. 10<lb/></reference>
+
+	<note>0019-9567/05/$08.00ϩ0</note>
+
+	<idno type="DOI">doi:10.1128/IAI.73.10.6752–6762.2005<lb/></idno>
+
+	<note type="copyright">Copyright © 2005, American Society for Microbiology. All Rights Reserved.<lb/></note>
+
+	<docTitle>
+	<titlePart>Comparative Opsonic and Protective Activities of<lb/> Staphylococcus aureus Conjugate Vaccines Containing Native or<lb/> Deacetylated Staphylococcal Poly-N-Acetyl-␤-(1-6)-Glucosamine<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Tomás Maira-Litrán,<lb/> 1<lb/> * Andrea Kropec,<lb/> 1 Donald A. Goldmann,<lb/> 2 and Gerald B. Pier<lb/> 1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Channing Laboratory, Department of Medicine, Brigham and Women&apos;s Hospital Harvard Medical School,<lb/></affiliation>
+	</byline>
+
+	<address>Boston, Massachusetts 02115,<lb/></address>
+
+	<byline>
+	<affiliation>1 and </affiliation>
+	</byline>
+
+	<byline>
+	<affiliation>Division of Infectious Diseases, Department of Medicine,<lb/> Children&apos;s Hospital, Harvard Medical School,</affiliation>
+	</byline>
+
+	<address>Boston, Massachusetts 02115<lb/></address>
+
+	<byline>
+	<affiliation>2<lb/></affiliation>
+	</byline>
+
+	<note type="submission">Received 9 February 2005/Returned for modification 30 March 2005/Accepted 18 May 2005<lb/></note>
+
+	<div type="abstract">Staphylococcus aureus and Staphylococcus epidermidis both synthesize the surface polysaccharide poly-N-<lb/>acetyl-␤-(1-6)-glucosamine (PNAG), which is produced in vitro with a high level (&gt;90%) of the amino groups<lb/> substituted by acetate. Here, we examined the role of the acetate substituents of PNAG in generating opsonic<lb/> and protective antibodies. PNAG and a deacetylated form of the antigen (dPNAG; 15% acetylation) were<lb/> conjugated to the carrier protein diphtheria toxoid (DT) and used to immunize animals. Mice responded in a<lb/> dose-dependent fashion to both conjugate vaccines, with maximum antibody titers observed at the highest dose<lb/> and 4 weeks after the last of three weekly immunizations. PNAG-DT and dPNAG-DT vaccines were also very<lb/> immunogenic in rabbits. Antibodies raised to the conjugate vaccines in rabbits mediated the opsonic killing of<lb/> various staphylococcal strains, but the specificity of the opsonic killing was primarily to dPNAG, as this<lb/> antigen inhibited the killing of S. aureus strains by both PNAG-and dPNAG-specific antibodies. Passive<lb/> immunization of mice with anti-dPNAG-DT rabbit sera showed significant levels of clearance of S. aureus from<lb/> the blood (54 to 91%) compared to control mice immunized with normal rabbit sera, whereas PNAG-specific<lb/> antibodies were ineffective at clearing S. aureus. Passive immunization of mice with a goat antiserum raised to<lb/> the dPNAG-DT vaccine protected against a lethal dose of three different S. aureus strains. Overall, these data<lb/> show that immunization of animals with a conjugate vaccine of dPNAG elicit antibodies that mediated opsonic<lb/> killing and protected against S. aureus infection, including capsular polysaccharide types 5 and 8 and an<lb/> untypable strain.<lb/></div>
+
+		</front>
+	</text>
+</tei>

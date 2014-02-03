@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55006149"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Effects of Pro f Peptoid Residue Substitution on Cell Selectivity and Mechanism<lb/> of Antibacterial Action of Tritrpticin-Amide Antimicrobial Peptide<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Wan Long Zhu, Hongliang Lan, Yoonkyung Park, Sung-Tae Yang, Jae Il Kim, Il-Seon Park, ,| Ho Jin You,<lb/> Jung Sup Lee, Yong Sun Park, ⊥ Yangmee Kim, @ Kyung-Soo Hahm, ,| and Song Yub Shin* ,,|<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Bio-Materials, Graduate School and Research Center for Proteineous Materials, Chosun UniVersity,<lb/></affiliation>
+	</byline>
+
+	<address>Gwangju 501-759, Korea,</address>
+
+	<byline>
+	<affiliation>Department of Life Science, Gwangju Institute of Science and Technology,</affiliation>
+	</byline>
+
+	<address>Gwangju 500-712, Korea,<lb/></address>
+
+	<byline>
+	<affiliation>Department of Cellular and Molecular Medicine, School of Medicine, Chosun UniVersity,</affiliation>
+	</byline>
+
+	<address>Gwangju 501-759, Korea,<lb/></address>
+
+	<byline>
+	<affiliation>Department of Chemistry, Konkuk UniVersity,</affiliation>
+	</byline>
+
+	<address>Seoul 143-701, Korea,</address>
+
+	<byline>
+	<affiliation>and Department of Bioscience and Biotechnology,<lb/> Bio/Molecular Informatics Center, IBST, Konkuk UniVersity,</affiliation>
+	</byline>
+
+	<address>Seoul 143-701, Korea<lb/></address>
+
+	<note type="submission">ReceiVed March 11, 2006; ReVised Manuscript ReceiVed August 24, 2006</note>
+
+		</front>
+	</text>
+</tei>

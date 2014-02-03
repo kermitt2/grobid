@@ -1,0 +1,63 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55006753"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Towards Optimal Bag-of-Features for Object<lb/> Categorization and Semantic Video Retrieval<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Yu-Gang Jiang<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Dept of Computer Science<lb/> City University of Hong Kong<lb/></affiliation>
+	</byline>
+
+	<address>Kowloon, Hong Kong<lb/></address>
+
+	<email>yjiang@cs.cityu.edu.hk<lb/></email>
+
+	<byline>
+	<docAuthor>Chong-Wah Ngo<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Dept of Computer Science<lb/> City University of Hong Kong<lb/></affiliation>
+	</byline>
+
+	<address>Kowloon, Hong Kong<lb/></address>
+
+	<email>cwngo@cs.cityu.edu.hk<lb/></email>
+
+	<byline>
+	<docAuthor>Jun Yang<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>School of Computer Science<lb/> Carnegie Mellon University<lb/></affiliation>
+	</byline>
+
+	<address>Pittsburgh, PA 15213, USA<lb/></address>
+
+	<email>juny@cs.cmu.edu<lb/></email>
+
+	<div type="abstract">ABSTRACT<lb/> Bag-of-features (BoF) deriving from local keypoints has re-<lb/>cently appeared promising for object and scene classifica-<lb/>tion. Whether BoF can naturally survive the challenges<lb/> such as reliability and scalability of visual classification, nev-<lb/>ertheless, remains uncertain due to various implementation<lb/> choices. In this paper, we evaluate various factors which<lb/> govern the performance of BoF. The factors include the<lb/> choices of detector, kernel, vocabulary size and weighting<lb/> scheme. We offer some practical insights in how to opti-<lb/>mize the performance by choosing good keypoint detector<lb/> and kernel. For the weighting scheme, we propose a novel<lb/> soft-weighting method to assess the significance of a visual<lb/> word to an image. We experimentally show that the pro-<lb/>posed soft-weighting scheme can consistently offer better<lb/> performance than other popular weighting methods. On<lb/> both PASCAL-2005 and TRECVID-2006 datasets, our BoF<lb/> setting generates competitive performance compared to the<lb/> state-of-the-art techniques. We also show that the BoF is<lb/> highly complementary to global features. By incorporating<lb/> the BoF with color and texture features, an improvement of<lb/> 50% is reported on TRECVID-2006 dataset.<lb/></div>
+
+	<keyword>Categories and Subject Descriptors<lb/> I.4.7 [Image Processing and Computer Vision]: Fea-<lb/>ture Measurement; H.3.1 [Information Storage and Re-<lb/>trieval]: Content Analysis and Indexing<lb/> General Terms<lb/> Algorithms, Measurement, Experimentation.<lb/> Keywords<lb/> Object categorization, semantic video retrieval, bag-of-features,<lb/> keypoint detector, soft-weighting, kernel.<lb/></keyword>
+
+	<note type="other">Permission to make digital or hard copies of all or part of this work for<lb/> personal or classroom use is granted without fee provided that copies are<lb/> not made or distributed for profit or commercial advantage and that copies<lb/> bear this notice and the full citation on the first page. To copy otherwise, to<lb/> republish, to post on servers or to redistribute to lists, requires prior specific<lb/> permission and/or a fee.<lb/></note>
+
+	<reference>CIVR&apos;07, July 9–11, 2007, Amsterdam, The Netherlands<lb/></reference>
+
+	<note type="copyright">Copyright 2007 </note>
+	
+	<note type="other">ACM978-1-59593-733-9/07/0007 ...$5.00.<lb/></note>
+
+		</front>
+	</text>
+</tei>

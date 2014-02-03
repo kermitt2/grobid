@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55006961"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Prospects for imaging with TOF-SIMS using gold<lb/> liquid metal ion sources<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Amy V. Walker, Nicholas Winograd<lb/> *<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Chemistry, Pennsylvania State University, 184 Materials Research Institute,</affiliation>
+	</byline>
+
+	<address>University Park, PA 16802, USA<lb/></address>
+
+	<div type="abstract">Abstract<lb/> Gold liquid metal ion sources produce high quality TOF-SIMS spectra with excellent prospects for imaging using either<lb/> Au  , Au<lb/>  or Au 2<lb/> <lb/> primary ions. The beam is stable and exhibits a long lifetime when employing eutectic alloys of Si or Ge. In<lb/> general, the yields are found to be considerably higher than when using Ga beams, but the increased yield associated with using<lb/> dimer ions is also associated with an increase in surface damage. Finally, it appears that Au<lb/>  ion bombardment may yield<lb/> improved spectra for certain types of compounds.<lb/></div>
+
+	<note type="copyright">&#169; 2002 Elsevier Science B.V. All rights reserved.<lb/></note>
+
+	<keyword>Keywords: SIMS; Au ion sources; Imaging; Sputtered ion yields<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007655"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<affiliation>University of Tennessee,</affiliation>
+	</byline>
+
+	<address>Knoxville<lb/></address>
+
+	<note type="other">Trace: Tennessee Research and Creative<lb/> Exchange<lb/> Home Garden, Lawn, and Landscape<lb/> UT Extension<lb/></note>
+
+	<date>4-21-2010<lb/></date>
+
+	<docTitle>
+	<titlePart>SP277-I-Bacterial Spot of Peach<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<affiliation>The University of Tennessee Agricultural Extension Service<lb/></affiliation>
+	</byline>
+
+	<note type="other">This Gardening -Fruit: Pests &amp; Diseases is brought to you for free and open access by the UT Extension at Trace: Tennessee Research and Creative<lb/> Exchange. It has been accepted for inclusion in Home Garden, Lawn, and Landscape by an authorized administrator of Trace: Tennessee Research<lb/> and Creative Exchange. For more information, please contact </note>
+	
+	<email>trace@utk.edu.<lb/> </email>
+	
+	<note type="other">Recommended Citation<lb/></note>
+
+	<reference>&quot;SP277-I-Bacterial Spot of Peach,&quot; The University of Tennessee Agricultural Extension Service, ,</reference>
+
+	<ptr type="web">http://trace.tennessee.edu/<lb/> utk_agexgard/71</ptr>
+
+		</front>
+	</text>
+</tei>

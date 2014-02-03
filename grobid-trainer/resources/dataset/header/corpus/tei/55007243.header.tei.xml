@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007243"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>JOURNAL OF BACTERIOLOGY,<lb/></reference>
+
+	<note type="other">0021-9193/97/$04.00ϩ0<lb/></note>
+
+	<reference>Dec. 1997, p. 7523–7529<lb/> Vol. 179, No. 23<lb/></reference>
+
+	<note type="copyright">Copyright © 1997, American Society for Microbiology<lb/></note>
+
+	<docTitle>
+	<titlePart>Nested DNA Inversion of Campylobacter fetus S-Layer<lb/> Genes Is recA Dependent<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>JOEL DWORKIN,<lb/> 1 OMER L. SHEDD,<lb/> 1 AND MARTIN J. BLASER<lb/> 1,2 *<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Division of Infectious Diseases, Department of Medicine and Department of Microbiology and Immunology,<lb/> Vanderbilt University School of Medicine,</affiliation>
+	</byline>
+
+	<address>Nashville, Tennessee 37232,<lb/></address>
+
+	<byline>
+	<affiliation>1</affiliation>
+	</byline>
+	
+	<byline>
+	<affiliation>and Medical Service,<lb/> Department of Veterans Affairs Medical Center,</affiliation>
+	</byline>
+
+	<address>Nashville, Tennessee 37212<lb/></address>
+
+	<byline>
+	<affiliation>2<lb/></affiliation>
+	</byline>
+
+	<note type="submission">Received 25 April 1997/Accepted 29 July 1997<lb/></note>
+
+	<div type="abstract">Wild-type strains of Campylobacter fetus are covered by a monomolecular array of surface layer proteins<lb/> (SLPs) critical for virulence. Each cell possesses eight SLP gene cassettes, tightly clustered in the genome, that<lb/> encode SLPs of 97 to 149 kDa. Variation of SLP expression occurs by a mechanism of nested DNA rearrange-<lb/>ment that involves the inversion of a 6.2-kb sapA promoter-containing element alone or together with one or more<lb/> flanking SLP gene cassettes. The presence of extensive regions of identity flanking the 5؅ and 3؅ ends of each<lb/> SLP gene cassette and of a Chi-like recognition sequence within the 5؅ region of identity suggests that rear-<lb/>rangement of SLP gene cassettes may occur by a generalized (RecA-dependent) homologous recombination<lb/> pathway. To explore this possibility, we cloned C. fetus recA and created mutant strains by marker rescue, in<lb/> which recA is disrupted in either S<lb/> ؉ or S<lb/> ؊ strains. These mutants then were assessed for their abilities to alter SLP<lb/> expression either in the presence or absence of a complementary shuttle plasmid harboring native recA. In<lb/> contrast to all previously reported programmed DNA inversion systems, inversion in C. fetus is recA dependent.<lb/></div>
+
+		</front>
+	</text>
+</tei>

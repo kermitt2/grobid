@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55006660"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">* Author for correspondence.<lb/></note>
+	
+	<note type="page">248<lb/></note>
+
+	<reference>Journal of Food and Drug Analysis, Vol. 8, No. 4, 2000, Pages<lb/></reference>
+
+	<docTitle>
+	<titlePart>Pharmacological Functions of Chinese Medicinal Fungus<lb/> Cordyceps sinensis and Related Species<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>SHENG-YUAN WANG 1,2 AND MING-SHI SHIAO 1 *<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1. Department of Medical Research and Education, Veterans General Hospital-Taipei,</affiliation>
+	</byline>
+
+	<address>201, Shih-Pai Rd., Section 2, Taipei, Taiwan 112, R.O.C.<lb/></address>
+
+	<byline>
+	<affiliation>2. Institute of Traditional Medicine, National Yang-Ming University,</affiliation>
+	</byline>
+
+	<address>155, Li Nung St., Section 2, Taipei, Taiwan 112, R.O.C.<lb/></address>
+
+	<note type="submission">(Received: October 4, 2000; Accepted: December 6, 2000)<lb/></note>
+
+	<div type="abstract">ABSTRACT<lb/> Cordyceps sinensis, an entomogenous fungus used in traditional Chinese medicine, exhibits very broad biological and pharmacologi-<lb/>cal actions in hepatic, renal, cardiovascular, and immunologic systems as well as anticancer activity. Pharmacological functions of<lb/> Cordyceps are primarily due to the bioactive polysaccharides, modified nucleosides, and cyclosporin-like metabolites produced by this<lb/> fungus and related species. The beneficial effects on renal and hepatic function and immunomodulation-related antitumor activities are<lb/> most promising and deserve great attention. Many previous studies used fruiting bodies, but recently an increasing number of studies have<lb/> used cultured mycelia in investigations. It is difficult to determine if the same bioactive ingredients exist in fruiting bodies and cultured<lb/> mycelia and contribute to the pharmacological actions reported in the literature. More mechanism-based, disease-oriented pharmacologi-<lb/>cal studies are required to ensure clinical efficacy for particular diseases. Adjuvant therapy using C. sinensis for immune function distur-<lb/>bances, cancer, and renal failure is possible if double-blind, randomized placebo-control clinical studies show the efficacy of this herb.<lb/></div>
+
+	<keyword>Key words: Cordyceps sinensis, anticancer activities, hepatic function, renal function, immunomodulation, polysaccharides, modified<lb/> nucleosides<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

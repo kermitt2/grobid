@@ -1,0 +1,59 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55006948"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>IMS based IPTV services -Architecture and<lb/> Implementation<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Eugen Mikoczy<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>T-Com, Slovak Telekom,a.s.<lb/> </affiliation>
+	</byline>
+
+	<address>Jarabinkova 1, 82109 Bratislava<lb/> Slovakia </address>
+
+	<phone>+421 5 5881 2286<lb/></phone>
+
+	<email>eugen.mikoczy@t-com.sk<lb/></email>
+
+	<byline>
+	<docAuthor>Dmitry Sivchenko,<lb/> Bangnan Xu<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>T-Systems ES GmbH,</affiliation>
+	</byline>
+
+	<address>Deutsche-<lb/>Telekom-Allee 7<lb/> 64295 Darmstadt, Germany<lb/> </address>
+
+	<phone>+49 6151 9372512<lb/></phone>
+
+	<email>d.sivchenko@city.ac.uk<lb/></email>
+
+	<byline>
+	<docAuthor>Veselin Rakocevic<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>City University London<lb/> </affiliation>
+	</byline>
+
+	<address>Northampton Square<lb/> London EC1V 0HB, UK<lb/> +44 20 70408136<lb/></address>
+
+	<email>v.rakocevic@city.ac.uk<lb/></email>
+
+	<div type="abstract">ABSTRACT<lb/> This paper presents a novel architecture for providing converged<lb/> IP-based TV (IPTV) services specified by ETSI TISPAN<lb/> standardisation for IPTV in ongoing NGN release 2<lb/> specifications. The described IPTV architecture is based on<lb/> utilisation of the IP Multimedia Subsystem concept used by NGN<lb/> architectural framework and its adaptation to provide the IPTV<lb/> specific functionalities and services. Using the foundation<lb/> provided by the IMS based architecture, we propose a new<lb/> functional architecture to enhance the functionalities and features<lb/> needed for scalable converged networks, flexible media delivery<lb/> and advanced IPTV service scenarios. The proposed architecture,<lb/> leveraging on the FMC architecture that operators may deploy to<lb/> provide IPTV service across different access networks in future<lb/> deployments (mobile, wireless, fixed) has prototypically been<lb/> implemented in the ScaleNet* demonstrator testbed. This paper<lb/> analyses in detail the main principles for such a converged<lb/> reference architecture. The paper also presents the IPTV service<lb/> scenario prototype called Click-to-Multimedia which shows some<lb/> basic features and advantages implemented on top of the<lb/> presented architecture by prototyping demo applications as proof<lb/> of concept reference.<lb/></div>
+
+	<keyword>Keywords<lb/> Next Generation Networks, Fixed-Mobile Convergence, IPTV<lb/> services, IP multimedia subsystem, Multimedia Delivery<lb/> Architecture.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

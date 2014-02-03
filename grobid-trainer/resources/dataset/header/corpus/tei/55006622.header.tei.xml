@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55006622"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">USB<lb/> y z x {<lb/> { {<lb/> :<lb/> Linux USB<lb/> : Linux<lb/></note>
+
+	<docTitle>
+	<titlePart>A Device Access Method over Network<lb/> by Extending USB Driver Stack of Linux<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>HIROFUCHI Takahiro y KAWAI Eiji z x NAKAMURA Yutaka {<lb/> FUJIKAWA Kazutoshi { SUNAHARA Hideki {<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Abstract:<lb/> The spread of high bandwidth network brings about the increasing number of network enabled<lb/> devices, which are directly attached to network or which are attached to network available computers. However<lb/> there is a big dierence between access methods to devices bey ond network and to devices directly attached<lb/> to local computers. Therefore users cannot access both kinds of devices by an unied method. To s o l v e t h i s<lb/> issue, we propose an extended access model for remote devices that preserves the device access semantics. In<lb/> our system, we extend USB driver stack o f L i n ux which is one of the most popular operating systems and design<lb/> device access method over network via the existing device le semantics. In this paper, we describe the design<lb/> of our system and a prototype implementation.<lb/></div>
+
+	<keyword>Keywords: Linux, device driver, remote device, Internet, USB</keyword>
+
+		</front>
+	</text>
+</tei>

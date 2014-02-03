@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007687"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Interrupt Resource Management Feature in the OpenSolaris OS<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Scott Carter,</docAuthor>
+	</byline>
+
+	<date>August 2009<lb/></date>
+
+		</front>
+	</text>
+</tei>

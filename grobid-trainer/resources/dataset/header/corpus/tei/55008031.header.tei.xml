@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008031"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>ACCELEROMETER VIBRATION ANALYSIS IN FINDING OUT<lb/> VELOCITIES OF PEN INPUT DEVICE<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Mikko Haukijärvi, Jukka Yrjänäinen<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Nokia Research Center<lb/></affiliation>
+	</byline>
+
+	<address>P.O.Box 100, FIN-33721 Tampere, FINLAND<lb/></address>
+
+	<phone>Tel. +358-3-272 51; Fax. +358-3-272 5322<lb/> </phone>
+	
+	<email>e-mail: {mikko.haukijarvi, jukka.yrjanainen}@nokia.com<lb/></email>
+
+	<div type="abstract">ABSTRACT<lb/> The pen input devices have become a popular input<lb/> method with personal digital assistants and<lb/> communication devices. The development of<lb/> microelectromechanical systems (MEMS) technology<lb/> has made it possible to put accelerometers –<lb/> acceleration sensors – inside the pen. The acceleration<lb/> information can be utilised in order to find out the<lb/> movements of the pen. This makes it possible to<lb/> manufacture pen input devices that do not need touch<lb/> sensitive surfaces. However, due to the complex<lb/> nature of the acceleration data, i.e. a mixture of<lb/> movement and gravity data, it is not easy to extract the<lb/> essential information. This paper presents an idea how<lb/> the acceleration data could be utilised in finding out<lb/> the instantaneous velocity of the pen tip. The idea is<lb/> based on the vibration caused by the friction between<lb/> the accelerometer pen and the textured surface, on<lb/> which the pen is drawn. The properties of the<lb/> vibration relate to the direction and the speed of the<lb/> pen movement.<lb/></div>
+
+		</front>
+	</text>
+</tei>

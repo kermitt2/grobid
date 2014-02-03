@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007230"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Industrial Materials for the Future<lb/></note>
+	
+	<note type="other">Managed by<lb/> </note>
+	
+	<byline>
+	<affiliation>UT-Battelle, LLC<lb/> </affiliation>
+	</byline>
+	
+	<docTitle>
+	<titlePart>Final Technical Report<lb/></titlePart>
+	</docTitle>
+
+	<docTitle> 
+	<titlePart>Improved Materials for High-Temperature<lb/> Black Liquor Gasification<lb/></titlePart>
+	</docTitle>
+
+	<date>June 2006<lb/></date>
+
+	<note type="other">Principal Investigators:<lb/></note>
+
+	<byline>
+	<docAuthor>James R. Keiser<lb/> James G. Hemrick<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Oak Ridge National Laboratory<lb/></affiliation>
+	</byline>
+
+	<byline>
+	<docAuthor>J. Peter Gorog<lb/> Ray Leary<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Weyerhaeuser Company<lb/></affiliation>
+	</byline>
+
+	<idno>ORNL/TM-2006/71</idno>
+
+		</front>
+	</text>
+</tei>

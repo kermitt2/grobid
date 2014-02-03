@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007490"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>7 th International Workshop on Langerhans Cells<lb/></titlePart>
+	</docTitle>
+
+	<address>Stresa, Italy<lb/></address>
+
+	<date>September 7±9, 2001<lb/></date>
+
+	<byline>
+	<note type="other">Organizing Committee<lb/> G. Girolomoni, C. Caux, C. Dezutter-Dambuyant, S. Lebecque, P. Ricciardi-Castagnoli<lb/> Scienti®c Committee<lb/> P. R. Bergstresser, L. R. Braathen, C. Caux, C. Dezutter-Dambuyant,<lb/> G. Girolomoni, R. D. Granstein, S. Lebecque, A. M. Mommaas,<lb/> P. Ricciardi-Castagnoli, G. Schuler, G. Stingl, K. Tamaki<lb/></note>
+	</byline>
+
+	<note type="other">The Organizing Committee gratefully acknowledges support from the following sponsors:<lb/> Gold sponsor<lb/> Schering-Plough Corp.<lb/> Silver sponsors<lb/> Invitrogen s.r.l<lb/> Miltenyi Biotec GmbH<lb/> Miltenyi Biotec s.r.l.<lb/> Schering S.p.A.<lb/> Serono International S.A.<lb/> Space Import Export s.r.l.<lb/> Bronze sponsors<lb/> Affymetrix Inc.<lb/> AP Cells SA<lb/> Avantgarde S.p.A.<lb/> Becton Dickinson Italia S.p.A.<lb/> Bibby Sterilin Italia s.r.l.<lb/> Chiron S.p.A.<lb/> DBA Italia s.r.l.<lb/> Immuno-Designed Molecules (IDM)<lb/> Immunex Corp.<lb/> Leica Microsystems S.p.A.<lb/> Mipharm S.p.A.<lb/> Novartis Farma S.p.A.<lb/> PBI International S.p.A.<lb/> SIAL S.r.l.<lb/> UCB Pharma S.p.A.<lb/> Yamanouchi Pharma S.p.A.</note>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55006435"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>As. J. Food Ag-Ind. 2008, 1(03), 155-166<lb/></reference>
+
+	<docTitle>
+	<titlePart>Asian Journal of<lb/> Food and Agro-Industry<lb/></titlePart>
+	</docTitle>
+
+	<idno>ISSN 1906-3040<lb/></idno>
+
+	<note type="other">Available online at </note>
+	
+	<ptr type="web">www.ajofai.info<lb/> </ptr>
+	
+	<note type="other">Research Paper<lb/></note>
+
+	<docTitle>
+	<titlePart>Process improvement for Thai-style fried rice crackers<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Watinee Intharapongnuwat*, Kornpaka Arkanit, Wiwat Wangcharoen<lb/> and Pranee Warasawas<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Food Technology, Faculty of Engineering and Agro-Industry,<lb/> Maejo University,</affiliation>
+	</byline>
+
+	<address>Chiang Mai, Thailand.<lb/></address>
+
+	<note type="other">*Author to whom correspondence should be addressed,</note>
+
+	<email>email: watinee2002@hotmail.com<lb/></email>
+
+	<note type="other">This paper was originally presented at Food Innovation Asia 2007.<lb/> _______________________________________________________________________________<lb/></note>
+
+	<div type="abstract">Abstract: The quality of Thai-style fried rice crackers depends on the efficiency of the<lb/> production process, including molding, drying, moisture retention, type of frying oil,<lb/> frying temperature and frying time. Multiple molds were studied and it was found that<lb/> thickness of the mold affected the product quality and the time involved in molding. Using<lb/> a 2.5 cm diameter mold gave the best result at 0.5 cm thickness, while a 4.0 cm diameter<lb/> mold provided the best result at 0.8 cm thickness. Drying at 65°C with moisture content at<lb/> 10% gave the best result for crispiness, oil uptake and the least chemical change in the<lb/> frying oil. Frying temperatures and frying times showed that frying rice crackers with<lb/> palm olein oil at temperature 210°C for 30 seconds gave the most brightness, the least oil<lb/> uptake of the product and the least chemical change of frying oil. TBHQ (tert-Butyl<lb/> Hydroquinone), BHA (Butylated Hydroxyanisole) with BHT (Butylated Hydroxytoluene)<lb/> and Pandan leaves were used as antioxidants to decrease deterioration of the product and<lb/> frying oil. It was found that TBHQ provided the least product oxidation during storage of<lb/> 60 days as well as the least frying oil oxidation.<lb/></div>
+
+	<keyword>Keywords: food processing, TBHQ, antioxidants, oxidation, snacks, oil, frying<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

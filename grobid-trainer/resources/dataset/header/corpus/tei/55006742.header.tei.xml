@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55006742"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Object-oriented development of mobile phone<lb/> applications using J2ME<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Kent Larsson &amp; Kristian Yrjölä<lb/></docAuthor>
+	</byline>
+
+	<date>June 14, 2004<lb/></date>
+
+	<div type="abstract">Abstract<lb/> This report discusess object-oriented development of software which is<lb/> run in extremely limited environments, and how this affects the applica-<lb/>tion of the principles of good object-oritned design.<lb/> The report first gives an introduction to the Java 2 Micro Edition<lb/> (J2ME) environment in general with focus on development of applica-<lb/>tions for cellular phones using J2ME. Then a discussion about how the<lb/> various principles of objekt-oriented design are affected by the limitied<lb/> heap memory, storage memory and performance. Tips on optimizations<lb/> are given and discussed regarding those issues.<lb/></div>
+
+		</front>
+	</text>
+</tei>

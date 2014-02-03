@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55006384"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>EPOXY FORMULATIONS<lb/> USING JEFFAMINE® POLYETHERAMINES<lb/></titlePart>
+	</docTitle>
+
+	<date>April 27, 2005<lb/></date>
+
+	<note type="other">Authors:<lb/></note>
+
+	<byline>
+	<docAuthor>Bruce Burton<lb/> David Alexander<lb/> Howard Klein<lb/> Angela Garibay-Vasquez<lb/> Alan Pekarik<lb/> Chris Henkee<lb/></docAuthor>
+	</byline>
+
+		</front>
+	</text>
+</tei>

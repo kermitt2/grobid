@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008057"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Research Project: NEW METALWORKING FLUIDS FROM BIO-BASED MATERIALS<lb/> Location: National Center for Agricultural Utilization Research<lb/> </note>
+	
+	<docTitle>
+	<titlePart>Title: Adsorption Behavior of Epoxidized Fatty Esters Via Boundary Lubrication Coefficient of Friction<lb/> Measurements<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Authors Kurth, Todd<lb/> Sharma, Brajendra -</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>PENNSYLVANIA STATE UNIV<lb/> </affiliation>
+	</byline>
+	
+	<byline>
+	<docAuthor>DOLL, KENNETH<lb/> ERHAN, SEVIM<lb/></docAuthor>
+	</byline>
+	
+	<note type="submission">Submitted to: Chemical Engineering Communications<lb/> Publication Type: Peer Reviewed Journal<lb/> Publication Acceptance	Date: March 1, 2007<lb/> </note>
+	
+	<date type="publication">Publication Date: May 2, 2007<lb/></date>
+
+	<reference>Citation: Kurth, T.L., Sharma, B.K., Doll, K.M., Erhan, S.Z. 2007. Adsorption behavior of epoxidized fatty<lb/> esters via boundary lubrication coefficient of friction measurements. Chemical Engineering Communications.<lb/> 194:1065-1077.<lb/> </reference>
+
+	<div type="abstract">Interpretive Summary: Using friction measurements and theoretical modeling, a variety of modified and<lb/> un-modified bio-based materials have been compared and contrasted. Specifically epoxy methyl oleate (EMO)<lb/> and methyl oleate (MO), epoxy methyl linoleate (EMLO) and methyl linoleate (MLO), epoxy methyl linolenate<lb/> (EMLEN ) and methyl linolenate (MLEN)), epoxidized soybean oil (ESBO) and a commercial epoxidized<lb/> 2-ethylhexyl transesterified soybean oil (VF), as additives in hexadecane. A simple model was used to<lb/> determine the relative interaction energies of each compound with a steel surface. The order of interaction<lb/> energies was found to be: ESBO &gt; VF &gt; EMO greater than or equal to EMLO &gt; EMLEN and MLEN greater than<lb/> or equal to MLO &gt; MO. This ordering agrees with that obtained via a more complex theoretical treatment. The<lb/> relative data obtained allowed several conclusions to be drawn. The interactions of additive molecules with one<lb/> another contribute to the measured interaction with a surface. For the epoxidized materials, the additive-<lb/>additive interactions increase with epoxidation, but the observed interactions with the steel surface decrease.<lb/> For analogous unsaturated esters the opposite trends are observed. By comparing individual epoxidized<lb/> materials to the analogous unsaturated methyl esters, it is evident that there is decreasing benefit of<lb/> epoxidation with increasing degree of unsaturation. This new information has led to greater understanding of<lb/> additive-additive and additive-surface interactions at the molecular level. Such information will be useful in the<lb/> development of new products and applications for these and similar bio-based materials.<lb/> Technical Abstract: The frictional behaviors of a variety of fatty alkenyl esters and their corresponding fatty<lb/> epoxide esters (epoxy methyl oleate (EMO) and methyl oleate (MO), epoxy methyl linoleate (EMLO) and<lb/> methyl linoleate (MLO), epoxy methyl linolenate (EMLEN ) and methyl linolenate (MLEN)), epoxidized soybean<lb/> oil (ESBO) and a commercial epoxidized 2-ethylhexyl transesterified soybean oil (VF), as additives in<lb/> hexadecane have been examined in a boundary lubrication test regime using steel contacts. Langmuir critical<lb/> additive concentrations were determined which provide the following order of negative adsorption energies:<lb/> ESBO &gt; VF &gt; EMO greater than or equal to EMLO &gt; EMLEN and MLEN greater than or equal to MLO &gt; MO.<lb/> Thus, for the similar epoxidized materials the greater degree of epoxidation results in less negative calculated<lb/> total adsorption energies; this trend is reversed for the olefinic parent systems. This ordering agrees with that<lb/> obtained via a more complex unconstrained cooperative interaction adsorption model. Fits of the steady-state<lb/> Coefficient of Friction versus concentration data indicate an inverse relation of the obtained interaction<lb/> parameters with the primary adsorption energies. These results demonstrate the complexity of the adsorption<lb/> mechanism that is determined both by the adsorbate-adsorbent and adsorbate-adsorbate interactions. The<lb/> relative adsorption parameters suggest that for the epoxide materials studied, the intermolecular interactions<lb/> increase with increasing epoxidation, and the total adsorption energies become more negative; this is opposite<lb/> for the olefinic compounds studied.</div>
+
+		</front>
+	</text>
+</tei>

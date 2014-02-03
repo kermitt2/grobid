@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55006216"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Final Report of Johns Hopkins 2003 Summer Workshop on<lb/></note>
+
+	<docTitle>
+	<titlePart>Syntax for Statistical Machine Translation<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Franz Josef Och, Daniel Gildea, Sanjeev Khudanpur, Anoop<lb/> Sarkar, Kenji Yamada, Alex Fraser, Shankar Kumar, Libin<lb/> Shen, David Smith, Katherine Eng, Viren Jain, Zhen Jin,<lb/> Dragomir Radev<lb/></docAuthor>
+	</byline>
+
+	<note type="other">Team website:<lb/></note>
+
+	<ptr type="web">http://www.clsp.jhu.edu/ws03/groups/translate/<lb/></ptr>
+
+	<date>Revised Version: February 25, 2004</date>
+
+		</front>
+	</text>
+</tei>

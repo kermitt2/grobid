@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007440"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">1606<lb/></note>
+
+	<reference>J . Med. Chem. 1990, 33, 1606-1615<lb/></reference>
+
+	<div type="abstract">mg/kg, dissolved or suspended in 0.5% [(hydroxypropyl)-<lb/>methyl]cellulose in distilled water, 10 mL/kg. If a compound was<lb/> incompatible with this vehicle, an alternative vehicle was used.<lb/> Mean arterial pressures (MAP) and heart rates were recorded<lb/> for 10 s, every 5 min, with an electronic switching computer<lb/> system. Fifteen or 30 min averages were tabulated and reported<lb/> as percent changes from the 0.5-h average values just prior to<lb/> dosing. Compounds were evaluated a t each time period by<lb/> comparing the mean percent changes oberved for MAP with those<lb/> of a cumulative control group composed of all rats which received<lb/> the vehicle alone in previous runs. Values which fell outside the<lb/> range of the mean i 2SD were considered significantly different<lb/> from controls. The duration of action was the continuous length<lb/> of time during which test values were below or above those of the<lb/> historical controls. If the results in the two test rats were in-<lb/>consistent, one or two additional rats were used.<lb/> D. Diuretic Testing in the Rat. Male rats weighing 175-250<lb/> g were used. Water and food were withheld for 18 h prior to and<lb/> during the experiment. The rats were housed in metabolism cages,<lb/> two to a cage.<lb/> Eight rats each were dosed with the test compound or vehicle<lb/> alone. Compounds were administered iv, ip, or po at the indicated<lb/> dose in Tris buffer (pH 8.5,3.5 mL/kg). Each animal was given<lb/> a fluid load of 0.9% saline, 20 mL/kg, by gavage after the test<lb/> drug.<lb/> Urine was collected from each cage for 0-5-and 5-24-h post-<lb/>dosing. Volume (mL), Na+ (mequiv), and Kt (mequiv) per ki-</div>
+
+		</front>
+	</text>
+</tei>

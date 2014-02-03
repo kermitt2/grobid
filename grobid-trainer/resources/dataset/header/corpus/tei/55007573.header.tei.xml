@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007573"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Pulmonary perfusion and ventricular ejection imaging by frequency domain filtering of EIT<lb/> images<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">This article has been downloaded from IOPscience. Please scroll down to see the full text article.<lb/></note>
+
+	<reference>1992 Clin. Phys. Physiol. Meas. 13 191<lb/></reference>
+
+	<ptr type="web">(http://iopscience.iop.org/0143-0815/13/A/037)<lb/></ptr>
+
+	<note type="other">Download details:<lb/> IP Address: 145.64.134.245<lb/></note>
+	
+	<note type="other">The article was downloaded on 20/09/2011 at 10:26<lb/> Please note that terms and conditions apply.<lb/></note>
+	
+	<note type="other">View the table of contents for this issue, or go to the journal homepage for more<lb/> Home Search Collections Journals About Contact us My IOPscience</note>
+
+		</front>
+	</text>
+</tei>

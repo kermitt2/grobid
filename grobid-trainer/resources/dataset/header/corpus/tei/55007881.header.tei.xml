@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007881"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<affiliation>Cosmetics Innovations &amp; Technologies<lb/></affiliation>
+	</byline>
+
+	<address>6 rue Jules Pasdeloup @BULLET 28109 Dreux Cedex @BULLET<lb/> FRANCE<lb/></address>
+
+	<ptr type="web">www.creationscouleurs.com<lb/> </ptr>
+	
+	<email>info@creationscouleurs.com<lb/></email>
+
+	<phone>tel. +33 (0)2 37 42 18 34<lb/> fax +33 (0)2 37 46 87<lb/> 67<lb/></phone>
+
+	<idno>N° 1406-2/2010<lb/></idno>
+
+	<note type="submission">Issue date: 06/2010<lb/></note>
+
+	<docTitle>
+	<titlePart>″Stradivarius″ Foundation (colour)<lb/></titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

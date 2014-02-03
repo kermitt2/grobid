@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007991"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">244<lb/></note>
+
+	<reference>HYBRIDOMA AND HYBRIDOMICS<lb/> Volume 23, Number 4, 2004<lb/></reference>
+
+	<note type="copyright">© Mary Ann Liebert, Inc.<lb/></note>
+
+	<docTitle>
+	<titlePart>Development of Single-Domain Recombinant Antibodies to<lb/> Reverse Transcriptase Domain of Human hTERT<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>MINYAN HUANG, BO ZHANG, JUNMEI WANG, FANG MEI, and LIN HOU<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">ABSTRACT<lb/> This paper describes the development of single-domain recombinant antibodies against human telomerase<lb/> core protein. A His-tagged hTERT spanning main reverse-transcriptase domain of hTERT was purified from<lb/> host E. coli and used to immunize BALB/c mice. The VHs (heavy chain variable region genes) were ampli-<lb/>fied by PCR from total RNA of splenocytes and further induced random mutagenesis by DNA shuffling to<lb/> enrich the repertoire of VH library. All VHs were cloned into phagemid vectors and displayed to generate<lb/> 4 ؋ 10 10 phage libraries. The candidates carrying VH domains against hTERT were primarily screened<lb/> through three times of panning procedure on His-tagged hTERT coated microplates, and specific antibodies<lb/> were further selected by West-Western blot. Two clones, designated as a3 and b8, were confirmed to inter-<lb/>act with the target in the solid-phase assay. DNA sequencing proved their mouse VH origin. The purified sin-<lb/>gle-domain antibody of b8 could not only recognize native hTERT, but also neutralize human telomerase ac-<lb/>tivity on inhibitory assay and b8 showed the stronger suppressive efficacy compared with a3. The data<lb/> demonstrated that the developed single-domain recombinant antibodies were hTERT-specific with high po-<lb/>tential of binding and activity inhibition.<lb/></div>
+
+		</front>
+	</text>
+</tei>

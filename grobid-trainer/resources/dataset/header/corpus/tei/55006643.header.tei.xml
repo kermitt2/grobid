@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55006643"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Telefonica Research at TRECVID 2010<lb/> Content-Based Copy Detection<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Ehsan Younessian 1 , Xavier Anguera 2 Tomasz Adamek 2 , Nuria Oliver 2 and David Marimon 2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 School of Computer Engineering,<lb/> Nanyang Technology Univ.,</affiliation>
+	</byline>
+
+	<address>Singapore, Singapore<lb/></address>
+
+	<byline>
+	<affiliation>2 Telefonica Research,<lb/></affiliation>
+	</byline>
+
+	<address>Via Augusta 177, 08027, Barcelona, Spain<lb/></address>
+
+	<email>1 ehsa0001@e.ntu.edu.sg,{xanguera, tomasz}@tid.es<lb/></email>
+
+	<div type="abstract">Abstract—This notebook paper presents the participation of<lb/> Telefonica Research in the task of Video Copy Detection in<lb/> TRECVID 2010. This is our second participation and, for this<lb/> year, we have developed two local-based monomodal systems<lb/> that we then combine using a score-based fusion to obtain a<lb/> multimodal system output. We submitted 4 runs in total, whose<lb/> main characteristics are described below:<lb/> @BULLET TID.m.[BALANCED/NOFA].fusion: These correspond to<lb/> our main submission, both for the no false alarm and<lb/> balanced profiles. They are based on the fusion between<lb/> the local audio and local video monomodal systems.<lb/> @BULLET TID.m.BALANCED.videoonly: This submission is based<lb/> on the monomodal video-based system using DART local<lb/> features and with a temporal consistency postprocessing.<lb/> @BULLET TID.m.BALANCED.audioonly: This submission is based on<lb/> the monomodal audio-based system using frequency-based<lb/> audio local features.<lb/> From these four systems submitted, two of them are processing<lb/> only monomodal information (audio or video) and the fusion<lb/> system takes the output of the previous two to output a fused<lb/> result. Results for the monomodal systems in terms of NDCR are<lb/> far from optimal, mainly due to an exces of false alarms that<lb/> our monomodal systems still output. Results for F1 scores are<lb/> very good for all cases. When combining the monomodal systems<lb/> into he fusion the NDCR scores improve quite a bit as most false<lb/> alarms are eliminated.<lb/> The proposed fusion turned out to work very well for com-<lb/>bining our two monomodal systems. We will further investigate<lb/> it to improve it for future evaluations.<lb/></div>
+
+		</front>
+	</text>
+</tei>

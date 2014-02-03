@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007724"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>A Reconfigurable Diagnostic Infrastructure for SoCs<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Liang-Bi Chen, Chung-Fu Kao, Yi-Ting Lin, Chi-Hung Lin, Chien-Chou Wang, Wen-Chi Shiue,<lb/> and Ing-Jer Huang<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Computer Science and Engineering<lb/> National Sun Yat-Sen University<lb/></affiliation>
+	</byline>
+
+	<address>Kaohsiung, Taiwan, R.O.C.<lb/></address>
+
+	<email>E-mail: liangbi@eslab.cse.nsysu.edu.tw; ijhuang@cse,nsysu.edu.tw<lb/></email>
+
+	<div type="abstract">Abstract<lb/> Networks on chip (NoCs) are a scalable interconnect<lb/> solution for large-scale multiprocessor system on chips<lb/> (SoCs). However, little attention has been paid so far to<lb/> the debugging, testing and monitoring support for NoC-<lb/>based systems. This paper proposes a reconfigurable<lb/> diagnostic infrastructure for SoCs. The proposed<lb/> infrastructure consists of retargetable embedded in-<lb/>circuit emulator (ICE), embedded real-time tracer,<lb/> power measurement, on-chip network analyzer and on-<lb/>chip network protocol checker. The ratargetale<lb/> embedded ICE module is parameterized and can<lb/> integrate with different microprocessor. The embedded<lb/> real-time tracer compresses the external off-chip<lb/> storage in real-time. The power measurement module<lb/> that supports power measurement, analysis and<lb/> management is provided. The on-chip network analyzer<lb/> can be performed a cycle accurate or successive trace<lb/> collection in transaction level abstraction. The on-chip<lb/> network protocol checker monitors network protocol<lb/> violations.<lb/></div>
+
+		</front>
+	</text>
+</tei>

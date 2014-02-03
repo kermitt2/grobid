@@ -1,0 +1,119 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55006250"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="copyright">&#169; 2006 Wiley-VCH Verlag GmbH &amp; Co. KGaA, Weinheim<lb/></note>
+
+	<idno>10.1002/14356007.a06 399.pub2<lb/></idno>
+
+	<note type="other">Chlorine </note>
+	
+	<note type="page">1<lb/></note>
+
+	<docTitle>
+	<titlePart>Chlorine<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Peter Schmittinger,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>CREANOVA GmbH,</affiliation>
+	</byline>
+
+	<address>Werk Lülsdorf, Niederkassel, Federal Republic of Germany<lb/></address>
+
+	<note type="other">(Chap. 1, 2, 3, 4, 5, 9, 10, 11, 12, 13, 14 and 15)<lb/></note>
+
+	<byline>
+	<docAuthor>Thomas Florkiewicz,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>OxyTech Systems,</affiliation>
+	</byline>
+
+	<address>Chardon, Ohio, United States</address>
+
+	<note type="other">(Chap. 6 and 9)<lb/> </note>
+	
+	<byline>
+	<docAuthor>L. Calvert Curlin, </docAuthor>
+	</byline>
+	
+	<byline>
+	<affiliation>OxyTech Systems, </affiliation>
+	</byline>
+	
+	<address>Chardon, Ohio, United States </address>
+	
+	<note type="other">(Chap. 6 and 9)<lb/> </note>
+	
+	<byline>
+	<docAuthor>Benno uke, </docAuthor>
+	</byline>
+	
+	<byline>
+	<affiliation>Uhde, </affiliation>
+	</byline>
+	
+	<address>Dortmund, Federal Republic of Germany </address>
+	
+	<note type="other">(Chap. 7 and 9)<lb/></note>
+
+	<byline>
+	<docAuthor>Robert Scannell,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>DeNora Deutschland GmbH,</affiliation>
+	</byline>
+
+	<address>Rodenbach, Federal Republic of Germany</address>
+
+	<note type="other">(Chap. 8.1)<lb/></note>
+
+	<byline>
+	<docAuthor>Thomas Navin,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>OxyTech Systems Inc.,</affiliation>
+	</byline>
+
+	<address>Chardon, Ohio, United States</address>
+
+	<note type="other">(Chap. 8.2)<lb/></note>
+
+	<byline>
+		<docAuthor>Erich Zelfel, </docAuthor>
+	</byline>
+	
+	<byline>	
+	<affiliation>Infraserv, </affiliation>
+	</byline>
+	
+	<address>Knapsack, Federal Republic of Germany </address>
+	
+	<note type="other">(Chap. 12) </note>
+	
+	<byline>
+	<docAuthor>udiger Bartsch,</docAuthor>
+	</byline>
+	
+	<byline>
+	<affiliation>Technische Universität München,</affiliation>
+	</byline> 
+
+	<address>München, Federal Republic of Germany</address>
+
+	<note type="other">(Chap. 16)<lb/></note>
+
+		</front>
+	</text>
+</tei>

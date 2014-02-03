@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008237"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Doc# OMA-POC-POCv2-2006-0125-AD-NW-PoC-Box-function.doc<lb/> </note>
+	
+	<docTitle>
+	<titlePart>Change Request<lb/></titlePart>
+	</docTitle>
+	
+	<note type="other">USE OF THIS DOCUMENT BY NON-OMA MEMBERS IS SUBJECT TO ALL OF THE TERMS AND CONDITIONS OF THE USE<lb/> AGREEMENT (located at </note>
+	
+	<ptr type="web">http://www.openmobilealliance.org/UseAgreement.html) </ptr>
+	
+	<note type="other">AND IF YOU HAVE NOT AGREED TO THE TERMS OF<lb/> THE USE AGREEMENT, YOU DO NOT HAVE THE RIGHT TO USE, COPY OR DISTRIBUTE THIS DOCUMENT.<lb/> THIS DOCUMENT IS PROVIDED ON AN &quot;AS IS&quot; &quot;AS AVAILABLE&quot; AND &quot;WITH ALL FAULTS&quot; BASIS.<lb/></note>
+
+	<note type="copyright">© 2005 Open Mobile Alliance Ltd. All Rights Reserved.<lb/></note>
+
+	<note type="page">Page 1 (of 5)<lb/></note>
+
+		</front>
+	</text>
+</tei>

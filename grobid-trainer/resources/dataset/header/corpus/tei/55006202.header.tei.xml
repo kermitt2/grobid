@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55006202"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>CONDENSED DERIVATIVES OF BENZAZOLES.<lb/> I. SYNTHESIS OF 6-AND 5-SUBSTITUTED BENZIMIDAZO[2,I-b]QUINAZOLIN-12-ONES<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>I. I. Popov, S. L. Boroshko,<lb/> B. A. Terror, S. P, Makarov,<lb/> A. M. Simonov, and B.~Ya. Simkln<lb/></docAuthor>
+	</byline>
+
+		</front>
+	</text>
+</tei>

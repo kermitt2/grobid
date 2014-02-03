@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55006195"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Neuzeitliche Technologie der Fette und Fettprodukte LVII :<lb/> Die Zerkleinerung der Rohstoffe<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Von Prof. Dr. Dr. h. c. H. P. K a u f m a n n</docAuthor><lb/>
+	</byline>
+
+	<note>Unter Mitarbeit von</note>
+
+	<byline>
+	<docAuthor>  Dr. J. G. T h i e m e<lb/> </docAuthor>
+	</byline>
+	
+	<byline>
+	<affiliation>Aus d e m Deutschen Institiit f u r Fettforschung, </affiliation>
+	</byline> 
+		
+	<address>Munster (Westf.)<lb/></address>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55006792"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Künstliche Hand auf der Basis Flexibler Fluidaktoren<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>S. Schulz, A. Ebersoldt, A. Kargov, R. Oberle, C. Pylatiuk<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institut für Angewandte Informatik, Forschungszentrum Karlsruhe GmbH<lb/></affiliation>
+	</byline>
+
+	<div type="abstract">Zusammenfassung<lb/> In diesem Artikel wird ein neuer Lösungsansatz für den Aufbau<lb/> einer antropomorphen Hand (Bild 1) auf der Basis fluidisch be-<lb/>triebener Aktoren vorgestellt. Das Handsystem wird im Rahmen<lb/> des Sonderforschungsbereichs (SFB) 588 &quot;Humanoide Ro-<lb/>boter– lernende und kooperierende Systeme&quot; entwickelt. Die<lb/> Forschungsarbeiten sollen es gestatten, das bislang noch un-<lb/>gelöste Problem einer zugleich dynamischen, kraftvollen und<lb/> hoch beweglichen Hand zu lösen, die nicht größer und schwerer<lb/> ist als ihr menschliches Vorbild. Vorgestellt wird eine<lb/> hydraulisch arbeitende Fünf-Finger-Hand von der Größe und<lb/> dem Gewicht einer menschlichen Hand, die über 255 Handstell-<lb/>ungen einnehmen kann, deren Greifkraft je Finger ca. 6-7N be-<lb/>trägt und eine Griffgeschwindigkeit von ca. 10cm/s erreicht. Die<lb/> Ansteuerung der in der Hand vollständig integrierten Steuerung<lb/> kann mit einem konventionellen PC oder einem PDA über eine<lb/> RS232-Schnittstelle oder Bluetooth erfolgen.<lb/></div>
+
+	<note type="other">Bild 1: Künstliche Hand auf der<lb/> Basis flexibler Fluidaktoren<lb/></note>
+
+		</front>
+	</text>
+</tei>
