@@ -311,8 +311,8 @@ public class Consolidation {
             }
             if (xml == null) {
                 String subpath = String.format(TITLE_BASE_QUERY, GrobidProperties.getInstance().getCrossrefId(), GrobidProperties.getInstance().getCrossrefPw(),
-                        URLEncoder.encode(title),
-                        URLEncoder.encode(aut));
+                        URLEncoder.encode(title, "UTF-8"),
+                        URLEncoder.encode(aut, "UTF-8"));
                 URL url = new URL("http://" + GrobidProperties.getInstance().getCrossrefHost() + "/" + subpath);
 
                 System.out.println("Sending: " + url.toString());
@@ -405,8 +405,8 @@ public class Consolidation {
                urlmsg += "||KEY|";*/
 
             String subpath = String.format(JOURNAL_BASE_QUERY, GrobidProperties.getInstance().getCrossrefId(), GrobidProperties.getInstance().getCrossrefPw(),
-                    URLEncoder.encode(bib.getJournal()),
-                    URLEncoder.encode(bib.getVolume()), firstPage);
+                    URLEncoder.encode(bib.getJournal(), "UTF-8"),
+                    URLEncoder.encode(bib.getVolume(), "UTF-8"), firstPage);
             URL url = new URL("http://" + GrobidProperties.getInstance().getCrossrefHost() + "/" + subpath);
             String urlmsg = url.toString();
             System.out.println(urlmsg);
