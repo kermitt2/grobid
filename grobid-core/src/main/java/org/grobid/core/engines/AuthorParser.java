@@ -1,5 +1,6 @@
 package org.grobid.core.engines;
 
+import org.chasen.crfpp.Model;
 import org.chasen.crfpp.Tagger;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.data.Person;
@@ -12,22 +13,24 @@ import org.slf4j.LoggerFactory;
 import java.io.Closeable;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.StringTokenizer;
-import java.util.Timer;
 
 /**
  * @author Patrice Lopez
  */
 public class AuthorParser implements Closeable {
 	private static Logger LOGGER = LoggerFactory.getLogger(AuthorParser.class);
-    private Tagger taggerHeader = null;
-    private Tagger taggerCitation = null;
+    private final Model namesHeaderModel;
+    private final Model namesCitationModel;
+//    private Tagger taggerHeader = null;
+//    private Tagger taggerCitation = null;
 
     public AuthorParser() {
-    	taggerHeader = AbstractParser.createTagger(GrobidModels.NAMES_HEADER);
-        taggerCitation = AbstractParser.createTagger(GrobidModels.NAMES_CITATION);
+        namesHeaderModel = ModelMap.getModel(GrobidModels.NAMES_HEADER);
+        namesCitationModel = ModelMap.getModel(GrobidModels.NAMES_CITATION);
+//    	taggerHeader = AbstractParser.createTagger(GrobidModels.NAMES_HEADER);
+//        taggerCitation = AbstractParser.createTagger(GrobidModels.NAMES_CITATION);
     }
 
     /**
@@ -71,7 +74,8 @@ public class AuthorParser implements Closeable {
 
             String header = FeaturesVectorName.addFeaturesName(authorBlocks);
             // clear internal context
-            Tagger tagger = head ? taggerHeader : taggerCitation;
+//            Tagger tagger = head ? taggerHeader : taggerCitation;
+            Tagger tagger = head ? namesHeaderModel.createTagger() : namesCitationModel.createTagger();
 
             StringTokenizer st = new StringTokenizer(header, "\n");
             AbstractParser.feedTaggerAndParse(tagger, st);
@@ -97,6 +101,8 @@ public class AuthorParser implements Closeable {
                 }
                 System.out.print("\n");*/
             }
+
+            tagger.delete();
 
             // extract results from the processed file
             StringTokenizer st2 = new StringTokenizer(res.toString(), "\n");
@@ -408,8 +414,8 @@ public class AuthorParser implements Closeable {
 
             String header = FeaturesVectorName.addFeaturesName(authorBlocks);
             // clear internal context
-            Tagger tagger = head ? taggerHeader : taggerCitation;
-
+//            Tagger tagger = head ? taggerHeader : taggerCitation;
+            Tagger tagger = head ? namesHeaderModel.createTagger() : namesCitationModel.createTagger();
 
             StringTokenizer st = new StringTokenizer(header, "\n");
             AbstractParser.feedTaggerAndParse(tagger, st);
@@ -424,6 +430,7 @@ public class AuthorParser implements Closeable {
                 res.append(tagger.y2(i));
                 res.append("\n");
             }
+            tagger.delete();
 
             // extract results from the processed file
             StringTokenizer st2 = new StringTokenizer(res.toString(), "\n");
@@ -702,11 +709,11 @@ public class AuthorParser implements Closeable {
 
     @Override
     public void close() throws IOException {
-    	taggerHeader.clear();
-        taggerCitation.clear();
-        taggerHeader.delete();
-        taggerCitation.delete();
-        taggerHeader = null;
-        taggerCitation = null;
+//    	taggerHeader.clear();
+//        taggerCitation.clear();
+//        taggerHeader.delete();
+//        taggerCitation.delete();
+//        taggerHeader = null;
+//        taggerCitation = null;
     }
 }

@@ -1,5 +1,6 @@
 package org.grobid.core.engines;
 
+import org.chasen.crfpp.Tagger;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.data.Date;
 import org.grobid.core.exceptions.GrobidException;
@@ -47,26 +48,11 @@ public class DateParser extends AbstractParser {
 
             // add context
             st = new StringTokenizer(headerDate, "\n");
-
-            feedTaggerAndParse(st);
-
-
-            StringBuilder res = new StringBuilder();
-            for (int i = 0; i < tagger.size(); i++) {
-                for (int j = 0; j < tagger.xsize(); j++) {
-                    //System.out.print(taggerHeader.x(i, j) + "\t");
-                    res.append(tagger.x(i, j)).append("\t");
-                }
-
-                res.append("<date>" + "\t");
-                res.append(tagger.y2(i));
-                res.append("\n");
-            }
-
+            String res = getTaggerResult(st, "<date>");
             // extract results from the processed file
 
             //System.out.print(res.toString());
-            StringTokenizer st2 = new StringTokenizer(res.toString(), "\n");
+            StringTokenizer st2 = new StringTokenizer(res, "\n");
             String lastTag = null;
             org.grobid.core.data.Date date = new Date();
             int lineCount = 0;
@@ -333,24 +319,12 @@ public class DateParser extends AbstractParser {
             String headerDate = FeaturesVectorDate.addFeaturesDate(dateBlocks);
             // clear internal context
             StringTokenizer st = new StringTokenizer(headerDate, "\n");
-            feedTaggerAndParse(st);
-
-            StringBuilder res = new StringBuilder();
-            for (int i = 0; i < tagger.size(); i++) {
-                for (int j = 0; j < tagger.xsize(); j++) {
-                    //System.out.print(taggerHeader.x(i, j) + "\t");
-                    res.append(tagger.x(i, j)).append("\t");
-                }
-
-                res.append("<date>" + "\t");
-                res.append(tagger.y2(i));
-                res.append("\n");
-            }
+            String res = getTaggerResult(st, "<date>");
 
             // extract results from the processed file
 
             //System.out.print(res.toString());
-            StringTokenizer st2 = new StringTokenizer(res.toString(), "\n");
+            StringTokenizer st2 = new StringTokenizer(res, "\n");
             String lastTag = null;
             boolean tagClosed = false;
             int q = 0;
