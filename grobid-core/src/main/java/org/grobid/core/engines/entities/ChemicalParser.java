@@ -70,20 +70,8 @@ public class ChemicalParser extends AbstractParser {
     }
 
     public String taggerRun(String ress) throws Exception {
-
         StringTokenizer st = new StringTokenizer(ress, "\n");
-        feedTaggerAndParse(st);
-
-        StringBuilder res = new StringBuilder();
-        for (int i = 0; i < tagger.size(); i++) {
-            for (int j = 0; j < tagger.xsize(); j++) {
-                res.append(tagger.x(i, j)).append("\t");
-            }
-            res.append(tagger.y2(i));
-            res.append("\n");
-        }
-
-        return res.toString();
+        return getTaggerResult(st);
     }
 
     /**

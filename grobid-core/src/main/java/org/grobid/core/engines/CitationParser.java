@@ -9,6 +9,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.apache.commons.lang3.StringUtils;
+import org.chasen.crfpp.Tagger;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.BiblioItem;
@@ -43,18 +44,7 @@ public class CitationParser extends AbstractParser {
 	public String taggerRun(String ress) throws Exception {
 		// clear internal context
 		StringTokenizer st = new StringTokenizer(ress, "\n");
-		feedTaggerAndParse(st);
-
-		StringBuilder res = new StringBuilder();
-		for (int i = 0; i < tagger.size(); i++) {
-			for (int j = 0; j < tagger.xsize(); j++) {
-				res.append(tagger.x(i, j)).append("\t");
-			}
-			res.append(tagger.y2(i));
-			res.append("\n");
-		}
-
-		return res.toString();
+        return getTaggerResult(st);
 	}
 
 	public BiblioItem processing(String input, boolean consolidate) {
