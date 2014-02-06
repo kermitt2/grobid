@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004861"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="copyright">© 2009 Microchip Technology Inc.<lb/></note>
+
+	<note type="other">DS22076D<lb/></note>
+
+	<docTitle>
+	<titlePart>UNI/O<lb/> ®<lb/> Bus Specification<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">DS22076D-</note>
+
+	<note type="page">page 2<lb/></note>
+
+	<note type="copyright">© 2009 Microchip Technology Inc.<lb/></note>
+
+		</front>
+	</text>
+</tei>

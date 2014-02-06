@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007930"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Linux System Call Table<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">The following table lists the system calls for the Linux 2.2 kernel. It could also be thought of as an API for the interface between<lb/> user space and kernel space. My motivation for making this table was to make programming in assembly language easier when<lb/> using only system calls and not the C library (for more information on this topic, go to http://www.linuxassembly.org). On the left<lb/> are the numbers of the system calls. This number will be put in register %eax. On the right of the table are the types of values to be<lb/> put into the remaining registers before calling the software interrupt &apos;int 0x80&apos;. After each syscall, an integer is returned in %eax.<lb/></div>
+
+		</front>
+	</text>
+</tei>

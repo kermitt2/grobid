@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005661"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	
+	<note>Dieses Buch ist erhältlich im Verlag Dr. Hut, München, </note>
+	
+	<ptr>www.dr.hut-verlag.de </ptr>
+	
+	<idno type="isbn">(ISBN 3-89963-040-8)<lb/></idno>
+
+	<docTitle>
+	<titlePart>Trocknung und Stabilisierung von Proteinen<lb/> mittels Warmlufttrocknung und<lb/> Applikation von Mikrotropfen<lb/> </titlePart>
+	</docTitle>
+	
+	<note type="degree">Dissertation<lb/> zur Erlangung des Doktorgrades der<lb/></note>
+	
+	<byline>
+	<affiliation>Fakultät für Chemie und Pharmazie der<lb/> Ludwig-Maximilians-Universität München<lb/></affiliation>
+	</byline>
+
+	<note type="other">vorgelegt von<lb/></note>
+
+		</front>
+	</text>
+</tei>

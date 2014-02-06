@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">Zentrum der Pharmakologie</orgName>,
+							<orgName type="department">Klinikum</orgName> 
+							der
+							<orgName type="institution">Johann Wolfgang Goethe-Universita$ t</orgName>
+							<address>								
+								<addrLine>Theodor-Stern-Kai 7</addrLine>,
+								<postCode>D-60590</postCode>
+								<settlement>Frankfurt am Main</settlement>,
+								<country>Germany</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

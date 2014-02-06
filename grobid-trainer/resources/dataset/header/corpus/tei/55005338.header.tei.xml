@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005338"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Technical Article<lb/> Flexible Flash Solution for Every Job<lb/> </note>
+
+	<note type="page">1/8<lb/></note>
+
+	<docTitle>
+	<titlePart>Flexible Flash Solution for Every Job<lb/></titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

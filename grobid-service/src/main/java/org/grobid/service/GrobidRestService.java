@@ -40,6 +40,7 @@ import org.grobid.service.process.GrobidRestProcessFiles;
 import org.grobid.service.process.GrobidRestProcessGeneric;
 import org.grobid.service.process.GrobidRestProcessString;
 import org.grobid.service.util.GrobidServiceProperties;
+import org.grobid.service.util.ZipUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -280,6 +281,9 @@ public class GrobidRestService implements GrobidPathes {
 		if ( (consolidate != null) && (consolidate.equals("1")) ) {
 			consol = true;
 		}
+		
+		pInputStream = ZipUtils.decompressStream(pInputStream);
+		
 		return GrobidRestProcessFiles.processCitationPatentST36(pInputStream, consol);
 	}
 	

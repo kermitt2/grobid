@@ -1,5 +1,6 @@
 package org.grobid.core.engines;
 
+import org.chasen.crfpp.Tagger;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.BiblioItem;
@@ -146,19 +147,7 @@ public class FullTextParser extends AbstractParser {
             String fulltext = doc.getFulltextFeatured(true, true);
 
             StringTokenizer st = new StringTokenizer(fulltext, "\n");
-            feedTaggerAndParse(st);
-
-            StringBuilder res = new StringBuilder();
-            for (int i = 0; i < tagger.size(); i++) {
-                for (int j = 0; j < tagger.xsize(); j++) {
-                    res.append(tagger.x(i, j)).append("\t");
-                }
-                res.append(tagger.y2(i));
-                res.append("\n");
-            }
-
-            // buffer for the fulltext block
-            String rese = res.toString();
+            String rese = getTaggerResult(st);
 
             // set the different sections of the Document object
             doc = BasicStructureBuilder.resultSegmentation(doc, rese, tokenizations);
@@ -269,19 +258,7 @@ public class FullTextParser extends AbstractParser {
             writer.close();
 
             StringTokenizer st = new StringTokenizer(fulltext, "\n");
-            feedTaggerAndParse(st);
-
-            StringBuilder res = new StringBuilder();
-            for (int i = 0; i < tagger.size(); i++) {
-                for (int j = 0; j < tagger.xsize(); j++) {
-                    res.append(tagger.x(i, j)).append("\t");
-                }
-                res.append(tagger.y2(i));
-                res.append("\n");
-            }
-
-            // buffer for the fulltext block
-            String rese = res.toString();
+            String rese = getTaggerResult(st);
             StringBuffer bufferFulltext = trainingExtraction(rese, tokenizations);
 
             // write the TEI file to reflect the extract layout of the text as extracted from the pdf

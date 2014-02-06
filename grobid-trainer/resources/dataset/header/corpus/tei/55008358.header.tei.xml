@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008358"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">ANIMAL FEED<lb/> SCIENCE AND<lb/> TECHNOLOGY<lb/> ELSEVIER </note>
+
+	<reference>Animal Feed Science and Technology 46 (1994) 239-250<lb/></reference>
+
+	<docTitle>
+	<titlePart>Dehulled protein-rich rapeseed meal as a protein<lb/> source for early weaned piglets<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>V. Danielsen a, B.O. Eggum a, S. Krogh Jensen *&apos;a, H. Sorensen b<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>aNational Institute of Animal Science, Research Centre</affiliation>
+	</byline>
+
+	<address>Foulum, DK-8830 Tjele, Denmark<lb/></address>
+
+	<byline>
+	<affiliation>bChemistry Department, Royal Veterinary and Agricultural University,</affiliation>
+	</byline>
+
+	<address>DK-18 71<lb/> Frederiksberg C, Denmark<lb/></address>
+
+	<note type="submission">(Received 13 November 1992; accepted 28 September 1993)<lb/></note>
+
+	<div type="abstract">Abstract<lb/> Dehulled protein-rich rapeseed meal (DPR-meal) was produced by aqueous enzymatic<lb/> extraction. Based on chemical analyses and balance experiments with piglets, the nutritive<lb/> value was determined. The dry matter of the DPR-meal contained 56% crude protein, 27%<lb/> HCl-fat, 12% carbohydrates, 5% ash and I gmol g-~ glucosinolates. Four diets containing<lb/> 0, 6, 12 and 18% DPR-meal were manufactured and tested in a balance trial as well as in<lb/> two production trials with 4-week-old weaned piglets. In the balance trial, 16 pigs were<lb/> reared in single cages and fed semi ad libitum. Each production trial was performed with<lb/> 80 pigs, reared in pairs and fed ad libitum. The period of treatment lasted 4 weeks. Substi-<lb/>tution of the highly digestible protein sources skim milk powder and fish meal with DPR-<lb/>meal caused decreased digestibility of protein and energy with increasing dietary levels of<lb/> DPR-meal. Deposited N and deposited N as a percentage of digested N were equal for the<lb/> four diets. In addition, no negative effects on protein utilisation from the glucosinolates<lb/> were observed. The decrease in digestibility of energy (r 2 = 0.91 ) and protein (r 2 = 0.90)<lb/> correlated well with the insoluble dietary fibre (IDF) content. In the first production trial<lb/> a significant decrease in voluntary feed intake and reduced growth rate (P~ 0.001 ) of the<lb/> pigs with increasing levels of DPR-meal was observed. In the second production trial, in<lb/> which flavouring (Flavodan SW-783) was added to the DPR-meal, the decrease in vol-<lb/>untary feed intake was almost halved and the growth rate was not significantly affected<lb/> (P~&gt; 0.05). In both production trials the feed to gain ratio was unaffected by the level of<lb/> DPR-meal in the diets.<lb/></div>
+
+	<note type="other">*Corresponding author.<lb/></note>
+
+	<note>0377-8401/94/$07.00</note>
+
+	<note type="copyright">© 1994 Elsevier Science B.V. All rights reserved<lb/></note>
+
+		</front>
+	</text>
+</tei>

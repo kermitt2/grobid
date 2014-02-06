@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007316"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Face Recognition in Mobile Phones<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Guillaume Dave, Xing Chao, Kishore Sriadibhatla<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Electrical Engineering<lb/> Stanford University<lb/></affiliation>
+	</byline>
+
+	<address>Stanford, USA<lb/></address>
+
+	<email>gdavo@stanford.edu, chaox@stanford.edu, kishores@stanford.edu<lb/></email>
+
+	<div type="abstract">Abstract—In this paper, we investigate various algorithms for<lb/> face recognition on mobile phones. First step in any face<lb/> recognition system is face detection. We investigated<lb/> algorithms like color segmentation, template matching etc. for<lb/> face detection, and Eigen &amp; Fisher face for face recognition.<lb/> The algorithms have been first profiled in MATLAB and then<lb/> implemented on the DROID phone. While implementing the<lb/> algorithms, we made a tradeoff between accuracy and<lb/> computational complexity of the algorithm mainly because we<lb/> are implementing the face recognition system on a mobile<lb/> phone with limited hardware capabilities.<lb/></div>
+
+	<keyword>Keywords-face recognition; face detection; mobile phones<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

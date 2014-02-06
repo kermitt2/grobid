@@ -1,0 +1,65 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007028"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">ZEISL et al.: LOCATION UNCERTAINTY FOR SCALE INVARIANT FEATURE POINTS<lb/> </note>
+
+	<note type="page">1<lb/></note>
+
+	<docTitle>
+	<titlePart>Estimation of Location Uncertainty for Scale<lb/> Invariant Feature Points<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Bernhard Zeisl<lb/></docAuthor>
+	</byline>
+
+	<note type="page">1<lb/></note>
+
+	<ptr type="web">http://campar.in.tum.de/Main/BernhardZeisl<lb/></ptr>
+
+	<byline>
+	<docAuthor>Pierre Fite Georgel<lb/> 1<lb/></docAuthor>
+	</byline>
+
+	<ptr type="web">http://campar.in.tum.de/Main/PierreGeorgel<lb/></ptr>
+
+	<byline>
+	<docAuthor>Florian Schweiger<lb/> 2<lb/></docAuthor>
+	</byline>
+
+	<ptr type="web">http://www.lmt.ei.tum.de/team/florian/<lb/> </ptr>
+	
+	<byline>
+	<docAuthor>Eckehard Steinbach<lb/> 2<lb/></docAuthor>
+	</byline>
+	
+	<ptr type="web">http://www.lmt.ei.tum.de/team/steinb/<lb/> </ptr>
+	
+	<byline>
+	<docAuthor>Nassir Navab<lb/> 1<lb/> </docAuthor>
+	</byline>
+	
+	<ptr type="web">http://campar.in.tum.de/Main/NassirNavab<lb/></ptr>
+
+	<byline>
+	<affiliation>1 Chair for Computer Aided Medical<lb/> Procedures &amp; Augmented Reality<lb/> Technische Universität München<lb/></affiliation>
+	</byline>
+
+	<address>Munich, GER<lb/></address>
+
+	<byline>
+	<affiliation>2 Institute for Media Technology<lb/> Technische Universität München,<lb/></affiliation>
+	</byline>
+
+	<address>Munich, GER<lb/></address>
+
+	<div type="abstract">Abstract<lb/> Image feature points are the basis for numerous computer vision tasks, such as pose<lb/> estimation or object detection. State of the art algorithms detect features that are invari-<lb/>ant to scale and orientation changes. While feature detectors and descriptors have been<lb/> widely studied in terms of stability and repeatability, their localisation error has often<lb/> been assumed to be uniform and insignificant.<lb/> We argue that this assumption does not hold for scale-invariant feature detectors and<lb/> demonstrate that the detection of features at different image scales actually has an influ-<lb/>ence on the localisation accuracy. A general framework to determine the uncertainty of<lb/> multi-scale image features is introduced. This uncertainty is represented via anisotropic<lb/> covariances with varying orientation and magnitude. We apply our framework to the<lb/> well-known SIFT and SURF algorithms, detail its implementation and make it avail-<lb/>able 1 . Finally, the usefulness of such covariance estimates for bundle adjustment and<lb/> homography computation is illustrated.<lb/></div>
+
+		</front>
+	</text>
+</tei>

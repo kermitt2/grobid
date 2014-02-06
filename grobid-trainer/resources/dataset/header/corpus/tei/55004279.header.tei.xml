@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004279"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Physical interaction between CDK9 and B-Myb results in suppression of<lb/> B-Myb gene autoregulation<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Giulia De Falco<lb/> 1,6<lb/> , Luigi Bagella<lb/> 1,6<lb/> , Pier Paolo Claudio<lb/> 1,2<lb/> , Antonio De Luca<lb/> 3<lb/> , Yan Fu<lb/> 1<lb/> , Bruno Calabretta<lb/> 4<lb/> , Arturo Sala<lb/> 5<lb/> and Antonio Giordano*<lb/> ,1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1<lb/> Department of Pathology, Anatomy &amp; Cell Biology, Jeerson Medical College of Thomas Jeerson University,</affiliation>
+	</byline>
+
+	<address>Philadelphia,<lb/> Pennsylvania, PA 19107, USA;<lb/></address>
+
+	<byline>
+	<affiliation>2<lb/> Department oScienze Odontostomatologiche e Maxillo Facciali&apos;, Universita&apos; di NapolìFederico<lb/> II&apos;,</affiliation>
+	</byline>
+
+	<address>via Pansini 5, Naples, Italy;<lb/></address>
+
+	<byline>
+	<affiliation>3<lb/> Laboratory for Cell Metabolism and Pharmacokinetics, Center for Experimental Research,<lb/></affiliation>
+	</byline>
+
+	<address>Regina Elena Institute, Via delle Messi d&apos;Oro 156, 00158 Rome, Italy;<lb/></address>
+
+	<byline>
+	<affiliation>4<lb/> Department of Microbiology, Kimmel Cancer Institute,<lb/> Jeerson Medical College of Thomas Jeerson University,</affiliation>
+	</byline>
+
+	<address>Philadelphia, Pennsylvania, PA 19107, USA;<lb/></address>
+
+	<byline>
+	<affiliation>5 Department of Molecular<lb/> Pharmacology and Pathology, Consorzio Mario Negri Sud,</affiliation>
+	</byline>
+
+	<address>66030 S. Mario Imbaro (CH), Italy<lb/></address>
+
+	<div type="abstract">B-Myb is a transcription factor belonging to the myb<lb/> family, whose activity has been associated with augmented<lb/> DNA synthesis and cell cycle progression. We showed<lb/> recently that B-Myb autoregulates its own expression<lb/> through promoter transactivation. We report in this study<lb/> that CDK9, the cyclin T associated kinase, which<lb/> phosphorylates and activates RNA-Polymerase II, sup-<lb/>presses B-Myb autoregulation through direct interaction<lb/> with the carboxyl-terminus of the B-Myb protein. Down-<lb/>regulation of the transactivating ability of B-Myb is<lb/> independent of the kinase activity of CDK9, because a<lb/> kinase de®cient mutant (dn-CDK9) also represses B-myb<lb/> gene autoregulation. Overexpression of CDK9 did not<lb/> result in suppression of p53-dependent transactivation or<lb/> inhibition of the basal activity of the promoters tested so<lb/> far, demonstrating that CDK9 is a B-Myb-speci®c<lb/> repressor. Rather, transfection of the dominant negative<lb/> dn-CDK9 construct inhibited the basal activity of the<lb/> reporter genes, con®rming an essential role for CDK9 in<lb/> gene transcription. In addition, Cyclin T1 restores B-Myb<lb/> transactivating activity when co-transfected along with<lb/> CDK9, suggesting that the down-regulatory eect<lb/> observed on B-Myb is speci®cally due to CDK9 alone.<lb/> Thus, our data suggest that CDK9 is involved in the<lb/> negative regulation of activated transcription mediated by<lb/> certain transcription factors, such as B-Myb. This may<lb/> indicate the existence of a feedback loop, mediated by the<lb/> dierent activities of CDK9, which links basal with<lb/> activated transcription. </div>
+	
+	<reference>Oncogene (2000) 19, 373 ± 379.<lb/></reference>
+
+	<keyword>Keywords: CDK9; B-Myb; oncogenes<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

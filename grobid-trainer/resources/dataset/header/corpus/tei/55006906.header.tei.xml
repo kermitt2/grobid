@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55006906"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>JOURNAL OF SURGICAL RESEARCH 62, 273–277 (1996)<lb/>	ARTICLE NO. 0207<lb/></reference>
+
+	<docTitle>
+	<titlePart>Peritoneal Interleukin-8 in Acute Appendicitis<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>ANNEKE M. ZEILLEMAKER, M.D.,<lb/> 1 ARTHUR A. G. M. HOYNCK VAN PAPENDRECHT, M.D., MARGREET H. L. HART,<lb/> DIRK ROOS, PH.D., HENRI A. VERBRUGH, M.D., AND PIET LEGUIT, M.D.<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Surgery, Diakonessen Hospital,</affiliation>
+	</byline>
+
+	<address>Utrecht, The Netherlands;</address>
+
+	<byline>
+	<affiliation>and Central Laboratory of The Netherlands Red Cross Blood<lb/> Transfusion Service and Laboratory of Experimental and Clinical Immunology, University of Amsterdam,</affiliation>
+	</byline>
+
+	<address>Amsterdam, The Netherlands<lb/></address>
+
+	<note type="submission">Submitted for publication August 15, 1995<lb/></note>
+
+	<div type="abstract">family of cytokines which are characterized with the<lb/> Interleukin-8 (IL-8) is a chemoattractant that is protein sequence Cys-X-Cys [4]. It is a chemoattractant<lb/> highly selective for neutrophils. This study was de-highly selective for PMN, compared with other chemo-<lb/>signed to investigate the presence of IL-8 in peritoneal tactic agonists. The effect of IL-8 on neutrophils is not<lb/> fluid of patients with acute appendicitis. The clinical restricted to the influx of PMN into inflamed tissue; at<lb/> circumstances underlying the secretion of IL-8 by high concentrations it can also activate PMN to degra-<lb/>mesothelium and its mechanism of activation have not nulate their intracellular stores [4], thereby promoting<lb/> been defined. In an in vitro model for bacterial perito-the inflammatory reaction.<lb/> nitis the role of bacteria in activating human mesothe-<lb/>In vitro experiments with cultured human mesothe-<lb/>lial cells to secrete IL-8 was studied. Cultured human lium have shown that IL-8 is secreted upon activation<lb/> mesothelium was incubated with various species of by interleukin-1b (IL-1b) or tumor necrosis factor-a<lb/> pathogenic bacteria, isolated from peritoneal exudate (TNF-a) [1–3]. This mesothelial cell-derived IL-8 may<lb/> fluids of patients with appendicitis. The amount of IL-<lb/>account for the high IL-8 concentration in peritoneal<lb/> 8 secreted by the cultured mesothelial cells was deter-<lb/>effluent fluid found during continuous ambulatory peri-<lb/>mined in an IL-8 ELISA, as IL-8 was present in the<lb/> toneal dialysis (CAPD)-related bacterial peritonitis [5].<lb/> original peritoneal fluid of these patients. Peritoneal<lb/> This study was designed to investigate the activation<lb/> fluids from patients with a perforated appendix were<lb/> mechanism of IL-8 secretion by the mesothelium dur-<lb/>found to contain a significantly higher concentration<lb/> ing bacterial peritonitis. We therefore studied the pres-<lb/>of IL-8 compared to peritoneal fluids from patients<lb/> ence of IL-8 in peritoneal fluid of patients with acute<lb/> with nonperforating appendicitis (121.6 (57.8) ng/ml<lb/> versus 0.2 (0.07) ng/ml, respectively; mean (SEM), P £ appendicitis. In an in vitro model for bacterial peritoni-<lb/>0.01). Species of Bacterodes and Fusobacterium necro-tis, the role of bacteria in activating cultured human<lb/> phorum induced IL-8 secretion from cultured mesothe-mesothelial cells to secrete IL-8, and its activating<lb/> lial monolayers to levels comparable to those found mechanism, was studied.<lb/> in peritoneal fluids in vivo. Heat-killed bacteria and<lb/> bacterial supernatant were also able to stimulate<lb/> METHODS mesothelium to secrete IL-8. The results suggest that<lb/> in the early phase of bacterial peritonitis the influx of<lb/> The study population comprised 23 patients with a histologically<lb/></div>
+
+		</front>
+	</text>
+</tei>

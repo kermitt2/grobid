@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>*</marker>
+							<orgName type="department">Vivendi Water Germany</orgName>,
+							<address>
+								<addrLine>Walter-Köhn-Str. 1a</addrLine>,
+								<postCode>04356</postCode>
+								<settlement>Leipzig</settlement>,
+								<country>Germany</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>* *</marker>
+							<address>
+								<addrLine>Carl-Ulrich Str. 39a</addrLine>,
+								<postCode>64297</postCode>
+								<settlement>Darmstadt</settlement>,
+								<country>Germany</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

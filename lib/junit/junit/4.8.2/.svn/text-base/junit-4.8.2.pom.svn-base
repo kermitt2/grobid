@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd ">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>junit</groupId>
+  <artifactId>junit</artifactId>
+  <version>4.8.2</version>
+  <packaging>jar</packaging>
+  <name>JUnit</name>
+  <url>http://junit.org</url>
+  <description>
+    JUnit is a regression testing framework. It is used by the developer who implements unit tests in Java.
+  </description>
+  <organization>
+    <name>JUnit</name>
+    <url>http://www.junit.org</url>
+  </organization>
+  <licenses>
+    <license>
+      <name>Common Public License Version 1.0</name>
+      <url>http://www.opensource.org/licenses/cpl1.0.txt</url>
+    </license>
+  </licenses>
+  <scm>
+    <url>http://github.com/KentBeck/junit</url>
+    <connection>scm:git:git://github.com/KentBeck/junit.git</connection>
+  </scm>
+  <dependencies>
+    <!-- this dependency is included in the jar, see MAVENUPLOAD-1651
+    <dependency>
+      <groupId>org.hamcrest</groupId>
+      <artifactId>hamcrest-core</artifactId>
+      <version>1.1</version>
+    </dependency>
+    -->
+  </dependencies>
+  <developers>
+    <developer>
+      <name>Erich Gamma</name>
+    </developer>
+    <developer>
+      <name>Kent Beck</name>
+    </developer>
+    <developer>
+      <name>David Saff</name>
+    </developer>
+  </developers>
+</project>

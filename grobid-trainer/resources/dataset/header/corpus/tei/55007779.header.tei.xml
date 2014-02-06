@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007779"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>BIOMASS PYROLYSIS<lb/> FOR CHEMICALS<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Paul de Wild</docAuthor>
+	</byline>
+
+		</front>
+	</text>
+</tei>

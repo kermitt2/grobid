@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55006403"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<reference>BIOPHARMACEUTICS &amp; DRUG DISPOSITION<lb/></reference>
+	</docTitle>
+
+	<reference>Biopharm. Drug Dispos. 19: 159 – 162 (1998)<lb/></reference>
+
+	<docTitle>
+	<titlePart>Dose-Proportional Pharmacokinetics of a New 5-Lipoxygenase<lb/> Inhibitor, ABT-761, in Healthy Volunteers<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Shekman L. Wong*, Jeffrey Drajesk, Min S. Chang, Galen Witt and Walid M. Awni<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Abbott Laboratories,</affiliation>
+	</byline>
+
+	<address>100 Abbott Park Road, Abbott Park, Abbott Park, IL 60064-3500, USA<lb/></address>
+
+	<div type="abstract">ABSTRACT: ABT-761, a new potent 5-lipoxygenase inhibitor, is under development for the treatment of<lb/> asthma. The pharmacokinetics and dose proportionality of ABT-761 after single doses (10 – 160 mg) of<lb/> ABT-761 in 24 healthy male volunteers were investigated in a double-blind, placebo-controlled study. The<lb/> compound was well tolerated, with no clinically significant effects on vital sign measurements, hemato-<lb/>logical parameters, clinical chemistry, urinalysis, or electrocardiogram. The plasma concentration– time<lb/> profile of ABT-761 indicates that the drug declines in a monoexponential fashion after moderately slow<lb/> absorption, with a t max value of approximately 4 h. The terminal elimination t 1/2 averaged 15 h, and was<lb/> dose independent. ABT-761 mean values of C max and AUC were linearly related to drug dose. ABT-761 is<lb/> well tolerated in healthy volunteers and the pharmacokinetics are linear in the single-dose range between<lb/> 10 and 160 mg.</div>
+
+	<note type="copyright">© 1998 John Wiley &amp; Sons, Ltd.<lb/></note>
+
+	<keyword>Key words: 5-lipoxygenase; pharmacokinetics; asthma<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

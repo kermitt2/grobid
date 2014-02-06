@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>REIKO</forename>
+								<surname>TANAKA</surname>,
+							<lb/>
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>ATSUSHI</forename>
+								<surname>YOSHIDA</surname> ,
+							<lb/>
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>TSUTOMU</forename>
+								<surname>MURAKAMI</surname> ,
+							<lb/>
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>EISHI</forename>
+								<surname>BABA</surname>,
+							<lb/>
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>JULLIANE</forename>
+								<surname>LICHTENFELD</surname> ,
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>TAKERU</forename>
+								<surname>OMORI</surname>,
+							<lb/>
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>TOHRU</forename>
+								<surname>KIMURA</surname>,
+							<lb/>
+								<marker>2</marker>
+							</persName>
+							<persName>
+								<forename>NAOMI</forename>
+								<surname>TSURUTANI</surname> ,
+							<lb/>
+								<marker>3</marker>
+							</persName>
+							<persName>
+								<forename>NOBUTAKA</forename>
+								<surname>FUJII</surname> ,
+							<lb/>
+								<marker>4</marker>
+							</persName>
+							<persName>
+								<forename>ZI -XUAN</forename>
+								<surname>WANG</surname> ,
+								<marker>5</marker>
+							</persName>
+							<persName>
+								<forename>STEPHEN</forename>
+								<middlename>C</middlename> .
+								<surname>PEIPER</surname>,
+							<lb/>
+								<marker>5</marker>
+							</persName>
+							<persName>
+								<forename>NAOKI</forename>
+								<surname>YAMAMOTO</surname> ,
+							<lb/>
+								<marker>3</marker>AND
+							</persName>
+							<persName>
+								<forename>YUETSU</forename>
+								<surname>TANAKA</surname>
+							<lb/>
+								<marker>1*</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

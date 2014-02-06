@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007096"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<date>2010<lb/> </date>
+	
+	<byline>
+	<affiliation>R e s e a R c h I n s t I t u t e o f M o l e c u l a R Pat h o lo g y<lb/></affiliation>
+	</byline>
+	
+	<address>V I E N N A BI O C E N T E R<lb/></address>
+	
+	<note type="other">IMP COVER 2010 AUSSENSEITEN<lb/></note>
+
+	<idno>cover_IMP-10.indd 1<lb/></idno>
+
+	<date>09.12.10 </date>
+	
+	<note type="other">10:08</note>
+
+		</front>
+	</text>
+</tei>

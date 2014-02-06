@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005332"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Signal Transduction<lb/> Host-Pathogen Interactions<lb/> Protein Networks/RNA Display<lb/> Macrophage Activation<lb/>
+	Software Tools<lb/> Microarrays Bacterial Pathogens<lb/> Animal Models<lb/> Classes Seminars<lb/> Workshops<lb/> PGA Project Summary<lb/> Research Centers<lb/> Faculty &amp; Staff<lb/> Publications<lb/> Terms and Conditions<lb/> Data Sharing and Usage<lb/> Animal Distribution<lb/> Quality Control<lb/> Citing Us<lb/> Search the Entire PGA<lb/></note>
+
+	<docTitle>
+	<titlePart>Oligonucleotide Probe Selection<lb/></titlePart>
+	</docTitle>
+
+	<div type="introduction">Despite the widespread use of oligonucleotide-based microarrays, the research community<lb/> has not yet implemented a set of standardized criteria by which oligonucleotide probes are<lb/> designed and used. While important measures have been taken to standardize the format<lb/> in which microarray data is reported, standardization of probe design would further<lb/> facilitate microarray data comparison. Because the development of oligonucleotide probes<lb/> has been driven by the commercial sector, only a few reported methods of probe design<lb/> and selection have been made publicly available. In an effort to provide an open-source<lb/> algorithm for oligonucleotide selection, the MGH Microarray Core has chosen to use an<lb/> oligonucleotide selection algorithm developed by Xiaowei Wang and Brian Seed from the<lb/> MGH Bioinformatics group of Parabiosys.<lb/> The algorithm, termed OligoPicker, applies a variety of simple filters to candidate<lb/> sequences derived from the open reading frame. Based upon the NCBI protein database<lb/> Genpept, corresponding DNA coding sequences are retrieved based on the coding<lb/> sequence (CDS) feature in the Genpept file. Redundant coding sequences are clustered<lb/> giving higher priority to RefSeq sequences (excluding RefSeq genes predicted from<lb/> genomic contig assembly process), orthologous sequences and longer coding sequences.<lb/> Each DNA coding sequence was aligned against all other sequences in the dataset using<lb/> BLAST. Sequences with at least 96% identity to the query sequence and with an alignment<lb/> equal to or greater than the query length were considered redundant and removed.<lb/> Additionally, probe sequences must minimally meet a defined Tm criteria of 74°C. Based<lb/> upon this criteria, a starting pool of 60,000 murine sequences was simplified to 20,030<lb/> gene clusters. Because cross-hybridization will occur between regions with contiguous or<lb/> perfectly matched bases, the primary filter rejects potential probes that contain ≥ 15<lb/> perfect base-matches with any other input sequence as demonstrated in Figure 1.<lb/> Click thumbnail at<lb/> right for larger image.</div>
+
+		</front>
+	</text>
+</tei>

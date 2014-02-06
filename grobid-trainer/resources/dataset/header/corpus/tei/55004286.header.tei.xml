@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004286"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>The Effect of Arachidonic acid on Lipid Metabolism<lb/> and Biofilm Formation of Two Closely Related Candida<lb/> species<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>by<lb/> Ruan Ells<lb/></docAuthor>
+	</byline>
+
+	<note type="degree">Submitted in accordance with the requirements for the degree<lb/> Magister Scientiae<lb/> In the<lb/> </note>
+	
+	<affiliation>Department of Microbial, Biochemical and Food Biotechnology<lb/> Faculty of Natural and Agricultural Sciences<lb/> University of the Free State<lb/> </affiliation>
+	
+	<address>Bloemfontein<lb/> South Africa<lb/> </address>
+	
+	<note type="other">Supervisor: Dr C.H. Pohl<lb/> Co-supervisor: Prof J.L.F. Kock<lb/></note>
+
+	<date>November 2008</date>
+
+		</front>
+	</text>
+</tei>

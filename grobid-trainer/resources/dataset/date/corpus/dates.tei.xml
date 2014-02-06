@@ -140,10 +140,10 @@
 	<date><month>January</month> <year>1997</year>  <lb/></date>
 	<date><month>October</month>, <year>1993</year>  <lb/></date>
 	<date><month>November</month> <day>27</day>, <year>1997</year>  <lb/></date>
-	<date><month>March</month>, <year>1996</year>  <lb/> (revised <month>May</month> <year>1996</year>)  <lb/></date>
+	<date><month>March</month>, <year>1996</year>  <lb/> </date> <date>(revised <month>May</month> <year>1996</year>)  <lb/></date>
 	<date><month>May</month> <day>16</day>, <year>1995</year>  <lb/></date>
 	<date><month>December</month> <day>21</day>, <year>1993</year>  <lb/></date>
-	<date> Received <month>September</month> <day>1</day>,<year>1 994</year>; Revised <month>July</month> <day>1 5</day>, <year>1 995</year>  <lb/></date>
+	<date> Received <month>September</month> <day>1</day>,<year>1 994</year>; </date> <date>Revised <month>July</month> <day>1 5</day>, <year>1 995</year>  <lb/></date>
 	<date><month>July</month> <day>22</day>, <year>1993</year>  <lb/></date>
 	<date><month>March</month> <year>1998</year>  <lb/></date>
 	<date><day>19</day> <month>November</month> <year>1 999</year></date>
@@ -164,7 +164,7 @@
 	<date><month>April</month>, <year>1997</year>  </date>
 	<date><month>March</month> <day>25</day>, <year>1997</year> </date>
 	<date><month>October</month> <year>1997</year> </date>
-	<date><month>March</month> <year>1995</year> (corrected Dec. <year>1995</year> and <month>March</month> <year>1998</year>) </date>
+	<date><month>March</month> <year>1995</year> </date> <date>(corrected Dec. <year>1995</year> and <month>March</month> <year>1998</year>) </date>
 	<date><month>August</month> <day>5</day>, <year>1996</year> </date>
 	<date><month>August</month> <day>4</day>, <year>1996</year> </date>
 	<date><month>October</month> <day>31</day>, <year>1994</year>  </date>
@@ -188,7 +188,7 @@
 	<date><month>August</month> <day>16</day>, <year>1993</year>  </date>
 	<date><month>October</month> <day>12</day>, <year>1993</year>  </date>
 	<date><month>April</month> <year>97</year>  <lb/></date>
-	<date><month>April</month> <year>1997</year>  <lb/> (Revised <month>August</month> <year>1997</year>)  <lb/></date>
+	<date><month>April</month> <year>1997</year>  <lb/> </date> <date> (Revised <month>August</month> <year>1997</year>)  <lb/></date>
 	<date><month>May</month>, <year>1997</year>  <lb/></date>
 	<date><month>May</month> <day>14</day>, <year>1996</year>  <lb/></date>
 	<date><month>March</month> <day>20</day>, <year>1998</year>  <lb/></date>

@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007457"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>arXiv:1001.3713v1 [cs.DS]</idno>
+
+	<date>21 Jan 2010<lb/></date>
+
+	<note type="page">1<lb/></note>
+
+	<docTitle>
+	<titlePart>On Fast Algorithm for Computing<lb/> Even-Length DCT<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Yuriy A. Reznik<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Abstract<lb/> We study recursive algorithm for computing DCT of lengths N = q 2<lb/> m (m, q ∈ N, q is odd) due<lb/> to C. W. Kok [16]. We show that this algorithm has the same multiplicative complexity as theoretically<lb/> achievable by the prime factor decomposition, when m 2. We also show that C. W. Kok&apos;s factorization<lb/> allows a simple conversion to a scaled form. We analyze complexity of such a scaled factorization,<lb/> and show that for some lengths it achieves lower multiplicative complexity than one of known prime<lb/> factor-based scaled transforms [14].<lb/></div>
+
+	<keyword>Index Terms<lb/> Discrete cosine transform, DCT, scaled transform, factorization, multiplicative complexity.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

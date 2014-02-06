@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55006432"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">245<lb/></note>
+
+	<docTitle>
+	<titlePart>COMPARATIVE CORROSION RESISTANCE OF Ru-AND Pd-MODIFIED C.P. TITANIUM<lb/> ALLOYS<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>R. W. Schutz<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>RMI Technical Center<lb/> RMI Titanium Company<lb/></affiliation>
+	</byline>
+
+	<address>1000 Warren Avenue<lb/> Niles, Ohio 44446 USA<lb/></address>
+
+	<phone>Phone: 1 (330) 544-7846<lb/> Fax: (330) 544-1002<lb/></phone>
+
+	<email>e-mail: rschutz@rmititanium.com<lb/></email>
+
+	<byline>
+	<docAuthor>R. L. Porter<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>RMI Technical Center<lb/> RMI Titanium Company<lb/></affiliation>
+	</byline>
+
+	<address>1000 Warren Avenue<lb/> Niles, Ohio 44446 USA<lb/></address>
+
+	<phone>Phone: 1 (330) 544-1145<lb/> Fax: (330) 544-1002<lb/></phone>
+
+	<email>e-mail: porterrlp@aol.com<lb/></email>
+
+	<div type="abstract">ABSTRACT<lb/> Laboratory corrosion testing was utilized to directly compare the reducing acid crevice, and anodic<lb/> pitting corrosion and hydrogen absorption resistance of six commercial Pd-and Ru-modified C.P.<lb/> titanium alloys as strip product. Although subtle differences in reducing acid resistance were observed,<lb/> no significant differences in crevice, pitting, and hydrogen resistance were revealed between these<lb/> alloys in wrought (base) metal form. Significant differentiation in alloy reducing acid resistance,<lb/> however, was noted in weld metal, such that Grade 13, 30, and 33 weldments were substantially less<lb/> resistant than corresponding base metal. Ti-Pd and Ti-Ru binary alloys (Grades 7, 16, 26) displayed<lb/> comparable base/weld corrosion performance. All these alloys represent potentially viable, lower cost<lb/> alternatives to the traditional Pd-rich Grade 7 titanium alloy for the vast majority of applications.<lb/></div>
+
+	<keyword>KEYWORDS<lb/> titanium alloys, Ti-Pd, Ti-Ru, corrosion testing, reducing acid crevice corrosion, anodic pitting,<lb/> hydrogen absorption resistance<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

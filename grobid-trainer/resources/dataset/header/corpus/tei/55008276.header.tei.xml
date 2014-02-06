@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008276"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="copyright">&#169; 2004 Open Mobile Alliance Ltd. All Rights Reserved.<lb/> </note>
+	
+	<note type="other">Used with the permission of the Open Mobile Alliance Ltd. under the terms as stated in this document.<lb/></note>
+
+	<docTitle>
+	<titlePart>Group Management Architecture<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Draft Version 1.0 –</note>
+
+	<date>11 Nov 2004<lb/></date>
+
+	<byline>
+	<affiliation>Open Mobile Alliance<lb/></affiliation>
+	</byline>
+
+	<idno>OMA-PAG-GM-AD-V1_0_0-20041111-D<lb/></idno>
+
+	<note type="other">Deleted: 02<lb/> Deleted: 02<lb/></note>
+
+	<idno>OMA-PAG-GM-AD-V1_0_0-20041111-D<lb/></idno>
+
+	<note type="page">Page 2 (27)<lb/></note>
+
+	<note type="copyright">&#169; 2004 Open Mobile Alliance Ltd. All Rights Reserved.<lb/> Used with the permission of the Open Mobile Alliance Ltd. under the terms as stated in this document.<lb/></note>
+
+		</front>
+	</text>
+</tei>

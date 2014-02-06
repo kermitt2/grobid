@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005718"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>BioFactors 32 (2008) 237–243<lb/> </reference>
+	
+	<note type="page">237 </note>
+	
+	<reference>IOS Press<lb/></reference>
+
+	<docTitle>
+	<titlePart>Mechanisms of inhibitory effects of CoQ 10<lb/> on UVB-induced wrinkle formation in vitro<lb/> and in vivo<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>M. Inui<lb/> a , M. Ooe<lb/> a , K. Fujii<lb/> b , H. Matsunaka<lb/> a , M. Yoshida<lb/> c and M. Ichihashi<lb/> c,*<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a Tokiwa Pharmaceutical Campany Product Development, </affiliation>
+	</byline>
+	<address>Japan<lb/></address>
+
+	<byline>
+	<affiliation>b Kaneka Corporation Functional Food Ingredients Division,</affiliation>
+	</byline>
+
+	<address>Japan<lb/></address>
+
+	<byline>
+	<affiliation>c Doshisha University, </affiliation>
+	</byline>
+
+	<address>Japan<lb/></address>
+
+	<div type="abstract">Abstract. Photodamaged skin exhibits wrinkles, pigmented spots, dryness and tumors. Solar UV radiation induces cyclobutane<lb/> pyrimidine dimers (CPD) and further produces base oxidation by reactive oxygen species (ROS). ROS are thought to be a<lb/> major factor to initiate the up-regulation of matrix metalloproteinases (MMPs) in keratinocytes and fibroblasts via activation of<lb/> receptor proteins on the cell membrane of keratinocytes and fibroblasts, and to degrade fiber components in dermis, leading to<lb/> wrinkle formation.<lb/> Coenzyme Q10 (CoQ10) was reported to reduce ROS production and DNA damage triggered by UVA irradiation in human<lb/> keratinocytes in vitro. Further, CoQ10 was shown to reduce UVA-induced MMPs in cultured human dermal fibroblasts.<lb/> We speculated that UVB radiation-induced cytokine production in keratinocytes may be inhibited by CoQ10, resulting in the<lb/> reduction of MMPs in fibroblasts leading to wrinkle reduction. Our in vitro studies showed that UVB-induced IL-6 production<lb/> of normal human keratinocyte (NHKC) decreased in the presence of CoQ10. Furthermore, MMP-1 production of fibroblasts<lb/> cultured with the medium containing CoQ10 collected from UVB-irradiated NHKC significantly decreased during 24 h culture.<lb/> In the clinical trial study, we found that the use of 1% CoQ10 cream for five months reduced wrinkle score grade observed by<lb/> a dermatologist. Taken together, our results indicate that CoQ10 may inhibit the production of IL-6 which stimulate fibroblasts<lb/> in dermis by paracrine manner to up-regulate MMPs production, and contribute to protecting dermal fiber components from<lb/> degradation, leading to rejuvenation of wrinkled skin.<lb/></div>
+
+	<keyword>Keywords: UVB, matrix metalloproteinase (MMP), keratinocyte, cytokine, wrinkle<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

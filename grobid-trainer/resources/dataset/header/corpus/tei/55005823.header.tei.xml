@@ -1,0 +1,67 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005823"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Bernards et al.: Basis of glyphosate–manganese interaction @BULLET </note>
+
+	<note type="page">787<lb/> </note>
+
+	<reference>Weed Science, 53:787–794. 2005<lb/></reference>
+
+	<docTitle>
+	<titlePart>Glyphosate interaction with manganese in tank mixtures<lb/> and its effect on glyphosate absorption and translocation<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Mark L. Bernards<lb/></docAuthor>
+	</byline>
+
+	<note type="other">Corresponding author. </note>
+
+	<byline>
+	<affiliation>Department of Crop and<lb/> Soil Sciences, Michigan State University,</affiliation>
+	</byline>
+
+	<address>East<lb/> Lansing, MI 48824;</address>
+
+	<note type="other">Current address: </note>
+
+	<byline>
+	<affiliation>Department of<lb/> Agronomy and Horticulture, University of Nebraska,<lb/></affiliation>
+	</byline>
+
+	<address>377I Plant Science, Lincoln, NE 68583-0724;<lb/></address>
+
+	<email>mbernards2@unl.edu<lb/></email>
+
+	<byline>
+	<docAuthor>Kurt D. Thelen<lb/> Donald Penner<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Crop and Soil Sciences, Michigan<lb/> State University,</affiliation>
+	</byline>
+
+	<address>East Lansing, MI 48824<lb/></address>
+
+	<byline>
+	<docAuthor>Rajendra B. Muthukumaran<lb/> John L. McCracken<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Chemistry, Michigan State<lb/> University,</affiliation>
+	</byline>
+
+	<address>East Lansing, MI 48824<lb/></address>
+
+	<div type="abstract">Recent reports indicate that manganese (Mn), applied as a foliar fertilizer in tank<lb/> mixtures with glyphosate, has the potential to antagonize glyphosate efficacy and<lb/> reduce weed control. It was hypothesized that Mn 2ϩ complexed with glyphosate in<lb/> a similar manner to Ca 2ϩ , forming salts that were not readily absorbed and, thereby,<lb/> reducing glyphosate efficacy. This study was conducted to confirm the interaction<lb/> of Mn 2ϩ and glyphosate and to measure the effect of Mn on glyphosate absorption<lb/> and translocation in velvetleaf. In aqueous solutions, Mn 2ϩ binds with solvent mol-<lb/>ecules and with chelating agents to form hexacoordinate complexes. The distribution<lb/> of paramagnetic species, both the free manganous ion ([Mn{H 2 O} 6 ] 2ϩ ) and the<lb/> Mn 2ϩ –glyphosate complex, in Mn–glyphosate solutions at various pH values were<lb/> analyzed using electron paramagnetic resonance (EPR) spectroscopy. Glyphosate in-<lb/>teraction with Mn appeared to increase as the pH was increased from spray solution<lb/> levels (2.8 to 4.5) to levels common in the plant symplast (7.5). Growth chamber<lb/> bioassays were conducted to measure absorption and translocation of 14 C-labeled<lb/> glyphosate in solution with four Mn fertilizers: Mn-ethylaminoacetate (Mn-EAA),<lb/> Mn-ethylenediaminetetraacetate (Mn-EDTA), Mn-lignin sulfonate (Mn-LS), and<lb/> Mn-sulfate (MnSO 4 ). Mn-EDTA did not interfere with glyphosate efficacy, absorp-<lb/>tion, or translocation. However, both MnSO 4 and Mn-LS reduced glyphosate effi-<lb/>cacy, absorption, and translocation. Mn-EAA severely antagonized glyphosate effi-<lb/>cacy, and although glyphosate in tank mixtures with Mn-EAA was absorbed rapidly,<lb/> little was translocated from the treated leaf. The Mn-EAA fertilizer contained ap-<lb/>proximately 0.5% iron (Fe) not reported on the fertilizer label. Iron is presumed to<lb/> be partially responsible for the very limited translocation of glyphosate from the<lb/> treated leaf in Mn-EAA tank mixtures. Adding ammonium sulfate increased the<lb/> efficacy, absorption, and translocation of glyphosate for each Mn fertilizer tank mix-<lb/>ture.<lb/> Nomenclature: Glyphosate; velvetleaf, Abutilon theophrasti Medicus. ABUTH.<lb/></div>
+
+	<keyword>Key words: Glyphosate–metal complex; hard water antagonism, soybean.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

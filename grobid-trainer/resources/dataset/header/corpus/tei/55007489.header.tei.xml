@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007489"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Internet Engineering Task Force<lb/> F. Brockners<lb/> Internet-Draft<lb/> S. Gundavelli<lb/> Intended status: Standards Track<lb/> Cisco Expires: January 10, 2012<lb/> </note>
+	
+	<byline>
+	<docAuthor>S. Speicher<lb/> </docAuthor>
+	</byline>
+	
+	<byline>
+	<affiliation>Deutsche Telekom AG<lb/> </affiliation>
+	</byline>
+	
+	<byline>	
+	<docAuthor>D. Ward<lb/> </docAuthor>
+	</byline>
+	
+	<byline>
+	<affiliation>Juniper Networks<lb/></affiliation>
+	</byline>
+
+	<date>July 9, 2011<lb/></date>
+
+	<docTitle>
+	<titlePart>Gateway Initiated Dual-Stack Lite Deployment<lb/>draft-ietf-softwire-gateway-init-ds-lite-05<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">Abstract<lb/> Gateway-Initiated Dual-Stack lite (GI-DS-lite) is a variant of Dual-<lb/>Stack lite (DS-lite) applicable to certain tunnel-based access<lb/> architectures. GI-DS-lite extends existing access tunnels beyond the<lb/> access gateway to an IPv4-IPv4 NAT using softwires with an embedded<lb/> context identifier that uniquely identifies the end-system the<lb/> tunneled packets belong to. The access gateway determines which<lb/> portion of the traffic requires NAT using local policies and sends/<lb/> receives this portion to/from this softwire.<lb/> Status of this Memo</div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Lisa</forename>
+								<surname>Dalla Via</surname>
+							<lb/>
+								<marker>a</marker>,
+							</persName>
+							<persName>
+								<forename>Ornella</forename>
+								<surname>Gia</surname>
+							<lb/>
+								<marker>a</marker> ,
+							</persName>
+							<persName>
+								<forename>Sebastiano</forename>
+								<middlename>Marciani</middlename>
+								<surname>Magno</surname>
+							<lb/>
+								<marker>a</marker> ,
+							</persName>
+							<persName>
+								<forename>Antonio</forename>
+								<surname>Da Settimo</surname>
+								<marker>b , *</marker> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Anna</forename>
+								<middlename>Maria</middlename>
+								<surname>Marini</surname>
+								<marker>b</marker>,
+							</persName>
+							<persName>
+								<forename>Giampaolo</forename>
+								<surname>Primofiore</surname>
+							<lb/>
+								<marker>b</marker> ,
+							</persName>
+							<persName>
+								<forename>Federico</forename>
+								<surname>Da Settimo</surname>
+								<marker>b</marker> ,
+							</persName>
+							<persName>
+								<forename>Silvia</forename>
+								<surname>Salerno</surname>
+								<marker>b</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

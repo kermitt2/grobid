@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="institution">Solagran Limited</orgName><lb/>
+							<address>
+								<addrLine>ACN 002 592 396<lb/> Level 11<lb/> 492 St Kilda Road</addrLine>
+								<lb/>
+								<settlement>Melbourne</settlement>
+								<postCode>3004</postCode>
+								<settlement>Victoria</settlement>
+								<country>Australia</country>
+							</address>
+						</affiliation> 
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

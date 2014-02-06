@@ -1,0 +1,292 @@
+<!--
+  ~ Licensed to the Apache Software Foundation (ASF) under one
+  ~ or more contributor license agreements.  See the NOTICE file
+  ~ distributed with this work for additional information
+  ~ regarding copyright ownership.  The ASF licenses this file
+  ~ to you under the Apache License, Version 2.0 (the
+  ~ "License"); you may not use this file except in compliance
+  ~ with the License.  You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing,
+  ~ software distributed under the License is distributed on an
+  ~ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+  ~ KIND, either express or implied.  See the License for the
+  ~ specific language governing permissions and limitations
+  ~ under the License.
+  -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <artifactId>maven-parent</artifactId>
+    <groupId>org.apache.maven</groupId>
+    <version>18</version>
+    <relativePath>../pom/maven/pom.xml</relativePath>
+  </parent>
+
+  <groupId>org.apache.maven.surefire</groupId>
+  <artifactId>surefire</artifactId>
+  <version>2.7.2</version>
+  <packaging>pom</packaging>
+
+  <name>SureFire</name>
+  <description>Surefire is a test framework project.</description>
+  <url>http://maven.apache.org/surefire</url>
+  <inceptionYear>2004</inceptionYear>
+
+  <mailingLists>
+    <mailingList>
+      <name>Surefire User List</name>
+      <post>surefire-users@maven.apache.org</post>
+      <subscribe>surefire-users-subscribe@maven.apache.org</subscribe>
+      <unsubscribe>surefire-users-unsubscribe@maven.apache.org</unsubscribe>
+      <archive>http://mail-archives.apache.org/mod_mbox/maven-surefire-users/</archive>
+      <otherArchives>
+        <otherArchive>http://www.mail-archive.com/surefire-users@maven.apache.org</otherArchive>
+        <otherArchive>http://markmail.org/list/org.apache.maven.surefire-users</otherArchive>
+      </otherArchives>
+    </mailingList>
+    <mailingList>
+      <name>Surefire Developer List</name>
+      <post>surefire-dev@maven.apache.org</post>
+      <subscribe>surefire-dev-subscribe@maven.apache.org</subscribe>
+      <unsubscribe>surfire-dev-unsubscribe@maven.apache.org</unsubscribe>
+      <archive>http://mail-archives.apache.org/mod_mbox/maven-surefire-dev/</archive>
+      <otherArchives>
+        <otherArchive>http://www.mail-archive.com/surefire-dev@maven.apache.org</otherArchive>
+        <otherArchive>http://markmail.org/list/org.apache.maven.surefire-dev</otherArchive>
+      </otherArchives>
+    </mailingList>
+    <mailingList>
+      <name>Surefire Commits List</name>
+      <subscribe>surefire-commits-subscribe@maven.apache.org</subscribe>
+      <unsubscribe>surefire-commits-unsubscribe@maven.apache.org</unsubscribe>
+      <archive>http://mail-archives.apache.org/mod_mbox/maven-surefire-commits/</archive>
+      <otherArchives>
+        <otherArchive>http://www.mail-archive.com/surefire-commits@maven.apache.org</otherArchive>
+        <otherArchive>http://markmail.org/list/org.apache.maven.surefire-commits</otherArchive>
+      </otherArchives>
+    </mailingList>
+  </mailingLists>
+
+  <contributors>
+    <contributor>
+      <name>Jesse Kuhnert</name>
+    </contributor>
+    <contributor>
+      <name>Vincent Siveton</name>
+      <email>vincent.siveton@gmail.com</email>
+      <organization>ASF</organization>
+      <roles>
+        <role>Java Developer</role>
+      </roles>
+    </contributor>
+  </contributors>
+
+  <modules>
+    <module>surefire-api</module>
+    <module>surefire-booter</module>
+    <module>surefire-providers</module>
+    <module>maven-surefire-common</module>
+    <module>maven-surefire-plugin</module>
+    <module>maven-failsafe-plugin</module>
+    <module>maven-surefire-report-plugin</module>
+    <module>surefire-integration-tests</module>
+  </modules>
+
+  <scm>
+    <connection>scm:svn:http://svn.apache.org/repos/asf/maven/surefire/tags/surefire-2.7.2</connection>
+    <developerConnection>scm:svn:https://svn.apache.org/repos/asf/maven/surefire/tags/surefire-2.7.2</developerConnection>
+    <url>http://svn.apache.org/viewcvs.cgi/maven/surefire/tags/surefire-2.7.2</url>
+  </scm>
+  <issueManagement>
+    <system>jira</system>
+    <url>http://jira.codehaus.org/browse/SUREFIRE</url>
+  </issueManagement>
+  
+  <properties>
+    <mavenVersion>2.0.9</mavenVersion>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.apache.maven.surefire</groupId>
+        <artifactId>surefire-api</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.maven.surefire</groupId>
+        <artifactId>surefire-booter</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.maven.surefire</groupId>
+        <artifactId>maven-surefire-common</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.maven</groupId>
+        <artifactId>maven-core</artifactId>
+        <version>${mavenVersion}</version>
+        <exclusions>
+          <exclusion>
+            <groupId>org.apache.maven.wagon</groupId>
+            <artifactId>wagon-file</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.apache.maven.wagon</groupId>
+            <artifactId>wagon-webdav</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.apache.maven.wagon</groupId>
+            <artifactId>wagon-http-lightweight</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.apache.maven.wagon</groupId>
+            <artifactId>wagon-ssh</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.apache.maven.wagon</groupId>
+            <artifactId>wagon-ssh-external</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.apache.maven.doxia</groupId>
+            <artifactId>doxia-sink-api</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>commons-cli</groupId>
+            <artifactId>commons-cli</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.codehaus.plexus</groupId>
+            <artifactId>plexus-interactivity-api</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.maven</groupId>
+        <artifactId>maven-plugin-api</artifactId>
+        <version>${mavenVersion}</version>
+      </dependency>   
+      <dependency>
+        <groupId>org.apache.maven</groupId>
+        <artifactId>maven-artifact</artifactId>
+        <version>${mavenVersion}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.maven</groupId>
+        <artifactId>maven-project</artifactId>
+        <version>${mavenVersion}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.maven</groupId>
+        <artifactId>maven-model</artifactId>
+        <version>${mavenVersion}</version>
+      </dependency>      
+      <dependency>
+        <groupId>org.apache.maven</groupId>
+        <artifactId>maven-toolchain</artifactId>
+        <version>${mavenVersion}</version>
+      </dependency>                                                      
+      <dependency>
+        <groupId>org.codehaus.plexus</groupId>
+        <artifactId>plexus-utils</artifactId>
+        <version>2.0.5</version>
+      </dependency>
+      <dependency>
+        <groupId>jmock</groupId>
+        <artifactId>jmock</artifactId>
+        <version>1.0.1</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>3.8.1</version>
+        <scope>test</scope>
+      </dependency>      
+    </dependencies>
+  </dependencyManagement>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.3</source>
+          <target>1.3</target>
+        </configuration>
+      </plugin>
+    </plugins>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>2.7.1</version>
+          <configuration>
+            <!-- NOTE: Be sure to isolate the Surefire version under test from the version running the tests! -->
+            <useSystemClassLoader>false</useSystemClassLoader>
+          </configuration>
+        </plugin>
+        <plugin>
+          <artifactId>maven-release-plugin</artifactId>
+          <configuration>
+            <tagBase>https://svn.apache.org/repos/asf/maven/surefire/tags</tagBase>
+          </configuration>
+        </plugin>
+        <plugin>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>2.3.2</version>
+          <configuration>
+            <source>1.3</source>
+            <target>1.3</target>
+          </configuration>
+        </plugin>
+        <plugin>
+          <artifactId>maven-site-plugin</artifactId>
+          <version>2.2</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+
+  <profiles>
+    <!-- use preinstalled JDK 1.3 to build and test -->
+    <profile>
+      <id>jdk1.3</id>
+      <build>
+        <pluginManagement>
+          <plugins>
+            <plugin>
+              <artifactId>maven-compiler-plugin</artifactId>
+              <configuration>
+                <fork>true</fork>
+                <compilerVersion>1.3</compilerVersion>
+                <executable>${JAVA_1_3_HOME}/bin/javac</executable>
+              </configuration>
+            </plugin>
+            <plugin>
+              <artifactId>maven-surefire-plugin</artifactId>
+              <configuration>
+                <forkMode>once</forkMode>
+                <childDelegation>true</childDelegation>
+                <jvm>${JAVA_1_3_HOME}/bin/java</jvm>
+              </configuration>
+            </plugin>
+          </plugins>
+        </pluginManagement>
+      </build>
+    </profile>
+  </profiles>
+</project>

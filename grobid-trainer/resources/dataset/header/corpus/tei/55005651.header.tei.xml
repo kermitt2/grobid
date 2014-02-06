@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005651"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">RÖMPP Online, Version 3.15<lb/></note>
+	
+	<docTitle>
+	<titlePart>Imine<lb/> </titlePart>
+	</docTitle>
+	
+	<note type="other">Bearbeitet von: RÖMPP-Redaktion, </note>
+		
+	<byline>
+	<docAuthor>Andreas Schmidt<lb/> </docAuthor>
+	</byline>	
+		
+	<keyword> Fachgebiet: Chemie &gt; Unterthema: Organische Chemie, Substanzklassen<lb/></keyword>
+
+	<div type="introduction">1. Gruppe von organisch-chemischen Verbindungen der allgemeinen Formel R R C=NR , in denen formal<lb/> das Sauerstoff-Atom eines Aldehydes oder Ketons durch die Imino-Gruppe (=NH) oder eine substituierte<lb/> Imino-Gruppe ersetzt ist. Von Aldehyden abgeleitete Imine der generellen Struktur R–CH=NH oder<lb/> R –CH=N–R werden als Aldimine bezeichnet. Auch die Bezeichnungen Alkylidenazan oder Alkylidenamin<lb/> sind gültig (Hexan-1-imin = Hexylidenazan = Hexylidenamin). Verbindungen der Struktur R R C=N–H oder<lb/> R R C=N–R werden als Ketimine bezeichnet (siehe Abbildung 1). Die Benennung als N-substituierte<lb/> Imine (N-Methylethanimin) oder Alkylidenalkylazane [Ethyliden(methyl)azan] bzw. N-Alkylalkylidenamin<lb/> (N-Methylethylidenamin) ist nach IUPAC-Regel R-5.4.3 erlaubt, obwohl die dort nicht exemplifizierte<lb/> Benennung als Alkyliden-Derivat eines Amins, also N-Ethylidenmethanamin, zu bevorzugen ist, da Amine<lb/> nach IUPAC-Regel R-4.1 ranghöher als Imine sind. Bei Anwesenheit einer ranghöheren Gruppe wird für die<lb/> Imino-Gruppe das Präfix Imino... verwendet (IUPAC-Regel R-3.2.1.1), z. B. Iminoessigsäuremethylester<lb/> (HN=CH–COO–CH ).<lb/> Abbildung 1: Beispiele für Aldimine und allgemeine Formel für Ketimine.<lb/> Die ursprünglich feinen Unterschiede zwischen den ebenfalls gebräuchlichen Bezeichnungen Schiffsche<lb/> Basen (englisch Schiff bases; R ≠ H) und Azomethine (R , R , R ≠ H, vgl. Abbildung 2) sind durch<lb/> ungenau formulierte Regeln und nicht exakten Gebrauch heute praktisch nicht mehr existent[1]. Spezielle<lb/> Untergruppen der Imine sind die Chinonimine und Ketenimine. Protonierte oder alkylierte Imine, in denen<lb/> ein positiv geladenes Stickstoff-Atom formulierbar ist, sind reaktiver und heißen Iminium-Salze (früher<lb/> Immonium-Salze)[2].<lb/> Imine bilden sich bei der Reaktion von Ammoniak oder primären Aminen mit Aldehyden und Ketonen,<lb/> wobei zunächst das Amin nucleophil an die Carbonyl-Gruppe unter Bildung eines instabilen tetraedrischen<lb/> Zwischenproduktes addiert und das Wasser unter Ausbildung einer C=N-Doppelbindung eliminiert wird<lb/> (siehe Abbildung 2). Diese Reaktion ist reversibel. Der pH-Wert dieser Reaktion muß sorgfältig kontrolliert<lb/> werden: Säure ist für die Wasserabspaltung notwendig, jedoch wird bei zu niedrigen pH-Werten das Amin<lb/> protoniert und verliert dadurch seine Nucleophilie. Eine spezielle Synthesemethode für Imine ist die Thorpe-<lb/>Ziegler-Reaktion (siehe Thorpe-Reaktion).<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="department">Energy research Centre of the Netherlands (ECN)</orgName>,
+							<address>
+								<postBox>P.O. Box 1</postBox>,
+								<postCode>1755 ZG</postCode>
+								<settlement>Petten</settlement>,
+								<country>the Netherlands</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="institution">TNO Science and Industry</orgName>,
+							<address>
+								<postBox>PO Box 6235</postBox>,
+								<postCode>5600 HE</postCode>,
+								<settlement>Eindhoven</settlement>,
+								<region>NL</region>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>3</marker>
+							<orgName type="institution">Eindhoven University of Technology</orgName>,
+							<address>
+								<postBox>PO Box 513</postBox>,
+								<postCode>5600 MB</postCode>,
+								<settlement>Eindhoven</settlement>,
+								<region>NL</region>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>4</marker>
+							<orgName type="institution">University of Groningen</orgName>,
+							<address>
+								<addrLine>Nijenborgh 4</addrLine>,
+								<postCode>9747 AG</postCode>,
+								<settlement>Groningen</settlement>,
+								<region>NL</region>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>5</marker>
+							<orgName type="department">Dutch Polymer Institute (DPI)</orgName>,
+							<address>
+								<postBox>P.O. Box 902</postBox>,
+								<postCode>5600 AX</postCode>
+								<settlement>Eindhoven</settlement>,
+								<country>The Netherlands</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

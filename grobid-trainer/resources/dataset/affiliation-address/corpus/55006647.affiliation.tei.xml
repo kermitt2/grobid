@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">Graduate School of Pharmaceutical Sciences</orgName>,
+							<orgName type="institution">Osaka University</orgName>,
+							<address>
+								<addrLine>1 -6 Yamadaoka</addrLine>,
+								<settlement>Suita</settlement>,
+								<region>Osaka</region>
+								<postCode>565-<lb/>0871</postCode>,
+								<country>Japan</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

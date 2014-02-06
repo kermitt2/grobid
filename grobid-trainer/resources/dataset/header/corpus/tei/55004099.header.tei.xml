@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004099"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<reference>INFECTION AND IMMUNITY,<lb/></reference>
+	</byline>
+
+	<note>0019-9567/99/$04.00ϩ0<lb/></note>
+
+	<reference>Apr. 1999, p. 1702–1707<lb/> Vol. 67, No. 4<lb/></reference>
+
+	<note type="copyright">Copyright © 1999, American Society for Microbiology. All Rights Reserved.<lb/></note>
+
+	<docTitle>
+	<titlePart>Differential Protective Efficacy of DNA Vaccines Expressing<lb/> Secreted Proteins of Mycobacterium tuberculosis<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>ARUN T. KAMATH,<lb/> 1 CARL G. FENG,<lb/> 1 MURDO MACDONALD,<lb/> 1 HELEN BRISCOE,<lb/> 1,2<lb/> AND WARWICK J. BRITTON<lb/> 1,2 *<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Centenary Institute of Cancer Medicine and Cell Biology,</affiliation>
+	</byline>
+
+	<address>Newtown, New South Wales 2042,<lb/></address>
+
+	<byline>
+	<affiliation>1 and Department of<lb/> Medicine, University of Sydney,</affiliation>
+	</byline>
+
+	<address>Sydney, New South Wales 2006,<lb/> 2 Australia<lb/></address>
+
+	<note type="submission">Received 8 July 1998/Returned for modification 3 September 1998/Accepted 19 January 1999<lb/></note>
+
+	<div type="abstract">The development of more-effective antituberculosis vaccines would assist in the control of the global problem<lb/> of infection with Mycobacterium tuberculosis. One recently devised vaccination strategy is immunization with<lb/> DNA plasmids encoding individual microbial genes. Using the genes for the M. tuberculosis secreted proteins<lb/> MPT64 (23 kDa), Ag85B (30 kDa), and ESAT-6 (6 kDa) as candidate antigens, DNA vaccines were prepared<lb/> and tested for immunogenicity and protective efficacy in a murine model of aerosolized tuberculosis (TB).<lb/> Intramuscular immunization with DNA-64 or DNA-85B resulted in the activation of CD4<lb/> ؉ T cells, which<lb/> produce gamma interferon (IFN-␥), and high titers of specific immunoglobulin G antibodies. Further, DNA-64<lb/> induced major histocompatibility complex class I-restricted CD8<lb/> ؉ cytotoxic T cells. The addition of a eukary-<lb/>otic leader sequence to mpt64 did not significantly increase the T-cell or antibody response. Each of the three<lb/> DNA vectors stimulated a significant reduction in the level of M. tuberculosis infection in the lungs of mice<lb/> challenged 4 weeks after immunization, but not to the levels resulting after immunization with Mycobacterium<lb/> bovis BCG. The vaccines showed a consistent hierarchy of protection, with the most effective being Ag85B,<lb/> followed by ESAT-6 and then MPT64. Coimmunization with the three vectors resulted in a greater degree of<lb/> protection than that induced by any single vector. This protective efficacy was associated with the emergence<lb/> of IFN-␥-secreting T cells earlier than in infected animals immunized with a control vector. The efficacy of<lb/> these DNA vaccines suggests that multisubunit vaccination may contribute to future vaccine strategies against<lb/> TB.<lb/> </div>
+	
+	<div type="introduction">Infection with Mycobacterium tuberculosis continues to be a<lb/> major cause of morbidity and mortality throughout the world,<lb/> resulting in 3 million deaths and over 8 million new cases of<lb/> tuberculosis (TB) each year (4). The current vaccine, Myco-<lb/>bacterium bovis bacillus Calmette-Guérin (BCG), has variable<lb/> protective efficacy, ranging from 0 to 85% in different studies<lb/> (9), and second-generation anti-TB vaccines are urgently<lb/> needed. The development of new vaccines requires an under-<lb/>standing of the protective immune response against M. tuber-<lb/>culosis and of the construction of delivery vectors with the<lb/> ability to elicit this protective response. The critical component<lb/> of protective immunity against TB is a T-cell-mediated re-<lb/>sponse characterized by the secretion of gamma interferon<lb/> (IFN-␥) and other cytokines (26). Although subunit vaccines<lb/> were previously considered ineffective against mycobacteria,<lb/> vaccines based on culture filtrate proteins of M. tuberculosis<lb/> and an adjuvant have induced protective immunity in mice (1,<lb/> 27) and guinea pigs (17). Genetic immunization may be a<lb/> successful alternate method of delivery of these secreted pro-<lb/>teins. This form of immunization induces antibody and cell-<lb/>mediated immune responses involving the CD4<lb/> ϩ</div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55006122"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<affiliation>Rank Brothers Ltd<lb/></affiliation>
+	</byline>
+	
+	<docTitle>
+	<titlePart>Electrochemical Processor<lb/> 1000/2000<lb/> Operating Manual<lb/></titlePart>
+	</docTitle>
+
+	<date>Issue 1a February 2002<lb/></date>
+
+	<note type="other">Manufactured by:<lb/></note>
+
+	<byline>
+	<affiliation>Rank Brothers Ltd<lb/></affiliation>
+	</byline>
+
+	<address>56, High Street, Bottisham, Cambridge CB25 9DA, England<lb/></address>
+
+	<phone>Tel: +44 (0) 1223 811369 Fax: +44 (0) 1223 811441<lb/></phone>
+
+	<ptr type="web">Website: http://www.rankbrothers.co.uk/<lb/></ptr>
+
+	<byline>
+	<affiliation>Rank Brothers Ltd<lb/></affiliation>
+	</byline>
+
+		</front>
+	</text>
+</tei>

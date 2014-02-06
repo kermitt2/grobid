@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004280"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>JOURNAL OF CELLULAR PHYSIOLOGY 177:206–213 (1998)<lb/></reference>
+
+	<docTitle>
+	<titlePart>Cloning of Murine CDK9/PITALRE and Its<lb/> Tissue-Specific Expression in Development<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>LUIGI BAGELLA,<lb/> 1,2 TIMOTHY K. MACLACHLAN,<lb/> 1,2 RUSSELL J. BUONO,<lb/> 1<lb/> M. MICHELE PISANO,<lb/> 1 ANTONIO GIORDANO,<lb/> 1,2 AND ANTONIO DE LUCA<lb/> 1,2<lb/> *<lb/> 1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Pathology, Anatomy and Cell Biology, Jefferson Medical College,<lb/> Thomas Jefferson University,</affiliation>
+	</byline>
+
+	<address>Philadelphia, Pennsylvania<lb/></address>
+
+	<byline>
+	<affiliation>2<lb/> Sbarro Institute for Cancer Research and Molecular Medicine, Jefferson Medical College,<lb/> Thomas Jefferson University,</affiliation>
+	</byline>
+
+	<address>Philadelphia, Pennsylvania<lb/></address>
+
+	<div type="abstract">The cdc2-family of serine/threonine kinases and their binding partners recently<lb/> were implicated in developmental roles. We previously cloned a cdc2-related<lb/> kinase, cdk9/PITALRE, that is able to phosphorylate the retinoblastoma protein<lb/> in vitro. We describe here the cloning and the characterization of the mouse<lb/> homolog of cdk9/PITALRE. The murine cDNA is 98% identical with humans<lb/> and is expressed at high levels in brain and kidney tissues. The kinase activity<lb/> and protein expression of cdk9/PITALRE were highest in terminally differentiated<lb/> tissues such as the muscle and brain. In situ immunohistology and immunofluo-<lb/>rescence detected cdk9/PITALRE protein not only within terminally differenti-<lb/>ated cells such as muscle and neuronal cells, but also in proliferating cells.<lb/> C2C12 and P19 cells induced to differentiate along muscle and neural lineages<lb/> peaked in cdk9/PITALRE kinase activity at the end of differentiation. These<lb/> results suggest that, among other roles, cdk9/PITALRE plays a role not unlike<lb/> cdk5 in the differentiation of certain cell types.</div>
+
+	<reference>J. Cell. Physiol. 177:206 –213,<lb/> 1998. </reference>
+	
+	<note type="copyright">&#169; 1998 Wiley-Liss, Inc.<lb/></note>
+
+	<div type="introduction">The cdc2 protein is a kinase that plays an evolution-in developing embryos identifies a second tissue, depen-<lb/>dent cdk5 which is muscle. Muscle-specific genes, MyoD<lb/> ary conserved role in cell cycle progression from yeast to<lb/> and MRF4, are downregulated significantly in cdk5-<lb/>humans (MacLachlan et al., 1995). Since its discovery,<lb/> DN embryos which results in muscle disorganization<lb/> many other kinases related to cdc2 have been isolated,<lb/> (Philpott et al., 1997). This is in stark contrast to other<lb/> but with functions different from those of cdc2. While<lb/> known members of the cdc2 family, because activation<lb/> mammalian cdc2 is necessary only for G2 r M cell cycle<lb/> of most other kinases results in inhibition of differenti-<lb/>transition, others are involved in different phases. For<lb/> ation. Although sharing structural motifs, regulatory<lb/> example, cdk2 is involved in DNA replication while<lb/> sites, and similar mechanisms of activation, this family<lb/> cdk4 and cdk6 function in G1 phase progression. Al-<lb/>of protein kinases has a broad spectrum of functions.<lb/> though many relatives of cdc2 accelerate the cell cycle<lb/> A new cdc2-related kinase, cdk9/PITALRE, was<lb/> to the next phase, some kinases act differently and<lb/> cloned in our laboratory by polymerase chain reaction<lb/> seem to possess opposite characteristics. For example,<lb/> (PCR) using degenerate oligonucleotide primers de-<lb/>the PITSLRE kinase is a protein that exists in several<lb/> rived from sequences that are conserved in other cdc2-<lb/>different isoforms, some of which are potent cell death<lb/> related kinases (Grañ a et al., 1994). Its deduced amino<lb/> inducers. The PITSLRE beta-1 isoform is a direct down-<lb/>acid sequence is 47% identical with that of the human<lb/> stream target of the caspase-3 protease, an ICE-like<lb/> CHED kinase and 42% identical with the Saccharo-<lb/>protease involved in TNF signaling (Lahti et al., 1995;<lb/> myces cerevisiae SGV1 gene product, both of which are<lb/> Beyaert et al., 1997). The cdk5 kinase possesses activity<lb/> and expression that are localized strictly to differenti-<lb/>ated neural tissue (Tsai et al., 1993). Although termed<lb/> a cyclin-dependent kinase by its in vitro association </div>
+	
+	<note type="grant">Contract grant sponsor: National Institutes of Health; Contract<lb/> grant number: RO1 CA60999-01A1; Contract grant number: 1-</note>
+
+		</front>
+	</text>
+</tei>

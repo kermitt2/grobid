@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004114"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Pumps<lb/></note>
+
+	<docTitle>
+	<titlePart>Compact hydraulic power packs<lb/> type HC and HCW<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">These ready for connection hydraulic power packs are intended for<lb/> intermittent operation (S3) and used to supply pressurized fluid to<lb/> consumers with low fluid demand, such as for jigs or machine tools<lb/> or general machine building.<lb/> The power pack consists of a housing (tank) with integrated motor and<lb/> pump. The housing of size 2, 3, and 4 features also a filling gauge,<lb/> enabling visual control of the fluid level even during operation. The<lb/> electrical connection takes place via an integrated terminal box.<lb/></div>
+
+		</front>
+	</text>
+</tei>

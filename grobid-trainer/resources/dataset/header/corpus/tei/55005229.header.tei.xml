@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005229"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">1<lb/></note>
+
+	<docTitle>
+	<titlePart>SUPPLEMENTAL MATERIALS<lb/> Gene Expression Profiles in Peripheral Blood Mononuclear Cells Can<lb/> Distinguish Patients with Non-Small-Cell Lung Cancer from Patients with Non-<lb/>Malignant Lung Disease<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Michael K. Showe, Anil Vachani, Andrew V. Kossenkov, Malik Yousef, Calen Nichols, Elena V. Nikonova, Celia<lb/> Chang, John Kucharczuk, Bao Tran, Elliot Wakeam, Ting An Yie, David Speicher, William N. Rom, Steven<lb/> Albelda and Louise C. Showe<lb/></docAuthor>
+	</byline>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007817"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>The Philippines&apos; taste for civet coffee<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>By Sarah Toms<lb/> </docAuthor>
+	</byline>
+	
+	<byline>
+	<affiliation>BBC News, </affiliation>
+	</byline>
+		
+	<address>Manila<lb/></address>
+
+	<div type="abstract">The Philippines has recently discovered it produces one of the world&apos;s most expensive and<lb/> coveted kinds of coffee.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005476"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Henkel Benzoxazine 99110<lb/> </note>
+	
+	<docTitle>
+	<titlePart>Liquid Infusion Resin<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<affiliation>Henkel Corporation<lb/> Aerospace Group<lb/></affiliation>
+	</byline>
+
+	<address>2850 Willow Pass Road<lb/> P.O. Box 312<lb/> Bay Point, CA 94565 USA<lb/> </address>
+	
+	<phone>+1 925.458.8000<lb/>	Fax: +1 925.458.8030<lb/></phone>
+
+	<ptr type="web">www.aerospace.henkel.com<lb/> www.HenkelEpsilonResin.com<lb/></ptr>
+
+	<note type="other">More information at </note>
+	
+	<ptr>www.HenkelEpsilonResin.com<lb/></ptr>
+
+	<div type="abstract">Description Henkel Benzoxazine 99110 is a one component liquid molding resin<lb/> which can be stored for up to 6-months at room temperature<lb/> (77°F/25<lb/> ° C). Henkel Benzoxazine 99110 is intended for use in Liquid<lb/> Resin Infusion (LRI) applications and has high temperature<lb/> performance with low flammability characteristics. It is<lb/> particularly suitable for the manufacture of large parts due to<lb/> the broad process window, low exotherm, and low resin shrinkage on<lb/> cure. The resin is intended for use with the tailored binder<lb/> Henkel Benzoxazine 99900. This is a powder binder which should be<lb/> applied to each ply for maximum effect. The level of binder used<lb/> will depend on the preform and composite mechanical performance<lb/> requirements.<lb/> Features and Benefits<lb/> @BULLET Room temperature stability-no refrigerated storage or<lb/> shipping is required, can be air shipped<lb/> @BULLET One-part system-no mixing is required<lb/> @BULLET Broad processing window-suitable for large parts and<lb/> intricate shapes<lb/> @BULLET Viscosity stability-long injection window for large parts<lb/> @BULLET Low heat release during cure-allows manufacture of large<lb/> parts, lowers residual stresses<lb/> @BULLET Low cure shrinkage-improved translation of strength in final<lb/> part<lb/> @BULLET Fire retardant-suitable for aircraft fuselage and interior<lb/> applications<lb/> @BULLET High hot/wet property retention-higher service temperature<lb/> to enable a wide range of aircraft applications<lb/> @BULLET Improved UV resistance-no discoloration compared to epoxies<lb/> @BULLET Good thermal resistance-acceptable for high temperature<lb/> areas</div>
+
+		</front>
+	</text>
+</tei>

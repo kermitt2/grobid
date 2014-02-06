@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005407"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>AUTOSAR: New Paths to ECU Software<lb/></titlePart>
+	</docTitle>
+
+	<div type="introduction">During the development of an AUTOSAR ECU, code generators are<lb/> used to adapt the basic software (BSW) and runtime environment<lb/> (RTE) to specific ECU requirements. Generation is based on the fol-<lb/>lowing extensive description files mentioned in the first part of the<lb/> article:<lb/> The &quot;ECU Extract of System Description&quot; contains the ECU-<lb/>&gt; specific section of the overall system.<lb/> The &quot;SWC Description&quot; describes the interfaces and structure of<lb/> &gt; the AUTOSAR software components (SWCs), and it may already<lb/> be included in the &quot;ECU Extract of System Description&quot;.<lb/> The &quot;ECU Configuration Description&quot; contains the configuration<lb/> &gt; of the BSW modules and RTE.<lb/> The &quot;BSW Module Description&quot; describes the configurable<lb/> &gt; parameters of a BSW module.<lb/> The challenge for the developer is to keep these description files<lb/> consistent while avoiding the need to recreate the whole configu-<lb/>ration whenever a change is made. In performing this task, it is<lb/> helpful to use configuration tools that support iterative work pro-<lb/>cesses during an ECU development project. Typical scenarios and<lb/> change cases are described as well as having work steps explained<lb/> based on the Vector tools DaVinci Developer and DaVinci Configura-<lb/>tor Pro.<lb/>	New development of software components (SWCs)</div>
+
+		</front>
+	</text>
+</tei>

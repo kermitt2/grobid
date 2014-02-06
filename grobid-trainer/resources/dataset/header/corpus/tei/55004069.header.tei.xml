@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004069"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>Technische Richtlinie TR-03117<lb/></idno> 
+
+	<docTitle>
+	<titlePart>eCards mit kontaktloser Schnittstelle als sichere<lb/> Signaturerstellungseinheit<lb/> </titlePart>
+	</docTitle>
+
+	<note type="other">Version 1.0</note>
+	
+		</front>
+	</text>
+</tei>

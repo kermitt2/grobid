@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005542"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Specification of Module Flash Driver<lb/> V2.2.2<lb/> R3.0 Rev 0002<lb/> Document Title<lb/> </note>
+	<docTitle>
+	<titlePart>Specification of Module Flash<lb/> Driver<lb/></titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

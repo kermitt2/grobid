@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Barbara</forename>
+								<surname>Renga</surname>,
+							</persName>
+							<persName>
+								<forename>Andrea</forename>
+								<surname>Mencarelli</surname>,
+							</persName>
+							<persName>
+								<forename>Marco</forename>
+								<surname>Migliorati</surname>,
+							</persName>
+							<persName>
+								<forename>Eleonora</forename>
+								<surname>Distrutti</surname>,
+							</persName>
+							<persName>
+								<forename>Stefano</forename>
+								<surname>Fiorucci</surname>
+							</persName>
+							<persName>
+								<forename>Barbara</forename>
+								<surname>Renga</surname>,
+							</persName>
+							<persName>
+								<forename>Andrea</forename>
+								<surname>Mencarelli</surname>,
+							</persName>
+							<persName>
+								<forename>Marco</forename>
+								<surname>Migliorati</surname>,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Stefano</forename>
+								<surname>Fiorucci</surname> ,
+							</persName>
+							
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008259"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Proc. ESA Annual Meeting on Electrostatics 2008, </reference>
+	
+	<note>Paper E1<lb/></note>
+
+	<note type="page">1<lb/></note>
+
+	<docTitle>
+	<titlePart>Modeling of corona-induced<lb/> electrohydrodynamic flow with<lb/> COMSOL multiphysics<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Nels E. Jewell-Larsen<lb/> 1,2 , Sergey V. Karpov<lb/> 1 , Igor A. Krichtafovitch<lb/> 1 , Vivi Jayanty<lb/> 1 ,<lb/> Chih-Peng Hsu<lb/> 2<lb/> , Alexander V. Mamishev<lb/> 2<lb/> </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1<lb/> Kronos Air Technologies<lb/></affiliation>
+	</byline>
+
+	<address>15241 NE 90th St.<lb/> Redmond, WA 98052 USA<lb/></address>
+
+	<phone>phone: 425-885-9739<lb/></phone>
+
+	<email>e-mail: igor@kronosati.com<lb/></email>
+
+	<byline>
+	<affiliation>2 University of Washington, Department of Electrical Engineering<lb/></affiliation>
+	</byline>
+
+	<address>Seattle, WA 98195 USA<lb/></address>
+
+	<div type="abstract">Abstract —Electrohydrodynamic (EHD) flow is a flow of electrically neutral gas caused by<lb/> corona-generated ions drifting through it. Many aspects of this gas movement phenomenon<lb/> such as electric field and charge distribution, fluid dynamics, and heat transfer have been<lb/> investigated, and the use of accurate models have become critical in the development of com-<lb/>mercial applications in this field. The purpose of the present paper is to demonstrate that<lb/> corona induced airflow can be successfully modeled using COMSOL multiphysics, a com-<lb/>mercial software package that performs equation-based multiphysics modeling for different<lb/> physical processes by applying the finite element method to the system of partial differential<lb/> equations. Governing equations, boundary conditions, and numerical results obtained with<lb/> COMSOL multiphysics are presented, and compared with experimental results. Numerical<lb/> results are found to be in good agreement with experimental results.<lb/></div>
+
+		</front>
+	</text>
+</tei>

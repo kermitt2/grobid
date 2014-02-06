@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005832"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Regional Climate Information – Evaluation and<lb/> Projections<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Co-ordinating Lead Authors<lb/> F. Giorgi, B. Hewitson<lb/> Lead Authors<lb/> J. Christensen, M. Hulme, H. Von Storch, P. Whetton, R. Jones, L. Mearns, C. Fu<lb/> Contributing Authors<lb/> R. Arritt, B. Bates, R. Benestad, G. Boer, A. Buishand, M. Castro, D. Chen, W. Cramer, R. Crane,<lb/> J. F. Crossley, M. Dehn, K. Dethloff, J. Dippner, S. Emori, R. Francisco, J. Fyfe, F.W. Gerstengarbe,<lb/> W. Gutowski, D. Gyalistras, I. Hanssen-Bauer, M. Hantel, D.C. Hassell, D. Heimann, C. Jack, J. Jacobeit,<lb/> H. Kato, R. Katz, F. Kauker, T. Knutson, M. Lal, C. Landsea, R. Laprise, L.R. Leung, A.H. Lynch,<lb/> W. May, J.L. McGregor, N.L. Miller, J. Murphy, J. Ribalaygua, A. Rinke, M. Rummukainen, F. Semazzi,<lb/> K. Walsh, P. Werner, M. Widmann, R. Wilby, M. Wild, Y. Xue<lb/> </docAuthor>
+	<note type="other">Review Editors<lb/> M. Mietus, J. Zillman<lb/></note>
+	</byline>
+
+	<note type="chapter">10<lb/></note>
+
+		</front>
+	</text>
+</tei>

@@ -1,5 +1,6 @@
 package org.grobid.core.engines;
 
+import org.chasen.crfpp.Tagger;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.data.Affiliation;
 import org.grobid.core.exceptions.GrobidException;
@@ -56,19 +57,8 @@ public class AffiliationAddressParser extends AbstractParser {
             // add context
             st = new StringTokenizer(header, "\n");
 
-            feedTaggerAndParse(st);
-
-            StringBuilder res = new StringBuilder();
-            for (int i = 0; i < tagger.size(); i++) {
-                for (int j = 0; j < tagger.xsize(); j++) {
-                    res.append(tagger.x(i, j)).append("\t");
-                }
-
-                res.append("<affiliation>" + "\t");
-                res.append(tagger.y2(i));
-                res.append("\n");
-            }
-            return resultBuilder(res.toString(), tokenizations, false); // don't use pre-labels
+            String res = getTaggerResult(st, "<affiliation>");
+            return resultBuilder(res, tokenizations, false); // don't use pre-labels
         } catch (Exception e) {
             throw new GrobidException("An exception occurred while running Grobid.", e);
         }
@@ -185,7 +175,8 @@ public class AffiliationAddressParser extends AbstractParser {
 
     private String runReflow(ArrayList<String> affiliationBlocks,
                              ArrayList<String> tokenizations) {
-        StringBuffer res = new StringBuffer();
+        StringBuilder res = new StringBuilder();
+        Tagger tagger = null;
         try {
             List<List<OffsetPosition>> placesPositions = new ArrayList<List<OffsetPosition>>();
             placesPositions.add(lexicon.inCityNames(tokenizations));
@@ -195,7 +186,7 @@ public class AffiliationAddressParser extends AbstractParser {
             // clear internal context
             int n = 0;
             StringTokenizer st = new StringTokenizer(header, "\n");
-            tagger.clear();
+            tagger = getNewTagger();
 
             ArrayList<String> preToken = new ArrayList<String>();
 
@@ -252,8 +243,11 @@ public class AffiliationAddressParser extends AbstractParser {
 
             return res.toString();
         } catch (Exception e) {
-//			e.printStackTrace();
             throw new GrobidException("An exception occured while running Grobid.", e);
+        } finally {
+            if (tagger != null) {
+                tagger.delete();
+            }
         }
     }
 
@@ -269,10 +263,10 @@ public class AffiliationAddressParser extends AbstractParser {
             String lastTag = null;
             org.grobid.core.data.Affiliation aff = new Affiliation();
             int lineCount = 0;
-            boolean hasInstitution = false;
+            boolean hasInstitution;
             boolean hasDepartment = false;
             boolean hasAddress = false;
-            boolean hasLaboratory = false;
+            boolean hasLaboratory;
             boolean newMarker = false;
             boolean useMarker = false;
             String currentMarker = null;
@@ -282,7 +276,7 @@ public class AffiliationAddressParser extends AbstractParser {
             while (st2.hasMoreTokens()) {
                 boolean addSpace = false;
                 String line = st2.nextToken();
-                Integer lineCountInt = new Integer(lineCount);
+                Integer lineCountInt = lineCount;
                 if (line.trim().length() == 0) {
                     if (aff.notNull()) {
                         if (fullAffiliations == null) {

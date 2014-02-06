@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+ From the
+						<affiliation>
+							<orgName type="department">Division of Hematology</orgName>,
+							<orgName type="institution">Mayo Clinic College of Medicine</orgName>,
+							<address>
+								<settlement>Rochester</settlement>,
+								<region>Minn</region>
+							<lb/>;
+							</address>
+						</affiliation>		
+						<affiliation>
+							<orgName type="department">Division of Hematology/Oncology</orgName>,
+							<orgName type="institution">Mayo Clinic College of<lb/> Medicine</orgName>,
+							<address>
+								<settlement>Scottsdale</settlement>,
+							</address>
+						<affiliation>	
+						</affiliation>	
+							<orgName type="department">Division of Hematol-<lb/>ogy/Oncology</orgName>,
+							<orgName type="institution">Mayo Clinic College of Medicine</orgName>,
+							<address>
+								<settlement>Jacksonville</settlement>,
+								<region>Fla (V.R.)</region>; and
+							</address> 
+							<lb/>
+						<affiliation>	
+						</affiliation>	
+							<orgName type="department">Division of Medical Oncology</orgName>,
+							<orgName type="institution">Mayo Health System</orgName>,
+							<address>
+								<settlement>Mankato</settlement>,
+								<region>Minn</region>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

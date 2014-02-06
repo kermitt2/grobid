@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>a</marker>
+							<orgName type="institution">General Electric Corporate Research and Development</orgName>,
+							<address>
+								<postBox>P.O. Box 8</postBox>,
+								<settlement>Schenectady</settlement>,
+								<region>NY</region>
+								<postCode>12301</postCode>,
+								<country>USA</country>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>b</marker>
+							<orgName type="department">Institute for Metals Superplasticity Problems</orgName>,
+							<orgName type="institution">Russian Academy of Sciences</orgName>,
+							<address>
+								Ufa. 
+								<postCode>450001</postCode>
+								<settlement>Bashkortostan</settlement>,
+								<country>Russia</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

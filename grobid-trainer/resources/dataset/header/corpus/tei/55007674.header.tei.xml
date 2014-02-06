@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007674"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>A Multiresolution Stereo Vision System for Mobile Robots<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Luca Iocchi<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Dipartimento di Informatica e Sistemistica<lb/> Universitt a di Roma \La Sapienza&quot;,</affiliation>
+	</byline>
+
+	<address>Italy<lb/></address>
+
+	<email>iocchi@dis.uniroma1.it<lb/></email>
+
+	<byline>
+	<docAuthor>Kurt Konolige<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Artiicial Intelligence Center<lb/> SRI International,</affiliation>
+	</byline>
+
+	<address>Menlo Park, CA<lb/></address>
+
+	<email>konolige@ai.sri.com<lb/></email>
+
+		</front>
+	</text>
+</tei>

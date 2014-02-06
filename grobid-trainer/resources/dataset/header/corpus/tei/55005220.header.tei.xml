@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005220"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Structure±Activity Relationships of Acyloxyamidine<lb/> Cytomegalovirus DNA Polymerase Inhibitors<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>John A. Tucker,*<lb/> ,y<lb/> Terrance L. Clayton, Connie G. Chidester, Martin W. Schulz,<lb/> Leigh E. Harrington, Steven J. Conrad, Yoshihiko Yagi, Nancee L. Oien,<lb/> David Yurek and Ming-Shang Kuo<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Discovery Research, Pharmacia and Upjohn,</affiliation>
+	</byline>
+
+	<address>Kalamazoo, MI 49001, USA<lb/></address>
+
+	<note type="submission">Received 27 March 1999; accepted 7 November 1999<lb/></note>
+
+	<div type="abstract">AbstractÐThis paper describes the structure±activity relationships of a new class of cytomegalovirus DNA polymerase inhibitors<lb/> having two aryl groups joined by an acyloxyamidine linker. Examination of a series of analogues in which the terminal groups are<lb/> varied revealed a very narrow SAR around the 2,4-dichlorophenyl group of the lead compound, but a variety of replacements for<lb/> the benzothiazole ring are compatible with activity. The most notable of these is the isoxazole ring of compound 78, which provides<lb/> a 30-fold enhancement in potency compared to the lead compound. We also describe the design, synthesis and evaluation of 10<lb/> analogues in which the acyloxyamidine linker is modi®ed or replaced by an isosteric group. Structure±activity relationship studies<lb/> identi®ed the linker -NH 2 group as a critical pharmacophoric element. Ab initio molecular orbital calculations combined with<lb/> qualitative estimates of steric interaction energies suggest that the lowest energy conformations of the acyloxyamidine linker are<lb/> characterized by an extended planar C Ar ±C=N±O±C arrangement and either a syn-periplanar or anti-periplanar N±O±C±C Ar<lb/> H<lb/> arrangement. Only the anti-periplanar conformation was observed in the crystal structures of three acyloxyamidines. The most<lb/> active of the linker-modi®ed compounds designed on the basis of these studies is the amidine carbamate 20, which is approximately<lb/> one-third as potent in the cytomegalovirus DNA polymerase inhibition assay as the comparator acyloxyamidine 53. The activity of<lb/> 20 suggests that acyloxyamidines may bind to the cytomegalovirus DNA polymerase via an anti-periplanar conformation similar to<lb/> that observed in the crystal structure of acyloxyamidine 36.</div>
+
+	<note type="copyright">&#169; 2000 Elsevier Science Ltd. All rights reserved.<lb/></note>
+
+		</front>
+	</text>
+</tei>

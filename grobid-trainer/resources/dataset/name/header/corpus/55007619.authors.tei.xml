@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>David</forename>
+								<middlename>L</middlename>.
+								<surname>Steed</surname>,
+								<roleName>MD</roleName>,
+								<lb/>
+								<marker>a,b</marker>
+							</persName>
+							<persName>
+								<forename>Cathy</forename>
+								<surname>Trumpower</surname> ,
+								<roleName>BS</roleName> ,
+								<lb/>
+								<marker>b</marker>
+							</persName>
+							<persName>
+								<forename>Danelle</forename>
+								<surname>Duffy</surname> ,
+								<roleName>MS</roleName>,
+								<lb/>
+								<marker>b</marker>
+							</persName>
+							<persName>
+								<forename>Charlotte</forename>
+								<surname>Smith</surname>,
+								<lb/>
+								<roleName>MS</roleName> ,
+								<lb/>
+								<marker>b</marker>
+							</persName>
+							<persName>
+								<forename>Vivienne</forename>
+								<surname>Marshall</surname>,
+								<roleName>PhD</roleName>,
+								<lb/>
+								<marker>b</marker>
+							</persName>
+							<persName>
+								<forename>Randall</forename>
+								<surname>Rupp</surname> ,
+								<roleName>PhD</roleName> ,
+								<lb/>
+								<marker>b</marker>
+							</persName>
+							<persName>
+								<forename>Martin</forename>
+								<surname>Robson</surname>,
+								<roleName>MD</roleName>
+								<marker>b ,d</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

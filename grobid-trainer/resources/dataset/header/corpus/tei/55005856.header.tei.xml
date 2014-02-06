@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005856"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Technological Advances Lead to a Greater Variety of Infrared Detectors<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>By Pedro Meledina, Applications Engineer<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Hamamatsu Corporation,</affiliation>
+	</byline>
+
+	<address>Bridgewater, NJ 08807<lb/></address>
+
+	<div type="abstract">Infrared radiation is widely used in diverse technical<lb/> and scientific fields including spectroscopy, optical<lb/> communications,<lb/> and other<lb/> measurement applications. Through advances in photonics<lb/> technology, a wide variety of infrared detectors are<lb/> now available in order to meet a large range of<lb/> application needs.<lb/> Infrared detectors are classified into two categories –<lb/> thermal models and quantum models. A thermal<lb/> detector uses the energy of the infrared beam as heat,<lb/> while the quantum detector offers a higher detection.<lb/> Advances in research to better detect this part of the<lb/> higher spectrum have lead to the development of<lb/> more advanced detectors, including InGaAs<lb/> photodiodes, PbS &amp; PbSe photoconductive<lb/> detectors, pyroelectric detectors, and hybrid<lb/> detectors. While all of these devices are excellent at<lb/> light detection, each is better suited for certain<lb/> applications than others.<lb/></div>
+
+		</front>
+	</text>
+</tei>

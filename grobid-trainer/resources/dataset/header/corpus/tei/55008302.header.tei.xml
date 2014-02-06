@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008302"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>MOVIES FROM MUSIC:<lb/> VISUALIZING MUSICAL COMPOSITIONS<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>J. B. Mitroo*<lb/> @BULLET Nancy Herman**<lb/> Norman I. Badler***<lb/></docAuthor>
+	</byline>
+
+	<keyword>Key words and phrases: Computer art, computer graphics, music, color animation, video display, raster<lb/> graphics.<lb/> Computing Reviews categories: 3.41, 3.44, 8.2.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

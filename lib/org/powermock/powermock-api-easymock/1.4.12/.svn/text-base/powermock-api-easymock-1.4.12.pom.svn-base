@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <artifactId>powermock-api</artifactId>
+        <groupId>org.powermock</groupId>
+        <version>1.4.12</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.powermock</groupId>
+    <artifactId>powermock-api-easymock</artifactId>
+    <name>powermock-api-easymock</name>
+    <version>1.4.12</version>
+
+    <description>
+		PowerMock API for EasyMock.
+    </description>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.easymock</groupId>
+            <artifactId>easymock</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.powermock</groupId>
+            <artifactId>powermock-api-support</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
+</project>

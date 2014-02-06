@@ -1,0 +1,25 @@
+application = anmeldung,patentanmeldung
+publication = publikation,publiziert
+provisional = provisorisch
+utility = gebrauchsmuster,gebrauchsmusterschutz
+
+EP = europäische,europa
+DE = deutsch,deutschland
+US = amerika,vereinigten-staaten
+FR = französische,frankreich
+UK = vereinigtes-königreich,großbritannie,englisch,britisch
+BE = belgisch,belgien
+JP = japanisch
+CA = kanadisch,kanada
+CH = schweizerisch,schweiz
+AT = österreich
+AU = australisch,australien
+KR = südkorea,koreanisch
+RU = russland,rußland,russisch
+FI = finnland,finnisch
+NL = holländisch,niederländisch,niederland
+SE = schwedisch,schweden
+IT = italienisch,italien
+ES = spanien,spanisch
+DK = dänisch,dänemark
+DD = DDR,deutsche-demokratische-republik

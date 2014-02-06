@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">Department of Chemistry</orgName>,
+							<orgName type="institution">East Carolina University</orgName>,
+							<address>
+								<settlement>Greenville</settlement>,
+								<region>North Carolina</region>
+								<postCode>27858 (</postCode>
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="department">Sandia National Laboratories</orgName>,
+							<lb/>
+							<address>
+								<settlement>Albuquerque</settlement>,
+								<region>New Mexico</region>
+								<postCode>87185-0895</postCode>
+								(D.M.H.); and
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="department">Department of Mathematics and Pathology</orgName>,
+							<orgName type="institution">University of New Mexico</orgName>,
+							<address>
+								<settlement>Albuquerque</settlement>,
+								<region>New<lb/> Mexico</region>
+								<postCode>87131</postCode>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

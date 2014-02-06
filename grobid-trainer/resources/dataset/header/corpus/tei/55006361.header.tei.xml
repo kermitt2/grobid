@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55006361"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Nonalcoholic Steatohepatitis: A Proposal for<lb/> Grading and Staging the Histological Lesions<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Elizabeth M. Brunt, M.D., Christine G. Janney, M.D., Adrian M. Di Bisceglie, M.D.,<lb/> Brent A. Neuschwander-Tetri, M.D., and Bruce R. Bacon, M.D.<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Pathology and Division of Gastroenterology and Hepatology, Department of Internal<lb/> Medicine, Saint Louis University School of Medicine,</affiliation>
+	</byline>
+
+	<address>St. Louis, Missouri<lb/></address>
+
+		</front>
+	</text>
+</tei>

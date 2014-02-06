@@ -63,6 +63,9 @@ public class TextSaxParser extends DefaultHandler {
 		if (qName.equals("patent-document")) {
 			int length = atts.getLength();
 
+			String docID = null;
+			String docNumber = null;
+			String kindCode = null;
 			// Process each attribute
 			for (int i = 0; i < length; i++) {
 				// Get names and values for each attribute
@@ -73,10 +76,27 @@ public class TextSaxParser extends DefaultHandler {
 					if (name.equals("country")) {
 						country = value;
 					}
-					if (name.equals("doc-number")) {
-						currentPatentNumber = country + value;
+					else if (name.equals("kind")) {
+						kindCode = value;
+					}
+					else if (name.equals("doc-number") || name.equals("docnumber")) {
+						docNumber = value;
+					}
+					else if (name.equals("id") || name.equals("ID")) {
+						docID = value;
 					}
 				}
+			}
+			
+			if ( (country != null) && (docNumber != null) ) {
+				if (kindCode != null) {
+					currentPatentNumber = country + docNumber + kindCode;
+				}
+				else
+					currentPatentNumber = country + docNumber;
+			}
+			else if (docID != null) {
+				currentPatentNumber = docID;
 			}
 		}
 

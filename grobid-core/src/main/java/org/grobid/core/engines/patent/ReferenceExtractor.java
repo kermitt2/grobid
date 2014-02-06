@@ -4,6 +4,8 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
+import java.util.zip.GZIPInputStream;
+import java.text.*;
 
 import javax.xml.parsers.SAXParserFactory;
 
@@ -32,6 +34,8 @@ import org.xml.sax.EntityResolver;
 import org.xml.sax.InputSource;
 import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.XMLReaderFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Extraction of patent and NPL references from the content body of patent document with Conditional
@@ -40,6 +44,7 @@ import org.xml.sax.helpers.XMLReaderFactory;
  * @author Patrice Lopez
  */
 public class ReferenceExtractor implements Closeable {
+	private static final Logger LOGGER = LoggerFactory.getLogger(ReferenceExtractor.class);
 
     private Tagger taggerPatent = null;
     private Tagger taggerNPL = null;
@@ -141,7 +146,19 @@ public class ReferenceExtractor implements Closeable {
                 }
             });
             reader.setContentHandler(sax);
-            InputSource input = new InputSource(pathXML);
+			
+			InputSource input = null;
+			
+			if (pathXML.endsWith(".gz")) {
+				InputStream dataInputStream = new FileInputStream(pathXML);
+				GZIPInputStream gzip = new GZIPInputStream(dataInputStream);
+		       	DataInputStream tmp = new DataInputStream(gzip);
+		      	dataInputStream = tmp;
+				input = new InputSource(dataInputStream);
+			}
+			else {
+            	input = new InputSource(pathXML);
+			}
             input.setEncoding("UTF-8");
 
             reader.parse(input);
@@ -403,12 +420,16 @@ public class ReferenceExtractor implements Closeable {
 
             StringTokenizer stt = new StringTokenizer(theResult, "\n");
 
-            ArrayList<String> referencesPatent = new ArrayList<String>();
-            ArrayList<String> referencesNPL = new ArrayList<String>();
-            ArrayList<Integer> offsets_patent = new ArrayList<Integer>();
-            ArrayList<Integer> offsets_NPL = new ArrayList<Integer>();
+            List<String> referencesPatent = new ArrayList<String>();
+            List<String> referencesNPL = new ArrayList<String>();
+            List<Integer> offsets_patent = new ArrayList<Integer>();
+            List<Integer> offsets_NPL = new ArrayList<Integer>();
+			List<Double> probPatent = new ArrayList<Double>();
+			List<Double> probNPL = new ArrayList<Double>();
+
             boolean currentPatent = true; // type of current reference
-            String reference = null;
+            String reference = null; 
+			double currentProb = 0.0;
             offset = 0;
             int currentOffset = 0;
 			int addedOffset = 0;
@@ -416,6 +437,7 @@ public class ReferenceExtractor implements Closeable {
             String actual = null; // token
             int p = 0; // iterator for the tokenizations for restauring the original tokenization with
             // respect to spaces
+
             while (stt.hasMoreTokens()) {
                 String line = stt.nextToken();
                 if (line.trim().length() == 0) {
@@ -454,31 +476,53 @@ public class ReferenceExtractor implements Closeable {
                     continue;
                 }
 
+				int segProb = label.lastIndexOf("/");
+				String probString = label.substring(segProb+1, label.length());
+				//System.out.println("given prob: " + probString);			
+				double prob = 0.0;
+				try {
+					prob = Double.parseDouble(probString);
+					//System.out.println("given prob: " + probString + ", parsed: " + prob);
+				}
+				catch(Exception e) {
+					LOGGER.debug(probString + " cannot be parsed.");
+				}
+				label = label.substring(0,segProb);
+				
                 if (actual != null) {
                     if (label.endsWith("<refPatent>")) {
                         if (reference == null) {
                             reference = separator + actual;
                             currentOffset = offset;
                             currentPatent = true;
+							currentProb = prob;
                         } else {
                             if (currentPatent) {
                                 if (label.equals("I-<refPatent>")) {
                                     referencesPatent.add(reference);
                                     offsets_patent.add(currentOffset);
+									
+									probPatent.add(new Double(currentProb));
 
                                     currentPatent = true;
 		                            reference = separator + actual;
                                     currentOffset = offset;
+									currentProb = prob;
                                 } else {
                                     reference += separator + actual;
+									if (prob > currentProb) {
+										currentProb = prob;
+									}
                                 }
                             } else {
                                 referencesNPL.add(reference);
                                 offsets_NPL.add(currentOffset);
-
+								probNPL.add(new Double(currentProb));
+								
                                 currentPatent = true;
 	                            reference = separator + actual;
                                 currentOffset = offset;
+								currentProb = prob;
                             }
                         }
                     } else if (label.endsWith("<refNPL>")) {
@@ -486,24 +530,32 @@ public class ReferenceExtractor implements Closeable {
                             reference = separator + actual;
                             currentOffset = offset;
                             currentPatent = false;
+							currentProb = prob;
                         } else {
                             if (currentPatent) {
                                 referencesPatent.add(reference);
                                 offsets_patent.add(currentOffset);
+								probPatent.add(new Double(currentProb));
 
                                 currentPatent = false;
 	                            reference = separator + actual;
                                 currentOffset = offset;
+								currentProb = prob;
                             } else {
                                 if (label.equals("I-<refNPL>")) {
                                     referencesNPL.add(reference);
                                     offsets_NPL.add(currentOffset);
+									probNPL.add(new Double(currentProb));
 
                                     currentPatent = false;
 		                            reference = separator + actual;
                                     currentOffset = offset;
+									currentProb = prob;
                                 } else {
                                     reference += separator + actual;
+									if (prob > currentProb) {
+										currentProb = prob;
+									}
                                 }
                             }
                         }
@@ -512,13 +564,16 @@ public class ReferenceExtractor implements Closeable {
                             if (currentPatent) {
                                 referencesPatent.add(reference);
                                 offsets_patent.add(currentOffset);
+								probPatent.add(new Double(currentProb));
                             } else {
                                 referencesNPL.add(reference);
                                 offsets_NPL.add(currentOffset);
+								probNPL.add(new Double(currentProb));
                             }
                             currentPatent = false;
                         }
                         reference = null;
+						currentProb	= 0.0;
                     }
                 }
 				offset += addedOffset;
@@ -533,8 +588,9 @@ public class ReferenceExtractor implements Closeable {
                 ArrayList<PatentItem> patents0 = patentParser.processRawRefText();
                 for (PatentItem pat : patents0) {
                     pat.setContext(ref);
+					pat.setConf(probPatent.get(j).doubleValue());
                     patents.add(pat);
-                    if (pat.getApplication()) {
+                    /*if (pat.getApplication()) {
                         if (pat.getProvisional()) {
                             if (debug) {
                                 System.out.println(pat.getAuthority() + " " + pat.getNumber()
@@ -573,7 +629,7 @@ public class ReferenceExtractor implements Closeable {
                             }
                             System.out.println(pat.getContext());
                         }
-                    }
+                    }*/
                 }
                 j++;
             }
@@ -604,7 +660,7 @@ public class ReferenceExtractor implements Closeable {
                     bds.setResBib(result);
                     bds.setRawBib(ref);
                     bds.addOffset(offsets_NPL.get(k).intValue());
-                    //bds.setConfidence(result.conf);
+                    bds.setConfidence(probNPL.get(k).doubleValue());
                     articles.add(bds);
                     k++;
                 }
@@ -675,10 +731,11 @@ public class ReferenceExtractor implements Closeable {
             for (int j = 0; j < tagger.xsize(); j++) {
                 res.append(tagger.x(i, j)).append("\t");
             }
-            res.append(tagger.y2(i));
+			//res.append(tagger.y2(i));
+            res.append(tagger.y2(i)).append("/").append(tagger.prob(i));
             res.append("\n");
         }
-
+		//System.out.println(res.toString());
         return res.toString();
     }
 
@@ -857,7 +914,7 @@ public class ReferenceExtractor implements Closeable {
         if (documentPath == null) {
             throw new GrobidResourceException("Cannot process the patent file, because the document path is null.");
         }
-        if (!documentPath.endsWith(".xml")) {
+        if (!documentPath.endsWith(".xml") && !documentPath.endsWith(".xml.gz")) {
             throw new GrobidResourceException("Only patent XML files (ST.36 or Marec) can be processed to " +
                     "generate traning data.");
         }
@@ -897,7 +954,19 @@ public class ReferenceExtractor implements Closeable {
                 }
             });
             reader.setContentHandler(sax);
-            InputSource input = new InputSource(documentPath);
+
+			InputSource input = null;
+			
+			if (documentPath.endsWith(".gz")) {
+				InputStream dataInputStream = new FileInputStream(documentPath);
+				GZIPInputStream gzip = new GZIPInputStream(dataInputStream);
+		       	DataInputStream tmp = new DataInputStream(gzip);
+		      	dataInputStream = tmp;
+				input = new InputSource(dataInputStream);
+			}
+			else {
+            	input = new InputSource(documentPath);
+			}
             input.setEncoding("UTF-8");
 
             reader.parse(input);
@@ -935,7 +1004,18 @@ public class ReferenceExtractor implements Closeable {
                     }
                 });
                 reader.setContentHandler(saxx);
-                input = new InputSource(documentPath);
+
+				if (documentPath.endsWith(".gz")) {
+					InputStream dataInputStream = new FileInputStream(documentPath);
+					GZIPInputStream gzip = new GZIPInputStream(dataInputStream);
+			       	DataInputStream tmp = new DataInputStream(gzip);
+			      	dataInputStream = tmp;
+					input = new InputSource(dataInputStream);
+				}
+				else {
+	            	input = new InputSource(documentPath);
+				}
+
                 input.setEncoding("UTF-8");
 
                 reader.parse(input);

@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004787"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Executive summary<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">Voice over IP (VoIP) is here, it&apos;s proven, and deployments are expanding. But challenges<lb/> remain for extending VoIP services between carrier networks and private networks (either<lb/> residential or enterprise), and for peering between carrier networks.<lb/> Up until now, connections between VoIP networks have been made primarily via TDM<lb/> mechanisms. This strategy isolates VoIP networks from each other and circumvents many<lb/> interoperability issues, but it also adds unnecessary service limitations, cost, and complexity.<lb/> It can also degrade voice quality, as multiple TDM to IP transcoding &quot;hops&quot; increase<lb/> latency and potentially add distortion.<lb/> These undesirable effects undermine service quality and the fundamental business case for<lb/> VoIP—the potential to deliver profitable voice, video, and other real-time communication<lb/> services over a very cost-effective converged infrastructure. If carriers and enterprises are to<lb/> realize the full benefits of VoIP, they must be able to directly connect networks together,<lb/> packet to packet, without converting to TDM.<lb/> Sounds great, but what do you do about the stringent border protections that must be in<lb/> place to protect IP networks, which are otherwise inherently insecure? How can you accept<lb/> incoming IP Telephony traffic without jeopardizing the security of internal network<lb/> resources—blocking intruders and attacks while welcoming legitimate traffic without delay?<lb/> How can traffic navigate through firewalls in a carefully controlled manner, while still<lb/> meeting the end-to-end latency requirements of voice traffic? How can IP Telephony traffic<lb/> traverse network address translators, which enable IP packets to flow between different IP<lb/> address spaces, but which can also block many traffic types, such as IP Telephony?</div>
+
+		</front>
+	</text>
+</tei>

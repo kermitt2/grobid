@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">Dipartimento di Informatica e Sistemistica</orgName>
+							<lb/>
+							<orgName type="institution">Universitt a di Roma \La Sapienza&quot;</orgName>,
+							<address>
+								<country>Italy</country>
+							</address>
+						</affiliation>
+						<affiliation>		
+							<orgName type="department">Artiicial Intelligence Center</orgName><lb/>
+							<orgName type="institution">SRI International</orgName>,
+							<address>
+								<settlement>Menlo Park</settlement>,
+								<region>CA</region>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

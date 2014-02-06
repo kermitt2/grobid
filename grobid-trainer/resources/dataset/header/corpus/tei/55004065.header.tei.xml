@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004065"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Models for prediction and recognition of eukaryotic promoters<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Thomas Werner<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>GSF-National Research Center for Environment and Health, Institute of Mammalian Genetics,</affiliation>
+	</byline>
+
+	<address>Ingolstädter Landstra␤e 1, D-85764 Neuherberg, and<lb/></address>
+
+	<byline>
+	<affiliation>Genomatix Software GmbH,</affiliation>
+	</byline>
+
+	<address>Karlstra␤e 55, D-80333 München, Germany<lb/></address>
+
+	<note type="submission">Received: 21 July 1998 / Accepted: 7 October 1998<lb/></note>
+
+		</front>
+	</text>
+</tei>

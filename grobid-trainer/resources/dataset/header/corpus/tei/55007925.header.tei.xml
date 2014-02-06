@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007925"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Investigational New Drugs 19: 61–67, 2001.<lb/></reference>
+
+	<note type="copyright">© 2001 Kluwer Academic Publishers. Printed in the Netherlands.<lb/></note>
+
+	<note type="page">61<lb/></note>
+
+	<docTitle>
+	<titlePart>Factors affecting the pharmacokinetics of CPT-11: The Body Mass Index,<lb/> age and sex are independent predictors of pharmacokinetic parameters of<lb/> CPT-11<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Toshimichi Miya 1 , Tomoyuki Goya 1 , Hirofumi Fujii 2 , Tomoko Ohtsu 2 , Kuniaki Itoh 2 , Tadahiko<lb/> Igarashi 2 , Hironobu Minami 2 and Yasutsuna Sasaki 2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Department of Surgery II, Kyorin University School of Medicine,</affiliation>
+	</byline>
+
+	<address>Mitaka, Tokyo, Japan;</address>
+
+	<byline>
+	<affiliation>2 Division of Hemato-<lb/>logy/Oncology, National Cancer Center Hospital East,</affiliation>
+	</byline>
+
+	<address>Kashiwa, Chiba, Japan<lb/></address>
+
+	<keyword>Key words: irinotecan-obesity, dose adjustment, pharmacokinetics<lb/></keyword>
+
+	<div type="abstract">Summary<lb/> This study was conducted to describe the relationship between pharmacokinetics of CPT-11 and its active meta-<lb/>bolite SN-38, and clinical values with special emphasis on the influence of relative weight referring to the<lb/> appropriateness of a conventional dose adjustment method by body surface area (BSA). Thirty-six patients received<lb/> 100 mg/m 2 of CPT-11 intravenously over 90 min. Body Mass Index (BMI) was used as a measure of relative weight<lb/> which is calculated from the equation: BMI=weight(kg)/[height(m)] 2 . The area under the concentration-time curve<lb/> (AUC) of CPT-11 was significantly correlated with sex, age, poorer creatinine clearance and indocyanine green<lb/> retention test (ICG). The peak plasma concentration (Cmax) of CPT-11 was significantly correlated with sex a<lb/> larger BMI, BSA and age. The AUC of SN-38 was significantly correlated with ICG. The volume of distribution<lb/> at steady state of CPT-11 inversely correlated with BMI. Multiple regression analysis revealed that the best fitting<lb/> model with significant independent predictors for AUC of CPT-11 included age and sex (F=6.93, R 2 =0.29). That<lb/> of Cmax of CPT-11 included sex and BMI (F=8.96, R 2 =0.35). The only independent predictor of AUC of SN-<lb/>38 was ICG (F=7.75, R 2 =0.19). These results indicated that several factors affect pharmacological behaviors of<lb/> CPT-11 even in patients with normal organ functions. The dose modification method based solely on BSA is not<lb/> sufficient to reduce interpatient variability of cancer chemotherapy. The influence of relative weight, sex and age<lb/> on pharmacokinetics/pharmacodynamics should be taken into consideration in every pharmacological approach to<lb/> establish the ideal dose modification method.<lb/></div>
+
+		</front>
+	</text>
+</tei>

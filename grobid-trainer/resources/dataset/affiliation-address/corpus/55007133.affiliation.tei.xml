@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">Institute of Electro-Optical Engineering</orgName>,
+							<orgName type="institution">National Chiao Tung University</orgName>,
+							<address>
+								<settlement>Hsinchu</settlement>,
+								<country>Taiwan</country>
+								<postCode>30056</postCode>,
+								<lb/>
+								<country>Republic of China</country>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>a</marker>)
+							<orgName type="department">Microelectronics and Information Systems Research Center</orgName>
+							and 
+							<orgName type="department">Department of Applied Chemistry</orgName>,
+							<lb/>
+							<orgName type="institution">National Chiao Tung University</orgName>,
+							<address>
+								<settlement>Hsinchu</settlement>,
+								<country>Taiwan</country>
+								<postCode>30056</postCode>,
+								<country>Republic of China</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,26 @@
+application = applicat,appln
+publication = publicat,pub
+provisional = provisional
+utility = utility
+
+EP = european,europe
+DE = german,germany
+US = united-state,USA,american
+FR = french,france
+UK = GB,G.B,british,english,united-kingdom,great-britain
+BE = belgian,belgium
+WO = PCT,WIPO,world-patent
+JP = japan,nippon,HEI
+CA = canadian,canada
+CH = swiss,switzerland
+AT = austria,austrian
+AU = australia,australian
+KR = korean,korea,south-korea,south-korean
+RU = russia,russian
+FI = finish,finland
+NL = holland,dutch,netherlands
+SE = sweden,swedish
+IT = italy,italian
+ES = spain,spanish
+DK = denmark,danish
+DD = east-germany,east-german

@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004503"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">The Specialty Chemicals Innovator™<lb/> </note>
+	
+	<docTitle>
+	<titlePart>CARBOPOL ® ULTREZ 10 POLYMER:<lb/> A NEW UNIVERSAL THICKENER FOR THE<lb/> PERSONAL CARE INDUSTRY<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Dilip D. Desai, Julie F. Schmucker and Debra Light<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Noveon, Inc.<lb/></affiliation>
+	</byline>
+
+	<address>9911 Brecksville Road<lb/> Cleveland, Ohio 44141 U. S. A.<lb/></address>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005783"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>PARTICLE SIZE<lb/> MEASUREMENT<lb/></titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

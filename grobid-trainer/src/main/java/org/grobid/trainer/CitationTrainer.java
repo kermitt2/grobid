@@ -11,7 +11,7 @@ import org.grobid.trainer.sax.TEICitationSaxParser;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 import java.io.*;
-import java.util.List;
+import java.util.*;
 
 
 /**
@@ -23,73 +23,145 @@ public class CitationTrainer extends AbstractTrainer {
         super(GrobidModels.CITATION);
     }
 
+	/**
+	 * Add the selected features to the citations model example set, default 
+	 * 
+	 * @param corpusDir
+	 *            a path where corpus files are located
+	 * @param trainingOutputPath
+	 *            path where to store the temporary training data
+	 * @return the total number of used corpus items
+	 */
+	@Override
+	public int createCRFPPData(final File corpusDir, final File modelOutputPath) {
+		return createCRFPPData(corpusDir, modelOutputPath, null, 1.0);
+	}
+ 
+	/**
+	 * Add the selected features to the citations model example set 
+	 * 
+	 * @param corpusDir
+	 *            a path where corpus files are located
+	 * @param trainingOutputPath
+	 *            path where to store the temporary training data
+	 * @param evalOutputPath
+	 *            path where to store the temporary evaluation data
+	 * @param splitRatio
+	 *            ratio to consider for separating training and evaluation data, e.g. 0.8 for 80% 
+	 * @return the total number of used corpus items
+	 */
+	@Override
+	public int createCRFPPData(final File corpusDir, 
+							final File trainingOutputPath, 
+							final File evalOutputPath, 
+							double splitRatio) {
+		int totalExamples = 0;
+		try {
+			System.out.println("sourcePathLabel: " + corpusDir);
+			if (trainingOutputPath != null)
+				System.out.println("outputPath for training data: " + trainingOutputPath);
+			if (evalOutputPath != null)
+				System.out.println("outputPath for evaluation data: " + evalOutputPath);
 
-    /**
-     * Add the selected features to the header model training
-     */
-    public int createCRFPPData(File sourceFile, File outputPath) {
-        System.out.println(sourceFile);
-        System.out.println(outputPath);
-        int nbExamples = 0;
+			// we convert the tei files into the usual CRF label format
+			// we process all tei files in the output directory
+			final File[] refFiles = corpusDir.listFiles(new FilenameFilter() {
+				public boolean accept(File dir, String name) {
+					return name.endsWith(".xml");
+				}
+			}); 
 
-        List<List<OffsetPosition>> journalsPositions;
-        List<List<OffsetPosition>> abbrevJournalsPositions;
-        List<List<OffsetPosition>> conferencesPositions;
-        List<List<OffsetPosition>> publishersPositions;
+			if (refFiles == null) {
+				throw new IllegalStateException("Folder " + corpusDir.getAbsolutePath()
+						+ " does not seem to contain training data. Please check");
+			}
 
-        try {
-            // we process all tei files in the output directory
-            File[] refFiles = sourceFile.listFiles(new FilenameFilter() {
-                public boolean accept(File dir, String name) {
-                    return name.endsWith(".xml");
-                }
-            });
+			System.out.println(refFiles.length + " tei files");
 
-            if (refFiles == null)
-                return 0;
+			// the file for writing the training data
+			OutputStream os2 = null;
+			Writer writer2 = null;
+			if (trainingOutputPath != null) {
+				os2 = new FileOutputStream(trainingOutputPath);
+				writer2 = new OutputStreamWriter(os2, "UTF8");
+			}
 
-            System.out.println(refFiles.length + " files");
+			// the file for writing the evaluation data
+			OutputStream os3 = null;
+			Writer writer3 = null;
+			if (evalOutputPath != null) {
+				os3 = new FileOutputStream(evalOutputPath);
+				writer3 = new OutputStreamWriter(os3, "UTF8");
+			}
 
-            // the file for writing the training data
-            Writer writer2 = new OutputStreamWriter(new FileOutputStream(outputPath), "UTF8");
+			// get a factory for SAX parser
+			SAXParserFactory spf = SAXParserFactory.newInstance();
 
-            int n = 0;
-            for (; n < refFiles.length; n++) {
-                File teifile = refFiles[n];
-                String name = teifile.getName();
-                System.out.println(name);
+			List<List<OffsetPosition>> journalsPositions;
+	        List<List<OffsetPosition>> abbrevJournalsPositions;
+	        List<List<OffsetPosition>> conferencesPositions;
+	        List<List<OffsetPosition>> publishersPositions;
 
-                TEICitationSaxParser parser2 = new TEICitationSaxParser();
-                // get a factory
-                SAXParserFactory spf = SAXParserFactory.newInstance();
-                //get a new instance of parser
-                SAXParser par = spf.newSAXParser();
-                par.parse(teifile, parser2);
+			int n = 0;
+			for (; n < refFiles.length; n++) {
+				final File teifile = refFiles[n];
+				String name = teifile.getName();
+				//System.out.println(name);
 
-                List<String> labeled = parser2.getLabeledResult();
-                nbExamples = parser2.nbCitations;
+				final TEICitationSaxParser parser2 = new TEICitationSaxParser();
 
-                journalsPositions = parser2.journalsPositions;
+				// get a new instance of parser
+				final SAXParser p = spf.newSAXParser();
+				p.parse(teifile, parser2);
+
+				final List<String> labeled = parser2.getLabeledResult();
+				totalExamples += parser2.nbCitations;
+				
+				journalsPositions = parser2.journalsPositions;
                 abbrevJournalsPositions = parser2.abbrevJournalsPositions;
                 conferencesPositions = parser2.conferencesPositions;
                 publishersPositions = parser2.publishersPositions;
 
-                String citation = FeaturesVectorCitation.addFeaturesCitation(labeled,
+				// we can now add the features
+				String citation = FeaturesVectorCitation.addFeaturesCitation(labeled,
                         journalsPositions,
                         abbrevJournalsPositions,
                         conferencesPositions,
                         publishersPositions);
+//System.out.println("["+citation+"]");
 
-                // format with features for sequence tagging...
-                writer2.write(citation);
-            }
+				String[] chunks = citation.split("\n \n");
+				
+				for(int i=0; i<chunks.length; i++) {
+					String chunk = chunks[i];
+					if ( (writer2 == null) && (writer3 != null) )
+						writer3.write(chunk + "\n \n");
+					if ( (writer2 != null) && (writer3 == null) )
+						writer2.write(chunk + "\n \n");
+					else {		
+						if (Math.random() <= splitRatio)
+							writer2.write(chunk + "\n \n");
+						else 
+							writer3.write(chunk + "\n \n");
+					}
+				}
+			}
 
-            writer2.close();
-        } catch (Exception e) {
-            throw new GrobidException("An exception occurred while running Grobid.", e);
-        }
-        return nbExamples;
-    }
+			if (writer2 != null) {
+				writer2.close();
+				os2.close();
+			}
+
+			if (writer3 != null) {
+				writer3.close();
+				os3.close();
+			}
+
+		} catch (Exception e) {
+			throw new GrobidException("An exception occurred while running Grobid.", e);
+		}
+		return totalExamples;
+	}
 
     /**
      * Command line execution.

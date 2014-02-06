@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Sanjay</forename>
+								<surname>Kumar</surname>,
+							</persName>
+							<persName>
+								<forename>Himanshu</forename>
+								<surname>Raj</surname>,
+							</persName>
+							<persName>
+								<forename>Karsten</forename>
+								<surname>Schwan</surname>,
+							</persName>
+							<persName>
+								<forename>Ivan</forename>
+								<surname>Ganev</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

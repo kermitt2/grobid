@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Walter</forename>
+								<surname>Schröder</surname>,
+							</persName>
+							<persName>
+								<forename>Uwe</forename>
+								<lb/>
+								<surname>Breuer</surname>,
+							</persName>
+							<persName>
+								<forename>Ulrich</forename>
+								<surname>Schurr</surname> und
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Stephan</forename>
+								<surname>Küppers</surname>
+							</persName>
+							<persName>
+								<forename>Martin</forename>
+								<surname>Vogel</surname> ,
+							</persName>
+							<persName>
+								<forename>Rasmus</forename>
+							<lb/>
+								<surname>Schulte - Ladbeck</surname> und
+							</persName>
+							<persName>
+								<forename>Uwe</forename>
+								<lb/>
+								<surname>Karst</surname>
+							</persName>
+							<persName>
+								<forename>Simone</forename>
+								<surname>Günther</surname> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Alexander</forename>
+								<surname>Jung</surname> ,
+							</persName>
+							<persName>
+								<forename>Ulf</forename>
+								<surname>Vogt</surname>
+								<lb/> und
+							</persName>
+							<persName>
+								<forename>Michael</forename>
+								<surname>Steinwand</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

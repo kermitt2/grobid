@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Gerald</forename>
+								<middlename>R</middlename>.
+								<surname>Aschoff</surname>,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Dennis</forename>
+								<middlename>M</middlename> ,
+								<surname>Kox</surname> ,
+								<lb/>
+							</persName>
+							<persName>							
+								<forename>Gregory</forename>
+								<middlename>X</middlename>.
+								<surname>Krieger</surname>,
+								<lb/>
+							</persName>
+							<persName>							
+								<forename>Edward</forename>
+								<middlename>A</middlename> .
+								<surname>Morris</surname> ,
+								<lb/>
+							</persName>
+							<persName>
+								<forename>Jack</forename>
+								<middlename>R</middlename> .
+								<surname>Harris</surname>,
+								<lb/>	
+							</persName>
+							<persName>													
+								<forename>Gary</forename>
+								<surname>Kirchner</surname> ,
+								<lb/>
+							</persName>
+							<persName>							
+								<forename>Andrew</forename>
+								<surname>Paradise</surname> ,
+								<lb/>
+							</persName>
+							<persName>							
+								<forename>Art</forename>
+								<surname>Smedberg</surname> ,
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

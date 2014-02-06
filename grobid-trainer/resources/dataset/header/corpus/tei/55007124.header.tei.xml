@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007124"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Hypervisor Support for Identifying Covertly Executing Binaries<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Lionel Litty<lb/> H. Andrés Lagar-Cavilla<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Dept. of Computer Science<lb/> University of Toronto<lb/></affiliation>
+	</byline>
+
+	<email>{llitty,andreslc}@cs.toronto.edu<lb/></email>
+
+	<byline>
+	<docAuthor>David Lie<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Dept. of Elec. and Comp. Eng.<lb/> University of Toronto<lb/></affiliation>
+	</byline>
+
+	<email>lie@eecg.toronto.edu<lb/></email>
+
+	<div type="abstract">Abstract<lb/> Hypervisors have been proposed as a security tool<lb/> to defend against malware that subverts the OS kernel.<lb/> However, hypervisors must deal with the semantic gap<lb/> between the low-level information available to them and<lb/> the high-level OS abstractions they need for analysis.<lb/> To bridge this gap, systems have proposed making as-<lb/>sumptions derived from the kernel source code or sym-<lb/>bol information. Unfortunately, this information is non-<lb/>binding – rootkits are not bound to uphold these assump-<lb/>tions and can escape detection by breaking them.<lb/> In this paper, we introduce Patagonix, a hypervisor-<lb/>based system that detects and identifies covertly execut-<lb/>ing binaries without making assumptions about the OS<lb/> kernel. Instead, Patagonix depends only on the proces-<lb/>sor hardware to detect code execution and on the binary<lb/> format specifications of executables to identify code and<lb/> verify code modifications. With this, Patagonix can pro-<lb/>vide trustworthy information about the binaries running<lb/> on a system, as well as detect when a rootkit is hiding or<lb/> tampering with executing code.<lb/> We have implemented a Patagonix prototype on the<lb/> Xen 3.0.3 hypervisor. Because Patagonix makes no as-<lb/>sumptions about the OS kernel, it can identify code from<lb/> application and kernel binaries on both Linux and Win-<lb/>dows XP. Patagonix introduces less than 3% overhead on<lb/> most applications.<lb/></div>
+
+		</front>
+	</text>
+</tei>

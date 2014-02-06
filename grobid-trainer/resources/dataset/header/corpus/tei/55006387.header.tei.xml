@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55006387"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">SCVT 2003<lb/></note>
+
+	<note type="page">1<lb/></note>
+
+	<docTitle>
+	<titlePart>Efficient Signaling of Spectral<lb/> Resources in Spectrum Pooling Systems<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Timo Weiss, Joerg Hillenbrand, Albert Krohn (IEEE Student Members), Friedrich K. Jondral (IEEE Senior Member)<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Abstract—Public mobile radio spectrum is a scarce resource while wide<lb/> spectral ranges are only rarely used. Here, we consider a new strategy<lb/> called Spectrum Pooling enabling public access to these new spectral ranges<lb/> without sacrificing the transmission quality of the actual license owners.<lb/> By temporarily leasing their spectrum during idle periods the license own-<lb/>ers could tap new sources of revenue. We favor a modified wireless LAN<lb/> as rental system. Especially OFDM based WLANs like IEEE802.11a and<lb/> HIPERLAN/2 are suitable for an overlay system like spectrum pooling as<lb/> they allow a very flexible frequency management on a carrier-by-carrier<lb/> basis. The modifications of these standards comprise many areas of the<lb/> physical and MAC layer. Idle frequency subbands can be detected by spec-<lb/>tral power measurements conducted in each single participating mobile ter-<lb/>minal. Hence, the volume of measurement data can become very high. Sig-<lb/>naling this overhead in ordinary data frames would leave only few resources<lb/> left for useful data and would be very error-prone. In this paper, we show<lb/> that the signaling of spectral resources can be performed in the physical<lb/> layer that has been harmonized for both considered standards. The basic<lb/> idea is the superposition of emitted radio power for the signaling instead of<lb/> creating new higher layer frames for the measured data. Furthermore, a<lb/> robust method to broadcast information on spectral resources back to the<lb/> mobile terminals is presented.<lb/></div>
+
+	<keyword>Keywords— Radio resource management, spectrum pooling, OFDM,<lb/> wireless LAN<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

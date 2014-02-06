@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004824"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Cell, Vol. 109, 29–37, April 5, 2002,</reference>
+
+	<note type="copyright">Copyright &#169;2002 by Cell Press<lb/></note>
+
+	<docTitle>
+	<titlePart>HoxB4 Confers Definitive Lymphoid-Myeloid<lb/> Engraftment Potential on Embryonic Stem Cell<lb/> and Yolk Sac Hematopoietic Progenitors<lb/></titlePart>
+	</docTitle>
+
+	<div type="introduction">lier studies have identified several homeotic selector<lb/> genes that are expressed in definitive HSCs but not in<lb/> yolk sac, including HoxB3, B4, A4, and A5 (Sauvageau<lb/> et al.	, 1994; McGrath and Palis, 1997).
+
+	We tested HoxB4<lb/> as a candidate gene to promote definitive potential for<lb/></div>
+
+	<byline>
+	<docAuthor>Michael Kyba,<lb/> 1 Rita C.R. Perlingeiro,<lb/> 1<lb/> and George Q. Daley<lb/> 1,2,3<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Whitehead Institute for Biomedical Research<lb/> </affiliation>
+	</byline>
+
+	<address>9 Cambridge Center<lb/> Cambridge, Massachusetts 02142<lb/></address>
+
+	<byline>
+	<affiliation>2 Division of Hematology/Oncology<lb/></affiliation>
+	</byline>
+
+	<div type="introduction">the following reasons: (1) HoxB4 had been shown to<lb/> enhance hematopoietic repopulation when overexpressed<lb/> Massachusetts General Hospital<lb/> Harvard Medical School<lb/> in adult bone marrow, without inducing leukemia or in-<lb/>terfering with hematopoietic differentiation (Sauvageau<lb/> Boston, Massachusetts 02115<lb/> et al., 1995); (2) HoxB4 had been implicated in self-<lb/>renewal of the definitive HSC (Sauvageau et al., 1995);<lb/> and (3) HoxB4 had previously been shown to enhance<lb/> Summary the formation of mixed hematopoietic colonies from dif-<lb/>ferentiating ES cell cultures (Helgason et al., 1996). In<lb/> The extent to which primitive embryonic blood progen-<lb/>itors contribute to definitive lymphoid-myeloid hema-<lb/>this report, we demonstrate that ectopic expression of<lb/> HoxB4 endows two types of embryonic hematopoietic<lb/> topoiesis in the adult remains uncertain. In an effort<lb/> to characterize factors that distinguish the definitive<lb/> progenitors (precirculation yolk sac and ES-derived pro-<lb/>genitors) with the potential to engraft and contribute to<lb/> adult hematopoietic stem cell (HSC) and primitive pro-<lb/>genitors derived from yolk sac or embryonic stem (ES)<lb/> multilineage lymphoid-myeloid hematopoiesis in irradi-<lb/>ated adult mice.<lb/> cells, we examined the effect of ectopic expression of<lb/> HoxB4, a homeotic selector gene implicated in self-<lb/>renewal of definitive HSCs. Expression of HoxB4 in<lb/> primitive progenitors combined with culture on hema-<lb/>Results topoietic stroma induces a switch to the definitive HSC<lb/> phenotype. These progenitors engraft lethally irradi-<lb/>HoxB4 Transduction of Yolk Sac Cells<lb/> We expressed the HoxB4 cDNA in cells isolated from<lb/> ated adults and contribute to long-term, multilineage<lb/> hematopoiesis in primary and secondary recipients.<lb/> precirculation murine yolk sac (E8.25, 2–4 somite pair<lb/> embryos) using a retrovirus that coexpressed GFP (Van<lb/> Our results suggest that primitive HSCs are poised to<lb/> become definitive HSCs and that this transition can<lb/> Parijs et al., 1999). Cells were grown on an OP9 stromal<lb/> cell layer, previously shown to support maintenance of<lb/> be promoted by HoxB4 expression. This strategy for<lb/> blood engraftment enables modeling of hematopoietic<lb/> hematopoietic progenitors derived from ES cells in vitro<lb/> (Nakano et al., 1994). HoxB4-infected cultures gave rise<lb/> transplantation from ES cells.<lb/> to abundant colonies of semiadherent cells with hema-<lb/>topoietic blast morphology, while control cultures showed<lb/> Introduction no growth (Figure 1A). Cultured cells were injected into<lb/> four lethally irradiated syngeneic adult recipients, which<lb/> Blood development in embryoid bodies (EBs) differenti-<lb/>ated from ES cells recapitulates yolk sac hematopoiesis<lb/> were assayed over time for GFP-positive cells in the<lb/> peripheral blood (Figure 1C, left). Bone marrow from one<lb/> (Keller et al., 1993). Like yolk sac progenitors, ES deriva-<lb/>tives are ineffective at repopulating hematopoiesis in<lb/> primary mouse was examined for donor-derived GFP-<lb/>positive cells counterstained with antibodies specific for<lb/> lethally irradiated adults, a property believed to reflect<lb/> developmental immaturity or a defect in homing to the<lb/> myeloid and lymphoid hematopoietic lineages. Recipi-<lb/>ents showed donor-derived engraftment of myeloid<lb/> bone marrow (Mü ller and Dzierzak, 1993; Yoder, 2001).<lb/> Using the EB differentiation system, we have shown that<lb/> (Gr-1<lb/> ϩ and Mac-1<lb/> ϩ<lb/> ), B lymphoid (B220<lb/> ϩ<lb/> ), and T lymphoid<lb/> (CD4<lb/> ϩ and CD8 ϩ ) cells (Figure 1B), demonstrating that<lb/> primitive progenitors can generate definitive lymphoid,<lb/> myeloid, and erythroid lineages when engraftment is<lb/> HoxB4 expression confers on precirculation yolk sac<lb/> driven by transformation with the Bcr/Abl oncogene<lb/> cells the capacity for engraftment and multilineage dif-<lb/>(Perlingeiro et al., 2001). Likewise, yolk sac progenitors<lb/> ferentiation in irradiated adults. Donor-derived bone<lb/> can contribute to hematopoiesis in the adult when en-<lb/>marrow cells from primary animals were transplanted<lb/> grafted into neonates (Yoder et al., 1997) or when cul-<lb/>into secondary recipients, where they contributed to<lb/> tured on stroma taken from the paraaortic region of<lb/> multilineage hematopoiesis for at least 5 months, the<lb/> the embryo, where definitive HSCs are first detected<lb/> longest time point analyzed in this study (Figures 1C<lb/> (Matsuoka et al., 2001). These data argue that primitive<lb/> and 1D). However, lymphoid engraftment waned over<lb/> embryonic blood progenitors can be induced to become<lb/> time in secondary animals, an observation we have<lb/> definitive lymphoid-myeloid hematopoietic stem cells if<lb/> linked to the inhibitory effects of constitutive HoxB4<lb/> exposed to the proper microenvironment.<lb/> expression on lymphoid differentiation, as discussed<lb/> The molecular mechanisms that distinguish primitive<lb/> below. Our data demonstrate that HoxB4 expression<lb/> and definitive hematopoiesis are largely unknown. Ear-<lb/>induces definitive hematopoietic stem cell potential in<lb/> primitive yolk sac-derived hematopoietic precursors<lb/> isolated prior to the onset of circulation.<lb/> </div>
+	
+	<note type="other">3 Correspondence: </note>
+	
+	<email>daley@wi.mit.edu</email>
+
+		</front>
+	</text>
+</tei>

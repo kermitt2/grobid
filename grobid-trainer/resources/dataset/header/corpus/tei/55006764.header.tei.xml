@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55006764"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Advanced Access Content System (AACS)<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Prepared Video Book<lb/></note>
+
+	<byline>
+	<affiliation>Intel Corporation<lb/> International Business Machines Corporation<lb/> Microsoft Corporation<lb/> Panasonic Corporation<lb/> Sony Corporation<lb/> Toshiba Corporation<lb/> The Walt Disney Company<lb/> Warner Bros.<lb/></affiliation>
+	</byline>
+
+	<note type="other">Revision 0.95<lb/>Final </note>
+	
+	<date>February 19, 2009</date>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Wei-Chong</forename>
+								<surname>Liao</surname>,
+							</persName>
+							<persName>
+								<forename>Chern-Chain</forename>
+								<surname>Lee</surname>,
+							</persName>
+							<persName>
+								<forename>Jun-Hsiang</forename>
+								<surname>Chen</surname> and
+							</persName>
+							<persName>
+								<forename>Jun-Yu</forename>
+								<surname>Chen</surname>
+								[
+							</persName>
+							<persName>
+								<forename>W</forename>.
+								<middlename>C</middlename>.
+								<surname>Liao</surname>]:
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

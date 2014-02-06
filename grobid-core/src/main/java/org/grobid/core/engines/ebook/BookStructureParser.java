@@ -1,5 +1,6 @@
 package org.grobid.core.engines.ebook;
 
+import org.chasen.crfpp.Tagger;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.document.Document;
 import org.grobid.core.engines.AbstractParser;
@@ -69,20 +70,8 @@ public class BookStructureParser extends AbstractParser {
 
             // clear internal context
             StringTokenizer st = new StringTokenizer(fulltext, "\n");
-            feedTaggerAndParse(st);
+            String rese = getTaggerResult(st);
 
-
-            StringBuilder res = new StringBuilder();
-            for (int i = 0; i < tagger.size(); i++) {
-                for (int j = 0; j < tagger.xsize(); j++) {
-                    res.append(tagger.x(i, j)).append("\t");
-                }
-                res.append(tagger.y2(i));
-                res.append("\n");
-            }
-
-            // buffer for the fulltext block
-            String rese = res.toString();
             StringBuffer bufferFulltext = trainingExtraction(rese, tokenizations);
 
             // write the TEI file to reflect the extract layout of the text as extracted from the pdf

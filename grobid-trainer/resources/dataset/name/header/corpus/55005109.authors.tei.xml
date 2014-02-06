@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<marker>*</marker>
+								<forename>Uwe</forename>
+								<surname>Göttmann</surname>,
+								<roleName>MD</roleName>,
+							</persName>
+							<persName>	
+								<marker>*</marker>
+								<forename>Jens</forename>
+								<surname>Oltersdorf</surname>,
+							</persName>
+							<persName>	
+								<marker>*</marker>
+								<forename>Meike</forename>
+								<surname>Schaub</surname>,
+								<roleName>MD</roleName>,
+							</persName>
+							<persName>
+								<forename>Thomas</forename>
+								<surname>Knoll</surname>,
+								<roleName>MD</roleName>,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Walter</forename>
+								<middlename>E</middlename> .
+								<surname>Back</surname> ,
+								<roleName>MD</roleName> ,
+							</persName>
+							<persName>	
+								<marker>*</marker>
+								<forename>Fokko</forename>
+								<middlename>J</middlename> .
+								<surname>van der Woude</surname> ,
+								<roleName>MD</roleName> ,
+								<roleName>PhD</roleName> ,and
+							</persName>
+							<persName>	
+								<marker>*</marker>
+								<forename>Claude</forename>
+								<surname>Braun</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

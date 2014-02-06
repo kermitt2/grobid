@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="department">Department of Biochemistry and Molecular Biology</orgName>,
+							<orgName type="institution">Georgetown University Medical Center</orgName>,
+							<address>
+								<settlement>Washington</settlement>,
+								<region>DC</region>
+								<postCode>20057</postCode>,
+								<country>USA</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="department">Department of Pharmaceutical Sciences</orgName>,
+							<orgName type="institution">University of Modena and Reggio Emilia</orgName>,
+							<address>
+								<settlement>Modena</settlement>
+								<postCode>183 4100</postCode>,
+								<country>Italy</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>3</marker>
+							<orgName type="department">Department of Environmental Health Sciences</orgName>,
+							<orgName type="institution">Johns Hopkins University</orgName>,
+							<orgName type="institution">Bloomberg School of Public Health</orgName>,
+							<address>
+								<settlement>Baltimore</settlement>,
+								<lb/>
+								<region>MD</region>
+								<postCode>21205</postCode>,
+								<country>USA</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>4</marker>
+							<orgName type="department">Department of Molecular, Cellular and Craniofacial Biology</orgName>,
+							<orgName type="institution">University of Louisville School of Dentistry</orgName>,
+							<address>
+								<settlement>Louisville</settlement>,
+								<region>KY</region>
+								<postCode>40202</postCode>,
+								<country>USA</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>5</marker>
+							<orgName type="department">U683 INSERM</orgName>,
+							<orgName type="department">Faculté de Mé decine X. Bichat</orgName>,
+							<address>
+								<settlement>Paris</settlement>
+								<postCode>75870</postCode>,
+								<country>France</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>6</marker>
+							<orgName type="department">Institut fur Pharmazeutische Biologie</orgName>,
+							<orgName type="institution">Martin-Luther Universitat Halle-Wittenberg</orgName>,
+							<address>
+								<settlement>Halle</settlement>
+								<postCode>D6120</postCode>,
+								<country>Germany</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>7</marker>
+							<orgName type="department">Department of Pathology</orgName>,
+							<orgName type="institution">University of Miami School of Medicine</orgName>,
+							<orgName type="institution">Miami Veterans Affairs Medical Center</orgName>,
+							<address>
+								<settlement>Miami</settlement>,
+								<region>FL</region>
+								<postCode>33136</postCode>,
+								<country>USA</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>8</marker>
+							<orgName type="department">Psychopharmacology Unit</orgName>,
+							<orgName type="institution">University of Bristol</orgName>,
+							<address>
+								<settlement>Bristol</settlement>
+								<postCode>BS1 3NY</postCode>,
+								<country>UK</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>9</marker>
+							<orgName type="institution">Research Unit</orgName>,
+							<orgName type="institution">Geha Mental Health Center</orgName>,
+							<orgName type="department">Felsenstein Medical Research Center</orgName>,
+							<orgName type="department">Sackler Faculty of Medicine</orgName>,
+							<orgName type="institution">Tel Aviv University</orgName>,
+							<lb/>
+							<address>
+								<settlement>Petah Tiqva</settlement>,
+								<country>Israel</country>
+								<postCode>49100</postCode>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>10</marker>
+							<orgName type="department">Department of Medical Imaging</orgName>,
+							<orgName type="institution">National Institute of Radiological Sciences</orgName>,
+							<address>
+								<settlement>Anagawa</settlement>,
+								<region>Chiba</region>
+								<postCode>263 8555</postCode>,
+								<country>Japan</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>11</marker>
+							<orgName type="department">Department of Pharmacology</orgName>,
+							<orgName type="institution">Bruce Rappaport Family Institute for Research in the Medical Sciences</orgName>,
+							<address>
+								<settlement>Haifa</settlement>,
+								<country>Israel</country>
+								<postCode>31096</postCode>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

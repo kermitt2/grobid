@@ -4,6 +4,18 @@ import java.util.*;
 import java.util.regex.*;
 
 import org.grobid.core.data.PatentItem;
+import org.grobid.core.utilities.GrobidProperties;
+import org.grobid.core.utilities.TextUtilities;
+import org.grobid.core.exceptions.GrobidException;
+import org.grobid.core.exceptions.GrobidResourceException;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 /**
  * Parser for patent references based on regular language rewriting.
@@ -20,7 +32,8 @@ public class PatentRefParser {
     private Pattern patent_pattern = null;
     private Pattern number_pattern = null;
 
-    // this is the complete list of existing authorities that was identified in the nature
+    // this is the complete list of existing authorities that was identified in the nature, always 
+	// two upper-case letter codes
     static public List<String> authorities = Arrays.asList("AP", "AL", "DZ", "AR", "AU", "AT", "BE", "BX",
             "BR", "BG", "CA", "CL", "CN",
             "CO", "HR", "CU", "CY", "CZ", "CS", "DK", "EG", "EA", "EP", "DE", "DD", "FI", "FR", "GB", "GR", "HK",
@@ -29,27 +42,15 @@ public class PatentRefParser {
             "PL", "PT", "RD", "RO", "RU", "SA", "SG", "SK", "SI", "ZA", "SU", "ES", "LK", "SE", "CH", "TW", "TH",
             "TT", "TN", "TR", "UA", "GB", "US", "UY", "VE", "VN", "YU", "ZM", "ZW");
 
-    private Pattern EP_pattern = null;
-    private Pattern DE_pattern = null;
-    private Pattern US_pattern = null;
-    private Pattern FR_pattern = null;
-    private Pattern UK_pattern = null;
-    private Pattern BE_pattern = null;
-    private Pattern WO_pattern = null;
-    private Pattern JP_pattern = null;
-    private Pattern CA_pattern = null;
-    private Pattern CH_pattern = null;
-    private Pattern AT_pattern = null;
-    private Pattern AU_pattern = null;
-    private Pattern KR_pattern = null;
-    private Pattern RU_pattern = null;
-    private Pattern FI_pattern = null;
-    private Pattern NL_pattern = null;
-    private Pattern SE_pattern = null;
-    private Pattern IT_pattern = null;
-    private Pattern ES_pattern = null;
-    private Pattern DK_pattern = null;
-    private Pattern DD_pattern = null;
+	// this is the list of supported languages - language codes given ISO 639-1, two-letter codes
+    static public List<String> languages = Arrays.asList("en", "de", "fr", "es", "it", "ja", "ko", "pt", "zh");
+
+	// list of regular expressions for identifying the authority in the raw reference string
+	private List<Pattern> autority_patterns = new ArrayList<Pattern>();
+	
+	// map giving for a language and an authority name the list of language specific expressions
+	// this uses the language resource files *.local under grobid-home/lexicon/patent/
+	private Map<String, List<String> > languageResources = null;
 
     private Pattern application_pattern = null;
     private Pattern publication_pattern = null;
@@ -67,7 +68,40 @@ public class PatentRefParser {
     public PatentRefParser() {
         patent_pattern = Pattern.compile("([UEWDJFA])[\\.\\s]?([SPOERKU])[\\.\\s]?-?(A|B|C)?\\s?-?([\\s,0-9/-]+(A|B|C)?[\\s,0-9/-]?)");
 
-        EP_pattern = Pattern.compile("((\\s|,|\\.|^|\\-)EPO?)|(E\\.(\\s)?P)|((E|e)uropean)|(européen)|(europ)");
+        //number_pattern = Pattern.compile("[ABC]?([\\s,0-9/-]*)+[ABC]?([\\s,0-9/-])*[ABC]?");
+        number_pattern = Pattern.compile("((RE|PP)[\\s,0-9/\\-\\.\\\\]*)|(PCT(/|\\\\)[A-Z][A-Z]([\\s,0-9/\\-\\.\\\\]*))|([ABC]?([0-9][\\s,0-9/\\-\\.\\\\]*)+[ABCUT]?([\\s,0-9/\\-\\.\\\\])*[ABCUT]?)");
+        //number_pattern = Pattern.compile("((RE|PP)[\\s,0-9/\\-\\.\\\\]*)|(PCT(/|\\\\)[A-Z][A-Z]([\\s,0-9/\\-\\.\\\\]*))|([ABC]?([0-9][\\s,0-9/\\-\\.\\\\]*)+[ABCUT][0-9])|([ABC]?([0-9][\\s,0-9/\\-\\.\\\\]*)+[ABCUT])|([ABC]?([0-9][\\s,0-9/\\-\\.\\\\]*)+)");
+        //number_pattern = Pattern.compile("((RE|PP)[\\s,0-9/\\-\\.\\\\]*)|(PCT(/|\\\\)[A-Z][A-Z]([\\s,0-9/\\-\\.\\\\]*))|([ABC]?([\\s,0-9/\\-\\.\\\\ABC])+[ABCUT]?)");
+        kindcode_pattern1 = Pattern.compile("([ABC][0-9]?)[0-9][\\s,0-9/\\-\\.\\\\]+");
+        kindcode_pattern2 = Pattern.compile("[0-9][\\s,0-9/\\-\\.\\\\]+([ABCUT][0-9]?)");
+		
+        //application_pattern = Pattern.compile("((A|a)pplicat)|((a|A)ppln)");
+        //publication_pattern = Pattern.compile("((P|p)ublicat)|((p|P)ub)");
+        pct_application_pattern = Pattern.compile("(PCT/(GB|EP|US|JP|DE|FR|UK|BE|CA|CH|AT|AU|KR|RU|FI|NL|SE|ES|DK|DD)/?([0-9][0-9]([0-9][0-9])?))");
+        //provisional_pattern = Pattern.compile("((P|p)rovisional)");
+        non_provisional_pattern = Pattern.compile("((n|N)on.(P|p)rovisional)");
+        translation_pattern = Pattern.compile("((T|t)ranslation)");
+        //utility_pattern = Pattern.compile("((U|u)tility)");
+
+        us_serial_pattern = Pattern.compile("((S|s)erial(\\s|-)+((n|N)o(\\.)?)(\\s|-)*[0-9]*/)");
+
+        jp_kokai_pattern = Pattern.compile("(k|K)oka(l|i)");
+        jp_heisei_pattern = Pattern.compile("(H|h)(E|e)(I|i)");
+
+		initLanguageResources();
+
+		// we compile the different authority regular expression patterns based on the language resource files
+		for(String authorityName : authorities) {
+			autority_patterns.add(compilePattern(authorityName));
+		}
+		
+		// compiling additional non-authority patterns: application, publication, provisional, utility
+		application_pattern = compilePattern("application");
+		publication_pattern = compilePattern("publication");
+		provisional_pattern = compilePattern("provisional");
+		utility_pattern = compilePattern("utility");
+
+		/*EP_pattern = Pattern.compile("((\\s|,|\\.|^|\\-)EPO?)|(E\\.(\\s)?P)|((E|e)uropean)|(européen)|(europ)");
         DE_pattern = Pattern.compile("((\\s|,|\\.|^|\\-)DE)|(D\\.(\\s)?E)|((G|g)erman)|((D|d)eutsch)|(allemand)");
         US_pattern = Pattern.compile("((\\s|,|\\.|^|\\-)US)|(U\\.(\\s)?S)|((U|u)nited(\\s|-)*(S|s)tate)|(USA)");
         FR_pattern = Pattern.compile("((\\s|,|\\.|^|\\-)FR)|(F\\.(\\s)?R)|((F|f)rench)|((F|f)rance)|(français)|(F|f)ranz");
@@ -84,33 +118,153 @@ public class PatentRefParser {
         RU_pattern = Pattern.compile("((\\s|,|\\.|^|\\-)RU)|(R\\.(\\s)?U)|((R|r)ussia)|((R|r)usse)|((R|r)usse)|((R|r)ussisch)");
         FI_pattern = Pattern.compile("((\\s|,|\\.|^|\\-)FI)|(R\\.(\\s)?U)|((R|r)ussia)|((R|r)usse)|((R|r)usse)|((R|r)ussisch)");
         NL_pattern =
-                Pattern.compile("((\\s|,|\\.|^|\\-)NL)|(N\\.(\\s)?L)|((H|h)olland)|((N|n)etherland)|((P|p)ays(\\.|-)bas)|((D|d)eutch)|((h|H)olländisch)");
+                Pattern.compile("((\\s|,|\\.|^|\\-)NL)|(N\\.(\\s)?L)|((H|h)olland)|((N|n)etherland)|((P|p)ays(\\.|-)bas)|((D|d)utch)|((h|H)olländisch)");
         SE_pattern = Pattern.compile("((\\s|,|\\.|^|\\-)SE)|(S\\.(\\s)?E)|((S|s)weden)|((S|s)wedish)|((S|s)wedisch)|((S|s)u\\.de)|((S|s)u\\.dois)");
         IT_pattern = Pattern.compile("((\\s|,|\\.|^|\\-)IT)|(I\\.(\\s)?T)|((I|i)taly)|((I|i)tali(a|e)n)|((I|i)talie)");
         ES_pattern = Pattern.compile("((\\s|,|\\.|^|\\-)ES)|(E\\.(\\s)?S)|((S|s)panish)|((S|s)panie)|((E|e)spagnol)|((S|s)pain)");
         DK_pattern = Pattern.compile("((\\s|,|\\.|^|\\-)DK)|(D\\.(\\s)?K)|((D|d)anish)|((D|d)anois)|((d|D)(a|ä)nemark)|(dänisch)");
-        DD_pattern = Pattern.compile("((\\s|,|\\.|^|\\-)DD)|(D\\.(\\s)?D)|(DDR)");
-
-        //number_pattern = Pattern.compile("[ABC]?([\\s,0-9/-]*)+[ABC]?([\\s,0-9/-])*[ABC]?");
-        number_pattern = Pattern.compile("((RE|PP)[\\s,0-9/\\-\\.\\\\]*)|(PCT(/|\\\\)[A-Z][A-Z]([\\s,0-9/\\-\\.\\\\]*))|([ABC]?([0-9][\\s,0-9/\\-\\.\\\\]*)+[ABCUT]?([\\s,0-9/\\-\\.\\\\])*[ABCUT]?)");
-        //number_pattern = Pattern.compile("((RE|PP)[\\s,0-9/\\-\\.\\\\]*)|(PCT(/|\\\\)[A-Z][A-Z]([\\s,0-9/\\-\\.\\\\]*))|([ABC]?([0-9][\\s,0-9/\\-\\.\\\\]*)+[ABCUT][0-9])|([ABC]?([0-9][\\s,0-9/\\-\\.\\\\]*)+[ABCUT])|([ABC]?([0-9][\\s,0-9/\\-\\.\\\\]*)+)");
-        //number_pattern = Pattern.compile("((RE|PP)[\\s,0-9/\\-\\.\\\\]*)|(PCT(/|\\\\)[A-Z][A-Z]([\\s,0-9/\\-\\.\\\\]*))|([ABC]?([\\s,0-9/\\-\\.\\\\ABC])+[ABCUT]?)");
-        kindcode_pattern1 = Pattern.compile("([ABC][0-9]?)[0-9][\\s,0-9/\\-\\.\\\\]+");
-        kindcode_pattern2 = Pattern.compile("[0-9][\\s,0-9/\\-\\.\\\\]+([ABCUT][0-9]?)");
-
-        application_pattern = Pattern.compile("((A|a)pplicat)|((a|A)ppln)");
-        publication_pattern = Pattern.compile("((P|p)ublicat)|((p|P)ub)");
-        pct_application_pattern = Pattern.compile("(PCT/(GB|EP|US|JP|DE|FR|UK|BE|CA|CH|AT|AU|KR|RU|FI|NL|SE|ES|DK|DD)/?([0-9][0-9]([0-9][0-9])?))");
-        provisional_pattern = Pattern.compile("((P|p)rovisional)");
-        non_provisional_pattern = Pattern.compile("((n|N)on.(P|p)rovisional)");
-        translation_pattern = Pattern.compile("((T|t)ranslation)");
-        utility_pattern = Pattern.compile("((U|u)tility)");
-
-        us_serial_pattern = Pattern.compile("((S|s)erial(\\s|-)+((n|N)o(\\.)?)(\\s|-)*[0-9]*/)");
-
-        jp_kokai_pattern = Pattern.compile("(k|K)oka(l|i)");
-        jp_heisei_pattern = Pattern.compile("(H|h)(E|e)(I|i)");
+        DD_pattern = Pattern.compile("((\\s|,|\\.|^|\\-)DD)|(D\\.(\\s)?D)|(DDR)");*/
     }
+
+	private final void initLanguageResources() {
+		languageResources = new TreeMap<String, List<String>>();
+		for(String language : languages) {
+			// opening the corresponding language resource file
+			String path = GrobidProperties.getGrobidHomePath() + "/lexicon/patent/" + language + ".local";
+			File localFile = new File(path);
+			if (!localFile.exists()) {
+	            throw new GrobidResourceException(
+					"Cannot add language resources for patent processing (language '" + language +
+	                "'), because file '" + localFile.getAbsolutePath() + "' does not exists.");
+	        }
+	        if (!localFile.canRead()) {
+	            throw new GrobidResourceException(
+					"Cannot add language resources for patent processing (language '" + language +
+	                "'), because cannot read file '" + localFile.getAbsolutePath() + "'.");
+	        }
+			
+			InputStream ist = null;
+	        InputStreamReader isr = null;
+	        BufferedReader dis = null;
+	        try {
+	            if (GrobidProperties.isResourcesInHome())
+	                ist = new FileInputStream(localFile);
+	            else
+	                ist = getClass().getResourceAsStream(path);
+	            isr = new InputStreamReader(ist, "UTF8");
+	            dis = new BufferedReader(isr);
+
+	            String l = null;
+	            while ((l = dis.readLine()) != null) {
+	                if (l.length() == 0) continue;
+	                // the first token, separated by a '=', gives the authority name
+					String[] parts = l.split("=");
+					String authority = parts[0].trim();
+					// this will cover authority as well as some other patterns such as publication, application, ...
+					String expressions = parts[1].trim();
+					if (expressions.trim().length() > 0) {
+						String[] subparts = expressions.split(",");
+						List<String> listExpressions = new ArrayList<String>();
+						for(int i=0; i < subparts.length; i++) {
+							listExpressions.add(subparts[i].trim());
+						}
+						languageResources.put(language+authority, listExpressions);
+					}
+				}
+			}
+			catch (FileNotFoundException e) {
+	//	    	e.printStackTrace();
+	            throw new GrobidException("An exception occured while running Grobid.", e);
+	        } 
+			catch (IOException e) {
+	//	    	e.printStackTrace();
+	            throw new GrobidException("An exception occured while running Grobid.", e);
+	        } 
+			finally {
+	            try {
+	                if (ist != null)
+	                    ist.close();
+	                if (isr != null)
+	                    isr.close();
+	                if (dis != null)
+	                    dis.close();
+	            } 
+				catch (Exception e) {
+	                throw new GrobidResourceException("Cannot close all streams.", e);
+	            }
+	        }
+
+		}
+	}
+
+	private Pattern compilePattern(String authorityName) {
+		// default authority two character name
+		String er = "((\\s|,|\\.|^|\\-)";
+		er += authorityName + ")";
+		
+		if (authorityName.length() == 2) {
+			// authority name with dots
+			er += "|(" + authorityName.charAt(0) + "\\.(\\s)?" + authorityName.charAt(1) + ")";
+		}
+		
+		// using language ressources for authority patterns
+		for(String language : languages) {
+			List<String> expressions = languageResources.get(language+authorityName);
+			if (expressions != null) {
+				for(String expression : expressions) {
+					if ( (expression != null) && (expression.trim().length()>1) ) {
+						expression = expression.trim();
+						
+						if (!expression.contains("-") && !expression.contains(".")) {
+							if (TextUtilities.isAllLowerCase(expression)) {
+								expression = 
+								"(" + expression.charAt(0) + "|" + Character.toUpperCase(expression.charAt(0)) + ")" 
+									+ expression.substring(1,expression.length());
+							}
+						}
+						else {
+							if (expression.contains("-")) {
+								String[] parts = expression.split("-");
+								expression = "";
+								for(int j=0; j<parts.length; j++) {
+									String part = parts[j];
+									if (j >0) {
+										expression += "(\\s|-)*";
+									}
+							
+									if (TextUtilities.isAllLowerCase(part)) {
+										expression += 
+										"(" + part.charAt(0) + "|" + Character.toUpperCase(part.charAt(0)) + ")" 
+											+ part.substring(1,part.length());
+									}
+								}
+							}
+						
+							if (expression.contains(".")) {
+								String[] parts = expression.split(".");
+								expression = "";
+								for(int j=0; j<parts.length; j++) {
+									String part = parts[j];
+									if (j >0) {
+										expression += "(\\s)?\\.(\\s)?";
+									}
+							
+									if (TextUtilities.isAllLowerCase(part)) {
+										expression += 
+										"(" + part.charAt(0) + "|" + Character.toUpperCase(part.charAt(0)) + ")" 
+											+ part.substring(1,part.length());
+									}
+								}
+							}
+						}
+						er += "|(" + expression + ")";
+					}
+				}
+			}
+		}
+				
+		return Pattern.compile(er);
+	}
 
     public void setRawRefText(String s) {
         rawText = s;
@@ -125,118 +279,20 @@ public class PatentRefParser {
         //System.out.println("processRawRefText: " + rawText);
         String country = null;
         while (true) {
-            Matcher fitCountry = WO_pattern.matcher(rawText);
-            if (fitCountry.find()) {
-                country = "WO";
-                break;
-            }
-            fitCountry = EP_pattern.matcher(rawText);
-            if (fitCountry.find()) {
-                country = "EP";
-                break;
-            }
-            fitCountry = US_pattern.matcher(rawText);
-            if (fitCountry.find()) {
-                country = "US";
-                break;
-            }
-            fitCountry = us_serial_pattern.matcher(rawText);
-            if (fitCountry.find()) {
-                country = "US";
-                break;
-            }
-            fitCountry = JP_pattern.matcher(rawText);
-            if (fitCountry.find()) {
-                country = "JP";
-                break;
-            }
-            fitCountry = DE_pattern.matcher(rawText);
-            if (fitCountry.find()) {
-                country = "DE";
-                break;
-            }
-            fitCountry = FR_pattern.matcher(rawText);
-            if (fitCountry.find()) {
-                country = "FR";
-                break;
-            }
-            fitCountry = UK_pattern.matcher(rawText);
-            if (fitCountry.find()) {
-                country = "GB";
-                break;
-            }
-            fitCountry = BE_pattern.matcher(rawText);
-            if (fitCountry.find()) {
-                country = "BE";
-                break;
-            }
-            fitCountry = CA_pattern.matcher(rawText);
-            if (fitCountry.find()) {
-                country = "CA";
-                break;
-            }
-            fitCountry = CH_pattern.matcher(rawText);
-            if (fitCountry.find()) {
-                country = "CH";
-                break;
-            }
-            fitCountry = AT_pattern.matcher(rawText);
-            if (fitCountry.find()) {
-                country = "AT";
-                break;
-            }
-            fitCountry = AU_pattern.matcher(rawText);
-            if (fitCountry.find()) {
-                country = "AU";
-                break;
-            }
-            fitCountry = KR_pattern.matcher(rawText);
-            if (fitCountry.find()) {
-                country = "KR";
-                break;
-            }
-            fitCountry = RU_pattern.matcher(rawText);
-            if (fitCountry.find()) {
-                country = "RU";
-                break;
-            }
-            fitCountry = FI_pattern.matcher(rawText);
-            if (fitCountry.find()) {
-                country = "FI";
-                break;
-            }
-            fitCountry = NL_pattern.matcher(rawText);
-            if (fitCountry.find()) {
-                country = "NL";
-                break;
-            }
-            fitCountry = SE_pattern.matcher(rawText);
-            if (fitCountry.find()) {
-                country = "SE";
-                break;
-            }
-            fitCountry = IT_pattern.matcher(rawText);
-            if (fitCountry.find()) {
-                country = "IT";
-                break;
-            }
-            fitCountry = ES_pattern.matcher(rawText);
-            if (fitCountry.find()) {
-                country = "ES";
-                break;
-            }
-            fitCountry = DK_pattern.matcher(rawText);
-            if (fitCountry.find()) {
-                country = "DK";
-                break;
-            }
-            fitCountry = DD_pattern.matcher(rawText);
-            if (fitCountry.find()) {
-                country = "DD";
-                break;
-            }
-
-            break;
+			Matcher fitCountry = null;
+	
+			int i = 0;
+			for(String authority : authorities) {
+				Pattern thePattern = autority_patterns.get(i);				
+				
+				fitCountry = thePattern.matcher(rawText);
+	            if (fitCountry.find()) {
+	                country = authority;
+	                break;
+	            }
+				i++;
+			}
+			break;
         }
 
         if (country != null) {
@@ -483,8 +539,16 @@ public class PatentRefParser {
                                 year = "2007";
                             else if (numb < 203947)
                                 year = "2008";
-                            else
+							else if (numb < 335046)
                                 year = "2009";
+							else if (numb < 460301)
+                                year = "2010";
+							else if (numb < 631245)
+                                year = "2011";
+							else if (numb < 848274)
+                                year = "2012";
+                            else
+                                year = "2013";
                             number = year + "0" + number;
                         } else if (number.startsWith("29") && (appli || number.startsWith("29/"))) {
                             // design patent application starts with 29
@@ -530,11 +594,35 @@ public class PatentRefParser {
                                 year = "2007";
                             else if (numb < 313375)
                                 year = "2008";
-                            else
+							else if (numb < 348400)
                                 year = "2009";
+							else if (numb < 372670)
+                                year = "2010";
+							else if (numb < 395318)
+                                year = "2011";
+							else if (numb < 442191)
+                                year = "2012";
+                            else
+                                year = "2013";
                             number = year + "0" + number;
-                        } else if (number.startsWith("12") && (appli || number.startsWith("12/"))) {
-                            // standard patent application, most recent serial code
+                        } else if (number.startsWith("13") && (appli || number.startsWith("13/"))) {
+	                        // standard patent application, most recent serial code
+                            applications.set(i, new Boolean(true));
+                            provisionals.set(i, new Boolean(false));
+                            number = number.substring(3, number.length());
+                            number = number.replaceAll("[\\.\\s/,]", "");
+                            // we check the range of the number for deciding about a year
+                            int numb = Integer.parseInt(number);
+                            String year = null;
+                            if (numb < 374487)
+                                year = "2011";
+                            else if (numb < 694748)
+                                year = "2012";
+                            else
+                                year = "2013";
+                            number = year + "0" + number;
+	                    } else if (number.startsWith("12") && (appli || number.startsWith("12/"))) {
+                            // standard patent application
                             applications.set(i, new Boolean(true));
                             provisionals.set(i, new Boolean(false));
                             number = number.substring(3, number.length());
@@ -546,8 +634,12 @@ public class PatentRefParser {
                                 year = "2007";
                             else if (numb < 317884)
                                 year = "2008";
-                            else
+							else if (numb < 655475)
                                 year = "2009";
+							else if (numb < 930166)
+                                year = "2010";
+                            else
+                                year = "2011";
                             number = year + "0" + number;
                         } else if (number.startsWith("11") && (appli || number.startsWith("11/"))) {
                             // standard patent application

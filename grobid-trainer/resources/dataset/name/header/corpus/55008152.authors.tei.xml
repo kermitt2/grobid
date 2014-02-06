@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>John</forename>
+								<surname>Zao</surname>,
+							</persName>
+							<persName>
+								<forename>Stephen</forename>
+								<surname>Kent</surname>,
+							</persName>
+							<persName>
+								<forename>Joshua</forename>
+								<surname>Gahm</surname>,
+							</persName>
+							<persName>
+								<forename>Gregory</forename>
+								<surname>Troxel</surname>,
+							</persName>
+							<persName>
+								<forename>Matthew</forename>
+								<surname>Condell</surname>,
+							</persName>
+							<persName>
+								<forename>Pam</forename>
+								<surname>Helinek</surname>,
+							</persName>
+							<persName>
+								<forename>Nina</forename>
+								<surname>Yuan</surname>, and
+							</persName>
+							<persName>
+								<forename>Isidro</forename>
+								<surname>Castineyra</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

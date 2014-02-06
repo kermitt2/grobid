@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">Department of Hepatobiliary Surgery</orgName>,
+							<orgName type="department">First<lb/> Affiliated Hospital</orgName>,
+							<orgName type="institution">Zhejiang University School of Medicine</orgName>,
+							<address>
+								<settlement>Hangzhou</settlement>
+							<lb/>
+								<postCode>310003</postCode>,
+								<country>China</country>,
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="department">Department<lb/> of Hepatobiliary Surgery</orgName>,
+							<orgName type="department">First Affiliated Hospital</orgName>,
+							<orgName type="institution">Zhejiang University<lb/> School of Medicine</orgName>,
+							<address>
+								<settlement>Hangzhou</settlement>
+								<postCode>310003</postCode>,
+								<country>China (</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

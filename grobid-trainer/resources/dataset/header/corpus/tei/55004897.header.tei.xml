@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004897"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Odd-Char Multivariate Hidden Field Equations<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Chia-Hsin Owen Chen<lb/> 1<lb/> , Ming-Shing Chen<lb/> 1<lb/> , Jintai Ding<lb/> 2<lb/> , Fabian Werner<lb/> 3<lb/> , and Bo-Yin Yang<lb/> 2<lb/> </docAuthor>
+	</byline>
+	
+	<byline>
+	<affiliation>1<lb/> IIS, Academia Sinica, </affiliation>
+	</byline>
+	
+	<address>Taipei, Taiwan, </address>
+	
+	<email>{by,owenhsin,mschen}@crypto.tw<lb/> </email>
+	
+	<byline>
+	<affiliation>2<lb/> Dept. of Math. Sci., University of Cincinnati,</affiliation>
+	</byline>
+
+	<address>Cincinnati, Ohio,</address>
+
+	<email>ding@math.uc.edu<lb/></email>
+
+	<byline>
+	<affiliation>3<lb/> Dept. of Comp. Sci., Technische Universität Darmstadt,</affiliation>
+	</byline>
+
+	<address>Germany,</address>
+
+	<email>jak@cccmz.de<lb/></email>
+
+	<div type="abstract">Abstract. We present a multivariate version of Hidden Field Equations<lb/> (HFE) over a nite eld of odd characteristic, with an extra embedding<lb/> modier. Combining these known ideas makes our new MPKC (multi-<lb/>variate public key cryptosystem) more ecient and scalable than any<lb/> other extant multivariate encryption scheme.<lb/> Switching to odd characteristics in HFE-like schemes aects how an at-<lb/>tacker can make use of eld equations. Extensive empirical tests (us-<lb/>ing magma-2.14, the best commercially available F 4 implementation)<lb/> suggests that our new construction is indeed secure against algebraic<lb/> attacks using Gröbner Basis algorithms. The embedding serves both<lb/> to narrow down choices of pre-images and to guard against a possible<lb/> Kipnis-Shamir type (rank) attack. We may hence reasonably argue that<lb/> for practical sizes, prior attacks take exponential time.<lb/> We demonstrate that our construction is in fact ecient by implement-<lb/>ing practical-sized examples of our odd-char HFE with 3 variables<lb/> (THFE) over F 31 . To be precise, our preliminary THFE implemen-<lb/>tation is 15×20× the speed of RSA-1024.<lb/></div>
+
+	<keyword>Keywords: HFE, Gröbner basis, multivariate public key cryptosystem<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

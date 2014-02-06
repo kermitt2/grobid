@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55006075"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Tags. Tickets. Technologies.<lb/> </titlePart>
+	</docTitle>
+	
+	<note type="other">S i h l b r i n g s i n f o r m a t i o n t o l i f e .<lb/> Registration and Identification<lb/> T h e B e g i n n i n g o f a Ti c k e t<lb/>	P i c o F i l m<lb/></note>
+
+	<note type="other">PressureTac<lb/> C o l d S e a l T e c h n o l o g y .</note>
+
+		</front>
+	</text>
+</tei>

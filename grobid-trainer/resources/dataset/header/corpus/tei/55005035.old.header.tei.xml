@@ -1,0 +1,64 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005035"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<lb/>
+			
+			<reference>Building and Environment 45 (2010) 1153–1160<lb/></reference>
+			
+			<note type="other">Contents lists available at ScienceDirect<lb/></note>
+			<note type="other">Building and Environment<lb/></note>
+			<ptr type="web">journal homepage: www.elsevier.com/locate/buildenv<lb/></ptr>
+			
+			<docTitle>
+				<titlePart>Estimation of mould growth levels on rendered façades based on surface
+					relative<lb/> humidity and surface temperature measurements<lb/></titlePart>
+			</docTitle>
+
+			<byline>
+				<docAuthor>Sanne Johansson * , Lars Wadsö , Kenneth Sandin<lb/></docAuthor>
+			</byline>
+
+			<byline>
+				<affiliation>Building Materials, Lund University,</affiliation>
+			</byline>
+
+			<address>Box 118, 221 00 Lund, Sweden<lb/></address>
+
+			<note type="other">a r t i c l e i n f o</note>
+			<lb/> 
+			<note type="submission">
+				Article history:<lb/> Received 23 April 2009<lb/> Received in revised form<lb/>27 October 2009<lb/> Accepted 29 October 2009
+			</note>
+			<lb/>
+			<keywords>Keywords:<lb/>Rendering Mould growth<lb/> Temperature Moisture<lb/> ETICS
+				Façade<lb/>
+			</keywords>
+			<space dim="horizontal"/>
+			<div type="abstract">	
+				a b s t r a c t<lb/> Many façades made with thin rendering on thermal
+				insulation have problems with biological growth. In<lb/> this study, surface
+				temperature and surface relative humidity were monitored over a 20-month period
+				on<lb/> test house façades with different constructions (thermal inertia), surface
+				colour and compass directions.<lb/> This data were used to test three theoretical
+				indices of biological growth with the aim of indicating the<lb/> potential of mould
+				growth on different types of rendered façades. The results show that thin
+				renderings<lb/> on thermal insulation have significantly higher surface humidities
+				compared to façade constructions<lb/> with higher thermal inertia, and therefore
+				have a higher potential for mould growth. The colour is the<lb/> most important
+				factor for the surface humidity levels on south-facing façades (in the northern
+				hemi-<lb/> sphere) as darker surfaces absorb more solar radiation and therefore have
+				a higher average temperature.<lb/> On a north-facing façade the heat storage
+				capability of the façade and its effect on the surface temper-<lb/> ature is most
+				important.
+			</div>
+			<lb/>
+			<note type="copyright">&#169; 2009 Elsevier Ltd. All rights reserved.</note>
+			<lb/>
+
+		</front>
+	</text>
+</tei>

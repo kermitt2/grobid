@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>N</forename>.
+								<middlename>S</middlename>.
+								<surname>McIntyre</surname>,
+							</persName>
+							<persName>
+								<forename>D</forename>.
+								<middlename>D</middlename>.
+								<surname>Johnston</surname>,
+							</persName>
+							<persName>
+								<forename>L</forename>.
+								<middlename>L</middlename>.
+								<surname>Coatsworth</surname> and
+							</persName>
+							<persName>
+								<forename>R</forename>.
+								<middlename>D</middlename>.
+								<surname>Davidson</surname>
+							</persName>
+							<persName>
+								<forename>J</forename>.
+								<middlename>R</middlename>.
+								<surname>Brown</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

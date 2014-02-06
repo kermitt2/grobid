@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005201"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<lb/>
+			<docTitle>
+				<titlePart>Distances between Clustering, Hierarchical<lb/> Clustering<lb/></titlePart>
+			</docTitle>
+			
+			<note type="other">36-350, Data Mining<lb/></note>
+
+			<date>14 September 2009<lb/></date>
+
+
+		</front>
+	</text>
+</tei>

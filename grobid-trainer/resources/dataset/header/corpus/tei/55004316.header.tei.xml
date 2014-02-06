@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004316"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Vision, Modeling, and Visualization (2010)<lb/> Reinhard Koch, Andreas Kolb, Christof Rezk-Salama (Eds.)<lb/></reference>
+
+	<docTitle>
+	<titlePart>CALTag: High Precision Fiducial Markers for Camera<lb/> Calibration<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>B. Atcheson<lb/> 1 and F. Heide<lb/> 2 and W. Heidrich<lb/> 1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 University of British Columbia,</affiliation>
+	</byline>
+
+	<address>Canada<lb/></address>
+
+	<byline>
+	<affiliation>2 University of Siegen,</affiliation>
+	</byline>
+
+	<address>Germany<lb/></address>
+
+	<div type="abstract">Abstract We present a self-identifying marker pattern for camera calibration, together with the associated detection algo-<lb/>rithm. The pattern is designed to support high-precision, fully-automatic localization of calibration points, as well<lb/> as identification of individual markers in the presence of significant occlusions, uneven illumination, and observa-<lb/>tions under extremely acute angles. The detection algorithm is efficient and free of parameters. After calibration<lb/> we obtain reprojection errors significantly lower than with state-of-the art self-identifying reference patterns.<lb/></div>
+
+		</front>
+	</text>
+</tei>

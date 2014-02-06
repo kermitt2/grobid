@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004822"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>FAST DETECTION OF LEGIONELLA PNEUMOPHILA IN COOLING TOWERS BY<lb/> ESTAPOR® IMMUNOMAGNETIC MICROSPHERES<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Guillermo Rodríguez<lb/> a<lb/> , Fabrice Sultan<lb/> b<lb/> , Begoña Bedrina<lb/> a<lb/> , and Inmaculada Solís<lb/> c<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a. Biótica, Bioquímica Analítica, S.L., Parque Científico Tecnológico y Empresarial de la Universidad Jaume I-Edificio de Investigación I, 2ª Planta,</affiliation>
+	</byline>
+
+	<address>Castellón-Spain<lb/> </address>
+	
+	<byline>
+	<affiliation>b. Merck Chimie SAS, Estapor Microspheres -</affiliation>
+	</byline>
+	
+	<address>201 rue Carnot -94126 Fontenay sous Bois Cedex -France</address>
+
+	<email>-estapor.info@merck.fr<lb/></email>
+
+	<byline>
+	<affiliation>c. Iproma, S.L.,</affiliation>
+	</byline>
+
+	<address>Camino de la Raya, No. 46, Castellón-Spain<lb/></address>
+
+	<docTitle>
+	<titlePart>8 th International Conference on the Scientific<lb/> and Clinical Applications of Magnetic Carriers<lb/></titlePart>
+	</docTitle>
+
+	<address>Rostock, Germany -</address>
+	
+	<date>May 25-29, 2010<lb/></date>
+
+	<div type="abstract">ABSTRACT<lb/> Legionnaires´disease is a severe form of pneumonia caused by bacteria of<lb/> the genus Legionella. It is a notifiable disease worldwide, with relevant<lb/> clinical aspects ( fatality rate of 12-15 %, easily extended up to 30-50%<lb/> in immuno-compromised patients). Predominant species responsible for<lb/> illness is L. pneumophila, a virulent pathogen which is responsible of 90-<lb/>98 % of the cases. Rapid, cost-effective, reliable and simple test is a key<lb/> issue for monitoring water quality and prevention of the outbreaks of<lb/> Legionella infections. Cooling towers are known to be one of potential<lb/> sources of harboring, amplifying and disseminating L. pneumophila. Com-<lb/>position of water in cooling towers can be very complex, causing a loss<lb/> of culturability in the cells, so they can not be recovered by culture tech-<lb/>nique. Moreover, this water can contain toxic substances, such as heavy<lb/> metals, inhibiting polymerase reaction in PCR. Immuno-sensing tech-<lb/>niques addressed to detection of intact cell can be good approaches to<lb/> restrict detection to the viable cells.<lb/> </div>
+	
+	<div type="introduction">In this study, kit Bioalarm Legionella based on Estapor® magnetic<lb/> microspheres is applied to environmental monitoring of cooling<lb/> towers, overcoming drawbacks of the above mentioned techniques.<lb/> Methodology used is enzyme-linked immunomagnetic colorimetry.<lb/></div>
+
+		</front>
+	</text>
+</tei>

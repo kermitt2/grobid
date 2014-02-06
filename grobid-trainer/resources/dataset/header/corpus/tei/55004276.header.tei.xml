@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004276"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>SuperPower<lb/> ®<lb/> 2G HTS<lb/> Wire Specifications<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">superior performance.<lb/> powerful technology.<lb/> ����<lb/> SuperPower®is a registered trademark of SuperPower, Inc.<lb/></note>
+
+	<docTitle>
+	<titlePart>Second-Generation High Temperature Superconductor<lb/> (2G HTS)<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">SuperPower has been developing (RE)BCO-based 2G HTS wire at its<lb/> manufacturing plant in Schenectady, NY since 2000 and is now routinely<lb/> producing long lengths of high performance wire that is being shipped to<lb/> customers around the world for a wide range of applications.<lb/> </div>
+	
+	<div type="introduction">SuperPower®2G HTS Wire is produced in an automated, continuous process beginning<lb/> with an inexpensive high strength metal alloy &quot;tape&quot; as the base substrate material and adding<lb/> buffer layers, ceramic-based superconductor material and protective overlayers.<lb/> Once the wire has been slit into device-specific widths, Surround Copper Stabilizer (SCS) is<lb/> applied to completely encase the wire. Overcurrent capability in SCS wire can be tailored<lb/> to the specific application. The stabilizer protects the conductor and produces rounded<lb/> edges that are beneficial for high-voltage applications. Further, the probability of failure in the<lb/> device due to voltage breakdown is reduced in wire with SCS. SuperPower&apos;s SCS has been<lb/> successfully implemented and tested on continuous lengths of hundreds of meters of wire.</div>
+
+		</front>
+	</text>
+</tei>

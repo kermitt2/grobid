@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004713"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">316<lb/></note>
+
+	<note type="other">METHODEN &amp; ANWENDUNGEN<lb/></note>
+	
+	<reference>BIOspektrum | 03.10 | 16. Jahrgang<lb/></reference>
+
+	<byline>
+	<docAuthor>MICHAELA NIEMÖLLER, ANNA FOERSTER, CLAUDIA ZYNTEK, MARIO ASSENMACHER,<lb/> ANNE RICHTER<lb/> MILTENYI BIOTEC GMBH, BERGISCH GLADBACH<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Extrem seltene Populationen lebender Interleukin(IL)-17-sezernierender<lb/> Zellen aus humanen und murinen Geweben können mithilfe des von uns<lb/> entwickelten IL-17 Secretion Assay sowohl durchflusszytometrisch analy-<lb/>siert als auch magnetisch angereichert werden.<lb/> We have developed an IL-17 Secretion Assay that allows the flow cyto-<lb/>metric analysis and magnetic enrichment by MACS Technology of<lb/> extremely rare, viable interleukin(IL)-17–secreting cells from mouse or<lb/> human tissues, including human antigen-specific T cells.<lb/> </div>
+	
+	<div type="introduction">ó Wie unlängst nachgewiesen wurde, spielt<lb/> eine bestimmte Linie der T-Helferzellen, die<lb/> TH17-Zellen, eine wichtige Rolle in der Ab-<lb/>wehr des Wirtsorganismus von extrazellulä-<lb/>ren Pathogenen wie unter anderem Bakterien<lb/> und Pilzen [1, 2]. Diese TH17-Zellen sind ins-<lb/>besondere durch ihre Sekretion von IL-17A,<lb/> IL-17F und IL-22 infolge Antigenaktivierung<lb/> gekennzeichnet. Auch andere jüngere Stu-<lb/>dien belegen die Bedeutung des IL-17 nicht<lb/> nur in der Immunantwort auf Infektionen,<lb/> sondern auch in atopischen und chronisch<lb/> entzündlichen Erkrankungen wie z. B.<lb/> bestimmten Autoimmunerkrankungen [3, 4].<lb/> Wir haben ein neuartiges Verfahren zur Mar-<lb/>kierung von IL-17-sezernierenden Zellen ent-<lb/>wickelt und beschreiben hier, wie sich dieses<lb/> zum Nachweis und zur Isolierung lebender<lb/> Zellen sowohl aus humanen als auch aus<lb/> murinen Geweben nutzen lässt [5].<lb/> Material und Verfahren<lb/> Der IL-17 Secretion Assay nutzt eine bispezi-<lb/>fische CD45/IL-17A-Antikörper-Affinitäts-<lb/>matrix (IL-17 Catch Reagent) zum Immobili-<lb/>sieren des IL-17 unweit der Zelloberfläche der<lb/> IL-17-sezernierenden CD45-positiven Zellen<lb/> (Abb. 1). Es wurden Zellen aus Mäusemilzen<lb/> bzw. humane periphere mononukleäre Blut-<lb/>zellen (PBMCs) verwendet. Sowohl die Milz<lb/> als auch PBMCs enthalten wichtige Immun-<lb/>zellen, wie z. B. Lymphozyten und Monozyten.<lb/></div>
+
+		</front>
+	</text>
+</tei>

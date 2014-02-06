@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007207"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Debug Register<lb/> Aus Lowlevel<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">Die Debug Register ermöglichen es eine Debug Exception #DB (Int 1) auszulösen, wenn bestimmte Ereignisse eintreten. Die<lb/> Register DR0 bis DR3 enthalten dabei jeweils die lineare Adresse eines Breakpoints. Dies kann ein Befehl, ein Datenbereich oder ein<lb/> I/O-Port sein. Zu jedem dieser Register gehören mehrere Flags im Register DR7, die die Art des Breakpoints festlegen. Die CPU<lb/> setzt beim Auslösen einer Debug Exception im Register DR6 bestimmte Flags, die anzeigen welche Breakpoints erreicht wurden.<lb/> Inhaltsverzeichnis<lb/> 1 Verwendung<lb/> 1.1 DR7<lb/> 1.2 DR6<lb/> 2 Vergleich mit der Breakpoint-Instruktion<lb/> 2.1 Vorteile der Debug Register<lb/> 2.2 Vorteile der Breakpoint-Instruktion<lb/> 3 Unterstützung in Emulatoren<lb/> 4 Siehe auch<lb/> Verwendung<lb/> Um einen Breakpoint zu setzen, lädt man eines der Register DR0 bis DR3 mit der Adresse und setzt die entsprechenden Flags in<lb/> DR7. Beim Erreichen des Breakpoints wird der Interrupt 1 (#DB) ausgelöst. Bei der Behandlung sollte man das DR6 Register<lb/> auswerten, und danach auf 0 setzen, da die CPU möglicherweise nicht automatisch alle Flags vor der nächsten Exception<lb/> zurücksetzt. Um zu verhindern, dass dieser Breakpoint bei der Rückkehr aus der ISR direkt wieder ausgelöst wird, sollte das Resume<lb/> Flag (RF) im EFLAGS-Register (auf dem Stack) gesetzt werden.<lb/> Das Kapitel zu den Debug Registern im System Programming Guide der Intel Manuals sollte vor der Implementierung von<lb/> Debugfunktionen gelesen werden. Im Folgenden ein grober Überblick über die wichtigsten Flags der Register DR6 und DR7.</div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008421"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>U.P.B. Sci. Bull., Series C, Vol. 72, Iss. 4, 2010<lb/></reference>
+
+	<idno>ISSN 1454-234x<lb/></idno>
+
+	<docTitle>
+	<titlePart>TOWARDS THE DEVELOPMENT OF INTERNET OF<lb/> THINGS ORIENTED INTELLIGENT SYSTEMS<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Mihnea Alexandru MOISESCU<lb/> 1 , Ioan Ştefan SACALĂ<lb/> 2 ,<lb/> Aurelian Mihai STĂNESCU<lb/>3<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract"> Activităţile de cercetare şi dezvoltare în domeniul ICT, susţinute de Comisia<lb/> Europeană şi de Programul de Cerectare de Cadru 7, se focalizează pe dezvoltarea<lb/> de noi tehnologii în domeniul &quot;Internetului Viitorului&quot;. Una dintre paradigmele<lb/> propuse în cadrul acestui domeniu este legată de &quot;Internetul obiectelor&quot;.<lb/> Principalul promotor în cadrul acestui domeniu este constituit de tehnologia RFID<lb/> şi în acest sens dezvoltarea de astfel de dispozitive este importantă pentru<lb/> constituirea unei infrastructuri. Obiectivele acestei lucrări sunt legate de<lb/> prezentarea stadiului cerecetărilor în acest domeniu şi de dezvoltarea unei<lb/> arhitecturi de sistem ce permite virtualizarea obiectelordin lumea reală şi<lb/> interactiuni între acestea.<lb/> Current R&amp;D activities, sustained by the European Commission and by FP7<lb/> financial support are focusing on the development and standardization of new<lb/> technologies to sustain the &quot;Future Internet&quot;. One of the paradigms proposed in<lb/> this area is the &quot;Internet of Things&quot;. In this context, there is a necessity for the<lb/> development of RFID compliant devices, the main enabler for the development of<lb/> the Internet of Things infrastructure. The use of standard compliant intelligent<lb/> objects for both economical and private purposes increases the demand for<lb/> interaction-based devices. The main objectives of this paper are to provide an<lb/> overview of the current progress of Internet of Things oriented technologies and to<lb/> propose an architecture which will enable the transformation of real world objects<lb/> into intelligent virtual objects.<lb/></div>
+
+	<keyword>Keywords: Internet of Things, intelligent objects<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

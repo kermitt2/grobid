@@ -43,12 +43,18 @@ public class PatentParserTrainer extends AbstractTrainer{
         return nb;
     }
 
-    //we have our own train() method that trains several models at once, therefore we don't need this method which typically
-    //was executed from AbstractTrainer. 
+    // we have our own train() method that trains several models at once, 
+	// therefore we don't need these methods which typically
+    // were executed from AbstractTrainer. 
     @Override
     public int createCRFPPData(File corpusPath, File outputFile) {
         return 0;
     }
+	@Override
+	public int createCRFPPData(File corpusPath, File outputTrainingFile, File outputEvalFile, double splitRatio) {
+		return 0;
+	}
+	
 
     public void train() {
         createTrainingData(GrobidProperties.getTempPath().getAbsolutePath());
@@ -64,7 +70,6 @@ public class PatentParserTrainer extends AbstractTrainer{
         String templatePath1 = path + "/text.npl.references.template";
         String templatePath2 = path + "/text.patent.references.template";
         String templatePath3 = path + "/text.references.template";
-
 
         String modelPath1 = GrobidProperties.getModelPath(GrobidModels.PATENT_NPL).getAbsolutePath() + NEW_MODEL_EXT;
         String modelPath2 = GrobidProperties.getModelPath(GrobidModels.PATENT_PATENT).getAbsolutePath() + NEW_MODEL_EXT;
@@ -555,7 +560,7 @@ public class PatentParserTrainer extends AbstractTrainer{
     @Override
     public String evaluate() {
         //parameter 2 was in the former main() method of ParentEvaluation
-        return new PatentEvaluation().evaluate(2);
+        return new PatentEvaluation().evaluate();
     }
 
     /**

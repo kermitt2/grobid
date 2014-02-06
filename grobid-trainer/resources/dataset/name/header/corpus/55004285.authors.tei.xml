@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Nalini</forename>
+								<surname>Pather</surname>
+							<lb/>
+								<marker>a,*</marker>,
+							</persName>
+							<persName>
+								<forename>Alvaro</forename>
+								<middlename>M</middlename> .
+								<surname>Viljoen</surname>
+							<lb/>
+								<marker>b</marker>, 
+							</persName>
+							<persName>	
+								<forename>Beverley</forename>
+								<surname>Kramer</surname>
+							<lb/>	
+								<marker>a</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

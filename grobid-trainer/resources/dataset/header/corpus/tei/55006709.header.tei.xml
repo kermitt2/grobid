@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55006709"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Developing J2ME applications with EclipseME<lb/> </titlePart>
+	</docTitle>
+	
+	<note type="other">Skill Level: Introductory<lb/></note>
+	
+	<byline>
+	<docAuthor>Michael Juntao Yuan<lb/></docAuthor>
+	</byline>
+
+		</front>
+	</text>
+</tei>

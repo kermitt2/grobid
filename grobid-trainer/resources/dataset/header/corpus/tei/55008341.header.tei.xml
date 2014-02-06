@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008341"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>New Office Laser Printer Encodes Tags<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">Lexmark has introduced a laser printer able to print 8.5-by-11-inch paper and encode RFID tags.<lb/></div>
+
+	<byline>
+	<docAuthor>By Mary Catherine O&apos;Connor<lb/></docAuthor>
+	</byline>
+
+	<date>March 28, 2007</date>
+
+	<div type="introduction">-Lexmark, a developer and manufacturer of laser printers for businesses and consumers, has<lb/> introduced a new laser printer, the T640rn, that can print 8.5-by-11-inch paper and encode RFID tags.<lb/> Most printer-encoders use thermal printing technology and are designed to print only on label stock. However,<lb/> says Rick Kallop, Lexmark&apos;s senior industry consultant for the company&apos;s RFID business development team,<lb/> the T640rn is a general-use laser printer that also encodes EPC Gen 2 inlays embedded in label stock.<lb/> &quot;A couple of our customers have already tested the T640rn, and we&apos;re doing an installation next month,&quot; says<lb/> Kallop. &quot;We&apos;re targeting everyone from distribution centers that need to tag shipments for mandate<lb/> compliance to small-and medium-sized businesses that might need to comply with mandates but could also<lb/> use the printer for general office needs.&quot;<lb/> Lexmark has worked with paper products manufacturer Pinnacle Label to create 8.5-by-11-inch paper that is<lb/> half shipping label (with an adhesive backing that peels off a substrate) and half standard paper stock. With<lb/> this product, a company can print and encode a shipping label while also printing a packing slip on a single<lb/> piece of paper. The company can apply the shipping label to a case or pallet, detach the perforated packing<lb/> slip and place it a plastic pouch attached to a shipment.</div>
+
+		</front>
+	</text>
+</tei>

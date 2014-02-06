@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<surname>Bouhdid</surname>,
+								<forename>S</forename>.
+								<marker>1 *</marker>,
+							</persName>
+							<persName>
+								<surname>Skali</surname>,
+								<forename>S</forename>.
+								<middlename>N</middlename>.
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<surname>Idaomar</surname>,
+								<forename>M</forename>.
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<surname>Zhiri</surname>,
+								<forename>A</forename>.
+								<marker>2</marker> ,
+							</persName>
+							<persName>	
+								<surname>Baudoux</surname>,
+								<forename>D</forename>.
+								<marker>2</marker> ,
+							</persName>
+							<persName>	
+								<surname>Amensour</surname>,
+								<forename>M</forename>.
+								<marker>1</marker> and
+							</persName>
+							<persName>
+								<forename>Abrini</forename>,
+								<forename>J</forename>.
+								<marker>1</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

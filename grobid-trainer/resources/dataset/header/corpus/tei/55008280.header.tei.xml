@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008280"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Letters in Applied Microbiology 1996, 23, 385-388<lb/></reference>
+
+	<docTitle>
+	<titlePart>Laciobacillus amylovorus as a phytase producer in<lb/> submerged culture<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>G. Sreeramulu, D.S. Srinivasa, K. Nand and R. Joseph<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Microbiology, Central Food Technological Research Institute,</affiliation>
+	</byline>
+
+	<address>Mysore, India<lb/> </address>
+	
+	<note type="other">1053/96:</note>
+
+	<note type="submission">received 20 February 1996 and accepted 2 May 1996<lb/></note>
+
+	<byline>
+	<docAuthor>G . SREERAMULU, D.S. SRINIVASA, K . NAND AND R. JOSEPH. </docAuthor>
+	</byline>
+	
+	<date>1996. </date>
+	
+	<div type="abstract">Nineteen strains of lactic<lb/> acid producing bacteria of the genera Lactobacillus and Streptococcus collected<lb/> from different culture collections were screened for the production of extracellular<lb/> phytase. A number of them exhibited t h e enzyme activity in the fermentation<lb/> medium b u t Lactobacillus amylovorus B4552 produced the maximum amounts of phytase<lb/> ranging from 125 to 146 units ml-&apos; extracellularly under the submerged cultivation<lb/> conditions. T h e optimum glucose and inorganic phosphate levels for highest phytase<lb/> production were found to be 1% and 24% mg, respectively. Lactobacillus<lb/> amylovorus has potential in improving nutritional qualities of cereal and pulse-based<lb/> food fermentations.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007873"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">The author(s) shown below used Federal funds provided by the U.S.<lb/> Department of Justice and prepared the following final report:<lb/> Document Title:<lb/> </note>
+	
+	<docTitle>
+	<titlePart>Determination of the Age (Time Since<lb/> Deposition) of a Biological Stain<lb/> </titlePart>
+	</docTitle>
+	
+	<note type="other">Author:<lb/></note>
+
+	<byline>
+	<docAuthor>Jack Ballantyne, Ph.D.<lb/></docAuthor>
+	</byline>
+
+	<idno>Document No.:<lb/> 226811<lb/></idno>
+
+	<date>Date Received:<lb/> May 2009<lb/></date>
+
+	<note type="grant">Award Number:<lb/> 2005-MU-BX-K071<lb/></note>
+	
+	<note type="other">This report has not been published by the U.S. Department of Justice.<lb/> To provide better customer service, NCJRS has made this Federally-<lb/>funded grant final report available electronically in addition to<lb/> traditional paper copies.<lb/> Opinions or points of view expressed are those<lb/> of the author(s) and do not necessarily reflect<lb/> the official position or policies of the U.S.<lb/> Department of Justice.</note>
+
+		</front>
+	</text>
+</tei>

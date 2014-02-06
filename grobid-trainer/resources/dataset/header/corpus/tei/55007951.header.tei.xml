@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007951"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Zurück<lb/> Ihr Weg zu Harmonie und<lb/> Lebensfreude<lb/></note>
+
+	<docTitle>
+	<titlePart>Spagyrik und Phytotherapie<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">Die auf uralter alchemistischer Tradition und Erfahrungsmedizin<lb/> beruhende Herstellungsmethode von hochwirksamen,<lb/> nebenwirkungsfreien pflanzlichen Arzneimitteln wird im Licht von<lb/> modernen Analysemethoden und ernährungswissenschaftlichen<lb/> Erkenntnissen sowohl für den feinstofflich denkenden, wie auch für<lb/> den allopathisch orientierten Praktiker oder Therapeuten zur<lb/> sinnvollen Alternative.<lb/></div>
+
+		</front>
+	</text>
+</tei>

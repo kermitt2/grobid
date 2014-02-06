@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005215"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Technical Article<lb/> </note>
+	
+	<docTitle>
+	<titlePart>Optimal Flashing by FlexRay<lb/> </titlePart>
+	</docTitle>
+	
+	<note type="page">1/15<lb/></note>
+
+	<docTitle>
+	<titlePart>Optimal Flashing via FlexRay<lb/></titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

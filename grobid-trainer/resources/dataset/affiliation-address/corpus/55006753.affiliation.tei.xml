@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">Dept of Computer Science</orgName>
+							<lb/>
+							<orgName type="institution">City University of Hong Kong</orgName>
+							<lb/>
+							<address>
+								<settlement>Kowloon</settlement>,
+								<settlement>Hong Kong</settlement>
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="department">Dept of Computer Science</orgName>
+							<lb/>
+							<orgName type="institution">City University of Hong Kong<lb/> Kowloon</orgName>,
+							<address>
+								<settlement>Hong Kong</settlement>
+							</address>
+						</affiliation>
+						<affiliation>		
+							<orgName type="department">School of Computer Science</orgName>
+							<lb/>
+							<orgName type="institution">Carnegie Mellon University<lb/> Pittsburgh</orgName>,
+							<address>
+								<region>PA</region>
+								<postCode>15213</postCode>,
+								<country>USA</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

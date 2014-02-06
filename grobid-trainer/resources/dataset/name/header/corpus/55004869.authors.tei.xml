@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>B</forename>.
+								<surname>Pourima</surname>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>C</forename>.
+								<surname>Pougnard</surname>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>C</forename>.
+								<surname>Josson</surname>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>P</forename>.
+								<surname>Le Baron</surname>
+								<marker>3</marker> ,
+							</persName>
+							<persName>
+								<forename>E</forename>.
+								<surname>Pringuez</surname>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>J</forename>.
+								<middlename>L</middlename>.
+								<surname>Drocourt</surname>
+								<marker>4</marker> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>P</forename>.
+								<middlename>A</middlename>.
+								<surname>Cabanes</surname>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>S</forename> .
+								<surname>Legastelois</surname>
+								<marker>1</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

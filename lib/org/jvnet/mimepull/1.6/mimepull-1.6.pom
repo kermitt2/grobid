@@ -1,0 +1,137 @@
+<project xsi:schemaLocation='http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd' xmlns='http://maven.apache.org/POM/4.0.0' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.jvnet</groupId>
+  <artifactId>mimepull</artifactId>
+  <version>1.6</version>
+  <packaging>jar</packaging>
+
+  <name>MIME streaming extension</name>
+   <description>
+        Provides a streaming API to access attachments parts in a MIME message.
+  </description>
+  <organization>
+    <name>Oracle Corporation</name>
+    <url>http://www.oracle.com/</url>
+  </organization>
+  <scm>
+    <connection>scm:svn:https://svn.java.net/svn/mimepull~svn/tags/mimepull-1.6</connection>
+    <developerConnection>scm:svn:https://svn.java.net/svn/mimepull~svn/tags/mimepull-1.6</developerConnection>
+    <url>http://java.net/projects/mimepull/sources/svn/show/tags/mimepull-1.6</url>
+  </scm>
+  <issueManagement>
+    <system>jira</system>
+    <url>http://java.net/jira/browse/mimepull</url>
+  </issueManagement>
+  <mailingLists>
+    <mailingList>
+      <name>mimepull Users List</name>
+      <archive>http://java.net/projects/mimepull/lists/users/archive</archive>
+      <post>users@mimepull.java.net</post>
+    </mailingList>
+    <mailingList>
+      <name>mimepull Developers List</name>
+      <archive>http://java.net/projects/mimepull/lists/dev/archive</archive>
+      <post>dev@mimepull.java.net</post>
+    </mailingList>
+  </mailingLists>
+  <licenses>
+    <license>
+        <name>
+            Dual license consisting of the CDDL v1.1 and GPL v2
+        </name>
+        <url>https://glassfish.dev.java.net/public/CDDL+GPL_1_1.html</url>
+        <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <repositories>
+    
+    
+  </repositories>
+
+  <pluginRepositories>
+    
+    <!--pluginRepository>
+      <id>felix.repo</id>
+      <url-->
+  </pluginRepositories>
+
+  <distributionManagement>
+    <repository>
+      <uniqueVersion>false</uniqueVersion>
+      <id>java.net-maven2-repository</id>
+      <url>java-net:/maven2-repository~svn/trunk/repository/</url>
+    </repository>
+    <site>
+      <id>mimepull-www</id>
+      <url>java-net:/mimepull/trunk/www/</url>
+    </site>
+  </distributionManagement>
+
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.5</source>
+          <target>1.5</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-idea-plugin</artifactId>
+        <configuration>
+          <jdkName>JDK1.5</jdkName>
+          <downloadSources>true</downloadSources>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <configuration>
+          <descriptorRefs>
+            <descriptorRef>src</descriptorRef>
+            <descriptorRef>bin</descriptorRef>
+          </descriptorRefs>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+          <archive>  
+            <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+          </archive> 
+        </configuration>
+      </plugin>  
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <version>2.0.0</version>
+        <executions>
+          <execution>
+            <id>bundle-manifest</id>
+            <phase>process-classes</phase>
+            <goals>
+              <goal>manifest</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+    <extensions>
+      <extension>
+        <groupId>org.jvnet.wagon-svn</groupId>
+        <artifactId>wagon-svn</artifactId>
+        <version>1.12</version>
+      </extension>
+    </extensions>
+  </build>
+  
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+</project>

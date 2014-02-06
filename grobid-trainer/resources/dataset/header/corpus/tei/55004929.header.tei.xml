@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004929"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">426<lb/></note>
+	
+	<reference> A. J. Melvin, M. E. McGurn, S. J. Bort et al.<lb/>  Eur. J. Immunol. 1995. 25: 426-430<lb/></reference>
+
+	<byline>
+	<docAuthor>Ann J. Melvin,<lb/> Mary E. McGurn,<lb/> Susan J. Bort,<lb/> Christine Gibson and<lb/> David B. Lewis<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Departments of Pediatrics and<lb/> Immunology,</affiliation>
+	</byline>
+
+	<byline>
+	<affiliation>University of<lb/> Washington, </affiliation>
+	</byline>
+	
+	<address>Seattle<lb/></address>
+
+	<docTitle>
+	<titlePart>Hypomethylation of the interferon-y gene<lb/> correlates with its expression by primary T-lineage<lb/> cells *<lb/> </titlePart>
+	</docTitle>
+	
+	<div type="abstract">To determine the potential role of methylation in the regulation of interferon-y<lb/> (IFN-y) gene transcription by T cells, primary T-lineage cell populations were<lb/> analyzed for the extent of methylation of three CpG sites within or near<lb/> transcriptional activator elements in the 5&apos; flank and first intron of the human<lb/> IFN-y gene. A striking correlation was observed between the capacity of the<lb/> IFN-y gene to be expressed and the degree of hypomethylation. The IFN-y gene<lb/> was virtually completely methylated at all sites in thymocytes, neonatal T cells,<lb/> and adult CD45RAhiCD45R010 (antigenically naive) CD4 T cells, cell types that<lb/> all have a low or undetectable capacity to express the IFN-y gene. In contrast,<lb/> there was substantial hypomethylation in T-lineage cell types with relatively high<lb/> capacities to express the IFN-y gene, including adult CD8 Tcells and adult<lb/> CD45RA10CD45ROhi (memory/effector) CD4 T cells. These results suggest that<lb/> hypomethylation of the IFN-y genetic locus may be an important determinant of<lb/> IFN-y gene expression in vivo by T-lineage cells.<lb/></div>
+
+		</front>
+	</text>
+</tei>

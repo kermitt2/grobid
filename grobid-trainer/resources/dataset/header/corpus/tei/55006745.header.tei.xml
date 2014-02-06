@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55006745"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>JOURNAL OF CLINICAL MICROBIOLOGY, Jan. 2005, p. 57–65<lb/> Vol. 43, No. 1<lb/></reference>
+
+	<note>0095-1137/05/$08.00ϩ0</note>
+
+	<idno type="DOI">doi:10.1128/JCM.43.1.57–65.2005<lb/></idno>
+
+	<note type="copyright">Copyright © 2005, American Society for Microbiology. All Rights Reserved.<lb/></note>
+
+	<docTitle>
+	<titlePart>Assessing the Serodiagnostic Potential of 35 Mycobacterium tuberculosis<lb/> Proteins and Identification of Four Novel Serological Antigens<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Karin Weldingh,* Ida Rosenkrands, Limei Meng Okkels, T. Mark Doherty, and Peter Andersen<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Infectious Disease Immunology, Statens Serum Institut,</affiliation>
+	</byline>
+
+	<address>Copenhagen, Denmark<lb/></address>
+
+	<note type="submission">Received 21 July 2004/Accepted 5 September 2004<lb/></note>
+
+	<div type="abstract">Improved diagnostic reagents are needed for the detection of Mycobacterium tuberculosis infections, and the<lb/> development of a serodiagnostic test would complement presently available diagnostic methods. The aim of the<lb/> present study was to identify novel serological targets for use for the future serodiagnosis of tuberculosis (TB).<lb/> We cloned and expressed 35 M. tuberculosis proteins as recombinant proteins in Escherichia coli and analyzed<lb/> their serodiagnostic potentials. By a two-step selection process, four superior seroantigens, TB9.7, TB15.3,<lb/> TB16.3, and TB51, were identified, none of which has been described before. The four novel antigens were<lb/> tested with panels of sera from smear-positive and smear-negative TB patients from areas both where TB is<lb/> endemic and where TB is not endemic, with recognition frequencies ranging from 31 to 93% and with a<lb/> specificity of at least 97%. The single most potent antigen was TB16.3, which had a sensitivity of 48 to 55% with<lb/> samples from Danish resident TB patients and a sensitivity of 88 to 98% with samples from African TB<lb/> patients. Importantly, the TB16.3 and the TB9.7 antigens were recognized by more than 85% of the samples<lb/> from TB patients coinfected with human immunodeficiency virus, a patient group for which it is in general<lb/> difficult to detect M. tuberculosis-specific antibodies.<lb/></div>
+
+		</front>
+	</text>
+</tei>

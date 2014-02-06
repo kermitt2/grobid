@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>a</marker>
+							<orgName type="institution">Multitel A.S.B.L.</orgName>,
+							<address>
+								<addrLine>Av Copernic 1</addrLine>,
+								<postCode>7000</postCode>
+								<settlement>Mons</settlement>,
+								<country>Belgium</country>.
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>b</marker>
+							<orgName type="institution">Faculté Polytechniques de Mons</orgName>,
+							<address>
+								<settlement>Mons</settlement>,
+								<addrLine>TCTS</addrLine>,
+								<addrLine>Av Copernic 1</addrLine>,
+								<postCode>7000</postCode>
+								<settlement>Mons</settlement>,
+								<country>Belgium</country>.
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

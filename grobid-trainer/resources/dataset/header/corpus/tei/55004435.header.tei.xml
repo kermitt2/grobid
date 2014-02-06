@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004435"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">View as PDF<lb/> Read More<lb/> Design Ideas<lb/> « Back | Print<lb/></note>
+
+	<docTitle>
+	<titlePart>Sense multiple pushbuttons using only two wires<lb/> A single IC produces a code that indicates which button is pressed.<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>By Bernhard Linke,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Maxim Integrated Products Inc,</affiliation>
+	</byline>
+
+	<address>Dallas, TX;</address>
+
+	<note>Edited by Martin Rowe and Fran Granville --EDN,</note>
+
+	<date>September 9, 2010<lb/></date>
+
+	<div type="abstract">Keyboards and numeric keypads often provide the user interface for electronic equipment, but many applications<lb/> require only a few pushbuttons. For those applications, you can monitor multiple pushbuttons over a single pair of<lb/> wires (Figure 1).<lb/> The multichannel 1-Wire addressable switch, IC 1 , provides PIO (input/output ports) P0 through P7, which in this<lb/> application serve as inputs. The 1-MΩ RPD resistors connect these ports to ground to ensure a defined logic-zero<lb/> state. Diode/capacitor combination D1/ C1 forms a local power supply that steals energy from the 1-Wire<lb/> communication line. Pressing a pushbutton connects the corresponding port to the local supply voltage, which is<lb/> equivalent to logic one. This change of state sets the port&apos;s activity latch (Reference 1).<lb/> As a 1-Wire slave device, IC1 doesn&apos;t initiate communications. Instead, the master device—typically, a<lb/> microcontroller—polls the 1-Wire line. To minimize overhead, IC1 supports conditional search, a 1-Wire network<lb/> function. Before using that function, however, you must configure IC 1 according to the needs of the application. That<lb/> configuration includes channel selection, which defines the qualifying input ports; channel-polarity selection, which<lb/> specifies the polarity of the qualifying ports; choosing a pin or an activity latch for the port; and specifying whether<lb/> the device will respond to activity at a single port, an OR, or at all ports, an AND.<lb/> Consider, for example, that IC1 shall respond to a conditional search if it detects activity at any of the eight ports.<lb/> This search requires a channel-selection mask of 11111111b for address 008Bh. The numeral one indicates that<lb/> IC 1 has selected a port. This search also requires a channel-polarity selection of 11111111b for address 008Ch,<lb/> where the numeral one indicates a high level, and a control/ status register setting of 00000001b for address<lb/> 008Dh, which selects the port&apos;s activity latch as a source and specifies OR as the conditional search term—that is,<lb/> activity at any port.</div>
+
+		</front>
+	</text>
+</tei>

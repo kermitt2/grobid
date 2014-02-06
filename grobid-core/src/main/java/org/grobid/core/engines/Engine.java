@@ -1143,7 +1143,8 @@ public class Engine implements Closeable {
 			// we process all xml files in the directory
 			File[] refFiles = path.listFiles(new FilenameFilter() {
 				public boolean accept(File dir, String name) {
-					if (name.endsWith(".xml") || name.endsWith(".XML"))
+					if (name.endsWith(".xml") || name.endsWith(".XML") || 
+						name.endsWith(".xml.gz") || name.endsWith(".XML.gz"))
 						return true;
 					else
 						return false;

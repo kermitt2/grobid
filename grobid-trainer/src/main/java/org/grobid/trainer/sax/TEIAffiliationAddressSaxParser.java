@@ -110,7 +110,7 @@ public class TEIAffiliationAddressSaxParser extends DefaultHandler {
                     allContent.append(text);
                 }
             }
-            labeled.add("\n");
+            labeled.add("\n \n");
 
             String allString = allContent.toString().trim();
             allString = allString.replace("@newline", "");

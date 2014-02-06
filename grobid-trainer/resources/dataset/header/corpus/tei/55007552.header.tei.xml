@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007552"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>SPWLA 46<lb/> th Annual Logging Symposium, June 26-29, 2005<lb/></reference>
+
+	<note type="page">1<lb/></note>
+
+	<docTitle>
+	<titlePart>FORMATION TESTER IMMISCIBLE AND MISCIBLE FLOW<lb/> MODELING FOR JOB PLANNING APPLICATIONS<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Wilson C. Chin and Mark A. Proett,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Halliburton Energy Services<lb/></affiliation>
+	</byline>
+
+	<note type="copyright">Copyright 2005, held jointly by the Society of Petrophysicists and Well Log<lb/> Analysts (SPWLA) and the submitting authors.<lb/></note>
+
+	<note type="other">This paper was prepared for presentation at the SPWLA 46<lb/> th Annual Logging<lb/> Symposium held in New Orleans, Louisiana, United States,</note>
+
+	<date>June 26-29, 2005.<lb/></date>
+
+	<div type="abstract">ABSTRACT<lb/> Water-based muds invade oil-bearing formations during<lb/> drilling. This immiscible cylindrical invading flow<lb/> depends on relative permeability and capillary pressure.<lb/> Although the invasion can be described using basic<lb/> reservoir engineering principles, unlike conventional<lb/> reservoir flow models, a growing mudcake that is<lb/> dynamically coupled to the flow within the reservoir<lb/> controls this invasion. This coupling is especially<lb/> significant when formation permeabilities are low.<lb/> The formation tester withdraws fluid from the<lb/> cylindrical invaded zone after supercharging invasion<lb/> has begun. But now, the tester tool itself induces a<lb/> local ellipsoidal (anisotropic) flow superposed on the<lb/> cylindrical one.<lb/> The resulting highly nonlinear<lb/> combined flow is solved with special boundary<lb/> conditions involving pump rate, skin effects, flow line<lb/> storage and transient mudcake growth.<lb/> We present a general immiscible formulation for<lb/> vertical well flow in multi-layered anisotropic<lb/> heterogeneous media. The time-dependent, coupled<lb/> pressure-saturation field is solved by numerical<lb/> &quot;IMPES&quot; (implicit pressure – explicit saturation)<lb/> methods. The formulation does not assume constant<lb/> density flow. Rather, the fluids are compressible and<lb/> the model allows pressure transient interpretation. The<lb/> simulator forms the basis for new interpretation<lb/> methods in which heterogeneities and properties like<lb/> relative permeability may be obtained from<lb/> measurements.<lb/> Outputs are spatial &quot;snapshots&quot; of pressure and oil<lb/> saturation fields as they vary in time. A &quot;movie mode&quot;<lb/> software option replays changes in time. One useful<lb/> line plot displays oil saturation at the probe versus time,<lb/> giving the time needed to pump a good oil sample and<lb/> the quality of that sample. Calculations show that wait<lb/> times needed for clean samples with little filtrate are<lb/> short for low permeability mudcakes – for more<lb/> permeable cakes, invasion is strong and wait times are<lb/> longer. A corresponding probe pressure versus time<lb/> plot reveals a different time scale that depends on<lb/> compressibility and phase redistribution. This is useful<lb/> in pressure transient permeability prediction.<lb/> Modifications to the formulation are also given which<lb/> allow miscible flow simulation involving various<lb/> combinations of fluids, e.g., fresh water versus brine,<lb/> and oil base mud invading formations containing oil.<lb/> For instance, the level of contamination by oil base<lb/> muds at the probe versus time can be computed once<lb/> basic diffusion coefficients are estimated.<lb/> All mathematical models, numerical formulations and<lb/> solution methods, and computed outputs and practical<lb/> applications, are described in detail for both immiscible<lb/> and miscible job planning simulators in the vertical well<lb/> context for single-probe, dual-probe and straddle packer<lb/> nozzles.<lb/> The models integrate pressure transient<lb/> analysis and contamination prediction methodologies.<lb/></div>
+
+		</front>
+	</text>
+</tei>

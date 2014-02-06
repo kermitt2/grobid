@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004622"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">POWER SOLUTIONS<lb/></note>
+
+	<date>November 2003<lb/></date>
+
+	<note type="page">58<lb/></note>
+
+	<docTitle>
+	<titlePart>Optimizing the Virtual Data Center<lb/></titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

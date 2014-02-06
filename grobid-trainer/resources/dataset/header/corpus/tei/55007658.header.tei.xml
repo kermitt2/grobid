@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007658"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">White Paper<lb/></note>
+
+	<note type="other">Comparison of RAID<lb/> Types:<lb/> Software vs. True<lb/> Hardware RAID<lb/></note>
+
+	<date>June 2009<lb/></date>
+
+	<ptr type ="web">www.siliconimage.com<lb/> </ptr>
+
+	<note type="page">2 </note>
+	
+	<note type="other">Comparison of RAID Types: Software vs. True Hardware RAID<lb/> White Paper<lb/> </note>
+
+	<div type="introduction">Introduction</div>
+
+		</front>
+	</text>
+</tei>

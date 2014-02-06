@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="institution">JILA</orgName>,
+							<orgName type="institution">National Institute of Standards and Technology and University of Colorado</orgName>,
+							<orgName type="department">Department of Physics Boulder</orgName>,
+							<address>
+								<region>CO</region>
+								<postCode>80309</postCode>
+							<lb/>
+							</address>
+						</affiliation>	
+						<affiliation>
+							<orgName type="institution">IMRA America, Inc.</orgName>,
+							<address>
+								<addrLine>1044 Woodridge Ave.</addrLine>,
+								<settlement>Ann Arbor</settlement>,
+								<region>MI</region>
+								<postCode>48105</postCode>,
+								<country>USA</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>
