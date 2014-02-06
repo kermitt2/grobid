@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ====================================================================== -->
+<!-- Ant build file (http://ant.apache.org/) for Ant 1.6.2 or above.        -->
+<!-- ====================================================================== -->
+
+<project name="grobid-trainer" default="package" basedir=".">
+
+  <!-- ====================================================================== -->
+  <!-- Import maven-build.xml into the current project                        -->
+  <!-- ====================================================================== -->
+
+  <import file="maven-build.xml"/>
+  
+  <!-- ====================================================================== -->
+  <!-- Help target                                                            -->
+  <!-- ====================================================================== -->
+
+  <target name="help">
+    <echo message="Please run: $ant -projecthelp"/>
+  </target>
+
+  <taskdef name="one-jar" classname="com.simontuffs.onejar.ant.OneJarTask" classpath="../lib/one-jar-ant-task-0.97.jar" onerror="report"></taskdef>
+
+  <taskdef name="junit" classname="org.apache.tools.ant.taskdefs.optional.junit.JUnitTask">
+  	<classpath refid="build.test.classpath"/>
+  </taskdef>
+
+  <!-- ====================================================================== -->
+  <!-- Package target - override the target in maven-build.xml                -->
+  <!-- ====================================================================== -->
+
+  <target name="package" depends="compile" description="Package the application">
+    <jar jarfile="${maven.build.dir}/${maven.build.finalName}.jar" 
+         compress="true" 
+         index="false" 
+         basedir="${maven.build.outputDir}" 
+         excludes="**/package.html"/>
+	<one-jar destfile="${maven.build.dir}/${maven.build.finalName}.one-jar.jar">
+		<manifest>
+		   <attribute name="One-Jar-Main-Class" value="org.grobid.trainer.TrainerRunner"/>
+	    </manifest>
+		<main>
+			<fileset dir="${maven.build.dir}/classes">
+			</fileset>
+		</main>
+		<lib>
+			<fileset dir="../lib">
+				<include name="**"/>
+				<exclude name="**/*.sha1"/>
+				<exclude name="**/*.pom"/>
+				<exclude name="**/*.lastUpdated"/>
+				<exclude name="**/*.repositories"/>
+			</fileset>
+		</lib>		
+	</one-jar>
+	<echo>
+	   one-jar to ${maven.build.dir}/${maven.build.finalName}.one-jar.jar
+	</echo>
+  </target>
+
+</project>

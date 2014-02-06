@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ====================================================================== -->
+<!-- Ant build file (http://ant.apache.org/) for Ant 1.6.2 or above.        -->
+<!-- ====================================================================== -->
+
+<project name="grobid-parent" default="package" basedir=".">
+
+  <!-- ====================================================================== -->
+  <!-- Import maven-build.xml into the current project                        -->
+  <!-- ====================================================================== -->
+
+  <import file="maven-build.xml"/>
+  
+  <!--presetdef name="javac">
+    <javac includeantruntime="true" />
+  </presetdef-->
+
+  <!-- ====================================================================== -->
+  <!-- Help target                                                            -->
+  <!-- ====================================================================== -->
+
+  <target name="help">
+    <echo message="Please run: $ant -projecthelp"/>
+  </target>
+
+ <!-- ====================================================================== -->
+  <!-- jar target                                                         -->
+  <!-- ====================================================================== -->
+
+  <target name="jar" description="Create the jar libraries">
+    <ant antfile="build.xml" dir="grobid-core" target="jar"/>
+    <ant antfile="build.xml" dir="grobid-trainer" target="jar"/>
+  </target>
+
+  <target name="war" description="Create the jar libraries">
+    <ant antfile="build.xml" dir="grobid-home" target="jar"/>
+    <ant antfile="build.xml" dir="grobid-core" target="jar"/>
+    <ant antfile="build.xml" dir="grobid-trainer" target="jar"/>
+	<ant antfile="build.xml" dir="grobid-service" target="war"/>
+  </target>
+
+</project>
