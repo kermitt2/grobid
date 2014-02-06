@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ====================================================================== -->
+<!-- Ant build file (http://ant.apache.org/) for Ant 1.6.2 or above.        -->
+<!-- ====================================================================== -->
+
+<project name="grobid-home" default="package" basedir=".">
+
+  <!-- ====================================================================== -->
+  <!-- Import maven-build.xml into the current project                        -->
+  <!-- ====================================================================== -->
+
+  <import file="maven-build.xml"/>
+  
+  <!-- ====================================================================== -->
+  <!-- Help target                                                            -->
+  <!-- ====================================================================== -->
+
+  <target name="help">
+    <echo message="Please run: $ant -projecthelp"/>
+  </target>
+
+  <!-- ====================================================================== -->
+  <!-- Package target - override the target in maven-build.xml                                                         -->
+  <!-- ====================================================================== -->
+
+  <target name="package" depends="compile,test" description="Package the application">
+    <jar jarfile="${maven.build.dir}/${maven.build.finalName}.jar" 
+         compress="true" 
+         index="false" 
+         basedir="${maven.build.outputDir}" 
+         excludes="**/package.html"/>
+	<zip destfile="${maven.build.dir}/${maven.build.finalName}.zip">
+		<zipfileset dir="." filemode="755" dirmode="755">
+			<!--include name="**"/-->
+			<exclude name="build.xml"/>
+			<exclude name="build.xml"/>
+			<exclude name="maven-build.xml"/>
+			<exclude name="maven-build.properties"/>
+			<exclude name="pom.xml"/>
+			<exclude name="assembly"/>
+			<exclude name="assembly/**"/>
+			<exclude name="target"/>
+			<exclude name="target/**"/>
+			<exclude name="tmp"/>
+			<exclude name="tmp/**"/>
+		</zipfileset>		
+	</zip>
+		
+  </target>
+
+</project>
