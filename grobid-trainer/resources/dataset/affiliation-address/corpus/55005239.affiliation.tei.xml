@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="laboratory">Laboratory of Molecular Biology</orgName>,
+							<orgName type="department">Division of Cancer Biology, Diagnosis, and Centers</orgName>,
+							<orgName type="institution">National Cancer Institute</orgName>,
+							<orgName type="institution">National Institutes of Health</orgName>,
+							<address>
+								<settlement>Bethesda</settlement>,
+								<region>MD</region>
+								<postCode>20892</postCode>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

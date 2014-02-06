@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55006861"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">REVIEW ARTICLES<lb/></note>
+
+	<docTitle>
+	<titlePart>On the Development of Naphthalene-Based Sulfonated<lb/> Polyimide Membranes for Fuel Cell Applications<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Yan YIN, Otoo YAMADA, Kazuhiro TANAKA, and Ken-Ichi OKAMOTO<lb/> y<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Advanced Materials Science &amp; Engineering, Faculty of Engineering,<lb/> Yamaguchi University,
+	</affiliation>
+	</byline>
+
+	<address>Tokiwadai 2-16-1, Ube 755-8611, Japan<lb/></address>
+
+	<note type="submission">(Received December 19, 2005; Accepted December 27, 2005; Published March 15, 2006)<lb/></note>
+
+	<div type="abstract">ABSTRACT:<lb/> This article reviews the recent progress made over the past years based on naphthalene-based sulfo-<lb/>nated polyimides (SPIs) in terms of proton conductivity, membrane swelling behavior, membrane stability toward<lb/> water, and fuel cell performance in polymer electrolyte fuel cells (PEFCs) or direct methanol fuel cells (DMFCs).<lb/> The structure-property relationship of SPI membranes is discussed in details with respect to the chemical structure<lb/> of various sulfonated diamines and morphology of SPI membranes from the viewpoints of viscosity, mechanical<lb/> strength and proton conductivity. Ion exchange capacity (IEC), basicity of sulfonated diamine, configuration (para-,<lb/> meta-, or ortho-orientation) and chemical structure of polymer chain (linear or net-work) show great influence on<lb/> the water stability and mechanical strength of SPI membrane. The SPIs with a branched/crosslinked structure and de-<lb/>rived from highly basic sulfonated diamines display reasonably high water stability of more than 200–300 h in water at<lb/> 130 C, suggesting high potential as PEMs operating at temperatures up to 100<lb/> C. The SPI membranes have fairly high<lb/> proton conductivity at higher relative humidities and low methanol permeability. The water and methanol crossover<lb/> through membrane under the fuel cell operation conditions is not controlled by electro-osmosis due to proton transport<lb/> but by diffusion due to activity difference. This is quite different from the case of perfluorosulfonated membranes such<lb/> as Nafion and results in the advantageous effects on fuel cell performance. SPI membranes displayed high PEFC per-<lb/>formances comparable to those of Nafion 112. In addition, SPI membranes displayed higher performances in DMFC<lb/> systems with higher methanol concentration (20–50 wt %), which is superior to Nafion and have high potential for<lb/> DMFC applications at mediate temperatures (40–80<lb/> C).</div>
+
+	<idno type="DOI">[DOI 10.1295/polymj.38</idno>
+
+		</front>
+	</text>
+</tei>

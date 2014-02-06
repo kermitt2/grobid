@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008379"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Abb. 1: Entstehung einer Evolvente<lb/></note>
+	
+	<docTitle>
+	<titlePart>Evolventenverzahnung<lb/> </titlePart>
+	</docTitle>
+	
+	<note>aus Wikipedia, der freien Enzyklopädie<lb/> Dies ist eine alte Version dieser Seite, zuletzt bearbeitet am 13. März 2010 um 17:00 Uhr durch<lb/> 217.230.127.140 (Diskussion). Sie kann sich erheblich von der aktuellen Version unterscheiden.<lb/> (Unterschied) ← Nächstältere Version | Aktuelle Version (Unterschied) | Nächstjüngere Version →<lb/> (Unterschied)<lb/> </note>
+	 
+	<div type="abstract">Eine Evolventenverzahnung bezeichnet einen bestimmten Typ von<lb/> Verzahnungen für Zahnräder und Zahnstangen. Sie ist heute wegen ihrer<lb/> Vorteile die bedeutendste Verzahnungsart im Maschinenbau. Die<lb/> Flanken der Zähne des Zahnrades werden von Evolventen gebildet. Eine<lb/> Evolvente wird durch die Bahnkurve des Endpunkts eines straff<lb/> gespannten Fadens, der von einem Zylinder abgewickelt wird, gebildet.<lb/> Der Zylinderdurchmesser entspricht hierbei dem Grundkreis des<lb/> Zahnrads (siehe Abbildung 1).<lb/></div>
+
+		</front>
+	</text>
+</tei>

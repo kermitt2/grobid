@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>a</marker>
+							<orgName type="institution">University of Michigan</orgName>,
+							<address>
+								<settlement>Ann Arbor</settlement>,
+								<region>MI</region>;
+								<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>b</marker>
+							<orgName type="institution">Institute for Tissue Regeneration, Repair, Rehabilitation</orgName>,
+							<lb/>
+							<orgName type="department">Department of Veterans Affairs Medical Center</orgName>,
+							<address>
+								<settlement>Bay Pines</settlement>,
+								<region>FL</region>;
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>c</marker>
+							<orgName type="institution">Stemnion, Inc</orgName>. and
+							<lb/>
+						</affiliation>
+						<affiliation>
+							<marker>d</marker>
+							<orgName type="institution">University of<lb/> Pittsburgh</orgName>,
+							<address>
+								<settlement>Pittsburgh</settlement>,
+								<region>PA</region>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

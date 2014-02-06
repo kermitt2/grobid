@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005789"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Re-architecting VMMs for Multicore Systems: The Sidecore Approach<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Sanjay Kumar, Himanshu Raj, Karsten Schwan, Ivan Ganev<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>College of Computing<lb/> Georgia Institute of Technology<lb/></affiliation>
+	</byline>
+
+	<address>Atlanta, Georgia 30332<lb/></address>
+
+	<email>Email: {ksanjay, rhim, schwan, ganev}@cc.gatech.edu<lb/></email>
+
+	<div type="abstract">Abstract— Future many-core platforms present scalability<lb/> challenges to VMMs, including the need to efficiently utilize<lb/> their processor and cache resources. Focusing on platform<lb/> virtualization, we address these challenges by devising new<lb/> virtualization methods that not only work with, but actually<lb/> exploit the many-core nature of future processors. Specifically,<lb/> we utilize the fact that cores will differ with respect to their<lb/> current internal processor and memory states. The hypervisor, or<lb/> VMM, then leverages these differences to substantially improve<lb/> VMM performance and better utilize these cores. The key idea<lb/> underlying this work is simple: to carry out some privileged<lb/> VMM operation, rather than forcing a core to undergo an<lb/> expensive internal state change via traps, such as VMexit in<lb/> Intel&apos;s VT architecture, why not have the operation carried out<lb/> by a remote core that is already in the appropriate state? Termed<lb/> the sidecore approach to running VMM-level functionality, it can<lb/> be used to run VMM services more efficiently on remote cores<lb/> that are already in VMM state. This paper demonstrates the<lb/> viability and utility of the sidecore approach for two VMM-level<lb/> classes of functionality: (1) efficient VM-VMM communication in<lb/> VT-enabled processors and (2) interrupt virtualization for self-<lb/>virtualized devices.<lb/> </div>
+	
+	<div type="introduction">I. SIDECORES: STRUCTURING HYPERVISORS FOR<lb/> MANY-CORE PLATFORMS<lb/> Virtualization technologies are becoming increasingly im-<lb/>portant for fully utilizing future many-core systems. Evidence<lb/> of this fact are Virtual Machine Monitors (VMMs) like Xen [1]<lb/> and VMWare [2], which support the creation and execution of<lb/> multiple virtual machines (VMs) on a single platform in secure<lb/> and isolated environments and manage physical resources of<lb/> the host machine [3]. Further evidence are recent architecture<lb/> advances, such as hardware support for virtualization (e.g.<lb/> Intel&apos;s VT [4] and AMD&apos;s Pacifica [5] technologies) and I/O<lb/> virtualization support from upcoming PCI devices [6].<lb/> Unfortunately, current VMM designs are monolithic, that<lb/> is, all cores on a virtualized multi-core platform execute the<lb/> same set of VMM functionality. This paper advocates an<lb/> alternative design choice, which is to structure a VMM as<lb/> multiple components, with each component responsible for<lb/> certain VMM functionality and internally structured to best<lb/> meet its obligations [7]. As a result, in multi-and many-core<lb/> systems, these components can even execute on cores other<lb/> than those on which their functions are called. Furthermore,<lb/> it becomes possible to &apos;specialize&apos; cores, permitting them to<lb/> efficiently execute certain subsets of rather than complete sets<lb/> of VMM functionality.<lb/> There are multiple reasons why functionally specialized,<lb/> componentized VMMs are superior to the current monolithic<lb/> implementations of VMMs, particularly for future many-core<lb/> platforms:</div>
+
+		</front>
+	</text>
+</tei>

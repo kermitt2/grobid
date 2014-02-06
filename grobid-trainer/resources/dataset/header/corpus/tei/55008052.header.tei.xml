@@ -1,0 +1,60 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008052"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Research Project: CHEMICAL SYSTEMS FOR SOYBEAN OIL CONVERSION TO INDUSTRIAL PRODUCTS<lb/> 
+	Location: National Center for Agricultural Utilization Research<lb/> </note>
+	
+	<docTitle>
+	<titlePart>Title: Epoxidation of Methyl Oleate using Heterogeneous Catalyst<lb/></titlePart>
+	</docTitle>
+	
+	<byline>
+	<docAuthor>Authors Suarez, Paulo -</docAuthor>
+	</byline>
+	
+	<byline>
+	<affiliation>BRAZIL UNIVERSITY<lb/> </affiliation>
+	</byline>
+	
+	<byline>
+	<docAuthor>Pereira, Mirian -</docAuthor>
+	</byline>
+	
+	<byline>
+	<affiliation>BRAZIL UNIVERSITY<lb/> </affiliation>
+	</byline>
+	
+	<byline>
+	<docAuthor>DOLL, KENNETH<lb/> </docAuthor>
+	</byline>
+	
+	<byline>
+	<docAuthor>Sharma, Brajendra -</docAuthor>
+	</byline>
+	
+	<byline>
+	<affiliation>PENN STATE UNIVERSITY<lb/></affiliation>
+	</byline>
+
+	<byline>
+	<docAuthor>ERHAN, SEVIM<lb/></docAuthor>
+	</byline>
+
+	<note type="other">Submitted to: Journal of Industrial and Engineering Chemical Research<lb/> Publication Type: Peer Reviewed Journal<lb/> </note>
+	
+	<note type="submission">Publication AcceptanceDate: February 3, 2009<lb/></note> 
+		
+	<date>Publication Date: March 4, 2009<lb/></date>
+	
+	<reference>Citation: Suarez, P.A., Pereira, M.S., Doll, K.M., Sharma, B.K., Erhan, S.Z.  2009. Epoxidation of Methyl Oleate<lb/> using Heterogeneous Catalyst. Journal of Industrial and Engineering Chemical Research. 48:3268-3270.<lb/></reference>
+
+	<div type="abstract">Interpretive Summary: The uncertainty in supply of petroleum based products and their unfavorable impact<lb/> on the environment has created a demand for eco-friendly lubricants. Vegetable oils are promising candidates<lb/> for eco-friendly lubricants, because of the advantages like naturally renewable resource, environmentally safe,<lb/> and good lubricity. Vegetable oils have some shortcomings like poor low temperature flow properties and<lb/> oxidation stability, which can be improved by chemical modification. The epoxidized vegetable oil and epoxy<lb/> fatty acid esters are important intermediates to obtain industrially significant materials, e.g. bio-based<lb/> polymers, emollients, chemical solvents, fuel additives, and lubricants. This paper presents a study of various<lb/> solid catalysts for epoxidation of unsaturated fatty acid esters. In this system, higher conversions were<lb/> obtained with higher amounts of catalyst, reactant, and concentration of the reactant solution. Product yield<lb/> increased with increasing surface area and decreasing surface acidity of the catalyst. The current approach<lb/> provides an alternative method to produce an important biobased intermediate, which will improve the<lb/> agro-economy of the locally grown renewable resource with new markets for soybean oil.<lb/> Technical Abstract: In this work we studied the catalytic activity of commercial alumina, and laboratory<lb/> synthesized alumina doped with Lewis acid metals, in the epoxidation of methyl oleate with aqueous hydrogen<lb/> peroxide. It was observed that the reaction yields increased when the amount of catalyst, the quantity of<lb/> hydrogen peroxide, the concentration of the hydrogen peroxide solution, and/or the surface area of the catalyst<lb/> was increased. Reaction yields were decreased when the surface acidity of the alumina was modified by doping<lb/> with Lewis acid metals.</div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004229"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Effect of chemical vapor deposition energy sources on the structure of SiC<lb/> prepared by carbon nanotubes-confined reaction<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Md. Shajahan, Y. H. Mo, and K. S. Nahm<lb/> a)<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>School of Chemical Engineering and Technology, Chonbuk National University,</affiliation>
+	</byline>
+
+	<address>Chonju 561-756,<lb/> Republic of Korea<lb/></address>
+
+	<note type="submission">͑Received 24 October 2002; accepted 4 April 2003; published 27 May 2003͒<lb/></note>
+
+	<div type="abstract">Silicon carbide ͑SiC͒ nanorods and microcrystals were synthesized with controlled structure through<lb/> a two-step reaction scheme. Carbon nanotubes ͑CNTs͒ were first grown by the thermal<lb/> decomposition of C 2 H 2 over a Fe/Co metal catalyst loaded on a Si͑100͒ wafer surface. The grown<lb/> CNTs were then reacted with tetramethylsilane ͑TMS͒ to form ␤-SiC nanorods or microcrystals. SiC<lb/> nanorods were observed when CNTs reacted with TMS at 1100 °C in an IR-induced heating<lb/> chemical vapor deposition ͑CVD͒ reactor, whereas SiC microcrystals were formed at 1250 °C in an<lb/> rf-induced-heating CVD reactor. Higher temperature and longer time were favorable for the growth<lb/> of good quality SiC crystals. The blueshift of the PL spectra was observed from the SiC nanorods<lb/> and SiC microcrystals. The structural change of CNTs in the growth was discussed in this work.<lb/></div>
+
+	<note type="copyright">© 2003 American Vacuum Society.</note>
+
+	<idno type="DOI">͓DOI: 10.1116/1.1577571͔<lb/></idno>
+
+		</front>
+	</text>
+</tei>

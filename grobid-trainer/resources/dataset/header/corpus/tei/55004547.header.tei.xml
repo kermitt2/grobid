@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004547"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">White Paper<lb/> All contents are</note>
+
+	<note type="copyright">Copyright © 1992–2007 Cisco Systems, Inc. All rights reserved. This document is Cisco Public Information.<lb/></note>
+
+	<note type="page">Page 1 of 19<lb/></note>
+
+	<docTitle>
+	<titlePart>COMMUNICATIONS TRANSFORMATIONS:<lb/> Implementation Considerations when Enhancing<lb/> Enterprise Communications Solutions with SIP Trunks<lb/></titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

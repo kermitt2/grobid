@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Rabih</forename>
+								<middlename>O</middlename>.
+								<surname>Darouiche</surname>,
+								<roleName>M.D</roleName>.,
+							</persName>
+							<persName>
+								<forename>Matthew</forename>
+								<middlename>J</middlename>.
+								<surname>Wall</surname>,
+								<suffix>Jr</suffix>.,
+								<roleName>M.D</roleName>.,
+							</persName>
+							<persName>
+								<forename>Kamal</forename>
+								<middlename>M</middlename>.
+								<middlename>F</middlename>.
+								<surname>Itani</surname>,
+								<roleName>M.D</roleName>.,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Mary</forename>
+								<middlename>F</middlename> .
+								<surname>Otterson</surname> ,
+								<roleName>M .D</roleName>.,
+							</persName>
+							<persName>
+								<forename>Alexandra</forename>
+								<middlename>L</middlename> .
+								<surname>Webb</surname> ,
+								<roleName>M .D</roleName>.,
+							</persName>
+							<persName>
+								<forename>Matthew</forename>
+								<middlename>M</middlename> .
+								<surname>Carrick</surname> ,
+								<roleName>M .D</roleName>.,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Harold</forename>
+								<middlename>J</middlename>.
+								<surname>Miller</surname>,
+								<roleName>M. D</roleName>.,
+							</persName>
+							<persName>
+								<forename>Samir</forename>
+								<middlename>S</middlename> .
+								<surname>Awad</surname>,
+								<roleName>M. D</roleName>.,
+							</persName>
+							<persName>
+								<forename>Cynthia</forename>
+								<middlename>T</middlename> .
+								<surname>Crosby</surname>,
+								<roleName>B.S</roleName>.,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Michael</forename>
+								<middlename>C</middlename> .
+								<surname>Mosier</surname> ,
+								<roleName>Ph .D</roleName> .,
+							</persName>
+							<persName>
+								<forename>Atef</forename>
+								<surname>AlSharif</surname>,
+								<roleName>M .D</roleName> .,and
+							</persName>
+							<persName>
+								<forename>David</forename>
+								<middlename>H</middlename> .
+								<surname>Berger</surname> ,
+								<roleName>M .D</roleName> .
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Giovanni</forename>
+								<surname>Appendino</surname>,
+								<marker>*<lb/> [a]</marker>
+							</persName>
+							<persName>
+								<forename>Gian</forename>
+								<middlename>Cesare</middlename>
+								<surname>Tron</surname> ,
+								<lb/>
+								<marker>[ a]</marker>
+							</persName>
+							<persName>
+								<forename>Giancarlo</forename>
+								<surname>Cravotto</surname> ,
+								<lb/>
+								<marker>[a ]</marker>
+							</persName>
+							<persName>
+								<forename>Giovanni</forename>
+								<surname>Palmisano</surname>,
+								<marker>[ b]</marker>
+							</persName>
+							<persName>
+								<forename>Rita</forename>
+								<surname>Annunziata</surname>,
+								<lb/>
+								<marker>[ c]</marker>
+							</persName>
+							<persName>
+								<forename>Germano</forename>
+								<surname>Baj</surname>,
+								<lb/>
+								<marker>[ d ,e ]</marker>and
+							</persName>
+							<persName>
+								<forename>Nicola</forename>
+								<surname>Surico</surname>
+								<marker>[d ]</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

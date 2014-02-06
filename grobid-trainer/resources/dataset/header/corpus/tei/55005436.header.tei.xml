@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005436"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Example of an ontology visualized: the Mason-ontology.<lb/></note>
+
+	<docTitle>
+	<titlePart>Ontology (information science)<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">From Wikipedia, the free encyclopedia<lb/></note>
+
+	<div type="abstract">This is an old revision of this page, as edited by Libcub (talk | contribs) at 16:48, 29 May 2010. It<lb/> may differ significantly from the current revision (http://en.wikipedia.org<lb/> /wiki/Ontology_(information_science)) .<lb/> </div>
+	
+	<note type="other">(diff) ← Previous revision | Latest revision (diff) | Newer revision → (diff)<lb/> </note>
+
+	<div type="introduction">In computer science and information science, an<lb/> ontology is a formal representation of the knowledge<lb/> by a set of concepts within a domain and the<lb/> relationships between those concepts. It is used to<lb/> reason about the properties of that domain, and may<lb/> be used to describe the domain.<lb/> In theory, an ontology is a &quot;formal, explicit<lb/> specification of a shared conceptualisation&quot;.<lb/> [1] An<lb/> ontology provides a shared vocabulary, which can be<lb/> used to model a domain — that is, the type of objects<lb/> and/or concepts that exist, and their properties and<lb/> relations.<lb/> [2]<lb/> Ontologies are used in artificial intelligence, the Semantic Web, systems engineering, software engineering,<lb/> biomedical informatics, library science, enterprise bookmarking, and information architecture as a form of<lb/> knowledge representation about the world or some part of it. The creation of domain ontologies is also<lb/> fundamental to the definition and use of an enterprise architecture framework.<lb/></div>
+
+		</front>
+	</text>
+</tei>

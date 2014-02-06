@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004806"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Technical Report No. 526<lb/></note>
+
+	<byline>
+	<address>William Gates Building<lb/> J J Thomson Avenue<lb/></address>
+	</byline>
+
+	<address>Cambridge CB3 0FD<lb/> United Kingdom<lb/></address>
+
+	<byline>
+	<affiliation>RAIN BOW<lb/> RESEARCH GROUP<lb/> Computer Laboratory<lb/></affiliation>
+	</byline>
+
+	<docTitle>
+	<titlePart>Extending Lossless<lb/> Image Compression<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>A. J. Penrose<lb/></docAuthor>
+	</byline>
+
+	<date>December 2001<lb/></date>
+
+	<degree>This Technical Report is a copy of a PhD dissertation.</degree>
+
+		</front>
+	</text>
+</tei>

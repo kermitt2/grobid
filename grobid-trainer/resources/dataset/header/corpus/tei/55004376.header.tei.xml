@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004376"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>PARALLEL COMPUTATION OF THE INTERLEAVED FAST FOURIER<lb/> TRANSFORM WITH MPI<lb/></titlePart>
+	</docTitle>
+
+	<degree>A Thesis<lb/> Presented to<lb/></degree>
+	
+	<byline>
+	<affiliation>The Graduate Faculty of The University of Akron<lb/></affiliation>
+	</byline> 
+
+	<degree>In Partial Fulfillment<lb/> of the Requirements for the Degree<lb/> Master of Science<lb/></degree>
+	
+	<byline>
+	<docAuthor>Ameen Baig Mirza<lb/></docAuthor>
+	</byline>
+
+	<date>December, 2008</date>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004061"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="copyright">&#169;HIGHCHEM hautnah -Aktuelles aus der Analytischen Chemie<lb/>© </note>
+	
+	<docTitle>
+	<titlePart>&quot;Bioanalytik vor Ort mit elektrischen Biochips&quot;<lb/> </titlePart>
+	</docTitle>
+	
+	<byline>
+	<docAuthor>Rainer Hintsche<lb/> </docAuthor> 
+	</byline>
+	
+	<div type="introduction">Hintergrund<lb/> Die Analytik biologischer Moleküle basiert oft auf dem von der Natur übernommenen hochselektiven &quot;Schloß-Schlüssel-Prinzip&quot; der<lb/> Bindung strukturell komplementärer Moleküle. Man nennt dieses Affinitätsbindung und findet sehr viele Beispiele. Bestens bekannt sind<lb/> die Paarungen in der Doppelhelix der Nukleinsäuren, oder die von lebenden Organismen erzeugten Antikörper zur Immunabwehr oder<lb/> bei der Auslösung von Allergien. Auch der spezifische Angriff infektiöser Erreger oder die Wirkung biologischer Gifte beruhen auf<lb/> diesem Prinzip.<lb/> Biosensorik<lb/> In den vergangenen Jahren sind zahlreiche mit Biosensoren arbeitende Messverfahren für die Analytik von biologischen Molekülen<lb/> entwickelt worden. Biosensoren sind Messfühler bestehend aus affinitätsbindenden Biomolekülen, den sogenannten Fängern, und<lb/> einem Signalwandler. Sie haben eine weite Verbreitung gefunden. Die verwendeten Fängermoleküle sind in der Lage, Analyte aus<lb/> komplexen Stoffgemischen selektiv zu binden und aufgrund der biochemischen Komplexbindung ein Signal in Abhängigkeit von der<lb/> Konzentration des Stoffes auszugeben. Die Detektion kann optisch oder elektrisch erfolgen.<lb/> Bei optischen Methoden werden für die empfindliche Messungen meist größere und stationäre Systeme benötigt. Diese Technik ist weit<lb/> verbreitet und wird standardmäßig in den Laboratorien eingesetzt. Die elektrische Detektion wird bisher auf Grund technisch und<lb/> technologisch sehr anspruchsvoller Signalwandler und Elektronik weniger benutzt. Sie bietet aber den Vorteil, dass die Detektion z.B.<lb/> elektrochemisch über Redoxreaktionen direkt am Ort der Bindungsreaktion gemessen werden kann und nicht der Umweg über eine<lb/> optische Wandlung gegangen werden muss. Durch den Verzicht auf optische Komponenten können zudem Kosten eingespart werden<lb/> und es ist technologisch einfacher zu miniaturisieren und Kosten zu reduzieren. Daher ist die elektrische Biochiptechnologie besonders<lb/> für den portablen Einsatz für die Analytik vor Ort und eine individuelle Nutzung geeignet.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005847"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">© 2 0 0 5 L A N D E S B I O S C I E N C E . </note>
+	
+	<note type="other">D O N O T D I S T R I B U T E .<lb/></note>
+
+	<reference>[Human Vaccines 1:2, 80-84; March/April 2005]; </reference>
+	
+	<note type="copyright">©2005 Landes Bioscience<lb/> </note>
+	
+	<note type="page">80 </note>
+	
+	<reference>Human Vaccines<lb/> 2005; Vol. 1 Issue 2<lb/></reference>
+
+	<byline>
+	<docAuthor>Caroline Vipond 1<lb/> Jun X. Wheeler 2<lb/> Christopher Jones 2<lb/> Ian M. Feavers 1<lb/> Janet Suker 1, *<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Division of Bacteriology; 2 Laboratory for Molecular Structure; National Institute<lb/> for Biological Standards and Control; Potters Bar,</affiliation>
+	</byline>
+
+	<address>Hertfordshire, UK<lb/></address>
+
+	<byline>
+	<affiliation>*Correspondence to: Janet Suker; Division of Bacteriology; NIBSC; Blanche Lane;<lb/> South Mimms; Potters Bar;</affiliation>
+	</byline>
+
+	<address>Hertfordshire EN6 3QG UK;</address>
+
+	<phone>Tel.:+44.0.1707.641448;<lb/> Fax:44.0.1707.663796; </phone>
+
+	<email>Email: jsuker@nibsc.ac.uk<lb/></email>
+
+	<date type="submission">Received 01/18/05; Accepted 03/02/05<lb/></date>
+
+	<note type="other">Previously published online as a Human Vaccines E-publication:<lb/></note>
+
+	<ptr type="web">http://www.landesbioscience.com/journals/vaccines/abstract.php?id=1651<lb/></ptr>
+
+		</front>
+	</text>
+</tei>

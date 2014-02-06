@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004097"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Construction of multivalent<lb/> DNA vaccines for Mycobacte-<lb/>rium tuberculosis and its<lb/> imm unogenicity<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>CAl Hong<lb/> 1<lb/> , PAN Yi<lb/> 1<lb/> , LI Guoli<lb/> 2<lb/> , ZHUANG Yuhui<lb/> 2<lb/> &amp; ZHU Yuxian 1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1. College of Life Sciences, Peking University,</affiliation>
+	</byline>
+
+	<address>Beijing 100871, China;<lb/></address>
+
+	<byline>
+	<affiliation>2. Tuberculosis Research Laboratory, 309 Hospital of PLA,</affiliation>
+	</byline>
+
+	<address>Beijing<lb/> 100091, China<lb/></address>
+
+	<note type="other">Correspondence should be addressed to Zhu Yuxian</note>
+
+	<email>(e-mail: zhuyx@<lb/> water.pku.edu.cn)<lb/></email>
+
+	<div type="abstract">Abstract The coding regions of Ag85B MPT-64, and<lb/> ESAT-6 secreted proteins were cloned initially into the eu-<lb/>karyotic expression vector pJW4303, then transformed to E<lb/> coli Top 10 strain for plasmid DNA extraction and further<lb/> analysis. Plasmids containing the right insertion were se-<lb/>quenced to confirm their identity. COS7 cells were trans-<lb/>fected with a mixture containing serially diluted plasmid<lb/> DNA encoding three secreted proteins and Lipofectin (Gibco).<lb/> The supernatants and pellets prepared from various cell<lb/> lines were run on SDS-PAGE gel and the expression of these<lb/> proteins in COS7 cells were demonstrated by immunoblot<lb/> using polyclonal or monoclonal antiserum of M TBH37Rv.<lb/> 21 days after first vaccination of C57BL-6 mice by all three<lb/> recombinant eukaryotic expressing vectors, antibody titer<lb/> for Ag85B reached 1 : 3200. 21 days after second vaccination,<lb/> the antibody titer reached 1 : 102400. The highest antibody<lb/> levels induced by multivalent vaccines after the second injec-<lb/>tion were equal to or even greater than the highest antibody<lb/> levels of single DNA vaccine reported in literature after third<lb/> injections. Antibody titer of MPT-64 was 1 : 50 after the first<lb/> injection and it reached 1 : 200 after the second injection. No<lb/> antigen-specific antibody against ESAT-6 was detected in<lb/> sera harvested from immunized mice 21 days after both in-<lb/>jections. Antigen-specific IFN-y level of Ag85B was 110<lb/> pglmL while no antigen-specific IFN-y level of ESAT-6 and<lb/> MPT-64 was detected even after third injections. To our<lb/> knowledge, it is the first time that studies of polyvalent re-<lb/>combinant DNA vaccines against TB were carried out in<lb/> C57BL-6 mice. Our results indicated that multiple DNA vac-<lb/>cines could be used to enhance protective responses against<lb/> MTB.<lb/></div>
+
+	<keyword>Keywords: M tuberculosis, secreted proteins, DNA vaccines, immu-<lb/>nogenicity, humoral and cell-mediated responses.<lb/></keyword>
+
+	<div type="introduction">Tuberculosis is a chronic, consumptive infectious<lb/> disease both in humans and animals. The frequency of<lb/> tuberculosis is increasing in recent years and it has been<lb/> estimated that more than 1-2 billions of the world&apos;s<lb/> population are infected with this bacteria. There are more<lb/> than 10 million new cases of tuberculosis each year and<lb/> the annual death toll for tuberculosis exceeds three mil-<lb/>lions. According to statistics, there are 6 million cases of<lb/></div>
+
+	<reference>Chinese Science Bulletin Vol. 47 No. 19 October 2002</reference>
+
+		</front>
+	</text>
+</tei>

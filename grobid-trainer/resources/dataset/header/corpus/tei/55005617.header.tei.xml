@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005617"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Intel ESB2 SATA RAID Setup Guidelines<lb/></titlePart>
+	</docTitle>
+
+	<note type="page">Page 1<lb/></note>
+
+	<docTitle>
+	<titlePart>Intel ESB2 SATA RAID Setup Guidelines<lb/></titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

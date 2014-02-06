@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Michael</forename>
+								<middlename>K</middlename>.
+								<surname>Showe</surname>,
+							</persName>
+							<persName>
+								<forename>Anil</forename>
+								<surname>Vachani</surname>,
+							</persName>
+							<persName>
+								<forename>Andrew</forename>
+								<middlename>V</middlename>.
+								<surname>Kossenkov</surname>,
+							</persName>
+							<persName>
+								<forename>Malik</forename>
+								<surname>Yousef</surname>,
+							</persName>
+							<persName>
+								<forename>Calen</forename>
+								<surname>Nichols</surname>,
+							</persName>
+							<persName>
+								<forename>Elena</forename>
+								<middlename>V</middlename>.
+								<surname>Nikonova</surname>,
+							</persName>
+							<persName>
+								<forename>Celia</forename>
+							<lb/>
+								<surname>Chang</surname>,
+							</persName>
+							<persName>
+								<forename>John</forename>
+								<surname>Kucharczuk</surname> ,
+							</persName>
+							<persName>
+								<forename>Bao</forename>
+								<surname>Tran</surname> ,
+							</persName>
+							<persName>
+								<forename>Elliot</forename>
+								<surname>Wakeam</surname> ,
+							</persName>
+							<persName>
+								<forename>Ting</forename>
+								<middlename>An</middlename>
+								<surname>Yie</surname> ,
+							</persName>
+							<persName>	
+								<forename>David</forename>
+								<surname>Speicher</surname> ,
+							</persName>
+							<persName>	
+								<forename>William</forename>
+								<middlename>N</middlename> .
+								<surname>Rom</surname> ,
+							</persName>
+							<persName>	
+								<forename>Steven</forename>
+							<lb/>
+								<surname>Albelda</surname> and
+							</persName>
+							<persName>	
+								<forename>Louise</forename>
+								<middlename>C</middlename> .
+								<surname>Showe</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

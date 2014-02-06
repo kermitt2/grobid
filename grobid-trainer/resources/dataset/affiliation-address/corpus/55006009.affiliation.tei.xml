@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>l</marker>
+							<orgName type="department">Department of Animat science and2Department of Plant science</orgName>,
+							<orgName type="institution">Nova scotia Agricultural college</orgName>,
+							<address>
+								<settlement>Truro</settlement>,
+							    <region>Nova Scotia</region>,-
+								<country>Canada</country>
+								<postCode>B2N 5E3</postCode>.
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

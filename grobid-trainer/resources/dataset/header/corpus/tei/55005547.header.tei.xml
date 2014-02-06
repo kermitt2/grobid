@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005547"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Monolithic columns for fast high-performance liquid<lb/> chromatography separations<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Dr Mauricio Rostagno<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Centro para la Calidad de los Alimentos, Instituto Nacional de Investigación y Tecnología Agraria y<lb/> Alimentaria (INIA)<lb/></affiliation>
+	</byline>
+
+	<note type="submission">Last updated on 14 February 2009<lb/></note>
+
+	<div type="abstract">High-Performance Liquid Chromatography is a powerful analytical tool that has been extensively used for<lb/> the analysis of wide range of compounds from different food matrices. The heart of each HPLC method<lb/> is the column, which enables separation of compounds based upon selectivity and column performance.<lb/> At the present time, most common HPLC columns are packed with 3-5 µm porous silica microparticles.<lb/> The separation performance is mainly determined by the particle size and distribution and the quality of<lb/> the packing of the particles within the column. The current trend for the analysis of compounds in foods by<lb/> HPLC is toward fast, high sensitivity and high resolution separations using newly developed materials and<lb/> equipment.<lb/> HPLC column technology has seen considerable improvement in the last decade. Fast HPLC for<lb/> traditional, particle based columns usually includes higher flow rates (limited by pressure), increased<lb/> column temperature, smaller particle diameter and shorter column length. To maintain efficiency with<lb/> shorter columns, smaller particle size is necessary. Columns packed with very small particles (less than 2<lb/> µm particle size) can shorten analysis times while maintaining, or even increasing, separation<lb/> efficiencies. Unfortunately the use of small particle columns reaches the pressure capacity of<lb/> &quot;conventional&quot; HPLC systems using 3-5 µm particles limiting both column length and flow rates.<lb/> In order to overcome the pressure limitations of conventional chromatographic systems (of approximately<lb/> 400 bar), new systems capable of withstanding higher pressures (800-1000 bar) were developed with the<lb/> aim of exploring the ever decreasing particle size of columns and their potential to deliver higher<lb/> efficiency and faster chromatographic analyses.</div>
+
+		</front>
+	</text>
+</tei>

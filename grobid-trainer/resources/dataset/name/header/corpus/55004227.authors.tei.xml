@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Cristiano</forename>
+								<surname>Simone</surname>
+								<marker>1,2,3</marker> ,
+							</persName>
+							<persName>
+								<forename>Peter</forename>
+								<surname>Stiegler</surname>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>Luigi</forename>
+								<surname>Bagella</surname>
+								<marker>1,2,4</marker> ,
+							</persName>
+							<persName>
+								<forename>Bruna</forename>
+								<surname>Pucci</surname>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>Cristiana</forename>
+								<surname>Bellan</surname>
+								<marker>1,4</marker> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Giulia</forename>
+								<surname>De Falco</surname>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>Antonio</forename>
+								<surname>De Luca</surname>
+								<marker>1 ,5</marker>,
+							</persName>
+							<persName>
+								<forename>Ginevra</forename>
+								<surname>Guanti</surname>
+								<marker>3</marker> ,
+							</persName>
+							<persName>
+								<forename>Pier</forename>
+								<middlename>Lorenzo</middlename>
+								<surname>Puri</surname>
+								<marker>6 ,7</marker>and
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Antonio</forename>
+								<surname>Giordano</surname>
+								<marker>* ,1 ,2</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

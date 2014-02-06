@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>A</forename>.
+								<middlename>J</middlename>.
+								<surname>Melvin</surname>,
+							</persName>
+							<persName>
+								<forename>M</forename>.
+								<middlename>E</middlename>.
+								<surname>McGurn</surname>,
+							</persName>
+							<persName>
+								<forename>S</forename>.
+								<middlename>J</middlename>.
+								<surname>Bort</surname>
+							</persName>
+							<persName>
+								<forename>Ann</forename>
+								<middlename>J</middlename>.
+								<surname>Melvin</surname>,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Mary</forename>
+								<middlename>E</middlename> .
+								<surname>McGurn</surname> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Susan</forename>
+								<middlename>J</middlename>.
+								<surname>Bort</surname>,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Christine</forename>
+								<surname>Gibson</surname> and
+							<lb/>
+							</persName>
+							<persName>
+								<forename>David</forename>
+								<middlename>B</middlename> .
+								<surname>Lewis</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

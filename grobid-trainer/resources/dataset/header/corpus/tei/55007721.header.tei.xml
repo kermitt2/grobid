@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007721"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+
+	<docTitle>
+	<titlePart>Cellulite<lb/> </titlePart>
+	</docTitle>
+	
+	<note type="other">URL of this page:</note>
+
+	<ptr type="web">http://web.archive.org/web/20110320234614/http://www.nlm.nih.gov/medlineplus/ency/article/002033.htm<lb/></ptr>
+
+	<div type="abstract">Cellulite is fat that is deposited in pockets just below the surface of the skin. It occurs around the hips, thighs, and buttocks. Because it is<lb/> very close to the surface of the skin, cellulite leads to a dimpled appearance.<lb/></div>
+
+		</front>
+	</text>
+</tei>

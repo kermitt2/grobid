@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>SUJATA</forename>
+								<middlename>V</middlename>.
+								<surname>WARRIER</surname>,
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>ABRAHAM</forename>
+								<surname>PINTER</surname>,&apos;
+							</persName>
+							<persName>
+								<forename>WILLIAM</forename>
+								<middlename>J</middlename>.
+								<surname>HONNEN</surname>,
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>MARC</forename>
+								<surname>GIRARD</surname>,
+								<marker>2</marker>
+							</persName>
+							<persName>
+								<forename>ELIZABETH</forename>
+								<surname>MUCHMORE</surname>,
+								<marker>3</marker>
+							</persName>
+							<persName>
+								AND
+								<forename>SHERMAINE</forename>
+								<middlename>A</middlename>.
+								<surname>TILLEY&apos;</surname>
+								<marker>*</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

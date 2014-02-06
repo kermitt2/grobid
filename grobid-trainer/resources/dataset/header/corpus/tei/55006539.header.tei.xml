@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55006539"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>ECMA-349<lb/></idno>
+
+	<note type="other">1 st Edition -</note>
+
+	<date>December 2003<lb/></date>
+
+	<docTitle>
+	<titlePart>Data Interchange on<lb/> 120 mm and 80 mm<lb/> Optical Disk using<lb/> +R Format -Capacity:<lb/> 4,7 and 1,46 Gbytes<lb/> per Side<lb/> (Recording speed up to 4X)</titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

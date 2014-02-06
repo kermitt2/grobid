@@ -10,7 +10,10 @@
 							<persName>
 								<forename>Heinz</forename>
 								<surname>Langhals</surname>
-								<marker>*<lb/> [a]</marker>and
+								<marker>*</marker>
+								<lb/> 
+								<marker>[a]</marker>
+								and
 							</persName>
 							<persName>
 								<forename>Susanne</forename>

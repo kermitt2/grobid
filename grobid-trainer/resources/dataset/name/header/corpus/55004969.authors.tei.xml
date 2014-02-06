@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						
+						<author>
+							Investigators
+							<persName>
+								<lb/>
+								<forename>Jerry</forename>
+								<middlename>M</middlename> .
+								<surname>Harris</surname> ,
+								<roleName>Professor</roleName> ,
+							</persName>
+							
+								Geophysics
+							<persName>	
+							<lb/>
+								<forename>Youli</forename>
+								<surname>Quan</surname>,
+								<roleName>Research Associate</roleName> ,
+							</persName>
+							
+								Geophysics
+							<persName>	
+							<lb/>
+								<forename>Eduardo</forename>
+								<surname>Santos</surname> ,
+								<roleName>Postdoc</roleName> ,
+							</persName>
+							
+								Geophysics
+							<persName>	
+							<lb/>
+								<forename>Tope</forename>
+								<surname>Akinbehinje</surname> ,
+							</persName>
+							<persName>	
+								<forename>Adeyemi</forename>
+								<surname>Arogunmati</surname> ,
+							</persName>
+							<persName>	
+								<forename>Jolene</forename>
+								<surname>Robin -McCaskill</surname> , and
+							</persName>
+							<persName>	
+								<forename>Evan</forename>
+								<middlename>S</middlename>.
+								<surname>Um</surname> ,
+								<roleName>Graduate Research Assistants</roleName>, 																
+							</persName>
+							Geophysics
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

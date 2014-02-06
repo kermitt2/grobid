@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007632"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Methods for Kinetic Modeling of Temporally Resolved<lb/> Hyperspectral Confocal Fluorescence Images<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>PATRICK J. CUTLER, DAVID M. HAALAND, ERIK ANDRIES, and PAUL J. GEMPERLINE*<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Chemistry, East Carolina University,</affiliation>
+	</byline>
+
+	<byline>
+	<address>Greenville, North Carolina 27858 (P.J.C., P.J.G.);</address>
+	</byline>
+
+	<byline>
+	<affiliation>Sandia National Laboratories,<lb/></affiliation>
+	</byline>
+
+	<address>Albuquerque, New Mexico 87185-0895 (D.M.H.); and </address>
+
+	<byline>
+	<affiliation>Department of Mathematics and Pathology, University of New Mexico,</affiliation>
+	</byline>
+
+	<address>Albuquerque, New<lb/> Mexico 87131(E.A.)<lb/></address>
+
+	<div type="abstract">Elucidating kinetic information (rate constants) from temporally resolved<lb/> hyperspectral confocal fluorescence images offers some very important<lb/> opportunities for the interpretation of spatially resolved hyperspectral<lb/> confocal fluorescence images but also presents significant challenges, these<lb/> being (1) the massive amount of data contained in a series of time-resolved<lb/> spectral images (one time course of spectral data for each pixel) and (2)<lb/> unknown concentrations of the reactants and products at time ¼ 0, a<lb/> necessary precondition normally required by traditional kinetic fitting<lb/> approaches. This paper describes two methods for solving these problems:<lb/> direct nonlinear (DNL) estimation of all parameters and separable least<lb/> squares (SLS). The DNL method can be applied to reactions of any rate<lb/> law, while the SLS method is restricted to first-order reactions. In SLS, the<lb/> inherently linear and nonlinear parameters of first-order reactions are<lb/> solved in separate linear and nonlinear steps, respectively. The new<lb/> methods are demonstrated using simulated data sets and an experimental<lb/> data set involving photobleaching of several fluorophores. This work<lb/> demonstrates that both DNL and SLS hard-modeling methods applied to<lb/> the kinetic modeling of temporally resolved hyperspectral images can<lb/> outperform traditional soft-modeling and hard/soft-modeling methods<lb/> which use multivariate curve resolution–alternating least squares (MCR-<lb/>ALS) methods. In addition, the SLS method is much faster and is able to<lb/> analyze much larger data sets than the DNL method.<lb/></div>
+
+	<keyword>Index Headings: Hyperspectral confocal microscopy; Fluorescence imag-<lb/>ing; Photobleaching; Kinetic modeling; Hard modeling; Soft modeling;<lb/> Multivariate curve resolution; MCR; Separable least squares; SLS; Direct<lb/> nonlinear estimation; DNL.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

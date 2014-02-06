@@ -245,13 +245,20 @@ public class ProcessEngine {
 		String result = StringUtils.EMPTY;
 		for (final File currXML : xmlDirectory.listFiles()) {
 			try {
-				if (currXML.getName().toLowerCase().endsWith(".xml")) {
+				if (currXML.getName().toLowerCase().endsWith(".xml") || 
+					currXML.getName().toLowerCase().endsWith(".xml.gz")) {
 					List<BibDataSet> articles = new ArrayList<BibDataSet>();
 					List<PatentItem> patents = new ArrayList<PatentItem>();
 					result = getEngine().processAllCitationsInXMLPatent(pGbdArgs.getPath2Input() + File.separator + currXML.getName(), 
 						articles, patents, false);
-					Utilities.writeInFile(pGbdArgs.getPath2Output() + File.separator
+					if (currXML.getName().endsWith(".gz")) {
+						Utilities.writeInFile(pGbdArgs.getPath2Output() + File.separator
+							+ new File(currXML.getAbsolutePath()).getName().replace(".xml.gz", ".tei.xml"), result);
+					}					
+					else {	
+						Utilities.writeInFile(pGbdArgs.getPath2Output() + File.separator
 							+ new File(currXML.getAbsolutePath()).getName().replace(".xml", ".tei.xml"), result);
+					}
 				}
 			} catch (final Exception exp) {
 				LOGGER.error("An error occured while processing the file " + currXML.getAbsolutePath()

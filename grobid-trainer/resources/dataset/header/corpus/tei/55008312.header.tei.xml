@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008312"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Data Synchronization in Privacy-Preserving<lb/> RFID Authentication Schemes<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Sébastien Canard and Iwen Coisel<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Orange Labs R&amp;D,</affiliation>
+	</byline>
+
+	<address>42 rue des Coutures, BP6243, F-14066 Caen Cedex, France<lb/></address>
+
+	<email>{sebastien.canard,iwen.coisel}@orange-ftgroup.com<lb/></email>
+
+	<div type="abstract">Abstract. Massively deploying RFID systems, while preserving peo-<lb/>ple&apos;s privacy and data integrity, is a major security challenge of the<lb/> coming years. This is why research related to privacy-preserving authen-<lb/>tication is growing, including design of schemes, cryptanalysis and secu-<lb/>rity models. In nearly all such schemes secret key cryptography is used,<lb/> since RFID tags are extremely constrained in time and space, and un-<lb/>traceability is achieved by updating some data at each authentication.<lb/> Unfortunately, none of them entirely resists to denial of service attacks,<lb/> those in which the enemy forces updating of the tag and/or the reader<lb/> by sending fake messages. Moreover, literature lacks a clear and formal<lb/> way of comparing schemes w.r.t. this kind of attack. In this paper, we<lb/> introduce a new characterization, called synchronizability. This allows us<lb/> to, first, establish a relevant model; second, evaluate existing schemes in<lb/> this model and point out their deficiencies; third, present a new scheme<lb/> with all desired features.<lb/></div>
+
+		</front>
+	</text>
+</tei>

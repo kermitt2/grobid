@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55006334"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Oats<lb/> </titlePart>
+	</docTitle>
+	
+	<note type="other">New Search<lb/> Refuse: 0%<lb/> Scientific Name: Avena sativa L.<lb/> NDB No: 20038 (Nutrient values and weights are for edible portion)<lb/></note>
+
+		</front>
+	</text>
+</tei>

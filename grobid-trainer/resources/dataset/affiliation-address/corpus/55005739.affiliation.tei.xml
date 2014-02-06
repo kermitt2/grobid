@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="institution">Zentralinstitut für Angewandte Mathematik</orgName>
+							<lb/>
+							<address>
+								<postCode>D-52425</postCode>
+								<settlement>Jülich</settlement>
+							</address>
+						</affiliation>
+						<affiliation>	
+							(<lb/> 
+							<marker>*</marker>
+							 ) 
+							<orgName type="department">Modelling, Algorithms, and Informatics Group</orgName>,
+							<orgName type="department">CCS-3 MS B256</orgName>
+							<lb/>
+							<orgName type="institution">Los Alamos National Laboratory</orgName>
+							<lb/>
+							<address>
+								<settlement>Los Alamos</settlement>,
+								<region>NM</region>
+								<postCode>87545</postCode>,
+								<country>USA</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008117"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Search term<lb/> &gt;&gt; HOME &gt; MEETING RESOURCES &gt; MEETING ABSTRACTS &gt; EUROPEAN SOCIETY FOR MEDICAL ONCOLOGY (ESMO) 2010 &gt;<lb/> ANALYSIS OF PLASMA BIOMARKERS, DCE-MRI, AND KRAS MUTATIONS IN PATIENTS (PTS) WITH ADVANCED COLORECTAL<lb/> CARCINOMA (CRC) TREATED WITH THE MULTIKINASE INHIBITOR REGORAFENIB<lb/></note>
+
+	<docTitle>
+	<titlePart>Analysis of plasma biomarkers, DCE-MRI, and KRAS mutations<lb/> in patients (pts) with advanced colorectal carcinoma (CRC)<lb/> treated with the multikinase inhibitor regorafenib<lb/></titlePart>
+	</docTitle>
+
+	<date type="publication">Publication date: May 19, 2010<lb/></date>
+
+	<note type="other">Category: Colorectal cancer<lb/> Publisher: ESMO<lb/> </note>
+	
+	<docAuthor>Authors: O. Christensen; M. Buechert; U. Fasol; M. Jeffers; J. Krätzschmar; D. Strumberg; M.E.<lb/> Scheulen; K. Mross<lb/> </docAuthor>
+
+	<note type="other">Full Text<lb/></note>
+
+	<div type="abstract">Description<lb/> Background: Regorafenib is a novel diphenylurea oral multikinase inhibitor of angiogenic (VEGFR1-3,<lb/> TIE2), stromal (PDGFR-β, FGFR), and oncogenic kinases (KIT, RET, RAF). In in vivo models,<lb/> regorafenib has shown a broad spectrum of antitumor activity. Regorafenib showed clinical activity in<lb/> renal cell carcinoma and in a Phase I CRC study, for which biomarker results are given here. A Phase III<lb/> study in pts with advanced CRC is ongoing.<lb/> Methods: Biomarker analyses presented here are from a Phase I study of regorafenib, given orally in<lb/> repeating cycles (Cs) of 21 days (d) on/7 d off, in pts with refractory CRC. Plasma levels of VEGF and<lb/> soluble VEGFR-2 (sVEGFR-2) were analyzed pre-and 8 h postdose on d 1 and 21 of C 1, predose on d<lb/> 1 and 21 of C 2 and 3, predose on d 1 of all subsequent Cs, and at the final visit using the relevant<lb/> quantitative ELISA. DCE-MRI was assessed at screening, on d 2 of C 1, d 21 of C 1 to 4, every 2nd C<lb/> thereafter, and at final visit. KRAS mutations were analyzed using archival tumor samples and/or plasma<lb/> samples obtained during the study. Tumor response was evaluated per RECIST. Biomarker and<lb/> DCE-MRI were correlated to progression-free survival (PFS).<lb/> Results: 38 pts with actively progressing CRC were treated with regorafenib at doses of 60 mg (n=1), 120<lb/> mg (n=4), 160 mg (n=26), and 220 mg (n=7) once daily. The iAUC60s of Gd-DTPA as measured by<lb/> DCE-MRI decreased over the course of the study (% change [arithmetic mean] to baseline d 2: -6.7%; d<lb/> 21: -34.1%; d 49: -37.9%). VEGF plasma levels (change in arithmetic mean) increased by 62.4% (d 21)<lb/> and 95.6% (d 49), sVEGFR decreased by 35.8% (d 21) and 42.8% (d 49). KRAS mutations were found in<lb/> 19/36 of evaluable pts (53%). Pharmacodynamic changes in DCE-MRI, VEGF and sVEGFR-2 were not<lb/> correlated to PFS. Pts with mutated or wildtype KRAS were equally distributed among those who clinically<lb/> benefitted (PFS ≥100 d).</div>
+
+		</front>
+	</text>
+</tei>

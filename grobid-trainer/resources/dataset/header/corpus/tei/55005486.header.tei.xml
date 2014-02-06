@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005486"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="submission">Last updated: September 15, 2009<lb/></note>
+	
+	<note type="other">Scientific program available for downloaded (pdf format)<lb/> </note>
+	
+	<date>Thursday 17 September<lb/> Friday 18 September<lb/> </date>
+	
+	<note type="other">List of posters<lb/></note>
+
+	<docTitle>
+	<titlePart>CampyUK2009 Scientific program<lb/></titlePart>
+	</docTitle>
+
+	<date>Thursday September 17, 2009<lb/></date>
+
+	<div type="introduction">Afternoon, John Innes Conference Center (JICC), Foyer and Auditorium<lb/> 12.00 -13.30<lb/> Lunch + setup posters (JICC Foyer)<lb/> 13.30 -13.45<lb/> Welcome &amp; Opening (David Boxer, Director of IFR)<lb/> 13.45 -15.30<lb/> General Session 1 (Chair: Arnoud van Vliet)<lb/> 13.30: Prof David Boxer (Director IFR): Welcome &amp; Opening<lb/>13.45 Announcement CHRO 2011 (Arnoud van Vliet)<lb/> 14.00 Highlights from CHRO 2009 in Japan, (</div>
+
+	<byline>
+	<docAuthor>Julian Ketley,<lb/> Ozan Gundogdu, Emily Kay and Aileen Sherry)<lb/></docAuthor>
+	</byline>
+
+		</front>
+	</text>
+</tei>

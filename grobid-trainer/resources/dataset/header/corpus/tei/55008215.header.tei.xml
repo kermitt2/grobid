@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008215"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="copyright">Copyright 2011 The New York Times Company Privacy Policy </note>
+	
+	<ptr>NYTimes.com </ptr>
+	
+	<address>620 Eighth Avenue New York, NY 10018<lb/></address>
+
+	<date>SEPTEMBER 29, 2010, </date>
+	
+	<note type="other">2:36 PM<lb/></note>
+
+	<docTitle>
+	<titlePart>Facebook and Skype Plan Integration<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>By MIGUEL HELFT<lb/></docAuthor>
+	</byline>
+
+		</front>
+	</text>
+</tei>

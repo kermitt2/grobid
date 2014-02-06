@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Stefan</forename>
+								<surname>FRANK</surname>
+								<lb/>
+								<marker>1</marker>,
+							</persName>
+							<persName>
+								<forename>Heiko</forename>
+								<surname>KA$MPFER</surname> ,
+							</persName>
+							<persName>
+								<forename>Christian</forename>
+								<surname>WETZLER</surname> ,
+							</persName>
+							<persName>
+								<forename>Birgit</forename>
+								<surname>STALLMEYER</surname> and
+							</persName>
+							<persName>
+								<forename>Josef</forename>
+								<surname>PFEILSCHIFTER</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

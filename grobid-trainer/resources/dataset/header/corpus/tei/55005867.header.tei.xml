@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005867"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>AMBISONICS SYMPOSIUM 2009<lb/> June 25-27, Graz<lb/></reference>
+
+	<docTitle>
+	<titlePart>CALCULATION OF NEAR-FIELD HEAD RELATED TRANSFER<lb/> FUNCTIONS USING POINT SOURCE REPRESENTATIONS<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Dylan Menzies<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>De Montfort University</affiliation>
+	</byline>
+
+	<email>(rdmg@dmu.ac.uk)<lb/></email>
+
+	<div type="abstract">Abstract:<lb/> We aim to improve the calculation of near-field head related transfer functions from far-field HRTFs using point source<lb/> expansions into plane waves. We consider shifted expansions derived using the Fourier-Bessel representation and the<lb/> Sommerfield-Weyl identity, which are also relevant to field reconstruction with speakers.<lb/></div>
+
+	<keyword>Key words: ambisonic binaural bessel sommerfield weyl point-source<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

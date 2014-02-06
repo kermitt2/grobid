@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55006414"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Important Install software before inserting data card<lb/> or attaching USB modem or phone<lb/></note>
+
+	<docTitle>
+	<titlePart>Quick Installation Guide<lb/> Vodafone Mobile Connect<lb/></titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

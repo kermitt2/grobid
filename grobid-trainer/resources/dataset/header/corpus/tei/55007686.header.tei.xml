@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007686"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">1</note>
+
+	<note type="copyright">Copyright © 2006, PCI-SIG, All Rights Reserved<lb/></note>
+
+	<docTitle>
+	<titlePart>I/O Virtualization and Sharing<lb/> I/O Virtualization and Sharing<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Michael Krause (HP, co-chair)<lb/> </docAuthor>
+	</byline>
+
+	<byline>
+	<docAuthor>Renato Recio (IBM, co-chair)<lb/> </docAuthor>
+	</byline>
+	
+	<byline>
+	<docAuthor>Michael Krause (HP, co-chair)<lb/> </docAuthor>
+	</byline>
+	
+	<byline>
+	<docAuthor>Renato Recio (IBM, co-chair)</docAuthor>
+	</byline>
+	
+		</front>
+	</text>
+</tei>

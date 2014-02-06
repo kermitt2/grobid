@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">Department of Surgery 1</orgName> ,
+							<orgName type="department">Department of Pharmacology</orgName> &amp; 
+							<orgName type="department">Institute of Biomedical Sciences 2</orgName> , 
+							<orgName type="department">Department of Internal Medicine 3</orgName> ,
+							<lb/>
+							<orgName type="department">College of Medicine</orgName>,
+							<orgName type="institution">Hanyang University</orgName>,
+							<address>
+								<settlement>Seoul</settlement>,
+								<country>South Korea</country>;
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="department">Department of Pathology and Laboratory Medicine 4</orgName> ,
+							<orgName type="department">College of<lb/> Medicine</orgName>,
+							<orgName type="institution">University of Pennsylvania</orgName>,
+							<address>
+								<settlement>Philadelphia</settlement>,
+								<country>USA</country>
+							<lb/>
+							</address>
+						</affiliation>	
+						<affiliation>	
+							<orgName type="department">Department of Pharmacology</orgName>
+							&amp; 
+							<orgName type="department">Institute of Biomedical Sciences</orgName>,
+							<orgName type="department">College of Medicine</orgName>;
+							<lb/>
+							<orgName type="department">Department of Bioengineering</orgName>,
+							<orgName type="institution">Hanyang University</orgName>,
+							<address>
+								<settlement>Seoul</settlement>
+								<postCode>133–791</postCode>,
+								<country>Korea</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

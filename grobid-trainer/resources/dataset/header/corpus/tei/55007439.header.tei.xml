@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007439"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<docAuthor>A.M. Suterska, K.J. Zielińska, R.A. Grzybowski, K.M. Stecka, A.H. Miecznikowski, M.P.Kupryś</docAuthor>
+	</byline>
+
+	<reference>&quot;Journal of Research and Applications in Agricultural Engineering&quot; 2009, Vol. 53(4)<lb/></reference>
+
+	<note type="page">125<lb/></note>
+
+	<byline>
+	<docAuthor>A. M. SUTERSKA, K. J. ZIELIŃSKA, R. A. GRZYBOWSKI,<lb/> K. M. STECKA, A. H. MIECZNIKOWSKI, M. P. KUPRYŚ<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Instytut Biotechnologii Przemysłu Rolno-Spożywczego,</affiliation>
+	</byline>
+
+	<address>Warszawa<lb/></address>
+
+	<email>e-mail: suterska@ibprs.pl; zielinska@ibprs.pl; grzybowski@ibprs.pl;<lb/> stecka@ibprs.pl; miecznikowski@ibprs.pl; kuprys@ibprs.pl<lb/></email>
+
+	<docTitle>
+	<titlePart>EFFECT OF THE SELECTED STRAINS FROM LACTOBACILLUS GENUS ON THE<lb/> LIMITATION OF MOULD AND OCHRATOXIN A CONTAMINATION OF SILAGES<lb/> FROM MEADOW SWARD<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">Summary<lb/> The aim of the studies, conducted in ecological and traditional farms, was to determine the effect of application of bacterial<lb/> preparation, consisting of the selected bacterial strains from Lactobacillus genus on the improvement of nutritional value<lb/> and quality of silages produced from meadow sward, on inhibition of mould development and on lowering of ochratoxin A<lb/> content during ensiling process. Starter culture of the preparation included the selected lactic acid bacteria strains from the<lb/> species: Lactobacillus plantarum K KKP 593/p, Lactobacillus plantarum C KKP 788/p and Lactobacillus buchneri KKP<lb/> 907. The experimental silages from the meadow sward, as prepared in manufacturing conditions with the addition of the<lb/> examined preparation, were characterized by a very good quality, evaluated according to Flieg-Zimmer, with lactic acid<lb/> level higher by more than 50% and absence of butyric acid as well as by a high microbiological purity, expressed by<lb/> thousand times lower CFU of moulds/ 1g of silage. As affected by synergic action of the selected strains of lactic acid<lb/> bacteria, lowering of ochratoxin A level by ca. 62 – 72% was found, in relation to its content in the meadow sward.</div>
+
+		</front>
+	</text>
+</tei>

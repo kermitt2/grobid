@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005678"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<affiliation></affiliation>
+	
+	<byline>
+	<affiliation>Solagran Limited<lb/>Solagran Limited<lb/></affiliation>
+	</byline>
+
+	<address>ACN 002 592 396<lb/> Level 11<lb/> 492 St Kilda Road<lb/> Melbourne 3004<lb/> Victoria Australia<lb/></address>
+
+	<phone>Tel 61 3 9820 2699<lb/> Fax 61 3 9820 3155<lb/></phone>
+
+	<date type="publication">20 September, 2005<lb/></date>
+
+	<docTitle>
+	<titlePart>Company Announcement<lb/> Final Results of Bioeffective R Alzheimer&apos;s Disease Trial<lb/></titlePart>
+	</docTitle>
+
+	<div type="introduction">The Directors of Solagran Limited are pleased to announce that the Company has received<lb/> the final results of a clinical efficacy trial of Bioeffective R (Ropren) in the treatment of<lb/> Alzheimer&apos;s disease. Preliminary results from this trial were released in April 2005.<lb/> Clinical trials on patients with chronic liver conditions, and pre-clinical studies undertaken<lb/> with animals in relation to brain activity, provided Solagran with sufficient evidence to justify<lb/> undertaking a small scale clinical trial at a specialised hospital to assess the efficacy of<lb/> Ropren as a treatment for elderly patients with neurodegenerative disorders.<lb/> The trial involved 25 patients (15 men and 10 women) aged 60 to 78. All were suffering from<lb/> Alzheimer&apos;s type dementia, but with different pathologies and different times since diagnosis.<lb/> It involved treatment with Ropren for a period of 3 months for 17 patients, and 4 months for 8<lb/> patients with a more severe form of the disease.<lb/> The trial was conducted at the Skvortsov-Stepanov Psychiatric Hospital in St Petersburg<lb/> under the supervision of Dr Vladimir Agishev, the Director of the hospital and a doctor<lb/> honoured by the Russian Federation for his contribution to medical science. The trials team<lb/> comprised a leading consultant neurologist Dr Andrei Kulikov, and 2 of the hospital&apos;s senior<lb/> consulting psychiatrists, Dr Ninel Kulikova and Dr Irina Malachova.<lb/> It was agreed at the outset to undertake this quite complex trial because Solagran&apos;s research<lb/> team was confident that what had already been learned about the properties of Ropren<lb/> meant that it may prove to be an effective treatment for Alzheimer&apos;s disease that did not<lb/> result in side effects.</div>
+
+		</front>
+	</text>
+</tei>

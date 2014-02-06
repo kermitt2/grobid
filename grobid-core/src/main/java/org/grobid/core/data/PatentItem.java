@@ -148,6 +148,11 @@ public class PatentItem implements Comparable<PatentItem> {
         utility = b;
     }
 
+	public void setConf(double val) {
+System.out.println("conf set: " + val);
+		conf = val;
+	}
+
     public int compareTo(PatentItem another) {
         return number.compareTo(another.getNumber());
     }
@@ -314,7 +319,13 @@ public class PatentItem implements Comparable<PatentItem> {
 				(offset_end - offset_begin + 1) +")\"></ptr>");
 		}
 		
-		biblStruct.append("</monogr></biblStruct>");
+		if (conf != 0.0) {
+			biblStruct.append("<certainty degree=\"" + conf +"\" />");
+		}
+		biblStruct.append("</monogr>");
+		
+		
+		biblStruct.append("</biblStruct>");
 		
 		return biblStruct.toString();
 	}

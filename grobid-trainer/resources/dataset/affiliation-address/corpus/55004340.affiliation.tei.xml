@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="laboratory">MTP, Research Unit of Textile and Paper Materials</orgName>,
+							<orgName type="department">Faculty of Engineering</orgName>,
+							<orgName type="institution">UBI-University of Beira Interior</orgName>,
+ 							<address>
+								<addrLine>Calçada<lb/> Fonte do Lameiro</addrLine>,
+								<postCode>6200-358</postCode>,
+								<settlement>Covilhã</settlement>,
+								<country>Portugal</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

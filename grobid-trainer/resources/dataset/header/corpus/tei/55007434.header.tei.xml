@@ -1,0 +1,61 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007434"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Presented at the 20<lb/> th European Photovoltaic Solar Energy Conference and Exhibition,<lb/></note>
+
+	<address>Barcelona, Spain,</address>
+
+	<date>6-10 June 2005<lb/></date>
+
+	<docTitle>
+	<titlePart>POLYMER BASED PHOTOVOLTAICS: NOVEL CONCEPTS, MATERIALS AND STATE-OF-THE ART<lb/> EFFICIENCIES<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>J.M. Kroon<lb/> 1,5 , S.C.Veenstra<lb/> 1,5 , L.H. Slooff<lb/> 1,5 , W.J.H. Verhees<lb/> 1,5 , M.M. Koetse<lb/> 2,5 , J. Sweelssen<lb/> 2,5 , H.F.M. Schoo<lb/> 2 , W.J.E.<lb/> Beek 3 , M.M. Wienk<lb/> 3,5 , R.A.J. Janssen<lb/> 3 , X. Yang<lb/> 3,5 , J. Loos<lb/> 3 , V.D. Michailetchi<lb/> 4 , P.W.M. Blom<lb/> 4 , J. Knol<lb/> 4 , J.C. Hummelen<lb/> 4<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Energy research Centre of the Netherlands (ECN),</affiliation>
+	</byline>
+
+	<address>P.O. Box 1, 1755 ZG Petten, the Netherlands<lb/></address>
+
+	<email>email: j.kroon@ecn.nl<lb/></email>
+
+	<byline>
+	<affiliation>2 TNO Science and Industry,</affiliation>
+	</byline>
+
+	<address>PO Box 6235, 5600 HE, Eindhoven, NL<lb/></address>
+
+	<byline>
+	<affiliation>3 Eindhoven University of Technology,</affiliation>
+	</byline>
+
+	<address>PO Box 513, 5600 MB, Eindhoven, NL<lb/></address>
+
+	<byline>
+	<affiliation>4 University of Groningen,</affiliation>
+	</byline>
+
+	<address>Nijenborgh 4, 9747 AG, Groningen, NL<lb/></address>
+
+	<byline>
+	<affiliation>5 Dutch Polymer Institute (DPI),</affiliation>
+	</byline>
+
+	<address>P.O. Box 902, 5600 AX Eindhoven, The Netherlands<lb/></address>
+
+	<div type="abstract">ABSTRACT: A summary is given of the multidisciplinary research efforts in the Netherlands in the field of polymer-based<lb/> photovoltaics (PV) between 1997 and 2005. It has been shown that different types of bulk heterojunctions namely<lb/> polymer:fullerene, polymer:polymer and polymer:metal-oxide cells can be made in a laboratory environment with relatively<lb/> simple and new low temperature deposition techniques using conjugated polymers as the primary absorber. State-of-the art<lb/> efficiencies have been achieved for all polymer based solar cell concepts.<lb/></div>
+
+	<keyword>Keywords: Fundamentals, Organic Solar Cells, Polymer film<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

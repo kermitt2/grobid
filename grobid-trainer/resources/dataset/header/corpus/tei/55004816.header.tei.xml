@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004816"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>IBM Certified SOA Solution Designer certification<lb/> prep, Part 1: SOA best practices<lb/> </titlePart>
+	</docTitle>
+	
+	<note type="other">Skill Level: Intermediate<lb/></note>
+	
+	<byline>
+	<docAuthor>Mark Lorenz</docAuthor>
+	</byline>
+
+	<email>(mlorenz@nc.rr.com)<lb/></email>
+
+	<note type="other">Senior Application Architect<lb/> </note>
+	
+	<byline>
+	<affiliation>Hatteras Software, Inc.<lb/></affiliation>
+	</byline>
+	
+	<date>10 Oct 2006<lb/></date>
+
+		</front>
+	</text>
+</tei>

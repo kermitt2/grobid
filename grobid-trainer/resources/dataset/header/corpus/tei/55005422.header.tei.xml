@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005422"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Lou Dawson&apos;s Backcountry Skiing Blog &amp; Website --Content Pages<lb/> Backcountry Skiing Bindings<lb/> Virtual Museum (museum index)<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">Through years of testing and product<lb/> development, backcountry skiing bindings have<lb/> progressed from simple cable bindings to<lb/> engineered machines that represent state-of-art<lb/> materials science and mechanicals. This<lb/> collection of backcountry skiing bindings covers<lb/> the full historical range of modern bindings.<lb/></div>
+
+		</front>
+	</text>
+</tei>

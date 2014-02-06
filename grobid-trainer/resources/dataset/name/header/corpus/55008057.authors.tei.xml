@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							Authors
+							<lb/>
+							<persName>								
+								<forename>Kurth</forename>,
+								<surname>Todd</surname>
+							</persName>
+							<persName>	
+								<forename>Sharma</forename> ,
+								<surname>Brajendra </surname>- 
+							</persName>
+							<persName>	
+								<surname>DOLL</surname> ,
+								<forename>KENNETH</forename>
+							</persName>
+							<persName>	
+								<surname>ERHAN</surname> ,
+								<forename>SEVIM</forename>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

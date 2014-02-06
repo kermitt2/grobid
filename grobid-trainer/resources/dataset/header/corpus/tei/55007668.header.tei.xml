@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007668"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Proceedings of the International Convention of Society of Wood Science and Technology<lb/> and United Nations Economic Commission for Europe – Timber Committee<lb/>October 11-14, 2010,  Geneva, Switzerland<lb/></reference>
+
+	<note type="other">Paper NT-1<lb/></note>
+
+	<note type="page">1 of 8<lb/></note>
+
+	<docTitle>
+	<titlePart>Progress on Cellulose Nanofiber-filled Thermoplastic<lb/> Composites<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Douglas J. Gardner, Yousoo Han, Alper Kiziltas, and Yucheng Peng<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University of Maine<lb/> Advanced Structures and Composites Center<lb/></affiliation>
+	</byline>
+
+	<address>Orono, Maine 04469<lb/></address>
+
+	<div type="abstract">Abstract<lb/> Cellulose shows great potential for application in green materials because it is abundant,<lb/> renewable, has a microfibrillar structure, can be made multifunctional, and self-assemble<lb/> into well defined architectures. A current research program at the University of Maine<lb/> focuses on application of cellulose nanofibrils (CNF) in thermoplastic composites. One<lb/> project is examining the application of CNF in engineering thermoplastics including<lb/> polyamide 6 (nylon 6) and a polyester blend (polyethylene terephthalate (PET)/poly<lb/> (trimethylene terephthalate) (PTT)). Part of the emphasis in focusing on cellulose<lb/> nanofibril-filled engineering thermoplastics is that the end use of these composites is<lb/> especially relevant in thermally challenging areas such as the manufacture of under-the-<lb/>hood automobile components as well as the higher strength and stiffness of these<lb/> materials also offer potential for development of structural green thermoplastic<lb/> composites in infrastructure applications. Surface treatment of CNF is another important<lb/> topic being studied. The compatibility and miscibility of CNF with conventional<lb/> thermoplastics is a well-known problem because of the aqueous nature of CNF. Under<lb/> current polymer processing technology, significant water content in the component<lb/> formulations can not be tolerated. Various treatments are being evaluated to decrease or<lb/> remove moisture from CNF products with a goal of maintaining the nano scale<lb/> dimensions of the fibrils. Surface modification of CNF can be achieved using appropriate<lb/> chemical compounds, resulting in improvements to composite material properties. This<lb/> paper will describe the overall research program including the preparation of<lb/> nanocomposites via melt processing and injection molding, characterization of material<lb/> properties including mechanical tests, thermal characterization via thermogravimetric<lb/> analysis and differential scanning calorimetry, and dynamic mechanical thermal analysis.<lb/> The material property results will be described with a discussion on the challenges and<lb/> opportunities for scale-up into commercial production of this new class of green<lb/> nanomaterials.<lb/></div>
+
+	<keyword>Keywords: Cellulose, nanofibrils, nanocomposites, thermoplastics, green materials<lb/></keyword>
+
+	<reference>Proceedings of the International Convention of Society of Wood Science and Technology<lb/> and United Nations Economic Commission for Europe – Timber Committee<lb/>  October 11-14, 2010,  Geneva, Switzerland<lb/></reference>
+
+		</front>
+	</text>
+</tei>

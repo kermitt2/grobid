@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007245"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Version 4.4.1<lb/></note>
+
+	<docTitle>
+	<titlePart>DVB-PC TV Stars<lb/> Benutzerhandbuch Teil 1<lb/> Installation Benutzerhandbuch Teil 2<lb/> Setup4PC/Server4PC<lb/> Benutzerhandbuch Teil 3<lb/> DVBViewer TE<lb/> Diese Anleitung gilt für folgende Produkte:<lb/> TechniSat SkyStar 2 PCI / USB / USB 2<lb/> TechniSat AirStar 2 PCI / USB<lb/> TechniSat CableStar 2 PCI<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Dokument Veröffentlichungsdatum: </note>
+	
+	<date>05/2007<lb/></date>
+
+	<note type="copyright">Copyright © TechniSat Digital GmbH Alle Rechte vorbehalten</note>
+
+		</front>
+	</text>
+</tei>

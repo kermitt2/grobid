@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004238"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Cdk9-55: A New Player in<lb/> Muscle Regeneration<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>CRISTINA GIACINTI,<lb/> 1,2 ANTONIO MUSAR ,<lb/> 2 GIULIA DE FALCO,<lb/> 1,3<lb/> ISABELLE JOURDAN,<lb/> 2 MARIO MOLINARO,<lb/> 2 LUIGI BAGELLA,<lb/> 1,4<lb/> CRISTIANO SIMONE,<lb/> 1,5 * AND ANTONIO GIORDANO<lb/> 1,3 *<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Sbarro Institute for Cancer Research and Molecular Medicine, Center for Biotechnology, College of Science and Technology,<lb/> Temple University,</affiliation>
+	</byline>
+
+	<address>Philadelphia<lb/></address>
+
+	<byline>
+	<affiliation>2 Department of Histology and Medical Embryology, University of Rome &apos;&apos;Sapienza&apos;&apos;,</affiliation>
+	</byline>
+
+	<address>Rome, Italy<lb/></address>
+
+	<byline>
+	<affiliation>3 Department of Human Pathology and Oncology, University of Siena,</affiliation>
+	</byline>
+
+	<address>Siena, Italy<lb/></address>
+
+	<byline>
+	<affiliation>4 Division of Biochemistry and Biophysics, Department of Biomedical Sciences,<lb/> National Institute of Biostructures and Biosystems, University of Sassari,</affiliation>
+	</byline>
+
+	<address>Sassari, Italy<lb/></address>
+
+	<byline>
+	<affiliation>5 Division of Medical Genetics, Department of Biomedicine in Childhood, University of Bari,</affiliation>
+	</byline>
+
+	<address>Bari, Italy<lb/></address>
+
+	<div type="abstract">Adult skeletal muscle contains a specialized population of myogenic quiescent stem cells, termed satellite cells, which contribute to repair<lb/> myofibers after injury. During muscle regeneration, satellite cells exit their normal quiescent state, proliferate, activating MyoD and Myf-5<lb/> expression, and finally differentiate and fuse to reconstitute the injured muscle architecture. We have previously reported that cdk9 is<lb/> required for myogenesis in vitro by activating MyoD-dependent transcription. In myoblasts induced to differentiate, MyoD recruits cdk9<lb/> on the chromatin of muscle-specific regulatory regions. This event correlates with chromatin-modifying enzyme recruitment and<lb/> phosphorylation of cdk9-specific target residues at the carboxyl-terminal domain of RNA polymerase II. Here we report that a second<lb/> cdk9 isoform, termed cdk9-55, plays a fundamental role in muscle regeneration and differentiation in vivo. This alternative form is<lb/> specifically induced in injured myofibers and its activity is strictly required for the completion of muscle regeneration process.<lb/></div>
+
+	<reference>J. Cell. Physiol. 216: 576–582,	2008. </reference>
+	
+	<note type="copyright">&#169; 2008 Wiley-Liss, Inc.<lb/></note>
+
+	<div type="introduction">Tissue regeneration is one of the most important homeostatic<lb/> process of adult skeletal muscle, which after development<lb/> retains the capacity to regenerate in response to different type<lb/> of stimuli, including a direct trauma or neurological dysfunction<lb/> and genetic defects (Huard et al., 2002). The regenerative<lb/> process is sustained by adult myogenic precursors, a population<lb/> of quiescent mononucleated reserve cells, termed satellite cells<lb/> (Chargè and Rudnicki, 2004). Upon exposure to signals from<lb/> the damaged environment, satellite cells are activated and start<lb/> proliferating. At the molecular level, this process is<lb/> characterized by the rapid upregulation of two muscle<lb/> regulatory factors (MRFs), Myf5 and MyoD. After the<lb/> proliferation phase, the expression of the other two MRFs,<lb/> myogenin and MRF4, favors the completion of the<lb/> differentiation program. This is achieved by permanent cell<lb/> cycle withdrawal, the expression of muscle-specific proteins,<lb/> such as myosin heavy chain (MHC), and the fusion of myocites<lb/> into the damaged fiber. A critical player in satellite cell activity is<lb/> the transcription factor MyoD. Indeed, in MyoD<lb/> À/À mice, there<lb/> is a reduced regenerative capacity characterized by an increase<lb/> in myoblast population and a decrease in regenerated myotubes<lb/> (Megeney et al.</div>
+
+		</front>
+	</text>
+</tei>

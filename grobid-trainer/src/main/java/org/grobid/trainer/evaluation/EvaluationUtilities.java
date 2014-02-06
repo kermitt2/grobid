@@ -123,12 +123,12 @@ public class EvaluationUtilities {
 			}
 			bufReader.close();
 
-			final String theResult = EvaluationUtilities.taggerRun(citationBlocks, tagger);
+			String theResult = EvaluationUtilities.taggerRun(citationBlocks, tagger);
 			StringTokenizer stt = new StringTokenizer(theResult, "\n");
 			while (stt.hasMoreTokens()) {
 				line = stt.nextToken();
 
-				if (line.length() == 0)
+				if (line.trim().length() == 0)
 					continue;
 				// the two last tokens, separated by a tabulation, gives the
 				// expected label and, last, the resulting label
@@ -610,6 +610,7 @@ public class EvaluationUtilities {
 			report.append("\n");
 
 			// instance: separated by a new line in the result file
+			theResult = theResult.replace("\n \n", "\n");
 			stt = new StringTokenizer(theResult, "\n");
 			allGood = true;
 			int correctInstance = 0;

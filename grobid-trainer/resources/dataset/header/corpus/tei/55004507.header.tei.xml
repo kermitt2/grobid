@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004507"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Time-of-Flight Cameras with Multiple Distributed Illumination Units<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>O. Lottner, W. Weihs, K. Hartmann<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Centre for Sensor Systems<lb/> University of Siegen<lb/></affiliation>
+	</byline>
+
+	<address>Paul-Bonatz-Straße 6-8, 57076 Siegen<lb/> Germany<lb/></address>
+
+	<div type="abstract">Abstract: -In this paper, the simultaneous operation of multiple distributed illumination units for time-of-flight (TOF)<lb/> cameras is addressed. On the one hand, multiple illumination units can be used independently of each other by several<lb/> means (spatial, temporal, wavelength and modulation division). On the other hand, constructive interference of a<lb/> number of illumination units can be used to increase the modulation contrast, to decrease the necessary integration time<lb/> and to increase the phase data reliability.<lb/></div>
+
+	<keyword>Key-Words: -time-of-flight; multiple illumination units; MultiCam<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

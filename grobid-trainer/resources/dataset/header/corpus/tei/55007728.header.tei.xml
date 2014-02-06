@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007728"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	
+	<note type="other">of September 21, 2011<lb/> This information is current as<lb/> </note>
+	
+	<reference>2001;167;4386-4395<lb/> J Immunol<lb/></reference>
+	
+	<docAuthor>Allen, Halina Offner and Arthur A. Vandenbark<lb/> Lewinsohn, Masayuki Ikeda, Tohru Yoshioka, Charles N.<lb/>
+	
+	Dennis N. Bourdette, Deborah A. Lewinsohn, David M.<lb/> Chang, Thomas P. Finn, Nicole E. Culbertson, Joseph Kim,<lb/> Gregory G. Burrows, Yuan K. Chou, Chunhe Wang, Justin W.<lb/></docAuthor>
+	
+
+	<docTitle>
+	<titlePart>IL-10 Secretion by Human Th1 Cells<lb/> Rudimentary TCR Signaling Triggers Default<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">References<lb/> </note>
+	
+	<ptr>http://www.jimmunol.org/content/167/8/4386.full.html#related-urls<lb/> </ptr>
+	
+	<note type="other">Article cited in:<lb/></note>
+
+	<ptr type="web">http://www.jimmunol.org/content/167/8/4386.full.html#ref-list-1<lb/></ptr>
+
+		</front>
+	</text>
+</tei>

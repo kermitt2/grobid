@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Ruth</forename>
+								<surname>Diebold</surname>
+								<lb/>
+								<marker>2</marker>,
+							</persName>
+							<persName>
+								<forename>Joachim</forename>
+								<surname>Schuster</surname>
+								<lb/>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>Klaus</forename>
+								<surname>Däschner</surname> , and
+							</persName>
+							<persName>
+								<forename>Stefan</forename>
+								<surname>Binder</surname>
+								<marker>*</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

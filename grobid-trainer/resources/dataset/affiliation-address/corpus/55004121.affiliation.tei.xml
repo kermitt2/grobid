@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="institution">MannKind Corp, Inc.</orgName>,
+							<address>
+								<settlement>Valencia</settlement>,
+								<region>CA</region>,
+							</address>
+							<orgName type="institution">Nevada Cancer Institute</orgName>,
+							<address>
+								<addrLine>Las Vegas</addrLine>,
+								<region>NV</region>,
+							</address>
+							<orgName type="institution">Arizona Cancer Center</orgName>,
+							<address>
+								<settlement>Tucson</settlement>,
+								<region>AZ</region>,
+							</address>
+							<orgName type="institution">Dartmouth-Hitchcock Medical<lb/> Center</orgName>,
+							<address>
+								<settlement>Lebanon</settlement>,
+								<region>NH</region>,
+							</address>
+							<orgName type="institution">Moffitt Cancer Center</orgName>,
+							<address>
+								<settlement>Tampa</settlement>,
+								<region>FL</region>,
+							</address>
+							<orgName type="institution">Lombardi Comprehensive Cancer Center</orgName>,
+							<address>
+								<settlement>Georgetown</settlement>,
+								<region>DC</region>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

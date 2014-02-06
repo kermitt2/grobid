@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55006772"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Channel Gain Estimation from Sounding Reference<lb/> Signal in LTE<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Pierre Bertrand<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Cellular Infrastructure Systems -Texas Instruments Incorporated<lb/></affiliation>
+	</byline>
+
+	<address>Villeneuve-Loubet, France<lb/></address>
+
+	<email>Email: p-bertrand@ti.com<lb/></email>
+
+	<div type="abstract">Abstract—3G Long Term Evolution (LTE) technology aims at<lb/> addressing the increasing demand for mobile multimedia services<lb/> in high user density areas. Channel aware scheduling across<lb/> wide system bandwidth is one of the key techniques enabling<lb/> this goal. The Sounding Reference Signal (SRS) in uplink comes<lb/> in support of this feature as its main purpose is to allow the<lb/> LTE Base Station (eNodeB) estimating the UL channel of the<lb/> users across the scheduling bandwidth. Therefore, SRS channel<lb/> and channel gain estimators are important functions that can<lb/> drive the overall performance of the system. In this paper,<lb/> we study such estimation algorithms and show that SRS noise<lb/> variance estimation is necessary to deliver a non-biased channel<lb/> gain estimation. We suggest to provision a cyclic shift of the<lb/> SRS for this purpose and show simulation results validating the<lb/> performance of the proposed scheme.<lb/></div>
+
+	<keyword>Index Terms—LTE, E-UTRAN, channel estimation, channel<lb/> gain, sounding, OFDM.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="department">Department of Dermatology</orgName>,
+							<orgName type="institution">Federal<lb/> University of Rio de Janeiro</orgName>,
+							<address>
+								<settlement>Rio<lb/> de Janeiro</settlement>,
+								<country>Brazil</country>;
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="department">Occupational<lb/> Dermatology Sector</orgName>,
+							<orgName type="department">Center for the<lb/> Study of Worker Health and Human<lb/> Ecology</orgName>,
+							<orgName type="institution">National School of Public<lb/> Health</orgName>,
+							<orgName type="institution">FIOCRUZ</orgName>,
+							<address>
+								<settlement>Rio de Janeiro</settlement>,<lb/>
+								<country>Brazil</country>;
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>3</marker>
+							<orgName type="department">Department of Dermatology</orgName>,
+							<lb/>
+							<orgName type="institution">University of Bologna</orgName>,
+							<address>
+								<settlement>Bologna</settlement>,
+								<country>Italy</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="department">Department of Dermatology</orgName>,
+							<orgName type="institution">University<lb/> of Bologna</orgName>,
+							<address>
+								<addrLine>Via Massarenti</addrLine>,
+								<addrLine>1-40138</addrLine>,
+								<lb/>
+								<settlement>Bologna</settlement>,
+								<country>Italy</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

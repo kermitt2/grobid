@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">Parkinson&apos;s Disease and Movement Disorders Center</orgName>,
+							<lb/>
+							<orgName type="institution">NeuroHealth</orgName>,
+							<address>
+								<addrLine>227 Centerville Road</addrLine>,
+								<settlement>Warwick</settlement>,
+								<region>RI</region>
+								<postCode>02886</postCode>,
+								<country>USA</country>.
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>W</forename>.
+								<middlename>NEIL</middlename>
+								<surname>CHARMAN</surname>,
+								<roleName>DSc</roleName>,
+							</persName>
+							<persName>	
+								<forename>JOHN</forename>
+								<surname>MOUNTFORD</surname>,
+								<roleName>DipAppSc</roleName>,
+								<roleName>FAAO</roleName>,
+							</persName>
+							<persName>	
+							<lb/>
+								<forename>DAVID</forename>
+								<middlename>A</middlename> .
+								<surname>ATCHISON</surname> ,
+								<roleName>DSc</roleName> ,
+								<roleName>FAAO</roleName> ,and
+							</persName>
+							<persName>	
+								<forename>EMMA</forename>
+								<middlename>L</middlename> .
+								<surname>MARKWELL</surname> ,
+								<roleName>BAppSc (Optom)</roleName>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

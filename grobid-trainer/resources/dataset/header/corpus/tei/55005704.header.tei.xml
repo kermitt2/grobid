@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005704"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">1<lb/></note>
+	
+	<note type="other">Technical Article – Success Story<lb/></note>
+
+	<date>August 2008<lb/></date>
+
+	<docTitle>
+	<titlePart>XCP-on-FlexRay at Audi<lb/></titlePart>
+	</docTitle>
+
+	<div type="introduction">Starting in 2009, Audi will be implementing the FlexRay communi-<lb/>cation bus on its next generation of sporty luxury limousines. Since<lb/> FlexRay – compared to CAN – offers a significantly greater band-<lb/>width of 10 MBit/s. Many electronic chassis and driver assistance<lb/> systems are connected to this deterministic and time-triggered bus<lb/> system. For Audi developers, this decision meant that several thou-<lb/>sand parameters needed to be directly parameterized via an AUTO-<lb/>SAR FlexRay stack. Compared to CAN, more than twice as many<lb/> measured values can be acquired simultaneously using XCP-on-<lb/>FlexRay. Furthermore, it is possible to transmit large quantities of<lb/> data with a higher throughput.<lb/> XCP on FlexRay<lb/> A laboratory model by itself is of limited use in determining the<lb/> parameters of a control algorithm. Although the algorithms of the<lb/> functions are permanently stored in the ECU-specific software pro-<lb/>gram, parameter values such as characteristic maps, curves and<lb/> values need to be recorded and optimized in measurements made<lb/> on the test bench and in driving trials. Audi engineers tune their<lb/> chassis and assistance systems in the framework of ECU calibration,<lb/> and they then load the parameter set files into the ECUs&apos; applicati-<lb/>on memory.<lb/> To calibrate ECUs centrally from a single master and via a uni-<lb/>form interface – over the entire course of development – a standar-<lb/>dized measurement and calibration protocol is necessary. In 2003,<lb/> ASAM (Association for Standardization of Automation and Measu-<lb/>ring Systems) defined the universal measurement and calibration<lb/> protocol, XCP, to serve this purpose. It is a logical advancement of<lb/> CCP (CAN Calibration Protocol) [1]. Communication via XCP is exe-<lb/>cuted by the Master-Slave principle. An XCP software module inte-<lb/>grated in each ECU serves as a slave. The greatest advantage of the<lb/> XCP protocol is that it offers separation of the transport and proto-<lb/>col layers. The protocol layer is the same on all bus systems,<lb/> AUTOSAR-compatible XCP software modules for FlexRay ECUs</div>
+
+		</front>
+	</text>
+</tei>

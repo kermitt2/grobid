@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005672"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Making the Best of Mifare Classic<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Wouter Teepe<lb/></docAuthor>
+	</byline>
+
+	<email>w.teepe@cs.ru.nl<lb/></email>
+
+	<byline>
+	<affiliation>Radboud University</affiliation>
+	</byline>
+
+	<address>Nijmegen<lb/></address>
+
+	<date>October 6, 2008<lb/></date>
+
+	<div type="abstract">Abstract<lb/> What would you do if you would be instructed to make a secure ap-<lb/>plication built on the Mifare Classic? Arguably, due to the vulnerabilities<lb/> shown in [5], this is rather difficult and it may be easier to use to an-<lb/>other chip. This document explores what the best is you can get, if the<lb/> only option is Mifare Classic. We propose countermeasures against state<lb/> restoration and against cloning. The effectiveness of these countermea-<lb/>sures depends on the absense of other vulnerabilities of the Mifare Classic.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007296"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Home<lb/> Lighting Control<lb/> Micro Fusion<lb/> Electricity Climate<lb/> Change Contacts Links<lb/></note>
+
+	<byline>
+	<affiliation>XYLENE POWER LTD.<lb/> </affiliation>
+	</byline>
+	
+	<docTitle>
+	<titlePart>ELECTRICITY METERING<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>By C. Rhodes<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">OBJECTIVE:<lb/> The objective of this web page is to identify the general electricity metering methodology necessary<lb/> for full implementation of a distributed power system in Ontario. It is shown that the Smart Meters<lb/> presently being installed should be replaced by Smarter Meters that separately record transmitted<lb/> and received energy registered during each measurement time interval.<lb/> DEFINITIONS:<lb/> Let Er = total energy received by a customer from the grid since meter installation;<lb/> Let Et = total energy transmitted by the customer to the grid since meter installation;<lb/> Let T = time;<lb/> Let Era = value of Er at time T = Ta;<lb/> Let Erb = value of Er at time T = Tb;<lb/> Let Eta = value of Et at time T = Ta;<lb/> Let Etb = value of Et at time T = Tb;<lb/> During measurement time interval (Tb -Ta) the received energy is (Erb -Era).<lb/> During measurement time interval (Tb -Ta) the transmitted energy is (Etb -Eta).<lb/> During measurement time interval (Tb -Ta) the net absorbed energy is:<lb/> [(Erb -Era) -(Etb -Eta)].<lb/> REGISTER REQUIREMENTS:<lb/> The registers that store Er and Et must be non-volatile against power failures and must be<lb/> sufficiently large that these registers will not roll over during the working life of the electricity<lb/> meter. A redundant non-volatile register to store (Er -Et) allows hardware, software and<lb/> communications error checking.<lb/> DISPLAY REQUIREMENTS<lb/> Legal metrology presently requires that a Smart Meter locally display the current value of (Er -Et).<lb/> Apart from being legally required this local display is helpful for: confirming meter accuracy, local<lb/> electricity load measurements and resolving clerical billing errors relating to which meter and which<lb/> instrument transformers are associated with which customer. When a Smarter Meter is used the<lb/> meter should also locally display the current values of Er and Et.</div>
+
+		</front>
+	</text>
+</tei>

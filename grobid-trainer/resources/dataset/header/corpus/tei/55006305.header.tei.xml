@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55006305"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>3rd World Conference on Photovoltaic Energy Conversion May 11-18, 2003 Osaka, Japan<lb/></reference>
+
+	<idno>4P-A8-68<lb/></idno>
+
+	<docTitle>
+	<titlePart>COMPARATIVE STUDY ON EMITTER SHEET RESISTIVITY<lb/> MEASUREMENTS FOR INLINE QUALITY CONTROL<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>E. Riiland&apos;, P. Fath&apos;, T. Pavelka2, A. Pap2, K. Peter&apos;, J. Mizsei3,<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>&apos; University of Konstanz, Department of Physics,</affiliation>
+	</byline>
+
+	<address>78457 Konstanz, Germany,<lb/></address>
+
+	<byline>
+	<affiliation>SEMILAB Rt.,</affiliation>
+	</byline>
+
+	<address>Prielle KomClia U. 2, H-1117 Budapest, Hungary,<lb/></address>
+
+	<byline>
+	<affiliation>Budapest University of Technology and Economics,</affiliation>
+	</byline>
+
+	<address>Goldmann Gy. TCr 3., H-1521 Budapest, Hungary<lb/></address>
+
+	<div type="abstract">normally measured based on<lb/> manually drawn samples. In<lb/> contrast, our aim was to<lb/> develop and test measurement<lb/> methods which can be directly<lb/> incorporated in high volume<lb/> diffusion equipment.<lb/> Two contactless approaches<lb/> have been studied, the Eddy<lb/> Current technique and a newly<lb/> SPV (Surface-Photo-Voltage)<lb/> probing.<lb/> As<lb/> reference<lb/> developed system based on<lb/></div>
+
+	<note type="other">( C o n d u e l i v c R i n g )<lb/></note>
+
+	<div type="abstract">Probe H e a d Q,.<lb/> L.ser<lb/> In the underlying study two contactless<lb/> measurement techniques were applied to study the emitter<lb/> sheet resistance ps after the phosphorus emitter diffusion:<lb/> the Eddy current method and a novel SPV technique. As a<lb/> reference four point probe (FPP) measurements were<lb/> undertaken which request a direct contact between probe<lb/> head and silicon wafer sample. There are several reasons to<lb/> rely on contactless approaches within an inline quality<lb/> control system:<lb/> o lower probability of contaminating the silicon wafer<lb/> by metal probes<lb/> Stress free measurements reduce the chance of wafer<lb/> breakage (especially appropriate for thin substrates)<lb/></div>
+
+		</front>
+	</text>
+</tei>

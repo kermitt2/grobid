@@ -40,9 +40,8 @@ public class GrobidPoolingFactory extends AbstractEngineFactory implements
 			LOGGER.debug("synchronized newPoolInstance");
 			synchronized (grobidEnginePoolControl) {
 				if (grobidEnginePool == null) {
-					grobidEnginePool = new GenericObjectPool();
-					grobidEnginePool.setFactory(GrobidPoolingFactory
-							.newInstance());
+					grobidEnginePool = new GenericObjectPool(GrobidPoolingFactory.newInstance());
+					//grobidEnginePool.setFactory(GrobidPoolingFactory.newInstance());
 					grobidEnginePool
 							.setWhenExhaustedAction(GenericObjectPool.WHEN_EXHAUSTED_BLOCK);
 					grobidEnginePool.setMaxWait(GrobidProperties.getPoolMaxWait());

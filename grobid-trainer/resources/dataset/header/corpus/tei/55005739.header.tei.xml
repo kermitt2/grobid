@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005739"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+
+	<byline>
+	<affiliation>FORSCHUNGSZENTRUM JÜLICH GmbH<lb/> Zentralinstitut für Angewandte Mathematik<lb/></affiliation>
+	</byline>
+
+	<address>D-52425 Jülich</address>
+
+	<phone>, Tel. (02461) 61-6402<lb/></phone>
+
+	<note type="other">Technical Report<lb/></note>
+
+	<docTitle>
+	<titlePart>Draft Proceedings of the Workshop on<lb/> Declarative Programming in the Context<lb/> of Object-Oriented Languages<lb/> (DP-COOL&apos;03)<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Jörg Striegnitz, Kei Davis * (Eds.)<lb/></docAuthor>
+	</byline>
+
+	<idno>FZJ-ZAM-IB-2003-11<lb/></idno>
+
+	<date>August 2003<lb/> (last change: 22.08.2003)<lb/></date>
+
+	<byline>
+	<affiliation>( * ) Modelling, Algorithms, and Informatics Group, CCS-3 MS B256<lb/> Los Alamos National Laboratory<lb/></affiliation>
+	</byline>
+
+	<address>Los Alamos, NM 87545, USA</address>
+
+		</front>
+	</text>
+</tei>

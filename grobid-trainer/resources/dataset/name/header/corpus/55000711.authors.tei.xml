@@ -10,20 +10,22 @@
 							<persName>
 								<forename>Kees</forename>
 								<surname>Fluiter</surname>,
-								<marker>*<lb/> a</marker>
+								<marker>*</marker>
+								<lb/> 
+								<marker>a</marker>
 							</persName>
 							<persName>
 								<forename>Olaf</forename>
 								<middlename>R</middlename> .
 								<middlename>F</middlename> .
 								<surname>Mook</surname> ,
-							<lb/>
+								<lb/>
 								<marker>a</marker>
 							</persName>
 							<persName>
 								<forename>Jeroen</forename>
 								<surname>Vreijling</surname> ,
-							<lb/>
+								<lb/>
 								<marker>a</marker>
 							</persName>
 							<persName>
@@ -34,13 +36,13 @@
 							<persName>
 								<forename>Torben</forename>
 								<surname>Højland</surname> ,
-							<lb/>
+								<lb/>
 								<marker>b</marker>
 							</persName>
 							<persName>
 								<forename>Jesper</forename>
 								<surname>Wengel</surname>
-							<lb/>
+								<lb/>
 								<marker>b</marker>and
 							</persName>
 							<persName>

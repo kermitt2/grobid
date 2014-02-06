@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005110"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>CERTOMAT ® U<lb/> Tisch-Rundschüttler<lb/> Bedienungsanleitung<lb/> Operating Manual<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">85030-520-58</note>
+
+		</front>
+	</text>
+</tei>

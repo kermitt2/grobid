@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55006754"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">PlanoPlus, 100 g/m<lb/> 2<lb/></note>
+
+	<docTitle>
+	<titlePart>EnDURO Classic<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Preisliste 59<lb/> Abteilung 13, Seite 9<lb/></note>
+
+		</front>
+	</text>
+</tei>

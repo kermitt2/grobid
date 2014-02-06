@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004702"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">NISTIR 7271<lb/></note>
+
+	<docTitle>
+	<titlePart>The Myth of Goats:<lb/> How many people have fingerprints<lb/> that are hard to match?<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Austin Hicklin, </docAuthor>
+	</byline>
+	
+	<byline>
+	<affiliation>Mitretek Systems<lb/> </affiliation>
+	</byline>
+	
+	<byline>
+	<docAuthor>Craig Watson, </docAuthor>
+	</byline>
+	
+	<byline>
+	<affiliation>NIST<lb/> </affiliation>
+	</byline>
+	
+	<byline>
+	<docAuthor>Brad Ulery, </docAuthor>
+	</byline>
+		
+	<byline>
+	<affiliation>Mitretek Systems</affiliation>
+	</byline>
+
+		</front>
+	</text>
+</tei>

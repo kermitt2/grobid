@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005820"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<affiliation>1<lb/>	Bundestagsfraktion Bu Èndnis 90/Gru Ène,</affiliation>
+	</byline>
+	
+	<address>Berlin, Germany<lb/></address>
+
+	<byline>
+	<affiliation>2<lb/> DLR, Institut f ur Physik der Atmosph are,</affiliation>
+	</byline>
+
+	<address>Weûling, Germany<lb/></address>
+
+	<docTitle>
+	<titlePart>An Improved Statistical-Dynamical Downscaling Scheme<lb/> and its Application to the Alpine Precipitation Climatology<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>U. Fuentes<lb/> 1<lb/> and D. Heimann<lb/> 2<lb/></docAuthor>
+	</byline>
+
+	<note type="other">With 12 Figures<lb/></note>
+	
+	<note type="submission">Received April 8, 1999<lb/> Revised July 30, 1999<lb/></note>
+
+	<div type="abstract">Summary<lb/> An improved statistical-dynamical downscaling method for<lb/> the regionalization of large-scale climate analyses or<lb/> simulations is introduced. The method is based on the<lb/> disaggregation of a multi-year time-series of large-scale<lb/> meteorological data into multi-day episodes of quasi-<lb/>stationary circulation. The episodes are subsequently<lb/> grouped into a de®ned number of classes. A regional<lb/> model is used to simulate the evolution of weather during<lb/> the most typical episode of each class. These simulations<lb/> consider the effects of the regional topography. Finally, the<lb/> regional model results are statistically weighted with the<lb/> climatological frequencies of the respective circulation<lb/> classes in order to provide regional climate patterns.<lb/> The statistical-dynamical downscaling procedure is<lb/> applied to large-scale analyses for a 12-year climate period<lb/> 1981±1992. The performance of the new method is<lb/> demonstrated for winter precipitation in the Alpine region.<lb/> With the help of daily precipitation analyses it was possible<lb/> to validate the results and to assess the different sources of<lb/> errors. It appeared that the main error originates from the<lb/> regional model, whereas the error of the procedure itself<lb/> was relatively unimportant.<lb/> This new statistical-dynamical downscaling method<lb/> turned out to be an ef®cient alternative to the commonly<lb/> used method of nesting a regional model continuously<lb/> within a general circulation model (dynamical down-<lb/>scaling).<lb/></div>
+
+		</front>
+	</text>
+</tei>

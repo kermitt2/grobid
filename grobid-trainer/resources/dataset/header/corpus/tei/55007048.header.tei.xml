@@ -1,0 +1,89 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007048"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Full text provided by </note>
+
+	<ptr>www.sciencedirect.com<lb/></ptr>
+
+	<docTitle>
+	<titlePart>Translocator protein (18 kDa): new<lb/> nomenclature for the peripheral-type<lb/> benzodiazepine receptor based on its<lb/> structure and molecular function<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Vassilios Papadopoulos<lb/> 1 , Mario Baraldi<lb/> 2 , Tomá s R. Guilarte<lb/> 3<lb/> , Thomas B. Knudsen<lb/> 4<lb/> , Jean-Jacques Lacapè re<lb/> 5 , Peter Lindemann<lb/> 6<lb/> , Michael D. Norenberg<lb/> 7<lb/> , David Nutt<lb/> 8<lb/> , Abraham Weizman<lb/> 9 , Ming-Rong Zhang<lb/> 10 and Moshe Gavish<lb/> 11<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Department of Biochemistry and Molecular Biology, Georgetown University Medical Center,</affiliation>
+	</byline>
+
+	<address>Washington, DC 20057, USA<lb/></address>
+
+	<byline>
+	<affiliation>2 Department of Pharmaceutical Sciences, University of Modena and Reggio Emilia,</affiliation>
+	</byline>
+
+	<address>Modena 183 4100, Italy<lb/></address>
+
+	<byline>
+	<affiliation>3 Department of Environmental Health Sciences, Johns Hopkins University, Bloomberg School of Public Health,</affiliation>
+	</byline>
+
+	<address>Baltimore,<lb/> MD 21205, USA<lb/></address>
+
+	<byline>
+	<affiliation>4 Department of Molecular, Cellular and Craniofacial Biology, University of Louisville School of Dentistry,</affiliation>
+	</byline>
+
+	<address>Louisville, KY 40202, USA<lb/></address>
+
+	<byline>
+	<affiliation>5 U683 INSERM, Faculté de Mé decine X. Bichat,</affiliation>
+	</byline>
+
+	<address>Paris 75870, France<lb/></address>
+
+	<byline>
+	<affiliation>6 Institut fur Pharmazeutische Biologie, Martin-Luther Universitat Halle-Wittenberg,</affiliation>
+	</byline>
+
+	<address>Halle D6120, Germany<lb/></address>
+
+	<byline>
+	<affiliation>7 Department of Pathology, University of Miami School of Medicine, Miami Veterans Affairs Medical Center,</affiliation>
+	</byline>
+
+	<address>Miami, FL 33136, USA<lb/></address>
+
+	<byline>
+	<affiliation>8 Psychopharmacology Unit, University of Bristol,</affiliation>
+	</byline>
+
+	<address>Bristol BS1 3NY, UK<lb/></address>
+
+	<byline>
+	<affiliation>9 Research Unit, Geha Mental Health Center, Felsenstein Medical Research Center, Sackler Faculty of Medicine, Tel Aviv University,<lb/></affiliation>
+	</byline>
+
+	<address>Petah Tiqva, Israel 49100<lb/></address>
+
+	<byline>
+	<affiliation>10 Department of Medical Imaging, National Institute of Radiological Sciences,</affiliation>
+	</byline>
+
+	<address>Anagawa, Chiba 263 8555, Japan<lb/></address>
+
+	<byline>
+	<affiliation>11 Department of Pharmacology, Bruce Rappaport Family Institute for Research in the Medical Sciences,</affiliation>
+	</byline>
+
+	<address>Haifa, Israel 31096<lb/></address>
+
+		</front>
+	</text>
+</tei>

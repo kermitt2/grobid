@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004166"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Stuck in traffic?<lb/></titlePart>
+	</docTitle>
+
+	<date>2/28/2007 </date>
+	
+	<note type="other">09:01:00</note>
+
+		</front>
+	</text>
+</tei>

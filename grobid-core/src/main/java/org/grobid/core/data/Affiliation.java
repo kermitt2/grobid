@@ -46,7 +46,6 @@ public class Affiliation {
         departments = aff.getDepartments();
         institutions = aff.getInstitutions();
         laboratories = aff.getLaboratories();
-        country = aff.getCountry();
         postCode = aff.getPostCode();
         postBox = aff.getPostBox();
         region = aff.getRegion();
@@ -317,6 +316,10 @@ public class Affiliation {
 
         if (country != null) {
             country = TextUtilities.cleanField(country, true);
+			if (country.endsWith(")")) {
+				// for some reason the ) at the end of this field is not removed
+				country = country.substring(0,country.length()-1);
+			}
             if (country.length() < 2)
                 country = null;
         }

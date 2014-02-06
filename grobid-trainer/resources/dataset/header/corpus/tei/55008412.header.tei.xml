@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008412"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Scamp: Peer-to-Peer Lightweight Membership<lb/> Service for Large-Scale Group Communication<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Ayalvadi J. Ganesh, Anne-Marie Kermarrec, and Laurent Massoulié<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Microsoft Research Ltd.,</affiliation>
+	</byline>
+
+	<address>7JJ Thomson Avenue, Cambridge CB3 0FB, UK<lb/></address>
+
+	<email>{ajg,annemk,lmassoul}@microsoft.com<lb/></email>
+
+	<div type="abstract">Abstract. Gossip-based protocols have received considerable attention<lb/> for broadcast applications due to their attractive scalability and relia-<lb/>bility properties. The reliability of probabilistic gossip schemes studied<lb/> so far depends on each user having knowledge of the global membership<lb/> and choosing gossip targets uniformly at random. The requirement of<lb/> global knowledge is undesirable in large-scale distributed systems.<lb/> In this paper, we present a novel peer-to-peer membership service which<lb/> operates in a completely decentralized manner in that nobody has global<lb/> knowledge of membership. However, membership information is repli-<lb/>cated robustly enough to support gossip with high reliability. Our scheme<lb/> is completely self-organizing in the sense that the size of local views natu-<lb/>rally converges to the &apos;right&apos; value for gossip to succeed. This &apos;right&apos; value<lb/> is a function of system size, but is achieved without any node having to<lb/> know the system size. We present the design, theoretical analysis and<lb/> preliminary evaluation of Scamp. Simulations show that its performance<lb/> is comparable to that of previous schemes which use global knowledge of<lb/> membership at each node.<lb/></div>
+
+	<keyword>Keywords: Scalability, reliability, peer-to-peer, gossip-based probabilis-<lb/>tic multicast, membership, group communication, random graphs.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

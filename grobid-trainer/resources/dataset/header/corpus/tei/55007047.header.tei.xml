@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007047"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">1<lb/></note>
+
+	<docTitle>
+	<titlePart>ADVANCED MICROTURBINE SYSTEMS<lb/> Final Report for Tasks 1 Through 4 and Task 6<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>T. Rosfjord, Program Manager<lb/> W. Tredway, Deputy Program Manager<lb/> A. Chen, J. Mulugeta, and T. Bhatia<lb/>
+	</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>United Technologies Research Center<lb/></affiliation>
+	</byline>
+
+	<address>East Hartford, CT 06118<lb/></address>
+
+	<date>March 26, 2007<lb/></date>
+
+	<byline>
+	<affiliation>Prepared for<lb/> The U.S. Department of Energy, Office of Distributed Energy<lb/></affiliation>
+	</byline>
+
+	<note type="grant">Award No. DE-FC26-00CH11060<lb/> </note>
+
+	<idno>Report Number DOE/CH/11060-1</idno>
+
+		</front>
+	</text>
+</tei>

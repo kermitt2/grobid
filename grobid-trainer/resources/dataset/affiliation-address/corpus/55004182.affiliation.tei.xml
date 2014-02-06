@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="laboratory">Global Government Solutions Group</orgName>,
+							<orgName type="institution">Cisco Systems</orgName>,
+							<address>
+								<country>United Kingdom</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>*</marker>
+							<orgName type="institution">NASA Glenn Research Center</orgName>,
+							<address>
+								<settlement>Cleveland</settlement>,
+								<region>Ohio</region>,
+								<country>United States</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>$</marker>
+							<orgName type="institution">Verizon Federal Network Systems</orgName>,
+							<address>
+								<settlement>Cleveland</settlement>,
+								<region>Ohio</region>,
+								<country>United States</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>+</marker>
+							<orgName type="institution">Surrey Satellite Technology Ltd</orgName>,
+							<orgName type="institution">University of Surrey Research Park</orgName>,
+							<address>
+								<settlement>Guildford</settlement>,
+								<country>United Kingdom</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

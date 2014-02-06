@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+ From the
+						<affiliation>
+							<orgName type="department">Department of Radiofogy</orgName>,
+							<orgName type="institution">The Johns Hopldns<lb/> Medical Institutions</orgName>,
+							<address>
+								<settlement>Battimore</settlement>,
+								<region>MD</region>.
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="laboratory">Address reprint requests to Derek Ney</orgName>,
+							<orgName type="department">Department of<lb/> Radiology</orgName>,
+							<orgName type="institution">The Johns Hopkins Medical lnstitutions</orgName>,
+							<address>
+								<addrLine>600 N<lb/> Wolfe St</addrLine>,
+								<settlement>Baltimore</settlement>,
+								<region>MD</region>
+								<postCode>21205</postCode>.
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

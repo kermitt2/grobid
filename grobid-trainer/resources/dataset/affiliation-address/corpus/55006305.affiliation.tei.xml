@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="institution">&apos; University of Konstanz</orgName>,
+							<orgName type="department">Department of Physics</orgName>,
+							<address>
+								<postCode>78457</postCode>
+								<settlement>Konstanz</settlement>,
+								<country>Germany</country>,
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="institution">SEMILAB Rt.</orgName>,
+							<address>
+								<addrLine>Prielle KomClia U. 2</addrLine>,
+								<postCode>H-1117</postCode>
+								<settlement>Budapest</settlement>,
+								<country>Hungary</country>,
+								<lb/>
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="institution">Budapest University of Technology and Economics</orgName>,
+							<address>
+								<addrLine>Goldmann Gy TCr 3.</addrLine>,
+								<postCode>H-1521</postCode>
+								<settlement>Budapest</settlement>,
+								<country>Hungary</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

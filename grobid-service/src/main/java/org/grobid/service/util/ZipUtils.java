@@ -9,9 +9,26 @@ import java.io.OutputStream;
 import java.util.Enumeration;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
-
+import java.io.PushbackInputStream;
+import java.util.zip.GZIPInputStream;
 
 public class ZipUtils {
+
+	public static InputStream decompressStream(InputStream input) throws Exception {
+	  	PushbackInputStream pb = new PushbackInputStream( input, 2 ); //we need a pushbackstream to look ahead
+	   	byte [] signature = new byte[2];
+		try {
+	   		pb.read( signature ); //read the signature
+	   		pb.unread( signature ); //push back the signature to the stream
+		}
+		catch(Exception e) {
+			
+		}
+	   	if( signature[ 0 ] == (byte) 0x1f && signature[ 1 ] == (byte) 0x8b ) //check if matches standard gzip maguc number
+	     	return new GZIPInputStream( pb );
+	   	else 
+	      	return pb;
+	}
 
 	public static final void copyInputStream(InputStream in, OutputStream out)
 			throws IOException {

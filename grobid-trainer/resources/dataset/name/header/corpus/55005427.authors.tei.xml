@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>X</forename>.
+								<surname>Desurmont</surname>
+								<marker>a</marker> ,
+							</persName>
+							<persName>
+								<forename>R</forename>.
+								<surname>Sebbe</surname>
+								<marker>b</marker> ,
+							</persName>
+							<persName>
+								<forename>F</forename>.
+								<surname>Martin</surname>
+								<marker>a</marker> ,
+							</persName>
+							<persName>
+								<forename>C</forename>.
+								<surname>Machy</surname>
+								<marker>a</marker> ,
+							</persName>
+							<persName>
+								<forename>J-F</forename>.
+								<surname>Delaigle</surname>
+								<marker>a</marker> a
+							</persName>
+							
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

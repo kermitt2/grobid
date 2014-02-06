@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007218"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	
+	<docTitle>
+	<titlePart>Oracle® Fusion Middleware<lb/> User&apos;s Guide for Oracle MapViewer<lb/>11g Release 1 (11.1.1)<lb/> </titlePart>
+	</docTitle>
+	
+	<idno>E10145-02<lb/></idno>
+
+	<date>June 2009<lb/></date>
+
+	<div type="abstract">Describes how to use Oracle MapViewer, a tool that renders<lb/> maps showing different kinds of spatial data.</div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005451"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>FOLIA VETERINARIA, 52, 2: 109-112.2008<lb/></reference>
+
+	<ptr type="web">www.uvm.sk<lb/></ptr>
+
+	<docTitle>
+	<titlePart>EFFECT OF WHEAT PROTEIN -SEITAN, COLOURED BY<lb/> MICROBIAL NATURAL PIGMENT OF Monascas parpareus ON THE ORGANOLEPTIC<lb/> CHARACTERS OF POULTRY MEAT PRODUCTS<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Baranovi, M., Malh, P., Marcindikovi,<lb/> Burdov6, O., Kremei, J.<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University of Veterinary Medicine,</affiliation>
+	</byline>
+
+	<address>Komensk6ho 73, 047<lb/> The Slovak Republic<lb/></address>
+
+	<email>baranova@uvm.sk<lb/></email>
+
+	<address>D.<lb/> 81 Ko3ice<lb/></address>
+
+	<div type="abstract">ABSTRACT<lb/> The present times of scientific development include new<lb/> trends in the manufacture and processing of food. In an effort<lb/> to offer a new healthy product to consumer, we used wheat<lb/> protein -seitan, for the production of mosaic poultry salami.<lb/> Seitan, coloured by microbial natural pigment of Monascus pur-<lb/>pweus is rich in proteins, iloes not contain fat and cholesterol<lb/> and can replace part of the meat of products. Microbial natural<lb/> pigment of Monascas parpureus (type Moguntia, International<lb/> AG, Europa, the absence of Citrinin was controlled by HPLC<lb/> analysis) as a powder of Rerl Yeast Rice was applied to colour<lb/> -seitan. The average values of tested organoleptic parameters<lb/> of the manufactured poultry products two days after production<lb/> resulted in a positive influence (P&lt;0.05) when a part of the<lb/> meat was replaced by seitan, coloured by Red Yeast Rice. The<lb/> seitan, colouted by Red Yeast Rice fitted well into the whole and<lb/> positively affected the general look of the product, also provided<lb/> a special taste and improved the consistency of the product.<lb/></div>
+
+	<keyword>Key words: Monascus parpurcus; poultry salami; Red Yeast<lb/> Rice; seitan; wheat proteins<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

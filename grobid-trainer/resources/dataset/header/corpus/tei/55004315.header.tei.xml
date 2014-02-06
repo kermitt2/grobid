@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004315"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Resilient Network Interconnect<lb/> Functionalities<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>János Farkas</docAuthor>
+	</byline>
+
+		</front>
+	</text>
+</tei>

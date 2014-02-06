@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007943"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Security-Enhanced Linux<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">From Wikipedia, the free encyclopedia<lb/> This is an old revision of this page, as edited by Spoon! (talk | contribs) at 04:57, 27 October 2005.<lb/> It may differ significantly from the current revision (http://en.wikipedia.org/wiki/Security-<lb/>Enhanced_Linux) .<lb/> (diff) ← Previous revision | Latest revision (diff) | Newer revision → (diff)<lb/></note>
+
+	<div type="introduction">Security-Enhanced Linux (SELinux) is a version of the Linux kernel and utilities, which contains support<lb/> for mandatory access controls based on the principle of least privilege. It is not a Linux distribution, but<lb/> rather a set of modifications that can be applied to Linux operating systems and some non-Linux systems<lb/> like BSD.<lb/>Primarily developed by the US National Security Agency (NSA), it was released to the open source<lb/> development community. Other significant contributors include Network Associates, Secure Computing<lb/> Corporation, and Tresys. Experimental ports of the FLASK/TE implementation have been made available<lb/> via the TrustedBSD Project for the FreeBSD and Darwin operating systems.<lb/> From NSA Security-enhanced Linux Team (http://www.nsa.gov/selinux/) :<lb/>&quot;NSA Security-enhanced Linux is a set of patches to the Linux kernel and some utilities to incorporate a<lb/> strong, flexible mandatory access control (MAC) architecture into the major subsystems of the kernel. It<lb/> provides a mechanism to enforce the separation of information based on confidentiality and integrity<lb/> requirements, which allows threats of tampering and bypassing of application security mechanisms to be<lb/> addressed and enables the confinement of damage that can be caused by malicious or flawed<lb/> applications. It includes a set of sample security policy configuration files designed to meet common,<lb/> general-purpose security goals.&quot;<lb/> Security-enhanced Linux is a research prototype of the Linux kernel and a number of utilities designed to<lb/> demonstrate the value of mandatory access controls to the Linux community and how such controls could be<lb/> added to Linux. The prototype kernel contains architectural components originally developed to improve the<lb/> security of the Flask operating system. These provide general support for enforcing many kinds of<lb/> mandatory access control policies, including those based on the concepts of type enforcement, role-based<lb/> access control, and multi-level security. Observers of operating system security research may recall DTOS, a<lb/> Mach-derived Distributed Trusted Operating System, on which Flask was based, as well as Trusted Mach, a<lb/> research project from Trusted Information Systems that was influential in the design and implementation of<lb/> DTOS. Those interested in Type Enforcement may also be interested in Domain and Type Enforcement.<lb/> The SE Linux kernel enforces mandatory access control policies that confine user programs and system<lb/> servers to the minimum amount of privilege they require to do their jobs. This reduces or eliminates the<lb/> ability of these programs and daemons to cause harm when compromised (via buffer overflows or<lb/> misconfigurations, for example). This confinement mechanism operates independently of the traditional<lb/> Linux access control mechanisms. It has no concept of a &quot;root&quot; super-user, and does not share the<lb/> well-known shortcomings of the traditional Linux security mechanisms (such as a dependence on<lb/> setuid/setgid binaries).<lb/> The security of an unmodified Linux system depends on the correctness of the kernel, all the privileged<lb/> applications, and each of their configurations. A problem in any one of these areas may allow the<lb/> compromise of the entire system. In contrast, the security of a modified system based on the security-<lb/>enhanced Linux kernel depends primarily on the correctness of the kernel and its security policy<lb/> configuration. While problems with the correctness or configuration of applications may allow the limited<lb/> compromise of individual user programs and system daemons, they do not pose a threat to the security of<lb/> other user programs and system daemons or to the security of the system as a whole. SELinux merged with<lb/> the 2.6 series Linux Kernel.<lb/></div>
+
+	<note type="other">Security-Enhanced Linux -Wikipedia, the free encyclopedia<lb/></note>
+
+	<ptr type="web">http://en.wikipedia.org/w/index.php?title=Security-Enhanced_Linux&amp;ol...<lb/></ptr>
+
+	<note type="page">1 of 3<lb/></note>
+
+	<date>23-09-2011 </date>
+	
+	<note type="other">14:04<lb/></note>
+
+		</front>
+	</text>
+</tei>

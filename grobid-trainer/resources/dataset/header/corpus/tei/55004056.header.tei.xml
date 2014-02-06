@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004056"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Assessing optimized MR flow quantification sequences for different levels of flow encoding:<lb/> Preliminary Results<lb/> </titlePart>
+	</docTitle>
+	
+	<byline>
+	<docAuthor>M. S. Nair1&apos;3, J. L. Duerk1&apos;2, S. E. Rittgers3<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>&apos;Department of Radiology and 2Biomedical Engineering, University Hospitals of Cleveland, Case Western Reserve<lb/> University,</affiliation>
+	</byline>
+
+	<address>Cleveland, Ohio, USA;</address>
+
+	<byline>
+	<affiliation>3Department of Biomedical Engineering, The University of Akron,</affiliation>
+	</byline>
+
+	<address>Akron, Ohio, USA.<lb/></address>
+
+	<div type="introduction">Introduction A number of studies have reviewed the effects of higher order<lb/> derivatives of motion such as acceleration [1], differences in<lb/> encoding times [2,3], and errors due to increasing velocity<lb/> sensitivity [4] as contributing to the inaccuracies in MR derived<lb/> velocity measurements. These errors have in part compromised<lb/> the effectiveness of MR flow quantification techniques as a<lb/> clinical tool compared to ultrasound. One of the approaches that<lb/> can be used to rectify these errors is through pulse sequence<lb/> design in general, and optimized gradient waveform design in<lb/> specific.<lb/> Objective Our objective was to compare the velocity estimates obtained<lb/> using optimized gradient waveforms which 1) compensated<lb/> higher order motion moments such as acceleration, 2) encoded<lb/> both the spatial position and the velocity at the point of expansion<lb/> (POE), and 3) mapped velocities at different levels of flow<lb/> encodings (30°, 60° , 90° and 180°), to a known calibrated<lb/> physiological flow system.<lb/> Methods Gradient waveforms: Arbitrarily shaped gradient waveforms were<lb/> designed in Matlab (The Mathworks Inc., Natick, MA) using the<lb/> Gill-Murray-Wright algorithm for constrained quadratic<lb/> programming [5,6]. The designed gradient waveforms were<lb/> acceleration compensated, had identical POE to account for both<lb/> spatial and velocity misregistration artifacts, and had different<lb/> levels of flow encoding to interrogate effects of errors due to<lb/> increasing velocity sensitivity. The optimization constraints were<lb/> those imposed by the software and hardware limitations of the<lb/> MR system.</div>
+
+		</front>
+	</text>
+</tei>

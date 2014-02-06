@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55006953"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Pilot Scale Testing of Swellable Organo-<lb/>Silica-Nanoparticle Composite Materials<lb/> for the in situ and ex situ Remediation of<lb/> Groundwater Contaminated with<lb/> Chlorinated Organics<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Paul L. Edmiston, Ph.D.<lb/> Associate Professor of Chemistry<lb/> </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>College of Wooster<lb/> Research Fellow<lb/> Georgia Tech Research Institute<lb/></affiliation>
+	</byline>
+
+		</front>
+	</text>
+</tei>

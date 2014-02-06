@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005324"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>An extended abstract of this paper appears in Advances in Cryptology — ASIACRYPT &apos;06,<lb/> Lecture Notes in Computer Science Vol. 4284, Xuejia Lai ed., Springer-Verlag, 2006. This is<lb/> the full version.<lb/></reference>
+
+	<docTitle>
+	<titlePart>On the Generic Construction of Identity-Based Signatures with<lb/> Additional Properties<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>David Galindo<lb/> 1<lb/> Javier Herranz<lb/> 2<lb/> Eike Kiltz<lb/> 3<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 University of Luxembourg,<lb/></affiliation>
+	</byline>
+
+	<address>Luxembourg City, Luxembourg<lb/></address>
+
+	<email>david.galindo@uni.lu<lb/></email>
+
+	<ptr type="web">http://www.dgalindo.es/<lb/></ptr>
+
+	<byline>
+	<affiliation>2 IIIA-CSIC<lb/></affiliation>
+	</byline>
+
+	<address>Bellaterra, Spain<lb/></address>
+
+	<email>jherranz@iiia.csic.es<lb/></email>
+
+	<ptr type="web">http://www.iiia.csic.es/ ∼ jherranz/<lb/></ptr>
+
+	<byline>
+	<affiliation>3 CWI Amsterdam<lb/></affiliation>
+	</byline>
+
+	<address>The Netherlands<lb/></address>
+
+	<email>kiltz@cwi.nl<lb/></email>
+
+	<ptr type="web">http://kiltz.net<lb/></ptr>
+
+	<div type="abstract">Abstract It has been demonstrated by Bellare, Neven, and Namprempre (Eurocrypt 2004) that<lb/> identity-based signature schemes can be generically constructed from standard digital sig-<lb/>nature schemes. In this paper we consider the following natural extension: is there a<lb/> generic construction of &quot;identity-based signature schemes with additional properties&quot; (such<lb/> as identity-based blind signatures, verifiably encrypted signatures, ...) from standard signa-<lb/>ture schemes with the same properties? Our results show that this is possible for a number<lb/> of properties including proxy signatures; (partially) blind signatures; verifiably encrypted<lb/> signatures; undeniable signatures; forward-secure signatures; (strongly) key insulated signa-<lb/>tures; online/offline signatures; threshold signatures; and (with some limitations) aggregate<lb/> signatures.<lb/> Using well-known results for standard signature schemes, we conclude that explicit identity-<lb/>based signature schemes with additional properties can be constructed, enjoying sometimes<lb/> better properties than specific schemes proposed until know. In particular, our work implies<lb/> the existence of identity-based signatures with additional properties that are provably secure<lb/> in the standard model, do not need bilinear pairings, or can be based on general assumptions.<lb/></div>
+
+	<keyword>Keywords: Signatures with Additional Properties, Identity-Based Cryptography.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

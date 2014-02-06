@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004084"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Opening and thinning of multiwall carbon nanotubes in<lb/> supercritical water<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Jia-Yaw Chang, Anil Ghule, Jia-Jiu Chang, Shin-Hwa Tzing, Yong-Chien Ling *<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Chemistry, National Tsing Hua University,</affiliation>
+	</byline>
+
+	<address>Hsinchu 30043, Taiwan, ROC<lb/></address>
+
+	<note type="submission">Received 13 June 2002; in final form 8 July 2002<lb/></note>
+
+	<div type="abstract">Abstract<lb/> Supercritical water (SCW) in the presence and absence of oxygen is used for the first time for the opening and<lb/> thinning of multiwall carbon nanotubes (MWNTs). The influence of variation of pressure, temperature, and time on the<lb/> opening and thinning of MWNTs is examined. In SCW, opening and thinning of MWNTs is observed both in the<lb/> presence and absence of oxygen. In addition, the presence of oxygen ($2 mmol) shows improved thinning of MWNTs<lb/> with the collapsed outer graphene layers tending towards the inner layers. The morphology of MWNTs are critically<lb/> analyzed using transmission electron micrographs (TEM) and Raman spectra. </div>
+	<note type="copyright">&#169; 2002 Elsevier Science B.V. All rights<lb/> reserved.<lb/></note>
+
+		</front>
+	</text>
+</tei>

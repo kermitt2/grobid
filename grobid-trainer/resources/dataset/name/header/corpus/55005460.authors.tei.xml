@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>B</forename>.
+								<surname>Perot</surname>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>C</forename>.
+								<surname>Carasco</surname>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>R</forename>.
+								<surname>Vogler</surname>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>E</forename>.
+								<surname>Cusset</surname>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>J.-L</forename>.
+								<surname>Ma</surname>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>P</forename>.
+								<surname>Pras</surname>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>M</forename>.
+								<surname>Gmar</surname>
+								<marker>3</marker> ,
+							</persName>
+							<persName>
+								<forename>G</forename>.
+								<surname>Sannie</surname>
+								<marker>3</marker> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>S</forename>.
+								<surname>Normand</surname>
+								<marker>3</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

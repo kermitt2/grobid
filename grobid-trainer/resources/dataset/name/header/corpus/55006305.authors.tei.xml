@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>E</forename>.
+								<surname>Riiland&apos;</surname>,
+							</persName>
+							<persName>
+								<forename>P</forename>.
+								<surname>Fath&apos;</surname>,
+							</persName>
+							<persName>
+								<forename>T</forename>.
+								<surname>Pavelka2</surname>,
+							</persName>
+							<persName>
+								<forename>A</forename>.
+								<surname>Pap2</surname>,
+							</persName>
+							<persName>
+								<forename>K</forename>.
+								<surname>Peter&apos;</surname>,
+							</persName>
+							<persName>
+								<forename>J</forename>.
+								<surname>Mizsei3</surname>,
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008250"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Journal f. prakt. Chemie. Band 327, Heft 6, 1983, S. 871-877<lb/></reference>
+
+	<byline>
+	<docAuthor>J . A. Barth, </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Leipzig<lb/></affiliation>
+	</byline>
+
+	<docTitle>
+	<titlePart>Zur Struktur und dem Komplexbildungsverhalten<lb/> von 7-[I -(Aniline)-I -(aryl)-methyl]-chinolin-8-olen<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>G. ROBISCII*, A. REJJICHA<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Sektion Chemie/Biologie dcr Padagogischen Hochschule ,,Karl Liebknecht&quot;,</affiliation>
+	</byline>
+
+	<address>Potsdam<lb/></address>
+
+	<byline>
+	<docAuthor>H. KijPPEL<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Sektion Chemie der Humboldt-Universitat zu Berlin<lb/></affiliation>
+	</byline>
+
+	<byline>
+	<docAuthor>S. KULPE<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Zentralinstitut fur physikalische Chemie der Akademie der Wissmschaften der DDR, Berlin<lb/></affiliation>
+	</byline>
+
+	<div type="abstract">On the Structure of 7-[ I-(Ani1ino)-1-(aryl)-methyl] -quinolin-8-oles<lb/> and Their Behaviour in Forming of Complexes<lb/> Substanzen vom 7-[ l-(Anilino)-l-(aryl)-methyl]-chinolin-8-ol-Typ 1-4 sind leicht durch Mmnich-<lb/>Reaktion darstellbar. cber ihre Reaktivitat gegenuber Metallionen in Losung sowie ihr Vrrhnlten<lb/> bei der Flussig-Fliissig-Extraktion ist vor kurzrm bericlitet worden [I].<lb/></div>
+
+		</front>
+	</text>
+</tei>

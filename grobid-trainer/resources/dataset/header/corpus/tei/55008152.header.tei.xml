@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008152"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">To be published in MobiCom 97 and Wireless Networks Journal<lb/> 1<lb/></note>
+
+	<docTitle>
+	<titlePart>A PUBLIC-KEY BASED SECURE MOBILE IP<lb/> 1<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>John Zao, Stephen Kent, Joshua Gahm, Gregory Troxel, Matthew Condell, Pam Helinek, Nina Yuan, and Isidro Castineyra<lb/></docAuthor>
+	</byline>
+
+	<note type="grant">1 This work reported in this paper was sponsored by Defense Advanced Research Project Agency (DARPA) and Air Force Material<lb/> Command (AFMC) of the Department of Defense under contract number F19628-95-C-0150.<lb/></note>
+
+	<div type="abstract">Abstract<lb/> The need for scalable key management<lb/> support for Mobile IP – especially, the route-optimized Mobile<lb/> IP – is well known. In this paper, we present the design and the<lb/> first implementation of a public key management system that can<lb/> be used with IETF Mobile IP. The system, called the Mobile IP<lb/> Security (MoIPS) system, was built upon a DNS based X.509<lb/> Public Key Infrastructure with innovation in certificate and CRL<lb/> dispatch as well as light-weight key generation. The system can<lb/> be used to supply key parameters for authenticating Mobile IPv.4<lb/> location management messages and to establish IPSec tunnels for<lb/> Mobile IP redirected packets. It can also be used to augment<lb/> emerging firewall traversal techniques for Mobile IP. A FreeBSD<lb/> UNIX prototype with core functionality was completed at the time<lb/> this paper was published.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55006318"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Int. J. Electrochem. Sci., 2 (2007) 355 -385<lb/></reference>
+
+	<ptr type="web">www.electrochemsci.org<lb/></ptr>
+
+	<note type="other">Review<lb/></note>
+
+	<docTitle>
+	<titlePart>Doped Diamond: A Compact Review on a New, Versatile<lb/> Electrode Material<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Alexander Kraft<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Gesimat GmbH,</affiliation>
+	</byline>
+
+	<address>Koepenicker Str. 325, 12555 Berlin, Germany<lb/></address>
+
+	<note type="other">*<lb/></note>
+
+	<email>E-mail: alexander.kraft@gesimat.de<lb/></email>
+
+	<note type="submission">Received: 27 February 2007 / Accepted: 14 April 2007 /</note>
+
+	<date type="publication">Published: 1 May 2007<lb/></date>
+
+	<div type="abstract">The present paper gives an overview on the current development status of doped-diamond electrodes<lb/> for electrochemical applications. It starts with a short discussion on the different types of diamond<lb/> electrodes and their preparation methods. This is followed by a summary of the electrochemical<lb/> properties of diamond electrodes in different electrolytes. Modification strategies for doped-diamond<lb/> electrodes are discussed as an important technology to change their electrochemical properties. The<lb/> second part of the paper deals with practical applications of diamond electrodes from water treatment<lb/> to inorganic and organic electrosynthesis, electroanalysis and electrochemical energy technology to<lb/> biotechnology.<lb/></div>
+
+	<keyword>Keywords: Diamond electrodes, boron-doped diamond<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

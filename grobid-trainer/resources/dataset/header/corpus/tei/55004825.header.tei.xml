@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004825"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Vision-based Pedestrian<lb/> Detection System for use in Smart Cars<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>FREDRIK ARNELL<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<note type="other">Master&apos;s Degree Project<lb/></note>
+	</byline>
+
+	<address>Stockholm, Sweden </address>
+	
+	<date>2005<lb/></date>
+
+	<idno>TRITA-NA-E05077</idno>
+
+		</front>
+	</text>
+</tei>

@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.StringTokenizer;
 import java.util.concurrent.TimeoutException;
 
+import org.chasen.crfpp.Tagger;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.data.BiblioItem;
 import org.grobid.core.data.Date;
@@ -94,18 +95,8 @@ public class HeaderParser extends AbstractParser {
 
 			StringTokenizer st = new StringTokenizer(header, "\n");
 
-			feedTaggerAndParse(st);
-
-			StringBuilder res = new StringBuilder();
-			for (int i = 0; i < tagger.size(); i++) {
-				for (int j = 0; j < tagger.xsize(); j++) {
-					res.append(tagger.x(i, j)).append("\t");
-				}
-				res.append(tagger.y2(i));
-				res.append("\n");
-			}
-
-			resHeader = resultExtraction(res.toString(), true, tokenizations, resHeader);
+            String res = getTaggerResult(st);
+			resHeader = resultExtraction(res, true, tokenizations, resHeader);
 
 			// LanguageUtilities languageUtilities =
 			// LanguageUtilities.getInstance();
@@ -163,7 +154,7 @@ public class HeaderParser extends AbstractParser {
 								if (pers.getMarkers() != null) {
 									hasMarker = true;
 								}
-								authorsBlocks.add(new Integer(k));
+								authorsBlocks.add(k);
 							}
 						}
 					}
@@ -172,7 +163,7 @@ public class HeaderParser extends AbstractParser {
 				if (affiliationAddressParser == null) {
 					affiliationAddressParser = new AffiliationAddressParser();
 				}
-				resHeader.setFullAffiliations(affiliationAddressParser.processReflow(res.toString(), tokenizations));
+				resHeader.setFullAffiliations(affiliationAddressParser.processReflow(res, tokenizations));
 				resHeader.attachEmails();
 				boolean attached = false;
 				if (fragmentedAuthors && !hasMarker) {
@@ -182,7 +173,7 @@ public class HeaderParser extends AbstractParser {
 								int k = 0;
 								for (Person pers : resHeader.getFullAuthors()) {
 									if (k < authorsBlocks.size()) {
-										int indd = authorsBlocks.get(k).intValue();
+										int indd = authorsBlocks.get(k);
 										if (indd < resHeader.getFullAffiliations().size()) {
 											pers.addAffiliation(resHeader.getFullAffiliations().get(indd));
 										}
@@ -325,7 +316,7 @@ public class HeaderParser extends AbstractParser {
 			writer.close();
 
 			// clear internal context
-			tagger.clear();
+			Tagger tagger = getNewTagger();
 
 			// add context
 			StringTokenizer st = new StringTokenizer(header, "\n");
@@ -349,6 +340,7 @@ public class HeaderParser extends AbstractParser {
 				res.append(tagger.y2(i));
 				res.append("\n");
 			}
+            tagger.delete();
 
 			// buffer for the header block
 			String rese = res.toString();

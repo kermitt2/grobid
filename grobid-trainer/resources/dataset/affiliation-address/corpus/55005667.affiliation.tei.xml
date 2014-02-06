@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+ -
+						<affiliation>
+							<orgName type="department">Department of Molecular<lb/> and Structural Biology</orgName>,
+							<lb/>
+							<orgName type="institution">Aarhus University</orgName>,
+							<address>
+								<addrLine>Gustav Wieds Vej lOC</addrLine>,
+								<postCode>DK-8000</postCode>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>*</marker>
+							<orgName type="department">Department of Clinical Microbiology</orgName>,
+							<orgName type="institution">Aalborg<lb/> Hospital</orgName>,
+							<address>
+								<settlement>Aalborg</settlement>,
+								<country>Denmark</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

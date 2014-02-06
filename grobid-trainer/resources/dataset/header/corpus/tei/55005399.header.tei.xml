@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55005399"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Morphology of Core-Shell Latex Particles<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>S. MUROI, H. HASHIMOTO, and K. HOSOI,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Coating Materials<lb/> Laboratory, Asahi Chemical Industry Co. , Ltd.,</affiliation>
+	</byline>
+
+	<address>Shizuoka, Japan<lb/></address>
+
+	<div type="abstract">Synopsis<lb/> The progressive dissolution of carboxylated latex particles with increasing pH was utilized to in-<lb/>vestigate the internal structure of core-shell latex particles, in comparison with that of copolymeric<lb/> latex particles formed from the same monomers. The results indicated that in those latex particles<lb/> which are formed when ethyl acrylate (EA) -methacrylic acid (MAA) or methyl acrylate (MA) -MAA<lb/> mixture is polymerized in the presence of poly(MA-MAA) or poly(EA-MAA) seeds the shell is<lb/> composed of the more hydrophilic poly(MA-MAA) molecules relatively high in MAA content and<lb/> the core is composed of both poly(MA-MAA) and poly(EA-MAA) molecules, regardless of the order<lb/> of the stage feed, while the copolymeric latex particles are relatively uniform from surface to center<lb/> in distribution of all components except MAA. Examination of the distribution of the carboxylic<lb/> groups in all of the latex particles showed their concentration to be highest a t the surface and to<lb/> decrease with proximity to the center in accordance with other findings reported in the litera-<lb/>ture.<lb/></div>
+
+		</front>
+	</text>
+</tei>

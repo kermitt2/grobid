@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55006631"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">1/2<lb/></note>
+	
+	<byline>
+	<affiliation>AVM GmbH, Communication<lb/></affiliation>
+	</byline>
+	
+	<address>Alt-Moabit 95, 10559 Berlin<lb/> Germany</address>
+	
+	<ptr type="web">www.avm.de, </ptr>
+	
+	<email>press@avm.de<lb/></email>
+	
+	<note type="other">Press office<lb/> Samira Jordan<lb/> </note>
+	
+	<phone>Phone +49 30 39976-645<lb/> </phone>
+	
+	<email>s.jordan@avm.de<lb/></email>
+	
+	<note type="other">Cebit preliminary report: AVM at Cebit 2011 – Hall 13, C48<lb/></note>
+	
+	<docTitle>
+	<titlePart>Cebit premiere: FRITZ!Box for new LTE mobile communication<lb/> technology AVM now offering FRITZ!Box for DSL, cable and LTE<lb/></titlePart>
+	</docTitle>
+	
+	<div type="abstract">@BULLET New FRITZ!Box 6840 LTE for fast broadband access via LTE<lb/> @BULLET AVM focusing on performance features of current broadband routers for LTE<lb/> @BULLET Data throughput of 100 MBit/s or more with FRITZ!Box via LTE, VDSL and cable<lb/> Berlin. At Cebit 2011 (1 – 5 March), AVM is presenting a FRITZ!Box for the new<lb/> LTE mobile communication standard for the first time. In future, the Berlin-based<lb/> communications specialist will therefore be offering separate FRITZ!Box models<lb/> for the important access technologies of VDSL, cable and LTE. Regardless of the<lb/> type of connection, FRITZ!Box is designed for a data throughput of 100 MBit/s or<lb/> more. AVM, the market leader in broadband terminal devices, is focusing on the<lb/> successful FRITZ!Box concept for LTE. All performance features are therefore<lb/> also ready for action round the clock (24/7) in home networks with an LTE<lb/> connection. The new FRITZ!Box 6840 LTE and other trade fair innovations from<lb/></div>
+
+		</front>
+	</text>
+</tei>

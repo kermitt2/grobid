@@ -1,0 +1,66 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55006312"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="copyright">© 2009 Torres et al, publisher and licensee Dove Medical Press Ltd. This is an Open Access article<lb/> which permits unrestricted noncommercial use, provided the original work is properly cited.<lb/></note>
+
+	<reference>Clinical, Cosmetic and Investigational Dermatology 2009:2 39–48<lb/></reference>
+
+	<note type="page">39<lb/> </note>
+	
+	<note type="other">R E V I E W<lb/></note>
+
+	<docTitle>
+	<titlePart>Management of contact dermatitis due to nickel<lb/> allergy: an update<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Fernanda Torres<lb/> 1<lb/> Maria das Graças<lb/> Mota Melo<lb/> 2<lb/> Antonella Tosti<lb/> 3<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Department of Dermatology, Federal<lb/> University of Rio de Janeiro,</affiliation>
+	</byline>
+
+	<address>Rio<lb/> de Janeiro, Brazil;<lb/></address>
+
+	<byline>
+	<affiliation>2 Occupational<lb/> Dermatology Sector, Center for the<lb/> Study of Worker Health and Human<lb/> Ecology, National School of Public<lb/> Health, </affiliation>
+	<address>FIOCRUZ, Rio de Janeiro,<lb/></address>
+	</byline>
+
+	<address>Brazil;<lb/></address>
+
+	<byline>
+	<affiliation>3 Department of Dermatology,<lb/> University of Bologna,</affiliation>
+	</byline>
+
+	<address>Bologna, Italy<lb/></address>
+
+	<note type="other">Correspondence:</note>
+
+	<byline>
+	<docAuthor>Antonella Tosti<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Dermatology, University<lb/> of Bologna,</affiliation>
+	</byline>
+
+	<address>Via Massarenti,1-40138,<lb/> Bologna, Italy<lb/></address>
+
+	<phone>Tel +39 051 6364840<lb/> Fax +39 051 347847<lb/> </phone>
+	
+	<email>Email antonella.tosti@unibo.it<lb/></email>
+
+	<div type="abstract">Abstract: Nickel is the major cause of allergic contact dermatitis in the general population,<lb/> both among children and adults, as well as in large occupational groups. This metal is used in<lb/> numerous industrial and consumer products, including stainless steel, magnets, metal plating,<lb/> coinage, and special alloys, and is therefore almost impossible to completely avoid in daily<lb/> life. Nickel contact dermatitis can represent an important morbidity, particularly in patients<lb/> with chronic hand eczema, which can lead to inability to work, a decrease in quality of life and<lb/> signifi cant healthcare expenses. Therefore, its management is of great importance. This article<lb/> reviews diagnostic, preventive and therapeutic strategies in this fi eld.<lb/></div>
+
+	<keyword>Keywords: allergic contact dermatitis, metals, contact hypersensitivity, occupational exposure,<lb/> children, contact dermatitis<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

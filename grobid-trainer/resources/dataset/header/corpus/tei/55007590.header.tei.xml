@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007590"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Uses of X-Ray Powder<lb/> Diffraction In the<lb/> Pharmaceutical Industry<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Igor Ivanisevic, Richard B. McClurg, and Paul J. Schields<lb/> SSCI,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a Division of Aptuit,</affiliation>
+	</byline>
+
+	<address>West Lafayette, IN<lb/></address>
+
+		</front>
+	</text>
+</tei>

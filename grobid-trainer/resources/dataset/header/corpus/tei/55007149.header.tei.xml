@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007149"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note>REPORTER REPORTER REPORTER<lb/> </note>
+	
+	<note type="other">REPORTER REPORTER<lb/>The The The<lb/> The The<lb/> Volume 20, No. 4, August 2005<lb/> Volume 20, No. 4, August 2005<lb/> Volume 20, No. 4, August 2005<lb/> Volume 20, No. 4, August 2005<lb/> Volume 20, No. 4, August 2005<lb/></note>
+
+	<note type="other">&quot;THE WINDOW ON IMAGING&quot;<lb/> &quot;THE WINDOW ON IMAGING&quot;<lb/> &quot;THE WINDOW ON IMAGING&quot;<lb/> &quot;THE WINDOW ON IMAGING&quot;<lb/> &quot;THE WINDOW ON IMAGING&quot;<lb/> REPORTER REPORTER REPORTER<lb/> REPORTER REPORTER<lb/> </note>
+	
+	<docTitle>
+	<titlePart>Energy Curing in Ink Jet Digital<lb/> Production Printing<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Nigel Caiger and Shaun Herlihy<lb/> </docAuthor>
+	</byline>
+	
+	<byline>
+	<affiliation>SunJet and St. Mary Cray Research, </affiliation>
+	</byline>
+	
+	<address>England<lb/></address>
+	
+
+	<note type="other">This paper was presented at IS&amp;T Archiving 2005 in Washington, DC, April 26-29,2005.<lb/></note>
+
+		</front>
+	</text>
+</tei>

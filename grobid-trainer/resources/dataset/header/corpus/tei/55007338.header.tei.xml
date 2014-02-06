@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007338"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Download manager<lb/> </titlePart>
+	</docTitle>
+	
+	<note type="other">From Wikipedia, the free encyclopedia<lb/></note>
+
+	<note type="other">This is an old revision of this page, as edited by SmackBot (talk | contribs) at 20:16, 29 September<lb/> 2007. It may differ significantly from the current revision (http://en.wikipedia.org<lb/> /wiki/Download_manager) .<lb/> (diff) ← Previous revision | Latest revision (diff) | Newer revision → (diff)<lb/> </note>
+	
+	<div type="abstract">A download manager is a computer program dedicated to the task of downloading (and sometime<lb/> uploading) possibly unrelated stand-alone files from (and sometime to) the Internet for storage. This is unlike<lb/> a World Wide Web browser, which is mainly intended to browse web pages, composed of a multitude of<lb/> smaller files, where error-free moving of files for permanent storage is of secondary importance. (A failed or<lb/> incomplete web page file rarely ruins the page.) The typical download manager at a minimum provides<lb/> means to recover from errors without losing the work already completed, and can optionally split the file to<lb/> be downloaded (or uploaded) into 2 or more segments, which are then moved in parallel, potentially making<lb/> the process faster within the limits of the available bandwidth. (A few servers are known to block moving<lb/> files in parallel segments, on the principle that server capacity should be shared equally by all users.)<lb/> Features<lb/> There are several things that some web browsers are not very good at. That&apos;s where the download managers<lb/> enter the equation:<lb/> Pausing the downloading of large files.<lb/> Resuming broken or paused downloads (especially for very large files).<lb/> Downloading files on poor connections.<lb/> Downloading several files from a site automatically according to simple rules (file types, updated<lb/> files, etc. -see also Offline Browser).<lb/> Automatic recursive downloads (mirroring).<lb/> Scheduled downloads (including, automatic hang-up and shutdown).<lb/> Searching for mirror sites, and the handling of different connections to download the same file<lb/> more quickly (Segmented downloading).<lb/> Download managers are useful for active Internet users. For dial-up users, they can automatically dial the<lb/> internet service provider at night, when rates or tariffs are usually lower, download the specified files, and<lb/> hang-up. They can record which links the user clicks on during the day, and queue these files for later<lb/> download. For broadband users, download managers can help download very large files by resuming broken<lb/> downloads, by limiting the download capacity used, so that the user&apos;s browsing is not affected much and the<lb/> server is not overloaded, or by automatically browsing a site and downloading content specified by user<lb/> (photo galleries, MP3 collections, etc.), including automatically downloading whole sites and regularly<lb/> updating them.</div>
+
+		</front>
+	</text>
+</tei>

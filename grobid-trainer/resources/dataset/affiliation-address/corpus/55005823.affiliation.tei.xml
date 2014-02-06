@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">Department of Crop and<lb/> Soil Sciences</orgName>,
+							<orgName type="institution">Michigan State University</orgName>,
+							<address>
+								<settlement>East<lb/> Lansing</settlement>,
+								<region>MI</region>
+								<postCode>48824</postCode>;
+							</address>
+						</affiliation>
+						<affiliation>	
+							Current address:
+							<orgName type="department">Department of<lb/> Agronomy and Horticulture</orgName>,
+							<orgName type="institution">University of Nebraska</orgName>,
+							<lb/>
+							<address>
+								<addrLine>377I Plant Science</addrLine>, 
+								<settlement>Lincoln</settlement>,
+								<region>NE</region>
+								<postCode>68583-0724</postCode>;
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="department">Department of Crop and Soil Sciences</orgName>,
+							<orgName type="institution">Michigan<lb/> State University</orgName>,
+							<address>
+								<settlement>East Lansing</settlement>,
+								<region>MI</region>
+								<postCode>48824</postCode>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="department">Department of Chemistry</orgName>,
+							<orgName type="institution">Michigan State<lb/> University</orgName>,
+							<address>
+								<settlement>East Lansing</settlement>,
+								<region>MI</region>
+								<postCode>48824</postCode>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

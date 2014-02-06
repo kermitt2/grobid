@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55007406"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>2 nd SEAS DTC Technical Conference -Edinburgh 2007<lb/> </reference>
+	
+	<note type="other">C15<lb/></note>
+
+	<docTitle>
+	<titlePart>Deformation of Ti-36Nb-2Ta-3Zr-0.3O (Gum Metal) and Applications to Morphing<lb/> Wings<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>R. J. Talling, M. Jackson, R. Dashwood, L. Iannucci, D. Dye<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Imperial College London<lb/></affiliation>
+	</byline>
+
+	<address>Exhibition Road, London, SW7 2AZ<lb/></address>
+
+	<div type="abstract">Abstract<lb/> In-situ loading X-ray diffraction experiments were performed on 90% cold worked Ti-36Nb-<lb/>2Ta-3Zr-0.3O (wt. %) alloy (Gum metal). A self-consistent (Eshelby-Kröner-Kneer) model<lb/> was used to infer the single crystal elastic constants from the measured diffraction elastic<lb/> constants. The results show that (C 11 – C 12 ) is ~ 50 GPa and not approaching 0 as predicted<lb/> in this material. This implies that τ max for ideal shear is well above the yield stress of this<lb/> alloy and therefore this material is not vulnerable to perfect shear. In addition, X-ray<lb/> diffraction peak broadening, combined with work hardening during rolling and the<lb/> observation of dislocations in TEM, all suggest that this material does deform with the aid of<lb/> dislocation glide, in contrast to what has previously been reported. Stress-lattice strain<lb/> results indicate that the elastic region is linear at the microscopic level and not non-linear as<lb/> observed macroscopically. Also, elastic moduli of the diffracting planes indicate that this<lb/> material is nearly elastically isotropic. Further work is needed to understand the mechanism<lb/> of formation of the giant faults previously observed during the early stages of plastic<lb/> deformation.<lb/></div>
+
+	<keyword>Keywords: Gum metal, Ti-Nb-Ta-Zr alloys, in-situ synchrotron X-ray diffraction,<lb/> deformation mechanisms, Ti beta alloys, smart material, shape memory composite<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

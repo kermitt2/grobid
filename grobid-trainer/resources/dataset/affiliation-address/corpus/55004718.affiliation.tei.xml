@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">Center for Drug Research</orgName>,
+							<orgName type="department">Department of Pharmacy</orgName>,
+							<orgName type="department">Pharmaceutical Biology-Biotechnology, and Center for NanoScience<lb/> (CeNS)</orgName>,
+							<orgName type="institution">Ludwig-Maximilians-University</orgName>,
+							<address>
+								<addrLine>Butenandstr. 5-13</addrLine>,
+								<postCode>D-81377</postCode>
+								<settlement>Munich</settlement>,
+								<country>Germany</country>.
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

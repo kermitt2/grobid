@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="institution">Public Health Research Institute</orgName>,
+							<address>
+								<settlement>New York</settlement>,
+								<region>New York</region>
+								<postCode>10016</postCode>,
+							</address>
+							<marker>1</marker>
+						</affiliation>	
+						<affiliation>	
+							<orgName type="institution">Institut Pasteur</orgName>,
+							<address>	
+								<postCode>75015</postCode>
+								<settlement>Paris</settlement>,
+								<country>France</country>,
+							</address>
+							<marker>2</marker> and
+						</affiliation>
+						<affiliation>
+							<orgName type="department">Laboratory<lb/> for Experimental Medicine and Surgery in Primates</orgName>,
+							<orgName type="institution">New York University Medical Center</orgName>,
+							<address>
+								<settlement>Tuxedo</settlement>,
+								<region>New York</region>
+								<postCode>109871</postCode>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

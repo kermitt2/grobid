@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55004066"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">1<lb/></note>
+
+	<docTitle>
+	<titlePart>PLL Design Using the PLL Design Assistant Program<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Michael H. Perrott<lb/></docAuthor>
+	</byline>
+
+	<ptr>http://www-mtl.mit.edu/~perrott<lb/></ptr>
+
+	<date>April 2, 2005<lb/></date>
+
+	<note type="copyright">Copyright © 2002-2005 by Michael H. Perrott<lb/> All rights reserved.<lb/></note>
+
+		</front>
+	</text>
+</tei>

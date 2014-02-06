@@ -13,7 +13,7 @@ import org.grobid.core.utilities.GrobidProperties;
 public class TrainerRunner {
 
 	enum RunType {
-		TRAIN, EVAL;
+		TRAIN, EVAL, SPLIT;
 
 		public static RunType getRunType(int i) {
 			for (RunType t : values()) {
@@ -47,21 +47,42 @@ public class TrainerRunner {
 	public static void main(String[] args) {
 		if (args.length < 4) {
 			throw new IllegalStateException(
-					"Usage: {0 - train, 1 - evaluate} {affiliation,chemical,date,citation,ebook,fulltext,header,name-citation,name-header,patent} -pH /path/to/Grobid/home");
+					"Usage: {0 - train, 1 - evaluate, 2 - split, train and evaluate} {affiliation,chemical,date,citation,ebook,fulltext,header,name-citation,name-header,patent} -pH /path/to/Grobid/home -s { [0.0 - 1.0] - split ratio, optional}");
+		}
+
+		RunType mode = RunType.getRunType(Integer.parseInt(args[0]));
+		if ( (mode == RunType.SPLIT) && (args.length < 6) ) {
+			throw new IllegalStateException(
+					"Usage: {0 - train, 1 - evaluate, 2 - split, train and evaluate} {affiliation,chemical,date,citation,ebook,fulltext,header,name-citation,name-header,patent} -pH /path/to/Grobid/home -s { [0.0 - 1.0] - split ratio, optional}");
 		}
 
 		String path2GbdHome = null;
+		Double split = 0.0;
 		for (int i = 0; i < args.length; i++) {
 			if (args[i].equals("-gH")) {
+				if (i+1 == args.length) {
+					throw new IllegalStateException("Missing path to Grobid home. ");
+				}
 				path2GbdHome = args[i + 1];
-				i++;
-				continue;
+			}
+			else if (args[i].equals("-s")) {
+				if (i+1 == args.length) {
+					throw new IllegalStateException("Missing split ratio value. ");
+				}
+				String splitRatio = args[i + 1];
+				try {					
+					split = Double.parseDouble(args[i + 1]);
+				}
+				catch(Exception e) {
+					throw new IllegalStateException("Invalid split value: " + args[i + 1]);
+				}
+				
 			}
 		}
 
 		if (path2GbdHome == null) {
 			throw new IllegalStateException(
-					"Usage: {0 - train, 1 - evaluate} {affiliation,chemical,date,citation,ebook,fulltext,header,name-citation,name-header,patent} -pH /path/to/Grobid/home");
+					"Usage: {0 - train, 1 - evaluate, 2 - split, train and evaluate} {affiliation,chemical,date,citation,ebook,fulltext,header,name-citation,name-header,patent} -pH /path/to/Grobid/home -s { [0.0 - 1.0] - split ratio, optional}");
 		}
 
 		final String path2GbdProperties = path2GbdHome + File.separator + "config" + File.separator + "grobid.properties";
@@ -69,7 +90,6 @@ public class TrainerRunner {
 		System.out.println("path2GbdHome=" + path2GbdHome + "   path2GbdProperties=" + path2GbdProperties);
 		initProcess(path2GbdHome, path2GbdProperties);
 
-		RunType mode = RunType.getRunType(Integer.parseInt(args[0]));
 		String model = args[1];
 
 		AbstractTrainer trainer;
@@ -104,6 +124,9 @@ public class TrainerRunner {
 			break;
 		case EVAL:
 			AbstractTrainer.runEvaluation(trainer);
+			break;
+		case SPLIT:
+			AbstractTrainer.runSplitTrainingEvaluation(trainer, split);
 			break;
 		default:
 			throw new IllegalStateException("Invalid RunType: " + mode.name());

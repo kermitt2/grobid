@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008368"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note>3GPP<lb/>3GPP TSG-RAN WG2 meeting #72bis<lb/> R2- 110084<lb/></note>
+		
+	<address>Dublin, Ireland, </address>
+	
+	<date>Jan. 17 – 21, 2010<lb/></date>
+
+	<note type="other">Source:<lb/> ZTE<lb/> </note>
+	
+	<docTitle>
+	<titlePart>Title:<lb/> UMTS SON ANR Email Discussion Report on ANR open<lb/> issues<lb/></titlePart>
+	</docTitle>
+
+ 	<note>Agenda item: 10.5.1<lb/> Document for: Discussion and Decision<lb/></note>
+
+		</front>
+	</text>
+</tei>

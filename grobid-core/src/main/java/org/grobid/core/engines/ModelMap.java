@@ -69,7 +69,13 @@ public class ModelMap {
 		}
 		LOGGER.info("Models loaded");
 	}
-	
+
+
+    protected static Model getModel(GrobidModels grobidModel) {
+        return getModel(grobidModel.getModelPath());
+    }
+
+
 	/**
 	 * Return the model corresponding to the given path. Models are loaded in
 	 * memory if they don't exist.

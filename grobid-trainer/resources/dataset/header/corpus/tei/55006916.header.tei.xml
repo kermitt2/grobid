@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55006916"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>MIPS32 4Kc™ PROCESSOR CORE DATASHEET<lb/></titlePart>
+	</docTitle>
+
+	<date>June, 2000<lb/></date>
+
+	<div type="introduction">MIPS32 4Kc™ Processor Core Datasheet, Revision 01.03<lb/> 1<lb/> The MIPS32 4Kc™ core from MIPS® Technologies is a member of MIPS32 4K™ processor core family. It is a high-<lb/>performance, low-power, 32-bit MIPS RISC core designed for custom system-on-silicon applications. The core is designed<lb/> for semiconductor manufacturing companies, ASIC developers, and system OEMs who want to rapidly integrate their own<lb/> custom logic and peripherals with a high-performance RISC processor. It is highly portable across processes, and it can be<lb/> easily integrated into full system-on-silicon designs, allowing developers to focus their attention on end-user products. The<lb/> 4Kc™ core is ideally positioned to support new products for emerging segments of the digital consumer, network, systems,<lb/> and information management markets, enabling new tailored solutions for embedded applications.<lb/> The 4Kc core implements the MIPS32™ Architecture and contains all MIPS II™ instructions, special multiply-<lb/>accumulate(MAC), conditional move, prefetch, wait, leading zero/one detect instructions, and the 32-bit privileged<lb/> resource architecture. The R4000®-style memory management unit contains 3-entry instruction and data TLBs (ITLB/<lb/> DTLB) and a 16 dual-entry joint TLB (JTLB) with variable page sizes.<lb/> The synthesizable 4Kc core implements single cycle MAC instructions, which enable DSP algorithms to be performed<lb/> efficiently. The Multiply Divide Unit (MDU) allows 32-bit x 16-bit MAC instructions to be issued every cycle. A 32-bit x<lb/> 32-bit MAC instruction can be issued every 2 cycles.</div>
+
+		</front>
+	</text>
+</tei>

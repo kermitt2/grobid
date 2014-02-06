@@ -174,8 +174,8 @@ public class FeaturesVectorAffiliationAddress {
         for (int i = 0; i < lines.size(); i++) {
             line = lines.get(i);
 			isPlace = false;
-			if (line.equals("\n")) {
-				result.append(" \n");
+			if (line.trim().equals("\n")) {
+				result.append("\n \n");
 				continue;
 			}
 

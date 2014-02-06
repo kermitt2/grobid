@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="department">Division of Vector-Borne Infectious Diseases</orgName>,
+							<orgName type="institution">National Center for Infectious Diseases</orgName>,
+							<orgName type="department">Centers for Disease Control and Prevention</orgName>,
+							<address>
+								<addrLine>Fort Collins</addrLine>,
+							<lb/>
+								<region>Colorado</region>;
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="department">Tulane National Primate Research Center</orgName>,
+							<orgName type="institution">Tulane University Health Sciences Center</orgName>,
+							<address>
+								<settlement>Covington</settlement>,
+								<region>Louisiana</region>;
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>3</marker>
+							<orgName type="department">Tufts University School<lb/> of Medicine</orgName>,
+							<orgName type="institution">New England Medical Center</orgName>,
+							<address>
+								<settlement>Boston</settlement>,
+								<region>Massachusetts</region>;
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>4</marker>
+							<orgName type="department">Department of Medicine</orgName>,
+							<orgName type="department">Division of Infectious Diseases</orgName>,
+							<orgName type="institution">New York Medical<lb/> College</orgName>,
+							<address>
+								<settlement>Valhalla</settlement>;
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>5</marker>
+							<orgName type="laboratory">Laboratory of Clinical Investigation</orgName>,
+							<orgName type="institution">National Institute of Allergy and Infectious Diseases</orgName>,
+							<address>
+								<settlement>Bethesda</settlement>,
+								<region>Maryland</region>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>
