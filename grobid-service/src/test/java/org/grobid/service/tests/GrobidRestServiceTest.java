@@ -50,6 +50,8 @@ import com.sun.jersey.core.util.MultivaluedMapImpl;
 import com.sun.jersey.multipart.FormDataMultiPart;
 import com.sun.net.httpserver.HttpServer;
 
+import org.apache.commons.io.FileUtils;
+
 /**
  * Tests the RESTful service of the grobid-service project. This class can also
  * tests a remote system, when setting system property
@@ -323,5 +325,56 @@ public class GrobidRestServiceTest {
 
 		logger.debug(postResp);
 	}
+	
+	/**
+	 *  Test the synchronous state less rest call for patent citation extraction. 
+	 *  Send all xml and xml.gz ST36 files found in a given folder test/resources/patent
+	 *  to the web service and write back the results in the test/sample 
+	 */
+	//@Test
+	public void testRestPatentCitation() throws Exception {
+		Client create = Client.create();
+		WebResource service = create.resource(getHost());
+		ClientResponse response = null;
+		
+		File xmlDirectory = new File(this.getResourceDir().getAbsoluteFile() + "/patent");
+		for (final File currXML : xmlDirectory.listFiles()) {
+			try {
+				if (currXML.getName().toLowerCase().endsWith(".xml") || 
+					currXML.getName().toLowerCase().endsWith(".xml.gz")) { 
+						
+					assertTrue("Cannot run the test, because the sample file '" + currXML
+							+ "' does not exists.", currXML.exists());
+					FormDataMultiPart form = new FormDataMultiPart();
+					form.field("input", currXML, MediaType.MULTIPART_FORM_DATA_TYPE);
+					form.field("consolidate", "0", MediaType.MULTIPART_FORM_DATA_TYPE);
+					logger.debug("calling " + this.getHost() + GrobidPathes.PATH_GROBID
+							+ "/" + GrobidPathes.PATH_CITATION_PATENT_ST36);
+
+					service = Client.create().resource(
+							this.getHost() + GrobidPathes.PATH_GROBID + "/"
+									+ GrobidPathes.PATH_CITATION_PATENT_ST36);
+					response = service.type(MediaType.MULTIPART_FORM_DATA)
+							.accept(MediaType.APPLICATION_XML + ";charset=utf-8")
+							.post(ClientResponse.class, form);
+					assertEquals(Status.OK.getStatusCode(), response.getStatus());
+
+					InputStream inputStream = response.getEntity(InputStream.class);
+					String tei = TextUtilities.convertStreamToString(inputStream);
+					//logger.debug(tei);
+					
+					File outputFile = new File(this.getResourceDir().getAbsoluteFile()+
+						"/../sample/"+currXML.getName().replace(".xml",".tei.xml").replace(".gz",""));
+					// writing the result in the sample directory
+					FileUtils.writeStringToFile(outputFile, tei, "UTF-8");
+				}
+			}
+			catch (final Exception exp) {
+				logger.error("An error occured while processing the file " + currXML.getAbsolutePath()
+						+ ". Continuing the process for the other files");
+			}
+		}	
+	}
+	
 
 }

@@ -49,7 +49,7 @@ public class GrobidRestProcessString {
 		Engine engine = null;
 		try {
 			LOGGER.debug(">> set raw date for stateless service'...");
-
+			
 			engine = GrobidRestUtils.getEngine(isparallelExec);
 			List<Date> dates;
 			date = date.replaceAll("\\n", " ").replaceAll("\\t", " ");

@@ -86,7 +86,7 @@ public class TEICitationSaxParser extends DefaultHandler {
                 currentTag = "<other>";
                 writeField(text);
             }
-            labeled.add("\n");
+            labeled.add("\n \n");
             nbCitations++;
 
             String allString = allContent.toString();

@@ -1388,7 +1388,13 @@ public class BiblioItem {
 
     static public void cleanTitles(BiblioItem bibl) {
         if (bibl.getTitle() != null) {
-            bibl.setTitle(TextUtilities.cleanField(bibl.getTitle(), false));
+			String localTitle = TextUtilities.cleanField(bibl.getTitle(), false);
+			if (localTitle.endsWith(" y")) {
+				// some markers at the end of the title are extracted from the pdf as " y" at the end of the title
+				// e.g. <title level="a" type="main">Computations in finite-dimensional Lie algebras y</title>
+				localTitle = localTitle.substring(0, localTitle.length()-2);
+			}
+            bibl.setTitle(localTitle);
         }
         if (bibl.getBookTitle() != null) {
             bibl.setBookTitle(TextUtilities.cleanField(bibl.getBookTitle(), false));

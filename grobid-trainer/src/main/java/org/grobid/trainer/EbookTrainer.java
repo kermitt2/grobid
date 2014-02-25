@@ -23,6 +23,27 @@ public class EbookTrainer extends AbstractTrainer {
 	}
 
 	/**
+	 * Add the selected features to an ebook example set 
+	 * 
+	 * @param corpusDir
+	 *            a path where corpus files are located
+	 * @param trainingOutputPath
+	 *            path where to store the temporary training data
+	 * @param evalOutputPath
+	 *            path where to store the temporary evaluation data
+	 * @param splitRatio
+	 *            ratio to consider for separating training and evaluation data, e.g. 0.8 for 80% 
+	 * @return the total number of used corpus items 
+	 */
+	@Override
+	public int createCRFPPData(final File corpusDir, 
+							final File trainingOutputPath, 
+							final File evalOutputPath, 
+							double splitRatio) {
+		return 0;
+	}
+
+	/**
 	 * Add the selected features to the author model training for headers
 	 */
 	@Override

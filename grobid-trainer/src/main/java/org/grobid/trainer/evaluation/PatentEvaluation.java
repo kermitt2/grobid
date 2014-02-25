@@ -30,7 +30,7 @@ public class PatentEvaluation {
     private String outputPath;
 
     public PatentEvaluation() {
-        evaluationPath = new File(AbstractTrainer.getEvalCorpusBasePath(), "patent").getAbsolutePath();
+        evaluationPath = AbstractTrainer.getEvalCorpusBasePath().getAbsolutePath();
         outputPath = GrobidProperties.getInstance().getTempPath().getAbsolutePath();
         taggerNPL = new Tagger("-m " + GrobidProperties.getInstance().getModelPath(GrobidModels.PATENT_NPL).getAbsolutePath() + " ");
         taggerPatent = new Tagger("-m " + GrobidProperties.getInstance().getModelPath(GrobidModels.PATENT_PATENT).getAbsolutePath() + " ");
@@ -51,7 +51,7 @@ public class PatentEvaluation {
         PatentParserTrainer ppt = new PatentParserTrainer();
 
         //noinspection NullableProblems
-        ppt.createDataSet("test", null, evaluationPath, outputPath);
+        //ppt.createDataSet("test", null, evaluationPath, outputPath);
         String setName;
 
         Tagger tagger;
@@ -69,7 +69,8 @@ public class PatentEvaluation {
                     "type is undefined.");
         }
 
-        return EvaluationUtilities.evaluateStandard(evaluationPath + "/" + setName + ".test", tagger);
+        //return EvaluationUtilities.evaluateStandard(evaluationPath + "/" + setName + ".test", tagger);
+		return evaluate();
     }
 
 
@@ -125,7 +126,7 @@ public class PatentEvaluation {
             try {
                 // read the evaluation file enriched with feature
                 BufferedReader bufReader = new BufferedReader(
-                        new InputStreamReader(new FileInputStream(evaluationPath + "/all.test"), "UTF-8"));
+                        new InputStreamReader(new FileInputStream(outputPath + "/all.test"), "UTF-8"));
                 String line = null;
                 ArrayList<String> patentBlocks = new ArrayList<String>();
                 while ((line = bufReader.readLine()) != null) {
@@ -134,7 +135,7 @@ public class PatentEvaluation {
                 bufReader.close();
 
                 String theResult = EvaluationUtilities.taggerRun(patentBlocks, tagger);
-                System.out.println(theResult);
+                //System.out.println(theResult);
                 StringTokenizer stt = new StringTokenizer(theResult, "\n");
 //                line = null;
                 String previousExpectedLabel = null;
@@ -164,36 +165,41 @@ public class PatentEvaluation {
 
                     // tags
                     if ((expected != null) && (actual != null)) {
-                        if (!expected.equals("other")) {
+                        if (!expected.equals("<other>")) {
                             totalExpected++;
-                            if (expected.startsWith("refPaten"))
+                            if (expected.endsWith("refPatent>"))
                                 totalPatentExpected++;
-                            else if (expected.startsWith("refNP"))
+                            else if (expected.endsWith("refNPL>"))
                                 totalNPLExpected++;
-                            else
-                                report.append("WARNING bizarre suggested tag: " + expected);
+                            else 
+                                report.append("WARNING bizarre suggested tag: " + expected + "\n");
                         }
 
-                        if (!actual.equals("other")) {
+                        if (!actual.equals("<other>")) {
                             totalSuggested++;
-                            if (actual.startsWith("refPaten"))
+                            if (actual.endsWith("refPatent>"))
                                 totalPatentSuggested++;
-                            else if (actual.startsWith("refNP"))
+                            else if (actual.endsWith("refNPL>"))
                                 totalNPLSuggested++;
                             else
-                                report.append("WARNING bizarre suggested tag: " + actual);
+                                report.append("WARNING bizarre suggested tag: " + actual + "\n");
                         }
 
-                        if (actual.startsWith("refPatent"))
+                        if (actual.endsWith("refPatent>"))
                             actual = "refPatent";
-                        else if (actual.startsWith("refNPL")) {
+                        else if (actual.endsWith("refNPL>")) {
                             actual = "refNPL";
                         }
 
-                        if (expected.startsWith("refPatent"))
+                        if (expected.endsWith("refPatent>"))
                             expected = "refPatent";
-                        else if (expected.startsWith("refNPL"))
+                        else if (expected.endsWith("refNPL>"))
                             expected = "refNPL";
+
+						if (actual.equals("<other>")) 
+							actual = "other";
+						if (expected.equals("<other>")) 
+							expected = "other";
 
                         if (expected.equals(actual)) {
                             if (!actual.equals("other") && !expected.equals("other")) {

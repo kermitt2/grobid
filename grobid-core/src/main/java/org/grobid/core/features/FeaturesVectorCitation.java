@@ -283,7 +283,7 @@ public class FeaturesVectorCitation {
             line = line.trim();
             if (line.length() == 0) {
                 // we start a new sentence in the sense of CRF++
-                citation.append("\n");
+                citation.append("\n \n");
                 n++;
                 mm = 0;
                 sentenceLenth = 0;

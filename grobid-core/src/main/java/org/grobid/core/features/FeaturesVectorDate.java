@@ -155,7 +155,7 @@ public class FeaturesVectorDate {
             }
             line = line.trim();
             if (line.length() == 0) {
-                header.append(" \n");
+                header.append("\n \n");
                 newBlock = true;
                 newline = true;
                 n++;
