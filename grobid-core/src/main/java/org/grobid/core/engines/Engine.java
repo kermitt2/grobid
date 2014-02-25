@@ -48,6 +48,7 @@ import org.grobid.core.lang.Language;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.LanguageUtilities;
 import org.grobid.core.utilities.Utilities;
+import org.grobid.core.utilities.counters.CntManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -74,6 +75,9 @@ public class Engine implements Closeable {
 	private FullTextParser fullTextParser = null;
 	private ReferenceExtractor referenceExtractor = null;
 	private ChemicalParser chemicalParser = null;
+
+    //TODO: when using one instance of Engine in e.g. grobid-service, then make this field not static
+    private static CntManager cntManager;
 
 	// Identified parsed bibliographical items and related information
 	public List<org.grobid.core.data.BibDataSet> resBib;
@@ -1350,4 +1354,12 @@ public class Engine implements Closeable {
 
 		LOGGER.debug("==>All resources closed");
 	}
+
+    public static void setCntManager(CntManager cntManager) {
+        Engine.cntManager = cntManager;
+    }
+
+    public static CntManager getCntManager() {
+        return cntManager;
+    }
 }

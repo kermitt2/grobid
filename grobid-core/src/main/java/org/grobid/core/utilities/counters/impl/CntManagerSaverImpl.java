@@ -1,0 +1,39 @@
+package org.grobid.core.utilities.counters.impl;
+
+import de.smtdp.paler.util.counters.CntManager;
+import de.smtdp.paler.util.counters.CntManagerSaver;
+
+import java.io.*;
+import java.text.SimpleDateFormat;
+import java.util.TimeZone;
+
+/**
+ * Date: 6/29/12
+ * Time: 2:44 PM
+ *
+ * @author Vyacheslav Zholudev
+ */
+
+public class CntManagerSaverImpl implements CntManagerSaver {
+    public static final SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+    static {
+        df.setTimeZone(TimeZone.getTimeZone("UTC"));
+    }
+
+    @Override
+    public CntManager deserialize(InputStream is) throws IOException {
+        ObjectInputStream in = new ObjectInputStream(is);
+        try {
+            return (CntManager) in.readObject();
+        } catch (ClassNotFoundException e) {
+            throw new IllegalStateException("Cannot deserialize counter because: " + e.getMessage(), e);
+        }
+
+    }
+
+    @Override
+    public void serialize(CntManager cntManager, OutputStream os) throws IOException {
+        ObjectOutput out = new ObjectOutputStream(os);
+        out.writeObject(cntManager);
+    }
+}
