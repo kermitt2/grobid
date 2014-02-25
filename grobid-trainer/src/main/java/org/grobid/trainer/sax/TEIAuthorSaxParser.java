@@ -69,7 +69,7 @@ public class TEIAuthorSaxParser extends DefaultHandler {
                 currentTag = "<other>";
                 writeField(text);
             }
-            labeled.add("\n");
+            labeled.add("\n \n");
             n++;
         }
         accumulator.setLength(0);

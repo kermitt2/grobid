@@ -1,7 +1,6 @@
 package org.grobid.trainer;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 
 import org.chasen.crfpp.CRFPPTrainer;
 import org.chasen.crfpp.Tagger;
@@ -71,6 +70,26 @@ public abstract class AbstractTrainer implements Trainer {
 	@Override
 	public String evaluate() {
 		createCRFPPData(getEvalCorpusPath(), evalDataPath);
+		return EvaluationUtilities.evaluateStandard(evalDataPath.getAbsolutePath(), getTagger());
+	}
+
+	@Override
+	public String splitTrainEvaluate(Double split) {
+		final File dataPath = trainDataPath;
+		createCRFPPData(getCorpusPath(), dataPath, evalDataPath, split);
+		final File tempModelPath = new File(GrobidProperties.getModelPath(model).getAbsolutePath() + NEW_MODEL_EXT);
+		final File oldModelPath = GrobidProperties.getModelPath(model);
+		crfppTrainer.train(getTemplatePath().getAbsolutePath(), dataPath.getAbsolutePath(), tempModelPath.getAbsolutePath(),
+				GrobidProperties.getNBThreads());
+
+		if (!crfppTrainer.what().isEmpty()) {
+			LOGGER.warn("CRF++ Trainer warnings:\n" + crfppTrainer.what());
+		} else {
+			LOGGER.info("No CRF++ Trainer warnings!");
+		}
+		// if we are here, that means that training succeeded
+		renameModels(oldModelPath, tempModelPath);
+		
 		return EvaluationUtilities.evaluateStandard(evalDataPath.getAbsolutePath(), getTagger());
 	}
 
@@ -154,5 +173,17 @@ public abstract class AbstractTrainer implements Trainer {
 		long end = System.currentTimeMillis();
 		System.out.println("Evaluation for " + trainer.getModel() + " model is realized in " + (end - start) + " ms");
 	}
-
+	
+	public static void runSplitTrainingEvaluation(final Trainer trainer, Double split) {
+		long start = System.currentTimeMillis();
+		try { 
+			String report = trainer.splitTrainEvaluate(split);
+			System.out.println(report);
+		} catch (Exception e) {
+			throw new GrobidException("An exception occurred while evaluating Grobid.", e);
+		}
+		long end = System.currentTimeMillis();
+		System.out.println("Split, training and evaluation for " + trainer.getModel() + " model is realized in " + (end - start) + " ms");
+	}
+	
 }

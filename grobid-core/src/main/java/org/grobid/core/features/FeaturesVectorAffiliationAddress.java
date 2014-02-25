@@ -175,7 +175,7 @@ public class FeaturesVectorAffiliationAddress {
             line = lines.get(i);
 			isPlace = false;
 			if (line.equals("\n")) {
-				result.append(" \n");
+				result.append("\n \n");
 				continue;
 			}
 

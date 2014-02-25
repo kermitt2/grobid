@@ -23,7 +23,7 @@ public class PatentAnnotationSaxParser extends DefaultHandler {
 	StringBuffer accumulator = new StringBuffer(); // Accumulate parsed text
 
 	private Writer writer = null; 
-	private int offset = -1;
+	private int offset = 0;
 	private boolean counting = false;
 	private ArrayList<PatentItem> patents = null;
 	private ArrayList<BibDataSet> articles = null;
@@ -57,9 +57,12 @@ public class PatentAnnotationSaxParser extends DefaultHandler {
 		if (text.trim().length() == 0) {
 			return "";
 		}
-		text = text.replace("\n", " ");
-		text = text.replace("  ", " ");
+		/*text = text.replace("\n", " ");
+		text = text.replace("  ", " ");*/
 		if (counting) {
+			/*
+			
+			
 			StringTokenizer st = new StringTokenizer(text, delimiters, true);
 			int count = 0;
 			
@@ -70,15 +73,18 @@ public class PatentAnnotationSaxParser extends DefaultHandler {
 				}
 				count++;
 			}
-		
+			*/
+			
 			int i = currentPatentIndex;
+			int count = text.length();
+			
 			while(i < patents.size() ) {
 				PatentItem currentPatent = patents.get(i);
 				if (currentPatent != null) {
 					int startOffset = currentPatent.getOffsetBegin();
 					int endOffset = currentPatent.getOffsetEnd();
 					
-					if ( (startOffset >= offset) && (startOffset <= offset+count ) && (endOffset <= offset+count) ) {
+					if ( (startOffset >= offset) && (endOffset <= offset+count) ) {
 						String context = currentPatent.getContext();
 						
 						/*System.out.println("OFFSET: " + offset);
@@ -88,7 +94,14 @@ public class PatentAnnotationSaxParser extends DefaultHandler {
 						System.out.println("context: " + context);
 						System.out.println("text: " + text);*/
 						
-						String target = "<ref type=\"patent\">"+context+"</ref>";
+						String target = "";
+						if (context.charAt(0) == ' ') {
+							target = " <ref type=\"patent\">"+context.substring(1,context.length())+"</ref>";
+						}
+						else {
+							target = "<ref type=\"patent\">"+context+"</ref>";
+						}
+						
 						text = text.replace(context, target);
 						currentPatentIndex = i;
 					}
@@ -97,18 +110,19 @@ public class PatentAnnotationSaxParser extends DefaultHandler {
 				i++;
 			}
 			
-			i = currentArticleIndex;
+			//i = currentArticleIndex;
+			i = 0;
 			while(i < articles.size() ) {
 				BibDataSet currentArticle = articles.get(i);
 				if (currentArticle != null) {
 					List<Integer> offsets = currentArticle.getOffsets();
 					int startOffset = -1;
 					int endOffset = -1;
-					String context = currentArticle.getRawBib();
+					String context = currentArticle.getRawBib().trim();
 					if (offsets.size() > 0) {
 						if (offsets.get(0) != null) {
 							startOffset = offsets.get(0).intValue();
-							StringTokenizer stt = new StringTokenizer(context, delimiters, true);
+							/*StringTokenizer stt = new StringTokenizer(context, delimiters, true);
 							int count2 = 0;
 							while(stt.hasMoreTokens()) {
 								String token2 = stt.nextToken().trim();
@@ -116,13 +130,14 @@ public class PatentAnnotationSaxParser extends DefaultHandler {
 									continue;
 								}
 								count2++;
-							}
-							endOffset = startOffset + count2;
+							}*/
+							//endOffset = offsets.get(1).intValue();
+							endOffset = startOffset + context.length();
 						}
 					}
 					
-					if ( (startOffset >= offset) && (startOffset <= offset+count ) && (endOffset <= offset+count) ) {
-						
+					//if ( (startOffset >= offset) && (endOffset <= offset+count) ) {
+					if ( (startOffset >= offset) ) {	
 						/*System.out.println("OFFSET: " + offset);
 						System.out.println("count: " + count);
 						System.out.println("startOffset: " + startOffset); 

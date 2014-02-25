@@ -22,20 +22,60 @@ public class ChemicalEntityTrainer extends AbstractTrainer {
         super(GrobidModels.ENTITIES_CHEMISTRY);
     }
 
-    /**
-     * Add the selected features to the author model training for headers
-     */
-    public int createCRFPPData(File sourcePathLabel,
-                               File outputPath
-    ) {
+	/**
+	 * Add the selected features to a chemical entity example set 
+	 * 
+	 * @param corpusDir
+	 *            a path where corpus files are located
+	 * @param trainingOutputPath
+	 *            path where to store the temporary training data
+	 * @return the total number of used corpus items
+	 */
+	public int createCRFPPData2(final File corpusDir, final File modelOutputPath) {
+		return createCRFPPData(corpusDir, modelOutputPath, null, 1.0);
+	}
+
+	/**
+	 * Add the selected features to a chemical entity example set 
+	 * 
+	 * @param corpusDir
+	 *            a path where corpus files are located
+	 * @param trainingOutputPath
+	 *            path where to store the temporary training data
+	 * @param evalOutputPath
+	 *            path where to store the temporary evaluation data
+	 * @param splitRatio
+	 *            ratio to consider for separating training and evaluation data, e.g. 0.8 for 80% 
+	 * @return the total number of corpus items
+	 */
+	@Override
+	public int createCRFPPData(final File corpusDir, 
+							final File trainingOutputPath, 
+							final File evalOutputPath, 
+							double splitRatio) {
+		return 0;
+	}
+	
+	/**
+	 * Add the selected features to a chemical entity example set 
+	 * 
+	 * @param corpusDir
+	 *            a path where corpus files are located
+	 * @param trainingOutputPath
+	 *            path where to store the temporary training data
+	 * @return the total number of used corpus items
+	 */
+	@Override
+    public int createCRFPPData(File corpusDir,
+                               File trainingOutputPath) {
         int totalExamples = 0;
         try {
-            System.out.println("sourcePathLabel: " + sourcePathLabel);
-            System.out.println("outputPath: " + outputPath);
+            System.out.println("corpusDir: " + corpusDir);
+            System.out.println("trainingOutputPath: " + trainingOutputPath);
 
             // then we convert the tei files into the usual CRF label format
             // we process all tei files in the output directory
-            File[] refFiles = sourcePathLabel.listFiles(new FilenameFilter() {
+            File[] refFiles = corpusDir.listFiles(new FilenameFilter() {
                 public boolean accept(File dir, String name) {
                     return name.endsWith(".words.xml") && name.startsWith("WO");
                 }
@@ -48,7 +88,7 @@ public class ChemicalEntityTrainer extends AbstractTrainer {
             System.out.println(refFiles.length + " tei files");
 
             // the file for writing the training data
-            Writer writer2 = new OutputStreamWriter(new FileOutputStream(outputPath), "UTF8");
+            Writer writer2 = new OutputStreamWriter(new FileOutputStream(trainingOutputPath), "UTF8");
 
             // get a factory for SAX parser
             SAXParserFactory spf = SAXParserFactory.newInstance();

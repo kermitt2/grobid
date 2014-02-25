@@ -10,6 +10,9 @@ import java.io.File;
 public interface Trainer {
 
     public int createCRFPPData(File corpusPath, File outputFile);
+
+	public int createCRFPPData(File corpusPath, File outputTrainingFile, File outputEvalFile, double splitRatio);
+
     public void train();
 
     /**
@@ -17,6 +20,8 @@ public interface Trainer {
      * @return a report
      */
     public String evaluate();
+
+	public String splitTrainEvaluate(Double split);
 
     public GrobidModels getModel();
 }

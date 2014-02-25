@@ -315,7 +315,7 @@ public class GrobidRestProcessFiles {
 	 *         citation
 	 */
 	public static Response processCitationPatentST36(final InputStream inputStream, 
-															final boolean consolidate) {
+													 final boolean consolidate) {
 		LOGGER.debug(methodLogIn());
 		Response response = null;
 		String retVal = null;

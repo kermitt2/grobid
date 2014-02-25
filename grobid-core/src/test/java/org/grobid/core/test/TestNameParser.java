@@ -30,7 +30,7 @@ public class TestNameParser extends EngineTest{
 		}
 		
 		String authorSequence2 = 
-		  "Farzaneh Sarafraz*, James M. Eales*, Reza Mohammadi\u2666, Jonathan Dickerson\u2663, David Robertson\u2663, Goran Nenadic*";
+		  "Farzaneh Sarafraz*, James M. Eales*, Reza Mohammadi, Jonathan Dickerson, David Robertson, Goran Nenadic*";
 		res = engine.processAuthorsHeader(authorSequence2);
 		assertNotNull(res);
 		assertEquals(6, res.size());

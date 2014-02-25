@@ -43,23 +43,23 @@ public class TEIDateSaxParser extends DefaultHandler {
     public void endElement(java.lang.String uri,
                            java.lang.String localName,
                            java.lang.String qName) throws SAXException {
-        if ((
-                (qName.equals("year")) | (qName.equals("month")) | (qName.equals("day"))
-        ) & (currentTag != null)) {
+        if (( (qName.equals("year")) | (qName.equals("month")) | (qName.equals("day"))) & (currentTag != null)) {
             String text = getText();
             writeField(text);
-        } else if (qName.equals("lb")) {
+        } 
+		/*else if (qName.equals("lb")) {
             // we note a line break
             accumulator.append(" +L+ ");
         } else if (qName.equals("pb")) {
             accumulator.append(" +PAGE+ ");
-        } else if (qName.equals("date")) {
+        } */
+		else if (qName.equals("date")) {
             String text = getText();
             if (text.length() > 0) {
                 currentTag = "<other>";
                 writeField(text);
             }
-            labeled.add("\n");
+            labeled.add("\n \n");
         }
 
         accumulator.setLength(0);
