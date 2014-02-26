@@ -1,6 +1,7 @@
 package org.grobid.core.utilities.counters.impl;
 
-import de.smtdp.paler.util.counters.Counter;
+
+import org.grobid.core.utilities.counters.Counter;
 
 class NoOpCounterImpl implements Counter {
     private static final long serialVersionUID = -6891249458789932892L;

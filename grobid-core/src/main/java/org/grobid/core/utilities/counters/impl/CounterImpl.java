@@ -1,6 +1,7 @@
 package org.grobid.core.utilities.counters.impl;
 
-import de.smtdp.paler.util.counters.Counter;
+
+import org.grobid.core.utilities.counters.Counter;
 
 import java.util.concurrent.atomic.AtomicLong;
 

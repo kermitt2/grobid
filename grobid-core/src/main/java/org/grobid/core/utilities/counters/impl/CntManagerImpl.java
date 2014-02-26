@@ -1,11 +1,9 @@
 package org.grobid.core.utilities.counters.impl;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import de.smtdp.paler.util.counters.CntManager;
-import de.smtdp.paler.util.counters.CntsMetric;
-import de.smtdp.paler.util.counters.Counter;
+import org.grobid.core.utilities.counters.CntManager;
+import org.grobid.core.utilities.counters.CntsMetric;
+import org.grobid.core.utilities.counters.Counter;
 
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -180,16 +178,6 @@ class CntManagerImpl implements CntManager {
         }
 
         return map;
-    }
-
-    @Override
-    public synchronized String toJson() {
-        ObjectMapper om = new ObjectMapper();
-        try {
-            return om.writeValueAsString(getAllCounters());
-        } catch (IOException e) {
-            return "{SERIALIZING_ERROR : 1}";
-        }
     }
 
     @Override

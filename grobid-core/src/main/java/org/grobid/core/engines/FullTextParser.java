@@ -851,9 +851,14 @@ public class FullTextParser extends AbstractParser {
     @Override
     public void close() throws IOException {
         super.close();
-        headerParser.close();
-        headerParser = null;
-        citationParser.close();
-        citationParser = null;
+        if (headerParser != null) {
+            headerParser.close();
+            headerParser = null;
+        }
+        if (citationParser != null) {
+            citationParser.close();
+            citationParser = null;
+        }
+
     }
 }

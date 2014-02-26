@@ -1,5 +1,21 @@
 package org.grobid.core.engines;
 
+import org.apache.commons.lang3.StringUtils;
+import org.grobid.core.GrobidModels;
+import org.grobid.core.data.BibDataSet;
+import org.grobid.core.data.BiblioItem;
+import org.grobid.core.data.Date;
+import org.grobid.core.document.Document;
+import org.grobid.core.engines.counters.CitationParserCounters;
+import org.grobid.core.exceptions.GrobidException;
+import org.grobid.core.features.FeaturesVectorCitation;
+import org.grobid.core.lexicon.Lexicon;
+import org.grobid.core.utilities.Consolidation;
+import org.grobid.core.utilities.GrobidProperties;
+import org.grobid.core.utilities.OffsetPosition;
+import org.grobid.core.utilities.TextUtilities;
+import org.grobid.core.utilities.counters.CntManager;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -8,25 +24,11 @@ import java.util.StringTokenizer;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.apache.commons.lang3.StringUtils;
-import org.chasen.crfpp.Tagger;
-import org.grobid.core.GrobidModels;
-import org.grobid.core.data.BibDataSet;
-import org.grobid.core.data.BiblioItem;
-import org.grobid.core.data.Date;
-import org.grobid.core.document.Document;
-import org.grobid.core.exceptions.GrobidException;
-import org.grobid.core.features.FeaturesVectorCitation;
-import org.grobid.core.lexicon.Lexicon;
-import org.grobid.core.utilities.Consolidation;
-import org.grobid.core.utilities.GrobidProperties;
-import org.grobid.core.utilities.OffsetPosition;
-import org.grobid.core.utilities.TextUtilities;
-
 /**
  * @author Patrice Lopez
  */
 public class CitationParser extends AbstractParser {
+
 	private AuthorParser authorParser = null;
 	private DateParser dateParser = null;
 	private Consolidation consolidator = null;
@@ -35,6 +37,11 @@ public class CitationParser extends AbstractParser {
 	private String pathXML = null;
 
 	public Lexicon lexicon = Lexicon.getInstance();
+
+	public CitationParser(CntManager cntManager) {
+		super(GrobidModels.CITATION, cntManager);
+		tmpPath = GrobidProperties.getTempPath();
+	}
 
 	public CitationParser() {
 		super(GrobidModels.CITATION);
@@ -74,6 +81,7 @@ public class CitationParser extends AbstractParser {
 				}
 			}
 			citationBlocks.add("\n");
+
 
 			List<List<OffsetPosition>> journalsPositions = new ArrayList<List<OffsetPosition>>();
 			List<List<OffsetPosition>> abbrevJournalsPositions = new ArrayList<List<OffsetPosition>>();
@@ -180,26 +188,30 @@ public class CitationParser extends AbstractParser {
 			doc.addFeaturesDocument();
 			doc.firstPass();
 
-			// String reference =
-			doc.getReferences();
+			String referencesStr = doc.getReferences();
+            if (!referencesStr.isEmpty()) {
+                cntManager.i(CitationParserCounters.NOT_EMPTY_REFERENCES_BLOCKS);
+            }
 			ArrayList<String> tokenizations = doc.getTokenizationsReferences();
 
-			// System.out.println(reference.toString());
 			List<String> references = segmentReferences(tokenizations);
-			// System.out.println(references.toString());
 
-			if (references != null) {
-				for (String refString : references) {
-					BiblioItem bib = processing(refString, consolidate);
-					BibDataSet bds = new BibDataSet();
-					bds.setResBib(bib);
-					bds.setRawBib(refString);
-					results.add(bds);
-				}
-			}
-		} catch (Exception e) {
-			throw new GrobidException(
-					"An exception occured while running Grobid.", e);
+            if (references == null) {
+                cntManager.i(CitationParserCounters.NULL_SEGMENTED_REFERENCES_LIST);
+                return results;
+            } else {
+                cntManager.i(CitationParserCounters.SEGMENTED_REFERENCES, references.size());
+            }
+
+            for (String refString : references) {
+                BiblioItem bib = processing(refString, consolidate);
+                BibDataSet bds = new BibDataSet();
+                bds.setResBib(bib);
+                bds.setRawBib(refString);
+                results.add(bds);
+            }
+        } catch (Exception e) {
+			throw new GrobidException("An exception occurred while running Grobid.", e);
 		} finally {
 			// keep it clean when leaving...
 			doc.cleanLxmlFile(pathXML, true);
@@ -596,7 +608,7 @@ public class CitationParser extends AbstractParser {
 				// boolean tagClosed = false;
 				int q = 0;
 				boolean addSpace;
-				String lastTag0 = null;
+				String lastTag0;
 				String currentTag0 = null;
 				while (st2.hasMoreTokens()) {
 					String line = st2.nextToken();
@@ -620,7 +632,7 @@ public class CitationParser extends AbstractParser {
 					int i = 0;
 					String s1 = null;
 					String s2 = null;
-					String s3 = null;
+//					String s3 = null;
 					// boolean newLine = false;
 					// ArrayList<String> localFeatures = new
 					// ArrayList<String>();
@@ -629,7 +641,7 @@ public class CitationParser extends AbstractParser {
 						if (i == 0) {
 							s2 = TextUtilities.HTMLEncode(s); // string
 						} else if (i == ll - 2) {
-							s3 = s; // pre-label, in this case it should always
+//							s3 = s; // pre-label, in this case it should always
 									// be <author>
 						} else if (i == ll - 1) {
 							s1 = s; // label
