@@ -17,6 +17,8 @@ import org.apache.commons.lang3.StringUtils;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.exceptions.GrobidPropertyException;
 import org.grobid.core.exceptions.GrobidResourceException;
+import org.grobid.core.utilities.counters.CntManager;
+import org.grobid.core.utilities.counters.impl.CntManagerFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -36,6 +38,8 @@ public class GrobidProperties {
 	 * The context of the application.
 	 */
 	protected static Context context;
+
+    private CntManager cntManager = CntManagerFactory.getCntManager();
 
 	/**
 	 * name of property which determines, if grobid runs in test mode.

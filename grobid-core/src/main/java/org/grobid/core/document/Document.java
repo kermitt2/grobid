@@ -1,19 +1,5 @@
 package org.grobid.core.document;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.StringTokenizer;
-import java.util.concurrent.TimeoutException;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.parsers.SAXParser;
-import javax.xml.parsers.SAXParserFactory;
-
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.BiblioItem;
 import org.grobid.core.engines.CitationParser;
@@ -28,8 +14,6 @@ import org.grobid.core.lang.Language;
 import org.grobid.core.layout.Block;
 import org.grobid.core.layout.Cluster;
 import org.grobid.core.layout.LayoutToken;
-import org.grobid.core.process.ProcessPdf2Xml;
-import org.grobid.core.process.ProcessRunner;
 import org.grobid.core.sax.PDF2XMLSaxParser;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.KeyGen;
@@ -39,6 +23,19 @@ import org.grobid.core.utilities.Utilities;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.xml.sax.SAXException;
+
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.StringTokenizer;
+import java.util.concurrent.TimeoutException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Class for representing, processing and exchanging a document item.
@@ -242,10 +239,10 @@ public class Document {
 		if ((!f.exists()) || force) {
 			List<String> cmd = new ArrayList<String>();
 			String[] tokens = pdftoxml0.split(" ");
-			for(int i=0; i<tokens.length; i++) {
-				if (tokens[i].trim().length()> 0)
-					cmd.add(tokens[i]);
-			}
+            for (String token : tokens) {
+                if (token.trim().length() > 0)
+                    cmd.add(token);
+            }
 			cmd.add(pdfPath);
 			cmd.add(tmpPathXML);
 			if (GrobidProperties.isContextExecutionServer()) {
@@ -265,7 +262,7 @@ public class Document {
 	 * Process the conversion of pdf to xml format using thread calling native
 	 * executable.
 	 * 
-	 * @param tout
+	 * @param tout timeout
 	 * @param pdfPath
 	 *            path to pdf
 	 * @param tmpPathXML
@@ -330,7 +327,7 @@ public class Document {
 		Integer exitCode = org.grobid.core.process.ProcessPdf2Xml.process(cmd);
 
 		if (exitCode == null) {
-			tmpPathXML = null;
+//			tmpPathXML = null;
 			throw new RuntimeException("An error occured while converting pdf "
 					+ pdfPath);
 		} 
@@ -541,7 +538,7 @@ public class Document {
 				}
 			}
 
-			List<String> refs = null;
+			List<String> refs;
 			if (citationParser != null) {
 				refs = citationParser.segmentReferences(tokenizations);
 				if (refs != null) {
@@ -662,9 +659,8 @@ public class Document {
 		}
 
 		TEIFormater teiFormater = new TEIFormater(this);
-		String res = teiFormater.toTEIBody(biblio, bds, peer, withStyleSheet,
-				onlyHeader);
-		return res;
+        return teiFormater.toTEIBody(biblio, bds, peer, withStyleSheet,
+                onlyHeader);
 	}
 
 	/**
@@ -700,8 +696,8 @@ public class Document {
 							innd = text.indexOf("@IMAGE");
 
 						if (innd != -1) {
-							if (candidate == true) {
-							}
+//							if (candidate == true) {
+//							}
 						} else
 						// test if the block starts without upper case
 						if (text.length() > 2) {
@@ -1036,7 +1032,7 @@ public class Document {
 	}
 
 	// default bins for relative position
-	static private int nbBins = 12;
+	private static final int nbBins = 12;
 
 	public String getFulltextFeatured(boolean firstPass, boolean getHeader) {
 		// System.out.println(getAllBlocks());
@@ -1044,14 +1040,14 @@ public class Document {
 		// if (getHeader)
 		// getHeader(firstPass);
 		featureFactory = FeatureFactory.getInstance();
-		StringBuffer fulltext = new StringBuffer();
+		StringBuilder fulltext = new StringBuilder();
 		String currentFont = null;
 		int currentFontSize = -1;
 
 		// vector for features
-		FeaturesVectorFulltext features = null;
+		FeaturesVectorFulltext features;
 		FeaturesVectorFulltext previousFeatures = null;
-		boolean endblock = false;
+		boolean endblock;
 		boolean endPage = true;
 		boolean newPage = true;
 		boolean start = true;
@@ -1077,7 +1073,7 @@ public class Document {
 				for (int z = blockPos; (z < blocks.size()) && !stop; z++) {
 					String localText2 = blocks.get(z).getText();
 					if (localText2 != null) {
-						if (localText2.indexOf("@PAGE") != -1) {
+						if (localText2.contains("@PAGE")) {
 							if (pageLength > 0) {
 								if (blocks.get(z).getTokens() != null) {
 									pageLength += blocks.get(z).getTokens()
@@ -1099,7 +1095,7 @@ public class Document {
 				newPage = true;
 				start = false;
 			}
-			boolean newline = true;
+			boolean newline;
 			boolean previousNewline = false;
 			endblock = false;
 
@@ -1228,9 +1224,9 @@ public class Document {
 								} else {
 									if ((toto.length() != 0)
 											&& (!(toto.startsWith("@IMAGE")))
-											&& (text.indexOf(".pbm") == -1)
-											&& (text.indexOf(".vec") == -1)
-											&& (text.indexOf(".jpg") == -1)) {
+											&& (!text.contains(".pbm"))
+											&& (!text.contains(".vec"))
+											&& (!text.contains(".jpg"))) {
 										endloop = true;
 									}
 								}
@@ -1423,7 +1419,7 @@ public class Document {
 					// the body
 					beginBody = i;
 					for (int j = 0; j <= i + 1; j++) {
-						Integer inte = new Integer(j);
+						Integer inte = j;
 						if (!blockDocumentHeaders.contains(inte))
 							blockDocumentHeaders.add(inte);
 					}
@@ -1482,7 +1478,7 @@ public class Document {
 					return null;
 			}
 
-			accumulated.append(localText + "\n");
+			accumulated.append(localText).append("\n");
 			i++;
 		}
 
@@ -1533,8 +1529,8 @@ public class Document {
 	 * minimum requirements are met the blocks before this position as header.
 	 */
 	public String getHeaderByIntroduction() {
-		String res = null;
-		StringBuffer accumulated = new StringBuffer();
+		String res;
+		StringBuilder accumulated = new StringBuilder();
 		int i = 0;
 		for (Block block : blocks) {
 			String localText = block.getText();
@@ -1546,7 +1542,7 @@ public class Document {
 				accumulated.append(localText);
 				beginBody = i;
 				for (int j = 0; j < i + 1; j++) {
-					Integer inte = new Integer(j);
+					Integer inte = j;
 					if (!blockDocumentHeaders.contains(inte))
 						blockDocumentHeaders.add(inte);
 				}
@@ -1580,7 +1576,7 @@ public class Document {
 		int i = 0;
 		boolean wiley = false;
 		for (Block block : blocks) {
-			Integer ii = new Integer(i);
+			Integer ii = i;
 
 			if (blockDocumentHeaders.contains(ii)) {
 				String localText = block.getText();
@@ -1659,7 +1655,7 @@ public class Document {
 							// featureFactory = new FeatureFactory();
 						}
 						localText = TextUtilities.dehyphenize(localText);
-						accumulated.append(localText + "\n");
+						accumulated.append(localText).append("\n");
 					}
 				}
 			}
@@ -1672,10 +1668,10 @@ public class Document {
 	 * Return all blocks.
 	 */
 	public String getAllBlocks() {
-		StringBuffer accumulated = new StringBuffer();
+		StringBuilder accumulated = new StringBuilder();
 		int i = 0;
 		for (Block block : blocks) {
-			accumulated.append("@block " + i + "\n" + block.getText() + "\n");
+			accumulated.append("@block ").append(i).append("\n").append(block.getText()).append("\n");
 			i++;
 		}
 		return accumulated.toString();
@@ -1694,7 +1690,7 @@ public class Document {
 		if (blocks != null) {
 			for (Block block : blocks) {
 				if ((i >= toIgnore1) && (i < toIgnore2)) {
-					accumulated.append(block.getText() + "\n");
+					accumulated.append(block.getText()).append("\n");
 				}
 				i++;
 			}
@@ -1751,21 +1747,21 @@ public class Document {
 							// dehyphenization of section titles
 							localText = TextUtilities
 									.dehyphenizeHard(localText);
-							accumulated.append(localText + "\n");
+							accumulated.append(localText).append("\n");
 						} else if (blockHeadFigures.contains(ii)) {
 							int innd = localText.indexOf("@IMAGE");
 							if (innd == -1) {
-								accumulated.append(localText + "\n");
+								accumulated.append(localText).append("\n");
 							}
 						} else if (blockHeadTables.contains(ii)) {
-							accumulated.append(localText + "\n");
+							accumulated.append(localText).append("\n");
 						} else if (localText.startsWith("@BULLET")) {
 							localText = localText.replace("@BULLET", " • ");
-							accumulated.append(localText + "\n");
+							accumulated.append(localText).append("\n");
 						} else {
 							if ((!localText.startsWith("@IMAGE"))
 									&& (!localText.startsWith("@PAGE")))
-								accumulated.append(localText + "\n");
+								accumulated.append(localText).append("\n");
 						}
 					}
 				}
@@ -1777,16 +1773,16 @@ public class Document {
 			BiblioItem bit = bib.getResBib();
 
 			if (bit.getTitle() != null) {
-				accumulated.append(bit.getTitle() + "\n");
+				accumulated.append(bit.getTitle()).append("\n");
 			}
 
 			if (withBookTitle) {
 				if (bit.getJournal() != null) {
-					accumulated.append(bit.getJournal() + "\n");
+					accumulated.append(bit.getJournal()).append("\n");
 				}
 
 				if (bit.getBookTitle() != null) {
-					accumulated.append(bit.getBookTitle() + "\n");
+					accumulated.append(bit.getBookTitle()).append("\n");
 				}
 			}
 		}
@@ -1835,7 +1831,7 @@ public class Document {
 						if ((!localText.startsWith("@IMAGE"))
 								&& (!localText.startsWith("@PAGE"))) {
 							localText = localText.replace("@BULLET", " • ");
-							introduction.append(localText + "\n");
+							introduction.append(localText).append("\n");
 						}
 					}
 				}
@@ -1934,7 +1930,7 @@ public class Document {
 					}
 
 					localText = TextUtilities.dehyphenizeHard(localText);
-					titles.append(localText + "\n");
+					titles.append(localText).append("\n");
 				}
 			}
 			i++;
@@ -1992,7 +1988,7 @@ public class Document {
 			if (block.getNbTokens() < 5) {
 				Matcher m = BasicStructureBuilder.references.matcher(localText);
 				if (m.find()) {
-					// we clearly found the begining of the references
+					// we clearly found the beginning of the references
 					beginReferences = i;
 					return accumulated.toString();
 				}
@@ -2000,13 +1996,13 @@ public class Document {
 
 			if (prefix == null) {
 				accumulated.insert(0, localText + "\n");
-				blockReferences.add(0, new Integer(i));
+				blockReferences.add(0, i);
 			} else if (localText.length() == 0) {
 				bad++;
 			} else if (localText.charAt(0) == prefix.charAt(0)) {
 				accumulated.insert(0, localText + "\n");
 				bad = 0;
-				blockReferences.add(0, new Integer(i));
+				blockReferences.add(0, i);
 			} else {
 				bad++;
 			}
@@ -2083,7 +2079,7 @@ public class Document {
 			ArrayList<LayoutToken> tokens = block.getTokens();
 			if (tokens != null) {
 				if (tokens.size() > 0) {
-					LayoutToken token = null;
+					LayoutToken token;
 					if (tokens.size() > 1)
 						token = tokens.get(1); // to avoid big first letter of
 												// paragraph...
@@ -2152,7 +2148,7 @@ public class Document {
 						ArrayList<LayoutToken> tokens2 = b.getTokens();
 						if (tokens2 != null) {
 							if (tokens2.size() > 0) {
-								LayoutToken token2 = null;
+								LayoutToken token2;
 								if (tokens2.size() > 1)
 									token2 = tokens2.get(1); // to avoid big
 																// first letter
@@ -2261,7 +2257,7 @@ public class Document {
 							// paragraph of the body
 							beginBody = i;
 							for (int j = headerStart; j < i - 1; j++) {
-								Integer inte = new Integer(j);
+								Integer inte = j;
 								if (!blockDocumentHeaders.contains(inte))
 									blockDocumentHeaders.add(inte);
 							}

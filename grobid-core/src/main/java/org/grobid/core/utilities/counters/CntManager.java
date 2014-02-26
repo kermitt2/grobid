@@ -16,7 +16,6 @@ public interface CntManager extends Serializable {
     Map<String, Long> getCounters(Class<? extends Enum<?>> enumClass);
     Map<String, Long> getCounters(String group);
     Map<String, Map<String, Long>> getAllCounters();
-    String toJson();
     Map<String, Long> flattenAllCounters(String separator);
 
     void addMetric(String name, CntsMetric cntsMetric);

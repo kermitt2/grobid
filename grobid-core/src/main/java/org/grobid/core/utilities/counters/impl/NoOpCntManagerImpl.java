@@ -1,13 +1,13 @@
 package org.grobid.core.utilities.counters.impl;
 
-import de.smtdp.paler.util.counters.CntManager;
-import de.smtdp.paler.util.counters.CntsMetric;
-import de.smtdp.paler.util.counters.Counter;
+import org.grobid.core.utilities.counters.CntManager;
+import org.grobid.core.utilities.counters.CntsMetric;
+import org.grobid.core.utilities.counters.Counter;
 
 import java.util.Collections;
 import java.util.Map;
 
-class NoOpCntManagerImpl implements CntManager{
+class NoOpCntManagerImpl implements CntManager {
     @Override
     public void i(Enum<?> e) {
     }
@@ -57,11 +57,6 @@ class NoOpCntManagerImpl implements CntManager{
     @Override
     public Map<String, Map<String, Long>> getAllCounters() {
         return Collections.emptyMap();
-    }
-
-    @Override
-    public String toJson() {
-        return "{NoOpCounter: 0}";
     }
 
     @Override

@@ -49,6 +49,7 @@ import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.LanguageUtilities;
 import org.grobid.core.utilities.Utilities;
 import org.grobid.core.utilities.counters.CntManager;
+import org.grobid.core.utilities.counters.impl.CntManagerFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -77,7 +78,7 @@ public class Engine implements Closeable {
 	private ChemicalParser chemicalParser = null;
 
     //TODO: when using one instance of Engine in e.g. grobid-service, then make this field not static
-    private static CntManager cntManager;
+    private static CntManager cntManager = CntManagerFactory.getCntManager();
 
 	// Identified parsed bibliographical items and related information
 	public List<org.grobid.core.data.BibDataSet> resBib;
@@ -164,8 +165,7 @@ public class Engine implements Closeable {
 		if (affiliationAddressParser == null) {
 			affiliationAddressParser = new AffiliationAddressParser();
 		}
-		List<Affiliation> result = affiliationAddressParser.processing(addressBlock);
-		return result;
+        return affiliationAddressParser.processing(addressBlock);
 	}
 
 	/**
@@ -319,10 +319,9 @@ public class Engine implements Closeable {
 	 */
 	public List<BibDataSet> processReferences(String inputFile, boolean consolidate) throws Exception {
 		if (citationParser == null) {
-			citationParser = new CitationParser();
+			citationParser = new CitationParser(cntManager);
 		}
-		List<org.grobid.core.data.BibDataSet> bits = citationParser.processingReferenceSection(inputFile, consolidate);
-		return bits;
+        return citationParser.processingReferenceSection(inputFile, consolidate);
 	}
 
 	/**
@@ -550,7 +549,7 @@ public class Engine implements Closeable {
 			fullTextParser = new FullTextParser();
 		}
 		// replace by the commented version for the new full ML text parser
-		String resultTEI = null;
+		String resultTEI;
 		LOGGER.debug("Starting processing fullTextToTEI on " + inputFile);
 		long time = System.currentTimeMillis();
 		if (method == 0) {
@@ -612,10 +611,7 @@ public class Engine implements Closeable {
 			// we process all pdf files in the directory
 			File[] refFiles = path.listFiles(new FilenameFilter() {
 				public boolean accept(File dir, String name) {
-					if (name.endsWith(".pdf") || name.endsWith(".PDF"))
-						return true;
-					else
-						return false;
+                    return name.endsWith(".pdf") || name.endsWith(".PDF");
 				}
 			});
 
@@ -697,10 +693,10 @@ public class Engine implements Closeable {
 	 *            located
 	 * @param resultPath
 	 *            output path, folder where the tei files pdfs are written to
-	 * @param consolidateHeader
-	 * @param consolidateCitations
-	 * @param type
-	 * @return
+	 * @param consolidateHeader consolidate header
+	 * @param consolidateCitations consolidate citations
+	 * @param type type of the method
+	 * @return exit code
 	 */
 	private int batchProcess(String directoryPath, String resultPath, boolean consolidateHeader, boolean consolidateCitations, int type) {
 		if (directoryPath == null) {
@@ -728,10 +724,7 @@ public class Engine implements Closeable {
 			// we process all pdf files in the directory
 			File[] refFiles = path.listFiles(new FilenameFilter() {
 				public boolean accept(File dir, String name) {
-					if (name.endsWith(".pdf") || name.endsWith(".PDF"))
-						return true;
-					else
-						return false;
+                    return name.endsWith(".pdf") || name.endsWith(".PDF");
 				}
 			});
 
@@ -794,13 +787,13 @@ public class Engine implements Closeable {
 	 * with pointers
 	 */
 	public String rawCitation2TEI2() {
-		StringBuffer result = new StringBuffer();
+		StringBuilder result = new StringBuilder();
 		result.append("<tei>\n");
 
 		BiblioSet bs = new BiblioSet();
 		resRef.buildBiblioSet(bs, path);
 		result.append(bs.toTEI());
-		result.append("<listbibl>\n\n" + resRef.toTEI2(bs) + "\n</listbibl>\n</tei>\n");
+		result.append("<listbibl>\n\n").append(resRef.toTEI2(bs)).append("\n</listbibl>\n</tei>\n");
 
 		return result.toString();
 	}
@@ -831,7 +824,7 @@ public class Engine implements Closeable {
 	 * Get the TEI XML string corresponding to the recognized citation section
 	 */
 	public String references2TEI2() {
-		StringBuffer result = new StringBuffer();
+		StringBuilder result = new StringBuilder();
 		result.append("<tei>\n");
 
 		BiblioSet bs = new BiblioSet();
@@ -846,7 +839,7 @@ public class Engine implements Closeable {
 
 		for (BibDataSet bib : resBib) {
 			BiblioItem bit = bib.getResBib();
-			result.append("\n" + bit.toTEI2(bs));
+			result.append("\n").append(bit.toTEI2(bs));
 		}
 		result.append("\n</listbibl>\n</tei>\n");
 
@@ -858,14 +851,14 @@ public class Engine implements Closeable {
 	 * with pointers and advanced structuring
 	 */
 	public String references2TEI() {
-		StringBuffer result = new StringBuffer();
+		StringBuilder result = new StringBuilder();
 		result.append("<listbibl>\n");
 
 		int p = 0;
 		for (BibDataSet bib : resBib) {
 			BiblioItem bit = bib.getResBib();
 			bit.setPath(path);
-			result.append("\n" + bit.toTEI(p));
+			result.append("\n").append(bit.toTEI(p));
 			p++;
 		}
 		result.append("\n</listbibl>\n");
@@ -876,12 +869,12 @@ public class Engine implements Closeable {
 	 * Get the BibTeX string corresponding to the recognized citation section
 	 */
 	public String references2BibTeX() {
-		StringBuffer result = new StringBuffer();
+		StringBuilder result = new StringBuilder();
 
 		for (BibDataSet bib : resBib) {
 			BiblioItem bit = bib.getResBib();
 			bit.setPath(path);
-			result.append("\n" + bit.toBibTeX());
+			result.append("\n").append(bit.toBibTeX());
 		}
 
 		return result.toString();
@@ -892,7 +885,7 @@ public class Engine implements Closeable {
 	 * for a particular citation
 	 */
 	public String reference2TEI(int i) {
-		StringBuffer result = new StringBuffer();
+		StringBuilder result = new StringBuilder();
 
 		if (resBib != null) {
 			if (i <= resBib.size()) {
@@ -911,7 +904,7 @@ public class Engine implements Closeable {
 	 * for a given citation
 	 */
 	public String reference2BibTeX(int i) {
-		StringBuffer result = new StringBuffer();
+		StringBuilder result = new StringBuilder();
 
 		if (resBib != null) {
 			if (i <= resBib.size()) {
@@ -1147,11 +1140,8 @@ public class Engine implements Closeable {
 			// we process all xml files in the directory
 			File[] refFiles = path.listFiles(new FilenameFilter() {
 				public boolean accept(File dir, String name) {
-					if (name.endsWith(".xml") || name.endsWith(".XML") || 
-						name.endsWith(".xml.gz") || name.endsWith(".XML.gz"))
-						return true;
-					else
-						return false;
+                    return name.endsWith(".xml") || name.endsWith(".XML") ||
+                            name.endsWith(".xml.gz") || name.endsWith(".XML.gz");
 				}
 			});
 
@@ -1223,12 +1213,12 @@ public class Engine implements Closeable {
 	 * Return all the reference titles. Maybe useful for term extraction.
 	 */
 	public String printRefTitles() throws Exception {
-		StringBuffer accumulated = new StringBuffer();
+		StringBuilder accumulated = new StringBuilder();
 		for (BibDataSet bib : resBib) {
 			BiblioItem bit = bib.getResBib();
 
 			if (bit.getTitle() != null) {
-				accumulated.append(bit.getTitle() + "\n");
+				accumulated.append(bit.getTitle()).append("\n");
 			}
 		}
 
@@ -1239,16 +1229,16 @@ public class Engine implements Closeable {
 	 * Return all the reference book titles. Maybe useful for term extraction.
 	 */
 	public String printRefBookTitles() throws Exception {
-		StringBuffer accumulated = new StringBuffer();
+		StringBuilder accumulated = new StringBuilder();
 		for (BibDataSet bib : resBib) {
 			BiblioItem bit = bib.getResBib();
 
 			if (bit.getJournal() != null) {
-				accumulated.append(bit.getJournal() + "\n");
+				accumulated.append(bit.getJournal()).append("\n");
 			}
 
 			if (bit.getBookTitle() != null) {
-				accumulated.append(bit.getBookTitle() + "\n");
+				accumulated.append(bit.getBookTitle()).append("\n");
 			}
 		}
 

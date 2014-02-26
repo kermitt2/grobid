@@ -1,7 +1,8 @@
 package org.grobid.core.utilities.counters.impl;
 
-import de.smtdp.paler.util.counters.CntManager;
-import de.smtdp.paler.util.counters.CntManagerRepresentation;
+
+import org.grobid.core.utilities.counters.CntManager;
+import org.grobid.core.utilities.counters.CntManagerRepresentation;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -15,7 +16,7 @@ import java.util.TimeZone;
  * @author Vyacheslav Zholudev
  */
 
-public class CntManagerGrepRepresentation implements CntManagerRepresentation{
+public class CntManagerGrepRepresentation implements CntManagerRepresentation {
     public static final SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
     static {
         df.setTimeZone(TimeZone.getTimeZone("UTC"));

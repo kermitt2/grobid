@@ -8,16 +8,24 @@ import org.chasen.crfpp.Model;
 import org.chasen.crfpp.Tagger;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.exceptions.GrobidException;
+import org.grobid.core.utilities.counters.CntManager;
+import org.grobid.core.utilities.counters.impl.CntManagerFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public abstract class AbstractParser implements Closeable {
     private static final Logger LOGGER = LoggerFactory.getLogger(AbstractParser.class);
     private final Model model;
+    protected CntManager cntManager = CntManagerFactory.getNoOpCntManager();
 
 //    protected Tagger tagger;
 
     protected AbstractParser(GrobidModels model) {
+        this(model, CntManagerFactory.getNoOpCntManager());
+    }
+
+    protected AbstractParser(GrobidModels model, CntManager cntManager) {
+        this.cntManager = cntManager;
         this.model = ModelMap.getModel(model);
 //		tagger = createTagger(model);
     }
