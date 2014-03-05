@@ -6,6 +6,7 @@ import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.BiblioItem;
 import org.grobid.core.data.Date;
 import org.grobid.core.document.Document;
+import org.grobid.core.engines.citations.ReferenceSegmenter;
 import org.grobid.core.engines.counters.CitationParserCounters;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.features.FeaturesVectorCitation;
@@ -21,8 +22,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  * @author Patrice Lopez
@@ -34,7 +33,7 @@ public class CitationParser extends AbstractParser {
 	private Consolidation consolidator = null;
 
 	private File tmpPath = null;
-	private String pathXML = null;
+//	private String pathXML = null;
 
 	public Lexicon lexicon = Lexicon.getInstance();
 
@@ -165,11 +164,11 @@ public class CitationParser extends AbstractParser {
 			boolean consolidate) throws Exception {
 		ArrayList<BibDataSet> results = new ArrayList<BibDataSet>();
 		Document doc = new Document(input, tmpPath.getAbsolutePath());
-		try {
+        String pathXML = null;
+        try {
 			int startPage = -1;
 			int endPage = -1;
-			pathXML = doc.pdf2xml(true, false, startPage, endPage, input,
-					tmpPath.getAbsolutePath(), false); // with timeout,
+			pathXML = doc.pdf2xml(true, false, startPage, endPage, input, tmpPath.getAbsolutePath(), false); // with timeout,
 			// no force pdf reloading
 			// input is the pdf file, tmpPath is the tmp directory for the lxml
 			// file,
@@ -192,9 +191,9 @@ public class CitationParser extends AbstractParser {
             if (!referencesStr.isEmpty()) {
                 cntManager.i(CitationParserCounters.NOT_EMPTY_REFERENCES_BLOCKS);
             }
-			ArrayList<String> tokenizations = doc.getTokenizationsReferences();
+//			ArrayList<String> tokenizations = doc.getTokenizationsReferences();
 
-			List<String> references = segmentReferences(tokenizations);
+			List<String> references = ReferenceSegmenter.segmentReferences(referencesStr);
 
             if (references == null) {
                 cntManager.i(CitationParserCounters.NULL_SEGMENTED_REFERENCES_LIST);
@@ -214,79 +213,14 @@ public class CitationParser extends AbstractParser {
 			throw new GrobidException("An exception occurred while running Grobid.", e);
 		} finally {
 			// keep it clean when leaving...
-			doc.cleanLxmlFile(pathXML, true);
+            if (pathXML != null) {
+			    doc.cleanLxmlFile(pathXML, true);
+            }
 		}
 
 		return results;
 	}
 
-	public List<String> segmentReferences(ArrayList<String> tokenizations) {
-		if (tokenizations == null)
-			return null;
-		if (tokenizations.size() == 0)
-			return null;
-		StringBuilder referencesBuffer = new StringBuilder();
-		for (String tok : tokenizations) {
-			referencesBuffer.append(tok);
-		}
-
-		String references = referencesBuffer.toString();
-		ArrayList<String> results = new ArrayList<String>();
-		int best = 0;
-		Matcher bestMatcher;
-		int bestIndex = -1;
-		for (int i = 0; i < citationMarkers.length; i++) {
-			Matcher ma = citationMarkers[i].matcher(references);
-			int count = 0;
-			while (ma.find()) {
-				count++;
-			}
-			if (count > best) {
-				bestIndex = i;
-				best = count;
-			}
-		}
-
-		if (bestIndex == -1)
-			return null;
-		else
-			bestMatcher = citationMarkers[bestIndex].matcher(references);
-		int last = 0;
-		int i = 0;
-		while (bestMatcher.find()) {
-			if (i == 0) {
-				last = bestMatcher.end();
-			} else {
-				int newLast = bestMatcher.start();
-				String lastRef = references.substring(last, newLast);
-				if (testCitationProfile(lastRef)) {
-					results.add(lastRef);	
-				}
-				last = bestMatcher.end();
-			}
-			i++;
-		}
-		// the last one - if at least one, has not been considered
-		if (i > 0) {
-			String lastRef = references.substring(last, references.length());
-			if (testCitationProfile(lastRef)) {
-				results.add(lastRef);
-			}
-		}
-
-		return results;
-	}
-	
-	private boolean testCitationProfile(String lastRef) {
-		if (lastRef.length() < 400) {
-			// we assume that a reference extracted from a full text cannot be be more than 400 characters 
-			StringTokenizer st = new StringTokenizer(lastRef, "\n");
-			if (st.countTokens() < 9) {
-				return true;
-			}
-		}
-		return false;
-	}
 
 	/**
 	 * Extract results from a labelled header.
@@ -640,10 +574,12 @@ public class CitationParser extends AbstractParser {
 						String s = st3.nextToken().trim();
 						if (i == 0) {
 							s2 = TextUtilities.HTMLEncode(s); // string
-						} else if (i == ll - 2) {
-//							s3 = s; // pre-label, in this case it should always
-									// be <author>
-						} else if (i == ll - 1) {
+						}
+//                        else if (i == ll - 2) {
+////							s3 = s; // pre-label, in this case it should always
+//									// be <author>
+//						}
+                        else if (i == ll - 1) {
 							s1 = s; // label
 						}
 						i++;
@@ -915,11 +851,4 @@ public class CitationParser extends AbstractParser {
 		}
 
 	}
-
-	final static private Pattern m1 = Pattern.compile("((^|\\n)( )*\\[.+?\\])");
-	final static private Pattern m2 = Pattern.compile("((^|\\n)( )*\\(.+?\\))");
-	final static private Pattern m3 = Pattern
-			.compile("((^|\\n)( )*\\d{1,3}\\.)");
-	// static private Pattern m4 = Pattern.compile("(\\d{1,3})");
-	static private Pattern[] citationMarkers = { m1, m2, m3 };
 }

@@ -32,7 +32,9 @@ public class BasicStructureBuilder {
             Pattern.CASE_INSENSITIVE);
 
     static public Pattern references =
-            Pattern.compile("^\\b*(References?|REFERENCES?|Bibliography|BIBLIOGRAPHY|References?\\s+and\\s+Notes?|References?\\s+Cited|REFERENCE?\\s+CITED|REFERENCES?\\s+AND\\s+NOTES?|Références)", Pattern.CASE_INSENSITIVE);
+            Pattern.compile("^\\b*(References?|REFERENCES?|Bibliography|BIBLIOGRAPHY|" +
+                    "References?\\s+and\\s+Notes?|References?\\s+Cited|REFERENCE?\\s+CITED|REFERENCES?\\s+AND\\s+NOTES?|Références|Literatur|" +
+                    "LITERATURA|Literatur|Referências|BIBLIOGRAFIA|Literaturverzeichnis|Referencias|LITERATURE CITED|References and Notes)", Pattern.CASE_INSENSITIVE);
     static public Pattern header = Pattern.compile("^((\\d\\d?)|([A-Z](I|V|X)*))(\\.(\\d)*)*\\s(\\D+)");
 //    static public Pattern header2 = Pattern.compile("^\\d\\s\\D+");
     static public Pattern figure = Pattern.compile("(figure\\s|fig\\.|sch?ma)", Pattern.CASE_INSENSITIVE);
