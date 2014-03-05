@@ -5,6 +5,7 @@ import org.grobid.core.data.BiblioItem;
 import org.grobid.core.engines.CitationParser;
 import org.grobid.core.engines.Engine;
 import org.grobid.core.engines.HeaderParser;
+import org.grobid.core.engines.citations.ReferenceSegmenter;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.exceptions.GrobidResourceException;
 import org.grobid.core.features.FeatureFactory;
@@ -540,7 +541,7 @@ public class Document {
 
 			List<String> refs;
 			if (citationParser != null) {
-				refs = citationParser.segmentReferences(tokenizations);
+				refs = ReferenceSegmenter.segmentReferences(tokenizations);
 				if (refs != null) {
 					for (String refString : refs) {
 						BiblioItem bib = citationParser.processing(refString,
