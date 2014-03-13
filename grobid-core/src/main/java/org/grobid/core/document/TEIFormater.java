@@ -908,7 +908,7 @@ public class TEIFormater {
     public StringBuffer toTEIBodyML(StringBuffer tei,
                                     String rese,
                                     BiblioItem biblio,
-                                    ArrayList<BibDataSet> bds,
+                                    List<BibDataSet> bds,
                                     ArrayList<String> tokenizations,
                                     Document doc) throws Exception {
         tei.append("\t\t<body>\n");
@@ -2241,7 +2241,7 @@ public class TEIFormater {
                                    String currentTag0,
                                    String lastTag0,
                                    String currentTag,
-                                   ArrayList<BibDataSet> bds,
+                                   List<BibDataSet> bds,
                                    ArrayList<NonTextObject> ntos) {
         boolean res = false;
 
@@ -2420,7 +2420,7 @@ public class TEIFormater {
     }
 
 
-    public StringBuffer toTEIReferences(StringBuffer tei, ArrayList<BibDataSet> bds) throws Exception {
+    public StringBuffer toTEIReferences(StringBuffer tei, List<BibDataSet> bds) throws Exception {
         tei.append("\t\t\t<div type=\"references\">\n");
         tei.append("<listBibl>");
 
@@ -2647,7 +2647,7 @@ public class TEIFormater {
     /**
      * Mark using TEI annotations the identified references in the text body build with the machine learning model.
      */
-    public String markReferencesTEI(String text, ArrayList<BibDataSet> bds) {
+    public String markReferencesTEI(String text, List<BibDataSet> bds) {
         if (text == null)
             return null;
         if (text.trim().length() == 0)
