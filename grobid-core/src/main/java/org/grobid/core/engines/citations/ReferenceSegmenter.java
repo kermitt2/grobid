@@ -131,7 +131,9 @@ public class ReferenceSegmenter {
                 .replaceAll(",\\s*,", ",") // resolve double commas
                 .replaceAll("\\r", " ")
                 .replaceAll("\\s\\s+", " ")
-                .trim().replaceAll("^[\\d]+\\s", "");
+                .trim();
+
+        citation = citation.replaceAll("^[\\d]\\.?+\\s", "");
 
         return citation;
     }

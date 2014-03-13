@@ -88,7 +88,7 @@ public class Document {
 	private ArrayList<String> tokenizations = null;
 
 	// list of bibliographical references with context
-	public ArrayList<BibDataSet> bibDataSets = null;
+	public List<BibDataSet> bibDataSets = null;
 
 	public DocumentNode top = null;
 
@@ -553,6 +553,7 @@ public class Document {
 					}
 				}
 			}
+            bibDataSets = bds;
 		}
 		// BiblioItem biblio =
 		// headerParser.processingHeaderBlock(consolidateHeader, this);

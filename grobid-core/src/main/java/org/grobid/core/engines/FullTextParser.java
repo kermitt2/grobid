@@ -18,6 +18,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.StringTokenizer;
 
 /**
@@ -172,7 +173,7 @@ public class FullTextParser extends AbstractParser {
             if (citationParser == null) {
                 citationParser = new CitationParser();
             }
-            ArrayList<BibDataSet> resCitations;
+            List<BibDataSet> resCitations;
 
             //ArrayList<String> tokenizationsRef = doc.getTokenizationsReferences();
             //System.out.println(tokenizationsRef.toString());

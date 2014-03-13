@@ -160,9 +160,9 @@ public class CitationParser extends AbstractParser {
 		}
 	}
 
-	public ArrayList<BibDataSet> processingReferenceSection(String input,
+	public List<BibDataSet> processingReferenceSection(String input,
 			boolean consolidate) throws Exception {
-		ArrayList<BibDataSet> results = new ArrayList<BibDataSet>();
+		List<BibDataSet> results = new ArrayList<BibDataSet>();
 		Document doc = new Document(input, tmpPath.getAbsolutePath());
         String pathXML = null;
         try {
