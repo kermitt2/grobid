@@ -188,7 +188,7 @@ public class AffiliationAddressParser extends AbstractParser {
             int n = 0;
             StringTokenizer st = new StringTokenizer(header, "\n");
 
-            //TODO:
+            //TODO: VZ: understand how tagging is done and how we can utilize wapiti
             tagger = null;//getNewTagger();
 
             ArrayList<String> preToken = new ArrayList<String>();
