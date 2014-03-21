@@ -1,17 +1,17 @@
 package org.grobid.trainer;
 
-import java.io.*;
-
-import org.chasen.crfpp.CRFPPTrainer;
-import org.chasen.crfpp.Tagger;
 import org.grobid.core.GrobidModels;
-import org.grobid.core.engines.AbstractParser;
+import org.grobid.core.engines.tagging.GenericTagger;
+import org.grobid.core.engines.tagging.TaggerFactory;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.factory.GrobidFactory;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.trainer.evaluation.EvaluationUtilities;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.io.File;
+import java.io.IOException;
 
 /**
  * User: zholudev Date: 11/21/11 Time: 2:25 PM
@@ -21,16 +21,16 @@ public abstract class AbstractTrainer implements Trainer {
 	public static final String OLD_MODEL_EXT = ".old";
 	public static final String NEW_MODEL_EXT = ".new";
 
-	protected final CRFPPTrainer crfppTrainer;
+//	protected final CRFPPTrainer crfppTrainer;
 
 	protected GrobidModels model;
 	private File trainDataPath;
 	private File evalDataPath;
-	private Tagger tagger;
+	private GenericTagger tagger;
 
 	public AbstractTrainer(final GrobidModels model) {
 		GrobidFactory.getInstance().createEngine();
-		crfppTrainer = new CRFPPTrainer();
+//		crfppTrainer = new CRFPPTrainer();
 		this.model = model;
 		this.trainDataPath = getTempTrainingDataPath();
 		this.evalDataPath = getTempEvaluationDataPath();
@@ -40,16 +40,11 @@ public abstract class AbstractTrainer implements Trainer {
 	public void train() {
 		final File dataPath = trainDataPath;
 		createCRFPPData(getCorpusPath(), dataPath);
-		final File tempModelPath = new File(GrobidProperties.getModelPath(model).getAbsolutePath() + NEW_MODEL_EXT);
-		final File oldModelPath = GrobidProperties.getModelPath(model);
-		crfppTrainer.train(getTemplatePath().getAbsolutePath(), dataPath.getAbsolutePath(), tempModelPath.getAbsolutePath(),
-				GrobidProperties.getNBThreads());
+        GenericTrainer trainer = TrainerFactory.getTrainer();
+        final File tempModelPath = new File(GrobidProperties.getModelPath(model, trainer.getName()).getAbsolutePath() + NEW_MODEL_EXT);
+        final File oldModelPath = GrobidProperties.getModelPath(model, trainer.getName());
 
-		if (!crfppTrainer.what().isEmpty()) {
-			LOGGER.warn("CRF++ Trainer warnings:\n" + crfppTrainer.what());
-		} else {
-			LOGGER.info("No CRF++ Trainer warnings!");
-		}
+        trainer.train(getTemplatePath(), dataPath, tempModelPath, GrobidProperties.getNBThreads());
 		// if we are here, that means that training succeeded
 		renameModels(oldModelPath, tempModelPath);
 	}
@@ -77,16 +72,12 @@ public abstract class AbstractTrainer implements Trainer {
 	public String splitTrainEvaluate(Double split) {
 		final File dataPath = trainDataPath;
 		createCRFPPData(getCorpusPath(), dataPath, evalDataPath, split);
-		final File tempModelPath = new File(GrobidProperties.getModelPath(model).getAbsolutePath() + NEW_MODEL_EXT);
-		final File oldModelPath = GrobidProperties.getModelPath(model);
-		crfppTrainer.train(getTemplatePath().getAbsolutePath(), dataPath.getAbsolutePath(), tempModelPath.getAbsolutePath(),
-				GrobidProperties.getNBThreads());
+        GenericTrainer trainer = TrainerFactory.getTrainer();
+        final File tempModelPath = new File(GrobidProperties.getModelPath(model, trainer.getName()).getAbsolutePath() + NEW_MODEL_EXT);
+        final File oldModelPath = GrobidProperties.getModelPath(model, trainer.getName());
 
-		if (!crfppTrainer.what().isEmpty()) {
-			LOGGER.warn("CRF++ Trainer warnings:\n" + crfppTrainer.what());
-		} else {
-			LOGGER.info("No CRF++ Trainer warnings!");
-		}
+        trainer.train(getTemplatePath(), dataPath, tempModelPath, GrobidProperties.getNBThreads());
+
 		// if we are here, that means that training succeeded
 		renameModels(oldModelPath, tempModelPath);
 		
@@ -109,15 +100,15 @@ public abstract class AbstractTrainer implements Trainer {
 		}
 	}
 
-	protected Tagger getTagger() {
+	protected GenericTagger getTagger() {
 		if (tagger == null) {
-			tagger = AbstractParser.createTagger(model);
+			tagger = TaggerFactory.getTagger(model);
 		}
 
 		return tagger;
 	}
 
-	protected static final File getFilePath2Resources() {
+	protected static File getFilePath2Resources() {
 		File theFile = new File(GrobidProperties.get_GROBID_HOME_PATH().getAbsoluteFile() + File.separator + ".." + File.separator
 				+ "grobid-trainer" + File.separator + "resources");
 		if (!theFile.exists()) {
@@ -162,7 +153,11 @@ public abstract class AbstractTrainer implements Trainer {
 
 	}
 
-	public static void runEvaluation(final Trainer trainer) {
+    public File getEvalDataPath() {
+        return evalDataPath;
+    }
+
+    public static void runEvaluation(final Trainer trainer) {
 		long start = System.currentTimeMillis();
 		try {
 			String report = trainer.evaluate();
@@ -185,5 +180,7 @@ public abstract class AbstractTrainer implements Trainer {
 		long end = System.currentTimeMillis();
 		System.out.println("Split, training and evaluation for " + trainer.getModel() + " model is realized in " + (end - start) + " ms");
 	}
+
+
 	
 }

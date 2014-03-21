@@ -47,11 +47,18 @@ public class CitationParser extends AbstractParser {
 		tmpPath = GrobidProperties.getTempPath();
 	}
 
-	public String taggerRun(String ress) throws Exception {
-		// clear internal context
-		StringTokenizer st = new StringTokenizer(ress, "\n");
-        return getTaggerResult(st);
-	}
+//	public String taggerRun(String ress) throws Exception {
+//		// clear internal context
+//		StringTokenizer st = new StringTokenizer(ress, "\n");
+//        return getTaggerResult(st);
+//	}
+
+//	public String wapitiTaggerRun(String ress) throws Exception {
+//		// clear internal context
+//        WapitiModel wm = new WapitiModel(GrobidModels.CITATION);
+//		//StringTokenizer st = new StringTokenizer(ress, "\n");
+//        return wm.label(ress);
+//	}
 
 	public BiblioItem processing(String input, boolean consolidate) {
 		BiblioItem resCitation;
@@ -95,7 +102,7 @@ public class CitationParser extends AbstractParser {
 			String ress = FeaturesVectorCitation.addFeaturesCitation(
 					citationBlocks, journalsPositions, abbrevJournalsPositions,
 					conferencesPositions, publishersPositions);
-			String res = taggerRun(ress);
+			String res = label(ress);
 
 			resCitation = resultExtraction(res, true, tokenizations);
 
@@ -533,7 +540,7 @@ public class CitationParser extends AbstractParser {
 						citationBlocks, journalsPositions,
 						abbrevJournalsPositions, conferencesPositions,
 						publishersPositions);
-				String res = taggerRun(ress);
+				String res = label(ress);
 
 				// extract results from the processed file
 				StringTokenizer st2 = new StringTokenizer(res, "\n");

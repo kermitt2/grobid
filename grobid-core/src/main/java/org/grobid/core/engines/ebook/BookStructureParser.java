@@ -1,6 +1,5 @@
 package org.grobid.core.engines.ebook;
 
-import org.chasen.crfpp.Tagger;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.document.Document;
 import org.grobid.core.engines.AbstractParser;
@@ -69,8 +68,8 @@ public class BookStructureParser extends AbstractParser {
             writer.close();
 
             // clear internal context
-            StringTokenizer st = new StringTokenizer(fulltext, "\n");
-            String rese = getTaggerResult(st);
+//            StringTokenizer st = new StringTokenizer(fulltext, "\n");
+            String rese = label(fulltext);
 
             StringBuffer bufferFulltext = trainingExtraction(rese, tokenizations);
 

@@ -1,0 +1,73 @@
+package org.grobid.core.jni;
+
+import fr.limsi.wapiti.SWIGTYPE_p_mdl_t;
+import fr.limsi.wapiti.Wapiti;
+import org.grobid.core.GrobidModels;
+import org.grobid.core.exceptions.GrobidException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.io.File;
+
+/**
+ * User: zholudev
+ * Date: 3/17/14
+ */
+public class WapitiModel {
+    public static final Logger LOGGER = LoggerFactory.getLogger(WapitiModel.class);
+
+
+    private SWIGTYPE_p_mdl_t model;
+    private File modelFile;
+
+    public WapitiModel(File modelFile) {
+        this.modelFile = modelFile;
+        init();
+    }
+
+    public WapitiModel(GrobidModels grobidModel) {
+        modelFile = new File(grobidModel.getModelPath() + ".wapiti");
+        init();
+    }
+
+    private synchronized void init() {
+        if (model != null) {
+            return;
+        }
+        if (!modelFile.exists() || modelFile.isDirectory()) {
+            throw new GrobidException("Model file does not exists or a directory: " + modelFile.getAbsolutePath());
+        }
+        model = WapitiWrapper.getModel(modelFile);
+    }
+
+    public String label(String data) {
+        if (model == null) {
+            LOGGER.warn("Model has been already closed, reopening: " + modelFile.getAbsolutePath());
+            init();
+        }
+        String label = WapitiWrapper.label(model, data).trim();
+        //TODO: VZ: Grobid currently expects tabs as separators whereas wapiti uses spaces for separating features.
+        // for now it is safer to replace, although it does not look nice
+        label = label.replaceAll(" ", "\t");
+        return label;
+    }
+
+    public synchronized void close() {
+        if (model != null) {
+            Wapiti.freeModel(model);
+            model = null;
+        }
+    }
+
+    public static void train(File template, File trainingData, File outputModel) {
+        train(template, trainingData, outputModel, "");
+    }
+
+    public static void train(File template, File trainingData, File outputModel, String params) {
+        String args = String.format("train " + params + " -p  %s %s %s", template.getAbsolutePath(), trainingData.getAbsolutePath(), outputModel.getAbsolutePath());
+        Wapiti.runWapiti(args);
+    }
+
+
+
+}

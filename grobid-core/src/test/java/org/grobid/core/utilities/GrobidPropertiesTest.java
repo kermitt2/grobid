@@ -273,7 +273,7 @@ public class GrobidPropertiesTest {
 						GrobidProperties.FOLDER_NAME_MODELS + File.separator
 								+ value.getFolderName() + File.separator
 								+ GrobidProperties.FILE_NAME_MODEL),
-				GrobidProperties.getModelPath(value));
+				GrobidProperties.getModelPath(value, "wapiti"));
 	}
 
 	//@Test

@@ -139,8 +139,6 @@ public class TeiStAXParser {
 	/**
 	 * Constructor.
 	 * 
-	 * @param pInput
-	 *            The input file.
 	 * @param pOutputStream
 	 *            The output stream
 	 * @param pIsIndented
@@ -155,8 +153,6 @@ public class TeiStAXParser {
 	/**
 	 * Constructor.
 	 * 
-	 * @param pInput
-	 *            The input file.
 	 * @param pOutputStream
 	 *            The output stream
 	 * @param pIsIndented

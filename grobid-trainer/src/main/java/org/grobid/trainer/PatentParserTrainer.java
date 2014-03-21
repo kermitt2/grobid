@@ -35,7 +35,7 @@ public class PatentParserTrainer extends AbstractTrainer{
     public int createTrainingData(String trainingDataDir) {
         int nb = 0;
         try {
-            String path = new File(new File("resources/dataset/patent/corpus/").getAbsolutePath()).getAbsolutePath();
+            String path = new File(new File(getFilePath2Resources(), "dataset/patent/corpus/").getAbsolutePath()).getAbsolutePath();
             createDataSet(null, null, path, trainingDataDir);
         } catch (Exception e) {
             throw new GrobidException("An exception occurred while training Grobid.", e);
@@ -58,31 +58,32 @@ public class PatentParserTrainer extends AbstractTrainer{
 
     public void train() {
         createTrainingData(GrobidProperties.getTempPath().getAbsolutePath());
-
-        String path = new File(new File("resources/dataset/patent/crfpp-templates/").getAbsolutePath()).getAbsolutePath();
+//        String path = new File(new File("resources/dataset/patent/crfpp-templates/").getAbsolutePath()).getAbsolutePath();
 
         // train the resulting training files with features (based external command line, no JNI
         // binding for the training functions of CRF++)
-        String trainingDataPath1 = GrobidProperties.getTempPath() + "/npl.train";
-        String trainingDataPath2 = GrobidProperties.getTempPath() + "/patent.train";
-        String trainingDataPath3 = GrobidProperties.getTempPath() + "/all.train";
+        File trainingDataPath1 = new File(GrobidProperties.getTempPath() + "/npl.train");
+        File trainingDataPath2 = new File(GrobidProperties.getTempPath() + "/patent.train");
+        File trainingDataPath3 = new File(GrobidProperties.getTempPath() + "/all.train");
 
-        String templatePath1 = path + "/text.npl.references.template";
-        String templatePath2 = path + "/text.patent.references.template";
-        String templatePath3 = path + "/text.references.template";
+        File templatePath1 = new File(getFilePath2Resources(), "dataset/patent/crfpp-templates/text.npl.references.template");
+        File templatePath2 = new File(getFilePath2Resources(), "dataset/patent/crfpp-templates/text.patent.references.template");
+        File templatePath3 = new File(getFilePath2Resources(), "dataset/patent/crfpp-templates/text.references.template");
 
-        String modelPath1 = GrobidProperties.getModelPath(GrobidModels.PATENT_NPL).getAbsolutePath() + NEW_MODEL_EXT;
-        String modelPath2 = GrobidProperties.getModelPath(GrobidModels.PATENT_PATENT).getAbsolutePath() + NEW_MODEL_EXT;
-        String modelPath3 = GrobidProperties.getModelPath(GrobidModels.PATENT_ALL).getAbsolutePath() + NEW_MODEL_EXT;
 
-        crfppTrainer.train(templatePath1, trainingDataPath1, modelPath1, GrobidProperties.getNBThreads());
-        crfppTrainer.train(templatePath2, trainingDataPath2, modelPath2, GrobidProperties.getNBThreads());
-        crfppTrainer.train(templatePath3, trainingDataPath3, modelPath3, GrobidProperties.getNBThreads());
+        GenericTrainer trainer = TrainerFactory.getTrainer();
+        File modelPath1 = new File(GrobidProperties.getModelPath(GrobidModels.PATENT_NPL, trainer.getName()).getAbsolutePath() + NEW_MODEL_EXT);
+        File modelPath2 = new File(GrobidProperties.getModelPath(GrobidModels.PATENT_PATENT, trainer.getName()).getAbsolutePath() + NEW_MODEL_EXT);
+        File modelPath3 = new File(GrobidProperties.getModelPath(GrobidModels.PATENT_ALL, trainer.getName()).getAbsolutePath() + NEW_MODEL_EXT);
+
+        trainer.train(templatePath1, trainingDataPath1, modelPath1, GrobidProperties.getNBThreads());
+        trainer.train(templatePath2, trainingDataPath2, modelPath2, GrobidProperties.getNBThreads());
+        trainer.train(templatePath3, trainingDataPath3, modelPath3, GrobidProperties.getNBThreads());
 
         //renaming
-        renameModels(GrobidProperties.getModelPath(GrobidModels.PATENT_NPL), new File(modelPath1));
-        renameModels(GrobidProperties.getModelPath(GrobidModels.PATENT_PATENT), new File(modelPath2));
-        renameModels(GrobidProperties.getModelPath(GrobidModels.PATENT_ALL), new File(modelPath3));
+        renameModels(GrobidProperties.getModelPath(GrobidModels.PATENT_NPL, trainer.getName()), modelPath1);
+        renameModels(GrobidProperties.getModelPath(GrobidModels.PATENT_PATENT, trainer.getName()), modelPath2);
+        renameModels(GrobidProperties.getModelPath(GrobidModels.PATENT_ALL, trainer.getName()), modelPath3);
     }
 
 

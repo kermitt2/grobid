@@ -1,9 +1,9 @@
 package org.grobid.core.engines;
 
-import org.chasen.crfpp.Model;
-import org.chasen.crfpp.Tagger;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.data.Person;
+import org.grobid.core.engines.tagging.GenericTagger;
+import org.grobid.core.engines.tagging.TaggerFactory;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.features.FeaturesVectorName;
 import org.grobid.core.utilities.TextUtilities;
@@ -21,16 +21,17 @@ import java.util.StringTokenizer;
  */
 public class AuthorParser implements Closeable {
 	private static Logger LOGGER = LoggerFactory.getLogger(AuthorParser.class);
-    private final Model namesHeaderModel;
-    private final Model namesCitationModel;
-//    private Tagger taggerHeader = null;
-//    private Tagger taggerCitation = null;
+//    private final Model namesHeaderModel;
+//    private final Model namesCitationModel;
+    private final GenericTagger namesHeaderParser;
+    private final GenericTagger namesCitationParser;
 
     public AuthorParser() {
-        namesHeaderModel = ModelMap.getModel(GrobidModels.NAMES_HEADER);
-        namesCitationModel = ModelMap.getModel(GrobidModels.NAMES_CITATION);
-//    	taggerHeader = AbstractParser.createTagger(GrobidModels.NAMES_HEADER);
-//        taggerCitation = AbstractParser.createTagger(GrobidModels.NAMES_CITATION);
+
+//        namesHeaderModel = ModelMap.getModel(GrobidModels.NAMES_HEADER);
+//        namesCitationModel = ModelMap.getModel(GrobidModels.NAMES_CITATION);
+        namesHeaderParser = TaggerFactory.getTagger(GrobidModels.NAMES_HEADER);
+        namesCitationParser = TaggerFactory.getTagger(GrobidModels.NAMES_CITATION);
     }
 
     /**
@@ -75,37 +76,38 @@ public class AuthorParser implements Closeable {
             String header = FeaturesVectorName.addFeaturesName(authorBlocks);
             // clear internal context
 //            Tagger tagger = head ? taggerHeader : taggerCitation;
-            Tagger tagger = head ? namesHeaderModel.createTagger() : namesCitationModel.createTagger();
+            GenericTagger tagger = head ? namesHeaderParser : namesCitationParser;
 
-            StringTokenizer st = new StringTokenizer(header, "\n");
-            AbstractParser.feedTaggerAndParse(tagger, st);
+            String res = tagger.label(header);
+//            StringTokenizer st = new StringTokenizer(header, "\n");
+//            AbstractParser.feedTaggerAndParse(tagger, st);
 
-            StringBuilder res = new StringBuilder();
-            for (int i = 0; i < tagger.size(); i++) {
-                for (int j = 0; j < tagger.xsize(); j++) {
-                    //System.out.print(tagger.x(i, j) + "\t");
-                    res.append(tagger.x(i, j)).append("\t");
-                }
-
-                res.append("<author>" + "\t");
-                res.append(tagger.y2(i));
-                /*if (line.length() == 0)
-                        res.append(" ");*/
-                res.append("\n");
-
-                /*System.out.print("Details");
-                for (int j = 0; j < tagger.ysize(); ++j) {
-                      System.out.print("\t" + tagger.yname(j) + "/prob=" + tagger.prob(i,j)
-                               + "/alpha=" + tagger.alpha(i, j)
-                               + "/beta=" + tagger.beta(i, j));
-                }
-                System.out.print("\n");*/
-            }
-
-            tagger.delete();
+//            StringBuilder res = new StringBuilder();
+//            for (int i = 0; i < tagger.size(); i++) {
+//                for (int j = 0; j < tagger.xsize(); j++) {
+//                    //System.out.print(tagger.x(i, j) + "\t");
+//                    res.append(tagger.x(i, j)).append("\t");
+//                }
+//
+//                res.append("<author>" + "\t");
+//                res.append(tagger.y2(i));
+//                /*if (line.length() == 0)
+//                        res.append(" ");*/
+//                res.append("\n");
+//
+//                /*System.out.print("Details");
+//                for (int j = 0; j < tagger.ysize(); ++j) {
+//                      System.out.print("\t" + tagger.yname(j) + "/prob=" + tagger.prob(i,j)
+//                               + "/alpha=" + tagger.alpha(i, j)
+//                               + "/beta=" + tagger.beta(i, j));
+//                }
+//                System.out.print("\n");*/
+//            }
+//
+//            tagger.delete();
 
             // extract results from the processed file
-            StringTokenizer st2 = new StringTokenizer(res.toString(), "\n");
+            StringTokenizer st2 = new StringTokenizer(res, "\n");
             String lastTag = null;
             org.grobid.core.data.Person aut = new Person();
             boolean newMarker = false;
@@ -415,25 +417,26 @@ public class AuthorParser implements Closeable {
             String header = FeaturesVectorName.addFeaturesName(authorBlocks);
             // clear internal context
 //            Tagger tagger = head ? taggerHeader : taggerCitation;
-            Tagger tagger = head ? namesHeaderModel.createTagger() : namesCitationModel.createTagger();
+            GenericTagger tagger = head ? namesHeaderParser : namesCitationParser;
+            String res = tagger.label(header);
 
-            StringTokenizer st = new StringTokenizer(header, "\n");
-            AbstractParser.feedTaggerAndParse(tagger, st);
-
-            StringBuilder res = new StringBuilder();
-            for (int i = 0; i < tagger.size(); i++) {
-                for (int j = 0; j < tagger.xsize(); j++) {
-                    res.append(tagger.x(i, j)).append("\t");
-                }
-
-                res.append("<author>" + "\t");
-                res.append(tagger.y2(i));
-                res.append("\n");
-            }
-            tagger.delete();
+//            StringTokenizer st = new StringTokenizer(header, "\n");
+//            AbstractParser.feedTaggerAndParse(tagger, st);
+//
+//            StringBuilder res = new StringBuilder();
+//            for (int i = 0; i < tagger.size(); i++) {
+//                for (int j = 0; j < tagger.xsize(); j++) {
+//                    res.append(tagger.x(i, j)).append("\t");
+//                }
+//
+//                res.append("<author>" + "\t");
+//                res.append(tagger.y2(i));
+//                res.append("\n");
+//            }
+//            tagger.delete();
 
             // extract results from the processed file
-            StringTokenizer st2 = new StringTokenizer(res.toString(), "\n");
+            StringTokenizer st2 = new StringTokenizer(res, "\n");
             String lastTag = null;
             boolean start = true;
             boolean hasMarker = false;

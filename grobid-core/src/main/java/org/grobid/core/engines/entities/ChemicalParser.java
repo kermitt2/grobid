@@ -61,17 +61,12 @@ public class ChemicalParser extends AbstractParser {
                 posit++;
             }
             ress += "\n";
-            String res = taggerRun(ress);
+            String res = label(ress);
             entities = resultExtraction(res, tokenizations);
         } catch (Exception e) {
             throw new GrobidException("An exception occured while running Grobid.", e);
         }
         return entities;
-    }
-
-    public String taggerRun(String ress) throws Exception {
-        StringTokenizer st = new StringTokenizer(ress, "\n");
-        return getTaggerResult(st);
     }
 
     /**

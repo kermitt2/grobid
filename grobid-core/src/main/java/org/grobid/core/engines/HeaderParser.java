@@ -1,16 +1,5 @@
 package org.grobid.core.engines;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStreamWriter;
-import java.io.Writer;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.StringTokenizer;
-import java.util.concurrent.TimeoutException;
-
-import org.chasen.crfpp.Tagger;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.data.BiblioItem;
 import org.grobid.core.data.Date;
@@ -25,6 +14,16 @@ import org.grobid.core.utilities.LanguageUtilities;
 import org.grobid.core.utilities.TextUtilities;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.StringTokenizer;
+import java.util.concurrent.TimeoutException;
 
 /**
  * @author Patrice Lopez
@@ -93,9 +92,9 @@ public class HeaderParser extends AbstractParser {
 			}
 			ArrayList<String> tokenizations = doc.getTokenizationsHeader();
 
-			StringTokenizer st = new StringTokenizer(header, "\n");
+//			StringTokenizer st = new StringTokenizer(header, "\n");
 
-            String res = getTaggerResult(st);
+            String res = label(header);
 			resHeader = resultExtraction(res, true, tokenizations, resHeader);
 
 			// LanguageUtilities languageUtilities =
@@ -316,34 +315,35 @@ public class HeaderParser extends AbstractParser {
 			writer.close();
 
 			// clear internal context
-			Tagger tagger = getNewTagger();
-
-			// add context
-			StringTokenizer st = new StringTokenizer(header, "\n");
-			while (st.hasMoreTokens()) {
-				String piece = st.nextToken();
-				tagger.add(piece);
-				tagger.add("\n");
-			}
-
-			// parse and change internal stated as 'parsed'
-			if (!tagger.parse()) {
-				// throw an exception
-				throw new GrobidException("CRF++ parsing failed.");
-			}
-
-			StringBuilder res = new StringBuilder();
-			for (int i = 0; i < tagger.size(); i++) {
-				for (int j = 0; j < tagger.xsize(); j++) {
-					res.append(tagger.x(i, j)).append("\t");
-				}
-				res.append(tagger.y2(i));
-				res.append("\n");
-			}
-            tagger.delete();
+//			Tagger tagger = getNewTagger();
+//
+//			// add context
+//			StringTokenizer st = new StringTokenizer(header, "\n");
+//			while (st.hasMoreTokens()) {
+//				String piece = st.nextToken();
+//				tagger.add(piece);
+//				tagger.add("\n");
+//			}
+//
+//			// parse and change internal stated as 'parsed'
+//			if (!tagger.parse()) {
+//				// throw an exception
+//				throw new GrobidException("CRF++ parsing failed.");
+//			}
+//
+//			StringBuilder res = new StringBuilder();
+//			for (int i = 0; i < tagger.size(); i++) {
+//				for (int j = 0; j < tagger.xsize(); j++) {
+//					res.append(tagger.x(i, j)).append("\t");
+//				}
+//				res.append(tagger.y2(i));
+//				res.append("\n");
+//			}
+//            tagger.delete();
 
 			// buffer for the header block
-			String rese = res.toString();
+//			String rese = res.toString();
+            String rese = label(header);
 			StringBuilder bufferHeader = trainingExtraction(rese, true, tokenizations);
 
 			// LanguageUtilities languageUtilities =
@@ -364,7 +364,7 @@ public class HeaderParser extends AbstractParser {
 			// we need to rebuild the found date string as it appears
 			String input = "";
 			int q = 0;
-			st = new StringTokenizer(rese, "\n");
+			StringTokenizer st = new StringTokenizer(rese, "\n");
 			while (st.hasMoreTokens() && (q < tokenizations.size())) {
 				String line = st.nextToken();
 				String theTotalTok = tokenizations.get(q);
