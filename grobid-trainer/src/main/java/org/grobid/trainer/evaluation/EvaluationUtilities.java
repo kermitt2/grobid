@@ -1,13 +1,18 @@
 package org.grobid.trainer.evaluation;
 
+import com.google.common.base.Function;
+import com.google.common.base.Joiner;
 import org.chasen.crfpp.Tagger;
+import org.grobid.core.engines.tagging.GenericTagger;
 import org.grobid.core.exceptions.GrobidException;
+import org.grobid.core.jni.WapitiModel;
 import org.grobid.core.utilities.TextUtilities;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.StringTokenizer;
 
 /**
@@ -26,7 +31,7 @@ public class EvaluationUtilities {
 	 *            a tagger
 	 * @return a report
 	 */
-	public static String taggerRun(ArrayList<String> ress, Tagger tagger) {
+	public static String taggerRun(List<String> ress, Tagger tagger) {
 		// clear internal context
 		tagger.clear();
 		StringBuilder res = new StringBuilder();
@@ -88,7 +93,16 @@ public class EvaluationUtilities {
 		return res.toString();
 	}
 
-	public static String evaluateStandard(String path, Tagger tagger) {
+    public static String evaluateStandard(String path, final GenericTagger tagger) {
+        return evaluateStandard(path, new Function<List<String>, String>() {
+            @Override
+            public String apply(List<String> strings) {
+                return tagger.label(strings);
+            }
+        });
+    }
+
+	public static String evaluateStandard(String path, Function<List<String>, String> taggerFunction) {
 		StringBuilder report = new StringBuilder();
 
 		// word level
@@ -123,7 +137,10 @@ public class EvaluationUtilities {
 			}
 			bufReader.close();
 
-			String theResult = EvaluationUtilities.taggerRun(citationBlocks, tagger);
+            long time = System.currentTimeMillis();
+            String theResult = taggerFunction.apply(citationBlocks);
+            System.out.println("Labeling took: " + (System.currentTimeMillis() - time) + " ms");
+
 			StringTokenizer stt = new StringTokenizer(theResult, "\n");
 			while (stt.hasMoreTokens()) {
 				line = stt.nextToken();
@@ -132,7 +149,7 @@ public class EvaluationUtilities {
 					continue;
 				// the two last tokens, separated by a tabulation, gives the
 				// expected label and, last, the resulting label
-				StringTokenizer st = new StringTokenizer(line, "\t");
+				StringTokenizer st = new StringTokenizer(line, "\t ");
 				String currentToken = null;
 				String previousToken = null;
 				while (st.hasMoreTokens()) {
@@ -406,7 +423,7 @@ public class EvaluationUtilities {
 				// the two last tokens, separated by a tabulation, gives the
 				// expected label and, last,
 				// the resulting label
-				StringTokenizer st = new StringTokenizer(line, "\t");
+				StringTokenizer st = new StringTokenizer(line, "\t ");
 				String currentToken = null;
 				String previousToken = null;
 				while (st.hasMoreTokens()) {
@@ -624,7 +641,7 @@ public class EvaluationUtilities {
 					}
 					allGood = true;
 				} else {
-					StringTokenizer st = new StringTokenizer(line, "\t");
+					StringTokenizer st = new StringTokenizer(line, "\t ");
 					String currentToken = null;
 					String previousToken = null;
 					while (st.hasMoreTokens()) {

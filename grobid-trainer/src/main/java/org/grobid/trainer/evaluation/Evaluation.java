@@ -1,10 +1,9 @@
 package org.grobid.trainer.evaluation;
 
 import org.grobid.core.engines.CitationParser;
-//import org.grobid.core.engines.HeaderParser;
+import org.grobid.core.engines.tagging.GenericTagger;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.features.FeaturesVectorCitation;
-import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.trainer.sax.TEICitationSaxParser;
 import org.grobid.trainer.sax.TEIHeaderSaxParser;
@@ -17,6 +16,8 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
+
+//import org.grobid.core.engines.HeaderParser;
 
 /**
  * Class for managing the extraction of bibliographical information from pdf documents.
@@ -102,7 +103,7 @@ public class Evaluation {
                     conferencesPositions,
                     publishersPositions);
             //System.out.println(citation);
-            String res = citationParser.taggerRun(citation);
+            String res = citationParser.label(citation);
             //System.out.println(res);
             StringTokenizer st = new StringTokenizer(res, "\n");
             int z = 0;

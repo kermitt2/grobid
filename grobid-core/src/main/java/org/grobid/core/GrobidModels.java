@@ -41,7 +41,7 @@ public enum GrobidModels {
 
 	GrobidModels(String folderName) {
 		this.folderName = folderName;
-		File path = GrobidProperties.getModelPath(this);
+		File path = GrobidProperties.getBaseModelPath(this);
 		if (!path.exists()) {
 			// to be reviewed 
 			/*System.err.println("Warning: The file path to the "

@@ -1,6 +1,5 @@
 package org.grobid.core.engines;
 
-import org.chasen.crfpp.Tagger;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.data.Date;
 import org.grobid.core.exceptions.GrobidException;
@@ -47,8 +46,10 @@ public class DateParser extends AbstractParser {
             String headerDate = FeaturesVectorDate.addFeaturesDate(dateBlocks);
 
             // add context
-            st = new StringTokenizer(headerDate, "\n");
-            String res = getTaggerResult(st, "<date>");
+//            st = new StringTokenizer(headerDate, "\n");
+            //TODO:
+//            String res = getTaggerResult(st, "<date>");
+            String res = label(headerDate);
             // extract results from the processed file
 
             //System.out.print(res.toString());
@@ -69,7 +70,7 @@ public class DateParser extends AbstractParser {
                     date = new Date();
                     continue;
                 }
-                StringTokenizer st3 = new StringTokenizer(line, "\t");
+                StringTokenizer st3 = new StringTokenizer(line, "\t ");
                 int ll = st3.countTokens();
                 int i = 0;
                 String s1 = null;
@@ -318,8 +319,10 @@ public class DateParser extends AbstractParser {
 
             String headerDate = FeaturesVectorDate.addFeaturesDate(dateBlocks);
             // clear internal context
-            StringTokenizer st = new StringTokenizer(headerDate, "\n");
-            String res = getTaggerResult(st, "<date>");
+//            StringTokenizer st = new StringTokenizer(headerDate, "\n");
+            //TODO:
+//            String res = getTaggerResult(st, "<date>");
+            String res = label(headerDate);
 
             // extract results from the processed file
 

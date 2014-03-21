@@ -1,6 +1,5 @@
 package org.grobid.core.engines;
 
-import org.chasen.crfpp.Tagger;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.BiblioItem;
@@ -16,7 +15,11 @@ import org.grobid.core.utilities.TextUtilities;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
@@ -146,8 +149,8 @@ public class FullTextParser extends AbstractParser {
 
             String fulltext = doc.getFulltextFeatured(true, true);
 
-            StringTokenizer st = new StringTokenizer(fulltext, "\n");
-            String rese = getTaggerResult(st);
+//            StringTokenizer st = new StringTokenizer(fulltext, "\n");
+            String rese = label(fulltext);
 
             // set the different sections of the Document object
             doc = BasicStructureBuilder.resultSegmentation(doc, rese, tokenizations);
@@ -257,8 +260,8 @@ public class FullTextParser extends AbstractParser {
             writer.write(fulltext + "\n");
             writer.close();
 
-            StringTokenizer st = new StringTokenizer(fulltext, "\n");
-            String rese = getTaggerResult(st);
+//            StringTokenizer st = new StringTokenizer(fulltext, "\n");
+            String rese = label(fulltext);
             StringBuffer bufferFulltext = trainingExtraction(rese, tokenizations);
 
             // write the TEI file to reflect the extract layout of the text as extracted from the pdf
@@ -279,7 +282,7 @@ public class FullTextParser extends AbstractParser {
             String input = "";
             ArrayList<String> inputs = new ArrayList<String>();
             int q = 0;
-            st = new StringTokenizer(rese, "\n");
+            StringTokenizer st = new StringTokenizer(rese, "\n");
             while (st.hasMoreTokens() && (q < tokenizations.size())) {
                 String line = st.nextToken();
                 String theTotalTok = tokenizations.get(q);

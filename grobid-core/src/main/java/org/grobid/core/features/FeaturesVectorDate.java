@@ -129,7 +129,7 @@ public class FeaturesVectorDate {
         FeatureFactory featureFactory = FeatureFactory.getInstance();
 
         String line;
-        StringBuffer header = new StringBuffer();
+        StringBuilder header = new StringBuilder();
         boolean newline = true;
         boolean newBlock = true;
         String currentFont = null;

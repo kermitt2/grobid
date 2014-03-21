@@ -50,7 +50,7 @@ public class GrobidProperties {
 	public static final String FILE_ENDING_TEI_FULLTEXT = ".fulltext.tei.xml";
 
 	public static final String FOLDER_NAME_MODELS = "models";
-	public static final String FILE_NAME_MODEL = "model.crf";
+	public static final String FILE_NAME_MODEL = "model";
 
 	/**
 	 * A static {@link GrobidProperties} object containing all properties used
@@ -789,12 +789,17 @@ public class GrobidProperties {
 		return pathToPdf2Xml;
 	}
 
-	public static File getModelPath(final GrobidModels model) {
+	public static File getModelPath(final GrobidModels model, String type) {
 		return new File(get_GROBID_HOME_PATH(), FOLDER_NAME_MODELS + File.separator + model.getFolderName() + File.separator
-				+ FILE_NAME_MODEL);
+				+ FILE_NAME_MODEL + "." + type);
 	}
 
-	public static File getTemplatePath(final File resourcesDir, final GrobidModels model) {
+    public static File getBaseModelPath(final GrobidModels model) {
+        return new File(get_GROBID_HOME_PATH(), FOLDER_NAME_MODELS + File.separator + model.getFolderName() + File.separator
+                + FILE_NAME_MODEL);
+    }
+
+    public static File getTemplatePath(final File resourcesDir, final GrobidModels model) {
 		File theFile = new File(resourcesDir, "dataset/" + model.getFolderName() + "/crfpp-templates/" + model.getTemplateName());
 		if (!theFile.exists()) {
 			theFile = new File("resources/dataset/" + model.getFolderName() + "/crfpp-templates/" + model.getTemplateName());

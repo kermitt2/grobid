@@ -55,9 +55,10 @@ public class AffiliationAddressParser extends AbstractParser {
             String header = FeaturesVectorAffiliationAddress.addFeaturesAffiliationAddress(affiliationBlocks, placesPositions);
 
             // add context
-            st = new StringTokenizer(header, "\n");
+//            st = new StringTokenizer(header, "\n");
 
-            String res = getTaggerResult(st, "<affiliation>");
+            //TODO:
+            String res = label(header);
             return resultBuilder(res, tokenizations, false); // don't use pre-labels
         } catch (Exception e) {
             throw new GrobidException("An exception occurred while running Grobid.", e);
@@ -186,7 +187,9 @@ public class AffiliationAddressParser extends AbstractParser {
             // clear internal context
             int n = 0;
             StringTokenizer st = new StringTokenizer(header, "\n");
-            tagger = getNewTagger();
+
+            //TODO:
+            tagger = null;//getNewTagger();
 
             ArrayList<String> preToken = new ArrayList<String>();
 

@@ -2,6 +2,8 @@ package org.grobid.trainer.evaluation;
 
 import org.chasen.crfpp.Tagger;
 import org.grobid.core.GrobidModels;
+import org.grobid.core.engines.tagging.GenericTagger;
+import org.grobid.core.engines.tagging.TaggerFactory;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.TextUtilities;
@@ -10,6 +12,7 @@ import org.grobid.trainer.PatentParserTrainer;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.StringTokenizer;
 import java.util.TreeMap;
@@ -23,18 +26,21 @@ import java.util.TreeMap;
 public class PatentEvaluation {
     private String evaluationPath = null;
 
-    private Tagger taggerPatent = null;
-    private Tagger taggerNPL = null;
-    private Tagger taggerAll = null;
+    private GenericTagger taggerPatent = null;
+    private GenericTagger taggerNPL = null;
+    private GenericTagger taggerAll = null;
     //where a test file would be put
     private String outputPath;
 
     public PatentEvaluation() {
         evaluationPath = AbstractTrainer.getEvalCorpusBasePath().getAbsolutePath();
         outputPath = GrobidProperties.getInstance().getTempPath().getAbsolutePath();
-        taggerNPL = new Tagger("-m " + GrobidProperties.getInstance().getModelPath(GrobidModels.PATENT_NPL).getAbsolutePath() + " ");
-        taggerPatent = new Tagger("-m " + GrobidProperties.getInstance().getModelPath(GrobidModels.PATENT_PATENT).getAbsolutePath() + " ");
-        taggerAll = new Tagger("-m " + GrobidProperties.getInstance().getModelPath(GrobidModels.PATENT_ALL).getAbsolutePath() + " ");
+        taggerNPL = TaggerFactory.getTagger(GrobidModels.PATENT_NPL);
+//                new Tagger("-m " + GrobidProperties.getInstance().getModelPath(GrobidModels.PATENT_NPL).getAbsolutePath() + " ");
+        taggerPatent = TaggerFactory.getTagger(GrobidModels.PATENT_PATENT);
+                //new Tagger("-m " + GrobidProperties.getInstance().getModelPath(GrobidModels.PATENT_PATENT).getAbsolutePath() + " ");
+        taggerAll = TaggerFactory.getTagger(GrobidModels.PATENT_ALL);
+                //new Tagger("-m " + GrobidProperties.getInstance().getModelPath(GrobidModels.PATENT_ALL).getAbsolutePath() + " ");
     }
 
     /**
@@ -54,7 +60,7 @@ public class PatentEvaluation {
         //ppt.createDataSet("test", null, evaluationPath, outputPath);
         String setName;
 
-        Tagger tagger;
+        GenericTagger tagger;
         if (type == 0) {
             tagger = taggerPatent;
             setName = "patent";
@@ -88,13 +94,13 @@ public class PatentEvaluation {
         //noinspection NullableProblems
         ppt.createDataSet("test", null, evaluationPath, outputPath);
 
-        ArrayList<Tagger> taggers = new ArrayList<Tagger>();
+        List<GenericTagger> taggers = new ArrayList<GenericTagger>();
         taggers.add(taggerNPL);
         taggers.add(taggerPatent);
         taggers.add(taggerAll);
 
         // note: there is no field for these models
-        for (Tagger tagger : taggers) {
+        for (GenericTagger tagger : taggers) {
 
             // total tag
             int totalExpected = 0;
@@ -134,7 +140,9 @@ public class PatentEvaluation {
                 }
                 bufReader.close();
 
-                String theResult = EvaluationUtilities.taggerRun(patentBlocks, tagger);
+                //TODO: VZ_FIX
+//                String theResult = EvaluationUtilities.taggerRun(patentBlocks, tagger);
+                String theResult = tagger.label(patentBlocks);
                 //System.out.println(theResult);
                 StringTokenizer stt = new StringTokenizer(theResult, "\n");
 //                line = null;

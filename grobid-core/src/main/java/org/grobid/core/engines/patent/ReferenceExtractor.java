@@ -1,14 +1,5 @@
 package org.grobid.core.engines.patent;
 
-import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.StringTokenizer;
-import java.util.zip.GZIPInputStream;
-import java.text.*;
-
-import javax.xml.parsers.SAXParserFactory;
-
 import org.chasen.crfpp.Tagger;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.data.BibDataSet;
@@ -17,8 +8,9 @@ import org.grobid.core.data.BiblioSet;
 import org.grobid.core.data.PatentItem;
 import org.grobid.core.document.OPSService;
 import org.grobid.core.document.PatentDocument;
-import org.grobid.core.engines.AbstractParser;
 import org.grobid.core.engines.CitationParser;
+import org.grobid.core.engines.tagging.GenericTagger;
+import org.grobid.core.engines.tagging.TaggerFactory;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.exceptions.GrobidResourceException;
 import org.grobid.core.features.FeaturesVectorReference;
@@ -27,15 +19,34 @@ import org.grobid.core.sax.PatentAnnotationSaxParser;
 import org.grobid.core.sax.TextSaxParser;
 import org.grobid.core.utilities.Consolidation;
 import org.grobid.core.utilities.GrobidProperties;
+import org.grobid.core.utilities.KeyGen;
 import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.core.utilities.TextUtilities;
-import org.grobid.core.utilities.KeyGen;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.xml.sax.EntityResolver;
 import org.xml.sax.InputSource;
 import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.XMLReaderFactory;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
+import javax.xml.parsers.SAXParserFactory;
+import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
+import java.io.Closeable;
+import java.io.DataInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.StringTokenizer;
+import java.util.zip.GZIPInputStream;
 
 /**
  * Extraction of patent and NPL references from the content body of patent document with Conditional
@@ -46,9 +57,9 @@ import org.slf4j.LoggerFactory;
 public class ReferenceExtractor implements Closeable {
 	private static final Logger LOGGER = LoggerFactory.getLogger(ReferenceExtractor.class);
 
-    private Tagger taggerPatent = null;
-    private Tagger taggerNPL = null;
-    private Tagger taggerAll = null;
+    private GenericTagger taggerPatent = null;
+    private GenericTagger taggerNPL = null;
+    private GenericTagger taggerAll = null;
     private CitationParser nplParser = null;
     private PatentRefParser patentParser = null;
     private Consolidation consolidator = null;
@@ -77,9 +88,9 @@ public class ReferenceExtractor implements Closeable {
 
     // constructors
     public ReferenceExtractor() {
-    	taggerNPL = AbstractParser.createTagger(GrobidModels.PATENT_NPL);
-    	taggerAll = AbstractParser.createTagger(GrobidModels.PATENT_ALL);
-    	taggerPatent = AbstractParser.createTagger(GrobidModels.PATENT_PATENT);
+    	taggerNPL = TaggerFactory.getTagger(GrobidModels.PATENT_NPL);
+    	taggerAll = TaggerFactory.getTagger(GrobidModels.PATENT_ALL);
+    	taggerPatent = TaggerFactory.getTagger(GrobidModels.PATENT_PATENT);
     }
 
     /**
@@ -409,11 +420,11 @@ public class ReferenceExtractor implements Closeable {
 
             String theResult = null;
             if (articles == null) {
-                theResult = taggerRun(patentBlocks, taggerPatent);
+                theResult = taggerPatent.label(patentBlocks);
             } else if (patents == null) {
-                theResult = taggerRun(patentBlocks, taggerNPL);
+                theResult = taggerNPL.label(patentBlocks);
             } else {
-                theResult = taggerRun(patentBlocks, taggerAll);
+                theResult = taggerAll.label(patentBlocks);
             }
 
             //System.out.println(theResult);
@@ -444,7 +455,7 @@ public class ReferenceExtractor implements Closeable {
                     continue;
                 }
 
-                StringTokenizer st2 = new StringTokenizer(line, "\t");
+                StringTokenizer st2 = new StringTokenizer(line, "\t ");
                 boolean start = true;
 				String separator = "";
                 label = null;
@@ -1184,12 +1195,9 @@ public class ReferenceExtractor implements Closeable {
 
     @Override
     public void close() throws IOException {
-    	taggerAll.clear();
-        taggerNPL.clear();
-        taggerPatent.clear();
-        taggerAll.delete();
-        taggerNPL.delete();
-        taggerPatent.delete();
+    	taggerAll.close();
+        taggerNPL.close();
+        taggerPatent.close();
         taggerAll = null;
         taggerNPL = null;
         taggerPatent = null;

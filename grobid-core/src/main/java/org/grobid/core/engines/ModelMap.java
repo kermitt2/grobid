@@ -37,7 +37,9 @@ public class ModelMap {
 	 * @param grobidModel
 	 *            the model to use for the creation of the tagger.
 	 * @return Tagger
+     *
 	 */
+    @Deprecated
 	public static Tagger getTagger(GrobidModels grobidModel) {
 		LOGGER.debug("start getTagger");
 		Tagger tagger;
@@ -59,7 +61,7 @@ public class ModelMap {
 		LOGGER.info("Loading models");
 		GrobidModels[] models = GrobidModels.values();
 		for (GrobidModels model : models) {
-			File path = GrobidProperties.getModelPath(model);
+			File path = GrobidProperties.getModelPath(model, "crf");
 			if (path.exists()) {
 				getModel(model.getModelPath());
 			}
@@ -71,8 +73,8 @@ public class ModelMap {
 	}
 
 
-    protected static Model getModel(GrobidModels grobidModel) {
-        return getModel(grobidModel.getModelPath());
+    public static Model getModel(GrobidModels grobidModel) {
+        return getModel(grobidModel.getModelPath() + ".crf");
     }
 
 

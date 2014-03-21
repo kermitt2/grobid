@@ -10,8 +10,13 @@ import org.grobid.trainer.sax.TEICitationSaxParser;
 
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
-import java.io.*;
-import java.util.*;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.FilenameFilter;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
+import java.util.List;
 
 
 /**
@@ -28,17 +33,22 @@ public class CitationTrainer extends AbstractTrainer {
 	 * 
 	 * @param corpusDir
 	 *            a path where corpus files are located
-	 * @param trainingOutputPath
-	 *            path where to store the temporary training data
 	 * @return the total number of used corpus items
 	 */
 	@Override
-	public int createCRFPPData(final File corpusDir, final File modelOutputPath) {
-		return createCRFPPData(corpusDir, modelOutputPath, null, 1.0);
+	public int createCRFPPData(final File corpusDir, final File evalDataPath) {
+		return createCRFPPData(corpusDir, evalDataPath, null, 1.0);
 	}
- 
-	/**
-	 * Add the selected features to the citations model example set 
+
+
+//    @Override
+//    public String evaluate() {
+//        createCRFPPData(getEvalCorpusPath(), getEvalDataPath());
+//        return EvaluationUtilities.evaluateStandardWapiti(getEvalDataPath().getAbsolutePath(), new WapitiModel(GrobidModels.CITATION));
+//    }
+
+    /**
+	 * Add the selected features to the citations model example set
 	 * 
 	 * @param corpusDir
 	 *            a path where corpus files are located
