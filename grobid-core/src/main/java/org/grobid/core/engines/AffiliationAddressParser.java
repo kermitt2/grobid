@@ -174,10 +174,38 @@ public class AffiliationAddressParser extends AbstractParser {
         }
     }
 
+
+    static class DebugTahher {
+        private String str = "";
+
+        public void add(String s) {
+            str += s;
+        }
+        public void clear() {
+            str = "";
+        }
+
+        String[] split;
+
+
+        public boolean parse() {
+            System.out.println("Parsing:\n" + str + "\n------------------");
+            split = str.split("\n");
+
+            return true;
+        }
+
+        public int size() {
+            return split.length;
+        }
+
+
+
+    }
     private String runReflow(ArrayList<String> affiliationBlocks,
                              ArrayList<String> tokenizations) {
-        StringBuilder res = new StringBuilder();
-        Tagger tagger = null;
+//        StringBuilder res = new StringBuilder();
+//        DebugTahher tagger = new DebugTahher();
         try {
             List<List<OffsetPosition>> placesPositions = new ArrayList<List<OffsetPosition>>();
             placesPositions.add(lexicon.inCityNames(tokenizations));
@@ -185,72 +213,76 @@ public class AffiliationAddressParser extends AbstractParser {
                     FeaturesVectorAffiliationAddress.addFeaturesAffiliationAddress(affiliationBlocks, placesPositions);
 
             // clear internal context
-            int n = 0;
-            StringTokenizer st = new StringTokenizer(header, "\n");
+//            int n = 0;
+//            StringTokenizer st = new StringTokenizer(header, "\n");
 
             //TODO: VZ: understand how tagging is done and how we can utilize wapiti
-            tagger = null;//getNewTagger();
 
-            ArrayList<String> preToken = new ArrayList<String>();
 
-            // add context
-            while (st.hasMoreTokens()) {
-                String piece = st.nextToken();
-                if (piece.trim().length() != 0) {
-                    tagger.add(piece);
-                    tagger.add("\n");
-                    String pretok = piece.substring(piece.lastIndexOf(' '), piece.length());
-                    preToken.add(pretok);
-                } else {
-                    tagger.add("\n");
+//            ArrayList<String> preToken = new ArrayList<String>();
 
-                    // parse and change internal stated as 'parsed'
-                    if (!tagger.parse()) {
-                        // throw an exception
-                        throw new Exception("CRF++ parsing failed.");
-                    }
 
-                    for (int i = 0; i < tagger.size(); i++) {
-                        for (int j = 0; j < tagger.xsize(); j++) {
-                            //System.out.print(tagger.x(i, j) + "\t");
-                            res.append(tagger.x(i, j) + "\t");
-                        }
+            String res = label(header);
+            res = label(res);
 
-                        res.append(preToken.get(i) + "\t");
-                        res.append(tagger.y2(i));
-                        res.append("\n");
-                    }
-                    res.append(" \n");
-                    tagger.clear();
-                }
-                n++;
-            }
+//            // add context
+//            while (st.hasMoreTokens()) {
+//                String piece = st.nextToken();
+//                if (piece.trim().length() != 0) {
+//                    tagger.add(piece);
+//                    tagger.add("\n");
+//                    String pretok = piece.substring(piece.lastIndexOf(' '), piece.length());
+//                    preToken.add(pretok);
+//                } else {
+//                    tagger.add("\n");
+//
+//                    // parse and change internal stated as 'parsed'
+//                    if (!tagger.parse()) {
+//                        // throw an exception
+//                        throw new Exception("CRF++ parsing failed.");
+//                    }
+//
+//                    for (int i = 0; i < tagger.size(); i++) {
+//                        for (int j = 0; j < tagger.xsize(); j++) {
+//                            //System.out.print(tagger.x(i, j) + "\t");
+//                            res.append(tagger.x(i, j) + "\t");
+//                        }
+//
+//                        res.append(preToken.get(i) + "\t");
+//                        res.append(tagger.y2(i));
+//                        res.append("\n");
+//                    }
+//                    res.append(" \n");
+//                    tagger.clear();
+//                }
+//                n++;
+//            }
+//
+//            // parse and change internal stated as 'parsed'
+//            if (!tagger.parse()) {
+//                // throw an exception
+//                throw new Exception("CRF++ parsing failed.");
+//            }
+//
+//            for (int i = 0; i < tagger.size(); i++) {
+//                for (int j = 0; j < tagger.xsize(); j++) {
+//                    //System.out.print(tagger.x(i, j) + "\t");
+//                    res.append(tagger.x(i, j) + "\t");
+//                }
+//
+//                res.append(preToken.get(i) + "\t");
+//                res.append(tagger.y2(i));
+//                res.append("\n");
+//            }
+//            res.append(" \n");
 
-            // parse and change internal stated as 'parsed'
-            if (!tagger.parse()) {
-                // throw an exception
-                throw new Exception("CRF++ parsing failed.");
-            }
-
-            for (int i = 0; i < tagger.size(); i++) {
-                for (int j = 0; j < tagger.xsize(); j++) {
-                    //System.out.print(tagger.x(i, j) + "\t");
-                    res.append(tagger.x(i, j) + "\t");
-                }
-
-                res.append(preToken.get(i) + "\t");
-                res.append(tagger.y2(i));
-                res.append("\n");
-            }
-            res.append(" \n");
-
-            return res.toString();
+            return res;
         } catch (Exception e) {
             throw new GrobidException("An exception occured while running Grobid.", e);
         } finally {
-            if (tagger != null) {
-                tagger.delete();
-            }
+//            if (tagger != null) {
+//                tagger.delete();
+//            }
         }
     }
 
