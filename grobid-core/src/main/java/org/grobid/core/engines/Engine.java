@@ -76,6 +76,7 @@ public class Engine implements Closeable {
 	private FullTextParser fullTextParser = null;
 	private ReferenceExtractor referenceExtractor = null;
 	private ChemicalParser chemicalParser = null;
+	private Segmentation segmentationParser = null;
 
     //TODO: when using one instance of Engine in e.g. grobid-service, then make this field not static
     private static CntManager cntManager = CntManagerFactory.getCntManager();
@@ -499,7 +500,7 @@ public class Engine implements Closeable {
 	 *            file to be corrected for gold-level training data)
 	 * @param id
 	 *            : an optional ID to be used in the TEI file and the full text
-	 *            file
+	 *            file, -1 if not used
 	 */
 	public void createTrainingFullText(String inputFile, String pathFullText, String pathTEI, int id) {
 		if (fullTextParser == null) {
@@ -507,6 +508,29 @@ public class Engine implements Closeable {
 		}
 		fullTextParser.createTrainingFullText(inputFile, pathFullText, pathTEI, id);
 		doc = fullTextParser.getDoc();
+	}
+	
+	/**
+	 * Create training data for the segmenation model based on the application of
+	 * the current segmentation model on a new PDF
+	 * 
+	 * @param inputFile
+	 *            : the path of the PDF file to be processed
+	 * @param pathSegmentation
+	 *            : the path where to put the segmentation text with layout features
+	 * @param pathTEI
+	 *            : the path where to put the annotated TEI representation (the
+	 *            file to be corrected for gold-level training data)
+	 * @param id
+	 *            : an optional ID to be used in the TEI file and the segmentation text
+	 *            file, -1 if not used
+	 */
+	public void createTrainingSegmentation(String inputFile, String pathSegmentation, String pathTEI, int id) {
+		if (segmentationParser == null) {
+			segmentationParser = new Segmentation();
+		}
+		segmentationParser.createTrainingSegmentation(inputFile, pathSegmentation, pathTEI, id);
+		doc = segmentationParser.getDoc();
 	}
 
 	/**
@@ -604,6 +628,27 @@ public class Engine implements Closeable {
 	public int batchCreateTrainingFulltext(String directoryPath, String resultPath, int ind) {
 		return batchCreateTraining(directoryPath, resultPath, ind, 1);
 	}
+	
+	/**
+	 * Process all the PDF in a given directory with a segmentation process and
+	 * produce the corresponding training data format files for manual
+	 * correction. The goal of this method is to help to produce additional
+	 * traning data based on an existing model.
+	 * 
+	 * @param directoryPath
+	 *            - the path to the directory containing PDF to be processed.
+	 * @param resultPath
+	 *            - the path to the directory where the results as XML files
+	 *            shall be written.
+	 * @param ind
+	 *            - identifier integer to be included in the resulting files to
+	 *            identify the training case. This is optional: no identifier
+	 *            will be included if ind = -1
+	 * @return the number of processed files.
+	 */
+	public int batchCreateTrainingSegmentation(String directoryPath, String resultPath, int ind) {
+		return batchCreateTraining(directoryPath, resultPath, ind, 2);
+	}
 
 	private int batchCreateTraining(String directoryPath, String resultPath, int ind, int type) {
 		try {
@@ -611,6 +656,7 @@ public class Engine implements Closeable {
 			// we process all pdf files in the directory
 			File[] refFiles = path.listFiles(new FilenameFilter() {
 				public boolean accept(File dir, String name) {
+					System.out.println(name);
                     return name.endsWith(".pdf") || name.endsWith(".PDF");
 				}
 			});
@@ -618,7 +664,7 @@ public class Engine implements Closeable {
 			if (refFiles == null)
 				return 0;
 
-			// System.out.println(refFiles.length + " files to be processed.");
+			System.out.println(refFiles.length + " files to be processed.");
 
 			int n = 0;
 			// for (; n < refFiles.length; n++) {
@@ -630,7 +676,10 @@ public class Engine implements Closeable {
 						createTrainingHeader(pdfFile.getPath(), resultPath, resultPath, ind + n);
 					} else if (type == 1) {
 						createTrainingFullText(pdfFile.getPath(), resultPath, resultPath, ind + n);
+					} else if (type == 2) {
+						createTrainingSegmentation(pdfFile.getPath(), resultPath, resultPath, ind + n);
 					}
+					
 					/*
 					 * else if (type == 2) {
 					 * createTrainingCitations(pdfFile.getPath(), resultPath,

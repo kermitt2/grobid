@@ -495,6 +495,48 @@ public class EvaluationUtilities {
 				lastPreviousToken = previousToken;
 				lastCurrentToken = currentToken;
 			}
+			
+			// and finally this is for the last field which is closing with the end of the sequence labelling
+			// this is new from 26.03.2014
+			if ((lastPreviousToken != null) && (lastCurrentToken != null)) {
+				// end of last field
+				int index = labels2.indexOf(lastPreviousToken);
+				if (index == -1) {
+					labels2.add(lastPreviousToken);
+					// init
+					counterObserved2.add(0);
+					counterExpected2.add(0);
+					counterFalsePositive2.add(0);
+					counterFalseNegative2.add(0);
+					index = labels2.indexOf(lastPreviousToken);
+				}
+
+				if (allGood) {
+					Integer val = counterObserved2.get(index);
+					counterObserved2.set(index, val + 1); // true positive
+				} else {
+					Integer val = counterFalseNegative2.get(index);
+					counterFalseNegative2.set(index, val + 1);
+				}
+				Integer val = counterExpected2.get(index);
+				counterExpected2.set(index, val + 1); // all expected
+
+				index = labels2.indexOf(lastCurrentToken);
+				if (index == -1) {
+					labels2.add(lastCurrentToken);
+					// init
+					counterObserved2.add(0);
+					counterExpected2.add(0);
+					counterFalsePositive2.add(0);
+					counterFalseNegative2.add(0);
+					index = labels2.indexOf(lastCurrentToken);
+				}
+				if (!allGood) {
+					val = counterFalsePositive2.get(index);
+					counterFalsePositive2.set(index, val + 1);
+					// erroneous observed field (false positive)
+				}
+			} 
 
 			report.append("\n===== Field-level results =====\n");
 			report.append("\nlabel\t\taccuracy\tprecision\trecall\t\tf1\n\n");

@@ -13,6 +13,7 @@ import org.grobid.core.utilities.GrobidProperties;
  */
 public enum GrobidModels {
 	AFFIILIATON_ADDRESS("affiliation-address"), 
+	SEGMENTATION("segmentation"),
 	CITATION("citation"), 
 	DATE("date"), 
 	EBOOK("ebook"), 
