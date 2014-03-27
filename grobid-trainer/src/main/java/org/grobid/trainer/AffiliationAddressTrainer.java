@@ -125,7 +125,7 @@ public class AffiliationAddressTrainer extends AbstractTrainer {
 				// given the split ratio we write either in the training file or the evaluation file
 				//affAdd = affAdd.replace("\n \n", "\n \n");
 				
-				String[] chunks = affAdd.split("\n \n");
+				String[] chunks = affAdd.split("\n\n");
 				
 				for(int i=0; i<chunks.length; i++) {
 					String chunk = chunks[i];
@@ -142,7 +142,7 @@ public class AffiliationAddressTrainer extends AbstractTrainer {
 					}
 				}
 			}
-
+			
 			if (writer2 != null) {
 				writer2.close();
 				os2.close();
