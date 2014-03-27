@@ -164,7 +164,7 @@ public class ProcessEngine {
 	}
 
 	/**
-	 * Train the header.
+	 * Generate training data for the header model.
 	 * 
 	 * @param pGbdArgs
 	 *            The parameters.
@@ -177,7 +177,7 @@ public class ProcessEngine {
 	}
 
 	/**
-	 * Train the full text.
+	 * Generate training data for the full text model.
 	 * 
 	 * @param pGbdArgs
 	 *            The parameters.
@@ -186,6 +186,19 @@ public class ProcessEngine {
 		inferPdfInputPath(pGbdArgs);
 		inferOutputPath(pGbdArgs);
 		int result = getEngine().batchCreateTrainingFulltext(pGbdArgs.getPath2Input(), pGbdArgs.getPath2Output(), -1);
+		LOGGER.info(result + " files processed.");
+	}
+	
+	/**
+	 * Generate training data for the segmentation model.
+	 * 
+	 * @param pGbdArgs
+	 *            The parameters.
+	 */
+	public void createTrainingSegmentation(final GrobidMainArgs pGbdArgs) {
+		inferPdfInputPath(pGbdArgs);
+		inferOutputPath(pGbdArgs);
+		int result = getEngine().batchCreateTrainingSegmentation(pGbdArgs.getPath2Input(), pGbdArgs.getPath2Output(), -1);
 		LOGGER.info(result + " files processed.");
 	}
 

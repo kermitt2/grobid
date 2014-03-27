@@ -75,15 +75,16 @@ public class DateParser extends AbstractParser {
                 int i = 0;
                 String s1 = null;
                 String s2 = null;
-                String s3 = null;
+                //String s3 = null;
                 //ArrayList<String> localFeatures = new ArrayList<String>();
                 while (st3.hasMoreTokens()) {
                     String s = st3.nextToken().trim();
                     if (i == 0) {
                         s2 = s; // string
-                    } else if (i == ll - 2) {
+                    } /*else if (i == ll - 2) {
                         s3 = s; // pre-label, in this case it should always be <date>
-                    } else if (i == ll - 1) {
+                    } */ 
+					else if (i == ll - 1) {
                         s1 = s; // label
                     }
                     /*else {
@@ -93,7 +94,8 @@ public class DateParser extends AbstractParser {
                 }
 
                 if (s1.equals("<year>") || s1.equals("I-<year>")) {
-                    if (s3.equals("<date>")) {
+                    //if (s3.equals("<date>")) 
+					{
                         if (date.getYearString() != null) {
                             if ((s1.equals("I-<year>")) ||
                                     (!s1.equals(lastTag) && !lastTag.equals("I-<year>"))
@@ -122,7 +124,8 @@ public class DateParser extends AbstractParser {
                         }
                     }
                 } else if (s1.equals("<month>") || s1.equals("I-<month>")) {
-                    if (s3.equals("<date>")) {
+                    //if (s3.equals("<date>")) 
+					{
                         if (date.getMonthString() != null) {
                             if ((s1.equals("I-<month>")) ||
                                     (!s1.equals(lastTag) && !lastTag.equals("I-<month>"))
@@ -151,7 +154,8 @@ public class DateParser extends AbstractParser {
                         }
                     }
                 } else if (s1.equals("<day>") || s1.equals("I-<day>")) {
-                    if (s3.equals("<date>")) {
+                    //if (s3.equals("<date>")) 
+					{
                         if (date.getDayString() != null) {
                             if ((s1.equals("I-<day>")) ||
                                     (!s1.equals(lastTag) && !lastTag.equals("I-<day>"))
@@ -364,15 +368,16 @@ public class DateParser extends AbstractParser {
                 int i = 0;
                 String s1 = null;
                 String s2 = null;
-                String s3 = null;
+                //String s3 = null;
                 //ArrayList<String> localFeatures = new ArrayList<String>();
                 while (st3.hasMoreTokens()) {
                     String s = st3.nextToken().trim();
                     if (i == 0) {
                         s2 = TextUtilities.HTMLEncode(s); // string
-                    } else if (i == ll - 2) {
+                    } /*else if (i == ll - 2) {
                         s3 = s; // pre-label, in this case it should always be <date>
-                    } else if (i == ll - 1) {
+                    } */
+					else if (i == ll - 1) {
                         s1 = s; // label
                     }
                     i++;
