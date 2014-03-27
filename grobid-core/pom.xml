@@ -9,9 +9,8 @@
 		<relativePath>../pom.xml</relativePath>
 	</parent>
 
-	<groupId>org.grobid</groupId>
-	<artifactId>grobid-core</artifactId>
-	<version>0.2.10</version>
+    <artifactId>grobid-core</artifactId>
+	<version>0.2.11-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>${project.artifactId}</name>
 
@@ -53,7 +52,15 @@
 			<scope>compile</scope>
 		</dependency>
 
-		<dependency>
+        <dependency>
+            <groupId>fr.limsi.wapiti</groupId>
+            <artifactId>wapiti</artifactId>
+            <version>1.5.0</version>
+        </dependency>
+
+
+
+        <dependency>
 			<groupId>com.aliasi</groupId>
 			<artifactId>lingpipe</artifactId>
 			<version>3.8.2</version>
@@ -142,12 +149,6 @@
 			<artifactId>xmlunit</artifactId>
 			<version>1.3</version>
 			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>fr.limsi.wapiti</groupId>
-			<artifactId>wapiti</artifactId>
-			<version>1.5.0</version>
 		</dependency>
 
 		<dependency>
