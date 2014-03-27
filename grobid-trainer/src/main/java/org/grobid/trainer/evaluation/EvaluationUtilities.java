@@ -669,7 +669,7 @@ public class EvaluationUtilities {
 			report.append("\n");
 
 			// instance: separated by a new line in the result file
-			theResult = theResult.replace("\n \n", "\n");
+			theResult = theResult.replace("\n\n", "\n \n");
 			stt = new StringTokenizer(theResult, "\n");
 			allGood = true;
 			int correctInstance = 0;

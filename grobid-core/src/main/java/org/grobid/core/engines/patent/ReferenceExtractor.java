@@ -487,19 +487,21 @@ public class ReferenceExtractor implements Closeable {
                     continue;
                 }
 
-				int segProb = label.lastIndexOf("/");
-				String probString = label.substring(segProb+1, label.length());
-				//System.out.println("given prob: " + probString);			
 				double prob = 0.0;
-				try {
-					prob = Double.parseDouble(probString);
-					//System.out.println("given prob: " + probString + ", parsed: " + prob);
+				int segProb = label.lastIndexOf("/");
+				if (segProb != -1) {
+					String probString = label.substring(segProb+1, label.length());
+					//System.out.println("given prob: " + probString);								
+					try {
+						prob = Double.parseDouble(probString);
+						//System.out.println("given prob: " + probString + ", parsed: " + prob);
+					}
+					catch(Exception e) {
+						LOGGER.debug(probString + " cannot be parsed.");
+					}
+					label = label.substring(0,segProb);
 				}
-				catch(Exception e) {
-					LOGGER.debug(probString + " cannot be parsed.");
-				}
-				label = label.substring(0,segProb);
-				
+					
                 if (actual != null) {
                     if (label.endsWith("<refPatent>")) {
                         if (reference == null) {
