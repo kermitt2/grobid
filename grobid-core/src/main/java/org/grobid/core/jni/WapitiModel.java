@@ -26,7 +26,7 @@ public class WapitiModel {
     }
 
     public WapitiModel(GrobidModels grobidModel) {
-        modelFile = new File(grobidModel.getModelPath() + ".wapiti");
+        modelFile = new File(grobidModel.getModelPath());
         init();
     }
 

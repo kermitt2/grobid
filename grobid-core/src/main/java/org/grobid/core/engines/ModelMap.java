@@ -1,17 +1,15 @@
 package org.grobid.core.engines;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import java.io.File;
-
 import org.chasen.crfpp.Model;
 import org.chasen.crfpp.Tagger;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.exceptions.GrobidException;
-import org.grobid.core.utilities.GrobidProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.io.File;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Class the create a tagger from a given model or reuse it if it already
@@ -61,8 +59,7 @@ public class ModelMap {
 		LOGGER.info("Loading models");
 		GrobidModels[] models = GrobidModels.values();
 		for (GrobidModels model : models) {
-			File path = GrobidProperties.getModelPath(model, "crf");
-			if (path.exists()) {
+			if (new File(model.getModelPath()).exists()) {
 				getModel(model.getModelPath());
 			}
 			else {
@@ -74,7 +71,7 @@ public class ModelMap {
 
 
     public static Model getModel(GrobidModels grobidModel) {
-        return getModel(grobidModel.getModelPath() + ".crf");
+        return getModel(grobidModel.getModelPath());
     }
 
 
@@ -89,7 +86,7 @@ public class ModelMap {
 	protected static Model getModel(String modelPath) {
 		LOGGER.debug("start getModel");
 		if (models == null) {
-			models = new HashMap<String, Model>();
+			models = new HashMap<>();
 		}
 		if (models.get(modelPath) == null) {
 			getNewModel(modelPath);
