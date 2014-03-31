@@ -12,14 +12,14 @@
 	<groupId>org.grobid</groupId>
 	<artifactId>grobid-service</artifactId>
 	<name>${project.artifactId}</name>
-	<version>0.2.10</version>
+	<version>0.2.11-SNAPSHOT</version>
 	<packaging>war</packaging>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.grobid</groupId>
 			<artifactId>grobid-core</artifactId>
-			<version>0.2.10</version>
+			<version>0.2.11-SNAPSHOT</version>
 			<scope>compile</scope>
 			<exclusions>
 				<exclusion>

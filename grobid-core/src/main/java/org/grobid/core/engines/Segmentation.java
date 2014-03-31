@@ -1,14 +1,9 @@
 package org.grobid.core.engines;
 
 import org.grobid.core.GrobidModels;
-import org.grobid.core.data.BibDataSet;
-import org.grobid.core.data.BiblioItem;
-import org.grobid.core.document.BasicStructureBuilder;
 import org.grobid.core.document.Document;
-import org.grobid.core.document.TEIFormater;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.exceptions.GrobidResourceException;
-import org.grobid.core.lang.Language;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.LanguageUtilities;
 import org.grobid.core.utilities.TextUtilities;
@@ -21,6 +16,7 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.StringTokenizer;
 
 /**
@@ -49,7 +45,7 @@ public class Segmentation extends AbstractParser {
 
     private LanguageUtilities languageUtilities = LanguageUtilities.getInstance();
 
-    private Document doc = null;
+//    private Document doc = null;
     private File tmpPath = null;
     private String pathXML = null;
 
@@ -84,7 +80,7 @@ public class Segmentation extends AbstractParser {
             throw new GrobidResourceException("Cannot process pdf file, because temp path '" +
                     tmpPath.getAbsolutePath() + "' does not exists.");
         }
-        doc = new Document(input, tmpPath.getAbsolutePath());
+        Document doc = new Document(input, tmpPath.getAbsolutePath());
         try {
             int startPage = -1;
             int endPage = -1;
@@ -142,7 +138,7 @@ public class Segmentation extends AbstractParser {
             throw new GrobidResourceException("Cannot process pdf file, because temp path '" +
                     tmpPath.getAbsolutePath() + "' does not exists.");
         }
-        doc = new Document(inputFile, tmpPath.getAbsolutePath());
+        Document doc = new Document(inputFile, tmpPath.getAbsolutePath());
         try {
             int startPage = -1;
             int endPage = -1;
@@ -229,13 +225,6 @@ public class Segmentation extends AbstractParser {
     }
 
     /**
-     * Return the Document object of the last processed pdf file.
-     */
-    public Document getDoc() {
-        return doc;
-    }
-
-    /**
      * Extract results from a labelled full text in the training format without any string modification.
      *
      * @param result reult
@@ -264,7 +253,7 @@ public class Segmentation extends AbstractParser {
                     continue;
                 }
                 StringTokenizer stt = new StringTokenizer(tok, " \t");
-                ArrayList<String> localFeatures = new ArrayList<String>();
+                List<String> localFeatures = new ArrayList<String>();
                 int i = 0;
 
                 boolean newLine = false;
@@ -412,7 +401,7 @@ public class Segmentation extends AbstractParser {
 			// if previous and current tag are the same, we output the token
             if (s1.equals(lastTag0) || s1.equals("I-" + lastTag0)) {
                 if (addSpace)
-                    buffer.append(" " + s2);
+                    buffer.append(" ").append(s2);
                 else
                     buffer.append(s2);
             }
@@ -449,17 +438,17 @@ public class Segmentation extends AbstractParser {
                 for (int i = 0; i < nbIndent; i++) {
                     buffer.append("\t");
                 }
-                buffer.append(outField + s2);
+                buffer.append(outField).append(s2);
             } else if (!lastTag0.equals("<titlePage>")) {
 				// if the previous tagname is not titlePage, we output the opening xml tag
                 for (int i = 0; i < nbIndent; i++) {
                     buffer.append("\t");
                 }
-                buffer.append(outField + s2);
+                buffer.append(outField).append(s2);
             } else {
 				// otherwise we continue by ouputting the token
                 if (addSpace)
-                    buffer.append(" " + s2);
+                    buffer.append(" ").append(s2);
                 else
                     buffer.append(s2);
             }
