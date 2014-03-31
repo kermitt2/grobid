@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink"
+     xmlns:mml="http://www.w3.org/1998/Math/MathML">
+    <listBibl>
+
+        <bibl><author>A. Cau, R. Kuiper, and W.-P. de Roever</author>.<title level="a">Formalising Dijkstra's
+            development strategy within Stark's formalism</title>. In<editor>C. B. Jones, R. C. Shaw, and T.
+            Denvir</editor>, editors,<title level="m">Proc. 5th. BCS-FACS Refinement Workshop</title>,<date>1992</date>.
+        </bibl>
+
+    </listBibl>
+</tei>
+
