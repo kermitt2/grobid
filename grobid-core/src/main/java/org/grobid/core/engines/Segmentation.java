@@ -409,6 +409,7 @@ public class Segmentation extends AbstractParser {
 		// filter the output path
         if ((s1.equals(field)) || (s1.equals("I-" + field))) {
             result = true;
+			s2 = s2.replace("@BULLET","\u2022");
 			// if previous and current tag are the same, we output the token
             if (s1.equals(lastTag0) || s1.equals("I-" + lastTag0)) {
                 if (addSpace)
