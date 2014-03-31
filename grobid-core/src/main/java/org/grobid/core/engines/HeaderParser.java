@@ -1,5 +1,7 @@
 package org.grobid.core.engines;
 
+import org.apache.commons.lang3.tuple.ImmutablePair;
+import org.apache.commons.lang3.tuple.Pair;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.data.BiblioItem;
 import org.grobid.core.data.Date;
@@ -38,7 +40,7 @@ public class HeaderParser extends AbstractParser {
 	private AffiliationAddressParser affiliationAddressParser = null;
 	private CitationParser citationParser = null;
 	private Consolidation consolidator = null;
-	private Document doc = null;
+//	private Document doc = null;
 
 	private File tmpPath = null;
 	private String pathXML = null;
@@ -49,8 +51,8 @@ public class HeaderParser extends AbstractParser {
 		tmpPath = GrobidProperties.getTempPath();
 	}
 
-	public String processing(String input, boolean consolidate, BiblioItem resHeader, int startPage, int endPage) throws TimeoutException {
-		doc = new Document(input, tmpPath.getAbsolutePath());
+	public Pair<String, Document> processing(String input, boolean consolidate, BiblioItem resHeader, int startPage, int endPage) throws TimeoutException {
+		Document doc = new Document(input, tmpPath.getAbsolutePath());
 		try {
 			// int startPage = 0;
 			// //int endPage = 1;
@@ -72,7 +74,8 @@ public class HeaderParser extends AbstractParser {
 				throw new GrobidException("PDF parsing resulted in empty content");
 			}
 
-			return processingHeaderBlock(consolidate, doc, resHeader);
+            String tei = processingHeaderBlock(consolidate, doc, resHeader);
+            return new ImmutablePair<>(tei, doc);
 		} catch (TimeoutException timeoutExp) {
 			throw new TimeoutException("A time out occured");
 		} catch (final Exception exp) {
@@ -260,14 +263,6 @@ public class HeaderParser extends AbstractParser {
 		}
 	}
 
-	/**
-	 * Return the Document object of the last processed pdf file.
-	 * 
-	 * @return a document
-	 */
-	public Document getDoc() {
-		return doc;
-	}
 
 	/**
 	 * Process the header of the specified pdf and format the result as training
@@ -280,8 +275,8 @@ public class HeaderParser extends AbstractParser {
 	 * @param pathTEI
 	 *            path to TEI
 	 */
-	public void createTrainingHeader(String inputFile, String pathHeader, String pathTEI) {
-		doc = new Document(inputFile, tmpPath.getAbsolutePath());
+	public Document createTrainingHeader(String inputFile, String pathHeader, String pathTEI) {
+		Document doc = new Document(inputFile, tmpPath.getAbsolutePath());
 		try {
 			int startPage = 0;
 			// int endPage = 1;
@@ -530,6 +525,7 @@ public class HeaderParser extends AbstractParser {
 					writerReference.close();
 				}
 			}
+            return doc;
 		} catch (Exception e) {
 			throw new GrobidException("An exception occurred while running Grobid.", e);
 		} finally {

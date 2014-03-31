@@ -46,8 +46,7 @@ import java.util.regex.Pattern;
 
 public class Document {
 
-	private static final Logger LOGGER = LoggerFactory
-			.getLogger(Document.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(Document.class);
 
 	/**
 	 * Exit code got when pdf2xml took too much time and has been killed by
@@ -413,7 +412,7 @@ public class Document {
 	 */
 	public ArrayList<String> addFeaturesDocument() throws IOException,
 			ParserConfigurationException, SAXException {
-		ArrayList<String> images = new ArrayList<String>();
+		ArrayList<String> images = new ArrayList<>();
 		PDF2XMLSaxParser parser = new PDF2XMLSaxParser(this, images);
 
 		tokenizations = null;

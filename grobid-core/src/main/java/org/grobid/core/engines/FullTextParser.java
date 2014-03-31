@@ -1,5 +1,7 @@
 package org.grobid.core.engines;
 
+import org.apache.commons.lang3.tuple.ImmutablePair;
+import org.apache.commons.lang3.tuple.Pair;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.BiblioItem;
@@ -34,7 +36,7 @@ public class FullTextParser extends AbstractParser {
     private HeaderParser headerParser = null;
     private CitationParser citationParser = null;
     //	private String tmpPathName = null;
-    private Document doc = null;
+//    private Document doc = null;
     private File tmpPath = null;
     private String pathXML = null;
 	private BiblioItem resHeader = null;  
@@ -53,10 +55,10 @@ public class FullTextParser extends AbstractParser {
      * @param input                filename of pdf file
      * @param consolidateHeader if consolidate header
      * @param consolidateCitations if consolidate citations
-     * @return result
+     * @return a pair consisting of TEI string representation and a document itseld
      */
     
-    public String processing(String input, boolean consolidateHeader, boolean consolidateCitations) {
+    public Pair<String, Document> processing(String input, boolean consolidateHeader, boolean consolidateCitations) {
         if (input == null) {
             throw new GrobidResourceException("Cannot process pdf file, because input file was null.");
         }
@@ -72,7 +74,7 @@ public class FullTextParser extends AbstractParser {
             throw new GrobidResourceException("Cannot process pdf file, because temp path '" +
                     tmpPath.getAbsolutePath() + "' does not exists.");
         }
-        doc = new Document(input, tmpPath.getAbsolutePath());
+        Document doc = new Document(input, tmpPath.getAbsolutePath());
         try {
             int startPage = -1;
             int endPage = -1;
@@ -100,16 +102,16 @@ public class FullTextParser extends AbstractParser {
                     false, null, false, false);
 			resHeader = doc.getResHeader();
             LOGGER.debug(tei);
-            return tei;
+            return new ImmutablePair<>(tei, doc);
         } catch (Exception e) {
-            throw new GrobidException("An exception occured while running Grobid.", e);
+            throw new GrobidException("An exception occurred while running Grobid.", e);
         } finally {
             // keep it clean when leaving...
             doc.cleanLxmlFile(pathXML, false);
         }
     }
 
-    public String processing2(String input,
+    public Pair<String, Document> processing2(String input,
                               boolean consolidateHeader,
                               boolean consolidateCitations) throws Exception {
         if (input == null) {
@@ -127,7 +129,7 @@ public class FullTextParser extends AbstractParser {
             throw new GrobidResourceException("Cannot process pdf file, because temp path '" +
                     tmpPath.getAbsolutePath() + "' does not exists.");
         }
-        doc = new Document(input, tmpPath.getAbsolutePath());
+        Document doc = new Document(input, tmpPath.getAbsolutePath());
         try {
             int startPage = -1;
             int endPage = -1;
@@ -197,7 +199,8 @@ public class FullTextParser extends AbstractParser {
             }
 
             // final combination
-            return toTEI(doc, rese, tokenizations, resHeader, false, null, false);
+            String tei = toTEI(doc, rese, tokenizations, resHeader, false, null, false);
+            return new ImmutablePair<>(tei, doc);
         } catch (Exception e) {
             throw new GrobidException("An exception occured while running Grobid.", e);
         } finally {
@@ -215,7 +218,7 @@ public class FullTextParser extends AbstractParser {
      * @param pathTEI path to TEI
      * @param id id
      */
-    public void createTrainingFullText(String inputFile,
+    public Document createTrainingFullText(String inputFile,
                                        String pathFullText,
                                        String pathTEI,
                                        int id) {
@@ -225,7 +228,7 @@ public class FullTextParser extends AbstractParser {
             throw new GrobidResourceException("Cannot process pdf file, because temp path '" +
                     tmpPath.getAbsolutePath() + "' does not exists.");
         }
-        doc = new Document(inputFile, tmpPath.getAbsolutePath());
+        Document doc = new Document(inputFile, tmpPath.getAbsolutePath());
         try {
             int startPage = -1;
             int endPage = -1;
@@ -318,19 +321,18 @@ public class FullTextParser extends AbstractParser {
                 }
             }
 
-            if (allBufferReference != null) {
-                if (allBufferReference.length() > 0) {
-                    Writer writerReference = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
-                            "/" + PDFFileName.replace(".pdf", ".training.references.xml")), false), "UTF-8");
-                    writerReference.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
-                    writerReference.write("<citations>\n");
+            if (allBufferReference.length() > 0) {
+                Writer writerReference = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
+                        "/" + PDFFileName.replace(".pdf", ".training.references.xml")), false), "UTF-8");
+                writerReference.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
+                writerReference.write("<citations>\n");
 
-                    writerReference.write(allBufferReference.toString());
+                writerReference.write(allBufferReference.toString());
 
-                    writerReference.write("</citations>\n");
-                    writerReference.close();
-                }
+                writerReference.write("</citations>\n");
+                writerReference.close();
             }
+            return doc;
 
         } catch (Exception e) {
             throw new GrobidException("An exception occured while running Grobid training" +
@@ -340,12 +342,12 @@ public class FullTextParser extends AbstractParser {
         }
     }
 
-    /**
-     * Return the Document object of the last processed pdf file.
-     */
-    public Document getDoc() {
-        return doc;
-    }
+//    /**
+//     * Return the Document object of the last processed pdf file.
+//     */
+//    public Document getDoc() {
+//        return doc;
+//    }
 
 	/**
      * Return the Biblio object corresponding to the last processed pdf file.

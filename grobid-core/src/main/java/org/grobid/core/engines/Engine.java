@@ -31,6 +31,7 @@ import java.io.Writer;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.lang3.tuple.Pair;
 import org.grobid.core.data.Affiliation;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.BiblioItem;
@@ -96,12 +97,12 @@ public class Engine implements Closeable {
 	private List<String> acceptedLanguages = null;
 
 	// The document representation, including layout information
-	private Document doc = null;
+//	private Document doc = null;
 
 	// return the implemented representation of the currently processed document
-	public Document getDocument() {
-		return doc;
-	}
+//	public Document getDocument() {
+//		return doc;
+//	}
 
 	/**
 	 * Parse a sequence of authors from a header, i.e. containing possibly
@@ -458,10 +459,10 @@ public class Engine implements Closeable {
 			result = new BiblioItem();
 		}
 
-		String resultTEI = headerParser.processing(inputFile, consolidate, result, startPage, endPage);
-		doc = headerParser.getDoc();
+		Pair<String, Document> resultTEI = headerParser.processing(inputFile, consolidate, result, startPage, endPage);
+		Document doc = resultTEI.getRight();
 		close();
-		return resultTEI;
+		return resultTEI.getLeft();
 	}
 
 	/**
@@ -483,8 +484,7 @@ public class Engine implements Closeable {
 		if (headerParser == null) {
 			headerParser = new HeaderParser();
 		}
-		headerParser.createTrainingHeader(inputFile, pathHeader, pathTEI);
-		doc = headerParser.getDoc();
+		Document doc = headerParser.createTrainingHeader(inputFile, pathHeader, pathTEI);
 	}
 
 	/**
@@ -506,8 +506,7 @@ public class Engine implements Closeable {
 		if (fullTextParser == null) {
 			fullTextParser = new FullTextParser();
 		}
-		fullTextParser.createTrainingFullText(inputFile, pathFullText, pathTEI, id);
-		doc = fullTextParser.getDoc();
+		Document doc = fullTextParser.createTrainingFullText(inputFile, pathFullText, pathTEI, id);
 	}
 	
 	/**
@@ -530,7 +529,6 @@ public class Engine implements Closeable {
 			segmentationParser = new Segmentation();
 		}
 		segmentationParser.createTrainingSegmentation(inputFile, pathSegmentation, pathTEI, id);
-		doc = segmentationParser.getDoc();
 	}
 
 	/**
@@ -573,7 +571,7 @@ public class Engine implements Closeable {
 			fullTextParser = new FullTextParser();
 		}
 		// replace by the commented version for the new full ML text parser
-		String resultTEI;
+		Pair<String, Document> resultTEI;
 		LOGGER.debug("Starting processing fullTextToTEI on " + inputFile);
 		long time = System.currentTimeMillis();
 		if (method == 0) {
@@ -582,9 +580,9 @@ public class Engine implements Closeable {
 			resultTEI = fullTextParser.processing2(inputFile, consolidateHeader, consolidateCitations);
 		}
 		LOGGER.debug("Ending processing fullTextToTEI on " + inputFile + ". Time to process: " + (System.currentTimeMillis() - time) + "ms");
-		doc = fullTextParser.getDoc();
+		Document doc = resultTEI.getRight();
 		resHeader = fullTextParser.getResHeader();
-		return resultTEI;
+		return resultTEI.getLeft();
 	}
 
 	/**
@@ -1228,7 +1226,7 @@ public class Engine implements Closeable {
 	/**
 	 * Return all textual content except metadata. Useful for term extraction
 	 */
-	public String getAllBody(boolean withBookTitle) throws Exception {
+	public String getAllBody(Document doc, boolean withBookTitle) throws Exception {
 		return doc.getAllBody(this, resHeader, resBib, withBookTitle);
 	}
 
@@ -1237,15 +1235,15 @@ public class Engine implements Closeable {
 	 * toIgnore1 th blocks (default is 0) and the blocks after toIgnore2 th
 	 * (included, default is -1)
 	 */
-	public String getAllBlocksClean(int toIgnore1, int toIgnore2) throws Exception {
+	public String getAllBlocksClean(Document doc, int toIgnore1, int toIgnore2) throws Exception {
 		return doc.getAllBlocksClean(toIgnore1, toIgnore2);
 	}
 
-	public String getAllBlocksClean(int toIgnore1) throws Exception {
+	public String getAllBlocksClean(Document doc, int toIgnore1) throws Exception {
 		return doc.getAllBlocksClean(toIgnore1, -1);
 	}
 
-	public String getAllBlocksClean() throws Exception {
+	public String getAllBlocksClean(Document doc) throws Exception {
 		return doc.getAllBlocksClean(0, -1);
 	}
 
@@ -1299,7 +1297,7 @@ public class Engine implements Closeable {
 	 * 
 	 * @return introduction
 	 */
-	public String getIntroduction() throws Exception {
+	public String getIntroduction(Document doc) throws Exception {
 		return doc.getIntroduction(this);
 	}
 
@@ -1307,14 +1305,14 @@ public class Engine implements Closeable {
 	 * 
 	 * @return conclusion.
 	 */
-	public String getConclusion() throws Exception {
+	public String getConclusion(Document doc) throws Exception {
 		return doc.getConclusion(this);
 	}
 
 	/**
 	 * Return all the section titles.
 	 */
-	public String getSectionTitles() throws Exception {
+	public String getSectionTitles(Document doc) throws Exception {
 		return doc.getSectionTitles();
 	}
 
