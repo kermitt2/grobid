@@ -77,7 +77,10 @@ public class TEISegmentationSaxParser extends DefaultHandler {
 			currentTag = null;
 			upperTag = null;
 		}
-		else if (qName.equals("note") || qName.equals("page") || qName.equals("pages") || qName.equals("pageTitle")) {
+		else if (qName.equals("note") || 
+				 qName.equals("page") || 
+				 qName.equals("pages") || 
+				 qName.equals("pageTitle")) {
 			currentTag = upperTag;
 		}
     }
@@ -116,9 +119,9 @@ public class TEISegmentationSaxParser extends DefaultHandler {
 	        }
 			else if (qName.equals("titlePage")) {
                 //currentTags.push("<other>");
-				//currentTag = "<cover>";
+				currentTag = "<cover>";
 				//upperTag = currentTag;
-				upperQname = "titlePage";
+				//upperQname = "titlePage";
             }
 			/*else if (qName.equals("other")) {
                 //currentTags.push("<other>");
@@ -164,7 +167,26 @@ public class TEISegmentationSaxParser extends DefaultHandler {
                         }
                     }
                 }
-            } else if (qName.equals("page") || qName.equals("pages")) {
+            } 
+			else if (qName.equals("div")) {
+                int length = atts.getLength();
+
+                // Process each attribute
+                for (int i = 0; i < length; i++) {
+                    // Get names and values for each attribute
+                    String name = atts.getQName(i);
+                    String value = atts.getValue(i);
+
+                    if (name != null) {
+                        if (name.equals("type")) {
+                            if (value.equals("annex")) {
+								currentTag = "<annex>";
+                            }
+                        }
+                    }
+                }
+            }
+			else if (qName.equals("page") || qName.equals("pages")) {
 				currentTag = "<page>";
             }
 			else if (qName.equals("listBibl")) {
