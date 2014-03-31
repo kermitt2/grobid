@@ -16,22 +16,17 @@
  */
 package org.grobid.service.tests;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.ServerSocket;
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.MultivaluedMap;
-
-import org.grobid.core.utilities.GrobidPropertyKeys;
-import org.grobid.core.utilities.TextUtilities;
+import com.sun.jersey.api.client.Client;
+import com.sun.jersey.api.client.ClientResponse;
+import com.sun.jersey.api.client.ClientResponse.Status;
+import com.sun.jersey.api.client.WebResource;
+import com.sun.jersey.api.container.httpserver.HttpServerFactory;
+import com.sun.jersey.core.util.MultivaluedMapImpl;
+import com.sun.jersey.multipart.FormDataMultiPart;
+import com.sun.net.httpserver.HttpServer;
+import org.apache.commons.io.FileUtils;
 import org.grobid.core.mock.MockContext;
+import org.grobid.core.utilities.TextUtilities;
 import org.grobid.service.GrobidPathes;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -41,16 +36,15 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.sun.jersey.api.client.Client;
-import com.sun.jersey.api.client.ClientResponse;
-import com.sun.jersey.api.client.ClientResponse.Status;
-import com.sun.jersey.api.client.WebResource;
-import com.sun.jersey.api.container.httpserver.HttpServerFactory;
-import com.sun.jersey.core.util.MultivaluedMapImpl;
-import com.sun.jersey.multipart.FormDataMultiPart;
-import com.sun.net.httpserver.HttpServer;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.MultivaluedMap;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.ServerSocket;
 
-import org.apache.commons.io.FileUtils;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Tests the RESTful service of the grobid-service project. This class can also
@@ -83,7 +77,7 @@ public class GrobidRestServiceTest {
 	}
 
 	public void setHost(String host) {
-		this.host = host;
+		GrobidRestServiceTest.host = host;
 	}
 
 	public static final String PROP_TEST_HOST = "org.grobid.service.test.uri";
@@ -93,7 +87,7 @@ public class GrobidRestServiceTest {
 	 * range of 5000 .. 9999. If system property is given the port given as
 	 * property will be returned.
 	 * 
-	 * @return
+	 * @return port number
 	 * @throws IOException
 	 */
 	public Integer findPort() throws IOException {
@@ -133,9 +127,8 @@ public class GrobidRestServiceTest {
 					int port = this.findPort();
 					host = LOCALHOST + ":" + port + "/";
 					this.setHost(host);
-					logger.debug("started grobid-service for test on: "
-							+ this.getHost());
-					server = HttpServerFactory.create(this.getHost());
+					logger.debug("started grobid-service for test on: " + getHost());
+					server = HttpServerFactory.create(getHost());
 					server.start();
 				}
 			}
@@ -167,22 +160,22 @@ public class GrobidRestServiceTest {
 	 */
 	@Test
 	public void testFullyRestLessHeaderDocument() throws Exception {
-		File pdfFile = new File(this.getResourceDir().getAbsoluteFile()
+		File pdfFile = new File(getResourceDir().getAbsoluteFile()
 				+ "/sample4/sample.pdf");
 		Client create = Client.create();
 		WebResource service = create.resource(getHost());
-		ClientResponse response = null;
+		ClientResponse response;
 
 		assertTrue("Cannot run the test, because the sample file '" + pdfFile
 				+ "' does not exists.", pdfFile.exists());
 		FormDataMultiPart form = new FormDataMultiPart();
 		form.field("input", pdfFile, MediaType.MULTIPART_FORM_DATA_TYPE);
 		form.field("consolidate", "0", MediaType.MULTIPART_FORM_DATA_TYPE);
-		logger.debug("calling " + this.getHost() + GrobidPathes.PATH_GROBID
+		logger.debug("calling " + getHost() + GrobidPathes.PATH_GROBID
 				+ "/" + GrobidPathes.PATH_HEADER);
 
 		service = Client.create().resource(
-				this.getHost() + GrobidPathes.PATH_GROBID + "/"
+				getHost() + GrobidPathes.PATH_GROBID + "/"
 						+ GrobidPathes.PATH_HEADER);
 		response = service.type(MediaType.MULTIPART_FORM_DATA)
 				.accept(MediaType.APPLICATION_XML)
@@ -199,22 +192,22 @@ public class GrobidRestServiceTest {
 	 */
 	@Test
 	public void testFullyRestLessFulltextDocument() throws Exception {
-		File pdfFile = new File(this.getResourceDir().getAbsoluteFile()
+		File pdfFile = new File(getResourceDir().getAbsoluteFile()
 				+ "/sample4/sample.pdf");
 		Client create = Client.create();
 		WebResource service = create.resource(getHost());
-		ClientResponse response = null;
+		ClientResponse response;
 
 		assertTrue("Cannot run the test, because the sample file '" + pdfFile
 				+ "' does not exists.", pdfFile.exists());
 		FormDataMultiPart form = new FormDataMultiPart();
 		form.field("input", pdfFile, MediaType.MULTIPART_FORM_DATA_TYPE);
 		form.field("consolidate", "0", MediaType.MULTIPART_FORM_DATA_TYPE);
-		logger.debug("calling " + this.getHost() + GrobidPathes.PATH_GROBID
+		logger.debug("calling " + getHost() + GrobidPathes.PATH_GROBID
 				+ "/" + GrobidPathes.PATH_FULL_TEXT);
 
 		service = Client.create().resource(
-				this.getHost() + GrobidPathes.PATH_GROBID + "/"
+				getHost() + GrobidPathes.PATH_GROBID + "/"
 						+ GrobidPathes.PATH_FULL_TEXT);
 		response = service.type(MediaType.MULTIPART_FORM_DATA)
 				.accept(MediaType.APPLICATION_XML)
@@ -258,13 +251,13 @@ public class GrobidRestServiceTest {
 		String names = "Ahmed Abu-Rayyan *,a, Qutaiba Abu-Salem b, Norbert Kuhn * ,b, Cäcilia Maichle-Mößmer b";
 		Client create = Client.create();
 		WebResource service = create.resource(getHost());
-		ClientResponse response = null;
+		ClientResponse response;
 
 		MultivaluedMap<String, String> formData = new MultivaluedMapImpl();
 		formData.add("names", names);
 
 		service = Client.create().resource(
-				this.getHost() + GrobidPathes.PATH_GROBID + "/"
+				getHost() + GrobidPathes.PATH_GROBID + "/"
 						+ GrobidPathes.PATH_HEADER_NAMES);
 		response = service.post(ClientResponse.class, formData);
 
@@ -283,13 +276,13 @@ public class GrobidRestServiceTest {
 		String names = "Marc Shapiro and Susan Horwitz";
 		Client create = Client.create();
 		WebResource service = create.resource(getHost());
-		ClientResponse response = null;
+		ClientResponse response;
 
 		MultivaluedMap<String, String> formData = new MultivaluedMapImpl();
 		formData.add("names", names);
 
 		service = Client.create().resource(
-				this.getHost() + GrobidPathes.PATH_GROBID + "/"
+				getHost() + GrobidPathes.PATH_GROBID + "/"
 						+ GrobidPathes.PATH_CITE_NAMES);
 		response = service.post(ClientResponse.class, formData);
 
@@ -310,13 +303,13 @@ public class GrobidRestServiceTest {
 				+ "Technology, Narutowicza 11/12, 80-233 Gdansk, Poland";
 		Client create = Client.create();
 		WebResource service = create.resource(getHost());
-		ClientResponse response = null;
+		ClientResponse response;
 
 		MultivaluedMap<String, String> formData = new MultivaluedMapImpl();
 		formData.add("affiliations", affiliations);
 
 		service = Client.create().resource(
-				this.getHost() + GrobidPathes.PATH_GROBID + "/"
+				getHost() + GrobidPathes.PATH_GROBID + "/"
 						+ GrobidPathes.PATH_AFFILIATION);
 		response = service.post(ClientResponse.class, formData);
 
@@ -335,9 +328,9 @@ public class GrobidRestServiceTest {
 	public void testRestPatentCitation() throws Exception {
 		Client create = Client.create();
 		WebResource service = create.resource(getHost());
-		ClientResponse response = null;
+		ClientResponse response;
 		
-		File xmlDirectory = new File(this.getResourceDir().getAbsoluteFile() + "/patent");
+		File xmlDirectory = new File(getResourceDir().getAbsoluteFile() + "/patent");
 		for (final File currXML : xmlDirectory.listFiles()) {
 			try {
 				if (currXML.getName().toLowerCase().endsWith(".xml") || 
@@ -348,11 +341,11 @@ public class GrobidRestServiceTest {
 					FormDataMultiPart form = new FormDataMultiPart();
 					form.field("input", currXML, MediaType.MULTIPART_FORM_DATA_TYPE);
 					form.field("consolidate", "0", MediaType.MULTIPART_FORM_DATA_TYPE);
-					logger.debug("calling " + this.getHost() + GrobidPathes.PATH_GROBID
+					logger.debug("calling " + getHost() + GrobidPathes.PATH_GROBID
 							+ "/" + GrobidPathes.PATH_CITATION_PATENT_ST36);
 
 					service = Client.create().resource(
-							this.getHost() + GrobidPathes.PATH_GROBID + "/"
+							getHost() + GrobidPathes.PATH_GROBID + "/"
 									+ GrobidPathes.PATH_CITATION_PATENT_ST36);
 					response = service.type(MediaType.MULTIPART_FORM_DATA)
 							.accept(MediaType.APPLICATION_XML + ";charset=utf-8")
@@ -363,7 +356,7 @@ public class GrobidRestServiceTest {
 					String tei = TextUtilities.convertStreamToString(inputStream);
 					//logger.debug(tei);
 					
-					File outputFile = new File(this.getResourceDir().getAbsoluteFile()+
+					File outputFile = new File(getResourceDir().getAbsoluteFile()+
 						"/../sample/"+currXML.getName().replace(".xml",".tei.xml").replace(".gz",""));
 					// writing the result in the sample directory
 					FileUtils.writeStringToFile(outputFile, tei, "UTF-8");

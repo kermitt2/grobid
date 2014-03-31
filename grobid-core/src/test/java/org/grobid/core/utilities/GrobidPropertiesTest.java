@@ -266,14 +266,14 @@ public class GrobidPropertiesTest {
 	}
 
 	//@Test
-	public void testgetModelPath() {
+	public void testGetModelPath() {
 		GrobidModels value = GrobidModels.DATE;
 		assertEquals("The property has not the value expected",
 				new File(GrobidProperties.get_GROBID_HOME_PATH(),
 						GrobidProperties.FOLDER_NAME_MODELS + File.separator
 								+ value.getFolderName() + File.separator
 								+ GrobidProperties.FILE_NAME_MODEL),
-				GrobidProperties.getModelPath(value, "wapiti"));
+				GrobidProperties.getModelPath(value));
 	}
 
 	//@Test

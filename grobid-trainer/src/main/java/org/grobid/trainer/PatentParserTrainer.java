@@ -72,18 +72,18 @@ public class PatentParserTrainer extends AbstractTrainer{
 
 
         GenericTrainer trainer = TrainerFactory.getTrainer();
-        File modelPath1 = new File(GrobidProperties.getModelPath(GrobidModels.PATENT_NPL, trainer.getName()).getAbsolutePath() + NEW_MODEL_EXT);
-        File modelPath2 = new File(GrobidProperties.getModelPath(GrobidModels.PATENT_PATENT, trainer.getName()).getAbsolutePath() + NEW_MODEL_EXT);
-        File modelPath3 = new File(GrobidProperties.getModelPath(GrobidModels.PATENT_ALL, trainer.getName()).getAbsolutePath() + NEW_MODEL_EXT);
+        File modelPath1 = new File(GrobidProperties.getModelPath(GrobidModels.PATENT_NPL).getAbsolutePath() + NEW_MODEL_EXT);
+        File modelPath2 = new File(GrobidProperties.getModelPath(GrobidModels.PATENT_PATENT).getAbsolutePath() + NEW_MODEL_EXT);
+        File modelPath3 = new File(GrobidProperties.getModelPath(GrobidModels.PATENT_ALL).getAbsolutePath() + NEW_MODEL_EXT);
 
         trainer.train(templatePath1, trainingDataPath1, modelPath1, GrobidProperties.getNBThreads());
         trainer.train(templatePath2, trainingDataPath2, modelPath2, GrobidProperties.getNBThreads());
         trainer.train(templatePath3, trainingDataPath3, modelPath3, GrobidProperties.getNBThreads());
 
         //renaming
-        renameModels(GrobidProperties.getModelPath(GrobidModels.PATENT_NPL, trainer.getName()), modelPath1);
-        renameModels(GrobidProperties.getModelPath(GrobidModels.PATENT_PATENT, trainer.getName()), modelPath2);
-        renameModels(GrobidProperties.getModelPath(GrobidModels.PATENT_ALL, trainer.getName()), modelPath3);
+        renameModels(GrobidProperties.getModelPath(GrobidModels.PATENT_NPL), modelPath1);
+        renameModels(GrobidProperties.getModelPath(GrobidModels.PATENT_PATENT), modelPath2);
+        renameModels(GrobidProperties.getModelPath(GrobidModels.PATENT_ALL), modelPath3);
     }
 
 

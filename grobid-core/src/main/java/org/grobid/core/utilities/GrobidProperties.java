@@ -15,6 +15,7 @@ import javax.naming.NamingException;
 
 import org.apache.commons.lang3.StringUtils;
 import org.grobid.core.GrobidModels;
+import org.grobid.core.engines.tagging.GrobidCRFEngine;
 import org.grobid.core.exceptions.GrobidPropertyException;
 import org.grobid.core.exceptions.GrobidResourceException;
 import org.grobid.core.utilities.counters.CntManager;
@@ -58,6 +59,12 @@ public class GrobidProperties {
 	 */
 	private static GrobidProperties grobidProperties = null;
 
+    /**
+     * Type of CRF framework used
+     */
+    private static GrobidCRFEngine grobidCRFEngine = GrobidCRFEngine.WAPITI;
+
+
 	/**
 	 * Path to pdf2xml.
 	 */
@@ -65,7 +72,7 @@ public class GrobidProperties {
 
 	/**
 	 * Determines the path of grobid-home for all objects of this class. When
-	 * {@link #GROBID_HOME_PATH} is set, all created objects will refer to that
+	 * #GROBID_HOME_PATH is set, all created objects will refer to that
 	 * path. When it is reset, old object refer to the old path whereas objects
 	 * created after reset will refer to the new path.
 	 */
@@ -99,10 +106,11 @@ public class GrobidProperties {
 	 * @return
 	 */
 	public static GrobidProperties getInstance() {
-		if (grobidProperties == null)
+		if (grobidProperties == null) {
 			return getNewInstance();
-		else
+        } else {
 			return grobidProperties;
+        }
 	}
 
 	/**
@@ -176,7 +184,7 @@ public class GrobidProperties {
 			File pathToGrobidHome = new File(grobidHomePath);
 
 			try {
-				if (pathToGrobidHome == null || !pathToGrobidHome.exists()) {
+				if (!pathToGrobidHome.exists()) {
 					LOGGER.error("Cannot set grobid home path to the given one '{}', because it does not exist.", grobidHomePath);
 					throw new GrobidPropertyException("Cannot set grobid home path to the given one '" + grobidHomePath
 							+ "', because it does not exist.");
@@ -198,7 +206,7 @@ public class GrobidProperties {
 	/**
 	 * Return the GROBID_HOME path.
 	 * 
-	 * @return
+	 * @return grobid home path
 	 */
 	public static File get_GROBID_HOME_PATH() {
 		return GROBID_HOME_PATH;
@@ -210,8 +218,7 @@ public class GrobidProperties {
 
 	/**
 	 * Set the GROBID_HOME path.
-	 * 
-	 * @return
+	 *
 	 */
 	public static void set_GROBID_HOME_PATH(final String pGROBID_HOME_PATH) {
 		if (StringUtils.isBlank(pGROBID_HOME_PATH))
@@ -219,7 +226,7 @@ public class GrobidProperties {
 
 		File grobidHome = new File(pGROBID_HOME_PATH);
 		// exception if prop file does not exist
-		if (grobidHome == null || !grobidHome.exists()) {
+		if (!grobidHome.exists()) {
 			throw new GrobidPropertyException("Could not read GROBID_HOME, the directory '" + pGROBID_HOME_PATH + "' does not exist.");
 		}
 
@@ -246,7 +253,7 @@ public class GrobidProperties {
 			File grobidPropertyFile = new File(grobidPropertyPath);
 
 			// exception if prop file does not exist
-			if (grobidPropertyFile == null || !grobidPropertyFile.exists()) {
+			if (!grobidPropertyFile.exists()) {
 				throw new GrobidPropertyException("Could not read grobid.properties, the file '" + grobidPropertyPath + "' does not exist.");
 			}
 
@@ -262,7 +269,7 @@ public class GrobidProperties {
 	/**
 	 * Return the GROBID_HOME path.
 	 * 
-	 * @return
+	 * @return grobid properties path
 	 */
 	public static File getGrobidPropertiesPath() {
 		return GROBID_PROPERTY_PATH;
@@ -270,8 +277,7 @@ public class GrobidProperties {
 
 	/**
 	 * Set the GROBID_HOME path.
-	 * 
-	 * @return
+	 *
 	 */
 	public static void setGrobidPropertiesPath(final String pGrobidPropertiesPath) {
 		if (StringUtils.isBlank(pGrobidPropertiesPath))
@@ -279,7 +285,7 @@ public class GrobidProperties {
 
 		File grobidPropPath = new File(pGrobidPropertiesPath);
 		// exception if prop file does not exist
-		if (grobidPropPath == null || !grobidPropPath.exists()) {
+		if (!grobidPropPath.exists()) {
 			throw new GrobidPropertyException("Could not read grobid.properties, the file '" + pGrobidPropertiesPath + "' does not exist.");
 		}
 
@@ -324,7 +330,7 @@ public class GrobidProperties {
 	 * 
 	 * @param pkey
 	 *            the property key
-	 * @return the value of the property.
+
 	 */
 	public static void setPropertyValue(final String pkey, final String pValue) {
 		if (StringUtils.isBlank(pValue))
@@ -334,11 +340,11 @@ public class GrobidProperties {
 
 	/**
 	 * Creates a new object and searches, where to find the grobid home folder.
-	 * First step is to check if the system property {@link #GrobidPropertyKeys.PROP_GROBID_HOME}
+	 * First step is to check if the system property GrobidPropertyKeys.PROP_GROBID_HOME
 	 * is set, than the path matching to that property is used. Otherwise, the
-	 * method will search a folder named {@link #FILE_GROBID_PROPERTIES_PRIVATE}
+	 * method will search a folder named #FILE_GROBID_PROPERTIES_PRIVATE
 	 * , if this is is also not set, the method will search for a folder named
-	 * {@link #FILE_GROBID_PROPERTIES} in the current project (current project
+	 * FILE_GROBID_PROPERTIES in the current project (current project
 	 * means where the system property <em>user.dir</em> points to.)
 	 */
 	public GrobidProperties() {
@@ -370,9 +376,15 @@ public class GrobidProperties {
 		initializePaths();
 		checkProperties();
 		loadPdf2XMLPath();
+        loadCrfEngine();
 	}
 
-	/**
+    private static void loadCrfEngine() {
+        grobidCRFEngine = GrobidCRFEngine.get(getPropertyValue(GrobidPropertyKeys.PROP_GROBID_CRF_ENGINE, GrobidCRFEngine.WAPITI.name()));
+    }
+
+
+    /**
 	 * Loads all properties given in property file {@link #GROBID_HOME_PATH}.
 	 */
 	protected static void init() {
@@ -397,7 +409,7 @@ public class GrobidProperties {
 			propKey = (String) properties.nextElement();
 			String propVal = getPropertyValue(propKey, StringUtils.EMPTY);
 			if (propKey.endsWith(".path")) {
-				File path = new File(propVal.toString());
+				File path = new File(propVal);
 				if (!path.isAbsolute()) {
 					try {
 						getProps().put(propKey,
@@ -426,7 +438,7 @@ public class GrobidProperties {
 
 	/**
 	 * Checks if the given properties contains non-empty and non-null values for
-	 * the properties of list {@link GrobidProperties#NOT_NULL_PROPERTIES}.
+	 * the properties of list Grobid properties
 	 * 
 	 */
 	protected static void checkProperties() {
@@ -455,7 +467,7 @@ public class GrobidProperties {
 	}
 
 	/**
-	 * Returns the content of property {@link #GrobidPropertyKeys.PROP_NATIVE_LIB_PATH} as
+	 * Returns the content of property GrobidPropertyKeys.PROP_NATIVE_LIB_PATH as
 	 * {@link File} object.
 	 * 
 	 * @return folder that contains all libraries
@@ -513,7 +525,7 @@ public class GrobidProperties {
 	 * @return host for connecting crossref
 	 */
 	public static String getCrossrefHost() {
-		return getPropertyValue(GrobidPropertyKeys.PROP_CROSSREF_HOST).toString();
+		return getPropertyValue(GrobidPropertyKeys.PROP_CROSSREF_HOST);
 	}
 
 	/**
@@ -700,6 +712,8 @@ public class GrobidProperties {
 		return Integer.valueOf(getPropertyValue(GrobidPropertyKeys.PROP_NB_THREADS));
 	}
 
+
+
 	/**
 	 * Sets the number of threads, given in the grobid-property file.
 	 * 
@@ -762,15 +776,14 @@ public class GrobidProperties {
 
 	/**
 	 * Returns the path to the home folder of pdf2xml.
-	 * 
-	 * @return path to pdf2xml
+	 *
 	 */
 	public static void loadPdf2XMLPath() {
 		LOGGER.debug("loading pdf2xml path");
 		String pathName = getPropertyValue(GrobidPropertyKeys.PROP_3RD_PARTY_PDF2XML);
 
 		pathToPdf2Xml = new File(pathName);
-		if (pathToPdf2Xml == null || !pathToPdf2Xml.exists()) {
+		if (!pathToPdf2Xml.exists()) {
 			throw new GrobidPropertyException(
 					"Path to 3rd party program pdf2xml doesn't exists. Please set the path to pdf2xml in the file grobid.properties with the property grobid.3rdparty.pdf2xml");
 		}
@@ -789,14 +802,13 @@ public class GrobidProperties {
 		return pathToPdf2Xml;
 	}
 
-	public static File getModelPath(final GrobidModels model, String type) {
-		return new File(get_GROBID_HOME_PATH(), FOLDER_NAME_MODELS + File.separator + model.getFolderName() + File.separator
-				+ FILE_NAME_MODEL + "." + type);
-	}
+    public static GrobidCRFEngine getGrobidCRFEngine() {
+        return grobidCRFEngine;
+    }
 
-    public static File getBaseModelPath(final GrobidModels model) {
+    public static File getModelPath(final GrobidModels model) {
         return new File(get_GROBID_HOME_PATH(), FOLDER_NAME_MODELS + File.separator + model.getFolderName() + File.separator
-                + FILE_NAME_MODEL);
+                + FILE_NAME_MODEL + "." + grobidCRFEngine.getExt());
     }
 
     public static File getTemplatePath(final File resourcesDir, final GrobidModels model) {
@@ -878,9 +890,8 @@ public class GrobidProperties {
 	 * @throws IOException
 	 */
 	public static void updatePropertyFile(File pPropertyFile, String pKey, String pValue) throws IOException {
-		File propFile = pPropertyFile;
-		BufferedReader reader = new BufferedReader(new FileReader(propFile));
-		String line = StringUtils.EMPTY, content = StringUtils.EMPTY, lineToReplace = StringUtils.EMPTY;
+        BufferedReader reader = new BufferedReader(new FileReader(pPropertyFile));
+		String line, content = StringUtils.EMPTY, lineToReplace = StringUtils.EMPTY;
 		while ((line = reader.readLine()) != null) {
 			if (line.contains(pKey)) {
 				lineToReplace = line;

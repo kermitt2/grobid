@@ -41,8 +41,8 @@ public abstract class AbstractTrainer implements Trainer {
 		final File dataPath = trainDataPath;
 		createCRFPPData(getCorpusPath(), dataPath);
         GenericTrainer trainer = TrainerFactory.getTrainer();
-        final File tempModelPath = new File(GrobidProperties.getModelPath(model, trainer.getName()).getAbsolutePath() + NEW_MODEL_EXT);
-        final File oldModelPath = GrobidProperties.getModelPath(model, trainer.getName());
+        final File tempModelPath = new File(GrobidProperties.getModelPath(model).getAbsolutePath() + NEW_MODEL_EXT);
+        final File oldModelPath = GrobidProperties.getModelPath(model);
 
         trainer.train(getTemplatePath(), dataPath, tempModelPath, GrobidProperties.getNBThreads());
 		// if we are here, that means that training succeeded
@@ -73,8 +73,8 @@ public abstract class AbstractTrainer implements Trainer {
 		final File dataPath = trainDataPath;
 		createCRFPPData(getCorpusPath(), dataPath, evalDataPath, split);
         GenericTrainer trainer = TrainerFactory.getTrainer();
-        final File tempModelPath = new File(GrobidProperties.getModelPath(model, trainer.getName()).getAbsolutePath() + NEW_MODEL_EXT);
-        final File oldModelPath = GrobidProperties.getModelPath(model, trainer.getName());
+        final File tempModelPath = new File(GrobidProperties.getModelPath(model).getAbsolutePath() + NEW_MODEL_EXT);
+        final File oldModelPath = GrobidProperties.getModelPath(model);
 
         trainer.train(getTemplatePath(), dataPath, tempModelPath, GrobidProperties.getNBThreads());
 
