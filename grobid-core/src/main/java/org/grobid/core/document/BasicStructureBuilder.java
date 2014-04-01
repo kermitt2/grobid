@@ -37,7 +37,7 @@ public class BasicStructureBuilder {
                     "References?\\s+and\\s+Notes?|References?\\s+Cited|REFERENCE?\\s+CITED|REFERENCES?\\s+AND\\s+NOTES?|Références|Literatur|" +
                     "LITERATURA|Literatur|Referências|BIBLIOGRAFIA|Literaturverzeichnis|Referencias|LITERATURE CITED|References and Notes)", Pattern.CASE_INSENSITIVE);
     static public Pattern header = Pattern.compile("^((\\d\\d?)|([A-Z](I|V|X)*))(\\.(\\d)*)*\\s(\\D+)");
-//    static public Pattern header2 = Pattern.compile("^\\d\\s\\D+");
+    //    static public Pattern header2 = Pattern.compile("^\\d\\s\\D+");
     static public Pattern figure = Pattern.compile("(figure\\s|fig\\.|sch?ma)", Pattern.CASE_INSENSITIVE);
     static public Pattern table = Pattern.compile("^(T|t)able\\s|tab|tableau", Pattern.CASE_INSENSITIVE);
     static public Pattern equation = Pattern.compile("^(E|e)quation\\s");
@@ -56,6 +56,7 @@ public class BasicStructureBuilder {
      * Filter out line numbering possibly present in the document. This can be frequent for
      * document in a review/submission format and degrades strongly the machine learning
      * extraction results.
+     *
      * @param doc a document
      * @return if found numbering
      */
@@ -171,9 +172,10 @@ public class BasicStructureBuilder {
     /**
      * First pass to detect basic structures: remove page header/footer, identify section numbering,
      * identify Figure and table blocks.
+     *
      * @param doc a document
      */
-    static public void firstPass(Document doc)  {
+    static public void firstPass(Document doc) {
         if (doc == null) {
             throw new NullPointerException();
         }
@@ -617,7 +619,8 @@ public class BasicStructureBuilder {
 
     /**
      * Cluster the blocks following the font, style and size aspects
-     * @param b integer
+     *
+     * @param b   integer
      * @param doc a document
      */
     private static void addBlockToCluster(Integer b, Document doc) {
@@ -634,7 +637,7 @@ public class BasicStructureBuilder {
         }
         //System.out.println(font + " " + bold + " " + italic + " " + fontSize );
 
-        if (doc.getClusters()== null) {
+        if (doc.getClusters() == null) {
             doc.setClusters(new ArrayList<Cluster>());
         } else {
             for (Cluster cluster : doc.getClusters()) {
@@ -665,32 +668,31 @@ public class BasicStructureBuilder {
 
     /**
      * Set the main segments of the document based on the full text parsing results
-     * @param doc a document
-     * @param rese string
-     * @param tokenizations tokens
+     *
+     * @param doc            a document
+     * @param labelledResult string
+     * @param tokenizations  tokens
      * @return a document
      */
-    static public Document resultSegmentation(Document doc,
-                                              String rese,
-                                              List<String> tokenizations) {
+    static public Document resultSegmentation(Document doc, String labelledResult, List<String> tokenizations) {
         if (doc == null) {
-            throw new NullPointerException();
+            throw new NullPointerException("Document is null");
         }
         if (doc.getBlocks() == null) {
-            throw new NullPointerException();
+            throw new NullPointerException("Blocks of the documents are null");
         }
         //System.out.println(tokenizations.toString());
 //        int i = 0;
 //        boolean first = true;
-        ArrayList<Integer> blockHeaders = new ArrayList<>();
-        ArrayList<Integer> blockFooters = new ArrayList<>();
-        ArrayList<Integer> blockDocumentHeaders = new ArrayList<>();
-        ArrayList<Integer> blockReferences = new ArrayList<>();
-        ArrayList<Integer> blockSectionTitles = new ArrayList<>();
+        List<Integer> blockHeaders = new ArrayList<>();
+        List<Integer> blockFooters = new ArrayList<>();
+        List<Integer> blockDocumentHeaders = new ArrayList<>();
+        List<Integer> blockReferences = new ArrayList<>();
+        List<Integer> blockSectionTitles = new ArrayList<>();
 
         doc.setBibDataSets(new ArrayList<BibDataSet>());
 
-        StringTokenizer st = new StringTokenizer(rese, "\n");
+        StringTokenizer st = new StringTokenizer(labelledResult, "\n");
         String s1 = null;
         String s2 = null;
         String lastTag = null;
@@ -807,11 +809,11 @@ public class BasicStructureBuilder {
                     }
                 }
             } else if (currentTag0.equals("<reference_marker>")) {
-				if (!blockReferences.contains(blockIndex)) {
+                if (!blockReferences.contains(blockIndex)) {
                     blockReferences.add(blockIndex);
                     //System.out.println("add block reference: " + blockIndexInteger.intValue());
                 }
-	
+
                 if (s1.equals("I-<reference_marker>")) {
                     if (bib != null) {
                         if (bib.getRefSymbol() != null) {
