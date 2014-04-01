@@ -62,7 +62,7 @@ public class Document {
 	private int beginReferences = -1;
 
 	private boolean titleMatchNum = false; // true if the section titles of the
-											// document ar numbered
+											// document are numbered
 	private String lang = null;
 
 	private List<Block> blocks = null;
@@ -416,9 +416,9 @@ public class Document {
 	 * @throws org.xml.sax.SAXException
 	 *             when parsing
 	 */
-	public ArrayList<String> addFeaturesDocument() throws IOException,
+	public List<String> addFeaturesDocument() throws IOException,
 			ParserConfigurationException, SAXException {
-		ArrayList<String> images = new ArrayList<>();
+		List<String> images = new ArrayList<>();
 		PDF2XMLSaxParser parser = new PDF2XMLSaxParser(this, images);
 
 		tokenizations = null;

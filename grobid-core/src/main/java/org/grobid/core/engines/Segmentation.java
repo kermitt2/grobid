@@ -1,6 +1,7 @@
 package org.grobid.core.engines;
 
 import org.grobid.core.GrobidModels;
+import org.grobid.core.document.BasicStructureBuilder;
 import org.grobid.core.document.Document;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.exceptions.GrobidResourceException;
@@ -54,7 +55,7 @@ public class Segmentation extends AbstractParser {
      */
     public Segmentation() {
         super(GrobidModels.SEGMENTATION);
-        tmpPath = GrobidProperties.getInstance().getTempPath();
+        tmpPath = GrobidProperties.getTempPath();
     }
 
     /**
@@ -96,7 +97,7 @@ public class Segmentation extends AbstractParser {
                         "because path of where to store xml file is null.");
             }
             doc.setPathXML(pathXML);
-            ArrayList<String> tokenization = doc.addFeaturesDocument();
+            List<String> tokenizations = doc.addFeaturesDocument();
 
             if (doc.getBlocks() == null) {
                 throw new GrobidException("PDF parsing resulted in empty content");
@@ -108,7 +109,7 @@ public class Segmentation extends AbstractParser {
             System.out.println(rese);
 
             // set the different sections of the Document object
-            //doc = BasicStructureBuilder.resultSegmentation(doc, rese, tokenizations);
+            doc = BasicStructureBuilder.resultSegmentation(doc, rese, tokenizations);
 
             //LOGGER.debug(rese);
             return doc;
@@ -255,7 +256,7 @@ public class Segmentation extends AbstractParser {
                     continue;
                 }
                 StringTokenizer stt = new StringTokenizer(tok, " \t");
-                List<String> localFeatures = new ArrayList<String>();
+                List<String> localFeatures = new ArrayList<>();
                 int i = 0;
 
                 boolean newLine = false;
@@ -312,7 +313,7 @@ public class Segmentation extends AbstractParser {
                     testClosingTag(buffer, currentTag0, lastTag0, s1);
                 }
 
-                boolean output = false;
+                boolean output;
 
                 output = writeField(buffer, s1, lastTag0, s2, "<header>", "<front>", addSpace, 3);
                 /*if (!output) {

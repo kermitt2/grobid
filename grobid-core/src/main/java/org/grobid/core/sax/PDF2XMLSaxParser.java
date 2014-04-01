@@ -40,7 +40,7 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 	private boolean currentRotation = false;
 	private Block block = null; // current block
 	private int nbTokens = 0; // nb tokens in the current block
-	private ArrayList<String> images = null;
+	private List<String> images = null;
 
 	private StringBuffer blabla = null;
 	private ArrayList<String> tokenizations = null;
@@ -51,14 +51,14 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 
 	public PDF2XMLSaxParser() {
 		blabla = new StringBuffer();
-		tokenizations = new ArrayList<String>();
+		tokenizations = new ArrayList<>();
 	}
 
-	public PDF2XMLSaxParser(Document d, ArrayList<String> im) {
+	public PDF2XMLSaxParser(Document d, List<String> im) {
 		doc = d;
 		blabla = new StringBuffer();
 		images = im;
-		tokenizations = new ArrayList<String>();
+		tokenizations = new ArrayList<>();
 	}
 
 	public ArrayList<String> getTokenization() {

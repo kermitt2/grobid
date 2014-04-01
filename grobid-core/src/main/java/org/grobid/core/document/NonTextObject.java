@@ -3,7 +3,7 @@ package org.grobid.core.document;
 import java.util.ArrayList;
 
 /**
- * Class for representing figure or table objects occuring within a document.
+ * Class for representing figure or table objects occurring within a document.
  *
  * @author Patrice Lopez
  */
