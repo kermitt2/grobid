@@ -69,7 +69,7 @@ public class BasicStructureBuilder {
         int currentNumber = -1;
         int lastNumber = -1;
         int i = 0;
-        for (Block block : doc.blocks) {
+        for (Block block : doc.getBlocks()) {
 //            Integer ii = i;
 
             String localText = block.getText();
@@ -125,7 +125,7 @@ public class BasicStructureBuilder {
             int counter = 1; // we start at 1, if the actual start is 0,
             // it will remain (as it is negligeable)
 
-            for (Block block : doc.blocks) {
+            for (Block block : doc.getBlocks()) {
 
                 String localText = block.getText();
                 ArrayList<LayoutToken> tokens = block.tokens;
@@ -176,7 +176,7 @@ public class BasicStructureBuilder {
         if (doc == null) {
             throw new NullPointerException();
         }
-        if (doc.blocks == null) {
+        if (doc.getBlocks() == null) {
             throw new NullPointerException();
         }
 
@@ -192,10 +192,10 @@ public class BasicStructureBuilder {
         ArrayList<Integer> blockHeadFigures = new ArrayList<Integer>();
         ArrayList<Integer> blockDocumentHeaders = new ArrayList<Integer>();
 
-        doc.titleMatchNum = false;
+        doc.setTitleMatchNum(false);
 
         try {
-            for (Block block : doc.blocks) {
+            for (Block block : doc.getBlocks()) {
                 String localText = block.getText().trim();
                 localText = localText.replace("\n", " ");
                 localText = localText.replace("  ", " ");
@@ -208,7 +208,7 @@ public class BasicStructureBuilder {
                     if (((localText.startsWith("1.")) || (localText.startsWith("1 "))) ||
                             ((localText.startsWith("2.")) || (localText.startsWith("2 "))) ||
                             (localText.startsWith("Contents")))
-                        doc.titleMatchNum = true;
+                        doc.setTitleMatchNum(true);
                     //System.out.println("Title section identified: block " + i + ", " + localText);
                     blockSectionTitles.add(i);
                 } else {
@@ -219,35 +219,35 @@ public class BasicStructureBuilder {
                         if (token.startsWith("@PAGE")) {
                             // current block should give the header/footors
                             if (i > 4) {
-                                if (doc.blocks.get(i - 5).getNbTokens() < 20) {
+                                if (doc.getBlocks().get(i - 5).getNbTokens() < 20) {
                                     Integer i2 = i - 5;
                                     if (!blockFooters.contains(i2))
                                         blockFooters.add(i2);
                                 }
                             }
                             if (i > 3) {
-                                if (doc.blocks.get(i - 4).getNbTokens() < 20) {
+                                if (doc.getBlocks().get(i - 4).getNbTokens() < 20) {
                                     Integer i2 = i - 4;
                                     if (!blockFooters.contains(i2))
                                         blockFooters.add(i2);
                                 }
                             }
                             if (i > 2) {
-                                if (doc.blocks.get(i - 3).getNbTokens() < 20) {
+                                if (doc.getBlocks().get(i - 3).getNbTokens() < 20) {
                                     Integer i2 = i - 3;
                                     if (!blockFooters.contains(i2))
                                         blockFooters.add(i2);
                                 }
                             }
                             if (i > 1) {
-                                if (doc.blocks.get(i - 2).getNbTokens() < 20) {
+                                if (doc.getBlocks().get(i - 2).getNbTokens() < 20) {
                                     Integer i2 = i - 2;
                                     if (!blockFooters.contains(i2))
                                         blockFooters.add(i2);
                                 }
                             }
                             if (i > 0) {
-                                if (doc.blocks.get(i - 1).getNbTokens() < 20) {
+                                if (doc.getBlocks().get(i - 1).getNbTokens() < 20) {
                                     Integer i2 = i - 1;
                                     if (!blockFooters.contains(i2))
                                         blockFooters.add(i2);
@@ -257,29 +257,29 @@ public class BasicStructureBuilder {
 
                             // page header candidates
                             blockHeaders.add(i);
-                            if (i < doc.blocks.size() - 1) {
-                                if (doc.blocks.get(i + 1).getNbTokens() < 20) {
+                            if (i < doc.getBlocks().size() - 1) {
+                                if (doc.getBlocks().get(i + 1).getNbTokens() < 20) {
                                     Integer i2 = i + 1;
                                     if (!blockHeaders.contains(i2))
                                         blockHeaders.add(i + 1);
                                 }
                             }
-                            if (i < doc.blocks.size() - 2) {
-                                if (doc.blocks.get(i + 2).getNbTokens() < 20) {
+                            if (i < doc.getBlocks().size() - 2) {
+                                if (doc.getBlocks().get(i + 2).getNbTokens() < 20) {
                                     Integer i2 = i + 2;
                                     if (!blockHeaders.contains(i2))
                                         blockHeaders.add(i + 2);
                                 }
                             }
-                            if (i < doc.blocks.size() - 3) {
-                                if (doc.blocks.get(i + 3).getNbTokens() < 20) {
+                            if (i < doc.getBlocks().size() - 3) {
+                                if (doc.getBlocks().get(i + 3).getNbTokens() < 20) {
                                     Integer i2 = i + 3;
                                     if (!blockHeaders.contains(i2))
                                         blockHeaders.add(i + 3);
                                 }
                             }
-                            if (i < doc.blocks.size() - 4) {
-                                if (doc.blocks.get(i + 4).getNbTokens() < 20) {
+                            if (i < doc.getBlocks().size() - 4) {
+                                if (doc.getBlocks().get(i + 4).getNbTokens() < 20) {
                                     Integer i2 = i + 4;
                                     if (!blockHeaders.contains(i2))
                                         blockHeaders.add(i + 4);
@@ -300,8 +300,8 @@ public class BasicStructureBuilder {
             // try to find the cluster of section titles
             Cluster candidateCluster = null;
             //System.out.println("nb clusters: " + clusters.size());
-            for (Cluster cluster : doc.clusters) {
-                if ((cluster.getNbBlocks() < (doc.blocks.size() / 5)) && (cluster.getNbBlocks() < 20)) {
+            for (Cluster cluster : doc.getClusters()) {
+                if ((cluster.getNbBlocks() < (doc.getBlocks().size() / 5)) && (cluster.getNbBlocks() < 20)) {
                     ArrayList<Integer> blo = cluster.getBlocks2();
                     for (Integer b : blo) {
                         if (blockSectionTitles.contains(b)) {
@@ -336,7 +336,7 @@ public class BasicStructureBuilder {
             // aknowledgement section recognition
             boolean ackn = false;
             i = 0;
-            for (Block block : doc.blocks) {
+            for (Block block : doc.getBlocks()) {
                 String localText = block.getText().trim();
                 localText = localText.replace("\n", " ");
                 localText = localText.replace("  ", " ");
@@ -369,7 +369,7 @@ public class BasicStructureBuilder {
             // we remove references headers in blockSectionTitles
             int index = -1;
             for (Integer ii : blockSectionTitles) {
-                Block block = doc.blocks.get(ii.intValue());
+                Block block = doc.getBlocks().get(ii.intValue());
                 String localText = block.getText().trim();
                 localText = localText.replace("\n", " ");
                 localText = localText.replace("  ", " ");
@@ -387,7 +387,7 @@ public class BasicStructureBuilder {
             // we check headers repetition from page to page to decide if it is an header or not
             ArrayList<Integer> toRemove = new ArrayList<Integer>();
             for (Integer ii : blockHeaders) {
-                String localText = (doc.blocks.get(ii.intValue())).getText().trim();
+                String localText = (doc.getBlocks().get(ii.intValue())).getText().trim();
                 localText = TextUtilities.shadowNumbers(localText);
                 int length = localText.length();
                 if (length > 160)
@@ -398,7 +398,7 @@ public class BasicStructureBuilder {
                     boolean valid = false;
                     for (Integer ii2 : blockHeaders) {
                         if (ii.intValue() != ii2.intValue()) {
-                            String localText2 = doc.blocks.get(ii2.intValue()).getText().trim();
+                            String localText2 = doc.getBlocks().get(ii2.intValue()).getText().trim();
                             if (localText2.length() < 160) {
                                 localText2 = TextUtilities.shadowNumbers(localText2);
                                 double dist = (double) TextUtilities.getLevenshteinDistance(localText, localText2) / length;
@@ -423,7 +423,7 @@ public class BasicStructureBuilder {
             // same for footers
             toRemove = new ArrayList<Integer>();
             for (Integer ii : blockFooters) {
-                String localText = (doc.blocks.get(ii.intValue())).getText().trim();
+                String localText = (doc.getBlocks().get(ii.intValue())).getText().trim();
                 localText = TextUtilities.shadowNumbers(localText);
                 int length = localText.length();
                 if (length > 160)
@@ -434,7 +434,7 @@ public class BasicStructureBuilder {
                     boolean valid = false;
                     for (Integer ii2 : blockFooters) {
                         if (ii.intValue() != ii2.intValue()) {
-                            String localText2 = doc.blocks.get(ii2.intValue()).getText().trim();
+                            String localText2 = doc.getBlocks().get(ii2.intValue()).getText().trim();
                             if (localText2.length() < 160) {
                                 localText2 = TextUtilities.shadowNumbers(localText2);
                                 double dist = (double) TextUtilities.getLevenshteinDistance(localText, localText2) / length;
@@ -457,7 +457,7 @@ public class BasicStructureBuilder {
 
             // a special step for added banner repositoryies such HAL
             i = 0;
-            for (Block block : doc.blocks) {
+            for (Block block : doc.getBlocks()) {
                 String localText = block.getText().trim();
                 localText = localText.replace("\n", " ");
                 localText = localText.replace("  ", " ");
@@ -500,7 +500,7 @@ public class BasicStructureBuilder {
             // containing a table or a figure marker
             // two different runs, one for figures and one for tables (everything could be done in one step)
             i = 0;
-            for (Block block : doc.blocks) {
+            for (Block block : doc.getBlocks()) {
                 String localText = block.getText().trim();
                 localText = localText.replace("\n", " ");
                 localText = localText.replace("  ", " ");
@@ -521,7 +521,7 @@ public class BasicStructureBuilder {
                     // we also put all the small blocks before and after the marker
                     int j = i - 1;
                     while ((j > i - 15) && (j > 0)) {
-                        Block b = doc.blocks.get(j);
+                        Block b = doc.getBlocks().get(j);
                         if (b.getText() != null) {
                             if ((b.getText().length() < 160) || (width < 50)) {
                                 if ((!blockTables.contains(j)) && (!blockSectionTitles.contains(j)) &&
@@ -535,8 +535,8 @@ public class BasicStructureBuilder {
                     }
 
                     j = i + 1;
-                    while ((j < i + 15) && (j < doc.blocks.size())) {
-                        Block b = doc.blocks.get(j);
+                    while ((j < i + 15) && (j < doc.getBlocks().size())) {
+                        Block b = doc.getBlocks().get(j);
                         if (b.getText() != null) {
                             if ((b.getText().length() < 160) || (width < 50)) {
                                 if ((!blockTables.contains(j)) && (!blockSectionTitles.contains(j)) &&
@@ -544,7 +544,7 @@ public class BasicStructureBuilder {
                                         )
                                     blockTables.add(j);
                             } else
-                                j = doc.blocks.size();
+                                j = doc.getBlocks().size();
                         }
                         j++;
                     }
@@ -558,7 +558,7 @@ public class BasicStructureBuilder {
                     int j = i - 1;
                     boolean imageFound = false;
                     while ((j > i - 15) && (j > 0)) {
-                        Block b = doc.blocks.get(j);
+                        Block b = doc.getBlocks().get(j);
 
                         if (b.getText() != null) {
                             String localText2 = b.getText().trim();
@@ -585,8 +585,8 @@ public class BasicStructureBuilder {
                     }
 
                     j = i + 1;
-                    while ((j < i + 15) && (j < doc.blocks.size())) {
-                        Block b = doc.blocks.get(j);
+                    while ((j < i + 15) && (j < doc.getBlocks().size())) {
+                        Block b = doc.getBlocks().get(j);
                         if (b.getText() != null) {
                             if ((b.getText().trim().length() < 160) || (width < 50)) {
                                 if ((!blockFigures.contains(j)) && (!blockSectionTitles.contains(j)) &&
@@ -594,7 +594,7 @@ public class BasicStructureBuilder {
                                         )
                                     blockFigures.add(j);
                             } else
-                                j = doc.blocks.size();
+                                j = doc.getBlocks().size();
                         }
                         j++;
                     }
@@ -602,15 +602,15 @@ public class BasicStructureBuilder {
                 i++;
             }
         } finally {
-            doc.blockHeaders = blockHeaders;
-            doc.blockFooters = blockFooters;
-            doc.blockSectionTitles = blockSectionTitles;
-            doc.acknowledgementBlocks = acknowledgementBlocks;
-            doc.blockTables = blockTables;
-            doc.blockFigures = blockFigures;
-            doc.blockHeadTables = blockHeadTables;
-            doc.blockHeadFigures = blockHeadFigures;
-            doc.blockDocumentHeaders = blockDocumentHeaders;
+            doc.setBlockHeaders(blockHeaders);
+            doc.setBlockFooters(blockFooters);
+            doc.setBlockSectionTitles(blockSectionTitles);
+            doc.setAcknowledgementBlocks(acknowledgementBlocks);
+            doc.setBlockTables(blockTables);
+            doc.setBlockFigures(blockFigures);
+            doc.setBlockHeadTables(blockHeadTables);
+            doc.setBlockHeadFigures(blockHeadFigures);
+            doc.setBlockDocumentHeaders(blockDocumentHeaders);
         }
     }
 
@@ -621,7 +621,7 @@ public class BasicStructureBuilder {
      */
     static public void addBlockToCluster(Integer b, Document doc) {
         // get block features
-        Block block = doc.blocks.get(b.intValue());
+        Block block = doc.getBlocks().get(b.intValue());
         String font = block.getFont();
         boolean bold = block.getBold();
         boolean italic = block.getItalic();
@@ -633,10 +633,10 @@ public class BasicStructureBuilder {
         }
         //System.out.println(font + " " + bold + " " + italic + " " + fontSize );
 
-        if (doc.clusters == null) {
-            doc.clusters = new ArrayList<Cluster>();
+        if (doc.getClusters()== null) {
+            doc.setClusters(new ArrayList<Cluster>());
         } else {
-            for (Cluster cluster : doc.clusters) {
+            for (Cluster cluster : doc.getClusters()) {
                 String font2 = cluster.getFont();
                 if (font2 == null)
                     font2 = "unknown";
@@ -657,7 +657,7 @@ public class BasicStructureBuilder {
             cluster.setItalic(italic);
             cluster.setFontSize(fontSize);
             cluster.addBlock2(b);
-            doc.clusters.add(cluster);
+            doc.getClusters().add(cluster);
         }
 
     }
@@ -675,7 +675,7 @@ public class BasicStructureBuilder {
         if (doc == null) {
             throw new NullPointerException();
         }
-        if (doc.blocks == null) {
+        if (doc.getBlocks() == null) {
             throw new NullPointerException();
         }
         //System.out.println(tokenizations.toString());
@@ -687,7 +687,7 @@ public class BasicStructureBuilder {
         ArrayList<Integer> blockReferences = new ArrayList<Integer>();
         ArrayList<Integer> blockSectionTitles = new ArrayList<Integer>();
 
-        doc.bibDataSets = new ArrayList<BibDataSet>();
+        doc.setBibDataSets(new ArrayList<BibDataSet>());
 
         StringTokenizer st = new StringTokenizer(rese, "\n");
         String s1 = null;
@@ -700,9 +700,9 @@ public class BasicStructureBuilder {
 
         while (st.hasMoreTokens()) {
 
-            for (; blockIndex < doc.blocks.size() - 1; blockIndex++) {
-//                int startTok = doc.blocks.get(blockIndex).getStartToken();
-                int endTok = doc.blocks.get(blockIndex).getEndToken();
+            for (; blockIndex < doc.getBlocks().size() - 1; blockIndex++) {
+//                int startTok = doc.getBlocks().get(blockIndex).getStartToken();
+                int endTok = doc.getBlocks().get(blockIndex).getEndToken();
 
                 if (endTok >= p) {
                     break;
@@ -781,7 +781,7 @@ public class BasicStructureBuilder {
                 if (s1.equals("I-<reference>")) {
                     if (bib != null) {
                         if (bib.getRawBib() != null) {
-                            doc.bibDataSets.add(bib);
+                            doc.getBibDataSets().add(bib);
                             bib = new BibDataSet();
                         }
                     } else {
@@ -814,7 +814,7 @@ public class BasicStructureBuilder {
                 if (s1.equals("I-<reference_marker>")) {
                     if (bib != null) {
                         if (bib.getRefSymbol() != null) {
-                            doc.bibDataSets.add(bib);
+                            doc.getBibDataSets().add(bib);
                             bib = new BibDataSet();
                         }
                     } else {
@@ -860,14 +860,14 @@ public class BasicStructureBuilder {
         }
 
         if (bib != null) {
-            doc.bibDataSets.add(bib);
+            doc.getBibDataSets().add(bib);
         }
 
-        doc.blockHeaders = blockHeaders;
-        doc.blockFooters = blockFooters;
-        doc.blockDocumentHeaders = blockDocumentHeaders;
-        doc.blockReferences = blockReferences;
-        doc.blockSectionTitles = blockSectionTitles;
+        doc.setBlockHeaders(blockHeaders);
+        doc.setBlockFooters(blockFooters);
+        doc.setBlockDocumentHeaders(blockDocumentHeaders);
+        doc.setBlockReferences(blockReferences);
+        doc.setBlockSectionTitles(blockSectionTitles);
 
         return doc;
     }

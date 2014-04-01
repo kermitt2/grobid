@@ -61,24 +61,24 @@ public class Document {
 	private int beginBody = -1;
 	private int beginReferences = -1;
 
-	public boolean titleMatchNum = false; // true if the section titles of the
+	private boolean titleMatchNum = false; // true if the section titles of the
 											// document ar numbered
 	private String lang = null;
 
-	public ArrayList<Block> blocks = null;
-	public ArrayList<Cluster> clusters = null;
+	private List<Block> blocks = null;
+	private List<Cluster> clusters = null;
 
-	public ArrayList<Integer> blockHeaders = null;
-	public ArrayList<Integer> blockFooters = null;
-	public ArrayList<Integer> blockSectionTitles = null;
-	public ArrayList<Integer> acknowledgementBlocks = null;
-	public ArrayList<Integer> blockDocumentHeaders = null;
-	public ArrayList<Integer> blockReferences = null;
+	private List<Integer> blockHeaders = null;
+	private List<Integer> blockFooters = null;
+	private List<Integer> blockSectionTitles = null;
+	private List<Integer> acknowledgementBlocks = null;
+	private List<Integer> blockDocumentHeaders = null;
+	private List<Integer> blockReferences = null;
 
-	public ArrayList<Integer> blockTables = null;
-	public ArrayList<Integer> blockFigures = null;
-	public ArrayList<Integer> blockHeadTables = null;
-	public ArrayList<Integer> blockHeadFigures = null;
+	private List<Integer> blockTables = null;
+	private List<Integer> blockFigures = null;
+	private List<Integer> blockHeadTables = null;
+	private List<Integer> blockHeadFigures = null;
 
 	private FeatureFactory featureFactory = null;
 
@@ -87,9 +87,9 @@ public class Document {
 	private ArrayList<String> tokenizations = null;
 
 	// list of bibliographical references with context
-	public ArrayList<BibDataSet> bibDataSets = null;
+	private List<BibDataSet> bibDataSets = null;
 
-	public DocumentNode top = null;
+	private DocumentNode top = null;
 
 	private BiblioItem resHeader = null;
 
@@ -116,11 +116,15 @@ public class Document {
 		return resHeader;
 	}
 
-	public ArrayList<Block> getBlocks() {
+	public List<Block> getBlocks() {
 		return blocks;
 	}
 
-	public void addBlock(Block b) {
+    public List<BibDataSet> getBibDataSets() {
+        return bibDataSets;
+    }
+
+    public void addBlock(Block b) {
 		if (blocks == null)
 			blocks = new ArrayList<Block>();
 		blocks.add(b);
@@ -2365,5 +2369,113 @@ public class Document {
 
     public void setTei(String tei) {
         this.tei = tei;
+    }
+
+    public List<Integer> getBlockHeaders() {
+        return blockHeaders;
+    }
+
+    public List<Integer> getBlockFooters() {
+        return blockFooters;
+    }
+
+    public List<Integer> getBlockSectionTitles() {
+        return blockSectionTitles;
+    }
+
+    public List<Integer> getAcknowledgementBlocks() {
+        return acknowledgementBlocks;
+    }
+
+    public List<Integer> getBlockDocumentHeaders() {
+        return blockDocumentHeaders;
+    }
+
+    public List<Integer> getBlockReferences() {
+        return blockReferences;
+    }
+
+    public List<Integer> getBlockTables() {
+        return blockTables;
+    }
+
+    public List<Integer> getBlockFigures() {
+        return blockFigures;
+    }
+
+    public List<Integer> getBlockHeadTables() {
+        return blockHeadTables;
+    }
+
+    public List<Integer> getBlockHeadFigures() {
+        return blockHeadFigures;
+    }
+
+    public DocumentNode getTop() {
+        return top;
+    }
+
+    public void setTop(DocumentNode top) {
+        this.top = top;
+    }
+
+    public boolean isTitleMatchNum() {
+        return titleMatchNum;
+    }
+
+    public void setTitleMatchNum(boolean titleMatchNum) {
+        this.titleMatchNum = titleMatchNum;
+    }
+
+    public List<Cluster> getClusters() {
+        return clusters;
+    }
+
+    public void setBlockHeaders(List<Integer> blockHeaders) {
+        this.blockHeaders = blockHeaders;
+    }
+
+    public void setBlockFooters(List<Integer> blockFooters) {
+        this.blockFooters = blockFooters;
+    }
+
+    public void setBlockSectionTitles(List<Integer> blockSectionTitles) {
+        this.blockSectionTitles = blockSectionTitles;
+    }
+
+    public void setAcknowledgementBlocks(List<Integer> acknowledgementBlocks) {
+        this.acknowledgementBlocks = acknowledgementBlocks;
+    }
+
+    public void setBlockDocumentHeaders(List<Integer> blockDocumentHeaders) {
+        this.blockDocumentHeaders = blockDocumentHeaders;
+    }
+
+    public void setBlockReferences(List<Integer> blockReferences) {
+        this.blockReferences = blockReferences;
+    }
+
+    public void setBlockTables(List<Integer> blockTables) {
+        this.blockTables = blockTables;
+    }
+
+    public void setBlockFigures(List<Integer> blockFigures) {
+        this.blockFigures = blockFigures;
+    }
+
+    public void setBlockHeadTables(List<Integer> blockHeadTables) {
+        this.blockHeadTables = blockHeadTables;
+    }
+
+    public void setBlockHeadFigures(List<Integer> blockHeadFigures) {
+        this.blockHeadFigures = blockHeadFigures;
+    }
+
+    public void setClusters(List<Cluster> clusters) {
+        this.clusters = clusters;
+    }
+
+    public void setBibDataSets(List<BibDataSet> bibDataSets) {
+        this.bibDataSets = bibDataSets;
     }
 }

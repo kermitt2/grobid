@@ -1384,8 +1384,25 @@ public class Engine implements Closeable {
 			LOGGER.debug("CLOSING chemicalParser");
 		}
 
+        if (segmentationParser != null) {
+            segmentationParser.close();
+            segmentationParser = null;
+            LOGGER.debug("CLOSING segmentationParser");
+        }
+
 		LOGGER.debug("==>All resources closed");
 	}
+
+    public Segmentation getSegmentationParser() {
+        if (segmentationParser == null) {
+            synchronized (this) {
+                if (segmentationParser == null) {
+                    segmentationParser = new Segmentation();
+                }
+            }
+        }
+        return segmentationParser;
+    }
 
     public static void setCntManager(CntManager cntManager) {
         Engine.cntManager = cntManager;
