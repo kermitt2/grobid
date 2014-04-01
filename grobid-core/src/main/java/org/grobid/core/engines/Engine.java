@@ -16,22 +16,8 @@
 
 package org.grobid.core.engines;
 
-import java.io.BufferedReader;
-import java.io.Closeable;
-import java.io.File;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.FilenameFilter;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.io.Writer;
-import java.util.ArrayList;
-import java.util.List;
-
 import org.apache.commons.lang3.tuple.Pair;
+import org.grobid.core.annotations.TeiStAXParser;
 import org.grobid.core.data.Affiliation;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.BiblioItem;
@@ -40,7 +26,6 @@ import org.grobid.core.data.ChemicalEntity;
 import org.grobid.core.data.PatentItem;
 import org.grobid.core.data.Person;
 import org.grobid.core.document.Document;
-import org.grobid.core.annotations.TeiStAXParser;
 import org.grobid.core.engines.entities.ChemicalParser;
 import org.grobid.core.engines.patent.ReferenceExtractor;
 import org.grobid.core.exceptions.GrobidException;
@@ -54,6 +39,21 @@ import org.grobid.core.utilities.counters.impl.CntManagerFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.BufferedReader;
+import java.io.Closeable;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.FilenameFilter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Class for managing the extraction of bibliographical informations from PDF
  * documents or raw text.
@@ -64,10 +64,10 @@ public class Engine implements Closeable {
 	private static final Logger LOGGER = LoggerFactory.getLogger(Engine.class);
 
 	// path where the pdf file is stored
-	public String path = null;
+//	public String path = null;
 
 	// Name of the pdf file
-	public String fileName = null;
+//	public String fileName = null;
 
 	private AuthorParser authorParser = null;
 	private AffiliationAddressParser affiliationAddressParser = null;
@@ -83,13 +83,13 @@ public class Engine implements Closeable {
     private static CntManager cntManager = CntManagerFactory.getCntManager();
 
 	// Identified parsed bibliographical items and related information
-	public List<org.grobid.core.data.BibDataSet> resBib;
+//	public List<org.grobid.core.data.BibDataSet> resBib;
 
 	// Identified parsed bibliographical item from raw text
-	public BiblioItem resRef;
+//	public BiblioItem resRef;
 
 	// identified parsed bibliographical data header
-	public BiblioItem resHeader;
+//	public BiblioItem resHeader;
 
 	// The list of accepted languages
 	// the languages are encoded in ISO 3166
@@ -278,23 +278,23 @@ public class Engine implements Closeable {
 	 * @return BiblioItem representing the cibliographical information of the
 	 *         header of the current document.
 	 */
-	public BiblioItem getResHeader() {
-		return resHeader;
-	}
-
-	/**
-	 * Set the path of the current document to be processed.
-	 */
-	public void setDocumentPath(String dirName) {
-		path = dirName;
-	}
-
-	/**
-	 * Set the name of the current document file to be processed.
-	 */
-	public void setDocumentFile(String fName) {
-		fileName = fName;
-	}
+//	public BiblioItem getResHeader() {
+//		return resHeader;
+//	}
+//
+//	/**
+//	 * Set the path of the current document to be processed.
+//	 */
+//	public void setDocumentPath(String dirName) {
+//		path = dirName;
+//	}
+//
+//	/**
+//	 * Set the name of the current document file to be processed.
+//	 */
+//	public void setDocumentFile(String fName) {
+//		fileName = fName;
+//	}
 
 	/**
 	 * Constructor for the Grobid engine instance.
@@ -328,17 +328,15 @@ public class Engine implements Closeable {
 
 	/**
 	 * Download a PDF file.
-	 * 
-	 * @param url
-	 *            URL of the PDF to download
-	 * @param dirName
-	 *            directory where to store the downloaded PDF
-	 * @param name
-	 *            name of the file to save the downloaded PDF
-	 */
-	public void downloadPDF(String url, String dirName, String name) {
-		path = dirName;
-		fileName = Utilities.uploadFile(url, path, name);
+	 *
+     * @param url
+     *            URL of the PDF to download
+     * @param dirName
+     *            directory where to store the downloaded PDF
+     * @param name
+     */
+	public String downloadPDF(String url, String dirName, String name) {
+		return Utilities.uploadFile(url, dirName, name);
 	}
 
 	/**
@@ -371,13 +369,13 @@ public class Engine implements Closeable {
 	 *            part
 	 * @return language
 	 */
-	public Language runLanguageId(String ext) {
+	public Language runLanguageId(String filePath, String ext) {
 		try {
 			// we just skip the 50 first lines and get the next approx. 5000
 			// first characters,
 			// which should give a ~100% accuracy for the supported languages
 			String text = "";
-			FileInputStream fileIn = new FileInputStream(path + fileName.substring(0, fileName.length() - 3) + ext);
+			FileInputStream fileIn = new FileInputStream(filePath.substring(0, filePath.length() - 3) + ext);
 			InputStreamReader reader = new InputStreamReader(fileIn, "UTF-8");
 			BufferedReader bufReader = new BufferedReader(reader);
 			String line;
@@ -403,8 +401,8 @@ public class Engine implements Closeable {
 	 * 
 	 * @return language id
 	 */
-	public Language runLanguageId() {
-		return runLanguageId("body");
+	public Language runLanguageId(String filePath) {
+		return runLanguageId(filePath, "body");
 	}
 
 	/**
@@ -535,16 +533,14 @@ public class Engine implements Closeable {
 	 * Parse and convert the current article into TEI, this method performs the
 	 * whole parsing and conversion process. If onlyHeader is true, tean only
 	 * the tei header data will be created.
-	 * 
-	 * @param inputFile
-	 *            - absolute path to the pdf to be processed
-	 * @param consolidateHeader
-	 *            - the consolidation option allows GROBID to exploit Crossref
-	 *            web services for improving header information
-	 * @param consolidateCitations
-	 *            - the consolidation option allows GROBID to exploit Crossref
-	 *            web services for improving citations information
-	 */
+	 *
+     * @param inputFile
+     *            - absolute path to the pdf to be processed
+     * @param consolidateHeader
+     *            - the consolidation option allows GROBID to exploit Crossref
+     *            web services for improving header information
+     * @param consolidateCitations whether to consolidate citations
+     */
 	public String fullTextToTEI(String inputFile, boolean consolidateHeader, boolean consolidateCitations) throws Exception {
 		return fullTextToTEI(inputFile, consolidateHeader, consolidateCitations, 0);
 	}
@@ -571,7 +567,7 @@ public class Engine implements Closeable {
 			fullTextParser = new FullTextParser();
 		}
 		// replace by the commented version for the new full ML text parser
-		Pair<String, Document> resultTEI;
+		Document resultTEI;
 		LOGGER.debug("Starting processing fullTextToTEI on " + inputFile);
 		long time = System.currentTimeMillis();
 		if (method == 0) {
@@ -580,9 +576,7 @@ public class Engine implements Closeable {
 			resultTEI = fullTextParser.processing2(inputFile, consolidateHeader, consolidateCitations);
 		}
 		LOGGER.debug("Ending processing fullTextToTEI on " + inputFile + ". Time to process: " + (System.currentTimeMillis() - time) + "ms");
-		Document doc = resultTEI.getRight();
-		resHeader = fullTextParser.getResHeader();
-		return resultTEI.getLeft();
+		return resultTEI.getTei();
 	}
 
 	/**
@@ -824,53 +818,53 @@ public class Engine implements Closeable {
 	/**
 	 * Get the TEI XML string corresponding to the recognized raw text citation
 	 */
-	public String rawCitation2TEI() {
-		resRef.setPath(path);
-		return resRef.toTEI(0);
-	}
+//	public String rawCitation2TEI() {
+//		resRef.setPath(path);
+//		return resRef.toTEI(0);
+//	}
 
 	/**
 	 * Get the TEI XML string corresponding to the recognized raw text citation
 	 * with pointers
 	 */
-	public String rawCitation2TEI2() {
-		StringBuilder result = new StringBuilder();
-		result.append("<tei>\n");
-
-		BiblioSet bs = new BiblioSet();
-		resRef.buildBiblioSet(bs, path);
-		result.append(bs.toTEI());
-		result.append("<listbibl>\n\n").append(resRef.toTEI2(bs)).append("\n</listbibl>\n</tei>\n");
-
-		return result.toString();
-	}
-
+//	public String rawCitation2TEI2() {
+//		StringBuilder result = new StringBuilder();
+//		result.append("<tei>\n");
+//
+//		BiblioSet bs = new BiblioSet();
+//		resRef.buildBiblioSet(bs, path);
+//		result.append(bs.toTEI());
+//		result.append("<listbibl>\n\n").append(resRef.toTEI2(bs)).append("\n</listbibl>\n</tei>\n");
+//
+//		return result.toString();
+//	}
+//
 	/**
 	 * Get the BibTeX string corresponding to the recognized raw text citation
 	 */
-	public String rawCitation2BibTeX() {
-		resRef.setPath(path);
-		return resRef.toBibTeX();
-	}
-
+//	public String rawCitation2BibTeX() {
+//		resRef.setPath(path);
+//		return resRef.toBibTeX();
+//	}
+//
 	/**
 	 * Get the TEI XML string corresponding to the recognized header text
 	 */
-	public String header2TEI() {
+	public static String header2TEI(BiblioItem resHeader) {
 		return resHeader.toTEI(0);
 	}
 
 	/**
 	 * Get the BibTeX string corresponding to the recognized header text
 	 */
-	public String header2BibTeX() {
+	public static String header2BibTeX(BiblioItem resHeader) {
 		return resHeader.toBibTeX();
 	}
 
 	/**
 	 * Get the TEI XML string corresponding to the recognized citation section
 	 */
-	public String references2TEI2() {
+	public static String references2TEI2(String path, List<BibDataSet> resBib) {
 		StringBuilder result = new StringBuilder();
 		result.append("<tei>\n");
 
@@ -897,7 +891,7 @@ public class Engine implements Closeable {
 	 * Get the TEI XML string corresponding to the recognized citation section,
 	 * with pointers and advanced structuring
 	 */
-	public String references2TEI() {
+	public static String references2TEI(String path, List<BibDataSet> resBib) {
 		StringBuilder result = new StringBuilder();
 		result.append("<listbibl>\n");
 
@@ -915,7 +909,7 @@ public class Engine implements Closeable {
 	/**
 	 * Get the BibTeX string corresponding to the recognized citation section
 	 */
-	public String references2BibTeX() {
+	public String references2BibTeX(String path, List<BibDataSet> resBib) {
 		StringBuilder result = new StringBuilder();
 
 		for (BibDataSet bib : resBib) {
@@ -931,7 +925,7 @@ public class Engine implements Closeable {
 	 * Get the TEI XML string corresponding to the recognized citation section
 	 * for a particular citation
 	 */
-	public String reference2TEI(int i) {
+	public static String reference2TEI(String path, List<BibDataSet> resBib, int i) {
 		StringBuilder result = new StringBuilder();
 
 		if (resBib != null) {
@@ -950,7 +944,7 @@ public class Engine implements Closeable {
 	 * Get the BibTeX string corresponding to the recognized citation section
 	 * for a given citation
 	 */
-	public String reference2BibTeX(int i) {
+	public static String reference2BibTeX(String path, List<BibDataSet> resBib, int i) {
 		StringBuilder result = new StringBuilder();
 
 		if (resBib != null) {
@@ -1226,8 +1220,8 @@ public class Engine implements Closeable {
 	/**
 	 * Return all textual content except metadata. Useful for term extraction
 	 */
-	public String getAllBody(Document doc, boolean withBookTitle) throws Exception {
-		return doc.getAllBody(this, resHeader, resBib, withBookTitle);
+	public String getAllBody(Document doc, List<BibDataSet> resBib, boolean withBookTitle) throws Exception {
+		return doc.getAllBody(this, doc.getResHeader(), resBib, withBookTitle);
 	}
 
 	/**
@@ -1250,8 +1244,8 @@ public class Engine implements Closeable {
 	/**
 	 * Print the abstract content. Useful for term extraction.
 	 */
-	public String getAbstract() throws Exception {
-		String abstr = resHeader.getAbstract();
+	public String getAbstract(Document doc) throws Exception {
+		String abstr = doc.getResHeader().getAbstract();
 		abstr = abstr.replace("@BULLET", " • ");
 		return abstr;
 	}
@@ -1259,7 +1253,7 @@ public class Engine implements Closeable {
 	/**
 	 * Return all the reference titles. Maybe useful for term extraction.
 	 */
-	public String printRefTitles() throws Exception {
+	public String printRefTitles(List<BibDataSet> resBib) throws Exception {
 		StringBuilder accumulated = new StringBuilder();
 		for (BibDataSet bib : resBib) {
 			BiblioItem bit = bib.getResBib();
@@ -1275,7 +1269,7 @@ public class Engine implements Closeable {
 	/**
 	 * Return all the reference book titles. Maybe useful for term extraction.
 	 */
-	public String printRefBookTitles() throws Exception {
+	public String printRefBookTitles(List<BibDataSet> resBib) throws Exception {
 		StringBuilder accumulated = new StringBuilder();
 		for (BibDataSet bib : resBib) {
 			BiblioItem bit = bib.getResBib();

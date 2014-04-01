@@ -1,7 +1,5 @@
 package org.grobid.core.engines;
 
-import org.apache.commons.lang3.tuple.ImmutablePair;
-import org.apache.commons.lang3.tuple.Pair;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.BiblioItem;
@@ -38,19 +36,21 @@ public class FullTextParser extends AbstractParser {
     //	private String tmpPathName = null;
 //    private Document doc = null;
     private File tmpPath = null;
-    private String pathXML = null;
-	private BiblioItem resHeader = null;  
+//    private String pathXML = null;
+//	private BiblioItem resHeader = null;
 
     /**
      * TODO some documentation...
      */
     public FullTextParser() {
         super(GrobidModels.FULLTEXT);
-        tmpPath = GrobidProperties.getInstance().getTempPath();
+        tmpPath = GrobidProperties.getTempPath();
     }
 
     /**
      * TODO some documentation...
+     *
+     *
      *
      * @param input                filename of pdf file
      * @param consolidateHeader if consolidate header
@@ -58,7 +58,7 @@ public class FullTextParser extends AbstractParser {
      * @return a pair consisting of TEI string representation and a document itseld
      */
     
-    public Pair<String, Document> processing(String input, boolean consolidateHeader, boolean consolidateCitations) {
+    public Document processing(String input, boolean consolidateHeader, boolean consolidateCitations) {
         if (input == null) {
             throw new GrobidResourceException("Cannot process pdf file, because input file was null.");
         }
@@ -75,6 +75,7 @@ public class FullTextParser extends AbstractParser {
                     tmpPath.getAbsolutePath() + "' does not exists.");
         }
         Document doc = new Document(input, tmpPath.getAbsolutePath());
+        String pathXML = null;
         try {
             int startPage = -1;
             int endPage = -1;
@@ -98,11 +99,11 @@ public class FullTextParser extends AbstractParser {
                 citationParser = new CitationParser();
             }
 
-            String tei = doc.toTEI(headerParser, citationParser, consolidateHeader, consolidateCitations,
+            doc.toTEI(headerParser, citationParser, consolidateHeader, consolidateCitations,
                     false, null, false, false);
-			resHeader = doc.getResHeader();
-            LOGGER.debug(tei);
-            return new ImmutablePair<>(tei, doc);
+            LOGGER.debug(doc.getTei());
+
+            return doc;
         } catch (Exception e) {
             throw new GrobidException("An exception occurred while running Grobid.", e);
         } finally {
@@ -111,9 +112,11 @@ public class FullTextParser extends AbstractParser {
         }
     }
 
-    public Pair<String, Document> processing2(String input,
-                              boolean consolidateHeader,
-                              boolean consolidateCitations) throws Exception {
+    // Need to use new segmentation model
+    @Deprecated
+    public Document processing2(String input,
+                                boolean consolidateHeader,
+                                boolean consolidateCitations) throws Exception {
         if (input == null) {
             throw new GrobidResourceException("Cannot process pdf file, because input file was null.");
         }
@@ -130,6 +133,7 @@ public class FullTextParser extends AbstractParser {
                     tmpPath.getAbsolutePath() + "' does not exists.");
         }
         Document doc = new Document(input, tmpPath.getAbsolutePath());
+        String pathXML = null;
         try {
             int startPage = -1;
             int endPage = -1;
@@ -161,7 +165,7 @@ public class FullTextParser extends AbstractParser {
             if (headerParser == null) {
                 headerParser = new HeaderParser();
             }
-            resHeader = new BiblioItem();
+            BiblioItem resHeader = new BiblioItem();
             headerParser.processingHeaderBlock(consolidateHeader, doc, resHeader);
             // the language identification is normally done during the header parsing, but only
             // based on header information.
@@ -184,7 +188,7 @@ public class FullTextParser extends AbstractParser {
 
             //resCitations = BasicStructureBuilder.giveReferenceSegments(doc);
             resCitations = doc.bibDataSets;
-			
+
             if (resCitations != null) {
                 for (BibDataSet bds : resCitations) {
                     String marker = bds.getRefSymbol();
@@ -199,8 +203,8 @@ public class FullTextParser extends AbstractParser {
             }
 
             // final combination
-            String tei = toTEI(doc, rese, tokenizations, resHeader, false, null, false);
-            return new ImmutablePair<>(tei, doc);
+            toTEI(doc, rese, tokenizations, resHeader, false, null, false);
+            return doc;
         } catch (Exception e) {
             throw new GrobidException("An exception occured while running Grobid.", e);
         } finally {
@@ -229,6 +233,7 @@ public class FullTextParser extends AbstractParser {
                     tmpPath.getAbsolutePath() + "' does not exists.");
         }
         Document doc = new Document(inputFile, tmpPath.getAbsolutePath());
+        String pathXML = null;
         try {
             int startPage = -1;
             int endPage = -1;
@@ -283,7 +288,7 @@ public class FullTextParser extends AbstractParser {
             StringBuilder allBufferReference = new StringBuilder();
             // we need to rebuild the found citation string as it appears
             String input = "";
-            ArrayList<String> inputs = new ArrayList<String>();
+            ArrayList<String> inputs = new ArrayList<>();
             int q = 0;
             StringTokenizer st = new StringTokenizer(rese, "\n");
             while (st.hasMoreTokens() && (q < tokenizations.size())) {
@@ -312,7 +317,7 @@ public class FullTextParser extends AbstractParser {
                     citationParser = new CitationParser();
                 }
                 for (String inpu : inputs) {
-                    ArrayList<String> inpus = new ArrayList<String>();
+                    ArrayList<String> inpus = new ArrayList<>();
                     inpus.add(inpu);
                     StringBuilder bufferReference = citationParser.trainingExtraction(inpus);
                     if (bufferReference != null) {
@@ -352,9 +357,9 @@ public class FullTextParser extends AbstractParser {
 	/**
      * Return the Biblio object corresponding to the last processed pdf file.
      */
-    public BiblioItem getResHeader() {
-        return resHeader;
-    }
+//    public BiblioItem getResHeader() {
+//        return resHeader;
+//    }
 
     /**
      * Extract results from a labelled full text in the training format without any string modification.
@@ -389,7 +394,7 @@ public class FullTextParser extends AbstractParser {
                     continue;
                 }
                 StringTokenizer stt = new StringTokenizer(tok, " \t");
-                ArrayList<String> localFeatures = new ArrayList<String>();
+                ArrayList<String> localFeatures = new ArrayList<>();
                 int i = 0;
 
                 boolean newLine = false;
@@ -445,7 +450,7 @@ public class FullTextParser extends AbstractParser {
                     closeParagraph = testClosingTag(buffer, currentTag0, lastTag0, s1);
                 }
 
-                boolean output = false;
+                boolean output;
 
                 if (!currentTag0.equals("<table>") &&
                         !currentTag0.equals("<trash>") &&
@@ -629,7 +634,7 @@ public class FullTextParser extends AbstractParser {
     /**
      * TODO some documentation...
      *
-     * @param buffer
+     * @param buffer buffer
      * @param s1
      * @param lastTag0
      * @param s2
@@ -652,7 +657,7 @@ public class FullTextParser extends AbstractParser {
             result = true;
             if (s1.equals(lastTag0) || s1.equals("I-" + lastTag0)) {
                 if (addSpace)
-                    buffer.append(" " + s2);
+                    buffer.append(" ").append(s2);
                 else
                     buffer.append(s2);
             }
@@ -664,14 +669,14 @@ public class FullTextParser extends AbstractParser {
                }*/
             else if (field.equals("<citation_marker>")) {
                 if (addSpace)
-                    buffer.append(" " + outField + s2);
+                    buffer.append(" ").append(outField).append(s2);
                 else
-                    buffer.append(outField + s2);
+                    buffer.append(outField).append(s2);
             } else if (field.equals("<figure_marker>")) {
                 if (addSpace)
-                    buffer.append(" " + outField + s2);
+                    buffer.append(" ").append(outField).append(s2);
                 else
-                    buffer.append(outField + s2);
+                    buffer.append(outField).append(s2);
             } else if (field.equals("<reference_marker>")) {
                 if (!lastTag0.equals("<reference>") && !lastTag0.equals("<reference_marker>")) {
                     for (int i = 0; i < nbIndent; i++) {
@@ -680,23 +685,23 @@ public class FullTextParser extends AbstractParser {
                     buffer.append("<bibl>");
                 }
                 if (addSpace)
-                    buffer.append(" " + outField + s2);
+                    buffer.append(" ").append(outField).append(s2);
                 else
-                    buffer.append(outField + s2);
+                    buffer.append(outField).append(s2);
             } else if (lastTag0 == null) {
                 for (int i = 0; i < nbIndent; i++) {
                     buffer.append("\t");
                 }
-                buffer.append(outField + s2);
+                buffer.append(outField).append(s2);
             } else if (!lastTag0.equals("<citation_marker>") && !lastTag0.equals("<figure_marker>")
                     && !lastTag0.equals("<figure>")) {
                 for (int i = 0; i < nbIndent; i++) {
                     buffer.append("\t");
                 }
-                buffer.append(outField + s2);
+                buffer.append(outField).append(s2);
             } else {
                 if (addSpace)
-                    buffer.append(" " + s2);
+                    buffer.append(" ").append(s2);
                 else
                     buffer.append(s2);
             }
@@ -730,12 +735,12 @@ public class FullTextParser extends AbstractParser {
             result = true;
             if (lastTag0.equals("I-" + field)) {
                 if (addSpace)
-                    buffer.append(" " + s2);
+                    buffer.append(" ").append(s2);
                 else
                     buffer.append(s2);
             } else if (lastTag0.equals(field) && s1.equals(field)) {
                 if (addSpace)
-                    buffer.append(" " + s2);
+                    buffer.append(" ").append(s2);
                 else
                     buffer.append(s2);
             } else if (!lastTag0.equals("<citation_marker>") && !lastTag0.equals("<figure_marker>")
@@ -743,10 +748,10 @@ public class FullTextParser extends AbstractParser {
                 for (int i = 0; i < nbIndent; i++) {
                     buffer.append("\t");
                 }
-                buffer.append(outField + s2);
+                buffer.append(outField).append(s2);
             } else {
                 if (addSpace)
-                    buffer.append(" " + s2);
+                    buffer.append(" ").append(s2);
                 else
                     buffer.append(s2);
             }
@@ -777,46 +782,66 @@ public class FullTextParser extends AbstractParser {
 
             res = false;
             // we close the current tag
-            if (lastTag0.equals("<other>")) {
-                buffer.append("</note>\n\n");
-            } else if (lastTag0.equals("<header>")) {
-                buffer.append("</front>\n\n");
-            } else if (lastTag0.equals("<page_header>")) {
-                buffer.append("</note>\n\n");
-            } else if (lastTag0.equals("<page_footnote>")) {
-                buffer.append("</note>\n\n");
-            } else if (lastTag0.equals("<reference>")) {
-                buffer.append("</bibl>\n\n");
-                res = true;
-            } else if (lastTag0.equals("<paragraph>")) {
-                buffer.append("</p>\n\n");
-                res = true;
-            } else if (lastTag0.equals("<section>")) {
-                buffer.append("</head>\n\n");
-            } else if (lastTag0.equals("<subsection>")) {
-                buffer.append("</head>\n\n");
-            } else if (lastTag0.equals("<equation>")) {
-                buffer.append("</formula>\n\n");
-            } else if (lastTag0.equals("<table>")) {
-                buffer.append("</table>\n");
-            } else if (lastTag0.equals("<label>")) {
-                buffer.append("</figDesc>\n");
-            } else if (lastTag0.equals("<figure_head>")) {
-                buffer.append("</head>\n\n");
-            } else if (lastTag0.equals("<item>")) {
-                buffer.append("</item>\n\n");
-            } else if (lastTag0.equals("<trash>")) {
-                buffer.append("</trash>\n\n");
-            } else if (lastTag0.equals("<reference_marker>")) {
-                buffer.append("</label>");
-            } else if (lastTag0.equals("<citation_marker>")) {
-                buffer.append("</ref>");
-            } else if (lastTag0.equals("<figure_marker>")) {
-                buffer.append("</ref>");
-            } else if (lastTag0.equals("<page>")) {
-                buffer.append("</page>\n\n");
-            } else {
-                res = false;
+            switch (lastTag0) {
+                case "<other>":
+                    buffer.append("</note>\n\n");
+                    break;
+                case "<header>":
+                    buffer.append("</front>\n\n");
+                    break;
+                case "<page_header>":
+                    buffer.append("</note>\n\n");
+                    break;
+                case "<page_footnote>":
+                    buffer.append("</note>\n\n");
+                    break;
+                case "<reference>":
+                    buffer.append("</bibl>\n\n");
+                    res = true;
+                    break;
+                case "<paragraph>":
+                    buffer.append("</p>\n\n");
+                    res = true;
+                    break;
+                case "<section>":
+                    buffer.append("</head>\n\n");
+                    break;
+                case "<subsection>":
+                    buffer.append("</head>\n\n");
+                    break;
+                case "<equation>":
+                    buffer.append("</formula>\n\n");
+                    break;
+                case "<table>":
+                    buffer.append("</table>\n");
+                    break;
+                case "<label>":
+                    buffer.append("</figDesc>\n");
+                    break;
+                case "<figure_head>":
+                    buffer.append("</head>\n\n");
+                    break;
+                case "<item>":
+                    buffer.append("</item>\n\n");
+                    break;
+                case "<trash>":
+                    buffer.append("</trash>\n\n");
+                    break;
+                case "<reference_marker>":
+                    buffer.append("</label>");
+                    break;
+                case "<citation_marker>":
+                    buffer.append("</ref>");
+                    break;
+                case "<figure_marker>":
+                    buffer.append("</ref>");
+                    break;
+                case "<page>":
+                    buffer.append("</page>\n\n");
+                    break;
+                default:
+                    res = false;
+                    break;
             }
 
         }
@@ -827,15 +852,15 @@ public class FullTextParser extends AbstractParser {
      * Create the TEI representation for a document based on the parsed header, references
      * and body sections.
      */
-    private String toTEI(Document doc,
-                         String rese,
-                         ArrayList<String> tokenizations,
-                         BiblioItem resHeader,
-                         boolean peer,
-                         BiblioItem catalogue,
-                         boolean withStyleSheet) {
+    private void toTEI(Document doc,
+                       String rese,
+                       ArrayList<String> tokenizations,
+                       BiblioItem resHeader,
+                       boolean peer,
+                       BiblioItem catalogue,
+                       boolean withStyleSheet) {
         if (doc.blocks == null) {
-            return null;
+            return;
         }
         TEIFormater teiFormater = new TEIFormater(doc);
         StringBuffer tei;
@@ -850,7 +875,7 @@ public class FullTextParser extends AbstractParser {
         } catch (Exception e) {
             throw new GrobidException("An exception occured while running Grobid.", e);
         }
-        return tei.toString();
+        doc.setTei(tei.toString());
     }
 
     @Override

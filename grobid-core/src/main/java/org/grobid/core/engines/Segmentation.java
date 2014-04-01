@@ -20,14 +20,14 @@ import java.util.List;
 import java.util.StringTokenizer;
 
 /**
- *  Realise a high level segmentation of a document into cover page, document header, page footer, 
- *  page header, document body, bibliographical section, each bibliographical references in 
- *  the biblio section and finally the possible annexes.
+ * Realise a high level segmentation of a document into cover page, document header, page footer,
+ * page header, document body, bibliographical section, each bibliographical references in
+ * the biblio section and finally the possible annexes.
  *
  * @author Patrice Lopez
  */
 public class Segmentation extends AbstractParser {
-	
+
 	/*
 		9 labels for this model:
 	 		cover page <cover>, 
@@ -40,14 +40,14 @@ public class Segmentation extends AbstractParser {
 			? each bibliographical references in the biblio section <ref>,
 			annexes <annex>
 	*/
-	
+
     private static final Logger LOGGER = LoggerFactory.getLogger(Segmentation.class);
 
     private LanguageUtilities languageUtilities = LanguageUtilities.getInstance();
 
-//    private Document doc = null;
+    //    private Document doc = null;
     private File tmpPath = null;
-    private String pathXML = null;
+//    private String pathXML = null;
 
     /**
      * TODO some documentation...
@@ -60,10 +60,10 @@ public class Segmentation extends AbstractParser {
     /**
      * TODO some documentation...
      *
-     * @param input                filename of pdf file
+     * @param input filename of pdf file
      * @return Document object with segmentation informations
      */
-    
+
     public Document processing(String input) {
         if (input == null) {
             throw new GrobidResourceException("Cannot process pdf file, because input file was null.");
@@ -81,6 +81,7 @@ public class Segmentation extends AbstractParser {
                     tmpPath.getAbsolutePath() + "' does not exists.");
         }
         Document doc = new Document(input, tmpPath.getAbsolutePath());
+        String pathXML = null;
         try {
             int startPage = -1;
             int endPage = -1;
@@ -97,14 +98,14 @@ public class Segmentation extends AbstractParser {
             doc.setPathXML(pathXML);
             ArrayList<String> tokenization = doc.addFeaturesDocument();
 
-			if (doc.getBlocks() == null) {
-				throw new GrobidException("PDF parsing resulted in empty content");
-			}
+            if (doc.getBlocks() == null) {
+                throw new GrobidException("PDF parsing resulted in empty content");
+            }
 
-			String content = doc.getFulltextFeatured(true, true);
+            String content = doc.getFulltextFeatured(true, true);
             String rese = label(content);
 
-			System.out.println(rese);
+            System.out.println(rese);
 
             // set the different sections of the Document object
             //doc = BasicStructureBuilder.resultSegmentation(doc, rese, tokenizations);
@@ -123,15 +124,15 @@ public class Segmentation extends AbstractParser {
     /**
      * Process the content of the specified pdf and format the result as training data.
      *
-     * @param inputFile input file
+     * @param inputFile    input file
      * @param pathFullText path to fulltext
-     * @param pathTEI path to TEI
-     * @param id id
+     * @param pathTEI      path to TEI
+     * @param id           id
      */
     public void createTrainingSegmentation(String inputFile,
-                                       String pathFullText,
-                                       String pathTEI,
-                                       int id) {
+                                           String pathFullText,
+                                           String pathTEI,
+                                           int id) {
         if (tmpPath == null)
             throw new GrobidResourceException("Cannot process pdf file, because temp path is null.");
         if (!tmpPath.exists()) {
@@ -139,6 +140,7 @@ public class Segmentation extends AbstractParser {
                     tmpPath.getAbsolutePath() + "' does not exists.");
         }
         Document doc = new Document(inputFile, tmpPath.getAbsolutePath());
+        String pathXML = null;
         try {
             int startPage = -1;
             int endPage = -1;
@@ -214,7 +216,7 @@ public class Segmentation extends AbstractParser {
                 }
                 q++;
             }
-        */    
+        */
 
         } catch (Exception e) {
             throw new GrobidException("An exception occured while running Grobid training" +
@@ -227,7 +229,7 @@ public class Segmentation extends AbstractParser {
     /**
      * Extract results from a labelled full text in the training format without any string modification.
      *
-     * @param result reult
+     * @param result        reult
      * @param tokenizations toks
      * @return extraction
      */
@@ -307,10 +309,10 @@ public class Segmentation extends AbstractParser {
                 //boolean closeParagraph = false;
                 if (lastTag != null) {
                     //closeParagraph = 
-					testClosingTag(buffer, currentTag0, lastTag0, s1);
+                    testClosingTag(buffer, currentTag0, lastTag0, s1);
                 }
 
-                boolean output = false;           
+                boolean output = false;
 
                 output = writeField(buffer, s1, lastTag0, s2, "<header>", "<front>", addSpace, 3);
                 /*if (!output) {
@@ -329,16 +331,16 @@ public class Segmentation extends AbstractParser {
                 }
                 if (!output) {
                     //output = writeFieldBeginEnd(buffer, s1, lastTag0, s2, "<reference>", "<listBibl>", addSpace, 3);
-					output = writeField(buffer, s1, lastTag0, s2, "<references>", "<listBibl>", addSpace, 3);
+                    output = writeField(buffer, s1, lastTag0, s2, "<references>", "<listBibl>", addSpace, 3);
                 }
-				if (!output) { 
+                if (!output) {
                     //output = writeFieldBeginEnd(buffer, s1, lastTag0, s2, "<body>", "<body>", addSpace, 3);
-					output = writeField(buffer, s1, lastTag0, s2, "<body>", "<body>", addSpace, 3);
+                    output = writeField(buffer, s1, lastTag0, s2, "<body>", "<body>", addSpace, 3);
                 }
-				if (!output) {
+                if (!output) {
                     output = writeField(buffer, s1, lastTag0, s2, "<cover>", "<titlePage>", addSpace, 3);
                 }
-				if (!output) {
+                if (!output) {
                     output = writeField(buffer, s1, lastTag0, s2, "<annex>", "<div type=\"annex\">", addSpace, 3);
                 }
                 /*if (!output) {
@@ -395,11 +397,11 @@ public class Segmentation extends AbstractParser {
                                boolean addSpace,
                                int nbIndent) {
         boolean result = false;
-		// filter the output path
+        // filter the output path
         if ((s1.equals(field)) || (s1.equals("I-" + field))) {
             result = true;
-			s2 = s2.replace("@BULLET","\u2022");
-			// if previous and current tag are the same, we output the token
+            s2 = s2.replace("@BULLET", "\u2022");
+            // if previous and current tag are the same, we output the token
             if (s1.equals(lastTag0) || s1.equals("I-" + lastTag0)) {
                 if (addSpace)
                     buffer.append(" ").append(s2);
@@ -434,20 +436,20 @@ public class Segmentation extends AbstractParser {
                 else
                     buffer.append(outField + s2);
             } */
-			else if (lastTag0 == null) {
-				// if previous tagname is null, we output the opening xml tag
+            else if (lastTag0 == null) {
+                // if previous tagname is null, we output the opening xml tag
                 for (int i = 0; i < nbIndent; i++) {
                     buffer.append("\t");
                 }
                 buffer.append(outField).append(s2);
             } else if (!lastTag0.equals("<titlePage>")) {
-				// if the previous tagname is not titlePage, we output the opening xml tag
+                // if the previous tagname is not titlePage, we output the opening xml tag
                 for (int i = 0; i < nbIndent; i++) {
                     buffer.append("\t");
                 }
                 buffer.append(outField).append(s2);
             } else {
-				// otherwise we continue by ouputting the token
+                // otherwise we continue by ouputting the token
                 if (addSpace)
                     buffer.append(" ").append(s2);
                 else
@@ -533,10 +535,9 @@ public class Segmentation extends AbstractParser {
             // we close the current tag
             if (lastTag0.equals("<header>")) {
                 buffer.append("</front>\n\n");
-            } else	if (lastTag0.equals("<body>")) {
-	            buffer.append("</body>\n\n");
-	        }
-			else if (lastTag0.equals("<headnote>")) {
+            } else if (lastTag0.equals("<body>")) {
+                buffer.append("</body>\n\n");
+            } else if (lastTag0.equals("<headnote>")) {
                 buffer.append("</note>\n\n");
             } else if (lastTag0.equals("<footnote>")) {
                 buffer.append("</note>\n\n");
@@ -546,12 +547,10 @@ public class Segmentation extends AbstractParser {
             } else if (lastTag0.equals("<page>")) {
                 buffer.append("</page>\n\n");
             } else if (lastTag0.equals("<cover>")) {
-	           	buffer.append("</titlePage>\n\n");
-	       	} 
-			else if (lastTag0.equals("<annex>")) {
-	           	buffer.append("</div>\n\n");
-	       	}
-			else {
+                buffer.append("</titlePage>\n\n");
+            } else if (lastTag0.equals("<annex>")) {
+                buffer.append("</div>\n\n");
+            } else {
                 res = false;
             }
 
@@ -562,6 +561,6 @@ public class Segmentation extends AbstractParser {
     @Override
     public void close() throws IOException {
         super.close();
-		// ...
+        // ...
     }
 }
