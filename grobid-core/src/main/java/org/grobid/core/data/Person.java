@@ -20,7 +20,7 @@ public class Person {
     private boolean corresp = false;
 
     private List<String> affiliationBlocks = null;
-    private List<org.grobid.core.data.Affiliation> affiliations = null;
+    private List<Affiliation> affiliations = null;
     private List<String> affiliationMarkers = null;
     private List<String> markers = null;
 

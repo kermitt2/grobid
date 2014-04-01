@@ -5,6 +5,7 @@ import org.grobid.core.layout.*;
 import org.grobid.core.utilities.TextUtilities;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.StringTokenizer;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -40,7 +41,7 @@ public class BasicStructureBuilder {
     static public Pattern figure = Pattern.compile("(figure\\s|fig\\.|sch?ma)", Pattern.CASE_INSENSITIVE);
     static public Pattern table = Pattern.compile("^(T|t)able\\s|tab|tableau", Pattern.CASE_INSENSITIVE);
     static public Pattern equation = Pattern.compile("^(E|e)quation\\s");
-    static public Pattern acknowledgement = Pattern.compile("(acknowledge?ments?|acknowledge?ment?)",
+    private static Pattern acknowledgement = Pattern.compile("(acknowledge?ments?|acknowledge?ment?)",
             Pattern.CASE_INSENSITIVE);
     static public Pattern headerNumbering1 = Pattern.compile("^(\\d+)\\.?\\s");
     static public Pattern headerNumbering2 = Pattern.compile("^((\\d+)\\.)+(\\d+)\\s");
@@ -48,8 +49,8 @@ public class BasicStructureBuilder {
     static public Pattern headerNumbering4 = Pattern.compile("^([A-Z](I|V|X)*(\\.(\\d)*)*\\s)");
 //    static public Pattern enumeratedList = Pattern.compile("^|\\s(\\d+)\\.?\\s");
 
-    public static Pattern startNum = Pattern.compile("^(\\d)+\\s");
-    public static Pattern endNum = Pattern.compile("\\s(\\d)+$");
+    private static Pattern startNum = Pattern.compile("^(\\d)+\\s");
+    private static Pattern endNum = Pattern.compile("\\s(\\d)+$");
 
     /**
      * Filter out line numbering possibly present in the document. This can be frequent for
@@ -182,15 +183,15 @@ public class BasicStructureBuilder {
 
         int i = 0;
 //        boolean first = true;
-        ArrayList<Integer> blockHeaders = new ArrayList<Integer>();
-        ArrayList<Integer> blockFooters = new ArrayList<Integer>();
-        ArrayList<Integer> blockSectionTitles = new ArrayList<Integer>();
-        ArrayList<Integer> acknowledgementBlocks = new ArrayList<Integer>();
-        ArrayList<Integer> blockTables = new ArrayList<Integer>();
-        ArrayList<Integer> blockFigures = new ArrayList<Integer>();
-        ArrayList<Integer> blockHeadTables = new ArrayList<Integer>();
-        ArrayList<Integer> blockHeadFigures = new ArrayList<Integer>();
-        ArrayList<Integer> blockDocumentHeaders = new ArrayList<Integer>();
+        ArrayList<Integer> blockHeaders = new ArrayList<>();
+        ArrayList<Integer> blockFooters = new ArrayList<>();
+        ArrayList<Integer> blockSectionTitles = new ArrayList<>();
+        ArrayList<Integer> acknowledgementBlocks = new ArrayList<>();
+        ArrayList<Integer> blockTables = new ArrayList<>();
+        ArrayList<Integer> blockFigures = new ArrayList<>();
+        ArrayList<Integer> blockHeadTables = new ArrayList<>();
+        ArrayList<Integer> blockHeadFigures = new ArrayList<>();
+        ArrayList<Integer> blockDocumentHeaders = new ArrayList<>();
 
         doc.setTitleMatchNum(false);
 
@@ -316,7 +317,7 @@ public class BasicStructureBuilder {
                 }
             }
             if (candidateCluster != null) {
-                ArrayList<Integer> newBlockSectionTitles = new ArrayList<Integer>();
+                ArrayList<Integer> newBlockSectionTitles = new ArrayList<>();
                 for (Integer bl : blockSectionTitles) {
                     if (!newBlockSectionTitles.contains(bl))
                         newBlockSectionTitles.add(bl);
@@ -369,7 +370,7 @@ public class BasicStructureBuilder {
             // we remove references headers in blockSectionTitles
             int index = -1;
             for (Integer ii : blockSectionTitles) {
-                Block block = doc.getBlocks().get(ii.intValue());
+                Block block = doc.getBlocks().get(ii);
                 String localText = block.getText().trim();
                 localText = localText.replace("\n", " ");
                 localText = localText.replace("  ", " ");
@@ -385,9 +386,9 @@ public class BasicStructureBuilder {
             }
 
             // we check headers repetition from page to page to decide if it is an header or not
-            ArrayList<Integer> toRemove = new ArrayList<Integer>();
+            ArrayList<Integer> toRemove = new ArrayList<>();
             for (Integer ii : blockHeaders) {
-                String localText = (doc.getBlocks().get(ii.intValue())).getText().trim();
+                String localText = (doc.getBlocks().get(ii)).getText().trim();
                 localText = TextUtilities.shadowNumbers(localText);
                 int length = localText.length();
                 if (length > 160)
@@ -398,7 +399,7 @@ public class BasicStructureBuilder {
                     boolean valid = false;
                     for (Integer ii2 : blockHeaders) {
                         if (ii.intValue() != ii2.intValue()) {
-                            String localText2 = doc.getBlocks().get(ii2.intValue()).getText().trim();
+                            String localText2 = doc.getBlocks().get(ii2).getText().trim();
                             if (localText2.length() < 160) {
                                 localText2 = TextUtilities.shadowNumbers(localText2);
                                 double dist = (double) TextUtilities.getLevenshteinDistance(localText, localText2) / length;
@@ -421,9 +422,9 @@ public class BasicStructureBuilder {
             }
 
             // same for footers
-            toRemove = new ArrayList<Integer>();
+            toRemove = new ArrayList<>();
             for (Integer ii : blockFooters) {
-                String localText = (doc.getBlocks().get(ii.intValue())).getText().trim();
+                String localText = (doc.getBlocks().get(ii)).getText().trim();
                 localText = TextUtilities.shadowNumbers(localText);
                 int length = localText.length();
                 if (length > 160)
@@ -434,7 +435,7 @@ public class BasicStructureBuilder {
                     boolean valid = false;
                     for (Integer ii2 : blockFooters) {
                         if (ii.intValue() != ii2.intValue()) {
-                            String localText2 = doc.getBlocks().get(ii2.intValue()).getText().trim();
+                            String localText2 = doc.getBlocks().get(ii2).getText().trim();
                             if (localText2.length() < 160) {
                                 localText2 = TextUtilities.shadowNumbers(localText2);
                                 double dist = (double) TextUtilities.getLevenshteinDistance(localText, localText2) / length;
@@ -619,9 +620,9 @@ public class BasicStructureBuilder {
      * @param b integer
      * @param doc a document
      */
-    static public void addBlockToCluster(Integer b, Document doc) {
+    private static void addBlockToCluster(Integer b, Document doc) {
         // get block features
-        Block block = doc.getBlocks().get(b.intValue());
+        Block block = doc.getBlocks().get(b);
         String font = block.getFont();
         boolean bold = block.getBold();
         boolean italic = block.getItalic();
@@ -671,7 +672,7 @@ public class BasicStructureBuilder {
      */
     static public Document resultSegmentation(Document doc,
                                               String rese,
-                                              ArrayList<String> tokenizations) {
+                                              List<String> tokenizations) {
         if (doc == null) {
             throw new NullPointerException();
         }
@@ -681,11 +682,11 @@ public class BasicStructureBuilder {
         //System.out.println(tokenizations.toString());
 //        int i = 0;
 //        boolean first = true;
-        ArrayList<Integer> blockHeaders = new ArrayList<Integer>();
-        ArrayList<Integer> blockFooters = new ArrayList<Integer>();
-        ArrayList<Integer> blockDocumentHeaders = new ArrayList<Integer>();
-        ArrayList<Integer> blockReferences = new ArrayList<Integer>();
-        ArrayList<Integer> blockSectionTitles = new ArrayList<Integer>();
+        ArrayList<Integer> blockHeaders = new ArrayList<>();
+        ArrayList<Integer> blockFooters = new ArrayList<>();
+        ArrayList<Integer> blockDocumentHeaders = new ArrayList<>();
+        ArrayList<Integer> blockReferences = new ArrayList<>();
+        ArrayList<Integer> blockSectionTitles = new ArrayList<>();
 
         doc.setBibDataSets(new ArrayList<BibDataSet>());
 
@@ -713,7 +714,7 @@ public class BasicStructureBuilder {
             String tok = st.nextToken().trim();
 
             StringTokenizer stt = new StringTokenizer(tok, " \t");
-            ArrayList<String> localFeatures = new ArrayList<String>();
+            ArrayList<String> localFeatures = new ArrayList<>();
             int j = 0;
 
             boolean newLine = false;

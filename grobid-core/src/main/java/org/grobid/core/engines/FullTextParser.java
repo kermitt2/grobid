@@ -148,7 +148,7 @@ public class FullTextParser extends AbstractParser {
                 throw new Exception("PDF parsing fails");
             }
             doc.setPathXML(pathXML);
-            ArrayList<String> tokenizations = doc.addFeaturesDocument();
+            List<String> tokenizations = doc.addFeaturesDocument();
 
             if (doc.getBlocks() == null) {
                 throw new Exception("PDF parsing resulted in empty content");
@@ -207,7 +207,7 @@ public class FullTextParser extends AbstractParser {
             toTEI(doc, rese, tokenizations, resHeader, false, null, false);
             return doc;
         } catch (Exception e) {
-            throw new GrobidException("An exception occured while running Grobid.", e);
+            throw new GrobidException("An exception occurred while running Grobid.", e);
         } finally {
             // keep it clean when leaving...
             doc.cleanLxmlFile(pathXML, false);
@@ -855,7 +855,7 @@ public class FullTextParser extends AbstractParser {
      */
     private void toTEI(Document doc,
                        String rese,
-                       ArrayList<String> tokenizations,
+                       List<String> tokenizations,
                        BiblioItem resHeader,
                        boolean peer,
                        BiblioItem catalogue,
