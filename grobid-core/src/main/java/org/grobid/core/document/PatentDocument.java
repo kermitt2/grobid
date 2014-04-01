@@ -40,13 +40,12 @@ public class PatentDocument extends Document {
      */
     public String getWOPriorArtBlocks() {
         System.out.println("getWOPriorArtBlocks");
-        StringBuffer accumulated = new StringBuffer();
+        StringBuilder accumulated = new StringBuilder();
         int i = 0;
         boolean PAReport = false;
         boolean newPage = false;
-        if (blocks != null) {
-            for (Block block : blocks) {
-                Integer ii = new Integer(i);
+        if (getBlocks() != null) {
+            for (Block block : getBlocks()) {
                 String content = block.getText();
                 if (content != null) {
                     content = content.trim();
@@ -69,13 +68,10 @@ public class PatentDocument extends Document {
                              }
                          }*/
 
-                    if (content.startsWith("@PAGE")) {
-                        newPage = true;
-                    } else
-                        newPage = false;
+                    newPage = content.startsWith("@PAGE");
 
                     if (PAReport)
-                        accumulated.append(content + "\n");
+                        accumulated.append(content).append("\n");
                 }
                 i++;
             }

@@ -21,6 +21,7 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.StringTokenizer;
 
 /**
@@ -181,13 +182,13 @@ public class FullTextParser extends AbstractParser {
             if (citationParser == null) {
                 citationParser = new CitationParser();
             }
-            ArrayList<BibDataSet> resCitations;
+            List<BibDataSet> resCitations;
 
             //ArrayList<String> tokenizationsRef = doc.getTokenizationsReferences();
             //System.out.println(tokenizationsRef.toString());
 
             //resCitations = BasicStructureBuilder.giveReferenceSegments(doc);
-            resCitations = doc.bibDataSets;
+            resCitations = doc.getBibDataSets();
 
             if (resCitations != null) {
                 for (BibDataSet bds : resCitations) {
@@ -859,15 +860,15 @@ public class FullTextParser extends AbstractParser {
                        boolean peer,
                        BiblioItem catalogue,
                        boolean withStyleSheet) {
-        if (doc.blocks == null) {
+        if (doc.getBlocks() == null) {
             return;
         }
         TEIFormater teiFormater = new TEIFormater(doc);
         StringBuffer tei;
         try {
             tei = teiFormater.toTEIHeader(resHeader, peer, withStyleSheet, null);
-            tei = teiFormater.toTEIBodyML(tei, rese, resHeader, doc.bibDataSets, tokenizations, doc);
-            tei = teiFormater.toTEIReferences(tei, doc.bibDataSets);
+            tei = teiFormater.toTEIBodyML(tei, rese, resHeader, doc.getBibDataSets(), tokenizations, doc);
+            tei = teiFormater.toTEIReferences(tei, doc.getBibDataSets());
 
             tei.append("\t\t</back>\n");
             tei.append("\t</text>\n");

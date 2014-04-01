@@ -701,12 +701,12 @@ public class TEIFormater {
             boolean first = true;
             boolean listOpened = false;
             double pos = 0.0;
-            for (Block block : doc.blocks) {
+            for (Block block : doc.getBlocks()) {
                 Integer ii = new Integer(i);
-                if ((!doc.blockDocumentHeaders.contains(ii)) && (!doc.blockReferences.contains(ii)) &
-                        (!doc.acknowledgementBlocks.contains(ii))) {
-                    if ((!doc.blockHeaders.contains(ii)) && (!doc.blockFooters.contains(ii))
-                            && (!doc.blockFigures.contains(ii)) && (!doc.blockTables.contains(ii))) {
+                if ((!doc.getBlockDocumentHeaders().contains(ii)) && (!doc.getBlockReferences().contains(ii)) &
+                        (!doc.getAcknowledgementBlocks().contains(ii))) {
+                    if ((!doc.getBlockHeaders().contains(ii)) && (!doc.getBlockFooters().contains(ii))
+                            && (!doc.getBlockFigures().contains(ii)) && (!doc.getBlockTables().contains(ii))) {
                         String localText = block.getText();
                         if (localText != null) {
                             localText = localText.trim();
@@ -723,7 +723,7 @@ public class TEIFormater {
                                 listOpened = false;
                             }
 
-                            if (doc.blockSectionTitles.contains(ii)) {
+                            if (doc.getBlockSectionTitles().contains(ii)) {
                                 if (!first)
                                     tei.append("\t\t\t</div>\n");
                                 else
@@ -758,7 +758,7 @@ public class TEIFormater {
                                     tei.append("\n\t\t\t<div>\n");
                                     tei.append("\t\t\t\t<head>" + localText + "</head>\n");
                                 }
-                            } else if (doc.blockHeadFigures.contains(ii)) {
+                            } else if (doc.getBlockHeadFigures().contains(ii)) {
                                 tei.append("\t\t\t<figure>\n");
 
                                 boolean graphic = false;
@@ -793,7 +793,7 @@ public class TEIFormater {
                                     tei.append("\t\t\t\t<head>" + localText + "</head>\n");
                                 }
                                 tei.append("\t\t\t</figure>\n");
-                            } else if (doc.blockHeadTables.contains(ii)) {
+                            } else if (doc.getBlockHeadTables().contains(ii)) {
                                 tei.append("\t\t\t<table>\n");
                                 tei.append("\t\t\t\t<head>" + localText + "</head>\n");
                                 tei.append("\t\t\t</table>\n");
@@ -845,12 +845,12 @@ public class TEIFormater {
 
             tei.append("\t\t<back>\n");
 
-            if (doc.acknowledgementBlocks != null) {
-                if (doc.acknowledgementBlocks.size() > 0) {
+            if (doc.getAcknowledgementBlocks() != null) {
+                if (doc.getAcknowledgementBlocks().size() > 0) {
                     tei.append("\t\t\t<div type=\"acknowledgements\">\n");
-                    for (Integer ii : doc.acknowledgementBlocks) {
-                        if (!doc.blockReferences.contains(ii)) {
-                            Block block = doc.blocks.get(ii.intValue());
+                    for (Integer ii : doc.getAcknowledgementBlocks()) {
+                        if (!doc.getBlockReferences().contains(ii)) {
+                            Block block = doc.getBlocks().get(ii);
                             String localText = block.getText();
                             if (localText != null) {
                                 localText = localText.trim();
@@ -860,7 +860,7 @@ public class TEIFormater {
                                 localText = localText.replace("\n", " ");
                                 localText = localText.trim();
                             }
-                            if (doc.blockSectionTitles.contains(ii)) {
+                            if (doc.getBlockSectionTitles().contains(ii)) {
                                 tei.append("\t\t\t\t<head>" + TextUtilities.HTMLEncode(localText) +
                                         "</head>\n");
                             } else {
@@ -908,8 +908,8 @@ public class TEIFormater {
     public StringBuffer toTEIBodyML(StringBuffer tei,
                                     String rese,
                                     BiblioItem biblio,
-                                    ArrayList<BibDataSet> bds,
-                                    ArrayList<String> tokenizations,
+                                    List<BibDataSet> bds,
+                                    List<String> tokenizations,
                                     Document doc) throws Exception {
         tei.append("\t\t<body>\n");
         //System.out.println(rese);
@@ -935,8 +935,8 @@ public class TEIFormater {
         currentSection = new StringBuffer();
 
         // top node of the document structure tree
-        doc.top.startToken = 0;
-        doc.top.endToken = tokenizations.size();
+        doc.getTop().startToken = 0;
+        doc.getTop().endToken = tokenizations.size();
         DocumentNode currentNode = null;
 
         // keep track of the starting position of a reference section - if any (i.e. not 
@@ -956,7 +956,7 @@ public class TEIFormater {
         // keeping track of the blocks
         int b = 0;
         Block currentBlock = null;
-        ArrayList<Block> blocks = doc.getBlocks();
+        List<Block> blocks = doc.getBlocks();
 
         // we make a first pass for getting the overall hierarchical structure of the document
         while (st.hasMoreTokens()) {
@@ -1042,12 +1042,12 @@ public class TEIFormater {
                 if (s1.equals("I-<section>")) {
                     if ((currentNode != null) && (currentSection.length() > 0)) {
                         currentNode.label = currentSection.toString();
-                        doc.top.addChild(currentNode);
+                        doc.getTop().addChild(currentNode);
                         currentSection = new StringBuffer();
                         currentNode = null;
                     } else if (currentNode != null) {
                         if ((currentNode.label != null) && (currentNode.label.equals("header"))) {
-                            doc.top.addChild(currentNode);
+                            doc.getTop().addChild(currentNode);
                         }
                     }
                     currentNode = new DocumentNode();
@@ -1072,7 +1072,7 @@ public class TEIFormater {
             } else if (currentTag0.equals("<header>")) {
                 if ((currentSection != null) && (currentSection.length() > 0)) {
                     currentNode.label = currentSection.toString();
-                    doc.top.addChild(currentNode);
+                    doc.getTop().addChild(currentNode);
                     currentSection = new StringBuffer();
                     currentNode = null;
                 }
@@ -1129,14 +1129,14 @@ public class TEIFormater {
             } else {
                 if (currentNode != null) {
                     if ((currentNode.label != null) && (currentNode.label.equals("header"))) {
-                        doc.top.addChild(currentNode);
+                        doc.getTop().addChild(currentNode);
                         currentNode = null;
                     }
                 }
 
                 if (currentSection.length() > 0) {
                     currentNode.label = currentSection.toString();
-                    doc.top.addChild(currentNode);
+                    doc.getTop().addChild(currentNode);
                     currentSection = new StringBuffer();
                     currentNode = null;
                 }
@@ -1177,15 +1177,15 @@ public class TEIFormater {
         }
 
         // document structure
-        DocumentNode newTop = doc.top.clone();
+        DocumentNode newTop = doc.getTop().clone();
         newTop.realNumber = "0";
-        if (doc.top.children != null) {
+        if (doc.getTop().children != null) {
             ArrayList<DocumentNode> lastNodesUp = new ArrayList<DocumentNode>();
             lastNodesUp.add(newTop);
             DocumentNode lastNode = newTop;
             Matcher m = null;
             // post processing for interpreting section's header numbering
-            for (DocumentNode node0 : doc.top.children) {
+            for (DocumentNode node0 : doc.getTop().children) {
                 DocumentNode node = node0.clone();
                 // propagation
                 DocumentNode theNode = lastNode;
@@ -1244,13 +1244,13 @@ public class TEIFormater {
 
                 lastNode = node;
             }
-            lastNode.endToken = doc.top.endToken;
+            lastNode.endToken = doc.getTop().endToken;
         }
-        doc.top = newTop;
+        doc.setTop(newTop);
 
         // if the last section ends with the begining of the reference section, we can discard the corresponding
         // node
-        DocumentNode node0 = doc.top;
+        DocumentNode node0 = doc.getTop();
         while (node0 != null) {
             if (node0.children != null) {
                 int lastPos = node0.children.size();
@@ -1269,7 +1269,7 @@ public class TEIFormater {
             }
         }
 
-        System.out.println(doc.top.toString());
+        System.out.println(doc.getTop().toString());
 
         // second pass for fine grained analysis of the document structure
         st = new StringTokenizer(rese, "\n");
@@ -1377,7 +1377,7 @@ public class TEIFormater {
             }
         }
 
-        System.out.println(doc.top.toString());
+        System.out.println(doc.getTop().toString());
         System.out.println("FIGURES/TABLES");
         for (NonTextObject nto : ntos) {
             System.out.println(nto.toString());
@@ -1388,7 +1388,7 @@ public class TEIFormater {
         }
 
         // current document node in document structure
-        currentNode = doc.top;
+        currentNode = doc.getTop();
         int divOpened = 0;
         int labelPosition = 0; // 0: unknown, 1: before figure, 2: after figure
         //boolean hasGraphics = false;
@@ -1577,7 +1577,7 @@ public class TEIFormater {
                     (!currentNode.label.equals("header")) &&
                     (!currentNode.label.equals("top"))) {
                 if (currentNode.endToken <= p) {
-                    if ((currentNode.father == null) || (currentNode.father == doc.top)) {
+                    if ((currentNode.father == null) || (currentNode.father == doc.getTop())) {
                         if (elements.size() > 0) {
                             String lastElement = elements.get(elements.size() - 1);
                             if (lastElement.equals("div")) {
@@ -1586,7 +1586,7 @@ public class TEIFormater {
                                 divOpened -= 1;
                             }
                         }
-                    } else if ((currentNode.father.father == null) || (currentNode.father.father == doc.top)) {
+                    } else if ((currentNode.father.father == null) || (currentNode.father.father == doc.getTop())) {
                         if (elements.size() > 0) {
                             String lastElement = elements.get(elements.size() - 1);
                             if (lastElement.equals("div")) {
@@ -1633,7 +1633,7 @@ public class TEIFormater {
             }
 
             // current node in document structure
-            currentNode = doc.top.getSpanningNode(p);
+            currentNode = doc.getTop().getSpanningNode(p);
             //System.out.println(p + "\t" +currentNode.toString());
 
             if ((currentNode != null) &&
@@ -1642,15 +1642,15 @@ public class TEIFormater {
                     (!currentNode.label.equals("top"))) {
                 if (currentNode.startToken == p) {
                     divOpened += 1;
-                    if ((currentNode.father == null) || (currentNode.father == doc.top)) {
+                    if ((currentNode.father == null) || (currentNode.father == doc.getTop())) {
                         tei.append("\n\t\t\t<div");
                         elements.add("div");
                         tei.append(" type=\"section\"");
-                    } else if ((currentNode.father.father == null) || (currentNode.father.father == doc.top)) {
+                    } else if ((currentNode.father.father == null) || (currentNode.father.father == doc.getTop())) {
                         tei.append("\n\t\t\t\t<div");
                         elements.add("div");
                         tei.append(" type=\"subsection\"");
-                    } else if (currentNode != doc.top) {
+                    } else if (currentNode != doc.getTop()) {
                         tei.append("\n\t\t\t\t\t<div");
                         elements.add("div");
                         tei.append(" type=\"subsubsection\"");
@@ -2241,8 +2241,8 @@ public class TEIFormater {
                                    String currentTag0,
                                    String lastTag0,
                                    String currentTag,
-                                   ArrayList<BibDataSet> bds,
-                                   ArrayList<NonTextObject> ntos) {
+                                   List<BibDataSet> bds,
+                                   List<NonTextObject> ntos) {
         boolean res = false;
 
         if (!currentTag0.equals(lastTag0)
@@ -2381,7 +2381,7 @@ public class TEIFormater {
                 theRef = markReferencesFigureTEI(theRef, ntos);
                 if ((tei.length() > 0) &&
                         ((tei.charAt(tei.length() - 1) != ' ') && (tei.charAt(tei.length() - 1) != '('))) {
-                    tei.append(" " + theRef);
+                    tei.append(" ").append(theRef);
                 } else {
                     tei.append(theRef);
                 }
@@ -2420,7 +2420,7 @@ public class TEIFormater {
     }
 
 
-    public StringBuffer toTEIReferences(StringBuffer tei, ArrayList<BibDataSet> bds) throws Exception {
+    public StringBuffer toTEIReferences(StringBuffer tei, List<BibDataSet> bds) throws Exception {
         tei.append("\t\t\t<div type=\"references\">\n");
         tei.append("<listBibl>");
 
@@ -2647,7 +2647,7 @@ public class TEIFormater {
     /**
      * Mark using TEI annotations the identified references in the text body build with the machine learning model.
      */
-    public String markReferencesTEI(String text, ArrayList<BibDataSet> bds) {
+    public String markReferencesTEI(String text, List<BibDataSet> bds) {
         if (text == null)
             return null;
         if (text.trim().length() == 0)
@@ -2915,7 +2915,7 @@ public class TEIFormater {
         return text;
     }
 
-    public String markReferencesFigureTEI(String text, ArrayList<NonTextObject> ntos) {
+    public String markReferencesFigureTEI(String text, List<NonTextObject> ntos) {
         if (text == null)
             return null;
         if (text.trim().length() == 0)

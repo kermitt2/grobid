@@ -89,7 +89,7 @@ public class HeaderParser extends AbstractParser {
 	public String processingHeaderBlock(boolean consolidate, Document doc, BiblioItem resHeader) {
 		try {
 			String header;
-			if (doc.blockDocumentHeaders == null) {
+			if (doc.getBlockDocumentHeaders() == null) {
 				header = doc.getHeaderFeatured(true, true, true);
 			} else {
 				header = doc.getHeaderFeatured(true, false, true);
