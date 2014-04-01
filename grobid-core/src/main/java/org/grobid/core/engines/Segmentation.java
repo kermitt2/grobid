@@ -104,17 +104,17 @@ public class Segmentation extends AbstractParser {
             }
 
             String content = doc.getFulltextFeatured(true, true);
-            String rese = label(content);
+            String labelledResult = label(content);
 
-            System.out.println(rese);
+            System.out.println(labelledResult);
 
             // set the different sections of the Document object
-            doc = BasicStructureBuilder.resultSegmentation(doc, rese, tokenizations);
+            //doc = BasicStructureBuilder.resultSegmentation(doc, labelledResult, tokenizations);
 
-            //LOGGER.debug(rese);
+            //LOGGER.debug(labelledResult);
             return doc;
         } catch (Exception e) {
-            throw new GrobidException("An exception occured while running Grobid.", e);
+            throw new GrobidException("An exception occurred while running Grobid.", e);
         } finally {
             // keep it clean when leaving...
             doc.cleanLxmlFile(pathXML, false);

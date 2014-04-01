@@ -21,8 +21,7 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 	/**
 	 * The Logger.
 	 */
-	public static final Logger LOGGER = LoggerFactory
-			.getLogger(PDF2XMLSaxParser.class);
+	public static final Logger LOGGER = LoggerFactory.getLogger(PDF2XMLSaxParser.class);
 
 	private StringBuffer accumulator = new StringBuffer(); // Accumulate parsed
 															// text
