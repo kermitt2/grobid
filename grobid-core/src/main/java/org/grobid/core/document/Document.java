@@ -93,6 +93,8 @@ public class Document {
 
 	private BiblioItem resHeader = null;
 
+    private String tei;
+
 	public Document() {
 		top = new DocumentNode("top", "0");
 	}
@@ -451,14 +453,14 @@ public class Document {
 	/**
 	 * Create a TEI representation of the document
 	 */
-	public String toTEI(HeaderParser headerParser,
-			CitationParser citationParser, boolean consolidateHeader,
-			boolean consolidateCitations, boolean peer, BiblioItem catalogue,
-			boolean withStyleSheet, boolean onlyHeader) throws Exception {
+	public void toTEI(HeaderParser headerParser,
+                      CitationParser citationParser, boolean consolidateHeader,
+                      boolean consolidateCitations, boolean peer, BiblioItem catalogue,
+                      boolean withStyleSheet, boolean onlyHeader) throws Exception {
 		addFeaturesDocument();
 
 		if (blocks == null) {
-			return null;
+			return;
 		}
 
 		BasicStructureBuilder.firstPass(this);
@@ -659,7 +661,7 @@ public class Document {
 		}
 
 		TEIFormater teiFormater = new TEIFormater(this);
-        return teiFormater.toTEIBody(biblio, bds, peer, withStyleSheet,
+        tei = teiFormater.toTEIBody(biblio, bds, peer, withStyleSheet,
                 onlyHeader);
 	}
 
@@ -2357,4 +2359,11 @@ public class Document {
 		return res;
 	}
 
+    public String getTei() {
+        return tei;
+    }
+
+    public void setTei(String tei) {
+        this.tei = tei;
+    }
 }
