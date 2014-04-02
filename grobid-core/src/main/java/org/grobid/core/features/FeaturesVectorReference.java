@@ -191,8 +191,12 @@ public class FeaturesVectorReference {
         // label - for training data (1)
         if (label != null)
             res.append(" " + label + "\n");
-        else
-            res.append(" 0\n");
+
+	   // to be checked: it might be necessary for CRP++ to add a 0 at the end of the vector for the "expected label",
+	   // for wapiti it can be ignored, it is able to cope with this "pre-label" non-occurence based on 
+	   // the template file 
+       /** else
+           	res.append(" 0\n"); **/
 
         return res.toString();
     }

@@ -55,6 +55,9 @@ public class ReferenceExtractorTest {
 		ReferenceExtractor extractor = new ReferenceExtractor();
 		List<PatentItem> patents = new ArrayList<PatentItem>();
 		List<BibDataSet> articles = new ArrayList<BibDataSet>();
+		
+		//First description.This desciption was published by ABBS Editorial Office in association with Oxford University  Press on behalf of the Institute of Biochemistry and Cell Biology, Shanghai Institutes for Biological Sciences,  Chinese Academy of Sciences.Some other description. ref. US 2011/0155847 A1 aerodynamic and applied physics.  This patent, ref. US 7930197 says data mining of personal data is patented.  That article refers to Economic Development Quarterly November 2011 25: 353-365, first published on August 25, 2011.
+		
 		String toExtract = "That article It refers to Economic Development Quarterly November 2011 25: 353-365, first published on August 25, 2011.";
 		toExtract = "First description.This desciption was published by ABBS Editorial Office in association with Oxford University " +
                 "Press on behalf of the Institute of Biochemistry and Cell Biology, Shanghai Institutes for Biological Sciences, " +

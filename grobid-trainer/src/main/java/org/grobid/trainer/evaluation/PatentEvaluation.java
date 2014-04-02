@@ -143,7 +143,7 @@ public class PatentEvaluation {
                 //TODO: VZ_FIX
 //                String theResult = EvaluationUtilities.taggerRun(patentBlocks, tagger);
                 String theResult = tagger.label(patentBlocks);
-                //System.out.println(theResult);
+				//System.out.println(theResult);
                 StringTokenizer stt = new StringTokenizer(theResult, "\n");
 //                line = null;
                 String previousExpectedLabel = null;
