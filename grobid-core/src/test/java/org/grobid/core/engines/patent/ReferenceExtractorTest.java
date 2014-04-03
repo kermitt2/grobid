@@ -83,7 +83,7 @@ public class ReferenceExtractorTest {
 		List<BibDataSet> articles = new ArrayList<BibDataSet>();
 		extractor
 				.extractAllReferencesString(
-						"That article It refers to Economic Development Quarterly November 2011 25: 353-365, first published on August 25, 2011.",
+						"This article refers to Economic Development Quarterly November 2011 25: 353-365, first published on August 25, 2011.",
 						false, false, patents, articles);
 		LOGGER.info("BibDataSet: " + articles.toString());
 		assertEquals(0, patents.size());
@@ -126,7 +126,7 @@ public class ReferenceExtractorTest {
 		List<PatentItem> patents = new ArrayList<PatentItem>();
 		List<BibDataSet> articles = new ArrayList<BibDataSet>();
 		String toExtract = "US-8303618, Intravascular filter and method A filter disposed at the distal end of an elongate guidewire. Catheters are provided for delivering the filter to, and retrieving the filter from, a treatment...";
-		toExtract = "this patent refers US-8303618, bla bla";
+		//toExtract = "this patent refers US-8303618, bla bla";
 		extractor.extractAllReferencesString(toExtract, false, false, patents,
 				articles);
 		LOGGER.info("PatentItem: " + patents.toString());
