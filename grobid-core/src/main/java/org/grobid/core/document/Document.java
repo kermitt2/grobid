@@ -1,10 +1,15 @@
 package org.grobid.core.document;
 
+import com.google.common.base.Function;
+import com.google.common.base.Joiner;
+import com.google.common.collect.Iterables;
+import com.google.common.collect.SortedSetMultimap;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.BiblioItem;
 import org.grobid.core.engines.CitationParser;
 import org.grobid.core.engines.Engine;
 import org.grobid.core.engines.HeaderParser;
+import org.grobid.core.engines.SegmentationLabel;
 import org.grobid.core.engines.citations.ReferenceSegmenter;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.exceptions.GrobidResourceException;
@@ -34,7 +39,10 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.SortedSet;
 import java.util.StringTokenizer;
+import java.util.TreeSet;
 import java.util.concurrent.TimeoutException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -50,8 +58,7 @@ public class Document {
     private static final Logger LOGGER = LoggerFactory.getLogger(Document.class);
 
     /**
-     * Exit code got when pdf2xml took too much time and has been killed by
-     * pdf2xml_server.
+     * Exit code got when pdf2xml took too much time and has been killed by pdf2xml_server.
      */
     private static final int KILLED_DUE_2_TIMEOUT = 143;
 
@@ -62,8 +69,7 @@ public class Document {
     private int beginBody = -1;
     private int beginReferences = -1;
 
-    private boolean titleMatchNum = false; // true if the section titles of the
-    // document are numbered
+    private boolean titleMatchNum = false; // true if the section titles of the document are numbered
     private String lang = null;
 
     private List<Block> blocks = null;
@@ -74,7 +80,7 @@ public class Document {
     private List<Integer> blockSectionTitles = null;
     private List<Integer> acknowledgementBlocks = null;
     private List<Integer> blockDocumentHeaders = null;
-    private List<Integer> blockReferences = null;
+    private SortedSet<DocumentPiece> blockReferences = null;
 
     private List<Integer> blockTables = null;
     private List<Integer> blockFigures = null;
@@ -82,6 +88,9 @@ public class Document {
     private List<Integer> blockHeadFigures = null;
 
     private FeatureFactory featureFactory = null;
+
+    // map of tokens (e.g. <reference> or <footnote>) to document pieces
+    private SortedSetMultimap<String, DocumentPiece> labeledBlocks;
 
     // original tokenization and tokens - in order to recreate the original
     // strings and spacing
@@ -143,6 +152,17 @@ public class Document {
         return tokenizations;
     }
 
+//    private List<LayoutToken> getLayoutTokens(DocumentPiece dp) {
+//        List<LayoutToken> toks
+//        if (dp.a.getBlockPtr() == dp.b.getBlockPtr()) {
+//            getBlocks().get(dp.a.getBlockPtr()).getTokens().subList(dp.a.getTokenPtr(), dp.b.getTokenPtr() + 1);
+//        } else {
+//
+//        }
+//        getBlocks().get(dp.a.getBlockPtr()).getTokens().subList(dp.get)
+//    }
+
+
     public ArrayList<String> getTokenizationsHeader() {
         ArrayList<String> tokenizationsHeader = new ArrayList<>();
         for (Integer blocknum : blockDocumentHeaders) {
@@ -172,14 +192,19 @@ public class Document {
 
     public ArrayList<String> getTokenizationsReferences() {
         ArrayList<String> tokenizationsReferences = new ArrayList<>();
-        for (Integer blocknum : blockReferences) {
-            Block blo = blocks.get(blocknum);
-            int tokens = blo.getStartToken();
-            int tokene = blo.getEndToken();
-            for (int i = tokens; i < tokene; i++) {
-                tokenizationsReferences.add(tokenizations.get(i));
-            }
+
+        for (DocumentPiece dp : blockReferences) {
+            tokenizationsReferences.addAll(tokenizations.subList(dp.a.getTokenDocPos(), dp.b.getTokenDocPos()));
         }
+
+//        for (Integer blocknum : blockReferences) {
+//            Block blo = blocks.get(blocknum);
+//            int tokens = blo.getStartToken();
+//            int tokene = blo.getEndToken();
+//            for (int i = tokens; i < tokene; i++) {
+//                tokenizationsReferences.add(tokenizations.get(i));
+//            }
+//        }
 
         return tokenizationsReferences;
     }
@@ -1639,7 +1664,7 @@ public class Document {
                 blockHeaders = new ArrayList<>();
             }
             if (blockReferences == null) {
-                blockReferences = new ArrayList<>();
+                blockReferences = new TreeSet<>();
             }
 
             if ((!blockFooters.contains(ii))
@@ -1945,76 +1970,78 @@ public class Document {
     }
 
     public String getReferences() {
-        blockReferences = new ArrayList<>();
-        StringBuilder accumulated = new StringBuilder();
-        // we start from the end of the document
-        int i = blocks.size() - 1;
-        beginReferences = -1;
-        String prefix = null;
-        int bad = 0;
-        while ((i > 0) && (bad < 20) && (i > beginBody + 2)) {
-            Block block = blocks.get(i);
-            String localText = block.getText();
-            if (localText != null)
-                localText = localText.trim();
-            else {
-                i--;
-                continue;
-            }
+        throw new IllegalStateException("Please use segmentation model for getting references");
 
-            if (localText.equals("@PAGE")) {
-                localText = "\n";
-
-                // if the next block is just a number, that's a page number that
-                // needs to be throw out too
-                if (i > 1) {
-                    Block nextBlock = blocks.get(i - 1);
-                    String nextLocalText = nextBlock.getText();
-                    if (featureFactory == null) {
-                        featureFactory = FeatureFactory.getInstance();
-                    }
-                    if (featureFactory.test_number(nextLocalText)) {
-                        i = i - 1;
-                        continue;
-                    }
-                }
-            }
-
-            if (prefix == null) {
-                if (localText.length() > 0) {
-                    if ((localText.charAt(0) == '[')
-                            || (localText.charAt(0) == '(')) {
-                        prefix = "" + localText.charAt(0);
-                    }
-
-                }
-            }
-
-            if (block.getNbTokens() < 5) {
-                Matcher m = BasicStructureBuilder.references.matcher(localText);
-                if (m.find()) {
-                    // we clearly found the beginning of the references
-                    beginReferences = i;
-                    return accumulated.toString();
-                }
-            }
-
-            if (prefix == null) {
-                accumulated.insert(0, localText + "\n");
-                blockReferences.add(0, i);
-            } else if (localText.length() == 0) {
-                bad++;
-            } else if (localText.charAt(0) == prefix.charAt(0)) {
-                accumulated.insert(0, localText + "\n");
-                bad = 0;
-                blockReferences.add(0, i);
-            } else {
-                bad++;
-            }
-            i--;
-        }
-        beginReferences = i;
-        return accumulated.toString();
+//        blockReferences = new TreeSet<>();
+//        StringBuilder accumulated = new StringBuilder();
+//        // we start from the end of the document
+//        int i = blocks.size() - 1;
+//        beginReferences = -1;
+//        String prefix = null;
+//        int bad = 0;
+//        while ((i > 0) && (bad < 20) && (i > beginBody + 2)) {
+//            Block block = blocks.get(i);
+//            String localText = block.getText();
+//            if (localText != null)
+//                localText = localText.trim();
+//            else {
+//                i--;
+//                continue;
+//            }
+//
+//            if (localText.equals("@PAGE")) {
+//                localText = "\n";
+//
+//                // if the next block is just a number, that's a page number that
+//                // needs to be throw out too
+//                if (i > 1) {
+//                    Block nextBlock = blocks.get(i - 1);
+//                    String nextLocalText = nextBlock.getText();
+//                    if (featureFactory == null) {
+//                        featureFactory = FeatureFactory.getInstance();
+//                    }
+//                    if (featureFactory.test_number(nextLocalText)) {
+//                        i = i - 1;
+//                        continue;
+//                    }
+//                }
+//            }
+//
+//            if (prefix == null) {
+//                if (localText.length() > 0) {
+//                    if ((localText.charAt(0) == '[')
+//                            || (localText.charAt(0) == '(')) {
+//                        prefix = "" + localText.charAt(0);
+//                    }
+//
+//                }
+//            }
+//
+//            if (block.getNbTokens() < 5) {
+//                Matcher m = BasicStructureBuilder.references.matcher(localText);
+//                if (m.find()) {
+//                    // we clearly found the beginning of the references
+//                    beginReferences = i;
+//                    return accumulated.toString();
+//                }
+//            }
+//
+//            if (prefix == null) {
+//                accumulated.insert(0, localText + "\n");
+//                blockReferences.add(0, i);
+//            } else if (localText.length() == 0) {
+//                bad++;
+//            } else if (localText.charAt(0) == prefix.charAt(0)) {
+//                accumulated.insert(0, localText + "\n");
+//                bad = 0;
+//                blockReferences.add(0, i);
+//            } else {
+//                bad++;
+//            }
+//            i--;
+//        }
+//        beginReferences = i;
+//        return accumulated.toString();
     }
 
     static public final Pattern DOIPattern = Pattern
@@ -2390,7 +2417,7 @@ public class Document {
         return blockDocumentHeaders;
     }
 
-    public List<Integer> getBlockReferences() {
+    public SortedSet<DocumentPiece> getBlockReferences() {
         return blockReferences;
     }
 
@@ -2450,7 +2477,7 @@ public class Document {
         this.blockDocumentHeaders = blockDocumentHeaders;
     }
 
-    public void setBlockReferences(List<Integer> blockReferences) {
+    public void setBlockReferences(SortedSet<DocumentPiece> blockReferences) {
         this.blockReferences = blockReferences;
     }
 
@@ -2476,5 +2503,39 @@ public class Document {
 
     public void setBibDataSets(List<BibDataSet> bibDataSets) {
         this.bibDataSets = bibDataSets;
+    }
+
+    public SortedSetMultimap<String, DocumentPiece> getLabeledBlocks() {
+        return labeledBlocks;
+    }
+
+    public void setLabeledBlocks(SortedSetMultimap<String, DocumentPiece> labeledBlocks) {
+        this.labeledBlocks = labeledBlocks;
+    }
+
+    //helper
+    public List<String> getDocumentPieceTokenization(DocumentPiece dp) {
+        return tokenizations.subList(dp.a.getTokenDocPos(), dp.b.getTokenDocPos() + 1);
+    }
+
+    public String getDocumentPieceText(DocumentPiece dp) {
+        return Joiner.on("").join(getDocumentPieceTokenization(dp));
+    }
+
+    public String getDocumentPieceText(SortedSet<DocumentPiece> dps) {
+        return Joiner.on("\n").join(Iterables.transform(dps, new Function<DocumentPiece, Object>() {
+            @Override
+            public String apply(DocumentPiece documentPiece) {
+                return getDocumentPieceText(documentPiece);
+            }
+        }));
+    }
+
+    public SortedSet<DocumentPiece> getDocumentPart(SegmentationLabel segmentationLabel) {
+        return labeledBlocks.get(segmentationLabel.getLabel());
+    }
+
+    public String getDocumentPartText(SegmentationLabel segmentationLabel) {
+        return getDocumentPieceText(getDocumentPart(segmentationLabel));
     }
 }

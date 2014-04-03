@@ -320,6 +320,7 @@ public class Engine implements Closeable {
 	 *         with citation contexts
 	 */
 	public List<BibDataSet> processReferences(String inputFile, boolean consolidate) throws Exception {
+
 		if (citationParser == null) {
 			citationParser = new CitationParser(cntManager);
 		}
@@ -1327,6 +1328,9 @@ public class Engine implements Closeable {
 	}
 
 	public CitationParser getCitationParser() {
+        if (citationParser == null) {
+            citationParser = new CitationParser();
+        }
 		return citationParser;
 	}
 

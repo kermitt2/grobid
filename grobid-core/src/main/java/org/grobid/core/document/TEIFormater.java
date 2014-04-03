@@ -2381,7 +2381,7 @@ public class TEIFormater {
                 theRef = markReferencesFigureTEI(theRef, ntos);
                 if ((tei.length() > 0) &&
                         ((tei.charAt(tei.length() - 1) != ' ') && (tei.charAt(tei.length() - 1) != '('))) {
-                    tei.append(" ").append(theRef);
+                    tei.append(" " + theRef);
                 } else {
                     tei.append(theRef);
                 }

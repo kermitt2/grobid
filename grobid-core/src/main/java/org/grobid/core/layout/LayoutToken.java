@@ -109,4 +109,10 @@ public class LayoutToken {
         return width;
     }
 
-}	
+    @Override
+    public String toString() {
+        return "LayoutToken{" +
+                "text='" + text + '\'' +
+                '}';
+    }
+}
