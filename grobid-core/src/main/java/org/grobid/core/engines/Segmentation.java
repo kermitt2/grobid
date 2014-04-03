@@ -1,5 +1,6 @@
 package org.grobid.core.engines;
 
+import org.apache.commons.io.FileUtils;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.document.BasicStructureBuilder;
 import org.grobid.core.document.Document;
@@ -30,7 +31,7 @@ import java.util.StringTokenizer;
 public class Segmentation extends AbstractParser {
 
 	/*
-		9 labels for this model:
+        9 labels for this model:
 	 		cover page <cover>, 
 			document header <header>, 
 			page footer <footnote>, 
@@ -106,11 +107,18 @@ public class Segmentation extends AbstractParser {
             String content = doc.getFulltextFeatured(true, true);
             String labelledResult = label(content);
 
+            FileUtils.writeStringToFile(new File("/tmp/x.txt"), labelledResult);
+
             System.out.println(labelledResult);
 
-            // set the different sections of the Document object
-            //doc = BasicStructureBuilder.resultSegmentation(doc, labelledResult, tokenizations);
 
+            // set the different sections of the Document object
+            doc = BasicStructureBuilder.generalResultSegmentation(doc, labelledResult, tokenizations);
+
+//            System.out.println(doc.getBlockReferences());
+            System.out.println("------------------");
+            System.out.println(doc.getDocumentPieceText(doc.getLabeledBlocks().get("<references>")));
+            System.out.println("------------------");
             //LOGGER.debug(labelledResult);
             return doc;
         } catch (Exception e) {

@@ -175,4 +175,13 @@ public class Block {
         this.page = page;
     }
 
-}	
+    @Override
+    public String toString() {
+        return "Block{" +
+                "nbTokens=" + nbTokens +
+                ", startToken=" + startToken +
+                ", endToken=" + endToken +
+                ", type=" + type +
+                '}';
+    }
+}
