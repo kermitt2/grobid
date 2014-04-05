@@ -243,15 +243,24 @@ public class ReferenceExtractor implements Closeable {
                                           List<PatentItem> patents,
                                           List<BibDataSet> articles) {
         try {
-            // parser for patent references
-            if ((patentParser == null) && (patents != null)) {
+            // if parameters are null, these lists will only be valid in the method
+			if (patents == null) {
+				patents = new ArrayList<PatentItem>();
+			}
+
+			if (articles == null) {
+				articles = new ArrayList<BibDataSet>();
+			}
+
+			// parser for patent references
+            if (patentParser == null) {
                 patentParser = new PatentRefParser();
             }
             // parser for non patent references
-            if ((nplParser == null) && (articles != null)) {
-                nplParser = new CitationParser();
+            if (nplParser == null) {
+                nplParser = new CitationParser(); 
             }
-
+			
             // for keeping track of the original string (including spaces)
             ArrayList<String> tokenizations = new ArrayList<String>();
 
@@ -419,11 +428,12 @@ public class ReferenceExtractor implements Closeable {
             patentBlocks.add("\n");
 
             String theResult = null;
-            if (articles == null) {
+            /*if (articles == null) {
                 theResult = taggerPatent.label(patentBlocks);
             } else if (patents == null) {
                 theResult = taggerNPL.label(patentBlocks);
-            } else {
+            } else */
+			{
                 theResult = taggerAll.label(patentBlocks);
             }
 
@@ -673,7 +683,7 @@ public class ReferenceExtractor implements Closeable {
                     bds.setResBib(result);
                     bds.setRawBib(ref);
                     bds.addOffset(offsets_NPL.get(k).intValue());
-                    bds.setConfidence(probNPL.get(k).doubleValue());
+                    //bds.setConfidence(probNPL.get(k).doubleValue());
                     articles.add(bds);
                     k++;
                 }
