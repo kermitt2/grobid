@@ -64,7 +64,7 @@ public class WapitiModel {
     }
 
     public static void train(File template, File trainingData, File outputModel, String params) {
-        String args = String.format("train " + params + " -w 10 -p  %s %s %s", template.getAbsolutePath(), trainingData.getAbsolutePath(), outputModel.getAbsolutePath());
+        String args = String.format("train " + params + " -w 20 -e 0.002 -p %s %s %s", template.getAbsolutePath(), trainingData.getAbsolutePath(), outputModel.getAbsolutePath());
         Wapiti.runWapiti(args);
     }
 

@@ -62,27 +62,27 @@ public class PatentParserTrainer extends AbstractTrainer{
 
         // train the resulting training files with features (based external command line, no JNI
         // binding for the training functions of CRF++)
-        File trainingDataPath1 = new File(GrobidProperties.getTempPath() + "/npl.train");
-        File trainingDataPath2 = new File(GrobidProperties.getTempPath() + "/patent.train");
+        //File trainingDataPath1 = new File(GrobidProperties.getTempPath() + "/npl.train");
+        //File trainingDataPath2 = new File(GrobidProperties.getTempPath() + "/patent.train");
         File trainingDataPath3 = new File(GrobidProperties.getTempPath() + "/all.train");
 
-        File templatePath1 = new File(getFilePath2Resources(), "dataset/patent/crfpp-templates/text.npl.references.template");
-        File templatePath2 = new File(getFilePath2Resources(), "dataset/patent/crfpp-templates/text.patent.references.template");
+       // File templatePath1 = new File(getFilePath2Resources(), "dataset/patent/crfpp-templates/text.npl.references.template");
+       //File templatePath2 = new File(getFilePath2Resources(), "dataset/patent/crfpp-templates/text.patent.references.template");
         File templatePath3 = new File(getFilePath2Resources(), "dataset/patent/crfpp-templates/text.references.template");
 
 
         GenericTrainer trainer = TrainerFactory.getTrainer();
-        File modelPath1 = new File(GrobidProperties.getModelPath(GrobidModels.PATENT_NPL).getAbsolutePath() + NEW_MODEL_EXT);
-        File modelPath2 = new File(GrobidProperties.getModelPath(GrobidModels.PATENT_PATENT).getAbsolutePath() + NEW_MODEL_EXT);
+        //File modelPath1 = new File(GrobidProperties.getModelPath(GrobidModels.PATENT_NPL).getAbsolutePath() + NEW_MODEL_EXT);
+        //File modelPath2 = new File(GrobidProperties.getModelPath(GrobidModels.PATENT_PATENT).getAbsolutePath() + NEW_MODEL_EXT);
         File modelPath3 = new File(GrobidProperties.getModelPath(GrobidModels.PATENT_ALL).getAbsolutePath() + NEW_MODEL_EXT);
 
-        trainer.train(templatePath1, trainingDataPath1, modelPath1, GrobidProperties.getNBThreads());
-        trainer.train(templatePath2, trainingDataPath2, modelPath2, GrobidProperties.getNBThreads());
+        //trainer.train(templatePath1, trainingDataPath1, modelPath1, GrobidProperties.getNBThreads());
+        //trainer.train(templatePath2, trainingDataPath2, modelPath2, GrobidProperties.getNBThreads());
         trainer.train(templatePath3, trainingDataPath3, modelPath3, GrobidProperties.getNBThreads());
 
         //renaming
-        renameModels(GrobidProperties.getModelPath(GrobidModels.PATENT_NPL), modelPath1);
-        renameModels(GrobidProperties.getModelPath(GrobidModels.PATENT_PATENT), modelPath2);
+        //renameModels(GrobidProperties.getModelPath(GrobidModels.PATENT_NPL), modelPath1);
+        //renameModels(GrobidProperties.getModelPath(GrobidModels.PATENT_PATENT), modelPath2);
         renameModels(GrobidProperties.getModelPath(GrobidModels.PATENT_ALL), modelPath3);
     }
 
@@ -118,9 +118,10 @@ public class PatentParserTrainer extends AbstractTrainer{
             //if ((setName != null) && setName.equals("test")) {
             sax.setN(300000);
             /*}
-               else {
-                   sax.setN(300);
-               }*/
+               else */
+			{
+             	//sax.setN(300);
+           	}
             // get a factory
             SAXParserFactory spf = SAXParserFactory.newInstance();
             spf.setValidating(false);
@@ -186,7 +187,7 @@ public class PatentParserTrainer extends AbstractTrainer{
                                             abbrevJournalsPositions,
                                             conferencesPositions,
                                             publishersPositions);
-                                    writer.write("\n");
+                                    writer.write("\n \n");
                                 }
                             }
                         } catch (Exception e) {
@@ -206,9 +207,10 @@ public class PatentParserTrainer extends AbstractTrainer{
             //if ((setName != null) && setName.equals("test")) {
             sax.setN(300000);
             /*}
-               else {
-                   sax.setN(200);
-               }*/
+               else */
+			{
+             	//sax.setN(200);
+           	}
             // get a factory
             spf = SAXParserFactory.newInstance();
             spf.setValidating(false);
@@ -297,9 +299,10 @@ public class PatentParserTrainer extends AbstractTrainer{
             //if ((setName != null) && (setName.equals("test"))) {
             sax.setN(300000);
             /*}
-               else {
-                   sax.setN(200);
-               }*/
+               else */
+			{
+             	//sax.setN(300);
+           	}
             // get a factory
             spf = SAXParserFactory.newInstance();
             spf.setValidating(false);
