@@ -207,12 +207,12 @@ public class TeiStAXParserTest extends XMLTestCase {
 		ReferenceExtractor extractor = new ReferenceExtractor();
 		OutputStream out;
 		TeiStAXParser stax;
-		out = getOutputStreamFromFile("src/test/resources/org/grobid/core/annotations/resTeiStAXParser/out.tei.xml");
+		//out = getOutputStreamFromFile("src/test/resources/org/grobid/core/annotations/resTeiStAXParser/out.tei.xml");
 		out = System.out;
 		// ByteArrayOutputStream baos = new ByteArrayOutputStream();
 
 		stax = new TeiStAXParser(
-				getInputStreamFromFile("src/test/resources/org/grobid/core/annotations/resTeiStAXParser/sample-4.tei.xml"),
+				getInputStreamFromFile("src/test/resources/org/grobid/core/annotations/resTeiStAXParser/sample-2.tei.xml"),
 				out, true,
 				extractor, false);
 
