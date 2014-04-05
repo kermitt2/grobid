@@ -191,8 +191,9 @@ public class FeaturesVectorReference {
         // label - for training data (1)
         if (label != null)
             res.append(" " + label + "\n");
-        else
-            res.append(" 0\n");
+        
+		//else
+        //    res.append(" 0\n");
 
         return res.toString();
     }
