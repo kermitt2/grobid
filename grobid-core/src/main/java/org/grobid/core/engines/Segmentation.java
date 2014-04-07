@@ -109,7 +109,7 @@ public class Segmentation extends AbstractParser {
 
             FileUtils.writeStringToFile(new File("/tmp/x.txt"), labelledResult);
 
-            System.out.println(labelledResult);
+            //System.out.println(labelledResult);
 
 
             // set the different sections of the Document object

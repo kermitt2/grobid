@@ -71,6 +71,22 @@ public class TestHeaderParser extends EngineTest{
         //System.out.println(tei);
 
     }
+
+	@Test
+	public void testSegmentationHeader() throws Exception {
+		getTestResourcePath();
+		
+		String pdfPath = testPath + "/Wang-paperAVE2008.pdf";
+		BiblioItem resHeader = new BiblioItem();
+		
+		String tei = engine.segmentAndProcessHeader(pdfPath, false, resHeader);
+	
+		assertNotNull(resHeader);
+        assertThat(resHeader.getTitle(), is("Information Synthesis for Answer Validation"));
+        assertThat(resHeader.getKeyword(),
+            is("Answer Validation, Recognizing Textual Entailment, Information Synthesis"));
+        assertNotNull(resHeader.getFullAuthors());
+    }
 	
 	@Test
 	public void testTrainingHeader() throws Exception {

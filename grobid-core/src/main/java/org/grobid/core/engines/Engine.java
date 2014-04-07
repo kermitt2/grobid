@@ -465,6 +465,40 @@ public class Engine implements Closeable {
 	}
 
 	/**
+	 * Use the segmentation model to identify the header section of a PDF file, then apply a parsing model for the 
+	 * header based on CRF
+	 * 
+	 * @param inputFile
+	 *            : the path of the PDF file to be processed
+	 * @param consolidate
+	 *            - the consolidation option allows GROBID to exploit Crossref
+	 *            web services for improving header information
+	 * @param result
+	 *            bib result
+	 * @return the TEI representation of the extracted bibliographical
+	 *         information
+	 * @throws Exception
+	 *             if sth went wrong
+	 */
+	public String segmentAndProcessHeader(String inputFile, boolean consolidate, BiblioItem result) throws Exception {
+		if (headerParser == null) {
+			headerParser = new HeaderParser();
+		}
+		// normally the BiblioItem reference must not be null, but if it is the
+		// case, we still continue
+		// with a new instance, so that the resulting TEI string is still
+		// delivered
+		if (result == null) {
+			result = new BiblioItem();
+		}
+
+		Pair<String, Document> resultTEI = headerParser.processing2(inputFile, consolidate, result);
+		Document doc = resultTEI.getRight();
+		close();
+		return resultTEI.getLeft();
+	}
+
+	/**
 	 * Create training data for the header model based on the application of the
 	 * current header model on a new PDF
 	 * 
