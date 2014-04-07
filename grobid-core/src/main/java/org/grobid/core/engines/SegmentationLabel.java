@@ -18,7 +18,8 @@ public enum SegmentationLabel {
      */
     COVER("<cover>"),
     HEADER("<header>"),
-    FOOTER("<footer>"),
+    FOOTNOTE("<footnote>"),
+	HEADNOTE("<headnote>"),
     BODY("<body>"),
     PAGE_NUMBER("<page>"),
     ANNEX("<annex>"),

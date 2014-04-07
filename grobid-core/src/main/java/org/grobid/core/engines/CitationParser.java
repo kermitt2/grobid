@@ -30,6 +30,7 @@ public class CitationParser extends AbstractParser {
 
     private AuthorParser authorParser = null;
     private DateParser dateParser = null;
+	private Segmentation segmentationParser = null;
     private Consolidation consolidator = null;
 
     private File tmpPath = null;
@@ -188,31 +189,14 @@ public class CitationParser extends AbstractParser {
 
 
     public List<BibDataSet> processingReferenceSection(String input,
-                                                            boolean consolidate) throws Exception {
-        ArrayList<BibDataSet> results = new ArrayList<>();
-        Document doc = new Document(input, tmpPath.getAbsolutePath());
-        String pathXML = null;
+                                                       boolean consolidate) throws Exception {
+        List<BibDataSet> results = new ArrayList<>();
         try {
-            int startPage = -1;
-            int endPage = -1;
-            pathXML = doc.pdf2xml(true, false, startPage, endPage, input, tmpPath.getAbsolutePath(), false); // with timeout,
-            // no force pdf reloading
-            // input is the pdf file, tmpPath is the tmp directory for the lxml
-            // file,
-            // path is the resource path
-            // we do not extract images in the pdf file
-            if (pathXML == null) {
-                throw new Exception("PDF parsing fails");
-            }
-            doc.setPathXML(pathXML);
-            doc.addFeaturesDocument();
-
-            if (doc.getBlocks() == null) {
-                throw new Exception("PDF parsing resulted in empty content");
-            }
-
-            doc.addFeaturesDocument();
-            doc.firstPass();
+			if (segmentationParser == null) {
+				segmentationParser = new Segmentation();
+			}
+		
+            Document doc = segmentationParser.processing(input);
 
             String referencesStr = doc.getDocumentPartText(SegmentationLabel.REFERENCES);
             if (!referencesStr.isEmpty()) {
@@ -238,11 +222,6 @@ public class CitationParser extends AbstractParser {
             }
         } catch (Exception e) {
             throw new GrobidException("An exception occurred while running Grobid.", e);
-        } finally {
-            // keep it clean when leaving...
-            if (pathXML != null) {
-                doc.cleanLxmlFile(pathXML, true);
-            }
         }
 
         return results;

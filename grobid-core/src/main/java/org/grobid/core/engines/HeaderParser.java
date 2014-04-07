@@ -8,12 +8,18 @@ import org.grobid.core.data.Date;
 import org.grobid.core.data.Person;
 import org.grobid.core.document.Document;
 import org.grobid.core.document.TEIFormater;
+import org.grobid.core.document.DocumentPiece;
+import org.grobid.core.document.DocumentPointer;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.lang.Language;
 import org.grobid.core.utilities.Consolidation;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.LanguageUtilities;
 import org.grobid.core.utilities.TextUtilities;
+import org.grobid.core.features.FeatureFactory;
+import org.grobid.core.features.FeaturesVectorHeader;
+import org.grobid.core.layout.Block;
+import org.grobid.core.layout.LayoutToken;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -26,6 +32,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
 import java.util.concurrent.TimeoutException;
+import java.util.SortedSet;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * @author Patrice Lopez
@@ -39,6 +48,7 @@ public class HeaderParser extends AbstractParser {
 	private DateParser dateParser = null;
 	private AffiliationAddressParser affiliationAddressParser = null;
 	private CitationParser citationParser = null;
+	private Segmentation segmentationParser = null;
 	private Consolidation consolidator = null;
 //	private Document doc = null;
 
@@ -86,6 +96,26 @@ public class HeaderParser extends AbstractParser {
         }
     }
 
+	/**
+	 * Processing with application of the segmentation model
+	 */ 
+	public Pair<String, Document> processing2(String input, boolean consolidate, BiblioItem resHeader) throws TimeoutException {
+        try {
+			if (segmentationParser == null) {
+				segmentationParser = new Segmentation();
+			}
+		
+            Document doc = segmentationParser.processing(input);
+
+			String tei = processingHeaderSection(doc, consolidate, resHeader);
+            return new ImmutablePair<>(tei, doc);
+        } catch (TimeoutException timeoutExp) {
+            throw new TimeoutException("A time out occured");
+        } catch (final Exception exp) {
+            throw new GrobidException("An exception occurred while running Grobid on file " + tmpPath.getAbsolutePath() + ": " + exp);
+        } 
+    }
+
 	public String processingHeaderBlock(boolean consolidate, Document doc, BiblioItem resHeader) {
 		try {
 			String header;
@@ -95,9 +125,9 @@ public class HeaderParser extends AbstractParser {
 				header = doc.getHeaderFeatured(true, false, true);
 			}
 			ArrayList<String> tokenizations = doc.getTokenizationsHeader();
-
+ 
 //			StringTokenizer st = new StringTokenizer(header, "\n");
-
+ 
             String res = label(header);
 			resHeader = resultExtraction(res, true, tokenizations, resHeader);
 
@@ -263,6 +293,488 @@ public class HeaderParser extends AbstractParser {
 			throw new GrobidException("An exception occured while running Grobid.", e);
 		}
 	}
+
+	/**
+	 *  Header processing after application of the segmentation model
+	 */
+	public String processingHeaderSection(Document doc, boolean consolidate, BiblioItem resHeader) throws Exception {
+        try {
+            SortedSet<DocumentPiece> documentHeaderParts = doc.getDocumentPart(SegmentationLabel.HEADER);
+
+			if (documentHeaderParts != null) {
+				List<String> tokenizationsHeader = new ArrayList<String>();
+				ArrayList<String> tokenizations = doc.getTokenizations();
+				
+				for(DocumentPiece docPiece : documentHeaderParts) {
+					String header;
+					DocumentPointer dp1 = docPiece.a;
+					DocumentPointer dp2 = docPiece.b;
+					
+					//int blockIndex = dp1.getBlockPtr();
+
+				    //int dp1.getTokenBlockPos();
+				    //int dp1.getTokenDocPos();
+					
+					//Block blo = blocks.get(blocknum);
+		            int tokens = dp1.getTokenDocPos();
+		            int tokene = dp2.getTokenDocPos();
+		            for (int i = tokens; i < tokene; i++) {
+		                tokenizationsHeader.add(tokenizations.get(i)); 
+		            }
+				}
+				
+				String header = getSectionHeaderFeatured(doc, documentHeaderParts, true);
+				
+				String res = null;
+				if (header != null) {
+					res = label(header);
+					resHeader = resultExtraction(res, true, tokenizations, resHeader);
+				}
+				
+				Language langu = languageUtilities.runLanguageId(resHeader.getTitle() + "\n" + resHeader.getKeywords() + "\n"
+						+ resHeader.getAbstract());
+				if (langu != null) {
+					String lang = langu.getLangId();
+					doc.setLanguage(lang);
+					resHeader.setLanguage(lang);
+				}
+
+				if (resHeader != null) {
+					if (resHeader.getAbstract() != null) {
+						// resHeader.setAbstract(utilities.dehyphenizeHard(resHeader.getAbstract()));
+						resHeader.setAbstract(TextUtilities.dehyphenize(resHeader.getAbstract()));
+					}
+					BiblioItem.cleanTitles(resHeader);
+					if (resHeader.getTitle() != null) {
+						// String temp =
+						// utilities.dehyphenizeHard(resHeader.getTitle());
+						String temp = TextUtilities.dehyphenize(resHeader.getTitle());
+						temp = temp.trim();
+						if (temp.length() > 1) {
+							if (temp.startsWith("1"))
+								temp = temp.substring(1, temp.length());
+							temp = temp.trim();
+						}
+						resHeader.setTitle(temp);
+					}
+					if (resHeader.getBookTitle() != null) {
+						resHeader.setBookTitle(TextUtilities.dehyphenize(resHeader.getBookTitle()));
+					}
+
+					resHeader.setOriginalAuthors(resHeader.getAuthors());
+					boolean fragmentedAuthors = false;
+					boolean hasMarker = false;
+					List<Integer> authorsBlocks = new ArrayList<Integer>();
+					String[] authorSegments = null;
+					if (resHeader.getAuthors() != null) {
+						ArrayList<String> auts;
+						authorSegments = resHeader.getAuthors().split("\n");
+						if (authorSegments.length > 1) {
+							fragmentedAuthors = true;
+						}
+						if (authorParser == null) {
+							authorParser = new AuthorParser();
+						}
+						for (int k = 0; k < authorSegments.length; k++) {
+							auts = new ArrayList<String>();
+							auts.add(authorSegments[k]);
+							List<Person> localAuthors = authorParser.processingHeader(auts);
+							if (localAuthors != null) {
+								for (Person pers : localAuthors) {
+									resHeader.addFullAuthor(pers);
+									if (pers.getMarkers() != null) {
+										hasMarker = true;
+									}
+									authorsBlocks.add(k);
+								}
+							}
+						}
+					}
+
+					if (affiliationAddressParser == null) {
+						affiliationAddressParser = new AffiliationAddressParser();
+					}
+					resHeader.setFullAffiliations(affiliationAddressParser.processReflow(res, tokenizations));
+					resHeader.attachEmails();
+					boolean attached = false;
+					if (fragmentedAuthors && !hasMarker) {
+						if (resHeader.getFullAffiliations() != null) {
+							if (authorSegments != null) {
+								if (resHeader.getFullAffiliations().size() == authorSegments.length) {
+									int k = 0;
+									for (Person pers : resHeader.getFullAuthors()) {
+										if (k < authorsBlocks.size()) {
+											int indd = authorsBlocks.get(k);
+											if (indd < resHeader.getFullAffiliations().size()) {
+												pers.addAffiliation(resHeader.getFullAffiliations().get(indd));
+											}
+										}
+										k++;
+									}
+									attached = true;
+									resHeader.setFullAffiliations(null);
+									resHeader.setAffiliation(null);
+								}
+							}
+						}
+					}
+					if (!attached) {
+						resHeader.attachAffiliations();
+					}
+
+					if (resHeader.getEditors() != null) {
+						ArrayList<String> edits = new ArrayList<String>();
+						edits.add(resHeader.getEditors());
+
+						if (authorParser == null) {
+							authorParser = new AuthorParser();
+						}
+						resHeader.setFullEditors(authorParser.processingHeader(edits));
+						// resHeader.setFullEditors(authorParser.processingCitation(edits));
+					}
+
+					if (resHeader.getReference() != null) {
+						if (citationParser == null) {
+							citationParser = new CitationParser();
+						}
+						BiblioItem refer = citationParser.processing(resHeader.getReference(), false);
+						BiblioItem.correct(resHeader, refer);
+					}
+				}
+
+				// DOI pass
+				ArrayList<String> dois = doc.getDOIMatches();
+				if (dois != null) {
+					if ((dois.size() == 1) && (resHeader != null)) {
+						resHeader.setDOI(dois.get(0));
+					}
+				}
+
+				if (consolidate) {
+					resHeader = consolidateHeader(resHeader);
+				}
+
+				// normalization of dates
+				if (resHeader != null) {
+					if (resHeader.getPublicationDate() != null) {
+						if (dateParser == null) {
+							dateParser = new DateParser();
+						}
+						ArrayList<Date> dates = dateParser.processing(resHeader.getPublicationDate());
+						// most basic heuristic, we take the first date - to be
+						// revised...
+						if (dates != null) {
+							if (dates.size() > 0) {
+								resHeader.setNormalizedPublicationDate(dates.get(0));
+							}
+						}
+					}
+
+					if (resHeader.getSubmissionDate() != null) {
+						if (dateParser == null) {
+							dateParser = new DateParser();
+						}
+						ArrayList<Date> dates = dateParser.processing(resHeader.getSubmissionDate());
+						if (dates != null) {
+							if (dates.size() > 0) {
+								resHeader.setNormalizedSubmissionDate(dates.get(0));
+							}
+						}
+					}
+				}
+
+				TEIFormater teiFormater = new TEIFormater(doc);
+				String tei = teiFormater.toTEIBody(resHeader, null, true, false, true);
+				LOGGER.debug(tei);
+				return tei;
+			}
+        } catch (Exception e) {
+            throw new GrobidException("An exception occurred while running Grobid.", e);
+        }
+        return null;
+    }
+
+
+	/** 
+	 * Return the header section with features to be processed by the CRF model
+	 */ 
+	private String getSectionHeaderFeatured(Document doc, 
+											SortedSet<DocumentPiece>documentHeaderParts, 
+											boolean withRotation) {
+		FeatureFactory featureFactory = FeatureFactory.getInstance();
+        StringBuilder header = new StringBuilder();
+        String currentFont = null;
+        int currentFontSize = -1;
+
+        // vector for features
+        FeaturesVectorHeader features;
+        boolean endblock;
+        //for (Integer blocknum : blockDocumentHeaders) {
+		List<Block> blocks = doc.getBlocks();
+		if ( (blocks == null) || blocks.size() == 0) {
+			return null;
+		}
+	
+		for(DocumentPiece docPiece : documentHeaderParts) {
+			DocumentPointer dp1 = docPiece.a;
+			DocumentPointer dp2 = docPiece.b;
+			
+			for(int blockIndex = dp1.getBlockPtr(); blockIndex <= dp2.getBlockPtr(); blockIndex++) {
+            	Block block = blocks.get(blockIndex); 
+	            boolean newline;
+	            boolean previousNewline = false;
+	            endblock = false;
+	            ArrayList<LayoutToken> tokens = block.getTokens();
+	            if (tokens == null)
+	                continue;
+	            int n = 0;
+				if (blockIndex == dp1.getBlockPtr()) {
+					n = block.getStartToken();
+				}
+	            while (n < tokens.size()) {
+					if (blockIndex == dp2.getBlockPtr()) {
+						if (n > block.getEndToken()) {
+							break;
+						}
+					}
+		
+	                LayoutToken token = tokens.get(n);
+	                features = new FeaturesVectorHeader();
+	                features.token = token;
+	                String text = token.getText();
+	                if (text == null) {
+	                    n++;
+	                    continue;
+	                }
+	                text = text.trim();
+	                if (text.length() == 0) {
+	                    n++;
+	                    continue;
+	                }
+
+	                if (text.equals("\n")) {
+	                    newline = true;
+	                    previousNewline = true;
+	                    n++;
+	                    continue;
+	                } else
+	                    newline = false;
+
+	                if (previousNewline) {
+	                    newline = true;
+	                    previousNewline = false;
+	                }
+
+	                boolean filter = false;
+	                if (text.startsWith("@IMAGE")) {
+	                    filter = true;
+	                } else if (text.contains(".pbm")) {
+	                    filter = true;
+	                } else if (text.contains(".vec")) {
+	                    filter = true;
+	                } else if (text.contains(".jpg")) {
+	                    filter = true;
+	                }
+
+	                if (filter) {
+	                    n++;
+	                    continue;
+	                }
+
+	                features.string = text;
+
+	                if (newline)
+	                    features.lineStatus = "LINESTART";
+	                Matcher m0 = featureFactory.isPunct.matcher(text);
+	                if (m0.find()) {
+	                    features.punctType = "PUNCT";
+	                }
+	                switch (text) {
+	                    case "(":
+	                    case "[":
+	                        features.punctType = "OPENBRACKET";
+	                        break;
+	                    case ")":
+	                    case "]":
+	                        features.punctType = "ENDBRACKET";
+	                        break;
+	                    case ".":
+	                        features.punctType = "DOT";
+	                        break;
+	                    case ",":
+	                        features.punctType = "COMMA";
+	                        break;
+	                    case "-":
+	                        features.punctType = "HYPHEN";
+	                        break;
+	                    case "\"":
+	                    case "\'":
+	                    case "`":
+	                        features.punctType = "QUOTE";
+	                        break;
+	                }
+
+	                if (n == 0) {
+	                    features.lineStatus = "LINESTART";
+	                    features.blockStatus = "BLOCKSTART";
+	                } else if (n == tokens.size() - 1) {
+	                    features.lineStatus = "LINEEND";
+	                    previousNewline = true;
+	                    features.blockStatus = "BLOCKEND";
+	                    endblock = true;
+	                } else {
+	                    // look ahead...
+	                    boolean endline = false;
+
+	                    int ii = 1;
+	                    boolean endloop = false;
+	                    while ((n + ii < tokens.size()) && (!endloop)) {
+	                        LayoutToken tok = tokens.get(n + ii);
+	                        if (tok != null) {
+	                            String toto = tok.getText();
+	                            if (toto != null) {
+	                                if (toto.equals("\n")) {
+	                                    endline = true;
+	                                    endloop = true;
+	                                } else {
+	                                    if ((toto.length() != 0)
+	                                            && (!(toto.startsWith("@IMAGE")))
+	                                            && (!text.contains(".pbm"))
+	                                            && (!text.contains(".vec"))
+	                                            && (!text.contains(".jpg"))) {
+	                                        endloop = true;
+	                                    }
+	                                }
+	                            }
+	                        }
+
+	                        if (n + ii == tokens.size() - 1) {
+	                            endblock = true;
+	                            endline = true;
+	                        }
+
+	                        ii++;
+	                    }
+
+	                    if ((!endline) && !(newline)) {
+	                        features.lineStatus = "LINEIN";
+	                    } else if (!newline) {
+	                        features.lineStatus = "LINEEND";
+	                        previousNewline = true;
+	                    }
+
+	                    if ((!endblock) && (features.blockStatus == null))
+	                        features.blockStatus = "BLOCKIN";
+	                    else if (features.blockStatus == null)
+	                        features.blockStatus = "BLOCKEND";
+
+	                }
+
+	                if (text.length() == 1) {
+	                    features.singleChar = true;
+	                }
+
+	                if (Character.isUpperCase(text.charAt(0))) {
+	                    features.capitalisation = "INITCAP";
+	                }
+
+	                if (featureFactory.test_all_capital(text)) {
+	                    features.capitalisation = "ALLCAP";
+	                }
+
+	                if (featureFactory.test_digit(text)) {
+	                    features.digit = "CONTAINSDIGITS";
+	                }
+
+	                if (featureFactory.test_common(text)) {
+	                    features.commonName = true;
+	                }
+
+	                if (featureFactory.test_names(text)) {
+	                    features.properName = true;
+	                }
+
+	                if (featureFactory.test_month(text)) {
+	                    features.month = true;
+	                }
+
+	                if (text.contains("-")) {
+	                    features.containDash = true;
+	                }
+
+	                Matcher m = featureFactory.isDigit.matcher(text);
+	                if (m.find()) {
+	                    features.digit = "ALLDIGIT";
+	                }
+
+	                Matcher m2 = featureFactory.YEAR.matcher(text);
+	                if (m2.find()) {
+	                    features.year = true;
+	                }
+
+	                Matcher m3 = featureFactory.EMAIL.matcher(text);
+	                if (m3.find()) {
+	                    features.email = true;
+	                }
+
+	                Matcher m4 = featureFactory.HTTP.matcher(text);
+	                if (m4.find()) {
+	                    features.http = true;
+	                }
+
+	                if (currentFont == null) {
+	                    currentFont = token.getFont();
+	                    features.fontStatus = "NEWFONT";
+	                } else if (!currentFont.equals(token.getFont())) {
+	                    currentFont = token.getFont();
+	                    features.fontStatus = "NEWFONT";
+	                } else
+	                    features.fontStatus = "SAMEFONT";
+
+	                int newFontSize = (int) token.getFontSize();
+	                if (currentFontSize == -1) {
+	                    currentFontSize = newFontSize;
+	                    features.fontSize = "HIGHERFONT";
+	                } else if (currentFontSize == newFontSize) {
+	                    features.fontSize = "SAMEFONTSIZE";
+	                } else if (currentFontSize < newFontSize) {
+	                    features.fontSize = "HIGHERFONT";
+	                    currentFontSize = newFontSize;
+	                } else if (currentFontSize > newFontSize) {
+	                    features.fontSize = "LOWERFONT";
+	                    currentFontSize = newFontSize;
+	                }
+
+	                if (token.getBold())
+	                    features.bold = true;
+
+	                if (token.getItalic())
+	                    features.italic = true;
+
+	                if (token.getRotation())
+	                    features.rotation = true;
+
+	                // CENTERED
+	                // LEFTAJUSTED
+
+	                if (features.capitalisation == null)
+	                    features.capitalisation = "NOCAPS";
+
+	                if (features.digit == null)
+	                    features.digit = "NODIGIT";
+
+	                if (features.punctType == null)
+	                    features.punctType = "NOPUNCT";
+
+	                header.append(features.printVector(withRotation));
+
+	                n++;
+	            }
+			}
+        }
+
+        return header.toString();
+    }
 
 
 	/**
