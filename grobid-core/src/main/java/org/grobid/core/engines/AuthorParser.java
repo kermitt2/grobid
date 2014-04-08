@@ -392,8 +392,8 @@ public class AuthorParser implements Closeable {
             if (inputs.size() == 0) {
                 return null;
             }
-            ArrayList<String> tokenizations = new ArrayList<String>();
-            ArrayList<String> authorBlocks = new ArrayList<String>();
+            List<String> tokenizations = new ArrayList<String>();
+            List<String> authorBlocks = new ArrayList<String>();
             for (String input : inputs) {
                 if (input == null)
                     continue;

@@ -6,13 +6,20 @@ import org.grobid.core.engines.AbstractParser;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.TextUtilities;
+import org.grobid.core.layout.Block;
+import org.grobid.core.layout.LayoutToken;
+import org.grobid.core.features.FeatureFactory;
+import org.grobid.core.features.FeaturesVectorFulltext;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
+import java.util.List;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Structure extraction of an ebook.
@@ -22,6 +29,9 @@ import java.util.StringTokenizer;
 
 public class BookStructureParser extends AbstractParser {
     private File tmpPath = null;
+
+	// default bins for relative position
+    private static final int NBBINS = 12;
 
     public BookStructureParser() {
         super(GrobidModels.EBOOK);
@@ -58,8 +68,8 @@ public class BookStructureParser extends AbstractParser {
                 throw new Exception("PDF parsing resulted in empty content");
             }
 
-            String fulltext = doc.getFulltextFeatured(true, true);
-            ArrayList<String> tokenizations = doc.getTokenizationsFulltext();
+            String fulltext = getFulltextFeatured(doc);
+            List<String> tokenizations = doc.getTokenizationsFulltext();
 
             // we write the header untagged
             String outPathFulltext = pathFullText + "/" + PDFFileName.replace(".pdf", ".fulltext");
@@ -89,11 +99,373 @@ public class BookStructureParser extends AbstractParser {
         }
     }
 
+	public String getFulltextFeatured(Document doc) {
+		FeatureFactory featureFactory = FeatureFactory.getInstance();
+        StringBuilder fulltext = new StringBuilder();
+        String currentFont = null;
+        int currentFontSize = -1;
+
+		List<Block> blocks = doc.getBlocks();
+		if ( (blocks == null) || blocks.size() == 0) {
+			return null;
+		}
+
+        // vector for features
+        FeaturesVectorFulltext features;
+        FeaturesVectorFulltext previousFeatures = null;
+        boolean endblock;
+        boolean endPage = true;
+        boolean newPage = true;
+        boolean start = true;
+        int mm = 0; // page position
+        int nn = 0; // document position
+        int documentLength = 0;
+        int pageLength = 0; // length of the current page
+
+		List<String> tokenizationsBody = new ArrayList<String>();
+		List<String> tokenizations = doc.getTokenizations();
+
+        // we calculate current document length and intialize the body tokenization structure
+		for(Block block : blocks) {
+			List<LayoutToken> tokens = block.getTokens();
+			if (tokens == null) 
+				continue;
+			documentLength += tokens.size();
+		}
+
+		//int blockPos = dp1.getBlockPtr();
+		for(int blockIndex = 0; blockIndex < blocks.size(); blockIndex++) {
+           	Block block = blocks.get(blockIndex);				
+
+          	 	// we estimate the length of the page where the current block is
+            if (start || endPage) {
+                boolean stop = false;
+                pageLength = 0;
+                for (int z = blockIndex; (z < blocks.size()) && !stop; z++) {
+                    String localText2 = blocks.get(z).getText();
+                    if (localText2 != null) {
+                        if (localText2.contains("@PAGE")) {
+                            if (pageLength > 0) {
+                                if (blocks.get(z).getTokens() != null) {
+                                    pageLength += blocks.get(z).getTokens()
+                                            .size();
+                                }
+                                stop = true;
+                                break;
+                            }
+                        } else {
+                            if (blocks.get(z).getTokens() != null) {
+                                pageLength += blocks.get(z).getTokens().size();
+                            }
+                        }
+                    }
+                }
+                // System.out.println("pageLength: " + pageLength);
+            }
+            if (start) {
+                newPage = true;
+                start = false;
+            }
+            boolean newline;
+            boolean previousNewline = false;
+            endblock = false;
+
+            if (endPage) {
+                newPage = true;
+                mm = 0;
+            }
+
+            String localText = block.getText();
+            if (localText != null) {
+                if (localText.contains("@PAGE")) {
+                    mm = 0;
+                    // pageLength = 0;
+                    endPage = true;
+                    newPage = false;
+                } else {
+                    endPage = false;
+                }
+            }
+
+            List<LayoutToken> tokens = block.getTokens();
+            if (tokens == null) {
+                //blockPos++;
+                continue;
+            }
+
+			int n = 0;// token position in current block
+            while (n < tokens.size()) {
+                LayoutToken token = tokens.get(n);
+                features = new FeaturesVectorFulltext();
+                features.token = token;
+
+                String text = token.getText();
+                if (text == null) {
+                    n++;
+                    mm++;
+                    nn++;
+                    continue;
+                }
+                text = text.trim();
+                if (text.length() == 0) {
+                    n++;
+                    mm++;
+                    nn++;
+                    continue;
+                }
+
+                if (text.equals("\n")) {
+                    newline = true;
+                    previousNewline = true;
+                    n++;
+                    mm++;
+                    nn++;
+                    continue;
+                } else
+                    newline = false;
+
+                if (previousNewline) {
+                    newline = true;
+                    previousNewline = false;
+                }
+
+                boolean filter = false;
+                if (text.startsWith("@IMAGE")) {
+                    filter = true;
+                } else if (text.contains(".pbm")) {
+                    filter = true;
+                } else if (text.contains(".vec")) {
+                    filter = true;
+                } else if (text.contains(".jpg")) {
+                    filter = true;
+                }
+
+                if (filter) {
+                    n++;
+                    mm++;
+                    nn++;
+                    continue;
+                }
+
+                features.string = text;
+
+                if (newline)
+                    features.lineStatus = "LINESTART";
+                Matcher m0 = featureFactory.isPunct.matcher(text);
+                if (m0.find()) {
+                    features.punctType = "PUNCT";
+                }
+                switch (text) {
+                    case "(":
+                    case "[":
+                        features.punctType = "OPENBRACKET";
+                        break;
+                    case ")":
+                    case "]":
+                        features.punctType = "ENDBRACKET";
+                        break;
+                    case ".":
+                        features.punctType = "DOT";
+                        break;
+                    case ",":
+                        features.punctType = "COMMA";
+                        break;
+                    case "-":
+                        features.punctType = "HYPHEN";
+                        break;
+                    case "\"":
+                    case "\'":
+                    case "`":
+                        features.punctType = "QUOTE";
+                        break;
+                }
+
+                if (n == 0) {
+                    features.lineStatus = "LINESTART";
+                    features.blockStatus = "BLOCKSTART";
+                } else if (n == tokens.size() - 1) {
+                    features.lineStatus = "LINEEND";
+                    previousNewline = true;
+                    features.blockStatus = "BLOCKEND";
+                    endblock = true;
+                } else {
+                    // look ahead...
+                    boolean endline = false;
+
+                    int ii = 1;
+                    boolean endloop = false;
+                    while ((n + ii < tokens.size()) && (!endloop)) {
+                        LayoutToken tok = tokens.get(n + ii);
+                        if (tok != null) {
+                            String toto = tok.getText();
+                            if (toto != null) {
+                                if (toto.equals("\n")) {
+                                    endline = true;
+                                    endloop = true;
+                                } else {
+                                    if ((toto.length() != 0)
+                                            && (!(toto.startsWith("@IMAGE")))
+                                            && (!text.contains(".pbm"))
+                                            && (!text.contains(".vec"))
+                                            && (!text.contains(".jpg"))) {
+                                        endloop = true;
+                                    }
+                                }
+                            }
+                        }
+
+                        if (n + ii == tokens.size() - 1) {
+                            endblock = true;
+                            endline = true;
+                        }
+
+                        ii++;
+                    }
+
+                    if ((!endline) && !(newline)) {
+                        features.lineStatus = "LINEIN";
+                    } else if (!newline) {
+                        features.lineStatus = "LINEEND";
+                        previousNewline = true;
+                    }
+
+                    if ((!endblock) && (features.blockStatus == null))
+                        features.blockStatus = "BLOCKIN";
+                    else if (features.blockStatus == null) {
+                        features.blockStatus = "BLOCKEND";
+                        endblock = true;
+                    }
+                }
+
+                if (newPage) {
+                    features.pageStatus = "PAGESTART";
+                    newPage = false;
+                    endPage = false;
+                    if (previousFeatures != null)
+                        previousFeatures.pageStatus = "PAGEEND";
+                } else {
+                    features.pageStatus = "PAGEIN";
+                    newPage = false;
+                    endPage = false;
+                }
+
+                if (text.length() == 1) {
+                    features.singleChar = true;
+                }
+
+                if (Character.isUpperCase(text.charAt(0))) {
+                    features.capitalisation = "INITCAP";
+                }
+
+                if (featureFactory.test_all_capital(text)) {
+                    features.capitalisation = "ALLCAP";
+                }
+
+                if (featureFactory.test_digit(text)) {
+                    features.digit = "CONTAINSDIGITS";
+                }
+
+                if (featureFactory.test_common(text)) {
+                    features.commonName = true;
+                }
+
+                if (featureFactory.test_names(text)) {
+                    features.properName = true;
+                }
+
+                if (featureFactory.test_month(text)) {
+                    features.month = true;
+                }
+
+                Matcher m = featureFactory.isDigit.matcher(text);
+                if (m.find()) {
+                    features.digit = "ALLDIGIT";
+                }
+
+                Matcher m2 = featureFactory.YEAR.matcher(text);
+                if (m2.find()) {
+                    features.year = true;
+                }
+
+                Matcher m3 = featureFactory.EMAIL.matcher(text);
+                if (m3.find()) {
+                    features.email = true;
+                }
+
+                Matcher m4 = featureFactory.HTTP.matcher(text);
+                if (m4.find()) {
+                    features.http = true;
+                }
+
+                if (currentFont == null) {
+                    currentFont = token.getFont();
+                    features.fontStatus = "NEWFONT";
+                } else if (!currentFont.equals(token.getFont())) {
+                    currentFont = token.getFont();
+                    features.fontStatus = "NEWFONT";
+                } else
+                    features.fontStatus = "SAMEFONT";
+
+                int newFontSize = (int) token.getFontSize();
+                if (currentFontSize == -1) {
+                    currentFontSize = newFontSize;
+                    features.fontSize = "HIGHERFONT";
+                } else if (currentFontSize == newFontSize) {
+                    features.fontSize = "SAMEFONTSIZE";
+                } else if (currentFontSize < newFontSize) {
+                    features.fontSize = "HIGHERFONT";
+                    currentFontSize = newFontSize;
+                } else if (currentFontSize > newFontSize) {
+                    features.fontSize = "LOWERFONT";
+                    currentFontSize = newFontSize;
+                }
+
+                if (token.getBold())
+                    features.bold = true;
+
+                if (token.getItalic())
+                    features.italic = true;
+
+                // HERE horizontal information
+                // CENTERED
+                // LEFTAJUSTED
+                // CENTERED
+
+                if (features.capitalisation == null)
+                    features.capitalisation = "NOCAPS";
+
+                if (features.digit == null)
+                    features.digit = "NODIGIT";
+
+                if (features.punctType == null)
+                    features.punctType = "NOPUNCT";
+
+                features.relativeDocumentPosition = featureFactory
+                        .relativeLocation(nn, documentLength, NBBINS);
+                // System.out.println(mm + " / " + pageLength);
+                features.relativePagePosition = featureFactory
+                        .relativeLocation(mm, pageLength, NBBINS);
+
+                // fulltext.append(features.printVector());
+                if (previousFeatures != null)
+                    fulltext.append(previousFeatures.printVector());
+                n++;
+                mm++;
+                nn++;
+                previousFeatures = features;
+           	}
+        }
+        if (previousFeatures != null)
+            fulltext.append(previousFeatures.printVector());
+
+        return fulltext.toString();
+	}
+
     /**
      * Extract results from a labelled header in the training format without any string modification.
      */
     private StringBuffer trainingExtraction(String result,
-                                            ArrayList<String> tokenizations) {
+                                            List<String> tokenizations) {
         // this is the main buffer for the whole header
         StringBuffer buffer = new StringBuffer();
 
@@ -112,7 +484,7 @@ public class BookStructureParser extends AbstractParser {
                 continue;
             }
             StringTokenizer stt = new StringTokenizer(tok, " \t");
-            ArrayList<String> localFeatures = new ArrayList<String>();
+            List<String> localFeatures = new ArrayList<String>();
             int i = 0;
 
             boolean newLine = false;

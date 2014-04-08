@@ -17,9 +17,9 @@ public class CrossrefUnixrefSaxParser extends DefaultHandler {
 
     private BiblioItem biblio = null;
     private BiblioItem biblioParent = null;
-    private ArrayList<BiblioItem> biblios = null;
-    private ArrayList<String> authors = null;
-    private ArrayList<String> editors = null;
+    private List<BiblioItem> biblios = null;
+    private List<String> authors = null;
+    private List<String> editors = null;
     private String author = null;
     private StringBuffer accumulator = new StringBuffer(); // Accumulate parsed text
     private String media = null; // print or electronic, for ISSN
@@ -31,7 +31,7 @@ public class CrossrefUnixrefSaxParser extends DefaultHandler {
         biblio = b;
     }
 
-    public CrossrefUnixrefSaxParser(ArrayList<BiblioItem> b) {
+    public CrossrefUnixrefSaxParser(List<BiblioItem> b) {
         biblios = b;
     }
 

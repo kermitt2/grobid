@@ -1,7 +1,7 @@
 package org.grobid.core.layout;
 
 import java.util.ArrayList;
-
+import java.util.List;
 
 /**
  * Class for representing cluster of document layout elements,
@@ -10,8 +10,8 @@ import java.util.ArrayList;
  * @author Patrice Lopez
  */
 public class Cluster {
-    private ArrayList<Block> blocks = null;
-    private ArrayList<Integer> blocks2 = null;
+    private List<Block> blocks = null;
+    private List<Integer> blocks2 = null;
     public double y = 0.0;
     public double x = 0.0;
     public double width = 0.0;
@@ -39,11 +39,11 @@ public class Cluster {
         blocks2.add(b);
     }
 
-    public ArrayList<Block> getBlocks() {
+    public List<Block> getBlocks() {
         return blocks;
     }
 
-    public ArrayList<Integer> getBlocks2() {
+    public List<Integer> getBlocks2() {
         return blocks2;
     }
 

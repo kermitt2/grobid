@@ -66,7 +66,7 @@ public class CitationParser extends AbstractParser {
             if (st.countTokens() == 0)
                 return null;
 
-            ArrayList<String> tokenizations = new ArrayList<String>();
+            List<String> tokenizations = new ArrayList<String>();
             while (st.hasMoreTokens()) {
                 final String tok = st.nextToken();
                 tokenizations.add(tok);
@@ -112,7 +112,7 @@ public class CitationParser extends AbstractParser {
                     if (dateParser == null) {
                         dateParser = new DateParser();
                     }
-                    ArrayList<Date> dates = dateParser.processing(resCitation
+                    List<Date> dates = dateParser.processing(resCitation
                             .getPublicationDate());
                     if (dates != null) {
                         Date bestDate = null;
@@ -163,7 +163,7 @@ public class CitationParser extends AbstractParser {
             if (!referencesStr.isEmpty()) {
                 cntManager.i(CitationParserCounters.NOT_EMPTY_REFERENCES_BLOCKS);
             }
-//			ArrayList<String> tokenizations = doc.getTokenizationsReferences();
+//			List<String> tokenizations = doc.getTokenizationsReferences();
 
             List<String> references = ReferenceSegmenter.segmentReferences(referencesStr);
 
@@ -202,7 +202,7 @@ public class CitationParser extends AbstractParser {
             if (!referencesStr.isEmpty()) {
                 cntManager.i(CitationParserCounters.NOT_EMPTY_REFERENCES_BLOCKS);
             }
-//			ArrayList<String> tokenizations = doc.getTokenizationsReferences();
+//			List<String> tokenizations = doc.getTokenizationsReferences();
 
             List<String> references = ReferenceSegmenter.segmentReferences(referencesStr);
 
@@ -237,7 +237,8 @@ public class CitationParser extends AbstractParser {
      * @return bibilio item
      */
     public BiblioItem resultExtraction(String result,
-                                       boolean volumePostProcess, ArrayList<String> tokenizations) {
+                                       boolean volumePostProcess, 
+									   List<String> tokenizations) {
         BiblioItem biblio = new BiblioItem();
 
         StringTokenizer st = new StringTokenizer(result, "\n");
@@ -488,7 +489,7 @@ public class CitationParser extends AbstractParser {
      * @param inputs list of input data
      * @return result
      */
-    public StringBuilder trainingExtraction(ArrayList<String> inputs) {
+    public StringBuilder trainingExtraction(List<String> inputs) {
         StringBuilder buffer = new StringBuilder();
         try {
             if (inputs == null)
@@ -503,8 +504,8 @@ public class CitationParser extends AbstractParser {
             List<List<OffsetPosition>> publishersPositions = new ArrayList<List<OffsetPosition>>();
 
             for (String input : inputs) {
-                ArrayList<String> tokenizations = new ArrayList<String>();
-                ArrayList<String> citationBlocks = new ArrayList<String>();
+                List<String> tokenizations = new ArrayList<String>();
+                List<String> citationBlocks = new ArrayList<String>();
                 if (input == null)
                     continue;
                 // System.out.println("Input: "+input);

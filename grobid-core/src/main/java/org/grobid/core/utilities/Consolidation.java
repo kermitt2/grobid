@@ -10,6 +10,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
@@ -110,7 +111,7 @@ public class Consolidation {
      * Try to consolidate some uncertain bibliographical data with crossref web service based on
      * title and first author
      */
-    public boolean consolidateCrossrefGet(BiblioItem bib, ArrayList<BiblioItem> bib2) throws Exception {
+    public boolean consolidateCrossrefGet(BiblioItem bib, List<BiblioItem> bib2) throws Exception {
         boolean result = false;
         String doi = bib.getDOI();
         String aut = bib.getFirstAuthorSurname();
@@ -534,7 +535,7 @@ public class Consolidation {
     /**
      * Try to consolidate some uncertain bibliographical data with crossref web service - post version
      */
-    public boolean consolidateCrossrefPostBatch(ArrayList<BiblioItem> bib, ArrayList<BiblioItem> bib2)
+    public boolean consolidateCrossrefPostBatch(List<BiblioItem> bib, List<BiblioItem> bib2)
             throws Exception {
 
         int p = 0;
