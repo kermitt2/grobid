@@ -94,7 +94,7 @@ public class Document {
 
     // original tokenization and tokens - in order to recreate the original
     // strings and spacing
-    private ArrayList<String> tokenizations = null;
+    private List<String> tokenizations = null;
 
     // list of bibliographical references with context
     private List<BibDataSet> bibDataSets = null;
@@ -148,7 +148,7 @@ public class Document {
         this.pathXML = pathXML;
     }
 
-    public ArrayList<String> getTokenizations() {
+    public List<String> getTokenizations() {
         return tokenizations;
     }
 
@@ -163,8 +163,8 @@ public class Document {
 //    }
 
 
-    public ArrayList<String> getTokenizationsHeader() {
-        ArrayList<String> tokenizationsHeader = new ArrayList<>();
+    public List<String> getTokenizationsHeader() {
+        List<String> tokenizationsHeader = new ArrayList<>();
         for (Integer blocknum : blockDocumentHeaders) {
             Block blo = blocks.get(blocknum);
             int tokens = blo.getStartToken();
@@ -177,8 +177,8 @@ public class Document {
         return tokenizationsHeader;
     }
 
-    public ArrayList<String> getTokenizationsFulltext() {
-        ArrayList<String> tokenizationsFulltext = new ArrayList<>();
+    public List<String> getTokenizationsFulltext() {
+        List<String> tokenizationsFulltext = new ArrayList<>();
         for (Block blo : blocks) {
             int tokens = blo.getStartToken();
             int tokene = blo.getEndToken();
@@ -190,8 +190,8 @@ public class Document {
         return tokenizationsFulltext;
     }
 
-    public ArrayList<String> getTokenizationsReferences() {
-        ArrayList<String> tokenizationsReferences = new ArrayList<>();
+    public List<String> getTokenizationsReferences() {
+        List<String> tokenizationsReferences = new ArrayList<>();
 
         for (DocumentPiece dp : blockReferences) {
             tokenizationsReferences.addAll(tokenizations.subList(dp.a.getTokenDocPos(), dp.b.getTokenDocPos()));
@@ -538,7 +538,7 @@ public class Document {
                 }
             }
 
-            ArrayList<String> tokenizations = getTokenizationsReferences();
+            List<String> tokenizations = getTokenizationsReferences();
             if ((tokenizations == null) || (tokenizations.size() == 0)) {
                 // we need to tokenize the reference section, as it has not been
                 // done until this stage
@@ -681,7 +681,7 @@ public class Document {
      */
     public void reconnectBlocks() throws Exception {
         int i = 0;
-        // ArrayList<Block> newBlocks = new ArrayList<Block>();
+        // List<Block> newBlocks = new ArrayList<Block>();
         boolean candidate = false;
         int candidateIndex = -1;
         for (Block block : blocks) {
@@ -724,8 +724,7 @@ public class Document {
                                     if (candidate) {
                                         Block target = blocks.get(candidateIndex);
                                         // we simply move tokens
-                                        ArrayList<LayoutToken> theTokens = block
-                                                .getTokens();
+                                        List<LayoutToken> theTokens = block.getTokens();
                                         for (LayoutToken tok : theTokens) {
                                             target.addToken(tok);
                                         }
@@ -811,7 +810,7 @@ public class Document {
             boolean newline;
             boolean previousNewline = false;
             endblock = false;
-            ArrayList<LayoutToken> tokens = block.getTokens();
+            List<LayoutToken> tokens = block.getTokens();
             if (tokens == null)
                 continue;
             int n = 0;
@@ -1056,7 +1055,7 @@ public class Document {
     // default bins for relative position
     private static final int nbBins = 12;
 
-    public String getFulltextFeatured(boolean firstPass, boolean getHeader) {
+    /*public String getFulltextFeatured(boolean firstPass, boolean getHeader) {
         // System.out.println(getAllBlocks());
 
         // if (getHeader)
@@ -1080,7 +1079,7 @@ public class Document {
         // we calculate current document length
         for (Block block : blocks) {
             // documentLength += block.getEndToken() - block.getStartToken();
-            ArrayList<LayoutToken> tokens = block.getTokens();
+            List<LayoutToken> tokens = block.getTokens();
             if (tokens != null) {
                 documentLength += tokens.size();
             }
@@ -1138,7 +1137,7 @@ public class Document {
                 }
             }
 
-            ArrayList<LayoutToken> tokens = block.getTokens();
+            List<LayoutToken> tokens = block.getTokens();
             if (tokens == null) {
                 blockPos++;
                 continue;
@@ -1412,7 +1411,7 @@ public class Document {
             fulltext.append(previousFeatures.printVector());
 
         return fulltext.toString();
-    }
+    }*/
 
     // heuristics to get the header section... should be replaced be a global
     // CRF structure recognition
@@ -2052,8 +2051,8 @@ public class Document {
      * segmentation. This can be useful for improving the chance to find a DOI
      * in headers or footnotes.
      */
-    public ArrayList<String> getDOIMatches() {
-        ArrayList<String> results = new ArrayList<>();
+    public List<String> getDOIMatches() {
+        List<String> results = new ArrayList<>();
         for (Block block : blocks) {
             String localText = block.getText();
             if (localText != null) {

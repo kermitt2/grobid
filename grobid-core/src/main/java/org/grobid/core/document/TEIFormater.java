@@ -1264,7 +1264,8 @@ public class TEIFormater {
         if (node0 != null) {
             if (node0.label != null) {
                 if (node0.label.length() + 10 + node0.startToken >= startReferencePosition) {
-                    node0.father.children.remove(node0);
+					if (node0.father != null)
+                    	node0.father.children.remove(node0);
                 }
             }
         }
@@ -2425,15 +2426,17 @@ public class TEIFormater {
         tei.append("<listBibl>");
 
         int p = 0;
-        for (BibDataSet bib : bds) {
-            BiblioItem bit = bib.getResBib();
-            if (bit != null) {
-                tei.append("\n" + bit.toTEI(p));
-            } else {
-                tei.append("\n");
-            }
-            p++;
-        }
+		if ( (bds != null) && (bds.size() > 0)) {
+      	  for (BibDataSet bib : bds) {
+	            BiblioItem bit = bib.getResBib();
+	            if (bit != null) {
+	                tei.append("\n" + bit.toTEI(p));
+	            } else {
+	                tei.append("\n");
+	            }
+	            p++;
+	        }
+		}
 
         tei.append("</listBibl>\n");
         tei.append("\t\t\t</div>\n");
@@ -2755,163 +2758,165 @@ public class TEIFormater {
         String res = "";
         int p = 0;
         //text = TextUtilities.HTMLEncode(text);
-        for (BibDataSet bib : bds) {
-            List<String> contexts = bib.getSourceBib();
-            String marker = TextUtilities.HTMLEncode(bib.getRefSymbol());
-            BiblioItem resBib = bib.getResBib();
+		if ( (bds != null) && (bds.size() > 0)) {
+        	for (BibDataSet bib : bds) {
+	            List<String> contexts = bib.getSourceBib();
+	            String marker = TextUtilities.HTMLEncode(bib.getRefSymbol());
+	            BiblioItem resBib = bib.getResBib();
 
-            if (resBib != null) {
-                // search for first author, date and possibly second author
-                String author1 = resBib.getFirstAuthorSurname();
-                String author2 = null;
-                if (author1 != null) {
-                    author1 = author1.toLowerCase();
-                }
-                String year = null;
-                Date datt = resBib.getNormalizedPublicationDate();
-                if (datt != null) {
-                    if (datt.getYear() != -1) {
-                        year = "" + datt.getYear();
-                    }
-                }
-                char extend1 = 0;
-                // we check if we have an identifier with the year
-                if (resBib.getPublicationDate() != null) {
-                    String dat = resBib.getPublicationDate();
-                    if ((dat != null) && (year != null)) {
-                        int ind = dat.indexOf(year);
-                        if (ind != -1) {
-                            if (ind + year.length() < dat.length()) {
-                                extend1 = dat.charAt(ind + year.length());
-                            }
-                        }
-                    }
-                }
+	            if (resBib != null) {
+	                // search for first author, date and possibly second author
+	                String author1 = resBib.getFirstAuthorSurname();
+	                String author2 = null;
+	                if (author1 != null) {
+	                    author1 = author1.toLowerCase();
+	                }
+	                String year = null;
+	                Date datt = resBib.getNormalizedPublicationDate();
+	                if (datt != null) {
+	                    if (datt.getYear() != -1) {
+	                        year = "" + datt.getYear();
+	                    }
+	                }
+	                char extend1 = 0;
+	                // we check if we have an identifier with the year
+	                if (resBib.getPublicationDate() != null) {
+	                    String dat = resBib.getPublicationDate();
+	                    if ((dat != null) && (year != null)) {
+	                        int ind = dat.indexOf(year);
+	                        if (ind != -1) {
+	                            if (ind + year.length() < dat.length()) {
+	                                extend1 = dat.charAt(ind + year.length());
+	                            }
+	                        }
+	                    }
+	                }
 
-                List<Person> fullAuthors = resBib.getFullAuthors();
-                if (fullAuthors != null) {
-                    int nbAuthors = fullAuthors.size();
-                    if (nbAuthors == 2) {
-                        // we get the last name of the second author
-                        author2 = fullAuthors.get(1).getLastName();
-                    }
-                }
-                if (author2 != null) {
-                    author2 = author2.toLowerCase();
-                }
+	                List<Person> fullAuthors = resBib.getFullAuthors();
+	                if (fullAuthors != null) {
+	                    int nbAuthors = fullAuthors.size();
+	                    if (nbAuthors == 2) {
+	                        // we get the last name of the second author
+	                        author2 = fullAuthors.get(1).getLastName();
+	                    }
+	                }
+	                if (author2 != null) {
+	                    author2 = author2.toLowerCase();
+	                }
 
-                if (marker != null) {
-                    Matcher m = numberRef.matcher(marker);
-                    if (m.find()) {
-                        int ind = text.indexOf(marker);
-                        if (ind != -1) {
-                            text = text.substring(0, ind) +
-                                    "<ref type=\"bibr\" target=\"#b" + p + "\">" + marker
-                                    + "</ref>" + text.substring(ind + marker.length(), text.length());
-                        }
-                    }
-                }
+	                if (marker != null) {
+	                    Matcher m = numberRef.matcher(marker);
+	                    if (m.find()) {
+	                        int ind = text.indexOf(marker);
+	                        if (ind != -1) {
+	                            text = text.substring(0, ind) +
+	                                    "<ref type=\"bibr\" target=\"#b" + p + "\">" + marker
+	                                    + "</ref>" + text.substring(ind + marker.length(), text.length());
+	                        }
+	                    }
+	                }
 
-                if ((author1 != null) & (year != null)) {
-                    int indi1 = -1; // first author
-                    int indi2 = -1; // year
-                    int indi3 = -1; // second author if only two authors in total
-                    int i = 0;
-                    boolean end = false;
+	                if ((author1 != null) & (year != null)) {
+	                    int indi1 = -1; // first author
+	                    int indi2 = -1; // year
+	                    int indi3 = -1; // second author if only two authors in total
+	                    int i = 0;
+	                    boolean end = false;
 
-                    while (!end) {
-                        indi1 = text.toLowerCase().indexOf(author1, i);
-                        indi2 = text.indexOf(year, i);
-                        int added = 1;
-                        if (author2 != null) {
-                            indi3 = text.toLowerCase().indexOf(author2, i);
-                        }
-                        char extend2 = 0;
-                        if (indi2 != -1) {
-                            if (text.length() > indi2 + year.length()) {
-                                extend2 = text.charAt(indi2 + year.length());
-                            }
-                        }
-                        if ((indi1 == -1) | (indi2 == -1))
-                            end = true;
-                        else if ((indi1 != -1) & (indi2 != -1) & (indi3 != -1) & (indi1 < indi2) &
-                                (indi1 < indi3) & (indi2 - indi1 > author1.length())) {
-                            if ((extend1 != 0) & (extend2 != 0) & (extend1 != extend2)) {
-                                end = true;
-                            } else {
-                                // we check if we don't have another instance of the author between the two indices
-                                int indi1bis = text.toLowerCase().indexOf(author1, indi1 + author1.length());
-                                if (indi1bis == -1) {
-                                    String reference = text.substring(indi1, indi2 + 4);
-                                    boolean extended = false;
-                                    if (text.length() > indi2 + 4) {
-                                        if ((text.charAt(indi2 + 4) == ')') |
-                                                (text.charAt(indi2 + 4) == ']') |
-                                                ((extend1 != 0) & (extend2 != 0) & (extend1 == extend2))) {
-                                            reference += text.charAt(indi2 + 4);
-                                            extended = true;
-                                        }
-                                    }
-                                    if (extended) {
-                                        text = text.substring(0, indi1) +
-                                                "<ref type=\"bibr\" target=\"#b" + p + "\">" + reference + "</ref>" +
-                                                text.substring(indi2 + 5, text.length());
-                                        added = 8;
-                                        return text;
-                                    } else {
-                                        text = text.substring(0, indi1) +
-                                                "<ref type=\"bibr\" target=\"#b" + p + "\">" + reference + "</ref>" +
-                                                text.substring(indi2 + 4, text.length());
-                                        added = 7;
-                                        return text;
-                                    }
-                                }
-                                end = true;
-                            }
-                        } else if ((indi1 != -1) & (indi2 != -1) & (indi1 < indi2) &
-                                (indi2 - indi1 > author1.length())) {
-                            if ((extend1 != 0) & (extend2 != 0) & (extend1 != extend2)) {
-                                end = true;
-                            } else {
-                                // we check if we don't have another instance of the author between the two indices
-                                int indi1bis = text.toLowerCase().indexOf(author1, indi1 + author1.length());
-                                if (indi1bis == -1) {
-                                    String reference = text.substring(indi1, indi2 + 4);
-                                    boolean extended = false;
-                                    if (text.length() > indi2 + 4) {
-                                        if ((text.charAt(indi2 + 4) == ')') |
-                                                (text.charAt(indi2 + 4) == ']') |
-                                                ((extend1 != 0) & (extend2 != 0) & (extend1 == extend2))) {
-                                            reference += text.charAt(indi2 + 4);
-                                            extended = true;
-                                        }
-                                    }
-                                    if (extended) {
-                                        text = text.substring(0, indi1) +
-                                                "<ref type=\"bibr\" target=\"#b" + p + "\">" + reference + "</ref>" +
-                                                text.substring(indi2 + 5, text.length());
-                                        added = 8;
-                                        return text;
-                                    } else {
-                                        text = text.substring(0, indi1) +
-                                                "<ref type=\"bibr\" target=\"#b" + p + "\">" + reference + "</ref>" +
-                                                text.substring(indi2 + 4, text.length());
-                                        added = 7;
-                                        return text;
-                                    }
-                                }
-                                end = true;
-                            }
-                        }
-                        i = indi2 + year.length() + added;
-                        if (i >= text.length()) {
-                            end = true;
-                        }
-                    }
-                }
-            }
-            p++;
-        }
+	                    while (!end) {
+	                        indi1 = text.toLowerCase().indexOf(author1, i);
+	                        indi2 = text.indexOf(year, i);
+	                        int added = 1;
+	                        if (author2 != null) {
+	                            indi3 = text.toLowerCase().indexOf(author2, i);
+	                        }
+	                        char extend2 = 0;
+	                        if (indi2 != -1) {
+	                            if (text.length() > indi2 + year.length()) {
+	                                extend2 = text.charAt(indi2 + year.length());
+	                            }
+	                        }
+	                        if ((indi1 == -1) | (indi2 == -1))
+	                            end = true;
+	                        else if ((indi1 != -1) & (indi2 != -1) & (indi3 != -1) & (indi1 < indi2) &
+	                                (indi1 < indi3) & (indi2 - indi1 > author1.length())) {
+	                            if ((extend1 != 0) & (extend2 != 0) & (extend1 != extend2)) {
+	                                end = true;
+	                            } else {
+	                                // we check if we don't have another instance of the author between the two indices
+	                                int indi1bis = text.toLowerCase().indexOf(author1, indi1 + author1.length());
+	                                if (indi1bis == -1) {
+	                                    String reference = text.substring(indi1, indi2 + 4);
+	                                    boolean extended = false;
+	                                    if (text.length() > indi2 + 4) {
+	                                        if ((text.charAt(indi2 + 4) == ')') |
+	                                                (text.charAt(indi2 + 4) == ']') |
+	                                                ((extend1 != 0) & (extend2 != 0) & (extend1 == extend2))) {
+	                                            reference += text.charAt(indi2 + 4);
+	                                            extended = true;
+	                                        }
+	                                    }
+	                                    if (extended) {
+	                                        text = text.substring(0, indi1) +
+	                                                "<ref type=\"bibr\" target=\"#b" + p + "\">" + reference + "</ref>" +
+	                                                text.substring(indi2 + 5, text.length());
+	                                        added = 8;
+	                                        return text;
+	                                    } else {
+	                                        text = text.substring(0, indi1) +
+	                                                "<ref type=\"bibr\" target=\"#b" + p + "\">" + reference + "</ref>" +
+	                                                text.substring(indi2 + 4, text.length());
+	                                        added = 7;
+	                                        return text;
+	                                    }
+	                                }
+	                                end = true;
+	                            }
+	                        } else if ((indi1 != -1) & (indi2 != -1) & (indi1 < indi2) &
+	                                (indi2 - indi1 > author1.length())) {
+	                            if ((extend1 != 0) & (extend2 != 0) & (extend1 != extend2)) {
+	                                end = true;
+	                            } else {
+	                                // we check if we don't have another instance of the author between the two indices
+	                                int indi1bis = text.toLowerCase().indexOf(author1, indi1 + author1.length());
+	                                if (indi1bis == -1) {
+	                                    String reference = text.substring(indi1, indi2 + 4);
+	                                    boolean extended = false;
+	                                    if (text.length() > indi2 + 4) {
+	                                        if ((text.charAt(indi2 + 4) == ')') |
+	                                                (text.charAt(indi2 + 4) == ']') |
+	                                                ((extend1 != 0) & (extend2 != 0) & (extend1 == extend2))) {
+	                                            reference += text.charAt(indi2 + 4);
+	                                            extended = true;
+	                                        }
+	                                    }
+	                                    if (extended) {
+	                                        text = text.substring(0, indi1) +
+	                                                "<ref type=\"bibr\" target=\"#b" + p + "\">" + reference + "</ref>" +
+	                                                text.substring(indi2 + 5, text.length());
+	                                        added = 8;
+	                                        return text;
+	                                    } else {
+	                                        text = text.substring(0, indi1) +
+	                                                "<ref type=\"bibr\" target=\"#b" + p + "\">" + reference + "</ref>" +
+	                                                text.substring(indi2 + 4, text.length());
+	                                        added = 7;
+	                                        return text;
+	                                    }
+	                                }
+	                                end = true;
+	                            }
+	                        }
+	                        i = indi2 + year.length() + added;
+	                        if (i >= text.length()) {
+	                            end = true;
+	                        }
+	                    }
+	                }
+	            }
+	            p++;
+	        }
+		}
         return text;
     }
 

@@ -1,6 +1,7 @@
 package org.grobid.core.layout;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Class for representing and exchanging a document block. A block is defined here relatively to
@@ -24,7 +25,7 @@ public class Block {
     public LayoutToken firstToken = null;
     public LayoutToken lastToken = null;
 
-    public ArrayList<LayoutToken> tokens = null;
+    public List<LayoutToken> tokens = null;
 
     // start position of the block in the original tokenization
     private int startToken = -1;
@@ -47,7 +48,7 @@ public class Block {
         tokens.add(lt);
     }
 
-    public ArrayList<LayoutToken> getTokens() {
+    public List<LayoutToken> getTokens() {
         return tokens;
     }
 

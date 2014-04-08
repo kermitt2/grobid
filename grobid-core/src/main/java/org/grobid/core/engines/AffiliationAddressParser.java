@@ -31,7 +31,7 @@ public class AffiliationAddressParser extends AbstractParser {
             input = TextUtilities.dehyphenize(input);
             StringTokenizer st = new StringTokenizer(input, " \n\t" + TextUtilities.fullPunctuations, true);
 
-            ArrayList<String> tokenizations = new ArrayList<String>();
+            List<String> tokenizations = new ArrayList<String>();
             while (st.hasMoreTokens()) {
                 String tok = st.nextToken();
                 if (tok.length() == 0) continue;
@@ -73,10 +73,10 @@ public class AffiliationAddressParser extends AbstractParser {
      * initial string.
      */
     public ArrayList<Affiliation> processReflow(String result,
-                                                ArrayList<String> tokenizations) throws Exception {
+                                                List<String> tokenizations) throws Exception {
         try {
-            ArrayList<String> affiliationBlocks = new ArrayList<String>();
-            ArrayList<String> subTokenizations = new ArrayList<String>();
+            List<String> affiliationBlocks = new ArrayList<String>();
+            List<String> subTokenizations = new ArrayList<String>();
 
             filterAffiliationAddress(result, tokenizations, affiliationBlocks, subTokenizations);
 
@@ -93,9 +93,9 @@ public class AffiliationAddressParser extends AbstractParser {
 
 
     private void filterAffiliationAddress(String result,
-                                          ArrayList<String> tokenizations,
-                                          ArrayList<String> affiliationBlocks,
-                                          ArrayList<String> subTokenizations) {
+                                          List<String> tokenizations,
+                                          List<String> affiliationBlocks,
+                                          List<String> subTokenizations) {
         StringTokenizer st = new StringTokenizer(result, "\n");
         //System.out.println(result);
         //System.out.println(tokenizations.toString());
@@ -163,8 +163,8 @@ public class AffiliationAddressParser extends AbstractParser {
         }
     }
 
-    private ArrayList<Affiliation> processingReflow(ArrayList<String> affiliationBlocks,
-                                                    ArrayList<String> tokenizations) throws Exception {
+    private ArrayList<Affiliation> processingReflow(List<String> affiliationBlocks,
+                                                    List<String> tokenizations) throws Exception {
         try {
             String res = runReflow(affiliationBlocks, tokenizations);
             return resultBuilder(res, tokenizations, false); // normally use pre-label because it is a reflow
@@ -202,8 +202,8 @@ public class AffiliationAddressParser extends AbstractParser {
 
 
     }
-    private String runReflow(ArrayList<String> affiliationBlocks,
-                             ArrayList<String> tokenizations) {
+    private String runReflow(List<String> affiliationBlocks,
+                             List<String> tokenizations) {
 //        StringBuilder res = new StringBuilder();
 //        DebugTahher tagger = new DebugTahher();
         try {
@@ -288,7 +288,7 @@ public class AffiliationAddressParser extends AbstractParser {
 
 
     private ArrayList<Affiliation> resultBuilder(String result,
-                                                 ArrayList<String> tokenizations,
+                                                 List<String> tokenizations,
                                                  boolean usePreLabel) {
         ArrayList<Affiliation> fullAffiliations = null;
         try {
@@ -808,9 +808,9 @@ public class AffiliationAddressParser extends AbstractParser {
      * Extract results from a labelled header in the training format without any string modification.
      */
     public StringBuffer trainingExtraction(String result,
-                                           ArrayList<String> tokenizations) {
-        ArrayList<String> affiliationBlocks = new ArrayList<String>();
-        ArrayList<String> tokenizationsAffiliation = new ArrayList<String>();
+                                           List<String> tokenizations) {
+        List<String> affiliationBlocks = new ArrayList<String>();
+        List<String> tokenizationsAffiliation = new ArrayList<String>();
 
         filterAffiliationAddress(result, tokenizations, affiliationBlocks, tokenizationsAffiliation);
         String resultAffiliation = runReflow(affiliationBlocks, tokenizationsAffiliation);

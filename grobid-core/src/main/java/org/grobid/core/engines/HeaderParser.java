@@ -124,7 +124,7 @@ public class HeaderParser extends AbstractParser {
 			} else {
 				header = doc.getHeaderFeatured(true, false, true);
 			}
-			ArrayList<String> tokenizations = doc.getTokenizationsHeader();
+			List<String> tokenizations = doc.getTokenizationsHeader();
  
 //			StringTokenizer st = new StringTokenizer(header, "\n");
  
@@ -245,7 +245,7 @@ public class HeaderParser extends AbstractParser {
 			}
 
 			// DOI pass
-			ArrayList<String> dois = doc.getDOIMatches();
+			List<String> dois = doc.getDOIMatches();
 			if (dois != null) {
 				if ((dois.size() == 1) && (resHeader != null)) {
 					resHeader.setDOI(dois.get(0));
@@ -262,7 +262,7 @@ public class HeaderParser extends AbstractParser {
 					if (dateParser == null) {
 						dateParser = new DateParser();
 					}
-					ArrayList<Date> dates = dateParser.processing(resHeader.getPublicationDate());
+					List<Date> dates = dateParser.processing(resHeader.getPublicationDate());
 					// most basic heuristic, we take the first date - to be
 					// revised...
 					if (dates != null) {
@@ -276,7 +276,7 @@ public class HeaderParser extends AbstractParser {
 					if (dateParser == null) {
 						dateParser = new DateParser();
 					}
-					ArrayList<Date> dates = dateParser.processing(resHeader.getSubmissionDate());
+					List<Date> dates = dateParser.processing(resHeader.getSubmissionDate());
 					if (dates != null) {
 						if (dates.size() > 0) {
 							resHeader.setNormalizedSubmissionDate(dates.get(0));
@@ -303,10 +303,9 @@ public class HeaderParser extends AbstractParser {
 
 			if (documentHeaderParts != null) {
 				List<String> tokenizationsHeader = new ArrayList<String>();
-				ArrayList<String> tokenizations = doc.getTokenizations();
+				List<String> tokenizations = doc.getTokenizations();
 				
 				for(DocumentPiece docPiece : documentHeaderParts) {
-					String header;
 					DocumentPointer dp1 = docPiece.a;
 					DocumentPointer dp2 = docPiece.b;
 					
@@ -367,7 +366,7 @@ public class HeaderParser extends AbstractParser {
 					List<Integer> authorsBlocks = new ArrayList<Integer>();
 					String[] authorSegments = null;
 					if (resHeader.getAuthors() != null) {
-						ArrayList<String> auts;
+						List<String> auts;
 						authorSegments = resHeader.getAuthors().split("\n");
 						if (authorSegments.length > 1) {
 							fragmentedAuthors = true;
@@ -423,7 +422,7 @@ public class HeaderParser extends AbstractParser {
 					}
 
 					if (resHeader.getEditors() != null) {
-						ArrayList<String> edits = new ArrayList<String>();
+						List<String> edits = new ArrayList<String>();
 						edits.add(resHeader.getEditors());
 
 						if (authorParser == null) {
@@ -443,7 +442,7 @@ public class HeaderParser extends AbstractParser {
 				}
 
 				// DOI pass
-				ArrayList<String> dois = doc.getDOIMatches();
+				List<String> dois = doc.getDOIMatches();
 				if (dois != null) {
 					if ((dois.size() == 1) && (resHeader != null)) {
 						resHeader.setDOI(dois.get(0));
@@ -460,7 +459,7 @@ public class HeaderParser extends AbstractParser {
 						if (dateParser == null) {
 							dateParser = new DateParser();
 						}
-						ArrayList<Date> dates = dateParser.processing(resHeader.getPublicationDate());
+						List<Date> dates = dateParser.processing(resHeader.getPublicationDate());
 						// most basic heuristic, we take the first date - to be
 						// revised...
 						if (dates != null) {
@@ -474,7 +473,7 @@ public class HeaderParser extends AbstractParser {
 						if (dateParser == null) {
 							dateParser = new DateParser();
 						}
-						ArrayList<Date> dates = dateParser.processing(resHeader.getSubmissionDate());
+						List<Date> dates = dateParser.processing(resHeader.getSubmissionDate());
 						if (dates != null) {
 							if (dates.size() > 0) {
 								resHeader.setNormalizedSubmissionDate(dates.get(0));
@@ -524,7 +523,7 @@ public class HeaderParser extends AbstractParser {
 	            boolean newline;
 	            boolean previousNewline = false;
 	            endblock = false;
-	            ArrayList<LayoutToken> tokens = block.getTokens();
+	            List<LayoutToken> tokens = block.getTokens();
 	            if (tokens == null)
 	                continue;
 	            int n = 0;
@@ -815,7 +814,7 @@ public class HeaderParser extends AbstractParser {
             }
 
             String header = doc.getHeaderFeatured(true, true, true);
-            ArrayList<String> tokenizations = doc.getTokenizationsHeader();
+            List<String> tokenizations = doc.getTokenizationsHeader();
 
             // we write the header untagged
             String outPathHeader = pathHeader + "/" + PDFFileName.replace(".pdf", ".header");
@@ -889,7 +888,7 @@ public class HeaderParser extends AbstractParser {
                 q++;
             }
             if (input.trim().length() > 1) {
-                ArrayList<String> inputs = new ArrayList<String>();
+                List<String> inputs = new ArrayList<String>();
                 inputs.add(input.trim());
                 if (dateParser == null) {
                     dateParser = new DateParser();
@@ -918,7 +917,7 @@ public class HeaderParser extends AbstractParser {
                 q++;
             }
             if (input.length() > 1) {
-                ArrayList<String> inputs = new ArrayList<String>();
+                List<String> inputs = new ArrayList<String>();
                 inputs.add(input.trim());
                 if (authorParser == null) {
                     authorParser = new AuthorParser();
@@ -947,7 +946,7 @@ public class HeaderParser extends AbstractParser {
                 q++;
             }
             if (input.length() > 1) {
-                ArrayList<String> inputs = new ArrayList<String>();
+                List<String> inputs = new ArrayList<String>();
                 inputs.add(input.trim());
                 if (citationParser == null) {
                     citationParser = new CitationParser();
@@ -1062,7 +1061,7 @@ public class HeaderParser extends AbstractParser {
 	 *            biblio item
 	 * @return a biblio item
 	 */
-	public BiblioItem resultExtraction(String result, boolean intro, ArrayList<String> tokenizations, BiblioItem biblio) {
+	public BiblioItem resultExtraction(String result, boolean intro, List<String> tokenizations, BiblioItem biblio) {
 		StringTokenizer st = new StringTokenizer(result, "\n");
 		String s1 = null;
 		String s2 = null;
@@ -1078,7 +1077,7 @@ public class HeaderParser extends AbstractParser {
 				continue;
 			}
 			StringTokenizer stt = new StringTokenizer(tok, "\t");
-			ArrayList<String> localFeatures = new ArrayList<String>();
+			List<String> localFeatures = new ArrayList<String>();
 			int i = 0;
 
 			// boolean newLine = false;
@@ -1365,7 +1364,7 @@ public class HeaderParser extends AbstractParser {
 	 *            list of tokens
 	 * @return a result
 	 */
-	private StringBuilder trainingExtraction(String result, boolean intro, ArrayList<String> tokenizations) {
+	private StringBuilder trainingExtraction(String result, boolean intro, List<String> tokenizations) {
 		// this is the main buffer for the whole header
 		StringBuilder buffer = new StringBuilder();
 
@@ -1384,7 +1383,7 @@ public class HeaderParser extends AbstractParser {
 				continue;
 			}
 			StringTokenizer stt = new StringTokenizer(tok, "\t");
-			// ArrayList<String> localFeatures = new ArrayList<String>();
+			// List<String> localFeatures = new ArrayList<String>();
 			int i = 0;
 
 			boolean newLine = false;
@@ -1628,7 +1627,7 @@ public class HeaderParser extends AbstractParser {
 				consolidator = new Consolidation();
 			}
 			consolidator.openDb();
-			ArrayList<BiblioItem> bibis = new ArrayList<BiblioItem>();
+			List<BiblioItem> bibis = new ArrayList<BiblioItem>();
 			boolean valid = consolidator.consolidateCrossrefGet(resHeader, bibis);
 			if ((valid) && (bibis.size() > 0)) {
 				BiblioItem bibo = bibis.get(0);

@@ -7,6 +7,7 @@ import org.grobid.core.features.FeaturesVectorDate;
 import org.grobid.core.utilities.TextUtilities;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.StringTokenizer;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -23,13 +24,13 @@ public class DateParser extends AbstractParser {
     /**
      * Processing of authors in header
      */
-    public ArrayList<Date> processing(String input) {
+    public List<Date> processing(String input) {
         if (input == null)
             return null;
 
-        ArrayList<Date> dates = null;
+        List<Date> dates = null;
 
-        ArrayList<String> dateBlocks = new ArrayList<String>();
+        List<String> dateBlocks = new ArrayList<String>();
         try {
             StringTokenizer st = new StringTokenizer(input, "([" + TextUtilities.punctuations, true);
 
@@ -76,7 +77,7 @@ public class DateParser extends AbstractParser {
                 String s1 = null;
                 String s2 = null;
                 //String s3 = null;
-                //ArrayList<String> localFeatures = new ArrayList<String>();
+                //List<String> localFeatures = new ArrayList<String>();
                 while (st3.hasMoreTokens()) {
                     String s = st3.nextToken().trim();
                     if (i == 0) {
@@ -289,7 +290,7 @@ public class DateParser extends AbstractParser {
     /**
      * Extract results from a date string in the training format without any string modification.
      */
-    public StringBuffer trainingExtraction(ArrayList<String> inputs) {
+    public StringBuffer trainingExtraction(List<String> inputs) {
         StringBuffer buffer = new StringBuffer();
         try {
             if (inputs == null)
@@ -298,8 +299,8 @@ public class DateParser extends AbstractParser {
             if (inputs.size() == 0)
                 return null;
 
-            ArrayList<String> tokenizations = new ArrayList<String>();
-            ArrayList<String> dateBlocks = new ArrayList<String>();
+            List<String> tokenizations = new ArrayList<String>();
+            List<String> dateBlocks = new ArrayList<String>();
             for (String input : inputs) {
                 if (input == null)
                     continue;
@@ -369,7 +370,7 @@ public class DateParser extends AbstractParser {
                 String s1 = null;
                 String s2 = null;
                 //String s3 = null;
-                //ArrayList<String> localFeatures = new ArrayList<String>();
+                //List<String> localFeatures = new ArrayList<String>();
                 while (st3.hasMoreTokens()) {
                     String s = st3.nextToken().trim();
                     if (i == 0) {

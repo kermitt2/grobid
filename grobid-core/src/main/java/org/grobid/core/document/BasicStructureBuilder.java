@@ -86,7 +86,7 @@ public class BasicStructureBuilder {
 //            Integer ii = i;
 
             String localText = block.getText();
-            ArrayList<LayoutToken> tokens = block.tokens;
+            List<LayoutToken> tokens = block.tokens;
 
             if ((localText != null) && (tokens != null)) {
                 if (tokens.size() > 0) {
@@ -141,7 +141,7 @@ public class BasicStructureBuilder {
             for (Block block : doc.getBlocks()) {
 
                 String localText = block.getText();
-                ArrayList<LayoutToken> tokens = block.tokens;
+                List<LayoutToken> tokens = block.tokens;
 
                 if ((localText != null) && (tokens.size() > 0)) {
 
@@ -316,7 +316,7 @@ public class BasicStructureBuilder {
             //System.out.println("nb clusters: " + clusters.size());
             for (Cluster cluster : doc.getClusters()) {
                 if ((cluster.getNbBlocks() < (doc.getBlocks().size() / 5)) && (cluster.getNbBlocks() < 20)) {
-                    ArrayList<Integer> blo = cluster.getBlocks2();
+                    List<Integer> blo = cluster.getBlocks2();
                     for (Integer b : blo) {
                         if (blockSectionTitles.contains(b)) {
                             if (candidateCluster == null) {
@@ -336,7 +336,7 @@ public class BasicStructureBuilder {
                         newBlockSectionTitles.add(bl);
                 }
 
-                ArrayList<Integer> blockClusterTitles = candidateCluster.getBlocks2();
+                List<Integer> blockClusterTitles = candidateCluster.getBlocks2();
                 if (blockClusterTitles.size() < 20) {
                     for (Integer bl : blockClusterTitles) {
                         if (!newBlockSectionTitles.contains(bl))
