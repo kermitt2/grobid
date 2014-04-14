@@ -110,8 +110,8 @@ public class TEIFulltextSaxParser extends DefaultHandler {
                 }
             } else if (qName.equals("p")) {
                 currentTags.push("<paragraph>");
-            } else if (qName.equals("front")) {
-                currentTags.push("<header>");
+            //} else if (qName.equals("front")) {
+                //currentTags.push("<header>");
             } else if (qName.equals("other")) {
                 currentTags.push("<other>");
             } else if (qName.equals("ref")) {
@@ -133,7 +133,7 @@ public class TEIFulltextSaxParser extends DefaultHandler {
                         }
                     }
                 }
-            } else if (qName.equals("note")) {
+            /*} else if (qName.equals("note")) {
                 int length = atts.getLength();
 
                 // Process each attribute
@@ -152,11 +152,11 @@ public class TEIFulltextSaxParser extends DefaultHandler {
                             }
                         }
                     }
-                }
+                }*/
             } else if (qName.equals("formula")) {
                 currentTags.push("<equation>");
-            } else if (qName.equals("page") | qName.equals("pages")) {
-                currentTags.push("<page>");
+            //} else if (qName.equals("page") | qName.equals("pages")) {
+            //    currentTags.push("<page>");
             } else if (qName.equals("head")) {
                 if (figureBlock) {
                     currentTags.push("<figure_head>");
@@ -165,10 +165,10 @@ public class TEIFulltextSaxParser extends DefaultHandler {
                 }
             } else if (qName.equals("figDesc")) {
                 currentTags.push("<label>");
-            } else if (qName.equals("label")) {
-                currentTags.push("<reference_marker>");
-            } else if (qName.equals("bibl")) {
-                currentTags.push("<reference>");
+            //} else if (qName.equals("label")) {
+            //    currentTags.push("<reference_marker>");
+            //} else if (qName.equals("bibl")) {
+            //    currentTags.push("<reference>");
             }
             /*else if (qName.equals("subsection")) {
                    currentTags.push("<subsection>");
@@ -203,11 +203,11 @@ public class TEIFulltextSaxParser extends DefaultHandler {
     }
 
     private void writeData(String qName, boolean pop) {
-        if ((qName.equals("front")) || (qName.equals("other")) || (qName.equals("note")) ||
-                (qName.equals("ref")) || (qName.equals("page")) || (qName.equals("pages")) ||
-                (qName.equals("bibl")) || (qName.equals("figure_head")) ||
-                (qName.equals("label")) || (qName.equals("p")) || (qName.equals("paragraph")) ||
-                (qName.equals("head")) || (qName.equals("div")) || (qName.equals("figDesc")) ||
+        if ((qName.equals("other")) || 
+                (qName.equals("ref")) || 
+                (qName.equals("figure_head")) ||
+                (qName.equals("p")) || (qName.equals("paragraph")) ||
+                (qName.equals("div")) || (qName.equals("figDesc")) ||
                 (qName.equals("table")) || (qName.equals("trash")) ||
                 (qName.equals("formula")) || (qName.equals("item"))
                 ) {
