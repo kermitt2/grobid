@@ -14,6 +14,7 @@ import org.grobid.core.lang.Language;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.LanguageUtilities;
 import org.grobid.core.utilities.TextUtilities;
+import org.grobid.core.utilities.Pair;
 import org.grobid.core.layout.Block;
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.features.FeatureFactory;
@@ -128,7 +129,7 @@ public class FullTextParser extends AbstractParser {
     }
 
     // Need to use new segmentation model
-    @Deprecated
+    //@Deprecated
     public Document processing2(String input,
                                 boolean consolidateHeader,
                                 boolean consolidateCitations) throws Exception {
@@ -156,9 +157,11 @@ public class FullTextParser extends AbstractParser {
 
             //String fulltext = doc.getFulltextFeatured(true, true);
 			SortedSet<DocumentPiece> documentBodyParts = doc.getDocumentPart(SegmentationLabel.BODY);
-			List<String> tokenizations = doc.getTokenizations();
-			
-			String bodytext = getBodyTextFeatured(doc, documentBodyParts);
+			//List<String> tokenizations = doc.getTokenizations();
+			 
+			Pair<String,List<String>> featSeg = getBodyTextFeatured(doc, documentBodyParts);
+			String bodytext = featSeg.getA();
+			List<String> tokenizationsBody = featSeg.getB();
             String rese = label(bodytext);
 
             // set the different sections of the Document object
@@ -185,21 +188,21 @@ public class FullTextParser extends AbstractParser {
                         marker = marker.replace(" ", "");
                         bds.setRefSymbol(marker);
                     }
-                    BiblioItem bib = citationParser.processing(bds.getRawBib(), consolidateCitations);
-                    bds.setResBib(bib);
+                    //BiblioItem bib = citationParser.processing(bds.getRawBib(), consolidateCitations);
+                    //bds.setResBib(bib);
                 }
             }
 
             // final combination
-            toTEI(doc, rese, tokenizations, resHeader, false, null, false);
+            toTEI(doc, rese, tokenizationsBody, resHeader, resCitations, false, null, false);
             return doc;
         } catch (Exception e) {
             throw new GrobidException("An exception occurred while running Grobid.", e);
         }
     }
 
-	static public String getBodyTextFeatured(Document doc, 
-									SortedSet<DocumentPiece> documentBodyParts) {
+	static public Pair<String,List<String>> getBodyTextFeatured(Document doc, 
+												SortedSet<DocumentPiece> documentBodyParts) {
 		if ((documentBodyParts == null) || (documentBodyParts.size() == 0)) {				
 			return null;
 		}
@@ -225,8 +228,8 @@ public class FullTextParser extends AbstractParser {
         int documentLength = 0;
         int pageLength = 0; // length of the current page
 
-		//List<String> tokenizationsBody = new ArrayList<String>();
-		//List<String> tokenizations = doc.getTokenizations();
+		List<String> tokenizationsBody = new ArrayList<String>();
+		List<String> tokenizations = doc.getTokenizations();
 
         // we calculate current document length and intialize the body tokenization structure
 		for(DocumentPiece docPiece : documentBodyParts) {
@@ -236,7 +239,7 @@ public class FullTextParser extends AbstractParser {
             int tokens = dp1.getTokenDocPos();
             int tokene = dp2.getTokenDocPos();
             for (int i = tokens; i < tokene; i++) {
-                //tokenizationsBody.add(tokenizations.get(i)); 
+                tokenizationsBody.add(tokenizations.get(i)); 
 				documentLength++;
             }
 		}
@@ -582,7 +585,7 @@ public class FullTextParser extends AbstractParser {
         if (previousFeatures != null)
             fulltext.append(previousFeatures.printVector());
 
-        return fulltext.toString();
+        return new Pair<String,List<String>>(fulltext.toString(), tokenizationsBody);
 	}
 
     /**
@@ -620,28 +623,25 @@ public class FullTextParser extends AbstractParser {
             //String fulltext = doc.getFulltextFeatured(true, true);
 			SortedSet<DocumentPiece> documentBodyParts = doc.getDocumentPart(SegmentationLabel.BODY);	
 			if (documentBodyParts != null) {			
-				String bodytext = getBodyTextFeatured(doc, documentBodyParts);
-
-				List<String> tokenizationsBody = new ArrayList<String>();
+				Pair<String,List<String>> featSeg = getBodyTextFeatured(doc, documentBodyParts);
+				String bodytext = featSeg.getA();
+				List<String> tokenizationsBody = featSeg.getB();
+				
+				/*List<String> tokenizationsBody = new ArrayList<String>();
 				List<String> tokenizations = doc.getTokenizations();
 				
 				for(DocumentPiece docPiece : documentBodyParts) {
 					DocumentPointer dp1 = docPiece.a;
 					DocumentPointer dp2 = docPiece.b;
 					
-					//int blockIndex = dp1.getBlockPtr();
-
-				    //int dp1.getTokenBlockPos();
-				    //int dp1.getTokenDocPos();
-					
-					//Block blo = blocks.get(blocknum);
 		            int tokens = dp1.getTokenDocPos();
 		            int tokene = dp2.getTokenDocPos();
 		            for (int i = tokens; i < tokene; i++) {
 		                tokenizationsBody.add(tokenizations.get(i)); 
 		            }
 				}
-
+				*/
+				
 	            // we write the full text untagged
 	            String outPathFulltext = pathFullText + "/" + PDFFileName.replace(".pdf", ".training.fulltext");
 	            Writer writer = new OutputStreamWriter(new FileOutputStream(new File(outPathFulltext), false), "UTF-8");
@@ -847,10 +847,10 @@ public class FullTextParser extends AbstractParser {
                     tableBlock = false;
                 }
 
-                output = writeField(buffer, s1, lastTag0, s2, "<header>", "<front>", addSpace, 3);
-                if (!output) {
+                //output = writeField(buffer, s1, lastTag0, s2, "<header>", "<front>", addSpace, 3);
+                //if (!output) {
                     output = writeField(buffer, s1, lastTag0, s2, "<other>", "<note type=\"other\">", addSpace, 3);
-                }
+                //}
                 // for paragraph we must distinguish starting and closing tags
                 if (!output) {
                     if (closeParagraph) {
@@ -859,7 +859,7 @@ public class FullTextParser extends AbstractParser {
                         output = writeFieldBeginEnd(buffer, s1, lastTag, s2, "<paragraph>", "<p>", addSpace, 3);
                     }
                 }
-                if (!output) {
+                /*if (!output) {
                     output = writeField(buffer, s1, lastTag0, s2, "<page_header>", "<note place=\"headnote\">",
                             addSpace, 3);
                 }
@@ -872,13 +872,13 @@ public class FullTextParser extends AbstractParser {
                 }
                 if (!output) {
                     output = writeFieldBeginEnd(buffer, s1, lastTag0, s2, "<reference>", "<bibl>", addSpace, 3);
-                }
-                if (!output) {
+                }*/
+                /*if (!output) {
                     if (closeParagraph) {
                         output = writeField(buffer, s1, "", s2, "<reference_marker>", "<label>", addSpace, 3);
                     } else
                         output = writeField(buffer, s1, lastTag0, s2, "<reference_marker>", "<label>", addSpace, 3);
-                }
+                }*/
                 if (!output) {
                     output = writeField(buffer, s1, lastTag0, s2, "<citation_marker>", "<ref type=\"biblio\">",
                             addSpace, 3);
@@ -1168,7 +1168,7 @@ public class FullTextParser extends AbstractParser {
                 case "<other>":
                     buffer.append("</note>\n\n");
                     break;
-                case "<header>":
+                /*case "<header>":
                     buffer.append("</front>\n\n");
                     break;
                 case "<page_header>":
@@ -1180,7 +1180,7 @@ public class FullTextParser extends AbstractParser {
                 case "<reference>":
                     buffer.append("</bibl>\n\n");
                     res = true;
-                    break;
+                    break;*/
                 case "<paragraph>":
                     buffer.append("</p>\n\n");
                     res = true;
@@ -1209,18 +1209,18 @@ public class FullTextParser extends AbstractParser {
                 case "<trash>":
                     buffer.append("</trash>\n\n");
                     break;
-                case "<reference_marker>":
+                /*case "<reference_marker>":
                     buffer.append("</label>");
                     break;
                 case "<citation_marker>":
                     buffer.append("</ref>");
-                    break;
+                    break;*/
                 case "<figure_marker>":
                     buffer.append("</ref>");
                     break;
-                case "<page>":
+                /*case "<page>":
                     buffer.append("</page>\n\n");
-                    break;
+                    break;*/
                 default:
                     res = false;
                     break;
@@ -1238,6 +1238,7 @@ public class FullTextParser extends AbstractParser {
                        String rese,
                        List<String> tokenizations,
                        BiblioItem resHeader,
+					   List<BibDataSet> resCitations,
                        boolean peer,
                        BiblioItem catalogue,
                        boolean withStyleSheet) {
@@ -1248,8 +1249,9 @@ public class FullTextParser extends AbstractParser {
         StringBuffer tei;
         try {
             tei = teiFormater.toTEIHeader(resHeader, peer, withStyleSheet, null);
+System.out.println(rese);
             tei = teiFormater.toTEIBodyML(tei, rese, resHeader, doc.getBibDataSets(), tokenizations, doc);
-            tei = teiFormater.toTEIReferences(tei, doc.getBibDataSets());
+            tei = teiFormater.toTEIReferences(tei, resCitations);
 
             tei.append("\t\t</back>\n");
             tei.append("\t</text>\n");
