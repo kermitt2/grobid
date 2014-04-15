@@ -46,7 +46,6 @@ public class ReferenceSegmenter {
     }
 
     public static List<String> segmentReferences(String references) {
-
         List<String> grobidResults = new ArrayList<String>();
         int best = 0;
         Matcher bestMatcher;
