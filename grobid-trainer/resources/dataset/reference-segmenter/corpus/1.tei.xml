@@ -1,0 +1,32 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+            <bibl>Adelman, J. S., Marquis, S. J., &amp; Sabatos-DeVito, M. G. (2010). Letters in words are read simultaneously, not in left-to-right sequence. Psychological Science, 21, 1799–1801.</bibl>
+            <bibl>Arditi, A., Knoblauch, K., &amp; Grunwald, I. (1990). Reading with ﬁxed and variable character pitch. Journal of the Optical Society of America, 7, 2011–2015.</bibl>
+            <bibl>Bernard, J. -B., &amp; Chung, S. T. L. (2011). The dependence of crowding on ﬂanker complex- ity and target–ﬂanker similarity. Journal of Vision, 11(8), 1–16 (1).</bibl>
+            <bibl>Chanceaux, M., &amp; Grainger, J. (2012). Serial position effects in the identiﬁcation of letters, digits, symbols, and shapes in peripheral vision. Acta Psychologica, 141, 149–158.</bibl>
+            <bibl>Chanceaux, M., Mathôt, S., &amp; Grainger, J. (2013). Flank to the left, ﬂank to the right: Testing the modiﬁed receptive ﬁeld hypothesis of letter-speciﬁc crowding. Journal of Cognitive Psychology, 25, 774–780.</bibl>
+            <bibl>Chung, S. T. L. (2002). The effect of letter spacing on reading speed in central and periph- eral vision. Investigative Ophthalmology &amp; Visual Science, 43, 1270–1276.</bibl>
+            <bibl>Grainger, J. (2008). Cracking the orthographic code: An introduction. Language and Cognitive Processes, 23, 1–35.</bibl>
+            <bibl>Grainger, J., Tydgat, I., &amp; Isselé, J. (2010). Crowding affects letters and symbols differ- ently. Journal of Experimental Psychology: Human Perception and Performance, 36, 673–688.</bibl>
+            <bibl>Grainger, J., &amp; Van Heuven, W. (2003). Modeling letter position coding in printed word perception. In P. Bonin (Ed.), The mental lexicon (pp. 1–24). New York: Nova Science Publishers.</bibl>
+            <bibl>Johnson, R. L., &amp; Eisler, M. E. (2012). The importance of the ﬁrst and last letter in words during sentence reading. Acta Psychologica, 141, 336–351.</bibl>
+            <bibl>Legge, G. E., Pelli, D.G., Rubin, G. S., &amp; Schleske, M. M. (1985). Psychophysics of reading. I. Normal vision. Vision Research, 25, 239–252.</bibl>
+            <bibl>Perea, M., Moret-Tatay, C., &amp; Gomez, P. (2011). The effects of inter letter spacing in visual-word recognition. Acta Psychologica, 137, 345–351.</bibl>
+            <bibl>Scaltritti, M., &amp; Balota, D. A. (2013). Are all letters processed equally in parallel? Further evidence of a robust ﬁrst-letter advantage. Acta Psychologica, 144, 397–410.</bibl>
+            <bibl>Stevens, M., &amp; Grainger, J. (2003). Letter visibility and the viewing position effect in visual word recognition. Perception &amp; Psychophysics, 65, 133–151.</bibl>
+            <bibl>Tripathy, S. P., &amp; Cavanagh, P. (2002). The extent of crowding in peripheral vision does not scale with target size. Vision Research, 42, 2357–2369.</bibl>
+            <bibl>Tripathy, S., Cavanagh, P., &amp; Bedell, H. (2013, May). Large interaction zones for visual crowding for brieﬂy presented peripheral stimuli. Poster session presented at 13th Annual Meeting of Vision Science Society, Naples, Florida.</bibl>
+            <bibl>Tydgat, I., &amp; Grainger, J. (2009). Serial position effects in the identiﬁcation of letters, digits, and symbols. Journal of Experimental Psychology: Human Perception and Performance, 35, 480–498.</bibl>
+            <bibl>Vinkcier, F., Qiao, E., Pallier, C., Dehaene, S., &amp; Cohen, L. (2011). The impact of letter spacing on reading: A test of the bigram coding hypothesis. Journal of Vision, 11, 1–21.</bibl>
+            <bibl>Whitney, C. (2008). Supporting the serial in the SERIOL model. Language &amp; Cognitive Processes, 23, 824–865.</bibl>
+            <bibl>Yu, D., Cheung, S. -H., Legge, G. E., &amp; Chung, S. T. L. (2007). Effect of letter spacing on visual span and reading speed. Journal of Vision, 7, 1–10.</bibl>
+            <bibl>Zorzi, M., Barbiero, C., Facoetti, A., Lonciari, L., Carrozzi, M., Montico, M., et al. (2012). Extra-large letter spacing improves reading in dyslexia. Proceedings of the National Academy of Sciences, 109, 11455–11459.</bibl>
+
+        </listBibl>
+    </text>
+</tei>

@@ -1,0 +1,16 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+            <bibl><label>8.</label> Barkley RA (1997) Deﬁane children: a clinician’s manual for assessment and parent training. Guilford Press, New York</bibl>
+            <bibl><label>9.</label> Sukhodolsky DG, Scahill L (2012) Cognitive-behavioral therapy for anger and aggression in children. Guilford Press, New York</bibl>
+            <bibl><label>10.</label> Sukhodolsky DG, Vitulano LA, Carroll DH, McGuire J, Leckman JF, Scahill L (2009) Randomized trial of anger control training for adolescents with Tourette’s syndrome and disruptive behav- ior. J Am Acad Child Adolesc Psychiatry 48:413–421</bibl>
+            <bibl> <label>11.</label>Barkley RA, Edwards G, Laneri M, Fletcher K, Metevia L (2001) The efﬁcacy of problem-solving communication training alone, behavior management training alone, and their combination for parent–adolescent conﬂict in teenagers with ADHD and ODD. J Consul Clin Psych 69:926–941</bibl>
+            <bibl><label>12.</label> Guy W (1976) ECDEU assessment manual for psychopharma- cology (publication 76–338). Department of Health, Education and Welfare, Washington</bibl>
+            <bibl><label>13.</label> Piacentini J, Woods DW, Scahill L, Wilhelm S, Peterson AL, Chang S et al (2010) Behavior therapy for children with Tourette disorder: a randomized controlled trial. JAMA 303:1929–1937</bibl>
+            <bibl> <label>14.</label>Scahill L, Leckman JF, Schultz RT, Katsovich L, Peterson BS (2003) A placebo-controlled trial of risperidone in Tourette syndrome. Neurol 60:1130–1135</bibl>
+        </listBibl>
+    </text>
+</tei>

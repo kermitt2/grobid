@@ -116,8 +116,9 @@ public class TrainerRunner {
 			trainer = new PatentParserTrainer();
 		} else if (model.equals("segmentation")) {
 			trainer = new SegmentationTrainer();
-		}
-		else {
+		} else if (model.equals("reference-segmenter")) {
+            trainer = new ReferenceSegmenterTrainer();
+        } else {
 			throw new IllegalStateException("The model " + model + " is unknown.");
 		}
 

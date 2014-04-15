@@ -66,7 +66,7 @@ public class CitationParser extends AbstractParser {
             if (st.countTokens() == 0)
                 return null;
 
-            List<String> tokenizations = new ArrayList<String>();
+            List<String> tokenizations = new ArrayList<>();
             while (st.hasMoreTokens()) {
                 final String tok = st.nextToken();
                 tokenizations.add(tok);
@@ -155,7 +155,7 @@ public class CitationParser extends AbstractParser {
         }
     }
 
-    public List<BibDataSet> processingReferenceSection(Document doc,boolean consolidate) throws Exception {
+    public List<BibDataSet> processingReferenceSection(Document doc, boolean consolidate) throws Exception {
         ArrayList<BibDataSet> results = new ArrayList<>();
         try {
 

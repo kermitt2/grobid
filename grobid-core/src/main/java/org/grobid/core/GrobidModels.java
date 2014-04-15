@@ -14,6 +14,7 @@ public enum GrobidModels {
     AFFIILIATON_ADDRESS("affiliation-address"),
     SEGMENTATION("segmentation"),
     CITATION("citation"),
+    REFERENCE_SEGMENTER("reference-segmenter"),
     DATE("date"),
     EBOOK("ebook"),
     ENTITIES_CHEMISTRY("entities/chemistry"),
