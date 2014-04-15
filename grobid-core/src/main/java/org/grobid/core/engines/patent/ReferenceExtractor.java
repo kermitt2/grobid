@@ -9,6 +9,7 @@ import org.grobid.core.data.PatentItem;
 import org.grobid.core.document.OPSService;
 import org.grobid.core.document.PatentDocument;
 import org.grobid.core.engines.CitationParser;
+import org.grobid.core.engines.EngineParsers;
 import org.grobid.core.engines.tagging.GenericTagger;
 import org.grobid.core.engines.tagging.TaggerFactory;
 import org.grobid.core.exceptions.GrobidException;
@@ -60,7 +61,7 @@ public class ReferenceExtractor implements Closeable {
     private GenericTagger taggerPatent = null;
     private GenericTagger taggerNPL = null;
     private GenericTagger taggerAll = null;
-    private CitationParser nplParser = null;
+//    private CitationParser nplParser = null;
     private PatentRefParser patentParser = null;
     private Consolidation consolidator = null;
 
@@ -80,15 +81,20 @@ public class ReferenceExtractor implements Closeable {
     private String path = null;     // path where the patent file is stored
 
     private static String delimiters = " \n\t" + TextUtilities.fullPunctuations;
+    private EngineParsers parsers;
 
     public void setDocumentPath(String dirName) {
         path = dirName;
     }
 
 
-    // constructors
     public ReferenceExtractor() {
-    	taggerNPL = TaggerFactory.getTagger(GrobidModels.PATENT_NPL);
+        this(new EngineParsers());
+    }
+    // constructors
+    public ReferenceExtractor(EngineParsers parsers) {
+        this.parsers = parsers;
+        taggerNPL = TaggerFactory.getTagger(GrobidModels.PATENT_NPL);
     	taggerAll = TaggerFactory.getTagger(GrobidModels.PATENT_ALL);
     	taggerPatent = TaggerFactory.getTagger(GrobidModels.PATENT_PATENT);
     }
@@ -257,10 +263,7 @@ public class ReferenceExtractor implements Closeable {
                 patentParser = new PatentRefParser();
             }
             // parser for non patent references
-            if (nplParser == null) {
-                nplParser = new CitationParser(); 
-            }
-			
+
             // for keeping track of the original string (including spaces)
             ArrayList<String> tokenizations = new ArrayList<String>();
 
@@ -678,7 +681,7 @@ public class ReferenceExtractor implements Closeable {
             if (articles != null) {
                 int k = 0;
                 for (String ref : referencesNPL) {
-                    BiblioItem result = nplParser.processing(ref, consolidate);
+                    BiblioItem result = parsers.getCitationParser().processing(ref, consolidate);
                     BibDataSet bds = new BibDataSet();
                     bds.setResBib(result);
                     bds.setRawBib(ref);
@@ -1059,13 +1062,10 @@ public class ReferenceExtractor implements Closeable {
                 }
 
                 if (inputs.size() > 0) {
-                    if (nplParser == null) {
-                        nplParser = new CitationParser();
-                    }
                     for (String inpu : inputs) {
                         ArrayList<String> inpus = new ArrayList<String>();
                         inpus.add(inpu);
-                        StringBuilder bufferReference = nplParser.trainingExtraction(inpus);
+                        StringBuilder bufferReference = parsers.getCitationParser().trainingExtraction(inpus);
                         if (bufferReference != null) {
                             allBufferReference.append(bufferReference.toString() + "\n");
                         }
@@ -1213,9 +1213,5 @@ public class ReferenceExtractor implements Closeable {
         taggerAll = null;
         taggerNPL = null;
         taggerPatent = null;
-        if (nplParser != null) {
-            nplParser.close();
-            nplParser = null;
-        }
     }
 }

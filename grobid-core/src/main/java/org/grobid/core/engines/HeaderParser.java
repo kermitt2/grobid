@@ -7,19 +7,19 @@ import org.grobid.core.data.BiblioItem;
 import org.grobid.core.data.Date;
 import org.grobid.core.data.Person;
 import org.grobid.core.document.Document;
-import org.grobid.core.document.TEIFormater;
 import org.grobid.core.document.DocumentPiece;
 import org.grobid.core.document.DocumentPointer;
+import org.grobid.core.document.TEIFormater;
 import org.grobid.core.exceptions.GrobidException;
+import org.grobid.core.features.FeatureFactory;
+import org.grobid.core.features.FeaturesVectorHeader;
 import org.grobid.core.lang.Language;
+import org.grobid.core.layout.Block;
+import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.utilities.Consolidation;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.LanguageUtilities;
 import org.grobid.core.utilities.TextUtilities;
-import org.grobid.core.features.FeatureFactory;
-import org.grobid.core.features.FeaturesVectorHeader;
-import org.grobid.core.layout.Block;
-import org.grobid.core.layout.LayoutToken;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -30,11 +30,10 @@ import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.SortedSet;
 import java.util.StringTokenizer;
 import java.util.concurrent.TimeoutException;
-import java.util.SortedSet;
 import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  * @author Patrice Lopez
@@ -44,20 +43,17 @@ public class HeaderParser extends AbstractParser {
 
 	private LanguageUtilities languageUtilities = LanguageUtilities.getInstance();
 
-	private AuthorParser authorParser = null;
-	private DateParser dateParser = null;
-	private AffiliationAddressParser affiliationAddressParser = null;
-	private CitationParser citationParser = null;
-	private Segmentation segmentationParser = null;
 	private Consolidation consolidator = null;
 //	private Document doc = null;
 
 	private File tmpPath = null;
+    private EngineParsers parsers;
 //	private String pathXML = null;
 
-	public HeaderParser() {
+	public HeaderParser(EngineParsers parsers) {
 		super(GrobidModels.HEADER);
-		GrobidProperties.getInstance();
+        this.parsers = parsers;
+        GrobidProperties.getInstance();
 		tmpPath = GrobidProperties.getTempPath();
 	}
 
@@ -101,11 +97,8 @@ public class HeaderParser extends AbstractParser {
 	 */ 
 	public Pair<String, Document> processing2(String input, boolean consolidate, BiblioItem resHeader) throws TimeoutException {
         try {
-			if (segmentationParser == null) {
-				segmentationParser = new Segmentation();
-			}
-		
-            Document doc = segmentationParser.processing(input);
+
+            Document doc = parsers.getSegmentationParser().processing(input);
 
 			String tei = processingHeaderSection(doc, consolidate, resHeader);
             return new ImmutablePair<>(tei, doc);
@@ -174,13 +167,10 @@ public class HeaderParser extends AbstractParser {
 					if (authorSegments.length > 1) {
 						fragmentedAuthors = true;
 					}
-					if (authorParser == null) {
-						authorParser = new AuthorParser();
-					}
 					for (int k = 0; k < authorSegments.length; k++) {
 						auts = new ArrayList<String>();
 						auts.add(authorSegments[k]);
-						List<Person> localAuthors = authorParser.processingHeader(auts);
+						List<Person> localAuthors = parsers.getAuthorParser().processingHeader(auts);
 						if (localAuthors != null) {
 							for (Person pers : localAuthors) {
 								resHeader.addFullAuthor(pers);
@@ -193,10 +183,7 @@ public class HeaderParser extends AbstractParser {
 					}
 				}
 
-				if (affiliationAddressParser == null) {
-					affiliationAddressParser = new AffiliationAddressParser();
-				}
-				resHeader.setFullAffiliations(affiliationAddressParser.processReflow(res, tokenizations));
+				resHeader.setFullAffiliations(parsers.getAffiliationAddressParser().processReflow(res, tokenizations));
 				resHeader.attachEmails();
 				boolean attached = false;
 				if (fragmentedAuthors && !hasMarker) {
@@ -228,18 +215,12 @@ public class HeaderParser extends AbstractParser {
 					ArrayList<String> edits = new ArrayList<String>();
 					edits.add(resHeader.getEditors());
 
-					if (authorParser == null) {
-						authorParser = new AuthorParser();
-					}
-					resHeader.setFullEditors(authorParser.processingHeader(edits));
+					resHeader.setFullEditors(parsers.getAuthorParser().processingHeader(edits));
 					// resHeader.setFullEditors(authorParser.processingCitation(edits));
 				}
 
 				if (resHeader.getReference() != null) {
-					if (citationParser == null) {
-						citationParser = new CitationParser();
-					}
-					BiblioItem refer = citationParser.processing(resHeader.getReference(), false);
+					BiblioItem refer = parsers.getCitationParser().processing(resHeader.getReference(), false);
 					BiblioItem.correct(resHeader, refer);
 				}
 			}
@@ -259,10 +240,7 @@ public class HeaderParser extends AbstractParser {
 			// normalization of dates
 			if (resHeader != null) {
 				if (resHeader.getPublicationDate() != null) {
-					if (dateParser == null) {
-						dateParser = new DateParser();
-					}
-					List<Date> dates = dateParser.processing(resHeader.getPublicationDate());
+					List<Date> dates = parsers.getDateParser().processing(resHeader.getPublicationDate());
 					// most basic heuristic, we take the first date - to be
 					// revised...
 					if (dates != null) {
@@ -273,10 +251,7 @@ public class HeaderParser extends AbstractParser {
 				}
 
 				if (resHeader.getSubmissionDate() != null) {
-					if (dateParser == null) {
-						dateParser = new DateParser();
-					}
-					List<Date> dates = dateParser.processing(resHeader.getSubmissionDate());
+					List<Date> dates = parsers.getDateParser().processing(resHeader.getSubmissionDate());
 					if (dates != null) {
 						if (dates.size() > 0) {
 							resHeader.setNormalizedSubmissionDate(dates.get(0));
@@ -371,13 +346,10 @@ public class HeaderParser extends AbstractParser {
 						if (authorSegments.length > 1) {
 							fragmentedAuthors = true;
 						}
-						if (authorParser == null) {
-							authorParser = new AuthorParser();
-						}
 						for (int k = 0; k < authorSegments.length; k++) {
 							auts = new ArrayList<String>();
 							auts.add(authorSegments[k]);
-							List<Person> localAuthors = authorParser.processingHeader(auts);
+							List<Person> localAuthors = parsers.getAuthorParser().processingHeader(auts);
 							if (localAuthors != null) {
 								for (Person pers : localAuthors) {
 									resHeader.addFullAuthor(pers);
@@ -390,10 +362,7 @@ public class HeaderParser extends AbstractParser {
 						}
 					}
 
-					if (affiliationAddressParser == null) {
-						affiliationAddressParser = new AffiliationAddressParser();
-					}
-					resHeader.setFullAffiliations(affiliationAddressParser.processReflow(res, tokenizations));
+					resHeader.setFullAffiliations(parsers.getAffiliationAddressParser().processReflow(res, tokenizations));
 					resHeader.attachEmails();
 					boolean attached = false;
 					if (fragmentedAuthors && !hasMarker) {
@@ -425,18 +394,12 @@ public class HeaderParser extends AbstractParser {
 						List<String> edits = new ArrayList<String>();
 						edits.add(resHeader.getEditors());
 
-						if (authorParser == null) {
-							authorParser = new AuthorParser();
-						}
-						resHeader.setFullEditors(authorParser.processingHeader(edits));
+						resHeader.setFullEditors(parsers.getAuthorParser().processingHeader(edits));
 						// resHeader.setFullEditors(authorParser.processingCitation(edits));
 					}
 
 					if (resHeader.getReference() != null) {
-						if (citationParser == null) {
-							citationParser = new CitationParser();
-						}
-						BiblioItem refer = citationParser.processing(resHeader.getReference(), false);
+						BiblioItem refer = parsers.getCitationParser().processing(resHeader.getReference(), false);
 						BiblioItem.correct(resHeader, refer);
 					}
 				}
@@ -456,10 +419,7 @@ public class HeaderParser extends AbstractParser {
 				// normalization of dates
 				if (resHeader != null) {
 					if (resHeader.getPublicationDate() != null) {
-						if (dateParser == null) {
-							dateParser = new DateParser();
-						}
-						List<Date> dates = dateParser.processing(resHeader.getPublicationDate());
+						List<Date> dates = parsers.getDateParser().processing(resHeader.getPublicationDate());
 						// most basic heuristic, we take the first date - to be
 						// revised...
 						if (dates != null) {
@@ -470,10 +430,7 @@ public class HeaderParser extends AbstractParser {
 					}
 
 					if (resHeader.getSubmissionDate() != null) {
-						if (dateParser == null) {
-							dateParser = new DateParser();
-						}
-						List<Date> dates = dateParser.processing(resHeader.getSubmissionDate());
+						List<Date> dates = parsers.getDateParser().processing(resHeader.getSubmissionDate());
 						if (dates != null) {
 							if (dates.size() > 0) {
 								resHeader.setNormalizedSubmissionDate(dates.get(0));
@@ -863,10 +820,7 @@ public class HeaderParser extends AbstractParser {
             }
 
             // buffer for the affiliation+address block
-            if (affiliationAddressParser == null) {
-                affiliationAddressParser = new AffiliationAddressParser();
-            }
-            StringBuffer bufferAffiliation = affiliationAddressParser.trainingExtraction(rese, tokenizations);
+            StringBuffer bufferAffiliation = parsers.getAffiliationAddressParser().trainingExtraction(rese, tokenizations);
             // buffer for the date block
             StringBuffer bufferDate = null;
             // we need to rebuild the found date string as it appears
@@ -890,10 +844,7 @@ public class HeaderParser extends AbstractParser {
             if (input.trim().length() > 1) {
                 List<String> inputs = new ArrayList<String>();
                 inputs.add(input.trim());
-                if (dateParser == null) {
-                    dateParser = new DateParser();
-                }
-                bufferDate = dateParser.trainingExtraction(inputs);
+                bufferDate = parsers.getDateParser().trainingExtraction(inputs);
             }
 
             // buffer for the name block
@@ -919,10 +870,7 @@ public class HeaderParser extends AbstractParser {
             if (input.length() > 1) {
                 List<String> inputs = new ArrayList<String>();
                 inputs.add(input.trim());
-                if (authorParser == null) {
-                    authorParser = new AuthorParser();
-                }
-                bufferName = authorParser.trainingExtraction(inputs, true);
+                bufferName = parsers.getAuthorParser().trainingExtraction(inputs, true);
             }
 
             // buffer for the reference block
@@ -948,10 +896,7 @@ public class HeaderParser extends AbstractParser {
             if (input.length() > 1) {
                 List<String> inputs = new ArrayList<String>();
                 inputs.add(input.trim());
-                if (citationParser == null) {
-                    citationParser = new CitationParser();
-                }
-                bufferReference = citationParser.trainingExtraction(inputs);
+                bufferReference = parsers.getCitationParser().trainingExtraction(inputs);
             }
 
             // write the TEI file to reflect the extract layout of the text as
@@ -1646,13 +1591,5 @@ public class HeaderParser extends AbstractParser {
 	@Override
 	public void close() throws IOException {
 		super.close();
-		if (dateParser != null)
-			dateParser.close();
-		if (affiliationAddressParser != null)
-			affiliationAddressParser.close();
-		if (citationParser != null)
-			citationParser.close();
-		if (authorParser != null)
-			authorParser.close();
 	}
 }

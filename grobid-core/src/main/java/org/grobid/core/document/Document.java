@@ -10,11 +10,12 @@ import org.grobid.core.engines.CitationParser;
 import org.grobid.core.engines.Engine;
 import org.grobid.core.engines.HeaderParser;
 import org.grobid.core.engines.SegmentationLabel;
+import org.grobid.core.engines.citations.LabeledReferenceResult;
 import org.grobid.core.engines.citations.ReferenceSegmenter;
+import org.grobid.core.engines.citations.RegexReferenceSegmenter;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.exceptions.GrobidResourceException;
 import org.grobid.core.features.FeatureFactory;
-import org.grobid.core.features.FeaturesVectorFulltext;
 import org.grobid.core.features.FeaturesVectorHeader;
 import org.grobid.core.lang.Language;
 import org.grobid.core.layout.Block;
@@ -39,7 +40,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.SortedSet;
 import java.util.StringTokenizer;
 import java.util.TreeSet;
@@ -464,6 +464,7 @@ public class Document {
      * Create a TEI representation of the document
      */
     public void toTEI(HeaderParser headerParser,
+                      ReferenceSegmenter referenceSegmenter,
                       CitationParser citationParser, boolean consolidateHeader,
                       boolean consolidateCitations, boolean peer, BiblioItem catalogue,
                       boolean withStyleSheet, boolean onlyHeader) throws Exception {
@@ -550,16 +551,18 @@ public class Document {
                 }
             }
 
-            List<String> refs;
+            List<LabeledReferenceResult> refs;
             if (citationParser != null) {
-                refs = ReferenceSegmenter.segmentReferences(tokenizations);
+                refs = referenceSegmenter.extract(Joiner.on("").join(tokenizations));
                 if (refs != null) {
-                    for (String refString : refs) {
-                        BiblioItem bib = citationParser.processing(refString,
+                    for (LabeledReferenceResult ref: refs) {
+                        BiblioItem bib = citationParser.processing(ref.getReferenceText(),
                                 consolidateCitations);
+
                         BibDataSet bd = new BibDataSet();
                         bd.setResBib(bib);
-                        bd.setRawBib(refString);
+                        bd.setRefSymbol(ref.getLabel());
+                        bd.setRawBib(ref.getReferenceText());
                         bds.add(bd);
                     }
                 }

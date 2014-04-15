@@ -30,6 +30,7 @@ import javax.xml.stream.events.XMLEvent;
 
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.PatentItem;
+import org.grobid.core.engines.EngineParsers;
 import org.grobid.core.engines.patent.ReferenceExtractor;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.utilities.GrobidTimer;
@@ -125,14 +126,17 @@ public class TeiStAXParser {
 	/**
 	 * Constructor.
 	 * 
-	 * @param pInput
-	 *            The input file.
+	 * @param pInputStream
+	 *            The input file stream.
 	 * 
 	 * @param pOutputStream
 	 *            The output stream
 	 */
+
+
+
 	public TeiStAXParser(final InputStream pInputStream, OutputStream pOutputStream, boolean consolidate) {
-		this(pInputStream, pOutputStream, true, new ReferenceExtractor(), consolidate);
+		this(pInputStream, pOutputStream, true, new ReferenceExtractor(new EngineParsers()), consolidate);
 		isSelfInstanceRefExtractor = true;
 	}
 
@@ -146,7 +150,7 @@ public class TeiStAXParser {
 	 */
 	public TeiStAXParser(final InputStream pInputStream, OutputStream pOutputStream, 
 				final boolean pIsIndented, final boolean consolidate) {
-		this(pInputStream, pOutputStream, pIsIndented, new ReferenceExtractor(), consolidate);
+		this(pInputStream, pOutputStream, pIsIndented, new ReferenceExtractor(new EngineParsers()), consolidate);
 		isSelfInstanceRefExtractor = true;
 	}
 
@@ -262,7 +266,7 @@ public class TeiStAXParser {
 	}
 
 	/**
-	 * Append in {@link #teiBuffer} {@link pTei}.
+	 * Append in {@link #teiBuffer} {@link @pTei}.
 	 * 
 	 * @param pTei
 	 *            The Sting to append.

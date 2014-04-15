@@ -6,18 +6,17 @@ import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.BiblioItem;
 import org.grobid.core.data.Date;
 import org.grobid.core.document.Document;
+import org.grobid.core.engines.citations.LabeledReferenceResult;
 import org.grobid.core.engines.citations.ReferenceSegmenter;
 import org.grobid.core.engines.counters.CitationParserCounters;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.features.FeaturesVectorCitation;
 import org.grobid.core.lexicon.Lexicon;
 import org.grobid.core.utilities.Consolidation;
-import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.counters.CntManager;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -27,25 +26,24 @@ import java.util.StringTokenizer;
  * @author Patrice Lopez
  */
 public class CitationParser extends AbstractParser {
-
-    private AuthorParser authorParser = null;
-    private DateParser dateParser = null;
-	private Segmentation segmentationParser = null;
     private Consolidation consolidator = null;
 
-    private File tmpPath = null;
+//    private File tmpPath = null;
 //	private String pathXML = null;
 
     public Lexicon lexicon = Lexicon.getInstance();
+    private EngineParsers parsers;
 
-    public CitationParser(CntManager cntManager) {
+    public CitationParser(EngineParsers parsers, CntManager cntManager) {
         super(GrobidModels.CITATION, cntManager);
-        tmpPath = GrobidProperties.getTempPath();
+        this.parsers = parsers;
+//        tmpPath = GrobidProperties.getTempPath();
     }
 
-    public CitationParser() {
+    public CitationParser(EngineParsers parsers) {
         super(GrobidModels.CITATION);
-        tmpPath = GrobidProperties.getTempPath();
+        this.parsers = parsers;
+//        tmpPath = GrobidProperties.getTempPath();
     }
 
     public BiblioItem processing(String input, boolean consolidate) {
@@ -103,16 +101,9 @@ public class CitationParser extends AbstractParser {
                 ArrayList<String> auts = new ArrayList<String>();
                 auts.add(resCitation.getAuthors());
 
-                if (authorParser == null) {
-                    authorParser = new AuthorParser();
-                }
-                resCitation.setFullAuthors(authorParser
-                        .processingCitation(auts));
+                resCitation.setFullAuthors(parsers.getAuthorParser().processingCitation(auts));
                 if (resCitation.getPublicationDate() != null) {
-                    if (dateParser == null) {
-                        dateParser = new DateParser();
-                    }
-                    List<Date> dates = dateParser.processing(resCitation
+                    List<Date> dates = parsers.getDateParser().processing(resCitation
                             .getPublicationDate());
                     if (dates != null) {
                         Date bestDate = null;
@@ -155,7 +146,7 @@ public class CitationParser extends AbstractParser {
         }
     }
 
-    public List<BibDataSet> processingReferenceSection(Document doc, boolean consolidate) throws Exception {
+    public List<BibDataSet> processingReferenceSection(Document doc, ReferenceSegmenter referenceSegmenter, boolean consolidate) throws Exception {
         ArrayList<BibDataSet> results = new ArrayList<>();
         try {
 
@@ -165,7 +156,7 @@ public class CitationParser extends AbstractParser {
             }
 //			List<String> tokenizations = doc.getTokenizationsReferences();
 
-            List<String> references = ReferenceSegmenter.segmentReferences(referencesStr);
+            List<LabeledReferenceResult> references = referenceSegmenter.extract(referencesStr);
 
             if (references == null) {
                 cntManager.i(CitationParserCounters.NULL_SEGMENTED_REFERENCES_LIST);
@@ -174,11 +165,13 @@ public class CitationParser extends AbstractParser {
                 cntManager.i(CitationParserCounters.SEGMENTED_REFERENCES, references.size());
             }
 
-            for (String refString : references) {
-                BiblioItem bib = processing(refString, consolidate);
+            for (LabeledReferenceResult ref: references) {
+                BiblioItem bib = processing(ref.getReferenceText(), consolidate);
                 BibDataSet bds = new BibDataSet();
+
+                bds.setRefSymbol(ref.getLabel());
                 bds.setResBib(bib);
-                bds.setRawBib(refString);
+                bds.setRawBib(ref.getReferenceText());
                 results.add(bds);
             }
         } catch (Exception e) {
@@ -189,14 +182,12 @@ public class CitationParser extends AbstractParser {
 
 
     public List<BibDataSet> processingReferenceSection(String input,
+                                                       ReferenceSegmenter referenceSegmenter,
                                                        boolean consolidate) throws Exception {
         List<BibDataSet> results = new ArrayList<>();
         try {
-			if (segmentationParser == null) {
-				segmentationParser = new Segmentation();
-			}
-		
-            Document doc = segmentationParser.processing(input);
+
+            Document doc = parsers.getSegmentationParser().processing(input);
 
             String referencesStr = doc.getDocumentPartText(SegmentationLabel.REFERENCES);
             if (!referencesStr.isEmpty()) {
@@ -204,7 +195,7 @@ public class CitationParser extends AbstractParser {
             }
 //			List<String> tokenizations = doc.getTokenizationsReferences();
 
-            List<String> references = ReferenceSegmenter.segmentReferences(referencesStr);
+            List<LabeledReferenceResult> references = referenceSegmenter.extract(referencesStr);
 
             if (references == null) {
                 cntManager.i(CitationParserCounters.NULL_SEGMENTED_REFERENCES_LIST);
@@ -213,11 +204,12 @@ public class CitationParser extends AbstractParser {
                 cntManager.i(CitationParserCounters.SEGMENTED_REFERENCES, references.size());
             }
 
-            for (String refString : references) {
-                BiblioItem bib = processing(refString, consolidate);
+            for (LabeledReferenceResult ref : references) {
+                BiblioItem bib = processing(ref.getReferenceText(), consolidate);
                 BibDataSet bds = new BibDataSet();
                 bds.setResBib(bib);
-                bds.setRawBib(refString);
+                bds.setRefSymbol(ref.getLabel());
+                bds.setRawBib(ref.getReferenceText());
                 results.add(bds);
             }
         } catch (Exception e) {
@@ -845,12 +837,5 @@ public class CitationParser extends AbstractParser {
     @Override
     public void close() throws IOException {
         super.close();
-        if (authorParser != null) {
-            authorParser.close();
-        }
-        if (dateParser != null) {
-            dateParser.close();
-        }
-
     }
 }

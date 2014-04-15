@@ -3,22 +3,20 @@ package org.grobid.core.engines;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.BiblioItem;
-import org.grobid.core.document.BasicStructureBuilder;
 import org.grobid.core.document.Document;
 import org.grobid.core.document.DocumentPiece;
 import org.grobid.core.document.DocumentPointer;
 import org.grobid.core.document.TEIFormater;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.exceptions.GrobidResourceException;
-import org.grobid.core.lang.Language;
-import org.grobid.core.utilities.GrobidProperties;
-import org.grobid.core.utilities.LanguageUtilities;
-import org.grobid.core.utilities.TextUtilities;
-import org.grobid.core.utilities.Pair;
-import org.grobid.core.layout.Block;
-import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.features.FeatureFactory;
 import org.grobid.core.features.FeaturesVectorFulltext;
+import org.grobid.core.layout.Block;
+import org.grobid.core.layout.LayoutToken;
+import org.grobid.core.utilities.GrobidProperties;
+import org.grobid.core.utilities.LanguageUtilities;
+import org.grobid.core.utilities.Pair;
+import org.grobid.core.utilities.TextUtilities;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -29,10 +27,9 @@ import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.StringTokenizer;
 import java.util.SortedSet;
+import java.util.StringTokenizer;
 import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  * @author Patrice Lopez
@@ -41,10 +38,6 @@ public class FullTextParser extends AbstractParser {
     private static final Logger LOGGER = LoggerFactory.getLogger(FullTextParser.class);
 
     private LanguageUtilities languageUtilities = LanguageUtilities.getInstance();
-    
-    private HeaderParser headerParser = null;
-    private CitationParser citationParser = null;
-	private Segmentation segmentationParser = null;
 
     //	private String tmpPathName = null;
 //    private Document doc = null;
@@ -54,12 +47,14 @@ public class FullTextParser extends AbstractParser {
 	
 	// default bins for relative position
     private static final int NBBINS = 12;
+    private EngineParsers parsers;
 
     /**
      * TODO some documentation...
      */
-    public FullTextParser() {
+    public FullTextParser(EngineParsers parsers) {
         super(GrobidModels.FULLTEXT);
+        this.parsers = parsers;
         tmpPath = GrobidProperties.getTempPath();
     }
 
@@ -108,14 +103,8 @@ public class FullTextParser extends AbstractParser {
             doc.setPathXML(pathXML);
             //doc.addFeaturesDocument();
 
-            if (headerParser == null) {
-                headerParser = new HeaderParser();
-            }
-            if (citationParser == null) {
-                citationParser = new CitationParser();
-            }
-
-            doc.toTEI(headerParser, citationParser, consolidateHeader, consolidateCitations,
+            doc.toTEI(parsers.getHeaderParser(), parsers.getReferenceSegmenterParser(),
+                    parsers.getCitationParser(), consolidateHeader, consolidateCitations,
                     false, null, false, false);
             LOGGER.debug(doc.getTei());
 
@@ -150,10 +139,7 @@ public class FullTextParser extends AbstractParser {
         }
         try {
             // general segmentation
-			if (segmentationParser == null) {
-				segmentationParser = new Segmentation();
-			}		
-            Document doc = segmentationParser.processing(input);
+            Document doc = parsers.getSegmentationParser().processing(input);
 
             //String fulltext = doc.getFulltextFeatured(true, true);
 			SortedSet<DocumentPiece> documentBodyParts = doc.getDocumentPart(SegmentationLabel.BODY);
@@ -168,17 +154,11 @@ public class FullTextParser extends AbstractParser {
             //doc = BasicStructureBuilder.resultSegmentation(doc, rese, tokenizations);
 
             // header processing
-            if (headerParser == null) {
-                headerParser = new HeaderParser();
-            }
             BiblioItem resHeader = new BiblioItem();
-            headerParser.processingHeaderSection(doc, consolidateHeader, resHeader);
+            parsers.getHeaderParser().processingHeaderSection(doc, consolidateHeader, resHeader);
 
             // citation processing
-            if (citationParser == null) {
-                citationParser = new CitationParser();
-            }
-            List<BibDataSet> resCitations = citationParser.processingReferenceSection(doc, consolidateCitations);
+            List<BibDataSet> resCitations = parsers.getCitationParser().processingReferenceSection(doc, parsers.getReferenceSegmenterParser(), consolidateCitations);
 
             if (resCitations != null) {
                 for (BibDataSet bds : resCitations) {
@@ -615,10 +595,7 @@ public class FullTextParser extends AbstractParser {
            	}
            	String PDFFileName = file.getName();
 			
-			if (segmentationParser == null) {
-				segmentationParser = new Segmentation();
-			}		
-            doc = segmentationParser.processing(inputFile);
+            doc = parsers.getSegmentationParser().processing(inputFile);
 
             //String fulltext = doc.getFulltextFeatured(true, true);
 			SortedSet<DocumentPiece> documentBodyParts = doc.getDocumentPart(SegmentationLabel.BODY);	
@@ -1265,14 +1242,5 @@ System.out.println(rese);
     @Override
     public void close() throws IOException {
         super.close();
-        if (headerParser != null) {
-            headerParser.close();
-            headerParser = null;
-        }
-        if (citationParser != null) {
-            citationParser.close();
-            citationParser = null;
-        }
-
     }
 }

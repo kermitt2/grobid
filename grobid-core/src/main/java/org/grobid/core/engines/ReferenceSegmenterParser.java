@@ -1,6 +1,8 @@
 package org.grobid.core.engines;
 
 import org.grobid.core.GrobidModels;
+import org.grobid.core.engines.citations.LabeledReferenceResult;
+import org.grobid.core.engines.citations.ReferenceSegmenter;
 import org.grobid.core.engines.tagging.GenericTaggerUtils;
 import org.grobid.core.features.FeaturesVectorReferenceSegmenter;
 import org.grobid.core.utilities.Pair;
@@ -14,7 +16,7 @@ import java.util.StringTokenizer;
  * User: zholudev
  * Date: 4/14/14
  */
-public class ReferenceSegmenterParser extends AbstractParser {
+public class ReferenceSegmenterParser extends AbstractParser implements ReferenceSegmenter{
     protected ReferenceSegmenterParser() {
         super(GrobidModels.REFERENCE_SEGMENTER);
     }
@@ -22,11 +24,10 @@ public class ReferenceSegmenterParser extends AbstractParser {
     /**
      *
      * @param referenceBlock text containing citation block
-     * @return pair <reference_label, reference_string>  Note, that label is null when no label was detected
+     * @return <reference_label, reference_string>  Note, that label is null when no label was detected
      *              example: <"[1]", "Hu W., Barkana, R., &amp; Gruzinov A. Phys. Rev. Lett. 85, 1158">
-     * @throws Exception
      */
-    public List<Pair<String, String>> process(String referenceBlock) throws Exception {
+    public List<LabeledReferenceResult> extract(String referenceBlock) {
         List<String> blocks = new ArrayList<>();
 
 
@@ -50,15 +51,16 @@ public class ReferenceSegmenterParser extends AbstractParser {
 
         String featureVector = FeaturesVectorReferenceSegmenter.addFeaturesReferenceSegmenter(blocks);
         String res = label(featureVector);
-        System.out.println(res);
+
+//        System.out.println(res);
 
         List<Pair<String, String>> labeled = GenericTaggerUtils.getTokensAndLabels(res);
 
         return getExtractionResult(tokenizations, labeled);
     }
 
-    private List<Pair<String, String>> getExtractionResult(List<String> tokenizations, List<Pair<String, String>> labeled) {
-        List<Pair<String, String>> resultList = new ArrayList<>();
+    private List<LabeledReferenceResult> getExtractionResult(List<String> tokenizations, List<Pair<String, String>> labeled) {
+        List<LabeledReferenceResult> resultList = new ArrayList<>();
         StringBuilder reference = new StringBuilder();
         StringBuilder referenceLabel = new StringBuilder();
 
@@ -87,7 +89,8 @@ public class ReferenceSegmenterParser extends AbstractParser {
                 case "<label>":
                     if (GenericTaggerUtils.isBeginningOfEntity(label)) {
                         if (reference.length() != 0) {
-                            resultList.add(new Pair<>(referenceLabel.length() == 0 ? null : referenceLabel.toString().trim(), reference.toString().trim()));
+                            resultList.add(new LabeledReferenceResult(referenceLabel.length() == 0 ? null :
+                                    referenceLabel.toString().trim(), reference.toString().trim()));
                             reference.setLength(0);
                             referenceLabel.setLength(0);
                         }
@@ -101,7 +104,8 @@ public class ReferenceSegmenterParser extends AbstractParser {
                 case "<reference>":
                     if (GenericTaggerUtils.isBeginningOfEntity(label)) {
                         if (reference.length() != 0) {
-                            resultList.add(new Pair<>(referenceLabel.length() == 0 ? null : referenceLabel.toString().trim(), reference.toString().trim()));
+                            resultList.add(new LabeledReferenceResult(referenceLabel.length() == 0 ?
+                                    null : referenceLabel.toString().trim(), reference.toString().trim()));
                             reference.setLength(0);
                             referenceLabel.setLength(0);
                         }
@@ -117,16 +121,21 @@ public class ReferenceSegmenterParser extends AbstractParser {
         }
 
         if (reference.length() != 0) {
-            resultList.add(new Pair<>(referenceLabel.length() == 0 ? null : referenceLabel.toString().trim(), reference.toString().trim()));
+            resultList.add(new LabeledReferenceResult(referenceLabel.length() == 0 ? null :
+                    referenceLabel.toString().trim(), reference.toString().trim()));
             reference.setLength(0);
             referenceLabel.setLength(0);
         }
+
+//        for (LabeledReferenceResult r : resultList) {
+//            System.out.println(r);
+//        }
         return resultList;
     }
 
 
-    public String createTrainingData(String input) throws Exception {
-        List<Pair<String, String>> res = process(input);
+    public String createTrainingData(String input) {
+        List<LabeledReferenceResult> res = extract(input);
         StringBuilder sb = new StringBuilder();
 
         sb.append("<tei>\n" +
@@ -136,11 +145,11 @@ public class ReferenceSegmenterParser extends AbstractParser {
                 "    <text xml:lang=\"en\">\n" +
                 "        <listBibl>");
 
-        for (Pair<String, String> p : res) {
-            if (p.a != null) {
-                sb.append(String.format("<bibl> <label>%s</label>%s</bibl>", p.a, p.b));
+        for (LabeledReferenceResult p : res) {
+            if (p.getLabel() != null) {
+                sb.append(String.format("<bibl> <label>%s</label>%s</bibl>", p.getLabel(), p.getReferenceText()));
             } else {
-                sb.append(String.format("<bibl>%s</bibl>", p.b));
+                sb.append(String.format("<bibl>%s</bibl>", p.getReferenceText()));
             }
             sb.append("\n");
         }

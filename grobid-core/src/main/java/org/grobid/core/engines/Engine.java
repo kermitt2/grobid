@@ -276,7 +276,7 @@ public class Engine implements Closeable {
      *         with citation contexts
      */
     public List<BibDataSet> processReferences(String inputFile, boolean consolidate) throws Exception {
-        return parsers.getCitationParser().processingReferenceSection(inputFile, consolidate);
+        return parsers.getCitationParser().processingReferenceSection(inputFile, parsers.getReferenceSegmenterParser(), consolidate);
     }
 
     /**

@@ -53,7 +53,7 @@ public class EngineParsers implements Closeable {
         if (headerParser == null) {
             synchronized (this) {
                 if (headerParser == null) {
-                    headerParser = new HeaderParser();
+                    headerParser = new HeaderParser(this);
                 }
             }
         }
@@ -75,7 +75,7 @@ public class EngineParsers implements Closeable {
         if (citationParser == null) {
             synchronized (this) {
                 if (citationParser == null) {
-                    citationParser = new CitationParser();
+                    citationParser = new CitationParser(this);
                 }
             }
         }
@@ -87,7 +87,7 @@ public class EngineParsers implements Closeable {
         if (fullTextParser == null) {
             synchronized (this) {
                 if (fullTextParser == null) {
-                    fullTextParser = new FullTextParser();
+                    fullTextParser = new FullTextParser(this);
                 }
             }
         }
@@ -110,7 +110,7 @@ public class EngineParsers implements Closeable {
         if (referenceExtractor == null) {
             synchronized (this) {
                 if (referenceExtractor == null) {
-                    referenceExtractor = new ReferenceExtractor();
+                    referenceExtractor = new ReferenceExtractor(this);
                 }
             }
         }

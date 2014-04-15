@@ -178,7 +178,7 @@ public class FeaturesVectorReferenceSegmenter {
     /**
      * Add feature for citation parsing.
      */
-    static public String addFeaturesReferenceSegmenter(List<String> lines) throws Exception {
+    static public String addFeaturesReferenceSegmenter(List<String> lines) {
         FeatureFactory featureFactory = FeatureFactory.getInstance();
 
         String line;
