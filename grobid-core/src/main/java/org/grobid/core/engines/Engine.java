@@ -577,7 +577,7 @@ public class Engine implements Closeable {
      * @param consolidateCitations whether to consolidate citations
      */
 	public String fullTextToTEI(String inputFile, boolean consolidateHeader, boolean consolidateCitations) throws Exception {
-		return fullTextToTEI(inputFile, consolidateHeader, consolidateCitations, 0);
+		return fullTextToTEI(inputFile, consolidateHeader, consolidateCitations, 1);
 	}
 
 	/**

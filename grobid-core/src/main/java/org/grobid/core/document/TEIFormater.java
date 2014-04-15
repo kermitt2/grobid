@@ -691,8 +691,13 @@ public class TEIFormater {
 
     public String toTEIBody(BiblioItem biblio, List<BibDataSet> bds,
                             boolean peer, boolean withStyleSheet, boolean onlyHeader) throws Exception {
-
-        StringBuffer tei = toTEIHeader(biblio, peer, withStyleSheet, null);
+        StringBuffer tei = null;
+		if (biblio != null) {
+         	tei = toTEIHeader(biblio, peer, withStyleSheet, null);
+		}
+		else {
+			tei = new StringBuffer();
+		}
         if (!onlyHeader) {
 
             tei.append("\t\t<body>\n");
@@ -1069,7 +1074,7 @@ public class TEIFormater {
                         currentSection.append(s2);
                     }
                 }
-            } else if (currentTag0.equals("<header>")) {
+            } /*else if (currentTag0.equals("<header>")) {
                 if ((currentSection != null) && (currentSection.length() > 0)) {
                     currentNode.label = currentSection.toString();
                     doc.getTop().addChild(currentNode);
@@ -1088,7 +1093,8 @@ public class TEIFormater {
                 }
             } else if (currentTag0.equals("<reference>") && (startReferencePosition == -1)) {
                 startReferencePosition = p;
-            } else if (currentTag0.equals("<figure_head>")) {
+            } */
+			else if (currentTag0.equals("<figure_head>")) {
                 if (s1.equals("I-<figure_head>")) {
                     if (currentFigureHead.length() > 0) {
                         String localT = currentFigureHead.toString();
@@ -1127,12 +1133,12 @@ public class TEIFormater {
                     }
                 }
             } else {
-                if (currentNode != null) {
+                /*if (currentNode != null) {
                     if ((currentNode.label != null) && (currentNode.label.equals("header"))) {
                         doc.getTop().addChild(currentNode);
                         currentNode = null;
                     }
-                }
+                }*/
 
                 if (currentSection.length() > 0) {
                     currentNode.label = currentSection.toString();
@@ -1250,7 +1256,7 @@ public class TEIFormater {
 
         // if the last section ends with the begining of the reference section, we can discard the corresponding
         // node
-        DocumentNode node0 = doc.getTop();
+       /* DocumentNode node0 = doc.getTop();
         while (node0 != null) {
             if (node0.children != null) {
                 int lastPos = node0.children.size();
@@ -1269,7 +1275,7 @@ public class TEIFormater {
                 }
             }
         }
-
+		*/
         System.out.println(doc.getTop().toString());
 
         // second pass for fine grained analysis of the document structure
@@ -2083,7 +2089,8 @@ public class TEIFormater {
                         currentFigureHead.append(s2);
                     }
                 }
-            } else if (currentTag0.equals("<page_footnote>")) {
+            } 
+			/*else if (currentTag0.equals("<page_footnote>")) {
                 if (s1.equals("I-<page_footnote>")) {
                     if (currentPageFootNote.length() > 0) {
                         currentPageFootNote.append("</note>\n\t\t\t<note place=\"foot\">");
@@ -2112,7 +2119,8 @@ public class TEIFormater {
                         }
                     }
                 }
-            } else if (currentTag0.equals("<table>")) {
+            } */
+			else if (currentTag0.equals("<table>")) {
                 if (openFigure) {
                     System.out.println("Warning: opened figure section contains a table element");
                 } else {
@@ -2205,11 +2213,11 @@ public class TEIFormater {
         while (!end) {
             if (elements.size() == 0) {
                 // we write the footnotes that have been accumulated
-                if (currentPageFootNote.length() > 0) {
+                /*if (currentPageFootNote.length() > 0) {
                     tei.append("\n\t\t\t<note place=\"foot\">" +
                             currentPageFootNote.toString() + "</note>\n");
                 }
-
+				*/
                 tei.append("\t\t</body>\n");
                 end = true;
             }
@@ -2217,11 +2225,11 @@ public class TEIFormater {
                 String lastElement = elements.get(elements.size() - 1);
                 if (lastElement.equals("body")) {
                     // we write the footnotes that have been accumulated
-                    if (currentPageFootNote.length() > 0) {
+                 /*   if (currentPageFootNote.length() > 0) {
                         tei.append("\n\t\t\t<note place=\"foot\">" +
                                 currentPageFootNote.toString() + "</note>\n");
                     }
-
+					*/
                     tei.append("\t\t</body>\n");
                     elements.remove(elements.size() - 1);
                     end = true;
