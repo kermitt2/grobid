@@ -1,7 +1,7 @@
 package org.grobid.trainer.evaluation;
 
 import org.grobid.core.engines.CitationParser;
-import org.grobid.core.engines.tagging.GenericTagger;
+import org.grobid.core.engines.EngineParsers;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.features.FeaturesVectorCitation;
 import org.grobid.core.utilities.OffsetPosition;
@@ -72,7 +72,7 @@ public class Evaluation {
 
         try {
             if (citationParser == null) {
-                citationParser = new CitationParser();
+                citationParser = new CitationParser(new EngineParsers());
             }
 
             // dis.available() returns 0 if the file does not have more lines.

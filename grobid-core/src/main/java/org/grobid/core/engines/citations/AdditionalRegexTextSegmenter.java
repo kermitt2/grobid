@@ -17,8 +17,8 @@ import java.util.regex.Pattern;
 /**
  * Date: 8/27/13
  */
-public class CitationTextSegmenter {
-    public static final Logger LOGGER = LoggerFactory.getLogger(CitationTextSegmenter.class.getName());
+public class AdditionalRegexTextSegmenter {
+    public static final Logger LOGGER = LoggerFactory.getLogger(AdditionalRegexTextSegmenter.class.getName());
     private final static Pattern BRACKET_NUMBER_LOOKUP_PATTERN = Pattern.compile("(?s).{0,15}\\[\\d\\] .{10,701}\\n\\[\\d+\\] .*");
     private final static Pattern BULLET_NUMBER_LOOKUP_PATTERN = Pattern.compile("(?s).{0,10}1\\. .{10,701}\\n[\\s0]*2\\. .*");
 
@@ -63,7 +63,7 @@ public class CitationTextSegmenter {
         } catch (StackOverflowError e) {
             //TODO: FIX regexps properly
             LOGGER.error("Stackoverflow");
-            throw new RuntimeException("Runtime exception with stackoverflow in CitationTextSegmenter");
+            throw new RuntimeException("Runtime exception with stackoverflow in AdditionalRegexTextSegmenter");
         }
         return cleanCitations(parts);
     }

@@ -6,14 +6,13 @@ import org.grobid.core.document.BasicStructureBuilder;
 import org.grobid.core.document.Document;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.exceptions.GrobidResourceException;
-import org.grobid.core.utilities.GrobidProperties;
-import org.grobid.core.utilities.LanguageUtilities;
-import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.features.FeatureFactory;
 import org.grobid.core.features.FeaturesVectorFulltext;
 import org.grobid.core.layout.Block;
 import org.grobid.core.layout.LayoutToken;
-
+import org.grobid.core.utilities.GrobidProperties;
+import org.grobid.core.utilities.LanguageUtilities;
+import org.grobid.core.utilities.TextUtilities;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -26,7 +25,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
 import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  * Realise a high level segmentation of a document into cover page, document header, page footer,
@@ -124,9 +122,9 @@ public class Segmentation extends AbstractParser {
             doc = BasicStructureBuilder.generalResultSegmentation(doc, labelledResult, tokenizations);
 
 //            System.out.println(doc.getBlockReferences());
-            System.out.println("------------------");
-            System.out.println(doc.getDocumentPieceText(doc.getLabeledBlocks().get("<references>")));
-            System.out.println("------------------");
+//            System.out.println("------------------");
+//            System.out.println(doc.getDocumentPieceText(doc.getLabeledBlocks().get("<references>")));
+//            System.out.println("------------------");
             //LOGGER.debug(labelledResult);
             return doc;
         } catch (Exception e) {
