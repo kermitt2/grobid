@@ -4,6 +4,8 @@ import org.grobid.core.GrobidModels;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.features.FeaturesVectorReferenceSegmenter;
 import org.grobid.trainer.sax.TEIReferenceSegmenterSaxParser;
+import org.grobid.core.mock.MockContext;
+import org.grobid.core.utilities.GrobidProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -133,5 +135,19 @@ public class ReferenceSegmenterTrainer extends AbstractTrainer {
             throw new GrobidException("An exception occurred while trainining/evaluating reference segmenter model.", e);
         }
         return totalExamples;
+    }
+
+    /**
+     * Command line execution.
+     *
+     * @param args Command line arguments.
+     * @throws Exception 
+     */
+    public static void main(String[] args) throws Exception {
+    	MockContext.setInitialContext();
+    	GrobidProperties.getInstance();
+        AbstractTrainer.runTraining(new ReferenceSegmenterTrainer());
+        AbstractTrainer.runEvaluation(new ReferenceSegmenterTrainer());
+        MockContext.destroyInitialContext();
     }
 }

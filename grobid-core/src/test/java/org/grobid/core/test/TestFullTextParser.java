@@ -39,16 +39,16 @@ public class TestFullTextParser extends EngineTest {
 		//engine.createTrainingFullText(pdfPath, newTrainingPath, newTrainingPath, 0);
 		
 		pdfPath = testPath + "/1001._0908.0054.pdf";
-		//engine.createTrainingFullText(pdfPath, newTrainingPath, newTrainingPath, 0);
+		//engine.createTrainingFullText(pdfPath, newTrainingPath, newTrainingPath, 1);
 		
 		pdfPath = testPath + "/submission_161.pdf";
-		//engine.createTrainingFullText(pdfPath, newTrainingPath, newTrainingPath, 0);
+		//engine.createTrainingFullText(pdfPath, newTrainingPath, newTrainingPath, 2);
 		
 		pdfPath = testPath + "/submission_363.pdf";
-		//engine.createTrainingFullText(pdfPath, newTrainingPath, newTrainingPath, 0);
+		//engine.createTrainingFullText(pdfPath, newTrainingPath, newTrainingPath, 3);
 		
 		pdfPath = testPath + "/ApplPhysLett_98_082505.pdf";
-		engine.createTrainingFullText(pdfPath, newTrainingPath, newTrainingPath, 0);
+		engine.createTrainingFullText(pdfPath, newTrainingPath, newTrainingPath, 4);
 				
 		/*engine.batchCreateTrainingFulltext("/Users/lopez/repository/abstracts/", 
 							 			"/Users/lopez/repository/abstracts/training/",
@@ -61,28 +61,28 @@ public class TestFullTextParser extends EngineTest {
 
 		String pdfPath = testPath + "/Wang-paperAVE2008.pdf";
 		
-		String tei = GrobidFactory.getInstance().createEngine().fullTextToTEI(pdfPath, false, false, 1);
+		String tei = GrobidFactory.getInstance().createEngine().fullTextToTEI(pdfPath, false, false);
 		assertNotNull(tei);
  		//System.out.println(tei);
 		
 		pdfPath = testPath + "/1001._0908.0054.pdf";
 		
-		tei = GrobidFactory.getInstance().createEngine().fullTextToTEI(pdfPath, false, false, 1);
+		tei = GrobidFactory.getInstance().createEngine().fullTextToTEI(pdfPath, false, false);
 		assertNotNull(tei);
  		//System.out.println(tei);
 
 		pdfPath = testPath + "/submission_161.pdf";
-		tei = GrobidFactory.getInstance().createEngine().fullTextToTEI(pdfPath, false, false, 1);
+		tei = GrobidFactory.getInstance().createEngine().fullTextToTEI(pdfPath, false, false);
 		assertNotNull(tei);
  		//System.out.println(tei);
 
 		pdfPath = testPath + "/submission_363.pdf";
-		tei = GrobidFactory.getInstance().createEngine().fullTextToTEI(pdfPath, false, false, 1);
+		tei = GrobidFactory.getInstance().createEngine().fullTextToTEI(pdfPath, false, false);
 		assertNotNull(tei);
  		//System.out.println(tei);
 
 		pdfPath = testPath + "/ApplPhysLett_98_082505.pdf";
-		tei = GrobidFactory.getInstance().createEngine().fullTextToTEI(pdfPath, false, false, 1);
+		tei = GrobidFactory.getInstance().createEngine().fullTextToTEI(pdfPath, false, false);
 		assertNotNull(tei);
 		//System.out.println(tei);
 	}

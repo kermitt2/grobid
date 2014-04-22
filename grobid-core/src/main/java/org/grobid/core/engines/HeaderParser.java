@@ -261,9 +261,9 @@ public class HeaderParser extends AbstractParser {
 			}
 
 			TEIFormater teiFormater = new TEIFormater(doc);
-			String tei = teiFormater.toTEIBody(resHeader, null, true, false, true);
-			LOGGER.debug(tei);
-			return tei;
+			StringBuffer tei = teiFormater.toTEIHeader(resHeader, true, false, null);
+			//LOGGER.debug(tei.toString());
+			return tei.toString();
 		} catch (Exception e) {
 			throw new GrobidException("An exception occured while running Grobid.", e);
 		}
@@ -440,9 +440,9 @@ public class HeaderParser extends AbstractParser {
 				}
 
 				TEIFormater teiFormater = new TEIFormater(doc);
-				String tei = teiFormater.toTEIBody(resHeader, null, true, false, true);
-				LOGGER.debug(tei);
-				return tei;
+				StringBuffer tei = teiFormater.toTEIHeader(resHeader, true, false, null);
+				//LOGGER.debug(tei);
+				return tei.toString();
 			}
         } catch (Exception e) {
             throw new GrobidException("An exception occurred while running Grobid.", e);
@@ -1342,7 +1342,8 @@ public class HeaderParser extends AbstractParser {
 					boolean strop = false;
 					while ((!strop) && (p < tokenizations.size())) {
 						String tokOriginal = tokenizations.get(p);
-						if (tokOriginal.equals(" ")) {
+						if (tokOriginal.equals(" ") 
+							|| tokOriginal.equals("\u00A0")) {
 							addSpace = true;
 						} else if (tokOriginal.equals(s)) {
 							strop = true;

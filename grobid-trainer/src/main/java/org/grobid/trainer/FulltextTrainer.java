@@ -9,6 +9,7 @@ import org.grobid.trainer.sax.TEIFulltextSaxParser;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 import java.io.*;
+import java.util.List;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
@@ -98,7 +99,7 @@ public class FulltextTrainer extends AbstractTrainer{
                 SAXParser p = spf.newSAXParser();
                 p.parse(tf, parser2);
 
-                ArrayList<String> labeled = parser2.getLabeledResult();
+                List<String> labeled = parser2.getLabeledResult();
                 //totalExamples += parser2.n;
 
                 // we can now add the features

@@ -3,6 +3,9 @@
         <fileDesc xml:id="0"/>
     </teiHeader>
     <text xml:lang="en">
+	
+		References<lb/> 
+	
         <listBibl>
             <bibl>Borges, A.S., Divers, T.J., Stokol, T., Mohammed, O.H., 2007. Serum iron and plasma ﬁbrinogen concentrations as indicators of systemic inﬂamma- tory diseases in horses. J. Vet. Intern. Med. 21, 489–494.</bibl>
             <bibl>Chapman, M., French, D., Taylor, H., Klei, T., 2002. One season of pasture exposure fails to induce a protective resistance to cyathostomes but increases numbers of hypobiotic third-stage larvae. J. Parasitol. 88, 678–683.</bibl>

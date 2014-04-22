@@ -6,6 +6,7 @@ import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Stack;
 import java.util.StringTokenizer;
 
@@ -18,15 +19,12 @@ import java.util.StringTokenizer;
  */
 public class TEIFulltextSaxParser extends DefaultHandler {
 
-    //private Stack<StringBuffer> accumulators = null; // accumulated parsed piece of texts
     private StringBuffer accumulator = null; // current accumulated text
 
     private String output = null;
     private Stack<String> currentTags = null;
-
-    //private String fileName = null;
-    //private String pdfName = null;
-
+	private String currentTag = null;
+	
     private boolean figureBlock = false;
 
     private ArrayList<String> labeled = null; // store line by line the labeled data
@@ -34,12 +32,10 @@ public class TEIFulltextSaxParser extends DefaultHandler {
     public TEIFulltextSaxParser() {
         labeled = new ArrayList<String>();
         currentTags = new Stack<String>();
-        //accumulators = new Stack<StringBuffer>();
         accumulator = new StringBuffer();
     }
 
     public void characters(char[] buffer, int start, int length) {
-        //if (accumulator != null)
         accumulator.append(buffer, start, length);
     }
 
@@ -52,7 +48,7 @@ public class TEIFulltextSaxParser extends DefaultHandler {
         }
     }
 
-    public ArrayList<String> getLabeledResult() {
+    public List<String> getLabeledResult() {
         return labeled;
     }
 
@@ -61,6 +57,9 @@ public class TEIFulltextSaxParser extends DefaultHandler {
                            java.lang.String qName) throws SAXException {
         if ((!qName.equals("lb")) & (!qName.equals("pb") & (!qName.equals("figure")))) {
             writeData(qName, true);
+			if (!currentTags.empty()) {
+				currentTag = currentTags.peek();
+			}
         }
 
         if (qName.equals("figure")) {
@@ -75,13 +74,17 @@ public class TEIFulltextSaxParser extends DefaultHandler {
             throws SAXException {
         if (qName.equals("lb")) {
             accumulator.append(" +L+ ");
-        } else if (qName.equals("pb")) {
+        } 
+		else if (qName.equals("pb")) {
             accumulator.append(" +PAGE+ ");
-        } else if (qName.equals("space")) {
+        } 
+		else if (qName.equals("space")) {
             accumulator.append(" ");
-        } else if (qName.equals("figure")) {
+        } 
+		else if (qName.equals("figure")) {
             figureBlock = true;
-        } else {
+        } 
+		else {
             // we have to write first what has been accumulated yet with the upper-level tag
             String text = getText();
             if (text != null) {
@@ -104,17 +107,21 @@ public class TEIFulltextSaxParser extends DefaultHandler {
                         if (name.equals("type")) {
                             if (value.equals("paragraph")) {
                                 currentTags.push("<paragraph>");
+								currentTag = "<paragraph>";
                             }
                         }
                     }
                 }
-            } else if (qName.equals("p")) {
+            } 
+			else if (qName.equals("p")) {
                 currentTags.push("<paragraph>");
-            //} else if (qName.equals("front")) {
-                //currentTags.push("<header>");
-            } else if (qName.equals("other")) {
+				currentTag = "<paragraph>";
+            } 
+			else if (qName.equals("other")) {
                 currentTags.push("<other>");
-            } else if (qName.equals("ref")) {
+				currentTag = "<other>";
+            } 
+			else if (qName.equals("ref")) {
                 int length = atts.getLength();
 
                 // Process each attribute
@@ -127,110 +134,88 @@ public class TEIFulltextSaxParser extends DefaultHandler {
                         if (name.equals("type")) {
                             if (value.equals("biblio")) {
                                 currentTags.push("<citation_marker>");
+								currentTag = "<citation_marker>";
                             } else if (value.equals("figure")) {
                                 currentTags.push("<figure_marker>");
+								currentTag = "<figure_marker>";
                             }
                         }
                     }
                 }
-            /*} else if (qName.equals("note")) {
-                int length = atts.getLength();
-
-                // Process each attribute
-                for (int i = 0; i < length; i++) {
-                    // Get names and values for each attribute
-                    String name = atts.getQName(i);
-                    String value = atts.getValue(i);
-
-                    if (name != null) {
-                        if (name.equals("place")) {
-                            if (value.equals("footnote")) {
-                                currentTags.push("<page_footnote>");
-                            }
-                            if (value.equals("headnote")) {
-                                currentTags.push("<page_header>");
-                            }
-                        }
-                    }
-                }*/
-            } else if (qName.equals("formula")) {
+            } 
+			else if (qName.equals("formula")) {
                 currentTags.push("<equation>");
-            //} else if (qName.equals("page") | qName.equals("pages")) {
-            //    currentTags.push("<page>");
-            } else if (qName.equals("head")) {
+				currentTag = "<equation>";
+            } 
+			else if (qName.equals("head")) {
                 if (figureBlock) {
                     currentTags.push("<figure_head>");
-                } else {
+					currentTag = "<figure_head>";
+                } 
+				else {
                     currentTags.push("<section>");
+					currentTag = "<section>";
                 }
-            } else if (qName.equals("figDesc")) {
+            } 
+			else if (qName.equals("figDesc")) {
                 currentTags.push("<label>");
-            //} else if (qName.equals("label")) {
-            //    currentTags.push("<reference_marker>");
-            //} else if (qName.equals("bibl")) {
-            //    currentTags.push("<reference>");
+				currentTag = "<label>";
             }
-            /*else if (qName.equals("subsection")) {
-                   currentTags.push("<subsection>");
-               }
-               else if (qName.equals("subsubsection")) {
-                   currentTags.push("<subsubsection>");
-               }*/
             else if (qName.equals("table")) {
                 currentTags.push("<table>");
-            } else if (qName.equals("item")) {
+				currentTag = "<table>";
+            } 
+			else if (qName.equals("item")) {
                 currentTags.push("<item>");
-            } else if (qName.equals("trash")) {
+				currentTag = "<item>";
+            } 
+			else if (qName.equals("trash")) {
                 currentTags.push("<trash>");
+				currentTag = "<trash>";
             }
-            /*else if (qName.equals("fileDesc")) {
-                   int length = atts.getLength();
-
-                   // Process each attribute
-                   for (int i=0; i<length; i++) {
-                       // Get names and values for each attribute
-                       String name = atts.getQName(i);
-                       String value = atts.getValue(i);
-
-                       if (name != null) {
-                           if (name.equals("xml:id")) {
-                               //pdfName = value;
-                           }
-                       }
-                   }
-               }*/
         }
     }
 
     private void writeData(String qName, boolean pop) {
         if ((qName.equals("other")) || 
-                (qName.equals("ref")) || 
+                (qName.equals("ref")) || (qName.equals("head")) || 
                 (qName.equals("figure_head")) ||
                 (qName.equals("p")) || (qName.equals("paragraph")) ||
                 (qName.equals("div")) || (qName.equals("figDesc")) ||
                 (qName.equals("table")) || (qName.equals("trash")) ||
                 (qName.equals("formula")) || (qName.equals("item"))
                 ) {
-            String currentTag = null;
+			if (currentTag == null) {
+				return;
+			}
+	
+            //String currentTag = null;
             if (pop) {
-                currentTag = currentTags.pop();
+                //currentTag = currentTags.pop();
+				if (!currentTags.empty()) {
+					currentTags.pop();
+				}
             } else {
-                currentTag = currentTags.peek();
+                //currentTag = currentTags.peek();
             }
+
             String text = getText();
             // we segment the text
             StringTokenizer st = new StringTokenizer(text, " \n\t" + TextUtilities.fullPunctuations, true);
             boolean begin = true;
             while (st.hasMoreTokens()) {
                 String tok = st.nextToken().trim();
-                if (tok.length() == 0) continue;
+                if (tok.length() == 0) 
+					continue;
 
                 if (tok.equals("+L+")) {
                     labeled.add("@newline\n");
-                } else if (tok.equals("+PAGE+")) {
+                } 
+				else if (tok.equals("+PAGE+")) {
                     // page break should be a distinct feature
                     labeled.add("@newpage\n");
-                } else {
+                } 
+				else {
                     String content = tok;
                     int i = 0;
                     if (content.length() > 0) {

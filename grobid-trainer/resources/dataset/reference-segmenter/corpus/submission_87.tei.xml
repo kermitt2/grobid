@@ -1,0 +1,24 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+			<bibl> <label>[1]</label> J. Ph. Karr, A. Baas, R. Houdre, and E. Giacobino, Phys. Rev. A, 69, 031802(R) (2004).<lb/></bibl>
+
+			<bibl> <label>[2]</label> S. Savasta, O. Di Stefano, V. Savona, and W. Langbein, Phys. Rev. Lett., 94, 246401 (2005).<lb/></bibl>
+
+			<bibl> <label>[3]</label> S. Savasta, R. Girlanda, and G. Martino, Phys. Status Solidi a, 164, 85 (1997);</bibl> <bibl>P Schwendimann, C Ciuti,<lb/> and A Quattropani, Phys. Rev. B, 68, 165324 (2003);</bibl> <bibl>J. Ph. Karr, A. Baas, and E Giacobino, Phys. Rev. A, 69,<lb/> 063807 (2004).<lb/></bibl>
+
+			<bibl> <label>[4]</label> A. Verger, C Ciuti, and I Carusotto, Phys. Rev. B, 73, 193306 (2006).<lb/></bibl>
+
+			<bibl> <label>[5]</label> T. C. H. Liew and V. Savona, Phys. Rev. Lett., 104, 183601 (2010).<lb/></bibl>
+
+			<bibl> <label>[6]</label> M. Bamba, A. Imamoglu, I. Carusotto, and C. Ciuti, arXiv:1007.1605v1 (2010).<lb/></bibl>
+
+			<bibl> <label>[7]</label> R. Raussendorf and H. J. Briegel, Phys. Rev. Lett., 86, 5188 (2001).<lb/></bibl>
+
+        </listBibl>
+    </text>
+</tei>
