@@ -4,7 +4,6 @@
 		<fileDesc xml:id="0"/>
 	</teiHeader>
 	<text xml:lang="en">
-			<front>Ultra light bosonic dark matter and CMB<lb/> Ivan Rodriguez Montoya * and Tonatiuh Matos Chassin *<lb/> Departamento de Física, Centro de Investigación y de Estudios Avanzados del IPN, A.P. 14-740, 07000 México D.F., México.<lb/> In this work we report the cosmological effects that a species of Ultra Light Bosonic Dark Matter imprints in<lb/> the Acoustic Peaks of the CMB, and some of its thermic features. We show that the effect of the Bose-Einstein<lb/> statistics is small albeit perceptible, and is equivalent to an increase of non-relativistic matter. It is also noted the<lb/> mass-to-temperature ratio necessary for being still a Dark Matter candidate. And it is needed a non-zero optical<lb/> depth of Reionization.<lb/></front>
 
 			<head>I. INTRODUCTION<lb/></head>
 
@@ -121,45 +120,6 @@
 			<p>We would like to thank Luis Arturo Ureña López, Ab-<lb/>del Pérez Lorenzana, Omar Miranda Romagnoli, Ricardo<lb/> López Fernández and Roy Maartens for useful discussions.<lb/> This work was partially supported by CONACyT México,<lb/> under grants 49865-F, 216536/219673 and by grant number<lb/> I0101/131/07 C-234/07, Instituto Avanzado de Cosmologia<lb/> (IAC) collaboration.<lb/></p>
 
 			<p>All the analysis was done using the public code CMBFAST<lb/> <ref type="biblio">[19]</ref>. And all the calculated curves were compared to the ob-<lb/>serbations of the WMAP satellite on its last five years. Avail-<lb/>able at http://lambda.gsfc.nasa.gov/product/map/current.<lb/></p>
-
-			<bibl> <label>[1]</label> Hu W., Barkana, R., &amp; Gruzinov A. Phys. Rev. Lett. 85, 1158 -<lb/>1161 (2000), [astro-ph/0003365].<lb/></bibl>
-
-			<bibl> <label>[2]</label> Matos T., and Siddhartha Guzman F. Class.Quant.Grav.17:L9-<lb/>L16,2000, [gr-qc/9810028].<lb/></bibl>
-
-			<bibl> <label>[3]</label> Matos T., Siddhartha Guzman F., and Urena-Lopez L. A.<lb/> Class.Quant.Grav.17:1707-1712,2000, [astro-ph/9908152].<lb/></bibl>
-
-			<bibl> <label>[4]</label> Matos T., and Urena-Lopez L. A. Phys.Rev.D63:063506,2001,<lb/> [astro-ph/0006024].<lb/></bibl>
-
-			<bibl> <label>[5]</label> Garcia-Aspeitia M. A., and Matos, T. [gr-qc/0906.327].<lb/></bibl>
-
-			<bibl> <label>[6]</label> Jae-Weon Lee and In-gyu Koh. Phys. Rev. D 53, 2236 -2239<lb/> (1996), [hep-ph/9507385].<lb/></bibl>
-
-			<bibl> <label>[7]</label> Siddhartha Guzman F. Phys. Rev. D 73, 021501(R) (2006), [gr-<lb/>qc/0512081].<lb/></bibl>
-
-			<bibl> <label>[8]</label> Bernal A., Matos T., Núñez D., 2008, RMxAA, 44, 149, [astro-<lb/>ph/0303455].<lb/></bibl>
-
-			<bibl> <label>[9]</label> Matos T., Vazquez-Gonzalez A., and Magana J. [astro-<lb/>ph/0806.0683].<lb/></bibl>
-
-			<bibl> <label>[10]</label> Böhmer C. G., and Harko T. JCAP06(2007)025, [astro-<lb/>ph/0705.4158v4].<lb/></bibl>
-
-			<bibl> <label>[11]</label> Ferrer F., and Grifols J. A. JCAP12(2004)012, [astro-<lb/>ph/0407532].<lb/></bibl>
-
-			<bibl> <label>[12]</label> Dodelson S. Modern Cosmology (Academic Press, 2003).<lb/></bibl>
-
-			<bibl> <label>[13]</label> Kolb E. W., and Turner M. S. The Early Universe (Addison-<lb/>Wesley, 1990).<lb/></bibl>
-
-			<bibl> <label>[14]</label> Lesgourgues J. and Pastor S. Physics Reports 429 (2006) 307 –<lb/> 379. [astro-ph/0603494].<lb/></bibl>
-
-			<bibl> <label>[15]</label> Ma C., and Bertschinger E. Astrophys. J. 455, 7 (1995), [astro-<lb/>ph/9506072].<lb/></bibl>
-
-			<bibl> <label>[16]</label> Woo T.P., and Chiueh T.C. ApJ 697 850-861, [astro-<lb/>ph/0806.0232].<lb/></bibl>
-
-			<bibl> <label>[17]</label> Ureña-López L. A. Class. Quantum Grav. 19 2617-2632 (2002),<lb/> [gr-qc/0104093].<lb/></bibl>
-
-			<bibl> <label>[18]</label> Ureña-López L. A. JCAP01(2009)014, [gr-qc/0806.3093].<lb/></bibl>
-
-			<bibl> <label>[19]</label> Seljak<lb/> U.<lb/> and Zaldarriaga<lb/> M.<lb/> Astrophys.<lb/> J.<lb/> 469,<lb/> 437 (1996),<lb/> [astro-ph/9603033].<lb/> http://www.cfa.harvard.edu/∼mzaldarr/CMBFAST/cmbfast.html.</bibl>
-
 
 	</text>
 </tei>

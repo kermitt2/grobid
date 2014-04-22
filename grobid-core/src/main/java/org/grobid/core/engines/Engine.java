@@ -280,6 +280,63 @@ public class Engine implements Closeable {
     }
 
     /**
+     * Create training data for the segmentation of a reference block based on a PDF file containing
+     * a reference section and the current reference segmentation model 
+     *
+     * @param input   : the path of the PDF file to be processed
+     * @param pathTEI : the path of the training data will be written as TEI file
+	 * @param id : an optional ID to be used in the TEI file, -1 if not to be used 
+     */
+    public void createTrainingReferenceSegmentation(String input, String pathTEI, int id) throws Exception {
+        if (input == null) {
+            throw new GrobidResourceException("Cannot process pdf file, because input file was null.");
+        }
+        File inputFile = new File(input);
+        if (!inputFile.exists()) {
+            throw new GrobidResourceException("Cannot process pdf file, because input file '" +
+                    inputFile.getAbsolutePath() + "' does not exists.");
+        }
+		File resultPathFile = new File(pathTEI);
+        if (!resultPathFile.exists()) {
+            if (!resultPathFile.mkdirs()) {
+                throw new GrobidResourceException("Cannot start parsing, because cannot create "
+                        + "output path for tei files on location '" + resultPathFile.getAbsolutePath() + "'.");
+            }
+        }
+
+        try {
+            // general segmentation
+            Document doc = parsers.getSegmentationParser().processing(input);
+			String referencesStr = doc.getDocumentPartText(SegmentationLabel.REFERENCES);
+            if (!referencesStr.isEmpty()) {
+				String tei = parsers.getReferenceSegmenterParser().createTrainingData2(referencesStr);
+				if (tei != null) {
+                    String outPath = pathTEI + "/" + inputFile.getName().replace(".pdf", ".referenceSegmenter.training.tei.xml");
+                    Writer writer = new OutputStreamWriter(new FileOutputStream(new File(outPath), false), "UTF-8");
+                    writer.write(tei + "\n");
+                    writer.close();
+                }
+			}
+		}
+		catch (IOException e) {
+			e.printStackTrace();
+            throw new GrobidException("An IO exception occurred while running Grobid.", e);
+        }
+    }
+
+	/**
+     * Create training data for the segmentation of a reference block based on a repository of PDF files 
+	 * containing a reference section and the current reference segmentation model 
+     *
+     * @param directoryPath   : the path of the repository of PDF files to be processed
+     * @param resultPath : the path to the repository where to write the training data as a TEI files
+	 * @param id : an optional ID to be used in the TEI file, -1 if not to be used 
+     */
+    public int batchCreateTrainingReferenceSegmentation(String directoryPath, String resultPath, int id) {
+		return batchCreateTraining(directoryPath, resultPath, id, 3);
+    }
+
+    /**
      * Download a PDF file.
      *
      * @param url     URL of the PDF to download
@@ -473,20 +530,6 @@ public class Engine implements Closeable {
 
     /**
      * Parse and convert the current article into TEI, this method performs the
-     * whole parsing and conversion process. If onlyHeader is true, tean only
-     * the tei header data will be created.
-     *
-     * @param inputFile            - absolute path to the pdf to be processed
-     * @param consolidateHeader    - the consolidation option allows GROBID to exploit Crossref
-     *                             web services for improving header information
-     * @param consolidateCitations whether to consolidate citations
-     */
-    public String fullTextToTEI(String inputFile, boolean consolidateHeader, boolean consolidateCitations) throws Exception {
-        return fullTextToTEI(inputFile, consolidateHeader, consolidateCitations, 1);
-    }
-
-    /**
-     * Parse and convert the current article into TEI, this method performs the
      * whole parsing and conversion process. If onlyHeader is true, than only
      * the tei header data will be created.
      *
@@ -495,10 +538,8 @@ public class Engine implements Closeable {
      *                             web services for improving header information
      * @param consolidateCitations - the consolidation option allows GROBID to exploit Crossref
      *                             web services for improving citations information
-     * @param method               - if method is 0, a rule-based is used for the full text part,
-     *                             otherwise a machine learning approach is used.
      */
-    public String fullTextToTEI(String inputFile, boolean consolidateHeader, boolean consolidateCitations, int method) throws Exception {
+    public String fullTextToTEI(String inputFile, boolean consolidateHeader, boolean consolidateCitations) throws Exception {
 
         FullTextParser fullTextParser = parsers.getFullTextParser();
 
@@ -506,11 +547,7 @@ public class Engine implements Closeable {
         Document resultTEI;
         LOGGER.debug("Starting processing fullTextToTEI on " + inputFile);
         long time = System.currentTimeMillis();
-        if (method == 0) {
-            resultTEI = fullTextParser.processing(inputFile, consolidateHeader, consolidateCitations);
-        } else {
-            resultTEI = fullTextParser.processing2(inputFile, consolidateHeader, consolidateCitations);
-        }
+        resultTEI = fullTextParser.processing(inputFile, consolidateHeader, consolidateCitations);
         LOGGER.debug("Ending processing fullTextToTEI on " + inputFile + ". Time to process: " + (System.currentTimeMillis() - time) + "ms");
         return resultTEI.getTei();
     }
@@ -597,14 +634,9 @@ public class Engine implements Closeable {
                         createTrainingFullText(pdfFile.getPath(), resultPath, resultPath, ind + n);
                     } else if (type == 2) {
                         createTrainingSegmentation(pdfFile.getPath(), resultPath, resultPath, ind + n);
+                    } else if (type == 3) {
+                        createTrainingReferenceSegmentation(pdfFile.getPath(), resultPath, ind + n);
                     }
-					
-					/*
-					 * else if (type == 2) {
-					 * createTrainingCitations(pdfFile.getPath(), resultPath,
-					 * resultPath, ind+n); }
-					 */
-                    // }
                 } catch (final Exception exp) {
                     LOGGER.error("An error occured while processing the following pdf: " + pdfFile.getPath() + ": " + exp);
                 }
@@ -713,7 +745,7 @@ public class Engine implements Closeable {
                         writer.close();
                     }
                 } else if (type == 1) {
-                    String tei = fullTextToTEI(pdfFile.getPath(), consolidateHeader, consolidateCitations, 0);
+                    String tei = fullTextToTEI(pdfFile.getPath(), consolidateHeader, consolidateCitations);
                     if (tei != null) {
                         String outPath = resultPath + "/" + pdfFile.getName().replace(".pdf", GrobidProperties.FILE_ENDING_TEI_FULLTEXT);
                         Writer writer = new OutputStreamWriter(new FileOutputStream(new File(outPath), false), "UTF-8");

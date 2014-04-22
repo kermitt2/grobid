@@ -180,7 +180,6 @@ public class FeaturesVectorReferenceSegmenter {
      */
     static public String addFeaturesReferenceSegmenter(List<String> lines) {
         FeatureFactory featureFactory = FeatureFactory.getInstance();
-
         String line;
         StringBuilder citation = new StringBuilder();
         boolean newline = true;
@@ -423,7 +422,6 @@ public class FeaturesVectorReferenceSegmenter {
                 features.punctType = "NOPUNCT";
 
             features.label = tag;
-
             citation.append(features.printVector());
 
             previousTag = tag;

@@ -1,0 +1,22 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+			<bibl> <label>[1]</label> K. Akahane et al., J. Cryst. Growth 245 (2002), pp. 31-36.<lb/></bibl>
+
+			<bibl> <label>[2]</label> K. Akahane, N. Yamamoto, and M. Tsuchiya, Appl. Phys. Lett.,<lb/> 93 (2008), 041121.<lb/></bibl>
+
+			<bibl> <label>[3]</label> K. Akahane, N. Yamamoto, T. Kawanishi, Phys. Stat. Sol. A,<lb/> 208 (2011), pp. 425-428.<lb/></bibl>
+
+			<bibl> <label>[5]</label> O. Kojima et al., J. Appl. Phys. 103 (2008), 113504.<lb/></bibl>
+
+			<bibl> <label>[6]</label> O. Kojima et al., J. Appl. Phys. 107 (2010), 073506.<lb/></bibl>
+
+			<bibl> <label>[7]</label> O. Kojima et al., Phys. Stat. Sol. C 8 (2011), 46-49.<lb/></bibl>
+			
+        </listBibl>
+    </text>
+</tei>

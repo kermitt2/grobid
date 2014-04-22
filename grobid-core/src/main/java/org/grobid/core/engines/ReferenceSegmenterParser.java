@@ -31,10 +31,12 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
         List<String> blocks = new ArrayList<>();
 
 
-        String input = referenceBlock.replace("\n", " ");
-        input = input.replaceAll("\\p{Cntrl}", " ").trim();
-        StringTokenizer st = new StringTokenizer(input, TextUtilities.fullPunctuations, true);
-
+        //String input = referenceBlock.replace("\n", " @newline ");
+        String input = referenceBlock;
+		//input = input.replaceAll("\\p{Cntrl}", " ").trim();
+        //StringTokenizer st = new StringTokenizer(input, TextUtilities.fullPunctuations, true);
+		StringTokenizer st = new StringTokenizer(input, TextUtilities.delimiters, true);
+		
         if (st.countTokens() == 0) {
             return null;
         }
@@ -42,17 +44,22 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
         List<String> tokenizations = new ArrayList<>();
         while (st.hasMoreTokens()) {
             final String tok = st.nextToken();
-            tokenizations.add(tok);
-            if (!tok.equals(" ")) {
+            
+            if (tok.equals("\n")) {
+				blocks.add("@newline");
+				//tokenizations.add(" ");
+			}
+			else if (!tok.equals(" ")) {
                 blocks.add(tok + " <reference-block>");
+				tokenizations.add(tok);
             }
+			else {
+				tokenizations.add(" ");
+			}
         }
         blocks.add("\n");
-
         String featureVector = FeaturesVectorReferenceSegmenter.addFeaturesReferenceSegmenter(blocks);
         String res = label(featureVector);
-
-//        System.out.println(res);
 
         List<Pair<String, String>> labeled = GenericTaggerUtils.getTokensAndLabels(res);
 
@@ -158,6 +165,216 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
                 "    </text>\n" +
                 "</tei>\n");
         return sb.toString();
+    }
+
+	public String createTrainingData2(String input) {
+		List<String> tokenizations = new ArrayList<String>();
+		StringTokenizer st = new StringTokenizer(input, TextUtilities.delimiters, true);
+
+        if (st.countTokens() == 0)
+            return null;
+		List<String> blocks = new ArrayList<String>();
+        while (st.hasMoreTokens()) {
+            final String tok = st.nextToken();
+            
+            if (tok.equals("\n")) {
+				blocks.add("@newline");
+				tokenizations.add("\n");
+			}
+			else if (!tok.equals(" ")) {
+                blocks.add(tok + " <reference-block>");
+				tokenizations.add(tok);
+            }
+			else {
+				tokenizations.add(" ");
+			}
+        }
+		blocks.add("\n");
+		
+		String featureVector = FeaturesVectorReferenceSegmenter.addFeaturesReferenceSegmenter(blocks);
+        String res = label(featureVector);
+		List<Pair<String, String>> labeled = GenericTaggerUtils.getTokensAndLabels(res);
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("<tei>\n" +
+                "    <teiHeader>\n" +
+                "        <fileDesc xml:id=\"0\"/>\n" +
+                "    </teiHeader>\n" +
+                "    <text xml:lang=\"en\">\n");
+		
+		int tokPtr = 0;
+		boolean addSpace = false;
+		boolean addEOL = false;
+		String lastTag = null;
+		boolean refOpen = false;
+		for (Pair<String, String> l : labeled) {
+            String tok = l.a;
+            String label = l.b;
+
+			int tokPtr2 = tokPtr;
+            for(; tokPtr2 < tokenizations.size(); tokPtr2++) {
+                if (tokenizations.get(tokPtr2).equals(" ")) {
+					addSpace = true;
+				}
+				else if (tokenizations.get(tokPtr2).equals("\n")) {
+					addEOL = true;	
+				}
+                else {
+					break;
+				}
+            }
+			tokPtr = tokPtr2;
+
+            if (tokPtr == tokenizations.size()) {
+                throw new IllegalStateException("Implementation error: Reached the end of tokenizations, but current token is " + tok);
+            }
+
+			String tokenizationToken = tokenizations.get(tokPtr);
+
+            if (!tokenizationToken.equals(tok)) {
+                throw new IllegalStateException("Implementation error: " + tokenizationToken + " != " + tok);
+            }
+	
+			String plainLabel = GenericTaggerUtils.getPlainLabel(label);
+			
+			boolean tagClosed = (lastTag != null) && testClosingTag(sb, label, lastTag, addSpace, addEOL);
+			
+			if (tagClosed) {
+				addSpace = false;
+				addEOL = false;
+			}
+			if (tagClosed && lastTag.equals("<reference>")) {
+				refOpen = false;
+			}
+			String output = null;
+			String field = null;
+			if (refOpen) {
+				field = "<label>";
+			}
+			else {
+				field = "<bibl><label>";
+			}
+			output = writeField(label, lastTag, tok, "<label>", field, addSpace, addEOL, 2);
+			if (output != null) {
+				sb.append(output);
+				refOpen = true;
+			}
+			else {
+				if (refOpen) {
+					field = "";
+				}
+				else {
+					field = "<bibl>";
+				}
+				output = writeField(label, lastTag, tok, "<reference>", field, addSpace, addEOL, 2);
+				if (output != null) {
+					sb.append(output);
+					refOpen= true;
+				}
+				else {
+					output = writeField(label, lastTag, tok, "<other>", "", addSpace, addEOL, 2);
+					if (output != null) {
+						sb.append(output);
+						refOpen = false;
+					}
+				}
+			}
+			
+			lastTag = plainLabel;
+			addSpace = false;
+			addEOL = false;
+            tokPtr++;
+        }
+
+        sb.append("\n        </listBibl>\n" +
+                "    </text>\n" +
+                "</tei>\n");
+        return sb.toString();
+    }
+	
+	private boolean testClosingTag(StringBuilder buffer,
+                                   String currentTag,
+                                   String lastTag,
+								   boolean addSpace,
+								   boolean addEOL) {
+        boolean res = false;
+        if (!currentTag.equals(lastTag)) {
+            res = true;
+            // we close the current tag
+            if (lastTag.equals("<other>")) {
+				if (addEOL)
+                    buffer.append("<lb/>");
+				if (addSpace)
+                    buffer.append(" ");
+                buffer.append("\n");
+            } else if (lastTag.equals("<label>")) {
+				if (addEOL)
+                    buffer.append("<lb/>");
+				if (addSpace)
+                    buffer.append(" ");
+                buffer.append("</label>");
+            } else if (lastTag.equals("<reference>")) {
+				if (addEOL)
+                    buffer.append("<lb/>");
+				if (addSpace)
+                    buffer.append(" ");
+                buffer.append("</bibl>\n");
+            } else {
+                res = false;
+            }
+        }
+        return res;
+    }
+
+    private String writeField(String currentTag,
+                              String lastTag,
+                              String token,
+                              String field,
+                              String outField,
+                              boolean addSpace,
+							  boolean addEOL,
+							  int nbIndent) {
+        String result = null;
+        if (currentTag.endsWith(field)) {
+            if (currentTag.endsWith("<other>")) {
+                result = "";
+				if (currentTag.equals("I-<other>")) {
+					result += "\n";
+					for (int i = 0; i < nbIndent; i++) {
+	                    result += "    ";
+	                }
+				}
+				if (addEOL)
+                    result += "<lb/>";
+				if (addSpace)
+                    result += " ";
+                result += token;
+            } 
+			else if (currentTag.endsWith(lastTag)) {
+                result = "";
+				if (addEOL)
+                    result += "<lb/>";
+				if (addSpace)
+                    result += " ";
+				if (currentTag.startsWith("I-")) 
+					result += outField;
+                result += token;
+            } 
+			else {
+                result = "";
+				if (outField.length() > 0) {
+					for (int i = 0; i < nbIndent; i++) {
+                    	result += "    ";
+                	}
+				}
+				if (addEOL)
+                    result += "<lb/>";
+                if (addSpace)
+                    result += " ";
+                result += outField + token;
+            }
+        }
+        return result;
     }
 
 }

@@ -43,6 +43,12 @@ public class TEIFormater {
     private static int italicPos = 16;
     private static int boldPos = 17;
 
+	private static Pattern numberRef = Pattern.compile("(\\[|\\()\\d+\\w?(\\)|\\])");
+    private static Pattern numberRefCompact =
+            Pattern.compile("(\\[|\\()((\\d)+(\\w)?(\\-\\d+\\w?)?,\\s?)+(\\d+\\w?)(\\-\\d+\\w?)?(\\)|\\])");
+    //private static Pattern numberRefVeryCompact = Pattern.compile("(\\[|\\()(\\d)+-(\\d)+(\\)|\\])");
+    private static Pattern numberRefCompact2 = Pattern.compile("(\\[|\\()(\\d+)(-|‒|–|—|―|\u2013)(\\d+)(\\)|\\])");
+
     public TEIFormater(Document document) {
         doc = document;
     }
@@ -689,7 +695,8 @@ public class TEIFormater {
         return tei;
     }
 
-    public String toTEIBody(BiblioItem biblio, List<BibDataSet> bds,
+    /*
+	public String toTEIBody(BiblioItem biblio, List<BibDataSet> bds,
                             boolean peer, boolean withStyleSheet, boolean onlyHeader) throws Exception {
         StringBuffer tei = null;
 		if (biblio != null) {
@@ -702,10 +709,11 @@ public class TEIFormater {
 
             tei.append("\t\t<body>\n");
 
-            int i = 0;
+            int i = 0; 
             boolean first = true;
             boolean listOpened = false;
             double pos = 0.0;
+
             for (Block block : doc.getBlocks()) {
                 Integer ii = new Integer(i);
                 if ((!doc.getBlockDocumentHeaders().contains(ii)) && (!doc.getBlockReferences().contains(ii)) &
@@ -715,7 +723,6 @@ public class TEIFormater {
                         String localText = block.getText();
                         if (localText != null) {
                             localText = localText.trim();
-                            //String originalLocalText = localText;
                             localText = TextUtilities.dehyphenize(localText);
                             localText = localText.replace("\n", " ");
                             localText = localText.replace("  ", " ");
@@ -903,11 +910,10 @@ public class TEIFormater {
 		
 		tei.append("\t</text>\n");
         tei.append("</TEI>\n");
-		
-        //String toto = tei.toString();
-        //System.out.println(toto);
+
         return tei.toString();
     }
+	*/
 
 
     public StringBuffer toTEIBodyML(StringBuffer tei,
@@ -1074,26 +1080,7 @@ public class TEIFormater {
                         currentSection.append(s2);
                     }
                 }
-            } /*else if (currentTag0.equals("<header>")) {
-                if ((currentSection != null) && (currentSection.length() > 0)) {
-                    currentNode.label = currentSection.toString();
-                    doc.getTop().addChild(currentNode);
-                    currentSection = new StringBuffer();
-                    currentNode = null;
-                }
-                if (s1.equals("I-<header>")) {
-                    currentNode = new DocumentNode();
-                    currentNode.startToken = p;
-                    currentNode.label = "header";
-                } else {
-                    if (currentNode == null) {
-                        currentNode = new DocumentNode();
-                    }
-                    currentNode.endToken = p;
-                }
-            } else if (currentTag0.equals("<reference>") && (startReferencePosition == -1)) {
-                startReferencePosition = p;
-            } */
+            } 
 			else if (currentTag0.equals("<figure_head>")) {
                 if (s1.equals("I-<figure_head>")) {
                     if (currentFigureHead.length() > 0) {
@@ -1287,8 +1274,8 @@ public class TEIFormater {
         currentItem = new StringBuffer();
         currentCitationMarker = new StringBuffer();
         currentFigureMarker = new StringBuffer();
-        currentPage = new StringBuffer();
-        currentPageFootNote = new StringBuffer();
+        //currentPage = new StringBuffer();
+        //currentPageFootNote = new StringBuffer();
         currentLabel = new StringBuffer();
         currentFigureHead = new StringBuffer();
         currentEquation = new StringBuffer();
@@ -1433,9 +1420,7 @@ public class TEIFormater {
                     while ((!strop) & (p < tokenizations.size())) {
                         String tokOriginal = tokenizations.get(p);
                         if (tokOriginal.equals(" ")
-                                //| tokOriginal.equals("\n") 
-                                //| tokOriginal.equals("\r") 
-                                | tokOriginal.equals("\t")) {
+								|| tokOriginal.equals("\u00A0")) {
                             if (p > 0) {
                                 addSpace = true;
                             }
@@ -1537,7 +1522,8 @@ public class TEIFormater {
                                 elements.remove(elements.size() - 1);
                             }
                         }
-                    } else if (lastElement.equals("head")) {
+                    } 
+					else if (lastElement.equals("head")) {
                         if (elements.size() > 1) {
                             String lastElement2 = elements.get(elements.size() - 2);
                             if (lastElement.equals("figure")) {
@@ -1679,18 +1665,22 @@ public class TEIFormater {
                     if (lastTag0 != null) {
                         if (lastTag0.equals("<figure_marker>") ||
                                 lastTag0.equals("<citation_marker>")) {
-                            if (isItalic) {
+                            /*if (isItalic) {
                                 tei.append("<hi rend=\"italic\">");
                                 elements.add("hi");
                                 currentParagraph.append(s2);
-                            } else if (isBold) {
+                            } 
+							else if (isBold) {
                                 tei.append("<hi rend=\"bold\">");
                                 elements.add("hi");
                                 currentParagraph.append(s2);
-                            } else {
+                            } 
+							else*/ 
+							{
                                 currentParagraph.append(s2);
                             }
-                        } else if (lastTag0.equals("<page>")) {
+                        } 
+						/*else if (lastTag0.equals("<page>")) {
                             // it depends if we have reached or not the end of the previous
                             // paragraph
                             if (inParagraph) {
@@ -1721,10 +1711,11 @@ public class TEIFormater {
                                     currentParagraph.append(s2);
                                 }
                             }
-                        } else {
+                        } */
+						else {
                             tei.append("\n\t\t\t<p>");
                             elements.add("p");
-                            if (isItalic) {
+                            /*if (isItalic) {
                                 tei.append("<hi rend=\"italic\">");
                                 elements.add("hi");
                                 currentParagraph.append(s2);
@@ -1732,14 +1723,16 @@ public class TEIFormater {
                                 tei.append("<hi rend=\"bold\">");
                                 elements.add("hi");
                                 currentParagraph.append(s2);
-                            } else {
+                            } else */
+							{
                                 currentParagraph.append(s2);
                             }
                         }
-                    } else {
+                    } 
+					else {
                         tei.append("\n\t\t\t<p>");
                         elements.add("p");
-                        if (isItalic) {
+                        /*if (isItalic) {
                             tei.append("<hi rend=\"italic\">");
                             elements.add("hi");
                             currentParagraph.append(s2);
@@ -1747,12 +1740,13 @@ public class TEIFormater {
                             tei.append("<hi rend=\"bold\">");
                             elements.add("hi");
                             currentParagraph.append(s2);
-                        } else {
+                        } else*/ 
+						{
                             currentParagraph.append(s2);
                         }
                     }
                 } else {
-                    if (wasItalic & !isItalic) {
+                    /*if (wasItalic & !isItalic) {
                         tei.append(normalizeText(currentParagraph.toString()));
                         if (elements.size() > 0) {
                             String lastElement = elements.get(elements.size() - 1);
@@ -1762,7 +1756,8 @@ public class TEIFormater {
                             }
                         }
                         currentParagraph = new StringBuffer();
-                    } else if (wasBold & !isBold) {
+                    } 
+					else if (wasBold & !isBold) {
                         tei.append(normalizeText(currentParagraph.toString()));
                         if (elements.size() > 0) {
                             String lastElement = elements.get(elements.size() - 1);
@@ -1772,7 +1767,7 @@ public class TEIFormater {
                             }
                         }
                         currentParagraph = new StringBuffer();
-                    }
+                    }*/
                     if (elements.size() > 0) {
                         String lastElement = elements.get(elements.size() - 1);
                         if (!lastElement.equals("p") &&
@@ -1784,7 +1779,7 @@ public class TEIFormater {
                         }
                     }
                     if (addSpace) {
-                        if (isItalic & !wasItalic) {
+                        /*if (isItalic & !wasItalic) {
                             tei.append(normalizeText(currentParagraph.toString()));
                             tei.append(" <hi rend=\"italic\">");
                             elements.add("hi");
@@ -1796,11 +1791,13 @@ public class TEIFormater {
                             elements.add("hi");
                             currentParagraph = new StringBuffer();
                             currentParagraph.append(s2);
-                        } else {
+                        } else */
+						{
                             currentParagraph.append(" " + s2);
                         }
-                    } else if (addEOL) {
-                        if (isItalic & !wasItalic) {
+                    } 
+					else if (addEOL) {
+                        /*if (isItalic & !wasItalic) {
                             tei.append(normalizeText(currentParagraph.toString()));
                             tei.append("\n<hi rend=\"italic\">");
                             elements.add("hi");
@@ -1812,11 +1809,12 @@ public class TEIFormater {
                             elements.add("hi");
                             currentParagraph = new StringBuffer();
                             currentParagraph.append(s2);
-                        } else {
+                        } else */
+						{
                             currentParagraph.append("\n" + s2);
                         }
                     } else {
-                        if (isItalic & !wasItalic) {
+                        /*if (isItalic & !wasItalic) {
                             tei.append(normalizeText(currentParagraph.toString()));
                             tei.append("<hi rend=\"italic\">");
                             elements.add("hi");
@@ -1828,7 +1826,8 @@ public class TEIFormater {
                             elements.add("hi");
                             currentParagraph = new StringBuffer();
                             currentParagraph.append(s2);
-                        } else {
+                        } else */
+						{
                             currentParagraph.append(s2);
                         }
                     }
@@ -1884,7 +1883,8 @@ public class TEIFormater {
                         currentItem.append(s2);
                     }
                 }
-            } else if (currentTag0.equals("<citation_marker>")) {
+            } 
+			else if (currentTag0.equals("<citation_marker>")) {
                 if (s1.equals("I-<citation_marker>")) {
                     currentCitationMarker.append(s2);
                 } else {
@@ -1894,7 +1894,8 @@ public class TEIFormater {
                         currentCitationMarker.append(s2);
                     }
                 }
-            } else if (currentTag0.equals("<figure_marker>")) {
+            } 
+			else if (currentTag0.equals("<figure_marker>")) {
                 if (s1.equals("I-<figure_marker>")) {
                     currentFigureMarker.append(s2);
                 } else {
@@ -1904,7 +1905,8 @@ public class TEIFormater {
                         currentFigureMarker.append(s2);
                     }
                 }
-            } else if (currentTag0.equals("<equation>")) {
+            } 
+			else if (currentTag0.equals("<equation>")) {
                 if (s1.equals("I-<equation>")) {
                     currentEquation.append(s2);
                 } else {
@@ -1914,7 +1916,8 @@ public class TEIFormater {
                         currentEquation.append(s2);
                     }
                 }
-            } else if (currentTag0.equals("<label>")) {
+            } 
+			else if (currentTag0.equals("<label>")) {
                 if (descFigure && (!lastTag0.equals("<label>"))) {
                     if (elements.size() > 0) {
                         String lastElement = elements.get(elements.size() - 1);
@@ -2338,7 +2341,8 @@ public class TEIFormater {
                     }
                 }
                 currentParagraph = new StringBuffer();
-            } else if (currentItem.length() > 0) {
+            } 
+			else if (currentItem.length() > 0) {
                 if (currentTag0.equals("<citation_marker>") || currentTag0.equals("<figure_marker>")) {
                     tei.append(" " + normalizeText(currentItem.toString()) + " ");
                 } else if (lastTag0.equals("<citation_marker>") || lastTag0.equals("<figure_marker>")) {
@@ -2380,12 +2384,14 @@ public class TEIFormater {
                     }
                 }
                 currentFigureHead = new StringBuffer();
-            } else if (currentCitationMarker.length() > 0) {
+            } 
+			else if (currentCitationMarker.length() > 0) {
                 String theRef = currentCitationMarker.toString();
                 theRef = markReferencesTEI(theRef, bds);
                 tei.append(theRef);
                 currentCitationMarker = new StringBuffer();
-            } else if (currentFigureMarker.length() > 0) {
+            } 
+			else if (currentFigureMarker.length() > 0) {
                 String theRef = currentFigureMarker.toString();
                 theRef = markReferencesFigureTEI(theRef, ntos);
                 if ((tei.length() > 0) &&
@@ -2395,7 +2401,8 @@ public class TEIFormater {
                     tei.append(theRef);
                 }
                 currentFigureMarker = new StringBuffer();
-            } else if ((lastTag0 != null) && lastTag0.equals("<label>")) {
+            } 
+			else if ((lastTag0 != null) && lastTag0.equals("<label>")) {
                 if (!currentTag0.equals("<citation_marker>") && !currentTag0.equals("<figure_marker>")) {
                     if (elements.size() > 0) {
                         String lastElement = elements.get(elements.size() - 1);
@@ -2455,7 +2462,7 @@ public class TEIFormater {
     /**
      * Mark the identified references in the text body using TEI annotations. This is the old version.
      */
-    public String markReferencesTEI2(String text, List<BibDataSet> bds) {
+    /*public String markReferencesTEI2(String text, List<BibDataSet> bds) {
         if (text == null)
             return null;
         if (text.trim().length() == 0)
@@ -2654,6 +2661,7 @@ public class TEIFormater {
         //System.out.println(text);
         return text;
     }
+	*/
 
     /**
      * Mark using TEI annotations the identified references in the text body build with the machine learning model.
@@ -2665,12 +2673,6 @@ public class TEIFormater {
             return text;
 
         text = TextUtilities.HTMLEncode(text);
-        Pattern numberRef = Pattern.compile("(\\[|\\()\\d+\\w?(\\)|\\])");
-        Pattern numberRefCompact =
-                Pattern.compile("(\\[|\\()((\\d)+(\\w)?(\\-\\d+\\w?)?,\\s?)+(\\d+\\w?)(\\-\\d+\\w?)?(\\)|\\])");
-        //Pattern numberRefVeryCompact = Pattern.compile("(\\[|\\()(\\d)+-(\\d)+(\\)|\\])");
-        Pattern numberRefCompact2 = Pattern.compile("(\\[|\\()(\\d+)(-|‒|–|—|―|\u2013)(\\d+)(\\)|\\])"); 
-
         boolean numerical = false;
 
         // we check if we have numerical references
@@ -2731,7 +2733,8 @@ public class TEIFormater {
                         throw new GrobidException("An exception occurs.", e);
                     }
                 }
-            } else {
+            } 
+			else {
                 toto = toto.replace(")", "");
                 toto = toto.replace("(", "");
                 int ind = toto.indexOf('-');
@@ -2787,7 +2790,7 @@ public class TEIFormater {
 	                    }
 	                }
 	                char extend1 = 0;
-	                // we check if we have an identifier with the year
+	                // we check if we have an identifier with the year (e.g. 2010b)
 	                if (resBib.getPublicationDate() != null) {
 	                    String dat = resBib.getPublicationDate();
 	                    if ((dat != null) && (year != null)) {
@@ -2812,6 +2815,8 @@ public class TEIFormater {
 	                    author2 = author2.toLowerCase();
 	                }
 
+					// try first to match the reference marker string with marker (label) present in the 
+					// bibliographical section
 	                if (marker != null) {
 	                    Matcher m = numberRef.matcher(marker);
 	                    if (m.find()) {
@@ -2824,7 +2829,8 @@ public class TEIFormater {
 	                    }
 	                }
 
-	                if ((author1 != null) & (year != null)) {
+					// try to match based on the author and year strings
+	                if ((author1 != null) && (year != null)) {
 	                    int indi1 = -1; // first author
 	                    int indi2 = -1; // year
 	                    int indi3 = -1; // second author if only two authors in total
@@ -2832,85 +2838,114 @@ public class TEIFormater {
 	                    boolean end = false;
 
 	                    while (!end) {
-	                        indi1 = text.toLowerCase().indexOf(author1, i);
-	                        indi2 = text.indexOf(year, i);
+	                        indi1 = text.toLowerCase().indexOf(author1, i); // first author matching
+	                        indi2 = text.indexOf(year, i); // year matching
 	                        int added = 1;
 	                        if (author2 != null) {
-	                            indi3 = text.toLowerCase().indexOf(author2, i);
+	                            indi3 = text.toLowerCase().indexOf(author2, i); // second author matching
 	                        }
 	                        char extend2 = 0;
 	                        if (indi2 != -1) {
 	                            if (text.length() > indi2 + year.length()) {
-	                                extend2 = text.charAt(indi2 + year.length());
+	                                extend2 = text.charAt(indi2 + year.length()); // (e.g. 2010b)
 	                            }
 	                        }
-	                        if ((indi1 == -1) | (indi2 == -1))
+	
+	                        if ((indi1 == -1) || (indi2 == -1)) {
 	                            end = true;
-	                        else if ((indi1 != -1) & (indi2 != -1) & (indi3 != -1) & (indi1 < indi2) &
-	                                (indi1 < indi3) & (indi2 - indi1 > author1.length())) {
-	                            if ((extend1 != 0) & (extend2 != 0) & (extend1 != extend2)) {
+								// no author has been found, we go on with the next biblio item
+							}
+	                        else if ((indi1 != -1) && (indi2 != -1) && (indi3 != -1) && (indi1 < indi2) &&
+	                                (indi1 < indi3) && (indi2 - indi1 > author1.length())) {
+								// this is the case with 2 authors in the marker
+		
+	                            if ((extend1 != 0) && (extend2 != 0) && (extend1 != extend2)) {
 	                                end = true;
-	                            } else {
+									// we have identifiers with the year, but they don't match
+									// e.g. 2010a != 2010b
+	                            } 
+								else {
 	                                // we check if we don't have another instance of the author between the two indices
 	                                int indi1bis = text.toLowerCase().indexOf(author1, indi1 + author1.length());
 	                                if (indi1bis == -1) {
 	                                    String reference = text.substring(indi1, indi2 + 4);
 	                                    boolean extended = false;
 	                                    if (text.length() > indi2 + 4) {
-	                                        if ((text.charAt(indi2 + 4) == ')') |
-	                                                (text.charAt(indi2 + 4) == ']') |
-	                                                ((extend1 != 0) & (extend2 != 0) & (extend1 == extend2))) {
+	                                        if ((text.charAt(indi2 + 4) == ')') ||
+	                                                (text.charAt(indi2 + 4) == ']') ||
+	                                                ((extend1 != 0) && (extend2 != 0) && (extend1 == extend2))) {
 	                                            reference += text.charAt(indi2 + 4);
 	                                            extended = true;
 	                                        }
 	                                    }
+										String previousText = text.substring(0, indi1);
+										String followingText = "";
 	                                    if (extended) {
-	                                        text = text.substring(0, indi1) +
-	                                                "<ref type=\"bibr\" target=\"#b" + p + "\">" + reference + "</ref>" +
-	                                                text.substring(indi2 + 5, text.length());
+											followingText = text.substring(indi2 + 5, text.length()); 
+																// 5 digits for the year + identifier character 
+	                                        text = "<ref type=\"bibr\" target=\"#b" + p + "\">" + reference + "</ref>";
 	                                        added = 8;
-	                                        return text;
 	                                    } else {
-	                                        text = text.substring(0, indi1) +
-	                                                "<ref type=\"bibr\" target=\"#b" + p + "\">" + reference + "</ref>" +
-	                                                text.substring(indi2 + 4, text.length());
+											followingText = text.substring(indi2 + 4, text.length());
+																// 4 digits for the year 
+	                                        text = "<ref type=\"bibr\" target=\"#b" + p + "\">" + reference + "</ref>";
 	                                        added = 7;
-	                                        return text;
 	                                    }
+										if (previousText.length() > 2) {
+											previousText = markReferencesTEI(previousText, bds);
+										}
+										if (followingText.length() > 2) {
+											followingText = markReferencesTEI(followingText, bds);
+										}
+											
+										return previousText+text+followingText;
 	                                }
 	                                end = true;
 	                            }
-	                        } else if ((indi1 != -1) & (indi2 != -1) & (indi1 < indi2) &
+	                        } 
+							else if ((indi1 != -1) && (indi2 != -1) && (indi1 < indi2) &&
 	                                (indi2 - indi1 > author1.length())) {
-	                            if ((extend1 != 0) & (extend2 != 0) & (extend1 != extend2)) {
+								// this is the case with 1 author in the marker
+			
+	                            if ((extend1 != 0) && (extend2 != 0) && (extend1 != extend2)) {
 	                                end = true;
-	                            } else {
+	                            } 
+								else {
 	                                // we check if we don't have another instance of the author between the two indices
 	                                int indi1bis = text.toLowerCase().indexOf(author1, indi1 + author1.length());
 	                                if (indi1bis == -1) {
 	                                    String reference = text.substring(indi1, indi2 + 4);
 	                                    boolean extended = false;
 	                                    if (text.length() > indi2 + 4) {
-	                                        if ((text.charAt(indi2 + 4) == ')') |
-	                                                (text.charAt(indi2 + 4) == ']') |
-	                                                ((extend1 != 0) & (extend2 != 0) & (extend1 == extend2))) {
+	                                        if ((text.charAt(indi2 + 4) == ')') ||
+	                                                (text.charAt(indi2 + 4) == ']') ||
+	                                                ((extend1 != 0) && (extend2 != 0) & (extend1 == extend2))) {
 	                                            reference += text.charAt(indi2 + 4);
 	                                            extended = true;
 	                                        }
 	                                    }
+										String previousText = text.substring(0, indi1);
+										String followingText = "";
 	                                    if (extended) {
-	                                        text = text.substring(0, indi1) +
-	                                                "<ref type=\"bibr\" target=\"#b" + p + "\">" + reference + "</ref>" +
-	                                                text.substring(indi2 + 5, text.length());
+											followingText = text.substring(indi2 + 5, text.length()); 
+																// 5 digits for the year + identifier character
+	                                        text = "<ref type=\"bibr\" target=\"#b" + p + "\">" + reference + "</ref>";
 	                                        added = 8;
-	                                        return text;
-	                                    } else {
-	                                        text = text.substring(0, indi1) +
-	                                                "<ref type=\"bibr\" target=\"#b" + p + "\">" + reference + "</ref>" +
-	                                                text.substring(indi2 + 4, text.length());
+	                                    } 
+										else {
+											followingText = text.substring(indi2 + 4, text.length()); 
+																// 4 digits for the year 
+	                                        text = "<ref type=\"bibr\" target=\"#b" + p + "\">" + reference + "</ref>";
 	                                        added = 7;
-	                                        return text;
-	                                    }
+										}
+	                                  	if (previousText.length() > 2) {
+											previousText = markReferencesTEI(previousText, bds);
+										}
+										if (followingText.length() > 2) {
+											followingText = markReferencesTEI(followingText, bds);
+										}
+											
+										return previousText+text+followingText;    
 	                                }
 	                                end = true;
 	                            }
@@ -2925,6 +2960,10 @@ public class TEIFormater {
 	            p++;
 	        }
 		}
+		
+		// we have not been able to solve the bibliographical marker, but we still annotate it globally
+		// without pointer - just ignoring possible punctuation at the beginning and end of the string
+		text = "<ref type=\"bibr\">" + text + "</ref>";
         return text;
     }
 

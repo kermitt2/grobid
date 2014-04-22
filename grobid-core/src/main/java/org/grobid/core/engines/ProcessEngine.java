@@ -201,6 +201,18 @@ public class ProcessEngine {
         LOGGER.info(result + " files processed.");
     }
 
+	/**
+     * Generate training data for the reference segmentation model.
+     *
+     * @param pGbdArgs The parameters.
+     */
+    public void createTrainingReferenceSegmentation(final GrobidMainArgs pGbdArgs) {
+        inferPdfInputPath(pGbdArgs);
+        inferOutputPath(pGbdArgs);
+        int result = getEngine().batchCreateTrainingReferenceSegmentation(pGbdArgs.getPath2Input(), pGbdArgs.getPath2Output(), -1);
+        LOGGER.info(result + " files processed.");
+    }
+
     /**
      * Generate training data for citation extraction from patent documents.
      *

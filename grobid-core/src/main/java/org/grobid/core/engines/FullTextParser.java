@@ -63,13 +63,13 @@ public class FullTextParser extends AbstractParser {
      *
      *
      *
-     * @param input                filename of pdf file
+     * @param input filename of pdf file
      * @param consolidateHeader if consolidate header
      * @param consolidateCitations if consolidate citations
      * @return a pair consisting of TEI string representation and a document itseld
      */
     
-    public Document processing(String input, boolean consolidateHeader, boolean consolidateCitations) {
+    /*public Document processing(String input, boolean consolidateHeader, boolean consolidateCitations) {
         if (input == null) {
             throw new GrobidResourceException("Cannot process pdf file, because input file was null.");
         }
@@ -116,10 +116,9 @@ public class FullTextParser extends AbstractParser {
             doc.cleanLxmlFile(pathXML, false);
         }
     }
-
-    // Need to use new segmentation model
-    //@Deprecated
-    public Document processing2(String input,
+	*/
+    
+    public Document processing(String input,
                                 boolean consolidateHeader,
                                 boolean consolidateCitations) throws Exception {
         if (input == null) {
@@ -140,7 +139,7 @@ public class FullTextParser extends AbstractParser {
         try {
             // general segmentation
             Document doc = parsers.getSegmentationParser().processing(input);
-
+ 
             //String fulltext = doc.getFulltextFeatured(true, true);
 			SortedSet<DocumentPiece> documentBodyParts = doc.getDocumentPart(SegmentationLabel.BODY);
 			//List<String> tokenizations = doc.getTokenizations();
@@ -149,7 +148,7 @@ public class FullTextParser extends AbstractParser {
 			String bodytext = featSeg.getA();
 			List<String> tokenizationsBody = featSeg.getB();
             String rese = label(bodytext);
-
+//System.out.println(rese);
             // set the different sections of the Document object
             //doc = BasicStructureBuilder.resultSegmentation(doc, rese, tokenizations);
 
@@ -218,7 +217,7 @@ public class FullTextParser extends AbstractParser {
 
             int tokens = dp1.getTokenDocPos();
             int tokene = dp2.getTokenDocPos();
-            for (int i = tokens; i < tokene; i++) {
+            for (int i = tokens; i <= tokene; i++) {
                 tokenizationsBody.add(tokenizations.get(i)); 
 				documentLength++;
             }
@@ -291,11 +290,15 @@ public class FullTextParser extends AbstractParser {
 	
 				int n = 0;// token position in current block
 				if (blockIndex == dp1.getBlockPtr()) {
-					n = block.getStartToken();
+					n = dp1.getTokenDocPos() - block.getStartToken();
+					/*if (n != 0) {
+						n = n - 1;
+					}*/
 				}
 	            while (n < tokens.size()) {
 					if (blockIndex == dp2.getBlockPtr()) {
-						if (n > block.getEndToken()) {
+						//if (n > block.getEndToken()) {
+						if (n > dp2.getTokenDocPos() - block.getStartToken()) {	
 							break;
 						}
 					}
@@ -429,7 +432,8 @@ public class FullTextParser extends AbstractParser {
 
 	                    if ((!endline) && !(newline)) {
 	                        features.lineStatus = "LINEIN";
-	                    } else if (!newline) {
+	                    } 
+						else if (!newline) {
 	                        features.lineStatus = "LINEEND";
 	                        previousNewline = true;
 	                    }
@@ -701,6 +705,7 @@ public class FullTextParser extends AbstractParser {
 			return doc;
 
         } catch (Exception e) {
+			//e.printStackTrace();
             throw new GrobidException("An exception occured while running Grobid training" +
                     " data generation for full text.", e);
         }
@@ -736,7 +741,8 @@ public class FullTextParser extends AbstractParser {
             String s1 = null;
             String s2 = null;
             String lastTag = null;
-
+			System.out.println(tokenizations.toString());
+			System.out.println(result);
             // current token position
             int p = 0;
             boolean start = true;
@@ -766,9 +772,14 @@ public class FullTextParser extends AbstractParser {
                         boolean strop = false;
                         while ((!strop) && (p < tokenizations.size())) {
                             String tokOriginal = tokenizations.get(p);
-                            if (tokOriginal.equals(" ")) {
+                            if (tokOriginal.equals(" ") 							 
+							 || tokOriginal.equals("\u00A0")) {
                                 addSpace = true;
-                            } else if (tokOriginal.equals(s)) {
+                            } 
+							else if (tokOriginal.equals("\n")) {
+								newLine = true;
+							}  
+							else if (tokOriginal.equals(s)) {
                                 strop = true;
                             }
                             p++;
@@ -986,6 +997,7 @@ public class FullTextParser extends AbstractParser {
 
             return buffer;
         } catch (Exception e) {
+			e.printStackTrace();	
             throw new GrobidException("An exception occured while running Grobid.", e);
         }
     }
@@ -1092,6 +1104,9 @@ public class FullTextParser extends AbstractParser {
         boolean result = false;
         if ((s1.equals(field)) || (s1.equals("I-" + field))) {
             result = true;
+			if (lastTag0 == null) {
+				lastTag0 = "";
+			}
             if (lastTag0.equals("I-" + field)) {
                 if (addSpace)
                     buffer.append(" ").append(s2);
@@ -1188,10 +1203,10 @@ public class FullTextParser extends AbstractParser {
                     break;
                 /*case "<reference_marker>":
                     buffer.append("</label>");
-                    break;
+                    break;*/
                 case "<citation_marker>":
                     buffer.append("</ref>");
-                    break;*/
+                    break;
                 case "<figure_marker>":
                     buffer.append("</ref>");
                     break;
@@ -1227,7 +1242,7 @@ public class FullTextParser extends AbstractParser {
         try {
             tei = teiFormater.toTEIHeader(resHeader, peer, withStyleSheet, null);
 System.out.println(rese);
-            tei = teiFormater.toTEIBodyML(tei, rese, resHeader, doc.getBibDataSets(), tokenizations, doc);
+            tei = teiFormater.toTEIBodyML(tei, rese, resHeader, resCitations, tokenizations, doc);
             tei = teiFormater.toTEIReferences(tei, resCitations);
 
             tei.append("\t\t</back>\n");
@@ -1236,6 +1251,7 @@ System.out.println(rese);
         } catch (Exception e) {
             throw new GrobidException("An exception occured while running Grobid.", e);
         }
+System.out.println(tei.toString());		
         doc.setTei(tei.toString());
     }
 

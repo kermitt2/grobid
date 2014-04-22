@@ -463,7 +463,7 @@ public class Document {
     /**
      * Create a TEI representation of the document
      */
-    public void toTEI(HeaderParser headerParser,
+    /*public void toTEI(HeaderParser headerParser,
                       ReferenceSegmenter referenceSegmenter,
                       CitationParser citationParser, boolean consolidateHeader,
                       boolean consolidateCitations, boolean peer, BiblioItem catalogue,
@@ -677,6 +677,7 @@ public class Document {
         tei = teiFormater.toTEIBody(biblio, bds, peer, withStyleSheet,
                 onlyHeader);
     }
+	*/
 
     /**
      * Try to reconnect blocks cut because of layout constraints (new col., new
