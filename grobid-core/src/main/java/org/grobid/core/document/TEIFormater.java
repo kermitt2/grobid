@@ -9,12 +9,14 @@ import org.grobid.core.lang.Language;
 import org.grobid.core.layout.*;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.LanguageUtilities;
+import org.grobid.core.engines.SegmentationLabel;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.SortedSet;
 
 /**
  * Class for generating a TEI representation of a document.
@@ -695,160 +697,164 @@ public class TEIFormater {
         return tei;
     }
 
-    /*
+  	
 	public String toTEIBody(BiblioItem biblio, List<BibDataSet> bds,
                             boolean peer, boolean withStyleSheet, boolean onlyHeader) throws Exception {
-        StringBuffer tei = null;
-		if (biblio != null) {
-         	tei = toTEIHeader(biblio, peer, withStyleSheet, null);
-		}
-		else {
-			tei = new StringBuffer();
-		}
-        if (!onlyHeader) {
+        StringBuffer tei = new StringBuffer();
 
-            tei.append("\t\t<body>\n");
+      	tei.append("\t\t<body>\n");
 
-            int i = 0; 
-            boolean first = true;
-            boolean listOpened = false;
-            double pos = 0.0;
+        int i = 0; 
+        boolean first = true;
+        boolean listOpened = false;
+        double pos = 0.0;
 
-            for (Block block : doc.getBlocks()) {
+		// we get back the body segments
+		SortedSet<DocumentPiece> documentBodyParts = doc.getDocumentPart(SegmentationLabel.BODY);
+		for(DocumentPiece docPiece : documentBodyParts) {
+			DocumentPointer dp1 = docPiece.a;
+			DocumentPointer dp2 = docPiece.b;
+
+			//int blockPos = dp1.getBlockPtr();
+			for(int blockIndex = dp1.getBlockPtr(); blockIndex <= dp2.getBlockPtr(); blockIndex++) {
+            	Block block = doc.getBlocks().get(blockIndex);
+
+	
+
+            /*for (Block block : doc.getBlocks()) {
                 Integer ii = new Integer(i);
                 if ((!doc.getBlockDocumentHeaders().contains(ii)) && (!doc.getBlockReferences().contains(ii)) &
                         (!doc.getAcknowledgementBlocks().contains(ii))) {
                     if ((!doc.getBlockHeaders().contains(ii)) && (!doc.getBlockFooters().contains(ii))
-                            && (!doc.getBlockFigures().contains(ii)) && (!doc.getBlockTables().contains(ii))) {
-                        String localText = block.getText();
-                        if (localText != null) {
-                            localText = localText.trim();
-                            localText = TextUtilities.dehyphenize(localText);
-                            localText = localText.replace("\n", " ");
-                            localText = localText.replace("  ", " ");
-                            localText = localText.trim();
+                            && (!doc.getBlockFigures().contains(ii)) && (!doc.getBlockTables().contains(ii))) {*/
+	
+	
+                String localText = block.getText();
+                if (localText != null) {
+                    localText = localText.trim();
+                    localText = TextUtilities.dehyphenize(localText);
+                    localText = localText.replace("\n", " ");
+                    localText = localText.replace("  ", " ");
+                    localText = localText.trim();
 
-                            localText = markReferencesTEI2(localText, bds);
+                    localText = markReferencesTEI(localText, bds);
 
-                            if (listOpened & (!localText.startsWith("@BULLET"))) {
-                                tei.append("\t\t\t\t</list>\n");
-                                listOpened = false;
+                    if (listOpened & (!localText.startsWith("@BULLET"))) {
+                        tei.append("\t\t\t\t</list>\n");
+                        listOpened = false;
+                    }
+
+                    if (doc.getBlockSectionTitles().contains(blockIndex)) {
+                        if (!first)
+                            tei.append("\t\t\t</div>\n");
+                        else
+                            first = false;
+                        // dehyphenization of section titles	
+                        localText = TextUtilities.dehyphenizeHard(localText);
+                        // we try to recognize the numbering of the section titles
+                        Matcher m1 = BasicStructureBuilder.headerNumbering1.matcher(localText);
+                        Matcher m2 = BasicStructureBuilder.headerNumbering2.matcher(localText);
+                        Matcher m3 = BasicStructureBuilder.headerNumbering3.matcher(localText);
+                        Matcher m = null;
+                        String numb = null;
+                        if (m1.find()) {
+                            numb = m1.group(0);
+                            m = m1;
+                        } else if (m2.find()) {
+                            numb = m2.group(0);
+                            m = m2;
+                        } else if (m3.find()) {
+                            numb = m3.group(0);
+                            m = m3;
+                        }
+                        if (numb != null) {
+                            numb = numb.replace(" ", "");
+                            if (numb.endsWith("."))
+                                numb = numb.substring(0, numb.length() - 1);
+                            //numb = numb.replace(".","");
+                            tei.append("\n\t\t\t<div n=\"" + numb + "\">\n");
+                            tei.append("\t\t\t\t<head>" + localText.substring(m.end(),
+                                    localText.length()).trim() + "</head>\n");
+                        } else {
+                            tei.append("\n\t\t\t<div>\n");
+                            tei.append("\t\t\t\t<head>" + localText + "</head>\n");
+                        }
+                    } else if (doc.getBlockHeadFigures().contains(blockIndex)) {
+                        tei.append("\t\t\t<figure>\n");
+
+                        boolean graphic = false;
+                        String imag = null;
+                        int innd = localText.indexOf("@IMAGE");
+                        if (innd != -1) {
+                            imag = localText.substring(innd + 7, localText.length());
+                            localText = localText.substring(0, innd);
+                            //if (imag.endsWith(".jpg")) 
+                            {
+                                graphic = true;
                             }
+                        }
 
-                            if (doc.getBlockSectionTitles().contains(ii)) {
-                                if (!first)
-                                    tei.append("\t\t\t</div>\n");
-                                else
-                                    first = false;
-                                // dehyphenization of section titles	
-                                localText = TextUtilities.dehyphenizeHard(localText);
-                                // we try to recognize the numbering of the section titles
-                                Matcher m1 = BasicStructureBuilder.headerNumbering1.matcher(localText);
-                                Matcher m2 = BasicStructureBuilder.headerNumbering2.matcher(localText);
-                                Matcher m3 = BasicStructureBuilder.headerNumbering3.matcher(localText);
-                                Matcher m = null;
-                                String numb = null;
-                                if (m1.find()) {
-                                    numb = m1.group(0);
-                                    m = m1;
-                                } else if (m2.find()) {
-                                    numb = m2.group(0);
-                                    m = m2;
-                                } else if (m3.find()) {
-                                    numb = m3.group(0);
-                                    m = m3;
-                                }
-                                if (numb != null) {
-                                    numb = numb.replace(" ", "");
-                                    if (numb.endsWith("."))
-                                        numb = numb.substring(0, numb.length() - 1);
-                                    //numb = numb.replace(".","");
-                                    tei.append("\n\t\t\t<div n=\"" + numb + "\">\n");
-                                    tei.append("\t\t\t\t<head>" + localText.substring(m.end(),
-                                            localText.length()).trim() + "</head>\n");
-                                } else {
-                                    tei.append("\n\t\t\t<div>\n");
-                                    tei.append("\t\t\t\t<head>" + localText + "</head>\n");
-                                }
-                            } else if (doc.getBlockHeadFigures().contains(ii)) {
-                                tei.append("\t\t\t<figure>\n");
-
-                                boolean graphic = false;
-                                String imag = null;
-                                int innd = localText.indexOf("@IMAGE");
-                                if (innd != -1) {
-                                    imag = localText.substring(innd + 7, localText.length());
-                                    localText = localText.substring(0, innd);
-                                    //if (imag.endsWith(".jpg")) 
-                                    {
-                                        graphic = true;
-                                    }
-                                }
-
-                                StringTokenizer stt = new StringTokenizer(localText, ":.");
+                        StringTokenizer stt = new StringTokenizer(localText, ":.");
+                        if (stt.hasMoreTokens()) {
+                            String prefix = stt.nextToken();
+                            Matcher m = BasicStructureBuilder.figure.matcher(prefix);
+                            if (m.find()) {
+                                tei.append("\t\t\t\t<head>" + prefix + "</head>\n");
                                 if (stt.hasMoreTokens()) {
-                                    String prefix = stt.nextToken();
-                                    Matcher m = BasicStructureBuilder.figure.matcher(prefix);
-                                    if (m.find()) {
-                                        tei.append("\t\t\t\t<head>" + prefix + "</head>\n");
-                                        if (stt.hasMoreTokens()) {
-                                            tei.append("\n\t\t\t\t<figDesc>" +
-                                                    stt.nextToken().trim() + "</figDesc>\n");
-                                        }
-                                        if (graphic) {
-                                            tei.append("\t\t\t\t<graphic url=\"" + imag + "\" />\n");
-                                        }
+                                    tei.append("\n\t\t\t\t<figDesc>" +
+                                            stt.nextToken().trim() + "</figDesc>\n");
+                                }
+                                if (graphic) {
+                                    tei.append("\t\t\t\t<graphic url=\"" + imag + "\" />\n");
+                                }
 
-                                    } else
-                                        tei.append("\t\t\t\t<head>" + localText + "</head>\n");
-                                } else {
-                                    tei.append("\t\t\t\t<head>" + localText + "</head>\n");
-                                }
-                                tei.append("\t\t\t</figure>\n");
-                            } else if (doc.getBlockHeadTables().contains(ii)) {
-                                tei.append("\t\t\t<table>\n");
+                            } else
                                 tei.append("\t\t\t\t<head>" + localText + "</head>\n");
-                                tei.append("\t\t\t</table>\n");
-                            } else if (localText.startsWith("@BULLET")) {
-                                if (!listOpened) {
-                                    tei.append("\t\t\t\t<list type=\"inline\">\n");
-                                    listOpened = true;
-                                }
-                                localText = localText.substring(7, localText.length()).trim();
-                                int ind = localText.indexOf("@BULLET");
+                        } else {
+                            tei.append("\t\t\t\t<head>" + localText + "</head>\n");
+                        }
+                        tei.append("\t\t\t</figure>\n");
+                    } else if (doc.getBlockHeadTables().contains(blockIndex)) {
+                        tei.append("\t\t\t<table>\n");
+                        tei.append("\t\t\t\t<head>" + localText + "</head>\n");
+                        tei.append("\t\t\t</table>\n");
+                    } else if (localText.startsWith("@BULLET")) {
+                        if (!listOpened) {
+                            tei.append("\t\t\t\t<list type=\"inline\">\n");
+                            listOpened = true;
+                        }
+                        localText = localText.substring(7, localText.length()).trim();
+                        int ind = localText.indexOf("@BULLET");
+                        if (ind != -1) {
+                            tei.append("\t\t\t\t\t<item>" + localText.substring(0, ind) + "</item>\n");
+                            while (ind != -1) {
+                                localText = localText.substring(ind + 7, localText.length()).trim();
+                                ind = localText.indexOf("@BULLET");
                                 if (ind != -1) {
                                     tei.append("\t\t\t\t\t<item>" + localText.substring(0, ind) + "</item>\n");
-                                    while (ind != -1) {
-                                        localText = localText.substring(ind + 7, localText.length()).trim();
-                                        ind = localText.indexOf("@BULLET");
-                                        if (ind != -1) {
-                                            tei.append("\t\t\t\t\t<item>" + localText.substring(0, ind) + "</item>\n");
-                                        } else
-                                            tei.append("\t\t\t\t\t<item>" + localText + "</item>\n");
-                                    }
                                 } else
                                     tei.append("\t\t\t\t\t<item>" + localText + "</item>\n");
-                            } else if (localText.startsWith("@IMAGE")) {
-                                String image = localText.substring(7, localText.length());
-                                if (image.endsWith(".jpg"))
-                                    tei.append("<graphic url=\"" + image + "\" />\n");
-                            } else {
-                                if (localText.length() > 0) {
-                                    //System.out.println(i + ": " + localText);
-                                    double localPos = block.getX();
-                                    double width = block.getWidth();
-                                    double localPos2 = block.getY();
-                                    //System.out.println(localPos + " " + localPos2 + " " + width);
-                                    if (width > 20) {
-                                        //localText = utilities.dehyphenize(localText);
-                                        tei.append("<p>" + localText + "</p>\n");
-                                    }
-                                }
+                            }
+                        } else
+                            tei.append("\t\t\t\t\t<item>" + localText + "</item>\n");
+                    } else if (localText.startsWith("@IMAGE")) {
+                        String image = localText.substring(7, localText.length());
+                        if (image.endsWith(".jpg"))
+                            tei.append("<graphic url=\"" + image + "\" />\n");
+                    } else {
+                        if (localText.length() > 0) {
+                            //System.out.println(i + ": " + localText);
+                            double localPos = block.getX();
+                            double width = block.getWidth();
+                            double localPos2 = block.getY();
+                            //System.out.println(localPos + " " + localPos2 + " " + width);
+                            if (width > 20) {
+                                //localText = utilities.dehyphenize(localText);
+                                tei.append("<p>" + localText + "</p>\n");
                             }
                         }
                     }
                 }
-                i++;
             }
             if (!first)
                 tei.append("\t\t\t</div>\n");
@@ -884,36 +890,10 @@ public class TEIFormater {
                     tei.append("\t\t\t</div>\n");
                 }
             }
-
-            tei.append("\t\t\t<div type=\"references\">\n");
-            tei.append("<listBibl>");
-
-            int p = 0;
-			if (bds != null) {
-           	 	for (BibDataSet bib : bds) {
-	                BiblioItem bit = bib.getResBib();
-					if (bit == null) {
-						continue;
-					}
-	                //bit.setPath(doc.getPDFPath());
-	                //bit.postProcessingAuthors(doc.getPDFPath());
-	                tei.append("\n" + bit.toTEI(p));
-	                p++;
-	            }
-			}
-
-            tei.append("</listBibl>\n");
-            tei.append("\t\t\t</div>\n");
-
-            tei.append("\t\t</back>\n");
         }
 		
-		tei.append("\t</text>\n");
-        tei.append("</TEI>\n");
-
         return tei.toString();
     }
-	*/
 
 
     public StringBuffer toTEIBodyML(StringBuffer tei,
@@ -2437,8 +2417,8 @@ public class TEIFormater {
 
 
     public StringBuffer toTEIReferences(StringBuffer tei, List<BibDataSet> bds) throws Exception {
-        tei.append("\t\t\t<div type=\"references\">\n");
-        tei.append("<listBibl>");
+ 		tei.append("\t\t\t<div type=\"references\">\n\n");
+        tei.append("\t\t<listBibl>\n");
 
         int p = 0;
 		if ( (bds != null) && (bds.size() > 0)) {
@@ -2453,7 +2433,7 @@ public class TEIFormater {
 	        }
 		}
 
-        tei.append("</listBibl>\n");
+        tei.append("\n\t\t</listBibl>\n");
         tei.append("\t\t\t</div>\n");
 
         return tei;

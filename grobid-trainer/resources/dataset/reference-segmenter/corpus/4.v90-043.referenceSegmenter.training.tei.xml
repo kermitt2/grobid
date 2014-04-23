@@ -1,0 +1,17 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+        <bibl><label>1.<lb/></label> J. E. O'BRIEN. Thèse, Harvard University, Cambridge, MA.<lb/> 1972.<lb/> </bibl>
+        <bibl><label>2.<lb/></label> J. E. O'BRIEN, J. C. MORRIS et J. N. BUTLER. Chem. Water<lb/> Supply Treat. Distrib. Symp. 1973. Editeur : Alan J. Rubin. Ann<lb/> Arbor Sci., Ann Arbor, MI. 1974. pp. 333-358.<lb/> </bibl>
+		<bibl>B. SOLASTIOUK et X. DEGLISE. Can. J. Chem. 66, 2188 (1988).<lb/> D. MATTE. Thèse, Université de Nancy I, Nancy. 1986.<lb/> </bibl>
+		<bibl>J. CARREL MORRIS. J. Phys. Chem. 70, 3798 (1966).<lb/> </bibl>
+		<bibl>B. SOLASTIOUK. Thèse de l'Institut National Polytechnique de<lb/> Lorraine, Nancy. 1989.<lb/> </bibl>
+		<bibl>R. A. ROBINSON et R. H. STOKES. Electrolyte solutions. 2 È ed.<lb/> Butterworth, London. 1970.<lb/> </bibl>
+		<bibl>D. MATTE, B. SOLASTIOUK, A. MERLIN et X. DEGLISE. Can. J.<lb/> Chem. 67, 786 (1989).</bibl>
+        </listBibl>
+    </text>
+</tei>
+

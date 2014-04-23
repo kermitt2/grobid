@@ -309,7 +309,7 @@ public class Engine implements Closeable {
             Document doc = parsers.getSegmentationParser().processing(input);
 			String referencesStr = doc.getDocumentPartText(SegmentationLabel.REFERENCES);
             if (!referencesStr.isEmpty()) {
-				String tei = parsers.getReferenceSegmenterParser().createTrainingData2(referencesStr);
+				String tei = parsers.getReferenceSegmenterParser().createTrainingData2(referencesStr, id);
 				if (tei != null) {
                     String outPath = pathTEI + "/" + inputFile.getName().replace(".pdf", ".referenceSegmenter.training.tei.xml");
                     Writer writer = new OutputStreamWriter(new FileOutputStream(new File(outPath), false), "UTF-8");
@@ -319,7 +319,6 @@ public class Engine implements Closeable {
 			}
 		}
 		catch (IOException e) {
-			e.printStackTrace();
             throw new GrobidException("An IO exception occurred while running Grobid.", e);
         }
     }
@@ -638,6 +637,7 @@ public class Engine implements Closeable {
                         createTrainingReferenceSegmentation(pdfFile.getPath(), resultPath, ind + n);
                     }
                 } catch (final Exception exp) {
+					exp.printStackTrace();
                     LOGGER.error("An error occured while processing the following pdf: " + pdfFile.getPath() + ": " + exp);
                 }
             }

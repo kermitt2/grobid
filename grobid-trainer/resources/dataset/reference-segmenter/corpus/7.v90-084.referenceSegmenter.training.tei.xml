@@ -1,0 +1,71 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+        <bibl><label>1. </label>J.-P. JAY-GERIN and C. FERRADINI. J. Chem. Phys. 91, 3275<lb/> (1989).<lb/> </bibl>
+		<bibl>K. OKAZAKI, K. M. IDRISS-ALI et G. R. FREEMAN. Can. J. Chem.<lb/> 62, 2223 (1984).<lb/> </bibl>
+		<bibl>J.-P. JAY-GERIN et C. FERRADINI. Radiat. Phys. Chem. 33, 251<lb/> (1989).<lb/> </bibl>
+		<bibl>F.-Y. Jou et G. R. FREEMAN. Can. J. Chem. 57, 591 (1979).<lb/> </bibl>
+		<bibl>S. ARAI et M. C. SAUER, JR. J. Chem. Phys. 44, 2297 (1966).<lb/> </bibl>
+		<bibl>T. KAJIWARA et J. K. THOMAS. J. Phys. Chem. 76, 1700 (1972).<lb/> </bibl>
+		<bibl>M. C. SAUER, JR., S. ARAI et L. M. DORFMAN. J. Chem. Phys.<lb/> 42, 708 (1965).<lb/> </bibl>
+		<bibl>G. E. HALL et G. A. KENNEY-WALLACE. Chem. Phys. 32, 313<lb/> (1978).<lb/> </bibl>
+		<bibl>A.-D. LEU, K. N. JHA et G. R. FREEMAN. Can. J. Chem. 61,<lb/> 1115 (1983).<lb/> </bibl>
+		<bibl>F.-Y. Jou et G. R. FREEMAN. J. Phys. Chem. 81, 909 (1977).<lb/> </bibl>
+		<bibl>R. R. HENTZ et G. A. KENNEY-WALLACE. J. Phys. Chem. 78,<lb/> 514 (1974).<lb/> </bibl>
+		<bibl>T. A. CHUBAKOVA et N. A. BAKH. Khim. Vys. Energ. 12, 373<lb/> (1978). (Traduction anglaise: High Energy Chem. 12, 315<lb/> (1979)).<lb/> </bibl>
+		<bibl>R. S. DIXON et V. J. LOPATA. Radiat. Phys. Chem. 19, 495<lb/> (1982).<lb/> </bibl>
+		<bibl>J. F. GAVLAS, F. Y. JOU et L. M. DORFMAN. J. Phys. Chem. 78,<lb/> 2631 (1974).<lb/> </bibl>
+		<bibl>A. V. RUDNEV, A. V. VANNIKOV et N. A. BAKH. Khim. Vys.<lb/> Energ. 6, 473 (1972) (Traduction anglaise : High Energy Chem.<lb/> 6,416(1973)).<lb/> </bibl>
+		<bibl>K. OKAZAKI et G. R. FREEMAN. Can. J. Chem. 56, 2305 (1978).<lb/> </bibl>
+		<bibl>F.-Y. Jou et G. R. FREEMAN. J. Phys. Chem. 83, 261 (1979);<lb/> 88, 3900 (1984).<lb/> </bibl>
+		<bibl>A. V. VANNIKOV. Usp. Khim. 44, 1931 (1975) (Traduction<lb/> anglaise : Russ. Chem. Rev. 44, 906 (1975)).<lb/> </bibl>
+		<bibl>A. M. BRODSKY et A. V. TSAREVSKY. Int. J. Radiat. Phys. Chem.<lb/> 8, 455 (1976).<lb/> </bibl>
+		<bibl>J. P. KEENE. Radiat. Res. 22, 1 (1964).<lb/> </bibl>
+
+
+        <bibl><label>21. </label>E. J. HART et M. ANBAR. The hydrated electron. Wiley, New<lb/> York, NY. 1970. p. 39.<lb/> </bibl> 
+		<bibl>A. SINGH, W. J. CHASE et J. W. HUNT. Faraday Discuss. Chem.<lb/> Soc. 63, 28 (1978).<lb/> </bibl>
+		<bibl>G. V. BUXTON, C. L. GREENSTOCK, W. P. HELMAN et A. B.<lb/> Ross. J. Phys. Chem. Ref. Data, 17, 513 (1988).<lb/> </bibl>
+		<bibl>J. L. DYE, M. G. DEBACKER et L. M. DORFMAN. J. Chem. Phys.<lb/> 52, 6251 (1970).<lb/> </bibl>
+		<bibl>J. L. DYE, M. G. DEBACKER, J. A. EYRE et L. M. DORFMAN.<lb/> J. Phys. Chem. 76, 839 (1972).<lb/> </bibl>
+		<bibl>M. T. LOK, F. J. TEHAN et J. L. DYE. J. Phys. Chem. 76, 2975<lb/> (1972).<lb/> </bibl>
+		<bibl>J. A. DELAiREet J. R. BAZOUIN. Can. J. Chem. 57, 2013 (1979).<lb/> </bibl>
+		<bibl>T. H. TRAN-THI, A. M. KOULKÈS-PUJO, J. SUTTON et O.<lb/> ANITOFF. Radiat. Phys. Chem. 23, 77 (1984).<lb/> </bibl>
+		<bibl>E. M. FIELDEN et E. J. HART. Radiat. Res. 33, 426 (1968).<lb/> </bibl>
+		<bibl>R. S. DIXON et V. J. LOPATA. Radiat. Phys. Chem. 11, 135<lb/> (1978).<lb/> </bibl>
+        <bibl><label>31.</label> F.-Y. Jou et G. R. FREEMAN. J. Phys. Chem. 83, 2383 (1979).<lb/></bibl>
+        <bibl><label>32.</label> J. DELAIRE, P. CORDIER, J. BELLONI, F. BILLIAU et M. O.<lb/> DELCOURT. J. Phys. Chem. 80, 1687 (1976).<lb/> </bibl>
+        <bibl><label>33.</label> W. A. SEDDON, J. W. FLETCHER et F. C. SOPCHYSHYN. Can. J.<lb/> Chem. 54, 2807 (1976).<lb/> </bibl>
+        <bibl><label>34.</label> J. DELAIRE. Doctorat ès-sciences physiques (Chimie), Université<lb/> de Paris-Sud, Orsay, France. 1980.<lb/> </bibl>
+        <bibl><label>35.</label> G. G. TEATHER et N. V. KLASSEN. Int. J. Radiat. Phys. Chem.<lb/> 7, 475 (1975).<lb/> </bibl>
+        <bibl><label>36.</label> A.-D. LEU, K. N. JHA et G. R. FREEMAN. Can. J. Chem. 60,<lb/> 2342 (1982).<lb/> </bibl>
+        <bibl><label>37.</label> L. M. DORFMAN et F. Y. Jou. Dans Electrons in fluids. The<lb/> nature of metal-ammonia solutions. Éditeurs : J. Jortner et N. R.<lb/> Kestner. Springer, Berlin, Allemagne de l'Ouest. 1973. p. 447.<lb/> </bibl>
+        <bibl><label>38.</label> J. R. LANGAN, K. J. LIU, G. A. SALMON, P. P. EDWARDS,<lb/> A. ELLABOUDY et D. M. HOLTON. Proc. R. Soc. London, A :<lb/> 421, 169 (1989).<lb/> </bibl>
+        <bibl><label>39.</label> A. V. VANNIKOV, E. I. MAL'TSEV, V. I. ZOLOTAREVSKY et<lb/> A. V. RUDNEV. Int. J. Radiat. Phys. Chem. 4, 135 (1972).<lb/> </bibl>
+        <bibl><label>40.</label> J.-P. DODELET et G. R. FREEMAN. Can. J. Chem. 53, 1263<lb/> (1975).<lb/> </bibl>
+        <bibl><label>41.</label> F.-Y. Jou et G. R. FREEMAN. Can. J. Chem. 54, 3693 (1976).<lb/> </bibl>
+        <bibl><label>42.</label> L. M. DORFMAN, F. Y. Jou et R. WAGEMAN. Ber. Bunsen-Ges.<lb/> </bibl>
+<bibl>Phys. Chem. 75, 681 (1971).<lb/> </bibl>
+        <bibl><label>43.</label> W. A. SEDDON, J. W. FLETCHER et F. C. SOPCHYSHYN. Can. J.<lb/> Chem. 56, 839 (1978).<lb/> </bibl>
+        <bibl><label>44.</label> J. M. BROOKSet R. R. DEWALD. J. Phys. Chem. 72,2655 (1968).<lb/> </bibl>
+        <bibl><label>45.</label> E. A. SHAEDE, L. M. DORFMAN, G. J. FLYNN et D. C. WALKER.<lb/> Can. J. Chem. 51, 3905 (1973).<lb/> </bibl>
+        <bibl><label>46.</label> F.-Y. Jou et G. R. FREEMAN. Can. J. Chem. 60, 1809 (1982).<lb/> </bibl>
+        <bibl><label>47.</label> W. A. SEDDON, J. W. FLETCHER et R. CATTERALL. Can. J.<lb/> Chem. 55, 2017 (1977).<lb/> </bibl>
+        <bibl><label>48.</label> W. A. SEDDON, J. W. FLETCHER, F. C. SOPCHYSHYN et R.<lb/> CATTERALL. Can. J. Chem. 55, 3356 (1977).<lb/> </bibl>
+        <bibl><label>49.</label> F. Y. Jou et L. M. DORFMAN. J. Chem. Phys. 58, 4715 (1973).<lb/> </bibl>
+        <bibl><label>50.</label> M. F. Fox et E. HAYON. Chem. Phys. Lett. 25, 511 (1974).<lb/> </bibl>
+        <bibl><label>51.</label> G. A. SALMON, W. A. SEDDON et J. W. FLETCHER. Can. J.<lb/> Chem. 52, 3259 (1974).<lb/> </bibl>
+        <bibl><label>52.</label> J. BELLONI et J. FRADIN DE LA RENAUDI£RE. Nature, 232, 173<lb/> (1971).<lb/> </bibl>
+        <bibl><label>53.</label> FARHATAZIZ, L. M. PERKEYetR. R. HENTZ. J. Chem. Phys. 60,<lb/> 4383 (1974).<lb/> </bibl>
+        <bibl><label>54.</label> J. BELLONI et J. L. MARIGNIER. Radiat. Phys. Chem. 34, 157<lb/> (1989).<lb/> </bibl>
+        <bibl><label>55.</label> T. R. TUTTLE, JR., S. GOLDEN et G. ROSENFELD. Radiat. Phys.<lb/> Chem. 32, 525 (1988).<lb/> </bibl>
+        <bibl><label>56.</label> K. N. JHA, G. L. BOLTON etG. R. FREEMAN. J. Phys. Chem. 76,<lb/> 3876 (1972).<lb/> </bibl>
+        <bibl><label>57.</label> N. J. TURRO. Modern molecular photochemistry. Benjamin/<lb/> Cummings, Menlo Park, CA. 1978. Chap. 5. p. 76.<lb/> </bibl>
+        <bibl><label>58.</label> G. R. FREEMAN. J. Phys. Chem. 77, 7 (1973).</bibl>
+        </listBibl>
+    </text>
+</tei>
+
