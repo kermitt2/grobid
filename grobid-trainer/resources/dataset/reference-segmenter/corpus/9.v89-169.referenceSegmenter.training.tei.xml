@@ -1,0 +1,36 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+        <bibl><label>1. (a)</label> J. C. MESLIN et H. QUINIOU. Bull. Soc. Chim. Fr. 347<lb/> (1979); </bibl>
+		<bibl><label>(b)</label> J. P. PRADÈRE, J. C. RozÉ, H. QUINIOU, R. DANION-<lb/>BOUGOT, D. DANION et L. TOUPET. Can. J. Chem. 64, 597<lb/> (1986); </bibl>
+		<bibl><label>(c)</label> M. CHEHNA, J. P. PRADÈRE et A. GUINGANT. Synth.<lb/> Comm. 17, 1971 (1987); </bibl>
+		<bibl><label>(d)</label> D. L. BOGER et S. M. WEINREB.<lb/> Hetero Diels-Alder methodology in organic synthesis. Vol. 47.<lb/> Academic Press, New York, London. 1987.<lb/> </bibl>
+        <bibl><label>2.</label> C. G. TEA, J. P. PRADÈRE, J. VILLIERAS et H. QUINIOU. Tetra-<lb/>hedron Lett. 24, 3713 (1983); </bibl>
+		<bibl>C. G. TEA, J. P. PRADÈRE, B.<lb/> BUJOLI, H. QUINIOU et L. TOUPET. Bull. Soc. Chim. Fr. 149<lb/> (1987).<lb/> </bibl>
+        <bibl><label>3.</label> R. DANION-BOUGOT, D. DANION, J. P. PRADÈRE, J. C. RozÉ,<lb/> H. QUINIOU et A. J. Kos. Sulfur Lett. 3, 51 (1985).<lb/> </bibl>
+        <bibl><label>4.</label> B. CHRISTIENSEN, K. HOOGSTEEN, F. FLAVAC et R. RATCLIFFE.<lb/> Dans Recent advances in the chemistry of [3-lactam antibiotics.<lb/> </bibl>
+<bibl>Editeur : J. Elks. The Chemical Society, Special publication n°<lb/> 28. 1977. chap. 26.<lb/> </bibl>
+        <bibl><label>5.</label> A. K. BOSE. Org. Synth. Coll. Vol. V,973 (1973); </bibl>
+<bibl>J. C. SHEEHAN,<lb/> D. W. CHAPMAN et R. W. ROTH. J. Am. Chem. Soc. 74, 3822<lb/> (1952).<lb/> </bibl>
+        <bibl><label>6.</label> E. FLYNN. Cephalosporins and penicillins. Academic Press, New<lb/> York, London. 1972. Chap. 3, 4 et 5.<lb/> </bibl>
+        <bibl><label>7.</label> H. PETER et H. BICKEL. Helv. Chim. Acta, 57, 2044 (1974); </bibl>
+<bibl>H.<lb/> PETER, B. MÙLLER et H. BICKEL. Helv. Chim. Acta, 58, 2450<lb/> (1975).<lb/> </bibl>
+        <bibl><label>8.</label> L. CAGLIOTTI, F. GASPARRINI, D. MISITI et G. PALMIERI. Syn-<lb/>thesis, 207 (1979) et réf. citées; </bibl>
+		<bibl>B. DAKOVA, M. EVERS, L.<lb/> CHRISTIAENS et M. GUILLAUME. Bull. Soc. Chim. Belg. 96, 219<lb/> (1987) et réf. citées; </bibl>
+		<bibl>T. CHIBA, M. OKIMOTO, H. NAGAI et Y.<lb/> TAKATA. J. Org. Chem. 48, 2968 (1983) et réf. citées.<lb/> </bibl>
+        <bibl><label>9.</label> L. BEHR, R. FUSCO et C. JARBOE. Pyrazoles, pyrazolines, inda-<lb/>zoles and condensed rings. Editeur : R. Wiley. Interscience Pub-<lb/>lishers, J. Wiley and Sons, New York, London. 1967.<lb/> </bibl>
+        <bibl><label>10.</label> D. H. R. BARTON, D. J. LESTER et S. V. LEY. J. Chem. Soc.<lb/> Chem. Commun. 277 (1978); </bibl>
+		<bibl>J. Chem. Soc. Perkin Trans. 1,<lb/> 1212(1980).<lb/> </bibl>
+        <bibl><label>11.</label> R. TULOUP, R. DANION-BOUGOT, D. DANION et J. P. PRADÈRE.<lb/> Tetrahedron Lett. 29, 6249 (1988).<lb/> </bibl>
+        <bibl><label>12.</label> E. FAHR et H. LIND. Angew. Chem. Int. Ed. Engl. 5, 372<lb/> (1966); </bibl>
+		<bibl>R. KENT et J. P. ANSELME. Can. J. Chem. 46, 2322<lb/> (1968).<lb/> </bibl>
+        <bibl><label>13.</label> J. C. RozÉ. Thèse de Doctorat d'État, Nantes (1986); </bibl>
+		<bibl>M. CHEHNA.<lb/> Thèse de Doctorat d'État, Nantes (1987).<lb/> </bibl>
+        <bibl><label>14.</label> T. J. DE BOER et H. J. BACKER. Org. Synth. Coll. Vol. IV, 250<lb/> (1967).</bibl>
+        </listBibl>
+    </text>
+</tei>
+

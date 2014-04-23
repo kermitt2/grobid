@@ -1,0 +1,45 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="0"/>
+    </teiHeader>
+    <text xml:lang="en">
+
+        References<lb/> 
+		<listBibl>
+        <bibl><label>[1]</label> Karassiov V P and Klimov A 1994 Phys. Lett. A 191 117<lb/> </bibl>
+        <bibl><label>[2]</label> Karassiov V P 1992 J. Sov. Laser Res. 13 188<lb/> </bibl>
+		<bibl>Karassiov V P 1994 J. Phys. A: Math. Gen. 27 153<lb/> </bibl>
+		<bibl>Karassiov V P 2000 J. Russian Laser Res. 21 370<lb/> </bibl>
+        <bibl><label>[3]</label> Karassiov V P, Gusev A A and Vinitsky S I 2002 Phys. Lett. A 295 247<lb/> </bibl>
+        <bibl><label>[4]</label> Lee Y-H, Yang W-L and Zhang Y-Z 2010 J. Phys. A: Math. Theor. 43 185204<lb/> </bibl>
+		<bibl>Lee Y-H, Yang W-L and Zhang Y-Z 2010 J. Phys. A: Math. Theor. 43 375211<lb/> </bibl>
+        <bibl><label>[5]</label> Leggett A J 2001 Rev. Mod. Phys. 73 307<lb/> </bibl>
+        <bibl><label>[6]</label> Lipkin H J, Meshkov N and Glick A J 1965 Nucl. Phys. 62 188<lb/> </bibl>
+        <bibl><label>[7]</label> King G W, Hainer R M and Cross P C 1943 J. Chem. Phys. 11 27<lb/> </bibl>
+        <bibl><label>[8]</label> Tavis M and Cummings F W 1968 Phys. Rev. 170 379<lb/> </bibl>
+        <bibl><label>[9]</label> Hepp K and Lieb E H 1973 Ann. Phys. 76 360<lb/> </bibl>
+        <bibl><label>[10]</label> Rybin A, Kostelewicz G, Timonen J and Bogoliubov N M 1998 J. Phys. A: Math. Gen. 31 4705<lb/> </bibl>
+        <bibl><label>[11]</label> Turbiner A 1988 Commun. Math. Phys. 118 467<lb/> </bibl>
+        <bibl><label>[12]</label> Ushveridze A G 1994 Quasi-exactly Solvable Models in Quantum Mechanics (Bristol: Institute of Physics<lb/> Publishing)<lb/> </bibl>
+        <bibl><label>[13]</label> Gonzárez-López A, Kamran N and Olver P 1993 Commun. Math. Phys. 153 117<lb/> </bibl>
+        <bibl><label>[14]</label> Wiegmann P B and Zabrodin A V 1994 Phys. Rev. Lett. 72 1890<lb/> </bibl>
+		<bibl>Wiegmann P B and Zabrodin A V 1995 Nucl. Phys. B 451 699<lb/> </bibl>
+        <bibl><label>[15]</label> Sasaki R, Yang W-L and Zhang Y-Z 2009 SIGMA 5 104<lb/> </bibl>
+        <bibl><label>[16]</label> Sasaki R and Takasaki K 2001 J. Phys. A: Math. Gen. 34 9533<lb/> </bibl>
+        <bibl><label>[17]</label> Enol'skii V Z, Salerno M, Kostov N A and Scott A C 1991 Phys. Scr. 43 229<lb/> </bibl>
+		<bibl>Enol'skii V Z, Salerno M, Scott A C and Eilbeck J C 1992 Physica D 59 1<lb/> </bibl>
+		<bibl>Enol'skii V Z, Kuznetsov V B and Salerno M 1993 Physica D 68 138<lb/> </bibl>
+        <bibl><label>[18]</label> Links J and Hibberd K 2006 SIGMA 2 094<lb/> </bibl>
+        <bibl><label>[19]</label> Ribeiro P, Vidal J and Mosseri R 2007 Phys. Rev. Lett. 99 050402<lb/> </bibl>
+		<bibl>Ribeiro P, Vidal J and Mosseri R 2008 Phys. Rev. E 78 021106<lb/> </bibl>
+        <bibl><label>[20]</label> Pan F and Draayer J P 1999 Phys. Lett. B 451 1<lb/> </bibl>
+        <bibl><label>[21]</label> Morita H, Ohnishi H, da Providenica J and Nishiyama S 2006 Nucl. Phys. B 737 337<lb/> </bibl>
+        <bibl><label>[22]</label> Jarvis P D and Yates L A 2008 Mol. Phys. 106 955<lb/> </bibl>
+        <bibl><label>[23] </label>Bogoliubov N M, Bullough R K and Timonen J 1996 J. Phys. A: Math. Gen. 29 6305<lb/> </bibl>
+        <bibl><label>[24]</label> Amico L and Hikami K 2005 Eur Phys. J. B 43 387<lb/> </bibl>
+		<bibl>Amico L, Frahm H, Osterloh A and Ribeiro G A P 2007 Nucl. Phys. B 787 283<lb/> </bibl>
+        <bibl><label>[25] </label>Dorey P and Tateo R 1999 J. Phys. A: Math. Gen. 32 L419</bibl>
+        </listBibl>
+    </text>
+</tei>
+

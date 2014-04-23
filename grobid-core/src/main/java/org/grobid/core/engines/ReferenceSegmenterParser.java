@@ -167,10 +167,14 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
         return sb.toString();
     }
 
-	public String createTrainingData2(String input) {
+	public String createTrainingData2(String input, int id) {
 		List<String> tokenizations = new ArrayList<String>();
 		StringTokenizer st = new StringTokenizer(input, TextUtilities.delimiters, true);
 
+		if (id == -1) {
+			id = 0;
+		}
+		
         if (st.countTokens() == 0)
             return null;
 		List<String> blocks = new ArrayList<String>();
@@ -198,9 +202,10 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
 
         sb.append("<tei>\n" +
                 "    <teiHeader>\n" +
-                "        <fileDesc xml:id=\"0\"/>\n" +
+                "        <fileDesc xml:id=\""+ id + "\"/>\n" +
                 "    </teiHeader>\n" +
-                "    <text xml:lang=\"en\">\n");
+                "    <text xml:lang=\"en\">\n" +
+				"        <listBibl>\n"); 
 		
 		int tokPtr = 0;
 		boolean addSpace = false;
@@ -286,6 +291,10 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
             tokPtr++;
         }
 
+		if (refOpen) {
+			sb.append("</bibl>");
+		}
+
         sb.append("\n        </listBibl>\n" +
                 "    </text>\n" +
                 "</tei>\n");
@@ -348,9 +357,9 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
                     result += "<lb/>";
 				if (addSpace)
                     result += " ";
-                result += token;
+                result += TextUtilities.HTMLEncode(token);
             } 
-			else if (currentTag.endsWith(lastTag)) {
+			else if ((lastTag != null) && currentTag.endsWith(lastTag)) {
                 result = "";
 				if (addEOL)
                     result += "<lb/>";
@@ -358,7 +367,7 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
                     result += " ";
 				if (currentTag.startsWith("I-")) 
 					result += outField;
-                result += token;
+                result += TextUtilities.HTMLEncode(token);
             } 
 			else {
                 result = "";
@@ -371,7 +380,7 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
                     result += "<lb/>";
                 if (addSpace)
                     result += " ";
-                result += outField + token;
+                result += outField + TextUtilities.HTMLEncode(token);
             }
         }
         return result;

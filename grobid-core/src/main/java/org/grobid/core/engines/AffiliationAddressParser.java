@@ -37,7 +37,8 @@ public class AffiliationAddressParser extends AbstractParser {
                 if (tok.length() == 0) continue;
                 if (tok.equals("\n")) {
                     tokenizations.add(" ");
-                } else {
+                } 
+				else {
                     tokenizations.add(tok);
                 }
                 if (!tok.equals(" ")) {
@@ -47,7 +48,6 @@ public class AffiliationAddressParser extends AbstractParser {
                     affiliationBlocks.add(tok + " <affiliation>");
                 }
             }
-
 
             List<List<OffsetPosition>> placesPositions = new ArrayList<List<OffsetPosition>>();
             placesPositions.add(lexicon.inCityNames(input));
@@ -330,9 +330,9 @@ public class AffiliationAddressParser extends AbstractParser {
                 StringTokenizer st3 = new StringTokenizer(line, "\t");
                 int ll = st3.countTokens();
                 int i = 0;
-                String s1 = null;
-                String s2 = null;
-                String s3 = null;
+                String s1 = null; // predicted label
+                String s2 = null; // lexical token
+                String s3 = null; // pre-label
                 ArrayList<String> localFeatures = new ArrayList<String>();
                 while (st3.hasMoreTokens()) {
                     String s = st3.nextToken().trim();

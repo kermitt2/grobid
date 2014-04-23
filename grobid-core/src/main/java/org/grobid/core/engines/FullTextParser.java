@@ -1241,7 +1241,7 @@ public class FullTextParser extends AbstractParser {
         StringBuffer tei;
         try {
             tei = teiFormater.toTEIHeader(resHeader, peer, withStyleSheet, null);
-System.out.println(rese);
+//System.out.println(rese);
             tei = teiFormater.toTEIBodyML(tei, rese, resHeader, resCitations, tokenizations, doc);
             tei = teiFormater.toTEIReferences(tei, resCitations);
 
@@ -1251,7 +1251,7 @@ System.out.println(rese);
         } catch (Exception e) {
             throw new GrobidException("An exception occured while running Grobid.", e);
         }
-System.out.println(tei.toString());		
+//System.out.println(tei.toString());		
         doc.setTei(tei.toString());
     }
 
