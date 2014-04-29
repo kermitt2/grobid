@@ -363,30 +363,25 @@ public class FullTextParser extends AbstractParser {
 	                if (m0.find()) {
 	                    features.punctType = "PUNCT";
 	                }
-	                switch (text) {
-	                    case "(":
-	                    case "[":
-	                        features.punctType = "OPENBRACKET";
-	                        break;
-	                    case ")":
-	                    case "]":
-	                        features.punctType = "ENDBRACKET";
-	                        break;
-	                    case ".":
-	                        features.punctType = "DOT";
-	                        break;
-	                    case ",":
-	                        features.punctType = "COMMA";
-	                        break;
-	                    case "-":
-	                        features.punctType = "HYPHEN";
-	                        break;
-	                    case "\"":
-	                    case "\'":
-	                    case "`":
-	                        features.punctType = "QUOTE";
-	                        break;
-	                }
+                    if (text.equals("(") || text.equals("[")) {
+                        features.punctType = "OPENBRACKET";
+
+                    } else if (text.equals(")") || text.equals("]")) {
+                        features.punctType = "ENDBRACKET";
+
+                    } else if (text.equals(".")) {
+                        features.punctType = "DOT";
+
+                    } else if (text.equals(",")) {
+                        features.punctType = "COMMA";
+
+                    } else if (text.equals("-")) {
+                        features.punctType = "HYPHEN";
+
+                    } else if (text.equals("\"") || text.equals("\'") || text.equals("`")) {
+                        features.punctType = "QUOTE";
+
+                    }
 
 	                if (n == 0) {
 	                    features.lineStatus = "LINESTART";
@@ -759,7 +754,7 @@ public class FullTextParser extends AbstractParser {
                     continue;
                 }
                 StringTokenizer stt = new StringTokenizer(tok, " \t");
-                List<String> localFeatures = new ArrayList<>();
+                List<String> localFeatures = new ArrayList<String>();
                 int i = 0;
 
                 boolean newLine = false;
@@ -1156,10 +1151,9 @@ public class FullTextParser extends AbstractParser {
 
             res = false;
             // we close the current tag
-            switch (lastTag0) {
-                case "<other>":
-                    buffer.append("</note>\n\n");
-                    break;
+            if (lastTag0.equals("<other>")) {
+                buffer.append("</note>\n\n");
+
                 /*case "<header>":
                     buffer.append("</front>\n\n");
                     break;
@@ -1173,49 +1167,49 @@ public class FullTextParser extends AbstractParser {
                     buffer.append("</bibl>\n\n");
                     res = true;
                     break;*/
-                case "<paragraph>":
-                    buffer.append("</p>\n\n");
-                    res = true;
-                    break;
-                case "<section>":
-                    buffer.append("</head>\n\n");
-                    break;
-                case "<subsection>":
-                    buffer.append("</head>\n\n");
-                    break;
-                case "<equation>":
-                    buffer.append("</formula>\n\n");
-                    break;
-                case "<table>":
-                    buffer.append("</table>\n");
-                    break;
-                case "<label>":
-                    buffer.append("</figDesc>\n");
-                    break;
-                case "<figure_head>":
-                    buffer.append("</head>\n\n");
-                    break;
-                case "<item>":
-                    buffer.append("</item>\n\n");
-                    break;
-                case "<trash>":
-                    buffer.append("</trash>\n\n");
-                    break;
+            } else if (lastTag0.equals("<paragraph>")) {
+                buffer.append("</p>\n\n");
+                res = true;
+
+            } else if (lastTag0.equals("<section>")) {
+                buffer.append("</head>\n\n");
+
+            } else if (lastTag0.equals("<subsection>")) {
+                buffer.append("</head>\n\n");
+
+            } else if (lastTag0.equals("<equation>")) {
+                buffer.append("</formula>\n\n");
+
+            } else if (lastTag0.equals("<table>")) {
+                buffer.append("</table>\n");
+
+            } else if (lastTag0.equals("<label>")) {
+                buffer.append("</figDesc>\n");
+
+            } else if (lastTag0.equals("<figure_head>")) {
+                buffer.append("</head>\n\n");
+
+            } else if (lastTag0.equals("<item>")) {
+                buffer.append("</item>\n\n");
+
+            } else if (lastTag0.equals("<trash>")) {
+                buffer.append("</trash>\n\n");
+
                 /*case "<reference_marker>":
                     buffer.append("</label>");
                     break;*/
-                case "<citation_marker>":
-                    buffer.append("</ref>");
-                    break;
-                case "<figure_marker>":
-                    buffer.append("</ref>");
-                    break;
+            } else if (lastTag0.equals("<citation_marker>")) {
+                buffer.append("</ref>");
+
+            } else if (lastTag0.equals("<figure_marker>")) {
+                buffer.append("</ref>");
+
                 /*case "<page>":
                     buffer.append("</page>\n\n");
                     break;*/
-                default:
-                    res = false;
-                    break;
+            } else {
+                res = false;
+
             }
 
         }

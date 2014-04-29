@@ -1,7 +1,6 @@
 package org.grobid.core.document;
 
 import com.google.common.collect.Iterables;
-import com.google.common.collect.Lists;
 import com.google.common.collect.SortedSetMultimap;
 import com.google.common.collect.TreeMultimap;
 import org.grobid.core.data.BibDataSet;
@@ -196,15 +195,15 @@ public class BasicStructureBuilder {
 
         int i = 0;
 //        boolean first = true;
-        ArrayList<Integer> blockHeaders = new ArrayList<>();
-        ArrayList<Integer> blockFooters = new ArrayList<>();
-        ArrayList<Integer> blockSectionTitles = new ArrayList<>();
-        ArrayList<Integer> acknowledgementBlocks = new ArrayList<>();
-        ArrayList<Integer> blockTables = new ArrayList<>();
-        ArrayList<Integer> blockFigures = new ArrayList<>();
-        ArrayList<Integer> blockHeadTables = new ArrayList<>();
-        ArrayList<Integer> blockHeadFigures = new ArrayList<>();
-        ArrayList<Integer> blockDocumentHeaders = new ArrayList<>();
+        ArrayList<Integer> blockHeaders = new ArrayList<Integer>();
+        ArrayList<Integer> blockFooters = new ArrayList<Integer>();
+        ArrayList<Integer> blockSectionTitles = new ArrayList<Integer>();
+        ArrayList<Integer> acknowledgementBlocks = new ArrayList<Integer>();
+        ArrayList<Integer> blockTables = new ArrayList<Integer>();
+        ArrayList<Integer> blockFigures = new ArrayList<Integer>();
+        ArrayList<Integer> blockHeadTables = new ArrayList<Integer>();
+        ArrayList<Integer> blockHeadFigures = new ArrayList<Integer>();
+        ArrayList<Integer> blockDocumentHeaders = new ArrayList<Integer>();
 
         doc.setTitleMatchNum(false);
 
@@ -330,7 +329,7 @@ public class BasicStructureBuilder {
                 }
             }
             if (candidateCluster != null) {
-                ArrayList<Integer> newBlockSectionTitles = new ArrayList<>();
+                ArrayList<Integer> newBlockSectionTitles = new ArrayList<Integer>();
                 for (Integer bl : blockSectionTitles) {
                     if (!newBlockSectionTitles.contains(bl))
                         newBlockSectionTitles.add(bl);
@@ -399,7 +398,7 @@ public class BasicStructureBuilder {
             }
 
             // we check headers repetition from page to page to decide if it is an header or not
-            ArrayList<Integer> toRemove = new ArrayList<>();
+            ArrayList<Integer> toRemove = new ArrayList<Integer>();
             for (Integer ii : blockHeaders) {
                 String localText = (doc.getBlocks().get(ii)).getText().trim();
                 localText = TextUtilities.shadowNumbers(localText);
@@ -435,7 +434,7 @@ public class BasicStructureBuilder {
             }
 
             // same for footers
-            toRemove = new ArrayList<>();
+            toRemove = new ArrayList<Integer>();
             for (Integer ii : blockFooters) {
                 String localText = (doc.getBlocks().get(ii)).getText().trim();
                 localText = TextUtilities.shadowNumbers(localText);
@@ -712,7 +711,7 @@ public class BasicStructureBuilder {
         // no copying of lists happens because of this, so it's ok to concatenate
         String ignoredLabel = "@IGNORED_LABEL@";
         for (Pair<String, String> labeledTokenPair :
-                Iterables.concat(labeledTokens, Collections.singleton(new Pair<>("IgnoredToken", ignoredLabel)))) {
+                Iterables.concat(labeledTokens, Collections.singleton(new Pair<String, String>("IgnoredToken", ignoredLabel)))) {
             if (labeledTokenPair == null) {
                 p++;
                 continue;
@@ -783,12 +782,12 @@ public class BasicStructureBuilder {
         //System.out.println(tokenizations.toString());
 //        int i = 0;
 //        boolean first = true;
-        List<Integer> blockHeaders = new ArrayList<>();
-        List<Integer> blockFooters = new ArrayList<>();
-        List<Integer> blockDocumentHeaders = new ArrayList<>();
-        List<Integer> blockSectionTitles = new ArrayList<>();
+        List<Integer> blockHeaders = new ArrayList<Integer>();
+        List<Integer> blockFooters = new ArrayList<Integer>();
+        List<Integer> blockDocumentHeaders = new ArrayList<Integer>();
+        List<Integer> blockSectionTitles = new ArrayList<Integer>();
 
-        SortedSet<DocumentPiece> blockReferences = new TreeSet<>();
+        SortedSet<DocumentPiece> blockReferences = new TreeSet<DocumentPiece>();
 
         doc.setBibDataSets(new ArrayList<BibDataSet>());
 
@@ -824,7 +823,7 @@ public class BasicStructureBuilder {
                 }
             }
 
-            ArrayList<String> localFeatures = new ArrayList<>();
+            ArrayList<String> localFeatures = new ArrayList<String>();
             boolean addSpace = false;
 
 //            String tok = st.nextToken().trim();
@@ -894,48 +893,46 @@ public class BasicStructureBuilder {
                 pointerA = currentPointer;
             }
 
-            switch (currentPlainTag) {
-                case "<header>":
-                    if (!blockDocumentHeaders.contains(blockIndex)) {
-                        blockDocumentHeaders.add(blockIndex);
-                        //System.out.println("add block header: " + blockIndexInteger.intValue());
-                    }
-                    break;
-                case "<references>":
-//                    if (!blockReferences.contains(blockIndex)) {
+            if (currentPlainTag.equals("<header>")) {
+                if (!blockDocumentHeaders.contains(blockIndex)) {
+                    blockDocumentHeaders.add(blockIndex);
+                    //System.out.println("add block header: " + blockIndexInteger.intValue());
+                }
+
+            } else if (currentPlainTag.equals("<references>")) {//                    if (!blockReferences.contains(blockIndex)) {
 //                        blockReferences.add(blockIndex);
 //                        //System.out.println("add block reference: " + blockIndexInteger.intValue());
 //                    }
 
-                    if (currentTag.equals("I-<references>")) {
-                        pointerA = new DocumentPointer(doc, blockIndex, p);
-                        if (bib != null) {
-                            if (bib.getRawBib() != null) {
-                                doc.getBibDataSets().add(bib);
-                                bib = new BibDataSet();
-                            }
-                        } else {
+                if (currentTag.equals("I-<references>")) {
+                    pointerA = new DocumentPointer(doc, blockIndex, p);
+                    if (bib != null) {
+                        if (bib.getRawBib() != null) {
+                            doc.getBibDataSets().add(bib);
                             bib = new BibDataSet();
                         }
-                        bib.setRawBib(s2);
                     } else {
-                        if (addSpace) {
-                            if (bib == null) {
-                                bib = new BibDataSet();
-                                bib.setRawBib(" " + s2);
-                            } else {
-                                bib.setRawBib(bib.getRawBib() + " " + s2);
-                            }
+                        bib = new BibDataSet();
+                    }
+                    bib.setRawBib(s2);
+                } else {
+                    if (addSpace) {
+                        if (bib == null) {
+                            bib = new BibDataSet();
+                            bib.setRawBib(" " + s2);
                         } else {
-                            if (bib == null) {
-                                bib = new BibDataSet();
-                                bib.setRawBib(s2);
-                            } else {
-                                bib.setRawBib(bib.getRawBib() + s2);
-                            }
+                            bib.setRawBib(bib.getRawBib() + " " + s2);
+                        }
+                    } else {
+                        if (bib == null) {
+                            bib = new BibDataSet();
+                            bib.setRawBib(s2);
+                        } else {
+                            bib.setRawBib(bib.getRawBib() + s2);
                         }
                     }
-                    break;
+                }
+
 //                case "<reference_marker>":
 //                    if (!blockReferences.contains(blockIndex)) {
 //                        blockReferences.add(blockIndex);
@@ -970,24 +967,24 @@ public class BasicStructureBuilder {
 //                        }
 //                    }
 //                    break;
-                case "<page_footnote>":
-                    if (!blockFooters.contains(blockIndex)) {
-                        blockFooters.add(blockIndex);
-                        //System.out.println("add block foot note: " + blockIndexInteger.intValue());
-                    }
-                    break;
-                case "<page_header>":
-                    if (!blockHeaders.contains(blockIndex)) {
-                        blockHeaders.add(blockIndex);
-                        //System.out.println("add block page header: " + blockIndexInteger.intValue());
-                    }
-                    break;
-                case "<section>":
-                    if (!blockSectionTitles.contains(blockIndex)) {
-                        blockSectionTitles.add(blockIndex);
-                        //System.out.println("add block page header: " + blockIndexInteger.intValue());
-                    }
-                    break;
+            } else if (currentPlainTag.equals("<page_footnote>")) {
+                if (!blockFooters.contains(blockIndex)) {
+                    blockFooters.add(blockIndex);
+                    //System.out.println("add block foot note: " + blockIndexInteger.intValue());
+                }
+
+            } else if (currentPlainTag.equals("<page_header>")) {
+                if (!blockHeaders.contains(blockIndex)) {
+                    blockHeaders.add(blockIndex);
+                    //System.out.println("add block page header: " + blockIndexInteger.intValue());
+                }
+
+            } else if (currentPlainTag.equals("<section>")) {
+                if (!blockSectionTitles.contains(blockIndex)) {
+                    blockSectionTitles.add(blockIndex);
+                    //System.out.println("add block page header: " + blockIndexInteger.intValue());
+                }
+
             }
 
             lastTag = currentTag;

@@ -64,7 +64,7 @@ public class CitationParser extends AbstractParser {
             if (st.countTokens() == 0)
                 return null;
 
-            List<String> tokenizations = new ArrayList<>();
+            List<String> tokenizations = new ArrayList<String>();
             while (st.hasMoreTokens()) {
                 final String tok = st.nextToken();
                 tokenizations.add(tok);
@@ -147,7 +147,7 @@ public class CitationParser extends AbstractParser {
     }
 
     public List<BibDataSet> processingReferenceSection(Document doc, ReferenceSegmenter referenceSegmenter, boolean consolidate) throws Exception {
-        ArrayList<BibDataSet> results = new ArrayList<>();
+        ArrayList<BibDataSet> results = new ArrayList<BibDataSet>();
         try {
 
             String referencesStr = doc.getDocumentPartText(SegmentationLabel.REFERENCES);
@@ -184,7 +184,7 @@ public class CitationParser extends AbstractParser {
     public List<BibDataSet> processingReferenceSection(String input,
                                                        ReferenceSegmenter referenceSegmenter,
                                                        boolean consolidate) throws Exception {
-        List<BibDataSet> results = new ArrayList<>();
+        List<BibDataSet> results = new ArrayList<BibDataSet>();
         try {
 
             Document doc = parsers.getSegmentationParser().processing(input);

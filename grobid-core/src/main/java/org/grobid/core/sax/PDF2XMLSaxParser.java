@@ -50,14 +50,14 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 
 	public PDF2XMLSaxParser() {
 		blabla = new StringBuffer();
-		tokenizations = new ArrayList<>();
+		tokenizations = new ArrayList<String>();
 	}
 
 	public PDF2XMLSaxParser(Document d, List<String> im) {
 		doc = d;
 		blabla = new StringBuffer();
 		images = im;
-		tokenizations = new ArrayList<>();
+		tokenizations = new ArrayList<String>();
 	}
 
 	public ArrayList<String> getTokenization() {

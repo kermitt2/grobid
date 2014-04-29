@@ -136,7 +136,7 @@ public class Document {
 
     public void addBlock(Block b) {
         if (blocks == null)
-            blocks = new ArrayList<>();
+            blocks = new ArrayList<Block>();
         blocks.add(b);
     }
 
@@ -164,7 +164,7 @@ public class Document {
 
 
     public List<String> getTokenizationsHeader() {
-        List<String> tokenizationsHeader = new ArrayList<>();
+        List<String> tokenizationsHeader = new ArrayList<String>();
         for (Integer blocknum : blockDocumentHeaders) {
             Block blo = blocks.get(blocknum);
             int tokens = blo.getStartToken();
@@ -178,7 +178,7 @@ public class Document {
     }
 
     public List<String> getTokenizationsFulltext() {
-        List<String> tokenizationsFulltext = new ArrayList<>();
+        List<String> tokenizationsFulltext = new ArrayList<String>();
         for (Block blo : blocks) {
             int tokens = blo.getStartToken();
             int tokene = blo.getEndToken();
@@ -191,7 +191,7 @@ public class Document {
     }
 
     public List<String> getTokenizationsReferences() {
-        List<String> tokenizationsReferences = new ArrayList<>();
+        List<String> tokenizationsReferences = new ArrayList<String>();
 
         for (DocumentPiece dp : blockReferences) {
             tokenizationsReferences.addAll(tokenizations.subList(dp.a.getTokenDocPos(), dp.b.getTokenDocPos()));
@@ -268,7 +268,7 @@ public class Document {
         File f = new File(tmpPathXML);
 
         if ((!f.exists()) || force) {
-            List<String> cmd = new ArrayList<>();
+            List<String> cmd = new ArrayList<String>();
             String[] tokens = pdftoxml0.split(" ");
             for (String token : tokens) {
                 if (token.trim().length() > 0)
@@ -423,7 +423,7 @@ public class Document {
      */
     public List<String> addFeaturesDocument() throws IOException,
             ParserConfigurationException, SAXException {
-        List<String> images = new ArrayList<>();
+        List<String> images = new ArrayList<String>();
         PDF2XMLSaxParser parser = new PDF2XMLSaxParser(this, images);
 
 
@@ -870,29 +870,24 @@ public class Document {
                 if (m0.find()) {
                     features.punctType = "PUNCT";
                 }
-                switch (text) {
-                    case "(":
-                    case "[":
-                        features.punctType = "OPENBRACKET";
-                        break;
-                    case ")":
-                    case "]":
-                        features.punctType = "ENDBRACKET";
-                        break;
-                    case ".":
-                        features.punctType = "DOT";
-                        break;
-                    case ",":
-                        features.punctType = "COMMA";
-                        break;
-                    case "-":
-                        features.punctType = "HYPHEN";
-                        break;
-                    case "\"":
-                    case "\'":
-                    case "`":
-                        features.punctType = "QUOTE";
-                        break;
+                if (text.equals("(") || text.equals("[")) {
+                    features.punctType = "OPENBRACKET";
+
+                } else if (text.equals(")") || text.equals("]")) {
+                    features.punctType = "ENDBRACKET";
+
+                } else if (text.equals(".")) {
+                    features.punctType = "DOT";
+
+                } else if (text.equals(",")) {
+                    features.punctType = "COMMA";
+
+                } else if (text.equals("-")) {
+                    features.punctType = "HYPHEN";
+
+                } else if (text.equals("\"") || text.equals("\'") || text.equals("`")) {
+                    features.punctType = "QUOTE";
+
                 }
 
                 if (n == 0) {
@@ -1243,10 +1238,10 @@ public class Document {
         StringBuilder accumulated = new StringBuilder();
 
         if (blockFooters == null)
-            blockFooters = new ArrayList<>();
+            blockFooters = new ArrayList<Integer>();
 
         if (blockHeaders == null)
-            blockHeaders = new ArrayList<>();
+            blockHeaders = new ArrayList<Integer>();
 
         // Wiley specific pre-treatment
         // it looks very ad-hoc but actually it is
@@ -1300,16 +1295,16 @@ public class Document {
             // if ( (i >= beginBody) && (i < beginReferences) ) {
 
             if (blockFooters == null) {
-                blockFooters = new ArrayList<>();
+                blockFooters = new ArrayList<Integer>();
             }
             if (blockDocumentHeaders == null) {
-                blockDocumentHeaders = new ArrayList<>();
+                blockDocumentHeaders = new ArrayList<Integer>();
             }
             if (blockHeaders == null) {
-                blockHeaders = new ArrayList<>();
+                blockHeaders = new ArrayList<Integer>();
             }
             if (blockReferences == null) {
-                blockReferences = new TreeSet<>();
+                blockReferences = new TreeSet<DocumentPiece>();
             }
 
             if ((!blockFooters.contains(ii))
@@ -1698,7 +1693,7 @@ public class Document {
      * in headers or footnotes.
      */
     public List<String> getDOIMatches() {
-        List<String> results = new ArrayList<>();
+        List<String> results = new ArrayList<String>();
         for (Block block : blocks) {
             String localText = block.getText();
             if (localText != null) {

@@ -21,7 +21,7 @@ public class GenericTaggerUtils {
      */
     public static List<Pair<String, String>> getTokensAndLabels(String labeledResult) {
         String[] lines = labeledResult.split("\n");
-        List<Pair<String, String>> res = new ArrayList<>(lines.length);
+        List<Pair<String, String>> res = new ArrayList<Pair<String, String>>(lines.length);
         for (String line : lines) {
             line = line.trim();
             if (line.isEmpty()) {
@@ -29,7 +29,7 @@ public class GenericTaggerUtils {
                 continue;
             }
             String[] splits = line.split("\t| ");
-            res.add(new Pair<>(splits[0], splits[splits.length - 1]));
+            res.add(new Pair<String, String>(splits[0], splits[splits.length - 1]));
         }
         return res;
     }

@@ -86,7 +86,7 @@ public class ModelMap {
 	protected static Model getModel(String modelPath) {
 		LOGGER.debug("start getModel");
 		if (models == null) {
-			models = new HashMap<>();
+			models = new HashMap<String, Model>();
 		}
 		if (models.get(modelPath) == null) {
 			getNewModel(modelPath);
