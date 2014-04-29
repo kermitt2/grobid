@@ -56,6 +56,8 @@
     <pathelement location="${maven.repo.local}/directory-naming/naming-java/0.8/naming-java-0.8.jar"/>
     <pathelement location="${maven.repo.local}/directory-naming/naming-core/0.8/naming-core-0.8.jar"/>
 	<pathelement location="${maven.repo.local}/com/google/guava/16.0.1/guava-16.0.1.jar"/>
+	<pathelement location="${maven.repo.local}/fr/limsi/wapiti/wapiti/1.5.0/wapiti-1.5.0.jar"/>
+	
   </path>
   <path id="build.test.classpath">
     <pathelement location="lib/org/chasen/crfpp/1.0.2/crfpp-1.0.2.jar"/>
@@ -82,6 +84,8 @@
     <pathelement location="${maven.repo.local}/org/powermock/powermock-module-junit4/1.4.12/powermock-module-junit4-1.4.12.jar"/>
     <pathelement location="${maven.repo.local}/org/powermock/powermock-module-junit4-common/1.4.12/powermock-module-junit4-common-1.4.12.jar"/>
     <pathelement location="${maven.repo.local}/xmlunit/xmlunit/1.3/xmlunit-1.3.jar"/>
+	<pathelement location="${maven.repo.local}/com/google/guava/16.0.1/guava-16.0.1.jar"/>
+	<pathelement location="${maven.repo.local}/fr/limsi/wapiti/wapiti/1.5.0/wapiti-1.5.0.jar"/>
   </path>
 
   <!-- ====================================================================== -->
