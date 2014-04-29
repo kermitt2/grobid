@@ -14,6 +14,8 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
+import org.apache.commons.lang3.StringUtils;
+
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
@@ -75,6 +77,9 @@ public class Consolidation {
         }
     }
 
+	/**
+	 *  SQL queries for the DOI cache
+	 */
     static final String INSERT_CROSSREF_SQL =
             "INSERT INTO AuthorTitle (Author, Title, Unixref) VALUES (?,?,?)";
     static final String INSERT_CROSSREF_SQL2 =
@@ -96,26 +101,34 @@ public class Consolidation {
             "openurl?url_ver=Z39.88-2004&pid=%s:%s&rft_id=info:doi/%s&noredirect=true&format=unixref";
 
     /**
-     * Lookup by journal title, volume and first page
+     * Lookup by journal title, volume and first page - 6 possible parameters are id, password, title, author, volume, firstPage.
      */
     private static final String JOURNAL_BASE_QUERY =
-            "query?usr=%s&pwd=%s&type=a&format=unixref&qdata=|%s||%s||%s|||KEY|";
+            //"query?usr=%s&pwd=%s&type=a&format=unixref&qdata=|%s||%s||%s|||KEY|";
+		    "query?usr=%s&pwd=%s&type=a&format=unixref&qdata=|%s|%s|%s||%s|||KEY|";
 
     /**
-     * Lookup first author surname and  article title
+     * Lookup first author surname and  article title - 4 parameters are id, password, title, author.
      */
     private static final String TITLE_BASE_QUERY =
             "query?usr=%s&pwd=%s&type=a&format=unixref&qdata=%s|%s||key|";
 
-    /**
+
+	/**
      * Try to consolidate some uncertain bibliographical data with crossref web service based on
-     * title and first author
+     * core metadata
      */
-    public boolean consolidateCrossrefGet(BiblioItem bib, List<BiblioItem> bib2) throws Exception {
-        boolean result = false;
-        String doi = bib.getDOI();
+	public boolean consolidate(BiblioItem bib, List<BiblioItem> additionalBiblioInformation) throws Exception {
+	 	boolean result = false;
+		//List<BiblioItem> additionalBiblioInformation = new ArrayList<Biblio>();
+		boolean valid = false;
+
+		String doi = bib.getDOI();
         String aut = bib.getFirstAuthorSurname();
         String title = bib.getTitle();
+		String journalTitle = bib.getJournal();
+		String volume = bib.getVolume();
+		
         String firstPage = null;
         String pageRange = bib.getPageRange();
         int beginPage = bib.getBeginPage();
@@ -135,9 +148,44 @@ public class Consolidation {
         if (title != null) {
             title = TextUtilities.removeAccents(title);
         }
+		
+		try {
+			if (StringUtils.isNotBlank(doi)) {
+				// retrieval per DOI
+				valid = consolidateCrossrefGetByDOI(bib, additionalBiblioInformation);
+			}
+			else if (StringUtils.isNotBlank(journalTitle) 
+						&& StringUtils.isNotBlank(volume)
+						&& StringUtils.isNotBlank(firstPage)) {
+				// retrieval per journal title, volume, first page
+				valid = consolidateCrossrefGetByJournalVolumeFirstPage(aut, firstPage, journalTitle, 
+					volume, bib, additionalBiblioInformation);
+			}
+			else if (StringUtils.isNotBlank(title)
+						&& StringUtils.isNotBlank(aut)) {
+				// retrieval per first author and article title
+				valid = consolidateCrossrefGetByAuthorTitle(aut, title, bib, additionalBiblioInformation);
+			}
+		}
+		catch(Exception e) {
+			throw new GrobidException("An exception occured while running Grobid consolidation.", e);
+		}
+		return valid;
+	}
+	
+	/**
+	 *  Try to consolidate some uncertain bibliographical data with crossref web service based on 
+	 *  the DOI if it is around
+	 * 	@param biblio the Biblio item to be consolidated
+	 * 	@param bib2 the list of biblio items found as consolidations
+	 *  @return Returns a boolean indicating if at least one bibliographical object 
+	 *  has been retrieved.
+	 */
+	public boolean consolidateCrossrefGetByDOI(BiblioItem biblio, List<BiblioItem> bib2) throws Exception {
+		boolean result = false;
+		String doi = biblio.getDOI();
 
-        if (doi != null) {
-            //System.out.println(doi);
+		if (StringUtils.isNotBlank(doi)) {
             // some cleaning of the doi
             if (doi.startsWith("doi:") | doi.startsWith("DOI:")) {
                 doi.substring(4, doi.length());
@@ -150,7 +198,6 @@ public class Consolidation {
             // we check if the entry is not already in the DB
             if (cCon != null) {
                 PreparedStatement pstmt = null;
-
                 try {
                     pstmt = cCon.prepareStatement(QUERY_CROSSREF_SQL3);
                     pstmt.setString(1, doi);
@@ -162,7 +209,7 @@ public class Consolidation {
                     res.close();
                     pstmt.close();
                 } catch (SQLException se) {
-                    System.err.println("EXCEPTION HANDLING CROSSREF CACHE");
+                    //System.err.println("EXCEPTION HANDLING CROSSREF CACHE");
                     throw new GrobidException("EXCEPTION HANDLING CROSSREF CACHE.", se);
 //           			se.printStackTrace();
                 } finally {
@@ -193,14 +240,18 @@ public class Consolidation {
             }
 
             if (xml == null) {
-                String subpath = String.format(DOI_BASE_QUERY, GrobidProperties.getInstance().getCrossrefId(), GrobidProperties.getInstance().getCrossrefPw(), doi);
+                String subpath = String.format(DOI_BASE_QUERY, 
+						GrobidProperties.getInstance().getCrossrefId(), 
+						GrobidProperties.getInstance().getCrossrefPw(), 
+						doi);
                 URL url = new URL("http://" + GrobidProperties.getInstance().getCrossrefHost() + "/" + subpath);
 
                 System.out.println("Sending: " + url.toString());
                 HttpURLConnection urlConn = null;
                 try {
                     urlConn = (HttpURLConnection) url.openConnection();
-                } catch (Exception e) {
+                } 
+				catch (Exception e) {
                     try {
                         urlConn = (HttpURLConnection) url.openConnection();
                     } catch (Exception e2) {
@@ -263,8 +314,25 @@ public class Consolidation {
                     }
                 }
             }
-        } else if ((title != null) & (aut != null)) {
-            String xml = null;
+        }
+		return result;
+	}
+
+	/**
+	 * Try to consolidate some uncertain bibliographical data with crossref web service based on 
+	 * title and first author.
+	 *
+	 * @param biblio the biblio item to be consolidated
+	 * @param biblioList the list of biblio items found as consolidations
+	 * @return Returns a boolean indicating whether at least one bibliographical object has been retrieved.
+	 */
+	public boolean consolidateCrossrefGetByAuthorTitle(String aut, String title, 
+								BiblioItem biblio, List<BiblioItem> bib2) throws Exception {
+
+		boolean result = false;
+		// conservative check
+		if (StringUtils.isNotBlank(title) && StringUtils.isNotBlank(aut)) {
+			String xml = null;
             // we check if the entry is not already in the DB
             if (cCon != null) {
                 PreparedStatement pstmt = null;
@@ -311,7 +379,9 @@ public class Consolidation {
                 }
             }
             if (xml == null) {
-                String subpath = String.format(TITLE_BASE_QUERY, GrobidProperties.getInstance().getCrossrefId(), GrobidProperties.getInstance().getCrossrefPw(),
+                String subpath = String.format(TITLE_BASE_QUERY, 
+						GrobidProperties.getInstance().getCrossrefId(), 
+						GrobidProperties.getInstance().getCrossrefPw(),
                         URLEncoder.encode(title, "UTF-8"),
                         URLEncoder.encode(aut, "UTF-8"));
                 URL url = new URL("http://" + GrobidProperties.getInstance().getCrossrefHost() + "/" + subpath);
@@ -368,7 +438,7 @@ public class Consolidation {
                         try {
                             pstmt2 = cCon.prepareStatement(INSERT_CROSSREF_SQL);
                             pstmt2.setString(1, aut);
-                            pstmt2.setString(2, bib.getTitle());
+                            pstmt2.setString(2, title);
                             pstmt2.setString(3, xml);
                             pstmt2.executeUpdate();
                             pstmt2.close();
@@ -384,30 +454,39 @@ public class Consolidation {
                     }
                 }
             }
-        } else if ((firstPage != null) & (bib.getJournal() != null) & (bib.getVolume() != null)) {
-            /*String urlmsg = "http://doi.crossref.org/servlet/query?usr=" + crossref_id +"&pwd="+crossref_pw +
-                               "&type=a&format=unixref";
-               urlmsg += "&qdata=" + "|";
-               if (bib.getJournal() != null)
-                   urlmsg += URLEncoder.encode(bib.getJournal());
-               if (aut != null)
-                   urlmsg += "|"+URLEncoder.encode(aut)+"|";
-               else
-                   urlmsg += "||";
-               if (bib.getVolume() != null)
-                   urlmsg += URLEncoder.encode(bib.getVolume());
+		}
+		return result;
+	}
 
-               if (firstPage!=null)
-                   urlmsg += "||"+firstPage+"|";
-               else
-                   urlmsg += "|||";
-               if (bib.getPublicationDate() != null)
-                   urlmsg += URLEncoder.encode(bib.getPublicationDate());
-               urlmsg += "||KEY|";*/
+	/**
+	 *  Try to consolidate some uncertain bibliographical data with crossref web service based on 
+	 *  the following core information: journal title, volume and first page. 
+	 *  We use also the first author if it is there, it can help...
+	 *
+	 *  @param biblio the biblio item to be consolidated
+	 * 	@param biblioList the list of biblio items found as consolidations
+	 *  @return Returns a boolean indicating if at least one bibliographical object
+	 *  has been retrieve.
+	 */
+	public boolean consolidateCrossrefGetByJournalVolumeFirstPage(String aut, 
+				String firstPage, 
+				String journal,
+				String volume,
+				BiblioItem biblio, 
+				List<BiblioItem> bib2) throws Exception {
 
-            String subpath = String.format(JOURNAL_BASE_QUERY, GrobidProperties.getInstance().getCrossrefId(), GrobidProperties.getInstance().getCrossrefPw(),
-                    URLEncoder.encode(bib.getJournal(), "UTF-8"),
-                    URLEncoder.encode(bib.getVolume(), "UTF-8"), firstPage);
+		boolean result = false;
+		// conservative check
+		if (StringUtils.isNotBlank(firstPage) &&
+		 		(StringUtils.isNotBlank(aut) || (StringUtils.isNotBlank(journal) && StringUtils.isNotBlank(volume)))
+		   ) {
+			String subpath = String.format(JOURNAL_BASE_QUERY, 
+					GrobidProperties.getInstance().getCrossrefId(), 
+					GrobidProperties.getInstance().getCrossrefPw(),
+                    URLEncoder.encode(journal, "UTF-8"),
+					URLEncoder.encode(aut, "UTF-8"),
+                    URLEncoder.encode(volume, "UTF-8"), 
+					firstPage);
             URL url = new URL("http://" + GrobidProperties.getInstance().getCrossrefHost() + "/" + subpath);
             String urlmsg = url.toString();
             System.out.println(urlmsg);
@@ -527,120 +606,8 @@ public class Consolidation {
                     }
                 }
             }
-        }
-
-        return result;
-    }
-
-    /**
-     * Try to consolidate some uncertain bibliographical data with crossref web service - post version
-     */
-    public boolean consolidateCrossrefPostBatch(List<BiblioItem> bib, List<BiblioItem> bib2)
-            throws Exception {
-
-        int p = 0;
-        String pipedQuery = null;
-        for (int n = 0; n < bib.size(); n++) {
-
-            if (p == 0) {
-                //urlmsg = "http://doi.crossref.org/servlet/query?usr=" + crossref_id +"&pwd="+crossref_pw +
-                //"&type=a&format=unixref&qdata=";
-                pipedQuery = "";
-            }
-
-            BiblioItem bibo = bib.get(n);
-            String aut = bibo.getFirstAuthorSurname();
-            if ((bibo.getTitle() != null) & (aut != null)) {
-                if (p != 0)
-                    pipedQuery += "\n";
-                pipedQuery += bibo.getTitle() + "|" + aut + "||key" + n + "|";
-            }
-
-            if (p == 9) {
-
-                //pipedQuery += bib.getTitle() + "|" + bib.getFirstAuthorSurname() + "||key|";
-
-                /*	  		System.out.println("Sending: " + pipedQuery);
-                    HTTPClient.NVPair[] uploadOpts = new HTTPClient.NVPair[3];
-
-                    uploadOpts[0] = new HTTPClient.NVPair ("usr", crossref_id);
-                    uploadOpts[1] = new HTTPClient.NVPair ("pwd", crossref_pw);
-                    uploadOpts[2] = new HTTPClient.NVPair ("qdata", pipedQuery);
-                    //uploadOpts[3] = new HTTPClient.NVPair ("operation", "doQueryUpload");
-                    //uploadOpts[4] = new HTTPClient.NVPair ("format", "unixref");
-
-                    HTTPClient.HTTPConnection httpConn = new HTTPClient.HTTPConnection(crossref_host, crossref_port);
-
-                    HTTPClient.CookieModule.setCookiePolicyHandler(null);
-                    HTTPClient.HTTPResponse httpResp = null;
-
-                    httpResp = httpConn.Post("/servlet/query?usr=" + crossref_id + "&pwd=" + crossref_pw +
-                                        "&type=a&format=unixref",
-                                        uploadOpts);
-                    System.out.println("httpResp status is "+ httpResp.getStatusCode());
-                    String responseString = httpResp.getText();
-                    System.out.println(responseString);
-
-                    InputSource is = new InputSource();
-                    is.setCharacterStream(new StringReader(responseString));
-
-                    //BiblioItem bibo2 = new BiblioItem();
-                       //DefaultHandler crossref = new CrossrefUnixrefSaxParser(bib2);
-
-                       // get a factory
-                       SAXParserFactory spf = SAXParserFactory.newInstance();
-                       //get a new instance of parser
-                    SAXParser parser = spf.newSAXParser();
-                    parser.parse(is, crossref);
-
-                    //is.close();
-
-                    httpConn.stop();*/
-                p = 0;
-            } else
-                p++;
-        }
-
-        // we need to finish the remaining entries
-        if (p != 0) {
-            System.out.println("Sending: " + pipedQuery);
-            /*HTTPClient.NVPair[] uploadOpts = new HTTPClient.NVPair[3];
-
-               uploadOpts[0] = new HTTPClient.NVPair ("usr", crossref_id);
-               uploadOpts[1] = new HTTPClient.NVPair ("pwd", crossref_pw);
-               uploadOpts[2] = new HTTPClient.NVPair ("qdata", pipedQuery);
-       //doQueryUpload
-               HTTPClient.HTTPConnection httpConn = new HTTPClient.HTTPConnection(crossref_host, crossref_port);
-
-               HTTPClient.CookieModule.setCookiePolicyHandler(null);
-               HTTPClient.HTTPResponse httpResp = null;
-
-               httpResp = httpConn.Post("/servlet/query?usr=" + crossref_id +
-                                       "&pwd=" + crossref_pw + "&type=a&format=unixref",
-                                       uploadOpts);
-               System.out.println("httpResp status is "+ httpResp.getStatusCode());
-               String responseString = httpResp.getText();
-               System.out.println(responseString);
-
-               InputSource is = new InputSource();
-               is.setCharacterStream(new StringReader(responseString));
-
-               //BiblioItem bibo2 = new BiblioItem();
-                  //DefaultHandler crossref = new CrossrefUnixrefSaxParser(bib2);
-
-               // get a factory
-                  SAXParserFactory spf = SAXParserFactory.newInstance();
-               //get a new instance of parser
-               SAXParser parser = spf.newSAXParser();
-               parser.parse(is, crossref);
-
-               //is.close();
-
-               httpConn.stop();*/
-        }
-
-        return true;
-    }
-
+		}
+		return result;
+	}
 
 }

@@ -138,10 +138,10 @@ public class ProcessEngine {
         Utilities.writeInFile(pGbdArgs.getPath2Output() + File.separator + "result", result.get(0).toTEI());
         LOGGER.info(result.get(0).toTEI());
     }
-
+	
     /**
      * Process the affiliation using pGbdArgs parameters.
-     *
+     * 
      * @param pGbdArgs The parameters.
      * @throws Exception
      */

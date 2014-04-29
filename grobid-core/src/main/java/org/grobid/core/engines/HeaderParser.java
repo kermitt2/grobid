@@ -1574,7 +1574,7 @@ public class HeaderParser extends AbstractParser {
 			}
 			consolidator.openDb();
 			List<BiblioItem> bibis = new ArrayList<BiblioItem>();
-			boolean valid = consolidator.consolidateCrossrefGet(resHeader, bibis);
+			boolean valid = consolidator.consolidate(resHeader, bibis);
 			if ((valid) && (bibis.size() > 0)) {
 				BiblioItem bibo = bibis.get(0);
 				if (bibo != null) {

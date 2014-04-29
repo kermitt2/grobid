@@ -1,6 +1,7 @@
 package org.grobid.core.sax;
 
 import org.grobid.core.data.BiblioItem;
+import org.apache.commons.lang3.StringUtils;
 
 import org.xml.sax.*;
 import org.xml.sax.helpers.*;
@@ -80,12 +81,15 @@ public class CrossrefUnixrefSaxParser extends DefaultHandler {
             conferencePaperBlock = false;
             biblio.setItem(BiblioItem.InProceedings);
         } else if (qName.equals("title")) {
-            if (journalArticleBlock | contentItemBlock | conferencePaperBlock)
+            if (journalArticleBlock || contentItemBlock || conferencePaperBlock) {
                 biblio.setArticleTitle(getText());
-            else if (serieMetadataBlock)
+			}
+            else if (serieMetadataBlock) {
                 biblio.setSerieTitle(getText());
-            else
+			}
+            else {
                 biblio.setTitle(getText());
+			}
         } else if (qName.equals("full_title")) {
             biblio.setJournal(getText());
         } else if (qName.equals("abbrev_title")) {
@@ -104,11 +108,12 @@ public class CrossrefUnixrefSaxParser extends DefaultHandler {
             biblio.setISBN13(getText());
         } else if (qName.equals("volume")) {
             String volume = getText();
-            if (volume != null)
+            if (volume != null) {
                 if (volume.length() > 0) {
                     biblio.setVolume(volume);
                     biblio.setVolumeBlock(volume, true);
                 }
+			}
         } else if (qName.equals("issue")) {
             String issue = getText();
             // issue can be of the form 4-5
@@ -139,28 +144,28 @@ public class CrossrefUnixrefSaxParser extends DefaultHandler {
                 biblio.setDay(day);
         } else if (qName.equals("first_page")) {
             String page = getText();
-            if (page != null)
-                if (page.length() > 0) {
-                    if (page.startsWith("L") | page.startsWith("l"))
-                        page = page.substring(1, page.length());
-                    try {
-                        biblio.setBeginPage(Integer.parseInt(page));
-                    } catch (Exception e) {
-                        // warning message to be logged here
-                    }
+            if (StringUtils.isNotEmpty(page)) {
+               	/*if (page.startsWith("L") | page.startsWith("l")) {
+                    page = page.substring(1, page.length());
+				}*/
+				page = cleanPage(page);				
+                try {
+                    biblio.setBeginPage(Integer.parseInt(page));
+                } 
+				catch (Exception e) {
+                    // warning message to be logged here
                 }
+            }
         } else if (qName.equals("last_page")) {
             String page = getText();
-            if (page != null)
-                if (page.length() > 0) {
-                    if (page.startsWith("L") | page.startsWith("l"))
-                        page = page.substring(1, page.length());
-                    try {
-                        biblio.setEndPage(Integer.parseInt(page));
-                    } catch (Exception e) {
-                        // warning message to be logged here
-                    }
-                }
+            if (StringUtils.isNotEmpty(page)) {
+               page = cleanPage(page);	
+               try {
+                   biblio.setEndPage(Integer.parseInt(page));
+               } catch (Exception e) {
+                   // warning message to be logged here
+               }
+           }
         } else if (qName.equals("doi")) {
             String doi = getText();
             //if (journalArticleBlock)
@@ -338,6 +343,9 @@ public class CrossrefUnixrefSaxParser extends DefaultHandler {
         accumulator.setLength(0);
     }
 
+	protected static String cleanPage(String page) {
+		return StringUtils.stripStart(page, "Ll");
+	}
 
 }
 

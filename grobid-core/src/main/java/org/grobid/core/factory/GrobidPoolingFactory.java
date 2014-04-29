@@ -92,8 +92,7 @@ public class GrobidPoolingFactory extends AbstractEngineFactory implements
 			grobidEnginePool.returnObject(engine);
 		} catch (Exception exp) {
 			throw new GrobidException(
-					"An error occured while returning an engine from the engine pool: "
-							+ exp);
+					"An error occured while returning an engine from the engine pool: " + exp);
 		}
 	}
 
