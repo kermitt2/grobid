@@ -11,7 +11,7 @@ import java.util.Map;
  * Date: 3/20/14
  */
 public class TaggerFactory {
-    private static Map<GrobidModels, GenericTagger> cache = new HashMap<>();
+    private static Map<GrobidModels, GenericTagger> cache = new HashMap<GrobidModels, GenericTagger>();
 
     public static synchronized GenericTagger getTagger(GrobidModels model) {
         GenericTagger t = cache.get(model);

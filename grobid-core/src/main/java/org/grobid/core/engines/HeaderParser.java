@@ -82,7 +82,7 @@ public class HeaderParser extends AbstractParser {
             }
 
             String tei = processingHeaderBlock(consolidate, doc, resHeader);
-            return new ImmutablePair<>(tei, doc);
+            return new ImmutablePair<String, Document>(tei, doc);
         } catch (TimeoutException timeoutExp) {
             throw new TimeoutException("A time out occured");
         } catch (final Exception exp) {
@@ -101,7 +101,7 @@ public class HeaderParser extends AbstractParser {
             Document doc = parsers.getSegmentationParser().processing(input);
 
 			String tei = processingHeaderSection(doc, consolidate, resHeader);
-            return new ImmutablePair<>(tei, doc);
+            return new ImmutablePair<String, Document>(tei, doc);
         } catch (TimeoutException timeoutExp) {
             throw new TimeoutException("A time out occured");
         } catch (final Exception exp) {
@@ -545,30 +545,25 @@ public class HeaderParser extends AbstractParser {
 	                if (m0.find()) {
 	                    features.punctType = "PUNCT";
 	                }
-	                switch (text) {
-	                    case "(":
-	                    case "[":
-	                        features.punctType = "OPENBRACKET";
-	                        break;
-	                    case ")":
-	                    case "]":
-	                        features.punctType = "ENDBRACKET";
-	                        break;
-	                    case ".":
-	                        features.punctType = "DOT";
-	                        break;
-	                    case ",":
-	                        features.punctType = "COMMA";
-	                        break;
-	                    case "-":
-	                        features.punctType = "HYPHEN";
-	                        break;
-	                    case "\"":
-	                    case "\'":
-	                    case "`":
-	                        features.punctType = "QUOTE";
-	                        break;
-	                }
+                    if (text.equals("(") || text.equals("[")) {
+                        features.punctType = "OPENBRACKET";
+
+                    } else if (text.equals(")") || text.equals("]")) {
+                        features.punctType = "ENDBRACKET";
+
+                    } else if (text.equals(".")) {
+                        features.punctType = "DOT";
+
+                    } else if (text.equals(",")) {
+                        features.punctType = "COMMA";
+
+                    } else if (text.equals("-")) {
+                        features.punctType = "HYPHEN";
+
+                    } else if (text.equals("\"") || text.equals("\'") || text.equals("`")) {
+                        features.punctType = "QUOTE";
+
+                    }
 
 	                if (n == 0) {
 	                    features.lineStatus = "LINESTART";

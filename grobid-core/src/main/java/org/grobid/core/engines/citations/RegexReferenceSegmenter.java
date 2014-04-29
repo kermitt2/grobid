@@ -1,7 +1,6 @@
 package org.grobid.core.engines.citations;
 
 import com.google.common.base.Function;
-import com.google.common.base.Joiner;
 import com.google.common.base.Predicate;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
@@ -53,7 +52,7 @@ public class RegexReferenceSegmenter implements ReferenceSegmenter {
     }
 
     private static List<String> segmentReferences(String references) {
-        List<String> grobidResults = new ArrayList<>();
+        List<String> grobidResults = new ArrayList<String>();
         int best = 0;
         Matcher bestMatcher;
         int bestIndex = -1;

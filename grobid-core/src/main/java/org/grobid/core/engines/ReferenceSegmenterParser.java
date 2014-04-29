@@ -28,7 +28,7 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
      *              example: <"[1]", "Hu W., Barkana, R., &amp; Gruzinov A. Phys. Rev. Lett. 85, 1158">
      */
     public List<LabeledReferenceResult> extract(String referenceBlock) {
-        List<String> blocks = new ArrayList<>();
+        List<String> blocks = new ArrayList<String>();
 
 
         //String input = referenceBlock.replace("\n", " @newline ");
@@ -41,7 +41,7 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
             return null;
         }
 
-        List<String> tokenizations = new ArrayList<>();
+        List<String> tokenizations = new ArrayList<String>();
         while (st.hasMoreTokens()) {
             final String tok = st.nextToken();
             
@@ -67,7 +67,7 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
     }
 
     private List<LabeledReferenceResult> getExtractionResult(List<String> tokenizations, List<Pair<String, String>> labeled) {
-        List<LabeledReferenceResult> resultList = new ArrayList<>();
+        List<LabeledReferenceResult> resultList = new ArrayList<LabeledReferenceResult>();
         StringBuilder reference = new StringBuilder();
         StringBuilder referenceLabel = new StringBuilder();
 
@@ -92,37 +92,36 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
             }
 
             String plainLabel = GenericTaggerUtils.getPlainLabel(label);
-            switch (plainLabel) {
-                case "<label>":
-                    if (GenericTaggerUtils.isBeginningOfEntity(label)) {
-                        if (reference.length() != 0) {
-                            resultList.add(new LabeledReferenceResult(referenceLabel.length() == 0 ? null :
-                                    referenceLabel.toString().trim(), reference.toString().trim()));
-                            reference.setLength(0);
-                            referenceLabel.setLength(0);
-                        }
+            if (plainLabel.equals("<label>")) {
+                if (GenericTaggerUtils.isBeginningOfEntity(label)) {
+                    if (reference.length() != 0) {
+                        resultList.add(new LabeledReferenceResult(referenceLabel.length() == 0 ? null :
+                                referenceLabel.toString().trim(), reference.toString().trim()));
+                        reference.setLength(0);
+                        referenceLabel.setLength(0);
                     }
-                    if (addSpace) {
-                        referenceLabel.append(' ');
-                        addSpace = false;
+                }
+                if (addSpace) {
+                    referenceLabel.append(' ');
+                    addSpace = false;
+                }
+                referenceLabel.append(tok);
+
+            } else if (plainLabel.equals("<reference>")) {
+                if (GenericTaggerUtils.isBeginningOfEntity(label)) {
+                    if (reference.length() != 0) {
+                        resultList.add(new LabeledReferenceResult(referenceLabel.length() == 0 ?
+                                null : referenceLabel.toString().trim(), reference.toString().trim()));
+                        reference.setLength(0);
+                        referenceLabel.setLength(0);
                     }
-                    referenceLabel.append(tok);
-                    break;
-                case "<reference>":
-                    if (GenericTaggerUtils.isBeginningOfEntity(label)) {
-                        if (reference.length() != 0) {
-                            resultList.add(new LabeledReferenceResult(referenceLabel.length() == 0 ?
-                                    null : referenceLabel.toString().trim(), reference.toString().trim()));
-                            reference.setLength(0);
-                            referenceLabel.setLength(0);
-                        }
-                    }
-                    if (addSpace) {
-                        reference.append(' ');
-                        addSpace = false;
-                    }
-                    reference.append(tok);
-                    break;
+                }
+                if (addSpace) {
+                    reference.append(' ');
+                    addSpace = false;
+                }
+                reference.append(tok);
+
             }
             tokPtr++;
         }
