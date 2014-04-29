@@ -63,6 +63,8 @@
     <pathelement location="${maven.repo.local}/log4j/log4j/1.2.17/log4j-1.2.17.jar"/>
     <pathelement location="${maven.repo.local}/javax/servlet/servlet-api/2.4/servlet-api-2.4.jar"/>
     <pathelement location="${maven.repo.local}/javax/servlet/jsp/jsp-api/2.0/jsp-api-2.0.jar"/>
+	<pathelement location="${maven.repo.local}/com/google/guava/16.0.1/guava-16.0.1.jar"/>
+	<pathelement location="${maven.repo.local}/fr/limsi/wapiti/wapiti/1.5.0/wapiti-1.5.0.jar"/>
   </path>
   <path id="build.test.classpath">
     <pathelement location="../grobid-core/target/grobid-core-0.2.10.jar"/>
@@ -91,6 +93,8 @@
     <pathelement location="${maven.repo.local}/log4j/log4j/1.2.17/log4j-1.2.17.jar"/>
     <pathelement location="${maven.repo.local}/javax/servlet/servlet-api/2.4/servlet-api-2.4.jar"/>
     <pathelement location="${maven.repo.local}/javax/servlet/jsp/jsp-api/2.0/jsp-api-2.0.jar"/>
+	<pathelement location="${maven.repo.local}/com/google/guava/16.0.1/guava-16.0.1.jar"/>
+	<pathelement location="${maven.repo.local}/fr/limsi/wapiti/wapiti/1.5.0/wapiti-1.5.0.jar"/>
   </path>
 
   <!-- ====================================================================== -->
