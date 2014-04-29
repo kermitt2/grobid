@@ -10,7 +10,7 @@
 	</parent>
 
     <artifactId>grobid-core</artifactId>
-	<version>0.2.11-SNAPSHOT</version>
+	<version>0.2.14-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>${project.artifactId}</name>
 
