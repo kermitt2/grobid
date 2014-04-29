@@ -101,7 +101,6 @@
 			<artifactId>commons-lang3</artifactId>
 			<version>3.0.1</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>

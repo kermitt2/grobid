@@ -698,8 +698,7 @@ public class TEIFormater {
     }
 
   	
-	public String toTEIBody(BiblioItem biblio, List<BibDataSet> bds,
-                            boolean peer, boolean withStyleSheet, boolean onlyHeader) throws Exception {
+	public String toTEIBody(List<BibDataSet> bds) throws Exception {
         StringBuffer tei = new StringBuffer();
 
       	tei.append("\t\t<body>\n");
@@ -744,7 +743,7 @@ public class TEIFormater {
                         listOpened = false;
                     }
 
-                    if (doc.getBlockSectionTitles().contains(blockIndex)) {
+                    if ((doc.getBlockSectionTitles() != null) && doc.getBlockSectionTitles().contains(blockIndex)) {
                         if (!first)
                             tei.append("\t\t\t</div>\n");
                         else
@@ -779,7 +778,7 @@ public class TEIFormater {
                             tei.append("\n\t\t\t<div>\n");
                             tei.append("\t\t\t\t<head>" + localText + "</head>\n");
                         }
-                    } else if (doc.getBlockHeadFigures().contains(blockIndex)) {
+                    } else if ((doc.getBlockHeadFigures() != null) && doc.getBlockHeadFigures().contains(blockIndex)) {
                         tei.append("\t\t\t<figure>\n");
 
                         boolean graphic = false;
@@ -814,7 +813,7 @@ public class TEIFormater {
                             tei.append("\t\t\t\t<head>" + localText + "</head>\n");
                         }
                         tei.append("\t\t\t</figure>\n");
-                    } else if (doc.getBlockHeadTables().contains(blockIndex)) {
+                    } else if ((doc.getBlockHeadTables() != null) && doc.getBlockHeadTables().contains(blockIndex)) {
                         tei.append("\t\t\t<table>\n");
                         tei.append("\t\t\t\t<head>" + localText + "</head>\n");
                         tei.append("\t\t\t</table>\n");

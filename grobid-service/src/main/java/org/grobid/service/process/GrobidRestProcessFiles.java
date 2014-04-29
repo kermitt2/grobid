@@ -20,10 +20,13 @@ import org.grobid.core.annotations.TeiStAXParser;
 import org.grobid.core.engines.Engine;
 import org.grobid.core.data.PatentItem;
 import org.grobid.core.data.BibDataSet;
+import org.grobid.core.factory.GrobidFactory;
 import org.grobid.core.factory.GrobidPoolingFactory;
 import org.grobid.service.parser.Xml2HtmlParser;
 import org.grobid.service.util.GrobidRestUtils;
 import org.grobid.service.util.GrobidServiceProperties;
+import org.grobid.core.utilities.GrobidProperties;
+import org.grobid.core.engines.tagging.GrobidCRFEngine;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.xml.sax.InputSource;
@@ -181,8 +184,13 @@ public class GrobidRestProcessFiles {
 				response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
 			} else {
 				// starts conversion process
-				engine = GrobidRestUtils.getEngine(isparallelExec);
-				if (isparallelExec) {
+				if (GrobidProperties.getGrobidCRFEngine() == GrobidCRFEngine.CRFPP) {
+					engine = GrobidRestUtils.getEngine(isparallelExec);
+				}
+				else {
+					engine = GrobidFactory.getInstance().getEngine();
+				}
+				if (isparallelExec && (GrobidProperties.getGrobidCRFEngine() == GrobidCRFEngine.CRFPP)) {
 					retVal = engine.fullTextToTEI(originFile.getAbsolutePath(), consolidate, false);
 					GrobidPoolingFactory.returnEngine(engine);
 				} else {
@@ -211,7 +219,7 @@ public class GrobidRestProcessFiles {
 			response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
 		} finally {
 			GrobidRestUtils.removeTempFile(originFile);
-			if (isparallelExec && engine != null) {
+			if (isparallelExec && engine != null && (GrobidProperties.getGrobidCRFEngine() == GrobidCRFEngine.CRFPP)) {
 				GrobidPoolingFactory.returnEngine(engine);
 			}
 		}

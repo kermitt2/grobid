@@ -459,8 +459,7 @@ public class CitationParser extends AbstractParser {
             }
             consolidator.openDb();
             ArrayList<BiblioItem> bibis = new ArrayList<BiblioItem>();
-            boolean valid = consolidator.consolidateCrossrefGet(resCitation,
-                    bibis);
+            boolean valid = consolidator.consolidate(resCitation, bibis);
             if ((valid) && (bibis.size() > 0)) {
                 BiblioItem bibo = bibis.get(0);
                 BiblioItem.correct(resCitation, bibo);

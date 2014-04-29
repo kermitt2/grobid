@@ -1243,6 +1243,7 @@ public class FullTextParser extends AbstractParser {
             tei = teiFormater.toTEIHeader(resHeader, peer, withStyleSheet, null);
 //System.out.println(rese);
             tei = teiFormater.toTEIBodyML(tei, rese, resHeader, resCitations, tokenizations, doc);
+			//tei.append(teiFormater.toTEIBody(resCitations));
             tei = teiFormater.toTEIReferences(tei, resCitations);
 
             tei.append("\t\t</back>\n");
