@@ -6,6 +6,7 @@ import java.io.FilenameFilter;
 
 import javax.naming.InitialContext;
 
+import org.grobid.core.engines.tagging.GrobidCRFEngine;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.mock.MockContext;
 import org.grobid.core.utilities.GrobidProperties;
@@ -39,58 +40,63 @@ public class LibraryLoader {
                                 + libraryFolder + " does not exist");
             }
 
-            File[] files = libraryFolder.listFiles(new FileFilter() {
-                public boolean accept(File file) {
-                    return file.getName().toLowerCase()
-                            .startsWith(GrobidConstants.CRFPP_NATIVE_LIB_NAME);
+            if (GrobidProperties.getGrobidCRFEngine() == GrobidCRFEngine.CRFPP) {
+                File[] files = libraryFolder.listFiles(new FileFilter() {
+                    public boolean accept(File file) {
+                        return file.getName().toLowerCase()
+                                .startsWith(GrobidConstants.CRFPP_NATIVE_LIB_NAME);
+                    }
+                });
+
+                if (files.length == 0) {
+                    LOGGER.error("Unable to find a native CRF++ library: No files starting with "
+                            + GrobidConstants.CRFPP_NATIVE_LIB_NAME
+                            + " are in folder " + libraryFolder);
+                    throw new RuntimeException(
+                            "Unable to find a native CRF++ library: No files starting with "
+                                    + GrobidConstants.CRFPP_NATIVE_LIB_NAME
+                                    + " are in folder " + libraryFolder);
                 }
-            });
 
-            if (files.length == 0) {
-                LOGGER.error("Unable to find a native CRF++ library: No files starting with "
-                        + GrobidConstants.CRFPP_NATIVE_LIB_NAME
-                        + " are in folder " + libraryFolder);
-                throw new RuntimeException(
-                        "Unable to find a native CRF++ library: No files starting with "
-                                + GrobidConstants.CRFPP_NATIVE_LIB_NAME
-                                + " are in folder " + libraryFolder);
-            }
-
-            if (files.length > 1) {
-                LOGGER.error("Unable to load a native CRF++ library: More than 1 library exists in "
-                        + libraryFolder);
-                throw new RuntimeException(
-                        "Unable to load a native CRF++ library: More than 1 library exists in "
-                                + libraryFolder);
-            }
-
-            String libPath = files[0].getAbsolutePath();
-            // finally loading a library
-
-            try {
-                System.load(libPath);
-            } catch (Exception e) {
-                LOGGER.error("Unable to load a native CRF++ library, although it was found under path "
-                        + libPath);
-                throw new RuntimeException(
-                        "Unable to load a native CRF++ library, although it was found under path "
-                                + libPath, e);
-            }
-
-            File[] wapitiLibFiles = libraryFolder.listFiles(new FilenameFilter() {
-                @Override
-                public boolean accept(File dir, String name) {
-                    return name.startsWith(GrobidConstants.WAPITI_NATIVE_LIB_NAME);
+                if (files.length > 1) {
+                    LOGGER.error("Unable to load a native CRF++ library: More than 1 library exists in "
+                            + libraryFolder);
+                    throw new RuntimeException(
+                            "Unable to load a native CRF++ library: More than 1 library exists in "
+                                    + libraryFolder);
                 }
-            });
 
-            if (wapitiLibFiles.length == 0) {
-                LOGGER.info("No wapiti library in the grobid home folder");
+                String libPath = files[0].getAbsolutePath();
+                // finally loading a library
+
+                try {
+                    System.load(libPath);
+                } catch (Exception e) {
+                    LOGGER.error("Unable to load a native CRF++ library, although it was found under path "
+                            + libPath);
+                    throw new RuntimeException(
+                            "Unable to load a native CRF++ library, although it was found under path "
+                                    + libPath, e);
+                }
+
+            } else if (GrobidProperties.getGrobidCRFEngine() == GrobidCRFEngine.WAPITI) {
+                File[] wapitiLibFiles = libraryFolder.listFiles(new FilenameFilter() {
+                    @Override
+                    public boolean accept(File dir, String name) {
+                        return name.startsWith(GrobidConstants.WAPITI_NATIVE_LIB_NAME);
+                    }
+                });
+
+                if (wapitiLibFiles.length == 0) {
+                    LOGGER.info("No wapiti library in the grobid home folder");
+                } else {
+                    LOGGER.info("Loading Wapiti native library...");
+                    System.load(wapitiLibFiles[0].getAbsolutePath());
+                }
+
             } else {
-                LOGGER.info("Loading Wapiti native library...");
-                System.load(wapitiLibFiles[0].getAbsolutePath());
+                throw new IllegalStateException("Unsupported CRF engine: " + GrobidProperties.getGrobidCRFEngine());
             }
-
             loaded = true;
 
             if (isContextMocked) {

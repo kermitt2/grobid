@@ -1,7 +1,7 @@
 package org.grobid.core.document;
 
 import com.google.common.base.Preconditions;
-import org.grobid.core.layout.Block;
+import com.google.common.primitives.Ints;
 
 /**
  * User: zholudev
@@ -29,7 +29,7 @@ public class DocumentPointer implements Comparable<DocumentPointer>{
 
     @Override
     public int compareTo(DocumentPointer o) {
-        return Integer.compare(tokenDocPos, o.tokenDocPos);
+        return Ints.compare(tokenDocPos, o.tokenDocPos);
     }
 
     public int getBlockPtr() {
