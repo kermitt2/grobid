@@ -99,7 +99,9 @@ public class CitationParser extends AbstractParser {
                 resCitation.setOriginalAuthors(resCitation.getAuthors());
 
                 ArrayList<String> auts = new ArrayList<String>();
-                auts.add(resCitation.getAuthors());
+                if (resCitation.getAuthors() != null) {
+                    auts.add(resCitation.getAuthors());
+                }
 
                 resCitation.setFullAuthors(parsers.getAuthorParser().processingCitation(auts));
                 if (resCitation.getPublicationDate() != null) {
