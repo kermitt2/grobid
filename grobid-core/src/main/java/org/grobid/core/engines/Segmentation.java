@@ -479,8 +479,13 @@ public class Segmentation extends AbstractParser {
                         .relativeLocation(mm, pageLength, NBBINS);
 
                 // fulltext.append(features.printVector());
-                if (previousFeatures != null)
-                    fulltext.append(previousFeatures.printVector());
+                if (previousFeatures != null) {
+                    String vector = previousFeatures.printVector();
+                    if (vector.split(" ").length < 5 || vector.contains("ZHUNFROOHJH")) {
+                        int asf = 0;
+                    }
+                    fulltext.append(vector);
+                }
                 n++;
                 mm++;
                 nn++;
