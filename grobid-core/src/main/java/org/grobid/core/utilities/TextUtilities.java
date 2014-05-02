@@ -901,27 +901,27 @@ public class TextUtilities {
                 }
                 // typical author/affiliation markers
                 case '\u2020': {
-                    res += SPACE;
+                    res += SPACE + '\u2020';
                     break;
                 }
                 case '\u2021': {
-                    res += SPACE;
+                    res += SPACE + '\u2021';
                     break;
                 }
                 case '\u00A7': {
-                    res += SPACE;
+                    res += SPACE + '\u00A7';
                     break;
                 }
                 case '\u00B6': {
-                    res += SPACE;
+                    res += SPACE + '\u00B6';
                     break;
                 }
                 case '\u204B': {
-                    res += SPACE;
+                    res += SPACE + '\u204B';
                     break;
                 }
                 case '\u01C2': {
-                    res += SPACE;
+                    res += SPACE + '\u01C2';
                     break;
                 }
                 // default
