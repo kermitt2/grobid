@@ -402,10 +402,10 @@ public class TEIFormater {
                                 + "</date>\n");
                     }
                 }
-
+                // Fix for issue #31
                 tei.append("\t\t\t\t\t\t</imprint>\n");
-                tei.append("\t\t\t\t\t</monogr>\n");
             }
+            tei.append("\t\t\t\t\t</monogr>\n");
         }
 
         if (biblio.getDOI() != null) {
@@ -838,6 +838,13 @@ public class TEIFormater {
                 }
                 i++;
             }
+            
+            // Fix for issue #31 - lists not being closed consistently
+            if (listOpened ) {
+                tei.append("\t\t\t\t</list>\n");
+                listOpened = false;
+            }
+            
             if (!first)
                 tei.append("\t\t\t</div>\n");
 
