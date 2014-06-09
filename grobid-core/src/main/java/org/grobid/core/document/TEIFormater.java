@@ -780,8 +780,12 @@ public class TEIFormater {
                                     if (m.find()) {
                                         tei.append("\t\t\t\t<head>" + prefix + "</head>\n");
                                         if (stt.hasMoreTokens()) {
-                                            tei.append("\n\t\t\t\t<figDesc>" +
-                                                    stt.nextToken().trim() + "</figDesc>\n");
+                                            tei.append("\n\t\t\t\t<figDesc>");
+                                            // output all renaining tokens in localText, not just the next
+                                            while (stt.hasMoreTokens()) {
+                                                tei.append(stt.nextToken().trim());
+                                            }
+                                            tei.append("</figDesc>\n");
                                         }
                                         if (graphic) {
                                             tei.append("\t\t\t\t<graphic url=\"" + imag + "\" />\n");
