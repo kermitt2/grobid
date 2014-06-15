@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<tei type="technical-report">
+	<teiHeader>
+		<fileDesc xml:id="55114241"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Technical Paper<lb/> Find a contact near you by visiting  www.ge.com/ water and clicking on &quot;Contact Us&quot;.<lb/> * Trademark of General Electric Company; may be registered in one or more countries.<lb/></note>
+
+	<note type="copyright">©2010, General Electric Company. All rights reserved.<lb/></note>
+
+	<note>TP1060EN.doc </note>
+
+	<date>Jan-10<lb/></date>
+
+	<docTitle>
+	<titlePart>Carbon Dioxide and Dissolved<lb/> Oxygen Removal From Makeup<lb/> Water By Gas Transfer<lb/> Membranes<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Authors: S.H. Macklin, </docAuthor>
+	</byline>
+
+	<byline> 
+	<affiliation>Northeast Utilities, </affiliation>
+	</byline>
+
+	<byline>
+	<docAuthor>W.E. Haas,<lb/> </docAuthor>
+	</byline>
+
+	<byline> 
+	<affiliation>GE Water &amp; Process Technologies and </affiliation>
+	</byline>
+
+	<byline>
+	<docAuthor>W.S. Miller,<lb/> </docAuthor>
+	</byline>
+
+	<byline> 
+	<affiliation>GE Water &amp; Process Technologies<lb/> </affiliation>
+	</byline>
+
+	<div type="abstract">Summary<lb/> New membrane processes for water treatment are<lb/> continually being sought after for their simple and<lb/> continuous operation. A new approach for remov-<lb/>ing dissolved gases from make-up supplies utilizes<lb/> hydrophobic hollow fiber membranes. These mem-<lb/>branes have many characteristics that enhance<lb/> or replace other degassing methods. This paper<lb/> reports carbon dioxide and dissolved oxygen<lb/> removal efficiencies for a 100 gpm gas transfer<lb/> membrane unit installed in a nuclear power plant&apos;s<lb/> make-up system.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55115313"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Integration of a Time-of-Flight Camera into a Mixed Reality System for<lb/> Handling Dynamic Scenes, Moving Viewpoints and Occlusions in Real-Time<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Bogumil Bartczak, Ingo Schiller, Christian Beder and Reinhard Koch<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Computer Science Department<lb/> Christian-Albrechts-University Kiel<lb/></affiliation>
+	</byline>
+
+	<address>Hermann-Rodewald-Str. 3<lb/> 24118 Kiel, Germany<lb/></address>
+
+	<email>{bartczak,ischiller,beder,rk}@mip.informatik.uni-kiel.de<lb/></email>
+
+	<div type="abstract">Abstract<lb/> We present a novel approach to mixed reality applica-<lb/>tions. The key characteristics of the presented system are<lb/> the use of a automatically generated static environment<lb/> model and a time-of-flight camera device. The combina-<lb/>tion of both allows the correct handling of mutual occlu-<lb/>sion between real and virtual content on the fly, which is<lb/> not possible with the currently applied approaches. Typi-<lb/>cally expensive studio setups with complex camera track-<lb/>ing installations and multi-camera approaches in combina-<lb/>tion with chroma-keying facilities are used. Our system is<lb/> rather inexpensive, compact, mobile, flexible and provides<lb/> convenient calibration procedures. The use of a background<lb/> model not only eliminates the need for chroma-keying in<lb/> mixed reality production, it moreover supports planing and<lb/> alignment of virtual content. Based on depth information<lb/> the system is generating appropriate depth maps in real-<lb/>time, making the approach suitable for 3D-TV productions.<lb/> The presented paper discusses all key elements of mixed-<lb/>reality applications based on our approach. This includes<lb/> camera pose tracking, correct real-time handling between<lb/> interacting virtual and real content and the fast environment<lb/> model building.<lb/></div>
+
+		</front>
+	</text>
+</tei>

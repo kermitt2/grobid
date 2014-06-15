@@ -1,0 +1,69 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013575"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Int. J. Biol. Sci. 2008, 4<lb/> </reference>
+
+	<note type="page">283<lb/> </note>
+
+	<reference>International Journal of Biological Sciences<lb/> </reference>
+
+	<idno type="ISSN">ISSN 1449-2288 </idno>
+
+	<ptr>www.biolsci.org </ptr>
+
+	<reference>2008 4(5): 283-290<lb/></reference>
+
+	<note type="copyright">© Ivyspring International Publisher. All rights reserved<lb/></note>
+
+	<note type="other">Review<lb/></note>
+
+	<docTitle>
+	<titlePart>Advances in Susceptibility Genetics of Intervertebral Degenerative Disc<lb/> Disease<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Yin&apos;gang Zhang 1 , Zhengming Sun 1 , Jiangtao Liu 1 , Xiong Guo 2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1. Department of Orthopaedics of the First Affiliated Hospital, Medical College of Xi&apos;an Jiaotong University,
+	</affiliation>
+	</byline>
+
+	<address>Xi&apos;an, 710061,<lb/> China</address>
+
+	<byline>
+	<affiliation>2. Key Laboratory of Environment and Genes Related Diseases of Ministry of Education, Xi&apos;an Jiaotong University,
+	</affiliation>
+	</byline>
+
+	<address>Xi&apos;an,<lb/> 710061, China<lb/></address>
+
+	<docAuthor>Correspondence to: Dr. Yin&apos;gang Zhang,</docAuthor>
+
+	<byline>
+	<affiliation>Department of Orthopaedics of the First Affiliated Hospital, Medical College of Jiaotong<lb/> University,</affiliation>
+	</byline>
+
+	<address>Xi&apos;an, 710061, China,</address>
+
+	<email>E-mail: zyingang@mail.xjtu.edu.cn, </email>
+
+	<phone>Tel: +86-029-85323935<lb/></phone>
+
+	<note type="submission">Received: 2008.06.27; Accepted: 2008.08.31;</note>
+
+	<date>Published: 2008.09.02<lb/></date>
+
+	<div type="abstract">The traditional view that the etiology of lumbar disc herniation is primarily due to age, gender, occupation,<lb/> smoking and exposure to vehicular vibration dominated much of the last century. Recent research indicates that<lb/> heredity may be largely responsible for the degeneration as well as herniation of intervertebral discs. Since 1998,<lb/> genetic influences have been confirmed by the identification of several genes forms associated with disc degen-<lb/>eration. These researches are paving the way for a better understanding of the biologic mechanisms. Now, many<lb/> researchers unanimously agree that lumbar disc herniation appears to be similar to other complex diseases,<lb/> whose etiology has both environmental and hereditary influence, each with a part of contribution and relative<lb/> risk. Then addressing the etiological of lumbar disc herniation, it is important to integrate heredity with the en-<lb/>vironment factors. For the purpose of this review, we have limited our discussion to several susceptibility genes<lb/> associated with disc degeneration.<lb/></div>
+
+	<keyword>Key words: Intervertebral disc Disease; Degeneration; Candidate Genes; Familial Aggregation<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014622"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>User Customisation of Service Request Routing for<lb/> the IP Multimedia Subsystem<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Richard Spiers and Neco Ventura<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University of Cape Town,</affiliation>
+	</byline>
+
+	<address>Rondebosch, South Africa<lb/> </address>
+
+	<phone>021 650 5296<lb/></phone>
+
+	<email>Email: {rspiers,neco}@crg.ee.uct.ac.za<lb/></email>
+
+	<div type="abstract">Abstract—The IP Multimedia Subsystem (IMS) is a frame-<lb/>work standardised by the 3rd Generation Partnership Project<lb/> (3GPP) to provide next generation multimedia services. The<lb/> control protocol used in the IMS is the Session Initialisation<lb/> Protocol (SIP), and service creation entails the creation of a SIP<lb/> Application Server (AS). The AS communicates with the IMS<lb/> framework through SIP messages. The IMS framework, most<lb/> notably the Serving Call Session Control Function (S-CSCF),<lb/> determines which SIP messages to forward from the end user to<lb/> which particular AS. These decisions are driven by the concept<lb/> of Initial Filter Criteria (iFC). These filters contain a list of items<lb/> to compare to the SIP message together with the AS to forward<lb/> the message to if it matches. This list is statically configured<lb/> by the network operator, and each filter is assigned a rank or<lb/> priority. These priorities determine the order in which they are<lb/> compared to the incoming request, and hence which AS actually<lb/> gets triggered to provide the service first. The incoming request<lb/> is then forwarded to the next matching AS once the first AS<lb/> finishes its service execution, forming a chain of different AS.<lb/> The purpose of this paper is to present a mechanism to allow<lb/> the end user to control this message flow, and thereby allow them<lb/> control over how their services get invoked. Several new entities<lb/> are added to allow this functionality. These modifications allow<lb/> the end user to customise their service usage, as well as providing<lb/> offline conflict detection resolution.<lb/></div>
+
+	<keyword>Index Terms—IP Multimedia Subsystem, JSON, Service Cap-<lb/>ability Interaction Manager, Session Initial Protocol,<lb/>
+	</keyword>
+
+		</front>
+	</text>
+</tei>

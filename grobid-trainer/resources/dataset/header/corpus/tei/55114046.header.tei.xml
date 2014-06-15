@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei type="master-thesis">
+	<teiHeader>
+		<fileDesc xml:id="55114046"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Eulerian Video Processing and Medical<lb/> Applications<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>by<lb/> Hao-Yu Wu<lb/></docAuthor>
+	</byline>
+
+	<degree>Submitted to the Department of Electrical Engineering and Computer<lb/> Science in partial fulfillment of the requirements for the degree of<lb/> Master of Engineering in Computer Science<lb/> at the<lb/></degree>
+	
+	<byline>
+	<affiliation>MASSACHUSETTS INSTITUTE OF TECHNOLOGY<lb/></affiliation>
+	</byline>
+
+	<date>June 2012<lb/></date>
+
+	<note type="copyright">&#169; Massachusetts Institute of Technology 2012. All rights reserved.<lb/></note>
+
+	<note type="other">Sf \,-/)<lb/></note>
+	
+	<note>A uthor ....................<lb/> .......<lb/> .............<lb/></note>
+
+	<byline>
+	<affiliation>Department of Electrical Engineering and Computer Science<lb/></affiliation>
+	</byline>
+
+	<date>Mayf 2012<lb/></date>
+
+		</front>
+	</text>
+</tei>

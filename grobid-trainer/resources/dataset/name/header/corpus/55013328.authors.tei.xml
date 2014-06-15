@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Juan</forename>
+								<surname>Santiago-Palma</surname>,
+								<roleName>MD</roleName>,
+							</persName>
+							<persName>
+								<forename>Daniel</forename>
+								<surname>Fischberg</surname>,
+								<roleName>MD</roleName>,
+								<roleName>PhD</roleName>,
+							</persName>
+							<persName>
+								<forename>Craig</forename>
+								<surname>Kornick</surname>,
+								<roleName>MD</roleName>,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Natalia</forename>
+								<surname>Khjainova</surname> ,
+								<roleName>MD</roleName> ,and
+							</persName>
+							<persName>
+								<forename>Gilbert</forename>
+								<surname>Gonzales</surname> ,
+								<roleName>MD</roleName>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

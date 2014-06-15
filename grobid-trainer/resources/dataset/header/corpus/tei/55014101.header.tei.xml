@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014101"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">235<lb/></note>
+
+	<docTitle>
+	<titlePart>FREE SPACE MOISTURE PROFILE MEASUREMENT<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>David Glay, Tuami Lasri, Ahmed Mamouni, Yves Leroy<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institut d&apos;Electronique et de Micro-électronique du Nord, UMR CNRS 8520<lb/> IEMN-DHS,</affiliation>
+	</byline>
+
+	<address>Avenue Poincaré -B.P. 69 59652 Villeneuve d&apos;Ascq Cedex FRANCE<lb/></address>
+
+	<phone>Tel : 33-3 20 19 79 38, Fax : 33-3 20 19 79 81, </phone>
+
+	<email>E-mail {david.glay, tuami.lasri}@iemn.univ-lille1.fr<lb/></email>
+
+	<div type="abstract">ABSTRACT. Microwave systems for non-contact moisture sensing applications have been<lb/> developed. These instruments operate in a very narrow band (around 2.45 GHz or 10 GHz)<lb/> and measure the reflection coefficient and / or the transmission coefficient, in magnitude and<lb/> phase, of the moist material for determining its dielectric properties. Different investigations<lb/> have been carried out in various fields. In this paper, we present a study devoted to the<lb/> retrieval of the moisture profile of a building material presenting a non-uniform moisture<lb/> distribution.<lb/></div>
+
+	<keyword>Keywords : moisture, profile, free space, microwave<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

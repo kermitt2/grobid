@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei type="phd-thesis">
+	<teiHeader>
+		<fileDesc xml:id="55114694"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Microstructure, Texture and Mechanical<lb/> Property Evolution during Additive<lb/> Manufacturing of Ti6Al4V Alloy for<lb/> Aerospace Applications<lb/></titlePart>
+	</docTitle>
+
+	<degree>A thesis submitted to the University of Manchester for the degree of<lb/> Doctor of Philosophy in the faculty of Engineering and Physical Sciences<lb/></degree>
+
+	<date>2012<lb/></date>
+
+	<byline>
+	<docAuthor>Alphons Anandaraj ANTONYSAMY<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>School of Materials<lb/></affiliation>
+	</byline>
+
+	<note type="page">1<lb/> </note>
+
+	<note type="other">CONTENTS<lb/> ABSTRACT 6<lb/> DECLARATION 8<lb/> COPYRIGHT 9<lb/> ACKNOWLEDGEMENTS 10<lb/> DEDICATION 11<lb/> PUBLICATIONS AND ORAL PRESENTATIONS FROM THIS PROJECT WORK<lb/> 13<lb/> LIST OF ABBREVIATIONS<lb/> 15<lb/> LIST OF FIGURES<lb/> 16<lb/> LIST OF TABLES<lb/> 28<lb/></note>
+
+		</front>
+	</text>
+</tei>

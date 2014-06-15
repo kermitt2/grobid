@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014492"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>CALCULATION OF THE FAULT LEVEL CONTRIBUTION OF DISTRIBUTED<lb/> GENERATION ACCORDING TO IEC STANDARD 60909<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>TH. BOUTSIKA<lb/> S. PAPATHANASSIOU *<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<docAuthor>N. DROSSOS<lb/> </docAuthor>
+	</byline>
+	
+	<byline>
+	<affiliation>National Technical University of Athens (NTUA)<lb/> Public Power Corporation (PPC)<lb/> </affiliation>
+	</byline>
+	
+	<address>Greece<lb/> </address>
+
+	<keyword>Keywords: Short-Circuit Current (SC Current) -Fault Level -Distribution Network (DN) -<lb/>Distributed Generation (DG)<lb/> </keyword>
+
+		</front>
+	</text>
+</tei>

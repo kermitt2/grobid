@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012126"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Nolij Web ver. 4.9<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<affiliation>The University of Akron<lb/></affiliation>
+	</byline> 
+
+	<date>Ver. 2009.06.23<lb/></date>
+
+	<note type="page">Page 1<lb/> </note>
+
+	<email>pstrain@uakron.edu<lb/> </email>
+
+	<note type="copyright">©2009 These materials may not be reproduced in whole or in part without the express permission of<lb/> The University of Akron.<lb/></note>
+
+		</front>
+	</text>
+</tei>

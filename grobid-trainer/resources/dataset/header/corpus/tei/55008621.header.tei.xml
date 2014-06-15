@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008621"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>The promotive effect of applying mixtures of (S)-(+)-abscisic acid and<lb/> gibberellic acid on flowering in long-day plants<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Y. Kamuro<lb/> 1, * , S. Onwona-Agyeman<lb/> 2 and S. Matsui<lb/> 2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 BAL Planning Co. Ltd.,</affiliation>
+	</byline>
+
+	<address>2-15-16 Hanaike, Ichinomiya, Aichi 491-0914, Japan;<lb/></address>
+
+	<byline>
+	<affiliation>2<lb/> Fac. Agri. Gifu Univ.,<lb/></affiliation>
+	</byline>
+
+	<address>Yanagido, Gifu 501-1193, Japan;</address>
+
+	<note type="other">*Author for correspondence<lb/></note>
+
+	<note type="submission">Received 27 June 2000; accepted in revised form 19 July 2000<lb/></note>
+
+	<keyword>Key words: (S)-(+)-Abscisic acid [SABA], Flowering, Gibberellic acid [GA 3 ], Long-day plants, Mixtures<lb/></keyword>
+
+	<div type="abstract">Abstract<lb/> Application of mixtures of natural type abscisic acid, (S)-(+)-abscisic acid (SABA), and gibberellic acid (GA 3 )<lb/> promoted floral-bud initiation and flowering in the long-day plants, spinach, pansy, primrose and petunia, even<lb/> under short-day conditions. The effective concentrations for spray application of SABA/GA 3 were restricted<lb/> within the limits of 10−1 ppm respectively. Applications of SABA and/or GA 3 as high as 50 ppm induced no<lb/> flowering. Flowering in short-day plants, dahlia, morning-glory and Christmas-cactus was not promoted by the<lb/> mixtures.<lb/></div>
+
+		</front>
+	</text>
+</tei>

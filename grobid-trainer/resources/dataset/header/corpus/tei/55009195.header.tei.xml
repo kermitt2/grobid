@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009195"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">DWG Smart-Card Integrated Circuit(s) Card Interface Devices<lb/></note>
+
+	<docTitle>><titlePart>Universal Serial Bus<lb/> Device Class: Smart Card<lb/> CCID<lb/> Specification for<lb/> Integrated Circuit(s) Cards Interface<lb/> Devices<lb/> </titlePart>
+	</docTitle>
+
+	<note type="other">Revision 1.1<lb/></note>
+	
+	<date>April 22<lb/> rd<lb/> , 2005<lb/></date>
+
+	<note type="other">CCID Rev 1.1<lb/></note>
+
+	<note type="page">Page 1 of 123</note>
+
+		</front>
+	</text>
+</tei>

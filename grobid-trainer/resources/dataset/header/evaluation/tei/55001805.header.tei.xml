@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001805"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+
+	<byline>
+	<affiliation>European Medicines Agency<lb/> Evaluation of Medicines for Human Use<lb/></affiliation>
+	</byline>
+
+	<address>7 Westferry Circus, Canary Wharf, London, E14 4HB, UK<lb/></address>
+
+	<phone>Tel. (44-20) 74 18 84 00 Fax (44-20) 74 18 85 45<lb/></phone>
+
+	<email>E-mail: mail@emea.europa.eu</email>
+
+	<ptr type="web">http://www.emea.europa.eu<lb/></ptr>
+
+	<docTitle>
+	<titlePart>ASSESSMENT REPORT<lb/> FOR<lb/> AREPANRIX<lb/> </titlePart>
+	</docTitle>
+	
+	<note type="other">Common Name:<lb/> Pandemic Influenza vaccine (H1N1) (split virion, inactivated, adjuvanted)<lb/> A/California/7/2009 (H1N1)v like strain (X-179A)<lb/></note>
+	
+	<idno> Procedure No. EMEA/H/C/001201<lb/> </idno>
+	
+	<note type="other">Assessment Report as adopted by the CHMP with<lb/> all information of a commercially confidential nature deleted.</note>
+
+		</front>
+	</text>
+</tei>

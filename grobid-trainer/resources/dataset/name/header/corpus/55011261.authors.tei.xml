@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Ekaterina</forename>
+								<surname>Protozanova</surname>,
+							</persName>
+							<persName>
+								<forename>Meng</forename>
+								<surname>Zhang</surname>,
+							</persName>
+							<persName>
+								<forename>Eric</forename>
+								<middlename>J</middlename>.
+								<surname>White</surname>,
+							</persName>
+							<persName>
+								<forename>Emilia</forename>
+								<middlename>T</middlename>.
+								<surname>Mollova</surname>,
+							</persName>
+							<persName>
+								<forename>Dirk</forename>
+								<middlename>Ten</middlename>
+								<surname>Broeck</surname>,
+							</persName>
+							<persName>
+								<forename>Sergey</forename>
+								<middlename>V</middlename>.
+								<surname>Fridrikh</surname>,
+							</persName>
+							<persName>
+								<forename>Douglas</forename>
+								<middlename>B</middlename>.
+								<surname>Cameron</surname>,
+							</persName>
+							<persName>
+								<forename>Rudolf</forename>
+								<surname>Gilmanshin</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

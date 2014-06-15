@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei type="manual">
+	<teiHeader>
+		<fileDesc xml:id="55115034"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<affiliation>SAP HANA<lb/></affiliation>
+	</byline>
+	
+	<docTitle>
+	<titlePart>SAP HANA® Platform – Technical Overview<lb/> </titlePart>
+	</docTitle>
+	
+	<note>Driving Innovations in IT and in Business<lb/> with In-Memory Computing Technology</note>
+
+		</front>
+	</text> 
+</tei>

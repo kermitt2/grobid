@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010467"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Marine polyether triterpenes<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>José J. Fernández, María L. Souto and Manuel Norte<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Instituto Universitario de Bio-Orgánica &quot;Antonio González&quot;, Universidad de La Laguna,<lb/></affiliation>
+	</byline>
+
+	<address>Astrofísico Francisco Sánchez 2, 38206 La Laguna, Tenerife, Spain<lb/></address>
+
+	<note type="submission">Received (in Cambridge, UK) 1st December 1999<lb/> Published on the Web 12th April 2000<lb/> Covering: Up to May 1999<lb/></note>
+
+		</front>
+	</text>
+</tei>

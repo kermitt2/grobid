@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012706"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>LiquidKeyboard: An Ergonomic, Adaptive QWERTY Keyboard for Touchscreens<lb/> and Surfaces<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Christian Sax<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>School of computing and<lb/> communications University of Technology Sydney<lb/></affiliation>
+	</byline>
+
+	<address>UTS Sydney, Australia<lb/></address>
+
+	<email>sax@it.uts.edu.au<lb/></email>
+
+	<byline>
+	<docAuthor>Hannes Lau<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Electrical Engineering and Computer<lb/> Sciences Technische Universität Berlin<lb/> TU Berlin<lb/></affiliation>
+	</byline>
+
+	<address>Berlin, Germany<lb/></address>
+
+	<email>hlau@cs.tu-berlin.de<lb/></email>
+
+	<byline>
+	<docAuthor>Elaine Lawrence<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>School of computing and<lb/> communications University of Technology Sydney<lb/></affiliation>
+	</byline>
+
+	<address>UTS Sydney, Australia<lb/></address>
+
+	<email>elaine@it.uts.edu.au<lb/></email>
+
+	<div type="abstract">Abstract—Virtual touchscreen keyboards provide poor text<lb/> input performance in comparison to physical keyboards, a fact,<lb/> which can partly be attributed to the weaker tactile feedback,<lb/> they offer. Users are unable to feel the keys on which their<lb/> fingers are resting, and usually hover their hands over the<lb/> keyboard, hitting each key individually. Consequently, users<lb/> cannot use all ten fingers for typing, which decreases their<lb/> input speed and causes hand fatigue. We present a keyboard<lb/> prototype called LiquidKeyboard, which adapts to the user&apos;s<lb/> natural finger positions on a touchscreen and discuss options to<lb/> allow for the fingers to rest on the screen while typing. When<lb/> invoked, the keyboard appears directly under the user&apos;s<lb/> fingertips and is able to follow finger movements. As the<lb/> positions of the surrounding keys are fixed in relation to each<lb/> finger, users can find and touch the keys without tactile<lb/> feedback. Additionally the user controlled positioning of the<lb/> keys allows the keyboard to adapt to the physical specification<lb/> of the user&apos;s hand, such as the size of each finger.<lb/></div>
+
+	<keyword>Keywords-Keyboard; touchscreen; touch surface; adaptive;<lb/> touch-type; QWERTY.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

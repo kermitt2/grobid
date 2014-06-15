@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="institution">University of Manitoba</orgName>,
+							<address>
+								<settlement>Winnipeg</settlement>,
+								<region>MB</region>,
+								<country>CA</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>		
+							<orgName type="institution">Boulder Community Foothills Hospital</orgName>,
+							<address>
+								<settlement>Boulder</settlement>,
+								<region>CO</region>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="institution">UT MD Anderson Cancer Center</orgName>,
+							<address>
+								<settlement>Houston</settlement>,
+								<region>TX</region>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Claudine</forename>
+								<surname>Hein</surname>,
+								<marker>it</marker>
+							</persName>
+							<persName>
+								<forename>Jean-Yves</forename>
+								<surname>Springael</surname>,
+								<marker>it</marker>
+							</persName>
+							<persName>
+								<forename>Christiane</forename>
+							<lb/>
+								<surname>Volland</surname>,
+								<marker>2</marker>
+							</persName>
+							<persName>
+								<forename>Rosine</forename>
+								<surname>Haguenauer -Tsapis</surname>
+								<marker>2</marker> and
+							</persName>
+							<persName>
+								<forename>Bruno</forename>
+							<lb/>
+								<surname>Andrd</surname>
+								<marker>1</marker>.
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

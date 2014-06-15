@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008835"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Practical Binary Adaptive Block Coder<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Yuriy A. Reznik<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>QUALCOMM Incorporated<lb/></affiliation>
+	</byline>
+
+	<address>5775 Morehouse Drive, San Diego, CA 92121<lb/></address>
+
+	<email>E-mail: yreznik@ieee.org<lb/></email>
+
+	<div type="abstract">Abstract<lb/> This paper describes design of a low-complexity algorithm for adaptive en-<lb/>coding/decoding of binary sequences produced by memoryless sources. The<lb/> algorithm implements universal block codes constructed for a set of contexts<lb/> identified by the numbers of non-zero bits in previously observed bits in a se-<lb/>quence. We derive a precise formula for asymptotic redundancy of such codes,<lb/> which refines previous well-known estimate by Krichevsky and Trofimov [24],<lb/> and provide experimental verification of this result. In our experimental study<lb/> we also compare our implementation with existing binary adaptive encoders,<lb/> such as JBIG&apos;s Q-coder [41], and MPEG AVC (ITU-T H.264)&apos;s CABAC [43]<lb/> algorithms.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010492"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Contractor&apos;s Report to the Board<lb/></note>
+
+	<docTitle>
+	<titlePart>Evaluation of Waste Tire<lb/> Devulcanization Technologies<lb/></titlePart>
+	</docTitle>
+
+	<date>December 2004<lb/></date>
+
+	<note type="other">Produced under contract by:<lb/></note>
+
+	<byline>
+	<affiliation>CalRecovery, Inc.<lb/></affiliation>
+	</byline>
+
+	<note type="other">Zero Waste—You Make It Happen!</note>
+
+		</front>
+	</text>
+</tei>

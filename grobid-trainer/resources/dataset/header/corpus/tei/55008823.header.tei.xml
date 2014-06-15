@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008823"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Automatic Calibration of Multiple Coplanar Sensors<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Jonathan Brookshire and Seth Teller<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Computer Science and Artificial Intelligence Laboratory<lb/> Massachusetts Institute of Technology<lb/></affiliation>
+	</byline>
+
+	<address>Cambridge, MA 02139<lb/></address>
+
+	<email>Email: {jbrooksh,teller}@csail.mit.edu<lb/></email>
+
+	<div type="abstract">Abstract—This paper describes an algorithm for recovering<lb/> the rigid 3-DOF transformation (offset and rotation) between<lb/> pairs of sensors mounted rigidly in a common plane on a mobile<lb/> robot. The algorithm requires only a set of sensor observations<lb/> made as the robot moves along a suitable path. Our method does<lb/> not require synchronized sensors; nor does it require complete<lb/> metrical reconstruction of the environment or the sensor path.<lb/> We show that incremental pose measurements alone are sufficient<lb/> to recover sensor calibration through nonlinear least squares<lb/> estimation. We use the Fisher Information Matrix to compute a<lb/> Cramer-Rao lower bound (CRLB) for the resulting calibration.<lb/> Applying the algorithm in practice requires a non-degenerate<lb/> motion path, a principled procedure for estimating per-sensor<lb/> pose displacements and their covariances, a way to temporally<lb/> resample asynchronous sensor data, and a way to assess the<lb/> quality of the recovered calibration. We give constructive methods<lb/> for each step. We demonstrate and validate the end-to-end<lb/> calibration procedure for both simulated and real LIDAR and<lb/> inertial data, achieving CRLBs, and corresponding calibrations,<lb/> accurate to millimeters and milliradians. Source code is available<lb/> from </div>
+
+	<ptr>http://rvsn.csail.mit.edu/calibration.<lb/></ptr>
+
+		</front>
+	</text>
+</tei>

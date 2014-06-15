@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011923"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Service Oriented Architecture (SOA)<lb/> and Specialized Messaging Patterns<lb/></titlePart>
+	</docTitle>
+
+	<div type="introduction">1.0 Thesis<lb/> The widespread emergence of the Internet in the mid 1990s as a platform for electronic data<lb/> distribution and the advent of structured information have revolutionized our ability to deliver<lb/> information to any corner of the world. While the introduction of Extensible Markup Language<lb/> (XML)<lb/> i<lb/> as a structured format was a major enabling factor, the promise offered by SOAP based<lb/> webservices triggered the discovery of architectural patterns that are now known as Service<lb/> Oriented Architecture (SOA).<lb/> ii<lb/> Service Oriented Architecture is an architectural paradigm and discipline that may be used to<lb/> build infrastructures enabling those with needs (consumers) and those with capabilities<lb/> (providers) to interact via services across disparate domains of technology and ownership.<lb/> Services act as the core facilitator of electronic data interchanges yet require additional mecha-<lb/>nisms in order to function. Several new trends in the computer industry rely upon SOA as the<lb/> enabling foundation. These include the automation of Business Process Management (BPM),<lb/> composite applications (applications that aggregate multiple services to function), and the<lb/> multitude of new architecture and design patterns generally referred to as Web 2.0<lb/> iii<lb/> .<lb/> The latter, Web 2.0, is not defined as a static architecture. Web 2.0 can be generally characterized<lb/> as a common set of architecture and design patterns, which can be implemented in multiple<lb/> contexts. The list of common patterns includes the Mashup, Collaboration-Participation,<lb/> Software as a Service (SaaS), Semantic Tagging (folksonomy), and Rich User Experience (also<lb/> known as Rich Internet Application) patterns among others. These are augmented with themes<lb/> for software architects such as trusting your users and harnessing collective intelligence. Most<lb/> Web 2.0 architecture patterns rely on Service Oriented Architecture in order to function.<lb/> When designing Web 2.0 applications based on these patterns, architects often have highly<lb/> specialized requirements for moving data. Enterprise adoption of these patterns requires special<lb/> considerations for scalability, flexibility (in terms of multiple message exchange patterns), and<lb/> the ability to deliver these services to a multitude of disparate consumers. Architects often need<lb/> to expand data interchanges beyond simple request-response patterns and adopt more robust<lb/> message exchange patterns, triggered by multiple types of events. As a result, many specialized<lb/> platforms are evolving to meet these needs.</div>
+
+		</front>
+	</text>
+</tei>

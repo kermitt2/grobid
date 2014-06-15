@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011207"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Metamorphic Te-doped Al 0.4 In 0.6 Sb/Ga 0.4 In 0.6 Sb HEMT structures for<lb/> low power and high frequency applications<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>R. Loesch, R. Aidam, L. Kirste, A. Leuther<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Fraunhofer Institute for Applied Solid-State Physics IAF,</affiliation>
+	</byline>
+
+	<address>Tullastrasse 72, 79108 Freiburg, Germany<lb/></address>
+
+	<email>Email: rainer.loesch@iaf.fraunhofer.de<lb/></email>
+
+	<div type="abstract">Abstract:<lb/> We report on the molecular beam epitaxial growth of metamorphic AlInSb/GaInSb high-electron-mobility-<lb/>transistor structures for low power, high frequency applications on 4-inch GaAs substrates. The structures con-<lb/>sist of a Ga 0.4 In 0.6 Sb channel embedded in Al 0.4 In 0.6 Sb barrier layers which are grown on top of an insulating<lb/> metamorphic buffer, which is based on the linear exchange of Ga versus In and a subsequent exchange of As<lb/> versus Sb. Growth parameters were systematically investigated by means of HRXRD, AFM and TEM measure-<lb/>ments. The beam-equivalent-pressure ratio As/Sb (~3.5) in conjunction with the substrate temperature were<lb/> found to be the key parameters to get good crystalline quality, demonstrated by the presence of crosshatching, a<lb/> root mean square roughness of 2.0 nm and good electrical performance. Buffer isolation is determined to be<lb/> about 1Mȍ/ for optimised growth conditions. Van-der-Pauw Hall measurements at room temperature reveal<lb/> electron densities of 2.2 x 10<lb/> 12 cm<lb/> -2 in the channel at mobility values of 22.000 cm<lb/> 2<lb/> /Vs for single-sided Te į-doped<lb/> samples and 5.4 x 10<lb/> 12 cm<lb/> -2 and 17.000 cm<lb/> 2<lb/> /Vs for double-sided Te į-doped structures, respectively. These high<lb/> sheet carrier densities combined with maintained high electron mobilities, attributed to our new sophisticated<lb/> buffer design, are essential for the fabrication of high frequency, high power MMICs.<lb/></div>
+
+		</front>
+	</text>
+</tei>

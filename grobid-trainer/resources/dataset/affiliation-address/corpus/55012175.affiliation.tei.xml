@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">American Institute of Aeronautics and Astronautics</orgName>
+							<orgName type="institution">Defense Research Associates, Inc.</orgName>,
+							<address>
+								<settlement>Beavercreek</settlement>,
+								<region>OH</region>
+								<postCode>45431</postCode>
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="department">Sensors Directorate</orgName>,
+							<orgName type="department">Air Force Research Laboratory (AFRL/SNJT)</orgName>,
+							<address>
+								<addrLine>Wright Patterson AFB</addrLine>,
+								<region>OH</region>
+								<postCode>45433</postCode>
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="institution">Defense Research Associates, Inc.</orgName>,
+							<address>
+								<settlement>Beavercreek</settlement>,
+								<region>OH</region>
+								<postCode>45431</postCode>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

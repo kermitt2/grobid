@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei type="wiki">
+	<teiHeader>
+		<fileDesc xml:id="55114048"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">An NFC mobile phone interacting with a &apos;smart<lb/> poster&apos;<lb/></note>
+	
+	<docTitle>
+	<titlePart>Near field communication<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">From Wikipedia, the free encyclopedia<lb/> This is an old revision of this page, as edited by William M. Connolley (talk | contribs) at<lb/> 11:50, 13 July 2009. It may differ significantly from the current revision<lb/> (//en.wikipedia.org/wiki/Near_field_communication).<lb/> (diff) ← Previous revision | Latest revision (diff) | Newer revision → (diff)<lb/></note>
+
+	<div type="abstract">Near Field Communication or NFC, is a short-<lb/>range high frequency wireless communication<lb/> technology which enables the exchange of data<lb/> between devices over about a 10 centimetre<lb/> (around 4 inches) distance.<lb/> [1] The technology is a<lb/> simple extension of the ISO/IEC 14443<lb/> proximity-card standard (contactless card, RFID)<lb/> that combines the interface of a smartcard and a<lb/> reader into a single device. An NFC device can<lb/> communicate with both existing ISO/IEC 14443<lb/> smartcards and readers, as well as with other<lb/> NFC devices, and is thereby compatible with<lb/> existing contactless infrastructure already in use<lb/> for public transportation and payment. NFC is<lb/> primarily aimed at usage in mobile phones.<lb/></div>
+
+		</front>
+	</text>
+</tei>

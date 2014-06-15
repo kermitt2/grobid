@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei type="product-sheet">
+	<teiHeader>
+		<fileDesc xml:id="55115011"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">X F A C T O R<lb/></note>
+
+	<div type="abstract">X-Factor thinking has revolutionized portable imaging.<lb/> The CARESTREAM DRX-Revolution Mobile X-ray System lets<lb/> you bring the key capabilities of a radiology room right to the<lb/>patient – at the bedside, in the OR, the ICU or EDU.<lb/></div>
+
+	<docTitle>
+	<titlePart>INNOVATION ON THE MOVE.<lb/> </titlePart>
+	</docTitle>
+
+	<note type="other">DRX-Revolution Mobile X-ray System<lb/></note>
+	
+	<note type="other">MOBILITY REDEFINED.</note>
+
+		</front>
+	</text>
+</tei>

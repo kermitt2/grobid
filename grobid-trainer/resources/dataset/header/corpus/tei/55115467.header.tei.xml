@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55115467"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>STED with wavelengths closer to the emission<lb/> maximum<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Giuseppe Vicidomini,<lb/> 1,3 Gael Moneron,<lb/> 1 Christian Eggeling,<lb/> 1 Eva Rittweger,<lb/> 1,2 and<lb/> Stefan W. Hell<lb/> 1,2,*<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Department of NanoBiophotonics, Max Planck Institute for Biophysical Chemistry,</affiliation>
+	</byline>
+
+	<address>Am Fassberg 11, 37077<lb/> Göttingen, Germany<lb/></address>
+
+	<byline>
+	<affiliation>2 German Cancer Research Center/BioQuant,</affiliation>
+	</byline>
+
+	<address>Im NeuenheimerFeld 267, 69120 Heidelberg, Germany<lb/></address>
+
+	<byline>
+	<affiliation>3 Currently with the Department of Nanophysics, Istituto Italiano di Tecnologia,</affiliation>
+	</byline>
+
+	<address>Via Morego 30, 16163 Genoa, Italy<lb/></address>
+
+	<email>* shell@gwdg.de<lb/></email>
+
+	<div type="abstract">Abstract: In stimulated emission depletion (STED) nanoscopy the<lb/> wavelength of the STED beam is usually tuned towards the red tail of the<lb/> emission maximum of the fluorophore. Shifting the STED wavelength<lb/> closer to the emission peak, i.e. towards the blue region, favorably increases<lb/> the stimulated emission cross-section. However, this blue-shifting also<lb/> increases the probability to excite fluorophores that have remained in their<lb/> ground state, compromising the image contrast. Here we present a method<lb/> to exploit the higher STED efficiency of blue-shifted STED beams while<lb/> maintaining the contrast in the image. The method is exemplified by<lb/> imaging immunolabeled features in mammalian cells with an up to 3-fold<lb/> increased STED efficiency compared to that encountered in standard STED<lb/> nanoscopy implementations.<lb/></div>
+
+	<note type="copyright">©2012 Optical Society of America<lb/></note>
+
+	<keyword>OCIS codes: (180.2520) Fluorescence microscopy; (350.5730) Resolution.<lb/></keyword>
+
+	<note type="other">References and links<lb/> 1. E. Abbe, Gesammelte abhandlungen (G. Fischer, Jena, 1904).<lb/> 2. S. W. Hell, &quot;Microscopy and its focal switch,&quot; Nat. Methods 6 (1), 24–32 (2009).<lb/> 3. S. W. Hell, &quot;Far-field optical nanoscopy,&quot; Science 316(5828), 1153–1158 (2007).<lb/> 4. B. Huang, H. Babcock, and X. Zhuang, &quot;Breaking the diffraction barrier: super-resolution imaging of cells,&quot; Cell<lb/> 143(7), 1047–1058 (2010).<lb/> 5. S. W. Hell and J. Wichmann, &quot;Breaking the diffraction resolution limit by stimulated emission: stimulated-<lb/>emission-depletion fluorescence microscopy,&quot; Opt. Lett. 19(11), 780–782 (1994).<lb/> 6. T. A. Klar, S. Jakobs, M. Dyba, A. Egner, and S. W. Hell, &quot;Fluorescence microscopy with diffraction resolution<lb/> barrier broken by stimulated emission, &quot; Proc. Natl. Acad. Sci. U.S.A. 97(15), 8206–8210 (2000).<lb/> 7. V. Westphal, S. O. Rizzoli, M. A. Lauterbach, D. Kamin, R. Jahn, and S. W. Hell, &quot;Video-rate far-field optical<lb/> nanoscopy dissects synaptic vesicle movement,&quot; Science 320(5873), 246–249 (2008).<lb/> 8. C. Eggeling, C. Ringemann, R. Medda, G. Schwarzmann, K. Sandhoff, S. Polyakova, V. N. Belov, B. Hein, C.<lb/> von Middendorff, A. Schönle, and S. W.</note>
+
+		</front>
+	</text>
+</tei>

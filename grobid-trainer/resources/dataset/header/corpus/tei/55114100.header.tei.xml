@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55114100"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Remote plethysmographic imaging using<lb/> ambient light.<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Wim Verkruysse<lb/> 1* , Lars O Svaasand<lb/> 2 , and J Stuart Nelson<lb/> 1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Beckman Laser Institue, University of California,</affiliation>
+	</byline>
+
+	<address>Irvine, 1002 Health Sciences Rd. East, Irvine, CA.92612, USA<lb/></address>
+
+	<byline>
+	<affiliation>2 Faculty of information technology, mathematics and electrical engineering. Norwegian university of science and<lb/> technology,</affiliation>
+	</byline>
+
+	<address>Trondheim, Norway.<lb/></address>
+
+	<email>* Corresponding author: wverkruy@uci.edu<lb/></email>
+
+	<div type="abstract">Abstract: Plethysmographic signals were measured remotely (&gt; 1m) using<lb/> ambient light and a simple consumer level digital camera in movie mode.<lb/> Heart and respiration rates could be quantified up to several harmonics.<lb/> Although the green channel featuring the strongest plethysmographic signal,<lb/> corresponding to an absorption peak by (oxy-) hemoglobin, the red and blue<lb/> channels also contained plethysmographic information. The results show<lb/> that ambient light photo-plethysmography may be useful for medical<lb/> purposes such as characterization of vascular skin lesions (e.g., port wine<lb/> stains) and remote sensing of vital signs (e.g., heart and respiration rates) for<lb/> triage or sports purposes.<lb/></div>
+
+	<note type="copyright">©2008 Optical Society of America<lb/></note>
+
+		</front>
+	</text>
+</tei>

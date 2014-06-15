@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009092"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Journal of Power Sources 195 (2010) 1370–1374<lb/></reference>
+
+	<note type="other">Contents lists available at ScienceDirect<lb/></note>
+	
+	<note>Journal of Power Sources<lb/></note>
+	
+	<ptr>j o u r n a l h o m e p a g e : w w w . e l s e v i e r . c o m / l o c a t e / j p o w s o u r<lb/></ptr>
+	
+	<note type="other">Short communication<lb/></note>
+
+	<docTitle>
+	<titlePart>Carbon-supported manganese oxide nanocatalysts for rechargeable lithium–air<lb/> batteries<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>H. Cheng<lb/> * , K. Scott<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>School of Chemical Engineering &amp; Advanced Materials, Newcastle University,</affiliation>
+	</byline>
+
+	<address>Newcastle Upon Tyne NE1 7RU, UK<lb/></address>
+
+	<note type="other">a r t i c l e i n f o<lb/></note>
+
+	<note type="submission">Article history:<lb/> Received 8 July 2009<lb/> Received in revised form 7 September 2009<lb/> Accepted 10 September 2009<lb/></note>
+
+	<date>Available online 20 September 2009<lb/></date>
+
+	<keyword>Keywords:<lb/> Rechargeable lithium–air battery<lb/> Manganese oxide nanocatalysts<lb/> Air electrode<lb/> Carbon Discharge capacity<lb/> Cycle ability<lb/></keyword>
+
+	<div type="abstract">a b s t r a c t<lb/> Manganese oxide based catalysts were synthesised in the form of nano-particles using a redox reaction<lb/> of MnSO 4 and KMnO 4 , housed into the pores of a carbon matrix and followed by a thermal treatment.<lb/> Particle sizes of the manganese oxide nanocatalysts were around 50 nm, based on the tunnelling electron<lb/> microscope measurement. They were uniformly distributed in the carbon matrix, which contributed to<lb/> an improved electrical connection among the catalyst and current collectors. The charge/discharge tests<lb/> using this material as the cathode material in a rechargeable lithium–air battery showed high discharge<lb/> capacities up to 4750 mAh (g carbon)<lb/> −1 . The cycle ability of the composite electrode was superior to those<lb/> of the commercial electrolytic manganese dioxide electrodes.<lb/></div>
+
+	<note type="copyright">© 2009 Elsevier B.V. All rights reserved.<lb/></note>
+
+		</front>
+	</text>
+</tei>

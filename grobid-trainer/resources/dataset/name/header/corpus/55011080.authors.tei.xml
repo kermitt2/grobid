@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Duane</forename>
+								<surname>Choquesillo-Lazarte</surname>
+							<lb/>
+								<marker>a</marker>,
+							</persName>
+							<persName>
+								<forename>Berta</forename>
+								<surname>Covelo</surname>
+							<lb/>
+								<marker>b</marker> ,
+							</persName>
+							<persName>
+								<forename>Josefa</forename>
+								<middlename>Maria</middlename>
+								<surname>González - Pérez</surname>
+							<lb/>
+								<marker>a</marker>,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Alfonso</forename>
+								<surname>Castiñ eiras</surname>
+								<marker>c, *</marker> ,
+							</persName>
+							<persName>
+								<forename>J</forename>.
+								<middlename>Niclós</middlename>
+								<surname>-Gutiérrez</surname>
+								<marker>a</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

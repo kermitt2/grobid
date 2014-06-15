@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000348"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>PLA and PLGA microspheres of ␤-galactosidase: Effect of<lb/> formulation factors on protein antigenicity and<lb/> immunogenicity<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>N. Stivaktakis,<lb/> 1 K. Nikou,<lb/> 1,2 Z. Panagi,<lb/> 1 A. Beletsi,<lb/> 1 L. Leondiadis,<lb/> 2 K. Avgoustakis<lb/>1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Laboratory of Pharmaceutical Technology, Department of Pharmacy, University of Patras,</affiliation>
+	</byline>
+
+	<address>Rion 26500, Greece<lb/></address>
+
+	<byline>
+	<affiliation>2 Laboratory of Immunepeptide Chemistry, NCSR &quot;Demokritos,&quot; Aghia Paraskevi Attikis,</affiliation>
+	</byline>
+
+	<address>Athens 153 10, Greece<lb/></address>
+
+	<note type="submission">Received 26 January 2004; revised 19 March 2004; accepted 19 March 2004<lb/> </note>
+	
+	<date>Published online 20 May 2004 </date>
+
+	<note type="other">in Wiley InterScience (www.interscience.wiley.com).</note>
+
+	<idno type="DOI">DOI: 10.1002/jbm.a.30085<lb/></idno>
+
+	<div type="abstract">Abstract: The entrapment of ␤-galactosidase (Escherichia<lb/> coli) in PLA and PLGA microspheres using a double emul-<lb/>sion technique resulted to significant reduction of protein<lb/> antigenicity. The extent of antigenicity loss depended on the<lb/> conditions of microsphere preparation. Most of antigenicity<lb/> loss occurred on the first emulsification step. Only the effects<lb/> of microsphere preparation factors having an important in-<lb/>fluence on protein antigenicity, such as the type of organic<lb/> phase (polymer solvent) and homogenization, could be pre-<lb/>dicted (on a qualitative basis) by antigenicity data obtained<lb/> after the first emulsification step. The type of polymer and<lb/> polymer solvent used to prepare the microspheres affected<lb/> ␤-galactosidase immunogenicity. The PLA microspheres<lb/> prepared using ethyl acetate was the most immunogenic<lb/> microsphere formulation, eliciting similar total antibody re-<lb/>sponses as the alum formulation of ␤-gal. This formulation<lb/> was the only microsphere formulation that induced an<lb/> IgG1/IgG2a ratio lower than 1, indicating an immune re-<lb/>sponse biased towards a Th 1 type. The results obtained<lb/> indicate that large protein molecules with complex tertiary<lb/> structure such as ␤-galactosidase can be entrapped in PLA<lb/> and PLGA microspheres with retention of protein immuno-<lb/>genic potential, providing that appropriate conditions of<lb/> microsphere preparation are applied, and that the formula-<lb/>tion of microspheres might influence the Th 1 /Th 2 type of<lb/> immune response against the encapsulated antigen.</div>
+
+	<note type="copyright">© 2004<lb/> Wiley Periodicals, Inc. J Biomed Mater Res 70A: 139 –148,<lb/> 2004<lb/></note>
+
+	<keyword>Key words: PLA and PLGA microspheres of ß-galactosi-<lb/>dase; antigenicity; immunogenicity<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

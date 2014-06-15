@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010900"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<date>August 10, 1987<lb/></date>
+
+	<note type="other">I &apos;<lb/> 9<lb/> .A<lb/> / -<lb/>RFP-4 100<lb/></note>
+
+	<date>August 10, 1987<lb/></date>
+
+	<docTitle>
+	<titlePart>ACTINIDE REMOVAL FROM AQUEOUS SOLUTION<lb/> WITH ACTIVATED MAGNETITE<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Robert L. Kochen<lb/></docAuthor>
+	</byline>
+
+	<affiliation>Rockwell International<lb/> North American Space Operations<lb/> </affiliation>
+
+	<address>Rocky Flats Plant<lb/> P.O. Box 464<lb/> Golden, Colorado 80402-0464<lb/> </address>
+
+	<note type="other">U. S. DEPARTMENT OF ENERGY<lb/> </note>
+
+	<idno>CONTRACT DE-AC04-76DP03533</idno>
+
+		</front>
+	</text>
+</tei>

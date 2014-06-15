@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei type="phd-thesis">
+	<teiHeader>
+		<fileDesc xml:id="55115261"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Comprehensive Summaries of Uppsala Dissertations<lb/> from the Faculty of Medicine 1248<lb/></reference>
+	
+	<docTitle>
+	<titlePart>Disease activity in rheumatoid<lb/> arthritis<lb/> Studies in interleukin-6, tumour necrosis factor alpha,<lb/> monocyte activity, acute phase markers, glucocorticoids,<lb/> and disability<lb/> </titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>BY<lb/> NILS GUNNAR ARVIDSON<lb/></docAuthor> 
+	</byline>
+	
+	<note>ACTA UNIVERSITATIS UPSALIENSIS<lb/> </note>
+
+	<address>UPPSALA </address>
+
+	<date>2003<lb/></date>
+
+	<note type="page">4<lb/></note>
+
+	<degree>Doctoral thesis</degree> 
+		
+	<byline>
+	<affiliation>at Uppsala University 2003 from the Department of Medical Sciences<lb/></affiliation>
+	</byline>
+
+	<div type="abstract">ABSTRACT<lb/> Arvidson, NG 2003. Disease Activity in Rheumatoid Arthritis. Studies on<lb/> Interleukin-6, Tumour Necrosis Factor alpha, Monocyte Activity, Acute<lb/> Phase Markers, Glucocorticoids, and Disability. Acta Universitatis<lb/> Upsaliensis. Comprehensive Summaries of Uppsala Dissertations from the<lb/> Faculty of Medicine 1248. 88 pp. Uppsala. ISBN 91-554-5594-8<lb/> In the present studies, aspects of some disease activity measures in rheumatoid arthritis<lb/> (RA) have been investigated, including the effect of glucocorticoids on this activity.<lb/> In RA, serum interleukin(IL)-6 levels were elevated and were shown to have a<lb/> circadian rhythm, with peak levels in the morning, declining towards low or normal<lb/> levels in the afternoon and evening. In contrast, serum levels of tumour necrosis<lb/> factor(TNF) α were low and stable. In other connective tissue diseases, serum TNFα<lb/> levels were elevated but without circadian variation, while IL-6 levels were low and<lb/> stable.<lb/> Nocturnal administration (at 2:00 a.m.) of low-dose prednisolone a few hours before<lb/> the early morning peak of IL-6 was shown to be significantly more effective in<lb/> reducing clinical symptoms of disease activity and serum IL-6 levels than the<lb/> traditional morning administration (at 7:30 a.m.) of the same dose of prednisolone.<lb/> Circulating monocytes are activated in RA, expressing receptors related to adhesion<lb/> and phagocytosis. Treatment with glucocorticoids suppressed the expression of these<lb/> receptors on monocytes, and this may be one mechanism of the beneficial effect of<lb/> glucocorticoids in RA. Endogenous levels of cortisol may suppress leucocyte-<lb/>endothelial interactions in RA.<lb/> The different acute phase markers used to assess disease activity in RA showed good<lb/> correlations with each other and with serum IL-6 levels. There were especially strong<lb/> correlations between C-reactive protein (CRP) and Serum amyloid A (SAA) protein,<lb/> and between fibrinogen and erythrocyte sedimentation rate (ESR). Fibrinogen and CRP<lb/> showed stronger correlation than ESR with the Modified Health Assessment<lb/> Questionnaire (MHAQ) score and with the neutrophil count.<lb/> Four simple objective function tests were each compared with the MHAQ score and<lb/> with a radiological joint damage score (Larsen score). The objective function tests<lb/> correlated with the MHAQ score, and each of these two methods of assessing physical<lb/> disability correlated with pain, CRP and ESR. In addition, most of the objective<lb/> function tests correlated significantly with radiological joint damage, while the MHAQ<lb/> score did not.</div>
+
+		</front>
+	</text>
+</tei>

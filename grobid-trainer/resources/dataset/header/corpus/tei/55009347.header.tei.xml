@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009347"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>GIPSY: Automated Geographic Indexing of Text<lb/> Documents<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Allison Gyle Woodruff<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>California Department of Water Resources<lb/> and Computer Science Division<lb/> University of California,</affiliation>
+	</byline>
+
+	<address>Berkeley<lb/></address>
+
+	<email>woodruff@cs.berkeley.edu<lb/></email>
+
+	<byline>
+	<docAuthor>Christian Plaunt *<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Library and Information Studies<lb/> University of California,</affiliation>
+	</byline>
+
+	<address>Berkeley<lb/></address>
+
+	<email>chris@bliss.berkeley.edu<lb/></email>
+
+	<reference>In: Journal of the American Society for Information Science, 45:9:645–655, 1994<lb/></reference>
+
+	<div type="abstract">Abstract<lb/> In this paper we present an algorithm which automatically extracts geopositional coordi-<lb/>nate index terms from text to support georeferenced document indexing and retrieval. Under<lb/> this algorithm, words and phrases containing geographic place names or characteristics are<lb/> extracted from a text document and used as input to database functions which use spatial rea-<lb/>soning to approximate statistically the geoposition being referenced in the text. We conclude<lb/> with a discussion of preliminary results and future work.<lb/></div>
+
+		</front>
+	</text>
+</tei>

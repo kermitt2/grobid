@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008736"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>PETRIA 16 (1), 59-70 (2006)	-Le avversità del nocciolo in Italia<lb/></reference>
+
+	<docTitle>
+	<titlePart>LE PRINCIPALI AVVERSITÀ&apos; DEL<lb/> NOCCIOLO IN SICILIA<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Gaetano Siscaro, Santi Longo, Vittoria Catara,<lb/> Gabriella Cirvilleri<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Dipartimento di Scienze e Tecnologie Fitosanitarie<lb/> Università degli Studi di Catania<lb/></affiliation>
+	</byline>
+
+	<address>Via Santa Sofia, 100, I-95123 Catania<lb/></address>
+
+	<email>e-mail: gsiscaro@unict.it<lb/></email>
+
+		</front>
+	</text>
+</tei>

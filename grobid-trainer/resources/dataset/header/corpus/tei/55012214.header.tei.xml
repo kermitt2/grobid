@@ -1,0 +1,177 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012214"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>doc.:IEEE 802.11-10/1264r1<lb/></idno>
+
+	<note type="other">Submission<lb/></note>
+
+	<date>Nov 09, 2010<lb/></date>
+
+	<note type="page">Slide 1<lb/> </note>
+
+	<note>Hongyuan Zhang, et al.<lb/></note>
+	
+	<docTitle>
+	<titlePart>160MHz Stream Parser<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Authors:<lb/></note>
+
+	<date>Date: 2010-11-08<lb/></date>
+
+	<note type="other">Name Affiliations<lb/> Address Phone<lb/> email<lb/></note>
+
+	<byline>
+	<docAuthor>Hongyuan Zhang<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Marvell<lb/></affiliation>
+	</byline>
+
+	<address>5488 Marvell Lane, Santa Clara<lb/> CA, 95054<lb/></address>
+
+	<phone>+1-408-222-1837<lb/> </phone>
+
+	<email>hongyuan@marvell.com<lb/></email>
+
+	<byline>
+	<docAuthor>Sudhir Srinivasa<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Marvell<lb/></affiliation>
+	</byline>
+
+	<address>5488 Marvell Lane, Santa Clara<lb/> CA, 95054<lb/></address>
+
+	<email>sudhirs@marvell.com<lb/></email>
+
+	<byline>
+	<docAuthor>Eldad Perahia<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Intel<lb/></affiliation>
+	</byline>
+
+	<address>2111 NE 25<lb/> th Ave, Hillsboro OR<lb/> 97124, USA<lb/></address>
+
+	<email>eldad.perahia@intel.com<lb/></email>
+
+	<byline>
+	<docAuthor>Vinko Erceg<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Broadcom<lb/></affiliation>
+	</byline>
+
+	<address>16340 W Bernardo Dr;<lb/> San Diego CA 92127, USA<lb/></address>
+
+	<email>verceg@broadcom.com<lb/></email>
+
+	<byline>
+	<docAuthor>Youhan Kim<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Atheros<lb/></affiliation>
+	</byline>
+
+	<address>1700 Technology Drive<lb/> San Jose, CA 95110<lb/></address>
+
+	<email>youhan.kim@atheros.com<lb/></email>
+
+	<byline>
+	<docAuthor>Uikun Kwon<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Samsung<lb/></affiliation>
+	</byline>
+
+	<address>Korea<lb/> </address>
+	
+	<email>uikun.kwon@samsung.co<lb/> m </email>
+	
+	<byline>
+	<docAuthor>V. K. Jones<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Qualcomm<lb/></affiliation>
+	</byline>
+
+	<address>Qualcomm, San Jose, CA<lb/></address>
+
+	<email>vkjones@qualcomm.com<lb/></email>
+
+	<byline>
+	<docAuthor>Minho Cheong<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>ETRI<lb/></affiliation>
+	</byline>
+
+	<address>161 Gajeong-dong, Yuseong-gu,<lb/> Daejeon, Korea<lb/></address>
+
+	<phone>+82 42 860 5635<lb/> </phone>
+
+	<email>minho@etri.re.kr<lb/></email>
+
+	<byline>
+	<docAuthor>Daewon Lee<lb/> </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>LG Electronics<lb/> </affiliation>
+	</byline>
+
+	<address>LG R&amp;D Complex 533, Hogye-<lb/>1dong, Dongan-Gu, Anyang-Shi,<lb/> Kyungki-Do, 431-749, Korea<lb/></address>
+
+	<phone>+82-31-450-7897<lb/> </phone>
+
+	<email>daewon.lee@lge.com<lb/></email>
+
+	<byline>
+	<docAuthor>Brian Hart<lb/></docAuthor>
+	</byline>
+
+	<email>Cisco Brianh@cisco.com<lb/> </email>
+
+	<byline>
+	<docAuthor>Sean Coffey<lb/></docAuthor>
+	</byline>
+	
+	<email>Realtek Coffey@realtek.com<lb/></email>
+
+	<byline>
+	<docAuthor>Vish Ponnampalam<lb/> </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>MediaTek </affiliation>
+	</byline>
+	
+	<email>Vish.ponnampalam@med<lb/> iatek.com<lb/></email>
+
+	<byline>
+	<docAuthor>George Vlantis<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>ST-Ericsson<lb/></affiliation>
+	</byline>
+
+	<email>George.vlantis@st.com</email>
+
+		</front>
+	</text>
+</tei>

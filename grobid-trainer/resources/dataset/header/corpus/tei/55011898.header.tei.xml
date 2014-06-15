@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011898"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<affiliation>LUMITECH LED Technology<lb/></affiliation>
+	</byline>
+		
+	<note type="other">Seite 1<lb/></note>
+
+	<docTitle>
+	<titlePart>Maximale Energieeffi zienz.<lb/> COB LED-Module<lb/></titlePart>
+	</docTitle>
+
+	<ptr>www.lumitech.at</ptr>
+
+		</front>
+	</text>
+</tei>

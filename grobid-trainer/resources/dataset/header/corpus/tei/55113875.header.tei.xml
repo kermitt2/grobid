@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55113875"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<date>1965<lb/> </date>
+
+	<byline>
+	<docAuthor>FRITZSCHE, HASSERODT und KORTE<lb/></docAuthor>
+	</byline>
+	
+	<note type="page">1681<lb/></note>
+
+	<byline>
+	<docAuthor>HANS FRITZSCHE, ULRICH HASSERODT und FRIEDHELM KORTE<lb/></docAuthor>
+	</byline>
+
+	<docTitle>
+	<titlePart>Reduktion organischer Verbindungen des funfwertigen Phosphors<lb/> zu Phosphinen, I11 1)<lb/> Darstellung primiirer und sekundarer Phosphine mit Silanen<lb/> </titlePart>
+	</docTitle>
+
+	<byline>
+	<affiliation>Aus der Shell Grundlagenforschung-Gesellschaft mbH, SchloR Birlinghoven, Siegkreis<lb/> </affiliation>
+	</byline>
+
+	<note type="submission">(Eingegangen am 10. Dezember 1964)<lb/> </note>
+ 
+	<note type="abstract">Phosphonsaureester sowie Phosphinsauren und deren Ester oder Chloride wer-<lb/>den ebenso wie Di-und Monohalogenphosphine mit organischen Silanen oder<lb/> Trichlorsilan zu primaren bzw. sekundaren Phosphinen reduziert.<lb/> </note>
+
+	<div type="introduction">Der Vielzahl von bekannten und in vielen Fallen leicht zuganglichen Phosphon-<lb/>und Phosphinsauren und deren Derivaten steht bisher nur eine verhaltnismaDig<lb/> geringe Zahl von primaren und sekundaren Phosphinen gegenuber. Zur Darstellung<lb/> solcher Phosphine bietet sich daher die Reduktion von Verbindungen des funfwertigen<lb/> Phosphors an. Mit der Einfuhrung von LiAIH4 als Reduktionsmittel in die Phosphor-<lb/>chemie gelang es dann, Phosphonsauren und Phosphinsauren und deren Derivate<lb/> zu primaren und sekundaren Phosphinen zu reduzieren 2 ) . Doch hat diese Methode<lb/> gewisse Nachteile.<lb/> Wir fanden kunlich, daB sich tertiare Phosphinoxyde mit organischen Silanen oder<lb/> Trichlorsilan (Silicochloroform) in guten Ausbeuten zu tertiaren Phosphinen redu-<lb/>zieren lassen1.3) und untersuchten nun, ob sich diese Reaktion auch auf Phosphon-<lb/>und Phosphinsauren ubertragen IaDt. Wir erhielten dabei in allen Fallen in guten<lb/> Ausbeuten die entsprechenden primaren bzw. sekundaren Phosphine.<lb/> 
+	
+	A. DARSTELLUNG PRIMARER PHOSPHINE<lb/> Phosphonsiiureester, die durch die ARsuzov-Reaktion leicht zuganglich sind, lassen<lb/> sich in guten Ausbeuten mit Diphenylsilan oder Methylpolysiloxan zu primaren<lb/> Phosphinen reduzieren. Der Phosphonsiiureester wird einfach zusammen mit dem<lb/> Silan auf 150-200&quot; erhitzt. AnschlieBend wird das gebildete primare Phosphin direkt<lb/> abdestilliert. Diese Arbeitsweise erlaubt muhelos standiges Arbeiten unter Stickstoff.<lb/> Die Ausbeuten betragen zwischen 95 und 75 %. Zur Reduktion von 1 Mol. Phosphon-<lb/>saureester werden vier Aquivalente Si-H benotigt. Wir stellen uns vor, daD zur<lb/> Reduktion einer P-0-Bindung zwei Si -H-Bindungen und fur die Reduktion einer<lb/> P -OR-oder P-C1-Bindung noch eine weitere Si -H-Bindung erforderlich sind.<lb/> 4 # sin<lb/> RP(OR&apos;)*<lb/> R P H ~ + Siloxan<lb/> b<lb/> 
+	
+	1) 11. Mitteil.: H. FRITZSCHE, U. HASSERODT und F. KORTE, Chem. Ber. 98, 171 119651.<lb/> 2 ) L. HORNER, H. HOFFMANN und P. BECK, Chem. Ber. 91, 1583 [1958].<lb/> 3) H. FRITZSCHE, U. HASSERODT und F. KORTE, Chem. Ber. 97, 1988 [1964].<lb/> </div>
+
+	<note type="other">108.</note>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009052"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Comparison of Normalization Methods<lb/> for the Identification of Biomarkers Using MALDI-TOF<lb/> and SELDI-TOF Mass Spectra<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Sanket P. Borgaonkar,<lb/> 1 Harrison Hocker,<lb/> 1 Hyunjin Shin,<lb/> 2 and Mia K. Markey<lb/> 1<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Abstract<lb/> Proteomic profiling by mass spectrometry has tremendous potential for identifying disease biomarkers. A key<lb/> limitation of mass spectrometry is that the information provided on the abundance of the various peptides is only<lb/> relative. Thus, normalization is typically employed. Several normalization methods have been proposed and<lb/> implemented in the literature. However, it is not clear if there is any reason to prefer one method over another. The<lb/> goal of this study was to investigate the effect of normalization strategy on the identification of putative bio-<lb/>markers from MALDI-TOF and SELDI-TOF mass spectra. Our results demonstrate that many of the putative<lb/> biomarkers identified by mass spectrometry will be the same regardless of which data normalization scheme is<lb/> applied. However, there can be substantial differences in the m=z values identified as being most discriminatory<lb/> based on choice of normalization method. As there is no consistent pattern as to which normalization method<lb/> yields the most promising targets for follow up study, we recommend that investigators routinely repeat their<lb/> analysis with multiple normalization methods and consider the top several candidates identified in each case.<lb/></div>
+
+		</front>
+	</text>
+</tei>

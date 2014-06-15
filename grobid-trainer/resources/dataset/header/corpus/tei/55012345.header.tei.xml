@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012345"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">NorDig Rules of Operation, ver 1.0<lb/></note>
+
+	<docTitle>
+	<titlePart>NorDig Rules of Operation<lb/> for<lb/> NorDig Unified Receiver Networks<lb/> </titlePart>
+	</docTitle>
+
+	<note type="page">-2 -<lb/></note>
+
+	<note type="other">NorDig Rules of Operation, ver 1.0<lb/></note>
+	
+		</front>
+	</text>
+</tei>

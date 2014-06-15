@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012151"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>APPLICATION OF NEURAL STRUCTURES IN WATER QUALITY<lb/> MEASUREMENTS<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>O. Postolache<lb/> 1<lb/> , M.D. Pereira<lb/> 2 , P. Girão<lb/> 3 , M. Cretu<lb/> 1 and C. Fosalau<lb/> 1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Faculty of Electrical Engineering Iasi,</affiliation>
+	</byline>
+
+	<address>B-dul D. Mangeron 53, Iasi 6600, Romania<lb/></address>
+
+	<byline>
+	<affiliation>2 Escola Superior de Tecnologia, Instituto Politécnico de Setúbal,</affiliation>
+	</byline>
+
+	<address>Portugal<lb/></address>
+
+	<byline>
+	<affiliation>3 Instituto Superior Tecnico, SETME,</affiliation>
+	</byline>
+
+	<address>Av. Rovisco Pais 1049-001, Lisboa, Portugal<lb/></address>
+
+	<div type="abstract">Abstract: The paper presents a theoretical and practical study related with the<lb/> implementation of artificial intelligence for the enhancement of water quality<lb/> measurement systems accuracy. The measurement parameters related to water quality<lb/> (WQ), considered in the present work, are essentially the pH and the conductivity (C).<lb/> The fusion of sensor information is performed using two different architectures of the<lb/> Artificial Neural Networks. Those architectures are compared in terms of the<lb/> implementation, complexity of associated digital signal processing and accuracy<lb/> enhancement. An additional measure of temperature is used to offer details regarding<lb/> the presence of micro-organisms in tested water and also to compensate the<lb/> temperature influences on the pH and C measurements. The test environment is<lb/> implemented by a virtual measurement system, which includes a hardware component<lb/> based on a data acquisition board and a software component developed in LabVIEW<lb/> graphical programming language.<lb/></div>
+
+	<keyword>Keywords: Water Quality Measurement, Neural Networks, Accuracy<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

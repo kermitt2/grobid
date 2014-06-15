@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012498"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">3GPP TSG RAN WG1 Meeting #66<lb/> </note>
+
+	<idno>R1-112617<lb/> </idno>
+
+	<address>Athens, Greece, </address>
+
+	<date>22<lb/> nd – 26<lb/> th August, 2011<lb/> </date>
+
+	<note type="other">Agenda Item: 5.4.2<lb/> Source:<lb/></note>
+
+	<byline>
+	<affiliation>Ericsson, ST-Ericsson<lb/></affiliation>
+	</byline>
+
+	<docTitle>
+	<titlePart>Title:<lb/> Further Uplink Enhancements to CELL_FACH<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Document for: Discussion<lb/></note>
+
+		</front>
+	</text>
+</tei>

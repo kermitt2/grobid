@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011383"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="copyright">&#169; 2008 Open Mobile Alliance Ltd. All Rights Reserved.<lb/> Used with the permission of the Open Mobile Alliance Ltd. under the terms as stated in this document.<lb/></note>
+
+	<idno>[OMA-Template-Spec-20080101-I]<lb/></idno>
+
+	<docTitle>
+	<titlePart>Push using SIP<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Draft Version 1.0 –</note>
+
+	<date>29 Aug 2008<lb/></date>
+
+	<byline>
+	<affiliation>Open Mobile Alliance<lb/></affiliation>
+	</byline>
+
+	<idno>OMA-TS-SIP_Push-V1_0-20080829-D<lb/></idno>
+
+	<note type="other">Deleted: 15<lb/> Deleted: 15</note>
+
+		</front>
+	</text>
+</tei>

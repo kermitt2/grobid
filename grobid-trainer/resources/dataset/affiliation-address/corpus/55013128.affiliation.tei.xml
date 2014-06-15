@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="institution">SCM Microsystems Inc.</orgName>
+							<lb/>
+							<address>
+								<addrLine>41740 Christy Street<lb/> Fremont</addrLine>,
+								<region>CA</region>
+								<postCode>94538</postCode>
+								<country>USA</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>		
+							<orgName type="department">European Headquarters</orgName>
+							<lb/>
+							<orgName type="institution">SCM Microsystems GmbH</orgName>
+							<lb/>
+							<address>
+								<addrLine>Oskar-Messter-Str. 13</addrLine>
+							<lb/>
+								<postCode>85737</postCode>
+								<settlement>Ismaning</settlement>,
+								<country>Germany</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>		
+							<orgName type="institution">SCM Microsystems Japan, Inc.</orgName>
+							<lb/>
+							<address>
+								<addrLine>GoogolPlex Millennium Building 6F<lb/> 4-4-20 Shiba</addrLine>,
+								<addrLine>Minato-ku</addrLine>,
+							<lb/>
+								<settlement>Tokyo</settlement>,
+								<country>Japan</country>
+								<postCode>108-0014</postCode>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="institution">Tidel Park</orgName>,
+							<address>
+								<addrLine>4 Canal Bank Road Taramani</addrLine>
+							<lb/>
+								<settlement>Chennai</settlement>
+								<postCode>600113</postCode>,
+								<country>India</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

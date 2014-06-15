@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<tei type="technical-report">
+	<teiHeader>
+		<fileDesc xml:id="55115487"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Information and Communication Technologies (ICT) Programme<lb/></titlePart>
+	</docTitle>
+
+	<idno>Project N<lb/> o : FP7-ICT-214063<lb/></idno>
+
+	<docTitle>
+	<titlePart>S S E<lb/> E A<lb/> A<lb/> Deliverable D3.2<lb/> MVC/SVC storage format<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Author(s): Karsten Grüneberg, Thomas Schierl</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>(Fraunhofer HHI),<lb/></affiliation>
+	</byline>
+		
+	<byline>
+	<docAuthor>Luca Celetto</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>(ST Microelectronics)<lb/></affiliation>
+	</byline>
+
+	<note type="other">Status -Version: Final<lb/></note>
+
+	<date>Date: 29 January 2009<lb/></date>
+
+	<note type="other">Distribution -Confidentiality: Public after release<lb/> Code: SEA_D3.2_HHI_FF_20090129.doc<lb/></note>
+
+	<div type="abstract">Abstract:<lb/> This document describes extensions to the MP4 File Format for the storage of SVC and MVC coded<lb/> video sequences.<lb/></div>
+
+	<note type="copyright">© Copyright by the SEA Consortium</note>
+
+		</front>
+	</text>
+</tei>

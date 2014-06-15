@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55002007"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">1<lb/> </note>
+	
+	<idno>Preliminary Data Sheet, Rev. 0.2<lb/> 02-DT-0704-10<lb/></idno>
+
+	<docTitle>
+	<titlePart>DiskOnChip-Based MCP<lb/> Including DiskOnChip G3, NOR, and PSRAM<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Data Sheet, </note>
+
+	<date>August 2004<lb/></date> 
+
+	<div type="introduction">Highlights<lb/> DiskOnChip-based MCP (Multi-Chip Package)<lb/> is a complete memory solution. Efficiently<lb/> packed in a small Fine-Pitch Ball Grid Array<lb/> (FBGA) package, it is ideal for data and code<lb/> storage inside 2.5G and 3G mobile handsets.<lb/> DiskOnChip-based MCP consists of:<lb/>  M-Systems&apos; DiskOnChip G3<lb/>  CMOS NOR flash<lb/>  CMOS Pseudo Static RAM (PSRAM)<lb/> Using such an MCP configuration reduces<lb/> overall memory costs, saves PCB real estate<lb/> and maintains efficient power consumption<lb/> levels. It may also have far-reaching<lb/> implications on the mobile handset memory<lb/> architecture, supporting a NOR-less memory<lb/> system by providing boot functionality at a<lb/> much less expensive cost than NOR.<lb/> General Features<lb/>  Small 9 x 12 x 1.4 mm 107-ball, FBGA<lb/> package  64MByte (512Mbit) DiskOnChip G3<lb/>  16MByte (128 Mbit) NOR<lb/>  8MByte (64Mbit) CMOS PSRAM<lb/>  High performance 16-bit interface to all<lb/> devices  Deep Power-Down mode for low power<lb/> consumption  Operating voltage: 2.7V to 3.3V<lb/>  Operating temperature: -30°C to +85°C</div>
+
+		</front>
+	</text>
+</tei>

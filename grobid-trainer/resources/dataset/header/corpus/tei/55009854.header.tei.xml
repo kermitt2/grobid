@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009854"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">ENVIRONMENTAL POLLUTION<lb/> E L S E V 1E R<lb/></note>
+
+	<reference>Environmental Pollution 99 (1998) 37-43<lb/></reference>
+
+	<docTitle>
+	<titlePart>Soil contamination by crude oil: impact on the mycorrhizosphere<lb/> and on the revegetation potential of forest trees<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Giovanni Nicolotti a, Simon Egli b<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>aUniversity of Torino, DL VA.P.R.A.--Plant Pathology,</affiliation>
+	</byline>
+
+	<address>10095, Grugliasco, ( Torino), Italy<lb/></address>
+
+	<byline>
+	<affiliation>bSwiss Federal Institute for Forest, Snow and Landscape Research WSL,</affiliation>
+	</byline>
+
+	<address>8903, Birmensdorf, (Zurich), Switzerland<lb/></address>
+
+	<note type="submission">Received 7 April 1997; accepted 29 October 1997<lb/></note>
+
+	<div type="abstract">Abstract<lb/> In vitro and greenhouse biotests were carried out to study the effects of various concentrations of crude oil on the mycorrhizo-<lb/>sphere and the ability of ectomycorrhizal fungi to colonise Norway spruce and poplar seedlings grown on contaminated soil.<lb/> Ectomycorrhizal fungi grown in pure cultures showed a variety of reactions to crude oil, ranging from growth stimulation to total<lb/> inhibition of growth, depending on the species of fungi. Germination of poplar and spruce seeds was not significantly affected. The<lb/> growth of spruce seedlings was not affected by crude oil, whereas that of poplar seedlings was significantly reduced at high con-<lb/>centrations. None of the concentrations had any effect on the degree of ectomycorrhizal and endomycorrhizal colonisation of<lb/> poplar. With spruce, however, the ectomycorrhizal fungi showed species-specific reactions to increasing concentrations, in accor-<lb/>dance with the results of the pure culture test. The length of time between soil contamination and seeding affects both seedling<lb/> growth and the mycorrhizal infection potential of the soil. The results confirm the importance of mycorrhizal fungi in the bior-<lb/>emediation of soils contaminated by crude oil. © 1998 Elsevier Science Ltd. All rights reserved.<lb/> In Labor-und Gew~ichshausversuchen wurde die Wirkung von Erd61 auf die Mykorrhizaflora und ihr Potential, Feinwurzeln<lb/> von Fichten und Pappels/imlingen zu besiedeln, durchgeffihrt. In Reinkultur zeigten die 10 untersuchten Ektomykorrhizapilze<lb/> unterschiedliche Reaktion auf Erd61kontamination, von Stimulation bis zu totaler Hemmung des Wachstums. Ein Einfluss von<lb/> Erd61 auf die Samenkeimung war bei keiner der beiden Baumarten festzustellen. Das S~imlingswachstum wurde bei Pappel durch<lb/> hohe Erdflkonzentrationen signifikant gehemmt, w~ihrenddem es bei Fichte praktisch unbeeinflusst blieb. Die Besiedlung der<lb/> Feinwurzein durch Endo-und Ektomykorrhizapilze wurde bei Pappel durch Erd61 nicht beeinflusst, bei Fichte zeigten Ektomy-<lb/>korrhizapilze--in Lrbereinstimmung mit den Resultaten der Reinkulturversuche--artspezifische Reaktionen auf Erd61kontamina-<lb/>tion. Die Wartezeit zwischen der Erdflkontamination des Bodens und der Aussaat beeinflusst sowohl das S~imlingswachstum wie<lb/> das Mykorrhiza-Infektionspotential des Bodens. Die Resultate best~itigen die Bedeutung der Mykorrhizapilzflora im Zusammen-<lb/>hang mit der Wiederbesiedlung von erd61kontaminierten B6den.</div>
+
+	<note type="copyright">© 1998 Elsevier Science Ltd. All rights reserved.<lb/></note>
+
+	<keyword>Keywords: Crude oil; Ectomycorrhiza; Endomycorrhiza; Pollution; Infection potential; Picea abies; Populus nigra<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

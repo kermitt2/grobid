@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Li</forename>
+								<middlename>Yin</middlename>
+								<surname>Hung</surname>,
+							</persName>
+							<persName>	
+								<forename>Fei</forename>
+								<surname>Huang</surname>,
+							</persName>
+							<persName>	
+								<forename>Tif f a ny</forename>
+								<middlename>T</middlename>.
+								<surname>Nguy en </surname> a nd
+							</persName>
+							<persName>
+								<forename>Reen</forename>
+								<surname>Wu</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

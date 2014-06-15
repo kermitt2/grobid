@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013527"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">2<lb/></note>
+
+	<docTitle>
+	<titlePart>JPEG 2000 Extensions (Part 2)<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Margaret Lepley, J. Scott Houchin, James Kasner, and Michael Marcellin<lb/></docAuthor>
+	</byline>
+
+		</front>
+	</text>
+</tei>

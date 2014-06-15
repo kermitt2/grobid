@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010490"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="submission">Received<lb/> June 1, 1994; accepted<lb/> after revision July 26, 1994.<lb/></note>
+
+	<note type="grant">This work was supported<lb/> in part by NIH Grant No. CA 52880 to A. L. WahI.<lb/></note>
+
+	<byline>
+	<affiliation>1oepartment of Radiology,<lb/> University of Michigan<lb/> Hospitals,<lb/></affiliation>
+	</byline>
+
+	<address>1500 E. Medical Center Or.,TC291 OP, Ann Arbor, Ml 48109-0326.<lb/></address>
+
+	<note type="other">Address correspondence<lb/> to </note>
+
+	<docAuthor>0.<lb/> 0. Adler.<lb/></docAuthor>
+
+	<byline>
+	<affiliation>2Oepartment of Intemal Medicine,<lb/> University of Michigan<lb/> Hospitals,<lb/></affiliation>
+	</byline>
+
+	<address>Ann Arbor, Ml 48109-0326.<lb/></address>
+
+	<note type="page">19<lb/></note>
+
+	<idno>AJR 1995;164:19-30<lb/></idno>
+	
+	<idno>0361-803X/95/1641-19<lb/></idno>
+
+	<note type="copyright">© American<lb/> Roentgen Ray Society<lb/></note>
+
+	<note type="other">Review Article<lb/></note>
+
+	<docTitle>
+	<titlePart>New Methods<lb/> for Imaging<lb/> the Breast: Techniques,<lb/> Findings,<lb/> and Potential<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Dorit D. Adler1and<lb/> Richard L. Wahl1&apos;2<lb/></docAuthor>
+	</byline>
+
+		</front>
+	</text>
+</tei>

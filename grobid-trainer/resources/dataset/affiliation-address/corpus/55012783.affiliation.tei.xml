@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>*</marker>
+							<orgName type="department">Department of Nutrition</orgName>,
+							<orgName type="department">School of Medicine</orgName>,
+							<orgName type="institution">The University of Tokushima</orgName>,
+							<address>
+								<addrLine>3-18-15 Kuramoto-cho</addrLine>,
+							<lb/>
+								<settlement>Tokushima</settlement>
+								<postCode>770-8503</postCode>,
+								<country>Japan</country>; and
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="department">Department of Food Sciences and Nutritional Health</orgName>,
+							<orgName type="department">Faculty of Human<lb/> Environment</orgName>,
+							<orgName type="institution">Kyoto Prefectural University</orgName>,
+							<address>
+								<settlement>Shimogamo</settlement>,
+								<region>Kyoto</region>
+								<postCode>606-8522</postCode>,
+								<country>Japan</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55115014"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Towards Toolipse 2<lb/> Tool Support for the Next Generation Agent Framework<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Michael Burkhardt<lb/> Marco Lützenberger<lb/> Nils Masuch<lb/></docAuthor>
+	</byline>
+
+	<email>michael.burkhardt@dai-labor.de<lb/> marco.luetzenberger@dai-labor.de<lb/> nils.masuch@dai-labor.de<lb/></email>
+
+	<byline>
+	<affiliation>DAI Labor Berlin<lb/> Technische Universität Berlin<lb/></affiliation>
+	</byline>
+
+	<address>Ernst-Reuter-Platz 7, 10587 Berlin, Germany<lb/></address>
+
+	<div type="abstract">Abstract<lb/> Multi-agent system development is a complex task. In<lb/> this paper we describe our idea of supporting the<lb/> multi-agent system development within the JIAC<lb/> framework by a unified tool solution. We illustrate an<lb/> approach of providing a development platform, which<lb/> enables comfortable, quick and comprehensive multi-<lb/>agent system design and provides semantic searching<lb/> for available services. At this we start with our latest<lb/> three feature extensions to the JIAC framework, each<lb/> one developed in the scope of a diploma thesis, and<lb/> describe our planned adjustments and ideas to achieve<lb/> the desired functionality.<lb/></div>
+
+	<keyword>Keywords<lb/> JIAC V, Tool, Services, Development, Multi-Agent<lb/> Systems.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

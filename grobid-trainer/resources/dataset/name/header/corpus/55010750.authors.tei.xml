@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Paschalis</forename>
+								<surname>Tsiaflakis</surname>,
+							</persName>
+							<persName>
+								<forename>Jan</forename>
+								<surname>Vangorp</surname> and
+							</persName>
+							<persName>
+								<forename>Marc</forename>
+								<surname>Moonen</surname>
+								<marker>2</marker>
+							</persName>
+							<persName>
+								<forename>Jan</forename>
+								<surname>Verlinden</surname> and
+							</persName>
+							<persName>
+								<forename>Katleen</forename>
+								<middlename>Van</middlename>
+								<surname>Acker</surname>
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Raphael</forename>
+								<surname>Cendrillon</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

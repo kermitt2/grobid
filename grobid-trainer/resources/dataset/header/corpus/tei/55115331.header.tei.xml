@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55115331"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>An Improved Technique for Tensile Testing of Sheet Metals<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Wei Tong, Yue Xuan, and Hang Yao<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Mechanical Engineering<lb/> Southern Methodist University<lb/></affiliation>
+	</byline>
+
+	<address>Dallas, Texas 75275-0337 USA<lb/></address>
+
+	<div type="introduction">Introduction Whole-field strain mapping measurements based on digital image correlation techniques have been increasingly<lb/> applied in recent years to investigate deformation and failure behaviors of sheet metals [1-5]. The experiments<lb/> have been done essentially with measurements by a single camera at a one fixed viewing angle when the thin<lb/> sheet metal test coupons are used and their surfaces remain planar with respect to the imaging plane. In order to<lb/> provide a more accurate data about the diffuse and localized necking process in a sheet metal and the<lb/> deformation and failure of a welded joint, the deformation measurement on both flat surfaces as well one or both<lb/> side edges of a test coupon are often needed. Any possible out-of-plane motion between the sheet metal surface<lb/> and the camera imaging plane during the test is also needed to be monitored for reliable determination of elastic<lb/> modulus and the plastic strain ratio at small strains. To measure the surface deformation of a test sample over a<lb/> wider viewing angle or a test sample undergoing some relative 3D motion with respect to the camera, multiple<lb/> (two or more) cameras or a single camera with multiple rotated positions usually have to be used, which incur<lb/> considerable additional cost in hardware and often require lengthy and tedious multiple-camera calibration steps<lb/> in practical applications.<lb/> A Strain Measurement Technique using a Single-Camera with Two 45-Degree Mirrors<lb/> A simple experimental configuration for measuring three surfaces (i.e., at a viewing angle of 270º) of a sheet<lb/> metal test coupon simultaneously has recently been developed in our lab, as shown in Fig.1(a) and Fig.1(b).<lb/> Such an experimental configuration uses only a single camera along with two 45-degree mirrors and is most<lb/> suitable for situations when the surfaces of a flat sheet metal test coupon are undergoing mostly translations with<lb/> only small rotations respect to the imaging plane. Because the large length-to-width ratio of a typical sheet metal<lb/> tensile test coupon, a single digital image (with a typical aspect ratio of 4:3) can record the three surfaces without<lb/> much loss of the spatial resolution. If the deformation measurement over the side surface (the middle one in<lb/> Fig.1b) is desired, a lens with small aperture setting should be used so all three surfaces are within the depth of<lb/> focus of the imaging system. Errors due to any relative motion between the sheet metal coupon and the camera<lb/> along either the y-axis or z-axis can be effectively corrected.<lb/> Test Coupon</div>
+
+		</front>
+	</text>
+</tei>

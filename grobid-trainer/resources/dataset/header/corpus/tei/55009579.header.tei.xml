@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009579"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Expandable Grids: A user interface visualization<lb/> technique and a policy semantics to support fast,<lb/> accurate security and privacy policy authoring<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Robert W. Reeder<lb/></docAuthor>
+	</byline>
+
+	<date>July 2008<lb/></date>
+
+	<idno>CMU-CS-08-143<lb/></idno>
+
+	<byline>
+	<affiliation>School of Computer Science<lb/> Carnegie Mellon University<lb/></affiliation>
+	</byline>
+
+	<address>Pittsburgh, PA 15213<lb/></address>
+
+	<note type="other">Thesis Committee:<lb/> Lorrie Faith Cranor, chair<lb/> Jason I. Hong<lb/> Michael K. Reiter<lb/> Daniel P. Siewiorek<lb/> Clare-Marie Karat<lb/></note>
+
+	<degree>Submitted in partial fulfillment of the requirements<lb/> for the degree of Doctor of Philosophy<lb/></degree>
+
+	<note type="copyright">&#169; 2008 Robert Reeder<lb/></note>
+
+	<note type="grant">This research was sponsored by the National Science Foundation under grant nos. CNS-0433540 and CNS-0627513, Army Re-<lb/>search Office contract no. DAAD19-02-1-0389 and an IBM Open Collaborative Research grant.<lb/> </note>
+
+	<note type="other">The views and conclusions contained in this document are those of the author, and should not be interpreted as representing the<lb/> official policies, either expressed or implied, of any sponsoring institution, the U.S. government, or any other entity.</note>
+
+		</front>
+	</text>
+</tei>

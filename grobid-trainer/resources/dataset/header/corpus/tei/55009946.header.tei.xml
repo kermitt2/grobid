@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009946"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<affiliation>AdventNet</affiliation>
+	</byline>
+
+	<docTitle>
+	<titlePart>Web NMS 4.7.0 – Distributed Mediation Guide<lb/></titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

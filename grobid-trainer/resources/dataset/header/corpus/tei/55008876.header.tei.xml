@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008876"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Cosmetics &amp; Toiletries<lb/> Comparatively Speaking: Simple Salt vs. Ionic Liquid<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>By: Anthony J. O&apos;Lenick Jr.,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Siltech LLC<lb/></affiliation>
+	</byline>
+
+	<date>Posted: November 17, 2010<lb/></date>
+
+	<div type="introduction">Salts are ionic species that are made up of a positive ion and a negative ion. An inorganic salt such as sodium chloride (NaCl) has<lb/> two inorganic species. As a result, the melting point is high (801<lb/> o<lb/> C). An example of a mixed salt is sodium lauryl sulfate, as shown in<lb/> Figure 1.<lb/> Unlike common salts, ionic liquids are salts in which the ions are poorly coordinated, this results in molecules that are liquid below<lb/> 100<lb/> o<lb/> C. At least one ion is organic, which prevents the formation of a stable crystal lattice. Properties such as the melting point,<lb/> viscosity and solubility in a variety of solvents are determined by specific structure. Consequently, ionic liquids can be placed in<lb/> water, oils or hydroalcoholic solutions where they function at the surface by changing the surface tension, thus providing<lb/> detergency, conditioning and wetting.<lb/> US Patent 7,786,064, assigned to Hecht et al., teaches:<lb/> It is desirable to develop new classes of ionic liquids by converting certain conventional solid or semi-solid actives used in<lb/> consumer or industrial product formulations into ionic liquids. Thus, the ionic liquids can be used as replacements for traditional<lb/> actives such as surfactants, and are easier to incorporate into formulations. Moreover, new classes of ionic liquids can be derived<lb/> from selective pairings between functional actives (e.g., surfactant-derived anions can be paired with softener-derived cations)<lb/> such that the resulting ionic liquids can have multiple active functionalities to provide multiple benefits that previously require<lb/> multiple actives in the formulation to achieve.<lb/> Novel ionic liquids derived from compounds that have been used as surfactants in detergent formulations for laundry, dish<lb/> washing and hard surface cleaning, can be made by reacting or mixing various surfactants commonly used in detergent<lb/> formulations with properly chosen counterions; these surfactants can be converted into ionic compounds having different<lb/> characteristics.</div>
+
+		</front>
+	</text>
+</tei>

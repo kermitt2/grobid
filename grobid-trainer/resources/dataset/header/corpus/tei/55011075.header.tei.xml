@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011075"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>STUDIES ON INCLUSION COMPLEXES OF CYCLODEXTRIN AND DYES; I.<lb/> SYNTHESIS AND PROPERTIES OF DYE ROTAXANES, II. FORMATION OF<lb/> ANISOTROPIC SUPRAMOLECULES<lb/></titlePart>
+	</docTitle>
+
+	<degree>A Thesis<lb/> Presented to<lb/>The Academic Faculty<lb/></degree>
+	
+	<byline>
+	<docAuthor>By<lb/> Jong Seung Park<lb/></docAuthor>
+	</byline>
+
+	<degree>In Partial Fulfillment<lb/> Of the Requirements for the Degree<lb/> Doctor of Philosophy</degree>
+	
+	<byline>
+	<affiliation>in School of Polymer, Textile and Fiber Engineering<lb/> Georgia Institute of Technology<lb/></affiliation>
+	</byline>
+
+	<date>December 2005</date>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013382"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Functional Characterization of D-Galacturonic Acid Reductase,<lb/> a Key Enzyme of the Ascorbate Biosynthesis Pathway,<lb/> from Euglena gracilis<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Takahiro ISHIKAWA,<lb/> 1;y Ikuko MASUMOTO,<lb/> 1 Naofumi IWASA,<lb/> 1 Hitoshi NISHIKAWA,<lb/> 1<lb/> Yoshihiro SAWA,<lb/> 1 Hitoshi SHIBATA,<lb/> 1 Ayana NAKAMURA,<lb/> 2<lb/> Yukinori YABUTA,<lb/> 2 and Shigeru SHIGEOKA<lb/> 2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Department of Life and Environmental Sciences, Shimane University,</affiliation>
+	</byline>
+
+	<address>1060 Nishikawatsu,<lb/> Matsue, Shimane 690-8504, Japan<lb/></address>
+
+	<byline>
+	<affiliation>2 Department of Advanced Bioscience, Faculty of Agriculture, Kinki University,<lb/></affiliation>
+	</byline>
+
+	<address>3327-204 Nakamachi, Nara, Nara 631-8505, Japan<lb/></address>
+
+	<note type="submission">Received June 13, 2006; Accepted July 26, 2006; Online Publication, November 7, 2006<lb/></note>
+
+	<idno type="DOI">[doi:10.1271/bbb.60327]<lb/></idno>
+
+	<div type="abstract">D-Galacturonic acid reductase, a key enzyme in<lb/> ascorbate biosynthesis, was purified to homogeneity<lb/> from Euglena gracilis. The enzyme was a monomer with<lb/> a molecular mass of 38–39 kDa, as judged by SDS–<lb/> PAGE and gel filtration. Apparently it utilized NADPH<lb/> with a Km value of 62:5 AE 4:5 M and uronic acids,<lb/> such as D-galacturonic acid (Km ¼ 3:79 AE 0:5 mM) and<lb/> D-glucuronic acid (Km ¼ 4:67 AE 0:6 mM). It failed to<lb/> catalyze the reverse reaction with L-galactonic acid<lb/> and NADP<lb/> þ . The optimal pH for the reduction of D-<lb/>galacturonic acid was 7.2. The enzyme was activated<lb/> 45.6% by 0.1 mM H 2 O 2 , suggesting that enzyme activity<lb/> is regulated by cellular redox status. No feedback<lb/> regulation of the enzyme activity by L-galactono-1,4-<lb/>lactone or ascorbate was observed. N-terminal amino<lb/> acid sequence analysis revealed that the enzyme is<lb/> closely related to the malate dehydrogenase families.<lb/></div>
+
+	<keyword>Key words: D-galacturonic acid reductase; ascorbate<lb/> biosynthesis; Euglena; aldo-keto reductase<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

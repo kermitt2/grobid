@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013842"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">! !<lb/> ! !<lb/> ! !<lb/> ! !<lb/> ! !<lb/> ! !<lb/> ! !<lb/> !<lb/></note>
+
+	<docTitle>
+	<titlePart>Digital Video Broadcasting (DVB); Structure and<lb/> modulation of optional transmitter signatures (T2-<lb/>TX-SIG) for use with the DVB-T2 second<lb/> generation digital terrestrial television<lb/> broadcasting system<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">DVB Document A150<lb/></note>
+
+	<date>June 2010</date>
+
+		</front>
+	</text>
+</tei>

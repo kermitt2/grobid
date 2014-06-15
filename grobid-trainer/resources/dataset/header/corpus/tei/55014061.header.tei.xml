@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014061"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">RÖMPP Online, Version 3.18<lb/></note>
+
+	<docTitle>
+	<titlePart>Sauerstoff<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Bearbeitet von:</note>
+
+	<byline>
+	<note type="other">Helmut Sitzmann, Jenny Hartmann-Schreier<lb/></note>
+	</byline>
+
+	<note type="other">Fachgebiet: Chemie &gt; Unterthema: Chemische Elemente, Produkte, anorganische Chemie (allgemein)<lb/> Fachgebiet: Umwelt-und Verfahrenstechnologie &gt; Unterthema: Umweltanalytik (Wasser)<lb/> Fachgebiet: Lebensmittelchemie &gt; Unterthema: Zusatzstoffe<lb/></note>
+
+	<div type="abstract">Sauerstoff ist ein nichtmetallisches Element mit drei natürlichen Isotopen (Häufigkeit in Klammern): 16<lb/> (99,762%), 17 (0,038%), 18 (0,200%). Ferner kennt man noch künstliche Isotope zwischen O und O,<lb/> von denen jedoch nur die Isotope 14 und 15 mit Halbwertszeiten von 70,6 s bzw. 122,2 s ausreichend<lb/> langlebig für eventuelle medizinisch-diagnostische Verwendungen sind. Das Verhältnis der natürlichen<lb/> Isotope kann je nach den terrestrischen Vorkommen erheblich variieren: O von 99,7771–99,7539%, O<lb/> von 0,0407–0,035%, O von 0,2084–0,1879%, d. h. das mittlere Atomgewicht schwankt zwischen<lb/> 15,9990 und 16,000.<lb/></div>
+
+		</front>
+	</text>
+</tei>

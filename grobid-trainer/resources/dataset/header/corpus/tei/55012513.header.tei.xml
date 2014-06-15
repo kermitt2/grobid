@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012513"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Label Layout for Interactive 3D Illustrations<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Kamran Ali, Knut Hartmann, and Thomas Strothotte<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Simulation and Graphics<lb/> Otto-von-Guericke University of Magdeburg<lb/></affiliation>
+	</byline>
+
+	<address>Universitätsplatz 2, D-39106 Magdeburg / Germany<lb/></address>
+
+	<email>{kamran, knut, tstr}@isg.cs.uni-magdeburg.de<lb/></email>
+
+	<div type="abstract">ABSTRACT<lb/> Hand-made illustrations in scientific and technical textbooks commonly use internal and external labels or legends<lb/> to establish co-referential relation between pictorial elements and textual expressions. By analyzing the most<lb/> complex examples, we extracted several label layout styles and classified them. We propose a variety of real-time<lb/> label layout algorithms that aim to produce nice and clean layouts. In order to achieve a frame-coherent label<lb/> layout during user interactions, the algorithms consider layout decisions from previous frame. Moreover, several<lb/> evaluation criteria to measure the quality of static as well as dynamic label layouts are presented.<lb/></div>
+
+	<keyword>Keywords<lb/> Label-Layout, External Labeling, Text-Image Integration, Multi-Modal Presentations<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

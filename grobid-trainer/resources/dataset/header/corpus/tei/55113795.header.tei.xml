@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55113795"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Some considerations on the transmissivity of thin<lb/> metal films<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Ian R. Hooper and J. Roy Sambles<lb/> *<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>School of Physics, University of Exeter,</affiliation>
+	</byline>
+
+	<address>Exeter, Devon, EX4 4QL, UK<lb/></address>
+
+	<email>*<lb/> Corresponding author: j.r.sambles@exeter.ac.uk<lb/></email>
+
+	<div type="abstract">Abstract: As interest in plasmonics grows the optical properties of thin<lb/> metal films becomes increasingly significant. Here we explore the<lb/> transmissivity of thin metal films at normal incidence, from the ultraviolet<lb/> to microwaves, and show how, contrary to simplistic treatments, the<lb/> microwave transmissivity may be much less than the optical transmissivity<lb/> for films which are well below the skin depth in thickness. This arises<lb/> because the film is acting as a zero order Fabry-Perot with very high<lb/> reflectivity at each interface. The skin depth then becomes irrelevant for thin<lb/> metal films at microwave frequencies. We also note in passing that the<lb/> expected exponential dependence on thickness at higher thicknesses has an<lb/> asymptotic limit at zero thickness which may be as high as four times the<lb/> input intensity.<lb/></div>
+
+	<note type="copyright">©2008 Optical Society of America<lb/></note>
+
+	<keyword>OCIS codes: (310.6860) Thin Films; (160.3900) Metals<lb/></keyword>
+
+	<note type="other">References and links<lb/> 1. T. W. Ebbesen, H. J. Lezec, H. F. Ghaemi, T. Thio, and P. A. Wolff, &quot;Extraordinary optical transmission<lb/> through sub-wavelength hole arrays,&quot; Nature 391, 667-669 (1998).<lb/> 2. J. B. Pendry, &quot;Negative refractive index makes a perfect lens,&quot; Phys. Rev. Lett. 85, 3966-3969 (2000).<lb/> 3. D. R. Smith, J. B. Pendry and M. C. K. Wiltshire, &quot;Metamaterials and negative refractive index,&quot; Science<lb/> 305, 788-792 (2004).<lb/> 4. D. Schurig, J. J. Mock, B. J. Justice, S. A. Cummer, J. B. Pendry, A. F. Starr and D. R. Smith, &quot;Metamaterial<lb/> electromagnetic cloak at microwave frequencies,&quot; Science 314, 977-980 (2006).<lb/> 5. J. A. Stratton, Electromagnetic Theory (McGraw Hill, 1941).<lb/> 6. J. R. Reitz, F. J. Milford and R. W. Christy, Foundations of Electromagnetic Theory, 4<lb/> th Ed. (Addison-<lb/>Wesley, 1992).<lb/> 7. D. J. Nash and J. R. Sambles, &quot;Surface plasmon study of the optical dielectric function of silver,&quot; J. Mod.<lb/> Opt. 43, 81-91 (1996).<lb/> 8. M. J. Tillin and J. R. Sambles, &quot;</note>
+
+	<div type="abstract">A surface plasmon polariton study of the dielectric-constants of reactive<lb/> metals – Aluminium,&quot; Thin Solid Films 167, 73-83 (1988).<lb/> The optical properties of thin metal films has long been a subject of scientific research. Over<lb/> the past decade there has been a resurgence of interest in this area primarily as a result of<lb/> Ebbesen and coworkers observation of strongly enhanced transmission through holey metal<lb/> films [1]. Further interest in thin metal films has also been stimulated by Pendry&apos;s suggestion<lb/> of using thin metal layers as perfect lenses [2] while at much the same time the same author<lb/> [3] has re-stimulated general interest in the idea of negative index materials – metals, with<lb/> negative permittivities structured to give also negative permeabilities then lead<lb/> consequentially to the possibility of &apos;cloaking&apos; [4]. It is in this context of renewed interest in<lb/> the optical properties of structured metal films that we here revisit the rather old problem of<lb/> the transmissivity of unstructured films.<lb/> There are various standard texts which give expressions for the transmissivity of a thin<lb/> slab of any material. Stratton [5] gives the transmissivity T (Stratton p515 Eq. (24)) for normal<lb/> incidence in air as:</div>
+
+		</front>
+	</text>
+</tei>

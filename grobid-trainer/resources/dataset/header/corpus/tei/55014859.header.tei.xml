@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014859"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<affiliation>American Institute of Aeronautics and Astronautics<lb/></affiliation>
+	</byline>
+
+	<note type="page">1<lb/></note>
+
+	<docTitle>
+	<titlePart>A Turbine-powered UAV Controls Testbed<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Mark A. Motter<lb/> * and James W. High<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>NASA Langley Research Center,</affiliation>
+	</byline>
+
+	<address>Hampton, Virginia, 23681<lb/></address>
+
+	<byline>
+	<docAuthor>Nelson M. Guerreiro<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>National Institute of Aerospace,</affiliation>
+	</byline>
+
+	<address>Hampton, VA 23666<lb/></address>
+
+	<byline>
+	<docAuthor>Ryan S. Chambers<lb/> and Keith D. Howard<lb/> **<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>United States Naval Academy,</affiliation>
+	</byline>
+
+	<address>Annapolis, Maryland 21402<lb/></address>
+ 
+	<div type="abstract">The latest version of the NASA Flying Controls Testbed (FLiC) integrates commercial-<lb/>off-the-shelf components including airframe, autopilot, and a small turbine engine to provide<lb/> a low cost experimental flight controls testbed capable of sustained speeds up to 200 mph.<lb/> The series of flight tests leading up to the demonstrated performance of the vehicle in<lb/> sustained, autopiloted 200 mph flight at NASA Wallops Flight Facility&apos;s UAV runway in<lb/> August 2006 will be described. Earlier versions of the FLiC were based on a modified Army<lb/> target drone, AN/FQM-117B, developed as part of a collaboration between the Aviation<lb/> Applied Technology Directorate at Fort Eustis, Virginia and NASA Langley Research<lb/> Center. The newer turbine powered platform (J-FLiC) builds on the successes using the<lb/> relatively smaller, slower and less expensive unmanned aerial vehicle developed specifically<lb/> to test highly experimental flight control approaches with the implementation of C-coded<lb/> experimental controllers. Tracking video was taken during the test flights at Wallops and<lb/> will be available for presentation at the conference. Analysis of flight data from both<lb/> remotely piloted and autopiloted flights will be presented. Candidate experimental<lb/> controllers for implementation will be discussed. It is anticipated that flight testing will<lb/> resume in Spring 2007 and those results will be included, if possible.<lb/> Nomenclature<lb/> Fps = feet per second<lb/> Mph = miles per hour<lb/> FLiC = Flying Controls Testbed<lb/> J-FLiC = Jet-powered Flying Controls Testbed<lb/> AirSTAR = Airborne Subscale Transport Aircraft Research Testbed<lb/> SOM = Self Organizing Map<lb/> UAV = unmanned aerial vehicle<lb/></div>
+
+	<note type="other">Disclaimer<lb/> Reference herein to any specific commercial products, process, or service by trade name, trademark, <lb/> manufacturer, or otherwise, does not necessarily constitute or imply its endorsement, recommendation, or favoring<lb/> by the United States Government. The views and opinions of authors expressed herein do not necessarily state or<lb/> reflect those of the United States Government, and shall not be used for advertising or product endorsement<lb/> purposes.<lb/> * Controls Research Engineer, Electronic Systems Branch, Mail Stop 488, Member, AIAA, Senior Member IEEE.<lb/> Engineering Technician, Electronics System Branch, Mail Stop 488.<lb/> Graduate Research Associate, NIA/University of Maryland, 100 Exploration Way, Member, AIAA.<lb/> Midshipman First Class, Aerospace Engineering Department<lb/> ** Midshipman Second Class, Aerospace Engineering Department<lb/> American Institute of Aeronautics and Astronautics<lb/> </note>
+
+	<note type="page">2<lb/></note>
+
+		</front>
+	</text>
+</tei>

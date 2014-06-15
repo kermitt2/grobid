@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010733"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>ISSN: 1579-4377<lb/></idno>
+
+	<docTitle>
+	<titlePart>EVALUATION OF LEATHER DYEING USING ECOFRIENDLY-BLACK<lb/> DYESTUFF<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Padma S Vankar* and Dhara Bajpai<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Facility for Ecological and Analytical Testing (FEAT). Indian Institute of Technology,</affiliation>
+	</byline>
+
+	<address>Kanpur-208 016, India<lb/></address>
+
+	<keyword>KEYWORDS<lb/> Ecc-friendly black dye, leather dyeing.<lb/></keyword>
+
+	<div type="abstract">ABSTRACT<lb/> Our work illustrates that dyeing of chrome tanned leather by conventional drum dyeing using black<lb/> dyestuff (Eco-Black), with low concentrations(2 and 2.5%) shows very encouraging results. Soft leather<lb/> showed the color strength of both grain and flesh sides in good depth. The total dye penetration through<lb/> cross-section of the dyed leather has been calculated by optical microscopy. The adherence effect of this<lb/> new ecofriendly dyestuff on chrome tanned leather for light and wash fastness were studied.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei type="web">
+	<teiHeader>
+		<fileDesc xml:id="55114024"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>CSCI 700: Algorithms I -Design and Analysis of Algorithms<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">Fall 2011<lb/> Monday Wednesday 5:00pm -6:15pm<lb/> NSB A223<lb/> Instructor: Andrew Rosenberg (andrew_at_cs.qc.cuny.edu)<lb/> Office Hours: Wednesday 12-1pm NSB A330<lb/> Overview<lb/> This class will cover the fundamentals of the design and analysis of algorithms. A focus on implementation in out-of-class assignments will accompany the theoretical<lb/> discussions of the material in class. Solid grasp of the design and analysis of algorithms is foundational to being a successful computer programmer and computer scientist.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009807"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Field performance of imazamox-resistant spring wheat<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>C. J. Pozniak, F. A. Holm, and P. J. Hucl<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Crop Development Center, Department of Plant Sciences, University of Saskatchewan,</affiliation>
+	</byline>
+
+	<address>51 Campus<lb/> Drive, Saskatoon, Saskatchewan, Canada S7N 5A8</address>
+
+	<email>(e-mail: curtis.pozniak@usask.ca).<lb/></email>
+
+	<note type="submission">Received 22 September 2003, accepted 13 May 2004.<lb/></note>
+
+	<div type="abstract">Pozniak, C. J., Holm, F. A. and Hucl, P. J. 2004. Field performance of imazamox-resistant spring wheat. Can. J. Plant Sci. 84:<lb/> 1205–1211. The imidazolinone herbicides possess high biological potency at low application rates, and are an attractive alternative for<lb/> weed control in spring wheat (Triticum aestivum L.). Four mutation-derived spring wheat lines resistant to the imidazolinone class of her-<lb/>bicides were evaluated in field trials to investigate the levels of resistance to imazamox. Imazamox was applied post-emergence at 0 g<lb/> (hand-weeded control; HWC) 20 g, 40 g, 80 g and 160 g active ingredient (a.i.) ha –1 . A standard herbicide treatment (SHT; clodinafop-<lb/>propargyl, bromoxynil and MCPA ester) representing a common herbicide application to spring wheat in western Canada was also<lb/> included. The cultivar CDC Teal was included as a susceptible control. At 160 g ha –1 , imazamox reduced yield in lines with a single<lb/> resistance gene (TealIMI 10A, TealIMI 11A, and BW755) by up to 43% and delayed maturity up to 13 d. TealIMI 15A, the only line<lb/> evaluated with two resistance genes, was the most resistant of all lines, with no significant increases in days to spike emergence (DSE),<lb/> days to physiological maturity (DPM), and no reduction in yield at the highest rate of imazamox. The susceptible control was killed with-<lb/>in 2 wk of imazamox application, regardless of application rate. These results indicate that two resistance genes are preferable for ensur-<lb/>ing satisfactory levels of resistance to the formulation of imazamox used in these studies.<lb/></div>
+
+	<keyword>Key words: Triticum aestivum L., imazamox, resistance, gene stacking<lb/></keyword>
+
+	<div type="abstract">Pozniak, C. J., Holm, F. A. et Hucl, P. J. 2004. Rendement du blé de printemps résistant à l&apos;imazamox . Can. J. Plant Sci. 84:<lb/> 1205–1211. Les herbicides à l&apos;imidazolinone sont très puissants à faible dose et constituent une solution attrayante pour la lutte<lb/> contre les adventices dans les champs de blé (Triticum aestivum L.). Les auteurs ont évalué quatre lignées de blé de printemps<lb/> résistantes aux herbicides à l&apos;imidazolinone obtenues par mutation lors d&apos;essais au champ afin d&apos;établir leur résistance à l&apos;i-<lb/>mazamox. Ils ont appliqué 0 g (désherbage manuel), 20 g, 40 g, 80 g ou 160 g d&apos;ingrédient actif par hectare après la levée. Ils ont<lb/> également utilisé un mélange d&apos;herbicides ordinaire (clodinafop-propargyl, bromoxynil et ester de MCPA) pour représenter les<lb/> traitements courants dans l&apos;ouest du Canada et se sont servis du cultivar CDC Teal comme témoin sensible. À 160 g par hectare,<lb/> l&apos;imazamox réduit le rendement des lignées possédant un seul gène de résistance (TealIMI 10A, TealIMI 11A et BW755) de<lb/> jusqu&apos;à 43 % et retarde leur maturation de 13 jours. TealIMI 15A, seule lignée évaluée possédant deux gènes de résistance, résis-<lb/>tait le mieux à l&apos;herbicide et on n&apos;a relevé aucune hausse sensible du nombre de jours avant l&apos;émergence de l&apos;épi ni avant la matu-<lb/>rité physiologique, de même qu&apos;aucune réduction du rendement au taux d&apos;application le plus élevé de l&apos;imazamox. Le témoin<lb/> sensible est mort au bout de deux semaines, peu importe le taux d&apos;application de l&apos;imazamox. Les résultats indiquent que deux<lb/> gènes de résistance sont préférables si l&apos;on veut obtenir un taux de résistance satisfaisant aux taux d&apos;application de l&apos;imazamox<lb/> examinés dans le cadre de cette étude.<lb/></div>
+
+	<keyword>Mots clés: Triticum aestivum L., imazamox, résistance, accumulation de gènes</keyword>
+
+		</front>
+	</text>
+</tei>

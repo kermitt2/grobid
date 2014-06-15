@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011565"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>APPLIED AND ENVIRONMENTAL MICROBIOLOGY, Aug. 2005, p. 4185–4190<lb/> Vol. 71, No. 8<lb/></reference>
+
+	<note>0099-2240/05/$08.00ϩ0</note>
+
+	<idno type="DOI">doi:10.1128/AEM.71.8.4185–4190.2005<lb/></idno>
+
+	<note type="copyright">Copyright © 2005, American Society for Microbiology. All Rights Reserved.<lb/></note>
+
+	<docTitle>
+	<titlePart>Inhibition of Clostridium perfringens by a Novel Strain of Bacillus<lb/> subtilis Isolated from the Gastrointestinal Tracts of<lb/> Healthy Chickens<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Alex Yeow-Lim Teo* and Hai-Meng Tan<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Kemin Industries (Asia) Pte Ltd.,</affiliation>
+	</byline>
+
+	<address>12 Senoko Drive, Singapore 758200, Republic of Singapore<lb/></address>
+
+	<note type="submission">Received 7 September 2004/Accepted 21 February 2005<lb/></note>
+
+	<div type="abstract">The objectives of this study were to isolate beneficial strains of microorganisms from the gastrointestinal<lb/> tracts of healthy chickens and to screen them against Clostridium perfringens, a causative agent of necrotic<lb/> enteritis in poultry. One of the bacteria isolated, a strain of Bacillus subtilis, was found to possess an<lb/> anticlostridial factor that could inhibit the C. perfringens ATCC 13124 used in this study. The anticlostridial<lb/> factor produced by B. subtilis PB6 was found to be fully or partially inactivated in the presence of pronase,<lb/> trypsin, and pepsin. In contrast, the antimicrobial activity of the anticlostridial factor was not affected by<lb/> treatment at 100 or 121°C or by treatment with any of the organic solvents used in the study. The optimum<lb/> growth temperature and optimum pH for production of the anticlostridial factor were 37°C and 6.20, respec-<lb/>tively. Using the mass spectroscopy-mass spectroscopy technique, the apparent molecular mass of the anti-<lb/>clostridial factor was estimated to be in the range from 960 to 983 Da. In terms of the antimicrobial spectrum,<lb/> the anticlostridial factor was inhibitory toward various strains of C. perfringens implicated in necrotic enteritis<lb/> in poultry, Clostridium difficile, Streptococcus pneumoniae, Campylobacter jejuni, and Campylobacter coli.<lb/></div>
+
+		</front>
+	</text>
+</tei>

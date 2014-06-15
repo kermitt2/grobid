@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012633"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Supporting Information<lb/></note>
+
+	<note type="copyright">&#169;Copyright Wiley-VCH Verlag GmbH &amp; Co. KGaA, 69451 Weinheim, 2011<lb/></note>
+
+	<docTitle>
+	<titlePart>Nickel-Catalyzed C À H Arylation of Azoles with Haloarenes: Scope,<lb/> Mechanism, and Applications to the Synthesis of Bioactive Molecules<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Takuya Yamamoto,<lb/> [a] Kei Muto,<lb/> [a] Masato Komiyama,<lb/> [b] JØrôme Canivet,<lb/> [a]<lb/> Junichiro Yamaguchi,<lb/> [a] and Kenichiro Itami*<lb/> [a]<lb/></docAuthor>
+	</byline>
+
+	<note type="other">chem_201101091_sm_miscellaneous_information.pdf</note>
+
+		</front>
+	</text>
+</tei>

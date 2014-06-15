@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012252"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>ICT-215282 STP </idno>
+
+	<affiliation>ROCKET<lb/></affiliation>
+
+	<docTitle>
+	<titlePart>Reconfigurable OFDMA-based Cooperative NetworKs Enabled<lb/> by Agile SpecTrum Use<lb/> D4<lb/> 3D1 -Single User Cooperative Transmission Techniques for<lb/> OFDMA Multi-hop Cellular Networks<lb/></titlePart>
+	</docTitle>
+
+	<date>Contractual Date of Delivery to the CEC: 31 October 2008<lb/>Actual Date of Delivery to the CEC:<lb/> 9 January 2009<lb/></date>
+
+	<byline>
+	<docAuthor>Author(s): Adrian Agustin, Josep Vidal, Olga Muñoz (UPC), Sebastien Simoens, Patrick Labbe (MOT),<lb/> Reza Hoshyar, Fabien Heliot (Unis), Emilio Calvanese (CEA), Enrico de Marinis, Gian Paolo<lb/> Imponente (DUNE)<lb/>
+	</docAuthor>
+	</byline>
+
+	<affiliation>Participant(s): UPC, MOT, UniS, CEA, DUNE<lb/> </affiliation>
+
+	<note type="other">Workpackage: WP3<lb/> Est. person months: 39<lb/> Security: R<lb/> Dissemination Level: PU<lb/> Version: 1.0<lb/> Total number of pages: 193<lb/></note>
+
+	<div type="abstract">Abstract:<lb/> This deliverable explores several research lines for the single-user cooperative transmission containing:<lb/> One-way or two-way relays, full or imperfect CSI, multiple relays, full-duplex or half-duplex relays, extended<lb/> Gaussian function, turbo-coded relay transmission, multilayer cooperative DF, management of ARQ and<lb/> design of optimal decoders.<lb/> The different areas under study have been classified in three groups: resource allocation, physical layer<lb/> design and MAC functionalities. It has been shown that an optimal resource allocation can be derived for<lb/> various schemes (precoder optimization with one-way relays, multiple-relay and two-way relay channel).<lb/> Likewise, a network dimensioning tool based on indifference plots will give insights of the benefits of different<lb/> transmission schemes. On the other hand, some aspects like how the turbo-code relay is implemented, new<lb/> transmission schemes or the derivation of optimal decoders are tackled in the physical layer design section.<lb/> This work elucidates two options for adopting the ARQ protocols by the cooperative transmissions: only-<lb/>source manages the procedure or source and relay control the ARQ. An analysis in terms of outage capacity<lb/> is carried out.<lb/></div>
+
+	<keyword>Keyword list: Two-way relay channel (TWRC), imperfect CSI, full-duplex relay, half-duplex relay, ARQ,<lb/> multilayer cooperative, indifference plots, extended Gaussian Function, turbo-codes</keyword>
+
+		</front>
+	</text>
+</tei>

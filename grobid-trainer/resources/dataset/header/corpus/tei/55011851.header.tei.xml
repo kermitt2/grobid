@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011851"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">TKK Dissertations 125<lb/></note>
+	
+	<note>Espoo </note>
+	
+	<date>2008<lb/></date>
+
+	<docTitle>
+	<titlePart>HEAT-INDUCED CHANGES IN LACTOSE<lb/> HYDROLYSED MILKS<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<note type="other">Doctoral Dissertation<lb/></note>
+	</byline>
+
+	<byline>
+	<affiliation>Helsinki University of Technology<lb/> Faculty of Chemistry and Materials Sciences<lb/> Department of Biotechnology and Chemical Technology<lb/></affiliation>
+	</byline>
+
+	<byline>
+	<docAuthor>Olli Tossavainen</docAuthor>
+	</byline>
+
+		</front>
+	</text>
+</tei>

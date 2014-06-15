@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55113800"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Johnny Can Obfuscate; Beyond Mother&apos;s Maiden Name<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>William Cheswick<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Lumeta Corp.<lb/></affiliation>
+	</byline>
+
+	<div type="abstract">Abstract<lb/> Challenge/response authentication is stronger than<lb/> password authentication, but has traditionally re-<lb/>quired a device for computing the challenge. Though<lb/> human computation is limited, people can compute<lb/> simple responses to challenges. If the challenge and<lb/> the corresponding response is obfuscated with de-<lb/>coy information, an authentication scheme might be<lb/> strong enough for a number of applications. The<lb/> signs used in major league baseball provide some in-<lb/>teresting techniques for obfuscation.<lb/></div>
+
+		</front>
+	</text>
+</tei>

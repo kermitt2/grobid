@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei type="product-sheet">
+	<teiHeader>
+		<fileDesc xml:id="55113885"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>1. General description<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">The TEA1791AT is a member of the new generation of Synchronous Rectifier (SR)<lb/> controller ICs for switched mode power supplies. Its high level of integration allows the<lb/> design of a cost-effective power supply with a very low number of external components.<lb/> The TEA1791AT is a controller IC dedicated for synchronous rectification on the<lb/> secondary side of discontinuous conduction mode and quasi-resonant flyback converters.<lb/> The TEA1791AT is fabricated in a Silicon On Insulator (SOI) process.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei type="technical-report">
+	<teiHeader>
+		<fileDesc xml:id="55113854"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>3GPP TS 24.301 V11.4.0</idno>
+
+	<date>(2012-09)<lb/></date>
+
+	<note type="other">Technical Specification<lb/></note>
+
+	<docTitle>
+	<titlePart>3rd Generation Partnership Project;<lb/> Technical Specification Group Core Network and Terminals;<lb/> Non-Access-Stratum (NAS) protocol<lb/> for Evolved Packet System (EPS);<lb/> Stage 3<lb/> (Release 11)<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">The present document has been developed within the 3<lb/> rd Generation Partnership Project (3GPP<lb/> TM<lb/> ) and may be further elaborated for the purposes of 3GPP.<lb/> The present document has not been subject to any approval process by the 3GPP Organizational Partners and shall not be implemented.<lb/> This Specification is provided for future development work within 3GPP only. The Organizational Partners accept no liability for any use of this Specification.<lb/> Specifications and reports for implementation of the 3GPP<lb/> TM system should be obtained via the 3GPP Organizational Partners&apos; Publications Offices.<lb/></note>
+
+	<idno>3GPP<lb/> 3GPP TS 24.301 V11.4.0 </idno>
+
+	<date>(2012-09)<lb/> </date>
+
+	<note type="page">59 </note>
+
+	<note type="other">Release 11<lb/></note>
+
+	<div type="abstract">performs cell selection according to 3GPP TS 36.304 [21]. One or more tracking areas is removed from the list of<lb/> &quot;forbidden tracking areas for roaming&quot; in the UE, as well as the list of &quot;forbidden tracking areas for regional provision<lb/> of service&quot; if, after a subsequent procedure e.g. attach procedure, tracking area updating procedure and GUTI<lb/> reallocation procedure, one or more tracking areas in the lists is received from the network. If the UE has only one PDN<lb/> connection established which is for emergency bearer services, the tracking areas shall not be removed from these lists<lb/> if one or more tracking areas in the lists are received from the network.<lb/> In S1 mode, the UE shall update the suitable list whenever an ATTACH REJECT, TRACKING AREA UPDATE<lb/> REJECT, SERVICE REJECT or DETACH REQUEST message is received with the EMM cause #12 &quot;tracking area not<lb/> allowed&quot;, #13 &quot;roaming not allowed in this tracking area&quot;, or #15 &quot;no suitable cells in tracking area&quot;.</div>
+
+		</front>
+	</text>
+</tei>

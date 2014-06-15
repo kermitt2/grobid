@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013284"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<ptr type="web">www.sciencemag.org/cgi/content/full/330/6001/219/DC1<lb/></ptr>
+
+	<docTitle>
+	<titlePart>Supporting Online Material for<lb/> An Oxidative Enzyme Boosting the Enzymatic Conversion of<lb/> Recalcitrant Polysaccharides<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Gustav Vaaje-Kolstad, Bjørge Westereng, Svein J. Horn, Zhanliang Liu, Hong Zhai,<lb/> Morten Sørlie, Vincent G. H. Eijsink*
+	<lb/></docAuthor>
+	</byline>
+
+	<note type="other">*To whom correspondence should be addressed.</note>
+
+	<email>E-mail: vincent.eijsink@umb.no<lb/></email>
+
+	<date>Published 10 September 2010, </date>
+
+	<reference>Science 330, 219 (2010)<lb/></reference>
+
+	<idno type="DOI">DOI: 10.1126/science.1192231<lb/></idno>
+
+	<note type="other">This PDF file includes<lb/> Materials and Methods<lb/> Figs. S1 and S12<lb/> Table S1<lb/> References</note>
+
+		</front>
+	</text>
+</tei>

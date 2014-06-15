@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>S</forename>
+								<surname>Clarke</surname>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>C</forename>.
+								<surname>Gebbie</surname>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>C</forename>
+								<surname>Sweeney</surname>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>N</forename>
+								<surname>Olszewksi</surname>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>J</forename>
+								<surname>Smith</surname>
+								<marker>3</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

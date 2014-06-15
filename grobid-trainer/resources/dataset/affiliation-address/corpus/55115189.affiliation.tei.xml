@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+ (
+						<affiliation>
+							<marker>1</marker>)
+							<orgName type="institution">Institut Telecom</orgName>;
+							<orgName type="institution">Telecom ParisTech</orgName>;
+							<orgName type="institution">CNRS LTCI</orgName>;
+							<orgName type="department">TSI Department</orgName>
+							<lb/>
+							<address>
+								<addrLine>Address: 46, rue Barrault</addrLine>,
+								<postCode>75013</postCode>
+								<settlement>Paris</settlement> -
+								<country>France</country>
+							<lb/> (
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>)
+							<orgName type="institution">Thales Communications</orgName>;
+							<orgName type="laboratory">Land and Joint Systems</orgName>;
+							<orgName type="department">IMINT Department</orgName>
+							<lb/>
+							<address>
+								<addrLine>Address: 2-5, avenue Carnot, Bât. F</addrLine>,
+								<postCode>91883</postCode>
+								<settlement>Massy</settlement> -
+								<country>France</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

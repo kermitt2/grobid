@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei type="technical-report">
+	<teiHeader>
+		<fileDesc xml:id="55114085"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="copyright">© 2013 Navigant Consulting, Inc.<lb/></note>
+
+	<docTitle>
+	<titlePart>Energy Efficiency/Demand Response<lb/> Plan: Plan Year 4 (6/1/2011‐5/31/2012)<lb/> Evaluation Report:<lb/> Home Energy Reports<lb/> FINAL<lb/> </titlePart>
+	</docTitle>
+	
+	<note>Presented to<lb/> Commonwealth Edison Company </note>
+
+	<date>March 4, 2013<lb/> </date>
+
+	<note type="other">Prepared by:<lb/> </note>
+
+	<byline>
+	<docAuthor>Randy Gunn<lb/> Managing Director<lb/> </docAuthor>
+	</byline>
+	
+	<note type="other"></note>
+
+	<byline>
+	<affiliation>Navigant Consulting<lb/> </affiliation>
+	</byline>
+	
+	<address>30 S. Wacker Drive, Suite 3100<lb/> Chicago, IL60606<lb/> </address>
+
+	<phone>Phone 312.583.5700<lb/> Fax 312.583.5701<lb/></phone>
+
+	<ptr type="web">www.navigant.com</ptr>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013945"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Novel Application of 7-Chloro-4-nitrobenzo-2-oxa-1,3-diazole To Identify Cysteine<lb/> Sulfenic Acid in the AhpC Component of Alkyl Hydroperoxide Reductase<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Holly R. Ellis and Leslie B. Poole*<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Biochemistry, Wake Forest UniVersity Medical Center,</affiliation>
+	</byline>
+
+	<address>Winston-Salem, North Carolina 27157<lb/></address>
+
+	<note type="submission">ReceiVed September 4, 1997 X<lb/></note>
+
+	<div type="abstract">ABSTRACT: The trapping of a sulfenic acid within the fully active C165S mutant of the AhpC peroxidase<lb/> protein from Salmonella typhimurium was investigated. The electrophilic reagent employed in these studies,<lb/> 7-chloro-4-nitrobenz-2-oxa-1,3-diazole (NBD-Cl), has previously been used to modify thiol, amino, and<lb/> tyrosine hydroxyl groups in proteins; at neutral pH only cysteinyl residues of AhpC proteins are modified.<lb/> The peroxide-oxidized C165S mutant of AhpC incubated with NBD-Cl gave a product with an absorbance<lb/> maximum at 347 nm, whereas the thiol-NBD conjugate formed from the reduced protein absorbed<lb/> maximally at 420 nm. Electrospray ionization mass spectrometry of the modified proteins allowed<lb/> identification of the species absorbing at 347 nm as a Cys-S(O)-NBD derivative containing one additional<lb/> oxygen relative to the Cys-S-NBD product. The C165S conjugates with Cys-S(O)-NBD and Cys-S-<lb/>NBD had no peroxidase activity when compared to unreacted C165S and wild-type AhpC, but were both<lb/> reactivated through removal of NBD by DTT. Oxidized C165S was also modified by dimedone, a common<lb/> sulfenic acid reagent, to give the expected inactivated conjugate of higher mass. This reagent was not<lb/> removed by DTT and blocked any further reaction of the protein with NBD-Cl. NBD modification of<lb/> Enterococcus faecalis NADH peroxidase, a well-characterized flavoprotein with an active-site sulfenic<lb/> acid (Cys-SOH), also yielded the spectrally-distinguishable NBD conjugates following incubation of NBD-<lb/>Cl with oxidized and reduced forms of the denatured peroxidase, indicating a general utility for this<lb/> reagent with other sulfenic acid-containing proteins. A significant advantage of NBD-Cl over previously-<lb/>used sulfenic acid reagents such as dimedone is in the retention of the sulfenic acid oxygen in the modified<lb/> product; differentiation between protein-associated thiols and sulfenic acids is therefore now possible by<lb/> means of both visible absorbance properties and mass analyses of the NBD-modified proteins.<lb/> The alkyl hydroperoxide reductase system from Salmo-<lb/>nella typhimurium, comprised of AhpF and AhpC, protects<lb/> the cell during aerobic metabolism from the toxic and<lb/> mutagenic effects of reactive oxygen species (1-3). AhpF<lb/> is a thioredoxin reductase-like pyridine nucleotide-dependent<lb/> flavoprotein that is directly involved in the reduction of AhpC<lb/> through redox-active cystine disulfide centers (4-6). AhpC<lb/> contains two redox-active intersubunit disulfide bonds per<lb/> dimer that were shown to exist in an antiparallel arrangement<lb/> (7). We have previously presented strong evidence dem-<lb/>onstrating that AhpC, like the well-characterized NADH<lb/> peroxidase, catalyzes the cysteine-mediated reduction of<lb/> peroxide substrates with the concomitant formation of a<lb/> cysteinesulfenic acid (Cys-SOH) within the enzyme (7).<lb/> AhpC differs from NADH peroxidase in that a second<lb/> cysteine lies in close proximity to the nascent cysteine<lb/> sulfenic acid, leading to rapid condensation of the two to<lb/> regenerate the active-site disulfide bond of the oxidized wild-<lb/>type enzyme.<lb/> Our previous studies focused on single (C46S, C165S) and<lb/> double (C46,165S) AhpC mutants to test the importance of<lb/> each of these cysteine residues in catalysis (7). We showed<lb/> that only the C165S has full peroxidatic activity compared<lb/> with wild-type AhpC, and that the peroxidase activity of<lb/> C165S requires an excess of AhpF. Oxidation of C165S by<lb/> H 2 O 2 to generate the cysteine sulfenic acid-containing protein<lb/> (Cys46-SOH) was confirmed by (i) the ability of this form<lb/> of the enzyme to be reduced by 1 equiv of NADH in the<lb/> presence of AhpF, (ii) the reactivity of this species toward<lb/> TNB 1 to generate a mixed disulfide, and (iii) the sensitivity<lb/> of this species to further oxidation by air or excess H 2 O 2 .<lb/> These tests also demonstrated that C46S is not similarly<lb/> oxidized by H 2 O 2 , although cysteine residues within both<lb/> C165S and C46S are highly accessible to the thiol reagent<lb/> DTNB. These results confirmed the role of Cys46 as the<lb/> residue responsible for the reduction of alkyl hydroperoxides;<lb/> Cys165 is important in regenerating the disulfide bond to<lb/> prevent further oxidation of the sulfenic acid.<lb/> Cysteine sulfenic acids have been proposed as intermedi-<lb/>ates in a number of catalytic and regulatory proteins (8). In<lb/> addition, this species has been identified definitively by<lb/> cryocrystallography and<lb/> 13 C-NMR techniques in the active<lb/> site of the NADH peroxidase protein from Enterococcus<lb/> faecalis (9, 10). Difficulties in identifying cysteine sulfenic<lb/> acids arise as a result of their instability due to self-<lb/>dimerization to form thiosulfinates, reactivity toward thiols<lb/> to form disulfides, and reactivity toward mild oxidants to<lb/> generate sulfinic or sulfonic acids (11). To definitively</div>
+
+		</front>
+	</text>
+</tei>

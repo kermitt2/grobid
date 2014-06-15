@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Alfons</forename>
+								<surname>Garming</surname>
+								&quot;&apos;,
+							</persName>
+							<persName>
+								<forename>Dawoud</forename>
+								<surname>Redwan</surname>,
+							</persName>
+							<persName>
+								<forename>Peter</forename>
+								<surname>Gelbke</surname>,
+							</persName>
+							<persName>
+								<forename>Dieter</forename>
+								<surname>Kern</surname> und
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Ulrich</forename>
+								<surname>Dierkes</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

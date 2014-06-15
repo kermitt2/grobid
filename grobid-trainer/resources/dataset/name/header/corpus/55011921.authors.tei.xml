@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>S</forename>
+								<surname>Biesterfeld</surname>,
+							</persName>
+							<persName>
+								<forename>K</forename>
+								<surname>Gerres</surname>,
+							</persName>
+							<persName>
+								<forename>G</forename>
+								<surname>Fischer-Wein</surname>,
+							</persName>
+							<persName>
+								<forename>A</forename>
+								<surname>Bocking</surname>
+							</persName>
+							
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

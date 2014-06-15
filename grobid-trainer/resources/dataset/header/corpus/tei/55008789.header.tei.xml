@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008789"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Principal Component Analysis for Detection of<lb/> Globally Important Input Parameters in Nonlinear<lb/> Finite Element Analysis<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Sascha Ackermann<lb/> 1*<lb/> , Lothar Gaul<lb/> 1 ,Michael Hanss<lb/> 1 ,Thomas Hambrecht<lb/> 2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 IAM -Institute of Applied and Experimental Mechanics,</affiliation>
+	</byline>
+
+	<address>Stuttgart, Germany<lb/></address>
+
+	<byline>
+	<affiliation>2 Aluminium-and Lightweight Centre, AUDI AG,</affiliation>
+	</byline>
+
+	<address>Neckarsulm, Germany<lb/></address>
+
+	<div type="abstract">Abstract<lb/> The presented approach utilizing the Principal Component Analysis (PCA ) shows a<lb/> multivariate analysis method to detect correlations of input parameters onto a complete<lb/> structural Finite-Element-Model. The advantage of the approach is, that it permits to incor-<lb/>porate all nodes or elements in the analysis of an output parameter like total displacement<lb/> or plastic strain. This avoids to miss important input parameters or to overestimate unim-<lb/>portant input parameters, because all information of the model is used and no previous<lb/> knowledge like choice of a certain node for displacement is necessary. After a theoretical<lb/> development of the approach and an historical application of the method, the feasibility of<lb/> the presented approach for crash applications is examined on a comprehensible U-structure.<lb/> It shows that the Principal Component Analysis reduces the amount of data to a manageable<lb/> size and therefore offers the user a perfect alternative for further insights into the model.<lb/></div>
+
+	<keyword>Keywords: PCA, Crash Simulation, Coefficient of Correlation, PAMCRASH, Latin Hypercube<lb/> Sampling</keyword>
+
+	<byline>
+	<affiliation>* Contact: Dipl.-Ing. Sascha Ackermann, IAM -Institute of Applied and Experimental Mechanics, University<lb/> of Stuttgart,</affiliation>
+	</byline>
+
+	<address>Pfaffenwaldring 9, D-70569 Stuttgart, Germany,</address>
+
+	<email>E-Mail: ackermann@iam.uni-stuttgart.de<lb/></email>
+
+		</front>
+	</text>
+</tei>

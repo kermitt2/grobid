@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012394"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>A Content Directory Management Method of Distributed<lb/> UPnP Media Servers<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>C. –C. Chen, Y. –C. Zhuang, and J. –H. Liu<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Home Network Technology Center<lb/> Industrial Technology Research Institute of Taiwan, ROC<lb/></affiliation>
+	</byline>
+
+	<div type="abstract">Abstract -Universal Plug and Play (UPnP) technology<lb/> facilitates the consumer electronic products for<lb/> communications where no setup procedures are required<lb/> and users can use and control these devices directly as<lb/> these devices are connected to the network. Based on UPnP,<lb/> UPnP AV (Audio and Visual) technology focuses on<lb/> transfer of multimedia content without control point. The<lb/> ever-increasing digital multimedia content and a variety of<lb/> media servers impose burden on the content access and<lb/> complicate the access process. It is inconvenient for users<lb/> to access the desired multimedia content via browsing<lb/> content directory on each media server. For example, the<lb/> users who want to play a video file must find out and<lb/> navigate each media server. In this paper, a content<lb/> directory management unit (CDMU) has been proposed to<lb/> synchronize and manage content information with one<lb/> another. A control point can discover an integrated content<lb/> directory and browse a rearranged multimedia content list<lb/> by querying the master media server&apos;s content directory<lb/> service (CDS). The system is not failed when the master<lb/> media server is out of control or malfunction, the slave<lb/> media server will enable CDS by CDMU and replace the<lb/> master media server. To be compatible with any other client<lb/> media player, the control point architecture is not modified.<lb/></div>
+
+	<keyword>Keywords: UPnP; UPnP AV; control point; media<lb/> server; content directory<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

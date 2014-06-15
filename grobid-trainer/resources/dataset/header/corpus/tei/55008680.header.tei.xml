@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008680"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>DIELECTRIC PROPERTIES OF CERAMICS, CaCu 3 Ti 4 O 12 ,<lb/> SUBSTITUTED WITH Sr OR Ba<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>By<lb/> FADHLINA BT CHE ROS<lb/></docAuthor>
+	</byline>
+
+	<note>Thesis Submitted to </note>
+		
+	<byline>
+	<affiliation>the School of Graduate Studies, Universiti Putra Malaysia, in<lb/> </affiliation>
+	</byline>
+	
+	<note type="degree">Fulfilment of Requirement for the Degree of Master of Science<lb/></note>
+	
+	<date>January 2007</date>
+
+		</front>
+	</text>
+</tei>

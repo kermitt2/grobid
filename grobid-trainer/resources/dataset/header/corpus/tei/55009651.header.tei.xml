@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009651"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Technical Information<lb/></note>
+
+	<docTitle>
+	<titlePart>Algoflon<lb/> ®<lb/> L206<lb/> PTFE Micropowder Additive<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">Description<lb/> Algoflon L206 is a white PTFE micropowder<lb/> comprising loose agglomerates of sub-micron<lb/> sized particles. It is specially recommended for<lb/> use as an additive in elastomers (e.g.<lb/> perfluoroelastomers) to enhance tear resistance<lb/> at elevated temperatures and increase mould<lb/> release properties.<lb/> Algoflon L206 exhibits excellent chemical and<lb/> heat resistance, low surface energy and low<lb/> coefficent of friction.<lb/> Refer to Table 1 for Algoflon L206 properties.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Mark</forename>
+								<middlename>A</middlename>.
+								<surname>Motter</surname>
+							<lb/>
+								<marker>*</marker> and
+							</persName>
+							<persName>
+								<forename>James</forename>
+								<middlename>W</middlename> .
+								<surname>High</surname>
+							</persName>
+							<persName>
+								<forename>Nelson</forename>
+								<middlename>M</middlename> .
+								<surname>Guerreiro</surname>
+							</persName>
+							<persName>
+								<forename>Ryan</forename>
+								<middlename>S</middlename> .
+								<surname>Chambers</surname>
+								<lb/> 
+								and
+							</persName>
+							<persName>
+								<forename>Keith</forename>
+								<middlename>D</middlename> .
+								<surname>Howard</surname>
+								<lb/> 
+								<marker>**</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

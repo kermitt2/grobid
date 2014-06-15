@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55114370"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Real-Time Background Subtraction using Adaptive Thresholding<lb/> and Dynamic Updating for Biometric Face Detection<lb/>
+	</titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>K. Sundaraj<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University Malaysia Perlis<lb/> School of Mechatronic Engineering<lb/></affiliation>
+	</byline>
+
+	<address>02600 Jejawi -Perlis<lb/> MALAYSIA </address>
+
+	<email>kenneth@unimap.edu.my<lb/></email>
+
+	<div type="abstract">Abstract: Face biometrics is an automated method of recognizing a person&apos;s face based on a physiological or be-<lb/>havioral characteristic. Face recognition works by first obtaining an image of a person. This process is usually<lb/> known as face detection. In this paper, we describe an approach for face detection that is able to locate a human<lb/> face embedded in an outdoor or indoor background. Segmentation of novel or dynamic objects in a scene, often<lb/> referred to as background subtraction or foreground segmentation, is a critical early step in most computer vision<lb/> applications in domains such as surveillance and human-computer interaction. All previous implementations aim<lb/> to handle properly one or more problematic phenomena, such as global illumination changes, shadows, highlights,<lb/> foreground-background similarity, occlusion and background clutter. Satisfactory results have been obtained but<lb/> very often at the expense of real-time performance. We propose a method for modeling the background that uses<lb/> per-pixel time-adaptive Gaussian mixtures in the combined input space of pixel color and pixel neighborhood.<lb/> We add a safety net to this approach by splitting the luminance and chromaticity components in the background<lb/> and use their density functions to detect shadows and highlights. Several criteria are then combined to discrimi-<lb/>nate foreground and background pixels. Our experiments show that the proposed method possesses robustness to<lb/> problematic phenomena such as global illumination changes, shadows and highlights, without sacrificing real-time<lb/> performance, making it well-suited for a live video event like face biometric that requires face detection and recog-<lb/>nition.<lb/></div>
+
+	<keyword>Key–Words: Background Modeling, Face Detection, Biometric Identification.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

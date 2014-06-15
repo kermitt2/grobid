@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010453"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>3GPP TSG-RAN WG2#61<lb/> Tdoc R2-081170<lb/></idno>
+
+	<address>Sorrento, Italy<lb/></address>
+
+	<date>11 th – 15<lb/> th February 2008<lb/></date>
+
+	<note type="other">Agenda Item:<lb/> 4.5, 5.2.1.2<lb/> Souce:<lb/> NEC<lb/></note>
+
+	<docTitle>
+	<titlePart>Title:<lb/> Radio Link Failure recovery on non prepared eNB<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Document for: Discussion and decision<lb/></note>
+
+		</front>
+	</text>
+</tei>

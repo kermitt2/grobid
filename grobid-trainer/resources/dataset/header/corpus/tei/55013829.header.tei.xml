@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013829"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note>MACHINE READABLE<lb/> TRAVEL DOCUMENTS<lb/></note>
+
+	<note type="other">TECHNICAL REPORT<lb/></note>
+
+	<docTitle>
+	<titlePart>Supplemental Access Control for<lb/> Machine Readable Travel Documents<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Version -1.01<lb/></note>
+
+	<date>Date – November 11, 2010<lb/></date>
+
+	<note type="other">Published by authority of the Secretary General<lb/></note>
+
+	<idno>ISO/IEC JTC1 SC17 WG3/TF5<lb/> </idno>
+
+	<byline>
+	<affiliation>FOR THE<lb/> INTERNATIONAL CIVIL AVIATION ORGANIZATION<lb/></affiliation>
+	</byline>
+		
+	<note type="other">File : TR-PACE-101-final2.odt<lb/> </note>
+
+	<byline>
+	<docAuthor>Author : ISO/IEC JTC1 SC17 WG3/TF5</docAuthor>
+	</byline>
+		
+		</front> 
+	</text>
+</tei>

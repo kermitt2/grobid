@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">Department of Medicine</orgName>,
+							<orgName type="department">Multi-Organ Transplant Program</orgName>,
+							<orgName type="institution">Western University</orgName>,
+							<address>
+								<settlement>London</settlement>,
+								<region>Ontario</region>,
+								<country>Canada</country>.
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>	 	
+							<orgName type="department">Division of Gastroenterology</orgName>,
+							<orgName type="department">Multi-Organ<lb/> Transplant Program</orgName>,
+							<orgName type="institution">Western University</orgName>
+							<lb/>
+							<address>
+								<addrLine>339 Windermere Road</addrLine>,
+								<settlement>London</settlement>,
+								<region>Ontario</region>,
+								<country>Canada</country>,
+								<postCode>N5X2T2</postCode>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

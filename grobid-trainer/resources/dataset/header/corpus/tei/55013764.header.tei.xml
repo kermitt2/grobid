@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013764"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Security Assertion Markup Language<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">From Wikipedia, the free encyclopedia<lb/>This is an old revision of this page, as edited by 188.92.143.3 (talk) at 14:27, 5 July 2010. It may<lb/> differ significantly from the current revision (//en.wikipedia.org<lb/> /wiki/Security_Assertion_Markup_Language) .<lb/> (diff) ← Previous revision | Latest revision (diff) | Newer revision → (diff)<lb/>
+	</note>
+
+	<div type="abstract">Security Assertion Markup Language (SAML) is an XML-based standard for exchanging authentication<lb/> and authorization data between security domains, that is, between an identity provider (a producer of<lb/> assertions) and a service provider (a consumer of assertions). SAML is a product of the OASIS Security<lb/> Services Technical Committee.<lb/> The single most important problem that SAML is trying to solve is the Web Browser Single Sign-On (SSO)<lb/> problem, a problem also addressed by the more widely-used OpenID standard. Single sign-on solutions are<lb/> abundant at the intranet level (using cookies, for example) but extending these solutions beyond the intranet<lb/> has been problematic and has led to the proliferation of non-interoperable proprietary technologies.<lb/> SAML assumes the principal (often a user) has enrolled with at least one identity provider. This identity<lb/> provider is expected to provide local authentication services to the principal. However, SAML does not<lb/> specify the implementation of these local services; indeed, SAML does not care how local authentication<lb/> services are implemented (although individual service providers most certainly will).<lb/> Thus a service provider relies on the identity provider to identify the principal. At the principal&apos;s request, the<lb/> identity provider passes a SAML assertion to the service provider. On the basis of this assertion, the service<lb/> provider makes an access control decision.<lb/></div>
+
+		</front>
+	</text>
+</tei>

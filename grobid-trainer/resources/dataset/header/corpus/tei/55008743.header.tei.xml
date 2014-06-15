@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008743"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">P1: ARS<lb/></note>
+
+	<date>November 5, 1997<lb/></date>
+
+	<note type="other">16:41<lb/> Annual Reviews<lb/> AR048-18<lb/></note>
+
+	<reference>Annu. Rev. Entomol. 1998. 43:395–419<lb/></reference>
+
+	<note type="copyright">Copyright &#169;<lb/> 1998 by Annual Reviews Inc. All rights reserved<lb/></note>
+
+	<docTitle>
+	<titlePart>ECOLOGY AND MANAGEMENT<lb/> OF HAZELNUT PESTS<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>M. T. AliNiazee<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Entomology, Oregon State University,</affiliation>
+	</byline>
+
+	<address>Corvallis, Oregon 97331;<lb/></address>
+
+	<email>e-mail: aliniazm@bcc.orst.edu<lb/></email>
+
+	<keyword>KEY WORDS: Corylus avellana, pest management, filbert pests, pest control<lb/></keyword>
+
+	<div type="abstract">ABSTRACT<lb/> Insect and mite pests cause serious damage to the hazelnut crop worldwide. The<lb/> control strategies used against these pests include application of insecticides, clas-<lb/>sical and augmentative biological control, utilization of resistant varieties, and<lb/> use of Bacillus thuringiensis–based preparations. In the United States, exten-<lb/>sive research has been directed toward elucidating ecological interactions among<lb/> different pests and natural enemies and understanding the role of abiotic factors<lb/> in pest population dynamics. Differences exist worldwide regarding the under-<lb/>standing of pests and natural enemy biologies and, to a limited extent, control<lb/> practices. An integrated pest management approach based on utilizing effective<lb/> sampling and monitoring techniques and a near complete reliance on biological<lb/> control and &quot;soft&quot; pesticides, including insect growth regulators, is currently un-<lb/>der development both in North America and Europe/Turkey. Hazelnuts are on<lb/> the verge of becoming one of the first crops in the United States that could pos-<lb/>sibly be produced commercially without the use of any broad-spectrum organic<lb/> insecticides.<lb/></div>
+
+		</front>
+	</text>
+</tei>

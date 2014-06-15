@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55115316"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Simplified Risk Score Models Accurately<lb/> Predict the Risk of Major In-Hospital<lb/> Complications Following Percutaneous<lb/> Coronary Intervention<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Frederic S. Resnic, MD, Lucila Ohno-Machado, MD, PhD, MHA, Andrew Selwyn, MD,<lb/> Daniel I. Simon, MD, and Jeffrey J. Popma, MD<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">The objectives of this analysis were to develop and<lb/> validate simplified risk score models for predicting the<lb/> risk of major in-hospital complications after percutane-<lb/>ous coronary intervention (PCI) in the era of widespread<lb/> stenting and use of glycoprotein IIb/IIIa antagonists. We<lb/> then sought to compare the performance of these sim-<lb/>plified models with those of full logistic regression and<lb/> neural network models. From January 1, 1997 to De-<lb/>cember 31, 1999, data were collected on 4,264 consec-<lb/>utive interventional procedures at a single center. Risk<lb/> score models were derived from multiple logistic regres-<lb/>sion models using the first 2,804 cases and then vali-<lb/>dated on the final 1,460 cases. The area under the<lb/> receiver operating characteristic (ROC) curve for the risk<lb/> score model that predicted death was 0.86 compared<lb/> with 0.85 for the multiple logistic model and 0.83 for the<lb/> neural network model (validation set). For the combined<lb/> end points of death, myocardial infarction, or bypass<lb/> surgery, the corresponding areas under the ROC curves<lb/> were 0.74, 0.78, and 0.81, respectively. Previously<lb/> identified risk factors were confirmed in this analysis.<lb/> The use of stents was associated with a decreased risk of<lb/> in-hospital complications. Thus, risk score models can<lb/> accurately predict the risk of major in-hospital compli-<lb/>cations after PCI. Their discriminatory power is compa-<lb/>rable to those of logistic models and neural network<lb/> models. Accurate bedside risk stratification may be<lb/> achieved with these simple models. </div>
+
+	<note type="copyright">&#169;2001 by Ex-<lb/>cerpta Medica, Inc.<lb/></note>
+
+	<reference>(Am J Cardiol 2001;88:5–9)<lb/></reference>
+
+	<div type="introduction">P</div>
+	
+		</front>
+	</text>
+</tei>

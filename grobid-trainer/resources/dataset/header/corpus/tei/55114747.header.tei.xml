@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei type="serie-article">
+	<teiHeader>
+		<fileDesc xml:id="55114747"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>A Topology Independent Shape Modeling Scheme<lb/></titlePart>
+	</docTitle>
+ 
+	<byline>
+	<docAuthor>Ravikanth Malladi1 , James A. Sethian,2 and Baba C. Vemuri1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1Department of Computer &amp; Information Sciences<lb/> University of Florida,</affiliation>
+	</byline>
+
+	<address>Gainesville, FL 32611<lb/></address>
+
+	<byline>
+	<affiliation>2Department of Mathematics<lb/> University of California,</affiliation>
+	</byline>
+
+	<address>Berkeley, CA 94720<lb/></address>
+
+	<div type="abstract">Abstract<lb/> Developing shape models is an important aspect of computer vision research. Geometric and differential<lb/> properties of the surface can be computed from shape models. They also aid the tasks of object representation<lb/> and recognition. In this paper we present an innovative new approach for shape modeling which, while retaining<lb/> important features of the existing methods, overcomes most of their limitations. Our technique can be applied to<lb/> model arbitrarily complex shapes, shapes with protrusions, and to situations where no a priori assumption about<lb/> the object&apos;s topology can be made. A single instance of our model, when presented with an image having more<lb/> than one object of interest, has the ability to split freely to represent each object. Our method is based on the level<lb/> set ideas developed by Osher &amp; Sethian to follow propagating solid/liquid interfaces with curvature—dependent<lb/> speeds. The interface is a closed, nonintersecting, hypersurface flowing along its gradient field with constant speed<lb/> or a speed that depends on the curvature. We move the interface by solving a &quot;Hamilton-Jacobi&quot; type equation<lb/> written for a function in which the interface is a particular level set. A speed function synthesized from the image<lb/> is used to stop the interface in the vicinity of the object boundaries. The resulting equations of motion are solved<lb/> by numerical techniques borrowed from the technology of hyperbolic conservation laws. An added advantage of<lb/> this scheme is that it can easily be extended to any number of space dimensions. The efficacy of the scheme is<lb/> demonstrated with numerical experiments on synthesized images and noisy medical images.<lb/></div>
+
+		</front>
+	</text>
+</tei>

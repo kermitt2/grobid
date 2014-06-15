@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012946"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Initial Public Draft<lb/>NIST Special Publication 800-67<lb/> Version 1.2<lb/></reference>
+
+	<docTitle>
+	<titlePart>Recommendation for the Triple<lb/> Data Encryption Algorithm<lb/> (TDEA) Block Cipher<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>William C. Barker<lb/></docAuthor>
+	</byline>
+
+	<note type="other">I N F O R M A T I O N S E C U R I T Y<lb/> </note>
+	
+	<byline>
+	<affiliation>Computer Security Division<lb/> Information Technology Laboratory<lb/> National Institute of Standards and Technology<lb/>
+	</affiliation>
+	</byline>
+
+	<address>Gaithersburg, MD 20899-8930<lb/></address>
+
+	<date>March 2004<lb/></date>
+
+	<note>U.S. DEPARTMENT OF COMMERCE<lb/> Donald L. Evans, Secretary<lb/> TECHNOLOGY ADMINISTRATION<lb/> Phillip J. Bond, Under Secretary of Commerce for Technology<lb/> NATIONAL INSTITUTE OF STANDARDS AND<lb/> TECHNOLOGY<lb/> Arden L. Bement, Jr., Director</note>
+
+		</front>
+	</text>
+</tei>

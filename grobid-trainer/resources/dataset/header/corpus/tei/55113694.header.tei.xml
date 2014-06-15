@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei type="serie-article">
+	<teiHeader>
+		<fileDesc xml:id="55113694"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>ZnO cone-shaped blue light emitting diodes<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>A. Murai*, D. B. Thompson, U. K. Mishra, S. Nakamura, S. P. DenBaars<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Materials &amp; Electrical and Computer Engineering Departments,<lb/> University of California,</affiliation>
+	</byline>
+
+	<address>Santa Barbara, CA USA 93106<lb/></address>
+
+	<div type="abstract">ABSTRACT<lb/> We report on ZnO wafer bonded III-nitride light emitting diodes (LEDs). ZnO wafer was selectively etched to form a<lb/> hexagonal pyramid shape. For enhancing light extraction and heat conductivity, two types of LED structures were<lb/> demonstrated: one is having patterned GaN at the wafer bonded interface between GaN and ZnO, the other is the LED<lb/> having no sapphire. The experimental results of electrical and optical characteristics indicate the high potential of these<lb/> types of LEDs for solid state lighting sources.<lb/></div>
+
+	<keyword>Keywords: ZnO, III-nitride LED, wafer bonding<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei type="wiki">
+	<teiHeader>
+		<fileDesc xml:id="55113887"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Geosocial networking<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">From Wikipedia, the free encyclopedia<lb/> This is an old revision of this page, as edited by Petewarrior (talk | contribs) at 09:43, 9<lb/> September 2010. It may differ significantly from the current revision<lb/> (//en.wikipedia.org/wiki/Geosocial_networking).<lb/> (diff) ← Previous revision | Latest revision (diff) | Newer revision → (diff)<lb/></note>
+
+		</front>
+	</text>
+</tei>

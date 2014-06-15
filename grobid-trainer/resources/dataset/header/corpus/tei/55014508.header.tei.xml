@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014508"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Algorithms for secure patrols in adversarial domains<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Praveen Paruchuri, Jonathan P. Pearce, Milind Tambe, Fernando Ordonez, Sarit Kraus<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Abstract— We consider the problem of providing decision<lb/> support to a patrolling or security service in an adversarial<lb/> domain. The idea is to create patrols that can achieve a high<lb/> level of coverage or reward while taking into account the<lb/> presence of an adversary. We assume that the adversary can<lb/> learn or observe the patrolling strategy and use this to its<lb/> advantage. We follow two different approaches depending on<lb/> what is known about the adversary. If there is no information<lb/> about the adversary we use a Markov Decision Process (MDP)<lb/> to represent patrols and identify randomized solutions that<lb/> minimize the information available to the adversary. This leads<lb/> to algorithm BRLP, for policy randomization of MDPs. Second,<lb/> when there is partial information about the adversary we decide<lb/> on efficient patrols by solving a Bayesian Stackelberg game.<lb/> Here, the leader decides first on a patrolling strategy and then<lb/> an adversary, of possibly many adversary types, selects its best<lb/> response for the given patrol. We provide an efficient MIP<lb/> formulation to solve this NP-hard problem. Our experimental<lb/> results show the efficiency of these algorithms and illustrate how<lb/> these techniques provide optimal and secure patrolling policies.<lb/></div>
+
+		</front>
+	</text>
+</tei>

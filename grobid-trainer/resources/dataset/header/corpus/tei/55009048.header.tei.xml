@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009048"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Customizable Parallel<lb/> Execution of Scientific<lb/> Stream Queries<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Milena Ivanova and Tore Risch<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Information Technology<lb/> Uppsala University<lb/></affiliation>
+	</byline>
+
+	<address>Box 337, SE-751 05 Uppsala, Sweden<lb/></address>
+
+	<reference>Technical report 2005-012<lb/></reference>
+
+	<date>April 2005<lb/></date>
+
+	<idno type="ISSN">ISSN 1404-3203<lb/></idno>
+
+	<docTitle>
+	<titlePart>Customizable Parallel Execution of Scientific<lb/> Stream Queries<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Milena Ivanova<lb/> Tore Risch<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Abstract<lb/> Scientific applications require processing high-volume on-line streams<lb/> of numerical data from instruments and simulations. We present an exten-<lb/>sible stream database system that allows scalable and flexible continuous<lb/> queries on such streams. Application dependent streams and query func-<lb/>tions are defined through an Object-Relational model. Distributed exe-<lb/>cution plans for continuous queries are described as high-level data flow<lb/> distribution templates. Using a generic template we define two partition-<lb/>ing strategies for scalable parallel execution of expensive stream queries:<lb/> window split and window distribute. Window split provides operators<lb/> for customized parallel execution of query functions whose complexity de-<lb/>pends on size of the data units on which they are applied. It reduces<lb/> the size of stream data units using application dependent functions as<lb/> parameters. By contrast, window distribute provides operators for cus-<lb/>tomized distribution of entire data units without reducing their size. We<lb/> evaluated these strategies for a typical high volume scientific stream ap-<lb/>plication and show that window split is favorable when computational<lb/> resources are limited, while window distribute is better when there are<lb/> sufficient resources.<lb/></div>
+
+		</front>
+	</text>
+</tei>

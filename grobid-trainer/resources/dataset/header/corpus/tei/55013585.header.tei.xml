@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013585"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Peer-Driven Video Streaming:<lb/> Multiple Descriptions versus Layering<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Yanming Shen, Zhengye Liu, Shivendra S. Panwar, Keith W. Ross, Yao Wang<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Electrical and Computer Engineering<lb/> Department of Computer and Information Science<lb/> Polytechnic University<lb/></affiliation>
+	</byline>
+
+	<div type="abstract">Abstract— We propose a peer-driven video streaming system<lb/> that provides a reliable and high-performance video on-demand<lb/> service. We encode each video into multiple low bit-rate sub-<lb/>streams and distribute copies of the sub-streams from the<lb/> participating peers. Each client receives the constituent multiple<lb/> sub-streams from different serving peers, and combines them into<lb/> the original video stream. When a server peer disconnects, the<lb/> system attempts to find a replacement peer that has a copy of the<lb/> missing sub-stream and has sufficient available uplink bandwidth.<lb/> We consider using multiple description coding and layered coding<lb/> to generate the multiple sub-streams. We develop a traffic<lb/> theory for peer-driven video streaming, and examine the system<lb/> performance analytically and via simulation. We show that peer-<lb/>driven video distribution can provide excellent performance even<lb/> if peers disconnect from the network frequently. We also compare<lb/> the performance of layered coding with multiple description<lb/> coding.<lb/></div>
+
+		</front>
+	</text>
+</tei>

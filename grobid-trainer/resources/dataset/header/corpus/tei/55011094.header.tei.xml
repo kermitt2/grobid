@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011094"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Design of a Modular, Extensible Decision Support System<lb/> for Arrhythmia Therapy<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>C.H.F. Cheng B.S. 1, G.D. Sanders A.B., Ph.D. 1, K.M. McDonald M.M.3,<lb/> P.A. Heidenreich M.D.293, M.A Hlatky M.D.3&apos; D.K. Owens M.D., M.Sc.2Z193<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1Stanford Medical Informatics, Stanford University School of Medicine,</affiliation>
+	</byline>
+
+	<address>Stanford, CA<lb/> 2VA Palo Alto Health Care System, Palo Alto, CA<lb/></address>
+
+	<byline>
+	<affiliation>3Division of Health Services Research, Department of Health Research and Policy,<lb/> Stanford University School of Medicine,</affiliation>
+	</byline>
+
+	<address>Stanford, CA<lb/></address>
+
+	<div type="abstract">ABSTRACT<lb/> We developed a decision-support system for<lb/> evaluation of treatment alternatives for<lb/> supraventricular and ventricular arrhythmias. The<lb/> system uses independent decision models that<lb/> evaluate the costs and benefits of treatment for<lb/> recurrent atrioventricular-node<lb/> reentrant tachycardia (AVNRT), and of therapies to prevent<lb/> sudden cardiac death (SCD) in patients at risk for<lb/> life-threatening ventricular arrhythmias. Each of the<lb/> decision models is accessible through a web-based<lb/> interface that enables remote users to browse the<lb/> model&apos;s underlying evidence and to perform analyses<lb/> of effectiveness, cost effectiveness, and sensitivity to<lb/> input variables. Because the web-based interface is<lb/> independent of the models, we can extend the<lb/> functionality of the system by adding decision<lb/> models. This system illustrates that the use of a<lb/> library of web-accessible decision models provides<lb/> decision support economically to widely dispersed<lb/> users.<lb/></div>
+
+		</front>
+	</text>
+</tei>

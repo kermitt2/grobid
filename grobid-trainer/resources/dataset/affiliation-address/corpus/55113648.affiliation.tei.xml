@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="institution">European Space Agency ESTEC</orgName>,
+							<address>
+								<addrLine>Keplerlaan 1</addrLine>,
+								<postCode>2200 AG</postCode>
+								<settlement>Noordwijk</settlement>,
+								<country>The Netherlands</country>
+							</address>
+						</affiliation>
+						<affiliation>		
+							<orgName type="department">Institut EURECOM</orgName>,
+							<address>
+								<addrLine>2229 Route des Cretes</addrLine>,
+								<postCode>06904</postCode>
+								<settlement>Sophia Antipolis</settlement>,
+								<country>France</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

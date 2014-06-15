@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013595"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Ann. appl. Biol. (rg63), 51, 453-458<lb/></reference>
+
+	<note type="other">Printed in Great Britain<lb/></note>
+
+	<note type="page">453<lb/></note>
+
+	<docTitle>
+	<titlePart>Studies on plant growth-regulating substances<lb/> XVII, Chloromethylphenoxyacetic acids and chloromethylphenylglycines<lb/>
+	</titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>BY G. G. CLARKE* AND R. L. WAIN<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Agricultural Research Council, Plant Growth Substance and Systemic<lb/> Fungicide Unit, Wye College, University of London
+	<lb/></affiliation>
+	</byline>
+
+	<note type="submission">(Received 22 September 1962)<lb/></note>
+
+		</front>
+	</text>
+</tei>

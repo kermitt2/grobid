@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013407"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">WHITEP APER<lb/></note>
+
+	<docTitle>
+	<titlePart>XML Tips and Techniques<lb/> in Adobe FrameMaker 7.2<lb/> XML O verview<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">E xtensible Markup Language (XML) is riding a wave of publicity. Business people around<lb/> the world are trying to figure out how this new technology relates to important concepts<lb/> such as structured authoring, network publishing, and web services.<lb/> Structuring information with XML provides many benefits:<lb/> @BULLET Dramatic efficiency improvements<lb/> @BULLET Better customer service<lb/> @BULLET Faster cycle times for projects<lb/> @BULLET New possibilities for the exchange and presentation of information<lb/> While the migration to XML offers great benefits, this transformation can often require<lb/> significant modifications to existing workflows. Information workers may have to learn<lb/> additional skills, master new technology, and learn to collaborate in new ways.<lb/> Manage this change carefully. Take time to ensure that the new XML-based system leverages<lb/> the capabilities of XML in harmony with other systems, and provides continued ease of<lb/> use for those who author, manage, review, approve, and deliver content. Select appropriate<lb/> tools to ensure a smooth transition to the new, more powerful ways of working with and<lb/> presenting information that XML makes possible.<lb/> This whitepaper explores XML from several perspectives:<lb/> @BULLET If you are completely new to XML, continue on with this section, titled &quot;XML Overview, &quot;<lb/> which provides a high-level primer on XML and an overview of the XML features in<lb/> Adobe® FrameMaker®.<lb/></div>
+
+		</front>
+	</text>
+</tei>

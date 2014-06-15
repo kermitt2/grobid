@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012634"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Supporting Information (Canivet, Yamaguchi, Ban, Itami)<lb/> Nickel-Catalyzed Biaryl Coupling of Heteroarenes and Aryl Halides/Triflates<lb/></note>
+	
+	<note type="other">S1<lb/> Supporting Information<lb/></note>
+
+	<docTitle>
+	<titlePart>Nickel-Catalyzed Biaryl Coupling of Heteroarenes and Aryl Halides/Triflates<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Jérôme Canivet, Junichiro Yamaguchi, Ikuya Ban, and Kenichiro Itami*<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Chemistry, Graduate School of Science, Nagoya University,<lb/> and PRESTO, Japan Science and Technology Agency,</affiliation>
+	</byline>
+
+	<address>Nagoya 464-8602, Japan<lb/></address>
+
+	<email>E-mail: itami@chem.nagoya-u.ac.jp<lb/></email>
+
+	<note type="other">Table of Contents<lb/></note>
+
+		</front>
+	</text>
+</tei>

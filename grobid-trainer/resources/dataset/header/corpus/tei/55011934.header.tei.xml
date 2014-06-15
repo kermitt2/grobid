@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011934"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Diagnostics Evaluation Serie<lb/>Diagnostics Evaluation Series<lb/> No.2<lb/></note>
+
+	<docTitle>
+	<titlePart>Laboratory-based evaluation<lb/> of 19 commercially available<lb/> rapid diagnostic tests<lb/> for tuberculosis<lb/>
+	</titlePart>
+	</docTitle>
+
+	<grant>Special Programme for Research &amp; Training<lb/> in Tropical Diseases (TDR) sponsored by<lb/> U N I C E F / U N D P / W o r l d B a n k / W H O<lb/> Special Programme for Research &amp; Training<lb/> in Tropical Diseases (TDR) sponsored by<lb/> U N I C E F / U N D P / W o r l d B a n k / W H O<lb/>Special Programme for Research &amp; Training<lb/> in Tropical Diseases (TDR) sponsored by<lb/> U N I C E F / U N D P / W o r l d B a n k / W H O<lb/></grant>
+	
+	<byline>
+	<affiliation>TDR/World Health Organization<lb/></affiliation>
+	</byline>
+
+	<address>20, Avenue Appia<lb/> 1211 Geneva 27<lb/> Switzerland<lb/></address>
+
+	<phone>Fax: (+41) 22 791-4854<lb/> </phone>
+
+	<email>tdr@who.int<lb/></email>
+
+	<ptr type="web">www.who.int/tdr<lb/></ptr>
+
+	<grant>Special Programme for Research &amp; Training<lb/> in Tropical Diseases (TDR) sponsored by<lb/> U N I C E F / U N D P / W o r l d B a n k / W H O<lb/></grant>
+	
+	<note type="other">Special Programme for Research &amp; Training<lb/> in Tropical Diseases (TDR) sponsored by<lb/> U N I C E F / U N D P / W o r l d B a n k / W H O<lb/> The Special Programme for Research and Training in Tropical Diseases<lb/> (TDR) is a global programme of scientific collaboration established in<lb/> 1975. Its focus is research into neglected diseases of the poor, with<lb/> the goal of improving existing approaches and developing new ways to<lb/> prevent, diagnose, treat and control these diseases. TDR is sponsored<lb/> by the following organizations:<lb/> World Bank<lb/> </note>
+
+	<idno>ISBN 978 92 4 159711 1<lb/></idno>
+
+	<idno type="DOI">DOI: 10.2471/TDR.08.978 92 4 159711 1</idno>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010626"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Temporal Flicker Reduction and Denoising in Video using<lb/> Sparse Directional Transforms<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Sandeep Kanumuri<lb/> * , Onur G. Guleryuz<lb/> * , M. Reha Civanlar<lb/> * ,<lb/> Akira Fujibayashi<lb/> and Choong S. Boon *</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>DoCoMo Communications Laboratories USA, Inc.<lb/></affiliation>
+	</byline>
+
+	<address>3240 Hillview Ave, Palo Alto CA 94304, USA<lb/></address>
+
+	<email>{skanumuri,guleryuz,rcivanlar}@docomolabs-usa.com</email>
+
+	<byline>
+	<affiliation>Research Laboratories, NTT DoCoMo, Inc.<lb/></affiliation>
+	</byline>
+
+	<address>3-5 Hikarino-oka, Yokosuka,<lb/> Kanagawa, 239-8536, Japan<lb/></address>
+
+	<email>{fujibayashi,boon}@nttdocomo.co.jp<lb/></email>
+
+	<div type="abstract">ABSTRACT<lb/> The bulk of the video content available today over the Internet and over mobile networks suffers from many<lb/> imperfections caused during acquisition and transmission. In the case of user-generated content, which is typically<lb/> produced with inexpensive equipment, these imperfections manifest in various ways through noise, temporal<lb/> flicker and blurring, just to name a few. Imperfections caused by compression noise and temporal flicker are<lb/> present in both studio-produced and user-generated video content transmitted at low bit-rates. In this paper,<lb/> we introduce an algorithm designed to reduce temporal flicker and noise in video sequences. The algorithm takes<lb/> advantage of the sparse nature of video signals in an appropriate transform domain that is chosen adaptively based<lb/> on local signal statistics. When the signal corresponds to a sparse representation in this transform domain, flicker<lb/> and noise, which are spread over the entire domain, can be reduced easily by enforcing sparsity. Our results show<lb/> that the proposed algorithm reduces flicker and noise significantly and enables better presentation of compressed<lb/> videos.<lb/></div>
+
+	<keyword>Keywords: Temporal Flicker, Denoising, Warped Transforms, Directional Transforms, Sparse Signal Models,<lb/> Sparse Reconstructions, Thresholding<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

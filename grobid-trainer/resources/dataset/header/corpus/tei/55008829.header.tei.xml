@@ -1,0 +1,59 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008829"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Física de la Tierra<lb/></reference>
+	
+	<note type="page">73<lb/> </note>
+	
+	<reference>2007, 19 73-86<lb/></reference>
+
+	<docTitle>
+	<titlePart>Real-Time Air Quality Operational Forecasting<lb/> Systems in Spain: an Application<lb/> of the MM5-CMAQ-EMIMO Modelling System<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>R. SAN JOSÉ 1 , J.L. PÉREZ 1 , J.L. MORANT 1 and R.M. GONZÁLEZ BARRAS 2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Environmental Software and Modelling Group, Computer Science School, Technical University of<lb/> Madrid (UPM)</affiliation>
+	</byline>
+
+	<email>roberto@fi.upm.es<lb/></email>
+
+	<byline>
+	<affiliation>2 Department of Meteorology and Geophysics, Faculty of Physics, Complutense University of<lb/> Madrid (UCM)</affiliation>
+	</byline>
+
+	<email>rgbarras@fis.ucm.es<lb/></email>
+
+	<note type="submission">(Received 12 March 2007; received in revised form 19 June 2007; accepted 20 June 2007)<lb/></note>
+
+	<div type="abstract">ABSTRACT:<lb/> In this contribution we show the description, implementation and operation of an Operational Air<lb/> Quality Forecasting System for industrial plants, urban and regional areas. The system is called OPANA<lb/> (OPerational Atmospheric Numerical model for urban and regional Areas) and is the evolution and<lb/> result of more than 10 years of research on sophisticated state-of-the-art numerical air quality modelling<lb/> systems and the implementation on state-of-the-art computer platforms. The system is in operation since<lb/> 2005 although older versions started to operate at the end of the 90&apos;s. The OPANA tool is operating on<lb/> different industrial plants in the south of Madrid area and also over urban areas such as Madrid (Spain),<lb/> Leicester City (U.K.), Las Palmas de Gran Canaria (Canary Islands, Spain). OPANA modelling tool is<lb/> actually operating with MM5 mesoscale meteorological model (PSU/NCAR, US) and the CMAQ<lb/> (Community Multiscale Air Quality Modelling System) model developed by EPA (US). Additionally, a<lb/> complex emission model (EMIMO) developed by our group in UPM (Spain) in 2001 is also described<lb/> and needed to provide accurate hourly and high spatial resolution (1 km) pollution emission data at<lb/> global level. Results show that these tools can provide reliable and robust information to authorities and<lb/> industrial managers to control – in forecasting mode – the air quality in the surrounding areas of the<lb/> industrial plant or to forecast the air quality in the whole city or region.<lb/></div>
+
+	<keyword>Key words: air quality modelling, industrial plants, urban air quality, mesoscale models, numerical<lb/> meteorological models, ozone modelling.<lb/></keyword>
+
+	<docTitle>
+	<titlePart>Sistemas de Predicción de la Calidad del Aire en Tiempo Real<lb/> en España: una aplicación del sistema MM5-CMAQ-EMIMO<lb/> </titlePart>
+	</docTitle>
+	
+	<div type="abstract">RESUMEN:<lb/> En esta contribución mostramos la descripción, la implementación y la operativa de un Sistema de<lb/> Predicción Operacional de la Calidad del Aire para plantas industriales, áreas urbanas y regionales. El siste-<lb/>ma se denomina OPANA (acrónimo de Operational Atmospheric Numerical model for urban and regional<lb/> Areas	) y es un producto consecuencia de la investigación en el área durante más de 10 años de nuestro labo-<lb/>ratorio, sobre sistemas numéricos sofisticados de calidad del aire que reflejan el estado-del-arte en este área<lb/> y su implementación en plataformas computacionales actuales. El sistema se encuentra operando desde el<lb/> año 2005 aunque hubo versiones anteriores que inician su desarrollo al final de los años 90. Esta herramien-<lb/>ta -OPANA -opera sobre diferentes plataformas industriales en el área del sur de la comunidad</div>
+
+	<byline>
+	<address>de Madrid<lb/></address>
+	</byline>
+
+	<note type="page">74<lb/> </note>
+	
+	<reference>Física de la Tierra<lb/> 2007, 19 73-86<lb/></reference>
+
+	<div type="introduction">R. San José, J.L. Pérez, J.L. Morant and R.M. Gonzalez Real-Time Air Quality Operational Forecasting…<lb/>y también sobre áreas urbanas como la ciudad de Madrid (España), la ciudad de Leicester (Reino Unido),<lb/> Las Palmas de Gran Canaria (Islas Canarias, España). La herramienta OPANA opera en la actualidad con el<lb/> modelo meteorológico de mesoescala MM5 (PSU/NCAR, US) y el modelo CMAQ (Sistema de<lb/> Modelización de la Calidad del Aire de Multi-escala y comunitario) desarrollo por USEPA. Además, un<lb/> modelo de emisiones denominado EMIMO, desarrollado por nuestro laboratorio en el año 2001, es necesa-<lb/>rio para proporcionar las estimaciones de las emisiones horarias con alta resolución espacial (1 km) de los<lb/> diferentes contaminantes atmosféricos en cualquier parte del globo. Los resultados muestran que este tipo<lb/> de herramientas pueden proporcionar una información robusta y confiable a las autoridades ambientales y a<lb/> los responsables industriales para controlar –en modo predictivo– la calidad del aire en aquellas áreas que<lb/> rodean las áreas industriales o para predecir la calidad del aire en la ciudad o en toda la región.<lb/> Palabras clave: calidad del aire, modelización, plantas industriales, calidad del aire urbana, modelos<lb/> de mesoescala, modelos numéricos meteorológicos, modelización del ozono.<lb/></div>
+
+		</front>
+	</text>
+</tei>

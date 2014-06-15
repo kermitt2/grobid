@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Jaime</forename>
+								<middlename>J</middlename>.
+								<surname>Garnica</surname>,
+							</persName>
+							<persName>
+								<forename>Victor</forename>
+								<surname>Moreno</surname>,
+							</persName>
+							<persName>
+								<forename>Ivan</forename>
+								<surname>Gonzalez</surname>,
+							</persName>
+							<persName>
+								<forename>Sergio</forename>
+								<surname>Lopez-Buedo</surname>,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Francisco</forename>
+								<middlename>J</middlename> .
+								<surname>Gomez -Arribas</surname>,
+							</persName>
+							<persName>
+								<forename>Javier</forename>
+								<surname>Aracil</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

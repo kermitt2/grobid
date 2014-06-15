@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei type="technical-report">
+	<teiHeader>
+		<fileDesc xml:id="55114788"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Prevention and Reduction<lb/> of Food and Feed Contamination<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">First edition<lb/></note>
+
+	<idno>ISSN 0259-2916</idno>
+
+		</front>
+	</text>
+</tei>

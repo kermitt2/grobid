@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013550"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Published on Machine Design </note>
+
+	<ptr>(http://machinedesign.com)<lb/> </ptr>
+
+	<docTitle>
+	<titlePart>Comparing 3D CAD modelers<lb/> </titlePart>
+	</docTitle>
+
+	<note type="other">by<lb/> </note>
+
+	<date>Created 11/22/2006 </date>
+
+	<note type="other">-03:00<lb/></note>
+
+		</front>
+	</text>
+</tei>

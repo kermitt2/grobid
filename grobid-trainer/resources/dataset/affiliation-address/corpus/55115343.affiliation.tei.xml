@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>*</marker>
+							<orgName type="institution">National Institute of Standards and Technology</orgName>,
+							<address>
+								<addrLine>325 Broadway</addrLine>,
+								<settlement>Boulder</settlement>,
+								<region>CO</region>
+								<postCode>80305</postCode>
+								<country>USA</country>,
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>		
+							<orgName type="department">Department of Physics</orgName>,
+							<orgName type="institution">University of Colorado at Boulder</orgName>,
+							<address>
+								<settlement>Boulder</settlement>,
+								<region>CO</region>
+								<postCode>80309</postCode>,
+								<country>USA</country>,
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="department">Materials Science Division</orgName>,
+							<orgName type="institution">Lawrence Berkeley National Laboratory</orgName>,
+							<address>
+								<settlement>Berkeley</settlement>,
+								<region>California</region>
+								<postCode>94720-7300</postCode>,
+								<country>USA</country>,
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="department">Department of Chemistry</orgName>,
+							<orgName type="institution">University of California at Berkeley</orgName>,
+							<address>
+								<settlement>Berkeley</settlement>,
+								<region>CA</region>
+								<postCode>94720</postCode>,
+								<country>USA</country>,
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="institution">The Jack and Pearl Resnick Institute for Advanced Technology</orgName>,
+							<orgName type="department">Department of Physics</orgName>,
+							<orgName type="institution">Bar-Ilan University</orgName>,
+							<address>
+								<addrLine>Ramat-Gan</addrLine>
+								<postCode>IL-52900</postCode>,
+							<lb/>
+								<country>Israel</country>.
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

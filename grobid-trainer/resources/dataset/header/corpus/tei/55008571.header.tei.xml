@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008571"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Industrial Health 2004, 42, 189–195<lb/></reference>
+
+	<note type="other">*To whom correspondence should be addressed.<lb/></note>
+	
+	<note type="other">Original Article<lb/></note>
+
+	<docTitle>
+	<titlePart>A Pilot Study of Reference Vibrotactile Perception<lb/> Thresholds on the Fingertip Obtained with Malaysian<lb/> Healthy People Using ISO 13091-1 Equipment<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Roshada DAUD<lb/> 1 , Setsuo MAEDA<lb/> 2 *, Nur Nazmin Mustafa KAMEEL<lb/> 3 , Muhamad Yunus RIPIN<lb/> 1 ,<lb/> Norazman BAKRUN<lb/> 1 , Raemy MD ZEIN<lb/> 1 , Masaharu KIDO<lb/> 4 and Kiyotaka HIGUCHI<lb/> 4<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Ergonomics Division, National Institute for Occupational Safety and Health,</affiliation>
+	</byline>
+
+	<address>Lot 1, Jalan 15/1, Section 15,<lb/> 43650 Bandar Baru Bangl, Selangor Darul Ehsan, Malaysia<lb/></address>
+
+	<byline>
+	<affiliation>2 Department of Human Engineering, National Institute of Industrial Health,</affiliation>
+	</byline>
+
+	<address>21-1, Nagao 6-Chome, Tama-ku,<lb/> Kawasaki, Kanagawa 214-8585, Japan<lb/></address>
+
+	<byline>
+	<affiliation>3 Ergo Consult Sdn Bhd,</affiliation>
+	</byline>
+
+	<address>No. 25-1, Jalan 3/4C, Desa Melawati, 53100 Kuala Lumpur, Malaysia<lb/></address>
+
+	<byline>
+	<affiliation>4 JICA Project, the Capacity Building of National Institute of Occupational Safety and Health,</affiliation>
+	</byline>
+
+	<address>Lot 1, Jalan 15/1,<lb/> Section 15, 43650 Bandar Baru Bangl, Selangor Darul Ehsan, Malaysia<lb/></address>
+
+	<note type="submission">Received January 5, 2004 and accepted February 14, 2004<lb/></note>
+
+	<div type="abstract">Abstract: The purpose of this paper is to clarify the reference vibrotactile perception thresholds<lb/> (VPT) for healthy people in Malaysia. The measurement equipment standard, ISO 13091-1, of the<lb/> vibrotactile perception thresholds for the assessment of nerve dysfunction and the analysis and<lb/> interpretation of measurements at the fingertips standard, ISO 13091-2, were published in ISO/TC108/<lb/> SC4/WG8 on 2001 and 2003 individually. In the ISO 13091-2 standard, the reference VPT data were<lb/> obtained from few research papers. Malaysian people&apos;s VPT data don&apos;t include to this standard. In<lb/> Malaysia, when the VPT is using to diagnose of the hand-arm vibration syndrome, the reference VPT<lb/> data need to compare with the worker&apos;s ones. But, Malaysia does not have the reference VPT data yet.<lb/> So, in this paper, the VPT was measured by using ISO 13091-1 standard equipment to obtain the<lb/> reference data for Malaysian people. And these data were compared with the ISO reference data on<lb/> the ISO 13091-2 standard. From the comparison of these data, it was clear that the Malaysian healthy<lb/> people&apos;s VPT data were consistent with the reference data of the ISO 13091-2 standard.<lb/></div>
+
+	<keyword>Key words: Vibrotactile perception thresholds, Hand-arm vibration, ISO 13091-1, ISO 13091-2, Diagnosis,<lb/> Vibration<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012033"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Influence des effets inductifs et stkriques sur la basicitk des amines<lb/> tertiaires. Dktermination et interprktation des AH et des A S 1<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>GUY PERRAULT<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Centre Canadien de Recherches et Perfectionnernerzt des Arrnes,</affiliation>
+	</byline>
+
+	<address>Qrre&apos;bec, Que&apos;bec<lb/> </address>
+
+	<note type="submission">Recu le 26 dicembre 1967<lb/> </note>
+
+	<div type="abstract">Les pK, d&apos;une serie d&apos;amines tertiaires dihydroxyltes ont ete mesurts dans l&apos;eau a differentes temp&amp;<lb/> ratures afin de calculer des AH et les AS de la reaction. Les facteurs thernlodynamiques semblent confir-<lb/>mer la theorie d&apos;empgchement frontal a la solvatation combinee a une sorte de tension arriere pour<lb/> expliquer la diminution de basicite introduite par les substituants a longue chaine carbonte. Pour les<lb/> substituants a courte chaine, l&apos;effet de formation de liaisons hydrogenes intramoleculaires peut Ctre note<lb/> grdce aux variations du facteur entropique.<lb/> AH and AS were obtained by pK, measurements in water at different temperatures for a series of<lb/> dihydroxylated tertiary amines. The thermodynamic factors seem to confirm that the diminution in<lb/> basicity introduced by long chain substituents is caused by frontal hindrance to solvation, accompanied<lb/> by a new type of back-strain. With short chain substituents, the formation of intran~olecular hydrogen<lb/> bonds can be seen by the variations of the entropy factor.<lb/></div>
+
+	<reference>Canadian Journal o f Chelnistry. 46, 2021 (1968)<lb/></reference>
+
+		</front>
+	</text>
+</tei>

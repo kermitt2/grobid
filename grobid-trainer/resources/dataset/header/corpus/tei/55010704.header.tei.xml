@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010704"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Exploiting Channel Correlations -Simple Interference Alignment<lb/> Schemes with no CSIT<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Syed A. Jafar *<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University of California Irvine<lb/></affiliation>
+	</byline>
+
+	<email>E-mail : {syed}@uci.edu<lb/></email>
+
+	<div type="abstract">Abstract<lb/> We explore 5 network communication problems where the possibility of interference align-<lb/>ment, and consequently the total number of degrees of freedom (DoF) with channel uncertainty<lb/> at the transmitters are unknown. These problems share the common property that in each case<lb/> the best known outer bounds are essentially robust to channel uncertainty and represent the<lb/> outcome with interference alignment, but the best inner bounds – in some cases conjectured<lb/> to be optimal – predict a total collapse of DoF, thus indicating the infeasibility of interference<lb/> alignment under channel uncertainty at transmitters. Our main contribution is to show that<lb/> even with no knowledge of channel coefficient values at the transmitters, the knowledge of the<lb/> channels&apos; correlation structure can be exploited to achieve interference alignment. In each case,<lb/> we show that under a staggered block fading model, the transmitters are able to align interfer-<lb/>ence without the knowledge of channel coefficient values. The alignment schemes are based on<lb/> linear beamforming – which can be seen as a repetition code over a small number of symbols –<lb/> and involve delays of only a few coherence intervals.</div>
+
+	<note type="grant">* This work was supported by DARPA ITMANET under grant UTA06-793, by NSF under grants 0546860 and<lb/> CCF-0830809 and by ONR YIP under grant N00014-08-1-0872.<lb/></note>
+
+	<idno>arXiv:0910.0555v1 [cs.IT]</idno>
+
+	<date>5 Oct 2009<lb/></date>
+
+		</front>
+	</text>
+</tei>

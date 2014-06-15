@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011672"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">53<lb/></note>
+
+	<docTitle>
+	<titlePart>GEM-3: A Monostatic Broadband Electromagnetic Induction Sensor<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>I.J. Won, Dean A. Keiswetter, David R. Hanson<lb/> Elena Novikova and Thomas M. Hall<lb/> </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Geophex, Ltd.<lb/></affiliation>
+	</byline>
+
+	<div type="abstract">ABSTRACT<lb/> We have designed, fabricated, and field-tested a new, unique, monostatic, broadband, electromag-<lb/>netic sensor for subsurface geophysical investigation. The sensing unit consists of a pair of concentric,<lb/> circular coils that transmit a continuous, broadband, digitally-controlled, electromagnetic waveform.<lb/> The two transmitter coils, with precisely computed dimensions and placement, create a zone of magnetic<lb/> cavity (viz., an area with a vanishing primary magnetic flux) at the center of the two coils. A third<lb/> receiving coil is placed within this magnetic cavity so that it senses only the weak, secondary field<lb/> returned from the earth and buried targets.<lb/> This monostatic configuration has many advantages including (1) compact sensor head, (2) a large<lb/> transmitter moment, (3) high spatial resolution, (4) no spatial distortion of an anomaly common to bistatic<lb/> sensors, (5) circular symmetry that greatly simplifies mathematical description, and, therefore, (6) simpli-<lb/>fied forward and inverse modeling processes. Three prototype GEM-3 units have been built and tested<lb/> at various environmental sites, including those containing unexploded ordnance and land mines.<lb/></div>
+
+		</front>
+	</text>
+</tei>

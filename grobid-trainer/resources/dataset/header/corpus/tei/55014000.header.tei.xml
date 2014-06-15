@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014000"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Nano<lb/> Chemistry<lb/> Chemistry, our life, our future<lb/> </note>
+
+	<note type="page">425<lb/></note>
+
+	<docTitle>
+	<titlePart>Electrochemical studies of the interaction of sulfadiazine with DNA on a multi-walled carbon nanotube modified glassy carbon
+	<lb/> electrode<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Ayemeh Bagheri Hashkavayi, Lida Fotouhi*, Majid M. Heravi<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Chemistry, School of Science, Alzahra University.</affiliation>
+	</byline>
+
+	<address>P.O.Box 1993891176, Tehran, Iran<lb/></address>
+
+	<div type="abstract">Interaction of sulfadiazine (SD) with double-stranded calf thymuse DNA both in solution and DNA immobilized on the multi-walled<lb/> carbon nanotube modified glassy carbon electrode (MWCNT-GCE) were investigated by cyclic voltammetry, chrono coulometery and<lb/> UV-Vis spectroscopy. The binding of SD with DNA, when analyzed in terms of the cooperative Hill model, yields the binding constant,<lb/> and a Hill coefficient in Britton-Robinson (B-R) buffer solution, pH =6.5. The diffusion coefficient of SD-DNA was also estimated using<lb/> chronocoulometery. Kinetic parameters such as the electron transfer coefficient between SD and modified electrode, , and<lb/> heterogeneous rate constant, ks, were determined according to the procedure of Laviron [1]. The pH of buffer affects the formation of<lb/> complex SD-DNA, hence, pH were optimized. The effect of the injected volume of MWCNT composite film was also investigated. In<lb/> the presence of DNA, oxidation peak current of SD decreases which indicates the interaction of SD with DNA. The Hill coefficient , m,<lb/> can be obtained from the slope of the equation as 2.05, which proves the binding ratio of DNA:SD complex is 1:2. Morever, the value of<lb/> Ka was calculated to be 3.1×10<lb/> 7 M<lb/> -1 . By the plot of the oxidation-wave potential against the pH-value for SD at MWCNT-GCE-DNA,<lb/> three defined breaks at corresponding to the apparently pKa values, 1.9, 4.2 and 7.2 were obtained. The results of UV-Vis absorption<lb/> studies also indicate that the DNA retains its double-helical structure in the mixed solution, confirming the dominance of electrostatic<lb/> interactions [2]. Electron transfer coefficient between SD and modified electrode, and heterogeneous rate constant, were obtained 1.27<lb/> and 420.4 s<lb/> -1 respectively. From the Cottrell equation, diffusion coefficient of DNA bond drug was obtained D=9.49×10<lb/> -6 cm<lb/> 2 s<lb/> -1 .</div>
+
+		</front>
+	</text>
+</tei>

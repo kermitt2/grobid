@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000451"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+	<lb/> 
+			
+	<note type="other">Six Revisions<lb/> Skip site navigation<lb/> Home All Articles<lb/> Tutorials Freebies<lb/> About Contact<lb/> Subscribe: RSS Feed<lb/> Follow on Twitter<lb/></note>
+	
+	<docTitle>
+	<titlePart>Sexy Tooltips with Just CSS<lb/></titlePart>
+	</docTitle>
+
+	<date>Jun 16 2010</date>
+
+	<div type="introduction">by Alexander Dawson | 92 Comments | Stumble Bookmark<lb/> advertise here<lb/> advertise here<lb/> Providing supplementary information about potentially complex elements of a user interface is a central part of any website designer or developer&apos;s workflow in creating usable and<lb/> accessible websites.<lb/> One of the most common mechanisms for providing extra details beyond what you can see on the page is the tooltip (a design pattern for showing tips about a particular element on<lb/> a screen).<lb/> While many innovative solutions exist using CSS and JavaScript (with and without JavaScript frameworks like jQuery), it&apos;s sometimes useful to look towards new technologies to<lb/> examine the impact they may have on our current techniques.<lb/> Thus, we&apos;re going to look at how using the evolving CSS standard can enhance some lovely cross-browser tooltips.<lb/> Demonstration of the Sexy Tooltips<lb/> Check out the demo page of the pure CSS tooltip we&apos;ll be creating.<lb/> Live demo<lb/> Download the Sexy Tootips Source Files<lb/> If you&apos;d like the source code to use and follow along, download it below.<lb/> css-tooltips (ZIP, 18.8 KB)<lb/> Tooltips are Terrific!<lb/> Whether you need to explain an abbreviation or acronym, to define a word or if you simply want to give additional details based on what someone hovers over, tooltips provide a<lb/> simple but effective solution.<lb/> From the little yellow block of text that appears over elements such as images with a title attribute (or the alt attribute if you&apos;re unfortunate enough to use Internet Explorer),<lb/> right down to the CSS and script-powered solutions that exist, they&apos;re fantastic devices that unfortunately seem to get little interest from the design community.<lb/> Most browsers have a default style of tooltip, though it&apos;s not very pretty.<lb/>
+
+	Leveraging Progressive Enhancement in Tooltips<lb/>
+	Sexy Tooltips with Just CSS<lb/>
+
+	http://sixrevisions.com/css/css
+
+	-only-tooltips/<lb/> 1 of 20<lb/> 09-06-2011 15:58<lb/> As standards rapidly evolve and support for new techniques appear within browsers on a more consistent basis, the advances of CSS allow us to produce tooltips (which serve as a<lb/> replacement for the somewhat boring browser defaults as shown in the image above) to a brand new level of detail and beauty.<lb/> If you already use a jQuery-powered example — fear not! — there are still many things JavaScript can accomplish which CSS cannot (like adding a delay on when tooltips<lb/> disappear), but highlighting the ways we can use CSS to better equip our designs may inspire you to create some beautiful solutions of your own, outside of tooltips.<lb/> There are many existing solutions for tooltips you can choose from.</div>
+
+		</front>
+	</text>
+</tei>

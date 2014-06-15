@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">Civil and Environmental Engineering</orgName>,
+							<orgName type="institution">Northwestern University</orgName>
+							<lb/>
+						</affiliation>	
+						<affiliation>	
+							<orgName type="department">Civil and Environmental Engineering</orgName>,
+							<orgName type="institution">Northwestern University</orgName>
+							<lb/> 
+							<orgName type="department">Technological Institute</orgName>
+							<address>
+								<addrLine>2145 Sheridan Rd</addrLine>.
+								<lb/>
+								<settlement>Evanston</settlement>,
+								<region>IL</region>
+								<postCode>60208</postCode>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

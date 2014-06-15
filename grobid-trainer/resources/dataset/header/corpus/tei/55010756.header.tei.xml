@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010756"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>A novel nonparametric approach for the<lb/> identification of the glucose-insulin system<lb/> in Type 1 diabetic patients
+	<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Simone Del Favero<lb/> * Gianluigi Pillonetto<lb/> * Claudio Cobelli *<lb/> Giuseppe De Nicolao ** *</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Information Engineering<lb/> University of Padova,</affiliation>
+	</byline>
+
+	<address>Padova, Italy<lb/></address>
+
+	<email>(e-mail: {simone.delfavero, giapi, cobelli}@dei.unipd.it)<lb/></email>
+
+	<byline>
+	<affiliation>** Dipartimento di Informatica e Sistemistica<lb/> University of Pavia,</affiliation>
+	</byline>
+
+	<address>Pavia, Italy<lb/></address>
+
+	<email>(e-mail: giuseppe.denicolao@unipv.it)<lb/></email>
+
+	<div type="abstract">Abstract: In this paper we consider the problem of predicting future values of subcutaneous<lb/> glucose (glucose concentration in the interstitial fluid) in Type-1 diabetes patients, exploiting<lb/> information on injected insulin, carbohydrates intake and past subcutaneous glucose samples<lb/> measured by a Continuous Glucose Monitor sensor. Prediction can be used to warn the patient<lb/> of upcoming possibly harmful events, such as hypoglycemia or hyperglycemia. In addition, an<lb/> effective prediction is a key ingredient in Model Predictive Control, a technique successfully<lb/> applied in the development of the so called artificial pancreas.<lb/> Derivation of individualized predictors is crucial to cope with the wide inter-subject variability.<lb/> For this reason we explored the application of linear black-box identification methods to derive<lb/> patient-tailored predictors. Together with the mainstream technique in system identification, the<lb/> Prediction Error Method, we investigate a novel and promising nonparametric method based<lb/> on Gaussian regression.<lb/> The considered methods are applied to data collected on 20 subjects, during two 21-hours<lb/> hospital admissions for each subject. One of the major challenges of this problem is that the<lb/> available dataset is short and the glucose-insulin system has very high complexity.<lb/> The quality of the prediction was compared on the basis of three metrics commonly used in<lb/> system identification, namely Coefficient of Determination, Fit and Root Mean Squared Error.<lb/> On a system identification perspective the present work is a comparison of a novel system<lb/> identification approach with the state-of-the-art one on a particularly difficult and relevant<lb/> case of study. The nonparametric technique improves prediction performance and reduces<lb/> computational burden associated with predictor identification.<lb/></div>
+
+		</front>
+	</text>
+</tei>

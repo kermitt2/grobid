@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010771"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Proceedings of the 2009 Named Entities Workshop, ACL-IJCNLP 2009, pages 88–91,<lb/> Suntec, Singapore, 7 August 2009. </reference>
+
+	<note type="copyright">&#169;<lb/>ACL and AFNLP<lb/></note>
+
+	<docTitle>
+	<titlePart>A Noisy Channel Model for Grapheme-based Machine Transliteration<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Yuxiang Jia, Danqing Zhu, Shiwen Yu<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institute of Computational Linguistics, Peking University,</affiliation>
+	</byline>
+
+	<address>Beijing, China<lb/></address>
+
+	<byline>
+	<affiliation>Key Laboratory of Computational Linguistics, Ministry of Education</affiliation>
+	</byline>
+
+	<address>, China<lb/></address>
+
+	<email>{yxjia,zhudanqing,yusw}@pku.edu.cn<lb/></email>
+
+	<div type="abstract">Abstract<lb/> Machine transliteration is an important Natu-<lb/>ral Language Processing task. This paper<lb/> proposes a Noisy Channel Model for Graph-<lb/>eme-based machine transliteration. Moses, a<lb/> phrase-based Statistical Machine Translation<lb/> tool, is employed for the implementation of<lb/> the system. Experiments are carried out on<lb/> the NEWS 2009 Machine Transliteration<lb/> Shared Task English-Chinese track. English-<lb/>Chinese back transliteration is studied as well.<lb/></div>
+
+		</front>
+	</text>
+</tei>

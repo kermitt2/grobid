@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55115379"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>A tissue-relaxation-dependent neighboring method for robust mapping of the myelin<lb/> water fraction<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Oh In Kwon<lb/> a<lb/> , Eung Je Woo<lb/> b , Yiping P. Du<lb/> c , Dosik Hwang<lb/> d,<lb/> ⁎<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a Department of Mathematics, Konkuk University,</affiliation>
+	</byline>
+
+	<address>Republic of Korea<lb/></address>
+
+	<byline>
+	<affiliation>b Department of Biomedical Engineering, Kyung Hee University,</affiliation>
+	</byline>
+
+	<address>Republic of Korea<lb/></address>
+
+	<byline>
+	<affiliation>c Center for Brain Imaging Science and Technology, Department of Biomedical Engineering, Zhejiang University,</affiliation>
+	</byline>
+
+	<address>Hangzhou, China<lb/></address>
+
+	<byline>
+	<affiliation>d School of Electrical and Electronic Engineering, Yonsei University,</affiliation>
+	</byline>
+
+	<address>Seoul, Republic of Korea<lb/></address>
+
+	<div type="abstract">a b s t r a c t<lb/></div>
+
+	<note type="other">a r t i c l e i n f o<lb/></note>
+
+	<note type="submission">Article history:<lb/> Accepted 23 January 2013<lb/></note>
+
+	<date>Available online 4 February 2013<lb/></date>
+
+	<keyword>Keywords:<lb/> Myelin White matter<lb/> T 2<lb/> ⁎ relaxation<lb/> Relaxometry Relaxation-dependent filtering<lb/></keyword>
+
+	<div type="abstract">Quantitative assessment of the myelin content in white matter (WM) using MRI has become a useful tool for in-<lb/>vestigating myelin-related diseases, such as multiple sclerosis (MS). Myelin water fraction (MWF) maps can be<lb/> estimated pixel-by-pixel by a determination of the T 2 or T 2 ⁎ spectrum from signal decay measurements at each<lb/> individual image pixel. However, detection of parameters from the measured decay curve, assuming a combina-<lb/>tion of smooth multi-exponential curves, results in a nonlinear and seriously ill-posed problem. In this paper, we<lb/> propose a new method to obtain a stable MWF map robust to the presence of noise while sustaining sufficient<lb/> resolution, which uses weighted combinations of measured decay signals in a spatially independent neighbor-<lb/>hood to combine tissues with similar relaxation parameters. To determine optimal weighting factors, we define<lb/> a spatially independent neighborhood for each pixel and a distance with respect to decay rates that effectively<lb/> includes pixels with similar decay characteristics, and which therefore have similar relaxation parameters. We<lb/> recover the MWF values by using optimally weighted decay curves. We use numerical simulations and in vitro<lb/> and in vivo experimental brain data scanned with a multi-gradient-echo sequence to demonstrate the feasibility<lb/> of our proposed algorithm and to highlight its advantages compared to the conventional method.<lb/></div>
+
+	<note type="copyright">© 2013 Elsevier Inc. All rights reserved.<lb/></note>
+
+		</front>
+	</text>
+</tei>

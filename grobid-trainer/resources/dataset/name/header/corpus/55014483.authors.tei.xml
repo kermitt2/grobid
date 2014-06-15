@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Markus</forename>
+								<surname>Klein</surname>
+							<lb/>
+								<marker>1,Ã</marker>,
+							</persName>
+							<persName>
+								<forename>Markus</forename>
+								<surname>Geisler</surname>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>Su</forename>
+								<middlename>Jeoung</middlename>
+								<surname>Suh</surname>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>H</forename> .
+								<middlename>U Èner </middlename>
+								<surname>Kolukisaoglu</surname>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>Louis</forename>
+								<surname>Azevedo</surname>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>Sonia</forename>
+								<surname>Plaza</surname>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>Mark</forename>
+								<middlename>D</middlename> .
+								<surname>Curtis</surname>
+								<marker>1</marker> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Andreas</forename>
+								<surname>Richter</surname>
+								<marker>3</marker> ,
+							</persName>
+							<persName>
+								<forename>Barbara</forename>
+								<surname>Weder</surname>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>Burkhard</forename>
+								<surname>Schulz</surname>
+							<lb/>
+								<marker>4</marker> and
+							</persName>
+							<persName>
+								<forename>Enrico</forename>
+								<surname>Martinoia</surname>
+								<marker>1</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

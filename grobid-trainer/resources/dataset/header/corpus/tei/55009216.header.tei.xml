@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009216"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Evaluation of CBT for increasing threat<lb/> detection performance in X-ray screening<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>A. Schwaninger &amp; F. Hofer<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Psychology, University of Zurich,</affiliation>
+	</byline>
+
+	<address>Switzerland<lb/></address>
+
+	<div type="abstract">Abstract<lb/> The relevance of aviation security has increased dramatically in recent years.<lb/> Airport security technology has evolved remarkably over the last decade, which<lb/> is especially evident for state-of-the-art X-ray screening systems. However, such<lb/> systems will be only as effective as the people who operate them. Recognizing<lb/> all kinds of prohibited items in X-ray images of passenger bags is a challenging<lb/> object recognition task. In this article we present a method to measure screener<lb/> detection performance based on signal detection theory. This method is applied<lb/> to measure training effects resulting from individually adaptive computer based<lb/> training (CBT). We have found large increases of detection performance and<lb/> substantial reductions in response time suggesting that CBT is a very effective<lb/> tool for increasing effectiveness and efficiency in aviation security screening.<lb/></div>
+
+	<keyword>Keywords: X-ray screening, computer based training, aviation security, object<lb/> recognition, signal detection theory, training effectiveness.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

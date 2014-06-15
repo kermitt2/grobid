@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011559"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<affiliation>A r i z o n a S t a t e U n i v e r s i t y<lb/> </affiliation>
+	</byline>
+	
+	<byline>
+	<docAuthor>Contact<lb/> Jack Geltosky, PhD<lb/> Senior Vice President<lb/> </docAuthor>
+	</byline>
+	
+	<affiliation>Business Development, Life<lb/> Sciences<lb/> Arizona Technology<lb/> Enterprises, LLC (AzTE)<lb/></affiliation>
+
+	<phone>P: 480.884.1989<lb/> F: 480.884.1984<lb/></phone>
+	
+	<email>JGELTOSKY@AZTE.COM<lb/> HEALTHSCIENCES@AZTE.COM<lb/></email>
+
+	<byline>
+	<docAuthor>Inventors<lb/> Douglas Lake<lb/> Associate Professor<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Center for Metabolic Biology<lb/> School of Life Sciences<lb/> Arizona State University<lb/></affiliation>
+	</byline>
+
+	<byline>
+	<docAuthor>Benjamin Katchman<lb/>Graduate Research Assistant<lb/> </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>School of Life Sciences<lb/> Arizona State University<lb/></affiliation>
+	</byline>
+
+		</front>
+	</text>
+</tei>

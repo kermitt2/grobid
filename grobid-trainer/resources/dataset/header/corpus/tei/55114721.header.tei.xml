@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55114721"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Coordination Chemistry Reviews, 139 (1995) 313-374<lb/></reference>
+
+	<note type="page">313<lb/></note>
+
+	<docTitle>
+	<titlePart>The coordination chemistry of 2-pyridone and its<lb/> derivatives<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Jeremy M. Rawson and Richard E.P. Winpenny<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Chemistry, The University of Edinburgh,</affiliation>
+	</byline>
+
+	<address>West Mains Road, Edinburgh EH93JJ ( UK)<lb/></address>
+
+	<note type="submission">(Received 22 March 1994)<lb/></note>
+
+		</front>
+	</text>
+</tei>

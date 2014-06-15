@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008597"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>JOURNAL OF POLYMER SCIENCE: PART A-2<lb/> VOL. 5, 1283-1292 (1967)<lb/></reference>
+
+	<docTitle>
+	<titlePart>Melting Temperature of trans-Polyoctenamer<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>NISSIM CALDERON and RfARION C. MORRIS,<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Research Diwision, The Goodyear Tire and Rubber Company,<lb/></affiliation>
+	</byline>
+
+	<address>Akron, Ohio 44316<lb/></address>
+
+	<div type="abstract">synopsis<lb/> The effect of microstructure on crystallizability of polyoctenamers prepared by<lb/> RIA1-WC16 catalyst was studied. The results indicate that polyoctenamers with a<lb/> broad range of trans-vinylene content do crystallize. The measured melting points are<lb/> dependent on the trans-vinylene content. From the dependence of melting temperature<lb/> on copolymer composition, a value of 73 f-2°C. for the melting point and a molar<lb/> heat of fusion AH,, of 3520 cal./mole are calculated for 100% trans-polyoctenamer.<lb/> From the melting point depression in the presence of diluent, a value for AH,, of 4800<lb/> cal./mole is obtained.<lb/></div>
+
+		</front>
+	</text>
+</tei>

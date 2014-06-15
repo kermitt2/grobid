@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<tei type="phd-thesis">
+	<teiHeader>
+		<fileDesc xml:id="55114206"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Automated Underground Pipe Inspection Using a Unified<lb/> Image Processing and Artificial Intelligence Methodology<lb/>
+	</titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>By<lb/> Sunil K. Sinha<lb/></docAuthor>
+	</byline>
+
+	<degree>A thesis<lb/> presented to the University of Waterloo<lb/> in fulfillment of the<lb/> thesis requirement for the degree of<lb/> Doctor of Philosophy<lb/> in<lb/></degree>
+	
+	<byline>
+	<affiliation>Civil Engineering and Systems Design Engineering<lb/></affiliation>
+	</byline>
+
+	<address>Waterloo, Ontario, Canada, </address>
+
+	<date>2000<lb/></date>
+
+	<note type="copyright">© SUNIL K. SINHA 2000</note>
+
+		</front>
+	</text>
+</tei>

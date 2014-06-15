@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55114393"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>A Natural Language Query Interface for<lb/> Tourism Information<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Michael Dittenbach<lb/> a<lb/> , Dieter Merkl<lb/> a,b<lb/> , and<lb/> Helmut Berger<lb/> a<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a<lb/> Electronic Commerce Competence Center – EC3<lb/></affiliation>
+	</byline>
+
+	<address>Donau-City-Straße 1, A-1220 Wien, Austria<lb/></address>
+
+	<byline>
+	<affiliation>b<lb/> Institut für Softwaretechnik, Technische Universität Wien<lb/></affiliation>
+	</byline>
+
+	<address>Favoritenstraße 9-11/188, A-1040 Wien, Austria<lb/></address>
+
+	<email>{michael.dittenbach, helmut.berger, dieter.merkl}@ec3.at<lb/></email>
+
+	<div type="abstract">Abstract<lb/> With the increasing amount of information available on the Internet one of the most challenging<lb/> tasks is to provide search interfaces that are easy to use without having to learn a specific<lb/> syntax. Hence, we present a query interface exploiting the intuitiveness of natural language for<lb/> the largest Austrian web-based tourism platform Tiscover. Furthermore, we will describe the<lb/> results and our insights from analyzing the natural language queries collected during a field trial<lb/> in which the interface was promoted via the Tiscover homepage. This analysis shows how users<lb/> formulate queries when their imagination is not limited by conventional search interfaces with<lb/> structured forms consisting of check boxes, radio buttons and special-purpose text fields. The<lb/> results of this field test are thus valuable indicators into which direction the web-based tourism<lb/> information system should be extended to better serve the customers.<lb/></div>
+
+	<keyword>Keywords: Tourism information system; Natural language processing; User behavior study.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

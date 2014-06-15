@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009364"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Poster Abstracts<lb/></note>
+
+	<date>Monday 11 August 2008<lb/></date>
+
+	<note type="page">3 6 9<lb/></note>
+	
+	<date>MONDAY<lb/></date>
+
+	<reference>Supplement to Transplantation July 27, 2008, Volume 86 Number 2S<lb/></reference>
+
+	<div type="abstract">Results: Among 644 non DM patients enrolled to the study 350 (54.35%) were<lb/> male. Mean age was 41.34 ± 13.8 year (range 12-82). PTDM developed in 66<lb/> patients (10.2%). among PTDM patients 36 were female and 40 were male (P =<lb/> 0.172). Patients divided in three groups according to age: age&lt; 40 year, 40&lt;60<lb/> and age &gt; 60. Prevalence of PTDM were 3.8%, 15.6% and 20.3% among<lb/> different age groups respectively (P&lt; 0001). PTDM developed in 8.3% of<lb/> patients with and in 10.3% without past history of CMV infection (P = 0.825).<lb/> PTDM developed in 10.2% of patients receiving fi rst transplant versus 10.2%<lb/> receiving second or more transplant (P = 0.957). Among all patients 85 had<lb/> history of DM in fi rst degree relatives, PTDM developed in 17 (20%) 0f them<lb/> versus 8.8% in patients without history of DM in fi rst degree relatives (0.003).<lb/> Patients divided in to three groups according to pretransplant dialysis duration:<lb/> preemptive (16 ). one to 23 months (444). and more than 24 months (184).<lb/> PTDM occurred in 25%, 9.9% and 9.8% respectively (P = 0.143).<lb/> Conclusions: the older age at the time of transplantation and family history of<lb/> DM were the main predictors for developing PTDM.<lb/></div>
+
+	<note type="other">POSTER BOARD NUMBER P1 – 163<lb/></note>
+
+	<docTitle>
+	<titlePart>VIABLE YIELD OF ISLETS FROM ISCHEMIC PORCINE<lb/> 1077 PANCREATA IS IMPROVED USING TWENTY-FOUR HOUR<lb/> HYPOTHERMIC MACHINE PERFUSION PRESERVATION .<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>M.J. Taylor<lb/> 1,3 , S. Baicu<lb/> 1 , E. Greene<lb/> 1 , A. Vazquez<lb/> 1 , J. Brassil<lb/> 2<lb/> .<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1<lb/> Cell and Tissue Systems,</affiliation>
+	</byline>
+
+	<address>N. Charleston, SC, USA,<lb/></address>
+
+	<byline>
+	<affiliation>2<lb/> Organ Recovery Systems,<lb/></affiliation>
+	</byline>
+
+	<address>Des Plaines, IL, USA.<lb/></address>
+
+	<byline>
+	<affiliation>3 Dept. Surgery, Medical University of South Carolina,<lb/></affiliation>
+	</byline>
+
+	<address>Charleston, SC. USA.<lb/></address>
+
+		</front>
+	</text>
+</tei>

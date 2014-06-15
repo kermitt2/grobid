@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010819"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<affiliation>RICE UNIVERSITY<lb/></affiliation>
+	</byline>
+
+	<docTitle>
+	<titlePart>An Efficient Algorithm For Total Variation Regularization<lb/> with Applications to the Single Pixel Camera and<lb/> Compressive Sensing<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>by<lb/> Chengbo Li<lb/></docAuthor>
+	</byline>
+
+	<degree>A THESIS SUBMITTED<lb/> IN PARTIAL FULFILLMENT OF THE<lb/> REQUIREMENTS FOR THE DEGREE<lb/>Master of Arts<lb/> </degree>
+
+	<note type="other">APPROVED, THESIS COMMITTEE:<lb/> Yin Zhang, Professor, Chair<lb/> Computational and Applied Mathematics<lb/> flliam W. Symes, Noah G. Ha:<lb/> illiam W. Symes, Noah G. Harding Professor<lb/> Computational and Applied Mathematics<lb/> Wotao Yin, Assistant Professor<lb/> Computational and Applied Mathematics<lb/> Kevin Kelly, Associate Professor<lb/> Electrical and Computer Engineering<lb/> </note>
+
+	<address>HOUSTON, TEXAS<lb/> </address>
+
+	<date>SEPTEMBER 2009</date>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009538"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Spurring Adoption of DHTs with OpenHash, a Public DHT Service<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Brad Karp ,*<lb/> Sylvia Ratnasamy<lb/> Sean Rhea ,**<lb/> Scott Shenker ♦,**</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Intel Research Pittsburgh * Carnegie Mellon Univ. Intel Research Berkeley ** UC Berkeley ♦ ICSI<lb/></affiliation>
+	</byline>
+
+		</front>
+	</text>
+</tei>

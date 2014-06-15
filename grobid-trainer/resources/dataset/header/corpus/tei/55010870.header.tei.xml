@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010870"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<docAuthor>Roberto Muñoz and Miguel A. García-Fernández<lb/> José Luis Rojo-Álvarez, Carmen Allué, Laura Martín, Mar Moreno, José A. Serrano,<lb/> Raquel Yotti, Javier Bermejo, J. Carlos Antoranz, M. Mar Desco, Cristina Cortina,<lb/></docAuthor>
+	</byline>
+
+	<docTitle>
+	<titlePart>Dilated Cardiomyopathy<lb/>A Noninvasive Method for Assessing Impaired Diastolic Suction in Patients With<lb/></titlePart>
+	</docTitle>
+
+	<idno>ISSN: 1524-4539<lb/></idno>
+
+	<note type="copyright">Copyright © 2005 American Heart Association. All rights reserved. </note>
+
+	<idno>Print ISSN: 0009-7322. Online<lb/> </idno>
+
+	<note type="other">72514<lb/> </note> 
+
+	<note type="other">Circulation is published by the </note>
+
+	<affiliation>American Heart Association.</affiliation>
+
+	<address>7272 Greenville Avenue, Dallas, TX<lb/></address>
+
+	<idno type="DOI">doi: 10.1161/CIRCULATIONAHA.105.561340<lb/></idno>
+
+	<date>2005, </date>
+
+	<idno>112:2921-2929<lb/></idno>
+
+	<note type="other">Circulation<lb/></note>
+
+	<ptr type="web">http://circ.ahajournals.org/content/112/19/2921<lb/></ptr>
+
+	<note type="other">located on the World Wide Web at:<lb/> The online version of this article, along with updated information and services, is<lb/></note>
+
+	<ptr type="web">http://www.lww.com/reprints<lb/></ptr>
+
+	<note type="other">Reprints: Information about reprints can be found online at<lb/> journalpermissions@lww.com<lb/>  410-528-8550. * E-mail:<lb/>  Fax:<lb/> Kluwer Health, 351 West Camden Street, Baltimore, MD 21202-2436. Phone: 410-528-4050.<lb/> Permissions: Permissions &amp; Rights Desk, Lippincott Williams &amp; Wilkins, a division of Wolters<lb/> http://circ.ahajournals.org//subscriptions/<lb/>  Subscriptions: Information about subscribing to Circulation is online at<lb/> at European Patent Office on</note>
+
+	<date>October 31, 2011<lb/></date>
+
+	<ptr type="web">http://circ.ahajournals.org/<lb/> </ptr>
+
+	<note type="other">Downloaded from</note>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014739"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Kinetics and Mechanisms of Abiotic Degradation of Fipronil<lb/> (Hydrolysis and Photolysis)<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Alain Bobé,<lb/> Pierre Meallier,<lb/> Jean-François Cooper,*<lb/> , and Camille M. Coste<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Laboratoire de Chimie Analytique, Faculté de Pharmacie,</affiliation>
+	</byline>
+
+	<address>Avenue Charles Flahault,<lb/> 34060 Montpellier, France;</address>
+
+	<byline>
+	<affiliation>Laboratoire d&apos;Application de la Chimie à l&apos;Environnement,<lb/> Université Claude Bernard,</affiliation>
+	</byline>
+
+	<address>Boulevard du 11 Novembre 1918, Lyon, France;</address>
+
+	<byline>
+	<affiliation>and Centre de<lb/> Phytopharmacie,</affiliation>
+	</byline>
+
+	<address>Avenue de Villeneuve, 66000 Perpignan, France<lb/></address>
+
+	<div type="abstract">The abiotic degradation of fipronil (compound I), a phenylpyrazole insecticide, was studied in aqueous<lb/> solution and on the surface of two soils from Niger (Saguia and Banizoumbou) and one Mediterranean<lb/> soil (Montpellier). The rate of hydrolysis of fipronil in solution was measured at different values of<lb/> pH and temperature. The pH was an influencing factor: hydrolysis kinetics were pseudo-first-<lb/>order, the half-life being 770 h at pH 9.0, 114 h at pH 10.0, 11 h at pH 11.0, and 2.4 h at pH 12.0.<lb/> Fipronil was stable under acid (pH 5.5) and neutral conditions. The Arrhenius relation was verified<lb/> over the temperature range 22-45 °C: the activation energy was 62 kJ mol -1 and the calculated<lb/> entropy change -32 J mol -1 . Compound II [5-amino-3-carbamoyl-1-(2,6-dichloro-4-(trifluoromethyl)-<lb/>phenyl)-4-[(trifluoromethyl)sulfinyl]pyrazole] was the only hydrolysis product detected. The hy-<lb/>drolysis reaction mechanism involves nucleophilic addition of OH -to the polar nitrile bond, producing<lb/> a hydroxyimine which then undergoes tautomerization into an amide. Fipronil in acidic (pH 5.5)<lb/> aqueous solution exposed to light from a xenon lamp degraded with first-order kinetics (K obs ) 1.7<lb/> h -1 ) with concomitant appearance of 5-amino-3-cyano-1-(2,6-dichloro-4-(trifluoromethyl)phenyl)-4-<lb/>(trifluoromethyl)pyrazole (compound III) and 5-amino-3-cyano-1-(2,6-dichloro-4-(trifluoromethyl)-<lb/>phenyl)pyrazole-4-sulfonic acid (compound IV). The photolyte formation rate constants were 0.11<lb/> h -1 (III) and 0.05 h -1 (IV). The observed degradation process corresponded to a desulfinylation<lb/> and an oxidation. The reaction mechanisms were not elucidated. The irradiation (xenon lamp) of<lb/> fipronil adsorbed on three natural soils when dry led to the formation of 4-(trifluoromethyl)pyrazole<lb/> (III). The K obs values were 0.0047 h -1 (Saguia), 0.0039 h -1 (Banizoumbou), and 0.0032 h -1<lb/> (Montpellier). The degree of photodegradation was inversely proportional to fipronil adsorption:<lb/> the Freundlich adsorption coefficients were, respectively, 4.3 (Saguia), 7.3 (Banizoumbou), and 45.5<lb/> (Montpellier).<lb/></div>
+
+	<keyword>Keywords: Fipronil; hydrolysis; photodegradation; kinetics; soils; degradation products<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

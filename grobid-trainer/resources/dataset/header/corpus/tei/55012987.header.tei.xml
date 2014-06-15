@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012987"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<affiliation>European Medicines Agency<lb/></affiliation>
+	</byline>
+
+	<address>7 Westferry Circus, Canary Wharf, London, E14 4HB, UK<lb/></address>
+
+	<phone>Tel. (44-20) 74 18 84 00 Fax (44-20) 74 18 84 16<lb/> </phone>
+
+	<email>E-mail: mail@emea.europa.eu</email>
+
+	<ptr type="web">http://www.emea.europa.eu<lb/></ptr>
+
+	<date>London, 19 February 2009<lb/></date>
+
+	<idno>Doc. Ref.: EMEA/135697/2009<lb/></idno>
+
+	<docTitle>
+	<titlePart>CHMP ASSESSMENT REPORT<lb/> FOR<lb/> Exalief<lb/> </titlePart>
+	</docTitle>
+
+	<note type="other">International Nonproprietary Name: eslicarbazepine acetate<lb/> </note>
+
+	<idno>Procedure No. EMEA/H/C/000987<lb/> </idno>
+
+	<note type="other">Assessment Report as adopted by the CHMP with<lb/> all information of a commercially confidential nature deleted.
+	<lb/></note>
+
+	<note type="page">Page 2 of 80<lb/></note>
+	
+	<note type="other">TABLE OF CONTENTS<lb/></note>
+
+		</front>
+	</text>
+</tei>

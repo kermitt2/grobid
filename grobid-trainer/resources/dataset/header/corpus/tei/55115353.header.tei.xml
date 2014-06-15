@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55115353"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Manufacturing Process Flow Reasoning of Micro Device Based on<lb/> Ontology<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Z. Liu<lb/> 1,2,a<lb/> , P.Y. Jiang<lb/> 1,2,b<lb/> and S.Y. Zhou<lb/> 1,2,c<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1<lb/>	State Key laboratory for Manufacturing Systems Engineering<lb/></affiliation>
+	</byline>
+		
+	<byline>
+	<affiliation>2<lb/> CAD/CAM Institute, School of Mechanical Engineering, Xi&apos;an Jiaotong University</affiliation>
+	</byline>
+
+	<address>, China<lb/></address>
+
+	<email>a<lb/> zheng.liumail@gmail.com,<lb/> b<lb/> pjiang@mail.xjtu.edu.cn,<lb/> c goodzsy0620@gmail.com<lb/></email>
+
+	<keyword>Keywords: Feature modeling, Process reasoning, Ontology, Expert system<lb/></keyword>
+
+	<div type="abstract">Abstract. Based on feature modeling technology, a method of manufacturing process flow<lb/> reasoning of micro device is presented to support the top-down design flow. The knowledge of<lb/> micro device is hierarchically organized to construct the ontology-based knowledge database that is<lb/> combined with the expert system by an interface. With the support of process databases, the<lb/> manufacturing process flow is derived by process reasoning.<lb/></div>
+
+		</front>
+	</text>
+</tei>

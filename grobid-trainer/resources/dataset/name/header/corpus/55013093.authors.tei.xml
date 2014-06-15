@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Shuang</forename>
+								<surname>Geng</surname>
+								<lb/>
+								<marker>1</marker>,
+							</persName>
+							<persName>
+								<forename>Yang</forename>
+								<surname>Yu</surname>
+								<lb/>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>Youmin</forename>
+								<surname>Kang</surname>
+								<lb/>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>George</forename>
+								<surname>Pavlakis</surname>
+								<lb/>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>Huali</forename>
+								<surname>Jin</surname>
+								<lb/>
+								<marker>1 , 4</marker> ,
+							</persName>
+							<persName>
+								<forename>Jinyao</forename>
+								<surname>Li</surname>
+								<lb/>
+								<marker>1, 5</marker> ,
+							</persName>
+							<persName>
+								<forename>Yanxin</forename>
+								<surname>Hu</surname>
+								<lb/>
+								<marker>3</marker>,
+							</persName>
+							<persName>
+								<forename>Weibin</forename>
+								<surname>Hu</surname>
+								<lb/>
+								<marker>1</marker> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Shuang</forename>
+								<surname>Wang</surname>
+								<lb/>
+								<marker>1</marker> and
+							</persName>
+							<persName>
+								<forename>Bin</forename>
+								<surname>Wang</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

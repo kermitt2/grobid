@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008655"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Verbascum thapsiforme<lb/> Großblumige Königskerze, Große Königskerze, Wollkraut<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Die blühende Pflanze<lb/> Die Pflanze gezeichnet aus:<lb/> </note>
+	
+	<docAuthor>Prof. Dr. Hans Flück: </docAuthor>
+	
+	<note>Unsere Heilpflanzen,<lb/> </note>
+	
+	<affiliation>Ott-Verlag, </affiliation>
+	
+	<address>Thun </address>
+	
+	<date>1941.<lb/> </date>
+	
+	<note type="other">Weitere Informationen zu Inhaltsstoffen, Wirkungen, Anwendungsgebiete,<lb/> Gegenanzeigen, Dosierung und Art der Anwendung sind hier zu finden:<lb/>	Angaben aus:<lb/></note>
+	
+	<byline>
+	<docAuthor>Aldo Poletti; Prof. Dr. Heinz Schilcher; Dr. Alfred Müller:<lb/></docAuthor>
+	</byline>
+
+	<note type="other">HEILKRÄFTIGE PFLANZEN,<lb/></note>
+
+	<note type="other">Verbascum thapsiforme -Königskerze<lb/></note>
+
+	<ptr type="web">http://web.archive.org/web/20050901090758/http://www.members.tcne...<lb/></ptr>
+
+	<note type="page">1 of 2<lb/></note>
+	
+	<date>04-10-2011 </date>
+	
+	<note type="other">14:32</note>
+
+		</front>
+	</text>
+</tei>

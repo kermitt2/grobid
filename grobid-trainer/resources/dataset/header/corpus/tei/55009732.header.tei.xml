@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009732"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>2004;2:395-402. </reference>
+		
+	<date>Published online July 27, 2004.<lb/> </date>
+		
+	<reference>Mol Cancer Res<lb/></reference>
+
+	<byline>
+	<docAuthor>Xiaoli Shi, Beena Gangadharan, Lawrence F. Brass, et al.<lb/> (B.M. Mueller</docAuthor>
+	</byline>
+
+	<note type="other">), HL16411 (W. Ruf), and HL60742 (W. Ruf).<lb/></note>
+
+	<docTitle>
+	<titlePart>NIH grants CA85405<lb/> 1 1<lb/> to Tumor Cell Motility and Metastasis<lb/> Protease-Activated Receptors (PAR1 and PAR2) Contribute<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Updated Version<lb/></note>
+
+	<ptr type="web">http://mcr.aacrjournals.org/content/2/7/395<lb/></ptr>
+
+	<note type="other">Access the most recent version of this article at:<lb/>Cited Articles<lb/></note>
+
+	<ptr type="web">http://mcr.aacrjournals.org/content/2/7/395.full.html#ref-list-1<lb/></ptr>
+
+	<note type="other">This article cites 48 articles, 28 of which you can access for free at:<lb/> Citing Articles<lb/></note>
+
+	<ptr type="web">http://mcr.aacrjournals.org/content/2/7/395.full.html#related-urls<lb/></ptr>
+
+	<note type="other">This article has been cited by 22 HighWire-hosted articles. Access the articles at:<lb/>E-mail alerts<lb/>related to this article or journal.<lb/> Sign up to receive free email-alerts<lb/> Subscriptions<lb/> Reprints and<lb/> .</note>
+
+	<email>pubs@aacr.org<lb/></email>
+
+	<note type="other">Publications Department at<lb/> To order reprints of this article or to subscribe to the journal, contact the AACR<lb/> Permissions<lb/> . permissions@aacr.org<lb/> Department at<lb/> To request permission to re-use all or part of this article, contact the AACR Publications<lb/> American Association for Cancer Research<lb/></note>
+
+	<note type="copyright">Copyright © 2004<lb/></note>
+
+	<date>on October 17, 2011<lb/></date>
+
+	<email>mcr.aacrjournals.org<lb/></email>
+
+	<note type="other">Downloaded from</note>
+
+		</front>
+	</text>
+</tei>

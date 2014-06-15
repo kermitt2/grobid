@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010288"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Towards Time-Dependant Recommendation based on<lb/> Implicit Feedback<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Linas Baltrunas<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Free University of Bozen-Bolzano,<lb/></affiliation>
+	</byline>
+
+	<address>Piazza Università 1,<lb/> Bolzano, Italy<lb/></address>
+
+	<email>lbaltrunas@unibz.it<lb/></email>
+
+	<byline>
+	<docAuthor>Xavier Amatriain<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Telefonica Research,<lb/></affiliation>
+	</byline>
+
+	<address>Via Augusta 177,<lb/> Barcelona, Spain<lb/></address>
+
+	<email>xar@tid.es<lb/></email>
+
+	<div type="abstract">ABSTRACT<lb/> Context-aware recommender systems (CARS) aim at im-<lb/>proving users&apos; satisfaction by tailoring recommendations to<lb/> each particular context. In this work we propose a con-<lb/>textual pre-filtering technique based on implicit user feed-<lb/>back. We introduce a new context-aware recommendation<lb/> approach called user micro-profiling. We split each single<lb/> user profile into several possibly overlapping sub-profiles,<lb/> each representing users in particular contexts. The predic-<lb/>tions are done using these micro-profiles instead of a single<lb/> user model.<lb/> The users&apos; taste can depend on the exact partition of the<lb/> contextual variable. The identification of a meaningful par-<lb/>tition of the users&apos; profile and its evaluation is a non-trivial<lb/> task, especially when using implicit feedback and a contin-<lb/>uous contextual domain. We propose an off-line evaluation<lb/> procedure for CARS in these conditions and evaluate our<lb/> approach on a time-aware music recommendation sytem.<lb/></div>
+
+		</front>
+	</text>
+</tei>

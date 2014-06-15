@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>M</forename>.
+								<surname>EBADI</surname>
+							<lb/>
+								<marker>1,2*</marker> ,
+							</persName>
+							<persName>
+								<forename>D</forename> .
+								<surname>MURALIKRISHNAN</surname>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>L</forename> .
+								<middlename>J</middlename>.
+								<surname>PELLETT</surname>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>T</forename> .
+								<surname>MURPHY</surname>
+							<lb/>
+								<marker>1</marker>
+							</persName>
+							<persName>
+								&amp;
+								<forename>K</forename> .
+								<surname>DREES</surname>
+								<marker>1</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

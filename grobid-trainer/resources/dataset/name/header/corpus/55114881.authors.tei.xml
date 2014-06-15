@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Guido</forename>
+								<middlename>J</middlename>.
+								<surname>van &apos;t Noordende<lb/> </surname>
+								<marker>⋆</marker>,
+							</persName>
+							<persName>
+								<forename>Benno</forename>
+								<middlename>J</middlename> .
+								<surname>Overeinder</surname>
+							<lb/>
+								<marker>⋆⋆</marker> ,
+							</persName>
+							<persName>
+								<forename>Reinier</forename>
+								<middlename>J</middlename> .
+								<surname>Timmer</surname>,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Frances</forename>
+								<middlename>M</middlename> .
+								<middlename>T</middlename> .
+								<surname>Brazier</surname> ,and
+							</persName>
+							<persName>
+								<forename>Andrew</forename>
+								<middlename>S</middlename> .
+								<surname>Tanenbaum</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

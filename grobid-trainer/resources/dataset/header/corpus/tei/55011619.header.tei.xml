@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011619"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">IMPACT BRIEF |<lb/></note>
+
+	<note type="copyright">©2009 Enterprise Management Associates, Inc. All Rights Reserved.<lb/></note>
+
+	<docTitle>
+	<titlePart>Network Instruments<lb/> Puts Virtualized Systems on Tap<lb/> </titlePart>
+	</docTitle>
+
+	<note type="other">Event<lb/></note>
+	
+	<div type="abstract">On March 23, 2009, Network Instruments<lb/> ®<lb/> announced a new revision of their Observer<lb/> ®<lb/> network performance management solution optimized for installation directly within a<lb/> virtualized server environment. This is one of the very first network management tools<lb/> that has been customized specifically for the purpose of directly monitoring traffic across<lb/> the virtual switch within Virtual Machine (VM) environments that also provides a direct<lb/> adaptation for reaching those traffic flows outside of the<lb/> VM host. In particular, the Virtual TAP features within this<lb/> release allow a complete copy of VM-to-VM virtual net-<lb/>work traffic to be accessed and viewed outside of the VM<lb/> host system for troubleshooting, security monitoring, and<lb/> compliance assessment.<lb/> Network Instruments is one of a few well-established,<lb/> enterprise-class players in the packet-based performance management solutions space,<lb/> and is making a bold initial move into monitoring of virtual environments with this new<lb/> product announcement.<lb/> Context<lb/> With the growth of server virtualization, network management technology players of<lb/> all stripes are working in various ways to add support into their wares. Such announce-<lb/>ments within the past six months alone include those by EMC, Solarwinds, OPNET, and<lb/> PacketTrap. And the entry of Cisco into the blade computing marketplace, with their<lb/> UCS announcement, is based heavily on more tightly integrating networking and virtual<lb/> computing technologies, further driving these two worlds together.<lb/> There are a lot of new challenges around managing these environments that concern<lb/> network managers. One of the biggest involves visibility. While vCenter from VMware<lb/> and System Center from Microsoft for the Hyper-V provide help in configuring and basic<lb/> monitoring of VMs on a host server, they fall far short of delivering the full, contextually<lb/> complete visibility required to understand how VMs are working together and how they<lb/> fit into the broader IT service delivery infrastructure.</div>
+
+		</front>
+	</text>
+</tei>

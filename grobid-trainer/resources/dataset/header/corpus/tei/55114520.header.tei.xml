@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei type="serie-article">
+	<teiHeader>
+		<fileDesc xml:id="55114520"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Adaptive thresholding of digital subtraction angiography images<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Nong Sang<lb/> a<lb/> , Heng Li<lb/> b<lb/> , Weixue Peng<lb/> a<lb/> , Tianxu Zhang<lb/> b<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a<lb/> Institute for Pattern Recognition and Artificial Intelligence<lb/> Huazhong University of Science and Technology,
+	</affiliation>
+	</byline>
+
+	<address>Wuhan 430074, P.R. China<lb/></address>
+
+	<byline>
+	<affiliation>b<lb/> Key Laboratory of Ministry of Education for Image Processing and Intelligent Control<lb/> Huazhong University of Science and Technology,</affiliation>
+	</byline>
+
+	<address>Wuhan 430074, P.R. China<lb/></address>
+
+	<email>Email: joelhqlj@hotmail.com<lb/></email>
+
+	<div type="abstract">ABSTRACT<lb/> In clinical practice, digital subtraction angiography (DSA) is a powerful technique for the visualization of blood vessels in<lb/> the human body. Blood vessel segmentation is a main problem for 3D vascular reconstruction. In this paper, we propose a<lb/> new adaptive thresholding method for the segmentation of DSA images. Each pixel of the DSA images is declared to be a<lb/> vessel/background point with regard to a threshold and a few local characteristic limits depending on some information<lb/> contained in the pixel neighborhood window. The size of the neighborhood window is set according to a priori knowledge of<lb/> the diameter of vessels to make sure that each window contains the background definitely. Some experiments on cerebral<lb/> DSA images are given, which show that our proposed method yields better results than global thresholding methods and<lb/> some other local thresholding methods do.<lb/></div>
+
+	<keyword>Keywords: digital subtraction angiography, vessel segmentation, adaptive thresholding, local characteristic limits<lb/>
+	</keyword>
+
+		</front>
+	</text>
+</tei>

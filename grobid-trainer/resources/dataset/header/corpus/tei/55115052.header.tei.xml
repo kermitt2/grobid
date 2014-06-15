@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55115052"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>The Implementation of a Multiplexing Gold Code<lb/> Generator using a Xilinx Logic Cell Array<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Steven J. Merrifield and John C. Devlin<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>School of Electronic Engineering,<lb/> La Trobe University,</affiliation>
+	</byline>
+
+	<address>Bundoora,<lb/> Victoria, Australia, 3083<lb/></address>
+
+	<div type="abstract">Abstract— This paper presents a novel system for gener-<lb/>ating, and switching between, a large number of Gold codes<lb/> for use in a spread spectrum network. The underlying the-<lb/>ory behind the choice of Gold codes is briefly discussed, and<lb/> a method for reducing the amount of hardware required is<lb/> introduced. The system is implemented using a Xilinx Lo-<lb/>gic Cell Array, and it is shown that use of a multiplexing<lb/> arrangement can reduce the amount of hardware by a factor<lb/> proportional to the number of transmitters in the network.<lb/></div>
+
+		</front>
+	</text>
+</tei>

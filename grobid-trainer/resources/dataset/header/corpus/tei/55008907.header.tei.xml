@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008907"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Paper TS04<lb/></note>
+
+	<docTitle>
+	<titlePart>Statistical Graphics and Reporting in Drug Development<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Michael O&apos;Connell, </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Insightful Corp., </affiliation>
+	</byline>
+	
+	<address>Durham, USA<lb/> </address>
+	
+	<byline>
+	<docAuthor>Sven Knudsen,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Insightful Corp.,</affiliation>
+	</byline>
+
+	<address>Basingstoke, UK<lb/></address>
+
+	<div type="abstract">ABSTRACT<lb/> With current trends of diminishing drug pipelines, safety concerns and lengthy drug development processes, there is<lb/> a critical need for efficiencies in drug development. The use of concise, compelling and standardized graphical<lb/> analyses and reports can help create such efficiencies, while focusing attention on sound, scientific interpretation of<lb/> clinical data.<lb/> In this paper we present some primary elements of statistical graphics for the analysis of clinical data, and a graphics<lb/> taxonomy whereby the graphics are categorized via data and metadata typing. We then apply the graphics types in<lb/> context of the major clinical data sources through the analysis of efficacy endpoints, adverse events, laboratory<lb/> measurements and vital signs. In each of these applications we show how the primary elements may be used to<lb/> develop compelling graphical analyses and reports for clinical drug development data.<lb/> The statistical graphics are based on S-PLUS® Trellis<lb/> TM and S-PLUS Graphlets<lb/> TM<lb/> ; two of the graphics systems<lb/> available in the S-PLUS software. S-PLUS Graphlets enable drill-down, brushing, and display of meta-data and are<lb/> well-suited to exploratory analysis and clinical data review. The report graphics are produced using the S-PLUS<lb/> Clinical Pack for SAS® Users, which enables the integration of S-PLUS Trellis (and S-PLUS Graphlets) graphics into<lb/> the SAS environment for production of clinical study reports and/or incorporation of graphics into SAS ODS output.<lb/></div>
+
+		</front>
+	</text>
+</tei>

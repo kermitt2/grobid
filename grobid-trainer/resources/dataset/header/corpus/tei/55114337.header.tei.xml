@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei type="wiki">
+	<teiHeader>
+		<fileDesc xml:id="55114337"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Schematische Darstellung der DNS-Hierarchie<lb/></note>
+
+	<docTitle>
+	<titlePart>Domain (Internet)<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">aus Wikipedia, der freien Enzyklopädie<lb/> Dies ist eine alte Version dieser Seite, zuletzt bearbeitet am 23. Februar 2013 um 20:33 Uhr durch<lb/> Emes (Diskussion | Beiträge). Sie kann sich erheblich von der aktuellen Version unterscheiden.<lb/> (Unterschied) ← Nächstältere Version | Aktuelle Version (Unterschied) | Nächstjüngere Version →<lb/> (Unterschied)<lb/> Eine Domain<lb/> [1]<lb/> (Anglizismus, zu deutsch:<lb/> Bereich) ist ein zusammenhängender Teilbereich<lb/> des hierarchischen Domain Name System<lb/> (DNS). Im Domain-Vergabeverfahren ist es<lb/> ein im Internet weltweit einmaliger und<lb/> eindeutiger und unter gewissen Regeln frei<lb/> wählbarer Name unterhalb einer Top-Level-<lb/>Domain. Die exakten Regeln für die<lb/> Namensvergabe legt die Vergabestelle (NIC =<lb/> Network Information Center) der jeweiligen<lb/> Top-Level-Domain fest. Eine Domain kann<lb/> beliebig in durch Punkte getrennte Subdomains<lb/> unterteilt werden. M it jedem so gebildeten voll<lb/> qualifizierten Domain-Namen (FQDN = Fully Qualified Domain Name) kann ein beliebiges physisches<lb/> oder virtuelles Objekt weltweit eindeutig adressiert werden. Die Verbindung zwischen dem FQDN und<lb/> dem tatsächlichen Aufenthaltsort des Objektes wird über Einträge in Nameservern hergestellt, die letztlich<lb/> auf die IP-Adresse eines Servers verweisen.<lb/></div>
+
+	<note type="other">Inhaltsverzeichnis<lb/></note>
+
+		</front>
+	</text>
+</tei>

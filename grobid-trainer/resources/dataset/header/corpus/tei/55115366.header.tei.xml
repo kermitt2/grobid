@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55115366"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>REACTIONS<lb/> OF ~o-CHLORO CARBONITRILES<lb/></titlePart>
+	</docTitle>
+
+	<keyword>(UDC 542.91 + 547.7)<lb/></keyword>
+
+	<byline>
+	<docAuthor>E. I. Vasil&apos;eva*<lb/> and R. Kh.<lb/> Freidlina<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institute of Heteroorganic Compounds, Academy of Sciences of the USSR<lb/></affiliation>
+	</byline>
+
+	<reference>Translated from Izvestiya Akademii Nauk SSSR, Seriya Khimicheskaya, No. 2,<lb/> pp. 263-267, February, 1966<lb/></reference>
+
+	<note type="submission">Original article submitted August 21, 1963<lb/></note>
+
+	<div type="introduction">w-Chloro carbinitriles have become accessible substances, being obtained by the telomerization of<lb/> ethylene with cyanogen chloride, but their reactions have been little studied. Particular interest is pre-<lb/>sented by the finding of reactions in which both functional groups of chloro nitriles take part, for these re-<lb/>actions can be regarded as specific for this class of compounds.<lb/> In the present work we studied the action of nucleophilic reagents --ammonia, amines and alkoxides-<lb/>on 5-chlorovaleronitrile and 7-chloroheptanenitrile.<lb/> It is known from the literature that in the action of<lb/> ammonia [i], primary amines [i, 2], and secondary amines [3-6] on w-chloro carbonitriles the chlorine<lb/> atom is replaced by an amino group, whereas tertiary amines usually bring about the dehydrochlorination<lb/> of these ehloroalkanenitriles [5]. A peculiar feature of the behavior of 4-chlorobutyronitrile and 5-chloro-<lb/>valeronitrile in their reactions with ammonia<lb/> and primary amines is the ease with which cyclizatien occurs<lb/> with fm~nation of five-and six-mernbered heterocycles [6-8]. The reactions of 5-chlorovaleronitrile with<lb/> ammonia and methylarnine are described only in patents [2, 6, 7], and the products have been characterized<lb/> inadequately.<lb/> In the performance of the reaction of 5-chlorovaleronitrile with liquid ammonia<lb/> at 100~<lb/> together with 5-aminovaleronitrile we isolated 5,5&apos;-iminodivaleronitrile, the amount of which depends appreciably<lb/> on the proportions of the reactants: with increase in the amount of liquid ammonia<lb/> the yield of the irnino<lb/> derivative diminishes. Under the same conditions with alcoholic ammonia about 13% of 2-piperidone is<lb/> formed. With rise in the reaction temperature to 150 ~ the piperidone becomes the main reaction product,<lb/> and the formation also of considerable amounts of 5-(2-oxopiperidino)valeronitrile is observed.</div>
+
+		</front>
+	</text>
+</tei>

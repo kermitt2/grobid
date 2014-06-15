@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014264"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note>AEAT/ENV/R/0716<lb/></note>
+
+	<docTitle>
+	<titlePart>Environmental and Health Risks Associated<lb/> with the Use of Processed Incinerator Bottom<lb/> Ash in Road Construction
+	<lb/> </titlePart>
+	</docTitle>
+
+	<note type="other">A report produced for </note>
+
+	<byline>
+	<affiliation>BREWEB<lb/></affiliation>
+	</byline>
+		
+	<byline>
+	<docAuthor>John Abbott<lb/> Peter Coleman<lb/> Lucy Howlett<lb/> Pat Wheeler<lb/></docAuthor>
+	</byline>
+
+	<date>October 2003</date>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Victor</forename>
+								<middlename>W</middlename>.
+								<surname>Rosso</surname>,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>David</forename>
+								<middlename>A</middlename> .
+								<surname>Lust</surname> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Peter</forename>
+								<middlename>J</middlename> .
+								<surname>Bernot</surname>,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>John</forename>
+								<middlename>A</middlename> .
+								<surname>Grosso</surname> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Sandeep</forename>
+								<middlename>P</middlename>.
+								<surname>Modi</surname> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Andrew</forename>
+								<surname>Rusowicz</surname> ,
+							</persName>
+							<persName>
+								<forename>Thomas</forename>
+								<middlename>C</middlename> .
+								<surname>Sedergran</surname>,<lb/> ,
+							</persName>
+							<persName>
+								<forename>James</forename>
+								<middlename>H</middlename> .
+								<surname>Simpson</surname> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Sushil</forename>
+								<middlename>K</middlename> .
+								<surname>Srivastava</surname> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Michael</forename>
+								<middlename>J</middlename> .
+								<surname>Humora</surname>,
+								<marker>*</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

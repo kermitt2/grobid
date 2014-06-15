@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009703"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Adaptive Video and Metadata Display<lb/> using Multimedia Documents<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Cyril Concolato<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Telecom ParisTech; Institut Telecom; CNRS LTCI<lb/></affiliation>
+	</byline>
+
+	<address>46, rue Barrault<lb/> 75 634 Paris Cedex 13, France<lb/></address>
+
+	<email>cyril.concolato@telecom-paristech.fr<lb/></email>
+
+	<div type="abstract">ABSTRACT<lb/> Adaptation of multimedia content is a problem which has been<lb/> addressed from different points of view in existing works. The<lb/> specific problem of adapting multimedia documents which<lb/> describe the spatial, temporal and interactive organization of<lb/> several media elements such as video, text, images and graphics is<lb/> still an open problem. In this paper, we present a system capable<lb/> of generating adaptive multimedia documents, based on templates,<lb/> for the display of video content, annotated with information such<lb/> as regions of interest, images and descriptive text. We present<lb/> how we designed our templates, their structure and the adaptation<lb/> logic, based on JavaScript. Some results are presented and<lb/> analyzed.<lb/></div>
+
+	<keyword>Categories and Subject Descriptors<lb/> H.5.4 [Information Systems]: Hypertext/Hypermedia – User<lb/> issues ; H.5.2 [Information Systems]: User Interfaces –<lb/> Graphical user interfaces (GUI), Screen design, User-centered<lb/> design; I.7.2 [Computing Methodologies]: Document<lb/> Preparation – Multi/mixed media, Scripting languages.<lb/> General Terms<lb/> Algorithms, Design, Experimentation, Languages.<lb/> Keywords<lb/> Adaptation, Layout, Rich Media, Region of Interest, SVG,<lb/> MPEG-4 BIFS.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

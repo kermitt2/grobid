@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei type="white-paper">
+	<teiHeader>
+		<fileDesc xml:id="55114505"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Gas Turbine Engine Performance<lb/></titlePart>
+	</docTitle>
+
+	<date>January 2005<lb/></date>
+
+	<docTitle>
+	<titlePart>EVALUATING THE IMPACT OF CYCLIC MAINTENANCE STRATEGIES<lb/> </titlePart>
+	</docTitle>
+
+	<div type="abstract">Demonstrating practical approaches for<lb/> monitoring the impact of gas turbine<lb/> washing strategies and tracking the<lb/> resultant changes in performance and<lb/> profitability<lb/></div>
+	
+		</front>
+	</text>
+</tei>

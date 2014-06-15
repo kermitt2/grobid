@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55114989"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Creating Auditory Displays with Multiple Loudspeakers Using<lb/> VBAP: A Case Study with DIVA Project<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Ville Pulkki<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Laboratory of Acoustics and Audio Signal Processing, Helsinki University of Technology<lb/></affiliation>
+	</byline>
+
+	<address>P.O. Box 3000, FIN-02015 HUT, Helsinki, Finland,</address>
+
+	<email>Ville.Pulkki@hut.fi<lb/></email>
+
+	<byline>
+	<docAuthor>Tapio Lokki<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Telecommunications Software and Multimedia Laboratory, Helsinki University of Technology<lb/></affiliation>
+	</byline>
+
+	<address>P.O. Box 5400, FIN-02015 HUT, Helsinki, Finland,</address>
+
+	<email>Tapio.Lokki@hut.fi<lb/></email>
+
+	<div type="abstract">Abstract<lb/> Auditory displays containing an arbitrary number of loudspeakers in any positioning are created. The sound signals<lb/> are positioned to the display using Vector Base Amplitude Panning (VBAP). The VBAP method is reviewed and a<lb/> new automatic loudspeaker setup division routine is presented. The VBAP is used to create auditory display to the<lb/> Digital Interactive Virtual Acoustics (DIVA) virtual environment system.<lb/></div>
+
+		</front>
+	</text>
+</tei>

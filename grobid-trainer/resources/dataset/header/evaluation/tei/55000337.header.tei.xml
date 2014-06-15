@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000337"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>3M MATERIAL SAFETY DATA SHEET 3M(TM) Vetbond Tissue Adhesive 1469 07/14/2004<lb/></reference>
+	
+	<note type="other">_________________________________________________________________________________________________</note>
+	
+	<note type="page">Page 1 of 7<lb/></note>
+
+	<docTitle>
+	<titlePart>Material Safety Data Sheet<lb/></titlePart>
+	</docTitle>
+
+	<note type="copyright">Copyright, 2004, 3M Company. All rights reserved. Copying and/or downloading of this information for the purpose of properly<lb/> utilizing 3M products is allowed provided that: (1) the information is copied in full with no changes unless prior written agreement is<lb/> obtained from 3M, and (2) neither the copy nor the original is resold or otherwise distributed with the intention of earning a profit<lb/> thereon.<lb/></note>
+
+	<note type="other">SECTION 1: PRODUCT AND COMPANY IDENTIFICATION<lb/> PRODUCT NAME: 3M(TM) Vetbond Tissue Adhesive 1469<lb/> MANUFACTURER: 3M<lb/> DIVISION: Medical Division<lb/></note>
+	
+	<address> ADDRESS: 3M Center<lb/> St. Paul, MN 55144-1000<lb/> EMERGENCY PHONE:</address>
+
+	<phone>1-800-364-3577 or (651) 737-6501 (24 hours)<lb/></phone>
+
+	<date type="submission">Issue Date: 07/14/2004<lb/> Supercedes Date: 02/03/2004<lb/></date>
+	
+	<note type="other">Document Group: 10-2454-6<lb/></note>
+	
+	<div type="introduction">Product Use:<lb/> Specific Use:<lb/> Used on animals as a bandage.<lb/>
+
+	SECTION 2: INGREDIENTS<lb/>
+
+	
+	Ingredient C.A.S. No.<lb/> % by Wt<lb/>
+	
+
+	
+	N-butyl cyanoacrylate<lb/>
+	
+
+	6606-65-1<lb/> &gt; 98<lb/> Hydroquinone 123-31-9<lb/> &lt; 1<lb/> Blue dye<lb/>
+
+	32724-62-2<lb/> 0.01<lb/>
+
+	SECTION 3: HAZARDS IDENTIFICATION<lb/> 3.1 EMERGENCY OVERVIEW<lb/>
+
+	Specific Physical Form: Thin slightly viscous liquid<lb/> Odor, Color, Grade: Clear blue liquid with sharp characteristic odor.<lb/> General Physical Form: Liquid<lb/> Immediate health, physical, and environmental hazards: Combustible liquid and vapor. Closed containers exposed to heat from<lb/> fire may build pressure and explode. Vapors may travel long distances along the ground or floor to an ignition source and flash back.<lb/> Cyanoacrylate ester is an eye irritant and bonds tissues together when polymerized. Vapors cause lacrimation.<lb/> May cause<lb/> target organ effects. May bond tissue rapidly.<lb/></div>
+
+		</front>
+	</text>
+</tei>

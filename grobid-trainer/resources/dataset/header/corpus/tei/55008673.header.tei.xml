@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008673"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<address>245 Lynnfield Street<lb/> Peabody, MA 01960-5099, USA<lb/></address>
+
+	<phone>Tel. 978.532.0775<lb/> Fax 978.531.6993<lb/></phone>
+
+	<ptr type="web">www.trucorporation.com<lb/></ptr>
+
+	<docTitle>
+	<titlePart>TRU MEIA<lb/> TM Products<lb/> Mating Durability Test Report<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">Objective Test &amp; characterize the mating durability of TRU MEIA<lb/> TM Products (MEIA-1625 &amp; MEIA-875) over an extended<lb/> number of mating cycles to simulate the lifetime performance of TRU MEIA interface(s). The test will measure and<lb/> monitor the following parameters: VSWR, insertion loss, phase, coupling torque, and insertion withdrawal forces to<lb/> determine their impact on electrical/ mechanical performance.<lb/> A separate test; insertion / withdrawal force will be measured to determine the effect over an extended number of mating<lb/> cycles to simulate the lifetime performance of MEIA interface(s).<lb/></div>
+
+		</front>
+	</text>
+</tei>

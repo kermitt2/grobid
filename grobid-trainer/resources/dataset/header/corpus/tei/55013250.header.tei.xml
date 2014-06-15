@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013250"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>91-38<lb/> </idno>
+
+	<note type="grant">COMPETITIVE GRANT<lb/> </note>
+
+	<affiliation>Leopold Center<lb/> LEOPOLD CENTER<lb/> FOR SUSTAINABLE AGRICULTURE<lb/></affiliation>
+
+	<docTitle>
+	<titlePart>Economic analysis of chemical vs. biological suppres­<lb/> sion of the European corn borer in Iowa corn production<lb/> Background</titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

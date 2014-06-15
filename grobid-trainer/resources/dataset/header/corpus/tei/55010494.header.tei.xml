@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010494"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Intimate Mobiles: Grasping, Kissing and Whispering as a<lb/> Means of Telecommunication in Mobile Phones<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Fabian Hemmert, Ulrike Gollner, Matthias Löwe, Anne Wohlauf, Gesche Joost<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Berlin University of the Arts<lb/></affiliation>
+	</byline>
+
+	<address>Einsteinufer 43<lb/> 10587 Berlin, Germany<lb/></address>
+
+	<byline>
+	<note type="other">in cooperation with<lb/> </note>
+
+	<address>Deutsche Telekom Laboratories<lb/></address>
+	</byline>
+
+	<address>Ernst-Reuter-Platz 7<lb/> 10587 Berlin, Germany<lb/></address>
+
+	<email>{fabian.hemmert, ulrike.gollner, matthias.loewe, anne.wohlauf, gesche.joost}@udk-berlin.de<lb/></email>
+
+	<div type="abstract">ABSTRACT<lb/> In this paper, we explore how direct physical cues of<lb/> interpersonal nearness can be achieved in mobile phones.<lb/> Exemplarily, w e present three<lb/> novel means of<lb/> communication for mobile phones: grasping, kissing and<lb/> whispering. Reviewing the related work , we point to a<lb/> research gap in direct physical near-body actuation in<lb/> mobile telecommunication. To assess this gap, we present<lb/> three prototypes that implement the proposed novel means<lb/> of communication. We present initial user comments on the<lb/> prototypes, which point to acceptance issues. We conclude<lb/> in a set of research questions for future explorations in this<lb/> field.<lb/></div>
+
+	<keyword>Author Keywords<lb/> Mobile phone, grasping, kissing, whispering, intimacy.<lb/> ACM Classification Keywords<lb/> H5.m.<lb/> Information interfaces and presentation:<lb/> Miscellaneous.<lb/> General Terms<lb/> Design, Human Factors<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

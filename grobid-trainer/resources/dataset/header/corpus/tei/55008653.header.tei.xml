@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008653"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Published on</note>
+
+	<ptr>XML.com</ptr>
+
+	<ptr type="web">http://www.xml.com/pub/a/2003/11/05/xslt.html<lb/></ptr>
+
+	<note type="other">See this if you&apos;re having trouble printing code examples<lb/></note>
+
+	<docTitle>
+	<titlePart>XSLT Reflection<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>By Jirka Kosek<lb/></docAuthor>
+	</byline>
+
+	<date>November 05, 2003<lb/></date>
+
+	<div type="abstract">Many modern programming languages contain a special interface called reflection. Reflection can be used<lb/> to programmatically read, modifying, and create code in a particular language. Because the main purpose<lb/> of XSLT is to transform XML documents, and because a XSLT stylesheet is expressed in the XML<lb/> syntax, we can use XSLT to manipulate stylesheets themselves. In the following article I&apos;m going to show<lb/> you how useful XSLT reflection can be.<lb/></div>
+
+		</front>
+	</text>
+</tei>

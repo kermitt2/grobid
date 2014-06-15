@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55114860"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Effect of Co 2 P on Electrochemical Performance of Li(Mn 0.35 Co 0.2 Fe 0.45 )PO 4 /C<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>H. T. Kuo, T. S. Chan, N. C. Bagkar, G. Q. Liu, R. S. Liu,* , C. H. Shen, D. S. Shy,<lb/> X. K. Xing, and J. M. Chen<lb/>
+	</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Chemistry, National Taiwan UniVersity,</affiliation>
+	</byline>
+
+	<address>Taipei 106, Taiwan,</address>
+
+	<byline>
+	<affiliation>Synergy ScienTech Corporation,<lb/></affiliation>
+	</byline>
+
+	<address>Science Tech-based Industrial Park, Hsinchu 300, Taiwan,</address>
+
+	<byline>
+	<affiliation>and National Synchrotron Radiation Research<lb/> Center,</affiliation>
+	</byline>
+
+	<address>Hsinchu 300, Taiwan<lb/></address>
+
+	<note type="submission">ReceiVed: NoVember 8, 2007; ReVised Manuscript ReceiVed: April 8, 2008<lb/></note>
+
+	<div type="abstract">In this paper, we report the synthesis of carbon coated Li(Mn 0.35 Co 0.2 Fe 0.45 )PO 4 and discuss the effect of<lb/> Co 2 P formation during the carbothermal reduction process, which enhances the electrochemical performance<lb/> of cathode material for lithium ion batteries. It was observed that Co 2 P was favorably formed in 5% H 2 /Ar<lb/> than in Ar atmosphere. The conductivity of Li(Mn 0.35 Co 0.2 Fe 0.45 )PO 4 /C sintered at 600-800 °C in 5% H 2 /Ar<lb/> is increased as the temperature is increased. The O K-edge X-ray absorption near edge spectrum (XANES)<lb/> demonstrates that content of hole carriers is increased in Li(Mn 0.35 Co 0.2 Fe 0.45 )PO 4 /C as the amount of Co 2 P<lb/> increased. We also observed that the capacity of Li(Mn 0.35 Co 0.2 Fe 0.45 )PO 4 /C is increased with sintering<lb/> temperature, and it exhibited a maximum capacity of 166 mAh/g at 700 °C. It was found that the enhancement<lb/> in the discharge capacity of sintered Li(Mn 0.35 Co 0.2 Fe 0.45 )PO 4 /C was as a result of its higher electrical<lb/> conductivity under 5% H 2 /Ar atmosphere as compared with Ar atmosphere.<lb/></div>
+
+		</front>
+	</text>
+</tei>

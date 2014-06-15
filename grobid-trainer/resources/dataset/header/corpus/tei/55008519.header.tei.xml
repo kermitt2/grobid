@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008519"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Fresnel and Fourier digital holography<lb/> architectures: a comparison.<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Damien P. , David S. Monaghan, Nitesh Pandey,<lb/> Bryan M. Hennelly.<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Computer Science,<lb/> National University of Ireland,</affiliation>
+	</byline>
+
+	<address>Maynooth,<lb/> Co. Kildare, Ireland.<lb/></address>
+
+		</front>
+	</text>
+</tei>

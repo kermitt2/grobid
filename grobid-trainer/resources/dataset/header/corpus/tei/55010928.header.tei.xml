@@ -1,0 +1,44 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010928"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Identi¢cation of L-oxidation and thioesterase activities in<lb/> Staphylococcus carnosus 833 strain<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>G. Engelvin<lb/> a<lb/> , G. Feron<lb/> b<lb/> , C. Perrin<lb/> b<lb/> , D. Mollë c , R. Talon<lb/> aY<lb/> *<lb/>
+	</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a INRA Clermont-Ferrand, Station de Recherches sur la Viande,</affiliation>
+	</byline>
+
+	<address>F-63122 Saint-Gene ©s Champanelle, France<lb/></address>
+
+	<byline>
+	<affiliation>b INRA Dijon, Laboratoire de Recherche sur les Aro ªmes, Unitë de Biochimie-Mëtabolisme,</affiliation>
+	</byline>
+
+	<address>F-21000 Dijon, France<lb/></address>
+
+	<byline>
+	<affiliation>c INRA Rennes, Technologie Lait,</affiliation>
+	</byline>
+
+	<address>F-35042 Rennes Cedex, France<lb/></address>
+
+	<note type="submission">Received 16 April 2000; received in revised form 22 June 2000; accepted 26 June 2000<lb/></note>
+
+	<div type="abstract">Abstract<lb/> Staphylococcus carnosus 833, inoculated into sausage meat, increased the level of methyl ketones, which contributed to the cured aroma.<lb/> These ketones can arise from incomplete L-oxidation followed by two enzymatic activities: a thioesterase and a decarboxylase. In this study<lb/> we identified the L-oxidative pathway (through the measure of 3-hydroxyacyl-CoA dehydrogenase activity) and the thioesterase activity in<lb/> extracts of S. carnosus cells grown in the presence of different methyl esters. The L-oxidative system was induced by methyl esters and<lb/> highest induction was found with a 12-carbon substrate. It was specific for medium chain length fatty acyl CoA substrates. Its maximal<lb/> activity was observed at the end of stationary growth phase. HPLC analyses of acyl-CoA after incubation of cell extracts with palmitoyl-<lb/>CoA showed that the L-oxidation system released preferentially long chain hydroxyacyl-CoAs, enoyl-CoAs, and acyl-CoAs. The time-<lb/>course of intermediate formation indicated a precursor^product relationship indicative of a model of free intermediates which could be<lb/> further deacylated by a thioesterase. The thioesterase activity was enhanced when S. carnosus was grown in the presence of methyl esters<lb/> with at least 12 carbons and this enzyme was specific for short chain acyl-CoAs. The maximal activity was reached at the stationary growth<lb/> phase. ß 2000 Published by Elsevier Science B.V. on behalf of the Federation of European Microbiological Societies.<lb/></div>
+
+	<keyword>Keywords : L-Oxidation; Thioesterase ; Methyl ketone; Staphylococcus carnosus<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

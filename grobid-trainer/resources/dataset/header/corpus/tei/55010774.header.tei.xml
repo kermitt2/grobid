@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010774"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Minimum Error Rate Training in Statistical Machine Translation<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Franz Josef Och<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Information Sciences Institute<lb/> University of Southern California<lb/></affiliation>
+	</byline>
+
+	<address>4676 Admiralty Way, Suite 1001<lb/> Marina del Rey, CA 90292<lb/></address>
+
+	<email>och@isi.edu<lb/></email>
+
+	<div type="abstract">Abstract<lb/> Often, the training procedure for statisti-<lb/>cal machine translation models is based on<lb/> maximum likelihood or related criteria. A<lb/> general problem of this approach is that<lb/> there is only a loose relation to the final<lb/> translation quality on unseen text. In this<lb/> paper, we analyze various training criteria<lb/> which directly optimize translation qual-<lb/>ity. These training criteria make use of re-<lb/>cently proposed automatic evaluation met-<lb/>rics. We describe a new algorithm for effi-<lb/>cient training an unsmoothed error count.<lb/> We show that significantly better results<lb/> can often be obtained if the final evalua-<lb/>tion criterion is taken directly into account<lb/> as part of the training procedure.<lb/></div>
+
+		</front>
+	</text>
+</tei>

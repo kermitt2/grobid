@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008905"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>DEFOR Extractive UV Gas Analyzer<lb/> Individual or Simultaneous Measurement<lb/> of SO 2 , NO, NO 2 , Cl 2 as well as<lb/> NH 3 , CS 2 , COS and H 2 S<lb/> </titlePart>
+	</docTitle>
+	
+	<note type="other">P R O D U C t i n F O R m At i O n</note>
+	
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011698"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>AppTrnD MicRoBoLwoy, 1968, July p. 1036-1039<lb/></reference>
+
+	<note type="copyright">Copyright © 1968 American Society for Microbiology<lb/></note>
+
+	<reference>Vol. 16, No. 7<lb/></reference>
+
+	<note type="other">Printed in U.S.A.<lb/></note>
+
+	<docTitle>
+	<titlePart>Microtiter Method for the Evaluation of Viable Cells<lb/> in Bacterial Cultures1<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>DANIEL Y. C. FUNG AND ALLEN A. KRAFI<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Dairy and Food Industry, Iowa State University,</affiliation>
+	</byline>
+
+	<address>Ames, Iowa 50010<lb/></address>
+
+	<note type="submission">Received for publication 1 March 1968<lb/></note>
+
+	<div type="abstract">A microtiter technique was investigated as a means of evaluating viable cells in<lb/> bacterial cultures. Parallel experiments were performed employing the conventional<lb/> agar plate method along with the microtiter procedure. Statistical analyses showed<lb/> that the correlation between the two methods was highly significant. With this new<lb/> method, many samples were analyzed simultaneously, and readable results were<lb/> obtained in 12 to 15 hr. Other advantages of this method were substantial savings of<lb/> time, space, and materials. Also, the applicability of this method to estimates of<lb/> mixed bacterial populations was demonstrated by studying the associative growth of<lb/> two bacterial cultures.<lb/> </div>
+
+	<div type="introduction">The agar plate method has been used by investi-<lb/>gators in many areas of microbiology for evalua-<lb/>ting densities of viable bacteria. The procedures,<lb/> merits, defects, and references for the method are<lb/> recorded in great detail in Standard Methods for<lb/> the Examination of Dairy Products (1). Less<lb/> cumbersome methods, including loop dilution<lb/> techniques, have been suggested from time to<lb/> time (2). A microtiter method based on the loop<lb/> dilution principle was developed in this laboratory</div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009529"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Quantification des acides nucléiques<lb/> par PCR quantitative en temps réel<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>C. Tse<lb/> J. Capeau<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Hôpital Tenon,<lb/> Laboratoire de biochimie<lb/> et d&apos;hormonologie,<lb/></affiliation>
+	</byline>
+
+	<address>4, rue de la Chine, 75020 Paris<lb/></address>
+
+	<note type="submission">Article reçu le 5 novembre 2002,<lb/> accepté le 26 novembre 2002<lb/></note>
+
+	<div type="abstract">Résumé. La réaction de polymérisation en chaîne (PCR) est devenue un outil<lb/> essentiel en biologie moléculaire et son application à la détection des acides<lb/> nucléiques a révolutionné l&apos;analyse quantitative des gènes et de leurs messagers.<lb/> Ce concept technologique a rapidement évolué au cours de ces dernières années,<lb/> et le nombre croissant des applications quantitatives de la PCR a contribué au<lb/> développement de la PCR quantitative en temps réel. Cette revue décrit, après un<lb/> bref rappel portant sur les bases mathématiques de la PCR, les principes de base<lb/> de la quantification par PCR en temps réel (nouveau concept du cycle seuil) ainsi<lb/> que ceux des chimies les plus employées pour la détection en tube clos des acides<lb/> nucléiques (chimie SYBR<lb/> TM Green I et chimies utilisant les sondes fluorogéni-<lb/>ques, sondes TaqMan<lb/> TM , sondes FRET en tandem et sondes Beacon<lb/> TM ). Elle<lb/> discute des différentes stratégies de quantification et compare les systèmes de<lb/> PCR quantitative en temps réel actuellement en compétition sur le marché. Les<lb/> principales applications en biologie médicale sont également décrites.<lb/></div>
+
+	<keyword>Mots clés : PCR, PCR en temps réel, cycle seuil, sonde fluorogénique<lb/></keyword>
+
+	<div type="abstract">Summary. The polymerase chain reaction (PCR) has become an essential tool<lb/> for molecular biologists and its introduction into nucleic acids detection systems<lb/> has revolutionized the quantitative analysis of DNA and RNA. The technique has<lb/> rapidly evolved over the last few years and the growing interest in quantitative<lb/> applications of the PCR has favoured the development of real-time quantitative<lb/> PCR. In this paper, we review, after presentation of the theorical aspects of PCR,<lb/> the basic principles of real-time PCR with the introduction of the concept of<lb/> threshold cycle. More precisely, we describe the novel assay formats that greatly<lb/> simplify the protocols used for the detection of specific nucleic acids. We focus<lb/> on the actual four technologies that enable sequence detection in a closed tube<lb/> and that are SYBR<lb/> TM Green I, TaqMan<lb/> TM probes, Hybridization probes and<lb/> Molecular Beacon<lb/> TM probes. We then discuss the different quantification stra-<lb/>tegies in real time PCR and compare the competiting instruments on the market.<lb/> The most important real-time PCR applications in clinical biology are also<lb/> described.<lb/></div>
+
+	<keyword>Key words: PCR, real time PCR, threshold cycle, fluorogenic probe</keyword>
+
+		</front>
+	</text>
+</tei>

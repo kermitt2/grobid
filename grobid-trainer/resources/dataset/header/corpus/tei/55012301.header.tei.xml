@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012301"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Wavelet-based Region-of-Interest Video Coding<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">(EE398A  Project Report,</note>
+
+	<date>Winter 2009-2010)<lb/></date>
+
+	<byline>
+	<docAuthor>Derek Pang, Huizhong Chen and Sherif Halawa<lb/></docAuthor>
+	</byline>
+
+	<email>Email: dcypang, hchen2, halawa @stanford.edu<lb/></email>
+
+	<div type="abstract">Abstract—In this report, we propose two wavelet video coding<lb/> schemes for the application of interactive region of interest (IRoI),<lb/> namely the temporal prediction plus 2-D transform (T+2D)<lb/> scheme and the 2-D transform plus in-band prediction (2D+T)<lb/> scheme. The schemes provide a solution to the RoI cropping<lb/> problem in the compressed domain as encountered in the current<lb/> IRoI technique, which divides the video frame into slices and<lb/> encode them separately using the H.264. We have modified the<lb/> standard EBCOT and zero-tree entropy coder for compressing<lb/> wavelet RoI residuals. Comparing with the H.264 slice-based RoI<lb/> video coding technique, experimental results have shown our<lb/> proposed schemes can provide up to 2 dB PSNR gain in RoI<lb/> video coding.<lb/></div>
+
+		</front>
+	</text>
+</tei>

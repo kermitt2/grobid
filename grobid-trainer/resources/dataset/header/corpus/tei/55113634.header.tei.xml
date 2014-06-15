@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei type="manual">
+	<teiHeader>
+		<fileDesc xml:id="55113634"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Installation &amp; User Guide<lb/> Vodafone Mobile Broadband<lb/> USB Stick<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Designed for Vodafone</note>
+
+		</front>
+	</text>
+</tei>

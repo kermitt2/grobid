@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000917"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>MUSIC RECOMMENDATION AND DISCOVERY<lb/> IN THE LONG TAI</titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Oscar Celma Herrada<lb/></docAuthor>
+	</byline>
+
+	<date>2008</date>
+
+		</front>
+	</text>
+</tei>

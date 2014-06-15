@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000353"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>IEEE C802.16m-09/2437<lb/> 1<lb/> 1<lb/></idno>
+
+	<note type="other">Project IEEE 802.16 Broadband Wireless Access Working Group &lt;http://ieee802.org/16&gt;<lb/></note>
+	
+	<docTitle>
+	<titlePart>Title Discussion on DCR mode (P802.16m/D2-15.2.18)<lb/> </titlePart>
+	</docTitle>
+
+	<date type="submission">Date Submitted<lb/> 2009-11-06<lb/></date>
+
+	<note type="other">Source(s)<lb/></note>
+	
+	<byline>
+		<docAuthor>Lei Zhang<lb/> Yang Liu<lb/> Mary Chion<lb/> Feng Xie<lb/></docAuthor>
+	</byline>
+
+	<byline>
+		<affiliation>ZTE Corporation<lb/></affiliation>
+	</byline>
+
+	<email>zhang.lei13@zte.com.cn<lb/></email>
+
+	<note type="other">Re:<lb/> Category: LB30a / Area: Chapter 15.2.18 (DCR mode)<lb/></note>
+
+	<div type="abstract">Abstract This contribution proposes changes to the Section 15.2.18 of IEEE P802.16m/D2</div>
+	
+	<note type="other"><lb/> Purpose Discussion and adoption by TGm<lb/> Notice<lb/> This document does not represent the agreed views of the IEEE 802.16 Working Group or any of its subgroups. It<lb/> represents only the views of the participants listed in the &quot;Source(s)&quot; field above. It is offered as a basis for<lb/> discussion. It is not binding on the contributor(s), who reserve(s) the right to add, amend or withdraw material<lb/> contained herein.<lb/> Release</note>
+
+		</front>
+	</text>
+</tei>

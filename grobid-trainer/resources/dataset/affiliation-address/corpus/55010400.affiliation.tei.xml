@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">New Crops and Processing Technology Research</orgName>,
+							<orgName type="department">National Center for Agricultural Utilization Research</orgName>,
+							<lb/>
+							<orgName type="institution">Agricultural Research Ser6ice-USDA</orgName>,
+							<address>
+								<addrLine>1815 N. Uni6ersity St.</addrLine>,
+								<settlement>Peoria</settlement>,
+								<region>IL</region>
+								<postCode>61604</postCode>,
+								<country>USA</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

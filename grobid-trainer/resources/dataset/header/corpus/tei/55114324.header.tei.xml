@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55114324"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">4248 </note>
+
+	<reference>Nucleic Acids Research, Vol. 18, No. 14<lb/></reference>
+
+	<docTitle>
+	<titlePart>Nucleotide sequence of a 1 ,3-1 ,4-f-glucanase-encoding<lb/> gene in Bacillus circulans WL-1 2<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>A.Bueno, C.R.Vazquez de Aldana, J.Correa and F. del Rey<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Instituto de Microbiologfa-Bioqu(mica, Facultad de Biolog[a, CSIC/Universidad de Salamanca,</affiliation>
+	</byline>
+
+	<address>37008<lb/> Salamanca, Spain<lb/></address>
+
+	<idno>EMBL accession no. X52880<lb/> </idno>
+
+	<div type="abstract">We have previously reported (1) the molecular cloning of a DNA<lb/> fragment from Bacillus circulans WL-12 which directs the<lb/> synthesis in E. coli of an enzyme that specifically degrades<lb/> lichenan (mixed-linkage 1,3-1,4-,B-glucan). The nucleotide<lb/> sequence of the 1987-bp BamHI-HindLlI fragment containing the<lb/> 1,3-1,4-,-glucanase gene (BGC), has been determined. The BGC<lb/> gene comprises an open reading frame of 1227-bp coding for<lb/> a 409-amino acid precursor polypeptide with a calculated<lb/> molecular weight of 44812 daltons, in close agreement with the<lb/> value of 40500 previously estimated for the mature extracellular<lb/> form by SDS-polyacrylamide gel electrophoresis. The Kyte and<lb/> Doolittle hydropathy plot of the deduced amino acid sequence<lb/> shows a protein in which the N-terminus is the most hydrophobic<lb/> region, with structural features resembling those found in signal<lb/> peptides of secreted proteins. A search for putative promoters<lb/> upstream from the proposed translation initiation codon identified<lb/> two hexamers related to the -35 and -10 consensus sequences,<lb/> located at the appropriate distance (17 bp): TTGACG (positions<lb/> -190 to -185) and GATGAT (positions -167 to -162). A<lb/> presumed ribosome-binding sequence AAAGGAGCGU, which<lb/> is complementary to the 3&apos; end of B. subtilis 16S rRNA, is found<lb/> immediately preceeding (6 bp) the initiation codon. Beyond the<lb/> translation stop codon, a sequence of 33 nucleotides (positions<lb/> + 1328 to + 1360) can be folded into a stem-loop structure which<lb/> might function as a transcriptional terminator. No significant<lb/> amino acid sequence homology was found between the BGC<lb/> product and other 1,3-1,4-,B-glucanases from different Bacillus<lb/> species, such as B. subtilis (2) and B. amyloliquefaciens (3), or<lb/> with a 1,3-,B-glucanase from the same microorganism B. circulans<lb/> WL-12 recently reported (4).<lb/></div>
+
+	<note type="grant">ACKNOWLEDGEMENT This research was supported by a grant from CAICYT (project<lb/> A-121).</note>
+
+		</front>
+	</text>
+</tei>

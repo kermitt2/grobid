@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008474"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">396<lb/></note>
+
+	<docTitle>
+	<titlePart>Miscibility and crystallization of polytetrafluoro-<lb/>ethylene/poly(tetrafluoroethylene-co-<lb/>perfluoropropylvinyl ether) blends<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Masahiro Endo<lb/> 1 , Katsuaki Yamada<lb/> 1<lb/> , Kenji Tadano<lb/> 2<lb/> , Yoshikazu Nishino<lb/> 3 , Shinichi Yano*<lb/> 3<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Kai Industries Co., Ltd,</affiliation>
+	</byline>
+
+	<address>Oyana, Seki, Gifu 501-3992, Japan<lb/></address>
+
+	<byline>
+	<affiliation>2 Gifu College of Medical Technology,</affiliation>
+	</byline>
+
+	<address>Ichihiraga, Seki, Gifu 501-3892, Japan<lb/></address>
+
+	<byline>
+	<affiliation>3 Department of Chemistry, Faculty of Engineering, Gifu University,</affiliation>
+	</byline>
+
+	<address>Yanagido, Gifu 501-1193, Japan<lb/></address>
+
+	<note type="submission">(Received: August 5, 1999; revised: December 7, 1999)<lb/></note>
+
+		</front>
+	</text>
+</tei>

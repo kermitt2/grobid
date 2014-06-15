@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001124"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Beyond Wideband Telephony — Bandwidth Extension for Super-Wideband Speech<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Bernd Geiser and Peter Vary<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institute of Communication Systems and Data Processing (<lb/> ) RWTH Aachen University,</affiliation>
+	</byline>
+
+	<address>Germany<lb/></address>
+
+	<email>Email: {geiser|vary}@ind.rwth-aachen.de<lb/></email>
+
+	<div type="abstract">Abstract<lb/> Driven by the market success of high-quality Voice over<lb/> IP technology, the introduction of wideband telephony<lb/> with an acoustic bandwidth of at least 7 kHz is mean-<lb/>while also foreseen for &quot;traditional&quot; digital voice com-<lb/>munication services such as ISDN, DECT, or UMTS.<lb/> While wideband speech addresses the basic requirement<lb/> of intelligibility (even for meaningless syllables), the per-<lb/>ceived &quot;naturalness&quot; and the experienced &quot;quality&quot; of<lb/> speech can be further enhanced by providing an even<lb/> larger acoustic bandwidth. Thus, the next logical step<lb/> towards true &quot;Hi-Fi Telephony&quot; could be the rendering of<lb/> &quot;super-wideband&quot; (SWB) speech signals with an acoustic<lb/> bandwidth of at least 14 kHz.<lb/> In this contribution, we review previous and current<lb/> standardization activities with this focus. Moreover,<lb/> a method for artificial bandwidth extension (BWE) of<lb/> wideband speech signals towards &quot;super-wideband&quot; is<lb/> presented and evaluated. It is shown that improved nat-<lb/>uralness and speech quality can be attained by a purely<lb/> receiver-based modification of wideband terminals.</div>
+
+		</front>
+	</text>
+</tei>

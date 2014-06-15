@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>#</marker>
+							<orgName type="department">Holst Centre / IMEC</orgName>,
+							<address>
+								<addrLine>High Tech Campus 31</addrLine>,
+								<settlement>Eindhoven</settlement>,
+								<country>The Netherlands</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>*</marker>
+							<orgName type="department">Ecole Polytechnique Fédérale de Lausanne (EPFL)</orgName>,
+							<orgName type="laboratory">Laboratory of Movement Analysis and Measurement</orgName>,
+							<address>
+								<postCode>1015</postCode>
+								<settlement>Lausanne</settlement>,
+								<country>Switzerland</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010468"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Polym. Mat. Sci. Eng. Publication Dates and Information (&quot;PMSE Preprints&quot;)<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">The official publication date of PMSE Preprints is the earlier of: 1) the date that the preprints were delivered to the post office for<lb/> mailing; or 2) the date the preprints were posted on the Web.<lb/></div>
+
+		</front>
+	</text>
+</tei>

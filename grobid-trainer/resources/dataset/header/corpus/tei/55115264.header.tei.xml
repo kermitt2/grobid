@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei type="wiki">
+	<teiHeader>
+		<fileDesc xml:id="55115264"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note>A ferrite bead at the end of a USB<lb/> cable<lb/> A ferrite bead with its plastic shell<lb/> removed<lb/> An RF inductor wound on a ferrite<lb/> bead, and a PCB mount ferrite<lb/> bead.<lb/> </note>
+
+	<docTitle>
+	<titlePart>Ferrite bead<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">From Wikipedia, the free encyclopedia<lb/></note>
+
+		</front>
+	</text>
+</tei>

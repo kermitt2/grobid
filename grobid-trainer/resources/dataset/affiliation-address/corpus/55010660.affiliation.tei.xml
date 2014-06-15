@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">Departamento de Física</orgName>,
+							<orgName type="institution">Universidade Federal do Espírito Santo</orgName>,
+							<address>
+								<postCode>29075-910</postCode>
+								<settlement>Vitória</settlement> 
+								-<region>ES</region>,
+								<country>Brasil</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>		
+							<orgName type="department">Centro de Ciência e Tecnologia</orgName>,
+							<orgName type="institution">Universidade Estadual do Norte Fluminense</orgName>,
+							<address>
+								<postCode>28015620</postCode>
+								<settlement>Campos dos Goytagazes</settlement> 
+								– <region>RJ</region>, 
+								<country>Brasil</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55114248"/>
+	</teiHeader> 
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">1<lb/></note>
+	
+	<docTitle>
+	<titlePart>>MATLAB<lb/> R<lb/> / R Reference<lb/> </titlePart>
+	</docTitle>
+
+	<date>July 14, 2011<lb/></date>
+
+	<byline>
+	<docAuthor>David Hiebeler<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Dept. of Mathematics and Statistics<lb/> University of Maine<lb/></affiliation>
+	</byline>
+
+	<address>Orono, ME 04469-5752<lb/></address>
+
+	<ptr type="web">http://www.math.umaine.edu/~hiebeler<lb/></ptr>
+
+		</front>
+	</text>
+</tei>

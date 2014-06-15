@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55113672"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Continuous Queries in Oracle<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Andrew Witkowski, Srikanth Bellamkonda, Hua-Gang Li, Vince Liang, Lei Sheng, Wayne Smith,<lb/> Sankar Subramanian, James Terry, Tsae-Feng Yu<lb/></docAuthor>
+	</byline>
+
+	<affiliation>Oracle USA</affiliation>
+
+	<address>400, Oracle Parkway, Redwood Shores, CA 94065, U.S.A.<lb/></address>
+
+	<email>First.Last@oracle.com<lb/></email>
+
+	<div type="abstract">Abstract<lb/> This paper describes Continuous Queries (CQ) in Oracle RDBMS,<lb/> a feature that incorporates stream and complex event processing<lb/> into an RDBMS, the first such attempt in commercial databases.<lb/> The feature is based on the concept of query difference and allows<lb/> us to monitor real time changes to the query as the result of<lb/> changes to its underlying tables. The result of a continuous query<lb/> can be deposited into historical tables or queues for further<lb/> asynchronous de-queuing, or can invoke a synchronous trigger for<lb/> procedural processing. The main contribution of our CQ engine is<lb/> that it allows us to react to complex scenarios of changes to data<lb/> such as mixed INSERT, DELETE and UPDATE changes, unlike<lb/> the existing stream processing systems that deal with INSERTS<lb/> only. We support a wide range of query shapes including inner,<lb/> semi and anti-joins, aggregates and window functions. More<lb/> details are given to the efficient computation of query difference<lb/> for general cases and their optimizations based on semantic<lb/> constraints. They are shown to improve the response time for<lb/> practical cases by more than an order of magnitude. We also show<lb/> how delaying CQ re-computation can improve its performance by<lb/> batch processing the changes to the base tables.<lb/></div>
+
+		</front>
+	</text>
+</tei>

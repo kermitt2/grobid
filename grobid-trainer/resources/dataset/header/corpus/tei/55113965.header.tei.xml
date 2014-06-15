@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei type="technical-paper">
+	<teiHeader>
+		<fileDesc xml:id="55113965"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">A Discussion Paper<lb/></note>
+	
+	<div type="abstract">This paper reviews evidence from the fourteen most recent pricing experiments<lb/> with dynamic pricing. It finds that, on average, customers respond to higher prices<lb/> by lowering usage. The magnitude of price response depends on several factors,<lb/> such as the magnitude of the price increase, the presence of central air<lb/> conditioning and the availability of enabling technologies such as two-way<lb/> communicating thermostats and gateway systems. For the average customer, time-<lb/>of-use rates are likely to induce a drop in peak usage of under 5% while critical-<lb/>peak pricing tariffs a drop of around 10-25%. Customers with central air<lb/> conditioning are likely to display responses in the 15-20% range while those with<lb/> enabling technologies in the 25-45% range.<lb/></div>
+
+	<byline>
+	<docAuthor>Ahmad Faruqui<lb/> Sanem Sergici<lb/></docAuthor>
+	</byline>
+
+	<date>May 11, 2008<lb/></date>
+
+	<docTitle>
+	<titlePart>THE POWER OF EXPERIMENTATION<lb/> New evidence on residential demand response<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">The authors are economists with The Brattle Group located in San Francisco, California<lb/> and Cambridge, Massachusetts respectively. This paper is being circulated for review<lb/> and comment. Some of the research on which the paper is based was funded by the<lb/> Edison Electric Institute and the Electric Power Research Institute. Comments can be<lb/> directed to ahmad.faruqui@brattle.com.<lb/></note>
+
+	<note type="copyright">Copyright © 2008 The Brattle Group, Inc.<lb/></note>
+
+	<note type="page">2<lb/></note>
+
+	<docTitle>
+	<titlePart>THE POWER OF EXPERIMENTATION: NEW EVIDENCE ON RESIDENTIAL<lb/> DEMAND RESPONSE<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Ahmad Faruqui and Sanem Sergici<lb/></docAuthor>
+	</byline>
+
+		</front>
+	</text>
+</tei>

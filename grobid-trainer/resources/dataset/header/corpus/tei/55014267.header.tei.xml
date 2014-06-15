@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014267"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Emergence of the universal genetic code imprinted<lb/> in an RNA record<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Michael J. Hohn*, Hee-Sung Park*, Patrick O&apos;Donoghue*, Michael Schnitzbauer*, and Dieter Sö ll*<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Departments of *Molecular Biophysics and Biochemistry and Chemistry, Yale University,</affiliation>
+	</byline>
+
+	<address>New Haven, CT 06520-8114<lb/></address>
+
+	<note type="submission">Contributed by Dieter Sö ll, October 4, 2006 (sent for review September 30, 2006)<lb/></note>
+
+	<div type="abstract">The molecular basis of the genetic code manifests itself in the<lb/> interaction of the aminoacyl-tRNA synthetases and their cognate<lb/> tRNAs. The fundamental biological question regarding these en-<lb/>zymes&apos; role in the evolution of the genetic code remains open. Here<lb/> we probe this question in a system in which the same tRNA species<lb/> is aminoacylated by two unrelated synthetases. Should this tRNA<lb/> possess major identity elements common to both enzymes, this<lb/> would favor a scenario where the aminoacyl-tRNA synthetases<lb/> evolved in the context of preestablished tRNA identity, i.e., after<lb/> the universal genetic code emerged. An experimental system is<lb/> provided by the recently discovered O-phosphoseryl-tRNA syn-<lb/>thetase (SepRS), which acylates tRNA Cys with phosphoserine (Sep),<lb/> and the well known cysteinyl-tRNA synthetase, which charges the<lb/> same tRNA with cysteine. We determined the identity elements of<lb/> Methanocaldococcus jannaschii tRNA Cys in the aminoacylation re-<lb/>action for the two Methanococcus maripaludis synthetases SepRS<lb/> (forming Sep-tRNA Cys ) and cysteinyl-tRNA synthetase (forming<lb/> Cys-tRNA Cys ). The major elements, the discriminator base and the<lb/> three anticodon bases, are shared by both tRNA synthetases. An<lb/> evolutionary analysis of archaeal, bacterial, and eukaryotic tRNA Cys<lb/> sequences predicted additional SepRS-specific minor identity ele-<lb/>ments (G37, A47, and A59) and suggested the dominance of<lb/> vertical inheritance for tRNA Cys from a single common ancestor.<lb/> Transplantation of the identified identity elements into the Esch-<lb/>erichia coli tRNA Gly scaffold endowed facile phosphoserylation<lb/> activity on the resulting chimera. Thus, tRNA Cys identity is an<lb/> ancient RNA record that depicts the emergence of the universal<lb/> genetic code before the evolution of the modern aminoacylation<lb/> systems.<lb/> </div>
+
+	<note type="other">aminoacyl-tRNA synthetase ͉ evolution ͉ O-phosphoseryl-tRNA<lb/> synthetase ͉ tRNA identity<lb/></note>
+
+		</front>
+	</text>
+</tei>

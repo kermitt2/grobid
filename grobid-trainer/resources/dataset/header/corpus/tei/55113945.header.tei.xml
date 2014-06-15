@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55113945"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>International Journal of PharmTech Research<lb/> CODEN( USA): IJPRIF<lb/> ISSN : 0974-4304<lb/> Vol.1, No.2, pp 334-346 , April-June 2009<lb/></reference>
+
+	<docTitle>
+	<titlePart>Polysaccharides Based Colon Specific Drug delivery: A<lb/> Review<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Ravi Kumar*<lb/> 1 , M. B. Patil<lb/> 2<lb/> , Sachin R. Patil<lb/> 1<lb/> , Mahesh S. Paschapur<lb/> 3<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Department of Pharmaceutics, K.L.E.S&apos;s College of Pharmacy,</affiliation>
+	</byline>
+
+	<address>Ankola-581314,India,<lb/></address>
+
+	<byline>
+	<affiliation>2 Department of Pharmacognosy, K.L.E.S&apos;s College of Pharmacy,</affiliation>
+	</byline>
+
+	<address>Ankola-581314,India,<lb/></address>
+
+	<byline>
+	<affiliation>3 Department of Pharmacology, K.L.E.S&apos;s College of Pharmacy,</affiliation>
+	</byline>
+
+	<address>Ankola-581314,India,<lb/></address>
+
+	<email>E-mail: ravikumar300@gmail.com<lb/></email>
+
+	<div type="abstract">ABSTRACT: Although oral delivery has become a widely accepted route of administration of therapeutic drugs, the<lb/> gastrointestinal tract presents several formidable barriers to drug delivery. The delivery of drugs to the colon has a number of<lb/> therapeutic implications in the field of drug delivery. In the recent times, the colon specific delivery systems are also gaining<lb/> importance not only for local drug delivery of drugs but also for the systemic delivery of protein and peptide drugs. The<lb/> various approaches that can be exploited to target the release of drug to colon include prodrug formation, coating with pH<lb/> sensitive polymers, coating with biodegradable polymers, embedding in biodegradable matrices, hydrogel, timed release<lb/> systems, osmotic and bioadhesive systems. In this review article we have made an attempt to give an overview on<lb/> polysaccharide-based colon specific drug delivery system.<lb/></div>
+
+	<keyword>Key Word: Polysaccharide, Gastrointestinal tract, Hydrogel.</keyword>
+
+		</front>
+	</text>
+</tei>

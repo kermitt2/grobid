@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011625"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Principles of Remote Attestation<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>George Coker<lb/> 1 , Joshua Guttman<lb/> 2 , Peter Loscocco<lb/> 1 , Amy Herzog<lb/> 2 ,<lb/> Jonathan Millen<lb/> 2 , Brian O&apos;Hanlon<lb/> 2 , John Ramsdell<lb/> 2 ,<lb/> Ariel Segall<lb/> 2 , Justin Sheehy<lb/> 2 , and Brian Sniffen<lb/> 2<lb/>
+	</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 National Security Agency<lb/> 2 The MITRE Corporation<lb/></affiliation>
+	</byline>
+
+	<div type="abstract">Abstract. Remote attestation is the activity of making a claim about<lb/> properties of a target by supplying evidence to an appraiser over a net-<lb/>work. We identify five central principles to guide development of attes-<lb/>tation systems. We argue that (i) attestation must be able to deliver<lb/> temporally fresh evidence; (ii) comprehensive information about the tar-<lb/>get should be accessible; (iii) the target, or its owner, should be able<lb/> to constrain disclosure of information about the target; (iv) attestation<lb/> claims should have explicit semantics to allow decisions to be derived<lb/> from several claims; and (v) the underlying attestation mechanism must<lb/> be trustworthy. We illustrate how to acquire evidence from a running<lb/> system, and how to transport it via protocols to remote appraisers.<lb/> We propose an architecture for attestation guided by these principles.<lb/> Virtualized platforms, which are increasingly well supported on stock<lb/> hardware, provide a natural basis for our attestation architecture.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,71 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55114815"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Webology, Volume 4, Number 4, December, 2007<lb/></reference>
+
+	<note type="other">Home Table of Contents<lb/> Titles &amp; Subject Index<lb/> Authors Index<lb/></note>
+
+	<docTitle>
+	<titlePart>Location-Base d Se arch Engine s Tasks and Capabilitie s: A Comparative Study<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Saeid Asadi<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>School of Information Technology &amp; Electrical Engineering, the University of Queensland,</affiliation>
+	</byline>
+
+	<address>Brisbane,<lb/> Australia,</address>
+
+	<email>E-mail: asadi (at) itee.uq.edu.au<lb/></email>
+
+	<byline>
+	<docAuthor>Xiaof ang Zhou<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>School of Information Technology &amp; Electrical Engineering, the University of Queensland,</affiliation>
+	</byline>
+
+	<address>Brisbane,<lb/> Australia,</address>
+
+	<email>E-mail: zxf (at) itee.uq.edu.au<lb/></email>
+
+	<byline>
+	<docAuthor>Hamid R. Jamali<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>School of Library, Archive and Information Studies, University College</affiliation>
+	</byline>
+
+	<address>London, UK,</address>
+
+	<email>E-mail: h.jamali<lb/> (at) gmail.com<lb/></email>
+
+	<byline>
+	<docAuthor>Hossein Vakili Mof rad<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Dept. of Medical Library and Information Sciences, Medical University of Hamedan,</affiliation>
+	</byline>
+
+	<address>Hamedan, Iran,<lb/></address>
+
+	<email>E-mail: vakili (at) umsha.ac.ir<lb/></email>
+
+	<note type="submission">Received November 10, 2007; Accepted December 27, 2007<lb/></note>
+
+	<div type="abstract">A bst ract<lb/> Location-based web searching is one of the popular tasks expected from the search engines. A location-based<lb/> query consists of a topic and a reference location. Unlike general web search, in location-based search it is<lb/> expected to find and rank documents which are not only related to the query topic but also geographically<lb/> related to the location which the query is associated with. There are several issues for developing effective<lb/> geographic search engines and so far, no global location-based search engine has been reported. Location<lb/> ambiguity, lack of geographic information on web pages, language-based and country-dependent addressing<lb/> styles, and multiple locations related to a single web resource are notable difficulties. Search engine companies<lb/> have started to develop and offer location-based services. However, they are still geographically limited and<lb/> have not become as successful and popular as general search engines. This paper reviews the architecture and<lb/> tasks of location-based search engines and compares the capabilities, functionalities and coverage of the<lb/> current geographic search engines with a user-oriented approach.<lb/> Keywords<lb/> Location-based search; Web search; Geographic search engines<lb/> Int roduct ion<lb/> Since the development of the World Wide Web in early 1990s, search engines have played the main role<lb/> in locating and searching the resources on the Web. On October 2007, 31 billion searches were<lb/> conducted on Google alone, more than one billion queries each day (Lipsman, 2007). Figure 1 shows the<lb/> number of web pages indexed by Google and Yahoo search engines. In 2005, Yahoo claimed that its<lb/> index covered more than 20 billion web resources, the largest search engine (Terdiman, 2005). It is<lb/> believed that the actual size of the Web is at least several times bigger than what search engines currently<lb/> cover.<lb/> Figure 1. The number of web pages indexed by Yahoo and G oogle in 2005 (Terdiman, 2005).</div>
+
+		</front>
+	</text>
+</tei>

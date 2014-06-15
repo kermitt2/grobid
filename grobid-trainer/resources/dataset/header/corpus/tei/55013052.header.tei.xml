@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013052"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">711<lb/></note>
+
+	<docTitle>
+	<titlePart>Computer Aided Development of Antiarrhythmic Agents<lb/> with Class III^ Properties<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>LUC M. HONDEGHEM, M.D., PH.D.<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>From Hondeghem Pharmaceutical Consulting N.V., </affiliation>
+	</byline>
+
+	<address>Oostende. Belgium<lb/></address>
+	
+		</front>
+	</text>
+</tei>

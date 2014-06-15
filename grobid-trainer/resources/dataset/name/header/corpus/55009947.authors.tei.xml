@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Marco</forename>
+								<surname>Conti</surname>,
+							</persName>
+							<persName>
+								<forename>Giovanni</forename>
+								<surname>Turi</surname>,
+							</persName>
+							<persName>
+								<forename>Gaia</forename>
+								<surname>Maselli</surname> (CNR),
+							</persName>
+							<persName>
+								<forename>Jon</forename>
+								<surname>Crowcroft</surname>,
+							</persName>
+							<persName>
+								<forename>Sven</forename>
+								<surname>Ostring</surname>
+							<lb/> (Cambridge),
+							</persName>
+							<persName>
+								<forename>Pietro</forename>
+								<surname>Michiardi</surname> ,
+							</persName>
+							<persName>	
+								<forename>Refik</forename>
+								<surname>Molva</surname> (Eurecom),
+							</persName>
+							<persName>
+								<forename>Jose</forename>
+								<middlename>Costa</middlename>
+								<surname>Requena</surname> ( HUT),
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Piergiorgio</forename>
+								<surname>Cremonese</surname>,
+							</persName>
+							<persName>	
+								<forename>Veronica</forename>
+								<surname>Vanni</surname> (Netikos ),
+							</persName>
+							<persName>
+								<forename>Ivan</forename>
+								<surname>Defilippis</surname> ,
+							</persName>
+							<persName>	
+								<forename>Silvia</forename>
+								<surname>Giordano</surname> ,
+								<lb/>
+							</persName>
+							<persName>
+								<forename>Alessandro</forename>
+								<surname>Puiatti</surname> (SUPSI )
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55113574"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Why Bump Testing Saves Lives<lb/> New data reveals the correlation between<lb/> bump test intervals and gas detector failures<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>By: Dave Wagner, Director of Product Knowledge, </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Industrial Scientific Corporation<lb/></affiliation>
+	</byline>
+	
+	<note type="page">page 1 of 4<lb/></note>
+
+	<ptr>www.indsci.com<lb/></ptr>
+	
+	<div type="abstract">Why do I have to bump test my gas detectors?<lb/> This is a common response that many manufacturers and<lb/> industry associations hear when they recommend &quot;bump&quot;<lb/> testing gas detectors prior to each day&apos;s use.<lb/> In the past, the reasons for this may<lb/> have been hard to understand. Without<lb/> quantifiable evidence, the importance<lb/> of bump testing was often lost in a<lb/> deluge of other safety best practices and<lb/> recommendations. A few years ago,<lb/> misleading information about so-called<lb/> &quot;maintenance-free&quot; gas detectors only added<lb/> to the confusion.<lb/> Over the past seven years, we have collected and<lb/> monitored data from tens of thousands of gas<lb/> detectors. A recent analysis of this data has<lb/> produced some surprising results. Now, we<lb/> have hard evidence that supports the<lb/> need for routine bump testing.<lb/> In this paper, we will explore these findings<lb/> and demonstrate the life-saving importance<lb/> of bump testing prior to each day&apos;s use.<lb/></div>
+
+		</front>
+	</text>
+</tei>

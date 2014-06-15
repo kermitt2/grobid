@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001967"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Oracle® Database<lb/>Rules Manager and Expression Filter Developer&apos;s Guide<lb/></titlePart>
+	</docTitle>
+
+	<idno> 11g Release 1 (11.1)<lb/> B31088-01<lb/></idno>
+
+	<date>July 2007<lb/></date>
+
+	<reference>Oracle Database Rules Manager and Expression Filter Developer&apos;s Guide, 11g Release 1 (11.1)<lb/></reference>
+
+	<idno>B31088-01<lb/></idno>
+
+	<note type="copyright">Copyright © 2003, 2007, Oracle. All rights reserved.<lb/></note>
+
+	<byline>
+	<docAuthor>Primary Author: Aravind Yalamanchi and Rod Ward<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<docAuthor>Contributor: William Beauregard, Timothy Chorma, Lory Molesky, Dieter Gawlick, Helen Grembowicz,<lb/> Deborah Owens, and Jagannathan Srinivasan<lb/></docAuthor>
+	</byline>
+
+	<note type="other">The Programs (which include both the software and documentation) contain proprietary information; they<lb/> are provided under a license agreement containing restrictions on use and disclosure and are also protected<lb/> by copyright, patent, and other intellectual and industrial property laws. Reverse engineering, disassembly,<lb/> or decompilation of the Programs, except to the extent required to obtain interoperability with other<lb/> independently created software or as specified by law, is prohibited.<lb/> The information contained in this document is subject to change without notice. If you find any problems in<lb/> the documentation, please report them to us in writing. This document is not warranted to be error-free.<lb/> Except as may be expressly permitted in your license agreement for these Programs, no part of these<lb/> Programs may be reproduced or transmitted in any form or by any means, electronic or mechanical, for any<lb/> purpose.<lb/> If the Programs are delivered to the United States Government or anyone licensing or using the Programs on<lb/> behalf of the United States Government, the following notice is applicable:</note>
+
+		</front>
+	</text>
+</tei>

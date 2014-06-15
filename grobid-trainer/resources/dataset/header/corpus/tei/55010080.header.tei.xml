@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010080"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Designing Ubiquitous Personalized<lb/> TV-Anytime Services<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Fotis G. Kazasis, Nektarios Moumoutzis, Nikos Pappas, Anastasia Karanastasi,<lb/> Stavros Christodoulakis<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Lab. Of Distributed Multimedia Information Systems / Technical University of Crete<lb/></affiliation>
+	</byline>
+
+	<address>University Campus, Kounoupidiana,Chania, Greece<lb/></address>
+
+	<email>[fotis,nektar,nikos,stavros]@ced.tuc.gr<lb/></email>
+
+	<div type="abstract">Abstract. In this paper we present the design of an environment that offers<lb/> personalized, ubiquitous information services in the emerging integrated world<lb/> of the digital-TV and the Internet. This environment is based on extended TV<lb/> sets with a large capacity disk and Internet connection. We present an<lb/> architecture that integrates external service providers that provide extended<lb/> information services about broadcasts with powerful retrieval, personalization<lb/> and ubiquitous access capabilities. We assume that the metadata information<lb/> about the content of the TV programs follows the TV-anytime Forum Metadata<lb/> (TVAM) specifications. The architecture allows content based matching and/or<lb/> retrieval based on the description of the broadcast or parts of the broadcast<lb/> according to the interests of the viewers. The viewer has access to his/her<lb/> &quot;personal channel&quot; any time not only from home, but also while on move. It is<lb/> obvious that due to communication, storage and processing limitations of handy<lb/> devices, it is not possible to access normal digital-TV content. Thus, special<lb/> mechanisms that filter and appropriately adapt the content are necessary, in<lb/> order to meet user&apos;s preferences and make its delivery and presentation feasible<lb/> on the handy devices.<lb/></div>
+
+		</front>
+	</text>
+</tei>

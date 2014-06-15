@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55114529"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Study of the electrochemical reduction of CO 2 on a polypyrrole<lb/> electrode modified by rhenium and copperÁ/ rhenium microalloy in<lb/> methanol media<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Ricardo Schrebler *, P. Cury, C. Suárez, E. Muñ oz, H. Gó mez, R. Có rdova<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Facultad de Ciencias, Instituto de Química, Universidad Católica de Valparaíso,</affiliation>
+	</byline>
+
+	<address>Av. Brasil 2950, Valparaíso 4059, Chile<lb/></address>
+
+	<note type="submission">Received 1 February 2002; received in revised form 13 June 2002; accepted 6 August 2002<lb/></note>
+
+	<div type="abstract">Abstract<lb/> The electrocatalytic CO 2 reduction on rhenium and Cu Ã/Re alloy highly dispersed on polypyrrole films was studied by means of<lb/> polarization curves and constant potential electrolysis. The reduction products were analyzed by FTIR and gas chromatography Á/<lb/> mass spectrometry. These results were compared with those obtained on these same metals electrodeposited on gold polycrystalline<lb/> surfaces. In all cases, it was found that after an electrolysis time of 35 h the main reduction products were CO, CH 4 and H 2 . Also,<lb/> simultaneous mass change measurements using an electrochemical quartz crystal microbalance (EQCM) with cyclic voltammetry<lb/> and application of step potentials, allow us to postulate that the intermediates generated during the CO 2 reduction would be CO or<lb/> CH 2 on Au j Cu and CH 2 OH or CH 2 on Au j CuÃ/Re electrodes, respectively. Likewise, the faradaic efficiency obtained for each of<lb/> these products depends on the substrate nature and on the applied potential. The higher faradaic efficiencies for methane formation<lb/> were obtained at (/1.35 V with Au j PpyRe (34%) and Au j PpyCuÃ/Re (31%). In both cases, these efficiencies were independent of<lb/> the hydrodynamic conditions of the electrolytic solution. #</div>
+
+	<note type="copyright">&#169;2002 Published by Elsevier Science B.V.<lb/></note>
+
+	<keyword>Keywords: Electrocatalysis; CuÃ/Re alloys; Rhenium; Polypyrrole; CO 2 reduction<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

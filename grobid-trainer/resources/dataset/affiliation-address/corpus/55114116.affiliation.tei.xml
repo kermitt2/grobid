@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+ From the
+						<affiliation>
+							<orgName type="department">Department of Biological Chemistry</orgName>,
+							<orgName type="department">Facu1t.y of Pharmaceutical Sciences</orgName>,
+							<orgName type="institution">Teikyo University</orgName>,
+							<address>
+								<settlement>Sagamiko</settlement>,
+								. . 
+								<region>Kanagawa</region>
+								<postCode>199-01</postCode>,
+								<country>Japan</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

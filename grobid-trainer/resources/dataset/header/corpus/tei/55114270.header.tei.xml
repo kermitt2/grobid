@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei type="web">
+	<teiHeader>
+		<fileDesc xml:id="55114270"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Print Pasta Fazul Right on Your Plate<lb/></titlePart>
+	</docTitle>
+
+	<docAuthor>BY M I CH AE L M O L I T CH -H O U </docAuthor>
+
+	<date>O N T H U, J AN UAR Y 9 , 2 0 1 4 · </date>
+
+	<note type="other">3 D P R I N T I N G , 3 D P AP P L I CAT I O N S , F O O D , I N D US T R Y<lb/> N E W S , V I D E O S 3 CO M M E N T S<lb/></note>
+
+		</front>
+	</text>
+</tei>

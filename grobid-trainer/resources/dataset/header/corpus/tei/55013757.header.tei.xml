@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013757"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Translate from:<lb/> Translate into:<lb/></note>
+
+	<docTitle>
+	<titlePart>Sony, VAIO C1XF greatly enhanced CPU or HDD, etc.<lb/></titlePart>
+	</docTitle>
+
+	<date>Released February 11, 2000<lb/></date>
+
+		</front>
+	</text>
+</tei>

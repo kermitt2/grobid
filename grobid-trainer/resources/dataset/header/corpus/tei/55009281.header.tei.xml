@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009281"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>JOURNAL OF MATERIALS SCIENCE 27(1992) 2093-2100<lb/></reference>
+
+	<docTitle>
+	<titlePart>Fibre and fibre-surface treatment effects in<lb/> carbon/aluminium metal matrix composites<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>A. P. DIWANJI*, I. W. HALL<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Materials Science Program, University of Delaware,</affiliation>
+	</byline>
+
+	<address>Newark, DE 19716, USA<lb/></address>
+
+	<div type="abstract">A systematic study of the relationship between the microstructure of the interface in C/AI<lb/> composites and its dependence on variations in squeeze-casting parameters has been<lb/> undertaken. This research has shown that the amount of AI4C 3 reaction product at the<lb/> interface is dependent on the surface structure of the reinforcing fibre and the surface<lb/> treatment of the fibre. Additionally, the interface shear strength increases with an increase in<lb/> the amount of reaction product at the interface. An increase in interface shear strength leads<lb/> to a decrease in composite longitudinal strength. High-resolution electron microscopy and<lb/> X-ray photoelectron spectroscopy analyses indicate that carbide formation is a conventional<lb/> two-step process of nucleation and growth. Nucleation occurs preferentially at graphite edge<lb/> planes on the carbon fibre surface, and growth is restricted along certain matrix planes and<lb/> directions.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -63,7 +63,8 @@
 								<address>
 									<settlement>Manchester</settlement>, 
 									<postCode>M13 9PL</postCode>, 
-									<country>UK<lb/></country>
+									<country>UK</country>
+									<lb/>
 								</address>
 							</affiliation>	
 						</author>		
@@ -78,7 +79,8 @@
 									<settlement>Debrecen</settlement>, <lb/>
 									<addrLine>Bem tér 18/c</addrLine>, 
 									<country>Hungary</country>
-									<postCode>H-4026<lb/></postCode>
+									<postCode>H-4026</postCode>
+									<lb/>
 								</address>
 							</affiliation>	
 							<marker>2</marker> 
@@ -89,7 +91,8 @@
 									<settlement>Debrecen</settlement>, 
 									<postBox>P.O.Box 12</postBox>,
 									<country>Hungary</country>
-									<postCode>H-4010<lb/></postCode>
+									<postCode>H-4010</postCode>
+									<lb/>
 								</address>
 							</affiliation>
 						</author>	
@@ -102,7 +105,8 @@
 									<addrLine>Via S.Sofia 62</addrLine>, 
 									<postCode>I95123</postCode> 
 									<region>Catania</region>, 
-									<country>Italy<lb/></country>
+									<country>Italy</country>
+									<lb/>
 								</address>
 							</affiliation>
 							<marker>2</marker> 
@@ -112,7 +116,8 @@
 								<address>
 									<postCode>I95123</postCode>
 									<region>Catania</region>,
-									<country key="IT">Italy<lb/></country>
+									<country key="IT">Italy</country>
+									<lb/>
 								</address>
 							</affiliation>
 							<marker>3</marker> 
@@ -121,7 +126,8 @@
 								<orgName type="institution">Ruhr-Universitat Bochum</orgName>,
 								<address>
 									<settlement>Bochum</settlement>,
-									<country key="DE">Germany<lb/></country>
+									<country key="DE">Germany</country>
+									<lb/>
 								</address>
 							</affiliation>
 							<marker>4</marker> 
@@ -131,7 +137,8 @@
 								<address>
 									<postCode>I95123</postCode>
 									<settlement>Catania</settlement>,
-									<country key="IT">Italy<lb/></country>
+									<country key="IT">Italy</country>
+									<lb/>
 								</address>
 							</affiliation>
    							<marker>5</marker> 
@@ -141,7 +148,8 @@
 									<addrLine>Via Orabona 4</addrLine>, 
 									<postCode>I70126</postCode>
 									<settlement>Bari</settlement>,
-									<country>Italy<lb/></country>
+									<country>Italy</country>
+									<lb/>
 								</address>
 							</affiliation>
 							<marker>6</marker> 
@@ -149,7 +157,8 @@
 								<orgName type="institution">Università Kore</orgName>,
 								<address>
 									<settlement>Enna</settlement>,
-									<country>Italy<lb/></country>
+									<country>Italy</country>
+									<lb/>
 								</address>
 							</affiliation>
 						</author>	
@@ -162,7 +171,8 @@
 								<address>
 									<settlement>Leics</settlement>
 									<postCode>LE11, 3TU</postCode>,
-									<country>UK<lb/></country>
+									<country>UK</country>
+									<lb/>
 								</address>
 							</affiliation>
 							<marker>2</marker> 
@@ -171,7 +181,8 @@
 								<orgName type="institution">Xi'an Jiaotong University</orgName>,  
 								<address>
 									<postCode>710049</postCode>,
-									<country>P.<lb/>R. China<lb/></country>
+									<country>P.<lb/>R. China</country>
+									<lb/>
 								</address>
 							</affiliation>
 						</author>	
@@ -186,7 +197,8 @@
 									<addrLine>Park Angelinum 9</addrLine>, 
 									<postCode>041 54</postCode>
 									<settlement>Kosice</settlement>
-									<country>Slovakia<lb/></country>
+									<country>Slovakia</country>
+									<lb/>
 								</address>
 							</affiliation>
 							<marker>2</marker>
@@ -197,7 +209,8 @@
 									<addrLine>Watsonova 47</addrLine>, 
 									<postCode>040 01</postCode>
 									<settlement>Kosice</settlement>, 
-									<country>Slovakia<lb/></country>
+									<country>Slovakia</country>
+									<lb/>
 								</address>
 							</affiliation>
 							<marker>3</marker>
@@ -208,7 +221,8 @@
 									<addrLine>Park Komenskeho 2</addrLine>, 
 									<postCode>042 00</postCode>
 									<settlement>Kosice</settlement>, 
-									<country>Slovakia<lb/></country>
+									<country>Slovakia</country>
+									<lb/>
 								</address>
 							</affiliation>
 							<marker>4</marker>
@@ -218,7 +232,8 @@
 									<addrLine>Campus de Cantoblanco</addrLine>, 
 									<postCode>28049</postCode>
 									<settlement>Madrid</settlement>, 
-									<country>Spain<lb/></country>
+									<country>Spain</country>
+									<lb/>
 								</address>
 							</affiliation>
 						</author>	
@@ -235,7 +250,8 @@
 								<address>
 									<postCode>751 21</postCode>
 									<settlement>Uppsala</settlement>, 
-									<country>Sweden</country>.<lb/>
+									<country>Sweden</country>.
+									<lb/>
 								</address>
 							</affiliation>
 							<marker>2</marker> 
@@ -249,7 +265,8 @@
 								<address>
 									<postCode>751 21</postCode>
 									<settlement>Uppsala</settlement>,
-									<country>Sweden</country>.<lb/>
+									<country>Sweden</country>.
+									<lb/>
 								</address>
 							</affiliation>
 							<marker>3</marker> 
@@ -263,7 +280,8 @@
 								<address>
 									<postCode>751 21</postCode>
 									<settlement>Uppsala</settlement>, 
-									<country>Sweden</country>.<lb/>
+									<country>Sweden</country>.
+									<lb/>
 								</address>
 							</affiliation>
 							<marker>4</marker> 
@@ -276,7 +294,8 @@
 								<address>
 									<postCode> 751 23</postCode>
 									<settlement>Uppsala</settlement>, 
-									<country>Sweden</country>.<lb/>
+									<country>Sweden</country>.
+									<lb/>
 								</address>
 							</affiliation>
 							<marker>5</marker> 
@@ -288,7 +307,8 @@
 									<settlement>Williamsburg</settlement>, 
 									<postCode> 23187</postCode>, 
 									<region>Virginia</region>, 
-									<country>USA</country>.<lb/>
+									<country>USA</country>.
+									<lb/>
 								</address>
 							</affiliation>
 							<marker>6</marker> 
@@ -300,7 +320,8 @@
 									<settlement>Danville</settlement>, 
 									<postCode> 24541</postCode>, 
 									<region>Virginia</region>, 
-									<country>USA</country>.<lb/>
+									<country>USA</country>.
+									<lb/>
 								</address>
 							</affiliation>
 						</author>	
@@ -314,7 +335,8 @@
 									<postCode>20041</postCode>
 									<settlement>Agrate Brianza</settlement>
 									<region>(MI)</region>, 
-									<country>Italy</country>.<lb/>
+									<country>Italy</country>.
+									<lb/>
 								</address>
 							</affiliation>
 							<marker>2<lb/></marker> 
@@ -323,7 +345,8 @@
 								<orgName type="institution">Università di Milano Bicocca</orgName>, 
 								<address>
 									<settlement>Milano</settlement>, 
-									<country>Italy<lb/></country>
+									<country>Italy</country>
+									<lb/>
 								</address>
 							</affiliation>
 						</author>	
@@ -336,8 +359,10 @@
 								<address>
 									<postCode>87036</postCode>
 									<settlement>Rende</settlement>
-									<region>(Cs)</region>,<lb/>
-									<country>Italy<lb/></country>
+									<region>(Cs)</region>,
+									<lb/>
+									<country>Italy</country>
+									<lb/>
 								</address>
 							</affiliation>
 							<marker>2<lb/></marker> 
@@ -347,7 +372,8 @@
 								<address>
 									<postCode>28049</postCode>
 									<settlement>Madrid</settlement>, 
-									<country>Spain</country>.<lb/>
+									<country>Spain</country>.
+									<lb/>
 								</address>
 							</affiliation>
 							<marker>3<lb/></marker> 
@@ -399,8 +425,10 @@
                                 	<addrLine>San 14-1 Nongseo-dong</addrLine>, 
                                 	<addrLine>Giheung-gu</addrLine>, 
                                 	<settlement>Yongin-si</settlement>, 
-                                	<region>Gyeonggi-do</region>, <lb/>
-                                	<country>Korea</country>. <lb/>
+                                	<region>Gyeonggi-do</region>, 
+									<lb/>
+                                	<country>Korea</country>. 
+									<lb/>
                                 </address>
                             </affiliation>
 						</author>
@@ -413,7 +441,8 @@
                                 <address>
                                 	<settlement>Moscow</settlement>, 
                                 	<postCode>119991</postCode>, 
-                                	<country>Russia</country>.<lb/>
+                                	<country>Russia</country>.
+									<lb/>
                                 </address> 
                             </affiliation>
                             <marker>2</marker> 
@@ -424,7 +453,8 @@
                                 	<postBox>P.O. Box 27 01 16</postBox>, 
                                 	<postCode>01171</postCode>, 
                                    	<settlement>Dresden</settlement>, 
-                                	<country>Germany<lb/></country>
+                                	<country>Germany</country>
+									<lb/>
                                 </address> 
                             </affiliation>
                             <marker>3</marker> 
@@ -434,7 +464,8 @@
                                 <address>
                                 	<addrLine>Na Slovance 2</addrLine>,  
                                    	<settlement>Prague</settlement>, 
-                                	<country>Czech<lb/>Republic<lb/></country>
+                                	<country>Czech<lb/>Republic</country>
+									<lb/>
                                 </address> 
                             </affiliation>
                             <marker>4</marker> 
@@ -445,7 +476,8 @@
                                 	<addrLine>6-6-02 Aoba-yama</addrLine>,  
                                    	<settlement>Sendai</settlement>
                                    	<postCode>980-8579</postCode>, 
-                                	<country>Japan<lb/></country>
+                                	<country>Japan</country>
+									<lb/>
                                 </address> 
                             </affiliation>
                             <marker>5</marker> 
@@ -457,7 +489,8 @@
                                 	<addrLine>6-6-02 <lb/> Aoba-yama</addrLine>,  
                                    	<settlement>Sendai</settlement>
                                    	<postCode>980-8579</postCode>, 
-                                	<country>Japan<lb/></country>
+                                	<country>Japan</country>
+									<lb/>
                                 </address> 
                             </affiliation>
 						</author>
@@ -470,7 +503,8 @@
                                 	<addrLine>Dolejškova 5</addrLine>, ,  
                                 	<postCode>182 00 </postCode>
                                 	<settlement>Praha 8</settlement>,  	
-                                	<country>Czech Republic<lb/></country>
+                                	<country>Czech Republic</country>
+									<lb/>
                                 </address> 
                             </affiliation>
 						</author>
@@ -2265,17 +2299,18 @@
                        		<affiliation>
                        			<orgName type="department">Leibniz Institute for Plasma Science and Technology (INP) </orgName>,
                                 <address>
-                                 	<addrLine> Felix-Hausdorff-Str. 2</addrLine>,
+                                 	<addrLine>Felix-Hausdorff-Str. 2</addrLine>,
                                  	<postCode>17489</postCode>
                                  	<settlement>Greifswald</settlement>, 
-                                   	<country>Germany<lb/></country>
+                                   	<country>Germany</country>
+									<lb/>
                               	</address>
                              </affiliation>
                         </author>        
 
-                        <author>	
+                        <author>
+							<marker>1</marker>
                        		<affiliation>
-								<marker>1</marker>
 								<institution>Saarland University</institution>
 								<address>
 									<postCode>66123</postCode>
@@ -2283,8 +2318,8 @@
 									<country>Germany<lb/></country>
 								</address>
 							</affiliation>
+							<marker>2</marker>
 							<affiliation>
-								<marker>2</marker>
                        			<orgName type="department"> LT-Lab</orgName>, 
 								<orgName type="institution">DFKI</orgName>
                                 <address>
@@ -2402,8 +2437,82 @@
 							</affiliation>
 						</author>
 						
-							
-							
+						<author>	
+							<affiliation>
+								<orgName type="department">Institut des Nanosciences de Paris</orgName>,
+								<orgName type="institution">UPMC-CNRS</orgName>,
+								<address>
+									<addrLine>4 Place Jussieu</addrLine>
+									<settlement>Paris</settlement>
+									<postCode>75005</postCode>
+								</address>
+							</affiliation>	
+						</author>
+
+						<author>
+							<marker>1</marker>
+							<affiliation>
+								<orgName type="laboratory">Laboratoire Pierre Aigrain </orgName>,
+								<orgName type="institution">Ecole Normale Supérieure</orgName>,
+								<orgName type="institution">CNRS</orgName>(
+								<orgName type="laboratory">UMR 8551</orgName>),
+								<orgName type="institution">Université P. et M. Curie</orgName>,<lb/> 
+								<orgName type="institution">Université D. Diderot</orgName>,
+								<address>
+									<postCode>F-75005</postCode>
+									<settlement>Paris</settlement>
+									<country key="FR">France</country>
+									<lb/>
+								</address>
+							</affiliation>
+							<marker>2</marker>
+							<affiliation>
+								<orgName type="laboratory">LPN</orgName>/
+								<orgName type="institution">CNRS</orgName>,
+								<address>
+									<addrLine>Route de Nozay</addrLine>,
+									<postCode>F-91460</postCode>
+									<settlement>Marcoussis</settlement>
+									<country key="FR">France</country>
+									<lb/>
+								</address>
+							</affiliation>
+						</author>
+						
+						<author>
+							<affiliation>
+								<orgName type="department">Materials Science Department</orgName>,
+								<orgName type="department">School of Natural Sciences</orgName>,
+								<orgName type="institution">University of Patras</orgName>,
+								<lb/>
+								<address>
+									<postCode>26504</postCode>
+									<settlement>Patras</settlement>,
+									<country key="GR">Greece</country>
+									<lb/>
+								</address>
+							</affiliation>
+						</author>
+
+                        <author>
+ 							Aus dem
+							<affiliation>
+								<orgName type="department">Kaiser-Wilhelm-Institut für Chemie</orgName>,
+								<address>
+									<settlement>Tailfingen</settlement>
+								</address>
+							</affiliation>
+						</author>
+
+						<author>
+ 							Aus dem
+							<affiliation>
+								<orgName type="department">Kaiser-AVilhelm-Institut für Chemie</orgName>,
+								<address>
+									<settlement>Tailfingen</settlement>
+								</address>
+							</affiliation>
+						</author>
 							
 					</analytic>
 				</biblStruct>

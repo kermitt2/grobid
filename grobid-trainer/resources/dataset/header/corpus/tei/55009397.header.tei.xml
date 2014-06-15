@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009397"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Novel layered calcosilicate-immobilized iron-based<lb/> diimine catalyst for ethylene polymerization<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Hong Xu<lb/> a,b,c , Cunyue Guo<lb/> d, * , Chunfeng Xue<lb/> c , Zhi Ma<lb/> d<lb/> , Mingge Zhang<lb/> b,d<lb/> , Jinxiang Dong<lb/> c, * , Jianguo Wang<lb/> a , Youliang Hu<lb/> d<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a State Key Laboratory of Coal Conversion, Institute of Coal Chemistry, Chinese Academy of Sciences,</affiliation>
+	</byline>
+
+	<address>Taiyuan 030001, PR China<lb/></address>
+
+	<byline>
+	<affiliation>b Graduate School of the Chinese Academy of Sciences,</affiliation>
+	</byline>
+
+	<address>Beijing 100039, PR China<lb/></address>
+
+	<byline>
+	<affiliation>c Research Institute of Special Chemicals, Taiyuan University of Technology,</affiliation>
+	</byline>
+
+	<address>Taiyuan 030024, PR China<lb/></address>
+
+	<byline>
+	<affiliation>d CAS Key Laboratory of Engineering Plastics, Joint Laboratory of Polymer Science and Materials, Institute of Chemistry,<lb/> Chinese Academy of Sciences,</affiliation>
+	</byline>
+
+	<address>Beijing 100080, PR China<lb/></address>
+
+	<note type="submission">Received 12 January 2005; received in revised form 8 July 2005; accepted 13 July 2005<lb/></note>
+
+	<date>Available online 1 September 2005<lb/></date>
+
+	<div type="abstract">Abstract<lb/> A novel layered calcosilicate (CAS-1) was employed to immobilize an iron-based diimine catalyst 2,6-bis[1-(2,6-<lb/>diisopropylphenylimino)ethyl]pyridine iron chloride (I) onto it to form a supported catalyst (CC) for the first time.<lb/> The crystal structure of CAS-1 was determined by X-ray crystallographic analysis in addition to SEM characterization.<lb/> The CC-catalyzed ethylene polymerization exhibited good catalytic activities with either co-catalyst methylaluminoxane<lb/> (MAO) or triethylaluminum (TEA). The resulting polyethylenes possessed not only higher molecular weight, melting<lb/> temperature (T m ), and decomposition onset temperature (T onset ) than those obtained with its homogeneous counter-<lb/>part, but also a unique morphology.<lb/></div>
+
+	<note type="copyright">&#169; 2005 Elsevier Ltd. All rights reserved.<lb/></note>
+
+	<keyword>Keywords: Calcosilicate; Immobilization; Iron-based diimine catalyst; Ethylene polymerization<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

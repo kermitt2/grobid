@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011925"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Understanding<lb/> the webMethods Product Suite<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Version 7.1<lb/></note>
+
+	<date>January 2008<lb/></date>
+
+	<note>webMethods<lb/></note>
+
+	<note type="other">TitlePage</note>
+	
+		</front>
+	</text>
+</tei>

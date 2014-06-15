@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011766"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Chapter 2<lb/> Phenols<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Manfred Weber and Markus Weber<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Abstract Up to the end of the nineteenth century, phenol was recovered primarily<lb/> from coal tar. With the commercialization of the phenolic resins, the demand for<lb/> phenol grew significantly. Currently, the cumene-to-phenol process is the predomi-<lb/>nant synthetic route for the production of phenol. It is accompanied by acetone as a<lb/> co-product. Cumene is oxidized with oxygen to form cumene hydroperoxide. The<lb/> peroxide is subsequently decomposed to phenol and acetone, using a strong mineral<lb/> acid as catalyst. The products are purified in a series of distillation columns. The<lb/> cumene-to-phenol process is described in more detail in this chapter. An overview<lb/> is given about synthetic routes via direct oxidation of benzene. None of these<lb/> alternative routes has been commercialized. The chapter also gives an overview<lb/> of global supply and use of phenol in 2008. Finally, the main natural sources and<lb/> synthetic routes for cresols, xylenols, resorcinol, and bisphenol-A are described.<lb/> These components are used as comonomers for special phenolic resins.<lb/></div>
+
+	<note type="other">Abbreviations<lb/> ACP Acetophenone<lb/> AMS a-Methylstyrene<lb/> BP Boiling point<lb/> BPA Bisphenol-A<lb/> BWWT Biological Waste Water Treatment<lb/> CHP Cumene hydroperoxide<lb/> DAA Diactone alcohol<lb/> DCP Dicumyl peroxide<lb/></note>
+	
+	<byline>
+	<docAuthor>M. Weber (*) and M. Weber<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>INEOS Phenol GmbH,</affiliation>
+	</byline>
+
+	<address>Dechenstrasse 3, 45966 Gladbeck, Germany<lb/></address>
+
+	<email>e-mail: manfred.weber@ineos.com<lb/></email>
+
+	<reference>L. Pilato (ed.), Phenolic Resins: A Century of Progress,<lb/></reference>
+
+	<idno type="DOI">DOI 10.1007/978-3-642-04714-5_2</idno>
+
+		</front>
+	</text>
+</tei>

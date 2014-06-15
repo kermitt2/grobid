@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">Department of Electrical Engineering</orgName>
+							<lb/>
+							<address>
+								<addrLine>Studentenadministratie Den Dolech 2</addrLine>,
+								<postCode>5612 AZ</postCode>
+								<settlement>Eindhoven</settlement>
+								<lb/>
+								<postBox>P.O. Box 513</postBox>,
+								<postCode>5600 MB</postCode>
+								<settlement>Eindhoven</settlement>
+								<lb/>
+								<country>The Netherlands</country>
+							<lb/>
+							</address>
+							<orgName type="institution">Eindhoven University of Technology</orgName>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

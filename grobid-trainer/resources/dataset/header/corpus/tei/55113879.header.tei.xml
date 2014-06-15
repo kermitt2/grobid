@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55113879"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note>895.3<lb/></note>
+
+	<docTitle>
+	<titlePart>Promoting Dendritic Cell Migration by Airway<lb/> Epithelial Cells through Interleukin-17A-Induced<lb/> CCL20 Expression<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Li Yi n Hung, Fei Hua ng, Ti f f a ny T. Nguy en a nd Reen W u<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>U. California, </affiliation>
+	</byline>
+
+	<address>Davis, Davis, CA<lb/></address>
+
+	<div type="abstract">ABST R ACT<lb/> We previously demonstrated that IL-17A is a potent inducer of both human<lb/> β-defensin (hBD) 2 and CCL20/macrophage inflammatory protein (MIP)-3<lb/> expression in well-differentiated primary human airway epithelial cell (AEC)<lb/> cultures. In addition to having a common anti-microbial activity, both hBD2 and<lb/> CCL20 are principal chemotactic ligands specific to CCR6-positive dendritic<lb/> cells (DC) and T lymphocytes. To further explore the chemotactic significance of<lb/> IL-17A in the mouse model, we conducted studies using isolated primary mouse<lb/> AECs and Cc10-Il17 transgenic animals. Consistent with human AECs,<lb/> well-differentiated mouse AECs also expressed elevated mCcl20 when treated<lb/> with mIL-17A. This induction was time-and dose-dependent on the IL-17A<lb/> treatment, and the induction was inhibited by isohelenin, a specific inhibitor of<lb/> NF-B activation. Chemotactic assays showed that conditioned media from<lb/> mIL-17A-treated mouse AEC cultures stimulated the migration of CCR6-positive<lb/> mouse bone marrow-derived dendritic cells (BMDC) in vitro; this chemotactic<lb/> activity was blocked by anti-CCL20 neutralizing antibody. We found a<lb/> persistent elevation of mCcl20 message and the presence of CCR6-positive DCs<lb/> in bronchoalveolar lavage fluids, accompanied by increased mucin production in<lb/> the lungs of Cc10-Il17 transgenic mice, which overexpress IL-17A specifically in<lb/> the airway. Blocking the migration of CCR6 expressing cells in vivo lowered<lb/> mucin production in the airway. These results suggest a functional role of<lb/> IL-17A/CCL20 in regulating CCR6-positive DC migration and mucous cell<lb/> metaplasia.<lb/></div>
+
+	<note type="grant">This research was supported in part by grants from NIH (HL077902, HL077315,<lb/> and ES00628)</note>
+
+		</front>
+	</text>
+</tei>

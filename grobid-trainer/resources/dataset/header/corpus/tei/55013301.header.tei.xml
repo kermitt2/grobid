@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013301"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Review L-Fucose: occurrence, physiological role,<lb/> chemical, enzymatic and microbial synthesis<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Petra T Vanhooren and Erick J Vandamme*<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Laboratory of Industrial Microbiology and Biocatalysis, Department of Biochemical and Microbial Technology, Faculty of Agricultural and<lb/> Applied Biological Sciences, University of Gent,</affiliation>
+	</byline>
+
+	<address>Coupure links 653, B-9000 Gent, Belgium<lb/></address>
+
+	<div type="abstract">Abstract: An easy source of unusual monosaccharides such as the 6-deoxyhexose, L-fucose are certain<lb/> microbial extracellular polysaccharides (EPS), best known for their thickening, gelling or emulsifying<lb/> properties. L-Fucose and L-fucose containing oligosaccharides have potential application in the<lb/> medical ®eld in preventing tumour cell colonisation of the lung (anticancer effect), in controlling the<lb/> formation of white blood cells (anti-in¯ammatory effect), in the treatment of rheumatoid arthritis, in<lb/> the synthesis of antigens for antibody production (rational immunisation) and in cosmeceuticals as<lb/> skin moisturing agent. L-Fucose production via chemical synthesis is laborious and suffers from low<lb/> yield, while direct extraction from brown algae is costly and subject to seasonal variations in supply<lb/> volume and quality. Enzymatic synthesis is currently under investigation. Chemical or enzymatic<lb/> hydrolysis of L-fucose-rich microbial EPS opens up a new route towards ef®cient L-fucose production.<lb/> This review deals with the properties, occurrence, physiological roles, chemical, enzymatic and<lb/> microbial production of L-fucose.<lb/> #</div>
+
+	<note type="copyright">&#169;1999 Society of Chemical Industry<lb/></note>
+
+	<keyword>Keywords: exopolysaccharide; L-fucose; occurrence; biosynthesis; physiological role<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

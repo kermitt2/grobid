@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014730"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Nova Biotechnologica 9-2 (2009)<lb/></reference>
+
+	<note type="page">205<lb/></note>
+
+	<docTitle>
+	<titlePart>CHLORINE PRODUCTION FOR WATER<lb/> DISINFECTION BY THE MEANS OF<lb/> PHOTOVOLTAIC PANELS<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>STANISLAV HOSTIN<lb/> 1<lb/> , PETER BENEDIKOVIČ<lb/> 2<lb/> , ANNA MICHALÍKOVÁ<lb/> 2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Department of Biotechnology, University of SS. Cyril and Methodius,</affiliation>
+	</byline>
+
+	<address>J. Herdu 2,<lb/>Trnava, SK-917 01, Slovak Republic</address>
+
+	<email>(stanislav.hostin@ucm.sk)<lb/></email>
+
+	<byline>
+	<affiliation>2<lb/> Slovak University of Technology in Bratislava, Faculty of Materials Science and<lb/> Technology in Trnava, Institute of Safety and Environmental Engineering,<lb/> Department of Environmental Engineering,</affiliation>
+	</byline>
+
+	<address>Botanická 49, Trnava, SK-917 08, Slovak<lb/> Republic</address>
+
+	<email>(anna.michalikova@stuba.sk)<lb/></email>
+
+	<div type="abstract">Abstract: In this contribution a possibility of electrochemical production of chlorine for water disinfection,<lb/> by using photovoltaic panels from solar energy, is described. A simple way of chloride production by<lb/> means of a photovoltaic panel, comparable with classical electrical power source was performed on an<lb/> experimental device. By using photovoltaic panel with nominal output 50 W and solar irrigation 380 –<lb/> 550 W/m<lb/> 2 chlorine production was 0.3 mg/min, which represents amount of chlorine sufficient for<lb/> disinfections of approximately 4000 l water per day.<lb/></div>
+
+	<keyword>Key words: chlorine production, disinfection of water, solar energy, photovoltaic panel<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

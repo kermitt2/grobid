@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55113546"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<docAuthor>S. J. KONTUREK 1 , P. C. KONTUREK 2 , T. BRZOZOWSKI 1 , G. A. BUBENIK 3<lb/></docAuthor>
+	</byline>
+
+	<docTitle>
+	<titlePart>ROLE OF MELATONIN IN UPPER GASTROINTESTINAL TRACT<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<affiliation>1 Department of Physiology, Jagiellonian University Medical College,</affiliation>
+	</byline>
+
+	<address>Cracow, Poland;<lb/></address>
+
+	<byline>
+	<affiliation>2 First Department of Medicine, University Erlangen-Nuremberg,</affiliation>
+	</byline>
+
+	<address>Erlangen, Germany;<lb/></address>
+
+	<byline>
+	<affiliation>3 Department of Integrative Biology, University of Guelph,</affiliation>
+	</byline>
+
+	<address>Guelph, Ontario, Canada<lb/></address>
+
+	<div type="abstract">Melatonin, an indole formed enzymatically from L-tryptophan, is the most versatile<lb/> and ubiquitous hormone molecule produced not only in all animals but also in some<lb/> plants. This review focuses on the role of melatonin in upper portion of<lb/> gastrointestinal tract (GIT), including oral cavity, esophagus, stomach and<lb/> duodenum, where this indole is generated and released into the GIT lumen and into<lb/> the portal circulation to be uptaken, metabolized by liver and released with bile into<lb/> the duodenum. The biosynthetic steps of melatonin with two major rate limiting<lb/> enzymes, arylalkylamine-N-acetyltransferase (AA-NAT) and hydroxyindole-O-<lb/>methyltransferase (HIOMT), transforming tryptophan to melatonin, originally<lb/> identified in pinealocytes have been also detected in entero-endocrine (EE) cells of<lb/> GIT wall, where this indole may act via endocrine, paracrine and/or luminal pathway<lb/> through G-protein coupled receptors. Melatonin in GIT was shown to be generated<lb/> in about 500 times larger amounts than it is produced in pineal gland. The production<lb/> of melatonin by pineal gland shows circadian rhythm with high night-time peak,<lb/> especially at younger age, followed by the fall during the day-light time. As a highly<lb/> lipophilic substance, melatonin reaches all body cells within minutes, to serve as a<lb/> convenient circadian timing signal for alteration of numerous body functions..<lb/> Following pinealectomy, the light/dark cycle of plasma melatonin levels disappears,<lb/> while its day-time blood concentrations are attenuated but sustained mainly due to its<lb/> release from the GIT. After oral application of tryptophan, the plasma melatonin<lb/> increases in dose-dependent manner both in intact and pinealectomized animals,<lb/> indicating that extrapineal sources such as GIT rather than pineal gland are the major<lb/> producers of this indole. In the upper portion of GIT, melatonin exhibits a wide<lb/> spectrum of activities such as circadian entrainment, free radicals scavenging<lb/> activity, protection of mucosa against various irritants and healing of various GIT<lb/> lesions such as stomatitis, esophagitis, gastritis and peptic ulcer. This review<lb/> concentrates on the generation and pathophysiological implication of melatonin in<lb/> upper GIT.<lb/></div>
+
+	<keyword>K e y w o r d s : melatonin, esophagitis, gastritis, gastric ulcer, prostaglandins, nitric oxide,<lb/> sensory nerves<lb/>
+	</keyword>
+
+	<reference>JOURNAL OF PHYSIOLOGY AND PHARMACOLOGY 2007, 58, Suppl 6, 2352<lb/></reference>
+
+	<ptr type="web">www.jpp.krakow.pl<lb/></ptr>
+
+		</front>
+	</text>
+</tei>

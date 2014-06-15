@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55115151"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Catalysis for Low Temperature Fuel Cells<lb/> PART I: THE CATHODE CHALLENGES<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>By T. R. Ralph and M. P. Hogarth<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Johnson Matthey Technology Centre, </affiliation>
+	</byline>
+
+	<address>Blounts Court, Sonning Common, Reading RG4 9NH. U.K.<lb/></address>
+
+	<div type="abstract">Much of the pegotmance still to be gained in proton exchange membranefuel cells (PEMFCs)<lb/> in use today is available from improvements to the cathode, traditionally made from unsupported<lb/> or carbon-supported platinum. The search for improved cathode electrocatalysts has resulted<lb/> in the development ofplatinum alloys which iftailored to the desired stack operating conditions<lb/> can double the activiry for oxygen reduction. Recently advances have been made in cathode<lb/> design which have raised perjormance levels in PEMFCs. The new electrocatalysts and cathode<lb/> designs have increased electrical eficienc.y and power densities to the PEMFC stack, needed<lb/> for commercial use. Improvements have also been achieved at the anode, by developments<lb/> in platinum-ruthenium anodes for carbon monoxide and cell reversal tolerance. In this first<lb/> paper; new cathode materials and designs are discussed; a second paper to be published in<lb/> the April issue will look at anode advances.<lb/></div>
+
+		</front>
+	</text>
+</tei>

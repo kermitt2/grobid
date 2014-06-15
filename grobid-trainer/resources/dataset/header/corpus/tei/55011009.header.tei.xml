@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011009"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Software as a service<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">From Wikipedia, the free encyclopedia<lb/>This is an old revision of this page, as edited by 203.210.82.46 (talk) at 03:31, 26 August 2010. It may differ significantly from the current revision<lb/> (//en.wikipedia.org/wiki/Software_as_a_service) .<lb/> (diff) ← Previous revision | Latest revision (diff) | Newer revision → (diff)<lb/></note>
+
+		</front>
+	</text>
+</tei>

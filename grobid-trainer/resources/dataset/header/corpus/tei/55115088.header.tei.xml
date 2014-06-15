@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei type="web">
+	<teiHeader>
+		<fileDesc xml:id="55115088"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Photo Tip of the Week<lb/> Gamut Warnings and What to Do About Them<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">Printe rs can only display a lim ite d range of colors, k nown as the ir gam ut.<lb/> Photoshop can provide warnings for im age colors that lie outside your<lb/> printe r&apos;s gam ut via soft proofing. But the re al que stion is, what do you do<lb/> about the m once you ide ntify the m ?<lb/> Fix ing out of gam ut colors can be broke n down into a two-ste p proble m :<lb/> finding the proble m colors, and fix ing the m . At le ast som e re ade rs will<lb/> alre ady be fam iliar with this first ste p, but this include s you, be ar with a<lb/> m inute while I ge t e ve ryone on the sam e page with a brie f introduction to<lb/> soft proofing.<lb/> Im age file s, re gardle ss of source , e x ist in som e color space . This m e ans<lb/> the ir colors are de fine d using som e variation of standard color m ode l. For<lb/> photographic im age s, I&apos;m going to assum e throughout that we are talk ing<lb/> about the R GB color m ode l that use s se ts of thre e colors, one e ach for re d,<lb/> gre e n and blue , to de fine colors. But not all R GB color space s are cre ate d<lb/> e qual, with som e capable of de scribing a broade r range of colors than<lb/> othe rs. In orde r to m ax im ize the be ne fit from the available bit de pth, the<lb/> num be ring sche m e use d by e ach color space optim ize s the range of<lb/> de scribable colors to be st m atch the inte nde d purpose . In othe r words, a<lb/> m onitor profile is optim ize d to de scribe colors possible on a give n m onitor,<lb/> a printe r profile is ge are d to de scribing colors unique to spe cific printe r and<lb/> pape r com binations, and so on. Docum e nt work ing space profile s such as<lb/> Adobe R GB and ProPhoto R GB have be e n de fine d by various industry<lb/> bodie s for saving im age s so that the y are n&apos;t tie d to any spe cific m onitor or<lb/> printe r.</div>
+
+		</front>
+	</text>
+</tei>

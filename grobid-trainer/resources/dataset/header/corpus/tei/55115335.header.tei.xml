@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei type="white-paper">
+	<teiHeader>
+		<fileDesc xml:id="55115335"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Co mp e t i t i v e Di s p l a y<lb/> T e c h n o l o g i e s<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Wh i t e P a p e r I </note>
+
+	<date>J u n e 2 0 0 9</date>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei type="white-paper">
+	<teiHeader>
+		<fileDesc xml:id="55114592"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>VMware vSphere<lb/> ™<lb/> 4:<lb/> The CPU Scheduler in<lb/> VMware ESX<lb/> ™<lb/> 4<lb/> </titlePart>
+	</docTitle>
+
+	<note type="other">W H I T E P A P E R<lb/></note>
+
+	<docTitle>
+	<titlePart>VMware vSphere 4: The CPU<lb/> Scheduler in VMware ESX 4<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">T E C H N I C A L W H I T E P A P E R / 2<lb/></note>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,84 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012217"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Journal of Microbiology and Antimicrobials Vol. 2(4), pp. 36-46, July 2010<lb/></reference>
+
+	<ptr type="web">Available online http://www.academicjournals.org/JMA<lb/></ptr>
+
+	<idno>ISSN 1996-0875</idno>
+
+	<note type="copyright">©2010 Academic Journals<lb/></note>
+
+	<note type="other">Full Length Research Paper<lb/></note>
+
+	<docTitle>
+	<titlePart>Comparative analysis of antibacterial activities of<lb/> Xenorhabdus species on related and non-related<lb/> bacteria in vivo<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>András Fodor<lb/> 1,2,4<lb/> *, Andrea M. Fodor<lb/> 2,7<lb/> , Steven Forst<lb/> 3<lb/> , Joseph S. Hogan<lb/> 4<lb/> , Michael G. Klein<lb/> 5<lb/> , Katalin Lengyel<lb/> 2<lb/> , Gyula Sáringer<lb/> 1<lb/> , Erko Stackebrandt<lb/> 6<lb/> , R. A. J. Taylor<lb/> 5<lb/> and Éva Lehoczky<lb/> 1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1<lb/> Institute of Plant Protection, Georgikon Faculty, University of Pannonia,</affiliation>
+	</byline>
+
+	<address>H-8360 Keszthely, Deák Ferenc utca 17,<lb/> Hungary.<lb/></address>
+
+	<byline>
+	<affiliation>2<lb/> Institute of Biology, Departments Genetics and Biochemistry, Faculty of Natural Sciences, Eötvös University,
+	</affiliation>
+	</byline>
+
+	<address>Pázmány<lb/> Péter sétány 1C, Budapest, Hungary, H-1117; Hungary.<lb/></address>
+
+	<byline>
+	<affiliation>3<lb/> Department of Biology, </affiliation>
+	</byline>
+	
+	<address>Lapham Hall, Milwaukee, WI; </address>
+	
+	<byline>
+	<affiliation>University of Wisconsin-Milwaukee,</affiliation>
+	</byline>
+
+	<address>Arizona USA.<lb/></address>
+
+	<byline>
+	<affiliation>4<lb/> Department of Animal Sciences, The Ohio State University (OSU), OARDC, </affiliation>
+	</byline>
+
+	<address>1680 Madison Avenue Wooster, Ohio<lb/> 44691; USA.<lb/></address>
+
+	<byline>
+	<affiliation>5<lb/> Department of Entomology, OSU, OARDC,</affiliation>
+	</byline>
+
+	<address>1680 Madison Avenue Wooster, Ohio 44691; USA.<lb/></address>
+
+	<byline>
+	<affiliation>6<lb/> DSMZ, Deutsche Sammlung von Mikroorganizmen und Zellkulturen GmbH, </affiliation>
+	</byline>
+
+	<address>Braunschweig, Germany.<lb/> </address>
+	
+	<byline>
+	<affiliation>7<lb/> MCIC, OSU, OARDC, </affiliation>
+	</byline>
+	
+	<address>1680 Madison Avenue Wooster, Ohio 44691, USA.<lb/> </address>
+
+	<note type="submission">Accepted 25 June, 2010<lb/></note>
+
+	<div type="abstract">Insect-nematode-bacterium mutualistic associations provide attractive systems for discovery of inter<lb/> kingdom signal compounds and antibiotics. A better understanding of the biological meaning of the<lb/> inter-specific diversity of compounds with antimicrobial activity of the Steinernema-symbiont<lb/> Xenorhabdus bacteria may provide options for simultaneous applications in pathogen control. Anti-<lb/>bacterial activities of representative strains of Xenorhabdus budapestensis, Xenorhabdus szentirmaii,<lb/> Xenorhabdus innexi, Xenorhabdus ehlersii, Xenorhabdus nematophila, Xenorhabdus bovienii and<lb/> Xenorhabdus cabanillassii were tested on non-related (Escherichia coli, Klebsiella pneumoniae,<lb/> Staphylococcus aureus) bacteria and on each other by previously published bioassays. All active<lb/> compounds were adsorbed by Amberlite<lb/> R XAD1180. Chemical and thermal stability of antibacterial<lb/> factors were determined. Antibiotic factors produced by different Xenorhabdus species against each<lb/> other differ from those used against other competing bacterial genera. Anti-Xenorhabdus activity of the<lb/> cell-free medium and sensitivity of the cells of other Xenorhabdus strains negatively correlated in X.<lb/> innexi and X. bovienii. Some activity remained unchanged during high pressure and 121°C for 10 min.<lb/> The first comparative analysis of the intraspecific antibacterial activities of Xenorhabdus species<lb/> demonstrated that some Xenorhabdus species with strong antibacterial activity could be co-cultured<lb/> and they might be used simultaneously for pathogen control.<lb/></div>
+
+	<keyword>Key words: Xenorhabdus, autoclaveable antimicrobials, intra-generic, cross-tolerance.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014589"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">T e c h n i c a l B u l l e t i n<lb/></note>
+
+	<docTitle>
+	<titlePart>CytoTox-ONE™<lb/> Homogeneous Membrane<lb/> Integrity Assay<lb/></titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

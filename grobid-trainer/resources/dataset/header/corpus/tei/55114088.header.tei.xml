@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei type="web">
+	<teiHeader>
+		<fileDesc xml:id="55114088"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>About Status Bars<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">Status bars display a collection of status items that provide interaction with or feedback to the user. A<lb/> status item can be displayed with text or an icon, can provide a menu or send a target-action<lb/> message when clicked, or can be a fully customized view that you create.<lb/> Only one status bar, the system status bar, is currently available. It resides in the system-wide menu<lb/> bar as shown in Figure 1. Status items appear on the right side of the menu bar, just to the left of the<lb/> menu bar clock and Menu Extras, such as the Displays and Sound menus. The items remain in the<lb/> menu bar even when your application is not in the foreground.<lb/> Figure 1 System status bar<lb/> Each new item is added to the left of pre-existing items. When an item is removed, items to the left<lb/> of it shift to the right to reclaim its space. If the status bar extends into the current application&apos;s<lb/> menu bar, the leftmost status items are hidden to make room for the menus.<lb/></div>
+
+	<note type="copyright">Copyright © 2002 Apple Computer, Inc. All Rights Reserved. Terms of Use </note>
+
+	<note type="other">| Privacy Policy | Updated:<lb/></note>
+
+	<date>2002-11-12</date>
+
+		</front>
+	</text>
+</tei>

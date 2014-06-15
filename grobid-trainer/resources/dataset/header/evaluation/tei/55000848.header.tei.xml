@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000848"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Advances in Consumer Research Volume 20, 1993 Pages 336-340<lb/></reference>
+
+	<docTitle>
+	<titlePart>THE INFLUENCE OF BACKGROUND MUSIC ON SHOPPING BEHAVIOR:<lb/> CLASSICAL VERSUS TOP-FORTY MUSIC IN A WINE STORE<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Charles S. Areni,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Texas Tech University<lb/></affiliation>
+	</byline>
+
+	<byline>
+	<docAuthor>David Kim,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Texas Tech University<lb/></affiliation>
+	</byline>
+
+	<div type="abstract">As part of a field experiment in a large U.S. city, the background music (classical versus<lb/> Top-Forty) in a centrally located wine store was varied over a two month period. The<lb/> results of an ANOVA indicated that the classical music influenced shoppers to spend<lb/> more money. Additional findings suggest that, rather than increasing the amount of wine<lb/> purchased, customers selected more expensive merchandise when classical music was<lb/> played in the background. MacInnis and Park&apos;s (1991) notion that music is more<lb/> persuasive when it &quot;fits&quot; the persuasion context is employed to account for these results.<lb/></div>
+
+		</front>
+	</text>
+</tei>

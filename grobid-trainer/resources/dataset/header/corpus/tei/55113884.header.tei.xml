@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55113884"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>HYBRID MUSIC RECOMMENDATION BASED ON DIFFERENT DIMENSIONS OF<lb/> AUDIO CONTENT AND AN ENTROPY MEASURE<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Zehra Çataltepe and Berna Altinel<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Istanbul Technical University, Computer Engineering Dept,</affiliation>
+	</byline>
+
+	<address>Maslak, Istanbul, Turkey<lb/></address>
+
+	<div type="abstract">ABSTRACT<lb/> Our music recommendation system recommends a song to a<lb/> user, at a certain time, based on the listening history of the<lb/> user. Based on different sets of audio features (MFCC,<lb/> MPITCH, BEAT, STFT) of all available songs, different<lb/> clusterings of songs are obtained. Users are given recom-<lb/>mendations from one of these clusterings. The right cluster-<lb/>ing for a user is determined based on the Shannon entropy<lb/> of the distribution of songs the user listened in each cluster-<lb/>ing. Using this content based recommendation scheme, as<lb/> opposed to a static set of features resulted in upto 60 percent<lb/> increase in recommendation success.<lb/> In addition to the audio features (content) of songs user lis-<lb/>tened, the singers for the songs and also the most popular<lb/> songs at the time of recommendation are also available. We<lb/> introduce two recommendation algorithms that decide on<lb/> the weight of content cluster, singer cluster and popularity<lb/> adaptively for each user, based on the user history. Our ex-<lb/>periments on user session data consisting of 2000 to 500<lb/> sessions and of length 5 to 15 indicate that these adaptive<lb/> recommendation schemes give better recommendation re-<lb/>sults than using only content based recommendation.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55115177"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>MULTIPLE DYNAMIC PERSPECTIVES TO INDUSTRIAL PROCESSES<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Katja Einsfeld, Achim Ebert<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Computer Science Department<lb/></affiliation>
+	</byline>
+
+	<address>TU Kaiserslautern<lb/> Germany</address>
+
+	<email>email: [einsfeld,ebert]@informatik.uni-kl.de<lb/></email>
+
+	<byline>
+	<docAuthor>Jürgen Wölle, Heidrun Steinmetz<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institute of Urban Water Management<lb/></affiliation>
+	</byline>
+
+	<address>TU Kaiserslautern<lb/> Germany</address>
+
+	<email>email: [woelle,hsteinme]@rhrk.uni-kl.de<lb/></email>
+
+	<div type="abstract">ABSTRACT The efficient operation of complex industrial processes re-<lb/>quires the organization of large amounts of heterogeneous<lb/> data. We explain that both, these data characteristics as<lb/> well as the need for context sensitive information inter-<lb/>faces, require the design of visualizations with multiple dy-<lb/>namic perspectives on the data. The benefits of animated<lb/> 3D information visualization are stated and an efficient mo-<lb/>tion parallax technique is proposed. Additionally, a navi-<lb/>gation concept for information rich semantic 3D environ-<lb/>ments that frees the user from part of the mental load is de-<lb/>scribed. We present new metaphors for visualizing the data<lb/> in those perspectives like Cone-View, animated 3D Explo-<lb/>sion View, and Rotary Diagram. Moreover, a labeling tech-<lb/>nique for dynamic 3D environments is explained.<lb/> Although still at an early state of development, our<lb/> implementation of this toolbox of concepts, metaphors, and<lb/> techniques promises to indicate an new generation of in-<lb/>dustrial process visualization systems.<lb/></div>
+
+	<keyword>KEY WORDS<lb/> Visual Information Systems, Environmental Sciences, Pro-<lb/>cess Visualization, Multiple Perspectives, Information Vi-<lb/>sualization Metaphors, Labeling<lb/> </keyword>
+
+	<div type="introduction">1 Motivation<lb/>Due to advances in process engineering, process data<lb/> acquisition, and more rigorous water protection legisla-<lb/>tion, the management of Waste Water Treatment Plants<lb/> (WWTP) becomes more complex. Nowadays, the plant<lb/> operator has access not only to some timeworn filers and<lb/> few measured parameters but to numerous on-line and off-<lb/>line parameters that characterize the current state of the<lb/> plant in detail. Few WWTPs are already provided with<lb/> Decision Support Systems (DSS), which leverage artificial<lb/> intelligence methods to suggest problem solving and pro-<lb/>cess optimization strategies to the operator. Moreover, dis-<lb/>tributed online general expert databases and specific sup-<lb/>port pages of plant manufactures are accessible through the<lb/> World Wide Web. Thus, the operator is overwhelmed with<lb/> predominantly unstructured data. He is overstrained with<lb/> the task of finding relevant information, spotting important<lb/> trends, and detecting optimization potential. In the worst<lb/> case the operator is even overloaded with irrelevant infor-<lb/>mation and consequently no longer able to respond ade-<lb/>quately to exceptional circumstances in the plant.<lb/> This is a typical application situation where intelligent<lb/> information systems as well as state of the art information<lb/> visualization user interfaces are needed to cope with the<lb/> requirements of the information age. The intelligent infor-<lb/>mation system has to collect the raw data from distributed<lb/> and heterogeneous sources and accumulate it with seman-<lb/>tics. This step transforms unstructured data into process-<lb/>able information. The second step that is needed to trans-<lb/>form information into user insight, knowledge, and cogni-<lb/>tion can be enormously facilitated by information visual-<lb/>ization techniques.<lb/> In our paper we discuss how information visualization<lb/> techniques can be leveraged to make complex semantic in-<lb/>formation environments intuitively operatable for domain-<lb/>experts as well as newcomers. We present an information<lb/> visualization system with multiple dynamic perspectives<lb/> which is applied to WWTPs but is flexible enough to be<lb/> easily adapted to other application areas like software visu-<lb/>alization, document spaces, or ontologies.<lb/> The remainder of this paper is structured as follows:<lb/> First we analyse the requirements of current process visu-<lb/>alization systems in section 2. After that, the state of the art<lb/> in Process Visualization (section 3) as well as Information<lb/> Visualization (section 4) is described. Section 5 elaborates<lb/> on various aspects, concepts, and metaphors of information<lb/> environment design and section 6 draws some final conclu-<lb/>sions.</div>
+
+		</front>
+	</text>
+</tei>

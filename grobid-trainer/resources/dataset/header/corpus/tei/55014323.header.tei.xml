@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014323"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>ENUM based Number Portability in VoIP and IMS Networks<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Mario Ivček<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Research &amp; Development Centre<lb/> ERICSSON Nikola Tesla d.d.<lb/></affiliation>
+	</byline>
+
+	<address>Krapinska 45, 10002 Zagreb, Croatia<lb/></address>
+
+	<phone>Telephone: +385 1 365 4619 Fax: +385 1 365 3548 </phone>
+
+	<email>E-mail: mario.ivcek@ericsson.com<lb/></email>
+
+	<div type="abstract">Abstract – Number portability is today implemented only in<lb/> the Public Switched Telephony Networks (PSTN) by utilizing<lb/> Intelligent Network (IN) functions for number mapping. At<lb/> the time being, there is no specific solution for number<lb/> portability across Voice over IP (VoIP) and IP Multimedia<lb/> Subsystem (IMS) networks. Limited portability can be<lb/> implemented in IP telephony network using redirect and<lb/> proxy servers that forward calls to gateways based on routing<lb/> number. This paper discuss possibility of using E.164 Number<lb/> Mapping (ENUM) for number portability in VoIP and IMS<lb/> networks, based on the most recent IETF enum working<lb/> group achievements.<lb/></div>
+
+		</front>
+	</text>
+</tei>

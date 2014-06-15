@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011948"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Hybrid Access Reconfigurable<lb/> Multi-wavelength Optical Networks<lb/> for IP-based Communication Systems<lb/> Whitepaper<lb/></titlePart>
+	</docTitle>
+
+	<date>March 29, 2001<lb/></date>
+
+	<byline>
+	<docAuthor>Jeroen Wellen<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Bell Labs Advanced Technologies<lb/> Lucent Technologies<lb/> </affiliation>
+
+	<note type="other">Whitepaper<lb/></note>
+	
+	</byline>
+
+		</front>
+	</text>
+</tei>

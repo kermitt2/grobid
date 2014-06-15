@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009300"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Software Release 8.5.0<lb/></note>
+
+	<docTitle>
+	<titlePart>User Identification<lb/> and Authentication<lb/> User Identification &amp; Authentication<lb/> </titlePart>
+	</docTitle>
+
+	<note type="page">ii<lb/></note>
+	
+	<note type="copyright">© Copyright 1996-2007. Finjan, Inc. and its affiliates and subsidiaries (&quot;Finjan&quot;). All rights reserved.<lb/></note>
+
+		</front>
+	</text>
+</tei>

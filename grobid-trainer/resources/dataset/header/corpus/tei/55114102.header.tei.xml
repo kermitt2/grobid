@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei type="wiki">
+	<teiHeader>
+		<fileDesc xml:id="55114102"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Example of a personal<lb/> navigation assistant.<lb/></note>
+
+	<docTitle>
+	<titlePart>Personal navigation assistant<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">From Wikipedia, the free encyclopedia<lb/> This is an old revision of this page, as edited by 92.29.130.216 (talk) at 02:22, 10 January<lb/> 2013. It may differ significantly from the current revision (//en.wikipedia.org<lb/> /wiki/Personal_navigation_assistant).<lb/> (diff) ← Previous revision | Latest revision (diff) | Newer revision → (diff)<lb/> See also: GPS navigation device, automotive navigation system, and<lb/> global navigation satellite system<lb/></note>
+
+		</front>
+	</text>
+</tei>

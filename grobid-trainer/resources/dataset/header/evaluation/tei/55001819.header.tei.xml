@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001819"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Mining and Summarizing Customer Reviews<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Minqing Hu and Bing Liu<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Computer Science<lb/> University of Illinois at Chicago<lb/></affiliation>
+	</byline>
+
+	<address>851 South Morgan Street<lb/> Chicago, IL 60607-7053<lb/></address>
+
+	<email>{mhu1, liub}@cs.uic.edu<lb/></email>
+
+	<div type="abstract">ABSTRACT<lb/> Merchants selling products on the Web often ask their customers<lb/> to review the products that they have purchased and the<lb/> associated services. As e-commerce is becoming more and more<lb/> popular, the number of customer reviews that a product receives<lb/> grows rapidly. For a popular product, the number of reviews can<lb/> be in hundreds or even thousands. This makes it difficult for a<lb/> potential customer to read them to make an informed decision on<lb/> whether to purchase the product. It also makes it difficult for the<lb/> manufacturer of the product to keep track and to manage customer<lb/> opinions. For the manufacturer, there are additional difficulties<lb/> because many merchant sites may sell the same product and the<lb/> manufacturer normally produces many kinds of products. In this<lb/> research, we aim to mine and to summarize all the customer<lb/> reviews of a product. This summarization task is different from<lb/> traditional text summarization because we only mine the features<lb/> of the product on which the customers have expressed their<lb/> opinions and whether the opinions are positive or negative. We do<lb/> not summarize the reviews by selecting a subset or rewrite some<lb/> of the original sentences from the reviews to capture the main<lb/> points as in the classic text summarization. Our task is performed<lb/> in three steps: (1) mining product features that have been<lb/> commented on by customers; (2) identifying opinion sentences in<lb/> each review and deciding whether each opinion sentence is<lb/> positive or negative; (3) summarizing the results. This paper<lb/> proposes several novel techniques to perform these tasks. Our<lb/> experimental results using reviews of a number of products sold<lb/> online demonstrate the effectiveness of the techniques.<lb/></div>
+
+	<keyword>Categories and Subject Descriptors<lb/> H.2.8 [Database Management]: Database Applications – data<lb/> mining. I.2.7 [Artificial Intelligence]: Natural Language<lb/> Processing – text analysis.<lb/> General Terms<lb/> Algorithms, Experimentation, Human Factors.<lb/>
+	Keywords<lb/> Text mining, sentiment classification, summarization, reviews.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

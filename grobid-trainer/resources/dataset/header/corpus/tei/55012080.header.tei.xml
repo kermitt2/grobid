@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012080"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="copyright">Copy holder<lb/>The Department of Electrical Engineering of the Eindhoven University of Technology accepts<lb/> no reponsibility for the contents of M.Sc. theses or practical training reports<lb/></note>
+
+	<byline>
+	<affiliation>Department of Electrical Engineering<lb/> Studentenadministratie<lb/></affiliation>
+	</byline>
+
+	<address>Den Dolech 2, 5612 AZ Eindhoven<lb/> P.O. Box 513, 5600 MB Eindhoven<lb/> The Netherlands<lb/></address>
+
+	<ptr type="web">http://w3.ele.tue.nl/nl/<lb/></ptr>
+
+	<byline>
+	<docAuthor>Author<lb/> Yili Hu<lb/></docAuthor>
+	</byline>
+
+	<note type="other">Order issuer<lb/> Prof. De Haan<lb/> Group/Chair: Electronic Systems<lb/> Reference<lb/> Series: Master graduation<lb/> paper, Electrical Engineering<lb/></note>
+
+	<date>Date<lb/> 30 August 2010<lb/></date>
+
+	<docTitle>
+	<titlePart>Pixel-Based Skin Detection using<lb/> Multispectral Imaging<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Prof. De Haan<lb/></docAuthor>
+	</byline>
+
+	<docTitle>
+	<titlePart>Pixel-Based Skin Detection using Multispectral Imaging<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Yili Hu<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Eindhoven University of Technology<lb/></affiliation>
+	</byline>
+
+	<email>y.hu@student.tue.nl<lb/></email>
+
+	<div type="abstract">Abstract<lb/> In the computer vision domain, many applications could<lb/> greatly benefit from the availability of multispectral mea-<lb/>surement. In this paper we show how to create a skin detec-<lb/>tor by measuring multispectral data.<lb/> To obtain the multispectral data, we have built a system<lb/> using multiple LEDs with different spectra to illuminate the<lb/> scene and a conventional RGB camera to acquire images.<lb/> A methodology is proposed in this paper to avoid strict ex-<lb/>perimental environment requirement, by adopting a simple<lb/> training procedure which is tuned for the recognition of hu-<lb/>man skin. Next a specific feature set is defined and corre-<lb/>sponding normalization method is designed to improve the<lb/> robustness of skin detection to changes in skin color and<lb/> incident light, issues not addressed by available prior art.<lb/> At last we benefit from the power of AdaBoost to create an<lb/> accurate skin detector.<lb/> We conclude that the proposed skin detector classifies<lb/> skin and non-skin materials unaffected by ambient lights.<lb/> We demonstrate the accuracy and effectiveness of our skin<lb/> detector through extensive comparison and evaluation. Our<lb/> proposed detector enables a far superior performance of<lb/> skin detection compared to relevant alternative proposals.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,337 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010559"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<date>July 2010<lb/></date>
+
+	<idno>doc.: IEEE 802.11-09/0992r13<lb/></idno>
+
+	<note type="other">TGac Spec Framework<lb/> </note>
+
+	<note type="page">page 1<lb/> </note>
+
+	<docAuthor>Robert Stacey, </docAuthor>
+
+	<affiliation>Intel<lb/></affiliation>
+
+	<docTitle>
+	<titlePart>IEEE P802.11<lb/> Wireless LANs<lb/> Specification Framework for TGac<lb/></titlePart>
+	</docTitle>
+
+	<date>Date: 2010-07-15<lb/></date>
+
+	<note type="other">Author(s):<lb/> Name Affiliation<lb/> Address Phone<lb/> email<lb/></note>
+
+	<byline>
+	<docAuthor>Robert Stacey<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Intel</affiliation>
+	</byline>
+
+	<address>2111 NE 25<lb/> th Ave, Hillsboro<lb/> OR 97124, USA<lb/> </address>
+
+	<phone>503-724-0893<lb/></phone>
+
+	<email>robert.j.stacey@intel.com<lb/></email>
+
+	<byline>
+	<docAuthor>Eldad Perahia<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Intel</affiliation>
+	</byline>
+
+	<address>2111 NE 25<lb/> th Ave, Hillsboro<lb/> OR 97124, USA<lb/></address>
+
+	<email>eldad.perahia@intel.com<lb/></email>
+
+	<byline>
+	<docAuthor>Adrian Stephens<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Intel<lb/></affiliation>
+	</byline>
+
+	<email>adrian.p.stephens@intel.com<lb/></email>
+
+	<byline>
+	<docAuthor>Assaf Kasher<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Intel<lb/></affiliation>
+	</byline>
+
+	<email>assaf.kasher@intel.com<lb/></email>
+
+	<byline>
+	<docAuthor>Solomon Trainin<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Intel<lb/></affiliation>
+	</byline>
+
+	<email>solomon.trainin@intel.com<lb/></email>
+
+	<byline>
+	<docAuthor>Michelle Gong<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Intel<lb/></affiliation>
+	</byline>
+
+	<email>michelle.x.gong@intel.com<lb/></email>
+
+	<byline>
+	<docAuthor>Raja Banerjea<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Marvell</affiliation>
+	</byline>
+
+	<address>5488 Marvell Lane, Santa<lb/> Clara CA, 95054<lb/> </address>
+
+	<phone>408.222.3713<lb/></phone>
+
+	<email>rajab@marvell.com<lb/></email>
+
+	<byline>
+	<docAuthor>Hongyuan Zhang<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Marvell</affiliation>
+	</byline>
+
+	<address>5488 Marvell Lane, Santa<lb/> Clara CA, 95054<lb/> </address>
+
+	<phone>408.222.1837<lb/></phone>
+
+	<email>hongyuan@marvell.com<lb/></email>
+
+	<byline>
+	<docAuthor>Sudhir Srinivasa<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Marvell</affiliation>
+	</byline>
+
+	<address>5488 Marvell Lane, Santa<lb/> Clara CA, 95054<lb/></address>
+
+	<email>sudhirs@marvell.com<lb/></email>
+
+	<byline>
+	<docAuthor>Yong Liu<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Marvell</affiliation>
+	</byline>
+
+	<address>5488 Marvell Lane, Santa<lb/> Clara CA, 95054<lb/></address>
+
+	<email>yongliu@marvell.com<lb/></email>
+
+	<byline>
+	<docAuthor>Harish Ramamurthy<lb/> Marvell<lb/></docAuthor>
+	</byline>
+
+	<email>harishr@marvell.com<lb/></email>
+
+	<byline>
+	<docAuthor>Ning Zhang<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Atheros</affiliation>
+	</byline>
+
+	<address>5480 Great America Parkway,<lb/> Santa Clara, CA 95054, USA<lb/></address>
+
+	<phone>408-773-5363<lb/> </phone>
+
+	<email>Ning.Zhang@atheros.com<lb/></email>
+
+	<byline>
+	<docAuthor>Youhan Kim<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Atheros</affiliation>
+	</byline>
+
+	<address>5480 Great America Parkway,<lb/> Santa Clara, CA 95054, USA<lb/></address>
+
+	<email>Youhan,Kim@atheros,com<lb/></email>
+
+	<byline>
+	<docAuthor>William McFarland<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Atheros</affiliation>
+	</byline>
+
+	<address>5480 Great America Parkway,<lb/> Santa Clara, CA 95054, USA<lb/></address>
+
+	<email>William.McFarland@atheros.com<lb/></email>
+
+	<byline>
+	<docAuthor>Kai Shi<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Atheros</affiliation>
+	</byline>
+
+	<address>5480 Great America Parkway,<lb/> Santa Clara, CA 95054, USA<lb/></address>
+
+	<email>Kai.Shi@atheros.com<lb/></email>
+
+	<byline>
+	<docAuthor>Joshua Zhao<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Atheros</affiliation>
+	</byline>
+
+	<address>5480 Great America Parkway,<lb/> Santa Clara, CA 95054, USA<lb/></address>
+
+	<email>Joshua.Zhao@atheros.com<lb/></email>
+
+	<byline>
+	<docAuthor>Qifan Chen<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Atheros</affiliation>
+	</byline>
+
+	<address>5480 Great America Parkway,<lb/> Santa Clara, CA 95054, USA<lb/></address>
+
+	<email>Qifan.chen@atheros.com<lb/></email>
+
+	<byline>
+	<docAuthor>James Cho<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Atheros</affiliation>
+	</byline>
+
+	<address>5480 Great America Parkway,<lb/> Santa Clara, CA 95054, USA<lb/></address>
+
+	<email>James.Cho@atheros.com<lb/></email>
+
+	<byline>
+	<docAuthor>Allert Van<lb/> Zelst</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Qualcomm<lb/></affiliation>
+	</byline>
+
+	<address>Netherlands<lb/></address>
+
+	<email>allert@quallcomm.com<lb/></email>
+
+	<byline>
+	<docAuthor>Richard Van<lb/> Nee</docAuthor>
+	</byline>
+	
+	<byline>
+	<affiliation>Qualcomm<lb/></affiliation>
+	</byline>
+
+	<address>Netherlands<lb/></address>
+
+	<email>rvannee@qualcomm.com<lb/></email>
+
+	<byline>
+	<docAuthor>Santosh Abraham<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Qualcomm</affiliation>
+	</byline>
+
+	<address>San Diego, USA<lb/></address>
+
+	<email>sabraham@qualcomm.com<lb/></email>
+
+	<byline>
+	<docAuthor>Hemanth Sampath<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Qualcomm</affiliation>
+	</byline>
+
+	<address>San Diego, USA<lb/></address>
+
+	<email>hsampath@qualcomm.com<lb/></email>
+
+	<byline>
+	<docAuthor>Sameer Vermani<lb/> </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Qualcomm<lb/></affiliation>
+	</byline>
+
+	<email>svverman@qualcomm.com<lb/></email>
+
+	<byline>
+	<docAuthor>Rolf De Vegt<lb/></docAuthor>
+	</byline>
+	
+	<byline>
+	<affiliation>Qualcomm</affiliation>
+	</byline>
+
+	<address>Santa Clara, USA<lb/></address>
+
+	<email>rolfv@qualcomm.com<lb/></email>
+
+	<byline>
+	<docAuthor>VK Jones<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Qualcomm</affiliation>
+	</byline>
+
+	<address>Santa Clara, USA<lb/></address>
+
+	<email>vkjones@qualcomm.com<lb/></email>
+
+	<byline>
+	<docAuthor>Simone Merlin<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Qualcomm</affiliation>
+	</byline>
+
+	<address>San Diego, USA<lb/></address>
+
+	<email>smerlin@qualcomm.com<lb/></email>
+
+	<note type="other">Deleted: doc.: IEEE 802.11-<lb/>09/0992r13<lb/> Formatted Table<lb/> Formatted: Font: (Default)<lb/> Times New Roman, Not Bold,<lb/> Complex Script Font: Times<lb/> New Roman<lb/> Formatted: Font: (Default)<lb/> Times New Roman, 8 pt,<lb/> Complex Script Font: Times<lb/> New Roman, 8 pt<lb/> Formatted: Normal, Centered<lb/> Formatted Table<lb/> Formatted Table<lb/> Deleted: 5<lb/> Deleted: 18</note>
+
+		</front>
+	</text>
+</tei>

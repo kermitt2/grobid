@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">Department of Computer Science<lb/> Center for Automation Research<lb/> Institute for Advanced Computer Studies</orgName>
+							<lb/>
+							<orgName type="institution">University of Maryland at College Park</orgName> 
+							<orgName type="department">HUD Office of Policy Development &amp; Research (PD&amp;R)</orgName>
+							<lb/>
+							<address>
+								<addrLine>451 7th St SW</addrLine>,
+								<settlement>Rm</settlement>
+								<postCode>8146</postCode>
+							<lb/>
+								<settlement>Washington</settlement>
+								<region>D.C.</region>
+								<postCode>20410</postCode>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

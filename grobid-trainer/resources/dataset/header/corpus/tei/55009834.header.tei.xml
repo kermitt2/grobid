@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009834"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Reviews<lb/> Android App Reviews<lb/> News<lb/> Android News<lb/>Apps Blog<lb/></note>
+
+	<byline>
+	<note type="other">Android Apps Blog<lb/></note>
+	</byline>
+
+	<note type="other">Android Help<lb/> Get Android Advice<lb/> Freebies<lb/> Free Giveaways!<lb/> Get Reviewed<lb/> Submit Apps for Review<lb/> Interviews<lb/> Interviews with Developers<lb/></note>
+
+	<docTitle>
+	<titlePart>Google TV Remote<lb/></titlePart>
+	</docTitle>
+
+	<date>Posted Monday, December 20th, 2010</date>
+
+	<note type="other">at 10:03 am by Antonio Wells<lb/> 1 Comments<lb/> USER RATING 3.47/5<lb/> Trending Content: Android App Reviews 2011 Android Outlook Sync Best<lb/> Android Tablet Apps<lb/> Best Android Apps<lb/> Alchemy 20 Best Android Apps of September<lb/> Download<lb/> Download<lb/> Share<lb/> Resources<lb/> AndroLib<lb/> AppBrain<lb/> 20<lb/> Share<lb/> Google TV Remote Android App Review by AndroidTapp.com | Android Tapp. Android App Reviews<lb/></note>
+
+	<ptr type="web">http://www.androidtapp.com/google-tv-remote/<lb/> 1</ptr>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="institution">Wellcome Trust Sanger Inst</orgName>,
+							<address>
+								<settlement>Cambridge</settlement>,
+								<country>UK</country>;
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="institution">Univ Coll London</orgName>,
+							<address>
+								<country>UK</country>;
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>3</marker>
+							<orgName type="institution">Univ of Manchester</orgName>,
+							<address>
+								<country>UK</country>;
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>4</marker>
+							<orgName type="institution">Queen Mary, Univ of London</orgName>,
+							<address>
+								<country>UK</country>; 
+								and
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>5</marker>
+							<orgName type="department">Aaron Diamond AIDS Res Ctr</orgName>,
+							<orgName type="institution">The Rockefeller Univ</orgName>,
+							<address>
+								<settlement>New York</settlement>,
+								<region>NY</region>,
+								<country>US</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

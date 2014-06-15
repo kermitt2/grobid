@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Stewart</forename>
+								<middlename>J</middlename>.
+								<surname>Hinchliffe</surname>,
+							</persName>
+							<persName>
+								<forename>Michelle</forename>
+								<middlename>C</middlename>.
+								<surname>Hares</surname>,
+							</persName>
+							<persName>
+								<forename>Andrea</forename>
+								<middlename>J</middlename>.
+								<surname>Dowling</surname> and
+							</persName>
+							<persName>
+								<forename>Richard</forename>
+								<middlename>H</middlename>.
+								<surname>ffrench-Constant</surname>
+								<marker>*</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

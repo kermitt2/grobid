@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013623"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Cardiovascular Research 41 (1999) 402–417<lb/></reference>
+
+	<note type="other">Review<lb/></note>
+
+	<docTitle>
+	<titlePart>Strategies to achieve coronary arterial plaque stabilization<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>* Ramin Rabbani, Eric J. Topol<lb/></docAuthor>
+	</byline>
+ 
+	<byline>
+	<affiliation>The Cleveland Clinic Foundation, Department of Cardiology,</affiliation>
+	</byline>
+
+	<address>Desk F-25, 9500 Euclid Avenue, Cleveland, OH 44195, USA<lb/></address>
+
+	<note type="submission">Received 8 July 1998; accepted 3 September 1998<lb/></note>
+
+	<div type="abstract">Abstract<lb/> Acute coronary syndromes result from fissure, erosion or rupture of a vulnerable atherosclerotic plaque. The characteristics of a<lb/> vulnerable plaque include a large lipid pool, an abundance of inflammatory cells and mediators, a reduced smooth muscle cell and<lb/> collagen content and a thin overlying fibrous cap. Potential therapeutic strategies at achieving plaque stabilization have targeted these<lb/> features. Lipid lowering agents, b-adrenergic blockers, angiotensin converting enzyme inhibitors and antioxidants have been shown to<lb/> reduce the incidence of acute coronary syndromes, presumably through plaque stabilization. Matrix metalloproteinase inhibitors as well as<lb/> macrolide antibiotics and gene therapy approaches show promise in achieving plaque stabilization. The evidence supporting plaque<lb/> stabilization by these agents and the mechanisms by which these agents stabilize plaques are discussed in detail in this review.</div>
+
+	<note type="copyright">© 1999<lb/> Elsevier Science B. V. All rights reserved.<lb/></note>
+
+	<keyword>Keywords: Atherosclerosis; Acute coronary syndromes; Plaque rupture; Lipid lowering; Matrix metalloproteinase; Hydroxymethylglutaryl-CoA reductase<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<tei type="white-paper">
+	<teiHeader>
+		<fileDesc xml:id="55113964"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Debiotech has introduced its<lb/> New JewelPUMP platform for Diabetes Therapy<lb/> at ATTD 2013 in Paris,France.<lb/>
+	</titlePart>
+	</docTitle>
+	
+	<date>(March 1, 2013)<lb/></date>
+
+	<div type="abstract">Debiotech has introduced, for the first time worldwide, its New JewelPUMP<lb/> platform for Diabetes Therapy at EASD 2012 in Berlin, Germany.<lb/> Lausanne, Switzerland, October 11, 2012. The JewelPUMP, which was<lb/> revealed for the first time at the ADA 2010 congress in Orlando, is the center<lb/> of a lot of attention and expectations from Diabetic patients worldwide.<lb/> During the EASD in Berlin, DEBIOTECH presented the result of two years of<lb/> intensive work aimed at addressing patient needs and regulatory<lb/> requirements for a product platform that goes beyond any competitive offering<lb/> today.</div>
+
+		</front>
+	</text>
+</tei>

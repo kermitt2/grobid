@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55114442"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Your Smartphone Can Watch the Road and You:<lb/> Mobile Assistant for Inattentive Drivers<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">[Extended Abstract]<lb/></note>
+
+	<byline>
+	<docAuthor>Sanjeev Singh, Srihari Nelakuditi, and Yang Tong<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University of South Carolina<lb/></affiliation>
+	</byline>
+
+	<email>{singhsk,srihari,tongy}@cse.sc.edu<lb/></email>
+
+	<byline>
+	<docAuthor>Romit Roy Choudhury<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Duke University<lb/></affiliation>
+	</byline>
+
+	<email>romit.rc@duke.edu<lb/></email>
+
+	<div type="abstract">ABSTRACT<lb/> Motor vehicle accidents are one of the leading causes of<lb/> death. While lane departure warning, blind spot warning,<lb/> and driver attention monitoring systems for avoiding colli-<lb/>sions have been in development for quite sometime, to date<lb/> mostly luxury cars are only equipped with these safety fea-<lb/>tures. As a cheaper and ubiquitous alternative, we explore<lb/> how a smartphone can assist an inattentive driver by lever-<lb/>aging its front and back cameras apart from other sensors.<lb/> The challenge, however, is given the resource constraints of<lb/> a smartphone, how quickly and accurately can it detect an<lb/> unintended maneuver and alert the driver. In this paper, we<lb/> describe our on-going attempt to address this challenge.<lb/></div>
+
+	<keyword>Categories and Subject Descriptors<lb/> I.4.8 [Image Processing and Computer Vision]: Scene<lb/> Analysis—Sensor Fusion; K.4.1 [Computers and Soci-<lb/>ety]: Public Policy Issues—Human Safety<lb/> Keywords<lb/> Smartphone, Driver Inattention, Accident Avoidance<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

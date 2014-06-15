@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014875"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Proc. Natl. Acad. Sci. USA<lb/> Vol. 93, pp. 11242-11247, October 1996<lb/> </reference>
+
+	<note>Physiology<lb/></note>
+
+	<docTitle>
+	<titlePart>Urea-inducible Egr-1 transcription in renal inner medullary<lb/> collecting duct (mIMCD3) cells is mediated by<lb/> extracellular signal-regulated kinase activation<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>DAVID M. COHEN<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Division of Nephrology, Oregon Health Sciences University and Portland Veterans Affairs Medical Center,</affiliation>
+	</byline>
+
+	<address>PP262, 3314 SW U.S. Veterans Hospital Road,<lb/> Portland, OR 97201<lb/></address>
+
+	<byline>
+	<affiliation>Communicated by Maurice B. Burg, National Heart, Lung, and Blood Institute,</affiliation>
+	</byline>
+
+	<address>Bethesda, MD,</address>
+
+	<note type="submission">July 16, 1996 (received for review January 19, 1996)<lb/></note>
+
+	<div type="abstract">ABSTRACT Urea (200-400 milliosmolar) activates tran-<lb/>scription, translation of, and trans-activation by the immedi-<lb/>ate-early gene transcription factor Egr-l in a renal epithelial<lb/> cell-specific fashion. The effect at the transcriptional level has<lb/> been attributed to multiple serum response elements and their<lb/> adjacent Ets motifs located within the Egr-1 promoter. Elk-i,<lb/> a principal ternary complex factor and Ets domain-containing<lb/> protein, is a substrate of the extracellular signal-regulated<lb/> kinase (ERK) mitogen-activated protein kinases. In the renal<lb/> medullary mIMCD3 cell line, urea (200-400 milliosmolar)<lb/> activated both ERK1 and ERK2 as determined by in-gel<lb/> kinase assay and immune-complex kinase assay of epitope-<lb/>tagged ERK1 and ERK2. Importantly, urea did not affect<lb/> abundance of either ERK. Urea-inducible Egr-1 transcription<lb/> was a consequence of ERK activation because the ERK-<lb/>specific inhibitor, PD98059, abrogated transcription from the<lb/> murine Egr-1 promoter in a luciferase reporter gene assay. In<lb/> addition, activators of protein kinase A, including forskolin<lb/> and 8-Br-cAMP, which are known to inhibit ERK-mediated<lb/> events, also inhibited urea-inducible Egr-1 transcription. Fur-<lb/>thermore, urea-inducible activation of the physiological ERK<lb/> substrate and transcription factor, Elk-1, was demonstrated<lb/> through transient cotransfection of a chimeric Elk-1/GAL4<lb/> expression plasmid and a GAL4-driven luciferase reporter<lb/> plasmid. Taken together, these data indicate that, in mIMCD3<lb/> cells, urea activates ERKs and the ERK substrate, Elk-1, and<lb/> that ERK inhibition abrogates urea-inducible Egr-1 tran-<lb/>scription. These data are consistent with a model of urea-<lb/>inducible renal medullary gene expression wherein sequential<lb/> activation of ERKs and Elk-1 results in increased transcrip-<lb/>tion of Egr-l through serum response element/Ets motifs.<lb/></div>
+
+		</front>
+	</text>
+</tei>

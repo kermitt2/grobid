@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011516"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>DIFFERENTIAL FAULT ANALYSIS ATTACK<lb/> RESISTANT ARCHITECTURES FOR THE<lb/> ADVANCED ENCRYPTION STANDARD<lb/> *<lb/>
+	</titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Mark Karpovsky, Konrad J. Kulikowski, Alexander Taubin<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Reliable Computing Laboratory,Department of Electrical and Computer Engineering,Boston<lb/> University,</affiliation>
+	</byline>
+
+	<address>8 Saint Mary&apos;s Street, Boston, MA 02215</address>
+
+	<email>{markkar, konkul, taubin}@bu.edu<lb/></email>
+
+	<div type="abstract">Abstract:<lb/> We present two architectures for protecting a hardware implementation of<lb/> AES against side-channel attacks known as Differential Fault Analysis<lb/> attacks. The first architecture, which is efficient for faults of higher<lb/> multiplicity, partitions the design into linear (XOR gates only) and nonlinear<lb/> blocks and uses different protection schemes for these blocks. We protect the<lb/> linear blocks with linear codes and the nonlinear with a complimentary<lb/> nonlinear operation resulting in robust protection. The second architecture<lb/> uses systematic nonlinear (cubic) robust error detecting codes and provides<lb/> for high fault detection for faults of low and high multiplicities but has higher<lb/> hardware overhead.<lb/></div>
+
+	<keyword>Key words:<lb/> Advanced Encryption Standard; Differential Fault Analysis<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Sandeep</forename>
+								<surname>Kanumuri</surname>
+							<lb/>
+								<marker>*</marker>,
+							</persName>
+							<persName>
+								<forename>Onur</forename>
+								<middlename>G</middlename> .
+								<surname>Guleryuz</surname>
+							<lb/>
+								<marker>*</marker> ,
+							</persName>
+							<persName>
+								<forename>M</forename> .
+								<middlename>Reha</middlename>
+								<surname>Civanlar</surname>
+							<lb/>
+								<marker>*</marker> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Akira</forename>
+								<surname>Fujibayashi</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

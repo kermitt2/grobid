@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Edmundo</forename>
+								<surname>Queiroz de Andrade</surname>,
+							</persName>
+							<persName>
+								<forename>Ludimar</forename>
+								<surname>Lima de Aguiar</surname>,
+							</persName>
+							<persName>
+								<forename>Stael</forename>
+								<middlename>Ferreira </middlename>
+								<surname>Senra</surname>,
+							</persName>
+							<persName>
+								<forename>Elizabeth</forename>
+								<middlename>Frauches</middlename>
+								<middlename>Netto</middlename>
+								<surname>Siqueira</surname>,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Ana</forename>
+								<middlename>Lucia</middlename>
+								<middlename>Fernandes</middlename>
+								<middlename>Lima</middlename>
+								<surname>Torres</surname> ,
+							</persName>
+							<persName>
+								<forename>Marcio</forename>
+								<middlename>Martins</middlename>
+								<forename>Mourelle</forename>
+							</persName>	
+								
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

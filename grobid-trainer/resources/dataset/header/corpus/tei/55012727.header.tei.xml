@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012727"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">innovative · reliable · leading<lb/> CBS<lb/> </note>
+
+	<docTitle>
+	<titlePart>Cap Bonding System<lb/></titlePart>
+	</docTitle>
+	
+	<idno>CBS-GB-07/11-HA</idno>
+
+	<note type="other">Subject to technical modifications.<lb/></note>
+
+	<byline> 
+	<affiliation>Poly-clip System GmbH &amp; Co. KG<lb/></affiliation>
+	</byline>
+
+	<address>Westerbachstraße 45 · 60489 Frankfurt · Germany<lb/></address>
+
+	<phone>Tel. +49 69 7806-0 · Fax +49 69 7806-360<lb/> </phone>
+
+	<ptr>www.polyclip.com · </ptr>
+
+	<email>contact@polyclip.de<lb/></email>
+
+		</front>
+	</text>
+</tei>

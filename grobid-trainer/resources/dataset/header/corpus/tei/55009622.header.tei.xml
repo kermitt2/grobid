@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009622"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Territoriality in Collaborative Tabletop Workspaces<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Stacey D. Scott, M. Sheelagh T. Carpendale<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Computer Science<lb/> University of Calgary<lb/></affiliation>
+	</byline>
+
+	<address>2500 University Dr. NW<lb/> Calgary, AB T2N 1N4, Canada<lb/></address>
+
+	<email>{sdscott, sheelagh}@cpsc.ucalgary.ca<lb/></email>
+
+	<byline>
+	<docAuthor>Kori M. Inkpen<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Faculty of Computer Science<lb/> Dalhousie University<lb/></affiliation>
+	</byline>
+
+	<address>6050 University Avenue<lb/> Halifax, NS B3H 1W5, Canada<lb/></address>
+
+	<email>inkpen@cs.dal.ca<lb/></email>
+
+	<div type="abstract">ABSTRACT<lb/> Researchers seeking alternatives to traditional desktop computers<lb/> have begun exploring the potential collaborative benefits of<lb/> digital tabletop displays. However, there are still many open<lb/> issues related to the design of collaborative tabletop interfaces,<lb/> such as whether these systems should automatically orient<lb/> workspace items or enforce ownership of workspace content.<lb/> Understanding the natural interaction practices that people use<lb/> during tabletop collaboration with traditional media (e.g., pen and<lb/> paper) can help to address these issues. Interfaces that are<lb/> modeled on these practices will have the additional advantage of<lb/> supporting the interaction skills people have developed over years<lb/> of collaborating at traditional tables. To gain a deeper<lb/> understanding of these interaction practices we conducted two<lb/> observational studies of traditional tabletop collaboration in both<lb/> casual and formal settings. Our results reveal that collaborators<lb/> use three types of tabletop territories to help coordinate their<lb/> interactions within the shared tabletop workspace: personal,<lb/> group, and storage territories. Findings from a spatial analysis of<lb/> collaborators&apos; tabletop interactions reveal important properties of<lb/> these tabletop territories. In order to provide a comprehensive<lb/> picture of the role of tabletop territoriality in collaboration, we<lb/> conclude with a synthesis of our findings and previous research<lb/> findings and with several relevant design implications.<lb/></div>
+
+	<keyword>Categories and Subject Descriptors<lb/> H5.3. [Information Interfaces and Presentation]: Group and<lb/> Organization Interfaces – Computer-supported cooperative work,<lb/> Synchronous interaction, Evaluation/methodology<lb/> General Terms<lb/> Design, Human Factors<lb/> Keywords<lb/> co-located collaboration, observational studies, qualitative<lb/> analysis, CSCW, tabletop displays, territoriality<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

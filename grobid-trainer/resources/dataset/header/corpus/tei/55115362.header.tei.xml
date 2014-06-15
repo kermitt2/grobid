@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei type="white-paper">
+	<teiHeader>
+		<fileDesc xml:id="55115362"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Protocols of studies on cosmeceutical products performed /sponsored by Sabinsa Corporation are<lb/> based on alternatives to animal testing. Any references to animal tests appearing in product<lb/> informational materials are related to information from published scientific literature compiled therein.<lb/></note>
+
+	<byline>
+	<affiliation>SABINSA CORPORATION<lb/> CORPORATE OFFICE<lb/> UTAH OFFICE<lb/></affiliation>
+	</byline>
+
+	<address>70 Ethel Road West, Unit #6<lb/> 750 So. Innovation Cr<lb/> Piscataway, NJ 08854<lb/> Payson, UT 84651<lb/></address>
+
+	<phone>Tel: (732) 777-1111<lb/>Tel: (801) 465-8400<lb/> Fax: (732) 777-1443<lb/> Fax: (801) 465-8600<lb/></phone>
+
+	<note type="other">*Pharmaceuticals<lb/> *Phytochemicals<lb/> *Fine Chemicals<lb/> *Herbal Extracts<lb/> *Cosmeceuticals<lb/> *Specialty Chemicals<lb/></note>
+
+	<docTitle>
+	<titlePart>COLEUS FORSKOHLII EXTRACT<lb/> (95% forskolin)<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Muhammed Majeed, Ph.D. and Lakshmi Prakash, Ph.D.<lb/></docAuthor>
+	</byline>
+
+		</front>
+	</text>
+</tei>

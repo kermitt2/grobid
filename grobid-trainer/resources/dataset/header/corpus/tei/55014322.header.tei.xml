@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014322"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Ellipse<lb/> </note>
+
+	<note type="page">1<lb/></note>
+
+	<docTitle>
+	<titlePart>Ellipse<lb/> </titlePart>
+	</docTitle>
+
+	<note type="other">An ellipse obtained as the intersection of a cone<lb/> with a plane.<lb/> The rings of Saturn are circular, but when seen<lb/> partially edge on, as in this photograph, they<lb/> appear to be ellipses. Photo by ESO<lb/> </note>
+
+	<div type="introduction">In geometry, an ellipse (from Greek ἔλλειψις elleipsis, a &quot;falling<lb/> short&quot;) is a plane curve that results from the intersection of a cone by a<lb/> plane in a way that produces a closed curve. Circles are special cases of<lb/> ellipses, obtained when the cutting plane is orthogonal to the cone&apos;s<lb/> axis. An ellipse is also the locus of all points of the plane whose<lb/> distances to two fixed points add to the same constant.<lb/> Ellipses are closed curves and are the bounded case of the conic<lb/> sections, the curves that result from the intersection of a circular cone<lb/> and a plane that does not pass through its apex; the other two (open and<lb/> unbounded) cases are parabolas and hyperbolas. Ellipses arise from the<lb/> intersection of a right circular cylinder with a plane that is not parallel<lb/> to the cylinder&apos;s main axis of symmetry. Ellipses also arise as images<lb/> of a circle under parallel projection and the bounded cases of<lb/> perspective projection, which are simply intersections of the projective<lb/> cone with the plane of projection. It is also the simplest Lissajous<lb/> figure, formed when the horizontal and vertical motions are sinusoids<lb/> with the same frequency.</div>
+
+		</front>
+	</text>
+</tei>

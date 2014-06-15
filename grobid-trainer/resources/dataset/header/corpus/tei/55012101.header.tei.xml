@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012101"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Only by learning from the past, we can<lb/> meet the demands of the future.<lb/> </titlePart>
+	</docTitle>
+
+	<note type="other">Rhepanol ® fk<lb/> Roofing membranes<lb/></note>
+	
+	<note type="other">For more information on SIG Design &amp; Technology visit </note>
+
+	<ptr>www.barbourproductsearch.info</ptr>
+
+		</front>
+	</text>
+</tei>

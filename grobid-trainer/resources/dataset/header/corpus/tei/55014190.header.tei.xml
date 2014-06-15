@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014190"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Plazmic Theme Builder for<lb/> BlackBerry Smartphones<lb/> Version 4.6<lb/> User Guide<lb/> Plazmic Theme Builder for BlackBerry Smartphones Version 4.6 User Guide<lb/></titlePart>
+	</docTitle>
+
+	<note type="submission">Last modified: 17 September 2008<lb/></note>
+
+	<note type="other">Part number: 19423820<lb/> At the time of publication, this documentation is based on Plazmic Content Developer&apos;s Kit Version 4.6.<lb/> Send us your comments on product documentation: </note>
+
+	<ptr>https://www.blackberry.com/DocsFeedback.<lb/></ptr>
+
+	<note type="copyright">©2008 Plazmic, Inc. All Rights Reserved. Plazmic is a trademark of Plazmic, Inc. Plazmic Content Developer&apos;s Kit software and documentation,<lb/> including any online documentation (collectively, the &quot;Materials&quot;) are the property of Plazmic, Inc. The Materials contain information that is<lb/> confidential and proprietary to Plazmic, Inc. The Materials are protected by Canadian, U.S., Japanese and other international intellectual<lb/> property laws and international treaty provisions. No part of the Materials may be reproduced or transmitted in any form or by any means,<lb/> electrical, or mechanical, including by photocopying or by any information storage or retrieval system, without the written permission of<lb/> Plazmic, Inc.<lb/> TrueType is a registered trademark Apple Computer, Inc. Microsoft and Windows are trademarks of Microsoft Corporation. Java is a trademark<lb/> of Sun Microsystems, Inc.</note>
+
+		</front>
+	</text>
+</tei>

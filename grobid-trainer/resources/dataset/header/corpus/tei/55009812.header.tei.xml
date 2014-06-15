@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009812"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">This article was downloaded by: [European Patent Office]<lb/> </note>
+
+	<date>On: 18 October 2011, At: 04:33<lb/> </date>
+
+	<note type="other">Publisher: Taylor &amp; Francis<lb/> Informa Ltd Registered in England and Wales Registered Number: 1072954 Registered<lb/> office: Mortimer House, 37-41 Mortimer Street, London W1T 3JH, UK<lb/></note>
+	
+	<note type="other">Catalysis Reviews<lb/> Publication details, including instructions for authors and<lb/> subscription information:<lb/></note>
+
+	<ptr type="web">http://www.tandfonline.com/loi/lctr20<lb/></ptr>
+
+	<docTitle>
+	<titlePart>Catalytic Production of Liquid Fuels<lb/> from Biomass‐Derived Oxygenated<lb/> Hydrocarbons: Catalytic Coupling at<lb/> Multiple Length Scales<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Dante A. Simonetti<lb/> a &amp; James A. Dumesic<lb/> a<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a Department of Chemical and Biological Engineering, University of<lb/> Wisconsin,</affiliation>
+	</byline>
+
+	<address>Madison, WI, USA<lb/></address>
+
+	<date>Available online: 05 Aug 2009<lb/></date>
+
+	<note type="other">To cite this article:</note>
+
+	<reference>Dante A. Simonetti &amp; James A. Dumesic (2009): Catalytic Production of Liquid<lb/> Fuels from Biomass‐Derived Oxygenated Hydrocarbons: Catalytic Coupling at Multiple Length Scales,<lb/> Catalysis Reviews, 51:3, 441-484<lb/></reference>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,59 @@
+<?xml version="1.0" ?>
+<tei type="journal-conference">
+	<teiHeader>
+		<fileDesc xml:id="55114958"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Significance of off-pump coronary artery bypass grafting compared<lb/> with percutaneous coronary intervention: a propensity score analysis<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Akira Marui<lb/> a,b, *, Takeshi Kimura<lb/> c<lb/> , Shiro Tanaka<lb/> b<lb/> , Yutaka Furukawa<lb/> d , Toru Kita<lb/> d , Ryuzo Sakata<lb/> a<lb/> , </docAuthor>
+	</byline>
+
+	<note type="other">and the CREDO-Kyoto Investigators<lb/></note>
+
+	<byline>
+	<affiliation>a Department of Cardiovascular Surgery, Kyoto University Graduate School of Medicine,</affiliation>
+	</byline>
+
+	<address>Kyoto, Japan<lb/></address>
+
+	<byline>
+	<affiliation>b Translational Research Center, Kyoto University Hospital,</affiliation>
+	</byline>
+
+	<address>Kyoto, Japan<lb/></address>
+
+	<byline>
+	<affiliation>c Department of Cardiovascular Medicine, Kyoto University Graduate School of Medicine,</affiliation>
+	</byline>
+
+	<address>Kyoto, Japan<lb/></address>
+
+	<byline>
+	<affiliation>d Kobe City Medical Center General Hospital,</affiliation>
+	</byline>
+
+	<address>Kobe, Japan<lb/></address>
+
+	<note type="other">* Corresponding author.</note>
+
+	<phone>Tel.: +81-75-7513784; fax: +81-75-7514960; </phone>
+
+	<email>e-mail: marui@kuhp.kyoto-u.ac.jp</email>
+
+	<note>(A. Marui).<lb/></note>
+
+	<note type="submission">Received 28 December 2010; received in revised form 23 March 2011; accepted 1 April 2011<lb/></note>
+
+	<div type="abstract">Abstract<lb/> OBJECTIVE: Although there have been several studies that compared the efficacy of percutaneous coronary intervention (PCI) and cor-<lb/>onary artery bypass grafting (CABG), the impact of off-pump CABG (OPCAB) has not been well elucidated. The objective of the present<lb/> study was to compare the outcomes after PCI, on-pump CABG (ONCAB), and OPCAB in patients with multivessel and/or left main<lb/> disease.<lb/> METHODS: Among the 9877 patients undergoing first PCI using bare-metal stents or CABG who were enrolled in the CREDO-Kyoto<lb/> Registry, 6327 patients with multivessel and/or left main disease were enrolled into the present study (67.9 ± 9.8 years old). Among<lb/> them, 3877 patients received PCI, 1388 ONCAB, and 1069 OPCAB. Median follow-up was 3.5 years.<lb/> RESULTS: Comparing PCI with all CABG (ONCAB and OPCAB), propensity-score-adjusted all-cause mortality after PCI was higher than<lb/> that CABG (hazard ratio (95% confidence interval): 1.37 (1.15–1.63), p &lt; 0.01). The incidence of stroke was lower after PCI than that<lb/> after CABG (0.75 (0.59–0.96), p = 0.02). CABG was associated with better survival outcomes than PCI in the elderly (interaction<lb/> p = 0.04). Comparing OPCAB with PCI or ONCAB, propensity-score-adjusted all-cause mortality after PCI was higher than that after<lb/> OPCAB (1.50 (1.20–1.86), p &lt; 0.01). Adjusted mortality was similar between ONCAB and OPCAB (1.18 (0.93–1.51), p = 0.33). The inci-<lb/>dence of stroke after OPCAB was similar to that after PCI (0.98 (0.71–1.34), p &gt; 0.99), but incidence of stroke after ONCAB was higher<lb/> than that after OPCAB (1.59 (1.16–2.18), p &lt; 0.01).<lb/> CONCLUSIONS: In patients with multivessel and/or left main disease, CABG, particularly OPCAB, is associated with better survival out-<lb/>comes than PCI using bare-metal stents. Survival outcomes are similar between ONCAB and OPCAB.<lb/></div>
+
+	<keyword>Keywords: Coronary artery bypass grafting @BULLET Percutaneous coronary intervention @BULLET Off-pump<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

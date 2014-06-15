@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014239"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">User Manual<lb/></note>
+
+	<docTitle>
+	<titlePart>netANALYZER NANL-C500-RE and NANL-B500-RE<lb/> Analyzer Card NANL-C500-RE,<lb/> Analyzer Device NANL-B500-RE<lb/> and netANALYZER Software<lb/> Installation, Operation and Hardware Description<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<affiliation>Hilscher Gesellschaft für Systemautomation mbH<lb/></affiliation>
+	</byline>
+
+	<ptr>www.hilscher.com<lb/></ptr>
+
+	<note>DOC091110UM07EN </note>
+
+	<note type="other">| Revision 7 | English | 2010-03 | Released | Public<lb/></note>
+
+	<note>Card NANL-C500-RE<lb/> Device NANL-B500-RE<lb/></note>
+
+		</front>
+	</text>
+</tei>

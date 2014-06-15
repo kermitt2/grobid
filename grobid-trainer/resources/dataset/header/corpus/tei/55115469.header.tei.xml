@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<tei type="presentation">
+	<teiHeader>
+		<fileDesc xml:id="55115469"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+
+	<reference>André Schneider, Eero Ivask<lb/> Workshop on Challenges in Collaborative Engineering, Poznan (Poland), April 15-16, 2003<lb/> </reference>
+
+	<note type="page">1</note>
+
+	<note type="copyright">Copyright © 2003 Fraunhofer-Gesellschaft<lb/></note>
+
+	<byline>
+	<affiliation>IIS<lb/> Fraunhofer Institut<lb/> Integrierte Schaltungen<lb/></affiliation>
+	</byline>
+
+	<byline>
+	<docAuthor>André Schneider<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Fraunhofer Institute for Integrated Circuits<lb/> Design Automation Department<lb/> 
+	</affiliation>
+	</byline>
+	
+	<byline>
+	<docAuthor>Eero Ivask<lb/> </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Tallinn Technical University<lb/></affiliation>
+	</byline>
+
+	<reference>Workshop on<lb/> Challenges in Collaborative Engineering<lb/> Poznan (Poland), April 15-16, 2003<lb/></reference>
+
+	<docTitle>
+	<titlePart>Internet-based Collaborative System Design<lb/> Using MOSCITO</titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011744"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<affiliation>Helsinki University of Technology Department of Signal Processing and Acoustics<lb/></affiliation>
+	</byline>
+
+	<byline>
+	<affiliation>Teknillinen korkeakoulu Signaalinkäsittelyn ja akustiikan laitos<lb/> </affiliation>
+	</byline>
+
+	<date>Espoo 2010<lb/> </date>
+
+	<note type="other">Report 15<lb/></note>
+
+	<docTitle>
+	<titlePart>CONVERGENCE OF PACKET COMMUNICATIONS OVER THE<lb/> EVOLVED MOBILE NETWORKS;<lb/> SIGNAL PROCESSING AND PROTOCOL PERFORMANCE
+	<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Mika Rinne</docAuthor>
+	</byline>
+
+		</front>
+	</text>
+</tei>

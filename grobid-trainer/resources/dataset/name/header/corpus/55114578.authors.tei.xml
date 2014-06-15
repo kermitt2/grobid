@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Carlos</forename>
+								<middlename>Angelo</middlename>
+								<surname>Nunes</surname>
+								<marker>*</marker> ,
+							</persName>
+							<persName>
+								<forename>Daltro</forename>
+								<middlename>Garcia</middlename>
+								<surname>Pinatti</surname>,
+							</persName>
+							<persName>
+								<forename>Alain</forename>
+								<surname>Robin</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

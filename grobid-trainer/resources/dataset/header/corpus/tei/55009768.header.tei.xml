@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009768"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>MATERIALS AND METHODS<lb/></titlePart>
+	</docTitle>
+
+	<div type="introduction">An on-farm field trial was conducted in 2009 in a field with a confirmed<lb/> population of glyphosate-resistant (GR) Palmer amaranth. Traditional<lb/> small-plot techniques were utilized. Preemergence (PRE) treatments<lb/> evaluated in the study included S-metolachlor @ 1.42 kg/ha (Dual II<lb/> Magnum 7.64EC) and alachlor @ 2.24 kg/ha (Micro-Tech 4ME). The<lb/> PRE treatments were applied immediately after planting and received<lb/> 1.25 cm of irrigation one day after planting (DAP). Postemergence<lb/> (POST) treatments included the following: dicamba + diflufenzopyr @<lb/> 0.14 + 0.06 kg/ha (Status 56WG); tembotrione @ 0.09 kg/ha (Laudis<lb/> 3.5SC); topramezone @ 0.02 kg/ha (Impact 2.8SC); and mesotrione @<lb/> 0.11 kg/ha (Callisto 4SC). All POST treatments included labeled<lb/> adjuvants and were applied 18 DAP to Palmer amaranth plants that<lb/> were 2.5 to 7.5 cm tall. All treatments were arranged in a randomized<lb/> complete block design with three replications. All data were subjected<lb/> to ANOVA (P = 0.10).<lb/></div>
+
+		</front>
+	</text>
+</tei>

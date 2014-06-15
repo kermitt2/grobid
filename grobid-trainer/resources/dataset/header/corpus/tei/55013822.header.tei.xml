@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013822"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">HOME &gt; Community &gt; Projects &gt; ui<lb/> ui<lb/> Search<lb/> Admin<lb/> Files<lb/> Issue Tracking<lb/> Mailing Lists<lb/> Members<lb/> Module Doc<lb/> News<lb/> Browse Source<lb/></note>
+
+	<docTitle>
+	<titlePart>new GUI Builder (Matisse)<lb/> Design Specification<lb/> </titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Author: Dusan Pavlica </docAuthor>
+	</byline>
+	
+	<note type="other">(in cooperation with GUI builder team<lb/> and with </note>
+
+	<byline>
+	<docAuthor>Leos Tronicek </docAuthor>
+	</byline>
+
+	<note type="other">on visual parts)<lb/></note>
+
+	<note type="other">Version: 5.0<lb/> </note>
+
+	<note type="submission">Last Update: 07/27/2005<lb/></note>
+
+		</front>
+	</text>
+</tei>

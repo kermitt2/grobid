@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011065"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Design eines Monochromators<lb/> ur Elektronenquellen<lb/></titlePart>
+	</docTitle>
+
+	<degree>Vom Fachbereich Physik<lb/> der Technischen Universität Darmstadt<lb/> zur Erlangung des Grades<lb/> eines Doktors der Naturwissenschaften<lb/> (Dr. rer. nat.)<lb/> genehmigte Dissertation<lb/></degree>
+	
+	<byline>
+	<docAuthor>von Dipl.–Phys. Frank Kahl<lb/></docAuthor>
+	</byline>
+
+	<note>aus Saarbrücken<lb/></note>
+
+	<address>Darmstadt</address>
+	
+	<date>1999<lb/></date>
+
+	<note>D 17</note>
+
+		</front>
+	</text>
+</tei>

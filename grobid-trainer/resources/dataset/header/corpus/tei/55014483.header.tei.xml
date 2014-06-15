@@ -1,0 +1,56 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014483"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Disruption of AtMRP4, a guard cell plasma membrane<lb/> ABCC-type ABC transporter, leads to deregulation of<lb/> stomatal opening and increased drought susceptibility<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Markus Klein<lb/> 1,Ã , Markus Geisler<lb/> 1<lb/> , Su Jeoung Suh<lb/> 1<lb/> , H. U È ner Kolukisaoglu<lb/> 2<lb/> , Louis Azevedo<lb/> 1<lb/> , Sonia Plaza<lb/> 1<lb/> , Mark D. Curtis<lb/> 1<lb/> , Andreas Richter<lb/> 3<lb/> , Barbara Weder<lb/> 1<lb/> , Burkhard Schulz<lb/> 4 and Enrico Martinoia<lb/> 1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1<lb/> Zurich Basel Plant Science Center, University of Zurich, Plant Biology,</affiliation>
+	</byline>
+
+	<address>Zollikerstrasse 107, CH-8008 Zurich, Switzerland,<lb/></address>
+
+	<byline>
+	<affiliation>2<lb/> Plant Physiology, Biosciences, University of Rostock,</affiliation>
+	</byline>
+
+	<address>Albert-Einstein-Str. 3, D-18051 Rostock, Germany,<lb/></address>
+
+	<byline>
+	<affiliation>3<lb/> Chemical Physiology of Plants, Institute of Ecology, University of Vienna,</affiliation>
+	</byline>
+
+	<address>Althanstrasse 14, A-1090 Vienna, Austria, and<lb/></address>
+
+	<byline>
+	<affiliation>4<lb/> ZMBP-Plant Physiology, Eberhard-Karls-University Tu È bingen, Auf der Morgenstelle 5,</affiliation>
+	</byline>
+
+	<address>D-72076 Tu È bingen, Germany<lb/></address>
+
+	<note type="submission">Received 17 November 2003; revised 5 April 2004; accepted 28 April 2004.<lb/></note>
+
+	<note type="other">Ã For correspondence </note>
+
+	<phone>(fax 41 1 634 8204;</phone>
+
+	<email>e-mail markus.klein@botinst.unizh.ch).<lb/></email>
+
+	<div type="abstract">Summary<lb/> ATP-binding cassette (ABC) transporters are membrane proteins responsible for cellular detoxi®cation<lb/> processes in plants and animals. Recent evidence shows that this class of transporters may also be involved<lb/> in many other cellular processes. Because of their homology with human multidrug resistance-associated<lb/> proteins (MRP), cystic ®brosis transmembrane conductance regulator (CFTR) and sulfonylurea receptor<lb/> (SUR), some plant ABC transporters have been implicated in the regulation of ion channel activities. This<lb/> paper describes an investigation of the AtMRP4 gene and its role in stomatal regulation. Reporter gene<lb/> studies showed that AtMRP4 is highly expressed in stomata and that the protein is localized to the plasma<lb/> membrane. Stomatal aperture in three independent atmrp4 mutant alleles was larger than in wild-type<lb/> plants, both in the light and in the dark, resulting in increased water loss but no change in the photosyn-<lb/>thetic rate. In baker&apos;s yeast, AtMRP4 shows ATP-dependent, vanadate-sensitive transport of methotrexate<lb/> (MTX), an antifolate and a substrate of mammalian MRPs. Treatment with MTX reduced stomatal opening<lb/> in wild-type plants, but had no effect in atmrp4 mutants. These results indicate the involvement of AtMRP4<lb/> in the complex regulation of stomatal aperture.<lb/></div>
+
+	<keyword>Keywords: ATP-binding cassette (ABC) transporter, multidrug resistance, drought susceptibility, guard cell,<lb/> stomata.<lb/>
+	</keyword>
+
+		</front>
+	</text>
+</tei>

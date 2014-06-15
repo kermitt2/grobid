@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008867"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">Page 1<lb/></note>
+
+	<byline>
+	<affiliation>Box-O-Cleide Construction<lb/></affiliation>
+	</byline>
+
+	<docTitle>
+	<titlePart>The Serpent Website&apos;s Box-O-Cleide<lb/></titlePart>
+	</docTitle>
+
+	<note type="copyright">© Paul Schmidt 2002<lb/></note>	
+
+		</front> 
+	</text>
+</tei>

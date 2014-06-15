@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55114688"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Decision-Theoretic User Interface Generation<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Krzysztof Z. Gajos and Daniel S. Weld<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Computer Science and Engineering<lb/> University of Washington<lb/></affiliation>
+	</byline>
+
+	<address>Seattle, WA 98195, USA<lb/></address>
+
+	<email>{kgajos,weld}@cs.washington.edu<lb/></email>
+
+	<byline>
+	<docAuthor>Jacob O. Wobbrock<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>The Information School<lb/> University of Washington<lb/></affiliation>
+	</byline>
+
+	<address>Seattle, WA 98195, USA<lb/></address>
+
+	<email>wobbrock@u.washington.edu<lb/></email>
+
+		</front>
+	</text>
+</tei>

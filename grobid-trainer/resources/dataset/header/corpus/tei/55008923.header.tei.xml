@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008923"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<affiliation>I N S T I T U T E F O R D E F E N S E A N A L Y S E S<lb/> </affiliation>
+	</byline>
+		
+	<note type="other">IDA Document D-3382<lb/> Log: H 07-000314<lb/></note>
+
+	<date>March 2007<lb/></date>
+
+	<docTitle>
+	<titlePart>Evaluating Robot-Operator Job Performance<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>F. Moses<lb/> P. Brooks<lb/> M. Hofmann<lb/> E. Johnson<lb/> J. Laveson<lb/> S. Zaccaro<lb/></docAuthor>
+	</byline>
+
+	<note type="other">Approved for public release;<lb/> distribution is unlimited.</note>
+
+		</front>
+	</text>
+</tei>

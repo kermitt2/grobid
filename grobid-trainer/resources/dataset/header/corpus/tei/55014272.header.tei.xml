@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014272"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">ROHSTOFFE<lb/></note>
+
+	<docTitle>
+	<titlePart>Bauteilgeometrie ist fast egal<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">Einfluss der Geometrie auf die Eigenschaften von elektrisch leitfähigen Metall/Thermoplast-Bauteilen Mit<lb/> speziellen Additiven und Füllstoffzusätzen werden thermoplastische Kunststoffe hochleitfähig. Elektronische<lb/> Anwendungen sind damit greifbar. Das Institut für Kunststoffverarbeitung (IKV), das in Zusammenarbeit mit<lb/> Siemens einen hochleitfähigen thermoplastischen Hybridwerkstoff entwickelte, hat grundlegende Auswirkun-<lb/>gen der Bauteilgeometrie auf das Fließverhalten der Schmelze beim Spritzgießen und der sich so ergebenden<lb/> mechanischen und elektrischen Eigenschaften von Musterbauteilen aus diesem Werkstoff näher untersucht.<lb/></div>
+
+		</front>
+	</text>
+</tei>

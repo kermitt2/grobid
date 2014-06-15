@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012616"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>On Mouse Dynamics as a Behavioral Biometric for<lb/> Authentication<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Zach Jorgensen and Ting Yu<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Computer Science<lb/> North Carolina State University<lb/></affiliation>
+	</byline>
+
+	<address>Raleigh, NC 27695<lb/></address>
+
+	<email>{zjorgen,tyu}@ncsu.edu<lb/></email>
+
+	<div type="abstract">ABSTRACT<lb/> The idea of using one&apos;s behavior with a pointing device, such<lb/> as a mouse or a touchpad, as a behavioral biometric for au-<lb/>thentication purposes has gained increasing attention over<lb/> the past decade. A number of interesting approaches based<lb/> on the idea have emerged in the literature and promising<lb/> experimental results have been reported; however, we argue<lb/> that limitations in the past experimental evaluations of these<lb/> approaches raise questions about their true effectiveness in a<lb/> practical setting. In this paper, we review existing authenti-<lb/>cation approaches based on mouse dynamics and shed light<lb/> on some important limitations regarding how the effective-<lb/>ness of these approaches has been evaluated in the past. We<lb/> present the results of several experiments that we conducted<lb/> to illustrate our observations and suggest guidelines for e-<lb/>valuating future authentication approaches based on mouse<lb/> dynamics. We also discuss a number of avenues for addi-<lb/>tional research that we believe are necessary to advance the<lb/> state of the art in this area.<lb/></div>
+
+	<keyword>Categories and Subject Descriptors<lb/> K.6.5 [Computing Milieux]: Security and Protection—<lb/> authentication, unauthorized access<lb/> General Terms<lb/> Experimentation, Security, Verification<lb/> Keywords<lb/> Mouse dynamics, behavioral biometrics, authentication, mouse<lb/> movement, pointing devices, human computer interaction<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

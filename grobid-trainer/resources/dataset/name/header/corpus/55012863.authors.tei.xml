@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Daniel</forename>
+								<surname>Nurmi</surname>,
+							</persName>
+							<persName>
+								<forename>Rich</forename>
+								<surname>Wolski</surname>,
+							</persName>
+							<persName>
+								<forename>Chris</forename>
+								<surname>Grzegorczyk</surname>
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Graziano</forename>
+								<surname>Obertelli</surname> ,
+							</persName>
+							<persName>
+								<forename>Sunil</forename>
+								<surname>Soman</surname> ,
+							</persName>
+							<persName>
+								<forename>Lamia</forename>
+								<surname>Youseff</surname> ,
+							</persName>
+							<persName>
+								<forename>Dmitrii</forename>
+								<surname>Zagorodnov</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

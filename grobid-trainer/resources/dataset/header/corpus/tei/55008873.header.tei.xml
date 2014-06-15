@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008873"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">Page: 1<lb/></note>
+
+	<docTitle>
+	<titlePart>Joint Collaborative Team on Video Coding (JCT-VC)<lb/> of ITU-T SG16 WP3 and ISO/IEC JTC1/SC29/WG11<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">1st Meeting: </note>
+	
+	<address>Dresden, DE,</address>
+
+	<date>15-23 April, 2010<lb/></date>
+
+	<note type="other">Document: JCTVC-A124<lb/> </note>
+	
+	<docTitle>
+	<titlePart>Title:<lb/> Samsung&apos;s Response to the Call for Proposals on Video Compression Technology<lb/> </titlePart>
+	</docTitle>
+	
+	<note type="other">Status:<lb/> Input Document to JCT-VC<lb/> Purpose:<lb/> Proposal<lb/> Author(s) or<lb/> Contact(s):<lb/></note>
+
+	<byline>
+	<docAuthor>Ken McCann,<lb/> Woo-Jin Han,<lb/> Il-Koo Kim,<lb/> Jung-Hye Min,<lb/> Elena Alshina,<lb/> Alexander Alshin,<lb/> Tammy Lee,<lb/> Jianle Chen,<lb/> Vadim Seregin,<lb/> Sunil Lee,<lb/> Yoon-Mi Hong,<lb/> Min-Su Cheon,<lb/> Nikolay Shlyakhov<lb/></docAuthor>
+	</byline>
+
+	<phone>Tel:<lb/> </phone>
+	
+	<email>Email:<lb/> ken@zetacast.com, </email>
+	
+	<phone>+44 1962 625347<lb/> </phone>
+	
+	<email>wjhan.han@samsung.com, </email>
+	
+	<phone>+82 31 279 8831<lb/> </phone>
+	
+	<email>ilkoo.kim@samsung.com,<lb/> jh643.min@samsung.com,<lb/> elena_a.alshina@samsung.com,<lb/> alexander_b.alshin@samsung.com,<lb/> tammy.lee@samsung.com,<lb/> jianle.chen@samsung.com,<lb/> v.seregin@samsung.com,<lb/> sunil.lee@samsung.com,<lb/> yoonmi.hong@samsung.com,<lb/> minsu.cheon@samsung.com,<lb/> n.shlyakhov@samsung.com<lb/></email>
+
+	<note type="other">Source:<lb/></note>
+
+	<byline>
+	<affiliation>Samsung Electronics Co., Ltd. and British Broadcasting Corporation<lb/> _____________________________<lb/></affiliation>
+	</byline>
+
+	<div type="abstract">Abstract<lb/> This proposal is Samsung&apos;s response to the Call for Proposals (CfP) on video compression technology,<lb/> jointly issued by ITU-T SG16 Q.6 (VCEG) and ISO/IEC JTC1/SC29/WG11 (MPEG). It has been<lb/> produced in collaboration with the British Broadcasting Corporation. The goal of this proposal is to<lb/> provide a video compression technology which has significantly higher compression capability than the<lb/> state-of-the-art H.264/AVC standard, especially for high-definition (HD) video contents. To achieve this<lb/> goal, a number of new algorithmic tools are proposed covering several aspects of video compression<lb/> technology. These include a general structure for representation of video content, inter/intra prediction, in-<lb/>loop filtering, and entropy coding. When all the proposed algorithmic tools are used, the proposed video<lb/> codec achieves approximately 40% bit-saving on average compared to H.264/AVC in both constraint set<lb/> 1 and 2 configurations. The average decoding time for the proposed codec was measured to be between<lb/> about 0.9 and 2.4 times that of JM17.0, depending on the computer HDD configuration.</div>
+
+		</front>
+	</text>
+</tei>

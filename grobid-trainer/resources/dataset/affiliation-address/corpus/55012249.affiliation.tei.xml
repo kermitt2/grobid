@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="department">Institute of Pharmaceutical Sciences and Drug Research</orgName>,
+							<orgName type="institution">Seth GL Bihani SD College of Technical Education</orgName>,
+							<lb/>
+							<address>
+								<addrLine>Sri Ganganagar</addrLine>,
+								<settlement>Rajasthan</settlement>,
+								<country>India</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="department">Department of Pharmaceutical Sciences</orgName>,
+							<orgName type="institution">ML Sukhadia University</orgName>,
+							<address>
+								<settlement>Udaipur</settlement>,
+								<settlement>Rajasthan</settlement>,
+								<country>India</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

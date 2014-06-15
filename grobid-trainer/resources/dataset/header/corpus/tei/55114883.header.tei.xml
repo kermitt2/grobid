@@ -1,0 +1,69 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55114883"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">To cite this article:</note>
+
+	<reference>Neuroendocrinol Lett 2008; 29(1): 117–124<lb/></reference>
+
+	<note type="other">O R I G I N A L A R T I C L E<lb/></note>
+
+	<reference>Neuroendocrinology Letters Volume 29 No. 1 2008<lb/></reference>
+
+	<docTitle>
+	<titlePart>The gut-brain barrier in major depression:<lb/> Intestinal mucosal dysfunction with an increased<lb/> translocation of LPS from gram negative<lb/> enterobacteria (leaky gut) plays a role in the<lb/> inflammatory pathophysiology of depression<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Michael Maes 1 , Marta Kubera 2 and Jean-Claude Leunis 3<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>MCare4U Outpatient Clinics,</affiliation>
+	</byline>
+
+	<address>Belgium;<lb/></address>
+
+	<byline>
+	<affiliation>Department of Experimental Neuroendocrinology, Institute of Pharmacology, Polish Academy of<lb/> Sciences,</affiliation>
+	</byline>
+
+	<address>Krakow, Poland;<lb/></address>
+
+	<byline>
+	<affiliation>Laboratory Ategis,</affiliation>
+	</byline>
+
+	<address>Waver, Belgium.<lb/></address>
+
+	<docAuthor>Correspondence to: Prof. Dr. M.Maes, M.D., Ph.D. Director: </docAuthor>
+
+	<affiliation>M-Care4U Outpatient Clinics,<lb/> </affiliation>
+
+	<address>Olmenlaan 9, 2610 Antwerp, Belgium. </address>
+
+	<phone>tel: +32-3-4809282 fax: +32-3-2889185<lb/></phone>
+
+	<ptr type="web">www.michaelmaes.com</ptr>
+
+	<email>e-mail: crc.mh@telenet.be<lb/></email>
+
+	<note type="submission">Submitted: 2008-01-06 Accepted: 2008-01-27<lb/></note>
+
+	<date>Published online: 2008-02-22<lb/></date>
+
+	<keyword>Key words:<lb/> major depression; chronic fatigue syndrome; inflammation; enterobacteria;<lb/> leaky gut; gut permeability; cytokines; LPS; oxidative stress<lb/></keyword>
+
+	<reference>Neuroendocrinol Lett 2008; 29(1):117–124 PMID: 18283240 NEL290108A12</reference>
+
+	<note type="copyright">© 2008 Neuroendocrinology Letters @BULLET www.nel.edu<lb/></note>
+
+	<div type="abstract">Abstract<lb/> There is now evidence that major depression (MDD) is accompanied by an ac-<lb/>tivation of the inflammatory response system (IRS) and that pro-inflammatory<lb/> cytokines and lipopolysacharide (LPS) may induce depressive symptoms.<lb/> The aim of the present study was to examine whether an increased gastrointestinal<lb/> permeability with an increased translocation of LPS from gram negative bacteria<lb/> may play a role in the pathophysiology of MDD. Toward this end, the present study<lb/> examines the serum concentrations of IgM and IgA against LPS of the gram-nega-<lb/>tive enterobacteria, Hafnia Alvei, Pseudomonas Aeruginosa, Morganella Morganii,<lb/> Pseudomonas Putida, Citrobacter Koseri, and Klebsielle Pneumoniae in MDD<lb/> patients and normal controls.<lb/> We found that the prevalences and median values for serum IgM and IgA against<lb/> LPS of enterobacteria are significantly greater in patients with MDD than in nor-<lb/>mal volunteers. These differences are significant to the extent that a significant<lb/> diagnostic performance is obtained, i.e. the area under the ROC curve is 90.1%.<lb/> The symptom profiles of increased IgM and IgA levels are fatigue, autonomic and<lb/> gastro-intestinal symptoms and a subjective feeling of infection. The results show<lb/> that intestinal mucosal dysfunction characterized by an increased translocation of<lb/> gram-negative bacteria (leaky gut) plays a role in the inflammatory pathophysiol-<lb/>ogy of depression. It is suggested that the increased LPS translocation may mount<lb/> an immune response and thus IRS activation in some patients with MDD and may<lb/> induce specific &quot;sickness behaviour&quot; symptoms. It is suggested that patients with<lb/> MDD should be checked for leaky gut by means of the IgM and IgA panel used in<lb/> the present study and accordingly should be treated for leaky gut.</div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013937"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>J Mel Cell Cardiol<lb/> 23, (Supplement<lb/> I), 53-60<lb/> (1991)<lb/></reference>
+
+	<docTitle>
+	<titlePart>Ion Channel Redox Model<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>B. S. Marinov<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institute of Biological Physics, USSR Academy of Sciences,</affiliation>
+	</byline>
+
+	<address>Pushchino, Moscow Region, USSR<lb/></address>
+
+	<div type="abstract">B. S. MARINOV.<lb/> Ion Channel Redox Model. Journal of Molecular and Cellular Cardiology ( 1991) 23, (Suppl I).<lb/> 53-60. Na+-and Ca&apos;+-channel<lb/> blo ckers behave as electron donors in reactions with excited dye radicals, while<lb/> agonists of these channels behave as electron acceptors in the same reactions. The opposite redox characteristics<lb/> of channel blockers and agonists may reflect their opposite action on the channels. The observed regularities<lb/> of channel-modulator<lb/> reactions with free radicals, as well as, the ability of many proteins to influence long-range<lb/> electron transfer, are the basis for a model of channel function and regulation<lb/> by various agents in which labile<lb/> electrons in the channel-forming<lb/> protein act as electric field sensors.<lb/></div>
+
+	<keyword>KEY WORDS: Electron donor; Acceptor;<lb/> Electron transfer; Channel forming Protein; Channel functioning.<lb/></keyword>
+
+	<div type="introduction">Introdudon<lb/> The ability to observe the function of a single<lb/> ion channel has significantly advanced the<lb/> field of neurophysiology in the past decade.<lb/> Fast reversible transitions between closed and<lb/> open channel states are stochastic by nature<lb/> and governed by membrane potential, chan-<lb/>nel current, and various ligands [27].<lb/> The behavior of a single channel contra-<lb/>dicts certain aspects of an earlier channel<lb/> model [I] used to explain the kinetics of<lb/> averaged current through excitable mem-<lb/>branes; therefore, the model needs to be modi-<lb/>fied to take into account activating and<lb/> inactivating gates, the nature and functioning<lb/> of electric field sensors and gating particles,<lb/> and mechanisms of diverse channel modu-<lb/>lators. The similarity in behavior of single<lb/> channels of different types (Na+, Ca2+, and<lb/> K+) may point to common principles under-<lb/>lying channel function.<lb/> Investigators are attempting to establish<lb/> regularities in the physical and chemical pro-<lb/>perties of channel-forming structures and of<lb/> compounds affecting channel function in<lb/> order to clarify the mechanisms of action of<lb/> the channels and their modulators. The chan-<lb/>nels of excitable membranes are formed by<lb/> proteins, for which the primary structures of<lb/> some have been established [19]. Although the<lb/> structure</div>
+
+		</front>
+	</text>
+</tei>

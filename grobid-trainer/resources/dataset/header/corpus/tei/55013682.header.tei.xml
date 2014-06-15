@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013682"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Keyboards without Keyboards:<lb/> A Survey of Virtual Keyboards<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Mathias Kölsch<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Dept. of Computer Science<lb/> University of California at<lb/></affiliation>
+	</byline>
+
+	<address>Santa Barbara, CA<lb/> </address>
+
+	<phone>+1 (805) 893-4321<lb/></phone>
+
+	<email>matz@cs.ucsb.edu<lb/></email>
+
+	<byline>
+	<docAuthor>Matthew Turk<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Dept. of Computer Science<lb/> University of California at<lb/></affiliation>
+	</byline>
+
+	<address>Santa Barbara, CA<lb/> </address>
+
+	<phone>+1 (805) 893-4321<lb/></phone>
+
+	<email>mturk@cs.ucsb.edu<lb/></email>
+
+	<div type="abstract">ABSTRACT<lb/> Input to small devices is becoming an increasingly crucial factor<lb/> in development for the ever-more powerful embedded market.<lb/> Speech input promises to become a feasible alternative to tiny<lb/> keypads, yet its limited reliability, robustness, and flexibility<lb/> render it unsuitable for certain tasks and/or environments. Various<lb/> attempts have been made to provide the common keyboard<lb/> metaphor without the physical keyboard, to build &quot;virtual<lb/> keyboards&quot;. This promises to leverage our familiarity with the<lb/> device without incurring the constraints of the bulky physics.<lb/> This paper surveys technologies for alphanumeric input devices<lb/> and methods with a strong focus on touch-typing. We analyze the<lb/> characteristics of the keyboard modality and show how they<lb/> contribute to making it a necessary complement to speech<lb/> recognition rather than a competitor.<lb/></div>
+
+	<keyword>Keywords<lb/> Small device input, virtual keyboard, user interface, computer<lb/> vision, gesture recognition.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

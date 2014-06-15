@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008737"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>IMPLEMENTATION AND PERFORMANCE ANALYSIS OF 2-D ORDER 16<lb/> INTEGER TRANSFORMS IN H.264/AVC AND AVS-VIDEO<lb/> FOR HIGH DEFENITION VIDEO CODING<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>by<lb/> MADHU PERINGASSERY KRISHNAN<lb/></docAuthor>
+	</byline>
+
+	<note>Presented to the </note>
+	
+	<byline>
+	<affiliation>Faculty of the Graduate School of<lb/> The University of Texas at Arlington </affiliation>
+	</byline>
+	
+	<degree>in Partial Fulfillment<lb/> of the Requirements<lb/> for the Degree of<lb/> MASTER OF SCIENCE IN ELECTRICAL ENGINEERING<lb/> </degree>
+	
+	<byline>
+	<affiliation>THE UNIVERSITY OF TEXAS AT ARLINGTON<lb/> </affiliation>
+	</byline>
+		
+	<date>DECEMBER 2010</date>
+	
+		</front>
+	</text>
+</tei>

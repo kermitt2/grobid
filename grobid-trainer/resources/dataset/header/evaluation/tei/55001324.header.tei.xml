@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001324"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>DR. NICOL ECE498 FINAL PROJECT<lb/> 1<lb/></idno>
+
+	<docTitle>
+	<titlePart>Blackbox Analysis of Shuffle Algorithms<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Michael McQuinn, Eric W. Davis Rozier<lb/></docAuthor>
+	</byline>
+
+	<email>{mmcquinn, ewdr}@crhc.uiuc.edu<lb/></email>
+
+		</front>
+	</text>
+</tei>

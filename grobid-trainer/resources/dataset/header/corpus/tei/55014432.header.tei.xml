@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014432"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="copyright">Copyright<lb/> ©2008 by NACE International. Requestsfor permission to publish this manuscript in any form, in part or in whole must be in writing to NACE<lb/> International, Copyright Division, 1440 South creek Drive, Houston, Texas 777084. The material presented and the views expressed in this paper are<lb/> solely those of the author(s) and are not necessarily endorsed by the Association. Printed in the U.S.A.<lb/></note>
+
+	<docTitle>
+	<titlePart>A New High Performance Quaternary Phosphonium Biocide for Microbiological<lb/> Control in Oilfield Water Systems<lb/>
+	</titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Jeffrey F. Kramer, Frank O&apos;Brien and Steven F. Strba<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>BWA Water Additives<lb/></affiliation>
+	</byline>
+
+	<address>1979 Lakeside Parkway<lb/> Tucker, GA 30084<lb/> USA<lb/></address>
+
+	<div type="abstract">ABSTRACT<lb/> Microorganisms can cause severe problems in oilfield water systems. This paper describes a<lb/> new quaternary phosphonium biocide based on tributyl tetradecyl phosphonium chloride<lb/> (TTPC). Laboratory and field data has shown that TTPC is effective at low concentrations, is<lb/> fast acting and is effective against both acid producing and sulfate reducing bacteria. It has<lb/> out performed both glutaraldehyde and THPS in comparative biocidal tests giving complete kill<lb/> of aerobic and anaerobic sulfate-reducing bacteria in one hour at 5 and 50 ppm active,<lb/> respectively. Glutaraldehyde required &gt;40 and 150 ppm active and THPS required 40 and<lb/> &gt;200 active to match the performance of TTPC versus aerobic and anaerobic sulfate-reducing<lb/> bacteria, respectively. TTPC is compatible with oxidizing biocides, hydrogen sulfide and<lb/> oxygen scavengers and has excellent thermal stability which makes it broadly applicable to<lb/> oilfield water systems.<lb/></div>
+
+	<keyword>Keywords: biocide, quaternary phosphonium compound, tributyl tetradecyl phosphonium<lb/> chloride, TTPC, surface activity, compatibility, biofouling, souring, microbiologically influenced<lb/> corrosion, MIC, water injection, produced water, storage tanks, pipelines<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

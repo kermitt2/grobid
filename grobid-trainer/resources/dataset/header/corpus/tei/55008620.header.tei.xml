@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008620"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Journal of Food and Drug Analysis, Vol. 15, No. 3, 2007, Pages 325-331<lb/></reference>
+
+	<note type="page">325<lb/></note>
+	
+	<note type="other">藥物食品分析　第十五卷　第三期<lb/></note>
+
+	<docTitle>
+	<titlePart>A Study on the Analytical Methods for Total Dietary<lb/> Fiber in Fructan-Containing Foods<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>SHU-CHI TSAI, SHU-FANG LU, WEN-WEN YU, HSIAO-CHEN LIN AND WEIGUANG FU*<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Analysis Research and Service Center, Food Industry Research &amp; Development Institute,</affiliation>
+	</byline>
+
+	<address>Hsinchu, Taiwan, R.O.C.<lb/></address>
+
+	<note type="submission">(Received: January 18, 2007, Accepted: July 24, 2007)<lb/></note>
+
+	<div type="abstract">ABSTRACT<lb/> The fructans, inulin and oligofructose, were known to possess many of the physiologic properties of dietary fiber (DF).<lb/> However, they were not listed as DF on labels of foods that contained them, because they cannot be completely recovered by the<lb/> precipitate of AOAC enzymatic-gravimetric method. The main goal of this study was therefore to develop a quantitative method<lb/> for total DF in fructan-containing foods. Evaluation was carefully done by combining AOAC 985.29 DF method and AOAC<lb/> 999.03 fructans method. In addition to three commercial fructan products, asparagus and tea drink samples were selected and<lb/> spiked with fructans to carry out the method validation. The results were all in excellent agreement with the expected values.<lb/> Also, associated precision and measurement uncertainties were evaluated as well. Recoveries by the proposed method ranged<lb/> from 97.02% to 101.35%, with coefficients of variation (CVs) of 0.63~1.17%. Total DF content was more accurate for combined<lb/> method than either from AOAC 985.29 only or the sum of determining values from AOAC 985.29 plus AOAC 999.03.<lb/></div>
+
+	<keyword>Key words: fructans, inulin, fructo-oligosaccharides, dietary fiber, analytical method<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

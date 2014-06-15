@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001877"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Adhesive Properties of Silanol Surface Modified<lb/> Poly(ethylene naphthalate) Film<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Bin Hu,<lb/> 1 Junaid A. Siddiqui,<lb/> 2 Raphael M. Ottenbrite*<lb/> 1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Department of Chemistry, Virginia Commonwealth University,</affiliation>
+	</byline>
+
+	<address>Richmond, VA 23284, USA<lb/></address>
+
+	<email>E-mail: ottenbri@saturn.vcu.edu<lb/></email>
+
+	<byline>
+	<affiliation>2 Dupont Films,</affiliation>
+	</byline>
+
+	<address>Bermuda Hundred, Hopewell, VA 23860, USA<lb/></address>
+
+	<keyword>Keywords: adhesives; films; poly(ethylene naphthalate); silanol surface; siloxane bonded<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

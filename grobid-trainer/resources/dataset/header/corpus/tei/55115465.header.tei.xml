@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55115465"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Chemical Physics<lb/> ELSEVIER Chcmical Physics 194 (1995) 2117-213<lb/></reference>
+
+	<docTitle>
+	<titlePart>The thermal ageing of poly( 3,4-ethylenedioxythiophene).<lb/> An investigation by X-ray absorption and X-ray photoelectron<lb/> spectroscopy<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>I. Winter a, C. Reese a, j. Hormes ~, G. Heywang b, F. Jonas b<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Physikalisches Institut der Uni~,ersitiit Bonn,</affiliation>
+	</byline>
+
+	<address>Nussallee 12, D-53115 Bonn, Germany<lb/></address>
+
+	<byline>
+	<affiliation>I, Zentrale Forschung und Entwicklung, Bayer AG,</affiliation>
+	</byline>
+
+	<address>D-51368 Lecerkusen, Germany<lb/></address>
+
+	<note type="other">Received 3/1 November 1994<lb/></note>
+
+	<div type="abstract">Abstract<lb/> Oxidatively prepared poly(3,4-ethylenedioxythiophene tetrachloroferrate) (PEDT) has been characterized by X-ray<lb/> absorption spectroscopy and XPS to study the thermal degradation of the polymer. XANES spectra were measured at the<lb/> Electron Stretcher Accelerator ELSA in Bonn and compared with measurements made with the conventional XPS technique.<lb/> These investigations show that after 48 h at 150°C due to baking and moisture irreversible structural changes in the polymer<lb/> main chain occur. They were identified as a partial oxidation of the sulfur of the polymer backbone to the sulfate anion and<lb/> the decomposition of the counter ion resulting in loss of conductivity. A possible degradation mechanism is presented.<lb/></div>
+
+		</front>
+	</text>
+</tei>

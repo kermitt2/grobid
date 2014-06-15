@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="department">Department of Applied Physics</orgName>,
+							<orgName type="institution">University of Eastern Finland</orgName>,
+							<address>
+								<settlement>Kuopio</settlement>,
+								<country>Finland</country>,
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="department">Optics Department</orgName>,
+							<orgName type="department">Centro de Investigació n Científica y de Educació n Superior de<lb/> Ensenada</orgName>,
+							<address>
+								<settlement>Ensenada</settlement>,
+								<region>Mexico</region>,
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>3</marker>
+							<orgName type="department">Department of Neurobiology, A. I. Virtanen Institute</orgName>,
+							<orgName type="institution">University of Eastern Finland</orgName>,
+							<address>
+								<settlement>Kuopio</settlement>,
+								<country>Finland</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="institution">University Hospital of Wü rzburg</orgName>,
+							<address>
+								<country>Germany</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013601"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Carbonsauren aus Enaminones<lb/></note>
+
+	<docTitle>
+	<titlePart>Kurzmitteilungen<lb/> Neue Synthese aromatischer Carbonsauren aus Enaminonen<lb/> Novel Synthesis of Aromatic Carboxylic Acids from Enaminones<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Werner Lowe&apos; und Thomas Braden<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institut fur Pharmazie der Freien Universitat Berlin,</affiliation>
+	</byline>
+
+	<address>Konigin-Luise-Str. 2 + 4, D-I4195 Berlin<lb/></address>
+
+	<note type="other">Eingegangen am </note>
+
+	<date>19. August 1994<lb/></date>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009618"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Information Exploration Using The Pond<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Olov Ståhl, Anders Wallberg, Jonas<lb/> Söderberg, Jan Humble, Lennart E. Fahlén<lb/> and Adrian Bullock<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Swedish Institute of Computer Science (SICS)<lb/></affiliation>
+	</byline>
+
+	<address>Box 1263, SE-164 29, Kista, Sweden<lb/></address>
+
+	<phone>+46 8 633 15 00<lb/> </phone>
+
+	<email>{olovs, andersw, jas, humble, lef,<lb/> adrian}@sics.se<lb/></email>
+
+	<byline>
+	<docAuthor>Jenny Lundberg<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Human Work Science and Media<lb/> Technology Blekinge Institute of Technology<lb/></affiliation>
+	</byline>
+
+	<address>Box 520, 372 25 Ronneby, Sweden<lb/></address>
+
+	<phone>+46 457 385563<lb/> </phone>
+	
+	<email>Jenny.Lundberg@bth.se<lb/></email>
+
+	<div type="abstract">ABSTRACT<lb/> In this paper we describe The Pond, a system used to search for<lb/> and visualise data elements on an engaging tabletop display. The<lb/> Pond uses methods of unencumbered interaction and audio<lb/> feedback to allow users to investigate data elements, and supports<lb/> shoulder-to-shoulder collaboration with the physical Pond artefact<lb/> mediating the collaboration between those people gathered around<lb/> it. The user interface is based on an ecosystem metaphor,<lb/> presenting data elements in the form of shoals of aquatic creatures<lb/> inside a virtual 3D pond. The Pond is an interactive system<lb/> offering an appealing and novel way to search for and interchange<lb/> information. We describe the motivation and design choices<lb/> behind The Pond, the system as it stands today, details of its<lb/> implementation, and observations from a study of The Pond in<lb/> use.<lb/></div>
+
+	<keyword>Categories and Subject Descriptors<lb/> H.3.3 [Information Storage and Retrieval]: Information Search<lb/> and Retrieval – Clustering, Information filtering, Search process.<lb/> H.5.1 [Information Interfaces and Presentation (e.g. HCI)]:<lb/> Multimedia Information Systems – Artificial, augmented and<lb/> virtual realities, Audio output, Evaluation/methodology.<lb/> H.5.2 [Information Interfaces and Presentation (e.g. HCI)]:<lb/> User Interfaces – Graphical user interfaces (GUI), Prototyping.<lb/> H.5.3 [Information Interfaces and Presentation (e.g. HCI)]:<lb/> Group and Organization Interfaces – Collaborative computing,<lb/> Synchronous interaction, Theory and models.<lb/> General Terms<lb/> Design, Experimentation, Human Factors.<lb/> Keywords<lb/> Database, visualization, searching, virtual environment.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

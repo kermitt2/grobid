@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011573"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Sixth International Workshop Advances in Signal Processing for Non Destructive Evaluation of Materials (2009)<lb/>
+	</note>
+
+	<note type="other">*)</note>
+
+	<byline>
+	<affiliation>Salzgitter Mannesmann Forschung GmbH,</affiliation>
+	</byline>
+
+	<address>Ehinger Str. 200, 47259 Duisburg, Germany,</address>
+
+	<email>t.orth@du.szmf.de<lb/></email>
+
+	<docTitle>
+	<titlePart>Wavelet Signal Processing of Magnetic Flux<lb/> Leakage Signals -Implementation of a<lb/> Multichannel Wavelet-Filter for<lb/> Nondestructive Testing Systems in Steel<lb/> Tube Mills<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Thomas ORTH*, Till SCHMITTE </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Salzgitter Mannesmann Forschung, </affiliation>
+	</byline>
+
+	<address>Duisburg, Germany<lb/> </address>
+
+	<byline>
+	<docAuthor>Robert PETERS, Klaus-Dieter MÜLLER, Ashraf KOKA, Stefan NITSCHE,<lb/></docAuthor>
+	</byline>
+
+	<address>V&amp;M Deutschland, Düsseldorf, Germany<lb/></address>
+
+	<div type="abstract">Abstract. Magnetic flux leakage testing is one of the most important NDT methods<lb/> for seamless steel tubes. In order to increase the sensitivity of the inspection, diverse<lb/> signal processing techniques are already applied. As an alternative to conventional<lb/> filter techniques, wavelet filtering reveals a higher separation of the signal to the<lb/> noise level together with an improved adaptation to the signal structure. For the im-<lb/>plementation of wavelet filtering into existing third party systems, a multichannel<lb/> DSP-hardware has been developed, which is capable to filter 32 sensor signals si-<lb/>multaneously. The results show a significant improvement of the signal to noise ra-<lb/>tio. Furthermore, it is possible to dispend with the commonly applied differential<lb/> sensor technique so that a wider range of defect types can be detected.<lb/></div>
+
+		</front>
+	</text>
+</tei>

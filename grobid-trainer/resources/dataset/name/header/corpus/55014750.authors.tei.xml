@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>W</forename>.
+								<middlename>A</middlename>.
+								<surname>Hollerman</surname>
+								<marker>*</marker> ,
+							</persName>
+							<persName>
+								<forename>S</forename>.
+								<middlename>W</middlename>.
+								<surname>Allison</surname>
+								<marker>**</marker> ,
+							</persName>
+							<persName>
+								<forename>D</forename>.
+								<middlename>L</middlename>.
+								<surname>Beshears</surname>
+								<marker>**</marker> ,
+							</persName>
+							<persName>
+								<forename>R</forename>.
+								<middlename>F</middlename>.
+								<surname>Guidry</surname>
+								<marker>*</marker> ,
+							</persName>
+							<persName>
+								<forename>T</forename>.
+								<middlename>J</middlename>.
+								<surname>Bencic</surname> ,
+							</persName>
+							<persName>
+								<forename>C</forename>.
+								<middlename>R</middlename>.
+								<surname>Mercer</surname> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>J</forename>.
+								<middlename>I</middlename>.
+								<surname>Eldridge</surname> ,
+							</persName>
+							<persName>
+								<forename>M</forename> .
+								<middlename>R</middlename>.
+								<surname>Cates</surname>
+								<marker>* *</marker>,
+							</persName>
+							<persName>
+								<forename>P</forename> .
+								<surname>Boudreaux</surname>
+								<marker>*</marker> , and
+							</persName>
+							
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

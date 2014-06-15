@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014289"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Refresco: Improving Query Performance<lb/> Through Freshness Control in a Database<lb/> Cluster<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Cécile Le Pape<lb/> 1 , Stéphane Gançarski<lb/> 1 , and Patrick Valduriez<lb/> 2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Laboratoire d&apos;Informatique de Paris 6,</affiliation>
+	</byline>
+
+	<address>Paris, France<lb/></address>
+
+	<email>Firstname.Lastname@lip6.fr<lb/></email>
+
+	<byline>
+	<affiliation>2 INRIA and LINA,</affiliation>
+	</byline>
+
+	<address>Nantes, France<lb/></address>
+
+	<email>Patrick.Valduriez@inria.fr<lb/></email>
+
+	<div type="abstract">Abstract. We consider the use of a cluster system for managing au-<lb/>tonomous databases. In order to improve the performance of read-only<lb/> queries, we strive to exploit user requirements on replica freshness.<lb/> Assuming mono-master lazy replication, we propose a freshness model<lb/> to help specifying the required freshness level for queries. We propose<lb/> an algorithm to optimize the routing of queries on slave nodes based on<lb/> the freshness requirements. Our approach uses non intrusive techniques<lb/> that preserve application and database autonomy. We provide an exper-<lb/>imental validation based on our prototype Refresco. The results show<lb/> that freshness control can help increase query throughput significantly.<lb/> They also show significant improvement when freshness requirements<lb/> are specified at the relation level rather than at the database level.<lb/>
+	</div>
+
+		</front>
+	</text>
+</tei>

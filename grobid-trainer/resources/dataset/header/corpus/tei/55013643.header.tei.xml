@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013643"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<date>May 2010<lb/></date>
+
+	<idno>doc.: IEEE 802.11-10/0433r2<lb/></idno>
+
+	<note type="other">Submission</note>
+
+	<note type="page">Page 1 of 336<lb/> </note>
+
+	<byline>
+	<docAuthor>Carlos Cordeiro, </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Intel, et al.<lb/></affiliation>
+	</byline>
+		
+	<docTitle>
+	<titlePart>IEEE P802.11<lb/> Wireless LANs<lb/> PHY/MAC Complete Proposal Specification<lb/></titlePart>
+	</docTitle>
+
+	<date>Date: 2010-05-18<lb/></date>
+
+		</front>
+	</text>
+</tei>

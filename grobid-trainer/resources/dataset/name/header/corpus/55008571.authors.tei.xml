@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Roshada</forename>
+								<surname>DAUD</surname>
+							<lb/>
+								<marker>1</marker>,
+							</persName>
+							<persName>
+								<forename>Setsuo</forename>
+								<surname>MAEDA</surname>
+							<lb/>
+								<marker>2 *</marker>,
+							</persName>
+							<persName>
+								<forename>Nur</forename>
+								<middlename>Nazmin</middlename>
+								<middlename>Mustafa</middlename>
+								<surname>KAMEEL</surname>
+							<lb/>
+								<marker>3</marker> ,
+							</persName>
+							<persName>
+								<forename>Muhamad</forename>
+								<middlename>Yunus </middlename>
+								<surname>RIPIN</surname>
+							<lb/>
+								<marker>1</marker> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Norazman</forename>
+								<surname>BAKRUN</surname>
+							<lb/>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>Raemy</forename>
+								<middlename>MD</middlename>
+								<surname>ZEIN</surname>
+							<lb/>
+								<marker>1</marker>,
+							</persName>
+							<persName>
+								<forename>Masaharu</forename>
+								<surname>KIDO</surname>
+							<lb/>
+								<marker>4</marker> and
+							</persName>
+							<persName>
+								<forename>Kiyotaka</forename>
+								<surname>HIGUCHI</surname>
+								<marker>4</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,63 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55115165"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Pharmacogn Mag. 2011 Oct-Dec; 7(28): 298–306.<lb/></reference>
+
+	<idno type="DOI">doi: 10.4103/0973-1296.90410<lb/></idno>
+
+	<idno>PMCID: PMC3261063<lb/></idno>
+
+	<docTitle>
+	<titlePart>Bioactive constituents from Harpephyllum caffrum Bernh. and Rhus<lb/> coriaria L<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Marawan M. Shabana, Aly M. El Sayed, Miriam F. Yousif, Abeer M. El Sayed, and Amany A. Sleem<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Pharmacognosy, College of Pharmacy, Cairo University,</affiliation>
+	</byline>
+
+	<address>Giza, Egypt<lb/></address>
+
+	<byline>
+	<affiliation>Department of Pharmacology, National Research Center,</affiliation>
+	</byline>
+
+	<address>El-Dokki, Giza, Egypt<lb/></address>
+
+	<note type="other">Address for correspondence:</note>
+
+	<byline>
+	<docAuthor>Dr. Miriam F. Yousif,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Pharmacognosy Department,</affiliation>
+	</byline>
+
+	<address>Kasr El-Einy Street, 11562,</address>
+
+	<byline>
+	<affiliation>Cairo University,</affiliation>
+	</byline>
+
+	<address>Egypt.</address>
+
+	<email>E-mail:<lb/> miriamyousif@hotmail.com<lb/></email>
+
+	<note type="submission">Received January 21, 2011; Revised March 2, 2011; Accepted November 30, 2011.<lb/></note>
+
+	<note type="copyright">Copyright : © Pharmacognosy Magazine<lb/> This is an open-access article distributed under the terms of the Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported, which permits<lb/> unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.<lb/></note>
+
+	<div type="abstract">Abstract<lb/> Background:</div>
+
+		</front>
+	</text>
+</tei>

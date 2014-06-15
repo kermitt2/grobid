@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Jim</forename>
+								<surname>Gilsinn</surname>,
+							</persName>
+							<persName>
+								<forename>Bill</forename>
+								<surname>Rippey</surname>,
+							</persName>
+							<persName>
+								<forename>Joe</forename>
+								<surname>Falco</surname>,
+							</persName>
+							<persName>
+								<forename>Tim</forename>
+								<surname>Quinn</surname>,
+							</persName>
+							<persName>
+								<forename>Bob</forename>
+								<surname>Russell</surname>,
+							</persName>
+							<persName>
+								<forename>Keith</forename>
+								<surname>Stouffer</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,77 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55114213"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">Page: 1<lb/></note>
+
+	<date>Date Saved: 2014-04-15<lb/></date>
+
+	<reference>Joint Collaborative Team on Video Coding (JCT-VC)<lb/> of ITU-T SG16 WP3 and ISO/IEC JTC1/SC29/WG11<lb/> 1st Meeting: Dresden, DE, 15-23 April, 2010<lb/></reference>
+
+	<note type="other">Document: JCTVC-A122<lb/> </note>
+	
+	<docTitle>
+	<titlePart>Title:<lb/> Description of video coding technology proposal by NHK and Mitsubishi<lb/> </titlePart>
+	</docTitle>
+	
+	<note type="other">Status:<lb/> Input Document to JCT-VC<lb/> Purpose:<lb/> Proposal<lb/> Author(s) or<lb/> Contact(s):<lb/></note>
+
+	<byline>
+	<docAuthor>Atsuro Ichigaya<lb/> Kazuhisa Iguchi<lb/> Yoshiaki Shishikui<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>NHK Science &amp; Technology Research<lb/> Laboratories</affiliation>
+	</byline>
+
+	<address>1-10-11, Kinuta, Setagaya-ku, Tokyo,<lb/> JAPAN<lb/></address>
+
+	<byline>
+	<docAuthor>Shun-ichi Sekiguchi<lb/> Kazuo Sugimoto<lb/> Akira Minezawa<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Information Technology R&amp;D Center,<lb/> Mitsubishi Electric Corporation<lb/></affiliation>
+	</byline>
+
+	<address>5-1-1, Ofuna, Kamakura, JAPAN<lb/></address>
+
+	<phone>Tel:<lb/> </phone>
+
+	<email>Email:<lb/> </email>
+
+	<phone>Tel:<lb/> </phone>
+
+	<email>Email:<lb/> </email>
+
+	<phone>+81-3-5494-3354<lb/> </phone>
+
+	<email>ichigaya.a-go@nhk.or.jp<lb/> iguchi.k-eq@nhk.or.jp<lb/> shishikui.y-hw@nhk.or.jp<lb/></email>
+
+	<phone>+81-467-41-2463<lb/></phone>
+
+	<byline>
+	<email>Sekiguchi.Shunichi@eb.MitsubishiElectric.co.jp<lb/></email>
+	</byline>
+
+	<lb/>
+
+	<byline>
+	<email>Sugimoto.Kazuo@ak.MitsubishiElectric.co.jp<lb/><lb/></email>
+	</byline>
+
+	<byline>
+	<docAuthor>Minezawa.Akira@ds.MitsubishiElectric.co.jp<lb/><lb/></docAuthor>
+	</byline>
+
+	<note type="other">Source:<lb/> NHK(Japan Broadcasting Corporation) and Mitsubishi Electric Corporation<lb/> _____________________________<lb/></note>
+
+	<div type="abstract">Abstract<lb/> This contribution presents specifications of a new video coding algorithm developed for submission as a response to<lb/> the Joint Call for Proposals on Video Compression Technology. The proposed video coding algorithm is based on<lb/> well-known macroblock based hybrid coding architectures with block motion compensation and orthogonal<lb/> transforms with coefficient quantization, and additional new coding tools. Major technical advances from existing<lb/> state-of-the-art AVC/H.264 are to enable adaptation of macroblock size together with multi-level hierarchical<lb/> motion partitioning, adaptive decision on image block coverage and transform basis type for transform coding, new<lb/> intra coding exploiting global spatial correlation, and adaptive Wiener loop filtering. The performance gain with the<lb/> basic part of the proposed architecture has been proven in some practical implementation studies including<lb/> responses to MPEG&apos;s Call for Evidence or KTA (Key Technical Area) work being conducted by ITU-T VCEG<lb/> (Q6/SG16). The proposed algorithm showed around 1dB PSNR gain in average relative to high-complexity<lb/> AVC/H.264 High Profile, over a wide range of test sequences. More gain has been observed especially for high-<lb/>resolution video sources such as class A and B as reported in this contribution. The proposed architecture has more<lb/> functional extensibility than the fixed use of existing 16x16 macroblocks, which could be a good starting point for<lb/> further performance improvement, while maintaining product implementability.</div>
+
+		</front>
+	</text>
+</tei>

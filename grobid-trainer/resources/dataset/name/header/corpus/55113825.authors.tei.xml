@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>David</forename>
+								<middlename>A</middlename>.
+								<surname>Hinds</surname>,
+							</persName>
+							<persName>
+								<forename>Laura</forename>
+								<middlename>L</middlename>.
+								<surname>Stuve</surname>,
+							</persName>
+							<persName>
+								<forename>Geoffrey</forename>
+								<middlename>B</middlename>.
+								<surname>Nilsen</surname>,
+							</persName>
+							<persName>
+								<forename>Eran</forename>
+								<surname>Halperin</surname>,
+							</persName>
+							<persName>
+								<forename>Eleazar</forename>
+								<surname>Eskin</surname>,
+							</persName>
+							<persName>
+								<forename>Dennis</forename>
+								<middlename>B</middlename>.
+								<surname>Ballinger</surname>,
+							</persName>
+							<persName>
+								<forename>Kelly</forename>
+								<middlename>A</middlename>.
+								<surname>Frazer</surname>,
+							</persName>
+							<persName>
+								<forename>David</forename>
+								<middlename>R</middlename>.
+								<surname>Cox</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

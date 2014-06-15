@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei type="manual">
+	<teiHeader>
+		<fileDesc xml:id="55114421"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">1<lb/></note>
+
+	<docTitle>
+	<titlePart>Negative Pressure Instrument<lb/> Operating and Maintenance Information<lb/> For Models NP-2,NP-4 and NP-V<lb/></titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

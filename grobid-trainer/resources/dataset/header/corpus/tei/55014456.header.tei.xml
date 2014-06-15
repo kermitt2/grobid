@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014456"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<affiliation>Power Transmission Group<lb/> </affiliation>
+	</byline>
+
+	<docTitle>
+	<titlePart>Product Range<lb/> SYNCHROFLEX<lb/> ®<lb/> Timing Belts<lb/></titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

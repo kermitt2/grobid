@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009187"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">REV. A<lb/> Information furnished by Analog Devices is believed to be accurate and<lb/> reliable. However, no responsibility is assumed by Analog Devices for its<lb/> use, nor for any infringements of patents or other rights of third parties<lb/> which may result from its use. No license is granted by implication or<lb/> otherwise under any patent or patent rights of Analog Devices.<lb/> a<lb/></note>
+	
+	<docTitle>
+	<titlePart>AD9765*<lb/></titlePart>
+	</docTitle>
+
+	<address>One Technology Way, P.O. Box 9106, Norwood, MA 02062-9106, U.S.A.<lb/></address>
+
+	<phone>Tel</phone>
+
+		</front>
+	</text>
+</tei>

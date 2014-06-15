@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010590"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>The effect of wireless communication on the distance<lb/> control between vehicles<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Mª Luisa Ruiz de Arbulo Gubía, Steven Gilijns, Marc Engels<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Flander&apos;s Mechatronics Technology Centre (FMTC),<lb/></affiliation>
+	</byline>
+
+	<email>marialuisa.ruizdearbulo@fmtc.be<lb/></email>
+
+	<div type="abstract">Abstract: This paper analyzes the effect of communication delays on a distance control<lb/> system. The analysis has been made by simulating a Bluetooth link in the control system.<lb/> First, the controller was designed for the ideal case of a hardwired communication link.<lb/> Then, an ideal and a real wireless link have been simulated on the system to analyze the<lb/> effect of retransmissions of a single packet and of multiples consecutive packets. The<lb/> results of the simulation allow us to state that the parameters that determine the<lb/> performance of the system are not only length but also time instant in which they happen.<lb/></div>
+
+	<keyword>Keywords: wireless control, Bluetooth,<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

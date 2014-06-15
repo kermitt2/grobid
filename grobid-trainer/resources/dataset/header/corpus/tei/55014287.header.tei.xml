@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014287"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>3<lb/> rd<lb/> ISDE DIGITAL EARTH SUMMIT<lb/> 12-14 June, 2010, Nessebar, Bulgaria<lb/></reference>
+
+	<docTitle>
+	<titlePart>CARTOGRAPHICALLY AUGMENTED REALITY<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Karel STANEK, Lucie FRIEDMANNOVA<lb/> MSc., Ph.D., Karel, STANEK;<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Masaryk University, Faculty of Science, Department of Geography, Laboratory on Geoinformatics<lb/> and Cartography;<lb/>
+	</affiliation>
+	</byline>
+
+	<address>Kotlarska 2, 611 37 Brno, Czech Republic;<lb/></address>
+
+	<phone>Tel.: 00 420 549 49 7430, Fax: 00 420 549 49 1061, </phone>
+
+	<email>E-mail: karst@geogr.muni.cz.<lb/></email>
+
+	<byline>
+	<docAuthor>MSc., Ph.D., Lucie, FRIEDMANNOVA;<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Masaryk University, Faculty of Science, Department of Geography, Laboratory on Geoinformatics<lb/> and Cartography;<lb/>
+	</affiliation>
+	</byline>
+
+	<address>Kotlarska 2, 611 37 Brno, Czech Republic;<lb/></address>
+
+	<phone>Tel.: 00 420 549 49 3823, Fax: 00 420 549 49 1061, </phone>
+
+	<email>E-mail: lucie@geogr.muni.cz.<lb/></email>
+
+	<div type="abstract">Abstract Virtual environments of the Digital Earth were from its beginning quickly enriched by usage of the augmented reality.<lb/> The following paper is focused on possibilities to include strictly cartographic methods of visual representation of data<lb/> into the Digital Earth representation. The idea is to embed cartographically processed and visualized thematic<lb/> information into the augmented reality without actually using a map. A map apart from factual information about<lb/> concrete objects displays relationships between them and also gives overall information about spatial trends and<lb/> distribution. Even if augmented reality cannot fully substitute a map as such, in some cases, the fusion of methods of<lb/> cartographic representation with augmented reality is better solution for a user than simple use of the products at the<lb/> same time or concurrently.<lb/></div>
+
+	<keyword>Keywords Augmented reality, cartographic method<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

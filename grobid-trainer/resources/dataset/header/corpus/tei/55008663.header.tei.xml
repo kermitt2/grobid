@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008663"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="copyright">© Copyright by International OCSCO World Press. All rights reserved. 2007<lb/></note>
+
+	<reference>VOLUME 24<lb/> ISSUE 1<lb/>September 2007<lb/></reference>
+
+	<note type="other">Occasional paper<lb/></note>
+	
+	<note type="page">123<lb/> </note>
+	
+	<note type="other">of Achievements in Materials<lb/> and Manufacturing Engineering<lb/> of Achievements in Materials<lb/> and Manufacturing Engineering<lb/></note>
+
+	<docTitle>
+	<titlePart>Superplasticity in titanium alloys<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>J. Sieniawski<lb/></docAuthor>
+	</byline>
+
+	<note type="other">co-operating with<lb/></note>
+	
+	<byline>
+	<docAuthor>M. Motyka*<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Material Science, The Faculty of Mechanical Engineering and Aeronautics,<lb/> Rzeszów University of Technology,</affiliation>
+	</byline>
+
+	<address>Al. Powstańców Warszawy 8, 35-959 Rzeszów, Poland<lb/></address>
+
+	<email>* Corresponding author: E-mail address: motyka@prz.edu.pl<lb/></email>
+
+	<note type="submission">Received 15.03.2007; </note>
+
+	<date type="publication">published in revised form 01.09.2007<lb/> </date>
+
+	<note>Materials<lb/> </note>
+	
+	<div type="abstract">AbstrAct<lb/> Purpose: The paper reports characteristic of superplasticity phenomenon in titanium alloys and possibility of<lb/> its applications.<lb/> Design/methodology/approach: The main objective of the paper is to show features of superplastic forming of<lb/> titanium alloys and current research trends aiming at widespread application of this technology.<lb/> Findings: In the paper characteristic of selected superplastic titanium alloys was presented. The effect of<lb/> microstructural parameters on superplasticity was considered too. Mechanical properties of superplastic<lb/> deformed titanium alloys, determining criteria of their potential applications, were also addressed.<lb/> Research limitations/implications: Application of superplastic forming (SPF) in industry is limited due to long<lb/> time and high temperature of the forming process. In the paper directions of the studies were presented which<lb/> can lead to increase in effectiveness of the process.<lb/> Practical implications: SPF enables manufacturing of complex shape details in one-step technological<lb/> operation. Together with diffusion bonding (DB) it offers particular advantages making possible to manufacture<lb/> complicated multilayer structures.<lb/> Originality/value: The paper summarizes achievements of the studies on the superplasticity of Ti alloys,<lb/> emphasizes the role of microstructural parameters and methods of their modification leading to better results<lb/> and economics of SPF.<lb/></div>
+
+	<keyword>Keywords: Superplastic materials; Plastic forming; Titanium alloys; Microstructure<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

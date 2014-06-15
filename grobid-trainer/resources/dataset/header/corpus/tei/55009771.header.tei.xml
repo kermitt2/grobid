@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009771"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Guide to<lb/> Tolerance of Crops and<lb/> Susceptibility of Weeds<lb/> to Herbicides<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Bernard Zandstra and Michael Particka<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Horticulture<lb/> Michigan State University<lb/></affiliation>
+	</byline>
+
+	<byline>
+	<docAuthor>Joseph Masabni<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University of Kentucky<lb/></affiliation>
+	</byline>
+
+	<note>M i c h i g a n S t a t e U n i v e r s i t y @BULLET E x t e n s i o n B u l l e t i n E -2 8 3 3 @BULLET N e w @BULLET 
+	</note>
+	
+	<date>J u l y 2 0 0 4<lb/></date>
+
+		</front>
+	</text>
+</tei>

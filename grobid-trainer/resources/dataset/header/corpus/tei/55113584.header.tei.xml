@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei type="master-thesis">
+	<teiHeader>
+		<fileDesc xml:id="55113584"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<affiliation>MASARYKOVA UNIVERZITA<lb/> FAKULTA INFORMATIKY<lb/></affiliation>
+	</byline>
+
+	<note type="other">}w ¡ ¢ £ ¤ ¥ ¦ &quot; # $ % &amp; 1 2 3 4 5 6 7 8 9 @ A C D E F G H I P Q R y e |<lb/></note>
+
+	<docTitle>
+	<titlePart>IDS System Evasion Techniques<lb/></titlePart>
+	</docTitle>
+	
+	<note type="other">MASTER&apos;S THESIS<lb/></note>
+
+	<byline>
+	<docAuthor>Vít Bukač<lb/></docAuthor>
+	</byline>
+
+	<address>Brno, </address>
+
+	<date>spring 2010</date>
+
+		</front>
+	</text>
+</tei>

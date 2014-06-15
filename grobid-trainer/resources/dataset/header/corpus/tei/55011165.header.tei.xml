@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011165"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>A Brief History of the<lb/> LCD Key Technology<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">The Beginning<lb/> It all started in1978 with an IBM Technical Disclosure Bulletin (Vol. 21 No. 2 July 1978)where S. Bigbie<lb/> et. al. published their idea about a programmable key/display/switch device. The same year Alan<lb/> Bagley of Hewlett-Packard patented a calculator with electronically alterable key symbols (US<lb/> patent 4,078,257) Nice as these ideas were, it proved to be more difficult to come up workable switch<lb/> design that integrated an LCD in a key top and make it work. Many tried and failed.<lb/></div>
+
+	<docTitle>
+	<titlePart>The First Programmable LCD Pushbutton Switch and<lb/> Programmable LCD Keyboard<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">It took six years until 1984 when Reinhard Engstler, a computer science student in Germany, turned the<lb/> idea of one of his professors for a programmable LCD keyboard into a fully functioning push-button<lb/> design with integrated graphic LCD display and incorporated them in a programmable keyboard. The<lb/> keyboard displayed different special characters for scientific notations.<lb/> The first programmable LCD pushbutton switch and the first programmable LCD keyboard were born.</div>
+
+		</front>
+	</text>
+</tei>

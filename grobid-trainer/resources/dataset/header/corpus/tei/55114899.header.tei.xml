@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55114899"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>2004 International Conference on Image Processing (ICIP)<lb/></reference>
+
+	<docTitle>
+	<titlePart>COLOR AND R.O.J. WITH JPEG2000 FOR WlRELESS VIDEOSURVEILLANCE<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Franck Luthon, Brice Beaumesnil<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University of Pau and Adour<lb/> LIUPPA Lab<lb/> KIT Informatique,</affiliation>
+	</byline>
+
+	<address>Chdteau Ned, Place Paul Bert, 64100 Bayonne, FRANCE<lb/></address>
+
+	<div type="abstract">ABSTRACT<lb/> For a videosurveillance application based on wireless trans-<lb/>mission of images acquired with a static camera, we investi-<lb/>gate two features within JPEGZW0, namely the choice of a<lb/> nonlincar color transform in order to improve color render-<lb/>ing at very high compression ratios, and the unsupervised<lb/> extraction of regions of interest (ROI) by motion detection.<lb/></div>
+
+		</front>
+	</text>
+</tei>

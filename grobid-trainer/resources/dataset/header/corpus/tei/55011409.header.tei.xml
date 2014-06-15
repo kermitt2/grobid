@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011409"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>O MT P<lb/> ADVANCED DEVICE MANA GEMENT<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">This document contains information that is confidential and proprietary to<lb/> OMTP Limited. The information may not be used, disclosed or reproduced<lb/> without the prior written authorisation of OMTP Limited, and those so<lb/> authorised may only use this information for the purpose consistent with the<lb/> authorisation.<lb/> VERSION:<lb/> v1_0<lb/> STATUS:<lb/> Approved for publication<lb/> </note>
+
+	<date>DATE OF<lb/> PUBLICATION:<lb/> 23 rd January 2008<lb/></date>
+
+	<byline>
+	<affiliation>OWNER:<lb/> OMTP Limited<lb/> </affiliation>
+	</byline>	
+
+	<note type="other">OMTP Advanced Device Management v1_0<lb/></note>
+
+	<note type="copyright">© 2008 OMTP Ltd. All rights reserved. No part of this document may be reproduced or<lb/> transmitted in any form or by any means without prior written permission from OMTP Ltd.<lb/></note>
+
+	<note type="page">Page 2 of 31<lb/></note>
+	
+	<note type="other">CONTENTS</note>
+
+		</front>
+	</text>
+</tei>

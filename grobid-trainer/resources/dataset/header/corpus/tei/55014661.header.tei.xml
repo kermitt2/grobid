@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014661"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">1<lb/></note>
+
+	<docTitle>
+	<titlePart>Software Security through Targeted Diversification<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Nessim Kisserli<lb/> Jan Cappaert<lb/> Bart Preneel<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Katholieke Universiteit Leuven, Dept. of Electrical Engineering – ESAT</affiliation>
+	</byline>
+
+	<address>Kasteelpark Arenberg 10, B-3001<lb/> Heverlee, Belgium<lb/></address>
+
+	<email>{nessim.kisserli,jan.cappaert,bart.preneel}@esat.kuleuven.be<lb/></email>
+
+	<div type="abstract">Abstract— Despite current software protection techniques, ap-<lb/>plications are still analysed, tampered with, and abused on a large<lb/> scale. Crackers<lb/> 1 compensate for each new protection technique by<lb/> adapting their analysis and tampering tools. This paper presents<lb/> a low-cost mechanism to effectively protect software against<lb/> global tampering attacks. By introducing diversity per programme<lb/> instance, we illustrate how to defeat various patching methods<lb/> using inlined code snippets. We propose an efficient technique for<lb/> creating the snippets based on genetic programming ideas, and<lb/> illustrate how our approach might trigger a small-scale arms race<lb/> between defending and attacking parties, each forced to evolve<lb/> in order to &quot;stay in the game&quot;.<lb/></div>
+
+		</front>
+	</text>
+</tei>

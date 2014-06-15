@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="department">Faculty of Electrical Engineering Iasi</orgName>,
+							<address>
+								<addrLine>B-dul D. Mangeron 53</addrLine>,
+								<settlement>Iasi</settlement>
+								<postCode>6600</postCode>,
+								<country>Romania</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="institution">Escola Superior de Tecnologia</orgName>,
+							<orgName type="institution">Instituto Politécnico de Setúbal</orgName>,
+							<address>
+								<country>Portugal</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>3</marker>
+							<orgName type="institution">Instituto Superior Tecnico</orgName>,
+							<orgName type="institution">SETME</orgName>,
+							<address>
+								<addrLine>Av. Rovisco Pais</addrLine>
+								<postCode>1049-001</postCode>,
+								<settlement>Lisboa</settlement>,
+								<country>Portugal</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

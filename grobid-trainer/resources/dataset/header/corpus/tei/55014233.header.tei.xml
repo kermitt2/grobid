@@ -1,0 +1,48 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014233"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Biomaterials 24 (2003) 1213–1221<lb/></reference>
+
+	<docTitle>
+	<titlePart>Extracellular matrix production by human osteoblasts cultured on<lb/> biodegradable polymers applicable for tissue engineering<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>S.F. El-Amin<lb/> a , H.H. Lu<lb/> a , Y. Khan<lb/> a , J. Burems<lb/> a , J. Mitchell<lb/> a , R.S. Tuan<lb/> b ,<lb/> C.T. Laurencin<lb/> a,c,<lb/> *<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a Center for Advanced Biomaterials and Tissue Engineering, Department of Chemical Engineering, Drexel University,
+	</affiliation>
+	</byline>
+
+	<address>Room # 383,<lb/> CAT Building, 3141 Chestnut Street, Philadelphia, PA 19104, USA<lb/></address>
+
+	<byline>
+	<affiliation>b Department of Orthopaedic Surgery, Thomas Jefferson University,</affiliation>
+	</byline>
+
+	<address>Philadelphia, PA, USA<lb/></address>
+
+	<byline>
+	<affiliation>c Department of Orthopaedic Surgery, Drexel University, College of Medicine,</affiliation>
+	</byline>
+
+	<address>Philadelphia, PA, USA<lb/></address>
+
+	<note type="submission">Received 25 May 2002; accepted 28 August 2002<lb/></note>
+
+	<div type="abstract">Abstract<lb/> The nature of the extracellular matrix (ECM) is crucial in regulating cell functions via cell–matrix interactions, cytoskeletal<lb/> organization, and integrin-mediated signaling. In bone, the ECM is composed of proteins such as collagen (CO), fibronectin (FN),<lb/> laminin (LM), vitronectin (VN), osteopontin (OP) and osteonectin (ON). For bone tissue engineering, the ECM should also be<lb/> considered in terms of its function in mediating cell adhesion to biomaterials. This study examined ECM production, cytoskeletal<lb/> organization, and adhesion of primary human osteoblastic cells on biodegradable matrices applicable for tissue engineering, namely<lb/> polylactic-co-glycolic acid 50:50 (PLAGA) and polylactic acid (PLA). We hypothesized that the osteocompatible, biodegradable<lb/> polymer surfaces promote the production of bone-specific ECM proteins in a manner dependent on polymer composition.<lb/> We first examined whether the PLAGA and PLA matrices could support human osteoblastic cell growth by measuring cell<lb/> adhesion at 3, 6 and 12 h post-plating. Adhesion on PLAGA was consistently higher than on PLA throughout the duration of the<lb/> experiment, and comparable to tissue culture polystyrene (TCPS). ECM components, including CO, FN, LM, ON, OP and VN,<lb/> produced on the surface of the polymers were quantified by ELISA and localized by immunofluorescence staining. All of these<lb/> proteins were present at significantly higher levels on PLAGA compared to PLA or TCPS surfaces. On PLAGA, OP and ON were<lb/> the most abundant ECM components, followed by CO, FN, VN and LN. Immunofluorescence revealed an extracellular distribution<lb/> for CO and FN, whereas OP and ON were found both intracellularly as well as extracellularly on the polymer. In addition, the actin<lb/> cytoskeletal network was more extensive in osteoblasts cultured on PLAGA than on PLA or TCPS.<lb/> In summary, we found that osteoblasts plated on PLAGA adhered better to the substrate, produced higher levels of ECM<lb/> molecules, and showed greater cytoskeletal organization than on PLA and TCPS. We propose that this difference in ECM<lb/> composition is functionally related to the enhanced cell adhesion observed on PLAGA. There is initial evidence that specific<lb/> composition of the PLAGA polymer favors the ECM. Future studies will seek to optimize ECM production on these matrices for<lb/> bone tissue engineering applications.<lb/> r</div>
+
+	<note type="copyright">&#169;2002 Elsevier Science Ltd. All rights reserved.<lb/></note>
+
+	<keyword>Keywords: Extracellular matrix molecules; Polymers; Human osteoblast; Tissue engineering; Cell adhesion<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

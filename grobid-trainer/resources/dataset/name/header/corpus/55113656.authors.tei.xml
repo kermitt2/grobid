@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Guillaume</forename>
+								<surname>Cambois</surname>
+								<marker>*</marker>,
+							</persName>
+							<persName>
+								<forename>Andrew</forename>
+								<surname>Long</surname>,
+							</persName>
+							<persName>
+								<forename>Gregg</forename>
+								<surname>Parkes</surname>,
+							</persName>
+							<persName>
+								<forename>Terje</forename>
+								<surname>Lundsten</surname>,
+							</persName>
+							<persName>
+								<forename>Anders</forename>
+								<surname>Mattsson</surname> and
+							</persName>
+							<persName>
+								<forename>Eivind</forename>
+								<surname>Fromyr</surname>
+							</persName>
+							
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

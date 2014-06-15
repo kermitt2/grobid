@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei type="white-paper">
+	<teiHeader>
+		<fileDesc xml:id="55115193"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Technical article<lb/></note>
+
+	<byline>
+	<docAuthor>Authors:<lb/> M. Davies, M. Dommaschk, J. Dorn,<lb/> J. Lang, D. Retzmann, D. Soerangr<lb/></docAuthor>
+	</byline>
+
+	<docTitle>
+	<titlePart>HVDC PLUS –<lb/> Basics and Principle of Operation<lb/></titlePart>
+	</docTitle>
+
+	<ptr>www.siemens.com/energy<lb/> </ptr>
+
+	<note type="other">Answers for energy.<lb/></note>
+
+	<ptr>www.siemens.com/energy/hvdcplus<lb/></ptr>
+
+	<note type="other">Table of Contents<lb/> 0. Preface<lb/> </note>
+
+	<note type="page">3<lb/></note>
+
+		</front>
+	</text>
+</tei>

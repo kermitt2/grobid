@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei type="wiki">
+	<teiHeader>
+		<fileDesc xml:id="55113939"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">The German Fountain<lb/> at the Hippodrome of<lb/> C onstantinople.<lb/> Modern vending kiosk in<lb/> a train station in Hyogo,<lb/> Japan.<lb/> Kiosks like this one in<lb/> Patmos can be found all<lb/> over Greece.<lb/></note>
+
+	<docTitle>
+	<titlePart>Kiosk<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">From Wikipedia, the free encyclopedia<lb/> This is an old revision of this page, as edited by Herostratus (talk |<lb/> contribs) at 21:46, 11 September 2011. It may differ significantly from<lb/> the current revision (//en.wikipedia.org/wiki/Kiosk).<lb/> (diff) ← Previous revision | Latest revision (diff) | Newer revision → (diff)<lb/></note>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei type="book-chapter">
+	<teiHeader>
+		<fileDesc xml:id="55114783"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Coating Materials<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Martin Friz<lb/> 1 and Friedrich Waibel<lb/> 2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1<lb/> Merck KGaA, </affiliation>
+	</byline>
+
+	<address>D-64579 Gernsheim, Germany<lb/></address>
+
+	<byline>
+	<affiliation>2<lb/> Umicore Materials AG,</affiliation>
+	</byline>
+
+	<address>FL-9496 Balzers, Liechtenstein<lb/></address>
+ 
+	<div type="introduction">1 Coating Materials for Different Deposition Techniques<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014177"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Vol. 46, No. 2, 1972<lb/> BIOCHEMICAL AND BIOPHYSICAL RESEARCH COMMUNICATIONS<lb/></reference>
+
+	<docTitle>
+	<titlePart>The Occurrence of Superoxide Anion in the Reaction of Reduced<lb/> Phenazine Methosulfate and Molecular Oxygen<lb/>
+	</titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Morimitsu Nishikimi, N. Appaji Rao and Kunio Yagi<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institute of Biochemistry, Faculty of Medicine, University of Nagoya,<lb/></affiliation>
+	</byline>
+
+	<address>Nagoya, Japan<lb/></address>
+
+	<note type="submission">Received November 30, 1971<lb/></note>
+
+	<div type="abstract">SUMMARY<lb/> The reduction of nitro blue tetrazolium (NitroBT) with NADH mediated by<lb/> phenazine methosulfate (PMS) under aerobic conditions was inhibited upon addi-<lb/>tion of superoxide dismutase. This observation indicated the involvement of<lb/> superoxide aninon radical (0~) in the reduction of NitroBT, the radical being<lb/> generated in the reoxidation of reduced PMS. Similarly, the reduction of<lb/> NitroBT coupled to D-amino acid oxidase-PMS system under aerobic conditions<lb/> was also inhibited by superoxide dismutase. A simple method for detecting<lb/> superoxide dismutase is described.<lb/></div>
+
+		</front>
+	</text>
+</tei>

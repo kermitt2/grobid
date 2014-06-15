@@ -1,0 +1,50 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011575"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Sixth International Workshop Advances in Signal Processing for Non Destructive Evaluation of Materials (2009)<lb/>
+	</note>
+
+	<note type="other">*)</note>
+
+	<byline>
+	<affiliation>Salzgitter Mannesmann Forschung GmbH,</affiliation>
+	</byline>
+
+	<address>Ehinger Str. 200, 47259 Duisburg, Germany,</address>
+
+	<email>t.schmitte@du.szmf.de<lb/></email>
+
+	<docTitle>
+	<titlePart>Wavelet-based Denoising of EMAT Signals<lb/> – from Development to Industrial Real-time<lb/> Application<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Till SCHMITTE*, Thomas ORTH,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Salzgitter Mannesmann Forschung,</affiliation>
+	</byline>
+
+	<address>Duisburg, Germany<lb/> </address>
+
+	<byline>
+	<docAuthor>Andre GERMES, Stefan NITSCHE, </docAuthor>
+	</byline>
+	
+	<byline>
+	<affiliation>V&amp;M Deutschland, </affiliation>
+	</byline>
+	
+	<address>Düsseldorf, Germany<lb/></address>
+
+	<div type="abstract">Abstract. EMAT is used whenever a coupling medium like water shall be omitted.<lb/> However, signal quality sometimes needs improvement, especially if surface quality<lb/> of the product under test is poor. In this situation wall thickness measurements may<lb/> be a challenging task. Signal filtering using wavelet based techniques proved to be<lb/> suited well for improving SNR in situations with pulse-shaped signals. Therefore we<lb/> developed a system for wavelet-filtering of UT signals in real-time under production<lb/> situations.<lb/></div>
+
+		</front>
+	</text>
+</tei>

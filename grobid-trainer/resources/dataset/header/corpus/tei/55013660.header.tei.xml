@@ -1,0 +1,60 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013660"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Alternate Path Routing and Pinning for Interdomain Multicast<lb/> Routing<lb/></titlePart>
+	</docTitle>
+
+	<idno>USC Computer Science T echnical Report 97-655<lb/></idno>
+
+	<byline>
+	<docAuthor>Daniel Zappala<lb/></docAuthor>
+	</byline>
+
+	<email>daniel@isi.edu<lb/></email>
+
+	<ptr>http:::netweb.usc.eduudaniel<lb/></ptr>
+
+	<byline>
+	<affiliation>University of Southern California<lb/> Information Sciences Institute<lb/></affiliation>
+	</byline>
+
+	<address>4676 Admiralty W ay, Floor 10<lb/> Marina del Rey, CA 90292-6695<lb/></address>
+
+	<byline>
+	<docAuthor>Deborah Estrin y<lb/></docAuthor>
+	</byline>
+
+	<email>estrin@usc.edu<lb/></email>
+
+	<ptr>http:::netweb.usc.eduuestrin<lb/></ptr>
+
+	<byline>
+	<affiliation>Computer Science Department and<lb/> Information Sciences Institute<lb/> University of Southern California<lb/>
+	</affiliation>
+	</byline>
+
+	<address>Los Angeles, CA 90089-0781<lb/></address>
+
+	<byline>
+	<docAuthor>Scott Shenker z<lb/></docAuthor>
+	</byline>
+
+	<email>shenker@parc.xerox.com<lb/></email>
+
+	<byline>
+	<affiliation>Xerox P alo Alto Research Center<lb/></affiliation>
+	</byline>
+
+	<address>3333 Coyote Hill Road<lb/> Palo Alto, CA 94304-1314<lb/></address>
+
+	<div type="abstract">Abstract<lb/> Many researchers have explored enhancements of the Internet&apos;s best-eeort service model<lb/> that allow real-time and other inelastic applications to obtain preferential Quality of Service.<lb/> However, these applications are limited to utilizing the opportunistic, shortest-path routes pro-<lb/>vided by the current routing infrastructure. To better support real-time applications, this paper<lb/> introduces extensions to interdomain multicast routing to scalably compute and install alternate<lb/> paths and non-opportunistic, or pinned, routes. We present a simple multicast setup protocol<lb/> for installing alternate paths and discuss how it prevents loops. Furthermore, we include the<lb/> results of a simulation study to demonstrate the viability of using localized route construction<lb/> to adequate alternate paths.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>A</forename>.
+								<surname>Buades</surname>
+								<marker>*</marker>
+							</persName>
+							<persName>
+								<forename>Y</forename>.
+								<surname>Lou</surname>
+							</persName>
+							<persName>
+								<forename>J</forename>.
+								<middlename>M</middlename>
+								<surname>Morel</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

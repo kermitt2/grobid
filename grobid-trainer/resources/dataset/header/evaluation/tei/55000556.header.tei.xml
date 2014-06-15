@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000556"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Three-Dimensional Micro-and Nano-Fabrication in Transparent Materials<lb/> by Femtosecond Laser<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Yasuhiko SHIMOTSUMA<lb/> Ã , Kazuyuki HIRAO, Peter G. KAZANSKY<lb/> 1 and Jiarong QIU<lb/>2y<lb/> </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Material Chemistry, Graduate School of Engineering, Kyoto University,</affiliation>
+	</byline>
+
+	<address>Nishikyo-ku, Kyoto 615-8510, Japan<lb/></address>
+
+	<byline>
+	<affiliation>1 Optoelectronics Research Centre, University of Southampton,</affiliation>
+	</byline>
+
+	<address>SO17 1BJ, United Kingdom<lb/></address>
+
+	<byline>
+	<affiliation>2 Photon Craft Project, Shanghai Institute of Optics and Fine Mechanics,<lb/> Chinese Academy of Sciences and Japan Science and Technology Agency,</affiliation>
+	</byline>
+
+	<address>Keihanna-Plaza, Kyoto 619-0237, Japan<lb/></address>
+
+	<note type="submission">(Received February 10, 2005; accepted April 13, 2005; </note>
+	
+	<date>published July 8, 2005)<lb/></date> 
+
+	<div type="abstract">Femtosecond pulsed lasers have been widely used for materials microprocessing. Due to their ultrashort pulse width and<lb/> ultrahigh light intensity, the process is generally characterized by the nonthermal diffusion process. We observed various<lb/> induced microstructures such as refractive-index-changed structures, color center defects, microvoids and microcracks in<lb/> transparent materials (e.g., glasses after the femtosecond laser irradiation), and discussed the possible applications of the<lb/> microstructures in the fabrication of various micro optical devices [e.g., optical waveguides, microgratings, microlenses, fiber<lb/> attenuators, and three-dimensional (3D) optical memory]. In this paper, we review our recent research developments on single<lb/> femtosecond-laser-induced nanostructures. We introduce the space-selective valence state manipulation of active ions,<lb/> precipitation and control of metal nanoparticles and light polarization-dependent permanent nanostructures, and discuss the<lb/> mechanisms and possible applications of the observed phenomena. <lb/></div>
+<idno type="DOI">[DOI: 10.1143/JJAP.44.4735]</idno>
+
+	<keyword>KEYWORDS: femtosecond laser, nanofabrication, valence state manipulation, nanoparticle precipitation, nanograting<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011270"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>File No: STD/1215<lb/></idno>
+
+	<date>2 July 2007<lb/></date>
+
+	<docTitle>
+	<titlePart>NATIONAL INDUSTRIAL CHEMICALS NOTIFICATION AND ASSESSMENT SCHEME<lb/> (NICNAS)<lb/>	FULL PUBLIC REPORT<lb/></titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013611"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>DSP Solutions for BLDC Motors<lb/></titlePart>
+	</docTitle>
+
+	<note>Literature Number: BPRA055<lb/> </note>
+
+	<affiliation>Texas Instruments Europe<lb/></affiliation>
+
+	<date>March 1997</date>
+
+		</front>
+	</text>
+</tei>

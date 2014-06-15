@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="institution">Twente University of Technology</orgName>,
+							<orgName type="department">Dept. of Chemical Technology</orgName>,
+							<orgName type="laboratory">Polymer<lb/> Laboratories</orgName>,
+							<address>
+								<postCode>7500 AE</postCode>
+								<settlement>Enschede</settlement>,
+								<country>The Netherlands</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

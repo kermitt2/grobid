@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010940"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Health Monitoring of Cable Stayed Structures<lb/> Experience and Implementation<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Gilles Hovhanessian<lb/> </docAuthor>
+	</byline>
+	
+	<byline>
+	<affiliation>ADVITAM, </affiliation>
+	</byline>
+	
+	<byline>
+	<docAuthor>Executive Director<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<address>1 bis rue du Petit Clamart –</address>
+	</byline>
+
+	<address>BP 102<lb/> 78143 Velizy Cedex<lb/> FRANCE<lb/></address>
+
+	<div type="abstract">ABSTRACT<lb/> Recent improvements in stay cable systems have enabled the design and construction of longer and<lb/> longer spans. Because these longer spans are more sensitive to loading (wind, seismic vibration,<lb/> traffic), monitoring the loading and observing the structure&apos;s response has become an essential<lb/> condition indicator. Also several older cable-stayed structures are showing signs of damages, often<lb/> caused by wind-induced vibrations and corrosion. Inspection and monitoring can provide confidence in<lb/> structural integrity and enable early detection of potential problems.<lb/> Advitam has acquired a unique experience in the fields of risk analysis, definition of inspection and<lb/> monitoring requirements, design, implementation and operation of monitoring systems for stay cable<lb/> structures. The following paper presents various considerations for the definition and design of structural<lb/> health monitoring systems and inspection methods. It also features actual case studies, with details on<lb/> implementation, advanced software processing, performance and benefits of inspection and structural<lb/> health monitoring systems.
+	<lb/></div>
+
+		</front>
+	</text>
+</tei>

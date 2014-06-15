@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55113480"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>FIBER DAMAGE IMPARTED BY 3D ORTHOGONAL<lb/> WEAVING OF PITCH CARBON AND CERAMIC YARNS<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>K.W. Sharp and A.E. Bogdanovich<lb/></docAuthor>
+	</byline>
+
+	<affiliation>3TEX </affiliation>
+
+	<address>109 MacKenan Dr.<lb/> Cary, NC USA<lb/></address>
+
+	<email>sharpk@3TEX.com<lb/></email>
+
+	<div type="abstract">SUMMARY<lb/> Bending and abrasion of high modulus fibers during weaving can cause yarn failure. In<lb/> non-crimp 3D orthogonal weaving, the primary limitation is the bend radius of the Z<lb/> yarns at the fabric surface. Trials with ceramic and pitch carbon yarns have related the<lb/> 3D orthogonal weaving limitations to a model of the internal stresses of a single fiber.<lb/></div>
+
+	<keyword>Keywords: 3-D weaving, ceramic fibers, pitch carbon fibers, CMC, oxide-oxide<lb/> composites<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

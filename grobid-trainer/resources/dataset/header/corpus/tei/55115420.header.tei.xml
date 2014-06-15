@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei type="wiki">
+	<teiHeader>
+		<fileDesc xml:id="55115420"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Extract, transform, load<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">From Wikipedia, the free encyclopedia<lb/></note>
+
+	<div type="abstract">This is an old revision of this page, as edited by Q Chris (talk | contribs) at 15:23, 3<lb/> December 2013. It may differ significantly from the current revision<lb/> (//en.wikipedia.org/wiki/Extract,_transform,_load).<lb/></div>
+
+	<note type="other">(diff) ← Previous revision | Latest revision (diff) | Newer revision → (diff)<lb/></note>
+
+	<div type="abstract">In computing, extract, transform, and load (ETL) refers to a process in database usage and<lb/> especially in data warehousing that:<lb/> Extracts data from outside sources<lb/> ■ Transforms it to fit operational needs, which can include quality levels<lb/> ■ Loads it into the end target (database, more specifically, operational data store, data mart, or<lb/> data warehouse)<lb/> ■<lb/> ETL systems are commonly used to integrate data from multiple applications, typically developed<lb/> and supported by different vendors or hosted on separate computer hardware. The disparate systems<lb/> containing the original data are frequently managed and operated by different employees. For<lb/> example a cost accounting system may combine data from payroll, sales and purchasing.<lb/></div>
+
+		</front>
+	</text>
+</tei>

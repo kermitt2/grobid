@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001388"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+
+<note type="other">
+Search: MATLAB Central<lb/> Site Help<lb/> Patents Trademarks<lb/> Privacy Policy<lb/> Preventing Piracy<lb/> Terms of Use<lb/> Featured MathWorks.com Topics:<lb/> New Products<lb/> Support Documentation<lb/> Training Webinars<lb/> Newsletters MATLAB Trials<lb/> Careers<lb/> Create Account<lb/> Log In<lb/> File Exchange<lb/> Answers Newsgroup<lb/> Link Exchange<lb/> Blogs Contest<lb/>
+
+	MathWorks.com<lb/>No BSD License<lb/>
+	
+
+	Highlights from<lb/> Sparseconv<lb/> out=sparseconv(x,f)<lb/> SPARSECONV Speedy convolution<lb/> of sparse vectors<lb/> View all files<lb/> 4.2 | 4 ratings<lb/> Rate this file<lb/> 10 Downloads (last 30<lb/> days)<lb/> File Size: 886 Bytes<lb/> File ID: #865<lb/></note>
+
+	<byline> 
+	<docAuthor> by G. Cuypers<lb/></docAuthor>
+	</byline> 
+	
+	<docTitle>
+	<titlePart> Sparseconv<lb/> </titlePart>
+	</docTitle>
+
+	<date>04 Oct 2001 (Updated 04 Oct 2001)<lb/> </date>
+
+	<div type="abstract">A fast convolution for one or more sparse vectors<lb/> 
+Watch this File<lb/> File Information<lb/> Tags for This File<lb/> Comments and Ratings<lb/> Tag Activity for this File<lb/> Description OUT=SPARSECONV(X,F) efficiently computes the convolution of the (sparse) input X with the (sparse) filter F.<lb/> Speed gain can be extremely high in case both X and F are long sparse vectors.<lb/> MATLAB release MATLAB 5.3 (R11)<lb/> </div>
+
+	<keywords>Everyone&apos;s Tags convulution, fast, linear algebra, mathematics, sparse<lb/> </keywords>
+	
+	<div type="introduction">Tags I&apos;ve Applied<lb/> Add New Tags Please login to tag files.<lb/> (5)<lb/> 18 Sep 2004<lb/> Jorge E Higuera<lb/> very well and efficiently computes the convolution finite<lb/> 14 May 2006<lb/> Grant Hutchins<lb/> It works great! Cut my convolution from 20 seconds to 6 seconds for a<lb/> fairly populated sparse matrix<lb/> 28 Aug 2009<lb/> Augustin Lefevre<lb/> 28 Aug 2009<lb/> Augustin Lefevre<lb/> The code is correct. Bear in mind that usually Fast Convolution means<lb/> convolution computed with a Fast Fourier Transform. It is not the case with<lb/> sparseconv (FFT is impossible with sparse vectors)<lb/> 30 Apr 2010<lb/> Mihail Sirotenko<lb/> Awesome! Just what I needed!<lb/> Please login to add a comment or rating.<lb/></div>
+
+	<note type="other">Tag Applied By<lb/> Date/Time<lb/> linear algebra<lb/> G. Cuypers<lb/> 22 Oct 2008 06:38:14<lb/> sparse G. Cuypers<lb/> 22 Oct 2008 06:38:14<lb/> convulution G. Cuypers<lb/> 22 Oct 2008 06:38:14<lb/> fast G. Cuypers<lb/> 22 Oct 2008 06:38:14<lb/> mathematics G. Cuypers<lb/> 22 Oct 2008 06:38:14<lb/> Contact us at files@mathworks.com<lb/> </note>
+	
+	<note type="copyright">© 1994-2011 The MathWorks, Inc.<lb/></note>
+
+	<note type="other">Sparseconv -File Exchange -MATLAB Central<lb/></note>
+	
+	<ptr type="web">http://www.mathworks.com/matlabcentral/fileexchange/865-sparseconv<lb/></ptr>
+
+	<note type="page">1 of 1<lb/></note>
+
+	<note type= "other">24-06-2011 16:03</note>
+
+		</front>
+	</text>
+</tei>

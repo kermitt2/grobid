@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">Department of Chemistry</orgName>,
+							<orgName type="department">School of Science</orgName>,
+							<orgName type="institution">Alzahra University</orgName>.
+							<address>
+								<postBox>P.O.Box 1993891176</postBox>,
+								<settlement>Tehran</settlement>,
+								<country>Iran</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="laboratory">Synthesis of Inorganic Compounds Research Laboratory</orgName>,
+							<orgName type="department">Faculty of Chemistry</orgName>,
+							<orgName type="institution">University of Tabriz</orgName>,
+							<address>
+								<settlement>Tabriz</settlement>,
+								<country>Iran</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

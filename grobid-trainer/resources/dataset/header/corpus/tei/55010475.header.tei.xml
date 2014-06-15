@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010475"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>~~<lb/> Journal f. prakt. Chemie. Band 326, Heft 6,1980, S. 902-908<lb/></reference>
+
+	<byline>
+	<docAuthor>J. A. Bartli, </docAuthor>
+	</byline>
+	
+	<address>Leipzig<lb/></address>
+
+	<docTitle>
+	<titlePart>Aldehyde, tert. Amine bzw. Acetale aus Amidacetalen und<lb/> G rig nardverbindungen<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>H. WALTHER<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>VEB Berlin-Chemie,</affiliation>
+	</byline>
+
+	<address>Berlii1-~4dlershof<lb/></address>
+
+	<byline>
+	<docAuthor>L. HAME<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Sektion Chemie der Friedrich-Schiller-Universitat Jene<lb/></affiliation>
+	</byline>
+
+	<byline>
+	<docAuthor>H. Qross*, B. COSTISELLA, I. KEITEL<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Zentrelinstitut fiir Organische Chemie der Akademie der Wissenschaften der DDR, </affiliation>
+	</byline>
+
+	<address>Berlin-Adlershof<lb/></address>
+
+	<docTitle>
+	<titlePart>Aldehydes, tert. Amines or Acetales from Amidacetales and Grignard-Compounds<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">A b s t r a c t . Amidacetales 1 or -memaptales 9 respectively react with Grignard-agents dependent<lb/> on molar ratio by exchange of methoxy-or methylthio group via not isolable 0 , N -or S,N-acetnles<lb/> to the corresponding aldehydes 4 or the tert. ;&amp;mines 3. Starting from bicyclic amidacetales (i alde-<lb/>hydes or bis-P-hydroxyethylamines 8 are formed. By quaternisation of the amidaoctal-nitrogen<lb/> followvcd by reaction with Grignard-agents the corresponding 0,O-acetales me formed.<lb/></div>
+
+		</front>
+	</text>
+</tei>

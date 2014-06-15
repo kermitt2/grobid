@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei type="serie-article">
+	<teiHeader>
+		<fileDesc xml:id="55113714"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">52<lb/></note>
+
+	<docTitle>
+	<titlePart>Towards a Metric for Patterned Injury Analysis<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>William R Oliver, MD1 and Daniel S. Fritsch, PhD2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>&apos;Digital Image Processing Laboratory , Department of Cellular Pathology, Armed<lb/> Foites Institute of Pathology,
+	</affiliation>
+	</byline>
+
+	<address>Washington, DC 20306-6000<lb/></address>
+
+	<byline>
+	<affiliation>2Departments of Radiation Oncology and Biomedical Engineering, Uthversity of North<lb/> Carolina at Chapel Hill,
+	</affiliation>
+	</byline>
+
+	<address>Chapel Hill, NC, 27599-7512.<lb/></address>
+
+	<div type="abstract">Abstract<lb/> An intriguing question in the matching ofobjects with pauerned injures in two and three dimensions is<lb/> that of an appropriate metric for closeness --is it possible to objectively measure how well an object<lb/> &quot;fits&quot; a pauerned injury. Many investigators have suggested an energy-based meiric, and have used such<lb/> metrics to analyze craniofacial growth and anatomic variation. A strict dependence on homology is the<lb/> primary disadvantage of this energy functional for generalized biological structures; many shapes do not<lb/> have obvious landmarks.<lb/> Some tentative solutions to the problem of landmark dependency for patterned injury analysis are<lb/> presented. One intriguing approh comes from recent work in axiomatic vision. This approach has<lb/> resulted in the development of a multiresolution medial axis for the extraction of shape primitives which<lb/> can be used as the basis for registration. A scale-based description of this process can be captured in<lb/> structures called cores, which can describe object shape and position in a highly compact manner.<lb/> Cores may provide a scale-and shape-based method of determining correspondences necessary for<lb/> determining the number and position of landmarks for some patterned injuries. Each of the approaches<lb/> described are generalizable to higher dimensions, and can thus be used to analyze both two-and three-<lb/>dimensional data. Together, they may represent a reasonable way of measuring shape distance for the<lb/> purpose of matching objects and wounds, and can be combined with texture measures for a complete<lb/> description.<lb/></div>
+
+	<keyword>Keywords: patterned injury, pattern analysis, thin plate spline, cores, multiresolution<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011092"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">A configuration file for GNU GRUB being modified with gedit. This<lb/> file contains a list of Operating Systems, which GNU GRUB reads<lb/> and presents to the user as a menu.<lb/></note>
+
+	<docTitle>
+	<titlePart>Configuration file<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">From Wikipedia, the free encyclopedia<lb/>This is an old revision of this page, as edited by 69.125.110.223 (talk) at 20:48, 18 December 2007. It<lb/> may differ significantly from the current revision (//en.wikipedia.org/wiki/Configuration_file) .<lb/> (diff) ← Previous revision | Latest revision (diff) | Newer revision → (diff)<lb/></note>
+
+		</front>
+	</text>
+</tei>

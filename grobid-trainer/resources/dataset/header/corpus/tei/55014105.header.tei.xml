@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014105"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Quantification of the isomerization of Asp residue in<lb/> recombinant human aA-crystallin by reversed-phase HPLC<lb/> </titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Yutaka Sadakane<lb/> a, 1, Toshiaki Yamazaki<lb/> a , Kazuya Nakagomi<lb/> b ,<lb/> Toshifumi Akizawa<lb/> c , Noriko Fujii<lb/> d<lb/> , Takenori Tanimura<lb/> a , Masaki Kaneda<lb/> a ,<lb/> Yasumaru Hatanaka<lb/> a<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a Faculty of Pharmaceutical Sciences, Toyama Medical and Pharmaceutical University,</affiliation>
+	</byline>
+
+	<address>2630 Sugitani, Toyama 930-0194, Japan<lb/></address>
+
+	<byline>
+	<affiliation>b School of Pharmaceutical Sciences, Teikyo University,</affiliation>
+	</byline>
+
+	<address>1091-1 Suwarashi, Sagamiko, Kanagawa 199-0195, Japan<lb/></address>
+
+	<byline>
+	<affiliation>c Faculty of Pharmaceutical Sciences, Setunan University,</affiliation>
+	</byline>
+
+	<address>45-1 Nagaotoge-cho, Hirakata 570-0101, Japan<lb/></address>
+
+	<byline>
+	<affiliation>d Research Reactor Institute, Kyoto University,</affiliation>
+	</byline>
+
+	<address>Kumatori, Sennan, Osaka 590-0494, Japan<lb/></address>
+
+	<note type="submission">Received 29 May 2002; received in revised form 8 August 2002; accepted 9 August 2002<lb/></note>
+
+	<note type="other">Dedicated to Professor Terumichi Nakagawa on the occasion of his retirement and 63rd birthday.<lb/></note>
+
+	<div type="abstract">Abstract<lb/> A method for determining the isomerization of Asp residues in proteins is described and demonstrated by quantifying<lb/> the isomerization of Asp<lb/> 151 in recombinant human aA-crystallin. First, four types of dodecapeptide fragment<lb/> ( 146 IQTGLD<lb/> 151 ATHAER<lb/> 157 ) in which the Asp residue was either L-Asp, D-Asp, L-isoAsp or D-isoAsp were<lb/> synthesized, and RP-HPLC conditions were established for their separation. Next, the Asp<lb/> 151 -containing peptide<lb/> fragments isolated from the tryptic hydrolysate of recombinant aA-crystallin were analyzed under these conditions.<lb/> New peaks, the retention times of which were the same as those of peptides containing D-Asp, L-isoAsp and D-isoAsp,<lb/> were generated when aA-crystallin was incubated for 140 days at 37 8C. An amino acid composition, amino acid<lb/> sequence, and enantiomeric analysis revealed that two peaks with retention times identical to those of peptides<lb/> containing L-isoAsp and D-isoAsp represented dodecapeptide fragments containing L-isoAsp<lb/> 151 and D-isoAsp<lb/> 151 ,<lb/> respectively. RP-HPLC analysis under other condition suggested that the peak with retention time identical to that of<lb/> peptide containing D-Asp represented dodecapeptide fragments containing D-Asp<lb/> 151 . The present method does not<lb/> require acid hydrolysis, which generates further isomerization products as artifacts, and thus make possible the sensitive<lb/> quantification of each type of Asp isomer individually at a specific site in a protein. In our analysis of the Asp<lb/> 151 residue<lb/> in human aA-crystallin, the degree of isomerization from L-Asp to D-Asp can be determined to a level as low as 0.3%.<lb/> #</div>
+
+	<note type="copyright">&#169;2002 Elsevier Science B.V. All rights reserved.<lb/></note>
+
+	<keyword>Keywords: Enantiomerization; Isoaspartate formation; Eye lens; Crystallin; Recombinant protein<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

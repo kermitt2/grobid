@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55114307"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>ActiveCDN: Cloud Computing Meets Content<lb/> Delivery Networks<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Suman Srinivasan, Jae Woo Lee, Dhruva Batni and Henning Schulzrinne,<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Columbia University,</affiliation>
+	</byline>
+
+	<address>New York, NY<lb/></address>
+
+	<email>{sumans,jae,hgs}@cs.columbia.edu, dhruva.batni@gmail.com<lb/></email>
+
+	<div type="abstract">Abstract—Content delivery networks play a crucial role in<lb/> today&apos;s Internet. They serve a large portion of the multimedia<lb/> on the Internet and solve problems of scalability and indirectly<lb/> network congestion (at a price). However, most content delivery<lb/> networks rely on a statically deployed configuration of nodes<lb/> and network topology that makes it hard to grow and scale<lb/> dynamically. We present ActiveCDN, a novel CDN architecture<lb/> that allows a content publisher to dynamically scale their content<lb/> delivery services using network virtualization and cloud comput-<lb/>ing techniques.<lb/> </div>
+
+	<div type="introduction">I. INTRODUCTION<lb/> Content delivery networks (CDNs) have proved to be crucial<lb/> for the Internet to scale with the current boom of multimedia-<lb/>rich content consumption [1]. CDNs allow for content to<lb/> be distributed at nodes distributed around the world, and<lb/> played back from nodes that are closest to the user requesting<lb/> content. This allows CDNs to serve content much faster<lb/> to the end user, and at the same time, alleviate network<lb/> load by pushing content closer to the edges. Today&apos;s CDNs,<lb/> however, are statically deployed and centralized redirection<lb/> mechanisms which impede dynamic deployability and result<lb/> in performance penalties.<lb/> Despite this dramatic growth in CDN technology and use,<lb/> most CDN operators and networks still rely on heavily static<lb/> deployments and pre-configured network topologies to operate<lb/> and serve content. This results in sometimes dramatic over-or<lb/> under-provisioning, and can result in too many CDN nodes<lb/> in an area that sees few request for content, or too few CDN<lb/> nodes in an area that has a lot of demand for content. When<lb/> such scenarios occur, it is hard for CDN service operators to<lb/> dynamically migrate and instantiate new nodes, resulting in a<lb/> lack of quick responsiveness to user demand and viral content.<lb/> We present ActiveCDN, a novel solution for this prob-<lb/>lem that utilizes cloud computing and network virtualization<lb/> techniques to enhance CDN instantiation. ActiveCDN enables<lb/> content publishers to dynamically deploy and instantiate CDN<lb/> modules on participating nodes (such as core and edge routers<lb/> with programming functionality) based on user requests, and<lb/> to position and balance the location of these CDN nodes on an<lb/> as-needed basis. Content publishers can thus choose to serve<lb/> the content directly themselves, or instantiate new CDN nodes<lb/> at locations closest to the users as more and more requests<lb/> come in. In addition, the CDN modules can be set up to &quot;time<lb/> out&quot; after a certain period of time if no new requests are seen<lb/> at an ActiveCDN node, thus freeing up computing and space<lb/> resources on that node.</div>
+
+		</front>
+	</text>
+</tei>

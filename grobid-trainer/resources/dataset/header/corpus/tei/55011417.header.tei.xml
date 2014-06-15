@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011417"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="copyright">&#169; 2007 Open Mobile Alliance Ltd. All Rights Reserved.<lb/> Used with the permission of the Open Mobile Alliance Ltd. under the terms as stated in this document.<lb/></note>
+
+	<idno>[OMA-Template-Spec-20070101-I]<lb/></idno>
+
+	<docTitle>
+	<titlePart>Push Over The Air<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Draft Version 2.2 –</note>
+
+	<date>26 Nov 2008<lb/></date>
+
+	<byline>
+	<affiliation>Open Mobile Alliance<lb/></affiliation>
+	</byline>
+
+	<idno>OMA-TS-PushOTA-V2_2-20081126-D</idno>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008898"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Scheduling on Heterogeneous Multicore Processors Using<lb/> Architectural Signatures<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Daniel Shelepov<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>School of Computing Science<lb/> Simon Fraser University<lb/></affiliation>
+	</byline>
+
+	<address>Vancouver, Canada<lb/></address>
+
+	<email>dsa5@cs.sfu.ca<lb/></email>
+
+	<byline>
+	<docAuthor>Alexandra Fedorova<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>School of Computing Science<lb/> Simon Fraser University<lb/></affiliation>
+	</byline>
+
+	<address>Vancouver, Canada<lb/></address>
+
+	<email>fedorova@cs.sfu.ca<lb/></email>
+
+	<div type="abstract">ABSTRACT<lb/> Heterogeneous multicore architectures promise greater<lb/> energy/area efficiency than their homogeneous counterparts.<lb/> This efficiency can only be realized, however, if the operating<lb/> system assigns applications to appropriate cores based on their<lb/> architectural properties. While several such heterogeneity-<lb/>aware algorithms were proposed in the past, they were not<lb/> meant to scale to a large number of cores and assumed long-<lb/>lived threads due to reliance on continuous performance<lb/> monitoring of threads for core assignment purposes. We<lb/> propose a scheme that does not rely on dynamic performance<lb/> monitoring. Instead, the information needed to make an<lb/> appropriate core assignment decision is provided with the job<lb/> itself. This information is presented as an architectural<lb/> signature of the application, and is composed of certain<lb/> microarchitecture-independent characteristics. An architectural<lb/> signature is generated offline and can be embedded in the<lb/> application binary. In this paper we describe our preliminary<lb/> work on architectural signature framework.<lb/> We present<lb/> architectural signatures that predict application&apos;s sensitivity to<lb/> variations in core clock speed. We evaluate a scheduler<lb/> prototype that uses these signatures for scheduling on a<lb/> heterogeneous system composed of cores with various clock<lb/> frequencies.<lb/></div>
+
+	<keyword>Categories and Subject Descriptors<lb/> D.4 [Operating Systems]: Organization and Design, Process<lb/> Management<lb/> General Terms<lb/> Algorithms, Measurement, Performance, Experimentation<lb/> Keywords<lb/> Heterogeneous, Scheduling, DVFS, Architectural signatures,<lb/> Microarchitecture-independent, Sensitivity to changes<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

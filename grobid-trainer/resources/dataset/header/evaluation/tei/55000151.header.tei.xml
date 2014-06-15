@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000151"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Electrochemical sensors based on<lb/> molecularly imprinted polymers<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>M.C. Blanco-Loez, M.J. Lobo-Castanõ, A.J. Miranda-Ordieres,<lb/> P. Tunõ-Blanco<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Molecularly imprinted polymers (MIPs) are becoming an important class<lb/> of synthetic materials mimicking molecular recognition by natural<lb/> receptors. This review examines the literature on non-covalent MIP-based<lb/> electrochemical sensors over the last 10 years. With insight into the<lb/> different sensing phases, electrochemical transductions and integration<lb/> strategies, we evaluate achievements and difficulties to date and assess<lb/> future prospects.<lb/></div>
+
+<note type="copyright"> &#169; 2003 Published by Elsevier B.V.<lb/></note>
+
+	<keyword>Keywords: Electrochemical sensors; Molecularly imprinted polymers (MIPs)<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

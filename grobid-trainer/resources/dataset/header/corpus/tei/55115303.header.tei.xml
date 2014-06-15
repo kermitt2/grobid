@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei type="product-sheet">
+	<teiHeader>
+		<fileDesc xml:id="55115303"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Technisches Merkblatt (Rev.1.01)<lb/></note>
+
+	<docTitle>
+	<titlePart>Naturputz<lb/> </titlePart>
+	</docTitle>
+
+	<div type="abstract">Oberputz für den Innenbereich aus rein mineralischen Zuschlagsstoffen und pflanzlichem Bindemittel<lb/> </div>
+
+	<div type="introduction">Anwendung<lb/> Eigenschaften<lb/> Optik<lb/> Besonderheiten Hinweise<lb/> @BULLET der Putz ist ausschließlich für Innenbereich geeignet<lb/> @BULLET für nahezu alle festen, trockenen, sauberen und tragfähigen<lb/> Untergründe geeignet<lb/> @BULLET nicht geeignet für direkte Spritzwasserbereiche<lb/> @BULLET höchste Sicherheit in Verarbeitung, Werterhalt, Farbton und<lb/> Stabilität @BULLET hoch wasserdampfdurchlässig<lb/> @BULLET hohe Sorptionsfähigkeit<lb/> @BULLET pH-neutral<lb/> @BULLET 100% schadstoff-und emmisionsfrei und überwacht<lb/> @BULLET hoch rissüberbrückend<lb/> @BULLET hohe Abriebfestigkeit<lb/> @BULLET hohe mechanische Belastbarkeit<lb/> @BULLET Filzputzstruktur in verschiedenen Korngrößen<lb/> @BULLET Spritzputzstruktur<lb/> @BULLET Modellierputz<lb/> @BULLET farblich homogene einfarbige Beschichtungen möglich<lb/> @BULLET MultiColor-Effekte durch Zugabe von unterschiedlich farbigem<lb/> Mineralkorn @BULLET Farbliche Anpassung kann vor Ort durch Zugabe von farbigem<lb/> Mineralkorn erfolgen<lb/> @BULLET Glanz-und Glimmereffekte<lb/> @BULLET Während der gesamten Austrocknungsphase unbedingt für<lb/> ausreichende Belüftung und Feuchtigkeitsabfuhr sorgen!</div>
+
+		</front>
+	</text>
+</tei>

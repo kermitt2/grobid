@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011279"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>arXiv:1006.2093v1 [quant-ph]</idno>
+
+	<date>10 Jun 2010<lb/></date>
+
+	<docTitle>
+	<titlePart>Strongly enhanced photon collection from diamond colour centres under<lb/> micro-fabricated integrated solid immersion lenses<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>J. P. Hadden,<lb/> * J. P. Harrison, A. C. Stanley-Clarke, L. Marseglia,<lb/> Y-L. D. Ho, B. R. Patton, J. L. O&apos;Brien, and J. G. Rarity<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Centre for Quantum Photonics, H. H. Wills Physics Laboratory &amp; Department of Electrical and Electronic Engineering,<lb/> University of Bristol,</affiliation>
+	</byline>
+
+	<address>Merchant Venturers Building, Woodland Road, Bristol, BS8 1UB, UK<lb/></address>
+
+	<date>(Dated: June 11, 2010)<lb/></date>
+
+	<div type="abstract">The efficiency of collecting photons from optically active defect centres in bulk diamond is greatly<lb/> reduced by refraction and reflection at the diamond-air interface. We report on the fabrication and<lb/> measurement of a geometrical solution to the problem; integrated solid immersion lenses (SILs)<lb/> etched directly into the surface of diamond. An increase of a factor of 10 was observed in the satu-<lb/>rated count-rate from a single negatively charged nitrogen-vacancy (NV<lb/> − ) within a 5 µm diameter<lb/> SIL compared with NV<lb/> − s under a planar surface in the same crystal. A factor of 3 reduction in<lb/> background emission was also observed due to the reduced excitation volume with a SIL present.<lb/> Such a system is potentially scalable and easily adaptable to other defect centres in bulk diamond.<lb/> </div>
+
+	<div type="introduction">The ability to address single defect centres in dia-<lb/>mond using confocal microscopy allows optical access<lb/> to these single &apos;atom like&apos; systems trapped within a<lb/> macro-scale solid. The negatively charged nitrogen-<lb/>vacancy centre (NV<lb/> − ) is of particular interest for<lb/> applications such as single photon generation[1, 2],<lb/> nanoscale magnetometery[3], and fundamental investi-<lb/>gations of spin interactions and entanglement at room<lb/> temperature[4–6]. Other defect centres that exhibit<lb/> single photon emission have also been identified (e.g.<lb/> the nickel-related &apos;NE8&apos;[7], the silicon-vacancy[8], and<lb/> chromium related centres[9]), but the search continues for<lb/> other defect centres with spin properties like those of the<lb/> NV − centre[10]. The high refractive index of diamond<lb/> causes refraction of the emitted light at the diamond-air<lb/> interface, reducing the possible angular collection of a<lb/> microscope objective. Thus the NV<lb/> − photon collection<lb/> efficiency is severely reduced. This is a problem regard-<lb/>less of the application, or of the particular defect centre of<lb/> interest. Here we report on the fabrication and measure-<lb/>ment of hemispherical integrated solid immersion lenses<lb/> (SILs) etched directly into the surface of diamond. These<lb/> structures eliminate surface refraction, thus increasing<lb/> the numerical aperture (NA) of the microscope system.<lb/> This allows a substantial increase in the resolution and<lb/> background rejection of our system, along with a strong<lb/> enhancement in NV<lb/> − photon collection efficiency. More-<lb/>over, this geometrical solution can easily be applied to<lb/> other defect centres in bulk diamond which emit at dif-<lb/>ferent wavelengths[11].<lb/> The photon collection efficiency from NV<lb/> − centres in<lb/> diamond has previously been improved by using NV<lb/> −</div>
+
+		</front>
+	</text>
+</tei>

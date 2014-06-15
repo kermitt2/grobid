@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014871"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="copyright">2008 Open Mobile Alliance Ltd. All Rights Reserved.<lb/> Used with the permission of the Open Mobile Alliance Ltd. under the terms as stated in this document.<lb/></note>
+
+	<note>[OMA-Template-WhitePaper-20080101-I]<lb/></note>
+
+	<docTitle>
+	<titlePart>White Paper on Mobile Codes<lb/></titlePart>
+	</docTitle>
+
+	<date>Approved – 24 Oct 2008<lb/></date>
+
+	<byline>
+	<affiliation>Open Mobile Alliance<lb/></affiliation>
+	</byline>
+
+	<note>OMA-WP-MobileCodes-20081024-A</note>
+
+		</front>
+	</text>
+</tei>

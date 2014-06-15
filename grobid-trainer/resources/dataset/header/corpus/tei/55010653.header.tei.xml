@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010653"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>2002;62:773-780.<lb/> Cancer Res<lb/></reference>
+
+	<byline>
+	<docAuthor>C. Ryan Miller, Christopher R. Williams, Donald J. Buchsbaum, et al.<lb/></docAuthor>
+	</byline>
+
+	<docTitle>
+	<titlePart>Experimental Human Glioblastomas<lb/> Deaminase/5-Fluorocytosine Gene Therapy Is Effective for<lb/> Intratumoral 5-Fluorouracil Produced by Cytosine<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Updated Version<lb/></note>
+
+	<ptr type="web">http://cancerres.aacrjournals.org/content/62/3/773<lb/></ptr>
+
+	<note type="other">Access the most recent version of this article at:<lb/>Cited Articles<lb/></note>
+
+	<ptr type="web">http://cancerres.aacrjournals.org/content/62/3/773.full.html#ref-list-1<lb/></ptr>
+
+	<note type="other">This article cites 57 articles, 20 of which you can access for free at:<lb/> Citing Articles<lb/></note>
+
+	<ptr type="web">http://cancerres.aacrjournals.org/content/62/3/773.full.html#related-urls<lb/></ptr>
+
+	<note type="other">This article has been cited by 7 HighWire-hosted articles. Access the articles at:<lb/>E-mail alerts<lb/></note>
+	
+	<note type="other">related to this article or journal.<lb/> Sign up to receive free email-alerts<lb/> Subscriptions<lb/> Reprints and<lb/> . pubs@aacr.org<lb/> Department at<lb/> To order reprints of this article or to subscribe to the journal, contact the AACR Publications<lb/> Permissions<lb/> . permissions@aacr.org<lb/> Department at<lb/> To request permission to re-use all or part of this article, contact the AACR Publications<lb/></note>
+
+	<byline>
+	<affiliation>American Association for Cancer Research<lb/></affiliation>
+	</byline>
+
+	<note type="copyright">Copyright © 2002<lb/></note>
+
+	<date>on October 27, 2011<lb/></date>
+
+	<ptr>cancerres.aacrjournals.org<lb/></ptr>
+
+	<note type="other">Downloaded from</note>
+
+		</front>
+	</text>
+</tei>

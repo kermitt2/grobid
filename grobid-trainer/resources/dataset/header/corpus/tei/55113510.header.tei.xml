@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei type="wiki">
+	<teiHeader>
+		<fileDesc xml:id="55113510"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">forumsblog<lb/> Help Search<lb/> Members Calendar<lb/> Personal tools<lb/> Log in / create account<lb/> Views<lb/> Article Discussion<lb/> View source<lb/> History<lb/></note>
+
+	<docTitle>
+	<titlePart>Self-organizing map<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>From Piki<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Currently5.00/5<lb/> The self-organizing map (SOM) also known as a Kohonen map is a type of neural network<lb/> based on competitive learning. It can be used for clustering and for visualization of<lb/> high-dimensional data.<lb/></div>
+
+		</front>
+	</text>
+</tei>

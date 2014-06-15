@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="institution">DoCoMo Communications Laboratories USA, Inc.</orgName>
+							<lb/>
+							<address>
+								<addrLine>3240 Hillview Ave</addrLine>,
+								<settlement>Palo Alto</settlement>
+								<region>CA</region>
+								<postCode>94304</postCode>,
+								<country>USA</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>		
+							<orgName type="laboratory">Research Laboratories</orgName>,
+							<orgName type="institution">NTT DoCoMo, Inc.</orgName>
+							<lb/>
+							<address>
+								<addrLine>3-5 Hikarino-oka</addrLine>,
+								<settlement>Yokosuka</settlement>,
+								<lb/>
+								<region>Kanagawa</region>,
+								<postCode>239-8536</postCode>,
+								<country>Japan</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

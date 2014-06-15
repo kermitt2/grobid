@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55115380"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>International Journal of PharmTech Research<lb/> CODEN (USA): IJPRIF<lb/> ISSN : 0974-4304<lb/> Vol. 3, No.2, pp1191-1197, April-June 2011<lb/></reference>
+
+	<docTitle>
+	<titlePart>Study of Rheological properties of Psyllium<lb/> polysaccharide and its evaluation as<lb/> Suspending agent<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>M. R. P. Rao*, M. P. Khambete, H. N. Lunavat<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Dept. of Pharmaceutics, AISSMS College of Pharmacy,</affiliation>
+	</byline>
+
+	<address>Kennedy Road, Near RTO<lb/> Pune -411001,India<lb/></address>
+
+	<email>*Corres.author: monicarp_6@hotmail.com<lb/></email>
+
+	<div type="abstract">Abstract: Excipients are an integral part of any drug delivery system and though the market is flooded with an array of<lb/> excipients for widely different applications, cost is a major deterrent, especially in a country like India. The objective of<lb/> the present study was to investigate indigenous plant sources containing polysaccharides, devise a cost effective<lb/> extraction procedure and evaluate its use as a multi-functional excipient. Psyllium seed husk has been traditionally used<lb/> as a bulk laxative in India. Recent studies have also pointed out their cholesterol lowering effect. However the<lb/> mucilaginous components of the seeds have not yet been investigated as a pharmaceutical excipient. In the present<lb/> research, spray dried extract obtained from psyllium seeds was used. Paracetamol was selected as drug and mucilage of<lb/> psyllium polysaccharide (PPS) were prepared in different concentrations. The rheological properties of the mucilage<lb/> were studied and important parameters like thixotropic nature, hysteresis loop were observed. The results were<lb/> compared with standard suspending agent sodium carboxymethyl cellulose (Na CMC). Paracetamol suspension was<lb/> prepared and evaluated for pH, viscosity, resuspendability and sedimentation volume. The Psyllium polysaccharide<lb/> (PPS) mucilage was found to have a promising potential for its use as a suspending agent.<lb/></div>
+
+	<keyword>Key words: Psyllium, rheology, suspending agent, thixotropy.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Georgios</forename>
+								<surname>Kambourakis</surname>
+							<lb/>
+								<marker>1</marker>,
+							</persName>
+							<persName>
+								<forename>Dimitris</forename>
+								<surname>Geneiatakis</surname>
+							<lb/>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>Stefanos</forename>
+								<surname>Gritzalis</surname>
+							<lb/>
+								<marker>1</marker> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Costas</forename>
+								<surname>Lambrinoudakis</surname>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>Tasos</forename>
+								<surname>Dagiuklas</surname>
+							<lb/>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>Sven</forename>
+								<surname>Ehlert</surname>
+							<lb/>
+								<marker>3</marker>, and
+							</persName>
+							<persName>
+								<forename>Jens</forename>
+								<surname>Fiedler</surname>
+								<marker>3</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

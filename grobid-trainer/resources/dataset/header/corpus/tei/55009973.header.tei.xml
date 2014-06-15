@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009973"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<affiliation>Marshall Morrison Instruments<lb/></affiliation>
+	</byline>
+
+	<docTitle>
+	<titlePart>Morrison Digital Trumpet<lb/> OWNER&apos;S MANUAL<lb/></titlePart>
+	</docTitle>
+
+	<note type="copyright">Copyright © 2004 MARSHALL MORRISON INSTRUMENTS<lb/> All rights reserved.</note>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009294"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Characterization of parylene C as an encapsulation material<lb/> for implanted neural prostheses<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Christina Hassler,<lb/> 1 Rene P. von Metzen,<lb/> 1 Patrick Ruther,<lb/> 2 Thomas Stieglitz<lb/> 1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Laboratory for Biomedical Microtechnology, Department of Microsystems Engineering—IMTEK, University of Freiburg,<lb/></affiliation>
+	</byline>
+
+	<address>Freiburg, Germany<lb/></address>
+
+	<byline>
+	<affiliation>2 Laboratory for Microsystems Materials, Department of Microsystems Engineering—IMTEK, University of Freiburg,</affiliation>
+	</byline>
+
+	<address>Freiburg,<lb/> Germany<lb/></address>
+
+	<note type="submission">Received 18 June 2009; revised 28 September 2009; accepted 3 November 2009<lb/></note>
+
+	<date>Published online 29 January 2010</date>
+
+	<note type="other">in Wiley InterScience (www.interscience.wiley.com).</note>
+
+	<idno type="DOI">DOI: 10.1002/jbm.b.31584<lb/></idno>
+
+	<div type="abstract">Abstract: The applicability of parylene C as an encapsulation<lb/> material for implanted neural prostheses was characterized<lb/> and optimized. The adhesion of parylene C was tested on dif-<lb/>ferent substrate materials, which were commonly used in<lb/> neural prostheses and the efficiency of different adhesion<lb/> promotion methods was investigated. On Si 3 N 4 , platinum,<lb/> and on a first film of parylene C, a satisfactory adhesion was<lb/> achieved with Silane A-174, which even withstood standard<lb/> steam sterilization. The adhesion to gold and polyimide could<lb/> not be improved sufficiently with the tested methods. Fur-<lb/>thermore, tensile tests and measurements of the degree of<lb/> crystallinity were performed on untreated, on steam steri-<lb/>lized, and on annealed parylene C layers to investigate the<lb/> influence of thermal treatment. This led to more brittle and<lb/> stiffer films due to an increase in the crystalline portion in<lb/> the parylene layers. Finally, an electrochemical impedance<lb/> spectroscopy was used to test if a parylene C layer was able<lb/> to protect a metallic structure against corrosion on a Si 3 N 4<lb/> substrate. The results indicated that this could be only possi-<lb/>ble by treating the substrate with Silane A-174. To receive<lb/> parylene C layers with a good encapsulation performance, it<lb/> is important to consider the materials, which are used in the<lb/> neural prosthesis, to find the best suited process parameters.<lb/></div>
+
+	<note type="copyright">&#169; 2010 Wiley Periodicals, Inc.</note>
+
+	<reference>J Biomed Mater Res Part B:<lb/> Appl Biomater 93B: 266–274, 2010<lb/></reference>
+
+	<keyword>Key Words: adhesion, crystallinity, encapsulation, neural<lb/> prosthesis, parylene C<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

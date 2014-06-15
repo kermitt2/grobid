@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55113632"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Download PDF (1,137 KB)<lb/> </note>
+
+	<reference>Applied Physics B<lb/> September 2001, Volume 73, Issue 3, pp 245-255<lb/></reference>
+
+	<docTitle>
+	<titlePart>Local fields close to the surface of nanoparticles and<lb/> aggregates of nanoparticles<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">14 Citations<lb/></note>
+
+	<div type="abstract">Abstract<lb/> A refined discussion of the near-field scattering of spherical nanoparticles and the electromagnetic<lb/> fields close to the particle surface is given. New results for the dependence on the distance from the<lb/> surface and the angular distribution of the scattered light in the near-field are given. It will be shown<lb/> that the radial component of the electric field leads to striking differences in the phase functions in the<lb/> near-field and the far-field. Exemplary computations are presented for Ag and Au particles with<lb/> different size. In a second part the discussion is extended to assemblies of spherical Ag and Au<lb/> nanoparticles. It will be shown that large near-fields at wavelengths commonly used in SERS<lb/> experiments are obtained for aggregates. In the near-field scattering intensity &quot;hot spots&quot; mark regions<lb/> between particles in the aggregate where the near-field is particularly high.<lb/></div>
+
+	<note type="submission">Received: 4 M ay 2001 / Revised version: 20 July 2001 /</note>
+
+	<date>Published online: 19 September 2001<lb/></date>
+
+	<note type="other">Page %P<lb/></note>
+
+	<note type="page">Page 1<lb/></note>
+
+	<note type="other">Local fields close to the surface of nanoparticles and aggregates of n...<lb/></note>
+
+	<ptr type="web">http://rd.springer.com/article/10.1007/s003400100650<lb/></ptr>
+
+	<note type="page">1 of 20<lb/></note>
+
+	<date>10-04-2014 </date>
+
+	<note type="other">20:10</note>
+
+		</front>
+	</text>
+</tei>

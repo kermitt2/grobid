@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="laboratory">AIR FORCE RESEARCH LABORATORY</orgName>
+							<lb/>
+							<orgName type="laboratory">INFORMATION DIRECTORATE</orgName>
+							<lb/>
+							<orgName type="institution">ROME RESEARCH SITE</orgName>
+							<lb/> 
+							<address>
+								<settlement>ROME</settlement>,
+								<region>NEW YORK</region>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

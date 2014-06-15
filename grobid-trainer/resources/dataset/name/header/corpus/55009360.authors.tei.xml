@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<surname>Genovese</surname>
+								<marker>6</marker> ,
+								<forename>Mark</forename>
+								<middlename>C</middlename>.,
+							</persName>
+							<persName>									
+								<surname>Gao</surname>
+								<marker>3</marker> ,
+								<forename>Ling</forename>,
+							</persName>
+							<persName>	
+								<surname>Yin</surname>
+								<marker>3</marker> ,
+								<forename>Jie</forename>,
+							</persName>
+							<persName>	
+								<surname>Smith</surname>
+								<marker>3</marker> ,
+								<forename>Stefani</forename>,
+							</persName>
+							<persName>
+								<surname>Weinblatt</surname>
+								<marker>1</marker> ,
+								<lb/>
+								<forename>Michael</forename>
+								<middlename>E</middlename> .,
+							</persName>
+							<persName>									
+								<surname>Smolen</surname>
+								<marker>5</marker> ,
+								<forename>Josef</forename>
+								<middlename>S</middlename> .,
+							</persName>
+							<persName>	
+								<surname>Wang</surname>
+								<marker>3</marker> ,
+								<forename>Xiaoning</forename>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

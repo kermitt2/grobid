@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011653"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Improving Glucose Oxidase Properties by Directed Evolution<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>by<lb/> Iuliana Carmen Momeu<lb/></docAuthor>
+	</byline>
+
+	<degree>A thesis submitted in partial fulfilment<lb/> of the requirements for the degree of<lb/> Doctor of Philosophy<lb/> in Biochemical Engineering<lb/> Approved, Thesis Committee<lb/> Prof. Dr. Ulrich Schwaneberg<lb/> Prof. Dr. Matthias Ullrich<lb/> Prof. Dr. Marcelo Fernandez-Lahore<lb/> Prof. Dr. Horst Diehl<lb/></degree>
+	
+	<date>Date of Defense: -15 January 2007 -<lb/></date>
+
+	<byline>
+	<affiliation>School of Engineering and Science</affiliation>
+	</byline>
+
+		</front>
+	</text>
+</tei>

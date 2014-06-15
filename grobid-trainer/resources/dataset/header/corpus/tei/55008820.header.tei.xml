@@ -1,0 +1,48 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008820"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	
+	<byline>
+	<docAuthor>A. Cork<lb/> </docAuthor>
+	</byline>
+	
+	<note type="other">Pheromone Manual<lb/> </note>
+	
+	<note type="page">173<lb/></note>
+
+	<docTitle>
+	<titlePart>A Pheromone Manual<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>By Dr Alan Cork<lb/>Reader in Chemical Ecology,<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation> Natural Resources Institute<lb/> University of Greenwich<lb/> </affiliation>
+	</byline>
+	
+	<note type="other">The publication is an output from a research project funded by the United Kingdom Department for<lb/> International Development (DFID) for the benefit of developing countries. However, DFID can accept<lb/> no responsibility for any information provided or views expressed.<lb/> R8304 Crop Protection Research Programme DFID<lb/> Short extracts of this publication may be reproduced in any non-advertising, non-profit-making context<lb/> provided that the source is acknowledged as follows:<lb/></note>
+
+	<byline>
+	<docAuthor>Cork, A. </docAuthor>
+	</byline>
+		
+	<date>(2004). </date>
+	
+	<note type="other">Pheromone Manual, </note>
+	
+	<byline>
+	<affiliation>Natural Resources Institute, </affiliation>
+	</byline>
+	
+	<address>Chatham Maritime ME4 4TB, UK.<lb/></address>
+
+		</front>
+	</text>
+</tei>

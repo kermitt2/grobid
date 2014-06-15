@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013796"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	
+	<docTitle>
+	<titlePart>Guidelines<lb/> for Design<lb/> of Wind Turbines<lb/></titlePart>
+	</docTitle>
+	
+	<note type="other">A publication from<lb/> </note>
+	
+	<byline>
+	<affiliation>DNV/Risø<lb/> </affiliation>
+	</byline>
+		
+	<note type="other">Second Edition</note>
+	
+		</front>
+	</text>
+</tei>

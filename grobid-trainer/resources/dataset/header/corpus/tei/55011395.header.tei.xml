@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011395"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note>0885–3010/$25.00</note>
+
+	<note type="copyright">© 2008 IEEE<lb/></note>
+
+	<note type="page">2640</note>
+
+	<reference>IEEE TransacTIons on UlTrasonIcs, FErroElEcTrIcs, and FrEqUEncy conTrol, vol. 55, no. 12, dEcEmbEr 2008<lb/></reference>
+
+	<div type="abstract">Abstract—The performance of many signal-processing ap-<lb/>plications in ultrasound medical imaging, including elastogra-<lb/>phy, blood flow imaging, tissue velocity imaging, and acoustic<lb/> radiation force impulse imaging, depends on the performance<lb/> of their time-delay estimators. In this paper, we present a<lb/> new time-delay estimator based on the tracking of individual<lb/> samples using a continuous representation of the echo signal.<lb/> We also present the use of the same interpolation approach to<lb/> improve the performance of the zero-crossing tracking delay<lb/> estimator. Simulation results show that sample tracking algo-<lb/>rithms significantly outperform commonly used window-based<lb/> algorithms in terms of bias and standard deviation. Sample<lb/> tracking algorithms also have higher sensitivity and resolution<lb/> compared with traditional delay estimators, including recently<lb/> introduced spline-based continuous time-delay estimators, be-<lb/>cause they provide the displacement of individual samples. Ex-<lb/>perimental results demonstrating the viability of sample track-<lb/>ing delay estimation are also presented.<lb/></div>
+
+		</front>
+	</text>
+</tei>

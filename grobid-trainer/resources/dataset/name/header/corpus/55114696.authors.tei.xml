@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>J</forename>.
+								<surname>Losada</surname>
+								<marker>a,*</marker>,
+							</persName>
+							<persName>
+								<forename>I</forename>.
+								<surname>del Peso</surname>
+								<marker>a</marker>,
+							</persName>
+							<persName>
+								<forename>L</forename>.
+								<surname>Beyer</surname>
+								<marker>b, </marker>
+							</persName>
+							<persName>	
+								<forename>j</forename>.
+								<surname>Hartung</surname>
+								<marker>c</marker>,
+							</persName>
+							<persName>	
+								<forename>V</forename>.
+								<surname>Fernfindez</surname>
+								<marker>c</marker>,
+							</persName>
+							<persName>	
+								<forename>M</forename>.
+								<surname>M6bius</surname>
+								<marker>b</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

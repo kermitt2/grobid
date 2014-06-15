@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012359"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">1<lb/></note>
+
+	<docTitle>
+	<titlePart>Using Transcoding for Hidden Communication in IP Telephony<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Wojciech Mazurczyk, Paweł Szaga, Krzysztof Szczypiorski<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Warsaw University of Technology, Institute of Telecommunications<lb/></affiliation>
+	</byline>
+
+	<address>Warsaw, Poland, 00-665, Nowowiejska 15/19<lb/></address>
+
+	<div type="abstract">Abstract. The paper presents a new steganographic method for IP telephony called TranSteg<lb/> (Transcoding Steganography). Typically, in steganographic communication it is advised for<lb/> covert data to be compressed in order to limit its size. In TranSteg it is the overt data that is<lb/> compressed to make space for the steganogram. The main innovation of TranSteg is to, for a<lb/> chosen voice stream, find a codec that will result in a similar voice quality but smaller voice<lb/> payload size than the originally selected. Then, the voice stream is transcoded. At this step the<lb/> original voice payload size is intentionally unaltered and the change of the codec is not<lb/> indicated. Instead, after placing the transcoded voice payload, the remaining free space is<lb/> filled with hidden data. TranSteg proof of concept implementation was designed and<lb/> developed. The obtained experimental results are enclosed in this paper. They prove that the<lb/> proposed method is feasible and offers a high steganographic bandwidth. TranSteg detection<lb/> is difficult to perform when performing inspection in a single network localisation.<lb/></div>
+
+	<keyword>Key words: IP telephony, network steganography, TranSteg, information hiding<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

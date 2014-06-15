@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014089"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>MP3 Player<lb/> user manual<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">imagine the possibilities<lb/> Thank you for purchasing this Samsung product.<lb/> To receive a more complete service, please<lb/> register your product at<lb/></note>
+
+	<ptr type="web">www.samsung.com/global/register<lb/></ptr>
+
+	<note type="other">YP-P2 YP-P2</note>
+	
+		</front>
+	</text>
+</tei>

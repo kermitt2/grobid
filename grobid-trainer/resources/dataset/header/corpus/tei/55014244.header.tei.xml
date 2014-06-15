@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014244"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Am. J. Hum. Genet. 72:940–948, 2003<lb/></reference>
+
+	<note type="page">940<lb/></note>
+
+	<docTitle>
+	<titlePart>Deletion of the Telomerase Reverse Transcriptase Gene<lb/> and Haploinsufficiency of Telomere Maintenance in Cri du Chat Syndrome<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Anju Zhang,<lb/> 1,* Chengyun Zheng,<lb/> 2,5,* Mi Hou,<lb/> 2,* Charlotta Lindvall,<lb/> 3,* Ke-Jun Li,<lb/> 4<lb/> Fredrik Erlandsson,<lb/> 1 Magnus Björkholm,<lb/> 2 Astrid Gruber,<lb/> 2 Elisabeth Blennow,<lb/> 3 and Dawei Xu<lb/> 2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1<lb/> Department of Pathology and Oncology,<lb/> 2<lb/> Department of Medicine, Division of Hematology,<lb/> 3<lb/> Department of Molecular Medicine,<lb/> and 4 Department of Biosciences at Novum, Karolinska Institutet and Hospital,</affiliation>
+	</byline>
+
+	<address>Stockholm; and<lb/></address>
+
+	<byline>
+	<affiliation>5<lb/> Shaanxi Provincial Hospital,</affiliation>
+	</byline>
+
+	<address>Xian, China<lb/></address>
+
+	<div type="abstract">Cri du chat syndrome (CdCS) results from loss of the distal portion of chromosome 5p, where the telomerase<lb/> reverse transcriptase (hTERT) gene is localized (5p15.33). hTERT is the rate-limiting component for telomerase<lb/> activity that is essential for telomere-length maintenance and sustained cell proliferation. Here, we show that a<lb/> concomitant deletion of the hTERT allele occurs in all 10 patients with CdCS whom we examined. Induction of<lb/> hTERT mRNA in proliferating lymphocytes derived from five of seven patients was lower than that in unaffected<lb/> control individuals (<lb/> ). The patient lymphocytes exhibited shorter telomeres than age-matched unaffected<lb/> P ! .05<lb/> individuals (<lb/> ). A reduction in replicative life span and a high rate of chromosome fusions were observed<lb/> P ! .0001<lb/> in cultured patient fibroblasts. Reconstitution of telomerase activity by ectopic expression of hTERT extended the<lb/> telomere length, increased the population doublings, and prevented the end-to-end fusion of chromosomes. We<lb/> conclude that hTERT is limiting and haploinsufficient for telomere maintenance in humans in vivo. Accordingly,<lb/> the hTERT deletion may be one genetic element contributing to the phenotypic changes in CdCS.<lb/></div>
+
+		</front>
+	</text>
+</tei>

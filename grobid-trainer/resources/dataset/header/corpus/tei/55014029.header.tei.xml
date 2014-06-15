@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014029"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Product Monograph<lb/> MMP<lb/> Matrix Metalloproteinases<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">Abstract<lb/> The matrix metalloproteinases (MMPs) constitute a multigene family of over 25 secreted and membrane bound<lb/> enzymes that degrade numerous pericellular substrates. Their targets include other proteinases, clotting fac-<lb/>tors, chemotactic molecules, latent growth factors, cell surface receptors, cell-cell adhesion molecules, and<lb/> almost all structural extracellular matrix proteins. Thus, MMPs play a role in normal tissue modelling and dif-<lb/>ferentiation during development. In pathological conditions they are involved in inflammation, degradation<lb/> of bone, autoimmune diseases, and in the invasive migration of cancer cells across basement membrane as<lb/> in tumor metastasis. To ascertain the role of a particular MMP in these disease states, it is desirable to have<lb/> a series of synthetic substrates that allow a rapid discrimination of different MMP activities.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010844"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>OS/400 Edition<lb/>Volume 2, Number 9 --March 5, 2002<lb/></reference>
+
+	<docTitle>
+	<titlePart>Help/Systems Releases SNMP Trapper for OS/400<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>by Alex Woodie<lb/></docAuthor>
+	</byline>
+
+		</front>
+	</text>
+</tei>

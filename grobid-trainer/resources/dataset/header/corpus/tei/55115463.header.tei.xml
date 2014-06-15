@@ -1,0 +1,79 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55115463"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>STED Nanoscopy with Time-Gated Detection: Theoretical<lb/> and Experimental Aspects<lb/></titlePart>
+	</docTitle>
+
+	<byline> 
+	<docAuthor>Giuseppe Vicidomini<lb/> 1,2 *, Andreas Schö nle<lb/> 2 , Haisen Ta<lb/> 2<lb/> , Kyu Young Han<lb/> 2¤ , Gael Moneron<lb/> 2,3 ,<lb/> Christian Eggeling<lb/> 2,4 , Stefan W. Hell<lb/> 2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Nanophysics, Istituto Italiano di Tecnologia,</affiliation>
+	</byline>
+
+	<address>Genoa, Italy,</address>
+
+	<byline>
+	<affiliation>2 Department of NanoBiophotonics, Max Planck Institute for Biophysical Chemistry,</affiliation>
+	</byline>
+
+	<address>Gö ttingen, Germany,<lb/></address>
+
+	<byline>
+	<affiliation>3 Department of Neuroscience, Institut Pasteur, CNRS URA 2182,</affiliation>
+	</byline>
+
+	<address>Paris, France,</address>
+
+	<byline>
+	<affiliation>4 Weatherall Institute of Molecular Medicine, University of Oxford,</affiliation>
+	</byline>
+
+	<address>Oxford, United Kingdom<lb/></address>
+
+	<div type="abstract">Abstract<lb/> In a stimulated emission depletion (STED) microscope the region in which fluorescence markers can emit spontaneously<lb/> shrinks with continued STED beam action after a singular excitation event. This fact has been recently used to substantially<lb/> improve the effective spatial resolution in STED nanoscopy using time-gated detection, pulsed excitation and continuous<lb/> wave (CW) STED beams. We present a theoretical framework and experimental data that characterize the time evolution of<lb/> the effective point-spread-function of a STED microscope and illustrate the physical basis, the benefits, and the limitations<lb/> of time-gated detection both for CW and pulsed STED lasers. While gating hardly improves the effective resolution in the all-<lb/>pulsed modality, in the CW-STED modality gating strongly suppresses low spatial frequencies in the image. Gated CW-STED<lb/> nanoscopy is in essence limited (only) by the reduction of the signal that is associated with gating. Time-gated detection<lb/> also reduces/suppresses the influence of local variations of the fluorescence lifetime on STED microscopy resolution.<lb/></div>
+
+	<reference>Citation: Vicidomini G, Schönle A, Ta H, Han KY, Moneron G, et al. (2013) STED Nanoscopy with Time-Gated Detection: Theoretical and Experimental<lb/> Aspects. PLoS ONE 8(1): e54421.</reference>
+
+	<idno type="DOI">doi:10.1371/journal.pone.0054421<lb/></idno>
+
+	<note type="other">Editor:</note>
+
+	<byline>
+	<docAuthor>Giuseppe Chirico,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University of Milano-</affiliation>
+	</byline>
+
+	<address>Bicocca, Italy<lb/></address>
+
+	<note type="submission">Received September 12, 2012; Accepted December 11, 2012;</note>
+
+	<date>Published January 18, 2013<lb/></date>
+
+	<note type="copyright">Copyright: &#169; 2013 Vicidomini et al. This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits<lb/> unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.<lb/></note>
+
+	<note type="grant">Funding: This work is supported in part by BMBF (German Federal Ministry for Education and Science) under the project INVERS.</note>
+
+	<note type="other">The funders had no role in study<lb/> design, data collection and analysis, decision to publish, or preparation of the manuscript.<lb/> Competing Interests: GV, KYH, GM, CE and SWH have filed a patent application on the method presented. GV, KYH, GM, CE and SWE are named as inventors on<lb/> patents relating to methods gated STED: &apos;&apos;STED Microscopy with Pulsed Excitation, Continuous Stimulation, and Gated Registration of Spontaneous Emitted<lb/> Fluorescence Light&apos;&apos;, Int. Application No. PCT/EP2010/067956. All other authors have declared that no competing interests exist. This does not alter the authors&apos;<lb/> adherence to all the PLOS ONE policies on sharing data and materials.<lb/> *</note>
+
+	<email>E-mail: giuseppe.vicidomini@iit.it<lb/></email>
+
+	<byline>
+	<affiliation>¤ Current address: Department of Physics, University of Illinois at Urbana-Champaign,</affiliation>
+	</byline>
+
+	<address>Urbana, Illinois, United States of America<lb/></address>
+
+		</front>
+	</text>
+</tei>

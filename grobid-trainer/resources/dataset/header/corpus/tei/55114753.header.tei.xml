@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55114753"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>OTC 20777<lb/> Optimization Procedure of Steel Lazy Wave Riser Configuration for Spread<lb/> Moored FPSOs in Deepwater Offshore Brazil<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Edmundo Queiroz de Andrade, Ludimar Lima de Aguiar, Stael Ferreira Senra, Elizabeth Frauches Netto Siqueira,<lb/> Ana Lucia Fernandes Lima Torres, Marcio Martins Mourelle/ Petrobras S.A<lb/></docAuthor>
+	</byline>
+
+	<note type="copyright">Copyright 2010, Offshore Technology Conference<lb/></note>
+
+	<reference>This paper was prepared for presentation at the 2010 Offshore Technology Conference held in Houston, Texas, USA, 3–6 May 2010.<lb/>	</reference>
+
+	<note type="other">This paper was selected for presentation by an OTC program committee following review of information contained in an abstract submitted by the author(s). Contents of the paper have not been<lb/> reviewed by the Offshore Technology Conference and are subject to correction by the author(s). The material does not necessarily reflect any position of the Offshore Technology Conference, its<lb/> officers, or members. Electronic reproduction, distribution, or storage of any part of this paper without the written consent of the Offshore Technology Conference is prohibited. Permission to<lb/> reproduce in print is restricted to an abstract of not more than 300 words; illustrations may not be copied. The abstract must contain conspicuous acknowledgment of OTC copyright.<lb/></note>
+
+	<div type="abstract">Abstract<lb/> The interest in the application of a SCR connected to a FPSO for exploration and production in deep water, has motivated the<lb/> need to carefully study this concept due to the high offsets and vertical motions imposed by the vessel at the top of the riser.<lb/> Petrobras has developed through its Research Center the study of different steel riser configurations. For bow turret-moored<lb/> and spread-moored FPSOs based on VLCC converted hulls, the steel lazy-wave riser (SLWR) has been considered as an<lb/> adequate solution due to its structural dynamic behavior and costs when compared to other configurations.<lb/> Although the SLWR furnishes acceptable results for fatigue and extreme environmental conditions, the search for the best<lb/> configuration is very demanding as any changes to a geometric parameter affect its whole structural dynamic behaviour. The<lb/> search for configurations that meet all the code criteria for the riser project required meticulous detail that has not always lead<lb/> to the best results because the number of variables involved is quite significant. Another important aspect is the installation<lb/> procedure that can also influence the final configuration.<lb/> In order to reduce the engineering time in generating and analyzing several configurations, optimization tools were studied and<lb/> used in association with Petrobras in-house software to help define a model that could achieve all design verification phases<lb/> more easily.<lb/> This paper presents the experience with the use of an optimization procedure applied to facilitate the design of a SLWR<lb/> connected to a FPSO unit offshore Brazil.<lb/> The process of optimization begins with a set of preliminary geometric variables and constraints that are associated with<lb/> multiple objectives related to economic, construction and safety factors. The result of the optimization process is a set of<lb/> feasible configurations from which, through careful selection, the &quot;one of the best&quot; configuration is chosen.<lb/></div>
+
+		</front>
+	</text>
+</tei>

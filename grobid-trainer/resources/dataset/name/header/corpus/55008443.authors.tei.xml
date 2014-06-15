@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Kristian</forename>
+								<surname>Birch Sørensen</surname>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>Per</forename>
+								<surname>Christiansson</surname>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>Kjeld</forename>
+								<surname>Svidt</surname>
+								<marker>3</marker> ,
+							</persName>
+							<persName>
+								<forename>Kim</forename>
+								<surname>Jacobsen</surname>
+								<marker>4</marker> ,
+							</persName>
+							<persName>
+								<forename>Thomas</forename>
+								<surname>Simoni</surname>
+								<marker>5</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

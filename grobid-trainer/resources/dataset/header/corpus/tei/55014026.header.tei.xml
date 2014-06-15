@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014026"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">! !<lb/> ! !<lb/> ! !<lb/> ! !<lb/> ! !<lb/> ! !<lb/> ! !<lb/> !<lb/></note>
+
+	<docTitle>
+	<titlePart>Digital Video Broadcasting (DVB); Implementation<lb/> guidelines for a second generation digital<lb/> terrestrial television broadcasting system<lb/> (DVB-T2)<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">DVB Document A133<lb/></note>
+
+	<date>June 2010</date>
+
+		</front>
+	</text>
+</tei>

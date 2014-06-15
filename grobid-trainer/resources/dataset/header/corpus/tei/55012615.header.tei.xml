@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012615"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Unlimited Design Possibilities<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">Special-Effect Masterbatches. A polypropylene film composite creates brilliant,<lb/> streak-free color effects on every surface in an automobile interior. A special-effect<lb/> Masterbatch developed specifically to provide a unique gloss and metallic look makes this<lb/> possible. Potential applications for this concept can be found basically wherever an upscale<lb/> design is the primary objective.<lb/> </div>
+
+	<div type="introduction">The increasingly demanding requirements of the automobile market for ever more specific<lb/> and complex interior trim characteristics present makers of Masterbatches with significant<lb/> challenges. From product development to full-scale production, producers of plastic<lb/> products must react flexibly and quickly to the needs and demands of automakers. On the<lb/> one hand, the material must save costs; on the other, it must satisfy the quality<lb/> requirements of the OEM by providing attractive surfaces with a good feel and exceptional<lb/> mechanical properties as well as low weight. Previously, creating and attractive surface<lb/> with special effects posed problems for producers: These ranged from flow lines and<lb/> material accumulations to other blemishes and weld lines in the finished product. Such<lb/> plastic surfaces required finishing in several post-production operations until now.<lb/> Problems with Materials to Date</div>
+
+		</front>
+	</text>
+</tei>

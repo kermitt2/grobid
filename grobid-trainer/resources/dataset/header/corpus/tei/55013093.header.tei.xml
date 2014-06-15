@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013093"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">R E S E A R C H A R T I C L E<lb/> Open Access<lb/></note>
+
+	<docTitle>
+	<titlePart>Efficient induction of CD25<lb/> -<lb/>iTreg by<lb/> co-immunization requires strongly antigenic<lb/> epitopes for T cells
+	<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Shuang Geng<lb/> 1 , Yang Yu<lb/> 1 , Youmin Kang<lb/> 1 , George Pavlakis<lb/> 2 , Huali Jin<lb/> 1,4 , Jinyao Li<lb/> 1,5 , Yanxin Hu<lb/> 3 , Weibin Hu<lb/> 1 ,<lb/> Shuang Wang<lb/> 1 and Bin Wang<lb/> 1*<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Abstract<lb/> Background: We previously showed that co-immunization with a protein antigen and a DNA vaccine coding for<lb/> the same antigen induces CD40<lb/> low IL-10<lb/> high tolerogenic DCs, which in turn stimulates the expansion of antigen-<lb/>specific CD4</div>
+
+		</front>
+	</text>
+</tei>

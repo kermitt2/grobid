@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011303"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>JDF Specification Release 1.2<lb/></titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

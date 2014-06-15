@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012950"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note>9. LS-DYNA Forum, Bamberg </note>
+
+	<date>2010<lb/></date>
+
+	<note type="copyright">© 2010 Copyright by DYNAmore GmbH<lb/></note>
+
+	<docTitle>
+	<titlePart>Advanced Mode Analysis<lb/> for Crash Simulation Results<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Clemens-August Thole, Lialia Nikitina, Igor Nikitin, Tanja Clees<lb/></docAuthor>
+	</byline>
+
+	<byline> 
+	<affiliation>Fraunhofer Institute for Algorithms and Scientific Computing SCAI,</affiliation>
+	</byline>
+
+	<address>Sankt Augustin, Germany<lb/></address>
+
+	<email>{Clemens-August.Thole,Lialia.Nikitina,Igor.Nikitin,Tanja.Clees}@scai.fraunhofer.de<lb/></email>
+
+	<div type="abstract">Abstract:<lb/> Potential scatter of simulation results caused, for example, by buckling, is still a challenging issue for<lb/> predictability. Principle component analysis (PCA) and correlation clustering are well-known<lb/> mathematical methods for data analysis. In order to characterize scatter, methods of these types were<lb/> applied to the ensemble of simulation results resulting from a number of runs using all node positions<lb/> at all time steps. For industrially relevant problems, the size of the resulting data base is larger than<lb/> 100 GBytes (even if compressed by FEMzip<lb/> 1</div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei type="technical-report">
+	<teiHeader>
+		<fileDesc xml:id="55114934"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>THE CERTIFICATION OF A REFERENCE MATERIAL<lb/> FOR THE DETERMINATION OF THE<lb/> ALKALI LEACHING FROM<lb/> PHARMACEUTICAL GLASS CONTAINERS<lb/> </titlePart>
+	</docTitle>
+
+	<note>IRMM-435<lb/></note>
+	
+	<byline>
+	<docAuthor>U. Wätjen, E. Guadagnino, A. Peters<lb/> and S. Vandendriessche<lb/></docAuthor>
+	</byline>
+
+	<note type="other">Report EUR 22537 EN</note>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013357"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Chinese Medical Journal 2010;123(15):2099-2104<lb/></reference>
+
+	<note type="page">2099<lb/></note>
+
+	<note type="other">Original article<lb/></note>
+
+	<docTitle>
+	<titlePart>Effect of house dust mite immunotherapy on interleukin-10-<lb/>secreting regulatory T cells in asthmatic children<lb/>
+	</titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>WANG Wei, XIANG Li, LIU Yong-ge, WANG Yong-hong and SHEN Kun-ling<lb/></docAuthor>
+	</byline>
+
+	<keyword>Keywords: interleukin-10; regulatory T cells; house dust mite; specific immunotherapy; IgG 4<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

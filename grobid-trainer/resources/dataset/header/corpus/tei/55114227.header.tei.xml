@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55114227"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Journal of Manufacturing Systems 30 (2011) 234– 240<lb/></reference>
+
+	<note type="other">Contents lists available at ScienceDirect<lb/>Journal of Manufacturing Systems<lb/>j o u r n a l h o m e p a g e : 
+	</note>
+
+	<ptr>w w w . e l s e v i e r . c o m / l o c a t e / j m a n s y s<lb/></ptr>
+
+	<note type="other">Technical paper<lb/></note>
+
+	<docTitle>
+	<titlePart>A new approach to scheduling in manufacturing for power consumption<lb/> and carbon footprint reduction<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Kan Fang<lb/> a , Nelson Uhan<lb/> a , Fu Zhao<lb/> b,* , John W. Sutherland<lb/> b<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a School of Industrial Engineering, Purdue University,</affiliation>
+	</byline>
+
+	<address>West Lafayette, IN, USA<lb/></address>
+
+	<byline>
+	<affiliation>b School of Mechanical Engineering and Division of Environmental and Ecological Engineering, Purdue University,
+	</affiliation>
+	</byline>
+
+	<address>West Lafayette, IN, USA<lb/></address>
+
+	<note type="other">a r t i c l e i n f o<lb/></note>
+
+	<note type="submission">Article history:<lb/> Received 12 July 2011<lb/> Received in revised form 3 August 2011<lb/> Accepted 5 August 2011<lb/></note>
+
+	<date>Available online 1 September 2011<lb/></date>
+
+	<keyword>Keywords:<lb/> Scheduling Peak load<lb/> Carbon footprint<lb/> Makespan<lb/></keyword>
+
+	<div type="abstract">a b s t r a c t<lb/> Manufacturing scheduling strategies have historically emphasized cycle time; in almost all cases, energy<lb/> and environmental factors have not been considered in scheduling. This paper presents a new mathemat-<lb/>ical programming model of the flow shop scheduling problem that considers peak power load, energy<lb/> consumption, and associated carbon footprint in addition to cycle time. The new model is demonstrated<lb/> using a simple case study: a flow shop where two machines are employed to produce a variety of parts.<lb/> In addition to the processing order of the jobs, the proposed scheduling problem considers the operation<lb/> speed as an independent variable, which can be changed to affect the peak load and energy consump-<lb/>tion. Even with a single objective, finding an optimal schedule is notoriously difficult, so directly applying<lb/> commercial software to this multi-objective scheduling problem requires significant computation time.<lb/> This paper calls for the development of more specialized algorithms for this new scheduling problem and<lb/> examines computationally tractable approaches for finding near-optimal schedules.<lb/></div>
+
+	<note type="copyright">© 2011 The Society of Manufacturing Engineers. Published by Elsevier Ltd. All rights reserved.<lb/></note>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="institution">aUniversity of Torino</orgName>,
+							<orgName type="department">DL VA.P.R.A.--Plant Pathology</orgName>,
+							<address>
+								<postCode>10095</postCode>,
+								<settlement>Grugliasco</settlement>,
+								(<region>Torino</region>),
+								<country>Italy</country>
+							<lb/>
+							</address>
+							<orgName type="institution">bSwiss Federal Institute for Forest</orgName>,
+							<orgName type="department">Snow and Landscape Research WSL</orgName>,
+							<address>
+								<postCode>8903</postCode>,
+								<settlement>Birmensdorf</settlement>,
+								(<region>Zurich</region>),
+								<country>Switzerland</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

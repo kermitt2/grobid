@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55114044"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>VOLUME 80, NUMBER 1<lb/> P H Y S I C A L R E V I E W L E T T E R S<lb/> 5 JANUARY 1998<lb/></reference>
+
+	<docTitle>
+	<titlePart>Experimental Evidence of the Oxygen Dimer in Silicon<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>L. I. Murin,<lb/> 1 T. Hallberg,<lb/> 2 V. P. Markevich,<lb/> 1 and J. L. Lindström<lb/> 2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Institute of Solid State and Semiconductor Physics,</affiliation>
+	</byline>
+
+	<address>Minsk 220072, Belarus<lb/></address>
+
+	<byline>
+	<affiliation>2 Linköping University, Department of Physics and Measurement Technology,</affiliation>
+	</byline>
+
+	<address>S-581 83, Linköping, Sweden<lb/></address>
+
+	<note type="submission">(Received 5 May 1997)<lb/></note>
+
+		</front>
+	</text>
+</tei>

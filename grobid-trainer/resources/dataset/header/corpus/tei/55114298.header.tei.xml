@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55114298"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Vision Strategies for Robotic Manipulation of Natural Objects<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Chee Kit Wong, Patrick P.K. Lim, Roger Clist and Raymond ShuHe Liu<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Industrial Research Ltd<lb/></affiliation>
+	</byline>
+
+	<address>24 Balfour Road, Parnell, Auckland, New Zealand<lb/></address>
+
+	<email>{k.wong, p.lim, r.clist, r.liu}@irl.cri.nz<lb/> </email>
+
+	<div type="abstract">Abstract<lb/> This paper describes a vision guided robotic<lb/> platform that will be used for the handling of<lb/> natural products in a multi-layer stack that is<lb/> typical in a bin situation. It is designed to<lb/> automatically recognise non-rigid objects, to<lb/> estimate their pose, and to select suitable picking<lb/> points using depth information from a 3D<lb/> camera. We adopted a novel approach by using a<lb/> topographical method to segment the objects and<lb/> then with elevation contours to build volumetric<lb/> data for each object. When the periphery for each<lb/> object is established, we introduced strategies by<lb/> which decisions will be made for task planning.<lb/> These strategies identify the appropriate object to<lb/> pick and the optimum picking position. Results<lb/> of the experimental trials demonstrate the<lb/> robustness of this approach for specific types of<lb/> natural products.<lb/></div>
+
+		</front>
+	</text>
+</tei>

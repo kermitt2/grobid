@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei type="product-sheet">
+	<teiHeader>
+		<fileDesc xml:id="55113816"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Automotive Worldwide<lb/></note>
+
+	<docTitle>
+	<titlePart>Steels for hot stamping<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Extract from the product catalogue -European edition<lb/> Note: Information contained in this catalogue is subject to change.<lb/> Please contact our sales team whenever you place an order to ensure that your requirements are fully met.<lb/> Please contact us if you have a specific requirement that is not included in the range of products and services covered by this catalogue.<lb/> We are also reachable by the</note>
+
+	<email>e-mail address automotive.request@arcelormittal.com.<lb/></email>
+
+	<note type="other">We are also reachable by the</note>
+
+	<email>e-mail address automotive.request@arcelormittal.com.<lb/></email>
+
+	<docTitle>
+	<titlePart>Steels for hot stamping<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">Very high strength steels<lb/> Description<lb/> Usibor ® 1500 P and 22MnB5, which have very high mechanical strength after hot stamping, are two steels in the range of products developed<lb/> to meet vehicle weight reduction requirements. Usibor<lb/> ® 1500 P and 22MnB5 are intended for use in automobile structural and safety<lb/> components.<lb/> These steels are designed to be heat treated and then quenched during the hot stamping process. The mechanical properties of the final part<lb/> make significant weight savings possible (up to 50% compared to standard high yield strength steel). The very high yield strength of these<lb/> steels after heat treatment and hot stamping make them suitable for anti-intrusion components (fender beams, door reinforcements, B-pillars,<lb/> windscreen uprights, etc.).<lb/> The manufacturing process of these steels and the thermo-mechanical treatment they undergo during hot rolling lend them excellent<lb/> quenchability and good structural homogeneity, ensuring good response to mechanical stress.</div>
+
+		</front>
+	</text>
+</tei>

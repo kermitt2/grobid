@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013476"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Guideline for Financial Services<lb/> TG-3-2006<lb/> Retail Financial Services Compliance<lb/> Guideline Online PIN Security and Key Management<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Secretariat:<lb/> Accredited Standards Committee X9, Inc.<lb/> Approved by:<lb/></note>
+
+	<note type="other">Accredited Standards Committee X9, Inc.<lb/></note>
+
+	<date>March 13, 2006<lb/></date>
+
+	<note type="copyright">Copyright &#169; 2006 by Accredited Standards Committee X9, Inc.<lb/></note>
+
+	<note type="other">No part of this publication may be reproduced in any form, in an electronic retrieval system or otherwise, without prior<lb/> written permission of the publisher.</note>
+
+		</front>
+	</text>
+</tei>

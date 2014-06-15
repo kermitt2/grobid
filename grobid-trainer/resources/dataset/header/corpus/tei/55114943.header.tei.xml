@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<tei type="phd-thesis">
+	<teiHeader>
+		<fileDesc xml:id="55114943"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note>N° d&apos;ordre 2012ISAL0062<lb/> </note>
+
+	<date>Année 2012<lb/></date>
+
+	<note type="other">Thèse<lb/></note>
+
+	<docTitle>
+	<titlePart>Etude fondamentale de la transformation<lb/> du polyamide 12 par frittage laser :<lb/> mécanismes physico-chimiques et relations<lb/> microstructures/propriétés<lb/></titlePart>
+	</docTitle>
+
+	<degree>Présentée devant<lb/> L&apos;institut national des sciences appliquées de Lyon<lb/> Pour obtenir<lb/> Le grade de docteur<lb/> École doctorale Matériaux de Lyon<lb/> Spécialité : Matériaux polymères<lb/> Par<lb/></degree>
+
+	<docTitle>
+	<titlePart>Stéphane DUPIN<lb/></titlePart>
+	</docTitle>
+
+	<date>Soutenue le 05 juillet 2012 </date>
+
+	<note type="other">devant la Commission d&apos;examen<lb/> Jury MM.<lb/> C. BARRES<lb/> Maître de Conférences<lb/> Examinatrice<lb/> J. Y. CHARMEAU<lb/> Professeur Directeur de thèse<lb/> R. FULCHIRON<lb/> Maître de Conférences<lb/> Examinateur<lb/> O. LAME<lb/> Maître de Conférences<lb/> Invité<lb/> J. M. LEFEBVRE<lb/> Directeur de recherche<lb/> Rapporteur<lb/> P. MOGNOL<lb/> Professeur Examinateur<lb/> G. REGNIER<lb/> Professeur Rapporteur<lb/></note>
+
+	<byline>
+	<affiliation>Laboratoire de recherche<lb/> Ingénierie des Matériaux Polymères (IMP), UMR 5223<lb/> INSA de Lyon,</affiliation>
+	</byline>
+
+	<address>Bâtiment Jules Verne, 3ème étage<lb/> 17 avenue Jean Capelle<lb/> 69621 VILLEURBANNE CEDEX, France<lb/></address>
+
+	<note type="other">Cette thèse est accessible à l&apos;adresse : </note>
+
+	<ptr type="web">http://theses.insa-lyon.fr/publication/2012ISAL0062/these.pdf<lb/> </ptr>
+
+	<note type="copyright">© [S. Dupin], [2012], INSA de Lyon, tous droits réservés</note>
+
+		</front>
+	</text>
+</tei>

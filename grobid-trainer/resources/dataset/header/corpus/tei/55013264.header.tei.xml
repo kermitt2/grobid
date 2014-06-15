@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013264"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">2009 AACR Annual Meeting<lb/> </note>
+
+	<date>April 18-22, 2009<lb/> </date>
+
+	<address>Denver, CO<lb/></address>
+
+	<note type="other">Print this Page for Your Records Close Window<lb/> Abstract Number:<lb/> 2679<lb/> </note>
+
+	<note type="other">Session Title:<lb/> Chemistry 2<lb/></note>
+
+	<docTitle>
+	<titlePart>Presentation Title:<lb/> Mechanism of action and antitumor activity of PM01183<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Presentation Start/End Time:<lb/></note>
+
+	<date>Monday, Apr 20, 2009,</date>
+
+	<note type="other">1:00 PM -5:00 PM<lb/> Location:<lb/> Hall B-F, Poster Section 28<lb/>Poster Section:<lb/> 28, 28<lb/>Poster Board<lb/> Number:<lb/> 26<lb/> Author Block:<lb/></note>
+
+	<byline>
+	<docAuthor>Pablo M. Aviles, Carlos Galmarini Sr., Carmen Cuevas, Maria José Guillen, Roberta<lb/> Frapolli, S. Uboldi, M. Romano, M. Tavecchio, E. Erba, E. Bello, Maurizio D&apos;Incalci.<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Pharmamar SA, Sociedad Unipersonal,</affiliation>
+	</byline>
+
+	<address>Madrid, Spain,</address>
+
+	<byline>
+	<affiliation>Mario Negri Institute,</affiliation>
+	</byline>
+
+	<address>Milan, Italy<lb/></address>
+
+	<div type="abstract">PM01183 is a new alkaloid that binds to the minor groove of DNA and causes cell cycle perturbations mainly<lb/> consisting in a delayed progression of S phase and cycle arrest in G 2 M. Concentration between 0.2 and 10 nM are<lb/> the IC 50 values in most cancer cell lines investigated. The importance of the different mechanism of DNA repair for<lb/> PM001183 was investigated by comparing the drug cytotoxicity in CHO derived isogenic cell lines with normal DNA<lb/> repair function or with impaired Nucleotide Excision Repair (NER), Homologous Recombination (HR) or Non<lb/> Homologous End Joining (NHEJ) and in human XPA+/+ and XPA-/-cell lines. PM 01183 was three-four time less<lb/> potent in NER deficient cells whereas it was one hundred time more potent in HR deficient cells. These results<lb/> indicate a pattern of activity of PM01183 different from that of conventional alkylating agents. Finally, PM01183 was<lb/> also evaluated for in vivo activity, by using the M5076 sarcoma model that spontaneously metastasizes in the liver of<lb/> C57Bl/6 female tumor bearing mice. PM01183 was intravenously administered at a dose of 0.2 mg/kg/day (0.6<lb/> mg/m2/day) for 3 consecutive weeks. Results showed marginal activity as evaluated by tumor growth inhibition (T/C,<lb/> 73.4 % on Day 39). However, PM01183 statistically significantly reduced the number of liver metastasis compared to<lb/> placebo-treated animals (Median&lt;5 and 124 for PM01183 and placebo groups, respectively). Further studies are on<lb/> going in human ovarian cancer and human sarcoma xenografts.</div>
+
+		</front>
+	</text>
+</tei>

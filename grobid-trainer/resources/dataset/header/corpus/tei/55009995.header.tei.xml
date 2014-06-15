@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009995"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Server Clusters : Architecture Overview<lb/> For Windows Server 2003<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<affiliation>Microsoft Corporation<lb/></affiliation>
+	</byline>
+
+	<date>Published: March 2003<lb/></date>
+
+	<div type="abstract">Abstract<lb/> Server clusters are one of two Microsoft Windows clustering technologies available for the Microsoft Windows<lb/> Server family of products. Windows Server 2003 clusters provide failover support for back-end applications and<lb/> services that require high availability and data integrity. These back-end applications include enterprise<lb/> applications such as database, file server, enterprise resource planning (ERP), and messaging systems. This white<lb/> paper focuses on the architecture and features of the cluster service and describes its terminology, concepts,<lb/> design goals, key components, and planned future directions.</div>
+
+		</front>
+	</text>
+</tei>

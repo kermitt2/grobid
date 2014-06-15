@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010993"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Display Settings:<lb/> GenBank<lb/></note>
+
+	<docTitle>
+	<titlePart>Brevibacterium linens BL2 2662183_Cont246, whole genome shotgun sequence<lb/></titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

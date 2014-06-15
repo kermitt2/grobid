@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010283"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>The Volume Slicing Display (VSD)<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">Summary<lb/> We introduce a method and a prototype system for interactive exploration of volumetric data using a tangible screen, called the<lb/> Volume Slicing Display. The system tracks the shape and the position of a passive screen (a piece of plexiglas or paper) using a<lb/> custom monocular high-speed vision system (Vision Chip) or using ARToolkit markers in a more recent setup conceived to be built<lb/> from off-the-shelf hardware; then one or more projectors on the room project the corresponding slice of a 3D virtual object on that<lb/> surface in real time. This experimental interface will enable multiple users to feel as if 3D virtual objects co-exist in real space, as<lb/> well as to explore them interactively using cheap passive projection surfaces (plexiglas or even paper).<lb/> Some other interesting modes of interaction include:</div>
+
+		</front>
+	</text>
+</tei>

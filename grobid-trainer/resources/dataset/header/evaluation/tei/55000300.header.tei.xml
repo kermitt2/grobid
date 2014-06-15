@@ -1,0 +1,59 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000300"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<date>2009-09-24<lb/></date>
+
+	<idno>IEEE 802.16m-09/0034r2</idno>
+	
+	<note type = "other"><lb/> 1<lb/> Project IEEE 802.16 Broadband Wireless Access Working Group &lt;http://ieee802.org/16&gt;</note>
+
+<docTitle>
+	<titlePart><lb/> Title IEEE 802.16m System Description Document (SDD)<lb/> </titlePart>
+</docTitle>
+
+<date type = "submission">Date Submitted 2009-09-24 <lb/></date>
+
+Source(s)<lb/> 
+
+	<byline>
+		<docAuthor>Roshni Srinivasan<lb/></docAuthor>
+	</byline>
+	
+	<byline>
+		<affiliation>Intel Corporation<lb/></affiliation>
+	</byline>
+	
+	<note type="other">SDD Editor<lb/></note> 
+	
+	<byline>
+		<docAuthor>Shkumbin Hamiti<lb/></docAuthor>
+	</byline>
+		
+	<byline>
+		<affiliation>Nokia<lb/></affiliation>
+	</byline>
+	
+	<note type="other">Former SDD Editor<lb/></note>
+
+	<phone>Voice: +1-408-765-0506<lb/></phone>
+
+	<email>E-mail: roshni.m.srinivasan@intel.com<lb/></email>
+
+	<phone>Voice: +358504837349<lb/></phone>
+
+	<email>E-mail: shkumbin.hamiti@nokia.com<lb/></email>
+
+	<note type="other">Re:<lb/> System Description Document for the P802.16m Advanced Air Interface<lb/></note>
+
+	<div type="abstract">Abstract This document is the approved baseline IEEE 802.16m System Description Document. As<lb/> directed by TGm, this document is a revision to IEEE 802.16m-08/0034r1 according to the<lb/> comment resolution conducted by TGm in Session #63.5.</div>
+
+<div type="introduction"><lb/> Purpose System description for the IEEE P802.16m draft.<lb/> Patent Policy<lb/> The contributor is familiar with the IEEE-SA Patent Policy and Procedures:<lb/> &lt;http://standards.ieee.org/guides/bylaws/sect6-7.html#6&gt;<lb/> and &lt;http://standards.ieee.org/guides/opman/sect6.html#6.3&gt;.<lb/> Further information is located at &lt;http://standards.ieee.org/board/pat/pat-material.html&gt; and<lb/> &lt;http://standards.ieee.org/board/pat&gt;.<lb/> 2 3<lb/> 4 5<lb/> 6 7<lb/> 8 9</div>
+
+		</front>
+	</text>
+</tei>

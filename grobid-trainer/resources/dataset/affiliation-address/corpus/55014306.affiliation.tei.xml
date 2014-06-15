@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">Departments of</orgName> 
+							<marker>1</marker>	
+							<orgName type="department">Pediatrics</orgName> and
+							<lb/>
+						</affiliation>
+						<affiliation> 
+							<marker>2</marker>
+							<orgName type="department">Clinical Chemistry</orgName>,
+							<orgName type="institution">Emma Children&apos;s Hospital</orgName>,
+							<orgName type="department">Academic Medical Center</orgName>,
+							<orgName type="institution">University of Amsterdam</orgName>,
+							<lb/>
+							<address>
+								<settlement>Amsterdam</settlement>;
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>3</marker>
+							<orgName type="institution">Tulane University School of Medicine</orgName>,
+							<address>
+								<settlement>New Orleans</settlement>;
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>4</marker>
+							<orgName type="department">Medical Research Center Human Genetics Unit</orgName>,
+							<orgName type="institution">Western General<lb/> Hospital</orgName>,
+							<address>
+								<settlement>Edinburgh</settlement>; and
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>5</marker>
+							<orgName type="institution">Kennedy Krieger Institute</orgName>,
+							<address>
+								<settlement>Baltimore</settlement>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

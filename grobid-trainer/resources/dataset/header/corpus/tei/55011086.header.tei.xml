@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011086"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">The PGL Handbook<lb/></note>
+
+	<docTitle>
+	<titlePart>The YMF Image Format<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">Because PGL operates in a distributed memory environment and needs to communicate image streams<lb/> across the network in something approaching real time, existing image formats are not well-suited to the<lb/> application. Hence PGL has its own image format, called Y Movie Format, or just YMF.<lb/> The &quot;Y&quot; derives from the fact that YMF allows scanlines to be tagged with their scanline number (y<lb/> address), which means they can be stored in arbitrary order within the image file. This property allows<lb/> more flexibility in the parallel rendering and display algorithms employed by PGL, resulting in faster<lb/> display rates and reduced memory requirements.<lb/> The &quot;Movie&quot; part of the name implies a sequence of images, and YMF uses frame-to-frame differencing<lb/> and run-length encoding to achieve fast, lossless image compression and decompression.<lb/> Several conversion utilities are provided to transform YMF images into other common formats. These<lb/> utilities also allow individual frames, or sequences of frames, to be extracted from YMF files.<lb/> YMF combines and adapts concepts from several other image/animation formats, including X Window<lb/> Dump (XWD), AutoDesk Animator Flic (FLI), and NASA Langley Raster Metafile (RM). YMF supports<lb/> either of two color encodings. In X11 terminology these are (1) single-channel 8-bit colormapped<lb/> PseudoColor, or (2) three-channel 24-bit (8 bits/channel) TrueColor.<lb/> YMF uses an RGB color model and run-length encodes each color channel separately. Normally, the first<lb/> frame is encoded in its entirety, and each successive frame encodes only those pixels which have changed<lb/> from the previous frame. While this frame-differencing usually leads to improved compression ratios, it is<lb/> not required, and YMF files which encode the entire contents of every frame are perfectly legal. Thus<lb/> there are memory/compression/performance trade-offs which can be made depending on the requirements<lb/> of a given application. The current version of PGL always uses frame-differencing when generating YMF<lb/> output streams.</div>
+
+		</front>
+	</text>
+</tei>

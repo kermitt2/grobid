@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013814"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Error detection and correction<lb/> </note>
+
+	<note type="page">1<lb/></note>
+
+	<docTitle>
+	<titlePart>Error detection and correction<lb/></titlePart>
+	</docTitle>
+
+	<div type="introduction">In information theory and coding theory with applications in computer science and telecommunication, error<lb/> detection and correction or error control are techniques that enable reliable delivery of digital data over unreliable<lb/> communication channels. Many communication channels are subject to channel noise, and thus errors may be<lb/> introduced during transmission from the source to a receiver. Error detection techniques allow detecting such errors,<lb/> while error correction enables reconstruction of the original data.<lb/> The general definitions of the terms are as follows:<lb/> @BULLET Error detection is the detection of errors caused by noise or other impairments during transmission from the<lb/> transmitter to the receiver.<lb/> [1]<lb/> @BULLET Error correction is the detection of errors and reconstruction of the original, error-free data.<lb/> Error correction may generally be realized in two different ways:<lb/> @BULLET Automatic repeat request (ARQ) (sometimes also referred to as backward error correction): This is an error<lb/> control technique whereby an error detection scheme is combined with requests for retransmission of erroneous<lb/> data. Every block of data received is checked using the error detection code used, and if the check fails,<lb/> retransmission of the data is requested – this may be done repeatedly, until the data can be verified.<lb/> @BULLET Forward error correction (FEC): The sender encodes the data using an error-correcting code (ECC) prior to<lb/> transmission. The additional information (redundancy) added by the code is used by the receiver to recover the<lb/> original data. In general, the reconstructed data is what is deemed the &quot;most likely&quot; original data.<lb/> ARQ and FEC may be combined, such that minor errors are corrected without retransmission, and major errors are<lb/> corrected via a request for retransmission: this is called hybrid automatic repeat-request (HARQ).<lb/></div>
+
+		</front>
+	</text>
+</tei>

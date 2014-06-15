@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014574"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Volume 339 Number 23 · </reference>
+
+	<note type="page">1679<lb/></note>
+
+	<note type="other">Brief Report<lb/> BRIEF REPOR T<lb/></note>
+
+	<docTitle>
+	<titlePart>T HERAPY WITH A P URIFIED<lb/> P LASMINOGEN C ONCENTRATE<lb/> IN AN I NFANT WITH L IGNEOUS<lb/> C ONJUNCTIVITIS AND H OMOZYGOUS<lb/> P LASMINOGEN D EFICIENCY<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>D OROTHEE S CHOTT , M.D., C ARL -E RIK D EMPFLE , M.D.,<lb/> P ETER B ECK , M.D., A NDREAS L IERMANN , M.D.,<lb/> A NITA M OHR -P ENNERT , M.D., M ICHAEL G OLDNER , M.D.,<lb/> P ETER M EHLEM , M.D., H IROYUKI A ZUMA , M.D.,<lb/> V OLKER S CHUSTER , M.D., A NNE -M ARIE M INGERS , M.D.,<lb/> H ANS P ETER S CHWARZ , M.D.,<lb/> AND M ICHAEL D IETER K RAMER , M.D.<lb/></docAuthor>
+	</byline>
+
+		<note type="other">From the Department of Pediatrics (D.S.,P.B., M.G., P.M.), the First<lb/>Department of Medicine (C.-E.D.), and the Department of Ophthalmology<lb/> (A.L.), Klinikum Mannheim, University of Heidelberg,Mannheim, Germa-<lb/>ny; the Hyland-Immuno Division of Baxter Healthcare,Heidelberg, Ger-<lb/>many (A.M.-P.),and Vienna, Austria (H.P.S.); the First Department of In-<lb/>ternal Medicine, University of Tokushima,Tokushima, Japan (H.A.); the<lb/>Department of Pediatrics, University of Wuerzburg,Wuerzburg, Germany<lb/>(V.S., A.-M.M.); and the Department of Immunology, University of<lb/> Heidelberg,Heidelberg, Germany(M.D.K.). Address reprint requests to Dr.<lb/> Schott at the Klinikum Mannheim Kinderklinik, Theodor-Kutzer-Ufer 1-3,<lb/> D-68167 Mannheim, Germany.<lb/> Other authors wereHans Liesenhoff, M.D.,Department of Ophthal-<lb/>mology,and Karl Heinz Niessen, M.D.,Department of Pediatrics, Klinikum<lb/> Mannheim, University of Heidelberg,Mannheim, Germany.<lb/> </note>
+
+	<note type="copyright">©1998, Massachusetts Medical Society.<lb/></note>
+
+		</front>
+	</text>
+</tei>

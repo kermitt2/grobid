@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009713"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">1<lb/></note>
+
+	<idno>Document Number: DSP1014<lb/> 2<lb/></idno>
+
+	<date>Date: 2008-11-07<lb/></date>
+
+	<note type="other">3<lb/>Version: 1.0.0<lb/>4<lb/></note>
+
+	<docTitle>
+	<titlePart>Ethernet Port Profile<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">5<lb/> Document Type: Specification<lb/> 6<lb/> Document Status: Final Standard<lb/> 7<lb/> Document Language: E<lb/> 8<lb/> 9</note>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="laboratory">Laboratoire de Microbiologie</orgName>,
+							<orgName type="department">Facultt! des Sciences</orgName>,
+							<orgName type="institution">Universitt! Libre de Bruxelles and 21nstitut de Recherches du CERIA</orgName>,
+							<lb/>
+							<address>
+								<addrLine>I avenue E. Gryson</addrLine>,
+								<postCode>B-1070</postCode>
+								<settlement>Bruxelles</settlement>,
+								<country>Belgium</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

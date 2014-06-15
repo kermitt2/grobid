@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014463"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Configuring the communication on FlexRay<lb/> -the case of the static segment *<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Mathieu Grenier<lb/> 1 , Lionel Havet<lb/> 2 , Nicolas Navet<lb/> 2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1: LORIA -Nancy Université,</affiliation>
+	</byline>
+
+	<address>BP 239, 54506 Vandoeuvre, France<lb/></address>
+
+	<byline>
+	<affiliation>2: INRIA -RealTime-at-Work, </affiliation>
+	</byline>
+	
+	<address>615 Rue du Jardin Botanique, 54506 Vandoeuvre-lès-Nancy, France<lb/> </address>
+
+	<byline>
+	<docAuthor>Contact author: Nicolas Navet </docAuthor>
+	</byline>
+	
+	<email>(Nicolas.Navet@realtimeatwork.com)<lb/></email>
+
+	<div type="abstract">Abstract: This paper deals with the configuration of the static segment of a FlexRay network, in the<lb/> case where the tasks producing the signals are not synchronized with the FlexRay communication<lb/> cycle, as it can be the case, for instance, if legacy software is to be re-used. First, we provide<lb/> solutions to verify the freshness constraints of the signals exchanged in the static segment, under<lb/> the form of both simple non-schedulability tests and an exact analysis. Then we propose a heuristic<lb/> to construct the communication schedule, which proved to be efficient in our experiments. Finally,<lb/> we highlight some future work that should help us further optimize the configuration of FlexRay<lb/> networks, be it in regard to hardware resource usage or dependability objectives.<lb/></div>
+
+	<keyword>Keywords: FlexRay, message scheduling, static segment, freshness constraint.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

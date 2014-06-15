@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013961"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Slip-rolling resistance<lb/> of novel Zr(C,N) thin fi lm coatings<lb/> under high Hertzian contact pressures<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Dipl.-Ing. Charles-Alix Manier<lb/></docAuthor>
+	</byline>
+
+	<note type="other">BAM-Dissertationsreihe @BULLET Band 60<lb/> </note>
+
+	<address>Berlin </address>
+
+	<date>2010</date>
+
+		</front>
+	</text>
+</tei>

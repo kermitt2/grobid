@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">German Research Center for Artificial<lb/> Intelligence (DFKI)</orgName>
+							<lb/>
+							<address>
+								<settlement>Saarbrücken</settlement>,
+								<country>Germany</country>
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="department">German Research Center for Artificial<lb/> Intelligence (DFKI)</orgName>
+							<lb/>
+							<address>
+								<settlement>Saarbrücken</settlement>,
+								<country>Germany</country> and
+							<lb/>
+							</address>
+							<orgName type="laboratory">EIT ICT Labs Intelligent Transportation Systems</orgName>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

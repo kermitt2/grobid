@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Grégory</forename>
+								<surname>HAMM</surname>
+							<lb/>
+								<marker>1</marker>,
+							</persName>
+							<persName>
+								<forename>David</forename>
+								<surname>BONNEL</surname>
+							<lb/>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>Raphael</forename>
+								<surname>LEGOUFFE</surname>
+							<lb/>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>Fabien</forename>
+								<surname>PAMELARD</surname>
+							<lb/>
+								<marker>1</marker> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Jean -Marie</forename>
+								<surname>DELBOS</surname>
+							<lb/>
+								<marker>2</marker>,
+							</persName>
+							<persName>
+								<forename>François</forename>
+								<surname>BOUZOM</surname>
+							<lb/>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>Isabelle</forename>
+								<surname>FOURNIER</surname>
+							<lb/>
+								<marker>1 , 3</marker>,
+							</persName>
+							<persName>
+								<forename>Michel</forename>
+							<lb/>
+								<surname>SALZET</surname>
+							<lb/>
+								<marker>1 ,3</marker>,
+							</persName>
+							<persName>
+								<forename>Jonathan</forename>
+								<surname>STAUBER</surname>
+								<marker>1</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

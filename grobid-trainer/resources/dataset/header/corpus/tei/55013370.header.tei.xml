@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013370"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>The Journal of Immunology, 2010, 184, 83.6<lb/></reference>
+
+	<note type="copyright">Copyright © 2010 by The American Association of Immunologists, Inc.<lb/></note>
+
+	<note>83.6<lb/></note>
+
+	<docTitle>
+	<titlePart>Induction of antigen specific T regulatory cells to<lb/> suppress inflammatory responses by tolerogenic<lb/> vaccination<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Bin Wang,<lb/> 1 and Jin Jin<lb/> 1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 China Agricultural University,</affiliation>
+	</byline>
+
+	<address>Beijing, China<lb/></address>
+
+	<div type="abstract">Inflammatory disorders, such as asthma, could be detrimental. Dust mites may cause<lb/> 50-80% of asthma cases. No effective treatments, particularly those targeted to antigen-<lb/>specific inhibition, are still lacking. In our previous study demonstrated that co-immunization<lb/> of DNA and protein vaccines together as tolerogenic vaccination into animal could inhibit<lb/> inflammatory responses in a antigen-specific matter. Using dust mite induced asthma as<lb/> model, we assess the immunotelarogenic effect of co-immunization. Mice immunized with a<lb/> Derp1 tolerogenic vaccine were examined their ability to prevent this experimental asthma by<lb/> assessment of infiltrations of eosinophils and lymphocytes into lungs. The immunization with<lb/> the tolerogenic antigens not only induced significant decrease of inflammatory responses in<lb/> the lungs, but also to inhibit Th2 cytokines and production of IgE. The induced tolerogenic<lb/> responses are associated tightly with the generation of CD4+CD25-Foxp3+ iTregs. We<lb/> observe that these iTregs exhibit phenotypic markers including IL10+, CTLA4low, GITRlow,<lb/> PD-1-and ICOSlow, which differ from those documented natural CD4+CD25+ Tregs and<lb/> iTreg. Blockade of TGF-β1 could demolish the induction of this iTregs and suppressive<lb/> responses. This tolerogenic vaccination induces the iTreg via TGF-β1 and present a novel<lb/> therapeutic strategy to treat or prevent inflammatory disorder related diseases.<lb/> </div>
+
+	<note>Induction of antigen specific T regulatory cells to suppress inflammatory...<lb/></note>
+
+	<ptr type="web">http://www.jimmunol.org/cgi/content/meeting_abstract/184/1_Meeting...<lb/></ptr>
+
+	<note type="page">1 of 1<lb/></note>
+
+	<date>29-11-2011</date>
+
+	<note type="other">09:49</note>
+
+		</front>
+	</text>
+</tei>

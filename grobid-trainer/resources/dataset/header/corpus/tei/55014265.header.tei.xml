@@ -1,0 +1,63 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014265"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Session and Media Signaling for IPTV via IMS<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Christian Riede<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Fraunhofer Institute FOKUS<lb/></affiliation>
+	</byline>
+
+	<address>Kaiserin-Augusta-Allee 31<lb/> 10589 Berlin, Germany<lb/></address>
+
+	<email>riede@fokus.fraunhofer.de<lb/></email>
+
+	<byline>
+	<docAuthor>Adel Al-Hezmi<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Fraunhofer Institute FOKUS<lb/></affiliation>
+	</byline>
+
+	<address>Kaiserin-Augusta-Allee 31<lb/> 10589 Berlin, Germany<lb/></address>
+
+	<email>al-<lb/>hezmi@fokus.fraunhofer.de<lb/></email>
+
+	<byline>
+	<docAuthor>Thomas Magedanz<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Fraunhofer Institute FOKUS<lb/></affiliation>
+	</byline>
+
+	<address>Kaiserin-Augusta-Allee 31<lb/> 10589 Berlin, Germany<lb/></address>
+
+	<email>magedanz@fokus.fraunhofer.de<lb/></email>
+
+	<div type="abstract">ABSTRACT<lb/> As the IMS provides session establishment, QoS parameter<lb/> negotiation, authentication and accounting it is an overlay<lb/> architecture well qualified for session signaling concerning<lb/> IPTV scenarios. The management of the signaling can be in-<lb/>tegrated as an application into an IPTV Application Server.<lb/> The IPTV AS is further responsible for all necessary me-<lb/>dia signaling towards a proper IPTV media server. Such a<lb/> media server is similar to the ordinary media server known<lb/> from the voice centric IMS but additionally provides uni-<lb/>cast, multicast and broadcast delivery of TV content which<lb/> is placed by content providers. The media signaling requires<lb/> a dedicated session description and can be provided by SIP<lb/> or RTSP. The signaling between user and media server is<lb/> orchestrated by a service-oriented-archietctue with a session<lb/> manager acting as middleware. This middleware also pro-<lb/>vides interfaces for web services triggering IPTV session es-<lb/>tablishment via Parlay X gateway. This paper proposes a<lb/> general IMS-based framework for delivering Live TV services<lb/> over several access networks and presents the corresponding<lb/> signaling flows for content enquiring and content switching<lb/> as well as related delays. It furter presents an approach for<lb/> using SIP and RTSP in cooperation for realizing VOD sce-<lb/>narios.<lb/></div>
+
+	<keyword>Categories and Subject Descriptors<lb/> C.2 [Computer-Communication Networks]: Network<lb/> Protocols—Applications; C.2 [Computer-Communication<lb/> Networks]: Network Architecture and Design—Network<lb/> communications<lb/> General Terms<lb/> Management<lb/> Keywords<lb/> IMS, IPTV, SIP, RTSP, session signaling, media signaling<lb/></keyword>
+
+	<note type="other">Permission to make digital or hard copies of all or part of this work for<lb/> personal or classroom use is granted without fee provided that copies are<lb/> not made or distributed for profit or commercial advantage and that copies<lb/> bear this notice and the full citation on the first page. To copy otherwise, to<lb/> republish, to post on servers or to redistribute to lists, requires prior specific<lb/> permission and/or a fee.<lb/></note>
+
+	<reference>Mobilware&apos;08 February 12-15, 2008, Innsbruck, Austria<lb/></reference>
+
+	<note type="copyright">Copyright 2008 ACM </note>
+
+	<note>978-1-59593-984-5/08/02 ...$5.00.<lb/></note>
+
+		</front>
+	</text>
+</tei>

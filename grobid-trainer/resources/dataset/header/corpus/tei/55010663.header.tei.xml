@@ -1,0 +1,66 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010663"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>How to collect verifiable length data on tuna from photographs:<lb/> an approach for sample vessels<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Shui-Kai Chang, Ta-Te Lin, Ghung-Hui Lin, Hsiang-Yun Chang, and Ching-Lu Hsieh<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Chang, S-K., Lin, T-T., Lin, G-H., Chang, H-Y., and Hsieh, C-L. 2009. How to collect verifiable length data on tuna from photographs: an approach<lb/> for sample vessels. – </div>
+
+	<reference>ICES Journal of Marine Science, 66: 907 – 915.<lb/> </reference>
+
+	<div type="abstract">Length frequencies are essential data for fish stock assessments, particularly for longer-lived species. They are usually provided by com-<lb/>mercial vessels, or by port sampling, observers, or sample-vessel programmes, but each of these has limitations. Collection by sample<lb/> vessels might be the most balanced way if the data quality is verifiable. We introduce a photograph-based length-measurement<lb/> approach for sample vessels to photograph fish images with a calibration board, using a regular digital camera to obtain length<lb/> estimates that can be verified after the images are transformed to reduce errors of perspective distortions. We analyse this approach<lb/> under ideal conditions, develop a set of objective criteria for choosing acceptable photographs from observers, and compare estimated<lb/> lengths for bigeye tuna (Thunnus obesus) based on this approach with lengths measured by observers. The criteria can serve as guide-<lb/>lines for photographing: if images are captured following these guidelines, the approach shows the potential for obtaining cheaply a<lb/> large quantity of length estimates that deviate around 3% (up and down) on average from the actual measurements taken by<lb/> observers.<lb/></div>
+
+	<keyword>Keywords: fish length, photograph-based length measurement, sample vessel.<lb/></keyword>
+
+	<note type="submission">Received 10 October 2008; accepted 18 March 2009; advance access publication 23 April 2009.<lb/></note>
+
+	<byline>
+	<docAuthor>S-K. Chang and G-H. Lin:</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>College of Marine Sciences, National Sun Yat-Sen University,</affiliation>
+	</byline>
+
+	<address>70 Lien-hai Road, Kaohsiung 804, Taiwan.</address>
+
+	<byline>
+	<docAuthor>T-T. Lin and<lb/> H-Y. Chang:</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Bio-Industrial Mechatronics Engineering, National Taiwan University, 1 (Section 4)</affiliation>
+	</byline>
+
+	<address>Roosevelt Road, Taipei 106,<lb/>Taiwan. </address>
+
+	<byline>
+	<docAuthor>C-L. Hsieh: </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Biomechatronics Engineering, National Pingtung University of Science and Technology,
+	</affiliation>
+	</byline>
+
+	<address>1 Shuefu Road,<lb/> Pingtung 912, Taiwan.</address>
+
+	<docAuthor>Correspondence to S-K. Chang:</docAuthor>
+
+	<phone>tel: þ886 7 5252000 ext. 5303; fax: þ886 7 5250050; </phone>
+
+	<email>e-mail: skchang@faculty.nsysu.edu.tw.<lb/></email>
+
+		</front>
+	</text>
+</tei>

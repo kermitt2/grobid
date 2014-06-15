@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="institution">U.S. Department of Agriculture</orgName>,
+							<orgName type="institution">ARS</orgName>,
+							<orgName type="department">Eastern Re-<lb/>gional Research Center</orgName>,
+							<address>
+								<addrLine>600 East Mermaid Lane</addrLine>,
+								<settlement>Wyndmoor</settlement>,
+								<region>PA</region>
+								<postCode>19038</postCode>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

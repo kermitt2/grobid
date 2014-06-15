@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011610"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">NETWORK INSTRUMENTS WHITE PAPER<lb/></note>
+
+	<docTitle>
+	<titlePart>Application and Network Performance<lb/> Monitoring in a Virtualized Environment<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">As organizations implement virtualized environments, knowing how to monitor and<lb/> maintain them becomes yet another challenge for today&apos;s network professional.<lb/> Monitoring network and application traffic in an environment containing one-to-<lb/>many relationships between physical hardware devices (virtual hosts) and virtual<lb/> application servers (virtual machines) presents a number of concerns.<lb/> This white paper presents various visibility options and their ramifications,<lb/> and outlines new technology that allows visibility into both external<lb/> and internal traffic within a virtual environment.<lb/></div>
+
+	<ptr>www.networkinstruments.com<lb/> </ptr>
+
+	<note type="other">NETWORK INSTRUMENTS WHITE PAPER<lb/> </note>
+
+	<note type="page">2<lb/></note>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009433"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">File:Unpnp-logo.jpg<lb/>The UPnP logo<lb/></note>
+
+	<docTitle>
+	<titlePart>Universal Plug and Play<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">From Wikipedia, the free encyclopedia<lb/>This is an old revision of this page, as edited by 82.136.67.100 (talk) at 19:56, 14 July 2007. It may<lb/> differ significantly from the current revision (//en.wikipedia.org/wiki/Universal_Plug_and_Play) .<lb/>
+	(diff) ← Previous revision | Latest revision (diff) | Newer revision → (diff)<lb/></note>
+
+	<div type="abstract">Universal Plug and Play (UPnP) is a set of computer network protocols promulgated by the UPnP Forum.<lb/> The goals of UPnP are to allow devices to connect seamlessly and to simplify the implementation of<lb/> networks in the home (data sharing, communications, and entertainment) and corporate environments. UPnP<lb/> achieves this by defining and publishing UPnP device control protocols built upon open, Internet-based<lb/> communication standards.<lb/> The term UPnP is derived from Plug-and-play, a technology for dynamically attaching devices to a computer<lb/> directly.<lb/></div>
+
+		</front>
+	</text>
+</tei>

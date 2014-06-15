@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Yutaka</forename>
+								<surname>Sadakane</surname>
+							<lb/>
+								<marker>a,1</marker> ,
+							</persName>
+							<persName>
+								<forename>Toshiaki</forename>
+								<surname>Yamazaki</surname>
+							<lb/>
+								<marker>a</marker> ,
+							</persName>
+							<persName>
+								<forename>Kazuya</forename>
+								<surname>Nakagomi</surname>
+							<lb/>
+								<marker>b</marker> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Toshifumi</forename>
+								<surname>Akizawa</surname>
+							<lb/>
+								<marker>c</marker> ,
+							</persName>
+							<persName>
+								<forename>Noriko</forename>
+								<surname>Fujii</surname>
+								<marker>d</marker>,
+							</persName>
+							<persName>
+								<forename>Takenori</forename>
+								<surname>Tanimura</surname>
+							<lb/>
+								<marker>a</marker> ,
+							</persName>
+							<persName>
+								<forename>Masaki</forename>
+								<surname>Kaneda</surname>
+							<lb/>
+								<marker>a</marker> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Yasumaru</forename>
+								<surname>Hatanaka</surname>
+								<marker>a</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

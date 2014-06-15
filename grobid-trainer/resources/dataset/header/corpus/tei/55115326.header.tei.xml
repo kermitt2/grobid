@@ -1,0 +1,48 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55115326"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note>SPE 163287<lb/></note>
+
+	<docTitle>
+	<titlePart>Application of Sustainable Foaming Agents to Control the Mobility of<lb/> Carbon Dioxide in Enhanced Oil Recovery<lb/>
+	</titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Roozbeh Rafati,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Universiti Technology Malaysia (UTM), </affiliation>
+	</byline>
+	
+	<byline>
+	<docAuthor>Hossein Hamidi, </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University Technology Malaysia (UTM)<lb/> </affiliation>
+	</byline>
+	
+	<byline>
+	<docAuthor>Ahmad Kamal Idris, </docAuthor>
+	</byline>
+	
+	<byline>
+	<affiliation>University Technology Malaysia (UTM)<lb/></affiliation>
+	</byline>
+
+	<note type="copyright">Copyright 2012, Society of Petroleum Engineers<lb/></note>
+
+	<note type="other">This paper was prepared for presentation at the SPE Kuwait International Petroleum Conference and Exhibition held in Kuwait City, Kuwait, 10–12 December 2012.<lb/> This paper was selected for presentation by an SPE program committee following review of information contained in an abstract submitted by the author(s). Contents of the paper have not been<lb/> reviewed by the Society of Petroleum Engineers and are subject to correction by the author(s). The material does not necessarily reflect any position of the Society of Petroleum Engineers, its<lb/> officers, or members. Electronic reproduction, distribution, or storage of any part of this paper without the written consent of the Society of Petroleum Engineers is prohibited. Permission to<lb/> reproduce in print is restricted to an abstract of not more than 300 words; illustrations may not be copied. The abstract must contain conspicuous acknowledgment of SPE copyright.<lb/></note>
+
+	<div type="abstract">Abstract<lb/> Carbon dioxide (CO 2 ) flooding is a conventional process in which the CO 2 is injected into the oil reservoir to increase the<lb/> quantity of extracting oil. This process also controls the amount of released CO 2 as a greenhouse gas in the atmosphere which<lb/> is known as CO 2 sequestration process. However, the mobility of the CO 2 inside the hydrocarbon reservoir is higher than the<lb/> crude oil and always viscous fingering and gravity override problems occur during a CO 2 injection. The most common<lb/> method to overcome these problems is to trap the gas bubbles in the liquid phase in form of aqueous foam prior to CO 2<lb/> injection. Although, the aqueous foams are not thermodynamically stable, the special care should be considered to ensure<lb/> about bulk foam preparation and stability. Selection of a proper foaming agent from a large number of available surfactants is<lb/> the main step in the bulk foam preparation. To meet this purpose, many chemical and crude oil based surfactants have been<lb/> reported but most of them are not sustainable and have disposal problems. The objective of this experimental study is to<lb/> employ Lingosulfonate and Alkyl Polyglucosides (APGs) as two sustainable foaming agents for the bulk foam stability<lb/> investigations and foam flooding performance in porous media. In the initial part, the bulk foam stability results showed that<lb/> APGs provided more stable foams in compare with Lingosulfonate in all surfactant concentrations. In the second part, the<lb/> results indicated that the bulk foam stability measurements provide a good indication of foam mobility in porous media. The<lb/> foaming agent&apos;s concentration which provided the maximum foam stability also gave the highest value of mobility reduction<lb/> in porous media.<lb/></div>
+
+		</front>
+	</text>
+</tei>

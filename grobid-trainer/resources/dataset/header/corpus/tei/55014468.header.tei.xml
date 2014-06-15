@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014468"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Operating and maintenance manual<lb/> SAF Titan support device<lb/> SAF Classic support device<lb/> </titlePart> </docTitle>
+
+	<note>XL-LG11662OM-en-DE<lb/> </note>
+
+	<note type="other">Translation of the original operating and<lb/> maintenance manual</note>
+
+		</front>
+	</text>
+</tei>

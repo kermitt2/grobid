@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014315"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Hydrogen bonds in liquid water are broken<lb/> only fleetingly<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>J. D. Eaves*<lb/> , J. J. Loparo*<lb/> , C. J. Fecko*<lb/> , S. T. Roberts*, A. Tokmakoff*<lb/> , and P. L. Geissler**<lb/>
+	</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>*Department of Chemistry and George R. Harrison Spectroscopy Laboratory, Massachusetts Institute of Technology,
+	</affiliation>
+	</byline>
+
+	<address>Cambridge, MA 02139;<lb/></address>
+
+	<byline>
+	<affiliation>and **Department of Chemistry, University of California, and Physical Biosciences and Material Sciences Divisions, Lawrence Berkeley<lb/> National Laboratory,</affiliation>
+	</byline>
+
+	<address>Berkeley, CA 94720<lb/></address>
+
+	<byline>
+	<docAuthor>Communicated by Richard J. Saykally,</docAuthor>
+	</byline> 
+
+	<byline>
+	<affiliation>University of California,</affiliation>
+	</byline>
+
+	<address>Berkeley, CA,</address>
+
+	<note type="submission">June 17, 2005 (received for review May 13, 2005)<lb/></note>
+
+	<div type="abstract">Although it is widely accepted that the local structure of liquid<lb/> water has tetrahedral arrangements of molecules ordered by<lb/> hydrogen bonds, the mechanism by which water molecules switch<lb/> hydrogen-bonded partners remains unclear. In this mechanism, the<lb/> role of nonhydrogen-bonded configurations (NHBs) between ad-<lb/>jacent molecules is of particular importance. A molecule may<lb/> switch hydrogen-bonding partners either (i) through thermally<lb/> activated breaking of a hydrogen bond that creates a dangling<lb/> hydrogen bond before finding a new partner or (ii) by infrequent<lb/> but rapid switching events in which the NHB is a transition state.<lb/> Here, we report a combination of femtosecond 2D IR spectroscopy<lb/> and molecular dynamics simulations to investigate the stability of<lb/> NHB species in an isotopically dilute mixture of HOD in D 2O.<lb/> Measured 2D IR spectra reveal that hydrogen-bonded configura-<lb/>tions and NHBs undergo qualitatively different relaxation dynam-<lb/>ics, with NHBs returning to hydrogen-bonded frequencies on the<lb/> time scale of water&apos;s fastest intermolecular motions. Simulations of<lb/> an atomistic model for the OH vibrational spectroscopy of water<lb/> yield qualitatively similar 2D IR spectra to those measured exper-<lb/>imentally. Analysis of NHBs in simulations by quenching demon-<lb/>strates that the vast majority of NHBs are in fact part of a<lb/> hydrogen-bonded well of attraction and that virtually all molecules<lb/> return to a hydrogen-bonding partner within 200 fs. The results<lb/> from experiment and simulation demonstrate that NHBs are in-<lb/>trinsically unstable and that dangling hydrogen bonds are an<lb/> insignificant species in liquid water.<lb/> </div>
+
+	<note type="other">femtosecond 2D IR spectroscopy ͉ molecular dynamics ͉ liquids<lb/> </note>
+
+	<div type="introduction">O<lb/> n average, molecules in liquid water are tetrahedrally<lb/> coordinated but appear to engage in 10% fewer hydrogen<lb/> bonds than in ice. Support for this estimate comes broadly, from<lb/> latent heats of melting and vaporization, from x-ray and neutron<lb/> scattering, and in very detailed form from molecular dynamics<lb/> (MD) simulations (1–3). The role of nonhydrogen-bonded con-<lb/>figurations (NHBs) in water&apos;s rapidly changing structure remains<lb/> uncertain, lying at the heart of differences between mixture and<lb/> continuum models of water (1, 3–8). Implicitly or explicitly, the<lb/> interpretation of many experiments and MD simulations con-<lb/>ceives of NHBs as broken or dangling hydrogen bonds, stable<lb/> species that interconvert with a hydrogen-bonded configuration<lb/> (HB) at a rate determined by the free energy barrier separating<lb/> them. But it is also possible that NHBs are intrinsically unstable<lb/> species that appear transiently during natural fluctuations about<lb/> a hydrogen bond or when molecules trade hydrogen-bonding<lb/> partners. These two scenarios not only provide qualitatively<lb/> different interpretations of water&apos;s structure and how it evolves,<lb/> but also imply different pictures for how water mediates chemical<lb/> and biological processes. We have distinguished between these<lb/> scenarios by using a combination of femtosecond 2D IR spec-<lb/>troscopy and MD simulations, finding that NHBs are inherently<lb/> unstable, reforming hydrogen bonds on the time scale of water&apos;s<lb/> fastest intermolecular motions.<lb/> The OH stretching vibration of an HOD molecule in D 2 O is<lb/> particularly sensitive to the hydrogen bonding environment of<lb/> the proton. The absorption spectrum of the OH stretch peaks at<lb/> a frequency several hundred wavenumbers lower than in the gas<lb/> phase, with a breadth (260 cm<lb/> Ϫ1 ) reflecting a diverse distribution<lb/> of microscopic environments. MD simulations confirm the ex-<lb/>pectation that the high-frequency (blue) side of the spectrum<lb/> represents HOD molecules that interact weakly with their avail-<lb/>able hydrogen-bonding partner, whereas those involved in strong<lb/> hydrogen bonds absorb at lower (red) frequencies (9–12). Fem-<lb/>tosecond spectroscopies that probe the time evolution of the OH<lb/> stretching frequency, ␻ OH, for selected groups of molecules<lb/> therefore provide a glimpse of changing HBs (12–19).<lb/> Fig. 1A quantifies the ability of ␻ OH to discriminate between<lb/> HB and NHB species. The plotted distributions were obtained<lb/> from MD simulations with a conventional geometric criterion<lb/> for detecting hydrogen bonds (12). They establish relative prob-<lb/>abilities of HBs and NHBs but do not indicate the time scale or<lb/> mechanism of interconversion. Indeed, many dynamical scenar-<lb/>ios are consistent with these static results. Fig. 1 B and C<lb/> illustrates 2D free energy surfaces representing such pictures (1).<lb/> In either case trajectories spanning the vertical coordinate<lb/> involve switching of hydrogen-bonding partners, but they differ<lb/> fundamentally through the presence or absence of a barrier<lb/> separating HBs from NHBs. In Fig. 1B, a free energy barrier<lb/> separates HB from a stable NHB state, and switching trajectories<lb/> may dwell in a region where the OH group lacks a hydrogen-<lb/>bond acceptor. In Fig. 1C NHB is instead an unstable species,<lb/> appearing fleetingly as the system traverses the transition-state<lb/> region. Conceptually, one could distinguish between these two<lb/> scenarios by observing how frequency distributions prepared in<lb/> different regions of these free energy surfaces evolve in time.<lb/> The presence of a barrier between NHB and HB implies a<lb/> separation of time scales for fast fluctuations within basins of<lb/> attraction and for crossing the barrier between them. If this<lb/> scenario were accurate, the persistence time of molecules pre-<lb/>pared in the NHB state should exceed the time scale of an<lb/> orientational or translational hydrogen-bonding fluctuation,<lb/> typically Ͻ200 fs (20, 21). By contrast, if NHB species exist only<lb/> transiently, a frequency distribution prepared on the blue side<lb/> would relax to line center on this time scale.<lb/> 2D IR spectroscopy probes the stability of NHB species by<lb/> measuring the time development of OH oscillators that initiate<lb/> from HB and NHB environments. Analogous to the COSY<lb/> experiment in NMR, 2D IR spectroscopy is a Fourier transform<lb/> technique that uses an excitation sequence of femtosecond IR<lb/> pulses with variable time delays. A 2D IR correlation spectrum,<lb/> displayed as a function of two frequency axes (␻ 1 and ␻ 3 ), is</div>
+
+		</front>
+	</text>
+</tei>

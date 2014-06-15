@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>*</marker>
+							<orgName type="laboratory">Laboratorie de Pharmacologie Molbculaire n1147</orgName>
+							 du 
+							<orgName type="institution">CNRS</orgName>,
+							<orgName type="institution">Institut Gustave-Roussy</orgName>,
+							<address>
+								<settlement>Villejuif</settlement>
+								<postCode>94800</postCode>,
+								<country>France</country>; and
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>t</marker>
+							<orgName type="department">Institute de Chimie des Substances Naturelles</orgName> du
+							<orgName type="institution">CNRS</orgName>,
+							<address>
+								<settlement>Gif-Sur-Yvette</settlement>
+								<postCode>91190</postCode>,
+								<country>France</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

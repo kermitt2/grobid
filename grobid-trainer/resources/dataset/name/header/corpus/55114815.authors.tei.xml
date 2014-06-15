@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Saeid</forename>
+								<surname>Asadi</surname>
+							</persName>
+							<persName>
+								<forename>Xiaofang</forename>
+								<surname>Zhou</surname>
+							</persName>
+							<persName>
+								<forename>Hamid</forename>
+								<middlename>R</middlename>.
+								<surname>Jamali</surname>
+							</persName>
+							<persName>
+								<forename>Hossein</forename>
+								<middlename>Vakili</middlename>
+								<surname>Mofrad</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

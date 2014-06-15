@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei type="standard">
+	<teiHeader>
+		<fileDesc xml:id="55114842"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>ECMA-359<lb/></idno>
+
+	<note type="other">1 st Edition /</note>
+
+	<date>December 2004<lb/></date>
+
+	<docTitle>
+	<titlePart>80 mm (1,46 Gbytes<lb/> per side) and 120 mm<lb/> (4,70 Gbytes per side)<lb/> DVD Recordable Disk<lb/> (DVD-R)</titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012527"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>The role of the c-Met pathway in lung cancer<lb/> and the potential for targeted therapy<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Martin Sattler, Rifat Hasina, Mamatha M. Reddy, Tara Gangadhar and Ravi Salgia<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Abstract: Hepatocyte growth factor receptor (HGFR), the product of the MET gene, plays an<lb/> important role in normal cellular function and oncogenesis. In cancer, HGFR has been impli-<lb/>cated in cellular proliferation, cell survival, invasion, cell motility, metastasis and angiogenesis.<lb/> Activation of HGFR can occur through binding to its ligand, hepatocyte growth factor (HGF),<lb/> overexpression/amplification, mutation, and/or decreased degradation. Amplification of HGFR<lb/> can occur de novo or in resistance to therapy. Mutations of HGFR have been described in the<lb/> tyrosine kinase domain, juxtamembrane domain, or semaphorin domain in a number of<lb/> tumors. These mutations appear to have gain of function, and also reflect differential sensitivity<lb/> to therapeutic inhibition. There have been various drugs developed to target HGFR, including<lb/> antibodies to HGFR/HGF, small-molecule inhibitors against the tyrosine kinase domain of<lb/> HGFR and downstream targets. Different HGFR inhibitors are currently in clinical trials in lung<lb/> cancer and a number of solid tumors. Several phase I trials have already been completed, and<lb/> two specific trials have been reported combining HGFR with epidermal growth factor receptor<lb/> (EGFR) inhibition in non-small cell lung cancer. In particular, trials involving MetMAb and<lb/> ARQ197 (tivantinib) have gained interest. Ultimately, as individualized therapies become a<lb/> reality for cancers, HGFR will be an important molecular target.<lb/></div>
+
+	<keyword>Keywords: hepatocyte growth factor, kinase inhibitors, MET, targeted therapy<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

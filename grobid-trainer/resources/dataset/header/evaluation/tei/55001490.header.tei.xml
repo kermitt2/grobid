@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001490"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart></titlePart>
+	</docTitle>
+
+	<note type="other">Disclaimer:<lb/> This English translation is produced by machine translation and may contain errors. The JPO, the INPIT, and those who drafted<lb/> this document in the original language are not responsible for the result of the translation.<lb/> Notes:<lb/> 1. Untranslatable words are replaced with asterisks (****).<lb/> 2. Texts in the figures are not translated and shown as it is.<lb/> Translated: 17:52:13 JST 06/28/2011<lb/> Dictionary: Last updated 06/10/2011 / Priority:<lb/></note>
+	
+	<docTitle>
+	<titlePart> CLAIM + DETAILED DESCRIPTION<lb/> </titlePart>
+	</docTitle>
+
+	<div type="introduction">[Claim(s)]<lb/> [Claim 1]<lb/> An electrode plate for pitches from which capacity changes according to<lb/> distance between human bodies,<lb/> Electrohone provided with a musical sound signal generating circuit<lb/> which generates a musical sound signal of an audio frequency belt<lb/> according to capacity of said electrode plate for pitches.<lb/> [Claim 2]<lb/> It has further an electrode plate for volume from which capacity changes<lb/> according to distance between human bodies,<lb/> Said musical sound signal generating circuit,<lb/> The electrohone according to claim 1 which is a musical sound signal of<lb/> an audio frequency belt according to capacity of said electrode plate for<lb/> pitches, and is characterized by generating a musical sound signal which<lb/> has the amplitude according to capacity of said electrode plate for<lb/> volume.<lb/> [Claim 3]<lb/> An electrode plate for the 2nd pitch from which capacity changes<lb/> according to distance between human bodies,<lb/> An electrode plate for the 2nd volume from which capacity changes<lb/> according to distance between human bodies,<lb/> It is a musical sound signal of an audio frequency belt according to<lb/> capacity of said electrode plate for the 2nd pitch, and has further the<lb/> 2nd musical sound signal generating circuit which generates a musical<lb/> sound signal which has the amplitude according to capacity of said<lb/> electrode plate for the 2nd volume,<lb/> Said electrode plate for pitches and said electrode plate for volume<lb/> adjoin, and are arranged,<lb/> The electrohone according to claim 2 which said electrode plate for the<lb/> 2nd pitch and said electrode plate for the 2nd volume adjoining, and<lb/></div>
+
+	<note type="page">Page 1 of 15<lb/></note>
+	
+	<idno> JP,2007-155946,A</idno> 
+	
+	<note type="other">[CLAIM + DETAILED DESCRIPTION]<lb/></note>
+
+	<date>28-06-2011<lb/></date>
+
+	<ptr type="web">http://aipn1.ipdl.inpit.go.jp/cgi-bin/tran_web_cgi_ejje?u=http%3A%2F%2Faipn1%2...</ptr>
+
+	<div type="introduction"><lb/> arranging.<lb/> [Claim 4]<lb/> Said musical sound signal generating circuit,<lb/> The 1st oscillator oscillated on frequency according to capacity of said<lb/> electrode plate for pitches,<lb/> A 1st frequency-voltage converter which changes oscillating frequency<lb/> of said 1st oscillator into voltage according to this oscillating frequency,<lb/> A voltage controlled oscillator oscillated by audio frequency according to<lb/> voltage outputted from said 1st frequency-voltage converter,<lb/> The 2nd oscillator oscillated on frequency according to capacity of said<lb/> electrode plate for volume,<lb/> A 2nd frequency-voltage converter which changes oscillating frequency<lb/> of said 2nd oscillator into voltage according to this oscillating frequency,<lb/> The electrohone according to claim 2 provided with a volume control<lb/> circuit which generates a musical sound signal by amplifying an output of<lb/> said voltage controlled oscillator according to voltage outputted from<lb/> said 2nd frequency-voltage converter.<lb/> [Claim 5]<lb/> Said musical sound signal generating circuit,<lb/> An oscillator oscillated with constant frequency,<lb/> The 1st partial pressure circuit that carries out the partial pressure of<lb/> the signal outputted from said oscillator according to capacity of said<lb/> electrode plate for pitches,<lb/> The 1st comparison circuit that measures an output of said 1st partial<lb/> pressure circuit, and an output of said oscillator, and outputs difference<lb/> voltage,<lb/> A voltage controlled oscillator oscillated by audio frequency according to<lb/> difference voltage outputted from said 1st comparison circuit,<lb/> The 2nd partial pressure circuit that carries out the partial pressure of<lb/> the signal outputted from said oscillator according to capacity of said<lb/> electrode plate for volume,<lb/> The 2nd comparison circuit that measures an output of said 2nd partial<lb/> pressure circuit, and an output of said oscillator, and outputs difference<lb/> voltage,<lb/> The electrohone according to claim 2 provided with a volume control<lb/> circuit which generates a musical sound signal by amplifying an output of<lb/> said voltage controlled oscillator according to difference voltage<lb/> outputted from said 2nd comparison circuit.<lb/> [Claim 6]</div>
+
+		</front>
+	</text>
+</tei>

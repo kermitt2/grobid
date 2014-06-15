@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000916"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<ptr type="web">www.bewan.com<lb/></ptr>
+
+	<note type="other">@BULLET High Quality Design with<lb/> internal antennas and 3G<lb/> insert<lb/> @BULLET Zero Touch<lb/> @BULLET Fixed and Mobile<lb/> Convergence<lb/> @BULLET 3G uplink support<lb/> @BULLET IPTV and VOD<lb/> @BULLET TR-069/TR-104 management<lb/> @BULLET Multi-SSID with hotspot,<lb/> bandwith allocation and<lb/> prioritization<lb/> @BULLET Home Automation and<lb/> Surveillance<lb/> @BULLET File sharing (on local USB<lb/> mass storage and built-in<lb/> web page)<lb/> @BULLET SIP, MGCP and H323<lb/> simultaneous management<lb/> @BULLET LAN port can be used as a<lb/> WAN port<lb/></note>
+
+	<docTitle>
+	<titlePart>Customizable Quadruple Play<lb/> DSL Home Gateway<lb/>Wi-Fi 802.11 n/g/b<lb/> Bewan iBox A5200</titlePart>
+	</docTitle>
+
+	<div type="abstract"><lb/> Bewan iBox A5200 is a future proof home gateway that<lb/> off ers an unparalleled range of value added services.<lb/> </div>
+
+<div type="introduction">«All-in-one» home gateway<lb/> Designed to fulfi l the needs of Internet<lb/> Service Providers for tailored and<lb/> modular residential gateways, the<lb/> Bewan iBox A5200 is a DSL multi-play<lb/> solution that provides users with<lb/> Broadband Internet, Wireless 802.11N<lb/> access point, IP Telephony, IPTV and<lb/> Fixed Mobile Convergence (FMC).<lb/> The Bewan iBox A5200 is the market&apos;s<lb/> most innovative multiple play gateway<lb/> as it features Bewan HomeCenter, a<lb/> groundbreaking web application that<lb/> provides a full range of multimedia<lb/> services that can be hosted on the<lb/> ISP&apos;s servers or at the user&apos;s home,<lb/> simply by connecting a USB disk to<lb/> one of the iBox&apos;s USB 2.0 ports. The<lb/> wide array of Digital Home services<lb/> includes File sharing (Photo, video,<lb/> music), Home Automation as well as<lb/> Home Surveillance (with IP cameras<lb/> and sensors), etc.<lb/> Fully customizable fi rmware<lb/> Bewan&apos;s R&amp;D department fully masters<lb/> DSL, Wi-Fi, VoIP, IPTV, 3G technologies<lb/> to ensure a full control of the fi rmware<lb/> development. Bewan meets the major<lb/> telecom standards and answer the<lb/> specifi c needs of operators for fully<lb/> customized solutions.<lb/> With the R&amp;D department based in<lb/> France, Bewan guarantees a direct<lb/> relationship with ISPs&apos; technical teams<lb/> with neither cultural gaps or time zone<lb/> issue.<lb/></div>
+
+		</front>
+	</text>
+</tei>

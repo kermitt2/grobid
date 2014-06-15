@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011807"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>A Characterization of the Software Deployment Process<lb/> and a Survey of Related Technologies<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Antonio Carzaniga<lb/></docAuthor>
+	</byline>
+
+	<date>September18, 1997<lb/></date>
+
+	<byline>
+	<affiliation>Dipartimento di Elettronica e Informazione<lb/> Politecnico di Milano<lb/></affiliation>
+	</byline>
+
+	 <address>Piazza Leonardo da Vinci, 32<lb/> 20133 Milano, Italy<lb/></address>
+
+	<div type="abstract">Abstract<lb/> Software applications are no longer stand-alone systems. They are increasingly the result of the<lb/> integration of heterogeneous collections of components, possibly distributed over a computer network.<lb/> Diierent components can be provided by diierent producers and they can be part of diierent systems<lb/> at the same time. Moreover, components change and evolve v ery rapidly, making it diicult to manage<lb/> the whole system in a consistent w ay.<lb/> In this scenario, a crucial step of the software life cycle is deployment|that is, the activities related<lb/> to the release, installation, activation, deactivation, update, and removal of components, as well as whole<lb/> systems.<lb/> This paper presents a characterization of the deployment process together with a framework for<lb/> evaluating technologies that are intended to address the software deployment problem. The framework<lb/> highlights four primary factors that characterize the maturity of the technologies: process coverage;<lb/> process changeability; interprocess coordination; and site, product, and deployment policy abstraction.<lb/> A v ariety of existing technologies are surveyed and assessed against the proposed framework. Finally, w e<lb/> discuss promising research directions in software deployment.<lb/></div>
+
+		</front>
+	</text>
+</tei>

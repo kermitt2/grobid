@@ -1,0 +1,58 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012341"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Simultaneous estimation of soil hydraulic and solute transport<lb/> parameters from transient in®ltration experiments<lb/>
+	</titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>M. Inoue<lb/> a<lb/> , J. Sim# unek<lb/> b, * , S. Shiozawa<lb/> c<lb/> , J.W. Hopmans<lb/> d<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a Arid Land Research Center, Tottori University,</affiliation>
+	</byline>
+
+	<address>Hamasaka 1390, Tottori 680, Japan<lb/></address>
+
+	<byline>
+	<affiliation>b US Salinity Laboratory,</affiliation>
+	</byline>
+
+	<address>USDA-ARS, 450 W. Big Springs Dr., Riverside, CA 92507, USA<lb/></address>
+
+	<byline>
+	<affiliation>c Institute of Agricultural and Forest Engineering, University of Tsukuba,</affiliation>
+	</byline>
+
+	<address>Tsukuba, Japan<lb/></address>
+
+	<byline>
+	<affiliation>d Hydrology Program, Department LAWR,</affiliation>
+	</byline>
+
+	<address>123 Veihmeyer Hall,</address>
+
+	<byline>
+	<affiliation>University of California,</affiliation>
+	</byline>
+
+	<address>Davis, CA 95616, USA<lb/></address>
+
+	<note type="submission">Received 6 October 1999; received in revised form 10 February 2000; accepted 11 February 2000<lb/></note>
+
+	<div type="abstract">Abstract<lb/> Estimation of soil hydraulic and solute transport parameters is important to provide input parameters for numerical models<lb/> simulating transient water ¯ow and solute transport in the vadose zone. The Levenberg±Marquardt optimization algorithm in<lb/> combination with the HYDRUS-1D numerical code was used to inversely estimate unsaturated soil-hydraulic and solute transport<lb/> parameters from transient matric pressure head, apparent electrical conductivity, and euent ¯ux measurements. A 30 cm long soil<lb/> column with an internal diameter of 5 cm was used for in®ltration experiments in a coarse-textured soil. In®ltration experiments<lb/> were carried out with both increasing and decreasing solute concentrations following a sudden increase in the in®ltration rate.<lb/> Matric pressure heads and solute concentrations were measured using automated mini-tensiometers and four-electrode sensors,<lb/> respectively. The simultaneous estimation results were compared with independently measured soil water retention, unsaturated<lb/> hydraulic conductivity, and solute dispersion data obtained from steady-state water ¯ow experiments. The optimized values cor-<lb/>responded well with those measured independently within the range of experimental data. The information contained in the ap-<lb/>parent electrical conductivity (which integrates information about both water ¯ow and solute transport) proved to be very useful for<lb/> the simultaneous estimation of soil hydraulic and solute transport parameters.</div>
+
+	<note type="copyright">&#169; 2000 Elsevier Science Ltd. All rights reserved.<lb/></note>
+
+	<keyword>Keywords: Four-electrode sensor; Bulk soil electrical conductivity; Hydraulic conductivity; Soil water retention curve; Dispersivity<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

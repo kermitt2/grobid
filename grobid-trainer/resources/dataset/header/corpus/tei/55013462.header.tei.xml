@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013462"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<affiliation>HB-System<lb/></affiliation>
+	</byline>
+		
+	<note type="other">Wir bewegen etwas.<lb/> Kransysteme<lb/></note>
+
+	<docTitle>
+	<titlePart>Maßgeschneiderte Kranlösungen<lb/> aus dem Baukasten<lb/> für Tragfähigkeiten bis 2000 kg<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<affiliation>HB-System </affiliation>
+	</byline>
+		
+	<date>20.09.2011 </date>
+
+	<note type="other">14:57 Uhr Seite 1</note>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012421"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Electrophosphorescence from a Polymer Guest±Host System<lb/> with an Iridium Complex as Guest: Förster Energy Transfer<lb/> and Charge Trapping**<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>By Xiong Gong, Jacek C. Ostrowski, Daniel Moses,* Guillermo C. Bazan,* and Alan J. Heeger<lb/></docAuthor>
+	</byline>
+
+		</front>
+	</text>
+</tei>

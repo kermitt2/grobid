@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">College of Marine Sciences</orgName>,
+							<orgName type="institution">National Sun Yat-Sen University</orgName>,
+							<address>
+								<addrLine>70 Lien-hai Road</addrLine>,
+								<settlement>Kaohsiung</settlement>
+								<postCode>804</postCode>,
+								<country>Taiwan</country>.
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>		
+							<orgName type="department">Department of Bio-Industrial Mechatronics Engineering</orgName>,
+							<orgName type="institution">National Taiwan University</orgName>,
+							<address>
+								<addrLine>1 (Section 4) Roosevelt Road</addrLine>,
+								<settlement>Taipei</settlement>
+								<postCode>106</postCode>,
+							<lb/>
+								<country>Taiwan</country>.
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="department">Department of Biomechatronics Engineering</orgName>,
+							<orgName type="institution">National Pingtung University of Science and Technology</orgName>,
+							<address>
+								<addrLine>1 Shuefu Road</addrLine>,
+							<lb/>
+								<addrLine>Pingtung 912</addrLine>,
+								<country>Taiwan</country>.
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

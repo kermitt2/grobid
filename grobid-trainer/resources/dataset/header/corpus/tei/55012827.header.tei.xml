@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012827"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">P1: IZO<lb/> Journal of Fluorescence [JOFL]<lb/></note>
+
+	<note>PP1254-jofl-489232<lb/></note>
+
+	<date>June 4, 2004<lb/></date>
+
+	<note type="other">11:56<lb/> Style file version</note>
+
+	<date>29 Aug, 2003<lb/></date>
+
+	<reference>Journal of Fluorescence, Vol. 14, No. 4, July 2004 </reference>
+
+	<note type="copyright">(©2004)<lb/></note>
+
+	<docTitle>
+	<titlePart>Label Free Colorimetric Biosensing Using Nanoparticles<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Nidhi Nath<lb/> 1,2 and Ashutosh Chilkoti<lb/> 1,3<lb/></docAuthor>
+	</byline>
+
+	<note type="submission">Received December 15, 2003; revised February 3, 2004; accepted February 3, 2004<lb/></note>
+
+	<div type="abstract">In this review article, we discuss a class of biosensors that exploit the change in the colorimetric<lb/> properties of noble metal nanoparticles in response to biomolecular binding at their surface. Several<lb/> sensor fabrication techniques as well as sensor configurations are discussed with an emphasis on<lb/> their strengths and limitations. We conclude by presenting the future prospects and challenges for the<lb/> successful transition of this technology from the laboratory to a commercial product.<lb/></div>
+
+	<keyword>KEY WORDS: Gold and silver nanoparticles; surface plasmon resonance; self assembled monolayer; protein-<lb/>ligand binding; biosensor.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

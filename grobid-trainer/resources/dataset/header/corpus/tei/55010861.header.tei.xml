@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010861"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">S1<lb/></note>
+
+	<docTitle>
+	<titlePart>Expedient Vapor Probing of Organic Amines Using Fluorescent Nanofibers<lb/> Fabricated from an n-Type Organic Semiconductor
+	<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Yanke Che, Xiaomei Yang, Stephen Loser, Ling Zang*<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Chemistry and Biochemistry, Southern Illinois University,<lb/></affiliation>
+	</byline>
+
+	<address>Carbondale, Illinois 62901<lb/></address>
+
+	<note type="other">Supporting Information<lb/></note>
+
+		</front>
+	</text>
+</tei>

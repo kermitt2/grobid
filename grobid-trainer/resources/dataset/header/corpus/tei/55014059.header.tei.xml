@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014059"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Charge Heterogeneity Analysis of Monoclonal Antibodies: A Comparison of Orthogonal Methods<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Craig Bodycombe, Kelly Neelon, Jeffery Muddiman, Arthur Ley, and Mark Stochl<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Dyax Corp.,</affiliation>
+	</byline>
+
+	<address>300 Technology Square, Cambridge, MA 02139<lb/></address>
+
+	<docTitle>
+	<titlePart>Charge Heterogeneity Analysis of Monoclonal Antibodies: A Comparison of Orthogonal Methods<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Craig Bodycombe, Kelly Neelon, Jeffery Muddiman, Arthur Ley, and Mark Stochl<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Dyax Corp.,</affiliation>
+	</byline>
+
+	<address>300 Technology Square, Cambridge, MA 02139<lb/></address>
+
+	<div type="abstract">Abstract<lb/> Comparison of Methods<lb/> Fig. 3. iCE280 Schematic. Representation of iCE280. Samples are injected into capillary, voltage is<lb/> applied to focus sample, and the progression of sample focusing is monitored by illuminating the<lb/> capillary from underneath and taking an image of the capillary with a CCD camera. The focused<lb/> proteins absorb the 280 nm light and the intensity is measured by the CCD camera.<lb/> Capillary electrophoresis isoelectric focusing has become an increasingly popular choice for<lb/> the analysis of product quality and charge heterogeneity of biological therapeutics. This<lb/> technique offers several advantages over the more commonly used gel and column<lb/> chromatography based methods, the most attractive being ease of development, direct on-line<lb/> quantification using UV detection, automation of high-speed separation, and enhanced<lb/> sensitivity and resolution with decreased analysis time.</div>
+
+		</front>
+	</text>
+</tei>

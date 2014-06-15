@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009627"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">1<lb/></note>
+
+	<docTitle>
+	<titlePart>Designing Digital Tables for Highly Integrated Collaboration<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>David Pinelle, Carl Gutwin, Sriram Subramanian<lb/></docAuthor>
+	</byline>
+
+	<email>david.pinelle@usask.ca, gutwin@cs.usask.ca, sriram@cs.usask.ca<lb/></email>
+
+	<byline>
+	<affiliation>Department of Computer Science<lb/> University of Saskatchewan<lb/></affiliation>
+	</byline>
+
+	<address>176 Thorvaldson Building<lb/> 110 Science Place<lb/> Saskatoon, Saskatchewan, S7N 5C9 CANADA<lb/></address>
+
+	<phone>Tel: +1 306 966 2327 Fax: +1 306 966-4884<lb/> </phone>
+
+	<div type="abstract">Abstract Digital tabletop systems are currently receiving considerable attention, but present systems do<lb/> not allow the fluid and natural work that is evident when people work around a traditional table.<lb/> This fluidity is particularly obvious in highly-integrated collaboration, where people work<lb/> together in a closely coordinated fashion. Highly-integrated collaboration is common on regular<lb/> tables, but is not well supported in digital tabletop systems. As a first step in determining how<lb/> this support can be added to digital tables, we carried out an observational study of groups doing<lb/> highly integrated tasks on regular tables. We saw that people perform several kinds of actions<lb/> around tables that have not been considered before in digital table design, and we also found that<lb/> digital tables impose several physical constraints on highly integrated collaboration. These<lb/> findings suggest possible design opportunities that can help digital tables improve support for<lb/> highly integrated collaboration, and can help make digital tabletop systems a compelling<lb/> alternative to the traditional table.<lb/></div>
+
+	<keyword>Keywords: digital tables, tabletop displays, human-computer interaction, computer-supported<lb/> cooperative work, highly integrated collaboration<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

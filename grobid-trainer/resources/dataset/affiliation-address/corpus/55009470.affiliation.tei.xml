@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">Pharma Research-New Technologies</orgName>,
+							<orgName type="institution">F.Hoffmann-La Roche Ltd</orgName>,
+							<lb/>
+							<address>
+								<postCode>4002</postCode>
+								<settlement>Basel</settlement>,
+								<country>Switzerland</country>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>&apos;</marker>
+							<orgName type="laboratory">European Molecular Biology Laboratory</orgName>,
+							<address>
+								<addrLine>Postfach 10.2209</addrLine>,
+								<postCode>6900</postCode>
+								<settlement>Heidelberg</settlement>,
+								<country>Germany</country>,
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="institution">2Howard Hughes Medical<lb/> Institute</orgName>,
+							<orgName type="laboratory">Laboratory of Molecular Medicine</orgName>,
+							<orgName type="institution">Children&apos;s<lb/> Hospital/Enders 670</orgName>,
+							<address>
+								<addrLine>320 Longwood Avenue</addrLine>,
+								<settlement>Boston</settlement>,
+								<region>MA</region>
+								<postCode>02115</postCode>,
+							<lb/>
+								<country>USA</country>,
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="department">3Institute for Transuranium Element</orgName>,
+							<address>
+								<settlement>Postfach</settlement>
+								<postCode>2340</postCode>,
+								<addrLine>7500 Karlsruhe 1</addrLine>,
+								<settlement>Germany</settlement>,
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="laboratory">4Laboratory of Molecular Biophysics</orgName>,
+							<orgName type="institution">University of Oxford</orgName>,
+							<address>
+								<addrLine>Rex Richards Building</addrLine>,
+								<addrLine>South Parks Road</addrLine>,
+								<settlement>Oxford</settlement>
+								<postCode>OXI 3QU</postCode>,
+								<country>UK</country>,
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="department">5Biochemistry Department</orgName>,
+							<orgName type="institution">Wayne State<lb/> University</orgName>,
+							<address>
+								<settlement>Detroit</settlement>,
+								<region>MI</region>
+								<postCode>48201</postCode>,
+								<country>USA</country>,
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="institution">6lnstitute of Molecular Biology<lb/> and Biotechnology</orgName>,
+							<address>
+								<postBox>PO Box 1527</postBox>,
+								<settlement>Heraklion</settlement>
+								<postCode>71110</postCode>,
+								<settlement>Crete</settlement>,
+								<country>Greece</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>	
+							and
+							<orgName type="institution">7European Molecular Biology Laboratory (EMBL)</orgName>, c/o
+							<orgName type="institution">Deutsches<lb/> Elektronen Synchrotron (DESY)</orgName>,
+							<address>
+								<addrLine>2000 Hamburg 52</addrLine>,
+								<country>Germany</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

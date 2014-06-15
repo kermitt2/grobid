@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014812"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>OWNER&apos;S MANUAL<lb/> FOR DUOSEAL® VACUUM PUMPS<lb/> </titlePart>
+	</docTitle>
+
+	<note type="other">MODELS:<lb/>1400, 1405, 1402,<lb/> 1376, 1397, 1374,<lb/> 1399, 1380, 1392<lb/></note>
+
+	<note type="other">Contents:<lb/></note>
+
+	<note type="other">Installation Operation<lb/> Maintenance Specification<lb/> Dimensional Drawings<lb/> Parts List<lb/> Accessories MSDS Sheet for DUOSEAL® OIL<lb/></note>
+	
+		</front>
+	</text>
+</tei>

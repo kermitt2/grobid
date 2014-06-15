@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>J</forename>.
+								<middlename>P</middlename>.
+								<surname>Hadden</surname>,
+							<lb/>
+								<marker>*</marker>
+							</persName>
+							<persName>
+								<forename>J</forename> .
+								<middlename>P</middlename> .
+								<surname>Harrison</surname> ,
+							</persName>
+							<persName>
+								<forename>A</forename> .
+								<middlename>C</middlename> .
+								<surname>Stanley -Clarke</surname>,
+							</persName>
+							<persName>
+								<forename>L</forename> .
+								<surname>Marseglia</surname> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Y -L</forename>.
+								<middlename>D</middlename>.
+								<surname>Ho</surname>,
+							</persName>
+							<persName>
+								<forename>B</forename>.
+								<middlename>R</middlename>.
+								<surname>Patton</surname>,
+							</persName>
+							<persName>
+								<forename>J</forename>.
+								<middlename>L</middlename>.
+								<surname>O&apos; Brien</surname>,and
+							</persName>
+							<persName>
+								<forename>J</forename> .
+								<middlename>G</middlename>
+								<surname>Rarity</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

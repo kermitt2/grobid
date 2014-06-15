@@ -1,0 +1,59 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55114101"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Variability of Microcirculation Detected by Blood<lb/> Pulsation Imaging<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Alexei A. Kamshilin<lb/> 1<lb/> *, Victor Teplov<lb/> 1 , Ervin Nippolainen<lb/> 1<lb/> , Serguei Miridonov<lb/> 2<lb/> , Rashid Giniatullin<lb/> 3<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Department of Applied Physics, University of Eastern Finland,</affiliation>
+	</byline>
+
+	<address>Kuopio, Finland,</address>
+
+	<byline>
+	<affiliation>2 Optics Department, Centro de Investigació n Científica y de Educació n Superior de<lb/> Ensenada, Ensenada, Mexico, 3 Department of Neurobiology, A. I. Virtanen Institute, University of Eastern Finland,</affiliation>
+	</byline>
+
+	<address>Kuopio, Finland<lb/></address>
+
+	<div type="abstract">Abstract<lb/> The non-invasive assessment of blood flow is invaluable for the diagnostic and monitoring treatment of numerous vascular<lb/> and neurological diseases. We developed a non-invasive and non-contact method of blood pulsation imaging capable of<lb/> visualizing and monitoring of the two-dimensional distribution of two key parameters of peripheral blood flow: the blood<lb/> pulsation amplitude and blood pulsation phase. The method is based on the photoplethysmographic imaging in the<lb/> reflection mode. In contrast with previous imaging systems we use new algorithm for data processing which allows two<lb/> dimensional mapping of blood pulsations in large object&apos;s areas after every cardiac cycle. In our study we carried out the<lb/> occlusion test of the arm and found (i) the extensive variability of 2D-distribution of blood pulsation amplitude from one<lb/> cardiac cycle to another, and (ii) existence of the adjacent spots to which the blood is asynchronously supplied. These<lb/> observations show that the method can be used for studying of the multicomponent regulation of peripheral blood<lb/> circulation. The proposed technique is technologically simple and cost-effective, which makes it applicable for monitoring<lb/> the peripheral microcirculation in clinical settings for example, in diagnostics or testing the efficiency of new medicines.<lb/> </div>
+
+	<note type="other">Citation: Kamshilin AA, Teplov V, Nippolainen E, Miridonov S, Giniatullin R (2013) Variability of Microcirculation Detected by Blood Pulsation Imaging. PLoS<lb/> ONE 8(2): e57117.</note>
+
+	<idno type="DOI">doi:10.1371/journal.pone.0057117<lb/></idno>
+
+	<note type="other">Editor:</note>
+
+	<byline>
+	<note type="other">Wolfgang Rudolf Bauer,</note>
+	</byline>
+
+	<byline>
+	<affiliation>University Hospital of Würzburg, </affiliation>
+	</byline>
+
+	<address>Germany<lb/></address>
+
+	<note type="submission">Received December 12, 2012; Accepted January 17, 2013;</note>
+
+	<date>Published February 19, 2013<lb/></date>
+
+	<note type="copyright">Copyright: &#169; 2013 Kamshilin et al. This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits<lb/> unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.<lb/></note>
+
+	<grant>Funding: Partial financial support provided by the Academy of Finland, http://www.aka.fi/en-GB/A/ (project no. 128582), is gratefully acknowledged. The funders<lb/> had no role in study design, data collection and analysis, decision to publish, or preparation of the manuscript. No additional external funding was received for<lb/> this study.<lb/> Competing Interests: The authors have declared that no competing interests exist.<lb/> *</grant>
+
+	<email>E-mail: alexei.kamshilin@uef.fi<lb/></email>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008847"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Enumerative encoding/decoding of variable-to-fixed-length<lb/> codes for memoryless sources<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Yuriy A. Reznik<lb/> </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Corporate R &amp; D<lb/> QUALCOMM Incorporated<lb/></affiliation>
+	</byline>
+
+	<address>5775 Morehouse Drive<lb/> San Diego, CA 92121<lb/></address>
+
+	<email>E-mail: yreznik@ieee.org<lb/></email>
+
+	<byline>
+	<docAuthor>Anatoly V. Anisimov<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Cybernetics<lb/> Kiev National T. Schevchenko University<lb/></affiliation>
+	</byline>
+
+	<address>2 Acad. Glushkov Avenue, Bldg. 3<lb/> 03680 Kiev, Ukraine<lb/></address>
+
+	<email>Email: ava@unicyb.kiev.ua<lb/></email>
+
+	<div type="abstract">Abstract<lb/> We offer novel algorithms for efficient encoding/decoding of variable-to-fixed length<lb/> codes, requiring at most quadratic amount of space: O(L<lb/> 2 ), where L is the depth of<lb/> a coding tree. This is a major improvement compared to exponential O(2<lb/> L ) usage<lb/> of space by conventional techniques using complete representations of coding trees in<lb/> computer&apos;s memory.<lb/> These savings are achieved by utilizing algebraic properties of VF coding trees con-<lb/>structed by using Tunstall or Khodak algorithms, and employing combinatorial enumer-<lb/>ation techniques for encoding/decoding of codewords. The encoding/decoding complex-<lb/>ity of our algorithms is linear with the number of symbols they process.<lb/> As a side product, we also derive an exact formulae for the average redundancy of<lb/> such codes under memoryless sources, and show its usefulness for analysis and design<lb/> of codes with small number of codewords.<lb/></div>
+
+		</front>
+	</text>
+</tei>

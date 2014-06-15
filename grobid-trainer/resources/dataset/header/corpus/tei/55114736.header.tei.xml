@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55114736"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Distance Metric Learning for Large Margin<lb/> Nearest Neighbor Classification<lb/></titlePart>
+	</docTitle> 
+
+	<byline>
+	<docAuthor>Kilian Q. Weinberger, John Blitzer and Lawrence K. Saul<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Computer and Information Science, University of Pennsylvania<lb/></affiliation>
+	</byline>
+
+	<address>Levine Hall, 3330 Walnut Street, Philadelphia, PA 19104<lb/></address>
+
+	<email>{kilianw, blitzer, lsaul}@cis.upenn.edu<lb/></email>
+
+	<div type="abstract">Abstract<lb/> We show how to learn a Mahanalobis distance metric for k-nearest neigh-<lb/>bor (kNN) classification by semidefinite programming. The metric is<lb/> trained with the goal that the k-nearest neighbors always belong to the<lb/> same class while examples from different classes are separated by a large<lb/> margin. On seven data sets of varying size and difficulty, we find that<lb/> metrics trained in this way lead to significant improvements in kNN<lb/> classification—for example, achieving a test error rate of 1.3% on the<lb/> MNIST handwritten digits. As in support vector machines (SVMs), the<lb/> learning problem reduces to a convex optimization based on the hinge<lb/> loss. Unlike learning in SVMs, however, our framework requires no<lb/> modification or extension for problems in multiway (as opposed to bi-<lb/>nary) classification.<lb/></div>
+
+		</front>
+	</text>
+</tei>

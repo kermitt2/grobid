@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55002014"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Data Sheet<lb/></note>
+
+	<note type="page">1 </note>
+
+	<idno>Data Sheet,Rev. 3.7<lb/>91-SR-002-42-8L</idno>
+
+	<docTitle>
+	<titlePart>DiskOnChip<lb/> <lb/> 2000 DIP<lb/> From 16MByte to 1GByte<lb/> </titlePart>
+	</docTitle>
+
+	<div type="introduction">Highlights<lb/> DiskOnChip 2000 DIP is a member of M-Systems&apos;<lb/> family of DiskOnChip flash disk products. It is<lb/> available in capacities of 16MByte to 1GByte.<lb/> Note: The following abbreviation is used in this<lb/> document: MB for MByte, GB for GByte.<lb/> DiskOnChip 2000 DIP features:<lb/> Single-chip plug-n-play flash disk<lb/> Low power, single 3.3V or 5V power supply<lb/> 16MByte (MB) to 1GByte (GB) capacity<lb/> Simple, easy-to-integrate interface<lb/> 8KB sized memory window<lb/> Boot OS capability<lb/> Proprietary TrueFFS<lb/> ® technology for full hard disk<lb/> emulation, high data reliability and maximum flash<lb/> lifetime<lb/> Software tools for programming, duplicating,<lb/> testing and debugging<lb/> Reliability<lb/> On-the-fly Reed-Solomon Error Detection<lb/> Code/Error Correction Code (EDC/ECC)<lb/> Guaranteed data integrity, even after power failure<lb/> Transparent bad block management<lb/> Dynamic and static wear-leveling<lb/> TrueFFS Software<lb/> Full hard-disk read/write emulation for transparent<lb/> file system management<lb/> Identical software for all DiskOnChip capacities<lb/> Patented methods to extend flash lifetime,<lb/> including:<lb/> o Dynamic virtual mapping<lb/> o Dynamic and static wear-leveling<lb/> Support for all major OSs, including: VxWorks,<lb/> Windows CE/.NET, Linux, Windows NT/XP,<lb/> QNX and others.<lb/> Operates with TrueFFS Software Development Kit<lb/> (SDK) in OS-less environment.<lb/> Hardware Compatibility<lb/> 32-pin DIP, JEDEC standard,<lb/> EEPROM-compatible pinout<lb/> Pinout compatible with DiskOnChip Millennium<lb/> DIP 8MB<lb/> Compatible with all major CPUs, including:<lb/> x86 StrongARM<lb/> Xscale Geode<lb/> ® SCxxxx<lb/> PowerPC™ MPC8xx<lb/> MediaGX 68K<lb/> MIPS SuperH™ SH-x<lb/> 8-bit, 16-bit and 32-bit bus architecture support<lb/> Applications<lb/> Embedded systems<lb/> Internet access devices<lb/> Internet set-top boxes/ITV, Web browsers<lb/> WBT,
+
+	thin clients, network computers<lb/> Routers, networking<lb/> Web phones, car PCs, DVD, HPC<lb/> Point of sale, industrial PCs<lb/> Telecom, medical<lb/> Capacities<lb/> Low profile: 16
+
+	, 24, 32, 48, 64, 96, 128, 192, 256,<lb/> 384MB<lb/>
+
+	High profile: 576, 768, 1024MB<lb/> Commercial (0°C to 70°C) and Extended<lb/> Temperature Range (-40°C to +85°C) for all<lb/> capacities<lb/> DiskOnChip 2000 DIP Data Sheet<lb/> 2 </div>
+
+	<idno>Data Sheet, Rev. 3.7<lb/> 91-SR-002-42-8L<lb/></idno>
+
+	<div type="introduction">Table of Contents<lb/>
+
+	1.<lb/> Introduction .......................................................................................................... 4<lb/> 2.<lb/> Product Overview................................................................................................. 5</div>
+	
+
+		</front>
+	</text>
+</tei>

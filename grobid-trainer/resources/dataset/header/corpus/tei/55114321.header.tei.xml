@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei type="wiki">
+	<teiHeader>
+		<fileDesc xml:id="55114321"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Various widgets.<lb/></note>
+
+	<docTitle>
+	<titlePart>GUI widget<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">From Wikipedia, the free encyclopedia<lb/> This is an old revision of this page, as edited by VolkovBot (talk | contribs) at 09:23, 17 July<lb/> 2009. It may differ significantly from the current revision (//en.wikipedia.org<lb/> /wiki/GUI_widget).<lb/> (diff) ← Previous revision | Latest revision (diff) | Newer revision → (diff)<lb/></note>
+
+	<div type="abstract">In computer programming, a widget (or control) is<lb/> an element of a graphical user interface (GUI) that<lb/> displays an information arrangement changeable by<lb/> the user, such as a window or a text box. The defining<lb/> characteristic of a widget is to provide a single<lb/> interaction point for the direct manipulation of a<lb/> given kind of data. Widgets are basic visual building<lb/> blocks which, combined in an application, hold all the<lb/> data processed by the application and the available<lb/> interactions on this data.<lb/> A family of common reusable widgets has evolved<lb/> for holding general information based on the PARC<lb/> research for the Xerox Alto User Interface. Different<lb/> implementations of these generic widgets are often<lb/> packaged together in widget toolkits, which<lb/> programmers use to build graphical user interfaces<lb/> (GUIs). M ost operating systems include a set of ready-to-tailor widgets that a programmer can<lb/> incorporate in an application, specifying how it is to behave. Each type of widgets generally is defined as<lb/> a class by object-oriented programming (OOP). Therefore, many widgets are derived from class<lb/> inheritance.<lb/> Widgets are sometimes qualified as virtual to distinguish them from their physical counterparts, e.g.<lb/> virtual buttons that can be clicked with a mouse cursor, vs. physical buttons that can be pressed with a<lb/> finger.<lb/> A related (but different) concept is the desktop widget, a small specialized GUI application that provides<lb/> some visual information and/or easy access to frequently used functions such as clocks, calendars, news<lb/> aggregators, calculators and desktop notes. These kinds of widgets are hosted by a widget engine.<lb/></div>
+
+		</front>
+	</text>
+</tei>

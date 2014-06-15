@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001993"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">1<lb/></note>
+
+	<reference>A P P L I C AT IO N N O T E<lb/></reference>
+	
+	<docTitle>
+	<titlePart>Development of a novel diffraction-<lb/>based immunoassay for characterizing<lb/> the primary and ternary structure of the<lb/> circulating form of cardiac troponin<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Y i x i n L i n 1 ;<lb/> Q i n F u 2 ;<lb/> Jennifer E. Van Eyk 2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Axela Inc., Toronto</affiliation>
+	</byline>
+
+	<address>, Ontario,<lb/> CANADA;<lb/></address>
+
+	<byline>
+	<affiliation>2 Johns Hopkins University,<lb/> Department of Medicine,<lb/></affiliation>
+	</byline>
+
+	<address>Baltimore, MD<lb/></address>
+
+	<div type="abstract">Abstract<lb/> The detection of cardiac muscle specifi c troponins in blood is the current gold standard<lb/> for the diagnosis of patients with acute myocardial infarction (AMI). In cardiac muscle,<lb/> the troponin (cTn) complex comprises 3 tightly interacting subunits cTnI, cTnT, and cTnC.<lb/> With AMI, cardiac troponin is released from the heart into the circulation where it can<lb/> be detected using a variety of immunoassays that independently quantify cTnI or cTnT.<lb/> cTnI is a complex analyte. Its circulating form has the potential of disease-induced, post-<lb/>translational modifi cations such as the specifi c and selective degradation of the N-and/or<lb/> C-terminus and the possibility of presenting different ternary structures. There is indirect<lb/> evidence suggesting that the dominant circulating form of cTnI is the cTnI-cTnC complex<lb/> and that other potential complexes with cTnT are rare or nonexistent. However, there<lb/> has been no study that has directly characterized the circulating ternary form of these<lb/> biomarkers, in part, due to a limitation in technology.<lb/> Here we describe the development of a novel immunoassay to characterize the physical<lb/> form of circulating cTnI using diffractive optics technology, or dot™. Core to this technol-<lb/>ogy is a diffraction grating formed from affi nity reagents such as antibodies. This grating<lb/> is comprised of a repetitive sequence of lines and generates a specifi c, refl ected diffrac-<lb/>tion pattern when interrogated with a laser. As molecules exhibit affi nity for the capture<lb/> molecules that make up the grating, the diffraction effi ciency is improved. In this investi-<lb/>gation, cTnI was captured using a biotinylated anti-cTnI antibody to the constant region<lb/> (a.a residues 137-148) and was immobilized on a pre-patterned avidin sensor and then<lb/> probed, i) with antibodies to either or both the N-and C-terminus to determine if cTnI<lb/> was degraded or, ii) sequentially with anti-cTnT and/or anti-cTnC antibodies to determine<lb/> whether cTnI existed as a monomer, dimer or trimer. The binding of the immobilized<lb/> antibody, protein analyte and other antibodies were observed in real time as an increase<lb/> in diffraction signal intensity. By continuously monitoring the intensity, we can character-<lb/>ize the differences in the circulating form of cTnI. Using this new method, we have now<lb/> directly measured the circulating cTnI-cTnT complex in patients diagnosed with AMI.<lb/></div>
+
+		</front>
+	</text>
+</tei>

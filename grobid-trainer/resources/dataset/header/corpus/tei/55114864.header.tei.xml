@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55114864"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+
+	<note type="other">Audio Engineering Society<lb/> Convention Paper<lb/> Presented at the 126th Convention<lb/> </note>
+	
+	<date>2009 May 7–10</date> 
+	
+	<note>Munich, Germany<lb/></note>
+
+	<note type="other">The papers at this Convention have been selected on the basis of a submitted abstract and extended precis that have been peer<lb/> reviewed by at least two qualified anonymous reviewers. This convention paper has been reproduced from the author&apos;s advance<lb/> manuscript, without editing, corrections, or consideration by the Review Board. The AES takes no responsibility for the contents.<lb/> Additional papers may be obtained by sending request and remittance to Audio Engineering Society, 60 East 42<lb/> nd Street, New<lb/> York, New York 10165-2520, USA; also see www.aes.org. All rights reserved. Reproduction of this paper, or any portion thereof,<lb/> is not permitted without direct permission from the Journal of the Audio Engineering Society.<lb/></note>
+
+	<docTitle>
+	<titlePart>Sound intensity based three-dimensional<lb/> panning<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Akio Ando and Kimio Hamasaki<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>NHK Science and Technical Research Laboratories,</affiliation>
+	</byline>
+
+	<address>1-10-11 Kinuta, Setagaya, Tokyo ,157-8510 JAPAN<lb/></address>
+
+	<email>{ando.a-io, hamasaki.k-ku}@nhk.or.jp<lb/></email>
+
+	<div type="abstract">ABSTRACT<lb/> Three-dimensional (3D) panning equipment is essential for the production of 3D audio content. We have already<lb/> proposed an algorithm to enable such panning. It generates the input signal to be fed into multi-channel<lb/> loudspeakers so as to realize the same physical properties of sound at the receiving point as those created by a single<lb/> loudspeaker model of the virtual source. A sound pressure vector is used as the physical property. This paper<lb/> proposes a new method that uses sound intensity instead of the sound pressure vector and shows that both<lb/> conventional &quot;vector base amplitude panning&quot; and our previous method come very close to achieving coincidence of<lb/> sound intensity. A new panning method using four loudspeakers is also proposed.</div>
+
+		</front>
+	</text>
+</tei>

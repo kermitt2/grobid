@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>NATHANIEL</forename>
+								<middlename>S</middlename>.
+								<surname>HWANG</surname>,
+								<roleName>B.S</roleName>.,
+							</persName>
+							<persName>
+								<forename>SHYNI</forename>
+								<surname>VARGHESE</surname>,
+								<roleName>Ph.D</roleName>.,
+							</persName>
+							<persName>
+								<forename>ZIJUN</forename>
+								<surname>ZHANG</surname>,
+								<roleName>M.D</roleName>.,<lb/> and
+							</persName>
+							<persName>
+								<forename>JENNIFER</forename>
+								<surname>ELISSEEFF</surname> ,
+								<roleName>Ph .D.</roleName>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

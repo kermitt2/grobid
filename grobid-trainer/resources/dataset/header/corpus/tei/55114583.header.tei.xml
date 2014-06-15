@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55114583"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">404<lb/></note>
+
+	<reference>Ind. Eng. Chem. Process Des. Dev. $902, 21. 404-409<lb/></reference>
+
+	<docTitle>
+	<titlePart>Carbon Deposition Studies Using Nickel and Cobalt Catatysts<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Michael P. Mannlng,&apos; James E. Garmlrlan, and Robert C. Reid<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of C%emical Engineerlng, Massachusetts InstifUte of Technolcgy,</affiliation>
+	</byline>
+
+	<address>Cambridge, MassaChuS8tts 02 139<lb/></address>
+
+	<div type="abstract">In the NASA-developed Bosch process, GO2 is reduced with hydrogen to form carbon and water. Cb and methane<lb/> are also formed. Carbon accumulates in the reactor arid water is removed in the recycle gas stream. Normally<lb/> an iron catalyst is used. In this study, cobalt and nickel catalysts were studied to overcome the limitation that<lb/> iron readily oxidizes to a noncatalytlc form and this limits the extent of reaction. I t was shown that cobalt and<lb/> nickel catalysts allow much hlgher exit water concentrations, but still it is not possible to attain the equitibrium<lb/> predicted from assuming the product carbon is @-graphite. I t is postulated that carbon deposits as a metastable<lb/> metal-carbide intermediate and, therefore, water yields are limited by the metal-carbide equilibrium. The effect<lb/> of this carbide route to carbon formation is very pronounced at 700 K and below, but it is less important at higher<lb/> temperatures.<lb/></div>
+
+		</front>
+	</text>
+</tei>

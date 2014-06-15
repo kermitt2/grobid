@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Mario</forename>
+								<middlename>J</middlename>.
+								<surname>Garcia</surname>,
+								<roleName>MD</roleName>,
+								<roleName>FACC</roleName>,
+								<marker>*</marker>
+							</persName>
+							<persName>
+								<forename>Nicholas</forename>
+								<middlename>G</middlename>.
+								<surname>Smedira</surname>,
+								<roleName>MD</roleName>,
+							</persName>
+							<persName>
+								<forename>Neil</forename>
+								<middlename>L</middlename>.
+								<surname>Greenberg</surname>,
+								<roleName>PHD</roleName>,
+								<marker>*</marker>
+							</persName>
+							<persName>
+								<forename>Michael</forename>
+								<surname>Main</surname>,
+								<roleName>MD</roleName>,
+								<marker>*</marker>
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Michael</forename>
+								<middlename>S</middlename> .
+								<surname>Firstenberg</surname> ,
+								<roleName>MD</roleName> ,
+								<marker>*</marker>
+							</persName>
+							<persName>
+								<forename>Jill</forename>
+								<surname>Odabashian</surname> ,
+								<roleName>RDCS</roleName> ,
+								<marker>*</marker>
+							</persName>
+							<persName>
+								<forename>James</forename>
+								<middlename>D</middlename> .
+								<surname>Thomas</surname> ,
+								<roleName>MD</roleName> ,
+								<roleName>FACC</roleName>
+								<marker>*</marker>
+							<lb/>
+							</persName>
+							
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

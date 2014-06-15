@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012175"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<affiliation>American Institute of Aeronautics and Astronautics<lb/></affiliation>
+	</byline>
+
+	<note type="page">1<lb/></note>
+
+	<docTitle>
+	<titlePart>Development of a Sense and Avoid System<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Mr. James Utt<lb/> *<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Defense Research Associates, Inc.,</affiliation>
+	</byline>
+
+	<address>Beavercreek, OH 45431<lb/></address>
+
+	<byline>
+	<docAuthor>Dr. John McCalmont<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Sensors Directorate, Air Force Research Laboratory (AFRL/SNJT),</affiliation>
+	</byline>
+
+	<address>Wright Patterson AFB, OH 45433<lb/></address>
+
+	<byline>
+	<docAuthor>Mr. Mike Deschenes<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Defense Research Associates, Inc.,</affiliation>
+	</byline>
+
+	<address>Beavercreek, OH 45431<lb/></address>
+
+	<div type="abstract">Remotely Operated Aircraft (ROAs) currently do not have convenient access to civil<lb/> airspace due to their inability to provide an onboard capability to &quot;see and avoid&quot; air traffic.<lb/> Defense Research Associates, Inc. and AFRL/SNJT have developed affordable technology<lb/> based on silicon charge couple device sensors and passive moving target detection<lb/> algorithms. Previously, a flight demonstration proved real-time implementation of complex<lb/> detection and tracking algorithms with multiple sensors providing a wide field of regard was<lb/> feasible. This paper documents lessons learned from that demonstration, subsequent<lb/> improvements made to the prototype system, resulting performance improvements, and<lb/> planned next steps .<lb/></div>
+
+		</front>
+	</text>
+</tei>

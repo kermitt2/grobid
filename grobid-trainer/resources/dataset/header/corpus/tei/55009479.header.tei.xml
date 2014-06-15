@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009479"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Myeloperoxidase (MPO) and hs-CRP as<lb/> predictive factors for myocardial infarction<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">The number of deaths that are caused by cardiovascular diseases is huge and predicted to<lb/> rise even further. Elevated blood levels of MPO and hs-CRP can be used to identify subjects<lb/> who have an increased risk of developing myocardial infarctions. The development of sen-<lb/>sitive rapid tests for MPO and hs-CRP, together with a simple hand-held reader promises<lb/> to open up the possibility of identifying high-risk patients early enough for the introduc-<lb/>tion of prophylactic therapies or the adoption of beneficial life-style changes.<lb/></div>
+
+	<byline>
+	<docAuthor>by Dr A. Niskanen, M. Saramäki and E. Schwandt<lb/></docAuthor>
+	</byline>
+
+		</front>
+	</text>
+</tei>

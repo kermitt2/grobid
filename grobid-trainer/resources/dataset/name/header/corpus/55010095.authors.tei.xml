@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<roleName>Dipl.‐Ing.(FH)</roleName>
+								<forename>Johannes</forename>
+								<surname>SCHMID</surname>
+							<lb/>
+								<marker>1</marker>
+							</persName>
+							<persName>	
+								<roleName>Dipl .‐Ing.Dr</roleName>.
+								<forename>Tobias</forename>
+								<surname>PRÖLL</surname>
+								<marker>1</marker>
+							<lb/>
+								<roleName>Dipl .‐Ing</roleName>.
+								<forename>Ignacio</forename>
+								<surname>DIAZ</surname>
+							<lb/>
+								<marker>1</marker>
+							</persName>
+							<persName>	
+								<roleName>Dipl .‐Ing</roleName> .
+								<forename>Christina</forename>
+								<surname>HAFNER</surname>
+								<marker>2</marker>
+							<lb/>
+							</persName>
+							<persName>
+								<roleName>Dipl. ‐Ing .Dr</roleName>.
+								<forename>Klaus</forename>
+								<surname>JÖRG</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

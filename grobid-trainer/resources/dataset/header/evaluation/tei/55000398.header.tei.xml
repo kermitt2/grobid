@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000398"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>A Novel Speaker Binary Key Derived from Anchor Models<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Xavier Anguera<lb/> 1 , Jean-François Bonastre<lb/> 2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Multimedia Research Group, Telefonica Research,</affiliation>
+	</byline>
+
+	<address>Barcelona, Spain<lb/></address>
+
+	<byline>
+	<affiliation>2 University of Avignon, LIA,</affiliation>
+	</byline>
+
+	<address>Avignon, France.<lb/></address>
+
+	<email>xanguera@tid.es, jean-francois.bonastre@univ-avignon.fr<lb/></email>
+
+	<div type="abstract">Abstract<lb/> The approach presented in this paper represents voice<lb/> recordings by a novel acoustic key composed only of binary<lb/> values. Except for the process being used to extract such keys,<lb/> there is no need for acoustic modeling and processing in the<lb/> approach proposed, as all the other elements in the system are<lb/> based on the binary vectors. We show that this binary key is<lb/> able to effectively model a speaker&apos;s voice and to distinguish<lb/> it from other speakers. Its main properties are its small size<lb/> compared to current speaker modeling techniques and its low<lb/> computational cost when comparing different speakers as it is<lb/> limited to obtaining a similarity metric between two binary vec-<lb/>tors. Furthermore, the binary key vector extraction process does<lb/> not need any hard threshold and offers the opportunity to set the<lb/> decision steps in a well defined binary domain where scores and<lb/> decisions are easy to interpret and implement.<lb/></div>
+
+	<keyword>Index Terms: binary key, speaker modeling, biometrics<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

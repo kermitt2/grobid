@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009986"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>Reference: WG.GGS.4.0042<lb/></idno>
+
+	<note type="other">Version: 2.0<lb/></note>
+
+	<note type="other">_____________________________________________________________________________<lb/></note>
+
+	<byline>
+	<affiliation>Gemalto Public<lb/></affiliation>
+	</byline>
+
+	<note type="page">1 1/ /5 53 3<lb/></note>
+
+	<docTitle>
+	<titlePart>Java Card™ &amp; STK Applet Development<lb/> Guidelines<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Version Modification purpose<lb/> Modification type *<lb/> Applicability date<lb/> Requester<lb/></note>
+
+		</front>
+	</text>
+</tei>

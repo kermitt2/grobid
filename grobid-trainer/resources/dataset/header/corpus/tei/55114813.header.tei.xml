@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei type="web">
+	<teiHeader>
+		<fileDesc xml:id="55114813"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">United States<lb/> *<lb/> Quick Links | Home | Worldwide<lb/> M icrosoft<lb/> *<lb/> Search Microsoft.com for:<lb/> Help and Support<lb/> Help and Support Home<lb/> | Select a Product | Advanced Search<lb/></note>
+
+	<docTitle>
+	<titlePart>How To Return a Collection from Visual Basic<lb/> to an ASP Page<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">View products that this article applies to.<lb/> Article ID : 232296<lb/> Last Review :</note>
+
+	<date>July 13, 2004<lb/></date>
+
+	<note type="other">Revision : 2.1<lb/> This article was previously published under Q232296<lb/></note>
+
+		</front>
+	</text>
+</tei>

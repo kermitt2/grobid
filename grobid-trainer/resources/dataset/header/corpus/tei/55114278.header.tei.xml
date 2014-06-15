@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei type="poster">
+	<teiHeader>
+		<fileDesc xml:id="55114278"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<div type="abstract">Background: Nanoemulsion (NE) adjuvants are made of pharmaceutically approved<lb/> ingredients and are composed of high-energy nanometer-sized oil-in-water droplets<lb/> stabilized by surfactants. After intranasal administration (IN), the NE adjuvant with<lb/> incorporated antigenic components is taken up by mucosal dendritic cells that traffick to<lb/> secondary lymphoid tissues triggering local and systemic cellular and humoral<lb/> immunity.<lb/> Methods: Naïve ferrets were immunized IN on days 0 and 28 with different<lb/> concentrations of the NE adjuvant (W 80 5EC) mixed with different doses of Fluzone ®<lb/> commercial influenza vaccine. Control ferrets received Fluzone ® intramuscularly. Sera<lb/> were collected on days 27 and 48 to test for neutralizing antibodies using the<lb/> hemagglutination inhibition (HAI) assay. Protection was assessed by challenging the<lb/> ferrets with 10 7 EID 50 (egg infectious dose) Wisconsin virus on day 49, then analyzing<lb/> the ferret&apos;s nasal wash for virus content. Electron microscopy was used to visualize the<lb/> W 80 5EC-adjuvanted Fluzone ® vaccine.<lb/> Results: Electron micrographs showed influenza antigens on the surface of W 80 5EC<lb/> nanodroplets. IN vaccination in ferrets using W 80 5EC-adjuvanted Fluzone ® vaccine<lb/> provided a robust immune response using hemagglutinin (HA) doses 15 times smaller<lb/> than the current commercial vaccine. A dose response was determined for the NE<lb/> adjuvant and influenza HA. Ferrets vaccinated with a total of 7.5 μg HA showed cross<lb/> protection against several H3N2 antigens not present in the vaccine formulation. The<lb/> adjuvanted vaccine resulted in elimination of the virus in the ferrets&apos; nasal washings<lb/> following viral challenge.<lb/> Conclusions: The W 80 5EC-adjuvanted Fluzone ® vaccine elicited a protective immune<lb/> response in naïve ferrets following IN immunization, even with antigen sparing doses.<lb/> This NE-based nasal influenza vaccine is currently in a Phase 1 clinical trial.<lb/></div>
+
+	<byline>
+	<docAuthor>T. Hamouda, S. Ciotti, J. Sutcliffe and J.R. Baker Jr.<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>NanoBio Corp.,</affiliation>
+	</byline>
+
+	<address>Ann Arbor, MI, USA<lb/></address>
+
+	<docTitle>
+	<titlePart>Intranasal W 80 5EC-Adjuvanted Fluzone ® Provides Robust Immunity<lb/> and Cross-Protection in Ferrets<lb/></titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

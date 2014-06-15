@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001680"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">0<lb/></note>
+
+	<ptr type="web">URL: http://www.elektroniknet.de /embedded/technik-know-how/entwicklungs-tools-fuer-hard-und-software<lb/> /article/1649/0/Kurzer_Weg_zum_schnellen_Code/<lb/></ptr>
+
+	<date>12. Februar 2010<lb/> </date>
+
+	<note type="other"> | Drucken |<lb/> CLEAR<lb/> </note>
+	
+	<docTitle>
+	<titlePart> Zeitverhalten automatisch analysieren und optimieren<lb/> Kurzer Weg zum schnellen Code<lb/> </titlePart>
+	</docTitle>
+
+	<div type="introduction">In komplexen Embedded Systemen kann jeder noch so kleine Performance-Bug<lb/> schnell zum Flaschenhals werden. Mit neuen Verfahren lassen sich Performance-<lb/>Einbrüche bei der Codeabarbeitung und beim Datenzugriff automatisch finden, die<lb/> Tools geben zudem Hinweise für die Optimierung des Codes.<lb/> Jens Braunes<lb/> Anzeige<lb/> Galt früher alleine Stabilität im Sinne von logischen Fehlern oder Programmierfehlern als Maß<lb/> für die Qualität von Software, so sind heute auch die erzielte Rechenleistung, etwaige<lb/> Performance-Einbrüche und eine optimale Ausnutzung der Hardware mit einzubeziehen.<lb/> Performance-Bugs lassen sich zwar mit Hilfe üblicher Profiling-Methoden messen, diese<lb/> erfordern allerdings eine Code-Instrumentierung, beeinflussen also selbst das Laufzeitverhalten<lb/> der Applikation.<lb/> In typischen »Deeply Embedded«-Anwendungen zum Beispiel im Automobil-oder<lb/> Industriebereich ist eine solche Veränderung des Laufzeitverhaltens nicht akzeptabel. Hier sind<lb/> alle auszuführenden Tasks zyklisch abzuarbeiten, nicht selten ist die Länge des Zyklus&apos; genau<lb/> festgelegt und keine der Tasks darf das vorgegebene Zeitregime verletzen, auch wenn es zu<lb/> Ausnahmesituationen kommt. Die Applikation muss also bestimmte Antwortzeiten zwingend<lb/> einhalten und darf auch unter hoher Last die Spezifikation nicht verletzen.<lb/> Anders als bei universellen Prozessoren ist bei modernen »Systems-on-Chip« (SoC) wie den<lb/> High-End-Mikrocontrollern »TC1797« von Infineon (Bild 1) nicht so sehr die – meist<lb/> vergleichsweise niedrige – Taktfrequenz wichtig, sondern ein auf das jeweilige<lb/> Anwendungsgebiet optimiertes, komplexes Systemdesign. Der Schlüssel für eine hohe<lb/> Leistungsfähigkeit und einen großen Datendurchsatz liegt vor allem in den geringen<lb/> Zugriffzeiten der internen Speicher, den spezialisierten Einheiten und der Aufgabenteilung der<lb/> Busse. Die richtigen Werkzeuge vorausgesetzt, lässt sich die Performance meist noch deutlich<lb/> steigern.</div>
+
+		</front>
+	</text>
+</tei>

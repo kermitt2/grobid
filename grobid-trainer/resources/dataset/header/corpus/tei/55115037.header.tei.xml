@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<tei type="technical-report">
+	<teiHeader>
+		<fileDesc xml:id="55115037"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline> 
+	<affiliation>International Institute for<lb/></affiliation>
+	</byline> 
+
+	<phone>Tel: 43 2236 807 342<lb/> </phone>
+
+	<byline> 
+	<affiliation>Applied Systems Analysis<lb/> </affiliation>
+	</byline> 
+
+	<phone>Fax: 43 2236 71313<lb/> </phone>
+
+	<address>Schlossplatz 1<lb/></address>
+
+	<email>E-mail: publications@iiasa.ac.at<lb/></email>
+
+	<address>A-2361 Laxenburg, Austria<lb/> </address>
+
+	<ptr>Web: www.iiasa.ac.at<lb/> </ptr>
+
+	<note type="other">Interim Report<lb/> IR-08-026<lb/></note>
+
+	<docTitle>
+	<titlePart>Multi-criteria decision support system for Siemianówka<lb/> reservoir under uncertainties<lb/></titlePart>
+	</docTitle>
+
+	<byline> 
+	<docAuthor>Adam Kiczko</docAuthor>
+	</byline>
+
+	<email>(akiczko@igf.edu.pl)<lb/></email>
+
+	<note type="other">Approved by<lb/> Marek Makowski</note>
+
+	<email>(marek@iiasa.ac.at)<lb/> </email>
+
+	<note type="other">Leader, Integrated Modeling Environment Project<lb/></note>
+
+	<date>September 2008<lb/></date>
+
+	<note type="other">Interim Reports on work of the International Institute for Applied Systems Analysis receive only limited<lb/> review. Views or opinions expressed herein do not necessarily represent those of the Institute, its National<lb/> Member Organizations, or other organizations supporting the work.</note>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="institution">Interlink Networks, Inc.</orgName>
+							<address>
+								<addrLine>5405 Data Court</addrLine>,
+								<addrLine>Suite 300</addrLine>,
+								<settlement>Ann Arbor</settlement>,
+								<region>MI</region>
+								<postCode>48108</postCode>
+							<lb/>
+							</address>
+							<orgName type="institution">TruSecure Corporation</orgName>,
+							<address>
+								<addrLine>15210 Sutherland Ave.</addrLine>,
+								<settlement>Oak Park</settlement>,
+								<region>MI</region>
+								<postCode>48237</postCode>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

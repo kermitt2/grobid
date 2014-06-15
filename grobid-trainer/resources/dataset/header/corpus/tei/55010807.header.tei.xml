@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010807"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">148<lb/></note>
+
+	<byline>
+	<docAuthor>W. RIED und G. NEIDHARDT<lb/></docAuthor>
+	</byline>
+
+	<note type="other">Bd. 666<lb/></note>
+
+	<docTitle>
+	<titlePart>HYDROGENOLYSE N-SUBSTITUIERTER AMIDE VON<lb/> PYRIDIN-DICARBONSAUREN UND -TRICARBONSAUREN<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>von WALTER RIED und GERTRAUDE NIJIDHARDT<lb/> </docAuthor>
+	</byline>
+
+	<dedication>Herrtr Prof. Dr. Werner Schultheis zum 60. Geburtstag freundschaftlich zugeeignet<lb/></dedication>
+
+	<byline>
+	<affiliation>Aus dem Institut fur Organische Chemie der Universitat</affiliation>
+	</byline>
+
+	<address>Frankfurt a. M.<lb/></address>
+
+	<note type="submission">Eingegangen am 15. Dezember 1962<lb/></note>
+
+	<div type="abstract">3.5-Dimethyl-pyrazolide und N-Methyl-anilide von verschiedenen Pyridin-<lb/>dicarbonsauren, Acridinsaure und Pyridin-tricarbonsaure-(2.4.6) lassen sich mit<lb/> Lithiumalanat zu den entsprechenden Aldehyden reduzieren, die durch Derivate<lb/> charakterisiert werden.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Masayuki</forename>
+								<surname>Niwa</surname>
+								<marker>I*</marker>,
+							</persName>
+							<persName>
+								<forename>Akira</forename>
+								<surname>Hara</surname>
+								<marker>2</marker>,
+							</persName>
+							<persName>
+								<forename>Tomohiko</forename>
+								<surname>Iwai</surname>
+								<marker>3</marker>,
+							</persName>
+							<persName>
+								<forename>Masaya</forename>
+								<surname>Nakashima</surname>
+								<marker>l</marker>,
+							</persName>
+							<persName>
+								<forename>Naoki</forename>
+								<surname>Yoshim</surname>
+								<marker>?</marker>,
+							</persName>
+							<persName>
+								<forename>Hideki</forename>
+								<surname>Mori</surname>
+								<marker>2</marker> and
+							</persName>
+							<persName>
+								<forename>Toshihiko</forename>
+								<surname>Uematsu</surname>
+								<marker>l</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

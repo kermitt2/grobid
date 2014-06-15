@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012070"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>DETECTION OF AIRPORT RUNWAYS IN OPTICAL SATELLITE IMAGES<lb/></titlePart>
+	</docTitle>
+
+	<degree>A THESIS SUBMITTED TO<lb/> THE GRADUATE SCHOOL OF INSTITUTE OF APPLIED SCIENCES<lb/> OF MIDDLE EAST TECHNICAL UNIVERSITY<lb/> BY<lb/> </degree>
+
+	<docAuthor>U ˘<lb/> GUR ON<lb/> UR<lb/> </docAuthor>
+
+	<degree>IN PARTIAL FULFILLMENT OF THE REQUIREMENTS<lb/> FOR THE DEGREE OF MASTER OF SCIENCE<lb/> IN ELECTRICAL AND ELECTRONICS ENGINEERING<lb/></degree>
+
+	<date>JULY 2009</date>
+
+		</front>
+	</text>
+</tei>

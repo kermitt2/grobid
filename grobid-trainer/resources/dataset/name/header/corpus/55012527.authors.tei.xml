@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Martin</forename>
+								<surname>Sattler</surname>,
+							</persName>
+							<persName>
+								<forename>Rifat</forename>
+								<surname>Hasina</surname>,
+							</persName>
+							<persName>
+								<forename>Mamatha</forename>
+								<middlename>M</middlename>.
+								<surname>Reddy</surname>,
+							</persName>
+							<persName>
+								<forename>Tara</forename>
+								<surname>Gangadhar</surname> and
+							</persName>
+							<persName>
+								<forename>Ravi</forename>
+								<surname>Salgia</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

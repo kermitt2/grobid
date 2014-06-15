@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55114116"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>THE JOURNAL OF BIOLOGICAL CHEMISTRY<lb/></reference>
+	
+	<note type="copyright">&#169; 1991 by The American Society for Biochemistry and Molecular Biology, Inc.<lb/></note>
+
+	<reference>Vol. 266, No. 35, Issue of December 15, PP. 23648-23653,1991<lb/></reference>
+
+	<note type="other">Printed in U.S.A.<lb/></note>
+
+	<docTitle>
+	<titlePart>Effect of Amino Acid Substitution by Site-directed Mutagenesis on<lb/> the Carbohydrate Recognition and Stability of Human 14-kDa<lb/> 0-Galactoside-binding Lectin*<lb/></titlePart>
+	</docTitle>
+
+	<note type="submission">(Received for publication, August 6, 1991)<lb/></note>
+
+	<byline>
+	<docAuthor>Jun HirabayashiS and Ken-ichi Kasai<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>From the Department of Biological Chemistry, Facu1t.y of Pharmaceutical Sciences, Teikyo University,</affiliation>
+	</byline>
+
+	<address>Sagamiko,<lb/> . .<lb/> Kanagawa 199-01, Japan<lb/></address>
+
+	<div type="abstract">The roles of selected amino acid residues of human<lb/> 14-kDa B-galactoside-binding lectin were studied by<lb/> site-directed mutagenesis. Ten mutant lectin proteins<lb/> were produced, in each of which one of the residues<lb/> regarded as possibly related to the stability of the lectin<lb/> (6 cysteine residues) or one of those highly conserved<lb/> in the vertebrate 8-galactoside-binding lectin family<lb/> (Asn4&apos;, Trp68, Glu&apos;l, and Arg73), was substituted. All<lb/> the mutant lectins in which one of the cysteine residues<lb/> had been substituted with serine (C2S, C16S, C42S,<lb/> C60S, C88S, and C130S) proved to have sugar binding<lb/> ability comparable with that of the wild-type lectin. In<lb/> addition, one of the mutants in which Cys2 was substi-<lb/>tuted (C2S) was found to have become considerably<lb/> more stable under non-reducing conditions. It retained<lb/> asialofetuin binding activity for over a week in the<lb/> absence of 8-mercaptoethanol, while the wild-type lec-<lb/>tin lost it within a day. This suggests that oxidation of<lb/> Cys2 could be a key process in the inactivation of<lb/> human 14-kDa lectin. Substitution of highly conserv-<lb/>ative Trp&quot; to tyrosine (W68Y) slightly reduced lactose<lb/> binding ability, but the mutant was still adsorbed<lb/> strongly on asialofetuin-agarose. Other mutant lectins<lb/> in which conservative hydrophilic amino acids were<lb/> substituted (N46D, E71Q, and R73H) failed to bind to<lb/> the asialofetuin agarose, with no sign of retardation.<lb/> Thus, conservative hydrophilic residues proved to be<lb/> more important in carbohydrate recognition than the<lb/> cysteine and tryptophan residues, contrary<lb/> to the<lb/> widely accepted concept that these latter residues are<lb/> essential.<lb/> </div>
+
+	<div type="introduction">Vertebrate P-galactoside-binding lectins form a protein<lb/> family (1) and have characteristics distinct from those of<lb/> animal lectins belonging to another family, that is the Ca2+-<lb/>dependent lectin family (2). They have been found only in<lb/> vertebrates, require no metal ion for sugar binding, and have<lb/> some typical characteristics of intracellular proteins, that is<lb/> lack of a representative hydrophobic signal sequence in the<lb/> nascent protein, lack of a carbohydrate chain, and the exist-<lb/>ence of free cysteine residues not involved in disulfide bond<lb/> formation. They are suggested to be involved in a cellular<lb/> * This work was supported in part by a grant-in-aid for scientific</div>
+
+		</front>
+	</text>
+</tei>

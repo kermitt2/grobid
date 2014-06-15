@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013444"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Anna Rev. Entomd. 19%. 41:3754M<lb/> </reference>
+
+	<note type="copyright">Copyrighl &#169; 1996 by Annual Reviews Inc. All rights reserved<lb/></note>
+
+	<docTitle>
+	<titlePart>BIOLOGICAL CONTROL WITH<lb/> TRZCHOGRAMMA : Advances,<lb/> Successes, and Potential of<lb/> Their Use<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Sandy M. Smith<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Faculty of Forestry, University of Toronto,</affiliation>
+	</byline>
+
+	<address>33 Willcocks St., Toronto, Ontario,<lb/> Canada M5S 3B3<lb/></address>
+
+	<keyword>KEY WORDS: parasitoid quality and selection, mass production, distribution, release,<lb/> efficacy<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

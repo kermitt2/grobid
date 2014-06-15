@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Jeff</forename>
+								<middlename>W</middlename>.
+								<middlename>M</middlename>.
+								<surname>Bulte</surname>,
+							</persName>
+							<persName>
+								<forename>Loralie</forename>
+								<middlename>D</middlename>.
+								<surname>Ma</surname>,
+							</persName>
+							<persName>
+								<forename>Richard</forename>
+								<middlename>L</middlename>.
+								<surname>Magin</surname>,
+							</persName>
+							<persName>
+								<forename>Richard</forename>
+								<middlename>L</middlename>.
+								<surname>Kamman</surname>,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Caesar</forename>
+								<middlename>E</middlename> .
+								<surname>Hulstaert</surname> ,
+							</persName>
+							<persName>
+								<forename>K</forename> .
+								<middlename>Gwan </middlename>
+								<surname>Go</surname> ,
+							</persName>
+							<persName>
+								<forename>T</forename> .
+								<middlename>Hauw </middlename>
+								<surname>The</surname> ,
+							</persName>
+							<persName>
+								<forename>Lou</forename>
+								<surname>de Leij</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

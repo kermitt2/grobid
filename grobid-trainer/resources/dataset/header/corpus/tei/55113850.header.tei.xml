@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei type="technical-report">
+	<teiHeader>
+		<fileDesc xml:id="55113850"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>3GPP TS 24.008 V11.3.0 </idno>
+
+	<date>(2012-06)<lb/></date>
+
+	<note type="other">Technical Specification<lb/></note>
+
+	<docTitle>
+	<titlePart>3rd Generation Partnership Project;<lb/> Technical Specification Group Core Network and Terminals;<lb/> Mobile radio interface Layer 3 specification;<lb/> Core network protocols; Stage 3<lb/> (Release 11)<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">The present document has been developed within the 3<lb/> rd Generation Partnership Project (3GPP<lb/> TM<lb/> ) and may be further elaborated for the purposes of 3GPP.<lb/> The present document has not been subject to any approval process by the 3GPP Organisational Partners and shall not be implemented.<lb/> This Specification is provided for future development work within 3GPP only. The Organisational Partners accept no liability for any use of this Specification.<lb/> Specifications and reports for implementation of the 3GPP<lb/> TM system should be obtained via the 3GPP Organisational Partners&apos; Publications Offices.<lb/> 3GPP<lb/> 3GPP TS 24.008 V11.3.0 </note>
+
+	<date>(2012-06)<lb/> </date>
+
+	<note type="other">Release 11<lb/> </note>
+
+	<note type="page">96<lb/></note>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,50 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010345"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">ELSEVIER<lb/></note>
+
+	<reference>Life science+, vci. 64, No. 18, pp. PL IWIW, 1999<lb/></reference>
+
+	<note type="copyright">GlQyight~1999ElccvierscicaccInc.<lb/> Printed in the USA. All rights resewed<lb/></note>
+
+	<note>PI1 SOO24-3205(~)00101-0<lb/> c024-3205/99/w fnm mater<lb/></note>
+
+	<note type="other">PI-LmM4COLOGY LETTERS<lb/> Accelemted Canmwnicalion<lb/></note>
+
+	<docTitle>
+	<titlePart>PREVENTION OF ISCHEMIA-INDUCED HIPPOCAMPAL NEURONAL<lb/> DAMAGE BY 2-DEOXY-D-GLUCOSE IN GERBILS<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Masayuki Niwa I*, Akira Hara2, Tomohiko Iwai3, Masaya Nakashimal, Naoki Yoshim?,<lb/> Hideki Mori2 and Toshihiko Uematsul
+	<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>IDepartment of Pharmacology and 2Depatttnent of Pathology, Gifu University School of<lb/> Medicine,</affiliation>
+	</byline>
+
+	<address>Gifu 500-8705,</address>
+
+	<byline>
+	<affiliation>and 3Deparbnent of Neurosurgery, Murakami Memorial<lb/> Hospital, Asahi University,</affiliation>
+	</byline>
+
+	<address>Gifu 500-8856, Japan<lb/></address>
+
+	<note type="submission">(Submitted October Xl, 1998; accepted November 8.1998;<lb/> received in fd form January 28,1999)<lb/></note>
+
+	<div type="abstract">Abstract:<lb/> It has been reported that delayed neuronal death @ND) in the<lb/> hippocampus following transient forebrain ischemia is associated with internucleosomal<lb/> DNA f@mentation, indicating apoptosis. This suggests that the process of DND is<lb/> energy dependent. Transient severe forebrain ischemia was induced in Mongolian<lb/> gerbils by bilateral occlusion<lb/> of the common carotid arteries. Post-ischemic<lb/> administration of 2-deoxy-D-glucose (2-DG), a glucose antimetabolite, markedly reduced<lb/> the occwence of ischexnia-induced DNA f?a.gmentation and DND in the hippocampus.<lb/> These results suggest that the reduction of energy dependent metabolism after ischemia<lb/> may be an attractive therapeutic strategy for preserving hippocampal neurons vulnerable<lb/> to ischemia.</div>
+
+	<note type="copyright">&#169; 1999 Elsevier Science Inc.<lb/></note>
+
+	<keyword>I@ Words: delayed neuronal death, gerbil, forebrain iscbemia, Z-deoxy-D-glucose, DNA fragmentation<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

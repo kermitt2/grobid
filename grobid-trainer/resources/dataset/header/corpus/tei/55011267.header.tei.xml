@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011267"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Homogeneous Time Resolved<lb/> Fluorescence<lb/> Methodological aspects<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Application Note 1<lb/></note>
+
+	<docTitle>
+	<titlePart>Fluorescence and Homogeneous Assays<lb/></titlePart>
+	</docTitle>
+
+	<div type="introduction">Fluorescence is, in theory, the most sensitive analytical technique. As many in-<lb/>tra-and intermolecular processes are able to modulate the label emission, it was<lb/> therefore under consideration very early on as a technique of choice for designing<lb/> homogeneous assays. Polarization, quenching, time correlation, lifetime variation<lb/> as well as fl uorescence resonance energy transfer (FRET) have been applied to prob-<lb/>ing molecular interactions<lb/> 1-5 .<lb/> However, severe limitations still remain for most of these applications, including<lb/> low modulation range, interference from the assay medium (serum, biological<lb/> fl uid…), non specifi c interaction with media constituents, highly variable fl uores-<lb/>cence background and light scattering from proteins, molecules and aggregates in<lb/> the media.<lb/> Among these techniques, FRET is of particular interest. Förster postulated the<lb/> dependence of the energy transfer rate on the inverse sixth power of the distance<lb/> between an excited fl uorescent donor and a nearby acceptor molecule<lb/> 6 .<lb/> For commonly known donor-acceptor pairs, the distance R 0 (for which transfer is<lb/> 50% effi cient) lies within the 1-7 nm range. Taking advantage of these properties,<lb/> FRET was used as a spectroscopic ruler to reveal proximity relationships in biologi-<lb/>cal macromolecules, as suggested by the pioneering work of Stryer et al.<lb/> 14 , work<lb/> which was subsequently developed<lb/> 8-10 .<lb/> Since only a very few techniques allow such distances and interactions to be deter-<lb/>mined in solution, many domains of biology were explored with FRET, such as en-<lb/>zymatic activity</div>
+
+		</front>
+	</text>
+</tei>

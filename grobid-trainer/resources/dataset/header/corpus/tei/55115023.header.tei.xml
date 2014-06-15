@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei type="manual">
+	<teiHeader>
+		<fileDesc xml:id="55115023"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>DRX-Revolution Mobile X-ray<lb/> System<lb/> Hardware Guide<lb/></titlePart>
+	</docTitle>
+
+	<idno>PN 9J0238<lb/></idno>
+
+	<date>2012-02-29<lb/></date>
+
+	<note type="other">Version 4.0</note>
+
+		</front>
+	</text>
+</tei>

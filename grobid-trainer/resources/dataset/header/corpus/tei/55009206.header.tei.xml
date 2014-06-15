@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009206"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Comparative analysis of the gait disorder of<lb/> normal pressure hydrocephalus and Parkinson&apos;s<lb/> disease<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>H Stolze, J P Kuhtz-Buschbeck, H Drücke, K Jöhnk, M Illert, G Deuschl<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Abstract Objectives—Comparative gait analyses in<lb/> neurological diseases interfering with lo-<lb/>comotion are of particular interest, as<lb/> many hypokinetic gait disorders have the<lb/> same main features. The aim of the<lb/> present study was (1) to compare the gait<lb/> disturbance in normal pressure hydro-<lb/>cephalus and Parkinson&apos;s disease; (2) to<lb/> evaluate which variables of the disturbed<lb/> gait pattern respond to specific treatment<lb/> in both diseases; and (3) to assess the<lb/> responsiveness to visual and acoustic cues<lb/> for gait improvement.<lb/> Methods—In study 1 gait analysis was<lb/> carried out on 11 patients with normal<lb/> pressure hydrocephalus, 10 patients with<lb/> Parkinson&apos;s disease, and 12 age matched<lb/> healthy control subjects, on a walkway and<lb/> on a treadmill. In study 2, patients with<lb/> normal pressure hydrocephalus were re-<lb/>investigated after removal of 30 ml CSF,<lb/> and patients with Parkinson&apos;s disease<lb/> after administration of 150 mg levodopa.<lb/> In part 3 visual cues were provided as<lb/> stripes fixed on the walkway and acoustic<lb/> cues as beats of a metronome.<lb/> Results—The gait disorder in both diseases<lb/> shared the feature of a reduced gait<lb/> velocity, due to a diminished and highly<lb/> variable stride length. Specific features of<lb/> the gait disturbance in normal pressure<lb/> hydrocephalus were a broad based gait<lb/> pattern with outward rotated feet and a<lb/> diminished height of the steps. After treat-<lb/>ment in both diseases, the speed increased,<lb/> due to an enlarged stride length, now<lb/> presenting a lower variability. All other gait<lb/> variables remained unaVected. External<lb/> cues only mildly improved gait in normal<lb/> pressure hydrocephalus, whereas they were<lb/> highly eVective in raising the stride length<lb/> and cadence in Parkinson&apos;s disease.<lb/> Conclusion—The gait pattern in normal<lb/> pressure hydrocephalus is clearly dis-<lb/>tinguishable from the gait of Parkinson&apos;s<lb/> disease. As well as the basal ganglia output<lb/> connections, other pathways and struc-<lb/>tures most likely in the frontal lobes are<lb/> responsible for the gait pattern and espe-<lb/>cially the disturbed dynamic equilibrium<lb/> in normal pressure hydrocephalus. Hypo-<lb/>kinesia and its responsiveness to external<lb/> cues in both diseases are assumed to be an<lb/> expression of a disturbed motor planning.<lb/></div>
+
+	<reference>(J Neurol Neurosurg Psychiatry 2001;70:289–297)<lb/></reference>
+
+	<keyword>Keywords: gait analysis; Parkinson&apos;s disease; normal<lb/> pressure hydrocephalus<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

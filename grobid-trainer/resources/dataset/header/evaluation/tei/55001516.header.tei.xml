@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001516"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">ORIGINAL ARTICLE<lb/></note>
+
+	<docTitle>
+	<titlePart>The Effect of Accommodation on Ocular Shape<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>TERRY W. WALKER, OD, MS and DONALD O. MUTTI, OD, PhD, FAAO<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>The Ohio State University College of Optometry,</affiliation>
+	</byline>
+
+	<address>Columbus, Ohio<lb/></address>
+
+	<div type="abstract">ABSTRACT: Purpose. Ocular shape is altered in myopia, and accommodation during nearwork is a proposed risk factor<lb/> for myopia. Using relative peripheral refractive error (RPRE), ocular shape was assessed before, during, and after a<lb/> period of sustained nearwork to determine whether accommodation affects ocular shape. Methods. Measurements of<lb/> RPRE at 30° in the nasal visual field were obtained using the spherical equivalent calculated from Canon R-1<lb/> autorefraction. The RPRE of 41 young adults was measured on two separate occasions separated by at least 1 week to<lb/> assess RPRE repeatability. Later, the RPRE of 22 young adults was measured at a 0 D accommodative stimulus and then<lb/> at a 3 D stimulus level at 0, 1, and 2 h during which subjects performed sustained nearwork at 33 cm. After 2 h of<lb/> nearwork, subjects had RPRE measured at prescribed time intervals over a 1-h period in which they looked in the<lb/> distance (0 D stimulus). Results. The measurement of RPRE had adequate repeatability (mean difference ؎ SD, ؊0.05<lb/> ؎ 0.35 D) with ؎0.68 D as the 95% limits of agreement. The onset of accommodation produced an immediate<lb/> hyperopic shift of RPRE relative to baseline (؉0.37 ؎ 0.44 D; p ‫؍‬ 0.0007), indicating that ocular shape had become<lb/> more prolate. This shape remained unchanged after 1 h of sustained accommodation (RPRE difference from baseline,<lb/> ؉0.25 ؎ 0.55 D; p ‫؍‬ 0.04) and then returned to baseline dimensions after 2 h of accommodation (RPRE difference from<lb/> baseline, ؉0.11 ؎ 0.39 D; p ‫؍‬ 0.21). At the 0 D stimulus level one minute after the period of nearwork, RPRE became<lb/> more myopic relative to baseline (RPRE difference from baseline, ؊0.28 ؎ 0.50 D; p ‫؍‬ 0.016). Ocular shape returned<lb/> to baseline dimensions after 45 min of accommodative relaxation. Conclusions. Accommodation induced the ocular<lb/> shape to become more prolate. The opposite occurred after accommodation was relaxed, namely a change toward a<lb/> more oblate ocular shape. The transient nature of these changes suggests that tension on the choroid and choroidal<lb/> hysteresis may play a role in influencing ocular shape. (Optom Vis Sci 2002;79:424–430)<lb/> </div>
+	
+	<keyword>Key Words: myopia, refractive error, accommodation, ciliary muscle<lb/> </keyword>
+	
+	<div type="introduction">O<lb/> cular shape is associated with refractive error, with my-<lb/>opic eyes exhibiting a prolate contour (i.e., having a<lb/> longer axial length than equatorial diameter) and hyper-<lb/>opes an oblate contour (i.e., having a broader equatorial diameter<lb/> than axial length).<lb/> 1– 4 In addition, elevated rates of myopia are<lb/> associated with increased amounts of cumulative nearwork expo-<lb/>sure. Utilizing one&apos;s attained educational level,<lb/> 5–7 measured intel-<lb/>ligence, or the nature of one&apos;s occupation<lb/> 4, 8, 9 as indices of the<lb/> degree of nearwork activity, several studies have shown that visual<lb/> nearwork is related to myopia. Attempts to relate these two asso-<lb/>ciations suggests that visual nearwork might therefore be associated<lb/> with an elongated ocular shape. The present study investigates<lb/> whether visual nearwork activity might result in any ocular shape<lb/> distortion.<lb/> Additional motivation for this study comes from data on refrac-<lb/>tive components and the changes they undergo during ocular de-<lb/>velopment. Among the studied components, the crystalline lens<lb/> has been the subject of considerable discussion. Mutti et al.<lb/> 10 have<lb/> stated that &quot;the importance of the lens in maintaining emmetropia<lb/> during childhood suggests that development of the crystalline lens<lb/> may provide insight into how emmetropia may be lost with the<lb/> onset of myopia.&quot; Indeed, a recent longitudinal study of 822 chil-<lb/>dren aged 5 to 14 years has shown that thicker crystalline lenses<lb/> were associated with more hyperopic relative peripheral refractions<lb/> and thus associated with prolate-shaped myopic eyes within a given<lb/> refractive error group.<lb/> 4 This finding is of interest because lenticular<lb/> thinning during development ceases near 10 years of age,<lb/> 11 and the<lb/> prevalence of myopia has been shown to increase sharply at age 10<lb/> years.<lb/> 10 As a result, Mutti et al.<lb/> 4 have proposed a model that<lb/> suggests failure of the crystalline lens to thin amid continued<lb/> growth of the globe may create tension within the lens, ciliary<lb/> body, and choroid. They asserted that the tension at the equator<lb/> ultimately restricts ocular growth within the equatorial plane and<lb/> subsequently accentuates axial elongation leading to the prolate<lb/> ocular shape typical of myopia.<lb/> For lenticular restriction to be important in this model, the<lb/> tension must be transmitted to the equator of the globe to create<lb/> distortion.<lb/> 4 Microscopic analysis has shown that ciliary muscle</div>
+
+		</front>
+	</text>
+</tei>

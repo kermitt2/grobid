@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010175"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Training Selection for Tuning Entity Matching<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Hanna Köpcke<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University of Leipzig,</affiliation>
+	</byline>
+
+	<address>Germany<lb/></address>
+
+	<email>koepcke@informatik.uni-leipzig.de<lb/></email>
+
+	<byline>
+	<docAuthor>Erhard Rahm<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University of Leipzig,</affiliation>
+	</byline>
+
+	<address>Germany<lb/></address>
+
+	<email>rahm@informatik.uni-leipzig.de<lb/></email>
+
+	<div type="abstract">ABSTRACT<lb/> Entity matching is a crucial and difficult task for data integration.<lb/> An effective solution strategy typically has to combine several<lb/> techniques and to find suitable settings for critical configuration<lb/> parameters such as similarity thresholds. Supervised (training-<lb/>based) approaches promise to reduce the manual work for<lb/> determining (learning) effective strategies for entity matching.<lb/> However, they critically depend on training data selection which<lb/> is a difficult problem that has so far mostly been addressed<lb/> manually by human experts. In this paper we propose a training-<lb/>based framework called STEM for entity matching and present<lb/> different generic methods for automatically selecting training data<lb/> to combine and configure several matching techniques. We<lb/> evaluate the proposed methods for different match tasks and<lb/> small-and medium-sized training sets.<lb/></div>
+
+		</front>
+	</text>
+</tei>

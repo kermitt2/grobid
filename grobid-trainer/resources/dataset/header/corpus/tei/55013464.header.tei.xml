@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013464"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Accommodating for 3D Head Movement in Visual Lipreading<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Eun-Jung Holden<lb/> £ , Gareth Loy<lb/> ££ , Robyn Owens<lb/> £<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>£ Department of Computer Science<lb/> University of Western Australia<lb/></affiliation>
+	</byline>
+
+	<address>Nedlands, W.A. 6907, Australia.<lb/></address>
+
+	<email>eunjung, robyn@cs.uwa.edu.au<lb/></email>
+
+	<byline>
+	<affiliation>££ Department of Systems Engineering<lb/> Research School of Information Sciences and Engineering<lb/> Australian National University<lb/></affiliation>
+	</byline>
+
+	<address>Acton, ACT 0200, Australia<lb/></address>
+
+	<email>gareth@syseng.anu.edu.au<lb/></email>
+
+	<div type="abstract">Abstract<lb/> In automatic lipreading, the speaker&apos;s head movement<lb/> can affect the mouth shape appearing in the captured im-<lb/>ages independently of the true mouth shape. Such distor-<lb/>tion can lead to incorrect recognition of visual speech,<lb/> thus this problem must be dealt with for a practical ap-<lb/>plication. We have developed a system that accomodates<lb/> the 3D head movement of the speaker in recognising the<lb/> mouth shape of unadorned lips appearing in the image.<lb/> This is achieved by tracking the 3D head movement from<lb/> the 2D input and correcting the mouth shape that is de-<lb/>tected from the image, in order to robustly recognise the<lb/> visual phonemes. The system allows the speaker&apos;s head<lb/> to move and exhibit rotations of up to 30 degrees away<lb/> from the camera. An experiment is presented, showing<lb/> head movements in 3D while the speaker enunciates 5<lb/> phonemes that represent the various mouth shapes of vi-<lb/>sual speech. The result shows that the 3D head tracker<lb/> robustly tracks the 3D head movement, and accomodat-<lb/>ing head pose to correct mouth shape is achieved effec-<lb/>tively.<lb/></div>
+
+	<keyword>Keywords: 3D model-based tracking, motion detec-<lb/>tion and estimation, automatic lipreading, feature track-<lb/>ing.<lb/>
+	</keyword>
+
+		</front>
+	</text>
+</tei>

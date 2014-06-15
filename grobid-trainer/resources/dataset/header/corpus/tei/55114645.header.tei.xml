@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55114645"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Electrodeposited Cu-Ni Textured Superlattices<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>D. S./ashmore and M. P. Dariel 1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>National Bureau of Standards, Institute for Materials Science and Engineering,</affiliation>
+	</byline>
+
+	<address>Gaithersburg, Maryland 20899<lb/></address>
+
+	<div type="abstract">ABSTRACT<lb/> Artificially layered materials of alternating 2-3 nm thick copper and nickel layers have been produced by electrodepo-<lb/>sition on oriented single-crystal copper substrates. X-ray diffraction examination of thin layers chemically removed from<lb/> the substrate showed that a coherent, relatively homogeneous coating, with a strong epitaxial relationship, had been pro-<lb/>duced. In particular, artificially layered Cu-Ni alloys displaying a textured [110] orientation were obtained by electrodepo-<lb/>sition. Noncoherent nucleation leads to the presence of various amounts of randomly oriented alloy grains on all sub-<lb/>strates but, in particular, for the [100] orientation.<lb/> </div>
+
+	<div type="introduction">Microlayered metallic materials, sometimes referred to<lb/> as composition modulated alloys, have gained general rec-<lb/>ognition as the result of their unusual and sometimes out-<lb/>standing properties. These materials have been the subject<lb/> of numerous and intensive studies, the results of which,<lb/> along with the various predictive models, have been re-<lb/>viewed several times over the past years (1-5). The over-<lb/>whelming majority of these materials was prepared by<lb/> vacuum evaporation or by sputtering. These techniques<lb/> are well suited to the preparation of individual layers as<lb/> thin as 1 or 2 nm that can be stacked up by using ingenious<lb/> experimental techniques to produce relatively thick films.<lb/> Various techniques and, in particular, x-ray diffraction<lb/> were used to characterize the microlayered materials and<lb/> provided unambiguous evidence regarding the coherence,<lb/> the spacing, and the uniformity of the layered structure.<lb/> Microlayered metallic materials have been produced by<lb/> other investigators using electrodeposition. Brenner (6)<lb/> was the first to produce composition modulated Cu-Bi al-<lb/>loys, electrodeposited from a single electrolyte. Many</div>
+
+		</front>
+	</text>
+</tei>

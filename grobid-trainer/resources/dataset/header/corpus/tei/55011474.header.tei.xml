@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011474"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">P1: FXY<lb/></note>
+
+	<date>April 21, 2001<lb/></date>
+
+	<note type="other">17:54<lb/> </note>
+
+	<reference>Annual Reviews<lb/> AR133-05<lb/> Annu. Rev. Nutr. 2001. 21:97–119<lb/></reference>
+
+	<note type="copyright">Copyright &#169;<lb/> 2001 by Annual Reviews. All rights reserved<lb/></note>
+
+	<docTitle>
+	<titlePart>THE GENETICS OF FATTY ACID METABOLISM<lb/> IN SACCHAROMYCES CEREVISIAE<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Pamela J Trotter<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>The Division of Nutritional Sciences and the Institute for Cellular and Molecular Biology,<lb/> The University of Texas at Austin,</affiliation>
+	</byline>
+
+	<address>Austin, Texas 78712;</address>
+
+	<email>e-mail: trotter@mail.utexas.edu<lb/></email>
+
+	<keyword>Key Words β-oxidation, peroxisome, biosynthesis, regulation, yeast<lb/></keyword>
+
+	<div type="abstract">s Abstract Long-chain fatty acids are a vital metabolic energy source and are<lb/> building blocks of membrane lipids. The yeast Saccharomyces cerevisiae is a valuable<lb/> model system for elucidation of gene-function relationships in such eukaryotic pro-<lb/>cesses as fatty acid metabolism. Yeast degrades fatty acids only in the peroxisome, and<lb/> recently, genes encoding core and auxiliary enzymes of peroxisomal β-oxidation have<lb/> been identified. Mechanisms involved in fatty acid induction of gene expression have<lb/> been described, and novel fatty acid–responsive genes have been discovered via yeast<lb/> genome analysis. In addition, a number of genes essential for synthesis of the variety<lb/> of fatty acids in yeast have been cloned. Advances in understanding such processes in<lb/> S. cerevisiae will provide helpful insights to functional genomics approaches in more<lb/> complex organisms.<lb/> </div>
+
+	<note type="other">CONTENTS</note>
+
+		</front>
+	</text>
+</tei>

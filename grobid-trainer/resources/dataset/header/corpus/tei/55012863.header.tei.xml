@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012863"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Eucalyptus : A Technical Report on an Elastic Utility Computing Archietcture<lb/> Linking Your Programs to Useful Systems<lb/> UCSB Computer Science Technical Report Number 2008-10<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Daniel Nurmi, Rich Wolski, Chris Grzegorczyk<lb/> Graziano Obertelli, Sunil Soman, Lamia Youseff, Dmitrii Zagorodnov<lb/>
+	</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Computer Science Department<lb/> University of California, </affiliation>
+	</byline>
+
+	<address>Santa Barbara<lb/> Santa Barbara, California 93106<lb/></address>
+
+	<div type="abstract">Abstract<lb/> Utility computing, elastic computing, and cloud<lb/> computing are all terms that refer to the concept of<lb/> dynamically provisioning processing time and storage<lb/> space from a ubiquitous &quot;cloud&quot; of computational re-<lb/>sources. Such systems allow users to acquire and re-<lb/>lease the resources on demand and provide ready ac-<lb/>cess to data from processing elements, while relegating<lb/> the physical location and exact parameters of the re-<lb/>sources. Over the past few years, such systems have<lb/> become increasingly popular, but nearly all current<lb/> cloud computing offerings are either proprietary or<lb/> depend upon software infrastructure that is invisible<lb/> to the research community.<lb/> In this work, we present Eucalyptus, an open-source<lb/> software implementation of cloud computing that uti-<lb/>lizes compute resources that are typically available to<lb/> researchers, such as clusters and workstation farms.<lb/> In order to foster community research exploration of<lb/> cloud computing systems, the design of Eucalyptus em-<lb/>phasizes modularity, allowing researchers to experi-<lb/>ment with their own security, scalability, scheduling,<lb/> and interface implementations. In this paper, we out-<lb/>line the design of Eucalyptus, describe our own im-<lb/>plementations of the modular system components, and<lb/> provide results from experiments that measure perfor-<lb/>mance and scalability of an Eucalyptus installation<lb/> currently deployed for public use.<lb/> The main contribution of our work is the presenta-<lb/>tion of the first research-oriented open-source cloud<lb/> computing system focused on enabling methodical<lb/> investigations into the programming, administration,<lb/> and deployment of systems exploring this novel dis-<lb/>tributed computing model.<lb/></div>
+
+		</front>
+	</text>
+</tei>

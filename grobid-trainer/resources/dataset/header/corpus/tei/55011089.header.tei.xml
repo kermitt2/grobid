@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011089"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>CLATHRATE DESALINATION PLANT<lb/> PRELIMINARY RESEARCH STUDY<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>BY<lb/> Richard A. McCormack<lb/> Richard K. Andersen<lb/></docAuthor>
+	</byline>
+
+	<note type="copyright">&#169; </note>
+
+	<byline>
+	<affiliation>Thermal Energy Storage, Inc.<lb/></affiliation>
+	</byline>
+
+	<address>6335 Ferris Square, Suite E<lb/> San Diego, California 92121<lb/></address>
+
+	<idno>Contract No. 1425-3-CR-81-19520<lb/></idno>
+
+	<note type="other">Water Treatment Technology Program Report No. 5<lb/></note>
+
+	<date>June 1995<lb/></date>
+
+	<note>U.S. DEPARTMENT OF THE INTERIOR<lb/> Bureau of Reclamation<lb/> Technical Service Center<lb/> Water Treatment Engineering and Research Group</note>
+
+		</front>
+	</text>
+</tei>

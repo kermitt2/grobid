@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008934"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Chemistry of Heterocyclic Compounds, VoL 34, No. 3, 1998<lb/></reference>
+
+	<docTitle>
+	<titlePart>REACTION OF DERIVATIVES OF 1,4-DIHYDROPYRIDINE<lb/> WITH THE PEROXYNITRITE ANION<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>G. Tirzitis, E. Kazush, and G. Duburs<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">The reaction of derivatives of 1, 4-dihydropyridine (1, 4-DHP) with peroxynitrite anion is an oxidation reaction;<lb/> no products of nitration were detected. It was found that some 1, 4-DHP increase the lifetime of the<lb/> peroxynitrite anion and the yield of hydroxyl radical in decomposition of the peroxynitrite anion.<lb/> </div>
+	
+	<div type="introduction">The peroxynitrite anion (ONOO-) is a strong oxidant and is formed from nitrogen superoxide and oxide both in model<lb/> systems and in the body [1, 2]. On protonation, the peroxynitrite anion forms unstable peroxynilrous acid (ONOOH) which<lb/> spontaneously decomposes with the formation of hydroxyl radical (HO) and (NO2&quot;) [3]. The physiological role of the<lb/> peroxynitrite anion is not yet clear, but it is a strong bactericidal compound whose intense formation damages surrounding<lb/> tissues in the region of phagoeytosis. The role of the peroxynitrite anion as a participant in the secondary alarm system in the<lb/> cell is discussed in [4].<lb/> 1,4-DHP has radioprotective, antiaggregation, and other types of physiological activity in addition to the well-known<lb/> cardiovascular action [5, 6]. Derivatives of 1,4-DHP not substituted in position 4 are antioxidants [7] and have high reactivity<lb/> with respect to free radicals [8].<lb/> The reaction of some water-soluble derivatives of 1,4-DHP (I), including derivatives of 1,4-dihydroisonicotinic acid,<lb/> with the peroxynitrite anion and the products of this reaction and the effect of derivatives I on the lifetime of the peroxynitrite<lb/> anion and formation of hydroxyl radical from the anion were investigated to study the reactivity of physiologically active<lb/> derivatives of 1,4-DHP with biological oxidants.</div>
+
+		</front>
+	</text>
+</tei>

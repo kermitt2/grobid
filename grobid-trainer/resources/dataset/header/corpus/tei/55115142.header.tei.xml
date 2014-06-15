@@ -1,0 +1,63 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55115142"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<docAuthor>J.P. Shannon<lb/> M.V. Silva<lb/> D.C. Brown<lb/> R.S. Larson<lb/></docAuthor>
+	</byline>
+
+	<note type="other">Authors&apos; af®liations:<lb/></note>
+
+	<byline>
+	<docAuthor>J.P. Shannon, M.V. Silva, D.C. Brown and R.S.<lb/> Larson,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Pathology, University of<lb/> New Mexico Health Science Center,<lb/></affiliation>
+	</byline>
+
+	<address>Albuquerque, USA.<lb/></address>
+
+	<note type="other">Correspondence to:<lb/></note>
+
+	<byline>
+	<docAuthor>Richard Larson<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>UNM Cancer Research Facility,</affiliation>
+	</byline>
+
+	<address>Rm 223<lb/> 2325 Camino de Salud<lb/> Albuquerque<lb/> NM 87112<lb/> USA<lb/></address>
+
+	<phone>Tel.: 1-505-272-9762<lb/> Fax: 1-505-272-5186<lb/> </phone>
+
+	<email>E-mail: rlarson@salud.unm.edu<lb/></email>
+
+	<note type="other">Dates:<lb/></note>
+
+	<note type="submission">Received 4 January 2001<lb/> Revised 15 February 2001<lb/> Accepted 1 March 2001<lb/></note>
+
+	<note type="other">To cite this article:<lb/></note>
+
+	<reference>Shannon, J.P., Silva, M.V., Brown, D.C. &amp; Larson, R.S.<lb/> Novel cyclic peptide inhibits intercellular adhesion<lb/> molecule-1-mediated cell aggregation.<lb/> J. Peptide Res. 2001, 58, 140±150.<lb/></reference>
+
+	<note type="copyright">Copyright Munksgaard International Publishers Ltd, 2001<lb/></note>
+
+	<idno>ISSN 1397±002X<lb/></idno>
+
+	<docTitle>
+	<titlePart>Novel cyclic peptide inhibits<lb/> intercellular adhesion<lb/> molecule-1-mediated cell<lb/> aggregation<lb/></titlePart>
+	</docTitle>
+
+	<keyword>Key words: adhesion; ICAM-1; leukocyte; peptide;<lb/> peptidomimetic<lb/></keyword>
+
+	<div type="abstract">Abstract: Leukocyte adherence mediated by intercellular<lb/> adhesion molecule-1 (ICAM-1) binding to leukocyte function-<lb/>associated antigen (LFA-1) is required for proper in¯ammatory<lb/> and immune function. Inhibition of ICAM-1\LFA-1 binding using<lb/> monoclonal antibodies (mAb) has been shown to be ef®cacious<lb/> at inhibiting lymphoma metastasis as well as leukocyte<lb/> emigration into tissue in a number of in¯ammatory diseases<lb/> such as ischemia±reperfusion injury, septic shock and rheumatoid<lb/> arthritis. In this report, we describe the development and<lb/> characterization of a small peptide antagonist of ICAM-<lb/>1-dependent cell aggregation. By using repeated selection of a<lb/> cyclic nonapeptide phage display library on puri®ed ICAM-1, we<lb/> identi®ed phage that were competitively eluted with anti-ICAM-<lb/>1 mAb. The peptide sequences were determined by nucleotide<lb/> sequencing, and the peptide sequence (C*LLRMRSIC*) (IP01) that<lb/> occurred most frequently was chosen for further study. Phage<lb/> expressing this peptide sequence speci®cally bound ICAM-1 over<lb/> a range of 5310<lb/> 6 to 1310<lb/> 8 phage/mL. A cyclic IP01 peptide,<lb/> linear IP01 peptide, a cyclic nonapeptide with a scrambled IP01<lb/> sequence, and a random, cyclic nonapeptide were synthesized.<lb/> The cyclic and linear IP01 peptides were able to inhibit ICAM-<lb/>1-mediated cell aggregation at a concentration of 1 mM,<lb/> whereas the random and scrambled peptide sequences did not<lb/> alter aggregation. Cyclic IP01 had a half-maximal inhibitory<lb/> concentration of &lt; 970 mM. Cyclic IP01 did not inhibit cellular<lb/> aggregation that was dependent on ICAM-2 or ICAM-3. Alanine<lb/> substitutions in the cyclic IP01 identi®ed at least four amino<lb/> acids necessary for inhibition of ICAM-1 dependent cell<lb/> aggregation; leucine 2, leucine 3, methionine 5, and arginine 6.<lb/> Finally, we showed that cyclic IP01 can inhibit ®rm adhesion of<lb/> neutrophils to endothelium, a critical event in in¯ammatory<lb/> 140</div>
+
+		</front>
+	</text>
+</tei>

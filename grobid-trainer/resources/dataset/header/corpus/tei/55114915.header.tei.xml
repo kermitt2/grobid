@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei type="technical-report">
+	<teiHeader>
+		<fileDesc xml:id="55114915"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>ISSN 0249-6399<lb/></idno>
+
+	<note type="other">apport<lb/> de recherchee<lb/></note>
+
+	<byline>
+	<affiliation>INSTITUT NATIONAL DE RECHERCHE EN INFORMATIQUE ET EN AUTOMATIQUE<lb/></affiliation>
+	</byline>
+
+	<note type="other">N° ????<lb/></note>
+	
+	<date>January 2007<lb/></date>
+
+	<note type="other">Thème XXX<lb/></note>
+
+	<docTitle>
+	<titlePart>Query processing in P2P systems<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Reza Akbarinia, Esther Pacitti, Patrick Valduriez</docAuthor>
+	</byline>
+
+		</front>
+	</text>
+</tei>

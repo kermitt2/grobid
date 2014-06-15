@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008660"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Audio watermarking and partial encryption<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Martin Steinebach<lb/> a , Sascha Zmudzinski<lb/> a , Torsten Bölke<lb/> b<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a Fraunhofer IPSI,</affiliation>
+	</byline>
+
+	<address>64293 Darmstadt, Germany<lb/></address>
+
+	<byline>
+	<affiliation>b University of Magdeburg,</affiliation>
+	</byline>
+
+	<address>39104Magdeburg, Germany<lb/></address>
+
+	<div type="abstract">ABSTRACT Today two technologies are applied when protecting audio data in digital rights management (DRM) environments:<lb/> Encryption and digital watermarking. Encryption renders the data unreadable for those not in the possession of a key<lb/> enabling decryption. This is especially of interest for access control, as usage of the audio data is restricted to those<lb/> owning a key. Digital watermarking adds additional information into an audio file without influencing quality our file<lb/> size. This additional information can be used for inserting copyright information or a customer identity into the audio<lb/> file. The later method is of special interest for DRM as it is the only protection mechanism enabling tracing illegal usage<lb/> to a certain customer even after the audio data has escaped the secure DRM environment. Existing methods combine<lb/> these methods in first embedding the watermark and than encrypting the content. As a more efficient alternative, we<lb/> introduce a combined watermarking and encryption scheme where both mechanisms are transparent to each other. A<lb/> watermark is embedded in and detected from an encrypted or unencrypted file. The watermark also does not influence<lb/> the encryption mechanism. The only requirement for this method is a common key available to both algorithms.<lb/></div>
+
+	<keyword>Keywords: Partial encryption, watermarking, audio protection<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

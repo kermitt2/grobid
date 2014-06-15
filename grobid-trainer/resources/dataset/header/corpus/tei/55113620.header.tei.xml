@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55113620"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note >EUROGRAPHICS  2009</note>
+
+	<byline>
+	<docAuthor>/ P. Alliez and M. Magnor<lb/></docAuthor>
+	</byline>
+
+	<note type="other">Short Paper<lb/></note>
+
+	<docTitle>
+	<titlePart>Depth of Field in Plenoptic Cameras<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>T. Georgiev<lb/> 1 and A. Lumsdaine<lb/> 2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Adobe Systems, Inc.</affiliation>
+	</byline>
+
+	<address>San Jose, CA USA<lb/></address>
+
+	<byline>
+	<affiliation>2 Indiana University,</affiliation>
+	</byline>
+
+	<address>Bloomington, IN USA<lb/></address>
+
+	<div type="abstract">Abstract Certain new algorithms used by plenoptic cameras require focused microlens images. The range of applicability<lb/> of these algorithms therefore depends on the depth of field of the relay system comprising the plenoptic camera. We<lb/> analyze the relationships and tradeoffs between camera parameters and depth of field and characterize conditions<lb/> for optimal refocusing, stereo, and 3D imaging.<lb/></div>
+
+	<keyword>Categories and Subject Descriptors (according to ACM CCS): Image Processing And Computer Vision [I.4.3]:<lb/> Imaging Geometry—<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

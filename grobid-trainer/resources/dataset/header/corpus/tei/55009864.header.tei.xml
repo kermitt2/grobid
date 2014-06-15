@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009864"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>JOURNAL OF BIOSCIENCE AND BIOENGINEERING<lb/> Vol. 87, No. 2, 184-188. 1999<lb/></reference>
+
+	<docTitle>
+	<titlePart>Screening for Yeasts Incorporating the Exogenous Eicosapentaenoic<lb/> and Docosahexaenoic Acids from Crude Fish Oil<lb/>
+	</titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>XU GUO, TAKAKO TOMONAGA, YUMI YANAGIHARA,<lb/> AND YASUHIDE OTA*<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Applied Biochemistry, Faculty of Applied Biological Science, Hiroshima University,<lb/></affiliation>
+	</byline>
+
+	<address>l-4-4 Kagamiyama, Higashi-Hiroshima, Hiroshima 739-8528, Japan<lb/></address>
+
+	<note type="submission">Received 24 July 199WAccepted 17 October 1998<lb/></note>
+
+	<div type="abstract">The screening for yeasts incorporating exogenous eicosapentaenoic acid (EPA) and docosahexaenoic acid<lb/> @HA) into their cellular lipids was conducted. Two percent of oil from fish scraps was added to a yeast isolation<lb/> medium as a sole carbon source. From 143 soil samples, we isolated 23 yeast strains, nine of them were found<lb/> to be capable of quickly assimilating the scrap fish oil. These nine strains, in addition to four previously isolated<lb/> triglyceride-assimilating and lipase-producing strains, Yarrowia lipolytica and three Geotrichum species<lb/> (FO274A, F0347-2 and F04OlB), were cultured in a growth medium at 30°C. Strains F0726A, F0765A and<lb/> F0347-2 were selected on the basis of dry cell weight production and ability to store EPA and DHA in their cells,<lb/> and their performance was further compared by varying cultivation temperature and time. From 1 g of the scrap<lb/> fish oil, F0726A yielded 620 mg of dry cells, containing 47.1% lipid, 38.1% triglyceride, 3.3% EPA, and 4.9%<lb/> DHA, when cultured at 2S&apos;C for 36 h. Strain F0726A apparently has the highest ability to incorporate EPA and<lb/> DHA into its cellular lipids. Results from further experiments showed that the incorporated EPA and DHA<lb/> mainly existed in the form of triglyceride in the F0726A cell. These results suggest that F0726A is suitable for<lb/> the production of cell mass rich in EPA and DHA for feed.<lb/></div>
+
+	<keyword>[Key words: yeast, eicosapentaenoic acid, docosahexaenoic acid, scrap fish oil]<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

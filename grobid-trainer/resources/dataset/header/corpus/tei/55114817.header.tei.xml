@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55114817"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>HyperQueries:<lb/> Dynamic Distributed Query Processing on the Internet *<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Alfons Kemper<lb/> Christian Wiesner<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Universität Passau<lb/> Lehrstuhl für Informatik<lb/></affiliation>
+	</byline>
+
+	<address>94030 Passau, Germany<lb/></address>
+
+	<email>lastname@db.fmi.uni-passau.de<lb/></email>
+
+	<div type="abstract">Abstract<lb/> In this paper we propose a new framework for<lb/> dynamic distributed query processing based<lb/> on so-called HyperQueries which are essen-<lb/>tially query evaluation sub-plans &quot;sitting be-<lb/>hind&quot; hyperlinks. We illustrate the flexibil-<lb/>ity of this distributed query processing archi-<lb/>tecture in the context of B2B electronic mar-<lb/>ket places. Architecting an electronic market<lb/> place as a data warehouse by integrating all<lb/> the data from all participating enterprises in<lb/> one centralized repository incurs severe prob-<lb/>lems. Using HyperQueries, application in-<lb/>tegration is achieved via dynamic distributed<lb/> query evaluation plans. The electronic market<lb/> place serves as an intermediary between clients<lb/> and providers executing their sub-queries ref-<lb/>erenced via hyperlinks. The hyperlinks are em-<lb/>bedded within data objects of the intermedi-<lb/>ary&apos;s database. Retrieving such a virtual object<lb/> will automatically initiate the execution of the<lb/> referenced HyperQuery in order to materialize<lb/> the entire object. Thus, sensitive data remains<lb/> under the full control of the data providers.<lb/></div>
+
+		</front>
+	</text>
+</tei>

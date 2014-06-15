@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei type="presentation">
+	<teiHeader>
+		<fileDesc xml:id="55113817"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<docAuthor>Raj Jain<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>The Ohio State University<lb/></affiliation>
+	</byline>
+
+	<note type="page">1<lb/></note>
+
+	<docTitle>
+	<titlePart>ATM Adaptation Layer<lb/> ATM Adaptation Layer<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Raj Jain<lb/> Professor of Computer and Information Science<lb/></docAuthor>
+	</byline>
+
+	<affiliation>The Ohio State University<lb/></affiliation>
+	
+	<address>Columbus, OH 43210<lb/> </address>
+
+	<email>Jain@CIS.Ohio-State.Edu<lb/></email>
+
+	<ptr type="web">http://www.cis.ohio-state.edu/~jain/</ptr>
+
+		</front>
+	</text>
+</tei>

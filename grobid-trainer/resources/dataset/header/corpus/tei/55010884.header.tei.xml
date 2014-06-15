@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010884"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Control of contact activation on end-point immobilized<lb/> heparin: The role of antithrombin a6d the specific<lb/> antithrombin-binding sequence<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>J. Sanchez,&apos; G. Elgue,&apos; J. Riesenfeld,&apos; and P. Olsson&apos;,*<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>&apos;Division of Experimental Surgery, Department of Surgery, Karolinska Hospital,</affiliation>
+	</byline>
+
+	<address>Stockholm;</address>
+
+	<byline>
+	<affiliation>2Carmeda AB,<lb/></affiliation>
+	</byline>
+
+	<address>Stockholm, Sweden<lb/></address>
+
+	<div type="abstract">The uptake and activation of FXII from blood plasma was<lb/> studied in small-diameter polyethylene tubing, surface-<lb/>modified by end-point immobilization of heparin. Two<lb/> preparations of heparin were used to modify the contact-<lb/>activating properties of the plastic tubing: unfractionated,<lb/> functionally active heparin and low-affinity heparin, lack-<lb/>ing the specific antithrombin-binding sequence and virtu-<lb/>ally devoid of anticoagulant activity. The uptakes of FXII on<lb/> the two heparin surfaces were similar. No activated FXII<lb/> could be demonstrated on the unfractionated heparin sur-<lb/>face, whereas on the low-affinity heparin surface nearly all<lb/> FXII underwent spontaneous activation. The suppression<lb/> of FXII activation on the unfractionated heparin surface was<lb/> investigated by using plasma depleted of antithrombin,<lb/> complement C1 esterase inhibitor, or both. The removal of<lb/> antithrombin resulted in extensive activation of FXII,<lb/> whereas the depletion of C1 esterase inhibitor had only a<lb/> minor effect. Experiments with recalcified plasma showed<lb/> rapid clot formation during exposure to the low-affinity<lb/> heparin surface. After depletion of antithrombin, but not<lb/> complement C1 esterase inhibitor, the recalcified plasma<lb/> clotted in contact with the unfractionated heparin surface<lb/> as well. We conclude that antithrombin and the antithrom-<lb/>bin-binding sequence in the surface-immobilized heparin<lb/> are essential for the prevention of surface activation of FXII<lb/> and triggering of the intrinsic coagulation system. </div>
+
+	<note type="copyright">&#169; 1995<lb/>John Wiley &amp;Sons, Inc.<lb/></note>
+	
+		</front>
+	</text>
+</tei>

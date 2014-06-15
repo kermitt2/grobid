@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Fabian</forename>
+								<surname>Hemmert</surname>,
+							</persName>
+							<persName>
+								<forename>Ulrike</forename>
+								<surname>Gollner</surname>,
+							</persName>
+							<persName>
+								<forename>Matthias</forename>
+								<surname>Löwe</surname>,
+							</persName>
+							<persName>
+								<forename>Anne</forename>
+								<surname>Wohlauf</surname>,
+							</persName>
+							<persName>
+								<forename>Gesche</forename>
+								<surname>Joost</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

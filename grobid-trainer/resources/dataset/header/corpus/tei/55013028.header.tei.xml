@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013028"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Best Practice &amp; Research Clinical Gastroenterology 25 Suppl. 1 (2011) S15–S18<lb/></reference>
+
+	<note type="other">Contents lists available at ScienceDirect<lb/></note>
+	
+	<docTitle>
+	<titlePart>Best Practice &amp; Research Clinical<lb/> Gastroenterology<lb/> 3<lb/></titlePart>
+	</docTitle>
+
+	<docTitle>
+	<titlePart>Novel developments in IBD-related sclerosing cholangitis<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>C.Y. Ponsioen, MD, PhD*<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Dept. of Gastroenterology &amp; Hepatology, Academic Medical Center,</affiliation>
+	</byline>
+
+	<address>P.O. Box 22700, Amsterdam, The Netherlands<lb/></address>
+
+	<keyword>Keywords:<lb/> Primary sclerosing cholangitis<lb/> Novel therapy<lb/> IBD<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

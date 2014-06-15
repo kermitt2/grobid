@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<tei type="supplementary">
+	<teiHeader>
+		<fileDesc xml:id="55114423"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Supporting Information<lb/></note>
+
+	<note type="copyright">&#169;Wiley-VCH 2011<lb/></note>
+
+	<address>69451 Weinheim, Germany<lb/></address>
+
+	<docTitle>
+	<titlePart>Electron-Accepting 6,12-Diethynylindeno[1,2-b]fluorenes: Synthesis,<lb/> Crystal Structures, and Photophysical Properties**
+	<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Daniel T. Chase, Aaron G. Fix, Bradley D. Rose, Christopher D. Weber, Shunpei Nobusue,<lb/> Chelsea E. Stockwell, Lev N. Zakharov, Mark C. Lonergan, and Michael M. Haley*<lb/></docAuthor>
+	</byline>
+
+	<note type="other">anie_201104797_sm_miscellaneous_information.pdf</note>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010379"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Enhancement of the Chemical Resistance of Nitrile Rubber<lb/> by Direct Fluorination<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Yadira Vega-Cantú ,<lb/> 1 Robert Hauge,<lb/> 1 Lewis Norman,<lb/> 2 W. E. Billups<lb/> 1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Rice University, Department of Chemistry,</affiliation>
+	</byline>
+
+	<address>MS-60, P.O. Box 1892, Houston, Texas 77251-1892<lb/></address>
+
+	<byline>
+	<affiliation>2 Halliburton Energy Services, Research Center,</affiliation>
+	</byline>
+
+	<address>2600 South 2nd Street, P.O. Box 1431, Duncan, Oklahoma 73536-0442<lb/></address>
+
+	<note type="submission">Received 26 April 2002; accepted 1 October 2002<lb/></note>
+
+	<div type="abstract">ABSTRACT: Nitrile rubber (NBR), poly(acrylonitrile-co-<lb/>butadiene) or NBR packers, are used to seal oil-well tubing,<lb/> where they often come into contact with ZnBr 2 brines at high<lb/> temperatures and pressures. Under these conditions, NBR<lb/> exhibits accelerated chemical degradation, which results in<lb/> embrittlement and cracking. Although alternative flu-<lb/>oropolymers exhibit excellent chemical resistance, their<lb/> strength is less than NBR, and replacement of the usual<lb/> gasket materials with fluoroelastomers is expensive. We<lb/> have demonstrated that a fluoropolymer surface on a nitrile<lb/> elastomer provides the necessary chemical resistance while<lb/> the elastomer retains strength. This can be achieved by direct<lb/> fluorination, a rather easy and inexpensive process. Samples<lb/> of NBR O-rings were fluorinated by exposure to F 2 and<lb/> F 2 /HF mixtures at various temperatures. Although fluori-<lb/>nation by F 2 produced the desired fluoropolymer layer,<lb/> fluorination by F 2 /HF (hydrofluoric acid) mixtures gave a<lb/> smoother fluorinated layer at lower temperatures and<lb/> shorter reaction times. Elemental analysis showed that the<lb/> fluorinated layer eliminated ZnBr 2 diffusion into the NBR<lb/> polymeric matrix. Surface fluorination also significantly re-<lb/>tarded the loss of the mechanical properties of NBR when it<lb/> was exposed to zinc bromide fluid.</div>
+
+	<note type="copyright">© 2003 Wiley Periodicals,<lb/> Inc. </note>
+
+	<reference>J Appl Polym Sci 89: 971–979, 2003<lb/></reference>
+
+	<keyword>Key words: elastomers; fluoropolymers; mechanical proper-<lb/>ties<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

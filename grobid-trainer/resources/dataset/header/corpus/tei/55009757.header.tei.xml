@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009757"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">M i s s i o n<lb/> C r i t i c a l<lb/> S y s t e m s<lb/> f o r<lb/> H e a l t h c a r e<lb/> a n d<lb/> D e f e n c e<lb/></note>
+
+	<docTitle>
+	<titlePart>Towards Binary XML<lb/> for Military Messaging<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Bjørn Reese<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Systematic Software Engineering A/S<lb/></affiliation>
+	</byline>
+
+	<note type="other">Approved for Public Release</note>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012603"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>CS315A: Final Project<lb/> CUDA WUDA SHUDA:<lb/> CUDA Compression Project<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Leiwen Wu, Mark Storus, David Cross<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Stanford University<lb/></affiliation>
+	</byline>
+
+	<date>March 17, 2009<lb/></date>
+
+	<note type="page">1<lb/></note>
+
+	<div type="abstract">ABSTRACT The goal of this project was to explore the potential performance improvements that could be gained through the use<lb/> GPU processing techniques within the CUDA architecture for several different types of compression algorithms.<lb/> The choice of compression algorithms as the focus was based on examples of data level parallelism found within the<lb/> algorithms and a desire to explore the effectiveness of cooperative algorithm management between the system CPU<lb/> and an available GPU.<lb/> The specific algorithms ported to the CUDA architecture included JPEG, Vorbis audio encoding and lossless data<lb/> compression. Lossless data compression was chosen as being distinctly unique from libjpeg and Vorbis in that both<lb/> of these are lossy compression techniques. JPEG compression was considered distinct from audio in that the<lb/> encoding concepts and transforms used differed significantly enough to contain divergent opportunities for<lb/> exploitation of data level parallelism and vector processing.<lb/>
+	</div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001881"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>VIRAL IMMUNOLOGY<lb/> Volume 9, Number 2, 1996<lb/>Mary Ann Lieben, Inc.<lb/>Pp. 73-87<lb/></reference>
+
+	<docTitle>
+	<titlePart>Anti-idiotypic Antibody to the V3 Domain of gpl20<lb/> Binds to Vimentin: A Possible Role of Intermediate<lb/> Filaments in the Early Steps of HIV-1 Infection Cycle<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>ELAINE KINNEY THOMAS,1&apos;2 ROBERTA J. CONNELLY,1<lb/> SRIDHAR PENNATHUR,1 LARISA DUBROVSKY,3 OMAR K. HAFFAR,1 and<lb/> MICHAEL I. BUKRINSKY3<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">ABSTRACT<lb/> Although the CD4 molecule is the major cellular receptor for human immunodeficiency virus<lb/> (HIV), several lines of evidence suggest participation of additional molecules that are en-<lb/>gaged after the binding of HIY to the CD4 receptor and that may facilitate viral entry into<lb/> the target cell. Some of the post-CD4 binding, prefusion events involve the third hypervari-<lb/>able region (V3 loop) of the viral envelope protein gpl20. To identify cellular proteins that<lb/> interact with the V3 loop, we chose as a probe an antiidiotypic monoclonal antibody (MAb),<lb/> anti-id2, which was prepared against the neutralizing MAb 110.4 that binds the V3 domain<lb/> in the envelope glycoprotein gpl20 of the LAI isolate of HIV-1. Anti-id2 reacted specifically<lb/> with a 55-to 60-kDa protein in human T cell and monocytoid cell lines, and in a mouse<lb/> melanoma cell line. This protein was identified immunologically and by protein sequence<lb/> analysis as vimentin, an intermediate filament protein of lymphoid and other cells of meso-<lb/>dermal origin. Antiserum raised against vimentin inhibited nuclear translocation of HIV-1<lb/> DNA following infection of monocytes and CD4+ T cells with live virus, and reduced the<lb/> amount of HIV-1 gag-specific RNA in the nuclei of monocytes following inoculation with<lb/> HIV-1 pseudovirions. These data suggest that vimentin may participate in the early steps of<lb/> HIV-1 replication, perhaps during the uptake of HIV-1 preintegration complexes into the<lb/> nuclear compartment.<lb/></div>
+
+	<div type="introduction"> INTRODUCTION</div>
+
+		</front>
+	</text>
+</tei>

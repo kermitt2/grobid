@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008468"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>DESIGN AND PILOT TEST OF A BAR CODE SYSTEM<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">L.-<lb/></note>
+
+	<docTitle>
+	<titlePart>FOR INVENTORY CONTROL<lb/></titlePart>
+	</docTitle>
+
+	<note type="page">1<lb/></note>
+
+	<note type="other">A Thesis Presented to<lb/></note>
+	
+	<byline>
+	<affiliation>The Faculty of the College of Engineering and Technology<lb/> Ohio University<lb/></affiliation>
+	</byline>
+
+	<note type="degree">In Partial Fulfillment<lb/> of the Requirements for the Degree<lb/> Master of Science<lb/></note>
+
+	<byline>
+	<docAuthor>by<lb/> Jorge Salcedo,<lb/> </docAuthor>
+	</byline>
+
+	<note type="other">~ u ~ u s i ;<lb/></note>
+
+	<date>1990</date>
+
+		</front>
+	</text>
+</tei>

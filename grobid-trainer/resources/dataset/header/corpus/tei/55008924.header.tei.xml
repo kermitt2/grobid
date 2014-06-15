@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008924"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>A Unique Combination Of Superior Performance, Size &amp; Cost<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">A unique solution for high performance, high-speed 2-way broadband communication,<lb/> Orbit Marine&apos;s AL-7103 antenna ensures superior quality connectivity for comprehensive<lb/> on-board communication and entertainment applications. With an exclusive mechanical<lb/> design, compact dimensions, no &apos;keyholes&apos; for continuous zenith-horizon communications<lb/> and built-in RF package of 4/8W BUC, Orbit&apos;s turnkey AL-7103 solution provides<lb/> up to 1-2 Mbps in an unmatched performance:cost ratio.<lb/></div>
+
+		</front>
+	</text>
+</tei>

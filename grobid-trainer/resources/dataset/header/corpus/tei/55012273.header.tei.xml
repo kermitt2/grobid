@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012273"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<ptr>www.analytik-news.de<lb/></ptr>
+
+	<date type="publication">Publikationsdatum: 18.12.2009<lb/></date>
+
+	<docTitle>
+	<titlePart>Niedrigfeld-NMR als Werkzeug in der (industriellen) Analytik<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Dr. habil. Nikolaus Nestle<lb/> </docAuthor>
+	</byline>
+	
+	<byline>
+	<affiliation>BASF SE Ludwigshafen, Abteilung Polymerphysik GKP/R, </affiliation>
+	</byline>
+
+	<address>67056 Ludwigshafen<lb/></address>
+
+	<div type="introduction">In den mittlerweile über 60 Jahren seit der Entdeckung der kernmagnetischen Resonanz (Nuclear<lb/> Magnetic Resonance, NMR) ist die hochauflösende NMR-Spektroskopie eines der wichtigsten<lb/> Verfahren zur Struktur-Aufklärung von Molekülen in Lösung geworden und die Magnetresonanz-<lb/>Tomographie hat sich als ein unverzichtbares abbildendes Diagnose-Verfahren in der Medizin<lb/> etabliert. Gemeinsam sind beiden Methoden raumfüllende High-Tech-Apparaturen mit<lb/> supraleitenden Magneten, die mit hohen Kosten in Anschaffung und Unterhalt verbunden sind.<lb/> Diese Methoden haben einen wesentlich unbekannteren &quot;kleinen Bruder&quot; – die Niedrigfeld-NMR.<lb/> Hier sind bereits seit einiger Zeit kleine, vergleichsweise robuste und kostengünstige Geräte am<lb/> Markt erhältlich, die mit Permanentmagneten arbeiten und allenfalls tischfüllend sind. In der<lb/> aktuellen kommerziell erhältlichen Geräte-Generation erlauben diese Geräte keine spektrale<lb/> Auflösung, sondern lediglich die Messung von Relaxationszeiten. Neue Entwicklungen [1] lassen<lb/> noch kleinere, leichtere Geräte und zumindest rudimentäre spektroskopische Auflösung erwarten.<lb/> In diesem Beitrag sollen die analytischen Möglichkeiten vorgestellt werden, die sich bereits ohne<lb/> spektrale Auflösung ergeben. Wegen der besonders guten NMR-Sensitivitäten wird in der<lb/> Niedrigfeld-NMR typischerweise mit Wasserstoffkernen (Protonen) und in einigen wenigen Fällen<lb/> auch mit 19 F gearbeitet. Analytisch relevante Informationen können aus den Kernspin-<lb/>Relaxationszeiten sowie aus den zugehörigen Signal-Amplituden gewonnen werden. Da die<lb/> Bestimmung der Relaxationszeiten durch die Analyse der NMR-Signale in der Zeitdomäne anstatt<lb/> wie bei der NMR-Spektroskopie in der Frequenzdomäne erfolgt, spricht man auch von Time-<lb/>Domain NMR (TD-NMR). Die Kernspin-Relaxation wird durch die longitudinale Relaxationszeit<lb/> (Spin-Gitter-Relaxationszeit) T 1 beschrieben, die die Rückkehr eines angeregten Kernspinsystems<lb/> ins thermische Gleichgewicht charakterisiert und durch die transversale Relaxationszeit (Spin-<lb/>Spin-Relaxationszeit) T 2 , die beschreibt, wie lange nach einer NMR-Anregung ein Signal detektiert<lb/> werden kann. Beide Relaxationszeiten hängen in einer charakteristischen Weise von der lokalen<lb/> Beweglichkeit der molekularen Umgebung der Kernspins ab, die mittels einer Korrelationszeit τ<lb/> beschrieben werden kann. Dies ist qualitativ in Abbildung 1 skizziert. Neben der molekularen<lb/> Beweglichkeit können auch andere Einflußgrößen wie zum Beispiel die Anwesenheit von<lb/> paramagnetischen Substanzen die Relaxationszeiten (insbesondere T 1 ) beeinflussen. Auch diese<lb/> Abhängigkeit kann analytisch ausgenutzt werden [2]. Vielseitiger anwendbar ist allerdings die<lb/> Abhängigkeit der transversalen Relaxationszeit T 2 von der molekularen Beweglichkeit, wie sie in<lb/> Abbildung 1 skizziert ist. Diese Abhängigkeit verläuft monoton, so daß sie als eine Art qualitatives<lb/> molekulares Rheometer betrachtet werden kann. Die T 2 -Zeiten in einer niederviskosen Flüssigkeit<lb/> </div>
+
+	<note type="page">-1-</note>
+
+		</front>
+	</text>
+</tei>

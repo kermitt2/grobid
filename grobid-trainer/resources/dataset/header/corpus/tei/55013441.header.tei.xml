@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013441"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note>B-6071<lb/> 5-98<lb/></note>
+
+	<div type="abstract">A Guide to the Use of<lb/> Trichogramma for Biological<lb/> Control with Special Reference<lb/> to Augmentative Releases for<lb/> Control of Bollworm and<lb/> Budworm in Cotton<lb/> </div>
+	
+	<docTitle>
+	<titlePart>THE TRICHOGRAMMA<lb/> MANUAL</titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

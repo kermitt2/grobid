@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010880"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Extracting Statistical Loop-Level Parallelism using Hardware-Assisted Recovery<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Steven A. Lieberman, Hongtao Zhong, and Scott A. Mahlke<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Advanced Computer Architecture Laboratory<lb/> University of Michigan -</affiliation>
+
+	<docAuthor>Ann Arbor<lb/></docAuthor>
+	</byline>
+
+	<email>{lieberm,hongtaoz,mahlke}@umich.edu<lb/></email>
+
+	<div type="abstract">Abstract<lb/> Chip multiprocessors with multiple simpler cores are<lb/> gaining popularity because they have the potential to drive<lb/> future performance gains without exacerbating the problems<lb/> of power dissipation and hardware complexity. These de-<lb/>signs provide real benefits for server-class applications that<lb/> are explicitly multi-threaded. However, for desktop and other<lb/> systems, there is a large code base of single-thread appli-<lb/>cations that have yet to see any benefit from multicore sys-<lb/>tems. While these applications were designed for execu-<lb/>tion on a single processor, many regions of computation<lb/> have statistically suitable structure for extracting thread-<lb/>level parallelism. In this work, we examine automatic extrac-<lb/>tion of statistical loop-level parallelism from single-thread<lb/> applications. Our approach is to utilize simple hardware<lb/> mechanisms combined with intelligent compiler code gen-<lb/>eration to perform low-cost targeted thread-level specula-<lb/>tion. Our technique combines memory dependence profil-<lb/>ing to identify suitable loops, stylized code generation to un-<lb/>tangle register dependences between iterations, and a hybrid<lb/> compiler/hardware recovery mechanism to handle infrequent<lb/> memory dependences. We show that significant amounts of<lb/> statistical loop-level parallelism indeed exist in non-numeric<lb/> applications, and present the architectural extensions and<lb/> detailed compiler algorithms required to exploit it.<lb/></div>
+
+		</front>
+	</text>
+</tei>

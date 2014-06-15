@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Seiichiro</forename>
+								<surname>NAGAI</surname>
+								<marker>&apos;</marker>,
+							</persName>
+							<persName>
+								<forename>Tadashi</forename>
+								<surname>MA13UCH1</surname>
+								<marker>2</marker>,
+							</persName>
+							<persName>
+								<forename>Shuji</forename>
+								<surname>HIRATA</surname>
+								<marker>&apos;</marker>,
+							</persName>
+							<persName>
+								<forename>Tomoko</forename>
+								<surname>SHODA</surname>
+								<marker>&apos;</marker>,
+							</persName>
+							<persName>
+								<forename>Tsuyoshi</forename>
+								<surname>KASAI</surname>
+								<marker>&apos;</marker>,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Sadaki</forename>
+								<surname>YOKOTA</surname>
+								<marker>3</marker> ,
+							</persName>
+							<persName>
+								<forename>Hiroshi</forename>
+								<surname>SHITARA</surname>
+								<marker>4</marker> ,
+							</persName>
+							<persName>
+								<forename>Hiromichi</forename>
+								<surname>YONEKAWA</surname>
+								<marker>4</marker> ,
+							</persName>
+							<persName>
+								<forename>Kazuhiko</forename>
+								<surname>HOSHI </surname>
+								<marker>&apos;</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

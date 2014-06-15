@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009659"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">1 2<lb/> 3 4<lb/> 5 6<lb/> 7<lb/> 8 9<lb/> 10<lb/></note>
+
+	<docTitle>
+	<titlePart>HT MAC Specification<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">11<lb/> 12 13<lb/> </note>
+
+	<byline>
+	<affiliation>Enhanced Wireless Consortium publication<lb/> </affiliation>
+	</byline>
+		
+	<note type="other">14 15<lb/> 16 17<lb/> 18 19<lb/> 20 21<lb/> 22 23<lb/> 24 25<lb/> 26 27<lb/> 28 29<lb/> 30 31<lb/> 32 Version V1.24<lb/> 33</note>
+
+		</front>
+	</text>
+</tei>

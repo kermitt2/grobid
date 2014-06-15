@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008443"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Towards Linking Virtual Models with Physical Objects in Construction<lb/> using RFID -Review of Ontologies<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Kristian Birch Sørensen<lb/> 1<lb/> , Per Christiansson<lb/> 2<lb/> , Kjeld Svidt<lb/> 3<lb/> , Kim Jacobsen<lb/> 4<lb/> , Thomas Simoni<lb/> 5<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">ABSTRACT Virtual models have in recent years proven their worth in practice relating to building design. Today<lb/> virtual models of the complete project are created before the project is carried out in practice. The<lb/> immediate advantages of this are great; it introduces fewer errors, gives a better production basis,<lb/> improved clarity and enhanced communication methods compared to traditional 2D drafting<lb/> methods. However, there is still much unutilized potential in the virtual models, especially in the<lb/> construction and operation phases. It is expected that a digital link between the virtual models and<lb/> the physical objects in the construction process can improve the information and knowledge<lb/> handling from design to construction, operation and maintenance. The link can be created by use of<lb/> Radio Frequency Identification (RFID) technology. This paper describes a review and assessment<lb/> of existing ontologies relevant in relation to creating this link. The ontologies are categorised<lb/> according to their applicability to specify technical services, resources, organisational relations,<lb/> business processes and overall frameworks for ontology descriptions and their relations. It is<lb/> concluded that, with few modifications the technical service and resource ontologies are applicable<lb/> for industrial use and the meta, organisational and business process ontologies needs further<lb/> development and industrial maturity to be applicable.<lb/></div>
+
+	<keyword>KEYWORDS:<lb/> Virtual Models, RFID, Ontologies, Project Progress Management, Ubiquitous Computing<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

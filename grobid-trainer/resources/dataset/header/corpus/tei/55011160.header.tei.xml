@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011160"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>RTO-MP-HFM-149<lb/></reference>
+
+	<note type="page">5 -1<lb/></note>
+
+	<docTitle>
+	<titlePart>Gene Expression Profiles of Vesicant-Induced Skin Injury<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>D.R. Gerecke<lb/> 1<lb/> , C.L.K. Sabourin<lb/> 2<lb/> , Y.C. Chang<lb/> 1<lb/> , J.D. Laskin<lb/> 1<lb/> , M.K. Gordon<lb/> 1<lb/> , and R.P. Casillas<lb/> 2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 CounterAct Research Center of Excellence<lb/> UMDNJ/Robert Wood Johnson Medical School and Rutgers University<lb/> EOHSI,</affiliation>
+	</byline>
+
+	<address>Piscataway, NJ, USA<lb/></address>
+
+	<byline>
+	<affiliation>2 Battelle Biomedical Research Center,</affiliation>
+	</byline>
+
+	<address>Columbus, Ohio<lb/></address>
+
+	<byline>
+	<affiliation>Department of Pharmacology &amp; Toxicology, Rutgers University<lb/> EOHSI Building,</affiliation>
+	</byline>
+
+	<address>170 Frelinghuysen Road<lb/> Piscataway, New Jersey 08854, USA<lb/></address>
+
+	<email>Gerecke@eohsi.rutgers.edu<lb/></email>
+
+	<div type="abstract">ABSTRACT<lb/> Cutaneous exposure to sulfur mustard [bis-(2-chloroethyl)-sulfide; SM, HD] results in characteristic blister<lb/> formation in the exposed skin. The blister is not immediate, but develops within the first 24 hours after SM<lb/> exposure. During this period there is a marked inflammatory response that involves a variety of cell types<lb/> including neutrophils, macrophages, T-cells, B-cells, and fibroblasts. Skin from mice exposed to a high level<lb/> (0.08 mg) of SM was collected at early (6, 12, and 24 h post exposure) or late (72 and 168 h post exposure)<lb/> time intervals, the RNA isolated, and analyzed for gene expression analysis by the Affymetrix Murine high-<lb/>density oligonucleotide array (46K genes and ESTs). Expression of more than 1000 independent mRNAs was<lb/> upregulated greater than 2-fold in a minimum of one of the five timepoints in SM-exposed skin. Data was<lb/> organized into four major groups based on cluster analysis: 1) those mRNAs with a 2-fold increase beginning<lb/> within 24 h and persisting throughout the study; 2) those mRNAs with a 2-fold increase within 24 h that<lb/> became down-regulated in at least one of the later timepoints; 3) those mRNAs with a 2-fold increase starting<lb/> at 72 h; 4) those mRNAs with a 2-fold increase starting at 168 hr. The mRNAs induced by sulfur mustard were<lb/> organized into biological functions such as transcription factors, inflammatory factors, biosynthesis<lb/> molecules, inducers of apoptosis, etc. Selected mRNAs from each category were analyzed by quantitative RT-<lb/>PCR for microarray verification and to identify potential biomarkers of chemical injury. The results provide a<lb/> further understanding of cutaneous SM exposure and identify other potential diagnostic markers of and<lb/> therapeutic targets for treating exposure to SM.<lb/></div>
+
+		</front>
+	</text>
+</tei>

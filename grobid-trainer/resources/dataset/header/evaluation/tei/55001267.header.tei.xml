@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001267"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Coevaporation of Cu 2 ZnSnSe 4 thin films<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Alex Redinger<lb/> a͒ and Susanne Siebentritt<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Laboratoire de photovoltaique, Université du Luxembourg,</affiliation>
+	</byline>
+
+	<address>41, rue du Brill, L-4422 Belvaux, Luxembourg<lb/></address>
+
+	<note type="submission">͑Received 1 June 2010; accepted 1 August 2010; published online 2 September 2010͒<lb/></note>
+
+	<div type="abstract">Cu 2 ZnSnSe 4 thin films grown by coevaporation are investigated in a wide temperature range and for<lb/> different Se partial pressures during growth. At temperatures higher than 350 ° C Sn is<lb/> re-evaporating as SnSe from the surface whereas Zn is lost at temperatures higher than 430 ° C.<lb/> Moreover the Se partial pressure dramatically changes the Zn and Sn concentrations in the resulting<lb/> film. Interrupted processes at 380 ° C show that single-stage coevaporation intrinsically induces a<lb/> secondary phase at the substrate/film interface. </div>
+	
+	<note type="copyright">© 2010 American Institute of Physics.<lb/></note>
+
+	<idno type="DOI"> ͓doi:10.1063/1.3483760͔<lb/> </idno>
+
+	<div type="introduction">The compound semiconductors Cu 2 ZnSnSe 4 ͑CZTSe͒<lb/> and Cu 2 ZnSnS 4 ͑CZTS͒ are promising candidates for the<lb/> next generation thin film solar cells. Compared to the current<lb/> high efficiency thin film solar cells Cu͑In, Ga͒Se 2 and CdTe<lb/> they are composed of elements with a higher abundance in<lb/> the Earth crust and a reduced toxicity.<lb/> A prerequisite for high efficiency solar cells is the<lb/> growth of single phase material which, according to theoret-<lb/>ical calculations is very demanding. The chemical potential<lb/> region for stable single phase material without unwanted sec-<lb/>ondary or ternary phases is very small.<lb/></div>
+
+		</front>
+	</text>
+</tei>

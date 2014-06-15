@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013294"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note>ACTES / PROCEEDINGS<lb/> ISEA2000 – </note>
+	
+	<date>10/12/2000</date> 
+	
+	<note>-AUDITORIUM<lb/></note>
+
+	<note type="page">1<lb/></note>
+
+	<docTitle>
+	<titlePart>DANCE SPACE : AN INTERACTIVE VIDEO INTERFACE<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>BY FLAVIA SPARACINO<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Abstract<lb/> In dance, we have conducted research towards musical and graphical augmentation of<lb/> human movement. We have built DanceSpace: a stage in which music and graphics are<lb/> generated on the fly by the dancer&apos;s movements. A small set of musical instruments is<lb/> virtually attached to the dancer&apos;s body and generates a melodic soundtrack in tonal<lb/> accordance with a soft background musical piece. Meanwhile, the performer projects<lb/> graphics onto a large backscreen using the body as a paint brush. In this context, the<lb/> computer&apos;s role is that of an assistant choreographer: the system is able to improvise a<lb/> soundtrack and a visual accompaniment while the performer is creating or rehearsing a piece<lb/> using their body as the interface. This is a great advantage when the choreographer wishes<lb/> to create a dance performance based on the pure expression of body movements, and not<lb/> by following a pre-chosen musical score.</div>
+
+		</front>
+	</text>
+</tei>

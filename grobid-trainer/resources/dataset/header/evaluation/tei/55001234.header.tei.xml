@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001234"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>FXT1 Texture Compression Technology White Paper<lb/> By 3dfx Interactive<lb/> </titlePart>
+	</docTitle>
+
+	<div type="abstract">Introduction:</div>
+
+		</front>
+	</text>
+</tei>

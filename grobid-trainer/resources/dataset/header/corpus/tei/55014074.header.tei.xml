@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014074"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>CMOS front-end for the MDT sub-detector in the ATLAS Muon Spectrometer -<lb/>development and performance<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>C. Posch<lb/> 1 , S. Ahlen<lb/> 1 , E. Hazen<lb/> 1 , J. Oliver<lb/> 2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Boston University, Physics Department,</affiliation>
+	</byline>
+
+	<address>Boston, USA<lb/></address>
+
+	<byline>
+	<affiliation>2 Harvard University, Department of Physics,</affiliation>
+	</byline>
+
+	<address>Cambridge, USA<lb/></address>
+
+	<div type="abstract">Abstract<lb/> Development and performance of the final 8-channel<lb/> front-end for the MDT segment of the ATLAS Muon<lb/> Spectrometer is presented. This last iteration of the read-<lb/>out ASIC contains all the required functionality and meets<lb/> the design specifications. In addition to the basic<lb/> &quot;amplifier-shaper-discriminator&quot;-architecture, MDT-ASD<lb/> employs a Wilkinson ADC within each channel for<lb/> precision charge measurements on the leading fraction of<lb/> the muon signal. The data will be used for discriminator<lb/> time-walk correction, thus enhancing the spatial resolution<lb/> of the tracker, and for chamber performance monitoring<lb/> (gas gain, ageing etc.). It was also demonstrated that this<lb/> data can be used for performing particle identification via<lb/> dE/dX. A programmable pulse injection system which<lb/> allows for automated detector calibration runs was<lb/> implemented on the chip. Results of performance and<lb/> functionality tests on prototype ASICs, both in the lab and<lb/> on-chamber, are presented.<lb/></div>
+
+		</front>
+	</text>
+</tei>

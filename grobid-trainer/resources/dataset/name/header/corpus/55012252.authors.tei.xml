@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Adrian</forename>
+								<surname>Agustin</surname>,
+							</persName>
+							<persName>
+								<forename>Josep</forename>
+								<surname>Vidal</surname>,
+							</persName>
+							<persName>
+								<forename>Olga</forename>
+								<surname>Muñoz</surname> (UPC),
+							</persName>
+							<persName>
+								<forename>Sebastien</forename>
+								<surname>Simoens</surname>,
+							</persName>
+							<persName>
+								<forename>Patrick</forename>
+								<surname>Labbe</surname> (MOT),
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Reza</forename>
+								<surname>Hoshyar</surname> ,
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,50 @@
+<?xml version="1.0" ?>
+<tei type="serie-article">
+	<teiHeader>
+		<fileDesc xml:id="55113682"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Ultra-responsive thermal sensors for the detection of<lb/> explosives using Calorimetric Spectroscopy (CaiSpec)<lb/>
+	</titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>a s Rajic and b p.G. Datskos<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Oak Ridge National Laboratory<lb/></affiliation>
+	</byline>
+
+	<address>Oak Ridge, TN 37831<lb/></address>
+
+	<byline>
+	<docAuthor>C I. Datskou<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Environmental Engineering Group, Inc.<lb/></affiliation>
+	</byline>
+
+	<address>Knoxville, TN 37931<lb/></address>
+
+	<byline>
+	<docAuthor>d TA Marlar<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>CTI, Inc.<lb/></affiliation>
+	</byline>
+
+	<address>Knoxville TN 37922<lb/></address>
+
+	<div type="abstract">ABSTRACT<lb/> We have developed a novel chemical detection technique based on infrared micro-calorimetric spectroscopy that can be used<lb/> to identify the presence of trace amounts of very low vapor pressure target compounds. Unlike numerous recently developed<lb/> low-cost sensor approaches, the selectivity is derived from the unique differential temperature spectrum and does not require the<lb/> questionable reliability ofhighly selective coatings to achieve the required specificity. This is accomplished by obtaining the<lb/> infrared micro-calorimetric absorption spectrum of a small number of molecules absorbed on the surface of a thermal detector<lb/> after illumination through a scanning monochromator. We have obtained infrared micro-calorimetric spectra for explosives such<lb/> as TNT over the wavelength region 2.5 to 14.5 j.tm. Thus both sophisticated and relatively crude explosives compounds and<lb/> components are detectable with this technique due to the recent development of ultra sensitive thermal-mechanical micro-<lb/>structures. In addition to the above mentioned spectroscopy technique and associated data, the development ofthese advanced<lb/> thermal detectors is also presented in detail.<lb/></div>
+
+	<keyword>Keywords: calorimetric spectroscopy, thermo-mechanical, bi-material, penta-lever<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

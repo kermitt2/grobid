@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009046"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>IJCSNS International Journal of Computer Science and Network Security, VOL.10 No.9, September 2010<lb/> </reference>
+	
+	<note type="page">62<lb/></note>
+
+	<note type="submission">Manuscript received September 5, 2010<lb/> Manuscript revised September 20, 2010<lb/></note>
+
+	<docTitle>
+	<titlePart>A Study on the MOST150/Ethernet Gateway of In-Vehicle<lb/> Network<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Jong-Wook Jang<lb/> , Chang-Young Kim<lb/> , Yun-Sik Yu</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Computer Engineering Dong-Eui University,</affiliation>
+	</byline>
+
+	<address>Busan, Korea<lb/></address>
+
+	<byline>
+	<affiliation>Convergence of IT Devices Institute Busan,</affiliation>
+	</byline>
+
+	<address>Busan, Korea<lb/></address>
+
+	<byline>
+	<affiliation>Department of Radiological Science Dong-Eui University,</affiliation>
+	</byline>
+
+	<address>Busan, Korea<lb/></address>
+
+	<div type="abstract">Summary<lb/> As demands increase for the Infotainment System, the<lb/> Multimedia Networking technology for automobile, called<lb/> MOST(Media Oriented Systems Transport), has been actively<lb/> applied to the automobile industry, to meet the demands of the<lb/> Infotainment System. The MOST25 network technology is being<lb/> restrictively equipped with some of the car models but the<lb/> problems with bandwidth and compatibility has arisen. In order<lb/> to solve this, the MOST150 technology has been developed and<lb/> further research is being carried out to apply the technology to<lb/> the automobile industry. Thus, for the effective process of the<lb/> Ethernet traffic in the realization of MOST150/Ethernet Gateway<lb/> for automobile, we, in the research, shall analyse the QoS<lb/> Management Mapping method, including the MOST150&apos;s<lb/> Isochronous channel, the MOST Ethernet Packet Channel, and<lb/> etc. and study the efficient algorithm.<lb/></div>
+
+	<keyword>Key words:<lb/> Vehicle Network, MOST , Gateway, QoS Algorithms, Ethernet,<lb/> IntServ, DiffServ, OPNET<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

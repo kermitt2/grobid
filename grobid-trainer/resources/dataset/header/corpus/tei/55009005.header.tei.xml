@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009005"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">1<lb/> </note>
+	
+	<note type="other">AVSEC World </note>
+	
+	<date>2004, November 3-5, </date>
+	
+	<address>Vancouver, B.C., Canada<lb/></address>
+
+	<docTitle>
+	<titlePart>Increasing Efficiency in Airport Security Screening<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Dr. Adrian Schwaninger<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Psychology<lb/> University of Zurich, Switzerland<lb/></affiliation>
+	</byline>
+
+	<ptr type="web">www.psychologie.unizh.ch/vicoreg<lb/></ptr>
+
+	<div type="abstract">Abstract. The prominence of aviation security has increased<lb/> dramatically in recent years. As a reaction to the new threat situation<lb/> large investments into modern security technology have been made.<lb/> State-of-the-art X-ray screening equipment provides high resolution<lb/> images, many image enhancement features and even automatic<lb/> explosive detection. However, the most expensive equipment is of<lb/> limited value if the humans who operate it are not selected and<lb/> trained to perform their task accurately and efficiently. In fact,<lb/> according to several experts, the human operator is currently the<lb/> weakest link in aviation security. This article presents results of<lb/> studies conducted over the last four years which clearly show that<lb/> threat detection in X-ray images can be increased substantially by<lb/> investing into human factors technologies that are based on results of<lb/> visual cognition, object recognition and psychophysics.<lb/></div>
+
+		</front>
+	</text>
+</tei>

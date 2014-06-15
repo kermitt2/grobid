@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55114318"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>A review of technologies for sensing contact location on the surface of a display<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Geoff Walker (SID Member)<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Abstract — Touchscreen interactive devices have become increasingly important in both consumer and<lb/> commercial applications. This paper provides a broad overview of all touchscreen technologies in use<lb/> today, organized into 13 categories with 38 variations. The 13 categories are projected capacitive, analog<lb/> resistive, surface capacitive, surface acoustic wave, infrared, camera-based optical, liquid crystal display<lb/> in-cell, bending wave, force sensing, planar scatter detection, vision-based, electromagnetic resonance,<lb/> and combinations of technologies. The information provided on each touchscreen technology includes a<lb/> little history, some basic theory of operation, the most common applications, the key advantages and<lb/> disadvantages, a few current issues or trends, and the author&apos;s opinion of the future outlook for the<lb/> technology. Because of its dominance, this paper begins with projected capacitive; more information is<lb/> provided on this technology than on any of the other touch technologies that are discussed. This paper<lb/> covers only technologies that operate by contact with a display screen; this excludes technologies such<lb/> as 3D gesture recognition, touch on opaque devices such as interactive whiteboards, and proximity<lb/> sensing. This is not a highly technical paper; it sacrifices depth of information on any one technology for<lb/> breadth of information on multiple technologies.<lb/></div>
+
+	<keyword>Keywords — touch technologies; touchscreen; touch panel; projected capacitive; in-cell; on-cell.<lb/></keyword>
+
+	<idno type="DOI">DOI # 10.1002/jsid.100<lb/></idno>
+
+		</front>
+	</text>
+</tei>

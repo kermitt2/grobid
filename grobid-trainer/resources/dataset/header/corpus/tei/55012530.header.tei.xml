@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012530"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">HoTMetaL PRO 4.0<lb/></note>
+
+	<docTitle>
+	<titlePart>WYSIWYG Forms<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">Creating sophisticated and functional forms to add to your Web pages is easy with HoTMetaL PRO&apos;s powerful form editing<lb/> features. With our WYSIWYG form objects, tedious tasks can be completed in record time. Helpful dialogs take the mystery<lb/> out of forms creation, with easy to understand terminology and toolbar buttons. HoTMetaL PRO 4.0 includes a selection of<lb/> CGI Scripts and sample forms to help you get started.<lb/></div>
+
+	<ptr type="web">http://web.archive.org/web/19980212040545/http://www.sq.com/products/hotmetal/wt4-13.htm<lb/></ptr>
+
+	<note type="page">1 of 1<lb/></note>
+
+	<date>18-11-2011</date>
+
+	<note type="other">11:59</note>
+
+		</front>
+	</text>
+</tei>

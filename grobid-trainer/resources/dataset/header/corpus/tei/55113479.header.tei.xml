@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<tei type="manual">
+	<teiHeader>
+		<fileDesc xml:id="55113479"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="copyright">© 2002 Sony Corporation<lb/></note>
+
+	<docTitle>
+	<titlePart>Sony CLIÉ™ Handheld basic<lb/> operations<lb/> </titlePart>
+	</docTitle>
+	
+	<note type="other">
+	Customizing your Sony CLIÉ Handheld<lb/> (Preferences)<lb/> Exchanging and updating data using a HotSync ®<lb/> operation (Other HotSync ® operations)<lb/> Using &quot;Memory Stick ® &quot; media<lb/> Beaming<lb/> Using the Calculator and finding records<lb/> Backing up your Sony CLIÉ™ Handheld data<lb/> Protecting your data with a password<lb/> Enhancing features with add-on applications<lb/> Using data with another Sony CLIÉ™<lb/> Handheld<lb/> Handbook<lb/></note>
+
+	<note type="other">A-BDX-100-11 (1)<lb/></note>
+
+	<note type="other">Entering data in your Sony CLIÉ™<lb/> Handheld<lb/> Exchanging and updating data using<lb/> a HotSync ® operation<lb/></note>
+	
+	<note type="page">2<lb/></note>
+	
+		</front>
+	</text>
+</tei>

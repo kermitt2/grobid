@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011697"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note>3139 246 13522<lb/></note>
+
+	<docTitle>
+	<titlePart>DVD VIDEO / SACD PLAYER<lb/> DVP 720SA<lb/> DVP 720SA<lb/></titlePart>
+	</docTitle>
+
+	<note>01-34 DVP720_AP2<lb/> </note>
+
+	<date>28/07/2004, </date>
+
+	<note type="other">3:28 PM<lb/> </note>
+
+	<note type="page">1</note>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Daniel</forename>
+								<middlename>T</middlename>.
+								<surname>Chase</surname>,
+							</persName>
+							<persName>
+								<forename>Aaron</forename>
+								<middlename>G</middlename>.
+								<surname>Fix</surname>,
+							</persName>
+							<persName>
+								<forename>Bradley</forename>
+								<middlename>D</middlename>.
+								<surname>Rose</surname>,
+							</persName>
+							<persName>
+								<forename>Christopher</forename>
+								<middlename>D</middlename>.
+								<surname>Weber</surname>,
+							</persName>
+							<persName>
+								<forename>Shunpei</forename>
+								<surname>Nobusue</surname>,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Chelsea</forename>
+								<middlename>E</middlename> .
+								<surname>Stockwell</surname> ,
+							</persName>
+							<persName>
+								<forename>Lev</forename>
+								<middlename>N</middlename> .
+								<surname>Zakharov</surname> ,
+							</persName>
+							<persName>
+								<forename>Mark</forename>
+								<middlename>C</middlename> .
+								<surname>Lonergan</surname> ,and
+							</persName>
+							<persName>
+								<forename>Michael</forename>
+								<middlename>M</middlename> .
+								<surname>Haley</surname>
+								<marker>*</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

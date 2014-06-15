@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010151"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>SCIENTIFIC ABSTRACTS AND SESSIONS<lb/></titlePart>
+	</docTitle>
+
+	<date>SUNDAY, JULY 18<lb/></date>
+
+	<note type="other">Student Meeting<lb/> Room 201C<lb/> SU-AA-201C-01<lb/> Preparing for the Future: What You Need to Know to Become a<lb/> Qualified Medical Physicist<lb/></note>
+
+	<byline>
+	<docAuthor>N Venugopal*,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University of Manitoba,</affiliation>
+	</byline>
+
+	<address>Winnipeg, MB, CA<lb/></address>
+
+		</front>
+	</text>
+</tei>

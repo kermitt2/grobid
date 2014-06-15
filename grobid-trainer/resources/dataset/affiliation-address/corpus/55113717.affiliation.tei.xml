@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="institution">National Centre for Technology Management</orgName>,
+							<orgName type="institution">an Agency of the Federal Ministry of Science &amp; Technology</orgName>,
+							<orgName type="institution">Obafemi Awolowo University</orgName>,
+							<lb/>
+							<address>
+								<settlement>Ile-Ife</settlement>,
+								<country>Nigeria</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

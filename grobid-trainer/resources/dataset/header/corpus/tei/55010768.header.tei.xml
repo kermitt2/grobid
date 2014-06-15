@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010768"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Reactivity and Social Data: Keys to Drive Decisions<lb/> in Social Network Applications<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Philipp Kärger<lb/> 1,2 , Emily Kigel<lb/> 2 , and Daniel Olmedilla<lb/> 3<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 L3S Research Center,</affiliation>
+	</byline>
+
+	<address>Hannover, Germany<lb/></address>
+
+	<byline>
+	<affiliation>2 Leibniz University</affiliation>
+	</byline>
+
+	<address>Hannover, Germany<lb/></address>
+
+	<byline>
+	<affiliation>3 Telefónica Research &amp; Development,</affiliation>
+	</byline>
+
+	<address>Madrid, Spain<lb/></address>
+
+	<div type="abstract">Abstract. Social Network applications are gaining momentum. However, equally<lb/> important, privacy is being shown a crucial requirement. Nowadays, privacy<lb/> preferences on Social Network applications consist only on allowing or restrict-<lb/>ing access to information based on attributes of users who are part in the very<lb/> same network. This paper tries to enhance privacy and provide automatic re-<lb/>actions to events via a very flexible specification of privacy policies and the<lb/> reasoning associated to them. In our approach it is possible to include Social<lb/> Semantic data exposed on the Web into the policy definition and reasoning<lb/> process. We introduce the notion of reactive Semantic Web policies offering<lb/> higher control of the communications and interactions among Social Network<lb/> applications and/or its users. We also present SPoX (Skype Policy Extension),<lb/> which is an implementation that allows policy-driven behaviour control based<lb/> on the Social Network and communication software Skype, including the capac-<lb/>ity of automatically react in certain situations based on user-defined reactive<lb/> policies such as, for instance, to automatically deny or let through Skype calls<lb/> and messages based on existing online Social Web data.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,56 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55115343"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">1<lb/></note>
+
+	<docTitle>
+	<titlePart>Optical hyperpolarization and NMR detection of<lb/> 129<lb/> Xe<lb/> on a microfluidic chip<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Ricardo Jiménez-Martínez<lb/> *, , Daniel J. Kennedy<lb/> , , Michael Rosenbluh<lb/> , Elizabeth A.<lb/> Donley * , Svenja Knappe<lb/> * , Scott J. Seltzer<lb/> , , Hattie L. Ring<lb/> , , Vikram S. Bajaj ,♦<lb/> , and<lb/> John Kitching<lb/> *♦<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Optically hyperpolarized<lb/> 129 Xe gas<lb/> 1 has become a powerful contrast agent in nuclear<lb/> magnetic resonance (NMR) spectroscopy and imaging, with applications<lb/> 2 ranging<lb/> from studies of the human lung<lb/> 3 to the targeted detection of biomolecules<lb/> 4,5 . Equally<lb/> attractive is its potential use to enhance the sensitivity of microfluidic<lb/> 6 NMR<lb/> experiments, in which small sample volumes yield poor sensitivity. Unfortunately,<lb/> most 129 Xe polarization systems are large and non-portable. Here we present a<lb/> microfabricated chip that optically polarizes<lb/> 129<lb/> Xe gas. We have achieved<lb/> 129 Xe<lb/> polarizations greater than 0.5% at flow rates of several microliters per second,<lb/> compatible with typical microfluidic applications. We employ in situ optical<lb/> magnetometry 7 to sensitively detect and characterize the<lb/> 129 Xe polarization at<lb/> magnetic fields of 1 µT. We construct the device using standard microfabrication<lb/> techniques 8 , which will facilitate its integration with existing microfluidic platforms.<lb/> This device may enable the implementation of highly sensitive<lb/> 129 Xe NMR in<lb/> compact, low-cost, portable devices.<lb/></div>
+
+	<byline>
+	<affiliation>* National Institute of Standards and Technology,</affiliation>
+	</byline>
+
+	<address>325 Broadway, Boulder, CO 80305 USA,<lb/></address>
+
+	<byline>
+	<affiliation>Department<lb/> of Physics, University of Colorado at Boulder,</affiliation>
+	</byline>
+
+	<address>Boulder, CO 80309, USA,<lb/></address>
+
+	<byline>
+	<affiliation>Materials Science Division,<lb/> Lawrence Berkeley National Laboratory,</affiliation>
+	</byline>
+
+	<address>Berkeley, California 94720-7300, USA,<lb/></address>
+
+	<byline>
+	<affiliation>Department of<lb/> Chemistry, University of California at Berkeley,</affiliation>
+	</byline>
+
+	<address>Berkeley, CA 94720, USA,<lb/></address>
+
+	<byline>
+	<affiliation>The Jack and Pearl Resnick<lb/> Institute for Advanced Technology, Department of Physics, Bar-Ilan University,
+	</affiliation>
+	</byline>
+
+	<address>Ramat-Gan IL-52900,<lb/> Israel.<lb/></address>
+
+	<email>♦ e-mail:vsbajaj@lbl.gov; john.kitching@nist.gov</email>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009028"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Encapsulated Acetochlor for Selective Weed Control in Roundup-Ready<lb/> Sugarbeets.<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Robert Wilson<lb/></docAuthor>
+	</byline>
+
+		</front>
+	</text>
+</tei>

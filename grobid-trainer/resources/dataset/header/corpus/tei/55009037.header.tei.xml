@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009037"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">print | close<lb/></note>
+
+	<docTitle>
+	<titlePart>Corn herbicides 2000<lb/></titlePart>
+	</docTitle>
+
+	<date>Wed, 1999-12-01 </date>
+	
+	<note type="other">11:00<lb/> Farm Industry News<lb/></note>
+
+		</front>
+	</text>
+</tei>

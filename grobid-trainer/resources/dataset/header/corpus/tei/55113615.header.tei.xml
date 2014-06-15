@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei type="web">
+	<teiHeader>
+		<fileDesc xml:id="55113615"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Support / Outlook / Outlook 2007 Help and How-to / Personalizing Outlook<lb/></note>
+
+	<docTitle>
+	<titlePart>Turn sound effects on or off<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Applies to: M icrosoft Office Outlook 2007<lb/></note>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013020"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note>Pergamon<lb/> </note>
+
+	<idno>0045-6535(95)00231-6<lb/> </idno>
+
+	<reference>Chemosphere, Vol 32, No. 3, pp 433~41, 1996<lb/></reference>
+
+	<note type="copyright">Copyright © 1996 Published by Elsevier Science Ltd<lb/> Printed in Great Britain. All rights reserved<lb/> 0045 -6535/96 $15.00+0.(30<lb/></note>
+
+	<docTitle>
+	<titlePart>DEOfl.,ORINATION OF PCDD/F BY ORGANIC AND INORGANIC ELECTRON TRANSFER<lb/> MOLECULES IN REDUCED ENVIRONMENTS<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>~1,<lb/> Chang, P. R. 2, and Barkovskii, A.L. I<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Department of Civil and Environmental Engineering, The University of Michigan,<lb/></affiliation>
+	</byline>
+
+	<address>Ann Arbor M148109 USA,</address>
+
+	<byline>
+	<affiliation>and 2 GeoTrans, Inc.,</affiliation>
+	</byline>
+
+	<address>Freehold NJ 07728 USA<lb/></address>
+
+	<div type="abstract">ABSTRACT<lb/> The de, chlorination of octa-and pentachlorinated dibenzo-p-dioxins (PCDD) and dibenzofurans (PCDF) was<lb/> investigated using organic and inorganic electron shuttles relevant to anaerobic sediments. OctaCDD was<lb/> dechlorinated to hexaCDD in the presence of resorcinol, catechol, and 3,4-dichlorohenzoate, resulting in an<lb/> increase of 2,3,7,8-substituted hepta-and hexaCDD. Vitamin B12 mediated the dechlorination of octaCDD to<lb/> tetraCDD, octaCDF to hexaCDF, and 1,2,3,7,8-pentaCDD to at least two tetraCDD, including 2,3.,7,8-TCDD.<lb/> Zerovalent zinc stoichiometrically dechlorinated octaCDD to hexa-and pentaCDD under basic and neutral<lb/> conditions, respectively. Thus, abiotically-mediated dechlorination reactions may contribute significantly to the<lb/> fate of PCDD/F in reduced environments.<lb/></div>
+
+	<keyword>Key Words: Reductive dechlorination, Quinones, Metals, Vitamin B12<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

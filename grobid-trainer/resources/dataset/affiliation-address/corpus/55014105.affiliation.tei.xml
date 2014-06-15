@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>a</marker>
+							<orgName type="department">Faculty of Pharmaceutical Sciences</orgName>,
+							<orgName type="institution">Toyama Medical and Pharmaceutical University</orgName>,
+							<address>
+								<postCode>2630</postCode>
+								<settlement>Sugitani</settlement>,
+								<settlement>Toyama</settlement>
+								<postCode>930-0194</postCode>,
+								<country>Japan</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>b</marker>
+							<orgName type="department">School of Pharmaceutical Sciences</orgName>,
+							<orgName type="institution">Teikyo University</orgName>,
+							<address>
+								<postCode>1091-1</postCode>
+								<settlement>Suwarashi</settlement>,
+								<settlement>Sagamiko</settlement>,
+								<region>Kanagawa</region>
+								<postCode>199-0195</postCode>,
+								<country>Japan</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>c</marker>
+							<orgName type="department">Faculty of Pharmaceutical Sciences</orgName>,
+							<orgName type="institution">Setunan University</orgName>,
+							<address>
+								<addrLine>45-1 Nagaotoge-cho</addrLine>,
+								<settlement>Hirakata</settlement>
+								<postCode>570-0101</postCode>,
+								<country>Japan</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>d</marker>
+							<orgName type="department">Research Reactor Institute</orgName>,
+							<orgName type="institution">Kyoto University</orgName>,
+							<address>
+								<settlement>Kumatori</settlement>,
+								<settlement>Sennan</settlement>,
+								<region>Osaka</region>
+								<postCode>590-0494</postCode>,
+								<country>Japan</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

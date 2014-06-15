@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="department">Division of Viral and Rickettsial Diseases</orgName>,
+							<orgName type="institution">Centers for Disease Control and Prevention</orgName>,
+							<address>
+								<settlement>Atlanta</settlement>,
+								<region>GA</region>
+								<postCode>30333</postCode>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="institution">Ventana Medical Systems, Inc.</orgName>,
+							<address>
+								<settlement>Tucson</settlement>,
+								<region>AZ</region>
+								<postCode>85755</postCode>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

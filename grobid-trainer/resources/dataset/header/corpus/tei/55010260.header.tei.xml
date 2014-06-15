@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010260"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>DEGRADATION OF GINSENOSIDES IN HUMANS AFTER ORAL ADMINISTRATION<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>MONA ABDEL TAWAB, UTE BAHR, MICHAEL KARAS, MARIO WURGLICS, AND MANFRED SCHUBERT-ZSILAVECZ<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institute of Pharmaceutical Chemistry, Johann Wolfgang Goethe University,</affiliation>
+	</byline>
+
+	<address>Frankfurt, Germany<lb/></address>
+
+	<note type="submission">(Received February 20, 2003; accepted May 8, 2003)<lb/></note>
+
+	<note type="other">This article is available online at</note>
+
+	<ptr type="web">http://dmd.aspetjournals.org<lb/></ptr>
+
+	<div type="abstract">ABSTRACT:<lb/> Even though the degradation of ginsenosides has been thoroughly<lb/> studied in animals and in vitro using acids, enzymes, and intestinal<lb/> bacteria, knowledge concerning the systemic availability of gin-<lb/>senosides and their degradation products in humans is generally<lb/> lacking. Therefore, the attention in this article is focused on the<lb/> identification of ginsenosides and their hydrolysis products reach-<lb/>ing the systemic circulation in man. This is of great importance in<lb/> understanding clinical effects, preventing herb-drug interactions,<lb/> and optimizing the biopharmaceutical properties of ginseng prep-<lb/>arations. Using a sensitive mass spectrometric method, which is<lb/> specific for the identification of ginsenosides in complex biological<lb/> matrices, the degradation pathway of ginsenosides in the gastro-<lb/>intestinal tract of humans could be elucidated following the oral<lb/> administration of ginseng. Within the frame of a pilot study, human<lb/> plasma and urine samples of two subjects were screened for<lb/> ginsenosides and their possible degradation products. In general,<lb/> the urine data coincided well with the plasma data. In both volun-<lb/>teers the same hydrolysis products, which are not originally<lb/> present in the Ginsana extract (Pharmaton S.A., Lugano, Switzer-<lb/>land) ingested, were identified in plasma and urine. It was shown<lb/> that two hydrolysis products of the protopanaxatriol ginsenosides,<lb/> namely G-Rh 1 and G-F 1 may reach the systemic circulation. In<lb/> addition, compound-K, the main intestinal bacterial metabolite of<lb/> the protopanaxadiol ginsenosides, was detected in plasma and<lb/> urine. These products are probably responsible for the action of<lb/> ginseng in humans. In opposition to previous reports, G-Rb 1 was<lb/> identified in plasma and urine of one subject.</div>
+
+		</front>
+	</text>
+</tei>

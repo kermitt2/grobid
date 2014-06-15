@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55113656"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Multi-level airgun array: a simple and effective way to enhance the low frequency content of<lb/> marine seismic data<lb/>
+	</titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Guillaume Cambois*, Andrew Long, Gregg Parkes, Terje Lundsten, Anders Mattsson and Eivind Fromyr; PGS<lb/></docAuthor>
+	</byline>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei type="presentation">
+	<teiHeader>
+		<fileDesc xml:id="55114467"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Common Database<lb/> (CDB)<lb/>	Augmented Visionics System<lb/> (AVS)<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Dr. H.-W. Lindert</docAuthor>
+	</byline>
+
+		</front>
+	</text>
+</tei>

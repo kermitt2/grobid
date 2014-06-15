@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010299"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>On the road to<lb/> improved scratch resistance<lb/></titlePart>
+	</docTitle>
+
+	<note>Desmodur<lb/> ®<lb/> Desmophen<lb/> ®</note>
+
+		</front>
+	</text>
+</tei>

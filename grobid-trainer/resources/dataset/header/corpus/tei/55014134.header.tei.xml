@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014134"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="copyright">&#169; 1987 by The American Society for Biochemistry and Molecular Biology, Inc.<lb/></note>
+
+	<reference>THE JOURNAL OF BIOLOGlCAL CHEMISTRY<lb/> Vol. 262, No. 27, Issue of September 25, pp. 13081-13085,198&apos;7<lb/></reference>
+
+	<note type="other">Printed in U.S.A.<lb/></note>
+
+	<docTitle>
+	<titlePart>A Mutation That Alters the Nucleotide Specificity of Elongation Factor<lb/> Tu, a GTP Regulatory Protein*<lb/></titlePart>
+	</docTitle>
+
+	<note type="submission">(Received for publication, March 23, 1987)<lb/></note>
+
+	<byline>
+	<docAuthor>Yu-Wen Hwang and David L. Miller$<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>From the New York State Office of Mental Retardation and Developmental Disabilities, Znstitute for Basic Research in<lb/> Developmental Disabilities,</affiliation>
+	</byline>
+
+	<address>Staten Island, New York 10314<lb/></address>
+
+	<div type="abstract">A single amino acid substitution (Asp to Asn) at po-<lb/>sition 138 of Escherichia coli elongation factor Tu (EF-<lb/>Tu) was introduced in the tufA gene clone by oligonu-<lb/>cleotide site-directed mutagenesis. The mutated tufA<lb/> gene was then expressed in maxicells. The properties<lb/> of [3sS]methionine-labeled mutant and wild type EF-<lb/>Tu were compared by in vitro assays. The Asn-138<lb/> mutation greatly reduced the protein&apos;s affinity for<lb/> GDP; however, this mutation dramatically increased<lb/> the protein&apos;s affinity for xanthosine 5&apos;-diphosphate.<lb/> The mutant protein forms a stable complex with Phe-<lb/>tRNA and xanthosine 5&apos;-triphosphate, which binds to<lb/> ribosomes, whereas it does not form a complex with<lb/> Phe-tRNA and GTP (10 PM). These results suggest that<lb/> in EF-Tu. nucleoside diphosphate complexes, amino<lb/> acid residue 138 must interact with the substituent on<lb/> C-2 of the purine ring. Thus, in wild type EF-Tu, Asp-<lb/>138 would hydrogen bond to the 2-amino group of<lb/> GDP, and in the mutant EF-Tu, Asn-138 would form<lb/> an equivalent hydrogen bond with the 2-carbonyl<lb/> group of xanthosine 5&quot;diphosphate. Aspartic acid 138<lb/> is conserved in the homologous sequences of all GTP<lb/> regulatory proteins. This mutation would allow one to<lb/> specifically alter the nucleotide specificity of other<lb/> GTP regulatory proteins.<lb/> </div>
+
+	<div type="introduction">Elongation factor Tu is a well characterized 43-kDa protein,<lb/> which promotes the binding of aminoacyl-tRNA (sal-tRNA)<lb/> to ribosomes during polypeptide chain elongation. During the<lb/> process, EF-Tu interacts sequentially with GTP, aa-tRNA,<lb/> ribosomes, GDP, and EF-Ts (1). The protein also binds the<lb/> antibiotic aurodox (N-methyl kirromycin) (2) and other cell<lb/> components (3-5). EF-Tu is a member of the class of guano-<lb/>sine triphosphate regulatory proteins. The number and diver-<lb/>sity of these proteins are steadily increasing, and at present<lb/> they include the hormone-and neurotransmitter-responsive<lb/> adenylate cyclases (6, 7), the polypeptide chain biosynthesis<lb/> factors initiation factor 2 (8), EF-Tu (9), EF-G (lo), and<lb/> release factor (ll), the rhodopsin-activated transducin (12),<lb/> the ras oncogene product (13), and the bacterial and eukar-<lb/>*This project was supported by United States Public Health<lb/> Service Grant GM 30800. The costs of publication of this article were<lb/> defrayed in part by the payment of page charges. This article must<lb/> therefore be hereby marked &quot;udvertisement&quot; in accordance with 18<lb/> U.S.C. Section 1734 solely to indicate this fact.</div>
+
+		</front>
+	</text>
+</tei>

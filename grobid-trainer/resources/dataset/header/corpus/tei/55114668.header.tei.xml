@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55114668"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">151<lb/></note>
+
+	<docTitle>
+	<titlePart>Context-Based Retrieval in Digital Libraries: Approach and<lb/> Technological Framework<lb/>♣<lb/> </titlePart>
+	</docTitle>
+	
+	<note type="copyright">© </note>
+
+	<docAuthor>Kurt Sandkuhl<lb/> 1<lb/> , Alexander Smirnov<lb/> 2<lb/> , Vladimir Mazalov<lb/> 3<lb/> , Vladimir Vdovitsyn<lb/> 3<lb/> ,<lb/> Vladimir Tarasov<lb/> 1<lb/> , Andrew Krizhanovsky<lb/> 2<lb/> , Feiyu Lin<lb/> 1<lb/> , Evgeny Ivashko<lb/> 3<lb/></docAuthor>
+	
+	<byline>
+	<affiliation>1<lb/> School of Engineering at Jönköping University,<lb/></affiliation>
+	</byline>
+
+	<email>{kurt.sandkuhl, vladimir.tarasov, feiyu.lin}@ jth.hj.se<lb/></email>
+
+	<byline>
+	<affiliation>2<lb/> St.Petersburg Institute for Informatics and Automation of the RAS (SPIIRAS)<lb/></affiliation>
+	</byline>
+
+	<email>{smir, aka}@iias.spb.su<lb/></email>
+
+	<byline>
+	<affiliation>3<lb/> Institute of Applied Mathematical Research of the KarRC RAS (IAMR)<lb/></affiliation>
+	</byline>
+
+	<email>{vmazalov, vdov, ivashko}@krc.karelia.ru<lb/></email>
+
+	<div type="abstract">Abstract<lb/> Digital libraries face similar challenges as<lb/> enterprise information sources and the Internet:<lb/> a fast growing amount of digital content<lb/> requires enhanced ways of supporting<lb/> information seeking. This paper presents an<lb/> approach to context-based retrieval in Digital<lb/> Libraries (DLs). The proposed approach<lb/> includes creation of a profile representing<lb/> general information demand of a user (abstract<lb/> context), and use of ontology matching to<lb/> identify the documents relevant to the<lb/> operational context representing the current<lb/> information demand of the user. A profile<lb/> represents the user&apos;s interests as a DL reader<lb/> and after creation is dynamically updated<lb/> based on the changes in the user&apos;s interests.<lb/> The identification of documents relevanсе is<lb/> carried out by matching the user profile<lb/> ontology against the digital library ontology.<lb/> Semantic distance calculation is based on the<lb/> use of a thesaurus.<lb/></div>
+
+		</front>
+	</text>
+</tei>

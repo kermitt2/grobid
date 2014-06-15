@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011245"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>THE ANTIBACTERIAL ACTIVITY OF NEW DERIVATIVES OF<lb/> 4-AMINOQUINOLINE AND 4-AMINOQUINALDINE<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>BY D. CALDWELL, w. A. COX, P. F. D&apos;ARCY AND L. R. ROWE<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>From the Research Division, Allen &amp; Hanburys Limited,</affiliation>
+	</byline>
+
+	<address>Ware, Hertfordshire<lb/></address>
+
+	<note type="submission">Received April 20, 1961<lb/></note>
+
+	<div type="abstract">Two new series of N-alkyl derivatives of 4-aminoquinoline and 4-<lb/>aminoquinaldine are described. Compounds in both series show<lb/> antibacterial and protein precipitating properties and it has been<lb/> possible to correlate bactericidal action and protein precipitation for<lb/> homologous members of the series. The bacteriostatic activity of both<lb/> series of compounds is characterised by maxima at C = 12 to 14, with<lb/> a marked decrease in potency at longer chain lengths. The bactericidal<lb/> activity differs from this in that activity is not greatly diminished with<lb/> the higher homologues. The 4-aminoquinaldinium salts are slightly<lb/> more potent bactericidal agents than the corresponding 4-amino-<lb/>quinolinium compounds. It is concluded that the mechanism of the<lb/> antibacterial action of these derivatives may be closely related to the<lb/> means by which they interact with proteins.<lb/> THE antimicrobial activity of certain polymethylene heterocyclic bis-<lb/>quaternary ammonium salts has been described on a number of occasions<lb/>(Collier, Potter and Taylor, 1953, 1955 ; Babbs, Collier, Austin, Potter<lb/> and Taylor, 1956; Austin, Potter and Taylor, 1958; Austin, Lunts, Potter<lb/> and Taylor, 1959)</div>
+
+		</front>
+	</text>
+</tei>

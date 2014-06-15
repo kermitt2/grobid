@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>E</forename>
+								<surname>Shtivelman</surname>,
+							</persName>
+							<persName>
+								<forename>R</forename>
+								<middlename>P</middlename>
+								<surname>Gale</surname>,
+							</persName>
+							<persName>
+								<forename>O</forename>
+								<surname>Dreazen</surname>,
+							</persName>
+							<persName>
+								<forename>A</forename>
+								<surname>Berrebi</surname>,
+							</persName>
+							<persName>
+								<forename>R</forename>
+								<surname>Zaizov</surname>,
+							</persName>
+							<persName>
+								<forename>I</forename>
+								<surname>Kubonishi</surname>,
+							</persName>
+							<persName>
+								<forename>I</forename>
+								<surname>Miyoshi</surname> and
+							</persName>
+							<persName>
+								<forename>E</forename>
+								<surname>Canaani</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

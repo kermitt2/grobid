@@ -1,0 +1,48 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011692"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<date>1 April 1997<lb/></date>
+
+	<byline>
+	<affiliation>NAWCWPNS </affiliation>
+	</byline>
+	
+	<idno>TP 8347<lb/></idno>
+
+	<note type="other">w / Rev 2 of </note>
+
+	<date>1 April 1999<lb/> </date>
+
+	<note type="other">and later changes<lb/> </note>
+
+	<byline>
+	<affiliation>Avionics Department<lb/> AIR-4.5<lb/> EW Class Desk<lb/> </affiliation>
+	</byline>
+	
+	<address>Washington, D.C. 20361<lb/></address>
+
+	<byline>
+	<affiliation>NAVAL AIR SYSTEMS COMMAND<lb/> Weapons Division<lb/> Avionics Department<lb/> Electronic Warfare Division<lb/>
+	</affiliation>
+	</byline>
+
+	<address>Point Mugu, CA 93042<lb/></address>
+
+	<byline>
+	<affiliation>NAVAL AIR WARFARE CENTER<lb/></affiliation>
+	</byline>
+	
+	<docTitle>
+	<titlePart>ELECTRONIC WARFARE<lb/> AND RADAR SYSTEMS<lb/> ENGINEERING HANDBOOK<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Approved for public release: distribution is unlimited.</note>
+
+		</front>
+	</text>
+</tei>

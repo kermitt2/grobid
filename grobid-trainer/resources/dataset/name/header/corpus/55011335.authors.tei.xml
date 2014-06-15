@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Vincent</forename>
+								<surname>Lisowski</surname>,
+								<lb/>
+								<marker>a</marker>
+							</persName>
+							<persName>
+								<forename>Ceile</forename>
+								<surname>Enguehard</surname> ,
+								<lb/>
+								<marker>b</marker>
+							</persName>
+							<persName>
+								<forename>Jean- Charles</forename>
+								<surname>Lancelot</surname>,
+								<marker>a</marker>
+							</persName>
+							<persName>
+								<forename>Daniel - Henri</forename>
+								<surname>Caignard</surname>,
+								<lb/>
+								<marker>c</marker>
+							</persName>
+							<persName>
+								<forename>Stehanie</forename>
+								<surname>Lambel</surname>,
+								<lb/>
+								<marker>d</marker>
+							</persName>
+							<persName>
+								<forename>Stehane</forename>
+								<surname>Leonce</surname> ,
+								<marker>d</marker>
+							</persName>
+							<persName>
+								<forename>Alain</forename>
+								<surname>Pierre</surname>,
+								<lb/>
+								<marker>d</marker>
+							</persName>
+							<persName>
+								<forename>Ghanem</forename>
+								<surname>Atassi</surname>,
+								<lb/>
+								<marker>d</marker>
+							</persName>
+							<persName>
+								<forename>Pierre</forename>
+								<surname>Renard</surname>
+								<lb/>
+								<marker>c</marker>and
+							</persName>
+							<persName>
+								<forename>Sylvain</forename>
+								<surname>Rault</surname>
+								<lb/>
+								<marker>a , *</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

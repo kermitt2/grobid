@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014229"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>ESF / EST -TrockEnE<lb/> EndvErSchlüSSE<lb/> </titlePart>
+	</docTitle>
+
+	<note>Einfach und kostengünstig montiert</note>
+
+		</front>
+	</text>
+</tei>

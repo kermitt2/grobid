@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55113845"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">R E S E A R C H<lb/> Open Access<lb/></note>
+
+	<docTitle>
+	<titlePart>The biodistribution of self-assembling protein<lb/> nanoparticles shows they are promising vaccine<lb/> platforms<lb/>
+	</titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Yongkun Yang<lb/> 1 , Tobias Neef<lb/> 1<lb/> , Christian Mittelholzer<lb/> 3<lb/> , Elisa Garcia Garayoa<lb/> 2 , Peter Bläuenstein<lb/> 2<lb/> , Roger Schibli<lb/> 2<lb/> , Ueli Aebi<lb/> 3 and Peter Burkhard<lb/> 1*<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Abstract<lb/> Background: Because of the need to limit side-effects, nanoparticles are increasingly being studied as drug-carrying<lb/> and targeting tools. We have previously reported on a scheme to produce protein-based self-assembling nanoparticles<lb/> that can act as antigen display platforms. Here we attempted to use the same system for cancer-targeting, making use<lb/> of a C-terminal bombesin peptide that has high affinity for a receptor known to be overexpressed in certain tumors, as<lb/> well as an N-terminal polyhistidine tag that can be used for radiolabeling with technetium tricarbonyl.<lb/> Results: In order to increase circulation time, we experimented with PEGylated and unPEGylated varities typo particle.<lb/> We also tested the effect of incorporating different numbers of bombesins per nanoparticle. Biophysical<lb/> characterization determined that all configurations assemble into regular particles with relatively monodisperse size<lb/> distributions, having peaks of about 33 – 36 nm. The carbonyl method used for labeling produced approximately 80%<lb/> labeled nanoparticles. In vitro, the nanoparticles showed high binding, both specific and non-specific, to PC-3 prostate<lb/> cancer cells. In vivo, high uptake was observed for all nanoparticle types in the spleens of CD-1 nu/nu mice, decreasing<lb/> significantly over the course of 24 hours. High uptake was also observed in the liver, while only low uptake was seen in<lb/> both the pancreas and a tumor xenograft.<lb/> Conclusions: The data suggest that the nanoparticles are non-specifically taken up by the reticuloendothelial system.<lb/> Low uptake in the pancreas and tumor indicate that there is little or no specific targeting. PEGylation or increasing the<lb/> amount of bombesins per nanoparticle did not significantly improve targeting. In particular, the uptake in the spleen,<lb/> which is a primary organ of the immune system, highlights the potential of the nanoparticles as vaccine carriers. Also,<lb/> the decrease in liver and spleen radioactivity with time implies that the nanoparticles are broken down and cleared.<lb/> This is an important finding, as it shows that the nanoparticles can be safely used as a vaccine platform without the risk<lb/> of prolonged side effects. Furthermore, it demonstrates that technetium carbonyl radiolabeling of our protein-based<lb/> nanoparticles can be used to evaluate their pharmacokinetic properties in vivo.</div>
+
+		</front>
+	</text>
+</tei>

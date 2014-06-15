@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014848"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Automatische Charakterisierung<lb/> eines Zylinderkolben-Kühlkanals<lb/> anhand von<lb/>3D-Computertomographie-Daten<lb/> Studienarbeit im Fach Informatik,<lb/></titlePart>
+	</docTitle>
+	
+	<note type="other">vorgelegt von<lb/></note>
+
+	<byline>
+	<docAuthor>Werner Schön<lb/></docAuthor>
+	</byline>
+
+	<date>am 01.05.2008<lb/></date>
+
+	<byline>
+	<docAuthor>bei Herrn Prof. Dr. Marc Stamminger,<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>am Lehrstuhl für Graphische Datenverarbeitung (Informatik 9) an der<lb/> Friedrich-Alexander-Universität Erlangen-Nürnberg.<lb/></affiliation>
+	</byline>
+
+	<byline>
+	<docAuthor>Betreuer: Dipl.-Math. Steven Oeckl, Dipl.-Phys. Holger Schnell<lb/> Inhaltsverzeichnis<lb/> Einleitung 5</docAuthor>
+	</byline>
+
+		</front>
+	</text>
+</tei>

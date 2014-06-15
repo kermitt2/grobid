@@ -1,0 +1,65 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55114240"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Review of reference metrology for<lb/> nanotechnology: significance, challenges,<lb/> and solutions<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Vladimir Ukraintsev<lb/> Bill Banke<lb/></docAuthor>
+	</byline>
+
+	<note type="other">Downloaded From: </note>
+
+	<ptr>http://nanolithography.spiedigitallibrary.org/ </ptr>
+
+	<date>on 04/15/2014 </date>
+
+	<note type="other">Terms of Use: </note>
+
+	<ptr>http://spiedl.org/terms<lb/></ptr>
+
+	<docTitle>
+	<titlePart>Review of reference metrology for nanotechnology:<lb/> significance, challenges, and solutions<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Vladimir Ukraintsev<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Nanometrology International, Inc.<lb/></affiliation>
+	</byline>
+
+	<address>Allen, Texas 75013<lb/></address>
+
+	<email>E-mail: ukraintsev@nanometrology.net<lb/></email>
+
+	<byline>
+	<docAuthor>Bill Banke<lb/></docAuthor>
+	</byline>
+
+	<note type="other">Independent contractor<lb/> </note>
+
+	<address>Essex Junction, Vermont 05452<lb/></address>
+
+	<div type="abstract">Abstract. Metrology and control of critical dimensions (CDs) are key to the<lb/> success of nanotechnology. Modern nanotechnology and nanometrology<lb/> are largely based on knowledge developed during the last 10 to 20 years of<lb/> semiconductor manufacturing. Semiconductor CD metrology entered the<lb/> nanotechnology age in the late 1990s. Work on 130-nm-and 90-nm-<lb/>node technologies led to the conclusion that precision alone is an insuffi-<lb/>cient metric for the quality assessment of metrology. Other components of<lb/> measurement uncertainty (MU) must also be considered: 1. sample-to-<lb/>sample measurement bias variation, 2. sampling uncertainty, and 3. sam-<lb/>ple variation induced by the probe-sample interaction. The first one (sam-<lb/>ple-dependent systematic error) is common for indirect and model-based<lb/> CD metrologies such as top-down and cross-sectional scanning electron<lb/> microscopy (SEM) and scatterometry (OCD). Unless special measures are<lb/> taken, bias variation of CDSEM and OCD could exceed several nan-<lb/>ometers. Variation of bias and therefore MU can be assessed only if refer-<lb/>ence metrology (RM) is employed. The choice of RM tools is very limited.<lb/> The CD atomic force microscope (AFM) is one of a few available RM tools.<lb/> The CDAFM provides subnanometer MU for a number of nanometrology<lb/> applications. Significant challenges of CDAFM remain, such as the follow-<lb/>ing: 1. the finite dimensions of the probe are limiting characterization of<lb/> narrow high-aspect spaces, 2. the flexibility of the probe complicates posi-<lb/>tioning control, 3. the probe apex sharpness limits 3D AFM resolution,<lb/> 4. the lifetime of atomically sharp probes is too short, and 5. adsorbates<lb/> change properties and dimensions of nanometer-sized objects consider-<lb/>ably. We believe that solutions for the problems exist; therefore, we will<lb/> discuss the role of RM in nanometrology, current RM choices, and the chal-<lb/>lenges of CDAFM as well as suggest some potential solutions.</div>
+
+	<note type="copyright">© 2012 Society<lb/> of Photo-Optical Instrumentation Engineers (SPIE).</note>
+
+	<idno type="DOI">[DOI: 10.1117/1.JMM.11.1.011010]<lb/></idno>
+
+	<keyword>Subject terms: accuracy; reference metrology; critical dimension; nanometrology;<lb/> bias; critical dimension scanning electron microscope; critical dimension atomic<lb/> force microscope; scatterometry; relative accuracy; absolute accuracy.<lb/> Paper 11109SSP</keyword>
+
+	<note type="submission">received Aug. 5, 2011; revised manuscript received Oct. 18,<lb/> 2011; accepted for publication Oct. 26, 2011; </note>
+
+	<date>published online Feb. 27, 2012.<lb/></date>
+
+		</front>
+	</text>
+</tei>

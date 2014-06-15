@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012745"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">C:\EPOPROGS\SEA\.\..\..\epodata\sea\eplogf\2010\ep03736453\ep03736453.log<lb/></note>
+
+	<note type="page">Page 1<lb/> </note>
+
+	<date>22.11.2011 </date>
+
+	<note type="other">11:40:16<lb/></note>
+
+	<docTitle>
+	<titlePart>Display of compounds in EP0322242<lb/> </titlePart>
+	</docTitle>
+
+	<note>? ..li hitstr 1-1<lb/> </note>
+
+	<div type="introduction">1/1 -(C) FILE CAPLUS<lb/> IT -64-18-6<lb/> , Formic acid, reactions<lb/> RL: RCT (Reactant); RACT (Reactant or reagent)<lb/> (Mitsunobu reaction of, with benzyl N-(hydroxycyclopentyl)carbamate)<lb/> RN -64-18-6 CAPLUS<lb/> CN -Formic acid (CA INDEX NAME)<lb/> C H<lb/> O O H<lb/> IT -63709-15-9<lb/> RL: RCT (Reactant); RACT (Reactant or reagent)<lb/> (amination by, of aminocyclopentanol)<lb/> RN -63709-15-9 CAPLUS<lb/> CN -9H-Purine, 6-chloro-2-methyl-9-.beta.-D-ribofuranosyl-<lb/>(CA INDEX NAME)<lb/> Absolute stereochemistry.</div>
+
+		</front>
+	</text>
+</tei>

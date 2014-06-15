@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012959"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>SN65LVDS108 8-PORT LVDS REPEATER<lb/></titlePart>
+	</docTitle>
+
+	<idno>SLLS399D – </idno>
+
+	<date>NOVEMBER 1999 – REVISED MAY 2001<lb/> </date>
+
+	<note type="page">1<lb/> </note>
+
+	<address>POST OFFICE BOX 655303 @BULLET DALLAS, TEXAS 75265<lb/></address>
+
+	<div type="introduction">D One Line Receiver and Eight Line Drivers<lb/> Configured as an 8-Port LVDS Repeater<lb/> D Line Receiver and Line Drivers Meet or<lb/> Exceed the Requirements of ANSI<lb/> EIA/TIA-644 Standard<lb/></div>
+	
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010090"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>A Service-Oriented Architecture for Digital Libraries<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Yves Petinot<lb/> 1,2<lb/> , C. Lee Giles<lb/> 1,2,3<lb/> , Vivek Bhatnagar<lb/> 2,3<lb/> , Pradeep B. Teregowda<lb/> 2<lb/> , Hui Han<lb/> 1,3<lb/> , Isaac Councill<lb/> 3<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1<lb/> Department of Computer Science<lb/> and Engineering<lb/> The Pennsylvania State University<lb/></affiliation>
+	</byline>
+
+	<address>111, IST Building<lb/> University Park, PA 16802<lb/></address>
+
+	<email>{petinot,hhan}@cse.psu.edu<lb/></email>
+
+	<byline>
+	<affiliation>2<lb/> eBusiness Research Center<lb/> The Pennsylvania State University<lb/></affiliation>
+	</byline>
+
+	<address>401 Business Admin. Building<lb/> University Park, PA 16802<lb/></address>
+
+	<email>{vivekb,pbt105,igc2}@psu.edu<lb/></email>
+
+	<byline>
+	<affiliation>3<lb/> School of Information Sciences<lb/> and Technology<lb/> The Pennsylvania State University<lb/></affiliation>
+	</byline>
+
+	<address>332, IST Building<lb/> University Park, PA 16802<lb/></address>
+
+	<email>{giles}@ist.psu.edu<lb/></email>
+
+	<div type="abstract">ABSTRACT<lb/> CiteSeer is currently a very large source of meta-data information<lb/> on the World Wide Web (WWW). This meta-data is the key<lb/> material for the Semantic Web. Still, CiteSeer is not yet a Semantic-<lb/>enabled service and therefore its meta-data, although potentially<lb/> usable by Semantic Web agents, is not yet reachable using the<lb/> Semantic Web mechanisms. The complexity of CiteSeer, that is the<lb/> range of tasks it supports, make the transition to a Semantic-enabled<lb/> service a non-trivial task. While human users tend to perceive<lb/> CiteSeer as a single well-integrated service, we believe it is best<lb/> seen – from a machine perspective – as a collection of services,<lb/> each service performing a specific task. In this paper we show our<lb/> approach to enable CiteSeer on the Semantic Web in order to allow<lb/> the use of its meta-data through the Semantic Web. We first<lb/> introduce an intuitive Application Programming Interface (API) to<lb/> the CiteSeer software, then show that an efficient integration of<lb/> CiteSeer in the Semantic Web can be best achieved by<lb/> independently integrating the services that comprise it. We believe<lb/> the effort presented here towards the Semantic-integration of a<lb/> complex Information Retrieval system could be used as an<lb/> integration model for arbitrary systems.<lb/></div>
+
+	<keyword>Categories and Subject Descriptors<lb/> H.3.3 [Information Search and Retrieval]: retrieval models.<lb/> H.3.7 [Digital Libraries]: dissemination, standards, system issues.<lb/> General Terms: Design, Experimentation, Standardization.<lb/> Keywords: Service-Oriented Architecture, CiteSeer-API,<lb/> CiteSeer, digital libraries, interfaces, services, interoperability,<lb/> Semantic Web.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

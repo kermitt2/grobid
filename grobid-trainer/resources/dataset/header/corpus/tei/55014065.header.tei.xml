@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014065"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>MOST150 The New Infotainment Backbone for Automotive Applications<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Harald Schöpp, VP Marketing, </docAuthor>
+	</byline>
+	
+	<byline>
+	<affiliation>SMSC AIS<lb/></affiliation>
+	</byline>
+
+	<note type="other">MOST Forum<lb/></note>
+
+	<date>September 30, 2008</date>
+
+		</front>
+	</text>
+</tei>

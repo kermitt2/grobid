@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55115514"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">GLOBAL ENGINEERS &amp; TECHNOLOGISTS REVIEW<lb/></note>
+
+	<ptr>www.getview.org<lb/></ptr>
+	
+	<note type="other">G.L.O.B.A.L E.N.G.I.N.E.E.R.S. .&amp; .-.T.E.C.H.N.O.L.O.G.I.S.T.SR.E.V.I.E.W<lb/> </note>
+
+	<note type="page">9<lb/> </note>
+
+	<byline>
+	<docAuthor>YAHAYA 1 , S.H., ALI 2 , J.M., YAZARIAH 3 , M.Y., HAERYIP SIHOMBING 4 , and YUHAZRI 5 , M.Y.<lb/></docAuthor>
+	</byline>
+		
+	<byline>
+	<affiliation>1, 4, 5 Faculty of Manufacturing Engineering<lb/> Universiti Teknikal Malaysia Melaka<lb/></affiliation>
+	</byline>
+
+	<address>Hang Tuah Jaya, 76100 Durian Tunggal, Melaka, MALAYSIA<lb/></address>
+
+	<email>1 saifudin@utem.edu.my<lb/> 4 iphaery@ utem.edu.my<lb/> 5 yuhazri@utem.edu.my<lb/></email>
+
+	<byline>
+	<affiliation>2, 3 School of Mathematical Sciences<lb/> University of Science Malaysia<lb/></affiliation>
+	</byline>
+
+	<address>Minden, 11800, Penang, MALAYSIA<lb/></address>
+
+	<email>2 jamaluma@cs.usm.my<lb/> 3 yazariahmy@cs.usm.my<lb/></email>
+
+		</front>
+	</text>
+</tei>

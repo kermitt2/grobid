@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei type="web">
+	<teiHeader>
+		<fileDesc xml:id="55113748"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Dermatitis hiemalis<lb/> </titlePart>
+	</docTitle>
+
+	<note type="other">L20.8<lb/></note>
+
+	<div type="abstract">Synonym Dermatosis juvenilis plantaris; recurrent juvenile eczema; Dermatitis<lb/> plantaris sicca; peridigitales Ekzem bei Kindern; Vorfußekzem; juvenile<lb/> plantar dermatosis; atopic winter feet; atopische Winterfüße; pulpite sèche;<lb/> peridigitale Dermatose; Eccema e frigore; pulpite digitale kératosique<lb/> craquelée récidivante; Syndroma digitocutaneum minimum; Pseudomykose;<lb/> Dermatosis palmoplantaris juvenilis<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012351"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">C. Josserand, M. Lefranc &amp; C. Letellie Editeurs<lb/></note>
+
+	<docTitle>
+	<titlePart>Résumés des exposés de la 13e<lb/> Rencontre du Non-Linéaire<lb/> Paris 2010<lb/></titlePart>
+	</docTitle>
+
+	<date>13 janvier 2010<lb/></date>
+
+	<byline>
+	<affiliation>Institut Henri Poincaré<lb/></affiliation>
+	</byline>
+
+	<note>Non-Linéaire Publications</note>
+
+		</front>
+	</text>
+</tei>

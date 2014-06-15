@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011577"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Wavelet-Filterung zur Verbesserung der<lb/> Empfindlichkeit der Streufluss-Prüfung<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Till SCHMITTE, Thomas ORTH, </docAuthor>
+	</byline>
+	
+	<byline>
+	<affiliation>Salzgitter Mannesmann Forschung, </affiliation>
+	</byline>
+
+	<address>Duisburg;<lb/> </address>
+
+	<byline>
+	<docAuthor>Andreas GROOS, Robert PETERS, Stefan NITSCHE,<lb/> </docAuthor>
+	</byline>
+	
+	<byline>
+	<affiliation>Vallourec &amp; Mannesmann Tubes, </affiliation>
+	</byline>
+	
+	<address>Düsseldorf<lb/></address>
+	
+	<div type="abstract">Kurzfassung. Die Streufluss-Prüfung ist ein wichtiges Verfahren bei der Herstel-<lb/>lung von nahtlosen Rohren. Um die Empfindlichkeit der Methode zu verbessern,<lb/> werden schon traditionell eine Reihe von Signalverarbeitungstechniken eingesetzt.<lb/> Als Alternative bieten Wavelet-Filter eine größere Signal-Rauschtrennung und eine<lb/> bessere Adaptivität an die Signale. Daher wurde ein, auf DSP-Technik basierendes,<lb/> Wavelet-Filter realisiert, das bis zu 32 Sensoren gleichzeitig digital filtern kann und<lb/> in bestehende Anlagen integriert wird. Die Ergebnisse zeigen eine signifikante Ver-<lb/>besserung des Signal-Rauschverhältnisses. In vielen Fällen kann auf die normaler-<lb/>weise eingesetzte Differenztechnik verzichtet und dadurch weitere Fehlertypen zur<lb/> Anzeige gebracht werden.<lb/> </div>
+
+	<div type="introduction">Einführung<lb/> Die Streufluss-Prüfung kommt bei der Herstellung von nahtlosen Rohren insbesondere in<lb/> sog. Multiprüfblöcken zum Einsatz. Die Prüfung erfolgt dabei mit Sondenlinealen und spi-<lb/>ralförmiger Abtastung, um eine vollständige Überdeckung zu erzielen, d.h. reale Anlagen<lb/> weisen eine Vielzahl von Kanälen auf. Wegen der hohen Produktionsgeschwindigkeiten<lb/> und der ungünstigen Oberflächenbeschaffenheiten der Rohre ist der Einsatz dieser Prüf-<lb/>technik begrenzt, insbesondere im Hinblick auf den Nachweis von Innenfehlern bei<lb/> größeren Wanddicken.<lb/> Um die Empfindlichkeit des Verfahrens zu verbessern, wird schon traditionell eine Reihe<lb/> von Signalverarbeitungstechniken eingesetzt. Als Alternative oder Ergänzung bieten<lb/> Wavelet-Filter eine größere Signal-Rauschtrennung und eine bessere Adaptivität an die<lb/> Signale. Daher wurde eine vielkanalige, auf DSP-Technik basierende, Anlage realisiert, die<lb/> bis zu 32 Sensoren gleichzeitig digital filtern kann und in bestehende Anlagen integriert<lb/> wird. Die Abtastrate wird auf produktionstypische Geschwindigkeiten eingestellt.<lb/> Die Wavelet-Filterung beruht auf der selektiven Modifikation des Signals nach der Trans-<lb/>formation in die Wavelet-Domäne. Dazu wurden Algorithmen entwickelt, die eine Anpas-<lb/>sung an unterschiedlichen Signal-Untergrund zulassen. Nach der so durchgeführten Modi-<lb/>fikation werden die Signale in den Zeitbereich zurück transformiert. Als Wavelet-Trans-<lb/>formation kommt eine spezielle Modifikation der orthogonalen Transformationen zum Ein-<lb/>satz.<lb/> Die Entwicklung der Wavelet-basierten Methoden erfolgte im Auftrag von und in Zusam-<lb/>menarbeit mit der Rohrkontistraße Mülheim, Vallourec &amp; Mannesmann Tubes Deutsch-<lb/>land. Die Erprobung fand zunächst an einem ROTOMAT [1] in Zusammenarbeit mit dem<lb/> Institut Dr. Foerster in Reutlingen statt. Das Institut Dr. Foerster stellte auch eine analoge<lb/> DGZfP-Jahrestagung 2009 -Poster 21</div>
+
+		</front>
+	</text>
+</tei>

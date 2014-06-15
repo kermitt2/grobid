@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55114205"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>International Journal of Textile Science 2012, 1(4): 19-28<lb/></reference>
+
+	<idno type="DOI">DOI: 10.5923/j.textile.20120104.02<lb/></idno>
+
+	<docTitle>
+	<titlePart>A Short Review on Basalt Fiber<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Kunal Singha<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Textile Engineering, Panipat Institute of Engineering &amp; Technology,</affiliation>
+	</byline>
+
+	<address>Harayana, India<lb/></address>
+
+	<div type="abstract">Abstract A hard, dense, inert rock found world wide, basalt is an igneous rock, wh ich is solid ified volcanic lava. Cast<lb/> basalt liners for steel tubing shows very high abrasion resistance in various industrial applications. In recent years, continuous<lb/> basalt fibers ext ruded fro m naturally fire-resistant basalt are attracted attention as a rep lacement fo r asbestos fibers. In the last<lb/> decade, basalt has emerged as a contender in the fiber reinforcement of co mposites. Some manufacturer of basalts claims it<lb/> offers performance similar to S-2 glass fibers at a price point between S-2 glass and E-g lass, and may offer manufacturers a<lb/> less-expensive alternative to carbon fiber. Basalt fibre (BF) is capable to withstand very high temperature and can act as fire<lb/> blocking element.<lb/></div>
+
+	<keyword>Keywords Cast Basalt, Fiber Reinforcement of Co mposites, S-2 Glass Fibers, Basalt Fibre (BF), Fire Blocking Element<lb/>
+	</keyword>
+
+		</front>
+	</text>
+</tei>

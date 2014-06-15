@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009625"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">TEMPLATE DESIGN</note>
+
+	<note type="copyright">© 2008<lb/></note>
+
+	<ptr>www.PosterPresentations.com<lb/></ptr>
+
+	<docTitle>
+	<titlePart>A phase I, pharmacokinetic (PK) and preliminary efficacy assessment of ALD518, a humanized anti-IL-6 antibody, in<lb/> patients with advanced cancer.<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>S Clarke 1 , C. Gebbie 1 , C Sweeney 2 , N Olszewksi 2 , J Smith 3<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Sydney Cancer Centre, Concord Hospital,</affiliation>
+	</byline>
+
+	<address>Sydney, Australia;</address>
+
+	<byline>
+	<affiliation>2 University of Adelaide, Royal Adelaide Hospital,</affiliation>
+	</byline>
+
+	<address>Adelaide, Australia;</address>
+
+	<byline>
+	<affiliation>3 Alder Biopharmaceuticals Inc,</affiliation>
+	</byline>
+
+	<address>Bothell, WA, USA<lb/></address>
+
+		</front>
+	</text>
+</tei>

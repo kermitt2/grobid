@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei type="wiki">
+	<teiHeader>
+		<fileDesc xml:id="55114623"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>H.323<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">From Wikipedia, the free encyclopedia<lb/> This is an old revision of this page, as edited by Dgtsyb (talk | contribs) at 14:11, 16 July<lb/> 2009. It may differ significantly from the current revision (//en.wikipedia.org/wiki/H.323).<lb/> (diff) ← Previous revision | Latest revision (diff) | Newer revision → (diff)<lb/></note>
+
+	<div type="abstract">H.323 is an umbrella Recommendation from the ITU Telecommunication Standardization Sector<lb/> (ITU-T) that defines the protocols to provide audio-visual communication sessions on any packet<lb/> network. The H.323 standard addresses call signaling and control, multimedia transport and control,<lb/> and bandwidth control for point-to-point and multi-point conferences.<lb/> [1]<lb/> It is widely implemented by voice and videoconferencing equipment manufacturers, is used within<lb/> various Internet real-time applications such as GnuGK and NetMeeting and is widely deployed<lb/> worldwide by service providers and enterprises for both voice and video services over Internet<lb/> Protocol (IP) networks.<lb/> It is a part of the ITU-T H.32x series of protocols, which also address multimedia communications<lb/> over Integrated Services Digital Network (ISDN), Public Switched Telephone Network (PSTN) or<lb/> Signaling System 7 (SS7), and 3G mobile networks.<lb/> H.323 Call Signaling is based on the ITU-T Recommendation Q.931 protocol and is suited for<lb/> transmitting calls across networks using a mixture of IP, PSTN, ISDN, and QSIG over ISDN. A call<lb/> model, similar to the ISDN call model, eases the introduction of IP telephony into existing networks<lb/> of ISDN-based PBX systems, including transitions to IP-based Private Branch eXchanges (PBXs).<lb/> Within the context of H.323, an IP-based PBX might be an H.323 Gatekeeper or other call control<lb/> element that provides service to telephones or videophones. Such a device may provide or facilitate<lb/> both basic services and supplementary services, such as call transfer, park, pick-up, and hold.<lb/> While H.323 excels at providing basic telephony functionality and interoperability, H.323&apos;s strength<lb/> lies in multimedia communication functionality designed specifically for IP networks.<lb/></div>
+
+		</front>
+	</text>
+</tei>

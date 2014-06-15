@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014504"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Robust Solutions in Stackelberg Games: Addressing Boundedly Rational Human<lb/> Preference Models<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Manish Jain, Fernando Ord<lb/> nez, James Pita, Christopher Portway, Milind Tambe, Craig Western<lb/> *Praveen Paruchuri, and **Sarit Kraus<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University of Southern California,</affiliation>
+	</byline>
+
+	<address>Los Angeles, CA 90089<lb/></address>
+
+	<byline>
+	<affiliation>*Intelligent Automation, Inc.,</affiliation>
+	</byline>
+
+	<address>RockVille, MD 20855<lb/></address>
+
+	<byline>
+	<affiliation>**Bar-llan University,</affiliation>
+	</byline>
+
+	<address>Ramat-Gan 52900, Israel<lb/></address>
+
+	<byline>
+	<affiliation>Institute for Advanced Computer Studies, University of Maryland,</affiliation>
+	</byline>
+
+	<address>College Park, MD 20742<lb/></address>
+
+	<div type="abstract">Abstract<lb/> Stackelberg games represent an important class of games in<lb/> which one player, the leader, commits to a strategy and the<lb/> remaining players, the followers, make their decision with<lb/> knowledge of the leader&apos;s commitment. Existing algorithms<lb/> for Bayesian Stackelberg games find optimal solutions while<lb/> modeling uncertainty over follower types with an a-priori<lb/> probability distribution. Unfortunately, in real-world appli-<lb/>cations, the leader may also face uncertainty over the fol-<lb/>lower&apos;s response which makes the optimality guarantees of<lb/> these algorithms fail. Such uncertainty arises because the<lb/> follower&apos;s specific preferences or the follower&apos;s observations<lb/> of the leader&apos;s strategy may not align with the rational strat-<lb/>egy, and it is not amenable to a-priori probability distribu-<lb/>tions. These conditions especially hold when dealing with<lb/> human subjects. To address these uncertainties while pro-<lb/>viding quality guarantees, we propose three new robust algo-<lb/>rithms based on mixed-integer linear programs (MILPs) for<lb/> Bayesian Stackelberg games. A key result of this paper is<lb/> a detailed experimental analysis that demonstrates that these<lb/> new MILPs deal better with human responses: a conclusion<lb/> based on 800 games with 57 human subjects as followers. We<lb/> also provide run-time results on these MILPs.<lb/></div>
+
+		</front>
+	</text>
+</tei>

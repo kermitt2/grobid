@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013930"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Photochemistry and Photobiology, 2006, 82: 1566-1 571<lb/></reference>
+
+	<docTitle>
+	<titlePart>Reactions with Dye Free Radicals Reveal Weak Redox<lb/> Properties of Drugs<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Benjamin S. Marinov*, Eric G. Bend and Jonathan J. Abramson<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Physics Department, Portland State University,</affiliation>
+	</byline>
+
+	<address>PO Box 751, Portland, OR<lb/></address>
+
+	<note type="submission">Received 22 June 2006; accepted 2 October 2006;</note>
+
+	<date>published online 3 October 2006</date>
+
+	<idno type="DOI">DOI: 10.156W2006-06-22-RA-945<lb/></idno>
+
+	<div type="abstract">ABSTRACT<lb/> The calcium release channel (CRC) of the skeletal sarcoplas-<lb/>mic reticulum is rich in thiol groups and is strongly regulated<lb/> by covalent modification of these thiols. Oxidizing reagents<lb/> activate the release channel, whereas reducing reagents inhibit<lb/> the channel. However, most CRC regulators are not thiol<lb/> reagents. Here, we propose that reversible redox interactions<lb/> are involved in regulation of the CRC by nonthiol reagents.<lb/> This hypothesis was tested with several CRC regulators. The<lb/> local anesthetics tetracaine, procaine and QX-314, which block<lb/> the CRC, behaved as electron donors in reactions with dye<lb/> free radicals. In contrast, ryanodine, caffeine, doxorubicin and<lb/> daunorubicin, compounds known to activate the release<lb/> channel, all accepted electrons from dye anion radicals.<lb/> Moreover, release of Ca2+ from SR initiated by doxorubicin<lb/> (acceptor) was antagonized by local anesthetics (donors).<lb/> Based on the redox characterization of CRC modulators, we<lb/> propose a functional model in which channel inhibitors and<lb/> activators act as weak electron donors and acceptors, re-<lb/>spectively, and shift the thiol-disulfide balance within the<lb/> release protein. The consequence of this model is that, in spite<lb/> of the chemical diversity of CRC modulators, a common mech-<lb/>anism of channel regulation involves the transient exchange<lb/> of electrons between the activatorhhibitor and the CRC.<lb/></div>
+
+		</front>
+	</text>
+</tei>

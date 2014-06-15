@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012754"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Focal Spot Visualization in MRgFUS of the Breast: MR-ARFI vs. T1-weighted FSE<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>E. Kaye<lb/> 1,2 , R. R. Bitton<lb/> 1 , and K. Butts Pauly<lb/> 1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Radiology, Stanford University,</affiliation>
+	</byline>
+
+	<address>Palo Alto, California, United States,<lb/></address>
+
+	<byline>
+	<affiliation>2 Electrical Engineering, Stanford University,</affiliation>
+	</byline>
+
+	<address>Palo Alto, California, United States<lb/></address>
+
+	<div type="introduction">Introduction MRI guided focused ultrasound (MRgFUS) as a non-invasive breast cancer<lb/> treatment has recently shown promising results in clinical trials [1,2,3].<lb/> Currently, during the planning stage of MRgFUS in the breast, a low<lb/> temperature test spot is created to verify the actual location of the focal spot<lb/> in relation to the planned position [1,2]. The test spots are visualized using<lb/> proton resonance frequency (PRF) thermometry. However, in some cases the<lb/> test spots are not visible due to the unreliable performance of PRF in fatty<lb/> inhomogeneous tissue [1,2]. Two alternative approaches have been proposed<lb/> for focal spot localization during breast MRgFUS treatments. One method<lb/> relies on T1-weighted imaging of the test spots with fast spin echo (FSE) sequence [4], and the second approach proposes to image displacement in<lb/> the focal spot using MR-guided acoustic radiation force imaging (MR-ARFI) [5, 6, 7]. The goal of this study was to test both methods in ex vivo<lb/> breast tissue and to evaluate the potential of both as a targeting tool during MRgFUS treatments in highly adipose breast tissue.<lb/> Methods An ex vivo human breast tissue sample, kept at room temperature, was imaged on a 3T GE MRI scanner equipped with an InSightec ExAblate 2000<lb/> HIFU system (1MHz) . The experimental setup is shown in Figure 1a. Baseline MR-ARFI and FSE images were obtained with the ultrasound off.<lb/> For six unique locations of the focal spot, imaging was performed with ultrasound on using first MR-ARFI (acoustic power = 28W, duty cycle =<lb/> 1.9%, energy 38J), then FSE (acoustic power = 23W, duty cycle = 100%, energy of 460J). The MR-ARFI sequence, shown in Figure 1b, consisted<lb/> of a 2DFT spin-echo sequence (TE = 41ms, TR = 1s), modified to have displacement encoding gradients applied along the ultrasound beam direction<lb/> [6]. The duration of each gradient lobe was 6.1ms, and the ultrasound pulse was 19ms long. For T1w imaging, an FSE sequence (TE = 12ms) with<lb/> ETL = 8 was used. The TR was varied between 200 ms and 700 ms in steps of 100 ms. A different TR value was tested in each focal spot location.<lb/> Imaging was timed such that the sonication and the scan ended at the same time. Images acquired had a FOV of 22 x 11cm<lb/> 2 , matrix size of 256 x 64,<lb/> and bandwidth of 15.62kHz.<lb/> SNR of the signal in the focal spot was<lb/> analyzed using MR-ARFI displacement maps and<lb/> FSE magnitude difference images. Displacement<lb/> maps were calculated as the difference between<lb/> two phase images acquired with opposite<lb/> encoding gradient polarity. The FSE magnitude<lb/> difference images were calculated by subtracting<lb/> the images before and during sonication. Mean<lb/> signal in the focal spot was calculated in a 4x4<lb/> pixel ROI prescribed individually for each spot<lb/> location. The noise was calculated as the standard<lb/> deviation in a 20x20 pixel ROI placed away from<lb/> the focal spots in the corresponding baseline<lb/> images.<lb/> Results The phase images obtained with one of the encoding gradient polarities, and the displacement maps for each of the focal spot locations, are shown in<lb/> Figure 2a,b. In both sets of images, the focal spot can be visualized with the naked eye. In the FSE magnitude images obtained during sonications<lb/> (Fig.2c) the focal spots appear indistinguishable. It is only in the FSE difference images, that the locations of the focal spots become apparent (Fig<lb/> 2d). SNR analysis of the displacement maps gives SNR of 43 ± 16 for the six different focal spot locations. As for FSE difference images, SNR was<lb/> found to vary between different TRs (Fig 3) with the highest SNR of 11.5 for TR = 500ms.<lb/> Conclusion The results of this study show that both T1-weighted imaging and MR-ARFI allow visualization of the FUS focal spot. The optimal TR of 500 ms for<lb/> the FSE method was slightly longer than TR of 400 ms found in rabbit visceral fat at 1.5T [4]. Depositing 10 times less ultrasound energy than<lb/> during FSE acquisition, the MR-ARFI approach provided much higher SNR at the focal spot. In addition, individual MR-ARFI phase images can be<lb/> used for immediate feedback, while the magnitude FSE images require either higher ultrasound power, or image subtraction. At body temperature,<lb/> fatty tissue is expected to have lower stiffness, and that would result in even higher displacement than what was measured in this experiment in the<lb/> focal spot. Currently this MR-ARFI sequence requires a longer scan time than FSE, but this could be mitigated in the future. In summary, MR-ARFI<lb/> can provide accurate focal spot localization in inhomogeneous fatty breast tissue and with further calibration the displacement can be potentially<lb/> linked to the beam quality in the focal spot, which may increase efficiency of treatment targeting.<lb/> References:<lb/> [1] K Hynynen et al., Radiology, 2001; 219: 176-185; [2] D Gianfelice et al., Radiology, 2003;227:849-55.[3] H Furusawa et al, Breast Cancer.<lb/> 2007;14(1):55-58. [4] K. Hynynen, et al., MRM, 2000,43:901-904. [5] N.McDannold, et al., Med Phys, 35(8):3748–58, 2008.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>A</forename>.
+								<surname>BOND</surname>,
+							</persName>
+							<persName>
+								<forename>A</forename>.
+								<surname>ALAVI</surname>,
+							</persName>
+							<persName>
+								<forename>J</forename>.
+								<middlename>S</middlename>.
+								<surname>AXFORD</surname>,
+							</persName>
+							<persName>
+								<forename>P</forename>.
+								<surname>YOUINOU</surname>
+								<marker>*</marker> &amp;
+							</persName>
+							<persName>
+								<forename>F</forename>.
+								<middlename>C</middlename>.
+								<surname>HAY</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

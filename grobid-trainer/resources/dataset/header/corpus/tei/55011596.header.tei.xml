@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011596"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">12th International Society for Music Information Retrieval Conference (ISMIR 2011)<lb/></note>
+
+	<docTitle>
+	<titlePart>CAUSAL PREDICTION OF CONTINUOUS-VALUED MUSIC FEATURES<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Peter Foster, Anssi Klapuri, Mark D. Plumbley<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Centre for Digital Music<lb/> Queen Mary University of London<lb/></affiliation>
+	</byline>
+
+	<address>Mile End Road, London E1, UK<lb/></address>
+
+	<email>{peter.foster,anssi.klapuri,mark.plumbley}@eecs.qmul.ac.uk<lb/></email>
+
+	<div type="abstract">ABSTRACT<lb/> This paper investigates techniques for predicting sequences<lb/> of continuous-valued feature vectors extracted from musi-<lb/>cal audio. In particular, we consider prediction of beat-<lb/>synchronous Mel-frequency cepstral coefficients and chroma<lb/> features in a causal setting, where features are predicted as<lb/> they unfold in time. The methods studied comprise autore-<lb/>gressive models, N-gram models incorporating a smoothing<lb/> scheme, and a novel technique based on repetition detec-<lb/>tion using a self-distance matrix. Furthermore, we propose<lb/> a method for combining predictors, which relies on a run-<lb/>ning estimate of the error variance of the predictors to in-<lb/>form a linear weighting of the predictor outputs. Results in-<lb/>dicate that incorporating information on long-term structure<lb/> improves the prediction performance for continuous-valued,<lb/> sequential musical data. For the Beatles data set, combining<lb/> the proposed self-distance based predictor with both N-gram<lb/> and autoregressive methods results in an average of 13% im-<lb/>provement compared to a linear predictive baseline.<lb/></div>
+
+		</front>
+	</text>
+</tei>

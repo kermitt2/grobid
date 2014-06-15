@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<tei type="manual">
+	<teiHeader>
+		<fileDesc xml:id="55114572"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+
+	<docTitle>
+	<titlePart>User&apos;s manual<lb/> NAVIGON 81xx<lb/> </titlePart>
+	</docTitle>
+
+	<note type="other">English (United Kingdom)<lb/></note>
+
+	<date>April 2008</date>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="institution">Gadsden Regional Cancer Center</orgName>,
+							<address>
+								<settlement>Gadsden</settlement>,
+								<region>AL</region>;
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="department">Department of Radiation Oncology</orgName>,
+							<orgName type="institution">University of Alabama</orgName>–
+							<lb/>
+							<address>
+								<settlement>Birmingham</settlement>,
+								<region>AL</region>; and
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>3</marker>
+							<orgName type="department">Department of Medical Affairs</orgName>,
+							<orgName type="institution">Salix Pharmaceuticals, Inc.</orgName>,
+							<address>
+								<settlement>Morrisville</settlement>,
+								<region>NC</region>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

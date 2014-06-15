@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013341"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Homeplug<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">aus Wikipedia, der freien Enzyklopädie<lb/> Dies ist eine alte Version dieser Seite, zuletzt bearbeitet am 28. September 2009 um 14:16 Uhr durch<lb/> 155.56.68.217 (Diskussion). Sie kann sich erheblich von der aktuellen Version unterscheiden.<lb/> (Unterschied) ← Nächstältere Version | Aktuelle Version (Unterschied) | Nächstjüngere Version →<lb/> (Unterschied)<lb/></note>
+
+	<div type="abstract">HomePlug ist eine Marke<lb/> [1] für Spezifikationen von Trägerfrequenzanlagen für Inhouse Power Line<lb/> Communication oder PowerLAN. Die Spezifikationen basieren auf Patenten<lb/> [2] des Unternehmens Intellon,<lb/> das integrierte Schaltkreise für Trägerfrequenzanlagen entwirft und herstellt.<lb/> Das Stromnetz des Hauses stellt zugleich die Infrastruktur eines Datennetzes dar. In jedem Zimmer, in dem<lb/> eine Steckdose angebracht ist, können Daten gesendet und empfangen werden. Die dafür notwendigen<lb/> Adapter werden wie normale Stecker in die Steckdose gesteckt und durch ein Netzwerkkabel mit der<lb/> Netzwerkkarte eines Computers oder eines anderen Geräts mit Netzwerkanschluss verbunden. Es sind<lb/> zumindest zwei solcher Adapter nötig.<lb/> Der Einsatzbereich der Technologie liegt bei kleinen LANs und Heimnetzwerken. Zunehmendend findet<lb/> man solche Geräte aber auch im professionellen Einsatz, wobei nicht nur die hausinternen Stromleitungen,<lb/> sondern auch die Koax-Leitungen (Antennenkabel) zur Datenübertragung genutzt werden.</div>
+
+		</front>
+	</text>
+</tei>

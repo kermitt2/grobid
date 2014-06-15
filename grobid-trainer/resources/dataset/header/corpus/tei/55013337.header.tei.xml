@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013337"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">PRESCRIBING INFORMATION<lb/> </note>
+
+	<docTitle>
+	<titlePart>FLOLAN<lb/> ®<lb/> (epoprostenol sodium)<lb/> for Injection<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">DESCRIPTION FLOLAN (epoprostenol sodium) for Injection is a sterile sodium salt formulated for<lb/> intravenous (IV) administration. Each vial of FLOLAN contains epoprostenol sodium equivalent<lb/> to either 0.5 mg (500,000 ng) or 1.5 mg (1,500,000 ng) epoprostenol, 3.76 mg glycine, 2.93 mg<lb/> sodium chloride, and 50 mg mannitol. Sodium hydroxide may have been added to adjust pH.<lb/> Epoprostenol (PGI 2 , PGX, prostacyclin), a metabolite of arachidonic acid, is a naturally<lb/> occurring prostaglandin with potent vasodilatory activity and inhibitory activity of platelet<lb/> aggregation.<lb/> Epoprostenol is (5Z,9α,11α,13E,15S)-6,9-epoxy-11,15-dihydroxyprosta-5,13-dien-1-oic acid.<lb/> Epoprostenol sodium has a molecular weight of 374.45 and a molecular formula of<lb/> C 20 H 31 NaO 5 . The structural formula is:<lb/> FLOLAN is a white to off-white powder that must be reconstituted with STERILE DILUENT<lb/> for FLOLAN. STERILE DILUENT for FLOLAN is supplied in glass vials containing 50 mL of<lb/> 94 mg glycine, 73.3 mg sodium chloride, sodium hydroxide (added to adjust pH), and Water for<lb/> Injection, USP.<lb/> The reconstituted solution of FLOLAN has a pH of 10.2 to 10.8 and is increasingly unstable<lb/> at a lower pH.<lb/> </div>
+
+	<div type="introduction">CLINICAL PHARMACOLOGY<lb/> General: Epoprostenol has 2 major pharmacological actions: (1) direct vasodilation of<lb/> pulmonary and systemic arterial vascular beds, and (2) inhibition of platelet aggregation. In<lb/> animals, the vasodilatory effects reduce right-and left-ventricular afterload and increase cardiac<lb/> output and stroke volume. The effect of epoprostenol on heart rate in animals varies with dose.<lb/> At low doses, there is vagally mediated bradycardia, but at higher doses, epoprostenol causes<lb/> reflex tachycardia in response to direct vasodilation and hypotension. No major effects on<lb/> cardiac conduction have been observed. Additional pharmacologic effects of epoprostenol in</div>
+
+		</front>
+	</text>
+</tei>

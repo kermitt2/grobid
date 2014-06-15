@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>a</marker>
+							<orgName type="department">School of Pharmacy and Pharmaceutical Sciences</orgName>,
+							<orgName type="department">Centre for Synthesis and Chemical Biology</orgName>,
+							<orgName type="institution">Trinity College Dublin</orgName>,
+							<address>
+								<addrLine>Dublin 2</addrLine>,
+								<country>Ireland</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>b</marker>
+							<orgName type="department">School of Biochemistry &amp; Immunology</orgName>,
+							<orgName type="institution">Trinity College Dublin</orgName>,
+							<address>
+								<addrLine>Dublin 2</addrLine>,
+								<country>Ireland</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>c</marker>
+							<orgName type="institution">UCD Conway Institute</orgName> and
+							<orgName type="department">School of Biomolecular and Biomedical Science</orgName>,
+							<orgName type="institution">University College Dublin</orgName>,
+							<address>
+								<settlement>Belfield</settlement>,
+								<addrLine>Dublin 4</addrLine>,
+								<country>Ireland</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>d</marker>
+							<orgName type="department">School of Chemistry</orgName>,
+							<orgName type="institution">Trinity College Dublin</orgName>,
+							<address>
+								<addrLine>Dublin 2</addrLine>,
+								<country>Ireland</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>e</marker>
+							<orgName type="department">Molecular Design Group</orgName>,
+							<orgName type="department">School of Biochemistry &amp; Immunology</orgName>,
+							<orgName type="institution">Trinity College Dublin</orgName>,
+							<address>
+								<addrLine>Dublin 2</addrLine>,
+								<country>Ireland</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

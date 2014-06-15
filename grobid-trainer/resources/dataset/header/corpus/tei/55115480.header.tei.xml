@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei type="technical-report">
+	<teiHeader>
+		<fileDesc xml:id="55115480"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Cloud Computing: A Taxonomy of Platform and<lb/> Infrastructure-level Offerings<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>David Hilley<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>College of Computing<lb/> Georgia Institute of Technology<lb/></affiliation>
+	</byline>
+
+	<date>April 2009<lb/></date>
+	
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009707"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">1<lb/> 2<lb/> 3<lb/> 4<lb/> 5<lb/> 6<lb/> 7<lb/> 8<lb/></note>
+
+	<idno>Document Number: DSP0243<lb/></idno>
+
+	<date>Date: 2010-01-12<lb/></date>
+
+	<note type="other">Version: 1.1.0<lb/></note>
+
+	<docTitle>
+	<titlePart>Open Virtualization Format Specification<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Document Type: Specification<lb/> Document Status: DMTF Standard<lb/> Document Language: E</note>
+
+		</front>
+	</text>
+</tei>

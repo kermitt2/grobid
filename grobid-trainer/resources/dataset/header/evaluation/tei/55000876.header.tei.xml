@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000876"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+
+	<byline>
+	<affiliation>American National Standard<lb/></affiliation>
+	</byline>
+	
+	<idno>ANSI/ISA-S5.1-1984 (R 1992)<lb/></idno>
+	
+	<date>Reaffirmed July 13, 1992<lb/></date>
+
+	<docTitle>
+	<titlePart>Instrumentation Symbols<lb/> and Identification</titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

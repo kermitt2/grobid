@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013471"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<docAuthor>Victor S.-Y. Lin<lb/> *<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Iowa State University<lb/></affiliation>
+	</byline>
+
+	<note>J. Am. Chem. Soc.<lb/></note>
+
+	<note type="page">S1<lb/></note>
+
+	<docTitle>
+	<titlePart>Supporting Information<lb/> A Polyamidoamine Dendrimer-capped Mesoporous Silica Nanosphere-based Gene<lb/> Transfection Reagent<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Daniela R. Radu,<lb/> 1 Cheng-Yu Lai,<lb/> 1 Ksenija Jeftinija,<lb/> 2 Eric W. Rowe,<lb/> 2 Srdija Jeftinija,<lb/> 2 and Victor S.-Y. Lin<lb/> 1,2 *<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Chemistry,<lb/> 1 Department of Biomedical Sciences,<lb/> 2 Iowa State University,</affiliation>
+	</byline>
+
+	<address>Ames, Iowa 50011-3111<lb/></address>
+
+		</front>
+	</text>
+</tei>

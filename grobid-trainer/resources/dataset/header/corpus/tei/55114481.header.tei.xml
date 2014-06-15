@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<tei type="technical-report">
+	<teiHeader>
+		<fileDesc xml:id="55114481"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Influence of Nucleation Seeding on the Compressive<lb/> Strength of Ordinary Portland Cement and Alkali<lb/> Activated Blast-­‐Furnace Slag</titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>M. Hubler, H. Jennings, and J. Thomas<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Civil and Environmental Engineering, Northwestern University<lb/></affiliation>
+	</byline>
+
+	<address>Technological Institute 2145 Sheridan Rd.<lb/> Evanston, IL 60208<lb/> </address>
+
+	<note type="other">Infrastructure Technology Institute Year 2 Final Report<lb/> DISCLAIMER The contents of this report reflect the views of the authors, who are responsible for<lb/> the facts and the accuracy of the information presented herein. This document is<lb/> disseminated under the sponsorship of the Department of Transportation<lb/> University Transportation Centers Program, in the interest of information exchange.<lb/> The U.S. Government assumes no liability for the contents or use thereof.<lb/></note>
+
+	<note type="page">1<lb/></note>
+
+	<docTitle>
+	<titlePart>INFLUENCE OF NUCLEATION SEEDING ON THE COMPRESSIVE STRENGTH OF<lb/> ORDINARY PORTLAND CEMENT AND ALKALI ACTIVATED BLAST-FURNACE<lb/> SLAG<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>M. Hubler, H. Jennings, and J. Thomas<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Civil and Environmental Engineering, Northwestern University<lb/> Technological Institute</affiliation>
+	</byline>
+
+	<address>2145 Sheridan Rd.<lb/> Evanston, IL 60208<lb/></address>
+
+	<div type="abstract">A study is conducted to determine the effects on the early hydration kinetics and<lb/> compressive strength by seeding of Portland cement and alkali-activated blast furnace<lb/> slag with a pure form of calcium silicate hydrate (C-S-H). The effects of C-S-H seeding<lb/> during the early nucleation and growth period of each type of cement, was measured with<lb/> an isothermal calorimeter during the first day of hydration. The compressive strength was<lb/> determined for 2&quot; cylinders up to 28 days after mixing. It was found that C-S-H seeding<lb/> results in an earlier and larger hydration heat development peak for both types of cement.<lb/> The addition of C-S-H seed to the slag cement paste produced a significant increase in<lb/> compressive strength only when cured in a sealed environment. For the Portland cement<lb/> paste, the C-S-H seeding provides a slight increase in compressive strength when cured<lb/> underwater. It was also found that careful dispersion of the C-S-H seed in the mix water<lb/> further improves the early hydration heat development, but has no effect on the<lb/> compressive strength. This work furthers the understanding of the early hydration<lb/> behavior of slag paste and the effects of C-S-H seeding.<lb/></div>
+
+		</front>
+	</text>
+</tei>

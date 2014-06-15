@@ -1,0 +1,80 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55114447"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>HUMAN GENE THERAPY 15:1131–1154 (November 2004)<lb/></reference>
+
+	<note type="copyright">© Mary Ann Liebert, Inc.<lb/></note>
+
+	<docTitle>
+	<titlePart>Clinical Protocol<lb/> Administration of a Replication-Deficient Adeno-Associated<lb/> Virus Gene Transfer Vector Expressing the Human CLN2<lb/> cDNA to the Brain of Children with Late Infantile Neuronal<lb/> Ceroid Lipofuscinosis<lb/></titlePart>
+	</docTitle>
+
+	<idno>FDA-IND #11481<lb/> NIH (RAC) #0312-619<lb/></idno>
+
+	<note type="other">PRINCIPAL INVESTIGATOR: </note>
+		
+	<byline>
+	<docAuthor>Ronald G. Crystal 1<lb/> </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>SITE:<lb/> New York Presbyterian Hospital-Cornell Medical Center<lb/> </affiliation>
+	</byline>
+	
+	<note type="other">COINVESTIGATORS:<lb/></note>
+
+	<byline>
+	<docAuthor>Dolan Sondhi, Ph.D., 1 Neil R. Hackett, Ph.D., 2 Stephen M. Kaminsky,<lb/> Ph.D., 2 Stefan Worgall, M.D., 3 Philip Stieg, M.D., Ph.D., 4 Mark Souwei-<lb/>dane, M.D., 4 Syed Hosain, M.D., 3 Linda Heier, M.D., 5 Douglas Ballon,<lb/> Ph.D., 5 Miles Dinner, M.D., 6 Krystyna Wisniewski, M.D., Ph.D., 7 Michael<lb/> Kaplitt, M.D., Ph.D., 4 Bruce M. Greenwald, M.D., 3 Joy D. Howell, M.D., 3<lb/> Kristin Strybing, N.P., 4 Jonathan Dyke, Ph.D., 5 and Henning Voss, Ph.D. 5<lb/> </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>AFFILIATIONS:<lb/>1 Department of Genetic Medicine, Weill Medical College of Cornell Uni-<lb/>versity,</affiliation>
+	</byline>
+
+	<address>New York, NY 10021 (WMC),</address>
+
+	<byline>
+	<affiliation>2 Department of Medicine,</affiliation>
+	</byline>
+
+	<address>WMC,<lb/></address>
+
+	<byline>
+	<affiliation>3 Department of Pediatrics,</affiliation>
+	</byline>
+
+	<address>WMC,</address>
+
+	<byline>
+	<affiliation>4 Department of Neurological Surgery,<lb/></affiliation>
+	</byline>
+ 
+	<address>WMC,</address>
+
+	<byline>
+	<affiliation>5 Department of Radiology, WMC, 6 Department of Anesthesiology,<lb/></affiliation>
+	</byline>
+
+	<address>WMC,</address>
+
+	<byline>
+	<affiliation>7 Institute for Basic Research in Developmental Disabilities,</affiliation>
+	</byline>
+
+	<address>Staten<lb/> Island, NY 10314.<lb/></address>
+
+	<note type="other">TABLE OF CONTENTS<lb/></note>
+
+	<note type="other">Overview of Late Infantile Neuronal Ceroid Lipofuscinosis<lb/> Rationale for In Vivo Gene Therapy for the CNS Manifestations of LINCL<lb/> Adeno-associated Serotype 2 Gene Transfer Vectors<lb/> Overview of the Proposed Study<lb/> Details of the Experimental Design<lb/> End-Point Variables<lb/> Primary End Point<lb/> Secondary End Point<lb/> Review and Monitoring<lb/> Statistical Considerations<lb/> Timeline Inclusion/Exclusion Criteria<lb/> Inclusion Criteria<lb/> Exclusion Criteria<lb/> Risks of the Study<lb/> Delivery of the Vector and Surgical Procedures<lb/> AAV2 CU hCLN2 Vector<lb/> Tests and Procedures Designed to Evaluate Effectiveness and Safety<lb/> Precautions to Minimize Risks<lb/> Management of Intercurrent Illness<lb/> Management of Adverse Events
+	<lb/></note>
+	
+	<note type="page">1131</note>
+
+		</front>
+	</text>
+</tei>

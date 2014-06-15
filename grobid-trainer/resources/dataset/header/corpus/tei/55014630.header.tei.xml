@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014630"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>6(2):200.</reference>
+
+	<idno type="DOI">DOI: 10.1128/AAC.6.2.200.<lb/> </idno>
+
+	<reference>1974,<lb/> Antimicrob. Agents Chemother.<lb/></reference>
+ 
+	<byline>
+	<docAuthor>H. Haque and A. D. Russell<lb/></docAuthor>
+	</byline>
+
+	<docTitle>
+	<titlePart>Agents<lb/> Antibacterial Bacteria to Some<lb/> Strains of Gram-Negative<lb/> the Susceptibility of Some<lb/> Effect of Chelating Agents on<lb/></titlePart>
+	</docTitle>
+
+	<ptr type="web">http://aac.asm.org/content/6/2/200<lb/></ptr>
+
+	<note type="other">found at:<lb/> Updated information and services can be<lb/> These include:<lb/> CONTENT ALERTS</note>
+
+		</front>
+	</text>
+</tei>

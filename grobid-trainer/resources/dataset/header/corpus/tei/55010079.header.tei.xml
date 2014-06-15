@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010079"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>XML-Native Constraint Evaluation<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>by M. Cokus, Dr. R. Costello, Dr. M.A. Malloy, E. Masek, D. Winkowski<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>The MITRE Corporation<lb/></affiliation>
+	</byline>
+
+	<address>903 Gateway Boulevard, Suite 200<lb/> Hampton, VA 23666<lb/></address>
+
+	<div type="abstract">Abstract<lb/> This paper discusses approaches to validating XML documents for compliance to<lb/> constraints. Our particular focus is on structural and content constraints that go beyond<lb/> what is readily expressible in XML Schema technologies. We provide examples and<lb/> solutions drawn from our specific experience building an XML-native constraint<lb/> validator based on a mathematical language called Structural Notation (SN). SN is used<lb/> to express operational constraints as machine-processible Rules against a particular<lb/> category of hierarchically structured, text-oriented military messages, called Message<lb/> Text Formats (MTFs), which have been migrated to a corresponding XML-based<lb/> representation.<lb/> We discuss the challenges we faced in implementing this XML-native constraint<lb/> evaluator. For example, we discuss how, to build a Rule validator, we found it necessary<lb/> to extend the underpinnings of logical evaluation in XPath 2.0 to use three-valued logic<lb/> (3VL) rather than two-valued logic. We detail some general principles for expressing and<lb/> enforcing constraints against regularly structured text, when rendered as an XML<lb/> document. We enumerate minimal capabilities needed by a constraint language and<lb/> evaluator for XML documents and suggest some ways our approaches can be generalized<lb/> for use in other domains. Because the need to apply constraints to incomplete or flawed<lb/> documents is not unique to the military messaging world, a constraint evaluation model<lb/> such as we propose, grounded in 3VL, is relevant to the XML user community at large.<lb/></div>
+
+	<keyword>Keywords: XML, XPath 2.0, XSL 2.0, Constraint, Validation, Text Messaging,<lb/> Three-valued Logic, Message Text Format, Structural Notation, XML-<lb/>MTF, XSN-MTF<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

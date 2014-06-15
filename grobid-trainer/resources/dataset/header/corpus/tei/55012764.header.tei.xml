@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012764"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">original article<lb/></note>
+
+	<reference>T h e ne w e ngl a nd jou r na l o f m e dic i ne<lb/> n engl j med 361;10 nejm.org september 3, 2009<lb/></reference>
+
+	<note type="page">968<lb/></note>
+
+	<docTitle>
+	<titlePart>Injectable Collagenase Clostridium<lb/> Histolyticum for Dupuytren&apos;s Contracture<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Lawrence C. Hurst, M.D., Marie A. Badalamente, Ph.D., Vincent R. Hentz, M.D.,<lb/> Robert N. Hotchkiss, M.D., F. Thomas D. Kaplan, M.D., Roy A. Meals, M.D.,<lb/> Theodore M. Smith, Ph.D., and John Rodzvilla, M.D.,<lb/></docAuthor>
+	</byline>
+
+	<note type="other">for the CORD I Study Group*<lb/> From the State University of New York<lb/> (SUNY) at Stony Brook, Stony Brook<lb/> (L.C.H., M.A.B.); Stanford Hospitals and<lb/> Clinics, Palo Alto, CA (V.R.H.); the Hospi-<lb/>tal for Special Surgery, New York (R.N.H.);<lb/> the Indiana Hand Center, Indianapolis<lb/> (F.T.D.K.); Los Angeles (R.A.M.); and<lb/> Auxilium Pharmaceuticals, Malvern, PA<lb/> (T.M.S., J.R.). Address reprint requests to<lb/> Dr. Hurst at the Department of Ortho-<lb/>paedics, SUNY at Stony Brook, Health<lb/> Science Center, Level 18, Rm. 020, Stony<lb/> Brook, NY 11794-8181, or at lhurst@notes.<lb/> cc.sunysb.edu.<lb/> *Members of the Collagenase Option for<lb/> Reduction of Dupuytren&apos;s (CORD) I Study<lb/> Group are listed in the Supplementary<lb/> Appendix, available with the full text of<lb/> this article at NEJM.org.<lb/> </note>
+
+	<reference>N Engl J Med 2009;361:968-79.<lb/></reference>
+
+	<note type="copyright">Copyright © 2009 Massachusetts Medical Society.<lb/></note>
+
+	<note type="other">A BS TR AC T<lb/> Background</note>
+
+		</front>
+	</text>
+</tei>

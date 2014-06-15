@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011583"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Using Drilled Holes as Reference in Magnetic Flux Leakage<lb/> Measurements:<lb/> An Investigation Based on Finite Element Modelling<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Till Schmitte<lb/> 1 , Ashraf Koka<lb/> 2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Salzgitter Mannesmann Forschung GmbH,</affiliation>
+	</byline>
+
+	<address>Duisburg, Germany<lb/></address>
+
+	<byline>
+	<affiliation>2 Vallourec Mannesmann Deutschland GmbH,</affiliation>
+	</byline>
+
+	<address>Düsseldorf, Germany<lb/></address>
+
+	<div type="abstract">Abstract In order to have a fast recalibration method of magnetic flux leakage (MFL) inspection systems it is<lb/> proposed to use a drilled hole as the reference. The hole can be drilled in the pipe end region which will<lb/> be cut in further production. The fast recalibration is important if quantitative testing including defect<lb/> separation is required but small lot sizes would normally lead to very frequent calibration cycles. In this<lb/> work we present a calculation of MFL signals of standard notches and drill-holes with the goal of finding<lb/> a corresponding calibration scheme. The work is based on finite element modelling (FEM). As result we<lb/> show that it is indeed possible to assign equivalent drill-holes to a specified notch-depth, however, only<lb/> for a certain range of parameters. This range depends mainly on the sensor lift-off.<lb/></div>
+
+	<keyword>Keywords: Magnetic Flux Leakage, FEM<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

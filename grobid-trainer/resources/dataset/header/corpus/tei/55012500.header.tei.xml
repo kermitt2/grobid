@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012500"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<date>March 2009<lb/></date>
+
+	<byline>
+	<docAuthor>Gerald Chouinard, </docAuthor>
+	</byline>
+	
+	<byline>
+	<affiliation>CRC<lb/></affiliation>
+	</byline>
+
+	<note type="page">Slide 1<lb/></note>
+
+	<note>doc.: sg-whitespace 09-0058r2<lb/></note>
+
+	<note type="other">Submission<lb/> 802.22 Presentation to the ECSG<lb/> on White Space<lb/> Name Company<lb/> Address Phone<lb/> email
+	<lb/></note>
+
+	<byline>
+	<docAuthor>Gerald Chouinard </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Communications<lb/> Research Centre,<lb/></affiliation>
+	</byline>
+
+	<address>Canada<lb/> 3701 Carling Ave.<lb/> Ottawa, Ontario<lb/> Canada K2H 8S2<lb/></address>
+
+	<phone>(613) 998-2500 </phone>
+
+	<email>gerald.chouinard@crc.ca<lb/></email>
+
+		</front>
+	</text>
+</tei>

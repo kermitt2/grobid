@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012495"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Schulversuchspraktikum Physik<lb/>WS 00/01<lb/> </titlePart>
+	</docTitle>
+
+	<note type="other">Protokoll zum Thema:<lb/></note>
+
+	<docTitle>
+	<titlePart>Schülerversuche zu<lb/> Magnetismus<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Rauecker Petra<lb/> </docAuthor>
+
+	<note type="other">9855238<lb/> </note>
+
+	<docAuthor>Schauer Magdalena<lb/> </docAuthor>
+
+	<note type="other">9855708</note>
+	</byline>
+
+		</front>
+	</text>
+</tei>

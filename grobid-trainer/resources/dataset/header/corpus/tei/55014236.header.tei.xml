@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014236"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>ARGOS: A GPS Time-Synchronized<lb/> Network Interface Card based on NetFPGA<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Jaime J. Garnica, Victor Moreno, Ivan Gonzalez, Sergio Lopez-Buedo,<lb/> Francisco J. Gomez-Arribas, Javier Aracil<lb/>
+	</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>High Performance Computing and Networking Group<lb/> Universidad Autonoma de Madrid<lb/></affiliation>
+	</byline>
+
+	<address>11 Francisco Tomas y Valiente, 28049 Madrid, Spain<lb/></address>
+
+	<phone>Tel: +34 914972249<lb/> </phone>
+
+	<email>jaime.garnica@uam.es, sergio.lopez-buedo@uam.es<lb/></email>
+
+	<div type="abstract">ABSTRACT<lb/> In this paper we present ARGOS, a NetFPGA-based<lb/> Network Interface Card featuring transparent GPS time<lb/> synchronization. It allows to accurately timestamp received<lb/> packets, and to send precisely spaced bursts of packets.<lb/> Since NetFPGA does not include a GPS interface, we<lb/> developed a sister card including RS232 and RS422 ports<lb/> where standard GPS receivers can be connected. ARGOS<lb/> appears as a conventional NIC to the operating system, and<lb/> it uses the timestamping features offered by Linux kernels,<lb/> so any conventional packet capture tool such as Wireshark<lb/> can be used with it. ARGOS has been successfully<lb/> deployed in the OneLab2 European Internet testbed,<lb/> making it possible to launch experiments in more than 10<lb/> nodes spread all around Europe and Israel. Using ARGOS<lb/> and the OneLab2 testbed, complete pictures of Internet<lb/> delay and available bandwidth can be obtained.<lb/></div>
+
+		</front>
+	</text>
+</tei>

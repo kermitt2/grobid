@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010297"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>MPEG transport stream<lb/></titlePart>
+	</docTitle>
+
+	<note type="page">1<lb/></note>
+
+	<docTitle>
+	<titlePart>MPEG transport stream<lb/> MPEG Transport Stream<lb/></titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

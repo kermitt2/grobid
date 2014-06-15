@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013333"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>An agent-oriented approach to support change<lb/> propagation in software evolution *<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Khanh Hoa Dam<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>School of Computer Science and Information Technology<lb/> RMIT University<lb/></affiliation>
+	</byline>
+
+	<address>Melbourne, Australia<lb/></address>
+
+	<email>kdam@cs.rmit.edu.au<lb/></email>
+
+	<div type="abstract">ABSTRACT<lb/> Software maintenance and evolution is arguably a lengthy and ex-<lb/>pensive phase in the life cycle of a software system. A critical issue<lb/> at this phase is change propagation: given a set of primary changes<lb/> that have been made to software, what additional secondary changes<lb/> are needed? Although many approaches have been proposed, auto-<lb/>mated change propagation is still a significant technical challenge<lb/> in software maintenance and evolution. This paper presents a Ph.D.<lb/> research in the final stages of developing and evaluating a novel,<lb/> agent-based, framework to support semi-automated change propa-<lb/>gation in evolving software systems.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="department">Department of Applied Biology</orgName>,
+							<orgName type="department">Faculty of Textile Science and Technology</orgName>,
+							<orgName type="institution">Shinshu University</orgName>,
+							<lb/>
+							<address>
+								<settlement>Ueda</settlement>
+								<postCode>386-8567</postCode>;
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="department">Faculty of Agricultural Science and Technology</orgName>,
+							<orgName type="institution">Suzhou University</orgName>,
+							<address>
+								<addrLine>Su Zhou 215006</addrLine>,
+								<country>China</country>;
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>3</marker>
+							<orgName type="department">College of Animal Sciences</orgName>,
+							<orgName type="institution">Zhejiang University</orgName>,
+							<address>
+								<addrLine>Hang Zhou 310029</addrLine>,
+								<country>China</country>; and
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>4</marker>
+							<orgName type="department">College of Science and<lb/> Technology</orgName>,
+							<orgName type="institution">Nihon University</orgName>,
+							<address>
+								<settlement>Tokyo</settlement>
+								<postCode>101-8308</postCode>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

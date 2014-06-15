@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009255"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="copyright">All contents are Copyright © 1992–2006 Cisco Systems, Inc. All rights reserved. Important Notices and Privacy Statement.<lb/></note>
+
+	<note type="page">Page 1 of 5<lb/></note>
+	
+	<note type="other">White Paper<lb/></note>
+
+	<docTitle>
+	<titlePart>Wi-Fi Based Real-Time Location Tracking: Solutions and Technology<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">This white paper provides an overview of Wi-Fi based real-time location tracking. It discusses the business problems that<lb/> location tracking addresses, introduces the Cisco<lb/> ® Wireless Location Appliance, provides an overview of the three methods<lb/> used to track Wi-Fi devices (closest access point, triangulation, and RF fingerprinting) and discusses the underlying location<lb/> tracking approach used by the Cisco Wireless Location Appliance.<lb/></div>
+
+		</front>
+	</text>
+</tei>

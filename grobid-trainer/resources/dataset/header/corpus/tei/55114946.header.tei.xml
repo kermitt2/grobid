@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55114946"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Mariposa: A New Architecture for Distributed Data<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Michael Stonebraker, Paul M. Aoki, Robert Devine, Witold Litwin and Michael Olson<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Computer Science Div., Dept. of EECS<lb/> University of California<lb/></affiliation>
+	</byline>
+
+	<address>Berkeley, California 94720<lb/></address>
+
+	<div type="abstract">Abstract<lb/> We describe the design of Mariposa, an experimental dis-<lb/>tributed data management system that provides high perfor-<lb/>mance in an environment of high data mobility and hetero-<lb/>geneous host capabilities. The Mariposa design unifies the<lb/> approaches taken by distributed file systems and distributed<lb/> databases. In addition, Mariposa provides a general, flexible<lb/> platform for the development of new algorithms for distributed<lb/> query optimization, storage management, and scalable data<lb/> storage structures. This flexibility is primarily due to a unique<lb/> rule-based design that permits autonomous, local-knowledge<lb/> decisions to be made regarding data placement, query execution<lb/> location, and storage management.<lb/></div>
+
+		</front>
+	</text>
+</tei>

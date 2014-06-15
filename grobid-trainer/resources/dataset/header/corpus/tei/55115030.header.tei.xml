@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei type="technical-report">
+	<teiHeader>
+		<fileDesc xml:id="55115030"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">1<lb/></note>
+
+	<docTitle>
+	<titlePart>COST Action IC0906 WiNeMO<lb/> Topic: Content-Centric Architectures for Moving Objects<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Draft 2 -</note>
+
+	<date>6June 2012<lb/></date>
+
+	<div type="abstract">Abstract<lb/> The goal of this white paper is to describe representative usage scenarios and their<lb/> corresponding requirements, as well as state-of-the-art technological solutions and open<lb/> research directions for key functionalities related to content-centric architectures for<lb/> networks of moving objects. The usage scenarios presented include smart transport, data<lb/> dissemination in partially connected environments, collaborative sensing, and situation and<lb/> presence-aware services. The functionalities discussed include name resolution, routing,<lb/> forwarding, discovery, content sharing, in-network caching, and the generalization of<lb/> content-centric networking to service-centric networking.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010697"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">T E C H N I C A L R E F E R E N C E<lb/> b<lb/> </note>
+
+	<docTitle>
+	<titlePart>Adobe<lb/> ®<lb/> InDesign<lb/> ®<lb/> 2.0<lb/>	Printing Guide<lb/> for Service Providers<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">ii<lb/></note>
+
+		</front>
+	</text>
+</tei>

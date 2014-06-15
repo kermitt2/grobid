@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010567"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<affiliation>Americas Headquarters:<lb/> Cisco Systems, Inc.,</affiliation>
+	</byline>
+
+	<address>170 West Tasman Drive, San Jose, CA 95134-1706 USA<lb/></address>
+
+	<note type="copyright">© 2006–2007 Cisco Systems, Inc. All rights reserved.<lb/></note>
+
+	<docTitle>
+	<titlePart>Classifying Network Traffic Using NBAR<lb/></titlePart>
+	</docTitle>
+
+	<date>First Published: April 4, 2006<lb/> Last Updated: May 7, 2007<lb/></date>
+
+	<div type="abstract">Network-Based Application Recognition (NBAR) is a classification engine that recognizes and<lb/> classifies a wide variety of protocols and applications. When NBAR recognizes and classifies a protocol<lb/> or application, the network can be configured to apply the appropriate quality of service (QoS) for that<lb/> application or traffic with that protocol.<lb/> This module contains overview information about classifying network traffic using NBAR. The<lb/> processes for configuring NBAR are documented in separate modules.<lb/> Note<lb/> This module includes information for both NBAR and Distributed Network-Based Application<lb/> Recognition (dNBAR). dNBAR is NBAR used on the Cisco 7500 router with a Versatile Interface<lb/> Processor (VIP) and on the Catalyst 6000 family of switches with a FlexWAN module. The<lb/> implementation of NBAR and dNBAR is identical. Therefore, unless otherwise noted, the term NBAR<lb/> is used throughout this module to describe both NBAR and dNBAR. The term dNBAR is used only when<lb/> applicable.<lb/></div>
+
+		</front>
+	</text>
+</tei>

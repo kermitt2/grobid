@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010135"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Hyper-G<lb/> Proc. INET &apos;93<lb/> F. Kappe<lb/></reference>
+
+	<docTitle>
+	<titlePart>Hyper-G: A Distributed Hypermedia System<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Frank Kappe<lb/> 1<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Abstract<lb/> Hyper-G is a general-purpose, large-scale, distri-<lb/>buted hypermedia system currently developed a t<lb/> the Graz University at Technology. It was de-<lb/>signed for handling large amounts of multimedia<lb/> data, and care has been taken to provide mech-<lb/>anisms for automatic maintenance of a dynami-<lb/>cally changing body of information, advanced user<lb/> interface f e atures, and ecient use of network<lb/> and computing resources.<lb/> While Hyper-G was originally designed to run in<lb/> fast, local-area networks, this paper shows how<lb/> Hyper-G is currently being transformed into a<lb/> global hypermedia information system distribu-<lb/>ted over Internet that retains Hyper-G&apos;s advanced<lb/> functionality such as automatic link generation<lb/> and maintenance, navigation facilities, access<lb/> rights, and distributed s e arching, and makes ef-<lb/>cient use of network bandwidth by extensive<lb/> caching.<lb/></div>
+
+		</front>
+	</text>
+</tei>

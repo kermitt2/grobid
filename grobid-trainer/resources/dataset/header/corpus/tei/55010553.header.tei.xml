@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010553"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">1<lb/></note>
+
+	<docTitle>
+	<titlePart>Supporting Information<lb/> Hierarchical porous carbon from cell-assemblies of rice husk for<lb/> in vivo applications<lb/>
+	</titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Seiichiro Tabata<lb/> *<lb/> , Hironori Iida, Takeshi Horie, Shinichiro Yamada<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Advanced Materials Laboratories, Sony Corporation,</affiliation>
+	</byline>
+
+	<address>4-16-1 Okata, Atsugi-shi, Kanagawa<lb/> 243-0021, Japan<lb/></address>
+
+	<note type="other">Supplementary Material</note>
+
+	<note type="other">(ESI) for Medicinal Chemistry Communications<lb/> </note>
+	
+	<note type="copyright">This journal is (c) The Royal Society of Chemistry 2010</note>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013516"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Concise Synthesis of Ciguatoxin ABC-Ring Fragments<lb/> and Surface Plasmon Resonance Study of the Interaction<lb/> of Their BSA Conjugates with Monoclonal Antibodies<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Yoko Nagumo,<lb/> a Hiroki Oguri,<lb/> a Yumi Shindo,<lb/> a Shin-ya Sasaki,<lb/> a Tohru Oishi,<lb/> a<lb/> Masahiro Hirama,<lb/> a, * Yoshihisa Tomioka,<lb/> b Michinao Mizugaki<lb/> b and Takeshi Tsumuraya<lb/> c<lb/> a<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Chemistry, Graduate School of Science, Tohoku University,</affiliation>
+	</byline>
+
+	<address>and CREST,<lb/></address>
+
+	<byline>
+	<affiliation>Japan Science and Technology Corporation (JST),</affiliation>
+	</byline>
+
+	<address>Sendai 980-8578, Japan<lb/></address>
+
+	<byline>
+	<affiliation>b Department of Pharmaceutical Sciences, Tohoku University Hospital,</affiliation>
+	</byline>
+
+	<address>Sendai 980-0872, Japan<lb/></address>
+
+	<byline>
+	<affiliation>c Biomolecular Engineering Research Institute,</affiliation>
+	</byline>
+
+	<address>Suita, Osaka 565-0874, Japan<lb/></address>
+
+	<note type="submission">Received 9 April 2001; accepted 19 May 2001<lb/></note>
+
+	<div type="abstract">Abstract—Monoclonal antibodies (mAbs), 4H2 and 6H7, were prepared previously using a protein conjugate of a 1:1 epimeric<lb/> mixture of the synthetic ABC-ring fragments of ciguatoxin (CTX), 3 and 4. Here, the interactions of these mAbs with the fragments<lb/> of CTX and CTX3C, 3 and 5, were investigated by surface plasmon resonance (SPR) spectroscopy in an attempt to clarify an<lb/> antigenic determinant. Compared with the previous synthesis, the fragment 3 possessing the 2S configuration was synthesized from<lb/> tri-O-acetyl-d-glucal much more effectively. The mAb 4H2 was already known to show a dose-dependent binding to the bovine<lb/> serum albumin (BSA) conjugate of 3, but not to that of 5. The present SPR study of 4H2 demonstrates that the A-ring side chain of<lb/> 3 plays a decisive role as an epitope. Therefore, SPR can effectively replace the ELISA method for the analysis of mAbs. #</div>
+
+	<note type="copyright">&#169;2001<lb/> Elsevier Science Ltd. All rights reserved.<lb/></note>
+
+		</front>
+	</text>
+</tei>

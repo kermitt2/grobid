@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013960"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Paper de la UGT1A6 en la resistència al metotrexat :<lb/> estudi dels harpins de polipurines per disminuir<lb/> l&apos;expressió gènica<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Mª Cristina de Almagro García<lb/></docAuthor>
+	</byline>
+
+		</front>
+	</text>
+</tei>

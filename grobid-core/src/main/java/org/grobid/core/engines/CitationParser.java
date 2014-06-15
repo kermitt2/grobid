@@ -393,7 +393,15 @@ public class CitationParser extends AbstractParser {
 								volumePostProcess);
 				} else
 					biblio.setVolumeBlock(s2, volumePostProcess);
-			} else if ((s1.equals("<editor>")) || (s1.equals("I-<editor>"))) {
+			} else if ((s1.equals("<issue>")) || (s1.equals("I-<issue>"))) {
+		    	if (biblio.getIssue() != null) {
+                    if (addSpace)
+                        biblio.setIssue(biblio.getIssue() + " " + s2);
+                    else
+                        biblio.setIssue(biblio.getIssue() + s2);
+                } else
+                    biblio.setIssue(s2);
+	        } else if ((s1.equals("<editor>")) || (s1.equals("I-<editor>"))) {
 				if (biblio.getEditors() != null) {
 					if (addSpace)
 						biblio.setEditors(biblio.getEditors() + " " + s2);

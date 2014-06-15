@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55114816"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Tetrahedron<lb/> Letters,Vol.23,No.25,pp<lb/> 2529-2532,1982<lb/></reference>
+
+	<note>0040-4039/82/252529-04$03.00/O<lb/> </note>
+
+	<note>Printed in Great Britain<lb/> 01982 Pergamon Press Ltd<lb/></note>
+
+	<docTitle>
+	<titlePart>INFLUENCE OF THE CONSTRAINT OF BRIDGEHEAD STRUCTURE<lb/> ON PHOSPHORUS REACTIVITY IN THE l-PHOSPHABICYCLO[3.2.l]OCTANE<lb/> SYSTEM<lb/></titlePart>
+	</docTitle> 
+
+	<byline>
+	<docAuthor>Louis D. Quin* and Sharon C. Spence<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Gross Chemical Laboratory, Duke University,</affiliation>
+	</byline>
+
+	<address>Durham, North Carolina 27706<lb/></address>
+
+	<div type="abstract">Sumnary:<lb/> Nucleophiles attack the methiodide of the 3,4-benzo derivative of the title system to<lb/> displace the P-methyl yroup in preference to the benzylic moiety.<lb/> The trigonal bipyramidal<lb/> intermediates (as well as a stable dioxyphosphorane)<lb/> appear to undergo rapid isomerization.<lb/> </div>
+
+	<div type="introduction">The placement of a phosphorus atom at the bridgehead position of a bicycloalkane<lb/> framework should lead to a system of modified reactivity trends, especially when intermediates<lb/> based on pentacovalent geometry are involved.<lb/> Although a few such systems have been known for a<lb/> number of years&apos;, no studies on the reactivity at phosphorus have been reported2.<lb/> We<lb/> recently described3 a particularly simple synthesis of such a bicyclic compound, and its ready<lb/> availability has allowed us to initiate such studies.<lb/> The l-phosphabicyclo[3.2.l]octane<lb/> system<lb/> of 2 is prepared in 90% yield4 by the intramolecular Friedel-Crafts alkylation of the<lb/> 1-benzylphospholane<lb/> oxide derivative 1.<lb/> The phosphonium salt 3a was also readily prepared3, and since positive<lb/> -<lb/>&amp;, R=CH,,X=I<lb/> a, R=CsH&amp;Ha, X=Br<lb/> &amp;, R=OCzH,, X=1<lb/> 3cJ R=X=OCzH.<lb/> phosphorus forms<lb/> pentacovalent intermediates in various reactions, our studies commenced with this species.<lb/> Our<lb/> efforts were instantly rewarded by the results obtained in the displacement with NaOH.<lb/> While<lb/> the usual conditions for this reaction (3N NaOH in aqueous ethanol at reflux, 20 hrs) were<lb/> without effect on G,<lb/> exposure to a 0.3N KOH solution based on dimethyl sulfoxide&apos; (70 mole %<lb/> in water) promoted decomposition at 25&quot; with the evolution of methane (identified by gas<lb/> chromatographic comparison with a known specimen).<lb/> The reaction was complete in a few hours.<lb/> The main (90%) product was phosphine oxide 2, identified by matching of NMR parameters; a minor<lb/> product (4, 10%) had 6 31P +60.16.<lb/> This surprising preference for the salt 3a to suffer<lb/> -<lb/>displacement of a methyl rather than a benzylic group is without precedent7, and is a striking<lb/> example of the influence of the cayed structure on the reactivity at phosphorus.<lb/> We interpret this result with the following generally accepted principles8&apos;g.<lb/> (1)<lb/> -OH attacks phosphonium salts so as to assume an apical position in the resulting trigonal<lb/> bipyramid (TBP), (2) the 5-membered ring component of the bicyclic system exerts its usual<lb/> preference for an apical-equatorial<lb/> disposition in the TBP, leaving the 7-membered component in<lb/> its preferred diequatorial disposition, (3) the departing group must be located in an apical<lb/> position.<lb/> Structure 5 may then be written to express the preferred geometry of the initially<lb/> forrned TBP, recognizing that there will be distortions of the bond angles from the ideal values.<lb/> The benzylic group cannot attain an apical position without forcing the 5-membered ring into the<lb/> </div>
+
+	<note type="page">2529</note>
+
+		</front>
+	</text>
+</tei>

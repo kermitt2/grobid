@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013019"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">287<lb/></note>
+
+	<docTitle>
+	<titlePart>Detection of Proarrhythmia in the Female Rabbit Heart:<lb/> Blinded Validation<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>LUC M. HONDEGHEM, M.D., PH.D., HUA RONG LU, M.D., PH.D.,*<lb/> KOEN VAN ROSSEM, M.D., PH.D.,* and FRED DE CLERCK, M.SC., PH.D.*<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>From the Department of Pharmacology, K.U. Leuven, Leuven, Belgium; and *Center of Excellence<lb/> for Cardiovascular Safety Research, Johnson &amp; Johnson Pharmaceutical Research &amp; Development,<lb/>a Division of Janssen Pharmaceutica,</affiliation>
+	</byline>
+
+	<address>Beerse, Belgium<lb/></address>
+
+	<div type="abstract">Validation of Proarrhythmia Detection. Introduction: Reliable detection of drug-induced proar-<lb/>rhythmia, especially the potential for polymorphic ventricular tachycardia, is of great importance in the<lb/> development of new compounds that are safe for the heart and was evaluated in a blinded study.<lb/> Methods and Results: In 142 female rabbits, the monophasic action potential was used to determine<lb/> intraventricular conduction, action potential duration (APD), triangulation (APD 30 to APD 90 ), reverse use-<lb/>dependence, instability and presence of chaotic behavior, early afterdepolarizations, torsades de pointes<lb/> (TdP), and ventricular fibrillation. In addition, 31 coded drugs were tested in a blinded fashion in another<lb/> 150 hearts. Prototype cardiovascular agents [quinidine (IA), lidocaine (IB), flecainide (IC), propranolol<lb/> (II), sotalol (IIIB), amiodarone (IIIAB) and verapamil (IV)] were correctly characterized in terms of their<lb/> effects upon conduction and APD. Agents documented in clinical practice to have proarrhythmic potential<lb/> (droperidol, sotalol, mibefradil, bepridil, lidoflazine, ketanserin, sertindole, terfenadine, haloperidol, astem-<lb/>izole, cisapride, ziprasidone, lubeluzole, dofetilide, quinidine, ibutilide) were identified as such. Pimozide<lb/> is reported to rarely produce TdP and was also found to elicit Class III action with few adverse effects.<lb/> Equally important, agents believed not to be proarrhythmic (two solvents, atenolol, propranolol, fenox-<lb/>imone, cetirizine, verapamil, sildenafil, lidocaine, diltiazem) were identified as having no proarrhythmic<lb/> activity.<lb/> Conclusion: The SCREENIT method properly characterized and quantified prototype cardiovascular<lb/> drugs and correctly identified proarrhythmic noncardiovascular agents of various mechanisms, but it did<lb/> not produce false-positive results.</div>
+
+	<reference>(J Cardiovasc Electrophysiol, Vol. 14, pp. 287-294, March 2003)<lb/></reference>
+
+		</front>
+	</text>
+</tei>

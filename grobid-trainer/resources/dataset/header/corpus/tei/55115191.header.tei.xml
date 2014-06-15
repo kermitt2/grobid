@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55115191"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<email>hartmut.huang@siemens.com<lb/></email>
+
+	<docTitle>
+	<titlePart>A new Multilevel Voltage-Sourced Converter Topology for HVDC Applications<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>J. DORN, H. HUANG, D. RETZMANN<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Siemens AG<lb/></affiliation>
+	</byline>
+
+	<address>Germany<lb/></address>
+
+	<div type="abstract">SUMMARY<lb/> Since the Seventies line commutated converters based on thyristor technology have been the<lb/> standard for all HVDC applications. This converter topology is, however, marked by its low-<lb/>order harmonics and high reactive power consumption. Such measures as the use of filter<lb/> circuits and switchable capacitor banks have been taken to reduce these effects. On the other<lb/> hand, these converters are marked by low operational losses, robustness of the thyristors<lb/> against surge currents as well as their overload capability. Therefore, line-commutated<lb/> thyristor technology will remain best suited to bulk power transmission in future HVDC<lb/> projects.<lb/> Compared with the line-commutated technology, additional inherent advantages are obtained<lb/> through the use of self-commutated converters. In this kind of converter topology, current<lb/> commutation is independent of the line voltage. This is the case because commutation is<lb/> purely based on the turn-off capability of the power semiconductors such as IGBTs (Insulated<lb/> Gate Bipolar Transistor). These semiconductors have gained in importance over the years<lb/> and, due to their reliability, they are most commonly used in such challenging applications as<lb/> traction and industrial drives.</div>
+
+		</front>
+	</text>
+</tei>

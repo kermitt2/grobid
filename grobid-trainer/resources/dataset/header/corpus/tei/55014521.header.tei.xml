@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014521"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">1<lb/></note>
+
+	<docTitle>
+	<titlePart>A Hardware IEEE-1588 Implementation<lb/> with Processor Frequency Control<lb/></titlePart>
+	</docTitle>
+ 
+	<byline>
+	<docAuthor>Teodor Neagoe, Field Applications Engineer, </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Arrow Electronics, </affiliation>
+	</byline>
+
+	<email>tneagoe@arrow.com<lb/> </email>
+
+	<byline>
+	<docAuthor>Maher Hamdi, Field Applications Engineer, </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Arrow Electronics, </affiliation>
+	</byline>
+
+	<email>mhamdi@arrow.com<lb/></email>
+
+	<div type="abstract">Abstract<lb/> This paper discusses a hardware-assisted<lb/> IEEE-1588 implementation with direct control<lb/> of the processor clock. IEEE-1588 is a new<lb/> standard used for clock/time synchronization in<lb/> packet-based networks.<lb/> A comparison between hardware-and<lb/> software-oriented implementations is also<lb/> discussed, including the general pros and cons<lb/> of the two methods. The target of the present<lb/> implementation is homogenous Ethernet local<lb/> area networks with applications in control<lb/> systems, automation, test and instrumentation,<lb/> as well as telecommunications.<lb/> The proposed architecture was tested and<lb/> experimented with within an Altera® FPGA<lb/> (Field Programmable Gate Array) and we<lb/> believe it represents a simpler and more<lb/> precise implementation of the IEEE-1588<lb/> standard.<lb/></div>
+
+		</front>
+	</text>
+</tei>

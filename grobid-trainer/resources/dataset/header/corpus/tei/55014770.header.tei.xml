@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014770"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Fabrication and surface modification of macroporous<lb/> poly(L-lactic acid) and poly(L-lactic-co-glycolic acid) (70/30)<lb/> cell scaffolds for human skin fibroblast cell culture<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Jian Yang,<lb/> 1<lb/> Guixin Shi,<lb/> 1<lb/> Jianzhong Bei,<lb/> 1<lb/> Shenguo Wang,<lb/> 1<lb/> Yilin Cao,<lb/> 2<lb/> Qingxin Shang,<lb/> 2<lb/> Guanghui Yang,<lb/> 2<lb/> Wenjing Wang<lb/> 2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1<lb/> Center for Molecular Sciences, Institute of Chemistry, Chinese Academy of Sciences,</affiliation>
+	</byline>
+
+	<address>Beijing 100080, China<lb/></address>
+
+	<byline>
+	<affiliation>2<lb/> Shanghai Tissue Engineering Research and Development Center,</affiliation>
+	</byline>
+
+	<address>Shanghai 200011, China<lb/></address>
+
+	<note type="submission">Received 3 August 2001; revised 14 December 2001; accepted 20 February 2002<lb/></note>
+
+	<div type="abstract">Abstract: The fabrication and surface modification of a po-<lb/>rous cell scaffold are very important in tissue engineering.<lb/> Of most concern are high-density cell seeding, nutrient and<lb/> oxygen supply, and cell affinity. In the present study, poly(L-<lb/>lactic acid) and poly(L-lactic-co-glycolic acid) (70/30) cell<lb/> scaffolds with different pore structures were fabricated. An<lb/> improved method based on Archimedes&apos; Principle for mea-<lb/>suring the porosity of scaffolds, using a density bottle, was<lb/> developed. Anhydrous ammonia plasma treatment was<lb/> used to modify surface properties to improve the cell affinity<lb/> of the scaffolds. The results show that hydrophilicity and<lb/> surface energy were improved. The polar N-containing<lb/> groups and positive charged groups also were incorporated<lb/> into the sample surface. A low-temperature treatment was<lb/> used to maintain the plasma-modified surface properties ef-<lb/>fectively. It would do help to the further application of<lb/> plasma treatment technique. Cell culture results showed<lb/> that pores smaller than 160 ␮m are suitable for human skin<lb/> fibroblast cell growth. Cell seeding efficiency was main-<lb/>tained at above 99%, which is better than the efficiency<lb/> achieved with the common method of prewetting by etha-<lb/>nol. The plasma-treatment method also helped to resolve the<lb/> problem of cell loss during cell seeding, and the negative<lb/> effects of the ethanol trace on cell culture were avoided. The<lb/> results suggest that anhydrous ammonia plasma treatment<lb/> enhances the cell affinity of porous scaffolds. Mass transport<lb/> issues also have been considered.</div>
+
+	<note type="copyright">© 2002 Wiley Periodicals,<lb/> </note>
+
+	<reference>Inc. J Biomed Mater Res 62: 438–446, 2002<lb/></reference>
+
+	<keyword>Key words: polylactone; surface modification; ammonia<lb/> plasma treatment; human skin fibroblast cells; tissue engi-<lb/>neering<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

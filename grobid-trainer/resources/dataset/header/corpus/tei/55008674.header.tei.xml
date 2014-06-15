@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008674"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<div type="abstract">Abstract--The University of Twente, which is the only campus<lb/> university in the Netherlands, connects all students living on the<lb/> campus via 100 Mbit/s switched Ethernet links to the campus<lb/> network. This student network not only interconnects all<lb/> students among themselves, but also provides, via a 300 Mbit/s<lb/> link, access to other parts of the university network as well as the<lb/> external Internet. Since the 300 Mbit/s link is a potential<lb/> bottleneck, the university has defined a policy to limit the total<lb/> amount of traffic a single student is allowed to exchange to 50<lb/> Gigabyte per week. To check if students do not exceed this limit,<lb/> a number of interface MIB variables within the student&apos;s access<lb/> switches are monitored on a periodic base. Although monitoring<lb/> these MIB variables is good enough to detect which students<lb/> exchange more than 50 Gigabyte weekly, the approach fails to<lb/> reliably determine which students are the top users of the<lb/> potential bottleneck, which is the 300 Mbit/s link. The question<lb/> has therefore been raised whether it would be feasible to directly<lb/> measure all traffic on that link to precisely determine which<lb/> student is using which portion of the link&apos;s capacity and for what<lb/> purpose (downloading information from the teaching<lb/> departments, browsing the Internet etc.). Although NeTraMet,<lb/> which is an implementation of the IETF&apos;s meter MIB, would in<lb/> theory be useable for such measurements, it was not clear<lb/> whether it would be fast enough to analyse each packet on a 300<lb/> Mbit/s full-duplex link. This paper therefore discusses the<lb/> experiments that have been performed to find the limits of<lb/> Netramet, and investigate whether the tool would be useful to<lb/> solve real management problems. In our experiments Netramet<lb/> was running on a standard PC.<lb/></div>
+
+	<keyword>Index Terms—Flow metering, Network measurements,<lb/> NeTraMet, IF-MIB.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

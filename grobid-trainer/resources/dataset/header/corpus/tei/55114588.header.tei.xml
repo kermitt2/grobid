@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei type="web">
+	<teiHeader>
+		<fileDesc xml:id="55114588"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">DISTROS<lb/> SYSADMIN MOBILE<lb/> SOFTWARE DATACENTER<lb/> HPC DEVELOPMENT<lb/> LMTV<lb/> Se a rch L i n u x M a g a zi n e<lb/></note>
+
+	<docTitle>
+	<titlePart>User Space File Systems<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">Having file systems in the kernel has its pros and cons. Being able to write<lb/> file systems in user-space also has some pros and cons, but FUSE (File<lb/> System in Userspace) allows you to create some pretty amazing results.<lb/> This article takes a very brief look at user-space file systems and FUSE.<lb/></div>
+
+	<byline>
+	<docAuthor>By Jeffrey B. Layton<lb/></docAuthor>
+	</byline>
+
+	<date>Tuesday, June 22nd, 2010<lb/></date>
+
+		</front>
+	</text>
+</tei>

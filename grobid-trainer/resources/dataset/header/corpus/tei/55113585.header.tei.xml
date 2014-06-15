@@ -1,0 +1,76 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55113585"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Use of core modification in the discovery of CC214-2, an orally<lb/> available, selective inhibitor of mTOR kinase<lb/>
+	</titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Deborah S. Mortensen<lb/> a,⇑ , John Sapienza<lb/> a , Branden G. S. Lee<lb/> a , Sophie M. Perrin-Ninkovic<lb/> a<lb/> , Roy Harris<lb/> a ,<lb/> Graziella Shevlin<lb/> a , Jason S. Parnes<lb/> a , Brandon Whitefield<lb/> a , Matt Hickman<lb/> b , Gody Khambatta<lb/> b<lb/> , Rene R. Bisonette<lb/> c , Sophie Peng<lb/> d , Jim C. Gamez<lb/> d , Jim Leisten<lb/> d , Rama Krishna Narla<lb/> d , Kimberly E. Fultz<lb/> c ,<lb/> Sabita Sankar<lb/> c<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a Department of Medicinal Chemistry, Celgene Corporation,</affiliation>
+	</byline>
+
+	<address>4550 Towne Centre Court, San Diego, CA 92121, United States<lb/></address>
+
+	<byline>
+	<affiliation>b Department of Biochemistry, Celgene Corporation,</affiliation>
+	</byline>
+
+	<address>4550 Towne Centre Court, San Diego, CA 92121, United States<lb/></address>
+
+	<byline>
+	<affiliation>c Department of Oncology Research, Celgene Corporation,</affiliation>
+	</byline>
+
+	<address>4550 Towne Centre Court, San Diego, CA 92121, United States<lb/></address>
+
+	<byline>
+	<affiliation>d Department of Pharmacology, Celgene Corporation,</affiliation>
+	</byline>
+
+	<address>4550 Towne Centre Court, San Diego, CA 92121, United States<lb/></address>
+
+	<note type="other">a r t i c l e i n f o<lb/></note>
+
+	<note type="submission">Article history:<lb/> Received 30 November 2012<lb/> Revised 15 January 2013<lb/> Accepted 22 January 2013<lb/>
+	</note>
+
+	<date>Available online 30 January 2013<lb/></date>
+
+	<keyword>Keywords:<lb/> Mammalian target of rapamycin<lb/> mTOR kinase<lb/> Kinase inhibitors<lb/> PI3K/Akt/mTOR pathway<lb/> Oncology
+	<lb/></keyword>
+
+	<div type="abstract">a b s t r a c t<lb/> We report here the discovery of a novel series of selective mTOR kinase inhibitors and the identification<lb/> of CC214-2, a compound with demonstrated anti-tumor activity upon oral dosing in a PC3 prostate can-<lb/>cer xenograft model. A series of 4,6-disubstituted-3,4-dihydropyrazino[2,3-b]pyrazine-2(1H)-ones were<lb/> discovered through a core modification of our original compound series. Analogs from this series have<lb/> excellent mTOR potency and maintain selectivity over the related PI3Ka lipid kinase. Compounds such<lb/> as CC214-2 were found to block both mTORC1(pS6) and mTORC2(pAktS473) signaling in PC3 cancer cells,<lb/> in vitro and in vivo.<lb/> </div>
+
+	<note type="copyright">&#169; 2013 Elsevier Ltd. All rights reserved.<lb/> </note>
+
+	<div type="introduction">The mammalian target of rapamycin (mTOR) is a serine/threo-<lb/>nine kinase member of the phosphatidylinositol 3-kinase-like ki-<lb/>nase superfamily. mTOR regulates cell growth, metabolism,<lb/> proliferation and survival through integration of growth factor sig-<lb/>naling with cellular nutritional status and energy use.<lb/> 1 The mTOR ki-<lb/>nase exists within two distinct multiprotein complexes, mTOR<lb/> complex-1 (mTORC1) and mTOR complex-2 (mTORC2).<lb/> 2 Both<lb/> mTORC1 and mTORC2 are critical mediators of the PI3K/AKT path-<lb/>way, which is frequently mutated in many cancers, leading to hyper-<lb/>activation of mTOR signaling.<lb/> 3,4 While rapamycin analogs such as<lb/> temsirolimus and everolimus, compounds that target only the<lb/> mTORC1 complex, have shown some clinical activity; it is hypothe-<lb/>sized that mTOR kinase inhibitors, blocking both mTORC1 and<lb/> mTORC2 signaling, will have expanded therapeutic potential.<lb/> 5 We<lb/> have previously described the identification and initial SAR explora-<lb/>tion of a potent series of 1,6-substituted imidazo[4,5-b]pyrazin-2-<lb/>ones as mTOR kinase inhibitors.<lb/> 6 Here we describe the use of core<lb/> modification in the identification of a new series of 4,6-disubsti-<lb/>tuted-3,4-dihydropyrazino[2,3-b]pyrazin-2(1H)-one mTOR kinase<lb/> inhibitors, leading to the identification of CC214-2, an orally<lb/> available mTOR kinase inhibitor with demonstrated anti-tumor<lb/> activity in mice with PC3 human prostate cancer tumors.<lb/> Our original SAR efforts in the imidazo[4,5-b]pyrazin-2-one ser-<lb/>ies lead to the identification of analogs such as 1 and 2 (Fig. 1A).<lb/> </div>
+
+	<note>0960-894X/$ </note>
+
+	<note type="other">-see front matter </note>
+
+	<note type="copyright">&#169;2013 Elsevier Ltd. All rights reserved.<lb/></note>
+
+	<ptr type="web">http://dx.doi.org/10.1016/j.bmcl.2013.01.110<lb/></ptr>
+
+	<note type="other">⇑ Corresponding author.</note>
+
+	<phone>Tel.: +1 858 795 4951; fax: +1 858 795 4719.<lb/></phone>
+
+	<email>E-mail address: dmortens@celgene.com</email>
+
+	<note type="other">(D.S. Mortensen).<lb/> N<lb/> N N<lb/> H<lb/> N O<lb/> O N<lb/> HN<lb/> N<lb/></note>
+
+		</front>
+	</text>
+</tei>

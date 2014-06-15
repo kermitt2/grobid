@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014295"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>arXiv:1008.0441v1 [cs.IR]</idno>
+
+	<date>3 Aug 2010<lb/></date>
+
+	<docTitle>
+	<titlePart>An Optimal Trade-off between Content Freshness and Refresh Cost<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Yibei Ling<lb/> ♮ and Jie Mi<lb/> +<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>♮ Applied Research Laboratories,</affiliation>
+	</byline>
+
+	<affiliation>Telcordia Technologies, </affiliation>
+
+	<address>NJ 07960<lb/></address>
+
+	<byline>
+	<affiliation>+ Department of Statistics, Florida International University,</affiliation>
+	</byline>
+
+	<address>Miami, FL 33199<lb/></address>
+
+	<date>2004<lb/></date>
+
+	<div type="abstract">Abstract<lb/> Caching is an effective mechanism for reducing bandwidth usage and alleviating server load.<lb/> However, the use of caching entails a compromise between content freshness and refresh cost. An<lb/> excessive refresh allows a high degree of content freshness at a greater cost of system resource.<lb/> Conversely, a deficient refresh inhibits content freshness but saves the cost of resource usages. To<lb/> address the freshness-cost problem, we formulate the refresh scheduling problem with a generic<lb/> cost model and use this cost model to determine an optimal refresh frequency that gives the<lb/> best tradeoff between refresh cost and content freshness. We prove the existence and uniqueness<lb/> of an optimal refresh frequency under the assumptions that the arrival of content update is<lb/> Poisson and the age-related cost monotonically increases with decreasing freshness. In addition,<lb/> we provide an analytic comparison of system performance under fixed refresh scheduling and<lb/> random refresh scheduling, showing that with the same average refresh frequency two refresh<lb/> schedulings are mathematically equivalent in terms of the long-run average cost.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="laboratory">Optoelectronics Research Group</orgName>,
+							<orgName type="department">Department o l Electronics and Electrical<lb/> Engineering</orgName>,
+							<orgName type="institution">University of Glasgow</orgName>,
+							<address>
+								<settlement>Glasgow</settlement>
+								<postCode>G12 SQQ</postCode>,
+								<country>Scotland</country>,
+								<country>U.K.</country>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>*</marker>Current address:
+							<orgName type="institution">California Institute of Technology</orgName>,
+							<address>
+								<region>MS</region>
+								<postCode>136-93</postCode>,
+								<settlement>Pasadena</settlement>,
+							<lb/>
+								<region>CA</region>
+								<postCode>91 125</postCode>,
+								<country>USA</country>.
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

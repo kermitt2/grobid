@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei type="technical-report">
+	<teiHeader>
+		<fileDesc xml:id="55114996"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>App Note 11: An overview of the electronic drive techniques for<lb/> intensity control and colour mixing of low voltage light sources such as<lb/> LEDs and LEPs.<lb/></titlePart>
+	</docTitle>
+
+	<note type="copyright">© Copyright Artistic Licence (UK) Ltd May 2002<lb/></note>
+
+	<div type="abstract">There are a number of techniques that can be used for intensity control of<lb/> devices such as LEDs.<lb/> This white paper provides an overview of the available options and a brief<lb/> analysis of the relative benefits of each.<lb/> It should be understood that intensity control and colour mixing control are<lb/> terms that can be used interchangeably. Colour mixing simply involves the<lb/> intensity control of more than one colour.</div>
+
+		</front>
+	</text>
+</tei>

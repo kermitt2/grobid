@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008706"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">White Paper<lb/> ____________________________________________________________________________<lb/> _________________________________________________________________________________________________________<lb/></note>
+
+	<date>November 2009<lb/></date>
+
+	<docTitle>
+	<titlePart>Flash Management – Why and How?<lb/> A detailed overview of flash management techniques<lb/></titlePart>
+	</docTitle>
+ 
+	<byline>
+	<docAuthor>Esther Spanjer<lb/></docAuthor>
+	</byline>
+
+	<note type="other">Director, SSD Technical Marketing<lb/> </note>
+	
+	<byline>
+	<affiliation>SMART Modular Technologies<lb/></affiliation>
+	</byline>
+	
+	<docTitle>
+	<titlePart>F l a s h M a n a g e m e n t – W h y a n d H ow ?<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">W h i t e P a p e r<lb/></note>
+
+	<date>November 2009<lb/></date>
+
+	<note type="page">Page 2 of 13<lb/></note>
+
+		</front>
+	</text>
+</tei>

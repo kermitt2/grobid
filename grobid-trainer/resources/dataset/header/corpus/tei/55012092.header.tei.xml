@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012092"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Exploiting Feature-Based Fusion in LED-based<lb/> Multi-Spectral Imaging<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Herwig Guggi<lb/> 1 , Raimund Leitner<lb/> 2 and Bernhard Rinner<lb/> 1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Institute of Networked and Embedded Systems<lb/> Klagenfurt University,</affiliation>
+	</byline>
+
+	<address>Austria<lb/></address>
+
+	<email>{herwig.guggi,bernhard.rinner}@uni-klu.ac.at<lb/></email>
+
+	<byline>
+	<affiliation>2 Carinthian Tech Research (CTR)<lb/> Villach, </affiliation>
+
+	<address>Austria<lb/></address>
+	</byline>
+
+	<email>raimund.leitner@ctr.at<lb/></email>
+
+	<div type="abstract">Abstract Multi-spectral recording systems are used in numerous applications ranging from quality as-<lb/>surance over biometrics to remote sensing. This paper reports on the feasibility of a LED-based<lb/> multi-spectral imaging system where the spectral characteristics of the illumination is changed<lb/> by activating different LEDs. The multi-spectral images are captured by a cost-efficient CCD<lb/> camera. We focus here on applying methods from sensor fusion to increase the classification<lb/> performance. Various features are generated from the different channels of the multi-spectral<lb/> images. The most discriminative features are then selected by a forward selection strategy. We<lb/> demonstrate our feature-based approach in human vein detection. Various test data have been<lb/> recorded by our prototype of the LED-based multi-spectral capturing system and have served<lb/> as basis for the experimental evaluation. A detection performance of at least 96 % has been<lb/> achieved.<lb/></div>
+
+	<keyword>Keywords: multi-spectral imaging, LED, feature-based fusion, image fusion, medical imaging<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

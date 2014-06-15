@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								HERAUSGEGEBEN VON
+								<forename>WERNER</forename>
+								<surname>D&apos;INKA</surname>,
+							</persName>
+							<persName>
+								<forename>BERTHOLD</forename>
+								<surname>KOHLER</surname>,
+							</persName>
+							<persName>
+								<forename>GÜNTHER</forename>
+								<surname>NONNENMACHER</surname>,
+							</persName>
+							<persName>
+								<forename>FRANK</forename>
+								<surname>SCHIRRMACHER</surname>,
+							</persName>
+							<persName>
+								<forename>HOLGER</forename>
+								<surname>STELTZNER</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

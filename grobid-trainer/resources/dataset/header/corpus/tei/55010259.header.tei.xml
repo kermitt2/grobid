@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010259"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Ž<lb/> .</note>
+
+	<reference>European Journal of Pharmacology 367 1999 41–49<lb/></reference>
+
+	<docTitle>
+	<titlePart>Ginsenoside Rg mediates endothelium-dependent relaxation in response<lb/> 3<lb/> to ginsenosides in rat aorta: role of K<lb/> q channels<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Nak Doo Kim<lb/> a,) , Soo Yeon Kang<lb/> a , Jeong Hill Park<lb/> a , Valerie B. Schini-Kerth<lb/> b<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a Laboratory of Pharmacology, College of Pharmacy, Seoul National UniÕersity,</affiliation>
+	</byline>
+
+	<address>Seoul 151-742, South Korea<lb/></address>
+
+	<byline>
+	<affiliation>b Institute fur KardioÕaskulare Physiologie, Klinikum der JWG-UniÕersitat,</affiliation>
+	</byline>
+
+	<address>Theodor-Stern-Kai 7, D-60590 Frankfurt, Germa<lb/></address>
+
+	<note type="submission">Received19October1998;revised26November1998;accepted1December1998<lb/></note>
+
+	<div type="abstract">Abstract<lb/>The aim of the present study was to characterize the endothelium-dependent relaxation elicited by ginsenosides, amixture of saponin<lb/> extracted from Panaxginseng, in isolated rataorta. Relaxations elicited by ginsenosides were mimicked by ginsenoside Rg and<lb/> 3<lb/> ginsenoside Rg, two major ginsenosides of the protopanaxatriol group. Ginsenoside Rg was about 100-fold more potent than<lb/> 13<lb/> ginsenoside Rg. The endothelium-dependent relaxation in response to ginsenoside Rg was associated with the formation of cyclc GMP.<lb/> 13<lb/> These effects were abolished by N<lb/>G<lb/>-nitro-L-arginine and methylene blue. Relaxations in response to ginsenoside Rg were unaffected by<lb/> 3<lb/>w<lb/>2<lb/>7,9x<lb/>atropine,diphenhydramine,D-Pro,D-TrpsubstanceP,propranolol,nifedipine,verapamil and glibenclamidebut were markedly<lb/> reduced by tetraethylammonium. Tetraethylammonium modestly reduced the relaxation induced by sodium nitroprusside. These findings<lb/> indicate that ginsenoside Rg is a major mediator of the endothelium-dependent nitricoxide-mediated relaxation in response to<lb/> 3<lb/>ginsenosides in isolated rataorta, possibly via activation of tetraethylammonium-sensitive K<lb/>q channels.</div>
+
+	<note type="copyright">&#169;1999 Elsevier Science B. V.<lb/>All rights reserved.<lb/></note>
+
+	<note type="other">Ž.<lb/>q<lb/></note>
+
+	<keyword>Keywords: GinsenosideRg; Nitricoxide NO; cGMP; Vascular relaxation; Kchannel; Aorta, rat <lb/></keyword>
+
+	<note type="other">3<lb/></note>
+
+		</front>
+	</text>
+</tei>

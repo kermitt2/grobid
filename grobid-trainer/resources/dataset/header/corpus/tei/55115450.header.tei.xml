@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei type="wiki">
+	<teiHeader>
+		<fileDesc xml:id="55115450"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Desalter<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">From Wikipedia, the free encyclopedia<lb/> This is an old revision of this page, as edited by Auric (talk | contribs) at 22:50, 14<lb/> S eptember 2010. It may differ significantly from the current revision (//en.wikipedia.org<lb/> /wiki/Desalter).<lb/> (diff) ← Previous revision | Latest revision (diff) | Newer revision → (diff)<lb/></note>
+
+	<div type="abstract">A desalter is a process unit on an oil refinery that removes salt from the crude oil. The salt is dissolved<lb/> in the water in the crude oil, not in the crude oil itself. The desalting is usually the first process in crude<lb/> oil refining. The salt content after the desalter is usually measured in PTB -pounds of salt per thousand<lb/> barrels of crude oil. [1] Another specification is Basic sediment and water<lb/> The term desalter may also refer to a water desalination facility used to treat brackish water from<lb/> agricultural runoff. This may be done either to produce potable water for human or animal consumption,<lb/> or to reduce the salinity of river water prior to its crossing an international border, usually to comply<lb/> with the terms of a treaty. Desalters are also used to treat groundwater reservoirs in areas impacted by<lb/> cattle feedlots and dairies.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei type="phd-thesis">
+	<teiHeader>
+		<fileDesc xml:id="55113542"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Design and Development of a Heterogeneous<lb/> Hardware Search Accelerator<lb/></titlePart>
+	</docTitle>
+
+	<degree>This dissertation is submitted for the degree of Doctor of Philosophy<lb/></degree>
+	
+	<byline>
+	<docAuthor>Tan, Shawn Ser Ngiap<lb/> </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Magdalene College<lb/></affiliation>
+	</byline>
+	
+	<date>May 21, 2009</date>
+
+		</front>
+	</text>
+</tei>
