@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								AUTHORS
+							<lb/>
+								<surname>Meister</surname>,
+								<forename>G</forename>.,
+							</persName>
+							<persName>	
+								<surname>Zhu</surname> ,
+								<forename>J</forename>.and 
+							</persName>
+							<persName>	
+								<surname>Grasser</surname> ,
+								<forename>F</forename>.
+								<middlename>A</middlename>.
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

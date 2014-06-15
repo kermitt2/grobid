@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013056"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Al 2 O 3 -SiO 2 Core Highly Nonlinear Dispersion-shifted Fiber<lb/> with Brillouin Gain Suppression Improved by 6.1dB<lb/>
+	</titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Tetsuya Nakanishi, Masato Tanaka, Takemi Hasegawa, Masaaki Hirano, Toshiaki Okuno, and Masashi Onishi<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Sumitomo Electric Industries, Ltd.,</affiliation>
+	</byline>
+
+	<address>1, Taya-cho, Sakae-ku, Yokohama, 244-8588 Japan.<lb/></address>
+
+	<email>(E-mail: nakanishi-tetsuya@sei.co.jp)<lb/></email>
+
+	<div type="abstract">Abstract Al2O3-SiO2 core Highly Nonlinear Dispersion-shifted Fiber with high nonlinear coefficient of 19W<lb/> -1 km<lb/> -1 is<lb/> successfully fabricated for the first time. The suppression of Brillouin gain by 6.1dB as compared with<lb/> conventional HNL-DSF is demonstrated.<lb/></div>
+
+		</front>
+	</text>
+</tei>

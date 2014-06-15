@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Jun</forename>
+								<surname>Aoki</surname>,
+							</persName>
+							<persName>
+								<forename>Yoshiaki</forename>
+								<surname>Takemoto</surname>,
+							</persName>
+							<persName>
+								<forename>Kenji</forename>
+								<surname>Kobayashi</surname>,
+							</persName>
+							<persName>
+								<forename>Naofumi</forename>
+								<surname>Sakaguchi</surname>,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Mitsuhiro</forename>
+								<surname>Tsukimura</surname> ,
+							</persName>
+							<persName>
+								<forename>Naohiro</forename>
+								<surname>Takazawa</surname> ,
+							</persName>
+							<persName>
+								<forename>Hideki</forename>
+								<surname>Kato</surname> ,
+							</persName>
+							<persName>
+								<forename>Toru</forename>
+								<surname>Kondo</surname> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Haruhisa</forename>
+								<surname>Saito</surname>,
+							</persName>
+							<persName>
+								<forename>Yuichi</forename>
+								<surname>Gomi</surname> ,
+							</persName>
+							<persName>
+								<forename>Yoshitaka</forename>
+								<surname>Tadaki</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

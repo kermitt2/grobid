@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55115312"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>FIRE AND MATERIALS, VOL. 21, 23—32 (1997)<lb/></reference>
+
+	<docTitle>
+	<titlePart>Fire-retardant Additives for Polymeric Materials—I.<lb/> Char Formation from Silica Gel–Potassium Carbonate<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Jeffrey W. Gilman*, Steven J. Ritchie, Takashi Kashiwagi and Sergey M. Lomakin<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Materials Fire Research Group, Building and Fire Research Laboratory, National Institute of Standards and Technology,
+	</affiliation>
+	</byline>
+
+	<address>Gaithersburg,<lb/> MD 20899, USA<lb/></address>
+
+	<byline>
+	<affiliation>Institute of Biochemical Physics, Russian Academy of Sciences,</affiliation>
+	</byline>
+
+	<address>Moscow, Russia<lb/></address>
+
+	<div type="abstract">Silica gel combined with potassium carbonate is an effective fire retardant for a wide variety of common polymers (at<lb/> mass fraction of only 10% total additive) such as polypropylene, nylon, polymethylmethacrylate, poly(vinyl alcohol),<lb/> cellulose, and to a lesser extent polystyrene and styrene-acrylonitrile. The peak heat release rate is reduced by up to<lb/> 68% without significantly increasing the smoke or carbon monoxide levels during the combustion.</div>
+
+	<note type="copyright">&#169;1997 by John<lb/> Wiley &amp; Sons, Ltd.<lb/></note>
+
+	<reference>Fire and Materials, Vol. 21, 23—32 (1997)<lb/></reference>
+
+	<note type="other">(No. of Figures: 9<lb/> No. of Tables: 1<lb/> No of Refs: 26)<lb/></note>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008688"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Project Number:<lb/> Tracking Code: TC068--0952<lb/> Requested by: Brandon Harpenau<lb/> Date: 2/24/2006<lb/> Product Rev: N/A<lb/> Part #: USB-B-S-X-X-TH &amp; USBR-B-X-O-TH-R<lb/> Lot #: N/A<lb/> Tech: Troy Cook<lb/> Eng: Brandon<lb/> Harpenau Part description: I/O Connector<lb/> Qty to test: 10<lb/> Test Start: 02/27/2006<lb/> Test Completed: 2/27/2006<lb/></note>
+
+	<docTitle>
+	<titlePart>Mating/Unmating Comparison of<lb/> USB-B-S-X-X-TH &amp; USBR-B-X-O-TH-R</titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei type="web">
+	<teiHeader>
+		<fileDesc xml:id="55115330"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>New Google feature provides previews of Web<lb/> search results<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>By Blog Admin</docAuthor>
+	</byline>
+
+	<date>on November 11, 2010</date>
+
+	<note type="other">7:20 PM | 1 Comment | No TrackBacks<lb/></note>
+
+		</front>
+	</text>
+</tei>

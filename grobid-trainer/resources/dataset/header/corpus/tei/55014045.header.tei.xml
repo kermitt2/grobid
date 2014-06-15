@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014045"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">124<lb/></note>
+
+	<reference>PTEP 13(2009) 2<lb/> Biblid: 1450-5029 (2009) 13; 2; p.124-127<lb/></reference>
+
+	<note type="other">Original scientific paper<lb/> </note>
+
+	<idno>UDK: 664.653.4<lb/> </idno>
+
+	<note type="other">Originalni naučni rad<lb/></note>
+
+	<docTitle>
+	<titlePart>HIGH QUALITY NOODLE PRODUCTS AND THEIR TRADITIONAL AND<lb/> NON-TRADITIONAL PROCESSING<lb/> VISOKOKVALITETNI TESTIČARSKI PROIZVODI I NJIHOVA<lb/> TRADICIONALNA I NETRADICIONALNA PROIZVODNJA<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Dr. Elisabeth T. KOVACS<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University of Szeged, Faculty of Engineering, Institute of Food Engineer<lb/></affiliation>
+	</byline>
+
+	<address>H-6724 Szeged, Mars tér 7, Hungary,</address>
+
+	<email>e-mail: elisabet@mk.u-szeged.<lb/></email>
+
+	<div type="abstract">SUMMARY<lb/> Traditional pasta is produced only from different qualities of wheat flour (T. durum, T. aestivum) and water, but the use of legu-<lb/>minous flour (like yellow pea flour), pseodecereals (like amaranth ) or maize starch as well etc. for producing noodle products is un-<lb/>conventional. There are several possibilities for improving the quality of the products: to change the technology (drying on low or<lb/> high temperature) or to use additives such as emulsifiers and/or enzymes. For developing an improved pasta structure the enzyme<lb/> transglutaminase can be used as well.<lb/> In the presence of emulsifier an emulsifier-carbohydrate-protein-lipid complex can be expected. The rate of the individual interac-<lb/>tions depends on the components of the sample and on the type of applied emulsifiers. Transglutaminase enzyme, a protein-glutamine<lb/> γ-glutamyl-transferase (EC.2.3.2.13), catalysis acyl-transfer reactions, and introduces covalent cross-links between proteins. The<lb/> application of transglutaminase has great importance for the development of pasta products: from pseudocereals, or wheat flours (T.<lb/> durum, T. aestivum). Pasta products with good quality like T. durum-based pastas can be produced from T. aestivum flour. By using<lb/> transglutaminase the quality of T. durum flour can also be improved, so the pastas will show higher cooking quality. The enzyme in-<lb/>sures cholesterol free products. Pasta and noodle products were produced according a modelling system. The effect of the enzyme<lb/> treatment on cooking properties, sensory assessment and protein distribution was analyzed. The change of the protein structure de-<lb/>pends on the type of systems, the amount and the type of additives.<lb/></div>
+
+	<keyword>Key words: emulsifiers, transglutaminase enzyme, pasta properties, SDS-PAGE.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012369"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Implicit Authentication for Mobile Devices<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Markus Jakobsson<lb/> Elaine Shi<lb/> Philippe Golle<lb/> Richard Chow<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Palo Alto Research Center<lb/></affiliation>
+	</byline>
+
+	<email>{mjakobss, eshi, pgolle, rchow}@parc.com<lb/></email>
+
+	<div type="abstract">Abstract. We introduce the notion of implicit authentication<lb/> – the ability to authenticate mobile users based on actions they<lb/> would carry out anyway. We develop a model for how to per-<lb/>form implicit authentication, and describe experiments aimed<lb/> at assessing the benefits of our techniques. Our preliminary<lb/> findings support that this is a meaningful approach, whether<lb/> used to increase usability or increase security.<lb/></div>
+
+		</front>
+	</text>
+</tei>

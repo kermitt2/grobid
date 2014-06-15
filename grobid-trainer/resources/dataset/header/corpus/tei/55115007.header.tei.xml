@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55115007"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Augmented Reality Audio for Mobile and<lb/> Wearable Appliances*<lb/></titlePart>
+	</docTitle>
+
+	<byline> 
+	<docAuthor>AKI H RM , JULIA JAKKA, MIIKKA TIKANDER, AND MATTI KARJALAINEN, </docAuthor>
+	</byline>
+
+	<note type="other">AES Fellow<lb/></note>
+
+	<byline>
+	<affiliation>Helsinki University of Technology, Laboratory of Acoustics and Audio Signal</affiliation>
+	</byline>
+
+	<byline>
+	<affiliation>Processing, </affiliation>
+	</byline>
+
+	<address>FIN-02015, HUT, Finland<lb/></address>
+
+	<byline>
+	<docAuthor>TAPIO LOKKI, AES Member<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Helsinki University of Technology, Telecommunications Software and Multimedia Laboratory</affiliation>
+	</byline>
+
+	<address>, FIN-02015,<lb/> HUT, Finland<lb/></address>
+
+	<byline>
+	<docAuthor>AND<lb/> JARMO HIIPAKKA, AES Member, AND GA TAN LORHO, AES Member<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Nokia Research Center, Audio-Visual Systems Laboratory</affiliation>
+	</byline>
+
+	<address>, FIN-00045, NOKIA GROUP, Finland<lb/></address>
+
+	<div type="abstract">The concept of augmented reality audio characterizes techniques where a real sound<lb/> environment is extended with virtual auditory environments and communications scenarios.<lb/> A framework is introduced for mobile augmented reality audio (MARA) based on a specific<lb/> headset configuration where binaural microphone elements are integrated into stereo ear-<lb/>phones. When microphone signals are routed directly to the earphones, a user is exposed to<lb/> a pseudoacoustic representation of the real environment. Virtual sound events are then mixed<lb/> with microphone signals to produce a hybrid, an augmented reality audio representation, for<lb/> the user. An overview of related technology, literature, and application scenarios is provided.<lb/> Listening test results with a prototype system show that the proposed system has interesting<lb/> properties. For example, in some cases listeners found it very difficult to determine which<lb/> sound sources in an augmented reality audio representation are real and which are virtual.<lb/></div>
+
+		</front>
+	</text>
+</tei>

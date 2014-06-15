@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55113709"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Characterization of CCL20 secretion by human epithelial<lb/> vaginal cells: involvement in Langerhans cell precursor<lb/> attraction<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Magali Cremel,* Willy Berlier,* Hind Hamzeh,* Fabrice Cognasse,* Philip Lawrence,*<lb/> Christian Genin,* Jean-Claude Bernengo,<lb/> Claude Lambert,<lb/> Marie-Caroline Dieu-Nosjean,<lb/> and Olivier Delé zay*<lb/> ,1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>*Groupe Immunité des Muqueuses et Agents Pathogènes (GIMAP), Faculté de Médecine J. Lisfranc,</affiliation>
+	</byline>
+
+	<address>St Etienne,<lb/> France;<lb/></address>
+
+	<byline>
+	<affiliation>Centre Commun de Quantimétrie, Université Claude Bernard</affiliation>
+	</byline>
+
+	<address>Lyon 1, France;<lb/></address>
+
+	<byline>
+	<affiliation>Laboratoire d&apos;Immunologie<lb/></affiliation>
+	</byline>
+
+	<address>Clinique, CHU, St Etienne, France; and<lb/></address>
+
+	<byline>
+	<affiliation>INSERM U255, Centre de Recherches Biomédicales des Cordeliers,<lb/></affiliation>
+	</byline>
+
+	<address>Paris, France<lb/></address>
+
+	<div type="abstract">Abstract: Mucosa represents the main site of<lb/> pathogen/cell interactions. The two main types of<lb/> cells forming the epithelial structure [epithelial<lb/> cells and Langerhans cells (LC)] coordinate the first<lb/> defense responses to avoid infection. To evaluate<lb/> the involvement of epithelial cells in the early steps<lb/> leading to a specific adaptive immune response, we<lb/> have studied the interactions between vaginal epi-<lb/>thelial and LC through the establishment of a hu-<lb/>man vaginal epithelial mucosa. We demonstrate<lb/> that normal human vaginal epithelial cells consti-<lb/>tutively secrete the chemokine macrophage inflam-<lb/>matory protein 3␣/CC chemokine ligand 20<lb/> (CCL20), known to recruit LC precursors (LCps)<lb/> selectively via its cognate CC chemokine receptor<lb/> 6 (CCR6). This secretion is up-regulated by the<lb/> proinflammatory cytokine interleukin-1␤ through<lb/> the nuclear factor-␬B pathway. Similar results<lb/> were obtained with the human vaginal epithelial<lb/> cell line SiHa, which displays numerous homologies<lb/> with normal vaginal cells. The chemotactic activity<lb/> of the secreted CCL20 was demonstrated by its<lb/> ability to attract LCp CCR6؉. Moreover, the use of<lb/> neutralizing polyclonal antibodies directed against<lb/> the CCL20 molecule abolished this migration com-<lb/>pletely, suggesting that CCL20 is the main attract-<lb/>ing factor for LCps, which is produced by the vag-<lb/>inal cells. These data indicate that vaginal epithelial<lb/> cells play an important role in the immunological<lb/> defense by attracting immune cells to the site of<lb/> epithelial/pathogen contact. J. Leukoc. Biol. 78:<lb/> 158 –166; 2005.<lb/></div>
+
+	<keyword>Key Words: chemokine ⅐ vaginal epithelial cells ⅐ mucosal model<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

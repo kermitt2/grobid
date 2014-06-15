@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013435"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>EDKII User Manual<lb/></titlePart>
+	</docTitle>
+
+	<date>June 8, 2008<lb/></date>
+
+	<note type="other">Revision 0.06<lb/> </note>
+
+	<note type="page">i</note>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei type="book-chapter">
+	<teiHeader>
+		<fileDesc xml:id="55114379"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>ROAD TUNNELS MANUAL<lb/>HOME PAGE : WARNING TO THE READERS<lb/> </titlePart>
+	</docTitle>
+
+	<note type="copyright">All rights reserved. © World Road Association (PIARC)<lb/></note>
+
+	<note type="other">PIARC ROAD TUNNELS MANUAL<lb/></note>
+	
+	<note type="copyright">© PIARC<lb/></note>
+
+	<ptr>http://tunnels.piarc.org/en/<lb/> </ptr>
+
+	<note type="page">2 / 3<lb/> </note>
+
+	<note type="other">Home page : Warning to the readers<lb/></note>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010392"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>UDC 666.124<lb/></idno>
+
+	<docTitle>
+	<titlePart>USE OF A MECHANICALLY DISPERSED MIXTURE SiO 2 + Se<lb/> AS A COLORANT FOR OBTAINING TINTED GLASS<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>L. N. Bondareva, 1 I. N. Gorina, 1, 3 A. B. Zhimalov, 1 I. D. Kosobudskii, 2 and G. A. Polkan 1<lb/></docAuthor>
+	</byline>
+
+	<reference>Translated from Steklo i Keramika, No. 5, pp. 7 – 9, May, 2011.<lb/></reference>
+
+	<div type="abstract">A selenium-based colorant obtained by transferring it into micro-and nanostates by mechanical dispersion us-<lb/>ing the main component of the glass — quartz sand — as the stabilizing matrix is studied. It is determined that<lb/> with mechanical dispersion of SiO 2 + Se mixtures not only does comminution occur but a transition of sele-<lb/>nium into other polymorphic modifications could also occur, while the observation of an increase of the color<lb/> intensity of the glasses synthesized on their basis is most likely due to the stabilization of selenium particles in<lb/> low-dimension voids of the quartz glass. It has been found that a black heterogeneous mixture SiO 2 + Se is<lb/> characterized by high volatility and simultaneously the highest tinting power.<lb/></div>
+
+	<keyword>Key words: tinted glass, colorants, selenium, heterogeneous mixture, mechanically dispersed, micro-and<lb/> nanodispersed states.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

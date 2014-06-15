@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011145"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<affiliation>NANOTECHNOLOGY LAW &amp; BUSINESS </affiliation>
+
+	<note type="other">@BULLET SPRING </note>
+
+	<date>2008 </date>
+
+	<note type="page">85<lb/></note>
+
+	<docTitle>
+	<titlePart>The Fullerene Patent Landscape in Europe<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>RICHARD MICHALITSCH *<lb/> , CHRISTIAN KALLINGER<lb/> *<lb/> , YVES<lb/> VERBANDT<lb/> *<lb/> , VICTOR VEEFKIND<lb/> *<lb/> , AND STEFAN ROLF<lb/> HUEBNER **1<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">ABSTRACT<lb/> Fullerenes, spherical clusters of carbon atoms, are one of the more mature &quot;building blocks&quot; in<lb/> nanoscience and nanotechnology. Potential commercial applications of fullerenes range from<lb/> therapeutics to displays to solar cells. Over the last two decades, substantial investments in research and<lb/> development of fullerenes and fullerene-based products have resulted in large numbers of patents and<lb/> patent applications. In this article, Richard Michalitsch and his colleagues of the European Patent<lb/> Office&apos;s Nanotechnology Working Group, together with the European patent attorney Stefan Rolf<lb/> Huebner, provide an overview of the European patenting activities related to fullerenes. They explain the<lb/> trends in fullerene patenting over time, provide an overview of the fullerene patent landscape, describe<lb/> specific types of fullerene patents, and identify the key patent holders.<lb/></div>
+
+		</front>
+	</text>
+</tei>

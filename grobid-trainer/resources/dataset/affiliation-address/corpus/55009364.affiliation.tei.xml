@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="department">Cell and Tissue Systems</orgName>,
+							<address>
+								<region>N. Charleston</region>,
+								<region>SC</region>,
+								<country>USA</country>,
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="department">Organ Recovery Systems</orgName>,
+							<lb/>
+							<address>
+								<settlement>Des Plaines</settlement>,
+								<region>IL</region>,
+								<country>USA</country>.
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>3</marker>
+							<orgName type="department">Dept. Surgery</orgName>,
+							<orgName type="institution">Medical University of South Carolina</orgName>,
+							<lb/>
+							<address>
+								<settlement>Charleston</settlement>,
+								<region>SC</region>.
+								<country>USA</country>.
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013661"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">1<lb/> 2<lb/> 3<lb/> 4<lb/></note>
+
+	<docTitle>
+	<titlePart>Architecture for Managing Clouds<lb/> A White Paper from the Open Cloud Standards Incubator<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Version: 1.0.0<lb/>5<lb/>Status: DMTF Informational<lb/>6<lb/></note>
+
+	<date>Publication Date: 2010-06-18<lb/></date>
+
+	<note type="other">7<lb/></note>
+
+	<note>Document Number: DSP-IS0102<lb/></note>
+
+	<note type="other">8</note>
+
+		</front>
+	</text>
+</tei>

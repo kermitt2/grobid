@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008893"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>SIMATIC WinCC<lb/> Process visualization with Plant Intelligence<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Brochure · </note>
+	
+	<date>November 2010<lb/></date>
+
+	<docTitle>
+	<titlePart>SIMATIC HMI<lb/> Answers for industry.<lb/></titlePart>
+	</docTitle>
+
+	<note type="copyright">© Siemens AG 2010</note>
+
+		</front>
+	</text>
+</tei>

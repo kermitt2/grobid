@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Olov</forename>
+								<surname>Ståhl</surname>,
+							</persName>
+							<persName>
+								<forename>Anders</forename>
+								<surname>Wallberg</surname>,
+							</persName>
+							<persName>
+								<forename>Jonas</forename>
+							<lb/>
+								<surname>Söderberg</surname>,
+							</persName>
+							<persName>
+								<forename>Jan</forename>
+								<surname>Humble</surname> ,
+							</persName>
+							<persName>
+								<forename>Lennart</forename>
+								<middlename>E</middlename> .
+								<surname>Fahlén</surname>
+							<lb/> and
+							</persName>
+							<persName>
+								<forename>Adrian</forename>
+								<surname>Bullock</surname>
+							</persName>
+							<persName>
+								<forename>Jenny</forename>
+								<surname>Lundberg</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

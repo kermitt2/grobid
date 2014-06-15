@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008715"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Synthesis of large generation poly(propyl ether imine) (PETIM)<lb/> dendrimers<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Govindasamy Jayamurugan and Narayanaswamy Jayaraman *<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Organic Chemistry, Indian Institute of Science,</affiliation>
+	</byline>
+
+	<address>Bangalore 560 012, India<lb/></address>
+
+	<note type="submission">Received 13 April 2006; revised 7 July 2006; accepted 27 July 2006<lb/></note>
+
+	<date>Available online 17 August 2006<lb/></date>
+
+	<div type="abstract">Abstract—Large generation poly(propyl ether imine) (PETIM) dendrimers are synthesized in iterative synthetic cycles of two reductions and<lb/> two Michael addition reactions. Dendrimers up to sixth generation, containing up to 128 peripheral functionalities, are synthesized. Growth of<lb/> the PETIM dendrimers, possessing a tertiary amine as the branch juncture and an ether as the linker component, is assessed systematically by<lb/> routine spectroscopic methods. The peripheries of these dendrimers possess either alcohols, amines, carboxylic acids, esters, or nitriles,<lb/> thereby opening up possibilities for varied studies involving PETIM dendrimers.<lb/></div>
+
+	<note type="copyright">&#169; 2006 Elsevier Ltd. All rights reserved.<lb/></note>
+
+		</front>
+	</text>
+</tei>

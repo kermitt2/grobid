@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55113814"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">.:.<lb/> ..=<lb/> c &quot;.--%&gt;<lb/>-===!9=$<lb/> .,\<lb/> ,.&apos;<lb/> ml ~s </note>
+
+	<date>1946<lb/></date>
+
+	<note type="other">litt3?J0.<lb/> E4:03<lb/> --&gt;<lb/></note>
+
+	<note type="other">—.<lb/> NATIONAL ADVISORY<lb/> COMMITTEE FOR AERONAUTICS<lb/>WAIWIME -IUWOR&apos;I&apos;<lb/></note>
+	
+	<note type="submission">ORIGINALLY ISSUED<lb/> November 1944 as<lb/> </note>
+
+	<note type="other">Restricted Bulletin E4K03<lb/></note>
+
+	<docTitle>
+	<titlePart>THE KNOCK-LIMITED<lb/> PERFORMANCE OF SEVERAL FUELS<lb/> BLENDED WITH S-2 REFERENCE<lb/> FUEL<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>By Henry E. Alquist<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Aircraft Engine Research<lb/> Laborato~</affiliation>
+	</byline>
+
+	<address>Cleveland, Ohio<lb/> &apos;,:&apos;<lb/></address>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55113681"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>74 th EAGE Conference &amp; Exhibition incorporating SPE EUROPEC 2012<lb/> Copenhagen, Denmark, 4-7 June 2012<lb/>
+	</reference>
+
+	<docTitle>
+	<titlePart>Z009 Broadband Seismic Methods for Towed-streamer<lb/> Acquisition<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>N. Moldoveanu*</docAuthor>
+	</byline>
+	
+	<byline>
+	<affiliation>(WesternGeco), </affiliation>
+	</byline>
+	
+	<byline>
+	<docAuthor>N. Seymour</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>(WesternGeco), </affiliation>
+	</byline>
+
+	<byline>
+	<docAuthor>D.J. Manen<lb/></docAuthor>
+	</byline>
+	
+	<byline>
+	<affiliation>(WesternGeco), </affiliation>
+	</byline>
+	
+	<byline>
+	<docAuthor>P. Caprioli</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>(WesternGeco) <lb/> </affiliation>
+	</byline>
+
+	<div type="abstract">SUMMARY<lb/> One of the limiting factors in seismic resolution for marine towed-streamer acquisition is the ghost effect<lb/> due to sources and receivers. The ghost is the reflection from the sea surface that interferes constructively<lb/> or destructively with the primary reflections reducing the seismic bandwidth at the low end and the high<lb/> end of the spectrum. Different acquisition and processing solutions were proposed during the years to<lb/> address the ghost problem. In this paper we review these solutions and we introduce new slant streamer-<lb/>type acquisition with the processing based on prestack single-streamer deghosting.<lb/></div>
+
+	<reference>74 th EAGE Conference &amp; Exhibition incorporating SPE EUROPEC 2012<lb/> Copenhagen, Denmark, 4-7 June 2012<lb/>
+	</reference>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<address>
+								<settlement>Nanophysics</settlement>,
+							</address>
+							<orgName type="institution">Istituto Italiano di Tecnologia</orgName>,
+							<address>
+								<settlement>Genoa</settlement>,
+								<country>Italy</country>,
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="department">Department of NanoBiophotonics</orgName>,
+							<orgName type="department">Max Planck Institute for Biophysical Chemistry</orgName>,
+							<address>
+								<addrLine>Gö ttingen</addrLine>,
+								<settlement>Germany</settlement>,
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>3</marker>
+							<orgName type="department">Department of Neuroscience</orgName>,
+							<orgName type="institution">Institut Pasteur</orgName>,
+							<orgName type="institution">CNRS URA 2182</orgName>,
+							<address>
+								<settlement>Paris</settlement>,
+								<country>France</country>,
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>4</marker>
+							<orgName type="institution">Weatherall Institute of Molecular Medicine</orgName>,
+							<orgName type="institution">University of Oxford</orgName>,
+							<address>
+								<settlement>Oxford</settlement>,
+								<country>United Kingdom</country>
+							<lb/>
+							</address>
+							<orgName type="institution">University of Milano-Bicocca</orgName>,
+							<address>
+								<country>Italy</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>¤</marker> Current address:
+							<orgName type="department">Department of Physics</orgName>,
+							<orgName type="institution">University of Illinois at Urbana-Champaign</orgName>,
+							<address>
+								<settlement>Urbana</settlement>,
+								<region>Illinois</region>,
+								<country>United States of America</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

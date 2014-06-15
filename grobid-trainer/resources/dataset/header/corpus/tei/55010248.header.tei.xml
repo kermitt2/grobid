@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010248"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Cross-Reference Your XML Data<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Charles Heinemann<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Microsoft Corporation<lb/></affiliation>
+	</byline>
+
+	<date>December 7, 1998<lb/></date>
+
+	<note type="other">Download the source code for this article (2.3 KB)<lb/></note>
+
+		</front>
+	</text>
+</tei>

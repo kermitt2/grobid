@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010713"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Enzyme-Labile Protecting Groups in Peptide Synthesis:<lb/> Development of Glucose-and Galactose-Derived Urethanes<lb/>
+	</titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Andrew G. Gum,<lb/> [b]<lb/> Thomas Kappes-Roth,<lb/> [b]<lb/> and Herbert Waldmann*<lb/> [a]<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Abstract: The development of the tetra-<lb/>O-acetyl-d-glucopyranosyloxycarbonyl<lb/> (AGlOC) and tetra-O-acetyl-b-d-galac-<lb/>topyranosyloxycarbonyl (AGalOC) pro-<lb/>tecting groups, which are fully enzyme-<lb/>labile, carbohydrate-derived urethanes,<lb/> is described. The protected amino acids<lb/> were easily synthesized and subsequent-<lb/>ly converted into a series of model<lb/> dipeptides through classical peptide cou-<lb/>plings. Cleavage of an a/b-anomeric<lb/> mixture of a model AGlOC dipeptide<lb/> was achieved with a ªone-potº proce-<lb/>dure in good yield. To gain a better<lb/> understanding of the enzymatic depro-<lb/>tection reaction, the AGalOC group was<lb/> removed through a two step biotrans-<lb/>formation (lipase catalyzed deacetyla-<lb/>tion, followed by b-galactosidase cata-<lb/>lyzed glycosidic bond fragmentation).<lb/> Under these very mild reaction condi-<lb/>tions (aq. buffer pH 7.0, 37 8C), the<lb/> desired N-terminal, unprotected dipep-<lb/>tide conjugates were obtained. The<lb/> methodology was further utilized for<lb/> the synthesis of an advanced tetrapep-<lb/>tide model system.<lb/></div>
+
+	<keyword>Keywords: biotransformation en-<lb/>zyme-labile urethané glycosidase<lb/> peptide synthesis design<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

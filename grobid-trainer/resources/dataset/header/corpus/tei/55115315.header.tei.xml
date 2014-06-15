@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55115315"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>On-the-Fly Scene Acquisition with a Handy<lb/> Multisensor-System<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Benjamin Huhle*, Philipp Jenke* and<lb/> Wolfgang Straßer<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>WSI/GRIS, University of Tuebingen<lb/></affiliation>
+	</byline>
+
+	<address>Sand 14, 72074 Tuebingen, Germany<lb/></address>
+
+	<email>E-mail: {huhle,jenke}@gris.uni-tuebingen.de<lb/></email>
+
+	<note type="other">* Corresponding authors<lb/></note>
+
+	<div type="abstract">Abstract: We present a scene acquisition system which allows for fast<lb/> and simple acquisition of arbitrarily large 3D environments. We propose<lb/> a small device which acquires and processes frames consisting of depth<lb/> and color information at interactive rates. This allows the operator to<lb/> control the acquisition process on the fly. However, no user input or<lb/> prior knowledge of the scene are required. In each step of the processing<lb/> pipeline color and depth data are used in combination in order to gain<lb/> from different strengths of the sensors. A novel registration method is<lb/> introduced that combines geometry and color information for enhanced<lb/> robustness and precision. We evaluate the performance of the system<lb/> and present results from acquisition in different environments.<lb/></div>
+
+	<keyword>Keywords: Scene acquisition, Registration, PMD, NDT, SIFT, Spec-<lb/>tral Correspondences<lb/></keyword>
+
+	<reference>Reference to this paper should be made as follows: Huhle, B., Jenke,<lb/> P. and Straßer, W. (2007) &apos;On-the-Fly Scene Acquisition with a Handy<lb/> Multisensor-System&apos;, Int.</reference>
+
+	<reference>J. of Intelligent Systems Technologies and Ap-<lb/>plications, Vol. x, No. x, pp.xxx–xxx.<lb/></reference>
+
+	<note type="other">Biographical notes: Benjamin Huhle and Philipp Jenke are cur-<lb/>rently PhD students at the WSI/GRIS, University of Tuebingen under<lb/> supervision of Prof. Straßer and Prof. Schilling. They studied Computer<lb/> Science at the same university. Benjamin Huhle&apos;s research interests are<lb/> in computer vision and 3D scene capturing. In his research, Philipp<lb/> Jenke focuses on post-processing of point data acquired by diverse scan-<lb/>ning systems.<lb/> Wolfgang Straßer studied Electrical Engineering, Communications and<lb/> Computer Science at TU-Berlin and received his PhD in 1974. He was<lb/> appointed Professor of Computer Science at TU Darmstadt in 1978. In<lb/> 1986, he founded the graphics research group at University of Tuebin-<lb/>gen. The TU Darmstadt awarded Professor Straßer with a honorary<lb/> doctor degree for his outstanding contributions to the field of Computer<lb/> Graphics in 2000. At present, Straßer is Professor of Computer Science<lb/> and adjunct Professor of Mathematics at Tuebingen. He has chaired<lb/> many conferences and workshops, and is a fellow of the EG Association.</note>
+
+		</front>
+	</text>
+</tei>

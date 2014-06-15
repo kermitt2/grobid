@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55113528"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Automatic identification of mixed bacterial species<lb/> fingerprints in a MALDI-TOF mass-spectrum<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Pierre Ma<lb/> e 1,* , Maud Arsac 1 , Sonia Chatellier 2 , Vaí<lb/> erie Monnin 2 , Nadine<lb/> Perrot 2 , Sandrine Mailler 2 , Victoria Girard 2 , Mahendrasingh Ramjeet 2 ,<lb/> e emy Surre 2 , Bruno Lacroix 1 , Alex van Belkum 2 and Jean-Baptiste<lb/> Veyrieras 1<lb/></docAuthor>
+	</byline>
+
+	<byline> 
+	<affiliation>1 Bio<lb/> erieux SA, Unit Innovation and Systems,</affiliation>
+	</byline>
+
+	<address>Marcy l&apos;Etoile, France<lb/></address>
+
+	<byline>
+	<affiliation>2 Bio<lb/> erieux SA, Unit Microbiology, R&amp;D Microbiology,</affiliation>
+	</byline>
+
+	<address>La Balme Les Grottes, France<lb/></address>
+
+	<div type="abstract">ABSTRACT Motivation: Matrix-assisted laser desorption/ionization time-of-flight<lb/> mass spectrometry (MALDI-TOF MS) has been broadly adopted by<lb/> routine clinical microbiology laboratories for bacterial species identifi-<lb/>cation. An isolated colony of the targeted microorganism is the single<lb/> prerequisite. Currently, MS-based microbial identification directly from<lb/> clinical specimens can not be routinely performed since it raises two<lb/> main challenges: i) the nature of the sample itself may increase the<lb/> level of technical variability and bring heterogeneity with respect to<lb/> the reference database and ii) the possibility of encountering polymi-<lb/>crobial samples which will yield a &quot;mixed&quot; MS fingerprint. In this paper<lb/> we introduce a new method to infer the composition of polymicrobial<lb/> samples on the basis of a single mass spectrum. Our approach relies<lb/> on a penalized non-negative linear regression framework making use<lb/> of species-specific prototypes which can be derived directly from the<lb/> routine reference database of pure spectra.<lb/> Results: A large spectral dataset obtained from in-vitro mono-and<lb/> bi-microbial samples allowed us to evaluate the performance of<lb/> the method in a comprehensive way. Provided that the reference<lb/> MALDI-TOF MS fingerprints were sufficiently distinct for the individual<lb/> species, the method automatically predicted which bacterial species<lb/> were present in the sample. Only few samples (5.3%) were mis-<lb/>identified and bi-microbial samples were correctly identified in up to<lb/> 61.2% of the cases. This method could be used in routine clinical<lb/> microbiology practice.<lb/> Availability: The complete dataset including both the reference<lb/> database and the mock-up mixture spectra is available at</div>
+
+	<ptr type="web">http:<lb/> //archive.ics.uci.edu/ml/datasets/MicroMass.<lb/></ptr>
+
+	<email>Contact: pierre.mahe@biomerieux.com<lb/></email>
+
+		</front>
+	</text>
+</tei>

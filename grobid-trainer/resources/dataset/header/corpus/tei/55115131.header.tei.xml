@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei type="serie-article">
+	<teiHeader>
+		<fileDesc xml:id="55115131"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>HOLOGRAPHY USED IN NONDESTRUCTIVE TESTING<lb/> WITH PARTICULAR EMPHASIS ON PNEUMATIC TIRES<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Gordon M. Brown<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>GCO Inc.<lb/></affiliation>
+	</byline>
+
+	<address>Plymouth, Michigan<lb/></address>
+
+		</front>
+	</text>
+</tei>

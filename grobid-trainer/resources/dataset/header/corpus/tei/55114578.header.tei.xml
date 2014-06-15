@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55114578"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Nb±Ta alloys by aluminothermic reduction of Nb 2 O 5 /Ta 2 O 5 mixtures<lb/> and electron beam melting<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Carlos Angelo Nunes * , Daltro Garcia Pinatti, Alain Robin<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Departamento de Engenharia de Materiais/FAENQUIL, Polo Urbo-Industrial,</affiliation>
+	</byline>
+
+	<address>Gleba AI-6, s/n ± 12600-000 Lorena, SP, Brazil<lb/></address>
+
+	<note type="submission">Received 20 November 1998; accepted 18 December 1998<lb/></note>
+
+	<div type="abstract">Abstract<lb/> The aluminothermic reduction (ATR) of Nb 2 O 5 followed by the electron beam melting (EBM) of ATR-electrodes has been<lb/> successfully applied to the commercial production of pure niobium. In this work the technical viability for production of Nb±Ta<lb/> alloys by the same route is discussed. We have calculated the heat balance for the ATR step for situations involving the use of either<lb/> a pre-heated charge or a thermal booster substance (NaClO 3 ). The overall eects of using over-stoichiometric Al amounts in the<lb/> ATR step are discussed. Microstructural and chemical analysis results as well as values of metallic yield on the production of a Nb-<lb/>20 wt% Ta alloy ingot are presented. The limits for re®ning Nb±Ta alloys in terms of oxygen and nitrogen by melting under high<lb/> vacuum are estimated by employing the metal (Nb, Ta)-gas (N 2 , O 2 , H 2 O) interaction equations available in the literature.</div>
+
+	<note type="copyright">&#169; 1999<lb/> Elsevier Science Ltd. All rights reserved.<lb/></note>
+
+	<keyword>Keywords: Niobium; Tantalum; Alloys; Aluminothermic reduction; Electron beam melting; Re®ning<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

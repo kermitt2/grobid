@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="laboratory">Digital Media Lab, Information</orgName> and
+							<orgName type="institution">Communications University</orgName>
+							<lb/>
+							<address>
+								<addrLine>517-10 Dogok-dong</addrLine>,
+								<addrLine>Gangnam-gu</addrLine>,
+								<settlement>Seoul</settlement>,
+								<postCode>135-854</postCode>,
+								<country>South Korea</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

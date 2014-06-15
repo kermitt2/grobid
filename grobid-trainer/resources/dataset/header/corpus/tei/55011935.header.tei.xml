@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011935"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>The Open Toxinology Journal, 2010, 3, 101-118<lb/> </reference>
+
+	<note type="page">101<lb/> </note>
+
+	<idno>1875-4147/10<lb/></idno>
+
+	<note type="copyright">2010 Bentham Open<lb/> </note>
+
+	<note type="other">Open Access<lb/></note>
+
+	<docTitle>
+	<titlePart>Insecticidal Toxins from the Photorhabdus and Xenorhabdus Bacteria<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Stewart J. Hinchliffe, Michelle C. Hares, Andrea J. Dowling and Richard H. ffrench-Constant*<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>School of Biosciences, University of Exeter,</affiliation>
+	</byline>
+
+	<address>Cornwall Campus, Tremough, Penryn, TR10 9EZ, UK<lb/></address>
+
+	<div type="abstract">Abstract: Insect pathogens are an excellent source of novel insecticidal agents with proven toxicity. In particular, bacteria<lb/> from the genera Photorhabdus and Xenorhabdus are proving to be a genomic goldmine, encoding a multitude of<lb/> insecticidal toxins. Some are highly specific in their target species, whilst others are more generalist, but all are of<lb/> potential use in crop protection against insect pests. These astounding bacterial species are also turning out to be equipped<lb/> to produce a vast range of anti-microbial compounds which could be of use to medical science. This review will cover the<lb/> current knowledge of the lifecycles of the two genera and the potential role of the toxins in their biology, before a more in<lb/> depth exploration of some of the best studied toxins and their potential use in agriculture.<lb/></div>
+
+	<keyword>Keywords: Photorhabdus, Xenorhabdus, Insecticidal, Toxin complex, Mcf, Nematode.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

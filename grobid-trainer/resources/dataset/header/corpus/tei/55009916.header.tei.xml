@@ -1,0 +1,63 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009916"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Synthesis, evaluation and structural studies of antiproliferative<lb/> tubulin-targeting azetidin-2-ones<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Niamh M. O&apos;Boyle<lb/> a,⇑ , Lisa M. Greene<lb/> b<lb/> , Orla Bergin<lb/> c , Jean-Baptiste Fichet<lb/> a<lb/> , Thomas McCabe<lb/> d , David G. Lloyd<lb/> e , Daniela M. Zisterer<lb/> b<lb/> , Mary J. Meegan<lb/> a,⇑<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a School of Pharmacy and Pharmaceutical Sciences, Centre for Synthesis and Chemical Biology, Trinity College Dublin,
+	</affiliation>
+	</byline>
+
+	<address>Dublin 2, Ireland<lb/></address>
+
+	<byline>
+	<affiliation>b School of Biochemistry &amp; Immunology, Trinity College Dublin,</affiliation>
+	</byline>
+
+	<address>Dublin 2, Ireland<lb/></address>
+
+	<byline>
+	<affiliation>c UCD Conway Institute and School of Biomolecular and Biomedical Science, University College Dublin,</affiliation>
+	</byline>
+
+	<address>Belfield, Dublin 4, Ireland<lb/></address>
+
+	<byline>
+	<affiliation>d School of Chemistry, Trinity College Dublin,</affiliation>
+	</byline>
+
+	<address>Dublin 2, Ireland<lb/></address>
+
+	<byline>
+	<affiliation>e Molecular Design Group, School of Biochemistry &amp; Immunology, Trinity College Dublin,</affiliation>
+	</byline>
+
+	<address>Dublin 2, Ireland<lb/></address>
+
+	<note type="other">a r t i c l e i n f o<lb/></note>
+
+	<note type="submission">Article history:<lb/> Received 3 January 2011<lb/> Revised 11 February 2011<lb/> Accepted 13 February 2011<lb/>
+	</note>
+
+	<date>Available online 17 February 2011<lb/></date>
+
+	<keyword>Keywords:<lb/> Combretastatin A-4 analogues<lb/> Colchicine b-Lactam<lb/> Azetidinone Antiproliferative<lb/> Cytotoxicity Tubulin<lb/> Structure–activity<lb/> Staudinger reaction<lb/> Reformatsky reaction<lb/></keyword>
+
+	<div type="abstract">a b s t r a c t<lb/> A series of azetidin-2-ones substituted at positions 1, 3 and 4 of the azetidinone ring scaffold were syn-<lb/>thesised and evaluated for antiproliferative, cytotoxic and tubulin-binding activity. In these compounds,<lb/> the cis double bond of the vascular targeting agent combretastatin A-4 is replaced with the azetidinone<lb/> ring in order to enhance the antiproliferative effects displayed by combretastatin A-4 and prevent the cis/<lb/> trans isomerisation that is associated with inactivation of combretastatin A-4. The series of azetidinones<lb/> was synthetically accessible via the Staudinger and Reformatsky reactions. Of a diverse range of hetero-<lb/>cyclic derivatives, 3-(2-thienyl) analogue 28 and 3-(3-thienyl) analogue 29 displayed the highest potency<lb/> in human MCF-7 breast cancer cells with IC 50 values of 7 nM and 10 nM, respectively, comparable to<lb/> combretastatin A-4. Compounds from this series also exhibited potent activity in MDA-MB-231 breast<lb/> cancer cells and in the NCI60 cell line panel. No significant toxicity was observed in normal murine breast<lb/> epithelial cells. The presence of larger, bulkier groups at the 3-position, for example, 3-naphthyl deriva-<lb/>tive 21 and 3-benzothienyl derivative 26, resulted in relatively lower antiproliferative activity in the<lb/> micromolar range. Tubulin-binding studies of 28 (IC 50 = 1.37 lM) confirmed that the molecular target<lb/> of this series of compounds is tubulin. These novel 3-(thienyl) b-lactam antiproliferative agents are useful<lb/> scaffolds for the development of tubulin-targeting drugs.<lb/></div>
+
+	<note type="copyright">&#169; 2011 Elsevier Ltd. All rights reserved.<lb/></note>
+
+		</front>
+	</text>
+</tei>

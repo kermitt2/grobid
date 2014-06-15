@@ -1,0 +1,165 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009738"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<docAuthor>Yong Liu,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Marvell<lb/></affiliation>
+	</byline>
+
+	<note type="other">Slide 1<lb/></note>
+
+	<idno>doc.:IEEE 802.11-10/1079r0<lb/></idno>
+
+	<note type="other">Submission<lb/></note>
+
+	<date>Sept. 13, 2010<lb/></date>
+
+	<docTitle>
+	<titlePart>Max Frame Sizes<lb/></titlePart>
+	</docTitle>
+
+	<date>Date: 2010-09-13<lb/></date>
+
+	<note type="other">Authors:<lb/> Name Company Address<lb/> Phone email<lb/></note>
+
+	<byline>
+	<docAuthor>Yong Liu<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Marvell</affiliation>
+	</byline>
+
+	<address>5488 Marvell Lane, Santa Clara, CA 95054,<lb/> USA<lb/></address>
+
+	<phone>1-408-222-<lb/>8412<lb/> </phone>
+
+	<email>yongliu@marvell.com<lb/></email>
+
+	<byline>
+	<docAuthor>Robert Stacey<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Intel</affiliation>
+	</byline>
+
+	<address>2111 NE 25<lb/> th Ave<lb/> Hillsboro, OR 97124, USA<lb/></address>
+
+	<email>robert.j.stacey@intel.com<lb/></email>
+
+	<byline>
+	<docAuthor>Simone Merlin<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Qualcomm</affiliation>
+	</byline>
+
+	<address>5775 Morehouse Dr., San Diego, CA 92121,<lb/> USA<lb/></address>
+
+	<email>smerlin@qualcomm.com<lb/></email>
+
+	<byline>
+	<docAuthor>Matthew Fischer<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Broadcom</affiliation>
+	</byline>
+
+	<address>190 Mathilda Place, Sunnyvale, CA 94086,<lb/> USA<lb/></address>
+
+	<email>mfischer@broadcom.com<lb/></email>
+
+	<byline>
+	<docAuthor>James Cho<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Atheros</affiliation>
+	</byline>
+
+	<address>1700 Technology Drive, San Jose, CA 95110,<lb/> USA<lb/></address>
+
+	<email>James.Cho@atheros.com<lb/></email>
+
+	<byline>
+	<docAuthor>Youngsoo Kim<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Samsung Electronics<lb/></affiliation>
+	</byline>
+
+	<address>Mt. 14-1 Nongseo-Ri, Giheung-Eup,<lb/> Yongin-Si, Gyeonggi-Do, Korea 449-712<lb/></address>
+
+	<email>kimyoungsoo@samsung.com<lb/></email>
+
+	<byline>
+	<docAuthor>Yongho Seok<lb/> </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>LG Electronics,<lb/> Inc.<lb/></affiliation>
+	</byline>
+
+	<address>533, Hogye-1dong, Dongan-Gu, Anyang-Shi,<lb/> Kyungki-Do, 431-749, Korea<lb/></address>
+
+	<phone>82-31-450-<lb/>1947<lb/> </phone>
+
+	<email>yongho.seok@lge.com<lb/></email>
+
+	<byline>
+	<docAuthor>Daewon Lee<lb/> </docAuthor>
+	</byline>
+	
+	<byline>
+	<affiliation>LG Electronics,<lb/> Inc<lb/></affiliation>
+	</byline>
+
+	<address>533, Hogye-1dong, Dongan-Gu, Anyang-Shi,<lb/> Kyungki-Do, 431-749, Korea<lb/></address>
+
+	<phone>82-31-450-<lb/>7897<lb/> </phone>
+
+	<email>daewon.lee@lge.com<lb/></email>
+
+	<byline>
+	<docAuthor>Minho Cheong<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>ETRI</affiliation>
+	</byline>
+
+	<address>161 Gajeong-dong, Yuseong-gu, Daejeon,<lb/> Korea<lb/></address>
+
+	<phone>+82 42 860<lb/> 5635<lb/> </phone>
+
+	<email>minho@etri.re.kr<lb/></email>
+
+	<byline>
+	<docAuthor>Jae Seung Lee<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>ETRI</affiliation>
+	</byline>
+
+	<address>161 Gajeong-dong, Yuseong-gu, Daejeon,<lb/> Korea<lb/></address>
+
+	<phone>+82 42 860<lb/> 1326<lb/> </phone>
+	
+	<email>jasonlee@etri.re.kr</email>
+
+		</front>
+	</text>
+</tei>

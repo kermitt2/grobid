@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013972"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<affiliation>NOVAMETRIX<lb/> MEDICAL SYSTEMS INC<lb/></affiliation>
+	</byline>
+		
+	<idno>Technical Report 2002-1 Rev. 04</idno>
+
+	<date>(2/12/02)<lb/> </date>
+
+	<note type="other">DRAFT 5<lb/></note>
+
+	<note type="page">1<lb/></note>
+
+	<docTitle>
+	<titlePart>Volumetric Capnography – The Next Advance in CO 2 Monitoring<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Michael B. Jaffe, PhD -</docAuthor>
+	</byline>
+	
+	<byline>
+	<affiliation>Novametrix</affiliation>
+	</byline>
+
+	<byline>
+	<affiliation>Medical Systems, Inc.,</affiliation>
+	</byline>
+
+	<address>Wallingford CT<lb/></address>
+
+	<div type="abstract">ABSTRACT –<lb/> Current trends in monitoring and patient safety are<lb/> leading to the adoption of capnography as a standard<lb/> of care in many clinical environments and the<lb/> recognition of the importance of volumetric<lb/> capnography in these same environments. This paper<lb/> contrasts volumetric capnography with time-based<lb/> capnography.<lb/></div>
+
+		</front>
+	</text>
+</tei>

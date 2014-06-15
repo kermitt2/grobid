@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Tanaelle</forename>
+								<surname>Dupas</surname>
+							<lb/>
+								<marker>a</marker>,
+							</persName>
+							<persName>
+								<forename>Thierry</forename>
+								<surname>Rouaud</surname>
+							<lb/>
+								<marker>a</marker> ,
+							</persName>
+							<persName>
+								<forename>Karl</forename>
+								<surname>Rouger</surname>
+							<lb/>
+								<marker>b , c</marker>,
+							</persName>
+							<persName>
+								<forename>Blandine</forename>
+								<surname>Lieubeau</surname>
+							<lb/>
+								<marker>c , d</marker> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Chrystelle</forename>
+								<surname>Cario - Toumaniantz</surname>
+							<lb/>
+								<marker>e</marker>,
+							</persName>
+							<persName>
+								<forename>Josiane</forename>
+								<surname>Fontaine- Pérus</surname>
+							<lb/>
+								<marker>a</marker> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Marie -France</forename>
+								<surname>Gardahaut</surname>
+							<lb/>
+								<marker>a</marker>,
+							</persName>
+							<persName>
+								<forename>Gwenola</forename>
+								<surname>Auda-Boucher</surname>
+								<marker>a , ⁎</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

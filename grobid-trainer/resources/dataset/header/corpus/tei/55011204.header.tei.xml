@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011204"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">AD_________________<lb/> </note>
+
+	<idno>Award Number: W81XWH-05-1-0351<lb/> </idno>
+
+	<docTitle>
+	<titlePart>TITLE: Breast Cancer Therapy Using Antibody-Endostatin Fusion<lb/> Proteins<lb/> </titlePart>
+	</docTitle>
+
+	<note type="other">PRINCIPAL INVESTIGATOR: Seung-Uon Shin, Ph.D.<lb/> CONTRACTING ORGANIZATION:</note>
+
+	<byline>
+	<affiliation>University of Miami<lb/></affiliation>
+	</byline>
+
+	<address>Miami, FL 33136<lb/></address>
+
+	<date>REPORT DATE: April 2006<lb/></date>
+
+	<note type="other">TYPE OF REPORT: Annual<lb/> PREPARED FOR: U.S. Army Medical Research and Materiel Command<lb/> Fort Detrick, Maryland 21702-5012<lb/> DISTRIBUTION STATEMENT:<lb/> : Approved for public release; distribution unlimited<lb/> Distribution limited to U.S. Government agencies only;<lb/> report contains proprietary information<lb/> The views, opinions and/or findings contained in this report are<lb/> those of the author(s) and should not be construed as an official<lb/> Department of the Army position, policy or decision unless so<lb/> designated by other documentation.</note>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008917"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">All Products |<lb/> Support |<lb/> Search |<lb/> microsoft.com Home<lb/> Windows Hardware<lb/> Site Map<lb/></note>
+
+	<docTitle>
+	<titlePart>Universal Graphics Adapter: Firmware Solution for Low-Level<lb/> Graphics Support<lb/> </titlePart>
+	</docTitle>
+	
+	<note type="other">Contents:<lb/> Introduction Some Strengths and Limitations of VGA<lb/> Goals for UGA<lb/> Non-Goals of UGA<lb/> Benefits of Using UGA Over Using VGA<lb/> Operating System Support for UGA<lb/> Summary References<lb/></note>
+	
+	<div type="abstract">This article describes the Microsoft vision for a replacement for VGA, the current standard for the minimum graphics<lb/> support required by all PCs. Some of the original requirements of VGA are becoming harder to support as the PC<lb/> continues to evolve. The VGA standard from the 1980s makes demands on hardware and software that are outdated<lb/> today, such as the use of Int 10 services, a non-linear frame buffer, a very limited range of display modes, and direct<lb/> register addressing using real-mode assembly language.<lb/> Universal Graphics Adapter (UGA) is a hardware-independent design that encapsulates and abstracts any low-level<lb/> graphics hardware in a standard way by the use of firmware. It will not require the use of real-mode assembly<lb/> language, direct hardware register or frame buffer access to program. It will provide support for basic drawing<lb/> operations, continuous display modes and, eventually, power management. As a firmware-based standard, it will<lb/> allow future evolution to support new hardware features as they become available.<lb/></div>
+
+		</front>
+	</text>
+</tei>

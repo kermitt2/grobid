@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							by 
+							<persName>
+								<forename>Xiong</forename>
+								<surname>Gong</surname>,
+							</persName>
+							<persName>
+								<forename>Jacek</forename>
+								<middlename>C</middlename>.
+								<surname>Ostrowski</surname>,
+							</persName>
+							<persName>
+								<forename>Daniel</forename>
+								<surname>Moses</surname>,
+								<marker>*</marker>
+							</persName>
+							<persName>
+								<forename>Guillermo</forename>
+								<middlename>C</middlename>.
+								<surname>Bazan</surname>,
+								<marker>*</marker> and
+							</persName>
+							<persName>
+								<forename>Alan</forename>
+								<middlename>J</middlename>.
+								<surname>Heeger</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

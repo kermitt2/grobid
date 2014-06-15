@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<tei type="phd-thesis">
+	<teiHeader>
+		<fileDesc xml:id="55113544"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>A Hardware/Software Approach for Alleviating Scalability<lb/> Bottlenecks in Transactional Memory Applications<lb/>
+	</titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>by<lb/> Geoffrey Wyman Blake<lb/></docAuthor>
+	</byline>
+
+	<degree>A dissertation submitted in partial fulfillment<lb/> of the requirements for the degree of<lb/> Doctor of Philosophy<lb/> (Computer Science and Engineering)<lb/> </degree>
+
+	<byline>
+	<affiliation>in The University of Michigan<lb/> </affiliation>
+	</byline>
+
+	<date>2011<lb/> </date>
+
+	<note type="other">Doctoral Committee:<lb/> Professor Trevor N. Mudge, Chair<lb/> Professor Dennis M. Sylvester<lb/> Associate Professor Scott Mahlke<lb/> Assistant Professor Thomas F. Wenisch</note>
+
+		</front>
+	</text>
+</tei>

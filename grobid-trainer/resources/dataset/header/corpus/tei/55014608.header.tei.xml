@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014608"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Instrumentation for Far-infrared Spectroscopy<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Peter R. Griffiths<lb/> 1 and Christopher C. Homes<lb/> 2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 University of Idaho,</affiliation>
+	</byline>
+
+	<address>Moscow, ID, USA<lb/></address>
+
+	<byline>
+	<affiliation>2 Brookhaven National Laboratory,</affiliation>
+	</byline>
+
+	<address>Upton, NY, USA<lb/></address>
+
+		</front>
+	</text>
+</tei>

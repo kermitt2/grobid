@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009087"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Improving &quot;bag-of-keypoints&quot; image<lb/> categorisation: Generative Models and<lb/> PDF-Kernels<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>J.D.R. Farquhar<lb/> Sandor Szedmak<lb/> Hongying Meng<lb/> John Shawe-Taylor<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Image Speech and Intelligent Systems<lb/> Department of Electronics and Computer Science<lb/> University of Southampton<lb/></affiliation>
+	</byline>
+
+	<address>Southampton, SO17 1BJ, UK<lb/></address>
+
+	<email>email:[jdrf;ss03v;hm1;jst]@ecs.soton.ac.uk<lb/></email>
+
+	<date>February 17, 2005<lb/></date>
+
+	<div type="abstract">Abstract In this paper we propose two distinct enhancements to the basic<lb/> &quot;bag-of-keypoints&quot; image categorisation scheme proposed in [4]. In this<lb/> approach images are represented as a variable sized set of local image<lb/> features (keypoints). Thus, we require machine learning tools which<lb/> can operate on sets of vectors. In [4] this is achieved by representing<lb/> the set as a histogram over bins found by k-means. We show how this<lb/> approach can be improved and generalised using Gaussian Mixture Models<lb/> (GMMs). Alternatively, the set of keypoints can be represented directly<lb/> as a probability density function, over which a kernel can be defined. This<lb/> approach is shown to give state of the art categorisation performance.<lb/></div>
+
+	<keyword>Keywords: image categorisation, &quot;bag-of-keypoints&quot;, GMM, SVM<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,52 @@
+<?xml version="1.0" ?>
+<tei type="web">
+	<teiHeader>
+		<fileDesc xml:id="55113475"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Take a tour of the latest updates.<lb/> </note>
+
+	<docTitle>
+	<titlePart>Scalp Energizer<lb/> </titlePart>
+	</docTitle>
+
+	<note type="other">Record ID 1140884<lb/> </note>
+
+	<note type="other">Product Details<lb/> </note>
+
+	<byline>
+	<affiliation>Company Pravana, </affiliation>
+	</byline>
+
+	<address>USA<lb/> </address>
+
+	<note type="other">Brand Pravana Biojen 9<lb/> Category Hair Products &gt; Hair Treatments<lb/> </note>
+
+	<address>Country USA<lb/> </address>
+
+	<note type="other">Launch Type New Variety/Range Extension<lb/> Price $16.99 / €12.04<lb/> Pack Size 3.70 fl. oz (US) / 109 ml<lb/> 
+	</note>
+
+	<date>DatePublished Jul 2009<lb/></date>
+
+	<type type="other">Bar Code 7501438382476<lb/></type>
+
+	<note type="other">Company &amp; Source Details<lb/></note>
+	
+	<byline>
+	<affiliation>Manufacturer Pravana, </affiliation>
+	</byline>
+	
+	<address>USA<lb/>23285 Ventura Blvd, Woodland Hills, California (CA), 91364 , USA<lb/></address>
+
+	<phone>866-883-7094<lb/> 818-340-9690 (Fax)<lb/></phone>
+
+	<ptr type="web">www.pravana.com<lb/></ptr>
+
+	<note type="other">Store Type Internet/Mail Order<lb/> Product source Shopper<lb/></note>
+
+		</front>
+	</text>
+</tei>

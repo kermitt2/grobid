@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001639"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Glycophorin<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">From Wikipedia, the free encyclopedia<lb/></note>
+
+	<div type="abstract">A Glycophorin is a sialoglycoprotein of the membrane of a red blood cell. It is a membrane-spanning<lb/> protein and carries sugar molecules. It is heavily glycosylated (60%). Glycophorins are rich in sialic acid,<lb/> which gives the red cells a very hydrophilic-charged coat. This enables them to circulate without adhering to<lb/> other cells or vessel walls.<lb/></div>
+
+		</front>
+	</text>
+</tei>

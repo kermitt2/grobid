@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>*</marker>
+							<orgName type="department">Groupe Immunité des Muqueuses et Agents Pathogènes (GIMAP)</orgName>,
+							<orgName type="department">Faculté de Médecine J. Lisfranc</orgName>,
+							<address>
+								<settlement>St Etienne</settlement>,
+								<lb/>
+								<country>France</country>;
+								<lb/>
+							</address>
+						</affiliation>
+						<affiliation>		
+							<orgName type="department">Centre Commun de Quantimétrie</orgName>,
+							<orgName type="institution">Université Claude Bernard Lyon 1</orgName>,
+							<address>
+								<country>France</country>;
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="laboratory">Laboratoire d&apos;Immunologie<lb/> Clinique</orgName>,
+							<orgName type="institution">CHU</orgName>,
+							<address>
+								<settlement>St Etienne</settlement>,
+								<country>France</country>; and
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="institution">INSERM U255</orgName>,
+							<orgName type="laboratory">Centre de Recherches Biomédicales des Cordeliers</orgName>,
+							<lb/>
+							<address>
+								<settlement>Paris</settlement>,
+								<country>France</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

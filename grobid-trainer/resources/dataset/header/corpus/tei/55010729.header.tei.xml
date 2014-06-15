@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010729"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>The Linux Genome: In Kernel Genetic Algorithms<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Brandon Philips<lb/></docAuthor>
+	</byline>
+
+	<date>September 6, 2006<lb/></date>
+
+	<div type="abstract">Abstract<lb/> The Linux kernel manages a number of com-<lb/>plex devices and for most of these devices a<lb/> scheduler is designed to manage their use.<lb/> These schedulers are like project managers<lb/> managing a budget. Each project needs ac-<lb/>cess to the budget but being too generous to<lb/> one project will starve the others guarantee-<lb/>ing at least a slip in the schedule.<lb/> Much of the Linux CPU scheduler policy<lb/> [1] is defined by constants that were discov-<lb/>ered and set by Kernel developers through a<lb/> process of trial and error. These constants<lb/> make a reasonable compromise to perform<lb/> well for most workloads but they cannot be<lb/> ideal and can be improved for specific work-<lb/>loads.<lb/> My summer project was to investigate and<lb/> implement a genetic algorithm using the in<lb/> Kernel genetic library to create a self tuning<lb/> scheduler.<lb/></div>
+
+		</front>
+	</text>
+</tei>

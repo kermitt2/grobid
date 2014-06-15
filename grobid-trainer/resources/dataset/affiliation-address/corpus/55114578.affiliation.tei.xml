@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">Departamento de Engenharia de Materiais/FAENQUIL</orgName>,
+							<orgName type="institution">Polo Urbo-Industrial</orgName>,
+							<address>
+								<addrLine>Gleba AI-6, s/n ±</addrLine>
+								<postCode>12600-000</postCode>
+								<settlement>Lorena</settlement>,
+								<region>SP</region>,
+								<country>Brazil</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

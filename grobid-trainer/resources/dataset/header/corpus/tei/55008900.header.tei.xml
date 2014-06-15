@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008900"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Grundlagen der Automatisierungstechnik I<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<affiliation>Grundlagen der Automatisierungstechnik I: Kap. 1.5 Grundwissen SPS-Technik<lb/> </affiliation>
+	</byline>
+	
+	<note type="page">Seite 1.5-1<lb/> </note>
+	
+	<byline>
+	<docAuthor>Autor: Dr.-Ing. Becker<lb/></docAuthor>
+	</byline>
+		
+		</front>
+	</text>
+</tei>

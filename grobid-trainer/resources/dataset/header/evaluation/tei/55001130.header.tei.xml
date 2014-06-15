@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001130"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	
+	<note type="other">Related Reading<lb/>Published on</note>
+
+	<note type="other">XML.com</note>
+
+	<ptr type="web">http://www.xml.com/pub/a/2003/12/03/versioning.html<lb/></ptr>
+
+	<note type="other">See this if you&apos;re having trouble printing code examples<lb/></note>
+
+	<docTitle>
+	<titlePart>Versioning XML Vocabularies<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>By David Orchard<lb/></docAuthor>
+	</byline>
+
+	<date>December 03, 2003<lb/></date>
+
+	<note type="other">Editor&apos;s Note: An update to this article has been posted here on 10/27/04.<lb/></note>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Clemens-August</forename>
+								<surname>Thole</surname>,
+							</persName>
+							<persName>
+								<forename>Lialia</forename>
+								<surname>Nikitina</surname>,
+							</persName>
+							<persName>
+								<forename>Igor</forename>
+								<surname>Nikitin</surname>,
+							</persName>
+							<persName>
+								<forename>Tanja</forename>
+								<surname>Clees</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

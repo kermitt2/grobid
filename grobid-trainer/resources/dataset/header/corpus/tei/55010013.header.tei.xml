@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010013"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">309<lb/></note>
+
+	<reference>TISSUE ENGINEERING<lb/> Volume 8, Number 2, 2002<lb/></reference>
+
+	<note type="copyright">© Mary Ann Liebert, Inc.<lb/></note>
+
+	<docTitle>
+	<titlePart>A Hydrogel Material for Plastic and<lb/> Reconstructive Applications Injected into the<lb/> Subcutaneous Space of a Sheep<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>C. HALBERSTADT, Ph.D.,<lb/> 1<lb/> C. AUSTIN, B.S.,<lb/> 1<lb/> J. ROWLEY, M.S.,<lb/> 2<lb/> C. CULBERSON, M.S., 1 A. LOEBSACK, M.S., 1 S. WYATT, B.A., 1 S. COLEMAN, M.S., 1<lb/> L. BLACKSTEN, B.S., 1 K. BURG, Ph.D., 4 D. MOONEY, Ph.D., 2,3<lb/> and W. HOLDER, Jr., M.D. 1<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">ABSTRACT<lb/> Soft tissue reconstruction using tissue-engineered constructs requires the development of<lb/> materials that are biocompatible and support cell adhesion and growth. The objective of this<lb/> study was to evaluate the use of macroporous hydrogel fragments that were formed using<lb/> either unmodified alginate or alginate covalently linked with the fibronectin cell adhesion<lb/> peptide RGD (alginate-RGD). These materials were injected into the subcutaneous space of<lb/> adult, domesticated female sheep and harvested for histological comparisons at 1 and 3<lb/> months. In addition, the alginate-RGD porous fragments were seeded with autologous sheep<lb/> preadipocytes isolated from the omentum, and these cell-based constructs were also im-<lb/>planted. The results from this study indicate that both the alginate and alginate-RGD sub-<lb/>cutaneous implants supported tissue and vascular ingrowth. Furthermore, at all time points<lb/> of the experiment, a minimal inflammatory response and capsule formation surrounding the<lb/> implant were observed. The implanted materials also maintained their sizes over the 3-month<lb/> study period. In addition, the alginate-RGD fragments supported the adhesion and prolif-<lb/>eration of sheep preadipocytes, and adipose tissue was present within the transplant site of<lb/> these cellular constructs, which was not present within the biomaterial control sites.<lb/></div>
+
+		</front>
+	</text>
+</tei>

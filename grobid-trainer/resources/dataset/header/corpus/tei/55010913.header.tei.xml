@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010913"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Self-Tuning Database Systems: A Decade of Progress<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Surajit Chaudhuri<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Microsoft Research<lb/></affiliation>
+	</byline>
+
+	<email>surajitc@microsoft.com<lb/></email>
+
+	<byline>
+	<docAuthor>Vivek Narasayya<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Microsoft Research<lb/></affiliation>
+	</byline>
+
+	<email>viveknar@microsoft.com<lb/></email>
+
+	<div type="abstract">ABSTRACT<lb/> In this paper we discuss advances in self-tuning database systems<lb/> over the past decade, based on our experience in the AutoAdmin<lb/> project at Microsoft Research. This paper primarily focuses on the<lb/> problem of automated physical database design. We also highlight<lb/> other areas where research on self-tuning database technology has<lb/> made significant progress. We conclude with our thoughts on<lb/> opportunities and open issues.<lb/></div>
+
+		</front>
+	</text>
+</tei>

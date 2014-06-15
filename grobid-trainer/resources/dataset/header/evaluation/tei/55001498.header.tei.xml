@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001498"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<affiliation>NEC Business Solutions Ltd.<lb/></affiliation>
+	</byline>
+
+	<idno>Document No.:8802<lb/> Release 3.00<lb/></idno>
+ 
+	<date>April, 2006<lb/></date>
+
+	<docTitle>
+	<titlePart>Features and<lb/> Specifications Manual</titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

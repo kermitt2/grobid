@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012292"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">4<lb/></note>
+
+	<docTitle>
+	<titlePart>LTE<lb/> The UMTS Long Term Evolution<lb/> A POCKET DICTIONARY OF ACRONYMS<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Stefania Sesia Issam Toufik Matthew Baker<lb/></docAuthor>
+	</byline>
+
+	<note type="other">@BULLET @BULLET</note>
+
+		</front>
+	</text>
+</tei>

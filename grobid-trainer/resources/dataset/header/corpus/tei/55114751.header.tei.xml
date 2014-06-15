@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55114751"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<date>15.02.2012, </date>
+
+	<note type="other">Pavlin.pdf<lb/></note>
+
+	<note type="page">1<lb/></note>
+ 
+	<docTitle>
+	<titlePart>ICT solutions supporting collaborative information acquisition,<lb/> situation assessment and decision making in contemporary<lb/> environmental management problems: the DIADEM approach<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Sahar Asadi<lb/> 1<lb/> , Costin Badica<lb/> 2<lb/> , Tina Comes<lb/> 3<lb/> , Claudine Conrado<lb/> 4<lb/> , Vanessa Evers<lb/> 5<lb/> , Frans<lb/> Groen<lb/> 5<lb/> , Sorin Ilie<lb/> 2<lb/> , Jan Steen Jensen<lb/> 6<lb/> , Achim Lilienthal<lb/> 1<lb/> , Bianca Milan<lb/> 7<lb/> , Thomas<lb/> Neidhart<lb/> 8<lb/> , Kees Nieuwenhuis<lb/> 4<lb/> , Sepideh Pashami<lb/> 1<lb/> , Gregor Pavlin<lb/> 4<lb/> , Jan Pehrsson<lb/> 9<lb/> , Rani<lb/> Pinchuk<lb/> 8<lb/> , Mihnea Scafes<lb/> 2<lb/> , Leo Schou-Jensen<lb/> 9<lb/> , Frank Schultmann<lb/> 3<lb/> and Niek Wijngaards<lb/> 4<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Abstract<lb/> This paper presents a framework of ICT solutions developed in the EU research project DIADEM that supports envi-<lb/>ronmental management for chemical hazards in industrial areas, with an enhanced capacity to assess population ex-<lb/>posure and health risks, alert relevant groups and organize efficient response. The emphasis is on advanced solutions<lb/> which are economically feasible and maximally exploit the existing communication, computing and sensing re-<lb/>sources. This approach supports collaborative information acquisition thus enabling efficient situation assessment<lb/> and decision making in complex environmental management applications. This is achieved through a combination of<lb/> (i) a service-oriented approach supporting the integration of automated and human-based reasoning for large-scale<lb/> collaborative sensemaking, (ii) advanced approaches to gas detection and gas distribution modelling, (iii) novel solu-<lb/>tions combining Multi-Criteria Decision Analysis and Scenario-Based Reasoning and (iv) enhanced human-machine<lb/> interfaces. This paper presents the basic principles of the DIADEM solutions and how they are combined to a coher-<lb/>ent decision support system and briefly discusses the evaluation principles and activities in the DIADEM project.<lb/></div>
+
+		</front>
+	</text>
+</tei>

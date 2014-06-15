@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55114157"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Deep Study Report for Advanced Telecommunications,</note>
+	
+	<date>May 2008<lb/></date>
+
+	<note type="page">1<lb/></note>
+
+	<docTitle>
+	<titlePart>Handover between GSM (2G), UMTS (3G) and Wireless Local Area Networks<lb/> (WLANs)<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Goutam Ramamurthy, Mehdi Mortazawimolu<lb/></docAuthor>
+	</byline>
+
+	<note type="other">Masters Students, Wireless Communications Program,<lb/> Under the supervision of Ali Hamidian, Ph.D. Student, MSc.<lb/></note>
+
+	<byline>
+	<docAuthor>Lund Tekniska Högsköla<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Abstract--This document is only a literature summary, intended<lb/> for the purpose of understanding the available Inter-RAT<lb/> (Radio Access Technology) Handover techniques. The<lb/> References section at the end of this report encompasses the<lb/> sources of information. This study is done as part of the course –<lb/> Advanced Telecommunications, provided at the department of<lb/> Information Technology, LTH.<lb/></div>
+
+	<keyword>Index terms--Handover, Handoff, I-WLAN, TTG, VHO, tight<lb/> coupling, pre-SAE<lb/></keyword>
+
+	<div type="introduction">A.<lb/> INTRODUCTION<lb/> Investigation of Handovers (HO) between different<lb/> radio access technologies opens up a wide range of<lb/> optimization possibilities in terms of utilization of<lb/> network resources and better coverage capabilities. The<lb/> chief challenge lies in making this process seamless, in<lb/> the sense that the end to end connection remains intact<lb/> throughout the process and the engine that runs the<lb/> machinery of making this switch shields the upper<lb/> layers from noticing any change in the basic bearer<lb/> Quality of Service (QoS) expected for the ongoing<lb/> service. The study here mainly concentrates on the<lb/> challenges involved in handovers between the 3 most<lb/> ubiquitous technologies encountered in everyday<lb/> scenario-2G (GSM/GPRS, almost legendary system),<lb/> 3G (WCDMA/UMTS, fastest growing mobile system),<lb/> WLAN (IEEE802.11, along with HIPERLAN, the best<lb/> pedestrian-based, high speed packet access system).<lb/> The study here is expected to equip one with the basic<lb/> understanding of the primary problems, implementation<lb/> issues and design challenges involved in transitioning<lb/> of a system that supports intra-system HO to one that<lb/> supports inter-system HO, involving heterogeneous<lb/> networks.</div>
+
+		</front>
+	</text>
+</tei>

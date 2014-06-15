@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="laboratory">Reliable Computing Laboratory</orgName>,
+							<orgName type="department">Department of Electrical and Computer Engineering</orgName>,
+							<orgName type="institution">Boston<lb/> University</orgName>,
+							<address>
+								<addrLine>8 Saint Mary&apos;s Street</addrLine>,
+								<settlement>Boston</settlement>,
+								<region>MA</region>
+								<postCode>02215</postCode>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Thomas</forename>
+								<surname>ORTH</surname>
+								<marker>*</marker>,
+							</persName>
+							<persName>
+								<surname>Till</surname>
+								<forename>SCHMITTE</forename>
+							</persName>
+							<lb/>
+							<persName>
+								<forename>Robert</forename>
+								<surname>PETERS</surname> ,
+							</persName>
+							<persName>	
+								<forename>Klaus -Dieter</forename>
+								<surname>MÜLLER</surname> ,
+							</persName>
+							<persName>	
+								<forename>Ashraf</forename>
+								<surname>KOKA</surname> ,
+							</persName>
+							<persName>	
+								<forename>Stefan</forename>
+								<surname>NITSCHE</surname> ,
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

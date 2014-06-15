@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011424"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>JOURNAL OF VIROLOGY,<lb/></reference>
+
+	<note>0022-538X/98/$04.00ϩ0<lb/></note>
+
+	<reference>Oct. 1998, p. 8174–8180<lb/> Vol. 72, No. 10<lb/></reference>
+
+	<note type="copyright">Copyright © 1998, American Society for Microbiology. All Rights Reserved.<lb/></note>
+
+	<docTitle>
+	<titlePart>Human Immunodeficiency Virus Type 1 Induction Mediated<lb/> by Genistein Is Linked to Cell Cycle Arrest in G 2<lb/>
+	</titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>JOEL GOZLAN,<lb/> 1 JANET L. LATHEY,<lb/> 1 AND STEPHEN A. SPECTOR<lb/> 1,2,3 *<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Pediatrics,<lb/> 1 Center for Molecular Genetics,<lb/> 2 and Center for AIDS Research,<lb/> 3<lb/> University of California,</affiliation>
+	</byline>
+
+	<address>San Diego, La Jolla, California<lb/></address>
+
+	<note type="submission">Received 21 April 1998/Accepted 13 July 1998<lb/></note>
+
+	<div type="abstract">Protein tyrosine kinase (PTK) phosphorylation is involved in cellular proliferation and differentiation pro-<lb/>cesses that are key factors for human immunodeficiency virus type 1 (HIV-1) regulation in infected monocytic<lb/> cells. Short-term exposure of the chronically infected promyelocytic OM10 cell line with the PTK inhibitor<lb/> genistein induced a dose-dependent increase in p24 antigen production in culture supernatants. This induction<lb/> persisted in the presence of the reverse transcriptase inhibitor, zidovudine, and was associated with an in-<lb/>creased transcription of HIV-1 multiply spliced and unspliced RNAs, suggesting a transcriptional mechanism<lb/> targeting the integrated provirus. Genistein induced cell differentiation, apoptosis, and a G 2 arrest in the OM10<lb/> cells. Cell differentiation and apoptosis were not directly involved in the observed increase in HIV-1 replication<lb/> that was closely linked to genistein-induced G 2 arrest. Alleviation of the G 2 arrest by pentoxyfylline resulted<lb/> in a concomitant reduction of HIV-1 to baseline replication. Additionally, by flow cytometry, a significant in-<lb/>crease in the number of p24 antigen-expressing cells was observed in cells arrested in G 2 compared to those<lb/> located in G 1 or S. Tyrosine kinase inhibition was found not to be essential for enhanced viral replication,<lb/> which seemed to be related to two other properties of genistein, inhibition of topoisomerase II activity and<lb/> inhibition of phosphotidylinositol turnover. These findings are consistent with the recent observation that<lb/> HIV-1 Vpr induces viral replication through preventing proliferation of cells by arresting them in G 2 of the cell<lb/> cycle and strongly suggest that manipulation of the cell cycle plays an important role in HIV-1 pathogenesis.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55114906"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<ptr>nature.com </ptr>
+
+	<note type="other">Publications A-Z index Access provided to European<lb/> Patent Office by IQ-Information<lb/> Acquisition<lb/> Cart Login Register<lb/> NATURE | LETTER<lb/> Subject term s: Solar cells Solar cells Solar energy and photovoltaic technology<lb/> 日本語要約<lb/></note>
+
+	<docTitle>
+	<titlePart>Efficient planar heterojunction perovskite solar cells<lb/> by vapour deposition<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Mingzhen Liu, Michael B. Johnston &amp; Henry J. Snaith<lb/></docAuthor>
+	</byline>
+
+	<reference>Nature 501, 395–398 (19 September 2013)</reference>
+
+	<idno type="DOI">doi:10.1038/nature12509<lb/></idno>
+
+	<note type="submission">Received 19 June 2013 Accepted 25 July 2013 Published online 11 September 2013<lb/></note>
+
+	<div type="abstract">Many different photovoltaic technologies are being developed for large-scale solar<lb/> energy conversion 1, 2, 3, 4 . The w afer-based first-generation photovoltaic devices 1<lb/> have been follow ed by thin-film solid sem iconductor absorber layers sandw iched<lb/> betw een tw o charge-selective contacts 3 and nanostructured (or m esostructured) solar<lb/> cells that rely on a distributed heterojunction to generate charge and to transport<lb/> positive and negative charges in spatially separated phases 4, 5, 6 . Although m any<lb/> m aterials have been used in nanostructured devices, the goal of attaining<lb/> high-efficiency thin-film solar cells in such a w ay has yet to be achieved 7 . Organom etal<lb/> halide perovskites have recently em erged as a prom ising m aterial for high-efficiency<lb/> nanostructured devices 8, 9, 10, 11 . Here w e show that nanostructuring is not necessary<lb/> to achieve high efficiencies w ith this m aterial: a sim ple planar heterojunction solar cell<lb/> incorporating vapour-deposited perovskite as the absorbing layer can have solar-<lb/>to-electrical pow er conversion efficiencies of over 15 per cent (as m easured under<lb/> sim ulated full sunlight). This dem onstrates that perovskite absorbers can function at<lb/> the highest efficiencies in sim plified device architectures, w ithout the need for<lb/> com plex nanostructures.<lb/></div>
+
+		</front>
+	</text>
+</tei>

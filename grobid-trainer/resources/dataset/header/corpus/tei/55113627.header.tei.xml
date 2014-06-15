@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei type="book-chapter">
+	<teiHeader>
+		<fileDesc xml:id="55113627"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Chapter 2<lb/></note>
+
+	<docTitle>
+	<titlePart>Augmented Reality 2.0<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Dieter Schmalstieg, Tobias Langlotz, and Mark Billinghurst<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Abstract Augmented Reality (AR) was first demonstrated in the 1960s, but only<lb/> recently have technologies emerged that can be used to easily deploy AR appli-<lb/>cations to many users. Camera-equipped cell phones with significant processing<lb/> power and graphics abilities provide an inexpensive and versatile platform for AR<lb/> applications, while the social networking technology of Web 2.0 provides a large-<lb/>scale infrastructure for collaboratively producing and distributing geo-referenced<lb/> AR content. This combination of widely used mobile hardware and Web 2.0 soft-<lb/>ware allows the development of a new type of AR platform that can be used on<lb/> a global scale. In this paper we describe the Augmented Reality 2.0 concept and<lb/> present existing work on mobile AR and web technologies that could be used to<lb/> create AR 2.0 applications.<lb/></div>
+
+		</front>
+	</text>
+</tei>

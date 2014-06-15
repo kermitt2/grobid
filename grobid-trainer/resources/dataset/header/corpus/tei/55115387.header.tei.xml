@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55115387"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>ELECTROCHEMICAL AND CHEMICAL REDUCTION OF<lb/> 8,7-UNSATURATED ~-CYCLOSULFONATES<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>S. G. Mairanovskii, A. M. Moiseenkov,<lb/> I. V. Proskurovskaya, E. V. Polunin,<lb/> V. P. Gul&apos;tyai, I. M. Zaks,<lb/> and A. V. Semenovskii*<lb/></docAuthor>
+	</byline>
+
+	<keyword>UDC 541.138.3:542.941:547.379<lb/></keyword>
+
+	<div type="abstract">In order to ascertain if the C--S bond in the molecules of unsaturated ~-hydroxysulfonlc<lb/> acids can be cleaved electrochemically we made a detailed study of the reduction of cyclosul-<lb/>fonates (la) and (Ib).<lb/> \/~SO~<lb/> R (Ia, b)<lb/> R = H (a). CH3 (b); A + = H +, (Call,), N<lb/> 2e-, H+ )~<lb/> or &quot;<lb/> SOs--A +<lb/> H,, Pd<lb/> R<lb/> (lla, b)<lb/> EXPERIMENTAL<lb/> The electrolysis and recording of the polarograms were run in DMF, which was dried for<lb/> a week over calcined potash and then fractionally distilled ~n uaeuo. We used 0.1 M (C~H,)~.<lb/> NCIO4 solution as the inert electrolyte. A GWP-563 polarograph (Germany) was used to take<lb/> the polarograms in a thermostatted cell [i]. The dropping-Hg electrode (equipped with a blade<lb/> to forcibly remove the drops) had the following characteristics: m = 0.71 mg/sec, t = 0.22<lb/> sec. A silver wire served as the anode, while the reference electrode was an aqueous saturated<lb/> calomel electrode (s.c.e.), which was separated from the studied solution by a paper dia-<lb/>phragm, fabricated as described in [2], in order to prevent the entrance of moisture and K +<lb/> ions into the system. All of the experiments, except those where the effect of temperature<lb/> was studied, were run at 25~<lb/> A cell with a ceramic diaphragm was used for the preparative electrolysis; a mercury<lb/> puddle on the bottom of the cell with an area of ~30 cm 2 served as the cathode, while a Pt<lb/> screen, placed in the support solution, served as the anode; a s.c.e, served as the reference<lb/> electrode. A PE-5827 potentiostat (Gomel&apos; ZIP)was used for the study. The studied compounds<lb/> were obtained by reacting either isoprene or dimethylbutadiene with SOs [3]. The catalytic<lb/> hydrogenation of these compounds was run in the presence of 5% Pd/BaCO, in anhydrous methanol<lb/> under room conditions. The PMR spectra were recorded on a Varian DA-60-IL spectrometer using<lb/> CDsOD as the solvent and TMS as the internal standard.<lb/> DISCUSSION OF RESULTS</div>
+
+		</front>
+	</text>
+</tei>

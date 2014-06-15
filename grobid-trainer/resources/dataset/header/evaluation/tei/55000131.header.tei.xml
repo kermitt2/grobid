@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000131"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Carbon Dioxide Capture for Storage<lb/> in Deep Geologic Formations –<lb/> Results from the CO 2<lb/> Capture Project<lb/> Geologic Storage of Carbon Dioxide<lb/> with Monitoring and Verification<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<note type="other">Volume 2</note>
+	</byline>
+
+		</front>
+	</text>
+</tei>

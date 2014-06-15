@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei type="master-thesis">
+	<teiHeader>
+		<fileDesc xml:id="55114655"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<degree>Masters Thesis in<lb/> Mechanical Engineering<lb/></degree>
+
+	<date>November 2010<lb/></date>
+
+	<docTitle>
+	<titlePart>The Development and Optimisation of a Low<lb/> Cost Optical Chemical Sensing Platform<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Dylan Orpen, BEng<lb/></docAuthor>
+	</byline>
+
+	<date>November 2010<lb/></date>
+
+	<degree>A thesis submitted to Dublin City University in partial fulfilment of the requirements for the degree of Master of Engineering.<lb/></degree>
+	
+	<byline>
+	<affiliation>CLARITY Research Centre:<lb/> The Centre for Sensor Web Technologies<lb/> National Centre for Sensor Research<lb/> School of Mechanical and Manufacturing<lb/> Engineering Dublin City University<lb/></affiliation>
+	</byline>
+
+	<address>Dublin 9, Ireland</address>
+
+		</front>
+	</text>
+</tei>

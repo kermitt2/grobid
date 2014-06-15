@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013197"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Int. J. PeptideProtein Res. 15, 1980,411-419<lb/></reference>
+
+	<docTitle>
+	<titlePart>L I Q U I D -L I Q U I D E X T R A C T I O N I N P E P T I D E S Y N T H E S I S<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>CONRAD H. SCHNEIDER, HANSPETER ROLL1 and KURT BLASER<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institute for Clinical Immunology, Inselspital, Bern and Institute for Organic Chemistiy,<lb/> University o f Bern,
+	</affiliation>
+	</byline>
+
+	<address>Switzerland<lb/></address>
+
+	<note type="submission">Received 5 June, accepted for publication 29 November 1979<lb/></note>
+
+	<div type="abstract">An efficient procedure of peptide synthesis in solution based on liquid-liquid<lb/> extraction f o r the purification o f intermediates (two-phase method) is described.<lb/> Generally, peptide segments of 10 and in favorable cases 15 amino acids can be<lb/> prepared by using conventional blocking groups. Special blocking groups adapted<lb/> for optimal performance are discussed. Simple equipment enabling rapid syn-<lb/>thesis is also described.<lb/></div>
+
+	<keyword>Key words: liquid-liquid extractions; methodology; rapid synthesis; solution-phase peptide<lb/> synthesis; spray column.<lb/>
+	</keyword>
+
+		</front>
+	</text>
+</tei>

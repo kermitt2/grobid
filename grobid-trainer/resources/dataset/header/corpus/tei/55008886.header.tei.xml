@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008886"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Home About<lb/> Contact Follow<lb/> GeekAlerts Gadgets for Geeks<lb/> All Gadgets<lb/> Design Toys<lb/> Style Food<lb/> Books Deals<lb/></note>
+
+	<docTitle>
+	<titlePart>Multimedia Remote Control with LCD Display<lb/></titlePart>
+	</docTitle>
+
+	<date>September 9, 2008</date>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei type="manual">
+	<teiHeader>
+		<fileDesc xml:id="55113590"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Bedienungsanleitung<lb/></note>
+
+	<docTitle>
+	<titlePart>DigiMicro Scale</titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

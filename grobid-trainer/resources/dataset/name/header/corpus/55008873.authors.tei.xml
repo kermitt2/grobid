@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Ken</forename>
+								<surname>McCann</surname>,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Woo-Jin</forename>
+								<surname>Han</surname> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Il -Koo</forename>
+								<surname>Kim</surname>,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Jung- Hye</forename>
+								<surname>Min</surname>,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Elena</forename>
+								<surname>Alshina</surname>,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Alexander</forename>
+								<surname>Alshin</surname> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Tammy</forename>
+								<surname>Lee</surname>,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Jianle</forename>
+								<surname>Chen</surname> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Vadim</forename>
+								<surname>Seregin</surname>,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Sunil</forename>
+								<surname>Lee</surname> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Yoon -Mi</forename>
+								<surname>Hong</surname>,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Min- Su</forename>
+								<surname>Cheon</surname> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Nikolay</forename>
+								<surname>Shlyakhov</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

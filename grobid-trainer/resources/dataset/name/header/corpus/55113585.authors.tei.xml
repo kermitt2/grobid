@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Deborah</forename>
+								<middlename>S</middlename>.
+								<surname>Mortensen</surname>
+							<lb/>
+								<marker>a,⇑</marker>,
+							</persName>
+							<persName>
+								<forename>John</forename>
+								<surname>Sapienza</surname>
+							<lb/>
+								<marker>a</marker> ,
+							</persName>
+							<persName>
+								<forename>Branden</forename>
+								<middlename>G</middlename> .
+								<middlename>S</middlename>.
+								<surname>Lee</surname>
+							<lb/>
+								<marker>a</marker> ,
+							</persName>
+							<persName>
+								<forename>Sophie</forename>
+								<middlename>M</middlename> .
+								<surname>Perrin -Ninkovic</surname>
+								<marker>a</marker>,
+							</persName>
+							<persName>
+								<forename>Roy</forename>
+								<surname>Harris</surname>
+							<lb/>
+								<marker>a</marker> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Graziella</forename>
+								<surname>Shevlin</surname>
+							<lb/>
+								<marker>a</marker> ,
+							</persName>
+							<persName>
+								<forename>Jason</forename>
+								<middlename>S</middlename> .
+								<surname>Parnes</surname>
+							<lb/>
+								<marker>a</marker> ,
+							</persName>
+							<persName>
+								<forename>Brandon</forename>
+								<surname>Whitefield</surname>
+							<lb/>
+								<marker>a</marker> ,
+							</persName>
+							<persName>
+								<forename>Matt</forename>
+								<surname>Hickman</surname>
+							<lb/>
+								<marker>b</marker> ,
+							</persName>
+							<persName>
+								<forename>Gody</forename>
+								<surname>Khambatta</surname>
+								<marker>b</marker> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Rene</forename>
+								<middlename>R</middlename> .
+								<surname>Bisonette</surname>
+							<lb/>
+								<marker>c</marker> ,
+							</persName>
+							<persName>
+								<forename>Sophie</forename>
+								<surname>Peng</surname>
+							<lb/>
+								<marker>d</marker> ,
+							</persName>
+							<persName>
+								<forename>Jim</forename>
+								<middlename>C</middlename>.
+								<surname>Gamez</surname>
+							<lb/>
+								<marker>d</marker>,
+							</persName>
+							<persName>
+								<forename>Jim</forename>
+								<surname>Leisten</surname>
+							<lb/>
+								<marker>d</marker> ,
+							</persName>
+							<persName>
+								<forename>Rama</forename>
+								<middlename>Krishna</middlename>
+								<surname>Narla</surname>
+							<lb/>
+								<marker>d</marker>,
+							</persName>
+							<persName>
+								<forename>Kimberly</forename>
+								<middlename>E</middlename>.
+								<surname>Fultz</surname>
+							<lb/>
+								<marker>c</marker> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Sabita</forename>
+								<surname>Sankar</surname>
+								<marker>c</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

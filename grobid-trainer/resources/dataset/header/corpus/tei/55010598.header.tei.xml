@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010598"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">7002</note>
+
+	<docTitle>
+	<titlePart>Estolides from Meadowfoam Oil Fatty Acids<lb/> and Other Monounsaturated Fatty Acids<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Selim M. Erhan*, Robert Kleiman and Terry A. Isbell<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>USDA, Agricultural Research Service, National Center for Agricultural Utilization Research, New Crops Research,<lb/>
+	</affiliation>
+	</byline>
+
+	<address>Peoria, Illinois 61604<lb/></address>
+
+	<note type="page">461<lb/></note>
+
+	<div type="abstract">The formation of estolides was detected during the studies<lb/> on climerization of meadowfoam oil fatty acids. By ad-<lb/>justing the reaction conditions, it was possible to produce<lb/> monoestolides with little climer or trimer formations. Esto-<lb/>lides have potential use in lubricant, cosmetic and ink for-<lb/>mulations and in plasticizers. This paper reports the con-<lb/>ditions for production of estolides from mixed meadow-<lb/>foam fatty acids, commercial oleic acid, high-oleic sun-<lb/>flower oil fatty acids, cis&apos;5,cis-13-docosadienoic acid, petro&apos;<lb/> selinic acid and linoleic acid.<lb/></div>
+
+	<note type="other">2<lb/> o<lb/></note>
+
+	<keyword>KEY WORDS: cis·5, cis·l3-docosadienoic acid, cosmetic, estolide, lim·<lb/> nanthes, linoleic acid, lubricant, meadowfoam oil fatty acids, mont·<lb/> morillonite, oleic acid, petroselinic acid, plasticizer.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

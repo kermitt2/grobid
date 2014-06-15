@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011929"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<ptr type="web">ibm.com/redbooks<lb/></ptr>
+
+	<docTitle>
+	<titlePart>Patterns: Service-<lb/>Oriented Architecture<lb/> and Web Services ces<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Mark Endrei<lb/> Jenny Ang<lb/> Ali Arsanjani<lb/> Sook Chua<lb/> Philippe Comte<lb/> Pål Krogdahl<lb/> Min Luo<lb/> Tony Newling<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Design service-oriented architectures<lb/> using Web services<lb/> Explore service bus, directory,<lb/> and gateway solutions<lb/> Learn by example with<lb/> practical scenarios<lb/> Front cover</div>
+
+		</front>
+	</text>
+</tei>

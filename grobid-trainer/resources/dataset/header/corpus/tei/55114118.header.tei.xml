@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei type="book-chapter">
+	<teiHeader>
+		<fileDesc xml:id="55114118"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Chapter 1<lb/></note>
+
+	<docTitle>
+	<titlePart>The Worlds of Database<lb/> Systems<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">Databases today are essential to every business. They are used to maintain<lb/> internal records, to present data to customers and clients on the World-Wide-<lb/>Web, and to support many other commercial processes. Databases are likewise<lb/> found at the core of many scientific investigations. They represent the data<lb/> gathered by astronomers, by investigators of the human genome, and by bio<lb/> chemists exploring the medicinal properties of proteins, along with many other<lb/> scientists.<lb/> The power of databases comes from a body of knowledge and technology<lb/> that has developed over several decades and is embodied in specialized soft<lb/> ware called a database management system, or DBMS, or more colloquially a<lb/> &quot;database system.&quot; A DBMS is a powerful tool for creating and managing large<lb/> amounts of data efficiently and allowing it to persist over long periods of time,<lb/> safely. These systems are among the most complex types of software available.<lb/> The capabilities that a DBMS provides the user are:<lb/> 1. Persistent storage. Like a file system, a DBMS supports the storage of<lb/> very large amounts of data that exists independently of any processes that<lb/> are using the data. However, the DBMS goes far beyond the file system in<lb/> providing flexibility, such as data structures that support efficient access<lb/> to very large amounts of data.<lb/> 2. Programming interface. A DBMS allows the user or an application pro<lb/> gram to access and modify data through a powerful query language.<lb/> Again, the advantage of a DBMS over a file system is the flexibility to<lb/> manipulate stored data in much more complex ways than the reading and<lb/> writing of files.</div>
+
+		</front>
+	</text>
+</tei>

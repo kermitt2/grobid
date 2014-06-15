@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000767"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Knowledge Aided<lb/> Engineering Manufacturing<lb/> and Related<lb/> Technologies<lb/></note>
+	
+	<docTitle>	
+<titlePart>Computer-Aided Problem Solving: A Dialogue-based<lb/> System to Support the Analysis of Inventive Problems<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Niccolò Becattini<lb/> Yuri Borgianni<lb/> Gaetano Cascini -</docAuthor>
+	</byline>
+
+	<email>gaetano.cascini@polimi.it<lb/></email>
+	
+	<byline>
+	<docAuthor>Federico Rotini</docAuthor>
+	</byline>
+	
+		</front>
+	</text>
+</tei>

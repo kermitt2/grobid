@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014741"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Wireless Personal Communications 2: 9-27, 1995.<lb/> </reference>
+
+	<note type="copyright">&#169; 1995 Kluwer Academic Publishers. Printed in the Netherlands.<lb/></note>
+	
+	<docTitle>
+	<titlePart>A Concept of Digital Terrestrial Television<lb/> Broadcasting<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>K. FAZEL, S. KAISER, R ROBERTSON and M.J. RUF*<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>German Aerospace Research Establishment (DLR), Institute for Communications Technology,</affiliation>
+	</byline>
+
+	<address>D-82234<lb/> Oberpfaffenhofen, Germany (</address>
+
+	<phone>Tel: 49-8153-28-2803; Fax: 49-8153-28-1442)<lb/></phone>
+
+	<div type="abstract">Abstract. The future terrestrial television broadcasting system should support the transmission of a digital HDTV<lb/> signal with a high spectral efficiency. In addition, this system should maintain graceful degradation as the actual<lb/> analog systems, and should be compatible with the SDTV. The system compatibility can be achieved by using a<lb/> hierarchical HDTV source-coding scheme that can provide at least two (HDTV, SDTV) or three (HDTV, EDTV,<lb/> SDTV) hierarchy levels: SDTV image quality will be expected for portable receivers, and HDTV/EDTV image<lb/> quality will destinate to stationary receivers with roof-top antennas. Taking into account the receivers&apos; antenna<lb/> gains and the different channel conditions, there will be a difference of 25-30 dB between the received powers of<lb/> the stationary and the portable receivers. Therefore, the design of a powerful and a suitable transmission scheme<lb/> for the future broadcasting of the digital HDTV signal will be a technological challenge. In this article we describe<lb/> a concept of a flexible reconfigurable hierarchical digital terrestrial TV broadcasting system for clear and taboo<lb/> channels. The flexibility of the proposed scheme easily permits the receivers to support different reconfigurable<lb/> modes: One HDTV program or multi-programming EDTV or SDTV (for fixed receivers up to 5 x SDTV in clear<lb/> and up to 2 x SDTV in taboo channels; for portable receivers up to 2 x SDTV.) The system achieves a high<lb/> interoperability with the Satellite Baseline system. It maintains a graceful degradation and provides a hierarchical<lb/> complexity. It is based on a concatenated coding scheme. The inner code of the concatenated coding scheme<lb/> is combined with multi-resoIution modulation. The basic constellation is a 64-QAM, which will be operated in<lb/> clear charmels. It can be reconfigured to a 16-QAM in the case of taboo channels. The principle of OFDM with<lb/> very rugged frequency/time synchronization mechanisms is used to combat the frequency selectivity and the<lb/> co-channel interference (CCI) in the channel. Known pilot symbols are sent regularly in order to perform coherent<lb/> detection.<lb/></div>
+
+	<keyword>Key words: Digital TV, multi-carrier, hierarchical channel coding, OFDM synchronization, channel estimation.</keyword>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55114438"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Proc. Natl. Acad. Sc. USA<lb/> Vol. 76, No. 11, pp. 5460-5464, November 1979<lb/> Biochemistry<lb/></reference>
+
+	<docTitle>
+	<titlePart>Photoreactive labeling of M13 coat protein in model membranes by<lb/> use of a glycolipid probe<lb/> (photogenerated nitrene/membrane mapping/membrane restriction)<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>VALERIE W. HU AND BERNADINE J. WISNIESKI<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Microbiology and the Molecular Biology Institute, University of California,</affiliation>
+	</byline>
+
+	<address>Los Angeles, California 90024<lb/></address>
+
+	<note type="other">Communicated by P. D. Boyer,</note>
+
+	<date>July 9, 1979<lb/></date>
+
+	<div type="abstract">ABSTRACT Coliphage M13 coat protein in synthetic bi-<lb/>layer membranes was labeled by use of 12,(4-azido-2-nitro-<lb/>phenoxy)stearoyl[I-14Clglucosamine, a photoreactive glycolipid<lb/> probe that spontaneously inserts into membranes. In this model<lb/> system, the probe preferentially labeled the proteins over the<lb/> lipids. Experiments designed to test the probe&apos;s restriction to<lb/> integral membrane proteins revealed that extrinsic proteins as<lb/> well as external peptide fragments of integral membrane pro-<lb/>teins were not accessible to the photogenerated nitrene on the<lb/> fatty acid chain. Only integral membrane peptides were labeled<lb/> by the membrane-bound probe. These results indicate that<lb/> protein labeling can be effected specifically from within the<lb/> hydrocarbon milieu of a model membrane system.<lb/> Recently, we described the synthesis of several photoreactive<lb/> probes designed for the high-resolution mapping of membrane<lb/> proteins (1, 2). In addition, we demonstrated the ability of one<lb/> of these probes, 12-(4-azido-2-nitrophenoxy)stearoyl[1-&apos;4C]-<lb/>glucosamine, designated 12-APS-GlcN, to specifically label the<lb/> envelope proteins of Newcastle disease virus (3) and to follow<lb/> the transmembrane dynamics involved in cholera toxin activity<lb/> (4). These studies prompted further investigation into the nature<lb/> of the interaction of the probe with membrane proteins in an<lb/> effort to define the region of the probe&apos;s reactivity and to verify<lb/> the probe&apos;s restriction to integral membrane proteins. Toward<lb/> this goal, we have constructed phospholipid vesicles containing<lb/> the 5000-dalton coat protein of the coliphage M13, which or-<lb/>ients itself unidirectionally across the membrane bilayer under<lb/> appropriate conditions (5). Because the amino acid sequence<lb/> as well as the hydrophobic region of this protein are known, it<lb/> should be possible to determine the position of the probe in the<lb/> membrane by using the hydrophobic amino acids of the protein<lb/> as a gauge of membrane depth.<lb/> In this report, we show that M13 coat protein incorporated<lb/> into dimyristoyllecithin (DML) vesicles is indeed labeled by the<lb/> photoreactive probe (12-APS-GlcN) upon irradiation. Fur-<lb/>thermore, evidence is presented that indicates that the probe<lb/> does not label externally added coat protein, nor does it label<lb/> amino acid residues of the protein that are shown to be outside<lb/> of the phospholipid bilayer by trypsin cleavage experiments.<lb/></div>
+
+	<note type="other">MATERIALS AND METHODS<lb/> DML was obtained from Sigma or Calbiochem; trypsin treated</note>
+
+		</front>
+	</text>
+</tei>

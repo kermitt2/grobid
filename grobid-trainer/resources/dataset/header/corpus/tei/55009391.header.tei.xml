@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009391"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Syntheses of 2-deoxy-2,3-didehydro-N-acetylneuraminic acid analogues<lb/> modified by N-sulfonylamidino groups at the C-4 position and biological<lb/> evaluation as inhibitors of human parainfluenza virus type 1<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Reiko Nishino<lb/> a , Kiyoshi Ikeda<lb/> b,⇑<lb/> , Takuya Hayakawa<lb/> c , Tadanobu Takahashi<lb/> c , Takashi Suzuki<lb/> c ,<lb/> Masayuki Sato<lb/> a<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a Department of Organic Chemistry, School of Pharmaceutical Sciences, University of Shizuoka,</affiliation>
+	</byline>
+
+	<address>52-1 Yada, Suruga-ku, Shizuoka 422-8526, Japan<lb/></address>
+
+	<byline>
+	<affiliation>b Department of Synthetic Organic Chemistry, School of Pharmaceutical Sciences, Hiroshima International University,</affiliation>
+	</byline>
+
+	<address>5-1-1 Hirokoshingai, Kure, Hiroshima 737-0112, Japan<lb/></address>
+
+	<byline>
+	<affiliation>c Department of Biochemistry, School of Pharmaceutical Sciences and Global COE Program for Innovation in Human Health Sciences, University of Shizuoka,</affiliation>
+	</byline>
+
+	<address>52-1 Yada, Suruga-ku,<lb/> Shizuoka 422-8526, Japan<lb/></address>
+
+	<note type="other">a r t i c l e i n f o<lb/></note>
+
+	<note type="submission">Article history:<lb/> Received 14 December 2010<lb/> Revised 4 February 2011<lb/> Accepted 5 February 2011<lb/></note>
+
+	<date>Available online 18 February 2011<lb/></date>
+
+	<keyword>Keywords:<lb/> Sialic acid<lb/> 2-Deoxy-2,3-didehydro-N-acetylneuraminic<lb/> acid Three-component coupling reaction<lb/> N-Sulfonylamidino group<lb/> Human parainfluenza virus type 1 sialidase<lb/> inhibition<lb/></keyword>
+
+	<div type="abstract">a b s t r a c t<lb/> Eleven novel sialidase inhibitors 9 and 10 with an N-sulfonylamidino group at the C-4 position of Neu<lb/> 5Ac2en 1 against human parainfluenza virus type 1 (hPIV-1) were synthesized using copper-catalyzed<lb/> three-component coupling reactions, and their inhibitory activities against hPIV-1 sialidase were studied.<lb/></div>
+
+	<note type="copyright">&#169; 2011 Elsevier Ltd. All rights reserved.<lb/></note>
+
+		</front>
+	</text>
+</tei>

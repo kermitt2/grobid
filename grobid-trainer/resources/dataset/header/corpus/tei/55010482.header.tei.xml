@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010482"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Articles | News | Weblogs | Buzz | Books | Forums<lb/> The C++ Source | C++ Community News | Discuss | Print | Email | First Page | Previous | Next<lb/> Sponsored Link @BULLET<lb/></note>
+
+	<docTitle>
+	<titlePart>The C++ Source<lb/> An Introduction to XML Data Binding in<lb/> C++<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>by Boris Kolpackov<lb/></docAuthor>
+	</byline>
+
+	<date>May 4, 2007<lb/></date>
+
+	<div type="abstract">Summary<lb/> XML processing has become a common task that many C++ application<lb/> developers have to deal with. Using low-level XML access APIs such as DOM<lb/> and SAX is tedious and error-prone, especially for large XML vocabularies.<lb/> XML Data Binding is a new alternative which automates much of the task by<lb/> presenting the information stored in XML as a statically-typed, vocabulary-<lb/>specific object model. This article introduces XML Data Binding and shows<lb/> how it can simplify XML processing in C++.<lb/></div>
+
+		</front>
+	</text>
+</tei>

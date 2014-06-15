@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012463"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Combined Twyman–Green and Mach–Zehnder<lb/> interferometer for microlens testing<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Stephan Reichelt and Hans Zappe<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">A new interferometer design for microlens testing is presented. The phase-shifting system combines the<lb/> advantages of a Twyman–Green and a Mach–Zehnder interferometer and permits full characterization<lb/> of the aberrations of microlenses as well as radius of curvature and focal length measurements. The<lb/> Twyman–Green system is applied to surface testing in reflection (single reflection), whereas the Mach–<lb/> Zehnder system is used for lens testing in transmission (single pass). Both measurements are performed<lb/> without removal of the test part, allowing for combination of the results without confusion of the actual<lb/> lens and without an azimuthal orientation error. The interferometer setup is explained, the test proce-<lb/>dure is described, and experimental results are given.</div>
+
+	<note type="copyright">© 2005 Optical Society of America<lb/></note>
+
+	<keyword>OCIS codes: 120.0120, 120.3180, 120.3930, 120.4640, 220.4840, 350.3950.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

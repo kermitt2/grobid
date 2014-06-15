@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013390"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">1<lb/></note>
+
+	<docTitle>
+	<titlePart>Road-marking analysis for autonomous vehicle<lb/> guidance<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Stefan Vacek *<lb/> Constantin Schimmel *<lb/> Rüdiger Dillmann *<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>* Institute for Computer Science and Engineering, University of Karlsruhe,</affiliation>
+	</byline>
+
+	<address>Karlsruhe, Germany<lb/></address>
+
+	<div type="abstract">Abstract— Driving an automobile autonomously on rural roads<lb/> requires knowledge about the geometry of the road. Furthermore,<lb/> knowledge about the meaning of each lane of the road is needed<lb/> in order to decide which lane should be taken and if the vehicle<lb/> can do a lane change.<lb/> This paper addresses the problem of extracting additional<lb/> information about lanes. The information is extracted from the<lb/> types of road-markings. The type of lane border markings is<lb/> estimated in order to find out if a lane change is allowed. Arrows,<lb/> which are painted on the road, are extracted and classified in<lb/> order to determine the meaning of a lane such as a turn off lane.<lb/></div>
+
+	<keyword>Index Terms— Autonomous vehicle guidance, perception, clas-<lb/>sification<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

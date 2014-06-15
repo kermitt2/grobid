@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei type="habilitation-thesis">
+	<teiHeader>
+		<fileDesc xml:id="55115412"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Unusual Magnetic Behavior of<lb/> Some Rare-Earth and Manganese Compounds<lb/> ACADEMISCH PROEFSCHRIFT<lb/></titlePart>
+	</docTitle>
+
+	<docAuthor>TER VERKRIJGING VAN DE GRAAD VAN DOCTOR<lb/></docAuthor>
+
+	<byline>
+	<affiliation>AAN DE UNIVERSITEIT VAN AMSTERDAM<lb/></affiliation>
+	</byline>
+
+	<byline>
+	<docAuthor>OP GEZAG VAN DE RECTOR MAGNIFICUS<lb/> PROF. MR. P.F. VAN DER HEIJDEN<lb/></docAuthor>
+	</byline>
+
+		</front>
+	</text>
+</tei>

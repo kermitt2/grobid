@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Amin</forename>
+								<surname>Amin</surname>
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Mark</forename>
+								<surname>Riding</surname>
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Randy</forename>
+								<surname>Shepler</surname>
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Eric</forename>
+								<surname>Smedstad</surname>
+							</persName>
+							<persName>
+								<forename>John</forename>
+								<surname>Ratulowski</surname>
+							</persName>
+							
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

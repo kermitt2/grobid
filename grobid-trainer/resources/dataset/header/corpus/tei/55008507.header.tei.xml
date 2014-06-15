@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008507"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Molecular Biology of the Cell<lb/> Vol. 6, 471-484, April 1995<lb/></reference>
+
+	<docTitle>
+	<titlePart>The SRP9/14 Subunit of the Signal Recognition<lb/> Particle (SRP) Is Present in More than 20-fold Excess<lb/> over SRP in Primate Cells and Exists Primarily Free<lb/> but Also in Complex with Small Cytoplasmic Alu<lb/> RNAs<lb/> </titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Fabrice Bovia,* Monique Fornallaz,* Henrik Leffers,t and Katharina Strub*t<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>*Universite de Geneve, Departement de Biologie Cellulaire,</affiliation>
+	</byline>
+
+	<address>CH-1211 Geneve 4, Switzerland; and<lb/></address>
+
+	<byline>
+	<affiliation>tState University Hospital, Department of Growth and Reproduction,</affiliation>
+	</byline>
+
+	<address>Copenhagen, Denmark<lb/></address>
+
+	<note type="submission">Submitted November 14, 1994; Accepted March 2, 1995<lb/> </note>
+	
+	<note type="other">Monitoring Editor: Joseph Gall<lb/></note>
+
+		</front>
+	</text>
+</tei>

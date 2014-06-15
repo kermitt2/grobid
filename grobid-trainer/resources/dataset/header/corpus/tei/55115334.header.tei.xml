@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei type="poster">
+	<teiHeader>
+		<fileDesc xml:id="55115334"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Workshop: Optimal Transport in the Human Body: Lungs and Blood – IPAM, UCLA, May 19–23, 2008<lb/></reference>
+
+	<docTitle>
+	<titlePart>Blood Flow Induced Cooling Effect in Radio Frequency Ablation for Hepatic Carcinoma<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Tim K oger, Tobias Preusser, Heinz-Otto Peitgen<lb/></docAuthor>
+	</byline>
+
+	<email>tim.kroeger@mevis.de<lb/></email>
+
+	<ptr type="web">http://www.mevis.de/ ∼ tim<lb/></ptr>
+
+		</front>
+	</text>
+</tei>

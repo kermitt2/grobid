@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Giuseppe</forename>
+								<surname>Vicidomini</surname>
+							<lb/>
+								<marker>1,2*</marker> ,
+							</persName>
+							<persName>
+								<forename>Andreas</forename>
+								<surname>Schö nle</surname>
+							<lb/>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>Haisen</forename>
+								<surname>Ta</surname>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>Kyu</forename>
+								<surname>Young</surname>
+								<forename>Han</forename>
+							<lb/>
+								<marker>2¤</marker> ,
+							</persName>
+							<persName>
+								<forename>Gael</forename>
+								<surname>Moneron</surname>
+							<lb/>
+								<marker>2 , 3</marker> ,
+							</persName>
+							<persName>
+								<forename>Christian</forename>
+								<surname>Eggeling</surname>
+							<lb/>
+								<marker>2 , 4</marker> ,
+							</persName>
+							<persName>
+								<forename>Stefan</forename>
+								<middlename>W</middlename>.
+								<surname>Hell</surname>
+								<marker>2</marker>
+							</persName>
+							
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

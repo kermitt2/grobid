@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009754"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<date>August 2004<lb/></date>
+
+	<idno>doc.: IEEE 802.11-04/945r0<lb/></idno>
+
+	<byline>
+	<docAuthor>Pen C. Li, et al, </docAuthor>
+	</byline>
+
+	<affiliation>Philips<lb/> </affiliation>
+
+	<note type="other">Slide 1<lb/> Submission<lb/> </note>
+
+	<byline>
+	<docAuthor>Begonya Otal, Job Oostveen, Joerg Habetha,<lb/> Monisha Ghosh, Pen Li, Ronald Rietman, TK Tan<lb/></docAuthor>
+	</byline>
+	
+	<byline>
+	<affiliation>Philips</affiliation>
+	</byline>
+
+	<date>August 13 th , 2004<lb/></date>
+
+	<docTitle>
+	<titlePart>Philips Partial Proposal<lb/> Philips Partial Proposal<lb/> to IEEE 802.11 TGn<lb/> to IEEE 802.11 TGn<lb/> Enhancements of 802.11a/g<lb/> Enhancements of 802.11a/g--based MIMO<lb/> based MIMO--OFDM System<lb/> OFDM System</titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

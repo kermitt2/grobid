@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001502"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Scientific Research and Essays Vol. 5(17), pp. 2497-2505, 4 September, 2010<lb/></reference>
+
+	<note type="other">Available online at</note>
+
+	<ptr type="web">http://www.academicjournals.org/SRE<lb/> </ptr>
+
+	<idno type="ISSN">ISSN 1992-2248</idno> 
+
+	<note type="copyright">©2010 Academic Journals<lb/> </note>
+	
+	<note type="other">Full Length Research Paper<lb/></note>
+
+	<docTitle>
+	<titlePart>Isolation, characterization and outdoor cultivation of<lb/> green microalgae Botryococcus sp.<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>C. Dayananda, A. Kumudha, R. Sarada and G. A. Ravishankar*<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Plant Cell Biotechnology, Central Food Technological Research Institute [Constituent laboratory of CSIR<lb/> (Council of Scientific and Industrial Research)],</affiliation>
+	</byline>
+
+	<address>Mysore-570 020, India.<lb/></address>
+
+	<note type="submission">Accepted 2 July, 2010<lb/></note>
+
+	<div type="abstract">Samples of the green, colonial, unicellular microalgae Botryococcus sp. were collected from freshwater<lb/> ponds in Mahabalipuram, Tamil Nadu, India. Specimens were isolated and examined for morphological<lb/> features using microscopic and scanning electron microscopic images and was found to be<lb/> Botryococcus sp. The hydrocarbon analysis of its hexane extracts showed hexadecane (10.15%),<lb/> heptadecane (17.82%) and pentacosane (18.74%) as its major hydrocarbons. Further, the 18S rRNA<lb/> sequence (GU182893.1) analysis has confirmed its taxonomical relationship to the order<lb/> Trebouxiophyceae and has shown similarities with the reported species of the genus Botryococcus and<lb/> in particular to Botryococcus braunii. Based on morphological features and 18S rRNA sequence<lb/> analysis, the Indian isolate was designated as Botryococcus mahabali. Biomass analysis of B. mahabali<lb/> showed 19% proteins, 18% carbohydrates and 14% lipid. It was found that its oil comprised mainly of<lb/> hexadecadienoic acid (16:2), oleic (18:1), linoleic (18:2), and linolenic acids (18:3) as its major fatty acids.<lb/> Oleic acid is recognized to be the major fatty acid in most of the reported species of the genus<lb/> Botryococcus and thus it can serve as another significant chemical signature for the Indian isolate. Its<lb/> pigment profile exhibited lutein (41.57%) and -carotene (37.96%) as major carotenoids. In view of its<lb/> chemical profile, the algae was scaled up in open air raceway ponds in batch mode and the biomass<lb/> yields were found to be 2 g/L (w/w) up on two weeks growth in outdoor raceway ponds. In conclusion,<lb/> the results of the study reveal that an Indian isolate B. mahabali can be of relevance for its prospective<lb/> applications from food to biodiesel feed stock.<lb/></div>
+
+	<keyword>Key words: Carotenoids, fatty acids, hydrocarbons, lipids, lutein, mass cultivation, raceway pond.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

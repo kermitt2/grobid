@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Niamh</forename>
+								<middlename>M</middlename>.
+								<surname>O&apos;Boyle</surname>
+							<lb/>
+								<marker>a,⇑</marker>,
+							</persName>
+							<persName>
+								<forename>Lisa</forename>
+								<middlename>M</middlename> .
+								<surname>Greene</surname>
+								<marker>b</marker> ,
+							</persName>
+							<persName>
+								<forename>Orla</forename>
+								<surname>Bergin</surname>
+							<lb/>
+								<marker>c</marker> ,
+							</persName>
+							<persName>
+								<forename>Jean - Baptiste</forename>
+								<surname>Fichet</surname>
+								<marker>a</marker> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Thomas</forename>
+								<surname>McCabe</surname>
+							<lb/>
+								<marker>d</marker>,
+							</persName>
+							<persName>
+								<forename>David</forename>
+								<middlename>G</middlename>.
+								<surname>Lloyd</surname>
+							<lb/>
+								<marker>e</marker> ,
+							</persName>
+							<persName>
+								<forename>Daniela</forename>
+								<middlename>M</middlename> .
+								<surname>Zisterer</surname>
+								<marker>b</marker> ,
+							</persName>
+							<persName>
+								<forename>Mary</forename>
+								<middlename>J</middlename> .
+								<surname>Meegan</surname>
+								<marker>a , ⇑</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

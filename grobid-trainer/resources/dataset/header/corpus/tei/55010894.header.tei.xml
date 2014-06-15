@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010894"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>AAPS PharmSciTech 2002; 3 (2) article 7</reference>
+
+	<ptr type="web">(http://www.aapspharmscitech.org)<lb/></ptr>
+
+	<docTitle>
+	<titlePart>Determination of the Size Distribution of Liposomes by SEC<lb/> Fractionation, and PCS Analysis and Enzymatic Assay of Lipid<lb/> Content<lb/></titlePart>
+	</docTitle>
+
+	<note type="submission">Submitted: January 25, 2002; Accepted: March 8, 2001; Published: May 15, 2002.<lb/></note>
+
+	<byline>
+	<docAuthor>Lars Ingebrigtsen<lb/> 1<lb/> and Martin Brandl<lb/> 1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1<lb/> Department of Pharmaceutics and Biopharmaceutics, Institute of Pharmacy, University of Tromsø,</affiliation>
+	</byline>
+
+	<address>N-9037<lb/> Tromsø, Norway<lb/></address>
+
+		</front>
+	</text>
+</tei>

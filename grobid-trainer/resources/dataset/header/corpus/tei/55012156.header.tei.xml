@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012156"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Effects of a Spectral Surface Reflectance on Measurements of Backscattered Solar<lb/> Radiation: Application to the MOPITT Methane Retrieval<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>G. PFISTER<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Atmospheric Chemistry Division, National Center for Atmospheric Research,</affiliation>
+	</byline>
+
+	<address>Boulder, Colorado,</address>
+
+	<byline>
+	<affiliation>and Institute for Geophysics,<lb/> Astrophysics, and Meteorology, University of Graz,</affiliation>
+	</byline>
+
+	<address>Graz, Austria<lb/></address>
+
+	<byline>
+	<docAuthor>J. C. GILLE, D. ZISKIN, G. FRANCIS, D. P. EDWARDS, AND M. N. DEETER<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Atmospheric Chemistry Division, National Center for Atmospheric Research,</affiliation>
+	</byline>
+
+	<address>Boulder, Colorado<lb/></address>
+
+	<byline>
+	<docAuthor>E. ABBOTT<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Earth and Space Science Division, Jet Propulsion Laboratory,</affiliation>
+	</byline>
+
+	<address>Pasadena, California<lb/></address>
+
+	<note type="submission">(Manuscript received 15 July 2004, in final form 12 October 2004)<lb/></note>
+
+	<div type="abstract">ABSTRACT<lb/> The amount of solar radiation emerging from the top of the atmosphere is strongly influenced by the<lb/> reflectance of the underlying surface. For this reason, some information about the magnitude and the<lb/> spectral variability of the surface reflectance typically has to be included in the retrieval of atmospheric<lb/> parameters from reflected solar radiation measurements. Sufficient information about the surface reflec-<lb/>tance properties is rarely available, and the integration of this effect in the retrieval might turn out to be a<lb/> challenge, especially for broadband instruments. In this paper the focus is on the Measurements of Pollution<lb/> in the Troposphere (MOPITT) remote sensing instrument. Theoretical studies are performed to investigate<lb/> how a spectrally varying surface reflectance might impact the retrieval of the total column amount of<lb/> methane from MOPITT radiance measurements, and the current findings are compared to observed biases.<lb/> However, the findings present herein might be valuable and applicable for other remote sensing instruments<lb/> that are sensitive to the amount of solar radiation reflected from the earth&apos;s surface.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55114051"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>A Novel Algorithm for Translation, Rotation and<lb/> Scale Invariant Character Recognition<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Asif Iqbal, A. B. M. Musa, Anindya Tahsin, Md. Abdus Sattar, Md. Monirul Islam, and K. Murase<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Dept. of Computer Science and Engineering, Bangladesh University of Engineering &amp; Technology,</affiliation>
+	</byline>
+
+	<address>Dhaka-1000,<lb/> Bangladesh;</address>
+
+	<byline>
+	<affiliation>Dept. of Human and Artificial Intelligence Systems, University of Fukui,</affiliation>
+	</byline>
+
+	<address>Fukui 910-8507, Japan<lb/></address>
+
+	<email>Email: asif 31 iqbal@yahoo.com, abm.musa@csebuet.org, anindya.tahsin@gmail.com,<lb/> masattar@cse.buet.ac.bd, monirul@synapse.his.fukui-u.ac.jp, murase@synapse.his.fukui-u.ac.jp<lb/></email>
+
+	<div type="abstract">Abstract—This paper presents a novel algorithm, called Radial<lb/> Sector Coding (RSC), for Translation, Rotation and Scale in-<lb/>variant character recognition. Translation invariance is obtained<lb/> using Center of Mass (CoM). Scaling invariance is achieved by<lb/> normalizing the features of characters. To obtain most chal-<lb/>lenging rotation invariance, RSC searches a rotation invariant<lb/> Line of Reference (LoR) by exploiting the symmetry property<lb/> for symmetric characters and Axis of Reference (AoR) for non-<lb/>symmetric characters. RSC uses the LoR to generate invariant<lb/> topological features for different characters. The topological<lb/> features are then used as inputs for a multilayer feed-forward<lb/> artificial neural network (ANN). We test the proposed approach<lb/> on two widely used English fonts Arial and Tahoma and got<lb/> 98.6% recognition performance on average.<lb/>
+	</div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>András</forename>
+								<surname>Fodor</surname>
+								<marker>1,2,4 *</marker>,
+							</persName>
+							<persName>
+								<forename>Andrea</forename>
+								<middlename>M</middlename>.
+								<surname>Fodor</surname>
+								<marker>2,7</marker> ,
+							</persName>
+							<persName>
+								<forename>Steven</forename>
+								<surname>Forst</surname>
+								<marker>3</marker> ,
+							</persName>
+							<persName>
+								<forename>Joseph</forename>
+								<middlename>S</middlename>.
+								<surname>Hogan</surname>
+								<marker>4</marker> ,
+							</persName>
+							<persName>
+								<forename>Michael</forename>
+								<middlename>G</middlename>.
+								<surname>Klein</surname>
+								<marker>5</marker> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Katalin</forename>
+								<surname>Lengyel</surname>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>Gyula</forename>
+								<surname>Sáringer</surname>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>Erko</forename>
+								<surname>Stackebrandt</surname>
+								<marker>6</marker> ,
+							</persName>
+							<persName>
+								<forename>R</forename> .
+								<middlename>A</middlename> .
+								<middlename>J</middlename> .
+								<surname>Taylor</surname>
+								<marker>5</marker> and
+							</persName>
+							<persName>
+								<forename>Éva</forename>
+								<surname>Lehoczky</surname>
+								<marker>1</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

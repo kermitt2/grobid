@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000774"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">with<lb/> Free for academic non-profit institutions. ALL other users need a commercial license from Xennex, Inc.<lb/></note>
+
+	<note type="other">TYR Gene<lb/> protein-coding GIFtS: 67<lb/> GC11P085151</note>
+
+<docTitle>
+	<titlePart><lb/> tyrosinase (oculocutaneous albinism IA)<lb/> </titlePart>
+</docTitle>
+
+<div type="introduction">Symbol approved by the HUGO Gene Nomenclature Committee (HGNC) database<lb/> Products<lb/> Jump to Section...<lb/> Aliases &amp;<lb/> Descriptions<lb/> for TYR gene<lb/> (According to<lb/> 1 HGNC,<lb/> 2 Entrez Gene,<lb/> 3 UniProtKB/Swiss-Prot,<lb/> 4 UniProtKB/TrEMBL,<lb/> 5 OMIM, 6 GeneLoc , and/or<lb/> 7 Ensembl, 8 miRBase)<lb/> About This Section<lb/> Aliases &amp; Descriptions<lb/> tyrosinase (oculocutaneous albinism IA)<lb/> 1 2<lb/> SK29-AB<lb/> 2 3<lb/> OCAIA<lb/> 1 2<lb/> SHEP3<lb/> 2 5<lb/> Monophenol monooxygenase<lb/> 2 3<lb/> tyrosinase<lb/> 2<lb/> Tumor rejection antigen AB<lb/> 2 3<lb/> OCA1A<lb/> 2<lb/> LB24-AB<lb/> 2 3<lb/> EC 1.14.18.1<lb/> 3<lb/> External Ids: HGNC: 12442<lb/> 1 Entrez Gene: 7299<lb/> 2 Ensembl: ENSG00000077498<lb/> 7 UniProtKB: P14679<lb/> 3<lb/> Export aliases for TYR gene to outside databases<lb/> Previous GC identifers: GC11P091234 GC11P090457 GC11P089095 GC11P088598 GC11P088550 GC11P088911<lb/> Jump to Section...<lb/> Summaries<lb/> for TYR gene<lb/> (According to Entrez Gene,<lb/> Tocris Bioscience,<lb/> Wikipedia&apos;s Gene Wiki,<lb/> UniProtKB/Swiss-Prot,<lb/> and/or UniProtKB/TrEMBL)<lb/> About This Section<lb/> Entrez Gene summary for TYR:<lb/> The enzyme encoded by this gene catalyzes the first 2 steps, and at least 1 subsequent step, in the conversion of<lb/> tyrosine to melanin. The enzyme has both tyrosine hydroxylase and dopa oxidase catalytic activities, and requires<lb/> copper for function. Mutations in this gene result in oculocutaneous albinism, and nonpathologic polymorphisms result<lb/> in skin pigmentation variation. The human genome contains a pseudogene similar to the 3&apos; half of this gene. (provided<lb/> by RefSeq)<lb/> UniProtKB/Swiss-Prot: TYRO_HUMAN, P14679<lb/> Function: This is a copper-containing oxidase that functions in the formation of pigments such as melanins and other<lb/> polyphenolic compounds. Catalyzes the rate-limiting conversions of tyrosine to DOPA, DOPA to DOPA-quinone and possibly<lb/> 5,6-dihydroxyindole to indole-5,6 quinone</div>
+
+		</front>
+	</text>
+</tei>

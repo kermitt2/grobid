@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="department">Department of Biotechnology</orgName>,
+							<orgName type="institution">University of SS. Cyril and Methodius</orgName>,
+							<address>
+								<addrLine>J. Herdu 2</addrLine>,
+							<lb/>
+								<settlement>Trnava</settlement>,
+								<postCode>SK-917 01</postCode>,
+								<country>Slovak Republic</country>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="institution">Slovak University of Technology</orgName> in
+							<address>
+								<settlement>Bratislava</settlement>,
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="department">Faculty of Materials Science and<lb/> Technology </orgName>							
+							in 
+							<address>
+								<settlement>Trnava</settlement>,
+							</address>
+						</affiliation>
+						<affiliation>									
+							<orgName type="institution">Institute of Safety and Environmental Engineering</orgName>,
+							<lb/>
+							<orgName type="department">Department of Environmental Engineering</orgName>,
+							<address>
+								<addrLine>Botanická 49</addrLine>,
+								<settlement>Trnava</settlement>,
+								<postCode>SK-917 08</postCode>,
+								<country>Slovak Republic</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

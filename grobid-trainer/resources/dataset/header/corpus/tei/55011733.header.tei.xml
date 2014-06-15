@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011733"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note>Optimal Noise Shaping and Dither of Digital Signals<lb/>2822 ( J-1 )<lb/></note>
+
+	<byline>
+	<docAuthor>Michael Gerzon<lb/> Technical Consultant<lb/></docAuthor>
+	</byline>
+
+	<address>Oxford, England<lb/></address>
+
+	<byline>
+	<docAuthor>Peter G. Craven<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Algol Applications<lb/></affiliation>
+	</byline>
+
+	<address>Grove, Wantage Oxon, England<lb/></address>
+
+	<note>Presented at<lb/> AuDIO the 87th Convention<lb/> 1989 October 18-21<lb/> New York<lb/> </note>
+
+	<note type="copyright">®<lb/> This preprint has been reproduced from the author&apos;s advance<lb/> manuscript, without editing, corrections or consideration by<lb/> the ReviewBoard.The AES takes no responsibility for the<lb/> contents.<lb/> Additional preprints may be obtained by sending request<lb/> and remittance to the Audio Engineering Societg, 60 East<lb/> 42nd Street,New York, New York 10165, USA.<lb/> All rights reserved. Reproduction of this preprint, or any<lb/> portion thereof, is not permitted without direct permission<lb/> from the Journal of the Audio Engineering Society.<lb/>AN AUDIO ENGINEERING SOCIETY PREPRINT<lb/> </note>
+
+	<docTitle>
+	<titlePart>OPTIMAL NOISE SHAPING AND DITHER OF DIGITAL SIGNALS<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Michael Gerzon<lb/> Technical Consultant,</docAuthor>
+	</byline>
+
+	<address>52 Walton Crescent, Oxford OX1 2JQ, England<lb/></address>
+
+	<byline>
+	<docAuthor>and<lb/> Peter G. Craven<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Algol Applications, Grove,</affiliation>
+	</byline>
+
+	<address>Wantage Oxon 0X12 0BS, England<lb/></address>
+
+	<div type="abstract">Abstract<lb/> This paper discusses optimising noise shaping, with or without dither,<lb/> using filtered error-feedback round a quantizer. We show that any desired<lb/> noise frequency spectrum can be approximated arbitrarily well. The<lb/> optimal (i.e. minimum) noise level for a given spectrum is shown to be<lb/> obtained if the error-feedback filter satisfies a &quot;causality&apos; type<lb/> condition, and the noise level is that that preserves the digital<lb/> channel&apos;s Shannon information capacity. Uses for optimising a wide<lb/> range of digital audio systems are discussed.<lb/></div>
+
+		</front>
+	</text>
+</tei>

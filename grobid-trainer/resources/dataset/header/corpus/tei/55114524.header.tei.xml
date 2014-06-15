@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55114524"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Micro and Nanosystems, 2010, 2, 239-248<lb/></reference>
+
+	<note type="page">239<lb/></note>
+
+	<note>1876-4029/10 $55.00+.00<lb/></note>
+
+	<note type="copyright">© 2010 Bentham Science Publishers Ltd.<lb/></note>
+
+	<docTitle>
+	<titlePart>Transparent Multilevel Aligned Electrode Microfluidic Chip for<lb/> Dielectrophoretic Colloidal Handling<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>T. Honegger, K. Berton, O. Lecarme, L. Latu-Romain and D. Peyrade*<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>CNRS-LTM, c/o CEA-Minatec</affiliation>
+	</byline>
+
+	<address>Grenoble, 17 Avenue. des Martyrs, 38054 Grenoble, France<lb/></address>
+
+	<div type="abstract">Abstract: Spatial localization and handling of cells and colloid trajectories in a microfluidic channel are required to fully<lb/> control their interactions at a single level. This paper presents a novel transparent multilevel aligned electrode microfluidic<lb/> chip that is fast to process and reusable, with which high throughput for dielectrophoretic handling of polarizable particles<lb/> can be achieved. Performances of the chips are evaluated by electrical impedance measurements and light diffusion char-<lb/>acterizations. The observation of the Indium Tin Oxyde (ITO) electrode degradation process allows a better understanding<lb/> of the behavior of ITO at low frequencies. Electrical and optical characterizations confirmed that this process is a redox<lb/> reaction of indium that seriously alters the conductivity and the transparency of the ITO layer in the microfluidic chip. A<lb/> safe range of AC-voltage frequencies is given for dielectrophoretic handling. Finally, we demonstrate within this chip fo-<lb/>calization and stop-and-go functions for 1 m polystyrene colloidal particles.<lb/></div>
+
+	<keyword>Keywords: Microfluidic, dielectrophoresis, colloidal handling.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

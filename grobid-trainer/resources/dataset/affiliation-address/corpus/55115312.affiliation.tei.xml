@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="laboratory">Materials Fire Research Group</orgName>,
+							<orgName type="laboratory">Building and Fire Research Laboratory</orgName>,
+							<orgName type="institution">National Institute of Standards and Technology</orgName>,
+							<address>
+								<settlement>Gaithersburg</settlement>,
+							<lb/>
+								<region>MD</region>
+								<postCode>20899</postCode>,
+								<country>USA</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>		
+							<orgName type="department">Institute of Biochemical Physics</orgName>,
+							<orgName type="institution">Russian Academy of Sciences</orgName>,
+							<address>
+								<settlement>Moscow</settlement>,
+								<country>Russia</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

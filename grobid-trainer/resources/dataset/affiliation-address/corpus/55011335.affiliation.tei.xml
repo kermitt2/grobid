@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>a</marker>
+							<orgName type="department">Centre d&apos;Etudes et de Recherche sur le Me´dicament de Normandie</orgName>,
+							<orgName type="institution">UFR des Sciences Pharmaceutiques</orgName>,
+							<lb/>
+							<address>
+								<addrLine>1, rue Vaube´nard</addrLine>,
+								<postCode>14032</postCode>
+								<settlement>Caen Cedex</settlement>,
+								<country>France</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>b</marker>
+							<orgName type="institution">UFR des Sciences Pharmaceutiques</orgName>,
+							<address>
+								<addrLine>31 avenue Monge</addrLine>
+								<postCode>37200</postCode>
+								<settlement>Tours</settlement>,
+								<country>France</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>c</marker>
+							<orgName type="laboratory">ADIR</orgName>,
+							<address>
+								<addrLine>1, rue Carle He´bert</addrLine>
+								<postCode>92415</postCode>
+								<settlement>Courbevoie Cedex</settlement>,
+								<country>France</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>d</marker>
+							<orgName type="department">Institut de Recherche Servier</orgName>,
+							<address>
+								<addrLine>11 rue des Moulineaux</addrLine>,
+								<postCode>92150</postCode>
+								<settlement>Suresnes</settlement>,
+								<country>France</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

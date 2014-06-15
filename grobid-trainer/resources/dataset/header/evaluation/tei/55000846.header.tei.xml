@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000846"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Home<lb/> News and Events<lb/> News<lb/></note>
+
+	<docTitle>
+	<titlePart>Having the right taste for music<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">Research by the Universities of Leicester and Surrey has found that playing classical music in<lb/> restaurants encourages diners to spend more.<lb/> Dr Adrian North and Amber Shilcock of the School of Psychology, University of Leicester, and<lb/> David Hargreaves, formerly of Leicester now at the Faculty of Education, University of Surrey<lb/> Roehampton carried out the study.<lb/> They spent three weeks monitoring the effects of classical, pop music and background silence<lb/> on spending and found that playing classical music made people feel more affluent:<lb/> When classical music was played in the background, diners spent an average of more<lb/> than £24 per head on food and drinks,<lb/> When pop music was played, less than £22 was spent by each diner,<lb/> When no background music existed, spending fell to £21.70 per head.<lb/> In the same test, diners were spending more than £1 each on coffee with classical music,<lb/> compared to only 80p with pop music and 54p without any background noise.<lb/></div>
+
+	The study was carried out at Softley&apos;s restaurant in Market Bosworth.<lb/> The full study follows:<lb/>
+
+
+	<docTitle>
+	<titlePart>The Effect of Musical Style on Restaurant Customers&apos; Spending<lb/>
+	</titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Adrian C North, Amber Shilcock, and David J Hargreaves*<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>School of Psychology, University of Leicester,<lb/></affiliation>
+	</byline>
+
+	<address>University Road, Leicester LE1 7RH, United Kingdom<lb/></address>
+
+	<byline>
+	<affiliation>*Faculty of Education, University of Surrey Roehampton,<lb/></affiliation>
+	</byline>
+
+	<address>Roehampton Lane, London SW15 5SL, United Kingdom<lb/></address>
+
+	<keyword>Key words: Music, consumers, atmosphere, purchasing, fit<lb/></keyword>
+
+	<note type="other">Dr Adrian North is Senior Lecturer in Psychology at the University of<lb/> Leicester. His research interests focus on the social psychology of music,<lb/> particularly musical preference in everyday contexts, music and consumer<lb/> behaviour, and the effects of music on adolescents. (telephone +44 116 252<lb/> 2175; Fax +44 116 252 2067; email acn5@le.ac.uk)<lb/> David Hargreaves is Professor of Child Development, Director of the Centre<lb/> for International Research in Music Education (CIRME), and Froebel Research<lb/> Fellow at the University of Surrey Roehampton. He is currently co-directing<lb/> projects on pupil and teacher identities in music education (ESRC), and on<lb/> young people&apos;s music in and out of school (QCA).<lb/> Amber Shilcock was awarded her BSc Hons in Psychology by the University<lb/> of Leicester in 2002.</note>
+
+		</front>
+	</text>
+</tei>

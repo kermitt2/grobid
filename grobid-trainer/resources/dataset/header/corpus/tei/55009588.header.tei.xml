@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009588"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Liquid Fuels<lb/> from<lb/> Water, CO 2 , and Solar Energy<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Aldo Steinfeld<lb/></docAuthor>
+	</byline>
+
+	<note type="other">IMDEA Energy<lb/></note>
+
+	<date>4.4.2011</date>
+
+		</front>
+	</text>
+</tei>

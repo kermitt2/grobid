@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009650"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">page 1 of 1<lb/></note>
+
+	<ptr>www.solvaysolexis.com<lb/></ptr>
+
+	<note type="other">For information contact your Solvay Solexis representative or:<lb/> Europe North America<lb/></note>
+
+	<byline>
+	<affiliation>Solvay Solexis S.p.A. (Italy)<lb/> Solvay Solexis, Inc.<lb/></affiliation>
+	</byline>
+
+	<phone>Tel: +39-02-3835-1<lb/> Tel: +1-856-853-8119<lb/> Fax: +39-02-3835-2129<lb/> Fax: +1-856-853-6405<lb/> </phone>
+
+	<email>Email: solvaysolexis.ita@solvay.com<lb/>Email: solvaysolexisinfo@solvay.com<lb/></email>
+
+	<note type="submission">modified 1/6/05<lb/></note>
+
+		</front>
+	</text>
+</tei>

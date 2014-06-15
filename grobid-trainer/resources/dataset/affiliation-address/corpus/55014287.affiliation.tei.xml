@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="institution">Masaryk University</orgName>,
+							<orgName type="department">Faculty of Science</orgName>,
+							<orgName type="department">Department of Geography</orgName>,
+							<orgName type="laboratory">Laboratory on Geoinformatics<lb/> and Cartography</orgName>;
+							<lb/>
+							<address>
+								<addrLine>Kotlarska 2</addrLine>,
+								<postCode>611 37</postCode>
+								<settlement>Brno</settlement>,
+								<country>Czech Republic</country>;
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>		
+							<orgName type="institution">Masaryk University</orgName>,
+							<orgName type="department">Faculty of Science</orgName>,
+							<orgName type="department">Department of Geography</orgName>,
+							<orgName type="laboratory">Laboratory on Geoinformatics<lb/> and Cartography</orgName>;
+							<lb/>
+							<address>
+								<addrLine>Kotlarska 2</addrLine>,
+								<postCode>611 37</postCode>
+								<settlement>Brno</settlement>,
+								<country>Czech Republic</country>;
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

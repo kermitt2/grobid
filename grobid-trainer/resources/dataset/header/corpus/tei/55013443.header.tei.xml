@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013443"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">TECHNICAL WHITE PAPER<lb/></note>
+
+	<docTitle>
+	<titlePart>Using XML Schema Definitions with<lb/> Adobe ® LiveCycle ™ Designer 7.0<lb/></titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

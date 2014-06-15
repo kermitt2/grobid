@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Aichun</forename>
+								<surname>Zhao</surname>
+							<lb/>
+								<marker>1</marker>,
+							</persName>
+							<persName>
+								<forename>Tianfu</forename>
+								<surname>Zhao</surname>
+							<lb/>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>Yanghu</forename>
+								<surname>SiMa</surname>
+							<lb/>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>Yuansong</forename>
+								<surname>Zhang</surname>
+							<lb/>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>Koichi</forename>
+								<surname>Nakagaki</surname>
+							<lb/>
+								<marker>1</marker> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Yungen</forename>
+								<surname>Miao</surname>
+							<lb/>
+								<marker>3</marker>,
+							</persName>
+							<persName>
+								<forename>Kunihiro</forename>
+								<surname>Shiomi</surname>
+							<lb/>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>Zenta</forename>
+								<surname>Kajiura</surname>
+							<lb/>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>Yoko</forename>
+								<surname>Nagata</surname>
+							<lb/>
+								<marker>4</marker> and
+							</persName>
+							<persName>
+								<forename>Masao</forename>
+								<surname>Nakagaki</surname>
+							<lb/>
+								<marker>1, *</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

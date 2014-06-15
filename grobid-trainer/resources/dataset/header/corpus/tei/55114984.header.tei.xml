@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55114984"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Treatment of skin ulcers with adenylate deaminase,<lb/> a glycoprotein from microscopic fungus<lb/> Penicillium lanoso-viride<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Vizma Nikolajeva<lb/> 1<lb/> *, Daina Eze<lb/> 1<lb/> , Maiga Artjuha<lb/> 1<lb/> , Ingmārs Mikažāns<lb/> 2<lb/> , Zaiga Petriņa<lb/> 1<lb/> , Leontīne Antonoviča<lb/> 2<lb/> , Dmitrijs Babarikins<lb/> 1<lb/> , Indriķis Muižnieks<lb/> 1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1<lb/> Department of Microbiology and Biotechnology, Faculty of Biology, University of Latvia,<lb/></affiliation>
+	</byline>
+
+	<address>Kronvalda Bulv. 4, Rīga LV-1586, Latvia<lb/></address>
+
+	<byline>
+	<affiliation>2<lb/> Faculty of Medicine, Riga Stradins University,</affiliation>
+	</byline>
+
+	<address>Dzirciema 16, Rīga LV-1007, Latvia<lb/></address>
+
+	<email>*Corresponding author, E-mail: vizma.nikolajeva@lu.lv<lb/></email>
+
+	<div type="abstract">Abstract<lb/> The effect of topical application of adenylate deaminase (AMPD), an immunomodulatory<lb/> glycoprotein produced by the microscopic fungus Penicillium lanoso-viride, on the experimental<lb/> skin ulcers was studied in rats. In total, 28 animals in four groups were used. Carbopol hydrogel<lb/> containing AMPD in doses of both 3.0 and 0.3 U mL<lb/> -1</div>
+
+		</front>
+	</text>
+</tei>

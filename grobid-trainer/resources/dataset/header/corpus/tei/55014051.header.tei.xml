@@ -1,0 +1,165 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014051"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Network Dictionary<lb/></note>
+
+	<ptr type="web">http://www.javvin.com/networkdiction-<lb/>ary.html<lb/></ptr>
+
+	<note type="other">Network Protocols Map<lb/></note>
+	
+	<ptr type="web">http://www.javvin.com/map.html<lb/></ptr>
+
+	<note type="other">Network Security Map<lb/></note>
+	
+	<ptr type="web">http://www.javvin.com/securitymap.<lb/> html<lb/></ptr>
+
+	<note type="other">Wireless Communications<lb/> Technology Map<lb/></note>
+	
+	<ptr type="web">http://www.javvin.com/wirelessmap.<lb/> html<lb/></ptr>
+
+	<note type="other">Network Protocols Hand-<lb/>book<lb/></note>
+	
+	<ptr type="web">http://www.javvin.com/model.html<lb/></ptr>
+
+	<note type="other">TCP/IP Quick Guide<lb/></note>
+	
+	<ptr type="web">http://www.javvin.com/tcpipguide.html<lb/></ptr>
+
+	<note type="other">Ethernet Quick Guide<lb/></note>
+	
+	<ptr type="web">http://www.javvin.com/ethernetguide.<lb/> html<lb/></ptr>
+
+	<note type="other">Packet Analyzer<lb/></note>
+
+	<ptr type="web">http://www.javvin.com/packet.html<lb/> DiskShare<lb/> http://www.javvin.com/diskshare.html<lb/> DiskAccess<lb/> http://www.javvin.com/diskaccess.html<lb/> LANsurveyor<lb/> http://www.javvin.com/LANsurveyor.<lb/> html<lb/> CyberGauge<lb/> http://www.javvin.com/CyberGauge.<lb/> html<lb/></ptr>
+
+	<note type="other">Easy Network Service<lb/> Monitor<lb/></note>
+	
+	<ptr type="web">http://www.javvin.com/easy.html<lb/></ptr>
+
+	<note type="other">Business Card Scanner<lb/></note>
+	
+	<ptr type="web">http://www.javvin.com/businesscard-<lb/>scanner.html<lb/></ptr>
+
+	<note type="other">Color Cards and Picture<lb/> Scanner<lb/></note>
+	
+	<ptr type="web">http://www.javvin.com/colorcardscan-<lb/>ner.html<lb/></ptr>
+
+	<note type="other">Portable Document Scan-<lb/>ner<lb/></note>
+
+	<ptr type="web">http://www.javvin.com/portablescan-<lb/>ner.html<lb/> www.javvin.com<lb/> www.networkdictionary.<lb/> com<lb/></ptr>
+
+	<byline>
+	<note type="other">Uniform Resource Locators (URL)<lb/></note>
+	</byline>
+
+	<date>December 1994<lb/></date>
+
+	<note type="page">[ Page 1 ]<lb/> </note>
+
+	<note>RFC: 1738<lb/> </note>
+
+	<note type="other">Network Working Group<lb/> </note>
+
+	<byline>
+	<docAuthor>T. Berners-Lee<lb/> </docAuthor>
+	</byline>
+
+	<note type="other">Request for Comments: 1738<lb/> </note>
+
+	<byline>
+	<affiliation>CERN</affiliation>
+	</byline>
+
+	<note type="other">Category: Standards Track<lb/> </note>
+
+	<byline>
+	<docAuthor>L. Masinter<lb/> </docAuthor>
+	</byline>
+		
+	<byline>	
+	<affiliation>Xerox Corporation<lb/> </affiliation>
+	</byline>
+
+	<byline>
+	<docAuthor>M. McCahill<lb/> </docAuthor>
+	</byline>
+
+	<byline>	
+	<affiliation>University of Minnesota<lb/> </affiliation>
+	</byline>
+	
+	<note type="other">Editors </note>
+
+	<date>December 1994<lb/></date>
+
+	<docTitle>
+	<titlePart>Uniform Resource Locators (URL)<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Network Dictionary<lb/></note>
+
+	<ptr type="web">http://www.javvin.com/networkdiction-<lb/>ary.html<lb/></ptr>
+
+	<note type="other">Network Protocols Map<lb/></note>
+	
+	<ptr type="web">http://www.javvin.com/map.html<lb/></ptr>
+
+	<note type="other">Network Security Map<lb/></note>
+	
+	<ptr type="web">http://www.javvin.com/securitymap.<lb/> html<lb/></ptr>
+
+	<note type="other">Wireless Communications<lb/> Technology Map<lb/></note>
+	
+	<ptr type="web">http://www.javvin.com/wirelessmap.<lb/> html<lb/></ptr>
+
+	<note type="other">Network Protocols Hand-<lb/>book<lb/></note>
+	
+	<ptr type="web">http://www.javvin.com/model.html<lb/></ptr>
+
+	<note type="other">TCP/IP Quick Guide<lb/></note>
+	
+	<ptr type="web">http://www.javvin.com/tcpipguide.html<lb/></ptr>
+
+	<note type="other">Ethernet Quick Guide<lb/></note>
+	
+	<ptr type="web">http://www.javvin.com/ethernetguide.<lb/> html<lb/></ptr>
+
+	<note type="other">Packet Analyzer<lb/></note>
+
+	<ptr type="web">http://www.javvin.com/packet.html<lb/> DiskShare<lb/> http://www.javvin.com/diskshare.html<lb/> DiskAccess<lb/> http://www.javvin.com/diskaccess.html<lb/> LANsurveyor<lb/> http://www.javvin.com/LANsurveyor.<lb/> html<lb/> CyberGauge<lb/> http://www.javvin.com/CyberGauge.<lb/> html<lb/></ptr>
+
+	<note type="other">Easy Network Service<lb/> Monitor<lb/></note>
+	
+	<ptr type="web">http://www.javvin.com/easy.html<lb/></ptr>
+
+	<note type="other">Business Card Scanner<lb/></note>
+	
+	<ptr type="web">http://www.javvin.com/businesscard-<lb/>scanner.html<lb/></ptr>
+
+	<note type="other">Color Cards and Picture<lb/> Scanner<lb/></note>
+	
+	<ptr type="web">http://www.javvin.com/colorcardscan-<lb/>ner.html<lb/></ptr>
+
+	<note type="other">Portable Document Scan-<lb/>ner<lb/></note>
+
+	<ptr type="web">http://www.javvin.com/portablescan-<lb/>ner.html<lb/> www.javvin.com<lb/> www.networkdictionary.<lb/> com<lb/></ptr>
+
+	<byline>
+	<note type="other">Uniform Resource Locators (URL)<lb/></note>
+	</byline>
+
+	<date>December 1994<lb/></date>
+
+	<note type="page">[ Page ]<lb/> </note>
+
+	<div type="abstract">Status of this Memo<lb/> This document specifies an Internet standards track protocol for the Internet community, and requests<lb/> discussion and suggestions for improvements. Please refer to the current edition of the &quot;Internet Official<lb/> Protocol Standards&quot; (STD 1) for the standardization state and status of this protocol. Distribution of this<lb/> memo is unlimited.<lb/> Abstract<lb/> This document specifies a Uniform Resource Locator (URL), the syntax and semantics of formalized infor-<lb/>mation for location and access of resources via the Internet.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012467"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Integrating the Face Verification Algorithm<lb/> Into the Smart Card System<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>HYUNG-KEUN JEE, KYUNG-HEE LEE, YONG-WHA CHUNG<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Biometrics Technology Research Team<lb/> Electronics and Telecommunications Research Institute<lb/></affiliation>
+	</byline>
+
+	<address>161 Gajung-Dong, Yusung-Gu, Daejeon<lb/> KOREA</address>
+
+	<email>hkjee@etri.re.kr</email>
+
+	<ptr type="web">http://www. etri.re.kr<lb/></ptr>
+
+	<div type="abstract">Abstract: -Using a biometrics to authenticate a person&apos;s identity has several advantages over the present practices<lb/> of Personal Identification Number stored in smart cards. However, there is an open issue of integrating biometrics<lb/> into the smart cards. Typical verification algorithms by using biometrics may not be executed in real-time on the<lb/> resource-constrained smart cards. In this paper, we propose a real-time automatic face verification system using<lb/> Support Vector Machine(SVM) and Principal Component Analysis(PCA) to overcome this open issue. In our<lb/> system, face detection and feature extraction steps which require relatively high computing power are performed<lb/> in the host. In the card, not only the user&apos;s feature vector is stored but also the verification step is performed<lb/> without any data leakage. Based on our performance analysis, the smart card can be designed such that the face<lb/> verification algorithm can be executed in real-time.<lb/></div>
+
+	<keyword>Key-Words: -Face Verification, Face Detection, Smart Card<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

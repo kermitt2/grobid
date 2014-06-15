@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014302"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>A weakest precondition approach to active attacks analysis<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Musard Balliu<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>School of Computer Science and Communication<lb/> Royal Institute of Technology (KTH)<lb/></affiliation>
+	</byline>
+
+	<address>Stockholm, Sweden<lb/></address>
+
+	<email>musard.balliu@gmail.com<lb/></email>
+
+	<byline>
+	<docAuthor>Isabella Mastroeni<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Dipartimento di Informatica<lb/> Universi a di Verona<lb/></affiliation>
+	</byline>
+
+	<address>Strada Le Grazie 15, I-37134 Verona, Italy<lb/></address>
+
+	<email>isabella.mastroeni@univr.it<lb/></email>
+
+	<div type="abstract">Abstract<lb/> Information flow controls can be used to protect both data<lb/> confidentiality and data integrity. The certification of the se-<lb/>curity degree of a program that runs in untrusted environ-<lb/>ments still remains an open problem in language-based secu-<lb/>rity. The notion of robustness asserts that an active attacker,<lb/> who can modify program code in some fixed points (holes),<lb/> is not able to disclose more private information than a pas-<lb/>sive attacker, who merely observes public data. In this paper,<lb/> we extend a method recently proposed for checking declas-<lb/>sified non-interference in presence of passive attackers only,<lb/> in order to check robustness by means of the weakest precon-<lb/>dition semantics. In particular, this semantics simulates the<lb/> kind of analysis that can be performed by an attacker, i.e.,<lb/> from the public output towards the private input. The choice<lb/> of the semantics lets us distinguish between different attacks<lb/> models. In this paper, we also introduce relative robustness<lb/> that is a relaxed notion of robustness for restricted classes of<lb/> attacks.<lb/></div>
+
+	<keyword>Categories and Subject Descriptors D.3.1 [Programming<lb/> Languages]: Formal Definitions and TheorySemantics; F.3.2<lb/> [Logics and Meanings of Programs]: Semantics of Program-<lb/>ming Languages—Program Analysis; K.6.5 [Management<lb/> of Computing and Information Systems]: Security and Pro-<lb/>tection<lb/> General Terms Languages, Security, Theory, Verification<lb/> Keywords Program semantics, Non-interference, Robust-<lb/>ness, Declassification, Active attackers<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

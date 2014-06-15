@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009334"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">MediaFLO Mobile TV Trial<lb/></note>
+
+	<date>Feb 2008<lb/></date>
+
+	<note type="page">Page 1 of 23<lb/></note>
+
+	<docTitle>
+	<titlePart>Report on MediaFLO Mobile TV Trial<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Prepared by:</note>
+
+	<byline>
+	<affiliation>PCCW HKT-Telephone Limited<lb/></affiliation>
+	</byline>
+
+	<date>February 2008<lb/></date>
+
+	<note type="other">MediaFLO Mobile TV Trial<lb/></note>
+
+	<date>Feb 2008<lb/></date>
+
+	<note type="page">Page 2 of 23<lb/></note>
+	
+	<note type="other">TABLE OF CONTENTS<lb/></note>
+
+		</front>
+	</text>
+</tei>

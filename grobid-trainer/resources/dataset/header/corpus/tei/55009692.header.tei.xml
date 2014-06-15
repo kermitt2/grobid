@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009692"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">REGULAR ARTICLES<lb/></note>
+
+	<docTitle>
+	<titlePart>Fetal muscle contains different CD34<lb/> +<lb/> cell subsets<lb/> that distinctly differentiate into adipogenic,<lb/> angiogenic and myogenic lineages<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Tanaelle Dupas<lb/> a , Thierry Rouaud<lb/> a , Karl Rouger<lb/> b, c , Blandine Lieubeau<lb/> c, d ,<lb/> Chrystelle Cario-Toumaniantz<lb/> e , Josiane Fontaine-Pérus<lb/> a ,<lb/> Marie-France Gardahaut<lb/> a , Gwenola Auda-Boucher<lb/> a, ⁎<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a CNRS UMR 6204,</affiliation>
+	</byline>
+
+	<address>Nantes, F-44322, France<lb/></address>
+
+	<byline>
+	<affiliation>b INRA UMR 703,</affiliation>
+	</byline>
+
+	<address>Nantes, F-44307, France<lb/></address>
+
+	<byline>
+	<affiliation>c ONIRIS, Nantes-Atlantic College of Veterinary Medicine and Food Sciences,</affiliation>
+	</byline>
+
+	<address>Nantes, F-44307, France<lb/></address>
+
+	<byline>
+	<affiliation>d INRA UMR 707,</affiliation>
+	</byline>
+
+	<address>Nantes, F-44307, France<lb/></address>
+
+	<byline>
+	<affiliation>e INSERM UMR 915,</affiliation>
+	</byline>
+
+	<address>Nantes, F-44007, France<lb/></address>
+
+	<note type="submission">Received 19 April 2011; received in revised form 17 June 2011; accepted 21 June 2011<lb/></note>
+
+	<date>Available online 2 July 2011<lb/></date>
+
+	<div type="abstract">Abstract We have previously demonstrated that CD34<lb/> + cells isolated from fetal mouse muscles are an interesting source of<lb/> myogenic progenitors. In the present work, we pinpoint the tissue location of these CD34<lb/> + cells using cell surface and phenotype<lb/> markers. In order to identify the myogenic population, we next purified different CD34<lb/> + subsets, determined their expression of<lb/> relevant lineage-related genes, and analyzed their differentiation capacities in vitro and in vivo. The CD34<lb/> + population<lb/> comprised a CD31<lb/> + /CD45<lb/> − cell subset exhibiting endothelial characteristics and only capable of forming microvessels in vivo.<lb/> The CD34<lb/> + /CD31<lb/> − /CD45<lb/> − /Sca1<lb/> + subpopulation, which is restricted to the muscle epimysium, displayed adipogenic<lb/> differentiation both in vitro and in vivo. CD34<lb/> + /CD31<lb/> − /CD45<lb/> − /Sca1<lb/> − cells, localized in the muscle interstitium, transcribed</div>
+
+		</front>
+	</text>
+</tei>

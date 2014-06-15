@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010931"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">55<lb/> </note>
+
+	<reference>Proc. West. Pharmacol. Soc. 43:55-63 (2000)<lb/></reference>
+
+	<docTitle>
+	<titlePart>Ubiquinone (Coenzyme Q 10 ) and Complex I in<lb/> Mitochondrial Oxidative Disorder of Parkinson&apos;s Disease<lb/>
+	</titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>M. EBADI<lb/> 1,2 *, D. MURALIKRISHNAN<lb/> 1<lb/> , L.J. PELLETT<lb/> 1<lb/> , T. MURPHY<lb/> 1 &amp; K. DREES<lb/> 1<lb/>
+	</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Departments of Pharmacology, Physiology and Therapeutics<lb/> 1 and of Neuroscience<lb/> 2 , University of North Dakota
+	<lb/> School of Medicine and Health Sciences,</affiliation>
+	</byline>
+
+	<address>501 North Columbia Road, Grand Forks, ND 58203<lb/></address>
+
+	<div type="introduction">Parkinson&apos;s disease (PD), known also as a striatal do-<lb/>pamine (DA) deficiency syndrome, is a degenerative dis-<lb/>order of the CNS characterized by akinesia, muscular ri-<lb/>gidity, tremor at rest, and postural abnormalities. In early<lb/> stages of PD, there appears to be compensatory increase<lb/> in the number of DA receptors to accommodate the initial<lb/> loss of DA neurons. As the disease progresses, the num-<lb/>ber of DA receptors decreases, apparently due to the con-<lb/>comitant degeneration of DA target sites on striatal neu-<lb/>rons. The loss of dopaminergic neurons in PD results in<lb/> enhanced metabolism of DA, augmenting the formation of<lb/> H 2 O 2 , thus leading to generation of highly neurotoxic hy-<lb/>droxyl radicals (@BULLETOH). Free radicals can also be generated<lb/> by 6-OHDA or MPTP, which destroys striatal dopaminer-<lb/>gic neurons causing PD in experimental animals and hu-<lb/>mans.<lb/> PD is characterized by degeneration of pigmented neu-<lb/>ronal systems of the brain stem variably associated with<lb/> pathology in non-nigral systems causing multiple neu-<lb/>romediator dysfunctions. The principal cytoskeletal pa-<lb/>thology of PD is the Lewy body, which, in 85-100% of<lb/> cases, occurs in many aminergic and other subcortical<lb/> nuclei, spinal cord, sympathetic ganglia, and less fre-<lb/>quently in cerebral cortex, myenteric plexuses, and adre-<lb/>nal medulla.</div>
+
+		</front>
+	</text>
+</tei>

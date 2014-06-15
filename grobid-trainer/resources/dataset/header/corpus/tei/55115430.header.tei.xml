@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei type="phd-thesis">
+	<teiHeader>
+		<fileDesc xml:id="55115430"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Error-Responsive F eedback Mechanisms<lb/> for Speech Recognizers<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Lin Lawrance Chase<lb/></docAuthor>
+	</byline>
+
+	<date>April 11, 1997<lb/></date>
+
+	<div type="abstract">Abstract<lb/> This thesis is about modeling, analyzing, and predicting errorful behavior<lb/> in large vocabulary continuous speech recognition systems. Because today&apos;s<lb/> state-of-the-art recognizers are not designed to be situated naturally in an<lb/> error feedback loop, they are ill-positioned for inclusion in multi-modal in-<lb/>terfaces, multi-media databases, and other interesting applications. I make<lb/> improvements to the current approach to predicting and analyzing error be-<lb/>haviors, which is currently based only on the measurement o f w ord error<lb/> rate.<lb/> The speech recognizer&apos;s functionality is extended to include conndence<lb/> annotations, which are markings that indicate how certain the<lb/> recognizer is that it has decoded its input correctly. This is accomplished<lb/> by feeding externally deened error conditions back to the recognizer. Error<lb/> feedback enables the construction of statistical models that map measure-<lb/>ments of the recognizer&apos;s internal states and behaviors to externally deened<lb/> error conditions.<lb/> The measuring and modeling techniques used for conndence annotation<lb/> are extended to create a blame assignment system for utterances whose actual<lb/> transcripts are known. Errors are classiied into a set of categories, some of<lb/> which are directly useful in automatic adaptation schemes while others are<lb/> more suited for human interpretation.<lb/> This classiication approach is enhanced when used in conjunction with<lb/> a visual error analysis tool that was developed during the thesis project.</div>
+
+		</front>
+	</text>
+</tei>

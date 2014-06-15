@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Susanne</forename>
+								<surname>MANDRUP</surname>,
+								<marker>*</marker>
+							</persName>
+							<persName>
+								<forename>Ragnhild</forename>
+								<surname>JEPSEN</surname>,
+								<marker>*</marker>
+							</persName>
+							<persName>
+								<forename>Henrik</forename>
+								<surname>SK0TT</surname>,
+								<marker>*</marker>
+							</persName>
+							<persName>
+								<forename>Jesper</forename>
+								<surname>ROSENDAL</surname>,
+								<marker>*</marker>
+							</persName>
+							<persName>
+								<forename>Peter</forename>
+								<surname>HOJRUP</surname>,
+								<marker>t</marker>
+							</persName>
+							<persName>
+								<forename>Karsten</forename>
+								<surname>KRISTIANSENt</surname>
+							<lb/> and
+							</persName>
+							<persName>
+								<forename>Jens</forename>
+								<surname>KNUDSEN</surname>
+								<marker>*</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

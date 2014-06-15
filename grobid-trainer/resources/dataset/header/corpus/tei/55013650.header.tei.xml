@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013650"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Alternate Path Routing for Multicast<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Daniel Zappala<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Computer and Information Science<lb/> University of Oregon,</affiliation>
+	</byline>
+
+	<address>Eugene<lb/></address>
+
+	<email>zappala@cs.uoregon.edu<lb/></email>
+
+	<div type="abstract">Abstract-Alternate path routing has been well-explored in telecom-<lb/>munication networks 88 a means of decreasing the call bloeklng rate and<lb/> increasing network utility. However, aside from some work applying these<lb/> concepts to unicast flows, altemate patb routing has received little atten-<lb/>tion in the Internet community. We describe and evaluate an architecture<lb/> for alternate path routing for multicast flows. For path installation, we<lb/> design a receiver-oriented altemate path protocol and prove that it recon-<lb/>figures multicast trees without introducing loops. For path computation,<lb/> we propose a scalable local search heuristic that allows receivers to find<lb/> alternate paths using only partial network information. We use a simula-<lb/>tion study to demonstrate the ability of local search to Rnd alternate paths<lb/> approximately as well as a link-state protocol, with much lower overhead.<lb/></div>
+
+		</front>
+	</text>
+</tei>

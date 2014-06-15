@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55113980"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<docAuthor>Jonathan F. Tait and Christina Smith<lb/></docAuthor>
+	</byline>
+
+	<docTitle>
+	<titlePart>Vesicles to Monocytic Cells<lb/> CD36 in Binding of Anionic Phospholipid<lb/> Phosphatidylserine Receptors: Role of<lb/> CELL BIOLOGY AND METABOLISM:<lb/></titlePart>
+	</docTitle>
+
+	<reference>1999, 274:3048-3054.<lb/> J. Biol. Chem.<lb/></reference>
+
+	<ptr type="web">http://www.jbc.org/content/274/5/3048<lb/></ptr>
+
+	<note type="other">Access the most updated version of this article at<lb/> . JBC Affinity Sites<lb/> Find articles, minireviews, Reflections and Classics on similar topics on the<lb/> Alerts:<lb/> When a correction for this article is posted<lb/> @BULLET<lb/> When this article is cited<lb/> @BULLET<lb/> to choose from all of JBC&apos;s e-mail alerts<lb/> Click here<lb/></note>
+
+	<ptr type="web">http://www.jbc.org/content/274/5/3048.full.html#ref-list-1<lb/></ptr>
+
+	<note type="other">This article cites 32 references, 21 of which can be accessed free at<lb/> at EUROPEAN PATENT OFFICE on April 14, 2014<lb/></note>
+
+	<ptr type="web">http://www.jbc.org/<lb/></ptr>
+
+	<note type="other">Downloaded from<lb/> at EUROPEAN PATENT OFFICE on April 14, 2014<lb/></note>
+
+	<ptr type="web">http://www.jbc.org/<lb/></ptr>
+
+	<note type="other">Downloaded from</note>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013530"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<docAuthor>Markus Weygand<lb/></docAuthor>
+	</byline>
+		
+	<date>15 th June 2010<lb/></date>
+
+	<byline>
+	<affiliation>Hecus X-Ray Systems GmbH<lb/></affiliation>
+	</byline>
+
+	<address>Reininghausstrasse 13a, 8020 Graz, Austria<lb/></address>
+
+	<phone>Fon: +43 (0)316 48 11 18, Fax: +43 (0)316 48 11 18-20, </phone>
+
+	<email>office@hecus.at<lb/> </email>
+
+	<note type="other">Technical Note<lb/> </note>
+
+	<docTitle>
+	<titlePart>Transformation of cacao butter crystals and<lb/> blooming<lb/> </titlePart>
+	</docTitle>
+
+	<div type="abstract">Overview<lb/> The cacao butter is a polymorphic crystal and<lb/> determines the properties of the chocolate.<lb/> High quality chocolate melts at body<lb/> temperature has a firm grip, a shiny surface<lb/> and a sound snap when breaking. The crystal<lb/> of type β(V) meets best those desired<lb/> properties and thus chocolate makers try to<lb/> optimize its ratio in their recipes. Under non<lb/> ideal storage conditions, especially at too high<lb/> temperatures, the cacao butter may undergo a<lb/> β(V)→ β(VI) phase transition which causes the<lb/> white-greyish layer on the surface, the fat<lb/> bloom. Surfaces from the fresh chocolate bar<lb/> and a chocolate bar that suffered froom<lb/> blooming were performed with GISAXS<lb/> experiments. Additionally transmission SAXS<lb/> experiments have been made as reference.<lb/> </div>
+
+	<div type="introduction">Experimental<lb/> The samples used for the experiment were fine<lb/> slices of dark chocolate from Lindt. One batch<lb/> has developed fat blooming after the seal of<lb/> the packaging box has been broken and left for<lb/> a couple of days under sunlight and heat<lb/> exposure on the desk. The blooming has been<lb/> identified as fat bloom in contrast to sugar<lb/> bloom. A piece of a fat bloom affected<lb/> chocolate slice and another piece from a slice<lb/> of a fresh package with good looking chocolate<lb/> slices were used for the experiments. X-ray<lb/> experiments have been performed with a<lb/> Hecus S3-MicroPix camera (Hecus X-ray<lb/> Systems, Graz, Austria). The wavelength used<lb/> was λ=1.54 Å. The vertical collimator slit<lb/> setting chosen was 200 µm. The detector used<lb/> was a Pilatus2D detector from Dectris with a<lb/> pixel size of 172 µm ×172 µm. The measured<lb/> q-range was till 0.6 Å<lb/> -1 without covering the<lb/> direct beam. For the GISAXS experiments the<lb/> samples were mounted on the GISAXS sample<lb/> holder and for the SAXS transmission control<lb/> experiments the samples slices were placed<lb/> vertically in the solid sample holder.</div>
+
+		</front>
+	</text>
+</tei>

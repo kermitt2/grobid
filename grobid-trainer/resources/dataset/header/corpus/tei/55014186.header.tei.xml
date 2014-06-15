@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014186"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<affiliation>Division of Molecular Structural Biology<lb/> Department of Medical Biochemistry and Biophysics<lb/> Karolinska Institutet,</affiliation>
+	</byline> 
+
+	<address>Stockholm, Sweden<lb/></address>
+
+	<docTitle>
+	<titlePart>STRUCTURAL ENZYMOLOGY OF<lb/> DORMANCY RELATED PROTEINS FROM<lb/> MYCOBACTERIUM TUBERCULOSIS<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Daniel Ågren<lb/></docAuthor>
+	</byline>
+
+	<address>Stockholm</address>
+
+	<date>2008</date>
+
+		</front>
+	</text>
+</tei>

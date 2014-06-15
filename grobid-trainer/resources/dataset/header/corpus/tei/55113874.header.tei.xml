@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei type="web">
+	<teiHeader>
+		<fileDesc xml:id="55113874"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">HOME &gt; </note>
+	
+	<byline>
+	<affiliation>Nikkei Electronics Asia &gt; </affiliation>
+	</byline>
+
+	<date>June 2000 </date>
+
+	<note type="other">Issue &gt; </note>
+
+	<note>This Article<lb/> Geographic Eligibility<lb/> (Edition)<lb/> Medium (Click where<lb/> applicable)<lb/> Hong Kong, Malaysia,<lb/> the Philippines,<lb/> Singapore and Thailand<lb/> (English)<lb/> Magazine + e-newsletter<lb/> E-newsletter only<lb/> India (English)<lb/> Digital magazine + e-newsletter<lb/> E-newsletter only<lb/> Taiwan (Complex Chinese)<lb/> Magazine + e-newsletter<lb/> E-newsletter only<lb/> South Korea(Korean)<lb/> Magazine + e-newsletter<lb/> E-newsletter only<lb/> Other countries/regions E-newsletter only<lb/> *Readers from other<lb/> countries/regions who want to<lb/> receive Nikkei Electronics Asia<lb/> printed magazine may consider<lb/> paid subscription.<lb/> Please contact NE Asia<lb/> Circulation Department for<lb/> details.<lb/></note>
+
+	<docTitle>
+	<titlePart>Crusoe Microprocessor Meets Low-Power Needs<lb/></titlePart>
+	</docTitle>
+
+	<date>June 2000 Issue<lb/></date>
+
+		</front>
+	</text>
+</tei>

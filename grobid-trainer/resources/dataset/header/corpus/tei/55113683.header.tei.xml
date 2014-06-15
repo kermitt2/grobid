@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55113683"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Broadband towed marine seismic via total source and receiver de-ghosting<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Mazin Farouki<lb/> (1) , Andrew S. Long<lb/> (1) , Gregg Parkes<lb/> (1) , and Stian Hegna<lb/> (1)<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>(1) PGS</affiliation>
+	</byline>
+
+	<email>(maz.farouki@pgs.com)<lb/></email>
+
+	<div type="abstract">ABSTRACT<lb/> Conventional towed streamer seismic acquisition<lb/> suffers from the ghost recording at the receiver as a<lb/> direct consequence of towing the streamer beneath the<lb/> sea surface.<lb/> Energy reflected from the earth&apos;s<lb/> subsurface is recorded in the streamer sensors first as<lb/> an up-going wave-front, then secondly as a down-<lb/>going reflection from the sea surface. This reflection<lb/> from the sea surface is referred to as the &apos;ghost&apos;<lb/> recording. The ghost adversely affects the seismic<lb/> record, introducing notches in the frequency spectrum.<lb/></div>
+
+		</front>
+	</text>
+</tei>

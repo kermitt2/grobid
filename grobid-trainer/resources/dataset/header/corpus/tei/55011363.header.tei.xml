@@ -1,0 +1,50 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011363"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>International Journal of Disaster Recovery and Business Continuity<lb/> Vol. 1, No. 1, February, 2010<lb/></reference>
+
+	<note type="page">11<lb/></note>
+
+	<docTitle>
+	<titlePart>High Availability for SIP: Solutions and Real-Time Measurement<lb/> Performance Evaluation<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Georgios Kambourakis<lb/> 1 , Dimitris Geneiatakis<lb/> 1 , Stefanos Gritzalis<lb/> 1 ,<lb/> Costas Lambrinoudakis<lb/> 1<lb/> , Tasos Dagiuklas<lb/> 2 , Sven Ehlert<lb/> 3 , and Jens Fiedler<lb/> 3<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Department of Information and Communication Systems Engineering<lb/> University of the Aegean,</affiliation>
+	</byline>
+
+	<address>Karlovassi, GR-83200 Samos, Greece<lb/></address>
+
+	<email>{gkamb, dgen, sgritz, clam}@aegean.gr<lb/></email>
+
+	<byline>
+	<affiliation>2 Dept. of Telecommunication Systems &amp; Networks<lb/> Technological Educational Institute (TEI) of Mesolonghi,
+	</affiliation>
+	</byline>
+
+	<address>Nafpactos 30300, Greece<lb/></address>
+
+	<byline>
+	<affiliation>3 Fraunhaufer FOKUS,</affiliation>
+	</byline>
+
+	<address>Kaiserin-Augusta-Allee 31, 10589 Berlin, Germany<lb/></address>
+
+	<email>{sven.ehlert, jens.fiedler}@fokus.fraunhaufer.de<lb/></email>
+
+	<div type="abstract">Abstract<lb/> SIP is rapidly becoming a standard for service integration within a variety of wireless and<lb/> wireline networks. In this regard high availability, reliability and redundancy are key factors<lb/> for any SIP based infrastructure. In an adverse environment, especially the Internet and<lb/> foreseeable 3GPP IMS, high availability solutions are of major importance for SIP network<lb/> components to smoothly mitigate call increments, device failures, misconfigurations, physical<lb/> disasters and throttle active attacks. This paper proposes a practical and transparent failover<lb/> solution for SIP and RTP-Proxy servers. We demonstrate that both methods work properly<lb/> and increase stability and availability of such systems. Furthermore, high availability<lb/> solutions are enhanced through the employment of easy to implement load balancing<lb/> schemes. All the proposed solutions are technically analyzed and evaluated via properly<lb/> designed test-beds, showing fine performance in terms of service times.<lb/></div>
+
+	<keyword>Keywords: Session Initiation Protocol (SIP); SIP architectures; SIP Redundancy and Failover Architectures;<lb/> SIP Load Balancing.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

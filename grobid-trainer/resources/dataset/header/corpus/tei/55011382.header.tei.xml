@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011382"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="copyright">Copyright © 2009 Intel Corporation<lb/></note>
+
+	<note type="page">1<lb/></note>
+
+	<docTitle>
+	<titlePart>Overview of<lb/> Intel<lb/> ®<lb/> QuickPath Interconnect System Initialization<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">ABSTRACT: After two components based on Intel<lb/> ®<lb/> QuickPath Interconnect (Intel<lb/> ®<lb/> QPI) technology establish a connection between themselves, they can reliably<lb/> send information back and forth. Consider this quote by Henry David Thoreau:<lb/> &quot;Reacting to the news that Maine and Texas had been connected by telegraph<lb/> lines—The point at issue is not whether Maine and Texas may now talk to one<lb/> another, but rather whether they have anything significant to say.&quot; What shall we<lb/> do with that connection? This article describes the first steps in the effective use<lb/> of those communication pathways, the process of initializing the entire system so<lb/> that the system can perform the overall function for which it was intended.<lb/></div>
+
+	<docTitle>
+	<titlePart>Basic Concepts of System Initialization</titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

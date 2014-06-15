@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010227"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>An Ultraviolet Organic Thin-Film<lb/> Solid-State Laser for Biomarker<lb/> Applications**<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>By Daniel Schneider, Torsten Rabe, Thomas Riedl,*<lb/> Thomas Dobbertin, Michael Kröger, Eike Becker,<lb/> Hans-Hermann Johannes, Wolfgang Kowalsky,<lb/> Thomas Weimann, Jing Wang, Peter Hinze,<lb/> Anja Gerhard, Philipp Stössel, and Horst Vestweber<lb/>
+	</docAuthor>
+	</byline>
+
+		</front>
+	</text>
+</tei>

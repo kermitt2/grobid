@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011810"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Proc. Nat. Acad. Sci. USA<lb/> Vol. 71, No. 12, pp. 5078-5082, December 1974<lb/></reference>
+
+	<docTitle>
+	<titlePart>A New Antitumoral Agent: 9-Hydroxyellipticine. Possibility of a Rational<lb/> Design of Anticancerous Drugs in the Series of DNA Intercalating Drugs<lb/> [cancer chemotherapy/ethidium bromide/DNA unwinding/pyrido (4-3b) carbazole]<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>JEAN-BERNARD LE PECQ*, NGUYEN-DAT-XUONGt, CHARLES GOSSE*, AND CLAUDE PAOLETTI*<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>* Laboratorie de Pharmacologie Molbculaire n1147 du CNRS, Institut Gustave-Roussy,</affiliation>
+	</byline>
+
+	<address>Villejuif 94800, France;</address>
+
+	<byline>
+	<affiliation>and t Institute de<lb/> Chimie des Substances Naturelles du CNRS,</affiliation>
+	</byline>
+
+	<address>Gif-Sur-Yvette 91190, France<lb/></address>
+
+	<note type="submission">Communicated by F. Jacob, September 16, 1974<lb/></note>
+
+	<div type="abstract">ABSTRACT The designing of DNA intercalating drugs<lb/> with high DNA affinity in the series of ellipticine has led<lb/> to a new antitumoral agent, 9-hydroxyellipticine, which<lb/> has a high DNA affinity, a high activity on L 1210 mice<lb/> leukemia, and a lack of toxicity at therapeutic dose. The<lb/> possible correlations among chemical structure, DNA re-<lb/>activity, and pharmacological activity of DNA inter-<lb/>calating drugs are discussed.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014420"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Stress strain graph of thermoplastic<lb/> material.<lb/></note>
+
+	<docTitle>
+	<titlePart>Thermoplastic<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">From Wikipedia, the free encyclopedia<lb/>This is an old revision of this page, as edited by Yobot (talk | contribs) at 06:24, 3 April 2011. It<lb/> may differ significantly from the current revision (//en.wikipedia.org/wiki/Thermoplastic) .<lb/> (diff) ← Previous revision | Latest revision (diff) | Newer revision → (diff)<lb/></note>
+
+	<div type="abstract">A thermoplastic, also known as a thermosoftening plastic,<lb/> [1][2] is a polymer that turns to a liquid when<lb/> heated and freezes to a very glassy state when cooled sufficiently. Most thermoplastics are high-molecular-<lb/>weight polymers whose chains associate through weak Van der Waals forces (polyethylene); stronger dipole-<lb/>dipole interactions and hydrogen bonding (nylon);<lb/> [3] or even stacking of aromatic rings (polystyrene).<lb/> Thermoplastic polymers differ from thermosetting polymers (Bakelite) in that they can be remelted and<lb/> remoulded. Many thermoplastic materials are addition polymers; e.g., vinyl chain-growth polymers such as<lb/> polyethylene and polypropylene.<lb/></div>
+
+		</front>
+	</text>
+</tei>

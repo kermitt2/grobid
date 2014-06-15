@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012918"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>IDENTIFICATION DE LA SUBSTANCE/PRÉPARATION ET DE LA<lb/> SOCIÉTÉ/ENTREPRISE<lb/> </titlePart>
+	</docTitle>
+
+	<note type="other">Nom du produit ou Nom commercial :<lb/></note>
+	
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Lawrence</forename>
+								<middlename>C</middlename>.
+								<surname>Hurst</surname>,
+								<roleName>M.D</roleName>.,
+							</persName>
+							<persName>
+								<forename>Marie</forename>
+								<middlename>A</middlename>.
+								<surname>Badalamente</surname>,
+								<roleName>Ph.D</roleName>.,
+							</persName>
+							<persName>
+								<forename>Vincent</forename>
+								<middlename>R</middlename>.
+								<surname>Hentz</surname>,
+								<roleName>M.D</roleName>.,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Robert</forename>
+								<middlename>N</middlename> .
+								<surname>Hotchkiss</surname> ,
+								<roleName>M .D</roleName>.,
+							</persName>
+							<persName>
+								<forename>F</forename> .
+								<surname>Thomas</surname>
+							</persName>
+							<persName>
+								<forename>D</forename> .
+								<surname>Kaplan</surname> ,
+								<roleName>M .D</roleName>.,
+							</persName>
+							<persName>
+								<forename>Roy</forename>
+								<middlename>A</middlename> .
+								<surname>Meals</surname> ,
+								<roleName>M .D</roleName>.,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Theodore</forename>
+								<middlename>M</middlename>.
+								<surname>Smith</surname>,
+								<roleName>Ph. D</roleName>.,and
+							</persName>
+							<persName>
+								<forename>John</forename>
+								<surname>Rodzvilla</surname> ,
+								<roleName>M. D</roleName>.,
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

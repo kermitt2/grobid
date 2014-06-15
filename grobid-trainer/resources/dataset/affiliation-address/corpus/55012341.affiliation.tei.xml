@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>a</marker>
+							<orgName type="department">Arid Land Research Center</orgName>,
+							<orgName type="institution">Tottori University</orgName>,
+							<address>
+								<settlement>Hamasaka</settlement>
+								<postCode>1390</postCode>,
+								<settlement>Tottori</settlement>
+								<postCode>680</postCode>,
+								<country>Japan</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>b</marker>
+							<orgName type="laboratory">US Salinity Laboratory</orgName>,
+							<orgName type="institution">USDA-ARS</orgName>,
+							<address>
+								<addrLine>450 W. Big Springs Dr.</addrLine>,
+								<settlement>Riverside</settlement>,
+								<region>CA</region>
+								<postCode>92507</postCode>,
+								<country>USA</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>c</marker>
+							<orgName type="department">Institute of Agricultural and Forest Engineering</orgName>,
+							<orgName type="institution">University of Tsukuba</orgName>,
+							<address>
+								<settlement>Tsukuba</settlement>,
+								<country>Japan</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>d</marker>
+							<orgName type="department">Hydrology Program</orgName>,
+							<orgName type="department">Department LAWR</orgName>,
+							<address>
+								<addrLine>123 Veihmeyer Hall</addrLine>,
+							</address>
+							<orgName type="institution">University of California</orgName>,
+							<address>
+								<settlement>Davis</settlement>,
+								<region>CA</region>
+								<postCode>95616</postCode>,
+								<country>USA</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

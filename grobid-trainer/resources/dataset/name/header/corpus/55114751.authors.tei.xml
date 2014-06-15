@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Sahar</forename>
+								<surname>Asadi</surname>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>Costin</forename>
+								<surname>Badica</surname>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>Tina</forename>
+								<surname>Comes</surname>
+								<marker>3</marker> ,
+							</persName>
+							<persName>
+								<forename>Claudine</forename>
+								<surname>Conrado</surname>
+								<marker>4</marker> ,
+							</persName>
+							<persName>
+								<forename>Vanessa</forename>
+								<surname>Evers</surname>
+								<marker>5</marker> ,
+							</persName>
+							<persName>
+								<forename>Frans</forename>
+							<lb/>
+								<surname>Groen</surname>
+								<marker>5</marker> ,
+							</persName>
+							<persName>
+								<forename>Sorin</forename>
+								<surname>Ilie</surname>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>Jan</forename>
+								<middlename>Steen </middlename>
+								<surname>Jensen</surname>
+								<marker>6</marker> ,
+							</persName>
+							<persName>
+								<forename>Achim</forename>
+								<surname>Lilienthal</surname>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>Bianca</forename>
+								<surname>Milan</surname>
+								<marker>7</marker> ,
+							</persName>
+							<persName>
+								<forename>Thomas</forename>
+							<lb/>
+								<surname>Neidhart</surname>
+								<marker>8</marker>,
+							</persName>
+							<persName>
+								<forename>Kees</forename>
+								<surname>Nieuwenhuis</surname>
+								<marker>4</marker> ,
+							</persName>
+							<persName>
+								<forename>Sepideh</forename>
+								<surname>Pashami</surname>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>Gregor</forename>
+								<surname>Pavlin</surname>
+								<marker>4</marker> ,
+							</persName>
+							<persName>
+								<forename>Jan</forename>
+								<surname>Pehrsson</surname>
+								<marker>9</marker> ,
+							</persName>
+							<persName>
+								<forename>Rani</forename>
+							<lb/>
+								<surname>Pinchuk</surname>
+								<marker>8</marker> ,
+							</persName>
+							<persName>
+								<forename>Mihnea</forename>
+								<surname>Scafes</surname>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>Leo</forename>
+								<surname>Schou - Jensen</surname>
+								<marker>9</marker>,
+							</persName>
+							<persName>
+								<forename>Frank</forename>
+								<surname>Schultmann</surname>
+								<marker>3</marker> and
+							</persName>
+							<persName>
+								<forename>Niek</forename>
+								<surname>Wijngaards</surname>
+								<marker>4</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

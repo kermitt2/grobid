@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013426"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">1<lb/></note>
+
+	<docTitle>
+	<titlePart>PARALLEL IMPLEMENTATION OF<lb/> THE SOCIAL FORCES MODEL<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Michael J. Quinn<lb/> 1<lb/> , Ronald A. Metoyer<lb/> 1<lb/> , and Katharine Hunter-Zaworski<lb/> 2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1<lb/> School of Electrical Engineering and Computer Science<lb/> 2<lb/> Department of Civil, Construction, and Environmental Engineering<lb/> Oregon State University<lb/></affiliation>
+	</byline>
+
+	<address>Corvallis, OR 97331 USA<lb/></address>
+
+	<div type="abstract">ABSTRACT<lb/> We demonstrate how the use of a multicomputer can greatly accelerate the speed of a<lb/> pedestrian movement simulator based on the social forces model. Our objective is to<lb/> develop a simulator that updates the position of every pedestrian in real time; that is,<lb/> 30 times a second. We have achieved this goal through the use of multiple processors.<lb/> We describe the design of our parallel pedestrian movement model and present<lb/> benchmark results demonstrating that 11 processors can update the positions of 10,000<lb/> pedestrians in about 1/50<lb/> th<lb/> of a second. The parallel algorithm is highly scalable,<lb/> meaning that adding processors will enable the simulation of even larger crowds.<lb/></div>
+
+		</front>
+	</text>
+</tei>

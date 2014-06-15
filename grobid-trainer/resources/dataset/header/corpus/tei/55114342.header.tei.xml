@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55114342"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Mg 2 SnO 4 ceramics<lb/> I. Synthesis±processing±microstructure correlation<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Abdul-Majeed Azad *, Liew Jing Min<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Physics, University Putra Malaysia,</affiliation>
+	</byline>
+
+	<address>43400 UPM Serdang, Selangor, Malaysia<lb/></address>
+
+	<note type="submission">Received 6 June 2000; received in revised form 18 June 2000; accepted 19 July 2000<lb/></note>
+
+	<div type="abstract">Abstract<lb/> Phase stability of magnesium meta-and orthostannate has been examined in samples synthesized via the traditional solid-state<lb/> reaction (SSR) and a novel self-heat-sustained (SHS) technique with two molar ratios of magnesium to tin (viz., 1:1 and 2:1). The<lb/> powder mixtures were calcined over a wide temperature±time (T±t) span ranging from 600 to 1300<lb/> C and 3 to 72 h. The powders<lb/> obtained from the two preparative methods have been processed and sintered under identical conditions. In the 2:1 molar mixtures,<lb/> Mg 2 SnO 4 has been formed as a single phase up on calcination in both SRR and SHS methods. This phase remained the only<lb/> compound in the sintered bodies as well. In the 1:1 composition, the ultimate reaction product was a mixture of Mg 2 SnO 4 and<lb/> SnO 2 . Both SSR and SHS techniques with 2:1 molar mixture yielded a single phase Mg 2 SnO 4 in the sintered compacts. Compacts<lb/> with near zero porosity could be achieved in SSR derived samples up on sintering up to 1600<lb/> C, while some signi®cant porosity was<lb/> an interesting feature of the SHS derived samples. Systematic microstructural evolution with the variation of sintering conditions<lb/> has been discussed. #</div>
+
+	<note type="copyright">&#169;2001 Elsevier Science Ltd and Techna S.r.l. All rights reserved.<lb/></note>
+
+	<keyword>Keywords: A. Sintering; B. Electron microscopy; B. X-ray methods; E. Capacitors<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

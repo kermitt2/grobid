@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei type="standard">
+	<teiHeader>
+		<fileDesc xml:id="55113833"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="copyright">Copyright UPnP Forum © 2011. All rights reserved<lb/></note>
+
+	<docTitle>
+	<titlePart>DeviceProtection:1 Service<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">For UPnP Version 1.0<lb/> Status: Standardized DCP (SDCP), Version 1.0<lb/></note>
+
+	<date>Date: February 24, 2011<lb/></date>
+
+	<note type="other">Service Template Version: 2.00<lb/> </note>
+
+	<div type="abstract">This Standardized DCP has been adopted as a Standardized DCP by the Steering<lb/> Committee of the UPnP Forum, pursuant to Section 2.1(c)(ii) of the UPnP Forum<lb/> Membership Agreement. UPnP Forum Members have rights and licenses defined by<lb/> Section 3 of the UPnP Forum Membership Agreement to use and reproduce the<lb/> Standardized DCP in UPnP Compliant Devices. All such use is subject to all of the<lb/> provisions of the UPnP Forum Membership Agreement.<lb/> THE UPNP FORUM TAKES NO POSITION AS TO WHETHER ANY<lb/> INTELLECTUAL PROPERTY RIGHTS EXIST IN THE STANDARDIZED DCPS.<lb/> THE STANDARDIZED DCPS ARE PROVIDED &quot;AS IS&quot; AND &quot;WITH ALL<lb/> FAULTS&quot;. THE UPNP™ FORUM MAKES NO WARRANTIES, EXPRESS,<lb/> IMPLIED, STATUTORY, OR OTHERWISE WITH RESPECT TO THE<lb/> STANDARDIZED DCPS, INCLUDING BUT NOT LIMITED TO ALL IMPLIED<lb/> WARRANTIES OF MERCHANTABILITY, NON-INFRINGEMENT AND FITNESS<lb/> FOR A PARTICULAR PURPOSE, OF REASONABLE CARE OR WORKMANLIKE<lb/> EFFORT, OR RESULTS OR OF LACK OF NEGLIGENCE.<lb/></div>
+
+	<note type="copyright">© 2011 UPnP Forum. All rights reserved.</note>
+
+		</front>
+	</text>
+</tei>

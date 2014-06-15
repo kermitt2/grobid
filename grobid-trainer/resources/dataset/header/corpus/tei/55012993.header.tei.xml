@@ -1,0 +1,78 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012993"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<address>PO Box 2345, Beijing 100023, China<lb/> </address>
+
+	<reference>World J Gastroenterol 2004;10(16):2323-2326<lb/> </reference>
+
+	<phone>Fax: +86-10-85381893<lb/> </phone>
+
+	<reference>World Journal of Gastroenterology<lb/></reference>
+
+	<email>E-mail: wjg@wjgnet.com</email>
+
+	<ptr type="web">www.wjgnet.com<lb/></ptr>
+
+	<note type="copyright">Copyright © 2004 by The WJG Press</note>
+
+	<idno type="ISSN">ISSN 1007-9327<lb/></idno>
+
+	<note type="other">@BULLET COLORECTAL CANCER @BULLET<lb/></note>
+
+	<docTitle>
+	<titlePart>COX-2 expression and tumor angiogenesis in colorectal cancer<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Ai-Wen Wu, Jin Gu, Zhen-Fu Li, Jia-Fu Ji, Guang-Wei Xu<lb/> Ai-Wen Wu, Jin Gu, Jia-Fu Ji, Guang-Wei Xu,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of<lb/> Surgery, Beijing Cancer Hospital, Beijing Institute for Cancer Research,<lb/> School of Oncology, Peking University,</affiliation>
+	</byline>
+
+	<address>Beijing 100036, China<lb/></address>
+
+	<byline>
+	<docAuthor>Zhen-Fu Li,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Biochemistry, Beijing Cancer Hospital,<lb/> Beijing Institute for Cancer Research, School of Oncology, Peking<lb/> University,</affiliation>
+	</byline>
+
+	<address>Beijing 100036, China<lb/></address>
+
+	<note type="other">Correspondence to:</note>
+
+	<byline>
+	<docAuthor>Dr. Guang-Wei Xu,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Surgery,<lb/> Beijing Cancer Hospital, Beijing Institute for Cancer Research, School<lb/> of Oncology, Peking University,</affiliation>
+	</byline>
+
+	<address>52 Fucheng Road, Haidian District,<lb/> Beijing 100036, China.</address>
+
+	<email>gwx@caca.edu.cn<lb/></email>
+
+	<phone>Telephone: +86-10-88122452 Fax: +86-10-88122452<lb/></phone>
+
+	<note type="submission">Received: 2003-11-17 Accepted: 2003-12-22<lb/></note>
+
+	<div type="abstract">Abstract<lb/> AIM: Cyclooxygenase-2 (COX-2) is one of the rate-limiting<lb/> enzymes in metabolism of arachidonic acid, and COX-2<lb/> inhibitors demonstrate preventive effects on cancer,<lb/> especially on colorectal cancer. The underlying mechanism<lb/> remains unclear. The aim of this study was to illustrate<lb/> the relationship between angiogenesis and COX-2 in<lb/> carcinogenesis of colorectal cancer.<lb/> METHODS: One hundred and seventy patients with<lb/> colorectal cancer were enrolled in our study from January<lb/> 1993 to September 2001 in School of Oncology, Peking<lb/> University. COX-2 and VEGF expression were detected with<lb/> the immunohistochemistry (IHC) technique. IHC assays<lb/> were carried out with the aid of tissue microarray (TMA)<lb/> procedure. Specimens from 35 of these patients were<lb/> examined with reverse transcriptase PCR (RT-PCR).<lb/> RESULTS: COX-2 and VEGF expressions were stronger in<lb/> colorectal cancer than those in the corresponding normal<lb/> tissues, at both protein and mRNA levels. One hundred<lb/> patients were eligible for analysis after IHC assay of COX-<lb/>2 and VEGF. The positive rate of VEGF was much higher in<lb/> COX-2 positive group (47/85) than in COX-2 negative group<lb/> (χ<lb/> 2 = 4.181, P = 0.041). The result was further verified by<lb/> the result of RT-PCR (χ<lb/> 2 = 8.517, P = 0.003). Correlation<lb/> coefficient was 0.409 after Spearman correlation analysis<lb/> (P = 0.015).<lb/> CONCLUSION: COX-2 may be involved in the course of<lb/> tumor angiogenesis of colorectal cancer and acts through<lb/> VEGF.<lb/></div>
+
+	<reference>Wu AW, Gu J, Li ZF, Ji JF, Xu GW. COX-2 expression and<lb/> tumor angiogenesis in colorectal cancer. World J Gastroenterol<lb/> 2004; 10(16): 2323-2326<lb/>
+	</reference>
+
+	<ptr type="web">http://www.wjgnet.com/1007-9327/10/2323.asp<lb/></ptr>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012753"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>M. STIEBLER et al.: Praseodymium Zircon Yellow<lb/> 495<lb/> phys. stat. sol. (a) 132, 495 (1992)<lb/></reference> 
+
+	<keyword>Subject classification: 78.20; 78.40; S10.15<lb/> </keyword>
+
+	<byline>
+	<affiliation>lnstitut ,fur Anorganiscke Chemie der Universitut Tubingen&apos;)<lb/></affiliation>
+	</byline>
+
+	<docTitle>
+	<titlePart>Praseodymium Zircon Yellow<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>BY M. STIEBLER, C. STEUDTNER, and S. KEMMLER-SACK<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">The properties of praseodymium zircon yellow and of corresponding samples with a nominal<lb/> substitution of Ce4+ for Zr4+ as well as Ti4+ for Si4+ (system ZrSiO,: Pr,Ce,Ti,) are investigated by<lb/> X-ray methods, diffuse reflectance, and vibrational spectroscopy. From the present results follows that<lb/> the ZrSiO, structure does not tolerate a significant substitution level on either Zr4+ or Si4+ regular<lb/> lattice positions by the larger foreign ions Ce4+, Pr4+, and Ti4+. Thus, the yellow colour is the result<lb/> of the usual colour-centre formation, charge compensated by Pr3 + ; whereas the highly forbidden<lb/> 4f -+. 4f transitions of Pr3+ are practically without influence on the coloration.<lb/> Die Eigenschaften von Zirkon-Praseodym-Gelb sowie von entsprechenden Proben mit einer nominellen<lb/> Substitution von Ce4+ fur Zr4+ bzw. Ti4+ fur Si4+ (System ZrSiO,: Pr,Ce,Ti,) werden mit<lb/> rontgenographischen Methoden sowie durch diffuse Reflexionsspektroskopie und Schwingungsspektro-<lb/>skopie untersucht. Die erzielten Ergebnisse zeigen, daB die Zirkon-Struktur weder einen bedeutenden<lb/> Substitutionsgrad auf regullren Zr4+-noch auf Si4+-P1atzen durch die groBeren Ionen Ce4+, Pr4+<lb/> oder Ti4+ zulal3t. Daher ist die gelbe Farbe das Resultat einer gewohnlichen Farbzentren-Bildung, der<lb/> Ladungsausgleich erfolgt durch Pr3 +. Dagegen uben die stark verbotenen 4f + 4f-Ubergange von<lb/> Pr3<lb/> +<lb/> praktisch keinen EinfluR auf die Farbung aus.<lb/></div>
+
+		</front>
+	</text>
+</tei>

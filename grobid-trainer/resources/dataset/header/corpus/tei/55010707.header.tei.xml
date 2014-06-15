@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010707"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">← History of this study<lb/> ↑ Current version of this study<lb/></note>
+
+	<docTitle>
+	<titlePart>View of NCT00029042 on 2007_02_28<lb/></titlePart>
+	</docTitle>
+
+	<idno>ClinicalTrials Identifier:<lb/> NCT00029042<lb/></idno>
+
+	<date>Updated:<lb/> 2007_02_28<lb/></date>
+
+	<note type="other">Descriptive Information<lb/> </note>
+
+	<docTitle>
+	<titlePart>Brief title<lb/> Infliximab to Treat Children With Juvenile Rheumatoid Arthritis<lb/> Official title<lb/>A Randomized Double Blind Controlled Intra-Patient Dose Escalation Phase II Trial of Infliximab in Pediatric Patients With Refractory Juvenile<lb/> Rheumatoid Arthritis<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">Brief summary<lb/> This study will determine whether a stepwise increase of the drug infliximab (Remicade® (Registered Trademark)) controls juvenile rheumatoid arthritis more effectively than a fixed dose. It<lb/> will look at the safety and effectiveness of increasing the dose to a maximum of 15mg/kg body weight per dose, examining the drug&apos;s effect on bone and cartilage, and whether it can<lb/> improve abnormal growth, metabolism and hormones. Infliximab is approved for treating adults with rheumatoid arthritis and Crohn&apos;s disease.<lb/> Children between 4 and 17 years of age with active juvenile rheumatoid arthritis who do not respond adequately to standard therapy may be eligible for this study.<lb/> Participants will receive nine infusions of infliximab during this 62-week study. The drug is given intravenously (IV, into a vein) over 2 hours. The first three infusions will be at a dose of 5<lb/> mg/kg of body weight. Children who improve on this regimen will receive another 6 infusions at the same dose. Children who do not significantly improve on 5 mg/kg at the end of 6 weeks<lb/> (the third infusion) may continue with phase 2 of the study, in which they will be randomly assigned to receive either: 1) 6 additional doses of the drug at 5 mg/kg per dose, or 2) a gradually<lb/> increased dose to a maximum of 15 mg/kg. In addition, all children will continue to take methotrexate at the same dose as when they entered the study.<lb/> Participants will visit the NIH Clinical Center 12 times (about every 8 weeks) during the study for the following tests and procedures:</div>
+
+		</front>
+	</text>
+</tei>

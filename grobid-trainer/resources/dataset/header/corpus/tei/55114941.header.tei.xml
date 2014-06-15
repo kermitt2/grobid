@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55114941"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>1985;45:5944-5951.<lb/> Cancer Res<lb/></reference>
+
+	<byline>
+	<docAuthor>Justine M. Carr, Ann M. Dvorak and Harold F. Dvorak<lb/></docAuthor>
+	</byline>
+
+	<docTitle>
+	<titlePart>Circulating Membrane Vesicles in Leukemic Blood<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Updated version<lb/></note>
+
+	<ptr type="web">http://cancerres.aacrjournals.org/content/45/11_Part_2/5944<lb/></ptr>
+
+	<note type="other">Access the most recent version of this article at:<lb/> E-mail alerts<lb/> related to this article or journal.<lb/> Sign up to receive free email-alerts<lb/> Subscriptions<lb/> Reprints and<lb/> . pubs@aacr.org<lb/> Department at<lb/> To order reprints of this article or to subscribe to the journal, contact the AACR Publications<lb/> Permissions<lb/> . permissions@aacr.org<lb/> Department at<lb/> To request permission to re-use all or part of this article, contact the AACR Publications<lb/></note>
+
+	<date>on April 23, 2014.</date>
+
+	<note type="copyright">© 1985 American Association for Cancer Research.<lb/> cancerres.aacrjournals.org<lb/> Downloaded from<lb/> on April 23, 2014. © 1985 American Association for Cancer Research.<lb/> cancerres.aacrjournals.org<lb/> Downloaded from<lb/></note>
+
+	<reference>[CANCER RESEARCH 45, 5944-5951, November 1985]<lb/></reference>
+
+	<docTitle>
+	<titlePart>CirculatingMembraneVesicles in LeukemicBlood1<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Justine M. Carr,2 Ann M. Dvorak, and Harold F. Dvorak<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Departments ol Pathology and Medicine, Beth Israel Hospital, and Harvard Medical School and the Charles A. Dana Research Institute, Beth Israel Hospital,<lb/></affiliation>
+	</byline>
+
+	<address>Boston, Massachusetts 02215<lb/></address>
+
+	<div type="abstract">ABSTRACT<lb/> Ultramicroscopic membrane vesicles were found in the plasma<lb/> of 17 patients with certain types of leukemia (acute promyelocytic<lb/> leukemia, acute monocytic leukemia, acute myelomonocytic leu<lb/> kemia, and chronic myelogenous leukemia) and in guinea pigs<lb/> with the L2C leukemia. Labeled vesicles were cleared from<lb/> normal guinea pig plasma according to a two exponential function<lb/> with a half-life for the second exponent of &gt;11 h. By immunoflu-<lb/>orescence, vesicles shared antigens with the L2C leukemic cells.<lb/> Attempts to elucidate the cellular origin of the circulating vesicles<lb/> in human leukemias were less definitive. However, vesicles did<lb/> not react with the platelet membrane antigen GP llt,/llla nor did<lb/> the presence of circulating vesicles or vesicle-associated proco-<lb/>agulant activity correlate with the platelet count. In three patients<lb/> studied serially, circulating vesicles paralleled disease activity.<lb/> Vesicles were not detected in 16 other patients with leukemias<lb/> including acute myelogenous leukemia and most lymphoid leu<lb/> kemias. Similarly, vesicles were not present in 29 normal plasmas<lb/> or in 10 plasmas from patients with solid tumors or nonmalignant<lb/> hematological disorders. In contrast to vesicles of similar ap<lb/> pearance shed by a variety of solid and ascites tumor cells in<lb/> vitro and in vivo, the vesicles circulating in leukemia patients and<lb/> guinea pigs expressed variable and generally weak procoagulant<lb/> activity and no tissue factor activity. Thus, although many of the<lb/> patients with circulating vesicles expressed abnormal coagula<lb/> tion, we were not able to establish a close pathogenetic relation<lb/> ship between the procoagulant activity of circulating vesicles and<lb/> clinical coagulopathies.<lb/></div>
+
+		</front>
+	</text>
+</tei>

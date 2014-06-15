@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014102"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Published:</note>
+
+	<date>June 21, 2011<lb/></date>
+
+	<note type="copyright">&#169; 2011 American Chemical Society<lb/></note>
+
+	<note type="page">5912<lb/></note>
+
+	<idno>dx.doi.org/10.1021/ac200750u</idno>
+
+	<reference>| Anal. Chem. 2011, 83, 5912–5919<lb/></reference>
+
+	<note type="other">ARTICLE<lb/> </note>
+	
+	<ptr>pubs.acs.org/ac<lb/></ptr>
+
+	<docTitle>
+	<titlePart>Accurate Determination of Succinimide Degradation Products Using<lb/> High Fidelity Trypsin Digestion Peptide Map Analysis<lb/> </titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>X. Christopher Yu,* Koman Joe, Yu Zhang, Andrea Adriano, Yaning Wang, Helene Gazzano-Santoro,<lb/> Rodney G. Keck, Galahad Deperalta, and Victor Ling<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Protein Analytical Chemistry and Biological Technologies, Genentech, a Member of the Roche Group,</affiliation>
+	</byline>
+
+	<address>South San Francisco,<lb/> California 94080-4990, United States<lb/></address>
+
+	<div type="introduction">S<lb/> uccinimide formation in therapeutic protein products is an<lb/> important and common degradation event. Conditions used<lb/> during manufacturing processes such as cell culture, recovery,<lb/> and formulation as well as those used during product storage can<lb/> all influence the extent of degradation. Extensive studies have<lb/> been conducted and published regarding the origin, stability, and<lb/> reaction pathways of succinimide.<lb/> 1,2 Formation of succinimide at<lb/> asparaginyl residues occurs when the backbone amide on the<lb/> carboxyl side attacks the side chain carbonyl group, resulting in<lb/> the loss of an ammonia molecule. Reaction at aspartyl residues<lb/> requires a protonated side chain carboxyl group and is accom-<lb/>panied with the loss of a water molecule. In therapeutic proteins,<lb/> succinimide has been observed to form at significantly faster<lb/> rates in mildly acidic pH conditions.<lb/> 3À5 The rate of succinimide<lb/> formation depends on the equilibrium concentration of the an-<lb/>ionic form of the backbone amide nitrogen, which can be<lb/> influenced by the inductive effect of the side chain group on the<lb/> carboxyl side as well as the local and three-dimensional con-<lb/>formation of the protein molecule.<lb/> 2,6À8<lb/> For monoclonal antibody protein therapeutics, succinimide<lb/> formation in regions of relative solvent accessibility and functional<lb/> importance can have detrimental effects on biological activity and<lb/> requires sensitive detection and accurate characterization.<lb/> 5,9<lb/> Detection of the succinimide-containing variant form has been<lb/> achieved using various separation techniques such as ion exchange<lb/> chromatography,<lb/> 5,9,10 hydrophobic interaction chromatography,<lb/> 11À13<lb/> and electrophoresis.<lb/> 8,14 Upon initial observation of a minor<lb/> variant form, direct identification of the amino acid residue at<lb/> which succinimide formation occurs typically requires the use of<lb/> peptide map analysis in conjunction with analysis by mass<lb/> spectrometry and/or other protein chemistry techniques. A<lb/> significant technical challenge lies in the fact that succinimide<lb/> is relatively unstable and quickly hydrolyzes under alkaline pH<lb/> and denaturing conditions. Conventional peptide map analysis is<lb/> typically performed with protein denaturation and cysteine<lb/> reduction and alkylation at alkaline pH as well as with significant<lb/> exposure to alkaline pH during enzymatic digestion. The highly<lb/> ubiquitous and often mandated use of such sample preparation<lb/> conditions has been recognized as one of the most significant<lb/> challenges in the sensitive and accurate detection of succinimide.<lb/> 5,9</div>
+
+		</front>
+	</text>
+</tei>

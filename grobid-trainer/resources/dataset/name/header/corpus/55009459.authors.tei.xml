@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Piero</forename>
+								<surname>DALERBA</surname>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>Axel</forename>
+								<surname>RICCI</surname>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>Vincenzo</forename>
+								<surname>RUSSO</surname>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>Donata</forename>
+								<surname>RIGATTI</surname>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>Maria</forename>
+								<middlename>Rita</middlename>
+								<surname>NICOTRA</surname>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>Marcella</forename>
+								<surname>MOTTOLESE</surname>
+								<marker>3</marker> ,
+							</persName>
+							<persName>
+								<forename>Claudio</forename>
+								<surname>BORDIGNON</surname>
+								<marker>1</marker> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Pier</forename>
+								<middlename>Giorgio</middlename>
+								<surname>NATALI</surname>
+								<marker>3</marker> and
+							</persName>
+							<persName>
+								<forename>Catia</forename>
+								<surname>TRAVERSARI</surname>
+								<marker>1 *</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

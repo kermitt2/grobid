@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011772"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<date>March 2004<lb/></date>
+
+	<docTitle>
+	<titlePart>USTER<lb/> ®<lb/> QUANTUM 2<lb/> TECHNICAL DATA<lb/> THE YARN QUALITY ASSURANCE SYSTEM</titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

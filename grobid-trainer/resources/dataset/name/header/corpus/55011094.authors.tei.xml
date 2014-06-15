@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>C</forename>.
+								<middlename>H</middlename>.
+								<middlename>F</middlename>.
+								<surname>Cheng</surname>
+								<roleName>B.S</roleName>.
+								<marker>1</marker>,
+							</persName>
+							<persName>
+								<forename>G</forename>.
+								<middlename>D</middlename>.
+								<surname>Sanders</surname>
+								<roleName>A.B.</roleName>,
+								<roleName>Ph.D</roleName>.
+								<marker>1</marker>,
+							</persName>
+							<persName>
+								<forename>K</forename>.
+								<middlename>M</middlename>.
+								<surname>McDonald</surname>
+								<roleName>M.M</roleName>.
+								<marker>3</marker>,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>P</forename>.
+								<middlename>A</middlename>.
+								<surname>Heidenreich</surname>
+								<roleName>M .D.</roleName>
+								<marker>293</marker>,
+							</persName>
+							<persName>	
+								<forename>M </forename>
+								<middlename>.A</middlename>
+								<surname>Hlatky</surname>
+								<roleName>M .D</roleName>.
+								<marker>3</marker>
+								&apos;
+							</persName>
+							<persName>
+								<forename>D</forename> .
+								<middlename>K</middlename>.
+								<surname>Owens</surname>
+								<roleName>M .D</roleName>.
+								<roleName>M .Sc</roleName>.
+								<marker>2Z193</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

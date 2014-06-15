@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014413"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Plant Disease / </note>
+
+	<date>May 1998 </date>
+
+	<note type="page">491<lb/></note>
+
+	<docTitle>
+	<titlePart>In vitro Inhibition of Soft-Rotting Bacteria by EDTA and Nisin<lb/> and in vivo Response on Inoculated Fresh Cut Carrots<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>John M. Wells, Ching-Hsing Liao, and Arland T. Hotchkiss,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>U.S. Department of Agriculture, ARS, Eastern Re-<lb/>gional Research Center,</affiliation>
+	</byline>
+
+	<address>600 East Mermaid Lane, Wyndmoor, PA 19038<lb/></address>
+
+		</front>
+	</text>
+</tei>

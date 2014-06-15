@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012263"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Journal of Minerals &amp; Materials Characterization &amp; Engineering, Vol. 5, No.2, pp 155-165, 2006<lb/> </reference>
+
+	<ptr>jmmce.org </ptr>
+
+	<note type="other">Printed in the USA.	</note>
+
+	<note type="copyright">All rights reserved<lb/></note>
+
+	<note type="page">155<lb/></note>
+
+	<docTitle>
+	<titlePart>Characterization of Ajaokuta Coke for Blast Furnace<lb/> Ironmaking<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>1* A.O. Adeleke,<lb/> 2 R.S. Makan, and<lb/> 1<lb/> S.A. Ibitoye<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1.Department of Materials Science and Engineering,Faculty of Technology,<lb/> Obafemi Awolowo University,</affiliation>
+	</byline>
+
+	<address>Ile-Ife, Osun State, Nigeria.<lb/></address>
+
+	<byline>
+	<affiliation>2.National Metallurgical Development Centre (NMDC),</affiliation>
+	</byline>
+
+	<address>P.M.B. 2116,<lb/> Jos, Plateau State. Nigeria<lb/></address>
+
+	<note type="other">*Corresponding Author:</note>
+
+	<email>Email: aoadeleke2002@yahoo.com<lb/></email>
+
+	<div type="abstract">ABSTRACT<lb/> The 300kg coke sample received from Ajaokuta Steel Plant was subjected to proximate<lb/> analysis and pilot scale size distribution test. The proximate analysis showed that the coke<lb/> contains 0.38%, 13.45%, 2.72% and 0.14% of moisture, ash, volatile matter and sulphur<lb/> respectively; while size distribution test gave micum 10 and micum 40 of 3.62% and 89.67%<lb/> respectively. Therefore, the coke satisfies the blast furnace requirements for moisture,<lb/> sulphur and micum strength. However, its ash and volatile contents exceed the specified<lb/> limits except for Indian standard practice.<lb/></div>
+
+	<keyword>Keywords: Coke, proximate analysis, size distribution, micum strength<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010644"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>XVI Congress<lb/> of the Federation<lb/> of European Societies<lb/> of Plant Biology (FESPB)<lb/></titlePart>
+	</docTitle>
+	
+	<ptr>www.fespb2008.org<lb/></ptr>
+
+	<note type="other">P R O G R A M M E<lb/></note>
+
+	<note type="other">FESPB 2008<lb/> Moss 2008<lb/> Peroxidase 2008<lb/> Tampere, Finland @BULLET 17-22 August 2008<lb/>15-18 August<lb/> 20-23 August<lb/></note>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei type="technical-report">
+	<teiHeader>
+		<fileDesc xml:id="55113840"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>3GPP TS 24.301 V11.4.0</idno>
+
+	<date>(2012-09)<lb/></date>
+
+	<note type="other">Technical Specification<lb/></note>
+
+	<docTitle>
+	<titlePart>3rd Generation Partnership Project;<lb/> Technical Specification Group Core Network and Terminals;<lb/> Non-Access-Stratum (NAS) protocol<lb/> for Evolved Packet System (EPS);<lb/> Stage 3<lb/> (Release 11)<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">The present document has been developed within the 3<lb/> rd Generation Partnership Project (3GPP<lb/> TM<lb/> ) and may be further elaborated for the purposes of 3GPP.<lb/> The present document has not been subject to any approval process by the 3GPP Organizational Partners and shall not be implemented.<lb/> This Specification is provided for future development work within 3GPP only. The Organizational Partners accept no liability for any use of this Specification.<lb/> Specifications and reports for implementation of the 3GPP<lb/> TM system should be obtained via the 3GPP Organizational Partners&apos; Publications Offices.<lb/> 3GPP<lb/> 3GPP TS 24.301 V11.4.0 </note>
+
+	<date>(2012-09)<lb/> </date>
+
+	<note type="page">84 </note>
+
+	<note type="other">Release 11<lb/> 5.5.1.2.4<lb/> Attach accepted by the network<lb/></note>
+
+	<div type="abstract">During an attach for emergency bearer services, if not restricted by local regulations, the MME shall not check for<lb/> mobility and access restrictions, regional restrictions, subscription restrictions, or perform CSG access control when<lb/> processing the ATTACH REQUEST message. The network shall not apply subscribed APN based congestion control<lb/> during an attach procedure for emergency bearer services.<lb/> If the attach request is accepted by the network, the MME shall send an ATTACH ACCEPT message to the UE and<lb/> start timer T3450. The MME shall send the ATTACH ACCEPT message together with an ACTIVATE DEFAULT EPS<lb/> BEARER CONTEXT REQUEST message contained in the ESM message container information element to activate the<lb/> default bearer (see subclause 6.4.1). The network may also initiate the activation of dedicated bearers towards the UE<lb/> by invoking the dedicated EPS bearer context activation procedure (see subclause 6.4.2).</div>
+
+		</front>
+	</text>
+</tei>

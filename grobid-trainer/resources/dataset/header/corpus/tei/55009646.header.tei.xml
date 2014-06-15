@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009646"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Zonyl<lb/> ®<lb/> MP 1400<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Technical Information<lb/> fluoroadditive<lb/> Zonyl ® is a registered trademark of DuPont.<lb/></note>
+
+		</front>
+	</text>
+</tei>

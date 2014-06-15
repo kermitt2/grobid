@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei type="master-thesis">
+	<teiHeader>
+		<fileDesc xml:id="55114290"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<docTitle>
+	<titlePart>C a l i b r a t i o n -F r e e E y e T r a c k i n g<lb/> </titlePart>
+	</docTitle>
+
+	<docAuthor>by<lb/> D a n i e l C h e n g<lb/></docAuthor>
+	</byline>
+
+	<degree>A thesis subm itted to the<lb/> School of Com puting<lb/> in conformity w ith the requirem ents for<lb/> the degree of M aster of Science<lb/></degree>
+	
+	<byline>
+	<affiliation>Queen&apos;s University<lb/></affiliation>
+	</byline>
+
+	<address>Kingston, Ontario, C anada<lb/></address>
+
+	<date>November 2005<lb/></date>
+
+	<note type="copyright">Copyright © Daniel Cheng, 2005<lb/></note>
+
+	<note type="other">Reproduced with permission of the copyright owner. Further reproduction prohibited without permission.</note>
+
+		</front>
+	</text>
+</tei>

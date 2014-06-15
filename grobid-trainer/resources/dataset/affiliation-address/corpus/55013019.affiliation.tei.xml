@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+ From the
+						<affiliation>
+							<orgName type="department">Department of Pharmacology</orgName>,
+							<orgName type="institution">K.U. Leuven</orgName>,
+							<address>
+								<settlement>Leuven</settlement>,
+								<country>Belgium</country>; and
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>*</marker>
+							<orgName type="department">Center of Excellence<lb/> for Cardiovascular Safety Research</orgName>,
+							<orgName type="institution">Johnson &amp; Johnson Pharmaceutical Research &amp; Development</orgName>,
+							<lb/>
+						</affiliation>
+						<affiliation>
+							<marker>a</marker>
+							<orgName type="department">Division of Janssen Pharmaceutica</orgName>,
+							<address>
+								<settlement>Beerse</settlement>,
+								<country>Belgium</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012894"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">PDF generated using the open source mwlib toolkit. </note>
+
+	<ptr>See http://code.pediapress.com/ for more information.<lb/> </ptr>
+
+	<note type="submission">PDF generated at: Wed, 23 Nov 2011 13:27:35 UTC<lb/></note>
+
+	<docTitle>
+	<titlePart>Wiki pages: Induction<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Contents</note>
+
+		</front>
+	</text>
+</tei>

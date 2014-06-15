@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55114962"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>CONSTRUCTING AN ELASTIC TOUCH PANEL WITH<lb/> EMBEDDED IR-LEDS USING SILICONE RUBBER<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Yuichiro Sakamoto, Takuto Yoshikawa, Tatsuhito Oe, Buntarou Shizuki, and Jiro Tanaka<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Computer Science, University of Tsukuba<lb/></affiliation>
+	</byline>
+
+	<address>1-1-1 Tennoudai, Tsukuba, Ibaraki 305-8573, JAPAN<lb/></address>
+
+	<div type="abstract">ABSTRACT<lb/> This paper presents a technique for the construction of an elastic touch panel using silicone rubber. The technique is<lb/> similar to that of the frustrated total internal reflection-based method for multi-touch sensing, but the surface of the touch<lb/> panel is made of transparent silicone rubber rather than acrylic. Moreover, we embedded infrared LEDs within the rubber<lb/> for multi-touch sensing. In tests, our touch panel had better sensitivity than one made of acrylic. Furthermore, unlike<lb/> acrylic panels, it readily detects contact by styluses and other stiff objects. We implemented a touch panel based on our<lb/> technique and tested it through experiments.<lb/></div>
+
+	<keyword>KEYWORDS<lb/> Multi-touch, FTIR, user interface.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

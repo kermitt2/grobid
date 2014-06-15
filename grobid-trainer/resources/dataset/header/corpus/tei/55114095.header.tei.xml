@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei type="wiki">
+	<teiHeader>
+		<fileDesc xml:id="55114095"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Data structure alignment<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">From Wikipedia, the free encyclopedia<lb/> This is an old revision of this page, as edited by Emperorbma (talk | contribs) at 00:09, 17<lb/> November 2007. It may differ significantly from the current revision<lb/> (//en.wikipedia.org/wiki/Data_structure_alignment).<lb/> (diff) ← Previous revision | Latest revision (diff) | Newer revision → (diff)<lb/></note>
+
+	<div type="abstract">Data Structure Alignment is the way data is arranged and accessed in computer memory. It<lb/> consists of two separate but related issues: Data Alignment and Data Structure Padding. Data<lb/> Alignment is the offset of a particular datum in computer memory from boundaries that depend on<lb/> the datum type and processor characteristics. Aligning data usually refers to allocating memory<lb/> addresses for data such that each primitive datum is assigned a memory address that is a multiple of<lb/> its size. Data Structure Padding is the insertion of unnamed members in a data structure to preserve<lb/> the relative alignment of the structure members.<lb/> Although Data Structure Alignment is a fundamental issue for all modern computers, many<lb/> computer languages and computer language implementations handle data alignment automatically.<lb/> Certain C and C++ implementations and assembly language allow at least partial control of data<lb/> structure padding, which may be useful in certain special circumstances.<lb/></div>
+
+		</front>
+	</text>
+</tei>

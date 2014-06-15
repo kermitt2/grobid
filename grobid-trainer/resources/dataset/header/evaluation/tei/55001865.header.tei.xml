@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001865"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="copyright">Copyright 2002-2005<lb/></note>
+
+	<byline>
+	<affiliation>pcae GmbH<lb/></affiliation>
+	</byline>
+
+	<address>Kopernikusstr. 4 A, 30167 Hannover<lb/></address>
+
+	<div type="abstract">pcae versichert, dass Handbuch und Programm nach bestem Wissen und Gewissen erstellt<lb/> wurden. Für absolute Fehlerfreiheit kann jedoch infolge der komplexen Materie keine Gewähr<lb/> übernommen werden.<lb/> </div>
+	
+	<note type="other">Änderungen an Programm und Beschreibung vorbehalten.<lb/> Korrekturen und Ergänzungen zum vorliegenden Handbuch sind ggf. auf der aktuellen Installa-<lb/>tions-CD enthalten. Ergeben sich Abweichungen zur Online-Hilfe, ist diese aktualisiert. Ferner<lb/> finden Sie Verbesserungen und Tipps im Internet unter www.pcae.de.</note>
+
+		</front>
+	</text>
+</tei>

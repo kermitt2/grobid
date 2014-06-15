@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<tei type="phd-thesis">
+	<teiHeader>
+		<fileDesc xml:id="55114293"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<degree>THÈSE<lb/> Pour obtenir le grade de<lb/>DOCTEUR<lb/> Spécialité : Nanoélectronique et nanotechnologie<lb/> Arrêté ministérial : 7 aout 2006<lb/> Présentée par<lb/></degree>
+
+	<byline>
+	<docAuthor>Thibault Honegger<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<note type="other">Ingénieur de l&apos;école Centrale de Nantes<lb/></note>
+	</byline>
+
+	<note type="other">Thèse dirigée par David PEYRADE<lb/> préparée au sein </note>
+
+	<byline>
+	<affiliation>Laboratoire des Technologies de la Microélectronique<lb/> -LTM CNRS, </affiliation>
+	</byline>
+
+	<address>17, avenue des Martyrs, 38054 Grenoble -France<lb/> </address>
+
+	<byline>
+	<affiliation>et de l&apos;Ecole Doctorale E.E.A.T.S.-Electronique, Electrotechnique, Au-<lb/>tomatique et Traitement du Signal<lb/> </affiliation>
+	</byline>
+
+	<docTitle>
+	<titlePart>Électrocinétique tridimensionnelle<lb/> de particules colloïdales en géo-<lb/>métrie microfluidique et applica-<lb/>tion à la manipulation de cellules<lb/> </titlePart>
+	</docTitle>
+
+	<note type="other">Thèse soutenue publiquement le </note>
+
+	<date>17 Novembre 2011,<lb/> </date>
+
+	<note type="other">devant le jury composé de :<lb/> M. Franz BRUCKERT<lb/> Université de Grenoble, Président<lb/> Mme. Nelly HENRY<lb/> Institut Curie, Rapporteur<lb/> M. Vincent SENEZ<lb/> IEMN, Rapporteur<lb/> M. Vincent STUDER<lb/> IIN, Examinateur<lb/> M. Olivier JOUBERT<lb/> LTM, Examinateur<lb/> M. David PEYRADE<lb/> LTM, Directeur de thèse<lb/> M. Xavier GIDROL<lb/> CEA-iRTSV,  Invité<lb/> M. Emmanuel PICARD<lb/> CEA-INAC,  Invité<lb/></note>
+
+	<idno>tel-00668280,</idno>
+
+	<note type="other">version 1 -</note>
+
+	<date>9 Feb 2012</date>
+
+		</front>
+	</text>
+</tei>

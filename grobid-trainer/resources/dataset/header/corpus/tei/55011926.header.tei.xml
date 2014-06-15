@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011926"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>I01-S12 </idno>
+
+	<note type="page">Page 1<lb/></note>
+
+	<docTitle>
+	<titlePart>TITLE: 3-D Electronic Imaging of Fabric Qualities by On-Line Yarn Data<lb/></titlePart>
+	</docTitle>
+
+	<note>CODE: I01-S12<lb/> </note>
+
+	<note type="other">INVESTIGATORS:<lb/> Moon W. Suh (Leader), Warren Jasper and Jae L. Woo (NCSU),<lb/> Arkady Cherkassky (Shenkar College-Israel)<lb/> STUDENTS:<lb/></note>
+
+	<byline>
+	<note type="other">Dong Han (NCSU)<lb/></note>
+	</byline>
+
+	<div type="abstract">PROJECT GOALS<lb/> The primary objective is to design and develop a control system for electronically imaging the<lb/> quality attributes (basis weight, appearance uniformity, physical properties, etc.) of woven and<lb/> knitted fabrics directly from an on-line yarn mass /diameter measurement system without having<lb/> to go through the actual fabrication processes. Such a system is to facilitate optimal yarn and<lb/> fabric development to achieve the desired uniformity or aesthetically pleasing &quot;non-random<lb/> random effects (chaos)&quot; within the yarn and the resulting fabrics under the data-rich modern<lb/> manufacturing environment. The secondary objectives are: 1) to perfect the data reduction and<lb/> expansion techniques that are amenable to mapping and imaging the micro and macro<lb/> dimensions of the resulting fabrics suitable for quality prediction, modification and mapping in<lb/> time domain and two-dimensional spatial domain, and 2) to perfect a &quot;data fusion&quot; technology<lb/> based on the optical and capacitor type measurements of yarn diameters and yarn density<lb/> profiles suitable for achieving the primary objective of this study.<lb/> ABSTRACT<lb/> We are developing 3-D prediction models for fabric appearance and other quality attributes by<lb/> using the data captured from any on-line yarn measurement system currently in use. Such a 3-D<lb/> imaging system is most useful for fabric development and textile process control. We are<lb/> developing mathematical theories and the corresponding algorithms for image simulation, data<lb/> reduction and data mapping onto structural geometry of woven and knitted fabrics, in both micro<lb/> and macro scales. The electronic imaging will be done on the quality attributes (basis weight,<lb/> appearance uniformity, physical properties, etc.) of woven and knitted fabrics directly from an<lb/> on-line yarn diameter of mass measurement system. We are doing this without having to knit or<lb/> weave the real fabrics. Such a system, if perfected, is expected to economize and improve the<lb/> efficiencies of product development and quality control.</div>
+
+		</front>
+	</text>
+</tei>

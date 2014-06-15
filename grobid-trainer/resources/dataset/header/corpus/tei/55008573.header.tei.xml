@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008573"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>International Journal of Pharmaceutics 175 (1998) 33 – 46<lb/></reference>
+
+	<docTitle>
+	<titlePart>Poly(DL-lactic acid) as a direct compression excipient in<lb/> controlled release tablets<lb/> Part I. Compaction behaviour and release characteristics of<lb/> poly(DL-lactic acid) matrix tablets<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>R. Steendam *, C.F. Lerk<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Pharmaceutical Technology and Biopharmacy, Groningen Institute for Drug Studies (GIDS), Uni6ersity of Groningen,<lb/></affiliation>
+	</byline>
+
+	<address>A. Deusinglaan 1, 9713 AV, Groningen, Netherlands<lb/></address>
+
+	<note type="submission">Received 11 November 1997; received in revised form 15 July 1998; accepted 19 July 1998<lb/></note>
+
+	<div type="abstract">Abstract<lb/> High-molecular weight poly(DL-lactic acid) (PDLA, M v 85000) was applied as a direct compression excipient in<lb/> controlled release tablets. PDLA powders with good flowing properties were obtained by milling pre-cooled PDLA<lb/> granules. Apparent yield pressure values ranged from 44 to 71 MPa for tabletting speeds of 0.033 and 300 mm/s,<lb/> respectively, pointing to a high ductility and limited strain rate sensitivity. Tablets with good mechanical strength<lb/> (tensile strength 2.5–3.7 MPa) were prepared at different compaction speeds. Dissolution experiments with different<lb/> drugs showed that PDLA exhibited good sustained release properties. Initial tablet porosity, lubrication with<lb/> magnesium stearate and pH of the dissolution medium hardly affected the release rate of the incorporated drug. Drug<lb/> loads, however, markedly affected the release rate. For drug loads between 20 and 50% w/w, a constant fractional<lb/> release rate was found. Upon further decreasing of the drug load, the release rate was found to increase. This<lb/> remarkable finding was explained by the rapid and large increase of the pore volume of the tablets. The results show<lb/> the unique properties of PDLA and its suitability to be applied as a direct compression and release controlling<lb/> excipient in matrix tablets for oral drug administration.</div>
+
+	<note type="copyright">© 1998 Elsevier Science B.V. All rights reserved.<lb/></note>
+
+	<keyword>Keywords: Poly(DL-lactic acid); Matrix tablets; Direct compression; Compaction speed; Porosity; Controlled release<lb/>
+	</keyword>
+
+		</front>
+	</text>
+</tei>

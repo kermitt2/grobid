@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">Department of Pharmacognosy</orgName>,
+							<orgName type="department">College of Pharmacy</orgName>,
+							<orgName type="institution">Cairo University</orgName>,
+							<address>
+								<settlement>Giza</settlement>,
+								<country>Egypt</country>
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="department">Department of Pharmacology</orgName>,
+							<orgName type="institution">National Research Center</orgName>,
+							<address>
+								<addrLine>El-Dokki</addrLine>,
+								<settlement>Giza</settlement>,
+								<country>Egypt</country>
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="department">Pharmacognosy Department</orgName>,
+							<address>
+								<addrLine>Kasr El-Einy Street</addrLine>,
+								<postCode>11562</postCode>,
+							</address>
+							<orgName type="institution">Cairo University</orgName>,
+							<address>
+								<country>Egypt</country>.
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

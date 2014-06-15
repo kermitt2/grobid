@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009341"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">(SB03-09BB ACETO)<lb/> Site Description </note>
+
+	<note type="page">Page 1 of 7<lb/> </note>
+
+	<docTitle>
+	<titlePart>MSU Weed Science Research Program<lb/> </titlePart>
+	</docTitle>
+
+	<note type="other">Encapsulated acetochlor in Roundup Ready sugarbeet<lb/> Trial ID: SB03-09BB<lb/> Study Dir.: Sprague, Powell<lb/> Conducted: Bean &amp; Beet<lb/> Investigator: Christy Sprague<lb/></note>
+
+	<note type="submission">Date Planted: 4/16/2009<lb/></note>
+
+		</front>
+	</text>
+</tei>

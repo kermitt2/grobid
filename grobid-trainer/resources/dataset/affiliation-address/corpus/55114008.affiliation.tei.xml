@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>a</marker>
+							<orgName type="department">Pathology and Laboratory Medicine</orgName>,
+							<orgName type="institution">University of California Davis</orgName>,
+							<address>
+								<settlement>Sacramento</settlement>,
+								<region>CA</region>,
+								<country>USA</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>b</marker>
+							<orgName type="department">Genetic Systems</orgName>,
+							<orgName type="institution">Life Technologies</orgName>,
+							<address>
+								<settlement>Foster City</settlement>,
+								<region>CA</region>,
+								<country>USA</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>c</marker>
+							<orgName type="department">Analytical Imaging Core</orgName>,
+							<orgName type="institution">University of Miami School of Medicine</orgName>,
+							<address>
+								<settlement>Miami</settlement>,
+								<region>FL</region>,
+								<country>USA</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

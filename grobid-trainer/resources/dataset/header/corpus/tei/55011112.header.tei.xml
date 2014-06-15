@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011112"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<docAuthor>D. Siegert, P. Brevet<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Laboratoire Central des Ponts et Chaussées, </affiliation>
+	</byline>
+
+	<address>France<lb/></address>
+
+	<docTitle>
+	<titlePart>Fatigue of stay cables inside end fittings<lb/> high frequencies of wind induced vibrations<lb/> </titlePart>
+	</docTitle>
+
+	<div type="abstract">Summary<lb/> A twenty year old stay cable was dismantled because it showed many ruptures at<lb/> one of its terminations. The examination of the wire breakages showed evidence of<lb/> fatigue. Analysis of the dynamic behaviour of the stay cable was carried out. It<lb/> showed that the combination of flexural bending stresses with fretting stresses<lb/> between the outside layer and wire serving lead to a stress range beyond the<lb/> endurance threshold. Recorded measurements of transversal vibration<lb/> displacements near the sockets show that high modes of wind induced vibrations<lb/> (Karman Vortex) were involved in the fatigue occurrence. Examination of the internal<lb/> state of three other cables confirms the analysis of displacement records in relation<lb/> with the fatigue limit.<lb/></div>
+
+		</front>
+	</text>
+</tei>

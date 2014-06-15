@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55113881"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">1988<lb/> </note>
+
+	<byline>
+	<docAuthor>FRITZSCHE. HASSERODT und KORTE<lb/> </docAuthor>
+	</byline>
+
+	<note type="other">Jahrg. 97<lb/> </note>
+
+	<byline>
+	<docAuthor>HANS FRITZSCHE, ULRICH HASSERODT und FRIEDHELM KORTE<lb/> </docAuthor>
+	</byline>
+		
+	<docTitle>
+	<titlePart>Reduktion organischer Verbindungen des funfwertigen Phosphors zu<lb/> Phosphinen, I<lb/>	Reduktion tertiarer Phosphinoxyde zu tertiiiren Phosphinen<lb/> mit Silanen<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<affiliation>Aus der Shell Grundlagenforschung-Gesellschaft mbH,</affiliation>
+	</byline>
+
+	<address>SchloR Birlinghoven, Siegkreis<lb/></address>
+
+	<note type="submission">(Eingegangen am 4. Februar 1964)<lb/></note>
+
+	<note type="abstract">Beim Erhitzen von Triphenylphosphinoxyd mit Calciumhydrid erhalt man in<lb/> einer Disproportionierungsreaktion Triphenylphosphin, Diphenylphosphin-<lb/>saure und Benzol. -Tertiare Phosphinoxyde werden mit Silanen in guten Aus-<lb/>beuten zu tertiaren Phosphinen reduziert.<lb/> </note>
+ 
+	<div type="introduction">Es fehlt nicht an Versuchen, tertiare Phosphinoxyde zu tertiaren Phosphinen zu<lb/> reduzieren. Die P=O-Bindung erweist sich selbst unter extremen Bedingungen als<lb/> widerstandsfahig gegenuber gebrauchlichen Reduktionsmitteln wie nascierendem oder<lb/> katalytisch erregtem Wasserstoff sowie der Zinkstaubdestillation. Mit L i A l h jedoch<lb/> kann z. B. Triphenylphosphinoxyd mit 60-proz. Ausbeute zu Triphenylphosphin<lb/> reduziert werden 1,2). Die Ausbeuten sind schwankend, was auf die teilweise Spaltung<lb/> einer C-P-Bindung zuriickgefuhrt wird.<lb/> Auf der Suche nach geeigneten Reduktionsmitteln fur Triphenylphosphinoxyd<lb/> setzten wir dieses bei erhohten Temperaturen mit Calciumhydrid um. Bei 350&apos; trat<lb/> Reaktion ein, wobei Benzol abdestillierte. Die nachfolgende Vakuumdestillation ergab<lb/> Triphenylphosphin. Aus dem Destillationsriickstand konnte Diphenylphosphinsaure<lb/> isoliert werden.<lb/> Die Ergebnisse der Umsetzungen bei verschiedenen Temperaturen zeigt Tab. 1.<lb/> Tab. I. Reduktion von Triphenylphosphinoxyd mit Calciumhydrid bei variierter Temperatur<lb/> Temperatur erhaltenes<lb/> erhaltenes (&quot;C)<lb/> Benzol (%)<lb/> Triphenylphosphin (%) *)<lb/> -<lb/>200 350<lb/> 124 400<lb/> 117 450<lb/> I28<lb/> *) Berechnct nach GI. (I).<lb/> -<lb/>63 47<lb/> 38<lb/> Die besten Ausbeuten wurden bei 350&apos; erreicht. Die Bildung von Benzol und die<lb/> relativ niedrigen Ausbeuten (bezogen auf eingesetztes Triphenylphosphinoxyd) legen<lb/> eine Disproportionierungsreaktion nahe (GI. (I)).<lb/> 
+
+	1) FR. HEIN, K. ISSLEIB und H. RABOLD, Z. anorg. allg. Chem. 287. 208 [1956].<lb/> 2) L. HOKNER und H. HOFFMANN, Angew. Chem. 68,473 119561; Neuere Methoden der prapa-<lb/>rativen organischen Chemie, Bd. 11, S. 108, Verlag Chemie, Weinheim/Bergstr. 1960.
+	</div>
+ 
+		</front>
+	</text>
+</tei>

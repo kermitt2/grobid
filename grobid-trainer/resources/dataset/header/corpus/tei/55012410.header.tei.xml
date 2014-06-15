@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012410"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Process Migration<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Dejan Milojicic, Fred Douglis<lb/> , Yves Paindaveine,<lb/> Richard Wheeler<lb/> , Songnian Zhou*<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Computer Systems Laboratory<lb/> HP Laboratories Palo Alto<lb/></affiliation>
+	</byline>
+
+	<idno>HPL-1999-21<lb/></idno>
+
+	<date>February, 1999<lb/></date>
+
+	<div type="abstract">process migration,<lb/> distributed systems,<lb/> distributed operating<lb/> systems,<lb/> load distribution<lb/> Process migration is the act of transferring a process<lb/> between two machines. It enables dynamic load distribution,<lb/> fault resilience, eased system administration, and data<lb/> access locality. Despite these goals and ongoing research<lb/> efforts, migration has not achieved widespread use. With the<lb/> increasing deployment of distributed systems in general, and<lb/> distributed operating systems in particular, process<lb/> migration is again receiving more attention in both research<lb/> and product development. As high performance facilities<lb/> shift from supercomputers to networks of workstations, and<lb/> with the ever-increasing role of the World Wide Web, we<lb/> expect migration to play a more important role and<lb/> eventually to be widely adopted.<lb/> This survey reviews the field of process migration by<lb/> summarizing the key concepts and giving an overview of the<lb/> most important<lb/> implementations.<lb/> Design and<lb/> implementation issues of process migration are analyzed in<lb/> general, and then revisited for each of the case studies<lb/> described: MOSIX, Sprite, Mach and Load Sharing Facility.<lb/> The benefits and drawbacks of process migration depend on<lb/> the details of implementation and therefore this paper<lb/> focuses on practical matters. This survey will help in<lb/> understanding the potentials of process migration and why<lb/> it has not caught on.<lb/></div>
+
+	<byline>
+	<affiliation>*University of Toronto and Platform Computing,</affiliation>
+	</byline>
+
+	<address>Toronto, Canada<lb/></address>
+
+	<byline>
+	<affiliation>AT&amp;T Labs,</affiliation>
+	</byline>
+
+	<address>Florham Park, NJ<lb/></address>
+
+	<byline>
+	<affiliation>TOG Research Institute,</affiliation>
+	</byline>
+
+	<address>Grenoble, France<lb/> EMC, Hopkinton, MA<lb/></address>
+
+	<note type="copyright">© Copyright Hewlett-Packard Company 1999<lb/></note>
+
+	<note type="other">Internal Accession Date Only<lb/></note>
+
+	<date>December 5, 1998</date>
+
+	<note type="other">3:42 pm<lb/></note>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009706"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<ptr>http://www.gnpd.com<lb/> </ptr>
+
+	<note type="other">This information is supplied in accordance with Mintel&apos;s Terms &amp; Conditions. </note>
+	
+	<note type="page">1<lb/></note>
+
+	<docTitle>
+	<titlePart>Cacao Latte for Cold Milk<lb/></titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

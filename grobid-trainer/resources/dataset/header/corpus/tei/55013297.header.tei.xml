@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013297"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>FACIAL EXPRESSION ANALYSIS ROBUST TO 3D HEAD POSE MOTION<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>A. C. Andrés del Valle and J.-L. Dugelay<lb/></docAuthor>
+	</byline>
+
+	<email>{andres, dugelay}@eurecom.fr ─</email>
+
+	<ptr type="web">http:// www.eurecom.fr/~image/Clonage/vc_mainpage.html<lb/></ptr>
+
+	<byline>
+	<affiliation>Institut Eurécom.</affiliation>
+	</byline> 
+
+	<address>2229, rte. des Crêtes 06904 Sophia Antipolis -France<lb/></address>
+
+	<div type="abstract">ABSTRACT<lb/> Most face expression algorithms assume a front or &apos;near-to-front&apos;<lb/> head position. This assumption becomes an important limitation<lb/> when studying input from real systems. In this article we present<lb/> a new approach to robustly determine face expression<lb/> independently of the head pose. Our analysis-synthesis<lb/> cooperation, possible thanks to the use of a highly realistic 3D<lb/> head model and the application of Kalman filtering to predict the<lb/> user pose, permits to correctly track the interesting face features.<lb/> Adapting &apos;near-to-front&apos; analysis techniques based on the<lb/> predicted pose enables us to use such algorithms with moving<lb/> speakers.<lb/></div>
+
+		</front>
+	</text>
+</tei>

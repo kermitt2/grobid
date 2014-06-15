@@ -1,0 +1,66 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011325"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Home<lb/> Search Abstracts<lb/> View Session<lb/> Email Abstract<lb/> Author<lb/> Session 52-Poster Abstracts<lb/> Nuclear Import, Integration, and Latency<lb/> Monday, 2-4 pm; Hall D<lb/> Paper # 199<lb/></note>
+
+	<docTitle>
+	<titlePart>Disruption of Microtubule Dynamics Activates Latent Viruses Offering a Novel Avenue for<lb/> Adjunctive Antiviral Therapy
+	<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Paul Kellam*<lb/> 1 , E Tsao<lb/> 2 , P Dobson<lb/> 3 , K Wisniewska<lb/> 2 , C Pardieu<lb/> 4 , S Wilson<lb/> 5<lb/> , and R Jenner<lb/> 2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Wellcome Trust Sanger Inst,</affiliation>
+	</byline>
+
+	<address>Cambridge, UK;<lb/></address>
+
+	<byline>
+	<affiliation>2 Univ Coll</affiliation>
+	</byline>
+
+	<address>London, UK;<lb/></address>
+
+	<byline>
+	<affiliation>3 Univ of Manchester,</affiliation>
+	</byline>
+
+	<address>UK;<lb/></address>
+
+	<byline>
+	<affiliation>4 Queen Mary, Univ of London,</affiliation>
+	</byline>
+
+	<address>UK;<lb/></address>
+
+	<byline>
+	<affiliation>and 5 Aaron Diamond AIDS Res Ctr,</affiliation>
+	</byline>
+
+	<affiliation>The Rockefeller Univ, </affiliation>
+
+	<address>New York, NY, US<lb/></address>
+
+	<div type="abstract">Background: Latency establishment is a key strategy used by herpesviruses and retroviruses for viral persistence and immune evasion<lb/> and the resulting viral reservoirs are impossible to eradicate. Kaposi&apos;s sarcoma-associated herpesvirus (KSHV) is the leading cause of<lb/> cancer in immunodeficient individuals with the tumors predominantly consisting of latently infected cells. HIV-1 remains latent in<lb/> quiescent CD4<lb/> + T cells resulting in a stable reservoir with a half-life of 44 months. A defining feature of latency is the ability of latent<lb/> viral genomes to reactivate into the virus replicative cycle for producing virus progeny. This phase in the virus life cycle is particularly<lb/> amenable to immune control and therapeutic intervention. Understanding the molecular mechanisms through which latency is<lb/> maintained allows it to be targeted therapeutically to clear the host of latent infection.<lb/> Methods: Here, we report the use of a chemical genetic screen to both investigate pathways required for viral latency and to identify<lb/> small molecules as potential therapeutics. We screened the National Cancer Institute Developmental Therapeutics Program Diversity<lb/> Set and identified 25 small molecules that reactivate KSHV from latency.<lb/> Results: We show one compound, UCLB-15026, disrupts microtubule dynamics and triggers, through the extracellular signal-<lb/>regulated kinase (ERK) pathway, KSHV lytic replication. We demonstrate enhanced killing of KSHV-associated tumor cells by<lb/> ganciclovir when pre-treated with UCLB-15026. Furthermore, we show UCLB-15026 through the ERK pathway can induce<lb/> transcriptional activity from the HIV-1 long-terminal repeat in a latency model, revealing commonalities between KSHV and HIV-1<lb/> reactivation from latency.<lb/> Conclusions: Disrupting microtubule dynamics by UCLB-15026 or existing antimicrotubule agents can reactivate a broad spectrum<lb/> of viruses from latency, thus offering a potential avenue for adjunctive antiviral therapies to eliminate latent viral infections.<lb/></div>
+
+	<note type="other">CROI 2011 Paper #199<lb/></note>
+
+	<ptr type="web">http://www.retroconference.org/2011/Abstracts/42304.htm<lb/></ptr>
+
+	<note type="page">1 of 1<lb/></note>
+
+	<date>07-11-2011</date>
+
+	<note type="other">09:50</note>
+
+		</front>
+	</text>
+</tei>

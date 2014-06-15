@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014874"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note>Mobile Retailing Blueprint<lb/></note>
+
+	<note type="other">Verbatim reproduction and distribution of this document is permitted in any medium, provided this notice is preserved.<lb/></note>
+
+	<docTitle>
+	<titlePart>Mobile Retailing Blueprint<lb/> A Comprehensive Guide for Navigating the Mobile<lb/> Landscape<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Version 1.0.0<lb/></note>
+
+	<date>2010/05/21<lb/></date>
+
+	<note type="other">AJointWhitePapersponsoredbythe<lb/> NationalRetailFederation<lb/></note>
+
+	<note>Mobile Retailing Blueprint<lb/></note>
+
+	<note type="other">CONTENTS</note>
+
+		</front>
+	</text>
+</tei>

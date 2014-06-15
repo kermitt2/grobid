@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010417"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">MONOCLONAL ANTIBODY<lb/></note>
+
+	<docTitle>
+	<titlePart>CD162 (PL1)<lb/></titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="institution">VEB Berlin-Chemie</orgName>,
+							<address>
+								<settlement>Berlii1-~4dlershof</settlement>
+							</address>
+						</affiliation>	
+						<affiliation>	
+							<orgName type="department">Sektion Chemie</orgName> der
+							<orgName type="institution">Friedrich-Schiller-Universitat Jene</orgName>
+							<orgName type="department">Zentrelinstitut fiir Organische Chemie der Akademie der Wissenschaften</orgName> der
+							<address>
+								<country>DDR</country>,
+								<settlement>Berlin-Adlershof</settlement>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

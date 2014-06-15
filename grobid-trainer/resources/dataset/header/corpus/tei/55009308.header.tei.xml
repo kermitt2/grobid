@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009308"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Visual Tag Dictionary: Interpreting Tags with Visual Words<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Meng Wang<lb/> , Kuiyuan Yang<lb/> , Xian-Sheng Hua<lb/> , Hong-Jiang Zhang</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Microsoft Research Asia,</affiliation>
+	</byline>
+
+	<address>Beijing 100090, P. R. China<lb/></address>
+
+	<email>{mengwang, xshua }@microsoft.com</email>
+
+	<byline>
+	<affiliation>University of Science and Technology of China,</affiliation>
+	</byline>
+
+	<address>Hefei 230027, P. R. China<lb/></address>
+
+	<email>yky@ustc.edu</email>
+
+	<byline>
+	<affiliation>Microsoft Advanced Technology Center,</affiliation>
+	</byline>
+
+	<address>Beijing 100090, P. R. China<lb/></address>
+
+	<email>hjzhang@ustc.edu<lb/></email>
+
+	<div type="abstract">ABSTRACT<lb/> Visual-word based image representation has shown effective-<lb/>ness in a wide variety of applications such as categorization,<lb/> annotation and search. By detecting keypoints in images<lb/> and treating their patterns as visual words, an image can be<lb/> represented as a bag of visual words, which is analogous to<lb/> the bag-of-words representation of text documents. In this<lb/> paper, we introduce a corpus named visual tag dictionary.<lb/> Unlike the conventional dictionaries that define terms with<lb/> textual words, the visual tag dictionary interprets each tag<lb/> with visual words. The dictionary is constructed in a fully<lb/> automatic way by exploring the tagged image data on the<lb/> Internet. With this dictionary, tags and images are con-<lb/>nected via visual words and many applications can be thus<lb/> facilitated. As examples, we empirically demonstrate the ef-<lb/>fectiveness of the dictionary in tag-based image search, tag<lb/> ranking and image annotation.<lb/></div>
+
+	<keyword>Categories and Subject Descriptors<lb/> H.3.1 [Information Storage and Retrieval]: Content<lb/> Analysis and Index<lb/> General Terms<lb/> Algorithms, Experimentation<lb/> Keywords<lb/> Flickr, tag, image search, image annotation<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

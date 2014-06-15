@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55113910"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>J Investig Allergol Clin Immunol 2008; Vol. 18(1): 59-62<lb/></reference>
+
+	<note type="copyright">© 2008 Esmon Publicidad<lb/></note>
+
+	<note type="other">CASE REPORT<lb/></note>
+
+	<docTitle>
+	<titlePart>Allergy to Eggplant (Solanum melongena)<lb/> Caused by a Putative Secondary Metabolite<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>SN Pramod,* YP Venkatesh<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Biochemistry and Nutrition, Central Food Technological Research Institute,</affiliation>
+	</byline>
+
+	<address>Mysore, India<lb/></address>
+
+	<div type="abstract">■ Abstract<lb/> We describe a case of allergy caused by ingestion of eggplant in an atopic subject. Symptoms included urticaria, itching of the throat, and<lb/> hoarseness. Skin prick test (SPT) was positive with 4 varieties of eggplant; however, allergen-specifi c immunoglobulin E was not detected.<lb/> SPT with fractions of green long eggplant extract obtained by dialysis and ultrafi ltration suggested the allergen to be less than 10 kd. SPT<lb/> following acetone precipitation of eggplant extract revealed that the allergen was present in the supernatant portion. Further analysis by<lb/> size-exclusion chromatography of the 10 kd fi ltrate of eggplant extract on Sephadex G-25 followed by SPT of fractions revealed that the<lb/> causative allergen was a low molecular weight nonprotein secondary metabolite of less than 1 kd. To our knowledge, this is the fi rst report<lb/> of allergy to the ingestion of eggplant in which a nonprotein secondary metabolite has been detected as an allergen.<lb/></div>
+
+	<keyword>Key words: Allergens. Aubergine. Eggplant. Food allergy. Secondary metabolite. Solanaceae . Solanum melongena.<lb/></keyword>
+
+	<note type="other">■ Resumen<lb/></note>
+
+	<div type="abstract">Describimos un caso de alergia causada por la ingestión de berenjena, en un sujeto atópico. Los síntomas fueron urticaria, picor de garganta<lb/> y ronquera. La prueba cutánea resultó positiva para 4 variedades de berenjena, no obstante, no se detectó inmunoglobulina E específi ca<lb/> al alérgeno. Se realizó la prueba cutánea con fracciones de extracto de berenjena obtenida por diálisis y ultrafi ltración que indicó que el<lb/> alérgeno era de menos de 10 kd. La prueba cutánea después de la precipitación de acetona de un extracto de berenjena reveló que el<lb/> alérgeno se encontraba en el sobrenadante. Un análisis adicional mediante cromatografía por exclusión de tamaño del fi ltrado de 10kd<lb/> del extracto de berenjena en una Sephadex G-25, seguida por una prueba cutánea defracciones reveló que el alérgeno implicado era<lb/> un metabolito secundario no proteico de un peso molecular inferior a 1 kd. Hasta donde alcanza nuestro conocimiento, este es el primer<lb/> informe de alergia a berenjena en el que se ha detectado un metabolito secundario no protéico como alérgeno.<lb/> Palabras clave: Alérgenos. Berenjena. Alergia alimentaria. Metabolito secundario. Solanaceae. Solanum melongena.<lb/></div>
+
+		</front>
+	</text>
+</tei>

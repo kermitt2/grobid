@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="institution">Institut Technologique FCBA</orgName> – 
+							<orgName type="department">Pôle Nouveaux Matériaux</orgName> –
+							<address>
+								<addrLine>BP 251</addrLine>,
+								<postCode>38044</postCode> –
+								<settlement>Grenoble</settlement> –
+								<country>France</country>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="department">Instituto de Quimica de São Carlos</orgName>,
+							<orgName type="institution">Universidade de São Paulo</orgName>.
+							<address>
+								<postBox>P.O. Box 780</postBox>,
+								<addrLine>13.560-970</addrLine> -
+								<settlement>São Carlos</settlement>
+								 -
+								<region>SP</region>
+								 -
+								<country>Brazil</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

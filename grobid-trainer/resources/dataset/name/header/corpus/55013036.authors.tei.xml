@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Benjamin</forename>
+								<surname>Blankertz</surname>
+								<marker>1,2</marker>
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Motoaki</forename>
+								<surname>Kawanabe</surname>
+								<marker>2</marker>
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Ryota</forename>
+								<surname>Tomioka</surname>
+								<marker>3</marker>
+							</persName>
+							<persName>
+								<forename>Friederike</forename>
+								<middlename>U</middlename> .
+								<surname>Hohlefeld</surname>
+								<marker>4</marker>
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Vadim</forename>
+								<surname>Nikulin</surname>
+								<marker>5</marker>
+							</persName>
+							<persName>
+								<forename>Klaus -</forename>
+								<middlename>Robert</middlename>
+								<surname>Müller</surname>
+								<marker>1, 2</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014316"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>arXiv:1107.1339v1 [cs.NI]</idno>
+
+	<date>7 Jul 2011<lb/></date>
+
+	<note type="other">BARBOTIN et al.: ESTIMATION OF SPARSE MIMO CHANNELS WITH COMMON SUPPORT.<lb/> </note>
+
+	<note type="page">1<lb/></note>
+
+	<docTitle>
+	<titlePart>Estimation of Sparse MIMO Channels with<lb/> Common Support.<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Yann Barbotin, Student Member, IEEE, Ali Hormati, Member, IEEE, Sundeep Rangan, Member, IEEE,<lb/> and Martin Vetterli, Fellow, IEEE<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Abstract—We consider the problem of estimating sparse com-<lb/>munication channels in the MIMO context. In small to medium<lb/> bandwidth communications, as in the current standards for<lb/> OFDM and CDMA communication systems (with bandwidth up<lb/> to 20 MHz), such channels are individually sparse and at the<lb/> same time share a common support set. Since the underlying<lb/> physical channels are inherently continuous-time, we propose a<lb/> parametric sparse estimation technique based on finite rate of<lb/> innovation (FRI) principles. Parametric estimation is especially<lb/> relevant to MIMO communications as it allows for a robust<lb/> estimation and concise description of the channels.<lb/> The core of the algorithm is a generalization of conven-<lb/>tional spectral estimation methods to multiple input signals with<lb/> common support. We show the application of our technique<lb/> for channel estimation in OFDM (uniformly/contiguous DFT<lb/> pilots) and CDMA downlink (Walsh-Hadamard coded schemes).<lb/> In the presence of additive white Gaussian noise, theoretical<lb/> lower bounds on the estimation of SCS channel parameters in<lb/> Rayleigh fading conditions are derived. Finally, an analytical<lb/> spatial channel model is derived, and simulations on this model in<lb/> the OFDM setting show the symbol error rate (SER) is reduced<lb/> by a factor 2 (0 dB of SNR) to 5 (high SNR) compared to standard<lb/> non-parametric methods — e.g. lowpass interpolation.<lb/></div>
+
+	<keyword>Index Terms—Channel estimation, MIMO, OFDM, CDMA,<lb/> Finite Rate of Innovation.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

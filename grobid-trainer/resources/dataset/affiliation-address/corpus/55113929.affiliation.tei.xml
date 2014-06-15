@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>a</marker>
+							<orgName type="institution">OC Oerlikon Balzers AG</orgName>,
+							<address>
+								<addrLine>Iramali 18</addrLine>,
+								<postCode>9496</postCode>
+								<settlement>Balzers</settlement>,
+								<country>Liechtenstein</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>b</marker>
+							<orgName type="institution">ASMEC GmbH</orgName>,
+							<address>
+								<addrLine>Bautzner Landstrasse 145</addrLine>,
+								<postCode>01454</postCode>
+								<settlement>Radeberg</settlement>
+								<region>OT</region>
+								<settlement>Rossendorf</settlement>,
+								<country>Germany</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>c</marker>
+							<orgName type="institution">Saxonian Institute of Surface Mechanics (SIO)</orgName>,
+							<address>
+								<addrLine>Tankow 2</addrLine>,
+								<postCode>18569</postCode>
+								<settlement>Ummanz</settlement>,
+								<country>Germany</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>d</marker>
+							<orgName type="institution">Oerlikon Balzers Coating Germany GmbH</orgName>,
+							<address>
+								<addrLine>Am Ockenheimer Graben 41</addrLine>,
+								<postCode>55411</postCode>
+								<settlement>Bingen</settlement>,
+								<country>Germany</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

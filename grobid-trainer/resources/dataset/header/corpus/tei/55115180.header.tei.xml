@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei type="master-thesis">
+	<teiHeader>
+		<fileDesc xml:id="55115180"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<div type="abstract">Abstract<lb/> </div>
+
+	<docAuthor>MINEO, CHRISTOPHER ALEXANDER. </docAuthor>
+
+	<note type="other">Clock Tree Insertion and Verification for 3D<lb/> Integrated Circuits. (Under the direction of Dr. W. Rhett Davis)<lb/> </note>
+
+	<div type="abstract">The use of three dimensional chip fabrication technologies has emerged as a solution<lb/> to the difficulties involved with the continued scaling of bulk silicon devices. While the<lb/> technology exists, it is undervalued and underutilized largely due to the design and<lb/> verification challenges a complex 3D design presents. This work presents a clock tree<lb/> insertion and timing verification methodology for three dimensional integrated circuits<lb/> (3DIC). It has been designed in the context of and incorporated into the 3DIC design<lb/> methodology also developed within our research group. The 3DIC verification methodology<lb/> serves as an efficient means to perform all setup and hold timing checks harnessing the<lb/> power of existing commercial chip design and verification tools. A novel approach is<lb/> presented in which the multi-die design is temporarily transformed to appear as a traditional<lb/> 2D design to the commercial tools for verification purposes. Various parasitic extraction<lb/> algorithms are examined, and we present a method for performing accurate 3D parasitic<lb/> extraction for timing purposes. We offer theoretical insight into the optimization of a 3D<lb/> clock tree for power savings and coupling-induced delay minimization. A practical example<lb/> of the 3DIC design and verification flow is detailed through the explanation of our research<lb/> group&apos;s test chip, a nearly 140,000 cell 3D fast Fourier transform chip currently awaiting<lb/> fabrication at MIT&apos;s Lincoln Labs.</div>
+
+		</front>
+	</text>
+</tei>

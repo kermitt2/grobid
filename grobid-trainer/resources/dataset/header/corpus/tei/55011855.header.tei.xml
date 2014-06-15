@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011855"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>New Dimeric Monoterpenes and Dimeric Diterpenes from the Heartwood<lb/> of Chamaecyparis obtusa var. formosana<lb/>
+	</titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>by Yuch-Hsiung Kuo*, Chia-Hsien Chen, and Yung-Shung Wein<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Chemistry, National Taiwan University,</affiliation>
+	</byline>
+
+	<address>Taipei, Taiwan, ROC<lb/></address>
+
+	<phone>(phone: 886-2-23638146; fax: 886-2-23636359; </phone>
+
+	<email>e-mail: yhkuo@ccms.ntu.edu.tw)<lb/></email>
+
+	<div type="abstract">Two dimeric monoterpenes obtusal A and B, and two dimeric diterpenes obtusanol A and B, along with<lb/> (À)-(S)-citronellol, (À)-(S)-citronellic acid, ()-borneol, ()-sugiol, and (À)-6,12-dihydroxyabieta-5,8,11,13-<lb/>tetraen-7-one, have been isolated from the heartwood of Chamaecyparis obtusa var. formosana and were<lb/> characterized by spectroscopic means, including 2D-NMR techniques and chemical methods. Synthesis of (À)-<lb/>obtusal A and ()-obtusal B were carried out.<lb/> </div>
+
+	<div type="introduction">1. Introduction. ± Among seven species, only two species of Chamaecyparis<lb/> (Cupressaceae) are indigenous to Taiwan. C. formosensis and C. obtusa var. formosana<lb/> (Taiwan hinoki) are important building materials and found in the central mountains of<lb/> Taiwan at 1300 ± 2800 m above sea level. The C. obtusa var. formosana possesses a high<lb/> resistance against termites and can live over 1000 years. Its timber is yellow-red with a<lb/> distinguished purple-pink streak together with a huge body. Based on the above<lb/> features, the value of C. obtusa var. formosana is higher than C. formosensis. In previous<lb/> papers on chemical studies of the heartwood of C. obtusa var. formosana, we reported<lb/> the structural elucidation of novel diterpenes and lignans [1 ± 4]. Further detailed re-<lb/>investigation of the same extract from the heartwood of this plant yielded two new<lb/> dimeric monoterpenes, obtusal A (1) and B (2), and two new dimeric diterpenes,<lb/> obtusanol A (3) and B (4), together with (À)-citronellol (5) [5], (À)-citronellic acid (6)<lb/> [6], ()-borneol (7) [7], ()-sugiol (8) [8], and (À)-6,12-dihydroxyabieta-5,8,11,13-<lb/>tetraen-7-one (9) [8]. The structures of these new dimeric compounds were elucidated<lb/> on the basis of the spectral evidence and chemical methods. Optically pure (À)-obtusal<lb/> A (1) and ()-obtusal B (2) were synthesized from (À)-citronellol (5), (À)-citronellic<lb/> acid (6), and ()-borneol (7).</div>
+
+		</front>
+	</text>
+</tei>

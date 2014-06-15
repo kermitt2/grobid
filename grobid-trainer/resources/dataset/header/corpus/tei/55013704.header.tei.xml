@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013704"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Home @BULLET Tips @BULLET Articles @BULLET Forums<lb/></note>
+
+	<docTitle>
+	<titlePart>Tips for the iTunes Library<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">Customizing Your Columns<lb/> You can specify w hich columns of information iTunes displays in its w indow s--to remove<lb/> columns you never use or to add ones that iTunes normally doesn&apos;t display. One w ay is by<lb/> using the Edit menu&apos;s View Options command. Here&apos;s an easier w ay: Control-click on any<lb/> column heading, and uncheck or check columns in the shortcut menu.<lb/> You can also use the shortcut menu to automatically resize columns to fit the longest item in<lb/> each one. You can also change the order of the columns themselves, moving them left and<lb/> right to suit your tastes. To move a column, click on its heading and then drag left or right.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013059"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>PHYTOTHERAPY RESEARCH, VOL. 10.3 13-3 16 ( 1996)<lb/></reference>
+
+	<docTitle>
+	<titlePart>Laboratory Evaluation of a Eucalyptus-based<lb/> Repellent against Four Biting Arthropods<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>J. K. Trigg* and N. Hill<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Medical Parasitology, London School of Hygiene and Tropical Medicine,</affiliation>
+	</byline>
+
+	<address>Keppel Street, London WClE 7HT, UK<lb/></address>
+
+	<div type="abstract">An evaluation of a new plant-based biting insect repellent (PMD) with the princial active ingredient p-menthane-<lb/>3,S-diol is presented. Laboratory trials testing 50% active ingredient formulations of the repellent on a human<lb/> forearm show good repellency against the malaria vector Anopheles gambiue Giles S.S. with an average ED, value<lb/> of 0.68 pL/cm2 and effective protection from biting for around 5 h. These results compare favourably with a 20%<lb/> deet product, (ED, value of 0.48 pL/cm2 with 5 h protection), and are far superior to the best known existing<lb/> plant-based product, citronella (ED, value of 1.37 kLlcm&apos; and 2 h protection). PMD was also found to give total<lb/> protection against the biting midge, Culicoides vuriipennis Coquillett, for at least 6 h at 035 kL/cm2. When<lb/> evaluated against the deer tick, Ixodes ricinis L., attachment and subsequent feeding of I. ricinis nymphs was<lb/> significantly reduced on rabbit ears treated with 0.36 kL/cm* of PMD. Against the stable fly, Stomoxys calcifruns<lb/> L, an application of 0.5 mL PMD to a human forearm reduced biting to 6% of the control biting level. It is<lb/> concluded that PMD is a broad spectrum repellent with considerable potential as means of personal protection<lb/> against nuisance biting and insect-borne disease.<lb/></div>
+
+		</front>
+	</text>
+</tei>

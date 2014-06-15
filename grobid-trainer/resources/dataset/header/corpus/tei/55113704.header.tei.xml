@@ -1,0 +1,69 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55113704"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Building High-level Features<lb/> Using Large Scale Unsupervised Learning<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Quoc V. Le<lb/></docAuthor>
+	</byline>
+
+	<email>quocle@cs.stanford.edu<lb/></email>
+
+	<byline>
+	<docAuthor>Marc&apos;Aurelio Ranzato<lb/></docAuthor>
+	</byline>
+
+	<email>ranzato@google.com<lb/></email>
+
+	<byline>
+	<docAuthor>Rajat Monga<lb/></docAuthor>
+	</byline>
+
+	<email>rajatmonga@google.com<lb/></email>
+
+	<byline>
+	<docAuthor>Matthieu Devin<lb/></docAuthor>
+	</byline>
+
+	<email>mdevin@google.com<lb/></email>
+
+	<byline>
+	<docAuthor>Kai Chen<lb/></docAuthor>
+	</byline>
+
+	<email>kaichen@google.com<lb/></email>
+
+	<byline>
+	<docAuthor>Greg S. Corrado<lb/></docAuthor>
+	</byline>
+
+	<email>gcorrado@google.com<lb/></email>
+
+	<byline>
+	<docAuthor>Jeff Dean<lb/></docAuthor>
+	</byline>
+
+	<email>jeff@google.com<lb/></email>
+
+	<byline>
+	<docAuthor>Andrew Y. Ng<lb/></docAuthor>
+	</byline>
+
+	<email>ang@cs.stanford.edu<lb/></email>
+
+	<div type="abstract">Abstract<lb/> We consider the problem of building high-<lb/>level, class-specific feature detectors from<lb/> only unlabeled data. For example, is it pos-<lb/>sible to learn a face detector using only unla-<lb/>beled images? To answer this, we train a 9-<lb/>layered locally connected sparse autoencoder<lb/> with pooling and local contrast normalization<lb/> on a large dataset of images (the model has<lb/> 1 billion connections, the dataset has 10 mil-<lb/>lion 200x200 pixel images downloaded from<lb/> the Internet). We train this network using<lb/> model parallelism and asynchronous SGD on<lb/> a cluster with 1,000 machines (16,000 cores)<lb/> for three days. Contrary to what appears to<lb/> be a widely-held intuition, our experimental<lb/> results reveal that it is possible to train a face<lb/> detector without having to label images as<lb/> containing a face or not. Control experiments<lb/> show that this feature detector is robust not<lb/> only to translation but also to scaling and<lb/> out-of-plane rotation. We also find that the<lb/> same network is sensitive to other high-level<lb/> concepts such as cat faces and human bod-<lb/>ies. Starting with these learned features, we<lb/> trained our network to obtain 15.8% accu-<lb/>racy in recognizing 22,000 object categories<lb/> from ImageNet, a leap of 70% relative im-<lb/>provement over the previous state-of-the-art.<lb/></div>
+
+	<reference>Appearing in Proceedings of the 29<lb/> th International Confer-<lb/>ence on Machine Learning, Edinburgh, Scotland, UK, 2012.<lb/></reference>
+
+	<note type="copyright">Copyright 2012 by the author(s)/owner(s).<lb/></note>
+
+		</front>
+	</text>
+</tei>

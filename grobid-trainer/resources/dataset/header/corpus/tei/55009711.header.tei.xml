@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009711"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Home About Awards &amp; Press Contact<lb/></note>
+
+	<docTitle>
+	<titlePart>Tea-infused Hot Cocoa Recipe<lb/></titlePart>
+	</docTitle>
+
+	<date>Monday, December 20, 2010<lb/></date>
+
+		</front>
+	</text>
+</tei>

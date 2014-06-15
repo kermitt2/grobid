@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009459"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>HIGH HOMOGENEITY OF MAGE, BAGE, GAGE, TYROSINASE<lb/> AND MELAN-A/MART-1 GENE EXPRESSION IN CLUSTERS<lb/> OF MULTIPLE SIMULTANEOUS METASTASES OF HUMAN<lb/> MELANOMA: IMPLICATIONS FOR PROTOCOL DESIGN<lb/> OF THERAPEUTIC ANTIGEN-SPECIFIC VACCINATION STRATEGIES<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Piero DALERBA 1 , Axel RICCI 1 , Vincenzo RUSSO 1 , Donata RIGATTI 1 , Maria Rita NICOTRA 2 , Marcella MOTTOLESE 3 , Claudio BORDIGNON 1 ,<lb/> Pier Giorgio NATALI 3 and Catia TRAVERSARI 1 *<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Telethon Institute of Gene Therapy (TIGET) and Gene Therapy Program, Istituto Scientifico H.S. Raffaele,</affiliation>
+	</byline>
+
+	<address>Milan, Italy<lb/></address>
+
+	<byline>
+	<affiliation>2 Istituto di Tecnologie Biomediche, CNR,</affiliation>
+	</byline>
+
+	<address>Rome, Italy<lb/></address>
+
+	<byline>
+	<affiliation>3 Istituto dei Tumori Regina Elena,</affiliation>
+	</byline>
+
+	<address>Rome, Italy<lb/></address>
+
+	<div type="abstract">Human melanoma cells express several antigens which are<lb/> recognized by autologous and specific CTL clones in associa-<lb/>tion with HLA-class-I molecules. Many of these antigens<lb/> represent suitable targets for tumor immunotherapy, since<lb/> their expression in human melanoma cells is common and<lb/> highly specific. In order to achieve real clinical success with<lb/> therapeutic vaccination strategies, one important require-<lb/>ment is the expression of the target antigen by all the tumor<lb/> lesions of a patient. We have studied this issue by assessing,<lb/> through an RT-PCR approach, the expression of MAGE-1,<lb/> MAGE-2, MAGE-3, BAGE, GAGE-1/2, Tyrosinase and Melan-A/<lb/> MART-1 genes in 17 clusters of simultaneous in-transit or<lb/> regional lymph-node metastases collected from 15 stage-III<lb/> and 1 stage-IV (AJCC/UICC pTNM system) melanoma pa-<lb/>tients. In 14 out of 17 clusters of simultaneous metastatic<lb/> lesions (82%), the homogeneity in the pattern of gene expres-<lb/>sion within the cluster was complete. Heterogeneity within<lb/> the same cluster was observed in only 3 out of 17 clusters<lb/> (18%) and represented only minor features. Our data reveal<lb/> that, in AJCC-stage-III melanoma patients, different but<lb/> simultaneous metastatic lesions express the same pattern of<lb/> antigen-coding genes. These observations have 2 main clinical<lb/> implications: (i) the antigenic characterization of one single<lb/> and easily accessible lesion allows identification of optimal<lb/> targets for an active antigen-specific immunotherapy treat-<lb/>ment; (ii) almost all the metastatic lesions are expected to be<lb/> hit by the immune response eventually induced against the<lb/> tumor antigen. Moreover, these data suggest that active<lb/> specific immunotherapy directed against MAGE-1, MAGE-3,<lb/> BAGE, GAGE-1/2, Melan-A/MART-1 and Tyrosinase antigens<lb/> could be exploited as an adjuvant treatment to surgery in<lb/> high-risk AJCC-stage-III-melanoma patients. </div>
+	
+	<reference>Int.	J. Cancer<lb/> 77:200–204, 1998.<lb/></reference>
+
+	<note type="copyright">&#169; 1998 Wiley-Liss, Inc.</note>
+
+		</front>
+	</text>
+</tei>

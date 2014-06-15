@@ -1,0 +1,65 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55115055"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>CHI 2005 ‫׀‬ PAPERS: Pen-Based Interfaces<lb/> April 2–7 ‫׀‬ Portland, Oregon, USA<lb/></reference>
+
+	<docTitle>
+	<titlePart>Experimental Analysis of Mode Switching Techniques in<lb/> Pen-based User Interfaces<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Yang Li<lb/> 1<lb/> Ken Hinckley<lb/> 2<lb/> Zhiwei Guan<lb/> 3<lb/> James A. Landay<lb/> 4, 5<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Group for User Interface Research<lb/> Computer Science Division, EECS<lb/> University of California, Berkeley<lb/></affiliation>
+	</byline>
+
+	<address>Berkeley, CA 94720-1776<lb/></address>
+
+	<email>yangli@cs.berkeley.edu<lb/></email>
+
+	<byline>
+	<affiliation>2 Microsoft Research<lb/></affiliation>
+	</byline>
+
+	<address>One Microsoft Way<lb/> Redmond, WA 98052<lb/></address>
+
+	<email>kenh@microsoft.com<lb/></email>
+
+	<byline>
+	<affiliation>3 Department of Technical Communication<lb/> University of Washington<lb/></affiliation>
+	</byline>
+
+	<address>Seattle, WA 98195-2195<lb/></address>
+
+	<email>zguan@u.washington.edu<lb/></email>
+
+	<byline>
+	<affiliation>4 DUB Group<lb/> Computer Science and Engineering<lb/> University of Washington<lb/></affiliation>
+	</byline>
+
+	<address>Seattle, WA 98195-2350<lb/></address>
+
+	<email>landay@cs.washington.edu<lb/></email>
+
+	<byline>
+	<affiliation>5 Intel Research Seattle<lb/></affiliation>
+	</byline>
+
+	<address>1100 NE 45th Street<lb/> Suite 600<lb/> Seattle, WA 98105<lb/></address>
+
+	<email>james.a.landay@intel.com<lb/></email>
+
+	<div type="abstract">Abstract Inking and gesturing are two central tasks in pen-based user<lb/> interfaces. Switching between modes for entry of<lb/> uninterpreted ink and entry of gestures is required by many<lb/> pen-based user interfaces. Without an appropriate mode<lb/> switching technique, pen-based interactions in such<lb/> situations may be inefficient and cumbersome. In this<lb/> paper, we investigate five techniques for switching between<lb/> ink and gesture modes in pen interfaces, including a pen-<lb/>pressure based mode switching technique that allows<lb/> implicit mode transition. A quantitative experimental study<lb/> was conducted to evaluate the performance of these<lb/> techniques. The results suggest that pressing a button with<lb/> the non-preferred hand offers the fastest performance,<lb/> while the technique of holding the pen still is significantly<lb/> slower and more prone to error than the other techniques.<lb/> Pressure, while promising, did not perform as well as the<lb/> non-preferred hand button with our current implementation.<lb/></div>
+
+	<keyword>Categories &amp; Subject Descriptors: H5.2. [User<lb/> Interfaces]: Interaction styles, I.3.6 [Methodology and<lb/> Techniques]: Interaction techniques<lb/> General Terms: Design, Experimentation, Human<lb/> Factors, Performance.<lb/> Keywords: Pen interfaces, mode switching, mode errors,<lb/> ink, gestures.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

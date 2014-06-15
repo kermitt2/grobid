@@ -1,0 +1,63 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000501"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Development of Nanofiber-Covered Stents Using Electrospinning:<lb/> In Vitro and Acute Phase In Vivo Experiments<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Keita Kuraishi,<lb/> 1 Hiroo Iwata,<lb/> 2 Shigeyuki Nakano,<lb/> 3 Shinichiro Kubota,<lb/> 4 Hiroyuki Tonami,<lb/> 2<lb/> Mitsuaki Toda,<lb/> 2 Naoki Toma,<lb/> 1 Satoshi Matsushima,<lb/> 1 Kazuhide Hamada,<lb/> 1 Satoru Ogawa,<lb/> 5 Waro Taki<lb/> 1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Department of Neurosurgery, Mie University,</affiliation>
+	</byline>
+
+	<address>Mie, Japan<lb/></address>
+
+	<byline>
+	<affiliation>2 Institute for Frontier Medical Sciences, Kyoto University,</affiliation>
+	</byline>
+
+	<address>Kyoto, Japan<lb/></address>
+
+	<byline>
+	<affiliation>3 Hyogo Prefectural Institute of Technology, Technical Support Center for Textiles Industries,<lb/></affiliation>
+	</byline>
+
+	<address>Nishiwaki, Hyogo, Japan<lb/></address>
+
+	<byline>
+	<affiliation>4 Industrial Technology Center of Okayama Prefecture, Department of Mechanical Engineering,</affiliation>
+	</byline>
+
+	<address>Okayama, Japan<lb/></address>
+
+	<byline>
+	<affiliation>5 Electron Microscopy Research Center, Mie University,</affiliation>
+	</byline>
+
+	<address>Mie, Japan<lb/></address>
+
+	<note type="submission">Received 28 November 2007; revised 4 April 2008; accepted 9 April 2008<lb/></note>
+
+	<date>Published online 19 August 2008</date>
+	
+	<reference> in Wiley InterScience (www.interscience.wiley.com). </reference>
+	
+	<idno type="DOI">DOI: 10.1002/jbm.b.31173<lb/></idno>
+
+	<div type="abstract">Abstract: There are some technical difficulties in treating for a broad necked aneurysm and<lb/> a higher incidence of recurrence. Because of these drawbacks, more innovative techniques for<lb/> superior endovascular reconstructive treatment are required. We developed a novel covered<lb/> stent employing electrospinning to deposit fine polyurethane (PU) fibers onto stents. An<lb/> in vitro water leak test was designed and applied prior to animal testing to estimate the<lb/> performance of covered stents and to determine the appropriate amount of PU fibers on a<lb/> stent. Two tenths of a milligram of PU fibers proved to be sufficient to prevent water leakage.<lb/> Then, the efficacy of the covered stents to that of bare stents was compared using 10 rabbits in<lb/> which model aneurysms had been formed at the right common carotid artery by the elastase<lb/> method. Angiographic evaluation on day 1 posttreatment (acute phase) revealed complete<lb/> occlusion of the aneurysms and the patency of the parent arteries in animals treated with<lb/> covered stents. At 10 days poststenting (subacute phase), the aneurysm neck was completely<lb/> covered with neointimal layer as shown by scanning electron microscopic examination. The<lb/> PU-covered stent holds promise as a device for treating cerebral aneurysms. </div>
+
+	<note type="copyright">&#169; 2008 Wiley<lb/> Periodicals, Inc. J Biomed Mater Res Part B: Appl Biomater 88B: 230–239, 2009<lb/></note>
+
+	<keyword>Keywords: stents; fiber; intravascular; polyurethane(s)<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

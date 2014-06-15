@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009402"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>JOURNAL OF VIROLOGY, Sept. 1995, p. 5650–5658<lb/> Vol. 69, No. 9<lb/></reference>
+
+	<idno>0022-538X/95/$04.00ϩ0<lb/></idno>
+
+	<note type="copyright">Copyright &#169; 1995, American Society for Microbiology<lb/></note>
+
+	<docTitle>
+	<titlePart>BHK Cell Proteins That Bind to the 3Ј Stem-Loop Structure of<lb/> the West Nile Virus Genome RNA<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>JERRY L. BLACKWELL AND MARGO A. BRINTON*<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Biology, Georgia State University,</affiliation>
+	</byline>
+
+	<address>Atlanta, Georgia 30303<lb/></address>
+
+	<note type="submission">Received 12 September 1994/Accepted 22 May 1995<lb/></note>
+
+	<div type="abstract">The first 83 3؅ nucleotides of the genome RNA of the flavivirus West Nile encephalitis virus (WNV) form a<lb/> stable stem-loop (SL) structure which is followed in the genome by a smaller SL. These 3؅ structures are highly<lb/> conserved among divergent flaviviruses, suggesting that they may function as cis-acting signals for RNA<lb/> replication and as such might specifically bind to cellular or viral proteins. Cellular proteins from uninfected<lb/> and WNV-infected BHK-21 S100 cytoplasmic extracts formed three distinct complexes with the WNV plus-<lb/>strand 3؅ SL [(؉)3؅SL] RNA in a gel mobility shift assay. Subsequent competitor gel shift analyses showed that<lb/> two of these RNA-protein complexes, complexes 1 and 2, contained cell proteins that specifically bound to the<lb/> WNV (؉)3؅SL RNA. UV-induced cross-linking and Northwestern blotting analyses detected WNV (؉)3؅SL<lb/> RNA-binding proteins of 56, 84, and 105 kDa. When the S100 cytoplasmic extracts were partially purified by<lb/> ion-exchange chromatography, a complex that comigrated with complex 1 was detected in fraction 19, while a<lb/> complex that comigrated with complex 2 was detected in fraction 17. UV-induced cross-linking experiments<lb/> indicated that an 84-kDa cell protein in fraction 17 and a 105-kDa protein in fraction 19 bound specifically to<lb/> the WNV (؉)3؅SL RNA. In addition to binding to the (؉)3؅SL RNA, the 105-kDa protein bound to the SL<lb/> structure located at the 3؅ end of the WNV minus-strand RNA. Initial mapping studies indicated that the 84-<lb/>and 105-kDa proteins bind to different regions of the (؉)3؅SL RNA. The 3؅-terminal SL RNA of another<lb/> flavivirus, dengue virus type 3, specifically competed with the WNV (؉)3؅SL RNA in gel shift assays, suggesting<lb/> that the host proteins identified in this study are flavivirus specific.<lb/></div>
+
+		</front>
+	</text>
+</tei>

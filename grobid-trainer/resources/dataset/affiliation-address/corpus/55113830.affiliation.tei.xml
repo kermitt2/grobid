@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="institution">Universidad Politecnica de Madrid</orgName>
+							<lb/>
+							<address>
+								<postCode>28040</postCode>
+								<settlement>Madrid</settlement>,
+								<country>Spain</country>
+							</address>
+						</affiliation>
+						<affiliation>		
+							<orgName type="institution">SENER</orgName>
+							<lb/>
+							<address>
+								<postCode>28760</postCode> 
+								<settlement>Tres Cantos</settlement>,
+								<country>Spain</country>
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="institution">ADIF</orgName>
+							<lb/>
+							<address>
+								<postCode>28003</postCode>
+								<settlement>Madrid</settlement>,
+								<country>Spain</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

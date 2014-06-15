@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Derk</forename>
+								<surname>ten Berge</surname>
+							<lb/>
+								<marker>1,2,4</marker>,
+							</persName>
+							<persName>
+								<forename>Dorota</forename>
+								<surname>Kurek</surname>
+							<lb/>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>Tim</forename>
+								<surname>Blauwkamp</surname>
+							<lb/>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>Wouter</forename>
+								<surname>Koole</surname>
+							<lb/>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>Alex</forename>
+								<surname>Maas</surname>
+							<lb/>
+								<marker>3</marker> ,
+							</persName>
+							<persName>
+								<forename>Elif</forename>
+								<surname>Eroglu</surname>
+							<lb/>
+								<marker>2</marker>,
+							</persName>
+							<persName>
+								<forename>Ronald</forename>
+								<middlename>K</middlename> .
+								<surname>Siu</surname>
+								<marker>2</marker> and
+							</persName>
+							<persName>
+								<forename>Roel</forename>
+								<surname>Nusse</surname>
+								<marker>2</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

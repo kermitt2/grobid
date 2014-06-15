@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009928"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">–1–<lb/></note>
+
+	<docTitle>
+	<titlePart>Load Tap Changing Control<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>J. H. Harlow<lb/> </docAuthor>
+	</byline>
+
+	<note type="other">Consultant to</note>
+
+	<byline>
+	<affiliation>Beckwith Electric Company<lb/></affiliation>
+	</byline>
+
+	<address>6190-118th Ave. North, Largo, FL 34643-3724, USA<lb/></address>
+
+	<div type="abstract">ABSTRACT<lb/> The control used for the tapchanger of an LTC transformer or<lb/> step-voltage regulator is a prime illustration of electronic tech-<lb/>nology advances applied to the power industry. Electro-mechanical<lb/> (balance-beam and induction disc), discrete static, integrated circuit<lb/> static and now digital designs have evolved over the past forty<lb/> years. This increased product sophistication has made possible<lb/> many features beyond the primary objective of simple raise-lower<lb/> commands in response to the measured secondary voltage.<lb/> </div>
+
+	<div type="introduction">BASIC CONTROL</div>
+
+		</front>
+	</text>
+</tei>

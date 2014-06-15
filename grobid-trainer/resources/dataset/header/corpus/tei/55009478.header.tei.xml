@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009478"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Wood Science and Technology 32 (1998) 421-427</reference>
+
+	<note type="copyright">© Springer-Verlag 1998<lb/></note>
+
+	<note type="other">echnical not(<lb/></note>
+
+	<docTitle>
+	<titlePart>THz-imaging: a new method for density<lb/> mapping of wood<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>M. Koch, S. Hunsche, P. Schuacher, M. C. Nuss, J. Feldmann, J. Fromm<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Summary This paper presents a new technique for fast and non-intrusive density<lb/> mapping of wood based on far-infrared spectroscopy. The transmission of a piece<lb/> of beech 1.7 mm thick is investigated between 0.1 and 2.5 THz. In this spectral<lb/> range we find wood to be fairly transparent, but density inhomogeneities and<lb/> structural details such as annual rings become visible in the transmission profile.<lb/> The measured absorption correlates well with the wood density independently<lb/> obtained by the gravitometric-volumetric method. Thus it finally becomes<lb/> possible to transform the THz images into 2-dimensional density maps.<lb/></div>
+
+		</front>
+	</text>
+</tei>

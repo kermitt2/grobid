@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010400"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Industrial Crops and Products 16 (2002) 119– 127<lb/></reference>
+
+	<docTitle>
+	<titlePart>Physical properties of saturated estolides and their<lb/> 2-ethylhexyl esters<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Steven C. Cermak *, Terry A. Isbell<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>New Crops and Processing Technology Research, National Center for Agricultural Utilization Research,<lb/> Agricultural Research Ser6ice-USDA,</affiliation>
+	</byline>
+
+	<address>1815 N. Uni6ersity St., Peoria, IL 61604, USA<lb/></address>
+
+	<note type="submission">Received 26 November 2001; accepted 5 March 2002<lb/></note>
+
+	<div type="abstract">Abstract<lb/> Biodegradable, vegetable oil-based lubricants must have better low temperature properties before they can become<lb/> widely acceptable in the marketplace. These low temperature properties are usually measured as the material&apos;s pour<lb/> point, the minimum temperature at which a material will still pour. Viscosity and viscosity index also provide<lb/> information about a fluid&apos;s properties where a high viscosity index denotes that a fluid has little viscosity change over<lb/> a wide temperature range. Oleic acid and a series of saturated fatty acids, butyric through stearic, were treated with<lb/> 0.4 equivalents of perchloric acid at either 45 or 55 °C to produce complex estolides, dimers and tetramers of fatty<lb/> acids linked through the double bond and carbonyl group. Yields varied between 45 and 65% after Kugelrohr<lb/> distillation. The estolide number (EN), the average number of fatty acid units added to a base fatty acid, varied with<lb/> reaction temperature as well as with the change in saturated fatty acids. The saturate-capped, oleic estolides were<lb/> esterified with 2-ethylhexanol to obtain high yields of the corresponding ester. As the chain length of saturate capping<lb/> material increased from C-4 to C-10, the low temperature performance of the estolide 2-ethylhexyl esters, namely<lb/> pour point, decreased to −39 °C. The other mid-chain, saturated estolide 2-ethylhexyl esters C-6 through C-14 also<lb/> had superior low temperature properties compared with their competitors; i.e. soy-based, synthetic-based and<lb/> petroleum-based oils. The amount of oligomerization (EN) had an important role with the viscosities. Viscosity<lb/> increased with higher oligomerization and the free acid estolides were generally several hundred centistokes (cSt) more<lb/> viscous than the corresponding esters. The viscosity index ranged from 122 to 155 for the free acids estolides while<lb/> the estolide 2-ethylhexyl esters had slightly higher indices which ranged from 172 to 196. These new estolide esters<lb/> displayed far superior low temperature properties, and were more suitable as a base stock for biodegradable<lb/> lubricants and functional fluids than current commercial materials.</div>
+
+	<note type="copyright">© 2002 Published by Elsevier Science B.V.<lb/></note>
+
+	<keyword>Keywords: Estolides; Oleic; Pour point; Cloud point; Viscosity; Saturated fatty acids; Low temperature storage</keyword>
+
+		</front>
+	</text>
+</tei>

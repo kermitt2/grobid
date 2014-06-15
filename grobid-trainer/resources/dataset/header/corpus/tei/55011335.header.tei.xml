@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011335"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Design, Synthesis and Antiproliferative Activity of Tripentones:<lb/> A New Series of Antitubulin Agents<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Vincent Lisowski,<lb/> a Ceile Enguehard,<lb/> b Jean-Charles Lancelot,<lb/> a<lb/> Daniel-Henri Caignard,<lb/> c Stehanie Lambel,<lb/> d Stehane Leonce,<lb/> d<lb/> Alain Pierre,<lb/> d Ghanem Atassi,<lb/> d Pierre Renard<lb/> c and Sylvain Rault<lb/> a, * <lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a Centre d&apos;Etudes et de Recherche sur le Me´dicament de Normandie, UFR des Sciences Pharmaceutiques,<lb/></affiliation>
+	</byline>
+
+	<address>1, rue Vaube´nard, 14032 Caen Cedex, France<lb/></address>
+
+	<byline>
+	<affiliation>b UFR des Sciences Pharmaceutiques,</affiliation>
+	</byline>
+
+	<address>31 avenue Monge 37200 Tours, France<lb/></address>
+
+	<byline>
+	<affiliation>c ADIR,</affiliation>
+	</byline>
+
+	<address>1, rue Carle He´bert 92415 Courbevoie Cedex, France<lb/></address>
+
+	<byline>
+	<affiliation>d Institut de Recherche Servier,</affiliation>
+	</byline>
+
+	<address>11 rue des Moulineaux, 92150 Suresnes, France<lb/></address>
+
+	<note type="submission">Received 4 April 2001; revised 28 May 2001; accepted 7 June 2001<lb/></note>
+
+	<div type="abstract">Abstract—Structure–activity relationship studies of a new series of tripentones (thieno[2,3-b]pyrrolizin-8-ones), led us to prepare<lb/> several derivatives with antiproliferative activities. The most promising 3-(3-hydroxy-4-methoxyphenyl)thieno[2,3-b]pyrrolizin-8-<lb/>one 20 (leukemia L1210, IC 50 =15 nM) was shown to be a potent inhibitor of tubulin polymerization. #</div>
+
+	<note type="copyright">&#169;2001 Elsevier Science Ltd.<lb/> All rights reserved.<lb/></note>
+
+		</front>
+	</text>
+</tei>

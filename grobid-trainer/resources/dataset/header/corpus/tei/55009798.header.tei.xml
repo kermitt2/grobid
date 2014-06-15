@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009798"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">GWC-13<lb/>Purdue Extension<lb/> 1-888-EXT-INFO<lb/></note>
+
+	<docTitle>
+	<titlePart>The Glyphosate, Weeds, and Crops Series<lb/> The Glyphosate, Weeds, and Crops Series<lb/> Biology and<lb/> Management of<lb/> Waterhemp<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Dawn Nordby,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University of Illinois<lb/></affiliation>
+	</byline>
+
+	<byline>
+	<docAuthor>Bob Hartzler,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Iowa State University<lb/></affiliation>
+	</byline>
+
+	<byline>
+	<docAuthor>Kevin Bradley,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University of Missouri<lb/></affiliation>
+	</byline>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Shigeru</forename>
+								<surname>Shimada</surname>,
+							</persName>
+							<persName>
+								<forename>Andrei</forename>
+								<middlename>S</middlename>.
+								<surname>Batsanov</surname>,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Judith</forename>
+								<middlename>A</middlename> .
+								<middlename>K</middlename> .
+								<surname>Howard</surname> ,and
+							</persName>
+							<persName>
+								<forename>Todd</forename>
+								<middlename>B</middlename> .
+								<surname>Marder</surname>
+								<marker>*</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

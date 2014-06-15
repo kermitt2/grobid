@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">Chemical Process Technology and Chemical Process Research</orgName>,
+							<orgName type="institution">Pharmaceutical Research Institute</orgName>,							
+							<address>
+								<addrLine>Bristol-Myers Squibb</addrLine>,
+								<lb/>
+								<postBox>P.O. Box 191</postBox>,
+								<settlement>New Brunswick</settlement>,
+								<country>New Jersey</country>
+								<postCode>08903-0191</postCode>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

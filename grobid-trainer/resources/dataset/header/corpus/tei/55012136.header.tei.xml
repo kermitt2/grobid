@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012136"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Nylon 6 Polymerization in the Solid State<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>REINOUD J. GAYMANS, JOHN AMIRTHARAJ, and HENK KAMP,<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Twente University of Technology, Dept. of Chemical Technology, Polymer<lb/> Laboratories,</affiliation>
+	</byline>
+
+	<address>7500 AE Enschede, The Netherlands<lb/></address>
+
+	<div type="abstract">Synopsis<lb/> The postcondensation of nylon 6 in the solid state was studied. The reactions were carried out<lb/> on fine powder in a fluidized bed reactor in a stream of dry nitrogen in the temperature range<lb/> 110-205°C and during 1-24 h. The solid-state polymerization (SSP) did not follow melt kinetics,<lb/> but was found to be limited by the diffusion of the autocatalyzing acid chain end group. Factors<lb/> thought to influence SSP were studied, e.g., heat treatment, starting molecular weight, and remelting.<lb/> Surprisingly, heat treatment had little effect, but the starting molecular weight had a strong effect<lb/> on the reaction rate. The higher the starting molecular weight, the faster the reaction. This could<lb/> be explained as a changing concentration distribution of the reactive groups in the solid state on<lb/> SSP. The kinetics of the SSP had more than one region, and the rate of reaction for conversions<lb/> of over 30% could be expressed as -dc/dt = k(c/t), where k is a dimensionless constant independent<lb/> of temperature with a value of 0.28. The integrated form has the form -ln(c/co) = k ln(t/~), where<lb/> co is the acid end-group concentration at the start, t is the reaction time, and 7 is the induction time.<lb/> The value of T is both dependent on the starting concentration co and the reaction temperature and<lb/> has an activation energy of 105 kJ/mol.<lb/></div>
+
+		</front>
+	</text>
+</tei>

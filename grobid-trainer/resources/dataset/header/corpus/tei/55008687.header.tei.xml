@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008687"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Molecular mechanisms of porcine circovirus 2 replication and pathogenesis<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>By<lb/> Nicole McKeown Juhan<lb/></docAuthor>
+	</byline>
+
+	<note type="other">Dissertation submitted to the </note>
+
+	<byline>
+	<affiliation>Faculty of Virginia Polytechnic Institute and State University</affiliation>
+	</byline>
+
+	<note type="degree">in<lb/> partial fulfillment of the requirements for the degree of<lb/>Doctorate of Philosophy<lb/> in Biomedical and Veterinary Sciences<lb/> </note>
+	
+	<note>Dr. X.J. Meng, chair<lb/> Dr. S.M Boyle<lb/> Dr. L.A. Eng<lb/> Dr. W.R. Huckle<lb/> Dr. S.A. Tolin<lb/> Dr. T.E. Toth<lb/>
+	</note>
+
+	<date>April 26, 2007<lb/></date>
+
+	<address>Blacksburg, Virginia<lb/></address>
+
+	<keyword>Keywords and abbreviations: Porcine circovirus, PCV2, Postweaning multisystemic wasting<lb/> syndrome, PMWS, TT virus, TTV, virology, molecular biology</keyword>
+
+		</front>
+	</text>
+</tei>

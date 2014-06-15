@@ -1,0 +1,62 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013016"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<docAuthor>L Hondeghem and BG Katzung<lb/> </docAuthor>
+	</byline>
+	
+	<docTitle>
+	<titlePart>lidocaine on myocardial conduction<lb/> Test of a model of antiarrhythmic drug action. Effects of quinidine and<lb/>
+	</titlePart>
+	</docTitle>
+
+	<idno>ISSN: 1524-4539<lb/></idno>
+
+	<note type="copyright">Copyright © 1980 American Heart Association. All rights reserved.</note>
+
+	<idno>Print ISSN: 0009-7322. Online<lb/></idno>
+
+	<address>72514<lb/></address>
+
+	<note type="other">Circulation is published by the</note>
+
+	<byline>
+	<affiliation>American Heart Association.</affiliation>
+	</byline>
+
+	<address>7272 Greenville Avenue, Dallas, TX<lb/></address>
+
+	<idno type="DOI">doi: 10.1161/01.CIR.61.6.1217<lb/> </idno>
+
+	<reference>1980, 61:1217-1224<lb/> Circulation<lb/></reference>
+
+	<ptr type="web">http://circ.ahajournals.org/content/61/6/1217<lb/></ptr>
+
+	<note type="other">located on the World Wide Web at:<lb/> The online version of this article, along with updated information and services, is<lb/> http://www.lww.com/reprints<lb/></note>
+
+	<note type="other">Reprints: Information about reprints can be found online at<lb/> journalpermissions@lww.com<lb/> Fax: 410-528-8550. E-mail:<lb/> Kluwer Health, 351 West Camden Street, Baltimore, MD 21202-2436. Phone: 410-528-4050.<lb/> Permissions: Permissions &amp; Rights Desk, Lippincott Williams &amp; Wilkins, a division of Wolters<lb/> http://circ.ahajournals.org//subscriptions/<lb/> Subscriptions: Information about subscribing to Circulation is online at<lb/> at European Patent Office on</note>
+
+	<date>November 24, 2011<lb/></date>
+
+	<ptr type="web">http://circ.ahajournals.org/<lb/></ptr>
+
+	<note type="other">Downloaded from<lb/></note>
+
+	<docTitle>
+	<titlePart>Test of a Model<lb/> of Antiarrhythmic Drug Action<lb/> Effects of Quinidine and Lidocaine<lb/> on Myocardial Conduction<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>LUC HONDEGHEM, M.D., PH.D., AND BERTRAM G. KATZUNG, M.D., PH.D.<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">SUMMARY The effects of quinidine and lidocaine on the maximum upstroke velocity (Vmax) of the ven-<lb/>tricular myocardial action potential were compared with the effects predicted by a model over a wide range of<lb/> driving rates, rhythm disturbances and holding potentials. These rate-, rhythm-and voltage-dependent effects<lb/> were accurately predicted by the proposed model. The model was also able to predict several previously un-<lb/>documented properties of the drugs: 1) If lidocaine decreases Vmax of a pulse train, the steady state is reached<lb/> within a few action potentials. 2) The poststimulation recovery of Vmax in the presence of lidocaine or quinidine<lb/> can occur in a multiexponential fashion, if the membrane potential is kept at the potential where both the fast<lb/> (operating mainly at more negative membrane potentials) and the slow (operating at more positive potentials)<lb/> recovery processes are operative. 3) Hyperpolarization markedly attenuates the rate-dependent drug effects. 4)<lb/> Combinations of lidocaine and quinidine have a superadditive effect on the Vmax of early extrasystoles.<lb/></div>
+
+		</front>
+	</text>
+</tei>

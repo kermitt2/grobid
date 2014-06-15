@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei type="white-paper">
+	<teiHeader>
+		<fileDesc xml:id="55115257"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Anlagenbau Chemie<lb/>Pharma Ausrüster<lb/> ✔ ✔<lb/> ✔ ✔ ✔ ✔ ✔ ✔<lb/> Planer Betreiber Einkäufer Manager<lb/> ✔ ✔ ✔ ✔<lb/></note>
+	
+	<docTitle>
+	<titlePart>GUTE PLANUNG IST ALLES<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">Optimierte Produktionsanlagen In der chemischen Prozessindustrie spielen die thermische Verfahrenstech-<lb/>nik und damit entsprechende Systeme zur Wärmeübertragung eine wesentliche Rolle. Der Mischer-Wär-<lb/>meübertrager eignet sich sowohl für chemische Reaktionen mit Wärmetönung als auch für Temperiervorgän-<lb/>ge – Erwärmung oder Kühlung – von mittel-bis hochviskosen Flüssigkeiten.<lb/></div>
+
+		</front>
+	</text>
+</tei>

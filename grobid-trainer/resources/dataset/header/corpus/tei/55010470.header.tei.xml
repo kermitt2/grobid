@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010470"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>CHEMISTRY LETTERS, pp. 361-364, 1987. </reference>
+
+	<note type="copyright">&#169;<lb/>1987 The Chemical Society of Japan<lb/></note>
+
+	<docTitle>
+	<titlePart>Cytotoxic Squalene-Derived<lb/> Polyethers from<lb/> the Marine<lb/> Red Alga<lb/> Laurencia obtusa<lb/> (Hudson)<lb/> Lamouroux1)<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Teruaki SUZUKI,*<lb/> Satoshi TAKEDA,<lb/> Minoru SUZUKI,<lb/> Etsuro KUROSAWA,*<lb/> Arata KATOt<lb/> and Yoshihiko<lb/> IMANAKA<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Chemistry,<lb/> Faculty of Science,<lb/> Hokkaido University,<lb/></affiliation>
+	</byline>
+
+	<address>Sapporo 060<lb/></address>
+
+	<byline>
+	<affiliation>Central Research<lb/> Laboratories,<lb/></affiliation>
+	</byline>
+
+	<affiliation>Teijin Limited,<lb/> </affiliation>
+
+	<address>Hino,<lb/> Tokyo 191<lb/></address>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014750"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">1<lb/></note>
+
+	<docTitle>
+	<titlePart>DEVELOPMENT OF FLUORESCENT COATINGS FOR HIGH<lb/> TEMPERATURE AEROSPACE APPLICATIONS<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>W.A. Hollerman<lb/> *<lb/> , S.W. Allison<lb/> **<lb/> , D.L. Beshears<lb/> **<lb/> , R.F. Guidry<lb/> *<lb/> , T.J. Bencic<lb/> , C.R. Mercer<lb/> , J.I. Eldridge<lb/> , M.R. Cates<lb/> **<lb/> , P. Boudreaux<lb/> *<lb/> , and S.M. Goedeke<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>* Department of Physics, University of Louisiana at Lafayette,</affiliation>
+	</byline>
+
+	<address>P.O. Box 44210, Lafayette, LA 70504<lb/></address>
+
+	<byline>
+	<affiliation>**<lb/> Oak Ridge National Laboratory (ORNL), National Transportation Research Center (NTRC),</affiliation>
+	</byline>
+
+	<address>2360<lb/> Cherahala Blvd., MS-6472, Knoxville, TN 37932</address>
+
+	<byline>
+	<affiliation>Optical Instrumentation Technology Branch, NASA John H. Glenn Research Center at Lewis Field,</affiliation>
+	</byline>
+
+	<address>21000<lb/> Brookpark Road, Mailstop 77-1, Cleveland, OH 44135-3191</address>
+
+	<byline>
+	<affiliation>Environmental Durability Branch, NASA John H. Glenn Research Center at Lewis Field,</affiliation>
+	</byline>
+
+	<address>21000<lb/> Brookpark Road, Cleveland, OH 44135</address>
+
+	<byline>
+	<affiliation>Department of Mechanical Engineering, Tennessee Technological University,</affiliation>
+	</byline>
+
+	<address>Cookeville, TN 38505<lb/></address>
+
+	<div type="abstract">ABSTRACT<lb/> For many years, phosphor thermometry has been used for non-contact measurements in<lb/> hostile high temperature environments, including large blackbody radiation backgrounds,<lb/> vibration, rotation, fire/flame, pressure, or noise. Often these environments restrict the use of<lb/> more common thermocouples or infrared thermometric techniques. In particular, temperature<lb/> measurements inside jet turbines, rocket engines, or similar devices are especially amenable to<lb/> fluorescence techniques. Often the fluorescent materials are used as powders, either suspended<lb/> in binders and applied like paint or applied as high temperature sprays. These coatings will<lb/> quickly assume the same temperature as the surface to which they are applied. The temperature<lb/> dependence of fluorescent materials is a function of the base matrix atoms and a small quantity<lb/> of added activator or &quot;dopant&quot; ions. Often for high temperature applications, the selected<lb/> materials are refractory and include rare earth ions. Phosphors like Y 3 Al 5 O 12 (YAG) doped with<lb/> Eu, Dy, or Tm, Y 2 O 3 doped with Eu, or similar rare earth compounds, will survive high<lb/> temperatures and can be configured to emit light that changes rapidly in lifetime and intensity.<lb/> For example, fluorescence from YAG:Dy and YAG:Tm was recently observed at temperatures<lb/> above 1400 ºC at the Oak Ridge National Laboratory (ORNL) National Transportation Research<lb/> Center (NTRC) in Tennessee. This paper will give research results applicable to the use of<lb/> phosphors for thermometry purposes. Emphasis will be placed on using selected high<lb/> temperature phosphor paints as a heat flux gauge.<lb/></div>
+
+		</front>
+	</text>
+</tei>

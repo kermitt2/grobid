@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000760"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+
+	<note>Nickel titanium<lb/> </note>
+	
+	<note type ="page">1<lb/></note>
+	
+	<docTitle>
+	<titlePart> Nickel titanium<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">Nickel titanium, also known as nitinol, is a metal alloy of nickel and titanium, where the two elements are present<lb/> in roughly equal atomic percentages.<lb/> Nitinol alloys exhibit two closely related and unique properties: shape memory and superelasticity (also called<lb/> pseudoelasticity). Shape memory refers to the ability of nitinol to undergo deformation at one temperature, then<lb/> recover its original, undeformed shape upon heating above its &quot;transformation temperature&quot;. Superelasticity occurs at<lb/> a narrow temperature range just above its transformation temperature; in this case, no heating is necessary to cause<lb/> the undeformed shape to recover, and the material exhibits enormous elasticity, some 10-30 times that of ordinary<lb/> metal.</div>
+	
+	<div type="introduction"><lb/> History<lb/> The term nitinol is derived from its composition and its place of discovery: (Nickel Titanium Naval Ordnance<lb/> Laboratory). William J. Buehler<lb/> [1] along with Frederick Wang<lb/> [2] , discovered its properties during research at the<lb/> Naval Ordnance Laboratory in 1962.<lb/> [3] [4]<lb/> While the potential applications for nitinol were realized immediately, practical efforts to commercialize the alloy<lb/> didn&apos;t take place until a decade later. This delay was largely because of the extraordinary difficulty of melting,<lb/> processing and machining the alloy. Even these efforts encountered financial challenges that weren&apos;t really overcome<lb/> until the 1990s, when these practical difficulties finally began to be resolved.<lb/> The discovery of the shape-memory effect in general dates back to 1932 when Swedish researcher Arne Olander<lb/> [5]<lb/> first observed the property in gold-cadmium alloys. The same effect was observed in Cu-Zn in the early 1950s.<lb/> [6]<lb/> How it works<lb/> Austenite and Martensite structures of the NiTi<lb/> compound.<lb/> Nitinol&apos;s unusual properties are derived from a reversible, solid state<lb/> phase transformation known as a martensitic transformation.<lb/> At high temperatures, nitinol assumes an interpenetrating simple cubic<lb/> crystal structure referred to as austenite (also known as the parent<lb/> phase). At low temperatures, nitinol spontaneously transforms to a<lb/> more complicated &quot;monoclinic&quot; crystal structure known as martensite.<lb/> The temperature at which austenite transforms to martensite is<lb/> generally referred to as the transformation temperature. More<lb/> specifically, there are four transition temperatures. When the alloy is fully austenite, martensite begins to form as the<lb/> alloy cools at the so-called martensite start, or M s<lb/> temperature, and the temperature at which the transformation is<lb/> complete is called the martensite finish, or M f<lb/> temperature. When the alloy is fully martensite and is subjected to<lb/> heating, austenite starts to form at the A s<lb/> temperature, and finishes at the A f<lb/> temperature.<lb/> [7]<lb/> Crucial to nitinol&apos;s properties are two key aspects of this phase transformation. First is that the transformation is &quot;reversible,&quot; meaning that heating above the transformation temperature will revert the crystal structure to the<lb/> simpler austenite phase. Upon heating, however, there is a slight upward shift in the temperatures, now beginning at<lb/> the A s<lb/> temperature, and finishing at the A f<lb/> temperature. The second key point is that the transformation in both<lb/> directions is instantaneous.<lb/> Martensite&apos;s crystal structure (known as a monoclinic, or B19&apos; structure) has the unique ability to undergo limited<lb/> deformation in some ways without breaking atomic bonds. This type of deformation is known as twinning, which<lb/> consists of the rearrangement of atomic planes without causing slip, or permanent deformation. It is able to undergo<lb/> about 6-8% strain in this manner. When martensite is reverted to Austenite by heating, the original austenitic</div>
+
+		</front>
+	</text>
+</tei>

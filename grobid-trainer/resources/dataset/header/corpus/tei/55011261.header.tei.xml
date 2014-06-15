@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011261"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Protozanova E., et al.<lb/></note>
+
+	<note type="page">1<lb/> </note>
+
+	<note type="other">Supplementary Material<lb/></note>
+
+	<docTitle>
+	<titlePart>Fast high-resolution mapping of long fragments of genomic DNA based<lb/> on single-molecule detection<lb/></titlePart>
+	</docTitle>
+
+	<byline> 
+	<docAuthor>Ekaterina Protozanova, Meng Zhang, Eric J. White, Emilia T. Mollova, Dirk Ten Broeck,<lb/> Sergey V. Fridrikh, Douglas B. Cameron, Rudolf Gilmanshin<lb/></docAuthor>
+	</byline>
+
+	<div type="introduction">Design of PNA tags<lb/> General design of PNA tags (Panagene, Korea) was (N)-Dye-OO-K-K-YYYYYYYY-<lb/>OOO-yyyyyyyy-K-K, where Y is a T (thymine) or a C (cytosine) on a Watson-Crick<lb/> strand and y is a T or a J (pseudoisocytosine) on a Hoogsteen strand, which is symmetric<lb/> to the Watson-Crick strand; O and K stand for 8-amino-3,6-dioxaoctanoic acid and a<lb/> lysine, respectively. We used the following notation to refer to PNA sequence: p58 stands<lb/> for a tag which Watson-Crick strand carries Y=T in all positions other than 5 and 8,<lb/> where Y=C, i.e. (N)-TTTTCTTC; Hoogsteen strand has J&apos;s in the corresponding<lb/> positions. Fluorescent dyes were tetramethylrhodamine, or ATTO550 and ATTO647N<lb/> (ATTO-TEC, Siegen, Germany). Throughout the text, identity of the fluorophore is<lb/> indicated following the tag sequence, for example p58T stands for p58 labeled with<lb/> tetramethylrhodamine, p368A is p368 labeled with ATTO550. See Table S1 for a full list<lb/> of PNAs used in this study.</div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012150"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Produktion und Technik<lb/></note>
+	
+	<reference>Lebensmittel-Industrie Nr. 9/10 2008<lb/></reference>
+
+	<note type="page">40<lb/></note>
+
+	<docTitle>
+	<titlePart>Kontinuierlich kochen<lb/> im geschlossenen System<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Von Alastair Sorley und Rainer Perren*<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Moderne Prozessanlagen sind in einem definierten Bereich<lb/> Alleskönner. Das gilt auch für kontinuierliche Kocher. Das Know-<lb/>how liegt in der Konzeption der Anlage und in der Steuerung.<lb/> Dieses kann im Idealfall mit der Anlage eingekauft werden und<lb/> erlaubt es beispielsweise, Babyfood, Caramelsauce, verschie-<lb/>dene Käseprodukte und Fleischpastete auf der gleichen Anlage<lb/> zu produzieren.<lb/></div>
+
+		</front>
+	</text>
+</tei>

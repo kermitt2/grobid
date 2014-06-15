@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Marie-Beatrice</forename>
+								<surname>Madec</surname>,
+								<lb/>
+							</persName>
+							<persName>
+								<forename>David</forename>
+								<middlename>J</middlename> .
+								<surname>Crouch</surname> ,and
+							</persName>
+							<persName>
+								<forename>Gonzalo</forename>
+								<surname>Rincon-LLorente</surname>
+							</persName>
+							<persName>
+								<forename>Tracie</forename>
+								<middlename>J</middlename>. 
+								<surname>Whittle</surname>,
+							</persName>
+								<forename>Mark</forename> 
+								<surname>Geoghegan</surname>
+							<persName>
+								<forename>Stephen</forename>
+								<middlename>G</middlename>. 
+								<surname>Yeates</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

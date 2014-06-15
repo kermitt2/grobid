@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012075"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>INT J TUBERC LUNG DIS 14(9):1164–1168<lb/></reference>
+
+	<note type="copyright">© 2010 The Union<lb/></note>
+
+	<docTitle>
+	<titlePart>Concentration of Mycobacterium tuberculosis from sputum<lb/> using ligand-coated magnetic beads<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>S. Wilson, A. Lane, R. Rosedale, C. Stanley<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Microsens Medtech Ltd,</affiliation>
+	</byline>
+
+	<address>London, UK<lb/></address>
+
+	<note type="other">Correspondence to:</note>
+
+	<byline>
+	<docAuthor>Christopher Stanley,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Microsens Medtech Ltd, </affiliation>
+
+	<address>2 Royal College Street,</address>
+	</byline>
+
+	<address>London NW1 0NH, UK.</address>
+
+	<phone>Tel:<lb/> (+44) 207 691 2147. Fax: (+44) 207 691 2036.</phone>
+
+	<email>e-mail: chris.stanley@microsens.co.uk<lb/></email>
+
+	<note type="submission">Article submitted 15 October 2009. Final version accepted 17 March 2010.<lb/></note>
+
+	<div type="abstract">S E T T I N G : Direct sputum smear microscopy is usually<lb/> less sensitive than the indirect approach using concentra-<lb/>tion by centrifugation, but laboratories often do not have<lb/> access to appropriate equipment. An alternative method<lb/> of sample concentration has been developed based on<lb/> magnetic beads coated with a polymeric ligand that<lb/> binds mycobacteria species. The &apos;TB-Beads&apos; technology<lb/> allows manual sample preparation using simple mag-<lb/>netic separation equipment prior to microscopy.<lb/> O B J E C T I V E : 1) To evaluate TB-Beads, in combination<lb/> with fl uorescent auramine staining, on a blind panel of<lb/> 129 frozen samples from the Special Programme for Re-<lb/>search &amp; Training in Tropical Diseases (TDR), the World<lb/> Health Organization sputum bank; and 2) to compare<lb/> the microscopy results to indirect microscopy, culture<lb/> and the clinical data already available on these samples.<lb/> R E S U LT S : The correlation between the TB-Beads pro-<lb/>tocol and indirect microscopy was 96.1% (124/129).<lb/> The TB-Beads protocol was 89.4% (76/85) sensitive<lb/> compared to culture and 77.8% (77/99) sensitive com-<lb/>pared to clinical diagnosis.<lb/> C O N C L U S I O N : Capture by magnetic particles yields a<lb/> concentrated sample that is immobilised over a defi ned<lb/> area of the slide, thereby aiding microscopic analysis.<lb/> TB-Beads allow laboratories that currently perform com-<lb/>paratively insensitive direct microscopy to implement a<lb/> concentration method that has the potential to improve<lb/> TB detection rates.<lb/> </div>
+
+	<keyword>K E Y W O R D S : indirect fl uorescence microscopy; syn-<lb/>thetic polymeric ligands; magnetic separation</keyword>
+
+		</front>
+	</text>
+</tei>

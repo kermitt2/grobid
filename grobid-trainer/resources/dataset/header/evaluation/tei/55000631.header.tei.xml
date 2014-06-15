@@ -1,0 +1,44 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000631"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>High Precision Narrow-Band RF Ranging<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Bradley D. Farnsworth, </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>ENSCO, Inc.<lb/></affiliation>
+	</byline>
+
+	<byline>
+	<docAuthor>David W.A. Taylor, </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>ENSCO, Inc.<lb/></affiliation>
+	</byline>
+
+	<note type="other">BIOGRAPHY<lb/>Bradley D. Farnsworth</note>
+
+	<email>(farnsworth.bradley@ensco.com)<lb/></email>
+
+	<note type = "other">is an ENSCO Senior Engineer focusing on high-precision<lb/> RF ranging and timing. He was the Sensors Technical<lb/> Lead for the national semifinalist Team Case for the 2007<lb/> DARPA Urban Challenge and won a Best Student Paper<lb/> award at the 2008 IEEE Sensors Conference. Mr.<lb/> Farnsworth holds the B.S. in Electrical Engineering<lb/> summa cum laude from Case Western Reserve University<lb/> and anticipates graduating with the M.S. in Electrical<lb/> Engineering from Case in May 2010.<lb/> Dr. David W.A. Taylor </note>
+
+	<email>(taylor.david@ensco.com)</email>
+
+	<note type="other"> is<lb/> ENSCO&apos;s Director of Technology Development, where<lb/> he leads the company&apos;s R&amp;D programs developing<lb/> sensors and systems for national security applications.<lb/> Dr. Taylor holds three U.S. patents and is an expert in<lb/> GPS-denied navigation technologies, particularly as<lb/> applied to military and intelligence applications. Dr.<lb/> Taylor holds the B.S. in Physics from Rhodes College and<lb/> the Ph.D. in Geophysics from Virginia Tech.<lb/> </note>
+
+	<div type="abstract"> ABSTRACT<lb/> A round-trip, time-of-flight, high-precision, ranging radio<lb/> operating in the 915 MHz ISM band is presented. A<lb/> custom digital baseband processor is implemented on a<lb/> Xilinx Virtex-4 FPGA and interfaced with COTS RF<lb/> hardware. Processing gain enabled by direct-sequence<lb/> spread-spectrum (DSSS) signaling directly improves the<lb/> ranging accuracy. The system is designed with free-<lb/>running baseband clocks that do not require fine<lb/> synchronization.<lb/> Prototype brassboard system<lb/> measurement accuracies of 7 cm (1-σ) have been obtained<lb/> during testing in an open field.<lb/>
+	</div>
+
+		</front>
+	</text>
+</tei>

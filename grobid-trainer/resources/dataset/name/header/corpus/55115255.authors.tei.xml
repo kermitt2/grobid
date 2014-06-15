@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<surname>Noudogbessi</surname>
+								<forename>J</forename>.
+								<middlename>P</middlename>.
+							<lb/>
+								<marker>1</marker>,
+							</persName>
+							<persName>
+								<surname>Alitonou</surname>
+								<forename>G</forename> .
+								<middlename>A</middlename>.
+							<lb/>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<surname>Avlessi</surname>
+								<forename>F</forename> .
+							<lb/>
+								<marker>1</marker>,
+							</persName>
+							<persName>
+								<surname>Figueredo</surname>
+								<forename>G</forename> .
+							<lb/>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<surname>Chalard</surname>
+								<forename>P</forename>.
+								<marker>3</marker> ,
+							</persName>
+							<persName>
+								<surname>Chalchat</surname>
+								<forename>J</forename> .
+								<middlename>C</middlename> .
+							<lb/>
+								<marker>4</marker>,
+							</persName>
+							<persName>
+								<surname>Sohounhloué</surname>
+								<forename>D</forename> .
+								<middlename>C</middlename> .
+								<middlename>K</middlename> .
+								<marker>1</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

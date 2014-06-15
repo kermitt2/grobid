@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012710"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">HomeAbout UsProductsSolutionsSupportInvestor RelationsClubE-Catalog<lb/> SOLUTION SOLUTION<lb/> Product Quickfind<lb/> Industrial Automation Transportation Telecom &amp; Networking Electric Power Olympics Banking &amp; Commerce Petroleum Medical Care Gaming Rugged Computer &amp; Notebook<lb/> Home &gt; Solution &gt; Transportation<lb/></note>
+
+	<docTitle>
+	<titlePart>Trouble of Moving Freight Car Detection System (TFDS)<lb/></titlePart>
+	</docTitle>
+
+	<div type="introduction">System Introduction<lb/> In order to perform real-time fault detection for the moving train and help train inspection institutes to raise fault detection rate, the Trouble of Moving Freight<lb/> Car Detection System (TFDS) is successfully applied. The TFDS system is an intelligent system that integrates high speed digital image collection, real-time<lb/> processing of mass image data and precise positioning pattern recognition technology. The application of TFDS realizes the transition from &quot;manual detection<lb/> and maintenance&quot; to &quot;computer-based detection, manual maintenance&quot;. It reduces the labor intensity of the train inspector, improves transportation efficiency<lb/> and ensures transportation safety. Here, machine vision technology is used for the dynamic detection of key parts that are essential to safe train travel.<lb/> System Principle<lb/> The TFDS system uses high speed video cameras to collect the images of a moving train, analyses and processes them using computers to figure out the<lb/> speed and type of the train, store the images of the key parts of the train and display them on computers, as well as print and transmit them. Also, the<lb/> defects, fractures, losses and other faults of the parts and accessories of the train can be detected in a computer-aided manner, so as to dynamically check the<lb/> quality of the train.<lb/> The system consists of two parts: trackside image acquisition station and train testing center. The trackside image acquisition station is composed of wheel<lb/> sensor (alnico), auto vehicle identification system, front-end information processor, image server, high speed image acquisition equipment, light source<lb/> compensation equipment, trackside equipment protection device and network transmission equipment. The train testing center is composed of network<lb/> transmission equipment, network server and image browsing terminal.<lb/> System Diagram<lb/> Main Functions of System<lb/> 1) Automatically shooting and selecting the images of critical parts such as steering bogie, braking device and hook buffer mechanism of the train.<lb/> 2) Analyzing the images and finding out corresponding faults through human-machine cooperation.<lb/> 3) Automatically identifying the number, type and model of the train, and counting axles and carriages.<lb/> 4) Automatically detecting the speed of a running train.<lb/> 5) Reading train number information directly from Automatic Equipment Identification (AEI) system.<lb/> 6) Automatically creating the reports that Train Inspection Institute uses frequently.<lb/> 7) Intelligent identification of some faults.<lb/> 8) Realizing the sharing of surveillance and detection information.</div>
+
+		</front>
+	</text>
+</tei>

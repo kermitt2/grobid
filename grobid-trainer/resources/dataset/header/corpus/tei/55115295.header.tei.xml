@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei type="web">
+	<teiHeader>
+		<fileDesc xml:id="55115295"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>JDBC: When Good Prepared Statements go Bad<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">0<lb/></note>
+
+	<note type="other">MSDNArchive </note>
+
+	<date>11 Nov 2007</date>
+
+	<note type="other">11:44 AM<lb/></note>
+
+		</front>
+	</text>
+</tei>

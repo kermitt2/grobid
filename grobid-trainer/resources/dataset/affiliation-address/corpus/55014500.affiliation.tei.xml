@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="institution">Intelligent Automation Inc.</orgName>,
+							<lb/>
+							<address>
+								<settlement>Rockville</settlement>,
+								<region>MD</region>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>		
+							<orgName type="institution">Univ. of Southern California</orgName>,
+							<lb/>
+							<address>
+								<settlement>Los Angeles</settlement>,
+								<region>CA</region>
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="institution">Bar-Ilan University</orgName>,
+							<lb/>
+							<address>
+								<addrLine>Ramat-Gan 52900</addrLine>,
+								<country>Israel</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

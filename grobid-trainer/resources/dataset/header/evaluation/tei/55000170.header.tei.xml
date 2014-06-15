@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000170"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Increasing your power factor and<lb/> profits is easy with LVNQ<lb/> products from ABB!<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">AC 1503<lb/></note>
+
+	<byline>
+	<affiliation>ABB Control Inc.<lb/></affiliation>
+	</byline>
+
+	<note type="other">L O W<lb/> V O L T A G E<lb/> N E T W O R K<lb/> Q U A L I T Y<lb/></note>
+
+	<docTitle>
+	<titlePart>Power Factor<lb/> Correction Capacitors<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">C U S<lb/> T O M E R F I R<lb/> S T<lb/> Q U<lb/> A L I T Y ... A L W A<lb/> Y S !<lb/></note>
+
+	<note type="other">Registered by UL to<lb/> ISO 9002<lb/></note>
+
+	<div type="introduction">What is power factor?<lb/> Power factor is the relationship between working<lb/> (active) power and total power consumed (apparent<lb/> power). Essentially, power factor is a measurement of<lb/> how effectively electrical power is being used. A higher<lb/> power factor represents a more effective use of electrical<lb/> power.<lb/> A distribution system&apos;s operating power is composed<lb/> of two parts: Active (working) power and reactive (non-<lb/>working magnetizing) power. The ACTIVE power per-<lb/>forms the useful work – the REACTIVE power does not.<lb/> Reactive power&apos;s only function is to develop magnetic<lb/> fields required by inductive loads.<lb/> Why improve low power factor?<lb/> Low power factor means poor electrical efficiency. The<lb/> lower the power factor, the higher the apparent power<lb/> drawn from the distribution network.<lb/> When low power factor is not corrected, the utility must<lb/> provide the nonworking reactive power in addition to the<lb/> working active power. This results in the use of larger<lb/> generators, transformers, bus bars, wires, and other<lb/> distribution system devices that otherwise would not be<lb/> necessary.<lb/> As the utility&apos;s capital expenditures and operating<lb/> costs are going to be higher, they are going to pass<lb/> these higher expenses to industrial users in the form<lb/> of power factor penalties and higher utility bills.<lb/>
+
+	ABB&apos;s Power Factor Correction<lb/> Capacitors solve the problem</div>
+
+		</front>
+	</text>
+</tei>

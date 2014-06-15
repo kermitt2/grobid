@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>a</marker>
+							<orgName type="department">School of Chemistry</orgName>,
+							<orgName type="institution">The University of Manchester</orgName>,
+							<address>
+								<addrLine>Faraday Building</addrLine>,
+								<addrLine>Sackville Street</addrLine>,
+								<settlement>Manchester</settlement>
+								<postCode>M60 1QD</postCode>,
+								<country>UK</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>b</marker>
+							<orgName type="department">sanofi-aventis Research</orgName>,
+							<orgName type="institution">Alnwick Research Centre</orgName>,
+							<address>
+								<addrLine>Willowburn Avenue</addrLine>,
+								<settlement>Alnwick</settlement>,
+								<region>Northumberland</region>
+								<postCode>NE66 2JH</postCode>,
+								<country>UK</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

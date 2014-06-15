@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei type="presentation">
+	<teiHeader>
+		<fileDesc xml:id="55114927"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<date>D-Incert 7 januari 2011<lb/> </date>
+
+	<docTitle>
+	<titlePart>Second life toepassingen van<lb/> EV batterijen<lb/> </titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Petra de Boer</docAuthor>
+	</byline>
+		
+		</front>
+	</text>
+</tei>

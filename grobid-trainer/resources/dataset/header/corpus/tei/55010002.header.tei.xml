@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010002"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Tivoli® Storage Manager for HSM for Windows<lb/> Version 6.1<lb/> Administration Guide<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Version 6.1<lb/></note>
+
+	<idno>SC23-9795-01</idno>
+
+		</front>
+	</text>
+</tei>

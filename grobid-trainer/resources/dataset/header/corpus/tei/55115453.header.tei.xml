@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei type="web">
+	<teiHeader>
+		<fileDesc xml:id="55115453"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Media Abo<lb/> suchen<lb/>Themen Hersteller/Lieferanten Heftarchiv Stellenmarkt Ev ents Whitepaper Mediathek Gebrauchtmaschinen Akademie<lb/> Produktion Konstruktion Materialfluss Automatisierung Betriebstechnik Management &amp; IT<lb/> Additive Fertigung CompositesWorld<lb/> Cemat Special 2014<lb/>Sie befinden sich hier: Themen &gt; Automatisierung &gt; Fertigungsautomatisierung / Prozessautomatisierung<lb/> Sie sind noch nicht angemeldet Login | Registrierung | Newsletter<lb/> Teilen auf :<lb/>Steuerungen<lb/></note>
+
+	<docTitle>
+	<titlePart>Steuerungstechnik senkt<lb/> Energieverbrauch von Maschinen<lb/></titlePart>
+	</docTitle>
+
+	<date>16.12.11</date>
+ 
+	<byline>
+	<docAuthor>| Autor / Redakteur: Alexander Verl, Philipp Eberspächer und Jan Schlechtendahl / Reinhold Schäfer<lb/> </docAuthor>
+	</byline>
+
+	<note type="other">PDF | Weiterempf ehlen | Merken | Drucken<lb/></note>
+
+	<div type="abstract">Zustandsbasiertes Energieverbrauchsmodell geschaffen<lb/> Am ISW [1] wurde durch die Entwicklung von zustandsbasierten<lb/> Energieverbrauchsmodellen die Basis für Ecomation geschaffen. Das<lb/> grundlegendste Energieverbrauchsmodell umfasst zum einen die möglichen<lb/> Betriebszustände sowie ihre Übergänge und zum anderen den Zuständen<lb/> zugeordnete Maschinenkomponenten sowie ihren jeweiligen Energieverbrauch.<lb/> BILDERGALERIE<lb/> Fotostrecke starten: Klicken Sie auf ein Bild (3 Bilder)<lb/> Mit einem einfachen Zustandsmodell kann die elektrische Leistungsaufnahme und<lb/> damit der kumulierte Energieverbrauch bereits gut vorhergesagt werden. Durch eine<lb/> kontinuierliche Veränderung und Anpassung der Zustandsfolge ist es möglich,<lb/> modellbasiert die optimale Zustandsfolge für den geplanten Fertigungsprozess zu<lb/> ermitteln. Dieser kann wiederum durch die Maschinensteuerung umgesetzt und<lb/> somit eine erste Optimierung des Energieverbrauchs vorgenommen werden.<lb/></div>
+
+		</front>
+	</text>
+</tei>

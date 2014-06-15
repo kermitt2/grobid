@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014163"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">~3.Windows<lb/> </note>
+
+	<docTitle>
+	<titlePart>Windows Update Explained<lb/>How the Software Update Service Works and Why it Matters to You<lb/></titlePart>
+	</docTitle>
+
+	<date>Published: September 2008<lb/></date>
+
+	<note type="other">For more information, please see<lb/></note>
+
+	<ptr type="web">http://www.microsoft.com/windows/downloads/windowsupdate/default.mspx<lb/></ptr>
+
+		</front>
+	</text>
+</tei>

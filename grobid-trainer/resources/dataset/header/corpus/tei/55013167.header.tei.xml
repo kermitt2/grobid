@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013167"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Thermal Analysis<lb/> Information for Users<lb/> User Com<lb/></titlePart>
+	</docTitle>
+
+	<div type="introduction">Introduction<lb/> For successful DMA measurements, it is extremely important to choose the &quot;right&quot; experimental parameters,<lb/> probably more so than in most other thermoanalytical techniques. In practice, the difficulty is that the<lb/> deformation mode, sample geometry and mechanical measurement parameters (force and displacement<lb/> amplitude) are interdependent. This article discusses important factors that need to be considered when<lb/> planning a DMA experiment.<lb/></div>
+
+	<date>Contents 1/2006</date>
+
+		</front>
+	</text>
+</tei>

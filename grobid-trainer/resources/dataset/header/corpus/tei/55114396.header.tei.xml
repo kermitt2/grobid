@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei type="master-thesis">
+	<teiHeader>
+		<fileDesc xml:id="55114396"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>A Novel Transformer-less Uninterruptible Power Supply<lb/></titlePart>
+	</docTitle>
+
+	<degree>A Thesis<lb/> Submitted for the Degree of<lb/> Master of Science (Engineering)<lb/> In Faculty of Engineering<lb/></degree>
+	
+	<byline>
+	<docAuthor>By<lb/> S. Giridharan<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Electrical Engineering,<lb/> Indian Institute of Science,<lb/></affiliation>
+	</byline>
+
+	<address>Bangalore 560 012<lb/></address>
+
+	<date>September 1996<lb/></date>
+
+	<note type="other">ACKNOWLEDGEMENTS</note>
+
+		</front>
+	</text>
+</tei>

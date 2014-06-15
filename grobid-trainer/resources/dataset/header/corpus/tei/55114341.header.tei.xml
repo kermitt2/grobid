@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55114341"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Epigenetic and experimental modi®cations in early<lb/> mammalian development: Part II<lb/> Cytoplasmic transfer in assisted reproduction<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Jason A.Barritt<lb/> 1<lb/> , Steen Willadsen, Carol Brenner and Jacques Cohen<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Gamete and Embryo Research Laboratory, Institute for Reproductive Medicine and Science of Saint Barnabas,</affiliation>
+	</byline>
+
+	<address>West Orange,<lb/> New Jersey, 07052, USA<lb/></address>
+
+	<note type="other">1<lb/>To whom correspondence should be addressed.</note>
+
+	<email>E-mail: jason.barritt@embryos.net<lb/></email>
+
+	<div type="abstract">This report details the use of cytoplasmic transfer in human oocytes. The introduction of a small amount of ooplasm<lb/> from a donor oocyte or zygote may alter the function of oocytes, with probable de®ciencies. Cytoplasmic transfer<lb/> from fertile donor oocytes or zygotes into compromised oocytes from patients with recurrent implantation failure<lb/> after assisted reproduction has now led to the birth of nearly 30 healthy babies worldwide. Transfer of small amounts<lb/> of cytoplasm probably involves mRNAs, proteins and mitochondria, as well as other factors and organelles. Even<lb/> though the use of cytoplasmic transfer has been employed in several IVF clinicsÐand pregnancies have resultedÐit<lb/> is not known de®nitively whether the physiology of the early embryo is affected. This review outlines the<lb/> experimental cytoplasmic transfer techniques and postulates the future impact in assisted reproduction.<lb/></div>
+
+	<keyword>Key words: cytoplasmic transfer/human oocytes and embryos/human reproduction/IVF/ooplasm<lb/></keyword>
+
+	<note type="other">TABLE OF CONTENTS<lb/> Introduction Clinical experience<lb/> Clinical research<lb/> Future outlook<lb/> Conclusions Acknowledgements<lb/> Note added in proof<lb/> References</note>
+
+		</front>
+	</text>
+</tei>

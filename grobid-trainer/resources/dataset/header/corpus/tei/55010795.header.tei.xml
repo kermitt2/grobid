@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010795"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Welcome to the Official BlackBerry Support Community Forums. This is your<lb/> resource to discuss support topics with your peers, and learn from each other.<lb/> New to the forum? Please visit the &apos;Getting Started&apos; link below.<lb/> Getting Started<lb/> Join the Community Insider Event<lb/> Register Connect with Facebook<lb/> Sign In<lb/> Help Board<lb/> All New Topics | All New Posts<lb/> English<lb/> Developer Support<lb/> Application Platforms<lb/> Java Development<lb/> Modifing Existing SMS Text Msgs<lb/> Java Development<lb/> Reply Topic Options<lb/> Message Listing<lb/> Previous Topic<lb/> Next Topic<lb/></note>
+
+	<docTitle>
+	<titlePart>Modifing Existing SMS Text Msgs<lb/></titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>a</marker>
+							<orgName type="department">Food and Biological Resources Examination Division</orgName>,
+							<orgName type="institution">Korean Intellectual Property Office</orgName>,
+							<address>
+								<addrLine>Dunsan-dong</addrLine>,
+								<addrLine>Seo-gu</addrLine>,
+								<settlement>Daejeon</settlement>
+								<postCode>302-701</postCode>,
+								<country>Republic of Korea</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>b</marker>
+							<orgName type="department">Department of Food Science and Biotechnology of Animal Resources</orgName>,
+							<orgName type="institution">Konkuk University</orgName>,
+							<address>
+								<addrLine>1 Hwayang-dong</addrLine>,
+								<addrLine>Gwangjin-gu</addrLine>,
+								<settlement>Seoul</settlement>
+								<postCode>143-701</postCode>,
+								<country>Republic of Korea</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>c</marker>
+							<orgName type="department">World Institute of Kimchi</orgName>,
+							An Annex of 
+							<orgName type="institution">Korea Food Research Institute</orgName>,
+							<address>
+								<addrLine>Baekhyun-dong</addrLine>,
+								<addrLine>Bundang-ku</addrLine>,
+								<addrLine>Sungnam-si</addrLine>,
+								<settlement>Gyeonggido</settlement>,
+								<postCode>463-746</postCode>,
+								<country>Republic of Korea</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>d</marker>
+							<orgName type="department">Department of Food Science and Nutrition</orgName>,
+							<orgName type="institution">Daejin University</orgName>,
+							<address>
+								<addrLine>Sundan-ri</addrLine>,
+								<settlement>Phochon-si</settlement>,
+								<settlement>Gyeonggido</settlement>
+								<postCode>487-711</postCode>,
+								<country>Republic of Korea</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Anju</forename>
+								<surname>Zhang</surname>,
+							<lb/>
+								<marker>1,*</marker>
+							</persName>
+							<persName>
+								<forename>Chengyun</forename>
+								<surname>Zheng</surname> ,
+							<lb/>
+								<marker>2 ,5,*</marker>
+							</persName>
+							<persName>
+								<forename>Mi</forename>
+								<surname>Hou</surname> ,
+							<lb/>
+								<marker>2, *</marker>
+							</persName>
+							<persName>
+								<forename>Charlotta</forename>
+								<surname>Lindvall</surname>,
+							<lb/>
+								<marker>3 ,*</marker>
+							</persName>
+							<persName>
+								<forename>Ke-Jun</forename>
+								<surname>Li</surname> ,
+								<marker>4</marker>
+							</persName>
+							<persName>
+								<forename>Fredrik</forename>
+								<surname>Erlandsson</surname>,
+							<lb/>
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>Magnus</forename>
+								<surname>Björkholm</surname>,
+							<lb/>
+								<marker>2</marker>
+							</persName>
+							<persName>
+								<forename>Astrid</forename>
+								<surname>Gruber</surname> ,
+							<lb/>
+								<marker>2</marker>
+							</persName>
+							<persName>
+								<forename>Elisabeth</forename>
+								<surname>Blennow</surname> ,
+							<lb/>
+								<marker>3</marker>and
+							</persName>
+							<persName>
+								<forename>Dawei</forename>
+								<surname>Xu</surname>
+								<marker>2</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

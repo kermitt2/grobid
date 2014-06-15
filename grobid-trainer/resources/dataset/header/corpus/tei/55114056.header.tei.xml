@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei type="book-chapter">
+	<teiHeader>
+		<fileDesc xml:id="55114056"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Chapter 12<lb/></note>
+
+	<docTitle>
+	<titlePart>Representing Data<lb/> Elements<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">This cliaf)ter relates the block model of secondary storage that we covered in<lb/> Section 11.4 to the recluirenients of a DBMS. We begin by looking at the way<lb/> that relations or sets of objects are represented in secondary storage.<lb/> @BULLET Attributes need to be represented by fixed— or variable—length sequences<lb/> of bytes, called @BULLET&apos;flelds.&quot;<lb/> @BULLET fields, iii turn, are put together in fixed— or variable—length collections<lb/> called records.&quot; winch correspond tt) ttiples 0t ol]jects.<lb/> @BULLET Records iieed to be stored in physical blocks. Various data structures<lb/> are useful. especially if blocks of records need to he reorganized when the<lb/> (latabase is modified.<lb/> @BULLET A collection of records that forms a relation or the extent of a class is<lb/> stored as a collection of blocks, called a file.&apos; To support efficient quervilig<lb/> and modification of these collections, we put one of a number of @BULLETindex&quot;<lb/> structures on the file; these structures are the subject of Chapters 13<lb/> antI 14.<lb/> </div>
+
+	<div type="introduction">12.1 Data Elements and Fields<lb/> We shall begin by looking at the representation of the most basic data elements:<lb/> the values of attributes found in relational or object-oriented database systems.<lb/> These are represented by &quot;fields.&quot; Subsequently, we shall see how fields are put<lb/> &apos;The database notion of a &quot;file&apos; is somewhat more general than the &quot;file&quot; in an operating<lb/> system. While a database file could be an unstructured stream of bytes, it is more common<lb/> for the file to consist of a collection of blocks organized in some useful way, with indexes or<lb/> other specialized access methods. \Ve discuss these organizations in Chapter 13.</div>
+
+		</front>
+	</text>
+</tei>

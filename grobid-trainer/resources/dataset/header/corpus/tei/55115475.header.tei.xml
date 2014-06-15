@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei type="book-chapter">
+	<teiHeader>
+		<fileDesc xml:id="55115475"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Carbon Nanotubes: Supramolecular Mechanics<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Boris I. Yakobson<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Rice University,</affiliation>
+	</byline>
+
+	<address>Houston, Texas, U.S.A.<lb/></address>
+
+	<byline>
+	<docAuthor>Luise S. Couchman<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Naval Research Laboratory, Washington, District of Columbia,</affiliation>
+	</byline>
+
+	<address>U.S.A.<lb/></address>
+
+		</front>
+	</text>
+</tei>

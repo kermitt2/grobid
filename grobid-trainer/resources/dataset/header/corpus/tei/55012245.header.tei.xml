@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012245"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>(Circulation. 2007;116:II_183-II_184.)<lb/></reference>
+
+	<note type="copyright">© 2007 American Heart Association, Inc.<lb/></note>
+
+	<note type="other">Receptor Pharmacology<lb/> </note>
+
+	<docTitle>
+	<titlePart>Abstract 932: Temporal Changes In The<lb/>Contribution Of Protein Kinase C Isoforms To<lb/> Myogenic Constriction In Rat Posterior Cerebral<lb/> Arteries<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Toshihide Kashihara ; Koichi Nakayama ; Tomohisa Ishikawa<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Univ of Shizuoka,</affiliation>
+	</byline>
+
+	<address>Shizuoka, Japan<lb/></address>
+
+		</front>
+	</text>
+</tei>

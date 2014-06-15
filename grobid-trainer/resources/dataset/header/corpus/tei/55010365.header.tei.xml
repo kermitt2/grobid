@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010365"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">GeneGlobe Search Center<lb/> Pathway List<lb/> Guided Tour<lb/> Log in to download editable pathway image<lb/> Download static pathway image<lb/> Image key<lb/> Terms of use<lb/> Pathway image<lb/> Review<lb/> Log In<lb/> Quick Order<lb/> My Cart<lb/> My Account<lb/> Search<lb/> Home Products<lb/> Order Support<lb/> About QIAGEN<lb/> Contact Careers<lb/></note>
+
+	<docTitle>
+	<titlePart>GeneGlobe Pathways<lb/> Explore and order pathway-specific siRNAs, real-time PCR assays, and expression vectors.<lb/> View pathway information and literature references for your pathway.<lb/></titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

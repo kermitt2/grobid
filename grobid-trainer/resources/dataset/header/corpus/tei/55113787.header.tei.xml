@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55113787"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Valgrind Documentation<lb/> Release 3.8.0 </titlePart>
+	</docTitle>
+
+	<date>10 August 2012<lb/></date>
+
+	<note type="copyright">Copyright © 2000-2012 AUTHORS<lb/></note>
+
+	<note type="other">Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation<lb/> License, Version 1.2 or any later version published by the Free Software Foundation; with no Invariant Sections, with<lb/> no Front-Cover Texts, and with no Back-Cover Texts. A copy of the license is included in the section entitled The<lb/> GNU Free Documentation License.<lb/> This is the top level of Valgrind&apos;s documentation tree. The documentation is contained in six logically separate<lb/> documents, as listed in the following Table of Contents. To get started quickly, read the Valgrind Quick Start Guide.<lb/> For full documentation on Valgrind, read the Valgrind User Manual.</note>
+
+		</front>
+	</text>
+</tei>

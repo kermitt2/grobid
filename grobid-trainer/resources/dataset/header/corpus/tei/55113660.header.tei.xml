@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55113660"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>A marine seismic acquisition system that provides a full &apos;ghost-free&apos; solution<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Gregg Parkes* and Stian Hegna, PGS<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Summary<lb/> Dual sensor streamer technology has previously been<lb/> developed to remove the receiver sea surface reflection (or<lb/> ghost) from seismic data. However, seismic data contains<lb/> two sea surface reflections, on both receiver side and<lb/> source side. This paper describes a source design that in<lb/> combination with dual sensor streamer technology provides<lb/> a full &apos;ghost-free&apos; solution.<lb/></div>
+
+		</front>
+	</text>
+</tei>

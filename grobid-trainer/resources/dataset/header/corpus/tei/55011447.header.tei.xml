@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011447"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Multi image noise estimation and denoising<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>A. Buades *<lb/> Y. Lou<lb/> J.M Morel<lb/> Z. Tang<lb/></docAuthor>
+	</byline>
+
+	<date>August 22, 2010<lb/></date>
+
+	<div type="abstract">Abstract<lb/> Photon accumulation on a fixed surface is the essence of photography. In the<lb/> times of chemical photography this accumulation required the camera to move as<lb/> little as possible, and the scene to be still. Yet, most recent reflex and compact<lb/> cameras propose a burst mode, permitting to capture quickly dozens of short expo-<lb/>sure images of a scene instead of a single one. This new feature permits in principle<lb/> to obtain by simple accumulation high quality photographs in dim light, with no<lb/> motion or aperture blur. It also gives the right data for an accurate noise model.<lb/> Yet, both goals are attainable only if an accurate cross-registration of the burst<lb/> images has been performed. The difficulty comes from the non negligible image<lb/> deformations caused by the slightest camera motion, in front of a 3D scene, and<lb/> from the light variations or motions in the scene. This paper proposes a numer-<lb/>ical processing chain permitting to achieve jointly the two mentioned goals: an<lb/> accurate noise model for the camera, which is used crucially to obtain a state of<lb/> the art multi-images denoising. The key feature of the proposed processing chain<lb/> is a reliable multi-image noise estimator, whose accuracy will be demonstrated by<lb/> three different procedures. Thanks to the signal dependent noise model obtained<lb/> from the burst itself, a faithful detection of the well registered pixels can be made.<lb/> The denoising by simple accumulation of these pixels, which are an overwhelming<lb/> majority, permits to extend the Nicéphore Niepce photon accumulation method to<lb/> image bursts. The denoising performance by accumulation is shown to reach the<lb/> theoretical limit, namely a<lb/> √ n denoising factor for n frames. Comparison with state<lb/> of the art denoising algorithms will be shown on several bursts taken with reflex<lb/> cameras in dim light.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>a</marker>
+							<orgName type="department">Departamento Ingenieria Qulmica Industrial</orgName>,
+							<orgName type="institution">ETS Ing. lndustriales</orgName>,
+							<orgName type="institution">Universidad Polit~cnica Madrid</orgName>,
+							<address>
+								<postCode>28006</postCode>
+								<settlement>Madrid</settlement>,
+								<country>Spain</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>b</marker>
+							<orgName type="department">lnstitut fiir Anorganische Chemie</orgName>,
+							<orgName type="institution">Universitlit Leipzig</orgName>,
+							<address>
+								<postCode>04103</postCode>
+								<settlement>Leipzig</settlement>,
+								<country>Germany</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>c</marker>
+							<orgName type="department">Departamento de Qulmica lnorg,~nica</orgName>,
+							<orgName type="institution">UniversidadAut6noma de Madrid</orgName>,
+							<address>
+								<settlement>Cantoblanco</settlement>,
+								<postCode>28049</postCode>
+								<settlement>Madrid</settlement>,
+								<country>Spain</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

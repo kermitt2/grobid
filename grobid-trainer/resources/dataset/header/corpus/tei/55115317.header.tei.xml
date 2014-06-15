@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55115317"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>The Open Agriculture Journal, 2010, 4, 145-152<lb/></reference>
+
+	<note type="page">145<lb/></note>
+
+	<idno>1874-3315/10<lb/></idno>
+
+	<note type="copyright">2010 Bentham Open<lb/></note>
+
+	<note type="other">Open Access<lb/></note>
+
+	<docTitle>
+	<titlePart>Selective Acetone-Water Delignification of Eucalyptus urograndis: An Al-<lb/>ternative Towards the Biorefinery Approach<lb/>
+	</titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Denilson da Silva Perez*<lb/> ,1,2 and Antonio Aprigio S. Curvelo<lb/> 2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Institut Technologique FCBA – Pôle Nouveaux Matériaux –</affiliation>
+	</byline>
+
+	<address>BP 251, 38044 – Grenoble – France<lb/></address>
+
+	<byline>
+	<affiliation>2 Instituto de Quimica de São Carlos, Universidade de São Paulo.</affiliation>
+	</byline>
+
+	<address>P.O. Box 780, 13.560-970 -São Carlos -SP -Brazil<lb/></address>
+
+	<div type="abstract">Abstract: Acetone-water (50:50 v/v) delignification of Eucalyptus urograndis (a hybrid of Eucalyptus urophylla and<lb/> Eucalyptus grandis) was studied at temperatures ranging from 145<lb/> o C to 195<lb/> o C. Lignin and polysaccharide extraction ki-<lb/>netics were determined from pulp yield and residual lignin measurements. Arrhenius-type activation energy of initial, bulk<lb/> and residual delignification phases were estimated respectively as 102.3, 117.7 and 89.0 kJ.mol<lb/> -1 . For polysaccharide re-<lb/>moval, the values were 119.4 and 177.9 kJ for slower and faster reactions, respectively.<lb/> The selectivity of the acetone-water delignification was approached through the interrelationship between delignification<lb/> and polysaccharide removal. In contrast to kraft pulping, high selectivity is observed in the beginning of the pulping proc-<lb/>ess and then decreases along the process. The first derivative of the lignin extraction curve presents two maxima, one in<lb/> the beginning of the extraction and the second one between 65 % and 50 % of pulp yield and can speculating be related to<lb/> the initial and bulk delignification phases. On the other hand, polysaccharides, probably hemicelluloses, are selectively<lb/> extracted between 85 and 65 % of pulp yield. The process fits perfectly with the biomass biorefinery approach which con-<lb/>sists in selectively separate and add-value to different fractions of wood.<lb/></div>
+
+	<keyword>Keywords: Biorefinery, delignification, organosolv, pulping, acetone-water, Eucalyptus urograndis, kinetics, activation en-<lb/>ergy, selectivity.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

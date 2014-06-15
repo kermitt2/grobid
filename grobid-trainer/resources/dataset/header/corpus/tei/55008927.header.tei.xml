@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008927"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Am. J. Respir. Cell Mol. Biol. Vol. 24, pp. 747–754, 2001<lb/></reference>
+
+	<ptr>Internet address: www.atsjournals.org<lb/></ptr>
+
+	<docTitle>
+	<titlePart>Anti–Proteinase 3 Antibody Activation of Neutrophils Can Be Inhibited by<lb/> ␣ 1-Antitrypsin<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Cyril P. Rooney, Clifford Taggart, Raymond Coakley, Noel G. McElvaney, and Shane J. O&apos;Neill<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Division of Respiratory Research, Department of Medicine, Royal College of Surgeons in Ireland Education and Research Centre,<lb/> Beaumont Hospital,</affiliation>
+	</byline>
+
+	<address>Dublin, Republic of Ireland<lb/></address>
+
+	<div type="abstract">Wegener&apos;s granulomatosis (WG) is classically associated with<lb/> the presence of cytoplasmic antineutrophil cytoplasmic au-<lb/>toantibodies (c-ANCA). Proteinase 3 (PR3), the target antigen<lb/> for c-ANCA, is inhibited by the antiprotease ␣ 1-antitrypsin<lb/> (A1AT), and recent studies have demonstrated that WG pa-<lb/>tients who are A1AT-deficient have a worse clinical course,<lb/> suggesting that a protease–antiprotease imbalance may play<lb/> a role in WG. We evaluated the effect of A1AT on anti-PR3 an-<lb/>tibody–induced activation of neutrophils. The neutrophil was<lb/> chosen because of its central role in the pathogenesis of WG.<lb/> Isolated neutrophils from healthy controls were incubated<lb/> with tumor necrosis factor (TNF)-␣ to induce surface expres-<lb/>sion of PR3. Subsequently, they were stimulated with a mono-<lb/>clonal antibody to PR3, resulting in a significant increase in<lb/> respiratory burst. Addition of A1AT (1 mg/ml) to the TNF-␣ –<lb/> primed cells before the addition of the anti-PR3 antibody re-<lb/>sulted in a 47% reduction in anti-PR3 antibody–induced acti-<lb/>vation. A1AT mediated this inhibitory action by preventing<lb/> anti-PR3 antibody binding to PR3 on the cell, thereby prevent-<lb/>ing the PR3–Fc ␥ R11a cross-linkage required for cell activation.<lb/> Further, anti-PR3 antibody–induced activation of neutrophils<lb/> from WG patients can be reduced by 56% with A1AT. These<lb/> data suggest that protease–antiprotease interactions may play<lb/> a pivotal role in neutrophil activation in WG.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei type="book-chapter">
+	<teiHeader>
+		<fileDesc xml:id="55114369"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>ROAD TUNNELS MANUAL<lb/> 8. EQUIPMENT AND SYSTEMS<lb/></titlePart>
+	</docTitle>
+
+	<note type="copyright">All rights reserved. © World Road Association (PIARC)<lb/> </note>
+
+	<note type="other">PIARC ROAD TUNNELS MANUAL<lb/> </note>
+
+	<note type="copyright">© PIARC<lb/> </note>
+
+	<div type="introduction">8. Equipment and systems<lb/> If tunnels are longer than a few hundred metres, specific equipment is required to enhance safety to the<lb/> users, both in normal situations and in case of accidents.<lb/> To reduce the risks of accidents and limit the possible consequences, but also to keep an adequate<lb/> level of comfort to the users, a large variety of equipment can be installed. Chapter 7 of the report<lb/> 05.06.B &quot;Reduction of operating costs of road tunnels&quot; discusses road tunnel equipment and Chapter 3<lb/> of the report 2008R15 &quot;Urban road tunnels&quot; provides details for the design and refurbishment of<lb/> equipment.<lb/> A significant amount of electric power is required to feed the equipment installed in the tunnel. The<lb/> electrical power supply systems (Section 8.1) must provide enough power in the case of normal and<lb/> emergency conditions. This also means that the system must work even in the case of blackouts, in<lb/> order to feed at least the equipment which is absolutely necessary. The status of this equipment should<lb/> also be monitored. For this reason, a SCADA system (Section 8.2) may be implemented.<lb/> A first type of equipment is the communication and alert systems (Section 8.3). This includes systems<lb/> used to check periodically the conditions in the tunnel and also to make the operator aware of a<lb/> possible danger or an accident. Together with systems for surveillance and control of traffic (Section<lb/> 8.8), some detection systems can be installed. These include automatic incident detection and<lb/> smoke/fire detection. This information may also come directly from people involved, through alarm<lb/> push button or emergency telephones. The latter also allows a communication between people in the<lb/> tunnel and control personnel. This is useful for the control personnel to have additional information<lb/> with respect to locations, status of people, etc. but also to supply information to people in the tunnel.<lb/> This kind of equipment also includes systems used to alert the users in the tunnel or to coordinate the<lb/> intervention. Loudspeakers and radio-retransmission of public FM broadcasts, frequencies of operators<lb/> and emergency services can be used for these purposes.</div>
+
+		</front>
+	</text>
+</tei>

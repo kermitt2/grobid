@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55114818"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Monatshefte f/ir Chemie 103, 1632--1642 (1972)<lb/></reference>
+
+	<note type="other">&#169; by Springer-Verlag 1972<lb/></note>
+
+	<docTitle>
+	<titlePart>1-Chlormethylisatin-ein neues Reagens<lb/> zur Identiiizierung yon Carbons~iuren*<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Von<lb/> W. Wendelin und F. Knotz<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Aus dem Institut ffir Pharmazeutische Chemie der Universit/it in Graz<lb/></affiliation>
+	</byline>
+
+	<note>Mit 2 Abbildungen<lb/></note>
+
+	<note type="submission">(Eingegangen am ld. Januar 1972)<lb/></note>
+
+		</front>
+	</text>
+</tei>

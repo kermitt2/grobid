@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei type="book-chapter">
+	<teiHeader>
+		<fileDesc xml:id="55115341"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Chang, B.S. and Patro, S.Y. 2004. Freeze-drying Process Development for Protein<lb/> Pharmaceuticals. in &quot;Lyophilization of Biopharmaceuticals&quot; (Costantino, H.R. and Pikal,<lb/> M.J.eds) American Association of Pharmaceutical Scientists. Pp.113-138<lb/></reference>
+
+	<docTitle>
+	<titlePart>Freeze-drying Process Development for Protein Pharmaceuticals<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>BYEONG S. CHANG<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Integrity Biosolution,</affiliation>
+	</byline>
+
+	<address>Newbury Park, CA<lb/></address>
+
+	<byline>
+	<docAuthor>SUGUNAKAR Y. PATRO<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Amgen Inc.,</affiliation>
+	</byline>
+
+	<address>Thousand Oaks, CA<lb/></address>
+
+	<div type="abstract">Abstract<lb/> This chapter provides an overview of the impact of protein formulation variables on<lb/> different stages of the protein freeze-drying process and offers guidance for selection of<lb/> critical process parameters during protein freeze-drying cycle development, optimization,<lb/> and scale-up. There is particular focus on practical considerations including large-scale<lb/> process development, scale-up challenges, and issues with less conventional freeze-<lb/>drying delivery systems, such as dual-chamber syringes.<lb/></div>
+
+		</front>
+	</text>
+</tei>

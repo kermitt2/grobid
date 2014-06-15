@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<tei type="white-paper">
+	<teiHeader>
+		<fileDesc xml:id="55114352"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">1<lb/></note>
+
+	<docTitle>
+	<titlePart>RetroArray -a comprehensive diagnostic DNA chip for<lb/> rapid detection and identification of retroviruses<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Wolfgang Seifarth<lb/> 1 and Christine Leib-Mösch<lb/> 1,2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Medical Clinic III, Medical Faculty Mannheim of the University</affiliation>
+	</byline>
+
+	<address>Heidelberg, Mannheim, Germany<lb/></address>
+
+	<byline>
+	<affiliation>2 Helmholtz Center Munich, German Research Center for Environmental Health,<lb/> Institute of Molecular Virology,
+	</affiliation>
+	</byline>
+
+	<address>Neuherberg, Germany<lb/></address>
+
+	<div type="abstract">We offer a fast and reliable DNA chip-based assay (RetroArray) for parallel detection and<lb/> identification of a wide variety of human and mammalian exogenous and endogenous<lb/> retroviruses (ERV) in biological samples. The assay combines multiplex polymerase chain<lb/> reaction (PCR) using fluorochrome-modified primers and non-radioactive DNA chip<lb/> hybridization (figure 1) and features considerable advantages over conventional methods.<lb/></div>
+
+		</front>
+	</text>
+</tei>

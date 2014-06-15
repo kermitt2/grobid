@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014884"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">For more information,<lb/> </note>
+
+	<email>ebusiness@mit.edu </email>
+
+	<note type="other">or </note>
+
+	<phone>617-253-7054<lb/> </phone>
+
+	<note type="other">please visit our website at </note>
+
+	<ptr>http://ebusiness.mit.edu<lb/> </ptr>
+
+	<note type="other">or contact the Center directly at<lb/> A research and education initiative at the MIT<lb/></note>
+
+	<byline>
+	<affiliation>Sloan School of Management<lb/></affiliation>
+	</byline>
+
+	<docTitle>
+	<titlePart>The Evolution of RFID Networks<lb/> Paper 224<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Charlie Fine<lb/> Natalie Klym<lb/> Milind Tavshikar<lb/> Dirk Trossen<lb/></docAuthor>
+	</byline>
+
+	<date>May 2006</date>
+
+		</front>
+	</text>
+</tei>

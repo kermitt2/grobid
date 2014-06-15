@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009544"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Distributed Segment Tree: Support of Range Query and<lb/> Cover Query over DHT<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Changxi Zheng<lb/> 1 , Guobin Shen<lb/> 1 , Shipeng Li<lb/> 1 , Scott Shenker<lb/> 2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Microsoft Research Asia,</affiliation>
+	</byline>
+
+	<address>Beijing, 100080, P.R.China<lb/></address>
+
+	<byline>
+	<affiliation>2 International Computer Science Institude, University of California,</affiliation>
+	</byline>
+
+	<address>Berkeley<lb/></address>
+
+	<div type="abstract">ABSTRACT<lb/> Range query, which is defined as to find all the keys in a cer-<lb/>tain range over the underlying P2P network, has received a lot of<lb/> research attentions recently. However, cover query, which is to<lb/> find all the ranges currently in the system that cover a given key,<lb/> is rarely touched. In this paper, we first identify that cover query<lb/> is a highly desired functionality by some popular P2P applications,<lb/> and then propose distributed segment tree (DST), a layered DHT<lb/> structure that incorporates the concept of segment tree. Due to<lb/> the intrinsic capability of segment tree in maintaining the sturcture<lb/> of ranges, DST is shown to be very efficient for supporting both<lb/> range query and cover query in a uniform way. It also possesses<lb/> excellent parallelizability in query operations and can achieve O(1)<lb/> complexity for moderate query ranges. To balance the load among<lb/> DHT nodes, we design a downward load stripping mechanism that<lb/> controls tradeoffs between load and performance. We implemented<lb/> DST on publicly available OpenDHT service and performed exten-<lb/>sive real experiments. All the results and comparisons demonstrate<lb/> the effectiveness of DST for several important metrics.<lb/></div>
+
+		</front>
+	</text>
+</tei>

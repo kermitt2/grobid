@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008800"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	
+	<byline>
+	<affiliation>Agilent Technologies<lb/> Agilent Technologies<lb/></affiliation>
+	</byline>
+	
+	<docTitle>
+	<titlePart>Optical Time<lb/> Domain Reflectometers<lb/> Pocket Guide</titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

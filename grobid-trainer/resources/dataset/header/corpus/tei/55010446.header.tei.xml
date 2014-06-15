@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010446"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>A Review of Focus and Context Interfaces<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>ANDY COCKBURN<lb/> *<lb/> , AMY KARLSON<lb/> , BENJAMIN B. BEDERSON<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">________________________________________________________________________<lb/> There are many interface schemes that allow users to work at, and move between, focused and contextual<lb/> views. We review and categorise these schemes according to the interface mechanisms used to separate and<lb/> blend views. The four approaches are spatial separation, typified by overview+detail interfaces; temporal<lb/> separation, typified by zoomable interfaces; seamless focus+context, typified by fisheye views; and cue-based<lb/> techniques which selectively highlight or suppress items within the information space. Critical features of these<lb/> categories, and evidence of their success, are discussed. The aim is to provide a succinct summary of the state-<lb/>of-the-art, to illuminate successful and unsuccessful interface strategies, and to identify potentially fruitful areas<lb/> for further work.<lb/></div>
+
+	<keyword>Categories and Subject Descriptors: D.2.2 Design Tools and Techniques–User Interfaces; H.5.2 User<lb/> Interfaces–Graphical User Interfaces (GUI)<lb/> General Terms: Human Factors<lb/> Additional Key Words and Phrases: Information display, information visualization, focus and context, overview<lb/> and detail, zoomable user interfaces, fisheye views, review paper.<lb/></keyword>
+
+	<note type="other">________________________________________________________________________<lb/></note>
+
+		</front>
+	</text>
+</tei>

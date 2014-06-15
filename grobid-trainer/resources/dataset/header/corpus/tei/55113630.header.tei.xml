@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei type="serie-article">
+	<teiHeader>
+		<fileDesc xml:id="55113630"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>A Hubert Transform Algorithm For Fringe-Pattern Analysis<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>D.A. Zweig and R.E. Hufnagel<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Hughes Danbury Optical Systems Inc.<lb/></affiliation>
+	</byline>
+
+	<address>1 00 Wooster Heights Rd.<lb/> Danbury, CT 06810<lb/></address>
+
+	<div type="abstract">ABSTRACT<lb/> A new technique for fringe-pattern analysis is described. The technique, based on the<lb/> Hilbert transform, is highly accurate and computationally efficient.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55114070"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Development and characterization of a 280 cm<lb/> 2 vanadium/oxygen fuel<lb/> cell<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Jens Noack * , Carsten Cremers, Domnik Bayer, Jens Tübke, Karsten Pinkwart<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Applied Electrochemistry, Fraunhofer Institute for Chemical Technology,</affiliation>
+	</byline>
+
+	<address>Joseph-von-Fraunhofer-Str. 7, 76327 Pfinztal, Germany<lb/></address>
+
+	<note type="other">h i g h l i g h t s<lb/></note>
+	
+	<div type="abstract">A vanadium/oxygen fuel cell with an active area of 280 cm<lb/> 2 has been developed and tested.<lb/> The cell uses 2 membranes to avoid side reactions on the platinum ORR catalyst.<lb/> The cell performance has been compared to a 50 cm<lb/> 2 design and had nearly similar values.<lb/> In both cells, the performance was limited by slow oxygen reduction rate at room temperature.<lb/>
+	</div>
+
+	<note type="other">a r t i c l e i n f o<lb/></note>
+
+	<note type="submission">Article history:<lb/> Received 19 July 2013<lb/> Received in revised form<lb/> 21 November 2013<lb/> Accepted 14 December 2013<lb/></note>
+
+	<date>Available online 24 December 2013<lb/></date>
+
+	<keyword>Keywords:<lb/> Vanadium oxygen fuel cell<lb/> Vanadium air redox flow battery<lb/> Cell design<lb/> Voltammetry Electrochemical impedance spectroscopy<lb/></keyword>
+
+	<div type="abstract">a b s t r a c t<lb/> A vanadium/oxygen fuel cell with an active area of 280 cm<lb/> 2 has been developed. The cell consisted of two<lb/> membranes with two half-cells and an intermediate chamber. The maximum achieved power density<lb/> was 23 mW cm<lb/> À2 at 0.56 V with lambda air ¼ 3 and a 1.6 M V<lb/> 2þ solution at room temperature. The<lb/> average discharge power density was 19.6 mW cm<lb/> À2 at a constant current density of 40 mA cm<lb/> À2 with an<lb/> average voltage efficiency of 33%. The fuel based energy density was 18.2% of the theoretical value with<lb/> 11.8 Wh L<lb/> À1<lb/> . In comparison with a similarly constructed 50 cm<lb/> 2 cell, both achieved similar performance<lb/> levels. An analysis using the half-cell potential profiles and by means of impedance spectroscopy<lb/> revealed that, as for the 50 cm<lb/> 2 cell, the low rate of oxygen reduction reaction significantly affected the<lb/> performance of the cell. Thus gives potential for the optimization of the cathode reaction and a reduction<lb/> in the ohmic resistances potential for higher power densities.<lb/></div>
+
+	<note type="copyright">&#169; 2013 Elsevier B.V. All rights reserved.<lb/></note>
+
+		</front>
+	</text>
+</tei>

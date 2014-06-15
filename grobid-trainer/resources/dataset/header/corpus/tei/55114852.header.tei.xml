@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55114852"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>1st World Congress on Industrial Process Tomography, Buxton, Greater Manchester, April 14-17, 1999.<lb/></reference>
+
+	<note type="page">538<lb/></note>
+
+	<docTitle>
+	<titlePart>Waveform Inversion in Acoustic Pyrometry<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Helmut Sielschott, Dr. Frank Wübbeling<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institut fuer Numerische und instrumentelle Mathematik<lb/></affiliation>
+	</byline>
+
+	<address>Einsteinstr. 62, D-48149 Muenster<lb/></address>
+
+	<phone>Phone: ++49(0)251 83-33795, Fax: -32714<lb/> </phone>
+
+	<email>E-mail: helmut.sieschott@math.uni-muenster.de<lb/> Frank.wuebbeling@math.uni-muenster.de<lb/></email>
+
+	<div type="abstract">Abstract – Acoustic pyrometry is a measurement technique for the temperature of<lb/> flue gas inside large scale combustion chambers. Detection of first arrival times of<lb/> acoustic signals leads to coarse reconstructions of the velocity of sound which is<lb/> directly related to gas temperature. In addition these data contain information about<lb/> the velocity of flue gas.<lb/> Waveform inversion makes use of the time resolved data recorded by the micro-<lb/>phones and detects a more detailed model for the speed of sound by solving the<lb/> inverse problem of the appropriate wave equation.<lb/></div>
+
+	<keyword>Keywords: Waveform inversion, acoustic pyrometry, inverse problems, process<lb/> tomography<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

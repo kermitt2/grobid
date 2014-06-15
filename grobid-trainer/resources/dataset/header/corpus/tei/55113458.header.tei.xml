@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei type="web">
+	<teiHeader>
+		<fileDesc xml:id="55113458"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Shampoos @BULLET Conditioners @BULLET Serums @BULLET Hair Anatomy @BULLET Hair Q&amp;A<lb/></note>
+
+	<byline>
+	<affiliation>Merman Minerals Hair Care<lb/> </affiliation>
+	</byline>
+
+	<docTitle>
+	<titlePart>MERMAN MANE SHAMPOO<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">8 oz.<lb/></note>
+
+	<docTitle>
+	<titlePart>NUTRA PEPTIDE SHAMPOO<lb/></titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

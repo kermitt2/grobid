@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014270"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note>UFC 3-250-11<lb/></note>
+
+	<date>16 January 2004<lb/></date>
+
+	<note type="other">UNIFIED FACILITIES CRITERIA (UFC)<lb/></note>
+
+	<docTitle>
+	<titlePart>SOIL STABILIZATION FOR<lb/> PAVEMENTS<lb/> </titlePart>
+	</docTitle>
+	
+	<note>APPROVED FOR PUBLIC RELEASE; DISTRIBUTION UNLIMITED</note>
+ 
+		</front>
+	</text>
+</tei>

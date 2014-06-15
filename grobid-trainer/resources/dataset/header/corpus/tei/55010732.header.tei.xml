@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010732"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Tensioactif<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">Un tensioactif ou agent de surface est un composé qui modifie la tension superficielle entre deux<lb/> surfaces. Les composés tensioactifs sont des molécules amphiphiles, c&apos;est-à-dire qu&apos;elles présentent<lb/> deux parties de polarité différente, l&apos;une lipophile (qui retient les matières grasses) et apolaire, l&apos;autre<lb/> hydrophile (miscible dans l&apos;eau) et polaire.<lb/> Il permet ainsi de solubiliser deux phases non miscibles, en interagissant avec l&apos;une apolaire (c&apos;est-à-<lb/>dire lipophile donc hydrophobe), par sa partie hydrophobe; tandis qu&apos;avec l&apos;autre phase qui est polaire,<lb/> il interagira par sa partie hydrophile.<lb/> Au Canada notamment, on parle aussi de surfactif, transposition du mot anglais surfactant qui est la<lb/> compression de « surface active agent » (agent de surface actif). On trouve aussi parfois le terme de<lb/> tenside.<lb/></div>
+
+		</front>
+	</text>
+</tei>

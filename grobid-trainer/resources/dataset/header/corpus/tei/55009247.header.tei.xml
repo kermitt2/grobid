@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009247"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note>Augmented reality<lb/></note>
+
+	<note type="page">1<lb/></note>
+
+	<docTitle>
+	<titlePart>Augmented reality<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Wikitude World Browser on the iPhone 3GS uses<lb/> GPS and a solid state compass<lb/> MagicPlan app on iPhone 4 uses 3-axis<lb/> gyroscopes and accelerometers to capture the<lb/> floor plan of a building<lb/> AR Tower Defense game on the Nokia N95<lb/> smartphone (Symbian OS) uses fiduciary markers<lb/> </note>
+	
+	<div type="abstract">Augmented reality (AR) is a term for a live direct or indirect view of<lb/> a physical, real-world environment whose elements are augmented by<lb/> computer-generated sensory input such as sound, video, graphics or<lb/> GPS data. It is related to a more general concept called mediated<lb/> reality, in which a view of reality is modified (possibly even<lb/> diminished rather than augmented) by a computer. As a result, the<lb/> technology functions by enhancing one&apos;s current perception of reality.<lb/> By contrast, virtual reality replaces the real world with a simulated one.<lb/></div>
+
+		</front>
+	</text>
+</tei>

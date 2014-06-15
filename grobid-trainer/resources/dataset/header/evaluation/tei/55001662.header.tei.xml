@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001662"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Eur. J. Immunol. 1994. 24: 211-215<lb/> Chimeric CSdformyl peptide receptors</reference>
+	
+	<note type= "page"><lb/> 211<lb/></note>
+
+	<docTitle>
+	<titlePart>Generation of chimeric CSa/formyl peptide<lb/> receptors: towards the identification of the human<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>James E. Pease,<lb/>Dennis R. Burton and<lb/> Michael D. Barker<lb/></docAuthor>
+	</byline>
+	
+	<byline>
+	<affiliation>Krebs Institute, Department of<lb/> Molecular Biology and<lb/> Biotechnology, University of<lb/> Sheffield,</affiliation>
+	</byline>
+
+	<address>Shefield<lb/></address>
+
+	<docTitle>
+	<titlePart>C5a receptor binding site*<lb/> <lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">We employed the polymerase chain reaction to produce a series of chimeric<lb/> CSdformyl peptide receptors. Chinese hamster ovary cells transfected with these<lb/> constructs were tested for their ability to bind C5a. Substitution of three of the<lb/> extracellular domains of the C5a receptor with the corresponding domains of the<lb/> formyl peptide receptor abolished C5a binding, whilst replacement of the first<lb/> extracellular loop of the C5a receptor with that of the formyl peptide receptor<lb/> had little effect on the affinity of the receptor for C5a. We therefore conclude that<lb/> this first outer loop of the C5a receptor does not participate in ligand binding,<lb/> whilst involvement of the other extracellular domains of the receptor cannot be<lb/> ruled out.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010830"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">1<lb/></note>
+
+	<docTitle>
+	<titlePart>Mutational Engineering, Growth Selection, Expression,<lb/> Purification and Crystallization of Ligand Bound<lb/> Endo-β-N-acetylglucosaminidase T (Endo-T)<lb/> from Hypocrea jecorina<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Andreas Digre<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Molecular Biology, Swedish University of Agricultural Sciences,</affiliation>
+	</byline>
+
+	<address>Uppsala, Sweden<lb/></address>
+
+	<note type="other">Independent Project in Biology D, 30 HEC, EX0564<lb/> </note>
+
+	<date>Spring 2010, </date>
+
+	<note type="other">SLU<lb/> Supervisors:</note>
+
+	<byline>
+	<note type="other">Mats Sandgren, Ingeborg Stals, Saeid Karkehabadi, Jerry Ståhlberg,<lb/> Nils Mikkelsen and Henrik Hansson<lb/></note>
+	</byline>
+
+	<keyword>Keywords:<lb/> Endo-T ♦ Endo-β-N-acetylglucosaminidase ♦ Deglycosylation ♦ EC 3.2.1.96 ♦<lb/> Crystallography ♦ Ligand bound structure ♦ High mannose N-glycan ♦ HPAEC-PAD<lb/></keyword>
+
+	<date>Submitted: June, 2010<lb/></date>
+
+	<note type="page">2<lb/></note>
+
+	<note type="other">Thesis contents<lb/></note>
+	
+	<byline>
+	<div type="abstract">Abstract…………………………………………………………………………………….. 3<lb/> </div>
+
+	<div type="introduction">Introduction…...………………………………………………………………………….... 3</div>
+	</byline>
+
+		</front>
+	</text>
+</tei>

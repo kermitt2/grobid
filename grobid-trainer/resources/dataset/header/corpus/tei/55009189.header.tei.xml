@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009189"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>MOS INTEGRATED CIRCUIT<lb/> µPD4516421A, 4516821A, 4516161A for Rev. P<lb/> 16M-bit Synchronous DRAM<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">The information in this document is subject to change without notice.<lb/> Description<lb/> The µPD4516421A, 4516821A, 4516161A are high-speed 16,777,216-bit synchronous dynamic random-access<lb/> memories, organized as 2,097,152 × 4 × 2, 1,048,576 × 8 × 2 and 524,288 × 16 × 2 (word × bit × bank), respectively.<lb/></div>
+
+		</front>
+	</text>
+</tei>

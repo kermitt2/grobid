@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011732"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>.Biosci., Vol. 4, Number 3, September 1982, pp. 287-294.</reference>
+
+	<note type="copyright">© Printed in India.<lb/></note>
+
+	<docTitle>
+	<titlePart>Studies on the properties of the variants of gamma-glutamyl<lb/> transpeptidase in human urine<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>K. RAMBABU and T. N. PATTABIRAMAN<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Biochemistry, Kasturba Medical College,</affiliation>
+	</byline>
+
+	<address>Manipal 576 119<lb/></address>
+
+	<note type="submission">MS received 15 March 1982; revised 31 May 1982<lb/></note>
+
+	<div type="abstract">Abstract. Both the high molecular weight and the low molecular weight variants of urinary<lb/> Y-glutamyl transpeptidase, displayed transpeptidase (pH optimum 8.6) and autotrans-<lb/>peptidase (pH optimum 9.4) activities. Iodoacetamide inhibited the transpeptidase activity<lb/> more efficiently than the autotranspeptidase activity with respect to both variants of Y-<lb/>glutamyl transpeptidase. The high molecular weight form utilized L-glutamine as a better<lb/> acceptor than L-cystine during the transpeptidation reaction whereas the reverse was the case<lb/> with the low molecular weight variant. While phenylmethylsulphonyl fluoride-treated<lb/> enzymes retained full activities per se, addition of maleic acid to the modified enzyme was<lb/> found to inhibit the catalytic activities indicating a maleic acid-induced conformational<lb/> change of the modified enzyme.<lb/></div>
+
+	<keyword>Keywords. Urinary Y-glutamyl transpeptidase variants; autotranspeptidation; chemical<lb/> modification.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

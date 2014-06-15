@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010501"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Computer-aided Diagnosis of Masses<lb/> with Full-Field Digital Mammography 1<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Lihua Li, PhD, Robert A. Clark, MD, Jerry A. Thomas, MSc<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Rationale and Objectives. The authors developed and evaluated a method of computer-aided diagnosis (CAD) for mass<lb/> detection with full-field digital mammography (FFDM).<lb/> Materials and Methods. The new CAD method for FFDM employs adaptive, nonlinear multiscale processing and hybrid<lb/> classification methods. The major strategies are (a) to &quot;standardize&quot; the mammographic image before it is input to the<lb/> analysis modules, (b) to adapt the segmentation of suspicious regions adapt to accommodate different characteristics of<lb/> masses and mammograms, and (c) to use combined &quot;hard&quot; and &quot;soft&quot; decision making in discriminating between mass<lb/> and normal tissue regions. Two data sets of diagnostic FFDM mammograms were used. The training data set includes 36<lb/> normal and 24 abnormal mammograms (34 masses), and the testing data set includes 24 normal and 10 abnormal mam-<lb/>mograms (10 masses). The tumors in this diagnostic database were more subtle and difficult to detect than those in<lb/> screening databases the authors have used before.<lb/> Results. With the limited database and a partial optimization, a sensitivity of 91% was obtained in training, with a false-<lb/>positive rate of 3.21 per image. At this trained operating point of the CAD system, six of 10 subtle masses were detected<lb/> in testing.<lb/> Conclusion. The CAD algorithms developed in screen-film mammography can be modified for FFDM. More data analysis<lb/> and system optimization and evaluation will be needed before CAD can be integrated efficiently into the performance of<lb/> FFDM.<lb/></div>
+
+	<keyword>Key Words. Breast neoplasms, diagnosis; breast radiography, technology; computers, diagnostic aid.<lb/></keyword>
+
+	<note type="copyright">© AUR, 2002<lb/></note>
+
+		</front>
+	</text>
+</tei>

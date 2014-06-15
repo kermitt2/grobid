@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55113716"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>ARCHIVES OF ACOUSTICS<lb/> 30, 2, 173–191 (2005)<lb/></reference>
+
+	<docTitle>
+	<titlePart>SPEECH INTELLIGIBILITY IN VARIOUS SPATIAL CONFIGURATIONS<lb/> OF BACKGROUND NOISE<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>J. KOC<lb/> NSKI, A. S ˛<lb/> EK<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Adam Mickiewicz University<lb/> Institute of Acoustics<lb/></affiliation>
+	</byline>
+
+	<address>Umultowska 85, 61-614 Pozna, Poland<lb/></address>
+
+	<email>e-mail: jen@amu.edu.pl, oleksek@amu.edu.pl<lb/></email>
+
+	<note type="submission">(received May 5, 2004; accepted January 27, 2005)<lb/></note>
+
+	<div type="abstract">This study is concerned with the influence of spatial separation of disturbing sources of<lb/> noise on the speech intelligibility. Spatial separation of speech and disturbing sources without<lb/> changing their acoustic power may contribute to the significant improvement in the speech<lb/> intelligibility. This problem has been recently analysed in many papers [1–5]. These works<lb/> have confirmed an important role of the spatial configuration of sources. However, there have<lb/> been no work investigating this problem for nonsense words (logatoms) that may provide more<lb/> rigorous tests of this phenomenon. Moreover, this problem has not been analysed for Polish<lb/> speech. It is important to emphasize that the acoustic and phonetic properties of Polish speech<lb/> are somewhat different from those of English one. Therefore, the attempt to investigate the<lb/> influence of the spatial separation of sound sources was made in this study. In the situation with<lb/> more than one spatially separated disturbances, there may occur a so-called spatial suppression<lb/> phenomenon, that is &quot;mutual suppression&quot; of disturbing sounds in the auditory system that<lb/> brings about an increase in the speech intelligibility. This phenomenon is also called the spatial<lb/> unmasking of speech [5, 6].<lb/> The research consist in determination of the speech intelligibility in the presence of one or<lb/> two statistically independent speech-shaped noise sources varying in configuration. Only two<lb/> pairs of the spatial configurations were investigated.<lb/> Character of the dependences obtained in the study implies that the spatial suppression<lb/> occurs in certain configurations of sources only. This effect brings about an increase in the<lb/> speech intelligibility and can be explained on the basis of the binaural masking level dif-<lb/>ference (BMLD). It seems then that the BMLD may be a more general phenomenon and<lb/> includes not only difference in the detection threshold of a pure tone masked by noise but also<lb/> the improvement in the speech intelligibility, while speech is presented at the background of<lb/> disturbing signals.<lb/></div>
+
+	<keyword>Key words: speech intelligibility, speech perception, spatial separation, spatial suppression.</keyword>
+
+		</front>
+	</text>
+</tei>

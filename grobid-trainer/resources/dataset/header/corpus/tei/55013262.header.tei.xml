@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013262"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>NEOSEIULUS FALLACIS FOR SPIDER MITES<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">Page Intro: Neoseiulus =Amblyseius fallacis, the All-Purpose predatory mite, is used for the<lb/> prevention, control, and management of various spider mites. On this page you will find a<lb/> description, life-cycle info, benefits, drawbacks, scouting info, advisories, usages, and other<lb/> good stuff such as ordering.<lb/></div>
+
+		</front>
+	</text>
+</tei>

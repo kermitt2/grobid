@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012537"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Home @BULLET<lb/> About @BULLET<lb/> Submit a story<lb/> @BULLET Advertise<lb/> @BULLET Contact<lb/> @BULLET Newsletter<lb/> @BULLET Twitter<lb/> @BULLET Facebook<lb/> @BULLET RSS<lb/> @BULLET<lb/> Go<lb/> Dezeen<lb/> « Older story<lb/> @BULLET Newer story »<lb/> @BULLET<lb/></note>
+
+	<docTitle>
+	<titlePart>Tesla by Kranen/Gille<lb/></titlePart>
+	</docTitle>
+	
+	<date>9 June 2010<lb/></date>
+
+	<note type="page">Page 1 of 20<lb/></note>
+
+	<date>18-11-2011<lb/></date>
+
+	<ptr type="web">http://www.dezeen.com/2010/06/09/tesla-by-kranengille/</ptr>
+
+		</front>
+	</text>
+</tei>

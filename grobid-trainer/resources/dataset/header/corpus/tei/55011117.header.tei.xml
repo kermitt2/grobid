@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011117"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">-1 -<lb/></note>
+
+	<docTitle>
+	<titlePart>Bending Fatigue Tests on Stays Cables<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Marcel Poser, Structural Engineer, </docAuthor>
+	</byline>
+	
+	<address>Appenzell (Switzerland)<lb/> </address>
+
+	<byline>
+	<docAuthor>Karl H. Frank, Professor,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University of Texas,</affiliation>
+	</byline>
+
+	<address>Austin, TX (USA)<lb/></address>
+
+	<byline>
+	<docAuthor>Sharon L. Wood, Professor,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University of Texas,</affiliation>
+	</byline>
+
+	<address>Austin, TX (USA)<lb/></address>
+
+	<div type="abstract">The results of an experimental study of the fatigue behavior of cable stays under vibration are<lb/> presented. The purpose of the study is the determination of the fatigue damage caused by bending in stay<lb/> cables due to wind-rain induced vibrations. The stays considered consist of bare 7-wire prestressing<lb/> strand surrounded by a portland cement grout and a high-density polyethylene pipe.<lb/></div>
+
+		</front>
+	</text>
+</tei>

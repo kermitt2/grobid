@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Laura</forename>
+								<middlename>M</middlename>.
+								<surname>Walker</surname>,
+							</persName>
+							<persName>
+								<forename>Sanjay</forename>
+								<middlename>K</middlename>.
+								<surname>Phogat</surname>,
+								<marker>*</marker>
+							</persName>
+							<persName>
+								<forename>Po-Ying</forename>
+								<surname>Chan-Hui</surname>,
+							</persName>
+							<persName>
+								<forename>Denise</forename>
+								<surname>Wagner</surname>,
+							</persName>
+							<persName>
+								<forename>Pham</forename>
+								<surname>Phung</surname>,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Julie</forename>
+								<middlename>L</middlename> .
+								<surname>Goss</surname> ,
+							</persName>
+							<persName>
+								<forename>Terri</forename>
+								<surname>Wrin</surname> ,
+							</persName>
+							<persName>
+								<forename>Melissa</forename>
+								<middlename>D</middlename> .
+								<surname>Simek</surname> ,
+							</persName>
+							<persName>
+								<forename>Steven</forename>
+								<surname>Fling</surname> ,
+							</persName>
+							<persName>
+								<forename>Jennifer</forename>
+								<middlename>L</middlename> .
+								<surname>Mitcham</surname> ,
+							</persName>
+							<persName>
+								<forename>Jennifer</forename>
+							<lb/>
+								<middlename>K</middlename> .
+								<surname>Lehrman</surname>,
+							</persName>
+							<persName>
+								<forename>Frances</forename>
+								<middlename>H</middlename> .
+								<surname>Priddy</surname>,
+							</persName>
+							<persName>
+								<forename>Ole</forename>
+								<middlename>A</middlename> .
+								<surname>Olsen</surname>,
+							</persName>
+							<persName>
+								<forename>Steven</forename>
+								<middlename>M</middlename> .
+								<surname>Frey</surname>,
+							</persName>
+							<persName>
+								<forename>Phillip</forename>
+								<middlename>W</middlename> .
+								<surname>Hammond</surname>,
+							<lb/>
+							</persName>
+							
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

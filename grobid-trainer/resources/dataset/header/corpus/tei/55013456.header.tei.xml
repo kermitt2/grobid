@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013456"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Connect Technologies will continue to pioneer forefront technologies at the hub of a ubiquitous network.<lb/> HOME &gt; Investment : News release<lb/></note>
+
+	
+	<docTitle>
+	<titlePart>Connect Technologies Corporation, Kanematsu<lb/> Communications Ltd., and Sky Media Corporation<lb/>are to conduct a CRM verification trial at DoCoMo<lb/> shops in the Kanto area. The companies plan to<lb/> develop an advertising model that makes use of<lb/> &quot;Media Connect Station,&quot; a shop solution<lb/> compatible with NTT DoCoMo&apos;s &quot;ToruCa(R)&quot;<lb/> function.<lb/>
+	</titlePart>
+	</docTitle>
+
+	<date>December 12, 2005<lb/></date>
+
+		</front>
+	</text>
+</tei>

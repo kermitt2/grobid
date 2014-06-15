@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="institution">Kai Industries Co., Ltd</orgName>,
+							<address>
+								<addrLine>Oyana</addrLine>,
+								<settlement>Seki</settlement>,
+								<region>Gifu</region>
+								<postCode>501-3992</postCode>,
+								<country>Japan</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="institution">Gifu College of Medical Technology</orgName>,
+							<address>
+								<addrLine>Ichihiraga</addrLine>,
+								<settlement>Seki</settlement>,
+								<region>Gifu</region>
+								<postCode>501-3892</postCode>,
+								<country>Japan</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>3</marker>
+							<orgName type="department">Department of Chemistry</orgName>,
+							<orgName type="department">Faculty of Engineering</orgName>,
+							<orgName type="institution">Gifu University</orgName>,
+							<address>
+								<addrLine>Yanagido</addrLine>,
+								<region>Gifu</region>
+								<postCode>501-1193</postCode>,
+								<country>Japan</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

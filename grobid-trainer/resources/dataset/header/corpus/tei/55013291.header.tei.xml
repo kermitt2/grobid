@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013291"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<date>December 6, 1999<lb/></date>
+
+	<note type="page">1 of 10<lb/></note>
+
+	<docTitle>
+	<titlePart>Shadow Vision<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Mark Huang<lb/> Shishir Mehrotra<lb/> Flavia Sparacino<lb/></docAuthor>
+	</byline>
+
+		</front>
+	</text>
+</tei>

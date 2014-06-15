@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001651"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Offshore Wind Energy<lb/> Ready to Power<lb/> a Sustainable Europe<lb/>Final Report<lb/></titlePart>
+	</docTitle>
+
+
+	<docTitle>
+	<titlePart>Concerted Action on<lb/> Offshore Wind Energy in Europe<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Supported by the European Commission<lb/></note>
+
+	<date>December 2001</date>
+
+		</front>
+	</text>
+</tei>

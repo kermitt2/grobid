@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei type="presentation">
+	<teiHeader>
+		<fileDesc xml:id="55114023"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Lecture 10: Balanced Binary Search Trees<lb/> CSCI 700 -Algorithms I<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Andrew Rosenberg</docAuthor>
+	</byline>
+
+		</front>
+	</text>
+</tei>

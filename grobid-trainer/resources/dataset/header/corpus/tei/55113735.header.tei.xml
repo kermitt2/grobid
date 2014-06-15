@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55113735"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>An Infrastructure for Service Oriented<lb/> Sensor Networks<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Åke Östmark, Jens Eliasson, Per Lindgren<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Dept. of Computer Science and Electrical Engineering<lb/> Luleå University of Technology,</affiliation>
+	</byline>
+
+	<address>Sweden<lb/></address>
+
+	<email>Email: {ake.ostmark, jens.eliasson, per.lindgren}@ltu.se<lb/></email>
+
+	<byline>
+	<docAuthor>Aart van Halteren, Lianne Meppelink<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Faculty of Electrical Engineering, Mathematics and Computer Science<lb/> University of Twente,</affiliation>
+	</byline>
+
+	<address>The Netherlands<lb/></address>
+
+	<email>Email: {halteren, meppelin}@ewi.utwente.nl<lb/></email>
+
+	<div type="abstract">Abstract—Emerging wireless technologies enable ubiquitous<lb/> access to networked services. Integration of wireless<lb/> technologies into sensor and actuator nodes provides the<lb/> means for remote access and control. However, ad hoc<lb/> deployment of nodes complicates the process of finding,<lb/> selecting and using these in a meaningful way. The use of a<lb/> service discovery framework enables nodes to present<lb/> themselves and the resources they hold. In this paper, we<lb/> review the applicability of a number of well-known service<lb/> discovery protocols in the context of networked nodes.<lb/> Multicast DNS and Service Discovery (mDNS-SD) stands<lb/> out with its auto-configuration, distributed architecture,<lb/> sharing of resources, and wide area access. For wireless<lb/> battery operated and resource constrained nodes, we seek to<lb/> integrate SD and power management techniques. This leads<lb/> us to a standards based infrastructure for service oriented<lb/> sensor networks where; 1) nodes collaborate in an ad hoc<lb/> fashion by using SD techniques to discover (and announce)<lb/> resources locally and over the public Internet, 2) nodes<lb/> preserve power through aggressive utilization of low power<lb/> (sleep) modes, while yet being reachable for clients<lb/> according to defined schemas, and 3) clients may access and<lb/> configure nodes, and (if possible) access sleeping nodes by<lb/> implicit wake-up procedures. To demonstrate the proposed<lb/> infrastructure a complete experimental setup has been<lb/> devised featuring; Bluetooth enabled nodes, lightweight<lb/> implementations of mDNS-SD and communication stacks,<lb/> Internet access through cellular/wired gateways, together<lb/> with a public DNS server. Our experiments verify that<lb/> mDNS-SD can be effectively deployed on small wireless<lb/> sensor and actuator nodes and provides the basis of a<lb/> service oriented infrastructure for low power sensor<lb/> networks.<lb/></div>
+
+	<keyword>Index Terms— Service discovery, wireless sensor, sensor<lb/> networks, activation schedule, low power, ad hoc.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

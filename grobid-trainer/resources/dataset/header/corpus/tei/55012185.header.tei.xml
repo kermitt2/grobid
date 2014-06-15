@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012185"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Priority queue<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">From Wikipedia, the free encyclopedia<lb/>This is an old revision of this page, as edited by Chrisahn (talk | contribs) at 19:53, 6 February<lb/> 2008. It may differ significantly from the current revision (//en.wikipedia.org<lb/> /wiki/Priority_queue) .<lb/> (diff) ← Previous revision | Latest revision (diff) | Newer revision → (diff)<lb/></note>
+
+	<div type="abstract">A priority queue is an abstract data type in computer programming, supporting the following three<lb/> operations:<lb/> add an element to the queue with an associated priority<lb/> remove the element from the queue that has the highest priority, and return it<lb/> (optionally) peek at the element with highest priority without removing it<lb/> A simple way to implement a priority queue data type is to keep a list of elements, and search through the<lb/> list for the highest priority element for each &quot;minimum&quot; or &quot;peek&quot; operation. This implementation takes O(1)<lb/> time to insert an element, and O(n) time for &quot;minimum&quot; or &quot;peek&quot;. There are many more efficient<lb/> implementations available.<lb/> If a self-balancing binary search tree is used, all three operations take O(log n) time; this is a popular solution<lb/> in environments that already provide balanced trees. The van Emde Boas tree, another associative array data<lb/> structure, can perform all three operations in O(log log n) time, but at a space cost for small queues of about<lb/> O(2<lb/> m/2<lb/> ), where m is the number of bits in the priority value, which may be prohibitive.<lb/></div>
+
+		</front>
+	</text>
+</tei>

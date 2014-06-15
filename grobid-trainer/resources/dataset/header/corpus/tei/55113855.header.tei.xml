@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55113855"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Response of Factor V Inhibitor to Rituximab<lb/> in a Patient Who Received Liver Transplantation<lb/> for Primary Biliary Cirrhosis<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Eric Chun-Yet Lian,<lb/> 1 * Andreas G. Tzakis,<lb/> 2 and David Andrews<lb/> 3<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Department of Hematology/Oncology, University of Miami and Veterans Affairs Medical Center,</affiliation>
+	</byline>
+
+	<address>Miami, Florida<lb/></address>
+
+	<byline>
+	<affiliation>2 Department of Liver Transplantation, University of Miami and Veterans Affairs Medical Center,</affiliation>
+	</byline>
+
+	<address>Miami, Florida<lb/></address>
+
+	<byline>
+	<affiliation>3 Department of Pathology, University of Miami,</affiliation>
+	</byline>
+
+	<address>Miami, Florida<lb/></address>
+
+	<div type="abstract">A 43-year-old patient developed factor V inhibitor 6 months after liver transplantation for<lb/> primary biliary cirrhosis in association with Sjö gren&apos;s syndrome/systemic lupus erythe-<lb/>matosus. She suffered from ecchymoses in the lower extremities. The factor V inhibitor<lb/> was eradicated after 10 weekly doses of 375–500 mg/m<lb/> 2 rituximab. Am.</div>
+
+	<reference>J. Hematol.<lb/> 77:363–365, 2004. ª</reference>
+
+	<note type="copyright">&#169;2004 Wiley-Liss, Inc.<lb/></note>
+
+	<keyword>Key words: factor V inhibitor; rituximab; primary biliary cirrhosis; Sjö gren&apos;s syndrome;<lb/> systemic lupus erythematosus<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

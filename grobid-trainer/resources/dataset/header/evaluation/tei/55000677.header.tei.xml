@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000677"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Deflating the Big Bang: Fast and Scalable Deep Packet<lb/> Inspection with Extended Finite Automata<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Randy Smith Cristian Estan Somesh Jha Shijin Kong<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Computer Sciences Department, University of Wisconsin-Madison<lb/></affiliation>
+	</byline>
+
+	<email>{smithr,estan,jha,krobin}@cs.wisc.edu<lb/></email>
+
+	<div type="abstract">ABSTRACT<lb/> Deep packet inspection is playing an increasingly important<lb/> role in the design of novel network services. Regular ex-<lb/>pressions are the language of choice for writing signatures,<lb/> but standard DFA or NFA representations are unsuitable for<lb/> high-speed environments, requiring too much memory, too<lb/> much time, or too much per-flow state. DFAs are fast and<lb/> can be readily combined, but doing so often leads to state-<lb/>space explosion. NFAs, while small, require large per-flow<lb/> state and are slow.<lb/> We propose a solution that simultaneously addresses all<lb/> these problems. We start with a first-principles characteriza-<lb/>tion of state-space explosion and give conditions that elimi-<lb/>nate it when satisfied. We show how auxiliary variables can<lb/> be used to transform automata so that they satisfy these<lb/> conditions, which we codify in a formal model that aug-<lb/>ments DFAs with auxiliary variables and simple instructions<lb/> for manipulating them. Building on this model, we present<lb/> techniques, inspired by principles used in compiler optimiza-<lb/>tion, that systematically reduce runtime and per-flow state.<lb/> In our experiments, signature sets from Snort and Cisco Sys-<lb/>tems achieve state-space reductions of over four orders of<lb/> magnitude, per-flow state reductions of up to a factor of six,<lb/> and runtimes that approach DFAs.<lb/></div>
+
+	<keyword>Categories and Subject Descriptors: C.2.0 [Computer<lb/> Communication Networks]: General -Security and protec-<lb/>tion (e.g., firewalls)<lb/> General Terms: Algorithms, Performance, Security<lb/> Keywords: regular expressions, signature matching, deep<lb/> packet inspection, XFA<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

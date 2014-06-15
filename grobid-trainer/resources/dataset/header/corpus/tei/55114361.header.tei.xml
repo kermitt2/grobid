@@ -1,0 +1,63 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55114361"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<docAuthor>F. BESSE, C. ROTHER, A. FITZGIBBON, J. KAUTZ: </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>PMBP<lb/></affiliation>
+	</byline>
+
+	<note type="page">1<lb/></note>
+
+	<docTitle>
+	<titlePart>PMBP: PatchMatch Belief Propagation for<lb/> Correspondence Field Estimation<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Frederic Besse<lb/> 1<lb/></docAuthor>
+	</byline>
+
+	<email>f.besse@cs.ucl.ac.uk<lb/></email>
+
+	<byline>
+	<docAuthor>Carsten Rother<lb/> 2<lb/></docAuthor>
+	</byline>
+
+	<email>carrot@microsoft.com<lb/></email>
+
+	<byline>
+	<docAuthor>Andrew Fitzgibbon<lb/> 2<lb/></docAuthor>
+	</byline>
+
+	<email>awf@microsoft.com<lb/></email>
+
+	<byline>
+	<docAuthor>Jan Kautz<lb/> 1<lb/></docAuthor>
+	</byline>
+
+	<email>j.kautz@cs.ucl.ac.uk<lb/></email>
+
+	<byline>
+	<affiliation>1 University College London<lb/></affiliation>
+	</byline>
+
+	<address>London, UK<lb/></address>
+
+	<byline>
+	<affiliation>2 Microsoft Research Cambridge<lb/></affiliation>
+	</byline>
+
+	<address>Cambridge, UK<lb/></address>
+
+	<div type="abstract">Abstract<lb/> PatchMatch is a simple, yet very powerful and successful method for optimizing<lb/> continuous labelling problems. The algorithm has two main ingredients: the update of<lb/> the solution space by sampling and the use of the spatial neighbourhood to propagate<lb/> samples. We show how these ingredients are related to steps in a specific form of belief<lb/> propagation in the continuous space, called Particle Belief Propagation (PBP). However,<lb/> PBP has thus far been too slow to allow complex state spaces. We show that unifying the<lb/> two approaches yields a new algorithm, PMBP, which is more accurate than PatchMatch<lb/> and orders of magnitude faster than PBP. To illustrate the benefits of our PMBP method<lb/> we have built a new stereo matching algorithm with unary terms which are borrowed<lb/> from the recent PatchMatch Stereo work and novel realistic pairwise terms that provide<lb/> smoothness. We have experimentally verified that our method is an improvement over<lb/> state-of-the-art techniques at sub-pixel accuracy level.<lb/></div>
+
+		</front>
+	</text>
+</tei>

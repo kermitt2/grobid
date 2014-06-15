@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011525"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Biochem. J. (1993) 290, 369-374 (Printed in Great Britain)<lb/></reference>
+
+	<docTitle>
+	<titlePart>Effect of heterologous expression of acyl-CoA-binding protein on acyl-CoA<lb/> level and composition in yeast<lb/>
+	</titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Susanne MANDRUP,* Ragnhild JEPSEN,* Henrik SK0TT,* Jesper ROSENDAL,* Peter HOJRUP,t Karsten KRISTIANSENt<lb/> and Jens KNUDSEN*<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>* Institute of Biochemistry and tDepartment of Molecular Biology, Odense University,</affiliation>
+	</byline>
+
+	<address>Campusvej 55, DK-5230 Odense M, Denmark<lb/></address>
+
+		</front>
+	</text>
+</tei>

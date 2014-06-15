@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008986"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">INFORMATION PAPER<lb/> </note>
+	
+	<reference>International Journal of Recent Trends in Engineering, Vol 1, No. 4, May 2009<lb/></reference>
+
+	<note type="page">68<lb/></note>
+
+	<docTitle>
+	<titlePart>A Survey of RFID Tags<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>M Ayoub Khan, Manoj Sharma, Brahmanandha Prabhu R<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Communications Research Centre, SoE<lb/> Center for Development of Advanced Computing (CDAC)<lb/> (Ministry of Communications and I.T., Govt. of India),</affiliation>
+	</byline>
+
+	<address>Noida, India<lb/></address>
+
+	<email>Email: {ayoub, manojsharma, brahmanandha} @cdacnoida.in<lb/></email>
+
+	<div type="abstract">Abstract—The Radio Frequency Identification System<lb/> (RFID) has become a popular system and its applications<lb/> has reached in most of the fields like toll bridge, supply<lb/> chain management and defense sector [8]. The RFID has<lb/> also entered into the field of medical sciences [4, 7].<lb/> Everyday, RFID tags are becoming very small and their<lb/> dimensions are also reducing to 0.002 inches (RFID powder<lb/> tag) developed by Hitachi [10,11]. There are many different<lb/> types of RFID tags available in the market for different<lb/> types of applications. Due to reduction in the cost of<lb/> production, RFID systems are being deployed everywhere in<lb/> large number. Therefore, it becomes important to<lb/> understand the tag technology and their applicability. In<lb/> this paper, we provide a comprehensive survey of various<lb/> RFID tag technologies reported in the literatures and<lb/> classify them into different categories.<lb/></div>
+
+	<keyword>Index Terms—RFID, Active tag, Passive tag, Semi-Passive<lb/> tag, Digestive tag, EPC<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

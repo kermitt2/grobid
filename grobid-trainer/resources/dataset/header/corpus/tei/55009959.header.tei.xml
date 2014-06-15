@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009959"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Technical Report<lb/> Number 712<lb/></note>
+
+	<byline>
+	<note type="other">Computer Laboratory<lb/></note>
+	</byline>
+
+	<idno>UCAM-CL-TR-712<lb/></idno>
+	
+	<idno type="ISSN">ISSN 1476-2986<lb/></idno>
+
+	<docTitle>
+	<titlePart>Flash-exposure high<lb/> dynamic range imaging:<lb/> virtual photography and<lb/> depth-compensating flash<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Christian Richardt<lb/></docAuthor>
+	</byline>
+
+	<date>March 2008<lb/></date>
+
+	<address>15 JJ Thomson Avenue<lb/> Cambridge CB3 0FD<lb/> United Kingdom<lb/></address>
+
+	<phone>phone +44 1223 763500<lb/> </phone>
+
+	<ptr type="web">http://www.cl.cam.ac.uk/</ptr>
+
+		</front>
+	</text>
+</tei>

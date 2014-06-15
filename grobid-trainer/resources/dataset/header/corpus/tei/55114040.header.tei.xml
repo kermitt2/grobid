@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55114040"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>I HVSICAL R EVIE%<lb/> VOLUME 135, NUMBER SA<lb/> 31 AUGUST 1964<lb/></reference>
+
+	<docTitle>
+	<titlePart>New Oxygen Infrared Bands in Annealed Irradiated Silicon<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>J. W. CoRBETT) G. D. WATKINs, AND R. S. McDoNALD<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Genera/ E/ectric Research Laboratory,</affiliation>
+	</byline>
+
+	<address>Schenectady, Rem Pork<lb/></address>
+
+	<note type="submission">(Received 6 April 1964)<lb/></note>
+
+	<div type="abstract">Infrared and electron-spin-resonance<lb/> measurements on the recovery of silicon irradiated with 1.5-MeV<lb/> electrons are presented. In the infrared measurements the disappearance of the previously reported 829-cm &apos;<lb/> (12&apos;) oxygen vibration band is followed, and the appearance and subsequent disappearance of a succession of<lb/> new infrared bands are observed. The major new bands are at 887, 904, 968, and 1000 cm &apos;, although others<lb/> are also found. Tentative defect models are proposed to account for these recovery features.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011031"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Removal of Palladium from Organic Reaction Mixtures by Trimercaptotriazine<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Victor W. Rosso,<lb/> David A. Lust,<lb/> Peter J. Bernot,<lb/> John A. Grosso,<lb/> Sandeep P. Modi,<lb/> Andrew Rusowicz,<lb/> Thomas C. Sedergran,<lb/> , James H. Simpson,<lb/> Sushil K. Srivastava,<lb/> Michael J. Humora,*<lb/> , and Neal G. Anderson*<lb/> ,,∇<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Chemical Process Technology and Chemical Process Research, Pharmaceutical Research Institute, Bristol-Myers Squibb,<lb/>
+	</affiliation>
+	</byline>
+
+	<address>P.O. Box 191, New Brunswick, New Jersey 08903-0191<lb/></address>
+
+	<div type="abstract">Abstract:<lb/> In an effort to remove residual palladium from a drug candidate<lb/> prepared by palladium-catalyzed indolization, many treatments<lb/> were examined. The most effective treatment was to precipitate<lb/> palladium from solution using 2,4,6-trimercapto-s-triazine<lb/> (TMT), which reduced palladium levels from 600-650 ppm to<lb/> 20-60 ppm in an isolated indole intermediate. Subsequent<lb/> crystallizations routinely afforded active pharmaceutical in-<lb/>gredient with &lt;1 ppm of palladium. TMT treatment should<lb/> prove useful to reduce the concentration of residual palladium<lb/> in other reactions.<lb/>
+	</div>
+
+		</front>
+	</text>
+</tei>

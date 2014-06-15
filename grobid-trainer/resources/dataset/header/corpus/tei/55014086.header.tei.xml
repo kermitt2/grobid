@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014086"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<affiliation>European Medicines Agency<lb/> Evaluation of Medicines for Human Use<lb/></affiliation>
+	</byline>
+
+	<address>7 Westferry Circus, Canary Wharf, London, E14 4HB, UK<lb/></address>
+
+	<phone>Tel. (44-20) 74 18 84 00 Fax (44-20) 75 23 70 51<lb/> </phone>
+
+	<email>E-mail: mail@emea.europa.eu</email>
+
+	<ptr type="web">http://www.emea.europa.eu<lb/></ptr>
+
+	<note type="copyright">© European Medicines Agency, 2009. Reproduction is authorised provided the source is acknowledged.<lb/></note>
+
+	<note>Doc.Ref.: EMEA/664021/2009<lb/></note>
+
+	<note type="other">ASSESSMENT REPORT<lb/> FOR<lb/> Cimzia<lb/> </note>
+	
+	<docTitle>
+	<titlePart>International Nonproprietary Name: certolizumab pegol<lb/></titlePart>
+	</docTitle>
+
+	<note>Procedure No. EMEA/H/C/001037<lb/></note>
+
+	<note type="other">Assessment Report as adopted by the CHMP with<lb/> all information of a commercially confidential nature deleted. <lb/></note>
+
+	<note type="page">Page 2 of 47<lb/></note>
+	
+	<note type="other">TABLE OF CONTENTS<lb/></note>
+
+		</front>
+	</text>
+</tei>

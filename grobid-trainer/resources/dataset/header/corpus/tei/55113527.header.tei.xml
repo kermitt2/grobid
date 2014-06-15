@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55113527"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>PARTICLE SHADOW TRACKING – COMBINING<lb/> MAGNETIC PARTICLE MANIPULATION WITH IN-<lb/>SITU OPTICAL DETECTION IN A CMOS<lb/> MICROSYSTEM<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>U. Lehmann<lb/> 1) , M. Sergio<lb/> 2) , S. Pietrocola<lb/> 1) , C. Niclass<lb/> 2) , E. Charbon<lb/> 2)<lb/> and M.A.M. Gijs<lb/> 1)<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Institute of Microelectronics and Microsystems<lb/> 2 School of Computer and Communication Sciences,<lb/> Ecole Polytechnique Fédérale de Lausanne (EPFL)<lb/></affiliation>
+	</byline>
+
+	<address>Lausanne, SWITZERLAND<lb/></address>
+
+	<div type="abstract">ABSTRACT We present a hybrid CMOS based microsystem where magnetic actuation of<lb/> microparticles is combined with integrated optical detection via Single Photon Avalanche<lb/> Diodes (SPADs). The system&apos;s configuration permits the manipulation and detection of<lb/> single magnetic particles having diameters of 1, 3 and 5 µm. We are able to show a size<lb/> sensitivity of the particle detection, with a clear distinction between different particle<lb/> diameters.<lb/></div>
+
+	<keyword>Keywords: Magnetic particles, CMOS, optical detection, Single Photon Avalanche<lb/> Diode<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

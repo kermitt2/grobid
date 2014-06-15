@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012701"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>The Evolution of UWB and IEEE 802.15.3a for<lb/> Very High Data Rate WPAN<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>By Ketan Mandke, Haewoon Nam,<lb/> Lasya Yerramneni, and Christian Zuniga<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>EE 381K-11 Wireless Communications<lb/> UWB Group, The University of Texas at Austin<lb/></affiliation>
+	</byline>
+
+	<note type="other">Prepared for Dr. T. S. Rappaport<lb/></note>
+
+	<date>May 6, 2003<lb/></date>
+
+	<note type="page">1<lb/></note> 
+
+	<div type="abstract">ABSTRACT<lb/> The proliferation of wireless communication devices in our lives shows no sign of<lb/> stagnation. The ever-growing demand for higher quality media and faster content<lb/> delivery where we work, live, and play drives the quest for higher data rates in<lb/> communication networks. To meet this demand for capacity in the wireless personal area<lb/> network (WPAN) space, the IEEE 802.15.3a task group has set out to define a very high<lb/> data rate alternate physical layer for IEEE 802.15.3, the current high data rate WPAN<lb/> standard. The IEEE 802.15.3a task group is currently in the process of reviewing<lb/> proposals presented by a variety of companies (including Texas Instruments, Intel,<lb/> XtremeSpectrum, etc). All of the current proposed physical layers employ ultra<lb/> wideband (UWB) communication.<lb/> The goal of this paper is to create a clear picture, or &quot;snapshot,&quot; of the current state of<lb/> UWB communications and its relation to the standardization efforts of IEEE 802.15.3a.<lb/> The paper includes a discussion of the benefits of UWB radio, the regulatory<lb/> environment of UWB, and the design issues and trade-offs which face WPAN standards<lb/> makers. This paper should aid the reader in understanding the motivations for and<lb/> implications of the convergence of IEEE 802.15.3a and UWB radio. The IEEE is<lb/> expected to release an approved standard in mid-2004.</div>
+
+		</front>
+	</text>
+</tei>

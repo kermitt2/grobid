@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>a</marker>
+							<orgName type="department">School of Industrial Engineering</orgName>,
+							<orgName type="institution">Purdue University</orgName>,
+							<address>
+								<settlement>West Lafayette</settlement>,
+								<region>IN</region>,
+								<country>USA</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>b</marker>
+							<orgName type="department">School of Mechanical Engineering and Division of Environmental and Ecological Engineering</orgName>,
+							<orgName type="institution">Purdue University</orgName>,
+							<address>
+								<settlement>West Lafayette</settlement>,
+								<region>IN</region>,
+								<country>USA</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

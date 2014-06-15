@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010654"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Acta Physiol Scand 1981, 112: 4 3 7 4 2<lb/></reference>
+
+	<docTitle>
+	<titlePart>A servo-controlled roller pump for constant flow or<lb/> constant pressure blood perfusion under normal pulsatile<lb/> or non-pulsatile conditions<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>PER BORGSTROM, LARS-AKE CLEMENTZ and PER-OLOF GRANDE<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Physiology and Biophysics, University of Lund,</affiliation>
+	</byline>
+
+	<address>Sweden<lb/></address>
+
+	<div type="abstract">BORGSTROM, P., CLEMENTS, L . -k &amp; GRANDE, P.-0.: A servo-controlled roller<lb/> pump for constant flow or constant pressure blood perfusion under normal pulsatile or<lb/> non-pulsatile conditions. Acta Physiol Scand 1981, 112: 4 3 7 4 2 . Received 24 Nov. 1980.<lb/> ISSN 0001-6772. Department of Physiology and Biophysics, University of Lund, Sweden.<lb/> This paper describes the design of a servo-controlled precision roller pump applicable for<lb/> constant blood flow or constant blood pressure perfusion in research on the peripheral<lb/> circulation. The pump, and its feed-back control, can simulate normal cardiac induced<lb/> autoperfusion by reproducing the arterial pulse pressure confguration with high fidelity.<lb/> Its design is such as to minimize damage of the red blood cells and consequent release of<lb/> vasoactive substances, a problem encountered with most conventional pumps. The present<lb/> pump principle may also find a use in heart-lung machines and dialysis equipment and can<lb/> be used as a precision infusion pump.<lb/></div>
+
+	<keyword>Key words: Roller pump, servo-control, vascular perfusion, pulsatile pump perfusion<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Xingfang</forename>
+								<surname>Su</surname>,
+							</persName>
+							<persName>
+								<forename>Byeong-Su</forename>
+								<surname>Kim</surname>,
+							</persName>
+							<persName>
+								<forename>Sara</forename>
+								<middlename>R</middlename>.
+								<surname>Kim</surname>,
+							</persName>
+							<persName>
+								<forename>Paula</forename>
+								<middlename>T</middlename>.
+								<surname>Hammond</surname> and
+							</persName>
+							<persName>
+								<forename>Darrell</forename>
+								<middlename>J</middlename>.
+								<surname>Irvine</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

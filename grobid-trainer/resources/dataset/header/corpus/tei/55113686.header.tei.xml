@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55113686"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>ImageNet Classification with Deep Convolutional<lb/> Neural Networks<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Alex Krizhevsky<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University of Toronto<lb/></affiliation>
+	</byline>
+
+	<email>kriz@cs.utoronto.ca<lb/></email>
+
+	<byline>
+	<docAuthor>Ilya Sutskever<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University of Toronto<lb/></affiliation>
+	</byline>
+
+	<email>ilya@cs.utoronto.ca<lb/></email>
+
+	<byline>
+	<docAuthor>Geoffrey E. Hinton<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University of Toronto<lb/></affiliation>
+	</byline>
+
+	<email>hinton@cs.utoronto.ca<lb/></email>
+
+	<div type="abstract">Abstract<lb/> We trained a large, deep convolutional neural network to classify the 1.2 million<lb/> high-resolution images in the ImageNet LSVRC-2010 contest into the 1000 dif-<lb/>ferent classes. On the test data, we achieved top-1 and top-5 error rates of 37.5%<lb/> and 17.0% which is considerably better than the previous state-of-the-art. The<lb/> neural network, which has 60 million parameters and 650,000 neurons, consists<lb/> of five convolutional layers, some of which are followed by max-pooling layers,<lb/> and three fully-connected layers with a final 1000-way softmax. To make train-<lb/>ing faster, we used non-saturating neurons and a very efficient GPU implemen-<lb/>tation of the convolution operation. To reduce overfitting in the fully-connected<lb/> layers we employed a recently-developed regularization method called &quot;dropout&quot;<lb/> that proved to be very effective. We also entered a variant of this model in the<lb/> ILSVRC-2012 competition and achieved a winning top-5 test error rate of 15.3%,<lb/> compared to 26.2% achieved by the second-best entry.<lb/></div>
+
+		</front>
+	</text>
+</tei>

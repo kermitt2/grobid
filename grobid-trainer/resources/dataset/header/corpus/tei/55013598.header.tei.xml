@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013598"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>PTK 787/ZK 222584, a Tyrosine Kinase Inhibitor<lb/> of all Known VEGF Receptors, Represses Tumor<lb/> Growth with High Efficacy<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Holger Hess-Stumpp, Martin Haberey, and Karl-Heinz Thierauch*<lb/> [a]<lb/></docAuthor>
+	</byline>
+
+		</front>
+	</text>
+</tei>

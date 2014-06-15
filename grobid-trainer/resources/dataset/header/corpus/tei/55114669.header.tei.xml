@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55114669"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note>SPE 154122<lb/></note>
+
+	<docTitle>
+	<titlePart>Mobility and Conformance Control for CO 2 EOR via Thickeners, Foams, and<lb/> Gels -A Literature Review of 40 Years of Research and Pilot Tests<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>R.M. Enick,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Dept. of Chemical and Petroleum Engineering, Univ. of Pittsburgh; D. Olsen, IBM Global Business<lb/> Services; J. Ammer, US DOE National Energy Technology Laboratory; W. Schuller, URS Corporarion<lb/></affiliation>
+	</byline>
+
+	<note type="copyright">Copyright 2012, Society of Petroleum Engineers<lb/></note>
+
+	<note type="other">This paper was prepared for presentation at the Eighteenth SPE Improved Oil Recovery Symposium held in Tulsa, Oklahoma, USA, 14–18 April 2012.<lb/> This paper was selected for presentation by an SPE program committee following review of information contained in an abstract submitted by the author(s). Contents of the paper have not been<lb/> reviewed by the Society of Petroleum Engineers and are subject to correction by the author(s). The material does not necessarily reflect any position of the Society of Petroleum Engineers, its<lb/> officers, or members. Electronic reproduction, distribution, or storage of any part of this paper without the written consent of the Society of Petroleum Engineers is prohibited. Permission to<lb/> reproduce in print is restricted to an abstract of not more than 300 words; illustrations may not be copied. The abstract must contain conspicuous acknowledgment of SPE copyright.<lb/></note>
+
+	<div type="abstract">Abstract<lb/> Carbon dioxide (CO 2 ) has been used commercially to recover oil from geologic formations by enhanced oil recovery (EOR)<lb/> technologies for over 40 years. The U.S. Department of Energy Office of Fossil Energy and its predecessor organizations<lb/> have supported a large number of laboratory and field projects over the past decades in an effort to improve the oil recovery<lb/> process including investments to advanced reservoir characterization, mobility control, and conformance of CO 2 flooding.<lb/> Currently, CO 2 EOR provides about 280,000 barrels of oil per day, just over 5 percent of the total U.S. crude oil production.<lb/> Recently CO 2 flooding has become so technically and economically attractive that CO 2 supply, rather than CO 2 price, has<lb/> been the constraining developmental factor. Carbon dioxide EOR is likely to expand in the United States in upcoming<lb/> years due to &quot;high&quot; crude oil prices, natural CO 2 source availability, and possible large anthropogenic CO 2 sources through<lb/> carbon capture and storage (CCS) technology advances. Despite its well-established ability to recover oil, the CO 2 EOR<lb/> process could be improved if the high mobility of CO 2 relative to reservoir oil and water can be effectively and affordably<lb/> reduced. The CO 2 EOR industry continues to use water-alternating-with-gas (WAG) as the technology of choice to control<lb/> CO 2 mobility and/or mechanical techniques (e.g., cement, packers, well control, infield drilling, and horizontal wells) to help<lb/> control the CO 2 flood conformance. If the &quot;next generation&quot; CO 2 EOR target of 67 billion barrels is to be realized, new<lb/> solutions are needed that can recover significantly more oil than the 10–20% of the original oil in place associated with<lb/> current flooding practices. A recent literature review [Enick and Olsen, 2011] concentrates on the history and development<lb/> of CO 2 mobility control and profile modification technologies in the hope that stimulating renewed interest in these chemical<lb/> techniques will help to catalyze new efforts to overcome the geologic and process limitations such as poor sweep efficiency,<lb/> unfavorable injectivity profiles, gravity override, high ratios of CO 2 to oil produced, early breakthrough, and viscous<lb/> fingering. This paper is a concise overview of the recent, comprehensive literature review available on the NETL website<lb/> entitled &quot;Mobility and Conformance Control for Carbon Dioxide Enhanced Oil Recovery (CO 2 -EOR) via Thickeners, Foams,<lb/> and Gels – A Detailed Literature Review of 40 Years of Research&quot; [Enick and Olsen, 2011] that focuses on attempts to<lb/> enhance carbon dioxide mobility control (in-depth, long-term processes that cause CO 2 to exhibit mobility comparable to oil)<lb/> and profile modification/conformance control (near-wellbore, short-term process primarily intended to greatly reduce the<lb/> permeability of a thief zone) using CO 2 thickeners and CO 2 foams. In particular, this paper focuses on the history of CO 2<lb/> thickeners.<lb/></div>
+
+		</front>
+	</text>
+</tei>

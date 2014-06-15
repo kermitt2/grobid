@@ -1,0 +1,48 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55114035"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Digits: Freehand 3D Interactions Anywhere<lb/> Using a Wrist-Worn Gloveless Sensor<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>David Kim<lb/> 1,2 , Otmar Hilliges<lb/> 1 , Shahram Izadi<lb/> 1 , Alex Butler<lb/> 1 ,<lb/> Jiawen Chen<lb/> 1 , Iason Oikonomidis<lb/> 1,3 , Patrick Olivier<lb/> 2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Microsoft Research<lb/> 2 Culture Lab<lb/> 3 FORTH<lb/> </affiliation>
+	</byline>
+
+	<address>7 JJ Thomson Ave </address>
+
+	<affiliation>Newcastle University University of Crete<lb/></affiliation>
+
+	<address>Cambridge, UK<lb/> Newcastle, UK<lb/> Heraklion, Greece<lb/></address>
+
+	<email>{b-davidk, otmarh, shahrami, dab, jiawen}@microsoft.com, oikonom@ics.forth.gr, p.l.olivier@ncl.ac.uk<lb/></email>
+
+	<note type="other">Figure 1: A) Digits is a wrist-worn sensor for freehand 3D interactions on the move. By instrumenting only the wrist, the user&apos;s<lb/> entire hand is left to interact freely without wearing a data glove. B and C) Digits recovers the full 3D pose of a user&apos;s hand. D)<lb/> Spatial interactions using a mobile phone and Digits.<lb/> </note>
+
+	<div type="abstract">ABSTRACT<lb/> Digits is a wrist-worn sensor that recovers the full 3D pose<lb/> of the user&apos;s hand. This enables a variety of freehand inter-<lb/>actions on the move. The system targets mobile settings, and<lb/> is specifically designed to be low-power and easily repro-<lb/>ducible using only off-the-shelf hardware. The electronics<lb/> are self-contained on the user&apos;s wrist, but optically image the<lb/> entirety of the user&apos;s hand. This data is processed using a new<lb/> pipeline that robustly samples key parts of the hand, such<lb/> as the tips and lower regions of each finger. These sparse<lb/> samples are fed into new kinematic models that leverage the<lb/> biomechanical constraints of the hand to recover the 3D pose<lb/> of the user&apos;s hand. The proposed system works without the<lb/> need for full instrumentation of the hand (for example using<lb/> data gloves), additional sensors in the environment, or depth<lb/> cameras which are currently prohibitive for mobile scenarios<lb/> due to power and form-factor considerations. We demon-<lb/>strate the utility of Digits for a variety of application sce-<lb/>narios, including 3D spatial interaction with mobile devices,<lb/> eyes-free interaction on-the-move, and gaming. We conclude<lb/> with a quantitative and qualitative evaluation of our system,<lb/> and discussion of strengths, limitations and future work.<lb/></div>
+
+	<keyword>ACM Classification Keywords<lb/> H.5.2 [Information Interfaces And Presentation]: User<lb/> Interfaces -Interaction styles;
+	<lb/></keyword>
+
+	<note type="other">Permission to make digital or hard copies of all or part of this work for<lb/> personal or classroom use is granted without fee provided that copies are<lb/> not made or distributed for profit or commercial advantage and that copies<lb/> bear this notice and the full citation on the first page. To copy otherwise, to<lb/> republish, to post on servers or to redistribute to lists, requires prior specific<lb/> permission and/or a fee.<lb/></note>
+
+	<reference>UIST&apos;12, October 7-10, 2012, Cambridge, Massachusetts, USA.<lb/></reference>
+
+	<note type="copyright">Copyright 2012 ACM</note>
+
+	<note>978-1-4503-1580-7/12/10...$15.00.<lb/></note>
+
+	<keyword>Author Keywords<lb/> Hand tracking, 3D interaction, mobile, wearables.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

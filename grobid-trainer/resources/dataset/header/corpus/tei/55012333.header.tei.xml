@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012333"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Cluster Computing 4, 95–107, 2001<lb/></reference>
+
+	<note type="copyright">&#169; 2001 Kluwer Academic Publishers. Manufactured in The Netherlands.<lb/></note>
+
+	<docTitle>
+	<titlePart>QoS and Contention-Aware Multi-Resource Reservation<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>DONGYAN XU, KLARA NAHRSTEDT and DUANGDAO WICHADAKUL<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Computer Science, University of Illinois at Urbana-Champaign,</affiliation>
+	</byline>
+
+	<address>Urbana, IL 61801, USA<lb/></address>
+
+	<div type="abstract">Abstract. To provide Quality of Service (QoS) guarantee in distributed services, it is necessary to reserve multiple computing and<lb/> communication resources for each service session. Meanwhile, techniques have been available for the reservation and enforcement of<lb/> various types of resources. Therefore, there is a need to create an integrated framework for coordinated multi-resource reservation. One<lb/> challenge in creating such a framework is the complex relation between the end-to-end application-level QoS and the corresponding<lb/> end-to-end resource requirement. Furthermore, the goals of (1) providing the best end-to-end QoS for each distributed service session and<lb/> (2) increasing the overall reservation success rate of all service sessions are in conflict with each other. In this paper, we present a QoS<lb/> and contention-aware framework of end-to-end multi-resource reservation for distributed services. The framework assumes a reservation-<lb/>enabled environment, where each type of resource can be reserved. The framework consists of (1) a component-based QoS-Resource<lb/> Model, (2) a runtime system architecture for coordinated reservation, and (3) a runtime algorithm for the computation of end-to-end<lb/> multi-resource reservation plans. The algorithm provides a solution to alleviating the conflict between the QoS of an individual service<lb/> session and the success rate of all service sessions. More specifically, for each service session, the algorithm computes an end-to-end<lb/> reservation plan, such that it guarantees the highest possible end-to-end QoS level under the current end-to-end resource availability,<lb/> and requires the lowest percentage of bottleneck resource(s) among all feasible reservation plans. Our simulation results show excellent<lb/> performance of this algorithm.<lb/></div>
+
+	<keyword>Keywords: resource reservation, QoS, resource contention, distributed service<lb/> AMS subject classification: distributed computing<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

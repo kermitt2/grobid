@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010005"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>TISSUE ENGINEERING<lb/> Volume 10, Number 9/10, 2004<lb/></reference>
+
+	<note type="copyright">© Mary Ann Liebert, Inc.<lb/></note>
+
+	<docTitle>
+	<titlePart>Adhesion and Growth of Bone Marrow Stromal Cells on<lb/> Modified Alginate Hydrogels<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>M.A. LAWSON, Ph.D., 1 J.E. BARRALET, Ph.D., 2 L. WANG, Ph.D., 2 R.M. SHELTON, Ph.D., 2<lb/> and JAMES T. TRIFFITT, Ph.D. 1<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">ABSTRACT<lb/> Alginate is a biodegradable, immunocompatible biopolymer that is capable of immobilizing viable<lb/> cells and bioactive factors. Few investigations have analyzed the efficacy of alginate gels as substrata<lb/> for cell attachment and proliferation. Here we have compared the adhesion and subsequent growth<lb/> of human and rat bone marrow stromal fibroblastic cells on unmodified alginate hydrogel surfaces.<lb/> It was found that, in contrast to rat cells, human cells did not readily attach or proliferate on un-<lb/>modified alginates. In attempts to enhance these features, or collagen type I was incorporated into<lb/> the gels, with no significant improvements in prolonged human cell adherence. However, alginate<lb/> gels containing both collagen type I and ␤-tricalcium phosphate were found to enhance human cell<lb/> adherence and proliferation. Furthermore, interactions between the collagen and ␤-tricalcium phos-<lb/>phate prevented loss of the protein from the hydrogels. These results indicate that alginate gels con-<lb/>taining collagen have potential uses as vehicles for delivery of adherent cells to a tissue site. In ad-<lb/>dition, gels containing ␤-tricalcium phosphate, with or without collagen type I incorporation, have<lb/> potential to support cell growth and differentiation in vitro before implantation. This study em-<lb/>phasizes the limitations of the uses of cells derived from experimental animals in certain model stud-<lb/>ies relating to human tissue engineering.<lb/></div>
+
+	<note type="page">1480<lb/></note>
+
+		</front>
+	</text>
+</tei>

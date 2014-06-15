@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012491"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">-537 -<lb/></note>
+
+	<docTitle>
+	<titlePart>Report on the TREC-4 Experiment:<lb/> Combining Probabilistic and Vector-Space Schemes<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Jacques Savoy, Melchior Ndarugendamwo, Dana Vrajitoru<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Faculté de droit et des sciences économiques<lb/> Université de Neuchâtel<lb/></affiliation>
+	</byline>
+
+	<address>Pierre-à-Mazel 7<lb/> CH -2000 Neuchâtel (Switzerland)<lb/></address>
+
+	<email>E-mail: Jacques.Savoy@unine.ch<lb/></email>
+
+	<ptr type="web">Web page: www.unine.ch/info/<lb/></ptr>
+
+	<reference>in Proceedings TREC&apos;4, October 1996, NIST Publication 500-236, p. 537-548<lb/></reference>
+
+	<div type="abstract">Summary<lb/> This paper describes and evaluates a retrieval<lb/> scheme combining the OKAPI probabilistic retrieval<lb/> model with various vector-space schemes. In this<lb/> study, each retrieval strategy represents both<lb/> queries and documents using the same set of single<lb/> terms; however they weight them differently. To<lb/> combine these search schemes, we do not apply a<lb/> given combination operator on the retrieval status<lb/> nor the rank of each retrieved record (e.g., sum,<lb/> average, max., etc.). We think that each retrieval<lb/> strategy may perform well for a set of queries and<lb/> poorly for other requests. Thus, based on a given<lb/> query&apos;s statistical characteristics, our search model<lb/> first selects the more appropriate retrieval scheme<lb/> and then retrieves information based on the selected<lb/> search mechanism. Since the selection procedure is<lb/> done before any search operation, our approach has<lb/> the advantage of limiting the search time to one<lb/> retrieval algorithm instead of retrieving items using<lb/> various retrieval schemes, and then combining the<lb/> given results.<lb/> In particular, this study addresses the following<lb/> questions: (1) can the statistical characteristics of a<lb/> query be good predictors in an automatic selection<lb/> procedure; (2) faced with the relatively high<lb/> retrieval effectiveness achieved by the OKAPI<lb/> model, can various vector-space schemes further<lb/> improve the retrieval performance of the OKAPI<lb/> approach, and (3) can the learning results obtained<lb/> with one tested collection (WSJ) be valid for another<lb/> corpus (SJMN)?<lb/> Participation: Category: B Query: ad-hoc, fully<lb/> automatic<lb/> </div>
+
+	<div type="introduction">Introduction</div>
+
+		</front>
+	</text>
+</tei>

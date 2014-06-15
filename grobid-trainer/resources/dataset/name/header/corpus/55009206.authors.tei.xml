@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>H</forename>
+								<surname>Stolze</surname>,
+							</persName>
+							<persName>
+								<forename>J</forename>
+								<middlename>P</middlename>
+								<surname>Kuhtz-Buschbeck</surname>,
+							</persName>
+							<persName>
+								<forename>H</forename>
+								<surname>Drücke</surname>,
+							</persName>
+							<persName>
+								<forename>K</forename>
+								<surname>Jöhnk</surname>,
+							</persName>
+							<persName>
+								<forename>M</forename>
+								<surname>Illert</surname>,
+							</persName>
+							<persName>
+								<forename>G</forename>
+								<surname>Deuschl</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Fons</forename>
+								<middlename>A</middlename>.
+								<middlename>J</middlename>.
+								<surname>van de Loo</surname>,
+							</persName>
+							<persName>
+								<forename>Dick</forename>
+								<surname>Heinegård</surname> and
+							</persName>
+							<persName>
+								<forename>Wim</forename>
+								<middlename>B</middlename>.
+								<surname>van den Berg</surname>
+							</persName>
+							<persName>
+								<forename>Leo</forename>
+								<middlename>A</middlename>.
+								<middlename>B</middlename>.
+								<surname>Joosten</surname>,
+							</persName>
+							<persName>
+								<forename>Monique</forename>
+								<middlename>M</middlename>.
+								<middlename>A</middlename>.
+								<surname>Helsen</surname>,
+							</persName>
+							<persName>
+								<forename>Tore</forename>
+								<surname>Saxne</surname>,
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

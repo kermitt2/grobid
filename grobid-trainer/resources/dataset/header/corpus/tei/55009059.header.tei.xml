@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009059"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<date>10-10-2011<lb/></date>
+
+	<note type="page">1/2<lb/> </note>
+	
+	<note type="other">Subtract background<lb/></note>
+
+	<docTitle>
+	<titlePart>Subtract background<lb/> </titlePart>
+	</docTitle>
+	
+	<div type="introduction">What does the subtract background command do?<lb/> Removes smooth continuous backgrounds from gels and other images. Based on the a &quot;rolling ball&quot;<lb/> algorithm described in Stanley Sternberg&apos;s article, &quot;Biomedical Image Processing&quot;, IEEE Computer,<lb/> January 1983. Imagine a 3D surface with the pixel values of the image being the height, then a ball<lb/> rolling over the back side of the surface creates the background. The current algorithm (since<lb/> version 1.39f) uses an approximation of a paraboloid of rotation instead of a ball.<lb/> The Rolling Ball Radius is the radius of curvature of the paraboloid. As a rule of thumb, for 8-bit<lb/> q<lb/> or RGB images it should be at least as large as the radius of the largest object in the image that is<lb/> not part of the background. Larger values will also work unless the background of the image is too<lb/> uneven. For images with pixel values having a very different range, note that the radius should be<lb/> inversely proportional to the pixel value range. E.g., typical values of the radius are around 0.2 to 5<lb/> for 16-bit images (pixel values 0…65535).<lb/> The Light Background option allows the processing of images with bright background and dark</div>
+
+		</front>
+	</text>
+</tei>

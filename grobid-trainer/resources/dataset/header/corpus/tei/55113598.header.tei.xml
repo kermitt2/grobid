@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55113598"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Ghost-free imaging combining synchronized multi-level source and variable-depth streamer<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Ronan Sablon*, Thierry Payen, Helene Tonchia, Risto Siliqi, Xavier Labarre, Nicolas Salaun, Yann Le Men<lb/></docAuthor>
+	</byline>
+
+		</front>
+	</text>
+</tei>

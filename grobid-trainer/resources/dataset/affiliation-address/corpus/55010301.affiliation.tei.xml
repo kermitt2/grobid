@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="laboratory">NSW Therapeutic Advisory Group</orgName>
+							<lb/>
+							<address>
+								<addrLine>Level 5</addrLine>,
+								<addrLine>376 Victoria Street</addrLine>
+							<lb/>
+								<postBox>PO Box 766</postBox>
+							<lb/>
+								<settlement>Darlinghurst</settlement>
+								<region>NSW</region>
+								<postCode>2010</postCode>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

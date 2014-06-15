@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014378"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Snugglebug: A Powerful Approach To Weakest Preconditions<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Satish Chandra<lb/> Stephen J. Fink<lb/> Manu Sridharan<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>IBM T. J. Watson Research Center<lb/></affiliation>
+	</byline>
+
+	<email>{satishchandra,sjfink,msridhar}@us.ibm.com<lb/></email>
+
+	<div type="abstract">Abstract<lb/> Symbolic analysis shows promise as a foundation for bug-finding,<lb/> specification inference, verification, and test generation. This pa-<lb/>per addresses demand-driven symbolic analysis for object-oriented<lb/> programs and frameworks. Many such codes comprise large, partial<lb/> programs with highly dynamic behaviors—polymorphism, reflec-<lb/>tion, and so on—posing significant scalability challenges for any<lb/> static analysis.<lb/> We present an approach based on interprocedural backwards<lb/> propagation of weakest preconditions. We present several novel<lb/> techniques to improve the efficiency of such analysis. First, we<lb/> present directed call graph construction, where call graph construc-<lb/>tion and symbolic analysis are interleaved. With this technique,<lb/> call graph construction is guided by constraints discovered during<lb/> symbolic analysis, obviating the need for exhaustively exploring a<lb/> large, conservative call graph. Second, we describe generalization,<lb/> a technique that greatly increases the reusability of procedure sum-<lb/>maries computed during interprocedural analysis. Instead of tabu-<lb/>lating how a procedure transforms a symbolic state in its entirety,<lb/> our technique tabulates how the procedure transforms only the per-<lb/>tinent portion of the symbolic state. Additionally, we show how<lb/> integrating an inexpensive, custom logic simplifier with weakest<lb/> precondition computation dramatically improves performance.<lb/> We have implemented the analysis in a tool called<lb/> SNUGGLEBUG and evaluated it as a bug-report feasibility<lb/> checker. Our results show that the algorithmic techniques were<lb/> critical for successfully analyzing large Java applications.<lb/></div>
+
+	<keyword>Categories and Subject Descriptors D.2.4 [Software/Program<lb/> Verification]: Validation; D.2.5 [Testing and Debugging]: Sym-<lb/>bolic execution<lb/> General Terms Algorithms, Languages, Verification<lb/> Keywords Interprocedural analysis, symbolic analysis, weakest<lb/> preconditions<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

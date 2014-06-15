@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013316"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Access to Crypto NTP Server (User Guide)<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">(News) (Tools) (Service)<lb/> </note>
+
+	<ptr>eCSIRT.net </ptr>
+
+	<note type="other">&gt; Tools &gt; Crypto-NTP<lb/></note>
+
+		</front>
+	</text>
+</tei>

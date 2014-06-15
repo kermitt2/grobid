@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012642"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Research Communications<lb/> </note>
+
+	<docTitle>
+	<titlePart>Bactericidal and Detoxification<lb/> Effects of TiO 2 Thin Film<lb/> Photocatalysts<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>K A Y A N O S U N A D A ,<lb/> Y O S H I H I K O K I K U C H I ,<lb/> K A Z U H I T O H A S H I M O T O , , A N D<lb/> A K I R A F U J I S H I M A * , ,<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Kanagawa Academy of Science and Technology,<lb/> KAST Laboratory,</affiliation>
+	</byline>
+
+	<address>1583 Iiyama, Atsugi,<lb/> Kanagawa 243-02, Japan,</address>
+
+	<byline>
+	<affiliation>Research Center for Advanced<lb/> Science and Technology, University of Tokyo,</affiliation>
+	</byline>
+
+	<address>Komaba 4-6-1,<lb/> Meguro-ku, Tokyo 153, Japan,</address>
+
+	<byline>
+	<affiliation>and Department of Applied<lb/> Chemistry, Faculty of Engineering, University of Tokyo,<lb/></affiliation>
+	</byline>
+
+	<address>Hongo 7-3-1, Bunkyo-ku, Tokyo 113, Japan<lb/></address>
+
+	<div type="abstract">To examine the special features of the antibacterial effect<lb/> for a thin transparent titanium dioxide (TiO 2 ) film, the<lb/> photocatalytic degradation of endotoxin, which is a pyrogenic<lb/> constituent of Escherichia coli (E. coli), as well as its<lb/> bactericidal activity, was investigated. The TiO 2 films were<lb/> prepared from titanium isopropoxide solution, annealing<lb/> at 500 °C. The bactericidal activity for E. coli cells was<lb/> estimated by survival ratio calculated from the number<lb/> of viable cells which form colonies on the nutrient agar<lb/> plates. The endotoxin concentration was determined by<lb/> the Limulus tests. When E. coli cells were killed by the TiO 2<lb/> photocatalyst under UV irradiation, the endotoxin from<lb/> the cells was also degraded efficiently. This result shows<lb/> that the TiO 2 photocatalyst has both bactericidal activity<lb/> and decomposing activity for the endotoxin (i.e.,<lb/> detoxifying activity). The bactericidal effect of the TiO 2<lb/> thin film results from both inactivating the viability of the<lb/> bacteria and the destruction of the E. coli cells. This<lb/> feature renders TiO 2 photocatalysts to be applicable to<lb/> environmental protections, especially in medical facilities<lb/> where the endotoxin is needed to control.<lb/></div>
+
+		</front>
+	</text>
+</tei>

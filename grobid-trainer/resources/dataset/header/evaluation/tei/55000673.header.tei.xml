@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000673"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	
+	<byline>
+	<affiliation>Americas Headquarters:<lb/>Cisco Systems, Inc.,</affiliation>
+	</byline>
+
+	<address>170 West Tasman Drive, San Jose, CA 95134-1706 USA<lb/></address>
+
+	<docTitle>
+	<titlePart>Support for Resource Availability Indication Over<lb/> SIP Trunks<lb/></titlePart>
+	</docTitle>
+
+	<note type="submission">First Published: July 09, 2010<lb/> Last Updated: July 21, 2010<lb/></note>
+
+	<div type="introduction">The Support for Monitoring Utilization of Critical Resources on Gateway Router
+
+	, Cisco UBE and Cisco<lb/>
+
+	UCME and Reporting Over SIP Trunks feature implements monitoring of resource utilization and<lb/> reporting functionality over the Session Initiation Protocol (SIP) trunk on the Cisco IOS gateway, Cisco<lb/> Unified Border Element (Cisco UBE) and Cisco Unified Communications Manager Express (Cisco<lb/> UCME). This feature supports monitoring of CPU, memory, Digital Signaling Processor (DSP) and the<lb/> DS0 port on the Cisco IOS gateway and reporting the status to external devices using SIP OPTION<lb/> mechanism.<lb/>Finding Feature Information<lb/>
+
+	Your software release may not support all the features documented in this module. For the latest feature<lb/> information and caveats, see the release notes for your platform and software release. To find information<lb/> about the features documented in this module, and to see a list of the releases in which each feature is<lb/> supported, see the &quot;Feature Information for the Support for Resource Availability Indication Over SIP<lb/> Trunks&quot; section on page 10.<lb/> Use Cisco Feature Navigator to find information about platform support and Cisco software image<lb/> support. To access Cisco Feature Navigator, go to
+
+	http://www.cisco.com/go/cfn. An account on<lb/> Cisco.com is not required.<lb/>Contents</div>
+		</front>
+	</text>
+</tei>

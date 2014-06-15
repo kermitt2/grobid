@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55115143"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<email>wei.li@opal-rt.com<lb/></email>
+
+	<docTitle>
+	<titlePart>Control and Performance of<lb/> a Modular Multilevel Converter System<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Wei LI, Luc-Andre GREGOIRE, Jean BÉLANGER<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>OPAL-RT Technologies (CAN)<lb/></affiliation>
+	</byline>
+
+	<div type="abstract">SUMMARY<lb/> The Modular Multilevel Converter (MMC) system has many advantages over conventional<lb/> voltage source converters and therefore can be used in dc power transmission, micro grid, or<lb/> renewable energy applications. While MMC&apos;s distinctive topology offers many new features,<lb/> it also necessitates a sophisticated controller to deal with extra control requirements. This<lb/> paper presents a control scheme with multiple control objectives required by MMC, i.e. active<lb/> and reactive power control, dc voltage control, sub-module capacitor voltage control and<lb/> balancing, circulating current eliminating, and zero-sequence current eliminating. The system<lb/> is modeled in an electromagnetic transients program, RT-LAB, and its dynamic performance<lb/> is evaluated by time-domain studies using a real-time simulator, eMEGAsim. The results<lb/> show the multiple control objectives are fulfilled and the system has fast response to control<lb/> command and system dynamics.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Tetsuya</forename>
+								<surname>Nakanishi</surname>,
+							</persName>
+							<persName>
+								<forename>Masato</forename>
+								<surname>Tanaka</surname>,
+							</persName>
+							<persName>
+								<forename>Takemi</forename>
+								<surname>Hasegawa</surname>,
+							</persName>
+							<persName>
+								<forename>Masaaki</forename>
+								<surname>Hirano</surname>,
+							</persName>
+							<persName>
+								<forename>Toshiaki</forename>
+								<surname>Okuno</surname>, and
+							</persName>
+							<persName>
+								<forename>Masashi</forename>
+								<surname>Onishi</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

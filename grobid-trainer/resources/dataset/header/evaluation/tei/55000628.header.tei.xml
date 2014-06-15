@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000628"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>High-Precision 2.4 GHz DSSS RF Ranging<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Bradley D. Farnsworth, </docAuthor>
+	</byline>
+	
+	<byline>
+	<affiliation>ENSCO, Inc.<lb/></affiliation>
+	</byline>
+	
+	<byline>
+	<docAuthor>David W.A. Taylor, </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>ENSCO, Inc.<lb/></affiliation>
+	</byline>
+
+	<note type="other">BIOGRAPHY<lb/> Bradley D. Farnsworth</note>
+
+	<email>(farnsworth.bradley@ensco.com</email>
+
+	<note type="other">)<lb/> is a senior engineer at ENSCO. He was the sensors<lb/> technical lead for the national semifinalist Team Case for<lb/> the 2007 DARPA Urban Challenge and won a Best<lb/> Student Paper award at the 2008 IEEE Sensors<lb/> Conference. Mr. Farnsworth holds the B.S. summa cum<lb/> laude and M.S. degrees in Electrical Engineering from<lb/> Case Western Reserve University.<lb/> Dr. David W.A. Taylor</note>
+
+	<email>(taylor.david@ensco.com)</email>
+
+	<note type="other"> is<lb/> ENSCO&apos;s Director of Technology Development, where<lb/> he leads the company&apos;s R&amp;D programs developing<lb/> sensors and systems for national security applications.<lb/> Dr. Taylor holds three U.S. patents and is an expert in<lb/> GPS-denied navigation technologies. Dr. Taylor holds<lb/> the B.S. in Physics from Rhodes College and the Ph.D. in<lb/> Geophysics from Virginia Tech.<lb/> </note>
+	
+	<div type="abstract">ABSTRACT<lb/> Precision ranging radios are a critical aid to integrated<lb/> locating, tracking, navigation, and guidance systems,<lb/> especially when GPS service is degraded or unavailable<lb/> [5]. In this work, a high-precision, software-defined,<lb/> round-trip time-of-flight, direct sequence spread spectrum<lb/> (DSSS) ranging radio operating in the 2.4 GHz ISM band<lb/> is presented. This system builds upon our previous<lb/> brassboard implementation at 915 MHz [1, 2], and<lb/> continues ENSCO&apos;s decade-long research in this area [6,<lb/> 7] with system enhancements bringing the performance<lb/> closer to the Cramer-Rao Lower Bound for round-trip<lb/> DSSS time-of-flight ranging.<lb/> The system is capable of performing 217 independent<lb/> range measurements per second with measurement<lb/> standard deviation as low as 2.5 cm in a benign line-of-<lb/>sight RF environment. The system achieves high distance<lb/> linearity and low intercept offset using a single-point<lb/> calibration method. The ranging performance has been<lb/> characterized at distances in excess of 1 kilometer and in<lb/> indoor line-of-sight situations.<lb/></div>
+
+		</front>
+	</text>
+</tei>

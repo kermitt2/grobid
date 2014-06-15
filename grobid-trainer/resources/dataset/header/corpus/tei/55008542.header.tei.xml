@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008542"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>ATX12V Power Supply Design Guide<lb/> Version 2.2<lb/></titlePart>
+	</docTitle>
+
+	<date>March 2005</date>
+
+		</front>
+	</text>
+</tei>

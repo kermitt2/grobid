@@ -55,6 +55,7 @@
     <pathelement location="${maven.repo.local}/org/slf4j/slf4j-log4j12/1.6.6/slf4j-log4j12-1.6.6.jar"/>
     <pathelement location="${maven.repo.local}/directory-naming/naming-java/0.8/naming-java-0.8.jar"/>
     <pathelement location="${maven.repo.local}/directory-naming/naming-core/0.8/naming-core-0.8.jar"/>
+	<pathelement location="${maven.repo.local}/com/google/guava/16.0.1/guava-16.0.1.jar"/>
   </path>
   <path id="build.test.classpath">
     <pathelement location="lib/org/chasen/crfpp/1.0.2/crfpp-1.0.2.jar"/>

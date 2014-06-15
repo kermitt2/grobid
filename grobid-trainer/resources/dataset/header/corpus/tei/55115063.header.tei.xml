@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei type="white-paper">
+	<teiHeader>
+		<fileDesc xml:id="55115063"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">chnology Roadmap<lb/> </note>
+
+	<byline>
+	<affiliation>GSMA OneAPI<lb/> </affiliation>
+	</byline>
+	
+	<docTitle>
+	<titlePart>GSMA One API Exchange Architecture for<lb/> cross-operator network APIs<lb/></titlePart>
+	</docTitle>
+
+	<date>February 2013<lb/></date>
+
+	<note type="other">Exchange Architecture for cross-operator network APIs<lb/></note>
+	
+	<note type="other">chnology Roadmap<lb/> </note>
+
+	<byline>
+	<affiliation>GSMA OneAPI<lb/> </affiliation>
+	</byline>
+	
+	<note type="page">2<lb/></note>
+
+	<date>February 2013<lb/></date>
+
+		</front>
+	</text>
+</tei>

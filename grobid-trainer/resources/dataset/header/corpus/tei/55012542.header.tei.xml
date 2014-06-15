@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012542"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>A GENERIC DEVELOPMENT PLATFORM FOR ASD THERAPY<lb/> TOOLS<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Lynette van Zijl, Morné Chamberlain<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Computer Science, Stellenbosch University,</affiliation>
+	</byline>
+
+	<address>Stellenbosch, South Africa<lb/></address>
+
+	<email>lynette@cs.sun.ac.za, mchamberlain@cs.sun.ac.za<lb/></email>
+
+	<keyword>Keywords:<lb/> Autism, assistive technologies, computerised therapy tools, virtual environments, game engines, games<lb/>
+	</keyword>
+
+	<div type="abstract">Abstract:<lb/> We discuss the design and implementation of a generic development platform for 3D virtual environments for<lb/> autism spectrum disorder therapy tools. The platform is intended to enable researchers and therapists alike<lb/> to quickly develop individual therapy software without having to resort to extensive software development.<lb/> The platform includes specific features requested by therapists, such as replays, data capturing and remote<lb/> monitoring over a network. We also discuss the implementation of a number of different therapy tools, and<lb/> their subsequent evaluation at local schools.<lb/></div>
+
+		</front>
+	</text>
+</tei>

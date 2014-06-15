@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55115324"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Look Inside Get Access<lb/> Find out how to access preview-only content<lb/></note>
+
+	<reference>European Journal of Applied Physiology and Occupational Physiology<lb/> 16. IX. 1977, Volume 37, Issue 2, pp 111-121<lb/>
+	</reference>
+
+	<docTitle>
+	<titlePart>Signal characteristics of EMG during fatigue<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">Summary<lb/> Electromyographic (EM G) activity of m. rectus femoris muscle was registered from young male and<lb/> female subjects during maintained isometric knee extension at 60% of maximal voluntary contraction.<lb/> The following EM G parameters were analyzed for the entire fatigue time: integrated EM G (IEM G),<lb/> averaged motor unit potential (AM UP) and power spectral density function (PSDF). The results<lb/> indicated a slight but continuous rise of IEM G during the fatigue period. AM UP showed sensitivity to<lb/> fatigue with increase in amplitude, rise time, and number of spikes counted. PSDF was also easily<lb/> affected by fatigue so that the total power density curve was shifted towards lower frequencies with a<lb/> high frequency decay. The mean power frequency decreased linearily as a function of fatigue time. The<lb/> findings suggest that in addition to natural recruitment of new motor units the fatigue is characterized<lb/> by marked reduction in the conduction velocities of action potential along the used muscle fibers.<lb/></div>
+
+	<note type="other">Page %P<lb/>Page 1<lb/>Signal characteristics of EMG during fatigue -Springer<lb/></note>
+
+	<ptr type="web">http://rd.springer.com/article/10.1007/BF00421697<lb/></ptr>
+
+	<note type="page">1 of 9<lb/></note>
+
+	<date>25-04-2014</date>
+
+	<note type="other">10:36</note>
+
+		</front>
+	</text>
+</tei>

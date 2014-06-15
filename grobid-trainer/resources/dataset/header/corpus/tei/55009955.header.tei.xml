@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009955"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Abstract Submitted<lb/> for the MAR10 Meeting of<lb/> The American Physical Society<lb/> Sorting Category: 07.8 (E)<lb/></note>
+
+	<docTitle>
+	<titlePart>Formation of graphene-like carbon layers on TiO2(110)<lb/> and Al2O3 and their relevance for protecting EUV mirrors<lb/>
+	</titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>CHUANDAO WANG, SHAO-CHUN LI, ULRIKE DIEBOLD,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Depart-<lb/>ment of Physics, Tulane University,</affiliation>
+	</byline>
+
+	<address>New Orleans, LA 70118,</address>
+
+	<byline>
+	<docAuthor>ROMAN<lb/> CAUDILLO,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Components Research, Intel Corporation,</affiliation>
+	</byline>
+
+	<address>Hillsboro, OR<lb/> 97124, USA</address>
+
+		</front>
+	</text>
+</tei>

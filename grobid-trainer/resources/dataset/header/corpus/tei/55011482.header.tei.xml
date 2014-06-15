@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011482"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Towards in-line determination of EVA Gel Content during PV modules Lamination Processes<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Heng-Yu Li<lb/> 1<lb/> , Laure-Emmanuelle Perret-Aebi<lb/> 1 , Ricardo Théron<lb/> 1<lb/> , Christophe Ballif<lb/> 1 , Yun Luo<lb/> 2 , Ronald F.<lb/> M. Lange<lb/> 2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Ecole Polytechnique Fédérale de Lausanne (EPFL), Institute of Microengineering<lb/> (IMT), Photovoltaics and thin film electronics laboratory,</affiliation>
+	</byline>
+
+	<address>Breguet 2, CH-2000 Neuchâtel, Switzerland.<lb/></address>
+
+	<byline>
+	<affiliation>2 3S Swiss Solar Systems AG,</affiliation>
+	</byline>
+
+	<address>Schachenweg 24, CH-3250, Lyss, Switzerland<lb/></address>
+
+	<email>Email: hengyu.li@epfl.ch</email>
+
+	<phone>Tel: +41 32 718 3245 Fax: +41 32 718 3201<lb/></phone>
+
+	<div type="abstract">ABSTRACT: Poly (ethylene-co-vinyl acetate) (EVA) is the major polymer used for photovoltaic (PV) modules<lb/> encapsulation. Its degree of cross-linking (related to its gel content) is taken as a major quality reference. Differential<lb/> Scanning Calorimetry (DSC) has been proven to be fast and effective but is to determine the gel content, however,<lb/> destructive for the PV module. With the aim to develop a non-destructive quality assessment tool, a detailed<lb/> discussion on the DSC thermogram of EVA PV encapsulant is presented here. A possible path towards a fast and<lb/> non-destructive method for determing EVA gel content is proposed based on the DSC analysis.<lb/></div>
+
+	<keyword>Keywords: PV Module, Encapsulation, Qualification and Testing, EVA, Gel Content<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

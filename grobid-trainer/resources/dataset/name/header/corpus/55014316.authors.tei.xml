@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Yann</forename>
+								<surname>Barbotin</surname>,
+								<roleName>Student Member, IEEE</roleName>,
+							</persName>
+							<persName>
+								<forename>Ali</forename>
+								<surname>Hormati</surname>,
+								<roleName>Member, IEEE</roleName>,
+							</persName>
+							<persName>
+								<forename>Sundeep</forename>
+								<surname>Rangan</surname>,
+								<roleName>Member, IEEE</roleName>,<lb/> and
+							</persName>
+							<persName>
+								<forename>Martin</forename>
+								<surname>Vetterli</surname> ,
+								<roleName>Fellow ,IEEE</roleName>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

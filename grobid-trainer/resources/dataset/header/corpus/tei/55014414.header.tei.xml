@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014414"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>ANTIMICROBIAL AGENTS AND CHEMOTHERAPY, May 1977, p. 897-905<lb/></reference>
+
+	<note type="copyright">Copyright &#169; 1977 American Society for Microbiology<lb/></note>
+
+	<reference>Vol. 11, No. 5<lb/></reference>
+
+	<note type="other">Printed in U.S.A.<lb/></note>
+
+	<docTitle>
+	<titlePart>Unusual Susceptibility ofErwinia amylovora to Antibacterial<lb/> Agents in Relation to the Barrier Function of its Cell<lb/> Envelope<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>ARUN K. CHATTERJEE, RICHARD F. BUSS, AND MORTIMER P. STARR*<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Bacteriology, University of California,</affiliation>
+	</byline>
+
+	<address>Davis, California 95616<lb/></address>
+
+	<note type="submission">Received for publication 5 November 1976<lb/></note>
+
+	<div type="abstract">Wild-type strains of the bacterial phytopathogen Erwinia amylovora (the<lb/> cause of fire blight disease of apples and pears) are markedly susceptible to<lb/> novobiocin, deoxycholate, and sodium dodecyl (= lauryl) sulfate. The inhibitory<lb/> concentration, expressed as the concentration causing a 99% inhibition of<lb/> growth, of these three antibacterial agents were 15 to 100, 40 to 800, and 50 to 800<lb/> ,ug/ml, respectively, depending on the E. amylovora strain. Growth of strains of<lb/> other Erwinia spp. and Salmonella typhimurium is not affected at all, or is only<lb/> slightly affected, at these concentrations. Introduction of the F&apos;lac+, RP1, and<lb/> RlOOdrd-56 (but not E-lac+) plasmids into an E. amylovora strain results in<lb/> enhanced susceptibility to novobiocin and sodium dodecyl sulfate but not to<lb/> deoxycholate. E. amylovora wild-type strains spontaneously release a peri-<lb/>plasmic enzyme, cyclic phosphodiesterase, but not a cytoplasmic enzyme, glu-<lb/>cose-6-phosphate dehydrogenase, into the growth medium. Addition of MgCl2<lb/> (20 mM) and NaCl (84 mM) to tryptone broth stimulates the growth of wild-type<lb/> E. amylovora strains and reduces or eliminates leakage of the periplasmic<lb/> enzyme. Mutant strains ofE. amylovora, selected for resistance to each separate<lb/> antibacterial agent (or to all three of them), showed a direct correlation (in all<lb/> but the novobiocin-resistant mutant) between drug resistance and reduced<lb/> periplasmic leakiness. The relatively low maximum growth temperature<lb/> (&lt;3700) ofE. amylovora seems unrelated to periplasmic leakage, as judged from</div>
+
+		</front>
+	</text>
+</tei>

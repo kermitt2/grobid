@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010088"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">professionalise | re-prioritise | standardise | benchmark | improve industry relationships and industry performance | lead reform<lb/></note>
+
+	<docTitle>
+	<titlePart>Message Text Formats<lb/> MTF<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Mathew McGreevey<lb/></docAuthor>
+	</byline>
+
+	<note type="other">ASMTF Manager<lb/> Contractor to Defence</note>
+
+		</front>
+	</text>
+</tei>

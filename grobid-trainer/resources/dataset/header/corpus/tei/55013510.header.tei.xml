@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013510"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Troer&apos;s base-functionalised organic nanoporous polymer<lb/> for heterogeneous catalysisw<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Xin Du,<lb/> a Yalei Sun,<lb/> a Bien Tan,<lb/> b Qingfeng Teng,<lb/> a Xiaojun Yao,<lb/> a<lb/> Chengyong Su<lb/> c and Wei Wang*<lb/> a<lb/></docAuthor>
+	</byline>
+
+	<note type="submission">Received (in Cambridge, UK) 28th September 2009, Accepted 25th November 2009<lb/></note>
+
+	<date>First published as an Advance Article on the web 14th December 2009<lb/></date>
+
+	<idno type="DOI">DOI: 10.1039/b920113k<lb/></idno>
+
+		</front>
+	</text>
+</tei>

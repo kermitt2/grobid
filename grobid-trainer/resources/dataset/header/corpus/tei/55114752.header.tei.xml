@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55114752"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">|<lb/> European Patent Office<lb/> SIGN IN<lb/> SIGN UP<lb/></note>
+
+	<docTitle>
+	<titlePart>Network virtualization: a view from the bottom<lb/> </titlePart>
+	</docTitle>
+
+	<note type="other">Full Te x t:<lb/> Pdf<lb/></note>
+	
+	<byline>
+	<docAuthor>Authors: Jorge C a ra pinha PT Inovação, Aveiro, Portugal<lb/> Javie r Jim é ne z</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Telefónica I+D,</affiliation>
+	</byline>
+
+	<address>Madrid, Spain<lb/></address>
+
+	<reference>Publishe d in:<lb/> · Proce e ding<lb/> VISA &apos;09 Proce e dings of the 1st AC M work shop on<lb/> Virtua lize d infra structure syste m s a nd archite cture s<lb/> Page s 73-80<lb/> ACM New York, NY, USA </reference>
+
+	<note type="copyright">©2009<lb/> </note>
+ 
+	<note type="other">table of contents</note>
+
+	<idno>ISBN: 978-1-60558-595-6<lb/> </idno>
+
+	<idno type="DOI">doi&gt;10.1145/1592648.1592660<lb/></idno>
+
+	<note type="other">2009 Article<lb/> Bibliom e trics<lb/> · Downloads (6 Weeks): 49<lb/> · Downloads (12 Months): 414<lb/> · Downloads (cumulative): 2,100<lb/> · Citation Count: 9<lb/> Tools and Resources<lb/> Request Permissions<lb/> TOC Service:<lb/> Email RSS<lb/> Save to Binder<lb/> Export Formats:<lb/> BibTeX EndNote ACM Ref<lb/> Upcoming Conference:<lb/> SIGCOMM&apos;14<lb/> Share:<lb/></note>
+
+		</front>
+	</text>
+</tei>

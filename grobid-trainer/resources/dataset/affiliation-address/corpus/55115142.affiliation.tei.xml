@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">Department of Pathology</orgName>,
+							<orgName type="institution">University of New Mexico</orgName>
+							<orgName type="department">Health Science Center</orgName>,
+							<address>
+								<settlement>Albuquerque</settlement>,
+								<country>USA</country>.
+							</address>
+						</affiliation>	
+						<affiliation>
+							<orgName type="institution">UNM Cancer Research Facility</orgName>,
+							<address>
+								<addrLine>Rm 223</addrLine>
+								<addrLine>2325 Camino de Salud</addrLine>
+								<settlement>Albuquerque</settlement>
+								<region>NM</region>
+								<postCode>87112</postCode>
+								<country>USA</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

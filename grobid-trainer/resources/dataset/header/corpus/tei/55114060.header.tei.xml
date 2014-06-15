@@ -1,0 +1,68 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55114060"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Review<lb/></note>
+
+	<docTitle>
+	<titlePart>Application of carbon materials in redox flow batteries<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>M.H. Chakrabarti<lb/> a, b, * , N.P. Brandon<lb/> c , S.A. Hajimolana<lb/> a<lb/> , F. Tariq<lb/> c , V. Yufit<lb/> c , M.A. Hashim<lb/> a<lb/> , M.A. Hussain<lb/> a<lb/> , C.T.J. Low<lb/> d<lb/> , P.V. Aravind<lb/> e<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a Department of Chemical Engineering, Faculty of Engineering, University of Malaya,</affiliation>
+	</byline>
+
+	<address>Kuala Lumpur 50603, Malaysia<lb/></address>
+
+	<byline>
+	<affiliation>b Energy Futures Lab, Electrical Engineering Building, Imperial College London, </affiliation>
+	</byline>
+
+	<address>South Kensington,London SW7 2AZ, UK<lb/></address>
+
+	<byline>
+	<affiliation>c Department of Earth Science and Engineering, Imperial College London, </affiliation>
+	</byline>
+
+	<address>South Kensington,London SW7 2AZ, UK<lb/></address>
+
+	<byline>
+	<affiliation>d Electrochemical Engineering Laboratory, Energy Technology Research Group, Faculty of Engineering and the Environment, University of Southampton,<lb/></affiliation>
+	</byline>
+
+	<address>Highfield, Southampton SO17 1BJ, UK<lb/></address>
+
+	<byline>
+	<affiliation>e Process and Energy Department, Delft University of Technology,</affiliation>
+	</byline>
+
+	<address>Leeghwaterstraat 44, CA Delft 2628, The Netherlands<lb/></address>
+
+	<note type="other">h i g h l i g h t s<lb/></note>
+	
+	<div type="abstract">A comprehensive coverage on carbon materials used in redox flow batteries is given.<lb/> The influence of nanotechnology and graphene is discussed in detail.<lb/> The importance of studying RFB degradation mechanisms is emphasised.<lb/></div>
+
+	<note type="other">a r t i c l e i n f o<lb/></note>
+
+	<note type="submission">Article history:<lb/> Received 24 September 2013<lb/> Received in revised form<lb/> 7 December 2013<lb/> Accepted 9 December 2013<lb/></note>
+
+	<date>Available online 3 January 2014<lb/></date>
+
+	<keyword>Keywords:<lb/> Redox flow battery<lb/> Carbon-based electrodes<lb/> Nanotechnology Graphene<lb/> X-ray tomography<lb/>
+	</keyword>
+
+	<div type="abstract">a b s t r a c t<lb/> The redox flow battery (RFB) has been the subject of state-of-the-art research by several groups around<lb/> the world. Most work commonly involves the application of various low-cost carbon-polymer com-<lb/>posites, carbon felts, cloth, paper and their different variations for the electrode materials of the RFB.<lb/> Usually, the carbon-polymer composite electrode has relatively high bulk resistivity and can be easily<lb/> corroded when the polarised potential on the anode is more positive than that of oxygen evolution and<lb/> this kind of heterogeneous corrosion may lead to battery failure due to electrolyte leakage. Therefore,<lb/> carbon electrodes with high electrical conductivity, acid-resistance and electrochemical stability are<lb/> highly desirable. This review discusses such issues in depth and presents an overview on future research<lb/> directions that may help commercialise RFB technology. A comprehensive discussion is provided on the<lb/> advances made using nanotechnology and it is envisaged that if this is combined with ionic liquid<lb/> technology, major advantages could be realised. In addition the identification of RFB failure mechanisms<lb/> by means of X-ray computed nano tomography is expected to bring added benefits to the technology.<lb/></div>
+
+	<note type="copyright">&#169; 2013 Elsevier B.V. All rights reserved.<lb/></note>
+
+		</front>
+	</text>
+</tei>

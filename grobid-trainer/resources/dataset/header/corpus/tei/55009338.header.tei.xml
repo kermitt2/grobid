@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009338"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>ICR Annual Report, Vol. 5, 1998<lb/></reference>
+
+	<note type="page">10<lb/></note>
+
+	<docTitle>
+	<titlePart>Noncatalytic Cannizzaro-type Reaction of<lb/> Formaldehyde in Hot Water<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Yasuo Tsujino, Chihiro Wakai, Nobuyuki Matubayasi, and Masaru Nakahara<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">In water at 25C and 4 MPa, methanol and formic acid are produced from the disproportionation<lb/> reaction of formaldehyde without a catalyst, although at mild conditions, this reaction usually occurs in<lb/> the presence of a large amount of base catalyst. Formic acid further undergoes the hydride transfer<lb/> reaction with formaldehyde, and the final yield of methanol exceeds 50%.<lb/></div>
+
+	<keyword>Keywords : Hydrothermal reaction / NMR / C 1 chemistry / Formaldehyde / Cannizzaro reaction<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

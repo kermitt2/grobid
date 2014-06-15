@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010015"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Engineering growing tissues<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Eben Alsberg*, Kenneth W. Anderson<lb/> , Amru Albeiruti<lb/> , Jon A. Rowley*, and David J. Mooney*<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Departments of *Biomedical Engineering, Otolaryngology–Head and Neck Surgery, Biologic and Materials Sciences, and Chemical Engineering,<lb/> University of Michigan,</affiliation>
+	</byline>
+
+	<address>Ann Arbor, MI 48109<lb/></address>
+
+	<note type="other">Edited by Robert Langer,</note>
+
+	<byline>
+	<affiliation>Massachusetts Institute of Technology,</affiliation>
+	</byline>
+
+	<address>Cambridge, MA,</address>
+
+	<note type="submission">and approved July 10, 2002 (received for review May 15, 2002)<lb/></note>
+
+	<div type="abstract">Regenerating or engineering new tissues and organs may one day<lb/> allow routine replacement of lost or failing tissues and organs.<lb/> However, these engineered tissues must not only grow to fill a<lb/> defect and integrate with the host tissue, but often they must also<lb/> grow in concert with the changing needs of the body over time. We<lb/> hypothesized that tissues capable of growing with time could be<lb/> engineered by supplying growth stimulus signals to cells from the<lb/> biomaterial used for cell transplantation. In this study, chondro-<lb/>cytes and osteoblasts were cotransplanted on hydrogels modified<lb/> with an RGD-containing peptide sequence to promote cell multi-<lb/>plication. New bone tissue was formed that grew in mass and<lb/> cellularity by endochondral ossification in a manner similar to<lb/> normal long-bone growth. Transplanted cells organized into struc-<lb/>tures that morphologically and functionally resembled growth<lb/> plates. These engineered tissues could find utility in treating<lb/> diseases and injuries of the growth plate, testing the effect of<lb/> experimental drugs on growth-plate function and development,<lb/> and investigating the biology of long-bone growth. Furthermore,<lb/> this concept of promoting the growth of engineered tissues could<lb/> find great utility in engineering numerous tissue types by way of<lb/> the transplantation of a small number of precursor cells.<lb/> 
+	</div>
+	
+	<note type="other">bone ͉ cartilage ͉ alginate ͉ adhesion ligands ͉ endochondral ossification<lb/> </note>
+
+	<div type="introduction">A<lb/> new approach to addressing difficult tissue reconstructive<lb/> or replacement problems is to engineer new tissues by using<lb/> selective cell transplantation on polymer scaffolds (1). Func-<lb/>tional biologic prostheses are created in this approach by en-<lb/>trapping dissociated cells into synthetic biodegradable polymer<lb/> substrates that act to deliver the cells to the appropriate ana-<lb/>tomic site, define a space for tissue development, and direct the<lb/> gross size and shape of the engineered tissue (2). This approach<lb/> has been successful with skin, bone, and cartilage, but a critical<lb/> unmet challenge is the regeneration of tissues capable of growing<lb/> over time (e.g., in concert with the growth of a child). One<lb/> example of a growing tissue is the epiphyseal growth plate, which<lb/> is responsible for bone elongation during development through<lb/> a process termed endochondral ossification. Endochondral os-<lb/>sification involves the deposition of osteoid matrix on top of<lb/> calcified cartilage and its subsequent mineralization (3), and this<lb/> process is compromised in multiple disease and injury states such<lb/> as osteochondrodysplasias, epiphyseal osteochondroses, prema-<lb/>ture growth plate fusion, and Legg–Calve–Perthes disease (4).<lb/> We hypothesized that it would be possible to engineer a<lb/> growing tissue by presenting appropriate growth stimuli from the<lb/> cell transplantation scaffold. This hypothesis was tested in the<lb/> context of engineering growing bony tissues by the cotransplan-<lb/>tation of osteoblasts and chondrocytes. It is critical to promote<lb/> the multiplication of transplanted cells if one is to engineer a<lb/> growing tissue in vivo, and one required growth stimulus for most<lb/> mammalian cell types is an appropriate adhesive substrate (5).<lb/> We hypothesized that providing a high density of adhesive<lb/> ligands to transplanted chondrocytes from the polymeric deliv-<lb/>ery vehicle would promote their multiplication, and synthetic<lb/> peptides containing the arginine-glycine-aspartic acid (RGD)<lb/> cell adhesion sequence were covalently coupled to the alginate<lb/> polymer chains used to form the hydrogel delivery vehicle to<lb/> provide this requirement. We have previously documented that<lb/> this approach allows one to specify the mechanism of cell–<lb/> material adhesion, and that an appropriate density of RGD<lb/> ligands promotes the proliferation of various cell types in vitro (6,<lb/> 7). Considerable efforts have been made to date to regenerate<lb/> bone and cartilage tissues separately and together (8–12), but no<lb/> attempts to form a growing bony tissue have been reported. We<lb/> now demonstrate it is possible to regenerate a tissue structurally<lb/> and functionally similar to a growth plate by providing a growing<lb/> cartilage anlage with transplanted chondrocytes, similar to that<lb/> in long-bone development, as a framework for subsequent bone<lb/> formation by cotransplanted osteoblasts.</div>
+
+		</front>
+	</text>
+</tei>

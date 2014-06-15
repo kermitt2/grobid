@@ -1,0 +1,48 @@
+<?xml version="1.0" ?>
+<tei type="technical-report">
+	<teiHeader>
+		<fileDesc xml:id="55114022"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Prepared for:<lb/></note>
+
+	<byline>
+	<docAuthor>Gil Wong<lb/> Sr. Project Manager<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Pacific Gas and Electric Company<lb/></affiliation>
+	</byline>
+
+	<note type="other">Prepared by:<lb/></note>
+
+	<byline>
+	<docAuthor>Stephen S. George, Ph.D.<lb/> Josh L. Bode, M.P.P.<lb/> Elizabeth Hartmann, B.S.<lb/> Freeman, Sullivan &amp; Co.<lb/>
+	</docAuthor>
+	</byline>
+
+	<ptr>fscgroup.com<lb/></ptr>
+
+	<docTitle>
+	<titlePart>2010 Load Impact Evaluation of Pacific Gas and Electric<lb/> Company&apos;s Time-Based Pricing Tariffs<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Final Report, </note>
+
+	<date>April 1, 2011<lb/> </date>
+
+	<affiliation>Freeman, Sullivan &amp; Co.<lb/></affiliation>
+
+	<address>101 Montgomery St., 15th Floor<lb/> San Francisco, CA 94104<lb/></address>
+
+	<ptr>fscgroup.com<lb/></ptr>
+
+	<note type="page">i<lb/></note>
+	
+	<note type="other">Table of Contents<lb/></note>
+
+		</front>
+	</text>
+</tei>

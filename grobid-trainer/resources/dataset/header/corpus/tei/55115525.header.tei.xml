@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei type="web">
+	<teiHeader>
+		<fileDesc xml:id="55115525"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Randomized Hashing for Digital<lb/> Certificates:<lb/> Halevi-Krawczyk Hash<lb/> An implementation in Firefox<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Code changes Screen Shots References Firefox Installer<lb/></note>
+
+		</front>
+	</text>
+</tei>

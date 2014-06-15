@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55114774"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">605<lb/></note>
+
+	<docTitle>
+	<titlePart>Effects of Various Dietary Fats on Cardiolipin Acyl Composition<lb/> During Ontogeny of Mice1<lb/></titlePart>
+	</docTitle> 
+
+	<byline>
+	<docAuthor>Alvin Berger a, M.E. Gershwin b and J. Bruce Germana, *<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>aOepartment of Food Science and Technology and bDivision of Rheumatology and immunology, University of California at Davis,<lb/></affiliation>
+	</byline>
+
+	<address>Davis, California 95616<lb/></address>
+
+	<div type="abstract">Cardiolipin (CL) is a unique mitochondrial phospholipid,<lb/> cont-lnlng up to 85 wt% 18:2n4~ in mammals. The influence<lb/> of maternal dietary fatty acids on the acyl composition<lb/> of offspring CL has not been examined previously. Adult<lb/> female mice were thus fed diets rich in 18:1n-9 (olive oil),<lb/> 18:2n4~ (safflower oil), 18:3n-3 (linseed oil) or 20:5n-3 and<lb/> 22.~n-3 (fish oil/safflower, ~.1, w/w), for a five month period,<lb/> encompassing two breeding cycles. Offspring from the se-<lb/>cond breeding cycle were then fed these diets. The acyl<lb/> composition of CL, phosphatidylcholine and phosphatidyl-<lb/>ethanolamine from liver and heart was evaluated from<lb/> mice killed 3, 18 and 42 days after parturition. The primary<lb/> nutrient sources at these three time points were trans-<lb/>placental nutrients, breast milk and the diet, respective-<lb/>ly. Maternal diet was found to influence the acyl composi-<lb/>tion of CL v/a both placental transfer of fatty acids and<lb/> breast milk. Fish oil feeding resulted in replacement of a<lb/> substantial portion of 18:2n~ with 22:6n-3; after 42 days,<lb/> the area% of 18:2n~ in heart CL was reduced from 62%<lb/> in safflower oil fed mice to 12%. In comparison to fish oil<lb/> feeding, linseed oil feeding resulted in a much lower ac-<lb/>cumulation of 22.~n~. Olive oil feeding resulted in substan-<lb/>tial replacement of 18-~n4~ with 18:1n-9 {18&quot;~n~ was reduced<lb/> from 62% to 31%}. Physiologically, these findings are rele-<lb/>vant because changes in CL acyl composition may in-<lb/>fluence the activity of associated inner mitochondrial mem-<lb/>brane enzymes.<lb/></div>
+
+		</front>
+	</text>
+</tei>

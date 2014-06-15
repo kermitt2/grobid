@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Baohong</forename>
+								<surname>Cao</surname>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>Bo</forename>
+								<surname>Zheng</surname>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>Ron</forename>
+								<middlename>J</middlename>.
+								<surname>Jankowski</surname>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>Shigemi</forename>
+								<surname>Kimura</surname>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>Makoto</forename>
+								<surname>Ikezawa</surname>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>Bridget</forename>
+								<surname>Deasy</surname>
+								<marker>1</marker> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>James</forename>
+								<surname>Cummins</surname>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>Mike</forename>
+								<surname>Epperly</surname>
+								<marker>3</marker> ,
+							</persName>
+							<persName>
+								<forename>Zhuqing</forename>
+								<surname>Qu -Petersen</surname>
+								<marker>1</marker> and
+							</persName>
+							<persName>
+								<forename>Johnny</forename>
+								<surname>Huard</surname>
+								<marker>1 ,4</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

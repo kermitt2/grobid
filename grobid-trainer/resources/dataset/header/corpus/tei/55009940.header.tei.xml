@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009940"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<ptr>www.borealisgroup.com I www.borouge.com<lb/></ptr>
+
+	<docTitle>
+	<titlePart>Supercure™ High productivity XLPE<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">WC_BROCH_091_GB_2010_03_BB.indd 1<lb/></note>
+
+	<date>23.03.2010</date>
+
+	<note type="other">10:30:40 Uhr</note>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009781"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">1<lb/></note>
+
+	<docTitle>
+	<titlePart>DAYTONA GT<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">S35005GT /<lb/> S45001GT<lb/> S35006GT /<lb/> S45002GT<lb/></note>
+
+	<docTitle>
+	<titlePart>OWNER&apos;S MANUAL</titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

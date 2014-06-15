@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008815"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Separation Technology<lb/> for the<lb/> Chemical Process Industry<lb/> </titlePart>
+	</docTitle>
+	
+	<byline>
+	<affiliation>Sulzer Chemtech<lb/> </affiliation>
+	</byline>
+	
+	<note type="other">Acetates Acetic Acid<lb/> Air Separation<lb/> Alcohols Aromatics<lb/> Caprolactam Flavors, Fragrances<lb/> Hydrogen Peroxide<lb/> Isocyanates Oleochemicals<lb/> Pharmaceutical Solvents<lb/> Styrene Tall Oil<lb/> Terephtalic Acid<lb/> Vitamins<lb/>
+	</note>
+	
+		</front>
+	</text>
+</tei>

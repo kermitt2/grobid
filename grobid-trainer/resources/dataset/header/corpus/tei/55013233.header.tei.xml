@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013233"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<affiliation>université paul cézanne aix-marseille </affiliation>
+	</byline>
+	
+	<note type="page">iii<lb/> </note>
+
+	<idno>N o attribué par la bibliothèque : 2008AIX30006<lb/> </idno>
+
+	<docTitle>
+	<titlePart>S U I V I T R I D I M E N S I O N N E L D E L A M A I N<lb/> E T R E C O N N A I S S A N C E D E G E S T E S P O U R<lb/> L E S I N T E R FA C E S H O M M E -M A C H I N E<lb/> </titlePart>
+	</docTitle>
+
+	<degree>T H È S E<lb/> pour obtenir le grade de<lb/></degree>
+
+		</front>
+	</text>
+</tei>

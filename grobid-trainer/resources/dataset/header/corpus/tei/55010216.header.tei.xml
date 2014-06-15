@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010216"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Workflow Pattern Coverage in SAP<lb/> NetWeaver BPM 7.11<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Applies to:<lb/> SAP NetWeaver BPM 7.11<lb/> For more information, visit the Business Process Modeling homepage.<lb/></note>
+
+	<div type="abstract">Summary<lb/> When orchestrating activities and tasks, business processes typically follow specific workflow patterns. It&apos;s<lb/> fair to say that what workflow patterns have done for BPM is very much comparable to the impact of design<lb/> patterns in traditional software engineering. BPM &quot;masterminds&quot; Wil van der Aalst, Arthur ter Hofstede,<lb/> Alistair Barros, and others have exhaustively analyzed and classified various patterns linked to the control<lb/> flow, data flow, exception handling, and resource perspectives of business processes. As a result, BPM<lb/> practitioners may refer to their site www.workflowpatterns.com to look for patterns to be used in own process<lb/> modeling projects.<lb/> This article provides a reference for workflow patterns, supported in NetWeaver BPM (code-named<lb/> &quot;Galaxy&quot;), as of release 7.11. We do not only walk you through the most important patterns and show their<lb/> analogies in Galaxy&apos;s Process Composer design time but also provide examples for modeling scenarios that<lb/> incorporate more advanced patterns using BPMN.</div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009030"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">6<lb/></note>
+
+	<reference>Weed Technology. 2005. Volume 19:6–13<lb/></reference>
+
+	<docTitle>
+	<titlePart>Fall and Early Preplant Application Timing Effects on Persistence and Efficacy of<lb/> Acetamide Herbicides<lb/>1<lb/> </titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>DANIEL C. PARKER, F. WILLIAM SIMMONS, and LOYD M. WAX<lb/> 2<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Abstract: The persistence and efficacy of acetamide herbicides at application timings from fall to<lb/> preemergence (PRE) were studied in 1998 and 1999 on mollisols (1.1 to 2.8% organic carbon).<lb/> Metolachlor, s-metolachlor, acetochlor (as an emulsifiable concentrate [EC] formulation and two<lb/> encapsulated formulations, capsule suspension [CS] and microencapsulated [ME]), and the combi-<lb/>nation of flufenacet ϩ metribuzin were evaluated at five application times including late fall, 60 and<lb/> 30 d early preplant (EPP), preplant incorporated, and PRE. Soil bioassays 180 d after application<lb/> indicated flufenacet ϩ metribuzin, metolachlor, s-metolachlor, and the acetochlor CS had 62 to 74%<lb/> giant foxtail control, whereas acetochlor EC and ME had 43 to 46% control. Applications at 60 EPP<lb/> of metolachlor, s-metolachlor, and acetochlor CS provided 70 to 75% giant foxtail control in green-<lb/>house bioassays, whereas flufenacet ϩ metribuzin, acetochlor ME, and acetochlor EC provided 38<lb/> to 57% control. At the 30 EPP timing, metolachlor and acetochlor CS had 80 to 82% control, whereas<lb/> acetochlor EC provided 46% control, and acetochlor ME, flufenacet ϩ metribuzin, and s-metolachlor<lb/> had 65 to 74% control. Quantitative soil analysis (0 to 6 cm) 10 d after planting (DAP) indicated<lb/> metolachlor, s-metolachlor, and acetochlor CS concentrations ranged from 12 to 16% and 32 to 47%<lb/> of applied herbicide for the fall and PRE application timings, respectively, whereas acetochlor (ME<lb/> and EC) were from 1 to 3% and 16 to 21% of applied for the fall and PRE application timings,<lb/> respectively. Bioassay reduction was correlated (R<lb/> 2<lb/> ϭ 0.68) with soil-herbicide concentrations at 10<lb/> DAP.<lb/></div>
+
+	<keyword>Nomenclature: Acetochlor; flufenacet; metolachlor; metribuzin; s-metolachlor; giant foxtail, Setaria<lb/> faberi Herrm. #<lb/> 3 SETFA.<lb/> Additional index words: Soil dissipation.<lb/> Abbreviations: CS, capsule suspension; DAP, days after planting; EC, emulsifiable concentrate; EPP,<lb/> early preplant; ME, microencapsulated; OC, organic carbon; PPI, preplant incorporated; PRE, pre-<lb/>emergence; SETFA, giant foxtail.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

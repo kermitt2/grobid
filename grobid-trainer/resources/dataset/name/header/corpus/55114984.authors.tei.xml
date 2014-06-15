@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Vizma</forename>
+								<surname>Nikolajeva</surname>
+								<marker>1 *</marker>,
+							</persName>
+							<persName>
+								<forename>Daina</forename>
+								<surname>Eze</surname>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>Maiga</forename>
+								<surname>Artjuha</surname>
+								<marker>1</marker> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Ingmārs</forename>
+								<surname>Mikažāns</surname>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>Zaiga</forename>
+								<surname>Petriņa</surname>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>Leontīne</forename>
+								<surname>Antonoviča</surname>
+								<marker>2</marker> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Dmitrijs</forename>
+								<surname>Babarikins</surname>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>Indriķis</forename>
+								<surname>Muižnieks</surname>
+								<marker>1</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

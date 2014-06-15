@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013678"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>2003;9:6410-6418. </reference>
+
+	<date>Published online December 24, 2003.<lb/> </date>
+
+	<reference>Clin Cancer Res<lb/></reference>
+
+	<byline>
+	<docAuthor>Toshiro Obata, Minoru Toyota, Ayumi Satoh, et al.<lb/></docAuthor>
+	</byline>
+
+	<docTitle>
+	<titlePart>in Colorectal and Gastric Cancer<lb/> as a Target of Epigenetic Inactivation<lb/> HRK Identification of<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Updated Version<lb/></note>
+
+	<ptr type="web">http://clincancerres.aacrjournals.org/content/9/17/6410<lb/></ptr>
+
+	<note type="other">Access the most recent version of this article at:<lb/> Cited Articles<lb/></note>
+
+	<ptr type="web">http://clincancerres.aacrjournals.org/content/9/17/6410.full.html#ref-list-1<lb/></ptr>
+
+	<note type="other">This article cites 39 articles, 22 of which you can access for free at:<lb/> Citing Articles<lb/></note>
+
+	<ptr type="web">http://clincancerres.aacrjournals.org/content/9/17/6410.full.html#related-urls<lb/></ptr>
+
+	<note type="other">This article has been cited by 9 HighWire-hosted articles. Access the articles at:<lb/>E-mail alerts<lb/>related to this article or journal.<lb/> Sign up to receive free email-alerts<lb/> Subscriptions<lb/> Reprints and<lb/> .</note>
+
+	<email>pubs@aacr.org<lb/></email>
+
+	<note type="other">Publications Department at<lb/> To order reprints of this article or to subscribe to the journal, contact the AACR<lb/> Permissions<lb/> . permissions@aacr.org<lb/> Department at<lb/> To request permission to re-use all or part of this article, contact the AACR Publications<lb/> American Association for Cancer Research<lb/></note>
+
+	<note type="copyright">Copyright © 2003<lb/> on December 1, 2011<lb/> clincancerres.aacrjournals.org<lb/> Downloaded from</note>
+
+		</front>
+	</text>
+</tei>

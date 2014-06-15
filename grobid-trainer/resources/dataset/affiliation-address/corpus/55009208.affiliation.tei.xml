@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="laboratory">SATIE</orgName>,
+							<orgName type="institution">ENS Cachan</orgName>,
+							<orgName type="institution">PRES UniverSud</orgName>
+							<lb/>
+							<address>
+								<addrLine>61 Avenue du Président Wilson</addrLine>,
+								<settlement>Cachan</settlement>
+								<postCode>94230</postCode>,
+								<country>France</country>
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="institution">Billanco SA</orgName>
+							<lb/>
+							<address>
+								<addrLine>194 Avenue Aristide Briand</addrLine>,
+								<settlement>Cachan</settlement>
+								<postCode>94230</postCode>,
+								<country>France</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

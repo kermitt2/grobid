@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Louise</forename>
+								<surname>Barr</surname>
+							</persName>
+							|Authors
+							<persName>
+								<forename>Mark</forename>
+								<surname>Birbeck</surname>,
+							</persName>
+							<persName>
+								<forename>Jon</forename>
+								<surname>Duckett</surname>,
+							</persName>
+							<persName>
+								<forename>Oli</forename>
+								<middlename>Gauti</middlename>
+								<surname>Gudmundsson</surname>,
+							</persName>
+							<persName>
+								<forename>Pete</forename>
+								<surname>Kobak</surname>,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Evan</forename>
+								<surname>Lenz</surname> ,
+							</persName>
+							<persName>
+								<forename>Steve</forename>
+								<surname>Livingstone</surname> ,
+							</persName>
+							<persName>
+								<forename>Daniel</forename>
+								<surname>Marcus</surname> ,
+							</persName>
+							<persName>
+								<forename>Stephen</forename>
+								<surname>Mohr</surname> ,
+							</persName>
+							<persName>
+								<forename>Nik</forename>
+							<lb/>
+								<surname>Ozu</surname> ,
+							</persName>
+							<persName>
+								<forename>Jonathan</forename>
+								<surname>Pinnock</surname> ,
+							</persName>
+							<persName>
+								<forename>Keith</forename>
+								<surname>Visco</surname> ,
+							</persName>
+							<persName>
+								<forename>Andrew</forename>
+								<surname>Watt</surname> ,
+							</persName>
+							<persName>
+								<forename>Kevin</forename>
+								<surname>Williams</surname> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Zoran</forename>
+								<surname>Zaev</surname>
+							</persName>
+							
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

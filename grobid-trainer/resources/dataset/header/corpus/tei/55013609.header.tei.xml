@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013609"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Molecular Characterization of Undifferentiated-Type<lb/> Gastric Carcinoma<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Gen Tamura, Kiyoshi Sato, Sunao Akiyama, Takashi Tsuchiya, Yasushi Endoh,<lb/> Osamu Usuba, Wataru Kimura, Satoshi Nishizuka, and Teiichi Motoyama<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Departments of Pathology (GT, KS, SA, TT, YE, TM) and Surgery (KS, OU, WK), Yamagata University School of<lb/> Medicine, </affiliation>
+	</byline>
+
+	<address>Yamagata, Japan;</address>
+
+	<byline>
+	<affiliation>and Department of Microbiology and Molecular Genetics (SN), College of Medicine,<lb/> University of California,
+	</affiliation>
+	</byline>
+
+	<address>Irvine, California<lb/></address>
+
+	<div type="abstract">SUMMARY: As the great majority of gastric cancers develop histologically differentiated, and a significant proportion of differentiated-<lb/>type carcinomas progress to become undifferentiated, both histological types are likely to share several common genetic<lb/> abnormalities, such as p53 mutations at advanced stages. However, a subset of gastric cancers develop as undifferentiated<lb/> carcinomas, including signet-ring cell carcinoma and poorly differentiated adenocarcinoma, and the molecular pathogenesis of this<lb/> tumor type remains largely unknown. To characterize the molecular features of undifferentiated-type gastric carcinomas that<lb/> developed as undifferentiated-type, we examined for p53, APC, and epithelial (E)-cadherin gene mutations, microsatellite alterations<lb/> including loss of heterozygosity (LOH) and microsatellite instability (MSI), and hypermethylation of the E-cadherin gene promoter in 26<lb/> early undifferentiated gastric carcinomas, consisting of 14 signet-ring cell carcinomas and 12 poorly differentiated adenocarcinomas.<lb/> E-cadherin expression was evaluated immunohistochemically. p53 mutations were detected in only one poorly differentiated<lb/> adenocarcinoma sample (3.8%; 1/26), whereas no APC or E-cadherin mutations were found. LOH was present only at D8S261 on the<lb/> short arm of chromosome 8 in 2 of 14 (14%) informative tumors, both of which were poorly differentiated adenocarcinomas, and MSI<lb/> was not observed in any of the tumors. No signet-ring cell carcinomas have been found to carry gene mutations or microsatellite<lb/> alterations. In contrast, hypermethylation of the E-cadherin promoter occurred in 69% (18/26) of the tumors; 57% (8/14) of signet-ring<lb/> cell carcinomas, and 83% (10/12) of poorly differentiated adenocarcinomas, and was significantly associated with loss or reduced<lb/> expression of E-cadherin. Thus, whereas tumor suppressor gene mutation, LOH, and MSI were less common in undifferentiated-type<lb/> early gastric carcinomas, epigenetic inactivation of E-cadherin via promoter hypermethylation may be an early critical event in the<lb/> development of undifferentiated tumors. </div>
+
+	<reference>(Lab Invest 2001, 81:593–598).<lb/> G</reference>
+
+		</front>
+	</text>
+</tei>

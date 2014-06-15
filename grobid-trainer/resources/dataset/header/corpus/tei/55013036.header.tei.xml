@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013036"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Invariant Common Spatial Patterns: Alleviating<lb/> Nonstationarities in Brain-Computer Interfacing<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Benjamin Blankertz 1,2<lb/> Motoaki Kawanabe 2<lb/> Ryota Tomioka 3<lb/> Friederike U. Hohlefeld 4<lb/> Vadim Nikulin 5<lb/> Klaus-Robert Müller 1,2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 TU Berlin, Dept. of Computer Science, Machine Learning Laboratory,</affiliation>
+	</byline>
+
+	<address>Berlin, Germany<lb/></address>
+
+	<byline>
+	<affiliation>2 Fraunhofer FIRST (IDA),</affiliation>
+	</byline>
+
+	<address>Berlin, Germany<lb/></address>
+
+	<byline>
+	<affiliation>3 Dept. Mathematical Informatics, IST, The University of Tokyo,</affiliation>
+	</byline>
+
+	<address>Japan<lb/></address>
+
+	<byline>
+	<affiliation>4 Berlin School of Mind and Brain,</affiliation>
+	</byline>
+
+	<address>Berlin, Germany<lb/></address>
+
+	<byline>
+	<affiliation>5 Dept. of Neurology, Campus Benjamin Franklin, Charité University Medicine</affiliation>
+	</byline>
+
+	<address>Berlin, Germany<lb/></address>
+
+	<email>{blanker,krm}@cs.tu-berlin.de<lb/></email>
+
+	<div type="abstract">Abstract<lb/> Brain-Computer Interfaces can suffer from a large variance of the subject condi-<lb/>tions within and across sessions. For example vigilance fluctuations in the indi-<lb/>vidual, variable task involvement, workload etc. alter the characteristics of EEG<lb/> signals and thus challenge a stable BCI operation. In the present work we aim to<lb/> define features based on a variant of the common spatial patterns (CSP) algorithm<lb/> that are constructed invariant with respect to such nonstationarities. We enforce<lb/> invariance properties by adding terms to the denominator of a Rayleigh coefficient<lb/> representation of CSP such as disturbance covariance matrices from fluctuations<lb/> in visual processing. In this manner physiological prior knowledge can be used<lb/> to shape the classification engine for BCI. As a proof of concept we present a<lb/> BCI classifier that is robust to changes in the level of parietal α-activity. In other<lb/> words, the EEG decoding still works when there are lapses in vigilance.<lb/></div>
+
+		</front>
+	</text>
+</tei>

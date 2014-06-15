@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012702"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Aneuploidy in colorectal cancer<lb/></note>
+	
+	<note type="page">28<lb/></note>
+
+	<docTitle>
+	<titlePart>Supplemental figure legends<lb/></titlePart>
+	</docTitle>
+
+	<div type="introduction">Supplemental figure 1a-f: Overview of image cytometrie, CGH, and SKY<lb/> evaluation of analyzed colorectal cancer cell lines LoVo, DLD-1, HCT116, HT-29,<lb/> COLO 201, and T84. n.a., not available.<lb/> Supplemental figure 2: Screenshot from the PDQuest analysis software (a) and<lb/> representative gel images of a diploid and an aneuploid cell line (b). The inter-<lb/>individual expression of HDAC2, CAPZA1, and TXNL1 is shown through<lb/> representative match-set members. The two sub-entities are highlighted in red<lb/> (aneuploid) and and blue (diploid).<lb/> Supplemental figure 3: Expression of aneuploid and diploid cell lines for significant<lb/> proteins. Dots represent median expression of replicates for a single cell line<lb/> and lines show weighted mean of aneuploid and diploid cell lines.<lb/> Supplemental figure 4: IPA network 2 (Score 23) of 10 proteins differentially<lb/> expressed between diploid and aneuploid colorectal cell lines. Red highlighted<lb/> proteins are higher expressed in the aneuploid group, green ones are lower<lb/> expressed in the aneuploid group. Please note the overall association of this network<lb/> with functions (FX) and canonical pathways (CP) related to cancer, polyploidization<lb/> and senescence. This network overlaps with network 1 (blue). Proteins accompanied<lb/> by red and green ovals were prone to Western Blot evaluation with the red one<lb/> reaching significance.<lb/> Supplemental figure 5: Western Blots analysis of GNAS (a) and PRDX2 (b)<lb/> expression in colorectal cell lines including non-specific bands for the respective<lb/> protein. Red frames mark the specific band of the proteins that was used for<lb/> evaluation. None of the unspecific bands showed significant differences between<lb/> diploid (LoVo, DLD-1, HCT116) and aneuploid (HT-29, COLO 201, T84, Caco-2) cell<lb/> lines.</div>
+
+		</front>
+	</text>
+</tei>

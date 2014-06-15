@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010578"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Designation: D 6588 – 02<lb/></note>
+
+	<docTitle>
+	<titlePart>Standard Test Method for<lb/> Fatigue of Tire Cords (Disc Fatigue Test)<lb/> 1<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">This standard is issued under the fixed designation D 6588; the number immediately following the designation indicates the year of<lb/> original adoption or, in the case of revision, the year of last revision. A number in parentheses indicates the year of last reapproval. A<lb/> superscript epsilon (e) indicates an editorial change since the last revision or reapproval.<lb/></div>
+
+		</front>
+	</text>
+</tei>

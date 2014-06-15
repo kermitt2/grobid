@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<tei type="phd-thesis">
+	<teiHeader>
+		<fileDesc xml:id="55115314"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<affiliation>Lehrstuhl für Technologie der Brauerei II<lb/></affiliation>
+	</byline>
+
+	<docTitle>
+	<titlePart>Entwicklung einer Technologie zur Herstellung alternativer<lb/> Fermentationsgetränke auf Würzebasis mittels selektierter und<lb/> charakterisierter Laktobazillen<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Christoph Tenge<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Vollständiger Abdruck der von der Fakultät Wissenschaftszentrum Weihenstephan für Ernährung,<lb/> Landnutzung und Umwelt der Technischen Universität München</affiliation>
+	</byline>
+
+	<degree>zur Erlangung des akademischen<lb/> Grades eines<lb/> Doktor-Ingenieurs<lb/> (Dr.-Ing.)<lb/> genehmigten Dissertation.<lb/> Vorsitzender:<lb/> Univ.-Prof. Dr.-Ing., Dr.-Ing. habil. Ulrich Kulozik<lb/> Prüfer der Dissertation:<lb/> 1. Univ.-Prof. Dr.-Ing. Eberhard Geiger<lb/> 2. Univ.-Prof. Dr. rer. nat. habil. Rudi F. Vogel<lb/></degree>
+		</front>
+	</text>
+</tei>

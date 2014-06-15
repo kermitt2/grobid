@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014082"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="copyright">© All Rights Reserved<lb/></note>
+
+	<note type="other">*Corresponding author.<lb/> </note>
+
+	<email>Email: azhar@usm.my<lb/> </email>
+
+	<phone>Tel: +604 653 3888/222; Fax: +604 657 3678<lb/></phone>
+
+	<reference>International Food Research Journal 18(4): 1295-1301 (2011)<lb/></reference>
+
+	<byline>
+	<docAuthor>Foo, W. T., Yew, H. S., Liong, M. T. and<lb/> *<lb/> Azhar, M. E<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Food Technology Division, School of Industrial Technology, Universiti Sains<lb/></affiliation>
+	</byline>
+
+	<address>Malaysia, 11800 USM Penang, Malaysia<lb/></address>
+
+	<docTitle>
+	<titlePart>Influence of formulations on textural, mechanical and structural<lb/> breakdown properties of cooked yellow alkaline noodles
+	<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">Abstract: The physical attributes (pH and colour), cooking yield, textural and mechanical properties (firmness,<lb/> tensile and texture profiles analyses) and structural breakdown properties (multiple extrusion cell with added<lb/> artificial saliva) of five yellow alkaline noodle (YAN) formulations were studied. Samples used were noodles<lb/> with (a) typical formulation (control), (b) soy protein isolate (SPI), (c) soy protein isolate plus microbial<lb/> transglutaminase enzyme (SPI/MTGase), (d) green banana pulp flour (GBPu) and (e) green banana peel flour<lb/> (GBPe). Compared to other noodles SPI/MTGase noodle showed significantly (P &lt; 0.05) higher values in<lb/> terms of textural, mechanical and breakdown properties. Incorporating SPI, banana pulp and peel flours into<lb/> the noodles had imposed some differences on most of the mechanical and textural parameters from the control<lb/> YAN. However, these noodles could not be clearly distinguished in term of structural breakdown properties.<lb/></div>
+
+	<keyword>Keywords: Yellow alkaline noodles, cooking quality, textural properties, structural breakdown<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

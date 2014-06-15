@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008901"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="copyright">Copyright © 2006, SAS Institute Inc. All rights reserved.<lb/></note>
+
+	<docTitle>
+	<titlePart>Graphical Reporting of<lb/> Clinical Trial Data with<lb/> SAS ODS Graphics<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Hans-Rainer Pauli<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Solution Specialist Technology<lb/> SAS </affiliation>
+	</byline>
+
+	<address>Switzerland<lb/></address>
+
+	<email>hans-rainer.pauli@sch.sas.com<lb/></email>
+
+	<byline>
+	<docAuthor>David J Garbutt<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Business &amp; Decision Life Sciences<lb/> </affiliation>
+	</byline>
+
+	<address>Switzerland<lb/></address>
+
+	<email>David.garbutt@businessdecsion.com</email>
+
+		</front>
+	</text>
+</tei>

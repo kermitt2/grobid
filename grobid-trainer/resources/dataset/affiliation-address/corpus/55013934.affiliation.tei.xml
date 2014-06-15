@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+ Contribution f r o m the
+						<affiliation>
+							<orgName type="laboratory">Pioneering Research Laboratory</orgName>,
+							<orgName type="department">U . S. Army Natick<lb/> Laboratories</orgName>,
+							<address>
+								<settlement>Natick</settlement>,
+								<region>Massachusetts</region>
+								<postCode>01760</postCode>.
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

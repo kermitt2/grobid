@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009630"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">L E T T E R S<lb/></note>
+
+	<note type="page">640</note>
+
+	<reference>NATURE CELL BIOLOGY VOLUME 5 | NUMBER 7 | JULY 2003<lb/></reference>
+
+	<docTitle>
+	<titlePart>Muscle stem cells differentiate into haematopoietic<lb/> lineages but retain myogenic potential<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Baohong Cao 1 , Bo Zheng 1 , Ron J. Jankowski 1 , Shigemi Kimura 2 , Makoto Ikezawa 2 , Bridget Deasy 1 ,<lb/> James Cummins 1 , Mike Epperly 3 , Zhuqing Qu-Petersen 1 and Johnny Huard 1,4<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Muscle-derived stem cells (MDSCs) can differentiate into<lb/> multiple lineages, including haematopoietic lineages 1–12 .<lb/> However, it is unknown whether MDSCs preserve their<lb/> myogenic potential after differentiation into other lineages. To<lb/> address this issue, we isolated from dystrophic muscle a<lb/> population of MDSCs that express stem-cell markers and can<lb/> differentiate into various lineages 1,13 . After systemic delivery<lb/> of three MDSC clones into lethally irradiated mice, we found<lb/> that differentiation of the donor cells into various lineages of<lb/> the haematopoietic system resulted in repopulation of the<lb/> recipients&apos; bone marrow. Donor-derived bone-marrow cells,<lb/> isolated from these recipients by fluorescence-activated cell<lb/> sorting (FACS), also repopulated the bone marrow of<lb/> secondary, lethally irradiated, recipients and differentiated into<lb/> myogenic cells both in vitro and in vivo in normal mdx mice.<lb/> These findings demonstrate that MDSC clones retain their<lb/> myogenic potential after haematopoietic differentiation.<lb/></div>
+
+		</front>
+	</text>
+</tei>

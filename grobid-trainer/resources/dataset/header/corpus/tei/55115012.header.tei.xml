@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55115012"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>LOKKI ET AL.<lb/>  APPLICATIONS OF WARA Audio Engineering Society<lb/> Convention Paper 6026<lb/> Presented at the 116th Convention<lb/>  2004 May 8–11<lb/> Berlin, Germany<lb/></reference>
+
+	<note type="other">This convention paper has been reproduced from the author&apos;s advance manuscript, without editing, corrections, or<lb/> consideration by the Review Board. The AES takes no responsibility for the contents. Additional papers may be<lb/> obtained by sending request and remittance to Audio Engineering Society, 60 East 42<lb/> nd Street, New York, New York<lb/> 10165-2520, USA; also see www.aes.org. All rights reserved. Reproduction of this paper, or any portion thereof, is<lb/> not permitted without direct permission from the Journal of the Audio Engineering Society.<lb/></note>
+
+	<docTitle>
+	<titlePart>Application Scenarios of Wearable and<lb/> Mobile Augmented Reality Audio<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Tapio Lokki<lb/> 1 , Heli Nironen<lb/> 1 , Sampo Vesa<lb/> 1 , Lauri Savioja<lb/> 1 , Aki Härmä<lb/> 2 , and Matti Karjalainen<lb/> 2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Telecommunications Software and Multimedia Laboratory, Helsinki University of Technology,</affiliation>
+	</byline>
+
+	<address>P.O.Box 5400, FIN-02015 HUT,<lb/> FINLAND<lb/></address>
+
+	<byline>
+	<affiliation>2 Laboratory of Acoustics and Audio Signal Processing, Helsinki University of Technology,</affiliation>
+	</byline>
+
+	<address>P.O.Box 3000, FIN-02015 HUT,<lb/> FINLAND<lb/></address>
+
+	<note type="other">Correspondence should be addressed to </note>
+
+	<docAuthor>Tapio Lokki </docAuthor>
+
+	<email>(tapio.lokki@hut.fi) </email>
+
+	<note type="other">¢ ¡<lb/> ¤ £<lb/> ¦ ¢<lb/> © ¥<lb/> ! # &quot;<lb/> $ %<lb/> &amp; %<lb/> &amp; &quot;<lb/> ( &apos;<lb/> ( )<lb/> 1 0<lb/> 2 &apos;<lb/> 4 3<lb/> 6 5<lb/> 8 7<lb/> @ 9<lb/> A B<lb/> C 2<lb/> D &amp; &quot;<lb/> 4 E<lb/> # 5<lb/> G F<lb/> I H<lb/> E 3<lb/> 6 D<lb/> &amp; &apos;<lb/> 4 &quot;<lb/> ( ¤<lb/> 2 # &quot;<lb/> ( &apos;<lb/> 4 0<lb/> Q P<lb/> R # S<lb/> 8 F<lb/> T &apos;<lb/> ( 3<lb/> R #<lb/> 2 E %<lb/> &amp; 2<lb/> 7 U<lb/> 5 V 0<lb/> U W F<lb/> Y a &quot;<lb/> ( &quot;<lb/> b # %<lb/> 8 %<lb/> &amp; &quot;<lb/> 4 &apos;<lb/> c )<lb/> # 0<lb/> U &apos;<lb/> ( 3<lb/> 5 8 7<lb/> d e<lb/> T %<lb/> &amp; &quot;<lb/> 4 3<lb/> 6 &apos;<lb/> f 0<lb/> g i h<lb/> 8 F<lb/> T p<lb/> 7 U<lb/> q 0<lb/> B r h<lb/> 8 2<lb/> H E &apos;<lb/> ( )<lb/> U 3<lb/> 6 %<lb/> &amp; h<lb/> &amp; 3<lb/> 5 8<lb/> 7 g<lb/> U ¢ &apos;<lb/> 4 5<lb/> V 0<lb/> U s<lb/> ! 1 0<lb/> 2 F<lb/> t &apos;<lb/> ( 5<lb/> 6 0<lb/> 2 3<lb/> I 7<lb/> U H<lb/> ¤ # &quot;<lb/> ( &quot;<lb/> b h<lb/> &amp; W<lb/> F T %<lb/> &amp; h<lb/> 8 3<lb/> 5 &amp;<lb/> &quot; 4<lb/> H E<lb/> 5 V 0<lb/> 2 7<lb/> X I u<lb/> v h<lb/> &amp; w %<lb/> &amp; 2 3<lb/> % x 3<lb/> 6 7<lb/> U F<lb/> y 7<lb/> U P<lb/> 7  0<lb/> U H<lb/>  # &quot;<lb/> ( &quot;<lb/> 4 3<lb/> 1 B<lb/> a 7<lb/>  S<lb/> G 0<lb/> 2 3<lb/> &apos; ( H<lb/>  %<lb/> 8 &quot;<lb/> 4 H<lb/>  5<lb/> V 0<lb/> @ # %<lb/> &amp; %<lb/> 8 &quot;<lb/> 4 &apos;<lb/> c )<lb/> # 0<lb/> U &apos;<lb/> ( 3<lb/> 5 8 7<lb/> v B<lb/> r h<lb/> &amp; U<lb/> d &apos;<lb/> (  0<lb/> 2 S<lb/> 8 # &quot;<lb/>  7<lb/> U 3<lb/> S &amp; 5<lb/> G F<lb/> w 5<lb/> 6 0<lb/> ! 7<lb/> r #<lb/> 2  7<lb/>  S<lb/> &amp; %<lb/> x 2 &apos;<lb/> ( H<lb/>  %<lb/> x 3<lb/> 6 7<lb/> U F<lb/> w 0<lb/> 2 3<lb/> E 0<lb/> U h<lb/> &amp;  S<lb/> 8 7<lb/> U W 7<lb/> r # S<lb/> 8 F<lb/> T &apos;<lb/> 4 0<lb/> U 3<lb/> 6 U P<lb/> ¢ 5<lb/> &apos; 4<lb/> 2 3<lb/> 5 &amp; H<lb/> E 5<lb/> 6 0<lb/> v 0<lb/> 2 3<lb/> % &amp;<lb/> 2 3<lb/> T F<lb/> T S<lb/> 8 )<lb/> q <lb/> # 5<lb/> ¢ S<lb/> &amp; s<lb/> H E<lb/> 5 6 0<lb/> 2 F<lb/> S 8 F<lb/> T &apos;<lb/> ( 3<lb/> F T &apos;<lb/> c 7<lb/> U %<lb/> &amp; &quot;<lb/> (  P<lb/> 6 X<lb/>  <lb/>  5<lb/>  F<lb/> &amp; F<lb/> &amp; &apos;<lb/> f 0<lb/> 2 &apos;<lb/> 4 3<lb/> 6 5<lb/>  <lb/> D &amp; &apos;<lb/> 4 5<lb/> G # S<lb/> &amp; !<lb/> # &quot;<lb/>  # S<lb/> 8 F<lb/> &amp; &apos;<lb/> 4 3<lb/> p  3<lb/> 1 6<lb/> U p<lb/>  <lb/>  <lb/> t )<lb/> q 3<lb/> 6 5<lb/> &amp; 5<lb/> &amp; )<lb/> q 0<lb/> U &apos;<lb/> ( 3<lb/> 5 8 7<lb/>  V B<lb/> r &apos;<lb/> 4 2<lb/> F ¢ 3<lb/> b B<lb/> r &apos;<lb/> ( 2<lb/> &quot; (<lb/> 7 2 7<lb/>  #<lb/> 2 F<lb/> T &apos;<lb/> c 7<lb/> U )<lb/> S 8 7<lb/> 2 7<lb/>  W F<lb/> Y X<lb/>  <lb/>  &apos;<lb/> ( 5<lb/> 8 &quot;<lb/> 4 &quot;<lb/> ( P<lb/>  8 7<lb/> U 3<lb/> H E<lb/>  9<lb/> A S<lb/> T 0<lb/> 2 S<lb/> &amp; %<lb/> &amp; %<lb/> &amp; &quot;<lb/> ( &apos;<lb/> ( )<lb/> 1 0<lb/> 2 &apos;<lb/> 4 3<lb/> 6 5<lb/>  7<lb/> 2 )<lb/> q 5<lb/> 8 #<lb/> 2 &apos;<lb/> 4 3<lb/> V 7<lb/>  U<lb/>  7<lb/> U <lb/> 0 2 )<lb/> ! h<lb/> &amp; W F<lb/> Y X<lb/> AES 116<lb/></note>
+
+	<reference>TH CONVENTION, BERLIN, GERMANY, 2004 MAY 8–11</reference>
+
+		</front>
+	</text>
+</tei>

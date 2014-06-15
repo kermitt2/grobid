@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55113872"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Anwendungspotential der Impedanzspektroskopie für die Waschlaugensensorik<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Uwe Tröltzsch<lb/> 1 , Roman Gruden<lb/> 2 , Olfa Kanoun<lb/> 1 , Andreas Buchholz<lb/> 2 , Volker Beck<lb/> 2<lb/>
+	</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Technische Universität Chemnitz<lb/> 1<lb/> Professur für Mess-und Sensortechnik<lb/></affiliation>
+	</byline>
+
+	<address>Reichenhainer Straße 70<lb/> 09126 Chemnitz<lb/></address>
+
+	<phone>+49 371 531 37591<lb/> </phone>
+
+	<email>uwe.troeltzsch@etit.tu-chemnitz.de<lb/></email>
+
+	<byline>
+	<affiliation>Seuffer GmbH &amp; Co. KG<lb/> 2<lb/> </affiliation>
+	</byline>
+
+	<address>Bärental 26<lb/> 75365 Calw<lb/> </address>
+
+	<phone>+49 7051 6001 186<lb/></phone>
+
+	<email>roman.gruden@seuffer.de<lb/></email>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010735"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Using genetic algorithms to autonomically tune the<lb/> kernel<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Jake Moilanen<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>IBM<lb/></affiliation>
+	</byline>
+
+	<email>moilanen@austin.ibm.com<lb/></email>
+
+	<byline>
+	<docAuthor>Peter Williams<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Aurema Pty Ltd.<lb/></affiliation>
+	</byline>
+
+	<email>pwil3058@bigpond.net.au<lb/></email>
+
+	<div type="abstract">Abstract<lb/> One of the next obstacles in autonomic comput-<lb/>ing is having a system self-tune for any work-<lb/>load. Workloads vary greatly between applica-<lb/>tions and even during an application&apos;s life cy-<lb/>cle. It is a daunting task for a system admin-<lb/>istrator to manually keep up with a constantly<lb/> changing workload. To remedy this shortcom-<lb/>ing, intelligence needs to be put into a system to<lb/> autonomically handle this process. One method<lb/> is to take an algorithm commonly used in arti-<lb/>ficial intelligence and apply it to the Linux R<lb/> kernel.<lb/> This paper covers the use of genetic-algorithms<lb/> to autonomically tune the kernel through the<lb/> development of the genetic-library. It will dis-<lb/>cuss the overall designed of the genetic-library<lb/> along with the hooked schedulers, current sta-<lb/>tus, and future work. Finally, early perfor-<lb/>mance numbers are covered to give an idea as<lb/> towards the viability of the concept.</div>
+
+		</front>
+	</text>
+</tei>

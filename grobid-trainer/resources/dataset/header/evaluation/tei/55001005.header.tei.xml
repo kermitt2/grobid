@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001005"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Model 2007 &amp; 2017 User&apos;s Manual<lb/> Nirvana Auto-Balanced<lb/> Photoreceivers<lb/></titlePart>
+	</docTitle>
+
+	<idno type="patent">Patent No. 5,134,276<lb/> </idno>
+
+	<note>2<lb/></note>
+
+	<div type="introduction">Contents</div>
+
+		</front>
+	</text>
+</tei>

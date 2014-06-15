@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000575"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<affiliation>RICE UNIVERSITY<lb/></affiliation>
+	</byline>
+
+	<docTitle>
+	<titlePart>EEcient VLSI Architectures for Matrix<lb/> Factorizations<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>by<lb/> Nariankadu D. Hemkumar<lb/></docAuthor>
+	</byline>
+
+	<degree>A Thesis Submitted<lb/> in Partial Fulfillment of the<lb/> Requirements for the Degree<lb/> Doctor of Philosophy<lb/></degree>
+	
+	<note type ="other"> Approved, Thesis Committee:<lb/> Dr. Joseph R. Cavallaro, Chairman<lb/> Assistant Professor<lb/> Electrical and Computer Engineering<lb/> Dr. Peter J. Varman<lb/> Associate Professor<lb/> Electrical and Computer Engineering<lb/> Dr. Danny C. Sorensen<lb/> Professor Computational and Applied Mathematics<lb/>
+</note>
+
+	<address> Houston, Texas<lb/></address>
+
+	<date>April, 1994<lb/></date>
+
+	<docTitle>
+	<titlePart>EEcient VLSI Architectures for Matrix<lb/> Factorizations<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Nariankadu D. Hemkumar<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Abstract<lb/> The SVD (Singular Value Decomposition) is a critical matrix factorization in many<lb/> real-time computations from an application domain which includes signal processing<lb/> and roboticss and complex data matrices are encountered in engineering practice.<lb/> This thesis advocates the use of CORDIC (Coordinate Rotation Digital Computer)<lb/> arithmetic for parallel computation of the SVD/eigenvalue decomposition of arbitrary<lb/> complex/Hermitian matrices using Jacobi-like algorithms on processor arrays.<lb/> The algorithms and architectures derive from extending the theory of Jacobi-like<lb/> matrix factorizations to multi-step and inexact pivot (2 2) sub-matrix diagonal-</div>
+
+		</front>
+	</text>
+</tei>

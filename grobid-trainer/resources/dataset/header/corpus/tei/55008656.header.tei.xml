@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008656"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>J . Sci. Fd Agric. 1977, 28, 279-281<lb/></reference>
+
+	<docTitle>
+	<titlePart>Spectral Evaluation of Young Red Wines : Anthocyanin Equili-<lb/>bria, Total Phenolics, Free and Molecular SO,, &quot;Chemical Age&quot;<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>T. Chris Somers and Michael E. Evans<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>The Australian Wine Research Institute,</affiliation>
+	</byline>
+
+	<address>Glen Osmond, 5064 South Australia<lb/></address>
+
+	<note type="submission">(Manuscript received 28 April 1976)<lb/></note>
+
+	<div type="abstract">Red wine colour is an integration of contributions from monomeric anthocyanins<lb/> and polymeric pigment forms. Because of gross differences between the two fractions<lb/> in their responses to pH change and to SO2 addition, approximate measures of the<lb/> states of anthocyanin equilibria in young red wines can be routinely made. Recent<lb/> correlations of such measures with independent assessments of relative wine quality<lb/> have prompted further examination and development of the original analytical<lb/> concepts. The equilibria may be described in terms of two percentage parameters a<lb/> and a&apos;, the values of which are related to wine pH and to SO2 added after fermentation.<lb/> Measures of free SO2 and also molecular SOz, anthocyanin content and total phenolics<lb/> are obtained from the same set of spectral data. The interpretations are based upon a<lb/> number of analytical premises for which certain approximations have been necessary.<lb/> These appear to be well justified in comparative evaluations because of the wide range<lb/> of parameter values observed in surveys of current vintage wines. Observations of<lb/> ageing changes in the composition of wine colour, with proposed spectral indices of<lb/> &quot;chemical age&quot;, are also presented.<lb/></div>
+
+		</front>
+	</text>
+</tei>

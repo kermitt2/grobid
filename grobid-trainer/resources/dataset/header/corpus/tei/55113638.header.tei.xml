@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55113638"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">482<lb/> </note>
+
+	<reference>@BULLET 2013 IEEE International Solid-State Circuits Conference<lb/> </reference>
+
+	<note type="other">ISSCC 2013 / SESSION 27 / IMAGE SENSORS / 27.3<lb/> 27.3<lb/></note>
+	
+	<docTitle>
+	<titlePart>A Rolling-Shutter Distortion-Free 3D Stacked Image<lb/> Sensor with -160dB Parasitic Light Sensitivity<lb/> In-Pixel Storage Node<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Jun Aoki, Yoshiaki Takemoto, Kenji Kobayashi, Naofumi Sakaguchi,<lb/> Mitsuhiro Tsukimura, Naohiro Takazawa, Hideki Kato, Toru Kondo,<lb/> Haruhisa Saito, Yuichi Gomi, Yoshitaka Tadaki<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Olympus,</affiliation>
+	</byline>
+
+	<address>Hachioji, Japan<lb/></address>
+
+	<div type="abstract">Conventional CMOS image sensors widely used in products currently on the<lb/> market are mainly equipped with a rolling exposure function. This rolling expo-<lb/>sure causes so-called &quot;Jell-o effect&quot; distortion when capturing a moving target.<lb/> CMOS image sensors with a global-shutter function are one of the solutions to<lb/> avoid this distortion. An in-pixel storage node is required to create a global-shut-<lb/>ter CMOS image sensor. A floating diffusion and an additional capacitor can be<lb/> used as an in-pixel storage node [1,2]. The light sensitivity of the in-pixel stor-<lb/>age node is specified by the parasitic light sensitivity (PLS), which is the ratio of<lb/> the light sensitivity of an in-pixel storage node and the light sensitivity of a pho-<lb/>todiode. The PLS should be small enough so that the in-pixel storage is not light-<lb/>sensitive. Artifacts are captured in an image from bright moving objects during<lb/> read-out if the PLS is not small enough. The PLS of reported global-shutter<lb/> CMOS image sensors is around -100dB. That would be small enough to use<lb/> those image sensors in fields where the light source can be controlled. However,<lb/> for DSC usage, users can easily encounter scenes with bright objects (e.g. sun-<lb/>light or car headlights). Even if the in-pixel storage node is light-shielded, it is<lb/> difficult to perfectly protect the in-pixel storage node from photo-generated car-<lb/>riers, as long as the in-pixel storage node and a photodiode are on the same sil-<lb/>icon substrate. Meanwhile, 3D stacking technologies have been introduced for<lb/> image sensors to give them more functionality and improved performance [3,4].<lb/> The reported minimum interconnection pitches for image sensors are over<lb/> 20μm. These technologies do not fit the smaller pixel pitches of the image sen-<lb/>sors in recent DSCs. In this paper, we report a rolling-shutter distortion-free 3D<lb/> stacked image sensor with an in-pixel storage node of -160dB parasitic light sen-<lb/>sitivity. The image sensor virtually achieves a global-shutter function using a 4-<lb/>times frame-shutter operation. The image sensor has 2 semiconductor sub-<lb/>strates, where 1 substrate has a backside-illuminated photodiode array and the<lb/> other a storage-node array. The image sensor achieves a PLS level of -160dB.<lb/> The image sensor has 8.6μm pitched interconnections, and an interconnection<lb/> yield of over 99.9% is achieved.<lb/></div>
+
+		</front>
+	</text>
+</tei>

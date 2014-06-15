@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Steven</forename>
+								<middlename>R</middlename>.
+								<surname>Smith</surname>,
+								<roleName>M.D</roleName>.,
+							</persName>
+							<persName>
+								<forename>Neil</forename>
+								<middlename>J</middlename>.
+								<surname>Weissman</surname>,
+								<roleName>M.D</roleName>.,
+							</persName>
+							<persName>
+								<forename>Christen</forename>
+								<middlename>M</middlename>.
+								<surname>Anderson</surname>,
+								<roleName>M.D</roleName>.,
+							<lb/>
+								<roleName>Ph.D</roleName>.,
+							</persName>
+							<persName>
+								<forename>Matilde</forename>
+								<surname>Sanchez</surname> ,
+								<roleName>Ph .D</roleName>.,
+							</persName>
+							<persName>
+								<forename>Emil</forename>
+								<surname>Chuang</surname> ,
+								<roleName>M .D</roleName>.,
+							</persName>
+							<persName>
+								<forename>Scott</forename>
+								<surname>Stubbe</surname> ,
+								<roleName>M .B.A</roleName>.,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Harold</forename>
+								<surname>Bays</surname>,
+								<roleName>M. D</roleName>.,
+							</persName>
+							<persName>
+								<forename>William</forename>
+								<middlename>R</middlename> .
+								<surname>Shanahan</surname>,
+								<roleName>M. D</roleName>.,
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

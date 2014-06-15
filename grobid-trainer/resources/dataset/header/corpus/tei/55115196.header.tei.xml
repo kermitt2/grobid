@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei type="book-chapter">
+	<teiHeader>
+		<fileDesc xml:id="55115196"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>4 Applications of Probiotic Encapsulation<lb/> in Dairy Products<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Ming-Ju Chen and Kun-Nan Chen<lb/></docAuthor>
+	</byline>
+
+		</front>
+	</text>
+</tei>

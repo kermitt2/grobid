@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei type="conference-paper">
+	<teiHeader>
+		<fileDesc xml:id="55114881"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Proceedings of the International Multiconference on<lb/> Computer Science and Information Technology pp. 13–25<lb/></reference>
+
+	<idno>ISSN 1896-7094<lb/></idno>
+
+	<note type="copyright">&#169; 2007 PIPS<lb/></note>
+
+	<docTitle>
+	<titlePart>A Common Base for Building Secure Mobile Agent<lb/> Middleware Systems<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Guido J. van &apos;t Noordende<lb/> ⋆ , Benno J. Overeinder<lb/> ⋆⋆ , Reinier J. Timmer,<lb/> Frances M. T. Brazier, and Andrew S. Tanenbaum<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Computer Science, Vrije Universiteit Amsterdam,<lb/></affiliation>
+	</byline>
+
+	<address>Amsterdam, The Netherlands<lb/></address>
+
+	<email>{guido,bjo,rjtimmer,frances,ast}@cs.vu.nl<lb/></email>
+
+	<div type="abstract">Abstract. The Agent Operating System (AOS) provides the basic functional-<lb/>ity needed for secure and reliable mobile agent platforms: support for secure<lb/> communication, secure agent storage and migration, and minimal primitives for<lb/> agent life-cycle management. Designed as a layer between local operating sys-<lb/>tems and higher level agent platform middleware, it supports interoperability be-<lb/>tween agent platforms and between different implementations of AOS itself. AOS<lb/> has been tested on interoperability, both with regard to different higher-layer mid-<lb/>dleware platforms and interoperability between two implementations of AOS in<lb/> C++ and Java.<lb/></div>
+
+		</front>
+	</text>
+</tei>

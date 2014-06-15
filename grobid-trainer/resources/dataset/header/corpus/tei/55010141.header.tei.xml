@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010141"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>T h e ne w e ngl a nd jou r na l o f m e dic i ne<lb/> n engl j med 363;3 nejm.org </reference>
+
+	<date>july 15, 2010<lb/></date>
+
+	<note type="page">245<lb/></note>
+
+	<note type="other">original article<lb/></note>
+
+	<docTitle>
+	<titlePart>Multicenter, Placebo-Controlled Trial<lb/> of Lorcaserin for Weight Management<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Steven R. Smith, M.D., Neil J. Weissman, M.D., Christen M. Anderson, M.D.,<lb/> Ph.D., Matilde Sanchez, Ph.D., Emil Chuang, M.D., Scott Stubbe, M.B.A.,<lb/> Harold Bays, M.D., William R. Shanahan, M.D.,</docAuthor>
+	</byline>
+	
+	<byline>
+	<affiliation>and the Behavioral Modification<lb/> and Lorcaserin for Overweight and Obesity Management (BLOOM) Study Group<lb/> From the Translational Research Institute<lb/> for Metabolism and Diabetes, Florida Hos-<lb/>pital and the Sanford–Burnham Institute,<lb/> </affiliation>
+	</byline>
+	
+	<address>Winter Park, FL (S.R.S.);</address>
+
+	<byline>
+	<affiliation>MedStar Health<lb/> Research Institute at Washington Hospital<lb/> Center and Georgetown University,</affiliation>
+	</byline>
+
+	<address>Wash-<lb/>ington, DC (N.J.W.); </address>
+
+	<byline>
+	<affiliation>Arena Pharmaceuti-<lb/>cals, </affiliation>
+	</byline>
+	
+	<address>San Diego, CA (C.M.A., M.S., E.C.,<lb/> S.S., W.R.S.);</address>
+
+	<byline>
+	<affiliation>and the Louisville Metabol-<lb/>ic and Atherosclerosis Research Center,<lb/></affiliation>
+	</byline>
+
+	<address>Louisville, KY</address>
+
+	<note type="other">(H.B.). Address reprint re-<lb/>quests to Dr. Smith at the Translational<lb/> Research Institute for Metabolism and<lb/> Diabetes, Florida Hospital and the San-<lb/>ford–Burnham Institute, 2566 Lee Rd.,<lb/> Winter Park, FL 32789, or at steven.r.smith<lb/> .MD@flhosp.org.<lb/> N Engl J Med 2010;363:245-56.<lb/></note>
+
+	<note type="copyright">Copyright © 2010 Massachusetts Medical Society.<lb/></note>
+
+	<note type="other">A bs tr ac t<lb/></note>
+	
+		</front>
+	</text>
+</tei>

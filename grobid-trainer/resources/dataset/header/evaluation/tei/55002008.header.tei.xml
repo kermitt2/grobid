@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55002008"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<date>February 15, 2007<lb/></date>
+
+	<note type="page">1<lb/></note>
+
+	<docTitle>
+	<titlePart>Applying &quot;Systems Intelligence&quot; to Transport<lb/> </titlePart>
+	</docTitle>
+	
+	<note type="other">A Presentation to the Annual Land Transport Summit, </note>
+	
+	<date>2007, </date>
+	
+	<byline>
+	<docAuthor>by Owen<lb/> McShane, Director</docAuthor>
+	</byline>
+	
+	<byline>
+	<affiliation> of the Centre for Resource Management Studies.<lb/></affiliation>
+	</byline>
+
+		</front>
+	</text>
+</tei>

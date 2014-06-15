@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014275"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Predicate transformer semantics<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">From Wikipedia, the free encyclopedia<lb/>This is an old revision of this page, as edited by WhatamIdoing (talk | contribs) at 21:18, 29 June 2010. It may differ significantly from the current<lb/> revision (//en.wikipedia.org/wiki/Predicate_transformer_semantics) .<lb/> (diff) ← Previous revision | Latest revision (diff) | Newer revision → (diff)<lb/>
+	</note>
+
+	<div type="abstract">Predicate transformer semantics was introduced by Dijkstra in his seminal paper &quot;Guarded commands, nondeterminacy and formal derivation of programs&quot;.<lb/> They define the semantics of an imperative programming language by assigning to each statement in this language a corresponding predicate transformer: a total<lb/> function between two predicates on the state space of the statement. In this sense, predicate transformer semantics are a kind of denotational semantics. Actually,<lb/> in Guarded commands, Dijkstra uses only one kind of predicate transformers: the well-known weakest preconditions (see below).<lb/> Moreover, predicate transformer semantics are a reformulation of Floyd–Hoare logic. Whereas Hoare logic is presented as a deductive system, predicate<lb/> transformer semantics (either by weakest-preconditions or by strongest-postconditions see below) are complete strategies to build valid deductions of Hoare<lb/> logic. In other words, they provide an effective algorithm to reduce the problem of verifying a Hoare triple to the problem of proving a first-order formula.<lb/> Technically, predicate transformer semantics perform a kind of symbolic execution of statements into predicates: execution runs backward in the case of weakest-<lb/>preconditions, or runs forward in the case of strongest-postconditions.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,50 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012728"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Mechanisms of Exchange Bias with Multiferroic BiFeO 3 Epitaxial Thin Films<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>H. Béa,<lb/> 1 M. Bibes,<lb/> 1 F. Ott,<lb/> 2 B. Dupé,<lb/> 1 X.-H. Zhu,<lb/> 1 S. Petit,<lb/> 2 S. Fusil,<lb/> 1 C. Deranlot,<lb/> 1<lb/> K. Bouzehouane,<lb/> 1 and A. Barthélémy<lb/> 1, *<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Unité Mixte de Physique CNRS/Thales,</affiliation>
+	</byline>
+
+	<address>Route départementale 128, 91767 Palaiseau,</address>
+
+	<byline>
+	<affiliation>and Université Paris-Sud,</affiliation>
+	</byline>
+
+	<address>91405 Orsay, France<lb/></address>
+
+	<byline>
+	<affiliation>2 Laboratoire Léon Brillouin CEA/CNRS UMR12,</affiliation>
+	</byline>
+
+	<address>91191 Gif sur Yvette, France<lb/></address>
+
+	<note type="submission">(Received 6 September 2007; </note>
+
+	<date type="publication">published 9 January 2008)<lb/></date>
+
+	<div type="abstract">We have combined neutron scattering and piezoresponse force microscopy to show that the exchange<lb/> field in CoFeB=BiFeO 3 heterostructures scales with the inverse of the ferroelectric and antiferromagnetic<lb/> domain size of the BiFeO 3 films, as expected from Malozemoff&apos;s model of exchange bias extended to<lb/> multiferroics. Accordingly, polarized neutron reflectometry reveals the presence of uncompensated spins<lb/> in the BiFeO 3 film at the interface with CoFeB. In view of these results, we discuss possible strategies to<lb/> switch the magnetization of a ferromagnet by an electric field using BiFeO 3 .<lb/>
+	</div>
+
+	<idno type="DOI">DOI: 10.1103/PhysRevLett.100.017204<lb/></idno>
+
+	<keyword>PACS numbers: 75.50.Ee, 75.70.Cn, 75.70.Kw, 77.80.ÿe<lb/></keyword>
+
+	<div type="introduction">The renaissance of multiferroics [1,2], i.e., materials in<lb/> which at least two ferroic or antiferroic orders coexist, is<lb/> motivated by fundamental aspects as well as their possible<lb/> application in spintronics [3]. Such compounds are rare<lb/> and the very few that possess simultaneously a finite mag-<lb/>netization and polarization usually order below about<lb/> 100 K [4 –6]. Ferroelectric antiferromagnets (FEAF) are<lb/> less scarce, and some exhibit a coupling between their two<lb/> order parameters. This magnetoelectric (ME) coupling<lb/> allows the reversal of the ferroelectric (FE) polarization<lb/> by a magnetic field [7] or the control of the magnetic order<lb/> parameter by an electric field [8].<lb/> The practical interest of conventional antiferromagnets<lb/> (AF) is mainly for exchange bias in spin-valve structures.<lb/> The phenomenon of exchange bias (EB) [9] manifests<lb/> itself by a shift in the hysteresis loop of a ferromagnet<lb/> (FM) in contact with an AF and arises from the exchange<lb/> coupling at the FM/AF interface [10,11]. Combining this<lb/> effect with the ME coupling in a FEAF/FM bilayer can<lb/> allow the reversal of the FM magnetization via the appli-<lb/>cation of an electric field through the FEAF, as reported<lb/> recently at 2 K in YMnO 3 =NiFe structures [12].<lb/> To exploit these functionalities in devices one needs to<lb/> resort to FEAF materials with high transition temperatures.<lb/> BiFeO 3 (BFO) is a FE perovskite with a Curie temperature<lb/> of 1043 K [13] that orders antiferromagnetically below<lb/> 643 K [14]. BFO thin films have a very low magnetization<lb/> (0:01 B =Fe) compatible with an AF order [15,16], and<lb/> remarkable FE properties with polarization values up to<lb/> 100 C cm<lb/> ÿ2 [17]. Recently, we reported that BFO<lb/> films can be used to induce an EB on adjacent CoFeB<lb/> layers at 300 K [18]. This observation together with the<lb/> demonstration of a coupling between the AF and FE do-<lb/>mains [8] paves the way towards the room-temperature<lb/> electrical control of magnetization with BFO. However,<lb/> several questions remain before this can be achieved. Key<lb/> issues concern the precise magnetic structure of BFO<lb/> thin films and the mechanisms of EB in BFO-based hetero-<lb/>structures.<lb/> In this Letter, we report on the determination of the<lb/> magnetic structure of BFO films by means of neutron<lb/> diffraction (ND) and the analysis of the EB effect in<lb/> CoFeB=BFO heterostructures in terms of Malozemoff&apos;s<lb/> model [19]. Accordingly, we find a clear dependence of<lb/> the amplitude of the exchange field H E with the size of the<lb/> multiferroic domains, which provides a handle to control<lb/> the magnetization of the CoFeB film by an electric field.<lb/> The observation of EB and enhanced coercivity correlates<lb/> with the presence of uncompensated spins at the interface<lb/> between the FM and the AF, as detected by polarized<lb/> neutron reflectometry (PNR).<lb/> BiFeO 3 films were epitaxially grown by pulsed laser<lb/> deposition [15], directly onto (001)-or (111)-oriented</div>
+
+		</front>
+	</text>
+</tei>

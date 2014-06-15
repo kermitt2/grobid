@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001290"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Previous Message<lb/> Next Message<lb/></note>
+	
+	<docTitle>
+	<titlePart>Re: [css-d] Styling Unknown Elements<lb/></titlePart>
+	</docTitle>
+	
+	<docAuthor> Sent by Matthias Gutfeldt</docAuthor>
+	
+	<date> on 23 October 2002 08:08<lb/></date>	
+	
+	<div type="introduction"> ---Dramatic Design [EMAIL-REMOVED]&gt; wrote:<lb/> &gt; Here&apos;s a curly question...<lb/> &gt; &gt; Should a browser apply styles defined for an element<lb/> &gt; that it knows nothing about?<lb/> &gt; &gt; My personal feeling is that rendering ought to be<lb/> &gt; context sensitive: If the page is XML, then any element should<lb/> &gt; be stylable, but for HTML, particularly strict HTML, it should<lb/> &gt; be ignored just as it MUST be ignored in the HTML rendering<lb/> &gt; context. Otherwise we encourage a strange breed of tag soup.<lb/> &gt; &gt; Standards-wise, this doesn&apos;t seem to be covered that well,<lb/> &gt; probably because it deals with the interaction between two<lb/> &gt; related recommendations.<lb/> I think there are three different cases: HTML, XML, and XHTML.<lb/> Error conditions aren&apos;t defined for HTML. However, there are<lb/> recommendations:<lb/>
+
+	&lt;http://www.w3.org/TR/html4/
+
+	appendix/notes.html#notes-invalid-docs&gt;<lb/> &quot;B.1 Notes on invalid documents<lb/> This specification does not define how conforming user agents handle<lb/> general error conditions, including how user agents behave when they<lb/> encounter elements, attributes, attribute values, or entities not<lb/> specified in this document.<lb/> However, to facilitate experimentation and interoperability between<lb/> implementations of various versions of HTML, we recommend the<lb/> following behavior:<lb/> * If a user agent encounters an element it does not recognize, it<lb/> should try to render the element&apos;s content.<lb/> * If a user agent encounters an attribute it does not recognize, it<lb/> should ignore the entire attribute specification (i.e., the attribute<lb/> and its value).<lb/> * If a user agent encounters an attribute value it doesn&apos;t recognize,<lb/> it should use the default attribute value.<lb/> * If it encounters an undeclared entity, the entity should be treated<lb/> as character data.<lb/> We also recommend that user agents provide support for notifying the<lb/> user of such errors.</div>
+
+		</front>
+	</text>
+</tei>

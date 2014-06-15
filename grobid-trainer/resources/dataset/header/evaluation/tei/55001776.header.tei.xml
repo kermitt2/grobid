@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001776"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="copyright">2008 Open Mobile Alliance Ltd. All Rights Reserved.
+	<lb/> Used with the permission of the Open Mobile Alliance Ltd. under the terms as stated in this document.</note>
+	
+	<note type="other"><lb/> [OMA-Template-Spec-20070101-I]<lb/></note>
+	
+	<docTitle>
+	<titlePart>OMA Device Management Tree and Description<lb/></titlePart>
+	</docTitle>
+
+	<date>Approved Version 1.2.1– 17 Jun 2008<lb/></date>
+
+	<idno>Open Mobile Alliance<lb/> OMA-TS-DM_TND-V1_2_1-20080617-A</idno>
+
+		</front>
+	</text>
+</tei>

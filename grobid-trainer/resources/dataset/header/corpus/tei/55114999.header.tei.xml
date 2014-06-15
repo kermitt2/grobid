@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<tei type="master-thesis">
+	<teiHeader>
+		<fileDesc xml:id="55114999"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<affiliation>UNIVERSIDADE ECNICA DE LISBOA<lb/> INSTITUTO SUPERIOR<lb/> ECNICO<lb/> </affiliation>
+	</byline>
+	
+	<docTitle>
+	<titlePart>Target Tracking with Pan-Tilt-Zoom Cameras<lb/>
+	</titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Diogo Filipe Cabral de Sousa Leite<lb/></docAuthor>
+	</byline>
+
+	<degree>Disserta ao para a obten<lb/> ao do Grau de Mestre em<lb/> Engenharia Electrotécnica e de Computadores uri:<lb/> Presidente:<lb/></degree>
+
+	<byline>
+	<note type="other">Doutor Carlos Filipe Gomes Bispo<lb/> Orientador:<lb/> Doutor José António da Cruz Pinto Gaspar<lb/> Co-orientador: Doutor Alexandre José Malheiro Bernardino<lb/> Vogal:<lb/> Doutor Pedro Manuel Quintas Aguiar<lb/></note>
+	</byline>
+
+	<date>Novembro de 2011</date>
+
+		</front>
+	</text>
+</tei>

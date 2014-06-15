@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013221"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>FloatingPad: A Touchpad Based 3D Input Device<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Seongkook Heo, Dongwook Lee and Minsoo Hahn<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Digital Media Lab, Information and Communications University<lb/></affiliation>
+	</byline>
+
+	<address>517-10 Dogok-dong, Gangnam-gu, Seoul, 135-854, South Korea<lb/></address>
+
+	<email>{leodic,aalee,mshahn}@icu.ac.kr<lb/></email>
+
+	<div type="abstract">Abstract<lb/> In this paper, we present FloatingPad, a touchpad-based<lb/> input interface for mobile devices for the navigation and<lb/> the object manipulation in the 3D environment. Many in-<lb/>put interfaces for the 3D environment have been proposed,<lb/> however, most of them were too big to put in mobile de-<lb/>vices. We have focused on a touchpad, a popular input<lb/> interface for laptops, and tried to augment inputs for 3D<lb/> interaction while keeping its form factor. FloatingPad looks<lb/> quite similar to a typical touchpad on a laptop computer, but<lb/> it has higher degree of freedom. Not only can users perform<lb/> only traditional touchpad actions, but they can also slide,<lb/> rotate, and tilt the touchpad by exerting force on it. We<lb/> assigned new actions to yaw, pitch, and roll. Since Float-<lb/>ingPad&apos;s translations of yaw, pitch, roll are greatly intuitive,<lb/> even novice users can naturally navigate the 3D worlds with<lb/> FloatingPad. Hereby we show our FloatingPad concept, its<lb/> hardware design, the software developed for the evaluation,<lb/> results of the evaluation, and our findings from the study.<lb/></div>
+
+		</front>
+	</text>
+</tei>

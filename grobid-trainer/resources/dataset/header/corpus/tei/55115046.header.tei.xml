@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55115046"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Dynamic orchestration of distributed services<lb/> on interactive community displays: the ALIVE<lb/> approach<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Gómez-Sebastià, I.*, Manel Palau**, Juan Carlos Nieves*, Javier Vázquez-<lb/>Salceda* and Luigi Ceccaroni**<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>* Universitat Politècnica de Catalunya, C/Jordi</affiliation>
+	</byline>
+
+	<address>Girona 1-3, E08034, Barcelona, Spain,</address>
+
+	<email>e-<lb/>mail: {igomez, jcnieves, jvazquez}@lsi.upc.edu<lb/></email>
+
+	<byline>
+	<affiliation>** Tech Media Telecom Factory,</affiliation>
+	</byline>
+
+	<address>C/Marina 16-18, Torre Mapfre 28 A E08005 Barcelona,<lb/> Spain,</address>
+
+	<email>e-mail: {manel.palau, luigi}@tmtfactory.com<lb/></email>
+
+	<div type="abstract">Abstract Interconnected service providers constitute a highly dynamic, complex,<lb/> distributed environment. Multi-agent system design-methodologies have been try-<lb/>ing to address this kind of environments for a long time. The European project<lb/> ALIVE presents a framework of three interconnected levels that tackles this issue<lb/> relying on organisation and coordination techniques, as well as on developments<lb/> in the Web-services world. This paper presents initial results focused on a high-<lb/>tech, real use case: interactive community displays with touristic information and<lb/> services, dynamically personalized according to user preferences and local laws.<lb/></div>
+
+		</front>
+	</text>
+</tei>

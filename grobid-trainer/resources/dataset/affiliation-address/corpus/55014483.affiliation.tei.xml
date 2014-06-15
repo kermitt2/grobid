@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="department">Zurich Basel Plant Science Center</orgName>,
+							<orgName type="institution">University of Zurich</orgName>,
+							<orgName type="department">Plant Biology</orgName>,
+							<address>
+								<addrLine>Zollikerstrasse 107</addrLine>,
+								<postCode>CH-8008</postCode>
+								<settlement>Zurich</settlement>,
+								<country>Switzerland</country>,
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="department">Plant Physiology, Biosciences</orgName>,
+							<orgName type="institution">University of Rostock</orgName>,
+							<address>
+								<addrLine>Albert-Einstein-Str. 3</addrLine>,
+								<postCode>D-18051</postCode>
+								<settlement>Rostock</settlement>,
+								<settlement>Germany</settlement>,
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>3</marker>
+							<orgName type="department">Chemical Physiology of Plants</orgName>,
+							<orgName type="department">Institute of Ecology</orgName>,
+							<orgName type="institution">University of Vienna</orgName>,
+							<address>
+								<addrLine>Althanstrasse 14</addrLine>,
+								<postCode>A-1090</postCode>
+								<settlement>Vienna</settlement>,
+								<country>Austria</country>, and
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>4</marker>
+							<orgName type="department">ZMBP-Plant Physiology</orgName>,
+							<orgName type="institution">Eberhard-Karls-University Tu È bingen</orgName>,
+							<address>
+								<addrLine>Auf der Morgenstelle 5</addrLine>,
+								<postCode>D-72076</postCode>
+								<settlement>Tu È bingen</settlement>,
+								<country>Germany</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014494"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>ABS-/ESP-Sensor Cables<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<affiliation>LEONI</affiliation>
+	</byline>
+		
+	<note>– Your way to be connected</note>
+
+		</front>
+	</text>
+</tei>

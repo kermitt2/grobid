@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013265"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">2009 AACR Annual Meeting<lb/> </note>
+
+	<date>April 18-22, 2009<lb/> </date>
+
+	<address>Denver, CO<lb/></address>
+
+	<note type="other">Print this Page for Your Records Close Window<lb/> Abstract Number:<lb/> 4525<lb/></note>
+
+	<docTitle>
+	<titlePart>Session Title:<lb/> Agents Causing DNA Damage or Proteasome Inhibition<lb/> Presentation Title:<lb/> PM01183 is a novel compound that binds DNA and displays cytotoxic effect in vitro and in<lb/> vivo in human cancer cell lines<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Presentation Start/End Time:<lb/> Tuesday, Apr 21, 2009, 1:00 PM -5:00 PM<lb/> Location:<lb/> Hall B-F, Poster Section 31<lb/>Poster Section:<lb/> 31, 31<lb/>Poster Board<lb/> Number:<lb/> 11<lb/> Author Block:<lb/></note>
+
+	<byline>
+	<docAuthor>Victoria Moneo, Juan F. Martínez-Leal, María José Guillén, Patricia Martinez, Guillermo<lb/> Tarazona, Pablo M. Aviles, Carmen Cuevas, Luis F. Garcia-Fernandez, Carlos M.<lb/> Galmarini. </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Cell Biology and Pharmacology Departments, PharmaMar, S.A.U., </affiliation>
+	</byline>
+
+	<address>Madrid, Spain<lb/></address>
+
+	<div type="abstract">PM01183 is a novel alkaloid that covalently binds to the minor groove of the DNA. In the present work, we show that<lb/> PM01183 displays a potent cytotoxic activity on a panel of 23 human tumor cell lines, with a mean GI 50 value of 10<lb/> nM. To determine whether p53 tumor suppressor gene has any effect on PM01183 cytotoxicity we clustered the<lb/> panel cell lines into two groups depending on their p53 status: wild-type p53 (n=8) and mutant or null p53 (n=14),<lb/> according to the information contained in the Sanger Database. Mean GI 50 for wild-type p53 cell lines was 19 nM;<lb/> mean GI 50 for mutant or null p53 cell lines was 4.7 nM. The difference in GI 50 between both groups was statistically<lb/> significant (p=0.026; one-tailed Student&apos;s t unpaired test). We also show that PM01183 binds in vitro to naked DNA<lb/> through band-shift experiments. Furthermore, PM01183-DNA adducts eventually give rise in vivo to double strand<lb/> breaks, which we followed through the accumulation of g-H2AX foci as a surrogate indicator. With a sensitive ELISA<lb/> assay we verified that PM01183-induced DNA damage triggered caspase-dependent apoptotic cell death, most<lb/> probably due to the early DNA damage response caused by the drug. In vivo tumor profiling of compound PM01183<lb/> was accomplished by using a panel of six human tumor types, i.e., breast (MDA-MB-231 and MX-1), kidney<lb/> (MRI-H-121), ovary (A2780), pancreas (Capan-1) and prostate (PC-3). Briefly, athymic nude mice were<lb/> subcutaneously implanted with either tumor fragment or matrigel-cell suspensions on Day 0. When tumors reached<lb/> ca. 175 ± 100 mg, mice were randomly allocated into treatment and control groups (n=10-15 animals/group).<lb/> Treatments were initiated (Day 0) and intravenously administered on an individual body weight basis. PM01183 was<lb/> weekly administered for 3 consecutive weeks at 0.18 mg/kg/dose. Mean, standard deviation and standard error of<lb/> the mean were determined for tumor volume assessments. PM01183 demonstrated statistically significant antitumor<lb/> (P&lt;0.05) activity against breast (MDA-MB-231: T/C % = 40 on Day 21; MX-1: T/C % = 0 on Day 34) , kidney<lb/> (MRI-H-121: T/C % = 40 on Day 35) and ovary (A2780: T/C % = 34 on Day 17). In pancreas and prostate tumors,<lb/> only a trend to significance was observed after PM01183 administration. Taken together, the results presented in this<lb/> work support the future development of PM01183 as an anticancer agent in the clinic.
+	</div>
+
+		</front>
+	</text>
+</tei>

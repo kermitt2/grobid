@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008749"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">&lt;&lt; Return to HP Mailer Uses Personalized Web Pages for Response<lb/> </note>
+	
+	<docTitle>
+	<titlePart>HP Mailer Uses Personalized Web Pages for Response<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Scott Hovanyetz, Senior Reporter<lb/></docAuthor>
+	</byline>
+
+	<date>January 31 2003<lb/></date>
+
+		</front>
+	</text>
+</tei>

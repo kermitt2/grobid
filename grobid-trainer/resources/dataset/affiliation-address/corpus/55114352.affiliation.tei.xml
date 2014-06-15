@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="department">Medical Clinic III</orgName>,
+							<orgName type="department">Medical Faculty</orgName>
+							<orgName type="institution">Mannheim of the University Heidelberg</orgName>,
+							<address>
+								<settlement>Mannheim</settlement>,
+								<country>Germany</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="department">Helmholtz Center Munich</orgName>,
+							<orgName type="institution">German Research Center for Environmental Health</orgName>,
+							<lb/>
+							<orgName type="department">Institute of Molecular Virology</orgName>,
+							<address>
+								<settlement>Neuherberg</settlement>,
+								<country>Germany</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

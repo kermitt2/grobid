@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001546"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">COMMUNICATIONS</note>
+	
+	<note type="page"><lb/> 1510<lb/> </note>
+	
+	<note type="copyright">WILEY-VCH Verlag GmbH, D-69451 Weinheim, 2001<lb/> </note>
+	
+	<idno>1433-7851/01/4008-1510 $ 17.50+.50/0<lb/> </idno>
+	
+	<reference>Angew. Chem. Int. Ed. 2001, 40, No. 8<lb/></reference>
+
+	<docTitle>
+	<titlePart>Controlled Synthesis of Cross-Linked Ultrathin<lb/> Polymer Films by Using Surface-Initiated Atom<lb/> Transfer Radical Polymerization**<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Wenxi Huang, Gregory L. Baker,* and<lb/> Merlin L. Bruening*<lb/></docAuthor>
+	</byline>
+
+	<div type="introduction">Covalent attachment of polymer chains to solid substrates<lb/> by surface-initiated polymerization is an effective method for<lb/> tailoring surface properties such as wetting, adhesion, and<lb/> biocompatibility. Following Rühe and Pruckers successful<lb/> work on free radical polymerization from surfaces,<lb/> [1a]<lb/> several research groups recently reported the use of controlled/living<lb/> polymerization techniques<lb/> [1b±h]<lb/> to grow polymer chains from a<lb/> surface in a well-defined manner. Several research groups also<lb/> used surface-initiated polymerizations to generate patterned<lb/> polymers on surfaces for lithographic applications.<lb/> [1c,e, 2, 3]<lb/> The grafted polymer layers have higher resistance to wet chemical<lb/> etchants than the patterned monolayers from which they are<lb/> grown.<lb/> Cross-linked polymer films, compared to linear polymer<lb/> brush analogues, should yield even better mechanical and<lb/> chemical stability and provide new pathways to functionalized<lb/> surfaces for molecular recognition. However, the preparation<lb/> of cross-linked thin films is an experimental challenge. Direct<lb/> polymerization of cross-linkable monomers in solution usu-<lb/>ally results in an insoluble three-dimensional polymeric gel<lb/> that cannot be deposited as a uniform thin coating. Cross-<lb/>linked films can be prepared by deposition of a cross-linkable<lb/> polymer precursor followed by a cross-linking reaction;<lb/> however, the method is not straightforward and it usually is<lb/> difficult to control film thickness and the curing reaction.<lb/> Herein we report direct polymerization of ethylene glycol<lb/> dimethacrylate (EGDMA) from a surface to form cross-<lb/>linked polymer films (Figure 1).<lb/> Figure 1. Schematic illustration of a cross-linked film growing from a gold<lb/> substrate.<lb/> intended to produce Rb 3 Li 10 Ge 23 , the Li/Ge analogue of the known<lb/> A 3 Na 10 Sn 23 (A  K, Rb, Cs).<lb/> [8] After the structure and the exact<lb/> stoichiometry of the compound were determined from single-crystal<lb/> X-ray diffraction data, RbLi 7 Ge 8 was synthesized from the corre-<lb/>sponding stoichiometric mixture of elements by heating at 1000 8C for<lb/> 4 h and then cooling down to room temperature at a rate of 20 8C h<lb/> À1</div>
+
+		</front>
+	</text>
+</tei>

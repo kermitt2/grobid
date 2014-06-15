@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009909"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Int&apos;l Journal on Semantic Web &amp; Information Systems, 2(3), 37-54, July-September 2006</reference>
+
+	<note type="page">37<lb/></note>
+
+	<docTitle>
+	<titlePart>S-IRAS:<lb/> An Interactive Semantic Image Retrieval<lb/> and Annotation System<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Changbo Yang,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Wayne State University,</affiliation>
+	</byline>
+
+	<address>USA<lb/></address>
+
+	<byline>
+	<docAuthor>Ming Dong,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Wayne State Universi&amp;</affiliation>
+	</byline>
+
+	<address>USA<lb/></address>
+
+	<byline>
+	<docAuthor>Farshad Fotouhi, ,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Wqne State University,</affiliation>
+	</byline>
+
+	<address>USA<lb/></address>
+
+	<div type="abstract">ABSTRACT<lb/> Relevance feedback andsemantic retrieval have received extensive attention recently in the coin-<lb/>puter vision comnzunity. In this article, we present a semantic image query system with integrated<lb/> feedback mechanism. Our system has two major components: the low-levelfeature space and<lb/> the semantic space. In the low-level feature space, images are described by multidimensional<lb/> vectors and are clustered based on the similarity of their contents. In the semantic space, the<lb/> relationship among keywords is captured by a semantic hierarchy built by the aid of WordNet.<lb/> Based on our system architecture, we propose a novel feedback solution for semaniic retrieval<lb/> calledsemantic feedback, which allo~vs our system to interact with users directly at the semantic<lb/> level. The short-term and long-term learning process of the semantic feedback substantially<lb/> improves the image retrieval and annotation performance of our system. We demonstrate the<lb/> effectiveness of our approach with experiments using 5,000 images from Core1 database. The<lb/> signijicant contribution of this article is in the scenario of having a relatively small training<lb/> data set compared to the testing data set. Some of the previous work in the same direction has<lb/> chosen a very large training set and a veiy small testing set. Clearly, the problem that we try to<lb/> solve is more realistic and challenging.<lb/></div>
+
+	<keyword>Keywords: image analysis; image retrieval; multimedia database; natural languages<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

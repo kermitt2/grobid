@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55115039"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">4276 </note>
+
+	<reference>Chem. Commun., 2011, 47, 4276–4278<lb/></reference>
+
+	<note type="other">This journal is</note>
+
+	<note type="copyright">&#169; The Royal Society of Chemistry 2011<lb/></note>
+
+	<reference>Cite this: Chem. Commun., 2011, 47, 4276–4278<lb/></reference>
+
+	<docTitle>
+	<titlePart>Donor–acceptor type silole compounds with aggregation-induced deep-red<lb/> emission enhancement: synthesis and application for significant<lb/> intensification of near-infrared photoluminescencew<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Xiaobo Du and Zhi Yuan Wang*<lb/></docAuthor>
+	</byline>
+
+	<note type="submission">Received 5th January 2011, Accepted 15th February 2011<lb/></note>
+
+	<idno type="DOI">DOI: 10.1039/c1cc00066g<lb/></idno>
+
+	<div type="abstract">Through efficient Foster resonance energy transfer, the near-<lb/>infrared emission (850 nm) of a guest (weak near-infrared<lb/> emitter)–host (strong deep-red emitter) system is greatly<lb/> enhanced by excitation of the host molecule at 508 nm, in<lb/> comparison with excitation of the guest molecule at 660 nm.<lb/></div>
+
+		</front>
+	</text>
+</tei>

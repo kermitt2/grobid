@@ -1,0 +1,58 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55115255"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Research Journal of Recent Sciences _________________________________________________ ISSN 2277-2502<lb/> Vol. 2(3), 31-35, March (2013)<lb/> Res.J.Recent Sci.<lb/></reference>
+
+	<note>International Science Congress Association<lb/> </note>
+
+	<note type="page">31<lb/></note>
+
+	<docTitle>
+	<titlePart>Physical characteristics and Chemical compositions of Leaves extracts of<lb/> Sorindeia grandifolia Engl. (Anacardiaceae) harvested at Kato, Benin<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Noudogbessi J.P.<lb/> 1 , Alitonou G.A.<lb/> 1 , Avlessi F.<lb/> 1 , Figueredo G.<lb/> 2 , Chalard P.<lb/> 3<lb/> , Chalchat J.C.<lb/> 4 , Sohounhloué D.C.K.<lb/> 1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Unité de Recherche sur les Extraits Végétaux, Laboratoire d&apos;Etude et de Recherche en Chimie appliquée (LERCA), Ecole Polytechnique<lb/> d&apos;Abomey-Calavi, Université d&apos;</affiliation>
+	</byline>
+
+	<address>Abomey-Calavi, 01 BP 2009 Cotonou, Rép. du BENIN<lb/></address>
+
+	<byline>
+	<affiliation>2 Laboratoire d&apos;Analyse des Extraits Végétaux et des Arômes (LEXVA Analytique),</affiliation>
+	</byline>
+
+	<address>460 Rue du Montant, 63110 Beaumont, FRANCE<lb/></address>
+
+	<byline>
+	<affiliation>3 Ecole Nationale Supérieure de Chimie, Institut de Chimie de Clermont-Ferrand, Université Blaise-Pascal,</affiliation>
+	</byline>
+
+	<address>F-63000, Clermont, FERRAND<lb/></address>
+
+	<byline>
+	<affiliation>4 Laboratoire de Chimie des Huiles Essentielles, Université Blaise-Pascal, Clermont-Ferrand II,</affiliation>
+	</byline>
+
+	<address>Campus des Cézeaux, Aubière cedex, FRANCE<lb/></address>
+
+	<note type="other">Available online at: www.isca.in<lb/></note>
+
+	<note type="submission">Received 7<lb/> th September 2012, revised 14<lb/> th October 2012, accepted 18<lb/> th November 2012<lb/>
+	</note>
+
+	<div type="abstract">Abstract<lb/> The results brought back at the end of this work concern various chemical constituents of S. grandifolia leaves collected in<lb/> Benin. The major compounds ( 4%) of essential oils obtained after hydrodistillation and analysis by coupling gas<lb/> chromatography with spectrometry mass are constituted of : limonene (20.2%), (E)--ocimene (7.6-17.8%), (Z)--ocimene<lb/> (11.4%), -cadinene (7.0%), selin-11-en-4--ol (4.5-5.7% ), palmitic acid (4.3-6.2%), -pinene (5.5%), α-selinene (5.5%), -<lb/>phellandrene (5.2%), β-selinene (4.9%), β-elemene (4.5%).The lipidic fractions realized from petroleum ether extracts are<lb/> marked by importants rates of arachidic acid (22.5%), palmitic acid (20.3%) and of linoleic acid (15.9 %). The<lb/> phytochemical analysis showed relatively a large content of coumarins, gallic tannins, flavones, leucoanthocyans and<lb/> saponins in opposition to the other secondary metabolites.<lb/></div>
+
+	<keyword>Keywords: limonene, arachidic acid, metabolites, coumarins<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

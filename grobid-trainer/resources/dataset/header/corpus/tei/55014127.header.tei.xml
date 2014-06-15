@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014127"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="copyright">Permission to make digital or hard copies of all or part of this work for<lb/> personal or classroom use is granted without fee provided that copies are<lb/> not made or distributed for profit or commercial advantage and that<lb/> copies bear this notice and the full citation on the first page. To copy<lb/> otherwise, or republish, to post on servers or to redistribute to lists,
+	<lb/> requires prior specific permission and/or a fee.<lb/> EuMob&apos;06, European Symposium on Mobile Media Delivery,<lb/></note>
+
+	<date>September 20, 2006,</date>
+
+	<address>Alghero, Italy<lb/></address>
+
+	<note type="copyright">© 2006 ACM</note>
+
+	<note>1-59593-516-9/06/09…$5.00<lb/></note>
+
+	<docTitle>
+	<titlePart>A Gateway Architecture for Mobile Multimedia Streaming<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Jens Brandt<lb/></docAuthor>
+	</byline>
+
+	<email>brandt@ibr.cs.tu-bs.de<lb/></email>
+
+	<byline>
+	<docAuthor>Lars Wolf<lb/></docAuthor>
+	</byline>
+
+	<email>wolf@ibr.cs.tu-bs.de<lb/></email>
+
+	<byline>
+	<affiliation>Institute of Operating Systems and Computer Networks<lb/> Technische Universität Braunschweig<lb/></affiliation>
+	</byline>
+
+	<address>38106 Braunschweig, Germany<lb/></address>
+
+	<div type="abstract">ABSTRACT<lb/> Transmission of digital audio and video streams is one of<lb/> the major applications in future wireless networks. Increas-<lb/>ing bandwidths and processing power make it possible to<lb/> receive video streams almost everywhere. But the classes of<lb/> mobile devices vary from multimedia enabled mobile phones<lb/> to high-end notebooks. The capabilities of these devices<lb/> such as display resolution, processing power, memory size<lb/> or network connection vary also so that we have to deal<lb/> with a great heterogeneity of client devices. Thus, content<lb/> providers have to take into account plenty of different re-<lb/>quirements when offering video streams to users with mobile<lb/> devices. In this paper we present a comprehensive gateway<lb/> architecture for multimedia streaming using IETF standard<lb/> protocols such as RTSP and RTP. This gateway system pro-<lb/>vides a video adaptation service for users with mobile de-<lb/>vices. A mobile client discovers an appropriate gateway by<lb/> using a gateway location mechanism. Based on the capabili-<lb/>ties of the mobile device as well as on the user&apos;s preferences,<lb/> a suitable media format and adaptation method are chosen<lb/> at the gateway by which the video is tailored to the require-<lb/>ments of the client.<lb/></div>
+
+		</front>
+	</text>
+</tei>

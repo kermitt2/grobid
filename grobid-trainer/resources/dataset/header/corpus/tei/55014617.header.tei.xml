@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014617"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>AUTOMOTIVE DIESEL ENGINE OIL STANDARD<lb/> (JASO M 355: 2008)<lb/> APPLICATION MANUAL<lb/></titlePart>
+	</docTitle>
+
+	<date>May, 2009<lb/></date>
+
+	<note>JASO Engine Oil Standards Implementation Panel</note>
+
+		</front>
+	</text>
+</tei>

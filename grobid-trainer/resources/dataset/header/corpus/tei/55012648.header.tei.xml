@@ -1,0 +1,66 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012648"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+
+	<reference>International Conference on Convergence and Hybrid Information Technology 2009<lb/>	ICHIT&apos;09, August 27–29, 2009, Daejeon, Korea.<lb/></reference>
+
+	<note type="copyright">Copyright &#169; 2009 ACM</note>
+
+	<note>978-1-60558-662-5/09/08…$10.00.<lb/></note>
+
+	<docTitle>
+	<titlePart>Development and Verification of the DRM Standard<lb/> Protocol for Media card<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Chenglong, Xu<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Advanced<lb/> Technology Fusion<lb/> Konkuk University,<lb/></affiliation>
+	</byline>
+
+	<address>Seoul 143-701, South Korea<lb/></address>
+
+	<phone>Tel : 82-10-4904-0226<lb/> </phone>
+
+	<email>jackyxcl@hotmail.com<lb/></email>
+
+	<byline>
+	<docAuthor>Jeong sik Mun<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>LG Electronics Inc.<lb/></affiliation>
+	</byline>
+
+	<address>Seoul, South Korea<lb/></address>
+
+	<phone>Tel : 82-80-023-3300<lb/> </phone>
+
+	<email>redcroce@hotmail.com<lb/></email>
+
+	<docAuthor>Sung-Ryul Kim<lb/> *contact author<lb/></docAuthor>
+
+	<byline>
+	<affiliation>Department of Advanced<lb/> Technology Fusion<lb/> Konkuk University,<lb/></affiliation>
+	</byline>
+
+	<address>Seoul 143-701, South Korea<lb/></address>
+
+	<phone>Tel : 82-11-9128-2097<lb/> </phone>
+
+	<email>kimsr@konkuk.ac.kr<lb/></email>
+
+	<div type="abstract">ABSTRACT<lb/> DRM offers an efficient way to protect digital contents. However,<lb/> existing general DRM systems cannot be directly applied to low<lb/> computation-power systems such as Media cards. We propose an<lb/> implementation of a DRM system which is applicable to such<lb/> limited environments by analyzing the main specifications and<lb/> modifying key aspects of the cryptographic algorithms.<lb/></div>
+
+	<keyword>Keywords<lb/> DRM, efficient protection, RSA, Media card, security<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

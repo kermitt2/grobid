@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55113662"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Optische Gläser<lb/> mit anomaler Teildispersion<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Dr. rer.-nat. D. Ehrt; Prof. Dr.-habil.W. Vogel<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Friedrich-Schiller-Universität Jena. Sektion Chemie<lb/></affiliation>
+	</byline>
+
+	<div type="abstract">Es handelt sich nicht um das Phänomen der<lb/> ..anomalen Dispersion&quot; im Sinne der Disper­<lb/> sionstheorie, sondern unter dem Begriff ..Glä­<lb/> ser mit anomaler Teildispersion&quot; versteht man<lb/> hier optische Gläser, die in ihrem Dispersions­<lb/> verhalten von der Masse der optischen Gläser<lb/> abweichen. Die Masse der optischen Gläser<lb/> beruht heute noch auf der Basis von Silikaten.<lb/> Für den Optik-Rechner ist es sinnvoll, die<lb/> optischen Gläser hinsichtlich ihres Dispersions­<lb/> verhaltens möglichst übersichtlich zu ordnen.<lb/> Allgemein bekannt ist die Darstellung im<lb/> // t (t e )-Diagramm. Zur weiteren Charakterisie­<lb/> rung dient die Beziehung zwischen der relati­<lb/> ven Teildispersion P1, 2 und dem Dispersions­<lb/> koeffizienten vt.<lb/> Für die meisten optischen<lb/> Gläser gilt eine lineare Beziehung zwischen<lb/> P1,2 und c,. die auch als Abbe-Gleichung be­<lb/> zeichnet wird:<lb/> Nach der Definition wird durch ein Krön-und<lb/> ein Flintglas eine sogenannte ..Normalgerade&quot;<lb/> fixiert und alle Gläser, die auf der Normal­<lb/> geraden liegen als Normal-oder Regelgläser<lb/> bezeichnet. Optische Gläser mit von der Nor­<lb/> malgeraden abweichendem Teildispersionsver­<lb/> halten sind danach ..Gläser mit anomaler Teil­<lb/> dispersion&quot;. Sie zeichnen sich durch eine nicht-<lb/>lineare P1.2(1,.»-Funktion<lb/> aus und werden durch<lb/> eine positive oder negative Abweichung der<lb/> relativen Teildispersion JZV 2 bzw. des Dis­<lb/> persionskoeffizienten ΔΙ, charakterisiert. Für<lb/> sie gilt die Beziehung</div>
+
+		</front>
+	</text>
+</tei>

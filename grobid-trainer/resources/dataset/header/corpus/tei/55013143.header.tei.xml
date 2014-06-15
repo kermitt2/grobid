@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013143"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>The Biochemistry and Molecular Biology of Lipid<lb/> Accumulation in Oleaginous Microorganisms<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>COLIN RATLEDGE AND JAMES ~?WYNN&apos;<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Lipid Research Centre<lb/> Department of Biological Sciences<lb/> University of Hull<lb/></affiliation>
+	</byline>
+
+	<address>HU6 7RX, United Kingdom<lb/></address>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001893"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<affiliation>Friedrich + Lochner GmbH<lb/></affiliation>
+	</byline>
+
+	<note type="other">Software für Statik &amp; Tragwerksplanung<lb/> ein Unternehmen der Nemetschek Gruppe<lb/></note>
+	
+
+	<docTitle>
+	<titlePart>FRILO-Software-Programmübersicht<lb/></titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

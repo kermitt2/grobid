@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009675"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">1<lb/></note>
+	
+	<note type="other">White-Paper for Stylingcard AG<lb/></note>
+
+	<address>Zürich, Switzerland<lb/></address>
+
+	<date>5.4.2004<lb/></date>
+
+	<docTitle>
+	<titlePart>Digitization of the Human Body in the Present-Day Economy<lb/> On the actual state of the technology and its exploitation for commercial applications<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Nicola D&apos;Apuzzo<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>HOMOMETRICA CONSULTING,</affiliation>
+	</byline>
+
+	<address>Zurich, Switzerland<lb/></address>
+
+	<email>nda@homometrica.ch<lb/></email>
+
+	<div type="abstract">Every new movie excites with attractive visual effects. Only few people know that the most thrilling<lb/> cuts are realized by using virtual persons. The faces and bodies of actors are digitized and the<lb/> &quot;virtual twin&quot; replaces the actor in the movie. The state of the human body digitization is so high<lb/> that it is not possible any more to distinguish the real actor from the virtual one. Indeed, for the rush<lb/> technical development has to be thanked the movie industry, which was one of the strong<lb/> economic motors for this technology. Today&apos;s, methods for digitization of the human body are used<lb/> also in other fields of application, such as ergonomics, medical applications, computer games,<lb/> biometry and anthropometrics. With the time, this technology becomes interesting also for sport,<lb/> fitness, fashion and beauty. A large expansion of human body digitization is expected in the near<lb/> future.<lb/> We will report here on the historic development of the human body digitization and on the actual<lb/> state of the technology. We will then describe the possible commercial uses and new interesting<lb/> perspectives.<lb/></div>
+
+		</front>
+	</text>
+</tei>

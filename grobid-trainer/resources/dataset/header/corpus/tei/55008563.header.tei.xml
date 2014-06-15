@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008563"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<affiliation>UNIVERSIDAD DE OVIEDO<lb/> ESCUELA DE INGENIERÍA INFORMÁTICA<lb/> UNIVERSIDAD DE OVIEDO<lb/> </affiliation>
+	
+	<note type="degree">TRABAJO FIN DE MÁSTER<lb/> </note>
+	
+	<docTitle>
+	<titlePart>ORQUESTACIÓN DE SERVICIOS PARA<lb/> INETERNET DE LAS COSAS<lb/></titlePart>
+	</docTitle>
+	
+	<byline>
+	<note type="other">DIRECTORES: JUAN MANUEL CUEVA LOVELLE<lb/> OSCAR SAN JUAN MARTINEZ<lb/></note>
+	</byline>
+
+	<note type="other">Vº Bº del Director del<lb/> Proyecto<lb/> </note>
+	
+	<byline>
+	<docAuthor>AUTOR: JORDÁN PASCUAL ESPADA</docAuthor>
+	</byline>
+		
+		</front>
+	</text>
+</tei>

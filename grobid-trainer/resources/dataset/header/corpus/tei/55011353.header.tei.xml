@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011353"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Material Safety Data Sheet<lb/></titlePart>
+	</docTitle>
+
+	<note type="submission">acc. to OSHA and ANSI<lb/> </note>
+
+	<date type="publication">Printing date 08/16/2002<lb/> Reviewed on 10/06/1999<lb/></date>
+
+	<div type="abstract">1 Identification of substance:<lb/> Product details:<lb/>Trade name: Manganese (II) 2-ethylhexanoate, 40% w/w in<lb/> mineral spirits<lb/></div>
+	
+	<note>Stock number: 38607<lb/> </note>
+
+	<note type="other">Manufacturer/Supplier:<lb/></note>
+
+	<byline>
+	<docAuthor>Alfa Aesar, A Johnson Matthey </docAuthor>
+	</byline>
+		
+	<byline>
+	<affiliation>company<lb/> Johnson Matthey Catalog Company, Inc.<lb/></affiliation>
+	</byline>
+
+	<address>30 Bond Street<lb/> Ward Hill, MA 01835-8099<lb/></address>
+
+	<phone>Emergency Phone: (978) 521-6300<lb/> CHEMTREC: (800) 424-9300<lb/> </phone>
+
+	<ptr>Web Site: www.alfa.com<lb/> </ptr>
+
+	<note type="other">Information department: Health, Safety and Environmental<lb/> Department<lb/> Emergency information:<lb/> During normal hours the Health, Safety and Environmental<lb/> Department. After normal hours call Chemtrec at </note>
+
+	<phone>(800) 424-<lb/>9300.</phone>
+
+		</front>
+	</text>
+</tei>

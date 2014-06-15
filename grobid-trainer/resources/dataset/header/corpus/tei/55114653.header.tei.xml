@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55114653"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note>0022-1767/64/1322-0594$02.00/0<lb/></note>
+
+	<note type="copyright">Copyright &#169; 1984 by The American Association of immunologists<lb/></note>
+
+	<reference>THE JOURNAL OF ~YMUNOLCGY<lb/>Val. 132. No. 2.February 1984<lb/></reference>
+
+	<note>Printed in U.S.A.<lb/></note>
+
+	<docTitle>
+	<titlePart>VI. Direct Assessment of the Cytotoxic Potential of Human Peripheral Blood<lb/> Non-lytic Effector-Target Cell Conjugates&apos;<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>BENJAMIN BONAVIDA,2 LAURA TIMARES LEBOW,<lb/> AND THOMAS P. BRADLEY3<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>From the Department of Microbiology and Immunology, UCLA School o f Medicine, University of Calqornia,</affiliation>
+	</byline>
+
+	<address>Los Angeles.<lb/> Los Angeles, CA 90024<lb/></address>
+
+	<div type="abstract">Single cell cytotoxicity assays reveal that a large<lb/> percentage of lymphocytes are unable to kill at-<lb/>tached targets in a 4-to 18-hr assay. Additional<lb/> signals (in the form of lectin or anti-target antibody)<lb/> delivered to target-bound lymphocytes enable these<lb/> previously non-lytic lymphocytes to kill attached<lb/> target cells. This finding was obtained by using a<lb/> modification of the single cell assay, in which lectin<lb/> or target cell antibody is incorporated into agarose<lb/> with preformed lymphocyte-target conjugates. Hu-<lb/>man peripheral blood lymphocytes (PBL) or Percoll<lb/> density gradient-enriched large granular lympho-<lb/>cytes (LGL) were used as effector cells in natural<lb/> killer (NK), antibody-dependent cellular cytotoxic-<lb/>ity (ADCC) and lectin-dependent cellular cytotoxic-<lb/>ity (LDCC) assay systems. The targets used were<lb/> NK-sensitive K562 and Molt-4 and NK-insensitive<lb/> Raji.<lb/> Several findings were made in the modified single<lb/> cell assay, namely a) the frequency of cytotoxic NK<lb/> or ADCC effector cells was not augmented, suggest-<lb/>ing that the initial trigger was sufficient for lytic<lb/> expression in these instances. Furthermore, these<lb/> results showed that the NK-sensitive targets used<lb/> do not bind nonspecifically to the LDCC effector<lb/> cells. K562 coated with Con A, however, serve as<lb/> LDCC targets. b) The frequency of two target conju-<lb/>gate lysis by NK/K effectors was not augmented by<lb/> Con A. These results suggest that Con A does not<lb/> potentiate the killing of multiple targets bound to a<lb/> single cytotoxic lymphocyte.<lb/> c) Although conju-<lb/>gates formed between LGL or PBL and NK-insensi-<lb/>tive Raji are non-lethal, significant lysis was ob-<lb/>served when these conjugates were suspended in<lb/> Con A or antibody agarose. These results demon-<lb/>strate that Raji bind to cytotoxic NK, K, and LDCC<lb/> effector cells, but are lysed only when the appropri-<lb/>ate trigger is provided. d) The cytotoxic potential of<lb/> non-lytic conjugates appears to lie within the low<lb/></div>
+
+	<note type="submission">Accepted for publication October 17.1983.<lb/> Received for publication July 27. 1983.<lb/></note>
+
+		</front>
+	</text>
+</tei>

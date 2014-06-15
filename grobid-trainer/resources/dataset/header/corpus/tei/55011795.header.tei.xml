@@ -1,0 +1,83 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011795"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">e-Journal of Surface Science and Nanotechnology<lb/> </note>
+
+	<date>4 April 2009<lb/> </date>
+
+	<reference>e-J. Surf. Sci. Nanotech. Vol. 7 (2009) 455-458<lb/></reference>
+
+	<note type="other">Conference -ICSFS-14 -<lb/></note>
+
+	<docTitle>
+	<titlePart>Organic Semiconductor-Polymer Insulator Blends: a Morphological Study of<lb/> the Guest-Host Interactions *<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Marie-Beatrice Madec,<lb/> David J. Crouch, and Gonzalo Rincon-LLorente<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>OMIC, School of Chemistry, University of Manchester,</affiliation>
+	</byline>
+
+	<address>Oxford Road, Manchester M13 9PL, UK<lb/></address>
+
+	<byline>
+	<docAuthor>Tracie J. Whittle<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Chemistry,</affiliation>
+	</byline>
+
+	<address>Richard Roberts Building,<lb/></address>
+
+	<byline>
+	<affiliation>University of Sheffield,</affiliation>
+	</byline>
+
+	<address>Brook Hill, Sheffield S3 7HF, UK<lb/></address>
+
+	<byline>
+	<docAuthor>Mark Geoghegan<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Physics and Astronomy,</affiliation>
+	</byline>
+
+	<address>Hicks Building,<lb/></address>
+
+	<byline>
+	<affiliation>University of Sheffield,</affiliation>
+	</byline>
+
+	<address>Hounsfield Road, Sheffield S3 7RH, UK<lb/></address>
+
+	<byline>
+	<docAuthor>Stephen G. Yeates<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>OMIC, School of Chemistry, University of Manchester,</affiliation>
+	</byline>
+
+	<address>Oxford Road, Manchester M13 9PL, UK.<lb/></address>
+
+	<note type="submission">(Received 1 June 2008; Accepted 8 October 2008; Published 4 April 2009)<lb/></note>
+
+	<div type="abstract">We suggest a link between film morphology and electrical properties of a crystalline organic semiconductor: poly-<lb/>mer insulating blend. TIPS-Pentacene (6,13-bis(triisopropylsilylethynyl) pentacene) [J. Am. Chem. Soc. 123, 9482<lb/> (2001)] is formulated with various amorphous and semi-crystalline side chain aromatic low permittivity dielectric<lb/> polymers. Film structure investigated by AFM microscopy and XPS gives invaluable information regarding film<lb/> morphology and confirms potential intermolecular interaction. All these morphological observations were linked<lb/> to the electrical characterisation of organic thin film transistors (OTFTs) and the determination of saturated hole<lb/> mobility value. When an amorphous binder is used the more dilute the TIPS-pentacene the lower the saturated<lb/> hole mobility value. When a semi-crystalline binder is used it is possible to massively dilute TIPS-pentacene within<lb/> the polymer dielectric without loosing either the crystalline structure of the material or the electronic properties.<lb/> Besides phase segregation, enrichment of the active interface in TIPS-Pentacene is demonstrated.<lb/></div>
+
+	<idno type="DOI">[DOI: 10.1380/ejssnt.2009.455]<lb/></idno>
+
+	<keyword>Keywords: Atomic force microscopy; X-Ray photoelectron spectroscopy; Surface structure, morphology, roughness, topogra-<lb/>phy; Crystalline-amorphous interfaces<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

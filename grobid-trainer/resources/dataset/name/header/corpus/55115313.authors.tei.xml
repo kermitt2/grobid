@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Bogumil</forename>
+								<surname>Bartczak</surname>,
+							</persName>
+							<persName>
+								<forename>Ingo</forename>
+								<surname>Schiller</surname>,
+							</persName>
+							<persName>
+								<forename>Christian</forename>
+								<surname>Beder</surname> and
+							</persName>
+							<persName>
+								<forename>Reinhard</forename>
+								<surname>Koch</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

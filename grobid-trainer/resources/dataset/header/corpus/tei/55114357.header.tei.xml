@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55114357"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">of April 16, 2014.<lb/> This information is current as<lb/></note>
+
+	<docTitle>
+	<titlePart>Inflammation<lb/> Blockade Only Ameliorates Joint<lb/> α Collagen-Induced Arthritis, Whereas TNF-<lb/>Bone Destruction in Murine Type II<lb/> Blockade Prevents Cartilage and<lb/> β α<lb/> IL-1<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>A. J. van de Loo, Dick Heinegård and Wim B. van den Berg<lb/> Leo A. B. Joosten, Monique M. A. Helsen, Tore Saxne, Fons<lb/>
+	</docAuthor>
+	</byline>
+
+	<ptr type="web">http://www.jimmunol.org/content/163/9/5049<lb/></ptr>
+
+	<reference>1999; 163:5049-5055; ;<lb/>J Immunol<lb/> References </reference>
+
+	<ptr>http://www.jimmunol.org/content/163/9/5049.full#ref-list-1<lb/> , </ptr>
+
+	<note type="other">7 of which you can access for free at:<lb/> cites 28 articles<lb/> This article<lb/> Subscriptions  http://jimmunol.org/subscriptions<lb/> is online at:<lb/> The Journal of Immunology<lb/> Information about subscribing to<lb/> </note>
+	
+	<note type="copyright">Permissions http://www.aai.org/ji/copyright.html<lb/> Submit copyright permission requests at:<lb/> </note>
+	
+	<note type="other"> Email Alerts<lb/> http://jimmunol.org/cgi/alerts/etoc<lb/> Receive free email-alerts when new articles cite this article. Sign up at:<lb/> </note>
+
+	<idno>Print ISSN: 0022-1767 Online ISSN: 1550-6606.<lb/> </idno>
+
+	<note type="copyright">Immunologists All rights reserved.<lb/> Copyright © 1999 by The American Association of 9650 Rockville Pike, Bethesda, MD 20814-3994.<lb/> </note>
+	
+	<note type="other">The American Association of Immunologists, Inc.,<lb/> is published twice each month by<lb/> The Journal of Immunology<lb/> at Office Europeen Des Brevets DG 1/Class Doc Lit on April 16, 2014<lb/> http://www.jimmunol.org/<lb/> Downloaded from<lb/> at Office Europeen Des Brevets DG 1/Class Doc Lit on  April 16, 2014<lb/> http://www.jimmunol.org/<lb/> Downloaded from</note>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>a</marker>
+							<orgName type="institution">INRA Clermont-Ferrand</orgName>,
+							<orgName type="department">Station de Recherches sur la Viande</orgName>,
+							<address>
+								<postCode>F-63122</postCode>
+								<settlement>Saint-Gene ©s Champanelle</settlement>,
+								<country>France</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>b</marker>
+							<orgName type="institution">INRA Dijon</orgName>,
+							<orgName type="laboratory">Laboratoire de Recherche sur les Aro ªmes</orgName>,
+							<orgName type="institution">Unitë de Biochimie-Mëtabolisme</orgName>,
+							<address>
+								<postCode>F-21000</postCode>
+								<settlement>Dijon</settlement>,
+								<country>France</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>c</marker>
+							<orgName type="institution">INRA Rennes</orgName>,
+							<orgName type="department">Technologie Lait</orgName>,
+							<address>
+								<postCode>F-35042</postCode>
+								<settlement>Rennes Cedex</settlement>,
+								<country>France</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

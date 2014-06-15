@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei type="product-sheet">
+	<teiHeader>
+		<fileDesc xml:id="55113919"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Linear ball cages<lb/> Standard range<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Publication LLK 100 E<lb/></note>
+
+	<date>09/2004</date>
+
+		</front>
+	</text>
+</tei>

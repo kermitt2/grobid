@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+							<lb/>
+								<forename>M</forename>.
+								<surname>Davies</surname> ,
+							</persName>
+							<persName>
+								<forename>M</forename> .
+								<surname>Dommaschk</surname> ,
+							</persName>
+							<persName>
+								<forename>J</forename> .
+								<surname>Dorn</surname> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>J</forename> .
+								<surname>Lang</surname>,
+							</persName>
+							<persName>
+								<forename>D</forename>.
+								<surname>Retzmann</surname>,
+							</persName>
+							<persName>
+								<forename>D</forename>.
+								<surname>Soerangr</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

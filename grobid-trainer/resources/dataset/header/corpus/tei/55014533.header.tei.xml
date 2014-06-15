@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014533"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Biochem. J. (1993) 294, 761-769 (Printed in Great Britain)<lb/></reference>
+
+	<note type="page">761<lb/></note>
+
+	<docTitle>
+	<titlePart>Transcriptional modulation of cartilage-specific collagen gene expression by<lb/> interferon y and tumour necrosis factor a in cultured human chondrocytes<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Anthony M. REGINATO, Cesar SANZ-RODRIGUEZ, Arturo DIAZ, Rita M. DHARMAVARAM and Sergio A. JIMENEZ*<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Division of Rheumatology, Department of Medicine, Jefferson Medical College, Thomas Jefferson University,</affiliation>
+	</byline>
+
+	<address>Philadelphia, PA 19107, U.S.A.<lb/></address>
+
+	<div type="abstract">To examine the possibility that cytokines produced in inflamed<lb/> joint tissues may contribute to the loss of articular cartilage by<lb/> causing inhibition of synthesis of cartilage-specific matrix macro-<lb/>molecules, we studied the effects of interferon y (IFNy) and<lb/> tumour necrosis factor a (TNFa), alone and in combination, on<lb/> the expression of the genes for types-II, -IX and -XI collagens in<lb/> cultured human chondrocytes. Chondrocytes isolated from<lb/> human fetal epiphyseal cartilage by sequential enzymic digestions<lb/> were cultured in the presence of IFNy (30 pM), TNFac (15 pM)<lb/> or a combination of suboptimal concentrations of both cytokines<lb/> (1.5 pM IFNy plus 0.3 pM TNFa). IFNy caused a maximal<lb/> decrease of 23.3-32.6 % in the biosynthesis of collagen by<lb/> chondrocytes. TNFa was a more potent inhibitor causing a<lb/> 42.8-45.3 % decrease at one-half the concentration of IFNy. A<lb/> synergistic inhibitory effect of 58.2% was observed with the<lb/></div>
+
+		</front>
+	</text>
+</tei>

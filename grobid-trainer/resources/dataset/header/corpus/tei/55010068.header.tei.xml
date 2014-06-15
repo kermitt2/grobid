@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010068"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>An open source DBMS for handheld devices<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">M. Tech Dissertation<lb/></note>
+
+	<degree>Submitted in partial fulfillment of the requirements<lb/> for the degree of<lb/> Master of Technology<lb/></degree>
+	
+	<byline>
+	<docAuthor>by<lb/> Rajkumar Sen<lb/></docAuthor>
+	</byline>
+
+	<note>Roll No: 02305035<lb/></note>
+
+	<note type="other">under the guidance of<lb/></note>
+
+	<byline>
+	<docAuthor>Prof. Krithi Ramamritham<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Computer Science and Engineering<lb/> Indian Institute of Technology,</affiliation>
+	</byline>
+
+	<address>Bombay<lb/> Mumbai</address>
+
+		</front>
+	</text>
+</tei>

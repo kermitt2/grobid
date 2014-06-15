@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010832"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>J. Biochem. 138, 593–604 (2005)<lb/></reference>
+
+	<idno type="DOI">doi:10.1093/jbchem/mvi155<lb/></idno>
+
+	<docTitle>
+	<titlePart>Unique Molecular Architecture of Egg Case Silk Protein<lb/> in a Spider, Nephila clavata<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Aichun Zhao<lb/> 1 , Tianfu Zhao<lb/> 1 , Yanghu SiMa<lb/> 2 , Yuansong Zhang<lb/> 1 , Koichi Nakagaki<lb/> 1 ,<lb/> Yungen Miao<lb/> 3 , Kunihiro Shiomi<lb/> 1 , Zenta Kajiura<lb/> 1 , Yoko Nagata<lb/> 4 and Masao Nakagaki<lb/> 1, *<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1<lb/> Department of Applied Biology, Faculty of Textile Science and Technology, Shinshu University,<lb/></affiliation>
+	</byline>
+
+	<address>Ueda 386-8567;<lb/></address>
+
+	<byline>
+	<affiliation>2<lb/> Faculty of Agricultural Science and Technology, Suzhou University,</affiliation>
+	</byline>
+
+	<address>Su Zhou 215006, China;<lb/></address>
+
+	<byline>
+	<affiliation>3<lb/> College of Animal Sciences, Zhejiang University,</affiliation>
+	</byline>
+
+	<address>Hang Zhou 310029, China; and<lb/></address>
+
+	<byline>
+	<affiliation>4<lb/> College of Science and<lb/> Technology, Nihon University,</affiliation>
+	</byline>
+
+	<address>Tokyo 101-8308<lb/></address>
+
+	<note type="submission">Received July 13, 2005; accepted August 17, 2005<lb/></note>
+
+	<div type="abstract">We describe a unique silk protein secreted from the cylindrical silk glands of the spider<lb/> Nephila clavata. This silk is primarily composed of three proteins, whose transcripts<lb/> of approximately 16.0, 14.5 and 13.0 kb are homologous to one another in two termini and<lb/> repetitive units, as determined on Northern blotting. Its overall organization shows<lb/> that it is similar to other characterized silk proteins, including in the mainly central<lb/> repetitive region as well as the non-repetitive N-terminal (166 residues) and C-terminal<lb/> (176 residues) parts. However, up to 90% of the protein consists of highly ordered<lb/> repetitive structures that are not found in other silks. The repetitive region mainly<lb/> consists of several types of complexes and remarkably conserved polypeptide repeats.<lb/> The assembled repeat units (A 1 B 1 ) contain a high proportion of Ala (30.41%), Ser (25.15%),<lb/> and residues with hydrophobic side chains (22.22% for Gly, Leu, Ile, Val and Phe com-<lb/>bined). The presence of Ser-rich and GVGAGASA motifs suggests the formation of a<lb/> b-sheet. The repetitive region is characterized by alternating arrays of hydrophobic<lb/> and hydrophilic blocks. The results suggested that this egg case silk is an exceptional<lb/> protein when compared with previously investigated spider silks.<lb/></div>
+
+	<keyword>Key words: cylindrical gland, egg case silk fibroin, Nephila clavata, spider,<lb/> repetitive structure.<lb/> Abbreviations: MA, major ampullate silk gland; MI, minor ampullate silk gland; FL, flagelliform silk gland;<lb/> CY, cylindrincal silk gland; Sp, silk protein.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

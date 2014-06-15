@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011996"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Scientific Report 2007<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Institute for Energy Research-<lb/>Safety Research and Reactor Technology (IEF-6)<lb/></note>
+
+	<docTitle>
+	<titlePart>Safety Research for Nuclear Waste Disposal<lb/></titlePart>
+	</docTitle>
+
+	<note type="page">1<lb/></note>
+	
+	<note type="other">Contents:</note>
+
+		</front>
+	</text>
+</tei>

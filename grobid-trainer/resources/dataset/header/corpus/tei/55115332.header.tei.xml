@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55115332"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Quantitative Non-Destructive Detection of<lb/> Residual Stresses of the 2<lb/> nd<lb/> and 3<lb/> rd<lb/> Order by<lb/> Using Micro Magnetic Methods<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Mădălina PÎRLOG, Dirk SCHNUBEL, Iris ALTPETER, Gerd DOBMANN, Michael<lb/> KRÖNING,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Fraunhofer-Institut Zerstörungsfreie Prüfverfahren,</affiliation>
+	</byline>
+
+	<address>Saarbrücken, Germany<lb/></address>
+
+	<div type="abstract">Abstract. Micro residual stresses (MRS) of the 2<lb/> nd and 3<lb/> rd order play an important<lb/> role in the lifetime analysis of thermally-cycled materials. The coherent residual<lb/> stresses (MRS of 3<lb/> rd order) appear when the lattice parameter of the second phase<lb/> particles (coherently embedded in the matrix) and the lattice parameter of the matrix<lb/> are different from each other. Such differences in case of the Fe-Cu alloys between<lb/> the lattice parameters of coherent Cu precipitates and the lattice parameters of the α-<lb/>Fe matrix lead to distortion of the lattice around the Cu particles causing coherent<lb/> tensile MRS of 3<lb/> rd order. Thermally induced MRS of the 2<lb/> nd order appear when<lb/> individual material phases exhibit different thermal expansion coefficients. Such<lb/> differences in temperature-related expansion coefficients of copper precipitates and<lb/> the α-Fe matrix promote the development of thermally induced compressive MRS<lb/> of the 2<lb/> nd order. The main objective of the presented research project is to develop<lb/> an integral, economical and fast micro-magnetic non-destructive method for<lb/> quantitative characterisation of MRS of the 2<lb/> nd and 3<lb/> rd order in Fe-Cu and Fe-Cu-Ni<lb/> alloys. For this purpose Fe-Cu and Fe-Cu-Ni alloy samples with different Cu and Ni<lb/> contents were prepared.<lb/></div>
+
+		</front>
+	</text>
+</tei>

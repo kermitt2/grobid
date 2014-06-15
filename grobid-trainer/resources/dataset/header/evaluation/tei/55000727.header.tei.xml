@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000727"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+
+	<byline>
+	<affiliation>SC VIROMET SA<lb/></affiliation>
+	</byline>
+
+	<address>505700, VICTORIA, Aleea Uzinei, Nr. 8, Jud. Braşov, România<lb/></address>
+
+	<phone>Tel.: 0040 268 241.120; 0040 268 241.636; 0040 268 242.584<lb/> Fax: 0040 268 242.484; 0040 268 241.800; 040 268 241 600<lb/></phone>
+
+	<ptr type="web">Web: http://www.viromet.ro;</ptr>
+
+	<email>E-mail: gendir@viromet.ro techndir@viromet.ro<lb/></email>
+
+	<note type="other">Code PS-MI-F06/29 ; pag. 1/1<lb/> </note>
+	
+	<date>Edition/Revision /date: 01/02/12.02.2007</date>
+	
+	<idno><lb/> Chemical formula : CH3O-CH2-OCH3<lb/> CAS No :109-87-5<lb/> EINECS No : 203-714-2<lb/></idno>
+
+	<note type="other">MATERIAL DATA SHEET<lb/></note>
+
+	<div type="introduction">METHYLAL<lb/> Drawn up : S.TH-P; S.CTC<lb/> 4<lb/> General , Use<lb/> Methylal is an oxygenated solvent-type diether. The product is used in the chemical synthesis industry as<lb/> reactant for chlormethylation, methoximethylation, for organo-magnesian products, in cosmetics and<lb/> perfumes industry, in the dye and varnish industry as solvent, in the building industry, in the pharmaceutics<lb/> industry, in polymer resins synthesis, in the adhesives industry, and in the extraction processes, as fuels<lb/> additive to improve the octane number and to reduce the pollution degree of exhaust gases.<lb/> Quality Requirements</div>
+
+		</front>
+	</text>
+</tei>

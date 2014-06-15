@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012100"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Roofing Membrane System<lb/> Rhepanol ® fk<lb/> </titlePart>
+	</docTitle>
+
+	<note type="other">Technical Manual<lb/> </note>
+
+	<date>Edition 2008<lb/> </date>
+
+	<note type="other">Rhepanol<lb/> ®<lb/> fk</note>
+	
+		</front>
+	</text>
+</tei>

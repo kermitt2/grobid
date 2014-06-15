@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Richard</forename>
+								<middlename>van</middlename>
+								<surname>Nee</surname>
+							</persName>
+							<persName>
+								<forename>Allert</forename>
+								<middlename>van</middlename>
+								<surname>Zelst</surname>
+							</persName>
+							<persName>
+								<forename>Hemanth</forename>
+								<surname>Sampath</surname>
+							</persName>
+							<persName>
+								<forename>VK</forename>
+								<surname>Jones</surname>
+							</persName>
+							<persName>
+								<forename>Youhan</forename>
+								<surname>Kim</surname>
+							</persName>
+							<persName>
+								<forename>Joshua</forename>
+								<surname>Zhao</surname>
+							</persName>
+							<persName>
+								<forename>Vinko</forename>
+								<surname>Erceg</surname>
+							</persName>
+							<persName>
+								<forename>Joonsuk</forename>
+								<surname>Kim</surname>
+							</persName>
+							<persName>
+								<forename>Eldad</forename>
+								<surname>Perahia</surname>
+							</persName>
+							<persName>
+								<forename>Raja</forename>
+								<surname>Banerjea</surname>
+							</persName>
+							<persName>
+								<forename>Minho</forename>
+								<surname>Cheong</surname>
+							</persName>
+							<persName>
+								<forename>Daewon</forename>
+								<surname>Lee</surname>
+							</persName>
+							<persName>
+								<forename>Youngsoo</forename>
+								<surname>Kim</surname>
+							<lb/>
+							</persName>
+							
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

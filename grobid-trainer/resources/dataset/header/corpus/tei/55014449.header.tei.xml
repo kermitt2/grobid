@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014449"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>INFECTION AND IMMUNITY, Jan. 2003, p. 418–427<lb/> Vol. 71, No. 1<lb/></reference>
+
+	<note>0019-9567/03/$08.00ϩ0</note>
+
+	<idno type="DOI">DOI: 10.1128/IAI.71.1.418–427.2003<lb/></idno>
+
+	<note type="copyright">Copyright © 2003, American Society for Microbiology. All Rights Reserved.<lb/></note>
+
+	<docTitle>
+	<titlePart>The Salmonella enterica Serovar Typhimurium Translocated Effectors<lb/> SseJ and SifB Are Targeted to the Salmonella-Containing Vacuole<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Jeremy A. Freeman,<lb/> 1 Michael E. Ohl,<lb/> 2<lb/> and Samuel I. Miller<lb/> 1,2,3<lb/> *<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Departments of Microbiology,<lb/> 1 Medicine,<lb/> 2 and Genome Sciences,<lb/> 3 University of Washington,</affiliation>
+	</byline>
+
+	<address>Seattle, Washington 98195<lb/></address>
+
+	<note type="submission">Received 20 May 2002/Returned for modification 3 July 2002/Accepted 16 September 2002<lb/></note>
+
+	<div type="abstract">The Salmonella enterica serovar Typhimurium type III secretion system (TTSS) encoded in Salmonella<lb/> pathogenicity island 2 (SPI-2) promotes replication within host cells and systemic infection of mice. The SPI-2<lb/> TTSS is expressed following Salmonella internalization into host cells and translocates effectors across the<lb/> membrane of the Salmonella-containing vacuole (SCV). Two effectors with similar amino-terminal domains,<lb/> SseJ and SifB, localize to the SCV membrane in infected HEp-2 cells and subsequently traffic away from the<lb/> SCV along Salmonella-induced-filaments (Sifs). Following infection of RAW cells, SseJ and SifB localize to the<lb/> SCV as well as LAMP-1-positive, vesicular-appearing structures distant from the SCV. Trafficking of SseJ and<lb/> SifB away from the SCV requires the SPI-2 effector SifA. Deletion of sseJ, but not sifB, leads to attenuation of<lb/> Salmonella replication in mice following intraperitoneal inoculation. The contribution of SseJ to in vivo<lb/> replication is identical in wild-type and sifA deletion backgrounds, suggesting that SseJ trafficking away from<lb/> the SCV along Sifs is unnecessary for its virulence function.<lb/> </div>
+
+	<div type="introduction">Salmonellae are gram-negative enteric pathogens that cause<lb/> diverse disease syndromes in a variety of animal hosts (15).<lb/> The principal syndromes associated with Salmonella infections<lb/> in humans are enteric (typhoid) fever and gastroenteritis. En-<lb/>teric fever results from systemic infection with the exclusively<lb/> human-adapted serovars Salmonella enterica serovar Typhi and<lb/> S. enterica serovar Paratyphi. It is likely that these serovars rely<lb/> on their ability to survive and replicate in the human macro-<lb/>phage to produce disseminated infection. In contrast, infection<lb/> with the broad-host-range-adapted serovar S. enterica serovar<lb/> Typhimurium usually produces a self-limited gastroenteritis in<lb/> humans but causes a systemic infection resembling enteric<lb/> fever in susceptible mice.<lb/> Many gram-negative pathogens, including the salmonellae,<lb/> utilize type III secretion systems (TTSS) to subvert host cellu-<lb/>lar functions and promote host colonization (11). These com-<lb/>plex protein machines translocate bacterial virulence proteins,<lb/> termed effectors, directly from the bacterial cell into the host<lb/> cell cytoplasm. Salmonella serovar Typhimurium possesses two<lb/> virulence-associated TTSS, encoded in Salmonella pathogenic-<lb/>ity islands 1 and 2 (SPI-1 and SPI-2, respectively) (9). The<lb/> SPI-1 TTSS is expressed on contact with host cells and is<lb/> required for invasion of intestinal epithelial cells and induction<lb/> of intestinal inflammatory and secretory responses. In contrast,<lb/> the SPI-2 TTSS is expressed within the Salmonella-containing<lb/> vacuole (SCV) following Salmonella internalization into host<lb/> cells and translocates effectors across the SCV membrane into<lb/> the host cell cytoplasm (10). The SPI-2 TTSS is required for<lb/> Salmonella replication within host cells and establishment of<lb/> systemic infection in the murine typhoid model.<lb/> Recent work has identified a family of SPI-2 TTSS translo-<lb/>cated effectors that share a conserved N-terminal domain (13).<lb/> The SifA and SifB proteins are members of this protein family<lb/> that are probably translocated by the SPI-2 TTSS, although<lb/> this has not previously been shown for SifB. In addition to the<lb/> conserved N-terminal domain, SifA and SifB also display se-<lb/>quence similarity in their C-terminal domains (26% identical,<lb/> 43% similar). Salmonella serovar Typhimurium sifA deletion<lb/> mutants demonstrate decreased intracellular replication and<lb/> systemic mouse virulence (1, 3). In addition, sifA is required for<lb/> the formation of Salmonella-induced filaments (Sifs) in in-<lb/>fected tissue culture epithelial cells (20). Sifs are tubular-mem-<lb/>branous structures that radiate away from the SCV at late time<lb/> points following Salmonella invasion. These structures contain<lb/> LAMP-1 and other markers characteristic of late endosomes.<lb/> Although the role of Sifs in Salmonella pathogenesis remains<lb/> unclear, they reflect the ability of Salmonella to modify endo-<lb/>somal compartments in infected cells and may promote intra-<lb/>cellular replication.<lb/> The SseJ protein is an additional member of this family that<lb/> also contains a domain with homology to several acyltrans-<lb/>ferases produced by Aeromonas and Vibrio species (6). These<lb/> secreted toxins catalyze the transfer of an acyl group from<lb/> glycerophospholipids to cholesterol at membrane-water inter-<lb/>faces. Ruiz-Albert et al. recently demonstrated that, following<lb/> transient expression in HeLa cells, SseJ localizes to a LAMP-<lb/>1-positive membranous compartment and induces formation<lb/> of large membranous conglomerations that may represent ag-<lb/>gregated endosomal compartments. (17). Expression of SseJ<lb/> with a targeted mutation in the putative acyltransferase active<lb/> site did not induce formation of these structures. The authors<lb/> speculated that SseJ modifies the lipid composition of the SCV<lb/> in a manner that alters its trafficking and maturation. The<lb/> subcellular localization and function of SseJ following endog-<lb/>enous translocation across the SCV by intracellular bacteria<lb/> remain unstudied.<lb/> This work examines the subcellular localization of the SseJ<lb/> and SifB effector proteins following translocation by the SPI-2</div>
+
+		</front>
+	</text>
+</tei>

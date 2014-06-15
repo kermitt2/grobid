@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei type="web">
+	<teiHeader>
+		<fileDesc xml:id="55114867"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Main Page<lb/> Related Pages<lb/> Modules Namespaces<lb/> Classes Files<lb/>File List<lb/> File Members<lb/></note>
+
+	<docTitle>
+	<titlePart>Lib/TLibEncoder/SEIwrite.cpp<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">G o to the doc umentation of this file.<lb/> 00001 /* The copyright in this software is being made available under the BSD<lb/> 00002 * License, included below. This software may be subject to other third party<lb/> 00003 * and contributor rights, including patent rights, and no such rights are<lb/> 00004 * granted under this license.<lb/> 00005 *<lb/> 00006 *</note>
+
+	<note type="copyright">Copyright &#169; 2010-2012, ITU/ISO/IEC<lb/> 00007 * All rights reserved.<lb/></note>
+ 
+	<div type="introduction">00008 *<lb/> 00009 * Redistribution and use in source and binary forms, with or without<lb/> 00010 * modification, are permitted provided that the following conditions are met:<lb/> 00011 *<lb/> 00012 * * Redistributions of source code must retain the above copyright notice,<lb/> 00013 *<lb/> this list of conditions and the following disclaimer.<lb/> 00014 * * Redistributions in binary form must reproduce the above copyright notice,<lb/> 00015 *<lb/> this list of conditions and the following disclaimer in the documentation<lb/> 00016 *<lb/> and/or other materials provided with the distribution.<lb/> 00017 * * Neither the name of the ITU/ISO/IEC nor the names of its contributors may<lb/> 00018 *<lb/> be used to endorse or promote products derived from this software without<lb/> 00019 *<lb/> specific prior written permission.<lb/> 00020 *<lb/> 00021 * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot;<lb/> 00022 * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE<lb/> 00023 * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE<lb/> 00024 * ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS<lb/> 00025 * BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR<lb/> 00026 * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF<lb/> 00027 * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS<lb/> 00028 * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN<lb/> 00029 * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)<lb/> 00030 * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF<lb/> 00031 * THE POSSIBILITY OF SUCH DAMAGE.<lb/> 00032 */<lb/> 00033 00034 #include &quot;TLibCommon/TComBitCounter.h&quot;<lb/> 00035 #include &quot;TLibCommon/TComBitStream.h&quot;<lb/> 00036 #include &quot;TLibCommon/SEI.h&quot;<lb/> 00037 #include &quot;TLibCommon/TComSlice.h&quot;<lb/> 00038 #include &quot;SEIwrite.h&quot;<lb/> 00039 00042<lb/> 00043 #if ENC_DEC_TRACE<lb/> 00044 Void xTraceSEIHeader()<lb/> 00045 {<lb/> 00046 fprintf( g_hTrace, &quot;=========== SEI message ===========\n&quot;);<lb/> 00047 }<lb/> 00048 00049 Void xTraceSEIMessageType(SEI::PayloadType payloadType)<lb/> 00050 {<lb/> 00051 switch (payloadType)<lb/> 00052 {<lb/> 00053 case SEI::DECODED_PICTURE_HASH:<lb/> 00054 fprintf( g_hTrace, &quot;=========== Decoded picture hash SEI message ===========\n&quot;);<lb/> 00055 break;<lb/> Search<lb/> HEVC Test Model (HM): Lib/TLibEncoder/SEIwrite.cpp Source File<lb/></div>
+
+	<ptr type="web">http://hevc.hhi.fraunhofer.de/HM-doc/_s_e_iwrite_8cpp_source.html<lb/></ptr>
+
+	<note type="page">1 of 5<lb/></note>
+
+	<date>23-04-2014</date>
+
+	<note type="other">11:11</note>
+
+		</front>
+	</text>
+</tei>

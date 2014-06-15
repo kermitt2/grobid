@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei type="manual">
+	<teiHeader>
+		<fileDesc xml:id="55115162"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note>FCS-14265-09<lb/></note>
+
+	<note type="page">1<lb/></note>
+
+	<docTitle>
+	<titlePart>ESCAPE HYBRID<lb/> MARINER HYBRID<lb/> EMERGENCY RESPONSE GUIDE<lb/></titlePart>
+	</docTitle>
+
+	<note>FCS-14265-09<lb/></note>
+
+	<note type="page">2<lb/></note>
+
+	<div type="abstract">FOREWORD<lb/> The emergency response procedures for the Escape Hybrid and Mariner Hybrid<lb/> vehicles are similar to those for traditional gasoline-powered vehicles with the<lb/> addition of special considerations for the high-voltage electric system<lb/> components.<lb/> The Escape Hybrid or Mariner Hybrid vehicles use a conventional gasoline<lb/> engine in addition to an electric motor to power the vehicle. The energy used to<lb/> power the vehicle comes from gasoline (used by the internal combustion engine)<lb/> and electricity (used by the electric motor).<lb/> @BULLET Gasoline is stored in a traditional fuel tank.<lb/> @BULLET Electricity is stored in a high-voltage battery pack.<lb/> The combination of a gasoline engine and electric motor provides for improved<lb/> performance (V6 performance with a 4-cylinder engine and electric motor),<lb/> reduced emissions and improved fuel economy. The high-voltage system is self<lb/> contained, never needing to be plugged into an electrical outlet for recharging.<lb/> The system incorporates a generator that recharges the batteries during cruising<lb/> and braking. For further information, the following website may be useful:<lb/></div>
+
+	<ptr type="web">http://www.fordvehicles.com/escapehybrid/technology/.<lb/></ptr>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011360"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Active Control of Loudspeakers:<lb/> An Investigation of Practical Applications<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Andrew Bright<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Ørsted·DTU – Acoustic Technology<lb/> Technical University of Denmark</affiliation>
+	</byline>
+
+		</front>
+	</text>
+</tei>

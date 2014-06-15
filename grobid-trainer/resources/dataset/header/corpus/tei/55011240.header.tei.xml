@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011240"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">RESEARCH PAYERS<lb/></note>
+
+	<docTitle>
+	<titlePart>CHEMOTHERAPEUTIC PROPERTIES OF SOME<lb/> NEW QUATERNARY AMMONIUM SALTS<lb/> PART I. CHEMISTRY<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>BY W. C. AUSTIN*, L. H. C. LUNTS, M. D. POTTER? AND E. P. TAYLOR<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>From the Research Division, Allen &amp; Hanburys Ltd.,</affiliation>
+	</byline>
+
+	<address>Ware, Herts.<lb/></address>
+
+	<note type="submission">Received September 26, 1958<lb/></note>
+
+	<div type="abstract">The preparation of a large number of new heterocyclic quaternary<lb/> ammonium salts for biological screening is described. Certain of the<lb/> quaternary salts possess amoebicidal, antibacterial, antifilarial and<lb/> trypanocidal activity.<lb/> 
+	</div>
+
+	<div type="introduction">SOME of the chemotherapeutic properties of certain heterocyclic bis-<lb/>quaternary ammonium salts have already been<lb/> It appeared<lb/> desirable to investigate the effect of introducing one or more amino<lb/> groups into the nuclei, and the present paper records the preparation<lb/> and physical properties of a large number of new quaternary salts which<lb/> have been examined in these laboratories during the past few years.<lb/> The antifilarial activity of selected compounds will be described by<lb/> Dr. F. Hawking and Dr. R. J. Terry of the National Institute for Medical<lb/> Research in Part IP, and some of the antimicrobial properties and<lb/> toxicities of certain of the compounds will be recorded by Dr. H. 0. J.<lb/> Collier and his colleagues in Part III&apos; of this series. For ease of reference,<lb/> the abbreviated nomenclature first employed by Barlow and Ing* will be<lb/> used ; thus, BQn, BIQn, BAIQn and BACn refer respectively to the bis-<lb/>quinolinium, -isoquinolinium, -7-amino-isoquinolinium and -4-amino-<lb/>cinnolinium series, where n is equal to the number of methylene groups<lb/> in the chain.<lb/> The heterocyclic amines and amides used were prepared by standard<lb/> methods. The nitration product of 2-ethylquinoline-N-oxide was assumed<lb/> to be the 4-nitro derivative following the work of OchiaiO on the chemistry<lb/> of N-oxides. According to Johnlo, acetylation of 4-amino-2-phenyl-<lb/>quinoline with acetic anhydride yields the 4-acetamido derivative. We<lb/> have found that acetylation under these conditions gives 4-diacetylamino-<lb/>2-phenylquinoline, but that the monoacetyl derivative is obtained by<lb/> acetylation of the amine with a mixture of acetic anhydride and acetic<lb/> acid. The quaternary salts were generally prepared by refluxing an<lb/> excess of the appropriate base with a polymethylene dihalide in an organic<lb/> solvent, for example, benzene, ethanol or ethyl methyl ketone. Where<lb/> the base contained a free primary amino group in addition to the nuclear<lb/> nitrogen, the former was generally protected by acylation ; the resulting<lb/> amide was then quaternised, and the product hydrolysed to give the<lb/></div>
+
+	<byline>
+	<affiliation>* Present address : Chemical Research Dept., Pfizers Ltd.,</affiliation>
+	</byline>
+
+	<address>Richborough, nr.<lb/>Sandwich.<lb/> </address>
+
+	<affiliation>t Present address : Research Dept., Boots Pure Drug Co. Ltd., </affiliation>
+
+	<address>Nottingham.<lb/> </address>
+
+	<note type="page">80</note>
+
+		</front>
+	</text>
+</tei>

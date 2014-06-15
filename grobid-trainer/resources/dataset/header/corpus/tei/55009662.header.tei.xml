@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009662"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Accelerator Aging Effects During Copper Electrodeposition<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>T. P. Moffat,*<lb/> ,z B. Baker,* D. Wheeler, and D. Josell<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>National Institute of Standards and Technology, Materials Science and Engineering Laboratory,<lb/></affiliation>
+	</byline>
+
+	<address>Gaithersburg, Maryland 20878, USA<lb/></address>
+
+	<div type="abstract">Slow sweep rate voltammetric analysis of the Cu/Cu͑II͒ deposition reaction is shown to be an effective tool for examining aging<lb/> effects associated with thiol and disulfide additives that are widely employed as brighteners. Sulfonate-terminated short chain<lb/> thiols are spontaneously oxidized by Cu͑II͒ to form disulfide molecules with the conversion being complete within a few hours of<lb/> electrolyte preparation. An additional aging effect occurs during electrolysis in conventional unseparated electrochemical cells. At<lb/> the anode, the disulfide is reduced by Cu͑I͒ forming thiolate complexes which subsequently affect the copper deposition reaction<lb/> occurring at the cathode. The latter effect may be avoided by using a cation selective membrane to isolate the anode compartment.<lb/></div>
+
+	<note type="copyright">© 2003 The Electrochemical Society.</note>
+
+	<idno type="DOI">͓DOI: 10.1149/1.1553936͔</idno>
+
+	<note type="copyright">All rights reserved.<lb/></note>
+
+	<note type="submission">Manuscript received October 4, 2002; revised manuscript received November 12, 2002. </note>
+	
+	<date>Available electronically January 27, 2003.<lb/></date>
+
+		</front>
+	</text>
+</tei>

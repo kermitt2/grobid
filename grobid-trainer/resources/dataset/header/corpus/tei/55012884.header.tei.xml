@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012884"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">1<lb/></note>
+
+	<docTitle>
+	<titlePart>RTV615<lb/>RTV615 High Strength Transparent Silicone Rubber Compound<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">Product Description RTV615 silicone rubber compound is clear liquid which cure at room<lb/> temperature to high strength silicone rubber with the addition of curing agents.<lb/> This two-component product is supplied with curing agent in matched kits which<lb/> are designed for use at a convenient 10:1 ratio by weight.<lb/> The compound is clear and colourless. It is a low viscosity, easily pourable liquid<lb/> with nominal viscosity ranging between 3000 and 7000 cps.<lb/> RTV615 silicone rubber compound has been used for protection of electronic<lb/> components and assemblies against shock, vibration, moisture, ozone, dust,<lb/> chemicals, and other environmental hazards by potting or encapsulation of the<lb/> components and assemblies.<lb/> The optical clarity of this silicone rubber compounds suggests evaluation for<lb/> applications such as potting solar cells for maximum light transmission and<lb/> electronic assemblies where component identification is necessary or desirable.<lb/> </div>
+
+	<div type="introduction">Key Performance<lb/> Properties<lb/> @BULLET Convenient 10:1 mixing ratio for use in automatic dispensing or hand<lb/> operations @BULLET Low viscosity allows easy flow in and around complex parts, providing<lb/> excellent electrical insulation and shock resistance<lb/> @BULLET Cure rate can be accelerated by heat<lb/> @BULLET Will cure in deep sections or enclosed assemblies without exotherm and<lb/> with low shrinkage<lb/> @BULLET Chemical composition contains no solvents for ease of use on<lb/> production lines<lb/> @BULLET Reversion resistance and hydrolytic stability permit use in high humidity<lb/> environments at elevated temperatures<lb/> @BULLET Clarity permits visual inspection for easy identification and repair of<lb/> encapsulated parts<lb/> @BULLET Retention of elastomeric properties at temperatures up to 204°C</div>
+
+		</front>
+	</text>
+</tei>

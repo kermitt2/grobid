@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009785"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Comparing Natural Language Identification<lb/> Methods based on Markov Processes<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Peter Vojtek and Mária Bieliková<lb/></docAuthor>
+	</byline>
+
+	<email>{pvojtek, bielik}@fiit.stuba.sk<lb/></email>
+
+	<byline>
+	<affiliation>Institute of Informatics and Software Engineering<lb/> Faculty of Informatics and Information Technologies<lb/> Slovak University of Technology<lb/></affiliation>
+	</byline>
+
+	<div type="abstract">Abstract. We discover and experiment with categorization-based meth-<lb/>ods to natural language identification. Two approaches to language iden-<lb/>tification based on Markov processes are compared, both methods treat<lb/> the incoming text on the character level. We performed series of experi-<lb/>ments with the aim to make certain of high precision in language identi-<lb/>fication task of selected methods and also with the objective to compare<lb/> them against themselves. Experimental evaluation was based on large-<lb/>scaled Multilingual Reuters Corpus with various European and Slavic<lb/> languages. Our research results showed that both methods are compara-<lb/>ble in the task of natural language identification achieving recall as high<lb/> as 99,75%.<lb/></div>
+
+		</front>
+	</text>
+</tei>

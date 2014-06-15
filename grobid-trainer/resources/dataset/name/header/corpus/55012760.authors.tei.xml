@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>A</forename>.
+								<middlename>A</middlename>.
+								<surname>Bakibaev</surname>,
+								<marker>2</marker>
+							</persName>
+							<persName>
+								<forename>V</forename>.
+								<middlename>K</middlename>.
+								<surname>Gorshkova</surname>,
+								<marker>2</marker>
+							</persName>
+							<persName>
+								<forename>V</forename>.
+								<middlename>D</middlename>.
+								<surname>Filimonov</surname>,
+								<marker>2</marker>
+							</persName>
+							<persName>
+								<forename>A</forename>.
+								<middlename>S</middlename>.
+								<surname>Saratikov</surname>,
+								<marker>~</marker> and
+							</persName>
+							<persName>
+								<forename>V</forename>.
+								<middlename>A</middlename>.
+								<surname>Krasnov</surname>
+								<marker>3</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

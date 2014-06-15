@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008682"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	
+	<byline>
+	<affiliation>TCG<lb/> </affiliation>
+	</byline>
+	
+	<docTitle>
+	<titlePart>TCG Infrastructure Working Group<lb/> Reference Architecture for<lb/> Interoperability (Part I)<lb/> </titlePart>
+	</docTitle>
+	
+	<note type="other">Specification Version 1.0<lb/> Revision 1<lb/></note>
+	
+	<date>16 June 2005<lb/></date>
+
+	<note type="other">Published<lb/> Contacts: </note>
+	
+	<email>techquestions@trustedcomputinggroup.org<lb/></email>
+	
+	<note type="copyright">TCG PUBLISHED<lb/> Copyright © TCG 2004-2005</note>
+
+		</front>
+	</text>
+</tei>

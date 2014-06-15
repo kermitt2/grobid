@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55114021"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Prediction of Mortality in an Intensive Care Unit using Logistic Regression and a<lb/> Hidden Markov Model<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Srinivasan Vairavan<lb/> 1 , Larry Eshelman<lb/> 1 , Syed Haider<lb/> 1 , Abigail Flower<lb/> 1 , Adam Seiver<lb/> 2<lb/>
+	</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Philips Research North America (PRNA),</affiliation>
+	</byline>
+
+	<address>Briarcliff Manor, NY, USA<lb/></address>
+
+	<byline>
+	<affiliation>2 Therapeutic Care, Philips Healthcare,</affiliation>
+	</byline>
+
+	<address>Carlsbad, CA, USA<lb/></address>
+
+	<div type="abstract">Abstract<lb/> Intensive care medicine is a large share of the health<lb/> care budget, and in the last decade there has been an<lb/> increasing focus on making intensive care medicine more<lb/> cost-effective by the efficient use of resources while still<lb/> providing the best outcome for critically-ill patients. One<lb/> important set of tools to perform this are critical illness<lb/> severity assessment scores such as Simplified Acute<lb/> Physiology score (SAPS-I) which help clinicians<lb/> prioritize resources and determine the appropriate<lb/> diagnostic/therapeutic plan for each patient. These scores<lb/> are also used for assessing how medications, care<lb/> guidelines, surgery, and other interventions impact<lb/> mortality in Intensive Care Unit (ICU) patients. In an<lb/> attempt to develop an improved patient-specific<lb/> prediction of in-hospital mortality, we propose an<lb/> algorithm based on logistic regression and Hidden-<lb/>Markov model using vital signs (vitals), laboratory values<lb/> (labs) and fluid measurements that are commonly<lb/> available in ICUs. The algorithm was trained on 4000<lb/> ICU patient records and was validated on two sets of<lb/> unseen test data of 4000 ICU patients each. These<lb/> datasets were obtained as a part of PhysionNet/CinC<lb/> Challenge 2012 (prediction of the mortality in ICU). Two<lb/> different metrics, namely, (Event1) the minimum of<lb/> sensitivity and positive predictive value and (Event2) a<lb/> goodness of fit measure (range-normalized Hosmer-<lb/>Lemeshow (H) statistic) was used to assess the<lb/> algorithm&apos;s performance. The proposed algorithm<lb/> achieved an Event 1 score of 0.50, 0.50 and an Event 2<lb/> score of 15.18, 78.9 compared to SAPS-I (Event 1:<lb/> 0.3170, 0.312 and Event 2: 66.03, 68.58) in the two<lb/> different validation dataset respectively. Furthermore,<lb/> since the proposed algorithm uses instantaneous values of<lb/> vitals and labs, it could be used as a continuous, real-<lb/>time patient specific indicator of mortality risk.<lb/></div>
+
+		</front>
+	</text>
+</tei>

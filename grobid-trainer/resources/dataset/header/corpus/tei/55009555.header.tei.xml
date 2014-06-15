@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009555"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Synthese und Charakterisierung spiroverknüpfter<lb/> Emitter-und Ladungstransportmaterialien mit<lb/> kombinierten Funktionalitäten<lb/></titlePart>
+	</docTitle>
+
+	<degree>Dissertation<lb/> zur Erlangung des akademischen Grades des<lb/> Doktors der Naturwissenschaften (Dr. rer. nat.)<lb/> im Fachbereich 18 der Universität Kassel<lb/></degree>
+
+	<note type="other">vorgelegt von<lb/></note>
+
+	<byline>
+	<docAuthor>Robert Pudzich<lb/></docAuthor>
+	</byline>
+
+	<address>aus Bottrop -Kirchhellen<lb/> Kassel<lb/></address>
+
+	<date>2002</date>
+
+		</front>
+	</text>
+</tei>

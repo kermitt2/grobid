@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55114547"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>SpeeT: A Multimodal Interaction Style Combining Speech<lb/> and Touch Interaction in Automotive Environments<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Bastian Pfleging<lb/> *<lb/> , Michael Kienast<lb/> #<lb/> , Albrecht Schmidt<lb/> *<lb/> </docAuthor>
+	</byline>
+
+	<affiliation>VIS,</affiliation>
+
+	<byline>
+	<affiliation>University of Stuttgart<lb/></affiliation>
+	</byline>
+
+	<address>Pfaffenwaldring 5a<lb/> 70569 Stuttgart, Germany<lb/></address>
+
+	<phone>+49-711-685-60069 / -60048<lb/> </phone>
+
+	<email>*{firstname.lastname}@vis.uni-stuttgart.de<lb/> #<lb/>{firstname.lastname}@studi.informatik.uni-stuttgart.de<lb/></email>
+
+	<byline>
+	<docAuthor>Tanja Döring<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Paluno, University of Duisburg-Essen<lb/></affiliation>
+	</byline>
+
+	<address>Schützenbahn 70<lb/> 45127 Essen, Germany<lb/></address>
+
+	<phone>+49-201-183-2955<lb/> </phone>
+
+	<email>tanja.doering@uni-due.de<lb/></email>
+
+	<div type="abstract">ABSTRACT<lb/> SpeeT is an interactive system implementing an approach for<lb/> combining touch gestures with speech in automotive environ-<lb/>ments, exploiting the specific advantages of each modality. The<lb/> main component of the implemented prototype is a speech-<lb/>enabled, multi-touch steering wheel. A microphone recognizes<lb/> speech commands while a wheel-integrated tablet allows touch<lb/> gestures to be recognized. Using this steering wheel, the driver<lb/> can control objects of the simulated car environment (e.g., win-<lb/>dows, cruise control). The idea is to use the benefits of both inter-<lb/>action styles and to overcome the problems of each single interac-<lb/>tion style. While touch input is well suited for controlling func-<lb/>tions, speech is powerful to select specific objects from a large<lb/> pool of items. The combination simplifies the problem of remem-<lb/>bering possible speech commands by two means: (1) speech is<lb/> used to specify objects or functionalities and (2) in smart envi-<lb/>ronments -particularly in cars -interaction objects are visible to<lb/> the user and do not need to be remembered. Our approach is<lb/> specifically designed to support important rules in UI design,<lb/> namely: provide feedback, support easy reversal of action, reduce<lb/> memory load, and make opportunities for action visible.<lb/></div>
+
+	<keyword>Categories and Subject Descriptors<lb/> H5.2 [Information interfaces and presentation (e.g., HCI)]: User<lb/> Interfaces – Interaction Styles (e.g., commands, menus, forms,<lb/> direct manipulation).<lb/> General Terms<lb/> Human Factors.<lb/> Keywords<lb/> Gesture, speech, multimodal interaction, automotive user interfac-<lb/>es, smart environments.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

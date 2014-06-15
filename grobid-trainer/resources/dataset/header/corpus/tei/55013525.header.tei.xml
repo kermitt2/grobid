@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013525"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Research Paper </note>
+
+	<note type="page">379<lb/></note>
+
+	<docTitle>
+	<titlePart>Exciton coupled circular dichroic studies of self-assembled<lb/> brevetoxin-porphyrin<lb/> conjugates in lipid bilayers and polar solvents<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Stefan Matile, Nina Berova and Koji Nakanishi<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Background:<lb/> Brevetoxins, involved in the &apos;red tide&apos; as well as shellfish<lb/> poisoning, are known to bind to cell membranes and membrane proteins.<lb/> Brevetoxin B (BTX-B) interacts specifically with neuronal sodium channels. We<lb/> recently found that BTX also induces selective ion movements across lipid<lb/> bilayers through transmembrane<lb/> BTX self-assemblies.<lb/> Results: We examined the self-assembly of several BTX derivatives in the<lb/> presence and absence of cations and lipid bilayers using the powerful porphyrin<lb/> chromophores as circular dichroism labels. BTX derivatives self-assemble into<lb/> tubes, which can bind to metals both when soluble and when inserted into the<lb/> bilayer to form transmembrane<lb/> pores. Depending on the tendency of the BTX<lb/> derivative to self-aggregate<lb/> (the critical &apos;micelle&apos; concentration,<lb/> cmc), it may<lb/> aggregate in solution before membrane insertion, or may insert itself into the<lb/> membrane as a monomer before assembling the pore.<lb/> Conclusions:<lb/> The active BTX-B complex in lipid bilayers is a cyclic,<lb/> transmembrane self-assembly consisting of antiparallel aligned BTX molecules<lb/> that can mediate selective ion movement through membranes. The differences in<lb/> pore formation mechanisms between BTX derivatives may be reflected in<lb/> differences in pore formation by natural BTX variants, perhaps explaining their<lb/> varying levels of toxicity.<lb/> Address:</div>
+
+	<byline>
+	<affiliation>Department of Chemistry, Columbia<lb/> University,</affiliation>
+	</byline>
+
+	<address>New York, NY 10027, USA.<lb/></address>
+
+	<note type="other">Correspondence: Koji Nakanishi<lb/></note>
+
+	<email>e-mail: kn5@columbia,edu<lb/></email>
+
+	<keyword>Key words: brevetoxins, ionophores, pore<lb/> formation mechanisms, porphyrin reported exciton<lb/> coupled circular dichroic (CD) method, self-<lb/>assembly<lb/></keyword>
+
+	<note type="submission">Received: 18 Mar 1996<lb/> Revisions requested: 5 Apr 1996<lb/> Revisions received: 15 Apr 1996<lb/> Accepted: 2 May 1996<lb/></note>
+
+	<reference>Chemistry &amp; Biology May 1996,3:379-392<lb/> </reference>
+
+	<note type="copyright">&#169; Current Biology Ltd </note>
+
+	<idno>ISSN 1074-5521<lb/></idno>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001159"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">TO DOWNLOAD A COPY OF THIS POSTER, VISIT WWW.WATERS.COM/POSTERS<lb/> </note>
+	
+	<note type="copyright">©2010 Waters Corporation<lb/></note>
+
+	<docTitle>
+	<titlePart>THE ANALYSIS OF 25-HYDROXYVITAMIN D<lb/> IN SERUM USING AUTOMATED<lb/> SOLID-PHASE EXTRACTION AND LC/MS/MS<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Scott Freeto, Crystal Holt, Donald Cooper, Lisa Calton and Billy Molloy<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Waters Corporation<lb/></affiliation>
+	</byline>
+
+	
+	<div type="introduction">INTRODUCTION</div>
+	
+
+		</front>
+	</text>
+</tei>

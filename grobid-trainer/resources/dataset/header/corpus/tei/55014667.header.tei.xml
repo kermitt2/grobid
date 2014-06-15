@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014667"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Live-System<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">aus Wikipedia, der freien Enzyklopädie<lb/> Dies ist eine alte Version dieser Seite, zuletzt bearbeitet am 19. November 2010 um 03:13 Uhr durch AlterWolf49 (Diskussion | Beiträge). Sie kann sich erheblich von der aktuellen Version<lb/> unterscheiden.<lb/> (Unterschied) ← Nächstältere Version | Aktuelle Version (Unterschied) | Nächstjüngere Version → (Unterschied)<lb/>
+	</note>
+
+	<div type="abstract">Der Begriff Direktstartsystem oder Live-System bezeichnet ein Betriebssystem, das ohne Installation und Beeinflussung des Inhalts einer im System vorhandenen Festplatte gestartet werden kann.<lb/> Das gesamte Betriebssystem wird dazu auf einen bootfähigen Speicher wie USB-Stick, sonstige Flash-Speicher, Diskette, CD-ROM oder DVD installiert. Das ermöglicht auch das Booten eines<lb/> Computers ohne Festplatte, ohne installiertes Betriebssystem, mit beschädigter Festplatte oder mit beschädigtem Betriebssystem.<lb/> Vom entsprechenden Speichermedium wird gebootet, die Einstellungen dafür werden im BIOS vorgenommen. Nach dem Starten steht eine fertig eingerichtete Betriebssystem-Umgebung mit<lb/> verschiedenen Anwendungsprogrammen bereit. Nach Entfernung des Mediums und einem Neustart des PCs ist dieser wieder im Ursprungszustand, da das ursprüngliche Betriebssystem auf der<lb/> Festplatte vom Live-System nicht angerührt wird. Alle Daten des Live-Systems sind wieder verschwunden, da diese nur in das RAM geschrieben wurden. Aufgrund dieses Konzeptes werden bei<lb/> Benutzung eines Live-Systems keinerlei Benutzeraktivitäten oder Änderungen gespeichert. Auf Wunsch können Konfigurationsdaten gesichert werden, meist auf Festplatte, USB-Stick oder Diskette,<lb/> um diese später wieder nutzen zu können.</div>
+
+		</front>
+	</text>
+</tei>

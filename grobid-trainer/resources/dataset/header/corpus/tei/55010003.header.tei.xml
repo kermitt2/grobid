@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010003"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Chondrogenic Differentiation of Human Embryonic<lb/> Stem Cell–Derived Cells in Arginine-Glycine-Aspartate–<lb/> Modified Hydrogels<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>NATHANIEL S. HWANG, B.S., SHYNI VARGHESE, Ph.D., ZIJUN ZHANG, M.D.,<lb/> and JENNIFER ELISSEEFF, Ph.D.<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">ABSTRACT<lb/> Human embryonic stem cells (hESCs) have the potential to self-renew and generate multiple cell types,<lb/> producing critical building blocks for tissue engineering and regenerative medicine applications. Here,<lb/> we describe the efficient derivation and chondrogenic differentiation of mesenchymal-like cells<lb/> from hESCs. These cells exhibit mesenchymal stem cell (MSC) surface markers, including CD29,<lb/> CD44, CD105, and platelet-derived growth factor receptor-a. Under appropriate growth conditions, the<lb/> hESC-derived cells proliferated without phenotypic changes and maintained MSC surface markers.<lb/> The chondrogenic capacity of the cells was studied in pellet culture and after encapsulation in<lb/> poly(ethylene glycol)-diacrylate (PEGDA) hydrogels with exogenous extracellular proteins or arginine-<lb/>glycine-aspartate (RGD)-modified PEGDA hydrogels. The hESC-derived cells exhibited growth factor–<lb/> dependent matrix production in pellet culture but did not produce tissue characteristic of cartilage<lb/> morphology. In PEGDA hydrogels containing exogenous hyaluronic acid or type I collagen, no significant<lb/> cell growth or matrix production was observed. In contrast, when these cells were encapsulated in RGD-<lb/>modified poly(ethylene glycol)hydrogels, neocartilage with basophilic extracellular matrix deposition was<lb/> observed within 3 weeks of culture, producing cartilage-specific gene up-regulation and extracellular<lb/> matrix production. Our results indicate that precursor cells characteristic of a MSC population can be<lb/> cultured from differentiating hESCs through embryoid bodies, thus holding great promise for a po-<lb/>tentially unlimited source of cells for cartilage tissue engineering.<lb/></div>
+
+		</front>
+	</text>
+</tei>

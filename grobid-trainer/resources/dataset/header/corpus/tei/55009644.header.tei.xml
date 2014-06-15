@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009644"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Analysis of Concatenation and Packing Mechanisms<lb/> in IEEE 802.11n<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Dionysios Skordoulis, Qiang Ni, Usman Ali &amp; Marios Hadjinicolaou<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Electrical and Computer Engineering,<lb/> School of Engineering and Design,<lb/> Brunel University,
+	</affiliation>
+	</byline>
+
+	<address>London, UK<lb/></address>
+
+	<email>Email: {Dionysios.Skordoulis, Qiang.Ni, Usman.Ali &amp; Marios.Hadjinicolaou}@brunel.ac.uk<lb/></email>
+
+	<div type="abstract">Abstract—The IEEE 802.11 wireless LAN current standardiza-<lb/>tion struggles to comprehend with emerging bandwidth-thirsty<lb/> applications and services. For that reason, a pristine Task Group<lb/> was initiated, known as TGn, in order to form a new amendment<lb/> that will offer higher efficiency and throughputs of more than<lb/> 100 Mbps, as measured at the MAC data service access point. To<lb/> achieve this goal, key PHY and MAC enhancements have been<lb/> proposed within the latest standard draft. This paper investigates<lb/> the throughput limits that existing techniques comprise, mainly<lb/> because of PHY/MAC overhead and it describes TGn&apos;s proposed<lb/> frame aggregation enhancements. Our simulation results con-<lb/>firms that the A-MSDU, A-MPDU and a combination of these<lb/> two can improve extensively the channel efficiency and the data<lb/> throughput and finally concludes with a comparison analysis<lb/> between these innovative frame aggregation mechanisms.<lb/></div>
+
+		</front>
+	</text>
+</tei>

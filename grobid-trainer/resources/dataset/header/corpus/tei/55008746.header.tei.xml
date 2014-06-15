@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008746"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>TALKER IDENTIFICATION<lb/> USING NARROW-BAND SPEECH ENVELOPE CORRELATIONS<lb/></titlePart>
+	</docTitle>
+
+	<keyword>PACS REFERENCE: 43.72.Fx, 43.70.Gr, 43.72.Pf<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

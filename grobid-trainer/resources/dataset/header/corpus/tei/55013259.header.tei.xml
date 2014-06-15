@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013259"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Ultrasonic Signal De-noising Using Dual Filtering Algorithm<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Václav MATZ, Marcel KREIDL, Radislav ŠMID and Stanislav ŠTARMAN<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Czech Technical University, Faculty of Electrical Engineering<lb/> Department of Measurement,</affiliation>
+	</byline>
+
+	<address>Technicka 2, Prague 6, 166 27<lb/></address>
+
+	<phone>Tel: +420 224 352 117, Fax: +420 233 339 392<lb/> </phone>
+
+	<email>E-mail: vmatz@seznam.cz </email>
+
+	<ptr>Www: measure.feld.cvut.cz<lb/> </ptr>
+
+	<address>Czech Republic<lb/> </address>
+
+	<div type="abstract">Abstract<lb/> This paper describes the proposal of dual filtering algorithm used for ultrasonic A-scan<lb/> signal de-noising. In ultrasonic non-destructive testing the signals characterizing the material<lb/> structure are evaluated. The sensitivity and resolution of typical ultrasonic systems is commonly<lb/> limited by backscattering and electronic noise level commonly contained in acquired ultrasonic<lb/> signals. In ultrasonic non-destructive testing area it is really difficult to detect flaw in materials<lb/> with coarse-grain structure. In this paper, the main goal was to efficiently suppress the<lb/> undesirable noise level and successfully detect the fault echo that is hidden under the noise level.<lb/> The dual filtering algorithm, presented in this paper, is based on application of efficient de-<lb/>noising algorithms as Wiener filter and discrete wavelet transform. The Wiener filter based<lb/> group delay statistics is presented and the best parameters are searched. The discrete wavelet<lb/> transform algorithm with different mother wavelets, threshold levels and threshold rules is also<lb/> presented. Both algorithms are evaluated using two parameters, signal-to-noise ratio and fault<lb/> echo corruption. The proposed dual filtering algorithm is performed on both simulated and real<lb/> ultrasonic signals acquired on grainy material used for constructing airplane engines.<lb/></div>
+
+	<keyword>Keywords: Ultrasonic testing, De-noising algorithms, Noise reduction.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

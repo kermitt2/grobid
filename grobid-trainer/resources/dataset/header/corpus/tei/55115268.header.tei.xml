@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55115268"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Deep Hypertext with Embedded Revision Control<lb/> Implemented in Regular Expressions<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Victor Grishchenko<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Delft University of Technology, Ural State University<lb/></affiliation>
+	</byline>
+ 
+	<email>victor.grishchenko@gmail.com<lb/></email>
+
+	<div type="abstract">ABSTRACT<lb/> While text versioning was definitely a part of the origi-<lb/>nal hypertext concept [21, 36, 44], it is rarely considered<lb/> in this context today. Still, we know that revision control<lb/> underlies the most exciting social co-authoring projects of<lb/> the today&apos;s Internet, namely the Wikipedia and the Linux<lb/> kernel. With an intention to adapt the advanced revision<lb/> control technologies and practices to the conditions of the<lb/> Web, the paper reconsiders some obsolete assumptions and<lb/> develops a new versioned text format perfectly processable<lb/> with standard regular expressions (PCRE [6]). The result-<lb/>ing deep hypertext model allows distributed and real-time<lb/> revision control on the Web, provides the user with instant<lb/> access to past/concurrent versions, authorship, changes; en-<lb/>ables deep links to reference changing fragments within a<lb/> changing text. It implements the vision of co-evolution and<lb/> mutation exchange among multiple competing versions of<lb/> the same text.<lb/></div>
+
+	<keyword>Categories and Subject Descriptors</keyword>
+
+		</front>
+	</text>
+</tei>

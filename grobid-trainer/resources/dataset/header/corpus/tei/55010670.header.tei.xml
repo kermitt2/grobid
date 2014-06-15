@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010670"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>IEEE TRANSACTIONS ON BIOMEDICAL ENGINEERING, VOL. BME-33, NO. 2, FEBRUARY 1986<lb/></reference>
+
+	<docTitle>
+	<titlePart>A Pd-PdO Film Potentiometnc pH Sensor<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>VASILIOS A. KARAGOUNIS, CHUNG CHIUN LIU, MICHAEL R. NEUMAN, MEMBER, IEEE,<lb/> LUBOMYR T. ROMANKIW, MEMBER, IEEE, P. A. LEARY, AND J. J. CUOMO<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Abstnrct-Palladium-palladium oxide film formed by the RF reactive<lb/> sputtering technique was used for pH measurement. The potentiomet-<lb/>ric mode of operation was employed and an Ag/AgCl electrode was used<lb/> as the reference electrode. The Pd-PdO film was formed on both alu-<lb/>mina and polycrystalline silicon, and sputtering conditions to produce<lb/> Pd-PdO film with good pH response characteristics were empirically<lb/> defined. The Pd-PdO showed good pH response, -54 mV/[pH] at 25°C<lb/> over the pH range of 3-9. The temperature dependency and dissolved<lb/> oxygen effect on the film when used as a pH sensor were investigated<lb/> and discussed.<lb/></div>
+
+		</front>
+	</text>
+</tei>

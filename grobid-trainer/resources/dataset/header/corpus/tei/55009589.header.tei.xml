@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009589"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">ESPAÑOL<lb/> Web mail | contact us | Localization | Site Map<lb/> SEARCH<lb/></note>
+
+	<docTitle>
+	<titlePart>Research for a sustainable energy development<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">About<lb/> Partners<lb/> People<lb/> Research Units<lb/> Communication<lb/> News<lb/> Events<lb/> Links<lb/> Public Hiring<lb/> Work at IMDEA Energy<lb/> energy<lb/></note>
+
+	<date>4/4/2011<lb/></date>
+
+	<div type="abstract">Solar thermochemical processes for the production of synthetic hydrocarbon fuels<lb/> make use of concentrated solar radiation as the energy source of high-temperature<lb/> process heat. Considered are H2O/CO2-splitting thermochemical cycles via metal<lb/> oxide redox reactions and gasification processes for the thermal conversion of<lb/> biomass and other carbonaceous feedstock. R&amp;D work encompasses fundamental<lb/> studies on thermodynamics, reaction kinetics, heat/mass transfer, and chemical<lb/> reactor engineering. Solar reactor prototypes – at the 10 kW power level – are<lb/> designed, fabricated, modeled, and tested in a high-flux solar furnace, further<lb/> optimized for maximum solar-to-fuel energy conversion efficiency, and finally<lb/> scaled-up for industrial applications – at the MW power level – using concentrating<lb/> solar tower technology.<lb/></div>
+
+		</front>
+	</text>
+</tei>

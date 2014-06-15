@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010471"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>SPE 112240<lb/></idno>
+
+	<docTitle>
+	<titlePart>From Intelligent Injectors to Smart Flood Management: Realizing the Value<lb/> of Intelligent Completion Technology in the Moderate Production Rate<lb/> Industry Segment<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Warren F. MacPhail,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>SPE, Devon Canada Corporation</affiliation>
+	</byline>
+
+	<byline>
+	<docAuthor>and Michael Konopczynski,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>SPE, WellDynamics Inc.<lb/></affiliation>
+	</byline>
+
+	<note type="copyright">Copyright 2008, Society of Petroleum Engineers<lb/></note>
+
+	<note type="other">This paper was prepared for presentation at the 2008 SPE Intelligent Energy Conference and Exhibition held in Amsterdam, The Netherlands, 25–27 February 2008.<lb/> This paper was selected for presentation by an SPE program committee following review of information contained in an abstract submitted by the author(s). Contents of the paper have not been<lb/> reviewed by the Society of Petroleum Engineers and are subject to correction by the author(s). The material does not necessarily reflect any position of the Society of Petroleum Engineers, its<lb/> officers, or members. Electronic reproduction, distribution, or storage of any part of this paper without the written consent of the Society of Petroleum Engineers is prohibited. Permission to<lb/> reproduce in print is restricted to an abstract of not more than 300 words; illustrations may not be copied. The abstract must contain conspicuous acknowledgment of SPE copyright.<lb/></note>
+
+	<div type="abstract">Abstract This paper is a case history which examines the successful application of Intelligent Completion (IC) technology in a cost<lb/> sensitive, mature, onshore North American environment where an existing hydrocarbon miscible flood (HCMF) horizontal<lb/> injection well was retrofitted to manage the injection support of two geologically distinct reservoir regions covering two well<lb/> patterns. The value of IC technology is explored in this early deployment which saw a relatively low cost application<lb/> targeted towards a mature asset. The beneficial results of this application of IC technology were measured in terms of well<lb/> intervention cost savings and affected oil production. This paper presents a relative comparison of those benefits. Though<lb/> this application of IC technology was originally justified by the avoidance of certain future well interventions to modify the<lb/> injection profile, an analysis of the affected pattern production in the post-installation period showed that the benefit to the<lb/> operator was appreciably more from enhanced reservoir management than from the cost savings which were associated with<lb/> workover avoidance.<lb/> Based on the success described in this case history, and reflecting upon the trends of intelligent well and smart field<lb/> technology, the authors explore reasons for its relatively slow uptake in moderate production rate, brownfield applications.<lb/> Large scale reservoir management of miscible flood projects using intelligent well and smart field technologies should<lb/> provide significant value in terms of improved solvent/oil ratio through more efficient monitoring and management of the<lb/> flood. This is probably the most compelling value proposition for IC technology application in moderate production rate land<lb/> applications. This case history is intended to provide credible evidence of the benefit of IC technology in an application with<lb/> cost challenges analogous to those faced by operators who are responsible for cost sensitive, moderate production assets.<lb/> Secondly, it is intended to encourage the IC technology providers to develop more solutions for the brownfield segment of<lb/> the industry, where profitability and value definition can be challenging.<lb/></div>
+
+		</front>
+	</text>
+</tei>

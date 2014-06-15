@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011933"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Toward an on demand<lb/> service-oriented architecture<lb/> &amp;<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>C. H. Crawford<lb/> G. P. Bate<lb/> L. Cherbakov<lb/> K. Holley<lb/> C. Tsocanos<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">The success of an on demand e-business requires that business process, application,<lb/> and information technology (IT) infrastructure integration merge into a comprehensive<lb/> and cohesive architecture, where business process transformation drives service-<lb/>oriented development and on demand enterprise computing. This enabling<lb/> architecture is often described as a service-oriented architecture (SOA) and is a<lb/> prerequisite accelerator for on demand solutions. The primary focus of SOA has been<lb/> on dynamic reconfiguration of services from defined business processes, and on<lb/> developing business services based on Web services and, more recently, grid services.<lb/> Current descriptions of SOA are less focused on overall IT infrastructure enablement,<lb/> both from a business policy perspective and within the context of service-oriented<lb/> development. In this paper, we extend the current thinking on SOA to include a more<lb/> comprehensive integration of business process transformation and the enabling<lb/> technologies of service-oriented development and policy-based IT management. We<lb/> call this extension on demand SOA. We develop these concepts by using an existing<lb/> scenario: a financial services sector &apos;&apos;Life Change&apos;&apos; business process scenario, which<lb/> involves distributed and disjoint transactions as well as stateless high-performance<lb/> computing (HPC) applications.<lb/> Over the last 40 years, information technology (IT)<lb/> architectures and development approaches have<lb/> dealt with increasing levels of IT complexity and<lb/> integration challenges. Constrained budgets contin-<lb/>ue to mandate that legacy systems be reused rather<lb/> than replaced. Growth by merger and acquisition<lb/> requires that entire IT organizations be integrated<lb/> and absorbed. Additionally, easy access to the Web<lb/> has created the possibility for new business models,<lb/> which must be evaluated for their potential.<lb/> At the same time, the traditional needs of IT<lb/> organizations persist—primarily focused on quick
+	</div>
+
+		</front>
+	</text>
+</tei>

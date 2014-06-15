@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Jeffrey</forename>
+								<surname>Dean</surname>,
+							</persName>
+							<persName>
+								<forename>Greg</forename>
+								<middlename>S</middlename>.
+								<surname>Corrado</surname>,
+							</persName>
+							<persName>
+								<forename>Rajat</forename>
+								<surname>Monga</surname>,
+							</persName>
+							<persName>
+								<forename>Kai</forename>
+								<surname>Chen</surname>,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Matthieu</forename>
+								<surname>Devin</surname> ,
+							</persName>
+							<persName>
+								<forename>Quoc</forename>
+								<middlename>V</middlename> .
+								<surname>Le</surname> ,
+							</persName>
+							<persName>
+								<forename>Mark</forename>
+								<middlename>Z</middlename> .
+								<surname>Mao</surname> ,
+							</persName>
+							<persName>
+								<forename>Marc</forename> &apos;
+								<middlename>Aurelio</middlename>
+								<surname>Ranzato</surname> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Andrew</forename>
+								<surname>Senior</surname>,
+							</persName>
+							<persName>
+								<forename>Paul</forename>
+								<surname>Tucker</surname> ,
+							</persName>
+							<persName>
+								<forename>Ke</forename>
+								<surname>Yang</surname> ,
+							</persName>
+							<persName>
+								<forename>Andrew</forename>
+								<middlename>Y</middlename> .
+								<surname>Ng</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

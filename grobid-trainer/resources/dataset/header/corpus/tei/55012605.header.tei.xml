@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012605"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<date>March 2008<lb/></date>
+
+	<docTitle>
+	<titlePart>DCT8x8<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Authors Anton Obukhov<lb/></docAuthor>
+	</byline>
+
+	<email>anton.obukhov@gmail.com<lb/></email>
+
+	<byline>
+	<docAuthor>Alexander Kharlamov<lb/></docAuthor>
+	</byline>
+
+	<email>akharlamov@nvidia.com</email>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001948"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Home &gt; Equipment &gt; Canon &gt; Canon i900D Photo Printer Review<lb/></note>
+	
+	<docTitle>
+	<titlePart>Canon i900D Photo Printer Review<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>by Bob Atkins<lb/></docAuthor>
+	</byline>
+
+		</front>
+	</text>
+</tei>

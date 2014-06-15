@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010285"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<div type="abstract">The ultra robust and high resolution<lb/> Kaleido-K2 multi-image display processor<lb/> redefines signal monitoring by incorporating<lb/> all conceivable monitor wall features in one or<lb/> more computer, projection or plasma displays.<lb/> </div>
+
+	<div type="introduction">Dual Head output option<lb/> The Kaleido-K2 can be configured to share its 32 inputs over<lb/> two displays using the new Dual Head Output option . Each<lb/> source can be displayed using either screen (tiled<lb/> horizontally), to add a greater level of flexibility when two<lb/> displays are used side by side. In case of a failure of one<lb/> display, the Kaleido-K2 system allows a new layout to be<lb/> instantly recalled with all the sources displayed using the<lb/> remaining functional display.
+	<lb/></div>
+
+	<note type="page">4<lb/></note>
+
+	<docTitle>
+	<titlePart>Kaleido-K2: Advanced, modular multi-image display processor<lb/></titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

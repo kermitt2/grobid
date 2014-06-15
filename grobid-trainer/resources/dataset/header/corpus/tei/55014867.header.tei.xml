@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014867"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">180<lb/></note>
+
+	<div type="abstract">Traditional barriers to large-scale mammalian culture have now<lb/> been addressed, with the standard stirred-tank reactor<lb/> emerging as industry&apos;s technology of choice. The issues of<lb/> adapting cells to suspension culture, shear sensitivity and<lb/> oxygen supply have been largely resolved. But for many low-<lb/>volume and speciality applications, such as the production of<lb/> viral vaccines and gene therapies, reactor technology remains<lb/> diversified, with reactor types ranging from roller bottles to<lb/> stacked plates and hollow fibers.<lb/></div>
+
+	<byline>
+	<affiliation>Addresses Bioprocess R&amp;D, Merck Research Laboratories, Merck &amp; Co, Inc,<lb/></affiliation>
+	</byline>
+
+	<address>PO Box 2000, Rahway, NJ 07065, USA<lb/></address>
+
+	<email>*e-mail: lily_chu@merck.com<lb/></email>
+
+	<reference>Current Opinion in Biotechnology 2001, 12:180–187<lb/></reference>
+
+	<note>0958-1669/01/$ </note>
+
+	<note type="other">— see front matter<lb/></note>
+
+	<note type="copyright">© 2001 Elsevier Science Ltd. All rights reserved.<lb/></note>
+
+		</front>
+	</text>
+</tei>

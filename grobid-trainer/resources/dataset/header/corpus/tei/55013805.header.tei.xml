@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013805"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Document Number: MC33888<lb/> Rev. 6.0, </note>
+
+	<date>2/2007<lb/></date>
+
+	<byline>
+	<affiliation>Freescale Semiconductor<lb/> </affiliation>
+	</byline>
+	
+	<note type="other">Advance Information<lb/></note>
+
+	<note>* This document contains certain information on a new product.<lb/> Specifications and information herein are subject to change without notice.<lb/></note>
+
+	<note type="copyright">© Freescale Semiconductor, Inc., 2007. All rights reserved.<lb/></note>
+
+	<docTitle>
+	<titlePart>Quad High-Side and Octal<lb/> Low-Side Switch for Automotive<lb/></titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

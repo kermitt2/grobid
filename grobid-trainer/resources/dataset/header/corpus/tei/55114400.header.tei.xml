@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55114400"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">2702<lb/> </note>
+
+	<note>482.</note> 
+	
+	<byline>
+	<docAuthor>R. F. W e i n l a n d und H. Lewkowitz: </docAuthor>
+	</byline>
+
+	<docTitle>
+	<titlePart>Ueber Beilzol-<lb/>sulfoperoxyd, C s H s . S O a . 0 . 0 . SOx.CaH5.<lb/>
+	</titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

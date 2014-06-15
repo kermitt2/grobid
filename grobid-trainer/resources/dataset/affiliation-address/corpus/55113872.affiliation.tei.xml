@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="institution">Technische Universität Chemnitz</orgName>
+							<marker>1</marker>
+							<orgName type="department">Professur für Mess-und Sensortechnik Reichenhainer Straße</orgName>
+							<address>
+								<postCode>70 09126</postCode>
+								<settlement>Chemnitz</settlement>
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="department">Seuffer GmbH &amp; Co. KG</orgName>
+							<marker>2</marker>
+							<address>
+								<addrLine>Bärental 26</addrLine>
+								<postCode>75365</postCode>
+								<settlement>Calw</settlement>
+								<postCode>+49 7051 6001 186</postCode>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

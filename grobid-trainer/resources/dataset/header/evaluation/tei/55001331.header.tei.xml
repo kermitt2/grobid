@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001331"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Organising pneumonia mimicking invasive fungal disease in<lb/> patients with leukaemia<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Fabio Forghieri<lb/> 1<lb/> , Leonardo Potenza<lb/> 1 , Monica Morselli<lb/> 1<lb/> , Monica Maccaferri<lb/> 1<lb/> , Letizia Pedrazzi<lb/> 1 ,<lb/> Patrizia Barozzi<lb/> 1 , Daniela Vallerini<lb/> 1<lb/> , Giovanni Riva<lb/> 1<lb/> , Eleonora Zanetti<lb/> 1 , Chiara Quadrelli<lb/> 1 , Giulio Rossi<lb/> 2 ,<lb/> Francesco Rivasi<lb/> 2 , Massimino Messino&apos;<lb/> 3 , Fabio Rumpianesi<lb/> 3<lb/> , Antonella Grottola<lb/> 3 , Claudia Venturelli<lb/> 3 ,<lb/> Monica Pecorari<lb/> 3 , Mauro Codeluppi<lb/> 4 , Giuseppe Torelli<lb/> 1 , Mario Luppi<lb/> 1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Department of Oncology, Haematology and Respiratory Diseases, Section of Haematology;<lb/> 2<lb/> Department of Diagnostic and Laboratory Services<lb/> and Legal Medicine, Section of Pathology;<lb/> 3 Department of Diagnostic and Laboratory Services and Legal Medicine, Microbiology and Virology Unit;<lb/><lb/></affiliation>
+	</byline>
+
+	<byline>
+	<affiliation>4 Department of Internal Medicine, Section of Infectious Diseases, University of Modena and Reggio Emilia, Azienda Ospedaliero-Universitaria<lb/></affiliation>
+	</byline>
+
+	<address>Policlinico, Modena, Italy<lb/></address>
+
+		</front>
+	</text>
+</tei>

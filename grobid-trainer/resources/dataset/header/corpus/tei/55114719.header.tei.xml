@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei type="phd-thesis">
+	<teiHeader>
+		<fileDesc xml:id="55114719"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">-----------------------------------------------------------------------------------<lb/></note>
+	
+	<docTitle>
+	<titlePart>Kontextmodellierung für das Ambient Assisted Living<lb/> </titlePart>
+	</docTitle>
+	
+	<note type="other">-----------------------------------------------------------------------------------<lb/></note>
+
+	<degree>Dissertation<lb/> zur Erlangung des Grades eines<lb/> D o k t o r s d e r N a t u r w i s s e n s c h a f t e n<lb/> </degree>
+
+	<affiliation>der Universität Dortmund<lb/> am Fachbereich Informatik<lb/> von<lb/></affiliation>
+
+	<byline>
+	<docAuthor>Manfred Wojciechowski<lb/></docAuthor>
+	</byline>
+
+	<address>Dortmund<lb/> </address>
+
+	<date>2010<lb/> </date> 
+
+	<note type="other">----------------------------------------------------------------------------------------</note>
+
+		</front>
+	</text>
+</tei>

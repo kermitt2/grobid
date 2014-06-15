@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011096"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Application streaming<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">From Wikipedia, the free encyclopedia<lb/>This is an old revision of this page, as edited by 65.215.1.13 (talk) at 22:49, 15 July 2010. It may<lb/> differ significantly from the current revision (//en.wikipedia.org/wiki/Application_streaming) .<lb/> (diff) ← Previous revision | Latest revision (diff) | Newer revision → (diff)<lb/></note>
+
+	<div type="abstract">Computer application streaming is a form of on-demand software distribution.<lb/> The basic concept of application streaming has its foundation in the way modern computer programming<lb/> languages and operating systems produce and run application code. Only specific parts of a computer<lb/> program need to be available at any instance for the end user to perform a particular function. This means<lb/> that a program need not be fully installed on a client computer, but parts of it can be delivered over a low<lb/> bandwidth network as and when they are required.<lb/> Application streaming is usually combined with application virtualization, so that applications are not<lb/> installed in the traditional sense.<lb/></div>
+
+		</front>
+	</text>
+</tei>

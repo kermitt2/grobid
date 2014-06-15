@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010464"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Tetrahedron Letters No. 1, PP 69 -72, 1978.<lb/> Percamon Press.<lb/> printed in Great Britain.<lb/></reference>
+
+	<docTitle>
+	<titlePart>THYRSIFEROL:<lb/> A SQUALENE-DERIVED<lb/> METABGLITE OF LAUPENCIA THYRSIFERA<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>J. W. Blunt, M. P. Hartshorn, T. J. McLennan, M.H.G. Munro*,<lb/> Ward T. Robinson and S. C. Yorke<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Chemistry, University of Canterbury,</affiliation>
+	</byline>
+
+	<address>Christchurch, New Zealand.<lb/></address>
+
+	<note type="submission">(Received in UK 24 October 1977; accepted for publication 11 November 1977)<lb/></note>
+
+	<div type="abstract">Previous investigations of red algae of the genus Laurencia (Rhodomelaceae, Rhodophyta) have<lb/> established the structures of many interesting metabolites based in the main on fatty acid,<lb/> sesquiterpenoid or diterpenoid skeletons.<lb/> 1 We now report the isolation and identification of a<lb/> squalene-derived<lb/> metabolite from a Laurencia species.<lb/> Laurencia thyrsifera<lb/> (Hook) was collected from the intertidal zone at Seal Reef, Kaikoura,<lb/> N.Z.<lb/> 2 Chromatography of the methanol extract (4.5% of dry weight) on alumina gave a complex<lb/> mixture of fatty acid methyl esters,<lb/> 3 cholesterol4 and the polar compound thyrsiferol<lb/> (la) as a<lb/> mixture with two other metabolites<lb/> (ene-ynes).<lb/> After acetylation5 of this mixture thyrsiferol<lb/> (la)<lb/> was isolated as its mono-acetate<lb/> (lb), m.p. 104.5-106°, RD (in cyclohexane, c = .0002)<lb/> Co1 400<lb/> + 89O, CC%]<lb/> 350 + 111°, coc7<lb/> 300<lb/> 220°, Cal225 4oo&quot;. The molecular formula was inferred from<lb/> high resolution mass measurement of the [M-H201 doublet and the [M-HBr] peak, as the molecular<lb/> ion doublet (m/e 646/648) was of low intensity.<lb/> The 13C nmr spectrum&apos; confirmed that the acetate<lb/> (lb) was highly oxygenated as eleven C-O type resonances (6,, 60-80) were discernible.<lb/> The<lb/> molecular formula,<lb/> 13 C offset resonance decoupling experimentg and<lb/> 13 C LIS studies established<lb/> that thyrsiferyl acetate (lb) was a saturated, non-carbocyclic,<lb/> dihydroxy acetate with 4 ether<lb/> bridges.<lb/> In addition, some 8 methyl groups were resolved (excluding the acetate methyl) and<lb/> these were in similar structural environments:<lb/> .,t<lb/> iCH3<lb/> -CH2<lb/> \<lb/> OH&apos;\<lb/> CH_<lb/> OR<lb/> 0&apos;<lb/></div>
+
+		</front>
+	</text>
+</tei>

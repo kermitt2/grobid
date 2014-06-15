@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55115185"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Audio Engineering Society<lb/> Convention Paper 6117<lb/> Presented at the 116th Convention<lb/>  2004 May 8–11  Berlin, Germany<lb/></reference>
+	
+	<note type="other">This convention paper has been reproduced from the author&apos;s advance manuscript, without editing, corrections, or consideration<lb/> by the Review Board. The AES takes no responsibility for the contents. Additional papers may be obtained by sending request<lb/> and remittance to Audio Engineering Society, 60 East 42<lb/> nd Street, New York, New York 10165-2520, USA; also see www.aes.org.<lb/> All rights reserved. Reproduction of this paper, or any portion thereof, is not permitted without direct permission from the<lb/> Journal of the Audio Engineering Society.<lb/></note>
+
+	<docTitle>
+	<titlePart>Wave Field Synthesis: Mixing and Mastering<lb/> Tools for Digital Audio Workstations<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Renato Pellegrini<lb/> 1<lb/> , Clemens Kuhn<lb/> 1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 sonicEmotion AG,</affiliation>
+	</byline>
+
+	<address>Bahnhofstrasse 46, CH-8157 Dielsdorf, Switzerland<lb/></address>
+
+	<email>renato.pellegrini@sonicEmotion.com<lb/> clemens.kuhn@sonicEmotion.com<lb/></email>
+
+	<div type="abstract">ABSTRACT Wave Field Synthesis (WFS) provides holographic sound reproduction for a large listening area. Fundamentals of<lb/> WFS recording and reproduction techniques have been developed in the past few years, however there is a lack of<lb/> intuitive tools for WFS mixing and mastering. In this paper the authors propose a WFS user interface compatible<lb/> with available and accepted digital audio workstations. These WFS-plug-ins are based on a novel audio network<lb/> technology. They open new possibilities for creative audio production in WFS.<lb/></div>
+
+		</front>
+	</text>
+</tei>

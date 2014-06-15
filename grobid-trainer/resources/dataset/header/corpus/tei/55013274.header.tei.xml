@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013274"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Midwest Biological Control News Online<lb/> May 1997, Vol. IV No. 5<lb/></reference>
+
+	<docTitle>
+	<titlePart>Vegetable Crops News<lb/></titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

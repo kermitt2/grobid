@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012077"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<affiliation>Martin-Luther-Universität<lb/> </affiliation>
+	</byline>
+
+	<address>Halle-Wittenberg<lb/></address>
+
+	<byline>
+	<affiliation>Institut für Physik<lb/></affiliation>
+	</byline>
+
+	<note type="other">Fortgeschrittenen-<lb/>Praktikum<lb/></note>
+
+	<docTitle>
+	<titlePart>Versuch 5: Dielektrische Funktion<lb/> </titlePart>
+	</docTitle>
+
+	<div type="introduction">Mit Hilfe eines Mess-Senders (Meissner-Oszillator), eines Drehkondensators, einer Kapazitäts-<lb/>messbrücke und eines Zählers sind folgende Messungen durchzuführen:<lb/> 1) Bestimmung der Einschaltfrequenzdrift des Oszillators (30 min; am Anfang häufig messen,<lb/> bspw. alle 15s, dann minütlich).<lb/> 2) Bestimmung der Kapazität und Induktivität (inkl. Schaltkapazität und Koaxkabel) des<lb/> Messsenders und des Messkondensators. Verwenden Sie dazu ca. 10 parallel zu schaltende<lb/> Referenzkapazitäten, die Sie mit einem Drehkondensator einstellen (Kapazität mit einer<lb/> digitalen Messbrücke bestimmen).<lb/> 3) Messung der DK von Luft und Kohlendioxid für eine Frequenz bei Luftdruck. (für Luft: 10-<lb/>fache Wiederholungsmessung; für CO 2 5-fache Messung). Vergleichen Sie mit den<lb/> Literaturwerten und diskutieren Sie evtl. Abweichungen!<lb/> 4) Die Druckabhängigkeit ε rel (p) ist für Luft zu messen (einfache Messungen). Begründen Sie<lb/> den gefundenen funktionellen Zusammenhang gaskinetisch.<lb/> 5) Es ist die kleinste nachweisbare Änderung (Messfehler) für Messung 3) zu bestimmen.<lb/> Es ist die dielektrische Funktion von unausgehärtetem Epoxidharz als Funktion der Frequenz (0,1<lb/> Hz bis 10 kHz; ca. 5 Werte pro Frequenzdekade) und der Temperatur (-15…2,5°C; T=2,5 K) zu<lb/> bestimmen. Benutzen Sie zur Messung der Phasenverschiebung Lissajous-Figuren.<lb/> 6) Bestimmen Sie für diese Messungen zunächst die Übertragungsfunktion des Digitizers mit<lb/> und ohne Elektrometerverstärker im vollen Frequenzbereich. Ersetzen Sie dafür den<lb/> Messkondensator durch eine frequenzunabhängige Festkapazität und interpretieren Sie ihre<lb/> Beobachtungen. Bestimmen Sie aus Ihren frequenzabhängigen Messwerten die<lb/> Eingangsimpedanz des Digitizers.<lb/> 7) Bestimmen Sie nun die Eingangsimpedanz des Digitizers und des Elektrometerverstärkers<lb/> durch die Entlademethode (aufgeladener Kondensator wird durch Innenwiderstand<lb/> entladen).<lb/> 8) Das Epoxidharz befindet sich in einem Luftdrehkondensator mit nominell C max = 530 pF<lb/> (identisches Muster zum Ausmessen am Messplatz). Messen Sie zur Bestimmung von<lb/> ( , )<lb/> &apos; &apos;&apos;<lb/> f T<lb/> j<lb/>   </div>
+
+		</front>
+	</text>
+</tei>

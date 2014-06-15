@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="department">Wallon Center for Industrial Biology</orgName>,
+							<orgName type="institution">University of Liège</orgName>,
+							<address>
+								<country>Belgium</country>.
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="department">Bio-Industry Unit</orgName>,
+							<orgName type="institution">Gembloux Agricultural University</orgName>,
+							<address>
+								<country>Belgium</country>.
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>3</marker>
+							<orgName type="institution">University of Bénin</orgName>,
+							<address>
+								<settlement>Abomey-Calavi</settlement>,
+								<country>Bénin</country>.
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>4</marker>
+							<orgName type="institution">Council for Scientific and Industrial Research</orgName>,
+							<orgName type="institution">CSIR Biosciences</orgName>,
+							<address>
+								<country>South Africa</country>.
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>5</marker>
+							<orgName type="institution">Max Rubner Institute for Nutrition</orgName>,
+							<address>
+								<country>Germany</country>.
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>6</marker>
+							<orgName type="institution">University of Nairobi</orgName>,
+							<address>
+								<addrLine>University Way</addrLine>,
+								<country>Kenya</country>.
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>7</marker>
+							<orgName type="institution">Botswana Technology Center</orgName>,
+							<address>
+								<country>Botswana</country>.
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

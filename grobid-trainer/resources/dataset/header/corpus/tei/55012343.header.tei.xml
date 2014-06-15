@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012343"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>A Comparative Study of the Determination of the Critical<lb/> Micelle Concentration by Conductivity and Dielectric<lb/> Constant Measurements<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Martín Pérez-Rodríguez, Gerardo Prieto, Carlos Rega, Luis M. Varela,<lb/> Félix Sarmiento, and Víctor Mosquera*<lb/>
+	</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Grupo de Física de Coloides y Polímeros, Departamento de Física Aplicada y Departamento de<lb/> Física de la Materia Condensada, Facultad de Física, Universidad de Santiago de<lb/> Compostela,</affiliation>
+	</byline>
+
+	<address>E-15706 Santiago de Compostela, Spain<lb/></address>
+
+	<note type="other">Received March 11, 1998. In Final Form: May 19, 1998<lb/></note>
+
+	<div type="abstract">Conductivities and dielectric constant measurements in water at 25 °C have been made on the amphiphilics<lb/> sodium n-dodecyl sulfate, n-dodecyltrimethylammonium bromide, and chlorpromazine hydrochloride. By<lb/> using the conductivity/concentration data, critical micelle concentrations (cmc) have been determined by<lb/> applying the Williams definition and two forms of the Phillips method. This first Phillips form consists<lb/> of an approximation to Gaussians of the second derivative of the conductivity/concentration data followed<lb/> by two consecutive integrations. The second form, which is proposed here, consists of the application of<lb/> a combination of the Runge-Kutta numerical integrations method and the Levenberg-Marquardt least-<lb/>squares fitting algorithm. The proposed method permits the determination of the cmc in systems with<lb/> low aggregation numbers and with slow variations of physical property/concentration curves allowing the<lb/> determination of the so-called second cmc. A comparative study with results obtained by dielectric constant<lb/> measurements has been carried out. With this new technique, the cmc&apos;s (first and second) are directly<lb/> obtained as singular points in the dielectric constant/concentration curves, and thus, this technique is an<lb/> alternative to the determination of cmc&apos;s from conductivities.<lb/></div>
+
+		</front>
+	</text>
+</tei>

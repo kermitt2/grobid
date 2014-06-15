@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013460"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Airborne Spacing -Flight Deck Interval Management (ASPA-FIM)<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">Airborne Spacing -Flight Deck Interval Management (ASPA-FIM) describes a set of airborne<lb/> (i.e., flight deck) capabilities designed to support a range of Interval Management (IM)<lb/> Operations whose goal is precise inter-aircraft spacing. IM is defined as the overall system that<lb/> enables the improved means for managing traffic flows and aircraft spacing. This includes both<lb/> the use of ground and airborne tools, where ground tools assist the controller in evaluating the<lb/> traffic picture and determining appropriate clearances to merge and space aircraft efficiently and<lb/> safely, and airborne tools allow the flight crew to conform to the IM Clearance.<lb/> IM requires a controller using IM to provide an IM Clearance. While some IM Clearances will<lb/> keep the IM Aircraft on its current route and result only in speed management, other clearances<lb/> may include a turn for path lengthening or shortening. The objective of the IM Clearance is for<lb/> the IM Aircraft to achieve and/or maintain an Assigned Spacing Goal relative to a Target<lb/> Aircraft. The key addition to current operations is the provision of precise guidance within the<lb/> flight deck to enable the flight crew to actively manage the spacing relative to the Target<lb/> Aircraft. During IM Operations, the controller retains responsibility for separation, while the<lb/> flight crew is responsible for using the FIM Equipment to achieve and/or maintain the ATC<lb/> Assigned Spacing Goal. This does not differ greatly from current operations when controllers<lb/> provide speed and turn clearances to manage traffic. With ASPA-FIM, however, the flight crew<lb/> has the capabilities and responsibility to actively manage the speed of the aircraft to meet the<lb/> operational goals set by the controller. Enabling flight crews to manage their spacing using the<lb/> FIM Equipment is expected to reduce controller workload related to the IM Aircraft by relieving<lb/> the controller of the need to communicate several speed and/or vector instructions.<lb/></div>
+
+	<note type="other">Source: RTCA (2011). Safety, Performance and Interoperability Requirements Document For<lb/> Airborne Spacing -Flight Deck Interval Management (ASPA FIM). DO-328. Washington, DC:<lb/> RTCA.</note>
+
+		</front>
+	</text>
+</tei>

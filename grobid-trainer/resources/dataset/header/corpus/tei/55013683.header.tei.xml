@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013683"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Quantitative 3D – Thermography<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>W. Satzger*, G. Zenzinger*, V. Carl**<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>* MTU Aero Engines,</affiliation>
+	</byline>
+
+	<address>Munich Germany<lb/></address>
+
+	<byline>
+	<affiliation>** T-ZfP Messtechnik,</affiliation>
+	</byline>
+
+	<address>Dinslaken Germany<lb/></address>
+
+	<div type="abstract">Abstract In this paper results of the European Project VERDICT (2003 -2006), work package 4 are presented.<lb/> In traditional thermography we get 2 dimensional pseudo colored images. There is no or only a very inexact<lb/> information available about the 3 dimensional spatial coordinates of the points of the image.<lb/> The idea to get correct data is to fuse infrared data and 3d – measurement data taken on a surface contour. The<lb/> 3d – measurement delivers a so called pointcloud, which represents in three dimensions the specimen&apos;s surface<lb/> without distortion. Standard 3d -software for point clouds can derive geometric entities like positions, length,<lb/> areas, angles etc. The crucial step for this fusion is to put the infrared camera into the 3d-scene and to measure<lb/> the position and specimen together. In this way the metrical relation between the infrared camera and the<lb/> specimen is derivable. The 3d – measurement is done with fringe projection technique which generates a point<lb/> cloud of a surface contour with approximately 500 000 3d-points in 30 seconds. Since not all pixel rays of the<lb/> infrared camera hit such a 3d-point interpolating steps are necessary.The technique of texturing point clouds is<lb/> not restricted to one point of view of the specimen. Different thermographic images can also be mapped back onto<lb/> the point cloud. To do this without contradiction in an overlapping region normalized thermal images are<lb/> employed. With the quantitative 3d-thermography it is possible to calculate the area of curved surfaces. It also<lb/> turns out to be very helpful, to have a 3d-visualisation of the thermographic indications.<lb/></div>
+
+		</front>
+	</text>
+</tei>

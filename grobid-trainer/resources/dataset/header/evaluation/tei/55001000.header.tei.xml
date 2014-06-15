@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001000"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>J. Soc. Cosmetic Chemists, 18,609 628 (Sept. 16, 1967)<lb/></reference>
+
+	<docTitle>
+	<titlePart>Hair Coloring with Oxidation<lb/> Dye Intermediates<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>HAROLD H. TUCKER, Ph.D.*<lb/></docAuthor>
+	</byline>
+
+	<note type="other">Presented before the New York Chapter,</note>
+
+	<date>November 2, 1966<lb/></date>
+
+	<div type="abstract">Synopsis--Data on patents for 33 primary intermediates and 20 color modifiers were collected<lb/> from the literature. The effect of structure on shade, depth of color, light fastness, and solu-<lb/>bility was determined for each product. The effect on color, depth of shade, and light fast-<lb/>ness of dyeing mixtures of each of the 20 color modifiers with equimolar quantities of 3 pri-<lb/>mary intermediates is reported. It is shown that by proper selection of color modifier the<lb/> shade may be varied, the depth of color greatly increased, the fastness to light increased<lb/> many fold, and the tendency to turn red on aging decreased.<lb/> By using the formation of Bandrowski&apos;s base from oxidation of p-phenylenediamine as a<lb/> tool the percentage of conversion to the colored form was shown to be only slightly more<lb/> than 5% under the conditions normally used for dyeing hair. The effect of various factors<lb/> on this yield is reported.<lb/> The results of using five recently described pyridine derivatives are tabulated and dis-<lb/>cussed.<lb/></div>
+
+		</front>
+	</text>
+</tei>

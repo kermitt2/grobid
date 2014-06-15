@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014886"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>African Journal of Biotechnology Vol. 7 (16), pp. 2739-2767, 18 August, 2008<lb/></reference>
+
+	<note type="other">Available online at</note>
+
+	<ptr type="web">http://www.academicjournals.org/AJB<lb/></ptr>
+
+	<idno>ISSN 1684–5315</idno>
+
+	<note type="copyright">© 2008 Academic Journals<lb/></note>
+
+	<note type="other">Review<lb/></note>
+
+	<docTitle>
+	<titlePart>The principles of ultra high pressure technology and its<lb/> application in food processing/preservation: A review<lb/> of microbiological and quality aspects<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Maryam Yaldagard<lb/> 1<lb/> *, Seyed Ali Mortazavi<lb/> 2<lb/> and Farideh Tabatabaie<lb/> 2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1<lb/> Department of Chemical Engineering, Faculty of Engineering, Ferdowsi University of Mashad.</affiliation>
+	</byline>
+
+	<address>P. O. BOX 91775-1111,<lb/> Iran.<lb/></address>
+
+	<byline>
+	<affiliation>2<lb/> Department of Food Science and Technology, Ferdowsi University of Mashad,</affiliation>
+	</byline>
+
+	<address>Iran.<lb/></address>
+
+	<note type="submission">Accepted 4 July, 2008<lb/></note>
+
+	<div type="abstract">Consumers have a growing preference for convenient, fresh-like, healthy, palatable, additive-free, high-<lb/>quality and microbiologically safe food products. However, as food deterioration is constant threat<lb/> along the entire food chain, food preservation remains as necessary today as in the past. The food<lb/> industry has responded by applying a number of new technologies including high hydrostatic pressure<lb/> for food processing and preservation. In addition, food scientists have demonstrated the feasibility of<lb/> industrial-scale high pressure processing. High pressure processing is one of the emerging<lb/> technologies to be studied as an alternative to classical thermal processing of food. This &apos;clean&apos;<lb/> technology offers an effective and safe method of modifying protein structure, enzyme inactivation, and<lb/> formation of chemical compounds. In addition the study of the effects of high pressure on biological<lb/> materials has received a great deal of attention in recent years. During the last decade, numerous<lb/> publications that describe the influence of pressure on various constituents and contaminants of foods<lb/> such as spoilage microorganisms, food pathogens, enzymes and food proteins have appeared in the<lb/> literature. This paper reviews the literature on high pressure application in food industry most notably it<lb/> covers various facets of high pressure technology, which is, history, concepts and principles underlying<lb/> the application of this technology, physicochemical, chemical, microbiological aspects of high pressure<lb/> in the viewpoint of food technology.<lb/></div>
+
+	<keyword>Key words: Ultra-high pressure (UHP), food processing/preservation and new food-processing technologies.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013308"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">LETTER<lb/> </note>
+
+	<note type="page">2685<lb/></note>
+
+	<docTitle>
+	<titlePart>Stereoselective Synthesis of 1,2-<lb/>13<lb/> C 2 -L-Fucose, 1,2-<lb/>13 C 2 -Fucono-g-lactone and<lb/> 1,2-<lb/>13<lb/> C 2 -Fucono-g-lactol from Non-Sugar Starting Material<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<note type="other">S y n t h e s i s o f 1 , 2 -<lb/>1 3 C 2 -L -F u c o s e , 1 , 2 -<lb/>1 3<lb/></note>
+	</byline>
+
+		</front>
+	</text>
+</tei>

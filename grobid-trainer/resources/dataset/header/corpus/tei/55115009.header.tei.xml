@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei type="conference-paper">
+	<teiHeader>
+		<fileDesc xml:id="55115009"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>HÄRMÄ ET AL.<lb/>  WEARABLE AUGMENTED REALITY AUDIO<lb/>  Audio Engineering Society<lb/>Convention Paper 5768<lb/> Presented at the 114th Convention<lb/> 2003 March 22–25<lb/>  Amsterdam, The Netherlands<lb/></reference>
+	
+	<note type="other">This convention paper has been reproduced from the author&apos;s advance manuscript, without editing, corrections, or<lb/> consideration by the Review Board. The AES takes no responsibility for the contents. Additional papers may be<lb/> obtained by sending request and remittance to Audio Engineering Society, 60 East 42nd Street, New York, New York<lb/> 10165-2520, USA; also see www.aes.org. All rights reserved. Reproduction of this paper, or any portion thereof,<lb/> is not permitted without direct permission from the Journal of the Audio Engineering Society.<lb/></note>
+
+	<docTitle>
+	<titlePart>Techniques and applications of wearable<lb/> augmented reality audio<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Aki Härmä<lb/> 1 , Julia Jakka<lb/> 1 , Miikka Tikander<lb/> 1 , Matti Karjalainen<lb/> 1 , Tapio Lokki<lb/> 2 , Heli Nironen<lb/> 2 , Sampo Vesa<lb/> 2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Laboratory of Acoustics and Audio Signal Processing, Helsinki University of Technology,</affiliation>
+	</byline>
+
+	<address>P.O. Box 3000, 02015, HUT, Finland<lb/></address>
+
+	<byline>
+	<affiliation>2 Telecommunications Software and Multimedia Laboratory, Helsinki University of Technology,</affiliation>
+	</byline>
+
+	<address>P.O. Box 5400, 02015, HUT,<lb/> Finland<lb/></address>
+
+	<note type="other">Correspondence should be addressed to Aki Härmä (Aki.Harma@hut.fi)<lb/></note>
+
+	<div type="abstract">ABSTRACT<lb/> The concept of augmented reality audio characterizes techniques where real sound environment is extended<lb/> with virtual auditory environments and communications scenarios. This article introduces a framework<lb/> for Wearable Augmented Reality Audio (WARA) based on a specic headset conguration and a real-time<lb/> audio software system. We will review relevant literature and aim at identifying most potential application<lb/> scenarios for WARA. Listening test results with a prototype system will be presented.</div>
+
+		</front>
+	</text>
+</tei>

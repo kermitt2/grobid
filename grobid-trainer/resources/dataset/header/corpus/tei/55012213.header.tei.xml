@@ -1,0 +1,117 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012213"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>doc.:IEEE 802.11-10/0548r2<lb/></idno>
+
+	<note type="other">Submission<lb/></note>
+
+	<date>May 10, 2010<lb/></date>
+
+	<note type="other">Sudhir Srinivasa et al.<lb/> </note>
+
+	<note type="page">Slide 1<lb/> Slide 1<lb/></note>
+
+	<docTitle>
+	<titlePart>11ac 80MHz Transmission Flow<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Authors:<lb/></note>
+
+	<date>Date: 2010-05-17<lb/></date>
+
+	<note type="other">Name Affiliations<lb/> Address Phone<lb/> email<lb/></note>
+
+	<byline>
+	<docAuthor>Sudhir Srinivasa<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Marvell</affiliation>
+	</byline>
+
+	<address>5488 Marvell Lane, Santa Clara CA,<lb/> 95054<lb/></address>
+
+	<email>sudhirs@marvell.com<lb/></email>
+
+	<byline>
+	<docAuthor>Hongyuan Zhang<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Marvell</affiliation>
+	</byline>
+
+	<address>5488 Marvell Lane, Santa Clara CA,<lb/> 95054<lb/></address>
+
+	<phone>+1-408-222-<lb/>1837<lb/> </phone>
+
+	<email>hongyuan@marvell.com<lb/></email>
+
+	<byline>
+	<docAuthor>Eldad Perahia<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Intel</affiliation>
+	</byline>
+
+	<address>2111 NE 25<lb/> th Ave, Hillsboro OR<lb/> 97124, USA<lb/></address>
+
+	<email>eldad.perahia@intel.com<lb/></email>
+
+	<byline>
+	<docAuthor>Richard van Nee<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Qualcomm</affiliation>
+	</byline>
+
+	<address>Netherlands<lb/></address>
+
+	<email>rvannee@qualcomm.com<lb/></email>
+
+	<byline>
+	<docAuthor>Ning Zhang<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Atheros</affiliation>
+	</byline>
+
+	<address>5480 Great America Pkwy<lb/> Santa Clara, CA 95054<lb/></address>
+
+	<phone>+1-408-773-<lb/>5363<lb/> </phone>
+
+	<email>ning.zhang@atheros.com<lb/></email>
+
+	<byline>
+	<docAuthor>Joe Lauer<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Broadcom</affiliation>
+	</byline>
+
+	<address>San Diego, CA<lb/></address>
+
+	<email>jlauer@broadcom.com<lb/></email>
+
+	<byline>
+	<docAuthor>Uikun Kwon<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Samsung</affiliation>
+	</byline>
+
+	<email>uikun.kwon@samsung.co<lb/> m</email>
+
+		</front>
+	</text>
+</tei>

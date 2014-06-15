@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei type="conference-paper">
+	<teiHeader>
+		<fileDesc xml:id="55114925"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Web Service Access Management for Integration with<lb/> Agent Systems<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>B.J. Overeinder, P.D. Verkaik *<lb/> , and F.M.T. Brazier<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Computer Science, VU University Amsterdam<lb/></affiliation>
+	</byline>
+
+	<address>de Boelelaan 1081a, 1081 HV Amsterdam, The Netherlands<lb/></address>
+
+	<email>{bjo,patrick,frances}@cs.vu.nl<lb/></email>
+
+	<div type="abstract">ABSTRACT<lb/> The agent paradigm includes the notion that agents interact with<lb/> services. This paper identifies the need for controlled access to such<lb/> services, from the perspective of agent systems (and not as is gen-<lb/>erally the case by web service providers). Mediating between web<lb/> service requests from (virtual) organizations of agents, the web ser-<lb/>vice gateway proposed regulates (i.e., monitors and controls) web<lb/> service access according to the SLAs and organizational policies<lb/> that are in effect. In addition to a model for web service access<lb/> regulation, an implementation of a middleware component for web<lb/> services access regulation based on SOAP and described in WSDL<lb/> is presented.<lb/></div>
+
+	<keyword>Categories and Subject Descriptors<lb/> I.2.11 [Artificial Intelligence]: Distributed Artificial Intelligence—<lb/> multiagent systems; H.3.5 [Information Storage and Retrieval]:<lb/> Online Information Services—Web-base services<lb/> General Terms<lb/> Design, Management<lb/> Keywords<lb/> Web service interaction and integration, Web service management,<lb/> agent middleware<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

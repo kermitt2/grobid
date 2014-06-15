@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55114104"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Cryptography:<lb/> a<lb/> Management Overview!<lb/> by<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>by David S. Burris, Ph.D., CCP,<lb/> CSP<lb/></docAuthor>
+	</byline>
+
+	<note type="copyright">© Copyright 2005<lb/></note>
+
+	<byline>
+	<affiliation>Center for Digital Forensics<lb/> Sam Houston State University<lb/></affiliation>
+	</byline>
+
+	<address>Huntsville Texas , 77341<lb/></address>
+
+	<note type="other">Index:<lb/></note>
+
+		</front>
+	</text>
+</tei>

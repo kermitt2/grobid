@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Masugi</forename>
+								<surname>Inoue</surname>,
+							</persName>
+							<persName>
+								<forename>Khaled</forename>
+								<surname>Mahmud</surname>,
+							</persName>
+							<persName>
+								<forename>Homare</forename>
+								<surname>Murakami</surname> and
+							</persName>
+							<persName>
+								<forename>Mikio</forename>
+								<surname>Hasegawa</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

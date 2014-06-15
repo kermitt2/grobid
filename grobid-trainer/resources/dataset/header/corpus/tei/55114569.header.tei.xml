@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei type="phd-thesis">
+	<teiHeader>
+		<fileDesc xml:id="55114569"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<affiliation>Cranfield University<lb/></affiliation>
+	</byline>
+
+	<byline>
+	<docAuthor>Aleksandra Kosmala<lb/></docAuthor>
+	</byline>
+	
+	<docTitle>
+	<titlePart>Development of high loading Ag nanoparticle inks for inkjet<lb/> printing and Ag nanowire dispersions for conducting and<lb/> transparent coatings<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<affiliation>School of Applied Sciences<lb/> </affiliation>
+	</byline>
+	
+	<degree>PhD Thesis</degree>
+
+		</front>
+	</text>
+</tei>

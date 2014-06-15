@@ -1,0 +1,48 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009628"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>VoodooSketch – Extending Interactive Surfaces with<lb/> Adaptable Interface Palettes<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Florian Block<lb/> 1 , Michael Haller<lb/> 2 , Hans Gellersen<lb/> 1 , Carl Gutwin<lb/> 3 and Mark Billinghurst<lb/> 4<lb/>
+	</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Lancaster University,</affiliation>
+	</byline>
+
+	<email>{block, hwg}@comp.lancs.ac.uk,<lb/></email>
+
+	<byline>
+	<affiliation>2 Upper Austria University of Applied Sciences,<lb/></affiliation>
+	</byline>
+
+	<email>haller@fh-hagenberg.at,<lb/></email>
+
+	<byline>
+	<affiliation>3 University of Saskatchewan,</affiliation>
+	</byline>
+
+	<email>gutwin@cs.usask.ca,<lb/></email>
+
+	<byline>
+	<affiliation>4 HitLab NZ,<lb/></affiliation>
+	</byline>
+
+	<email>mark.billinghurst@hitlabnz.org<lb/></email>
+
+	<div type="abstract">ABSTRACT<lb/> Voodoosketch is a system that extends interactive surfaces<lb/> with physical interface palettes on which users can<lb/> dynamically deploy controls as shortcut to application<lb/> functionality. The system provides physical &apos;plug and play&apos;<lb/> controls as well as support for sketching of controls, and<lb/> allows controls to be associated with application functions<lb/> via handwritten labels. The system uses a special digital<lb/> pen, which writes &apos;real&apos; ink on the palettes while<lb/> functioning as a digital input device on the interactive<lb/> surfaces. The palettes can be seamlessly integrated into<lb/> existing applications, be appropriated by the user to suit<lb/> different input requirements, and support new interaction<lb/> styles across multiple surfaces, palettes and users.<lb/></div>
+
+	<keyword>Author Keywords<lb/> Physical Interfaces, Sketched Interfaces, Adaptable<lb/> Interfaces<lb/> ACM Classification Keywords<lb/> H5.m. Information interfaces and presentation (e.g., HCI):<lb/> Miscellaneous.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

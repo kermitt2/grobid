@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010081"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Protected Interactive 3D Graphics Via Remote Rendering<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>David Koller * Michael Turitzin * Marc Levoy * Marco Tarini Giuseppe Croccia Paolo Cignoni Roberto Scopigno *</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Stanford University<lb/></affiliation>
+	</byline>
+
+	<affiliation>ISTI-CNR, </affiliation>
+
+	<address>Italy<lb/></address>
+
+	<div type="abstract">Abstract<lb/> Valuable 3D graphical models, such as high-resolution digital scans<lb/> of cultural heritage objects, may require protection to prevent piracy<lb/> or misuse, while still allowing for interactive display and manipu-<lb/>lation by a widespread audience. We have investigated techniques<lb/> for protecting 3D graphics content, and we have developed a re-<lb/>mote rendering system suitable for sharing archives of 3D mod-<lb/>els while protecting the 3D geometry from unauthorized extrac-<lb/>tion. The system consists of a 3D viewer client that includes low-<lb/>resolution versions of the 3D models, and a rendering server that<lb/> renders and returns images of high-resolution models according to<lb/> client requests. The server implements a number of defenses to<lb/> guard against 3D reconstruction attacks, such as monitoring and<lb/> limiting request streams, and slightly perturbing and distorting the<lb/> rendered images. We consider several possible types of reconstruc-<lb/>tion attacks on such a rendering server, and we examine how these<lb/> attacks can be defended against without excessively compromising<lb/> the interactive experience for non-malicious users.<lb/></div>
+
+	<keyword>CR Categories: I.3.2 [Computer Graphics]: Graphics Systems—<lb/> Remote systems<lb/> Keywords: security, 3D models, remote rendering, digital rights<lb/> management<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

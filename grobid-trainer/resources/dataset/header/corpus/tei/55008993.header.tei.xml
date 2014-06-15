@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008993"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note>0-7803-8906-9/05/$20.00 </note>
+	
+	<note type="copyright">©2005 IEEE<lb/> </note>
+	
+	<date>2005 </date>
+	
+	<note type="other">Electronic Components and Technology Conference<lb/></note>
+
+	<docTitle>
+	<titlePart>A Vertical Wafer Level Packaging Using Through Hole Filled Via Interconnect<lb/> by Lift Off Polymer Method for MEMS and 3D Stacking Applications<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>C.S.Premachandran, Rangnathan N, S.Mohanraj, Chong Ser Choong, Mahadevan K Iyer<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institute of Microelectronics,</affiliation>
+	</byline>
+
+	<address>11 Science Park Road, Science Park II, Singapore 117685<lb/></address>
+
+	<div type="abstract">Abstract A vertical wafer level packaging for MEMS has been<lb/> developed with through hole filled via interconnects.<lb/> Through hole filled via interconnects are formed on a cap<lb/> wafer by electroplating method and bonded to the MEMS<lb/> using wafer to wafer bonding method. A bottom up approach<lb/> electroplating method is used for filling the through hole via<lb/> interconnect. In the bottom up approach, a handler wafer is<lb/> used for seed layer formation and the same time for the filling<lb/> the via. Through hole vias are formed on a cap wafer by<lb/> DRIE (Deep Reactive Ion Etching) method and the insulation<lb/> and barrier layers are formed to isolate the silicon wafer. A<lb/> lift off polymer is coated on a handler wafer and the seed<lb/> layer is deposited on the polymer. The through hole via wafer<lb/> and the handler wafer is bonded together using photo resist<lb/> and is subjected to electroplating process. The handler wafer<lb/> is separated from the through hole filled wafer by a<lb/> combination of polymer lift off and ultrasonic agitation<lb/> method. The completed through hole via filled wafer can be a<lb/> device wafer or normal silicon wafer. This wafer can also be a<lb/> cap wafer for MEMS wafer level packaging application and<lb/> for 3D stacking applications<lb/> </div>
+	
+	<div type="introduction">1. Introduction<lb/> Cost and size reduction is driving the packaging industry<lb/> to new measures and approaches. Wafer level packaging is<lb/> one of the approaches packaging industries are looking into<lb/> for size and cost reduction. Since wafer level packaging is a<lb/> batch process and is almost a true chip size<lb/> package, cost and real estate can be reduced. A further<lb/> reduction in size can be achieved by integrating different<lb/> devices into a single package. This can be achieved by<lb/> stacking (a) different chips vertically at the chip level or (b)<lb/> different device wafers [1].<lb/> Stacking wafers vertically and making into a final package<lb/> by singulation can save many assembly process steps. Vertical<lb/> stacking /integration of wafers are based on thinning, bonding,<lb/> and interconnecting the wafer by through-hole filled via<lb/> interconnects. Current packaging trends show that vertical<lb/> interconnects are favored because of space efficiency, design<lb/> simplicity, heterogeneous integration, and low parasitic<lb/> capacitance and impedance. Through-wafer vias are essential<lb/> for providing interconnects between both sides of wafers with<lb/> micro devices. By forming through hole via interconnect, a<lb/> vertical wafer level packaging has been realized and is<lb/> essential for providing signal transmission (Fig.1) [2].</div>
+
+		</front>
+	</text>
+</tei>

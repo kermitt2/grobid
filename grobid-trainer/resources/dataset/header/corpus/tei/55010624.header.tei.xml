@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010624"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>American Journal of Infectious Diseases 3 (4): 256-267, 2007<lb/></reference>
+
+	<idno>ISSN 1553-6203<lb/></idno>
+
+	<note type="copyright">© 2007 Science Publications<lb/></note>
+
+	<byline>
+	<docAuthor>Corresponding Author: Eric Peys,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Kemin Pharma,</affiliation>
+	</byline>
+
+	<address>Atealaan 4H, 2200 Herentals, Belgium<lb/></address>
+
+	<note type="page">256<lb/></note>
+
+	<docTitle>
+	<titlePart>Effects of Bacillus subtilis &apos;PB6&apos; (ATCC -PTA 6737) on Clostridium difficile Associated<lb/> Diarrhea (CDAD) and Inflammatory Bowel Disease (IBD) in Animal Models<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>1<lb/> Eric Peys,<lb/> 2<lb/> Jerry Varghese,<lb/> 2<lb/> Ponusami Suresh,<lb/> 1<lb/> Jan Vandenkerckhove,<lb/> 1<lb/> Johan Van hemel,<lb/> 2<lb/> Ramchand Nanappan Chaniyilparampu and<lb/> 1<lb/> Benedikt Sas<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Kemin Pharma,</affiliation>
+	</byline>
+
+	<address>Atealaan 4H, 2200 Herentals, Belgium<lb/> 1<lb/></address>
+
+	<byline>
+	<affiliation>and Kemin Nutritional Technologies,</affiliation>
+	</byline>
+
+	<address>K3, 11th<lb/> Cross Street, SIPCOT Industrial Complex, Gummidipundi 601201, Tamilnadu, India<lb/></address>
+
+	<div type="abstract">Abstract: The administration of probiotic bacteria is emerging as a potential means of preventing the<lb/> onset or recurrence of Clostridium difficile associated diarrhea (CDAD) and of attenuating<lb/> inflammatory activity and preventing relapses in inflammatory bowel disease (IBD). We evaluated the<lb/> efficacy of Bacillus subtilis &apos;PB6&apos; (ATCC – PTA 6737) in a hamster model of antibiotic-induced<lb/> CDAD and in a rat model of IBD. CDAD was induced in male Golden Syrian hamsters using C.<lb/> difficile and clindamycin. These hamsters received either nothing or, by gavage, vancomycin (5 days)<lb/> or PB6 (low, middle and high dose, 6 days). Diarrhea, body weight loss and mortality were observed in<lb/> all groups in which CDAD was induced. Intensity of diarrhea and body weight loss was least in the<lb/> groups treated with vancomycin or with the highest dose of PB6. At the end of the treatment period,<lb/> vancomycin and the highest dose of PB6 were equally efficient in preventing mortality in this hamster<lb/> model of CDAD. No adverse effects of PB6 treatment were observed in healthy animals. In male<lb/> Wistar rats, colitis was induced using a single intrarectal administration of 2,4,6-<lb/>trinitrobenzenesulfonic acid (TNBS). Treatments consisted of PB6 (low, middle and high dose),<lb/> Saccharomyces boulardii, mesalazine, infliximab, or no treatment. A possible benefit of the<lb/> prophylactic use of PB6 was also tested. At the end of the treatment period significant differences in<lb/> body weight gain, in colon inflammatory edema and in gross morphology of the colon intestinal lining<lb/> were observed between groups. The groups treated with high dose PB6 could not be distincted from<lb/> the colitis-free negative control group nor from the group treated with mesalazine. The data presented<lb/> are suggestive of possible therapeutic effectiveness of PB6 in CDAD and IBD in humans.<lb/></div>
+
+	<keyword>Key words: Bacillus subtilis, Clostridium difficile associated diarrhea (CDAD), inflammatory bowel<lb/> disease (IBD), animal model<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

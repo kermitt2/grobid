@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="department">Institute of Plant Protection</orgName>,
+							<orgName type="department">Georgikon Faculty</orgName>,
+							<orgName type="institution">University of Pannonia</orgName>,
+							<address>
+								<postCode>H-8360</postCode>
+								<settlement>Keszthely</settlement>,
+								<addrLine>Deák Ferenc utca 17</addrLine>,
+							<lb/>
+								<country>Hungary</country>.
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="department">Institute of Biology</orgName>,
+							<orgName type="department">Departments Genetics and Biochemistry</orgName>,
+							<orgName type="department">Faculty of Natural Sciences</orgName>,
+							<orgName type="institution">Eötvös University</orgName>,
+							<address>
+								<addrLine>Pázmány<lb/> Péter sétány 1C</addrLine>,
+								<settlement>Budapest</settlement>,
+								<country>Hungary</country>,
+								<postCode>H-1117</postCode>;
+								<country>Hungary</country>.
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>3</marker>
+							<orgName type="department">Department of Biology</orgName>,
+							<address>
+								<addrLine>Lapham Hall</addrLine>,
+								<settlement>Milwaukee</settlement>,
+								<region>WI</region>;
+							</address>
+						</affiliation>
+						<affiliation>		
+							<orgName type="institution">University of Wisconsin-Milwaukee</orgName>,
+							<address>
+								<settlement>Arizona</settlement>
+								<country>USA</country>.
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>4</marker>
+							<orgName type="department">Department of Animal Sciences</orgName>,
+							<orgName type="institution">The Ohio State University (OSU)</orgName>,
+							<orgName type="institution">OARDC</orgName>,
+							<address>
+								<addrLine>1680 Madison Avenue Wooster</addrLine>,
+								<region>Ohio</region>
+								<lb/>
+								<postCode>44691</postCode>;
+								<country>USA</country>.
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>5</marker>
+							<orgName type="department">Department of Entomology</orgName>,
+							<orgName type="institution">OSU</orgName>,
+							<orgName type="institution">OARDC</orgName>,
+							<address>
+								<addrLine>1680 Madison Avenue Wooster</addrLine>,
+								<region>Ohio</region>
+								<postCode>44691</postCode>;
+								<country>USA</country>.
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>6</marker>
+							<orgName type="institution">DSMZ</orgName>,
+							<orgName type="institution">Deutsche Sammlung von Mikroorganizmen und Zellkulturen GmbH</orgName>,
+							<address>
+								<settlement>Braunschweig</settlement>,
+								<country>Germany</country>.
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>7</marker>
+							<orgName type="institution">MCIC</orgName>,
+							<orgName type="institution">OSU</orgName>,
+							<orgName type="institution">OARDC</orgName>,
+							<address>
+								<addrLine>1680 Madison Avenue Wooster</addrLine>,
+								<region>Ohio</region>
+								<postCode>44691</postCode>,
+								<country>USA</country>.
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

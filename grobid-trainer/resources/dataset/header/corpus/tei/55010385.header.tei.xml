@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010385"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>TCG<lb/> TCG Trusted Network Connect<lb/> TNC Architecture for<lb/> Interoperability<lb/> </titlePart>
+	</docTitle>
+
+	<note type="other">Specification Version 1.3<lb/> Revision 6<lb/></note>
+	
+	<date>28 April 2008<lb/></date>
+
+	<note type="other">Published<lb/></note>
+
+	<email>Contact:<lb/> admin@trustedcomputinggroup.org<lb/></email>
+
+	<byline>
+	<affiliation>TCG PUBLISHED<lb/></affiliation>
+	</byline>
+
+	<note type="copyright">Copyright © TCG 2004-2008</note>
+
+		</front>
+	</text>
+</tei>

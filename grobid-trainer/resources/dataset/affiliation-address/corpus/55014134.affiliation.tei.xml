@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							From the 
+							<orgName type="department">New York State Office of Mental Retardation and Developmental Disabilities</orgName>,
+							<orgName type="institution">Znstitute for Basic Research in<lb/> Developmental Disabilities</orgName>,
+							<address>
+								<settlement>Staten Island</settlement>,
+								<region>New York</region>
+								<postCode>10314</postCode>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

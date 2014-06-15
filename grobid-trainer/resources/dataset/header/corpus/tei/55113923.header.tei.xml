@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55113923"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>COMPARISON OF 22MNB5-STEEL WITH AND<lb/> WITHOUT ALSI-COATING DURING LASER HYBRID<lb/> ARC WELDING<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>P. Norman<lb/> 1 *, G. Wiklund<lb/> 1 , P. Janiak<lb/> 2 , N. Malmberg<lb/> 2 , A. F. H. Kaplan<lb/> 1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Luleå University of Technology, TVM Department,</affiliation>
+	</byline>
+
+	<address>Luleå, Sweden<lb/></address>
+
+	<byline>
+	<affiliation>2 Swerea KIMAB AB,</affiliation>
+	</byline>
+
+	<address>Stockholm, Sweden<lb/></address>
+
+	<div type="abstract">Abstract<lb/> 22MnB5/Usibor1500 is a hot-dip aluminized manganese-boron steel grade that is used within<lb/> the car manufacturing industry and as lasers are increasingly used for welding of the car body<lb/> the amount of research concerning laser welding of this material follows. For thicker material<lb/> the laser hybrid arc welding process has grown to a well-known tool to increase productivity,<lb/> but for thinner materials the advantages are less obvious. In the present research the melt pool<lb/> and wire drop transfer was observed with a high speed camera. Differences between welding,<lb/> with and without the coating were clearly visible and are described and discussed in the paper.<lb/> The resulting welds were examined microscopically and chemically to unveil the composition<lb/> of the material. It is aimed to avoid possible brittle inter-metallic phases directly during the<lb/> process, hence by skipping the usual additional manufacturing step of removing the AlSi-<lb/>coating in advance.<lb/></div>
+
+	<keyword>Keywords: laser, hybrid, arc, welding, coating, AlSi, steel</keyword>
+
+		</front>
+	</text>
+</tei>

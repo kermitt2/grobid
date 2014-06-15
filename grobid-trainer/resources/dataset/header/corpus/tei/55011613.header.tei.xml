@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011613"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note>ICT 215075 </note>
+
+	<byline>
+	<affiliation>3D4YOU<lb/> </affiliation>
+	</byline>
+		
+	<docTitle>
+	<titlePart>WP3 – Deliverable D3.3.2<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Version 1.0<lb/> Public document<lb/> </note>
+
+	<note type="page">page 1 /78<lb/></note>
+
+	<idno>ICT-215075<lb/></idno>
+
+	<affiliation>3D4YOU<lb/></affiliation>
+
+	<note type="other">Editors WP3 partners<lb/> Partners Thomson R&amp;D France, Fraunhofer, Philips, FT, BBC<lb/> Version 1.0<lb/> Status final<lb/> </note>
+
+	<date>Date of issue<lb/> 30/12/2010<lb/></date>
+
+	<docTitle>
+	<titlePart>WP3 – Deliverable D3.3.2<lb/> Comparative study<lb/> and recommendations<lb/></titlePart>
+	</docTitle>
+
+	<date>December 30, 2010</date>
+
+		</front>
+	</text>
+</tei>

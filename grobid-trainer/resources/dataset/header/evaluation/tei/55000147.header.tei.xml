@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000147"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Optical explosives detection: from color changes to fluorescence turn-on<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Meaghan E. Germain and Michael J. Knapp*<lb/></docAuthor>
+	</byline>
+
+	<note type="submission">Received 29th October 2008<lb/></note>
+
+	<date type="publication">First published as an Advance Article on the web 5th June 2009<lb/></date>
+
+	<idno type="DOI">DOI: 10.1039/b809631g<lb/></idno>
+
+	<div type="abstract">The detection of chemical explosives is crucial for military and civilian safety. A confluence of<lb/> chemistry and engineering continues to improve the sensitivity for several classes of explosives,<lb/> and holds the promise of cheap and portable sensing. Optical and fluorescence-based sensors have<lb/> been extensively researched for portable applications due to their sensitivity and portability. This<lb/> tutorial review discusses chemical approaches to sensing explosives based on an optical readout,<lb/> and summarizes recent advances in fluorescence strategies, including fluorescence turn-on.<lb/> It is of interest to researchers working in the areas of materials chemistry or forensics.<lb/></div>
+
+		</front>
+	</text>
+</tei>

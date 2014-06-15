@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014425"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">1–32<lb/></note>
+	
+	<note type="other">POLYURETHANE<lb/></note>
+
+	<docTitle>
+	<titlePart>Timing Belts -T5 mm Pitch<lb/></titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

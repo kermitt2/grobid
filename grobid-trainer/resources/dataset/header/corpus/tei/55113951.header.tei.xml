@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<tei type="abstract">
+	<teiHeader>
+		<fileDesc xml:id="55113951"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Pharmacokinetics of a Novel One-Armed Antibody to C-Met in Mice, Rats, and Monkeys<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>A. E. Reyes II, H. Xiang, B. Bender, P. Haughney, A. Oldendorp, I. Nijem, T. Davancaze, E. Mai, J. Young, L. A. Damico<lb/>
+	</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Genentech Inc<lb/></affiliation>
+	</byline>
+
+	<div type="abstract">Purpose.<lb/> MetMAb is a novel, aglycosylated, monovalent, humanized, monoclonal antibody produced in E.coli that binds to the<lb/> receptor tyrosine kinase c-Met. It is being evaluated as a potential therapy for human cancer. The purpose of these studies<lb/> was to evaluate the pharmacokinetics (PK) of MetMAb in mice, rats, and monkeys, to estimate PK parameters in humans.<lb/> Methods.<lb/> MetMAb was administered as a single intravenous (IV) bolus dose to Athymic Nude Mice, Sprague Dawley and NIH Nude<lb/> Rats, and Cynomolgus Monkeys at doses ranging from 0.5-30mg/kg. Serum samples were collected over 5 weeks. Serum<lb/> MetMAb concentrations were determined using an ELISA. Serum concentration-time profiles were used to estimate PK<lb/> parameters using WinNonlin software. Estimation of MetMAb PK parameters in humans was determined by allometric<lb/> scaling using data from all three species or by a species invariant time method using data from the monkey only.<lb/> Results.<lb/> In mice and monkeys, within the dose range of 3-30mg/kg, Area Under the serum concentration-time Curve (AUC) and<lb/> Maximum Serum Concentration (C max ) increased proportionally with dose. MetMAb clearance in the linear dose range in<lb/> mice, rats, and monkeys was approximately 21, 19, and 13mL/day/kg, respectively. However, there was an observed<lb/> increase in clearance at the lower dose of 0.5mg/kg. Within the range of 3-30mg/kg, beta half-life was approximately 3-6<lb/> days. The initial volume of distribution of MetMAb approximated serum volume of each species. Based on allometric<lb/> scaling, human clearance was estimated to be 10mL/day/kg. Using species invariant time methods, human clearance and<lb/> terminal half-life in the dose-proportional exposure range was estimated to be approximately 5.5mL/day/kg and 10days<lb/> respectively.<lb/> Conclusion.<lb/> Within the dose range of 3-30mg/kg, MetMAb displayed linear PK. PK data in mice, rats, and monkeys suggests that the<lb/> clearance of MetMAb is approximately 2X faster than what is reported for bivalent glycosylated antibodies. A Phase I<lb/> clinical trial of MetMAb is ongoing and evaluation of the PK data will allow comparison of the two methods used to estimate<lb/> PK parameters in humans.</div>
+
+		</front>
+	</text>
+</tei>

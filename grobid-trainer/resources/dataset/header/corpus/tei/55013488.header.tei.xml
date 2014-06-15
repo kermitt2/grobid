@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013488"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Breaking Down Barriers With<lb/> Microsoft .NET<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">W H I T E P A P E R<lb/> </note>
+
+	<docAuthor>Don LeClair<lb/> </docAuthor>
+
+	<note type="other">Office of the CTO<lb/></note>
+
+	<date>April 21, 2003<lb/></date>
+
+	<div type="abstract">What is Microsoft .NET?<lb/> The definition of Microsoft .NET has evolved and not<lb/> everyone has a current understanding of exactly what<lb/> it means. Microsoft defines .NET as a set of Microsoft<lb/> software technologies for connecting our world<lb/> of information, people, systems and devices.<lb/> 1 This is<lb/> the implementation of Microsoft&apos;s strategy to address<lb/> network computing and integration using XML Web<lb/> services technology.<lb/> The Components of .NET<lb/> Essentially, Microsoft .NET is the basic organizing<lb/> principle for all its solutions. The basic elements of .NET<lb/> are shown in Figure 1.<lb/> XML Web Services<lb/> The heart of Microsoft .NET is XML Web services. The<lb/> ubiquity of Internet connectivity means people and<lb/> computers can communicate inexpensively from any-<lb/>where. XML enables a universal, standards-based<lb/> exchange of data across operating systems and<lb/> platforms. XML Web services combine the XML data<lb/> standards with Internet communications protocols to<lb/> revolutionize how applications talk to each other.<lb/> XML Web services technology provides the capability<lb/> to create standard interfaces to discrete business<lb/> processes, and to easily re-use the resulting compo-<lb/>nents to support a dynamic business environment.</div>
+
+		</front>
+	</text>
+</tei>

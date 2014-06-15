@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013774"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Original Article<lb/></note>
+
+	<docTitle>
+	<titlePart>Correlation of CD34<lb/> þ Cells with Tissue Angiogenesis<lb/> after Traumatic Brain Injury in a Rat Model<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Xinbin Guo,<lb/> 1 Li Liu,<lb/> 1 Ming Zhang,<lb/> 2 Angela Bergeron,<lb/> 3 Zhuang Cui,<lb/> 1 Jing-Fei Dong,<lb/> 3 and Jianning Zhang<lb/> 1<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Abstract<lb/> Increasing evidence suggests that circulating endothelial progenitor cells, which are a subpopulation of hemato-<lb/>poietic progenitor CD34<lb/> þ cells, play a critical role in neovascularization and tissue repair. We have tested the<lb/> hypothesis that traumatic brain injury (TBI) could mobilize CD34<lb/> þ cells to peripheral blood and brain tissue, a<lb/> process critical for vascular repair, in a rat model of TBI. Male Wistar rats were subjected to controlled fluid<lb/> percussion. Blood and brain tissue were collected before and after TBI to measure the levels of CD34<lb/> þ cells in<lb/> peripheral blood and to detect their accumulation in the damaged cerebral tissue. Compared with surgery<lb/> controls, CD34<lb/> þ cells significantly increased in the peripheral blood and accumulated in the brain tissue of TBI<lb/> rats. Immunohistochemistry detected new vessels with incomplete CD34<lb/> þ endothelial-like cell lining and an<lb/> increased number of microvessels in the injured and surrounding tissue. The results demonstrate a close cor-<lb/>relation between an increase in circulating CD34<lb/> þ cells in response to traumatic injury and angiogenesis in TBI<lb/> rat brain. They also suggest that transplantation of CD34<lb/> þ cells or augmentation of endogenous CD34<lb/> þ cells may<lb/> be a novel therapeutic approach for patients with TBI.<lb/></div>
+
+	<keyword>Key words: angiogenesis; CD34<lb/> þ cells; endothelial progenitor cells; traumatic brain injury<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010049"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">1<lb/></note>
+
+	<docTitle>
+	<titlePart>E-LEARNING IN THE SEMANTIC AGE<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Matthias Palmér<lb/> Ambjörn Naeve<lb/> Mikael Nilsson<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>The KMR (Knowledge Management Research) group<lb/> CID (Centre for user oriented IT Design)<lb/> NADA (Numerical Analysis and Computing Science)<lb/> KTH (Royal Institute of Technology)<lb/></affiliation>
+	</byline>
+
+	<address>100 44 Stockholm, Sweden<lb/></address>
+
+	<email>[amb|mini|matthias@nada.kth.se]<lb/></email>
+
+	<div type="abstract">ABSTRACT<lb/> Today educational technologies are reaching a state that allows interoperability and<lb/> reuse of learning resources. The underlying techniques rely heavily on the standards<lb/> movement for metadata representation. On top of this, monolithic reference<lb/> platforms are being developed with the aim to ease application development.<lb/> However, we do not think this approach is flexible enough to embrace future<lb/> learning techniques. In contrast, we suggest a learning framework where services can<lb/> be developed and exchanged between as well as within systems. A fundamental part<lb/> of this framework is the semantic layer, which builds on the structure of the Semantic<lb/> Web. Hence we do not regard metadata as something &apos;objective&apos; that you have to<lb/> download from some central server. On the contrary, metadata should be allowed to<lb/> consist of subjective views of resources that are distributed and shared in contexts<lb/> that can evolve dynamically. In support of such requirements, our learning<lb/> framework consists of a combination of semantic web techniques and peer-to-peer<lb/> services for search, retrieval, publication, replication and mapping of metadata.<lb/></div>
+
+	<keyword>KEYWORDS</keyword>
+
+		</front>
+	</text>
+</tei>

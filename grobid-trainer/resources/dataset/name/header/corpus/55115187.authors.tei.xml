@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<surname>Edwards</surname>
+								<forename>S</forename>
+								<middlename>M</middlename>,
+							</persName>
+							<persName>
+								<surname>Dunsmuir</surname>
+								<forename>W</forename>
+								<middlename>D</middlename>,
+							</persName>
+							<persName>
+								<surname>Gillett</surname>
+								<forename>C</forename>
+								<middlename>E</middlename>,
+							</persName>
+							<persName>
+								<surname>Lakhani</surname>
+								<forename>S</forename>
+								<middlename>R</middlename>,
+							</persName>
+							<persName>
+								<surname>Cor-<lb/>bishley</surname>
+								<forename>C</forename> ,
+							</persName>
+							<persName>
+								<surname>Young</surname>
+								<forename>M</forename> ,
+							</persName>
+							<persName>
+								<surname>Kirby</surname>
+								<forename>R</forename>
+								<middlename>S</middlename> ,
+							</persName>
+							<persName>
+								<surname>Dearnaley</surname>
+								<forename>D</forename>
+								<middlename>P</middlename> ,
+							</persName>
+							<persName>
+								<surname>Dowe</surname>
+								<forename>A</forename> ,
+							<lb/>
+							</persName>
+							<persName>
+								<surname>Ardern -Jones</surname>
+								<forename>A</forename>,
+							</persName>
+							<persName>
+								<surname>Kelly</surname>
+								<forename>J</forename> ,
+							</persName>
+							<persName>
+								<surname>Spurr</surname>
+								<forename>N</forename> ,
+							</persName>
+							<persName>
+								<surname>Barnes</surname>
+								<forename>D</forename>
+								<middlename>M</middlename> ,
+							</persName>
+							<persName>
+								<surname>Eeles</surname>
+								<forename>R</forename>
+								<middlename>A</middlename>
+							<lb/>
+							</persName>
+							<persName>
+								<surname>Gorski</surname>
+								<forename>B</forename> ,
+							</persName>
+							<persName>
+								<surname>Byrski</surname>
+								<forename>T</forename>,
+							</persName>
+							<persName>
+								<surname>Huzarski</surname>
+								<forename>T</forename>,
+							</persName>
+							<persName>
+								<surname>Jakubowska</surname>
+								<forename>A</forename>,
+							</persName>
+							<persName>
+								<surname>Menkiszak</surname>
+								<forename>J</forename>,
+							<lb/>
+							</persName>
+							<persName>
+								<surname>Gronwald</surname>
+								<forename>J</forename>,
+							</persName>
+							<persName>
+								<surname>Pluzanska</surname>
+								<forename>A</forename> ,
+							</persName>
+							
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

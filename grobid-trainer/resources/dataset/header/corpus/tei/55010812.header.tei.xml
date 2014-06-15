@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010812"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Verfahrensbeschreibung &quot;Nachschleifen von Holzoberflächen nach dem<lb/> Abbeizen bleiweißhaltiger Beschichtungen&quot;
+	<lb/></titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

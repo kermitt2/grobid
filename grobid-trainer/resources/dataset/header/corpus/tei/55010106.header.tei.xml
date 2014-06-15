@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010106"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>CN101516142 A 20090826<lb/> Automatically Translated by the Intellectual Property Publishing House of SIPO<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">This invention offers a kind of data card and wireless communication system, the<lb/> 5 stated data card includes: Wireless communication unit, are used for carrying on<lb/> demodulation and decoding to the data of Internet that are received according to the<lb/> internet protocol, get the base data; Agreement controlate unit, use for, go on 1394<lb/> agreements capsulate stated base data according to 1394 agreement, get 1394<lb/> agreement data package; 1394 interface units, are used for sending stated 1394<lb/> 10 agreement data package to the subscriber station. The data card of embodiment of this<lb/> invention has been adopted 1394 interface, adopt the low problem of output current<lb/> that other interface cause after solving the Off-The-Shelf data card, having raised<lb/> transmission rate and access quantity of the data card, and the characteristic based on<lb/> point-to-point communication, can direct communication needn&apos;t the participation of<lb/> 15 the third party between the apparatus.<lb/> A kind of data card and wireless communication system<lb/> Technical field<lb/> This invention involves the technical field of the wireless data terminal, especially<lb/> 20 involve a kind of data card and wireless communication system.<lb/> Background technology</div>
+
+		</front>
+	</text>
+</tei>

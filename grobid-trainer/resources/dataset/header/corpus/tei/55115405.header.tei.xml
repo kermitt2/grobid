@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55115405"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>On Scheduling Data Loading and View Maintenance in<lb/> Soft Real-time Data Warehouses<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Nguyen Hoang Vu<lb/> Vivekanand Gopalkrishnan<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Nanyang Technological University,</affiliation>
+	</byline>
+
+	<address>50 Nanyang Avenue, Singapore<lb/></address>
+
+	<email>ng0003vu@ntu.edu.sg, asvivek@ntu.edu.sg<lb/></email>
+
+	<div type="abstract">Abstract<lb/> Data warehouses contain historic data providing in-<lb/>formation for analytical processing, decision making<lb/> and data mining tools. However, several business<lb/> intelligence applications nowadays require access to<lb/> real-time data to make sound decisions. As a con-<lb/>sequence, there is a great demand to incorporate new<lb/> data from sources to the data warehouse as fast as<lb/> possible. That motivates the construction of real-time<lb/> data warehouse. Despite high demand, moving from<lb/> a traditional data warehouse to a real-time one is not<lb/> straightforward since we have to deal with the prob-<lb/>lem of efficiently scheduling various activities, viz., up-<lb/>dates, view maintenances and OLAP transactions in<lb/> a timely manner. In addition, OLAP transactions are<lb/> now associated with deadlines (transaction timeliness)<lb/> and data freshness requirement (data timeliness). Bal-<lb/>ancing between these two requirements poses another<lb/> challenge in real-time data warehousing context. In<lb/> this paper, we present an efficient technique aimed at<lb/> updating data and performing view maintenance for<lb/> real-time data warehouses while still enforcing these<lb/> two timing requirements for the OLAP transactions.<lb/> Our proposed approach aims at addressing the is-<lb/>sues of applying updates and performing view mainte-<lb/>nance while still effectively serving user OLAP queries<lb/> in real-time data warehouse environment. Through<lb/> extensive empirical studies, we demonstrate the effi-<lb/>ciency of ORAD in achieving the goal of building a<lb/> real-time data warehouse.<lb/></div>
+
+		</front>
+	</text>
+</tei>

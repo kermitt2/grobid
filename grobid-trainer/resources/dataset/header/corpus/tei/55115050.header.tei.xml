@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55115050"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>AN INTELLIGENT CLOUD RESOURCE ALLOCATION SERVICE<lb/> Agent-based automated Cloud resource allocation using micro-agreements.<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Kassidy Clark, Martijn Warnier and Frances M.T. Brazier<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Faculty of Technology, Policy and Management, Delft University of Technology,</affiliation>
+	</byline>
+
+	<address>Jaffalaan 5, Delft, The Netherlands<lb/></address>
+
+	<email>{k.p.clark, m.e.warnier, f.m.brazier}@tudelft.nl<lb/></email>
+
+	<keyword>Keywords:<lb/> cloud computing, service level agreements, agent technology, automated negotiation, micro-agreements<lb/>
+	</keyword>
+
+	<div type="abstract">Abstract:<lb/> The Cloud refers to hardware and software resources available across the Internet. The number of competing<lb/> Cloud Service Providers (CSP) continues to increase as companies outsource their computing infrastructure to<lb/> the Cloud. In this environment, consumers face several challenges, including finding the least expensive Cloud<lb/> service configuration, migration between CSPs and dynamically changing resource offerings. To assist con-<lb/>sumers in this environment, this paper proposes an Intelligent Cloud Resource Allocation Service (ICRAS).<lb/> This service maintains an overview of current CSP resources offerings and evaluates them to find the most<lb/> appropriate configuration given a consumer&apos;s preferences. The service then negotiates a short term micro ser-<lb/>vice agreement with the CSP and monitors the service for any violations. Finally, the service can assist in the<lb/> migration of the consumer&apos;s data between CSPs.<lb/></div>
+
+		</front>
+	</text>
+</tei>

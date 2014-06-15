@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei type="web">
+	<teiHeader>
+		<fileDesc xml:id="55115432"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<div type="abstract">Lai grew up in a village know as a kampung in Malaysia. She loved observing the natural world around her as a<lb/> child and she is still fascinated by the possibilities for health and beauty available from natural sources. She loves<lb/> trying remedies passed down through her family and friends from past generations.<lb/></div>
+
+	<docTitle>
+	<titlePart>Lai&apos;s Natural Beauty and Health<lb/></titlePart>
+	</docTitle>
+
+	<date>Sunday, 14 July 2013<lb/></date>
+
+	<docTitle>
+	<titlePart>Citrus fruit + cloves = Natural Mosquito Repellent<lb/></titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

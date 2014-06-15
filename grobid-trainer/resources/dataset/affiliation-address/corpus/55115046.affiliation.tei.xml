@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>*</marker>
+							<orgName type="institution">Universitat Politècnica de Catalunya</orgName>,
+							<address>
+								<addrLine>C/Jordi Girona 1-3</addrLine>,
+								<postCode>E08034</postCode>,
+								<settlement>Barcelona</settlement>,
+								<country>Spain</country>,
+								<lb/>
+							</address>
+						</affiliation>		
+						<affiliation>		
+							<marker>* *</marker>
+							<orgName type="institution">Tech Media Telecom Factory</orgName>,
+							<address>
+								<addrLine>C/Marina 16-18</addrLine>,
+								<addrLine>Torre Mapfre 28 A E08005</addrLine>
+								<settlement>Barcelona</settlement>,
+								<lb/>
+								<country>Spain</country>,
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

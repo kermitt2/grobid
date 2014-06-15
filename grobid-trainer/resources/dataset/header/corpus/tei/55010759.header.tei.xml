@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010759"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Inside Network:<lb/> Inside Facebook<lb/> Inside Social Games<lb/> Inside Mobile Apps<lb/> Inside Virtual Goods<lb/> AppData<lb/> Facebook Marketing Bible<lb/> Facebook Marketing Bible Research Research<lb/> App Stats<lb/> App Stats Jobs Jobs Contact Contact<lb/> About About<lb/> Advertise Advertise<lb/></note>
+
+	<byline>
+	<docAuthor>Josh Constine</docAuthor>
+	</byline>
+
+	<note type="other">@BULLET</note>
+
+	<date>Feb 10th, 2011<lb/></date>
+
+	<note type="other">Pages<lb/></note>
+
+	<docTitle>
+	<titlePart>Facebook Adds Keyword Moderation and<lb/> Profanity Blocklists to Pages<lb/></titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

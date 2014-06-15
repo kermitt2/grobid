@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55113489"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="copyright">© E. F. Schubert, 2004<lb/></note>
+
+	<note type="page">1<lb/></note>
+
+	<docTitle>
+	<titlePart>Refractive index and extinction coefficient of materials<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">Note: The exctinction coefficient is related to the absorption coefficient by<lb/> 0<lb/> / 4<lb/> λ π<lb/> = α<lb/> k<lb/> , where α<lb/> is the absorption coefficient, k is the extinction coefficient, and λ 0 is the wavelength in vacuum.<lb/></div>
+
+		</front>
+	</text>
+</tei>

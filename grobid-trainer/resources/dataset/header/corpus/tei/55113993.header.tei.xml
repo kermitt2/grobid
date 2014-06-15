@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei type="technical-report">
+	<teiHeader>
+		<fileDesc xml:id="55113993"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>ISSN 0249-6399<lb/> ISRN INRIA/RR--4823--FR+ENG<lb/></idno>
+
+	<note type="other">a p p o r t<lb/> d e r e c h e r c h e<lb/>THÈME 2<lb/></note>
+
+	<byline>
+	<affiliation>INSTITUT NATIONAL DE RECHERCHE EN INFORMATIQUE ET EN AUTOMATIQUE<lb/></affiliation>
+	</byline>
+
+	<docTitle>
+	<titlePart>Estimating Differential Quantities using Polynomial<lb/> fitting of Osculating Jets<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Frédéric Cazals — Marc Pouget<lb/></docAuthor>
+	</byline>
+
+	<note type="other">N° 4823<lb/></note>
+
+	<date>Mai 2003</date>
+ 
+		</front>
+	</text>
+</tei>

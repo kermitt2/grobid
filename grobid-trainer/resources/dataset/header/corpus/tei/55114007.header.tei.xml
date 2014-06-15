@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei type="web">
+	<teiHeader>
+		<fileDesc xml:id="55114007"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Panasonic Lumix GF6 Review<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Tweet Tweet 3<lb/> i<lb/> Initial Test<lb/> Basic Specifications<lb/> Full model name:<lb/> Panasonic Lumix DMC-GF6<lb/> Resolution:<lb/> 16.00 Megapixels<lb/> Sensor size:<lb/> Four Thirds<lb/> Kit Lens:<lb/> 3.00x zoom<lb/> 14-42mm<lb/> (28-84mm eq.)<lb/> Viewfinder:<lb/> LCD<lb/> ISO:<lb/> 160-25600<lb/> Shutter:<lb/> 60-1/4000<lb/> Max Aperture:<lb/> 3.5<lb/> Dimensions:<lb/> 4.4 x 2.6 x 1.5 in.<lb/> (111 x 65 x 38 mm)<lb/> Weight:<lb/> 16.0 oz (454 g)<lb/> includes batteries, kit lens<lb/> MSRP:<lb/> $600<lb/> Availability:<lb/> 06/2013<lb/> Manufacturer:<lb/> Panasonic<lb/> 16.00<lb/> Megapixels<lb/> Micro Four Thirds<lb/> mount<lb/> Four Thirds<lb/> size sensor<lb/></note>
+
+	<docTitle>
+	<titlePart>Panasonic GF6 Hands-on Preview<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>by Mike Tomkins<lb/></docAuthor>
+	</byline>
+
+	<note type="submission">Pos ted: 04/09/2013<lb/></note>
+
+	<div type="abstract">For the fifth s traight generation,<lb/> P anas onic c ourts c ons umers and<lb/> enthus ias ts alike with a relatively<lb/> c ompac t interc hangeable-lens<lb/> mirrorles s c amera that nonetheles s<lb/> pac ks in the features .<lb/> T he P anas onic L umix D M C -G F6 has<lb/> grown ever s o s lightly s inc e its<lb/> predec es s or, and has gotten rather<lb/> heavier as well, but that&apos;s allowed for<lb/> more than a few new additions ins ide its<lb/> c ompletely redes igned body.<lb/> Key among thes e are new wireles s c onnec tivity options and a s elf-portrait friendly tilting LC D panel.<lb/></div>
+
+		</front>
+	</text>
+</tei>

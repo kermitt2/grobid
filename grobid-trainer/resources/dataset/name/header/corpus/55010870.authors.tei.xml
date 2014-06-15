@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Roberto</forename>
+								<surname>Muñoz</surname> and
+							</persName>
+							<persName>
+								<forename>Miguel</forename>
+								<middlename>A</middlename>.
+								<surname>García-Fernández</surname>
+							</persName>
+							<persName>
+								<forename>José Luis</forename>
+								<surname>Rojo-Álvarez</surname>,
+							</persName>
+							<persName>
+								<forename>Carmen</forename>
+								<surname>Allué</surname>,
+							</persName>
+							<persName>
+								<forename>Laura</forename>
+								<surname>Martín</surname>,
+							</persName>
+							<persName>
+								<forename>Mar</forename>
+								<surname>Moreno</surname>,
+							</persName>
+							<persName>
+								<forename>José</forename>
+								<middlename>A</middlename>.
+								<surname>Serrano</surname>,
+							</persName>
+							<persName>
+								<forename>Raquel</forename>
+								<surname>Yotti</surname>,
+							</persName>
+							<persName>
+								<forename>Javier</forename>
+								<surname>Bermejo</surname>,
+							</persName>
+							<persName>
+								<forename>J</forename>.
+								<middlename>Carlos </middlename>
+								<surname>Antoranz</surname>,
+							</persName>
+							<persName>
+								<forename>M</forename>.
+								<middlename>Mar </middlename>
+								<surname>Desco</surname>,
+							</persName>
+							<persName>
+								<forename>Cristina</forename>
+								<surname>Cortina</surname>,
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

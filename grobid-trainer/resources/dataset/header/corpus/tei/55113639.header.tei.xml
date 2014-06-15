@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55113639"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>MT Explorer<lb/></titlePart>
+	</docTitle>
+
+	<date>Monday, 27 August 2012 </date>
+
+	<note type="other">09:39<lb/></note>
+
+	<div type="abstract">The MT Explorer line is the culmination of nearly a decade&apos;s worth of research and engineering.<lb/> While assisting a customer with equipment for a government RFI, MassTech saw a need for a<lb/> commercial, high resolution mass spectrometer which would in order to provide quick and<lb/> accurate measurements in the field. The MT Explorer line gives you the capability to do in-situ<lb/> measurements and analysis without wasting time sending samples back to a full laboratory.<lb/> Both the MT Explorer 50 and 100 contain a 3-D ion trap capable of MS-MS and an Atmospheric<lb/> Interface (AP-I) allowing you to connect a variety of sources to them. Combined with a source<lb/> such as an AP MALDI, you have a setup capable of identifying biological contaminants on a<lb/> crop, or perhaps a specific polymer or hydrocarbon in mere minutes.<lb/> The MT Explorer 100 is our premier instrument -with resolution and range comparable to a<lb/> Thermo(c) LCQ, and at a cost the fraction of a typical table top mass spectrometer, the MTE<lb/> 100 should be considered for your next purchase. The MT Explorer 50 is our newest device,<lb/> designed specifically for users concerned about space and weight. While maintaining similar<lb/> performance to the MTE 100, the MTE 50 cuts power requirements in half and squeezes the<lb/> unit footprint to the absolute minimum. Due to hit full production in 2013, the MTE 50 is<lb/> currently available in the US only.</div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010868"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">404<lb/></note>
+
+	<reference>Journal of Chromatography, 420 (1987) 404-410<lb/>Biomedical Applications<lb/> Elsevier Science Publishers B.V., Amsterdam -Printed in The Netherlands<lb/> </reference>
+
+	<note type="other">CHROMBIO. 3772<lb/></note>
+
+	<docTitle>
+	<titlePart>Note<lb/> Determination of natural thiols by liquid chromatography after<lb/> derivatization with 3,5-di-tert.-butyl-1,2-benzoquinone<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>YOICHIRO IMAI, SHOSUKE ITO* and KEISUKE FUJITA<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institute for Comprehensive Medical Science and School of Hygiene, Fujita-Gakuen Health<lb/> University,</affiliation>
+	</byline>
+
+	<address>Toyoake, Aichi 470-l 1 (Japan)<lb/></address>
+
+	<note type="submission">(First received March llth, 1987; revised manuscript received April 23rd, 1987)<lb/></note>
+
+		</front>
+	</text>
+</tei>

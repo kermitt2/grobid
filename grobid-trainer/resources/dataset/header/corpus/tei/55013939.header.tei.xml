@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013939"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Volume 211, number 2, 211-214<lb/> FEB 04392<lb/></reference>
+
+	<date>January 1987<lb/></date>
+
+	<docTitle>
+	<titlePart>Modulation of superoxide dismutase by electron donors and<lb/> acceptors<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Natalia V. Gulyaeva, Andrey B. Obidin and Beniamin S. Marinov*<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>The Institute of Higher Nervous Activity &amp; Neurophysiology, USSR Academy of Sciences,</affiliation>
+	</byline>
+
+	<address>Butlerova Street,<lb/> Moscow 117865 and</address>
+
+	<byline>
+	<affiliation>*The Institute of Biological Physics, USSR Academy of Sciences,</affiliation>
+	</byline>
+
+	<address>Pushchino,<lb/> Moscow Region 142292, USSR<lb/></address>
+
+	<note type="submission">Received 25 September 1986<lb/></note>
+
+	<div type="abstract">The competition between superoxide dismutase (SOD) and nitroblue tetrazolium (NBT) for 0; radicals<lb/> in the presence of a number of physiologically active compounds was studied. The Na+ channel blockers,<lb/> ajmaline, tetracaine, bipuvacaine, lidocaine and etmozine produced an increase in the amount of 0, react-<lb/>ing with SOD. Nitroprusside, ferricyanide, BAY K8644, levomycetin, cGMP, CAMP and GMP acted in<lb/> the opposite way. All the SOD activtors had in common the property of being electron donors in the reac-<lb/>tions with the light-induced free radicals of eosin whereas the SOD inhibitors behaved as electron acceptors.<lb/> The electron activity of SOD modulators correlated qualitatively with their regulating efficacy.<lb/></div>
+
+	<keyword>Superoxide dismutase; Electron donor; Electron acceptor<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

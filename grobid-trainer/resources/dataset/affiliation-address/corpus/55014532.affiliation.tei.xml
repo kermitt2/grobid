@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="institution">University of Pennsylvania School of Medicine</orgName>,
+							<address>
+								<settlement>Philadelphia</settlement>;
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="institution">Medical College</orgName>,
+							<orgName type="institution">Thomas Jefferson University</orgName>,
+							<address>
+								<settlement>Philadelphia</settlement>;
+								<region>Sergio</region>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>		
+							<orgName type="institution">Jefferson University</orgName>,
+							<address>
+								<addrLine>Room 509</addrLine>,
+								<addrLine>Bluemle Life Sciences Building</addrLine>,
+								<addrLine>233<lb/> South 10th Street</addrLine>,
+								<settlement>Philadelphia</settlement>,
+								<region>PA</region>
+								<postCode>19107-5541</postCode>.
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

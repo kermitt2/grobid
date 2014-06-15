@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009666"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Um interface<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">From Wikipedia, the free encyclopedia<lb/></note>
+
+	<div type="abstract">The Um interface is the air interface for the GSM mobile telephone standard. It is the interface between the<lb/> mobile station (MS) and the Base transceiver station (BTS). It is called Um because it is the mobile analog to<lb/> the U interface of ISDN. Um is defined in the GSM 04.xx and 05.xx series of specifications. Um can also<lb/> support GPRS packet-oriented communication.<lb/></div>
+
+		</front>
+	</text>
+</tei>

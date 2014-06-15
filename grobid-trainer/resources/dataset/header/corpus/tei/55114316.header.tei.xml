@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei type="web">
+	<teiHeader>
+		<fileDesc xml:id="55114316"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Overview › Technologies › Advertising<lb/> Policies &amp; Principles<lb/> Technologies<lb/> Advertising<lb/> How Google uses cookies<lb/> Types of cookies used by Google<lb/> Managing cookies in your browser<lb/></note>
+
+	<docTitle>
+	<titlePart>Advertising<lb/> </titlePart>
+	</docTitle>
+
+	<div type="abstract">Advertising keeps Google and many of the websites and services you use free of charge. We work hard to make sure that ads are safe, unobtrusive and as relevant as<lb/> possible. For example, you won&apos;t see pop-up ads on Google and we terminate the accounts of hundreds of thousands of publishers and advertisers that violate our<lb/> policies each year – including ads containing malware, ads for counterfeit goods or those that attempt to misuse your personal information.<lb/> </div>
+	
+	<div type="introduction">How Google uses cookies in advertising<lb/> Cookies help to make advertising more effective – and that is what keeps thousands of websites free of charge. Without cookies, it&apos;s harder for an advertiser to reach its<lb/> audience, or to know how many ads were shown and how many clicks they received.<lb/> Many websites, such as news sites and blogs, partner with Google to show ads to their visitors. Working with our partners, we may use cookies for a number of<lb/> purposes, such as to stop you seeing the same ad over and over again, to detect and stop click fraud, and to show ads that are likely to be more relevant (such as ads<lb/> based on websites you have visited).<lb/>
+
+	Our advertising cookies</div>
+
+		</front>
+	</text>
+</tei>

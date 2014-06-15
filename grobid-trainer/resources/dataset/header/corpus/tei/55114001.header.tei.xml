@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55114001"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Home / Reviews / Software / Utilities / The Best File-Syncing Services<lb/> NEWS / OPINIONS / FEATURES / DEALS / HOW-TO / BUSINESS /<lb/> LAPTOPS / TABLETS / PHONES / APPS / SOFTWARE / SECURITY<lb/> SUBSCRIB<lb/> ALL REVIEWS<lb/></note>
+
+	<note type="page">Page 1 of 10<lb/> </note>
+
+	<note type="other">The Best File-Syncing Services | </note>
+
+	<ptr>PCMag.com<lb/> </ptr>
+
+	<date>14-04-2014<lb/></date>
+
+	<ptr type="web">http://www.pcmag.com/article2/0,2817,2399963,00.asp<lb/></ptr>
+
+	<byline>
+	<docAuthor>BY JILL DUFFY<lb/></docAuthor>
+	</byline>
+
+	<date>SEPTEMBER 28, 2012<lb/></date>
+
+	<note type="other">19 COMMENTS<lb/>373<lb/>SHARES<lb/></note>
+
+	<docTitle>
+	<titlePart>The Best File-Syncing Services<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">Dropbox may be the best-known name in the file-syncing game, but it&apos;s far from the only one. Find out which of the<lb/> many alternatives is right for you based on price, supported devices, and security.<lb/></div>
+
+		</front>
+	</text>
+</tei>

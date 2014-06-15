@@ -1,0 +1,44 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011817"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>African Journal of Agricultural Research Vol. 6(12), pp. 2916-2619, 18 June, 2011<lb/></reference>
+
+	<note type="other">Available online at</note>
+
+	<ptr type="web">http://www.academicjournals.org/AJAR<lb/></ptr>
+
+	<idno>ISSN 1991-637X</idno>
+
+	<note type="copyright">©2011 Academic Journals<lb/></note>
+
+	<note type="other">Full Length Research Paper<lb/></note>
+
+	<docTitle>
+	<titlePart>Comparison of two creaming methods for preparation<lb/> of natural rubber latex concentrates from field latex<lb/>
+	</titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>S. S. Ochigbo*, R. A. Lafia-Araga and M. A. T. Suleiman<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Chemistry, Federal University of Technology,</affiliation>
+	</byline>
+
+	<address>P. M. B. 65 Minna, Post code: 920001, Nigeria.<lb/></address>
+
+	<note type="submission">Accepted 30 May, 2011<lb/></note>
+
+	<div type="abstract">Natural rubber latex (NRL) concentrates are important raw materials which are being used for the<lb/> manufacture of products such as gloves, condoms, foams, balloons, catheters, baby soothers, dental<lb/> dams, latex thread or elastic. Creaming is one of the methods for obtaining latex concentrate from field<lb/> latex. This paper compares a synthetic creaming agent (sodium alginate) with an agricultural one<lb/> (Tamarind seed powder), in the production of latex concentrates from field latex. From the results, the<lb/> value of dry rubber contents (DRCs), which is the major parameter for evaluating extent of latex<lb/> concentration, was slightly higher for concentrate obtained by Tamarind seed powder (60.10%) than<lb/> that by sodium alginate (59.10%). This could be attributed to greater water-absorbing capacity of the<lb/> former than the latter. Overall, the property of latex concentrates obtained from both creaming agents<lb/> compared favourably with literature.<lb/></div>
+
+	<keyword>Key words: Natural rubber, field latex, latex concentrates, creaming, dry rubber contents, Tamarind seeds,<lb/> sodium alginate.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

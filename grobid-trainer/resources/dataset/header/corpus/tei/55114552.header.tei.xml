@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei type="serie-article">
+	<teiHeader>
+		<fileDesc xml:id="55114552"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">page 28<lb/></note>
+
+	<note type="other">National Nanotechnology Infrastructure Network<lb/></note>
+	
+	<note type="other">Chemistry<lb/></note>
+
+	<docTitle>
+	<titlePart>Rapid Synthesis of Silver Nanowires<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Kylee Korte<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Chemistry, Bradley University<lb/></affiliation>
+	</byline>
+
+	<note>NNIN REU Site: Center for Nanotechnology, University of Washington<lb/> NNIN REU Principal Investigator:Professor Younan Xia,  Chemistry, University of Washington<lb/> NNIN REU  Mentor: Dr. Sara Skrabalak, Chemistry, University of Washington<lb/></note>
+
+	<email>Contact: kkorte@mail.bradley.edu, xia@biomed.wustl.edu, skrabs@u.washington.edu<lb/></email>
+
+	<div type="abstract">Abstract<lb/> The presence of either copper(I) or copper(II) chloride in the polyol reduction of silver nitrate facilitates the production<lb/> of silver nanowires. Silver nanowires have applications in many areas, including electronics and catalysis. These wires are<lb/> produced quickly (in approximately one hour), with the synthesis being easily performed in disposable glass vials, using only<lb/> pipettes to deliver reagents. Specifically, silver nitrate is reduced by ethylene glycol in the presence of poly(vinylpyrrolidone)<lb/> (PVP) and copper(II) chloride. PVP acts as a stabilizing agent, while the copper chloride likely controls the rate of silver(I)<lb/> reduction and initial seed formation. Our results indicate that both the copper and chloride ions are necessary to synthesize<lb/> the wires; otherwise, ill-defined silver particles are formed. Scanning electron microscopy (SEM) has been used to<lb/> characterize the wires.<lb/></div>
+
+		</front>
+	</text>
+</tei>

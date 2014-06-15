@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<marker>*</marker>
+								<forename>Arrvindh</forename>
+								<surname>Shriraman</surname>,
+							</persName>
+							<persName>
+								<forename>Virendra</forename>
+								<surname>Marathe</surname>,
+							</persName>
+							<persName>
+								<forename>Sandhya</forename>
+								<surname>Dwarkadas</surname>,
+							</persName>
+							<persName>
+								<forename>Michael</forename>
+								<middlename>L</middlename>.
+								<surname>Scott</surname>
+							<lb/>
+							</persName>
+							<persName>
+								<forename>David</forename>
+								<surname>Eisenstat</surname> ,
+							</persName>
+							<persName>
+								<forename>Christopher</forename>
+								<surname>Heriot</surname> ,
+							</persName>
+							<persName>
+								<forename>William</forename>
+								<middlename>N</middlename> .
+								<surname>Scherer III</surname> ,and
+							</persName>
+							<persName>
+								<forename>Michael</forename>
+								<middlename>F</middlename>
+								<surname>Spear</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

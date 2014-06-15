@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>a</marker>
+							<orgName type="laboratory">Learning Lab Lower Saxony</orgName>,
+							<orgName type="institution">University of Hannover</orgName>,
+							<address>
+								<country>Germany</country>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>b</marker>
+							<orgName type="institution">USC Information Sciences Institute</orgName>,
+							<address>
+								<addrLine>Marina del Rey</addrLine>,
+								<region>CA</region>,
+								<country>USA</country>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>c</marker>
+							<orgName type="institution">DFKI GmbH</orgName>,
+							<address>
+								<settlement>Kaiserslautern</settlement>,
+								<country>Germany</country>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>d</marker>
+							<orgName type="department">Centre for user oriented IT Design</orgName>,
+							<orgName type="institution">Royal Institute of Technology</orgName>,
+							<address>
+								<settlement>Stockholm</settlement>,
+								<country>Sweden</country>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>e</marker>
+							<orgName type="department">Department of Information Science</orgName>,
+							<orgName type="institution">Uppsala University</orgName>,
+							<address>
+								<country>Sweden</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

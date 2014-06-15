@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013343"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">page 1 of 15<lb/></note>
+
+	<docTitle>
+	<titlePart>EPOPROSTENOL SODIUM -epoprostenol sodium injection<lb/> STERILE DILUENT FOR EPOPROSTENOL SODIUM -water injection<lb/> 
+	</titlePart>
+	</docTitle>
+
+	<affiliation>Teva Parenteral Medicines, Inc<lb/> </affiliation>
+
+	<div type="abstract">PRESCRIBING INFORMATION<lb/> Rx only<lb/> DESCRIPTION Epoprostenol sodium for injection is a sterile sodium salt formulated for intravenous (IV) administration. Each vial of epoprostenol<lb/> sodium for injection contains epoprostenol sodium equivalent to either 0.5 mg (500,000 ng) or 1.5 mg (1,500,000 ng) epoprostenol,<lb/> 3.76 mg glycine, 2.93 mg sodium chloride, and 50 mg mannitol. Sodium hydroxide may have been added to adjust pH.<lb/> Epoprostenol (PGI 2 , PGX, prostacyclin), a metabolite of arachidonic acid, is a naturally occurring prostaglandin with potent<lb/> vasodilatory activity and inhibitory activity of platelet aggregation.<lb/> Epoprostenol is (5Z,9α,11α,13E,15S)-6,9-epoxy-11,15-dihydroxyprosta-5,13-dien-1-oic acid.<lb/> Epoprostenol sodium has a molecular weight of 374.45 and a molecular formula of C 20 H 31 NaO 5 . The structural formula is:<lb/> Epoprostenol sodium for injection is a white to off-white powder that must be reconstituted with STERILE DILUENT for<lb/> epoprostenol sodium for injection. STERILE DILUENT for epoprostenol sodium for injection is supplied in glass vials containing 50<lb/> mL of 94 mg glycine,73.3 mg sodium chloride, sodium hydroxide (added to adjust pH), and Water for Injection, USP.<lb/> The reconstituted solution of epoprostenol sodium for injection has a pH of 11.0 to 11.8 and is increasingly unstable at a lower pH.<lb/> </div>
+
+	<div type="introduction">CLINICAL PHARMACOLOGY</div>
+
+		</front>
+	</text>
+</tei>

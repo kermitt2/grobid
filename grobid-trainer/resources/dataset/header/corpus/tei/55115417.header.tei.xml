@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei type="web">
+	<teiHeader>
+		<fileDesc xml:id="55115417"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="copyright">Copyright © 2009-2014 IP.com. All rights Reserved.<lb/></note>
+
+	<note type="other">@ipdotcom Contact Us<lb/> Privacy Policy<lb/> Terms of Use<lb/> WELCOME, EUROPEAN PATENT OFFICE<lb/> ANNOUNCEMENTS CONTACT US<lb/> PERSONAL SIGN IN<lb/> Home About<lb/> InnovationQ Search<lb/> Publish Research &amp; Analytics<lb/></note>
+
+	<docTitle>
+	<titlePart>Method to Provide Exclusive Access to a Shared I2C Bus Resource (I2C MUTEX)<lb/></titlePart>
+	</docTitle>
+
+	<note>IP.com Prior Art Database Disclosure<lb/> </note>
+	
+	<idno>IP.com Disclosure Num ber: IPCOM000015947D</idno>
+
+	<date>Publication Date: 08-May-2002<lb/></date>
+
+	<byline>
+	<note type="other">Find Similar<lb/> Dow nload<lb/> Publishing Venue<lb/></note>
+	</byline>
+
+	<note>IBM Technical Disclosure Bulletin<lb/></note>
+
+	<div type="abstract">Abstract<lb/> In today&apos;s I2C bus structure there is no architected w ay to obtain exclusive access to any I2C bus resource. Any I2C master may read and w rite<lb/> to any device w ithout concern for w hat other agents may be doing. This may lead to a situation w here a device that needs multiple separate<lb/> transactions to perform an operation may be corrupted by multiple I2C masters accessing the device. This invention w ill allow multiple I2C masters<lb/> that follow the &quot;I2C MUTEX semaphore protocol&quot; to arbitrate and gain exclusive access of a shared I2C resource. The invention is composed of<lb/> an I2C based memory device, control logic to prevent multiple I2C masters from setting their semaphore bit and a protocol to ensure serialized<lb/> access to a different I2C resource. The invention is built such that an I2C master can read and w rite data to the device using the standard Philips<lb/> I2C protocol. To the I2C masters the invention looks like a standard I2C based memory device. The can support as few as tw o masters and is only<lb/> limited in size by the number of I2C master that require access to the shared resource. Each I2C master is assigned a bit in the invention w ith the<lb/> highest priority master ow ning the MSB. No tw o I2C masters can share a bit. Each I2C master is assigned a different bit since by the I2C<lb/> arbitration rules, tw o different I2C masters can successfully w rite the same data to a device during the exact same I2C bus transaction. If a<lb/> single bit w ere to be used, tw o I2C masters could presume that they each have exclusive access. To obtain a lock, the I2C master performs an<lb/> I2C w rite transaction to the invention setting its semaphore bit to a zero and all other bits to a 1. The w rite transaction is allow ed to span multiple<lb/> bytes so the I2C master and invention must follow the I2C spec accordingly. If no other I2C master has previously requested a lock, the<lb/> semaphore bit corresponding to the I2C master w ill be set to zero. If a different I2C master previously requested a lock, the w rite transaction w ill<lb/> be halted by a NACK during the last data phase of the transaction. This NACK behavior w ill indicate to the current I2C master that the invention is<lb/> already processing a locked transaction. If the I2C master does not get a NACK during the last data phase, it ow ns the I2C MUTEX. Alternatively, if<lb/> the I2C master can not respond to NACKs in this manner or chooses not to, then the I2C master may read the invention to determine if its bit has<lb/> been set. The master is then free to perform operations on the shared I2C resource. After completing all locked transactions the ow ning I2C<lb/> master then w rites all one&apos;s to the invention; this w ill clear the semaphore bit. The invention is then able to perform another lock. The invention w ill<lb/> respond to read I2C transactions and indicate in the data stream w hich master ow ns the lock. Any master may reset the lock so that if a device<lb/> malfunctions w hile holding the I2C MUTEX the lock can be reset. Masters must be careful not to inadvertently reset the lock.<lb/></div>
+
+		</front>
+	</text>
+</tei>

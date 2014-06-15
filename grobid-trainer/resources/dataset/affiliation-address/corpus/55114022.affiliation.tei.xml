@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="laboratory">Pacific Gas and Electric Company</orgName>
+							<lb/>
+							<address>
+								<addrLine>101 Montgomery St.</addrLine>,
+								<addrLine>15th Floor</addrLine>
+							<lb/>
+								<settlement>San Francisco</settlement>,
+								<region>CA</region>
+								<postCode>94104</postCode>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

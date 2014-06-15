@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Benjamin</forename>
+								<middlename>S</middlename>.
+								<surname>Marinov</surname>
+								<marker>*</marker>,
+							</persName>
+							<persName>
+								<forename>Eric</forename>
+								<middlename>G</middlename>.
+								<surname>Bend</surname> and
+							</persName>
+							<persName>
+								<forename>Jonathan</forename>
+								<middlename>J</middlename>.
+								<surname>Abramson</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

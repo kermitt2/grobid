@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55113754"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>ISAS&apos;99, volume 3, pages 50–57, Orlando (USA), august 1999<lb/></reference>
+
+	<docTitle>
+	<titlePart>Multi-Agent Systems and Virtual Reality for Interactive Prototyping<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>F. Harrouet, P. Reignier, J. Tisseau<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Laboratoire d&apos;Informatique Industrielle<lb/> Ecole Nationale d&apos;Ingénieurs de Brest — C.P. n<lb/> o</affiliation>
+	</byline>
+
+	<address>15, 29608 BREST Cedex (France)<lb/></address>
+
+	<email>[harrouet,reignier,tisseau]@enib.fr —</email>
+
+	<ptr type="web">http://www.enib.fr/LI2/<lb/></ptr>
+
+	<div type="abstract">ABSTRACT This paper introduces a Virtual Reality platform based<lb/> on a dynamic multi-agent programming language. These<lb/> tools have been designed to show that simulating a Multi-<lb/>Agent System in a virtual environment with dynamic<lb/> properties can be used for Interactive Prototyping.<lb/> This kind of prototyping has to be considered when the<lb/> designed system cannot be described as a whole but as a<lb/> set of autonous components with many interactions. Due<lb/> to the fact that these interactions are very complex to<lb/> model before simulating the system, we propose to let the<lb/> designer enter inside the system and dynamically build,<lb/> tune and mend the model.<lb/> After making out a list of requirements to achieve this<lb/> goal, we present our tool. Then, an example shows,<lb/> through a very simple application, what an Interactive<lb/> Prototyping session looks like.<lb/></div>
+
+	<keyword>Keywords: Multi-agent systems, virtual reality, simula-<lb/>tion, dynamic language, interactive prototyping.<lb/></keyword>
+
+	<div type="introcution">1 INTRODUCTION<lb/> The aim of this paper is to point out the fact that a multi-<lb/>agent approach in a virtual reality environment, as per-<lb/>formed with our oRis/ARéVi platform, can be run as a<lb/> tool for dynamic/interactive prototyping.<lb/> The classical spiral, very often used to build a prototype of<lb/> a system to be designed, consists in the following loop:<lb/> 1. to generate the prototype,<lb/> 2. to test the prototype,<lb/> 3. to adjust the prototype according to the test&apos;s re-<lb/>sults,<lb/> 4. to go to step 2 while needed.<lb/> This approach is quite efficient in many cases where the<lb/> described system can be seen as a whole corresponding to<lb/> one global model. However, when the system becomes<lb/> complex (i.e. made up of multiple parts in interaction),<lb/> this global model is much harder to design and to tune,<lb/> due to the fact that every possible interaction cannot be<lb/> listed in an exhaustive way. According to this remark,<lb/> our main goal is to introduce a tool which allows to han-<lb/>dle intrinsically distributed systems to dynamically and<lb/> interactively model their behavior.<lb/> If the simulated system is complex, then its global behav-<lb/>ior cannot be fully described. Therefore, it would be easier<lb/> to try to give its components the best behavior when pe-<lb/>culiar situations happen to them. This can be done only<lb/> when the simulation of the system is running because we<lb/> are not able to know in advance every possible configura-<lb/>tion of the system. Thus, the prototyping loop can dis-<lb/>appear and the user and the designer of the system<lb/> have to be present inside the simulated system.<lb/> The use of a tool allowing to perform this kind of proto-<lb/>typing should consist in:<lb/> describing an initial state of the system to work on<lb/> as a set of components with their own behaviors,<lb/> letting the tool simulate the system&apos;s global behav-<lb/>ior which results from interactions between compo-<lb/>nents,<lb/> allowing the user to modify and mend behaviors and<lb/> structures during run-time.<lb/> In section 2, we will describe what we exactly define as<lb/> Interactive Prototyping. The functionalities required by<lb/> a tool to achieve this goal will be presented section 3.<lb/> Then, a possible solution, illustrated by an example, will<lb/> be shown section 4.
+	<lb/></div>
+
+		</front>
+	</text>
+</tei>

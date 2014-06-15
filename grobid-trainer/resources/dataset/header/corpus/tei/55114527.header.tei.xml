@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei type="white-paper">
+	<teiHeader>
+		<fileDesc xml:id="55114527"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<docAuthor>Andrew Hillier, </docAuthor>
+	</byline>
+		
+	<note type="other">Co-Founder &amp; CTO, </note>
+
+	<byline>
+	<affiliation>CiRBA<lb/></affiliation>
+	</byline>
+
+	<docTitle>
+	<titlePart>Advanced Workload<lb/> Analysis Techniques<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">WHITE PAPER<lb/> </note>
+
+	<note>866.731.0090<lb/></note>
+
+	<note type="page">2<lb/></note>
+
+	<note type="other">Advanced Workload Analysis Techniques<lb/></note>
+
+	<note type="copyright">Copyright © 2004-2009, CiRBA Inc. All Rights Reserved </note>
+
+	<ptr>www.CiRBA.com<lb/></ptr>
+
+		</front>
+	</text>
+</tei>

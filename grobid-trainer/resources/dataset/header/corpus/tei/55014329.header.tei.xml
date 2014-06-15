@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014329"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>REVIEW: ALPHASMART DANA<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>by Paul Fatula,</docAuthor>
+	</byline>
+
+	<email>pfatula@atpm.com<lb/></email>
+
+	<note>Developer: </note>
+
+	<byline>
+	<affiliation>AlphaSmart, Inc.<lb/></affiliation>
+	</byline>
+
+	<note type="other">Price: $399.99<lb/></note>
+
+		</front>
+	</text>
+</tei>

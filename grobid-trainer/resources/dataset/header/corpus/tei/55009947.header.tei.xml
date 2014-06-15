@@ -1,0 +1,66 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009947"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+
+	<note>MOBILEMAN<lb/> IST-2001-38113<lb/> Mobile Metropolitan Ad hoc Networks<lb/> </note>
+
+	<docTitle>
+	<titlePart>MOBILEMAN<lb/> Architecture, protocols and services<lb/> Deliverable D5<lb/></titlePart>
+	</docTitle>
+
+	<note type="submission">Contractual Report Preparation Date: September 2003<lb/> Actual Date of Delivery: 7 October 2004<lb/></note>
+
+	<note type="other">Estimated Person Months: 46<lb/> Number of pages: 165<lb/> Contributing Partners:</note>
+
+	<byline>
+	<affiliation>Consiglio Nazionale delle Ricerche</affiliation>
+	</byline>
+
+	<address>(Italy),</address>
+
+	<byline>
+	<affiliation>University of Cambridge<lb/></affiliation>
+	</byline>
+	
+	<address>(UK), </address>
+	
+	<byline>
+	<affiliation>Institut Eurecom</affiliation>
+	</byline>
+
+	<address>(France),</address>
+
+	<byline>
+	<affiliation>Helsinki University</affiliation>
+	</byline>
+
+	<address>(Finland),</address>
+
+	<byline>
+	<affiliation>NETikos</affiliation>
+	</byline>
+
+	<address>(Italy),</address>
+
+	<byline>
+	<affiliation>Scuola<lb/> Universitaria Professionale della Svizzera Italiana</affiliation>
+	</byline>
+
+	<address>(Switzerland)<lb/></address>
+
+	<byline>
+	<docAuthor>Authors: Marco Conti, Giovanni Turi, Gaia Maselli (CNR), Jon Crowcroft, Sven Ostring<lb/> (Cambridge), Pietro Michiardi, Refik Molva (Eurecom), Jose Costa Requena (HUT),<lb/> Piergiorgio Cremonese, Veronica Vanni (Netikos), Ivan Defilippis, Silvia Giordano,<lb/> Alessandro Puiatti (SUPSI)<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Abstract: The aim of this deliverable is to provide the overview of the architecture, protocols and<lb/> services designed for the MobileMAN paradigm as emerging at the end of the first year of the<lb/> project. First, we present the complete architecture with the communication flows among different<lb/> functions, and then we discuss protocols belonging to the MobileMAN protocols&apos; stack. Protocols<lb/> are presented by following a bottom up approach from wireless technologies up to the application<lb/> and economic issues.<lb/></div>
+
+	<note type="other">Project funded by the European<lb/> Community under the &quot;Information<lb/> Society Technologies&quot; Programme (1998-<lb/>2002)</note>
+
+		</front>
+	</text>
+</tei>

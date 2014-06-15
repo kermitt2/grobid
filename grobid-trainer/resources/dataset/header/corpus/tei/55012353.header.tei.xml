@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012353"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Théorie de l&apos;anharmonicité desphéno enes périodiques<lb/> non-linéaires<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Patrick Hanusse<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Centre de Recherche Paul Pacal, CNRS-Université de Bordeaux,</affiliation>
+	</byline>
+
+	<address>Avenue A. Schweitzer, 33600, Pessac<lb/></address>
+
+	<email>hanusse@crpp-bordeaux.cnrs.dr<lb/></email>
+
+	<div type="introduction">Lesphéno enes périodiques dans le temps ou l&apos;espace représentent l&apos;une des manifestations les plus<lb/> répandues du monde physique. Nous considérons ici la description des aspects non-linéaires commun a<lb/> unet es large classe desys emes physiques.<lb/> Une manifestation périodique quelconque peu etre vue comme la superposition ou composition d&apos;os-<lb/>cillations anharmoniques pour lesquelles nous présentons une théorie générale. Nous considérons ici des<lb/> oscillations (( simples )), par opposition aux oscillations composées ou modulées, mais dont la morphologie<lb/> peut etre quelconque à la condition de ne posséder qu&apos;un maximum et un minimum par période.<lb/> Fondamentalement, nous voulons répondre à  la question suivante : est-il possible de définir des pa-<lb/>raetres morphologiques universels, en petit nombre, en plus de période et amplitude, qui expriment la<lb/> physique et mesurent les propriétés de la dynamique ou de la structure du syseme. En d&apos;autres termes,<lb/> est-il possible de concevoir une théorie générique de l&apos;anharmonicité? Le réponse est oui!<lb/> </div>
+
+		</front>
+	</text>
+</tei>

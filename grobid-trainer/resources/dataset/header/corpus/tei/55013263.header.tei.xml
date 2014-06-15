@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013263"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>White Noise Reduction of Audio Signal using Wavelets Transform<lb/> with Modified Universal Threshold<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>MATKO SARIC, LUKI BILICIC, HRVOJE DUJMIC<lb/> </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University of Split<lb/></affiliation>
+	</byline>
+
+	<address>R.Boskovica b.b, HR 21000 Split<lb/> CROATIA<lb/></address>
+
+	<div type="abstract">Abstract: -This paper discusses wavelet-based algorithm for audio denoising. We focused on audio<lb/> signals corrupted with white noise which is especially hard to remove because it is located in all<lb/> frequencies. We use Discrete Wavelet transform (DWT) to transform noisy audio signal in wavelet<lb/> domain. It is assumed that high amplitude DWT coefficients represent signal, and low amplitude<lb/> coefficients represent noise. Using thresholding of coefficients and transforming them back to time<lb/> domain it is possible to get audio signal with less noise. We are proposing modified universal<lb/> thresholding of coefficients which results with better audio signal. The main criterion for evaluation of<lb/> experimental results was objective degree grade (ODG).<lb/>
+	</div>
+
+	<keyword>Keywords: audio denoising, wavelets, thresholding, noise reduction<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

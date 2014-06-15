@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Ricardo</forename>
+								<surname>Jiménez-Martínez</surname>
+							<lb/>
+								<marker>*</marker>,,
+							</persName>
+							<persName>
+								<forename>Daniel</forename>
+								<middlename>J</middlename> .
+								<surname>Kennedy</surname>
+							<lb/> , ,
+							</persName>
+							<persName>
+								<forename>Michael</forename>
+								<surname>Rosenbluh</surname> ,
+							</persName>
+							<persName>
+								<forename>Elizabeth</forename>
+								<middlename>A</middlename> .
+							<lb/>
+								<surname>Donley</surname>
+							<lb/>
+								<marker>*</marker> ,
+							</persName>
+							<persName>
+								<forename>Svenja</forename>
+								<surname>Knappe</surname>
+							<lb/>
+								<marker>*</marker> ,
+							</persName>
+							<persName>
+								<forename>Scott</forename>
+								<middlename>J</middlename> .
+								<surname>Seltzer</surname>
+							<lb/> , ,
+							</persName>
+							<persName>
+								<forename>Hattie</forename>
+								<middlename>L</middlename> .
+								<surname>Ring</surname>
+							<lb/>, ,
+							</persName>
+							<persName>
+								<forename>Vikram</forename>
+								<middlename>S</middlename>.
+								<surname>Bajaj</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

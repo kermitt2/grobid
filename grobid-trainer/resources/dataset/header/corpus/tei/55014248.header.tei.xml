@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014248"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Kidney International, Vol. 63 (2003), pp. 1714–1724<lb/></reference>
+
+	<docTitle>
+	<titlePart>Differential gene expression following early renal<lb/> ischemia/reperfusion<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>SUROJ SUPAVEKIN, WEIJIA ZHANG, RAJU KUCHERLAPATI, FREDERICK J. KASKEL,<lb/> LEON C. MOORE, and PRASAD DEVARAJAN<lb/>
+	</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Pediatric Nephrology, Children&apos;s Hospital at Montefiore, Albert Einstein College of Medicine,</affiliation>
+	</byline>
+
+	<address>Bronx, New York;<lb/></address>
+
+	<byline>
+	<affiliation>Harvard-Partners Center for Genetics and Genomics, Harvard Medical School, Boston, Massachusetts; Physiology and<lb/> Biophysics, State University of New York,</affiliation>
+	</byline>
+
+	<address>Stony Brook, New York;</address>
+
+	<byline>
+	<affiliation>and Nephrology &amp; Hypertension, Cincinnati<lb/> Children&apos;s Hospital Medical Center, University of Cincinnati School of Medicine,</affiliation>
+	</byline>
+
+	<address>Cincinnati, Ohio<lb/></address>
+
+	<div type="abstract">Differential gene expression following early renal ischemia/<lb/> Ischemia/reperfusion injury is a leading cause of acute<lb/> reperfusion.<lb/> renal failure, a common clinical condition still associated<lb/> Background. Acute renal failure from ischemia/reperfusion</div>
+
+		</front>
+	</text>
+</tei>

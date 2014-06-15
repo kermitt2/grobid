@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55114449"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Performance and Accuracy Test of the WLAN Indoor Positioning System<lb/> &quot;ipos&quot;<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Guenther RETSCHER<lb/> 1 , Eva MOSER<lb/> 2 , Dennis VREDEVELD<lb/> 3 and Dirk HEBERLING<lb/> 4<lb/> </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1,2 Vienna University of Technology,</affiliation>
+	</byline>
+
+	<address>Vienna, Austria,</address>
+
+	<email>e-mail: gretsch@pop.tuwien.ac.at,<lb/> mosere@gmx.at<lb/></email>
+
+	<byline>
+	<affiliation>3,4 IMST GmbH,</affiliation>
+	</byline>
+
+	<address>Kamp-Lintfort, Germany,</address>
+
+	<email>e-mail: (vredeveld, heberling)@imst.de<lb/></email>
+
+	<div type="abstract">Abstract – Location based-services and personal navigation require the location<lb/> determination of a user not only in outdoor environments but also indoor. For indoor location<lb/> already established wireless infrastructure such as WLAN (Wireless Local Area Networks) can<lb/> be employed. This approach has the advantage that no costly hardware installations are<lb/> necessary inside a building if WLAN is already available. The IMST GmbH has developed a<lb/> software framework called &quot;ipos&quot; for indoor positioning technologies. The principle of the<lb/> developed platform and the performance of the location determination using WLAN in a<lb/> localization testbed of IMST GmbH are presented in this paper.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>YQ</forename>
+								<surname>Liu</surname>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>E</forename>
+								<surname>Kyle</surname>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>S</forename>
+								<surname>Patel</surname>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>F</forename>
+								<surname>Housseau</surname>
+								<marker>3</marker> ,
+							</persName>
+							<persName>
+								<forename>F</forename>
+								<surname>Hakim</surname>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>R</forename>
+								<surname>Lieberman</surname>
+								<marker>4</marker> ,
+							</persName>
+							<persName>
+								<forename>M</forename>
+								<surname>Pins</surname>
+								<marker>5</marker> ,
+							</persName>
+							<persName>
+								<forename>MV</forename>
+								<surname>Blagosklonny</surname>
+								<marker>2</marker>
+							<lb/>
+							</persName>
+							<persName>
+								&amp;
+								<forename>RC </forename>
+								<surname>Bergan</surname>
+								<marker>1 *</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

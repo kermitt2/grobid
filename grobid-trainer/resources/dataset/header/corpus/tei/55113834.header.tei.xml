@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei type="technical-report">
+	<teiHeader>
+		<fileDesc xml:id="55113834"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>3GPP TS 23.060 V11.3.0</idno>
+
+	<date>(2012-09)<lb/></date>
+
+	<note type="other">Technical Specification<lb/></note>
+
+	<docTitle>
+	<titlePart>3rd Generation Partnership Project;<lb/> Technical Specification Group Services and System Aspects;<lb/> General Packet Radio Service (GPRS);<lb/> Service description;<lb/> Stage 2<lb/> (Release 11)<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">The present document has been developed within the 3rd Generation Partnership Project (3GPP<lb/> TM<lb/> ) and may be further elaborated for the purposes of 3GPP.<lb/> The present document has not been subject to any approval process by the 3GPP Organizational Partners and shall not be implemented.<lb/> This Specification is provided for future development work within 3GPP only. The Organizational Partners accept no liability for any use of this Specification.<lb/> Specifications and reports for implementation of the 3GPP<lb/> TM system should be obtained via the 3GPP Organizational Partners&apos; Publications Offices.<lb/></note>
+
+	<note type="other">3GPP<lb/> Release 11<lb/> </note>
+
+	<note type="page">35 </note>
+
+	<idno>3GPP TS 23.060 V11.3.0 </idno>
+
+	<date>(2012-09)<lb/></date>
+
+	<div type="abstract">5.3.13 Machine Type Communication (MTC)<lb/> 5.3.13.1<lb/> General<lb/> This clause provides an overview about functionality for Machine Type Communications according to service<lb/> requirements described in TS 22.368 [110]. The specific functionality is described in the affected procedures and<lb/> features of this and other specifications. For discrepancies between this overview clause and the detailed procedure and<lb/> function descriptions, the latter take precedence.<lb/> MTC functionality is provided by the visited and home networks when the networks are configured to support machine<lb/> type communication. It applies to both the non-roaming case and the roaming case and some functionality may be<lb/> dependent upon the existence of appropriate roaming agreements between the operators.</div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<marker>1</marker> 
+								<forename>s</forename>.
+								<surname>Rajic</surname> and
+							</persName>
+							<persName>
+								<marker>b</marker> 
+								<forename>p</forename>.
+								<middlename>G</middlename>.
+								<surname>Datskos</surname>
+							</persName>
+							<persName>
+								<marker>C</marker>
+								<forename>I</forename>.
+								<surname>Datskou </surname>
+							</persName>
+							<persName>
+								<marker>d</marker>
+								<forename>T</forename>
+								<middlename>A </middlename>
+								<surname>Marlar</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

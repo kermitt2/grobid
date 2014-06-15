@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>T</forename>.
+								<surname>Honegger</surname>,
+							</persName>
+							<persName>
+								<forename>K</forename>.
+								<surname>Berton</surname>,
+							</persName>
+							<persName>
+								<forename>O</forename>.
+								<surname>Lecarme</surname>,
+							</persName>
+							<persName>
+								<forename>L</forename>.
+								<surname>Latu-Romain</surname> and
+							</persName>
+							<persName>
+								<forename>D</forename>.
+								<surname>Peyrade</surname>
+								<marker>*</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

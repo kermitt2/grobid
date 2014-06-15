@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009980"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Chip Multi Processing aware Linux Kernel Scheduler<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Suresh Siddha<lb/></docAuthor>
+	</byline>
+
+	<email>suresh.b.siddha@intel.com<lb/></email>
+
+	<byline>
+	<docAuthor>Venkatesh Pallipadi<lb/></docAuthor>
+	</byline>
+
+	<email>venkatesh.pallipadi@intel.com<lb/></email>
+
+	<byline>
+	<docAuthor>Asit Mallick<lb/></docAuthor>
+	</byline>
+
+	<email>asit.k.mallick@intel.com<lb/></email>
+
+	<div type="abstract">Abstract<lb/> Recent advances in semiconductor manufactur-<lb/>ing and engineering technologies have led to<lb/> the inclusion of more than one CPU core in a<lb/> single physical processor package. This, pop-<lb/>ularly know as Chip Multi Processing (CMP),<lb/> allows multiple instruction streams to execute<lb/> at the same time. CMP is in addition to today&apos;s<lb/> Simultaneous Multi Threading (SMT) capabil-<lb/>ities, like Intel<lb/> R<lb/> Hyper-Threading Technology<lb/> which allows a processor to present itself as two<lb/> logical processors, resulting in best use of ex-<lb/>ecution resources. With CMP, today&apos;s Linux<lb/> Kernel will deliver instantaneous performance<lb/> improvement. In this paper, we will explore<lb/> ideas for further improving peak performance<lb/> and power savings by making the Linux Kernel<lb/> Scheduler CMP aware.<lb/></div>
+
+		</front>
+	</text>
+</tei>

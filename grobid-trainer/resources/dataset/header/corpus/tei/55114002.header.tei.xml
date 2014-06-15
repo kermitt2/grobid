@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei type="technical-report">
+	<teiHeader>
+		<fileDesc xml:id="55114002"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<date>Fe brua r y, 201 3<lb/></date>
+	
+	<docTitle>
+	<titlePart>Measurement and Verification for<lb/> Demand Response<lb/>Prepared for the National Forum on the National<lb/> Action Plan on Demand Response: Measurement<lb/> and Verification Working Group<lb/> </titlePart>
+	</docTitle>
+
+	<docAuthor>AUTHORS:<lb/></docAuthor>
+
+	<byline>
+	<docAuthor>Miriam L. Goldberg &amp; G. Kennedy Agnew—</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>DNV KEMA Energy and<lb/> Sustainability<lb/></affiliation>
+	</byline>
+
+	<note type="other">National Forum of the National Action<lb/> Plan on Demand Response<lb/> Measurement and Verification for Demand Response was developed to fulfill part of the<lb/> Implementation Proposal for The National Action Plan on Demand Response, a report to<lb/> Congress jointly issued by the U.S. Department of Energy (DOE) and the Federal Energy<lb/> Regulatory Commission (FERC) in June 2011. Part of that implementation proposal called<lb/> for a &quot;National Forum&quot; on demand response to be conducted by DOE and FERC.<lb/></note>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei type="technical-report">
+	<teiHeader>
+		<fileDesc xml:id="55115425"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Capabilities of Current<lb/> and Next-Generation<lb/> Delivery Networks<lb/> involved in FascinatE<lb/> Services<lb/> Deliverable D4.2.1<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">FascinatE identifier: FascinatE-D421-TNO-CapabilitesDeliveryNetworks-<lb/>v08.doc<lb/> Deliverable number: D4.2.1<lb/> Author(s) and company: A. Havekes, O.A. Niamut, M.J. Prins (TNO);<lb/> J.-F. Macq, P. Rondao Alface, N. Verzijp (ALU)<lb/> Internal reviewers: G. Thomas (BBC); O. Schreer (HHI)<lb/> Work package / task: WP4 / T4.2<lb/> Document status: Final<lb/> Confidentiality: Public<lb/> Version Date<lb/> Reason of change<lb/></note>
+
+	<note type="other">1 </note>
+
+	<date>2010-08-31<lb/></date>
+
+	<note type="other">Document created (initial ToC and topic allocation per<lb/> contributing partner)<lb/></note>
+
+	<note type="other">2 </note>
+
+	<date>2010-10-04<lb/></date>
+
+		</front>
+	</text>
+</tei>

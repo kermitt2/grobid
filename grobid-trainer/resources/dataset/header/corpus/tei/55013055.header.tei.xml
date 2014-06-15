@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013055"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Becrypt Trusted Client v2.3<lb/> Security Target<lb/>EAL2<lb/> </titlePart>
+	</docTitle>
+
+	<note type="other">Version 1.1<lb/></note>
+
+	<date>November 2009</date>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">Department of Chemistry</orgName>,
+							<orgName type="department">Faculty<lb/> of Science</orgName>,
+							<orgName type="institution">Hokkaido<lb/> University</orgName>,
+							<address>
+								<settlement>Sapporo</settlement>
+							<lb/>
+								<postCode>060</postCode>
+							</address>
+						</affiliation>	
+						<affiliation>
+							<orgName type="department">Central Research<lb/> Laboratories</orgName>,
+							<orgName type="institution">Teijin<lb/> Limited</orgName>,
+							<lb/>
+							<address>
+								<settlement>Hino</settlement>,
+								<region>Tokyo</region>
+								<postCode>191</postCode>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

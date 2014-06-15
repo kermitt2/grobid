@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010001"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Rechercher...<lb/> Accueil Contacter Mamy<lb/> News Liens<lb/> Menu principal<lb/> Accueil News<lb/> Rechercher Contacter Mamy<lb/> Liens<lb/> Partenaires<lb/> Web Jardinier<lb/> Accueil<lb/> Argousier<lb/> Derniers articles<lb/>Le site reprends du poil<lb/> de la bête<lb/></note>
+	
+	<byline>
+	<note type="other">Bardane Barbarée<lb/> Baobab Bananier<lb/> Bambou Balsamine<lb/> Badiane Asperges<lb/> Asareth Arum // Gouet<lb/> Absinthe Artichaud<lb/> Aroche Arnica<lb/></note>
+	</byline>
+
+	<docTitle>
+	<titlePart>Huile d&apos;Olive au Basilic<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Huile aromatisée naturellement. Vierge Extra 200ml, 12,70 EUR<lb/></note>
+
+	<ptr type="web">www.aixetterra.com/Huile_Basilic<lb/></ptr>
+
+	<byline>
+	<docAuthor>Chez Mamy -Argousier<lb/></docAuthor>
+	</byline>
+
+	<ptr type="web">http://www.chezmamy.com/content/view/67/27/<lb/></ptr>
+
+	<note type="page">1 of 5<lb/></note>
+
+	<date>19-10-2011</date>
+
+	<note type="other">15:06</note>
+
+		</front>
+	</text>
+</tei>

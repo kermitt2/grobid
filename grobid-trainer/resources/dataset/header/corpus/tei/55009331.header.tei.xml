@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009331"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Journal of General Microbiology (1991), 137, 291 1-2918.	Printed in Great Britain<lb/></reference>
+	
+	<note type="page">291 1<lb/></note>
+
+	<docTitle>
+	<titlePart>Isolation and characterization of Pseudomonus putida mutants affected in<lb/> arginine, ornithine and citrulline catabolism: function of the arginine<lb/> oxidase and arginine succinyltransferase pathways<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>C. TRICOT,&apos; V. STALON~&quot; and C. LEG RAIN^<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Laboratoire de Microbiologie, Facultt! des Sciences, Universitt! Libre de Bruxelles and 21nstitut de Recherches du CERIA,<lb/></affiliation>
+	</byline>
+
+	<address>I avenue E. Gryson, B-1070 Bruxelles, Belgium<lb/></address>
+
+	<note type="submission">(Received 20 May 1991 ; revised 26 July 1991 ; accepted 12 September 1991)<lb/></note>
+
+	<div type="abstract">Pseudomonas p u t i h mutants impaired in the utilization of arginine are affected in either the arginine<lb/> succinyltransferase pathway, the arginine oxidase route, or both. However, mutants affected in one of the<lb/> pathways still grow on arginine as sole carbon source. Analysis of the products excreted by both wild-type and<lb/> mutant strains suggests that arginine is mainly channelled by the oxidase route. Proline non-utilizing mutants are<lb/> also affected in ornithine utilization, confirming the role of proline as an intermediate in ornithine catabolism.<lb/> Mutants affected in ornithine cyclodeaminase activity still grow on proline and become unable to use ornithine.<lb/> Both proline non-utilizing mutants and ornithine-cyclodeaminase-minus mutants are unable to use citrulline. These<lb/> results, together with induction of ornithine cyclodeaminase when wild-type P. putida is grown on citrulline,<lb/> indicate that utilization of citrulline as a carbon source proceeds via proline with ornithine as an intermediate. Thus<lb/> in P. putidu, the aerobic catabolism of arginine on the one hand and citrulline and ornithine on the other proceed by<lb/> quite different metabolic segments.<lb/></div>
+
+		</front>
+	</text>
+</tei>

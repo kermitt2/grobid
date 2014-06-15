@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008702"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Solid State Science and Technology, Vol. 17, No 1 (2009) 222-228<lb/></reference>
+
+	<idno type="ISSN">ISSN 0128-7389<lb/></idno>
+
+	<docTitle>
+	<titlePart>AC CONDUCTIVITY OF Ca 1-x A x Cu 3 Ti 4 O 12 (A = Sr or Ba) with x = 0.0 and 0.2<lb/> CERAMICS<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>M. Mazni, W. M. Daud, Z. A. Talib, S. A. Halim, M. K. Halimah, C. P. Walter<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Physics, Faculty of Science,<lb/></affiliation>
+	</byline>
+
+	<affiliation>University Putra Malaysia,<lb/> </affiliation>
+	
+	<address>43400 UPM Serdang, Selangor.<lb/></address>
+
+	<div type="abstract">ABSTRACT<lb/> Colossal dielectric constant materials such CaCu 3 Ti 4 O 12 (CCTO) have recently received<lb/> an enormous of attention because of their potential in technological applications due to<lb/> the formation of internal barrier layer capacitor (IBLC) contains semiconducting grains<lb/> with insulating grain boundaries. Ca 1-x Sr x Cu 3 Ti 4 O 12 (CSCTO) and Ca 1-x Ba x Cu 3 Ti 4 O 12<lb/> (CBCTO) with x = 0.0 and 0.2 ceramics has been doped on Ca site with strontium or<lb/> barium was prepared using solid state reaction technique. X-ray diffraction pattern<lb/> shows single phase with cubic structure. In complex impedance plot for both the<lb/> ceramics show three semicircular arcs represent the grain, the grain boundary and<lb/> electrode effect responses and modeled using series network of three parallel RC<lb/> circuits. Two regions were found in conductivity plot due to the grain boundary at low<lb/> frequencies and the grain at high frequencies. The n value obtained from the fitting at<lb/> the grain region at high frequency dependent are above 0.6 indicates of electron<lb/> hopping conduction mechanism among Ti<lb/> 3+<lb/> and Ti<lb/> 4+<lb/> . The activation energy values for<lb/> CCTO are 0.28 eV and 0.74 eV for grain and grain boundary regions, respectively<lb/> while for CSCTO the energies is 0.27 eV and 0.71 and for CBCTO is 0.31 eV and 0.59<lb/> eV for the grain and grain boundary regions respectively.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012777"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Performance Characterization of Traffic Equalizers on<lb/> Heterogeneous Communication Links<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Ji Li<lb/> Jack Brassil<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>MIT HP Laboratories<lb/></affiliation>
+	</byline> 
+
+	<div type="abstract">Abstract. Aggregating the bandwidth of multiple low-cost physical communica-<lb/>tion links to form a single, higher capacity logical link is a common and inexpen-<lb/>sive approach to increasing network performance. Aggregating or bonding links<lb/> has traditionally been used in relatively static settings such as LAN-WAN inter-<lb/>connection, where the component links to be aggregated were typically identical<lb/> (e.g., multiple T1 links) with very similar communication characteristics. How-<lb/>ever the emergence of multi-homed hosts and diverse access technologies (e.g.,<lb/> cable modem, wireless DSL) compel us to study the performance of aggregating<lb/> the bandwidth of increasingly heterogeneous links. In this paper we examine the<lb/> end-to-end performance of a single TCP connection with packets transmitted over<lb/> multiple heterogeneous links. We describe a testbed we constructed, present em-<lb/>pirical results, and introduce a new Linux-based traffic scheduler called wTEQL<lb/> that we have developed to optimize the performance of TCP over multiple het-<lb/>erogeneous communication links. Finally, we present a novel analytical approach<lb/> based on linear systems theory to characterize the performance of TCP over an<lb/> inverse multiplexed channel with WRR scheduling over heterogeneous links. We<lb/> believe that our model is the first to address how TCP throughput can collapse<lb/> under mismatched packet scheduling policies.<lb/>1<lb/></div>
+
+	<keyword>Keywords: TEQL, link bonding, TCP, performance analysis, protocols, WRR schedul-<lb/>ing<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

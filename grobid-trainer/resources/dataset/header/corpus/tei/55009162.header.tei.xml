@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009162"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>SQL<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">100px<lb/> Paradigm(s)<lb/> multi-paradigm<lb/> Appeared in<lb/></note>
+
+	<date>1974<lb/></date>
+
+	<note type="other">Designed by<lb/></note>
+
+	<byline>
+	<docAuthor>Donald D. Chamberlin and<lb/> Raymond F. Boyce<lb/></docAuthor>
+	</byline>
+
+		</front>
+	</text>
+</tei>

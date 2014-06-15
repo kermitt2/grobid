@@ -92,7 +92,8 @@ public class DateParser extends AbstractParser {
                 }
 
                 if (s1.equals("<year>") || s1.equals("I-<year>")) {
-                    if (s3.equals("<date>")) {
+                    //if (s3.equals("<date>")) 
+					{
                         if (date.getYearString() != null) {
                             if ((s1.equals("I-<year>")) ||
                                     (!s1.equals(lastTag) && !lastTag.equals("I-<year>"))
@@ -121,7 +122,8 @@ public class DateParser extends AbstractParser {
                         }
                     }
                 } else if (s1.equals("<month>") || s1.equals("I-<month>")) {
-                    if (s3.equals("<date>")) {
+                    //if (s3.equals("<date>")) 
+					{
                         if (date.getMonthString() != null) {
                             if ((s1.equals("I-<month>")) ||
                                     (!s1.equals(lastTag) && !lastTag.equals("I-<month>"))
@@ -150,7 +152,8 @@ public class DateParser extends AbstractParser {
                         }
                     }
                 } else if (s1.equals("<day>") || s1.equals("I-<day>")) {
-                    if (s3.equals("<date>")) {
+                    //if (s3.equals("<date>")) 
+					{
                         if (date.getDayString() != null) {
                             if ((s1.equals("I-<day>")) ||
                                     (!s1.equals(lastTag) && !lastTag.equals("I-<day>"))

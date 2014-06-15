@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei type="presentation">
+	<teiHeader>
+		<fileDesc xml:id="55113746"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">1<lb/></note>
+
+	<docTitle>
+	<titlePart>Dry Sorbent Injection of Sodium Sorbents<lb/> by Solvay Chemicals<lb/></titlePart> 
+	</docTitle>
+
+	<note>Emission Control and Measurement<lb/> Workshop</note>
+
+	<date>March 24-25, 2010</date>
+
+		</front>
+	</text>
+</tei>

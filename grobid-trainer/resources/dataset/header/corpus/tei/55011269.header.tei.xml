@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011269"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Abstract<lb/></note>
+
+	<docTitle>
+	<titlePart>Homogeneous Time-Resolved Fluorescence<lb/> Part 2: Ratio &amp; data reduction<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">Homogeneous Time-resolved Fluorescence (HTRF<lb/> ®<lb/> ) assays are<lb/> straightforward to perform. They do not require a separation or wash step.<lb/> To reduce the potential interference from biological media or compounds<lb/> left in the plate during detection, we have patented an HTRF ratiometric<lb/> data reduction. Further, the ratiometric value allows the end user to look<lb/> at multiple aspects of the data generated. Additional calculations and<lb/> methods of data reduction will be described in this application note.<lb/></div>
+
+		</front>
+	</text>
+</tei>

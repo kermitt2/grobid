@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei type="web">
+	<teiHeader>
+		<fileDesc xml:id="55115404"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>m-Box — Electronic Music Box<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Toy Design Final Project<lb/> </note>
+
+	<date>Spring 2 004<lb/> </date>
+
+	<div type="abstract">Concept:<lb/> The m-Box is an electronic m usic box that can<lb/> be program m ed by m arking a sheet of paper,<lb/> and operated by a hand-crank.<lb/> </div>
+
+	<docAuthor>Producers:<lb/> Mike Chiaram onte and Matt Slay baugh<lb/> </docAuthor>
+
+	<div type="introduction">Description:<lb/> Fun and educational for both children and<lb/> adults, the m-Box im plicitly teaches the basics<lb/> of tonality and the m usical scale by allowing<lb/> the user to explore the art of m usic com position<lb/> without hav ing to know how to play an<lb/> instrum ent or ev en know any thing about<lb/> m usic.<lb/> Intended Audience:<lb/> Although the m-Box was originally intended<lb/> prim arily for children ages 6 to 1 2 , a m ore<lb/> elaborately fabricated m odel would also appeal<lb/> to adults in the form of an executiv e office toy .<lb/> Background:<lb/> The im petus behind the m-Box was sim ply to<lb/> build a toy . After study ing m any toy s on the<lb/> m arket today and researching how children<lb/> play , we decided to narrow our focus on an<lb/> educational toy that was not ov ertly &apos;about&apos;<lb/> teaching. We both are interested in m usic and<lb/> com position and independently cam e up with<lb/> the idea to hav e a program m able m usic box,<lb/> one that would hav e no rules outside the<lb/> phy sical param eters of the dev ice itself, and<lb/> m-Box -Electronic Music Box<lb/></div>
+
+	<ptr type="web">http://skeptictank.net/toys/</ptr>
+
+		</front>
+	</text>
+</tei>

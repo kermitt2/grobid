@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55114897"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+
+	<note type="other">&quot;SPE<lb/> ,<lb/> SPE 14394<lb/></note>
+
+	<docTitle>
+	<titlePart>Surfactants for C02 Foam Flooding<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>by J.K. Borchardt,&quot;<lb/> D.B. Bright, M.K. Dickson, and S.L. Wellington, *</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Shell Development CO.<lb/></affiliation>
+	</byline>
+
+	<note type="other">q SPE Members<lb/></note>
+
+	<note type="copyright">Copyright 19S5, Sc@ify of Petroleum Engineers<lb/></note>
+
+	<div type="abstract">TM -r<lb/> was prepared for presentation at the SOthAnnual Technical Conference and Exhibitionof the Society of Petroleum Engineers bald in Las<lb/> Vegas, NV September 22-25, 19S5.<lb/> This pqmr waa selected for presentation by an SPE Program Committee following review of informationcontained in an abstract submitted by the<lb/> author(a). Contents of the papar, aa presented, have not baan reviewed by the SocLetyof PetroIaum Engineers and are aubjact to aorractiin by the<lb/> authotie). The material, as presented, doss not nwaaaariiy reflect any Paition of the Sodety of Petmlaum Engineers, ita officers, or membara. Papers<lb/> praaantad at SPE meetings are eubjacl to publiitiin review by Edmrial committees of the Sodety of Petmlaum Engineers. Permission to copy is<lb/> restrictedto an abstract of not more than 300 words. Illustrationsmay not be copied. Tha abstract shouldmntain conapicuouaacknowledgmentof wham<lb/> and by whom the paper is presented. Write Publiiationa Manager, SPE,</div>
+
+	<address>P.O. Sox SSSS3S,Richardson, TX 750SS-3S3S. Talex, 7S0SS9 SPEDAL.<lb/></address>
+
+	<div type="abstract">ABSTRACT<lb/> The uee of foams to reduce C02 moj$lfty<lb/> wae</div>
+
+		</front>
+	</text>
+</tei>

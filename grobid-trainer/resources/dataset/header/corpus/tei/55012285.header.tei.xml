@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012285"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Interference Study for Cognitive LTE-Femtocell in<lb/> TV White Spaces<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Zhao Zhao * , Malte Schellmann , Houcine Boulaaba * , and Egon Schulz *</docAuthor>
+	</byline>
+
+	<email>zhao.zhao@ikt.uni-hannover.de,</email>
+
+	<byline>
+	<affiliation>IKT, Leibniz Universität Hannover,</affiliation>
+	</byline>
+
+	<address>30167 Hannover, Germany<lb/></address>
+
+	<byline>
+	<affiliation>Huawei Technologies Duesseldorf GmbH, European Research Center,</affiliation>
+	</byline>
+
+	<address>80992 Munich, Germany<lb/></address>
+
+	<div type="abstract">Abstract—As one of the future indoor coverage solutions,<lb/> this paper considers the cognitive Femtocell for LTE system<lb/> [1], which can opportunistically access the TV white spaces.<lb/> The paper selects a typical residential building for study case<lb/> and uses the ray tracing method to obtain the channel pro-<lb/>file in european TV bands. Through computer simulation, we<lb/> demonstrate that cognitive LTE-Femtocell can potentially provide<lb/> excellent indoor coverage. Additionally, the power leakage of<lb/> every Femto-equipped building is obtained by simulation and<lb/> the system performance predictions are given based on the<lb/> assumptions of the Femtocell interference as shot-noise process.<lb/> Two interference-avoiding antenna schemes are proposed and<lb/> compared in this paper. The simulation results have shown<lb/> that both schemes are very effective in managing the Femto<lb/> interference, thus giving a reference for the future deployment<lb/> of cognitive Femto in TV bands.<lb/></div>
+
+		</front>
+	</text>
+</tei>

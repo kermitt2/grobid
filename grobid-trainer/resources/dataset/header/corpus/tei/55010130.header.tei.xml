@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010130"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>D I G I T A L L I G H T F I E L D P H O T O G R A P H Y<lb/></titlePart>
+	</docTitle>
+
+	<degree>a dissertation<lb/> submitted to the department of computer science<lb/> and the committee on graduate studies<lb/> of stanford university<lb/> in partial fulfillment of the requirements<lb/> for the degree of<lb/> doctor of philosophy<lb/></degree>
+	
+	<byline>
+	<docAuthor>Ren Ng<lb/></docAuthor>
+	</byline>
+
+	<date>July </date>
+
+		</front>
+	</text>
+</tei>

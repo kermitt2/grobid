@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010007"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">INTRODUCING<lb/></note>
+
+	<docTitle>
+	<titlePart>FILE AREA<lb/> NETWORKS<lb/> FIRST EDITION<lb/> Your first look at FAN technology<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>MICHAEL O&apos;CONNOR &amp; JOSH JUDD</docAuthor>
+	</byline>
+
+		</front>
+	</text>
+</tei>

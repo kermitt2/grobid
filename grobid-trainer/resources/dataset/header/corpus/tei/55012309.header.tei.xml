@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012309"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Student&apos;s t-test<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">From Wikipedia, the free encyclopedia<lb/> This is an old revision of this page, as edited by Undsoweiter (talk | contribs)<lb/> at 19:30, 22 June 2011. It may differ significantly from the current revision<lb/> (//en.wikipedia.org/wiki/Student%27s_t-test) .<lb/> (diff) ← Previous revision | Latest revision (diff) | Newer revision → (diff)<lb/></note>
+
+	<div type="abstract">A t-test is any statistical hypothesis test in which the test statistic follows a Student&apos;s t<lb/> distribution, if the null hypothesis is supported. It is most commonly applied when the test<lb/> statistic would follow a normal distribution if the value of a scaling term in the test statistic<lb/> were known. When the scaling term is unknown and is replaced by an estimate based on<lb/> the data, the test statistic (under certain conditions) follows a Student&apos;s t distribution.<lb/></div>
+
+		</front>
+	</text>
+</tei>

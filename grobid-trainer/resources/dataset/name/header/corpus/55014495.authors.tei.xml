@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Praveen</forename>
+								<surname>Paruchuri</surname>
+								<marker>*</marker>,
+							</persName>
+							<persName>
+								<forename>Jonathan</forename>
+								<middlename>P</middlename>.
+								<surname>Pearce</surname>,
+							</persName>
+							<persName>
+								<forename>Janusz</forename>
+								<surname>Marecki</surname>,
+							</persName>
+							<persName>
+								<forename>Milind</forename>
+								<surname>Tambe</surname>,
+							</persName>
+							<persName>
+								<forename>Fernando</forename>
+								<surname>Ordonez</surname>,
+							</persName>
+							<persName>
+								<forename>Sarit</forename>
+								<surname>Kraus</surname>
+								<marker>**</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

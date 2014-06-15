@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014020"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>2000;60:6886-6889.<lb/> Cancer Res<lb/></reference>
+
+	<byline>
+	<docAuthor>Iwai Baba, Senji Shirasawa, Ryo Iwamoto, et al.<lb/></docAuthor>
+	</byline>
+
+	<docTitle>
+	<titlePart>Pathway in Human Colon Cancer Cells<lb/> through Activated Ki-Ras Signaling<lb/> in Vivo<lb/> Tumorigenesis<lb/> Involvement of Deregulated Epiregulin Expression in<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Updated Version<lb/></note>
+
+	<ptr type="web">http://cancerres.aacrjournals.org/content/60/24/6886<lb/></ptr>
+
+	<note type="other">Access the most recent version of this article at:<lb/> Cited Articles<lb/></note>
+
+	<ptr type="web">http://cancerres.aacrjournals.org/content/60/24/6886.full.html#ref-list-1<lb/></ptr>
+
+	<note type="other">This article cites 18 articles, 9 of which you can access for free at:<lb/> Citing Articles<lb/></note>
+
+	<ptr type="web">http://cancerres.aacrjournals.org/content/60/24/6886.full.html#related-urls<lb/></ptr>
+
+	<note type="other">This article has been cited by 27 HighWire-hosted articles. Access the articles at:<lb/></note>
+
+	<note type="other">E-mail alerts<lb/>related to this article or journal.<lb/> Sign up to receive free email-alerts<lb/> Subscriptions<lb/> Reprints and<lb/> . pubs@aacr.org<lb/> Department at<lb/> To order reprints of this article or to subscribe to the journal, contact the AACR Publications<lb/> Permissions<lb/> . permissions@aacr.org<lb/> Department at<lb/> To request permission to re-use all or part of this article, contact the AACR Publications<lb/> American Association for Cancer Research<lb/></note>
+
+	<note type="copyright">Copyright © 2000<lb/></note>
+
+	<date>on December 6, 2011<lb/></date>
+
+	<ptr>cancerres.aacrjournals.org<lb/></ptr>
+
+	<note type="other">Downloaded from</note>
+
+		</front>
+	</text>
+</tei>

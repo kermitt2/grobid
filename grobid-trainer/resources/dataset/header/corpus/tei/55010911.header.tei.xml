@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010911"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>An Efficient, Cost-Driven Index Selection Tool for Microsoft SQL Server<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Surajit Chaudhuri<lb/> Vivek Nqasayya<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Microsoft Research,</affiliation>
+	</byline>
+
+	<address>One Microsoft Way, Redmond, WA, 98052.<lb/></address>
+
+	<email>{surajitc, viveknar}@microsoft.com<lb/></email>
+
+	<div type="abstract">Abstract<lb/> In this paper we describe novel techniques that make it<lb/> possible to build an industrial-strength tool for automating<lb/> the choice of indexes in the physical design of a SQL<lb/> database. The tool takes as input a workload of SQL queries,<lb/> and suggests a set of suitable indexes. We ensure that the<lb/> indexes chosen are effective in reducing the cost of the<lb/> workload by keeping the index selection tool and the query<lb/> optimizer &quot;in step&quot;. The number of index sets that must be<lb/> evaluated to find the optimal configuration is very large. We<lb/> reduce the complexity of this problem using three<lb/> techniques. First, we remove a large number of spurious<lb/> indexes from consideration by taking into account both query<lb/> syntax and cost information. Second, we introduce<lb/> optimizations that make it possible to cheaply evaluate the<lb/> &quot;goodness&quot; of an index set. Third, we describe an iterative<lb/> approach to handle the complexity arising from multi-<lb/>column indexes. The tool has been implemented on<lb/> Microsoft SQL Server 7.0. We performed extensive<lb/> experiments over a range of workloads, including TIC-D.<lb/> The results indicate that the tool is efficient and its choices<lb/> are close to optimal.<lb/></div>
+
+		</front>
+	</text>
+</tei>

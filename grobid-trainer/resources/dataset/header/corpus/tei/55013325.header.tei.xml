@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013325"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Herstellung von Brennstoffagglomeraten aus Kohlen mit<lb/> unterschiedlichem Inkohlungsgrad für<lb/> Kleinfeuerungsanlagen
+	<lb/></titlePart>
+	</docTitle>
+	
+	<byline>
+	<affiliation>Von der Fakultät für Maschinenbau, Verfahrens-und Energietechnik<lb/> der Technischen Universität Bergakademie Freiberg<lb/>
+	</affiliation>
+	</byline>
+
+	<note>genehmigte<lb/> </note>
+
+	<degree>DISSERTATION<lb/> zur Erlangung des akademischen Grades<lb/> Doktor-Ingenieur<lb/> Dr.-Ing.<lb/>vorgelegt<lb/> von Dipl.-Ing. Oleksiy Reznichenko<lb/> geboren am 23.06.1975 in Dnepropetrovsk, Ukraine<lb/></degree>
+
+	<byline>
+	<note type="other">Gutachter: Prof. Dr.-Ing. habil. Wolfgang Naundorf, Freiberg<lb/> Prof. Dr.-Ing. habil. Klaus-Dieter Bilkenroth, Hohenmölsen<lb/> Prof. Dr.-Ing. habil. Manfred Born, Freiberg<lb/></note>
+	</byline>
+
+	<date>Tag der Verleihung: 12.12.2003</date>
+
+		</front>
+	</text>
+</tei>

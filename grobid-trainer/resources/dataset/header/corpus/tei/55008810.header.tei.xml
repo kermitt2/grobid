@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008810"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">1 </note>
+	
+	<byline>
+	<affiliation>| VDZ Technisch Wissenschaftliche Tagung </affiliation>
+	</byline>	
+
+	<date>2011<lb/> </date>
+	
+	<byline>
+	<docAuthor>Möller<lb/> </docAuthor>
+	</byline>
+		
+	<docTitle>
+	<titlePart>Celitement<lb/> Konzept, Herstellung und Eigenschaften<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Dr. Hendrik Möller – </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>– Schwenk Zement KG<lb/></affiliation>
+	</byline>	
+	
+	<byline>
+	<affiliation>VDZ Technisch-Wissenschaftliche Tagung </affiliation>
+	</byline>
+	
+	<date>2011</date>
+	
+		</front>
+	</text>
+</tei>

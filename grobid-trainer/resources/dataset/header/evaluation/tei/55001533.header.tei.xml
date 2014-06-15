@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001533"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Reflection Grating Development Update<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Ralf K. Heilmann, Mireille Akilian, Chih-Hao Chang,<lb/> Craig R. Forest, Chulmin Joo, Juan C. Montoya,<lb/> Amir Torkaman, and Mark L. Schattenburg<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Space Nanotechnology Laboratory, Center for Space Research<lb/> Massachusetts Institute of Technology,</affiliation>
+	</byline>
+
+	<address>Cambridge, MA<lb/></address>
+
+	<note type="other">Constellation-X Facility Science Team Meeting<lb/> GSFC,</note>
+	
+	<date>Nov. 19-20, 2003<lb/></date>
+
+	<note type="other">Massachusetts Institute of Technology<lb/> Space Nanotechnology Laboratory</note>
+
+		</front>
+	</text>
+</tei>

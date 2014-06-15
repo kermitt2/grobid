@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010212"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<affiliation>BPTrends</affiliation>
+
+	<date>March, 2004<lb/></date>
+
+	<docTitle>
+	<titlePart>Process Modeling Notations and Workflow Patterns<lb/></titlePart>
+	</docTitle>
+
+	<note type="copyright">Copyright Steven A. White (2004) All rights reserved </note>
+
+	<ptr>www.bptrends.com<lb/></ptr>
+
+	<note type="page">1<lb/></note>
+
+	<docTitle>
+	<titlePart>Process Modeling Notations<lb/> and Workflow Patterns<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Stephen A. White<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>IBM Corporation<lb/></affiliation>
+	</byline>
+
+	<div type="abstract">ABSTRACT<lb/> The research work of Wil van der Aalst, Arthur ter Hofstede, Bartek Kiepuszewski, and Alistair Barros has resulted in<lb/> the identification of 21 patterns that describe the behavior of business processes. This paper reviews how two<lb/> graphical process modeling notations, tShe BPMN Business Process Diagram from the Business Process<lb/> Management Initiative (BPMI), and the UML 2.0 Activity Diagram from the Object Management Group (OMG), can<lb/> represent the workflow patterns. The solutions of the two notations are compared for technical ability to represent<lb/> the patterns as well as their readability.<lb/></div>
+
+		</front>
+	</text>
+</tei>
