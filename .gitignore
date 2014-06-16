@@ -47,6 +47,3 @@ grobid-trainer/maven-build.xml
 
 maven-build.xml
 
-grobid-home/models/header/model.crf
-
-grobid-home/models/citation/model.crf
