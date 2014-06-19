@@ -736,8 +736,8 @@ public class FullTextParser extends AbstractParser {
             String s1 = null;
             String s2 = null;
             String lastTag = null;
-			System.out.println(tokenizations.toString());
-			System.out.println(result);
+			//System.out.println(tokenizations.toString());
+			//System.out.println(result);
             // current token position
             int p = 0;
             boolean start = true;

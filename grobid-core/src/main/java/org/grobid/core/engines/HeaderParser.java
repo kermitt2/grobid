@@ -302,7 +302,7 @@ public class HeaderParser extends AbstractParser {
 				String header = getSectionHeaderFeatured(doc, documentHeaderParts, true);
 				
 				String res = null;
-				if (header != null) {
+				if ( (header != null) && (header.trim().length() > 0) ) {
 					res = label(header);
 					resHeader = resultExtraction(res, true, tokenizations, resHeader);
 				}

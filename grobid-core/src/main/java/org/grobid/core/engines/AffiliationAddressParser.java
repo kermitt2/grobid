@@ -74,7 +74,10 @@ public class AffiliationAddressParser extends AbstractParser {
      */
     public ArrayList<Affiliation> processReflow(String result,
                                                 List<String> tokenizations) throws Exception {
-        try {
+        if ( (result == null) || (result.length() == 0) ) {
+			return null;
+		}
+		try {
             List<String> affiliationBlocks = new ArrayList<String>();
             List<String> subTokenizations = new ArrayList<String>();
 
@@ -88,7 +91,6 @@ public class AffiliationAddressParser extends AbstractParser {
 //			e.printStackTrace();
             throw new GrobidException("An exception occured while running Grobid.", e);
         }
-//		return null;
     }
 
 
@@ -812,6 +814,10 @@ public class AffiliationAddressParser extends AbstractParser {
      */
     public StringBuffer trainingExtraction(String result,
                                            List<String> tokenizations) {
+		if ( (result == null) || (result.length() == 0) ) {
+			return null;
+		}
+											
         List<String> affiliationBlocks = new ArrayList<String>();
         List<String> tokenizationsAffiliation = new ArrayList<String>();
 
