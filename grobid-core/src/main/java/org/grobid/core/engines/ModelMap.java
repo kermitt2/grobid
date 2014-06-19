@@ -12,7 +12,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Class the create a tagger from a given model or reuse it if it already
+ * Class that creates a tagger from a given model or reuse it if it already
  * exists.
  * 
  */

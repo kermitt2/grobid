@@ -1,6 +1,8 @@
 package org.grobid.core.engines;
 
 import java.io.File;
+import java.io.Closeable;
+import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +22,7 @@ import org.grobid.core.utilities.Utilities;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class ProcessEngine {
+public class ProcessEngine implements Closeable {
 
     /**
      * The logger.
@@ -41,6 +43,16 @@ public class ProcessEngine {
         }
         return engine;
     }
+
+	/**
+	 *  Close engine resources. 
+	 */
+	@Override
+	public void close() throws IOException {
+		if (engine != null) {
+			engine.close();
+		}
+	} 
 
     /**
      * Process the headers using pGbdArgs parameters.

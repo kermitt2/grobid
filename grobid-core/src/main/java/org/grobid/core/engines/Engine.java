@@ -105,7 +105,7 @@ public class Engine implements Closeable {
         List<String> inputs = new ArrayList<String>();
         inputs.add(authorSequence);
         List<Person> result = parsers.getAuthorParser().processingHeader(inputs);
-        close();
+        //close();
         return result;
     }
 
@@ -120,7 +120,7 @@ public class Engine implements Closeable {
         List<String> inputs = new ArrayList<String>();
         inputs.add(authorSequence);
         List<Person> result = parsers.getAuthorParser().processingCitation(inputs);
-        close();
+        //close();
         return result;
     }
 
@@ -176,7 +176,7 @@ public class Engine implements Closeable {
      */
     public List<org.grobid.core.data.Date> processDate(String dateBlock) throws IOException {
         List<org.grobid.core.data.Date> result = parsers.getDateParser().processing(dateBlock);
-        close();
+        //close();
         return result;
     }
 
@@ -451,7 +451,7 @@ public class Engine implements Closeable {
 
         Pair<String, Document> resultTEI = parsers.getHeaderParser().processing(inputFile, consolidate, result, startPage, endPage);
         Document doc = resultTEI.getRight();
-        close();
+        //close();
         return resultTEI.getLeft();
     }
 
@@ -478,7 +478,7 @@ public class Engine implements Closeable {
 
         Pair<String, Document> resultTEI = parsers.getHeaderParser().processing2(inputFile, consolidate, result);
         Document doc = resultTEI.getRight();
-        close();
+        //close();
         return resultTEI.getLeft();
     }
 
