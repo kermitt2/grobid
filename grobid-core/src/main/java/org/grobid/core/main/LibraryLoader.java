@@ -33,10 +33,10 @@ public class LibraryLoader {
             LOGGER.debug(getLibraryFolder());
             File libraryFolder = new File(getLibraryFolder());
             if (!libraryFolder.exists() || !libraryFolder.isDirectory()) {
-                LOGGER.error("Unable to find a native CRF++ library: Folder "
+                LOGGER.error("Unable to find a native CRF library: Folder "
                         + libraryFolder + " does not exist");
                 throw new RuntimeException(
-                        "Unable to find a native CRF++ library: Folder "
+                        "Unable to find a native CRF library: Folder "
                                 + libraryFolder + " does not exist");
             }
 

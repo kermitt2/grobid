@@ -153,6 +153,7 @@ public class GrobidMain {
 			initProcess();
 			ProcessEngine processEngine = new ProcessEngine();
 			Utilities.launchMethod(processEngine, new Object[] { gbdArgs }, gbdArgs.getProcessMethodName());
+			processEngine.close();
 		}
 
 	}

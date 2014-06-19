@@ -221,6 +221,9 @@ public class AffiliationAddressParser extends AbstractParser {
 
 //            ArrayList<String> preToken = new ArrayList<String>();
 
+			if ( (header == null) || (header.trim().length() == 0) ) {
+				return null;
+			}
 
             String res = label(header);
             res = label(res);
