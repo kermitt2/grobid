@@ -143,7 +143,20 @@
 			<version>1.3</version>
 			<scope>test</scope>
 		</dependency>
-
+		
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>16.0.1</version>
+			<type>jar</type>
+		</dependency>
+		
+		<!-- Saxon for transforming PDFMiner output to PDF2XML output -->
+		<dependency>
+			<groupId>net.sf.saxon</groupId>
+			<artifactId>Saxon-HE</artifactId>
+			<version>9.5.1-5</version>
+		</dependency>
 	</dependencies>
 
 	<profiles>
