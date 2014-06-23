@@ -53,7 +53,7 @@
                 <xsl:with-param name="pid" select="@id" tunnel="yes" />
                 <xsl:with-param name="page-width" select="$width" tunnel="yes" />
                 <xsl:with-param name="page-height" select="$height" tunnel="yes" />
-                <xsl:with-param name="text-counter" select="count(preceding-sibling::page/textbox/textline/text[not(normalize-space())])" tunnel="yes" />
+<!--                <xsl:with-param name="text-counter" select="count(preceding-sibling::page/textbox/textline/text[not(normalize-space())])" tunnel="yes" />-->
             </xsl:apply-templates>
         </PAGE>
     </xsl:template>
@@ -81,8 +81,10 @@
                     <xsl:variable name="y" select="$bbox[2]" />
                     <xsl:variable name="height" select="$bbox[4]" />
                     <xsl:variable name="base" select="format-number($y + $height, '#.00')" />
-                    <xsl:variable name="wid" select="count(preceding-sibling::text[not(normalize-space())]) + count(../preceding-sibling::*/text[not(normalize-space())]) + count(../../preceding-sibling::*/*/text[not(normalize-space())]) + 1" />
-                    <xsl:variable name="sid" select="$wid + $text-counter" />
+                    <!--<xsl:variable name="wid" select="count(preceding-sibling::text[not(normalize-space())]) + count(../preceding-sibling::*/text[not(normalize-space())]) + count(../../preceding-sibling::*/*/text[not(normalize-space())]) + 1" />
+                    <xsl:variable name="sid" select="$wid + $text-counter" />-->
+                    <xsl:variable name="wid" select="generate-id()" />
+                    <xsl:variable name="sid" select="generate-id()" />
                     <TOKEN x="{$x}" y="{$y}" width="{$total-width}" height="{$height}" base="{$base}" sid="p{$pid}_s{$sid}" id="p{$pid}_w{$wid}">
                         <xsl:apply-templates select="current-group()/@*" />
                         <xsl:apply-templates select="current-group()" />
