@@ -65,8 +65,8 @@
         </BLOCK>
     </xsl:template>
     
-    
-    <xsl:template match="textline[normalize-space(string-join(text, ''))]">
+    <!-- For the purposes of getting the header and body text, just get text that occurs in a texbox. Orphaned textlines (e.g. in a figure) not in a textbox are excluded -->
+    <xsl:template match="textbox/textline[normalize-space(string-join(text, ''))]">
         <xsl:param name="pid" tunnel="yes"/>
         <xsl:param name="page-width" tunnel="yes"/>
         <xsl:param name="page-height" tunnel="yes"/>
@@ -107,7 +107,7 @@
     </xsl:template>
     
     
-    <xsl:template match="text[normalize-space()]">
+    <xsl:template match="textline/text[normalize-space()]">
         <xsl:value-of select="." />
         <xsl:value-of select="following-sibling::*[1][self::text][not(normalize-space())]" />
     </xsl:template>
