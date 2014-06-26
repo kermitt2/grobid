@@ -1,8 +1,10 @@
 package org.grobid.core.features;
 
 import org.grobid.core.lexicon.Lexicon;
+import org.grobid.core.utilities.OffsetPosition;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Pattern;
 
 /**
@@ -29,7 +31,7 @@ public class FeatureFactory {
     public Pattern ACRONYM = Pattern.compile("[A-Z]\\.([A-Z]\\.)*");
     public Pattern isPunct = Pattern.compile("^[\\,\\:;\\?\\.]+$");
 
-    static public ArrayList<String> KEYWORDSPUB = new ArrayList<String>() {{
+    static public List<String> KEYWORDSPUB = new ArrayList<String>() {{
         add("Journal");
         add("journal");
         add("Proceedings");
@@ -42,7 +44,7 @@ public class FeatureFactory {
         add("symposium");
     }};
 
-    static public ArrayList<String> MONTHS = new ArrayList<String>() {{
+    static public List<String> MONTHS = new ArrayList<String>() {{
         add("January");
         add("February");
         add("March");
@@ -69,7 +71,7 @@ public class FeatureFactory {
         add("Dec");
     }};
 
-    static public ArrayList<String> COUNTRY_CODES = new ArrayList<String>() {{
+    static public List<String> COUNTRY_CODES = new ArrayList<String>() {{
         add("US");
         add("EP");
         add("WO");
@@ -116,7 +118,7 @@ public class FeatureFactory {
         add("TR");
     }};
 
-    static public ArrayList<String> KIND_CODES = new ArrayList<String>() {{
+    static public List<String> KIND_CODES = new ArrayList<String>() {{
         add("A");
         add("B");
         add("C");
@@ -294,6 +296,18 @@ public class FeatureFactory {
     public boolean test_country(String tok) {
         return lexicon.isCountry(tok.toLowerCase());
     }
+
+	/**
+     * Test if the current string refers to a known city
+     */
+    public boolean test_city(String tok) {
+        List<OffsetPosition> pos = lexicon.inCityNames(tok.toLowerCase());
+		if ((pos != null) && (pos.size() > 0) )
+			return true;
+		else 
+			return false;
+    }
+
 
     /**
      * Give the relative position discretized into nbBins
