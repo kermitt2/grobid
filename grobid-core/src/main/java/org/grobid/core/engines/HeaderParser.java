@@ -1029,7 +1029,7 @@ public class HeaderParser extends AbstractParser {
 				if (i == 0) {
 					//s2 = TextUtilities.HTMLEncode(s);
 					s2 = s;
-
+					int p0 = p;
 					boolean strop = false;
 					while ((!strop) && (p < tokenizations.size())) {
 						String tokOriginal = tokenizations.get(p);
@@ -1039,6 +1039,14 @@ public class HeaderParser extends AbstractParser {
 							strop = true;
 						}
 						p++;
+					}
+					if (p == tokenizations.size()) {
+						// either we are at the end of the header, or we might have 
+						// a problematic token in tokenization for some reasons
+						if ((p - p0) > 2) {
+							// we loose the synchronicity, so we reinit p for the next token
+							p = p0;
+						}
 					}
 				} else if (i == ll - 1) {
 					s1 = s;
