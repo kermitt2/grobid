@@ -70,8 +70,10 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 
 	public String getText() {
 		String res = accumulator.toString().trim();
-		res = res.replace("\u00A0", " "); // stdandard NO-BREAK SPACE are viewed
+		//res = res.replace("\u00A0", " "); // stdandard NO-BREAK SPACE are viewed
 											// as space
+		res = res.replaceAll("\\p{javaSpaceChar}", " "); // replace all unicode space separators
+		 												 // by a usual SPACE									
 		return res.trim();
 	}
 
@@ -466,7 +468,9 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 						}
 
 						if (tok != null) {
-							tok = tok.replace(" ", "");
+							// actually in certain cases, the extracted string under token can be a chunk of text 
+							// with separators that need to be preserved
+							//tok = tok.replace(" ", "");
 						}
 
 						if ((!diaresis) && (!accent)) {
