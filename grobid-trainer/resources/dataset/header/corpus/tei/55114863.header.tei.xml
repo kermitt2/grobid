@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei type="standard">
+	<teiHeader>
+		<fileDesc xml:id="55114863"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">BRITISH STANDARD<lb/> </note>
+
+	<idno>BS EN<lb/> 10210-1:2006<lb/></idno>
+
+	<docTitle>
+	<titlePart>Hot finished structural<lb/> hollow sections of<lb/> non-alloy and fine grain<lb/> steels —<lb/> Part 1: Technical delivery conditions<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">The European Standard EN 10210-1:2006 has the status of a<lb/> British Standard<lb/> ICS 77.140.75<lb/>122&amp;23&lt;,1**:,7+2877%6,,3(50,66,211(;&amp;(377$663(50,77(&apos;&apos;%&lt;&lt;&amp;23&lt;5,*+77/$:<lb/></note>
+
+	<note type="other">Licensed Copy: </note>
+
+	<byline>
+	<affiliation>Institute Of Technology Tallaght, Institute of Technology, </affiliation>
+	</byline>
+
+	<date>Tue Aug 29 </date>
+
+	<note type="other">10:47:25 BST </note>
+
+	<date>2006, </date>
+
+	<note type="other">Uncontrolled Copy, (c) BSI</note>
+
+		</front>
+	</text>
+</tei>

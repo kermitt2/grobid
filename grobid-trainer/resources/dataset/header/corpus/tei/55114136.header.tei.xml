@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei type="technical-report">
+	<teiHeader>
+		<fileDesc xml:id="55114136"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<date>26 November 2013<lb/> </date>
+
+	<note>EMA/800904/2013<lb/></note>
+
+	<note type="other">Committee for Medicinal Products for Human Use (CHMP)<lb/></note>
+
+	<docTitle>
+	<titlePart>Assessment report<lb/> Tecfidera<lb/> Common Name: dimethyl fumarate<lb/> </titlePart>
+	</docTitle>
+
+	<idno>Procedure No. EMEA/H/C/002601/0000/Rev 1<lb/> </idno>
+
+	<note type="other">Note<lb/> Assessment report as adopted by the CHMP with all information of a commercially confidential<lb/> nature deleted.<lb/></note>
+
+	<address>7 Westferry Circus ● Canary Wharf ● London E14 4HB ● United Kingdom<lb/></address>
+
+	<note type="other">An agency of the European Union<lb/> </note>
+
+	<phone>Telephone +44 (0)20 7418 8400 Facsimile +44 (0)20 7523 7455<lb/></phone>
+
+	<email>E-mail info@ema.europa.eu </email>
+
+	<ptr>Website www.ema.europa.eu</ptr>
+
+		</front>
+	</text>
+</tei>

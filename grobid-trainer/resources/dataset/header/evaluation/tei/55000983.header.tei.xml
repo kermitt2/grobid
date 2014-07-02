@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000983"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>RC24939 (W1001-093)</idno> 
+	
+	<date>January 29, 2010<lb/></date> 
+	
+	<note type="other">Computer Science<lb/> IBM Research Report<lb/></note>
+
+	<docTitle>
+	<titlePart>Load Balancing Algorithms for the Session Initiation Protocol<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Hongbo Jiang<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Huazhong University of Science and Technology<lb/></affiliation>
+	</byline>
+
+	<byline>
+	<docAuthor>Arun Iyengar, Erich Nahum, Wolfgang Segmuller,<lb/> Asser Tantawi, Charles P. Wright<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>IBM Research Division<lb/> Thomas J. Watson Research Center<lb/></affiliation>
+	</byline>
+
+	<address>P.O. Box 704<lb/> Yorktown Heights, NY 10598<lb/></address>
+
+	<note>Research Division<lb/> Almaden -Austin -Beijing -Cambridge -Haifa -India -T. J. Watson -Tokyo -Zurich<lb/></note>
+
+	<docTitle>
+	<titlePart>Load Balancing Algorithms for the Session<lb/> Initiation Protocol<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Hongbo Jiang<lb/> , Arun Iyengar<lb/> , Erich Nahum<lb/> , Wolfgang Segmuller<lb/> , Asser Tantawi<lb/> , and Charles P. Wright<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Huazhong University of Science and Technology<lb/> IBM T.J. Watson Research Center<lb/></affiliation>
+	</byline>
+
+	<div type="abstract">Abstract—This paper introduces several novel load balancing<lb/> algorithms for distributing Session Initiation Protocol (SIP)<lb/> requests to a cluster of SIP servers. Our load balancer improves<lb/> both throughput and response time versus a single node, while<lb/> exposing a single interface to external clients. We present the<lb/> design, implementation, and evaluation of our system using a<lb/> cluster of Intel x86 machines running Linux. We compare our<lb/> algorithms with several well-known approaches and present scal-<lb/>ability results for up to 10 nodes. Our best algorithm, Transaction<lb/> Least-Work-Left (TLWL), achieves its performance by integrat-<lb/>ing several features: knowledge of the SIP protocol; dynamic<lb/> estimates of back-end server load; distinguishing transactions<lb/> from calls; recognizing variability in call length; and exploiting<lb/> differences in processing costs for different SIP transactions.<lb/> By integrating these attributes, our algorithm provides finer-<lb/>grained load balancing than standard approaches, resulting in<lb/> throughput improvements of up to 24 percent and response times<lb/> improvements of up to two orders of magnitude. We present<lb/> a detailed analysis of how our algorithms significantly reduce<lb/> response time.<lb/></div>
+
+		</front>
+	</text>
+</tei>

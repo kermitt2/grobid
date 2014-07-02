@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011305"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">PatchMaX 100a<lb/> </note>
+
+	<docTitle>
+	<titlePart>the smallest multi-function<lb/> patch clamp system available<lb/> </titlePart>
+	</docTitle>
+
+	<note type="other">PatchMAX 100A<lb/></note>
+	
+	<div type="abstract">Incredibly small footprint<lb/> This patent-pending design has an 8&quot; x 8&quot; footprint; it is the smallest multi-<lb/>function patch clamp system available. The automated patch clamping<lb/> system replaces the microscope and the manipulator in the traditional rig.<lb/> Complete with one automated manipulator, a manual XY stage, a data<lb/> acquisition board &amp; control system, and a perfusion chamber with the<lb/> platform, this system can automatically guide electrode to make a seal on<lb/> oocytes, suspended cells and cells on cover slips.<lb/> Automatic membrane detection<lb/> The specially designed perfusion chamber guarantees that when oocyte or<lb/> cells are dropped into the chamber, it always reaches the known position.<lb/> The tip of the pipette can reach this position with an accuracy of 0.05 mm.<lb/> The movement of the patch pipette is controlled by a computer and can be<lb/> programmed to stop when the tip touches the cell membrane.<lb/> High seal success rate<lb/> The pipette positioning system provides widely different approach speeds<lb/> and proximity criteria, allowing the researcher to fine tune the process<lb/> for the perfect seal. The computer controlled system eliminates human<lb/> errors so the success rate of making gigaohm seals using the PatchMAX<lb/> 100A is over 90%.</div>
+
+		</front>
+	</text>
+</tei>

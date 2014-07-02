@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001222"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">1<lb/></note>
+
+	<docTitle>
+	<titlePart>SUPPORTING INFORMATION<lb/> RNA Interference Screen Identifies VEGFR1 as Potentially Synthetic Lethal<lb/> to Aberrant Wnt/β-catenin Activation in Colon Cancer<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Snehal Naik, Robin S. Dothager, Jayne Marasa, Cory L. Lewis and David Piwnica-Worms<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1<lb/> Molecular Imaging Center, Mallinckrodt Institute of Radiology,<lb/> and Department of Developmental Biology,<lb/> Washington University School of Medicine,</affiliation>
+	</byline>
+
+	<address>St. Louis, MO 63110<lb/></address>
+
+	<note type="other">1<lb/> Correspondence should be addressed to D.P-W. at: piwnica-wormsd@mir.wustl.edu.<lb/> Mailing address:</note>
+
+	<byline>
+	<affiliation>Mallinckrodt Institute of Radiology, Washington University School of<lb/> Medicine,</affiliation>
+	</byline>
+
+	<address>510 S. Kingshighway Blvd., Box 8225, St. Louis, MO 63110<lb/></address>
+
+	<phone>Phone: (314) 362-9359, Fax: (314) 362-0152</phone>
+
+		</front>
+	</text>
+</tei>

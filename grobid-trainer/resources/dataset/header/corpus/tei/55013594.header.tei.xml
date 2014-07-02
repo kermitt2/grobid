@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013594"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>GENOMIC ANALYSIS OF Ficus deltoidea<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>LONG JEN MEE<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>UNIVERSITI TEKNOLOGI MALAYSIA</affiliation>
+	</byline>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55115153"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Catalysis for Low Temperature Fuel Cells<lb/> PART II: THE ANODE CHALLENGES<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>By T. R. Ralph and M. P. Hogarth<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Johnson Matthey Technology Centre, </affiliation>
+	</byline>
+
+	<address>Blounts Court, Sonning Common, Reading RG4 9NH. U.K<lb/></address>
+
+	<div type="abstract">In thefirst part of this three partpaper; published in January 2002, we dealt with enhancing<lb/> the performance of low temperature proton exchange membrane fuel cells by improvements<lb/> to the platinum-based cathode materials and to the cathode design. In this second part of<lb/> the paper we shall discuss the improvements in the reformate (CO and COJ tolerance at the<lb/> anode and in extending the MEA durability. Improvements have been achieved by advances<lb/> in platinum/ntthenium electrode design, in the application of bilayer anodes for durable air<lb/> bleed operation, and in the addition oj&apos;a water electrolysis electrocatalyst to the anode for<lb/> cell reversal tolerance. In the third part of the paper the particular challenges presented by<lb/> the direct methanolfuel cell will be discussed.<lb/></div>
+
+		</front>
+	</text>
+</tei>

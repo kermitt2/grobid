@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013475"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">This Article<lb/> Services<lb/> Similar articles in this journal<lb/> Download to citation manager<lb/> Citing Articles<lb/> Citing Articles via Google Scholar<lb/> Google Scholar<lb/> Articles by Yamamoto, Y.<lb/> Articles by Asada, M.<lb/> Search for Related Content<lb/> PubMed<lb/> Articles by Yamamoto, Y.<lb/> Articles by Asada, M.<lb/> HOME HELP FEEDBACK HOW TO CITE ABSTRACTS ARCHIVE CME INFORMATION SEARCH<lb/> Cancer Research<lb/> Clinical Cancer Research<lb/> Cancer Epidemiology Biomarkers &amp; Prevention<lb/> Molecular Cancer Therapeutics<lb/> Molecular Cancer Research<lb/> Cancer Prevention Research<lb/> Cancer Prevention Journals Portal<lb/> Cancer Reviews Online<lb/> Annual Meeting Education Book<lb/> Meeting Abstracts Online<lb/> QUICK SEARCH:<lb/> [advanced]<lb/> Go<lb/> Author:<lb/> Keyword(s):<lb/> Institution: European Patent Office | Sign In via User Name/Password<lb/></note>
+
+	<reference>[Proc Amer Assoc Cancer Res, Volume 47, 2006]<lb/></reference>
+
+	<docTitle>
+	<titlePart>Experimental and Molecular Therapeutics 34: Receptor<lb/> Tyrosine Kinase Inhibitors<lb/> Abstract #4038<lb/> E7080, an oral multitargeted tyrosine kinase<lb/> inhibitor, has direct anti-tumor efficacy via<lb/> inhibition of KIT signaling in gastrointestinal<lb/> stromal tumor (GIST)<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Yuji Yamamoto, Tatsuo Watanabe, Akihiko Tsuruoka,<lb/> Toshiaki Wakabayashi and Makoto Asada<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>EISAI CO., LTD,</affiliation>
+	</byline>
+
+	<address>Tsukuba-shi, Japan<lb/></address>
+
+	<div type="abstract">Most gastrointestinal stromal tumors (GIST) express constitutively active forms of the receptor tyrosine<lb/> kinase KIT, derived from oncogenic mutation in the extracullular, juxtamembrane, or kinase domains.<lb/> Constitutively activated KIT signaling induces tumor growth and the tumor malignant phenotype of GIST.<lb/> Glivec (Imatinib mesylate, STI571) which inhibits the kinase activity of KIT, has been therapeutically<lb/> effective in patients with GIST. E7080 is an oral multitargeted tyrosine kinase inhibitor against KDR<lb/> (VEGFR-2), Flt-1 (VEGFR-1), FGFR1 and PDGFRbeta with IC50 values of 5 -50 nM in cell free kinase<lb/> assays. E7080 also inhibits KIT with an IC50 value of 100 nM. We evaluated the effect of E7080 on KIT<lb/> activity in GIST cell line. Treatment of GIST882 with E7080 resulted in dose-dependent inhibition of cell<lb/> proliferation, with an IC50 value of 35 nM. E7080 inhibited KIT tyrosine phosphorylation in GIST882 in a<lb/> dose-dependent manner, with an IC50 values of 200 nM. E7080 also inhibited downstream events<lb/> following KIT activation including ERK1/2 and Akt phosphorylation in a dose-dependent manner, with<lb/> IC50 values consistent with that observed for the inhibition of KIT phosphorylation. Anti-tumor efficacy<lb/> of E7080 in a GIST882 xenograft model also was evaluated. Oral administration of E7080 at doses of 30<lb/> or 100 mg/kg (BID, QDx28) caused tumor dormancy. E7080 at a dose of 100 mg/kg resulted in tumor<lb/> shrinkage that measured approximately 40%, even when treatment was initiated following significant<lb/> tumor growth. The status of KIT activation was examined in GIST882 tumors resected after 2 h treatment<lb/> with E7080. E7080 clearly reduced phospho-KIT levels in GIST882 tumors. Soluble KIT (s-KIT) was<lb/> evaluated as a potential biomarker of E7080 in the GIST882 xenograft model, because it has been<lb/> reported that s-KIT in plasma samples could be used as a biomarker for therapeutic efficacy in patients<lb/> E7080, an oral multitargeted tyrosine kinase inhibitor, has direct anti-tu...<lb/></div>
+
+	<ptr type="web">http://aacrmeetingabstracts.org/cgi/content/abstract/2006/1/952<lb/></ptr>
+
+	<note type="page">1 of 2<lb/></note>
+
+	<date>29-11-2011</date>
+
+	<note type="other">18:09</note>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012128"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>1999, 181(19):5898.<lb/> J. Bacteriol.<lb/></reference>
+
+	<byline>
+	<docAuthor>Jennifer A. Surtees and Barbara E. Funnell<lb/></docAuthor>
+	</byline>
+
+	<docTitle>
+	<titlePart>Independent Multimerization Domains<lb/> P1 ParB Domain Structure Includes Two<lb/></titlePart>
+	</docTitle>
+
+	<ptr type="web">http://jb.asm.org/content/181/19/5898<lb/></ptr>
+
+	<note type="other">Updated information and services can be found at:<lb/> These include:<lb/> REFERENCES<lb/></note>
+
+	<ptr type="web">http://jb.asm.org/content/181/19/5898#ref-list-1<lb/></ptr>
+
+	<note type="other">at:<lb/>This article cites 58 articles, 26 of which can be accessed free<lb/> CONTENT ALERTS</note>
+
+		</front>
+	</text>
+</tei>

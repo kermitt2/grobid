@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012762"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">1330<lb/></note>
+
+	<reference>Langmuir 1990,6, 1330<lb/></reference>
+
+	<docTitle>
+	<titlePart>Reduction of Surface Tension by Novel Polymer<lb/> Surfactants<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Keizo Ogino, Yasushi Onoe, and Masahiko Abe&apos;<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Faculty of Science and Technology and Institute of Colloid and Interface Science,<lb/> Science University of Tokyo,
+	</affiliation>
+	</byline>
+
+	<address>Noda, Chiba 278, Japan<lb/></address>
+
+	<byline>
+	<docAuthor>Hisao Ono and Keiichi Bessho<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Development Center, Japan Synthetic Rubber Co. Ltd.,</affiliation>
+	</byline>
+
+	<address>Yokkaichi, Mie 510, Japan<lb/></address>
+
+	<note type="submission">Received November 7, 1989. In Final Form: May 21, 1990<lb/></note>
+
+	<div type="abstract">We measured the reduction of surface tension by novel polymer surfactants having different molecular<lb/> weight and/or acid content. The sodium polyolefin sulfonate with molecular weight 10 OOO and an acid<lb/> content of 2.5 mequiv/g was able to reduce surface tension below 40 dyn/cm. Moreover, the effectiveness<lb/> in surface tension reduction increased with decreasing molecular weight and with decreasing acid content.<lb/> </div>
+
+	<div type="introduction">Polymer surfactants are useful mainly as demulsifiers,<lb/> dispersing agents, and emulsion stabilizers. Their wetting,<lb/> foam formation, and detergency are much inferior to those<lb/> of low molecular weight surfactants due to low effectiveness<lb/> in surface tension reduction.<lb/> In this paper, we report the effectiveness of novel<lb/> polymer surfactants in reducing the surface tension of<lb/> aqueous solutions. The polymer surfactants are sodium<lb/> polyolefin sulfonates (SPS) having different molecular<lb/> weight and/or acid content, which are prepared from po-<lb/>lybutadiene or polyisoprene by sulfonation with sulfuric<lb/> anhydride. Acid content is defined as mequiv of sul-<lb/>fonate/g of polymer. The molecular weights and acid<lb/> contents of the SPS samples are shown in Table I.<lb/> Molecular weights (as polystyrensulfonate) were<lb/> determined by using gel permeation chromatography, and<lb/> acid contents were obtained by titration with NaOH. Water<lb/> used in this experiment was twice distilled, followed by<lb/> deionization; its resistivity was 18.0 M k m , and its pH<lb/> was 6.7. The surface tension of aqueous solutions of<lb/> polymer surfactants were measured at 30 f 0.1 &quot;C by using</div>
+
+		</front>
+	</text>
+</tei>

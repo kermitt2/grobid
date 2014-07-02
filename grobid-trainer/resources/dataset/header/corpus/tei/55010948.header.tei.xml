@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010948"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>APPLIED AND ENVIRONMENTAL MICROBIOLOGY, May 2006, p. 3191–3197<lb/> Vol. 72, No. 5<lb/></reference>
+
+	<note>0099-2240/06/$08.00ϩ0</note>
+
+	<idno type="DOI">doi:10.1128/AEM.72.5.3191–3197.2006<lb/></idno>
+
+	<note type="copyright">Copyright © 2006, American Society for Microbiology. All Rights Reserved.<lb/></note>
+
+	<docTitle>
+	<titlePart>Alicyclobacillus acidocaldarius Thermophilic Esterase EST2&apos;s Activity<lb/> in Milk and Cheese Models<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Luigi Mandrich,<lb/> 1,2 Giuseppe Manco,<lb/> 1<lb/> * Mosè Rossi,<lb/> 1 Esther Floris,<lb/> 2 Tanja Jansen-van den Bosch,<lb/> 2<lb/> Gerrit Smit,<lb/> 2 and Jeroen A. Wouters<lb/> 2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institute of CNR Protein Biochemistry,</affiliation>
+	</byline>
+
+	<address>Via P. Castellino 111, 80131 Naples, Italy,<lb/></address>
+
+	<byline>
+	<affiliation>1 and Department of Flavor,<lb/> Nutrition and Ingredients, NIZO food research,</affiliation>
+	</byline>
+
+	<address>P.O. Box 20, 6710 BA Ede, The Netherlands<lb/>2<lb/></address>
+	
+	<note type="submission">Received 13 January 2006/Accepted 20 February 2006<lb/></note>
+
+	<div type="abstract">The aim of this work was to investigate the behavior of thermophilic esterase EST2 from Alicyclobacillus<lb/> acidocaldarius in milk and cheese models. The pure enzyme was used to compare the EST2 hydrolytic activity<lb/> to the activity of endogenous esterase EstA from Lactococcus lactis. The results indicate that EST2 exhibits<lb/> 30-fold-higher esterase activity than EstA. As EstA has thioesterase activity, EST2 was assayed for this activity<lb/> under the optimal conditions determined for EstA (namely, 30°C and pH 7.5). Although it is a thermophilic<lb/> enzyme, EST2 exhibited eightfold-higher thioesterase activity than EstA with S-methyl thiobutanoate. The<lb/> abilities of EST2 and EstA to synthesize short-chain fatty acid esters were compared. Two methods were<lb/> developed to do this. In the first method a spectrophotometric assay was used to monitor the synthesis of esters<lb/> by the pure enzymes using p-nitrophenol as the alcohol substrate. The synthetic activities were also evaluated<lb/> under conditions that mimicked those present in milk and/or cheese. The second method involved evaluation<lb/> of the synthetic abilities of the enzymes when they were directly added to a model cheese matrix. Substantial<lb/> ester synthesis by EST2 was observed under both conditions. Finally, esterase and thioesterase activities were<lb/> evaluated in milk using the purified EST2 enzyme and in the model cheese matrix using a strain of L. lactis<lb/> NZ9000 harboring the EST2 gene and thus overproducing EST2. Both the esterase and thioesterase activities<lb/> measured in milk and in the cheese matrix were much greater than the activities of the controls.<lb/></div>
+
+		</front>
+	</text>
+</tei>

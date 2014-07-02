@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009138"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>T Cell Assay Information<lb/> </titlePart>
+	</docTitle>
+	
+	<note type="other">Reference Information<lb/> Reference<lb/> </note>
+	
+	<note type="other">Submission Authors:<lb/></note>
+	
+	<byline>
+	<docAuthor>Daniela Weiskopf Ph.D.; Lauren E Yauch Ph.D.; Michael A Angelo; Daisy V John<lb/> Ph.D.; Jason A Greenbaum Ph.D.; John Sidney; Ravi V Kolla Ph.D.; Aruna D De Silva<lb/> Ph.D.; Aravinda M de Silva Ph.D.; Howard Grey M.D.; Sujan Shresta Ph.D.;<lb/> Alessandro Sette Ph.D.<lb/></docAuthor>
+	</byline>
+
+	<docTitle>
+	<titlePart>Submission Title:<lb/> Insights into HLA restricted T cell responses in a novel mouse model of dengue virus<lb/> infection point toward new implications for vaccine design<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Reference Detail<lb/> </note>
+	
+	<idno>Reference ID: 1022397<lb/></idno>
+
+	<div type="abstract">Abstract:<lb/> The frequency of dengue virus (DENV) infection has increased dramatically in the last<lb/> few decades, and the lack of a vaccine has led to significant morbidity and mortality<lb/> worldwide. To date, a convenient murine system to study human T cell responses to<lb/> DENV has not been available. Mice transgenic for human leukocyte antigens (HLA)<lb/> are widely used to model human immune responses and it has been shown that<lb/> mouse-passaged DENV is able to replicate to significant levels in IFN-_/_R-/-mice.<lb/> To cover a wide range of HLA phenotypes, we backcrossed IFN-_/_R-/-mice with<lb/> HLA A*0201, A*0101, A*1101, B*0702 and DRB1*0101 transgenic mice. A DENV<lb/> proteome-wide screen identified a total of 42 epitopes across all HLA-transgenic<lb/> IFN-_/_R-/-strains tested. In contrast only 8 of these elicited responses in the<lb/> corresponding IFN-_/_R+/+ mice. We were able to identify T cell epitopes from 9<lb/> out of the 10 DENV proteins. However, the majority of responses were derived from<lb/> the highly conserved nonstructural proteins NS3 and NS5. The relevance of this<lb/> model is further demonstrated by the fact that most of the epitopes identified in our<lb/> murine system are also recognized by PBMC from DENV exposed human donors, and<lb/> a dominance of HLA B*0702 restricted responses has been detected in both systems.<lb/> Our results provide new insights into HLA-restricted T cell responses against DENV,<lb/> and we herein describe a novel murine model, which allows the investigation of T<lb/> cell-mediated immune mechanisms relevant to vaccine design</div>
+
+		</front>
+	</text>
+</tei>

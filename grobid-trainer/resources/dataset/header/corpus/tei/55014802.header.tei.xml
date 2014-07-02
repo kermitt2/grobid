@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014802"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<docAuthor>Fu-Gang Zhu, Dong Yu, Ekambar R. Kandimalla, and Sudhir Agrawal<lb/></docAuthor>
+	</byline>
+
+	<docTitle>
+	<titlePart>Studies of Combination of IMO-3100, an Antagonist of TLR7 and TLR9, and Etanercept, a TNF-α Inhibitor,<lb/> in a Mouse Model of Collagen-Induced Arthritis (CIA)<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<affiliation>Idera Pharmaceuticals, Inc.,</affiliation>
+	</byline>
+
+	<address>167 Sidney Street, Cambridge, MA 02139, USA<lb/></address>
+
+	<note type="other">RESULTS SUMMARY<lb/> REFERENCES<lb/></note>
+
+	<ptr>www.iderapharma.com<lb/></ptr>
+
+		</front>
+	</text>
+</tei>

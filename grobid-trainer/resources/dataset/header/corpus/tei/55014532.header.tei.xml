@@ -1,0 +1,67 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014532"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">1338<lb/> </note>
+
+	<reference>ARTHRITIS &amp; RHEUMATISM Volume 37<lb/> Number 9, September 1994, pp 1338-1349<lb/> </reference>
+
+	<note type="copyright">&#169; 1994, American College of Rheumatology<lb/></note>
+
+	<docTitle>
+	<titlePart>FORMATION OF NODULAR STRUCTURES RESEMBLING MATURE<lb/> OF HUMAN FETAL EPIPHYSEAL CHONDROCYTES ON<lb/> A HYDROGEL SUBSTRATE <lb/> ARTICULAR CARTILAGE IN LONG-TERM PRIMARY CULTURES<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>ANTHONY M. REGINATO, RENATO V. IOZZO, and SERGIO A. JIMENEZ<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Objective. To establish long-term cultures of hu-<lb/>man fetal epiphyseal chondrocytes under conditions that<lb/> allow the preservation of a cartilage-specific phenotype.<lb/> Methods. Chondrocytes isolated from 20-24-<lb/>week human fetal epiphyseal cartilage were cultured for<lb/> up to 180 days on plastic dishes previously coated with<lb/> the hydrogel, poly-(2-hydroxyethyl methacrylate). Mor-<lb/>phologic, ultrastructural, and biochemical characteris-<lb/>tics of the cultures were examined at various intervals,<lb/> and the expression of genes encoding types I, 11, and IX<lb/> collagen and aggrecan core protein was determined by<lb/> Northern hybridizations of total cellular RNA with<lb/> human-specific complementary DNAs.<lb/> Results. Human fetal epiphyseal chondrocytes<lb/> cultured for 180 days under conditions that prevented<lb/> their attachment to the underlying substratum formed<lb/> nodular structures with morphologic and structural<lb/> characteristics resembling mature articular cartilage.<lb/> The cells in the center of the nodules remained spherical<lb/> and were surrounded by an abundant cartilaginous<lb/> extracellular matrix, as evidenced by histochemical and<lb/> ultrastructural examinations. The cells in the periphery<lb/> of the nodules acquired a discoid morphology and were<lb/> surrounded by a sparse extracellular matrix. Biosyn-<lb/>thetic studies demonstrated the maintenance of a Cartilage-<lb/>specific phenotype throughout the 180 days of culture,<lb/> ~ _<lb/> _<lb/> Supported by NIH Program Project grant AR-39740. Dr.<lb/> Iozzo is a recipient of a Faculty Research Award (FRA-376) from<lb/> the American Cancer Society.<lb/></div>
+
+	<byline>
+	<docAuthor>Anthony M. Reginato, PhD:</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University of Pennsylvania<lb/> School of Medicine,</affiliation>
+	</byline>
+
+	<address>Philadelphia;</address>
+
+	<byline>
+	<docAuthor>Renato V. Iozzo, MD: Jefferson<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Medical College, Thomas Jefferson University,</affiliation>
+	</byline>
+
+	<address>Philadelphia; Sergio<lb/></address>
+
+	<docAuthor>A. Jimenez, MD: </docAuthor>
+
+	<affiliation>Jefferson Medical College, Thomas Jefferson<lb/> University.<lb/> </affiliation>
+
+	<note type="other">Address reprint requests to</note>
+
+	<byline>
+	<docAuthor>Sergio A. Jimenez, MD, </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Thomas<lb/> Jefferson University,</affiliation>
+	</byline>
+
+	<address>Room 509, Bluemle Life Sciences Building, 233<lb/> South 10th Street, Philadelphia, PA 19107-5541.<lb/></address>
+
+	<note type="submission">Submitted for publication August 31, 1993; accepted in<lb/> revised form March 20, 1994.<lb/></note>
+
+	<note type="other">with the production of aggrecan and types 11, IX, and XI</note>
+
+		</front>
+	</text>
+</tei>

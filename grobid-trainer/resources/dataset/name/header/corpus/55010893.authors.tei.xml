@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Edgars</forename>
+								<surname>Abele</surname>,
+							</persName>
+							<persName>
+								<forename>Kira</forename>
+								<surname>Rubina</surname>,
+							</persName>
+							<persName>
+								<forename>Ramona</forename>
+								<surname>Abele</surname>,
+							</persName>
+							<persName>
+								<forename>Aleksandr</forename>
+								<surname>Gaukhman</surname>
+							<lb/> and
+							</persName>
+							<persName>
+								<forename>Edmunds</forename>
+								<surname>Lukevics</surname>
+								<marker>*</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000313"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>eXtensible rights Markup Language (XrML)<lb/> 1 Example Use Cases<lb/> eXtensible rights Markup Language (XrML)<lb/> Example Use Cases<lb/> </titlePart>
+	</docTitle>
+
+	<date type="publication">20 November 2001<lb/></date>
+
+	<note type="other">This version:<lb/></note>
+
+	<ptr type="web">http://www.xrml.org/spec/2001/11/ExampleUseCases.htm<lb/></ptr>
+
+	<note type="other">Available formats: Microsoft Word and HTML. In case of a discrepancy, the HTML is considered definitive.<lb/> NOTE: To enable interactive browsing of the XrML schemas and examples, the XrML Specification and its<lb/> companion Example Use Cases document use an HTML version that leverages the XML access functionality<lb/> provided by the W3C Xpath recommendation. For this reason, you need to view these HTML documents with a<lb/> browser that supports that recommendation (for example, Internet Explorer Version 6.0). If your browser does not<lb/> support this functionality, please view the Microsoft Word versions of those documents.<lb/></note>
+
+	<note type="copyright">Copyright  2001 ContentGuard Holdings, Inc. All rights reserved.&quot;ContentGuard&quot; is a registered trademark and &quot;XrML&quot;, &quot;eXtensible rights Markup<lb/> Language&quot;, the XrML logo, and the ContentGuard logo are trademarks of ContentGuard Holdings, Inc. All other trademarks are properties of their respective<lb/> owners.<lb/></note>
+
+	<div type="abstract">Abstract<lb/> This document provides examples of using the eXtensible rights Markup Language (XrML) to address various use<lb/> cases and business models in the realm of digital rights management. XrML is a language in XML used to describe<lb/> usage rights and conditions for digital content.<lb/> </div>
+	
+	<div type = "introduction">Status of this Document<lb/> This is a companion document to the XrML specification 2.0, available at www.xrml.org. Feedback and suggestions<lb/> are welcome. Public discussion on XrML and its applications takes place on the discussion forum at<lb/>
+
+	http://www.xrml.org/
+
+	forum.asp. Please report errors and provide comments on this document to the current editor at<lb/>
+
+	http://www.xrml.org/xrml_comments.asp.<lb/>
+
+	Quick Table of Contents<lb/></div>
+	
+
+		</front>
+	</text>
+</tei>

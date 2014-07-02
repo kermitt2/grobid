@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei type="book-chapter">
+	<teiHeader>
+		<fileDesc xml:id="55113669"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">207<lb/></note>
+
+	<docTitle>
+	<titlePart>9<lb/>VIDEO SUMMARIES THROUGH MULTIMODAL<lb/> ANALYSIS<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Michael A. Smith 1 , Howard D. Wactlar 2<lb/> and Michael G. Christel 2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 AVA Media Systems,</affiliation>
+	</byline>
+
+	<address>Austin, TX, USA<lb/></address>
+
+	<byline>
+	<affiliation>2 Department of Computer Science<lb/> Carnegie Mellon University<lb/></affiliation>
+	</byline>
+
+	<address>Pittsburgh, PA, USA<lb/></address>
+
+	<email>msmith@savasystems.com, hdw@cs.cmu.edu,<lb/>christel@cs.cmu.edu<lb/></email>
+
+		</front>
+	</text>
+</tei>

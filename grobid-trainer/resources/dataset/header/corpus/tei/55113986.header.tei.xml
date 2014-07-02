@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei type="web">
+	<teiHeader>
+		<fileDesc xml:id="55113986"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>protégé-owl api programmer&apos;s guide<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>-Original Author: Holger Knublauch<lb/> </docAuthor>
+	</byline>
+	
+	<note type="other">-Currently maintained by: Protégé staff members<lb/> </note>
+
+	<note type="submission">-Last updated: September 21, 2006<lb/> </note>
+
+	<note type="other">-Please send corrections, comments, and questions to the protege-owl mailing list<lb/>Contents</note>
+
+		</front>
+	</text>
+</tei>

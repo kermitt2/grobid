@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55113539"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">This article was published as part of the<lb/></note>
+
+	<docTitle>
+	<titlePart>Conducting polymers for carbon<lb/> electronics themed issue<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Guest editor Professor Yung Woo Park<lb/> Please take a look at the issue 7 2010 table of contents to<lb/> access other reviews in this themed issue<lb/></note>
+
+	<date>Published on 16 November 2010.</date>
+
+	<note type="other">Downloaded by European Patent Office on </note>
+
+	<date>10/04/2014 </date>
+
+	<note type="other">14:38:07.<lb/></note>
+
+	<note type="other">View Article Online / Journal Homepage / Table of Contents for this issue<lb/> This journal is</note>
+
+	<note type="copyright">&#169; The Royal Society of Chemistry 2011<lb/></note>
+
+	<reference>Chem. Soc. Rev., 2011, 40, 1185–1199</reference>
+	
+	<note type="page">1185<lb/></note>
+
+	<docTitle>
+	<titlePart>Influence of blend microstructure on bulk heterojunction organic<lb/> photovoltaic performancew<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Christoph J. Brabec,<lb/> a Martin Heeney,<lb/> b Iain McCulloch<lb/> b and Jenny Nelson<lb/> c<lb/></docAuthor>
+	</byline>
+
+	<date>Received 16th July 2010<lb/></date>
+
+	<idno type="DOI">DOI: 10.1039/c0cs00045k<lb/></idno>
+
+	<div type="abstract">The performance of organic photovoltaic devices based upon bulk heterojunction blends of donor<lb/> and acceptor materials has been shown to be highly dependent on the thin film microstructure. In<lb/> this tutorial review, we discuss the factors responsible for influencing blend microstructure and how<lb/> these affect device performance. In particular we discuss how various molecular design approaches<lb/> can affect the thin film morphology of both the donor and acceptor components, as well as their<lb/> blend microstructure. We further examine the influence of polymer molecular weight and blend<lb/> composition upon device performance, and discuss how a variety of processing techniques can be<lb/> used to control the blend microstructure, leading to improvements in solar cell efficiencies.<lb/></div>
+
+		</front>
+	</text>
+</tei>

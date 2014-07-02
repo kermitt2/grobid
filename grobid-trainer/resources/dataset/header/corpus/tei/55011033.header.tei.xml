@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011033"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Abschlussbericht der<lb/>Projektgruppe CA / DRM<lb/></titlePart>
+	</docTitle>
+	
+	<byline>
+	<affiliation>Bundesnetzagentur für Elektrizität, Gas,<lb/>Telekommunikation, Post und Eisenbahnen<lb/></affiliation>
+	</byline>
+
+	<byline>
+	<affiliation>Ausschuss für technische Regulierung<lb/> in der Telekommunikation (ATRT)<lb/></affiliation>
+	</byline>
+
+	<address>Bonn,</address>
+
+	<date>November 2009</date>
+
+		</front>
+	</text>
+</tei>

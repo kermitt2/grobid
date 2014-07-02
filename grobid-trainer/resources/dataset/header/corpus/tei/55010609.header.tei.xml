@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010609"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Intel ® Platform Innovation Framework<lb/> for EFI<lb/> Pre-EFI Initialization<lb/> Core Interface Specification (PEI CIS)<lb/> A Foundation Specification<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Version 0.9<lb/></note>
+
+	<date>September 16, 2003</date>
+
+		</front>
+	</text>
+</tei>

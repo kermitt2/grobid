@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013826"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Supplemental Access Control (PACE v2): Security Analysis of<lb/> PACE Integrated Mapping<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Jean-Sébastien Coron<lb/> 1 , Aline Gouget<lb/> 2 , Thomas Icart<lb/> 1 , and Pascal Paillier<lb/> 2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Université du Luxembourg<lb/></affiliation>
+	</byline>
+
+	<address>6, rue Richard Coudenhove-Kalergi, l-1359 Luxembourg, Luxembourg<lb/></address>
+
+	<email>jean-sebastien.coron@uni.lu, thomas.icart@m4x.org<lb/></email>
+
+	<byline>
+	<affiliation>2 Gemalto<lb/></affiliation>
+	</byline>
+
+	<address>6, rue de la Verrerie, 92190 Meudon, France<lb/></address>
+
+	<email>aline.gouget@gemalto.com, pascal.paillier@gemalto.com<lb/></email>
+
+	<div type="abstract">Abstract. We describe and analyze the password-based key establishment protocol PACE v2 Inte-<lb/>grated Mapping (IM), an evolution of PACE v1 jointly proposed by Gemalto and Sagem Sécurité.<lb/> PACE v2 IM enjoys the following properties:<lb/> – patent-freeness<lb/> 3 (to the best of current knowledge in the field);<lb/> – full resistance to dictionary attacks, secrecy and forward secrecy in the security model agreed upon<lb/> by the CEN TC224 WG16 group;<lb/> – optimal performances.<lb/> The PACE v2 IM protocol is intended to provide an alternative to the German PACE v1 protocol,<lb/> which is also the German PACE v2 Generic Mapping (GM) protocol, proposed by the German Federal<lb/> Office for Information Security (BSI). In this document, we provide<lb/> – a description of PACE v2 IM,<lb/> – a description of the security requirements one expects from a password-based key establishment<lb/> protocol in order to support secure applications,<lb/> – a security proof of PACE v2 IM in the so-called Bellare-Pointcheval-Rogaway (BPR) security model.<lb/></div>
+
+		</front>
+	</text>
+</tei>

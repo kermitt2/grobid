@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013593"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Elliptic curves in Huff&apos;s model *<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Hongfeng Wu<lb/> 1 , Rongquan Feng<lb/> 2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 College of Sciences, North China University of Technology,</affiliation>
+	</byline>
+
+	<address>Beijing 100144, China<lb/></address>
+
+	<email>whfmath@gmail.com<lb/></email>
+
+	<byline>
+	<affiliation>2 LMAM, School of Mathematical Sciences, Peking University,</affiliation>
+	</byline>
+
+	<address>Beijing 100871, China<lb/></address>
+
+	<email>fengrq@math.pku.edu.cn<lb/></email>
+
+	<div type="abstract">Abstract<lb/> The general Huff curves which contains Huff&apos;s model as a special<lb/> case is introduced in this paper. It is shown that every elliptic curve<lb/> with three points of order 2 is isomorphic to a general Huff curve. Some<lb/> fast explicit formulae for general Huff curves in projective coordinates<lb/> are presented. These explicit formulae for addition and doubling are<lb/> almost as fast as they are for the Huff curves in [9]. Finally, the<lb/> number of isomorphism classes of general Huff curves defined over a<lb/> finite field is enumerated.<lb/></div>
+
+	<keyword>Keywords: elliptic curve, Huff curve, isomorphism classes, scalar multi-<lb/>plication, cryptography<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

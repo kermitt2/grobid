@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014611"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Short communication<lb/></note>
+
+	<docTitle>
+	<titlePart>The adsorption of Congo red and vacuum pump oil by rice hull ash<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Kan-Sen Chou * , Jyh-Ching Tsai, Chieh-Tsung Lo<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Chemical Engineering, National Tsing Hua University,</affiliation>
+	</byline>
+
+	<address>Hsinchu 300-13, Taiwan, ROC<lb/></address>
+
+	<note type="submission">Received 25 March 2000; received in revised form 4 August 2000; accepted 12 August 2000<lb/></note>
+
+	<div type="abstract">Abstract<lb/> Rice hull ash (RHA) of large surface area was obtained by acid wash and then calcination at 600°C for 4 h. The white ash was<lb/> then mixed with kaolin and starch to make pellet adsorbents with reasonable strength to be utilized in a packed column. Both ash<lb/> and pellet samples showed good adsorption capacities toward the organic substances in wastewater. Furthermore, the surface nature<lb/> of the white ash and pellet adsorbent could be modi®ed through either hydration or esteri®cation reactions. Corresponding changes<lb/> in silanol concentrations were successfully correlated to changes in adsorption capacity toward either Congo red or vacuum pump<lb/> oil molecules. Ó</div>
+
+	<note type="copyright">&#169;2001 Elsevier Science Ltd. All rights reserved.<lb/></note>
+
+	<keyword>Keywords: Rice hull ash; Pellet adsorbent; Surface modi®cation<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009838"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Persistence of Collagen Type II Synthesis and Secretion<lb/> in Rapidly Proliferating Human Articular Chondrocytes In Vitro<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Aboulghassem Shahdadfar, Ph.D.,<lb/> 1 Sverre Løken, M.D.,<lb/> 2,3 John Arne Dahl, M.Sc.,<lb/> 4<lb/> Siv H. Tunheim, M.Sc.,<lb/> 5 Philippe Collas, Ph.D.,<lb/> 4 Finn P. Reinholt, M.D., Ph.D.,<lb/> 6,7<lb/> Lars Engebretsen, M.D., Ph.D.,<lb/> 2 and Jan E. Brinchmann, M.D., Ph.D.<lb/> 1<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Articular chondrocytes (AC) expanded in vitro for tissue engineering rapidly turn off collagen type II (COL2)<lb/> synthesis. We wanted to inhibit this process sufficiently to obtain therapeutically useful numbers of AC without<lb/> losing COL2 synthesis. To this end, AC were expanded on their own extracellular matrix (ECM) in structures<lb/> designated chondrocytes in autologous ECM (CA-ECM). Here, AC maintained a rounded shape and proliferated<lb/> rapidly. After 13–15 days in culture, 40Â10<lb/> 6 cells (median) could be obtained from a cartilage biopsy. Real-time<lb/> RT-PCR showed a reduced, but persistent, production of COL2A1 mRNA at this time. Flow cytometry showed<lb/> high levels of intracellular COL2, and immunogold electron microscopy showed high density of well-organized<lb/> COL2 fibrils in newly synthesized ECM. Interestingly, high levels of COL1A1 mRNA and intracellular protein<lb/> were detected, but no COL1 was found in the ECM. The slow loss of COL2A1 mRNA was paralleled by a loss of the<lb/> COL2 regulating transcription factor SOX9 mRNA. Chromatin immunoprecipitation assays could not identify<lb/> epigenetic histone modifications that would explain the observed changes in COL2 synthesis. Thus, the CA-ECM<lb/> strategy allows AC to proliferate to clinically useful numbers while maintaining COL2 synthesis and secretion.<lb/> This strategy may improve tissue engineering of joint surfaces.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014241"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Gene Symbol Report |</titlePart>
+	</docTitle>
+
+	<note type="other">HUGO Gene Nomenclature Committee<lb/></note>
+
+	<ptr type="web">http://www.genenames.org/data/hgnc_data.php?hgnc_id=11006<lb/></ptr>
+
+	<note type="page">1 of 1<lb/></note>
+
+	<date>08-12-2011</date>
+
+	<note type="other">09:01</note>
+
+		</front>
+	</text>
+</tei>

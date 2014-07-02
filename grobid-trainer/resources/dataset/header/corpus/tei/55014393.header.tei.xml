@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014393"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">SELFHTML/Navigationshilfen HTML/XHTML Frames<lb/> </note>
+
+	<docTitle>
+	<titlePart>Framesets und Frames definieren<lb/> </titlePart>
+	</docTitle>
+
+	<note type="other">Allgemeines zu Frames<lb/> Grundgerüst einer HTML-Datei mit Framesets<lb/> Framesets definieren<lb/> Frames zu einem Frameset definieren<lb/> Noframes-Bereich definieren<lb/> Langbeschreibung für Framefenster<lb/> Weitere Informationen<lb/> Allgemeines zu Frames<lb/></note>
+
+	<div type="abstract">Mit Hilfe von Frames können Sie den Anzeigebereich des Browsers in verschiedene, frei definierbare Segmente aufteilen. Jedes Segment kann eigene Inhalte enthalten.<lb/> Die einzelnen Anzeigesegmente (also die Frames) können wahlweise einen statischen Inhalt (= &quot;non scrolling regions&quot;) oder einen wechselnden Inhalt haben. Verweise<lb/> in einem Frame können Dateien aufrufen, die dann in einem anderen Frame angezeigt werden.<lb/> Frames sind kein weiteres Element, um typische Aufgaben der Textverarbeitung zu bewältigen, sondern ein Element, das die spezifischen Eigenschaften der<lb/> Bildschirmanzeige konsequent nutzt. Frames eröffnen völlig neue Möglichkeiten, um Information hypertextuell (d.h. nicht-linear) aufzubereiten.<lb/> Frames werden ab Netscape 2.0 und ab MS Internet Explorer 3.0 unterstützt. Seit HTML 4.0 gehören die Frames auch zum HTML-Standard. Dort allerdings nicht zur<lb/> HTML-Variante &quot;Strict&quot;, sondern stattdessen mit einer eigenen Variante &quot;Frameset&quot; ausgestattet. Die nebenstehende Abbildung zeigt, wie Frames im Anzeigefenster<lb/> des Browsers wirken:<lb/> Das Bild stellt den Inhalt des gesamten Anzeigefensters des Browsers schematisch dar. Das Anzeigefenster ist in drei unabhängige Bereiche aufgeteilt. Die Verweise<lb/> links und unten können beispielsweise immer eingeblendet bleiben, während sich der Inhalt des Hauptfensters je nach ausgewähltem Verweis ändern kann. Dabei<lb/> werden im Beispiel der Abbildung immer drei verschiedene HTML-Dateien gleichzeitig angezeigt: links und unten immer die gleiche Datei, im Hauptfenster jeweils eine<lb/> wechselnde Datei, je nach ausgewähltem Verweis.</div>
+
+		</front>
+	</text>
+</tei>

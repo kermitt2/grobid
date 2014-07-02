@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Sanjeev</forename>
+								<surname>Singh</surname>,
+							</persName>
+							<persName>
+								<forename>Srihari</forename>
+								<surname>Nelakuditi</surname>, and
+							</persName>
+							<persName>
+								<forename>Yang</forename>
+								<middlename>Tong</middlename>
+							</persName>
+							<persName>	
+								<forename>Romit</forename>
+								<middlename>Roy</middlename>
+								<surname>Choudhury</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

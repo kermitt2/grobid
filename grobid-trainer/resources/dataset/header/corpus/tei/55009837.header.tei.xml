@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009837"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">791<lb/></note>
+
+	<reference>TISSUE ENGINEERING<lb/> Volume 7, Number 6, 2001<lb/> Mary Ann Liebert, Inc.<lb/></reference>
+
+	<docTitle>
+	<titlePart>Effect of Oxygen Tension and Alginate<lb/> Encapsulation on Restoration of the Differentiated<lb/> Phenotype of Passaged Chondrocytes<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>CHRISTOPHER L. MURPHY, Ph.D.,<lb/> 1,3<lb/> and ATHANASSIOS SAMBANIS, Ph.D.<lb/> 1,2<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">ABSTRACT<lb/> The implantation of laboratory-grown tissue offers a valuable alternative approach to the<lb/> treatment of cartilage defects. Procuring sufficient cell numbers for such tissue-engineered<lb/> cartilage is a major problem since amplification of chondrocytes in culture typically leads<lb/> to loss of normal cell phenotype yielding cartilage of inferior quality. In an effort to over-<lb/>come this problem, we endeavored to regain the differentiated phenotype of chondrocytes<lb/> after extensive proliferation in monolayer culture by modulating cell morphology and oxy-<lb/>gen tension towards the in vivo state. Passaged cells were encapsulated in alginate hydro-<lb/>gel in an effort to regain the more rounded shape characteristic of differentiated chon-<lb/>drocytes. These cultures were exposed to reduced (5%–i.e., physiological), or control (20%)<lb/> oxygen tensions. Both alginate encapsulation and reduced oxygen tension significantly up-<lb/>regulated collagen II and aggrecan core protein expression (differentiation markers). In<lb/> fact, after 4 weeks in alginate at 5% oxygen, differentiated gene expression was compa-<lb/>rable to primary chondrocytes. Collagen I expression (dedifferentiation marker) decreased<lb/> dramatically after alginate entrapment, while reduced oxygen tension had no effect. It is<lb/> concluded that alginate encapsulation and reduced oxygen tension help restore key dif-<lb/>ferentiated phenotypic markers of passaged chondrocytes. These findings have important<lb/> implications for cartilage tissue engineering, since they enable the increase in differenti-<lb/>ated cell numbers needed for the in vitro development of functional cartilaginous tissue<lb/> suitable for implantation.<lb/></div>
+
+		</front>
+	</text>
+</tei>

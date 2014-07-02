@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010091"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">3-1<lb/></note>
+
+	<docTitle>
+	<titlePart>3 USB 3.0 Architectural Overview<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">This chapter presents an overview of Universal Serial Bus 3.0 architecture and key concepts.<lb/> USB 3.0 is similar to earlier versions of USB in that it is a cable bus supporting data exchange<lb/> between a host computer and a wide range of simultaneously accessible peripherals. The attached<lb/> peripherals share bandwidth through a host-scheduled protocol. The bus allows peripherals to be<lb/> attached, configured, used, and detached while the host and other peripherals are in operation.<lb/> USB 3.0 utilizes a dual-bus architecture that provides backward compatibility with USB 2.0. It<lb/> provides for simultaneous operation of SuperSpeed and non-SuperSpeed (USB 2.0 speeds)<lb/> information exchanges. This chapter is organized into two focus areas. The first focuses on<lb/> architecture and concepts related to elements which span the dual buses. The second focuses on<lb/> SuperSpeed specific architecture and concepts.<lb/></div>
+
+		</front>
+	</text>
+</tei>

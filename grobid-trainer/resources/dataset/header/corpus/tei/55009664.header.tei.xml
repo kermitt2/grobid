@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009664"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Molecular Microbiology (1995) 18(1), 77-87<lb/></reference>
+
+	<docTitle>
+	<titlePart>NPI1, an essential yeast gene involved in induced<lb/> degradation of Gap1 and Fur4 permeases, encodes the<lb/> Rsp5 ubiquitin-protein ligase<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Claudine Hein, it Jean-Yves Springael, it Christiane<lb/> Volland, 2 Rosine Haguenauer-Tsapis 2 and Bruno<lb/> Andrd 1.<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>~ Laboratoire de Physiologie Cellulaire et de G~n~tique<lb/> des Levures, Universit~ Libre de Bruxelles,</affiliation>
+	</byline>
+
+	<address>Campus<lb/> Plaine CP 244, Bid du Triomphe, B-1050 Bruxelles,<lb/> Belgium.<lb/></address>
+
+	<byline>
+	<affiliation>21nstitut Jacques Monod, Universit~ Paris VII,</affiliation>
+	</byline>
+
+	<address>2 place<lb/> Jussieu 75251, Paris Cedex 05, France.<lb/></address>
+
+	<div type="abstract">Summary<lb/> When yeast cells growing on a poor nitrogen source<lb/> are supplied with NH~ ions, several nitrogen per-<lb/>meases including the general amino acid permease<lb/> (Gaplp) are rapidly and completely inactivated. This<lb/> report shows that inactivation by NH + of the Gap1 per-<lb/>mease is accompanied by its degradation. A functional<lb/> NPI1 gene product is required for both inactivation and<lb/> degradation of Gaplp. Molecular analysis of the NPI1<lb/> gene showed that it is identical to RSP5. The RSP5pro-<lb/>duct is a ubiquitin-protein ligase (E3 enzyme) whose<lb/> physiological function was, however, unknown. Its C-<lb/>terminal region is very similar to that of other mem-<lb/>bers of the E6-AP-like family of ubiquitin-protein<lb/> ligases. Its N-terminal region contains a single C2<lb/> domain that may be a Ca2+-dependent phospholipid<lb/> interaction motif, followed by several copies of a<lb/> recently identified domain called WW(P). The Npil/<lb/> Rsp5 protein has a homologue both in humans and<lb/> in mice, the latter being involved in brain development.<lb/> Stress-induced degradation of the uracil permease<lb/> (Fur4p), a process in which ubiquitin is probably<lb/> involved, was also found to require a functional NPI1/<lb/> RSP5 product. Chromosomal deletion of NPI1/RSP5<lb/> showed that this gene is essential for cell viability. In<lb/> the viable npil/rsp5 strain, expression of NPI1/RSP5<lb/> is reduced as a result of insertion of a Tyl element in<lb/> its 5&apos; region. Our results show that the Npil/Rsp5<lb/></div>
+
+	<note type="submission">Received 17 May, 1995; revised 31 May, 1995; accepted 6 June,<lb/> 1995.</note>
+
+	<note type="other">-J&apos;These authors contributed equally to this work. *For<lb/> correspondence.</note>
+
+	<email>E-maU bran@ulb.ac.be;</email>
+
+	<phone>Tel. (2) 6505411; Fax (2)<lb/> 6505421.<lb/> </phone>
+
+	<note type="copyright">© 1995 Blackwell Science Ltd<lb/> </note>
+	
+	<div type="abstract">ubiquitin-protein ligase participates in induced degra-<lb/>dation of at least two permeases, Gaplp and Fur4p,<lb/> and probably also other proteins.<lb/></div>
+
+		</front>
+	</text>
+</tei>

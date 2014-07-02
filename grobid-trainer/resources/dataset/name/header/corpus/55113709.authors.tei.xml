@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Magali</forename>
+								<surname>Cremel</surname>,
+								<marker>*</marker>
+							</persName>
+							<persName>
+								<forename>Willy</forename>
+								<surname>Berlier</surname>,
+								<marker>*</marker>
+							</persName>
+							<persName>
+								<forename>Hind</forename>
+								<surname>Hamzeh</surname>,
+								<marker>*</marker>
+							</persName>
+							<persName>
+								<forename>Fabrice</forename>
+								<surname>Cognasse</surname>,
+								<marker>*</marker>
+							</persName>
+							<persName>
+								<forename>Philip</forename>
+								<surname>Lawrence</surname>,
+								<marker>*</marker>
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Christian</forename>
+								<surname>Genin</surname> ,
+								<marker>*</marker>
+							</persName>
+							<persName>
+								<forename>Jean -Claude</forename>
+								<surname>Bernengo</surname> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Claude</forename>
+								<surname>Lambert</surname> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Marie- Caroline</forename>
+								<surname>Dieu-Nosjean</surname> ,and
+							</persName>
+							<persName>
+								<forename>Olivier</forename>
+								<surname>Delézay</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

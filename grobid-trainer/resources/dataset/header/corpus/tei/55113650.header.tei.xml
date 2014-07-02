@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55113650"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>The low frequency output of marine air-gun arrays<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Stian Hegna* and Gregg Parkes, PGS<lb/></docAuthor>
+	</byline>
+
+		</front>
+	</text>
+</tei>

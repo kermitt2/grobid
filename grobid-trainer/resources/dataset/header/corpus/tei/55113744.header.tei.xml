@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55113744"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Journal of Scientific &amp; Industrial Research<lb/> Vol. 64, May 2005, pp. 364-366<lb/></reference>
+
+	<docTitle>
+	<titlePart>Ring opening polymerization of ethylene carbonate with base as initiator<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>A G Patil, U R Kapadi* and D G Hundiwale<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>School of Chemical Sciences, North Maharashtra University,</affiliation>
+	</byline>
+
+	<address>P O Box 80, Jalgaon 425 001<lb/></address>
+
+	<note type="submission">Received 09 August 2004; accepted 07 March 2005<lb/></note>
+
+	<div type="abstract">The study presents synthesis of industrially important polymer, polyethylene ether carbonate, via ring opening<lb/> polymerization of ethylene carbonate using KOH as initiator at 200°C for 7 h. The molecular weight (1200-3400) and yield<lb/> (40-80%) of the polymer were determined. The structure analysis using IR and NMR techniques showed the presence of<lb/> carbonate and ether linkages in the polymer.<lb/></div>
+
+	<keyword>Keywords: Polycarbonate, Ethylene carbonate, Ring opening polymerization<lb/></keyword>
+
+	<keyboard>IPC Code: C 08 G 64/02<lb/></keyboard>
+
+		</front>
+	</text>
+</tei>

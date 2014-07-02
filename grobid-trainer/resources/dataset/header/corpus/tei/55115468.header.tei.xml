@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55115468"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>INTERNET-BASED COLLABORATIVE SYSTEM DESIGN USING<lb/> MOSCITO<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>A. Schneider<lb/> E. Ivask<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Fraunhofer Institute for Integrated Circuits<lb/> Tallinn Technical University<lb/> Branch Lab EAS Dresden<lb/> Department of Computer Engineering<lb/></affiliation>
+	</byline>
+
+	<address>Zeunerstraße 38, 01069 Dresden, Germany<lb/> Raja 15, 12618 Tallinn, Estonia<lb/></address>
+
+	<email>Andre.Schneider@eas.iis.fhg.de<lb/> ieero@pld.ttu.ee<lb/></email>
+
+	<div type="abstract">Abstract. This paper introduces a software architecture which can help that<lb/> Internet-based collaboration in the field of system design becomes reality. Today<lb/> many powerful tools for simulation, synthesis, test, and optimization are availa-<lb/>ble. But most of them can only work as stand-alone tool on a certain platform.<lb/> With MOSCITO these design tools can be encapsulated and coupled via Inter-<lb/>net. Design engineers can remotely use the needed programs like a service and<lb/> partners locating in different geographical sites can perform collaborative<lb/> experiments over Internet. The author describes basic ideas and the imple-<lb/>mented infrastructure of MOSCITO and discusses first practical experiences.<lb/></div>
+
+	<keyword>Keywords. Internet-based design, simulation, optimization, test, security,<lb/> firewall-protection<lb/></keyword>
+
+	<div type="introduction">1 Motivation<lb/> Starting from the idea to connect tools via the Internet to form an appropriate workflow for<lb/> solving dedicated design problems the MOSCITO system at Fraunhofer IIS was developed<lb/> and implemented [3].<lb/> The MOSCITO system works as an Internet-based multi-agent system which can be control-<lb/>led and observed by the user&apos;s front end program – the MOSCITO Desktop. Over the last<lb/> years several approaches for coupling tools and providing services via Internet were devel-<lb/>oped. Powerful middleware such as CORBA, Java RMI, COM/DCOM or HLA is available<lb/> today for implementing such distributed infrastructures. MOSCITO is mainly based on the<lb/> general ideas of these approaches but it uses a very small, pure Java-based implementation.<lb/> Some reasons for this design decision are:<lb/> @BULLET CORBA is very complex. It supports components which can be implemented in different<lb/> programming languages. In MOSCITO this feature is not necessary because each tool is<lb/> encapsulated in a Java wrapper class -the MOSCITO Agent.<lb/> @BULLET COM/DCOM is available on Microsoft platforms only. MOSCITO is needed at least on<lb/> Solaris, Linux and Windows systems.<lb/> @BULLET Main focus of HLA is coupling of simulators. MOSCITO isn&apos;t restricted to this application<lb/> area.</div>
+
+		</front>
+	</text>
+</tei>

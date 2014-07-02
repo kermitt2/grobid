@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012147"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Presented at the 67<lb/> th Annual International Water Conference, Engineers Society of Western Pennsylviania, Pittsburgh, Oct 2006<lb/> </note>
+
+	<note type="page">-1 -<lb/></note>
+
+	<docTitle>
+	<titlePart>A Comprehensive Look at Conductivity Measurement<lb/> in Steam and Power Generation Waters<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>DAVID M. GRAY – </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Mettler-Toledo</affiliation>
+	</byline>
+
+	<byline>
+	<affiliation>Thornton, Inc.,</affiliation>
+	</byline>
+
+	<address>Bedford, MA<lb/></address>
+
+	<idno>IWC-06-29<lb/></idno>
+
+	<keyword>KEYWORDS: conductivity, cation conductivity, degassed cation conductivity, cycle chemistry, TOC,<lb/> total organic carbon<lb/></keyword>
+
+	<div type="abstract">ABSTRACT: Conductivity has been the simplest, oldest, most common, most reliable and lowest cost<lb/> measurement used for determining water purity. Nevertheless, this lowly measurement has provided the<lb/> means for protecting and assuring efficient operation of billions of dollars worth of power and steam<lb/> generation equipment throughout the world for over three-quarters of a century. Recent innovations in<lb/> measurement accuracy, temperature compensation, and sample conditioning have enabled this basic<lb/> detection method to provide more information and to expand its use even further. From the simplest TDS<lb/> meter to the most sophisticated ion chromatograph, conductivity measurement is the core technology.<lb/> The widespread use of this measurement often outpaces the understanding of it. Provided here<lb/> are the fundamentals and application of conductivity measurement as used in power and steam<lb/> generation, including ionic conductance, cell constant, measuring techniques and temperature effects. In<lb/> addition, various means of sample conditioning are discussed, covering the measurements of cation<lb/> conductivity, degassed cation conductivity, pH and CO 2 calculations and even TOC (total organic carbon)<lb/> measurements. It is hoped this discussion will assist those applying conductivity measurement in any of<lb/> its incarnations to have a greater understanding and to obtain better results.
+	<lb/></div>
+
+		</front>
+	</text>
+</tei>

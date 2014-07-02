@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>~</marker>
+							<orgName type="laboratory">Laboratoire de Physiologie Cellulaire et de G~n~tique<lb/> des Levures</orgName>,
+							<orgName type="institution">Universit~ Libre de Bruxelles</orgName>,
+							<address>
+								<addrLine>Campus<lb/> Plaine CP 244</addrLine>,
+								<addrLine>Bid du Triomphe</addrLine>,
+								<postCode>B-1050</postCode>
+								<settlement>Bruxelles</settlement>,
+								<lb/>
+								<country>Belgium</country>.
+								<lb/> 
+							</address>
+						</affiliation>
+						<affiliation>		
+							<orgName type="institution">21nstitut Jacques Monod</orgName>,
+							<orgName type="institution">Universit~ Paris VII</orgName>,
+							<address>
+								<addrLine>2 place<lb/> Jussieu 75251</addrLine>,
+								<settlement>Paris</settlement>
+								<postCode>Cedex 05</postCode>,
+								<country>France</country>.
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

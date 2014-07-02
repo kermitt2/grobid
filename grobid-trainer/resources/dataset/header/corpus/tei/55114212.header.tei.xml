@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55114212"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Detection and characterization of antibodies specific to food antigens (gliadin,<lb/> ovalbumin and b-lactoglobulin) in human serum, saliva, colostrum and milk<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>M. RUMBO*, F. G. CHIRDO*, M. C. A N* &amp; C. A. FOSSATI</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>*Centro de Investigación y Desarrollo en<lb/> Criotecnología de Alimentos (CIDCA) (CONICET-UNLP) and Cátedra de Inmunología, Facultad de Ciencias Exactas,<lb/></affiliation>
+	</byline>
+
+	<address>UNLP, La Plata, Argentina<lb/></address>
+
+	<note type="submission">(Accepted for publication 26 January 1998)<lb/></note>
+
+	<div type="abstract">SUMMARY<lb/> Antibodies against food antigens are usually produced in healthy people. This humoral response can be<lb/> detected both in serum and secretions. The characterization of this response can be useful for a better<lb/> understanding of food-related immunological alterations. In this study, IgA and IgG antibodies specific<lb/> to ovalbumin, b-lactoglobulin or gliadin were measured in serum, saliva, colostrum and milk from 40<lb/> healthy breast-feeding women. Specific IgA and IgG to the three antigens were measured by indirect<lb/> ELISA. Specific IgG levels were highest in serum and very low in the other biological fluids. No<lb/> correlation between the IgG specific to the different antigens was found. Specific IgA reactivity was<lb/> found in all the samples analysed. Levels observed were higher in colostrum and milk than in serum and<lb/> saliva. In spite of being three different unrelated food antigens, a correlation between the levels of<lb/> specific IgA was found in saliva, colostrum and milk samples of all subjects studied. The specificity of<lb/> IgA anti-gliadin antibodies from serum, saliva and colostrum was analysed by immunoblotting of SDS–<lb/> PAGE-separated wheat proteins. Each sample presented a unique pattern of recognition. No common<lb/> pattern of recognition was found either among the same biological fluids of the different subjects tested,<lb/> or among the different samples—either serum, colostrum or saliva—of the same individual. Different<lb/> degrees of specificity to wheat proteins among IgA from colostrum, saliva or serum were observed,<lb/> suggesting that the local IgA-producing populations are functionally different in the different tissues of<lb/> the organism.<lb/></div>
+
+	<keyword>Keywords IgA IgG gliadin ovalbumin b-lactoglobulin<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

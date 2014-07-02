@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009336"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>STEWARD: Architecture of a Spatio-Textual Search Engine *<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Michael D. Lieberman<lb/> Hanan Samet<lb/> Jagan Sankaranarayanan<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Computer Science<lb/> Center for Automation Research<lb/> Institute for Advanced Computer Studies<lb/> University of Maryland at College Park<lb/></affiliation>
+	</byline>
+
+	<email>{codepoet,hjs,jagan}@cs.umd.edu<lb/></email>
+
+	<byline>
+	<docAuthor>Jon Sperling<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>HUD Office of Policy Development &amp; Research (PD&amp;R)<lb/></affiliation>
+	</byline>
+
+	<address>451 7th St SW, Rm 8146<lb/> Washington D.C. 20410<lb/></address>
+
+	<email>jon_sperling@hud.gov<lb/></email>
+
+	<div type="abstract">ABSTRACT<lb/> STEWARD (&quot;Spatio-Textual Extraction on the Web Aiding<lb/> Retrieval of Documents&quot;), a system for extracting, querying,<lb/> and visualizing textual references to geographic locations in<lb/> unstructured text documents, is presented. Methods for re-<lb/>trieving and processing web documents, extracting and dis-<lb/>ambiguating georeferences, and identifying geographic focus<lb/> are described. A brief overview of STEWARD&apos;s querying<lb/> capabilities, as well as the design of an intuitive user inter-<lb/>face, are provided. Finally, several application scenarios and<lb/> future extensions to STEWARD are discussed.<lb/></div>
+
+	<keyword>Categories and Subject Descriptors<lb/> H.3 [Information Storage and Retrieval]: Information<lb/> Storage and Retrieval<lb/> General Terms<lb/> Algorithms,Design,Performance<lb/> Keywords<lb/> Spatio-textual search engine, STEWARD, Geocoding<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

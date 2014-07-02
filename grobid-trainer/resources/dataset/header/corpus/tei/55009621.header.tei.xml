@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009621"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>System Guidelines for Co-located,<lb/> Collaborative Work on a Tabletop<lb/> Display<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Stacey D. Scott<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Computer Science, University of Calgary,</affiliation>
+	</byline>
+
+	<address>Calgary, Canada<lb/></address>
+
+	<email>sdscott@cpsc.ucalgary.ca<lb/></email>
+
+	<byline>
+	<docAuthor>Karen D. Grant<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Computer Science, Stanford University,</affiliation>
+	</byline>
+
+	<address>Stanford, CA, USA<lb/></address>
+
+	<email>kgrant@cs.stanford.edu<lb/></email>
+
+	<byline>
+	<docAuthor>Regan L. Mandryk<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>School of Computing Science, Simon Fraser University,</affiliation>
+	</byline>
+
+	<address>Burnaby, Canada<lb/></address>
+
+	<email>rlmandry@cs.sfu.ca<lb/></email>
+
+	<div type="abstract">Abstract. Collaborative interactions with many existing digital tabletop systems lack the<lb/> fluidity of collaborating around a table using traditional media. This paper presents a<lb/> critical analysis of the current state-of-the-art in digital tabletop systems research,<lb/> targeted at discovering how user requirements for collaboration are currently being met<lb/> and uncovering areas requiring further development. By considering research on<lb/> tabletop displays, collaboration, and communication, several design guidelines for<lb/> effective co-located collaboration around a tabletop display emerged. These guidelines<lb/> suggest that technology must support: (1) natural interpersonal interaction, (2) transitions<lb/> between activities, (3) transitions between personal and group work, (4) transitions<lb/> between tabletop collaboration and external work, (5) the use of physical objects, (6)<lb/> accessing shared physical and digital objects, (7) flexible user arrangements, and (8)<lb/> simultaneous user interactions. The critical analysis also revealed several important<lb/> directions for future research, including: standardization of methods to evaluate co-<lb/>located collaboration; comparative studies to determine the impact of existing system<lb/> configurations on collaboration; and creation of a taxonomy of collaborative tasks to help<lb/> determine which tasks and activities are suitable for tabletop collaboration.</div>
+
+		</front>
+	</text>
+</tei>

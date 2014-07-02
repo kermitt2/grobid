@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009736"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Developmental Cell, Vol. 1, 333–342, September, 2001,</reference>
+
+	<note type="copyright">Copyright &#169;2001 by Cell Press<lb/></note>
+
+	<note type="other">Review</note>
+
+	<docTitle>
+	<titlePart>The Potential of Muscle Stem Cells<lb/></titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

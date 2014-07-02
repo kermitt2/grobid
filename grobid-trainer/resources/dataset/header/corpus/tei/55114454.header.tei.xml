@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei type="phd-thesis">
+	<teiHeader>
+		<fileDesc xml:id="55114454"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<docAuthor>Benjamin Biedermann<lb/></docAuthor>
+	</byline>
+	
+	<docTitle>
+	<titlePart>Fourierdomänen modengekoppelte Laser:<lb/> Aufklärung der Funktionsweise und Er-<lb/>schließung neuer Anwendungsbereiche<lb/></titlePart>
+	</docTitle>
+
+	<address>München </address>
+
+	<date>2010</date>
+
+		</front>
+	</text>
+</tei>

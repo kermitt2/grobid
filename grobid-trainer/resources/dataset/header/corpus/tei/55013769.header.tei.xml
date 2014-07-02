@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013769"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Lebensm.-Wiss. u.-Technol., 32, 509}512 (1999)<lb/></reference>
+
+	<docTitle>
+	<titlePart>The Low Calorie Sweetener Stevioside: Stability and<lb/> Interaction with Food Ingredients<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>G. Th. Kroyer<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institute of Food Chemistry and Technology, University of Technology</affiliation>
+	</byline>
+
+	<address>Vienna, Getreidemarkt 9,<lb/> A-1060 Vienna (Austria)<lb/></address>
+
+	<note type="submission">(Received April 26, 1999; accepted July 15, 1999)<lb/></note>
+
+	<div type="abstract">The stability of the low calorie sweetener stevioside during diwerent processing and storage conditions, as well as the ewects of its<lb/> interaction with the water-soluble vitamins ascorbic acid, thiamin, riboyavin, pyridoxine and nicotinic acid, the organic acids acetic<lb/> acid, citric acid, tartaric acid and phosphoric acid, the other common low calorie sweeteners saccharin, cyclamate, aspartame,<lb/> acesulfame, neohesperidin dihydrochalcone, and caweine in cowee and tea, were evaluated. Incubation of solid stevioside at elevated<lb/> temperatures for 1 h showed good stability up to 1203C, whilst forced decomposition was noticed at temperatures exceeding 1403C. In<lb/> aqueous solution stevioside was remarkably stable in a pH range of 2}10 under thermal treatment up to 803C; however, under strong<lb/> acidic conditions (pH 1), a signixcant decrease in the stevioside concentration was detected. Up to 4 h of incubation with individual<lb/> water-soluble vitamins in aqueous solution at 803C showed no signixcant changes with regard to stevioside and the B-vitamins, whereas<lb/> a protective ewect of stevioside on the degradation of ascorbic acid was observed, resulting in a signixcant delayed degradation rate. In<lb/> the presence of other individual low calorie sweeteners, practically no interaction was found at room temperature after 4 months of<lb/> incubation in aqueous media. Stability studies of stevioside in solutions of organic acids showed a tendency towards enhanced<lb/> decomposition of the sweetener at lower pH values, depending on the acidic medium. In stevioside-sweetened cowee and tea, very few<lb/> signixcant chances in caweine content or in stevioside content were found.<lb/> </div>
+
+	<note type="copyright">1999 Academic Press<lb/></note>
+
+	<keyword>Keywords: low calorie sweetener; stevioside; stability; interaction; organic acids; water-soluble vitamins; ca!eine<lb/>
+	</keyword>
+
+		</front>
+	</text>
+</tei>

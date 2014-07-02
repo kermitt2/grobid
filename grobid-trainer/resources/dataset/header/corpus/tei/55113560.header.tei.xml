@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei type="manual">
+	<teiHeader>
+		<fileDesc xml:id="55113560"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note>Cat. No. A-9202-001<lb/></note>
+
+	<note type="page">1<lb/></note>
+
+	<date>Version 12.12.2012<lb/></date>
+
+	<docTitle>
+	<titlePart>Antibody-Oligonucleotide All-In-One Conjugation Kit<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Technical Manual<lb/></note>
+
+	<note>Cat. No. A-9202-001<lb/></note>
+
+	<note type="other">Note:This protocol and any documents linked below can be downloaded from the appropriate category in the Solulink Library at<lb/></note>
+
+	<ptr type="web">http://www.solulink.com/library.</ptr>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei type="manual">
+	<teiHeader>
+		<fileDesc xml:id="55114416"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>User Reference Manual<lb/> C3Dserver<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<affiliation>By Motion Lab Systems, Inc.</affiliation>
+	</byline>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013978"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<address>465 Dinwiddie Street @BULLET Portsmouth, Virginia 23704 @BULLET </address>
+
+	<phone>1.757.393.1584 Fax: 1.757.393.3708<lb/></phone>
+
+	<ptr type="web">http://www.firsttenangstroms.com<lb/></ptr>
+
+	<note>Application Application Application<lb/> ApplicationNotes<lb/> </note>
+
+	<docTitle>
+	<titlePart>Contact Angle Measurements on Cotton Fabrics<lb/></titlePart>
+	</docTitle>
+
+	<date>December 14, 2000<lb/></date>
+
+		</front>
+	</text>
+</tei>

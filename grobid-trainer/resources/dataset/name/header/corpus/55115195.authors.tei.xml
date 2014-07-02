@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+							<lb/>
+								<surname>Venter</surname>,
+								<forename>J</forename>.
+								<middlename>C</middlename>.,
+							</persName>
+							<persName>
+								<surname>Adams</surname> ,
+								<forename>M</forename>.
+								<middlename>D</middlename>.,
+							</persName>
+							<persName>
+								<surname>Myers</surname> ,
+								<forename>E</forename>.
+								<middlename>W</middlename>.,
+							</persName>
+							<persName>
+								<surname>Li</surname> ,
+								<forename>P</forename>.
+								<middlename>W</middlename>.,
+							</persName>
+							<persName>	
+								<roleName>Mural</roleName> ,
+								<forename>R</forename>.
+								<middlename>J</middlename>.,
+							</persName>
+							<persName>	
+								<surname>Sutton</surname> ,
+								<forename>G</forename>.
+								<middlename>G</middlename>.,
+							</persName>
+							<persName>	
+								<surname>Smith</surname> ,
+								<forename>H</forename>.
+								<middlename>O</middlename>.,
+							</persName>
+							<persName>	
+								<surname>Yandell</surname> ,
+								<forename>M</forename>.,
+							</persName>
+							<persName>
+								<surname>Evans</surname> ,
+								<forename>C</forename>.
+								<middlename>A</middlename>.,
+							</persName>
+							<persName>	
+								<surname>Holt</surname> ,
+								<forename>R</forename>.
+								<middlename>A</middlename>.,
+							</persName>
+							<persName>	
+								<surname>Gocayne</surname> ,
+								<forename>J</forename>.
+								<middlename>D</middlename>.,
+							</persName>
+							<persName>	
+								<surname>Amanatides </surname>,
+								<forename>P</forename>.,
+							</persName>
+							<persName>
+								<surname>Ballew</surname> ,
+								<forename>R</forename>.
+								<middlename>M</middlename>.,
+							</persName>
+							<persName>	
+								<surname>Huson</surname> ,
+								<forename>D</forename>.
+								<middlename>H</middlename>.,
+							</persName>
+							<persName>	
+								<surname>Wortman</surname> ,
+								<forename>J</forename>.
+								<middlename>R</middlename>.,
+							</persName>
+							<persName>	
+								<surname>Zhang</surname> ,
+								<forename>Q</forename>.,
+							</persName>
+							<persName>	
+								<surname>Kodira</surname> ,
+								<forename>C</forename>.
+								<middlename>D</middlename>.,
+							</persName>
+							<persName>
+								<surname>Zheng</surname> ,
+								<forename>X</forename>.
+								<middlename>H</middlename>.,
+							</persName>
+							<persName>
+								<surname>Chen</surname> ,
+								<forename>L</forename>.,
+							</persName>
+							<persName>
+								<surname>Skupski</surname> ,
+								<forename>M</forename>.,
+							</persName>
+							<persName>
+								<surname>Subramanian</surname> ,
+								<forename>G</forename>.,
+							</persName>
+							<persName>
+								<surname>Thomas</surname> ,
+								<forename>P</forename>.
+								<middlename>D</middlename>.,
+							</persName>
+							<persName>	
+								<surname>Zhang</surname> ,
+								<forename>J</forename>.,
+							</persName>
+							
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

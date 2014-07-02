@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>M</forename>.
+								<middlename>H</middlename>.
+								<surname>Chakrabarti</surname>
+							<lb/>
+								<marker>a,b ,*</marker> ,
+							</persName>
+							<persName>
+								<forename>N</forename> .
+								<middlename>P</middlename>.
+								<surname>Brandon</surname>
+							<lb/>
+								<marker>c</marker> ,
+							</persName>
+							<persName>
+								<forename>S</forename> .
+								<middlename>A</middlename>.
+								<surname>Hajimolana</surname>
+								<marker>a</marker> ,
+							</persName>
+							<persName>
+								<forename>F</forename> .
+								<surname>Tariq</surname>
+							<lb/>
+								<marker>c</marker> ,
+							</persName>
+							<persName>
+								<forename>V</forename>.
+								<surname>Yufit</surname>
+							<lb/>
+								<marker>c</marker>,
+							</persName>
+							<persName>
+								<forename>M</forename> .
+								<middlename>A</middlename> .
+								<surname>Hashim</surname>
+								<marker>a</marker>,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>M</forename> .
+								<middlename>A</middlename> .
+								<surname>Hussain</surname>
+								<marker>a</marker>,
+							</persName>
+							<persName>
+								<forename>C</forename>.
+								<middlename>T</middlename> .
+								<middlename>J</middlename> .
+								<surname>Low</surname>
+								<marker>d</marker>,
+							</persName>
+							<persName>
+								<forename>P</forename>.
+								<middlename>V</middlename> .
+								<surname>Aravind</surname>
+								<marker>e</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

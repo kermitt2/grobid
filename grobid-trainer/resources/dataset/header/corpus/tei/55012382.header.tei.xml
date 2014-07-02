@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012382"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="copyright">© 2008 Baskin<lb/></note>
+
+	<docTitle>
+	<titlePart>In situ Hybridization Using<lb/> Antibody-Based Methods<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Denis G. Baskin, PhD<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>VA Puget Sound Medical Center<lb/> Endocrinology/Metabolism<lb/> University of Washington School of Medicine<lb/> Departments of Medicine and Biological Structure<lb/></affiliation>
+	</byline>
+
+	<address>Seattle, Washington</address>
+
+		</front>
+	</text>
+</tei>

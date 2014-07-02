@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009366"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>IIS Smooth Streaming Technical<lb/> Overview<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Author:<lb/></note>
+
+	<byline>
+	<docAuthor>Alex Zambelli, </docAuthor>
+	</byline>
+
+	<note type="other">Media Technology Evangelist<lb/></note>
+
+	<byline>
+	<affiliation>Microsoft Corporation –</affiliation>
+	</byline>
+
+	<date>March 2009<lb/></date>
+
+	<note type="other">Smooth Streaming Technical Overview<lb/></note>
+	
+	<note type="page">Page 2<lb/></note>
+
+		</front>
+	</text>
+</tei>

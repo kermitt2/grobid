@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55115141"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>H.264/SVC ROI ENCODING WITH SPATIAL SCALABILITY<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Lino Ferreira<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Instituto de Telecomunicações, Instituto Politécnico de Leiria/ESTG,</affiliation>
+	</byline>
+
+	<address>Leiria, Portugal<lb/></address>
+
+	<email>lino@estg.ipleiria.pt<lb/></email>
+
+	<byline>
+	<docAuthor>Luís Cruz<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Instituto de Telecomunicações, Universidade de Coimbra / DEEC,</affiliation>
+	</byline>
+
+	<address>Coimbra, Portugal<lb/></address>
+
+	<email>lcruz@deec.uc.pt<lb/></email>
+
+	<byline>
+	<docAuthor>Pedro Assunção<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Instituto de Telecomunicações, Instituto Politécnico de Leiria / ESTG,</affiliation>
+	</byline>
+
+	<address>Leiria, Portugal<lb/></address>
+
+	<email>assuncao@estg.ipleiria.pt<lb/></email>
+
+	<keyword>Keywords:<lb/> ROI, Spatial scalability.<lb/></keyword>
+
+	<div type="abstract">Abstract:<lb/> This paper proposes two H.264/AVC compliant methods for encoding Regions-of-Interest (ROI) with<lb/> spatial scalability and evaluates their respective rate-distortion-complexity performance. The base layer is<lb/> kept unchanged and provides lower resolution images with roughly constant quality, without identification<lb/> of the ROI. In the proposed methods there is no need to encode contour information because the ROI is<lb/> implicitly defined in the upper layer of the spatial resolution in a transparent way by using different<lb/> encoding parameters for the ROI and its complementary region. It is shown, that spatial scalability in ROI<lb/> can be efficiently used to enhance specific regions of an image sequence in both spatial resolution and<lb/> quality with low coding complexity. The proposed encoding scheme is suitable for remote surveillance,<lb/> medical applications and entertainment, where higher resolution and higher quality ROI is a useful<lb/> functionality for object/face recognition, selective encryption, detail analysis, etc.<lb/></div>
+
+		</front>
+	</text>
+</tei>

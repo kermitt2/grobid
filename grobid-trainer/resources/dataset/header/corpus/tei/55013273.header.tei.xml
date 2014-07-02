@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013273"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>In: INTER_FACE Body Boundaries, issue editor Emanuele Quinz, Anomalie, n.2, Paris, France, Anomos, 2001.<lb/></reference>
+
+	<docTitle>
+	<titlePart>(Some) computer vision based interfaces for<lb/> interactive art and entertainment installations<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Flavia Sparacino<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>MIT Media Lab<lb/></affiliation>
+	</byline>
+
+	<email>flavia@media.mit.edu<lb/></email>
+
+	<div type="abstract">Abstract. This paper presents a brief summary of body tracking tools and interfaces the author developed,<lb/> and explains how they have been applied to a variety of interactive art and entertainment projects. The<lb/> purpose of such grouping of techniques and related applications is to provide the reader with information<lb/> on some of the tools available today for computer vision based body tracking, how they can be selected and<lb/> applied to achieve the desired artistic goal, and their limitations. What these computer vision interfaces<lb/> have in common is low cost, and ease of implementation, as they require means which are commonly<lb/> available today to most individuals/institutions, such as computers and small cameras. They have the<lb/> additional advantage that they do not require special calibration procedures, they do not limit body<lb/> movements with cables or tethers, nor do they require wearing special suites with markers for tracking.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014263"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>BACK-TO-BACK USER AGENT (B2BUA) SIP SERVERS<lb/> POWERING NEXT GENERATION NETWORKS<lb/> A Functional and Architectural Look At Back-To-Back User<lb/> Agent (B2BUA) SIP Servers<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">W H<lb/> I T<lb/> E<lb/> P A<lb/> P E<lb/> R</note>
+
+		</front>
+	</text>
+</tei>

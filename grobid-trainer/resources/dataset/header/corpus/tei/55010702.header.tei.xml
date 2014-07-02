@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010702"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>M M o<lb/> o d<lb/> d e<lb/> e r<lb/> r n<lb/> n C<lb/> C o<lb/> o r<lb/> r r<lb/> r u<lb/> u g<lb/> g a<lb/> a t<lb/> t e<lb/> e d<lb/> d H<lb/> H o<lb/> o r<lb/> r n<lb/> n A<lb/> A n<lb/> n t<lb/> t e<lb/> e n<lb/> n n<lb/> n a<lb/> a s<lb/> s<lb/> 
+	</titlePart>
+	</docTitle>
+	
+	<degree>Memoria de la tesis Doctoral realizada por:<lb/></degree>
+
+	<byline>
+	<docAuthor>Jorge Teniente Vallinas<lb/></docAuthor>
+	</byline>
+
+	<note type="other">Y dirigida por:<lb/></note>
+
+	<byline>
+	<docAuthor>Dr. Carlos del Río Bocio<lb/></docAuthor>
+	</byline>
+
+	<degree>Para optar al grado de:<lb/> Doctor Ingeniero en Telecomunicación<lb/></degree>
+	
+	<byline>
+	<affiliation>Grupo de Antenas<lb/> Departamento de Ingeniería Eléctrica y Electrónica<lb/> Universidad Pública de Navarra<lb/></affiliation>
+	</byline>
+
+	<address>Pamplona,</address>
+
+	<date>Julio de 2003</date>
+
+		</front>
+	</text>
+</tei>

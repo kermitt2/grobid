@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei type="conference-paper">
+	<teiHeader>
+		<fileDesc xml:id="55114896"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note>SPE 14393<lb/></note>
+
+	<docTitle>
+	<titlePart>CT Studies of Surfactant-induced C02 Mobility Control<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>by S.L. Wellington and H.J. Vinegar,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Shell Development Co.<lb/></affiliation>
+	</byline>
+
+	<note type="other">SPE Members<lb/> </note>
+
+	<note type="copyright">&#169;~pyright 19SS, Sodety of Petroleum Engineers<lb/> </note>
+
+	<note type="other">This paper waa prepared for preaantation at the 60fh Annual Technical Conference and Exhibitionof the Sociaty of Petroleum Engineers held in Lee<lb/> Vagea, NV September 22-25, 19S5.<lb/></note>
+
+	<div type="abstract">This paper waa selected for presentation by an SPE Program Commiffae following review of informationcontained in an abatract aubmifrsd by the<lb/> author(a). Contents of the paper, as praeented, have not been reviewed by the Sociafy of Patroleum Engineers and are subject td mrrsction by the<lb/> author(s).The material, se presented, doss not necessarily reflect any positionof the Seciafy of Petroleum Engineara, its officers, or members. Papers<lb/> presented at SPE mwtinge are subject to publication review by Editorial Commitfwa of the society of Petroleum Enginwrs. Parmiasion to copy ia<lb/> restrictedto an abatracf of not more than 300 words. Illustrationsmay not be sopied. The sbstract shouldcontain Conapicuouaacknowledgmentof where<lb/> and by whom the paper ia prwented. Write Publications Manager, SPE,</div>
+
+	<address>P.O. Box S33636, Richardson, TX 750SS-3S36. Telex, 7309S9 SPEDAL.<lb/></address>
+
+	<div type="abstract">ABSTRACT Carbon<lb/> dioxide is available<lb/> in large<lb/> Foam mobility control for C02 was studied</div>
+
+		</front>
+	</text>
+</tei>

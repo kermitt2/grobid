@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012783"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Biochemical and Molecular Action of Nutrients<lb/> Vitamin A Prevents the Decline in Immunoglobulin A and Th2 Cytokine<lb/> Levels in Small Intestinal Mucosa of Protein-Malnourished Mice<lb/> 1<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Takeshi Nikawa,*<lb/> 2 Kenji Odahara,* Hiroyuki Koizumi,* Yasuhiro Kido,<lb/> Shigetada Teshima,*<lb/> Kazuhito Rokutan* and Kyoichi Kishi*<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>*Department of Nutrition, School of Medicine, The University of Tokushima,</affiliation>
+	</byline>
+
+	<address>3-18-15 Kuramoto-cho,<lb/> Tokushima 770-8503, Japan; and<lb/></address>
+
+	<byline>
+	<affiliation>Department of Food Sciences and Nutritional Health, Faculty of Human<lb/> Environment, Kyoto Prefectural University,
+	</affiliation>
+	</byline>
+
+	<address>Shimogamo, Kyoto 606-8522, Japan<lb/></address>
+
+	<div type="abstract">ABSTRACT We examined whether vitamin A improved mucosal immune depression in mice with wasting protein<lb/> deficiency. In male C3H/HeN mice fed a semi-purified 1% protein diet for 2 wk, plasma retinol and immunoglobulin<lb/> A (IgA) concentrations in the small intestinal mucosa were 50 and 55%, respectively, of those in mice fed a<lb/> semi-purified 20% protein diet, (P Ͻ 0.05). Daily supplementation of 0.3 mg of retinyl acetate to protein-deficient<lb/> mice for 2 wk increased the plasma retinol level to the value in the protein-sufficient mice. However, 1 mg/d of<lb/> retinyl acetate was required to prevent the decline of the IgA level caused by the protein deficiency. Mice fed the<lb/> low-protein diet had lower concentrations of IL-4 and IL-5 in the small intestinal mucosa and fewer IL-4-and<lb/> IL-5-containing cells in the lamina propria (P Ͻ 0.05). Retinyl acetate (1 mg) significantly restored the IL-5 level and<lb/> the number of IL-4-and IL-5-containing cells. After immunization with 20 ␮g of cholera toxin (CT), the intestinal<lb/> mucosa of protein-deficient mice contained significantly less CT-specific IgA than control mice. Treatment with 1<lb/> mg of retinyl acetate prevented the decline of anti-CT IgA level in the protein-deficient mice, improving their survival<lb/> rate after an exposure to 0.1 mg of CT. These results suggest that large oral supplements of vitamin A may preserve<lb/> mucosal IgA level during protein malnutrition, possibly by stimulating Th2 cytokine production and thereby,<lb/> inducing resistance against infection.</div>
+
+	<reference>J. Nutr. 129: 934 –941, 1999.<lb/></reference>
+
+	<keyword>KEY WORDS: ● vitamin A ● protein malnutrition ● immunoglobulin A ● Th2 cytokine ● mice<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

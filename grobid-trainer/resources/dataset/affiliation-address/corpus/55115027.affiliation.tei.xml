@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="laboratory">State Key Laboratory of Polymer Physics and Chemistry</orgName>,
+							<orgName type="department">Changchun Institute of Applied Chemistry</orgName>,
+							<orgName type="institution">Chinese Academy of Sciences</orgName>,
+							<lb/>
+							<address>
+								<settlement>Changchun</settlement>
+								<postCode>130022</postCode>,
+								<country>P.R. China</country>
+							</address>
+						</affiliation>
+						<affiliation>		
+							<orgName type="department">Department of Chemistry</orgName>,
+							<orgName type="institution">Carleton University</orgName>,
+							<address>
+								<addrLine>1125 Colonel By Drive</addrLine>,
+								<settlement>Ottawa</settlement>,
+								<region>Ontario</region>
+								<postCode>K1S 5B6</postCode>,
+								<country>Canada</country>
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="department">Graduate School</orgName>
+							of 
+							<orgName type="department">Chinese Academy of Sciences</orgName>,
+							<address>
+								<settlement>Beijing</settlement>
+								<postCode>100039</postCode>,
+								<country>P.R. China</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

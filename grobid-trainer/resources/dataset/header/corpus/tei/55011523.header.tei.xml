@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011523"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">ELSEVIER<lb/> </note>
+
+	<reference>Nuclear Engineering and Design 148 (1994) 1-15<lb/></reference>
+
+	<note type="other">Nuclear Engineering<lb/> and Design<lb/> </note>
+
+	<docTitle>
+	<titlePart>Effects of recrystallization and Nb additions on texture<lb/> and mechanical anisotropy of Zircaloy *<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>K. Linga Murty, Ravi Jallepalli, S.T. Mahmood<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>North Carolina State University,</affiliation>
+	</byline>
+
+	<address>Raleigh, NC 27695-7909, USA<lb/></address>
+
+	<note type="submission">(Received 1 June 1992; revised version 6 April 1993)<lb/></note>
+
+	<div type="abstract">Abstract<lb/> The effect of recrystallization on the crystallographic textures and anisotropic mechanical properties of Zircaloy-4<lb/> sheets was investigated. In addition, the influence of niobium additions on these properties was studied using three<lb/> different alloys. The mechanical anisotropy parameters were determined by mechanical testing of gridded tensile<lb/> samples. The textures were characterized by X-ray pole figure measurements and crystallite orientation distribution<lb/> functions (CODFs). The CODFs were combined with a crystal plasticity model to predict the anisotropy parameters<lb/> based on the dominance individually of basal, prism and pyramidal slip systems. Good agreement was noted between<lb/> the experimental results and model predictions based on prism slip for the recrystallized materials, while the results<lb/> on cold-worked sheets differed from model predictions for all the three slip systems.<lb/></div>
+
+		</front>
+	</text>
+</tei>

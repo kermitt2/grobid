@@ -1,0 +1,50 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013328"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="copyright">© U.S. Cancer Pain Relief Committee, 2001<lb/></note>
+
+	<note>0885-3924/01/$–</note>
+
+	<note type="other">see front matter<lb/> </note>
+
+	<reference>Published by Elsevier, New York, New York<lb/></reference>
+
+	<note>PII S0885-3924(01)00311-6<lb/></note>
+
+	<reference>Vol. 22 No. 2 August 2001<lb/> Journal of Pain and Symptom Management </reference>
+
+	<note type="page">699<lb/></note>
+
+	<note type="other">Clinical Note<lb/></note>
+
+	<docTitle>
+	<titlePart>Diphenhydramine as an Analgesic Adjuvant<lb/> in Refractory Cancer Pain<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Juan Santiago-Palma, MD, Daniel Fischberg, MD, PhD, Craig Kornick, MD,<lb/> Natalia Khjainova, MD, and Gilbert Gonzales, MD <lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Pain and Palliative Care Service (J.S.-P.,C.K., N.K., G.G), Department of Neurology, Memorial<lb/> Sloan-Kettering Cancer Center, and Department of Internal Medicine (D.F.), Mount Sinai<lb/> School of Medicine,</affiliation>
+	</byline>
+
+	<address>New York, New York, USA<lb/></address>
+
+	<div type="abstract">Abstract Clinical and animal data suggest that antihistamines may have efficacy in the management<lb/> of pain. While many mechanisms of action have been proposed for the analgesic action of<lb/> antihistamines, the exact mechanism is unknown. Controlled clinical trials in different pain<lb/> models have demonstrated that antihistamines have direct and adjuvant analgesic activity.<lb/> We report three patients with advanced cancer pain refractory to adjuvants and oral,<lb/> intravenous, and epidural opioids, who achieved sustained pain relief after the repeated<lb/> administration of diphenhydramine. Diphenhydramine may be useful in the treatment of<lb/> neuropathic and nociceptive pain that has failed to respond to treatment with opioids and<lb/> adjuvant analgesics. We suggest a starting dose of 25 mg of oral or parenteral<lb/> diphenhydramine every 6 to 8 hours, with titration to effect. </div>
+
+	<reference>J Pain Symptom Manage<lb/> 2001;22:699–703. </reference>
+
+	<note type="copyright">© U.S. Cancer Pain Relief Committee, 2001.<lb/></note>
+
+	<keyword>Key Words<lb/> Neuropathic pain, nociceptive pain, cancer, adjuvant analgesic, diphenhydramine,<lb/> antihistamine<lb/>
+	</keyword>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012621"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>CERIAS Tech Report 2007-48<lb/> An Examination of User Behavior for Re-Authentication<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>by Maja Pusara<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Center for Education and Research in<lb/> Information Assurance and Security,<lb/> Purdue University,</affiliation>
+	</byline>
+
+	<address>West Lafayette, IN 47907-2086</address>
+
+		</front>
+	</text>
+</tei>

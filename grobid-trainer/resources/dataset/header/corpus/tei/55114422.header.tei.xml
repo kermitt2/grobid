@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei type="submitted-article">
+	<teiHeader>
+		<fileDesc xml:id="55114422"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">1<lb/></note>
+
+	<docTitle>
+	<titlePart>Slaking of lime<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Johan B. Holmberg<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Chemical Engineering II, Lund Institute of Technology,<lb/></affiliation>
+	</byline>
+
+	<address>P. O. Box 124, S-221 00 Lund, Sweden<lb/></address>
+
+	<div type="abstract">Quicklime is produced when limestone is heated above 900 °C, a temperature at which<lb/> limestone decomposes to carbon dioxid and quicklime (CaO). Quicklime exists in many<lb/> different qualities. Limes of different quality have been characterised, wet slaked and dry<lb/> slaked. The characterisation in combination with the wet slaking suggested that the<lb/> relationship between the surface concentration of calcium and carbon was the best measure<lb/> for the lime reactivity in the slaking process. The higher value for the relationship the more<lb/> reactive was the lime. The wet slaking tests showed that the differences in reactivity<lb/> decreases when temperature is raised or calcium chloride is added to the water. The dry<lb/> slaking tests showed upon very small differences considering the slaking degrees for<lb/> different conditions and different qualities of lime. However the tests showed on a<lb/> relationship between water content in the reactor and the specific surface for the product,<lb/> the higher quote the higher specific surface.<lb/></div>
+
+		</front>
+	</text>
+</tei>

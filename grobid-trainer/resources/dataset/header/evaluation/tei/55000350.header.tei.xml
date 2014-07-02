@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000350"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<affiliation>University of Alberta<lb/></affiliation>
+	<docTitle>
+	<titlePart> Maximum Frame Rate Video Acquisition Using Adaptive Compressed<lb/> Sensing<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>by<lb/> Zhaorui Liu<lb/></docAuthor>
+	</byline>
+
+	<degree>A thesis submitted to the Faculty of Graduate Studies and Research<lb/> in partial fulfillment of the requirements for the degree of<lb/> Master of Science<lb/> in<lb/> Digital Signals and Image Processing<lb/></degree>
+
+	<byline>
+	<affiliation>Department of Electrical and Computer Engineering</affiliation>
+	</byline>
+	
+	<note type = "copyright"><lb/> ©Zhaorui Liu<lb/></note>
+	
+	<date>Spring 2011<lb/> </date>
+	
+	<address>Edmonton, Alberta<lb/></address>
+
+	<note type="copyright">Permission is hereby granted to the University of Alberta Libraries to reproduce single copies of this thesis<lb/> and to lend or sell such copies for private, scholarly or scientific research purposes only. Where the thesis is<lb/> converted to, or otherwise made available in digital form, the University of Alberta will advise potential<lb/> users of the thesis of these terms.<lb/> The author reserves all other publication and other rights in association with the copyright in the thesis and,<lb/> except as herein before provided, neither the thesis nor any substantial portion thereof may be printed or<lb/> otherwise reproduced in any material form whatsoever without the author&apos;s prior written permission.</note>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010466"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="copyright">Copyright 2006, Society of Petroleum Engineers<lb/></note>
+
+	<note type="other">This paper was prepared for presentation at the 2006 SPE/DOE Symposium on Improved Oil<lb/> Recovery held in </note>
+	
+	<address>Tulsa, Oklahoma, U.S.A., </address>
+	
+	<date>22–26 April 2006.<lb/></date>
+
+	<note type="other">This paper was selected for presentation by an SPE Program Committee following review of<lb/> information contained in an abstract submitted by the author(s). Contents of the paper, as<lb/> presented, have not been reviewed by the Society of Petroleum Engineers and are subject to<lb/> correction by the author(s). The material, as presented, does not necessarily reflect any<lb/> position of the Society of Petroleum Engineers, its officers, or members. Papers presented at<lb/> SPE meetings are subject to publication review by Editorial Committees of the Society of<lb/> Petroleum Engineers. Electronic reproduction, distribution, or storage of any part of this paper<lb/> for commercial purposes without the written consent of the Society of Petroleum Engineers is<lb/> prohibited. Permission to reproduce in print is restricted to an abstract of not more than<lb/> 300 words; illustrations may not be copied. The abstract must contain conspicuous<lb/> acknowledgment of where and by whom the paper was presented. Write Librarian, SPE,
+	</note>
+
+	<address>P.O.<lb/> Box 833836, Richardson, TX 75083-3836, U.S.A., </address>
+
+	<phone>fax 01-972-952-9435.<lb/> </phone>
+
+	<div type="abstract">Abstract This paper describes a case study of the application of smart<lb/> field technologies to the SACROC Unit Carbon dioxide<lb/> Enhanced Oil Recovery (CO 2 -EOR) project in Scurry County,<lb/> Texas. A five-well pilot project was implemented in early<lb/> 2005 to demonstrate the ability of intelligent well down-hole<lb/> flow control valves to restrict or isolate the production of CO 2<lb/> from breakthrough zones in production wells and to control<lb/> the distribution of CO 2 injection in injection wells. The<lb/> objective is to reduce unnecessary cycling of CO 2 between<lb/> injectors and producers, improve sweep efficiency, increase<lb/> oil production and improve ultimate oil reserve recovery. This<lb/> is done with cost effective, fit-for-purpose intelligent well<lb/> systems.<lb/> The intelligent well technologies and work processes<lb/> described in this paper are applicable to all EOR/IOR field<lb/> development plans, and in particular to CO 2 WAG<lb/> developments. The intelligent well technologies as used in this<lb/> example are applicable to layered, compartmentalized and<lb/> complex reservoirs, in particular for patterned secondary and<lb/> tertiary flood processes.<lb/> Initial results show the CO2 production can be<lb/> significantly reduced while maintaining economic oil<lb/> production. The intelligent well equipment also allows<lb/> selective testing and stimulation of zones within a well<lb/> without slick line and electric line (e-line) intervention.<lb/></div>
+
+		</front>
+	</text>
+</tei>

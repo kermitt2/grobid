@@ -1,0 +1,73 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011412"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note>Doc# OMA-CD-PUSH-2007-0079-CR_Multi_terminals_situation_in_SIP_Push<lb/> Change Request<lb/></note>
+
+	<note type="other">USE OF THIS DOCUMENT BY NON-OMA MEMBERS IS SUBJECT TO ALL OF THE TERMS AND CONDITIONS OF THE USE<lb/> AGREEMENT (located at</note>
+
+	<ptr type="web">http://www.openmobilealliance.org/UseAgreement.html)</ptr>
+
+	<note type="other">AND IF YOU HAVE NOT AGREED TO THE TERMS<lb/> OF THE USE AGREEMENT, YOU DO NOT HAVE THE RIGHT TO USE, COPY OR DISTRIBUTE THIS DOCUMENT.<lb/> THIS DOCUMENT IS PROVIDED ON AN &quot;AS IS&quot; &quot;AS AVAILABLE&quot; AND &quot;WITH ALL FAULTS&quot; BASIS.<lb/></note>
+
+	<note type="copyright">© 2007 Open Mobile Alliance Ltd. All Rights Reserved.<lb/></note>
+
+	<note type="page">Page 1 (of 16)<lb/> </note>
+
+	<div type="abstract">Used with the permission of the Open Mobile Alliance Ltd. under the terms as stated in this document.<lb/> [OMA-Template-ChangeRequest-20070101-I]<lb/></div>
+
+	<docTitle>
+	<titlePart>CHANGE REQUEST<lb/> Title: Multi-terminals Situation in SIP Push<lb/></titlePart>
+	</docTitle>
+
+	<note type="other"> Error! No bookmark name given.<lb/> Public Error! No bookmark<lb/> name given. OMA Confidential<lb/> To: CD Push AHG<lb/> Doc to Change:</note>
+
+	<idno>OMA-TS-SIP_Push-V1_0-20080108-D<lb/></idno>
+
+	<date>Submission Date: 15 Jan 2008<lb/></date>
+
+	<note type="other">Classification: Error! No bookmark name given. 0: New Functionality<lb/> Error! No bookmark name given. 1: Major Change<lb/> Error! No bookmark name given. 2: Bug Fix<lb/> Error! No bookmark name given. 3: Clerical<lb/></note>
+
+	<note>Source: </note>
+
+	<byline>
+	<docAuthor>Kent Bogestam, </docAuthor>
+	</byline>
+
+	<byline> 
+	<affiliation>Ericsson,</affiliation>
+	</byline>
+
+	<email>kent.bogestam@ericsson.com<lb/></email>
+
+	<byline>
+	<docAuthor>Shunanfan,</docAuthor>
+	</byline>
+
+	<byline> 
+	<affiliation>Huawei, </affiliation>
+	</byline>
+
+	<email>fanshunan@huawei.com<lb/></email>
+
+	<byline>
+	<docAuthor>Howard Wang, </docAuthor>
+	</byline>
+
+	<byline> 
+	<affiliation>Huawei, </affiliation>
+	</byline>
+
+	<email>howard.wang@huawei.com,<lb/></email>
+
+	<note type="other">Replaces: n/a<lb/></note>
+
+	<div type="introduction">1 Reason for Change</div>
+
+		</front>
+	</text>
+</tei>

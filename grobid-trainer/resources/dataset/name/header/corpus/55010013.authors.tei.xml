@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>C</forename>.
+								<surname>HALBERSTADT</surname>,
+								<roleName>Ph.D</roleName>.,
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>C</forename>.
+								<surname>AUSTIN</surname>,
+								<roleName>B.S</roleName>.,
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>J</forename>.
+								<surname>ROWLEY</surname>,
+								<roleName>M.S</roleName>.,
+								<marker>2</marker>
+							</persName>
+							<persName>
+								<forename>C</forename>.
+								<surname>CULBERSON</surname>,
+								<roleName>M.S</roleName>.,
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>A</forename>.
+								<surname>LOEBSACK</surname>,
+								<roleName>M.S</roleName>.,
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>S</forename>.
+								<surname>WYATT</surname>,
+								<roleName>B.A</roleName>.,
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>S</forename>.
+								<surname>COLEMAN</surname>,
+								<roleName>M.S</roleName>.,
+								<marker>1</marker>
+							<lb/>
+							</persName>
+							<persName>
+								<forename>L</forename>.
+								<surname>BLACKSTEN</surname> ,
+								<roleName>B .S</roleName>.,
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>K</forename> .
+								<surname>BURG</surname> ,
+								<roleName>Ph .D</roleName>.,
+								<marker>4</marker>
+							</persName>
+							<persName>
+								<forename>D</forename> .
+								<surname>MOONEY</surname> ,
+								<roleName>Ph .D</roleName>.,
+								<marker>2 ,3</marker>
+							<lb/>and
+							</persName>
+							<persName>
+								<forename>W</forename>.
+								<surname>HOLDER</surname>,
+								<suffix>Jr</suffix>. ,
+								<roleName>M. D</roleName>.
+								<marker>1</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

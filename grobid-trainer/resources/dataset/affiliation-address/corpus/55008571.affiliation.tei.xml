@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="department">Ergonomics Division</orgName>,
+							<orgName type="institution">National Institute for Occupational Safety and Health</orgName>,
+							<address>
+								<addrLine>Lot 1</addrLine>,
+								<addrLine>Jalan 15/1</addrLine>,
+								<addrLine>Section 15</addrLine>,
+							<lb/>
+								<postCode>43650</postCode>
+								<settlement>Bandar Baru Bangl</settlement>,
+								<addrLine>Selangor Darul Ehsan</addrLine>,
+								<country>Malaysia</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="department">Department of Human Engineering</orgName>,
+							<orgName type="institution">National Institute of Industrial Health</orgName>,
+							<address>
+								<addrLine>21-1</addrLine>,
+								<addrLine>Nagao 6-Chome</addrLine>,
+								<addrLine>Tama-ku</addrLine>,
+							<lb/>
+								<settlement>Kawasaki</settlement>,
+								<region>Kanagawa</region>
+								<postCode>214-8585</postCode>,
+								<country>Japan</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>3</marker>
+							<orgName type="institution">Ergo Consult Sdn Bhd</orgName>,
+							<address>
+								<addrLine>No. 25-1</addrLine>,
+								<addrLine>Jalan 3/4C</addrLine>,
+								<addrLine>Desa Melawati</addrLine>,
+								<addrLine>53100 Kuala Lumpur</addrLine>,
+								<country>Malaysia</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>4</marker>
+							<orgName type="institution">JICA Project</orgName>,
+							<orgName type="institution">the Capacity Building of National Institute of Occupational Safety and Health</orgName>,
+							<address>
+								<addrLine>Lot 1</addrLine>,
+								<addrLine>Jalan 15/1</addrLine>,
+							<lb/>
+								<addrLine>Section 15</addrLine>,
+								<addrLine>43650 Bandar Baru Bangl</addrLine>,
+							</address>
+							<orgName type="institution">Selangor Darul Ehsan</orgName>,
+							<address>
+								<country>Malaysia</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">Graduate School of Information Science and Technology</orgName>,
+							<orgName type="institution">The University of Tokyo</orgName>
+							<lb/>
+							<address>
+								<addrLine>7-3-1 Hongo</addrLine>,
+								<addrLine>Bunkyo-ku</addrLine>,
+								<settlement>Tokyo</settlement>,
+								<postCode>113-8638</postCode>
+								<country>Japan</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

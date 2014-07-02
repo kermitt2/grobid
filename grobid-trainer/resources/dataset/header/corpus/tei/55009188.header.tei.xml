@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009188"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Aldrich -523682<lb/></note>
+
+	<note type="page">Page 1 of 4<lb/></note>
+
+	<byline>
+	<affiliation>SIGMA-ALDRICH<lb/></affiliation>
+	</byline>
+
+	<ptr type="web">sigma-aldrich.com<lb/></ptr>
+
+	<docTitle>
+	<titlePart>SAFETY DATA SHEET<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">according to Regulation (EC) No. 1907/2006<lb/> </note>
+
+	<note type="other">Version 4.0 </note>
+
+	<date>Revision Date 20.07.2010<lb/> Print Date 11.10.2011<lb/></date>
+
+	<note type="other">GENERIC EU MSDS -NO COUNTRY SPECIFIC DATA -NO OEL DATA<lb/></note>
+
+	<div type="abstract">1. IDENTIFICATION OF THE SUBSTANCE/MIXTURE AND OF THE COMPANY/UNDERTAKING<lb/> Product name<lb/> : Chitosan oligosaccharide lactate<lb/> Product Number<lb/> : 523682<lb/> Brand : Aldrich<lb/> </div>
+	
+	<byline>
+	<affiliation>Company : Sigma-Aldrich Chemie BV<lb/> </affiliation>
+	</byline>
+	
+	<address>Stationsplein 4<lb/> 3331 LL ZWIJNDRECHT<lb/> NETHERLANDS </address>
+	
+	<phone>Telephone<lb/> : +31 78-620-5411<lb/> Fax : +31 78-620-5421<lb/> Emergency Phone #<lb/> : 112<lb/></phone>
+
+	<email>E-mail address<lb/> : eurtechserv@sial.com<lb/></email>
+
+		</front>
+	</text>
+</tei>

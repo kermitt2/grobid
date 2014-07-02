@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55114809"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Annual Conference of the Prognostics and Health Management Society, 2010<lb/></reference>
+
+	<note type="page">1<lb/></note>
+
+	<docTitle>
+	<titlePart>Coupling a Dynamic Linear Model with Random Forest<lb/> Regression to Estimate Engine Wear<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>James Schimert<lb/> 1 and Art Wineland<lb/> 2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 The Boeing Company,</affiliation>
+	</byline>
+
+	<address>Bellevue, WA, 98008, United States<lb/></address>
+
+	<byline>
+	<affiliation>1 The Boeing Company,</affiliation>
+	</byline>
+
+	<address>Huntington Beach, CA, 92647, United States<lb/></address>
+
+	<email>james.schimert@boeing.com<lb/> art.wineland@boeing.com<lb/></email>
+
+	<div type="abstract">ABSTRACT<lb/> Mechanical systems wear or change over time.<lb/> Data collected over a system&apos;s life can be<lb/> input to statistical learning models to predict<lb/> this wear/change. A research effort at The<lb/> Boeing Company has modeled gas turbine<lb/> engine exhaust gas temperature (EGT) as a<lb/> function of other recorded parameters. Our<lb/> investigation chose gas turbines, but these<lb/> techniques could also be used for other<lb/> systems that slowly change (degrade) over<lb/> time. Previous work trained a flexible<lb/> empirical regression model at a fixed point of<lb/> wear, and then applied it independently at time<lb/> points over the life of an engine to predict<lb/> wear. However, wear typically occurs slowly<lb/> and smoothly.<lb/> This paper describes the<lb/> benefit of relating wear predictions over time<lb/> using a dynamic linear model, which is an<lb/> example of a state space method.<lb/> The combined model predicts wear with<lb/> dramatically reduced variability over both our<lb/> previous effort and a baseline method. The<lb/> benefit of reduced variability is that engine<lb/> wear is more evident, and it is possible to<lb/> detect operational anomalies more quickly. In<lb/> addition to tracking wear, we also use the<lb/> model as the basis for a Bayesian approach to<lb/> monitor for sudden changes and reject outliers,<lb/> and adapt the model after these events.<lb/> Experiments compare methods and give some<lb/> guidance in applying the methodology.<lb/></div>
+
+	<note type="other">*<lb/> * This is an open-access article distributed under the terms of<lb/> the Creative Commons Attribution 3.0 United States License,<lb/> which permits unrestricted use, distribution, and reproduction<lb/> in any medium, provided the original author and source are<lb/> credited.<lb/></note>
+
+		</front>
+	</text>
+</tei>

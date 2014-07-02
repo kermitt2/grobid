@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Gustav</forename>
+								<surname>Vaaje-Kolstad</surname>,
+							</persName>
+							<persName>
+								<forename>Bjørge</forename>
+								<surname>Westereng</surname>,
+							</persName>
+							<persName>
+								<forename>Svein</forename>
+								<middlename>J</middlename>.
+								<surname>Horn</surname>,
+							</persName>
+							<persName>
+								<forename>Zhanliang</forename>
+								<surname>Liu</surname>,
+							</persName>
+							<persName>
+								<forename>Hong</forename>
+								<surname>Zhai</surname>,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Morten</forename>
+								<surname>Sørlie</surname> ,
+							</persName>
+							<persName>
+								<forename>Vincent</forename>
+								<middlename>G</middlename> .
+								<middlename>H</middlename> .
+								<surname>Eijsink</surname>
+								<marker>*</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

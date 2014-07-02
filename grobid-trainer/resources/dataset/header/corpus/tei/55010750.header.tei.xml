@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010750"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<affiliation>Katholieke Universiteit Leuven<lb/> Departement Elektrotechniek<lb/></affiliation>
+	</byline>
+
+	<idno>ESAT-SISTA/TR 05-173<lb/></idno>
+
+	<docTitle>
+	<titlePart>An efficient Lagrange multiplier search algorithm for<lb/> Optimal Spectrum Balancing in crosstalk dominated<lb/> xDSL systems<lb/> 1<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Paschalis Tsiaflakis, Jan Vangorp and Marc Moonen<lb/> 2<lb/> Jan Verlinden and Katleen Van Acker<lb/> Raphael Cendrillon
+	<lb/></docAuthor>
+	</byline>
+
+	<date>August 2005<lb/></date>
+
+	<note type="other">Submitted for publication in<lb/> IEEE Journal on Selected Areas in Communications<lb/> 1 This report is available by anonymous ftp from ftp.esat.kuleuven.ac.be in the<lb/> directory pub/sista/ptsiafla/reports/05-173 LagrangeSearch.pdf<lb/></note>
+
+	<byline>
+	<affiliation>2 K.U.Leuven, Dept. of Electrical Engineering (ESAT), Research group SISTA,<lb/></affiliation>
+	</byline>
+
+	<address>Kasteelpark Arenberg 10, B-3001 Leuven, Belgium,</address>
+
+	<phone>Tel. 32/16/32 17 09,<lb/> Fax 32/16/32 19 70, </phone>
+
+	<ptr>WWW: http://www.esat.kuleuven.ac.be/sista.</ptr>
+
+	<email>E-mail:<lb/> Paschalis.Tsiaflakis@esat.kuleuven.ac.be.</email>
+
+	<note type="grant">This work was supported in part by<lb/> the Belgian Programme on Interuniversity Attraction Poles, initiated by the<lb/> Belgian Federal Science Policy Office IUAP P5/22 (&apos;Dynamical Systems and<lb/> Control: Computation, Identification and</note>
+
+	<div type="abstract">Modelling&apos;) and P5/11 (&apos;Mobile mul-<lb/>timedia communication systems and networks&apos;), the Concerted Research Ac-<lb/>tion GOA-AMBioRICS, Research Project FWO nr.G.0196.02 (&apos;Design of effi-<lb/>cient communication techniques for wireless time-dispersivemulti-user MIMO<lb/> systems&apos;), IWT project 030054: &apos;SOLIDT: Solutiuons for xDSL interoper-<lb/>ability, deployment and new technologies&apos; and CELTIC/IWT project 040049:<lb/> &apos;BANITS &apos;Broadband Access Networks Integrated Telecommunications&apos; and<lb/> was partially sponsored by Alcatel-Bell.</div>
+
+		</front>
+	</text>
+</tei>

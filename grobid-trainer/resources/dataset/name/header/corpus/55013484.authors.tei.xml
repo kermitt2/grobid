@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Mahmood</forename>
+								<middlename>Ameen </middlename>
+								<surname>Abdulla</surname>
+								<marker>1, *</marker>,
+							</persName>
+							<persName>
+								<forename>Khaled</forename>
+								<middlename>Abdul-Aziz</middlename>
+								<surname>Ahmed</surname>
+							<lb/>
+								<marker>1,2</marker> ,
+							</persName>
+							<persName>	
+								<forename>Faisal</forename>
+								<middlename>Mohammad </middlename>
+								<surname>Abu -Luhoom</surname>
+							<lb/>
+								<marker>2</marker> ,
+							<lb/>
+								<forename>Mazin</forename>
+								<surname>Muhanid</surname>
+								<marker>1</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

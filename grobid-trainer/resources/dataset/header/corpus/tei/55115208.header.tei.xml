@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55115208"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Ž<lb/> .</note>
+
+	<reference>Biochimica et Biophysica Acta 1324 1997 27–36<lb/></reference>
+
+	<docTitle>
+	<titlePart>The reduction of the positive charges of polylysine by partial<lb/> gluconoylation increases the transfection efficiency of polylysinerDNA<lb/> complexes<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Patrick Erbacher, Annie Claude Roche, Michel Monsigny, Patrick Midoux<lb/> )<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Glycobiologie, Centre de Biophysique Moleculaire, CNRS et UniÕersite d&apos;Orleans,</affiliation>
+	</byline>
+
+	<address>1 rue Charles-Sadron, F-45071 Orleans Cedex 02 rance<lb/></address>
+
+	<note type="submission">Received 16 July 1996; revised 13 September 1996; accepted 24 September 1996<lb/></note>
+
+	<div type="abstract">Abstract<lb/>A polylysine partially substituted with polyhydroxyalkanoyl residues and specially with gluconoyl residues was<lb/> developed in order to increase the transfection efficiency by decreasing the strength of the electrostatic interactions between<lb/> the DNA and the cationic polymer. Partially gluconoylated polylysine r DNA complexes were more easily dissociated in<lb/> solution and their transfection efficiency in the presence of chloroquine, evaluated with HepG2 cells, a human hepatocarci-<lb/> nomaline, was higher when 43 &quot; 4% of the e-amino groups of polylysine were blocked with gluconoyl residues. Partially<lb/> gluconoylated polylysine r plasmid complexes were efficient intransfecting different adherent as well as non-adherent cell<lb/>Ž.<lb/> lines. Partially gluconoylated polylysine formed highly soluble above 100mg rmlin DNA complexes with DNA<lb/> plasmids. In addition, partially gluconoylated polylysine bearing few lactosyl residues increased the transfection efficiency<lb/> of HepG2 cells which express a galactose-specific membrane lectin.<lb/></div>
+
+	<keyword>Keywords: Gene therapy; Gene transfer; Polylysine; Chloroquine<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

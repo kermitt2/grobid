@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Alain</forename>
+								<surname>Bobé</surname>,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Pierre</forename>
+								<surname>Meallier</surname> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Jean - François</forename>
+								<surname>Cooper</surname>,
+								<marker>*</marker>
+							<lb/>,and
+							</persName>
+							<persName>
+								<forename>Camille</forename>
+								<middlename>M</middlename>. 
+								<surname>Coste</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

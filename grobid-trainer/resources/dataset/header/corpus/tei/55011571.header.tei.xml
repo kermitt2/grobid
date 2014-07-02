@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011571"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Symposium: Probiotic Bacteria:<lb/> Implications for Human Health<lb/>The Role of Probiotic Cultures in the Control of Gastrointestinal Health<lb/> 1<lb/> </titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Rial D. Rolfe<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Microbiology and Immunology, Texas Tech University Health Sciences Center,<lb/></affiliation>
+	</byline>
+
+	<address>Lubbock, TX 79430<lb/></address>
+
+	<div type="abstract">ABSTRACT The use of probiotics to enhance intestinal health has been proposed for many years. Probiotics are<lb/> traditionally defined as viable microorganisms that have a beneficial effect in the prevention and treatment of<lb/> specific pathologic conditions when they are ingested. There is a relatively large volume of literature that supports<lb/> the use of probiotics to prevent or treat intestinal disorders. However, the scientific basis of probiotic use has been<lb/> firmly established only recently, and sound clinical studies have begun to be published. Currently, the best-studied<lb/> probiotics are the lactic acid bacteria, particularly Lactobacillus sp. and Bifidobacterium sp. However, other<lb/> organisms used as probiotics in humans include Escherichia coli, Streptococcus sp., Enterococcus sp., Bacte-<lb/>roides sp., Bacillus sp., Propionibacterium sp. and various fungi. Some probiotic preparations contain mixtures of<lb/> more than one bacterial strain. Probiotics have been examined for their effectiveness in the prevention and<lb/> treatment of a diverse spectrum of gastrointestinal disorders such as antibiotic-associated diarrhea (including<lb/> Clostridium difficile–associated intestinal disease), infectious bacterial and viral diarrhea (including diarrhea caused<lb/> by rotavirus, Shigella, Salmonella, enterotoxigenic E. coli, Vibrio cholerae and human immunodeficiency virus/<lb/> acquired immunodeficiency disorder, enteral feeding diarrhea, Helicobacter pylori gastroenteritis, sucrase maltase<lb/> deficiency, inflammatory bowel disease, irritable bowel syndrome, small bowel bacterial overgrowth and lactose<lb/> intolerance. Probiotics have been found to inhibit intestinal bacterial enzymes involved in the synthesis of colonic<lb/> carcinogens. There are many mechanisms by which probiotics enhance intestinal health, including stimulation of<lb/> immunity, competition for limited nutrients, inhibition of epithelial and mucosal adherence, inhibition of epithelial<lb/> invasion and production of antimicrobial substances. Probiotics represent an exciting prophylactic and therapeutic<lb/> advance, although additional investigations must be undertaken before their role in intestinal health can be<lb/> delineated clearly.</div>
+
+	<reference>J. Nutr. 130: 396S– 402S, 2000.<lb/></reference>
+
+	<keyword>KEY WORDS: ● probiotics ● intestinal disorders<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

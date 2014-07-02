@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>A</forename>.
+								<middlename>E</middlename>.
+								<surname>Reyes II</surname>,
+							</persName>
+							<persName>
+								<forename>H</forename>.
+								<surname>Xiang</surname>,
+							</persName>
+							<persName>
+								<forename>B</forename>.
+								<surname>Bender</surname>,
+							</persName>
+							<persName>
+								<forename>P</forename>.
+								<surname>Haughney</surname>,
+							</persName>
+							<persName>
+								<forename>A</forename>.
+								<surname>Oldendorp</surname>,
+							</persName>
+							<persName>
+								<forename>I</forename>.
+								<surname>Nijem</surname>,
+							</persName>
+							<persName>
+								<forename>T</forename>.
+								<surname>Davancaze</surname>,
+							</persName>
+							<persName>
+								<forename>E</forename>.
+								<surname>Mai</surname>,
+							</persName>
+							<persName>
+								<forename>J</forename>.
+								<surname>Young</surname>,
+							</persName>
+							<persName>
+								<forename>L</forename>.
+								<middlename>A</middlename>.
+								<surname>Damico</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

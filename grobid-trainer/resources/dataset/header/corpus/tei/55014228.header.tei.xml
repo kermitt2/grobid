@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014228"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="copyright">&#169; ACM 2011. This is the author&apos;s version of the work.<lb/> It is posted here by permission of ACM for your personal use.<lb/> Not for redistribution. The definitive version will be published in<lb/> Conference Proceedings of IHM&apos;11, the 23th ACM International Conference of<lb/> the Association Francophone d&apos;Interaction Homme-Machine, ACM New York, NY,<lb/> USA, (Nice, October 2011).<lb/></note>
+
+	<docTitle>
+	<titlePart>Using the Userʼs Point of View for Interaction<lb/> on Mobile Devices<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Jérémie Francone, Laurence Nigay<lb/> Université Joseph Fourier Grenoble 1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Laboratoire dʼInformatique de Grenoble LIG UMR 5217,</affiliation>
+	</byline>
+
+	<address>Grenoble, F-38041, France<lb/></address>
+
+	<email>{jeremie.francone, laurence.nigay}@imag.fr<lb/></email>
+
+	<div type="abstract">RESUME<lb/> Nous présentons une technique d&apos;interaction pour dispositifs<lb/> mobiles (smartphone et tablette) basée sur le suivi du visage de<lb/> l&apos;utilisateur. Cette technique définit de nouvelles possibilités pour<lb/> l&apos;interaction en entrée et en sortie sur dispositifs mobiles. En<lb/> sortie, le suivi de la tête peut permettre de contrôler le point de<lb/> vue sur une scène 3D affichée à l&apos;écran (Head-Coupled<lb/> Perspective, HCP). Cette technique améliore l&apos;interaction en<lb/> sortie en offrant la perception de la profondeur et en permettant la<lb/> visualisation d&apos;un espace de travail plus grand (fenêtre virtuelle).<lb/> En entrée, le suivi des mouvements de la tête définit une nouvelle<lb/> modalité d&apos;interaction qui ne requiert pas d&apos;autres capteurs que la<lb/> caméra du téléphone ou de la tablette. Dans cet article, nous<lb/> explicitons les possibilités interactionnelles offertes par le suivi de<lb/> la tête de l&apos;utilisateur sur téléphones ou tablettes, particulièrement<lb/> adapté au caractère mobile des dispositifs visés. Nous focalisons<lb/> ensuite sur l&apos;interaction en sortie en présentant plusieurs<lb/> applications du HCP et en décrivant les résultats d&apos;une<lb/> expérimentation qualitative sur téléphone et tablette.<lb/></div>
+
+	<keyword>Mots clés<lb/> Dispositif Mobile, Modalité d&apos;interaction, Interface 3D, Head-<lb/>Coupled Perspective.<lb/></keyword>
+
+	<div type="abstract">ABSTRACT<lb/> We study interaction modalities for mobile devices (smartphones<lb/> and tablets) that rely on a camera-based head tracking. This<lb/> technique defines new possibilities for input and output<lb/> interaction. For output, by computing the position of the device<lb/> according to the user&apos;s head, it is for example possible to<lb/> realistically control the viewpoint on a 3D scene (Head-Coupled<lb/> Perspective, HCP). This technique improves the output interaction<lb/> bandwidth by enhancing the depth perception and by allowing the<lb/> visualization of large workspaces (virtual window). For input,<lb/> head movement can be used as a means of interacting with a<lb/> mobile device. Moreover such an input modality does not require<lb/> any additional sensor except the built-in front-facing camera. In<lb/> this paper, we classify the interaction possibilities offered by head<lb/> tracking on smartphones and tablets. We then focus on the output<lb/> interaction by introducing several applications of HCP on both<lb/> smartphones and tablets and by presenting the results of a<lb/> qualitative user experiment.<lb/></div>
+
+	<keyword>Categories and Subject Descriptors<lb/> H.5.2 [Information Interfaces and Presentation] User<lb/> Interfaces – Interaction styles. I.3.6 [Computer Graphics]<lb/> Methodology and Techniques – Interaction techniques.<lb/> General Terms<lb/> Design, Human Factors.<lb/> Keywords<lb/> Mobile Device, Interaction Modality, 3D Interface, Head-Coupled<lb/> Perspective.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

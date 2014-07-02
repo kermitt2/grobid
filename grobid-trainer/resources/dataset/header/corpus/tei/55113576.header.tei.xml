@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55113576"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Making Sense of Massive Data by Hypothesis Testing<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Dr. John W. Bodnar<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>SAIC </affiliation>
+	</byline>
+		
+	<address>1710 SAIC Dr.<lb/> MacLean, VA 21102<lb/></address>
+
+	<email>John.W.Bodnar@SAIC.com<lb/></email>
+
+	<keyword>Keywords: Novel Intelligence from Massive Data, Analytical Methods and Tools, Hypothesis Testing<lb/></keyword>
+
+	<div type="abstract">Abstract:<lb/> A Think Loop Model is presented for analysis that breaks the<lb/> analytical process down into a nested series of &quot;think loops&quot;<lb/> which indicate how analysts combine &quot;bottom-up&quot; data<lb/> driven steps with &quot;top-down&quot; hypothesis driven steps to be<lb/> able to forage through new data then synthesize that data into<lb/> evidence-based schemas and theories. I suggest that this<lb/> model can not only address current problems being<lb/> encountered throughout the Intelligence Community in<lb/> making sense out of the massive data available in many<lb/> disparate databases but also can suggest strategies for re-<lb/>thinking our current analytical methods and tools to overcome<lb/> those problems.<lb/></div>
+
+		</front>
+	</text>
+</tei>

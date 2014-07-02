@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei type="serie-article">
+	<teiHeader>
+		<fileDesc xml:id="55114398"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Compressive thin films for increased fracture toughness<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>P.H. Kobrin and A.B. Harker<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Rockwell International Science Center<lb/></affiliation>
+	</byline>
+
+	<address>Thousand Oaks, CA 91360<lb/></address>
+
+	<div type="abstract">Abstract<lb/> Improved fracture toughness by as much as a factor of two in infrared window materials<lb/> has been observed after the deposition of thin compressive surface films by reactive ion<lb/> beam techniques.<lb/> The relationship between film stress, film thickness, substrate proper-<lb/>ties, and observed fracture toughness are being investigated, using Vickers indentation to<lb/> determine mechanical properties and a bending plate capacitance method to independently de-<lb/>termine film stress.<lb/> Comparisons are made to a theoretical model developed by Lawn and<lb/> Fuller.<lb/></div>
+
+		</front>
+	</text>
+</tei>

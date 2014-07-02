@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014885"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Position technologies for internet connected<lb/> mobile terminals, offering location based audio<lb/> services.<lb/>
+	</titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>By<lb/> Lars Kristiansen<lb/> Stein Magnus Kristoffersen<lb/></docAuthor>
+	</byline>
+
+	<degree>Master&apos;s Thesis in<lb/> Information and Communication Technology<lb/> </degree>
+
+	<byline>
+	<affiliation>Agder University College<lb/> Faculty of Engineering and Science<lb/> </affiliation>
+	</byline>
+
+	<address>Grimstad<lb/></address>
+
+	<date>May 2007</date>
+
+		</front>
+	</text>
+</tei>

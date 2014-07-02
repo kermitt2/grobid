@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014847"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Securing Web Service by Automatic Robot Detection<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>KyoungSoo Park, Vivek S. Pai<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Princeton University<lb/></affiliation>
+	</byline>
+
+	<byline>
+	<docAuthor>Kang-Won Lee, Seraphin Calo<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>IBM T.J. Watson Research Center<lb/></affiliation>
+	</byline>
+
+	<div type="abstract">Abstract<lb/> Web sites are routinely visited by automated agents<lb/> known as Web robots, that perform acts ranging from the<lb/> beneficial, such as indexing for search engines, to the ma-<lb/>licious, such as searching for vulnerabilities, attempting<lb/> to crack passwords, or spamming bulletin boards. Previ-<lb/>ous work to identify malicious robots has relied on ad-hoc<lb/> signature matching and has been performed on a per-site<lb/> basis. As Web robots evolve and diversify, these tech-<lb/>niques have not been scaling.<lb/> We approach the problem as a special form of the Tur-<lb/>ing test and defend the system by inferring if the traf-<lb/>fic source is human or robot. By extracting the implicit<lb/> patterns of human Web browsing, we develop simple<lb/> yet effective algorithms to detect human users. Our ex-<lb/>periments with the CoDeeN content distribution network<lb/> show that 95% of human users are detected within the first<lb/> 57 requests, and 80% can be identified in only 20 requests,<lb/> with a maximum false positive rate of 2.4%. In the time<lb/> that this system has been deployed on CoDeeN, robot-<lb/>related abuse complaints have dropped by a factor of 10.<lb/></div>
+
+		</front>
+	</text>
+</tei>

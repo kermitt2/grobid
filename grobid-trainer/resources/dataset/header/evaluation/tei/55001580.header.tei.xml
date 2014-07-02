@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001580"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Puppeteer: Component-based Adaptation for Mobile Computing<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Eyal de Lara , Dan S. Wallach , and Willy Zwaenepoel</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Electrical and Computer Engineering<lb/> Department of Computer Science<lb/> Rice University<lb/></affiliation>
+	</byline>
+
+	<div type="abstract">Abstract<lb/> Puppeteer is a system for adapting component-based ap-<lb/>plications in mobile environments. Puppeteer takes ad-<lb/>vantage of the component-based nature of the applica-<lb/>tions to perform adaptation without modifying the appli-<lb/>cations. We illustrate the power of Puppeteer by demon-<lb/>strating adaptations that would otherwise require signif-<lb/>icant modifications to the application.<lb/> Our initial prototype supports Microsoft PowerPoint and<lb/> Internet Explorer 5 without requiring any changes to the<lb/> applications. It supports delayed data and image trans-<lb/>mission as well as progressive image refinement. We<lb/> measure our system&apos;s effectiveness with a large number<lb/> of PowerPoint documents and Web pages. We measure<lb/> user-perceived latencies for a variety of adaptation poli-<lb/>cies and over a variety of different network bandwidths.<lb/> Our results show that Puppeteer can achieve average re-<lb/>ductions in user latency of up to 84.22% for PowerPoint<lb/> documents loaded over a 384 Kb/sec link and 76.42%<lb/> for HTML documents loaded over 56 Kb/sec link.<lb/></div>
+
+		</front>
+	</text>
+</tei>

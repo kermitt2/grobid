@@ -1,0 +1,67 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009437"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Arch Histol Cytol, 72 (4/5): 261-270 (2009)<lb/></reference>
+
+	<note type="submission">Received January 12, 2009<lb/></note>
+
+	<note type="grant">*This work has been partially supported by the Research and<lb/> Development of Nanodevices for the Practical Utilization<lb/> of Nanotechnology from The New Energy and Industrial<lb/> Technology Development Organization, Japan.<lb/></note>
+
+	<note type="other">*Address for correspondence:</note>
+
+	<byline>
+	<docAuthor>Dr. Chikashi Nakamura,<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Biomedical Research Institute/AIST,</affiliation>
+	</byline>
+
+	<address>Central 4, 1-1-1<lb/> Higashi, Tsukuba, Ibaraki, 305-8562, Japan<lb/></address>
+
+	<phone>Tel: +81-29-861-2445, Fax: +81-29-861-3049<lb/> </phone>
+	
+	<email>E-mail: chikashi-nakamura@aist.go.jp<lb/></email>
+
+	<docTitle>
+	<titlePart>Evaluation of the insertion efficiencies of tapered silicon<lb/> nanoneedles and invasiveness of diamond nanoneedles in<lb/> manipulations of living single cells<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Sung-Woong Han<lb/> 1<lb/> , Seunghwan Ryu<lb/> 2<lb/> , Taro Kitagawa<lb/> 2<lb/> , Hiroshi Uetsuka<lb/> 3<lb/> , Naoji Fujimori<lb/> 3<lb/> , Yukihiro Aoki<lb/> 4<lb/> , Ryo Ota<lb/> 4<lb/> , Yosuke Amemiya<lb/> 5<lb/> , Nobuo Shimamoto<lb/> 5<lb/> , Chikashi Nakamura<lb/> 1,2<lb/> and Jun Miyake<lb/> 1,2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1<lb/> Research Institute for Cell Engineering (RICE), National Institute of Advanced Industrial Science and Technology<lb/> (AIST),</affiliation>
+	</byline>
+
+	<address>Central 6 Tsukuba, Ibaraki;<lb/></address>
+
+	<byline>
+	<affiliation>2<lb/> Department of Biotechnology and Life Science, Tokyo University of Agriculture<lb/> and Technology, Tokyo;<lb/> 3<lb/> Diamond Research Center,</affiliation>
+	</byline>
+
+	<address>AIST, Central 2, Tsukuba, Ibaraki;<lb/></address>
+
+	<byline>
+	<affiliation>4<lb/> Olympus Corporation,<lb/></affiliation>
+	</byline>
+
+	<address>Tatsuno-machi, Nagano; and<lb/></address>
+
+	<byline>
+	<affiliation>5<lb/> Structural Biology Center, National Institute of Genetics,</affiliation>
+	</byline>
+
+	<address>Mishima, Shizuoka, Japan<lb/></address>
+
+	<div type="abstract">sufficient insertion efficiency for a particular target cell:<lb/> tapered nanoneedles of an aspect ratio over 20 showed<lb/> high insertion efficiency for various kinds of mammalian<lb/> cells. We then used diamond for the material of the<lb/> nanoneedle because its specific properties, such as high<lb/> stiffness, heat conductivity, and electrical conductivity<lb/> capacitated by boron doping, were deemed useful for the<lb/> analysis and manipulation of intracellular phenomena.<lb/> We compared the capability of the diamond nanoneedle<lb/> in cell manipulation with that of the silicon nanoneedle.<lb/> Evaluation of the effect of the former on transcription<lb/> efficiency and localization analysis of p53 expression<lb/> revealed the low invasiveness for cell manipulation as<lb/> was also the case for the silicon nanoneedle. We also<lb/> succeeded in achieving highly efficient plasmid DNA<lb/> delivery into a mouse fibroblast C3H10T1/2 using<lb/> the diamond nanoneedle. The diamond nanoneedle is<lb/> expected to contribute to the versatility of &quot;cell surgery&quot;<lb/> technology.<lb/> Introduction<lb/> Single cell manipulation is one of the most important<lb/> technologies in the field of life science, especially in<lb/> biotechnology, diagnostics, and medicine. Yamanaka<lb/> and his colleagues have recently found that only three<lb/> or four gene expressions of transcriptional regulators<lb/> can reprogram cellular properties to the embryonic state,<lb/> thus generating an induced pluripotent stem (iPS) cell<lb/> Summary. We have been developing a low invasive cell<lb/> manipulation technology based on inserting an ultra-thin<lb/> needle –– &quot;nanoneedle&quot; –– into a living cell by using an<lb/> atomic force microscope (AFM). The nanoneedle, made<lb/> from a silicon AFM tip by focused-ion-beam etching, has<lb/> a diameter of several hundred nanometers and a length of<lb/> about 10 microns. Successful insertion of the nanoneedle<lb/> into the cell can be confirmed by the appearance of a<lb/> steep relaxation of repulsive force in the force-distance<lb/> curve as monitored by the AFM system. This technology,<lb/> termed &quot;cell surgery&quot;, can be applied for the detection<lb/> of intracellular proteins in a living cell or for highly<lb/> efficient gene transfer. The present study shows that the<lb/> durability of a tapered nanoneedle is superior to that of<lb/> a cylindrical nanoneedle, and that a proper aspect ratio<lb/> for the tapered nanoneedle must be chosen to maintain</div>
+
+		</front>
+	</text>
+</tei>

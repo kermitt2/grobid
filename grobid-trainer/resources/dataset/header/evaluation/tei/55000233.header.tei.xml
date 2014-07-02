@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000233"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+		<titlePart>Mitigating Ionospheric Threat<lb/> Using a Dense Monitoring Network<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+		<docAuthor>Takeyasu Sakai, Keisuke Matsunaga, Kazuaki Hoshinoo, and Ken Ito<lb/></docAuthor>
+	</byline>
+
+	<byline>
+		<affiliation>Electronic Navigation Research Institute,</affiliation>
+	</byline>
+	
+	<address>Japan<lb/></address>
+	
+	<byline>
+		<docAuthor>Todd Walter<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	 	<affiliation>Stanford University,</affiliation>
+	</byline>
+
+	<address>USA<lb/></address>
+
+	<note type="other">BIOGRAPHY<lb/> Takeyasu Sakai is a Senior Researcher at the Electronic<lb/> Navigation Research Institute, Japan. He received his Dr.<lb/> Eng. in 2000 from Waseda University. He is currently<lb/> developing the prototype software for the satellite-based<lb/> augmentation system (SBAS) and investigating<lb/> ionospheric correction algorithms. He was a member of<lb/> the MSAS Technical Review Board of JCAB.<lb/> Keisuke Matsunaga is also a Researcher at the Electronic<lb/> Navigation Research Institute. He received his M. Sc. in<lb/> 1996 from Kyoto University and worked for the<lb/> development of LSI at Mitsubishi Electric Corporation<lb/> from 1996 to 1999. He joined ENRI in 1999, and is<lb/> currently studying ionospheric scintillation effects on<lb/> MSAS. He was a member of the MSAS Technical<lb/> Review Board of JCAB.<lb/> Kazuaki Hoshinoo is the deputy director of the CNS<lb/> division of the Electronic Navigation Research Institute.<lb/> He was a member of the MSAS Technical Review Board<lb/> of JCAB. He was the board chairman of the Ionosphere<lb/> Working Group.<lb/> Ken Ito is engaged in research on a satellite navigation<lb/> system at ENRI. He is now in charge of a highly accurate<lb/> positioning experiment system using a Quasi-Zenith<lb/> Satellite.<lb/></note>
+
+	<note type="other">Todd Walter is a Senior Research Engineer in the<lb/> Department of Aeronautics and Astronautics at Stanford<lb/> University. Dr. Walter received his Ph.D. in 1993 from<lb/> Stanford and is currently developing WAAS integrity<lb/> algorithms and analyzing the availability of the WAAS<lb/> signal.<lb/></note>
+
+	<div type="abstract">ABSTRACT<lb/> The ionospheric correction procedure of the current<lb/> MSAS, the Japanese version of SBAS/WAAS, is built on<lb/> the algorithm named the &apos;planar fit.&apos; It estimates the<lb/> ionospheric propagation delays at IGPs using a first order<lb/> estimator, and the associated confidence bound broadcast<lb/> for computation of protection levels, based on the formal<lb/> variance of the estimate. In such an estimation process,<lb/> there are threats regarding mismodeling of the ionosphere<lb/> and undersampling so it is necessary to inflate the<lb/> confidence bound (GIVE values) to ensure that the<lb/> integrity requirement is met. This inflation leads to<lb/> relatively large GIVE values and thus lowers availability<lb/> of the system for flight modes with vertical guidance.<lb/> In Japan, we have a continuous GPS observation network,<lb/> known as the GEONET, operated by the Geographical<lb/> Survey Institute of Japan. GEONET has over one<lb/> thousand realtime GPS stations distributed inside Japan<lb/> with an average separation of 20-30 km. This paper<lb/> investigates integrating GEONET with MSAS for<lb/> generation of ionospheric corrections.<lb/> The authors have developed a new ionospheric correction<lb/> algorithm optimizing ionospheric delay residuals based on<lb/> the observations obtained by GEONET. The current<lb/> planar fit algorithm is not optimal for such a situation as<lb/> the algorithm must be capable of handling a very large<lb/> number of IPP observations. Our analysis is currently<lb/> based on the GPS observation dataset obtained at all<lb/> available GEONET sites with 30-second sampling. It<lb/> allows us to conduct analyses not only for the recent<lb/> conditions when the ionosphere may be quiet but also for<lb/> historical storm events because GEONET maintains its<lb/> database for a period of more than ten years.<lb/> The ionospheric corrections generated from GEONET<lb/> improved correction performance, and more importantly,<lb/> could reduce the GIVE values which impact the<lb/> uncertainty of ionospheric corrections and are used for<lb/> computation of protection levels. Due to the high density<lb/> of monitor stations and IPP observations, these<lb/> corrections could reduce the inflation factor and the<lb/> spatial threat term, thus minimizing GIVE values.<lb/> According to our simulation using prototype SBAS<lb/> software, the proposed algorithm possibly enables APV-II<lb/> </div>
+	
+<note type="page">927<lb/></note>
+
+<reference> ION GNSS 20th International Technical Meeting of the<lb/> Satellite Division, 25-28, September 2007, Fort Worth, TX</reference>
+
+<div type="abstract"><lb/> flight mode (VAL = 20 m) at most Japanese airports<lb/> including the single frequency system. The current<lb/> MSAS provides APV-I flight mode only at the center of<lb/> mainland of Japan.<lb/></div>
+
+		</front>
+	</text>
+</tei>

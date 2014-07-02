@@ -6,7 +6,7 @@
 	<text xml:lang="en">
 		<front>
 <lb/>
-	<idno>Application Note<lb/>Ap-DOC-044<lb/></idno>
+	<note>Application Note<lb/>Ap-DOC-044<lb/></note>
 
 	<docTitle>
 	<titlePart>Booting from the<lb/> DiskOnChip Millennium<lb/> </titlePart>

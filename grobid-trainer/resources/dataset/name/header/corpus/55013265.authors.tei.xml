@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Victoria</forename>
+								<surname>Moneo</surname>,
+							</persName>
+							<persName>
+								<forename>Juan</forename>
+								<middlename>F</middlename>.
+								<surname>Martínez-Leal</surname>,
+							</persName>
+							<persName>
+								<forename>María</forename>
+								<middlename>José</middlename>
+								<surname>Guillén</surname>,
+							</persName>
+							<persName>
+								<forename>Patricia</forename>
+								<surname>Martinez</surname>,
+							</persName>
+							<persName>
+								<forename>Guillermo</forename>
+							<lb/>
+								<surname>Tarazona</surname>,
+							</persName>
+							<persName>
+								<forename>Pablo</forename>
+								<middlename>M</middlename> .
+								<surname>Aviles</surname> ,
+							</persName>
+							<persName>
+								<forename>Carmen</forename>
+								<surname>Cuevas</surname> ,
+							</persName>
+							<persName>
+								<forename>Luis</forename>
+								<middlename>F</middlename> .
+								<surname>Garcia -Fernandez</surname>,
+							</persName>
+							<persName>
+								<forename>Carlos</forename>
+								<middlename>M</middlename> .
+								<surname>Galmarini</surname>. 
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014507"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">COMMUNICATIONS<lb/> </note>
+
+	<note type="page">2168<lb/></note>
+
+	<note type="copyright">&#169;WILEY-VCH Verlag GmbH, D-69451 Weinheim, 2001<lb/></note>
+
+	<note>1433-7851/01/4011-2168 $ 17.50+.50/0<lb/></note>
+
+	<reference>Angew. Chem. Int. Ed. 2001, 40, No. 11<lb/></reference>
+
+	<docTitle>
+	<titlePart>Formation of Aryl-and Benzylboronate Esters<lb/> by Rhodium-Catalyzed C À H Bond<lb/> Functionalization with Pinacolborane**<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Shigeru Shimada, Andrei S. Batsanov,<lb/> Judith A. K. Howard, and Todd B. Marder*<lb/></docAuthor>
+	</byline>
+
+		</front>
+	</text>
+</tei>

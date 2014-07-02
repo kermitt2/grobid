@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009500"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">1<lb/></note>
+
+	<note type="other">Zetasizer Nano series technical note </note>
+	
+	<idno>MRK654-01<lb/></idno>
+	
+		</front>
+	</text>
+</tei>

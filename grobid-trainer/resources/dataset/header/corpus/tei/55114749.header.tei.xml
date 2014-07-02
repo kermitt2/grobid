@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei type="presentation">
+	<teiHeader>
+		<fileDesc xml:id="55114749"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<date>20 Dec 2012<lb/></date>
+
+	<docTitle>
+	<titlePart>Toward a contextualized<lb/> Information-Centric Architecture<lb/></titlePart>
+	</docTitle> 
+
+	<ptr>www.huawei.com<lb/></ptr>
+
+	<docTitle>
+	<titlePart>Information-Centric Architecture<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>G.Q Wang<lb/></docAuthor>
+	</byline>
+
+	<byline> 
+	<affiliation>Innovation Center<lb/> Futurewei Technology<lb/> </affiliation>
+	</byline>
+
+	<address>USA<lb/></address>
+
+	<byline>
+	<affiliation>HUAWEI TECHNOLOGIES Co., Ltd.</affiliation>
+	</byline>
+
+		</front>
+	</text>
+</tei>

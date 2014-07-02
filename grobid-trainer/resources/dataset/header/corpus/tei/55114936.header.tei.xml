@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55114936"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Broadcasting Methods in Mobile Ad Hoc<lb/> Networks: An Overview *<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Demetres Kouvatsos<lb/> * and Is-Haka Mkwawa<lb/> + *</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Computing, University of Bradford,</affiliation>
+	</byline>
+
+	<address>UK.<lb/></address>
+
+	<byline>
+	<affiliation>+ Department of Computer Science, University College Dublin,</affiliation>
+	</byline>
+
+	<address>Ireland.<lb/></address>
+
+	<byline>
+	<docAuthor>* D.D.Kouvatsos,<lb/> </docAuthor>
+	</byline>
+		
+	<email>+ I.M.Mkwawa@scm.brad.ac.uk<lb/></email>
+
+	<div type="abstract">Abstract<lb/> Optimal broadcasting in mobile ad hoc networks is crucial for pro-<lb/>viding control and routing information for multicast and point to point<lb/> communication algorithms.<lb/> This tutorial presents an overview on the state of the art of broadcast-<lb/>ing techniques in mobile ad hoc networks and makes recommendations to<lb/> improve the efficiency and performance of the current and future broad-<lb/>casting techniques.<lb/></div>
+
+		</front>
+	</text>
+</tei>

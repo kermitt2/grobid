@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010050"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">1<lb/></note>
+
+	<docTitle>
+	<titlePart>EDUTELLA: P2P Networking for the Semantic Web<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Wolfgang Nejdl<lb/> a , Boris Wolf<lb/> a , Wolf Siberski<lb/> a , Changtao Qu<lb/> a , Stefan Decker<lb/> b , Michael Sintek<lb/> c ,<lb/> Ambjörn Naeve<lb/> d , Mikael Nilsson<lb/> d , Matthias Palmér<lb/> d , Tore Risch<lb/> e<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a Learning Lab Lower Saxony, University of Hannover,</affiliation>
+	</byline>
+
+	<address>Germany<lb/></address>
+
+	<byline>
+	<affiliation>b USC Information Sciences Institute,</affiliation>
+	</byline>
+
+	<address>Marina del Rey, CA, USA<lb/></address>
+
+	<byline>
+	<affiliation>c DFKI GmbH,</affiliation>
+	</byline>
+
+	<address>Kaiserslautern, Germany<lb/></address>
+
+	<byline>
+	<affiliation>d Centre for user oriented IT Design, Royal Institute of Technology,</affiliation>
+	</byline>
+
+	<address>Stockholm, Sweden<lb/></address>
+
+	<byline>
+	<affiliation>e Department of Information Science, Uppsala University,</affiliation>
+	</byline>
+
+	<address>Sweden<lb/></address>
+
+	<div type="abstract">Metadata for the World Wide Web is important, but metadata for Peer-to-Peer (P2P) networks is absolutely<lb/> crucial. In this paper we discuss the open source project Edutella which builds upon metadata standards defined<lb/> for the WWW and aims to provide an RDF-based metadata infrastructure for P2P applications. Edutella is the<lb/> first system which brings together RDF and P2P concepts and exploits their strengths in a common framework,<lb/> suitable for building general schema-based P2P networks for distributed and dynamic information providers. We<lb/> describe the goals and main services this infrastructure will provide and the architecture to connect Edutella Peers<lb/> based on exchange of RDF metadata. As the query service is one of the core services of Edutella, upon which other<lb/> services are built, we specify in detail the Edutella Common Data Model (ECDM) as basis for the Edutella query<lb/> exchange language (RDF-QEL-i) and format implementing distributed queries over the Edutella network. Finally,<lb/> we shortly discuss registration and mediation services, and introduce the prototype and application scenario for<lb/> our current Edutella aware peers.<lb/></div>
+
+		</front>
+	</text>
+</tei>

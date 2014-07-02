@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012251"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>SELECTIVE EMITTER FOR INDUSTRIAL SOLAR CELL PRODUCTION:<lb/> A WET CHEMICAL APPROACH USING A SINGLE SIDE DIFFUSION PROCESS
+	<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>A. Dastgheib-Shirazi<lb/> 1 , H. Haverkamp<lb/> 1 , B. Raabe<lb/> 1 , F. Book<lb/> 1<lb/> , G. Hahn<lb/> 1,2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 University of Konstanz, Department of Physics,</affiliation>
+	</byline>
+
+	<address>P.O. Box X916, 78457 Konstanz, Germany<lb/></address>
+
+	<byline>
+	<affiliation>2 also with Fraunhofer Institute for Solar Energy Systems (ISE),</affiliation>
+	</byline>
+
+	<address>Heidenhofstr. 2, 79110 Freiburg, Germany<lb/></address>
+
+	<email>Author for correspondence: amir.dastgheib-shirazi@uni-konstanz.de, </email>
+
+	<phone>Tel.: +49 7531 882088, Fax: +49 7531 883895<lb/></phone>
+
+	<div type="abstract">ABSTRACT: This work describes the implementation of a novel process for a single diffusion selective emitter<lb/> fabrication on mono-and multicrystalline silicon solar cells. To create a selective emitter structure a wet chemical<lb/> route for an emitter etch back process has been applied. The areas of the wafer that are intended for front side<lb/> metallization are shielded from etching by an acid resistant etch barrier. The emitter etch back and the removing of<lb/> the etch barrier are implemented by a wet chemical process. By means of successfully transferring the described<lb/> selective emitter structure on a standard screen printed cell process an increase of efficiency of more than 0.3 % abs.<lb/> has been achieved.<lb/></div>
+
+	<keyword>Keywords: Selective Emitter, Single Diffusion Process, Emitter Etching<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

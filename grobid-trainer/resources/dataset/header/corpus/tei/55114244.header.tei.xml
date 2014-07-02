@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei type="presentation">
+	<teiHeader>
+		<fileDesc xml:id="55114244"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<date>3/21/2009<lb/></date>
+
+	<note type="page">1<lb/></note>
+
+	<docTitle>
+	<titlePart>Software Code Protection Through<lb/> Software Obfuscation<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Presented by:<lb/></note>
+
+	<byline>
+	<docAuthor>Sabu Emmanuel, PhD<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>School of Computer Engineering<lb/> Nanyang Technological University,</affiliation>
+	</byline>
+
+	<address>Singapore<lb/></address>
+
+	<email>E-mail: asemmanuel@ntu.edu.sg<lb/></email>
+
+	<date>20, Mar, 2009 – </date>
+
+	<address>IIT, Guwahati</address>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="laboratory">Laboratory of Industrial Microbiology and Biocatalysis</orgName>,
+							<orgName type="department">Department of Biochemical and Microbial Technology</orgName>,
+							<orgName type="department">Faculty of Agricultural and<lb/> Applied Biological Sciences</orgName>,
+							<orgName type="institution">University of Gent</orgName>,
+							<address> 
+								<addrLine>Coupure links 653</addrLine>,
+								<postCode>B-9000</postCode>
+								<settlement>Gent</settlement>,
+								<country>Belgium</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

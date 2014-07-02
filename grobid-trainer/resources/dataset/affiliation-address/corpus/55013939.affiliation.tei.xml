@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">The Institute of Higher Nervous Activity &amp; Neurophysiology</orgName>,
+							<orgName type="institution">USSR Academy of Sciences</orgName>,
+							<address>
+								<addrLine>Butlerova Street</addrLine>,
+							<lb/>
+								<settlement>Moscow</settlement>
+								<postCode>117865</postCode> and
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>*</marker>
+							<orgName type="department">The Institute of Biological Physics</orgName>,
+							<orgName type="institution">USSR Academy of Sciences</orgName>,
+							<address>
+								<settlement>Pushchino</settlement>,
+							<lb/>
+								<region>Moscow Region</region>
+								<postCode>142292</postCode>,
+								<country>USSR</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

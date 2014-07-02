@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013228"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Acousto-optic tomography with<lb/> multiply scattered light<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>M. Kempe, M. Larionov, D. Zaslavsky, and A. Z. Genack<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>New York State Center for Advanced Technology on Ultrafast Photonics Materials and Applications,<lb/> Department of Physics, Queens College of the City University of New York,</affiliation>
+	</byline>
+
+	<address>Flushing, New York 11367<lb/></address>
+
+	<note type="submission">Received June 26, 1996; revised manuscript received September 19, 1996; accepted October 9, 1996<lb/></note>
+
+	<div type="abstract">We have investigated the modulation of the optical field transmitted through a colloid of polystyrene spheres<lb/> by a narrow quasi-cw ultrasound beam. Measurements of the scale dependence of the heterodyne modulation<lb/> signal at the acoustic frequency are obtained for samples that are up to 140 scattering lengths thick. A cal-<lb/>culation of the modulation signal predicts the possibility of tomographic imaging, which is confirmed experi-<lb/>mentally.</div>
+
+	<note type="copyright">© 1997 Optical Society of America [</note>
+
+	<note>S0740-3232(97)01305-7]<lb/></note>
+
+		</front>
+	</text>
+</tei>

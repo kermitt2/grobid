@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<tei type="technical-report">
+	<teiHeader>
+		<fileDesc xml:id="55115186"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">1<lb/></note>
+
+	<docTitle>
+	<titlePart>Database of electron inelastic mean free path for<lb/> elemental solids<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">1. Electron inelastic mean free path (IMFP)<lb/> 2. Calculation method of electron inelastic mean free path<lb/> 3. Figures for electron inelastic mean free paths for 41 elemental solids over 10 eV<lb/> to 30,000 eV<lb/> Fig1. Li, Be, glassy carbon, graphite, diamond, and Na.<lb/></div>
+
+	<byline>
+	<note type="other">Fig2. Mg ,Al, Si, K, Sc, and Ti.<lb/> Fig.3 V, Cr, Fe, Co, Ni, and Cu<lb/> Fig.4 Ge, Y, Nb, Mo, Ru, and Rh.<lb/>
+	</note>
+	</byline>
+
+	<note type="other">Fig. 5 Pd, Ag, In, Sn, Cs, and Gd<lb/> Fig. 6 Tb, Dy, Hf, Ta, W, and Re.<lb/> Fig. 7 Os, Ir, Pt, Au, and Bi<lb/> 4. Numerical data of electron IMFPs for 41 elemental solids over 50 eV to 30,000<lb/> eV<lb/> 4.1 Table for IMFPs of Li, Be, graphite, diamond, glassy carbon, Na, Mg, Al, Si,<lb/> and K as a function of non-relativistic electron kinetic energy.<lb/> 4.2 Table for IMFPs of Sc, Ti, V, Cr, Fe, Co, Ni, Cu, Ge, and Y as a function of<lb/> electron kinetic energy.<lb/> 4.3 Table for IMFPs of Nb, Mo, Ru, Rh, Pd, Ag, In, Sn, Cs, and Gd as a function<lb/> of non-relativistic electron kinetic energy.<lb/> 4.4 Table for IMFPs of Tb, Dy, Hf, Ta, W, Re. Os. Ir, Pt, Au and Bi as a<lb/> function of non-relativistic electron kinetic energy.<lb/> 5. References</note>
+
+		</front>
+	</text>
+</tei>

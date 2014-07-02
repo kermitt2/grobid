@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012549"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">JOIN | SUBSCRIBE | ESPAÑOL<lb/> HOME EVENTS<lb/> CULTURE BUSINESS<lb/> EXPLORE ENVIRONMENT<lb/> SOCIETY<lb/></note>
+
+	<docTitle>
+	<titlePart>Contemporary Architecture Guide: Cordoba<lb/></titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

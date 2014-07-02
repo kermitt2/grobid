@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">Faculty of Science and Technology and Institute of Colloid and Interface Science</orgName>,
+							<lb/>
+							<orgName type="institution">Science University of Tokyo</orgName>,
+							<address>
+								<settlement>Noda</settlement>,
+								<region>Chiba</region>
+								<postCode>278</postCode>,
+								<country>Japan</country>
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="department">Development Center</orgName>,
+							<address>
+								<country>Japan</country>
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="institution">Synthetic Rubber Co. Ltd.</orgName>,
+							<address>
+								<settlement>Yokkaichi</settlement>,
+								<region>Mie</region>
+								<postCode>510</postCode>,
+								<country>Japan</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

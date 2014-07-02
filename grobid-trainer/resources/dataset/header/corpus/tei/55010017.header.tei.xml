@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010017"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Learning in Silicon: Timing is Everything<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>John V. Arthur and Kwabena Boahen<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Bioengineering<lb/> University of Pennsylvania<lb/></affiliation>
+	</byline>
+
+	<address>Philadelphia, PA 19104<lb/></address>
+
+	<email>{jarthur, boahen}@seas.upenn.edu<lb/></email>
+
+	<div type="abstract">Abstract<lb/> We describe a neuromorphic chip that uses binary synapses with spike<lb/> timing-dependent plasticity (STDP) to learn stimulated patterns of activ-<lb/>ity and to compensate for variability in excitability. Specifically, STDP<lb/> preferentially potentiates (turns on) synapses that project from excitable<lb/> neurons, which spike early, to lethargic neurons, which spike late. The<lb/> additional excitatory synaptic current makes lethargic neurons spike ear-<lb/>lier, thereby causing neurons that belong to the same pattern to spike in<lb/> synchrony. Once learned, an entire pattern can be recalled by stimulating<lb/> a subset.<lb/></div>
+
+		</front>
+	</text>
+</tei>

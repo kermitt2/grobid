@@ -37,12 +37,12 @@
 			<url>http://download.java.net/maven/2/</url>
 			<layout>default</layout>
 		</repository>
-		<repository>
+		<!--repository>
 			<id>maven.amplafi.com</id>
 			<name>Amplafi repository</name>
 			<url>http://maven.amplafi.com/</url>
 			<layout>default</layout>
-		</repository>
+		</repository-->
 	</repositories>
 
 	<dependencies>
@@ -143,15 +143,14 @@
 			<version>1.3</version>
 			<scope>test</scope>
 		</dependency>
-		
+
 		<dependency>
-			<groupId>com.google.guava</groupId>
-			<artifactId>guava</artifactId>
-			<version>16.0.1</version>
-			<type>jar</type>
+		    <groupId>com.google.guava</groupId>
+		    <artifactId>guava</artifactId>
+		    <version>16.0.1</version>
 		</dependency>
-		
-		<!-- Saxon for transforming PDFMiner output to PDF2XML output -->
+
+        <!-- Saxon for transforming PDFMiner output to PDF2XML output -->
 		<dependency>
 			<groupId>net.sf.saxon</groupId>
 			<artifactId>Saxon-HE</artifactId>

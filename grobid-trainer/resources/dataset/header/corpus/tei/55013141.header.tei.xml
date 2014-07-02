@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013141"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Adaptive Waveletshrinkage-Methoden<lb/> zur Analyse von Streufluss-Signalen<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Diplomarbeit<lb/> von<lb/></note>
+
+	<byline>
+	<docAuthor>Alexander Rosenfeld<lb/></docAuthor>
+	</byline>
+
+	<date>23. April 2009<lb/></date>
+
+	<byline>
+	<note type="other">Gutachterin und Betreuung:<lb/> Prof. Dr. Gerlind Plonka-Hoch<lb/></note>
+	</byline>
+
+	<byline>
+	<affiliation>Universität Duisburg-Essen<lb/> Fachbereich Mathematik<lb/> Arbeitsgruppe für Numerische Analysis</affiliation>
+	</byline>
+
+		</front>
+	</text>
+</tei>

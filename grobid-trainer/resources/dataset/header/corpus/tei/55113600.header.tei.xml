@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei type="presentation">
+	<teiHeader>
+		<fileDesc xml:id="55113600"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Introduction Ambiguities<lb/> IP Fragments<lb/> TCP Attacks<lb/> </note>
+
+	<docTitle>
+	<titlePart>IDS Insertion and Evasion Techniques<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Herbert Haas<lb/></docAuthor>
+	</byline>
+
+	<date>January 2009<lb/></date>
+
+	<byline>
+	<docAuthor>Herbert Haas<lb/></docAuthor>
+	</byline>
+	
+	<note type="other">IDS Insertion and Evasion Techniques<lb/></note>
+	
+		</front>
+	</text>
+</tei>

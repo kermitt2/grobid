@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55113830"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Challenge E: Bringing the territories closer together at higher speeds<lb/></note>
+	
+	<docTitle>
+	<titlePart>Characterization and Modeling of Flying Ballast Phenomena in<lb/> High-speed Train Lines<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Benigno J. Lazaro, Ezequiel Gonzalez<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Universidad Politecnica de Madrid<lb/></affiliation>
+	</byline>
+
+	<address>28040 Madrid, Spain<lb/> </address>
+
+	<byline>
+	<docAuthor>Manuel Rodriguez<lb/> </docAuthor>
+	</byline>
+	
+	<byline>
+	<affiliation>SENER </affiliation>
+	</byline>
+
+	<address>28760 Tres Cantos, Spain<lb/></address>
+
+	<byline>
+	<docAuthor>Miguel Rodriguez, Salvador Osma, Jorge Iglesias<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>ADIF</affiliation>
+	</byline>
+
+	<address>28003 Madrid, Spain<lb/></address>
+
+	<div type="abstract">Abstract<lb/> A full scale experimental investigation of the flying ballast phenomena taking place in high-speed train<lb/> lines is presented. The aerodynamic load associated to the flow induced by the train passage has<lb/> been characterized by Pitot-static and hot-film anemometry. Using the available Pitot-static data, each<lb/> hot-film sensor undergoes an individual calibration for every flow realization. Ensemble averaged<lb/> information of the mean and fluctuating air velocities at different height from the ballast bed is<lb/> obtained as a function of the relative train passage time. The transport of ballast particles is<lb/> characterized using high-speed video recording of particles positioned in selected locations of the<lb/> track.<lb/> The aerodynamic measurements indicate that most of the time the turbulent flow developing close to<lb/> the ballast bed approximately follows a turbulent Couette structure that can be characterized by a<lb/> friction velocity and a temporally modulated equivalent sand roughness, with the air velocity exhibiting<lb/> strong fluctuating activity down to the surface layer located over the ballast bed. The flow structure is<lb/> completed with strong perturbation events triggered by the passage of the rolling stock lower wall<lb/> topology details. The high-speed video recording data allows to construct preliminary statistics of the<lb/> motion of ballast particles. The aerodynamic measurements are used as input to simple models<lb/> intended to describe some aspects of the ballast transport. The obtained preliminary results indicate<lb/> that some scaling laws and transport trends can be captured by the proposed, simplified description.<lb/></div>
+
+		</front>
+	</text>
+</tei>

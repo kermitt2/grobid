@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011572"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Wavelet-Thresholding-Methoden in der<lb/> Signal-und Bildverarbeitung<lb/> </titlePart>
+	</docTitle>
+
+	<degree>DIPLOMARBEIT IM RAHMEN<lb/> DES DIPLOMP<lb/> UFUNGSVERFAHRENS MATHEMATIK<lb/></degree>
+	
+	<note type="other">vorgelegt von<lb/></note>
+
+	<byline>
+	<docAuthor>Mathias Lindemann<lb/> Themensteller: Prof. Dr. Peter Maaß *<lb/> </docAuthor>
+	</byline>
+
+	<date>Potsdam, Januar 2001 *</date>
+
+	<byline>
+	<affiliation>Lehrstuhl für Numerische Mathematik<lb/></affiliation>
+	</byline>
+
+	<note type="other">Inhaltsverzeichnis<lb/> Notationen 1<lb/></note>
+
+		</front>
+	</text>
+</tei>

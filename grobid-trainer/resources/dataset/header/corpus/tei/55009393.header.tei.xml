@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009393"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>THE X-RAY OBJECT RECOGNITION TEST (X-RAY ORT) – A RELIABLE<lb/> AND VALID INSTRUMENT FOR MEASURING VISUAL ABILITIES NEEDED<lb/> IN X-RAY SCREENING<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Diana Hardmeier, Franziska Hofer, Adrian Schwaninger<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Psychology, University of Zurich</affiliation>
+	</byline>
+
+	<address>, Switzerland<lb/></address>
+
+	<div type="abstract">ABSTRACT<lb/> Aviation security screening has become very important in<lb/> recent years. It was shown in [1] that certain image-based<lb/> factors influence detection when visually inspecting x-ray<lb/> images of passenger bags. Threat items are more difficult to<lb/> recognize when placed in close-packed bags (effect of bag<lb/> complexity), when superimposed by other objects (effect of<lb/> superposition), and when rotated (effect of viewpoint). The<lb/> X-Ray Object Recognition Test (X-Ray ORT) was<lb/> developed to measure the abilities needed to cope with<lb/> these factors. In this study, we examined the reliability and<lb/> validity of the X-Ray ORT based on a sample of 453<lb/> aviation security screeners and 453 novices. Cronbach<lb/> Alpha and split-half analysis revealed high reliability.<lb/> Validity was examined using internal, convergent,<lb/> discriminant and criterion-related validity estimates. The<lb/> results show that the X-Ray ORT is a reliable and valid<lb/> instrument for measuring visual abilities needed in x-ray<lb/> screening. This makes the X-Ray ORT an interesting tool<lb/> for competency and pre-employment assessment purposes.<lb/></div>
+
+		</front>
+	</text>
+</tei>

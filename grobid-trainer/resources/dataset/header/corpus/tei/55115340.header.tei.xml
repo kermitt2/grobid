@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55115340"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<phone>Fax +41 61 306 12 34<lb/></phone>
+
+	<email>E-Mail karger@karger.ch<lb/></email>
+
+	<ptr type="web">www.karger.com<lb/></ptr>
+
+	<docTitle>
+	<titlePart>Genetic factors are predominant for the spontaneous<lb/> evolution of the body mass index (BMI) , but only<lb/> environmental events are able to modify the BMI curve<lb/> </titlePart>
+	</docTitle>
+
+	<note type="other">Key insights<lb/> Childhood obesity can be considered a programmed disease in<lb/> which several genetic and/or in utero mechanisms play a role.<lb/> Constitutional susceptibility is predominantly a genetic predis-<lb/>position. For example, it is likely that the growth curves of obese<lb/> children are programmed at a higher level than their nonobese<lb/> counterparts. Further research into gene-gene interactions and<lb/> a focus on the respective contribution between genetic contribu-<lb/>tion and lifestyle in determining individual weight are needed.<lb/> Current knowledge<lb/> An obesogenic environment can be considered the trigger, not<lb/> the primary cause, of childhood obesity. Common obesity is<lb/> polygenic with no observable simple Mendelian inheritance.<lb/> The discovery of rare monogenic forms of obesity and obesity-<lb/>linked mutations means any preconceived notions that obesity<lb/> represents an issue with no biological basis can be dispelled.<lb/> Adipostat, programmed BMI curves, and some environmental<lb/> factors induce the programming towards childhood obesity.<lb/> An improved understanding of the key molecular and genetic<lb/> mechanisms that regulate body weight should help fi nd the<lb/> &apos;missing links&apos; in the question of heritability and susceptibility.<lb/> Practical implications<lb/> Providers need to recognize that treatment requires a substan-<lb/>tial motivation to fi ght against the programming and that<lb/> childhood obesity is not simply the result of inappropriate hab-<lb/>its. Moreover, prevention strategies should focus only on those<lb/> children with a constitutional susceptibility to become obese<lb/> under the pressure of an obesogenic environment.</note>
+
+		</front>
+	</text>
+</tei>

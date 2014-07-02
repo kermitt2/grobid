@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>H</forename>.
+								<middlename>T</middlename>.
+								<surname>Kuo</surname>,
+							</persName>
+							<persName>
+								<forename>T</forename>.
+								<middlename>S</middlename>.
+								<surname>Chan</surname>,
+							</persName>
+							<persName>
+								<forename>N</forename>.
+								<middlename>C</middlename>.
+								<surname>Bagkar</surname>,
+							</persName>
+							<persName>
+								<forename>G</forename>.
+								<middlename>Q</middlename>.
+								<surname>Liu</surname>,
+							</persName>
+							<persName>
+								<forename>R</forename>.
+								<middlename>S</middlename>.
+								<surname>Liu</surname>,
+								<marker>*</marker> ,
+							</persName>
+							<persName>
+								<forename>C</forename>.
+								<middlename>H</middlename>.
+								<surname>Shen</surname>,
+							</persName>
+							<persName>
+								<forename>D</forename>.
+								<middlename>S</middlename>.
+								<surname>Shy</surname>,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>X</forename>.
+								<middlename>K</middlename> .
+								<surname>Xing</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012760"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Pharmaceutical Chemtstr~, Journal.<lb/> l&apos;ol. 29, No 5, 1995<lb/></reference>
+
+	<docTitle>
+	<titlePart>SYNTHESIS AND STUDY OF ANTICONVULSIVE PROPERTIES<lb/> OF PHENYLCYCLOALKYLMETHYL UREAS l<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>A. A. Bakibaev, 2 V. K. Gorshkova, 2 V. D. Filimonov, 2 A. S. Saratikov, ~ and V. A. Krasnov 3<lb/></docAuthor>
+	</byline>
+
+	<reference>Translated from Khimiko-Farmatsevticheskii Zhurnal, Vol. 29, No. 5, pp. 35-36, May, 1995.<lb/></reference>
+
+	<note type="submission">Original article submitted Februa~&apos; 03, 1994.<lb/></note>
+
+		</front>
+	</text>
+</tei>

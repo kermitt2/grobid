@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55114666"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">Page: 1<lb/></note>
+
+	<date>Date Saved: 2014-04-22 2010-10-01<lb/></date>
+
+	<docTitle>
+	<titlePart>Joint Collaborative Team on Video Coding (JCT-VC)<lb/> of ITU-T SG16 WP3 and ISO/IEC JTC1/SC29/WG11<lb/> </titlePart>
+	</docTitle>
+
+	<note type="other">3rd Meeting: </note>
+
+	<address>Guangzhou, CN, 7-</address>
+	
+	<date>15 October, 2010<lb/></date>
+
+	<note>Document: JCTVC-C256<lb/> WG11 Number: m18297<lb/> </note>
+
+	<docTitle>
+	<titlePart>Title:<lb/> Entropy Slices for Parallel Entropy Coding<lb/> </titlePart>
+	</docTitle>
+
+	<note type="other">Status:<lb/> Input Document to JCT-VC<lb/> Purpose:<lb/> Proposal<lb/> Author(s) or<lb/> Contact(s):<lb/></note>
+
+	<byline>
+	<docAuthor>Kiran Misra, Jie Zhao and Andrew Segall<lb/></docAuthor>
+	</byline>
+
+	<address>5750 NW Pacific Rim Blvd<lb/> Camas, WA 98607<lb/></address>
+
+	<phone>Tel:<lb/> </phone>
+
+	<email>Email:<lb/> </email>
+
+	<phone>Tel: +1-360-817-8487<lb/> </phone>
+
+	<email>asegall@sharplabs.com<lb/></email>
+
+	<note type="other">Source:<lb/> SHARP<lb/> _____________________________<lb/></note>
+
+	<div type="abstract">Abstract<lb/> The concept of an Entropy Slice was previously proposed for the HEVC system. Entropy slices enable<lb/> separate definitions for neighborhood in the entropy decoding and reconstruction loops. Motivations for<lb/> entropy slices are many. As a first benefit, we assert that the system enables parallel decoding with<lb/> negligible overhead. This includes both the context adaptation and bin coding stages, and it<lb/> accommodates all of the entropy coding engines currently in the TMuC. As a second benefit, we assert<lb/> that the degree of parallelization is flexible – an encoder may generate a bit-stream that supports a wide<lb/> range of decoder parallelization factors without knowledge of the target platform. As a third benefit, we<lb/> assert that the entropy slice concept enables more meaningful profile and level definitions for entropy<lb/> coding. Specifically, profiles/levels may define bin limits per entropy slice, as opposed for an entire<lb/> picture. This is useful for all applications, but with significant benefit to emerging, higher rate and<lb/> higher resolution scenarios. In this document, we provide new results for entropy slices. Software is<lb/> also provided in the contribution.<lb/></div>
+
+		</front>
+	</text>
+</tei>

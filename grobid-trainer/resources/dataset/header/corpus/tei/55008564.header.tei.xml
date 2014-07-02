@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008564"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note>Consulta de documento completo<lb/> </note>
+	
+	<note type="other">E-mail:<lb/> Seleccionado 0 de 1 doc<lb/>1 / 1<lb/> Ver MARC<lb/> Nº Amicus: 1176856<lb/> </note>
+
+	<byline>
+	<docAuthor>Autor(es): Pascual Espada, Jordán<lb/> San Juan Martínez, Oscar, dir.<lb/> Cueva Lovelle, Juan Manuel, dir.<lb/></docAuthor>
+	</byline>
+
+	<docTitle>
+	<titlePart>Título principal: Orquestación de servicios para internet de las cosas / </titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Jordán Pascual Espada<lb/> </docAuthor>
+	</byline>
+
+	<note type="degree">Serie:<lb/> Proyecto fin de máster</note> 
+	
+	<byline>
+	<affiliation>(Universidad de Oviedo. Escuela Universitaria de<lb/> Ingeniería Técnica Informática de Oviedo)<lb/> Editor(es):<lb/> Oviedo : Universidad de Oviedo, Escuela Universitaria de Ingeniería Técnica<lb/> Informática,</affiliation>
+	</byline>
+
+	<date>2010.<lb/></date>
+
+	<note type="other">Fecha pub.: 2010<lb/> Descripción física: 126 p. ; 30 cm + 1 disco compacto<lb/> Nota: Director: juan Manuel Cueva Lovella, Oscar San Juan Martínez<lb/></note>
+
+	<note type="other">Copias:<lb/> Nº Copia<lb/> Biblioteca Situación<lb/> Signatura<lb/> 1732107 Bca. Ciencias-Informática / CFMI Biblioteca (K)<lb/> En estantería<lb/> KPM-0045<lb/></note>
+
+	<byline>
+	<affiliation>Biblioteca de la Universidad de Oviedo<lb/></affiliation>
+	</byline>
+
+	<ptr>https://acceso.uniovi.es/oviedo/,DanaInfo=buoamidesa.cpd.uniovi.es,Po...<lb/></ptr>
+
+	<note type="page">1 of 1<lb/></note>
+	
+	<date>30-09-2011 </date>
+	
+	<note type="other">15:49</note>
+
+		</front>
+	</text>
+</tei>

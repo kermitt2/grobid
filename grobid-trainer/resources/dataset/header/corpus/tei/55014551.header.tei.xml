@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014551"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>A Research Agenda for Service-Oriented<lb/> Architecture (SOA): Maintenance and<lb/> Evolution of Service-Oriented Systems<lb/> </titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Grace A. Lewis<lb/> Dennis B. Smith<lb/> Kostas Kontogiannis<lb/></docAuthor>
+	</byline>
+
+	<date>March 2010<lb/></date>
+
+	<note type="other">TECHNICAL NOTE<lb/> </note>
+
+	<note>CMU/SEI-2010-TN-003<lb/></note>
+
+	<note type="other">Research, Technology, and System Solutions Program<lb/></note>
+	
+	<note type="other">Unlimited distribution subject to the copyright.<lb/></note>
+
+	<ptr type="web">http://www.sei.cmu.edu</ptr>
+
+		</front>
+	</text>
+</tei>

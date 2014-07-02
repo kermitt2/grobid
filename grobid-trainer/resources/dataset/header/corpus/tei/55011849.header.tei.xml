@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011849"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>O. Tossavainen and H. Kallioinen. 2008. Effect of lactose hydrolysis on furosine and<lb/> available lysine in UHT skim milk. Milchwissenschaft, volume 63, number 1, pages<lb/> 22-26.<lb/></reference>
+
+	<note type="copyright">© 2008 AVA Agrar-Verlag Allgäu<lb/></note>
+
+	<note type="other">Reprinted with permission.<lb/> </note>
+
+	<note type="page">22<lb/> </note>
+
+	<div type="introduction">Soybean oil with the highest density, surface tension<lb/> and yield stress formed the most stable emulsions;<lb/> among other oils similartendencywas notfound.<lb/> The influence of the oiltype on emulsion properties is<lb/> not well documented. Few publications demonstrated<lb/> superiority of sunflower to soybean oil, in relation to the<lb/> emulsion stability, and pointed at a significance of the<lb/> nature of the oil phase in shaping emulsion properties<lb/> (8,2). However, it seems that method and conditions of<lb/> the oil manufacture and raw material variety do not allow<lb/> to make any comparisons.<lb/> 4. Conclusions<lb/> The continuous phase properties significantly influ-<lb/>enced physicochemical properties of the emulsions. ln-<lb/>creasing protein concentrations of the continuous<lb/> phase followed by higher surface tension, density, con-<lb/>ductivity and viscosity caused a decrease in emulsion<lb/> stability and an increase in the emulsion surface tension<lb/> and conductivity. The oil type had a significant impact on<lb/> the emulsion properties; however, besides soybean oil<lb/> with the highest density, surface tension and yield<lb/> stress, the properties of the other oil-based emulsions<lb/> were not attributed to measured oil properties. An in-<lb/>crease in surface tension and electrical conductivity<lb/> may be an indication of flocculation.<lb/> Tossavainen, Effect of hydrolysis on UHT milk<lb/></div>
+
+	<note type="grant">Acknowledgment This research has been supported by the Polish Min-<lb/>istry of Scientific Research and Information Technology<lb/> under Grant 2P06T00829 (2005-2008).</note>
+
+		</front>
+	</text>
+</tei>

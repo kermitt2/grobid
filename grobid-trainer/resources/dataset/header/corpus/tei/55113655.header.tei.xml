@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55113655"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">2514<lb/> </note>
+
+	<note>K u h n , Baer, Gauhe: Kri8taUiecc2ion und<lb/> [Jahrg.89<lb/></note>
+
+	<note type="other">_ ~ ~ _ _<lb/> 364. </note>
+
+	<byline>
+	<docAuthor>Richard Kuhn, Hans Helmut Baer und Adeline Ganbe:<lb/> </docAuthor>
+	</byline>
+
+	<docTitle>
+	<titlePart>Kristallisstion und Honstitutionsermittlung der Lacto-N-fueopentaose I<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<affiliation>[Aus dem Max-Planck-Institut fiir Medizinische Forschung, Institut fur Chemie,<lb/></affiliation>
+	</byline>
+
+	<address>Heidelberg]<lb/></address>
+
+	<note type="submission">(Eingegangen am 30. Juli 1956)<lb/></note>
+
+		</front>
+	</text>
+</tei>

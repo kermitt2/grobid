@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010828"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<docAuthor>Dr. Daniel J. George<lb/></docAuthor>
+	</byline>
+
+	<docTitle>
+	<titlePart>Novel Anticoagulant Prevents VTEs During Chemotherapy<lb/></titlePart>
+	</docTitle>
+
+	<docAuthor>By: RICHARD HYER, </docAuthor>
+
+	<note type="other">Oncology Report Digital Network<lb/> </note>
+
+	<date>06/20/11<lb/> |<lb/> </date>
+
+	<address>CHICAGO – </address>
+
+	<div type="introduction">Prophylaxis with semuloparin, an experimental ultralow-molecular-weight heparin, achieved a significant 64% reduction in<lb/> relative risk for venous thromboembolism events among cancer patients undergoing chemotherapy in a large, randomized, double-blind,<lb/> phase III trial called SAVE-ONCO.<lb/> An intent-to-treat analysis found that the rate of venous thromboembolism (VTE) events – a composite of symptomatic deep vein<lb/> thrombosis, any pulmonary embolism, and VTE-related death – was 1.2% in patients treated with semuloparin vs. 3.4% in a control group<lb/> treated with placebo (hazard ratio, 0.36; P less than .0001).<lb/> Benefits trended in favor of semuloparin for all components of the composite end point, including<lb/> any pulmonary embolism (odds ratio, 0.41) and VTE-related death (OR, 0.77), reported Dr. Daniel<lb/> J. George, who presented the paper on behalf of Dr. Giancarlo Agnelli of Perugia (Italy) University<lb/> at the annual meeting of the American Society of Clinical Oncology.<lb/> Although the incidence of clinically relevant bleeding was higher at 2.8% with semuloparin vs. 2%<lb/> for placebo, Dr. George added that a safety analysis found that the incidence of major bleeding was<lb/> similarly low, at 1.2% and 1.1%, respectively.</div>
+
+		</front>
+	</text>
+</tei>

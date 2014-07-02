@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000660"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Benutzerhandbuch<lb/> cifX-Karten Real-Time-Ethernet Installation, Bedienung und Hardwarebeschreibung<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<affiliation>Hilscher Gesellschaft für Systemautomation mbH<lb/></affiliation>
+	</byline>
+
+	<ptr>www.hilscher.com<lb/></ptr>
+
+	<idno>DOC060501UM22DE</idno>
+	
+	<note type="other"> | Revision 22 | Deutsch | </note>
+		
+	<date>2010-09</date> 
+	
+	<note type="other"> | Freigegeben | Öffentlich<lb/> Inhaltsverzeichnis<lb/> 2/277<lb/> cifX-Karten Real-Time-Ethernet | Installation, Bedienung und Hardwarebeschreibung<lb/></note> 
+	
+	<idno>DOC060501UM22DE</idno>
+	
+	<note type="other"> | Revision 22 | Deutsch | </note>
+		
+	<date>2010-09</date> 
+	
+	<note type="other"> | Freigegeben | Öffentlich</note>
+	
+	<note type ="copyright"><lb/> © Hilscher, 2006-2010<lb/></note>
+	
+	<note type="other">Inhaltsverzeichnis<lb/></note>
+
+	<div type="introduction">1 EINLEITUNG...............................................................................................................8<lb/> 1.1<lb/> Über das Benutzerhandbuch ......................................................................................8<lb/> 1.1.1<lb/> Pflicht zum Lesen des Handbuches .....................................................................9<lb/> 1.1.2<lb/> Änderungsübersicht..............................................................................................9</div>
+		</front>
+	</text>
+</tei>

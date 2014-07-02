@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei type="web">
+	<teiHeader>
+		<fileDesc xml:id="55113474"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Contact<lb/> Cart<lb/> No products in the cart.<lb/> Home Cleansers »<lb/> Exfoliators M oisturizers »<lb/> M asques »<lb/> Antioxidants Studio »<lb/> Spa »<lb/> Hair »<lb/> Kits »<lb/> Xpress »<lb/></note>
+
+	<docTitle>
+	<titlePart>Nutra Peptide Sensory Serum<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">For Men and Women<lb/> </note>
+
+	<ptr>skincaremember.com </ptr>
+
+	<note type="other">| Nutra Peptide Sensory Serum<lb/></note>
+
+	<ptr type="web">https://skincaremember.com/hair2/nutra-peptide-sensory-serum/<lb/></ptr>
+
+	<note type="page">1 of 3<lb/></note>
+
+	<date>10-04-2014 </date>
+
+	<note type="other">12:22</note>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013976"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>ISSN 0103-9741<lb/></idno>
+
+	<note type="other">Monografias em Ciência da Computação<lb/> n° 24/05<lb/></note>
+
+	<docTitle>
+	<titlePart>Proxy-based Adaptation<lb/> for Mobile Computing<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Markus Endler<lb/> Hana Rubinsztejn<lb/> Ricardo C. A. da Rocha<lb/> Vagner Sacramento<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Departamento de Informática<lb/> PONTIFÍCIA UNIVERSIDADE CATÓLICA DO RIO DE JANEIRO<lb/> </affiliation>
+	</byline>
+
+	<address>RUA MARQUÊS DE SÃO VICENTE, 225 -CEP 22453-900<lb/> RIO DE JANEIRO -BRASIL</address>
+
+		</front>
+	</text>
+</tei>

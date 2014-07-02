@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013574"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Authors:<lb/></note>
+
+	<byline>
+	<docAuthor>John Vollbrecht, Founder<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Interlink Networks, Inc.</affiliation>
+	</byline>
+
+	<address>5405 Data Court, Suite 300, Ann Arbor, MI 48108, </address>
+
+	<email>jrv@interlinknetworks.com<lb/></email>
+
+	<byline>
+	<docAuthor>Robert Moskowitz, Senior Technical Director<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>TruSecure Corporation,</affiliation>
+	</byline>
+
+	<address>15210 Sutherland Ave., Oak Park, MI 48237</address>
+
+	<email>, rgm@trusecure.com<lb/></email>
+
+	<docTitle>
+	<titlePart>Wireless LAN<lb/> Access Control<lb/> and Authentication<lb/> 802.11b Wireless Networking and<lb/> Why It Needs Authentication</titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

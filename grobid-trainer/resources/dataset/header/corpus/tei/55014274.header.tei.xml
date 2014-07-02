@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014274"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">1<lb/></note>
+
+	<docTitle>
+	<titlePart>A STUDY ON PROPERTIES OF FOAMED ASPHALT TREATED MIXES<lb/></titlePart>
+	</docTitle>
+
+	<date>Submission date: July 30, 2002<lb/></date>
+
+	<note type="other">Word count: 3,341 words with 5 tables and 8 figures<lb/></note>
+
+	<byline>
+	<docAuthor>Chui-Te Chiu, Ph.D.<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Chung Hua University, Department of Civil Engineering,</affiliation>
+	</byline>
+
+	<address>No. 30 Tung Shiang, Hsin Chu, 300, Taiwan.</address>
+
+	<phone>Tel:<lb/> (886-3)5186715. Fax: (886-3)5372188. </phone>
+
+	<email>ctc@chu.edu.tw<lb/></email>
+
+	<byline>
+	<docAuthor>Ming-Yung Huang<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Chung Hua University, Department of Civil Engineering,</affiliation>
+	</byline>
+
+	<address>No. 30 Tung Shiang, Hsin Chu, 300, Taiwan.</address>
+
+	<phone>Tel:<lb/> (886-3)5186715. Fax: (886-3)5372188.</phone>
+
+		</front>
+	</text>
+</tei>

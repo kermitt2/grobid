@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014864"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<ptr type="web">www.barco.com<lb/></ptr>
+
+	<docTitle>
+	<titlePart>XLM HD30<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">The XLM is the most powerful projector available on the market today capa-<lb/>ble of delivering high-resolution pictures on screens up to 12m wide.<lb/> Leading the way in wide-screen projection, the XLM HD30 can be used for<lb/> multiple window wide-screen presentations without the need for an exter-<lb/>nal image processor. Pre-programmed screen layouts can be stored in the<lb/> projector memory. A wide array of inputs omits the need for external<lb/> switchers.<lb/> The modular structure of the lamp house and the electronics allows for easy<lb/> maintenance cost and lowers operational costs.<lb/> Applications range from analysis and decision making to product develop-<lb/>ment and design. The XLM also finds its way to impressive presentation<lb/> rooms, corporate lobbies and boardrooms.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Hans</forename>
+								<middlename>R</middlename>.
+								<surname>Waterham</surname>,
+							<lb/>
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>Janet</forename>
+								<surname>Koster</surname> ,
+							<lb/>
+								<marker>2</marker>
+							</persName>
+							<persName>
+								<forename>Gerrit</forename>
+								<middlename>Jan</middlename>
+								<surname>Romeijn</surname> ,
+							<lb/>
+								<marker>2</marker>
+							</persName>
+							<persName>
+								<forename>Raoul</forename>
+								<middlename>C</middlename>.
+								<middlename>M</middlename> .
+								<surname>Hennekam</surname>,
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>Peter</forename>
+								<surname>Vreken</surname> ,
+							<lb/>
+								<marker>2</marker>
+							</persName>
+							<persName>
+								<forename>Hans</forename>
+								<middlename>C</middlename> .
+								<surname>Andersson</surname> ,
+							<lb/>
+								<marker>3</marker>
+							</persName>
+							<persName>
+								<forename>David</forename>
+								<middlename>R</middlename>.
+								<surname>FitzPatrick</surname>,
+							<lb/>
+								<marker>4</marker>
+							</persName>
+							<persName>
+								<forename>Richard</forename>.
+								<middlename>I</middlename>.
+								<surname>Kelley</surname>,
+								<marker>5</marker>and
+							</persName>
+							<persName>
+								<forename>Ronald</forename>
+								<middlename>J</middlename> .
+								<middlename>A</middlename> .
+								<surname>Wanders</surname>
+								<marker>1 ,2</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

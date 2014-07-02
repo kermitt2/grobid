@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014124"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Is reduction of the sulfonated tetrazolium 2,3-bis<lb/> (2-methoxy-4-nitro-5-sulfophenyl)-2-tetrazolium 5-carboxanilide<lb/> a reliable measure of intracellular superoxide production?<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Ludmil Benov<lb/> a, * and Irwin Fridovich<lb/> b<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a The Department of Biochemistry, Faculty of Medicine, Kuwait University,</affiliation>
+	</byline>
+
+	<address>P.O. Box 24923, Safat 13110, Kuwait<lb/></address>
+
+	<byline>
+	<affiliation>b The Department of Biochemistry, Duke University Medical Center,</affiliation>
+	</byline>
+
+	<address>Durham, NC 27710, USA<lb/></address>
+
+	<note type="submission">Received 5 June 2002<lb/></note>
+
+	<div type="abstract">Abstract<lb/> The sulfonated tetrazolium 2,3-bis (2-methoxy-4-nitro-5-sulfophenyl)-2-tetrazolium 5-carboxanilide (XTT) is advantageous in<lb/> that it yields a water-soluble formazan, unlike most other available tetrazoliums. XTT is reducible by superoxide, as are other<lb/> tetrazoliums, but is not directly reduced by xanthine oxidase plus xanthine or by glucose oxidase plus glucose. This led to the<lb/> suggestion that XTT reduction might serve as a reliable index of intracellular O<lb/> À</div>
+
+		</front>
+	</text>
+</tei>

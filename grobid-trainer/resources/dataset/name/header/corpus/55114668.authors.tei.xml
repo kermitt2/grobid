@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Kurt</forename>
+								<surname>Sandkuhl</surname>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>Alexander</forename>
+								<surname>Smirnov</surname>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>Vladimir</forename>
+								<surname>Mazalov</surname>
+								<marker>3</marker> ,
+							</persName>
+							<persName>
+								<forename>Vladimir</forename>
+								<surname>Vdovitsyn</surname>
+								<marker>3</marker> ,
+							</persName>
+							<persName>
+								<forename>Vladimir</forename>
+								<surname>Tarasov</surname>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>Andrew</forename>
+								<surname>Krizhanovsky</surname>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>Feiyu</forename>
+								<surname>Lin</surname>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>Evgeny</forename>
+								<surname>Ivashko</surname>
+								<marker>3</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

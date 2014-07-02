@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011921"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>_J<lb/> Clin Pathol 1994;47:38-42<lb/></reference>
+
+	<docTitle>
+	<titlePart>Polyploidy in non-neoplastic tissues<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>S Biesterfeld, K Gerres, G Fischer-Wein, A Bocking<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institute of Pathology,<lb/> University of<lb/> Technology,</affiliation>
+	</byline>
+
+	<address>Aachen,<lb/> Germany<lb/></address>
+
+	<byline>
+	<docAuthor>S Biesterfeld<lb/> K Gerres<lb/> G Fischer-Wein<lb/> A Bocking<lb/></docAuthor>
+	</byline>
+
+	<note type="other">Correspondence to:<lb/></note>
+
+	<byline>
+	<note type="other">Dr Alfred Bocking,</note>
+	</byline>
+
+	<byline>
+	<affiliation>Institut<lb/> fur Pathologie der RWTH<lb/> Aachen,</affiliation>
+	</byline>
+
+	<address>Pauwelsstr. 30,<lb/> D-52057 Aachen, Germany<lb/></address>
+
+	<note type="other">Accepted for publication<lb/></note>
+
+	<date>29 July 1993<lb/></date>
+
+	<div type="abstract">Abstract Aim-To investigate the prevalence and<lb/> amount of polyploidy in fine needle aspi-<lb/>ration specimens of the liver, urinary<lb/> cytospin preparations, and cytospin<lb/> preparations from pleural and peritoneal<lb/> fluid.<lb/> Methods-Celis from 44 liver smears, 48<lb/> urine specimens, and 46 pleural and<lb/> peritoneal aspirations were examined.<lb/> After Feulgen restaining the DNA con-<lb/>tent of 100 randomly selected nuclei was<lb/> determined using a TAS-plus image<lb/> analysis system, combined with an auto-<lb/>mated microscope.<lb/> Results-Polyploidy was observed up to<lb/> 16c in the liver, and up to 8c in urothe-<lb/>lium and mesothelium. Sixty eight per<lb/> cent of the liver aspirates contained poly-<lb/>ploid nuclei. The rate in urothelium was<lb/> 20&apos;8% and in mesothelium 6-5%.<lb/> Conclusions-Polyploidy in the liver may<lb/> be interpreted as being associated with<lb/> tissue differentiation, but the findings in<lb/> urothelium and mesothelium remain of<lb/> unknown importance.<lb/></div>
+
+	<reference>(3 Clin Pathol 1994;47:38-42)<lb/></reference>
+
+		</front>
+	</text>
+</tei>

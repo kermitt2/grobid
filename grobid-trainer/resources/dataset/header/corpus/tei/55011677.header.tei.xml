@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011677"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>AMD64 Virtualization<lb/> Codenamed &quot;Pacifica&quot; Technology<lb/> Secure Virtual Machine<lb/> Architecture Reference Manual<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Publication No.<lb/> Revision Date<lb/> 33047 3.01<lb/></note>
+
+	<date>May 2005<lb/></date>
+
+	<byline>
+	<affiliation>Advanced Micro Devices</affiliation>
+	</byline>
+		
+		</front>
+	</text>
+</tei>

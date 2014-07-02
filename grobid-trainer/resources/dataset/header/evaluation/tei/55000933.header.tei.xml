@@ -1,0 +1,61 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000933"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Asian J. Research Chem. 2(2): April.-June, 2009<lb/></reference>
+
+	<note type="page">210<lb/></note>
+
+	<idno type="issn">ISSN 0974-4169<lb/></idno>
+
+	<ptr type="web">www.ajrconline.org<lb/></ptr>
+
+	<note type="other">RESEARCH ARTICLE<lb/></note>
+
+	<docTitle>
+	<titlePart>Simultaneous Estimation of Lansoprazole and Domperidone in Combined<lb/> Dosage Form by RP-HPLC<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Bhavna Patel<lb/> 1<lb/> , Zarna Dedania, Ronak Dedania, Chetan Ramolia<lb/> 2<lb/> , G Vidya Sagar and Mehta RS<lb/> 3<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Pharmaceutical Analysis, Veerayatan Institute of Pharmacy, Kutch,</affiliation>
+	</byline>
+
+	<address>Gujarat, India<lb/></address>
+
+	<byline>
+	<affiliation>1 Ramanbhai Patel College of Pharmacy,</affiliation>
+	</byline>
+
+	<address>Changa, Gujarat, India<lb/></address>
+
+	<byline>
+	<affiliation>2 CRO,</affiliation>
+	</byline>
+
+	<address>Veeda, Ahmedabad, Gujarat, India<lb/></address>
+
+	<byline>
+	<affiliation>3 A.R. College of Pharmacy,</affiliation>
+	</byline>
+
+	<address>Vallabh Vidhyanagar, Gujarat, India<lb/></address>
+
+	<email>*Corresponding Author E-mail: zaroo229@yahoo.co.in<lb/></email>
+
+	<div type="abstract">ABSTRACT<lb/> A RP-HPLC method has developed for simultaneous estimation of lansoprazole and domperidone in combined<lb/> capsule dosage form. Lansoprazole is a proton pump inhibitor and used in the treatment of duodenal and gastric ulcers<lb/> and gastroesophageal reflux disease (GERD), a condition in which the acid in the stomach washes back up into the<lb/> esophagus. Sometimes lansoprazole is used in combination with antibiotics to treat ulcers associated with infection<lb/> caused by the H. pylori bacteria, gastro-oesophageal reflux disease (GERD), peptic ulcer and Zollinger-Ellison<lb/> syndrome. Domperidone is indicated for treating symptoms associated with upper gastrointestinal motility disorders<lb/> caused by chronic and sub acute gastritis. It is a gastrointestinal emptying (delayed) adjunct, a peristaltic stimulant and<lb/> exhibit antiemetic properties.<lb/> The mobile phase used was a combination of Acetonitrile: Methanol (81:19). The detection of the combined dosage<lb/> form was carried out at 280 nm and a flow rate employed was 1 ml/min. The retention time for lansoprazole and<lb/> domperidone has found to be 2.8 and 1.57 min respectively. Linearity was obtained in the concentration range of 8-24<lb/> µg/ml of lansoprazole and 8-24 µg/ml of domperidone with a correlation coefficient of 0.9977 and 0.9992. Detector<lb/> consists of photodiode array detector; the reversed phase column used was RP-C 18 (2.27µm size, 250 mm´4.6 mm i.d.)<lb/> at ambient temperature. The developed method was validated according to ICH guidelines and values of accuracy,<lb/> precision and other statistical analysis were found to be in good accordance with the prescribed values. Thus the<lb/> proposed method was successfully applied for simultaneous determination of domperidone and lansoprazole in routine<lb/> analysis.<lb/></div>
+
+	<keyword>KEY WORDS: Simultaneous Estimation; RP-HPLC; Lansoprazole(LAN); Domperidone(DOM)<lb/></keyword>
+
+	<div type="introduction">INTRODUCTION:</div>
+
+		</front>
+	</text>
+</tei>

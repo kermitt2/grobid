@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008686"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Implementing Row-and Cell-Level Security<lb/> in Classified Databases Using SQL Server<lb/> 2005<lb/> SQL Server Technical Article<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Writers: Art Rask, Don Rubin, and Bill Neumann<lb/></docAuthor>
+	</byline>
+
+	<date>Published: April 2005<lb/></date>
+
+	<note type="submission">Updated: September 2005<lb/> Applies to: SQL Server 2005<lb/></note>
+
+	<div type="abstract">Summary: This paper describes how SQL Server 2005 can be used to support row-and<lb/> cell-level security (RLS/CLS). The examples provided in this white paper show how RLS<lb/> and CLS can be used to meet classified database security requirements.</div>
+
+		</front>
+	</text>
+</tei>

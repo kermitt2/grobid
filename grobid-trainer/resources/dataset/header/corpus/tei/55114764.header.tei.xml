@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<tei type="web">
+	<teiHeader>
+		<fileDesc xml:id="55114764"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Subject: Regression testing<lb/> </titlePart>
+	</docTitle>
+
+	<date>Date: Sat, 23 Jan 1999 </date>
+
+	<note type="other">06:16:38 -0500<lb/> To: </note>
+
+	<ptr>year2000-discuss@year2000.com<lb/></ptr>
+
+		</front>
+	</text>
+</tei>
+ 

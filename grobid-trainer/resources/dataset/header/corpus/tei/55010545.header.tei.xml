@@ -1,0 +1,203 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010545"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<date>September 2010<lb/></date>
+
+	<byline>
+	<docAuthor>Richard van Nee,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Qualcomm<lb/></affiliation>
+	</byline>
+
+	<note type="other">Slide 1<lb/></note>
+
+	<idno>doc.: IEEE 802.11-10/1052r0<lb/></idno>
+
+	<note type="other">Submission<lb/></note>
+
+	<docTitle>
+	<titlePart>VHT-SIG-A and VHT-SIG-B Field Structure<lb/></titlePart>
+	</docTitle>
+
+	<date>Date: 2010-09-09<lb/></date>
+
+	<note type="other">Name Affiliations Address<lb/> Phone email<lb/></note>
+
+	<byline>
+	<docAuthor>Richard van Nee<lb/></docAuthor>
+	</byline>
+
+	<affiliation>Qualcomm </affiliation>
+
+	<address>Straatweg 66-S, 3621 BR Breukelen, The<lb/> Netherlands<lb/></address>
+
+	<phone>+31 346 259650<lb/> </phone>
+
+	<email>rvannee@qualcomm.com<lb/></email>
+
+	<byline>
+	<docAuthor>Allert van Zelst<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Qualcomm</affiliation>
+	</byline>
+
+	<address>Straatweg 66-S, 3621 BR Breukelen, The<lb/> Netherlands<lb/></address>
+
+	<phone>+31 346 259663<lb/> </phone>
+
+	<email>allert@qualcomm.com<lb/></email>
+
+	<byline>
+	<docAuthor>Hemanth Sampath<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Qualcomm</affiliation>
+	</byline>
+
+	<address>5775 Morehouse Drive,<lb/> San Diego, CA, 92121, USA<lb/></address>
+
+	<email>hsampath@qualcomm.com<lb/></email>
+
+	<byline>
+	<docAuthor>VK Jones<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Qualcomm</affiliation>
+	</byline>
+
+	<address>3105 Kifer Road,<lb/> Santa Clara, CA, 95051, USA<lb/></address>
+
+	<email>vkjones@qualcomm.com<lb/></email>
+
+	<byline>
+	<docAuthor>Youhan Kim<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Atheros</affiliation>
+	</byline>
+
+	<address>5480 Great America Pkwy<lb/> Santa Clara, CA 95054, USA<lb/></address>
+
+	<phone>+1-408-830-5835<lb/> </phone>
+
+	<email>youhan.kim@atheros.com<lb/></email>
+
+	<byline>
+	<docAuthor>Joshua Zhao<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Atheros</affiliation>
+	</byline>
+
+	<address>5480 Great America Pkwy<lb/> Santa Clara, CA 95054, USA<lb/></address>
+
+	<email>joshua.zhao@atheros.com<lb/></email>
+
+	<byline>
+	<docAuthor>Vinko Erceg<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Broadcom</affiliation>
+	</byline>
+
+	<address>16340 W Bernardo Dr;<lb/> San Diego CA 92127, USA<lb/></address>
+
+	<email>verceg@broadcom.com<lb/></email>
+
+	<byline>
+	<docAuthor>Joonsuk Kim<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Broadcom</affiliation>
+	</byline>
+
+	<address>Sunnyvale, California 94086<lb/></address>
+
+	<email>joonsuk@broadcom.com<lb/></email>
+
+	<byline>
+	<docAuthor>Eldad Perahia<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Intel</affiliation>
+	</byline>
+
+	<address>2111 NE 25<lb/> th Ave<lb/> Hillsboro, OR 97124, USA<lb/></address>
+
+	<email>eldad.perahia@intel.com<lb/></email>
+
+	<byline>
+	<docAuthor>Raja Banerjea<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Marvell</affiliation>
+	</byline>
+
+	<address>5488 Marvell Lane<lb/> Santa Clara, CA 95054, USA<lb/></address>
+
+	<email>rajab@marvell.com<lb/></email>
+
+	<byline>
+	<docAuthor>Minho Cheong<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>ETRI</affiliation>
+	</byline>
+
+	<address>161 Gajeong-dong, Yuseong-gu<lb/> Daejeon, Korea<lb/></address>
+
+	<phone>+82 42 860 5635<lb/> </phone>
+
+	<email>minho@etri.re.kr<lb/></email>
+
+	<byline>
+	<docAuthor>Daewon Lee<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>LG</affiliation>
+	</byline>
+
+	<address>533, Hogye-1dong, Dongan-Gu<lb/> Anyang-Shi, Kyungki-Do<lb/> 431-749, Korea<lb/></address>
+
+	<phone>+82-31-450-7897<lb/> </phone>
+
+	<email>daewon.lee@lge.com<lb/></email>
+
+	<byline>
+	<docAuthor>Youngsoo Kim<lb/></docAuthor>
+	</byline>
+ 
+	<byline>
+	<affiliation>Samsung</affiliation>
+	</byline>
+
+	<address>Mt. 14-1 Nongseo-Ri, Giheung-Eup<lb/> Yongin-Si, Gyeonggi-Do, Korea 449-712<lb/></address>
+
+	<phone>+82-31-280-9614<lb/> </phone>
+
+	<email>kimyoungsoo@samsung.com<lb/></email>
+
+	<note type="other">Authors:</note>
+
+		</front>
+	</text>
+</tei>

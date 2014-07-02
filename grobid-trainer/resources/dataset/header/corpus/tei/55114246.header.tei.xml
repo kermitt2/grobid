@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei type="white-paper">
+	<teiHeader>
+		<fileDesc xml:id="55114246"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<affiliation>IBM Software<lb/> Telecommunications<lb/> </affiliation>
+
+	<note type="other">Thought Leadership White Paper<lb/></note>
+
+	<docTitle>
+	<titlePart>Smarter wireless networks<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Add intelligence to the mobile network edge<lb/> 2 Smarter wireless networks<lb/></note>
+
+		</front>
+	</text>
+</tei>

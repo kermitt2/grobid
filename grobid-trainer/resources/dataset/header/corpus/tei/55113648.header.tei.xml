@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55113648"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note>AIAA 2002-1861<lb/> </note>
+
+	<docTitle>
+	<titlePart>APSK CODED MODULATION SCHEMES FOR NONLINEAR SATELLITE CHANNELS<lb/> WITH HIGH POWER AND SPECTRAL EFFICIENCY<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Riccardo De Gaudenzi,<lb/> £ Alfonso Martinez Vicente, Beatrice Ponticelli<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>European Space Agency ESTEC,</affiliation>
+	</byline>
+
+	<address>Keplerlaan 1, 2200 AG Noordwijk, The Netherlands<lb/></address>
+
+	<byline>
+	<docAuthor>Albert Guillén i abregas<lb/> Ý<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institut EURECOM,</affiliation>
+	</byline>
+
+	<address>2229 Route des Cretes, 06904 Sophia Antipolis, France<lb/></address>
+
+	<div type="abstract">A new class of 16-ary Amplitude Phase Shift Keying<lb/> (APSK) coded modulations deemed double-ring PSK mod-<lb/>ulations best suited for (satellite) nonlinear channels is<lb/> proposed. Constellation parameters optimization has been<lb/> based on geometric and information-theoretic considera-<lb/>tions. Furthermore, pre-and post-compensation techniques<lb/> to reduce the nonlinearity impact have been examined.<lb/> Digital timing clock and carrier phase have been derived<lb/> and analyzed for a Turbo coded version of the same new<lb/> modulation scheme. Finally, the performance of state-of<lb/> the art Turbo coded modulation for this new 16-ary digi-<lb/>tal modulation has been investigated and compared to the<lb/> known TCM schemes. It is shown that for the same coding<lb/> scheme, double-ring APSK modulation outperforms clas-<lb/>sical 16-QAM and 16-PSK over a typical satellite nonlin-<lb/>ear channel due to its intrinsic robustness against the High<lb/> Power Amplifier (HPA) nonlinear characteristics. The new<lb/> modulation is shown to be power-and spectrally-efficient,<lb/> with interesting applications to satellite communications.<lb/></div>
+
+		</front>
+	</text>
+</tei>

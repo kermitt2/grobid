@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Fritz</forename>
+								<middlename>K</middlename>.
+								<surname>Winkler</surname>,
+							</persName>
+							<persName>
+								<forename>David</forename>
+								<middlename>W</middlename>.
+								<surname>Banner</surname>,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Christian</forename>
+								<surname>Oefner</surname> ,
+							</persName>
+							<persName>
+								<forename>Demetrius</forename>
+								<surname>Tsernoglou1</surname> ,
+							</persName>
+							<persName>
+								<forename>Raymond</forename>
+								<middlename>S</middlename> .
+								<surname>Brown2</surname>,
+							</persName>
+							<persName>
+								<forename>Stephen</forename>
+								<middlename>P</middlename> .
+								<surname>Heathman3</surname>,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Richard</forename>
+								<middlename>K</middlename>.
+								<surname>Bryan4</surname>,
+							</persName>
+							<persName>
+								<forename>Philip</forename>
+								<middlename>D</middlename> .
+								<surname>Martin5</surname>,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Kyriakos</forename>
+								<surname>Petratos6</surname> and
+							</persName>
+							<persName>
+								<forename>Keith</forename>
+								<middlename>S</middlename> .
+								<surname>Wilson7</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

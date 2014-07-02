@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013309"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Chemical synthesis of GDP-l-galactose and<lb/> analogues<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Hayley Binch, Katja Stangier, Joachim Thiem*<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institut fuÈr Organische Chemie, UniversitaÈt Hamburg,</affiliation>
+	</byline>
+
+	<address>Martin-Luther-King-Platz 6,<lb/> D-20146 Hamburg, Germany<lb/></address>
+
+	<note type="submission">Received 10 June 1997; accepted in revised form 18 November 1997<lb/></note>
+
+	<div type="abstract">Abstract<lb/> Succinct syntheses for l-galactose, 3-deoxy-l-xylo-hexose (3-deoxy-l-galactose), 6-deoxy-l-<lb/>galactopyranose (l-fucose) and 3,6-dideoxy-l-xylo-hexose (3,6-dideoxy-l-galactose) have been<lb/> developed starting from commercially available l-galactono-1,4-lactone. l-Galactose and variants<lb/> were then converted to the guanosine diphosphate derivatives, via the formation of the anomeric<lb/> phosphates and coupling to guanosine monophosphate morpholidate. #</div>
+
+	<note type="copyright">&#169;1998 Elsevier Science<lb/> Ltd. All rights reserved<lb/></note>
+
+	<keyword>Keywords: l-Galactono-1,4-lactone; GDP--l-galactose and analogues; 3-Deoxy-l-galactose; 3,6-Dideoxy-l-<lb/>galactose<lb/>
+	</keyword>
+
+		</front>
+	</text>
+</tei>

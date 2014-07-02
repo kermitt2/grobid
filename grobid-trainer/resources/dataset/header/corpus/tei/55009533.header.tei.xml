@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009533"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">DVB Interim Specification<lb/></note>
+
+	<docTitle>
+	<titlePart>IP Datacast Baseline Specification;<lb/> Specification of Interface I_MT<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">DVB Document A080<lb/></note>
+
+	<date>April 2004<lb/></date>
+
+	<idno>TM 3026 Rev. 1<lb/> A080 SB 1327<lb/> TM-UMTS 1007 Rev. 1<lb/></idno>
+
+	<note type="page">2<lb/></note>
+
+		</front>
+	</text>
+</tei>

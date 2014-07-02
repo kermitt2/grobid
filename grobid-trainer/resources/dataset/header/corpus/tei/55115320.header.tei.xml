@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei type="web">
+	<teiHeader>
+		<fileDesc xml:id="55115320"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">+<lb/></note>
+
+	<docTitle>
+	<titlePart>EltaMD SPF 31 UV Broad<lb/> Spectrum Lip Balm, 0.28 Fluid<lb/> Ounce<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>by EltaMD<lb/></docAuthor>
+	</byline>
+
+	<note type="other">12 customer reviews<lb/> Price: $10.00 &amp; FREE Shipping on orders over<lb/> $35. Details<lb/> In Stock.<lb/> Ships from and sold by Amazon.com. Gift-wrap<lb/> available.<lb/></note>
+
+		</front>
+	</text>
+</tei>

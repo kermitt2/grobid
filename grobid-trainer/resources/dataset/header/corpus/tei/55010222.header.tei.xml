@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010222"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Immunity, Vol. 23, 461–464, November, 2005,</reference>
+
+	<note type="copyright">Copyright &#169;2005 by Elsevier Inc.</note>
+
+	<idno type="DOI">DOI 10.1016/j.immuni.2005.10.004<lb/></idno>
+
+	<docTitle>
+	<titlePart>Previews<lb/> An IL-1 Family Member Requires<lb/> Caspase-1 Processing and<lb/> Signals through the ST2 Receptor<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">Activation of ST2, an orphan member of the IL-1 recep-<lb/>tor family for 16 years, drives T helper type 2 (T H 2) re-<lb/>sponses. The cytokine IL-33 is the specific ligand for<lb/> ST2. IL-33 recapitulates much of the existing data that<lb/> ST2 promotes T H 2-type responses. The caspase-1<lb/> processing of precursor IL-33 provides a therapeutic<lb/> target to control allergic diseases.<lb/></div>
+
+		</front>
+	</text>
+</tei>

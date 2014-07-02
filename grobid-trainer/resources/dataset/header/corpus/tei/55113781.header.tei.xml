@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei type="master-thesis">
+	<teiHeader>
+		<fileDesc xml:id="55113781"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Realizing and Implementing<lb/> Location-based Access Control<lb/> Policies<lb/></titlePart>
+	</docTitle>
+
+	<note type="degree">Master Thesis<lb/></note>
+
+	<byline>
+	<docAuthor>Daniela Meier<lb/></docAuthor>
+	</byline>
+
+	<email>daniela.meier@alumni.ethz.ch<lb/></email>
+
+	<date>Wednesday 25<lb/> th<lb/>	September, 2013<lb/></date>
+
+	<note type="other">Advisers:<lb/> >Prof. Dr. Srdjaň<lb/> Capkun Elli Androulaki<lb/> Claudio Marforio<lb/> Claudio Soriente<lb/></note>
+
+	<byline>
+	<affiliation>Department of Computer Science<lb/> </affiliation>
+	</byline>
+
+	<address>ETH Zürich</address>
+
+		</front>
+	</text>
+</tei>

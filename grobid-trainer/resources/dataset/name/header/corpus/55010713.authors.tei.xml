@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Andrew</forename>
+								<middlename>G</middlename>.
+								<surname>Gum</surname>,
+								<marker>[b]</marker>
+							</persName>
+							<persName>
+								<forename>Thomas</forename>
+								<surname>Kappes-Roth</surname>,
+								<marker>[b]</marker> and
+							</persName>
+							<persName>
+								<forename>Herbert</forename>
+								<surname>Waldmann</surname>
+								<marker>* [a]</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

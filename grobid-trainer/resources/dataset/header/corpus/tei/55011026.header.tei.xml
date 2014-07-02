@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011026"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<ptr>tuaw.com<lb/></ptr>
+
+	<docTitle>
+	<titlePart>Diptic is a delightful camera app for arranging<lb/> and combining photos<lb/></titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

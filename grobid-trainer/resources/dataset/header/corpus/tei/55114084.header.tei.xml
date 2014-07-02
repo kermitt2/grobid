@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei type="phd-thesis">
+	<teiHeader>
+		<fileDesc xml:id="55114084"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Beitrag zur Stabilität und Automatisierung von<lb/> CFK-Produktionsprozessen<lb/></titlePart>
+	</docTitle>
+
+	<degree>DISSERTATION<lb/> zur Erlangung des Grades eines<lb/> Doktor-Ingenieurs<lb/> vorgelegt von<lb/> Dipl.-Ing. Dieter Meiners<lb/> aus Nordenham<lb/> Genehmigt von der<lb/></degree>
+	
+	<byline>	
+	<affiliation>Fakultät für Natur-und Materialwissenschaften<lb/> der Technischen Universität Clausthal<lb/></affiliation>
+	</byline>
+
+	<date>Tag der mündlichen Prüfung<lb/> 30.11.2007</date>
+
+		</front>
+	</text>
+</tei>

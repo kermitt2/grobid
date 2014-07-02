@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Jeremy</forename>
+								<middlename>A</middlename>.
+								<surname>Freeman</surname>,
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>Michael</forename>
+								<middlename>E</middlename>.
+								<surname>Ohl</surname>,
+								<marker>2</marker> and
+							</persName>
+							<persName>
+								<forename>Samuel</forename>
+								<middlename>I</middlename>.
+								<surname>Miller</surname>
+								<marker>1,2,3</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

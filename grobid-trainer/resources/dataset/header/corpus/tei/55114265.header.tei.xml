@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55114265"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">4<lb/> </note>
+
+	<note type="other">Oilfield Review<lb/></note>
+
+	<docTitle>
+	<titlePart>Subsea Development from Pore to Process<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Amin Amin<lb/> Mark Riding<lb/> Randy Shepler<lb/> Eric Smedstad<lb/></docAuthor>
+	</byline>
+
+	<address>Rosharon, Texas, USA<lb/></address>
+
+	<byline>
+	<docAuthor>John Ratulowski<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Shell Global Solutions (US Inc.)<lb/></affiliation>
+	</byline>
+
+	<address>Houston, Texas<lb/></address>
+ 
+	<note type="other">For help in preparation of this article, thanks to Hussein<lb/> Alboudwarej, Moin Muhammad and Shawn Taylor,<lb/> Edmonton,  Alberta, Canada;  Kunal Dutta-Roy, James Garner<lb/> and John Kerr,  Rosharon,  Texas;  and Lorne Simmons,<lb/> Sugar Land,  Texas.<lb/> </note>
+
+	<keyword>CHDT (Cased Hole Dynamics Tester), FloWatcher,<lb/> LFA (Live Fluid Analyzer for MDT tool), MDT (Modular<lb/> Formation Dynamics Tester), MultiSensor, OCM (Oil-Base<lb/> Contamination Monitor), OFA (Optical Fluid Analyzer),<lb/> Oilphase-DBR, PhaseWatcher, PIPESIM, Sensa, Vx,<lb/> WellWatcher and XLift are marks of Schlumberger.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

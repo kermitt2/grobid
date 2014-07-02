@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei type="technical-report">
+	<teiHeader>
+		<fileDesc xml:id="55115516"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note>ETSI TS 136 211 V8.3.0</note>
+
+	<date>(2008-11)<lb/></date>
+
+	<note type="other">Technical Specification<lb/></note>
+
+	<docTitle>
+	<titlePart>LTE;<lb/> Evolved Universal Terrestrial Radio Access (E-UTRA);<lb/> Physical channels and modulation<lb/> (3GPP TS 36.211 version 8.3.0 Release 8)</titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

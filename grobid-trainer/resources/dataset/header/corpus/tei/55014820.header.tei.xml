@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014820"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<affiliation>Department of Infectious Medicine, Section for Virology<lb/> Sahlgrenska Academy<lb/></affiliation>
+	</byline>
+
+	<docTitle>
+	<titlePart>Functions of glycoprotein G of herpes simplex virus type 2<lb/> </titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Staffan Görander<lb/></docAuthor>
+	</byline>
+		
+	<date>2010</date>
+
+		</front>
+	</text>
+</tei>

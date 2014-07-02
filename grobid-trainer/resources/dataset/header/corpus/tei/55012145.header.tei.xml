@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012145"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">LevenbergMarquardt algorithm<lb/> </note>
+
+	<note type="page">1<lb/></note>
+
+	<docTitle>
+	<titlePart>Levenberg–Marquardt algorithm<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">In mathematics and computing, the Levenberg–Marquardt algorithm (LMA)<lb/> [1] provides a numerical solution to
+	<lb/> the problem of minimizing a function, generally nonlinear, over a space of parameters of the function. These<lb/> minimization problems arise especially in least squares curve fitting and nonlinear programming.<lb/> The LMA interpolates between the Gauss–Newton algorithm (GNA) and the method of gradient descent. The LMA<lb/> is more robust than the GNA, which means that in many cases it finds a solution even if it starts very far off the final<lb/> minimum. For well-behaved functions and reasonable starting parameters, the LMA tends to be a bit slower than the<lb/> GNA. LMA can also be viewed as Gauss–Newton using a trust region approach.<lb/> The LMA is a very popular curve-fitting algorithm used in many software applications for solving generic<lb/> curve-fitting problems. However, the LMA finds only a local minimum, not a global minimum.<lb/> </div>
+
+	<div type="introduction">The problem<lb/> The primary application of the Levenberg–Marquardt algorithm is in the least squares curve fitting problem: given a<lb/> set of m empirical datum pairs of independent and dependent variables, (x i<lb/> , y i<lb/> ), optimize the parameters β of the<lb/> model curve f(x,β) so that the sum of the squares of the deviations<lb/> becomes minimal.<lb/> The solution<lb/> Like other numeric minimization algorithms, the Levenberg–Marquardt algorithm is an iterative procedure. To start<lb/> a minimization, the user has to provide an initial guess for the parameter vector, β. In cases with only one minimum,<lb/> an uninformed standard guess like β<lb/> T =(1,1,...,1) will work fine; in cases with multiple minima, the algorithm<lb/> converges only if the initial guess is already somewhat close to the final solution.<lb/> In each iteration step, the parameter vector, β, is replaced by a new estimate, β + δ. To determine δ, the functions<lb/> are approximated by their linearizations<lb/> where<lb/> is the gradient (row-vector in this case) of f with respect to β.<lb/> At its minimum, the sum of squares,<lb/> , the gradient of with respect to δ will be zero. The above first-order<lb/> approximation of<lb/> gives<lb/> .<lb/> Or in vector notation,<lb/> .<lb/> Taking the derivative with respect to δ and setting the result to zero gives:<lb/> where is the Jacobian matrix whose i<lb/> th row equals<lb/> , and where and are vectors with i<lb/> th component<lb/> and , respectively. This is a set of linear equations which can be solved for δ.</div>
+
+		</front>
+	</text>
+</tei>

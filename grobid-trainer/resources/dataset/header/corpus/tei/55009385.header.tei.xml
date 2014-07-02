@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009385"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>2D X-Ray Tomographic Reconstruction From Few<lb/> Number of Projections And 3D Perspectives :<lb/> Applications of Compressed Sensing Theory<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Han WANG * Samuel LEGOUPIL Laurent DESBAT<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Abstract—The X-Ray tomographic reconstruction from<lb/> few number of projections presents concrete interests in<lb/> both industrial and medical imaging applications. How-<lb/>ever, the problem is extremely ill-posed and most classical<lb/> reconstruction algorithms fail in this situation. In a general<lb/> signal sampling point of view, the questions are : 1) what<lb/> kind of object can be reconstructed with extremely low<lb/> sampling rate? 2) how to reconstruct it? The emerging<lb/> Compressed Sensing(CS) theory is a prodigious contri-<lb/>bution to the signal processing community and answers<lb/> these questions in a rigorous way. Besides its enormous<lb/> impact on the others domains, its applicability to the<lb/> X-Ray tomography problem seems still unclear. In this<lb/> article we present a preliminary study on this subject. We<lb/> introduce some basic notions and results of this theory and<lb/> demonstrate, through a series of numerical experiments,<lb/> the CS system&apos;s capability of reconstruction using few<lb/> number of projections.<lb/></div>
+
+		</front>
+	</text>
+</tei>

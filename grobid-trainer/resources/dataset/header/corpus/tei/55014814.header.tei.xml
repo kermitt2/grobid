@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014814"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Handbook for Proper Maintenance and Use<lb/> of the High Vacuum System<lb/></titlePart>
+	</docTitle>
+
+	<date>V 1.0, Updated 2004<lb/></date>
+
+		</front>
+	</text>
+</tei>

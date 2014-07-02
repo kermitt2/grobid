@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55115478"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">EDUCATION PROGRAM<lb/> CERTIFIED ELEVATOR TECHNICIAN<lb/> NATIONAL ASSOCIATION<lb/> OF ELEVATOR CONTRACTORS<lb/> ®<lb/> Approved by NAEC<lb/> Approved by NAESA<lb/> International<lb/> Approved by QEI Services, Inc.<lb/></note>
+
+	<date>September 2010</date>
+
+	<note type="other">| ELEVATOR WORLD | 129<lb/></note>
+
+	<note type="other">Continuing Education: Inspection<lb/> Learning Objectives<lb/></note>
+	
+	<div type="abstract">After reading this article, you should<lb/> have learned that:<lb/> N The use of alternative testing<lb/> systems have been in use for<lb/> two decades in Europe.<lb/> N The equation F = ma, when m<lb/> (mass) and a (acceleration) can<lb/> be directly measured, can be<lb/> used to accurately calculate F<lb/> ( f ).<lb/> N Accelerometers in common use<lb/> today are ridiculously sensitive<lb/> and accurate. With accurate<lb/> data, near-absolute results can<lb/> be calculated and verified.<lb/> N The results from alternative<lb/> testing systems successfully<lb/> challenge the notion that test<lb/> weights are necessary.<lb/> N The A17 committee has language<lb/> proposed that will allow this<lb/> technology, assuming the pro-<lb/>posal passes the consensus<lb/> process.<lb/></div>
+
+	<docTitle>
+	<titlePart>Safety and Buffer Testing without Weights<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>by John Koshak<lb/></docAuthor>
+	</byline>
+
+	<note type="other">Value: 2 contact hours<lb/> (0.2 CEU)<lb/></note>
+	
+	<note type="other">This article is part of ELEVATOR WORLD&apos;s<lb/> Continuing Education program. Elevator-industry<lb/> personnel required to obtain continuing-education<lb/> credits can receive two hours of credit by reading<lb/> the article and completing the assessment exami-<lb/>nation questions found on page 179.<lb/> For this article and more continuing-education<lb/> opportunities, visit </note>
+
+	<ptr>www.elevatorbooks.com.<lb/> </ptr>
+
+	<div type="introduction">latest ballot. In order to see firsthand<lb/> how one type of system works and<lb/> what the results are, a comparative<lb/> test of the system was done at a<lb/> major university on three duplex<lb/> traction elevator groups. This article<lb/> presents the results of these tests for<lb/> the reader&apos;s analytical evaluation.<lb/> Conventional A17.1/B44<lb/> Test Methods<lb/> Category 5 tests require testing of<lb/> safety retardation forces [1] , brake re-<lb/>tardation forces [2] and traction forces [3]<lb/> using test weights. The Category 5<lb/> safety test requires full load in the<lb/> car, running the car at rated speed<lb/> and tripping the governor to prove<lb/> the safety actuation, and recording<lb/> the stopping force by measuring<lb/> slide marks on the rails. Acceptance<lb/> testing requires full load in the car,<lb/> running the car at governor over-<lb/>speed and measuring slide marks on<lb/> the rails.<lb/> The brake tests require overload-<lb/>ing [4] the car to prove the brakes&apos;<lb/> stopping and holding forces.<lb/> The traction test requires placing<lb/> the empty car at the top floor and<lb/> running the counterweight onto the<lb/> buffer and continue to run up to<lb/> prove the car is not picked or the<lb/> motor stalls due to too much trac-<lb/>tion, then placing the fully loaded car<lb/> at the bottom floor and running the<lb/> car down onto the buffer and contin-<lb/>uing to run down and prove that<lb/> neither the counterweight is picked,<lb/> nor the motor stalls due to too much<lb/> traction. Too little traction is tested<lb/> during the course of testing by virtue<lb/> of the car not slipping traction; how-<lb/>ever, there are no specific parameters<lb/> for a test.<lb/></div>
+
+	<note type="other">Continued<lb/></note>
+
+		</front>
+	</text>
+</tei>

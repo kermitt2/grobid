@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014133"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Free Radical Biology &amp; Medicine, Vol. 20, No. 5, pp. 675-705, 1996<lb/></reference>
+
+	<note type="copyright">Copyright &#169; 1996 Elsevier Science Inc.<lb/> Printed in the USA. All rights reserved<lb/></note>
+
+	<note>0891.5849/96 $15.00 + .OO<lb/> </note>
+
+	<note type="other">ELSEVIER<lb/> </note>
+
+	<note>0891~5849(95)02110-8<lb/> -+<lb/></note>
+	
+	<note type="other">Review Article<lb/></note>
+
+	<docTitle>
+	<titlePart>CHARACTERIZATION OF DRUGS AS ANTIOXIDANT<lb/> PROPHYLACTICS<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>OKEZIE I. ARUOMA<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Pharmacology Group, University of London King&apos;s College,</affiliation>
+	</byline>
+
+	<address>London, UK<lb/></address>
+
+	<note type="submission">(Received 24 May 1995; Revised 28 August 1995; Accepted 31 August 1995)<lb/></note>
+
+	<div type="abstract">Abstract-There<lb/> is growing interest in the evaluation of drugs (prescription only medicines and over-the-counter<lb/> medicines) as antioxidant prophylactics. Although free radical mechanism in human degenerative diseases is now<lb/> generally recognised, the mechanisms of tissue injury in humans are very complex and it may not be possible to<lb/> clearly identify the role played by free radicals in the process. This review examines the current evidence to<lb/> support the notion that drugs for a particular therapeutic category might possess useful antioxidant capacity hence<lb/> rninimising tissue injury due to free radicals.<lb/></div>
+
+	<keyword>Keywords-Free<lb/> radicals, Oxidative stress, Human diseases, Antioxidants, Drug design<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

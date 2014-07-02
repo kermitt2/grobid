@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009573"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<ptr>www.wavecrest.net<lb/></ptr>
+
+	<docTitle>
+	<titlePart>Cyfin<lb/> ®<lb/> Proxy<lb/> User Manual for Version 8.2.x<lb/></titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

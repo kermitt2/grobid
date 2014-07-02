@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013202"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Changes in Normal Glycosylation Mechanisms in Autoimmune Rheumatic Disease<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>John S. Axford, Nazira Sumar, Azita Alavi, David A. Isenberg, Adam Young, Katherine B. Bodman, and Ivan M. Roitt<lb/>
+	</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department ofRheumatology Research/Immunology, University College and Middlesex School ofMedicine,<lb/></affiliation>
+	</byline>
+
+	<address>London WJP 9PG, United Kingdom<lb/></address>
+
+	<div type="abstract">Abstract<lb/> To investigate potential mechanisms controlling protein gly-<lb/>cosylation we have studied the interrelationship between lym-<lb/>phocytic galactosyltransferase (GTase) activity and serum<lb/> agalactosylated immunoglobulin G levels (G(0)) in healthy indi-<lb/>viduals and patients with rheumatoid arthritis and non-autoim-<lb/>mune arthritis. In RA there was reduced GTase activity and<lb/> increased G(0). A positive linear correlation between B and T<lb/> cell GTase was found in all individuals. The relationship be-<lb/>tween GTase and G(0) was found to be positive and linear in the<lb/> control population and negative and linear in the RA popula-<lb/>tion. Sulphasalazine therapy maintained normal levels of<lb/> GTase and caused a reduction in G(0) in the RA population.<lb/> IgG anti-GTase antibodies (abs) were significantly increased in<lb/> the RA population, whereas IgM anti-GTase abs were signifi-<lb/>cantly decreased in both the RA and the non-autoimmune arthri-<lb/>tis groups. These data describe a defect in RA lymphocytic<lb/> GTase, with associated abnormal G(0) changes, which is<lb/> corrected by sulphasalazine. A possible regulatory mechanism<lb/> controlling galactosylation in normal cells is suggested, in<lb/> which there is parallel control of B and T cell GTase. IgM<lb/> anti-GTase abs may be integrated into this normal regulatory<lb/> process. This is disrupted in RA, where the positive feedback<lb/> between GTase and G(0) is lost and there is an associated in-<lb/>crease in IgG anti-GTase abs, which may result from isotype<lb/> switching as IgM anti-GTase abs are reduced. We suggest that<lb/> these mechanisms are of relevance to the pathogenesis of RA,<lb/> and that their manipulation may form part of a novel therapeu-<lb/>tic approach. (J.</div>
+
+	<reference>Clin. Invest. 1992. 89:1021-1031</reference>
+
+		</front>
+	</text>
+</tei>

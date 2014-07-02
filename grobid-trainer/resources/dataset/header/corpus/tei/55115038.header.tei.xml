@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55115038"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>The Canadian Joumal of Smtistics<lb/> Vol. 34. No. 4,2006, F&apos;agcs 603622<lb/> La revue canadKw de starisrique<lb/></reference>
+
+	<note type="page">603<lb/></note>
+
+	<docTitle>
+	<titlePart>Some robust design strategies for percentile<lb/> estimation in binary response models<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Stefanie BIEDERMANN, Holger DE&apos;TTE and Andrey PEPELYSHEV<lb/></docAuthor>
+	</byline>
+
+	<keyword>Key words and phrases: Binary response model; c-efficiency; multiobjective design; optimal design; per-<lb/>centile estimation; robustness.<lb/> MSC 2000: Primary 62K05; secondary 62J 12.<lb/></keyword>
+
+	<div type="abstract">Absrracr: For the problem of percentile estimation of a quanta1 response curve, the authors determine mul-<lb/>tiobjective designs which are robust with respect to misspecifications of the model assumptions. They<lb/> propose a maximin approach based on efficiencies which leads to designs that are simultaneously efficient<lb/> with respect to various choices of link functions and parameter regions. Furthermore, the authors deal with<lb/> the problems of designing model and percentile robust experiments. They give various examples of such<lb/> designs, which are calculated numerically.<lb/> Quelques plans d&apos;experience robustes pour I&apos;estirnation des centiles<lb/> dans les modeles de reponse binaire<lb/> Rt?surnt? : Prtoccup6s par l&apos;estimation des centiles d&apos;une c w b e de rkponse quantale, les auteurs identifient<lb/> des plans d&apos;exp6rience multi-objectifs qui s&apos;avhrent robustes mEme si les postulats du modhle ont ttt ma1<lb/> sp6cifiks. 11s proposent une approche maximin h base d&apos;efficacitks qui conduit B des plans efficaces h la<lb/> fois pour divers choix de fonctions de lien et d&apos;ensembles de valeurs pour les paramhtres. Les auteurs abor-<lb/>dent aussi la conception de modkles et de plans d&apos;exp6rience robustes pour I&apos;estimation des centiles. 11s<lb/> fournissent plusieurs exemples de tels plans, obtenus numkriquement.<lb/></div>
+
+		</front>
+	</text>
+</tei>

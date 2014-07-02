@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55113621"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<docAuthor>M. CZESNIKIEWICZ-GUZIK, S. J. KONTUREK, B. LOSTER,<lb/> G. WISNIEWSKA, S. MAJEWSKI<lb/></docAuthor>
+	</byline>
+
+	<docTitle>
+	<titlePart>MELATONIN AND ITS ROLE IN OXIDATIVE STRESS<lb/> RELATED DISEASES OF ORAL CAVITY<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<affiliation>Institute of Dentistry and Department of Physiology, Jagiellonian University<lb/> Medical College,</affiliation>
+	</byline>
+
+	<address>Cracow, Poland<lb/></address>
+
+	<div type="abstract">The role of the oral cavity in the pathogenesis of diseases of various systems such as<lb/> the gastro-intestinal tract (GIT), cardiovascular and immune systems has been<lb/> recently evaluated. While initially the oral cavity was considered to be mainly a<lb/> source of various bacteria, their toxins and antigens, recent studies showed that it<lb/> may also be a location of oxidative stress and periodontal inflammation.<lb/> Accordingly, this review focuses on the involvement of melatonin (MT) in oxidative<lb/> stress diseases of oral cavity as well as on potential therapeutic implications of MT<lb/> in dental disorders, especially in periodontal inflammation. MT is generated and<lb/> released by pineal gland and by entero-endocrine (EE) cells located in the GIT. The<lb/> pattern of MT secretion from the pineal gland is controlled by an endogenous<lb/> circadian timing system that conveys information about the light/dark cycle to<lb/> various organs of the body, thereby organizing its seasonal and circadian rhythms.<lb/> The secretion of MT from the EE cells of GIT is related mainly to feeding periods.<lb/> MT is a non-toxic highly lipophilic indole, and this feature facilitates its penetration<lb/> through cell membranes and its compartments. However, the most important effect<lb/> of MT seems to result from its potent antioxidant, immuno-modulatory, protective<lb/> and anti-cancer properties. It stimulates synthesis of type I collagen fibers and<lb/> promotes bone formation. Thus, MT could be used therapeutically for instance,<lb/> locally, in the oral cavity damage of mechanical, bacterial, fungal or viral origin, in<lb/> post-surgical wounds caused by tooth extractions and other oral surgeries and, in<lb/> helping bone formation in various auto-immunological disorders such as Sjorgen<lb/> syndrome, in periodontal diseases, and in oral cancers.<lb/></div>
+
+	<keyword>K e y w o r d s : melatonin, inflammation, oxidative stress, immunological system, oral cavity<lb/></keyword>
+
+	<reference>JOURNAL OF PHYSIOLOGY AND PHARMACOLOGY 2007, 58, Supp 3, 519<lb/></reference>
+
+	<ptr type="web">www.jpp.krakow.pl<lb/></ptr>
+
+	<note type="other">Review article<lb/></note>
+
+		</front>
+	</text>
+</tei>

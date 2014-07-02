@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011085"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Wilson&apos;s Disease<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Ronald F. Pfeiffer, M.D.<lb/> 1<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">ABSTRACT<lb/> Wilson&apos;s disease is an autosomal-recessive disorder caused by mutation in the<lb/> ATP7B gene, with resultant impairment of biliary excretion of copper. Subsequent copper<lb/> accumulation, first in the liver but ultimately in the brain and other tissues, produces<lb/> protean clinical manifestations that may include hepatic, neurological, psychiatric, oph-<lb/>thalmological, and other derangements. Genetic testing is impractical because of the<lb/> multitude of mutations that have been identified, so accurate diagnosis relies on judicious<lb/> use of a battery of laboratory and other diagnostic tests. Lifelong palliative treatment with a<lb/> growing stable of medications, or with liver transplantation if needed, can successfully<lb/> ameliorate or prevent the progressive deterioration and eventual death that would<lb/> otherwise inevitably ensue. This article discusses the epidemiology, genetics, pathophysi-<lb/>ology, clinical features, diagnostic testing, and treatment of Wilson&apos;s disease.<lb/></div>
+
+	<keyword>KEYWORDS: Ceruloplasmin, copper, Wilson&apos;s disease, penicillamine, zinc</keyword>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001545"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>PHYSICAL REVIE% A<lb/> VOLUME 30, NUMBER 2<lb/> AUGUST 1984<lb/></reference>
+
+	<docTitle>
+	<titlePart>Shear-induced partial translational ordering of a colloidal solid<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>B.J. Ackerson<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department ofPhysics, Oklahoma State University,</affiliation>
+	</byline>
+
+	<address>Stillwater, Oklahoma 74078<lb/></address>
+
+	<byline>
+	<docAuthor>N. A. Clark<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Physics, University of Colorado,</affiliation>
+	</byline>
+
+	<address>Boulder, Colorado 80303<lb/></address>
+
+	<note type="submission">{Received 16 January 1984)<lb/></note>
+
+	<div type="abstract">Highly charged submicrometer plastic spheres suspended in water at low ionic strength will order<lb/> spontaneously into bcc crystals or polycrystals. A simple linear shear orients and disorders these<lb/> crystals by forcing (110) planes to stack normal to the shear gradient and to slide relative to each<lb/> other with a (111)direction parallel to the solvent flow. In this paper we analyze in detail the dis-<lb/>ordering and flow processes occurring beyond the intrinsic elastic limit of the bcc crystal. We are<lb/> led to a model in which the flow of a colloidal crystal is interpreted as a fundamentally different<lb/> process from that found in atomic crystals. In the colloidal crystal the coupling of particle motion<lb/> to the background fluid forces a homogeneous flow, where every layer is in motion relative to its<lb/> neighboring layers. In contrast, the plastic flow in an atomic solid is defect mediated flow. At the<lb/> lowest applied stress, the local bcc order in the colloidal crystal exhibits shear strains both parallel<lb/> and perpendicular to the direction of the applied stress. The magnitude of these deformations is es-<lb/>timated using the configurational energy for bcc and distorted bcc crystals, assuming a screened<lb/> Coulomb pair interaction between colloidal particles. As the applied stress is increased, the intrinsic<lb/> elastic limit of the crystal is exceeded and the crystal begins to flow with adjacent layers executing<lb/> an oscillatory path governed by the balance of viscous and screened Coulomb forces. The path takes<lb/> the structure from the bcc~ and bcc2 twins observed at zero shear to a distorted two-dimensional hcp<lb/> structure at moderate shear rates, with a loss of interlayer registration as the shear is increased.<lb/> This theoretical model is consistent with other experimental observations, as well.<lb/></div>
+
+		</front>
+	</text>
+</tei>

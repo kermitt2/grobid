@@ -1,0 +1,63 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55114175"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Original Paper<lb/> You have full text access to this content<lb/></note>
+
+	<docTitle>
+	<titlePart>AlGaN multiple quantum well based deep UV<lb/> LEDs and their applications<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>M. Asif Khan<lb/> *<lb/> 1.<lb/></docAuthor>
+	</byline>
+
+	<date>Article first published online: 3 MAY 2006<lb/></date>
+
+	<idno type="DOI">DOI: 10.1002/pssa.200565427 (http://dx.doi.org/10.1002/pssa.200565427)<lb/></idno>
+
+	<note type="copyright">Copyright © 2006 WILEY-VCH Verlag GmbH &amp; Co. KGaA, Weinheim<lb/></note>
+
+	<note type="other">Issue<lb/></note>
+
+	<docTitle>
+	<titlePart>physica status solidi (a)<lb/></titlePart>
+	</docTitle>
+
+	<reference>Volume 203, Issue 7, (/doi/10.1002/pssa.v203:7/issuetoc) pages 1764–1770, May 2006<lb/></reference>
+
+	<note type="other">Additional Information<lb/> How to Cite<lb/> </note>
+
+	<reference>Asif Khan, M. (2006), AlGaN multiple quantum well based deep UV LEDs and their applications.<lb/> Phys. Status Solidi A, 203: 1764–1770.</reference>
+
+	<idno type="DOI">doi: 10.1002/pssa.200565427<lb/></idno>
+
+	<note type="other">Author Information<lb/></note>
+
+	<byline>
+	<affiliation>Department of Electrical Engineering, University of South Carolina,</affiliation>
+	</byline>
+
+	<address>Columbia SC 29208,<lb/> USA<lb/></address>
+
+	<email>Email: M. Asif Khan (asif@engr.sc.edu)<lb/></email>
+
+	<phone>*<lb/> Phone: +1 803 777 7475, Fax: +1 803 777 2447<lb/> </phone>
+
+	<note type="other">Publication History<lb/> AlGaN multiple quantum well based deep UV LEDs and their appl...<lb/></note>
+
+	<ptr type="web">http://onlinelibrary.wiley.com/doi/10.1002/pssa.200565427/abstract<lb/></ptr>
+
+	<note type="page">1 of 2<lb/></note>
+
+	<date>15-04-2014 </date>
+
+	<note type="other">13:12</note>
+
+		</front>
+	</text>
+</tei>

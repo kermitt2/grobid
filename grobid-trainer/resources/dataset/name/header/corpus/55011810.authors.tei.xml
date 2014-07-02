@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>JEAN-BERNARD</forename>
+								<surname>LE PECQ</surname>
+								<marker>*</marker>,
+							</persName>
+							<persName>
+								<forename>NGUYEN-</forename>
+								<middlename>DAT-</middlename>
+								<surname>XUONGt</surname>,
+							</persName>
+							<persName>
+								<forename>CHARLES</forename>
+								<surname>GOSSE</surname>
+								<marker>*</marker>,	AND
+							</persName>
+							<persName>
+								<forename>CLAUDE</forename>
+								<surname>PAOLETTI</surname>
+								<marker>*</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

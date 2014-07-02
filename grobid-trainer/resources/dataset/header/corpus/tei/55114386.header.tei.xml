@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55114386"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Journal of the Chinese Agricultural Chemical Society (February, 1994) 32(l): -<lb/></reference>
+
+	<docTitle>
+	<titlePart>Factors Affecting the Mixotrophic Maximum Growth of<lb/> Chlorella pyrenoidosa<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Liang-Ping Lin* and Tsute Chen<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Graduate Institute of Agricultural Chemistry<lb/> National Taiwan University<lb/></affiliation>
+	</byline>
+
+	<address>Taipei, Taiwan 106, R. 0. C.<lb/></address>
+
+	<note type="submission">(Accepted for publication: October 29, 1993)<lb/></note>
+
+	<div type="abstract">To obtain the economic benefits of biomass production, the maximum growth rate of Chlorella<lb/> pyrenoidosa NT-11 under a high cell concentration (PCV &gt;1 ml/l) was induced by use of the mixotrophic<lb/> culture method in a 2-liter jar-fermentor system. The mixotrophic culture in the Roux-bottle (flat flask)<lb/> system reached a maximum growth rate of PCV 4ml/l/day while the autotrophic growth without<lb/> supplemental acetic acid had a lower growth rate of PCV 2.5 ml/l/day. In the jar-fermentor system, a<lb/> mixotrophic maximum growth rate of up to PCV 20ml/l/day and a final cell density higher than<lb/> PCV80ml/l were obtained under the conditions of<lb/> o C, 10 Klux light intensity, and pH 6.5 for the<lb/> medium. The carbon sources included 10% acetic acid in the feeding medium, and 5% C02 in the air<lb/> used for aeration. A period of autotrophic growth prior to the mixotrophic maximum growth was<lb/> necessary since neither the slant culture nor the maximally grown culture could be used directly or again<lb/> for the purpose of maximum growth. Other Chlorella strains (C-28 and C-212) showed no such effects.<lb/> The chemical compositions of the maximum growth cells were similar to those of normal ones. There<lb/> were no significant ultrastructural differences between autotrophic growth cells and mixotrophic<lb/> growth cells.<lb/></div>
+
+	<keyword>Key words: Chlorella pyrenoidosa, Maximum growth rate, Packed cell</keyword>
+
+		</front>
+	</text>
+</tei>

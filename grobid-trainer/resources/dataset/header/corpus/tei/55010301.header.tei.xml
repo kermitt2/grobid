@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010301"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<date>21November 2006<lb/></date>
+
+	<byline>
+	<affiliation>NSW Therapeutic Advisory Group<lb/></affiliation>
+	</byline>
+
+	<address>Level 5, 376 Victoria Street<lb/> PO Box 766<lb/> Darlinghurst NSW 2010<lb/></address>
+
+	<phone>Phone: 61 2 8382 2852<lb/> Fax: 61 2 8382 3529<lb/></phone>
+
+	<email>Email: nswtag@stvincents.com.au<lb/></email>
+	
+	<ptr>www.nswtag.org.au<lb/></ptr>
+
+		</front>
+	</text>
+</tei>

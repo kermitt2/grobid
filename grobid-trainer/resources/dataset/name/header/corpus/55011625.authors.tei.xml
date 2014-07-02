@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>George</forename>
+								<surname>Coker</surname>
+								<lb/>
+								<marker>1</marker>,
+							</persName>
+							<persName>
+								<forename>Joshua</forename>
+								<surname>Guttman</surname>
+								<lb/>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>Peter</forename>
+								<surname>Loscocco</surname>
+								<lb/>
+								<marker>1</marker> ,
+							</persName>
+							<persName>
+								<forename>Amy</forename>
+								<surname>Herzog</surname>
+								<lb/>
+								<marker>2</marker> ,
+									<lb/>
+							</persName>
+							<persName>
+								<forename>Jonathan</forename>
+								<surname>Millen</surname>
+								<lb/>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>Brian</forename>
+								<surname>O &apos; Hanlon</surname>
+								<lb/>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>John</forename>
+								<surname>Ramsdell</surname>
+								<lb/>
+								<marker>2</marker>,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Ariel</forename>
+								<surname>Segall</surname>
+								<lb/>
+								<marker>2</marker> ,
+							</persName>
+							<persName>
+								<forename>Justin</forename>
+								<surname>Sheehy</surname>
+								<lb/>
+								<marker>2</marker> , and
+							</persName>
+							<persName>
+								<forename>Brian</forename>
+								<surname>Sniffen</surname>
+								<marker>2</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

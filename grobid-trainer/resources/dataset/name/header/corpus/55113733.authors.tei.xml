@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Yun-Sang</forename>
+								<surname>Choi</surname>
+								<marker>a</marker> ,
+							</persName>
+							<persName>
+								<forename>Ji-Hun</forename>
+								<surname>Choi</surname>
+							<lb/>
+								<marker>b</marker>,
+							</persName>
+							<persName>
+								<forename>Doo -Jeong</forename>
+								<surname>Han</surname>
+							<lb/>
+								<marker>b</marker> ,
+							</persName>
+							<persName>
+								<forename>Hack - Youn</forename>
+								<surname>Kim</surname>
+							<lb/>
+								<marker>b</marker> ,
+							</persName>
+							<persName>
+								<forename>Hyun- Wook</forename>
+								<surname>Kim</surname>
+							<lb/>
+								<marker>b</marker>,
+							</persName>
+							<persName>
+								<forename>Mi -Ai</forename>
+								<surname>Lee</surname>
+								<marker>c</marker>,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Hai - Jung</forename>
+								<surname>Chung</surname>
+							<lb/>
+								<marker>d</marker>,
+							</persName>
+							<persName>
+								<forename>Cheon- Jei</forename>
+								<surname>Kim</surname>
+								<marker>b , ⁎</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55114696"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">ELSEVIER<lb/></note>
+
+	<reference>Journal of Electroanalytical Chemistry 398 (1995) 89-93<lb/></reference>
+
+	<note type="other">JOURNAL OF<lb/></note>
+
+	<docTitle>
+	<titlePart>Electrocatalytic reduction of 0 2 and CO 2 with electropolymerized films<lb/> of polypyrrole cobalt(II) Schiff-base complexes<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>J. Losada a,*, I. del Peso a, L. Beyer b, j. Hartung c, V. Fernfindez c, M. M6bius b<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a Departamento Ingenieria Qulmica Industrial, ETS Ing. lndustriales, Universidad Polit~cnica Madrid,</affiliation>
+	</byline>
+
+	<address>28006 Madrid, Spain<lb/></address>
+
+	<byline>
+	<affiliation>b lnstitut fiir Anorganische Chemie, Universitlit Leipzig, </affiliation>
+	</byline>
+
+	<address>04103 Leipzig, Germany<lb/></address>
+
+	<byline>
+	<affiliation>c Departamento de Qulmica lnorg,~nica, UniversidadAut6noma de Madrid,</affiliation>
+	</byline>
+
+	<address>Cantoblanco, 28049 Madrid, Spain<lb/></address>
+
+	<note type="submission">Received 14 February 1995; in revised form 16 May 1995<lb/></note>
+
+	<div type="abstract">Abstract<lb/> The synthesis of 2-(3-pyrrole-l-yl-propylimino-methyl)-phenol (LH) and its cobalt complex (CoL 2) are described. Electrochemical<lb/> oxidation of CoL 2 in acetonitrile produces a conducting polymeric film at the electrode surface. The polymer films are catalytically active<lb/> in the electroreduction of both oxygen and CO 2. In the case of oxygen both the electrocatalytic activity of the electropolymerized films<lb/> and the predominant product were dependent on the surface coverage.<lb/></div>
+
+	<keyword>Keywords: Oxygen; Electrocatalytic reduction; Electropolymerized films; Schiff-base complexes<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei type="presentation">
+	<teiHeader>
+		<fileDesc xml:id="55114550"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Towards a Single Information Space for<lb/> Environmental Management through Self-<lb/>Configuration of Distributed Information<lb/> Processing Systems<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Gregor Pavlin<lb/> Niek Wijngaards<lb/> Kees Nieuwenhuis<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>DIADEM Consortium<lb/> &amp; Thales Research &amp; Technology, D-CIS Lab</affiliation>
+	</byline>
+
+		</front>
+	</text>
+</tei>

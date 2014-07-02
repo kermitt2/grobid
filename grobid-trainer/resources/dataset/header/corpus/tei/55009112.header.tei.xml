@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009112"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Wireless 6D inertial measurement platform for<lb/> ambulatory gait monitoring<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Jef van de Molengraft<lb/> #1 , Subbu Nimmala<lb/> #2 , Benoit Mariani<lb/> *3 , Kamiar Aminian<lb/> *4<lb/> , Julien Penders<lb/> #5<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation># Holst Centre / IMEC, High Tech</affiliation>
+	</byline>
+
+	<address>Campus 31, Eindhoven, The Netherlands<lb/></address>
+
+	<email>1 jef.vandemolengraft@imec-nl.nl<lb/> 2 subbu.nimmala@imec-nl.nl<lb/> 5 julien.penders@imec-nl.nl<lb/></email>
+
+	<byline>
+	<affiliation>* Ecole Polytechnique Fédérale de Lausanne (EPFL), Laboratory of Movement Analysis and Measurement,</affiliation>
+	</byline>
+
+	<address>1015 Lausanne,<lb/> Switzerland<lb/></address>
+
+	<email>3 benoit.mariani@epfl.ch<lb/> 4 kamiar.aminian@epfl.ch<lb/></email>
+
+	<div type="abstract">Abstract— This paper reports the development and evaluation of<lb/> a wireless six-dimensional inertial measurement platform for<lb/> ambulatory gait monitoring. Each wireless 6D-IMU module (S-<lb/>Sense) features a 3D-gyroscope and a 3D-accelerometer, and<lb/> carries enough processing power to extract relevant information<lb/> in real-time. The data is wirelessly transmitted to a receiving unit<lb/> within 10m range, or may be stored in local memory. An<lb/> algorithm for real-time walking phase detection has been<lb/> developed and embedded in the processing unit of the wireless<lb/> module. Validated against a gold standard system on a<lb/> population of 17 elderly subjects, the algorithm shows a<lb/> specificity of 100% and a sensitivity of 93.2%. The proposed<lb/> wireless platform is evaluated in a clinical gait study involving 20<lb/> subjects. Wireless, miniaturized and wearable, the proposed<lb/> system opens new perspectives for gait monitoring beyond the<lb/> lab environment.<lb/></div>
+
+		</front>
+	</text>
+</tei>

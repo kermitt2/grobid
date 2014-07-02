@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014306"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Am. J. Hum. Genet. 69:685–694, 2001<lb/></reference>
+
+	<note type="page">685<lb/></note>
+
+	<docTitle>
+	<titlePart>Mutations in the 3b-Hydroxysterol D<lb/> 24<lb/> -Reductase Gene Cause<lb/> Desmosterolosis, an Autosomal Recessive Disorder of Cholesterol<lb/> Biosynthesis<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Hans R. Waterham,<lb/> 1 Janet Koster,<lb/> 2 Gerrit Jan Romeijn,<lb/> 2 Raoul C.M. Hennekam,<lb/> 1<lb/> Peter Vreken,<lb/> 2 Hans C. Andersson,<lb/> 3 David R. FitzPatrick,<lb/> 4 Richard. I. Kelley,<lb/> 5<lb/> and Ronald J. A. Wanders<lb/> 1,2<lb/> </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Departments of<lb/> 1<lb/> Pediatrics and<lb/> 2 Clinical Chemistry, Emma Children&apos;s Hospital, Academic Medical Center, University of Amsterdam,<lb/></affiliation>
+	</byline>
+
+	<address>Amsterdam;<lb/></address>
+
+	<byline>
+	<affiliation>3 Tulane University School of Medicine,</affiliation>
+	</byline>
+
+	<address>New Orleans;<lb/></address>
+
+	<byline>
+	<affiliation>4 Medical Research Center Human Genetics Unit, Western General<lb/> Hospital, Edinburgh; and<lb/> 5<lb/> Kennedy Krieger Institute,</affiliation>
+	</byline>
+
+	<address>Baltimore<lb/></address>
+
+	<div type="abstract">Desmosterolosis is a rare autosomal recessive disorder characterized by multiple congenital anomalies. Patients with<lb/> desmosterolosis have elevated levels of the cholesterol precursor desmosterol, in plasma, tissue, and cultured cells;<lb/> this abnormality suggests a deficiency of the enzyme 3b-hydroxysterol D<lb/> 24 -reductase (DHCR24), which, in cholesterol<lb/> biosynthesis, catalyzes the reduction of the D<lb/> 24 double bond of sterol intermediates. We identified the human<lb/> DHCR24 cDNA, by the similarity between the encoded protein and a recently characterized plant enzyme—DWF1/<lb/> DIM, from Arabidopsis thaliana—catalyzing a different but partially similar reaction in steroid/sterol biosynthesis<lb/> in plants. Heterologous expression, in the yeast Saccharomyces cerevisiae, of the DHCR24 cDNA, followed by<lb/> enzyme-activity measurements, confirmed that it encodes DHCR24. The encoded DHCR24 protein has a calculated<lb/> molecular weight of 60.1 kD, contains a potential N-terminal secretory-signal sequence as well as at least one<lb/> putative transmembrane helix, and is a member of a recently defined family of flavin adenine dinucleotide<lb/> (FAD)–dependent oxidoreductases. Conversion of desmosterol to cholesterol by DHCR24 in vitro is strictly de-<lb/>pendent on reduced nicotinamide adenine dinucleotide phosphate and is increased twofold by the addition of FAD<lb/> to the assay. The corresponding gene, DHCR24, was identified by database searching, spans ∼46.4 kb, is localized<lb/> to chromosome 1p31.1-p33, and comprises nine exons and eight introns. Sequence analysis of DHCR24 in two<lb/> patients with desmosterolosis revealed four different missense mutations, which were shown, by functional ex-<lb/>pression, in yeast, of the patient alleles, to be disease causing. Our data demonstrate that desmosterolosis is a<lb/> cholesterol-biosynthesis disorder caused by mutations in DHCR24.<lb/></div>
+
+		</front>
+	</text>
+</tei>

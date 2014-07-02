@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012684"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">1<lb/></note>
+
+	<note type="other">3GPP TSG-RAN WG2 Meeting #45<lb/> </note>
+
+	<idno>R2-042462<lb/> </idno>
+
+	<address>Yokohama, Japan, </address>
+
+	<date>15 – 19 November 2004<lb/> </date>
+
+	<note type="other">Agenda Item :<lb/> 12.3.2<lb/></note>
+
+	<byline>
+	<affiliation>Source :<lb/> LG Electronics Inc.<lb/></affiliation>
+	</byline>
+
+	<docTitle>
+	<titlePart>Title :<lb/> Control Information Transfer In MAC Layer<lb/> Document for : Discussion and Decision<lb/></titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

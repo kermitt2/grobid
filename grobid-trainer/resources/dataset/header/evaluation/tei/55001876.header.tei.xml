@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001876"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Laser photo-induced dissociation using tandem<lb/> time-of-flight mass spectrometry<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Michel L. Quiniou*, Alexander J. Yates and Patrick R. R. Langridge-Smith<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Chemistry, The University of Edinburgh,</affiliation>
+	</byline>
+
+	<address>King&apos;s Buildings, West Mains Road, Edinburgh EH9 3JJ, Scotland,<lb/> UK<lb/></address>
+
+	<div type="abstract">A novel tandem time-of-flight (TOF) mass spectrometer has been developed for studying the photo-induced<lb/> dissociation of large molecules and elemental clusters. It consists of a linear first stage TOF analyser for<lb/> primary mass separation and precursor ion selection, and a second orthogonal reflecting field TOF analyser<lb/> for product ion analysis. The instrument is equipped with a large volume throughput molecular beam<lb/> source chamber allowing the production of jet-cooled molecules and molecular clusters, as well as elemental<lb/> clusters, using either a pulsed laser vaporisation source (LVS) or a pulsed are cluster ion source (PACIS). A<lb/> second differentially pumped chamber can be used with effusive sources, or for infrared laser desorption of<lb/> large molecules, followed by laser ionisation. These primary ions can then be irradiated with a second, high<lb/> energy laser to induce photodissociation. Detailed information about the fragmentation mechanisms can be<lb/> deduced from the product ion mass spectra. Preliminary results on the photo-induced dissociation (PID) of<lb/> the molecule ion of aniline at 266 nm are presented. In this case the molecule ions were generated via two-<lb/>photon laser ionisation at 266 nm using an effusive source. Results for the collision-induced dissociation<lb/> (CID) of the aniline molecule ion, using a commercial mass spectrometer equipped with an atmospheric<lb/> pressure electrospray ionisation interface, are also presented.</div>
+
+	<note type="copyright">Copyright # 2000 John Wiley &amp; Sons, Ltd.<lb/></note>
+
+	<note type="submission">Received 23 November 1999; Revised 10 January 2000; Accepted 12 January 2000<lb/></note>
+
+	<div type="introduction">Time-of-flight mass spectrometry (TOFMS) has undergone<lb/> a remarkable renaissance during the last two decades. An<lb/> important breakthrough was the invention of the reflecting<lb/> field, or reflectron (ReTOF), mass analyser by Mamyrin.<lb/> 1<lb/> Since then accurate time control and fast signal processing<lb/> have rapidly improved alongside advancements in electro-<lb/>nics and computer science. The development of new ion<lb/> sources such as matrix-assisted laser desorption/ionisation<lb/> (MALDI)<lb/> 2 and electrospray ionisation (ESI)<lb/> 3 has further<lb/> stimulated improvements in TOFMS, which has now<lb/> become the mass analyser of choice for many applications,<lb/> particularly in the biosciences. Our group<lb/> 4 and others<lb/> 5–8</div>
+
+		</front>
+	</text>
+</tei>

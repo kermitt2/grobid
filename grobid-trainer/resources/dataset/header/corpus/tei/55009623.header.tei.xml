@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009623"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Avoiding Interference: How People Use Spatial Separation<lb/> and Partitioning in SDG Workspaces<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Edward Tse<lb/> 1<lb/> , Jonathan Histon<lb/> 2<lb/> , Stacey D. Scott<lb/> 1<lb/> and Saul Greenberg<lb/> 1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1<lb/> Department of Computer Science,<lb/> 2<lb/> Department of Psychology<lb/> University of Calgary<lb/></affiliation>
+	</byline>
+
+	<address>Calgary, Alberta, Canada, T2N 1N4<lb/> </address>
+	
+	<phone>+1 403 220 6087<lb/></phone>
+
+	<div type="abstract">ABSTRACT<lb/> Single Display Groupware (SDG) lets multiple co-located people,<lb/> each with their own input device, interact simultaneously over a<lb/> single communal display. While SDG is beneficial, there is risk of<lb/> interference: when two people are interacting in close proximity,<lb/> one person can raise an interface component (such as a menu,<lb/> dialog box, or movable palette) over another person&apos;s working<lb/> area, thus obscuring and hindering the other&apos;s actions.<lb/> Consequently, researchers have developed special purpose<lb/> interaction components to mitigate interference techniques. Yet is<lb/> interference common in practice? If not, then SDG versions of<lb/> conventional interface components could prove more suitable. We<lb/> hypothesize that collaborators spatially separate their activities to<lb/> the extent that they partition their workspace into distinct areas<lb/> when working on particular tasks, thus reducing the potential for<lb/> interference. We tested this hypothesis by observing co-located<lb/> people performing a set of collaborative drawing exercises in an<lb/> SDG workspace, where we paid particular attention to the<lb/> locations of their simultaneous interactions. We saw that spatial<lb/> separation and partitioning occurred consistently and naturally<lb/> across all participants, rarely requiring any verbal negotiation.<lb/> Particular divisions of the space varied, influenced by seating<lb/> position and task semantics. These results suggest that people<lb/> naturally avoid interfering with one another by spatially<lb/> separating their actions. This has design implications for SDG<lb/> interaction techniques, especially in how conventional widgets<lb/> can be adapted to an SDG setting.<lb/></div>
+
+	<keyword>Categories and Subject Descriptors</keyword>
+
+		</front>
+	</text>
+</tei>

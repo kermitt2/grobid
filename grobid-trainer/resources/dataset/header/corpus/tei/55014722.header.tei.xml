@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014722"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="copyright">© 2001 Wiley-Liss, Inc.<lb/></note>
+
+	<reference>DRUG DEVELOPMENT RESEARCH 53:237–243 (2001)<lb/></reference>
+
+	<note type="other">DDR<lb/> Brief Report<lb/></note>
+
+	<docTitle>
+	<titlePart>Regression of Early Events of Atherosclerosis in<lb/> Hypercholesterolemic Rabbits by Prophylactic<lb/> Treatment With Nitroderivative of Acetyl Salicylic Acid<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Mohamed Z. Gad,<lb/> 1 * Mahmoud M. Khattab,<lb/> 2 Nadia A. Moustafa,<lb/> 3 and Jean-Luc Burgaud<lb/> 4<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1<lb/> Biochemistry Department, Faculty of Pharmacy, Cairo University,</affiliation>
+	</byline>
+
+	<address>Cairo, Egypt<lb/></address>
+
+	<byline>
+	<affiliation>2<lb/> Pharmacology Department, Faculty of Pharmacy, Cairo University,</affiliation>
+	</byline>
+
+	<address>Cairo, Egypt<lb/></address>
+
+	<byline>
+	<affiliation>3<lb/> Histology Department, Faculty of Medicine, Cairo University,</affiliation>
+	</byline>
+
+	<address>Cairo, Egypt<lb/> 4<lb/> </address>
+
+	<affiliation>NicOx, </affiliation>
+
+	<address>Sophia-Antipolis, Valbonne, France<lb/></address>
+
+	<div type="abstract">ABSTRACT The potential of a newly developed compound, nitro-aspirin (NO-aspirin, NCX-4016), on<lb/> regression of early atherosclerotic events in hypercholesterolemic rabbit (HypR) was examined. Hypercho-<lb/>lesterolemia was induced by feeding rabbits 2% cholesterol-enriched diet for 28 days. During this induction<lb/> period, HypRs were divided into two groups: one was given an oral single daily dose of 56 mg/kg/day NO-<lb/>aspirin in olive oil, whereas the other received olive oil alone and served as a control. A normal group of<lb/> rabbits fed plain chow diet plus olive oil was also included. At the end of the 28 days, samples from blood,<lb/> aorta, heart, and coronary arteries were separated for biochemical and histopathological examination. Tis-<lb/>sues from HypR aorta and coronaries developed major changes that include formation of large intimal<lb/> plaques, endothelial gaps with marked accumulation of foam cells. Highly significant increases in serum<lb/> triglycerides and malondialdehyde and a decrease in reduced glutathione (GSH) in heart and aorta were<lb/> also observed. Administration of NO-aspirin markedly improved aortic and coronary architecture to almost<lb/> normal appearance. NO-aspirin also improved the antioxidant status in aorta and heart by increasing GSH<lb/> levels and ameliorating malondialdehyde accumulation. These data support prophylactic use of NO-aspirin<lb/> in regression of atherosclerosis. </div>
+
+	<reference>Drug Dev.Res. 53:237–243, 2001.</reference>
+
+	<note type="copyright">© 2001 Wiley-Liss, Inc.<lb/></note>
+
+	<keyword>Key words: atherosclerosis; nitro-aspirin; NCX-4016; hypercholesterolemic rabbits; lipid peroxidation; reduced glutathione<lb/> Strategy, Management and Health Policy<lb/> Venture Capital<lb/> Enabling Technology<lb/> Preclinical Research<lb/> Preclinical Development<lb/> Toxicology, Formulation<lb/> Drug Delivery,<lb/> Pharmacokinetics<lb/> Clinical Development<lb/> Phases I-III<lb/> Regulatory, Quality,<lb/> Manufacturing<lb/> Postmarketing Phase IV<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

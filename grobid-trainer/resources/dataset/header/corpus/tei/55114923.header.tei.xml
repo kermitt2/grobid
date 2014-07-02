@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei type="whote-paper">
+	<teiHeader>
+		<fileDesc xml:id="55114923"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<affiliation>GE Energy<lb/> </affiliation>
+	</byline>
+		
+	<docTitle>
+	<titlePart>Mark* VIe Control<lb/> Product Description<lb/> </titlePart>
+	</docTitle>
+
+	<note type="other">This document is distributed for informational purposes only.<lb/> It is not to be construed as creating or becoming part of any<lb/> General Electric Company contractual or warranty obligation<lb/> unless expressly stated in a written sales contract.<lb/></note>
+
+	<note type="copyright">&#169; 2003 -2007 General Electric Company, USA. All rights reserved.<lb/></note>
+
+	<note type="other">Revised: 070606<lb/> </note>
+
+	<date>Issued: 031010<lb/></date>
+
+	<note>GEI-100600C</note>
+
+		</front>
+	</text>
+</tei>

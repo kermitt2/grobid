@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012585"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>arXiv:cond-mat/0501148v1 [cond-mat.supr-con]</idno>
+
+	<date>7 Jan 2005<lb/></date>
+
+	<docTitle>
+	<titlePart>Tunable coupling of flux qubits through a simple flux transformer<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Alec Maassen van den Brink<lb/> * and A.J. Berkley<lb/></docAuthor> 
+	</byline>
+
+	<byline>
+	<affiliation>D-Wave Systems Inc.,</affiliation>
+	</byline>
+
+	<address>320-1985 West Broadway,<lb/> Vancouver, B.C., V6J 4Y3 Canada<lb/></address>
+
+	<date>(Dated: December 22, 2010)<lb/></date>
+
+	<div type="abstract">Abstract<lb/> We sketch the way in which a monostable rf-SQUID can mediate an inductive coupling between<lb/> two adjacent flux qubits. The nontrivial dependence of the SQUID&apos;s susceptibility on external<lb/> flux makes it possible to continuously tune the induced coupling from antiferromagnetic (AF)<lb/> to ferromagnetic (FM). In particular, for suitable parameters, the induced FM coupling can be<lb/> sufficiently large to overcome any possible direct AF inductive coupling between the flux qubits.<lb/></div>
+
+	<keyword>PACS numbers: 85.25.Cp, 85.25.Dq</keyword>
+
+		</front>
+	</text>
+</tei>

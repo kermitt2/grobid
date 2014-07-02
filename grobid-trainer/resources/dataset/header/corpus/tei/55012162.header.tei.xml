@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012162"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>1068-1302/10/0506-0347</idno>
+
+	<note type="copyright">© 2010 Springer Science+Business Media, Inc.<lb/></note>
+
+	<note type="page">347<lb/></note>
+
+	<reference>Powder Metallurgy and Metal Ceramics, Vol. 49, Nos. 5-6, 2010<lb/></reference>
+
+	<docTitle>
+	<titlePart>ANODIC BEHAVIOR OF Al–Bi AND Al–Sb ALLOYS<lb/> IN 3% NaCl SOLUTION<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>M. O. Krasovskii, 1 V. O. Lavrenko, 1,2 and L. M. Kostenko 1<lb/></docAuthor>
+	</byline>
+
+	<idno>UDC 546.171.1:620.193<lb/></idno>
+
+	<div type="abstract">The methods of polarization curves and scanning electron microscopy are used to study the pitting<lb/> corrosion resistance of Al–Bi (up to 4 wt.% Bi) and Al–Sb (up to 20 wt.% Sb) binary alloys in a 3%<lb/> NaCl solution. With concentration of the alloying element to 0.1 wt.%, current density decreases and<lb/> corrosion slows down. With higher concentrations of antimony and bismuth, the early passivation<lb/> current density increases and the active region reduces on potentiodynamic curves. This indicates<lb/> that the corrosion resistance of aluminum alloys decreases with greater content of the other phase<lb/> (Bi or Sb).<lb/></div>
+
+	<keyword>Keywords: bismuth, antimony, aluminum, pitting corrosion, corrosion resistance, aluminum alloys.<lb/></keyword>
+
+	<div type="abstract">There are a number of studies [1–8] that focus on the anodic behavior of aluminum and its alloys in<lb/> different media. It is shown in [3] that high silicon content of aluminum alloy AA3005 increases its susceptibility to<lb/> corrosion. It turned out that iron content within an examined concentration range did not significantly influence the<lb/> corrosion susceptibility of the alloy. Copper promotes preferential dissolution, in which some areas of the corrosive<lb/> surface become rich in copper and, thus, act as cathodes that accelerate the corrosion process.<lb/> The pits resulting from the presence of intermetallic inclusions are identified as alkaline in [5]. Pits of this<lb/> type develop below the potentials of pitting formation (nucleation) and repassivation. Intermetallic inclusions that<lb/> serve as cathodes cause anodic dissolution of the matrix [6].<lb/> It is established in [7] that the density of cathode current decreases with increasing time before immersion<lb/> of a pure aluminum sample into a 1M NaCl solution. It is also suggested how an oxide film, which can heal defects<lb/> on pitting surface even at open-circuit potential, is formed. The formation of this oxide film is attributed to the<lb/> penetration of Cl<lb/> – ions into defective areas of the initial oxide film on the aluminum sample.<lb/> When pitting corrosion of aluminum in perchlorate solutions was examined using ac and dc current [8], it<lb/> was shown that the total anodic process could be divided into three stages based on potentiostatic measurements.<lb/> Stage 1 corresponds to the nucleation and growth of a passive oxide layer. Stages 2 and 3 involve the nucleation and<lb/> growth of pits. The pits nucleate after a certain incubation period, and the process becomes more intensive with<lb/> increasing concentration of ClO 4<lb/> – ions and step anodic potential.</div>
+
+		</front>
+	</text>
+</tei>

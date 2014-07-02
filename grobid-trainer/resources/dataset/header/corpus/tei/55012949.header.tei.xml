@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012949"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">1<lb/></note>
+
+	<docTitle>
+	<titlePart>Les procédés sol-gel – The sol-gel process<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Jacques LIVAGE<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Université Pierre et Marie Curie –</affiliation>
+	</byline>
+
+	<address>Paris<lb/></address>
+
+	<div type="abstract">The synthesis of glasses via the so-called &quot;sol-gel process&quot; has been widely developed during<lb/> the past two decades. These syntheses usually involve wet chemistry reactions and are based<lb/> on the inorganic polymerization of molecular precursors. Precursors are mixed at the molecular<lb/> level and multicomponent glasses may form at temperatures well below the melting point.<lb/> Moreover, sol-gel chemistry allows the p owderless processing of glasses and ceramics. Thin<lb/> films or fibers can be produced directly from the solution by such techniques as dip-coating<lb/> spin-coating or spin-drawing.<lb/> Moreover, the mild chemical conditions associated with the sol-gel process allows the synthesis<lb/> of hybrid glasses in which organic molecules are intimately mixed with the silica network. These<lb/> new materials fill the gap between plastic organic polymers and brittle silica glasses. They open<lb/> new possibilities in the field of glasses and l<lb/> ead to the development of functional coatings,<lb/> optical devices, chemical sensors and even biosensors.<lb/> </div>
+
+	<div type="introduction">Depuis des millénaires le verre est fabriqué par fusion d&apos;un sable de silice auquel on ajoute des<lb/> fondants tels que la soude, la potasse ou la chaux. La fusion pâteuse d&apos;un tel mélange permet<lb/> de le couler pour réaliser du verre plat ou de le souffler pour façonner un verre creux. De<lb/> nouvelles méthodes de synthèse et d&apos;élaboration se sont développées au cours des dernières<lb/> années, aussi bien dans les laboratoires de recherche académiques que dans les centres<lb/> industriels. Connues sous le nom de &quot;procédé sol-gel&quot;, elles permettent d&apos;obtenir des verres,<lb/> sans passer par la fusion, par simple polymérisation de précurseurs moléculaires en solution.<lb/> Les procédés sol-gel offrent aux verriers la possibilité de développer des méthodes d&apos;élaboration<lb/> originales, particulièrement performantes pour le dépôt de revêtements. Les réactions de<lb/> polymérisation mises en jeu dans ces procédés permettent de synthétiser des verres hybrides<lb/> organo-minéraux, matériaux totalement originaux qui couvrent tout le domaine du verre aux<lb/> polymères.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Thorsten</forename>
+								<surname>Holz</surname>
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>Christian</forename>
+								<surname>Gorecki</surname>
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>Konrad</forename>
+								<surname>Rieck</surname>
+								<marker>2</marker>
+							</persName>
+							<persName>
+								<forename>Felix</forename>
+								<middlename>C</middlename>.
+								<surname>Freiling</surname>
+								<marker>1</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014530"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Plant Physiol. (1 995) 109: 347-352<lb/></reference>
+
+	<docTitle>
+	<titlePart>Lectins as PIant Defense Proteins&apos;<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Willy J. Peumans* and EIS J. M. Van Damme<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Laboratory for Phytopathology and Plant Protection, Katholieke Universiteit Leuven,</affiliation>
+	</byline>
+
+	<address>Willem de Croylaan 42,<lb/> 3001 Leuven, Belgium<lb/></address>
+
+		</front>
+	</text>
+</tei>

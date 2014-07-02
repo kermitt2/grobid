@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010772"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Proceedings of the COLING/ACL 2006 Main Conference Poster Sessions, pages 191–198,<lb/> Sydney, July 2006.</reference>
+
+	<note type="copyright">&#169;<lb/> Association for Computational Linguistics<lb/></note>
+
+	<docTitle>
+	<titlePart>A Modified Joint Source-Channel Model for Transliteration<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Asif Ekbal<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Comp. Sc. &amp; Engg. Deptt.<lb/> Jadavpur University<lb/></affiliation>
+	</byline>
+
+	<address>India</address>
+
+	<email>ekbal_asif12@<lb/> yahoo.co.in<lb/></email>
+
+	<byline>
+	<docAuthor>Sudip Kumar Naskar<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Comp. Sc. &amp; Engg. Deptt.<lb/> Jadavpur University<lb/></affiliation>
+	</byline>
+
+	<address>India</address>
+
+	<email>sudip_naskar@<lb/> hotmail.com<lb/></email>
+
+	<byline>
+	<docAuthor>Sivaji Bandyopadhyay<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Comp. Sc. &amp; Engg. Deptt.<lb/> Jadavpur University<lb/></affiliation>
+	</byline>
+
+	<address>India</address>
+
+	<email>sivaji_cse_ju@<lb/> yahoo.com<lb/></email>
+
+	<div type="abstract">Abstract<lb/> Most machine transliteration systems<lb/> transliterate out of vocabulary (OOV)<lb/> words through intermediate phonemic<lb/> mapping. A framework has been<lb/> presented that<lb/> allows direct<lb/> orthographical mapping between two<lb/> languages that are of different origins<lb/> employing different alphabet sets. A<lb/> modified joint source–channel model<lb/> along with a number of alternatives have<lb/> been proposed. Aligned transliteration<lb/> units along with their context are<lb/> automatically derived from a bilingual<lb/> training corpus to generate the<lb/> collocational statistics. The transliteration<lb/> units in Bengali words take the pattern<lb/> C + M where C represents a vowel or a<lb/> consonant or a conjunct and M represents<lb/> the vowel modifier or matra. The English<lb/> transliteration units are of the form C*V*<lb/> where C represents a consonant and V<lb/> represents a vowel. A Bengali-English<lb/> machine transliteration system has been<lb/> developed based on the proposed models.<lb/> The system has been trained to<lb/> transliterate person names from Bengali<lb/> to English. It uses the linguistic<lb/> knowledge of possible conjuncts and<lb/> diphthongs in Bengali and their<lb/> equivalents in English. The system has<lb/> been evaluated and it has been observed<lb/> that the modified joint source-channel<lb/> model performs best with a Word<lb/> Agreement Ratio of 69.3% and a<lb/> Transliteration Unit Agreement Ratio of<lb/> 89.8%.<lb/></div>
+
+		</front>
+	</text>
+</tei>

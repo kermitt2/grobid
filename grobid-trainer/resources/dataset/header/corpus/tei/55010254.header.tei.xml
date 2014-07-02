@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010254"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>A Novel Single Pass Thinning Algorithm<lb/> 1<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>G.S. Ng<lb/> R.W.Zhou and<lb/> C. Quek<lb/></docAuthor>
+	</byline>
+
+	<note type="other">Contact:<lb/></note>
+
+	<byline>
+	<docAuthor>Dr. Chai Quek<lb/></docAuthor>
+	</byline>
+
+	<note type="other">Submitted to:<lb/> </note>
+
+	<affiliation>IEEE Transaction on System Man and Cybernetics<lb/></affiliation>
+
+	<date>Date:<lb/> 8th September 1994<lb/></date>
+
+	<email>Email:<lb/> ashcquek@ntuix.ntu.ac.sg<lb/></email>
+
+	<phone>Fax:<lb/> (+65) 791 9414<lb/></phone>
+
+	<keyword>Keywords: single pass, performance criteria, smoothing templates, performance and<lb/> complexity analysis, boundary noise, noise immunity, thinning algorithm.<lb/></keyword>
+
+	<note type="other">1 Manuscript received:<lb/> Affiliation:<lb/></note>
+
+	<byline>
+	<affiliation>Nanyang Technological University, School of Applied Science, Research<lb/> Laboratory II,</affiliation>
+	</byline>
+
+	<address>Nanyang Avenue, Singapore 2263.<lb/></address>
+
+	<note type="other">Acknowledgment:<lb/> The authors wish to acknowledge the generous financial support from the<lb/> Nanyang Technological University, School of Applied Science for funding the<lb/> AF project. AF is an intelligent toolkit for anti-forgery.<lb/></note>
+
+	<docTitle>
+	<titlePart>A Novel Single Pass Thinning Algorithm<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>G. S. Ng, R. W. Zhou, C. Quek<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Abstract: A new sequential thinning algorithm, which uses both flag map and bitmap simultaneously to<lb/> decide if a boundary pixel can be deleted, as well as the incorporation of smoothing templates to smooth<lb/> the final skeleton, is proposed in this paper. Three performance measurements are proposed for an<lb/> objective evaluation of this novel algorithm against a set of well established techniques. Extensive results<lb/> comparison and analysis are presented in this paper for discussion.<lb/></div>
+
+		</front>
+	</text>
+</tei>

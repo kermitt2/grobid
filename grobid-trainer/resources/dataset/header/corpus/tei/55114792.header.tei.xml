@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei type="product-sheet">
+	<teiHeader>
+		<fileDesc xml:id="55114792"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="copyright">© 2013 Samsung Telecommunications America, LLC. All rights reserved. Samsung and Galaxy S are both registered trademarks of Samsung Electronics Co., Ltd.<lb/></note>
+
+	<docTitle>
+	<titlePart>Multimedia Desktop<lb/> Dock<lb/> </titlePart>
+	</docTitle>
+
+	<note type="other">Scan for compatibility<lb/> and more information<lb/></note>
+	
+		</front>
+	</text>
+</tei>

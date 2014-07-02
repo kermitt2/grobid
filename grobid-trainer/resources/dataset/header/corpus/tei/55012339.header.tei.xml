@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012339"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Advanced Access Content System (AACS)<lb/> Blu-ray Disc Pre-recorded Book<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<affiliation>Intel Corporation<lb/> International Business Machines Corporation<lb/> Matsushita Electric Industrial Co., Ltd.<lb/> Microsoft Corporation<lb/> Sony Corporation<lb/> Toshiba Corporation<lb/> The Walt Disney Company<lb/> Warner Bros.<lb/></affiliation>
+	</byline>
+
+	<note type="other">Revision 0.92<lb/></note>
+
+	<date>December 5, 2007</date>
+
+		</front>
+	</text>
+</tei>

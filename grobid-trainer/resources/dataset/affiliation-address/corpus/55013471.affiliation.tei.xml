@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="institution">Iowa State University</orgName>
+							<lb/>
+							<orgName type="department">Department of Chemistry</orgName>,
+							<lb/>
+						</affiliation>
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="department">Department of Biomedical Sciences</orgName>,
+							<lb/>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="institution">Iowa State University</orgName>,
+							<address>
+								<settlement>Ames</settlement>,
+								<region>Iowa</region>
+								<postCode>50011-3111</postCode>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55113470"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<ptr type="web">www.sciencemag.org/cgi/content/full/1178746/DC1<lb/></ptr>
+
+	<docTitle>
+	<titlePart>Supporting Online Material for<lb/> Broad and Potent Neutralizing Antibodies from an African Donor<lb/> Reveal a New HIV-1 Vaccine Target<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Laura M. Walker, Sanjay K. Phogat,* Po-Ying Chan-Hui, Denise Wagner, Pham Phung,<lb/> Julie L. Goss, Terri Wrin, Melissa D. Simek, Steven Fling, Jennifer L. Mitcham, Jennifer<lb/> K. Lehrman, Frances H. Priddy, Ole A. Olsen, Steven M. Frey, Phillip W. Hammond,<lb/> Protocol G Principal Investigators, Stephen Kaminsky, Timothy Zamb, Matthew Moyle,<lb/> Wayne C. Koff, Pascal Poignard, Dennis R. Burton*<lb/></docAuthor>
+	</byline>
+
+	<note type="other">*To whom correspondence should be addressed.</note>
+
+	<email>E-mail: burton@scripps.edu(D.R.B.);<lb/> SPhogat@iavi.org (S.K.P.)<lb/></email>
+
+	<date>Published 3 September 2009</date>
+
+	<note type="other">on Science Express<lb/></note>
+
+	<idno type="DOI">DOI: 10.1126/science.1178746<lb/></idno>
+
+	<note type="other">This PDF file includes<lb/> Materials and Methods<lb/> SOM Text<lb/> Figs. S1 to S10<lb/> Tables S1 to S6<lb/> References<lb/> </note>
+
+	<div type="abstract">MATERIAL AND METHODS<lb/>	Antibodies and Antigens. Recombinant antibodies IgG1 b12 and b6 were expressed in Chinese hamster ovary (CHO-K1) cells,<lb/> purified using a Protein A affinity matrix, and monitored for endotoxin contamination. Fab b3 was expressed in E.coli and purified<lb/> using an anti-human Fab specific affinity column. The following antibodies and reagents were procured by the IAVI Neutralizing<lb/> Antibody Consortium: antibodies 2F5, 4E10, and 2G12 (Polymune Scientific, Vienna, Austria), antibodies A32, 23b, and 17b<lb/> (Strategic BioSolutions), antibody F425/b4E8 (provided by Lisa Cavacini, Beth Israel Deaconess Medical Center), soluble CD4 and<lb/> JR-FL gp120 (Progenics, Tarrytown, NY), and JR-CSF gp120 and antibody C11 (Advanced Product Enterprises). Purified ADA,<lb/> HXB2, DU422, and YU2 gp120s were produced in the laboratory of Robert Doms, University of Pennsylvania.<lb/> Patients. The patient identified for this study was selected from the IAVI sponsored study, Protocol G (S1). Eligibility for<lb/> enrollment into Protocol G was defined as: male or female at least 18 years of age with documented HIV infection for a least three<lb/> years, clinically asymptomatic at the time of enrollment, and not currently receiving antiretroviral therapy. Selection of individuals<lb/> for monoclonal antibody generation was based on a rank-order high throughput analytical screening algorithm(S1). This volunteer<lb/> was identified as a broad neutralizer based on broad and potent neutralizing activity against a cross-clade pseudovirus panel.</div>
+
+		</front>
+	</text>
+</tei>

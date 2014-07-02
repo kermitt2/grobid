@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012241"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Quad Voltage Up and Down Sequencer<lb/> and Monitor with Programmable Timing<lb/> </titlePart>
+	</docTitle>
+	
+	<note type="other">ADM1186<lb/>Rev. A<lb/> Information furnished by Analog Devices is believed to be accurate and reliable. However, no<lb/> responsibility is assumed by Analog Devices for its use, nor for any infringements of patents or other<lb/> rights of third parties that may result from its use. Specifications subject to change without notice. No<lb/> license is granted by implication or otherwise under any patent or patent rights of Analog Devices.<lb/> Trademarks and registered trademarks are the property of their respective owners.<lb/></note>
+
+	<address>One Technology Way, P.O. Box 9106, Norwood, MA 02062-9106, U.S.A.<lb/></address>
+
+	<phone>Tel: 781.329.4700<lb/> </phone>
+
+	<ptr>www.analog.com<lb/></ptr>
+
+	<phone>Fax: 781.461.3113</phone>
+
+	<note type="copyright">©2008–2009 Analog Devices, Inc. All rights reserved.<lb/></note>
+
+	<div type="abstract">FEATURES<lb/> Powered from 2.7 V to 5.5 V on the VCC pin<lb/> Monitors four supplies via 0.8% accurate comparators<lb/> Digital core supports up and down supply sequencing<lb/> Multiple devices can be cascaded (ADM1186-1)<lb/> Four inputs can be programmed to monitor different voltage<lb/> levels with resistor dividers<lb/> Capacitor programmable supply sequence time delays<lb/> and a timeout delay to 5% accuracy at 25°C<lb/> Four open-drain enable outputs<lb/> Open-drain power-good output<lb/> Open-drain sequence complete pin and bidirectional<lb/> open-drain fault pin (ADM1186-1 only)<lb/> APPLICATIONS</div>
+
+		</front>
+	</text>
+</tei>

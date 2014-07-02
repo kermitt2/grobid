@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009395"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Safety and Security Engineering</note>
+	
+	<note type="page">417<lb/></note>
+
+	<docTitle>
+	<titlePart>Using threat image projection data for<lb/> assessing individual screener performance<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>F. Hofer &amp; A. Schwaninger<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Psychology, University of Zurich,</affiliation>
+	</byline>
+
+	<address>Switzerland<lb/></address>
+
+	<div type="abstract">Abstract<lb/> Threat image projection (TIP) is a technology of current x-ray machines that<lb/> allows exposing screeners to artificial but realistic x-ray images during the<lb/> routine baggage x-ray screening operation. If a screener does not detect a TIP<lb/> within a specified amount of time, a feedback message appears indicating that a<lb/> projected image was missed. Feedback messages are also shown when a TIP<lb/> image is detected or in the case of a non-TIP alarm, i.e. when the screener<lb/> indicated that there was threat but in fact no TIP was shown. TIP data is an<lb/> interesting source for quality control, risk analysis and assessment of individual<lb/> screener performance. In two studies we examined the conditions for using TIP<lb/> data for the latter purpose. Our results strongly suggest using aggregated data in<lb/> order to have a large enough data sample as the basis for statistical analysis.<lb/> Second, an appropriate TIP library containing a large number of threat items,<lb/> which are representative for the prohibited items to be detected is recommended.<lb/> Furthermore, consideration should be given to image-based factors such as<lb/> general threat item difficulty, viewpoint difficulty, superposition and bag<lb/> complexity. Different methods to cope with these issues are discussed in order to<lb/> achieve reliable, valid and standardized measurements of individual screener<lb/> performance using TIP.<lb/></div>
+
+	<keyword>Keywords: Airport security, human factors, threat image projection, detection<lb/> performance, reliability analysis, hit rate, false alarm rate<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

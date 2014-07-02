@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001246"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Journal of Information Technology Education<lb/> Volume 1 No. 3, 2002<lb/>Editor: Karen Nantz<lb/></reference>
+
+	
+
+	<docTitle>
+	<titlePart>Computer Based Assessment Systems Evaluation<lb/> via the ISO9126 Quality Model<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Salvatore Valenti, Alessandro Cucchiarelli, and Maurizio Panti<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Istituto di Informatica, Università di Ancona,</affiliation>
+	</byline>
+
+	<address>Italy<lb/></address>
+
+	<email>valenti@inform.unian.it alex@inform.unian.it panti@inform.unian.it<lb/> </email>
+
+	<div type="introduction">Executive Summary<lb/> The interest in developing Computer Based Assessment (CBA) systems has increased in recent years,<lb/> thanks to the potential market of their application.<lb/> Many commercial products, as well as freeware and shareware tools, are the result of studies and re-<lb/>search in this field made by companies and public institutions. This noteworthy growth in the market<lb/> raises the problem of identifying a set of criteria that may be useful to an educational team wishing to<lb/> select the most appropriate tool for their assessment needs. The scientific literature is very poor in re-<lb/>spect of this issue. An important help is provided in this direction, by a number of research studies in the<lb/> field of Software Engineering providing general criteria that may be used to evaluate software systems.<lb/> Furthermore, a relevant effort has been made in this field by the International Standard Organization that<lb/> in 1991 defined the ISO9126 standard for &quot;Information Technology – Software Quality Characteristics<lb/> and Sub-characteristics&quot; (ISO, 1991). It is important to note that a typical CBA system is composed by:<lb/> @BULLET A Test Management System (TMS) -i.e. a tool providing the instructor with an easy to use inter-<lb/>face, the ability to create questions and to assemble them into tests, the possibility of grading the<lb/> tests and making some statistical evaluations of the results.<lb/> @BULLET A Test Delivery System (TDS) -i.e. a tool for the delivery of tests to the students. The tool may<lb/> be used to deliver tests using paper and pencil, a stand-alone computer, on a LAN, or over the<lb/> web. The TDS may be augmented with a web-enabler used to deliver the tests over the Web. In<lb/> many cases producers distribute two different versions of the same TDS, one to deliver tests ei-<lb/>ther on single computers or on LAN, and the other to deliver tests over the web.<lb/> The TMS and TDS modules may be integrated in a single application or may be delivered as separate<lb/> applications. Thus, it is of fundamental importance to devise a set of quality factors that can be used to<lb/> evaluate both the modules belonging to this general structure of a CBA system.<lb/> Purpose of this paper is to discuss a set of quality factors that can be used to evaluate a CBA System us-<lb/>ing the standard ISO9126, which provides a general framework for evaluating a commercial off the shelf<lb/> software without covering the specificity of the application domain. Thus, our effort has been mainly<lb/> devoted to the elicitation of a set of domain spe-<lb/>cific quality factors for the evaluation of a Com-<lb/>puter Based Assessment System. The ISO9126<lb/> standard is a quality model for product assessment<lb/> that identifies six quality characteristics: function-<lb/>ality, usability, reliability, efficiency, portability<lb/> and maintainability. Each of these characteristics<lb/> is further decomposed in a set of sub characteris-<lb/>tics. Thus for instance, Functionality is character-<lb/>ised by Suitability, Accuracy, Interoperability,<lb/> Compliance and Security. None of the quality fac-<lb/>Material published as part of this journal, either on-line or in<lb/> print, is copyrighted by the publisher of the Journal of Informa-<lb/>tion Technology Education. Permission to make digital or paper<lb/> copy of part or all of these works for personal or classroom use is<lb/> granted without fee provided that the copies are not made or dis-<lb/>tributed for profit or commercial advantage AND that copies 1)<lb/> bear this notice in full and 2) give the full citation on the first<lb/> page. It is permissible to abstract these works so long as credit is<lb/> given. To copy in all other cases or to republish or to post on a<lb/> server or to redistribute to lists requires specific permission and<lb/> payment of a fee. Contact Editor@JITE.org to request redistribu-<lb/>tion permission.</div>
+
+		</front>
+	</text>
+</tei>

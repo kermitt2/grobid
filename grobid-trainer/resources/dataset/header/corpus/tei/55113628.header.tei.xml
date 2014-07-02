@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55113628"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Real-time Planar World Modeling for Augmented Reality<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Jonathan Ventura *<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Computer Science<lb/> University of California,</affiliation>
+	</byline>
+
+	<address>Santa Barbara<lb/></address>
+
+	<byline>
+	<docAuthor>Tobias ollerer<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Computer Science<lb/> University of California,</affiliation>
+	</byline>
+
+	<address>Santa Barbara<lb/></address>
+
+	<div type="abstract">ABSTRACT<lb/> We posit that the challenge of complete visual modeling and track-<lb/>ing of the outdoor urban world can be made tractable by using the<lb/> simplifying assumption of textured planar surfaces. While recent<lb/> methods have demonstrated dense and complex reconstructions in<lb/> some cases, we advocate simpler models which more efficiently<lb/> and effectively capture the semantic structure of the scene. We ar-<lb/>gue that this structure is what will enable rich augmented reality<lb/> interaction and annotation techniques. We describe three poten-<lb/>tial benefits of the planar modeling approach: 1) interactive mo-<lb/>bile modeling and annotation; 2) fast and robust tracking and re-<lb/>localization using oriented patches; and 3) scalable and incremen-<lb/>tal world model construction from ad-hoc user contributions. We<lb/> consider several research questions and technical challenges which<lb/> must be addressed to achieve mobile creation of piecewise-planar<lb/> models.<lb/></div>
+
+	<keyword>Index Terms: I.3.7 [Computer Graphics]: Three-Dimensional<lb/> Graphics and Realism—Augmented Reality; I.4.8 [Image Process-<lb/>ing and Computer Vision]: Scene Analysis—Tracking<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

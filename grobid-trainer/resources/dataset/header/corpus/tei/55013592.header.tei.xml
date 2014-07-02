@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013592"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Vision-based Input Interface for Mobile Devices<lb/> with High-speed Fingertip Tracking<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Yuki Hirobe Takehiro Niikura<lb/> Yoshihiro Watanabe Takashi Komuro Masatoshi Ishikawa<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Graduate School of Information Science and Technology, The University of Tokyo<lb/></affiliation>
+	</byline>
+
+	<address>7-3-1 Hongo, Bunkyo-ku, Tokyo, 113-8638 Japan<lb/></address>
+
+	<email>{Yuki_Hirobe, Takehiro_Niikura}@ipc.i.u-tokyo.ac.jp<lb/> {Yoshihiro_Watanabe, Takashi_Komuro, Masatoshi_Ishikawa}@ipc.i.u-tokyo.ac.jp<lb/></email>
+
+	<div type="abstract">ABSTRACT<lb/> We propose vision-based interface for mobile devices by<lb/> tracking 3D motion of a human fingertip using a single<lb/> camera and by recognizing small input gestures in the air.<lb/> Since the fingertip near the camera moves fast in the image,<lb/> a high-frame-rate camera is used for stable tracking. In<lb/> order to separate the click gesture from the others, frequen-<lb/>cy filter is applied to scale change in the fingertip images.<lb/>ACM Classification: H5.2 [Information interfaces and<lb/> presentation]: User Interfaces. -Input devices and strategies.<lb/> General terms: Algorithms, Design<lb/> </div>
+
+	<keyword>Keywords: Vision-based UI, portable device, 3D input<lb/> interface<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

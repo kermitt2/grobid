@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013044"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Reihe Werkstoff und Anwendungen, Band 11<lb/></note>
+
+	<docTitle>
+	<titlePart>Elektropolieren nichtrostender Stähle</titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

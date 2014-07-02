@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011389"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Towards effective SIP load Balancing<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Georgios Kambourakis<lb/> Dimitris Geneiatakis<lb/> Tasos Dagiuklas<lb/> Costas Lambrinoudakis<lb/> Stefanos Gritzalis<lb/>
+	</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Laboratory of Information and Communication Systems Security<lb/> Department of Information and Communication Systems Engineering<lb/> University of the Aegean<lb/></affiliation>
+	</byline>
+
+	<address>Karlovassi, GR-83200 Samos, Greece<lb/></address>
+
+	<phone>Tel: +30-22730-82247<lb/> </phone>
+
+	<email>Email:{gkamb, dgen, ntan, clam, sgritz}@aegean.gr<lb/></email>
+
+	<div type="abstract">ABSTRACT<lb/> Session Initiation Protocol (SIP) high availability, reliability and<lb/> redundancy are determined by the ability of the core SIP network<lb/> components to offer high quality SIP services in the event(s) of<lb/> high call transactions, link outages, device failures,<lb/> misconfigurations and security attacks. In this context, load<lb/> balancers can be used to achieve redundancy and active load<lb/> balancing of SIP transactions. In load balancing schemes, new<lb/> requests are allocated across available servers using a selection<lb/> algorithm. Although considerable work has been already done for<lb/> Web traffic balancing, little research effort is primarily aiming to<lb/> SIP load balancing. This paper proposes a SIP dedicated load<lb/> balancing solution, which is currently under development within<lb/> the EC funded project SNOCER. We describe in detail our<lb/> balancing scheme, its associated architecture elements and<lb/> provide implementation details showing that it is simple to<lb/> realize, effective, flexible, robust and secure.<lb/></div>
+
+	<keyword>Categories and Subject Descriptors<lb/> C2.1 [Computer Communication Networks]: Network<lb/> Architecture and Design, C.2.2 Network Protocols.<lb/> General Terms<lb/> Design, Reliability, Security.<lb/> Keywords<lb/> Session Initiation Protocol; Load balancing; SIP architectures;<lb/> Redundancy.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

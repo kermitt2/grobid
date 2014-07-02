@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011039"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Cellulosic Ethanol Produced by Recombinant Yeast<lb/> </note>
+
+	<note type="page">403<lb/></note>
+	
+	<reference>Applied Biochemistry and Biotechnology<lb/> Vol. 113–116, 2004<lb/></reference>
+
+	<note type="copyright">Copyright © 2004 by Humana Press Inc.<lb/> All rights of any nature whatsoever reserved.<lb/></note>
+
+	<note>0273-2289/04/114/0403–0416/$25.00<lb/></note>
+
+	<note type="page">403<lb/></note>
+
+	<note type="other">*Author to whom all correspondence and reprint requests should be addressed.<lb/></note>
+
+	<docTitle>
+	<titlePart>Production of Ethanol from Cellulosic<lb/> Biomass Hydrolysates Using Genetically<lb/> Engineered Saccharomyces Yeast Capable<lb/> of Cofermenting Glucose and Xylose<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>MIROSLAV SEDLAK AND NANCY W. Y. HO<lb/>*<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Laboratory of Renewable Resources Engineering (LORRE),<lb/> Purdue University,</affiliation>
+	</byline>
+
+	<address>500 Central Drive, West Lafayette, IN 47907,<lb/></address>
+
+	<email>E-mail: nwyho@ecn.purdue.edu<lb/></email>
+
+	<div type="abstract">Abstract<lb/> Recent studies have proven ethanol to be the ideal liquid fuel for transpor-<lb/>tation, and renewable lignocellulosic materials to be the attractive feedstocks<lb/> for ethanol fuel production by fermentation. The major fermentable sugars<lb/> from hydrolysis of most cellulosic biomass are D-glucose and D-xylose. The<lb/> naturally occurring Saccharomyces yeasts that are used by industry to pro-<lb/>duce ethanol from starches and cane sugar cannot metabolize xylose. Our<lb/> group at Purdue University succeeded in developing genetically engineered<lb/> Saccharomyces yeasts capable of effectively cofermenting glucose and xylose<lb/> to ethanol, which was accomplished by cloning three xylose-metabolizing<lb/> genes into the yeast. In this study, we demonstrated that our stable recom-<lb/>binant Saccharomyces yeast, 424A(LNH-ST), which contains the cloned<lb/> xylose-metabolizing genes stably integrated into the yeast chromosome in<lb/> high copy numbers, can efficiently ferment glucose and xylose present in<lb/> hydrolysates from different cellulosic biomass to ethanol.<lb/></div>
+
+	<keyword>Index Entries: Ethanol; Saccharomyces yeasts; hydrolysate; corn stover;<lb/> corn fiber; xylose; glucose; glycerol; xylitol.
+	<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

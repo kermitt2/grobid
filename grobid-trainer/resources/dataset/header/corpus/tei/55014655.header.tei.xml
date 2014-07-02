@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014655"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<degree>FACULTY OF ENGINEERING<lb/> THESIS SUBMITTED FOR THE PROGRAMME<lb/> MASTER OF ARTIFICIAL INTELLIGENCE<lb/> ACADEMIC YEAR
+	</degree>
+
+	<date>2005-2006<lb/></date>
+
+	<byline>
+	<affiliation>KATHOLIEKE UNIVERSITEIT<lb/> </affiliation>
+	</byline>
+
+	<address>LEUVEN<lb/></address>
+
+	<docTitle>
+	<titlePart>SOFTWARE SECURITY THROUGH<lb/> TARGETTED DIVERSIFICATION<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Gert Merckx<lb/> </docAuthor>
+	</byline>
+
+	<note type="other">Promotor :<lb/> Prof. Bart Preneel<lb/> Daily leaders: Jan Cappaert<lb/> Nessim Kisserli</note>
+
+		</front>
+	</text>
+</tei>

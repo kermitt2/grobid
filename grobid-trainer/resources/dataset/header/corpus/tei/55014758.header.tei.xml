@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014758"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Current Technologies for Device Independence<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Mark H. Butler<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Publishing Systems and Solutions Laboratory<lb/> HP Laboratories Bristol<lb/></affiliation>
+	</byline>
+
+	<note>HPL-2001-83<lb/></note>
+
+	<date>April 4 th , 2001*<lb/></date>
+
+		</front>
+	</text>
+</tei>

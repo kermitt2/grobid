@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>DOROTHEE</forename>
+								<surname>SCHOTT</surname> ,
+								<roleName>M.D</roleName>.,
+							</persName>
+							<persName>
+								<forename>CARL -ERIK</forename>
+								<surname>DEMPFLE</surname> ,
+								<roleName>M.D</roleName>.,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>PETER</forename>
+								<surname>BECK</surname> ,
+								<roleName>M .D</roleName>.,
+							</persName>
+							<persName>
+								<forename>ANDREAS</forename>
+								<surname>LIERMANN</surname> ,
+								<roleName>M .D</roleName>.,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>ANITA</forename>
+								<surname>MOHR - P ENNERT</surname>,
+								<roleName>M . D</roleName>.,
+							</persName>
+							<persName>
+								<forename>MICHAEL</forename>
+								<surname>GOLDNER</surname> ,
+								<roleName>M . D</roleName>.,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>PETER</forename>
+								<surname>MEHLEM</surname> ,
+								<roleName>M . D</roleName> .,
+							</persName>
+							<persName>
+								<forename>HIROYUKI</forename>
+								<surname>AZUMA</surname> ,
+								<roleName>M . D</roleName> .,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>VOLKER</forename>
+								<surname>SCHUSTER</surname>,
+								<roleName>M . D</roleName> . ,
+							</persName>
+							<persName>
+								<forename>ANNE-MARIE</forename>
+								<surname>MINGERS</surname>,
+								<roleName>M . D</roleName> . ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>HANS</forename>
+								<middlename>PETER</middlename>
+								<surname>SCHWARZ</surname> ,
+								<roleName>M . D</roleName> . ,
+							<lb/>
+								AND
+							</persName>
+							<persName>
+								<forename>MICHAEL</forename>
+								<middlename>DIETER</middlename>
+								<surname>KRAMER</surname> ,
+								<roleName>M . D</roleName> .
+							</persName>
+							
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

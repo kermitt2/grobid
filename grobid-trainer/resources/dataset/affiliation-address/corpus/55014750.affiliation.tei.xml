@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>*</marker>
+							<orgName type="department">Department of Physics</orgName>,
+							<orgName type="institution">University of Louisiana at Lafayette</orgName>,
+							<address>
+								<postBox>P.O. Box 44210</postBox>,
+								<settlement>Lafayette</settlement>,
+								<region>LA</region>
+								<postCode>70504</postCode>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>		
+							<orgName type="institution">Oak Ridge National Laboratory (ORNL)</orgName>,
+							<orgName type="institution">National Transportation Research Center (NTRC)</orgName>,
+							<address>
+								<addrLine>2360<lb/> Cherahala Blvd.</addrLine>,
+								<postCode>MS-6472</postCode>,
+								<settlement>Knoxville</settlement>,
+								<region>TN</region>
+								<postCode>37932</postCode>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="department">Optical Instrumentation Technology Branch</orgName>,
+							<orgName type="institution">NASA John H. Glenn Research Center at Lewis Field</orgName>,
+							<address>
+								<addrLine>21000<lb/> Brookpark Road</addrLine>,
+								<addrLine>Mailstop 77-1</addrLine>,
+								<settlement>Cleveland</settlement>,
+								<region>OH</region>
+								<postCode>44135-3191</postCode>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="department">Environmental Durability Branch</orgName>,
+							<orgName type="institution">NASA John H. Glenn Research Center at Lewis Field</orgName>,
+							<address>
+								<addrLine>21000<lb/> Brookpark Road</addrLine>,
+								<settlement>Cleveland</settlement>,
+								<region>OH</region>
+								<postCode>44135</postCode>
+							<lb/>
+							</address>
+							<orgName type="department">Department of Mechanical Engineering</orgName>,
+							<orgName type="institution">Tennessee Technological University</orgName>,
+							<address>
+								<settlement>Cookeville</settlement>,
+								<region>TN</region>
+								<postCode>38505</postCode>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

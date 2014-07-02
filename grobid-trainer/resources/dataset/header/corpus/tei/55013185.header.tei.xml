@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013185"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>The relationship between exposed galactose and N-acetylglucosamine residues on<lb/> IgG in rheumatoid arthritis (RA), juvenile chronic arthritis (JCA) and Sjö gren&apos;s<lb/> syndrome (SS)<lb/></titlePart>
+	</docTitle> 
+
+	<byline>
+	<docAuthor>A. BOND, A. ALAVI, J. S. AXFORD, P. YOUINOU* &amp; F. C. HAY</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Division of Immunology,<lb/> Department of Cellular and Molecular Sciences, St George&apos;s Hospital Medical School,
+	</affiliation>
+	</byline>
+
+	<address>London, UK, and<lb/></address>
+
+	<byline>
+	<affiliation>*Laboratoire D&apos;Immunologie, Centre Hospitalier Regional et Universitaire de Brest,</affiliation>
+	</byline>
+
+	<address>Brest, France<lb/></address>
+
+	<note type="submission">(Accepted for publication 4 April 1996)<lb/></note>
+
+	<div type="abstract">SUMMARY<lb/> The relationship between exposed galactose and N-acetylglucosamine on IgG in RA, JCA and SS<lb/> was investigated. This was achieved using IgG isolated from serum where the levels of galactose<lb/> and N-acetylglucosamine (GlcNAc) were detected using biotinylated lectins. Galactose and GlcNAc<lb/> on IgG from patients with RA and JCA are inversely related, but in contrast, in SS, galactose expression on<lb/> IgG decreased while GlcNAc expression remained similar to normal levels. Alterations in IgG glycosylation<lb/> are closely associated with the development of adult and juvenile chronic arthritis and SS, but the changes<lb/> involved are different in RA compared with SS, suggesting that the precise pattern of exposed sugars is<lb/> associated with different rheumatological diseases.<lb/></div>
+
+	<keyword>Keywords immunoglobulin G glycosylation Sjögren&apos;s syndrome rheumatoid arthritis<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

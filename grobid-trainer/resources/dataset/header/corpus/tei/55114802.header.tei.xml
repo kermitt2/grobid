@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55114802"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Informatica 34 (2010) 477–490<lb/></reference>
+
+	<note type="page">477<lb/></note>
+
+	<docTitle>
+	<titlePart>Dynamic Process Integration Framework: Toward Efficient Information<lb/> Processing in Complex Distributed Systems<lb/>
+	</titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Gregor Pavlin and Michiel Kamermans </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Thales </affiliation>
+	</byline>
+
+	<address>Nederland B.V.,</address>
+
+	<byline>
+	<affiliation>D-CIS Lab Delft,</affiliation>
+	</byline>
+
+	<address>Nederland<lb/></address>
+
+	<email>E-mail: gregor.pavlin@d-cis.nl, michiel.kamermans@d-cis.nl<lb/></email>
+
+	<byline>
+	<docAuthor>Mihnea Scafe<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University of Craiova,</affiliation>
+	</byline>
+
+	<address>Romania<lb/></address>
+
+	<email>scafes_mihnea@software.ucv.ro<lb/></email>
+
+	<keyword>Keywords: service oriented architectures, distributed reasoning, negotiation, multi agent systems<lb/></keyword>
+
+	<note type="submission">Received: February 22, 2010<lb/></note>
+
+	<div type="abstract">The Dynamic Process Integration Framework (DPIF) is a service oriented approach which supports effi-<lb/>cient creation of distributed systems for collaborative reasoning. The DPIF is relevant for an important<lb/> class of contemporary applications requiring efficient and reliable processing of large quantities of het-<lb/>erogeneous information. An example of such an application is situation assessment in complex decision<lb/> making processes in dynamic environments. The DPIF supports (i) a systematic encapsulation of hetero-<lb/>geneous processes and (ii) negotiation-based self configuration mechanisms which automate creation of<lb/> meaningful workflows implementing complex collaborative reasoning processes. The resulting systems<lb/> support processing based on rich domain knowledge while, at the same time, the collaboration between<lb/> heterogeneous services requires minimal ontological commitments.<lb/> Povzetek: Opisan je nov pristop v procesiranju informacij v kompleksnih porazdeljenih sistemih.
+	<lb/></div>
+
+		</front>
+	</text>
+</tei>

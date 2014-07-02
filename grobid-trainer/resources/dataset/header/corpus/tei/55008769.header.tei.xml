@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008769"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">OLAP Cube<lb/></note>
+
+	<docTitle>
+	<titlePart>OLAP cube<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">From Wikipedia, the free encyclopedia<lb/></note>
+
+	<note type="other">This is an old revision of this page, as edited by SieBot (talk | contribs) at 02:20, 11 May 2008. It<lb/> may differ significantly from the current revision (//en.wikipedia.org/wiki/OLAP_cube) .<lb/></note>
+
+	<note type="other">(diff) ← Previous revision | Latest revision (diff) | Newer revision → (diff)<lb/></note>
+
+		</front>
+	</text>
+</tei>

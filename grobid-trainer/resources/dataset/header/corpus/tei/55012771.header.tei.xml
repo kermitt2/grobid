@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012771"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Nutrition Research Reviews (1994), 7, 1-23<lb/></reference>
+
+	<note type="page">1<lb/></note>
+
+	<docTitle>
+	<titlePart>THE COMPOSITION OF HUMAN MILK AS A<lb/> MODEL FOR THE DESIGN OF INFANT<lb/> FORMULAS: RECENT FINDINGS A N D<lb/> POSSIBLE APPLICATIONS<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>A N N E M I E K C. G O E D H A R T A N D J A C Q U E S G. B I N D E L S<lb/> </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Nutricia Research,</affiliation>
+	</byline>
+
+	<address>P.O. Box 1, 2700 MA Zoetermeer, The Netherlands<lb/></address>
+
+	<note type="other">C O N T E N T S<lb/> I N T R O D U C T I O N .<lb/> . 1<lb/> E N E R G Y .<lb/> . *<lb/> 2 PROTEIN .<lb/> .<lb/> . 3<lb/> P R O T E I N Q U A N T I T Y<lb/> . .<lb/> 3<lb/> P R O T E I N Q U A L I T Y ,<lb/> . 4<lb/> L A C T O F E R R I N .<lb/> .<lb/> . 5<lb/> I M M U N O G L O B U L I N S<lb/> .<lb/> . 6<lb/> N O N -P R O T E I N N I T R O G E N<lb/> . .<lb/> 7<lb/> LIPIDS .<lb/> . 7<lb/>L O N G C H A I N P O L Y U N S A T U R A T E D F A T T Y A C I D S<lb/> . .<lb/> 7<lb/> S T R U C T U R E D L I P I D S<lb/> .<lb/> . 9<lb/> C H O L E S T E R O L .<lb/> . 10<lb/> C A R B O H Y D R A T E S .<lb/> . 1 1<lb/> M I N E R A L S A N D T R A C E ELEMENTS<lb/> .<lb/> . 12<lb/> C A L C I U M A N D P H O S P H O R U S<lb/> . . 12<lb/> I R O N .<lb/> *<lb/> 13<lb/> SELENIUM, M O L Y B D E N U M A N D C H R O M I U M<lb/> .<lb/> . 14<lb/> VITAMINS A N D C O N D I T I O N A L L Y ESSENTIAL S U B S T A N C E S<lb/> .<lb/> . 14<lb/> P-CAROTENE . .<lb/> . 14<lb/> INOSITOL .<lb/> . 15<lb/> T A U R I N E .<lb/> . 15<lb/> N U C L E O T I D E S .<lb/> . 15<lb/> C O N C L U D I N G R E M A R K S .<lb/> . . 16<lb/> REFERENCES .<lb/> .<lb/> . 16<lb/></note>
+
+		</front>
+	</text>
+</tei>

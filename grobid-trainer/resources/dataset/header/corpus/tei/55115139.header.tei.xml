@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55115139"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>3D INFORMATION EXTRACTION BY STRUCTURAL MATCHING OF SAR AND<lb/> OPTICAL FEATURES<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Florence TUPIN and Michel ROUX<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>GET -Télécom-Paris -UMR 5141 LTCI -Département TSI<lb/></affiliation>
+	</byline>
+
+	<address>46 rue Barrault, 75013 Paris -France<lb/></address>
+
+	<email>florence.tupin@enst.fr<lb/></email>
+
+	<keyword>KEY WORDS: SAR imagery, aerial imagery, optical imagery<lb/></keyword>
+
+	<div type="abstract">ABSTRACT<lb/> The subject of this paper is the extraction of 3D information using an optical image and a SAR image. This aim is made difficult by the<lb/> very different appearances of the landscape and the man-made features in both images. The proposed method is based on the extraction<lb/> of SAR primitives (bright linear and point features). They are then matched to the optical image using the directional and modulus<lb/> gradient map computed on the optical image. A set of matches and associated heights is selected for each primitive. In a first step, the<lb/> digital terrain model is computed in an iterative way around the predominant height of the SAR primitives. In a second step, using the<lb/> external knowledge of a building map, the mean height of each building is computed by means of the previous DTM and the remaining<lb/> matching primitives. The results obtained on an industrial test area are evaluated.<lb/></div>
+
+		</front>
+	</text>
+</tei>

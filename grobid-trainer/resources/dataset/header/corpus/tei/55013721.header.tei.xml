@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013721"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>The 10th International Conference on Miniaturized Systems for Chemistry and Life Sciences (μTAS2006)<lb/> November 5-9, 2006, Tokyo, Japan<lb/></reference>
+
+	<note>4-9903269-0-3-C3043</note>
+
+	<note type="copyright">© 2006 Society for Chemistry and Micro-Nano Systems<lb/></note>
+
+	<note type="page">642<lb/></note>
+
+	<docTitle>
+	<titlePart>A NOVEL INTEGRATED MICROFLUIDIC SERS-CD WITH<lb/> HIGH-THROUGHPUT CENTRIFUGAL CELL TRAPPING<lb/> ARRAY FOR QUANTITATIVE BIOMEDICINE<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Hansang Cho and Luke P. Lee<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Biomolecular Nanotechnology Center, Berkeley Sensor and Actuator Center<lb/> Department of Bioengineering, University of California,</affiliation>
+	</byline>
+
+	<address>Berkeley, CA 94720 USA<lb/></address>
+
+	<div type="abstract">Abstract Integrated microfluidic surface-enhanced Raman spectroscopy on a compact disk<lb/> (SERS-CD) platform has been developed for high-throughput quantitative biomedicine.<lb/> A smart design of a SERS-CD platform including efficient cell-trapping microfluidics, a<lb/> locally integrated SERS probe, and a sample-accumulating concentrator is a solution for<lb/> label-free high-throughput screening and detection. A SERS probe combined with a<lb/> protein concentrator allows monitoring the dynamics of secreted proteins as a function<lb/> of trapped cell density, accumulation time, and the induced centrifugal force. The<lb/> design of centrifugal cell trapping microfluidics was characterized by using polystyrene<lb/> beads and HeLa cells and the preliminary evaluation of a centrifugal sample<lb/> concentrator on a SERS probe was accomplished by observing the increased Raman<lb/> spectrum of Rhodamin 6G (R6G) as the molecule accumulated on the probe.<lb/></div>
+
+	<keyword>Keyword: quantitative cell analysis, centrifugal concentrator, centrifugal<lb/> separation, cell trapping, SERS, SERS-CD<lb/>
+	</keyword>
+
+		</front>
+	</text>
+</tei>

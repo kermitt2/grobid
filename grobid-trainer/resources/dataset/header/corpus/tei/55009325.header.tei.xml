@@ -1,0 +1,69 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009325"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Methods in Bioengineering<lb/></note>
+
+	<docTitle>
+	<titlePart>Hypothermic Perfusion of Pancreas: Emphasis on Preservation prior to Islet<lb/> Isolation<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Michael J. Taylor<lb/> 1,2 and Simona, C. Baicu.<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Cell and Tissue Systems,</affiliation>
+	</byline>
+
+	<address>N. Charleston, SC., USA<lb/></address>
+
+	<note type="other">1 Adjunct Professor of Mechanical Engineering,</note>
+
+	<byline>
+	<affiliation>Carnegie Mellon University,</affiliation>
+	</byline>
+
+	<address>Pittsburgh, PA.<lb/></address>
+
+	<note type="other">2 Adjunct Professor of Surgery,</note>
+
+	<byline>
+	<affiliation>Medical University of South Carolina,</affiliation>
+	</byline>
+
+	<address>Charleston, SC.<lb/> USA<lb/></address>
+
+	<reference>Invited contribution: Taylor, MJ., &amp; Baicu,S. (2009). Hypothermic Perfusion Preservation of<lb/> Pancreas: Emphasison Preservation prior to Islet Isolation. In &quot;Methods In Bioengineering&quot;<lb/> (Series Eds. Martin L. Yarmush and Robert S. Langer). Artech House Publisher,Boston. (In<lb/> Press).<lb/></reference>
+
+	<keyword>Key Terms: Hypothermic perfusion preservation; cold storage; pancreas preservation; porcine<lb/> pancreas preservation; juvenile porcine pancreas; porcine islets.<lb/></keyword>
+
+	<note type="other">Corresponding Author:<lb/></note>
+
+	<byline>
+	<docAuthor>Michael J Taylor, Ph.D.<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>VP Research and Development<lb/> Cell and Tissue Systems, Inc.<lb/></affiliation>
+	</byline>
+
+	<address>2231 Technical Parkway, Suite A,<lb/> N. Charleston, SC 29406, USA<lb/></address>
+
+	<phone>Ph: (843)722-6756<lb/> Fax: (843) 722-6657<lb/> </phone>
+
+	<email>EM: mtaylor@celltissuesystems.com<lb/></email>
+
+	<note type="page">1<lb/></note>
+	
+	<note type="other">Methods in Bioengineering<lb/></note>
+
+	<div type="abstract">ABSTRACT<lb/> Procurement and preservation of pancreata is important for both segmental gland transplantation</div>
+
+		</front>
+	</text>
+</tei>

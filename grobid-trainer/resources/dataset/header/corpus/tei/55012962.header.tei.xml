@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012962"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Hardware Acceleration of Software Transactional Memory *<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Arrvindh Shriraman, Virendra Marathe, Sandhya Dwarkadas, Michael L. Scott<lb/> David Eisenstat, Christopher Heriot, William N. Scherer III, and Michael F. Spear<lb/></docAuthor>
+	</byline>
+
+	<idno>Technical Report #887<lb/></idno>
+
+	<byline> 
+	<affiliation>Department of Computer Science, University of Rochester<lb/></affiliation>
+	</byline>
+
+	<date>December 2005; revised March 2006<lb/></date>
+
+	<div type="abstract">Abstract<lb/> Transactional memory (TM) systems seek to increase scalability, reduce programming complexity,<lb/> and overcome the various semantic problems associated with locks. Software TM proposals run on stock<lb/> processors and provide substantial flexibility in policy, but incur significant overhead for data versioning<lb/> and validation in the face of conflicting transactions. Hardware TM proposals have the advantage of<lb/> speed, but are typically highly ambitious, embed significant amounts of policy in silicon, and provide no<lb/> clear migration path for software that must also run on legacy machines.<lb/> We advocate an intermediate approach, in which hardware is used to accelerate a TM implementation<lb/> controlled fundamentally by software. We present a system, RTM, that embodies this approach. It<lb/> consists of a novel transactional MESI (TMESI) protocol and accompanying TM software. TMESI<lb/> eliminates the key overheads of data copying, garbage collection, and validation without introducing<lb/> any global consensus algorithm in the cache coherence protocol, or any new bus transactions. The only<lb/> change to the snooping interface is a &quot;threatened&quot; signal analogous to the existing &quot;shared&quot; signal.<lb/> By leaving policy to software, RTM allows us to experiment with a wide variety of policies for<lb/> contention management, deadlock and livelock avoidance, data granularity, nesting, and virtualization.<lb/></div>
+
+		</front>
+	</text>
+</tei>

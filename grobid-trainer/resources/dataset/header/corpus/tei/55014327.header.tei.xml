@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014327"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Dana User&apos;s Guide<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<affiliation>AlphaSmart, Inc.<lb/></affiliation>
+	</byline>
+
+	<ptr>www.alphasmart.com</ptr>
+
+		</front>
+	</text>
+</tei>

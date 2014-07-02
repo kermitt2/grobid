@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009858"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Effect of radioactivity decrease. Is there a link with solar flares?<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>A.G.Parkhomov<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institute for Time Nature Explorations.<lb/> Lomonosov Moscow State University,</affiliation>
+	</byline>
+
+	<address>Moscow, Russia.<lb/></address>
+
+	<ptr type="web">http: // www.chronos.msu.ru<lb/></ptr>
+
+	<div type="abstract">Results obtained with multichannel installation created for long-term studies of various<lb/> processes, are collated with the data published by J.H. Jenkins and E.Fischbach, who found a<lb/> decrease of<lb/> 54<lb/> Mn radioactivity near the time of series of solar flares between 5 and 17 December<lb/> 2006. Analysis of the data from our installation in December 2006 has not revealed any<lb/> deviations from the usual behaviour of the count rates for<lb/> 90<lb/> Sr<lb/> 90<lb/> Y,<lb/> 60<lb/> Co and<lb/> 239<lb/> Pu sources. The<lb/> same can be said of the data collected during the period of highly powerful solar flares between<lb/> 19 October and 4 November 2003. Apparent drops in the count rate were detected between 10<lb/> and 12 May 2002 while registering the activity of<lb/> 60<lb/> Co and on 19 and 20 June 2004 for<lb/> 90<lb/> Sr-<lb/>90<lb/> Y source. Around the time of these events, no observations of large solar flares were reported.<lb/> Thus, proposed link between the drop in the rates of radioactive decay and appearance of solar<lb/> flares could not be confirmed. From obtained outcomes follows, that the radioactivity drop<lb/> effect, if it really exists, is rather rare, and that the reason calling this effect unequally influences<lb/> various radioactive sources.<lb/></div>
+
+	<keyword>Keywords: alpha decays, beta decays, decrease of radioactivity, solar flares, nuclear decay rate<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

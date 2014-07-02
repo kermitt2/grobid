@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010503"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Characterization of Silicon Nanoparticles Prepared from<lb/> Porous Silicon<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Richard A. Bley, Susan M. Kauzlarich,* , Jeffrey E. Davis, , and<lb/> Howard W. H. Lee<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Chemistry, University of California,</affiliation>
+	</byline>
+
+	<address>Davis, California 95616;<lb/></address>
+
+	<byline>
+	<affiliation>Lawrence Livermore National Laboratory,</affiliation>
+	</byline>
+
+	<address>Livermore, California 94550; and<lb/></address>
+
+	<byline>
+	<affiliation>Department of Applied Science, University of California,</affiliation>
+	</byline>
+
+	<address>Davis, California 95616<lb/></address>
+
+	<note type="submission">Received December 18, 1995. Revised Manuscript Received March 13, 1996 X<lb/></note>
+
+	<div type="abstract">Nanometer-sized silicon particles have been produced by ultrasonic dispersion of thin<lb/> sections of porous silicon (PS) in organic solvents. The particles have been characterized by<lb/> HRTEM (high-resolution transmission electron microscopy), FTIR (Fourier transform<lb/> infrared) spectroscopy, and fluorescence spectroscopy. HRTEM shows both aggregates of<lb/> and monodispersed crystallite particles of Si. The larger aggregates range in size from 20<lb/> to 50 nm and are made up of small crystallites with diameters of 2-10 nm. Monodispersed<lb/> crystallites ranged in size from 2-10 nm. All the particles have an amorphous layer of<lb/> SiO 2 . The photoluminescence (PL) spectrum shows two peaks: a red peak at around<lb/> 680 nm, which is typical for PS and a blue peak between 415 and 446 nm, which is not<lb/> typical for as-prepared PS. As a function of increased excitation intensity, the blue peak<lb/> grows at the expense of the red. This is discussed in light of photoluminescence lifetime<lb/> data. The red luminescence is attributed to quantum confinement. The blue luminescence<lb/> is attributed to either extremely small Si crystallites or (Si(II))<lb/> 0 defects embedded in the<lb/> oxide matrix.<lb/></div>
+
+		</front>
+	</text>
+</tei>

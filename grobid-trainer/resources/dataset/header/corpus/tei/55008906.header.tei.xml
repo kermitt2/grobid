@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008906"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Frequencies and Ranges<lb/> </titlePart>
+	</docTitle>
+	
+	<note type="other">Note Frequency<lb/> (Hz)<lb/></note>
+
+		</front>
+	</text>
+</tei>

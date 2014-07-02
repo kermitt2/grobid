@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014495"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Efficient Algorithms to Solve Bayesian Stackelberg Games for Security<lb/> Applications<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Praveen Paruchuri*, Jonathan P. Pearce, Janusz Marecki, Milind Tambe, Fernando Ordonez, Sarit Kraus**<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>*Intelligent Automation Inc.,</affiliation>
+	</byline>
+
+	<address>Rockville, MD, USA,</address>
+
+	<email>(pparuchuri@i-a-i.com)<lb/></email>
+
+	<byline>
+	<affiliation>University of Southern California,</affiliation>
+	</byline>
+
+	<address>Los Angeles, CA, USA</address>
+
+	<email>({jppearce, marecki, tambe, fordon}@usc.edu)<lb/></email>
+
+	<byline>
+	<affiliation>**Bar-Ilan University,</affiliation>
+	</byline>
+
+	<address>Israel</address>
+
+	<email>(sarit@macs.biu.ac.il)<lb/></email>
+
+	<div type="abstract">Abstract<lb/> In a class of games known as Stackelberg games, one agent<lb/> (the leader) must commit to a strategy that can be observed by<lb/> the other agent (the adversary/follower) before the adversary<lb/> chooses its own strategy. We consider Bayesian Stackelberg<lb/> games, in which the leader is uncertain about the type of the<lb/> adversary it may face. Such games are important in secu-<lb/>rity domains, where, for example, a security agent (leader)<lb/> must commit to a strategy of patrolling certain areas, and an<lb/> adversary (follower) can observe this strategy over time be-<lb/>fore choosing where to attack. We present here two differ-<lb/>ent MIP-formulations, ASAP (providing approximate poli-<lb/>cies with controlled randomization) and DOBSS (providing<lb/> optimal policies) for Bayesian Stackelberg games. DOBSS is<lb/> currently the fastest optimal procedure for Bayesian Stackel-<lb/>berg games and is in use by police at the Los Angeles Inter-<lb/>national Airport(LAX) to schedule their activities.<lb/>
+	</div>
+
+		</front>
+	</text>
+</tei>

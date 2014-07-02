@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei type="web">
+	<teiHeader>
+		<fileDesc xml:id="55114693"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Hepatitis B immune globulin (human)<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">Description<lb/> Hepatitis B Immune Globulin (Human), Nabi-HB, is a sterile solution of immunoglobulin (5 ± 1% protein) containing antibodies to hepatitis B surface antigen<lb/> (anti-HBs). It is prepared from plasma donated by individuals with high titers of anti-HBs. The plasma is processed using a modified Cohn 6 / Oncley 9<lb/> cold-alcohol fractionation process<lb/> 1,2 with two added viral reduction steps described below. Nabi-HB is formulated in 0.075 M sodium chloride, 0.15 M glycine,<lb/> and 0.01% polysorbate 80, at pH 6.2. The product is supplied as a nonturbid sterile liquid in single dose vials and appears as clear to opalescent. It contains no<lb/> preservative and is intended for single use by the intramuscular route only.<lb/> The manufacturing steps for Nabi-HB are designed to reduce the risk of transmission of viral disease. The solvent/detergent treatment step, using tri-n -butyl<lb/> phosphate and Triton X-100, is effective in inactivating known enveloped viruses such as hepatitis B virus (HBV), hepatitis C virus (HCV), and human<lb/> immunodeficiency virus (HIV)<lb/> 3 . Virus filtration, using a Planova 35 nm Virus Filter, is effective in reducing some known enveloped and non-enveloped viruses<lb/> 4 .</div>
+
+		</front>
+	</text>
+</tei>

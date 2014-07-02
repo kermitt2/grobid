@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei type="manual">
+	<teiHeader>
+		<fileDesc xml:id="55115458"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">1<lb/></note>
+
+	<docTitle>
+	<titlePart>iPhone 5<lb/> SUPERGUIDE<lb/> </titlePart>
+	</docTitle>
+	
+	<div type="abstract">Everything You Need to Know About the New iPhone<lb/> </div>
+
+	<note type="page">2<lb/></note>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="institution">Consiglio Nazionale delle Ricerche</orgName> (
+							<address>
+								<country>Italy</country>),
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="institution">University of Cambridge</orgName>
+							<lb/> (
+							<address>
+								<country>UK</country>),
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="department">Institut Eurecom</orgName> (
+							<address>
+								<country>UK</country>),
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="institution">Helsinki University</orgName> (
+							<address>
+								<country>Finland</country>),
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="institution">NETikos</orgName> (
+							<address>
+								<country>Italy</country>),
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="institution">Scuola <lb/> Universitaria Professionale della Svizzera Italiana</orgName> (
+							<address>
+								<country>Switzerland</country>)
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

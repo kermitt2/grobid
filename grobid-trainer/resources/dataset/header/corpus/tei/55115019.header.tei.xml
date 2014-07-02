@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55115019"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>10.1021/ol303490b</idno>
+
+	<note type="copyright">&#169; 2013 American Chemical Society<lb/></note>
+
+	<date>Published on Web 01/15/2013<lb/></date>
+
+	<reference>ORGANIC LETTERS<lb/> 2013 Vol. 15, No. 3<lb/> 666–669<lb/></reference>
+
+	<docTitle>
+	<titlePart>From Thia-to Selenadiazoles:<lb/> Changing Interaction Priority<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Benjamin D. Lindner,<lb/> Benjamin A. Coombs,<lb/> Manuel Schaffroth,<lb/> Jens U. Engelhart,<lb/> Olena Tverskoy,<lb/> Frank Rominger,<lb/> Manuel Hamburger,*<lb/> ,, and Uwe H. F. Bunz*<lb/> ,<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Organisch-Chemisches Institut, Ruprecht-Karls-Universit€ at Heidelberg,</affiliation>
+	</byline>
+
+	<address>69120 Heidelberg,<lb/> Germany,</address>
+
+	<byline>
+	<affiliation>and innovationLab GmbH,</affiliation>
+	</byline>
+
+	<address>Speyerer Str. 4, 69115 Heidelberg, Germany<lb/></address>
+
+	<email>uwe.bunz@oci.uni-heidelberg.de; manuel.hamburger@innovationlab.de<lb/></email>
+
+	<note type="submission">Received December 21, 2012<lb/></note>
+
+	<div type="abstract">ABSTRACT<lb/> The synthesis, optical, and electrochemical properties as well as solid-state structures of a series of alkynylated, benzannulated selenadiazoles<lb/> are reported. This set of compounds is compared to the lighter homologue series, the thiadiazoles. The selenadiazoles show head-to-head<lb/> dimerization in the solid state, while packing of the thiadiazoles was dominated by the steric bulk of the side groups. The SeÀN interaction is a<lb/> supramolecular motif that should drive the effective self-assembly and modulate charge transport when these compounds are used as thin films in<lb/> devices.<lb/></div>
+
+		</front>
+	</text>
+</tei>

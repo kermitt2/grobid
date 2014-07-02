@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011080"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Metal chelates of N-(2-pyridylmethyl)iminodiacetate(2-) ion (pmda).<lb/> Part I. Two mixed-ligand copper(II) complexes of pmda with N,N-<lb/>chelating bases. Synthesis, crystal structure and properties of<lb/> H 2 pmda ×/ 0.5H 2 O, [Cu(pmda)(pca)]×/ 3H 2 O (pca0/ a-picolylamine) and<lb/> [Cu(pmda)(Hpb)] ×/ 5H 2 O (Hpb 0/ 2-(2?-pyridyl)benzimidazole)<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Duane Choquesillo-Lazarte<lb/> a , Berta Covelo<lb/> b , Josefa Maria González-Pérez<lb/> a ,<lb/> Alfonso Castiñ eiras<lb/> c,<lb/> *, J. Nicló s-Gutiérrez<lb/> a<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a Department of Inorganic Chemistry, Faculty of Pharmacy, University of Granada,</affiliation>
+	</byline>
+
+	<address>E-18071 Granada, Spain<lb/></address>
+
+	<byline>
+	<affiliation>b Department of Inorganic Chemistry, Faculty of Sciences, University of Vigo,</affiliation>
+	</byline>
+
+	<address>Campus Marcosende, E-36200 Vigo, Spain<lb/></address>
+
+	<byline>
+	<affiliation>c Department of Inorganic Chemistry, Faculty of Pharmacy, University of Santiago de Compostela,</affiliation>
+	</byline>
+
+	<address>E-15706 Santiago de Compostela, Spain<lb/></address>
+
+	<note type="submission">Received 25 October 2001; accepted 15 November 2001<lb/></note>
+
+	<div type="abstract">Abstract<lb/> N -(2-Pyridylmethyl)iminodiacetic acid hemi-hydrate (H 2 pmda×/0.5H 2 O) was prepared and characterized by X-ray crystallography<lb/> (final R 1 0/0.042). The zwitterion H 2 pmda<lb/> 9 is intra -stabilized by a trifurcated hydrogen bond. Intermolecular carboxylic-<lb/>carboxylate hydrogen bonds and the parallel inter-ligand p,p-stacking (3.57(2) Å ) between pyridyl rings from pairs of adjacent<lb/> zwitterions generate 2D frameworks (bi-layers with the carboxyl groups towards the external surfaces and py Á/pmda rings towards<lb/> the inside). In the crystal, the bi-layered structures are connected by equivalent hydrogen bonds, which link each water molecule to<lb/> two symmetry related O-carboxylate atoms from the adjacent external faces of two 2D frameworks. The compounds<lb/> [Cu(pmda)(pca)] ×/3H 2 O (1) and [Cu(pmda)(Hpb)] ×/5H 2 O (2) were obtained by stoichiometric reaction of Cu 2 (CO 3 )(OH) 2 ,<lb/> H 2 pmda×/0.5H 2 O and a-picolylamine (pca) or 2-(2?-pyridyl)benzimidazole (Hpb), respectively, and characterized by single crystal<lb/> X-ray diffractometry. Compound 2 was also studied by TG analysis (with FTIR study of the evolved gasses in the pyrolysis),<lb/> magnetic susceptibility at 80 Á/300 K range, and FTIR, electronic, ESR spectra. In 1 and 2 the copper(II) atom exhibits a distorted<lb/> octahedral coordination (type 4&apos;/1&apos;/1) and pmda acts as tripodal tetra-dentate ligand. However, pmda displays different<lb/> coordination roles. The pmda supplies two N ,O -meridional and two trans -apical N (py),O -donors in 1, whereas links the metal by<lb/> three N ,N (py),O -meridional and one O -apical atoms in 2. No p,p-stacking of pyridyl Á/(pmda) rings is observed in these complexes.<lb/> The pyridyl Á/(pca) ring of 1 is not involved in ring Á/ring stacking interactions, but compound 2 recognizes itself by a roughly anti-<lb/>parallel p,p-stacking of adjacent Hpb ligands (5.38, 3.41(2) Å ) forming pairs of complex units. #</div>
+
+	<note type="copyright">&#169;2002 Elsevier Science Ltd. All<lb/> rights reserved.<lb/></note>
+
+	<keyword>Keywords: Copper(II); N -(2-Pyridylmethyl)iminodiacetic acid; N -(2-Pyridylmethyl)iminodiacetate(2-) ion; 2-(Aminomethyl)pyridine; a-<lb/>Picolylamine; 2-(2?-Pyridyl)benzimidazole; Crystal structures; Mixed-ligand complexes; Aromatic p,p-staking interactions; Molecular recognition;<lb/> Thermal stability; Spectral and magnetic properties<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">Computer Security Division</orgName>
+							<lb/> 
+							<orgName type="laboratory">Information Technology Laboratory</orgName>
+							<lb/>
+							<orgName type="institution">National Institute of Standards and Technology</orgName>
+							<lb/> 
+							<address>
+								<settlement>Gaithersburg</settlement>,
+								<region>MD</region>
+								<postCode>20899-8930</postCode>
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="department">U.S. DEPARTMENT OF COMMERCE</orgName>
+							<orgName type="department">Under Secretary of Commerce for Technology</orgName>
+							<orgName type="institution">NATIONAL INSTITUTE OF STANDARDS AND TECHNOLOGY</orgName>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

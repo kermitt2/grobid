@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011254"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">1<lb/></note>
+
+	<reference>Drachen Foundation Journal Fall 2004<lb/></reference>
+
+	<note type="other">K I T E<lb/> THE DRACHEN FOUNDATION<lb/> J O U R N A L<lb/></note>
+
+	<reference>No. 16 Fall 2004<lb/></reference>
+
+	<docTitle>
+	<titlePart>The Adrenalin Rush<lb/> of Kite Manlifting<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">A celestial angel, Cocky Eek flies through<lb/> the air with the greatest of ease----not to<lb/> mention style. The brave Dutchwoman,<lb/> an artist and costume maker, created her<lb/> own dramatic 60-foot dress. She is part of<lb/> a Dutch flight team headed by Patrick de<lb/> Koning, which uses six Conyne kites (note<lb/> kites behind Eek) and has so far chalked<lb/> up five successful lifts.Page 3.<lb/> </div>
+
+	<byline>
+	<docAuthor>Patrick de Koning<lb/> </docAuthor>
+	</byline>
+	
+	<note type="page">2<lb/></note>
+ 
+	<reference>Drachen Foundation Journal Fall 2004<lb/></reference>
+
+	<note>The Drachen Foundation:<lb/> Kite Archives, Science and Culture<lb/></note>
+
+	<div type="abstract">The Drachen Foundation is devoted to the increase and diffusion of knowledge about<lb/> kites worldwide. A 501(c)(3) private nonprofit corporation, Drachen views kites from the<lb/> standpoint of art, culture, science and history. It uses an integrated program of exhibitions,<lb/> education, research, collections management, and publications to promote learning about<lb/> kites. The archive it maintains is freely open to the public for research.<lb/></div>
+
+		</front>
+	</text>
+</tei>

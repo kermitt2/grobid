@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei type="manual">
+	<teiHeader>
+		<fileDesc xml:id="55115032"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>SAP HANA Modeling Guide<lb/> ■ SAP HANA Appliance Software SPS3<lb/></titlePart>
+	</docTitle>
+
+	<date>2012-02-21</date>
+
+		</front>
+	</text>
+</tei>

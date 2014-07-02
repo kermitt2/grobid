@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010020"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>PHYSICAL ACCESS CONTROL<lb/> SYSTEMS<lb/> Are you protected by two<lb/> screws and a plastic<lb/> cover?...... Probably!<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Zac Franken<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>BlackHat DC</affiliation>
+	</byline>
+
+	<date>2008</date>
+
+		</front>
+	</text>
+</tei>

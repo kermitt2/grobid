@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>H</forename>.
+								<surname>Béa</surname>,
+							<lb/>
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>M</forename> .
+								<surname>Bibes</surname> ,
+							<lb/>
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>F</forename>.
+								<surname>Ott</surname>,
+							<lb/>
+								<marker>2</marker>
+							</persName>
+							<persName>
+								<forename>B</forename> .
+								<surname>Dupé</surname> ,
+							<lb/>
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>X. -H</forename> .
+								<surname>Zhu</surname>,
+							<lb/>
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>S</forename> .
+								<surname>Petit</surname> ,
+							<lb/>
+								<marker>2</marker>
+							</persName>
+							<persName>
+								<forename>S</forename>.
+								<surname>Fusil</surname>,
+							<lb/>
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>C</forename> .
+								<surname>Deranlot</surname> ,
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<forename>K</forename>.
+								<surname>Bouzehouane</surname>,
+							<lb/>
+								<marker>1</marker>and
+							</persName>
+							<persName>
+								<forename>A</forename> .
+								<surname>Barthélémy</surname>
+							<lb/>
+								<marker>1, *</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

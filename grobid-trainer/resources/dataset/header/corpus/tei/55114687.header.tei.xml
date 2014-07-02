@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei type="presentation">
+	<teiHeader>
+		<fileDesc xml:id="55114687"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>A new Approach to Collaborative<lb/> A new Approach to Collaborative<lb/> Information Processing in Complex<lb/> Environmental Management Problems<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Gregor Pavlin<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Thales Research &amp; Technology,</affiliation>
+	</byline>
+
+	<address>D-CIS Lab,<lb/> </address>
+
+	<address>the Netherlands</address>
+
+		</front>
+	</text>
+</tei>

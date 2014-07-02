@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001804"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	
+	<address>7 Westferry Circus ● Canary Wharf ● London E14 4HB ● United Kingdom<lb/></address>
+	
+	<phone>Telephone +44 (0)20 7418 8400 Facsimile +44 (0)20 7418 8545<lb/></phone>
+
+	<email>E-mail info@ema.europa.eu Website www.ema.europa.eu<lb/></email>
+
+	<note type="other">An agency of the European Union<lb/></note>
+
+	<note type="copyright">© European Medicines Agency, 2011. Reproduction is authorised provided the source is acknowledged.<lb/></note>
+
+	<docTitle>
+	<titlePart>Assessment report<lb/> Pumarix<lb/> Common name: Pandemic influenza vaccine (H5N1) (split virion, inactivated,<lb/> adjuvanted)<lb/> </titlePart>
+	</docTitle>
+	
+	<idno>Procedure No. EMEA/H/C/001212<lb/> </idno>
+	
+	<note type="other">Assessment Report as adopted by the CHMP with<lb/> all information of a commercially confidential nature deleted.</note>
+
+		</front>
+	</text>
+</tei>

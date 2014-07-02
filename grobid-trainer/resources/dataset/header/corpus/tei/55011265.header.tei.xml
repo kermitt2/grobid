@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011265"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<affiliation>MITSUBISHI ELECTRIC RESEARCH LABORATORIES<lb/></affiliation>
+	</byline>
+
+	<ptr type="web">http://www.merl.com<lb/></ptr>
+
+	<docTitle>
+	<titlePart>RemoteDT: Support for Multi-Site Table<lb/> Collaboration<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Alan Esenther, Kathy Ryall<lb/></docAuthor>
+	</byline>
+
+	<idno>TR2006-084 </idno>
+
+	<date>July 2006<lb/></date>
+
+	<div type="abstract">Abstract<lb/> Multi-user, interactive tabletops are an exciting new form factor to support collaborative group<lb/> activities. To date, much of the research in this area has focused on co-located collaboration –<lb/> groups of people seated around the same physical table. A natural step is to connect a co-located<lb/> group working around a table to other remote sites, creating a shared collaborative environ-<lb/>ment. In this paper we present RemoteDT, and initial prototype to explore the space of multi-site<lb/> table collaboration. Our system was designed to exploit DiamondTouch [2], a multi-user, multi-<lb/>technology, but could utilize any table hardware that provides the same capabilities. RemoteDT<lb/> provides three modes of interacting with the table (manipulation, annotation, and telepointers),<lb/> as well as support for connecting to remote tables or single-user devices. We believe our initial<lb/> exploration of the space will serve as a good starting point for future exploration by ourselves<lb/> and others.<lb/></div>
+
+	<note type="other">International Conference on Collaboration Technologies (CollabTech 2006)</note>
+
+		</front>
+	</text>
+</tei>

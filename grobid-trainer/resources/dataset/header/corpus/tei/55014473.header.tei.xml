@@ -1,0 +1,69 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014473"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Plant, Cell and Environment (2003) 26, 371–381<lb/></reference>
+
+	<note type="copyright">© 2003 Blackwell Publishing Ltd<lb/></note>
+
+	<note type="page">371<lb/></note>
+
+	<note type="other">Blackwell Science, LtdOxford, UKPCEPlant, Cell and Environment0016-8025Blackwell Publishing Ltd 2003<lb/> 26 Original Article<lb/> Transcript levels of AtMRPs after cadmium treatmentL. Bovet et al.<lb/></note>
+	
+	<note type="other">Correspondence: </note>
+
+	<byline>
+	<docAuthor>Lucien Bovet.</docAuthor>
+	</byline>
+
+	<email>E-mail: lucien.bovet@unine.ch<lb/></email>
+
+	<docTitle>
+	<titlePart>Transcript levels of AtMRPs after cadmium treatment:<lb/> induction of AtMRP3<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>L. BOVET<lb/> 1,4 , T. EGGMANN<lb/> 1 , M. MEYLAN-BETTEX<lb/> 1 , J. POLIER<lb/> 1 , P. KAMMER<lb/> 2 , E. MARIN<lb/> 3 , U. FELLER<lb/> 4 &amp;<lb/> E. MARTINOIA<lb/> 5<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1<lb/> Plant Physiology Laboratory, University of Neuchâtel,</affiliation>
+	</byline>
+
+	<address>Emile Argand 13, 2007 Neuchâtel, Switzerland,<lb/></address>
+
+	<byline>
+	<affiliation>2<lb/> BES, University of<lb/> Bern,</affiliation>
+	</byline>
+
+	<address>Gertrudwokerstrasse 5, 3012 Bern, Switzerland,<lb/></address>
+
+	<byline>
+	<affiliation>3<lb/> CEA-Cadarache,</affiliation>
+	</byline>
+
+	<address>St-Paul Lez Durance, France,<lb/></address>
+
+	<byline>
+	<affiliation>4<lb/> Institute of Plant<lb/> Sciences, University of Bern,</affiliation>
+	</byline>
+
+	<address>31 Altenbergrain, 3013 Bern, Switzerland and<lb/></address>
+
+	<byline>
+	<affiliation>5<lb/> Laboratory for Molecular Plant Physiology,<lb/> University of Zürich,</affiliation>
+	</byline>
+
+	<address>Zollikerstrasse 107, 8008 Zürich, Switzerland<lb/></address>
+
+	<div type="abstract">ABSTRACT<lb/> In yeasts, the ABC-type transporters are involved in vacu-<lb/>olar sequestration of cadmium. In plants, transport experi-<lb/>ments with isolated vacuoles indicate that this is also true.<lb/> In order to know more about the response of AtMRPs, a<lb/> subclass of Arabidopsis ABC transporters, to cadmium,<lb/> their expression pattern was analysed using the microchip<lb/> technology and semi-quantitative reverse transcriptase-<lb/>polymerase chain reaction. From 15 putative sequences<lb/> coding for AtMRPs, transcript levels were detected for 14.<lb/> All were expressed in the roots as well as in the shoots,<lb/> although at a different level. In 4-week-old Arabidopsis ,<lb/> transcript levels of four AtMRPs were up-regulated after<lb/> cadmium treatment. In all cases up-regulation was exclu-<lb/>sively observed in the roots. The increase of transcript lev-<lb/>els was most pronounced for AtMRP3 . A more detailed<lb/> analysis revealed that induction of AtMRP3 could also be<lb/> observed in the shoot when leaves were cut and cadmium<lb/> allowed to be taken up in the shoot. In young plantlets, a<lb/> far higher portion of Cd<lb/> 2+ + +<lb/> + was translocated in the aerial part<lb/> compared with adult plants. Consequently, AtMRP3 tran-<lb/>script levels increased in both root and shoot of young<lb/> plants. This suggests that 7-day-old seedlings do not exhibit<lb/> such a strict root–shoot barrier as 4-week-old plants.<lb/> Expression analysis with mutant plants for glutathione and<lb/> phytochelatin synthesis as well as with compounds produc-<lb/>ing oxidative stress indicate that induction of AtMRP3 is<lb/> likely due to the heavy metal itself.<lb/></div>
+
+	<keyword>Key-words : Arabidopsis thaliana ; ABC transporters;<lb/> AtMRP; cadmium; glutathione; heavy metal transport;<lb/> phytochelatins.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

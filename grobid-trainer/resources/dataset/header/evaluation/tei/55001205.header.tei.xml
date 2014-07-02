@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001205"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Kidney International, Vol. 64 (2003), pp. 887–896<lb/></reference>
+
+	<docTitle>
+	<titlePart>Antisense oligonucleotides against collagen-binding stress<lb/> protein HSP47 suppress peritoneal fibrosis in rats<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>TOMOYA NISHINO, MASANOBU MIYAZAKI, KATSUSHIGE ABE, AKIRA FURUSU, YOKO MISHIMA,<lb/> TAKASHI HARADA, YOSHIYUKI OZONO, TAKEHIKO KOJI, and SHIGERU KOHNO<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Second Department of Internal Medicine; Division of Renal Care Unit; Department of General Medicine; and Department of<lb/> Histology and Cell Biology, Nagasaki University School of Medicine,</affiliation>
+	</byline>
+
+	<address>Nagasaki, Japan<lb/></address>
+
+	<div type="introduction">Antisense oligonucleotides against collagen-binding stress pro-<lb/>tein HSP47 suppress peritoneal fibrosis in rats.<lb/> Background. Peritoneal fibrosis is a serious complication in<lb/> patients on continuous ambulatory peritoneal dialysis (CAPD),<lb/> but the molecular mechanism of this process remains unclear.<lb/> Heat shock protein 47 (HSP47), a collagen-specific molecular<lb/> chaperone, is essential for biosynthesis and secretion of colla-<lb/>gen molecules, and is expressed in the tissue of human perito-<lb/>neal fibrosis. In the present study, we examined the effect of<lb/> HSP47 antisense oligonucleotides (ODNs) on the development<lb/> of experimental peritoneal fibrosis induced by daily intraperito-<lb/>neal injections of chlorhexidine gluconate (CG).<lb/> Methods. HSP47 antisense or sense ODNs were injected<lb/> simultaneously with CG from day 14, after injections of CG<lb/> alone. Peritoneal tissue was dissected out 28 days after CG<lb/> injection. The expression patterns of HSP47, type I and type<lb/> III collagen, ␣-smooth muscle actin (␣-SMA), as a marker of<lb/> myofibroblasts, ED-1 (as a marker of macrophages), and factor<lb/> VIII were examined by immunohistochemistry.<lb/> Results. In rats treated with CG alone, the submesothelial<lb/> collagenous compact zone was thickened, where the expression<lb/> levels of HSP47, type I and type III collagen and ␣-SMA were<lb/> increased. Marked macrophage infiltration was also noted and<lb/> the number of vessels positively stained for factor VIII in-<lb/>creased in the CG-treated group. Treatment with antisense<lb/> ODNs, but not sense ODNs, abrogated CG-induced changes<lb/> in the expression of HSP47, type I and III collagen, ␣-SMA,<lb/> and the number of infiltrating macrophages and vessels.<lb/> Conclusion. Our results indicate the involvement of HSP47<lb/> in the progression of peritoneal fibrosis and that inhibition of<lb/> HSP47 expression might merit further clinical investigation for<lb/> the treatment of peritoneal fibrosis in CAPD patients.<lb/> Continuous ambulatory peritoneal dialysis (CAPD)<lb/> causes morphologic [1] and functional changes in the<lb/> peritoneum. Characteristic pathologic findings in the<lb/> peritoneum of patients with long-term CAPD therapy<lb/></div>
+
+	<keyword>Key words: HSP47, antisense oligonucleotides, peritoneal fibrosis.<lb/></keyword>
+
+	<note type="submission">Received for publication July 13, 2002<lb/> and in revised form January 6, 2003, and March 25, 2003<lb/> Accepted for publication April 29, 2003<lb/></note>
+
+	<note type="copyright"> 2003 by the International Society of Nephrology</note>
+	
+	<div type="introduction"><lb/> 887<lb/> include marked peritoneal fibrosis and massive accumu-<lb/>lation of collagen [2, 3]. In particular, some patients<lb/> develop encapsulating peritoneal sclerosis (EPS) associ-<lb/>ated with high mortality, which is one of the most serious<lb/> complications [4]. The mechanism of peritoneal fibrosis<lb/> in CAPD patients remains poorly understood and no<lb/> effective therapy is available at present. Although there<lb/> is no experimental model for peritoneal fibrosis similar<lb/> to that of patients on CAPD, Suga et al [5] and Ishii<lb/> et al [6] developed experimental models for peritoneal<lb/> fibrosis in rats and EPS in mice, respectively, by perito-<lb/>neal injection of chlorhexidine gluconate (CG). Many<lb/> pathologic findings in the peritoneum from CAPD pa-<lb/>tients, including increased expression of type III collagen,<lb/> heat shock protein 47 (HSP47), ␣-smooth muscle actin<lb/> (␣-SMA), and macrophage infiltration, are also observed<lb/> in the peritoneum of animals injected with CG [7, 8].<lb/> HSP47, a collagen-specific molecular chaperone, is es-<lb/>sential for the biosynthesis and secretion of procollagen<lb/> molecules [9], and implicated in diseases associated with<lb/> hepatic [10] and pulmonary fibrosis [11]. Recent studies<lb/> reported the presence of high expression levels of HSP47<lb/> in various kidney diseases, such as human transplanted<lb/> kidney with fibrosis [12], renal interstitial fibrosis induced<lb/> by unilateral ureteral obstruction [13], experimental mes-<lb/>angial proliferative glomerulonephritis [14], age-related<lb/> nephropathy [15], and gentamicin-induced renal injury [16].<lb/> Furthermore, we previously demonstrated the expres-<lb/>sion of HSP47 in the fibrotic peritoneal tissue from pa-<lb/>tients on CAPD, and its level correlated well with that of<lb/> type III collagen [7]. Other studies showed that antisense<lb/> oligonucleotides (ODNs) of HSP47 inhibited collagen<lb/> synthesis in 3T6 cells [17] and in experimental prolifera-<lb/>tive glomerulonephritis induced by anti-thy-1 antibody<lb/> [18]. These findings suggest the important role of HSP47<lb/> in collagen synthesis in various fibrotic disorders.<lb/> Mishima et al [8] recently demonstrated that HSP47<lb/> expression significantly correlated with accumulation of<lb/> collagen type I and III in CG-induced peritoneal fibrosis.</div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013318"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Carbohydrate Research, 28 (1973) 144-146<lb/> </reference>
+
+	<note type="copyright">&#169; Elsevier Scientific Publishing Company, Amsterdam -Printed in BeIgium<lb/></note>
+
+	<note type="other">Note<lb/></note>
+
+	<docTitle>
+	<titlePart>Synthesis of L-fucose<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>MARTA DEJTER-JUSZYNSKIAND<lb/> HAROLD M.FLOWERS<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Biophysks, Weizmann Institute of Scknce,</affiliation>
+	</byline>
+
+	<address>Rehocoth (Israel)<lb/></address>
+
+	<note type="submission">(Received November 13th, 1972; accepted for publication, January 18th, 1973)<lb/></note>
+
+		</front>
+	</text>
+</tei>

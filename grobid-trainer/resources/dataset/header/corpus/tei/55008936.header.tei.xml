@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008936"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Kidney International, VoL 47 (1995), pp. 1528—1536<lb/></reference>
+
+	<docTitle>
+	<titlePart>Inhibition of proteinase 3 by ANCA and its correlation with<lb/> disease activity in Wegener&apos;s granulomatosis<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>GHALEB H. DAOUK, RUNOLFUR PALSSON, and M. AMIN ARNAOUT<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Leukocyte Biology and Inflammation Program, Renal Unit and the Department of Medicine, Pediatric Nephrology and Children&apos;s Service, Massachusetts<lb/> General Hospital and Harvard Medical School,</affiliation>
+	</byline>
+
+	<address>Charlestown, Massachusetts, USA<lb/></address>
+
+	<div type="abstract">Inhibition of proteinase 3 by ANCA and its correlation with disease<lb/> activity in Wegener&apos;s granulomatosis. Detection of circulating anti-<lb/>neutrophil cytoplasmic antibodies (ANCA) to the neutrophil serine<lb/> proteinase, proteinase 3 (PR3), has proven valuable for the diagnosis of<lb/> Wegener&apos;s granulomatosis (WG). However, the importance of these<lb/> autoantibodies in the pathogenesis of WG remains unknown. It was<lb/> recently reported that anti-PR3 autoantibodies (PR3-ANCA) from some<lb/> patients with WG inhibit the proteolytic activity of PR3 and interfere with<lb/> the inactivation of PR3 by the physiologic inhibitor, a1-proteinase inhib-<lb/>itor (a1-PI). We have studied the effect of PR3-ANCA on the enzymatic<lb/> activity of PR3 and its correlation with disease activity in patients with<lb/> WG. We purified IgG from 21 PR3-ANCA positive sera obtained from 17<lb/> patients with WG, and determined its effect on the esterolytic and<lb/> proteolytic activity of purified human PR3 using Boc-Ala-O-Nitrophenyl<lb/> ester and fluoresceinated-elastin as enzyme substrates. Controls included<lb/> seven sera containing anti-MPO autoantibodies (MPO-ANCA) from<lb/> patients with systemic vasculitis and seven ANCA-negative sera obtained<lb/> from healthy individuals. We found that PR3-ANCA from 9 of the 17<lb/> patients significantly inhibited the activity of PR3. There was no correla-<lb/>tion between the titers of PR3-ANCA and their inhibitory activity. For one<lb/> extensively characterized autoantibody, the inhibition reached 70 to 95%<lb/> at 20-fold molar excess of IgG to enzyme, with an apparent Kapp of 56.5<lb/> /LM. This inhibition was non-competitive in nature, and was additive to<lb/> that produced by cs1-PI. A review of the clinical histories of the patients<lb/> revealed a strong association between active WG and inhibitory autoan-<lb/>tibodies. PR3-ANCA from eight of 10 patients with active disease showed<lb/> significant inhibition of PR3 activity, whereas only one of seven patients in<lb/> remission had inhibitory PR3-ANCA. These results suggest that the</div>
+
+		</front>
+	</text>
+</tei>

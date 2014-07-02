@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011561"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="copyright">&#169;2006 Poultry Science Association, Inc.<lb/></note>
+
+	<docTitle>
+	<titlePart>Effect of Bacillus subtilis PB6 (CloSTAT)<lb/> on Broilers Infected with a Pathogenic<lb/> Strain of Escherichia coli<lb/> 1
+	<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>A. Y.-L. Teo and H.-M. Tan<lb/> 2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Kemin Industries (Asia) Pte. Ltd., Research and Development Department,<lb/></affiliation>
+	</byline>
+
+	<address>12 Senoko Drive, Singapore 758200, Republic of Singapore<lb/></address>
+
+	<note type="other">Primary Audience: Veterinarians, Nutritionists, Researchers, Production Managers<lb/></note>
+
+	<div type="abstract">SUMMARY<lb/> In an attempt to demonstrate the efficacy of Bacillus subtilis PB6, isolated from the gut of a<lb/> healthy chicken, on broiler performance, an experimental trial was conducted in which broilers,<lb/> infected or uninfected with a pathogenic strain of Escherichia coli, were supplemented with B.<lb/> subtilis PB6 (CloSTAT) or zinc bacitracin-colistin sulfate and compared against negative controls<lb/> given no antibiotic supplementation. We observed 10-and 8-point improvements in feed conversion<lb/> ratio (FCR) in 42-d-old uninfected broilers treated with B. subtilis PB6 when compared with the<lb/> negative and antibiotic controls, respectively. However, infected birds supplemented with B. subtilis<lb/> PB6 registered a significant 15-point FCR improvement over those in the negative control group<lb/> (P &lt; 0.05). Compared with the negative control, the increase in body weights of uninfected and<lb/> infected 42-d-old broilers receiving B. subtilis PB6 were 97 and 152 g, respectively (P &lt; 0.05). The<lb/> growth-promoting and protective results from this study indicated that B. subtilis PB6 not only<lb/> helped in the maintenance of beneficial bacteria but also could act as a replacement for antimicrobial<lb/> growth promoters in broilers. The percentages of mortality of infected birds within antibiotic-<lb/>treated groups and B. subtilis PB6-treated groups were reduced from 14% to 6 and 8%, respectively.<lb/> Numerically, uninfected birds supplemented with B. subtilis PB6 had elevated levels of lactobacilli<lb/> (1.4 to 4.5 × 10<lb/> 7 cfu/g) in their intestinal tracts (32-and 42-d-old broilers) compared with the<lb/> controls. Even after being challenged with a pathogenic strain of E. coli, the lactobacilli counts in<lb/> the B. subtilis PB6-treated birds tended to remain the same as those receiving antibiotic and were<lb/> considerably higher than those of the untreated birds.<lb/></div>
+
+	<keyword>Key words: Bacillus subtilis, Escherichia coli, Lactobacillus spp., antibiotic growth promoter<lb/> replacement, feed conversion ratio<lb/></keyword>
+
+	<reference>2006 J. Appl. Poult. Res. 15:229–235</reference>
+
+		</front>
+	</text>
+</tei>

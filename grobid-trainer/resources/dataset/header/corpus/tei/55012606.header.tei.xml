@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012606"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>JPEG Compression Algorithm Using CUDA<lb/> Course Project for ECE 1724<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Pranit Patel, Jeff Wong, Manisha Tatikonda, and Jarek Marczewski<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Computer Engineering<lb/> University of Toronto<lb/></affiliation>
+	</byline>
+
+	<div type="abstract">Abstract<lb/> The goal of this project was to explore the potential performance improvements that could be<lb/> gained through the use GPU processing techniques within the CUDA architecture for JPEG<lb/> compression algorithm. The choice of compression algorithms as the focus was based on<lb/> examples of data level parallelism found within the algorithms and a desire to explore the<lb/> effectiveness of cooperative algorithm management between the system CPU and an available<lb/> GPU. In our project we ported JPEG Compression algorithm in CUDA and achieved upto 61%<lb/> performance.<lb/></div>
+
+		</front>
+	</text>
+</tei>

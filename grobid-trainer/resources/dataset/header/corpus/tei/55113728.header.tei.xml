@@ -1,0 +1,69 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55113728"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>GPU Asynchronous Stochastic Gradient Descent to<lb/> Speed Up Neural Network Training<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Tom Paine<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University of Illinois at Urbana-Champaign<lb/></affiliation>
+	</byline>
+
+	<address>Urbana, IL<lb/></address>
+
+	<email>paine1@illinois.edu<lb/></email>
+
+	<byline>
+	<docAuthor>Hailin Jin<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Adobe Research<lb/></affiliation>
+	</byline>
+
+	<address>San Jose, CA<lb/></address>
+
+	<byline>
+	<docAuthor>Jianchao Yang<lb/></docAuthor>
+	</byline>
+
+ 	<byline>
+	<affiliation>Adobe Research<lb/></affiliation>
+	</byline>
+	
+	<address>San Jose, CA<lb/></address> 
+	
+	<byline>
+	<docAuthor>Zhe Lin<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Adobe Research<lb/></affiliation>
+	</byline>
+
+	<address>San Jose, CA<lb/></address>
+
+	<byline>
+	<docAuthor>Thomas Huang<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University of Illinois at Urbana-Champaign<lb/></affiliation>
+	</byline>
+
+	<address>Urbana, IL<lb/></address>
+
+	<div type="abstract">Abstract<lb/> The ability to train large-scale neural networks has resulted in state-of-the-art per-<lb/>formance in many areas of computer vision. These results have largely come from<lb/> computational break throughs of two forms: model parallelism, e.g. GPU acceler-<lb/>ated training, which has seen quick adoption in computer vision circles, and data<lb/> parallelism, e.g. A-SGD, whose large scale has been used mostly in industry.<lb/> We report early experiments with a system that makes use of both model paral-<lb/>lelism and data parallelism, we call GPU A-SGD. We show using GPU A-SGD<lb/> it is possible to speed up training of large convolutional neural networks useful<lb/> for computer vision. We believe GPU A-SGD will make it possible to train larger<lb/> networks on larger training sets in a reasonable amount of time.<lb/></div>
+
+		</front>
+	</text>
+</tei>

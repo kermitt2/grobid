@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012512"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">3GPP TSG RAN WG1 Meeting #65<lb/> </note>
+
+	<idno>R1-111336<lb/> </idno>
+
+	<address>Spain, Barcelona, </address>
+
+	<date>09 – 13 May, 2011<lb/> </date>
+
+	<note type="other">3GPP TSG-RAN WG2 Meeting #73bis<lb/> </note>
+
+	<idno>R2-112458<lb/> </idno>
+
+	<address>Shanghai, P.R. of China, </address>
+
+	<date>11th – 15th April 2011<lb/></date>
+
+	<docTitle>
+	<titlePart>Title:<lb/> LS on further enhancements for CELL_FACH<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Response to:<lb/> Release:<lb/> Rel-11<lb/> Work Item:<lb/> Cell_FACH_enh-Core<lb/>Source:<lb/> TSG RAN WG2<lb/> To:<lb/> TSG RAN WG1<lb/> Cc:<lb/> Contact Person:<lb/> Name:<lb/></note>
+
+	<byline>
+	<docAuthor>Ravi Agarwal<lb/></docAuthor>
+	</byline>
+
+	<email>E-mail Address: ragarwal[AT]qualcomm[DOT]com<lb/> </email>
+
+	<note type="other">Attachments:<lb/> None<lb/> </note>
+
+	<div type="abstract">1. Overall Description:<lb/> RAN#51 agreed on the work item description &quot;Further enhancements for CELL_FACH&quot; (RP-110436). The<lb/> objectives of the WID are to identify whether the gains justify the complexity for each of the sub-features listed<lb/> in the WID over existing mechanisms, and specify those for which this is shown to be the case.<lb/> RAN2 acknowledges that some of the sub-features listed in the WID may impact RAN1. In particular, based on<lb/> high level discussions, RAN2 has identified the following sub-features that are more in the RAN1 domain of<lb/> expertise:<lb/>  Downlink related improvements of resource utilization, throughput, latency and coverage<lb/> o Stand-alone HS-DPCCH without ongoing E-DCH transmission<lb/>  Uplink related improvements of resource utilization, throughput, latency and coverage<lb/> o TTI alignment between CELL_FACH UEs and CELL_DCH UEs<lb/> o Reduction in timing of the initial access in the physical random access procedure<lb/> o Signaling based interference control<lb/> In order to progress the work on these sub-features, RAN2 kindly requests RAN1 group to start the technical<lb/> evaluation of the sub-features listed above and convey their findings on the gain and complexity tradeoff back<lb/> to RAN2. RAN2 will continue to evaluate and provide further guidance if necessary.</div>
+
+		</front>
+	</text>
+</tei>

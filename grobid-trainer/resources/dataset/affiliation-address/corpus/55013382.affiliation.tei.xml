@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="department">Department of Life and Environmental Sciences</orgName>,
+							<orgName type="institution">Shimane University</orgName>,
+							<address>
+								<postCode>1060</postCode>
+								<settlement>Nishikawatsu</settlement>,
+								<settlement>Matsue</settlement>,
+								<region>Shimane</region>
+								<postCode>690-8504</postCode>,
+								<country>Japan</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="department">Department of Advanced Bioscience</orgName>,
+							<orgName type="department">Faculty of Agriculture</orgName>,
+							<orgName type="institution">Kinki University</orgName>,
+							<address>
+								<postCode>3327-204</postCode>
+								<settlement>Nakamachi</settlement>,
+								<settlement>Nara</settlement>,
+								<region>Nara</region>
+								<postCode>631-8505</postCode>,
+								<country>Japan</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

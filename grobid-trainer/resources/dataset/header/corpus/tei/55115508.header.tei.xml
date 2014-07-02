@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei type="wiki">
+	<teiHeader>
+		<fileDesc xml:id="55115508"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Boron nitride<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Boron nitride<lb/> Ide ntifie rs<lb/> CAS number<lb/> 10043-11-5<lb/> PubChem 66227<lb/> ChemSpider 59612<lb/> EC number<lb/> 233-136-6<lb/> MeSH Elbor<lb/> ChEBI CHEBI:50883<lb/> RT ECS number ED7800000<lb/> Gmelin Reference<lb/> 216<lb/>Jmol-3D images Image 1<lb/></note>
+
+	<ptr type="web">(http://chemapps.stolaf.edu<lb/> /jmol/jmol.php?model=B%23N)<lb/></ptr>
+
+		</front>
+	</text>
+</tei>

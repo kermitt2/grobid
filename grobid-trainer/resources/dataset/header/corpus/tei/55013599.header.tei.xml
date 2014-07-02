@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013599"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Synthesis and Ligand Binding Studies of 4′-Iodobenzoyl Esters of Tropanes and<lb/> Piperidines at the Dopamine Transporter
+	<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Satendra Singh,* Garo P. Basmadjian, Kwasi S. Avor, Buddy Pouw, and Thomas W. Seale<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Medicinal Chemistry and Pharmaceutics, College of Pharmacy, and Department of Pediatrics, Psychiatry and<lb/> Behavioral Science, College of Medicine, University of Oklahoma, Health Sciences Center,</affiliation>
+	</byline>
+
+	<address>Oklahoma City, Oklahoma 73190<lb/></address>
+
+	<note type="submission">Received February 28, 1997<lb/></note>
+
+	<div type="abstract">X<lb/> Four analogs and two homologs of cocaine, designed as potent cocaine antagonists, were<lb/> synthesized. The S N 2 reaction between ecgonine methyl ester (13) or appropriately substituted<lb/> piperidinol (19, 21) and appropriately substituted 4-iodobenzoyl chloride gave 4-iodobenzoyl<lb/> esters of tropanes and piperidines (5-8). 2′-Hydroxycocaine (9) was obtained from 2′-<lb/>acetoxycocaine (12) by selective transesterification with MeOH saturated with dry HCl gas.<lb/> 2′-Acetoxycocaine (12) was synthesized from acetylsalicyloyl chloride (23) and ecgonine methyl<lb/> ester (13). The binding affinities of these compounds were determined at the dopamine<lb/> transporter for the displacement of [ 3 H]WIN-35428. An iodo group substitution at the 4′-position<lb/> of cocaine decreased dopamine transporter binding potency, while a hydroxy or acetoxy group<lb/> at the 2′-position exhibited increased binding potency for the dopamine transporter compared<lb/> to cocaine (10-and 3.58-fold, respectively). 2′-Hydroxylation also enhanced the binding potency<lb/> of 4′-iodococaine (5) by 10-fold. Replacement of the tropane ring with piperidine led to poor<lb/> binding affinities.<lb/></div>
+
+		</front>
+	</text>
+</tei>

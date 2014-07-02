@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012722"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<docAuthor>R<lb/> C<lb/> C h a k r a b o r t y , </docAuthor>
+	</byline>
+	
+	<ptr>w<lb/> w<lb/> w . m<lb/> y r e a d e r s . i n f o o<lb/></ptr>
+
+	<note type="other">Fundamentals of Neural Networks : Soft Computing Course Lecture 7 – 14, notes, slides<lb/></note>
+
+	<ptr>www.myreaders.info/ , </ptr>
+
+	<byline>
+	<docAuthor>RC Chakraborty, </docAuthor>
+	</byline>
+
+	<email>e-mail rcchak@gmail.com ,</email>
+
+	<date>Aug. 10, 2010<lb/></date>
+
+	<ptr>http://www.myreaders.info/html/soft_computing.html<lb/></ptr>
+
+	<docTitle>
+	<titlePart>Fundamentals of Neural Networks<lb/> Soft Computing<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">Neural network, topics : Introduction, biological neuron model,<lb/> artificial neuron model, neuron equation. Artificial neuron : basic<lb/> elements, activation and threshold function, piecewise linear and<lb/> sigmoidal function. Neural network architectures : single layer feed-<lb/>forward network, multi layer feed-forward network, recurrent<lb/> networks. Learning methods in neural networks : unsupervised<lb/> Learning -Hebbian learning, competitive learning; Supervised<lb/> learning -stochastic learning, gradient descent learning; Reinforced<lb/> learning. Taxonomy of neural network systems : popular neural<lb/> network systems, classification of neural network systems as per<lb/> learning methods and architecture. Single-layer NN system : single<lb/> layer perceptron, learning algorithm for training perceptron,<lb/> linearly separable task, XOR problem, ADAptive LINear Element<lb/> (ADALINE) -architecture, and training. Applications of neural<lb/> networks: clustering, classification, pattern recognition, function<lb/> approximation, prediction systems.<lb/></div>
+
+	<ptr>www.myreaders.info<lb/> </ptr>
+
+	<byline>
+	<docAuthor>R<lb/> C<lb/> C h a k r a b o r t y , </docAuthor>
+	</byline>
+	
+	<ptr>w<lb/> w<lb/> w . m<lb/> y r e a d e r s . i n f o o<lb/></ptr>
+
+	<docTitle>
+	<titlePart>Fundamentals of Neural Networks<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Soft Computing<lb/> Topics<lb/> (Lectures 07, 08, 09, 10, 11, 12, 13, 14<lb/> 8 hours)<lb/> Slides<lb/></note>
+
+		</front>
+	</text>
+</tei>

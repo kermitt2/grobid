@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010576"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>POSIX Access Control Lists on Linux<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Andreas Grünbacher<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>SuSE Labs, SuSE Linux AG<lb/></affiliation>
+	</byline>
+
+	<address>Nuremberg, Germany<lb/></address>
+
+	<email>agruen@suse.de<lb/></email>
+
+	<div type="abstract">Abstract<lb/> This paper discusses file system Access Control Lists<lb/> as implemented in several UNIX-like operating systems.<lb/> After recapitulating the concepts of these Access Con-<lb/>trol Lists that never formally became a POSIX standard,<lb/> we focus on the different aspects of implementation and<lb/> use on Linux.<lb/></div>
+
+		</front>
+	</text>
+</tei>

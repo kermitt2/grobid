@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014204"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">R e d u c t i o n of Dyes by Free Radicals in Solution<lb/></note>
+
+	<note type="page">2753<lb/></note>
+
+	<docTitle>
+	<titlePart>Reduction of Dyes by Free Radicals in Solution. Correlation between Reaction Rate<lb/> Constants and Redox Potentials<lb/>
+	</titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>P. S. b o 1 and E. Hayon*<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Pioneering Research Laboratory. U. S. Army Natick Laboratories.</affiliation>
+	</byline>
+
+	<address>Natick, Massachusetts 01 760</address>
+
+	<note type="submission">(Received June 1 1, 1973)<lb/></note>
+
+	<div type="abstract">Publication costs assisted by Natick Laboratories<lb/> The reactions of some free radicals (RH-) with a number of organic dyes (D) have been examined in<lb/> aqueous solutions, using the. fast-reaction technique of pulse radiolysis. The radicals studied include<lb/> CHzOH, (CH&amp;COH, NHzCHCOO-, G O H (C = cytosine), .TH (TH2 = dihydrothymine), and C H 2 -<lb/>and were produced by reaction of the substrates with OH radicals. The dyes used were Crystal Violet,<lb/> Safranine T , Phenosafranine, Indigo Di-and Tetrasulfonate, Methylene Blue, Thionine, Indophenol and<lb/> 2,6-Dichloroindophenol. The electron transfer reaction, RH. + D -R + .D-+ H + (kl), were deter-<lb/>mined by following the bleaching kinetics of the dyes a t the wavelengths where they absorb. The rates<lb/> were found to increase monotonically with increase in the redox potential E , of the dyes examined. Sim-<lb/>ilarly the efficiencies (expressed in percentage) of these reactions were obtained and found to be marked-<lb/>ly dependent upon the E , values of the dyes in the range from -0.357 to +0.217 V. These results are<lb/> discussed and the suggestion made that this correlation represents the dependence upon AEm. the differ-<lb/>ence in the redox potentials of the donor radical and the acceptor dyes.<lb/></div>
+
+		</front>
+	</text>
+</tei>

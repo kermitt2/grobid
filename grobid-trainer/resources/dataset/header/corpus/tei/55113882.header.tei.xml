@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei type="web">
+	<teiHeader>
+		<fileDesc xml:id="55113882"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Search<lb/> Company News Products Service FA Q Contact<lb/> Home | Products | biocide | DBNPA<lb/></note>
+
+	<docTitle>
+	<titlePart>DBNPA<lb/> DBNPA Specification<lb/></titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

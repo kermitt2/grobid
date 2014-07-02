@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000670"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type ="page">348<lb/></note>
+	
+	<note type ="copyright"> © 2006 Diabetes UK. </note>
+	
+	<reference>Diabetic Medicine , 23 , 348–359<lb/></reference>
+
+	<idno type="DOI">DOI: 10.1111/j.1464-5491.2006.01785.x<lb/></idno>
+
+	<div type="introduction">Introduction<lb/> The impact of foot ulcers in diabetes<lb/> Around 6% of people with diabetes in the UK have had foot<lb/> ulceration [1]. The annual UK cost was estimated at £17m<lb/> in 1994 [2]. Foot ulceration in diabetes has been associated<lb/> with higher mortality [3] and reduced quality of life [4 – 6].<lb/> Infection and foot ulceration in diabetes<lb/> People with diabetes are particularly susceptible to foot infection<lb/> [7,8]. Infection in foot ulcers may be polymicrobial [9,10] and both<lb/> the number of bacterial groups and bacterial density is thought<lb/> to affect healing. High cell density can lead to alterations in colony<lb/> behaviour through messaging and by their secreting a protective<lb/> Correspondence to :</div>
+
+	<byline>
+	<docAuthor>Dr E. Andrea Nelson,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>School of Healthcare, </affiliation>
+	</byline>
+
+	<address>University<lb/> of Leeds, Baines Way, Leeds LS2 9UT, UK.</address>
+
+	<email>E-mail: e.a.nelson@leeds.ac.uk<lb/></email>
+
+	<note type="other">1<lb/> Members of the DASIDU Steering Group are listed at the end of the article.<lb/></note>
+
+	<div type="abstract">Abstract<lb/> Background Foot ulcers in diabetes are associated with increased mortality,<lb/> illness and reduced quality of life. Ulcer infection impairs healing and antimicro-<lb/>bial interventions may cure infection, aid healing and reduce amputation rates.</div>
+
+		</front>
+	</text>
+</tei>

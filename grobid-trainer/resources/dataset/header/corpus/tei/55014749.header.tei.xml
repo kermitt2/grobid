@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014749"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<affiliation>Fraunhofer FOKUS<lb/> Competence Center NGNI<lb/></affiliation>
+	</byline>
+
+	<note type="page">1<lb/></note>
+
+	<docTitle>
+	<titlePart>Access Network Discovery and Selection in<lb/> the Future Broadband Wireless Environment<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Marius Corici, Jens Fiedler,<lb/> Thomas Magedanz, Dragos Vingarzan<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Fraunhofer FOKUS<lb/></affiliation>
+	</byline>
+
+	<address>Berlin, Germany<lb/></address>
+	
+	<email>{Marius-Iulian.Corici, Jens.Fiedler,<lb/> Thomas.Magedanz, Dragos.Vingarzan}@fokus.fraunhofer.de</email>
+
+		</front>
+	</text>
+</tei>

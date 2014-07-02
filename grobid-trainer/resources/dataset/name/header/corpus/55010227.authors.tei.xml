@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Daniel</forename>
+								<surname>Schneider</surname>,
+							</persName>
+							<persName>
+								<forename>Torsten</forename>
+								<surname>Rabe</surname>,
+							</persName>
+							<persName>
+								<forename>Thomas</forename>
+								<surname>Riedl</surname>,
+								<marker>*</marker>
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Thomas</forename>
+								<surname>Dobbertin</surname> ,
+							</persName>
+							<persName>
+								<forename>Michael</forename>
+								<surname>Kröger</surname> ,
+							</persName>
+							<persName>
+								<forename>Eike</forename>
+								<surname>Becker</surname> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Hans -Hermann</forename>
+								<surname>Johannes</surname>,
+							</persName>
+							<persName>
+								<forename>Wolfgang</forename>
+								<surname>Kowalsky</surname> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Thomas</forename>
+								<surname>Weimann</surname> ,
+							</persName>
+							<persName>
+								<forename>Jing</forename>
+								<surname>Wang</surname>,
+							</persName>
+							<persName>
+								<forename>Peter</forename>
+								<surname>Hinze</surname>,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Anja</forename>
+								<surname>Gerhard</surname>,
+							</persName>
+							<persName>
+								<forename>Philipp</forename>
+								<surname>Stössel</surname> ,and
+							</persName>
+							<persName>
+								<forename>Horst</forename>
+								<surname>Vestweber</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

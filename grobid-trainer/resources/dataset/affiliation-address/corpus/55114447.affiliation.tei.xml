@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="department">Department of Genetic Medicine</orgName>,
+							<orgName type="institution">Weill Medical College of Cornell Uni-<lb/>versity</orgName>,
+							<address>
+								<settlement>New York</settlement>,
+								<region>NY</region>
+								<postCode>10021</postCode>
+							</address>
+							(<orgName type="institution">WMC</orgName>),
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="department">Department of Medicine</orgName>,
+							<orgName type="institution">WMC</orgName>,
+							<lb/>
+						</affiliation>
+						<affiliation>
+							<marker>3</marker>
+							<orgName type="department">Department of Pediatrics</orgName>,
+							<orgName type="institution">WMC</orgName>,
+						</affiliation>
+						<affiliation>
+							<marker>4</marker>
+							<orgName type="department">Department of Neurological Surgery</orgName>,
+							<lb/>
+							<orgName type="institution">WMC</orgName>,
+						</affiliation>
+						<affiliation>
+							<marker>5</marker>
+							<orgName type="department">Department of Radiology</orgName>,
+							<orgName type="institution">WMC</orgName>,
+						</affiliation>
+						<affiliation>
+							<marker>6</marker>
+							<orgName type="department">Department of Anesthesiology</orgName>,
+							<lb/>
+							<orgName type="institution">WMC</orgName>,
+						</affiliation>
+						<affiliation>
+							<marker>7</marker>
+							<orgName type="institution">Institute for Basic Research in Developmental Disabilities</orgName>,
+							<address>
+								<settlement>Staten<lb/> Island</settlement>,
+								<region>NY</region>
+								<postCode>10314</postCode>.
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

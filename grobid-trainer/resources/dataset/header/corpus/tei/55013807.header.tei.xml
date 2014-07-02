@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013807"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">HIGH SIDE SWITCH<lb/> 33988<lb/> ORDERING INFORMATION<lb/> Device Temperature<lb/> Range (T A )<lb/> Package<lb/>
+	MC33988CPNA -40 °C to 125 °C<lb/> 16 PQFN<lb/> BOTTOM VIEW<lb/> PNA SUFFIX<lb/> 98ARL10521D 16-PIN PQFN<lb/> Document Number: MC33988<lb/> Rev. 6.0, 9/2010<lb/></note>
+
+	<byline>
+	<affiliation>Freescale Semiconductor<lb/> </affiliation>
+	</byline>
+	
+	<note type="other">Advance Information<lb/></note>
+
+	<note>* This document contains certain information on a new product.<lb/> Specifications and information herein are subject to change without notice.<lb/></note>
+
+	<note type="copyright">© Freescale Semiconductor, Inc., 2010. All rights reserved.<lb/></note>
+
+	<docTitle>
+	<titlePart>Dual Intelligent High-current<lb/> Self-protected Silicon High Side<lb/> Switch (8.0 mΩ)<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">The 33988 is a dual self-protected 8.0 mΩ silicon switch used to<lb/> replace electromechanical relays, fuses, and discrete devices in<lb/> power management applications. The 33988 is designed for harsh<lb/> environments, and it includes self-recovery features. The device is<lb/> suitable for loads with high inrush current, as well as motors and all<lb/> types of resistive and inductive loads.<lb/> Programming, control, and diagnostics are implemented via the<lb/> Serial Peripheral Interface (SPI). A dedicated parallel input is<lb/> available for alternate and pulse-width modulation (PWM) control of<lb/> each output. SPI-programmable fault trip thresholds allow the device<lb/> to be adjusted for optimal performance in the application.<lb/> The 33988 is packaged in a power-enhanced 12 x 12 nonleaded<lb/> PQFN package with exposed tabs.<lb/> Features<lb/> @BULLET Dual 8.0 mΩ max high side switch with parallel input or SPI control<lb/> @BULLET 6.0 V to 27 V operating voltage with standby currents &lt; 5.0 μA<lb/> @BULLET Output current monitoring with two SPI-selectable current ratios<lb/> @BULLET SPI control of over-current limit, over-current fault blanking time,<lb/> output-OFF open load detection, output ON/OFF control,<lb/> watchdog timeout, slew rates, and fault status reporting<lb/> @BULLET SPI status reporting of overcurrent, open and shorted loads, over-<lb/>temperature, under-voltage and over-voltage shutdown, fail-safe<lb/> pin status, and program status<lb/> @BULLET Enhanced -16 V reverse polarity V PWR protection<lb/> VDD</div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000273"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<docAuthor>Bill Majurski<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>National Institute of Standards and Technology (NIST)<lb/></affiliation>
+	</byline>
+
+	<docTitle>
+	<titlePart>IT Infrastructure:<lb/> IT Infrastructure:<lb/> Profiles for Health<lb/> Profiles for Health<lb/> Information Exchange<lb/> Information Exchange</titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

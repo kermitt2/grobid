@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013421"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Display Settings:<lb/> Abstract<lb/> </note>
+
+	<reference>Bing Du Xue Bao. 2010 Mar;26(2):97-102.<lb/></reference>
+
+	<docTitle>
+	<titlePart>[Development of single-tube multiplex real-time PCR for simultaneous detection of<lb/> novel influenza A H1N1 and human seasonal influenza A H1N1 and H3N2 virus].<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">[Article in Chinese]<lb/></note>
+
+	<byline>
+	<docAuthor>Qin M, Wang DY, Huang F, Nie K, Qu M, Wang M, Han F, Zhao X, Cheng YH, Shu YL, Ma XJ.<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>National Institute for Viral Disease Control and Prevention, Chinese Center for Disease Control and Prevention, </affiliation>
+	</byline>
+
+	<address>Beijing 100052, China.<lb/></address>
+
+	<email>alex2003@yeah.net<lb/></email>
+
+	<div type="abstract">Abstract<lb/> In this study, we established a rapid and sensitive multiplex Real-time reverse transcription polymerase chain reaction<lb/> (mrtRT-PCR) to simultaneously detect the novel human influenza A H1N1 virus, human seasonal influenza A H1N1 and<lb/> H3N2. This assay had three pairs of primer to target the conserved regions of the HA gene for each of the HA types<lb/> including novel H1N1, seasonal H1N1 and seasonal H3N2, and one pair of primer designed to detect the internal control-<lb/>RnaseP gene. This assay was performed in one-step in one tube. To validate the specificity of the multiplex Real-time<lb/> RT-PCR assay, different human influenza virus including human seasonal influenza A H1N1 and H3N2, human influenza B<lb/> and reference A/California/07/2009 (H1N1) sw1 was tested. To evaluate the sensitivity of the assay, serial dilutions of<lb/> RNA from in vitro transcription of the novel human influenza A H1N1 HA gene was tested. Finally this assay was evaluated<lb/> with clinical samples from 54 fever patients diagnosed with novel influenza A H1N1 or seasonal H1/H3 or HB infection<lb/> either by real-time PCR recommended by the WHO or HI assay by the National Influenza Center. Our results showed that<lb/> the assay could achieve a sensitivity of 20 RNA copies of novel influenza A H1N1 with high specificity and could detect<lb/> potential mixed co-infection. In conclusion, this multiplex real-time RT-PCR assay combines both rapidity and sensitivity for<lb/> not only detecting the novel human influenza A H1N1 virus, but also monitoring the human seasonal influenza A H1N1 and<lb/> H3N2 simultaneously.</div>
+
+		</front>
+	</text>
+</tei>

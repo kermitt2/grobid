@@ -1,0 +1,59 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55114619"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">79<lb/> </note>
+
+	<note type="other">Modeling &amp; Adapting<lb/></note>
+
+	<docTitle>
+	<titlePart>The Automotive Ontology: Managing Knowledge Inside<lb/> the Vehicle and Sharing it Between Cars<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Michael Feld<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>German Research Center for Artificial<lb/> Intelligence (DFKI)<lb/></affiliation>
+	</byline>
+
+	<address>Saarbrücken, Germany<lb/></address>
+
+	<email>michael.feld@dfki.de<lb/></email>
+
+	<byline>
+	<docAuthor>Christian Müller<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>German Research Center for Artificial<lb/> Intelligence (DFKI)<lb/></affiliation>
+	</byline>
+
+	<address>Saarbrücken, Germany and<lb/></address>
+
+	<byline>
+	<affiliation>EIT ICT Labs Intelligent Transportation Systems<lb/></affiliation>
+	</byline>
+
+	<email>christian.mueller@dfki.de<lb/></email>
+
+	<div type="abstract">ABSTRACT<lb/> Cars have been increasingly equipped with technology, meet-<lb/>ing the demand of people for safety, connectivity, and com-<lb/>fort. Upcoming HMIs provide access to in-car systems and<lb/> web services in a personalized manner that facilitates a large<lb/> array of functionality even while driving, with other pas-<lb/>sengers also benefiting from an enhanced experience. Such<lb/> intelligent applications however depend on a solid basis to<lb/> be effective: Personalization, adaptive HMI, situation-aware<lb/> intelligent systems – either of these require semantic knowl-<lb/>edge about the user, the vehicle, the current driving situa-<lb/>tion. Advanced functions coexist with sensors, other func-<lb/>tions, and even other vehicles. In such an environment,<lb/> collaboration can be highly beneficial. Obtaining a com-<lb/>mon understanding of knowledge and providing a platform<lb/> to exchange it is essential in order to reach the next level of<lb/> intelligent in-car systems. This work describes the Automo-<lb/>tive Ontology, which is located at the core of such an open<lb/> platform. We give an overview of design areas relevant to<lb/> automotive applications, as well as meta aspects that facili-<lb/>tate inference and reasoning.<lb/></div>
+
+	<keyword>Categories and Subject Descriptors<lb/> H.3.4 [Systems and Software]: Information networks, User<lb/> profiles and alert services; I.2.4 [Knowledge Represen-<lb/>tation Formalisms and Methods]: Representation lan-<lb/>guages, Semantic networks<lb/> General Terms<lb/> Design, Theory, Human Factors<lb/> Keywords<lb/> Context and Situation Model, User Modeling, Personaliza-<lb/>tion, Domain ontology<lb/></keyword>
+
+	<note type="copyright">Copyright &#169;</note>
+
+	<note type="other">held by author(s)<lb/> AutomotiveUI&apos;</note>
+
+	<date>11, November 29 – December 2, 2011, </date>
+
+	<address>Salzburg, Austria<lb/></address>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei type="wiki">
+	<teiHeader>
+		<fileDesc xml:id="55113886"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Location-based service<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">From Wikipedia, the free encyclopedia<lb/> This is an old revision of this page, as edited by Anguskywong (talk | contribs) at 01:01, 11<lb/> September 2010. It may differ significantly from the current revision<lb/> (//en.wikipedia.org/wiki/Location-based_service).<lb/> (diff) ← Previous revision | Latest revision (diff) | Newer revision → (diff)<lb/></note>
+
+	<div type="abstract">A location-based service (LBS) is an information and entertainment service, accessible with mobile<lb/> devices through the mobile network and utilizing the ability to make use of the geographical position<lb/> of the mobile device<lb/> [1] [2] [3] .<lb/> LBS services can be used in a variety of contexts, such as health, work, personal life, etc.<lb/> [4] . LBS<lb/> services include services to identify a location of a person or object, such as discovering the nearest<lb/> banking cash machine or the whereabouts of a friend or employee. LBS services include parcel<lb/> tracking and vehicle tracking services. LBS can include mobile commerce when taking the form of<lb/> coupons or advertising directed at customers based on their current location. They include<lb/> personalized weather services and even location-based games. They are an example of<lb/> telecommunication convergence.<lb/> This concept of location based systems is not compliant with the standardized concept of real time<lb/> locating systems and related local services (RTLS), as noted in ISO/IEC 19762-5<lb/> [5] and ISO/IEC<lb/> 24730-1<lb/> [6]<lb/> .<lb/></div>
+
+		</front>
+	</text>
+</tei>

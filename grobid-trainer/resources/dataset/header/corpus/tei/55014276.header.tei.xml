@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014276"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">External<lb/> </note>
+
+	<note>Contract Report CR-98/077<lb/></note>
+
+	<docTitle>
+	<titlePart>Foamed Asphalt Mixes<lb/> Mix Design Procedure<lb/></titlePart>
+	</docTitle>
+
+	<note>Contract Report CR-98/077<lb/></note>
+
+	<date>June 1999<lb/></date>
+
+	<docAuthor>K M Muthen<lb/> </docAuthor>
+
+	<note type="other">Programme :<lb/> Road Engineering<lb/> Programme Manager :<lb/> B M J A Verhaeghe<lb/> Technical Review :<lb/> M Vlok<lb/> External Review<lb/> : S Maccarrone<lb/></note>
+
+	<note type="copyright">© 1999 SABITA Ltd &amp; CSIR<lb/> Transportek </note>
+
+	<ptr>http://asphalt.csir.co.za/<lb/></ptr>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008765"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">1744<lb/></note>
+
+	<reference>A . Garming D . Redwan P . Gelbke D. Kern und U. Dierkes<lb/> 1915<lb/> Liebigs Ann. Chem. 1975, 1744-1764<lb/></reference>
+
+	<note type="other">Pyridinderivate aus aliphatischen Nitroverbindungen<lb/></note>
+
+	<docTitle>
+	<titlePart>Synthese und Reaktionen von Salzen substituierter 1,3-Di-aci-<lb/>nitro-und 1,5-Di-aci-nitro-3-nitroverbindungen<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Alfons Garming&quot;&apos;, Dawoud Redwan, Peter Gelbke, Dieter Kern und<lb/> Ulrich Dierkes<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Organisch-Chemisches Institut der Technischen Universitat<lb/></affiliation>
+	</byline>
+
+	<address>D-3392 Clausthal, LeibnizstraBe 6<lb/></address>
+
+	<note type="submission">Eingegangen am 18. Oktober 1974<lb/></note>
+
+	<div type="introduction">Mannich-Basen von Nitroacetonitril, Methyl(nitromethy1)sulfon und Nitroessigsaure-methyl-<lb/>ester und Salze verschiedener 1,3-Di-aci-nitro-und 1,5-Di-nci-nitro-3-nitroverbindungen<lb/> werden beschrieben und Reaktionen dieser Verbindungen im wa8rig-sauren Milieu unter-<lb/>sucht. Aus Salzen von 1,5-Di-aci-nitro-3-nitroverbindungen entstehen Pyridinderivate. Dabei<lb/> wird ein starker EinfluO der Substituenten beobachtet. CN-Gruppen an den Atomen C-1<lb/> und C-5 begiinstigen die Pyridinbildung vergleichsweise stark.<lb/>Pyridine Derivatives from Aliphatic Nitro Compounds. -Synthesis and Reactions of Salts of<lb/> Substituted 1,3-Di-uei-nitro and 1,5-Di-uci-nitro-3-nitro Compounds<lb/>The synthesis of Mannich bases of nitroacetonitrile, methyl nitroniethyl sulfone and methyl<lb/> nitroacetate and of the salts of several 1,3-di-aci-nitro and 1,5-di-aci-nitro-3-iiitro compounds<lb/> are described. Reaction of acids with these compounds in aquous solution have been studied.<lb/> Pyridine derivatives are formed from salts of 1,5-di-nci-nitr0-3-nitro compounds. This<lb/> reaction is favoured by the presence of CN groups a t the C-1 and C-5 atoms.<lb/> Synthesen von Derivaten des Chinolins und anderer kondensierter Heterocyclen<lb/> durch Cyclisierung o-substituierter aromatischer Nitroverbindungen unter Einbezie-<lb/>hung der Nitrogruppe sind in groRer Zahl beschrieben worden 1).</div>
+
+		</front>
+	</text>
+</tei>

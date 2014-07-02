@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Marawan</forename>
+								<middlename>M</middlename>.
+								<surname>Shabana</surname>,
+							</persName>
+							<persName>
+								<forename>Aly</forename>
+								<middlename>M</middlename>.
+								<middlename>El</middlename>
+								<surname>Sayed</surname>,
+							</persName>
+							<persName>
+								<forename>Miriam</forename>
+								<middlename>F</middlename>.
+								<surname>Yousif</surname>,
+							</persName>
+							<persName>
+								<forename>Abeer</forename>
+								<middlename>M</middlename>.
+								<middlename>El</middlename>
+								<surname>Sayed</surname>, and
+							</persName>
+							<persName>
+								<forename>Amany</forename>
+								<middlename>A</middlename>.
+								<surname>Sleem</surname>
+								<roleName>Dr</roleName>.
+							</persName>
+							
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

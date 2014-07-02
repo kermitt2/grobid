@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009805"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Response of Selected Hard Red Wheat Lines to Imazamox as Affected by Number and<lb/> Location of Resistance Genes, Parental Background, and Growth Habit<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Bradley D. Hanson,* Dale L. Shaner, Philip Westra, and Scott J. Nissen<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">ABSTRACT<lb/> Imidazolinone-resistant (IR) wheat (Triticum aestivum L.) was re-<lb/>leased for commercial production in portions of the USA in 2002 and<lb/> has provided growers with a new technology to selectively control<lb/> winter annual grass weeds. Imidazolinone herbicides inhibit aceto-<lb/>lactate synthase (ALS) in susceptible plants; however, IR wheat has an<lb/> altered target site which confers resistance to these herbicides. The<lb/> mutation-derived resistance trait of most commercially available IR<lb/> winter wheat cultivars is located on the D-genome; however, winter<lb/> and spring wheat cultivars with the resistance trait on the A, B, or D<lb/> genome or on multiple genomes are currently under development.<lb/> Four groups of near-isoline wheat with spring or winter growth habit<lb/> and resistance genes on the B, D, or both B and D genomes were<lb/> compared for whole plant and ALS enzyme response to imazamox.<lb/> Biomass accumulation after treatment was similar among B-and D-<lb/>genome resistant winter wheat biotypes and was always higher than B-<lb/>and D-genome resistant spring wheat biotypes. D-genome resistant<lb/> spring wheat was more resistant than B-genome resistant spring wheat<lb/> and the two-gene resistant spring wheat had an additive level of toler-<lb/>ance to imazamox compared with single-gene resistant spring wheat.<lb/> Growth habit (spring vs. winter) did not affect in vitro ALS activity<lb/> among B-or among D-genome resistant cultivars; however, D-genome<lb/> resistant cultivars had significantly higher in vitro ALS activity in the<lb/> presence of imazamox compared with B-genome resistant cultivars<lb/> regardless of growth habit. D-genome resistance appears to provide<lb/> greater tolerance to imazamox compared with B-genome resistance;<lb/> however, multiple-genome resistance likely will be required to con-<lb/>sistently avoid crop injury in spring wheat from labeled U.S. rates.<lb/> Although ALS extracted from winter wheat and spring wheat re-<lb/>sponded similarly to imazamox, whole plant responses demonstrates<lb/> that tolerance is affected by factors other than resistance gene location.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009141"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>BASIC PRINCIPLES OF PARTICLE<lb/> SIZE ANALYSIS<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">T E C H N I C A L P A P E R<lb/></note>
+	
+	<note type="other">Written by </note>
+
+	<byline>
+	<docAuthor>Dr. Alan Rawle,</docAuthor>
+	</byline>
+		
+	<byline>
+	<affiliation>Malvern Instruments Limited, Enigma Business</affiliation>
+	</byline>
+
+	<address>Park, Grovewood Road,<lb/> Malvern, Worcestershire, WR14 1XZ, UK.</address>
+
+		</front>
+	</text>
+</tei>

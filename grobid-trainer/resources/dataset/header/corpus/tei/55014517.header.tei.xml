@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014517"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>LEONI Dacar®<lb/> Automotive cables<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">The Quality Connection</note>
+
+		</front>
+	</text>
+</tei>

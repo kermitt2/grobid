@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011580"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Neue Rohrendenprüfung für nahtlose<lb/> Stahlrohre<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Thomas ORTH, Michael KAACK, Gert FISCHER, Willi WEINGARTEN,<lb/> </docAuthor>
+	</byline>
+	
+	<byline>
+	<affiliation>Salzgitter Mannesmann Forschung, </affiliation>
+	</byline>
+	
+	<address>Duisburg<lb/> </address>
+
+	<byline>
+	<docAuthor>Ashraf KOKA, Stefan NITSCHE, Norbert ARZT,<lb/> </docAuthor>
+	</byline>
+	
+	<byline>
+	<affiliation>Vallourec &amp; Mannesmann Tubes, </affiliation> 
+	</byline>
+
+	<address>Düsseldorf<lb/></address>
+
+		</front>
+	</text>
+</tei>

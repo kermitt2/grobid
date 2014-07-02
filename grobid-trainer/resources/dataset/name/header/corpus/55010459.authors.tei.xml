@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Tsuyoshi</forename>
+								<surname>Abe</surname>,
+								<marker>&apos;</marker>
+							</persName>
+							<persName>
+								<forename>Michio</forename>
+								<surname>Masuda</surname>,
+							</persName>
+							<persName>
+								<forename>Teruaki</forename>
+								<surname>Suzuki</surname> and
+							</persName>
+							<persName>
+								<forename>Minoru</forename>
+								<surname>Suzuki</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

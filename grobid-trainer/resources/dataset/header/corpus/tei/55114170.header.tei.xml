@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<tei type="supplementary">
+	<teiHeader>
+		<fileDesc xml:id="55114170"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Supporting Information<lb/></note>
+
+	<docTitle>
+	<titlePart>Highly Flexible UV-Vis Radiation Source and Novel Detection Schemes<lb/> for Spectrophotometric HPLC Detection<lb/>
+	</titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Karsten G. Kraiczek,<lb/> *,, R. Bonjour,<lb/> Y. Salvadé,<lb/> and Roland Zengerle<lb/></docAuthor>
+	</byline>
+
+	<docTitle>
+	<titlePart>Degradation Behavior of DUV LEDs<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">As an example, Figure S1 shows the loss in optical output power over time of 265 nm DUV LEDs at<lb/> three different forward currents 5 mA, 10 mA and 20 mA. The emitting area for all LEDs is the same<lb/> and approximately 150 µm x 250 µm. The objective of the experiment was to determine the<lb/> degradation rate over time and the temperature coefficient of the optical output power for an aging<lb/> DUV LED. The ambient temperature was recorded in each degradation experiment and fluctuated at a<lb/> maximum of ±5°C and around an average of 25°C. The temperature coefficient ß for the LEDs optical<lb/> output power was calculated by minimizing the temperature induced effects on the degradation curve.<lb/> The temperature coefficient is a function of the forward current and is unfortunately relative large but<lb/> was found to be constant over the entire lifetime of the DUV LED. The table in Figure S1 summarizes<lb/> the lifetime performance data of the 265 nm DUV LEDs tested.<lb/> Figure S1: Degradation behavior of &apos;265 nm&apos; DUV LEDs at different forward currents. Ambient temperature = 25°C<lb/> ±5°C. Lifetime performance data in table are calculated from &apos;smoothened&apos; curves which are corrected for temperature<lb/> effects. A degradation rate of -1 %/h corresponds to a detector drift of +4.3 mAU/h.<lb/> The 50% lifetime definition seems to be of limited value for DUV LEDs because their useful lifetime<lb/> begins at about this time with acceptable drift performance and still sufficient light output. All DUV</div>
+
+		</front>
+	</text>
+</tei>

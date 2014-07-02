@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014510"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Automotive Wires and Cables<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<affiliation>LEONI</affiliation>
+	</byline>
+	
+	<note type="other"> connects – People, Enterprises, Markets<lb/> The Quality<lb/> Connection<lb/> Content</note>
+
+		</front>
+	</text>
+</tei>

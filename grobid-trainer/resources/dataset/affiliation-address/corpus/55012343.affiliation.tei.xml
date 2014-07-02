@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">Grupo de Física de Coloides y Polímeros</orgName>,
+							<orgName type="department">Departamento de Física Aplicada y Departamento de<lb/> Física de la Materia Condensada</orgName>,
+							<orgName type="department">Facultad de Física</orgName>,
+							<orgName type="institution">Universidad de Santiago de<lb/> Compostela</orgName>,
+							<address>
+								<postCode>E-15706</postCode>
+								<settlement>Santiago de Compostela</settlement>,
+								<country>Spain</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

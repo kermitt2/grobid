@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012076"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Modellierung und optimale Steuerung<lb/> piezoelektrisch aktuierter Einspritzventile<lb/></titlePart>
+	</docTitle>
+
+	<degree>Doktor der Ingenieurwissenschaften<lb/> (Dr.-Ing.)<lb/></degree>
+
+	<byline>
+	<affiliation>Vom Fachbereich 12 Elektrotechnik und Informatik<lb/> der Universität Siegen<lb/></affiliation>
+	</byline>
+
+	<degree>zur Erlangung des akademischen Grades<lb/> genehmigte Dissertation<lb/></degree>
+	
+	<byline>
+	<docAuthor>von Diplom-Ingenieur Dirk Mehlfeldt<lb/></docAuthor>
+	</byline>
+
+		</front>
+	</text>
+</tei>

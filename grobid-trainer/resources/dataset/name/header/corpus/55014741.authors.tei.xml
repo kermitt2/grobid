@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>K</forename>.
+								<surname>FAZEL</surname>,
+							</persName>
+							<persName>
+								<forename>S</forename>.
+								<surname>KAISER</surname>,
+							</persName>
+							<persName>
+								<forename>R</forename>
+								<surname>ROBERTSON</surname> and
+							</persName>
+							<persName>
+								<forename>M</forename>.
+								<middlename>J</middlename>.
+								<surname>RUF</surname>
+								<marker>*</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

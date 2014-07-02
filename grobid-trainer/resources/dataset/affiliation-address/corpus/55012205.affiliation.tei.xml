@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="laboratory">DIGITAL Paris Research Laboratory</orgName>
+							<lb/>							
+							<address>
+								<addrLine>85, avenue Victor Hugo</addrLine>
+								<lb/>
+								<postCode>92500</postCode>
+								<settlement>Rueil-Malmaison</settlement> —
+								<country>France</country>
+								<lb/>
+							</address>
+						</affiliation>
+						<affiliation>		
+							<orgName type="department">Centre de Mathématiques Appliquées</orgName>
+							<lb/>
+							<orgName type="institution">Ecole des Mines de Paris</orgName>,
+							<address>
+								<postBox>BP 207</postBox>
+								<lb/>
+								<postCode>06560</postCode>
+								<settlement>Sophia-Antipolis Cedex</settlement>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

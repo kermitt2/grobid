@@ -11,15 +11,11 @@
 								<forename>Bradley</forename>
 								<middlename>D</middlename>.
 								<surname>Farnsworth</surname>,
-								<roleName>ENSCO</roleName>,
+								<lb/>
 							</persName>
 							<persName>
-								<forename>Inc</forename>.
-							<lb/>
-								<surname>David</surname>
-							</persName>
-							<persName>
-								<forename>W</forename> .
+								<forename>David</forename>
+								<middlename>W</middlename> .
 								<middlename>A</middlename>.
 								<surname>Taylor</surname>
 							</persName>
@@ -30,8 +26,8 @@
 								<roleName>Dr</roleName> .
 							</persName>
 							<persName>
-								<surname>David</surname>
-								<forename>W</forename> .
+								<forename>David</forename>
+								<middlename>W</middlename> .
 								<middlename>A</middlename>.
 								<surname>Taylor</surname>
 							</persName>

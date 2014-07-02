@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010864"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Feature Article<lb/></note>
+
+	<docTitle>
+	<titlePart>The Electrochemically Initiated Reaction of Sulfide with<lb/> N,N-Diethyl-p-phenylenediamine in Dimethylformamide.<lb/> Part II: Implications for Sensing Strategies<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Debora Giovanelli,<lb/> a Nathan S. Lawrence,<lb/> a Oleksiy V. Klymenko,<lb/> a Li Jiang,<lb/> b Timothy G. J. Jones,<lb/> b Richard G. Compton*<lb/> a<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a Physical and Theoretical Chemistry Laboratory, University of Oxford,</affiliation>
+	</byline>
+
+	<address>South Parks Road, Oxford, OX1 3QZ, UK<lb/></address>
+
+	<email>* e-mail: richard.compton@chem.ox.ac.uk<lb/></email>
+
+	<byline>
+	<affiliation>b Schlumberger Cambridge Research, High Cross,</affiliation>
+	</byline>
+
+	<address>Madingley Road, Cambridge, CB3 0EL, UK<lb/></address>
+
+	<note type="submission">Received: August 14, 2002<lb/> Final version: September 26, 2002<lb/></note>
+
+	<div type="abstract">Abstract The electrochemically initiated reaction of p-phenylenediamines with sulfide in aqueous media is well documented.<lb/> We now report the adaptation of this chemistry into nonaqueous media. This is critically appraised as a means of<lb/> detecting sulfide. The electrochemically initiated reaction of N,N-diethyl-p-phenylenediamine with sulfide is shown at<lb/> both macro-and platinum microdisk electrodes with quantitative detection of sulfide produced by means of the<lb/> enhanced currents observed upon its addition. The linear detection range for sulfide is dependent on the<lb/> concentration of N,N-diethyl-p-phenylenediamine present with a linear range from 28 ± 3290 mM and a limit of<lb/> detection of 22 mM achievable. This represents a large increase compared to that found previously in aqueous media<lb/> and offers the prospect of more ready applications in high temperature systems.<lb/></div>
+
+	<keyword>Keywords: N,N-Diethyl-p-phenylenediamine, Sulfide, Nonaqueous media, Platinum electrodes, Microdisk electrodes<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

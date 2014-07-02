@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010557"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Aiming Perfectly in the Dark -Blind Interference Alignment<lb/> through Staggered Antenna Switching<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Chenwei Wang, Tiangao Gou, Syed A. Jafar<lb/></docAuthor>
+	</byline>
+
+	<email>E-mail : {chenweiw,tgou,syed}@uci.edu<lb/></email>
+
+	<div type="abstract">Abstract<lb/> We propose a blind interference alignment scheme for the vector broadcast channel where<lb/> the transmitter is equipped with M antennas and there are K receivers, each equipped with a<lb/> reconfigurable antenna capable of switching among M preset modes. Without any knowledge of<lb/> the channel coefficient values at the transmitters and with only mild assumptions on the channel<lb/> coherence structure we show that<lb/> M K<lb/> M +K−1 degrees of freedom are achievable. The key to the blind<lb/> interference alignment scheme is the ability of the receivers to switch between reconfigurable<lb/> antenna modes to create short term channel fluctuation patterns that are exploited by the<lb/> transmitter. The achievable scheme does not require cooperation between transmit antennas<lb/> and is therefore applicable to the M × K X network as well. Only finite symbol extensions are<lb/> used, and no channel knowledge at the receivers is required to null the interference.<lb/></div>
+
+	<idno>arXiv:1002.2720v1 [cs.IT]</idno>
+
+	<date>15 Feb 2010<lb/></date>
+
+		</front>
+	</text>
+</tei>

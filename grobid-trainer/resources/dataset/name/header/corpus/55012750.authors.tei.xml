@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>T</forename>.
+								<surname>Mikkelsen</surname>,
+							</persName>
+							<persName>
+								<forename>K</forename>.
+								<surname>Hansen</surname>,
+							</persName>
+							<persName>
+								<forename>N</forename>.
+								<surname>Angelou</surname>,
+							</persName>
+							<persName>
+								<forename>M</forename>.
+								<surname>Sjöholm</surname>
+							<lb/>
+							</persName>
+							<persName>
+								<forename>M</forename>.
+								<surname>Harris</surname> ,
+							</persName>
+							<persName>
+								<forename>P</forename> .
+								<surname>Hadley</surname> ,
+							</persName>
+							<persName>
+								<forename>R</forename> .
+								<surname>Scullion</surname> ,
+							</persName>
+							<persName>
+								<forename>G</forename> .
+								<surname>Ellis</surname> ,
+							</persName>
+							<persName>
+								<forename>G</forename> .
+								<surname>Vives</surname>
+							<lb/>
+							</persName>
+							
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

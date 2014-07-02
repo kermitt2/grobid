@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei type="presentation">
+	<teiHeader>
+		<fileDesc xml:id="55114765"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Network Functions Virtualisation<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Bob Briscoe<lb/> + Don Clarke, Pete Willis, Andy Reid, Paul Veitch </docAuthor>
+	</byline>
+
+	<affiliation>(BT)<lb/></affiliation>
+
+	<note type="other">Chief Researcher<lb/> + further acknowledgements within slides<lb/> </note>
+
+	<affiliation>BT</affiliation>
+
+		</front>
+	</text>
+</tei>

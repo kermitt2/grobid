@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010045"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">1<lb/></note>
+
+	<docTitle>
+	<titlePart>Web service description, advertising and<lb/> discovery: WSDL and beyond<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Wilfried Lemahieu<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Abstract. This paper discusses the predicaments surrounding<lb/> web service description, advertising and discovery. It<lb/> provides an overview of the various technologies involved<lb/> and advocates how current state-of-the-art standards such as<lb/> UDDI and WSDL can be enhanced by means of concepts<lb/> from the semantic web vision such as RDF, RDF Schema and<lb/> DAML+OIL. Moreover, it is shown how semantic metadata<lb/> specifications can be considered as (a) layer(s) above<lb/> syntactic metadata modeled by means of XML schemas.<lb/> Finally, suggestions are made for further research towards<lb/> the enhancement of current web ontology efforts, seen in the<lb/> light of web service description.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012880"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Vol. 7, No. 3, March–April 2008<lb/></reference>
+
+	<docTitle>
+	<titlePart>A change propagating model transformation<lb/> language<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Laurence Tratt,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Bournemouth University,</affiliation>
+	</byline>
+
+	<address>Poole, Dorset, BH12 5BB, United<lb/> Kingdom.<lb/></address>
+
+	<div type="abstract">Model transformations are a key component in Model Driven Development, but most<lb/> approaches only allow &apos;one shot&apos; transformations to be expressed. Change propagating<lb/> model transformations are those which can make suitable updates to models after an<lb/> initial transformation. In this paper I outline the challenges presented by change prop-<lb/>agating model transformations, before presenting a new change propagating model<lb/> transformation approach.<lb/></div>
+
+		</front>
+	</text>
+</tei>

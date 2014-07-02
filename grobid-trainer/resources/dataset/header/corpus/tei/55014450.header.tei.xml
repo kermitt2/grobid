@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014450"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>All-optical ultra-fast 2x2 switch based on XPM-induced<lb/> polarization rotation in highly nonlinear fiber<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Gianluca Berrettini and Gianluca Meloni<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>CEIRC -Scuola</affiliation>
+	</byline>
+
+	<address>Superiore Sant&apos;Anna -Via Moruzzi 1, </address>
+
+	<address>56124 Pisa -Italy<lb/></address>
+
+	<email>gianluca.berrettini@cnit.it<lb/></email>
+
+	<byline>
+	<docAuthor>Paolo Ghelfi, Antonella Bogoni, and Luca Potì<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>CNIT -Photonic Networks National Laboratory -</affiliation>
+	</byline>
+
+	<address>Via Moruzzi 1, 56124 Pisa -Italy<lb/></address>
+
+	<div type="abstract">Abstract: An all-optical ultra-fast 2x2 spatial switch based on polarization rotation induced by Cross-Phase-<lb/>Modulation in highly non-linear fiber is presented. Bit-Error-Rate measurements confirm the effectiveness of<lb/> the proposed scheme and its suitability in cascaded configurations.<lb/> </div>
+
+	<note type="copyright">©2006 Optical Society of America<lb/> </note>
+
+	<keyword>OCIS codes: (190.3270) Kerr effect; (200.4740) Optical processing<lb/> </keyword>
+
+	<div type="introduction">1. Introduction<lb/> The virtually unlimited bandwidth of optical fibers has caused a great increase in data transmission speed over the<lb/> past decade, hence stimulating high-demand multimedia services. Nowadays, opto-electronic conversion is still<lb/> required at each network node to process the incoming signals. However, when the bit rate of the single channel<lb/> increases beyond electronic speed limit, all-optical processing must be performed to extract the routing information<lb/> from the incoming packets and switch them to the selected node output. Besides, all-optical packet switching can<lb/> offer transparency to data rate and format, fine granularity and flexibility, reducing the packet latency time as well.<lb/> Up to now, few optical technologies are capable of ultra-short switching time (&lt;100ps). SOAs and non-linear<lb/> fiber-based switches are most promising candidates [1,2], but only the latter are fast enough to operate at ultra-high<lb/> speed. Few 2x2 fiber-based switches have been proposed so far [3], usually in interferometric schemes which<lb/> improve the switching efficiency. Recently the new generation of Highly Non-Linear Fibers (HNLF) is allowing<lb/> efficient nonlinear effects reducing the fiber length, avoiding the use of interferometers and increasing the device<lb/> compactness and stability at the same time.<lb/> In this paper we report a simple scheme of a 2x2 all-optical ultra-fast switch based on signal polarization<lb/> rotation [4] induced in HNLF by Cross Phase Modulation (XPM). The switch provides a space domain deflection<lb/> routing policy, preserving the wavelength of the incoming signal, and it can be used as basic block for the design of<lb/> further NxN switches. The effectiveness of the proposed scheme and its suitability in cascaded configurations are<lb/> confirmed by Bit Error Rate (BER) measurements carried out in both bar and cross configuration.</div>
+
+		</front>
+	</text>
+</tei>

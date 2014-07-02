@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009492"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">RÖMPP Online, Version 3.17<lb/></note>
+
+	<docTitle>
+	<titlePart>Zeta-Potential<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Bearbeitet von:</note>
+
+	<byline>
+	<docAuthor>Rudolf Holze<lb/></docAuthor>
+	</byline>
+
+	<note type="other">Fachgebiet: Chemie &gt; Unterthema: Radiochemie, Elektrochemie, Photochemie<lb/></note>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei type="product-sheet">
+	<teiHeader>
+		<fileDesc xml:id="55113962"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Supplemental Labeling<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<affiliation>FMC Corporation<lb/> Agricultural Products Group<lb/></affiliation>
+	</byline>
+
+	<address>1735 Market Street<lb/> Philadelphia PA 19103<lb/></address>
+
+	<date>11/12/10<lb/></date>
+
+	<note type="other">KEEP OUT OF REACH OF CHILDREN<lb/> CAUTION<lb/></note>
+	
+	<idno>EPA Reg. No. 71512-3-279<lb/></idno>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000822"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">1<lb/></note> 
+	
+	<note type="other">BAC BV 2009<lb/></note>
+
+	<docTitle>
+	<titlePart>Protein Purification &amp; Recovery<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">TOOLS &amp; TECHNOLOGIES</note>
+
+		</front>
+	</text>
+</tei>

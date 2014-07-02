@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>a</marker>
+							<orgName type="department">Department of Nanophysics</orgName>,
+							<orgName type="institution">Istituto Italiano di Tecnologia</orgName>,
+							<address>
+								<addrLine>Via Morego 30</addrLine>,
+								<postCode>16163</postCode>
+								<settlement>Genoa</settlement>,
+								<country>Italy</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>b</marker>
+							<orgName type="department">Department of Physics</orgName>,
+							<orgName type="institution">University of Genoa</orgName>,
+							<address>
+								<addrLine>Via Dodecaneso 33</addrLine>,
+								<postCode>16146</postCode>
+								<settlement>Genoa</settlement>,
+								<country>Italy</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

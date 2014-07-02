@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009631"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Cell, Vol. 122, 659–667, September 9, 2005,</reference>
+
+	<note type="copyright">Copyright ©2005 by Elsevier Inc.</note>
+
+	<idno type="DOI">DOI 10.1016/j.cell.2005.08.021<lb/></idno>
+
+	<note type="other">Review</note>
+
+	<docTitle>
+	<titlePart>Cellular and Molecular Signatures<lb/> of Muscle Regeneration: Current<lb/> Concepts and Controversies in Adult Myogenesis<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Amy J. Wagers<lb/> 1,2, * and Irina M. Conboy<lb/> 3, *<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Section on Developmental and Stem Cell Biology<lb/> Joslin Diabetes Center and Department of Pathology<lb/> Harvard Medical School<lb/></affiliation>
+	</byline>
+
+	<address>Boston, Massachusetts 02215<lb/></address>
+
+	<byline>
+	<affiliation>2 Harvard Stem Cell Institute<lb/></affiliation>
+	</byline>
+
+	<address>Cambridge, Massachusetts 02138<lb/></address>
+
+	<byline>
+	<affiliation>3 Department of Bioengineering<lb/> University of California, Berkeley<lb/></affiliation>
+	</byline>
+
+	<address>Berkeley, California 94702<lb/></address>
+
+	<div type="abstract">Adult skeletal muscle generates force in a controlled<lb/> and directed manner through the contraction of highly<lb/> specialized, postmitotic, multinucleated myofibers. Life-<lb/>long muscle function relies on maintenance and regen-<lb/>eration of myofibers through a highly regulated process<lb/> beginning with activation of normally quiescent muscle<lb/> precursor cells and proceeding with formation of prolif-<lb/>erating progenitors that fuse to generate differentiated<lb/> myofibers. In this review, we describe the historical<lb/> basis and current evidence for the identification of<lb/> satellite cells as adult muscle stem cells, critically<lb/> evaluate contributions of other cells to adult myogen-<lb/>esis, and summarize existing data regarding the ori-<lb/>gins, genetic markers, and molecular regulation of<lb/> satellite cells in normal, diseased, and aged muscle.<lb/></div>
+
+		</front>
+	</text>
+</tei>

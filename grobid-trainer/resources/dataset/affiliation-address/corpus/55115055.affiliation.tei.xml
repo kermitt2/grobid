@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="laboratory">Group for User Interface Research</orgName>
+							<lb/>
+							<orgName type="department">Computer Science Division</orgName>,
+							<orgName type="department">EECS</orgName>
+							<lb/> 
+							<orgName type="institution">University of California</orgName>,
+							<address>
+								<settlement>Berkeley<lb/> Berkeley</settlement>,
+								<region>CA</region>
+								<postCode>94720-1776</postCode>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="institution">Microsoft Research</orgName>
+							<lb/>
+							<address>
+								<addrLine>One Microsoft Way<lb/> Redmond</addrLine>,
+								<region>WA</region>
+								<postCode>98052</postCode>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>3</marker>
+							<orgName type="department">Department of Technical Communication</orgName>
+							<lb/>
+							<orgName type="institution">University of Washington</orgName>
+							<lb/>
+							<address>
+								<settlement>Seattle</settlement>,
+								<region>WA</region>
+								<postCode>98195-2195</postCode>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>4</marker>
+							<orgName type="laboratory">DUB Group</orgName>
+							<lb/>
+							<orgName type="department">Computer Science and Engineering</orgName>
+							<lb/>
+							<orgName type="institution">University of Washington</orgName>
+							<lb/>
+							<address>
+								<settlement>Seattle</settlement>,
+								<region>WA</region>
+								<postCode>98195-2350</postCode>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>5</marker>
+							<orgName type="institution">Intel Research Seattle</orgName>
+							<lb/>
+							<address>
+								<addrLine>1100 NE 45th Street<lb/> Suite 600</addrLine>
+							<lb/>
+								<settlement>Seattle</settlement>,
+								<region>WA</region>
+								<postCode>98105</postCode>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

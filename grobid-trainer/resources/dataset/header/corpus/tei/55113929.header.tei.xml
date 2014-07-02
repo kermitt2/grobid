@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55113929"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Influence of the coating structure of a-C:H:W coatings on their<lb/> wear-performance: A theoretical approach and its practical confirmation<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Astrid Gies<lb/> a,<lb/> ⁎, Thomas Chudoba<lb/> b<lb/> , Norbert Schwarzer<lb/> c<lb/> , Jürgen Becker<lb/> d<lb/>
+	</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a OC Oerlikon Balzers AG,</affiliation>
+	</byline>
+
+	<address>Iramali 18, 9496 Balzers, Liechtenstein<lb/></address>
+
+	<byline>
+	<affiliation>b ASMEC GmbH,</affiliation>
+	</byline>
+
+	<address>Bautzner Landstrasse 145, 01454 Radeberg OT Rossendorf, Germany<lb/></address>
+
+	<byline>
+	<affiliation>c Saxonian Institute of Surface Mechanics (SIO),</affiliation>
+	</byline>
+
+	<address>Tankow 2, 18569 Ummanz, Germany<lb/></address>
+
+	<byline>
+	<affiliation>d Oerlikon Balzers Coating Germany GmbH,</affiliation>
+	</byline>
+
+	<address>Am Ockenheimer Graben 41, 55411 Bingen, Germany<lb/></address>
+
+	<note type="other">a b s t r a c t<lb/> a r t i c l e i n f o<lb/></note>
+
+	<date>Available online 3 August 2013<lb/></date>
+
+	<keyword>Keywords:<lb/> a-C:H:W coatings<lb/> Nanoindentation Micro-wear test<lb/> Wear model<lb/> Archard&apos;s law<lb/></keyword>
+
+	<div type="abstract">In this work, homogeneous as well as gradient a-C:H:W coatings were deposited on a steel substrate. The me-<lb/>chanical properties of both coating systems were determined using nanoindentation. In addition, a multiaxial,<lb/> 3-dimensional nanoindentation test (reciprocating wear test with nanometre resolution) was carried out in<lb/> order to analyse the wear-performance of the two different coating systems.<lb/> By comparing the wear-performance of the gradient coating system to the non-graduated one we were able to<lb/> show that according to a theoretical approach proposed a few years ago the gradient coating systems lead to a<lb/> better performance in micro-wear tests as well as in macro-scale wear tests.<lb/> In addition, a new wear model taking into account the changing stress fields during the wear tests is proposed in<lb/> order to simulate the wear behaviour of both coating systems.<lb/>
+	</div>
+
+	<note type="copyright">© 2013 Elsevier B.V. All rights reserved.<lb/></note>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55115167"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<phone>Fax +41 61 306 12 34<lb/></phone>
+
+	<email>E-Mail karger@karger.ch<lb/></email>
+
+	<ptr type="web">www.karger.com<lb/></ptr>
+
+	<note type="other">Minireview<lb/></note>
+
+	<reference>Nephron Physiol 2008;108:p1–p7<lb/></reference>
+
+	<idno type="DOI">DOI: 10.1159/000112495<lb/></idno>
+
+	<docTitle>
+	<titlePart>Autosomal Dominant Polycystic<lb/> Kidney Disease: Recent Advances in<lb/> Pathogenesis and Treatment<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Ming-Yang Chang<lb/> a, b Albert C.M. Ong<lb/> a<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a Academic Nephrology Unit, Sheffield Kidney Institute, School of Medicine and Biomedical Sciences,<lb/> University of Sheffield,</affiliation>
+	</byline>
+
+	<address>Sheffield , UK;<lb/></address>
+
+	<byline>
+	<affiliation>b Department of Nephrology, Kidney Research Centre,<lb/> Chang Gung Memorial Hospital, Chang Gung University,</affiliation>
+	</byline>
+
+	<address>Taoyuan , Taiwan<lb/></address>
+
+	<byline>
+	<docTitle>
+	<titlePart>Molecular Genetics of ADPKD<lb/></titlePart>
+	</docTitle>
+	</byline>
+
+	<div type="introduction">Autosomal dominant polycystic kidney disease (AD-<lb/>PKD) can arise from mutations in either PKD1 (85%) or<lb/> PKD2 (15%) with clinically indistinguishable manifesta-<lb/>tions. However, PKD2 is usually of later onset since the<lb/> mean age at end-stage renal disease (ESRD) occurs 16<lb/> years later than PKD1 (69.1 vs. 53.0 years) [1] . So far, no<lb/> apparent clustering or &apos;hot spot&apos; of mutations has been<lb/> identified in either gene. Most mutations are predicted to<lb/> truncate the protein or lead to its degradation. However,<lb/> production of a partially functional mutant protein has<lb/> not been excluded. The search for possible genotype/phe-<lb/>notype correlations has yielded mixed results. Mutations<lb/> in the 5 ؅ half of PKD1 (relative to the median nucleotide)<lb/> have been shown to be associated with slightly earlier<lb/> ESRD compared to mutations in the 3 ؅ half of the gene<lb/> and are also more strongly associated with aneurysm<lb/> rupture [2, 3] . A clear genotype/phenotype correlation<lb/> for PKD2 has not been found [4] . The considerable intra-<lb/>familial phenotypic variability, even in patients with<lb/> identical mutations, reflects the strong influence of ad-<lb/>ditional genetic modifiers and/or environmental factors<lb/> on disease progression in ADPKD [5, 6] .<lb/> Modifier genes could regulate the function of polycys-<lb/>tin-1 (PC1) and polycystin-2 (PC2) by affecting polycys-<lb/>tin-mediated signal transduction pathways, the rate of<lb/> somatic mutations, cyst fluid accumulation or other clin-<lb/></div>
+
+	<keyword>Key Words<lb/> Autosomal dominant polycystic kidney disease ؒ Epithelial<lb/> cyst ؒ Renal parenchyma ؒ Arterial aneurysms, intracranial<lb/></keyword>
+
+	<div type="abstract">Abstract Autosomal dominant polycystic kidney disease (ADPKD) is a<lb/> common genetic disorder affecting 1 in 1,000 people in the<lb/> general population and accounts for up to 10% of all pa-<lb/>tients on renal replacement therapy. Numerous fluid-filled<lb/> epithelial cysts arise from different nephron segments as<lb/> spherical dilatations or small out-pouchings, enlarge pro-<lb/>gressively and eventually become disconnected from the<lb/> rest of the renal tubule. The development of cysts is accom-<lb/>panied by destruction of the renal parenchyma, interstitial<lb/> fibrosis, cellular infiltration and loss of functional nephrons.<lb/> ADPKD is not only a kidney disease but also a systemic dis-<lb/>order associated with intracranial arterial aneurysms, cardi-<lb/>ac valvular defects, colonic diverticulosis and cyst formation<lb/> in other organs such as the liver, spleen and pancreas. The<lb/> identification of PKD1 and PKD2 together with the drive to<lb/> elucidate the functions of their encoded proteins, polycys-<lb/>tin-1 (PC1) and polycystin-2 (PC2), has led to an explosion of<lb/> clinical and scientific interest in this common disorder. The<lb/> aim of this review is to highlight recent advances in our un-<lb/>derstanding of ADPKD pathogenesis which are leading to<lb/> exciting new treatment strategies.<lb/></div>
+
+	<note type="copyright">Copyright © 2007 S. Karger AG, Basel</note>
+
+		</front>
+	</text>
+</tei>

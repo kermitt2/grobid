@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009374"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="copyright">&#169;2006 Open Mobile Alliance Ltd. All Rights Reserved.<lb/> </note>
+	
+	<note type="other">Used with the permission of the Open Mobile Alliance Ltd. under the terms as stated in this document.<lb/></note>
+
+	<note type="other">[OMA-Template-Spec-20040205]<lb/></note>
+
+	<docTitle>
+	<titlePart>DRM Specification<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Approved Version 2.0 –</note>
+
+	<date>03 Mar 2006<lb/></date>
+
+	<byline>
+	<affiliation>Open Mobile Alliance<lb/></affiliation>
+	</byline>
+ 
+	<idno>OMA-TS-DRM-DRM-V2_0-20060303-A</idno>
+
+		</front>
+	</text>
+</tei>

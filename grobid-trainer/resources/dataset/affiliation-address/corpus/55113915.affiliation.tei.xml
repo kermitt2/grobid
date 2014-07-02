@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<address>
+								<addrLine>400 Commonwealth Drive</addrLine>,
+								<settlement>Warrendale</settlement>,
+								<region>PA</region>
+								<postCode>15096-0001</postCode>
+								<country>U.S.A.</country>
+							<lb/>
+							</address>
+							<orgName type="institution">TTTech Computertechnik AG</orgName>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

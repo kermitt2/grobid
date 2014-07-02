@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei type="book-chapter">
+	<teiHeader>
+		<fileDesc xml:id="55114167"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">487<lb/> </note>
+
+	<note type="other">CHAPTER 15<lb/></note>
+
+	<docTitle>
+	<titlePart>RF FINGERPRINTING<lb/> LOCATION TECHNIQUES<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Rafael Saraiva Campos and Lisandro Lovisolo<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Universidade do Estado do Rio de Janeiro,</affiliation>
+	</byline>
+
+	<address>Rio de Janeiro, Brazil<lb/></address>
+
+	<div type="abstract">IN THIS chapter, the principles of radio frequency ( RF ) fi ngerprinting<lb/> methods, also known as database correlation methods ( DCM s), are presented.<lb/> Although there is a wide variety of DCM implementations, they all share the<lb/> same basic elements. These elements are identifi ed and analyzed in this chapter.<lb/> Different alternatives for building RF fi ngerprint correlation database s ( CDB s) are<lb/> presented, and the advantages and drawbacks of each of them are discussed, as<lb/> well as their impact on the positioning accuracy of location services based on<lb/> DCM. Different methods to numerically evaluate the similarity between each<lb/> fi ngerprint within the CDB and the measured RF fi ngerprint are presented,<lb/> including an artifi cial neural network (ANN) -based approach. Two alternatives to<lb/> reduce the correlation or search space are analyzed, including an approach based<lb/> on genetic algorithms (GAs). Finally, fi eld tests are used to evaluate the<lb/> positioning accuracy of fi ngerprinting techniques in both Global System for<lb/> Mobile Communications ( GSM ) and Wi -Fi ( wireless fi delity ) 802.11b networks.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010711"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">move to back page<lb/></note>
+
+	<docTitle>
+	<titlePart>Steel Products<lb/> Microwave Antenna Application Guide<lb/> Structural Support Products</titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

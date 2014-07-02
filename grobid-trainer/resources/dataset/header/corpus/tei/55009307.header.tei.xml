@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009307"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Vital Security 9.2<lb/></note>
+
+	<docTitle>
+	<titlePart>User Identification and<lb/> Authentication<lb/> User Identification and Authentication<lb/></titlePart>
+	</docTitle>
+
+	<note type="page">Page iii<lb/></note>
+
+	<note type="copyright">Copyright<lb/> © Copyright 1996 -2008. Finjan Software Inc.</note>
+
+		</front>
+	</text>
+</tei>

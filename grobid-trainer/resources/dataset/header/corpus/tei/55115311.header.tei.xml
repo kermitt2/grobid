@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55115311"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">8 ·</note>
+
+	<note>GETRÄNKEINDUSTRIE </note>
+
+	<date>10 / 2005<lb/></date>
+
+	<docTitle>
+	<titlePart>Der etwas andere Drink<lb/> Alkoholfreie Getränke auf Basis<lb/> vermälzter Zerealien und Pseudozerealien<lb/> </titlePart>
+	</docTitle>
+
+	<div type="abstract">Ist im Zusammenhang mit Getränken von Malz die Rede, denkt<lb/> fast jeder zu allererst an Bier. Der Rohstoff Malz ist jedoch auch<lb/> sehr gut geeignet, um alkoholfreie Getränke daraus zu produzieren.<lb/> Eine noch neue, aber interessante Alternative stellen Malzgetränke<lb/> dar, die durch Fermentation mit Milchsäurebakterien und ähnlichen<lb/> Organismen hergestellt werden. Neben einem angenehm frischen,<lb/> säuerlichen Geschmack bieten sie auch gesundheitlichen Nutzen<lb/> für den Konsumenten. Der vorliegende Beitrag behandelt Mälzungs-<lb/>und Herstellungsverfahren, geeignete Rohstoffe und gesundheits-<lb/>fördernde Wirkung der Getränke.<lb/> </div>
+
+	<div type="introduction">D<lb/> as Malz ist die Seele des Bieres.<lb/> Diese bekannte Aussage erfahrener<lb/> Brautechnologen dokumentiert die Wert-<lb/>schätzung der Brauer für ihren wichtig-<lb/>sten Rohstoff. Grundsätzlich kann jede<lb/> Art von gekeimtem und getrocknetem<lb/> Getreide oder Pseudogetreide als Malz<lb/> bezeichnet werden. In den führenden<lb/> Industrienationen wird für die Bier-<lb/>herstellung hauptsächlich Gerste und<lb/> in geringerem Umfang auch Weizen<lb/> vermälzt. Des weiteren findet Malz auf-<lb/>grund seiner angenehmen sensorischen<lb/> Eigenschaften schon seit längerer Zeit<lb/> auch in Bäckerei-und Müsliprodukten<lb/> und verschiedenen anderen Lebens-<lb/>mitteln als Süßungsmittel und Aroma-<lb/>träger erfolgreich Anwendung.</div>
+
+		</front>
+	</text>
+</tei>

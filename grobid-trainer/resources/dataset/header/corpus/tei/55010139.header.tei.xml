@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010139"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Delen Misbruik rapporteren Volgende blog»<lb/> Blog maken Aanmelden<lb/></note>
+
+	<docTitle>
+	<titlePart>Creating Dynamic Client-side Maps Mashups with Google<lb/> Spreadsheets<lb/></titlePart>
+	</docTitle>
+
+	<date>Friday, March 30, 2007</date>
+
+	<note type="other">at 9:34:00 AM<lb/></note>
+
+		</front>
+	</text>
+</tei>

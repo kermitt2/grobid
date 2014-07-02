@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011187"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note>VLT ® 6000 HVAC<lb/> </note>
+
+	<docTitle>
+	<titlePart>Application Note<lb/> Improving Secondary Pumping<lb/> in Primary/Secondary Systems<lb/> </titlePart>
+	</docTitle>
+
+	<note>VLT ® 6000 HVAC<lb/></note>
+	
+		</front>
+	</text>
+</tei>

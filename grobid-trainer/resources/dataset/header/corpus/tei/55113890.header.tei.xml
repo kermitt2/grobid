@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<tei type="book-chapter">
+	<teiHeader>
+		<fileDesc xml:id="55113890"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">1<lb/></note>
+
+	<div type="abstract">Abstract—As the amount, availability and use of online music increase, music recommendation<lb/> becomes an important field of research. Collaborative, content-based and case-based<lb/> recommendation systems and their hybrids have been used for music recommendation. There are<lb/> already a number of online music recommendation systems. Although specific user information, such<lb/> as, demographic data, education and origin have been shown to affect music preferences, they are<lb/> usually not collected by the online music recommendation systems, because users would not like to<lb/> disclose their personal data. Therefore, user models mostly contain information about which music<lb/> pieces a user liked and which ones s/he did not and when.<lb/> We introduce two music recommendation algorithms that take into account music content,<lb/> singer/genre and popularity information. In the entropy-based recommendation algorithm, we<lb/> decide on the relevant set of content features (perspective) according to which the songs selected by<lb/> the user can be clustered as compactly as possible. As a compactness measure, we use entropy of the<lb/> distribution of songs a user listened to in the clustering. The entropy-based recommendation<lb/> approach enables both a dynamic user model and ability to consider a different subset of features<lb/> appropriate for the specific user.<lb/> In order to improve the performance of this system further, we introduce the content, singer/genre<lb/> and popularity learning algorithm. In this algorithm, we first evaluate the extent to which content,<lb/> singer/genre or popularity components could produce successful recommendations on the past songs<lb/> listened to by the user. The number of songs in the final recommendation list contributed according<lb/> to each component is chosen according to the recommendation success of each component.<lb/> We perform experiments on user session data from a mobile operator. There are 2000 to 500<lb/> sessions and of length 5 to 15 songs. Our experiments indicate that the entropy-based<lb/> recommendation algorithm performs better than simple content-based recommendation. Content,<lb/></div>
+
+	<docTitle>
+	<titlePart>Music Recommendation by Modeling User&apos;s Preferred Perspectives of<lb/> Content, Singer/Genre and Popularity<lb/>
+	</titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Zehra Cataltepe and Berna Altinel<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Istanbul Technical University<lb/> Computer Engineering Department<lb/></affiliation>
+	</byline>
+
+	<address>Ayazaga Campus, Maslak, Sariyer, Istanbul, 34469, Turkey<lb/></address>
+
+	<date>Final Version, July 12, 2008<lb/></date>
+
+	<note type="other">Book Chapter for the Book<lb/></note>
+
+	<note type="other">Collaborative and Social Information Retrieval and Access: Techniques for Improved User<lb/> Modeling</note>
+	
+		</front>
+	</text>
+</tei>

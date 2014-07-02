@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei type="white-paper">
+	<teiHeader>
+		<fileDesc xml:id="55113712"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Three Ways to Reduce Exposure to Bypass Fraud<lb/> </note>
+
+	<note type="page">1 | Page<lb/> </note>
+
+	<note type="other">Extracted from TRMG&apos;s &quot;Fraud and Revenue Assurance Guideline&quot; </note>
+
+	<ptr>| www.trmg.biz<lb/></ptr>
+
+	<docTitle>
+	<titlePart>Three Ways to Reduce Exposure to Bypass Fraud<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">The Risk Management Group<lb/></note>
+
+	<date>May 2012<lb/></date>
+
+	<div type="abstract">Lavastorm Analytics is a global business performance analytics<lb/> company that enables companies to analyze, optimize, and control<lb/> the performance of complex business processes, including financial,<lb/> operational, and customer experience processes.<lb/> The company&apos;s Lavastorm Analytics Platform offers a new, agile approach to fraud management<lb/> and revenue assurance and is used by thousands of business and IT professionals at more than 50<lb/> CSPs worldwide. The platform&apos;s discovery-based, audit analytic capabilities provide users with self-<lb/>service analytics, visualizations of process/performance issues, continuous monitoring and<lb/> auditing, and case management capabilities for issue resolution.<lb/></div>
+
+		</front>
+	</text>
+</tei>

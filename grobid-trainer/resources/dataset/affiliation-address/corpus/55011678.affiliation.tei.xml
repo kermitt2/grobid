@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>:
+							<orgName type="institution">ImaBiotech</orgName>,
+							<address>
+								<addrLine>Campus Cité Scientifique</addrLine>,
+								<settlement>Villeneuve d&apos;Ascq</settlement>,
+								<country>France</country>
+								<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>:
+							<orgName type="institution">Technologie Servier</orgName>,
+							<address>
+								<settlement>Orléans</settlement>,
+								<country>France</country>
+								<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>3</marker>:
+							<orgName type="laboratory">Laboratoire de Spectrométrie de Masse Biologique Fondamentale et Appliquée (FABMS)</orgName>,
+							<orgName type="department">EA 4550</orgName>,
+							<orgName type="institution">Université de Lille</orgName>,
+							<address>
+								<postCode>59655</postCode>
+								<settlement>Villeneuve d&apos;Ascq</settlement>,
+								<country>France</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

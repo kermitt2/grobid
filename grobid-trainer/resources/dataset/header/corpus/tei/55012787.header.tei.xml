@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012787"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">39<lb/></note>
+
+	<note type="other">Original Article<lb/></note>
+
+	<docTitle>
+	<titlePart>Pedimune in Recurrent Respiratory Infection and<lb/> Diarrhoea-The Indian Experience-The PRIDE Study<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Kamlesh Patel and Rajiv Rana<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Merck Ltd., </affiliation>
+	</byline>
+
+	<address>Mumbai<lb/></address>
+
+	<div type="abstract">ABSTRACT<lb/> Objective. To evaluate the efficacy and tolerability of bovine colostrum in preventing recurrent episodes of upper respiratory<lb/> tract infections and diarrhoea in children<lb/> Methods. 605 children (1-8 yrs) having recurrent episodes of upper respiratory tract infections or diarrhea received Bovine<lb/> Colostrum (Pedimune<lb/> ®<lb/> ) for 12 weeks. Total no of episodes of recurrent infections, hospitalization rate, overall well being and<lb/> adverse events were assessed at every 4 weeks.<lb/> Results. Episodes of URTI and diarrhoea reduced significantly by 91.19 % and 86.60% at the end of therapy respectively. High<lb/> to average improvement in overall well-being in 96 % of the patients were found by pediatrician while overall well-being stated<lb/> by the patient/care taker was very good to good in 90.56 % of the patients.<lb/> Conclusion. Bovine colostrum was highly effective in the prophylactic treatment of recurrent URTIs and diarrhea in reducing<lb/> not only the episodes but also the hospitalization due to them.</div>
+
+	<reference> [Indian J Pediatr 2006; 73 (7) : 585-591]<lb/></reference>
+
+	<email>E-mail : rajiv.rana@merck.co.in</email>
+
+		</front>
+	</text>
+</tei>

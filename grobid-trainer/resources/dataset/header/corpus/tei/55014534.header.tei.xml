@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014534"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Biomaterials 22 (2001) 9}18<lb/></reference>
+
+	<docTitle>
+	<titlePart>Native and DPPA cross-linked collagen sponges seeded with fetal<lb/> bovine epiphyseal chondrocytes used for cartilage tissue engineering<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>S. Roche, M.-C.Ronziè re, D. Herbage, A.-M. Freyria*<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institut de Biologie et Chimie des Prote &amp; ines, CNRS UPR 412,</affiliation>
+	</byline>
+
+	<address>7 Passage du Vercors 69007 Lyon, France<lb/></address>
+
+	<note type="submission">Received 24 August 1999; accepted 22 March 2000<lb/></note>
+
+	<div type="abstract">Abstract<lb/> Collagen-based biomaterials in the form of sponges (bovine type I collagen, both native and cross-linked by treatment with<lb/> diphenylphosphorylazide, noted control and DPPA sponges respectively) were tested as three-dimensional sca!olds to support<lb/> chondrocyte proliferation with maintenance of the phenotype in order to form neocartilage. Control and DPPA sponges were initially<lb/> seeded with 10 or 10 foetal bovine epiphyseal chondrocytes and maintained for 4 weeks in culture under static conditions in<lb/> RPMI/NCTC medium with 10% FCS and without addition of fresh ascorbic acid. Both supports were always present during the<lb/> study and a partial decrease in size and weight was detected only with control sponges, both seeded and unseeded. Cell proliferation<lb/> was only noted in the 10 cells-seeded sponges (4-fold increase after 4 weeks of culture). Speci&quot;c cartilage collagens (types II and XI)<lb/> were deposited in the matrix throughout the culture and traces of type I collagen were noticed only in the culture medium after 2}3<lb/> weeks and 4 weeks in the case of 10 and 10 cells-seeded sponges, respectively. Glycosaminoglycans accumulated in the matrix, up to<lb/> 1.8 and 9.8% of total dry weight after one month with both seeding conditions, which was much lower than in the natural tissue. In the<lb/> 10 cells-seeded sponges, mineral deposition, observed with unseeded sponges, was signi&quot;cantly decreased (2-to 3-fold). These in vitro<lb/> results indicate that both collagen matrices can support the development of tissue engineered cartilage.</div>
+
+	<note type="copyright">&#169;2000 Elsevier Science Ltd.<lb/> All rights reserved.<lb/></note>
+
+	<keyword>Keywords: Articular cartilage repair; Collagen-based biomaterial; Collagen synthesis; Glycosaminoglycan deposition; Mineral deposition<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

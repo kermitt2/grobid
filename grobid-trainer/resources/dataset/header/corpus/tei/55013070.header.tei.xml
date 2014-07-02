@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013070"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Particle generation during reactive magnetron sputtering of<lb/> SiO 2 with cylindrical and planar cathodes<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>M. Vergöhl, D. Rademacher<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Fraunhofer Institute for Surface Engineering and Thin Films,</affiliation>
+	</byline>
+
+	<address>Bienroder Weg 54E, 38108 Braunschweig, Germany,<lb/></address>
+
+	<email>Michael.vergoehl@ist.fraunhofer.de<lb/></email>
+
+	<div type="abstract">Abstract: SiO 2 layers were deposited by pulsed reactive magnetron sputtering with cylindrical<lb/> and planar dual magnetrons. The particle density in SiO 2 films deposited at different process<lb/> parameters is analyzed.<lb/></div>
+
+	<note type="copyright">©2010 Optical Society of America<lb/></note>
+
+	<keyword>OCIS codes: 310.1860 Thin films, Deposition and fabrication, 310.3840 Materials and process characterization<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010660"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Quim. Nova, Vol. 30, No. 7, 1663-1668, 2007<lb/></reference>
+
+	<note type="other">Artigo<lb/></note>
+
+	<email>*e-mail: miguel@cce.ufes.br<lb/></email>
+
+	<docTitle>
+	<titlePart>PREPARAÇÃO E CARACTERIZAÇÃO DE CARVÃO ATIVADO QUIMICAMENTE A PARTIR DA CASCA DE ARROZ<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Miguel A. Schettino Jr.*, Jair C. C. Freitas, Alfredo G. Cunha e Francisco G. Emmerich<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Departamento de Física, Universidade Federal do Espírito Santo,</affiliation>
+	</byline>
+
+	<address>29075-910 Vitória -ES, Brasil<lb/></address>
+
+	<byline>
+	<docAuthor>Ana B. Soares e Paulo R. N. Silva<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Centro de Ciência e Tecnologia, Universidade Estadual do Norte Fluminense,</affiliation>
+	</byline>
+
+	<address>28015620 Campos dos Goytagazes – RJ, Brasil</address>
+
+		</front>
+	</text>
+</tei>

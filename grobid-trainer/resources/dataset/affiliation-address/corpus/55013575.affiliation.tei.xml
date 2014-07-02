@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>.
+							<orgName type="department">Department of Orthopaedics of the First Affiliated Hospital</orgName>,
+							<orgName type="institution">Medical College of Xi&apos;an Jiaotong University</orgName>,
+							<address>
+								<settlement>Xi&apos;an</settlement>,
+								<postCode>710061</postCode>,
+								<country>China</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>.
+							<orgName type="department">Key Laboratory of Environment and Genes Related Diseases of Ministry of Education</orgName>,
+							<orgName type="institution">Xi&apos;an Jiaotong University</orgName>,
+							<address>
+								<settlement>Xi&apos;an</settlement>,
+							<lb/>
+								<postCode>710061</postCode>,
+								<country>China</country>
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="department">Department of Orthopaedics of the First Affiliated Hospital</orgName>,
+							<orgName type="institution">Medical College of Jiaotong<lb/> University</orgName>,
+							<address>
+								<settlement>Xi&apos;an</settlement>,
+								<postCode>710061</postCode>,
+								<country>China</country>,
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

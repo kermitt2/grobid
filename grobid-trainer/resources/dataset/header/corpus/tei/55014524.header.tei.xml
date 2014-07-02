@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014524"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Hybrid Enumeration Strategies for Mixed<lb/> Integer Programming<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>João Pedro Pedroso<lb/></docAuthor>
+	</byline>
+
+	<idno>Technical Report Series: DCC-2004-8<lb/></idno>
+
+	<byline> 
+	<affiliation>Departamento de Ciência de Computadores – Faculdade de Ciências<lb/> &amp;<lb/> Laboratório de Inteligência Artificial e Ciência de Computadores<lb/> Universidade do Porto<lb/></affiliation>
+	</byline>
+
+	<address>Rua do Campo Alegre 823, 4150-180 Porto, Portugal<lb/></address>
+
+	<phone>Tel: +351-226.078.830 – Fax: +351-226.003.654<lb/></phone>
+
+	<ptr type="web">http://www.dcc.fc.up.pt/Pubs/treports.html</ptr>
+
+		</front>
+	</text>
+</tei>

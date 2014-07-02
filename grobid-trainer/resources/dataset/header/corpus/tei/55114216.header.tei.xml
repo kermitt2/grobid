@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei type="white-paper">
+	<teiHeader>
+		<fileDesc xml:id="55114216"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">No portion of this document may be reproduced without the expressed written permission of L-3 Communications SeaBeam Instruments<lb/></note>
+
+	<docTitle>
+	<titlePart>Multibeam Sonar<lb/> Theory of Operation<lb/> </titlePart>
+	</docTitle>
+
+	<affiliation>L-3 Communications SeaBeam Instruments<lb/></affiliation>
+
+	<address>141 Washington Street<lb/> East Walpole, MA 02032-1155<lb/></address>
+
+	<note type="copyright">Copyright © 2000 L-3 Communications SeaBeam Instruments<lb/> All rights reserved</note>
+
+		</front>
+	</text>
+</tei>

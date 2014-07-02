@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010376"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Biochem. J. (1998) 333, 765–777 (Printed in Great Britain)<lb/></reference>
+
+	<note type="page">765<lb/></note>
+
+	<docTitle>
+	<titlePart>Herbicide-resistant forms of Arabidopsis thaliana acetohydroxyacid<lb/> synthase : characterization of the catalytic properties and sensitivity to<lb/> inhibitors of four defined mutants<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Alan K. CHANG and Ronald G. DUGGLEBY<lb/> 1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Centre for Protein Structure, Function and Engineering, Department of Biochemistry, The University of Queensland,
+	</affiliation>
+	</byline>
+
+	<address>Brisbane QLD 4072, Australia<lb/></address>
+
+	<div type="abstract">Acetohydroxyacid synthase (AHAS) catalyses the first step in the<lb/> synthesis of the branched-chain amino acids and is the target of<lb/> several classes of herbicides. Four mutants (A122V, W574S,<lb/> W574L and S653N) of the AHAS gene from Arabidopsis thaliana<lb/> were constructed, expressed in Escherichia coli, and the enzymes<lb/> were purified. Each mutant form and wild-type was characterized<lb/> with respect to its catalytic properties and sensitivity to nine<lb/> herbicides. Each enzyme had a pH optimum near 7.5. The<lb/> specific activity varied from 13 % (A122V) to 131 % (W574L) of<lb/> the wild-type and the K m for pyruvate of the mutants was similar<lb/> to the wild-type, except for W574L where it was five-fold higher.<lb/></div>
+
+		</front>
+	</text>
+</tei>

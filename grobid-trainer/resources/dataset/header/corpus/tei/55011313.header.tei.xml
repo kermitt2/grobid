@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011313"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Multimedia Watermarking Techniques<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>FRANK HARTUNG, STUDENT MEMBER, IEEE, AND MARTIN KUTTER<lb/></docAuthor>
+	</byline>
+
+	<note type="other">Invited Paper<lb/></note>
+
+	<div type="abstract">Multimedia watermarking technology has evolved very quickly<lb/> during the last few years. A digital watermark is information<lb/> that is imperceptibly and robustly embedded in the host data<lb/> such that it cannot be removed. A watermark typically contains<lb/> information about the origin, status, or recipient of the host<lb/> data. In this tutorial paper, the requirements and applications<lb/> for watermarking are reviewed. Applications include copyright<lb/> protection, data monitoring, and data tracking. The basic concepts<lb/> of watermarking systems are outlined and illustrated with proposed<lb/> watermarking methods for images, video, audio, text documents,<lb/> and other media. Robustness and security aspects are discussed in<lb/> detail. Finally, a few remarks are made about the state of the art<lb/> and possible future developments in watermarking technology.<lb/></div>
+
+	<keyword>Keywords— Audio, image, multimedia, review, video, water-<lb/>marking.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

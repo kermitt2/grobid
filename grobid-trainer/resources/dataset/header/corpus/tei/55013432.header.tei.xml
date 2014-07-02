@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013432"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<ptr>www.creativematerials.com<lb/> </ptr>
+
+	<note type="other">ISO 9001 CERTIFIED<lb/></note>
+
+	<byline>
+	<affiliation>Creative Materials, Inc.<lb/></affiliation>
+	</byline>
+
+	<address>141 Middlesex Road<lb/> </address>
+
+	<phone>T 978.649.4700<lb/> </phone>
+
+	<address>Tyngsboro, MA 01879<lb/> </address>
+
+	<phone>F 978.649.2040<lb/></phone>
+
+		</front>
+	</text>
+</tei>

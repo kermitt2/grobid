@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012205"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Assertion-based debugging of imperative<lb/> programs by abstract interpretation<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>François Bourdoncle<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>DIGITAL Paris Research Laboratory<lb/> Centre de Mathématiques Appliquées<lb/></affiliation>
+	</byline>
+
+	<address>85, avenue Victor Hugo<lb/></address>
+
+	<byline>
+	<affiliation>Ecole des Mines de Paris,</affiliation>
+	</byline>
+
+	<address>BP 207<lb/> 92500 Rueil-Malmaison — France<lb/> 06560 Sophia-Antipolis Cedex<lb/></address>
+
+	<phone>Tel: +33 (1) 4714 28 22<lb/> </phone>
+
+	<address>France<lb/></address>
+
+	<email>bourdoncle@prl.dec.com<lb/></email>
+
+	<div type="abstract">Abstract. Abstract interpretation is a formal method that enables the static determination<lb/> (i.e. at compile-time) of the dynamic properties (i.e. at run-time) of programs. So far,<lb/> this method has mainly been used to build sophisticated, optimizing compilers. In this<lb/> paper, we show how abstract interpretation techniques can be used to perform, prior<lb/> to their execution, a static and automatic debugging of imperative programs. This<lb/> novel approach, which we call abstract debugging, lets programmers use assertions<lb/> to express invariance properties as well as inevitable properties of programs, such as<lb/> termination. We show how such assertions can be used to find the origin of bugs, rather<lb/> than their occurrences, and determine necessary conditions of program correctness,<lb/> that is, necessary conditions for programs to be bug-free and correct with respect to<lb/> the programmer&apos;s assertions. We also show that assertions can be used to restrict the<lb/> control-flow of a program and examine its behavior along specific execution paths<lb/> and find necessary conditions for the program to reach a particular point in a given<lb/> state. Finally, we present the Syntox system that enables the abstract debugging of<lb/> Pascal programs by the determination of the range of scalar variables, and discuss<lb/> implementation, algorithmic and complexity issues.<lb/></div>
+
+		</front>
+	</text>
+</tei>

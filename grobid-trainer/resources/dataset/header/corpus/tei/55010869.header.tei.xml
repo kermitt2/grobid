@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010869"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">New Methods<lb/></note>
+
+	<docTitle>
+	<titlePart>Color M-Mode Doppler Flow<lb/> Propagation Velocity is a Preload<lb/> Insensitive Index of Left Ventricular<lb/> Relaxation: Animal and Human Validation<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Mario J. Garcia, MD, FACC,* Nicholas G. Smedira, MD, Neil L. Greenberg, PHD,* Michael Main, MD,*<lb/> Michael S. Firstenberg, MD,* Jill Odabashian, RDCS,* James D. Thomas, MD, FACC*<lb/> </docAuthor>
+	</byline>
+
+	<address>Cleveland, Ohio<lb/></address>
+
+	<div type="abstract">OBJECTIVES To determine the effect of preload in color M-mode Doppler flow propagation velocity (v p ).<lb/> BACKGROUND The interpretation of Doppler filling patterns is limited by confounding effects of left<lb/> ventricular (LV) relaxation and preload. Color M-mode v p has been proposed as a new index<lb/> of LV relaxation.</div>
+
+		</front>
+	</text>
+</tei>

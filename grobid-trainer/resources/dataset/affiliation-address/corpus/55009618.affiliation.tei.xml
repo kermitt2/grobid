@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="institution">Swedish Institute of Computer Science (SICS)</orgName>
+							<lb/>
+							<address>
+								<postBox>Box 1263</postBox>,
+								<postCode>SE-164 29</postCode>,
+								<settlement>Kista</settlement>,
+								<country>Sweden</country>
+							<lb/>
+							</address>
+							<orgName type="department">Department of Human Work Science and Media Technology</orgName>
+							<lb/>
+							<orgName type="institution">Blekinge Institute of Technology</orgName>
+							<lb/>
+							<address>
+								<postBox>Box 520</postBox>,
+								<postCode>372 25</postCode>
+								<settlement>Ronneby</settlement>,
+								<country>Sweden</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

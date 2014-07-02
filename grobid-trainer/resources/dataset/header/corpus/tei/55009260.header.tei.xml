@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009260"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Immunohgical Rev. (1981), Vol. 54<lb/></reference>
+	
+	<note type="copyright">Published by Munksgaard, Copenhagen, Denmark<lb/> No part may be reproduced by any process without written permission from the author(8)<lb/></note>
+
+	<docTitle>
+	<titlePart>Antigen-Specific, Proliferating T<lb/> Lymphocyte Clones.<lb/> Methodology, Specificity, MHC Restriction<lb/> and AUoreactivity<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>BENJAMIN SREDNI &amp; RONALD H. SCHWARTZ<lb/></docAuthor>
+	</byline>
+
+		</front>
+	</text>
+</tei>

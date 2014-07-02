@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010440"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">ABSTRACT<lb/></note>
+
+	<docTitle>
+	<titlePart>Title of Document:<lb/> INTERFACE AND INTERACTION DESIGN<lb/> FOR ONE-HANDED MOBILE COMPUTING.<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Amy Kathleen Karlson, Ph.D.</docAuthor>
+	</byline>
+
+	<date>, 2007<lb/></date>
+
+	<note type="other">Directed By:<lb/> Associate Professor Benjamin B. Bederson,<lb/></note>
+
+	<byline>
+	<note type="other">Department of Computer Science<lb/></note>
+	</byline>
+
+		</front>
+	</text>
+</tei>

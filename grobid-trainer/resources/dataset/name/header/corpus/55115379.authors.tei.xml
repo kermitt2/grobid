@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Oh</forename>
+								<middlename>In</middlename>
+								<surname>Kwon</surname>
+								<marker>a</marker> ,
+							</persName>
+							<persName>
+								<forename>Eung</forename>
+								<middlename>Je</middlename>
+								<surname>Woo</surname>
+							<lb/>
+								<marker>b</marker>,
+							</persName>
+							<persName>
+								<forename>Yiping</forename>
+								<middlename>P</middlename> .
+								<surname>Du</surname>
+							<lb/>
+								<marker>c</marker> ,
+							</persName>
+							<persName>
+								<forename>Dosik</forename>
+								<surname>Hwang</surname>
+								<marker>d , ⁎</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011511"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Selective MR Imaging of Labeled Human Peripheral<lb/> Blood Mononuclear Cells by Liposome Mediated<lb/> Incorporation of Dextran-Magnetite Particles<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Jeff W. M. Bulte, Loralie D. Ma, Richard L. Magin, Richard L. Kamman,<lb/> Caesar E. Hulstaert, K. Gwan Go, T. Hauw The, Lou de Leij<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Human peripheral blood mononuclear cells (PBMCs) were in-<lb/>cubated with large unilamellar vesicles (LUV) containing en-<lb/>capsulated dextran-magnetite particles (DMP). This resulted<lb/> in an efficient incorporation of DMP. Electron microscopy re-<lb/>vealed the presence of DMP in cells mainly in phagosomes<lb/> and secondary lysosomes. DMP-labeled PBMCs showed a<lb/> strong increase of the transverse relaxation rate (up to 16.6 s-&apos;<lb/> for 5 x lo7 cells/ml) and, accordingly, a great loss of signal<lb/> intensity in MR imaging. The fraction of DMP containing PB-<lb/>MCs could be enriched by magnetic cell separation. The major<lb/> population of the DMP containing cells proved to be mono-<lb/>cytes. When PBMCs depleted of monocytes were used for<lb/> labeling, DMP uptake was observed also in the peripheral<lb/> blood lymphocytes. The labeling of PBMCs presented here<lb/> may be used in future studies of selective MR imaging of in<lb/> vivo cell migration in a variety of immunologically compro-<lb/>mised tissue states, e.g., tumors, transplantations, and ab-<lb/>scesses.<lb/></div>
+
+	<keyword>Key words: Labeling ex vivo; lymphocytes, monocytes; mag-<lb/>netic liposomes; MR contrast agent.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

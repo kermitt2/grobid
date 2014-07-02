@@ -1,0 +1,78 @@
+<?xml version="1.0" ?>
+<tei type="technical-report">
+	<teiHeader>
+		<fileDesc xml:id="55114677"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note>HEVC<lb/> </note>
+
+	<note type="page">i<lb/> </note>
+
+	<note>Joint Collaborative Team on Video Coding (JCT-VC)<lb/> of ITU-T SG16 WP3 and ISO/IEC JTC1/SC29/WG11<lb/></note>
+
+	<note type="other">5th Meeting: </note>
+
+	<address>Geneva, CH, </address>
+
+	<date>16-23 March, 2011<lb/> </date>
+
+	<note type="other">Document:<lb/> JCTVC-E603<lb/> </note>
+	
+	<docTitle>
+	<titlePart>Title:<lb/> WD3: Working Draft 3 of High-Efficiency Video Coding<lb/> </titlePart>
+	</docTitle>
+	
+	<note>Status:<lb/> Output Document of JCT-VC<lb/> Purpose:<lb/> Working Draft of HEVC<lb/> Author(s) or<lb/> Contact(s):<lb/></note>
+
+	<byline>
+	<docAuthor>Thomas Wiegand<lb/> </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Fraunhofer HHI / TU Berlin<lb/> </affiliation>
+	</byline>
+
+	<byline>
+	<docAuthor>Woo-Jin Han<lb/> </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Samsung Electronics<lb/> </affiliation>
+	</byline>
+
+	<byline>
+	<docAuthor>Benjamin Bross<lb/> </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Fraunhofer HHI<lb/> </affiliation>
+	</byline>
+
+	<byline>
+	<docAuthor>Jens-Rainer Ohm<lb/> </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>RWTH Aachen<lb/> </affiliation>
+	</byline>
+
+	<byline>
+	<docAuthor>Gary J. Sullivan<lb/> </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Microsoft<lb/></affiliation>
+	</byline>
+	
+	<email>Email:<lb/> Email:<lb/> Email:<lb/> Email:<lb/> Email:<lb/> thomas.wiegand@hhi.fraunhofer.de<lb/> wjhan.han@samsung.com<lb/>
+	benjamin.bross@hhi.fraunhofer.de<lb/> ohm@ient.rwth-aachen.de<lb/> garysull@microsoft.com<lb/></email>
+
+	<note type="other">Source:<lb/> Editor<lb/> _____________________________<lb/></note>
+
+	<div type="abstract">Abstract<lb/> Working Draft 3 of High-Efficiency Video Coding.<lb/> Ed. Notes (WD3):<lb/>  Added Residual coding CABAC syntax and semantics<lb/>  Added Zig-zag scanning process<lb/>  Added CABAC Binarization processes<lb/>  Incorporated MV coding (JCTVC-E481)<lb/>  Incorporated Compression of reference indices (JCTVC-E059)<lb/>  Incorporated Zero merge candidate (JCTVC-E146)<lb/>  Incorporated Intra mode coding (JCTVC-E088/E131) (Inserted by TK 31/3/2011 with notes)<lb/>  Fixed the CABAC coefficients syntax, semantics and inverse scanning process<lb/>  Incorporated CABAC coeffs (JCTVC-E253)<lb/>  Moved the EGk binarization from the UEGk subclause in a separate subclause<lb/>  Added text representing CABAC entropy coding context initialisation<lb/>  Added text representing CABAC entropy coding context derivation.<lb/>  Mode-dependent 3-scan for intra (JCTVC-D393)<lb/>  Incorporated CABAC: Context size reduction (JCTVC-E227/E489)<lb/>  Incorporated CABAC: significance map coding simplification (JCTVC-E227/E338/E344/E494)<lb/>  Incorporated CABAC: Contexts for MVD (JCTVC-E324)<lb/>  Incorporated initial draft of CAVLC text<lb/>  CAVLC for 16x16 &amp; 32x32 (JCTVC-E383)<lb/>  CAVLC table size reduction (JCTVC-E384)<lb/>  CAVLC for RQT (JCTVC-E404)<lb/>  CAVLC: counters (JCTVC-E143)<lb/>  CAVLC: Intra prediction mode coding in LCEC (JCTVC-D366)<lb/>  CAVLC: Inter prediction mode coding in LCEC (JCTVC-D370)<lb/>  CAVLC: 4x4 and 8x8 transform coefficient coding in LCEC (JCTVC-D374)<lb/>  Block-based ALF (JCTVC-E046/E323)<lb/>  ALF parameters to PPS (JCTVC-E045)<lb/>  Parallel deblocking (JCTVC-E496/E181/E224)<lb/>  Clipping for bi-pred averaging (JCTVC-E242)<lb/>  Reference sample padding (JCTVC-E488)<lb/>  Transformation processes are replaced by [TBD] mark (meeting note, JCTVC-E243)</div>
+
+		</front>
+	</text>
+</tei>

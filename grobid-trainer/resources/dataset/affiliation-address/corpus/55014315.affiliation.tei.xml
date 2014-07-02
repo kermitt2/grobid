@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>*</marker>
+							<orgName type="department">Department of Chemistry and George R. Harrison Spectroscopy Laboratory</orgName>,
+							<orgName type="institution">Massachusetts Institute of Technology</orgName>,
+							<address>
+								<settlement>Cambridge</settlement>,
+								<region>MA</region>
+								<postCode>02139</postCode>;<lb/> and
+							</address>
+						</affiliation>
+						<affiliation>	
+							<marker>* 	*</marker>
+							<orgName type="department">Department of Chemistry</orgName>,
+							<orgName type="institution">University of California</orgName>, and
+							<orgName type="department">Physical Biosciences and Material Sciences Divisions</orgName>,
+							<orgName type="institution">Lawrence Berkeley<lb/> National Laboratory</orgName>,
+							<address>
+								<settlement>Berkeley</settlement>,
+								<region>CA</region>
+								<postCode>94720</postCode>
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="institution">University of California</orgName>,
+							<address>
+								<settlement>Berkeley</settlement>,
+								<region>CA</region>,
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

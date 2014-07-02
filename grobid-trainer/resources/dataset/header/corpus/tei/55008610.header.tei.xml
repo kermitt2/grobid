@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008610"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Design, synthesis and structure–activity<lb/> relationships of novel ALS inhibitors<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Tian-Rui Ren,<lb/> 1<lb/> * Hong-Wei Yang,<lb/> 1 Xu Gao,<lb/> 1 Xin-Ling Yang,<lb/> 2 Jia-Ju Zhou<lb/> 1<lb/> and Fu-Heng Cheng<lb/> 2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1<lb/> Laboratory of Computer Chemistry, Institute of Chemical Metallurgy, Chinese Academy of Sciences,</affiliation>
+	</byline>
+
+	<address>Beijing 100080, P R China<lb/></address>
+
+	<byline>
+	<affiliation>2<lb/> Department of Applied Chemistry, China Agricultural University,</affiliation>
+	</byline>
+
+	<address>Beijing 100094, P R China<lb/></address>
+
+	<div type="abstract">Abstract: The paper describes the biophore models of sulfonylurea, imidazolinone, triazolopyrimi-<lb/>dinesulfonamide and 5-pyrimidyltriazolo-3-sulfonamides established by the Apex-3D method. A<lb/> series of N-phenylsulfonyl-N &apos;-(thiadiazol-2-yl)oxamides and three types of triazolopyrimidinesulfo-<lb/>namide were synthesised and their herbicidal activities determined to assess the validity of the model.<lb/> In general, the model gave useful leads to activity, although the actual level was not always predicted<lb/> accurately. In only a few cases did compounds predicted as being active prove to be inactive in the<lb/> bioassay, and compounds with little or no activity were clearly indicated.<lb/> As a result of this work, the compound N,N &apos;-[1-(5,7-dimethyl-1,2,4-triazolo[1,5-a]pyrimidin-2-yl-<lb/>thio)butane-2,3-di-imino]bis(2-chlorobenzenesulfonamide) was selected as showing good activity<lb/> against a range of species, and will be used as a lead for further development.<lb/></div>
+
+	<note type="copyright">&#169; 2000 Society of Chemical Industry<lb/></note>
+
+	<keyword>Keywords: molecular modelling; Apex-3D; herbicides; ALS inhibitors<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

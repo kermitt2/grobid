@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010366"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Home Search Study Topics Glossary<lb/> Search<lb/> Full Text View<lb/> Tabular View<lb/> No Study Results Posted<lb/> Related Studies<lb/></note>
+
+	<docTitle>
+	<titlePart>Pharmacokinetic Properties of Lorcaserin in Subjects With Renal<lb/> Impairment<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">This study has been completed.<lb/></note>
+
+	<note type="submission">First Received on January 22, 2009. Last Updated on July 27, 2009</note>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55113813"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>lAPR Workshop on CV -Special Hardware and Industrial Applications OCT.12-14, 1988, Tokyo<lb/></reference>
+
+	<docTitle>
+	<titlePart>A NEW SCHEME FOR PRACTICAL FLEXIBLE AND INTELLIGENT<lb/> VISION SYSTEMS<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Nobuyuki OTSU and Takio KURITA<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Electrotechnical Laboratory<lb/></affiliation>
+	</byline>
+
+	<address>1-1-4 Umezono, Tsukuba-shi, Ibaraki-ken, Japan 305<lb/></address>
+
+	<div type="abstract">ABSTRACT<lb/> We propose a new scheme for practical vision systems which<lb/> are simple in structure, directly and adaptively trainable for<lb/> various purposes. The feature extraction consists of two stages:<lb/> At first, general and primitive features which are shift-invariant<lb/> and additive are extracted over the retinal image plane. Then<lb/> those features are linearly combined on the bases of multivari-<lb/>ate analysis methods so as to provide new effective features for<lb/> each task. Such a system can adaptively and automatically<lb/> learn the task from the given supervised training examples and<lb/> show an intelligent performance. Some examples of practical<lb/> applications to object recognition and measurements are exper-<lb/>imentally shown.<lb/> which is simple in structure and directly and a d a p<lb/> tively trainable for various purposes. The basic idea<lb/> is similar to Perceptron [I] or neural networks (for<lb/> example, see 12)) but more practical being based on<lb/> closed-form solutions for statistical performance cri-<lb/>teria without employing such slow iterative learning<lb/> processes.<lb/> The basic idea of the system has already been pre-<lb/>sented in [3] and registered as patents (for example,<lb/> [4]). A hardware implementation (named AISS) has<lb/> been developed in cooperation with OKK Inc. and<lb/> the detail will be presented in a different paper [5] to-<lb/>gether with actual demonstration at this conference.<lb/></div>
+
+		</front>
+	</text>
+</tei>

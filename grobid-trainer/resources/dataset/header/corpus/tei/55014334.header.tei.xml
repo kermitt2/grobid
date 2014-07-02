@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014334"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+
+	<note>Steve Friedl&apos;s Unixwiz.net Tech Tips<lb/> </note>
+	
+	<docTitle>
+	<titlePart>An Illustrated Guide to IPsec<lb/></titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

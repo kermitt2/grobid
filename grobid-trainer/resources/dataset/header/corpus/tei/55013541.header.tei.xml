@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013541"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Achieving Redundant and Seamless Wireless Roaming when<lb/> Using Standard Access Points<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>by: Rolf Nilsson, CEO </docAuthor>
+	</byline>
+	
+	<byline>
+	<affiliation>connectBlue<lb/></affiliation>
+	</byline>
+
+		</front>
+	</text>
+</tei>

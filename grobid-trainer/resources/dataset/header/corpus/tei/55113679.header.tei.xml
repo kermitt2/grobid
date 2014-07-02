@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei type="supplementary">
+	<teiHeader>
+		<fileDesc xml:id="55113679"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">S-1<lb/></note>
+
+	<note>Supporting Information<lb/> </note>
+
+	<docTitle>
+	<titlePart>Monolithic Silicon Chip for Immunofluorescence Detection on Single<lb/> Magnetic Beads<lb/>
+	</titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Emile P. Dupont, Estelle Labonne, Caroline Vandevyver, Ulrike Lehmann, Edoardo<lb/> Charbon and Martin A. M. Gijs<lb/>
+	</docAuthor>
+	</byline>
+
+		</front>
+	</text>
+</tei>

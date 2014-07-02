@@ -394,7 +394,7 @@ public class FullTextParser extends AbstractParser {
                     String s = stt.nextToken().trim();
                     if (i == 0) {
                         s2 = TextUtilities.HTMLEncode(s); // lexical token
-
+						int p0 = p;
                         boolean strop = false;
                         while ((!strop) && (p < tokenizations.size())) {
                             String tokOriginal = tokenizations.get(p);
@@ -405,6 +405,14 @@ public class FullTextParser extends AbstractParser {
                             }
                             p++;
                         }
+						if (p == tokenizations.size()) {
+							// either we are at the end of the header, or we might have 
+							// a problematic token in tokenization for some reasons
+							if ((p - p0) > 2) {
+								// we loose the synchronicity, so we reinit p for the next token
+								p = p0;
+							}
+						}
                     } else if (i == ll - 1) {
                         s1 = s; // current tag
                     } else {

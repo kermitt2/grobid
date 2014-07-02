@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009058"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">JOURNAL<lb/> OF THE<lb/> ELECTRDCHEMICAL E~DCIETY<lb/> REVIEWS AND NEWS-<lb/>@<lb/></note>
+	
+	<date>OCTOB ER<lb/> 1984<lb/></date>
+
+	<docTitle>
+	<titlePart>Development and Commercialization of the Monsanto<lb/> Electrochemical Adiponitrile Process 1<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>D. E. Danly*<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Monsanto Fibers and Intermediates Company,</affiliation>
+	</byline>
+
+	<address>Pensacola, Florida 32575<lb/></address>
+
+		</front>
+	</text>
+</tei>

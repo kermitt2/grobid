@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei type="white-paper">
+	<teiHeader>
+		<fileDesc xml:id="55113782"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Efficient Synthesis of a Polyacene Monomer<lb/></titlePart>
+	</docTitle>
+
+	<idno>Technion Reference<lb/> CHM0599<lb/> </idno>
+
+	<div type="abstract">BRIEF<lb/> Efficient synthesis method of a monomer that, when polymerized, is anticipated to exhibit<lb/> directional conductivity (a.k.a. anisotropic) and substantial (possibly immense)<lb/> mechanical strength and possibly superconductivity. These polymers are named<lb/> polyacenes.<lb/></div>
+
+		</front>
+	</text>
+</tei>

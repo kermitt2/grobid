@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012316"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>BAPI Programming Guide (CA-BFA)<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">H E L P . C A B F A B A P I P G<lb/> R e l e a s e 4 . 6 C</note>
+
+		</front>
+	</text>
+</tei>

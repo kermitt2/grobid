@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011166"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Macsolvers&apos; Blog<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">An online tech resource for Mac users<lb/> Contact Us<lb/> FAQs<lb/> Posted by: admin |</note>
+
+	<date>January 5, 2008<lb/></date>
+
+	<docTitle>
+	<titlePart>Attaching iPhone to a Mac doesn&apos;t auto-launch iTunes<lb/></titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

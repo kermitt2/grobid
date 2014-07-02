@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010476"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">SPE 116661<lb/></note>
+
+	<docTitle>
+	<titlePart>Optimizing Injection Intervals in Vertical and Horizontal Wells for CO 2<lb/> Sequestration<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Navanit Kumar, </docAuthor>
+	</byline>
+		
+	<byline>
+	<affiliation>SPE,</affiliation>
+	</byline>	
+		
+	<byline>
+	<docAuthor>	and Steven L. Bryant,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>SPE, The University of Texas at Austin<lb/></affiliation>
+	</byline>
+
+	<note type="copyright">Copyright 2008, Society of Petroleum Engineers<lb/></note>
+
+	<note type="other">This paper was prepared for presentation at the2008 SPE Annual Technical Conference and Exhibition held in Denver, Colorado, U.S.A., 21-24 September 2008.<lb/> This paper was selected for presentation by an SPE program committee following review of information contained in an abstract submitted by the author(s). Contents of the paper have not been<lb/> reviewed by the Society of Petroleum Engineers and are subject to correction by the author(s). The material does not necessarily reflect any position of the Society of Petroleum Engineers, its<lb/> officers, or members. Electronic reproduction, distribution, or storage of any part of this paper without the written consent of the Society of Petroleum Engineers is prohibited. Permission to<lb/> reproduce in print is restricted to an abstract of not more than 300 words; illustrations may not be copied. The abstract must contain conspicuous acknowledgment of SPE copyright.<lb/></note>
+
+	<div type="abstract">Abstract Storage in deep saline aquifers is one of most viable options for sequestering anthropogenic CO 2 . The choice of completion for<lb/> injection wells --fully or partially completed vertical well, length of horizontal well --has significant effect on the eventual<lb/> trapping of CO 2 as well as its potential for leakage. Thus optimization of the completion for a target injection rate can help<lb/> maximize trapping. The density difference between CO 2 and in-situ brine influences the optimization because it causes the<lb/> pressure difference between wellbore and formation to vary with depth in a CO 2 injection well. For a long completed interval<lb/> in a vertical well, the flux distribution is therefore not uniform. Reinforced by relative permeability effects, this can cause<lb/> deeper perforations to contribute less to the injection rate. In extreme cases only a fraction of the perforations contribute to<lb/> injection. The degree of non-uniformity depends on the injection rate. The nonuniformity in turn reduces residual phase<lb/> trapping because less volume of rock and brine comes in contact with CO 2 .<lb/> Field scale compositional reservoir simulations are carried out to study the plume behavior and CO 2 trapping under<lb/> different injection strategies. A semi-analytical algorithm is discussed to determine the optimum interval of injection. For<lb/> horizontal wells two competing effects, trapping along the well length vs. trapping along the transverse direction, determine<lb/> the optimum well length. These effects can be correlated to the dimensionless gravity number during injection. Injection at<lb/> bottom of aquifer results in better trapping and lower leakage potential. For a given rate, the perforation interval can be<lb/> calculated so that all the perforations contribute throughout the injection period. In a horizontal well, longer well length<lb/> increases the trapping in direction of well path but reduces trapping in the transverse direction. Consequently, the benefits of a<lb/> strategy to maximize injectivity may be offset by the disadvantage of less CO 2 entering secure modes of storage.<lb/></div>
+
+		</front>
+	</text>
+</tei>

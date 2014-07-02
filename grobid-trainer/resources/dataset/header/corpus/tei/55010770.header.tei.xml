@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010770"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Proceedings of the NAACL HLT Student Research Workshop and Doctoral Consortium, pages 61–65,<lb/> Boulder, Colorado, June 2009. </reference>
+
+	<note type="copyright">&#169;<lb/>2009 Association for Computational Linguistics<lb/></note>
+
+	<docTitle>
+	<titlePart>Loss-Sensitive Discriminative Training of Machine Transliteration Models<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Kedar Bellare<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Computer Science<lb/> University of Massachusetts Amherst<lb/></affiliation>
+	</byline>
+
+	<address>Amherst, MA 01003, USA<lb/></address>
+
+	<email>kedarb@cs.umass.edu<lb/></email>
+
+	<byline>
+	<docAuthor>Koby Crammer<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Computer Science<lb/> University of Pennsylvania<lb/></affiliation>
+	</byline>
+
+	<address>Philadelphia, PA 19104, USA<lb/></address>
+
+	<email>crammer@cis.upenn.edu<lb/></email>
+
+	<byline>
+	<docAuthor>Dayne Freitag<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>SRI International<lb/></affiliation>
+	</byline>
+
+	<address>San Diego, CA 92130, USA<lb/></address>
+
+	<email>dayne.freitag@sri.com<lb/></email>
+
+	<div type="abstract">Abstract<lb/> In machine transliteration we transcribe a<lb/> name across languages while maintaining its<lb/> phonetic information. In this paper, we<lb/> present a novel sequence transduction algo-<lb/>rithm for the problem of machine transliter-<lb/>ation. Our model is discriminatively trained<lb/> by the MIRA algorithm, which improves the<lb/> traditional Perceptron training in three ways:<lb/> (1) It allows us to consider k-best translitera-<lb/>tions instead of the best one. (2) It is trained<lb/> based on the ranking of these transliterations<lb/> according to user-specified loss function (Lev-<lb/>enshtein edit distance). (3) It enables the user<lb/> to tune a built-in parameter to cope with noisy<lb/> non-separable data during training. On an<lb/> Arabic-English name transliteration task, our<lb/> model achieves a relative error reduction of<lb/> 2.2% over a perceptron-based model with sim-<lb/>ilar features, and an error reduction of 7.2%<lb/> over a statistical machine translation model<lb/> with more complex features.<lb/></div>
+
+		</front>
+	</text>
+</tei>

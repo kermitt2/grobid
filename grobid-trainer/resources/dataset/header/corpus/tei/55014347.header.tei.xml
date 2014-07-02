@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014347"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<ptr type="web">ibm.com/redbooks<lb/></ptr>
+
+	<docTitle>
+	<titlePart>The XML Files:<lb/> Development of XML/XSL Applications<lb/> Using WebSphere Studio Version 5<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Osamu Takagiwa<lb/> Deena Hassan<lb/> Oliver Quixchan<lb/> Jagjit Singh<lb/></docAuthor>
+	</byline>
+
+	<note>Introduces WebSphere Studio Application<lb/> Developer Version 5 XML tooling<lb/> A comprehensive guide to XML<lb/> support of WebSphere Family<lb/> Start-to-finish<lb/> application case studies<lb/></note>
+ 
+	<note type="other">Front cover</note>
+
+		</front>
+	</text>
+</tei>

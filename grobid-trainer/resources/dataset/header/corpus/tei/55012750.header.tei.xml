@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012750"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>LIDAR WIND SPEED MEASUREMENTS FROM A<lb/> ROTATING SPINNER<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>T. Mikkelsen, K. Hansen, N. Angelou, M. Sjöholm<lb/> M. Harris, P. Hadley, R. Scullion, G. Ellis, G. Vives<lb/> </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Risø DTU, </affiliation>
+	</byline>
+	
+	<address>Roskilde, Denmark<lb/></address>
+	
+	<byline>
+	<affiliation>Natural Power,</affiliation>
+	</byline>
+
+	<address>Malvern, UK<lb/></address>
+
+	<email>tomi@risoe.dtu.dk<lb/> michaelh@naturalpower.com<lb/></email>
+
+	<div type="abstract">Abstract:<lb/> We report our latest results from an experimental<lb/> development in which a fast data acquisition<lb/> continuous wave (cw) wind lidar (ZephIR) has<lb/> been installed and operated in the rotating spinner<lb/> of a large 80 m Ø, 59 m hub height wind turbine<lb/> (Vestas NM80) located at Tjaereborg Enge in<lb/> western Denmark. To the best of our knowledge<lb/> we have achieved a &quot;World first&quot; successful<lb/> operation of a forward-looking wind lidar integrated<lb/> in the spinner of an operating wind turbine. This<lb/> new measurement concept allows for an<lb/> unimpeded view of the approaching wind field,<lb/> which we have interrogated using several different<lb/> wind scan patterns. Information on wind speed,<lb/> shear and direction has been extracted and<lb/> compared to the output from an adjacent met mast.<lb/></div>
+
+	<keyword>Keywords: Wind lidar, wind turbine integration,<lb/> yaw and pitch steering and control, power curve.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

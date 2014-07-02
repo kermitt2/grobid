@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014681"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>1987 70: 1136-1142<lb/></reference>
+
+	<byline>
+	<docAuthor>HE McGrath, CM Liang, TA Alberico and PJ Quesenberry<lb/></docAuthor>
+	</byline>
+
+	<docTitle>
+	<titlePart>cultures<lb/> The effect of lithium on growth factor production in long-term bone marrow<lb/> </titlePart>
+	</docTitle>
+
+	<ptr>http://bloodjournal.hematologylibrary.org/site/misc/rights.xhtml#repub_requests<lb/> </ptr>
+
+	<note type="other">Information about reproducing this article in parts or in its entirety may be found online at:<lb/> http://bloodjournal.hematologylibrary.org/site/misc/rights.xhtml#reprints<lb/> Information about ordering reprints may be found online at:<lb/> http://bloodjournal.hematologylibrary.org/site/subscriptions/index.xhtml<lb/> Information about subscriptions and ASH membership may be found online at:<lb/></note>
+
+	<note type="copyright">Copyright 2011 by The American Society of Hematology; all rights reserved.<lb/>  20036.<lb/>  the American Society of Hematology, 2021 L St, NW, Suite 900, Washington DC<lb/></note>
+
+		</front>
+	</text>
+</tei>

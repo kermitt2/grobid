@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010474"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Involvement of p21 in mitotic exit after paclitaxel treatment in MCF-7<lb/> breast adenocarcinoma cell line<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>N Barboule, P Chadebech, V Baldin, S Vidal and A Valette<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>IPBS, CNRS 205 route de Narbonne</affiliation>
+	</byline>
+
+	<address>31077, Toulouse, Cedex, France<lb/></address>
+
+	<div type="abstract">It has been shown recently that expression of p21 is<lb/> enhanced by paclitaxel. This cytotoxic compound induces<lb/> mitotic spindle damage resulting in blockade of the<lb/> mitotic cell cycle associated or not with apoptotic cell<lb/> death. In the present study, we showed that, in MCF-7<lb/> cells, paclitaxel induced accumulation of p21 in cells with<lb/> a G2/M DNA content, corresponding to cells either in<lb/> abnormal mitosis or in an interphase-like state (decon-<lb/>densed chromatin) with multiple nuclei. In MCF-7 cells,<lb/> the increase in p21 was subsequent to the mitotic arrest<lb/> and was associated with the exit from abnormal mitosis<lb/> leading to formation of cells with micronuclei. In this cell<lb/> line, we noted a relationship between the elevation of p21<lb/> expression and the inhibition of p34<lb/> cdc2<lb/> activity. High<lb/> levels of p21 protein were also found to be associated<lb/> with inactive p34<lb/> cdc2<lb/> /cyclin B protein complex after<lb/> treatment with paclitaxel. Treatment with p21 antisense<lb/> oligonucleotide partially blocked induction of p21<lb/> expression by paclitaxel and signi®cantly reduced<lb/> survival of MCF-7 cells exposed to this agent. In NIH-<lb/>OVCAR-3 cells, which are de®cient in basal and<lb/> paclitaxel-induced p21 expression, paclitaxel led to a<lb/> prolonged activation of p34<lb/> cdc2<lb/> and a delayed mitotic exit<lb/> associated with apoptotic cell death. These observations<lb/> suggest that p21 is not required for the mitotic arrest in<lb/> response to paclitaxel, but argue in favor of a role for<lb/> this inhibitor in facilitating the exit from abnormal<lb/> mitosis. This eectively enhances cell survival after<lb/> paclitaxel-induced spindle damage.<lb/></div>
+
+	<keyword>Keywords: p21; paclitaxel; p34<lb/> cdc2<lb/> activity; mitotic exit<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

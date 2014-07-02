@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55115386"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Journal of Asian Ceramic Societies 1 (2013) 17–25<lb/> </reference>
+
+	<note type="other">Journal of Asian Ceramic Societies<lb/> Journal of Asian Ceramic Societies<lb/></note>
+
+	<note type="other">j o u r n a l h o m e p a g e : </note>
+
+	<ptr>w w w . e l s e v i e r . c o m / l o c a t e / j a s c e r<lb/></ptr>
+	
+	<note type="other">Review article<lb/></note>
+
+	<docTitle>
+	<titlePart>Recent development of sulfide solid electrolytes and interfacial modification for<lb/> all-solid-state rechargeable lithium batteries<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Masahiro Tatsumisago<lb/> * , Motohiro Nagao, Akitoshi Hayashi<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Applied Chemistry, Graduate School of Engineering, Osaka Prefecture University,</affiliation>
+	</byline>
+
+	<address>1-1 Gakuen-cho, Naka-ku, Sakai, Osaka 599-8531, Japan<lb/></address>
+
+	<note type="other">a r t i c l e i n f o<lb/></note>
+
+	<note type="submission">Article history:<lb/> Received 17 February 2013<lb/> Accepted 18 March 2013<lb/></note>
+
+	<date>Available online 9 April 2013<lb/></date>
+
+	<keyword>Keywords:<lb/> Sulfide solid electrolyte<lb/> Interfacial modification<lb/> All-solid-state battery<lb/> Rechargeable lithium battery<lb/></keyword>
+
+	<div type="abstract">a b s t r a c t<lb/> Recent development of inorganic sulfide solid electrolytes and all-solid-state rechargeable lithium bat-<lb/>teries with them is reviewed. Electrical conductivity, electrochemical stability and chemical stability<lb/> of these sulfide electrolytes are reported. Formation of favorable solid–solid contacts between elec-<lb/>trode and electrolyte is important in all-solid-state batteries. Useful techniques to achieving intimate<lb/> electrode–electrolyte interfaces are proposed. Application of sulfur positive electrode and lithium metal<lb/> negative electrode with large theoretical capacity to all-solid-state lithium batteries is demonstrated.<lb/></div>
+
+	<note type="copyright">© 2013 The Ceramic Society of Japan and the Korean Ceramic Society. Production and hosting by<lb/> Elsevier B.V. All rights reserved.<lb/></note>
+
+		</front>
+	</text>
+</tei>

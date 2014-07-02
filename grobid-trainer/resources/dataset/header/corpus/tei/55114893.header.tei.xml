@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55114893"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Color Correction for Tone Reproduction<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Tania Pouli 1,5 , Alessandro Artusi 2 , Francesco Banterle 3 , Ahmet O ˘<lb/> guz Ak<lb/> uz 4 , Hans-Peter Seidel 5 and Erik Reinhard 1,5<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Technicolor Research &amp; Innovation,</affiliation>
+	</byline>
+
+	<address>France,</address>
+
+	<byline>
+	<affiliation>2 Department of Computer Science and Applied Mathematics, University of<lb/> Girona,</affiliation>
+	</byline>
+
+	<address>Spain,</address>
+
+	<byline>
+	<affiliation>3 Visual Computing Lab ISTI-CNR,</affiliation>
+	</byline>
+
+	<address>Italy,</address>
+
+	<byline>
+	<affiliation>4 Department of Computer Engineering, Middle East Technical University,<lb/></affiliation>
+	</byline>
+
+	<address>Turkey,<lb/></address>
+
+	<byline>
+	<affiliation>5 Max-Plack-Insitut<lb/></affiliation>
+	</byline>
+
+	<address>ur Informatik, Germany<lb/></address>
+
+	<div type="abstract">Abstract<lb/> High dynamic range images require tone reproduction to<lb/> match the range of values to the capabilities of the display. For<lb/> computational reasons as well as absence of fully calibrated im-<lb/>agery, rudimentary color reproduction is often added as a post-<lb/>processing step rather than integrated into the tone reproduction<lb/> algorithm. However, in the general case this currently requires<lb/> manual parameter tuning, although for some global tone repro-<lb/>duction operators, parameter settings can be inferred from the<lb/> tone curve. We present a novel and fully automatic saturation<lb/> correction technique, suitable for any tone reproduction opera-<lb/>tor, which exhibits better color reproduction than the state-of-<lb/>the-art and we validate its comparative effectiveness through psy-<lb/>chophysical experimentation.<lb/></div>
+
+		</front>
+	</text>
+</tei>

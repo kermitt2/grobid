@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>a</marker>
+							<orgName type="department">Academic Nephrology Unit</orgName>,
+							<orgName type="institution">Sheffield Kidney Institute</orgName>,
+							<orgName type="department">School of Medicine and Biomedical Sciences</orgName>,
+							<lb/>
+							<orgName type="institution">University of Sheffield</orgName>,
+							<address>
+								<settlement>Sheffield</settlement> ,
+								<country>UK</country>;
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>b</marker>
+							<orgName type="department">Department of Nephrology</orgName>,
+							<orgName type="department">Kidney Research Centre</orgName>,
+							<lb/>
+							<orgName type="institution">Chang Gung Memorial Hospital</orgName>,
+							<orgName type="institution">Chang Gung University</orgName>,
+							<address>
+								<settlement>Taoyuan</settlement> ,
+								<country>Taiwan</country>
+							</address>
+							<orgName type="department">Molecular Genetics of ADPKD</orgName>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

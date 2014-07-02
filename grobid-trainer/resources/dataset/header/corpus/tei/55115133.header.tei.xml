@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55115133"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>ENZYMATIC OLIGOSACCHARIDE SYNTHESIS<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>KLAUS BUCHHOLZ 1 and<lb/> URGEN SEIBEL 1,2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Institut<lb/> ur Organische<lb/> Chemie, Universi<lb/> at urzburg,</affiliation>
+	</byline>
+
+	<address>Am Hubland,<lb/> urzburg, Germany<lb/></address>
+
+	<byline>
+	<affiliation>2 Institute for Chemical<lb/> Engineering, Technical<lb/> University,</affiliation>
+	</byline>
+
+	<address>Braunschweig,<lb/> Germany<lb/></address>
+
+		</front>
+	</text>
+</tei>

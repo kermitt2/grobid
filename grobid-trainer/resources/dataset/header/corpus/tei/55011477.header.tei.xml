@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011477"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Prostate cancer chemoprevention<lb/> agents exhibit selective activity<lb/> against early stage prostate cancer<lb/> cells
+	<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>YQ Liu 1 , E Kyle 2 , S Patel 2 , F Housseau 3 , F Hakim 2 , R Lieberman 4 , M Pins 5 , MV Blagosklonny 2<lb/> &amp; RC Bergan 1 *<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1<lb/> Division of Hematology/Oncology, Department of Medicine, Northwest University<lb/> Medical School and the Robert H. Lurie Cancer Center of Northwestern University,<lb/></affiliation>
+	</byline>
+
+	<address>Chicago, USA;<lb/></address>
+
+	<byline>
+	<affiliation>2<lb/> Medicine Branch, National Cancer Institute, National Institutes of Health,<lb/></affiliation>
+	</byline>
+
+	<address>Bethesda, MD,</address>
+
+	<byline>
+	<affiliation>National Institutes, National Institutes USA; 3 Surgery Branch, National<lb/> Cancer Institute, National Institutes of Health,</affiliation>
+	</byline>
+
+	<address>Bethesda, MD, USA;<lb/></address>
+
+	<byline>
+	<affiliation>4<lb/> Division of Cancer<lb/> Prevention, National Cancer Institute, National Institutes of Health,</affiliation>
+	</byline>
+
+	<address>Bethesda, MD, USA;<lb/></address>
+
+	<byline>
+	<affiliation>and 5 Department of Pathology, Northwestern University Medical School and the Robert H.<lb/> Lurie Cancer Center of Northwestern University,</affiliation>
+	</byline>
+
+	<address>Chicago, USA<lb/></address>
+
+	<div type="abstract">Preclinical models for the identi®cation of prostate cancer chemoprevention<lb/> agents are lacking. Based upon the notion that clinically useful chemoprevention<lb/> agents should exhibit selective activity against early stage disease, studies were<lb/> undertaken to assess whether chemoprevention agents selectively inhibited the<lb/> growth of early stage prostate cancer, as compared to late stage cancer. First, a<lb/> series of cell and molecular studies were performed, which, when taken together,<lb/> validated the use of a panel of prostate cell lines as a model of the different stages<lb/> of carcinogenesis. Next, therapeutic responsiveness to ten different cytotoxic or<lb/> chemoprevention agents was evaluated. Chemoprevention agents exhibited<lb/> selective activity against normal and early transformed prostate tissue, whereas<lb/> cytotoxic agents were non-speci®c. Selective activity against early versus<lb/> advanced prostate cancer cells is identi®ed as a potential screening method for<lb/> chemoprevention agents. Prostate Cancer and Prostatic Diseases (2001) 4, 81±91.<lb/></div>
+
+	<keyword>Keywords: prostate cancer; chemoprevention; preclinical models; cell growth;<lb/> treatment<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55113684"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Large Scale Distributed Deep Networks<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Jeffrey Dean, Greg S. Corrado, Rajat Monga, Kai Chen,<lb/> Matthieu Devin, Quoc V. Le, Mark Z. Mao, Marc&apos;Aurelio Ranzato,<lb/> Andrew Senior, Paul Tucker, Ke Yang, Andrew Y. Ng<lb/></docAuthor>
+	</byline>
+
+	<email>{jeff, gcorrado}@google.com<lb/></email>
+
+	<byline>
+	<affiliation>Google Inc.,</affiliation>
+	</byline>
+
+	<address>Mountain View, CA<lb/></address>
+
+	<div type="abstract">Abstract<lb/> Recent work in unsupervised feature learning and deep learning has shown that be-<lb/>ing able to train large models can dramatically improve performance. In this paper,<lb/> we consider the problem of training a deep network with billions of parameters<lb/> using tens of thousands of CPU cores. We have developed a software framework<lb/> called DistBelief that can utilize computing clusters with thousands of machines to<lb/> train large models. Within this framework, we have developed two algorithms for<lb/> large-scale distributed training: (i) Downpour SGD, an asynchronous stochastic<lb/> gradient descent procedure supporting a large number of model replicas, and (ii)<lb/> Sandblaster, a framework that supports a variety of distributed batch optimization<lb/> procedures, including a distributed implementation of L-BFGS. Downpour SGD<lb/> and Sandblaster L-BFGS both increase the scale and speed of deep network train-<lb/>ing. We have successfully used our system to train a deep network 30x larger than<lb/> previously reported in the literature, and achieves state-of-the-art performance on<lb/> ImageNet, a visual object recognition task with 16 million images and 21k cate-<lb/>gories. We show that these same techniques dramatically accelerate the training<lb/> of a more modestly-sized deep network for a commercial speech recognition ser-<lb/>vice. Although we focus on and report performance of these methods as applied<lb/> to training large neural networks, the underlying algorithms are applicable to any<lb/> gradient-based machine learning algorithm.<lb/></div>
+
+		</front>
+	</text>
+</tei>

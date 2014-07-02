@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<surname>Awoleye</surname>
+								<forename>O</forename>.
+								<middlename>M</middlename>
+								<marker>*</marker> ,
+							</persName>
+							<persName>
+								<surname>Atoyebi</surname>
+								<forename>M</forename>.
+								<middlename>K</middlename>,
+							</persName>
+							<persName>
+								<surname>Abang</surname>
+								<forename>I</forename>.
+								<middlename>S</middlename>,
+							</persName>
+							<persName>
+								<surname>Siyanbola</surname>
+								<forename>W</forename>.
+								<middlename>O</middlename>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

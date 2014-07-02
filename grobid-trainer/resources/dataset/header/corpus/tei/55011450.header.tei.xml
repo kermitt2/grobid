@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011450"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>INVESTIGATIONS INTO THE NOISE CHARACTERISTICS OF DIGITIZED AERIAL IMAGES<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Barbara Waegli<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institut ff ur Photogrammetrie, Universitt at Bonn<lb/></affiliation>
+	</byline>
+
+	<address>Nuuallee 15, D-53115 Bonn<lb/></address>
+
+	<note>Commission II, Working Group 8</note>
+
+	<reference>(Proceedings ISPRS Comm. II Symposium, Cambridge, UK, 13-17 July 1998)<lb/></reference>
+
+	<keyword>KEY WORDS: noise variance, robust variance estimation, scanner characteristics, digitized transparencies<lb/></keyword>
+
+	<div type="abstract">ABSTRACT<lb/> For automated image evaluation a precise characterization of the noise behaviour of the image data is needed. Digital image<lb/> acquisition in aerial photogrammetry usually is performed by digitizing analogue material. The noise of the digital image<lb/> is composed of the noise due to the digitization process and of the noise of the analogue image. From a statistical point of<lb/> view, noise can be described by the standard deviation and the correlation of the of the intensity values. Our aim<lb/> is to determine a noise model out of the images itself, without the need of special test patterns. We do this by following<lb/> two approaches: pixelwise evaluation of multiple scans of the material and regionwise evaluation from a single scan. The<lb/> approach analyses the noise coming from the digitization process, while in the second case we obtain the complete noise<lb/> budget. We analyze the correlation between successive scans. First empirical investigations with diierent material were<lb/> performed and the results are presented.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000361"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">ORIGINAL COMMUNICATION<lb/></note> 
+	
+	<docTitle>
+		<titlePart>Chitosan decreases total cholesterol in women: a<lb/> randomized, double-blind, placebo-controlled trial<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+		<docAuthor>H Bokura<lb/> 1 * and S Kobayashi<lb/> 1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+		<affiliation>1 Department of Internal Medicine III, Shimane Medical University,</affiliation>
+	</byline>
+
+	<address>Shimane, Japan<lb/></address>
+
+	<div type="abstract">Background: Hypercholesterolemia is an important risk factor for cardiovascular disease. Orally administered chitosan binds<lb/> lipids in the small intestine and reduces their absorption. Chitosan has been shown to decrease serum cholesterol in animal and<lb/> human studies. This study investigated the effectiveness of chitosan in reducing serum cholesterol without concomitant diet<lb/> therapy.<lb/> Methods: Ninety female volunteers (age 34 – 70 y) with confirmed mild to moderate hypercholesterolemia were enrolled into<lb/> the study. They were randomly assigned to receive chitosan (1.2 g per day) or placebo in a double-blind manner. Serum lipids,<lb/> body weight and adverse events were assessed at baseline and after 28 and 56 days of treatment. Subjects maintained their<lb/> usual diet and documented the type and gross amount of food consumed.<lb/> Results: Eighty-four subjects (41 chitosan, 43 placebo) were included in the analysis. Chitosan significantly (F ¼ 3.19, P ¼ 0.04)<lb/> reduced total cholesterol compared to placebo. In a subgroup of subjects with over 60 y of age, chitosan group significantly<lb/> reduced total and LDL cholesterol (F ¼ 4.21, P ¼ 0.02, and F ¼ 3.46, P ¼ 0.04, respectively) compared with placebo. Adverse<lb/> effects were few; no serious events were reported.<lb/> Conclusion: Our results demonstrate that chitosan is safe and effective for lowering cholesterol. However, the effect of chitosan<lb/> for decreasing cholesterol is mild.<lb/></div> 
+	
+	<note type="other">Sponsorship: Shimane Institute of Health Science, Izumo, Japan.<lb/> </note>
+
+	<reference>European Journal of Clinical Nutrition (2003) 57, 721 – 725.</reference>
+
+	<idno type="DOI">doi:10.1038/sj.ejcn.1601603<lb/></idno>
+
+	<keyword>Keywords: chitosan; total cholesterol; LDL cholesterol; humans; females<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

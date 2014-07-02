@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014460"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">235<lb/></note>
+
+	<note type="other">Review Article<lb/></note>
+
+	<byline>
+	<affiliation>From the Section of Neuromuscular Disorders, Department of Neurology, Chang Gung Memorial Hospital, Taipei, Chang Gung<lb/> University College of Medicine,</affiliation>
+	</byline>
+
+	<address>Taoyuan, Taiwan;<lb/></address>
+
+	<byline>
+	<affiliation>1 Department of Life Science, National Taiwan Normal University,</affiliation>
+	</byline>
+
+	<address>Taipei,<lb/> Taiwan.<lb/></address>
+
+	<note type="submission">Received: Jun. 30, 2008; Accepted: Sep. 19, 2008<lb/></note>
+
+	<note type="other">Correspondence to: </note>
+
+	<docAuthor>Dr. Long-Sun Ro,</docAuthor>
+
+	<byline>
+	<affiliation>Department of Neurology, Chang Gung Memorial Hospital. 5,</affiliation>
+	</byline>
+
+	<address>Fusing St., Gueishan<lb/> Township, Taoyuan County 333, Taiwan (R.O.C.)</address>
+
+	<phone>Tel.: 886-3-3281200 ext. 8351; Fax: 886-3-3288849; </phone>
+
+	<email>E-mail:<lb/> cgrols@cgmh.org.tw<lb/></email>
+
+	<docTitle>
+	<titlePart>The Potential Application of Granulocyte Colony Stimulating<lb/> Factor Therapy on Neuropathic Pain<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Long-Sun Ro, MD, PhD; Shyue-Ru Chen, MS; Po-Kuan Chao<lb/> 1<lb/> , MS; Yun-Lin Lee, MS;<lb/> Kwok-Tong Lu<lb/> 1 , PhD<lb/>
+	</docAuthor>
+	</byline>
+
+	<div type="abstract">The precise definition of the International Association for<lb/> the Study of Pain (IASP) revised in 2008 states that neuropath-<lb/>ic pain is a type of pain arising as a direct consequence of a<lb/> lesion or disease affecting the somatosensory system. This<lb/> kind of pain is due to long-term dysfunction of the nervous<lb/> system and is clinically characterized by spontaneous and<lb/> evoked types of chronic pain, which are involved by various<lb/> distinct pathophysiological mechanisms in the peripheral and<lb/> central nervous systems. It is relatively common, with an inci-<lb/>dence estimated at 0.6% to 1.5% in the US population.<lb/> Unfortunately, there was no effective therapy until recently.<lb/> Our research team found an effective strategy in treating neu-<lb/>ropathic pain that resulted from interactions between leuko-<lb/>cyte-derived opioid peptides and their receptors on peripheral<lb/> sensory neurons. Here, we briefly review granulocyte colony<lb/> stimulating factor (G-CSF) therapy in an animal model of neuropathic pain. Our studies also<lb/> proved that G-CSF can increase the number of opioid-contained polymorphonuclear cells<lb/> and significantly relieve neuropathic pain. These studies have led to an increased under-<lb/>standing of the opioids and cytokines -modulating peripheral analgesia effect on neuropathic<lb/> pain, which opens a new avenue in its treatment. (Chang Gung Med J 2009;32:235-46)<lb/> Key word: granulocyte colony stimulating factor (G-CSF) therapy, neuropathic pain, inflamma-<lb/>tion, polymorphonuclear cell (PMN), opioid peptides, cytokine</div>
+
+		</front>
+	</text>
+</tei>

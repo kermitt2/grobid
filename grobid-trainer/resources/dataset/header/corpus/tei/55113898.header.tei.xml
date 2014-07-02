@@ -1,0 +1,65 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55113898"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Evaluation of a TV Programs Recommendation<lb/> using the EPG and Viewer&apos;s Log Data<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Kazuki Ikawa<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Graduate School of<lb/> Engineering,<lb/> The University of Tokyo<lb/></affiliation>
+	</byline>
+
+	<address>7-3-1 Hongo, Bunkyo-ku<lb/> Tokyo, Japan<lb/></address>
+
+	<byline>
+	<docAuthor>Tomohiro Fukuhara<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>National Institute of Advanced<lb/> Industrial Science and<lb/> Technology</affiliation>
+	</byline>
+
+	<address>2-3-26 Aomi, Koto-ku<lb/> Tokyo, Japan<lb/></address>
+
+	<email>tomohiro.fukuhara@aist.go.jp<lb/></email>
+
+	<byline>
+	<docAuthor>Hideki Fujii<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Graduate School of<lb/> Engineering,<lb/> The University of Tokyo<lb/></affiliation>
+	</byline>
+
+	<address>7-3-1 Hongo, Bunkyo-ku<lb/> Tokyo, Japan<lb/></address>
+
+	<email>fujii@save.sys.t.u-<lb/>tokyo.ac.jp<lb/></email>
+
+	<byline>
+	<docAuthor>Hideaki Takeda<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>National Institute of<lb/> Informatics 2-1-2 Hitotsubashi,<lb/></affiliation>
+	</byline>
+
+	<address>Chiyoda-ku<lb/> Tokyo, Japan<lb/></address>
+
+	<email>takeda@nii.ac.jp<lb/></email>
+
+	<div type="abstract">ABSTRACT<lb/> Evaluation results of a TV program recommendation us-<lb/>ing EPG (Electronic Program Guide) and viewer&apos;s log data<lb/> are described. Two experiments using the log data of a<lb/> Japanese video service provider are conducted: (1) an exper-<lb/>iment of prediction of TV programs that each viewer usually<lb/> watched, and (2) a survey of TV program recommendation<lb/> using the log data and a questionnaire. High precision val-<lb/>ues are obtained in the first experiment using keyword-based<lb/> and celebrity-based recommendation methods for terrestrial<lb/> and satellite broadcasting programs. Meanwhile, the chan-<lb/>nel &amp; time-based recommendation method for programs in<lb/> paid channels of the video service provider obtained the high<lb/> precision in the second experiment. An overview of experi-<lb/>ments and results are described.<lb/></div>
+
+	<keyword>Categories and Subject Descriptors<lb/> H.4.2 [Information Systems Applications]: Types of<lb/> Systems<lb/> General Terms<lb/> EXPERIMENTATION<lb/> Keywords<lb/> TV program recommendation, evaluation<lb/> .<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

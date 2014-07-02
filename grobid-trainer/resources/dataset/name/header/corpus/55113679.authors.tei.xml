@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Emile</forename>
+								<middlename>P</middlename>.
+								<surname>Dupont</surname>,
+							</persName>
+							<persName>
+								<forename>Estelle</forename>
+								<surname>Labonne</surname>,
+							</persName>
+							<persName>
+								<forename>Caroline</forename>
+								<surname>Vandevyver</surname>,
+							</persName>
+							<persName>
+								<forename>Ulrike</forename>
+								<surname>Lehmann</surname>,
+							</persName>
+							<persName>
+								<forename>Edoardo</forename>
+								<surname>Charbon</surname> and
+							</persName>
+							<persName>
+								<forename>Martin</forename>
+								<middlename>A</middlename>.
+								<middlename>M</middlename>.
+								<surname>Gijs</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

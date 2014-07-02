@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000812"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>3GPP TS 36.305 V1.0.0</idno> 
+	
+	<date>(2009-05)<lb/></date>
+
+	<note type="other">Technical Specification<lb/></note>
+
+	<docTitle>
+	<titlePart>3rd Generation Partnership Project;<lb/> Technical Specification Group Radio Access Network;<lb/> Evolved Universal Terrestrial Radio Access (E-UTRA);<lb/> Stage 2 functional specification of User Equipment (UE)<lb/> positioning in E-UTRAN<lb/> (Release 9)<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">The present document has been developed within the 3<lb/> rd Generation Partnership Project (3GPP<lb/> TM<lb/> ) and may be further elaborated for the purposes<lb/> of 3GPP..<lb/> The present document has not been subject to any approval process by the 3GPP Organisational Partners and shall not be implemented.<lb/> This Specification is provided for future development work within 3GPP only. The Organisational Partners accept no liability for any use of this<lb/> Specification.<lb/> Specifications and reports for implementation of the 3GPP<lb/> TM system should be obtained via the 3GPP Organisational Partners&apos; Publications<lb/> Offices.</note>
+
+		</front>
+	</text>
+</tei>

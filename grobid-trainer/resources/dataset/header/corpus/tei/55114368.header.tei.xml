@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei type="web">
+	<teiHeader>
+		<fileDesc xml:id="55114368"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>AIPCR / PIARC<lb/> Road Tunnels Manual<lb/> </titlePart>
+	</docTitle>
+
+	<note type="other">Send us your comments !<lb/> Home page : Warning to the readers<lb/>	</note>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014057"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">VTT CREATES BUSINESS FROM TECHNOLOGY<lb/> Technologyandmarketforesight@BULLETStrategicresearch@BULLETProductandservicedevelopment@BULLETIPRandlicensing @BULLETAssessments,testing,inspection,certification@BULLETTechnologyandinnovationmanagement@BULLETTechnologypartnership<lb/></note>
+	
+	<byline>
+	<docAuthor>Satu Hilditch<lb/></docAuthor>
+	</byline>
+
+	<docTitle>
+	<titlePart>Identification of the fungal catabolic<lb/> D-galacturonate pathway<lb/></titlePart>
+	</docTitle>
+
+	<div type="introduction">Many microorganisms that live on decaying plant material can use D-galacturonate<lb/> for growth. Eukaryotic catabolic D-galacturonate pathway was not known before. In<lb/> this thesis work the pathway for D-galacturonate catabolism was identified in the<lb/> filamentous fungus Trichoderma reesei. The pathway consisted of four enzymes: NADPH-<lb/>dependent D-galacturonate reductase (GAR1), L-galactonate dehydratase (LGD1),<lb/> L-threo-3-deoxy-hexulosonate aldolase (LGA1) and NADPH-dependent glycer-<lb/>aldehyde reductase (GLD1). In this pathway D-galacturonate was converted to<lb/> pyruvate and glycerol via L-galactonate, L-threo-3-deoxy-hexulosonate and L-<lb/>glyceraldehyde. The enzyme activities of GAR1, LGD1 and LGA1 were present in crude<lb/> mycelial extract only when T. reesei was grown on D-galacturonate. The corresponding<lb/> genes were identified and cloned. They were functionally expressed in Saccharomyces<lb/> cerevisiae, and the enzymes were characterised. GAR1 and LGA1 catalysed reversible<lb/> reactions, whereas only the forward reactions were observed for LGD1 and GLD1.<lb/> When gar1, lgd1 or lga1 was deleted in T. reesei the deletion strain was unable to<lb/> grow with D-galacturonate as the only carbon source, demonstrating that all the<lb/> corresponding enzymes were essential for D-galacturonate catabolism and that no<lb/> alternative D-galacturonate pathway exists in T. reesei.<lb/></div>
+
+	<note type="other">Dissertation<lb/> </note>
+
+	<byline>
+	<affiliation>VTT</affiliation>
+	</byline>	
+		
+	<note type="other"> PUBLICATIONS 739<lb/> @BULLET@BULLET@BULLETVTTPUBLICATIONS739IDENTIFICATIONOFTHEFUNGALCATABOLICD-GALACTURONATEPATHWAY<lb/> </note>
+
+	<idno>ISBN 978-951-38-7398-1</idno>
+
+	<note type="other">(soft back ed.)<lb/></note>
+
+	<idno>ISBN 978-951-38-7399-8</idno>
+
+	<ptr type="web">(URL: http://www.vtt.fi/publications/index.jsp)<lb/></ptr>
+
+	<idno>ISSN 1235-0621</idno>
+
+	<note type="other">(soft back ed.)<lb/></note>
+
+	<idno>ISSN 1455-0849</idno>
+
+	<ptr type="web">(URL: http://www.vtt.fi/publications/index.jsp)</ptr>
+
+		</front>
+	</text>
+</tei>

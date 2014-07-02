@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55114346"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>HUMAN CELL(Hum Cell)<lb/></reference>
+	
+	<note type="copyright">Copyright &#169; 2004 by The Japan Human Cell Society<lb/></note>
+
+	<reference>Vol. 17 No. 4<lb/></reference>
+
+	<note type="other">Printed in Japan<lb/> -Feature ... Progress in ART and Future Reproductive Medicine ...<lb/></note>
+
+	<docTitle>
+	<titlePart>Oocyte Mitochondria: Strategies to Improve Embryogenesis<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Seiichiro NAGAI&apos;, Tadashi MA13UCH12, Shuji HIRATA&apos;, Tomoko SHODA&apos;, Tsuyoshi KASAI&apos;,<lb/> Sadaki YOKOTA3, Hiroshi SHITARA4, Hiromichi YONEKAWA4, Kazuhiko HOSHI&apos;<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">4bstracb<lb/> Mitochondria play a central role to provide ATP for fertilization and<lb/> preimplantation embryo development in the ooplasm. The mitochondrial dysfunction of<lb/> oocyte has been proposed as one of the causes of high levels of developmental retardation<lb/> and arrest that occur in preimplantation embryos generated using Assisted Reproductive<lb/> Technology. Cytoplasmic transfer ( 0 from a donor to a recipient oocyte has been applied to<lb/> infertility due to dysfunctional ooplasm, with resulting pregnancies and births. However,<lb/> neither the efficacy nor safety of this procedure has been appropriately investigated. In order<lb/> to improve embryogenesis, we observed the mitochondrial distribution in ooplasma under the<lb/> several conditions using mitochondrial GFP-transgenic mice (mtGFP-tg mice) in which the<lb/> mitochondria are visualized by GFP. In this report, we will present our research about the<lb/> mitochondrial distribution in ooplasm during early embryogenesis and the fate of injected<lb/> donor mitochondria after CT using mtGFP-tg mice. The mitochondria in ooplasm from the<lb/> germinal vesicle stage to the morula stage were accumulated in the perinuclear region. The<lb/> mitochondria of the mtGFP-tg mouse oocyte transferred into the wild type mouse embryo<lb/> could be observed until the biastocysts stage, suggesting that the mtGFP-tg mice oocyte is<lb/> very useful for visual observation of the mitochondrial distribution in the oocyte. and that the<lb/> aberrant early developmental competences due to the oocyte mitochondrial dysfunction may<lb/> be overcome by transferring the &apos;normal&quot; mitochondria.<lb/></div>
+
+	<keyword>Key words : mitochondria, mitochondrial distribution, cytoplasmic transfer, embryo<lb/> development<lb/></keyword>
+
+	<reference>[HUMAN CELL 17(4) : 195 -201,20041<lb/></reference>
+
+		</front>
+	</text>
+</tei>

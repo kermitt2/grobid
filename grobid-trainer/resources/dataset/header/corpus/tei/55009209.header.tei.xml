@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009209"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="copyright">&#169; XXXX American Chemical Society<lb/></note>
+
+	<note type="page">A<lb/></note>
+
+	<idno>dx.doi.org/10.1021/jo201492m</idno>
+
+	<note type="other">| J. Org. Chem. XXXX, XXX, 000–000<lb/> ARTICLE<lb/> pubs.acs.org/joc<lb/></note>
+
+	<docTitle>
+	<titlePart>Synthesis of Diastereomerically Pure Nucleotide Phosphoramidates<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Bruce S. Ross,* P. Ganapati Reddy, Hai-Ren Zhang, Suguna Rachakonda, and Michael J. Sofia<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Pharmasset, Inc., </affiliation>
+	</byline>
+	
+	<address>303A College Road East, Princeton, New Jersey 08540, United States<lb/></address>
+
+	<note type="other">b S Supporting Information<lb/> &apos;</note>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014372"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>CORRECTION OF ASTIGMATISM<lb/> CORRECTION OF ASTIGMATISM<lb/> WITH TORIC SOFT CONTACT<lb/> WITH TORIC SOFT CONTACT<lb/> LENSES LENSES<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>M.Rajeswari<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Medical Research Foundation<lb/> Chennai</affiliation>
+	</byline>
+
+		</front>
+	</text>
+</tei>

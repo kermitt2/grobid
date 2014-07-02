@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010511"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">8,198,088 members and growing! (43,634 online)<lb/>Email Password<lb/> Sign in<lb/> J oin<lb/> Remember me? Lost password?<lb/> Home Articles<lb/> Quick Answers<lb/> Discussions Learning Zones<lb/> Features Help!<lb/> The Lounge<lb/> Search<lb/> 10<lb/> Article Browse Code Stats Revisions<lb/> Sponsored Links<lb/> » General Reading » Book Chapters » Apress<lb/> Licence First Posted 25 Jun 2001<lb/> Views 131,008<lb/> Bookmarked 72 times<lb/></note>
+
+	<docTitle>
+	<titlePart>Professional XML -Chapter 15: Data<lb/> Binding<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>By Louise Barr |</docAuthor>
+	</byline>
+
+	<date>25 Jun 2001<lb/></date>
+
+	<note type="other">XML Windows Visual-Studio Dev Intermediate<lb/> This chapter explains what data binding is and how it can be used to simplify programming applications<lb/> that need to interact with XML data<lb/> See Also<lb/> More like this<lb/> More by this author<lb/> 3.83 (6 votes)<lb/></note>
+
+	<docTitle>
+	<titlePart>Title Professional XML<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Authors Mark Birbeck, Jon Duckett, Oli Gauti Gudmundsson, Pete Kobak,<lb/> Evan Lenz, Steve Livingstone, Daniel Marcus, Stephen Mohr, Nik<lb/> Ozu, Jonathan Pinnock, Keith Visco, Andrew Watt, Kevin Williams,<lb/> Zoran Zaev<lb/> Publisher Wrox<lb/></docAuthor>
+	</byline>
+
+	<date>Published May 2001<lb/></date>
+
+	<idno type="ISBN">ISBN 1861005059<lb/></idno>
+
+	<note type="other">Price US 59.99<lb/> Pages 1200<lb/></note>
+
+		</front>
+	</text>
+</tei>

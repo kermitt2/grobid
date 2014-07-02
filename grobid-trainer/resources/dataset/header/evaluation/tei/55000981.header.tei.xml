@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000981"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Supersonic Nozzle Design<lb/> Using 2D method of characteristics<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Amardip Ghosh<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Aerospace Engineering<lb/> University of Maryland<lb/></affiliation>
+	</byline>
+
+	<address>College Park</address>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011057"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Charakterisierung einer Membran-<lb/>Gassensor-Kombination zum Nachweis<lb/> von gelösten Gasen<lb/></titlePart>
+	</docTitle>
+
+	<degree>Inauguraldissertation<lb/> zur<lb/> Erlangung des Doktorgrades<lb/> der Naturwissenschaften<lb/> der Justus-Liebig-Universität Gießen<lb/> Fachbereich Mathematik und Informatik, Physik, Geographie<lb/> Fachgebiet Physik<lb/> </degree>
+
+	<note type="other">vorgelegt von<lb/></note>
+
+	<byline>
+	<docAuthor>Claudius Hummel<lb/> </docAuthor>
+	</byline>
+
+	<note>aus Hünfeld<lb/></note>
+
+	<byline>
+	<affiliation>Institut für Angewandte Physik<lb/> Justus-Liebig-Universität Gießen<lb/></affiliation>
+	</byline>
+
+	<date>Juni 2001</date>
+
+		</front>
+	</text>
+</tei>

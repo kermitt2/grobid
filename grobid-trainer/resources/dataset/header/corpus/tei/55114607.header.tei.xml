@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55114607"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Natural Language Aided Visual Query Building for Complex Data Access<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Shimei Pan<lb/> Michelle Zhou<lb/> Keith Houck<lb/> Peter Kissa<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>IBM T. J. Watson Research Center<lb/></affiliation>
+	</byline>
+
+	<address>19 Skyline Drive, Hawthorne, NY 10532<lb/></address>
+
+	<email>{shimei, mzhou, khouck, pkissa}@us.ibm.com<lb/></email>
+
+	<div type="abstract">Abstract<lb/> Over the past decades, there have been significant efforts on<lb/> developing robust and easy-to-use query interfaces to<lb/> databases. So far, the typical query interfaces are GUI-<lb/>based visual query interfaces. Visual query interfaces<lb/> however, have limitations especially when they are used for<lb/> accessing large and complex datasets. Therefore, we are<lb/> developing a novel query interface where users can use<lb/> natural language expressions to help author visual queries.<lb/> Our work enhances the usability of a visual query interface<lb/> by directly addressing the &quot;knowledge gap&quot; issue in visual<lb/> query interfaces. We have applied our work in several<lb/> real-world applications. Our preliminary evaluation<lb/> demonstrates the effectiveness of our approach.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="institution">NHK<lb/> Science &amp; Technology Research Laboratories</orgName>
+							<lb/>
+							<address>
+								<addrLine>1-10-11, Kinuta</addrLine>,
+								<addrLine>Setagaya-ku</addrLine>,
+								<settlement>Tokyo</settlement>,
+								<country>JAPAN</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>		
+							<orgName type="institution">Information Technology R&amp;D Center</orgName>,
+							<lb/>
+							<orgName type="institution">Mitsubishi Electric Corporation</orgName>
+							<lb/>
+							<address>
+								<addrLine>5-1-1, Ofuna</addrLine>,
+								<settlement>Kamakura</settlement>,
+								<country>JAPAN</country>
+							<lb/>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

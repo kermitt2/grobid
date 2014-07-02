@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei type="book-chapter">
+	<teiHeader>
+		<fileDesc xml:id="55113769"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>35<lb/> B-CELL EPITOPE PREDICTION<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Julia V. Ponomarenko and Marc H.V. van Regenmortel<lb/></docAuthor>
+	</byline>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Risto</forename>
+								<surname>Siliqi</surname>
+								<marker>*</marker>,
+							</persName>
+							<persName>
+								<forename>Thierry</forename>
+								<surname>Payen</surname>,
+							</persName>
+							<persName>
+								<forename>Ronan</forename>
+								<surname>Sablon</surname> and
+							</persName>
+							<persName>
+								<forename>Karine</forename>
+								<surname>Desrues</surname>,
+								<roleName>CGG</roleName>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

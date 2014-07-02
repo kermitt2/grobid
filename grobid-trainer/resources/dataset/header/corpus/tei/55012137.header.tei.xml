@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012137"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">My Account<lb/> Contact Us<lb/> Recipes Resources<lb/> Forum &amp; Marketplace<lb/> Categories<lb/> Actives / Cosmeceuticals<lb/> Bases, Prefabricated<lb/> Colors &amp; Color Blends<lb/> Conditioners Emollients<lb/> Emulsifiers Exfoliants<lb/> Humectants Pearlizers<lb/> Perfume Ingredients<lb/> Preservatives Self-Tanners<lb/> Skin-Lightening Agents<lb/> Solvents &amp; Stabilizers<lb/> Sunscreens Surfactants<lb/> Texturizers &amp; Powders<lb/> Thickeners Complete Kits<lb/> Containers Equipment<lb/> Books<lb/> Information<lb/> Ingredients A-Z<lb/> Recipes Resources<lb/> Articles About Us<lb/> Contact Us<lb/> Privacy Notice<lb/> Gift Certificates<lb/> Terms of Use<lb/></note>
+
+	<docTitle>
+	<titlePart>Binding Ingredients<lb/> </titlePart>
+	</docTitle>
+
+	<div type="abstract">Binders are substances which are added to solid cosmetic mixtures to provide cohesion.<lb/></div>
+
+		</front>
+	</text>
+</tei>

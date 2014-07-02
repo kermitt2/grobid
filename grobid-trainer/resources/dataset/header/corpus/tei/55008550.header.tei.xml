@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008550"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">127<lb/></note>
+
+	<docTitle>
+	<titlePart>The potential of photonic microstructures in optoelectronics<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Thomas F. Gauss* and Richard M. De La Rue<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Optoelectronics Research Group, Department o l Electronics and Electrical<lb/> Engineering, University of Glasgow,
+	</affiliation>
+	</byline>
+
+	<address>Glasgow G12 SQQ, Scotland, U.K.<lb/></address>
+
+	<note type="other">*Current address: </note>
+
+	<byline>
+	<affiliation>California Institute of Technology,</affiliation>
+	</byline>
+
+	<address>MS 136-93, Pasadena,<lb/> CA 91 125, USA.<lb/></address>
+
+	<div type="abstract">Abstract<lb/> We present the concept of a &quot;photonic bandgap&quot; (PBG), its realisation in semiconductor<lb/> waveguides and describe its potential impact on light emitting devices, integrated<lb/> optoelectronics and telecommunications.<lb/>
+	</div> 
+	
+	<div type="introduction">Summary<lb/> Photonic microstructures or photonic crystals are periodic dielectric structures designed to<lb/> influence the behaviour of photons in much the same way that the atomic structure of a<lb/> natural crystal affects the properties of electrons. In particular, photonic crystals forbid</div>
+
+		</front>
+	</text>
+</tei>

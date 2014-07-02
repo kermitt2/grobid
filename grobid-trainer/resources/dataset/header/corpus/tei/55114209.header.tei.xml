@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei type="web">
+	<teiHeader>
+		<fileDesc xml:id="55114209"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">ADI Site Navigation<lb/> ADI Home &gt; Technical Support &gt;<lb/> Technical Support<lb/></note>
+
+	<docTitle>
+	<titlePart>Very Low Voltage, Micropower Amplifiers (V, (S)&lt; 3 V, I(SY) &lt; 500 µA) Choosing<lb/> and using them<lb/> Choosing and using them<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>by Steve Sockolov<lb/></docAuthor>
+	</byline>
+
+		</front>
+	</text>
+</tei>

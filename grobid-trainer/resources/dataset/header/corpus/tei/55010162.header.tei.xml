@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010162"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Home<lb/> Aktuelles Anwendungen<lb/> Produkte Service<lb/> Über uns<lb/> Links Kontakt<lb/> Home Suche<lb/> Sitemap Impressum<lb/> Datenschutzerklärung Login<lb/> Anwendungen Suche<lb/> Abbund<lb/> Ingenieur-Holzbau<lb/> HRB/Fachwerk<lb/> Blockbau<lb/> Fertighaus/Elementbau<lb/> Treppenschablonen<lb/> Dachdecker<lb/></note>
+
+	<docTitle>
+	<titlePart>Aus Tradition für die Praxis<lb/></titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

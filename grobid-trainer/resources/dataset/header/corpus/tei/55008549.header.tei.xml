@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008549"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Author: W1zzard</note>
+
+	<date>Date: 2004-05-24 </date>
+	
+	<note type="other">03:10:17<lb/></note>
+
+	<docTitle>
+	<titlePart>How do I manually turn on an ATX power supply?<lb/></titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

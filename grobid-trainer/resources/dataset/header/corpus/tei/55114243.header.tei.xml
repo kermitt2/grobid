@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55114243"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">1<lb/></note>
+
+	<docTitle>
+	<titlePart>HYBRID MEMBRANE/ABSORPTION PROCESS FOR<lb/> ACID GAS REMOVALIN FLNG APPLICATIONS<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>James Zhou<lb/> Howard Meyer<lb/> Dennis Leppin<lb/></docAuthor>
+	</byline>
+
+	<byline> 
+	<affiliation>Gas Technology Institute<lb/></affiliation>
+	</byline>
+
+	<div type="abstract">ABSTRACT<lb/> GTI and PoroGen Corporation are working jointly on developing an advanced membrane contactor<lb/> technology for FLNG applications. The membrane contactor is manufactured utilizing poly(ether ether<lb/> ketone) (PEEK), hollow fiber membranes. The PEEK hollow fibers used in the contactor module construction<lb/> are made using a patented process. We have performed numerous sets of tests to evaluate membrane<lb/> contactor performance for CO2 and H2S removal from simulated natural gas streams. These tests were<lb/> conducted with various types of membrane modules. Membrane properties and module design were<lb/> optimized towards CO2 and H2S removal. Bench scale tests were conducted utilizing DEA as a solvent (30<lb/> wt% DEA). The measured overall volumetric mass transfer coefficient for CO2 removal for the membrane<lb/> contactor equaled 1.1 (sec)-1, which is 15 times higher than the maximum mass transfer coefficient of a<lb/> packed column. Based on the measured mass transfer coefficient it was estimated that one 8-inch diameter<lb/> by 60-in long contactor module containing 1000 ft2 membrane surface area can treat 3.7 MMSCFD of feed<lb/> gas containing 8.0 vol. % CO2 inlet concentration to 2.0 vol.% outlet CO2 concentration product gas. FLNG<lb/> applications require higher product purity. For FLNG applications, the membrane contactor can be used to<lb/> reduce the inlet CO2 concentration from 8% down to 50 ppm. The manufacturing process for the preparation<lb/> of PEEK hollow fiber membrane modules was scaled up from the bench-scale cartridge sizes used in<lb/> performance tests to larger membrane area size commercial cartridges with 1000 ft2 of membrane area.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008953"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Zielcode<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">aus Wikipedia, der freien Enzyklopädie<lb/> Dies ist eine alte Version dieser Seite, zuletzt bearbeitet am 10. Mai 2010 um 11:43 Uhr durch<lb/> Worel (Diskussion | Beiträge). Sie kann sich erheblich von der aktuellen Version unterscheiden.<lb/> (Unterschied) ← Nächstältere Version | Aktuelle Version (Unterschied) | Nächstjüngere Version →<lb/> (Unterschied)<lb/> </note>
+	
+	<div type="abstract">Mit Zielcode, Anschriftencode, Postcode und Adresscode wird der Strichcode bezeichnet, den die<lb/> Deutsche Post AG auf Briefe und Postkarten druckt. Der Zielcode wird im ersten durchlaufenen<lb/> Briefzentrum auf die Sendung aufgebracht. Damit wird eine schnellere maschinelle Weiterleitung<lb/> und Sortierung ermöglicht.<lb/></div>
+
+		</front>
+	</text>
+</tei>

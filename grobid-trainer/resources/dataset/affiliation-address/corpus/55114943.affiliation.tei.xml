@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="laboratory">Laboratoire de recherche Ingénierie des Matériaux Polymères (IMP)</orgName>,
+							<orgName type="laboratory">UMR 5223</orgName>
+							<orgName type="institution">INSA de Lyon</orgName>,
+							<address>
+								<addrLine>Bâtiment Jules Verne</addrLine>,
+								<addrLine>3ème étage 17 avenue Jean Capelle</addrLine>
+								<postCode>69621</postCode>
+								<settlement>VILLEURBANNE CEDEX</settlement>,
+								<country>France</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

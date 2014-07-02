@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011664"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Polish J. of Environ. Stud. Vol. 15 No. 4A (2006), 88-90<lb/></reference>
+
+	<docTitle>
+	<titlePart>On the Hydrodynamics of Dimeric Bovine<lb/> E-Lactoglobulin Solutions from Viscometry<lb/> Approach<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>K. Monkos<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Biophysics, Silesian Medical Academy,</affiliation>
+	</byline>
+
+	<address>H. Jordana 19, 41-808 Zabrze 8, Poland<lb/></address>
+
+	<div type="abstract">Abstract<lb/> The paper presents the results of viscosity determinations on aqueous solutions of dimeric bovine<lb/> E-lactoglobulin (BLG) at temperatures ranging from 5 to 55<lb/> 0<lb/> C and for concentrations up to 444 kg/m<lb/> 3<lb/> . The<lb/> solutions viscosity has been measured by using an Ubbelohde-type capillary microviscometer. The viscosity-<lb/>temperature dependence, at each fixed concentration, has been quantitatively described on the basis<lb/> of a modified Arrhenius formula. The effective specific volume, the activation energy and entropy of viscous<lb/> flow for hydrated BLG were calculated. The axial ratio and the hydrodynamic volume of dimeric BLG were<lb/> established.<lb/></div>
+
+	<keyword>Keywords: Viscosity, E-lactoglobulin, Activation energy, Effective specific volume<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

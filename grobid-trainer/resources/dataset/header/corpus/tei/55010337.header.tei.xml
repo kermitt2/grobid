@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010337"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<affiliation>BD Pharmingen™<lb/></affiliation>
+	</byline>
+
+	<note type="other">Technical Data Sheet<lb/></note>
+
+	<docTitle>
+	<titlePart>Purified Mouse Anti-Human CD162<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Product Information<lb/> Material Number:<lb/> 556053<lb/> Alternate Name:<lb/> PSGL-1, p-selectin glycoprotein ligand-1<lb/></note>
+
+		</front>
+	</text>
+</tei>

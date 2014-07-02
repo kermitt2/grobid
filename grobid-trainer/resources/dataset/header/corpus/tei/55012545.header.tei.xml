@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012545"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<affiliation>GE Plastics<lb/> </affiliation>
+	</byline>
+	
+	<note type="other">g<lb/></note>
+
+	<date>DE/10/2001<lb/></date>
+
+	<docTitle>
+	<titlePart>Prüfmethoden<lb/> </titlePart>
+	</docTitle>
+
+	<note type="other">KLICKEN SIE UM FORTZUFAHREN<lb/> </note>
+
+	<byline>
+	<affiliation>GE Plastics<lb/> G<lb/></affiliation>
+	</byline>
+		
+	<date>DE/10/2001<lb/></date>
+
+		</front>
+	</text>
+</tei>

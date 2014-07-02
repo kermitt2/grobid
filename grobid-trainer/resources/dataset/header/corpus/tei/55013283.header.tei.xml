@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013283"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>DAMAGE FROM INFESTING MAIZE PLANTS WITH EUROPEAN<lb/> CORN BORER&apos; EGG MASSES AND LARVAE&apos;<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>W. D. Guthrie, J. L. Jarvis, and J. C. Robbins<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Corn Insects Research Unit,</affiliation>
+	</byline>
+
+	<address>USDA-ARS, Ankeny, IA 50021, and<lb/></address>
+
+	<byline>
+	<affiliation>Department of Entomology, Iowa State University,</affiliation>
+	</byline>
+
+	<address>Ames.<lb/></address>
+
+	<div type="abstract">Abstract: During 8 4-yr period (1979-1982), 10 to 25 genotypes of maize, Zea mays L., were<lb/> infested with two, three, or four applications of European corn borer (ECB), Ostn&quot;nia nubilalis<lb/> (Hubner), egg masses or larvae (ca 50 eggs or 50 larvae/plant/application). One yr out of<lb/> four, leaf feeding damage by fll&apos;St-generation ECBs and sheath-collar feeding damage by<lb/> second-generation ECBs were significantly greater from infestations with larvae than with</div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei type="master-thesis">
+	<teiHeader>
+		<fileDesc xml:id="55114990"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<affiliation>NAVAL POSTGRADUATE<lb/> SCHOOL<lb/> </affiliation>
+	</byline>
+	
+	<address>MONTEREY, CALIFORNIA<lb/> </address>
+
+	<note type="other">THESIS<lb/> Approved for public release; distribution is unlimited<lb/> </note>
+
+	<docTitle>
+	<titlePart>WEB SERVICES INTEGRATION ON THE FLY<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>by<lb/> Hoe Wai Leong<lb/></docAuthor>
+	</byline>
+
+	<date>December 2008<lb/></date>
+
+	<note type="other">Thesis Advisor:<lb/> Don Brutzman<lb/> Co-Advisor:<lb/> Curtis Blais<lb/> Second Reader:<lb/> Don McGregor</note>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010459"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Phycological Research 1999; 47: 87-95<lb/></reference>
+
+	<docTitle>
+	<titlePart>Chemical races in the red alga Laurencia nipponica<lb/> (Rhodomelaceae, Ceramiales)<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Tsuyoshi Abe,&apos; Michio Masuda, Teruaki Suzuki and Minoru Suzuki<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>-Division of Biological Sciences, Graduate School of Science and Division of Material Science, Graduate School of<lb/> Environmental Earth Science, Hokkaido University,</affiliation>
+	</byline>
+
+	<address>Sapporo 060-0810, Japan<lb/></address>
+
+	<div type="abstract">SUMMARY<lb/> Genetic variation in the synthesis of halogenated sec-<lb/>ondary metabolites in the Japanese marine red alga<lb/> Laurencia nipponica Yamada (Rhodomelaceae, Ceram-<lb/>iales) has been investigated in laboratory crossing exper-<lb/>iments and chemical analyses, F tetrasporophytes and<lb/> Fl gametophytes resulting from crosses within chemi-<lb/>cal races produced major metabolites characteristic of<lb/> these races. Fj tetrasporophytes derived from reciprocal<lb/> interracial crosses produced: (i) both parental types of<lb/> secondary metabolites; {ii) either of the parental types;<lb/> or (iii) a further major compound in addition to both<lb/> parental types or in addition to either of the parental<lb/> types. The latter cases suggest that hybrid-specific<lb/> products were formed by the combined enzymatic com-<lb/>plements of the parents, as f; gametophytes derived<lb/> from these interracial Fi tetrasporophytes yielded one<lb/> or other of their parental products in an approximate<lb/> 111 ratio. The population structure was analyzed at<lb/> localities in Hokkaido, where two of the chemical races<lb/> occur sympatrically. At Usujiri (Minami-kayabe), where<lb/> the prepacifenol race and the laureatin race were sym-<lb/>patric, hybrid gametophytes (recombination type) were<lb/> found in high frequency in addition to hybrid tetra-<lb/>sporophytes, vi/hich strongly suggests that a new, pre-<lb/>pacifenol/laureatm race is beginning to be produced by<lb/> natural hybridization and recombination. By contrast,<lb/> at Oshoro Bay, where the laurencin race and the epi-<lb/>lauraliene race grev^ together, the interracial hybrids<lb/> v^ere rare: only a few tetrasporophytes (probably Fi gen-<lb/>eration) were found, suggesting that racial integrity may<lb/> be retained by habitat segregation and/or the absence<lb/> of recombination-type gametophytes.<lb/></div>
+
+	<keyword>Key words: biosystematics, bromoether, chemical race,<lb/> chemotaxonomy, halogenated secondary metabolites,<lb/> Laurencia nipponica, Rhodophyta, sesquiterpenoid.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

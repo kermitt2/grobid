@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>VASILIOS</forename>
+								<middlename>A</middlename>.
+								<surname>KARAGOUNIS</surname>,
+							</persName>
+							<persName>
+								<forename>CHUNG</forename>
+								<middlename>CHIUN</middlename>
+								<surname>LIU</surname>,
+							</persName>
+							<persName>
+								<forename>MICHAEL</forename>
+								<middlename>R</middlename>.
+								<surname>NEUMAN</surname>,
+								<roleName>MEMBER, IEEE</roleName>,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>LUBOMYR</forename>
+								<middlename>T</middlename> .
+								<surname>ROMANKIW</surname> ,
+								<roleName>MEMBER ,IEEE</roleName> ,
+							</persName>
+							<persName>
+								<forename>P</forename> .
+								<middlename>A</middlename> .
+								<surname>LEARY</surname> ,
+								AND
+							</persName>
+							<persName>
+								<forename>J</forename> .
+								<middlename>J</middlename> .
+								<surname>CUOMO</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

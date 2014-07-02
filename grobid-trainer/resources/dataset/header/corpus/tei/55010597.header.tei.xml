@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010597"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Display Settings:<lb/> GenBank<lb/></note>
+
+	<docTitle>
+	<titlePart>H.sapiens DAP-kinase mRNA<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<note type="other">GenBank: X76104.1<lb/></note>
+	</byline>
+
+	<note type="other">FASTA Graphics<lb/> Go to:<lb/></note>
+
+		</front>
+	</text>
+</tei>

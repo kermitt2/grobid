@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011426"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note>Doc# OMA-CD-PUSH-2008--CR_PushOTA_Support_for_multi_terminal.doc<lb/> Change Request<lb/></note>
+ 
+	<note type="other">USE OF THIS DOCUMENT BY NON-OMA MEMBERS IS SUBJECT TO ALL OF THE TERMS AND CONDITIONS OF THE USE<lb/> AGREEMENT (located at</note>
+
+	<ptr type="web">http://www.openmobilealliance.org/UseAgreement.html)</ptr>
+
+	<note type="other">AND IF YOU HAVE NOT<lb/> AGREED TO THE TERMS OF THE USE AGREEMENT, YOU DO NOT HAVE THE RIGHT TO USE, COPY OR DISTRIBUTE THIS<lb/> DOCUMENT.<lb/> THIS DOCUMENT IS PROVIDED ON AN &quot;AS IS&quot; &quot;AS AVAILABLE&quot; AND &quot;WITH ALL FAULTS&quot; BASIS.<lb/></note>
+
+	<note type="copyright">© 2008 Open Mobile Alliance Ltd. All Rights Reserved.<lb/></note>
+
+	<note type="page">Page 1 (of 3)<lb/> </note>
+
+	<note type="other">Used with the permission of the Open Mobile Alliance Ltd. under the terms as stated in this document.<lb/> [OMA-Template-ChangeRequest-20080101-I]<lb/></note>
+
+	<docTitle>
+	<titlePart>CHANGE REQUEST<lb/> Title: Support for multi-terminal case in Push 2.2<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Public OMA Confidential<lb/> To: CD Push<lb/> Doc to Change:</note>
+
+	<idno>OMA-TS-PushOTA-V2_2-20081126-D<lb/></idno>
+ 
+	<date>Submission Date: 9 Dec 2008<lb/></date>
+
+	<note type="other">Classification:<lb/> 0: New Functionality<lb/> 1: Major Change<lb/> 2: Bug Fix<lb/> 3: Clerical<lb/> Source: Bryan Sullivan, AT&amp;T, bryan.sullivan@att.com<lb/> Shunan Fan, Huawei, fanshunan@huawei.com<lb/> Replaces: n/a<lb/></note>
+
+	<docTitle>
+	<titlePart>1 Reason for Change<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">To meet the requirements of Multi-terminal cases in Push 2.2<lb/> As for some cases, e.g. MMS, Push Email., the Push notification can not be sent to each of the user&apos;s terminal<lb/> for retrieving problem. PI may not be acknowledged of how many terminals the user&apos;s registered for this<lb/> application, because PI may use a user&apos;s identifier to send the Push message. PPG or SIP/IP core which have<lb/> the terminals registration information and terminal information may be responsible for choosing the right terminal<lb/> to send the Push message instead of sending it to all the terminals.<lb/> This CR is to clarify the multi-terminal situation and propose ways to guide how to handle multiple terminal<lb/> scenarios.</div>
+
+		</front>
+	</text>
+</tei>

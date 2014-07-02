@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55113927"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Natural and Intuitive Hand Gestures:<lb/> A Substitute for Traditional Vehicle Control?<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>A. Riener and M. Rossbory<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institute for Pervasive Computing, Johannes Kepler University,</affiliation>
+	</byline>
+
+	<address>Linz/Austria<lb/></address>
+
+	<email>E-Mail: riener@pervasive.jku.at,</email>
+
+	<phone>Tel. +43(0)732-2468-1432<lb/></phone>
+
+	<div type="abstract">ABSTRACT<lb/> This poster aims at discussing the potential of natural, intu-<lb/>itive hand poses and gestures used for interaction with stan-<lb/>dard applications in a vehicle while driving. Test drivers<lb/> liked this natural type of interface and indicated that in-<lb/>vehicle function control with intuitive hand gestures is a<lb/> promising approach, which they would like to see in real<lb/> cars in the future.<lb/></div>
+
+		</front>
+	</text>
+</tei>

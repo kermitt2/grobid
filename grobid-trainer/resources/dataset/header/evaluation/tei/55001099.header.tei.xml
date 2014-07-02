@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001099"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Quicksilver User Manual<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>by Howard Melman<lb/></docAuthor>
+	</byline>
+
+	<note type="other">Version 0.15 (for Quicksilver version β54)<lb/></note>
+
+	<date>Jan 10, 2009<lb/></date>
+
+	<note type="other">Please provide feedback on this manual at the Quicksilver forum in this thread:<lb/></note>
+
+	<ptr type="web">http://groups.google.com/group/blacktree-quicksilver/browse_thread/thread/ef99bca<lb/> c45de5ca7#</ptr>
+
+		</front>
+	</text>
+</tei>

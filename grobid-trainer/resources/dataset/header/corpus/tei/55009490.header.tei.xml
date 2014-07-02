@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009490"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="copyright">&#169; 2005 Wiley-VCH Verlag GmbH &amp; Co. KGaA, Weinheim<lb/></note>
+
+	<idno type="doi">10.1002/14356007.a07 341<lb/></idno>
+
+	<note type="other">Colloids</note>
+	
+	<note type="page">1<lb/></note>
+
+	<docTitle>
+	<titlePart>Colloids<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Gerhard Lagaly,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institut für Anorganische Chemie der Universität Kiel,</affiliation>
+	</byline>
+
+	<address>Kiel, Germany<lb/></address>
+
+		</front>
+	</text>
+</tei>

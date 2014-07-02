@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011783"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Measuring and Detecting Fast-Flux Service Networks<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Thorsten Holz<lb/> 1<lb/> Christian Gorecki<lb/> 1<lb/> Konrad Rieck<lb/> 2<lb/> Felix C. Freiling<lb/> 1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 University of Mannheim<lb/> 2 Fraunhofer FIRST<lb/> Laboratory for Dependable Distributed Systems<lb/> Intelligent Data Analysis<lb/></affiliation>
+	</byline>
+
+	<address>Mannheim, Germany<lb/> Berlin, Germany<lb/></address>
+
+	<email>{holz, gorecki, freiling}@informatik.uni-mannheim.de<lb/> konrad.rieck@first.fraunhofer.de<lb/></email>
+
+	<div type="abstract">Abstract<lb/> We present the first empirical study of fast-flux service<lb/> networks (FFSNs), a newly emerging and still not widely-<lb/>known phenomenon in the Internet. FFSNs employ DNS<lb/> to establish a proxy network on compromised machines<lb/> through which illegal online services can be hosted with<lb/> very high availability. Through our measurements we show<lb/> that the threat which FFSNs pose is significant: FFSNs oc-<lb/>cur on a worldwide scale and already host a substantial<lb/> percentage of online scams. Based on analysis of the prin-<lb/>ciples of FFSNs, we develop a metric with which FFSNs can<lb/> be effectively detected. Considering our detection technique<lb/> we also discuss possible mitigation strategies.<lb/></div>
+
+		</front>
+	</text>
+</tei>

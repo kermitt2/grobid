@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014404"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">PROCESSING AND PROPERTIES OF NANOCOMPOSITES<lb/></note>
+	
+	<note type="copyright">© World Scientific Publishing Co. Pte. Ltd.<lb/></note>
+
+	<ptr type="web">http://www.worldscibooks.com/nanosci/6317.html<lb/></ptr>
+
+	<note type="page">1<lb/></note>
+
+	<note type="other">CHAPTER 1<lb/></note>
+
+	<docTitle>
+	<titlePart>Carbon Nanotube/Nanofibre Polymer Composites<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Milo S.P. Shaffer<lb/> 1 and Jan K.W. Sandler<lb/> 2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Department of Chemistry,</affiliation>
+	</byline>
+
+	<address>Room 103d RCS1<lb/> </address>
+	
+	<byline>
+	<affiliation>Imperial College</affiliation>
+	</byline>
+
+	<address>London, SW7 2AZ, UK<lb/></address>
+
+	<phone>Tel: +44(0)20 7594 5825; Fax: +44(0)20 7594 5801<lb/> </phone>
+
+	<email>m.shaffer@imperial.ac.uk<lb/></email>
+
+	<byline>
+	<affiliation>2 Polymer Engineering, University of Bayreuth<lb/></affiliation>
+	</byline>
+
+	<address>Universitätsstrasse 30, D-95447 Bayreuth, Germany<lb/></address>
+
+	<email>jan.sandler@uni-bayreuth.de<lb/></email>
+
+		</front>
+	</text>
+</tei>

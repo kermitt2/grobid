@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei type="web">
+	<teiHeader>
+		<fileDesc xml:id="55114134"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>JavaScript Spell Check<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docTitle>
+	<titlePart>JavaScript SpellCheck<lb/></titlePart>
+	</docTitle>
+	</byline>
+
+	<note type="other">The intelligent cross-platform spellchecker solution using JavaScript , since 2004<lb/> Home About JavaScript SpellCheck<lb/> Features Feature M atrix<lb/> Live-Demos<lb/> List of Live Demos<lb/> &quot;Hello World&quot; Basic Demo<lb/> Creating a JavaScript Spell Checker Button<lb/> JavaScript Spell-As-You-Type<lb/> How to Target One, M uliple or All Fields for SpellChecking<lb/> Proof of Exceptional Performance<lb/> HTM L Editor Integration (CKE, FCK, M CE, etc...)<lb/>Internationalization &amp; Translations in Over 40 Languages<lb/> Custom Popups and CSS Themes<lb/> M aximum Length and Character Count with Spell TeaxtAreas<lb/> JavaScript Events M odel<lb/> AJAX Spell Check<lb/> Synchronous JavaScript SpellCheck() function<lb/> Form Validation &quot;On Submit&quot;<lb/> Live Field *Validators<lb/> jQuery SpellChecking Demo<lb/> M anual<lb/> Installation Guide<lb/> Installation &gt; Trouble Shooting and De-Bugging<lb/> Installation &gt; Working with Dictionaries<lb/> User Interface Translations in over 50 languages<lb/> jQuery SpellCheck Plugin<lb/> Index of Tutorials<lb/>Full Object Reference (All Functions , Events &amp; M ethods)<lb/> Compatibility Compatibility with Windows, Linux and M ac Hosting (PHP, ASP.Net or ASP)<lb/> License License Terms<lb/> Is JavaScript SpellCheck Free and Open Source?<lb/> Register for a License Key<lb/> Applying your License Key<lb/> Financial Information &amp; W9 Details<lb/> Support Common M istakes &gt; Read M e First<lb/> Free Developer Support<lb/> Download Download JavaScript SpellCheck<lb/> Download Free International Dictionaries<lb/> Login<lb/></note>
+
+	<ptr>http://www.javascriptspellcheck.com/Java_Script_Spell_Check_Features<lb/> </ptr>
+
+	<date>Go OCT NOV<lb/> MAY<lb/> 18<lb/> 2011 2012<lb/> 2014<lb/> </date>
+
+	<note type="other">29 captures<lb/> </note>
+
+	<date>11 Oct 11 -28 Mar 14<lb/></date>
+
+	<note type="other">Java Script Spell Check Features -JavaScript Spell Check<lb/></note>
+
+	<ptr type="web">http://web.archive.org/web/20121118161243/http://www.javascript...<lb/></ptr>
+
+	<note type="page">1 of 3<lb/></note>
+
+	<date>15-04-2014 </date>
+
+	<note type="other">10:47<lb/></note>
+
+		</front>
+	</text>
+</tei>

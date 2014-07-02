@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013500"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Issue date 08/08. The technical advice, technical data or recommendations are given to the best of our knowledge but carry<lb/> no guarantee or acceptance of responsibility. This guiding formulation becomes invalid as soon as a new edition has been<lb/> published. Please contact us for the latest edition.<lb/></note>
+
+	<byline>
+	<affiliation>Evonik Tego Chemie GmbH</affiliation>
+	</byline>
+
+	<address>Goldschmidtstrasse 100 D-45127 Essen</address>
+
+	<phone>Tel.: +49 (0)201/173-2222 Fax: +49 (0)201/173-1939 </phone>
+
+	<ptr>www.tego.de<lb/></ptr>
+
+	<docTitle>
+	<titlePart>Waterborne binder-free pigment<lb/> concentrates based on different organic<lb/> pigments with TEGO ® Dispers 755 W<lb/> </titlePart>
+	</docTitle>
+	
+	<note type="other">Product<lb/> C. I.<lb/> Heliogen Blue L 6875 F<lb/> (BASF)<lb/> PB 15:2<lb/> Heliogen Blue L 7101 F<lb/> (BASF)<lb/> PB 15:4<lb/> Heliogen Blue L 6700<lb/> (BASF)<lb/> PB 15:6<lb/> water (demin.)<lb/> 37.9<lb/> 33.9<lb/> 42.0<lb/> TEGO ® Dispers 755 W<lb/> 24.0<lb/> 25.0<lb/> 21.9<lb/> TEGO ® Foamex 830*<lb/> 1.0<lb/> 1.0<lb/> 1.0<lb/> pigment 37.0<lb/> 40.0<lb/> 35.0<lb/></note>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012450"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>BEST PRACTICES IN SEARCH USER INTERFACE DESIGN<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Panel Chairs:</note>
+
+	<byline>
+	<docAuthor>Marc L. Resnick and Jennifer Bandos<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Florida International University<lb/></affiliation>
+	</byline>
+
+	<address>Miami, FL<lb/></address>
+
+	<email>resnick@eng.fiu.edu<lb/></email>
+
+	<phone>(305) 348-3537<lb/></phone>
+
+	<div type="abstract">The Internet has become a powerful tool for information search and ecommerce. Millions of people use<lb/> the World Wide Web on a regular basis and the number is increasing rapidly. For many common tasks,<lb/> users first need to locate a Web site(s) containing needed information from among the estimated 4 trillion<lb/> existing web pages. The most common method used to search for information is the search engine.<lb/> However, even sophisticated users often have difficulty navigating through the complexity of search<lb/> engine interfaces. Designing more effective and efficient search engines is contingent upon a significant<lb/> improvement in the search user interface.<lb/> </div>
+
+	<div type="introduction">PANEL SUMMARY<lb/> There are several purposes for using the Web, including<lb/> publishing information in an electronic format, retrieving<lb/> information, conducting and facilitating commerce, and<lb/> others. The search engine has become the most common<lb/> method used to search for information over the Internet, with<lb/> over half of web users using Internet search engines each<lb/> week and sixty percent searching for over an hour each week.<lb/> In one study, only 18% of users reported that they could fmd<lb/> what they are looking for on the web. Also, 67% said they<lb/> were frustrated when searching. In Sullivan (2000), 2 1% of<lb/> the respondents reported being able to find what they were<lb/> looking for every time, and only 60% reported finding the<lb/> relevant information most of the time. Aurelio (2000) reported<lb/> that users need better search interface usability. In that study,<lb/> users specifically requested help identifying command rules,<lb/> narrowing searches, and categorizing results. Clearly, work is<lb/> needed to improve search engine design.<lb/> can be divided into at least three categories: input design,<lb/> output design, and support for iterative search.</div>
+
+		</front>
+	</text>
+</tei>

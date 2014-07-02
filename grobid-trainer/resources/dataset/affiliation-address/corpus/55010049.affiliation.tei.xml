@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="laboratory">The KMR (Knowledge Management Research) group<lb/> CID (Centre for user oriented IT Design)</orgName>
+							<lb/>
+							<orgName type="department">NADA (Numerical Analysis and Computing Science)</orgName>
+							<lb/>
+							<orgName type="institution">KTH (Royal Institute of Technology)</orgName>
+							<lb/>
+							<address>
+								<addrLine>100 44 Stockholm</addrLine>,
+								<country>Sweden</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

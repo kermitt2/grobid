@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014846"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Hochgeschwindigkeits-Computertomografie zur<lb/> schnellen, zerstörungsfreien und intelligenten<lb/> Inspektion und Prozessoptimierung<lb/> von Aluminium-Gussteilen<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<affiliation>Der Technischen Fakultät der<lb/> Universität Erlangen-Nürnberg<lb/></affiliation>
+	</byline>
+
+	<degree>zur Erlangung des Grades<lb/>D O K T O R – I N G E N I E U R<lb/> </degree>
+
+	<note type="other">vorgelegt von<lb/></note>
+
+	<byline>
+	<docAuthor>Holger Schnell<lb/></docAuthor>
+	</byline>
+
+	<address>Erlangen – </address>
+
+	<date>2011</date>
+
+		</front>
+	</text>
+</tei>

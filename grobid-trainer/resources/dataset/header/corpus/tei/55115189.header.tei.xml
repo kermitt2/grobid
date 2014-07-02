@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55115189"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>A Processing Chain for Simple 3D Reconstruction of Buildings<lb/> in Urban Scenes From High Resolution Optical and SAR Images.<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Helene Sportouche (1,2) and Florence Tupin (1)<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>(1) Institut Telecom; Telecom ParisTech; CNRS LTCI; TSI Department<lb/></affiliation>
+	</byline>
+
+	<address>Address: 46, rue Barrault, 75013 Paris -France<lb/></address>
+
+	<phone>Mobile: +33 6 89 78 17 05 -Phone: +33 1 45 81 72 45 -Fax: +33 1 45 81 37 94<lb/> </phone>
+
+	<email>Email: helene.sportouche@telecom-paristech.fr; florence.tupin@telecom-paristech.fr<lb/></email>
+
+	<byline>
+	<affiliation>(2) Thales Communications; Land and Joint Systems; IMINT Department<lb/></affiliation>
+	</byline>
+
+	<address>Address: 2-5, avenue Carnot, Bât. F, 91883 Massy -France<lb/></address>
+
+	<phone>Phone: +33 1 69 75 33 44 -Fax: +33 1 69 75 31 65<lb/> </phone>
+
+	<email>Email: helene.sportouche@fr.thalesgroup.com<lb/></email>
+
+	<div type="abstract">Abstract<lb/> In this paper, we propose a complete semi-automatic processing chain able to provide, from a couple of high-resolution<lb/> optical and SAR images, a simple three-dimensional reconstruction of the buildings in urban scenes. The chain is decom-<lb/>posed into four steps: building boundary extraction, footprint projection and registration, height estimation and building<lb/> validation. Each of these steps is described from a methodological point of view and applied on a scene of interest on<lb/> Quickbird and TerraSAR-X images. Good results of building detection and height retrieval are obtained and a satisfying<lb/> final 3D reconstruction of buildings is provided.<lb/></div>
+
+		</front>
+	</text>
+</tei>

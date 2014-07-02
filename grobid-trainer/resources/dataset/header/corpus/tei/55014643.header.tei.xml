@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014643"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Macromol. Chem. Phys. 195, 1557-1567 (1994)<lb/></reference>
+
+	<note type="page">1557<lb/></note>
+
+	<docTitle>
+	<titlePart>Immobilization of enzymes by multilayer microcapsules<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Rainer Pommersheim, Jiirgen Schrezenmeir, Walter Vogt *<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Johannes-Gutenberg-Universitat, Institut fur Organische Chemie, </affiliation>
+	</byline>
+
+	<address>J.J.-Becher-Weg 18 -20,<lb/> D-55099 Mainz, Deutschland<lb/></address>
+
+	<note type="submission">(Received: August 12, 1993; revised manuscript of October 8, 1993)<lb/></note>
+
+	<div type="abstract">SUMMARY A method is described to obtain a new type of microcapsules for immobilization of enzymes<lb/> or living cells. The wall of these capsules consists of several layers of poly(ethy1eneimine) and<lb/> poly(acry1ic acid). The idea is that diverging properties of the whole assembly can be better<lb/> controlled when the membrane is built up by several consecutive steps, each being optimized with<lb/> respect to a special property, for example, permeability or mechanical strength. The encapsulation<lb/> of acidic phosphatase and the cleavage of p-nitrophenyl phosphate was used as a model system.<lb/> The charged capsules were characterized by their enzymatic activity, as a function of membrane<lb/> composition (number and sequence of layers) and storing time. The permeability for the substrate<lb/> and the retaining ability for the enzyme were also measured.<lb/></div>
+
+		</front>
+	</text>
+</tei>

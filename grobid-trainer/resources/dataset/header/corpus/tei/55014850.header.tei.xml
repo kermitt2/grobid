@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014850"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">A652–01–880 Issue P Original<lb/></note>
+
+	<docTitle>
+	<titlePart>Instruction Manual<lb/> RV3, RV5, RV8 and RV12 Rotary Vane Pumps<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">A 65X-YY-ZZZ<lb/> Pump Type<lb/> Variant Motor Description<lb/> X Y Y<lb/> Z Z Z<lb/> 2 = RV3<lb/> 01 to 99<lb/> 903 = 220-240V, 50/60Hz, Single phase<lb/> 3 = RV5<lb/> 904 = 100/200V, 50/60Hz, Single phase<lb/> 4 = RV8<lb/> 905 = 200-230/380-460V, 50/60Hz, Three phase<lb/> 5 = RV12<lb/> 906 = 110-115/120V 50/60Hz, Single phase<lb/> 965 = NEMA Bareshaft<lb/> 970 = ISO Bareshaft</div>
+
+		</front>
+	</text>
+</tei>

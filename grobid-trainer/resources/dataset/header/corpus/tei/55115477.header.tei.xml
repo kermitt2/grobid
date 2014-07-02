@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55115477"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">120  </note>
+
+	<ptr>| WWW.ELEVATORWORLD.COM | </ptr>
+
+	<date>September 2012<lb/> </date>
+
+	<note type="other">Engineering<lb/></note>
+
+	<docTitle>
+	<titlePart>Alternative Weightless Testing: An Overview<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>by Carsten Schumann<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">an empty car will be explained. The<lb/> article will also introduce two further<lb/> tests for electric and hydraulic eleva-<lb/>tors, which could be performed by<lb/> the ADIASYSTEM to increase the<lb/> safety of an elevator.<lb/></div>
+
+	<div type="introduction">Category 5 Test for Type B Car<lb/> Safeties (Progressive Car Safeties)<lb/></div>
+	
+		</front>
+	</text>
+</tei>

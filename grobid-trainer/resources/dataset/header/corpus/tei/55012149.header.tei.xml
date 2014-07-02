@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012149"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Ultrapure Water –<lb/> The Standard for Resistivity Measurements<lb/> of Ultrapure Water<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Anthony C. Bevilacqua, Ph.D. 1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Thornton Associates, Inc.<lb/></affiliation>
+	</byline>
+
+	<address>1432 Main Street<lb/> Waltham, Massachusetts 02154<lb/></address>
+
+	<phone>Phone (781) 890-3399<lb/>Phone (800) 642-4418<lb/> FAX (781) 890-5507<lb/></phone>
+
+	<email>email abevilacqua@thorntoninc.com<lb/></email>
+
+	<div type="abstract">Abstract<lb/> For years, resistivity/conductivity 2 instrumentation has been used as a reliable indicator of ionic water quality,<lb/> especially for ultrapure water (UPW). Traditionally, the instrumentation is procured, installed, powered up, and<lb/> perhaps connected to a PLC, strip chart recorder, or a LAN. After that, the instrument and sensor receive no<lb/> attention until a problem arises. Today, continuous calibration and verification are key elements in any QC and QA<lb/> program. In recent years, users have been using standard solutions to calibrate sensors. However, a major complaint<lb/> is that these solutions are not in the user&apos;s operational range, and thus are not ideal standards. Numerous standard<lb/> solutions have been proposed, but none possess all of the desirable requirements : ease-of-preparation, resistivity<lb/> value in the range of operation, impervious to air and other contamination, and verifiable.<lb/> During the last several years, as a result of our investigations into the relationship between resistivity and<lb/> temperature for UPW, we have developed a methodology for calibration that meet all of the criteria stated above. We<lb/> will provide data to support 5 primary conclusions :<lb/></div>
+
+		</front>
+	</text>
+</tei>

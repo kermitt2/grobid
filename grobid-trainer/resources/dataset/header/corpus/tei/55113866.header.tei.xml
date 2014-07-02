@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei type="web">
+	<teiHeader>
+		<fileDesc xml:id="55113866"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<ptr>http://www.drugcore.com/bencandy.php?fid=91&amp;id=380259<lb/></ptr>
+
+	<docTitle>
+	<titlePart>Delcut ButachlorOxadiazon<lb/></titlePart>
+	</docTitle>
+
+	<note>By:DrugCore.com </note>
+
+	<date>Datetime:2012-03-19 </date>
+
+	<note type="other">10:01:56<lb/> Delcut category:<lb/>  Soil Herbicide<lb/> Active ingredients:<lb/>  Butachlor<lb/>  Oxadiazon<lb/> Delcut companies and manufacturers:<lb/></note>
+
+	<byline>
+	<affiliation> Bayer Schering Pharma<lb/></affiliation>
+	</byline>
+
+	<keyword>Delcut forms, composition and dosages:<lb/>  Emulsion, Concentrated; Topical; Butachlor 120 g; Oxadiazon 80 g / l<lb/> Indications, usages and classification codes:<lb/>  ATC<lb/>  ICD-10</keyword>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000294"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Anschlußplan für Video-Türspion-Kameras<lb/></titlePart>
+	</docTitle>
+
+	<div type="introduction">Standortwahl<lb/> Die Video-Türspion-Kamera ist für jede Tür von 20mm bis 65mm (bei Farbkameras bis 75mm) Blattstärke geeignet.<lb/> Montage<lb/> Demontieren Sie den vorhandenen Türspion und erweitern den Durchmesser vom Loch gegebenfalls auf 21mm.<lb/> Montieren Sie dann den Video-Türspion laut Zeichnung.<lb/> Schieben Sie die Kamera mit Anschlußkabel durch das Türblatt und schrauben Sie den Halter auf das Gewinde<lb/> der Kamera so weit bis die Kamera fest zwischen dem Türblatt sitzt.<lb/> Fixieren Sie den Halter mit den beiden mitgelieferten Holzschrauben.<lb/> Montieren Sie das Kabel auf dem Türblatt oder durch eine zusätzliche Bohrung im Türblatt.<lb/> Schrauben Sie die Abdeckhaube auf den Halter.<lb/> Optionale Anschlußmöglichkeiten<lb/> Die Verbindung zwischen Kamera und Monitor/Fernseher kann alternativ über ein Telefonkabel<lb/> als 2 Draht-Videoverbindung oder drahtlos über einen Sender und Empfänger erfolgen.<lb/> Zusammenbau<lb/> Kamera<lb/> Türblatt<lb/> Halter Abdeckhaube<lb/> Fertige Installation<lb/> Sender Empfänger<lb/> Bis max. 300m<lb/> a<lb/> b<lb/> a<lb/> b<lb/> Sender<lb/> oder<lb/> Bis max. 100m<lb/> b<lb/> Empfänger<lb/> oder<lb/> GERMANY<lb/> R<lb/> C<lb/> AP_20025 / </div>
+
+	<date>15.04.02<lb/> </date>
+
+	<note type="copyright">(c) 2002 VC VIDEOCOMPONENTS<lb/></note> 
+
+	<note type = "other">20025, 20265</note>
+
+		</front>
+	</text>
+</tei>

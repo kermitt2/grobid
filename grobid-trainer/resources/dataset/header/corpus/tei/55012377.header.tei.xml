@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012377"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Polyelektrolyt-basierter UV-Schutz für Biopestizide<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<affiliation>Der technischen Fakultät der<lb/> Universität Erlangen-Nürnberg<lb/></affiliation>
+	</byline>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013866"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Ultrason<lb/> ®<lb/> E and S<lb/> Luvitec<lb/> ®<lb/> K<lb/> Versatile materials for the production<lb/> of tailor-made membranes<lb/> </titlePart>
+	</docTitle>
+	
+	<byline>
+	<affiliation>BASF Plastics<lb/> </affiliation>
+	</byline>
+	
+	<note>key to your success</note>
+
+		</front>
+	</text>
+</tei>

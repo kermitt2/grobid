@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei type="technical-report">
+	<teiHeader>
+		<fileDesc xml:id="55114651"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">Page: 1</note>
+
+	<date>DateSaved: 2014-04-222010-10-052010-10-012010-09-29<lb/></date>
+
+	<note>Joint Collaborative Team on Video Coding (JCT-VC)<lb/> of ITU-T SG16 WP3 and ISO/IEC JTC1/SC29/WG11<lb/></note>
+
+	<note type="other">2nd Meeting: Geneva, CH, 21-</note>
+
+	<date>28 July, 2010<lb/></date>
+
+	<note>Document: JCTVC-B205<lb/> </note>
+
+	<docTitle>
+	<titlePart>Title:<lb/> Test Model under Consideration<lb/> </titlePart>
+	</docTitle>
+
+	<note type="other">Status:<lb/> Output Document (draft0075)<lb/>Source:<lb/> JCT-VC<lb/> _____________________________<lb/></note>
+
+	<div type="abstract">Abstract<lb/> This document provides the description for a Test Model under Consideration (TMuC). This suggested<lb/> Test Model is intended to provide a coding efficiency close to the best performing proposals in the<lb/> subjective test of the CfP submissions and also to provide a complexity point that is close to that of the<lb/> lowest complexity submissions shown to provide substantial improvement of coding efficiency. The<lb/> inclusion of a technology in this document does not indicate a final adoption of the technology as an<lb/> element of an approved test model of the committee. Rather, it indicates a preliminary selection which<lb/> may require further evaluation and justification to achieve that status.<lb/> This TMuC is based on the decisions taken at the 1<lb/> st meeting of JCT-VC in Dresden from 15-23 April<lb/> 2010 and the further refinements agreed at the 2<lb/> nd meeting of JCT-VC in Geneva from 21-28 July 2010.<lb/> The principal documents agreed at the 2<lb/> nd meeting of JCT-VC which affect this TMuC are:<lb/>  Unified intra prediction (JCTVC-B100)<lb/>  Rounding control and transform precision expansion (JCTVC-B074)</div>
+
+		</front>
+	</text>
+</tei>

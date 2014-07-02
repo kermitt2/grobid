@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014162"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Hematopoietic stem cell biology: too much of a Wnt thing<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Jennifer J Trowbridge 1 , Randall T Moon 2 &amp; Mickie Bhatia 1<lb/></docAuthor>
+	</byline>
+
+		</front>
+	</text>
+</tei>

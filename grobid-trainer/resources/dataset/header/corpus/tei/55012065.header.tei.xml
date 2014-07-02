@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012065"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="copyright">© 2009 Gaffo and Saag, publisher and licensee Dove Medical Press Ltd. This is an Open Access article<lb/> which permits unrestricted noncommercial use, provided the original work is properly cited.<lb/></note>
+
+	<reference>Core Evidence 2009:4 25–36<lb/></reference>
+
+	<note type="other">Core Evidence<lb/> </note>
+
+	<note type="page">25<lb/> </note>
+
+	<note type="other">r E v i E w<lb/>  Dovepress<lb/>  open access to scientific and medical research<lb/> Open Access Full Text Article<lb/> submit your manuscript | </note>
+
+	<ptr>www.dovepress.com<lb/></ptr>
+
+	<note type="other">Dovepress<lb/></note>
+
+	<docTitle>
+	<titlePart>Febuxostat: the evidence for its use<lb/> in the treatment of hyperuricemia and gout<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Angelo L Gaffo<lb/> 1<lb/> Kenneth G Saag<lb/> 2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Birmingham vA Medical Center,<lb/> 2 Division of Clinical immunology<lb/> and rheumatology, University<lb/> of Alabama at Birmingham<lb/> </affiliation>
+	</byline>
+	
+	<note type="other">Correspondence: </note>
+
+	<byline>
+	<docAuthor>Kenneth G Saag<lb/></docAuthor>
+	</byline>
+
+	<address>FOT 820, 1530 3rd Ave<lb/> S Birmingham, AL 35294, USA<lb/></address>
+
+	<email>Email ksaag@uab.edu.<lb/></email>
+
+		</front>
+	</text>
+</tei>

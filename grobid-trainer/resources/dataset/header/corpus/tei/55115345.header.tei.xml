@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<tei type="web">
+	<teiHeader>
+		<fileDesc xml:id="55115345"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Mixed-Signal SoC verification has<lb/> integrated solution<lb/></titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

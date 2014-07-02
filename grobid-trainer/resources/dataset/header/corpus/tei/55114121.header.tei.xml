@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei type="book-chapter">
+	<teiHeader>
+		<fileDesc xml:id="55114121"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Chapter 11<lb/></note>
+
+	<docTitle>
+	<titlePart>Data Storage<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">This chapter begins our study of implementation of database management sys<lb/> tems. The first issues we must address involve how a DBMS deals with very<lb/> large amounts of data efficiently. The study can be divided into two parts:<lb/> 1. How does a computer system store and manage very large amounts of<lb/> data?<lb/> 2. What representations and data structures best support efficient manipu<lb/> lat ions of this data?<lb/> We cover (1) in this chapter and (2) in Chapters 12 through 14.<lb/> This chapter explains the devices used to store massive amounts of informa<lb/> tion, especially rotating disks. We introduce the &quot;memory hierarchy,&quot; and see<lb/> how the efficiency of algorithms involving very large amounts of data depends<lb/> on the pattern of data movement between main memory and secondary stor<lb/> age (typically disks) or even &quot;tertiary storage&quot; (robotic devices for storing and<lb/> accessing large numbers of optical disks or tape cartridges). A particular algo<lb/> rithm two-phase, uuiltiway merge sort<lb/> is used as an important example<lb/> of an algorithm that uses the memory hierarchy effectively.<lb/> We also consider, in Section 11.5, a number of techniques for lowering the<lb/> time it takes to read or write data from disk. The last. two sections discuss<lb/> methods for improving the reliability of disks. Problems addressed include<lb/> intermittent read-or write-errors, and &quot;disk crashes&quot; where data becomes per<lb/> manently unreadable.<lb/> Our discussion begins with a fanciful examination of what goes wrong if one<lb/> does not use the special methods developed for DBMS implementation.<lb/> </div>
+
+	<div type="introduction">11.1 The &quot;Megatron 2002&quot; Database System<lb/> If you have used a DB1\&apos;IS, you might imagine that implementing such a system<lb/> is not hard. You might have in mind an implementation such as the recent<lb/> 503<lb/> 504<lb/> CHAPTER 11. DATA STORAGE<lb/> (fictitious) offering from Megatron Systems Inc.: the Megatron 2002 Database<lb/> Management System. This system, which is availrble under UNIX and other<lb/> operating systems, aiid which uses the relational approach, supports SQL.<lb/> 11.1.1 Megatron 2002 Implementation Details<lb/> To begin, Megatron 2002 uses the UNIX file system to store its relations. for<lb/> example, the relation Students(name, id, dept) would be stored in the file<lb/> /usr/db/Students. The file Students has one line for each tuple. Values of<lb/> components of a tuple are stored as character strings, separated by the special<lb/> marker character #. For instance, the file /usr/db/Students might look like:<lb/> Smith#123#CS Johnson#522#EE</div>
+
+		</front>
+	</text>
+</tei>

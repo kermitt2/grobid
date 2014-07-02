@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000283"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Identification of differentially expressed genes in pulmonary<lb/> adenocarcinoma by using cDNA array<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Harriet Wikman<lb/> 1,2,4 , Eeva Kettunen<lb/> 1<lb/> , Jouni K Seppaen<lb/> 3 , Antti Karjalainen<lb/> 4<lb/> , Jaakko Hollme<lb/> 3 ,<lb/> Sisko Anttila<lb/> 2,4 and Sakari Knuutila*<lb/> ,1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Department of Medical Genetics, Haartman Institute and Helsinki University Central Hospital, University of Helsinki,</affiliation>
+	</byline>
+
+	<address>Helsinki,<lb/> Finland;<lb/></address>
+
+	<byline>
+	<affiliation>2 Department of Pathology, Haartman Institute and Helsinki University Central Hospital, University of Helsinki,</affiliation>
+	</byline>
+
+	<address>Helsinki,<lb/> Finland;<lb/></address>
+
+	<byline>
+	<affiliation>3<lb/> Laboratory of Computer and Information Science, Helsinki University of Technology,</affiliation>
+	</byline>
+
+	<address>Espoo, Finland;<lb/></address>
+
+	<byline>
+	<affiliation>4 Department of<lb/> Occupational Medicine, Finnish Institute of Occupational Health,</affiliation>
+	</byline>
+
+	<address>Helsinki, Finland<lb/></address>
+
+	<div type="abstract">No clear patterns in molecular changes underlying the<lb/> malignant processes in lung cancer of different histolo-<lb/>gical types have been found so far. To identify critical<lb/> genes in lung cancer progression we compared the<lb/> expression profile of cancer related genes in 14<lb/> pulmonary adenocarcinoma patients with normal lung<lb/> tissue by using the cDNA array technique. Principal<lb/> component analyses (PCA) and permutation test were<lb/> used to detect the differentially expressed genes. The<lb/> expression profiles of 10 genes were confirmed by semi-<lb/>quantitative real-time RT – PCR. In tumour samples, as<lb/> compared to normal lung tissue, the up-regulated genes<lb/> included such known tumour markers as CCNB1, PLK,<lb/> tenascin, KRT8, KRT19 and TOP2A. The down-<lb/>regulated genes included caveolin 1 and 2, and TIMP3.<lb/> We also describe, for the first time, down-regulation of<lb/> the interesting SOCS2 and 3, DOC2 and gravin. We<lb/> show that silencing of SOCS2 is not caused by<lb/> methylation of exon 1 of the gene. In conclusion, by<lb/> using the cDNA array technique we were able to reveal<lb/> marked differences in the gene expression level between<lb/> normal lung and tumour tissue and find possible new<lb/> tumour markers for pulmonary adenocarcinoma.<lb/></div>
+	
+<reference> Oncogene (2002) 21, 5804 – 5813. </reference>
+
+<idno type="DOI">doi:10.1038/sj.onc.<lb/>1205726<lb/></idno>
+
+	<keyword>Keywords: cDNA array; RT – PCR; adenocarcinoma;<lb/> lung cancer<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

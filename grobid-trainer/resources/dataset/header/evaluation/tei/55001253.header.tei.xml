@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001253"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Reducing the Time-To-Fix for Stand-Alone<lb/> Single-Frequency GNSS Attitude Determination<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>G.Giorgi<lb/> 1 , P.J.G. Teunissen<lb/> 1,2 , S. Verhagen<lb/>1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Delft Institute of Earth Observation and Space Systems (DEOS)<lb/> Delft University of Technology,</affiliation>
+	</byline>
+
+	<address>The Netherlands<lb/></address>
+
+	<byline>
+	<affiliation>2 GNSS Research Lab, Spatial Sciences<lb/> Curtin University of Technology,</affiliation>
+	</byline>
+
+	<address>Perth, Australia<lb/></address>
+
+	<div type="abstract">ABSTRACT<lb/> Precise Global Navigation Satellite System (GNSS) based<lb/> attitude determination is based on the GNSS carrier phase<lb/> measurements. In order to benefit from these precise phase<lb/> measurements, their unknown integer number of cycles needs<lb/> to be resolved. For attitude determination applications,<lb/> this process of integer ambiguity resolution benefits signif-<lb/>icantly from the inclusion of a-priori baseline length con-<lb/>straints. In this contribution it will be shown how such con-<lb/>straints need to be incorporated into the ambiguity objec-<lb/>tive function. The method for integer minimizing this ob-<lb/>jective function is presented and its improved performance<lb/> for reducing the Time-To-Fix is tested with numerical sim-<lb/>ulations and real-world static and dynamic tests.<lb/></div>
+<div type="introduction"> INTRODUCTION</div>
+
+		</front>
+	</text>
+</tei>

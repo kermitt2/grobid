@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="department">Unité de Recherche sur les Extraits Végétaux</orgName>,
+							<orgName type="laboratory">Laboratoire d&apos;Etude et de Recherche en Chimie appliquée (LERCA)</orgName>,
+							<orgName type="institution">Ecole Polytechnique<lb/> d&apos;Abomey-Calavi</orgName>,
+							<orgName type="institution">Université d&apos;Abomey-Calavi</orgName>,
+							<address>
+								<postCode>01 BP 2009</postCode>
+								<settlement>Cotonou</settlement>,
+								<country>Rép. du BENIN</country>
+								<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="laboratory">Laboratoire d&apos;Analyse des Extraits Végétaux et des Arômes (LEXVA Analytique)</orgName>,
+							<address>
+								<addrLine>460 Rue du Montant</addrLine>,
+								<postCode>63110</postCode>
+								<settlement>Beaumont</settlement>,
+								<country>FRANCE</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>3</marker>
+							<orgName type="institution">Ecole Nationale Supérieure de Chimie</orgName>,
+							<orgName type="department">Institut de Chimie de Clermont-Ferrand</orgName>,
+							<orgName type="institution">Université Blaise-Pascal</orgName>,
+							<address>
+								<postCode>F-63000</postCode>,
+								<settlement>Clermont, FERRAND</settlement>,
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>4</marker>
+							<orgName type="laboratory">Laboratoire de Chimie des Huiles Essentielles</orgName>,
+							<orgName type="institution">Université Blaise-Pascal, Clermont-Ferrand II</orgName>,
+							<address>
+								<addrLine>Campus des Cézeaux</addrLine>,
+								<settlement>Aubière cedex</settlement>,
+								<country>FRANCE</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55115156"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Ninth International Conference on Computer Technology in Welding<lb/> September 28-30, 1999, Detroit, MI<lb/></reference>
+
+	<note type="page">Page 1 of 7<lb/></note>
+
+	<docTitle>
+	<titlePart>A Welding Cell That Supports Remote Collaboration<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Jim Gilsinn, Bill Rippey, Joe Falco, Tim Quinn, Bob Russell, Keith Stouffer<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>National Institute of Standards and Technology<lb/> Intelligent Systems Division<lb/></affiliation>
+	</byline>
+
+	<ptr type="web">http://www.isd.cme.nist.gov/<lb/></ptr>
+
+	<div type="abstract">Abstract Discrete part manufacturers using robotic arc welding cells often have several more<lb/> geographically distributed plants than welding experts. This ratio often leads to costly downtimes<lb/> due to both logistic and communication deficiencies between weld engineers and the production<lb/> site. The ability for engineers to remotely access welding cells from their home office to<lb/> anywhere in the world can yield several benefits. These include quicker response time to<lb/> problems, improved weld quality, increased production line reliability, and reduced travel time for<lb/> weld engineers. We describe the NIST testbed technology and infrastructure for remote<lb/> manufacturing that has been applied and demonstrated on a robotic welding cell where valuable<lb/> process data can be made available to remotely located engineers in real-time or near real-time.<lb/> Remote access to cell information is made possible by open-architecture interfaces that tie the<lb/> robot controller, weld controller, and cell controller together. The welding cell allows remote<lb/> access through the internet via: an audio/video system for communicating with the operator, a<lb/> pan/tilt/zoom camera inside the welding cell for viewing the cell in operation and inspecting parts<lb/> after a weld, a real-time display for welding process data, a web-based graphic simulation of the<lb/> robot arm driven by real-time motion commands, and an intelligent monitoring system with an<lb/> internet accessible welding database. The cell incorporates multiple weld monitoring systems<lb/> with data logging capability to capture process variables during a weld.<lb/></div>
+
+	<keyword>Keywords weld cells, monitoring, remote collaboration, World-Wide-Web, internet, weld sensing, interface<lb/> specifications
+	<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

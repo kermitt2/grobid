@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>SUROJ</forename>
+								<surname>SUPAVEKIN</surname>,
+							</persName>
+							<persName>
+								<forename>WEIJIA</forename>
+								<surname>ZHANG</surname>,
+							</persName>
+							<persName>
+								<forename>RAJU</forename>
+								<surname>KUCHERLAPATI</surname>,
+							</persName>
+							<persName>
+								<forename>FREDERICK</forename>
+								<middlename>J</middlename>.
+								<surname>KASKEL</surname>,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>LEON</forename>
+								<middlename>C</middlename> .
+								<surname>MOORE</surname> ,and
+							</persName>
+							<persName>
+								<forename>PRASAD</forename>
+								<surname>DEVARAJAN</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

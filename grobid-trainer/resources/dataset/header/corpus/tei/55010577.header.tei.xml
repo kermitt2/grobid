@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010577"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<docAuthor>W. Hanefeld, M. Schlitzer, H. Schutz, S. Wocadlo, W. Massa<lb/></docAuthor>
+	</byline>
+
+	<note type="page">337<lb/></note>
+
+	<note type="other">Oxidationen an Thiourethanen, lo[&apos;]<lb/></note>
+
+	<docTitle>
+	<titlePart>Synthese, Kristallstruktur, Oxidation und Photochemie der Thion-S-oxide<lb/> cyclischer Dithiourethane und Dithiocarbazate
+	<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Wolfgang Hanefeld&quot;&quot;, Martin Schlitzer&quot;I2l, Harald SchiitzaiZ1, Sigrid Wocadlo b121 und Werner Massa b121<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institut fur Pharmazeutische Chemie der Universitat Marburg&quot;,<lb/></affiliation>
+	</byline>
+
+	<address>Marbacher Weg 6, W-3550 Marburg<lb/></address>
+
+	<byline>
+	<affiliation>Fachbereich Chemie der Universitat Marburgb,<lb/></affiliation>
+	</byline>
+
+	<address>Hans-Meerwein-StraRe, W-3550 Marburg<lb/></address>
+
+	<note type="submission">Eingegangen am 21. Oktober 1991<lb/></note>
+
+	<keyword>Key Words: Sulfines / Thione S-oxides / Dithiourethanes / Dithiocarbazates / Thioxiran intermediates<lb/></keyword>
+
+	<div type="abstract">Oxidations of Thiourethanes, 1Orl1. -Synthesis, Crystal Structure, Oxidation and Photochemistry of Thione S-Oxides of<lb/> Cyclic Dithiourethanes and Dithiocarbazates<lb/> Several cyclic dithiocarbamates and dithiocarbazates (2 -4) responding 0x0 as well as the thioxo derivatives. The isolation<lb/> have been oxidised with mCPBA to give the corresponding<lb/> of both the 0x0 and the thioxo derivatives is reported here for<lb/> thione S-oxides 5 -7 . The sulfine structure was confirmed by the first time, it provides an other evidence for the postulated<lb/> oxidation to the corresponding 0x0 derivatives and X-ray crys-thioxirane intermediate in the photolysis of sulfines.<lb/> tal structure analysis. Photolysis of the sulfines gave the cor-<lb/></div>
+
+		</front>
+	</text>
+</tei>

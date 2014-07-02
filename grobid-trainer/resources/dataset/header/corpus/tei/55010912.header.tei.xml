@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010912"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Automated Selection of Materialized Views and Indexes for<lb/> SQL Databases<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Sanjay Agrawal<lb/> Surajit Chaudhuri<lb/> Vivek Narasayya<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Microsoft Research<lb/> Microsoft Research<lb/> Microsoft Research<lb/></affiliation>
+	</byline>
+
+	<email>sagrawal@microsoft.com<lb/>surajitc@microsoft.com<lb/>viveknar@microsoft.com<lb/></email>
+
+	<div type="abstract">Abstract<lb/> Automatically selecting an appropriate set of<lb/> materialized views and indexes for SQL<lb/> databases is a non-trivial task. A judicious choice<lb/> must be cost-driven and influenced by the<lb/> workload experienced by the system. Although<lb/> there has been work in materialized view<lb/> selection in the context of multidimensional<lb/> (OLAP) databases, no past work has looked at<lb/> the problem of building an industry-strength tool<lb/> for automated selection of materialized views<lb/> and indexes for SQL workloads. In this paper,<lb/> we present an end-to-end solution to the problem<lb/> of selecting materialized views and indexes. We<lb/> describe results of extensive experimental<lb/> evaluation that demonstrate the effectiveness of<lb/> our techniques. Our solution is implemented as<lb/> part of a tuning wizard that ships with Microsoft<lb/> SQL Server 2000.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<tei type="technical-paper">
+	<teiHeader>
+		<fileDesc xml:id="55113915"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<address>400 Commonwealth Drive, Warrendale, PA 15096-0001 U.S.A.</address>
+
+	<phone>Tel: (724) 776-4841 Fax: (724) 776-0790 </phone>
+
+	<ptr>Web: www.sae.org<lb/></ptr>
+
+	<note type="other">SAE TECHNICAL<lb/> PAPER SERIES<lb/></note>
+
+	<date>2007-01-1489<lb/></date>
+
+	<docTitle>
+	<titlePart>SIL2 and SIL3 ECU – Safety<lb/> Controller for Off-Highway<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Christiana Seethaler and Lukas Silberbauer<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>TTTech Computertechnik AG<lb/></affiliation>
+	</byline>
+
+	<note type="other">Reprinted From: Safety-Critical Systems, 2007<lb/> (SP-2121)<lb/> 2007 World Congress<lb/> Detroit, Michigan<lb/>
+	</note>
+
+	<date>April 16-19, 2007<lb/></date>
+
+	<note type="other">Downloaded from SAE International by European Patent Office, Thursday, April 10, 2014 11:13:42 AM</note>
+
+		</front>
+	</text>
+</tei>

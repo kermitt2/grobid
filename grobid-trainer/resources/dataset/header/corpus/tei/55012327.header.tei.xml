@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012327"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Theor Appl Genet (2001) 102:1016–1028<lb/></reference>
+
+	<note type="copyright">© Springer-Verlag 2001<lb/></note>
+
+	<div type="abstract">Abstract QTL analysis of pepper fruit characters was<lb/> performed in an F 3 population derived from a cross be-<lb/>tween two Capsicum annuum genotypes, the bell-type<lb/> cultivar Maor and the Indian small-fruited line Perennial.<lb/> RFLP, AFLP ®1 , RAPD and morphological markers<lb/> (a total of 177) were used to construct a comparative<lb/> pepper-tomato genetic map for this cross, and 14 quanti-<lb/>tatively inherited traits were evaluated in 180 F 3 fami-<lb/>lies. A total of 55 QTL were identified by interval analy-<lb/>sis using LOD 3.0 as the threshold for QTL detection.<lb/> QTL for several traits including fruit diameter and<lb/> weight, pericarp thickness and pedicel diameter were of-<lb/>ten located in similar chromosomal regions, thus reflect-<lb/>ing high genetic correlations among these traits. A major<lb/> QTL that accounts for more than 60% of the phenotypic<lb/> variation for fruit shape (ratio of fruit length to fruit di-<lb/>ameter) was detected in chromosome 3. This chromo-<lb/>some also contained QTL for most of the traits scored in<lb/> the population. Markers in linkage groups 2, 3, 8 and 10<lb/> were associated with QTL for multiple traits, thereby<lb/> suggesting their importance as loci that control develop-<lb/>mental processes in pepper. Several QTL in pepper ap-<lb/>peared to correspond to positions in tomato for loci con-<lb/>trolling the same traits, suggesting the hypothesis that<lb/> these QTL may be orthologous in the two species.<lb/></div>
+
+	<keyword>Keywords Capsicum · Quantitative traits · Fruit<lb/> development · Molecular markers · Comparative<lb/> mapping<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

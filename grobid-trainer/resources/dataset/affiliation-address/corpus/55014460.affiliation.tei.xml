@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+ From the
+						<affiliation>
+							<orgName type="department">Section of Neuromuscular Disorders</orgName>,
+							<orgName type="department">Department of Neurology</orgName>,
+							<orgName type="institution">Chang Gung Memorial Hospital</orgName>,
+							<address>
+								<settlement>Taipei</settlement>,
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="institution">Chang Gung<lb/> University College of Medicine</orgName>,
+							<address>
+								<settlement>Taoyuan</settlement>,
+								<country>Taiwan</country>;
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="department">Department of Life Science</orgName>,
+							<orgName type="institution">National Taiwan Normal University</orgName>,
+							<address>
+								<settlement>Taipei</settlement>,
+							<lb/>
+								<country>Taiwan</country>.
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="department">Department of Neurology</orgName>,
+							<orgName type="institution">Chang Gung Memorial Hospital</orgName>.
+							<address>
+								<addrLine>5, Fusing St.</addrLine>,
+								<settlement>Gueishan<lb/> Township</settlement>,
+								<region>Taoyuan County 333</region>,
+								<country>Taiwan (R.O.C.)</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

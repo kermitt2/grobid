@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012378"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">71<lb/></note>
+
+	<note type="other">Molecular Diagnostics: Techniques and Applications for the Clinical Laboratory 1 ed.<lb/></note>
+
+	<note type="copyright">Copyright © 2010 by Academic Press. Inc. All rights of reproduction in any form reserved.<lb/> 2010<lb/></note>
+
+	<docTitle>
+	<titlePart>In Situ Hybridization: Principles and<lb/> Applications<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Elizabeth R. Unger<lb/> 1<lb/> , Hiroaki Nitta<lb/> 2<lb/> , Daisy R. Lee<lb/> 1<lb/> and Thomas M. Grogan<lb/> 2<lb/>
+	</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1<lb/> Division of Viral and Rickettsial Diseases, Centers for Disease Control and Prevention,</affiliation>
+	</byline>
+
+	<address>Atlanta, GA 30333<lb/></address>
+
+	<byline>
+	<affiliation>2<lb/> Ventana Medical Systems, Inc.,</affiliation>
+	</byline>
+
+	<address>Tucson, AZ 85755<lb/></address>
+
+	<note type="other">Disclosures/Conflict of Interest: The findings and conclu-<lb/>sions in this report are those of the authors and do not nec-<lb/>essarily represent the views of the funding agency. Hiroaki<lb/> Nitta and Thomas M. Grogan are employees of Ventana<lb/> Medical Systems, Inc., a member of Roche Group.<lb/></note>
+
+		</front>
+	</text>
+</tei>

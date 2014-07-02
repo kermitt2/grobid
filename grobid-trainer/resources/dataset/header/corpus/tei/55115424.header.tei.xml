@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei type="technical-report">
+	<teiHeader>
+		<fileDesc xml:id="55115424"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>3D Deformation Using Moving Least Squares<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Yuanchen Zhu *<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Harvard University<lb/></affiliation>
+	</byline>
+
+	<byline>
+	<docAuthor>Steven J. Gortler<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Harvard University<lb/></affiliation>
+	</byline>
+
+	<note type="other">Figure 1: Deformation results using our method. Point handles are inside the mesh and marked as red dots. (Models courtesy of Cyberware.)<lb/></note>
+
+	<div type="abstract">Abstract<lb/> We present a 3d deformation method based on Moving Least<lb/> Squares that extends the work by Schaefer et al. [Schaefer et al.<lb/> 2006] to the 3d setting. The user controls the deformation by ma-<lb/>nipulating a set of point handles. Locally, the deformation takes<lb/> the form of either a rigid transformation or optionally a similarity<lb/> transformation, and tends to preserve local features. Our derivation<lb/> of the closed-form solution is based on singular value decomposi-<lb/>tion, and is applicable to deformation in arbitrary dimensions, as<lb/> opposed to the planar case in [Schaefer et al. 2006]. Our prototype<lb/> implementation allows interactive deformation of meshes of over<lb/> 100k vertices.<lb/> For the application of 3d mesh deformation, we further introduce a<lb/> weighting scheme that determines the influence of point handles on<lb/> vertices based on approximate mesh geodesics. In practice, the new<lb/> scheme gives much better deformation results for limbed character<lb/> models, compared with simple Euclidean distance based weighting.<lb/> The new weighting scheme can be of use to the traditional skinny<lb/> based deformation technique as well.<lb/></div>
+
+		</front>
+	</text>
+</tei>

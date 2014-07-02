@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei type="presentation">
+	<teiHeader>
+		<fileDesc xml:id="55113818"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Advanced Metrology to Support IMS<lb/> Trace Explosive Detection:<lb/> NIST Capabilities and Progress<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Greg Gillen, Robert Fletcher, Jenny Verkouteren, George Klouda,<lb/> Cynthia Zeissler, Andrew Evans, DiAundra Davis, Maria Santiago, and<lb/> Mike Verkouteren<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Surface and Microanalysis Science Division<lb/> National Institute of Standards and Technology<lb/></affiliation>
+	</byline>
+
+	<address>Gaithersburg, Maryland<lb/></address>
+
+	<note type="other">ISIMS Conference, Gatlinburg, Tennessee,</note>
+
+	<date>July 26-29, 2004</date>
+
+		</front>
+	</text>
+</tei>

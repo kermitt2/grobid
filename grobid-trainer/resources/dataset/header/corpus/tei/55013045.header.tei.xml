@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013045"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>GPS solution for Car and<lb/> Navigation system applications<lb/> SiRF Sr. Field Application consultant<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Jerry Juan<lb/></docAuthor>
+	</byline>
+
+	<date>2006/03/23</date>
+
+		</front>
+	</text>
+</tei>

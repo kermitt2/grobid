@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Ana</forename>
+								<middlename>M</middlename> .
+								<surname>Gonzalez-Angulo</surname>,
+							</persName>
+							<persName>
+								<forename>Dejan</forename>
+								<surname>Juric</surname>,
+							</persName>
+							<persName>
+								<forename>Guillem</forename>
+								<surname>Argilés</surname>,
+							</persName>
+							<persName>
+								<forename>Jan</forename>
+								<middlename>HM</middlename>
+								<surname>Schellens</surname>,
+							</persName>
+							<persName>
+								<forename>Howard</forename>
+								<middlename>A</middlename>.
+								<surname>Burris</surname>,
+							</persName>
+							<persName>
+								<forename>Jordan</forename>
+							<lb/>
+								<surname>Berlin</surname>,
+							</persName>
+							<persName>
+								<forename>Mark</forename>
+								<middlename>R</middlename> .
+								<surname>Middleton</surname> ,
+							</persName>
+							<persName>
+								<forename>Martin</forename>
+								<middlename>H</middlename> .
+								<surname>Schuler</surname> ,
+							</persName>
+							<persName>
+								<forename>Robin</forename>
+								<middlename>Van</middlename>
+								<surname>Geel</surname> ,
+							</persName>
+							<persName>
+								<forename>Thorunn</forename>
+								<surname>Helgason</surname> ,
+							</persName>
+							<persName>
+								<forename>Douglas</forename>
+								<surname>Bootle</surname> ,
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Markus</forename>
+								<surname>Boehm</surname> ,
+							</persName>
+							<persName>
+								<forename>Timothy</forename>
+								<middlename>K</middlename> .
+								<surname>Goggin</surname>,
+							</persName>
+							<persName>
+								<forename>David</forename>
+								<surname>Demanse</surname> ,
+							</persName>
+							<persName>
+								<forename>Cornelia</forename>
+								<surname>Quadt</surname> ,
+							</persName>
+							<persName>
+								<forename>Jose</forename>
+								<surname>Baselga</surname>
+								;
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

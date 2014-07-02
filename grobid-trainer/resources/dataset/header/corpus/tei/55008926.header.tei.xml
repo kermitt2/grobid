@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008926"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Broadband without boundaries<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">A unique solution for high performance, high-speed 2-way<lb/> broadband communication, The OrSat system ensures superior<lb/> quality of connectivity for comprehensive on-board<lb/> communication and entertainment applications. With an exclusive<lb/> mechanical design, compact dimensions, no &apos;keyholes&apos; for<lb/> continuous zenith-horizon communications and a built-in RF<lb/> package of 4 or 8W BUC, Orbit&apos;s turnkey OrSat (AL-7103 MKII)<lb/> solution provides 1 Mbps, typically outbound data rate in an unmatched performance<lb/> to size ratio.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,94 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55114130"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Published on Meeting Library </note>
+
+	<ptr>(http://meetinglibrary.asco.org)<lb/> </ptr>
+
+	<note type="other">Home &gt; </note>
+
+	<idno>114843-132<lb/> </idno>
+
+	<docTitle>
+	<titlePart>S afety, pharmacokinetics, and preliminary activity of the α-specific PI3K inhibitor BYL719:<lb/> Results from the first-in-human study.<lb/> </titlePart>
+	</docTitle>
+
+	<note type="other">Meeting:<lb/> 2013 ASCO Annual M eeting<lb/> Category:<lb/> Developmental Therapeutics -Clinical Pharmacology and Experimental Therapeutics<lb/> S ubcategory:<lb/> PI3-Akt-mTOR Pathway<lb/> S ession Type and S ession Title:<lb/> Poster Discussion Session, Developmental Therapeutics -Clinical Pharmacology and Experimental<lb/> Therapeutics<lb/> Abstract Number:<lb/> 2531<lb/> Citation:<lb/></note>
+
+	<reference>J Clin Oncol 31, 2013 (suppl; abstr 2531)<lb/></reference>
+
+
+	<byline>
+	<docAuthor>Author(s):<lb/> Ana M . Gonzalez-Angulo, Dejan Juric, Guillem Argilés, Jan HM Schellens, Howard A. Burris, Jordan<lb/> Berlin, M ark R. M iddleton, M artin H. Schuler, Robin Van Geel, Thorunn Helgason, Douglas Bootle,<lb/> M arkus Boehm, Timothy K. Goggin, David Demanse, Cornelia Quadt, Jose Baselga;</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>The University of<lb/> Texas M D Anderson Cancer Center,</affiliation>
+	</byline>
+
+	<address>Houston, TX;</address>
+
+	<byline>
+	<affiliation>M assachusetts General Hospital Cancer Center,<lb/> Harvard M edical School, Boston, M A; Department of M edical Oncology, Vall d&apos;Hebron University<lb/> Hospital,</affiliation>
+	</byline>
+
+	<address>Barcelona, Spain;</address>
+
+	<byline>
+	<affiliation>The Netherlands Cancer Institute-Antoni Van Leeuwenhoek Hospital,<lb/></affiliation>
+	</byline>
+
+	<address>Amsterdam, Netherlands;</address>
+
+	<byline>
+	<affiliation>Sarah Cannon Research Institute; Tennessee Oncology,</affiliation>
+	</byline>
+
+	<address>Nashville, TN;<lb/></address>
+
+	<byline>
+	<affiliation>Vanderbilt-Ingram Cancer Center,</affiliation>
+	</byline>
+
+	<address>Nashville, TN;</address>
+
+	<byline>
+	<affiliation>Churchill Hospital Cancer Center,</affiliation>
+	</byline>
+
+	<address>Oxford, United<lb/> Kingdom;</address>
+
+	<byline>
+	<affiliation>West German Cancer Center, University Hospital Essen,</affiliation>
+	</byline>
+
+	<address>Essen, Germany;</address>
+
+	<byline>
+	<affiliation>Novartis Pharma<lb/> AG,</affiliation>
+	</byline>
+
+	<address>Basel, Switzerland;</address>
+
+	<byline>
+	<affiliation>Novartis Pharmaceuticals Corp,</affiliation>
+	</byline>
+
+	<address>East Hanover, NJ;</address>
+
+	<byline>
+	<affiliation>M emorial Sloan-Kettering<lb/> Cancer Center,</affiliation>
+	</byline>
+
+	<address>New York, NY<lb/></address>
+
+	<div type="abstract">Background: BYL719 is an oral small-molecule inhibitor of the p110α catalytic subunit of<lb/> phosphatidylinositol 3-kinase (PI3K), which is encoded by the PIK3CA gene, one of the most<lb/> commonly mutated genes in human cancers. BYL719 inhibits proliferation of PI3Kα-driven cancer cell<lb/> lines in vitro and causes regression of PIK3CA-mutant tumor models in vivo. Methods: This Ph I<lb/> study was performed in patients (pts) with advanced solid tumors carrying a somatic mutation of<lb/> PIK3CA. Dose escalation used an adaptive Bayesian logistic regression model with overdose control.<lb/> Following determination of the maximum tolerated dose (M TD), an expansion cohort was opened at<lb/> the M TD to evaluate safety, pharmacokinetics (PK), and clinical activity in pts with PIK3CA-mutant</div>
+
+		</front>
+	</text>
+</tei>

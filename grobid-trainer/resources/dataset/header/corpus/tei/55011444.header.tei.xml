@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011444"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note>AFRL-IF-RS-TR-2005-272<lb/> Final Technical Report<lb/></note>
+
+	<date>July 2005<lb/></date>
+
+	<docTitle>
+	<titlePart>PASIS: A DISTRIBUTED FRAMEWORK FOR<lb/> PERPETUALLY AVAILABLE AND SECURE<lb/> INFORMATION SYSTEMS<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<affiliation>Carnegie Mellon University<lb/> </affiliation>
+	</byline>
+
+	<note type="grant">Sponsored by<lb/> Defense Advanced Research Projects Agency<lb/> DARPA Order No. H549/J368<lb/> APPROVED FOR PUBLIC RELEASE; DISTRIBUTION UNLIMITED.<lb/> The views and conclusions contained in this document are those of the authors and should not be<lb/> interpreted as necessarily representing the official policies, either expressed or implied, of the<lb/> Defense Advanced Research Projects Agency or the U.S. Government.<lb/></note>
+
+	<byline>
+	<affiliation>AIR FORCE RESEARCH LABORATORY<lb/> INFORMATION DIRECTORATE<lb/> ROME RESEARCH SITE<lb/></affiliation>
+	</byline>
+
+	<address>ROME, NEW YORK</address>
+
+		</front>
+	</text>
+</tei>

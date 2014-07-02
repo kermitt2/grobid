@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55114165"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Automated and Scalable QoS Control for Network Convergence<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Wonho Kim<lb/> * , Puneet Sharma<lb/> + , Jeongkeun Lee<lb/> + , Sujata Banerjee<lb/> + ,<lb/> Jean Tourrilhes<lb/> + , Sung-Ju Lee<lb/> + , and Praveen Yalagandula<lb/> + *</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Princeton University<lb/> + HP Labs<lb/></affiliation>
+	</byline>
+
+	<div type="abstract">Abstract<lb/> Network convergence is becoming increasingly im-<lb/>portant for cost reduction and management simplifica-<lb/>tion. However, this convergence requires strict perfor-<lb/>mance isolation while keeping fine-grained control of<lb/> each service (e.g. VoIP, video conference etc.). It is diffi-<lb/>cult to guarantee the performance requirements for vari-<lb/>ous services with manual configuration of the Quality-of-<lb/>Service (QoS) knobs on a per-device basis as is prevalent<lb/> today. We propose a network QoS control framework<lb/> for converged fabrics that automatically and flexibly pro-<lb/>grams a network of devices with the necessary QoS pa-<lb/>rameters, derived from a high level set of application re-<lb/>quirements. The controller leverages our QoS extensions<lb/> of OpenFlow APIs, including per-flow rate-limiters and<lb/> dynamic priority assignment. We also present some re-<lb/>sults from a testbed implementation to validate the per-<lb/>formance of our controller.<lb/></div>
+
+		</front>
+	</text>
+</tei>

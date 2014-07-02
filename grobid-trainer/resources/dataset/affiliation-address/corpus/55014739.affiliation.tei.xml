@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="laboratory">Laboratoire de Chimie Analytique</orgName>,
+							<orgName type="department">Faculté de Pharmacie</orgName>,
+							<address>
+								<addrLine>Avenue Charles Flahault</addrLine>,
+							<lb/>
+								<postCode>34060</postCode>
+								<settlement>Montpellier</settlement>,
+								<country>France</country>;
+							</address>
+						</affiliation>
+						<affiliation>			
+							<orgName type="laboratory">Laboratoire d&apos;Application de la Chimie à l&apos;Environnement</orgName>,
+							<lb/>
+							<orgName type="institution">Université Claude Bernard</orgName>,
+							<address>
+								<addrLine>Boulevard du 11 Novembre 1918</addrLine>,
+								<settlement>Lyon</settlement>,
+								<country>France</country>; and
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="department">Centre de<lb/> Phytopharmacie</orgName>,
+							<address>
+								<addrLine>Avenue de Villeneuve</addrLine>,
+								<postCode>66000</postCode>
+								<settlement>Perpignan</settlement>,
+								<country>France</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

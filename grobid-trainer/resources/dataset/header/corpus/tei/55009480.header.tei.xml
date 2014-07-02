@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009480"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Mobile Augmented Reality browsers should allow labeling objects<lb/> A Position Paper for the Augmented Reality on the Web W3C<lb/> Workshop *<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Pedro de-las-Heras-Quirós<lb/> Raúl Román-López<lb/> Roberto Calvo-Palomino, José Gato, Juan F. Gato<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Universidad Rey Juan Carlos,</affiliation>
+	</byline>
+
+	<address>Madrid, Spain<lb/></address>
+
+	<email>{pheras,rroman,rocapal,jgato,jfcogato}@libresoft.es<lb/></email>
+
+	<date>May 30, 2010<lb/></date>
+
+	<div type="abstract">Abstract<lb/> LibreGeoSocial is a new FLOSS (Free/Libre Open Source) mobile social network with a Mobile Augmented<lb/> Reality (MAR) interface that offers functionality beyond the one available on commercial MAR browsers. The<lb/> nodes of the social network (people, text notes, audio snippets, pictures,. . . ) are both geolocated and registered<lb/> at different altitudes. LibreGeoSocial nodes can be shown through a traditional list based view or through a<lb/> magic lens MAR UI. This interface allows the user not only to browse tags associated with objects of the reality<lb/> perceived through the camera, but also enables to use the mobile to link media to objects, enabling the labeling<lb/> of things at different altitudes and situated not necessarily in the vicinity of the user. The system works both<lb/> outdoors and indoors, in this latest case with location provided by matrix codes. A first version of LibreGeoSocial<lb/> was uploaded to the Android market in march 2010. The newest available source code of LibreGeoSocial supports<lb/> channels/layers that can be updated either from the mobile or through the server. As work in progress, computer<lb/> vision algorithms have been added to the LibreGeoSocial mobile application to provide tracking of outlines of<lb/> rectangular objects. With these we intend to explore the best ways to combine the location and orientation<lb/> provided by GPS and compass with the tracking obtained through image processing in order to improve the<lb/> accuracy.<lb/> In this position paper we argue that similar functionality to labeling mechanisms available in LibreGeosocial is<lb/> a requirement for many kinds of MAR applications yet to come. It is in fact its absence in most current commercial<lb/> MAR browsers one of the factors that nowadays could hamper the development of this nascent industry beyond<lb/> the business model exemplified by Layar or Wikitude where users can browse contents uploaded by others third<lb/> parties.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010984"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<affiliation>A F F Y M E T R I X ® P R O D U C T F A M I LY &gt;<lb/> </affiliation>
+
+	<note type="other">R N A A R R AYS A N D R E A G E N T S &gt;<lb/> I I<lb/> I I<lb/></note>
+
+	<docTitle>
+	<titlePart>GeneChip ® Mouse Genome Arrays<lb/></titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

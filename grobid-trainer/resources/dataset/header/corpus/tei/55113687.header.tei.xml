@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<tei type="product-sheet">
+	<teiHeader>
+		<fileDesc xml:id="55113687"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/> 
+	<docTitle>
+	<titlePart>Bayer CropScience<lb/> Hoja de Seguridad para Materiales de acuerdo a NTC4435<lb/>RONSTAR EVOLUTION EC510 4X5L BOT CO<lb/>
+	</titlePart>
+	</docTitle>
+
+	<note type="other">Versión 1 / CO<lb/> </note>
+
+	<note type="submission">Fecha de revisión: 04.01.2011<lb/> </note>
+
+	<note>102000012953<lb/> </note>
+
+	<note type="submission">Fecha de impresión: 26.07.2013<lb/> </note>
+
+	<note type="page">Pág. 1 de 9<lb/></note>
+
+	<div type="introduction">SECCION 1: INFORMACIÓN QUÍMICA DEL PRODUCTO Y DE LA COMPANIA<lb/></div>
+
+		</front>
+	</text>
+</tei>

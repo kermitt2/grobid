@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55113601"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Send Orders for Reprints to </note>
+
+	<email>reprints@benthamscience.net<lb/></email>
+	
+	<note type="page">2 </note>
+
+	<reference>Current Gene Therapy, 2014, 14, 2-9<lb/></reference>
+
+	<note>1875-5631/14 $58.00+.00<lb/></note>
+
+	<note type="copyright">© 2014 Bentham Science Publishers<lb/></note>
+
+	<docTitle>
+	<titlePart>Targeted Genome Editing Tools for Disease Modeling and Gene Therapy<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Mi Cai<lb/> 1, and Yi Yang<lb/> 1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Novartis Institutes for Biomedical Research Inc.,</affiliation>
+	</byline>
+
+	<address>Cambridge, MA 02139, USA<lb/></address>
+
+	<div type="abstract">Abstract: The development of custom-designed nucleases (CDNs), including zinc finger nucleases (ZFNs) and transcrip-<lb/>tion activator-like effector nucleases (TALENs), has made it possible to perform precise genetic engineering in many cell<lb/> types and species. More recently, clustered regularly interspaced short palindromic repeats (CRISPR)/CRISPR-associated<lb/> (Cas) system has been successfully employed for genome editing. These RNA-guided DNA endonucleases are shown to<lb/> be more efficient and flexible than CDNs and hold great potential for applications in both biological studies and medicine.<lb/> Here, we review the progress that has been made for all three genome editing technologies in modifying both cells and<lb/> model organisms, compare important aspects of each approach, and summarize the applications of these tools in disease<lb/> modeling and gene therapy. In the end, we discuss future prospects of the field.<lb/></div>
+
+	<keyword>Keywords: Zinc finger nucleases, TALENs, CRISPR, disease modeling, gene therapy, review.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

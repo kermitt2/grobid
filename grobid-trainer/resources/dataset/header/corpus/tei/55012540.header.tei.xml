@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012540"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>High-Efficiency, Regulated Charge Pumps for<lb/> High-Current Applications<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>By Brigitte Kormann, Dipl.-Ing .<lb/></docAuthor>
+	</byline>
+
+		</front>
+	</text>
+</tei>

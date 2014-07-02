@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010508"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<docAuthor>Ronald Bourret<lb/></docAuthor>
+	</byline>
+
+	<note type="other">Consulting, writing, and research in XML and databases<lb/> Member<lb/> Search site<lb/> Home<lb/> Product lists<lb/> -XML / Databases<lb/> -XML Data Binding<lb/> Writing -XML and Databases<lb/> -Native XML Database Use<lb/> Cases -Mapping DTDs to Databases<lb/> -XML Namespaces FAQ<lb/> -All papers...<lb/> Software -XML-DBMS<lb/> -DTD Parser<lb/> Links -XML<lb/> -XML / Databases<lb/> Services -Consulting<lb/> -Presentations<lb/> About -Resume<lb/> -Personal<lb/> -Contact<lb/></note>
+
+	<docTitle>
+	<titlePart>XML Data Binding Resources<lb/></titlePart>
+	</docTitle>
+
+	<note type="copyright">Copyright &#169; 2001-2010 by Ronald Bourret<lb/></note>
+
+	<note type="submission">Last updated: March 17, 2010<lb/></note>
+
+	<note type="other"> 1.0 Introduction<lb/>  1.1 XML Data Binding<lb/>  1.2 Limitations of XML Data Binding<lb/>  1.3 Categorizing XML Data Binding Products<lb/>  1.4 Disclaimer<lb/>  2.0 Products<lb/>  2.1 Design-Time Products<lb/>  2.2 Run-Time Products<lb/>  2.3 Test Suites and Benchmarks<lb/> 3.0 Articles, Books, etc.<lb/>  3.1 Articles: General<lb/>  3.2 Articles: JAXB and Castor<lb/>  3.3 Articles: Other Products<lb/>  3.4 Articles: Other Techniques<lb/>  3.5 Articles: Mapping XML &lt;=&gt; UML, Objects, etc.<lb/>  3.6 Books<lb/>  3.7 Specifications<lb/>  3.8 Links<lb/>  4.0 Comments and Feedback<lb/>  4.1 Suggested Products<lb/></note>
+
+		</front>
+	</text>
+</tei>

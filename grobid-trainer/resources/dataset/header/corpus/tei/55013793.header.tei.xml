@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013793"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Multimodal Analysis for Universal Smart Room Applications<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Lutz Goldmann, Amjad Samour, Thomas Sikora<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Technical University of Berlin, Communication Systems Group<lb/></affiliation>
+	</byline>
+
+	<address>Einsteinufer 17, 10587 Berlin, Germany<lb/></address>
+
+	<div type="abstract">Abstract<lb/> Abstract This paper presents a multimodal system<lb/> incorporating smart room technologies (SRT) for confer-<lb/>ence room applications. Although, the audio-visual anal-<lb/>ysis requires only rather basic equipment, the system<lb/> works reliably and supports various applications such<lb/> as recognizing persons using different modalities, local-<lb/>izating visible speakers, controlling the camera view and<lb/> summarizing the AV data.<lb/></div>
+
+		</front>
+	</text>
+</tei>

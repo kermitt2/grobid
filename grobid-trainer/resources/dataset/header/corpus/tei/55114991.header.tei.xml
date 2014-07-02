@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55114991"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">L E T T E R S<lb/></note>
+
+	<docTitle>
+	<titlePart>Embryonic stem cells require Wnt proteins to prevent<lb/> differentiation to epiblast stem cells<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Derk ten Berge<lb/> 1,2,4 , Dorota Kurek<lb/> 1 , Tim Blauwkamp<lb/> 2 , Wouter Koole<lb/> 2 , Alex Maas<lb/> 3 , Elif Eroglu<lb/> 2 , Ronald K. Siu<lb/> 2<lb/> and Roel Nusse<lb/> 2<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Pluripotent stem cells exist in naive and primed states,<lb/> epitomized by mouse embryonic stem cells (ESCs) and the<lb/> developmentally more advanced epiblast stem cells (EpiSCs;<lb/> ref. 1). In the naive state of ESCs, the genome has an unusual<lb/> open conformation and possesses a minimum of repressive<lb/> epigenetic marks<lb/> 2 . In contrast, EpiSCs have activated the<lb/> epigenetic machinery that supports differentiation towards the<lb/> embryonic cell types<lb/> 3–6 . The transition from naive to primed<lb/> pluripotency therefore represents a pivotal event in cellular<lb/> differentiation. But the signals that control this fundamental<lb/> differentiation step remain unclear. We show here that<lb/> paracrine and autocrine Wnt signals are essential self-renewal<lb/> factors for ESCs, and are required to inhibit their<lb/> differentiation into EpiSCs. Moreover, we find that Wnt proteins<lb/> in combination with the cytokine LIF are sufficient to support<lb/> ESC self-renewal in the absence of any undefined factors, and<lb/> support the derivation of new ESC lines, including ones from<lb/> non-permissive mouse strains. Our results not only demonstrate<lb/> that Wnt signals regulate the naive-to-primed pluripotency<lb/> transition, but also identify Wnt as an essential and limiting<lb/> ESC self-renewal factor.<lb/> We visualized activation of the Wnt pathway in ESCs using R1 cells<lb/> carrying the Wnt reporter 7xTcf–eGFP (enhanced green fluorescent<lb/> protein; ref. 7), cultured on mouse embryo fibroblast (MEF) feeder<lb/> layers. ESC colonies with sharp boundaries and hard-to-distinguish<lb/> individual cells—characteristics of undifferentiated colonies—showed<lb/> higher levels of reporter activity than flattened colonies with distinct<lb/> individual cells (Fig. 1a,b). We verified the Wnt responsiveness of the<lb/> reporter by its induction by purified Wnt3a protein (Fig. 1c,d), and by<lb/> its extinction by the Wnt antagonist Fz8CRD, a soluble domain of the<lb/> Wnt receptor that binds and sequesters Wnt proteins (Fig. 1e,f). These<lb/> data demonstrate that R1 ESCs grown on MEFs experience paracrine or<lb/> autocrine stimulation by Wnt ligands. Indeed, Wnts are expressed by<lb/> ESCs themselves (Supplementary Fig. S1a) and by MEFs (ref. 8).<lb/></div>
+
+	<byline>
+	<affiliation>1 Erasmus MC Stem Cell Institute, Department of Cell Biology, Erasmus Medical Center,</affiliation>
+	</byline>
+
+	<address>P.O. Box 2040, 3000 CA Rotterdam, The Netherlands.<lb/></address>
+
+	<byline>
+	<affiliation>2 Howard Hughes<lb/> Medical Institute, and Department of Developmental Biology, Stanford University School of Medicine,</affiliation>
+	</byline>
+
+	<address>Stanford, California 94305, USA.<lb/></address>
+
+	<byline>
+	<affiliation>3 Department of Cell Biology,<lb/> Erasmus Medical Center,</affiliation>
+	</byline>
+
+	<address>P.O. Box 2040, 3000 CA Rotterdam, The Netherlands.<lb/></address>
+
+	<note type="other">4 Correspondence should be addressed to D.t.B.</note>
+
+	<email>(e-mail: d.tenberge@erasmusmc.nl)</email>
+
+		</front>
+	</text>
+</tei>

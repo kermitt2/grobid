@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013850"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+
+	<note>3GPP2 S.S0132-0<lb/> </note>
+
+	<note type="other">Version 1.0<lb/></note>
+
+	<date>Version Date: January 28, 2010<lb/></date>
+
+	<docTitle>
+	<titlePart>Femtocell Security Framework<lb/></titlePart>
+	</docTitle>
+
+	<note type="copyright">© 3GPP2 2010<lb/> COPYRIGHT NOTICE<lb/> 3GPP2 and its Organizational Partners claim copyright in this document and individual Organizational Partners<lb/> may copyright and issue documents or standards publications in individual Organizational Partner&apos;s name based<lb/> on this document. Requests for reproduction of this document should be directed to the 3GPP2 Secretariat at<lb/> secretariat@3gpp2.org. Requests to reproduce individual Organizational Partner&apos;s documents should be<lb/> directed to that Organizational Partner. See www.3gpp2.org for more information.<lb/></note>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013934"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">1287<lb/></note>
+
+	<docTitle>
+	<titlePart>Redox Potentials of Free Radicals. I. Simple<lb/> Organic Radicals<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>P. S . Rao&apos; and E. Hayon*<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Contribution f r o m the Pioneering Research Laboratory, U . S. Army Natick<lb/> Laboratories,</affiliation>
+	</byline>
+
+	<address>Natick, Massachusetts 01760.</address>
+
+	<note type="submission">Received August 24, 1973<lb/></note>
+
+	<div type="abstract">Abstract: The redox potentials of some free radicals in aqueous solution have been determined using a new<lb/> method. This method is described in detail and is based on the electron transfer properties and characteristics<lb/> of the donor radical , RH to a range of acceptor molecules A. The reaction .RH + A F ! R + .A-+ H+ occurs<lb/> at an appreciable rate whenever the redox potential E&quot; (V, at pH 7.0, -25&quot;) of A is higher than that of &apos;RH.<lb/> The percentage efficiency of this electron transfer process is determined for a large number of acceptors by moni-<lb/>toring the formation of the .A-radicals at the appropriate pH and wavelength. The fast reaction technique of pulse<lb/> radiolysis and kinetic absorption spectrophotometry has been used to follow these reactions. Typical &quot;titration&quot;<lb/> type curves are obtained when plotting the percentage efficiency cs. E&quot; 1 of the acceptors. From the midpoint<lb/> of such curves, the redox potentials of a number of organic free radicals have been determined. Various radicals<lb/> derived from aliphatic alcohols, sugars, lactic acid, glycolic acid, lactamide, glycolamide, oxalacetic acid, glycine, and<lb/> glycine anhydride have been produced and their potentials derived. These radicals are known to undergo acid-<lb/>base reactions, and the variations of the E&quot; as a function of the acid or base forms of the radicals were studied.<lb/> In all cases, the ionized (basic) forms of the radicals have significantly lower redox potentials than the acid forms<lb/> of the radicals, making these radicals more powerful reducing agents. Some aspects of the mechanisms and kinetics<lb/> of free radical reactions in the literature are discussed and can be rationalized on the basis of the determined redox<lb/> potentials of these free radicals.<lb/> he chemistry of free radicals in solution has de-</div>
+
+		</front>
+	</text>
+</tei>

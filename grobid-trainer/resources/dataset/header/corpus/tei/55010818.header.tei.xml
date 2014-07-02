@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010818"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">1<lb/></note>
+
+	<docTitle>
+	<titlePart>A Compressive Sensing and Unmixing Scheme<lb/> for Hyperspectral Data Processing<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Chengbo Li, Ting Sun, Kevin Kelly, and Yin Zhang<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Abstract<lb/> Hyperspectral data processing typically demands enormous computational resources in terms of storage, com-<lb/>putation and I/O throughputs, especially when real-time processing is desired. In this paper, we investigate a low-<lb/>complexity scheme for hyperspectral data compression and reconstruction. In this scheme, compressed hyperspectral<lb/> data are acquired directly by a device similar to the single-pixel camera [5] based on the principle of compressive<lb/> sensing. To decode the compressed data, we propose a numerical procedure to directly compute the unmixed abundance<lb/> fractions of given endmembers, completely bypassing high-complexity tasks involving the hyperspectral data cube<lb/> itself. The reconstruction model is to minimize the total variation of the abundance fractions subject to a pre-<lb/>processed fidelity equation with a significantly reduced size, and other side constraints. An augmented Lagrangian type<lb/> algorithm is developed to solve this model. We conduct extensive numerical experiments to demonstrate the feasibility<lb/> and efficiency of the proposed approach, using both synthetic data and hardware-measured data. Experimental and<lb/> computational evidences obtained from this study indicate that the proposed scheme has a high potential in real-world<lb/> applications.<lb/></div>
+
+	<keyword>Index Terms<lb/> Hyperspectral imaging, data unmixing, compressive sensing, total variation, augmented Lagrangian method, fast<lb/> Walsh-Hadamard transform.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

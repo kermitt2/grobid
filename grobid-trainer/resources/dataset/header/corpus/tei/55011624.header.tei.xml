@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011624"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>A novel calcineurin splice variant that modifies calcineurin activity<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Alexander Reuter, Jun Mi, Inken Sehrsam, Albert C. Ludolph and Helge Vö lkel<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Neurology, University of Ulm, </affiliation>
+	</byline>
+
+	<address>Germany<lb/></address>
+
+	<div type="abstract">Calcineurin is a Ca<lb/> 21<lb/> /calmodulin dependent phosphopro-<lb/>tein phosphatase implicated in a wide range of disorders.<lb/> Here, we report the cloning of a novel calcineurin Aa splice<lb/> variant that lacks both the catalytic and calcineurin B<lb/> binding domains. Biochemical analysis revealed a stimulat-<lb/>ing effect on calcineurin activity at low calcium<lb/> concentrations as well as protein–protein interaction with<lb/> the catalytic calcineurin holoenzyme. By Western blot<lb/> analysis, expression of similar short splice variants could be<lb/> seen in the spinal cord of an animal model of familial<lb/> amyotrophic lateral sclerosis, suggesting a role of these new<lb/> variants in motor neuron disease.<lb/></div>
+
+	<keyword>Keywords: calcineurin; splice variant; amyotrophic lateral<lb/> sclerosis; phosphatase.<lb/></keyword>
+
+	<div type="abstract">Calcineurin (EC 3.1.3.16), the only serine/threonine protein<lb/> phosphatase that is under the control of Ca<lb/> 21<lb/> /calmodulin,<lb/> plays an important role in the coupling of Ca<lb/> 21 signals to<lb/> cellular responses [1]. Although it is broadly expressed, it is<lb/> especially abundant in the nervous system where it accounts<lb/> for more than 1% of total protein [2]. Calcineurin becomes<lb/> activated by binding calcium and calmodulin when cytosolic<lb/> calcium levels rise, and is inhibited on binding the<lb/> immunosuppressants Cyclosporin A and FK506 in com-<lb/>plexes with their respective cellular receptors. Recently, a<lb/> family of conserved calcineurin regulators that inhibit<lb/> calcineurin has been described [3]. In addition, a role for<lb/> calcineurin has been discussed in several disorders such as<lb/> ischemia/reperfusion injury, cardiac hypertension, stroke,<lb/> and amyotrophic lateral sclerosis [4 –7].<lb/> Calcineurin is a heterodimer of a catalytic A subunit of<lb/> &lt; 60 kDa and a regulatory B subunit of &lt; 19 kDa [8]. So<lb/> far three isoforms of the A subunit are known, correspond-<lb/>ing to different genes: calcineurin Aa (PP3CA ) on<lb/> chromosome 4, calcineurin Ab (PP3CB ) on chromosome<lb/> 10 and calcineurin Ag (PP3CC ) on chromosome 8. In<lb/> addition, all isoforms show alternative splicing resulting in<lb/> at least two splice variants per isoform. The A subunit has<lb/> five distinct domains: the N-terminal domain of so far<lb/> unknown function, the catalytic domain, the B-subunit<lb/> binding domain, the calmodulin-binding domain and the<lb/> auto-inhibitory domain. In this study, we report the cloning<lb/> and expression of a novel calcineurin Aa splice variant<lb/> CNAa16K that lacks the catalytic and the calcineurin B<lb/> binding domain. Although it possesses no phosphatase<lb/> activity on its own, this new isoform was able to stimulate<lb/> the phosphatase activity of purified calcineurin at low<lb/> calcium concentrations.<lb/></div>
+
+	<note type="other">M A T E R I A L S A N D M E T H O D S</note>
+
+		</front>
+	</text>
+</tei>

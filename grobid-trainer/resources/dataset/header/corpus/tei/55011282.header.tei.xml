@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011282"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Chess<lb/> Go<lb/></note>
+
+	<docTitle>
+	<titlePart>Elo rating system<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">From Wikipedia, the free encyclopedia<lb/>This is an old revision of this page, as edited by MrsHudson (talk | contribs) at 14:07, 17 May 2010. It may differ significantly from the current<lb/> revision (//en.wikipedia.org/wiki/Elo_rating_system) .<lb/> (diff) ← Previous revision | Latest revision (diff) | Newer revision → (diff)<lb/></note>
+
+	<div type="abstract">The Elo rating system is a method for calculating the relative skill levels of players in two-player games such as<lb/> chess and Go. It is named after its creator Arpad Elo, a Hungarian-born American physics professor.<lb/> The Elo system was invented as an improved chess rating system, but today it is also used in many other games. It is<lb/> also used as a rating system for multiplayer competition in a number of computer games,<lb/> [1] and has been adapted to<lb/> team sports including association football, American college football and basketball, and Major League Baseball.<lb/></div>
+
+		</front>
+	</text>
+</tei>

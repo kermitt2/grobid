@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011295"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Macromol. Mater. Eng. 2000, 282, 17–21<lb/></reference>
+
+	<note type="page">17<lb/></note>
+
+	<docTitle>
+	<titlePart>Desktop manufacturing of complex objects, prototypes<lb/> and biomedical scaffolds by means of computer-assisted<lb/> design combined with computer-guided 3D plotting of<lb/> polymers and reactive oligomers<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Rüdiger Landers, Rolf Mülhaupt*<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institut für Makromolekulare Chemie und Freiburger Materialforschungszentrum der Albert-Ludwigs-Universität,<lb/>
+	</affiliation>
+	</byline>
+
+	<address>Stefan-Meier-Str. 31, D-79104 Freiburg i. Br., Germany<lb/></address>
+
+	<email>E-mail: mulhaupt@fmf.uni-freiburg.de<lb/></email>
+
+		</front>
+	</text>
+</tei>

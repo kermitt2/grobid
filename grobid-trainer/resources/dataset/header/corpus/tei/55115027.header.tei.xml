@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55115027"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Efficient Non-doped Near Infrared Organic Light-Emitting Devices<lb/> Based on Fluorophores with Aggregation-Induced Emission<lb/> Enhancement<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Xiaobo Du,<lb/> , Ji Qi,<lb/> , Zhiqiang Zhang,<lb/> Dongge Ma,<lb/> and Zhi Y. Wang*<lb/> ,,<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>State Key Laboratory of Polymer Physics and Chemistry, Changchun Institute of Applied Chemistry, Chinese Academy of Sciences,<lb/></affiliation>
+	</byline>
+
+	<address>Changchun 130022, P.R. China<lb/></address>
+
+	<byline>
+	<affiliation>Department of Chemistry, Carleton University,</affiliation>
+	</byline>
+
+	<address>1125 Colonel By Drive, Ottawa, Ontario K1S 5B6, Canada<lb/></address>
+
+	<byline>
+	<affiliation>Graduate School of Chinese Academy of Sciences,</affiliation>
+	</byline>
+
+	<address>Beijing 100039, P.R. China<lb/></address>
+
+	<note type="other">* S Supporting Information<lb/></note>
+
+	<div type="abstract">ABSTRACT: A family of donor−acceptor−donor (D−A−D) type<lb/> near-infrared (NIR) fluorophores containing rigid nonplanar<lb/> conjugated tetraphenylethene (TPE) moieties was designed and<lb/> synthesized through Stille coupling reactions with electron-deficient<lb/> [1,2,5]thiadiazolo[3,4-g]quinoxaline (QTD) or benzo[1,2-c;4,5-<lb/>c′]bis[1,2,5]thiadiazole (BBTD) as acceptors. The absorption,<lb/> fluorescence, and electrochemical properties were studied. These<lb/> compounds exhibited good aggregation-induced emission enhance-<lb/>ment (AIEE) property, as a result of the twisted TPE units, which<lb/> restrict the intramolecular rotation and reduce the π−π stacking.<lb/> Photoluminescence of these chromophores ranges from 600 to<lb/> 1100 nm, and their HOMO−LUMO gaps are between 1.85 and<lb/> 1.50 eV. Non-doped organic light-emitting diodes (OLEDs) based on these fluorophores were made and exhibited EL emission<lb/> spectra peaking from 706 to 864 nm. The external quantum efficiency (EQE) of these devices ranged from 0.89% to 0.20% and<lb/> remained fairly constant over a range of current density of 100−300 mA cm<lb/> −2<lb/> . The device with the highest solid fluorescence<lb/> efficiency emitter 1a shows the best performance with a maximum radiance of 2917 mW Sr<lb/> −1 m<lb/> −2 and EQE of 0.89%. A contrast<lb/> between nondoped and doped OLEDs with these materials confirms that AIEE compounds are suitable for fabricate efficient<lb/> nondoped NIR OLEDs.<lb/></div>
+
+	<keyword>KEYWORDS: near infrared, AIEE, OLEDs, donor−acceptor<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

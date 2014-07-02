@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010800"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>How to hide text in MS Word 2007<lb/></titlePart>
+	</docTitle>
+
+	<date>Posted on August 25, 2008 </date>
+
+	<note type="other">at 5:31 am<lb/></note>
+
+		</front>
+	</text>
+</tei>

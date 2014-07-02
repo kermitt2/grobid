@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010486"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Data Binding with Windows Forms and<lb/> ADO.NET<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Alison Balter,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>InfoTechnology Partners, Inc.<lb/></affiliation>
+	</byline>
+
+	<byline>
+	<docAuthor>Paul D. Sheriff,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>PDSA, Inc.<lb/></affiliation>
+	</byline>
+
+	<date>November 2001<lb/></date>
+
+	<div type="abstract">Summary: This article shows how Windows Forms use Microsoft ADO.NET to allow you to easily bind a<lb/> form to almost any structure that contains data, and then bind controls on the form to specific<lb/> elements of the data through both simple and complex data binding. (19 printed pages)<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,78 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009470"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>The EMBO Journal vol.12 no. 5 pp. 1781 -1795, 1993<lb/></reference>
+
+	<docTitle>
+	<titlePart>The crystal structure of EcoRV endonuclease and of its<lb/> complexes with cognate and non-cognate DNA<lb/> fragments<lb/>
+	</titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Fritz K.Winkler, David W.Banner,<lb/> Christian Oefner, Demetrius Tsernoglou1,<lb/> Raymond S.Brown2, Stephen P.Heathman3,<lb/> Richard K.Bryan4, Philip D.Martin5,<lb/> Kyriakos Petratos6 and Keith S.Wilson7<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Pharma Research-New Technologies,F.Hoffmann-La Roche Ltd,<lb/></affiliation>
+	</byline>
+
+	<address>4002 Basel, Switzerland<lb/></address>
+
+	<note type="other">Present addresses:</note>
+
+	<byline>
+	<affiliation>&apos;European Molecular Biology Laboratory,</affiliation>
+	</byline>
+
+	<address>Postfach<lb/> 10.2209, 6900 Heidelberg, Germany,</address>
+
+	<byline>
+	<affiliation>2Howard Hughes Medical<lb/> Institute, Laboratory of Molecular Medicine, Children&apos;s<lb/> Hospital/Enders</affiliation>
+	</byline>
+
+	<address>670, 320 Longwood Avenue, Boston, MA 02115,<lb/> USA,</address>
+
+	<byline>
+	<affiliation>3Institute for Transuranium Element,</affiliation>
+	</byline>
+
+	<address>Postfach 2340, 7500<lb/> Karlsruhe 1, Germany,</address>
+
+	<byline>
+	<affiliation>4Laboratory of Molecular Biophysics,<lb/> University of Oxford,</affiliation>
+	</byline>
+
+	<address>Rex Richards Building, South Parks Road,<lb/> Oxford OXI 3QU, UK,</address>
+
+	<byline>
+	<affiliation>5Biochemistry Department, Wayne State<lb/> University,</affiliation>
+	</byline>
+
+	<address>Detroit, MI 48201, USA,</address>
+
+	<byline>
+	<affiliation>6lnstitute of Molecular Biology<lb/> and Biotechnology,</affiliation>
+	</byline>
+
+	<address>PO Box 1527, Heraklion 71110, Crete, Greece<lb/> and</address>
+
+	<byline>
+	<affiliation>7European Molecular Biology Laboratory (EMBL), c/o Deutsches<lb/> Elektronen Synchrotron (DESY),</affiliation>
+	</byline>
+
+	<address>2000 Hamburg 52, Germany<lb/></address>
+
+	<note type="other">Communicated by J.N.Jansonius<lb/></note>
+
+	<div type="abstract">The crystal structure of EcoRV endonuclease has been<lb/> determined at 2.5 A resolution and that of its complexes<lb/> with the cognate DNA decamer GGGATATCCC<lb/> (recognition sequence underlined) and the non-cognate<lb/> DNA octamer CGAGCTCG at 3.0 A resolution. Two<lb/> octamer duplexes of the non-cognate DNA, stacked<lb/> end-to-end, are bound to the dimeric enzyme in B-DNA-<lb/>like conformations. The protein-DNA interactions of this<lb/> complex are prototypic for non-specific DNA binding. In<lb/> contrast, only one cognate decamer duplex is bound and<lb/> deviates considerably from canonical B-form DNA. Most<lb/> notably, a kink of -500 is observed at the central TA<lb/> step with a concomitant compression of the major groove.<lb/> Base-specifi&apos;c hydrogen bonds between the enzyme and<lb/> the recognition base pairs occur exclusively in the major<lb/> groove. These interactions appear highly co-operative as<lb/> they are all made through one short surface loop<lb/> comprising residues 182-186. Numerous contacts with<lb/> the sugar phosphate backbone extending beyond the<lb/> recognition sequence are observed in both types of<lb/> complex. However, the total surface area buried on<lb/> complex formation is &gt; 1800 A2 larger in the case of<lb/> cognate DNA binding. Two acidic side chains, Asp74 and<lb/> Asp9O, are close to the reactive phosphodiester group in<lb/> the cognate complex and most probably provide oxygen<lb/> ligands for binding the essential cofactor Mg2+. An<lb/> important role is also indicated for Lys92, which together<lb/> with the two acidic functions appears to be conserved in<lb/> the otherwise unrelated structure of EcoRI endonuclease.<lb/> The structural results give new insight into the physical<lb/> basis of the remarkable sequence specificity of this<lb/> enzyme.<lb/></div>
+
+	<keyword>Key words: DNA deformation/DNA recognition/protein -<lb/>DNA interaction/restriction endonuclease<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

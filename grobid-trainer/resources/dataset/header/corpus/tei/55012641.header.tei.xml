@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012641"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">SHORT COMMUNICATION<lb/></note>
+
+	<docTitle>
+	<titlePart>Leaf senescence in rice plants: cloning and<lb/> characterization of senescence up-regulated genes<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Ruey-Hua Lee<lb/> 1<lb/> , Chung-Hua Wang<lb/> 2<lb/> , Lin-Tzu Huang<lb/> 1<lb/> and Shu-Chen Grace Chen<lb/> 1,3<lb/>
+	</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1<lb/> Institute of Botany, Academia Sinica,</affiliation>
+	</byline>
+
+	<address>Taipei, Taiwan<lb/></address>
+
+	<byline>
+	<affiliation>2<lb/> Institute of Biochemistry, National Yang-Ming University,</affiliation>
+	</byline>
+
+	<address>Taipei, Taiwan<lb/></address>
+
+	<note type="submission">Received 27 November 2000; Accepted 11 December 2000<lb/></note>
+
+	<div type="abstract">Abstract<lb/> To identify senescence-associated genes (SAGs) in<lb/> rice leaves, senescence was induced by trans-<lb/>ferring rice seedlings into darkness. Senescence<lb/> up-regulated cDNAs were obtained by PCR-based<lb/> subtractive hybridization. Among 14 SAG clones<lb/> characterized, 11 were found to be associated with<lb/> both dark-induced and natural leaf senescence.<lb/> Three clones were associated only with dark-induced<lb/> leaf senescence. The possible physiological roles<lb/> of these SAGs during rice leaf senescence are<lb/> discussed.<lb/></div>
+
+	<keyword>Key words: Dark-induced senescence, gene expression,<lb/> natural leaf senescence, rice.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

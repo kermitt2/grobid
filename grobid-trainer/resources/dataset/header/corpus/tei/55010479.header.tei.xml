@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010479"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<affiliation>Americas Headquarters<lb/> Cisco Systems, Inc.<lb/></affiliation>
+	</byline>
+
+	<address>170 West Tasman Drive<lb/> San Jose, CA 95134-1706<lb/> USA</address>
+
+	<ptr type="web">http://www.cisco.com<lb/></ptr>
+
+	<phone>Tel: 408 526-4000<lb/> 800 553-NETS (6387)<lb/> Fax: 408 527-0883<lb/></phone>
+
+	<docTitle>
+	<titlePart>WAN and Application Optimization<lb/> Solution Guide<lb/> Cisco Validated Design<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Document Version 1.1<lb/></note>
+
+	<date>August 2008<lb/></date>
+
+	<note type="other">THE SPECIFICATIONS AND INFORMATION REGARDING THE PRODUCTS IN THIS MANUAL ARE SUBJECT TO CHANGE WITHOUT NOTICE. ALL<lb/> STATEMENTS, INFORMATION, AND RECOMMENDATIONS IN THIS MANUAL ARE BELIEVED TO BE ACCURATE BUT ARE PRESENTED WITHOUT<lb/> WARRANTY OF ANY KIND, EXPRESS OR IMPLIED. USERS MUST TAKE FULL RESPONSIBILITY FOR THEIR APPLICATION OF ANY PRODUCTS.<lb/> THE SOFTWARE LICENSE AND LIMITED WARRANTY FOR THE ACCOMPANYING PRODUCT ARE SET FORTH IN THE INFORMATION PACKET THAT<lb/> SHIPPED WITH THE PRODUCT AND ARE INCORPORATED HEREIN BY THIS REFERENCE. IF YOU ARE UNABLE TO LOCATE THE SOFTWARE LICENSE<lb/> OR LIMITED WARRANTY, CONTACT YOUR CISCO REPRESENTATIVE FOR A COPY.<lb/> The Cisco implementation of TCP header compression is an adaptation of a program developed by the University of California, Berkeley (UCB) as part of UCB&apos;s public<lb/> domain version of the UNIX operating system. All rights reserved.</note>
+
+	<note type="copyright">Copyright © 1981, Regents of the University of California.<lb/></note>
+
+	<note type="other">NOTWITHSTANDING ANY OTHER WARRANTY HEREIN, ALL DOCUMENT FILES AND SOFTWARE OF THESE SUPPLIERS ARE PROVIDED &quot;AS IS&quot; WITH<lb/> ALL FAULTS. CISCO AND THE ABOVE-NAMED SUPPLIERS DISCLAIM ALL WARRANTIES, EXPRESSED OR IMPLIED, INCLUDING, WITHOUT<lb/> LIMITATION, THOSE OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT OR ARISING FROM A COURSE OF<lb/> DEALING, USAGE, OR TRADE PRACTICE.<lb/> IN NO EVENT SHALL CISCO OR ITS SUPPLIERS BE LIABLE FOR ANY INDIRECT, SPECIAL, CONSEQUENTIAL, OR INCIDENTAL DAMAGES, INCLUDING,<lb/> WITHOUT LIMITATION, LOST PROFITS OR LOSS OR DAMAGE TO DATA ARISING OUT OF THE USE OR INABILITY TO USE THIS MANUAL, EVEN IF CISCO<lb/> OR ITS SUPPLIERS HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.<lb/> Cisco Validated Design</note>
+
+		</front>
+	</text>
+</tei>

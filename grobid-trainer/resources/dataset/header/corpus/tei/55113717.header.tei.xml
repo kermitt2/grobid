@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55113717"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Algorithms Research 2012, 1(2): 5-11<lb/></reference>
+
+	<idno type="DOI">DOI: 10.5923/j.algorithms.20120102.01<lb/></idno>
+
+	<docTitle>
+	<titlePart>Algorithm Re-Ordering: a Solution for Abating Internet<lb/> Bypass<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Awoleye O. M<lb/> *<lb/> , Atoyebi M. K, Abang I. S, Siyanbola W. O<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>National Centre for Technology Management, an Agency of the Federal Ministry of Science &amp; Technology, Obafemi Awolowo University,<lb/></affiliation>
+	</byline>
+
+	<address>Ile-Ife, Nigeria<lb/></address>
+
+	<div type="abstract">Abstract The use of mobile data services as a means of communication came into existence through the introduction of<lb/> 3<lb/> rd<lb/> Generation (3G) Technology, it is expected that this technology will continue to increase opportunities for improved<lb/> revenues and enable new services &amp; tariff generation. Research have shown that the use of third party application like Tor<lb/> browser, Indian proxy, Your-freedom (http://www.your-freedom.net), Privoxy etc are used to bypass the data services of-<lb/>fered by the network providers. This is carried out by leveraging on virtual private network (VPN) technology, distributed<lb/> network of relays and available free ports. This has limited the revenue derived by the providers in a country where such<lb/> proliferation is thriving. In Nigeria for example Government on its part have taken some steps to finding solutions to end this<lb/> menace and related increasing cyber crime activities, but the challenge still remain with us. This work thus postulates an<lb/> innovative way of abating this activity which has lead to huge loss of revenue in the sector. The approach is a theoretical<lb/> method in solving the industry-related problem. It narrowed down the problem of the current algorithm to improper algorithm<lb/> order and thereby proposing an appropriate model to reducing the menace.<lb/></div>
+
+	<keyword>Keywords Algorithm, flowchart, policy, internet, data services<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

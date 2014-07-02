@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011322"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Aufbau einer binären Uhr<lb/></note>
+
+	<docTitle>
+	<titlePart>Binäre Uhr<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">aus Wikipedia, der freien Enzyklopädie<lb/> Dies ist eine alte Version dieser Seite, zuletzt bearbeitet am 1. Januar 2010 um 00:52 Uhr durch Wilske<lb/> (Diskussion | Beiträge). Sie kann sich erheblich von der aktuellen Version unterscheiden.<lb/> (Unterschied) ← Nächstältere Version | Aktuelle Version (Unterschied) | Nächstjüngere Version →<lb/> (Unterschied)<lb/></note>
+
+		</front>
+	</text>
+</tei>

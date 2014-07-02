@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Yanming</forename>
+								<surname>Shen</surname>,
+							</persName>
+							<persName>
+								<forename>Zhengye</forename>
+								<surname>Liu</surname>,
+							</persName>
+							<persName>
+								<forename>Shivendra</forename>
+								<middlename>S</middlename>.
+								<surname>Panwar</surname>,
+							</persName>
+							<persName>
+								<forename>Keith</forename>
+								<middlename>W</middlename>.
+								<surname>Ross</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

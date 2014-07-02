@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="laboratory">Plant Physiology Laboratory</orgName>,
+							<orgName type="institution">University of Neuchâtel</orgName>,
+							<address>
+								<addrLine>Emile Argand 13</addrLine>,
+								<postCode>2007</postCode>
+								<settlement>Neuchâtel</settlement>,
+								<country>Switzerland</country>,
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="institution">BES</orgName>,
+							<orgName type="institution">University of<lb/> Bern</orgName>,
+							<address>
+								<addrLine>Gertrudwokerstrasse 5</addrLine>,
+								<postCode>3012</postCode>
+								<settlement>Bern</settlement>,
+								<country>Switzerland</country>,
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>3</marker>
+							<orgName type="institution">CEA-Cadarache</orgName>,
+							<address>
+								<settlement>St-Paul Lez Durance</settlement>,
+								<country>France</country>,
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>4</marker>
+							<orgName type="department">Institute of Plant<lb/> Sciences</orgName>,
+							<orgName type="institution">University of Bern</orgName>,
+							<address>
+								<addrLine>31 Altenbergrain</addrLine>,
+								<postCode>3013</postCode>
+								<settlement>Bern</settlement>,
+								<country>Switzerland</country> and
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>5</marker>
+							<orgName type="laboratory">Laboratory for Molecular Plant Physiology</orgName>,
+							<lb/>
+							<orgName type="institution">University of Zürich</orgName>,
+							<address>
+								<addrLine>Zollikerstrasse 107</addrLine>,
+								<postCode>8008</postCode>
+								<settlement>Zürich</settlement>,
+								<country>Switzerland</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

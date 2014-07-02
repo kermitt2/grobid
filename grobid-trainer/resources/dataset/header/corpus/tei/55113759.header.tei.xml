@@ -1,0 +1,44 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55113759"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">EDITORIAL<lb/></note>
+
+	<docTitle>
+	<titlePart>Stool DNA-Based Colorectal Cancer Detection:<lb/> Finding the Needle in the Haystack<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Wendy Atkin, John P. Martin<lb/></docAuthor>
+	</byline>
+
+	<div type="introduction">For many centuries, it has been suspected that examination<lb/> of stool could provide insights into the state of health or disease<lb/> of an individual. The Egyptians were concerned with the shape<lb/> and consistency of stool (Eber&apos;s papyrus, 207), and 19<lb/> th century<lb/> Americans were concerned with &quot;poisons and gases&quot; (1); more<lb/> recently, the components of stool (e.g., pathogens, occult blood,<lb/> fats, and bile acids) have been the subject of scrutiny.<lb/> Within the past two decades, with the advent of the polymer-<lb/>ase chain reaction (PCR) technique, came the ability to amplify<lb/> tiny numbers of specific DNA sequences. This advance has per-<lb/>mitted the identification of not only mutations that accumulate<lb/> in neoplasms and define their progression to malignancy but also<lb/> mutations in cells shed from the tumors into stool. Compared<lb/> with tissue and blood, extraction of DNA from stool presents<lb/> special problems because human DNA is often degraded and<lb/> food digestion products and bacterial contaminants inhibit the<lb/> PCR.<lb/> As reported in this issue of the Journal, Dong et al. (2)<lb/> achieved their goal of extracting sufficient high-quality DNA<lb/> from all of 51 stool samples collected from patients with a<lb/> diagnosis of colorectal cancer to permit detection of most<lb/> mutations where they existed in the tumor. This meticulous<lb/> study focused on mutations in the K-RAS oncogene and the<lb/> TP53 tumor suppressor gene (each of which is mutated in around<lb/> 40%–60% of colorectal cancers) as well as the microsatellite<lb/> instability (MSI) marker BAT26 (which is altered in 15% of<lb/> sporadic cancers). Dong et al. were able to detect TP53 and<lb/> BAT26 mutations in stools from all of the patients with these<lb/> mutations in their tumor; in each case, the mutation in the stool<lb/> was identical to that in the tumor, confirming its origin. It was<lb/> possible to identify K-RAS mutations in only eight of 17 stool<lb/> samples from patients with a K-RAS mutation in their tumor.<lb/> The three markers together detected 36 (71%) of the 51 cases<lb/> of colorectal cancer, but TP53 alone detected 30 of these cases.<lb/> How do these results compare with those from previous stud-<lb/>ies, and what does this study tell us about the suitability of these<lb/> markers for colorectal cancer screening?<lb/> A consistent finding is that the quantity and quality of the<lb/> DNA extracted from stools are superior in the presence of co-<lb/>lorectal neoplasia (3), probably because there is less efficient<lb/> degradation by apoptosis of cells shed by tumors compared with<lb/> fully differentiated cells. Indeed, the amount of extracted DNA<lb/> per gram of stool has been used as a marker of the presence of<lb/> malignancy (4). Only one study (5) has reported successful DNA<lb/> extraction from 100% of stool samples from people with endo-<lb/>scopically normal colons. Providing an informative negative<lb/> result is an essential component of screening and is possible only<lb/> if DNA can be extracted from all stool samples.<lb/> When Sidransky et al. (6) first showed that the mutations<lb/> in cells shed from K-RAS-mutated colorectal cancers are detect-<lb/>able in stool, K-RAS appeared to be an ideal candidate for<lb/> colorectal cancer screening because most mutations are clus-<lb/>tered at codons 12 and 13. However, from the outset, K-RAS has<lb/> been problematic as a marker. Few studies (6–9) have shown<lb/> complete sensitivity of K-RAS mutations for colorectal cancer;<lb/> moreover, K-RAS mutations have been found in up to 14% of<lb/> stool samples from people with normal colons (3,5,10), a false-<lb/>positive rate that would be unacceptable in a screening situation.<lb/> It is not clear if the finding of K-RAS mutations in stools in the<lb/> absence of neoplasia has any prognostic significance, although<lb/> in one study (11) K-RAS mutations were detected in colonic<lb/> effluent samples from two of five patients with previously re-<lb/>sected carcinoma and from one patient 4 years before colorectal<lb/> cancer was diagnosed.<lb/> Most of the mutations in the TP53 gene found in colorectal<lb/> tumors can be detected by analysis of exons 5–8. These exons<lb/> were analyzed by Dong et al. (2), who found that all patients<lb/> with mutations in their tumors at these hotspots had identical<lb/> mutations in their stool samples.<lb/> BAT26 is a highly sensitive marker of MSI (12), which is<lb/> a feature of 30%–40% of cancers that develop in the colon<lb/> proximal to the splenic flexure (13,14). MSI is rarely found in<lb/> sporadic distal colon cancer. In the only other study to have<lb/> examined BAT26 in stool (5), the marker was positive in five of<lb/> 10 proximal cancers and in none of 12 distal cancers. In the<lb/> study by Dong et al. (2), three (23%) of 13 right-sided tumors<lb/> and their corresponding stools harbored BAT26 mutations.<lb/> However two (4%) of the 51 patients in the study had a germline<lb/> mutation in BAT26, suggesting that this marker may lack<lb/> specificity. Inherited polymorphisms in BAT26 and BAT25,<lb/> an alternative marker of MSI, have been found in 8%–12% of<lb/> African-Americans, although only 3% showed variation in both<lb/> markers (15,16). These polymorphisms were found in only 0.1%<lb/> of Caucasians (15,16), but it is important to know the extent to<lb/> which they affect other populations because those with substan-<lb/>tial rates would require additional markers to confirm that the<lb/> instability is confined to the tumor.<lb/> Dong et al. (2) have shown that a small panel of genetic<lb/> markers might potentially detect 70% of colorectal cancers.<lb/> They advise caution, however, in interpreting this finding as<lb/> evidence to support the application of molecular screening<lb/> for the early detection of colorectal cancer because most of the<lb/> cancers were advanced and the patients were symptomatic. Ide-<lb/>ally, colorectal screening should aim to detect the disease in the<lb/></div>
+
+	<byline>
+	<affiliation>Affiliation of authors: Imperial Cancer Research Fund (ICRF) Colorectal<lb/> Cancer Unit, St. Mark&apos;s Hospital,
+	</affiliation>
+	</byline>
+
+	<address>Harrow, Middlesex, U.K.<lb/></address>
+
+	<note type="other">Correspondence to:</note>
+
+	<byline>
+	<docAuthor>Wendy Atkin, M.P.H., Ph.D.,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>ICRF Colorectal Cancer<lb/> Unit, St. Mark&apos;s Hospital,</affiliation>
+	</byline>
+
+	<address>Northwick Park, Watford Rd., Harrow, Middlesex,<lb/> HA1 3UJ, U.K.</address>
+
+	<email>(e-mail: atkin@icrf.icnet.uk).</email>
+
+		</front>
+	</text>
+</tei>

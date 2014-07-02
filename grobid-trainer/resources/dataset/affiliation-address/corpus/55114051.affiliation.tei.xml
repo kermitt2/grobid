@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">Dept. of Computer Science and Engineering</orgName>,
+							<orgName type="institution">Bangladesh University of Engineering &amp; Technology</orgName>,
+							<address>
+								<addrLine>Dhaka-1000</addrLine>,
+							<lb/>
+								<country>Bangladesh</country>;
+							</address>
+						</affiliation>
+						<affiliation>		
+							<orgName type="department">Dept. of Human and Artificial Intelligence Systems</orgName>,
+							<orgName type="institution">University of Fukui</orgName>,
+							<address>
+								<settlement>Fukui</settlement>
+								<postCode>910-8507</postCode>,
+								<country>Japan</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013142"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Adaptive Wavelets zur<lb/> Ultraschall-Signalanalyse<lb/></titlePart>
+	</docTitle>
+
+	<degree>Diplomarbeit<lb/> von<lb/></degree>
+
+	<byline>
+	<docAuthor>Benjamin Ristov<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>vorgelegt beim Institut für Mathematik<lb/> der Universität Duisburg-Essen<lb/></affiliation>
+	</byline>
+
+	<note type="other">Betreuerin: Prof. Dr. rer. nat. habil. Gerlind Plonka-Hoch<lb/> Betreuer: Dr. rer. nat. Till Schmitte<lb/> Duisburg,
+	</note>
+
+	<date>Juli 2008</date>
+
+		</front>
+	</text>
+</tei>

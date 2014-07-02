@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei type="confeence-article">
+	<teiHeader>
+		<fileDesc xml:id="55114963"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Distributed Query Processing and Catalogs<lb/> for Peer-to-Peer Systems<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Vassilis Papadimos<lb/> David Maier<lb/> Kristin Tufte<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>OGI School of Science &amp; Engineering<lb/> Oregon Health &amp; Science University<lb/></affiliation>
+	</byline>
+
+	<email>{vpapad,maier,tufte}@cse.ogi.edu<lb/></email>
+
+	<div type="abstract">Abstract<lb/> Peer-to-peer (P2P) architectures are commonly<lb/> used for file-sharing applications. The reasons<lb/> for P2P&apos;s popularity in file sharing – fault<lb/> tolerance, scalability, and ease of deployment –<lb/> also make it a good model for distributed data<lb/> management. In this paper, we introduce a<lb/> scalable P2P framework for distributed data<lb/> management applications using mutant query<lb/> plans: XML serializations of algebraic query<lb/> plan graphs that can include verbatim XML data,<lb/> references to resource locations (URLs), and<lb/> abstract resource names (URNs). We show how<lb/> we can build distributed catalogs based on multi-<lb/>hierarchic namespaces that can efficiently handle<lb/> content indexing and query routing. We also<lb/> discuss how peers can convey the currency and<lb/> coverage of their data, and how queries can use<lb/> this information to manage the inherent tradeoffs<lb/> between answer completeness, timeliness, and<lb/> latency.<lb/></div>
+
+		</front>
+	</text>
+</tei>

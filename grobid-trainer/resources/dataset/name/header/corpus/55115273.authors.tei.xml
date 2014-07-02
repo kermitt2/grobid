@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<surname>Sulkowski</surname>
+								<forename>M</forename>,
+								<marker>1</marker>
+							</persName>
+							<persName>
+								<surname>Gardiner</surname>
+								<forename>D</forename>,
+								<marker>2</marker>
+							</persName>
+							<persName>
+								<surname>Lawitz</surname>
+								<forename>E</forename>,
+								<marker>3</marker>
+							</persName>
+							<persName>
+								<surname>Hinestrosa</surname>
+								<forename>F</forename>,
+								<marker>4</marker>
+							</persName>
+							<persName>
+								<surname>Nelson</surname>
+								<forename>D</forename>,
+								<marker>5</marker>
+							</persName>
+							<persName>
+								<surname>Thuluvath</surname>
+								<forename>P</forename>,
+								<marker>6</marker>
+							</persName>
+							<persName>
+								<surname>Rodriguez-Torres</surname>
+								<forename>M</forename>,
+								<marker>7</marker>
+							</persName>
+							<persName>
+								<surname>Lok</surname>
+								<forename>A</forename>,
+								<marker>8</marker>
+							</persName>
+							<persName>
+								<surname>Schwartz</surname>
+								<forename>H</forename>,
+								<marker>9</marker>
+							<lb/>
+							</persName>
+							<persName>
+								<surname>Reddy</surname>
+								<forename>KR</forename> ,
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

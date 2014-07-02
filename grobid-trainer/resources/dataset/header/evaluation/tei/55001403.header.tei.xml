@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001403"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>First-Principles Study of the Li-Mg-N-H System: Compound Structures and<lb/> Hydrogen-Storage Properties<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Kyle J. Michel, Alireza R. Akbarzadeh, and Vidvuds Ozolins*<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Materials Science and Engineering, UniVersity of California,</affiliation>
+	</byline>
+
+	<address>Los Angeles, P.O. Box 951595,<lb/>
+	Los Angeles, California 90095-1595<lb/></address>
+
+	<note type="submission">ReceiVed: April 24, 2009; ReVised Manuscript ReceiVed: June 30, 2009<lb/></note>
+
+	<div type="abstract">Crystal structures and hydrogen storage properties of compounds belonging to the Li-Mg-N-H system are<lb/> studied using first-principles DFT calculations and the grand-canonical linear programming approach<lb/> (Akbarzadeh, et al. AdV. Mater. 2007, 19, 3233). We report the static, zero-point, and T &gt; 0 K vibrational<lb/> energies of all known storage compounds belonging to this system along with new predictions for Li 4 Mg(NH) 3 ,<lb/> Li 2 Mg(NH) 2 , and MgNH. Enthalpies, entropies, and hydrogen release temperatures are calculated for all<lb/> thermodynamically reversible dehydrogenation reactions occurring within 300 °C of room temperature. Using<lb/> a structural enumeration approach based on the antifluorite lattice of Li 2 NH, we find a new Li 2 Mg(NH) 2<lb/> structure of Pca2 1 symmetry, which has a lower T ) 0 K energy than the previously reported Iba2 phase. For<lb/> the mixed imide Li 4 Mg(NH) 3 , enumeration finds a structure belonging to the Imm2 space group with two<lb/> formula units per conventional cell. It is also shown that a previously unsuspected intermediate step is<lb/> thermodynamically favored in the well-known LiH + Li 2 NHT Li 3 N + H 2 reaction; this step involves the<lb/> formation of Li 4 NH according to 2LiH + Li 2 NHT Li 4 NH + H 2 . Additional novel mixtures of reactants with<lb/> high gravimetric hydrogen storage densities are found using the calculated Li-Mg-N-H phase diagrams.<lb/></div>
+
+		</front>
+	</text>
+</tei>

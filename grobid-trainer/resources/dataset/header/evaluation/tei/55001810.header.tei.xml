@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55001810"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Profile-Guided Optimization with<lb/> Microsoft Visual C++ 2005<lb/> Visual Studio .NET 2003<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Kang Su Gatlin<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Microsoft Corporation<lb/></affiliation>
+	</byline>
+
+	<date>March 2004<lb/></date>
+
+	<note type="other">Applies to:<lb/> Microsoft® Visual C++® 2005<lb/></note>
+
+	<div type="abstract">Summary: Discusses profile-guided optimization in Microsoft Visual C++ 2005 (formerly known as<lb/> Visual C++ &quot;Whidbey&quot;), a powerful new feature that will allow applications to be tuned for actual<lb/> customer scenarios. Real-world performance gains of over 20% are not uncommon. (13 printed<lb/> pages)<lb/></div>
+
+	<div type="introduction"> Contents</div>
+
+		</front>
+	</text>
+</tei>

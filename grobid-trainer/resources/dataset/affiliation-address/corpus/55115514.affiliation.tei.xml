@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1,4,5</marker>
+							<orgName type="department">Faculty of Manufacturing Engineering</orgName>
+							<lb/>
+							<orgName type="institution">Universiti Teknikal Malaysia Melaka</orgName>
+							<lb/> 
+							<address>
+								<addrLine>Hang Tuah Jaya</addrLine>,
+								<postCode>76100</postCode>
+								<addrLine>Durian Tunggal</addrLine>,
+								<settlement>Melaka</settlement>,
+								<country>MALAYSIA</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2,3</marker>
+							<orgName type="department">School of Mathematical Sciences</orgName>
+							<lb/>
+							<orgName type="institution">University of Science Malaysia</orgName>
+							<lb/> 
+							<address>
+								<addrLine>Minden</addrLine>,
+								<postCode>11800</postCode>,
+								<settlement>Penang</settlement>,
+								<country>MALAYSIA</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

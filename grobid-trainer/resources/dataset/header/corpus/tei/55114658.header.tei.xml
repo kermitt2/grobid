@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei type="web">
+	<teiHeader>
+		<fileDesc xml:id="55114658"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<ptr>http://www.gnpd.com<lb/> </ptr>
+
+	<note type="other">This information is supplied in accordance with Mintel&apos;s Terms &amp; Conditions. 1<lb/></note>
+
+	<docTitle>
+	<titlePart>Herbal Essence Shampoo<lb/> (Natural Supply)<lb/></titlePart>
+	</docTitle>
+
+	<note>Record ID:<lb/> 277011 </note>
+
+	<byline>
+	<affiliation>Company:<lb/> Procter &amp; Gamble<lb/> </affiliation>
+	</byline>
+
+	<note type="other">Brand:<lb/> Clairol Category:<lb/> Hair Products<lb/> Sub-Category:<lb/> Shampoo </note>
+
+	<address>Country:<lb/> Japan </address>
+
+	<date>Date Published:<lb/> Jun 2004<lb/> </date>
+
+	<note type="other">Product source:<lb/> Shopper Launch Type:<lb/> New Product<lb/> Price in local currency: JPY522.00<lb/> Price in US Dollars:<lb/> 4.72<lb/> Price in Euros:<lb/> 3.92<lb/> Bar Code:<lb/> 4902430094146<lb/></note>
+
+		</front>
+	</text>
+</tei>

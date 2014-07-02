@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013148"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note>Vol. 162, No. 1<lb/></note>
+
+	<docTitle>
+	<titlePart>Glycerol Metabolism and Osmoregulation in the Salt-Tolerant Yeast<lb/> Debaryomyces hansenii<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>LENNART ADLER,* ANDERS BLOMBERG, AND ANDERS NILSSON<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Marine Microbiology, Botanical Institute,</affiliation>
+	</byline>
+
+	<address>5413 19 Goteborg, Sweden<lb/></address>
+
+	<note type="submission">Received 27 August 1984/Accepted 26 January 1985<lb/></note>
+
+	<div type="abstract">A glycerol-nonutilizing mutant of the salt-tolerant yeast Debaryomyces hansenii was isolated. When subjected<lb/> to salt stress the mutant produced glycerol, and the internal level of glycerol increased linearly in proportion<lb/> to increases of external salinity as in the wild-type strain. However, at increased salinity the mutant showed a<lb/> more pronounced decrease of growth rate and growth yield and lost more glycerol to the surrounding medium<lb/> than did the wild type. Uptake experiments showed glycerol to be accumulated against a strong concentration<lb/> gradient, and both strains displayed similar kinetic parameters for the uptake of glycerol. An examination of<lb/> enzyme activities of the glycerol metabolism revealed that the apparent Km of the sn-glycerol 3-phosphate<lb/> dehydrogenase (EC 1.1.99.5) was increased 330-fold for sn-glycerol 3-phosphate in the mutant. Based on the<lb/> findings, a scheme for the pathways of glycerol metabolism is suggested.<lb/></div>
+
+		</front>
+	</text>
+</tei>

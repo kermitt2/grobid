@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei type="abstract">
+	<teiHeader>
+		<fileDesc xml:id="55115128"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">73</note>
+
+	<docTitle>
+	<titlePart>Once Daily Sofosbuvir/Ledipasvir Fixed Dose Combina-<lb/>tion with or without Ribavirin: the ELECTRON trial<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Edward J. Gane 1 , Catherine A. Stedman 2 , Robert H. Hyland 3 , Xiao<lb/> Ding 3 , Evguenia S. Svarovskaia 3 , Phil S. Pang 3 , William T.<lb/> Symonds 3 ;</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Auckland Clinical Studies,</affiliation>
+	</byline>
+
+	<address>Auckland, New Zealand;<lb/></address>
+
+	<byline>
+	<affiliation>2 Christchurch Clinical Studies Trust,</affiliation>
+	</byline>
+
+	<address>Christchurch, New Zealand;<lb/></address>
+
+	<byline>
+	<affiliation>3 Gilead Science, Inc,</affiliation>
+	</byline>
+
+	<address>Foster City, CA<lb/></address>
+
+	<div type="abstract">Background: In previous Phase 2 studies, the addition of an<lb/> NS5A inhibitor (either ledipasvir (LDV) or daclatasvir) to the<lb/> combination of the HCV nucleotide analog sofosbuvir (SOF)<lb/> plus ribavirin (RBV) for 12 weeks resulted in high rates of sus-<lb/>tained viral response (SVR) in non-cirrhotic patients infected<lb/> with HCV genotype 1 (GT-1). In the ELECTRON Phase 2 study,<lb/> we evaluated the safety and efficacy of a fixed-dose combina-<lb/>tion (FDC) tablet of SOF plus LDV in additional patient popula-<lb/>tions, including those with cirrhosis and with non-GT-1 infection.<lb/> We also evaluated the need for RBV and for 12 weeks&apos; dura-<lb/>tion. Methods: We enrolled 4 arms: prior null-responder HCV<lb/> GT-1 patients with compensated cirrhosis were randomized to<lb/> receive open-label SOF/LDV FDC with or without RBV for 12<lb/> weeks; treatment-naïve HCV GT-1 patients without cirrhosis<lb/> received SOF/LDV FDC plus RBV for 6 weeks; and treatment-<lb/>naïve HCV non-GT-1 patients without cirrhosis were assigned to<lb/> receive SOF/LDV FDC plus RBV for 12 weeks. Results: 54<lb/> patients were enrolled. Of the GT-1 prior null-responder group,<lb/> 79% were genotype 1a, and 32% were IL28B CC. Of the treat-<lb/>ment-naïve GT-1 group, 84% were genotype 1a, and 20%<lb/> were IL28B CC. Of the non-GT-1 group 20% were GT-2, and<lb/> 80% GT-3. Efficacy results are tabulated. SOF/LDV FDC with or<lb/> without RBV was generally well tolerated; There were no SAEs<lb/> or treatment discontinuations. Adverse events were generally<lb/> mild, and Grade 3/4 laboratory abnormalities were infrequent<lb/> and consistent with the safety profile of RBV. No toxicity attrib-<lb/>utable to SOF/LDV FDC was identified. Conclusions: SOF/LDV<lb/> FDC elicited rapid decline in HCV RNA in all patient popula-<lb/>tions with no viral breakthrough observed. In treatment-naïve<lb/> GT-1 patients without cirrhosis, reduction in duration from 12 to<lb/> 6 weeks increased the rate of relapse. In the prior null respon-<lb/>der GT-1 patients with cirrhosis, the addition of RBV to<lb/> SOF/LDV FDC decreased the rate of relapse, suggesting that<lb/> either RBV or a third DAA may be useful in this difficult-to-treat<lb/> patient population. Promising SVR rates achieved in genotype<lb/> 2 or 3 patients support further evaluation of SOF/LDV FDC in<lb/> patients with HCV GT-2 or GT-3.<lb/> *One subject was lost to follow up without post-treatment data.</div>
+
+		</front>
+	</text>
+</tei>

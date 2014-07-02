@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010092"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Semantic Web Services Composition<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Charlie Abela<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Computer Science and AI,<lb/> University of Malta<lb/></affiliation>
+	</byline>
+
+	<div type="abstract">Abstract. Web services are becoming the most predominant paradigm for distributed com-<lb/>puting and electronic business. They are self-contained Internet accessible applications that<lb/> are capable not only of performing business activities on their own, but they also possess the<lb/> ability to engage with other Web services in order to build new value-added services. Both<lb/> academic and industrial bodies have been investigating issues regarding service descriptions,<lb/> discovery and invocation, but automated service composition was somewhat neglected. The<lb/> latter involves automated methods for constructing a sequence of Web services to achieve a<lb/> desired goal. In this work we present initial research that focuses on the issue of automated<lb/> service composition in conjunction with the Semantic Web. In this report we propose a com-<lb/>position engine that will automatically handle the integration of Web services through the use<lb/> of a Web service description language such as DAML-S, the planning of workflow definitions,<lb/> scheduling of tasks, status monitoring of the execution process, handling of faults and com-<lb/>munication with other entities such as user agents, service registries and other composition<lb/> engines.<lb/></div>
+
+		</front>
+	</text>
+</tei>

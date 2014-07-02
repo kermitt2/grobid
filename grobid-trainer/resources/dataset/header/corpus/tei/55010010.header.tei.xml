@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010010"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">12<lb/></note>
+
+	<docTitle>
+	<titlePart>Integrated Biosensor and Interfacing Circuits<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Lei Zhang, Zhiping Yu and Xiangqing He<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institute of Microelectronics, Tsinghua University<lb/></affiliation>
+	</byline>
+
+	<address>Beijing, 100084,<lb/> China<lb/></address>
+
+		</front>
+	</text>
+</tei>

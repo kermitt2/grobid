@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55115158"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+
+	<reference>Arham Shabbir<lb/> J. Anim. Plant Sci. 22(2):2012<lb/></reference>
+
+	<note type="page">505<lb/></note>
+
+	<docTitle>
+	<titlePart>RHUS CORIARIA LINN, A PLANT OF MEDICINAL, NUTRITIONAL AND INDUSTRIAL<lb/> IMPORTANCE: A REVIEW<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Arham Shabbir<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Pharmaceutical Sciences, COMSATS Institute of Information Technology,</affiliation>
+	</byline>
+
+	<address>Abbottabad-22060, Pakistan<lb/></address>
+
+	<note type="other">Corresponding author;</note>
+
+	<email>email: charham007@hotmail.com<lb/></email>
+
+	<div type="abstract">ABSTRACT<lb/> Rhus coriaria Linn. (Anacardiacea), commonly known as sumac, has been used as a spice, condiment, appetizer, and as<lb/> a souring agent for centuries. A broad range of nutritionally and medicinally significant phytochemical components have<lb/> been identified from various parts of sumac such as tannins, flavonoids, anthocyanins, organic acids, flavones, proteins,<lb/> fiber, volatile oils, nitrates, and nitrites. The plant also possesses minerals which are beneficial in the treatment of<lb/> different disorders and contribute to various biological processes. In traditional system of medicine, this plant has been<lb/> used in the treatment of diarrhea, dysentery, ulcer, hemorrhoids, hemorrhage, wound healing, hematemesis, hemoptysis,<lb/> leucorrhea, sore throat, ophthalmia, conjunctivitis, diuresis, animal bites, poison, pain, and liver disease. Traditional<lb/> practitioners have also prescribed this plant as antimicrobial, abortifacient, and stomach tonic. Rhus coriaria is known to<lb/> possess DNA protective, non-mutagenic, chondroprotective, antifungal, antibacterial, antioxidant, anti-ischemic,<lb/> vasorelaxant, hypoglycemic, xanthine oxidase inhibition, vascular smooth muscle cell migration inhibition, and<lb/> hepatoprotective properties, supporting its traditional uses. The role of plant in leather and textile industry as tanning<lb/> agent and as a coloring agent is significant. It also prevents wood decay and has considerable potential for future<lb/> research.<lb/></div>
+
+	<keyword>Key Words: Rhus coriaria; phytochemistry; antioxidant; antibacterial; sumac.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

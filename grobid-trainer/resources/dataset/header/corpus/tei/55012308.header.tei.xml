@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012308"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<div type="abstract">Abstract Inhalt<lb/> </div>
+
+	<note type="other">FACHAUFSATZ<lb/> Antriebstechnik<lb/> </note>
+
+	<docTitle>
+	<titlePart>Unrundgetriebe mit deckungs-<lb/>gleichen unrunden Zahnrädern<lb/> für typische Getriebeaufgaben<lb/> Design of gear drives with congruent non-circular gears<lb/> </titlePart>
+	</docTitle>
+
+	<div type="abstract">B. einen Kurbeltrieb, einen Kniehebeltrieb, ein<lb/> Gelenkviereck und ähnliches. Für die Optimie-<lb/>rung von Getriebezügen geeignete Kriterien<lb/> können dabei sehr allgemein formuliert und<lb/> etwa aus folgenden Bereichen zusammen-<lb/>gestellt werden:<lb/> – Geometrie der Wälzkurven der unrunden<lb/> Zahnräder,<lb/> zum Beispiel soll eine Wälzkurve in einem<lb/> T. Hasse<lb/> Seitdem es nummerisch gesteuerte Verzahnmaschinen gibt und<lb/> seitdem effiziente Software für die nummerische Optimierung<lb/> eingesetzt werden kann, werden Getriebeaufgaben zunehmend<lb/> mit unrunden Zahnrädern gelöst. Diese Arbeit befasst sich spe-<lb/>ziell mit dem Problem, ein Unrundgetriebe mit deckungsgleichen<lb/> Zahnrädern für eine allgemeine Getriebeaufgabe optimal aus-<lb/>zulegen.<lb/> Since numeric controlled gear cutting machines are available<lb/> and since efficient software for numeric optimization can be<lb/> used, the solution of a kinematic mechanism problem will be<lb/> solved more and more by means of non–circular gears. This<lb/> paper particularly deals with the problem to optimally design<lb/> a non–circular gear drive with congruent gears for general ge-<lb/>ar drive mechanisms.<lb/></div>
+
+		</front>
+	</text>
+</tei>

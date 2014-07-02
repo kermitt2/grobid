@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Grace</forename>
+								<middlename>A</middlename>.
+								<surname>Lewis</surname>
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Dennis</forename>
+								<middlename>B</middlename> .
+								<surname>Smith</surname>
+							<lb/>
+							</persName>
+							<persName>
+								<forename>Kostas</forename>
+								<surname>Kontogiannis</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

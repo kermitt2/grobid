@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009941"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Architecture and Protocols for a High-Performance, Secure<lb/> IEEE 802.11-based Wireless Mesh Network<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">A Dissertation Presented<lb/> by<lb/></note>
+
+	<byline>
+	<docAuthor>Ashish Raniwala<lb/></docAuthor>
+	</byline>
+
+	<degree>to<lb/> The Graduate School<lb/> in Partial Fulfillment of the<lb/> Requirements<lb/> for the Degree of<lb/> Doctor of Philosophy<lb/> in<lb/> Computer Science<lb/></degree>
+	
+	<byline>
+	<affiliation>Stony Brook University<lb/></affiliation>
+	</byline>
+
+	<date>August 2009</date>
+
+		</front>
+	</text>
+</tei>

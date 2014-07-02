@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009537"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>An Evaluation of TCP-based Rate-Control Algorithms for<lb/> Adaptive Internet Streaming of H.264/SVC<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Robert Kuschnig, Ingo Kofler, Hermann Hellwagner<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institute of Information Technology (ITEC)<lb/> Klagenfurt University,</affiliation>
+	</byline>
+
+	<address>Austria<lb/></address>
+
+	<email>{firstname.lastname}@uni-klu.ac.at<lb/></email>
+
+	<div type="abstract">ABSTRACT<lb/> Recent work [18] indicates that multimedia streaming via<lb/> TCP provides satisfactory performance when the achievable<lb/> TCP throughput is approx. twice the media bit rate. How-<lb/>ever, these conditions may not be achievable in the Internet,<lb/> e.g., when the delivery path offers insufficient bandwidth<lb/> or becomes congested due to competing traffic. Therefore,<lb/> adaptive streaming for videos over TCP is required and a<lb/> number of rate-control algorithms for video streaming have<lb/> been proposed and evaluated in the literature.<lb/> In this paper, we evaluate and compare three different rate-<lb/>control algorithms for TCP in terms of the (PSNR) quality<lb/> of the delivered video and in terms of the timeliness of deliv-<lb/>ery. The contribution of the paper is that, to the best of our<lb/> knowledge, this is the first evaluation of TCP-based stream-<lb/>ing in an Internet-like setting making use of the scalability<lb/> features of H.264/SVC video. Two simple bandwidth esti-<lb/>mation algorithms and a priority-/deadline-driven approach<lb/> are described to adapt the bit rates of, and transmit, the<lb/> H.264/SVC GOPs in a rate-distortion optimal manner. The<lb/> results indicate that the three algorithms perform robustly<lb/> in terms of video quality and timely delivery, both on under-<lb/>provisioned links and in case of competing TCP flows. The<lb/> priority-/deadline-driven technique is even more stable in<lb/> terms of packet delays and jitter; thus, client buffers can be<lb/> dimensioned more easily.<lb/></div>
+
+	<keyword>Keywords<lb/> H.264/SVC, TCP video streaming, adaptive video stream-<lb/>ing, rate control, TCP fairness<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

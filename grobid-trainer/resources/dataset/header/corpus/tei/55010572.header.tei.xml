@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010572"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Synthesis of Primary Amines and N-Methylamines by the Electrophilic<lb/> Amination of Grignard Reagents with 2-Imidazolidinone O-Sulfonyl-<lb/>oxime<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Mitsuru Kitamura, Shunsuke Chiba, and Koichi Narasaka Ã<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Chemistry, Graduate School of Science, The University of Tokyo,<lb/></affiliation>
+	</byline>
+
+	<address>7-3-1 Hongo, Bunkyo-ku, Tokyo 113-0033<lb/></address>
+
+	<note type="submission">(Received December 9, 2002)<lb/></note>
+
+		</front>
+	</text>
+</tei>

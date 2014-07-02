@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">Departamento de Informática</orgName>
+							<orgName type="institution">PONTIFÍCIA UNIVERSIDADE CATÓLICA DO RIO DE JANEIRO</orgName>
+							<address>
+								<addrLine>RUA MARQUÊS DE SÃO VICENTE, 225</addrLine> -
+								<postCode>CEP 22453-900</postCode>
+								<settlement>RIO DE JANEIRO</settlement> -
+								<country>BRASIL</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

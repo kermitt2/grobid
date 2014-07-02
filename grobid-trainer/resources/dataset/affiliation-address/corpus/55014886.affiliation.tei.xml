@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="department">Department of Chemical Engineering</orgName>,
+							<orgName type="department">Faculty of Engineering</orgName>,
+							<orgName type="institution">Ferdowsi University of Mashad</orgName>.
+							<address>
+								<postBox>P. O. BOX</postBox>
+								<postCode>91775-1111</postCode>,
+							<lb/>
+								<country>Iran</country>.
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="department">Department of Food Science and Technology</orgName>,
+							<orgName type="institution">Ferdowsi University of Mashad</orgName>,
+							<address>
+								<country>Iran</country>.
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

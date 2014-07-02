@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>Pablo</forename>
+								<middlename>M</middlename>.
+								<surname>Aviles</surname>,
+							</persName>
+							<persName>
+								<forename>Carlos</forename>
+								<surname>Galmarini</surname>
+								<suffix>Sr</suffix>.,
+							</persName>
+							<persName>
+								<forename>Carmen</forename>
+								<surname>Cuevas</surname>,
+							</persName>
+							<persName>
+								<forename>Maria</forename>
+								<middlename>José</middlename>
+								<surname>Guillen</surname>,
+							</persName>
+							<persName>
+								<forename>Roberta</forename>
+							<lb/>
+								<surname>Frapolli</surname>,
+							</persName>
+							<persName>
+								<forename>S</forename> .
+								<surname>Uboldi</surname> ,
+							</persName>
+							<persName>
+								<forename>M</forename> .
+								<surname>Romano</surname> ,
+							</persName>
+							<persName>
+								<forename>M</forename> .
+								<surname>Tavecchio</surname> ,
+							</persName>
+							<persName>
+								<forename>E</forename> .
+								<surname>Erba</surname> ,
+							</persName>
+							<persName>
+								<forename>E</forename> .
+								<surname>Bello</surname> ,
+							</persName>
+							<persName>	
+								<forename>Maurizio </forename>
+								<surname>D &apos;Incalci</surname>.
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

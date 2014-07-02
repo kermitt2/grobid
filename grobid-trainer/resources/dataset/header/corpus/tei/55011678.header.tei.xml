@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011678"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>WMIC 2011, Sept. 7-10, 2011, San Diego (USA)<lb/></reference>
+
+	<note type="page">1<lb/></note>
+
+	<docTitle>
+	<titlePart>COULD MASS SPECTROMETRY IMAGING BE A DRUG QUANTIFICATION<lb/> TECHNIQUE?<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Grégory HAMM<lb/> 1 , David BONNEL<lb/> 1 , Raphael LEGOUFFE<lb/> 1 , Fabien PAMELARD<lb/> 1 ,<lb/> Jean-Marie DELBOS<lb/> 2 , François BOUZOM<lb/> 2 , Isabelle FOURNIER<lb/> 1,3 , Michel<lb/> SALZET 1,3 , Jonathan STAUBER<lb/> 1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1: ImaBiotech,</affiliation>
+	</byline>
+
+	<address>Campus Cité Scientifique, Villeneuve d&apos;Ascq, France<lb/></address>
+
+	<byline>
+	<affiliation>2: Technologie Servier,</affiliation>
+	</byline>
+
+	<address>Orléans, France<lb/></address>
+
+	<byline>
+	<affiliation>3: Laboratoire de Spectrométrie de Masse Biologique Fondamentale et Appliquée (FABMS), EA 4550,<lb/> Université de Lille,</affiliation>
+	</byline>
+
+	<address>59655 Villeneuve d&apos;Ascq, France<lb/></address>
+
+		</front>
+	</text>
+</tei>

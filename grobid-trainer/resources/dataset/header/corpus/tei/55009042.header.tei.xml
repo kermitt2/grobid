@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009042"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+
+	<note>Section des Unités de recherche<lb/> </note>
+
+	<docTitle>
+	<titlePart>AERES report on the research unit<lb/> Agents pathogènes et inflammation<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">From the<lb/></note>
+
+	<byline>
+	<affiliation>University of Franche-Comté<lb/></affiliation>
+	</byline>
+
+	<date>November 2010</date>
+
+		</front>
+	</text>
+</tei>

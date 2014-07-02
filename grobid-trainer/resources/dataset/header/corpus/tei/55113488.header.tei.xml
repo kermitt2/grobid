@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei type="master-thesis">
+	<teiHeader>
+		<fileDesc xml:id="55113488"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Generic Attacks on Hash Functions<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>by<lb/> Jalaj Kumar Upadhyay<lb/></docAuthor>
+	</byline>
+
+	<degree>A thesis<lb/> presented to the University of Waterloo<lb/> in fulfillment of the<lb/> thesis requirement for the degree of<lb/> Master of Mathematics<lb/> in Computer Science<lb/></degree>
+
+	<address>Waterloo, Ontario, Canada, </address>
+
+	<date>2010<lb/></date>
+
+	<note type="copyright">&#169; Jalaj Kumar Upadhyay 2010</note>
+
+		</front>
+	</text>
+</tei>

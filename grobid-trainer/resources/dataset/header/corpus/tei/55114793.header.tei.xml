@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55114793"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>OLAP Query Routing and Physical Design<lb/> in a Database Cluster<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Uwe Röhm, Klemens Böhm, and Hans-Jörg Schek<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Database Research Group, Institute of Information Systems<lb/> ETH Zentrum,</affiliation>
+	</byline>
+
+	<address>8092 Zurich, Switzerland<lb/></address>
+
+	<email>{roehm|boehm|schek}@inf.ethz.ch<lb/></email>
+
+	<div type="abstract">Abstract This article quantifies the benefit from simple data organi-<lb/>zation schemes and elementary query routing techniques for the Pow-<lb/>erDB engine, a system that coordinates a cluster of databases. We re-<lb/>port on evaluations for a specific scenario: the workload contains OLAP<lb/> queries, OLTP queries, and simple updates, borrowed from the TPC-R<lb/> benchmark. We investigate affinity of OLAP queries and different routing<lb/> strategies for such queries. We then compare two simple data placement<lb/> schemes, namely full replication and a hybrid one combining partial repli-<lb/>cation with partitioning. We run different experiments with queries only,<lb/> with updates only, and with queries concurrently to simple updates. It<lb/> turns out that hybrid is superior to full replication, even without up-<lb/>dates. Our overall conclusion is that coordinator-based routing has good<lb/> scaleup properties for scenarios with complex analysis queries.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="institution">BAL Planning Co. Ltd.</orgName>,
+							<address>
+								<addrLine>2-15-16 Hanaike</addrLine>,
+								<settlement>Ichinomiya</settlement>,
+								<region>Aichi</region>
+								<postCode>491-0914</postCode>,
+								<country>Japan</country>;
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="department">Fac. Agri</orgName>.
+							<orgName type="institution">Gifu Univ.</orgName>,
+							<lb/>
+							<address>
+								<settlement>Yanagido</settlement>,
+								<region>Gifu</region>
+								<postCode>501-1193</postCode>,
+								<country>Japan</country>;
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

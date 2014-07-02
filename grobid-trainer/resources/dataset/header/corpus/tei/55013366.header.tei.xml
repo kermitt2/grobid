@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013366"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>The Journal of Immunology, 2009, 182, 140.12<lb/></reference>
+
+	<note type="copyright">Copyright © 2009 by The American Association of Immunologists, Inc.<lb/></note>
+
+	<note>140.12<lb/></note>
+
+	<docTitle>
+	<titlePart>Approaches Against Dust Mite-induced Asthma<lb/> Through Adaptive T Regulatory Cells<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Jin Jin<lb/> 1<lb/> , Yanxin Hu<lb/> 1<lb/> , Qiang Liu<lb/> 1 and Bin Wang<lb/> 1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 China Agricultural University,</affiliation>
+	</byline>
+
+	<address>Beijing, China, People&apos;s Republic of<lb/></address>
+
+	<div type="abstract">Abstract<lb/> Asthma is a long-lasting lung disease that causes breathing problems. 50 to 80 % of<lb/> asthma cases may be caused by dust mites and their droppings. This severe reaction is<lb/> initiated by the allergen-specific T cell responsiveness. Effective antigen-specific treatments<lb/> or preventions are still lacking. Using a murine asthma model induced by dust mite extract,<lb/> we first report that co-immunization of DNA and protein vaccines encoding the dust mite<lb/> specific antigen (Der p1) can prevent allergic responses, including the antigen specific IgE<lb/> level and infiltration of lymphocytes and mast cells to the site of the allergen challenge. The<lb/> prevention of Der p1induced asthma is directly related to the induction of a population of<lb/> Der p1 specific iTreg cells exhibiting a CD4+/CD25-/FoxP3+ phenotype. This subtype of<lb/> iTreg cells express IL-10 and TGF-beta, but not CTLA-4 and CCR7 which are well-known<lb/> markers of natural nTreg cells. Adoptive transfer of the iTreg cells is also able to suppress<lb/> the Der p1-induced asthma, suggesting the inhibition potency of the iTreg cells directly on<lb/> the asthma causing T cells. The study demonstrates that utility of the co-immunization<lb/> strategy may present a prophylactive approach clinically and offer us a novel strategy to<lb/> prevent other allergic and asthma diseases in human and animals.</div>
+
+		</front>
+	</text>
+</tei>

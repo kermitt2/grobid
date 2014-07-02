@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="laboratory">Laboratory of Computer Chemistry</orgName>,
+							<orgName type="department">Institute of Chemical Metallurgy</orgName>,
+							<orgName type="institution">Chinese Academy of Sciences</orgName>,
+							<address>
+								<settlement>Beijing</settlement>
+								<postCode>100080</postCode>,
+								<country>P R China</country>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="department">Department of Applied Chemistry</orgName>,
+							<orgName type="institution">China Agricultural University</orgName>,
+							<address>
+								<settlement>Beijing</settlement>
+								<postCode>100094</postCode>,
+								<country>P R China</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

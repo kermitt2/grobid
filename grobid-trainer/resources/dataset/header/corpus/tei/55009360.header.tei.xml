@@ -1,0 +1,63 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009360"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Home<lb/> Meeting Index<lb/> Search<lb/> ACR Homepage<lb/> Arthritis &amp; Rheumatism Issues<lb/> Privacy Policy<lb/> </note>
+
+	<docTitle>
+	<titlePart>Arthritis &amp; Rheumatism, Volume 62,<lb/> November 2010 Abstract Supplement<lb/> </titlePart>
+	</docTitle>
+ 
+	<note type="other">Abstracts of the American College of<lb/> Rheumatology/Association of Rheumatology Health Professionals<lb/> Annual Scientific Meeting<lb/> </note>
+
+	<address>Atlanta, Georgia </address>
+
+	<date>November 6-11, 2010.<lb/></date>
+
+	<docTitle>
+	<titlePart>Proof Of Concept Study For A Potent P38 MAPK Dual Action Inhibitor<lb/> BMS-582949 In Subjects With RA Receiving Concomitant Methotrexate.<lb/></titlePart>
+	</docTitle>
+	
+	<byline>
+	<docAuthor>Genovese 6 , Mark C., Gao 3 , Ling, Yin 3 , Jie, Smith 3 , Stefani, Weinblatt 1 ,<lb/> Michael E., Smolen 5 , Josef S., Wang 3 , Xiaoning<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Brigham &amp; Womens Hospital,</affiliation>
+	</byline>
+
+	<address>Boston, MA<lb/></address>
+
+	<byline>
+	<affiliation>Bristol-Myers Squibb,</affiliation>
+	</byline>
+
+	<address>Wayne, PA<lb/></address>
+
+	<byline>
+	<affiliation>Bristol-Myers Squibb<lb/> Hospital Clínico Universitario de Santiago,</affiliation>
+	</byline>
+
+	<address>Santiago de Compostela,<lb/> Spain</address>
+
+	<byline>
+	<affiliation>Krankenhaus Lainz,</affiliation>
+	</byline>
+
+	<address>Vienna, Austria<lb/></address>
+
+	<byline>
+	<affiliation>Stanford University,</affiliation>
+	</byline>
+
+	<address>Sunnyvale, CA<lb/></address>
+
+	<note type="other">Background/Purpose:</note>
+
+		</front>
+	</text>
+</tei>

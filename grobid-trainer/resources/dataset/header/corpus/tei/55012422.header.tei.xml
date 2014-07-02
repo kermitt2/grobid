@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012422"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+
+	<docTitle>
+	<titlePart>Stereospecific Radioimmunoassays for<lb/> d -Pseudoephedrine in Human Plasma and Their<lb/> Application to Bioequivalency Studies<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>JOHN W. A. FINDLAYX, JAMES T. WARREN, JOHN A. HILL, and<lb/> RICHARD M. WELCH<lb/></docAuthor>
+	</byline>
+
+	<note type="submission">Received August 11,1980</note>
+
+	<reference>, from Wellcome Research Laboratories, Research Triangle Park, NC 27709.<lb/> 11,1980.<lb/></reference>
+
+	<note type="other">Accepted for publication November<lb/></note>
+
+	<div type="abstract">Abstract Antiserum to d-pseudcephedrine was raised in New Zealand<lb/> White rabbits in response to immunization with a conjugate of bovine<lb/> serum albumin and d-pseudoephedrine-N-3-propionic acid. The hapten<lb/> was prepared by reaction of methyl acrylate with d-pseudoephedrine,<lb/> followed by ester hydrolysis. Sodium b ~ r o [ ~ H ]<lb/> hydride reduction of dl -<lb/>ephedrone gave [c~-~H]-dl-ephedrine, and a Welsh rearrangement with<lb/> acetic anhydride followed by deacetylation gave [c~-~H]-dl-pseudo-<lb/>ephedrine, which was used as a radioligand in radioimmunoassay pro-<lb/>cedures for direct plasma analyses. Three sensitive radioimmunoassay<lb/> procedures were developed, two using [3H]pseudoephedrine as the ra-<lb/>dioligand and either adsorption on coated charcoal or polyethylene glycol<lb/> precipitation for separation of antibody-bound from free radioligand.<lb/> The third method used an [1251]tyrosine methyl ester analog of pseudo-<lb/>ephedrine and charcoal separation, preceded by extraction and deriva-<lb/>tization of pseudoephedrine with methyl acrylate. All three assays could<lb/> detect 52.5 ng of pseudoephedrine/ml. The antiserum was stereospecific,<lb/> showing low cross-reactivities with I-pseudoephedrine and d-and l-<lb/>ephedrines. d-Norpseudoephedrine and some other related compounds<lb/> also had low cross-reactivity in these radioimmunoassay procedures.<lb/> Excellent agreement was found between pseudoephedrine concentrations<lb/> in human plasma determined by radioimmunoassay and by a standard<lb/> GLC method. The utility of radioimmunoassay was illustrated by ap-<lb/>plication of one of these procedures to an assessment of the bioequiva-<lb/>lence of immediate-and sustained-release pseudoephedrine formulations<lb/> in normal volunteers. A sustained-release preparation containing 120 mg<lb/> of pseudoephedrine hydrochloride given every 12 hr was shown by AUC<lb/> comparisons to be bioequivalent to an immediate-release tablet (con-<lb/>taining 60 mg of pseudoephedrine hydrochloride) given every 6 hr.<lb/> </div>
+
+	<keyword>Keyphrases 0 Radioimmunoassay-d-pseudoephedrine,<lb/> human plasma, bioequivalency studies, immediate-and sustained-release tablets<lb/> o d-Pseudoephedrine-radioimmunoassay, bioequivalency studies,<lb/> immediate-and sustained-release tablets Bioequivalency studies-<lb/>radioimmunoassays of d-pseudoephedrine in human plasma, bioequiv-<lb/>alency studies, immediate-and sustained-release tablets 0 Adrener-<lb/>gics-radioimmunoassays for d-pseudoephedrine in human plasma,<lb/> bioequivalency studies, immediate-and sustained-release tablets<lb/> </keyword>
+
+	<div type="introduction">&amp;Pseudoephedrine was first isolated from the Chinese<lb/> plant Ma Huang by Chou and Read (1) in 1926, and<lb/> studies of its pharmacology started soon thereafter (2,3).<lb/> Although pseudoephedrine is in widespread use as a<lb/> proven, clinically effective nasal decongestant ( P 6 ) , little<lb/> published information is available on its disposition and<lb/> pharmacokinetics in human plasma following adminis-<lb/>tration of therapeutic doses. Studies have examined ki-<lb/>netics chiefly from the viewpoint of urinary excretion (7-91,<lb/> which is liable to be influenced by alterations in urinary<lb/> pH (8). Such indirect studies were necessitated by the lack<lb/> of methods sufficiently sensitive to detect the relatively<lb/> low circulating concentrations of pseudoephedrine in<lb/> plasma following therapeutic doses.<lb/> Reported GLC procedures (7,10, and 11) were capable<lb/> of detecting only 0.3-0.5 pg of pseudoephedrinelml. Even<lb/> with nitrogen detection, Bye et al. (12) were able to lower<lb/> the sensitivity limit only to 25 ng/ml. Kuntzman et al. (8)<lb/> reported a procedure that involved esterification of iso-<lb/>lated pseudoephedrine with tritiated acetic anhydride<lb/> followed by separation and quantitation of the resulting<lb/> radioactive product. Although capable of detecting 50 ng<lb/> of pseudoephedrine/ml of plasma, this method is still rel-<lb/>atively insensitive and time consuming. A study (13) of<lb/> plasma pseudoephedrine levels relative to efficacy, using<lb/> a GLC method for drug determination, was able to deter-<lb/>mine plasma concentrations up to 6 hr following a 60-mg<lb/> oral dose of pseudoephedrine hydrochloride.<lb/> This report describes the development of a specific an-<lb/>tiserum to pseudoephedrine and its application to three<lb/> specific radioimmunoassay procedures for the drug. Two<lb/> procedures are direct and employ a tritium-labeled ra-<lb/>dioligand; the third requires extraction and derivatization<lb/> of the drug prior to assay but employs a y-labeled radio-<lb/>ligand. The sensitivity limits of these procedures are &lt;2.5<lb/> ng of pseudoephedrine/ml in all cases. Their use for drug<lb/> disposition studies following oral administration of both<lb/> immediate-and sustained-release pseudoephedrine<lb/> preparations is illustrated.</div>
+
+		</front>
+	</text>
+</tei>

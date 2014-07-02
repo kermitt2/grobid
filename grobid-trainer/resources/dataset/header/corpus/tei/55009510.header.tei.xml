@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009510"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Textures and Microstructures, 1997, Vol. 29, pp. 89-101<lb/></reference>
+
+	<note type="other">Reprints available directly from the publisher.<lb/> Photocopying permitted by license only<lb/></note>
+
+	<note type="copyright">&#169; 1997 OPA (Overseas Publishers Association)<lb/> Amsterdam B.V. Published in The Netherlands<lb/> under license by Gordon and Breach Science Publishers<lb/> Printed in India<lb/></note>
+
+	<docTitle>
+	<titlePart>USE OF IMAGING PLATES IN X-RAY ANALYSIS<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>M. ERMRICH, F. HAHN and E. R. WOLFEL(t)<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>STOE &amp; CIE GmbH, Application Laboratory,</affiliation>
+	</byline>
+
+	<address>Hilpertstrafle 10, D-64295<lb/> Darmstadt, Germany<lb/></address>
+
+	<note type="submission">(Received 18 September 1995)<lb/></note>
+
+	<div type="abstract">Two-dimensional detectors have opened a new area for the investigation of both single crystals and<lb/> polycrystalline materials. The working principle of Imaging Plates is described. Some characteristics<lb/> and the advantages of an Imaging Plate are discussed using the STOE Imaging Plate Diffraction System<lb/> for different kinds of X-ray analysis: (i) single crystal diffractometry, (ii) powder diffraction and (iii)<lb/> stress and texture investigations.<lb/></div>
+
+	<keyword>KEY WORDS: Imaging plate, powder diffractometry, stress, texture, single crystal diffractometry.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

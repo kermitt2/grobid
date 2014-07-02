@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011234"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Chemical Compatibility of Corning ® Plasticware<lb/> </titlePart>
+	</docTitle>
+
+	<note type="other">PS PP<lb/> PVC CA<lb/> PC CN<lb/> NY MCE<lb/> PTFE PET<lb/>	Acids Hydrochloric acid (25%)<lb/> G G<lb/> G N<lb/> R R<lb/> N O<lb/> R R<lb/> Hydrochloric acid (concentrated)<lb/> F G<lb/> F N<lb/> R N<lb/> N N<lb/> R O<lb/> Nitric acid (concentrated)<lb/> P P<lb/> P N<lb/> R N<lb/> N N<lb/> O N<lb/> Nitric acid (25%)<lb/> P G<lb/> F N<lb/> R L<lb/> N O<lb/> R R<lb/> Alcohols Butanol<lb/> G G<lb/> G R<lb/> R R<lb/> R R<lb/> R R<lb/> Ethanol G<lb/> G G<lb/> R R<lb/> N R<lb/> O R<lb/> R Methanol<lb/> G G<lb/> G R<lb/> R N<lb/> R O<lb/> R R<lb/> Amines Aniline<lb/> G G<lb/> P N<lb/> N R<lb/> R N<lb/> R O<lb/> Dimethylformamide P<lb/> G F<lb/> N N<lb/> N R<lb/> N R<lb/> N<lb/> Bases Ammonium hydroxide (25%)<lb/> F G<lb/> G R<lb/> N R<lb/> R O<lb/> N O<lb/> Ammonium hydroxide (1N)<lb/> F G<lb/> G N<lb/> N R<lb/> R O<lb/> N N<lb/> Sodium hydroxide<lb/> G G<lb/> G N<lb/> N N<lb/> R N<lb/> R N<lb/> Hydrocarbons Hexane<lb/> P G<lb/> F R<lb/> R R<lb/> R R<lb/> R R<lb/> Toluene P<lb/> G P<lb/> R O<lb/> R R<lb/> R R<lb/>N Xylene<lb/> P F<lb/> P R<lb/> R R<lb/> R R<lb/> R N<lb/> Dioxane P<lb/> G P<lb/> N N<lb/> N R<lb/> N R<lb/> R Dimethylsulfoxide (DMSO)<lb/> P G<lb/> P N<lb/> N N<lb/> R N<lb/> R O*<lb/> Halogenated Hydrocarbons<lb/> Chloroform P<lb/> N P<lb/> N N<lb/> R R<lb/> N R<lb/> R Methylene chloride<lb/> P F<lb/> P N<lb/> N R<lb/> R N<lb/> R N<lb/> Ketones Acetone<lb/> P G<lb/> P N<lb/> O N<lb/> R N<lb/> R R<lb/> Methyl ethyl diketone<lb/> P G<lb/> P N<lb/> O N<lb/> R O<lb/> R R<lb/></note>
+	
+		</front>
+	</text>
+</tei>

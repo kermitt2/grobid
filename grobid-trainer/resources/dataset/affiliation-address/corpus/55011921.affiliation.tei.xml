@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">Institute of Pathology</orgName>,
+							<lb/>
+							<orgName type="institution">University of<lb/> Technology</orgName>,
+							<address>
+								<settlement>Aachen</settlement>,
+								<country>Germany</country>
+							</address>
+						</affiliation>
+						<affiliation>		
+							<orgName type="department">Institut<lb/> fur Pathologie der RWTH<lb/> Aachen</orgName>,
+							<address>
+								<addrLine>Pauwelsstr. 30</addrLine>,
+								<lb/>
+								<postCode>D-52057</postCode>
+								<settlement>Aachen</settlement>,
+								<country>Germany</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

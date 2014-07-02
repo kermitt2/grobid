@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014498"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<affiliation>JUDD WIRE INC.<lb/> </affiliation>
+	</byline>
+	
+	<docTitle>
+	<titlePart>Automotive<lb/> Wire and Cable A quick product finder<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">A member of the Sumitomo Electric Industries group of companies<lb/></note>
+
+	<note>ABS Cable<lb/> Transmission Wire<lb/> Primary Wire<lb/> Specialty Wire &amp; Cable</note>
+
+		</front>
+	</text> 
+</tei>

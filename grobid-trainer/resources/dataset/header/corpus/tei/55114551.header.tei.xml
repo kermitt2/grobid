@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55114551"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Optimization of Conditions for the Synthesis of Silver<lb/> Nanowire<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Anand Habib<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>The University of Texas at Dallas<lb/></affiliation>
+	</byline>
+
+	<date>2006<lb/></date>
+
+	<div type="abstract">Abstract<lb/> This paper discusses an approach employing a Pluronic 123 (P123) surfactant that<lb/> acts as a reductant of silver at critical concentrations, while also investigating both<lb/> a hydrothermal treatment at autogenous pressure in autoclave and one atmosphere<lb/> reflux at approximately 100 °C. As the key issue of reproducibility becomes the<lb/> cornerstone of research, the effects of changes in different variables such as the<lb/> ratio between P123 and silver nitrate, the concentration of reactants, the<lb/> temperature at which the reaction takes place, and the type of solvent employed<lb/> were examined. Though an SEM was unavailable to analyze the morphology of<lb/> the nanomaterial, X-ray diffraction confirmed that silver (01-089-3722) was<lb/> produced with crystal sizes up to 60 nanometers. Additionally, experiments were<lb/> run concerning the optimal concentration of polyvinylpyrrolidone (PVP) when<lb/> using ethylene glycol to reduce silver. After using concentrations of 0.02 M, 0.2<lb/> M, and 2.0 M PVP, it was discovered that the most favorable concentration was<lb/> slightly less than 0.2 M using intensities of peaks from X-ray diffraction. Though<lb/> problems with replication have not been resolved, the use of reflux techniques at<lb/> lower temperatures resulted in promising results. Still, further testing must be<lb/> carried out in order to pinpoint the reaction conditions between P123 and silver<lb/> nitrate and to design a technique that is easily reproduced.<lb/></div>
+
+	<docTitle>
+	<titlePart>Optimization of Conditions for the Synthesis of Silver Nanowire<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">WSSP 2006<lb/> </note>
+
+	<note>UTD</note>
+
+	<note type="page">1-2<lb/></note>
+
+	<docTitle>
+	<titlePart>Optimization of Conditions for the Synthesis of Silver<lb/> Nanowire<lb/></titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

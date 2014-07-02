@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55114685"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>A new Approach to Collaborative Information<lb/> Processing in Complex Environmental<lb/> Management Problems<lb/>
+	</titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Gregor Pavlin, Michiel Kamermans, and Kees Nieuwenhuis<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Thales Nederland B.V., D-CIS Lab<lb/></affiliation>
+	</byline>
+
+	<address>Postbox 90, 2600AB, Delft, the Netherlands<lb/></address>
+
+	<email>gregor.pavlin@d-cis.nl, michiel.kamermans@d-cis.nl,<lb/> kees.nieuwenhuis@d-cis.nl<lb/></email>
+
+	<div type="abstract">Abstract. Contemporary environmental management applications of-<lb/>ten require situation assessment based on the processing of large quan-<lb/>tities of heterogeneous information and rich domain knowledge. This<lb/> paper discusses an efficient solution to such processing challenges, which<lb/> is based on the recently introduced Dynamic Process Integration Frame-<lb/>work (DPIF), a service oriented approach to collaborative reasoning.<lb/> The DPIF supports (i) a systematic encapsulation of heterogeneous pro-<lb/>cesses via software agents and (ii) self configuration mechanisms that<lb/> automate creation of meaningful workflows implementing complex col-<lb/>laborative reasoning processes. In addition, the DPIF is supported by<lb/> novel tools and methods which facilitate construction of service oriented<lb/> systems using rich domain knowledge while, at the same time, the col-<lb/>laboration between heterogeneous services requires minimal ontological<lb/> commitments.<lb/></div>
+
+		</front>
+	</text>
+</tei>

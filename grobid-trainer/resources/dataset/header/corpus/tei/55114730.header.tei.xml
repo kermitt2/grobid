@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<tei type="product-sheet">
+	<teiHeader>
+		<fileDesc xml:id="55114730"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<ptr>http://www.gnpd.com<lb/> </ptr>
+
+	<note type="other">This information is supplied in accordance with Mintel&apos;s Terms &amp; Conditions. </note>
+
+	<note type="page">1<lb/></note>
+
+	<docTitle>
+	<titlePart>Eclairs Pops<lb/></titlePart>
+	</docTitle>
+
+	<note>Record ID:<lb/> 1571302 </note>
+
+	<byline>
+	<affiliation>Company:<lb/> Cadbury Brand:<lb/> </affiliation>
+	</byline>
+		
+	<note type="other">Cadbury P.S.<lb/> Category:<lb/> Sugar &amp; Gum<lb/> Confectionery Sub-Category:<lb/> Lollipops Country:<lb/> 
+	</note>
+
+	<address>South Africa<lb/> </address>
+
+	<note type="other">Store Name:<lb/> SPAR Store Type:<lb/> Supermarket Store Address:<lb/> Durban 4094<lb/> Date Published:<lb/> Jul 2011<lb/> Product source:<lb/> Shopper Launch Type:<lb/> New Product<lb/> Price in local currency: ZAR10.99<lb/> Price in US Dollars:<lb/> 1.53<lb/> Price in Euros:<lb/> 1.11<lb/> Bar Code:<lb/> 6001065047287<lb/></note>
+
+		</front>
+	</text>
+</tei>

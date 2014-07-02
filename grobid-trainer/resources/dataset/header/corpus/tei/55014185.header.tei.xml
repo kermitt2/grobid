@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014185"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">® = Registered trademark of<lb/> </note>
+	
+	<byline>
+	<affiliation>BASF Aktiengesellschaft<lb/></affiliation>
+	</byline>
+
+	<docTitle>
+	<titlePart>Oppanol<lb/> ®<lb/> B types<lb/> Oppanol ® B 30 SF<lb/> Oppanol ® B 50 SF<lb/> Oppanol ® B 80<lb/></titlePart>
+	</docTitle>
+	
+	<div type="abstract">These Oppanol ® B types are used for producing adhesives, sealants,<lb/> lubricating oils, coating componds, and chewing gum. They are also<lb/> recommended for modifying bitumen.<lb/></div>
+
+	<note type="other">Technical Information<lb/> TI/ES 1415 us<lb/></note>
+
+	<date>October 2005<lb/></date>
+
+	<note type="page">Page 1 of 11<lb/> </note>
+
+	<note type="other">Supersedes edition dated</note>
+
+	<date>April 2003</date>
+
+		</front>
+	</text>
+</tei>

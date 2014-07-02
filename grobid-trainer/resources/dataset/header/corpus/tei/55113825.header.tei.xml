@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei type="supplementary">
+	<teiHeader>
+		<fileDesc xml:id="55113825"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">S1<lb/></note>
+
+	<note>Science Supporting Online Material<lb/> </note>
+
+	<docTitle>
+	<titlePart>Whole-Genome Patterns of Common DNA Variation<lb/> in Three Human Populations<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>David A. Hinds, Laura L. Stuve, Geoffrey B. Nilsen, Eran Halperin,<lb/> Eleazar Eskin, Dennis B. Ballinger, Kelly A. Frazer, David R. Cox<lb/></docAuthor>
+	</byline>
+
+	<div type="introduction">Contents</div>
+
+		</front>
+	</text>
+</tei>

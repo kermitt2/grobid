@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010451"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="copyright">©</note>
+
+	<reference>Journal of Sports Science and Medicine (2005) 4, 229-238<lb/></reference>
+
+	<ptr type="web">http://www.jssm.org<lb/></ptr>
+
+	<note type="other">Research article<lb/></note>
+
+	<docTitle>
+	<titlePart>AN INNOVATIVE SKI-BOOT: DESIGN, NUMERICAL<lb/> SIMULATIONS AND TESTING<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Stefano Corazza and Claudio Cobelli<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Information Engineering -University of Padova,</affiliation>
+	</byline>
+
+	<address>Italy<lb/></address>
+
+	<note type="submission">Received: 26 October 2004 / Accepted: 06 May 2005 /</note>
+
+	<date>Published (online): 01 September 2005<lb/></date>
+
+	<div type="abstract">ABSTRACT<lb/> The present work is concerned with the design of an innovative ski-boot. In order to optimize ergonomics<lb/> and biomechanical behavior of the ski-boot it is important to take into account the orientation of the leg<lb/> with respect to the ground. The SGS system (Stance Geometry System) developed in this work allows<lb/> the skier to adjust for posture in the frontal plane by rotating the sole of the boot about the antero-<lb/>posterior axis (ski-boot is then locked in the desired position before skiing). A simplified model of the<lb/> effect of ski-boot deformation on skiing behavior is used to evaluate the minimal stiffness the system<lb/> must have. An experimental analysis on the ski slopes was carried out to provide ski-boot deformations<lb/> and loading data in different skiing conditions, to be used in numerical simulations. Finite Elements<lb/> Method (FEM) simulations were performed for optimal design of the joint between ski-boot and sole.<lb/> The active loads and local ski-boot deformations during small-and large-radius turns were<lb/> experimentally determined and used to validate a FEM model of the ski-boot. The model was used to<lb/> optimize the design for maximum stiffness and to demonstrate the efficacy of virtual design supported by<lb/> proper experimental data. Mean loads up to 164% body weight were measured on the outer ski during<lb/> turning. The new SGS design system allows the adjustment of lateral stance before using the ski-boot,<lb/> optimizing the ski-boot stiffness through FEM analysis. Innovative aspects of this work included not<lb/> only the stance geometry system ski-boot but also the setup of a virtual design environment that was<lb/> validated by experimental evidence. An entire dataset describing loads during skiing has been obtained.<lb/> The optimized SGS ski-boot increases intrinsic knee stability due to proper adjustment of lateral stance,<lb/> guaranteeing appropriate stiffness of the ski-boot system.<lb/></div>
+
+	<keyword>KEY WORDS: Stance geometry system, stiffness, virtual design environment, FEM analysis, skiing<lb/> performance.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

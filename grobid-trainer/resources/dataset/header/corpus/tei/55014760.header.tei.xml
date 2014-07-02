@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014760"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>MIRAI: A Solution to Seamless Access<lb/> in Heterogeneous Wireless Networks<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Masugi Inoue, Khaled Mahmud, Homare Murakami and Mikio Hasegawa<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>New Generation Mobile Network Project<lb/> Communications Research Laboratory<lb/> YRP Center Building</affiliation>
+	</byline>
+
+	<address>No. 1, 3-4 Hikarino-oka, Yokosuka, Kanagawa 239-0847 Japan<lb/></address>
+
+	<email>inoue@crl.go.jp<lb/></email>
+
+	<div type="abstract">Abstract— A key word describing next-generation wireless<lb/> communications, so called 4G, is &quot;seamless.&quot; As part of the e-<lb/>Japan Plan promoted by the Japanese Government, the MIRAI<lb/> (Multimedia Integrated network by Radio Access Innovation)<lb/> project is aiming at the development of new technologies that will<lb/> enable seamless integration of various wireless access systems for<lb/> practical use by 2005. First, this paper describes heterogeneous<lb/> wireless networks and introduces the concept of MIRAI. The<lb/> most significant feature of MIRAI is the provision of a set of<lb/> signaling functions: radio-access-network discovery and<lb/> selection, heterogeneous paging, and vertical handoff. These<lb/> functions make it possible to offer seamless services between<lb/> different wireless systems. A medium access control (MAC)<lb/> protocol for basic access networks, which are dedicated wireless<lb/> systems providing the signaling, is then introduced. A proof-of-<lb/>concept demonstration system is also briefly introduced. The<lb/> delay performances of the signaling procedures are presented.<lb/> 4G, heterogeneous wireless networks, seamless handover, RAN<lb/> discovery and selection, IPv6<lb/></div>
+
+		</front>
+	</text>
+</tei>

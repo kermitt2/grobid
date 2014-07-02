@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011657"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">647 </note>
+
+	<reference>Blochem4. J. (1976) 153, 647-655<lb/></reference>
+
+	<note>Printed in Great Britain<lb/></note>
+
+	<docTitle>
+	<titlePart>The Whey Proteins of the Milk of Red Deer (Cervus elaphus L.)<lb/> A HOMOLOGUE OF BOVINE f8-LACTOGLOBULIN<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>By E. IAN McDOUGALL and JAMES C. STEWART<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Rowett Research Institute,</affiliation>
+	</byline>
+
+	<address>Bucksburn, Aberdeen AB2 9SB, Scotland, U.K.<lb/></address>
+
+	<note type="submission">(Received 21 August 1975)<lb/></note>
+
+	<div type="abstract">1. The whey proteins from the milk of red deer are compared with those of cattle. Gel<lb/> chromatography and electrophoresis showed a close similarity between the whey proteins<lb/> of the two species in the size, mobility and relative amounts of the main constituents and<lb/> in the changes in their relative amounts with time after parturition. 2. The major consti-<lb/>tuent of the deer whey was isolated. It appeared to be homologous with bovine f,-lacto-<lb/>globulin and had the following properties: m = -5.2x 1O9m2s1 V&apos;1 at 40C and<lb/> pH8.6; pl = 5.17; s2%.w = 2.89S; v = 0.748ml/g; El.&quot;&quot; = 9.12 at 278nm; An/c = 1.794<lb/> x 10-3 dl/g at 579 nm (all at 20°C except m). Its molecular weight was that ofa dimer with a<lb/> subunit weight of 18000. 3. Amino acid analyses of this protein, adjusted to lysine = 15<lb/> residues showed that it contains one more residue ofaspartic acid, alanine and methionine<lb/> and one less glutamic acid residue and two less leucine residues than bovine fi-lacto-<lb/>globulin A. 4. On starch-gel electrophoresis at pH8.2, this protein migrated at the same<lb/> rate as bovine f-lactoglobulin B, although its isoelectric point is close to that ofthe bovine<lb/> A variant. Milk from three out of 27 hinds examined showed a variant. This migrated in<lb/> starch gel at the same rate as the bovine A variant but had a more acid pl = 5.02. 5. The<lb/> two species whose milk whey proteins are compared represent two different families of<lb/> ruminants. The similarities found support the&apos;view that the milk whey proteins of the<lb/> bovids are probably typical of the suborder as a whole.<lb/> </div>
+
+	<div type="introduction">The composition of the milk of different species<lb/> has been reviewed by Ben-Shaul (1962) and Jenness<lb/> &amp; Sloan (1970). Because of the scarcity of data, com-<lb/>parison of the protein composition is limited to the<lb/> casein and whey fractions. The latter review includes<lb/> a ternary diagram which shows that the milk ofrumi-<lb/>nants is characterized by a high casein/whey-protein<lb/> ratio compared with other groups of mammals.<lb/> Among the rurminants, all the domesticated species<lb/> are bovids; their milk is easily available, but milk<lb/> from other families can only be obtained from cap-<lb/>tive wild animals. Hence our knowledge of the milk<lb/> proteins of ruminants mainly relates to studies on<lb/> bovids. These are often taken to be typical of the sub-<lb/>order as a whole, but it is still desirable to extend our<lb/> knowledge to the milk ofother families to see whether<lb/> this is true. Of these families, the cervids are the big-<lb/>gest and appear to have;evolved earlier than the bovids<lb/> (see the scheme in Young, 1962). Of the cervids, the<lb/> reindeer (Rangifer tarandus L.) is herded but its milk<lb/> proteins have not been studied in any detail. The red<lb/> deer (Cervus elaphus L.), however, has become an<lb/> experimental animal and increasing attention is being<lb/> given to methods of fanning it (see Blaxter et al.,<lb/> 1974). Milk of this species has become more readily<lb/> available. Arman etal. (1974) followed the output and<lb/> gross composition of milk from several hinds at the<lb/> Rowett Research Institute throughout lactation.<lb/> Vol. 153<lb/> Their data included the casein and whey-protein con-<lb/>tents and these showed a high ratio similar to that<lb/> found in other ruminants. In the present work, the<lb/> whey proteins of red-deer milk are examined in fur-<lb/>ther detail and compared with those of cattle (Bos<lb/> taurus). The major whey protein is isolated and<lb/> characterized and possible variants of it are sought<lb/> in milk from individual hinds.</div>
+
+		</front>
+	</text>
+</tei>

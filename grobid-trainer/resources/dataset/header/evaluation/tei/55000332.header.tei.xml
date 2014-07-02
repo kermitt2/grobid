@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000332"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>An OWL-S based architecture for self-optimizing<lb/> multimedia over IP services<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>David López<lb/> 1 , Jorge E. López de Vergara<lb/> 2 , Francisco González<lb/> 3 , and Alfonso<lb/> Sánchez-Macián<lb/> 3<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Universidad de León,</affiliation>
+	</byline>
+
+	<address>Campus de Vegazana, 24071 León, Spain,<lb/></address>
+
+	<email>david.lopez@unileon.es,<lb/></email>
+
+	<byline>
+	<affiliation>2 Universidad Autónoma de Madrid, Escuela Politécnica Superior,<lb/></affiliation>
+	</byline>
+
+	<address>Ciudad Universitaria de Cantoblanco, 28049 Madrid, Spain<lb/></address>
+
+	<email>jorge.lopez vergara@uam.es,<lb/></email>
+
+	<byline>
+	<affiliation>3 Universidad Politécnica de Madrid, DIT,<lb/></affiliation>
+	</byline>
+
+	<address>Paraninfo de la Ciudad Universitaria 28040 Madrid, Spain<lb/></address>
+
+	<email>vidal,aasmp@dit.upm.es<lb/></email>
+
+	<div type="abstract">Abstract. This article presents an architecture to manage a multime-<lb/>dia over IP delivery service. It considers user&apos;s expectations as the main<lb/> metric that defines the quality of the service thus assuring an efficient<lb/> resource and effort investment by network operators. The proposed ar-<lb/>chitecture integrates into a single platform both required elements as<lb/> well as involved processes in a multimedia over IP delivery scenario. In<lb/> order to achieve a scalable solution, a distributed proposal is made ac-<lb/>cording to proven modeling techniques, with maximum decoupling and<lb/> composition. Web Services have turned out to be a valid approach to<lb/> specify involved components. It is necessary, however, to extend the ca-<lb/>pabilities that web services provide with alternative technologies such as<lb/> OWL-S to integrate both components and processes into a single unified<lb/> specification of the management architecture.<lb/></div>
+
+		</front>
+	</text>
+</tei>

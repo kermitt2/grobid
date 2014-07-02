@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<tei type="white-paper">
+	<teiHeader>
+		<fileDesc xml:id="55114329"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<ptr>www.siemens.com/mobility<lb/></ptr>
+
+	<docTitle>
+	<titlePart>Intelligent solutions<lb/> for motorways, tunnels and waterways</titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

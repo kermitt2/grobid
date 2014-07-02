@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010102"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<affiliation>A LC AT E L 5520<lb/></affiliation>
+	
+	<note type="other">S N M P E L E M E N T M A N A G E R | R E L . 1 . 0<lb/></note>
+
+	<div type="abstract">The Alcatel 5520 SNMP Element Manager (EM), formerly the 45020 Element Manager*, is the<lb/> element-level management component of the Alcatel management family of solutions. It can operate<lb/> as a standalone element manager, operating on HP OpenView, or with Release 2.0 of the Alcatel<lb/> 5620 Network Manager (NM), formerly the 46020 Network Manager*, as part of a complete<lb/> network and element management solution.<lb/> As a standalone device, operating with HP OpenView, the 5520 provides scalable element<lb/> management and monitoring of SNMP devices such as access devices and routers.<lb/> As an integrated element manager, working seamlessly with the 5620, the 5520 provides element<lb/> management of SNMP devices through the same platform that provides powerful management<lb/> of TDM, X.25, frame relay and ATM connectivity.<lb/></div>
+
+	<note type="other">F u l l -f e a t u r e d<lb/> e l e m e n t<lb/> m a n a g e m e n t<lb/> o f S N M P<lb/> d e v i c e s<lb/> </note>
+	
+	<note type="other">2<lb/> A L C A T E L 5 5 2 0 | S N M P E M<lb/></note>
+
+	<docTitle>
+	<titlePart>5520 Overview<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">The 5520 Element Manager provides remote configuration and<lb/> monitoring of SNMP nodes through a point-and-click graphical<lb/> user interface. The 5520 provides effective management in a<lb/> variety of configurations to provide the level of management<lb/> support required.<lb/> The 5520 application includes interfaces to manage Alcatel<lb/> and third party nodes. Other SNMP objects may be managed<lb/> using the 5520 development system to add these objects to<lb/> the 5520 database.<lb/> The 5520 can run on one of two platforms: HP OpenView,<lb/> or the 5620 Network Manager.<lb/> On HP OpenView, the 5520 runs as a standalone SNMP<lb/> element manager providing a graphical user interface to manage<lb/> Alcatel nodes, along with third party SNMP devices.<lb/> When the 5520 runs on the 5620 system, 5620 network<lb/> operators can manage SNMP devices, accessing 5520 element<lb/> management capabilities through the 5620 GUI. In this way,<lb/> the 5620 provides a seamless presentation environment for<lb/> end-to-end management across SNMP devices.<lb/> The 5520 can be launched from the VIVID System Manager<lb/> for integration with LAN management.<lb/> The 5520 complies with the HP OpenView Applications<lb/> Programming Interface (API) specification.<lb/></div>
+
+		</front>
+	</text>
+</tei>

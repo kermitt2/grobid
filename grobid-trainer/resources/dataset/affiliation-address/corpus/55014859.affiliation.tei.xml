@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="department">American Institute of Aeronautics and Astronautics</orgName>
+							<lb/>
+							<orgName type="institution">NASA Langley Research Center</orgName>,
+							<address>
+								<settlement>Hampton</settlement>,
+								<region>Virginia</region>,
+								<postCode>23681</postCode>
+							</address>
+						</affiliation>
+						<affiliation>		
+							<orgName type="institution">National Institute of Aerospace</orgName>,
+							<address>
+								<settlement>Hampton</settlement>,
+								<region>VA</region>
+								<postCode>23666</postCode>
+							<lb/>
+							</address> 
+						</affiliation>
+						<affiliation>	
+							<orgName type="institution">United States Naval Academy</orgName>,
+							<address>
+								<settlement>Annapolis</settlement>,
+								<region>Maryland</region>
+								<postCode>21402</postCode>
+							<lb/>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

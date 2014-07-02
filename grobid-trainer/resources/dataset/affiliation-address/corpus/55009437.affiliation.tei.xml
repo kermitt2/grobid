@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="institution">Biomedical Research Institute/AIST</orgName>,
+							<address>
+								<addrLine>Central 4</addrLine>,
+								<addrLine>1-1-1<lb/> Higashi</addrLine>,
+								<settlement>Tsukuba</settlement>,
+								<region>Ibaraki</region>,
+								<postCode>305-8562</postCode>,
+								<country>Japan</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="department">Research Institute for Cell Engineering (RICE)</orgName>,
+							<orgName type="institution">National Institute of Advanced Industrial Science and Technology<lb/> (AIST)</orgName>,
+							<address>
+								<addrLine>Central 6 Tsukuba</addrLine>,
+								<region>Ibaraki</region>;
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="department">Department of Biotechnology and Life Science</orgName>,
+							<orgName type="institution">Tokyo University of Agriculture<lb/> and Technology</orgName>,
+							<address>
+								<settlement>Tokyo</settlement>;
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>3</marker>
+							<orgName type="department">Diamond Research Center</orgName>,
+							<orgName type="institution">AIST</orgName>,
+							<address>
+								<addrLine>Central 2</addrLine>,
+								<settlement>Tsukuba</settlement>,
+								<region>Ibaraki</region>;
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>4</marker>
+							<orgName type="institution">Olympus Corporation</orgName>,
+							<lb/>
+							<address>
+								<addrLine>Tatsuno-machi</addrLine>,
+								<settlement>Nagano</settlement>; and
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>5</marker>
+							<orgName type="department">Structural Biology Center</orgName>,
+							<orgName type="institution">National Institute of Genetics</orgName>,
+							<address>
+								<settlement>Mishima</settlement>,
+								<region>Shizuoka</region>,
+								<country>Japan</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

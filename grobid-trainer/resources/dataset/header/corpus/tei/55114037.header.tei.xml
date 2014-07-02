@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55114037"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">THIRD DRAFT (11-4-2013)– NOT TO BE CITED<lb/> Notes to Editor:<lb/> @BULLET Need to Add Appendix A to the TOC<lb/> @BULLET Since the TOC contains references, shouldn&apos;t this be placed before the bibliography?<lb/> @BULLET Need to Add Placeholder for the Acknowledgments<lb/> @BULLET Appendix A is entirely new and needs a read through<lb/></note>
+
+	<docTitle>
+	<titlePart>Estimating Net Energy Savings<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Daniel M. Violette, Ph.D.,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Navigant Consulting, Inc.<lb/></affiliation>
+	</byline>
+
+	<byline>
+	<docAuthor>Pam Rathbun, </docAuthor>
+	</byline>
+	
+	<byline>
+	<affiliation>Tetra Tech<lb/></affiliation>
+	</byline>
+		
+	<note type="other">SECOND DRAFT – NOT TO BE CITED<lb/>DRAFT #2 | Not for Citation<lb/> Draft 3 | Not for Citation<lb/> </note>
+
+	<note type="page">1<lb/></note>
+
+	<date>11/5/2013<lb/></date>
+
+	<note type="other">Table of Contents<lb/></note>
+
+		</front>
+	</text>
+</tei>

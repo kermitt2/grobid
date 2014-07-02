@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei type="conference-article">
+	<teiHeader>
+		<fileDesc xml:id="55114905"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>FIRE: A Fast, Accurate, and Smooth Planetary Body<lb/> Ephemeris Interpolation System<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Ryan P. Russell *<lb/> and Nitin Arora<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Georgia Institute of Technology,</affiliation>
+	</byline>
+
+	<address>Atlanta, GA, 30332-0150,U.S<lb/></address>
+
+	<div type="abstract">Precise trajectory simulations typically require an ephemeris system, i.e. some mech-<lb/>anism to identify planetary body states and orientations at given times. However, the<lb/> ephemeris systems most commonly used throughout industry and academia are, by design,<lb/> general in their capabilities and application. Here, we introduce a new system called FIRE<lb/> that is designed for custom trajectory applications that favor speed and smooth derivatives.<lb/> The new system minimizes the overhead associated with ephemeris calls through the use of<lb/> archived splines, a runtime ephemeris (stored in random access memory), an efficient tree<lb/> navigation algorithm, and vectorized calls. Further, our approach naturally provides first<lb/> and second time derivatives for a small additional cost. The derivative capability is par-<lb/>ticularly attractive for optimization and targeting where smooth and accurate derivatives<lb/> are important. Relative performance comparisons with the Jet Propulsion Laboratory&apos;s<lb/> SPICE ephemeris system shows typical speed improvements of approximately two orders<lb/> of magnitude for various state and orientation calls.<lb/></div>
+
+		</front>
+	</text>
+</tei>

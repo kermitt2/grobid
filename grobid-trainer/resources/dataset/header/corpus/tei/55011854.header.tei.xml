@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011854"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>H. Kallioinen and O. Tossavainen. 2008. Changes during storage of lactose hydrolysed<lb/> extended shelf life (ESL) milk. Milchwissenschaft, accepted for publication.<lb/></reference>
+
+	<note type="copyright">© 2008 AVA Agrar-Verlag Allgäu<lb/></note>
+
+	<note type="other">Preprinted with permission.<lb/></note>
+
+	<docTitle>
+	<titlePart>Changes during storage of lactose hydrolysed extended shelf life<lb/> (ESL) milk<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>By H. KALLIOINEN and O. TOSSAVAINEN<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Valio Ltd, R&amp;D,</affiliation>
+	</byline>
+
+	<address>PO Box 390, FIN-00039 Valio, Finland.</address>
+
+	<email>E-mail: Harri.Kallioinen@valio.fi<lb/></email>
+
+	<div type="abstract">The effect of lactose hydrolysis and reduction of carbohydrate content of extended shelf life milk on the proteolysis<lb/> and the formation of furosine was studied during 8 weeks of storage at 8°C. The reduction of carbohydrate content was<lb/> carried out by ultrafiltration. The proteolysis was distinct in all test milks as analysed by SDS-PAGE and free tyrosine<lb/> equivalent content. The proteolysis was weakest in milk with a reduced carbohydrate content and hydrolysed lactose<lb/> probably due to the inactivation of plasmin during the production process. Proteolytic side activities of lactase were less<lb/> significant than other proteolytic activities during the storage. Furosine concentrations increased linearly in unhydro-<lb/>lysed, hydrolysed and carbohydrate reduced &amp; hydrolysed milk at 0.19-0.23, 0.34-0.48 and 0.26-0.38 mg/g protein, re-<lb/>spectively. The rate of early Maillard reaction during the ESL heat treatment and storage was clearly decreased by the<lb/> reduction of carbohydrate content in lactose hydrolysed milk. The estimated lysine blockage was nutritionally insignifi-<lb/>cant in all test milks.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014535"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Regulation of Growth, Protein Synthesis, and<lb/> Maturation of Fetal Bovine Epiphyseal Chondrocytes<lb/> Grown in High-Density Culture in the Presence<lb/> of Ascorbic Acid, Retinoic Acid,<lb/> and Dihydrocytochalasin B<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Anne-Marie Freyria,* Marie-Claire Ronzière, Stéphane Roche, Cécile F. Rousseau, and Daniel Herbage<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institut de Biologie et Chimie des Protéines, CNRS-UPR,</affiliation>
+	</byline>
+
+	<address>69367 Lyon Cedex 07, France<lb/></address>
+
+	<div type="abstract">Abstract Phenotypic expression of chondrocytes can be modulated in vitro by changing the culture technique<lb/> and by agents such vitamins and growth factors. We studied the effects of ascorbic acid, retinoic acid (0.5 and 10 µM),<lb/> and dihydrocytochalasin B (3, 10, 20 µM DHCB), separately or in combination (ascorbic acid ϩ retinoic acid or ascorbic<lb/> acid ϩ DHCB), on the induction of maturation of fetal bovine epiphyseal chondrocytes grown for up to 4 weeks at high<lb/> density in medium containing 10% fetal calf serum and the various agents. In the absence of any agent or with retinoic<lb/> acid or DHCB alone, the metabolic activity of the cells remained very low after day 6, with no induction of type I or X<lb/> collagen synthesis nor increase in alkaline phosphatase activity. Chondrocytes treated with fresh ascorbic acid showed<lb/> active protein synthesis associated with expression of types I and X after 6 and 13 days, respectively. This maturation was<lb/> not accompanied by obvious hypertrophy of the cells or high alkaline phosphatase activity. Addition of retinoic acid to<lb/> the ascorbic acid-treated cultures decreased the level of type II collagen synthesis and delayed the induction of types I<lb/> and X collagen, which were present only after 30 days. A striking increase in alkaline phosphatase activity (15–20-fold)<lb/> was observed in the presence of both ascorbic acid and the highest dose of retinoic acid (10 µM). DHCB was also a<lb/> potent inhibitor of the maturation induced by treatment with ascorbic acid, as the chondrocytes maintained their<lb/> rounded shape and synthesized type II collagen without induction of type I or X collagen. The pattern of protein<lb/> secretion was compared under all culture conditions by two-dimensional gel electrophoresis. The different regulations<lb/> of chondrocyte differentiation by ascorbic acid, retinoic acid, and DHCB were confirmed by the important qualitative<lb/> and quantitative changes in the pattern of secreted proteins observed by two-dimensional gel electrophoresis along the<lb/> study.
+	</div>
+
+	<reference>J. Cell. Biochem. 76:84–98, 1999.</reference>
+
+	<note type="copyright"> ௠ &#169;1999 Wiley-Liss, Inc.<lb/></note>
+
+	<keyword>Key words: chondrocyte maturation; collagen types I, II, and X; ascorbic acid; retinoic acid; dihydrocytochalasin B<lb/>
+	</keyword>
+
+		</front>
+	</text>
+</tei>

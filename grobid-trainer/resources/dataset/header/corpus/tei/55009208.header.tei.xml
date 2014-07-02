@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009208"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Progress In Electromagnetics Research, PIER 99, 323–338, 2009<lb/></reference>
+
+	<docTitle>
+	<titlePart>ANALYTICAL AND NUMERICAL ANALYSES OF A<lb/> CURRENT SENSOR USING NON LINEAR EFFECTS IN<lb/> A FLEXIBLE MAGNETIC TRANSDUCER<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>E. Vourc&apos;h and P.-Y. Joubert<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>SATIE, ENS Cachan, PRES UniverSud<lb/></affiliation>
+	</byline>
+
+	<address>61 Avenue du Président Wilson, Cachan 94230, France<lb/></address>
+
+	<byline>
+	<docAuthor>L. Cima<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Billanco SA<lb/></affiliation>
+	</byline>
+
+	<address>194 Avenue Aristide Briand, Cachan 94230, France<lb/></address>
+
+	<div type="abstract">Abstract—A theoretical study and a simulation method are proposed<lb/> for superparamagnetic current sensors implementing a uniformly<lb/> wound toroidal core topology. So as to be easy to implement, this<lb/> sensor topology can be made flexible thanks to the use of a core<lb/> made up of a superparamagnetic powder embedded in a flexible<lb/> plastic matrix. The measurement of DC and AC currents is possible<lb/> provided that a sinusoidal magnetic field excitation is applied to the<lb/> superparamagnetic transducer. An analytical model is proposed for<lb/> computing the sensor output signal and we demonstrate that when<lb/> the detection of the component at the second order harmonic of<lb/> the excitation frequency is used, the measurement is independent<lb/> of the conductor position in a given current range. For simulating<lb/> the dynamic response of the sensor, we propose to combine the<lb/> analytical model, or a finite elements model, with a time-discretization<lb/> method. Furthermore, simulations are carried out considering a<lb/> ring shaped sensor and the real magnetization characteristics of<lb/> a superparamagnetic material. Simulations are provided over the<lb/> [−10 kA 10 kA] range and for various amplitudes of the excitation<lb/> signal. The results obtained with the analytical model, which is<lb/> computationally efficient, are within 4% to 12.7% from the numerical<lb/> results.<lb/></div>
+
+	<note type="other">Corresponding author: </note>
+	
+	<docAuthor>E. Vourc&apos;h</docAuthor>
+
+	<email>(vourch@satie.ens-cachan.fr).</email>
+
+		</front>
+	</text>
+</tei>

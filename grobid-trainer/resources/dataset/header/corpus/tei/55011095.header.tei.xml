@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55011095"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">566<lb/> </note>
+
+	<reference>Ind. Eng. Chem. Res. 1994,33, 566-574<lb/></reference>
+
+	<docTitle>
+	<titlePart>Chemical Processing in High-pressure Aqueous Environments. 4.<lb/> Continuous-Flow Reactor Process Development Experiments for<lb/> Organics Destruction<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Douglas C. Elliott,&apos; M. R. Phelps, L. John Sealock, Jr., and Eddie G. Baker<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Pacific Northwest Laboratory,</affiliation>
+	</byline>
+
+	<address>P.O. Box 999, Richland, Washington 99352<lb/></address>
+
+	<div type="abstract">A high-pressure (20 MPa) and high-temperature (350 &quot;C) liquid water processing environment was<lb/> used to treat various wastewaters and model compounds. Organics were converted to methane and<lb/> carbon dioxide in the presence of a fixed bed of nickel or ruthenium catalyst. Nitrates were destroyed<lb/> by reaction with methanol in the presence of a nickel catalyst. Noncatalytic hydrolysis of carbon<lb/> tetrachloride and chloroform was also demonstrated. Three scales of continuous-flow reactors were<lb/> used in these tests. Extended tests to demonstrate catalyst lifetimes were also performed. Several<lb/> examples of test results with actual industrial waste streams showed that this process can be effectively<lb/> used with appropriate catalysts to clean wastewater and recover waste organics as useful fuel gas.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei type="web">
+	<teiHeader>
+		<fileDesc xml:id="55114429"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note>PubMed<lb/> [Mitochondria transfer from self-... [Zhonghua Fu Chan Ke Za Zhi....<lb/></note>
+
+	<ptr type="web">http://www.ncbi.nlm.nih.gov/pubmed/15059588?dopt=Abstract<lb/></ptr>
+
+	<note type="page">1 of 2<lb/></note>
+
+	<date>16-04-2014</date>
+
+	<note type="other">15:36<lb/> OBJECTIVE:<lb/> METHODS:<lb/> RESULTS:<lb/> CONCLUSION:<lb/> PubMed Commons home<lb/></note>
+
+	<note type="other">How to join PubMed Commons<lb/></note>
+	
+	<reference>Zhonghua Fu Chan Ke Za Zhi. 2004 Feb;39(2):105-7.<lb/></reference>
+
+	<docTitle>
+	<titlePart>[Mitochondria transfer from self-granular cells to improve embryos&apos;<lb/> quality].<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">[Article in Chinese]<lb/></note>
+
+	<byline>
+	<docAuthor>Kong LH , Liu Z, Li H, Zhu L, Chen SM, Chen SL, Xing FQ.<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Abstract<lb/> To improve embryos&apos; quality and pregnancy rate with the method of<lb/> self-mitochondria transfer.<lb/> All the 18 cases of women with repeated in vitro fertilization-embryo transfer<lb/> (IVF-ET)-treatment failure or older than 37 years were treated with the long gonadotropin<lb/> releasing hormone-agonist (GnRH-a) regimens. The oocytes were divided into two groups:<lb/> intracytoplasmic sperm injection (ICSI) group and mitochondria transfer group if the number<lb/> of the individual patients&apos; oocytes was more than four. In mitochondria transfer group,<lb/> mitochondria were prepared by different centrifugation after the granulosa cells were<lb/> trimmed from the oocytes or collected from follicular fluid and homogenated. Mitochondria<lb/> and immobilized sperm were injected into oocytes by micromanipulation. The fertilization rate<lb/> and embryos&apos; quality were compared.<lb/> The fertilization rate was 74.4% in mitochondria transfer group, and 76.8% in ICSI<lb/> group, with no statistical difference (P &gt; 0.05). The good quality embryo rate in mitochondria<lb/> transfer group was 59.4%, and it was 34.9% in ICSI group. The difference was significant (P<lb/> &lt; 0.05). There were 7 clinical pregnancies in the 18 cases.</div>
+
+		</front>
+	</text>
+</tei>

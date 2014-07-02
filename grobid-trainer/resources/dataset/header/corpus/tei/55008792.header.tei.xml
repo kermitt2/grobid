@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008792"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Give and Take: A Study of Consumer Photo-Sharing<lb/> Culture and Practice<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Andrew D. Miller<lb/></docAuthor>
+	</byline>
+
+	<address>Schematic New York, NY<lb/></address>
+
+	<email>amiller@schematic.com<lb/></email>
+
+	<byline>
+	<docAuthor>W. Keith Edwards<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Georgia Institute of Technology / GVU Center<lb/></affiliation>
+	</byline>
+
+	<address>Atlanta, GA<lb/></address>
+
+	<email>keith@cc.gatech.edu<lb/></email>
+
+	<div type="abstract">ABSTRACT<lb/> In this paper, we present initial findings from the study of a<lb/> digital photo-sharing website: Flickr.com. In particular, we<lb/> argue that Flickr.com appears to support—for some<lb/> people—a different set of photography practices,<lb/> socialization styles, and perspectives on privacy that are<lb/> unlike those described in previous research on consumer<lb/> and amateur photographers. Further, through our<lb/> examination of digital photographers&apos; photowork<lb/> activities—organizing, finding, sharing and receiving—we<lb/> suggest that privacy concerns and lack of integration with<lb/> existing communication channels have the potential to<lb/> prevent the &apos;Kodak Culture&apos; from fully adopting current<lb/> photo-sharing solutions.<lb/></div>
+
+	<keyword>Author Keywords<lb/> Consumer photography, digital photography, media<lb/> sharing, domestic and leisure computing, photowork<lb/> ACM Classification Keywords<lb/> H5.m. Information interfaces and presentation (e.g., HCI):<lb/> Miscellaneous.<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

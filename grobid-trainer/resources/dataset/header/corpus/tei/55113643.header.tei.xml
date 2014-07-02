@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55113643"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>A simple method to encapsulate SnSb nanoparticles into<lb/> hollow carbon nanofibers with superior lithium-ion<lb/> storage capability<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Leigang Xue,<lb/> a Xin Xia,<lb/> ab Telpriore Tucker,<lb/> c Kun Fu,<lb/> a Shu Zhang,<lb/> a Shuli Li<lb/> a<lb/> and Xiangwu Zhang * a<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">The practical use of high-capacity anodes in lithium-ion batteries generally suffers from significant volume<lb/> changes upon lithium insertion and extraction. The volume changes induce cracks and loss of inter-particle<lb/> electronic contact in the electrode, resulting in rapid capacity decay. The use of fiber-like materials to<lb/> prevent cracks and accommodate volume changes is widely observed in many animal and human<lb/> activities. Birds mix grass and feathers into mud to build nests, and humans in ancient times blended straw<lb/> with mud to produce adobe bricks for housing construction. In view of this point, this research designed a<lb/> porous nanofiber structure to resolve the unstable structure problem of anode materials. The three-<lb/>dimensional network structure composed of nanofibers provides a highly elastic matrix to accommodate<lb/> the volume changes of high-capacity Sn and Sb particles and pores around the active particles, induced by<lb/> CO 2 evolution, serve as an additional buffer zone for the volume changes. This unique structure prepared<lb/> by using a new SnSb alloy precursor and a simple electrospinning technique leads to excellent lithium<lb/> storage performance in terms of energy density, cycling stability, and rate capability.<lb/></div>
+
+		</front>
+	</text>
+</tei>

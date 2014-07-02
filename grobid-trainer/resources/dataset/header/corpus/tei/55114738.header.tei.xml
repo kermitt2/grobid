@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei type="product-sheet">
+	<teiHeader>
+		<fileDesc xml:id="55114738"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note>08800017</note>
+
+	<date>(Rev. January 2003)<lb/></date>
+
+	<docTitle>
+	<titlePart>Immune Globulin (Human)<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<affiliation>BayGam®<lb/> </affiliation>
+	</byline>
+	 
+	<div type="abstract">Solvent/Detergent Treated<lb/> DESCRIPTION Immune Globulin (Human) — BayGam® treated with solvent/detergent is a sterile solution of immune globulin<lb/> for intramuscular administration; it contains no preservative. BayGam is prepared by cold ethanol fractionation<lb/> from human plasma. The immune globulin is isolated from solubilized Cohn fraction II. The fraction II solution<lb/> is adjusted to a final concentration of 0.3% tri-n-butyl phosphate (TNBP) and 0.2% sodium cholate. After the<lb/> addition of solvent (TNBP) and detergent (sodium cholate), the solution is heated to 30 ° C and maintained at<lb/> that temperature for not less than 6 hours. After the viral inactivation step, the reactants are removed by<lb/> precipitation, filtration and finally ultrafiltration and diafiltration. BayGam is formulated as a 15–18% protein<lb/> solution at a pH of 6.4–7.2 in 0.21–0.32 M glycine. BayGam is then incubated in the final container for<lb/> 21–28 days at 20–27 ° C.<lb/> The removal and inactivation of spiked model enveloped and non-enveloped viruses during the manufacturing<lb/> process for BayGam has been validated in laboratory studies. Human Immunodeficiency Virus, Type 1 (HIV-1),<lb/> was chosen as the relevant virus for blood products; Bovine Viral Diarrhea Virus (BVDV) was chosen to model<lb/> Hepatitis C virus; Pseudorabies virus (PRV) was chosen to model Hepatitis B virus and the Herpes viruses;<lb/> and Reo virus type 3 (Reo) was chosen to model non-enveloped viruses and for its resistance to physical and<lb/> chemical inactivation. Significant removal of model enveloped and non-enveloped viruses is achieved at two<lb/> steps in the Cohn fractionation process leading to the collection of Cohn Fraction II: the precipitation and<lb/> removal of Fraction III in the processing of Fraction II + IIIW suspension to Effluent III and the filtration step in<lb/> the processing of Effluent III to Filtrate III. Significant inactivation of enveloped viruses is achieved at the time<lb/> of treatment of solubilized Cohn Fraction II with TNBP/sodium cholate.<lb/> </div>
+	
+	<div type="introduction">CLINICAL PHARMACOLOGY<lb/> Peak levels of immunoglobulin G are obtained approximately 2 days after intramuscular injection of BayGam. 1<lb/> The half-life of IgG in the circulation of individuals with normal IgG levels is 23 days. 2<lb/> Passive immunization with BayGam modifies hepatitis A, prevents or modifies measles, and provides replace-<lb/>ment therapy in persons with hypogammaglobulinemia or agammaglobulinemia. BayGam is not standardized<lb/> with respect to antibody titers against hepatitis B surface antigen (HBsAg) and should not be used for prophylaxis<lb/> of viral hepatitis type B. Prophylactic treatment to prevent hepatitis B can best be accomplished with use of<lb/> Hepatitis B Immune Globulin (Human), often in combination with Hepatitis B Vaccine. 3<lb/> BayGam may be of benefit in women who have been exposed to rubella in the first trimester of pregnancy<lb/> and who will not consider a therapeutic abortion. 4 BayGam may also be considered for use in immunocom-<lb/>promised patients for passive immunization against varicella if Varicella-Zoster Immune Globulin (Human) is<lb/> not available. 5<lb/> Immune Globulin (Human) is not indicated for routine prophylaxis or treatment of rubella, poliomyelitis,<lb/> mumps, or varicella. It is not indicated for allergy or asthma in patients who have normal levels of<lb/> immunoglobulin. 6<lb/> In a clinical study in eight healthy human adults receiving another hyperimmune immune globulin product<lb/> treated with solvent/detergent, Rabies Immune Globulin (Human), BayRab®, prepared by the same manufac-<lb/>turing process, detectable passive antibody titers were observed in the serum of all subjects by 24 hours post<lb/> injection and persisted through the 21 day study period. These results suggest that passive immunization with<lb/> immune globulin products is not affected by the solvent/detergent treatment.<lb/></div>
+
+		</front>
+	</text>
+</tei>

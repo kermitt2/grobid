@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014500"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Playing Games for Security: An Efficient Exact Algorithm<lb/> for Solving Bayesian Stackelberg Games<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Praveen Paruchuri<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Intelligent Automation Inc.,<lb/></affiliation>
+	</byline>
+
+	<address>Rockville, MD<lb/></address>
+
+	<email>pparuchuri@i-a-i.com<lb/></email>
+
+	<byline>
+	<docAuthor>Jonathan P. Pearce,<lb/> Janusz Marecki, Milind<lb/> Tambe, Fernando<lb/> Ordonez<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Univ. of Southern California,<lb/></affiliation>
+	</byline>
+
+	<address>Los Angeles, CA<lb/></address>
+
+	<email>{jppearce,marecki,tambe,fordon}@usc.edu<lb/></email>
+
+	<byline>
+	<docAuthor>Sarit Kraus<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Bar-Ilan University,<lb/></affiliation>
+	</byline>
+
+	<address>Ramat-Gan 52900, Israel<lb/></address>
+
+	<email>sarit@cs.biu.ac.il<lb/></email>
+
+	<div type="abstract">ABSTRACT<lb/> In a class of games known as Stackelberg games, one agent (the<lb/> leader) must commit to a strategy that can be observed by the other<lb/> agent (the follower or adversary) before the adversary chooses its<lb/> own strategy. We consider Bayesian Stackelberg games, in which<lb/> the leader is uncertain about the types of adversary it may face.<lb/> Such games are important in security domains, where, for exam-<lb/>ple, a security agent (leader) must commit to a strategy of patrolling<lb/> certain areas, and a robber (follower) has a chance to observe this<lb/> strategy over time before choosing its own strategy of where to at-<lb/>tack. This paper presents an efficient exact algorithm for finding the<lb/> optimal strategy for the leader to commit to in these games. This<lb/> algorithm, DOBSS, is based on a novel and compact mixed-integer<lb/> linear programming formulation. Compared to the most efficient<lb/> algorithm known previously for this problem, DOBSS is not only<lb/> faster, but also leads to higher quality solutions, and does not suf-<lb/>fer from problems of infeasibility that were faced by this previous<lb/> algorithm. Note that DOBSS is at the heart of the ARMOR system<lb/> that is currently being tested for security scheduling at the Los An-<lb/>geles International Airport.<lb/></div>
+
+	<keyword>Categories and Subject Descriptors<lb/> I.2.11 [Computing Methodologies]: Artificial Intelligence: Dis-<lb/>tributed Artificial Intelligence -Intelligent Agents<lb/> General Terms<lb/> Security, Design, Theory<lb/> Keywords<lb/> Security of Agent Systems, Game Theory, Bayesian and Stackel-<lb/>berg Games<lb/></keyword>
+
+		</front>
+	</text>
+</tei>

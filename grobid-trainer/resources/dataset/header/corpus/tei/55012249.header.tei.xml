@@ -1,0 +1,50 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012249"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Thai J. Pharm. Sci. 32 (2008) 43-58<lb/></reference>
+
+	<note type="page">43<lb/></note>
+
+	<note type="other">Review article<lb/></note>
+
+	<docTitle>
+	<titlePart>Mixing and formulation of low dose drugs: underlying problems and solutions<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Vipin Kukkar 1 , Vikas Anand 1* , Mahesh Kataria 1 , Manoj Gera 1 and Pratim Kumar Choudhury 2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Institute of Pharmaceutical Sciences and Drug Research, Seth GL Bihani SD College of Technical Education,<lb/>
+	</affiliation>
+	</byline>
+
+	<address>Sri Ganganagar, Rajasthan, India<lb/></address>
+
+	<byline>
+	<affiliation>2 Department of Pharmaceutical Sciences, ML Sukhadia University,</affiliation>
+	</byline>
+
+	<address>Udaipur, Rajasthan, India<lb/></address>
+
+	<phone>*Corresponding author: Tel: +91-154-2466777 Fax: +91-154-2466774<lb/> </phone>
+
+	<email>E-mail address: vikas.pharmaceutics@gmail.com<lb/></email>
+
+	<div type="abstract">Abstract:<lb/> Mixing and formulation of low dose drugs can be very challenging due to problems related to segregation,<lb/> content uniformity and physical stability. A careful control on these factors is necessary while manufacturing<lb/> low dose drug products. Selection of excipients for the specific steps during formulation/process development<lb/> is critical to develop a homogenous and segregation-free low dose formulation. Many types of equipments<lb/> have been designed to facilitate mixing of low dose drugs with excipients. Apart from conventional formulation<lb/> techniques (like wet granulation, dry granulation, and direct compression) various new techniques have been<lb/> reported such as high shear granulation, ordered mixing and spray drying. These technological advancements<lb/> have improved the manufacturing and quality of low dose drug products by achieving their predefined<lb/> objective of content uniformity during mixing and formulation of low dose drugs. This article reviews<lb/> current advancements related to formulation techniques of low dose drugs.<lb/></div>
+
+	<keyword>Keywords: Content uniformity; Homogeneity; Low dose drugs; Segregation<lb/> </keyword>
+
+	<note type="page">44<lb/> </note>
+
+	<docAuthor>V. Kukkar et al.<lb/></docAuthor>
+
+		</front>
+	</text>
+</tei>

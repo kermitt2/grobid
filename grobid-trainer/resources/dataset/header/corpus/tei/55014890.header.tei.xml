@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55014890"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>MyMobileWeb:<lb/> Advanced technologies enabling multi-device mobile access to current and<lb/> future (semantically enriched) web applications, services and information<lb/> portals<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Acronym: MyMobileWeb<lb/> International Project on Technology Development in Cooperation (22: EUREKA Development)<lb/></note>
+
+	<note>Thematic Area: 350405 Strategic Action on Open Source Software<lb/></note>
+
+	<note>EU-3187 CP04-020 MyMobileWeb<lb/></note>
+
+	<docTitle>
+	<titlePart>Deliverable D.11.1.1<lb/> Report on Location Based Services and its enabling<lb/> infrastructure<lb/></titlePart>
+	</docTitle>
+
+	<note type="other">Version: 1.1<lb/></note>
+
+	<date>Date of Preparation: 31/12/2009<lb/></date>
+
+	<note type="other">Editor: Stephan Haslinger (tisco Gmbh)<lb/> Andrej Dolmac (tisco GmbH)<lb/>Contributors: N/A<lb/> This work is licensed under a Creative Commons Attribution-Noncommercial-Share Alike 3.0 License.<lb/> To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 171<lb/> Second Street, Suite 300, San Francisco, California, 94105, USA.<lb/></note>
+
+	<note>MyMobileWeb (Eureka-CELTIC)<lb/></note>
+	
+		</front>
+	</text>
+</tei>

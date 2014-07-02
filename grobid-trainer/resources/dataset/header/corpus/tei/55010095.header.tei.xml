@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55010095"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+
+	<byline>
+	<affiliation>Klima‐und Energiefonds<lb/> </affiliation>
+	</byline>
+		
+	<ptr>www.klimafonds.gv.at </ptr>
+	
+	<byline>
+	<affiliation>Österreichische Forschungsfördergesellschaft mbH<lb/> </affiliation>
+	</byline>
+		
+	<ptr>www.ffg.at<lb/> </ptr>
+	
+	<note type="submission">Neue Energien 2020<lb/> publizierbarer Endbericht<lb/> </note>
+	
+	<date>31.01.2011<lb/></date> 
+	
+	<docTitle>
+	<titlePart>G‐VOLUTION<lb/> Biomasse‐Dampfvergaserderzweiten Generation<lb/> </titlePart>
+	</docTitle>
+	
+	<ptr>www.g‐volution.at<lb/></ptr>
+
+	<byline>
+	<docAuthor>Dipl.‐Ing.(FH) Johannes SCHMID<lb/> 1<lb/> Dipl.‐Ing.Dr. Tobias PRÖLL<lb/> 1 Dipl.‐Ing. Ignacio DIAZ<lb/> 1<lb/> Dipl.‐Ing. Christina HAFNER<lb/> 2 Dipl.‐Ing.Dr. Klaus JÖRG<lb/> 2<lb/> Dipl.‐Ing.Dr. Christoph PFEIFER<lb/> 1 Univ.‐Prof.Dipl.‐Ing.Dr. Hermann HOFBAUER<lb/> 1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1<lb/> Technische Universität Wien,Institut für<lb/> Verfahrenstechnik</affiliation>
+	</byline>
+
+	<ptr>www.vt.tuwien.ac.at<lb/></ptr>
+
+	<byline>
+	<affiliation>2<lb/> TECON Engineering GmbH<lb/></affiliation>
+	</byline>
+
+	<ptr>www.tecon.at</ptr>
+
+		</front>
+	</text>
+</tei>

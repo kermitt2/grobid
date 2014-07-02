@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55000248"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="page">1<lb/></note>
+
+	<docTitle>
+		<titlePart>Uplink Closed Loop Transmit<lb/> Diversity for HSPA<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+		<docAuthor>Yibo Jiang, Haitong Sun, Sharad Sambhwani, Jilei Hou</docAuthor>
+	</byline>
+
+	<byline>
+		<affiliation><lb/> Qualcomm Inc<lb/></affiliation>
+	</byline>
+
+	<div type="abstract">Abstract<lb/> The closed loop transmit diversity scheme is a promising technique to improve the uplink<lb/> transmission performance in HSPA. This paper provides an introduction to the<lb/> motivation and theoretical analysis of a closed loop transmit diversity (CLTD)<lb/> beamforming scheme for the HSPA system. Details are also provided on the algorithm<lb/> description, the user equipment and Node B transmitter/receiver implementation and the<lb/> corresponding system performance.<lb/></div>
+
+		</front>
+	</text>
+</tei>

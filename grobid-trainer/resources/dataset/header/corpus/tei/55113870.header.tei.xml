@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei type="white-paper">
+	<teiHeader>
+		<fileDesc xml:id="55113870"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="copyright">&#169; 2011 Microchip Technology Inc.<lb/></note>
+
+	<note>DS01391A-</note>
+
+	<note type="page">page 1<lb/></note>
+
+	<docTitle>
+	<titlePart>AN1391<lb/> </titlePart>
+	</docTitle>
+
+	<div type="introduction">INTRODUCTION<lb/> The BodyCom system is a new short-range wireless<lb/> connectivity technology that uses the capability of the<lb/> human body to transport a few signals that provide<lb/> intuitive, simple, and safe communication between two<lb/> electronically compatible devices. Communication<lb/> between BodyCom system devices occurs when they<lb/> are within a few centimeters of the human body: a<lb/> simple proximity or touch detection can establish a<lb/> BodyCom system connection.<lb/> MICROCHIP SOLUTION<lb/> Traditional wireless remote access systems rely on an<lb/> RF link, with a typical range of 400 to 900 MHz. While<lb/> providing the convenience of remote control, these<lb/> systems also require manual activation by the user and<lb/> an additional level of security to prevent &quot;sniffing&quot; of the<lb/> security codes during transmits. While these limitations<lb/> are surmountable, they can be challenging for both the<lb/> designer and the user, for example, when the user is<lb/> trying to enter their house during a rain storm while<lb/> holding a brief case and a bag of groceries.<lb/> BodyCom overcomes these limitations by using the<lb/> user&apos;s body as the medium for data transmission. Data<lb/> is capacitive coupled between the Base and Mobile<lb/> Units through the user&apos;s body using a low-frequency<lb/> Amplitude Shift Key (ASK) format whenever the user<lb/> and the Base Unit come in contact with each another.<lb/> The user&apos;s touch also creates a simple capacitive touch<lb/> detection to initiate the challenge and response<lb/> sequence between the Base and Mobile Units<lb/> whenever the user is present.<lb/> Due to the high permittivity of the human body at low<lb/> frequencies, transmissions can be achieved with a<lb/> simple, easily-designed system operating between 60<lb/> kHz to 30 MHz. Because the data is coupled through<lb/> the user, there is no RF transmission creating security<lb/> issues, and the touch initiation system removes the<lb/> need for manually triggering the sequence.<lb/> The BodyCom system provides an easy-to-use system<lb/> that is secure to use and easy to design, layout and<lb/> produce.<lb/></div>
+
+		</front>
+	</text>
+</tei>

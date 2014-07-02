@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008648"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Iceland Moss (Lichen islandicus)<lb/></titlePart>
+	</docTitle>
+
+	<date>Published March 2, 1989.<lb/></date>
+
+	<docTitle>
+	<titlePart>List of German Commission E Monographs (Phytotherapy)<lb/> Isländisches Moos<lb/> Iceland Moss (Lichen islandicus)<lb/>
+	</titlePart>
+	</docTitle>
+
+	<ptr type="web">http://buecher.heilpflanzen-welt.de/BGA-Commission-E-Monographs/...<lb/></ptr>
+
+	<note type="page">1 of 2<lb/></note>
+
+	<date>04-10-2011 </date>
+	
+	<note type="other">14:05</note>
+
+		</front>
+	</text>
+</tei>

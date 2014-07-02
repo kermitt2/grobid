@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<tei type="product-sheet">
+	<teiHeader>
+		<fileDesc xml:id="55114862"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>MIDATL ANTIC<lb/> DE V ICES<lb/> MEDICULT MEDIA<lb/> HUM AGEN<lb/> PIPE TS<lb/></titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55009191"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Tixsiie Anr(qens 1994: 44: 200-203<lb/> Prrrrri,d in Dmniurk .A I/ r;,gphr.r rrserwd<lb/> </reference>
+
+	<note type="copyright">Copyright &#169; Munkzgaard I994<lb/> </note>
+
+	<note type="other">T l S S U E A N T I G E N S<lb/></note>
+
+	<idno type="issn">ISSN 0001-1515<lb/></idno>
+
+	<note type="other">Brief Communication<lb/></note>
+
+	<docTitle>
+	<titlePart>Improvements in HLA-C typing using<lb/> sequence-specdic primers (PCR-SSP)<lb/> including definition of HLA-Cw9 and CwlO<lb/> and a new allele HLA-&quot;Cw7/8v&quot;<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>M. Bunce, M. C. N. M. Barnardo, K. I. Welsh</docAuthor>
+	</byline>
+
+		</front>
+	</text>
+</tei>

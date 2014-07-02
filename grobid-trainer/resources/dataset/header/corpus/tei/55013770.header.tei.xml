@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55013770"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>J. Agric. Food Chem. 1983, 3 1 , 409-412<lb/></reference>
+
+	<note type="page">409<lb/></note>
+
+	<docTitle>
+	<titlePart>Stability Studies of Stevioside and Rebaudioside A in Carbonated Beverages<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Shin S. Chang* and Joanne M. Cook<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Stability of pure stevioside and rebaudioside A in carbonated phosphoric and citric acidified beverages<lb/> during long-term storage was observed chemically, microbiologically, and organoleptically. Thin-layer<lb/> chromatography and high-pressure liquid chromatography were used to follow the chemical degradation<lb/> of these Stevia sweeteners. Some degradation of both sweeteners was observed after 2 months of storage<lb/> at 37 &quot;C; however, there were no significant changes at room temperature or below following 5 months<lb/> of storage of stevioside, or 3 months of storage of rebaudioside A. Exposure to 1 week of sunlight did<lb/> not affect stevioside but resulted in approximately 20% loss of rebaudioside A. Heating at 60 &quot;C for<lb/> 6 days resulted in 0-6% loss of the sweeteners.<lb/></div>
+
+		</front>
+	</text>
+</tei>

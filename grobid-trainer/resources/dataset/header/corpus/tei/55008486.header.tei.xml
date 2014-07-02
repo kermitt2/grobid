@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55008486"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno type="DOI">DOI: 10.1021/la903932w 6471<lb/></idno>
+
+	<reference>Langmuir 2010, 26(9), 6471–6477<lb/></reference>
+
+	<date type="publication">Published on Web 12/04/2009<lb/></date>
+
+	<ptr>pubs.acs.org/Langmuir<lb/></ptr>
+
+	<note type="copyright">© 2009 American Chemical Society<lb/></note>
+
+	<docTitle>
+	<titlePart>Orientation Difference of Chemically Immobilized and Physically Adsorbed<lb/> Biological Molecules on Polymers Detected at the Solid/Liquid Interfaces<lb/> in Situ<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Shuji Ye,<lb/> Khoi Tan Nguyen,<lb/> Andrew P. Boughton,<lb/> Charlene M. Mello,*<lb/> , and Zhan Chen*<lb/> ,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Chemistry, University of Michigan,</affiliation>
+	</byline>
+
+	<address>Ann Arbor, Michigan 48109, and<lb/> </address>
+	
+	<byline>
+	<affiliation>Bioscience and<lb/> Technology Team, US Army Natick Soldier Research, Development, &amp; Engineering Center (NSRDEC),</affiliation>
+	</byline>
+
+	<address>Natick,<lb/> Massachusetts 01760-5020<lb/></address>
+
+	<note type="submission">Received October 16, 2009<lb/></note>
+
+	<div type="abstract">A surface sensitive second order nonlinear optical technique, sum frequency generation vibrational spectroscopy, was<lb/> applied to study peptide orientation on polymer surfaces, supplemented by a linear vibrational spectroscopy, attenuated<lb/> total reflectance Fourier transform infrared spectroscopy. Using the antimicrobial peptide Cecropin P1 as a model<lb/> system, we have quantitatively demonstrated that chemically immobilized peptides on polymers adopt a more ordered<lb/> orientation than less tightly bound physically adsorbed peptides. These differences were also observed in different<lb/> chemical environments, for example, air versus water. Although numerous studies have reported a direct correlation<lb/> between the choice of immobilization method and the performance of an attached biological molecule, the lack of direct<lb/> biomolecular structure and orientation data has made it difficult to elucidate the relationship between structure,<lb/> orientation, and function at a surface. In this work, we directly studied the effect of chemical immobilization method on<lb/> biomolecular orientation/ordering, an important step for future studies of biomolecular activity. The methods for<lb/> orientation analysis described within are also of relevance to understanding biosensors, biocompatibility, marine-<lb/>antifouling, membrane protein functions, and antimicrobial peptide activities.<lb/></div>
+
+		</front>
+	</text>
+</tei>

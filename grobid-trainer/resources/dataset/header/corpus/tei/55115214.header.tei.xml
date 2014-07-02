@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei type="journal-article">
+	<teiHeader>
+		<fileDesc xml:id="55115214"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Gated CW-STED microscopy: A versatile tool for biological nanometer<lb/> scale investigation<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Giuseppe Vicidomini<lb/> a,⇑<lb/> , Ivan Coto Hernández<lb/> a,b<lb/> , Marta d&apos;Amora<lb/> a , Francesca Cella Zanacchi<lb/> a<lb/> , Paolo Bianchini<lb/> a , Alberto Diaspro<lb/> a,b,⇑<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a Department of Nanophysics, Istituto Italiano di Tecnologia,</affiliation>
+	</byline>
+
+	<address>Via Morego 30, 16163 Genoa, Italy<lb/></address>
+
+	<byline>
+	<affiliation>b Department of Physics, University of Genoa,</affiliation>
+	</byline>
+
+	<address>Via Dodecaneso 33, 16146 Genoa, Italy<lb/></address>
+
+	<note type="other">a r t i c l e i n f o<lb/>Article history:<lb/></note>
+
+	<date>Available online 29 June 2013<lb/></date>
+
+	<keyword>Keywords:<lb/> Super-resolution microscopy<lb/> Stimulated emission depletion microscopy<lb/> Spatial resolution<lb/></keyword>
+
+	<div type="abstract">a b s t r a c t<lb/> Stimulation emission depletion (STED) microscopy breaks the spatial resolution limit of conventional<lb/> light microscopy while retaining its major advantages, such as working under physiological conditions.<lb/> These properties make STED microscopy a perfect tool for investigating dynamic sub-cellular processes<lb/> in living organisms. However, up to now, the massive dissemination of STED microscopy has been hin-<lb/>dered by the complexity and cost of its implementation. Gated CW-STED (gCW-STED) substantially helps<lb/> solve this problem without sacrificing spatial resolution. Here, we describe a versatile gCW-STED micro-<lb/>scope able to speedily image the specimen, at a resolution below 50 nm, with light intensities comparable<lb/> to the more complicated all-pulsed STED system. We show this ability on calibration samples as well as<lb/> on biological samples.<lb/></div>
+
+	<note type="copyright">&#169; 2013 Elsevier Inc. All rights reserved.<lb/></note>
+
+		</front>
+	</text>
+</tei>

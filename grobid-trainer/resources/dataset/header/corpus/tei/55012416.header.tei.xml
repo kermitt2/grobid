@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="55012416"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>ISOQUINOLINE<lb/> DERIVATIVES<lb/> V.* SYNTHESIS OF SOME 1-SUBSTITUTED 6,7-DIMETHOXY-1,2,3,4-<lb/>TETRAHYDROISOQUINOLINE-4-SPIROCYCLOPENTANES AND THEIR ANALOGS<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>A. L. Mndzhoyan,t&quot;<lb/> ]~. A. Markaryan,<lb/> Zh. S. Arustamyan,<lb/> and ~. S. Marashyan<lb/></docAuthor>
+	</byline>
+
+	<idno>UDC 547.831.4 t 514.1.07<lb/></idno>
+
+	<div type="abstract">1-(3,4-Dimethoxyphenyl)-l-aminomethylcyclopentane (IV) was condensed with substituted<lb/> phenylacetyl and benzoyl chlorides to synthesize 1-JR&apos;, R&quot; ,R&apos;&quot; -phenylacet (benz) amido-<lb/>methyl]-l-(3,4-dimethoxyphenyl)cyclopentanes (VI), which were converted to 1-JR&apos; ,R&quot; ,R&quot;&apos; -<lb/>phenyl (benzyl) ]-6,7-dimethoxy-1,2,3,4-tetrahydroisoqninoline-4-spirocyclopent anes (IX)<lb/> by cyclization and subsequent reduction. Reduction of VI yielded the corresponding second-<lb/>ary amines (VII). The compounds obtained were subjected to chromatographic analysis.<lb/> The IR spectra were investigated. Compounds VII and IX were subjected to pharmacologic-<lb/>al testing.<lb/> </div>
+
+	<div type="introduction">In an investigation of the effect of various substituents in general structure I on the pharmacological<lb/> properties [1-3], we undertook the synthesis of 6,7-dimethoxy-l-aryltetrahydroisoquinoline derivatives<lb/> with a spirocyclopentane ring in the 4-position.<lb/> X<lb/> (CH2)n<lb/> R~/~ R4<lb/> R5<lb/> l<lb/> One of the starting materials in our synthesis was 1-(3,4-dimethoxyphenyl)-l-aminomethylcyclopent-<lb/>ane (IV), which was obtained from the corresponding nitrile (HI) [4]. We could not reproduce the patent re-<lb/>sults in [4], so we changed the reaction conditions and the method used to isolate iH and IV. Nitrile III was<lb/> obtained from 3,4-dimethoxybenzyI cyanide (II) and dibromobutane in the presence of technical grade sodi-<lb/>um amide in toluene. Compound HI was freed from unchanged II by alkaline saponification. Nitrile HI was<lb/> converted to amine IV by reduction with lithium aluminum hydride (LAH).<lb/> The corresponding amides (V&apos;I, Table 1) were obtained by condensation of amine IV with substituted<lb/> phenylacetyl or benzoyl chlorides (V).</div>
+
+		</front>
+	</text>
+</tei>

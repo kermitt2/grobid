@@ -112,7 +112,8 @@ public class EvaluationUtilities {
 		final ArrayList<Integer> counterFalsePositive2 = new ArrayList<Integer>();
 		// false negative
 		final ArrayList<Integer> counterFalseNegative2 = new ArrayList<Integer>();
-
+//path = "/Users/lopez/biblio/epo/Modeles_03-2014/model.headers.80-20%-03-2014.test";
+//path = "/Users/lopez/grobid/grobid-home/tmp/header1020940668466715808.test";
 		try {
 			final BufferedReader bufReader = new BufferedReader(new InputStreamReader(new FileInputStream(path), "UTF-8"));
 
@@ -610,8 +611,8 @@ public class EvaluationUtilities {
 			report.append("\n");
 
 			// instance: separated by a new line in the result file
-			theResult = theResult.replace("\n \n", "\n");
-			stt = new StringTokenizer(theResult, "\n");
+			theResult = theResult.replace("\n \n", "\n\n");
+			stt = new StringTokenizer(theResult, "\n\n");
 			allGood = true;
 			int correctInstance = 0;
 			int totalInstance = 0;

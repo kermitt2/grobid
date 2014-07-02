@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="laboratory">Shien Lab</orgName>,
+							<orgName type="institution">National Cancer Center Hospital</orgName>,
+							<address>
+								<settlement>Tokyo</settlement>,
+								<country>Japan</country>,
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="department">Central Animal Lab</orgName>,
+							<orgName type="institution">National Cancer Center Research Institute</orgName>,
+							<lb/>
+							<address>
+								<settlement>Tokyo</settlement>,
+								<country>Japan</country>,
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="department">Genetic Division</orgName>,
+							<orgName type="institution">National Cancer Center Research Institute</orgName>,
+							<address>
+								<settlement>Tokyo</settlement>,
+								<country>Japan</country>,
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="department">Medical Oncology</orgName>,
+							<orgName type="institution">National Cancer<lb/> Center Hospital</orgName>,
+							<address>
+								<settlement>Tokyo</settlement>,
+								<country>Japan</country>,
+							</address>
+						</affiliation>
+						<affiliation>	
+							<orgName type="department">Shien Lab</orgName>,
+							<orgName type="institution">National Cancer Center Hospital. Pharmacology Div.</orgName>,
+							<orgName type="institution">National Cancer Center Res<lb/> Inst</orgName>,
+							<address>
+								<settlement>Tokyo</settlement>,
+								<country>Japan</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

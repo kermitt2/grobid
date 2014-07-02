@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dates>
-	Date: <date><month>March</month> <day>1</day>, <year>2007</year> </date>
-	Publication Date: <date> <month>May</month> <day>2</day>, <year>2007</year> </date>
+	<date>Date: <month>March</month> <day>1</day>, <year>2007</year> </date>
+	<date>Publication Date:  <month>May</month> <day>2</day>, <year>2007</year> </date>
 </dates>
