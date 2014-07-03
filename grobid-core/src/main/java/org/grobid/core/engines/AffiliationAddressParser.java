@@ -780,14 +780,18 @@ public class AffiliationAddressParser extends AbstractParser {
         filterAffiliationAddress(result, tokenizations, affiliationBlocks, tokenizationsAffiliation);
         String resultAffiliation = runReflow(affiliationBlocks, tokenizationsAffiliation);
 
+		StringBuffer bufferAffiliation = new StringBuffer();
+
+		if (resultAffiliation == null) {
+			return bufferAffiliation;
+		}
+
         StringTokenizer st = new StringTokenizer(resultAffiliation, "\n");
         String s1 = null;
         String s2 = null;
         String lastTag = null;
 
         int p = 0;
-
-        StringBuffer bufferAffiliation = new StringBuffer();
 
         String currentTag0 = null;
         String lastTag0 = null;
