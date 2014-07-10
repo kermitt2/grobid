@@ -85,172 +85,7 @@ public class HeaderParser extends AbstractParser {
 
 	public String processingHeaderBlock(boolean consolidate, Document doc, BiblioItem resHeader) {
 		try {
-			String header;
-			if (doc.blockDocumentHeaders == null) {
-				header = doc.getHeaderFeatured(true, true, true);
-			} else {
-				header = doc.getHeaderFeatured(true, false, true);
-			}
-			ArrayList<String> tokenizations = doc.getTokenizationsHeader();
-
-			StringTokenizer st = new StringTokenizer(header, "\n");
-
-            String res = getTaggerResult(st);
-			resHeader = resultExtraction(res, true, tokenizations, resHeader);
-
-			// LanguageUtilities languageUtilities =
-			// LanguageUtilities.getInstance();
-			Language langu = languageUtilities.runLanguageId(resHeader.getTitle() + "\n" + resHeader.getKeywords() + "\n"
-					+ resHeader.getAbstract());
-			if (langu != null) {
-				String lang = langu.getLangId();
-				doc.setLanguage(lang);
-				resHeader.setLanguage(lang);
-			}
-
-			if (resHeader != null) {
-				if (resHeader.getAbstract() != null) {
-					// resHeader.setAbstract(utilities.dehyphenizeHard(resHeader.getAbstract()));
-					resHeader.setAbstract(TextUtilities.dehyphenize(resHeader.getAbstract()));
-				}
-				BiblioItem.cleanTitles(resHeader);
-				if (resHeader.getTitle() != null) {
-					// String temp =
-					// utilities.dehyphenizeHard(resHeader.getTitle());
-					String temp = TextUtilities.dehyphenize(resHeader.getTitle());
-					temp = temp.trim();
-					if (temp.length() > 1) {
-						if (temp.startsWith("1"))
-							temp = temp.substring(1, temp.length());
-						temp = temp.trim();
-					}
-					resHeader.setTitle(temp);
-				}
-				if (resHeader.getBookTitle() != null) {
-					resHeader.setBookTitle(TextUtilities.dehyphenize(resHeader.getBookTitle()));
-				}
-
-				resHeader.setOriginalAuthors(resHeader.getAuthors());
-				boolean fragmentedAuthors = false;
-				boolean hasMarker = false;
-				List<Integer> authorsBlocks = new ArrayList<Integer>();
-				String[] authorSegments = null;
-				if (resHeader.getAuthors() != null) {
-					ArrayList<String> auts;
-					authorSegments = resHeader.getAuthors().split("\n");
-					if (authorSegments.length > 1) {
-						fragmentedAuthors = true;
-					}
-					if (authorParser == null) {
-						authorParser = new AuthorParser();
-					}
-					for (int k = 0; k < authorSegments.length; k++) {
-						auts = new ArrayList<String>();
-						auts.add(authorSegments[k]);
-						List<Person> localAuthors = authorParser.processingHeader(auts);
-						if (localAuthors != null) {
-							for (Person pers : localAuthors) {
-								resHeader.addFullAuthor(pers);
-								if (pers.getMarkers() != null) {
-									hasMarker = true;
-								}
-								authorsBlocks.add(k);
-							}
-						}
-					}
-				}
-
-				if (affiliationAddressParser == null) {
-					affiliationAddressParser = new AffiliationAddressParser();
-				}
-				resHeader.setFullAffiliations(affiliationAddressParser.processReflow(res, tokenizations));
-				resHeader.attachEmails();
-				boolean attached = false;
-				if (fragmentedAuthors && !hasMarker) {
-					if (resHeader.getFullAffiliations() != null) {
-						if (authorSegments != null) {
-							if (resHeader.getFullAffiliations().size() == authorSegments.length) {
-								int k = 0;
-								for (Person pers : resHeader.getFullAuthors()) {
-									if (k < authorsBlocks.size()) {
-										int indd = authorsBlocks.get(k);
-										if (indd < resHeader.getFullAffiliations().size()) {
-											pers.addAffiliation(resHeader.getFullAffiliations().get(indd));
-										}
-									}
-									k++;
-								}
-								attached = true;
-								resHeader.setFullAffiliations(null);
-								resHeader.setAffiliation(null);
-							}
-						}
-					}
-				}
-				if (!attached) {
-					resHeader.attachAffiliations();
-				}
-
-				if (resHeader.getEditors() != null) {
-					ArrayList<String> edits = new ArrayList<String>();
-					edits.add(resHeader.getEditors());
-
-					if (authorParser == null) {
-						authorParser = new AuthorParser();
-					}
-					resHeader.setFullEditors(authorParser.processingHeader(edits));
-					// resHeader.setFullEditors(authorParser.processingCitation(edits));
-				}
-
-				if (resHeader.getReference() != null) {
-					if (citationParser == null) {
-						citationParser = new CitationParser();
-					}
-					BiblioItem refer = citationParser.processing(resHeader.getReference(), false);
-					BiblioItem.correct(resHeader, refer);
-				}
-			}
-
-			// DOI pass
-			ArrayList<String> dois = doc.getDOIMatches();
-			if (dois != null) {
-				if ((dois.size() == 1) && (resHeader != null)) {
-					resHeader.setDOI(dois.get(0));
-				}
-			}
-
-			if (consolidate) {
-				resHeader = consolidateHeader(resHeader);
-			}
-
-			// normalization of dates
-			if (resHeader != null) {
-				if (resHeader.getPublicationDate() != null) {
-					if (dateParser == null) {
-						dateParser = new DateParser();
-					}
-					ArrayList<Date> dates = dateParser.processing(resHeader.getPublicationDate());
-					// most basic heuristic, we take the first date - to be
-					// revised...
-					if (dates != null) {
-						if (dates.size() > 0) {
-							resHeader.setNormalizedPublicationDate(dates.get(0));
-						}
-					}
-				}
-
-				if (resHeader.getSubmissionDate() != null) {
-					if (dateParser == null) {
-						dateParser = new DateParser();
-					}
-					ArrayList<Date> dates = dateParser.processing(resHeader.getSubmissionDate());
-					if (dates != null) {
-						if (dates.size() > 0) {
-							resHeader.setNormalizedSubmissionDate(dates.get(0));
-						}
-					}
-				}
-			}
+            resHeader = getBiblioItem(consolidate, doc, resHeader);
 
 			TEIFormater teiFormater = new TEIFormater(doc);
 			String tei = teiFormater.toTEIBody(resHeader, null, true, false, true);
@@ -261,7 +96,177 @@ public class HeaderParser extends AbstractParser {
 		}
 	}
 
-	/**
+    private BiblioItem getBiblioItem(boolean consolidate, Document doc, BiblioItem resHeader) throws Exception {
+        String header;
+        if (doc.blockDocumentHeaders == null) {
+            header = doc.getHeaderFeatured(true, true, true);
+        } else {
+            header = doc.getHeaderFeatured(true, false, true);
+        }
+        ArrayList<String> tokenizations = doc.getTokenizationsHeader();
+
+        StringTokenizer st = new StringTokenizer(header, "\n");
+
+        String res = getTaggerResult(st);
+        resHeader = resultExtraction(res, true, tokenizations, resHeader);
+
+        // LanguageUtilities languageUtilities =
+        // LanguageUtilities.getInstance();
+        Language langu = languageUtilities.runLanguageId(resHeader.getTitle() + "\n" + resHeader.getKeywords() + "\n"
+                + resHeader.getAbstract());
+        if (langu != null) {
+            String lang = langu.getLangId();
+            doc.setLanguage(lang);
+            resHeader.setLanguage(lang);
+        }
+
+        if (resHeader != null) {
+            if (resHeader.getAbstract() != null) {
+                // resHeader.setAbstract(utilities.dehyphenizeHard(resHeader.getAbstract()));
+                resHeader.setAbstract(TextUtilities.dehyphenize(resHeader.getAbstract()));
+            }
+            BiblioItem.cleanTitles(resHeader);
+            if (resHeader.getTitle() != null) {
+                // String temp =
+                // utilities.dehyphenizeHard(resHeader.getTitle());
+                String temp = TextUtilities.dehyphenize(resHeader.getTitle());
+                temp = temp.trim();
+                if (temp.length() > 1) {
+                    if (temp.startsWith("1"))
+                        temp = temp.substring(1, temp.length());
+                    temp = temp.trim();
+                }
+                resHeader.setTitle(temp);
+            }
+            if (resHeader.getBookTitle() != null) {
+                resHeader.setBookTitle(TextUtilities.dehyphenize(resHeader.getBookTitle()));
+            }
+
+            resHeader.setOriginalAuthors(resHeader.getAuthors());
+            boolean fragmentedAuthors = false;
+            boolean hasMarker = false;
+            List<Integer> authorsBlocks = new ArrayList<Integer>();
+            String[] authorSegments = null;
+            if (resHeader.getAuthors() != null) {
+                ArrayList<String> auts;
+                authorSegments = resHeader.getAuthors().split("\n");
+                if (authorSegments.length > 1) {
+                    fragmentedAuthors = true;
+                }
+                if (authorParser == null) {
+                    authorParser = new AuthorParser();
+                }
+                for (int k = 0; k < authorSegments.length; k++) {
+                    auts = new ArrayList<String>();
+                    auts.add(authorSegments[k]);
+                    List<Person> localAuthors = authorParser.processingHeader(auts);
+                    if (localAuthors != null) {
+                        for (Person pers : localAuthors) {
+                            resHeader.addFullAuthor(pers);
+                            if (pers.getMarkers() != null) {
+                                hasMarker = true;
+                            }
+                            authorsBlocks.add(k);
+                        }
+                    }
+                }
+            }
+
+            if (affiliationAddressParser == null) {
+                affiliationAddressParser = new AffiliationAddressParser();
+            }
+            resHeader.setFullAffiliations(affiliationAddressParser.processReflow(res, tokenizations));
+            resHeader.attachEmails();
+            boolean attached = false;
+            if (fragmentedAuthors && !hasMarker) {
+                if (resHeader.getFullAffiliations() != null) {
+                    if (authorSegments != null) {
+                        if (resHeader.getFullAffiliations().size() == authorSegments.length) {
+                            int k = 0;
+                            for (Person pers : resHeader.getFullAuthors()) {
+                                if (k < authorsBlocks.size()) {
+                                    int indd = authorsBlocks.get(k);
+                                    if (indd < resHeader.getFullAffiliations().size()) {
+                                        pers.addAffiliation(resHeader.getFullAffiliations().get(indd));
+                                    }
+                                }
+                                k++;
+                            }
+                            attached = true;
+                            resHeader.setFullAffiliations(null);
+                            resHeader.setAffiliation(null);
+                        }
+                    }
+                }
+            }
+            if (!attached) {
+                resHeader.attachAffiliations();
+            }
+
+            if (resHeader.getEditors() != null) {
+                ArrayList<String> edits = new ArrayList<String>();
+                edits.add(resHeader.getEditors());
+
+                if (authorParser == null) {
+                    authorParser = new AuthorParser();
+                }
+                resHeader.setFullEditors(authorParser.processingHeader(edits));
+                // resHeader.setFullEditors(authorParser.processingCitation(edits));
+            }
+
+            if (resHeader.getReference() != null) {
+                if (citationParser == null) {
+                    citationParser = new CitationParser();
+                }
+                BiblioItem refer = citationParser.processing(resHeader.getReference(), false);
+                BiblioItem.correct(resHeader, refer);
+            }
+        }
+
+        // DOI pass
+        ArrayList<String> dois = doc.getDOIMatches();
+        if (dois != null) {
+            if ((dois.size() == 1) && (resHeader != null)) {
+                resHeader.setDOI(dois.get(0));
+            }
+        }
+
+        if (consolidate) {
+            resHeader = consolidateHeader(resHeader);
+        }
+
+        // normalization of dates
+        if (resHeader != null) {
+            if (resHeader.getPublicationDate() != null) {
+                if (dateParser == null) {
+                    dateParser = new DateParser();
+                }
+                ArrayList<Date> dates = dateParser.processing(resHeader.getPublicationDate());
+                // most basic heuristic, we take the first date - to be
+                // revised...
+                if (dates != null) {
+                    if (dates.size() > 0) {
+                        resHeader.setNormalizedPublicationDate(dates.get(0));
+                    }
+                }
+            }
+
+            if (resHeader.getSubmissionDate() != null) {
+                if (dateParser == null) {
+                    dateParser = new DateParser();
+                }
+                ArrayList<Date> dates = dateParser.processing(resHeader.getSubmissionDate());
+                if (dates != null) {
+                    if (dates.size() > 0) {
+                        resHeader.setNormalizedSubmissionDate(dates.get(0));
+                    }
+                }
+            }
+        }
+        return resHeader;
+    }
+
+    /**
 	 * Return the Document object of the last processed pdf file.
 	 * 
 	 * @return a document
