@@ -1507,6 +1507,8 @@
                         <cell role="a3code">SYR</cell>
                         <cell role="name" xml:lang="fr">SYRIENNE, RÉPUBLIQUE ARABE</cell>
                         <cell role="name" xml:lang="en">SYRIAN ARAB REPUBLIC</cell>
+						<cell role="name" xml:lang="en">SYRIA</cell>
+						<cell role="name" xml:lang="fr">SYRIE</cell>
                     </row>
                     <row>
                         <cell role="a2code">TJ</cell>

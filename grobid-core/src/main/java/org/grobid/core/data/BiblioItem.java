@@ -1349,7 +1349,7 @@ public class BiblioItem {
     /**
      * Some little cleaning of the abstract field.
      */
-    final String[] ABSTRACT_PREFIXES = {"Abstract", "ABSTRACT", "Summary"};
+    final String[] ABSTRACT_PREFIXES = {"Abstract", "ABSTRACT", "Summary", "Résumé", "Abrégé"};
 
     public String cleanAbstract(String string) {
 
@@ -1470,7 +1470,21 @@ public class BiblioItem {
 
             // author 
             // fullAuthors has to be used instead
-            if (authors != null) {
+			if (fullAuthors != null) {
+				if (fullAuthors.size() > 0) {
+					boolean begin = true;
+					for(Person person : fullAuthors) {
+						if (begin) {
+                            bibtex += "author\t=\t\"" + person.getFirstName() + " " + person.getLastName();
+                            begin = false;
+                        } 
+						else
+                            bibtex += " and " + person.getFirstName() + " " + person.getLastName();
+					}
+					bibtex += "\"";
+				}
+			}
+            else if (authors != null) {
                 StringTokenizer st = new StringTokenizer(authors, ";");
                 if (st.countTokens() > 1) {
                     boolean begin = true;
@@ -1533,6 +1547,28 @@ public class BiblioItem {
             if (pageRange != null) {
                 bibtex += ",\npages\t=\t\"" + pageRange + "\"";
             }
+
+			// abstract
+			if (abstract_ != null) {
+				if (abstract_.length() > 0) {
+					bibtex += ",\nabstract\t=\t\"" + abstract_ + "\"";
+				}
+			}
+
+			// keywords
+			if (keywords != null) {
+				bibtex += ",\nkeywords\t=\t\"" ;
+				boolean begin = true;
+				for(String keyword : keywords) {
+					if (begin) {
+						begin = false;
+						bibtex += keyword;
+					}
+					else 
+						bibtex += ", " + keyword;
+				}
+				bibtex += "\"";
+			}
 
             bibtex += "\n}\n";
         } catch (Exception e) {

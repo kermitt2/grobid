@@ -19,7 +19,7 @@ public final class FastMatcher {
     public FastMatcher(File file) {
         if (!file.exists()) {
             throw new GrobidResourceException("Cannot add term to matcher, because file '" +
-                    file.getAbsolutePath() + "' does not exists.");
+                    file.getAbsolutePath() + "' does not exist.");
         }
         if (!file.canRead()) {
             throw new GrobidResourceException("Cannot add terms to matcher, because cannot read file '" +
@@ -28,7 +28,7 @@ public final class FastMatcher {
         try {
             loadTerms(file);
         } catch (Exception e) {
-            throw new GrobidException("An exception occured while running Grobid.", e);
+            throw new GrobidException("An exception occured while running Grobid FastMatcher.", e);
         }
     }
 
@@ -219,7 +219,13 @@ public final class FastMatcher {
         String text = "";
         for (String token : tokens) {
             if (!token.trim().equals("@newline")) {
-                text += " " + token;
+				int ind = token.indexOf(" ");
+				if (ind == -1)
+					ind = token.indexOf("\t");
+				if (ind == -1)
+                	text += " " + token;
+				else
+					text += " " + token.substring(0, ind);
             }
         }
         return matcher(text);
