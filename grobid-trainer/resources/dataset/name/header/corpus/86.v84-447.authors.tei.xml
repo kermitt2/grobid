@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>J</forename>.
+								<middlename>M</middlename>.
+								<surname>DUMAS</surname>,
+							</persName>
+							<persName>
+								<forename>C</forename>.
+								<surname>GERON</surname>,
+							</persName>
+							<persName>
+								<forename>A</forename>.
+								<middlename>R</middlename>.
+								<surname>KRIBII</surname>
+							</persName>
+							ET
+							<persName>
+								<forename>M</forename>.
+								<surname>LAKRAIMI</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

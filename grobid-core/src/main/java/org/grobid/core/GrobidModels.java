@@ -30,6 +30,7 @@ public enum GrobidModels {
     PATENT_EDIT("patent/edit"),
     //	ENTITIES_CHEMISTRY("chemistry"),
     ENTITIES_NER("ner"),
+	ENTITIES_NERSense("nersense"),
     QUANTITIES("quantities"),
     ENTITIES_BIOTECH("bio");
 

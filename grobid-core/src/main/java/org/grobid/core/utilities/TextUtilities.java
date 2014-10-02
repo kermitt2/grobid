@@ -21,8 +21,8 @@ import java.util.StringTokenizer;
  */
 public class TextUtilities {
 
-	public static final String punctuations = " ,:;?.!)-–\"“”‘’'`]*\u2666\u2665\u2663\u2660";
-    public static final String fullPunctuations = "([ ,:;?.!/)-–\"“”‘’'`]*\u2666\u2665\u2663\u2660";
+	public static final String punctuations = " ,:;?.!)-–\"“”‘’'`$]*\u2666\u2665\u2663\u2660";
+    public static final String fullPunctuations = "([ ,:;?.!/)-–\"“”‘’'`$]*\u2666\u2665\u2663\u2660";
     public static String delimiters = " \n\t\u00A0" + fullPunctuations;
 
 	public static final String OR = "|";
@@ -127,11 +127,11 @@ public class TextUtilities {
                         line = line.substring(firstToken.length(), line.length());
                     } else {
                         // if not
-                        res += lastToken + "-";
+                        res += lastToken + "-\n";
                         failure = true;
                     }
                 } else
-                    res += lastToken + "-";
+                    res += lastToken + "-\n";
                 hyphen = false;
             }
 
@@ -151,10 +151,10 @@ public class TextUtilities {
                         lastToken = line.substring(0, line.length() - 1);
                 } else {
                     if (failure) {
-                        res += line;
+                        res += line+"\n";
                         failure = false;
                     } else
-                        res += SPACE + line;
+                        res += SPACE + line+"\n";
                 }
             }
         }

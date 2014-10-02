@@ -276,6 +276,10 @@ public class FeaturesVectorReference {
                 featuresVector.http = true;
             }
 
+			if (featureFactory.test_city(word)) {
+                featuresVector.locationName = true;
+            }
+
             if (featuresVector.capitalisation == null)
                 featuresVector.capitalisation = "NOCAPS";
 
