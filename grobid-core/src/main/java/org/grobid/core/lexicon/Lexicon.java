@@ -50,7 +50,11 @@ public class Lexicon {
     private FastMatcher publisherPattern = null;
     private FastMatcher journalPattern = null;
     private FastMatcher cityPattern = null;
-
+	private FastMatcher organisationPattern = null;
+	private FastMatcher locationPattern = null;
+	private FastMatcher personTitlePattern = null;
+	private FastMatcher orgFormPattern = null;
+	
     public static Lexicon getInstance() {
         if (instance == null) {
             //double check idiom
@@ -81,8 +85,10 @@ public class Lexicon {
         addDictionary(GrobidProperties.getGrobidHomePath() + "/lexicon/wordforms/english.wf", Language.EN);
         addDictionary(GrobidProperties.getGrobidHomePath() + "/lexicon/wordforms/german.wf", Language.EN);
         addLastNames(GrobidProperties.getGrobidHomePath() + "/lexicon/names/names.family");
+		addLastNames(GrobidProperties.getGrobidHomePath() + "/lexicon/names/lastname.5k");
         addFirstNames(GrobidProperties.getGrobidHomePath() + "/lexicon/names/names.female");
         addFirstNames(GrobidProperties.getGrobidHomePath() + "/lexicon/names/names.male");
+		addFirstNames(GrobidProperties.getGrobidHomePath() + "/lexicon/names/firstname.5k");
         initCountryCodes();
         addCountryCodes(GrobidProperties.getGrobidHomePath() +
                 "/lexicon/countries/CountryCodes.xml");
@@ -427,6 +433,55 @@ public class Lexicon {
         }
     }
 
+	public void initOrganisations() {
+        try {
+            organisationPattern = new FastMatcher(new
+                    File(GrobidProperties.getGrobidHomePath() + "/lexicon/organisations/WikiOrganizations.lst"));
+			organisationPattern.loadTerms(new File(GrobidProperties.getGrobidHomePath() + 
+				"/lexicon/organisations/government.government_agency"));
+			organisationPattern.loadTerms(new File(GrobidProperties.getGrobidHomePath() + 
+				"/lexicon/organisations/known_corporations.lst"));
+			organisationPattern.loadTerms(new File(GrobidProperties.getGrobidHomePath() + 
+				"/lexicon/organisations/venture_capital.venture_funded_company"));
+        } catch (PatternSyntaxException e) {
+            throw new GrobidResourceException("Error when compiling lexicon regular expression for organisations.", e);
+        } catch (IOException e) {
+            throw new GrobidResourceException("Cannot add term to matcher, because the lexicon resource file " + 
+				"does not exist or cannot be read.", e);
+        } catch (Exception e) {
+			throw new GrobidException("An exception occured while running Grobid Lexicon init.", e);
+		}
+    }
+	
+	public void initOrgForms() {
+        try {
+			orgFormPattern = new FastMatcher(new
+                    File(GrobidProperties.getGrobidHomePath() + "/lexicon/organisations/orgClosings.txt"));	
+        } catch (PatternSyntaxException e) {
+            throw new GrobidResourceException("Error when compiling lexicon regular expression for organisations.", e);
+        } catch (Exception e) {
+			throw new GrobidException("An exception occured while running Grobid Lexicon init.", e);
+		}
+    }
+	
+	public void initLocations() {
+        try {
+            locationPattern = new FastMatcher(new
+                    File(GrobidProperties.getGrobidHomePath() + "/lexicon/places/location.txt"));
+        } catch (PatternSyntaxException e) {
+            throw new GrobidResourceException("Error when compiling lexicon regular expression for locations.", e);
+        }
+    }
+
+	public void initPersonTitles() {
+        try {
+            personTitlePattern = new FastMatcher(new
+                    File(GrobidProperties.getGrobidHomePath() + "/lexicon/names/VincentNgPeopleTitles.txt"));
+        } catch (PatternSyntaxException e) {
+            throw new GrobidResourceException("Error when compiling lexicon regular expression for locations.", e);
+        }
+    }
+
     /**
      * Look-up in first name gazetteer
      */
@@ -563,6 +618,94 @@ public class Lexicon {
             initCities();
         }
         List<OffsetPosition> results = cityPattern.matcher(s);
+        return results;
+    }
+
+	/**
+     * Soft look-up in organisation name gazetteer for a given string
+     */
+    public List<OffsetPosition> inOrganisationNames(String s) {
+        if (organisationPattern == null) {
+            initOrganisations();
+        }
+        List<OffsetPosition> results = organisationPattern.matcher(s);
+        return results;
+    }
+
+    /**
+     * Soft look-up in organisation name gazetteer for a given string already tokenized
+     */
+    public List<OffsetPosition> inOrganisationNames(List<String> s) {
+        if (organisationPattern == null) {
+            initOrganisations();
+        }
+        List<OffsetPosition> results = organisationPattern.matcher(s);
+        return results;
+    }
+
+	/**
+     * Soft look-up in organisation form name gazetteer for a given string
+     */
+    public List<OffsetPosition> inOrgFormNames(String s) {
+        if (orgFormPattern == null) {
+            initOrgForms();
+        }
+        List<OffsetPosition> results = orgFormPattern.matcher(s);
+        return results;
+    }
+
+    /**
+     * Soft look-up in organisation form name gazetteer for a given string already tokenized
+     */
+    public List<OffsetPosition> inOrgFormNames(List<String> s) {
+        if (orgFormPattern == null) {
+            initOrgForms();
+        }
+        List<OffsetPosition> results = orgFormPattern.matcher(s);
+        return results;
+    }
+
+	/**
+     * Soft look-up in location name gazetteer for a given string
+     */
+    public List<OffsetPosition> inLocationNames(String s) {
+        if (locationPattern == null) {
+            initLocations();
+        }
+        List<OffsetPosition> results = locationPattern.matcher(s);
+        return results;
+    }
+
+    /**
+     * Soft look-up in location name gazetteer for a given string already tokenized
+     */
+    public List<OffsetPosition> inLocationNames(List<String> s) {
+        if (locationPattern == null) {
+            initLocations();
+        }
+        List<OffsetPosition> results = locationPattern.matcher(s);
+        return results;
+    }
+
+	/**
+     * Soft look-up in person title gazetteer for a given string
+     */
+    public List<OffsetPosition> inPersonTitleNames(String s) {
+        if (personTitlePattern == null) {
+            initPersonTitles();
+        }
+        List<OffsetPosition> results = personTitlePattern.matcher(s);
+        return results;
+    }
+
+    /**
+     * Soft look-up in person title gazetteer for a given string already tokenized
+     */
+    public List<OffsetPosition> inPersonTitleNames(List<String> s) {
+        if (personTitlePattern == null) {
+            initPersonTitles();
+        }
+        List<OffsetPosition> results = personTitlePattern.matcher(s);
         return results;
     }
 }

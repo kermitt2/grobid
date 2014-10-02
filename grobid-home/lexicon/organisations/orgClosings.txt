@@ -1,0 +1,125 @@
+company
+co
+co.
+corporation
+corp
+corp.
+incorporated
+inc
+inc.
+limited liability company
+limited
+ltd
+ltd.
+llc
+llc.
+lc
+lc.
+ltd. co.
+dba
+dba.
+501c3
+501(c)3
+nonprofit
+non-profit
+organization
+org
+org.
+association
+assn
+assn.
+agency
+ae
+ab
+ad
+a.d.
+ag
+d.d.
+a/s
+asa
+a.s.
+akc. spol.
+cyf
+cyf.
+public limited company
+plc
+plc.
+ccc
+c.c.c.
+unlimited
+unltd
+unltd.
+ultd
+ultd.
+se
+s.e.
+sdn bhd
+berhad
+bhd
+kk
+k.k.
+private limited
+pvt
+pvt.
+pvt. ltd.
+n.v.
+oao
+oy
+oyj
+rt
+rt.
+s.a.
+s.p.a.
+company limited
+co., ltd.
+p.t.
+pt
+p.t. tbk.
+pt tbk
+aps
+bm
+b.m.
+bv
+bvba
+cc
+cv
+c.v.
+d.o.o.
+e.p.e.
+g.d.k.
+company with limited liability
+gmbh
+kft
+kft.
+k.f.t.
+limited liability partnership
+llp
+l.l.p.
+tnhh
+cty tnhh
+ltda.
+nl
+professional limited liability company
+pllc
+ood
+ooo
+tob
+proprietary limited company
+pty. ltd.
+pty.
+pte.
+sarl
+sdn
+bhd
+sl
+s.l.
+slne
+s.l.n.e.
+sprl
+sp.z.o.o.
+s.r.l.
+srl
+s.r.o.
+sro
+spol.
+spol. s.r.o.

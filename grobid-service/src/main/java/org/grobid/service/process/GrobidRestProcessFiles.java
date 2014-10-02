@@ -77,10 +77,12 @@ public class GrobidRestProcessFiles {
 				// starts conversion process
 				engine = GrobidRestUtils.getEngine(isparallelExec);
 				if (isparallelExec) {
-					retVal = engine.processHeader(originFile.getAbsolutePath(), consolidate, null);
+					//retVal = engine.processHeader(originFile.getAbsolutePath(), consolidate, null);
+					retVal = engine.segmentAndProcessHeader(originFile.getAbsolutePath(), consolidate, null);
 				} else {
 					synchronized (engine) {
-						retVal = engine.processHeader(originFile.getAbsolutePath(), consolidate, null);
+						//retVal = engine.processHeader(originFile.getAbsolutePath(), consolidate, null);
+						retVal = engine.segmentAndProcessHeader(originFile.getAbsolutePath(), consolidate, null);
 					}
 				}
 				
