@@ -23,11 +23,9 @@ public class FeaturesVectorCitation {
     public String fontSize = null; // one of HIGHERFONT, SAMEFONTSIZE, LOWERFONT
     public boolean bold = false;
     public boolean italic = false;
-    public boolean rotation = false;
     public String capitalisation = null; // one of INITCAP, ALLCAPS, NOCAPS
     public String digit;  // one of ALLDIGIT, CONTAINDIGIT, NODIGIT
     public boolean singleChar = false;
-    public boolean containDash = false;
     public boolean properName = false;
     public boolean commonName = false;
     public boolean firstName = false;
@@ -551,8 +549,8 @@ public class FeaturesVectorCitation {
                 features.month = true;
             }
 
-            if (text.contains("-")) {
-                features.containDash = true;
+			if (featureFactory.test_city(text)) {
+                features.locationName = true;
             }
 
             Matcher m = featureFactory.isDigit.matcher(text);

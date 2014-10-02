@@ -308,7 +308,6 @@ public class FeatureFactory {
 			return false;
     }
 
-
     /**
      * Give the relative position discretized into nbBins
      */

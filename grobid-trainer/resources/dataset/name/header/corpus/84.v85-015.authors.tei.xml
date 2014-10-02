@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>JEAN-CLAUDE</forename>
+								<surname>CHERTON</surname>,
+							</persName>
+							<persName>
+								<forename>PAUL-LOUIS</forename>
+								<surname>DESBENE</surname>,
+							</persName>
+							<persName>
+								<forename>MARC</forename>
+								<surname>BAZINET</surname>,
+							</persName>
+							<persName>
+								<forename>MARC</forename>
+								<surname>LANSON</surname>,
+							</persName>	
+							<persName>	
+								<forename>ODILE</forename>
+								<surname>CONVERT</surname>
+							</persName>
+							ET
+							<persName>
+								<forename>JEAN-JACQUES</forename>
+								<surname>BASSELIER</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

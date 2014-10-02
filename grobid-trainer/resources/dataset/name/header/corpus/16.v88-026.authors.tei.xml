@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>P</forename>.
+								<surname>CANONNE</surname>,
+							</persName>
+							<persName>
+								<forename>M</forename>.
+								<surname>BELLEY</surname>,
+							</persName>
+							<persName>
+								<forename>G</forename>.
+								<surname>FYTAS</surname>
+								ET
+							</persName>
+							<persName>
+								<forename>J</forename>.
+								<surname>PLAMONDON</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

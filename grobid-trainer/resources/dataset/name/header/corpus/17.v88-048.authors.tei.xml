@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								<forename>JEAN</forename>
+								<surname>ZYLBER</surname>,
+							</persName>
+							<persName>
+								<forename>NICOLE</forename>
+								<surname>ZYLBER</surname>
+							</persName>
+							ET
+							<persName>
+								<forename>DANIEL</forename>
+								<surname>LEFORT</surname>
+							</persName>
+							<persName>
+								<forename>CHRISTIANE</forename>
+								<surname>FERRADINI</surname>
+							</persName>
+							ET
+							<persName>
+								<forename>BERNARD</forename>
+								<surname>HICKEL</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>
