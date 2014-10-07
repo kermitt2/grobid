@@ -16,7 +16,7 @@ import java.util.StringTokenizer;
  * Date: 11/24/11
  * Time: 11:05 AM
  */
-public class LingPipeLanguageDetector implements LanguageDetector{
+public class LingPipeLanguageDetector implements LanguageDetector {
 
     // classifier for language identification
     public Classifier<String, Classification> classifierLanguageId = null;
