@@ -66,6 +66,21 @@
 			<artifactId>lingpipe</artifactId>
 			<version>3.8.2</version>
 		</dependency>
+
+        <dependency>
+			<groupId>com.cybozu</groupId>
+			<artifactId>language-detection</artifactId>
+			<version>09-13-2011</version>
+		</dependency>
+
+        <dependency>
+			<groupId>net.arnx</groupId>
+			<artifactId>jsonic</artifactId>
+			<version>1.3.5</version>
+		</dependency>
+
+
+
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>

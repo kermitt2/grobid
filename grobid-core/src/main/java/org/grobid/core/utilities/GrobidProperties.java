@@ -179,7 +179,7 @@ public class GrobidProperties {
 			try {
 				grobidHomePath = (String) context.lookup("java:comp/env/" + GrobidPropertyKeys.PROP_GROBID_HOME);
 			} catch (final Exception exp) {
-				throw new GrobidPropertyException("Could not set GROBD_HOME", exp);
+				throw new GrobidPropertyException("Could not set GROBID_HOME", exp);
 			}
 			File pathToGrobidHome = new File(grobidHomePath);
 
@@ -838,6 +838,10 @@ public class GrobidProperties {
 	public static String getLexiconPath() {
 		return new File(get_GROBID_HOME_PATH(), "lexicon").getAbsolutePath();
 	}
+
+    public static File getLanguageDetectionResourcePath() {
+        return new File(get_GROBID_HOME_PATH(), "language-detection");
+    };
 
 	/**
 	 * Returns the maximum parallel connections allowed in the pool.
