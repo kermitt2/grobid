@@ -2,6 +2,7 @@ package org.grobid.core.data;
 
 import org.grobid.core.data.util.AuthorEmailAssigner;
 import org.grobid.core.data.util.ClassicAuthorEmailAssigner;
+import org.grobid.core.data.util.EmailSanitizer;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.lang.Language;
 import org.grobid.core.lexicon.Lexicon;
@@ -24,6 +25,7 @@ import java.util.regex.Pattern;
 public class BiblioItem {
     LanguageUtilities languageUtilities = LanguageUtilities.getInstance();
     private AuthorEmailAssigner authorEmailAssigner = new ClassicAuthorEmailAssigner();
+    private EmailSanitizer emailSanitizer = new EmailSanitizer();
 
     @Override
     public String toString() {
@@ -2823,7 +2825,13 @@ public class BiblioItem {
         while (st0.hasMoreTokens()) {
             emailles.add(st0.nextToken().trim());
         }
-        authorEmailAssigner.assign(fullAuthors, emailles);
+
+
+        List<String> sanitizedEmails = emailSanitizer.splitAndClean(emailles);
+
+        if (sanitizedEmails != null) {
+            authorEmailAssigner.assign(fullAuthors, emailles);
+        }
     }
 
     /**

@@ -158,6 +158,9 @@ public class Person {
             res += lastName + " ";
         if (suffix != null)
             res += suffix;
+        if (email != null) {
+            res += " (email:" + email + ")";
+        }
         return res.trim();
     }
 
