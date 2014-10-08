@@ -1,5 +1,7 @@
 package org.grobid.core.data;
 
+import org.grobid.core.data.util.AuthorEmailAssigner;
+import org.grobid.core.data.util.ClassicAuthorEmailAssigner;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.lang.Language;
 import org.grobid.core.lexicon.Lexicon;
@@ -21,6 +23,7 @@ import java.util.regex.Pattern;
  */
 public class BiblioItem {
     LanguageUtilities languageUtilities = LanguageUtilities.getInstance();
+    private AuthorEmailAssigner authorEmailAssigner = new ClassicAuthorEmailAssigner();
 
     @Override
     public String toString() {
@@ -807,11 +810,11 @@ public class BiblioItem {
         this.categories = cat;
     }
 
-	public void addCategory(String cat) {
+    public void addCategory(String cat) {
         if (categories == null) {
-			categories = new ArrayList<String>();
-		} 
-		categories.add(cat);
+            categories = new ArrayList<String>();
+        }
+        categories.add(cat);
     }
 
     public void setNbPages(int nb) {
@@ -1359,9 +1362,9 @@ public class BiblioItem {
             return string;
         String res = string.trim();
 
-        for (String abstractPrefix: ABSTRACT_PREFIXES) {
+        for (String abstractPrefix : ABSTRACT_PREFIXES) {
             if (res.startsWith(abstractPrefix)) {
-                if (abstractPrefix.length()<res.length()) {
+                if (abstractPrefix.length() < res.length()) {
                     res = res.substring(abstractPrefix.length(), res.length());
                     res.trim();
                 } else {
@@ -1388,12 +1391,12 @@ public class BiblioItem {
 
     static public void cleanTitles(BiblioItem bibl) {
         if (bibl.getTitle() != null) {
-			String localTitle = TextUtilities.cleanField(bibl.getTitle(), false);
-			if (localTitle.endsWith(" y")) {
-				// some markers at the end of the title are extracted from the pdf as " y" at the end of the title
-				// e.g. <title level="a" type="main">Computations in finite-dimensional Lie algebras y</title>
-				localTitle = localTitle.substring(0, localTitle.length()-2);
-			}
+            String localTitle = TextUtilities.cleanField(bibl.getTitle(), false);
+            if (localTitle.endsWith(" y")) {
+                // some markers at the end of the title are extracted from the pdf as " y" at the end of the title
+                // e.g. <title level="a" type="main">Computations in finite-dimensional Lie algebras y</title>
+                localTitle = localTitle.substring(0, localTitle.length() - 2);
+            }
             bibl.setTitle(localTitle);
         }
         if (bibl.getBookTitle() != null) {
@@ -1422,25 +1425,25 @@ public class BiblioItem {
         if (string.length() == 0)
             return string;
         String res = string.trim();
-		String resLow = res.toLowerCase();
+        String resLow = res.toLowerCase();
         if (resLow.startsWith("keywords")) {
             res = res.substring(8);
         } else if (resLow.startsWith("key words")) {
             res = res.substring(9);
         } else if (resLow.startsWith("mots clés")) {
-			res = res.substring(9);
-		} else if (resLow.startsWith("mots cles")) {
-			res = res.substring(9);	
-		} else if (resLow.startsWith("mots clefs")) {
-			res = res.substring(10);
-		}
-		
+            res = res.substring(9);
+        } else if (resLow.startsWith("mots cles")) {
+            res = res.substring(9);
+        } else if (resLow.startsWith("mots clefs")) {
+            res = res.substring(10);
+        }
+
         res = res.trim();
         if (res.startsWith(":")) {
             res = res.substring(1);
         }
-		if (res.endsWith(".")) {
-            res = res.substring(0,res.length()-1);
+        if (res.endsWith(".")) {
+            res = res.substring(0, res.length() - 1);
         }
 
         return res.trim();
@@ -1470,21 +1473,19 @@ public class BiblioItem {
 
             // author 
             // fullAuthors has to be used instead
-			if (fullAuthors != null) {
-				if (fullAuthors.size() > 0) {
-					boolean begin = true;
-					for(Person person : fullAuthors) {
-						if (begin) {
+            if (fullAuthors != null) {
+                if (fullAuthors.size() > 0) {
+                    boolean begin = true;
+                    for (Person person : fullAuthors) {
+                        if (begin) {
                             bibtex += "author\t=\t\"" + person.getFirstName() + " " + person.getLastName();
                             begin = false;
-                        } 
-						else
+                        } else
                             bibtex += " and " + person.getFirstName() + " " + person.getLastName();
-					}
-					bibtex += "\"";
-				}
-			}
-            else if (authors != null) {
+                    }
+                    bibtex += "\"";
+                }
+            } else if (authors != null) {
                 StringTokenizer st = new StringTokenizer(authors, ";");
                 if (st.countTokens() > 1) {
                     boolean begin = true;
@@ -1548,27 +1549,26 @@ public class BiblioItem {
                 bibtex += ",\npages\t=\t\"" + pageRange + "\"";
             }
 
-			// abstract
-			if (abstract_ != null) {
-				if (abstract_.length() > 0) {
-					bibtex += ",\nabstract\t=\t\"" + abstract_ + "\"";
-				}
-			}
+            // abstract
+            if (abstract_ != null) {
+                if (abstract_.length() > 0) {
+                    bibtex += ",\nabstract\t=\t\"" + abstract_ + "\"";
+                }
+            }
 
-			// keywords
-			if (keywords != null) {
-				bibtex += ",\nkeywords\t=\t\"" ;
-				boolean begin = true;
-				for(String keyword : keywords) {
-					if (begin) {
-						begin = false;
-						bibtex += keyword;
-					}
-					else 
-						bibtex += ", " + keyword;
-				}
-				bibtex += "\"";
-			}
+            // keywords
+            if (keywords != null) {
+                bibtex += ",\nkeywords\t=\t\"";
+                boolean begin = true;
+                for (String keyword : keywords) {
+                    if (begin) {
+                        begin = false;
+                        bibtex += keyword;
+                    } else
+                        bibtex += ", " + keyword;
+                }
+                bibtex += "\"";
+            }
 
             bibtex += "\n}\n";
         } catch (Exception e) {
@@ -1577,74 +1577,76 @@ public class BiblioItem {
         return bibtex;
     }
 
-	/**
+    /**
      * Export the bibliographical item into a TEI BiblStruct string
+     *
      * @param n - the index of the bibliographical record, the corresponding id will be b+n
      */
-	public String toTEI(int n) {
-		return toTEI(n, 0);
-	}
+    public String toTEI(int n) {
+        return toTEI(n, 0);
+    }
 
     /**
      * Export the bibliographical item into a TEI BiblStruct string
-     * @param n - the index of the bibliographical record, the corresponding id will be b+n
+     *
+     * @param n      - the index of the bibliographical record, the corresponding id will be b+n
      * @param indent - the tabulation indentation for the output of the xml elements
      */
     public String toTEI(int n, int indent) {
         StringBuilder tei = new StringBuilder();
         try {
             // we just produce here xml strings
-			for (int i = 0; i < indent; i++) {
-            	tei.append("\t");
-        	}
+            for (int i = 0; i < indent; i++) {
+                tei.append("\t");
+            }
             tei.append("<biblStruct");
             if (language != null) {
                 if (n == -1) {
                     if (pubnum != null) {
-						tei.append(" xml:lang=\"" + language + "\" xml:id=\"" + pubnum + "\">\n");
+                        tei.append(" xml:lang=\"" + language + "\" xml:id=\"" + pubnum + "\">\n");
                     } else
-						tei.append(" xml:lang=\"" + language + ">\n");
+                        tei.append(" xml:lang=\"" + language + ">\n");
                 } else {
-					tei.append(" xml:lang=\"" + language + "\" xml:id=\"b" + n + "\">\n");
+                    tei.append(" xml:lang=\"" + language + "\" xml:id=\"b" + n + "\">\n");
                 }
                 // TBD: the language should be normalized following xml lang attributes !
             } else {
                 if (n == -1) {
                     if (pubnum != null) {
-						tei.append(" xml:id=\"" + pubnum + "\">\n");
+                        tei.append(" xml:id=\"" + pubnum + "\">\n");
                     } else
-						tei.append(">");
+                        tei.append(">");
                 } else
-					tei.append(" xml:id=\"b" + n + "\">\n");
+                    tei.append(" xml:id=\"b" + n + "\">\n");
             }
 
             if ((bookTitle == null) && (journal == null)) {
-				for (int i = 0; i < indent+1; i++) {
-	            	tei.append("\t");
-	        	}
-				tei.append("<monogr>\n");
+                for (int i = 0; i < indent + 1; i++) {
+                    tei.append("\t");
+                }
+                tei.append("<monogr>\n");
             } else {
-				for (int i = 0; i < indent+1; i++) {
-	            	tei.append("\t");
-	        	}
-				tei.append("<analytic>\n");
+                for (int i = 0; i < indent + 1; i++) {
+                    tei.append("\t");
+                }
+                tei.append("<analytic>\n");
             }
 
             // title
             if (title != null) {
-				for (int i = 0; i < indent+2; i++) {
-	            	tei.append("\t");
-	        	}
-				tei.append("<title");
+                for (int i = 0; i < indent + 2; i++) {
+                    tei.append("\t");
+                }
+                tei.append("<title");
                 if ((bookTitle == null) && (journal == null)) {
                     tei.append(" level=\"m\" type=\"main\"");
                 } else
                     tei.append(" level=\"a\" type=\"main\"");
                 // here check the language ?
                 if (english_title == null) {
-					tei.append(">").append(TextUtilities.HTMLEncode(title)).append("</title>\n");
+                    tei.append(">").append(TextUtilities.HTMLEncode(title)).append("</title>\n");
                 } else {
-					tei.append(" xml:lang=\"").append(language).append("\">").append(TextUtilities.HTMLEncode(title)).append("</title>\n");
+                    tei.append(" xml:lang=\"").append(language).append("\">").append(TextUtilities.HTMLEncode(title)).append("</title>\n");
                 }
             }
 
@@ -1657,17 +1659,17 @@ public class BiblioItem {
                     String resL = resLang.getLangId();
                     if (resL.equals(Language.EN)) {
                         hasEnglishTitle = true;
-						for (int i = 0; i < indent+2; i++) {
-			            	tei.append("\t");
-			        	}
-						tei.append("<title");
+                        for (int i = 0; i < indent + 2; i++) {
+                            tei.append("\t");
+                        }
+                        tei.append("<title");
                         if ((bookTitle == null) && (journal == null)) {
                             tei.append(" level=\"m\"");
                         } else {
                             tei.append(" level=\"a\"");
                         }
 
-						tei.append(" xml:lang=\"en\">").append(TextUtilities.HTMLEncode(english_title)).append("</title>\n");
+                        tei.append(" xml:lang=\"en\">").append(TextUtilities.HTMLEncode(english_title)).append("</title>\n");
                     }
                 }
                 // if it's not something in English, we will write it anyway as note without type at the end
@@ -1676,21 +1678,21 @@ public class BiblioItem {
             tei.append(toTEIAuthorBlock(2, false));
 
             if ((bookTitle != null) || (journal != null)) {
-				for (int i = 0; i < indent+1; i++) {
-	            	tei.append("\t");
-	        	}
-				tei.append("</analytic>\n");
-				for (int i = 0; i < indent+1; i++) {
-	            	tei.append("\t");
-	        	}
-				tei.append("<monogr>\n");
+                for (int i = 0; i < indent + 1; i++) {
+                    tei.append("\t");
+                }
+                tei.append("</analytic>\n");
+                for (int i = 0; i < indent + 1; i++) {
+                    tei.append("\t");
+                }
+                tei.append("<monogr>\n");
             }
 
             if (bookTitle != null) {
-				for (int i = 0; i < indent+2; i++) {
-	            	tei.append("\t");
-	        	}
-				tei.append("<title level=\"m\">" + TextUtilities.HTMLEncode(bookTitle) + "</title>\n");
+                for (int i = 0; i < indent + 2; i++) {
+                    tei.append("\t");
+                }
+                tei.append("<title level=\"m\">" + TextUtilities.HTMLEncode(bookTitle) + "</title>\n");
 
                 if (editors != null) {
                     //postProcessingEditors();
@@ -1701,17 +1703,17 @@ public class BiblioItem {
                             String editor = st.nextToken();
                             if (editor != null)
                                 editor = editor.trim();
-							for (int i = 0; i < indent+2; i++) {
-				            	tei.append("\t");
-				        	}
-							tei.append("<editor>" + TextUtilities.HTMLEncode(editor) + "</editor>\n");
+                            for (int i = 0; i < indent + 2; i++) {
+                                tei.append("\t");
+                            }
+                            tei.append("<editor>" + TextUtilities.HTMLEncode(editor) + "</editor>\n");
                         }
                     } else {
                         if (editors != null)
-							for (int i = 0; i < indent+2; i++) {
-				            	tei.append("\t");
-				        	}
-							tei.append("<editor>" + TextUtilities.HTMLEncode(editors) + "</editor>\n");
+                            for (int i = 0; i < indent + 2; i++) {
+                                tei.append("\t");
+                            }
+                        tei.append("<editor>" + TextUtilities.HTMLEncode(editors) + "</editor>\n");
                     }
                 }
 
@@ -1726,10 +1728,10 @@ public class BiblioItem {
                         if (meeting.startsWith(prefix)) {
                             meeting = meeting.replace(prefix, "");
                             meeting = meeting.trim();
-							for (int i = 0; i < indent+2; i++) {
-				            	tei.append("\t");
-				        	}
-							tei.append("<meeting>" + TextUtilities.HTMLEncode(meeting));
+                            for (int i = 0; i < indent + 2; i++) {
+                                tei.append("\t");
+                            }
+                            tei.append("<meeting>" + TextUtilities.HTMLEncode(meeting));
                             if ((location != null) || (town != null) || (country != null)) {
                                 tei.append("<address>");
                                 if (town != null) {
@@ -1744,7 +1746,7 @@ public class BiblioItem {
                                 tei.append("</address>");
                                 meetLoc = true;
                             }
-							tei.append("</meeting>\n");
+                            tei.append("</meeting>\n");
                             break;
                         }
                         //break;
@@ -1752,7 +1754,7 @@ public class BiblioItem {
                 }
 
                 if (((location != null) || (town != null) || (country != null)) && (!meetLoc)) {
-					tei.append("<meeting>");
+                    tei.append("<meeting>");
                     tei.append("<address>");
                     if (town != null) {
                         tei.append("<settlement>" + town + "</settlement>");
@@ -1764,27 +1766,27 @@ public class BiblioItem {
                         tei.append(TextUtilities.HTMLEncode(location));
                     }
                     tei.append("</address>");
-					tei.append("</meeting>");
+                    tei.append("</meeting>");
                 }
 
                 if ((publication_date != null) || (pageRange != null) || (publisher != null)) {
-					for (int i = 0; i < indent+2; i++) {
-		            	tei.append("\t");
-		        	}
-					tei.append("<imprint>\n");
+                    for (int i = 0; i < indent + 2; i++) {
+                        tei.append("\t");
+                    }
+                    tei.append("<imprint>\n");
                 }
                 if (publisher != null) {
-					for (int i = 0; i < indent+3; i++) {
-		            	tei.append("\t");
-		        	}
-					tei.append("<publisher>" + TextUtilities.HTMLEncode(publisher) + "</publisher>\n");
+                    for (int i = 0; i < indent + 3; i++) {
+                        tei.append("\t");
+                    }
+                    tei.append("<publisher>" + TextUtilities.HTMLEncode(publisher) + "</publisher>\n");
                 }
 
                 if (normalized_publication_date != null) {
                     if ((normalized_publication_date.getDay() != -1) ||
                             (normalized_publication_date.getMonth() != -1) ||
                             (normalized_publication_date.getYear() != -1)) {
-						/*
+                        /*
 						 * tei.append("<date>"); if
 						 * (normalized_publication_date.getDay() != -1) {
 						 * tei.append("<day>" +
@@ -1809,11 +1811,11 @@ public class BiblioItem {
                                 when += "-" + day;
                             }
                         }
-						for (int i = 0; i < indent+3; i++) {
-			            	tei.append("\t");
-			        	}
-						tei.append("<date type=\"published\" when=\"");
-						tei.append(when + "\" />\n");
+                        for (int i = 0; i < indent + 3; i++) {
+                            tei.append("\t");
+                        }
+                        tei.append("<date type=\"published\" when=\"");
+                        tei.append(when + "\" />\n");
                     } else if (this.getYear() != null) {
                         String when = this.getYear();
                         if (this.getMonth() != null) {
@@ -1822,59 +1824,59 @@ public class BiblioItem {
                                 when += "-" + this.getDay();
                             }
                         }
-						for (int i = 0; i < indent+3; i++) {
-			            	tei.append("\t");
-			        	}
-						tei.append("<date type=\"published\" when=\"");
-						tei.append(when + "\" />\n");
+                        for (int i = 0; i < indent + 3; i++) {
+                            tei.append("\t");
+                        }
+                        tei.append("<date type=\"published\" when=\"");
+                        tei.append(when + "\" />\n");
                     } else {
-						for (int i = 0; i < indent+3; i++) {
-			            	tei.append("\t");
-			        	}
-						tei.append("<date>" + TextUtilities.HTMLEncode(publication_date) + "</date>\n");
+                        for (int i = 0; i < indent + 3; i++) {
+                            tei.append("\t");
+                        }
+                        tei.append("<date>" + TextUtilities.HTMLEncode(publication_date) + "</date>\n");
                     }
                 } else if (publication_date != null) {
-					for (int i = 0; i < indent+3; i++) {
-		            	tei.append("\t");
-		        	}
-					tei.append("<date>" + TextUtilities.HTMLEncode(publication_date) + "</date>\n");
+                    for (int i = 0; i < indent + 3; i++) {
+                        tei.append("\t");
+                    }
+                    tei.append("<date>" + TextUtilities.HTMLEncode(publication_date) + "</date>\n");
                 }
 
                 if (pageRange != null) {
                     StringTokenizer st = new StringTokenizer(pageRange, "--");
                     if (st.countTokens() == 2) {
-						for (int i = 0; i < indent+3; i++) {
-			            	tei.append("\t");
-			        	}
-						tei.append("<biblScope type=\"fpage\">" + st.nextToken() + "</biblScope>\n");
-						for (int i = 0; i < indent+3; i++) {
-			            	tei.append("\t");
-			        	}
-						tei.append("<biblScope type=\"lpage\">" + st.nextToken() + "</biblScope>\n");
+                        for (int i = 0; i < indent + 3; i++) {
+                            tei.append("\t");
+                        }
+                        tei.append("<biblScope type=\"fpage\">" + st.nextToken() + "</biblScope>\n");
+                        for (int i = 0; i < indent + 3; i++) {
+                            tei.append("\t");
+                        }
+                        tei.append("<biblScope type=\"lpage\">" + st.nextToken() + "</biblScope>\n");
                     } else {
-						for (int i = 0; i < indent+3; i++) {
-			            	tei.append("\t");
-			        	}
-						tei.append("<biblScope type=\"pp\">" + TextUtilities.HTMLEncode(pageRange) + "</biblScope>\n");
-					}
+                        for (int i = 0; i < indent + 3; i++) {
+                            tei.append("\t");
+                        }
+                        tei.append("<biblScope type=\"pp\">" + TextUtilities.HTMLEncode(pageRange) + "</biblScope>\n");
+                    }
                 }
                 if ((publication_date != null) || (pageRange != null) || (publisher != null)) {
-					for (int i = 0; i < indent+2; i++) {
-		            	tei.append("\t");
-		        	}
-					tei.append("</imprint>\n");
-				}
+                    for (int i = 0; i < indent + 2; i++) {
+                        tei.append("\t");
+                    }
+                    tei.append("</imprint>\n");
+                }
             } else if (journal != null) {
-				for (int i = 0; i < indent+2; i++) {
-	            	tei.append("\t");
-	        	}
-				tei.append("<title level=\"j\">" + TextUtilities.HTMLEncode(journal) + "</title>\n");
+                for (int i = 0; i < indent + 2; i++) {
+                    tei.append("\t");
+                }
+                tei.append("<title level=\"j\">" + TextUtilities.HTMLEncode(journal) + "</title>\n");
 
                 if (getJournalAbbrev() != null) {
-					for (int i = 0; i < indent+2; i++) {
-		            	tei.append("\t");
-		        	}
-					tei.append("<title level=\"j\" type=\"abbrev\">"
+                    for (int i = 0; i < indent + 2; i++) {
+                        tei.append("\t");
+                    }
+                    tei.append("<title level=\"j\" type=\"abbrev\">"
                             + TextUtilities.HTMLEncode(getJournalAbbrev()) + "</title>\n");
                 }
 
@@ -1886,80 +1888,80 @@ public class BiblioItem {
                         while (st.hasMoreTokens()) {
                             String editor = st.nextToken();
                             if (editor != null) {
-								for (int i = 0; i < indent+2; i++) {
-					            	tei.append("\t");
-					        	}
+                                for (int i = 0; i < indent + 2; i++) {
+                                    tei.append("\t");
+                                }
                                 editor = editor.trim();
-								tei.append("<editor>" + TextUtilities.HTMLEncode(editor) + "</editor>\n");
-							}
+                                tei.append("<editor>" + TextUtilities.HTMLEncode(editor) + "</editor>\n");
+                            }
                         }
                     } else {
                         if (editors != null) {
-							for (int i = 0; i < indent+2; i++) {
-				            	tei.append("\t");
-				        	}
-							tei.append("<editor>" + TextUtilities.HTMLEncode(editors) + "</editor>\n");
-						}
+                            for (int i = 0; i < indent + 2; i++) {
+                                tei.append("\t");
+                            }
+                            tei.append("<editor>" + TextUtilities.HTMLEncode(editors) + "</editor>\n");
+                        }
                     }
                 }
 
                 if (getISSN() != null) {
-					for (int i = 0; i < indent+2; i++) {
-		            	tei.append("\t");
-		        	}
-					tei.append("<idno type=\"ISSN\">" + getISSN() + "</idno>\n");
+                    for (int i = 0; i < indent + 2; i++) {
+                        tei.append("\t");
+                    }
+                    tei.append("<idno type=\"ISSN\">" + getISSN() + "</idno>\n");
                 }
 
                 if (getISSNe() != null) {
                     if (!getISSNe().equals(getISSN())) {
-						for (int i = 0; i < indent+2; i++) {
-			            	tei.append("\t");
-			        	}
-						tei.append("<idno type=\"ISSNe\">" + getISSNe() + "</idno>\n");
-					}
+                        for (int i = 0; i < indent + 2; i++) {
+                            tei.append("\t");
+                        }
+                        tei.append("<idno type=\"ISSNe\">" + getISSNe() + "</idno>\n");
+                    }
                 }
 
 
                 if ((volumeBlock != null) | (issue != null) || (pageRange != null) || (publication_date != null)
                         || (publisher != null)) {
-					for (int i = 0; i < indent+2; i++) {
-		            	tei.append("\t");
-		        	}
-					tei.append("<imprint>\n");
+                    for (int i = 0; i < indent + 2; i++) {
+                        tei.append("\t");
+                    }
+                    tei.append("<imprint>\n");
                     if (publisher != null) {
-						for (int i = 0; i < indent+3; i++) {
-			            	tei.append("\t");
-			        	}
-						tei.append("<publisher>" + TextUtilities.HTMLEncode(publisher) + "</publisher>\n");
+                        for (int i = 0; i < indent + 3; i++) {
+                            tei.append("\t");
+                        }
+                        tei.append("<publisher>" + TextUtilities.HTMLEncode(publisher) + "</publisher>\n");
                     }
                     if (volumeBlock != null) {
-						for (int i = 0; i < indent+3; i++) {
-			            	tei.append("\t");
-			        	}
-						tei.append("<biblScope type=\"vol\">" + TextUtilities.HTMLEncode(volumeBlock) + "</biblScope>\n");
+                        for (int i = 0; i < indent + 3; i++) {
+                            tei.append("\t");
+                        }
+                        tei.append("<biblScope type=\"vol\">" + TextUtilities.HTMLEncode(volumeBlock) + "</biblScope>\n");
                     }
                     if (issue != null) {
-						for (int i = 0; i < indent+3; i++) {
-			            	tei.append("\t");
-			        	}
-						tei.append("<biblScope type=\"issue\">" + TextUtilities.HTMLEncode(issue) + "</biblScope>\n");
+                        for (int i = 0; i < indent + 3; i++) {
+                            tei.append("\t");
+                        }
+                        tei.append("<biblScope type=\"issue\">" + TextUtilities.HTMLEncode(issue) + "</biblScope>\n");
                     }
                     if (pageRange != null) {
                         StringTokenizer st = new StringTokenizer(pageRange, "--");
                         if (st.countTokens() == 2) {
-							for (int i = 0; i < indent+3; i++) {
-				            	tei.append("\t");
-				        	}
-							tei.append("<biblScope type=\"fpage\">" + st.nextToken() + "</biblScope>\n");
-							for (int i = 0; i < indent+3; i++) {
-				            	tei.append("\t");
-				        	}
-							tei.append("<biblScope type=\"lpage\">" + st.nextToken() + "</biblScope>\n");
+                            for (int i = 0; i < indent + 3; i++) {
+                                tei.append("\t");
+                            }
+                            tei.append("<biblScope type=\"fpage\">" + st.nextToken() + "</biblScope>\n");
+                            for (int i = 0; i < indent + 3; i++) {
+                                tei.append("\t");
+                            }
+                            tei.append("<biblScope type=\"lpage\">" + st.nextToken() + "</biblScope>\n");
                         } else {
-							for (int i = 0; i < indent+3; i++) {
-				            	tei.append("\t");
-				        	}
-							tei.append("<biblScope type=\"pp\">" + TextUtilities.HTMLEncode(pageRange) + "</biblScope>\n");
+                            for (int i = 0; i < indent + 3; i++) {
+                                tei.append("\t");
+                            }
+                            tei.append("<biblScope type=\"pp\">" + TextUtilities.HTMLEncode(pageRange) + "</biblScope>\n");
                         }
                     }
 
@@ -1979,11 +1981,11 @@ public class BiblioItem {
                                     when += "-" + day;
                                 }
                             }
-							for (int i = 0; i < indent+3; i++) {
-				            	tei.append("\t");
-				        	}
-							tei.append("<date type=\"published\" when=\"");
-							tei.append(when + "\" />\n");
+                            for (int i = 0; i < indent + 3; i++) {
+                                tei.append("\t");
+                            }
+                            tei.append("<date type=\"published\" when=\"");
+                            tei.append(when + "\" />\n");
                         } else if (this.getYear() != null) {
                             String when = this.getYear();
                             if (this.getMonth() != null) {
@@ -1992,34 +1994,34 @@ public class BiblioItem {
                                     when += "-" + this.getDay();
                                 }
                             }
-							for (int i = 0; i < indent+3; i++) {
-				            	tei.append("\t");
-				        	}
-							tei.append("<date type=\"published\" when=\"");
-							tei.append(when + "\" />\n");
+                            for (int i = 0; i < indent + 3; i++) {
+                                tei.append("\t");
+                            }
+                            tei.append("<date type=\"published\" when=\"");
+                            tei.append(when + "\" />\n");
                         } else {
-							for (int i = 0; i < indent+3; i++) {
-				            	tei.append("\t");
-				        	}
-							tei.append("<date>" + TextUtilities.HTMLEncode(publication_date) + "</date>\n");
+                            for (int i = 0; i < indent + 3; i++) {
+                                tei.append("\t");
+                            }
+                            tei.append("<date>" + TextUtilities.HTMLEncode(publication_date) + "</date>\n");
                         }
                     } else if (publication_date != null) {
-						for (int i = 0; i < indent+3; i++) {
-			            	tei.append("\t");
-			        	}
-						tei.append("<date>" + TextUtilities.HTMLEncode(publication_date) + "</date>\n");
+                        for (int i = 0; i < indent + 3; i++) {
+                            tei.append("\t");
+                        }
+                        tei.append("<date>" + TextUtilities.HTMLEncode(publication_date) + "</date>\n");
                     }
 
                     if (getPublisher() != null) {
-						for (int i = 0; i < indent+3; i++) {
-			            	tei.append("\t");
-			        	}
-						tei.append("<publisher>" + TextUtilities.HTMLEncode(getPublisher()) + "</publisher>\n");
+                        for (int i = 0; i < indent + 3; i++) {
+                            tei.append("\t");
+                        }
+                        tei.append("<publisher>" + TextUtilities.HTMLEncode(getPublisher()) + "</publisher>\n");
                     }
-					for (int i = 0; i < indent+2; i++) {
-		            	tei.append("\t");
-		        	}
-					tei.append("</imprint>\n");
+                    for (int i = 0; i < indent + 2; i++) {
+                        tei.append("\t");
+                    }
+                    tei.append("</imprint>\n");
                 }
             } else {
                 // not a journal and not something in a book...
@@ -2032,28 +2034,28 @@ public class BiblioItem {
                             String editor = st.nextToken();
                             if (editor != null) {
                                 editor = editor.trim();
-								for (int i = 0; i < indent+2; i++) {
-					            	tei.append("\t");
-					        	}
-								tei.append("<editor>" + TextUtilities.HTMLEncode(editor) + "</editor>\n");
-							}
+                                for (int i = 0; i < indent + 2; i++) {
+                                    tei.append("\t");
+                                }
+                                tei.append("<editor>" + TextUtilities.HTMLEncode(editor) + "</editor>\n");
+                            }
                         }
                     } else {
                         if (editors != null) {
-							for (int i = 0; i < indent+2; i++) {
-				            	tei.append("\t");
-				        	}
-							tei.append("<editor>" + TextUtilities.HTMLEncode(editors) + "</editor>\n");
-						}
+                            for (int i = 0; i < indent + 2; i++) {
+                                tei.append("\t");
+                            }
+                            tei.append("<editor>" + TextUtilities.HTMLEncode(editors) + "</editor>\n");
+                        }
                     }
                 }
 
                 if ((publication_date != null) || (pageRange != null) || (location != null) || (publisher != null)) {
-					for (int i = 0; i < indent+2; i++) {
-		            	tei.append("\t");
-		        	}
-					tei.append("<imprint>\n");
-				}
+                    for (int i = 0; i < indent + 2; i++) {
+                        tei.append("\t");
+                    }
+                    tei.append("<imprint>\n");
+                }
                 // date
                 if (normalized_publication_date != null) {
                     if ((normalized_publication_date.getDay() != -1) |
@@ -2070,11 +2072,11 @@ public class BiblioItem {
                                 when += "-" + day;
                             }
                         }
-						for (int i = 0; i < indent+3; i++) {
-			            	tei.append("\t");
-			        	}
-						tei.append("<date type=\"published\" when=\"");
-						tei.append(when + "\" />\n");
+                        for (int i = 0; i < indent + 3; i++) {
+                            tei.append("\t");
+                        }
+                        tei.append("<date type=\"published\" when=\"");
+                        tei.append(when + "\" />\n");
                     } else if (this.getYear() != null) {
                         String when = this.getYear();
                         if (this.getMonth() != null) {
@@ -2083,111 +2085,111 @@ public class BiblioItem {
                                 when += "-" + this.getDay();
                             }
                         }
-						for (int i = 0; i < indent+3; i++) {
-			            	tei.append("\t");
-			        	}
-						tei.append("<date type=\"published\" when=\"");
-						tei.append(when + "\" />\n");
+                        for (int i = 0; i < indent + 3; i++) {
+                            tei.append("\t");
+                        }
+                        tei.append("<date type=\"published\" when=\"");
+                        tei.append(when + "\" />\n");
                     } else {
-						for (int i = 0; i < indent+3; i++) {
-			            	tei.append("\t");
-			        	}
-						tei.append("<date>" + TextUtilities.HTMLEncode(publication_date) + "</date>\n");
+                        for (int i = 0; i < indent + 3; i++) {
+                            tei.append("\t");
+                        }
+                        tei.append("<date>" + TextUtilities.HTMLEncode(publication_date) + "</date>\n");
                     }
                 } else if (publication_date != null) {
-					for (int i = 0; i < indent+3; i++) {
-		            	tei.append("\t");
-		        	}
-					tei.append("<date>" + TextUtilities.HTMLEncode(publication_date) + "</date>\n");
+                    for (int i = 0; i < indent + 3; i++) {
+                        tei.append("\t");
+                    }
+                    tei.append("<date>" + TextUtilities.HTMLEncode(publication_date) + "</date>\n");
                 }
 
                 if (publisher != null) {
-					for (int i = 0; i < indent+3; i++) {
-		            	tei.append("\t");
-		        	}
-					tei.append("<publisher>" + TextUtilities.HTMLEncode(publisher) + "</publisher>\n");
+                    for (int i = 0; i < indent + 3; i++) {
+                        tei.append("\t");
+                    }
+                    tei.append("<publisher>" + TextUtilities.HTMLEncode(publisher) + "</publisher>\n");
                 }
                 if (pageRange != null) {
                     StringTokenizer st = new StringTokenizer(pageRange, "--");
                     if (st.countTokens() == 2) {
-						for (int i = 0; i < indent+3; i++) {
-			            	tei.append("\t");
-			        	}
-						tei.append("<biblScope type=\"fpage\">" + st.nextToken() + "</biblScope>\n");
-						for (int i = 0; i < indent+3; i++) {
-			            	tei.append("\t");
-			        	}
-						tei.append("<biblScope type=\"lpage\">" + st.nextToken() + "</biblScope>\n");
+                        for (int i = 0; i < indent + 3; i++) {
+                            tei.append("\t");
+                        }
+                        tei.append("<biblScope type=\"fpage\">" + st.nextToken() + "</biblScope>\n");
+                        for (int i = 0; i < indent + 3; i++) {
+                            tei.append("\t");
+                        }
+                        tei.append("<biblScope type=\"lpage\">" + st.nextToken() + "</biblScope>\n");
                     } else {
-						for (int i = 0; i < indent+3; i++) {
-			            	tei.append("\t");
-			        	}
-						tei.append("<biblScope type=\"pp\">" + TextUtilities.HTMLEncode(pageRange) + "</biblScope>\n");
+                        for (int i = 0; i < indent + 3; i++) {
+                            tei.append("\t");
+                        }
+                        tei.append("<biblScope type=\"pp\">" + TextUtilities.HTMLEncode(pageRange) + "</biblScope>\n");
                     }
                 }
                 if (location != null) {
-					for (int i = 0; i < indent+3; i++) {
-		            	tei.append("\t");
-		        	}
-					tei.append("<pubPlace>" + TextUtilities.HTMLEncode(location) + "</pubPlace>\n");
-				}
+                    for (int i = 0; i < indent + 3; i++) {
+                        tei.append("\t");
+                    }
+                    tei.append("<pubPlace>" + TextUtilities.HTMLEncode(location) + "</pubPlace>\n");
+                }
 
                 if ((publication_date != null) || (pageRange != null) || (location != null) || (publisher != null)) {
-					for (int i = 0; i < indent+2; i++) {
-		            	tei.append("\t");
-		        	}
-					tei.append("</imprint>\n");
-				}
+                    for (int i = 0; i < indent + 2; i++) {
+                        tei.append("\t");
+                    }
+                    tei.append("</imprint>\n");
+                }
             }
-			for (int i = 0; i < indent+1; i++) {
-            	tei.append("\t");
-        	}
-			tei.append("</monogr>\n");
+            for (int i = 0; i < indent + 1; i++) {
+                tei.append("\t");
+            }
+            tei.append("</monogr>\n");
 
             if (submission != null) {
-				for (int i = 0; i < indent+1; i++) {
-	            	tei.append("\t");
-	        	}
-				tei.append("<note type=\"submission\">" + TextUtilities.HTMLEncode(submission) + "</note>\n");
+                for (int i = 0; i < indent + 1; i++) {
+                    tei.append("\t");
+                }
+                tei.append("<note type=\"submission\">" + TextUtilities.HTMLEncode(submission) + "</note>\n");
             }
             if (getSubmissionDate() != null) {
-				for (int i = 0; i < indent+1; i++) {
-	            	tei.append("\t");
-	        	}
-				tei.append("<date type=\"submission\">" + TextUtilities.HTMLEncode(getSubmissionDate()) + "</date>\n");
+                for (int i = 0; i < indent + 1; i++) {
+                    tei.append("\t");
+                }
+                tei.append("<date type=\"submission\">" + TextUtilities.HTMLEncode(getSubmissionDate()) + "</date>\n");
             }
 
             if (dedication != null) {
-				tei.append("<note type=\"dedication\">" + TextUtilities.HTMLEncode(dedication) + "</note>\n");
+                tei.append("<note type=\"dedication\">" + TextUtilities.HTMLEncode(dedication) + "</note>\n");
             }
 
             if (note != null) {
-				for (int i = 0; i < indent+1; i++) {
-	            	tei.append("\t");
-	        	}
-				tei.append("<note>" + TextUtilities.HTMLEncode(note) + "</note>\n");
+                for (int i = 0; i < indent + 1; i++) {
+                    tei.append("\t");
+                }
+                tei.append("<note>" + TextUtilities.HTMLEncode(note) + "</note>\n");
             }
 
             if ((english_title != null) && (!hasEnglishTitle)) {
-				for (int i = 0; i < indent+1; i++) {
-	            	tei.append("\t");
-	        	}
-				tei.append("<note>" + TextUtilities.HTMLEncode(english_title) + "</note>\n");
+                for (int i = 0; i < indent + 1; i++) {
+                    tei.append("\t");
+                }
+                tei.append("<note>" + TextUtilities.HTMLEncode(english_title) + "</note>\n");
             }
 
             if (subjects != null) {
                 if (subjects.size() > 0) {
-					for (int i = 0; i < indent+1; i++) {
-		            	tei.append("\t");
-		        	}
-					tei.append("<keywords scheme=\"hal\"><list>\n");
-                    for (String subject : subjects) {
-						for (int i = 0; i < indent+2; i++) {
-			            	tei.append("\t");
-			        	}
-						tei.append("<item>" + subject + "</item>\n");
+                    for (int i = 0; i < indent + 1; i++) {
+                        tei.append("\t");
                     }
-					tei.append("</list></keywords>\n");
+                    tei.append("<keywords scheme=\"hal\"><list>\n");
+                    for (String subject : subjects) {
+                        for (int i = 0; i < indent + 2; i++) {
+                            tei.append("\t");
+                        }
+                        tei.append("<item>" + subject + "</item>\n");
+                    }
+                    tei.append("</list></keywords>\n");
                 }
             }
 
@@ -2199,69 +2201,69 @@ public class BiblioItem {
                     if (start != -1) {
                         String keywords1 = keywords.substring(0, start - 1);
                         String keywords2 = keywords.substring(start + 9, keywords.length());
-						for (int i = 0; i < indent+1; i++) {
-			            	tei.append("\t");
-			        	}
-						tei.append("<keywords type=\"subject-headers\">" + keywords1 + "</keywords>\n");
-						for (int i = 0; i < indent+1; i++) {
-			            	tei.append("\t");
-			        	}
-						tei.append("<keywords>" + TextUtilities.HTMLEncode(keywords2) + "</keywords>\n");
+                        for (int i = 0; i < indent + 1; i++) {
+                            tei.append("\t");
+                        }
+                        tei.append("<keywords type=\"subject-headers\">" + keywords1 + "</keywords>\n");
+                        for (int i = 0; i < indent + 1; i++) {
+                            tei.append("\t");
+                        }
+                        tei.append("<keywords>" + TextUtilities.HTMLEncode(keywords2) + "</keywords>\n");
                     } else {
-						for (int i = 0; i < indent+1; i++) {
-			            	tei.append("\t");
-			        	}
-						tei.append("<keywords>" + TextUtilities.HTMLEncode(getKeyword()) + "</keywords>\n");
+                        for (int i = 0; i < indent + 1; i++) {
+                            tei.append("\t");
+                        }
+                        tei.append("<keywords>" + TextUtilities.HTMLEncode(getKeyword()) + "</keywords>\n");
                     }
                 } else
-					for (int i = 0; i < indent+1; i++) {
-		            	tei.append("\t");
-		        	}
-					tei.append("<keywords>" + TextUtilities.HTMLEncode(getKeyword()) + "</keywords>\n");
+                    for (int i = 0; i < indent + 1; i++) {
+                        tei.append("\t");
+                    }
+                tei.append("<keywords>" + TextUtilities.HTMLEncode(getKeyword()) + "</keywords>\n");
             }
 
             if (DOI != null) {
-				for (int i = 0; i < indent+1; i++) {
-	            	tei.append("\t");
-	        	}
-				tei.append("<idno type=\"doi\">" + DOI + "</idno>\n");
+                for (int i = 0; i < indent + 1; i++) {
+                    tei.append("\t");
+                }
+                tei.append("<idno type=\"doi\">" + DOI + "</idno>\n");
             }
 
             if (uri != null) {
                 if (uri.startsWith("http://hal.")) {
-					for (int i = 0; i < indent+1; i++) {
-		            	tei.append("\t");
-		        	}
-					tei.append("<idno type=\"HALid\">" + uri + "</idno>\n");
+                    for (int i = 0; i < indent + 1; i++) {
+                        tei.append("\t");
+                    }
+                    tei.append("<idno type=\"HALid\">" + uri + "</idno>\n");
                 } else {
-					for (int i = 0; i < indent+1; i++) {
-		            	tei.append("\t");
-		        	}
-					tei.append("<idno>" + uri + "</idno>\n");
+                    for (int i = 0; i < indent + 1; i++) {
+                        tei.append("\t");
+                    }
+                    tei.append("<idno>" + uri + "</idno>\n");
                 }
             }
 
             if (url != null) {
                 if (url.startsWith("http://hal.")) {
-					for (int i = 0; i < indent+1; i++) {
-		            	tei.append("\t");
-		        	}
-					tei.append("<idno type=\"HALFile\">" + url + "</idno>\n");
+                    for (int i = 0; i < indent + 1; i++) {
+                        tei.append("\t");
+                    }
+                    tei.append("<idno type=\"HALFile\">" + url + "</idno>\n");
                 }
             }
 
             if (abstract_ != null) {
                 if (abstract_.length() > 0) {
-					for (int i = 0; i < indent+1; i++) {
-		            	tei.append("\t");
-		        	}
-					tei.append("<div type=\"abstract\">" + abstract_ + "</div>\n");
+                    for (int i = 0; i < indent + 1; i++) {
+                        tei.append("\t");
+                    }
+                    tei.append("<div type=\"abstract\">" + abstract_ + "</div>\n");
                 }
             }
-			for (int i = 0; i < indent; i++) {
-            	tei.append("\t");
-        	}
-			tei.append("</biblStruct>\n");
+            for (int i = 0; i < indent; i++) {
+                tei.append("\t");
+            }
+            tei.append("</biblStruct>\n");
         } catch (Exception e) {
             throw new GrobidException("Cannot convert  bibliographical item into a TEI, " +
                     "because of nested exception.", e);
@@ -2821,97 +2823,7 @@ public class BiblioItem {
         while (st0.hasMoreTokens()) {
             emailles.add(st0.nextToken().trim());
         }
-
-        ArrayList<Integer> winners = new ArrayList<Integer>();
-
-        for (String maille : emailles) {
-            maille = maille.replace("{", "");
-            maille = maille.replace("}", "");
-            maille = maille.replace("(", "");
-            maille = maille.replace(")", "").trim();
-            maille = maille.replaceAll("(E|e)lectronic(\\s)(A|a)ddress(\\:)?", "");
-            maille = maille.replaceAll("^(e|E)?(\\-)?mail(\\:)?(\\s)(A|a)ddress(\\:)?", "");
-            maille = maille.replaceAll("^(e|E)?(\\-)?mail(\\:)?(\\s)?", "");
-            // case: Peter Pan -peter.pan@email.org with asterisks and spaces
-            maille = maille.replaceAll("^[A-Z][a-z]+\\s+[A-Z][a-z]+(\\*)?(\\s)*-(\\s)*", "");
-            StringTokenizer st = new StringTokenizer(maille, ", ");
-            ArrayList<String> emails = new ArrayList<String>();
-            while (st.hasMoreTokens()) {
-                String token = st.nextToken();
-                if (token.length() > 2) {
-                    emails.add(token);
-                }
-            }
-
-            int i = 0;
-            for (String token : emails) {
-                if (token.indexOf("@") == -1) {
-                    // the domain information is missing, we are taking the first one of the next tokens
-                    String newToken = null;
-                    int j = 0;
-                    for (String token2 : emails) {
-                        if (j <= i) {
-                            j++;
-                            continue;
-                        } else {
-                            int ind = token2.indexOf("@");
-                            if (ind != -1) {
-                                newToken = token + token2.substring(ind, token2.length());
-                                break;
-                            }
-                            j++;
-                        }
-                    }
-                    if (newToken != null) {
-                        emails.set(i, newToken);
-                    }
-                }
-                i++;
-            }
-
-
-            // if 1 email and 1 author, not too hard...
-            if (fullAuthors != null) {
-                if ((emails.size() == 1) && (fullAuthors.size() == 1)) {
-                    fullAuthors.get(0).setEmail(emails.get(0));
-                } else {
-                    // we asociate emails to the authors based on string proximity
-                    for (String mail : emails) {
-                        int maxDist = 1000;
-                        int best = -1;
-                        int ind = mail.indexOf("@");
-                        if (ind != -1) {
-                            String nam = mail.substring(0, ind).toLowerCase();
-                            int k = 0;
-                            for (Person aut : fullAuthors) {
-                                Integer kk = new Integer(k);
-                                if (!winners.contains(kk)) {
-                                    List<String> emailVariants = TextUtilities.generateEmailVariants(aut.getFirstName(), aut.getLastName());
-
-                                    for (String variant: emailVariants) {
-                                        variant = variant.toLowerCase();
-
-                                        int dist = TextUtilities.getLevenshteinDistance(nam, variant);
-                                        if (dist < maxDist) {
-                                            best = k;
-                                            maxDist = dist;
-                                        }
-                                    }
-                                }
-                                k++;
-                            }
-
-                            // make sure that the best candidate found is not too far
-                            if (best != -1 && maxDist<nam.length()/2) {
-                                Person winner = fullAuthors.get(best);
-                                winner.setEmail(mail);
-                                winners.add(new Integer(best));
-                            }
-                        }
-                    }
-                }
-            }
-        }
+        authorEmailAssigner.assign(fullAuthors, emailles);
     }
 
     /**
@@ -2967,7 +2879,7 @@ public class BiblioItem {
                         if (ind != -1) {
                             // we check if we have a digit/letter (1) matching incorrectly
                             //  a double digit/letter (11), or a special non-digit (*) matching incorrectly
-							//  a double special non-digit (**)
+                            //  a double special non-digit (**)
                             if (marker.length() == 1) {
                                 if (Character.isDigit(marker.charAt(0))) {
                                     if (ind - 1 > 0) {
@@ -2980,8 +2892,7 @@ public class BiblioItem {
                                             bad = true;
                                         }
                                     }
-                                }
-                                else if (Character.isLetter(marker.charAt(0))) {
+                                } else if (Character.isLetter(marker.charAt(0))) {
                                     if (ind - 1 > 0) {
                                         if (Character.isLetter(originalAuthors.charAt(ind - 1))) {
                                             bad = true;
@@ -2992,43 +2903,42 @@ public class BiblioItem {
                                             bad = true;
                                         }
                                     }
+                                } else if (marker.charAt(0) == '*') {
+                                    if (ind - 1 > 0) {
+                                        if (originalAuthors.charAt(ind - 1) == '*') {
+                                            bad = true;
+                                        }
+                                    }
+                                    if (ind + 1 < originalAuthors.length()) {
+                                        if (originalAuthors.charAt(ind + 1) == '*') {
+                                            bad = true;
+                                        }
+                                    }
                                 }
-                                else if (marker.charAt(0) == '*') {
-									 if (ind-1 > 0) {
-										 if (originalAuthors.charAt(ind-1) == '*') {
-											bad = true;
-										 }
-									 }
-									 if (ind+1 < originalAuthors.length()) {
-										 if (originalAuthors.charAt(ind+1) == '*') {
-											bad = true;
-										 }
-									 }
-								 }
                             }
-							if (marker.length() == 2) {
-								// case with ** as marker
-								if ( (marker.charAt(0) == '*') && (marker.charAt(1) == '*') ) {
-									 if (ind-2 > 0) {
-										 if ( (originalAuthors.charAt(ind-1) == '*') && 
-											  (originalAuthors.charAt(ind-2) == '*') ) {
-											bad = true;
-										 }
-									 }
-									 if (ind+2 < originalAuthors.length()) {
-										 if ( (originalAuthors.charAt(ind+1) == '*') && 
-											  (originalAuthors.charAt(ind+2) == '*') ) {
-											bad = true;
-										 }
-									 }
-								     if ( (ind-1 > 0) && (ind+1 < originalAuthors.length()) ) {
-										 if ( (originalAuthors.charAt(ind-1) == '*') && 
-											  (originalAuthors.charAt(ind+1) == '*') ) {
-											bad = true;
-										 }
-									 }
-								 }
-							}
+                            if (marker.length() == 2) {
+                                // case with ** as marker
+                                if ((marker.charAt(0) == '*') && (marker.charAt(1) == '*')) {
+                                    if (ind - 2 > 0) {
+                                        if ((originalAuthors.charAt(ind - 1) == '*') &&
+                                                (originalAuthors.charAt(ind - 2) == '*')) {
+                                            bad = true;
+                                        }
+                                    }
+                                    if (ind + 2 < originalAuthors.length()) {
+                                        if ((originalAuthors.charAt(ind + 1) == '*') &&
+                                                (originalAuthors.charAt(ind + 2) == '*')) {
+                                            bad = true;
+                                        }
+                                    }
+                                    if ((ind - 1 > 0) && (ind + 1 < originalAuthors.length())) {
+                                        if ((originalAuthors.charAt(ind - 1) == '*') &&
+                                                (originalAuthors.charAt(ind + 1) == '*')) {
+                                            bad = true;
+                                        }
+                                    }
+                                }
+                            }
                         }
 
                         if ((ind != -1) && !bad) {
@@ -3117,7 +3027,7 @@ public class BiblioItem {
         boolean failAffiliation = true;
 
         //if (getAuthors() != null) {
-		if (auts != null) {
+        if (auts != null) {
             failAffiliation = false;
             if (nbAuthors > 0) {
                 int autRank = 0;
