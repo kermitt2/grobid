@@ -356,7 +356,7 @@ public class GrobidPropertiesTest {
 	public void testgetLanguageDetectorFactory() {
 		GrobidProperties.setUseLanguageId("false");
 		assertEquals("The property has not the value expected",
-				"org.grobid.core.lang.impl.LingPipeLanguageDetectorFactory",
+				"org.grobid.core.lang.impl.CybozuLanguageDetectorFactory",
 				GrobidProperties.getLanguageDetectorFactory());
 	}
 
