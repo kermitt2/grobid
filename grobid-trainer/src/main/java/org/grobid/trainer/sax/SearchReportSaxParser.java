@@ -1,8 +1,5 @@
 package org.grobid.trainer.sax;
 
-import com.aliasi.tokenizer.RegExTokenizerFactory;
-import com.aliasi.tokenizer.Tokenizer;
-import com.aliasi.tokenizer.TokenizerFactory;
 import org.grobid.core.data.Classification;
 import org.grobid.core.exceptions.GrobidException;
 import org.xml.sax.Attributes;
@@ -161,7 +158,7 @@ public class SearchReportSaxParser extends DefaultHandler {
                             }
                         } catch (Exception e) {
 //							e.printStackTrace();
-                            throw new GrobidException("An exception occured while running Grobid.", e);
+                            throw new GrobidException("An exception occurred while running Grobid.", e);
                         }
                         i++;
                     }
