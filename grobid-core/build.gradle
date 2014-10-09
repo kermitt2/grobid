@@ -25,7 +25,6 @@ repositories {
 
 dependencies {
    compile files('lib/crfpp.jar')
-   compile group: 'com.aliasi', name: 'lingpipe', version: '3.8.2'
    compile group: 'junit', name: 'junit', version: '4.8.2'
    compile group: 'log4j', name: 'log4j', version: '1.2.16'
    compile group: 'commons-pool', name: 'commons-pool', version: '1.4'
