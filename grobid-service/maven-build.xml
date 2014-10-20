@@ -47,7 +47,7 @@
     <pathelement location="../grobid-core/target/grobid-core-0.2.10.jar"/>
     <pathelement location="../grobid-core/target/classes"/>
     <pathelement location="../grobid-core/lib/org/chasen/crfpp/1.0.2/crfpp-1.0.2.jar"/>
-    <pathelement location="${maven.repo.local}/com/aliasi/lingpipe/3.8.2/lingpipe-3.8.2.jar"/>
+    <pathelement location="../grobid-core/lib/com/cybozu/language-detection/09-13-2011/language-detection-09-13-2011.jar"/>
     <pathelement location="${maven.repo.local}/commons-pool/commons-pool/1.6/commons-pool-1.6.jar"/>
     <pathelement location="${maven.repo.local}/commons-io/commons-io/2.0.1/commons-io-2.0.1.jar"/>
     <pathelement location="${maven.repo.local}/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar"/>
@@ -65,13 +65,14 @@
     <pathelement location="${maven.repo.local}/javax/servlet/jsp/jsp-api/2.0/jsp-api-2.0.jar"/>
 	<pathelement location="${maven.repo.local}/com/google/guava/16.0.1/guava-16.0.1.jar"/>
 	<pathelement location="${maven.repo.local}/fr/limsi/wapiti/wapiti/1.5.0/wapiti-1.5.0.jar"/>
+	<pathelement location="${maven.repo.local}/net/arnx/jsonic/1.3.5/jsonic-1.3.5.jar"/>
   </path>
   <path id="build.test.classpath">
     <pathelement location="../grobid-core/target/grobid-core-0.2.10.jar"/>
     <pathelement location="../grobid-core/target/classes"/>
     <pathelement location="../grobid-core/target/test-classes"/>
     <pathelement location="../grobid-core/lib/org/chasen/crfpp/1.0.2/crfpp-1.0.2.jar"/>
-    <pathelement location="${maven.repo.local}/com/aliasi/lingpipe/3.8.2/lingpipe-3.8.2.jar"/>
+    <pathelement location="../grobid-core/lib/com/cybozu/language-detection/09-13-2011/language-detection-09-13-2011.jar"/>
     <pathelement location="${maven.repo.local}/commons-pool/commons-pool/1.6/commons-pool-1.6.jar"/>
     <pathelement location="${maven.repo.local}/commons-io/commons-io/2.0.1/commons-io-2.0.1.jar"/>
     <pathelement location="${maven.repo.local}/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar"/>
@@ -82,7 +83,6 @@
     <pathelement location="${maven.repo.local}/com/sun/jersey/jersey-core/1.9/jersey-core-1.9.jar"/>
     <pathelement location="${maven.repo.local}/com/sun/jersey/jersey-server/1.9/jersey-server-1.9.jar"/>
     <pathelement location="${maven.repo.local}/asm/asm/3.1/asm-3.1.jar"/>
-    <!--pathelement location="${maven.repo.local}/junit/junit/4.10/junit-4.10.jar"/-->
     <pathelement location="${maven.repo.local}/junit/junit/4.8.2/junit-4.8.2.jar"/>
 	<pathelement location="${maven.repo.local}/ant-junit-1.7.1.jar"/>
     <pathelement location="${maven.repo.local}/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.jar"/>
@@ -95,6 +95,7 @@
     <pathelement location="${maven.repo.local}/javax/servlet/jsp/jsp-api/2.0/jsp-api-2.0.jar"/>
 	<pathelement location="${maven.repo.local}/com/google/guava/16.0.1/guava-16.0.1.jar"/>
 	<pathelement location="${maven.repo.local}/fr/limsi/wapiti/wapiti/1.5.0/wapiti-1.5.0.jar"/>
+	<pathelement location="${maven.repo.local}/net/arnx/jsonic/1.3.5/jsonic-1.3.5.jar"/>
   </path>
 
   <!-- ====================================================================== -->
@@ -260,8 +261,12 @@
           todir="${maven.build.dir}/${maven.build.finalName}/WEB-INF/lib"/>
     <copy file="../grobid-core/lib/org/chasen/crfpp/1.0.2/crfpp-1.0.2.jar" 
           todir="${maven.build.dir}/${maven.build.finalName}/WEB-INF/lib"/>
-    <copy file="${maven.repo.local}/com/aliasi/lingpipe/3.8.2/lingpipe-3.8.2.jar" 
-          todir="${maven.build.dir}/${maven.build.finalName}/WEB-INF/lib"/>
+  	<copy file="${maven.repo.local}/fr/limsi/wapiti/wapiti/1.5.0/wapiti-1.5.0.jar" 
+   		  todir="${maven.build.dir}/${maven.build.finalName}/WEB-INF/lib"/>		  
+  	<copy file="../grobid-core/lib/com/cybozu/language-detection/09-13-2011/language-detection-09-13-2011.jar" 
+       	  todir="${maven.build.dir}/${maven.build.finalName}/WEB-INF/lib"/>
+	<copy file="${maven.repo.local}/net/arnx/jsonic/1.3.5/jsonic-1.3.5.jar" 
+     	  todir="${maven.build.dir}/${maven.build.finalName}/WEB-INF/lib"/>
     <copy file="${maven.repo.local}/commons-pool/commons-pool/1.6/commons-pool-1.6.jar" 
           todir="${maven.build.dir}/${maven.build.finalName}/WEB-INF/lib"/>
     <copy file="${maven.repo.local}/commons-io/commons-io/2.0.1/commons-io-2.0.1.jar" 
@@ -329,11 +334,18 @@
          dest="${maven.repo.local}/org/chasen/crfpp/1.0.2/crfpp-1.0.2.jar" 
          usetimestamp="false" 
          ignoreerrors="true"/>
-    <mkdir dir="${maven.repo.local}/com/aliasi/lingpipe/3.8.2"/>
-    <get src="http://repo1.maven.org/maven2/com/aliasi/lingpipe/3.8.2/lingpipe-3.8.2.jar" 
-         dest="${maven.repo.local}/com/aliasi/lingpipe/3.8.2/lingpipe-3.8.2.jar" 
+  	<mkdir dir="${maven.repo.local}/fr/limsi/wapiti/wapiti/1.5.0"/>	 
+    <get src="http://repo1.maven.org/maven2/fr/limsi/wapiti/wapiti/1.5.0/wapiti-1.5.0.jar" 
+         dest="${maven.repo.local}/fr/limsi/wapiti/wapiti/1.5.0/wapiti-1.5.0.jar" 
          usetimestamp="false" 
-         ignoreerrors="true"/>
+         ignoreerrors="true"/>	 
+    <copy file="../grobid-core/lib/fr/limsi/wapiti/wapiti/1.5.0/wapiti-1.5.0.jar" 
+         tofile="${maven.repo.local}/fr/limsi/wapiti/wapiti/1.5.0/wapiti-1.5.0.jar" 
+         failonerror="false"/>
+ 
+	
+	
+		  
     <mkdir dir="${maven.repo.local}/commons-pool/commons-pool/1.6"/>
     <get src="http://repo1.maven.org/maven2/commons-pool/commons-pool/1.6/commons-pool-1.6.jar" 
          dest="${maven.repo.local}/commons-pool/commons-pool/1.6/commons-pool-1.6.jar" 
@@ -429,6 +441,15 @@
          dest="${maven.repo.local}/javax/servlet/jsp/jsp-api/2.0/jsp-api-2.0.jar" 
          usetimestamp="false" 
          ignoreerrors="true"/>
+ 	<mkdir dir="${maven.repo.local}/com/cybozu/language-detection/09-13-2011"/>	 
+    <copy file="../grobid-core/lib/com/cybozu/language-detection/09-13-2011/language-detection-09-13-2011.jar" 
+         tofile="${maven.repo.local}/com/cybozu/language-detection/09-13-2011/language-detection-09-13-2011.jar" 
+         failonerror="false"/>		
+    <mkdir dir="${maven.repo.local}/net/arnx/jsonic/1.3.5"/>
+ 	<get src="http://download.java.net/maven/2/net/arnx/jsonic/1.3.5/jsonic-1.3.5.jar" 
+ 	     dest="${maven.repo.local}/net/arnx/jsonic/1.3.5/jsonic-1.3.5.jar" 
+ 	     usetimestamp="false" 
+ 	     ignoreerrors="true"/>		  
   </target>
 
 </project>
