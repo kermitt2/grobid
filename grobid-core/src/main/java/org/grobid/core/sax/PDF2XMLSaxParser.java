@@ -376,12 +376,12 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 						TextUtilities.fullPunctuations, true);
 				boolean diaresis = false;
 				boolean accent = false;
-				boolean keepLast = false;
+				//boolean keepLast = false;
 				while (st.hasMoreTokens()) {
 
 					diaresis = false;
 					accent = false;
-					keepLast = false;
+					//keepLast = false;
 
 					String tok = st.nextToken();
 					if (tok.length() > 0) {
@@ -427,29 +427,39 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 								String updatedChar = modifyCharacter(baseChar,
 										modifierChar);
 
-								tokenizations.remove(tokenizations.size() - 1);
-								if (tokenizations.size() > 0) {
-									tokenizations
+								if (updatedChar == null) {
+									// in this case, the diaresis/accent might be before the charcater 
+									// to be modified (it happens in a few pdfs)
+									//System.out.println("Removing: " + tokenizations.get(tokenizations.size() - 1));
+									//tokenizations.remove(tokenizations.size() - 1);
+								}
+								else {
+									tokenizations.remove(tokenizations.size() - 1);
+									if (tokenizations.size() > 0) {
+										tokenizations
 											.remove(tokenizations.size() - 1);
-								}
+									}
 
-								blabla.deleteCharAt(blabla.length() - 1);
-								if (blabla.length() > 0) {
 									blabla.deleteCharAt(blabla.length() - 1);
-								}
+									if (blabla.length() > 0) {
+										blabla.deleteCharAt(blabla.length() - 1);
+									}
 
-								removeLastCharacterIfPresent(previousTok);
+									removeLastCharacterIfPresent(previousTok);
+								}
 
 								if (updatedChar != null) {
 									blabla.append(updatedChar);
 									previousTok.setText(previousTok.getText()
 											+ updatedChar);
+									tokenizations.add(previousTok.getText());
 								}
-
-								blabla.append(tok.substring(1, tok.length()));
-								previousTok.setText(previousTok.getText()
+								{ 
+									// PL 
+									blabla.append(tok.substring(1, tok.length()));
+									previousTok.setText(previousTok.getText()
 										+ tok.substring(1, tok.length()));
-								tokenizations.add(previousTok.getText());
+								}
 
 								diaresis = (modifierClass == ModifierClass.DIAERESIS
 										|| modifierClass == ModifierClass.NORDIC_RING
@@ -481,7 +491,7 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 							tokenizations.add(tok);
 						} else {
 							tok = "";
-							keepLast = true;
+							//keepLast = true;
 						}
 
 						/*
