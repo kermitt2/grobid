@@ -77,18 +77,32 @@ public class TEIFormater {
         }
 
         tei.append("</title>\n\t\t\t</titleStmt>\n");
-        if ((biblio.getPublisher() != null) |
-                (biblio.getPublicationDate() != null) |
+        if ((biblio.getPublisher() != null) ||
+                (biblio.getPublicationDate() != null) ||
                 (biblio.getNormalizedPublicationDate() != null)) {
             tei.append("\t\t\t<publicationStmt>\n");
             if (biblio.getPublisher() != null) {
+				// publisher and date under <publicationStmt> for better TEI conformance
+				tei.append("\t\t\t\t<publisher>" + TextUtilities.HTMLEncode(biblio.getPublisher()) + 
+					"</publisher>");
+				
                 tei.append("\t\t\t\t<availability>");
                 tei.append("<p>Copyright ");
                 //if (biblio.getPublicationDate() != null)
                 tei.append(TextUtilities.HTMLEncode(biblio.getPublisher()) + "</p>\n");
                 tei.append("\t\t\t\t</availability>\n");
             }
-
+	        else {
+	            // a dummy publicationStmt is still necessary according to TEI
+	            tei.append("\t\t\t<publicationStmt>");
+	            if (defaultPublicationStatement == null) {
+	                tei.append("unknown");
+	            } else {
+	                tei.append(defaultPublicationStatement);
+	            }
+				tei.append("\n");
+	        }
+			
             if (biblio.getNormalizedPublicationDate() != null) {
                 Date date = biblio.getNormalizedPublicationDate();
                 int year = date.getYear();
@@ -150,17 +164,9 @@ public class TEIFormater {
                 tei.append(TextUtilities.HTMLEncode(biblio.getPublicationDate())
                         + "</date>");
             }
-            tei.append("\t\t\t</publicationStmt>\n");
-        } else {
-            // a dummy publicationStmt is still necessary according to TEI
-            tei.append("\t\t\t<publicationStmt>");
-            if (defaultPublicationStatement == null) {
-                tei.append("unknown");
-            } else {
-                tei.append(defaultPublicationStatement);
-            }
-            tei.append("</publicationStmt>\n");
-        }
+			tei.append("\t\t\t</publicationStmt>\n");
+		}
+		
         tei.append("\t\t\t<sourceDesc>\n\t\t\t\t<biblStruct>\n\t\t\t\t\t<analytic>\n");
 
         // authors + affiliation
@@ -324,31 +330,55 @@ public class TEIFormater {
                 if (biblio.getVolumeBlock() != null) {
                     String vol = biblio.getVolumeBlock();
                     vol = vol.replace(" ", "").trim();
-                    tei.append("\t\t\t\t\t\t\t<biblScope type=\"vol\">" +
+                    //tei.append("\t\t\t\t\t\t\t<biblScope type=\"vol\">" +
+                    //        TextUtilities.HTMLEncode(vol) + "</biblScope>\n");
+					
+                    tei.append("\t\t\t\t\t\t\t<biblScope unit=\"volume\">" +
                             TextUtilities.HTMLEncode(vol) + "</biblScope>\n");
                 }
 
                 if (biblio.getIssue() != null) {
-                    tei.append("\t\t\t\t\t\t\t<biblScope type=\"issue\">"
+                    //tei.append("\t\t\t\t\t\t\t<biblScope type=\"issue\">"
+                    //        + TextUtilities.HTMLEncode(biblio.getIssue()) + "</biblScope>\n");
+					
+                    tei.append("\t\t\t\t\t\t\t<biblScope unit=\"issue\">"
                             + TextUtilities.HTMLEncode(biblio.getIssue()) + "</biblScope>\n");
                 }
 
                 if (pageRange != null) {
                     StringTokenizer st = new StringTokenizer(pageRange, "--");
                     if (st.countTokens() == 2) {
-                        tei.append("\t\t\t\t\t\t\t<biblScope type=\"fpage\">"
-                                + TextUtilities.HTMLEncode(st.nextToken()) + "</biblScope>\n");
-                        tei.append("\t\t\t\t\t\t\t<biblScope type=\"lpage\">"
-                                + TextUtilities.HTMLEncode(st.nextToken()) + "</biblScope>\n");
+                        //tei.append("\t\t\t\t\t\t\t<biblScope type=\"fpage\">"
+                        //        + TextUtilities.HTMLEncode(st.nextToken()) + "</biblScope>\n");
+                        //tei.append("\t\t\t\t\t\t\t<biblScope type=\"lpage\">"
+                        //        + TextUtilities.HTMLEncode(st.nextToken()) + "</biblScope>\n");
+						
+                        tei.append("\t\t\t\t\t\t\t<biblScope unit=\"page\"");
+						tei.append(" from=\"" + TextUtilities.HTMLEncode(st.nextToken()) + "\"");
+						tei.append(" to=\"" + TextUtilities.HTMLEncode(st.nextToken()) + "\"");
+                        tei.append(">" + TextUtilities.HTMLEncode(pageRange) + "</biblScope>\n");
+						
                     } else {
-                        tei.append("\t\t\t\t\t\t\t<biblScope type=\"pp\">" + TextUtilities.HTMLEncode(pageRange)
+                        //tei.append("\t\t\t\t\t\t\t<biblScope type=\"pp\">" + TextUtilities.HTMLEncode(pageRange)
+                        //        + "</biblScope>\n");
+                        tei.append("\t\t\t\t\t\t\t<biblScope unit=\"page\">" + TextUtilities.HTMLEncode(pageRange)
                                 + "</biblScope>\n");
                     }
                 } else if (biblio.getBeginPage() != -1) {
-                    tei.append("\t\t\t\t\t\t\t<biblScope type=\"fpage\">" + biblio.getBeginPage() + "</biblScope>\n");
-                    if (biblio.getEndPage() != -1) {
-                        tei.append("\t\t\t\t\t\t\t<biblScope type=\"lpage\">" + biblio.getEndPage() + "</biblScope>\n");
-                    }
+                    //tei.append("\t\t\t\t\t\t\t<biblScope type=\"fpage\">" + biblio.getBeginPage() + "</biblScope>\n");
+                    //if (biblio.getEndPage() != -1) {
+                    //    tei.append("\t\t\t\t\t\t\t<biblScope type=\"lpage\">" + biblio.getEndPage() + "</biblScope>\n");
+                    //}
+
+					if (biblio.getEndPage() != -1) {
+						tei.append("\t\t\t\t\t\t\t<biblScope unit=\"page\"");
+						tei.append(" from=\"" + biblio.getBeginPage() + "\"");
+						tei.append(" to=\"" + biblio.getEndPage() + "\"/>\n");
+					}
+					else {
+						tei.append("\t\t\t\t\t\t\t<biblScope unit=\"page\"");
+						tei.append(" from=\"" + biblio.getBeginPage() + "\"/>");
+					}
                 }
 
                 //if (peer) 
