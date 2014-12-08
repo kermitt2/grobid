@@ -88,7 +88,7 @@ public class GrobidPoolingFactory extends AbstractEngineFactory implements
 	 */
 	public static void returnEngine(Engine engine) {
 		try {
-			engine.close();
+			//engine.close();
 			grobidEnginePool.returnObject(engine);
 		} catch (Exception exp) {
 			throw new GrobidException(
