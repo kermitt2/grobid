@@ -725,9 +725,13 @@ public class BasicStructureBuilder {
                 p++;
                 token = documentTokens.get(p);
             }
-
+			
             if (p != lastTokenInd && !labeledTokenPair.a.equals(token)) {
-                throw new IllegalStateException("Implementation error: tokens out of sync: '" + token + "' at position " + p + " vs. '" + labeledTokenPair.a + "'");
+				if (labeledTokenPair.a.startsWith(documentTokens.get(p))) {
+					// this is an exceptional case due to a sequence of accent/diacresis and we can go on 
+				}
+				else 
+					throw new IllegalStateException("Implementation error: tokens out of sync: '" + token + "' at position " + p + " vs. '" + labeledTokenPair.a + "'");
             }
 
             curLabel = labeledTokenPair.b;
