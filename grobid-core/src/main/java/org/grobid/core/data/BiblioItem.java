@@ -1850,16 +1850,19 @@ public class BiblioItem {
                         for (int i = 0; i < indent + 3; i++) {
                             tei.append("\t");
                         }
-                        tei.append("<biblScope type=\"fpage\">" + st.nextToken() + "</biblScope>\n");
+						tei.append("<biblScope unit=\"page\" from=\"" + TextUtilities.HTMLEncode(st.nextToken()) + "\" to=\"" 
+								+ TextUtilities.HTMLEncode(st.nextToken()) + "\" />\n");  
+						
+                        /*tei.append("<biblScope type=\"fpage\">" + st.nextToken() + "</biblScope>\n");
                         for (int i = 0; i < indent + 3; i++) {
                             tei.append("\t");
                         }
-                        tei.append("<biblScope type=\"lpage\">" + st.nextToken() + "</biblScope>\n");
+                        tei.append("<biblScope type=\"lpage\">" + st.nextToken() + "</biblScope>\n");*/
                     } else {
                         for (int i = 0; i < indent + 3; i++) {
                             tei.append("\t");
                         }
-                        tei.append("<biblScope type=\"pp\">" + TextUtilities.HTMLEncode(pageRange) + "</biblScope>\n");
+                        tei.append("<biblScope unit=\"page\">" + TextUtilities.HTMLEncode(pageRange) + "</biblScope>\n");
                     }
                 }
                 if ((publication_date != null) || (pageRange != null) || (publisher != null)) {
@@ -1940,13 +1943,13 @@ public class BiblioItem {
                         for (int i = 0; i < indent + 3; i++) {
                             tei.append("\t");
                         }
-                        tei.append("<biblScope type=\"vol\">" + TextUtilities.HTMLEncode(volumeBlock) + "</biblScope>\n");
+                        tei.append("<biblScope unit=\"volume\">" + TextUtilities.HTMLEncode(volumeBlock) + "</biblScope>\n");
                     }
                     if (issue != null) {
                         for (int i = 0; i < indent + 3; i++) {
                             tei.append("\t");
                         }
-                        tei.append("<biblScope type=\"issue\">" + TextUtilities.HTMLEncode(issue) + "</biblScope>\n");
+                        tei.append("<biblScope unit=\"issue\">" + TextUtilities.HTMLEncode(issue) + "</biblScope>\n");
                     }
                     if (pageRange != null) {
                         StringTokenizer st = new StringTokenizer(pageRange, "--");
@@ -1954,16 +1957,20 @@ public class BiblioItem {
                             for (int i = 0; i < indent + 3; i++) {
                                 tei.append("\t");
                             }
-                            tei.append("<biblScope type=\"fpage\">" + st.nextToken() + "</biblScope>\n");
+							tei.append("<biblScope unit=\"page\" from=\"" + 
+								TextUtilities.HTMLEncode(st.nextToken()) + "\" to=\"" + 
+								TextUtilities.HTMLEncode(st.nextToken()) + "\" />\n");
+							
+                            /*tei.append("<biblScope type=\"fpage\">" + st.nextToken() + "</biblScope>\n");
                             for (int i = 0; i < indent + 3; i++) {
                                 tei.append("\t");
                             }
-                            tei.append("<biblScope type=\"lpage\">" + st.nextToken() + "</biblScope>\n");
+                            tei.append("<biblScope type=\"lpage\">" + st.nextToken() + "</biblScope>\n");*/
                         } else {
                             for (int i = 0; i < indent + 3; i++) {
                                 tei.append("\t");
                             }
-                            tei.append("<biblScope type=\"pp\">" + TextUtilities.HTMLEncode(pageRange) + "</biblScope>\n");
+                            tei.append("<biblScope unit=\"page\">" + TextUtilities.HTMLEncode(pageRange) + "</biblScope>\n");
                         }
                     }
 
@@ -2117,16 +2124,20 @@ public class BiblioItem {
                         for (int i = 0; i < indent + 3; i++) {
                             tei.append("\t");
                         }
-                        tei.append("<biblScope type=\"fpage\">" + st.nextToken() + "</biblScope>\n");
+						tei.append("<biblScope unit=\"page\" from=\"" + 
+							TextUtilities.HTMLEncode(st.nextToken()) + 
+								"\" to=\"" + TextUtilities.HTMLEncode(st.nextToken()) + "\" />\n");   	
+						
+                        /*tei.append("<biblScope type=\"fpage\">" + st.nextToken() + "</biblScope>\n");
                         for (int i = 0; i < indent + 3; i++) {
                             tei.append("\t");
                         }
-                        tei.append("<biblScope type=\"lpage\">" + st.nextToken() + "</biblScope>\n");
+                        tei.append("<biblScope type=\"lpage\">" + st.nextToken() + "</biblScope>\n");*/
                     } else {
                         for (int i = 0; i < indent + 3; i++) {
                             tei.append("\t");
                         }
-                        tei.append("<biblScope type=\"pp\">" + TextUtilities.HTMLEncode(pageRange) + "</biblScope>\n");
+                        tei.append("<biblScope unit=\"page\">" + TextUtilities.HTMLEncode(pageRange) + "</biblScope>\n");
                     }
                 }
                 if (location != null) {
@@ -2507,10 +2518,14 @@ public class BiblioItem {
                 if (pageRange != null) {
                     StringTokenizer st = new StringTokenizer(pageRange, "--");
                     if (st.countTokens() == 2) {
-                        tei += "\t\t\t<biblScope type=\"fpage\">" + st.nextToken() + "</biblScope>\n";
-                        tei += "\t\t\t<biblScope type=\"lpage\">" + st.nextToken() + "</biblScope>\n";
+                        /*tei += "\t\t\t<biblScope type=\"fpage\">" + st.nextToken() + "</biblScope>\n";
+                        tei += "\t\t\t<biblScope type=\"lpage\">" + st.nextToken() + "</biblScope>\n";*/
+						
+						tei += "\t\t\t<biblScope unit=\"page\" from=\"" + 
+							TextUtilities.HTMLEncode(st.nextToken()) + 
+								"\" to=\"" + TextUtilities.HTMLEncode(st.nextToken()) + "\" />\n";   	
                     } else {
-                        tei += "\t\t\t<biblScope type=\"pp\">" + TextUtilities.HTMLEncode(pageRange)
+                        tei += "\t\t\t<biblScope unit=\"page\">" + TextUtilities.HTMLEncode(pageRange)
                                 + "</biblScope>\n";
                     }
                 }
@@ -2535,20 +2550,24 @@ public class BiblioItem {
                         tei += "\t\t\t<publisher>" + TextUtilities.HTMLEncode(publisher) + "</publisher>\n";
                 }
                 if (volumeBlock != null) {
-                    tei += "\t\t\t<biblScope type=\"vol\">" + TextUtilities.HTMLEncode(volumeBlock)
+                    tei += "\t\t\t<biblScope unit=\"volume\">" + TextUtilities.HTMLEncode(volumeBlock)
                             + "</biblScope>\n";
                 }
                 if (issue != null) {
-                    tei += "\t\t\t<biblScope type=\"issue\">" + TextUtilities.HTMLEncode(issue)
+                    tei += "\t\t\t<biblScope unit=\"issue\">" + TextUtilities.HTMLEncode(issue)
                             + "</biblScope>\n";
                 }
                 if (pageRange != null) {
                     StringTokenizer st = new StringTokenizer(pageRange, "--");
                     if (st.countTokens() == 2) {
-                        tei += "\t\t\t<biblScope type=\"fpage\">" + st.nextToken() + "</biblScope>\n";
-                        tei += "\t\t\t<biblScope type=\"lpage\">" + st.nextToken() + "</biblScope>\n";
+                        /*tei += "\t\t\t<biblScope type=\"fpage\">" + st.nextToken() + "</biblScope>\n";
+                        tei += "\t\t\t<biblScope type=\"lpage\">" + st.nextToken() + "</biblScope>\n";*/
+						
+						tei += "\t\t\t<biblScope unit=\"page\" from=\"" + 
+							TextUtilities.HTMLEncode(st.nextToken()) + 
+								"\" to=\"" + TextUtilities.HTMLEncode(st.nextToken()) + "\" />\n";
                     } else {
-                        tei += "\t\t\t<biblScope type=\"pp\">" + TextUtilities.HTMLEncode(pageRange)
+                        tei += "\t\t\t<biblScope unit=\"page\">" + TextUtilities.HTMLEncode(pageRange)
                                 + "</biblScope>\n";
                     }
                 }
@@ -2603,10 +2622,14 @@ public class BiblioItem {
                 if (pageRange != null) {
                     StringTokenizer st = new StringTokenizer(pageRange, "--");
                     if (st.countTokens() == 2) {
-                        tei += "\t\t\t<biblScope type=\"fpage\">" + st.nextToken() + "</biblScope>\n";
-                        tei += "\t\t\t<biblScope type=\"lpage\">" + st.nextToken() + "</biblScope>\n";
+                        /*tei += "\t\t\t<biblScope type=\"fpage\">" + st.nextToken() + "</biblScope>\n";
+                        tei += "\t\t\t<biblScope type=\"lpage\">" + st.nextToken() + "</biblScope>\n";*/
+						
+						tei += "\t\t\t<biblScope unit=\"page\" from=\"" + 
+							TextUtilities.HTMLEncode(st.nextToken()) + 
+								"\" to=\"" + TextUtilities.HTMLEncode(st.nextToken()) + "\" />\n";
                     } else {
-                        tei += "\t\t\t<biblScope type=\"pp\">" + TextUtilities.HTMLEncode(pageRange)
+                        tei += "\t\t\t<biblScope unit=\"page\">" + TextUtilities.HTMLEncode(pageRange)
                                 + "</biblScope>\n";
                     }
                 }
