@@ -5,12 +5,12 @@
 	<parent>
 		<groupId>org.grobid</groupId>
 		<artifactId>grobid-parent</artifactId>
-		<version>0.2.14</version>
+		<version>0.3.0</version>
 		<relativePath>../pom.xml</relativePath>
 	</parent>
 
     <artifactId>grobid-core</artifactId>
-	<version>0.2.14-SNAPSHOT</version>
+	<version>0.3.0</version>
 	<packaging>jar</packaging>
 	<name>${project.artifactId}</name>
 
@@ -19,9 +19,7 @@
 		<assemblies.name>src/main/assembly/assembly.xml</assemblies.name>
 		<package.file>${project.groupId}.${project.artifactId}_${project.version}.war</package.file>
 		<license.file>${basedir}/LICENSE</license.file>
-		<!-- <notice.file>${basedir}/NOTICE</notice.file> -->
 	</properties>
-
 
 	<repositories>
 		<repository>
@@ -42,7 +40,6 @@
             <!--<url>http://maven.amplafi.com/</url>-->
             <!--<layout>default</layout>-->
         <!--</repository>-->
-
     </repositories>
 
 	<dependencies>
@@ -70,8 +67,6 @@
 			<artifactId>jsonic</artifactId>
 			<version>1.3.5</version>
 		</dependency>
-
-
 
 		<dependency>
 			<groupId>junit</groupId>
