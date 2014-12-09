@@ -47,13 +47,13 @@ public class TrainerRunner {
 	public static void main(String[] args) {
 		if (args.length < 4) {
 			throw new IllegalStateException(
-					"Usage: {0 - train, 1 - evaluate, 2 - split, train and evaluate} {affiliation,chemical,date,citation,ebook,fulltext,header,name-citation,name-header,patent} -pH /path/to/Grobid/home -s { [0.0 - 1.0] - split ratio, optional}");
+					"Usage: {0 - train, 1 - evaluate, 2 - split, train and evaluate} {affiliation,chemical,date,citation,ebook,fulltext,header,name-citation,name-header,patent} -gH /path/to/Grobid/home -s { [0.0 - 1.0] - split ratio, optional}");
 		}
 
 		RunType mode = RunType.getRunType(Integer.parseInt(args[0]));
 		if ( (mode == RunType.SPLIT) && (args.length < 6) ) {
 			throw new IllegalStateException(
-					"Usage: {0 - train, 1 - evaluate, 2 - split, train and evaluate} {affiliation,chemical,date,citation,ebook,fulltext,header,name-citation,name-header,patent} -pH /path/to/Grobid/home -s { [0.0 - 1.0] - split ratio, optional}");
+					"Usage: {0 - train, 1 - evaluate, 2 - split, train and evaluate} {affiliation,chemical,date,citation,ebook,fulltext,header,name-citation,name-header,patent} -gH /path/to/Grobid/home -s { [0.0 - 1.0] - split ratio, optional}");
 		}
 
 		String path2GbdHome = null;
@@ -82,7 +82,7 @@ public class TrainerRunner {
 
 		if (path2GbdHome == null) {
 			throw new IllegalStateException(
-					"Usage: {0 - train, 1 - evaluate, 2 - split, train and evaluate} {affiliation,chemical,date,citation,ebook,fulltext,header,name-citation,name-header,patent} -pH /path/to/Grobid/home -s { [0.0 - 1.0] - split ratio, optional}");
+					"Usage: {0 - train, 1 - evaluate, 2 - split, train and evaluate} {affiliation,chemical,date,citation,ebook,fulltext,header,name-citation,name-header,patent} -gH /path/to/Grobid/home -s { [0.0 - 1.0] - split ratio, optional}");
 		}
 
 		final String path2GbdProperties = path2GbdHome + File.separator + "config" + File.separator + "grobid.properties";
