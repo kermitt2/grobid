@@ -1,5 +1,8 @@
 package org.grobid.core.document;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.google.common.collect.Iterables;
 import com.google.common.collect.SortedSetMultimap;
 import com.google.common.collect.TreeMultimap;
@@ -26,7 +29,7 @@ import java.util.regex.Pattern;
  * @author Patrice Lopez
  */
 public class BasicStructureBuilder {
-//    final static public Pattern CLEANER = Pattern.compile("[&%\\$#%@\\+=\\?\\*\\)\\(\\[\\]\\^]");
+	private static final Logger LOGGER = LoggerFactory.getLogger(BasicStructureBuilder.class);
 
     static public Pattern introduction =
             Pattern.compile("^\\b*(Introduction?|Einleitung|INTRODUCTION|Acknowledge?ments?|Acknowledge?ment?|Background?|Content?|Contents?|Motivations?|1\\.\\sPROBLEMS?|1\\.(\\n)?\\sIntroduction?|1\\.\\sINTRODUCTION|I\\.(\\s)+Introduction|1\\.\\sProblems?|I\\.\\sEinleitung?|1\\.\\sEinleitung?|1\\sEinleitung?|1\\sIntroduction?)",
@@ -727,11 +730,14 @@ public class BasicStructureBuilder {
             }
 			
             if (p != lastTokenInd && !labeledTokenPair.a.equals(token)) {
-				if (labeledTokenPair.a.startsWith(documentTokens.get(p))) {
-					// this is an exceptional case due to a sequence of accent/diacresis and we can go on 
+				if (!labeledTokenPair.a.startsWith(documentTokens.get(p))) {
+					// this is a very exceptional case due to a sequence of accent/diacresis, in this case we skip 
+					// a shift in the tokenizations list and continue on the basis of the labeled token
+					LOGGER.debug("Implementation error: tokens out of sync: '" + token + "' at position " + p + " vs. '" + labeledTokenPair.a + "'");
+					//throw new IllegalStateException("Implementation error: tokens out of sync: '" + token + "' at position " + p + " vs. '" + labeledTokenPair.a + "'");
 				}
-				else 
-					throw new IllegalStateException("Implementation error: tokens out of sync: '" + token + "' at position " + p + " vs. '" + labeledTokenPair.a + "'");
+				// if the above condition is true, this is an exceptional case due to a sequence of accent/diacresis
+				// and we can go on as a full string match
             }
 
             curLabel = labeledTokenPair.b;

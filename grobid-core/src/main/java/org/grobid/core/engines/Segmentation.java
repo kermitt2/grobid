@@ -113,10 +113,8 @@ public class Segmentation extends AbstractParser {
 			String content = getFulltextFeatured(doc);
             String labelledResult = label(content);
 
-            FileUtils.writeStringToFile(new File("/tmp/x.txt"), labelledResult);
-
-            //System.out.println(labelledResult);
-
+            //FileUtils.writeStringToFile(new File("/tmp/x.txt"), labelledResult);
+			//FileUtils.writeStringToFile(new File("/tmp/x2.txt"), tokenizations.toString());
 
             // set the different sections of the Document object
             doc = BasicStructureBuilder.generalResultSegmentation(doc, labelledResult, tokenizations);

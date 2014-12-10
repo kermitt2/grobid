@@ -86,7 +86,7 @@ public class HeaderParser extends AbstractParser {
         } catch (TimeoutException timeoutExp) {
             throw new TimeoutException("A time out occured");
         } catch (final Exception exp) {
-            throw new GrobidException("An exception occurred while running Grobid on file " + tmpPath.getAbsolutePath() + ": " + exp);
+            throw new GrobidException("An exception occurred while running Grobid on file " + input + ": " + exp);
         } finally {
             doc.cleanLxmlFile(pathXML, true);
         }
