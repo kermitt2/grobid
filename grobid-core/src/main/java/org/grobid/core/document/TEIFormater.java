@@ -330,17 +330,11 @@ public class TEIFormater {
                 if (biblio.getVolumeBlock() != null) {
                     String vol = biblio.getVolumeBlock();
                     vol = vol.replace(" ", "").trim();
-                    //tei.append("\t\t\t\t\t\t\t<biblScope type=\"vol\">" +
-                    //        TextUtilities.HTMLEncode(vol) + "</biblScope>\n");
-					
                     tei.append("\t\t\t\t\t\t\t<biblScope unit=\"volume\">" +
                             TextUtilities.HTMLEncode(vol) + "</biblScope>\n");
                 }
 
                 if (biblio.getIssue() != null) {
-                    //tei.append("\t\t\t\t\t\t\t<biblScope type=\"issue\">"
-                    //        + TextUtilities.HTMLEncode(biblio.getIssue()) + "</biblScope>\n");
-					
                     tei.append("\t\t\t\t\t\t\t<biblScope unit=\"issue\">"
                             + TextUtilities.HTMLEncode(biblio.getIssue()) + "</biblScope>\n");
                 }
@@ -348,28 +342,16 @@ public class TEIFormater {
                 if (pageRange != null) {
                     StringTokenizer st = new StringTokenizer(pageRange, "--");
                     if (st.countTokens() == 2) {
-                        //tei.append("\t\t\t\t\t\t\t<biblScope type=\"fpage\">"
-                        //        + TextUtilities.HTMLEncode(st.nextToken()) + "</biblScope>\n");
-                        //tei.append("\t\t\t\t\t\t\t<biblScope type=\"lpage\">"
-                        //        + TextUtilities.HTMLEncode(st.nextToken()) + "</biblScope>\n");
-						
                         tei.append("\t\t\t\t\t\t\t<biblScope unit=\"page\"");
 						tei.append(" from=\"" + TextUtilities.HTMLEncode(st.nextToken()) + "\"");
 						tei.append(" to=\"" + TextUtilities.HTMLEncode(st.nextToken()) + "\"");
                         tei.append(">" + TextUtilities.HTMLEncode(pageRange) + "</biblScope>\n");
 						
                     } else {
-                        //tei.append("\t\t\t\t\t\t\t<biblScope type=\"pp\">" + TextUtilities.HTMLEncode(pageRange)
-                        //        + "</biblScope>\n");
                         tei.append("\t\t\t\t\t\t\t<biblScope unit=\"page\">" + TextUtilities.HTMLEncode(pageRange)
                                 + "</biblScope>\n");
                     }
                 } else if (biblio.getBeginPage() != -1) {
-                    //tei.append("\t\t\t\t\t\t\t<biblScope type=\"fpage\">" + biblio.getBeginPage() + "</biblScope>\n");
-                    //if (biblio.getEndPage() != -1) {
-                    //    tei.append("\t\t\t\t\t\t\t<biblScope type=\"lpage\">" + biblio.getEndPage() + "</biblScope>\n");
-                    //}
-
 					if (biblio.getEndPage() != -1) {
 						tei.append("\t\t\t\t\t\t\t<biblScope unit=\"page\"");
 						tei.append(" from=\"" + biblio.getBeginPage() + "\"");
