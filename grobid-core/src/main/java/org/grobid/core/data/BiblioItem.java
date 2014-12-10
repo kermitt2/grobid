@@ -1852,12 +1852,6 @@ public class BiblioItem {
                         }
 						tei.append("<biblScope unit=\"page\" from=\"" + TextUtilities.HTMLEncode(st.nextToken()) + "\" to=\"" 
 								+ TextUtilities.HTMLEncode(st.nextToken()) + "\" />\n");  
-						
-                        /*tei.append("<biblScope type=\"fpage\">" + st.nextToken() + "</biblScope>\n");
-                        for (int i = 0; i < indent + 3; i++) {
-                            tei.append("\t");
-                        }
-                        tei.append("<biblScope type=\"lpage\">" + st.nextToken() + "</biblScope>\n");*/
                     } else {
                         for (int i = 0; i < indent + 3; i++) {
                             tei.append("\t");
@@ -1960,12 +1954,6 @@ public class BiblioItem {
 							tei.append("<biblScope unit=\"page\" from=\"" + 
 								TextUtilities.HTMLEncode(st.nextToken()) + "\" to=\"" + 
 								TextUtilities.HTMLEncode(st.nextToken()) + "\" />\n");
-							
-                            /*tei.append("<biblScope type=\"fpage\">" + st.nextToken() + "</biblScope>\n");
-                            for (int i = 0; i < indent + 3; i++) {
-                                tei.append("\t");
-                            }
-                            tei.append("<biblScope type=\"lpage\">" + st.nextToken() + "</biblScope>\n");*/
                         } else {
                             for (int i = 0; i < indent + 3; i++) {
                                 tei.append("\t");
@@ -2127,12 +2115,6 @@ public class BiblioItem {
 						tei.append("<biblScope unit=\"page\" from=\"" + 
 							TextUtilities.HTMLEncode(st.nextToken()) + 
 								"\" to=\"" + TextUtilities.HTMLEncode(st.nextToken()) + "\" />\n");   	
-						
-                        /*tei.append("<biblScope type=\"fpage\">" + st.nextToken() + "</biblScope>\n");
-                        for (int i = 0; i < indent + 3; i++) {
-                            tei.append("\t");
-                        }
-                        tei.append("<biblScope type=\"lpage\">" + st.nextToken() + "</biblScope>\n");*/
                     } else {
                         for (int i = 0; i < indent + 3; i++) {
                             tei.append("\t");
@@ -2518,9 +2500,6 @@ public class BiblioItem {
                 if (pageRange != null) {
                     StringTokenizer st = new StringTokenizer(pageRange, "--");
                     if (st.countTokens() == 2) {
-                        /*tei += "\t\t\t<biblScope type=\"fpage\">" + st.nextToken() + "</biblScope>\n";
-                        tei += "\t\t\t<biblScope type=\"lpage\">" + st.nextToken() + "</biblScope>\n";*/
-						
 						tei += "\t\t\t<biblScope unit=\"page\" from=\"" + 
 							TextUtilities.HTMLEncode(st.nextToken()) + 
 								"\" to=\"" + TextUtilities.HTMLEncode(st.nextToken()) + "\" />\n";   	
@@ -2560,9 +2539,6 @@ public class BiblioItem {
                 if (pageRange != null) {
                     StringTokenizer st = new StringTokenizer(pageRange, "--");
                     if (st.countTokens() == 2) {
-                        /*tei += "\t\t\t<biblScope type=\"fpage\">" + st.nextToken() + "</biblScope>\n";
-                        tei += "\t\t\t<biblScope type=\"lpage\">" + st.nextToken() + "</biblScope>\n";*/
-						
 						tei += "\t\t\t<biblScope unit=\"page\" from=\"" + 
 							TextUtilities.HTMLEncode(st.nextToken()) + 
 								"\" to=\"" + TextUtilities.HTMLEncode(st.nextToken()) + "\" />\n";
@@ -2621,10 +2597,7 @@ public class BiblioItem {
                 }
                 if (pageRange != null) {
                     StringTokenizer st = new StringTokenizer(pageRange, "--");
-                    if (st.countTokens() == 2) {
-                        /*tei += "\t\t\t<biblScope type=\"fpage\">" + st.nextToken() + "</biblScope>\n";
-                        tei += "\t\t\t<biblScope type=\"lpage\">" + st.nextToken() + "</biblScope>\n";*/
-						
+                    if (st.countTokens() == 2) {						
 						tei += "\t\t\t<biblScope unit=\"page\" from=\"" + 
 							TextUtilities.HTMLEncode(st.nextToken()) + 
 								"\" to=\"" + TextUtilities.HTMLEncode(st.nextToken()) + "\" />\n";
