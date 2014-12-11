@@ -128,7 +128,7 @@ public class AuthorParser implements Closeable {
                 int i = 0;
                 String s1 = null;
                 String s2 = null;
-                String s3 = null;
+                String s3 = "<author>";
                 List<String> localFeatures = new ArrayList<String>();
                 while (st3.hasMoreTokens()) {
                     String s = st3.nextToken().trim();
@@ -136,7 +136,7 @@ public class AuthorParser implements Closeable {
                         s2 = s; // string
                         //System.out.println("s2 is " + s2);
                     } else if (i == ll - 2) {
-                        s3 = s; // pre-label, in this case it should always be <author>
+                        //s3 = s; // pre-label, in this case it should always be <author>
                         //System.out.println("s3 is " + s3);
                     } else if (i == ll - 1) {
                         s1 = s; // label
