@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 
 /**
  * 
- * @author Damien
+ * @author Damien, Patrice
  *
  */
 public class GrobidRestProcessGeneric {
