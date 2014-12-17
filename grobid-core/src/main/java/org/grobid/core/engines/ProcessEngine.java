@@ -178,6 +178,45 @@ public class ProcessEngine implements Closeable {
     }
 
     /**
+     * Process all the references using pGbdArgs parameters.
+     *
+     * @param pGbdArgs The parameters.
+     * @throws Exception
+     */
+    public void processReferences(final GrobidMainArgs pGbdArgs) throws Exception {
+        inferPdfInputPath(pGbdArgs);
+        inferOutputPath(pGbdArgs);
+        final File pdfDirectory = new File(pGbdArgs.getPath2Input());
+        File[] files = pdfDirectory.listFiles();
+        if (files != null) {
+            for (final File currPdf : files) {
+                try {
+                    if (currPdf.getName().toLowerCase().endsWith(".pdf")) {
+						final List<BibDataSet> results = getEngine().processReferences(currPdf.getAbsolutePath(), false);
+						StringBuffer result = new StringBuffer();
+						// dummy header
+						result.append("<TEI xmlns=\"http://www.tei-c.org/ns/1.0\" " + 	
+						"xmlns:xlink=\"http://www.w3.org/1999/xlink\" " +
+                		"\n xmlns:mml=\"http://www.w3.org/1998/Math/MathML\">\n");
+						result.append("\t<teiHeader/>\n\t<text/>\n\t<front/>\n\t<body/>\n\t<back>\n\t\t<listBibl>\n");
+						for(BibDataSet res : results) {
+							result.append(res.toTEI());
+							result.append("\n");
+						}
+						result.append("\t\t</listBibl>\n\t</back>\n</TEI>\n");
+                        Utilities.writeInFile(pGbdArgs.getPath2Output() + File.separator
+                                + new File(currPdf.getAbsolutePath()).getName().replace(".pdf", ".references.tei.xml"), 
+									result.toString());
+					}
+                } catch (final Exception exp) {
+                    LOGGER.error("An error occured while processing the file " + currPdf.getAbsolutePath()
+                            + ". Continuing the process for the other files");
+                }
+			}	 
+		} 
+    }
+
+    /**
      * Generate training data for the header model.
      *
      * @param pGbdArgs The parameters.

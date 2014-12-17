@@ -1623,7 +1623,7 @@ public class BiblioItem {
                     if (pubnum != null) {
                         tei.append(" xml:id=\"" + pubnum + "\">\n");
                     } else
-                        tei.append(">");
+                        tei.append(">\n");
                 } else
                     tei.append(" xml:id=\"b" + n + "\">\n");
             }
