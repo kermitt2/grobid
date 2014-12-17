@@ -379,6 +379,90 @@ public class GrobidRestProcessFiles {
 
 
 	/**
+	 * Uploads the origin document, extract and parser all its references.
+	 * 
+	 * @param inputStream
+	 *            the data of origin document
+	 * @param consolidate
+	 *            if the result has to be consolidated with CrossRef access.
+	 * @return a response object mainly contain the TEI representation of the
+	 *         full text
+	 */
+	public static Response processStatelessReferencesDocument(final InputStream inputStream, 
+															final boolean consolidate) {
+		LOGGER.debug(methodLogIn());
+		Response response = null;
+		String retVal = null;
+		boolean isparallelExec = GrobidServiceProperties.isParallelExec();
+		File originFile = null;
+		Engine engine = null;
+		try {
+			originFile = GrobidRestUtils.writeInputFile(inputStream);
+
+			if (originFile == null) {
+				response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
+			} else {
+				// starts conversion process
+				if (GrobidProperties.getGrobidCRFEngine() == GrobidCRFEngine.CRFPP) {
+					engine = GrobidRestUtils.getEngine(isparallelExec);
+				}
+				else {
+					engine = GrobidFactory.getInstance().getEngine();
+				}
+				List<BibDataSet> results = null;
+				if (isparallelExec && (GrobidProperties.getGrobidCRFEngine() == GrobidCRFEngine.CRFPP)) {
+					//retVal = engine.fullTextToTEI(originFile.getAbsolutePath(), consolidate, false);
+					results = engine.processReferences(originFile.getAbsolutePath(), consolidate);
+					GrobidPoolingFactory.returnEngine(engine);
+				} else {
+					synchronized (engine) {
+						results = engine.processReferences(originFile.getAbsolutePath(), consolidate);
+					}
+				}
+
+				GrobidRestUtils.removeTempFile(originFile);
+
+				StringBuffer result = new StringBuffer();
+				// dummy header
+				result.append("<TEI xmlns=\"http://www.tei-c.org/ns/1.0\" " + 	
+				"xmlns:xlink=\"http://www.w3.org/1999/xlink\" " +
+        		"\n xmlns:mml=\"http://www.w3.org/1998/Math/MathML\">\n");
+				result.append("\t<teiHeader/>\n\t<text/>\n\t<front/>\n\t<body/>\n\t<back>\n\t\t<listBibl>\n");
+				for(BibDataSet res : results) {
+					result.append(res.toTEI());
+					result.append("\n");
+				}
+				result.append("\t\t</listBibl>\n\t</back>\n</TEI>\n");
+				
+				retVal = result.toString();
+
+				if (!GrobidRestUtils.isResultOK(retVal)) {
+					response = Response.status(Status.NO_CONTENT).build();
+				} else {
+					/*if (htmlFormat) {
+						response = Response.status(Status.OK).entity(formatAsHTML(retVal)).type(MediaType.APPLICATION_XML).build();
+					} else {*/
+						response = Response.status(Status.OK).entity(retVal).type(MediaType.APPLICATION_XML).build();
+						//}
+				}
+			}
+		} catch (NoSuchElementException nseExp) {
+			LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
+			response = Response.status(Status.SERVICE_UNAVAILABLE).build();
+		} catch (Exception exp) {
+			LOGGER.error("An unexpected exception occurs. ", exp);
+			response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
+		} finally {
+			GrobidRestUtils.removeTempFile(originFile);
+			if (isparallelExec && engine != null && (GrobidProperties.getGrobidCRFEngine() == GrobidCRFEngine.CRFPP)) {
+				GrobidPoolingFactory.returnEngine(engine);
+			}
+		}
+		LOGGER.debug(methodLogOut());
+		return response;
+	}
+
+	/**
 	 * @return
 	 */
 	public static String methodLogIn() {

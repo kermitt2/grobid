@@ -206,6 +206,11 @@ var grobid = (function($) {
 			$('#consolidateBlock').hide();
 			setBaseUrl('processCitationNames');
 		} 
+		else if (selected == 'processReferences') {
+			createInputFile(selected);
+			$('#consolidateBlock').show();
+			setBaseUrl('processReferences');
+		} 
 		else if (selected == 'processAffiliations') {
 			createInputTextArea('affiliations');
 			$('#consolidateBlock').hide();
@@ -237,7 +242,7 @@ var grobid = (function($) {
 			setBaseUrl('processCitationPatentTXT');
 		}
 	}
-					
+
 	function createInputFile(selected) {
 		//$('#label').html('&nbsp;'); 
 		$('#textInputDiv').hide();
@@ -248,7 +253,7 @@ var grobid = (function($) {
 		$('#gbdForm').attr('enctype', 'multipart/form-data');
 		$('#gbdForm').attr('method', 'post'); 
 	}
-	
+
 	function createInputTextArea(nameInput) {
 		//$('#label').html('&nbsp;'); 
 		$('#fileInputDiv').hide();
