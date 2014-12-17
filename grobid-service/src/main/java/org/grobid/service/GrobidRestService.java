@@ -504,4 +504,37 @@ public class GrobidRestService implements GrobidPathes {
 		return GrobidRestProcessAdmin.changePropertyValue(xml);
 	}
 
+	/**
+	 * @see org.grobid.service.process.GrobidRestProcessFiles#processStatelessReferencesDocument(InputStream, bool)
+	 */
+	@Path(PATH_REFERENCES)
+	@Consumes(MediaType.MULTIPART_FORM_DATA)
+	@Produces(MediaType.APPLICATION_XML)
+	@POST
+	public Response processReferencesDocument_post(@FormDataParam(INPUT) InputStream inputStream,
+	 	@FormDataParam("consolidate") String consolidate) {
+		boolean consol = false;
+		if ( (consolidate != null) && (consolidate.equals("1")) ) {
+			consol = true;
+		}
+		return GrobidRestProcessFiles.processStatelessReferencesDocument(inputStream, consol);
+	}
+
+	/**
+	 * @see org.grobid.service.process.GrobidRestProcessFiles#processStatelessReferencesDocument(InputStream, bool)
+	 */
+	@Path(PATH_REFERENCES)
+	@Consumes(MediaType.MULTIPART_FORM_DATA)
+	@Produces(MediaType.APPLICATION_XML)
+	@PUT
+	public Response processStatelessReferencesDocument(@FormDataParam(INPUT) InputStream inputStream,
+	 	@FormDataParam("consolidate") String consolidate) {
+		boolean consol = false;
+		if ( (consolidate != null) && (consolidate.equals("1")) ) {
+			consol = true;
+		}
+		return GrobidRestProcessFiles.processStatelessReferencesDocument(inputStream, consol);
+	}
+	
+
 }

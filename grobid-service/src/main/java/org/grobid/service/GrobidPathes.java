@@ -118,6 +118,11 @@ public interface GrobidPathes {
 	public static final String PATH_CITATION= "processCitation";
 	
 	/**
+	 * path extension for processing all the references in a PDF file.
+	 */
+	public static final String PATH_REFERENCES= "processReferences";
+	
+	/**
 	 * path extension for processing sha1.
 	 */
 	public static final String PATH_SHA1= "sha1";
