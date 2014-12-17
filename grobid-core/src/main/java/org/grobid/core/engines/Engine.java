@@ -1,5 +1,4 @@
 /**
- * Copyright 2008-2011 P. Lopez and the authors 
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -449,7 +448,8 @@ public class Engine implements Closeable {
             result = new BiblioItem();
         }
 
-        Pair<String, Document> resultTEI = parsers.getHeaderParser().processing(inputFile, consolidate, result, startPage, endPage);
+        //Pair<String, Document> resultTEI = parsers.getHeaderParser().processing(inputFile, consolidate, result, startPage, endPage);
+		Pair<String, Document> resultTEI = parsers.getHeaderParser().processing2(inputFile, consolidate, result);
         Document doc = resultTEI.getRight();
         //close();
         return resultTEI.getLeft();

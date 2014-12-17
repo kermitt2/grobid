@@ -16,7 +16,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * User: zholudev Date: 11/17/11 Time: 1:49 PM
+ * @author Slava, Patrice
  */
 public class LibraryLoader {
 
@@ -28,7 +28,7 @@ public class LibraryLoader {
 
     public static void load() {
         if (!loaded) {
-            LOGGER.info("Loading external library crfpp");
+            LOGGER.info("Loading external native CRF library");
             mockContextIfNotSet();
             LOGGER.debug(getLibraryFolder());
             File libraryFolder = new File(getLibraryFolder());

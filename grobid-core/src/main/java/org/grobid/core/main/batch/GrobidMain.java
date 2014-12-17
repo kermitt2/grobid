@@ -12,7 +12,6 @@ import org.grobid.core.utilities.Utilities;
  * The entrance point, to start grobid from command line
  * 
  * @author Florian Zipser
- * @version 2.0
  */
 public class GrobidMain {
 

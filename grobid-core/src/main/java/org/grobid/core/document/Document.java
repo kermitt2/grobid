@@ -413,7 +413,7 @@ public class Document {
     }
 
     /**
-     * Prepare features for structure annotations
+     *  Parser PDF2XML output representation and get the tokenized form of the document.
      *
      * @return list of features
      * @throws java.io.IOException      when a file can not be opened
@@ -421,7 +421,7 @@ public class Document {
      *                                  when parsing
      * @throws org.xml.sax.SAXException when parsing
      */
-    public List<String> addFeaturesDocument() throws IOException,
+    public List<String> addTokenizedDocument() throws IOException,
             ParserConfigurationException, SAXException {
         List<String> images = new ArrayList<String>();
         PDF2XMLSaxParser parser = new PDF2XMLSaxParser(this, images);

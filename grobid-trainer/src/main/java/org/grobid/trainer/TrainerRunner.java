@@ -53,7 +53,7 @@ public class TrainerRunner {
 		RunType mode = RunType.getRunType(Integer.parseInt(args[0]));
 		if ( (mode == RunType.SPLIT) && (args.length < 6) ) {
 			throw new IllegalStateException(
-					"Usage: {0 - train, 1 - evaluate, 2 - split, train and evaluate} {affiliation,chemical,date,citation,ebook,fulltext,header,name-citation,name-header,patent} -gH /path/to/Grobid/home -s { [0.0 - 1.0] - split ratio, optional}");
+					"Usage: {0 - train, 1 - evaluate, 2 - split, train and evaluate} {affiliation,chemical,date,citation,ebook,fulltext,header,name-citation,name-header,patent} -H /path/to/Grobid/home -s { [0.0 - 1.0] - split ratio, optional}");
 		}
 
 		String path2GbdHome = null;

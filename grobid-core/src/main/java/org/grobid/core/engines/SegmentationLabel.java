@@ -1,7 +1,7 @@
 package org.grobid.core.engines;
 
 /**
- * User: zholudev
+ * @author Slava
  * Date: 4/3/14
  */
 public enum SegmentationLabel {
@@ -13,7 +13,6 @@ public enum SegmentationLabel {
      document body <body>,
      bibliographical section <references>,
      page number <page>,
-     ? each bibliographical references in the biblio section <ref>,
      annexes <annex>
      */
     COVER("<cover>"),

@@ -1011,7 +1011,13 @@ public class BiblioItem {
     public void addKeyword(String k) {
         if (keywords == null)
             keywords = new ArrayList<String>();
-        keywords.add(cleanKeywords(k));
+		String theKey = cleanKeywords(k);
+		if (theKey.toLowerCase().contains("introduction")) {
+			// if the keyword contains introduction, this is normally a segmentation error
+			theKey = null;
+		}
+		if (theKey != null)
+        	keywords.add(theKey);
     }
 
     public void setKeywords(List<String> k) {
@@ -1354,7 +1360,7 @@ public class BiblioItem {
     /**
      * Some little cleaning of the abstract field.
      */
-    final String[] ABSTRACT_PREFIXES = {"Abstract", "ABSTRACT", "Summary", "Résumé", "Abrégé"};
+    final String[] ABSTRACT_PREFIXES = {"Abstract", "ABSTRACT", "Summary", "Résumé", "Abrégé", "a b s t r a c t"};
 
     public String cleanAbstract(String string) {
 
@@ -1439,7 +1445,7 @@ public class BiblioItem {
         } else if (resLow.startsWith("mots clefs")) {
             res = res.substring(10);
         }
-
+		
         res = res.trim();
         if (res.startsWith(":")) {
             res = res.substring(1);
@@ -1788,44 +1794,59 @@ public class BiblioItem {
                     if ((normalized_publication_date.getDay() != -1) ||
                             (normalized_publication_date.getMonth() != -1) ||
                             (normalized_publication_date.getYear() != -1)) {
-                        /*
-						 * tei.append("<date>"); if
-						 * (normalized_publication_date.getDay() != -1) {
-						 * tei.append("<day>" +
-						 * normalized_publication_date.getDay() + "</day>"); }
-						 * if (normalized_publication_date.getMonth() != -1) {
-						 * tei.append("<month>" +
-						 * normalized_publication_date.getMonth() + "</month>");
-						 * } if (normalized_publication_date.getYear() != -1) {
-						 * tei.append("<year>" +
-						 * normalized_publication_date.getYear() + "</year>"); }
-						 * tei.append("</date>");
-						 */
-
                         int year = normalized_publication_date.getYear();
                         int month = normalized_publication_date.getMonth();
                         int day = normalized_publication_date.getDay();
 
-                        String when = "" + year;
-                        if (month != -1) {
-                            when += "-" + month;
-                            if (day != -1) {
-                                when += "-" + day;
-                            }
-                        }
+		                String when = "";
+						if (year <= 9) 
+							when += "000" + year;
+						else if (year <= 99) 
+							when += "00" + year;
+						else if (year <= 999)
+							when += "0" + year;
+						else
+							when += year;
+		                if (month != -1) {
+							if (month <= 9) 
+								when += "-0" + month;
+							else 
+		 					   	when += "-" + month;
+		                    if (day != -1) {
+								if (day <= 9)
+									when += "-0" + day;
+								else
+									when += "-" + day;
+		                    }
+		                }
                         for (int i = 0; i < indent + 3; i++) {
                             tei.append("\t");
                         }
                         tei.append("<date type=\"published\" when=\"");
                         tei.append(when + "\" />\n");
                     } else if (this.getYear() != null) {
-                        String when = this.getYear();
-                        if (this.getMonth() != null) {
-                            when += "-" + this.getMonth();
-                            if (this.getDay() != null) {
-                                when += "-" + this.getDay();
-                            }
-                        }
+						String when = "";
+						if (this.getYear().length() == 1)
+							when += "000" + this.getYear();
+						else if (this.getYear().length() == 2)
+							when += "00" + this.getYear();
+						else if (this.getYear().length() == 3)
+							when += "0" + this.getYear();
+						else if (this.getYear().length() == 4)
+							when += this.getYear();
+				
+		                if (this.getMonth() != null) {
+							if (this.getMonth().length() == 1)
+								when += "-0" + this.getMonth();
+							else
+								when += "-" + this.getMonth();
+		                    if (this.getDay() != null) {
+								if (this.getDay().length() == 1)
+									when += "-0" + this.getDay();
+								else
+									when += "-" + this.getDay();
+		                    }
+		                }
                         for (int i = 0; i < indent + 3; i++) {
                             tei.append("\t");
                         }
@@ -1971,26 +1992,55 @@ public class BiblioItem {
                             int month = normalized_publication_date.getMonth();
                             int day = normalized_publication_date.getDay();
 
-                            String when = "" + year;
-                            if (month != -1) {
-                                when += "-" + month;
-                                if (day != -1) {
-                                    when += "-" + day;
-                                }
-                            }
+			                String when = "";
+							if (year <= 9) 
+								when += "000" + year;
+							else if (year <= 99) 
+								when += "00" + year;
+							else if (year <= 999)
+								when += "0" + year;
+							else
+								when += year;
+			                if (month != -1) {
+								if (month <= 9) 
+									when += "-0" + month;
+								else 
+			 					   	when += "-" + month;
+			                    if (day != -1) {
+									if (day <= 9)
+										when += "-0" + day;
+									else
+										when += "-" + day;
+			                    }
+			                }
                             for (int i = 0; i < indent + 3; i++) {
                                 tei.append("\t");
                             }
                             tei.append("<date type=\"published\" when=\"");
                             tei.append(when + "\" />\n");
                         } else if (this.getYear() != null) {
-                            String when = this.getYear();
-                            if (this.getMonth() != null) {
-                                when += "-" + this.getMonth();
-                                if (this.getDay() != null) {
-                                    when += "-" + this.getDay();
-                                }
-                            }
+							String when = "";
+							if (this.getYear().length() == 1)
+								when += "000" + this.getYear();
+							else if (this.getYear().length() == 2)
+								when += "00" + this.getYear();
+							else if (this.getYear().length() == 3)
+								when += "0" + this.getYear();
+							else if (this.getYear().length() == 4)
+								when += this.getYear();
+				
+			                if (this.getMonth() != null) {
+								if (this.getMonth().length() == 1)
+									when += "-0" + this.getMonth();
+								else
+									when += "-" + this.getMonth();
+			                    if (this.getDay() != null) {
+									if (this.getDay().length() == 1)
+										when += "-0" + this.getDay();
+									else
+										when += "-" + this.getDay();
+			                    }
+			                }
                             for (int i = 0; i < indent + 3; i++) {
                                 tei.append("\t");
                             }
@@ -2062,26 +2112,55 @@ public class BiblioItem {
                         int month = normalized_publication_date.getMonth();
                         int day = normalized_publication_date.getDay();
 
-                        String when = "" + year;
-                        if (month != -1) {
-                            when += "-" + month;
-                            if (day != -1) {
-                                when += "-" + day;
-                            }
-                        }
+		                String when = "";
+						if (year <= 9) 
+							when += "000" + year;
+						else if (year <= 99) 
+							when += "00" + year;
+						else if (year <= 999)
+							when += "0" + year;
+						else
+							when += year;
+		                if (month != -1) {
+							if (month <= 9) 
+								when += "-0" + month;
+							else 
+		 					   	when += "-" + month;
+		                    if (day != -1) {
+								if (day <= 9)
+									when += "-0" + day;
+								else
+									when += "-" + day;
+		                    }
+		                }
                         for (int i = 0; i < indent + 3; i++) {
                             tei.append("\t");
                         }
                         tei.append("<date type=\"published\" when=\"");
                         tei.append(when + "\" />\n");
                     } else if (this.getYear() != null) {
-                        String when = this.getYear();
-                        if (this.getMonth() != null) {
-                            when += "-" + this.getMonth();
-                            if (this.getDay() != null) {
-                                when += "-" + this.getDay();
-                            }
-                        }
+						String when = "";
+						if (this.getYear().length() == 1)
+							when += "000" + this.getYear();
+						else if (this.getYear().length() == 2)
+							when += "00" + this.getYear();
+						else if (this.getYear().length() == 3)
+							when += "0" + this.getYear();
+						else if (this.getYear().length() == 4)
+							when += this.getYear();
+				
+		                if (this.getMonth() != null) {
+							if (this.getMonth().length() == 1)
+								when += "-0" + this.getMonth();
+							else
+								when += "-" + this.getMonth();
+		                    if (this.getDay() != null) {
+								if (this.getDay().length() == 1)
+									when += "-0" + this.getDay();
+								else
+									when += "-" + this.getDay();
+		                    }
+		                }
                         for (int i = 0; i < indent + 3; i++) {
                             tei.append("\t");
                         }

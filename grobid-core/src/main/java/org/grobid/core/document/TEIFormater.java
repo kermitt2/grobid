@@ -72,6 +72,12 @@ public class TEIFormater {
         } else {
             tei.append("\t<teiHeader>\n\t\t<fileDesc>\n\t\t\t<titleStmt>\n\t\t\t\t<title level=\"a\" type=\"main\">");
         }
+		
+		if (biblio == null) {
+			// if the biblio object is null, we simply create an empty one
+			biblio = new BiblioItem();
+		}
+		
         if (biblio.getTitle() != null) {
             tei.append(TextUtilities.HTMLEncode(biblio.getTitle()));
         }
@@ -94,7 +100,7 @@ public class TEIFormater {
             }
 	        else {
 	            // a dummy publicationStmt is still necessary according to TEI
-	            tei.append("\t\t\t<publicationStmt>");
+	            //tei.append("\t\t\t<publicationStmt>");
 	            if (defaultPublicationStatement == null) {
 	                tei.append("unknown");
 	            } else {
@@ -109,11 +115,25 @@ public class TEIFormater {
                 int month = date.getMonth();
                 int day = date.getDay();
 
-                String when = "" + year;
+                String when = "";
+				if (year <= 9) 
+					when += "000" + year;
+				else if (year <= 99) 
+					when += "00" + year;
+				else if (year <= 999)
+					when += "0" + year;
+				else
+					when += year;
                 if (month != -1) {
-                    when += "-" + month;
+					if (month <= 9) 
+						when += "-0" + month;
+					else 
+ 					   	when += "-" + month;
                     if (day != -1) {
-                        when += "-" + day;
+						if (day <= 9)
+							when += "-0" + day;
+						else
+							when += "-" + day;
                     }
                 }
                 tei.append("\t\t\t\t<date type=\"published\" when=\"");
@@ -126,15 +146,30 @@ public class TEIFormater {
 				}
 				tei.append("</date>\n");
             } else if (biblio.getYear() != null) {
-                String when = biblio.getYear();
+				String when = "";
+				if (biblio.getYear().length() == 1)
+					when += "000" + biblio.getYear();
+				else if (biblio.getYear().length() == 2)
+					when += "00" + biblio.getYear();
+				else if (biblio.getYear().length() == 3)
+					when += "0" + biblio.getYear();
+				else if (biblio.getYear().length() == 4)
+					when += biblio.getYear();
+				
                 if (biblio.getMonth() != null) {
-                    when += "-" + biblio.getMonth();
+					if (biblio.getMonth().length() == 1)
+						when += "-0" + biblio.getMonth();
+					else
+						when += "-" + biblio.getMonth();
                     if (biblio.getDay() != null) {
-                        when += "-" + biblio.getDay();
+						if (biblio.getDay().length() == 1)
+							when += "-0" + biblio.getDay();
+						else
+							when += "-" + biblio.getDay();
                     }
                 }
                 tei.append("\t\t\t\t<date type=\"published\" when=\"");
-                tei.append(when + "\" />");
+                tei.append(when + "\">");
 				if (biblio.getPublicationDate() != null) {
 					tei.append(biblio.getPublicationDate());
 				}
@@ -143,15 +178,31 @@ public class TEIFormater {
 				}
 				tei.append("</date>\n");
             } else if (biblio.getE_Year() != null) {
-                String when = biblio.getE_Year();
+				String when = "";
+				if (biblio.getE_Year().length() == 1)
+					when += "000" + biblio.getE_Year();
+				else if (biblio.getE_Year().length() == 2)
+					when += "00" + biblio.getE_Year();
+				else if (biblio.getE_Year().length() == 3)
+					when += "0" + biblio.getE_Year();
+				else if (biblio.getE_Year().length() == 4)
+					when += biblio.getE_Year();
+				
                 if (biblio.getE_Month() != null) {
-                    when += "-" + biblio.getE_Month();
+					if (biblio.getE_Month().length() == 1)
+						when += "-0" + biblio.getE_Month();
+					else
+						when += "-" + biblio.getE_Month();
+					
                     if (biblio.getE_Day() != null) {
-                        when += "-" + biblio.getE_Day();
-                    }
+						if (biblio.getE_Day().length() == 1)
+							when += "-0" + biblio.getE_Day();
+						else
+							when += "-" + biblio.getE_Day();
+  					 }
                 }
                 tei.append("\t\t\t\t<date type=\"ePublished\" when=\"");
-                tei.append(when + "\" />");
+                tei.append(when + "\">");
 				if (biblio.getPublicationDate() != null) {
 					tei.append(biblio.getPublicationDate());
 				}
@@ -344,9 +395,8 @@ public class TEIFormater {
                     if (st.countTokens() == 2) {
                         tei.append("\t\t\t\t\t\t\t<biblScope unit=\"page\"");
 						tei.append(" from=\"" + TextUtilities.HTMLEncode(st.nextToken()) + "\"");
-						tei.append(" to=\"" + TextUtilities.HTMLEncode(st.nextToken()) + "\"");
-                        tei.append(">" + TextUtilities.HTMLEncode(pageRange) + "</biblScope>\n");
-						
+						tei.append(" to=\"" + TextUtilities.HTMLEncode(st.nextToken()) + "\"/>\n");
+                        //tei.append(">" + TextUtilities.HTMLEncode(pageRange) + "</biblScope>\n");
                     } else {
                         tei.append("\t\t\t\t\t\t\t<biblScope unit=\"page\">" + TextUtilities.HTMLEncode(pageRange)
                                 + "</biblScope>\n");
@@ -359,7 +409,7 @@ public class TEIFormater {
 					}
 					else {
 						tei.append("\t\t\t\t\t\t\t<biblScope unit=\"page\"");
-						tei.append(" from=\"" + biblio.getBeginPage() + "\"/>");
+						tei.append(" from=\"" + biblio.getBeginPage() + "\"/>\n");
 					}
                 }
 
@@ -371,13 +421,27 @@ public class TEIFormater {
                         int month = date.getMonth();
                         int day = date.getDay();
 
-                        String when = "" + year;
-                        if (month != -1) {
-                            when += "-" + month;
-                            if (day != -1) {
-                                when += "-" + day;
-                            }
-                        }
+		                String when = "";
+						if (year <= 9) 
+							when += "000" + year;
+						else if (year <= 99) 
+							when += "00" + year;
+						else if (year <= 999)
+							when += "0" + year;
+						else
+							when += year;
+		                if (month != -1) {
+							if (month <= 9) 
+								when += "-0" + month;
+							else 
+		 					   	when += "-" + month;
+		                    if (day != -1) {
+								if (day <= 9)
+									when += "-0" + day;
+								else
+									when += "-" + day;
+		                    }
+		                }
 						if (biblio.getPublicationDate() != null) {
                         	tei.append("\t\t\t\t\t\t\t<date type=\"published\" when=\"");
                         	tei.append(when + "\">");
@@ -389,13 +453,28 @@ public class TEIFormater {
                         	tei.append(when + "\" />\n");
 						}
                     } else if (biblio.getYear() != null) {
-                        String when = biblio.getYear();
-                        if (biblio.getMonth() != null) {
-                            when += "-" + biblio.getMonth();
-                            if (biblio.getDay() != null) {
-                                when += "-" + biblio.getDay();
-                            }
-                        }
+						String when = "";
+						if (biblio.getYear().length() == 1)
+							when += "000" + biblio.getYear();
+						else if (biblio.getYear().length() == 2)
+							when += "00" + biblio.getYear();
+						else if (biblio.getYear().length() == 3)
+							when += "0" + biblio.getYear();
+						else if (biblio.getYear().length() == 4)
+							when += biblio.getYear();
+				
+		                if (biblio.getMonth() != null) {
+							if (biblio.getMonth().length() == 1)
+								when += "-0" + biblio.getMonth();
+							else
+								when += "-" + biblio.getMonth();
+		                    if (biblio.getDay() != null) {
+								if (biblio.getDay().length() == 1)
+									when += "-0" + biblio.getDay();
+								else
+									when += "-" + biblio.getDay();
+		                    }
+		                }
 						if (biblio.getPublicationDate() != null) {
 							tei.append("\t\t\t\t\t\t\t<date type=\"published\" when=\"");
                         	tei.append(when + "\">");
@@ -407,13 +486,29 @@ public class TEIFormater {
                         	tei.append(when + "\" />\n");
 						}
                     } else if (biblio.getE_Year() != null) {
-                        String when = biblio.getE_Year();
-                        if (biblio.getE_Month() != null) {
-                            when += "-" + biblio.getE_Month();
-                            if (biblio.getE_Day() != null) {
-                                when += "-" + biblio.getE_Day();
-                            }
-                        }
+						String when = "";
+						if (biblio.getE_Year().length() == 1)
+							when += "000" + biblio.getE_Year();
+						else if (biblio.getE_Year().length() == 2)
+							when += "00" + biblio.getE_Year();
+						else if (biblio.getE_Year().length() == 3)
+							when += "0" + biblio.getE_Year();
+						else if (biblio.getE_Year().length() == 4)
+							when += biblio.getE_Year();
+				
+		                if (biblio.getE_Month() != null) {
+							if (biblio.getE_Month().length() == 1)
+								when += "-0" + biblio.getE_Month();
+							else
+								when += "-" + biblio.getE_Month();
+					
+		                    if (biblio.getE_Day() != null) {
+								if (biblio.getE_Day().length() == 1)
+									when += "-0" + biblio.getE_Day();
+								else
+									when += "-" + biblio.getE_Day();
+		  					 }
+		                }
                         tei.append("\t\t\t\t\t\t\t<date type=\"ePublished\" when=\"");
                         tei.append(when + "\" />\n");
                     } else if (biblio.getPublicationDate() != null) {

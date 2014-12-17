@@ -61,7 +61,7 @@ public class BookStructureParser extends AbstractParser {
                 throw new Exception("PDF parsing fails");
             }
             doc.setPathXML(pathXML);
-            doc.addFeaturesDocument();
+            doc.addTokenizedDocument();
 
             if (doc.getBlocks() == null) {
                 throw new Exception("PDF parsing resulted in empty content");

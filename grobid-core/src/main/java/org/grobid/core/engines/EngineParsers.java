@@ -9,7 +9,7 @@ import java.io.Closeable;
 import java.io.IOException;
 
 /**
- * User: zholudev
+ * @author Slava
  * Date: 4/15/14
  */
 public class EngineParsers implements Closeable {
