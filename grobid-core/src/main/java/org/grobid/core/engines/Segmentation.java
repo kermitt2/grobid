@@ -36,7 +36,7 @@ import java.util.regex.Matcher;
 public class Segmentation extends AbstractParser {
 
 	/*
-        9 labels for this model:
+        8 labels for this model:
 	 		cover page <cover>, 
 			document header <header>, 
 			page footer <footnote>, 
@@ -44,7 +44,6 @@ public class Segmentation extends AbstractParser {
 			document body <body>, 
 			bibliographical section <references>, 
 			page number <page>,
-			? each bibliographical references in the biblio section <ref>,
 			annexes <annex>
 	*/
 
@@ -65,13 +64,26 @@ public class Segmentation extends AbstractParser {
     }
 
     /**
-     * TODO some documentation...
+     *  Segment a PDF document into high level zones: cover page, document header, 
+     *	page footer, page header, body, page numbers, biblio section and annexes.
      *
      * @param input filename of pdf file
      * @return Document object with segmentation informations
      */
+	public Document processing(String input) {
+		return processing(input, false);
+	}
 
-    public Document processing(String input) {
+    /**
+     *  Segment a PDF document into high level zones: cover page, document header, 
+     *	page footer, page header, body, page numbers, biblio section and annexes.
+     *
+     * @param input filename of pdf file
+	 * @param headerMode boolean indicating if we simply try to identify the header section, this is useful 
+	 * in term of speed if only the header extraction is to be performed in the next stages
+     * @return Document object with segmentation informations
+     */
+    public Document processing(String input, boolean headerMode) {
         if (input == null) {
             throw new GrobidResourceException("Cannot process pdf file, because input file was null.");
         }
@@ -92,6 +104,10 @@ public class Segmentation extends AbstractParser {
         try {
             int startPage = -1;
             int endPage = -1;
+			if (headerMode) {
+				startPage = 0;
+				endPage = 2;
+			}
             pathXML = doc.pdf2xml(true, false, startPage, endPage, input, tmpPath.getAbsolutePath(), false);
             //with timeout,
             //no force pdf reloading
@@ -103,27 +119,33 @@ public class Segmentation extends AbstractParser {
                         "because path of where to store xml file is null.");
             }
             doc.setPathXML(pathXML);
-            List<String> tokenizations = doc.addFeaturesDocument();
+            List<String> tokenizations = doc.addTokenizedDocument();
 
             if (doc.getBlocks() == null) {
                 throw new GrobidException("PDF parsing resulted in empty content");
             }
 
-            //String content = doc.getFulltextFeatured(true, true);
-			String content = getFulltextFeatured(doc);
-            String labelledResult = label(content);
+			String content = getFulltextFeatured(doc, headerMode);
+			if ( (content != null) && (content.trim().length() > 0) ) {
+	            String labelledResult = label(content);
 
-            //FileUtils.writeStringToFile(new File("/tmp/x.txt"), labelledResult);
-			//FileUtils.writeStringToFile(new File("/tmp/x2.txt"), tokenizations.toString());
+	            //FileUtils.writeStringToFile(new File("/tmp/x.txt"), labelledResult);
+				//FileUtils.writeStringToFile(new File("/tmp/x2.txt"), tokenizations.toString());
 
-            // set the different sections of the Document object
-            doc = BasicStructureBuilder.generalResultSegmentation(doc, labelledResult, tokenizations);
+	            // set the different sections of the Document object
+	            doc = BasicStructureBuilder.generalResultSegmentation(doc, labelledResult, tokenizations);
 
-//            System.out.println(doc.getBlockReferences());
-//            System.out.println("------------------");
-//            System.out.println(doc.getDocumentPieceText(doc.getDocumentPart(SegmentationLabel.REFERENCES)));
-//            System.out.println("------------------");
-            //LOGGER.debug(labelledResult);
+	//			System.out.println(doc.getBlockHeaders());
+	//            System.out.println("------------------");
+	//			System.out.println(doc.getDocumentPieceText(doc.getDocumentPart(SegmentationLabel.HEADER)));
+	//			System.out.println("------------------");
+
+	//            System.out.println(doc.getBlockReferences());
+	//            System.out.println("------------------");
+	//            System.out.println(doc.getDocumentPieceText(doc.getDocumentPart(SegmentationLabel.REFERENCES)));
+	//            System.out.println("------------------");
+	            //LOGGER.debug(labelledResult);
+			}
             return doc;
         } catch (Exception e) {
             throw new GrobidException("An exception occurred while running Grobid.", e);
@@ -134,7 +156,7 @@ public class Segmentation extends AbstractParser {
     }
 
 
-	public String getFulltextFeatured(Document doc) {
+	private String getFulltextFeatured(Document doc, boolean headerMode) {
 		FeatureFactory featureFactory = FeatureFactory.getInstance();
         StringBuilder fulltext = new StringBuilder();
         String currentFont = null;
@@ -166,6 +188,11 @@ public class Segmentation extends AbstractParser {
 			if (tokens == null) 
 				continue;
 			documentLength += tokens.size();
+		}
+		if (headerMode) {
+			// if we only aim to process the header, we extracted only the two first pages, so
+			// we estimate the global length to for instance 10 pages, so 5 times more.
+			documentLength = documentLength * 5;
 		}
 
 		//int blockPos = dp1.getBlockPtr();
@@ -536,13 +563,13 @@ public class Segmentation extends AbstractParser {
                 throw new Exception("PDF parsing fails");
             }
             doc.setPathXML(pathXML);
-            doc.addFeaturesDocument();
+            doc.addTokenizedDocument();
 
             if (doc.getBlocks() == null) {
                 throw new Exception("PDF parsing resulted in empty content");
             }
 
-            String fulltext = getFulltextFeatured(doc);
+            String fulltext = getFulltextFeatured(doc, false);
             List<String> tokenizations = doc.getTokenizationsFulltext();
 
             // we write the full text untagged

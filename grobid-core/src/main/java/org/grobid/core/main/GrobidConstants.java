@@ -1,9 +1,7 @@
 package org.grobid.core.main;
 
 /**
- * User: zholudev
- * Date: 11/17/11
- * Time: 2:22 PM
+ * @author Slava
  */
 public class GrobidConstants {
     //a name of a native CRF++ library without an extension

@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.StringTokenizer;
 
 /**
- * User: zholudev
+ * @author Slava
  * Date: 4/14/14
  */
 public class ReferenceSegmenterParser extends AbstractParser implements ReferenceSegmenter{
