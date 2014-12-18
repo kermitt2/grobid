@@ -640,6 +640,8 @@ public class Engine implements Closeable {
 					exp.printStackTrace();
                     LOGGER.error("An error occured while processing the following pdf: " + pdfFile.getPath() + ": " + exp);
                 }
+				if (ind != -1)
+					n++;
             }
 
             return refFiles.length;
