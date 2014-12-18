@@ -17,6 +17,9 @@ import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.LanguageUtilities;
 import org.grobid.core.utilities.Pair;
 import org.grobid.core.utilities.TextUtilities;
+import org.grobid.core.engines.citations.LabeledReferenceResult;
+import org.grobid.core.engines.citations.ReferenceSegmenter;
+import org.grobid.core.engines.counters.CitationParserCounters;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -631,70 +634,67 @@ public class FullTextParser extends AbstractParser {
 	            // write the TEI file to reflect the extract layout of the text as extracted from the pdf
 	            writer = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
 	                    "/" + PDFFileName.replace(".pdf", ".training.fulltext.tei.xml")), false), "UTF-8");
-	            writer.write("<?xml version=\"1.0\" ?>\n<tei>\n\t<teiHeader>\n\t\t<fileDesc xml:id=\"" + id +
+				if (id == -1) {
+					writer.write("<?xml version=\"1.0\" ?>\n<tei>\n\t<teiHeader/>\n\t<text xml:lang=\"en\">\n");
+				}
+				else {	
+					writer.write("<?xml version=\"1.0\" ?>\n<tei>\n\t<teiHeader>\n\t\t<fileDesc xml:id=\"" + id +
 	                    "\"/>\n\t</teiHeader>\n\t<text xml:lang=\"en\">\n");
-
+				}
 	            writer.write(bufferFulltext.toString());
 	            writer.write("\n\t</text>\n</tei>\n");
 	            writer.close();
 
-	            // output of the identified citations as traning date
-
-	            // buffer for the reference block
-	            /*
+				// output of header as training data
+				// ...
+				
+	            // output of the identified citations as traning data
 				StringBuilder allBufferReference = new StringBuilder();
-	            // we need to rebuild the found citation string as it appears
-	            String input = "";
-	            List<String> inputs = new ArrayList<>();
-	            int q = 0;
-	            StringTokenizer st = new StringTokenizer(rese, "\n");
-	            while (st.hasMoreTokens() && (q < tokenizations.size())) {
-	                String line = st.nextToken();
-	                String theTotalTok = tokenizations.get(q);
-	                String theTok = tokenizations.get(q);
-	                while (theTok.equals(" ") || theTok.equals("\t") || theTok.equals("\n")) {
-	                    q++;
-	                    theTok = tokenizations.get(q);
-	                    theTotalTok += theTok;
-	                }
-	                if (line.endsWith("I-<reference>")) {
-	                    if (input.trim().length() > 1) {
-	                        inputs.add(input.trim());
-	                        input = "";
-	                    }
-	                    input += "\n" + theTotalTok;
-	                } else if (line.endsWith("<reference>")) {
-	                    input += theTotalTok;
-	                }
-	                q++;
+	            String referencesStr = doc.getDocumentPartText(SegmentationLabel.REFERENCES);
+	            if (!referencesStr.isEmpty()) {
+	                cntManager.i(CitationParserCounters.NOT_EMPTY_REFERENCES_BLOCKS);
 	            }
-	            if (input.trim().length() > 1) {
-	                inputs.add(input.trim());
-	                if (citationParser == null) {
-	                    citationParser = new CitationParser();
-	                }
-	                for (String inpu : inputs) {
-	                    List<String> inpus = new ArrayList<>();
-	                    inpus.add(inpu);
-	                    StringBuilder bufferReference = citationParser.trainingExtraction(inpus);
-	                    if (bufferReference != null) {
-	                        allBufferReference.append(bufferReference.toString()).append("\n");
-	                    }
-	                }
-	            }
+	//			List<String> tokenizations = doc.getTokenizationsReferences();
+				ReferenceSegmenter referenceSegmenter = parsers.getReferenceSegmenterParser();
+	            List<LabeledReferenceResult> references = referenceSegmenter.extract(referencesStr);
 
-	            if (allBufferReference.length() > 0) {
+	            if (references == null) {
+	                cntManager.i(CitationParserCounters.NULL_SEGMENTED_REFERENCES_LIST);
+	                return doc;
+	            } else {
+	                cntManager.i(CitationParserCounters.SEGMENTED_REFERENCES, references.size());
+	            }
+				List<String> allInput = new ArrayList<String>();
+	            for (LabeledReferenceResult ref : references) {
+					allInput.add(ref.getReferenceText());
+				}
+				StringBuilder bufferReference = parsers.getCitationParser().trainingExtraction(allInput);
+                if (bufferReference != null) {
+                    bufferReference.append("\n");
+
 	                Writer writerReference = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
 	                        "/" + PDFFileName.replace(".pdf", ".training.references.xml")), false), "UTF-8");
-	                writerReference.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
-	                writerReference.write("<citations>\n");
+					
+					writerReference.write("<?xml version=\"1.0\" ?>\n<TEI xmlns=\"http://www.tei-c.org/ns/1.0\" " + 	
+											"xmlns:xlink=\"http://www.w3.org/1999/xlink\" " +
+					                		"\n xmlns:mml=\"http://www.w3.org/1998/Math/MathML\">\n");
+					if (id == -1) {
+						writerReference.write("\t<teiHeader/>\n\t<text>\n\t\t<front/>\n\t\t<body/>\n\t\t<back>\n");
+					}
+					else {
+						writerReference.write("\t<teiHeader>\n\t\t<fileDesc xml:id=\"" + id +
+		                    "\"/>\n\t</teiHeader>\n\t<text>\n\t\t<front/>\n\t\t<body/>\n\t\t<back>\n");
+					}
+	                writerReference.write("<listBibl>\n");
 
-	                writerReference.write(allBufferReference.toString());
+	                writerReference.write(bufferReference.toString());
 
-	                writerReference.write("</citations>\n");
+					writerReference.write("\t\t</listBibl>\n\t</back>\n\t</text>\n</TEI>\n");
 	                writerReference.close();
 	            }
-				*/
+				
+				// output of other training data
+				// ...
 			}
 	       
 			return doc;

@@ -189,21 +189,26 @@ public class ProcessEngine implements Closeable {
         final File pdfDirectory = new File(pGbdArgs.getPath2Input());
         File[] files = pdfDirectory.listFiles();
         if (files != null) {
+			int id = 0;
             for (final File currPdf : files) {
                 try {
                     if (currPdf.getName().toLowerCase().endsWith(".pdf")) {
 						final List<BibDataSet> results = getEngine().processReferences(currPdf.getAbsolutePath(), false);
 						StringBuffer result = new StringBuffer();
 						// dummy header
-						result.append("<TEI xmlns=\"http://www.tei-c.org/ns/1.0\" " + 	
+						result.append("<?xml version=\"1.0\" ?>\n<TEI xmlns=\"http://www.tei-c.org/ns/1.0\" " + 	
 						"xmlns:xlink=\"http://www.w3.org/1999/xlink\" " +
                 		"\n xmlns:mml=\"http://www.w3.org/1998/Math/MathML\">\n");
-						result.append("\t<teiHeader/>\n\t<text/>\n\t<front/>\n\t<body/>\n\t<back>\n\t\t<listBibl>\n");
+						
+						result.append("\t<teiHeader>\n\t\t<fileDesc xml:id=\"f_" + id + 
+							"\"/>\n\t</teiHeader>\n");
+						
+						result.append("\t<text>\n\t\t<front/>\n\t\t<body/>\n\t\t<back>\n\t\t\t<listBibl>\n");
 						for(BibDataSet res : results) {
 							result.append(res.toTEI());
 							result.append("\n");
 						}
-						result.append("\t\t</listBibl>\n\t</back>\n</TEI>\n");
+						result.append("\t\t\t</listBibl>\n\t\t</back>\n\t</text>\n</TEI>\n");
                         Utilities.writeInFile(pGbdArgs.getPath2Output() + File.separator
                                 + new File(currPdf.getAbsolutePath()).getName().replace(".pdf", ".references.tei.xml"), 
 									result.toString());
@@ -212,6 +217,7 @@ public class ProcessEngine implements Closeable {
                     LOGGER.error("An error occured while processing the file " + currPdf.getAbsolutePath()
                             + ". Continuing the process for the other files");
                 }
+				id++;
 			}	 
 		} 
     }
