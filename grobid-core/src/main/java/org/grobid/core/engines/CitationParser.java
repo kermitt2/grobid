@@ -191,7 +191,7 @@ public class CitationParser extends AbstractParser {
             Document doc = parsers.getSegmentationParser().processing(input);
 
             String referencesStr = doc.getDocumentPartText(SegmentationLabel.REFERENCES);
-            if (!referencesStr.isEmpty()) {
+            if ((referencesStr != null) && (!referencesStr.isEmpty())) {
                 cntManager.i(CitationParserCounters.NOT_EMPTY_REFERENCES_BLOCKS);
             }
 //			List<String> tokenizations = doc.getTokenizationsReferences();

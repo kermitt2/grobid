@@ -33,8 +33,8 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
 
         //String input = referenceBlock.replace("\n", " @newline ");
         String input = referenceBlock;
-		//input = input.replaceAll("\\p{Cntrl}", " ").trim();
-        //StringTokenizer st = new StringTokenizer(input, TextUtilities.fullPunctuations, true);
+		if ( (input == null) || (input.trim().length()== 0) )
+			return null;
 		StringTokenizer st = new StringTokenizer(input, TextUtilities.delimiters, true);
 		
         if (st.countTokens() == 0) {

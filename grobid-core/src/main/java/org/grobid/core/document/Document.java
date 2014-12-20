@@ -1857,10 +1857,21 @@ public class Document {
     }
 
     public SortedSet<DocumentPiece> getDocumentPart(SegmentationLabel segmentationLabel) {
+		if (labeledBlocks == null) {
+			LOGGER.debug("labeledBlocks is null");
+			return null;
+		}
+		if (segmentationLabel.getLabel() == null) {
+			System.out.println("segmentationLabel.getLabel()  is null");
+		}
         return labeledBlocks.get(segmentationLabel.getLabel());
     }
 
     public String getDocumentPartText(SegmentationLabel segmentationLabel) {
-        return getDocumentPieceText(getDocumentPart(segmentationLabel));
+		SortedSet<DocumentPiece> pieces = getDocumentPart(segmentationLabel);
+		if (pieces == null)
+			return null;
+		else 
+			return getDocumentPieceText(getDocumentPart(segmentationLabel));
     }
 }

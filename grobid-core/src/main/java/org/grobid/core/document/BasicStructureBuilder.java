@@ -733,8 +733,27 @@ public class BasicStructureBuilder {
 				if (!labeledTokenPair.a.startsWith(documentTokens.get(p))) {
 					// this is a very exceptional case due to a sequence of accent/diacresis, in this case we skip 
 					// a shift in the tokenizations list and continue on the basis of the labeled token
-					LOGGER.debug("Implementation error: tokens out of sync: '" + token + "' at position " + p + " vs. '" + labeledTokenPair.a + "'");
+					//LOGGER.error("Implementation error: tokens out of sync: '" + token + "' at position " + p + " vs. '" + labeledTokenPair.a + "'");
 					//throw new IllegalStateException("Implementation error: tokens out of sync: '" + token + "' at position " + p + " vs. '" + labeledTokenPair.a + "'");
+					// we check one ahead
+	                p++;
+	                token = documentTokens.get(p);
+					if (!labeledTokenPair.a.equals(token)) {
+						// we try another position forward (second hope!)
+		                p++;
+		                token = documentTokens.get(p);
+						if (!labeledTokenPair.a.equals(token)) {
+							// we try another position forward (last hope!)
+			                p++;
+			                token = documentTokens.get(p);
+							if (!labeledTokenPair.a.equals(token)) {
+								// we return to the initial position
+								p = p-3;
+								token = documentTokens.get(p);
+								LOGGER.debug("Implementation error: tokens out of sync: '" + token + "' at position " + p + " vs. '" + labeledTokenPair.a + "'");
+							}
+						}
+					}
 				}
 				// if the above condition is true, this is an exceptional case due to a sequence of accent/diacresis
 				// and we can go on as a full string match
@@ -744,15 +763,26 @@ public class BasicStructureBuilder {
             curPlainLabel = GenericTaggerUtils.getPlainLabel(curLabel);
 
             //updating block index
-            while (!curLabel.equals(ignoredLabel) && docBlocks.get(blockIndex).getEndToken() <= p) {
+            while (!curLabel.equals(ignoredLabel) && 
+				(blockIndex < docBlocks.size()) &&
+				docBlocks.get(blockIndex).getEndToken() <= p) {
                 blockIndex++;
             }
+			
+			if (blockIndex == docBlocks.size()) {
+				LOGGER.debug("Position error: blockIndex at " + blockIndex + ", size of docBlocks.");
+				break;
+			}
 
             //defensive check
             Block curBlock = docBlocks.get(blockIndex);
             if (!curLabel.equals(ignoredLabel) && !(curBlock.getStartToken() <= p && p < curBlock.getEndToken())) {
-                throw new IllegalStateException("Implementation error: token at position " + p +
+                //throw new IllegalStateException("Implementation error: token at position " + p +
+                //        " is out of sync with the current block: " + curBlock);
+				LOGGER.debug("Implementation error: token at position " + p +
                         " is out of sync with the current block: " + curBlock);
+				//blockIndex++;
+				//curBlock = docBlocks.get(blockIndex);
             }
 
             currentPointer = new DocumentPointer(doc, blockIndex, p);
@@ -769,7 +799,6 @@ public class BasicStructureBuilder {
             p++;
 
         }
-
 
         return doc;
     }
