@@ -57,7 +57,28 @@ public class HeaderParser extends AbstractParser {
 		tmpPath = GrobidProperties.getTempPath();
 	}
 
-	public Pair<String, Document> processing(String input, boolean consolidate, BiblioItem resHeader, int startPage, int endPage) throws TimeoutException {
+	/**
+	 * Processing with application of the segmentation model
+	 */ 
+	public Pair<String, Document> processing(String input, boolean consolidate, BiblioItem resHeader) throws TimeoutException {
+        try {
+
+            Document doc = parsers.getSegmentationParser().processing(input, true);
+
+			String tei = processingHeaderSection(doc, consolidate, resHeader);
+            return new ImmutablePair<String, Document>(tei, doc);
+        } catch (TimeoutException timeoutExp) {
+            throw new TimeoutException("A time out occured");
+        } catch (final Exception exp) {
+            throw new GrobidException("An exception occurred while running Grobid on file " + tmpPath.getAbsolutePath() + ": " + exp);
+        } 
+    }
+	
+	/**
+	 *  Processing without application of the segmentation model, regex are used to identify the header
+	 *  zone.  
+	 */ 
+	public Pair<String, Document> processing2(String input, boolean consolidate, BiblioItem resHeader, int startPage, int endPage) throws TimeoutException {
         Document doc = new Document(input, tmpPath.getAbsolutePath());
         String pathXML = null;
         try {
@@ -90,23 +111,6 @@ public class HeaderParser extends AbstractParser {
         } finally {
             doc.cleanLxmlFile(pathXML, true);
         }
-    }
-
-	/**
-	 * Processing with application of the segmentation model
-	 */ 
-	public Pair<String, Document> processing2(String input, boolean consolidate, BiblioItem resHeader) throws TimeoutException {
-        try {
-
-            Document doc = parsers.getSegmentationParser().processing(input, true);
-
-			String tei = processingHeaderSection(doc, consolidate, resHeader);
-            return new ImmutablePair<String, Document>(tei, doc);
-        } catch (TimeoutException timeoutExp) {
-            throw new TimeoutException("A time out occured");
-        } catch (final Exception exp) {
-            throw new GrobidException("An exception occurred while running Grobid on file " + tmpPath.getAbsolutePath() + ": " + exp);
-        } 
     }
 
 	public String processingHeaderBlock(boolean consolidate, Document doc, BiblioItem resHeader) {

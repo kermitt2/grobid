@@ -90,7 +90,7 @@ public class TEIFormater {
             if (biblio.getPublisher() != null) {
 				// publisher and date under <publicationStmt> for better TEI conformance
 				tei.append("\t\t\t\t<publisher>" + TextUtilities.HTMLEncode(biblio.getPublisher()) + 
-					"</publisher>");
+					"</publisher>\n");
 				
                 tei.append("\t\t\t\t<availability>");
                 tei.append("<p>Copyright ");
@@ -325,7 +325,7 @@ public class TEIFormater {
                         tei.append("\t\t\t\t\t\t<meeting>" + TextUtilities.HTMLEncode(meeting));
                         if ((biblio.getLocation() != null) || (biblio.getTown() != null) ||
                                 (biblio.getCountry() != null)) {
-                            tei.append("<address>");
+                            tei.append(" <address>");
                             if (biblio.getTown() != null) {
                                 tei.append("<settlement>" + biblio.getTown() + "</settlement>");
                             }
@@ -336,7 +336,7 @@ public class TEIFormater {
                                     (biblio.getCountry() == null)) {
                                 tei.append(TextUtilities.HTMLEncode(biblio.getLocation()));
                             }
-                            tei.append("</address>");
+                            tei.append("</address>\n");
                             meetLoc = true;
                         }
                         tei.append("\t\t\t\t\t\t</meeting>\n");
@@ -349,12 +349,12 @@ public class TEIFormater {
                     (biblio.getCountry() != null))
                     && (!meetLoc)) {
                 tei.append("\t\t\t\t\t\t<meeting>");
-                tei.append("<address>");
+                tei.append(" <address>");
                 if (biblio.getTown() != null) {
-                    tei.append("<settlement>" + biblio.getTown() + "</settlement>");
+                    tei.append(" <settlement>" + biblio.getTown() + "</settlement>");
                 }
                 if (biblio.getCountry() != null) {
-                    tei.append("<country>" + biblio.getCountry() + "</country>");
+                    tei.append(" <country>" + biblio.getCountry() + "</country>");
                 }
                 if ((biblio.getLocation() != null) && (biblio.getTown() == null)
                         && (biblio.getCountry() == null)) {

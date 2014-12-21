@@ -48,7 +48,7 @@ public class GrobidPoolingFactory extends AbstractEngineFactory implements
 					grobidEnginePool.setMaxActive(GrobidProperties.getMaxPoolConnections());
 					grobidEnginePool.setTestWhileIdle(false);
 					grobidEnginePool.setLifo(false);
-					grobidEnginePool.setTimeBetweenEvictionRunsMillis(1000);
+					grobidEnginePool.setTimeBetweenEvictionRunsMillis(2000);
 					grobidEnginePool.setMaxIdle(0);
 				}
 			}
@@ -76,7 +76,7 @@ public class GrobidPoolingFactory extends AbstractEngineFactory implements
 					"An error occured while getting an engine from the engine pool: "
 							+ exp);
 		}
-		LOGGER.debug("Number of Engines in pool active/max: "
+		LOGGER.error("Number of Engines in pool active/max: "
 				+ grobidEnginePool.getNumActive() + "/"
 				+ grobidEnginePool.getMaxActive());
 		return engine;
