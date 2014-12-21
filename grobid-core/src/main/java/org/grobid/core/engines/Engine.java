@@ -448,8 +448,8 @@ public class Engine implements Closeable {
             result = new BiblioItem();
         }
 
-        //Pair<String, Document> resultTEI = parsers.getHeaderParser().processing(inputFile, consolidate, result, startPage, endPage);
-		Pair<String, Document> resultTEI = parsers.getHeaderParser().processing2(inputFile, consolidate, result);
+        //Pair<String, Document> resultTEI = parsers.getHeaderParser().processing2(inputFile, consolidate, result, startPage, endPage);
+		Pair<String, Document> resultTEI = parsers.getHeaderParser().processing(inputFile, consolidate, result);
         Document doc = resultTEI.getRight();
         //close();
         return resultTEI.getLeft();
@@ -476,7 +476,7 @@ public class Engine implements Closeable {
             result = new BiblioItem();
         }
 
-        Pair<String, Document> resultTEI = parsers.getHeaderParser().processing2(inputFile, consolidate, result);
+        Pair<String, Document> resultTEI = parsers.getHeaderParser().processing(inputFile, consolidate, result);
         Document doc = resultTEI.getRight();
         //close();
         return resultTEI.getLeft();

@@ -577,20 +577,21 @@ public class Segmentation extends AbstractParser {
             Writer writer = new OutputStreamWriter(new FileOutputStream(new File(outPathFulltext), false), "UTF-8");
             writer.write(fulltext + "\n");
             writer.close();
+			
+			if ( (fulltext != null) && (fulltext.length() > 0) ) {
+	            String rese = label(fulltext);
+	            StringBuffer bufferFulltext = trainingExtraction(rese, tokenizations);
 
-            String rese = label(fulltext);
-            StringBuffer bufferFulltext = trainingExtraction(rese, tokenizations);
+	            // write the TEI file to reflect the extact layout of the text as extracted from the pdf
+	            writer = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
+	                    "/" + PDFFileName.replace(".pdf", ".training.segmentation.tei.xml")), false), "UTF-8");
+	            writer.write("<?xml version=\"1.0\" ?>\n<tei>\n\t<teiHeader>\n\t\t<fileDesc xml:id=\"" + id +
+	                    "\"/>\n\t</teiHeader>\n\t<text xml:lang=\"en\">\n");
 
-            // write the TEI file to reflect the extact layout of the text as extracted from the pdf
-            writer = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
-                    "/" + PDFFileName.replace(".pdf", ".training.segmentation.tei.xml")), false), "UTF-8");
-            writer.write("<?xml version=\"1.0\" ?>\n<tei>\n\t<teiHeader>\n\t\t<fileDesc xml:id=\"" + id +
-                    "\"/>\n\t</teiHeader>\n\t<text xml:lang=\"en\">\n");
-
-            writer.write(bufferFulltext.toString());
-            writer.write("\n\t</text>\n</tei>\n");
-            writer.close();
-
+	            writer.write(bufferFulltext.toString());
+	            writer.write("\n\t</text>\n</tei>\n");
+	            writer.close();
+			}
 
             // buffer for the reference block
     /*        StringBuilder allBufferReference = new StringBuilder();
@@ -623,7 +624,7 @@ public class Segmentation extends AbstractParser {
 
         } catch (Exception e) {
             throw new GrobidException("An exception occured while running Grobid training" +
-                    " data generation for full text.", e);
+                    " data generation for segmentation model.", e);
         } finally {
             doc.cleanLxmlFile(pathXML, true);
         }
