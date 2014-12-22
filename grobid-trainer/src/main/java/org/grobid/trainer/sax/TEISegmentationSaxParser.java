@@ -81,7 +81,8 @@ public class TEISegmentationSaxParser extends DefaultHandler {
 		else if (qName.equals("note") || 
 				 qName.equals("page") || 
 				 qName.equals("pages") || 
-				 qName.equals("pageTitle")) {
+//				 qName.equals("pageTitle") ||
+				 qName.equals("titlePage") ) {
 			currentTag = upperTag;
 		}
     }
