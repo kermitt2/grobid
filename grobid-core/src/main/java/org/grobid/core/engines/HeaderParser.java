@@ -127,8 +127,20 @@ public class HeaderParser extends AbstractParser {
 	            String res = label(header);
 				resHeader = resultExtraction(res, true, tokenizations, resHeader);
 
-				Language langu = languageUtilities.runLanguageId(resHeader.getTitle() + "\n" + resHeader.getKeywords() + "\n"
-						+ resHeader.getAbstract());
+				// language identification
+				String contentSample = "";
+				if (resHeader.getTitle() != null)
+					contentSample += resHeader.getTitle();
+				if (resHeader.getAbstract() != null)
+					 contentSample += "\n" + resHeader.getAbstract();
+				if (resHeader.getKeywords() != null)
+					 contentSample += "\n" + resHeader.getKeywords();
+				if (contentSample.length()<200) {
+					// we need more textual content to ensure that the language identification will be
+					// correct
+					contentSample += doc.getBody();
+				}
+				Language langu = languageUtilities.runLanguageId(contentSample);
 				if (langu != null) {
 					String lang = langu.getLangId();
 					doc.setLanguage(lang);
@@ -328,7 +340,7 @@ public class HeaderParser extends AbstractParser {
 							contentBuffer.append(" ");
 			            }
 					}
-					contentSample = contentBuffer.toString();
+					contentSample += " " + contentBuffer.toString();
 				}
 				Language langu = languageUtilities.runLanguageId(contentSample);
 				if (langu != null) {
