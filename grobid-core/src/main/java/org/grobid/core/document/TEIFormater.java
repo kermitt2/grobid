@@ -100,7 +100,6 @@ public class TEIFormater {
             }
 	        else {
 	            // a dummy publicationStmt is still necessary according to TEI
-	            //tei.append("\t\t\t<publicationStmt>");
 	            if (defaultPublicationStatement == null) {
 	                tei.append("unknown");
 	            } else {

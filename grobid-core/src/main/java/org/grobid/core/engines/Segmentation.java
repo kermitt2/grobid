@@ -106,7 +106,7 @@ public class Segmentation extends AbstractParser {
             int endPage = -1;
 			if (headerMode) {
 				startPage = 0;
-				endPage = 2;
+				endPage = 3;
 			}
             pathXML = doc.pdf2xml(true, false, startPage, endPage, input, tmpPath.getAbsolutePath(), false);
             //with timeout,
@@ -129,7 +129,7 @@ public class Segmentation extends AbstractParser {
 			if ( (content != null) && (content.trim().length() > 0) ) {
 	            String labelledResult = label(content);
 
-	            //FileUtils.writeStringToFile(new File("/tmp/x.txt"), labelledResult);
+	            FileUtils.writeStringToFile(new File("/tmp/x.txt"), labelledResult);
 				//FileUtils.writeStringToFile(new File("/tmp/x2.txt"), tokenizations.toString());
 
 	            // set the different sections of the Document object
