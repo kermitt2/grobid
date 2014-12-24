@@ -710,7 +710,7 @@ public class FullTextParser extends AbstractParser {
 								List<String> inputs = new ArrayList<String>();
 								inputs.add(authorSequence);
 								StringBuffer bufferName = parsers.getAuthorParser().trainingExtraction(inputs, false);
-						
+								
 								if ( (bufferName != null) && (bufferName.length()>0) ) {
 									writerName.write("\n\t\t\t\t\t\t<author>");
 									writerName.write(bufferName.toString());
