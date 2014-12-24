@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader/>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><author>J. P. SEGUIN, J. P. DOUCET et R. UZAN</author>. <title level="j">C. R. Acad. Sci. Ser. C</title>, <biblScope type="vol">278</biblScope>, <biblScope type="pp">129</biblScope> (<date>1974</date>);</bibl>
+	<bibl><author>M. A. MICHEL, G. MOUSSET et J. SIMONET</author>. <title level="j">J. Electroanal. Chem.</title> <biblScope type="vol">98</biblScope>, <biblScope type="pp">319</biblScope> (<date>1979</date>);</bibl>
+	<bibl><author>C. P. ANDRIEUX et J. M. SAVEANT</author>. <title level="j">Bull. Soc. Chim. Fr.</title> <biblScope type="pp">2090</biblScope> (<date>1973</date>);</bibl>	
+	<bibl><author>E. LAMY, L. NADJO et J. M. SAVEANT</author>. <title level="j">Electroanal. Chem.</title> <biblScope type="vol">50</biblScope>, <biblScope type="pp">141</biblScope> (<date>1974</date>);</bibl>
+	<bibl><author>W. R. FAWOETT et A. LASIA</author>. <title level="j">Can. J. Chem.</title> <biblScope type="vol">59</biblScope>, <biblScope type="pp">3256</biblScope> (<date>1981</date>);</bibl>
+	<bibl><author>P. H. GIVEN, M. E. PEOVER et J. SCHOEN</author>. <title level="j">J. Chem. Soc.</title> <biblScope type="pp">2674</biblScope> (<date>1958</date>);</bibl>
+	<bibl><author>A. BEWICK et H. CLEGHORN</author>. <title level="j">J. Chem. Soc. Perkin Trans.</title> <biblScope type="vol">2</biblScope>, <biblScope type="pp">140</biblScope> (<date>1973</date>).</bibl>
+	<bibl><author>M. PERRIN, P. POUILLEN, G. MOUSSET et P. MARTINET</author>. <title level="j">Tet-rahedron</title>, <biblScope type="vol">36</biblScope>, <biblScope type="pp">221</biblScope> (<date>1980</date>);</bibl>
+	<bibl><title level="j">C. R. Acad. Sci. Ser. C</title>, <biblScope type="vol">284</biblScope>, <biblScope type="pp">955</biblScope> (<date>1977</date>).</bibl>
+	<bibl><author>D. W. SOPHER et J. H. P. UTLEY</author>. <title level="j">J. Chem. Soc. Chem. Commun.</title> <biblScope type="pp">1087</biblScope> (<date>1979</date>).</bibl>
+	<bibl><author>F. FOURNIER, J. BERTHELOT et Y. L. PASCAL</author>. <title level="j">C. R. Acad. Sci.</title> <biblScope type="vol">294</biblScope>, série <biblScope type="issue">11</biblScope>, <biblScope type="pp">849</biblScope> (<date>1982</date>).</bibl>
+	<bibl><author>F. FOURNIER, J. BERTHELOT et Y. L. PASCAL</author>. <title level="j">Tetrahedron.</title> <note>À paraître</note>.</bibl>
+	<bibl><author>F. C. FREDERICK et K. E. JOHNSON</author>. <title level="j">J. Electrochem. Soc.</title> <biblScope type="vol">2070</biblScope> (<date>1981</date>).</bibl>
+	<bibl><author>G. ANTHOINE, J. NASIELSKI et B. WILMET-DEVOS</author>. <title level="j">Bull. Soc. Chim. Belg.</title> <biblScope type="vol">78</biblScope> , <biblScope type="pp">465</biblScope> (<date>1969</date>).</bibl>
+	<bibl><author>G. MAJERUS, E. YAX et G. OURISSON</author>. <title level="j">Bull. Soc. Chim. Fr.</title> <biblScope type="pp">4143</biblScope> (<date>1967</date>).</bibl>
+	<bibl><author>D. SEEBACH, H. A. OEI et H. DAUM</author>. <title level="j">Chem. Ber.</title> <biblScope type="vol">110</biblScope>, <biblScope type="pp">2316</biblScope> (<date>1977</date>).</bibl>
+	<bibl><author>Y. L. PASCAL, O. CONVERT, J. BERTHELOT et F. FOURNIER</author>. <title level="j">Tetrahedron</title>. <note>Soumis à publication</note>.</bibl>
+	<bibl><author>G. MAJERUS, E. YAX et G. OURISSON</author>. <title level="j">Bull. Soc. Chim. Fr.</title> <biblScope type="pp">4143</biblScope> (<date>1967</date>).</bibl>
+	<bibl><author>D. SEEBACH, H. A. OEI et H. DAUM</author>. <title level="j">Chem. Ber.</title> <biblScope type="vol">110</biblScope>, <biblScope type="pp">2316</biblScope> (<date>1977</date>).</bibl>
+	<bibl><author>H. GOTH, P. CERUTTI et H. SCHMIDT</author>. <title level="j">Helv. Chim. Acta</title>, <biblScope type="vol">48</biblScope>, <biblScope type="pp">1395</biblScope> (<date>1965</date>).</bibl>
+	<bibl><author>Y. ALTMAN et D. GINSBURG</author>. <title level="j">J. Chem. Soc.</title> <biblScope type="pp">1498</biblScope> (<date>1961</date>).</bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>
