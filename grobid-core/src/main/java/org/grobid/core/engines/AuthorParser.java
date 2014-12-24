@@ -420,21 +420,6 @@ public class AuthorParser implements Closeable {
             GenericTagger tagger = head ? namesHeaderParser : namesCitationParser;
             String res = tagger.label(header);
 
-//            StringTokenizer st = new StringTokenizer(header, "\n");
-//            AbstractParser.feedTaggerAndParse(tagger, st);
-//
-//            StringBuilder res = new StringBuilder();
-//            for (int i = 0; i < tagger.size(); i++) {
-//                for (int j = 0; j < tagger.xsize(); j++) {
-//                    res.append(tagger.x(i, j)).append("\t");
-//                }
-//
-//                res.append("<author>" + "\t");
-//                res.append(tagger.y2(i));
-//                res.append("\n");
-//            }
-//            tagger.delete();
-
             // extract results from the processed file
             StringTokenizer st2 = new StringTokenizer(res, "\n");
             String lastTag = null;
@@ -452,7 +437,11 @@ public class AuthorParser implements Closeable {
                 addSpace = false;
                 if ((line.trim().length() == 0)) {
                     // new author
-                    buffer.append("/t<author>\n");
+					if (head)
+                    	buffer.append("/t<author>\n");
+					else {
+						//buffer.append("<author>");
+					}
                     continue;
                 } else {
                     String theTok = tokenizations.get(q);
@@ -507,7 +496,7 @@ public class AuthorParser implements Closeable {
                     }
                 }
 
-                tagClosed = lastTag0 != null && testClosingTag(buffer, currentTag0, lastTag0);
+                tagClosed = lastTag0 != null && testClosingTag(buffer, currentTag0, lastTag0, head);
 
                 if (newLine) {
                     if (tagClosed) {
@@ -518,20 +507,20 @@ public class AuthorParser implements Closeable {
 
                 }
 
-                String output = writeField(s1, lastTag0, s2, "<marker>", "<marker>", addSpace, 8);
+                String output = writeField(s1, lastTag0, s2, "<marker>", "<marker>", addSpace, 8, head);
                 if (output != null) {
                     if (hasMarker) {
                         if (head) {
                             buffer.append("\t\t\t\t\t\t\t</persName>\n");
                         } else {
-                            buffer.append("\t\t\t\t\t\t</author>\n");
+                            //buffer.append("</author>\n");
                         }
                         hasForename = false;
                         hasSurname = false;
                         if (head) {
                             buffer.append("\t\t\t\t\t\t\t<persName>\n");
                         } else {
-                            buffer.append("\t\t\t\t\t\t<author>\n");
+                            //buffer.append("<author>\n");
                         }
                         hasMarker = true;
                     }
@@ -539,10 +528,10 @@ public class AuthorParser implements Closeable {
                     lastTag = s1;
                     continue;
                 } else {
-                    output = writeField(s1, lastTag0, s2, "<other>", "<other>", addSpace, 8);
+                    output = writeField(s1, lastTag0, s2, "<other>", "<other>", addSpace, 8, head);
                 }
                 if (output == null) {
-                    output = writeField(s1, lastTag0, s2, "<forename>", "<forename>", addSpace, 8);
+                    output = writeField(s1, lastTag0, s2, "<forename>", "<forename>", addSpace, 8, head);
                 } else {
                     if (buffer.length() > 0) {
                         if (buffer.charAt(buffer.length() - 1) == '\n') {
@@ -554,20 +543,20 @@ public class AuthorParser implements Closeable {
                     continue;
                 }
                 if (output == null) {
-                    output = writeField(s1, lastTag0, s2, "<middlename>", "<middlename>", addSpace, 8);
+                    output = writeField(s1, lastTag0, s2, "<middlename>", "<middlename>", addSpace, 8, head);
                 } else {
                     if (hasForename && !currentTag0.equals(lastTag0)) {
                         if (head) {
                             buffer.append("\t\t\t\t\t\t\t</persName>\n");
                         } else {
-                            buffer.append("\t\t\t\t\t\t</author>\n");
+                            //buffer.append("</author>\n");
                         }
                         hasMarker = false;
                         hasSurname = false;
                         if (head) {
                             buffer.append("\t\t\t\t\t\t\t<persName>\n");
                         } else {
-                            buffer.append("\t\t\t\t\t\t<author>\n");
+                            //buffer.append("<author>\n");
                         }
                     }
                     hasForename = true;
@@ -576,27 +565,27 @@ public class AuthorParser implements Closeable {
                     continue;
                 }
                 if (output == null) {
-                    output = writeField(s1, lastTag0, s2, "<surname>", "<surname>", addSpace, 8);
+                    output = writeField(s1, lastTag0, s2, "<surname>", "<surname>", addSpace, 8, head);
                 } else {
                     buffer.append(output);
                     lastTag = s1;
                     continue;
                 }
                 if (output == null) {
-                    output = writeField(s1, lastTag0, s2, "<title>", "<roleName>", addSpace, 8);
+                    output = writeField(s1, lastTag0, s2, "<title>", "<roleName>", addSpace, 8, head);
                 } else {
                     if (hasSurname && !currentTag0.equals(lastTag0)) {
                         if (head) {
                             buffer.append("\t\t\t\t\t\t\t</persName>\n");
                         } else {
-                            buffer.append("\t\t\t\t\t\t</author>\n");
+                            //buffer.append("</author>\n");
                         }
                         hasMarker = false;
                         hasForename = false;
                         if (head) {
                             buffer.append("\t\t\t\t\t\t\t<persName>\n");
                         } else {
-                            buffer.append("\t\t\t\t\t\t<author>\n");
+                            //buffer.append("<author>\n");
                         }
                     }
                     hasSurname = true;
@@ -605,7 +594,7 @@ public class AuthorParser implements Closeable {
                     continue;
                 }
                 if (output == null) {
-                    output = writeField(s1, lastTag0, s2, "<suffix>", "<suffix>", addSpace, 8);
+                    output = writeField(s1, lastTag0, s2, "<suffix>", "<suffix>", addSpace, 8, head);
                 } else {
                     buffer.append(output);
                     lastTag = s1;
@@ -627,7 +616,7 @@ public class AuthorParser implements Closeable {
                     lastTag0 = lastTag;
                 }
                 currentTag0 = "";
-                testClosingTag(buffer, currentTag0, lastTag0);
+                testClosingTag(buffer, currentTag0, lastTag0, head);
             }
         } catch (Exception e) {
 //			e.printStackTrace();
@@ -642,14 +631,11 @@ public class AuthorParser implements Closeable {
                               String field,
                               String outField,
                               boolean addSpace,
-                              int nbIndent) {
+                              int nbIndent, 
+							  boolean head) {
         String result = null;
         if ((s1.equals(field)) || (s1.equals("I-" + field))) {
             if ((s1.equals("<other>") || s1.equals("I-<other>"))) {
-                /*result = "";
-                    for(int i=0; i<nbIndent; i++) {
-                        result += "\t";
-                    }*/
                 if (addSpace)
                     result = " " + s2;
                 else
@@ -661,10 +647,15 @@ public class AuthorParser implements Closeable {
                     result = s2;
             } else {
                 result = "";
-                for (int i = 0; i < nbIndent; i++) {
-                    result += "\t";
-                }
-                result += outField + s2;
+				if (head) {
+	                for (int i = 0; i < nbIndent; i++) {
+	                    result += "\t";
+	                }
+				}
+				if (addSpace)
+					result += " " + outField + s2;
+				else		
+ 					result += outField + s2;
             }
         }
         return result;
@@ -672,25 +663,39 @@ public class AuthorParser implements Closeable {
 
     private boolean testClosingTag(StringBuffer buffer,
                                    String currentTag0,
-                                   String lastTag0) {
+                                   String lastTag0,
+								   boolean head) {
         boolean res = false;
         if (!currentTag0.equals(lastTag0)) {
             res = true;
             // we close the current tag
             if (lastTag0.equals("<other>")) {
-                buffer.append("\n");
+				if (head)
+					buffer.append("\n");
             } else if (lastTag0.equals("<forename>")) {
-                buffer.append("</forename>\n");
+                buffer.append("</forename>");
+				if (head)
+					buffer.append("\n");
             } else if (lastTag0.equals("<middlename>")) {
-                buffer.append("</middlename>\n");
+                buffer.append("</middlename>");
+				if (head)
+					buffer.append("\n");
             } else if (lastTag0.equals("<surname>")) {
-                buffer.append("</surname>\n");
+                buffer.append("</surname>");
+				if (head)
+					buffer.append("\n");
             } else if (lastTag0.equals("<title>")) {
-                buffer.append("</roleName>\n");
+                buffer.append("</roleName>");
+				if (head)
+					buffer.append("\n");
             } else if (lastTag0.equals("<suffix>")) {
-                buffer.append("</suffix>\n");
+                buffer.append("</suffix>");
+				if (head)
+					buffer.append("\n");
             } else if (lastTag0.equals("<marker>")) {
-                buffer.append("</marker>\n");
+                buffer.append("</marker>");
+				if (head)
+					buffer.append("\n");
             } else {
                 res = false;
             }
