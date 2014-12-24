@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader/>
+	<text>
+		<front/>
+		<body/>
+		<back>
+			<listBibl>
+				<bibl><author>I. ELLIOTT</author>. <title level="a">Dibenzopyrrocoline alkaloids</title>. Dans <title level="m">The^ alkaloids</title>. Vol. <biblScope type="vol">31</biblScope>. &#xC9;diteur : <editor>A. Brossi</editor>. <publisher>Academic Press</publisher>, <pubPlace>New York</pubPlace>. <date>1987</date>.</bibl>
+				<bibl><author>J. EWING, G. K. HUGUES, E. RITCHIE et W. C. TAYLOR</author>. <title level="j">Nature</title> (<pubPlace>London</pubPlace>), <biblScope type="vol">169</biblScope>, <biblScope type="pp">618</biblScope> (<date>1952</date>).</bibl>
+				<bibl><author>J. EWING, G. K. HUGUES, E. RITCHIE et W. C. TAYLOR</author>. <title level="j">Aust. J. Chem.</title><biblScope type="vol">6</biblScope>, <biblScope type="pp">78</biblScope> (<date>1953</date>).</bibl>
+				<bibl><author>T. KAMETANI et K. OGASAWARA</author>. <title level="j">Chem. Pharm. Bull.</title><biblScope type="vol">16</biblScope>, <biblScope type="pp">1498</biblScope> (<date>1968</date>).</bibl>
+				<bibl><author>M. SHAMMA et D. M. HINDENLANG</author>. <title level="a">Carbon-13 NMR shift assignments of amines and alkaloids</title>. <publisher>Plenum Press</publisher>, <pubPlace>New York</pubPlace>. <date>1979</date>.</bibl>
+				<bibl><author>A. J. MARSAIOLI, E. A. RUV&#xC9;DA et F. DE A. M. REIS</author>. <note type="report">Phyto-chemistry</note>, <biblScope type="vol">17</biblScope>, <biblScope type="pp">1655</biblScope> (<date>1978</date>).</bibl>
+				<bibl><author>C. P. MAKet A. BROSSI</author>. <title level="j">Heterocycles</title>, <biblScope type="vol">12</biblScope>, <biblScope type="pp">1413</biblScope> (<date>1979</date>).</bibl>
+				<bibl><author>S. TAKANO, S. SATOH, Y. OSHIMA etK. OGASAWARA</author>. <title level="j">Heterocy-cles</title>, <biblScope type="vol">26</biblScope>,<biblScope type="pp">1487</biblScope> (<date>1987</date>).</bibl>
+				<bibl><author>E. SANCHEZ et J. COMIN</author>. <title level="j">Tetrahedron Lett.</title><biblScope type="pp">1139</biblScope>(<date>1967</date>).</bibl>
+				<bibl><author>T. KAMETANI et K. OGASAWARA</author>. <title level="j">J. Chem. Soc. (C)</title>, <biblScope type="pp">2208</biblScope> (<date>1967</date>).</bibl>
+				<bibl><author>F. BENINGTON etR. D. MORIN. J.</author><title level="j">Org. Chem.</title><biblScope type="vol">32</biblScope>, <biblScope type="pp">1050</biblScope> (<date>1967</date>).</bibl>
+				<bibl><author>R. ROBINSON et S. SUGASAWA</author>. <title level="j">J. Chem. Soc.</title><biblScope type="pp">3163</biblScope> (<date>1931</date>).</bibl>
+				<bibl><author>FOU-TIAN et DOU-BIAN</author>. <title level="j">J. Pharm. Soc. Jpn.</title><biblScope type="vol">58</biblScope>,<biblScope type="pp">783</biblScope> (<date>1938</date>).</bibl>
+				<bibl><author>H. WEIL. Beilstein</author>, <biblScope type="vol">43</biblScope>, <biblScope type="pp">2605</biblScope> (<date>1910</date>).</bibl>
+				<bibl><author>R. G. NAIK et T. S. WHEELER</author>. <title level="j">J. Chem. Soc.</title><biblScope type="pp">1780</biblScope> (<date>1938</date>).</bibl>
+				<bibl><author>A. BROSSI, A. RAMEL, J. O'BRIEN et S. TEITEL</author>. <title level="j">Chem. Pharm. Bull.</title><biblScope type="vol">21</biblScope>, <biblScope type="pp">1839</biblScope>(<date>1973</date>).</bibl>
+				<bibl><author>I. R. C. BICK, W. SINCHAI, T. S&#xC9;VENET, A. RANAIVO, M. NIETO et A. CAV&#xC9;</author>. <title level="j">Planta Med.</title><biblScope type="vol">39</biblScope>, <biblScope type="pp">205</biblScope> (<date>1980</date>).</bibl>
+				<bibl><author>A. CAV&#xC9;, M. LEBOEUF, H. MOSKOWITZ, A. RANAIVO, I. R. C. BICK, W. SINCHAI, M. NIETO, T. S&#xC9;VENET et P. CABALION</author>. <title level="j">Aust. J. Chem.</title><note>Soumis</note>.</bibl>
+				<bibl><author>T. KAMETANI, A. UJIIE, K. TAKAHASHI, T. NAKANO, T. SUZUKI etK. FUKUMOTO</author><title level="j">Chem. Pharm. Bull.</title><biblScope type="vol">21</biblScope>, <biblScope type="pp">766</biblScope> (<date>1973</date>).</bibl>
+			</listBibl>
+		</back>
+	</text>
+</TEI>
