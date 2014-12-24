@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author><forename>B</forename>. <surname>VOGIN</surname>, <forename>F</forename>. <surname>BARONNET</surname> et <forename>G</forename>. <surname>SCACCHI</surname></author>
+						<author><forename>R</forename>. <middlename>T</middlename>. <surname>POLLARD</surname></author>
+						<author>&#xC9;diteurs : <forename>C</forename>. <middlename>H</middlename>. <surname>Bamford</surname> et <forename>C</forename>. <middlename>F</middlename>. <middlename>H</middlename>. <surname>Tipper</surname></author>
+						<author><forename>S</forename>. <middlename>W</middlename>. <surname>BENSON</surname></author>
+						<author><forename>S</forename>. <middlename>W</middlename>. <surname>BENSON</surname> et <forename>P</forename>. <middlename>S</middlename>. <surname>NANGIA</surname></author>
+						<author><forename>S</forename>. <middlename>W</middlename>. <surname>BENSON</surname>.</author>
+						<author><forename>I</forename>. <middlename>A</middlename>. <surname>OGORODNIKOV</surname>, <forename>S</forename>. <middlename>S</middlename>. <surname>POLYAK</surname> et <forename>V</forename>. <middlename>YA</middlename>. <surname>SHTERN</surname>. </author>
+						<author><forename>M</forename>. <middlename>M</middlename>. <surname>ALEKSISHVILI</surname>, <forename>S</forename>. <middlename>S</middlename>. <surname>POLYAK</surname> et <forename>V</forename>. <middlename>YA</middlename>. <surname>SHTERN</surname>. R&#xE9;f</author>
+						<author><forename>M</forename>. <middlename>M</middlename>. <surname>ALEKSISHVILI</surname>, <forename>S</forename>. <middlename>S</middlename>. POLYAK et <forename>V</forename>. <middlename>YA</middlename>. <surname>SHTERN</surname>. <surname>Kinet</surname>. Katal</author>
+						<author><forename>C</forename>. <middlename>A</middlename>. <surname>EUKER</surname> et <forename>J</forename>. <middlename>P</middlename>. <surname>LEINROTH</surname></author>
+						<author><forename>R</forename>. <middlename>R</middlename>. <surname>BALDWIN</surname> et <forename>R</forename>. <middlename>W</middlename>. <surname>WALKER</surname></author>
+						<author><forename>A</forename>. <surname>FISH</surname></author>
+						<author><forename>J</forename>. <middlename>H</middlename>. <surname>KNOX</surname>. <middlename>G</middlename>. <surname>Ashmore</surname>, <forename>T</forename>. <middlename>M</middlename>. <surname>Sugden</surname> et <forename>F</forename>. <middlename>S</middlename>. <surname>Dainton</surname></author>
+						<author><forename>D</forename>. <middlename>M</middlename>. <surname>NEWITT</surname> et <forename>L</forename>. <middlename>S</middlename>. <surname>THORNES</surname>.</author>
+						<author><forename>J</forename>. <middlename>F</middlename>. <surname>GRIFFITHS</surname>, <forename>B</forename>. <middlename>F</middlename>. <surname>GRAY</surname> et <forename>P</forename>. <surname>GRAY</surname></author>
+						<author><forename>A</forename>. <surname>ANTONIK</surname> et <forename>M</forename>. <surname>LUCQUIN</surname></author>
+						<author><forename>F</forename>. <surname>BARONNET</surname>, <forename>M</forename>. <middlename>P</middlename>. <surname>HALSTEAD</surname>, <forename>A</forename>. <surname>PROTHERO</surname> et <forename>C</forename>. <middlename>P</middlename>. <surname>QUINN</surname></author>
+						<author><forename>C</forename>.<middlename>R</middlename>. <surname>Acad</surname>.</author>
+						<author><forename>S</forename>. <middlename>W</middlename>. <surname>BENSON</surname></author>
+						<author><forename>M</forename>. <middlename>WEISSMAN</middlename>, <forename>L</forename>. <middlename>G</middlename>. <middlename>S</middlename>. <surname>SHUM</surname>, <forename>S</forename>. <middlename>P</middlename>. <surname>HENEGHEN</surname> et <forename>S</forename>. <middlename>W</middlename>. <surname>BENSON</surname></author>
+						<author><forename>J</forename>. <middlename>C</middlename>. <surname>BROCARD</surname>, <forename>F</forename>. <surname>BARONNET</surname> et <forename>H</forename>. <middlename>E</middlename>. <surname>O'NEAL</surname>.</author>
+						<author><forename>D</forename>. <middlename>F</middlename>. <surname>MACMILLEN</surname> et <forename>D</forename>. <middlename>M</middlename>. <surname>GOLDEN</surname></author>
+						<author><forename>M</forename>. <middlename>M</middlename>. <surname>ALEKSISHVILI</surname>, <forename>S</forename>. <middlename>S</middlename>. <surname>POLYAK</surname> et <forename>V</forename>. <surname>YA</surname> <surname>SHTERN</surname>.</author>
+						<author><forename>R</forename>. <middlename>W</middlename>. <surname>WALKER</surname>.</author>
+						<author><forename>J</forename>. <middlename>G</middlename>. <surname>ATHERTON</surname>, <forename>A</forename>. <middlename>J</middlename>. <surname>BROWN</surname>, <forename>G</forename>. <middlename>A</middlename>. <surname>LUCKETT</surname> et <forename>R</forename>. <middlename>T</middlename>. <surname>POLLARD</surname></author>
+						<author><forename>B</forename>. <surname>VOGIN</surname>.</author>
+						<author><forename>M</forename>. <middlename>H</middlename>. <surname>AMETRANO</surname></author>
+						<author><forename>Y</forename>. <surname>SIMON</surname>, <forename>J</forename>. <middlename>F</middlename>. <surname>FOUCAUT</surname> et <forename>G</forename>. <surname>SCACCHI</surname></author>
+						<author><forename>M</forename>. <middlename>C</middlename>. <surname>FLOWERSetR</surname>. <middlename>M</middlename>. <surname>PARKER</surname></author>
+						<author><forename>M</forename>. <middlename>C</middlename>. <surname>FLOWERS</surname> et <forename>R</forename>. <middlename>M</middlename>. <surname>PARKER</surname></author>
+						<author><forename>P</forename>. <surname>GRAY</surname></author>
+						<author><forename>B</forename>. <surname>VOGIN</surname>, <forename>F</forename>. <surname>BARONNET</surname> et <forename>J</forename>. <middlename>C</middlename>. <surname>ANDRE</surname></author>
+						<author><forename>B</forename>. <surname>VOGIN</surname>, <forename>F</forename>. <surname>BARONNET</surname> et <forename>J</forename>. <middlename>C</middlename>. <surname>ANDRE</surname></author>
+						<author><forename>Z</forename>. <middlename>F</middlename>. <surname>SAVAYA</surname></author>
+						<author><forename>S</forename>. <middlename>N</middlename>. <surname>FONER</surname> et <forename>R</forename>. <middlename>L</middlename>. <surname>HUDSON</surname></author>
+						<author><forename>L</forename>. <middlename>R</middlename>. <surname>SOCHET</surname>, <forename>N</forename>. <middlename>V</middlename>. <surname>HA&#xCF;</surname> et <forename>M</forename>. <surname>LUCQUIN</surname></author>
+						<author><forename>N</forename>. <surname>VAN HA&#xCF;</surname>, <forename>S</forename>. <surname>ANTONIK</surname>, <forename>L</forename>. <middlename>R</middlename>. <surname>SOCHET</surname></author>
+						<author><forename>V</forename>. <middlename>YA</middlename>. <surname>SHTERN</surname></author>
+						<author><forename>C</forename>. <middlename>N</middlename>. <surname>SATTERFIELD</surname> et <forename>R</forename>. <middlename>C</middlename>. <surname>REID</surname></author>
+						<author><forename>I</forename>. <middlename>R</middlename>. <surname>SLAGLE</surname></author>
+						<author><forename>F</forename>. <surname>BARONNET</surname></author>
+						<author><forename>W</forename>. <middlename>J</middlename>. <surname>PITZ</surname>, <forename>C</forename>. <middlename>K</middlename>. <surname>WESTBROOK</surname>, <forename>W</forename>. <middlename>M</middlename>. <surname>PROSCIA</surname> et <forename>F</forename>. <middlename>L</middlename>. <surname>DRYER</surname></author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</TEI>

@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader/>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><author>B. VOGIN, F. BARONNET et G. SCACCHI</author>. <title level="j">Can. J. Chem.</title> <biblScope type="vol">67</biblScope>, <biblScope type="pp">759</biblScope> (<date>1989</date>).</bibl>
+	<bibl><author>R. T. POLLARD</author>. Dans <title level="j">Comprehensive chemical kinetics.</title> Vol. <biblScope type="vol">17</biblScope>. Éditeurs : <editor>C. H. Bamford et C. F. H. Tipper</editor>. <publisher>Elsevier</publisher>, <pubPlace>Amsterdam</pubPlace>. <date>1977</date>. p. <biblScope type="pp">249</biblScope>.</bibl>
+	<bibl><author>S. W. BENSON</author>. <title level="a">Dans The mechanisms of pyrolysis, oxidation and buming of organic materials</title>. Éditeur : <editor>L. A. Wall.</editor> <publisher>NBS Publication, U.S. Government Printing Office.</publisher> <pubPlace>Washington, DC</pubPlace>. <date>1972</date>. p. <biblScope type="pp">121</biblScope>.</bibl>
+	<bibl><author>S. W. BENSON et P. S. NANGIA</author>. <title level="j">ACC. Chem. Res.</title> <biblScope type="vol">12</biblScope>, <biblScope type="pp">223</biblScope> (<date>1979</date>).</bibl>
+	<bibl><author>S. W. BENSON</author>. <title level="j">Prog. Energy Combust. Sci.</title> <biblScope type="vol">7</biblScope>, <biblScope type="pp">125</biblScope> (<date>1981</date>).</bibl>
+	<bibl><author>S. W. BENSON</author>. <title level="j">Oxid. Commun.</title> <biblScope type="vol">2</biblScope>, <biblScope type="pp">169</biblScope> (<date>1982</date>).</bibl>
+	<bibl><author>I. A. OGORODNIKOV, S. S. POLYAK et V. YA. SHTERN</author>. <title level="j">Kinet. Katal.</title> <biblScope type="vol">10</biblScope>, <biblScope type="pp">1210</biblScope> (<date>1969</date>).</bibl>
+	<bibl><author>M. M. ALEKSISHVILI, S. S. POLYAK et V. YA. SHTERN</author>. <title level="j">Réf. Zh. Khim. Abstr.</title>  n°<biblScope type="vol">3</biblScope>, <biblScope type="pp">N4</biblScope> (<date>1972</date>).</bibl>
+	<bibl><author>M. M. ALEKSISHVILI, S. S. POLYAK et V. YA. SHTERN</author>. <title level="j">Kinet. Katal.</title> <biblScope type="vol">15</biblScope>, <biblScope type="pp">290</biblScope> (<date>1974</date>).</bibl>
+	<bibl><author>C. A. EUKER et J. P. LEINROTH</author>. <title level="j">Combust. Flame</title>, <biblScope type="vol">15</biblScope>, <biblScope type="pp">275</biblScope> (<date>1970</date>).</bibl>
+	<bibl><author>R. R. BALDWIN et R. W. WALKER</author>. <title level="j">Combust. Flame</title>, <biblScope type="vol">21</biblScope>, <biblScope type="pp">55</biblScope> (<date>1973</date>).</bibl>
+	<bibl><author>A. FISH</author>. <title level="j">Adv. Chem. Ser.</title> <biblScope type="vol">76</biblScope>, <biblScope type="pp">69</biblScope> (<date>1968</date>).</bibl>
+	<bibl><author>J. H. KNOX</author> . Dans <title level="a">Photochemistry and reaction kinetics</title>. Éditeurs : <editor>P. G. Ashmore, T. M. Sugden et F. S. Dainton</editor>. <publisher>Cambridge University Press</publisher>, <pubPlace>Cambridge</pubPlace>. <date>1967</date>. p. <biblScope type="pp">250</biblScope>.</bibl>
+	<bibl><author>D. M. NEWITT et L. S. THORNES.</author> <title level="j">J. Chem. Soc.</title> <biblScope type="pp">1656</biblScope> (<date>1937</date>).</bibl>
+	<bibl><author>J. F. GRIFFITHS, B. F. GRAY et P. GRAY</author>. <title level="m">13th Symp. (Int.) on Combustion</title>, <publisher>The Combustion Institute</publisher>, <pubPlace>Pittsburgh, PA</pubPlace>. <date>1971</date>. p. <biblScope type="pp">239</biblScope>.</bibl>
+	<bibl><author>A. ANTONIK et M. LUCQUIN</author>. <title level="j">Combust. Flame</title>, <biblScope type="vol">19</biblScope>, <biblScope type="pp">311</biblScope> (<date>1972</date>).</bibl>
+	<bibl><author>F. BARONNET, M. P. HALSTEAD, A. PROTHERO et C. P. QUINN</author>. <title level="j">C.R. Acad. Sci.</title> <biblScope type="vol">275</biblScope> C, <biblScope type="pp">17</biblScope> (<date>1972</date>).</bibl>
+	<bibl><author>S. W. BENSON</author>. <title level="m">Thermochemical kinetics, 2 e éd</title>. <publisher>John Wiley</publisher>, <pubPlace>New York</pubPlace>. <date>1976</date>.</bibl>
+	<bibl><author>M. WEISSMAN, L. G. S. SHUM, S. P. HENEGHEN et S. W. BENSON</author>. <title level="j">J. Phys. Chem.</title> <biblScope type="vol">85</biblScope>, <biblScope type="pp">2863</biblScope> (<date>1981</date>).</bibl>
+	<bibl><author>J. C. BROCARD, F. BARONNET et H. E. O&apos;NEAL</author>. <title level="j">Combust. Flame</title>, <biblScope type="vol">52</biblScope>, <biblScope type="pp">25</biblScope> (<date>1983</date>).</bibl>
+	<bibl><author>D. F. MACMILLEN et D. M. GOLDEN</author>. <title level="j">Annu. Rev. Phys. Chem.</title> <biblScope type="vol">33</biblScope>, <biblScope type="pp">493</biblScope> (<date>1982</date>).</bibl>
+	<bibl><author>M. M. ALEKSISHVILI, S. S. POLYAK et V. YA SHTERN</author>. <title level="j">Kinet. Katal.</title> <biblScope type="vol">17</biblScope>, <biblScope type="pp">1110</biblScope> (<date>1976</date>).</bibl>
+	<bibl><author>R. W. WALKER</author>. <title level="j">React. Kinet.</title> <biblScope type="vol">1</biblScope>, <biblScope type="pp">161</biblScope> (<date>1975</date>).</bibl>
+	<bibl><author>J. G. ATHERTON, A. J. BROWN, G. A. LUCKETT et R. T. POLLARD</author>. <title level="m">14th Symp. (Int.) on Combustion</title>, <title level="a">The Combustion Institute</title>, <pubPlace>Pittsburgh, PA</pubPlace>. <date>1973</date>. p. <biblScope type="pp">513</biblScope>.</bibl>
+	<bibl><author>B. VOGIN</author>. <note>Thèse de Docteur-Ingénieur</note>, <orgName>INPL</orgName>, <pubPlace>Nancy</pubPlace> (<date>1984</date>).</bibl>
+	<bibl><author>M. H. AMETRANO</author>. <note>Diplôme d&apos;Études Approfondies en Génie des Procédés</note>, <pubPlace>Nancy</pubPlace> (<date>1987</date>).</bibl>
+	<bibl><author>Y. SIMON, J. F. FOUCAUT et G. SCACCHI</author>. <title level="j">Can. J. Chem.</title> <biblScope type="vol">66</biblScope>, <biblScope type="pp">2142</biblScope> (<date>1988</date>).</bibl>
+	<bibl><author>M. C. FLOWERSetR. M. PARKER. J.</author> <title level="j">Chem. Soc. B</title>, <date>1980</date>(<date>1971</date>).</bibl>
+	<bibl><author>M. C. FLOWERS et R. M. PARKER</author>. <title level="j">Int. J. Chem. Kinet.</title> <biblScope type="vol">3</biblScope>, <biblScope type="pp">443</biblScope> (<date>1971</date>).</bibl>
+	<bibl><author>P. GRAY</author>. <title level="m">Conférence aux Journées de chimie physique</title>, <orgName>École nationale supérieure de chimie de Paris</orgName>. <biblScope type="pp">22-24</biblScope> <date>mai 1989</date>.</bibl>
+	<bibl><author>B. VOGIN, F. BARONNET et J. C. ANDRE</author>. <title level="j">Oxid. Commun.</title> <biblScope type="vol">3</biblScope>, <biblScope type="pp">51</biblScope> (<date>1983</date>).</bibl>
+	<bibl><author>B. VOGIN, F. BARONNET et J. C. ANDRE</author>. <title level="j">Anal. Chem. Acta</title>, <biblScope type="vol">142</biblScope>,<biblScope type="pp">293</biblScope> (<date>1982</date>).</bibl>
+	<bibl><author>Z. F. SAVAYA</author>. <note>Ph.D. Thèse</note>, <orgName>Dundee University</orgName> (<date>1982</date>).</bibl>
+	<bibl><author>S. N. FONER et R. L. HUDSON</author>. <title level="j">Adv. Chem. Ser.</title> <biblScope type="vol">36</biblScope>, <biblScope type="pp">34</biblScope> (<date>1962</date>).</bibl>
+	<bibl><author>L. R. SOCHET, N. V. HAÏ et M. LUCQUIN</author>. <title level="j">Bull. Soc. Chim. Fr.</title> <biblScope type="pp">1571</biblScope> (<date>1971</date>).</bibl>
+	<bibl><author>N. VAN HAÏ, S. ANTONIK, L. R. SOCHET et M. LUCQUIN</author>. <title level="j">Bull. Soc. Chim. Fr.</title> <biblScope type="pp">2150</biblScope> (<date>1970</date>).</bibl>
+	<bibl><author>V. YA. SHTERN</author>. <title level="a">The gas phase oxidation of hydrocarbons</title>. <publisher>Pergamon Press</publisher>, <pubPlace>Oxford</pubPlace>. <date>1964</date>.</bibl>
+	<bibl><author>C. N. SATTERFIELD et R. C. REID</author>. <title level="m">5th Symp. (Int.) on Combustion</title>, <publisher>The Combustion Institute</publisher>, <pubPlace>Pittsburgh, PA</pubPlace>. <date>1955</date>. p. <biblScope type="pp">511</biblScope>.</bibl>
+	<bibl><author>I. R. SLAGLE et D. GUTMAN</author>. <title level="m">21st Symp. (Int.) on Combustion</title>, <publisher>The Combustion Institute</publisher>, <pubPlace>Pittsburgh, PA</pubPlace>. <date>1986</date>. p. <biblScope type="pp">875</biblScope>.</bibl>
+	<bibl><author>F. BARONNET</author>. Communication au <title level="m">Congrès Commun des Sec-tions Britannique et Française du Combustion Institute</title>, <pubPlace>Rouen</pubPlace>, <date>18-21 avril 1989</date>, <note>Recueil des Actes du Congrès</note>, p. <biblScope type="pp">81</biblScope>.</bibl>
+	<bibl><author>W. J. PITZ, C. K. WESTBROOK, W. M. PROSCIA et F. L. DRYER</author>. <title level="m">20th Symp. (Int.) on Combustion</title>, <publisher>The Combustion Institute</publisher>, <pubPlace>Pittsburgh, PA</pubPlace>. <date>1984</date>. p. <biblScope type="pp">831</biblScope>.</bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>
