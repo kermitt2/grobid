@@ -673,7 +673,7 @@ public class FullTextParser extends AbstractParser {
                     bufferReference.append("\n");
 
 	                Writer writerReference = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
-	                        "/" + PDFFileName.replace(".pdf", ".training.references.xml")), false), "UTF-8");
+	                        "/" + PDFFileName.replace(".pdf", ".training.references.tei.xml")), false), "UTF-8");
 					
 					writerReference.write("<?xml version=\"1.0\" ?>\n<TEI xmlns=\"http://www.tei-c.org/ns/1.0\" " + 	
 											"xmlns:xlink=\"http://www.w3.org/1999/xlink\" " +
@@ -691,10 +691,40 @@ public class FullTextParser extends AbstractParser {
 
 					writerReference.write("\t\t</listBibl>\n\t</back>\n\t</text>\n</TEI>\n");
 	                writerReference.close();
+					
+					// output of citation author names
+	                Writer writerName = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
+	                        "/" + PDFFileName.replace(".pdf", ".training.citations.authors.tei.xml")), false), "UTF-8");
+					
+					writerName.write("<?xml version=\"1.0\" ?>\n<TEI xmlns=\"http://www.tei-c.org/ns/1.0\" " + 	
+											"xmlns:xlink=\"http://www.w3.org/1999/xlink\" " +
+					                		"\n xmlns:mml=\"http://www.w3.org/1998/Math/MathML\">\n");
+					writerName.write("\t<teiHeader>\n\t\t<fileDesc>\n\t\t\t<sourceDesc>\n" + 
+									 "\t\t\t\t<biblStruct>\n\t\t\t\t\t<analytic>\n\n");
+					
+		            for (LabeledReferenceResult ref : references) {
+						if ( (ref.getReferenceText() != null) && (ref.getReferenceText().trim().length() > 0) ) {
+			                BiblioItem bib = parsers.getCitationParser().processing(ref.getReferenceText(), false);
+			                String authorSequence = bib.getAuthors();
+							if ((authorSequence != null) && (authorSequence.trim().length() > 0) ) {
+								List<String> inputs = new ArrayList<String>();
+								inputs.add(authorSequence);
+								StringBuffer bufferName = parsers.getAuthorParser().trainingExtraction(inputs, false);
+						
+								if ( (bufferName != null) && (bufferName.length()>0) ) {
+									writerName.write("\n\t\t\t\t\t\t<author>");
+									writerName.write(bufferName.toString());
+									writerName.write("</author>\n");
+								}
+							}
+						}
+					}
+
+					writerName.write("\n\t\t\t\t\t</analytic>");
+					writerName.write("\n\t\t\t\t</biblStruct>\n\t\t\t</sourceDesc>\n\t\t</fileDesc>");
+					writerName.write("\n\t</teiHeader>\n</TEI>\n");
+					writerName.close();
 	            }
-				
-				// output of other training data
-				// ...
 			}
 	       
 			return doc;
