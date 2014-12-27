@@ -7,13 +7,18 @@ import org.grobid.core.engines.tagging.GenericTagger;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.jni.WapitiModel;
 import org.grobid.core.utilities.TextUtilities;
+import org.grobid.core.utilities.GrobidProperties;
+import org.grobid.core.engines.tagging.GrobidCRFEngine;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
+
+import org.apache.commons.io.FileUtils;
 
 /**
  * Evaluation of the parsing of citation.
@@ -130,25 +135,55 @@ public class EvaluationUtilities {
 		try {
 			final BufferedReader bufReader = new BufferedReader(new InputStreamReader(new FileInputStream(path), "UTF-8"));
 
-			String line;
-			ArrayList<String> citationBlocks = new ArrayList<String>();
-			while ((line = bufReader.readLine()) != null) {
-				citationBlocks.add(line);
+			String theResult = null;
+			String line = null;
+			long time = 0;
+			List<String> citationBlocks = new ArrayList<String>();
+			List<String> expected = new ArrayList<String>();
+			// it's quite bad to have something CRF engine dependent here, but hard to avoid
+			// the expected vector is used only with CRF++
+			if (GrobidProperties.getGrobidCRFEngine() == GrobidCRFEngine.CRFPP) {
+				StringBuffer buffer = new StringBuffer();
+				time = System.currentTimeMillis();
+				while ((line = bufReader.readLine()) != null) {
+					if (line.trim().length() == 0) {
+						buffer.append(taggerFunction.apply(citationBlocks));
+						buffer.append("\n");
+						citationBlocks = new ArrayList<String>();
+					}
+					else {
+						citationBlocks.add(line);
+						int ind = line.lastIndexOf(" ");
+						if (ind == -1) 
+							ind = line.lastIndexOf("\t");
+						if (ind != -1)
+							expected.add(line.substring(ind+1, line.length()));
+					}
+				}
+				theResult = buffer.toString();
+			}
+			else {
+				while ((line = bufReader.readLine()) != null) {
+					citationBlocks.add(line);
+				}
+				time = System.currentTimeMillis();
+				theResult = taggerFunction.apply(citationBlocks);
 			}
 			bufReader.close();
 
-            long time = System.currentTimeMillis();
-            String theResult = taggerFunction.apply(citationBlocks);
             System.out.println("Labeling took: " + (System.currentTimeMillis() - time) + " ms");
-
+			//FileUtils.writeStringToFile(new File("/tmp/x.txt"), theResult);
 			StringTokenizer stt = new StringTokenizer(theResult, "\n");
+			int e = 0;
 			while (stt.hasMoreTokens()) {
 				line = stt.nextToken();
 
-				if (line.trim().length() == 0)
+				if (line.trim().length() == 0) {
 					continue;
+				}
 				// the two last tokens, separated by a tabulation, gives the
-				// expected label and, last, the resulting label
+				// expected label and, last, the resulting label -> for Wapiti
+				// for CRF++, we get the expected label from the dedicated vector
 				StringTokenizer st = new StringTokenizer(line, "\t ");
 				String currentToken = null;
 				String previousToken = null;
@@ -164,6 +199,15 @@ public class EvaluationUtilities {
 					}
 				}
 
+				// it's quite bad to have something CRF engine dependent here, but hard to avoid
+				if (GrobidProperties.getGrobidCRFEngine() == GrobidCRFEngine.CRFPP) {
+					previousToken = expected.get(e);
+					if (previousToken.startsWith("I-") || previousToken.startsWith("E-")) {
+						previousToken = previousToken.substring(2, previousToken.length());
+					}
+					e++;
+				}
+				
 				// System.out.println(previousToken + " / " + currentToken);
 
 				if ((previousToken == null) || (currentToken == null)) {
@@ -335,12 +379,18 @@ public class EvaluationUtilities {
 
 			// micro average measure
 			double accuracy = (double) (cumulated_tp + cumulated_tn) / (cumulated_tp + cumulated_fp + cumulated_tn + cumulated_fn);
+			if (accuracy > 1)
+				accuracy = 1.0;
 			report.append("\t").append(TextUtilities.formatTwoDecimals(accuracy * 100));
 
 			double precision = (double) cumulated_tp / (cumulated_tp + cumulated_fp);
+			if (precision > 1)
+				precision = 1.0;
 			report.append("\t\t").append(TextUtilities.formatTwoDecimals(precision * 100));
 
 			double recall = (double) cumulated_tp / (cumulated_tp + cumulated_fn);
+			if (recall > 1)
+				recall = 1.0;
 			report.append("\t\t").append(TextUtilities.formatTwoDecimals(recall * 100));
 
 			double f0 = (2 * precision * recall) / (precision + recall);
@@ -352,12 +402,18 @@ public class EvaluationUtilities {
 			// macro average measure
 			report.append("\t\t");
 			accuracy = cumulated_accuracy / (totalValidFields);
+			if (accuracy > 1)
+				accuracy = 1.0;
 			report.append("\t").append(TextUtilities.formatTwoDecimals(accuracy * 100));
 
 			precision = totalValidFields / cumulated_precision;
+			if (precision > 1)
+				precision = 1.0;
 			report.append("\t\t").append(TextUtilities.formatTwoDecimals(precision * 100));
 
 			recall = cumulated_recall / totalValidFields;
+			if (recall > 1)
+				recall = 1.0;
 			report.append("\t\t").append(TextUtilities.formatTwoDecimals(recall * 100));
 
 			f0 = cumulated_f0 / totalValidFields;
@@ -372,7 +428,7 @@ public class EvaluationUtilities {
 			String lastPreviousToken = null;
 			String lastCurrentToken = null;
 			stt = new StringTokenizer(theResult, "\n");
-
+			e = 0;
 			while (stt.hasMoreTokens()) {
 				line = stt.nextToken();
 				if ((line.trim().length() == 0) && (lastPreviousToken != null) && (lastCurrentToken != null)) {
@@ -436,6 +492,15 @@ public class EvaluationUtilities {
 					if (st.hasMoreTokens()) {
 						previousToken = currentToken;
 					}
+				}
+
+				// it's quite bad to have something CRF engine dependent here, but hard to avoid
+				if (GrobidProperties.getGrobidCRFEngine() == GrobidCRFEngine.CRFPP) {
+					previousToken = expected.get(e);
+					if (previousToken.startsWith("I-") || previousToken.startsWith("E-")) {
+						previousToken = previousToken.substring(2, previousToken.length());
+					}
+					e++;
 				}
 
 				if ((previousToken == null) || (currentToken == null)) {
@@ -638,12 +703,18 @@ public class EvaluationUtilities {
 
 			// micro average over measures
 			accuracy = (double) (cumulated_tp + cumulated_tn) / (cumulated_tp + cumulated_fp + cumulated_tn + cumulated_fn);
+			if (accuracy > 1)
+				accuracy = 1.0;
 			report.append("\t").append(TextUtilities.formatTwoDecimals(accuracy * 100));
 
 			precision = (double) cumulated_tp / (cumulated_tp + cumulated_fp);
+			if (precision > 1)
+				precision = 1.0;
 			report.append("\t\t").append(TextUtilities.formatTwoDecimals(precision * 100));
 
 			recall = (double) cumulated_tp / (cumulated_tp + cumulated_fn);
+			if (recall > 1)
+				recall = 1.0;
 			report.append("\t\t").append(TextUtilities.formatTwoDecimals(recall * 100));
 
 			f0 = (2 * precision * recall) / (precision + recall);
@@ -654,12 +725,18 @@ public class EvaluationUtilities {
 			// macro average over measures
 			report.append("\t\t");
 			accuracy = cumulated_accuracy / (totalValidFields);
+			if (accuracy > 1)
+				accuracy = 1.0;
 			report.append("\t").append(TextUtilities.formatTwoDecimals(accuracy * 100));
 
 			precision = cumulated_precision / totalValidFields;
+			if (precision > 1)
+				precision = 1.0;
 			report.append("\t\t").append(TextUtilities.formatTwoDecimals(precision * 100));
 
 			recall = cumulated_recall / totalValidFields;
+			if (recall > 1)
+				recall = 1.0;
 			report.append("\t\t").append(TextUtilities.formatTwoDecimals(recall * 100));
 
 			f0 = cumulated_f0 / totalValidFields;
@@ -674,6 +751,7 @@ public class EvaluationUtilities {
 			allGood = true;
 			int correctInstance = 0;
 			int totalInstance = 0;
+			e = 0;
 			while (stt.hasMoreTokens()) {
 				line = stt.nextToken();
 				if ((line.trim().length() == 0) || (!stt.hasMoreTokens())) {
@@ -696,6 +774,15 @@ public class EvaluationUtilities {
 						if (st.hasMoreTokens()) {
 							previousToken = currentToken;
 						}
+					}
+
+					// it's quite bad to have something CRF engine dependent here, but hard to avoid
+					if (GrobidProperties.getGrobidCRFEngine() == GrobidCRFEngine.CRFPP) {
+						previousToken = expected.get(e);
+						if (previousToken.startsWith("I-") || previousToken.startsWith("E-")) {
+							previousToken = previousToken.substring(2, previousToken.length());
+						}
+						e++;
 					}
 
 					if (!currentToken.equals(previousToken)) {
