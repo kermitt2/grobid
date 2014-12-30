@@ -1470,7 +1470,21 @@ public class BiblioItem {
 
             // author 
             // fullAuthors has to be used instead
-            if (authors != null) {
+			if (fullAuthors != null) {
+				if (fullAuthors.size() > 0) {
+					boolean begin = true;
+					for(Person person : fullAuthors) {
+						if (begin) {
+                            bibtex += "author\t=\t\"" + person.getFirstName() + " " + person.getLastName();
+                            begin = false;
+                        } 
+						else
+                            bibtex += " and " + person.getFirstName() + " " + person.getLastName();
+					}
+					bibtex += "\"";
+				}
+			}
+            else if (authors != null) {
                 StringTokenizer st = new StringTokenizer(authors, ";");
                 if (st.countTokens() > 1) {
                     boolean begin = true;
@@ -1534,13 +1548,41 @@ public class BiblioItem {
                 bibtex += ",\npages\t=\t\"" + pageRange + "\"";
             }
 
+			// abstract
+			if (abstract_ != null) {
+				if (abstract_.length() > 0) {
+					bibtex += ",\nabstract\t=\t\"" + abstract_ + "\"";
+				}
+			}
+
+			// keywords
+			if (keywords != null) {
+				bibtex += ",\nkeywords\t=\t\"" ;
+				boolean begin = true;
+				for(String keyword : keywords) {
+					if ( (keyword == null) || (keyword.length() == 0) )
+						continue;
+					if (begin) {
+						begin = false;
+						bibtex += keyword;
+					}
+					else 
+						bibtex += ", " + keyword;
+				}
+				bibtex += "\"";
+			}
+			else if (getKeyword() != null) {
+				bibtex += ",\nkeywords\t=\t\"" ;
+				bibtex += getKeyword().trim();
+				bibtex += "\"";
+			}
+
             bibtex += "\n}\n";
         } catch (Exception e) {
             throw new GrobidException("Cannot export BibTex format, because of nested exception.", e);
         }
         return bibtex;
     }
-
 
     /**
      * Export the bibliographical item into a TEI BiblStruct string
