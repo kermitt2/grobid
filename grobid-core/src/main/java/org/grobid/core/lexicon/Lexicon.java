@@ -79,7 +79,7 @@ public class Lexicon {
         initNames();
 		// the loading of the journal and conference names is lazy
         addDictionary(GrobidProperties.getGrobidHomePath() + "/lexicon/wordforms/english.wf", Language.EN);
-        addDictionary(GrobidProperties.getGrobidHomePath() + "/lexicon/wordforms/german.wf", Language.EN);
+        addDictionary(GrobidProperties.getGrobidHomePath() + "/lexicon/wordforms/german.wf", Language.DE);
         addLastNames(GrobidProperties.getGrobidHomePath() + "/lexicon/names/names.family");
         addFirstNames(GrobidProperties.getGrobidHomePath() + "/lexicon/names/names.female");
         addFirstNames(GrobidProperties.getGrobidHomePath() + "/lexicon/names/names.male");
