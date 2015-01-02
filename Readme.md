@@ -31,8 +31,7 @@ The key aspects of Grobid are the following ones:
 + Rich bibliographical processing: fine grained parsing of author names, dates, affiliations, addresses, etc. but also quite reliable automatic attachment of affiliations and emails to authors. 
 + "Automatic Generation" of pre-formatted training data based on new pdf documents, for supporting semi-automatic training data generation. 
 
-The default Grobid extraction and parsing algorithms uses 
-the Wapiti CRF library, but it is also possible to use the [CRF++ library](http://crfpp.googlecode.com/svn/trunk/doc/index.html). These C++ libraries are transparently integrated as JNI with dynamic call based on the current OS. 
+The default Grobid extraction and parsing algorithms uses the Wapiti CRF library, but it is also possible to use the [CRF++ library](http://crfpp.googlecode.com/svn/trunk/doc/index.html). Wapiti appears two time faster for decoding than CRF++ for the Grobid models. The sizes of the Wapiti models are approx. ten times smaller in memory than CRF++ ones. Training time is also significantly reduced based on the Wapiti l-bfgs training algorithm with a similar accuracy. These two C++ libraries are transparently integrated as JNI with dynamic call based on the current OS. 
 
 Grobid should run properly "out of the box" on MacOS X, Linux (32 & 64), following the guidelines bellow. Grobid does currently not run on Windows environments because the required and up-to-date CRF native binaries are not yet compiled for this platform (contributors to work on Windows support are very welcome!).
 

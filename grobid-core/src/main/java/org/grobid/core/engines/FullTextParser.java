@@ -1273,8 +1273,9 @@ public class FullTextParser extends AbstractParser {
         StringBuffer tei;
         try {
             tei = teiFormater.toTEIHeader(resHeader, peer, withStyleSheet, null);
-//System.out.println(rese);
-            tei = teiFormater.toTEIBodyML(tei, rese, resHeader, resCitations, tokenizations, doc);
+			
+			//System.out.println(rese);
+           	tei = teiFormater.toTEIBodyML(tei, rese, resHeader, resCitations, tokenizations, doc);
 			//tei.append(teiFormater.toTEIBody(resCitations));
             tei = teiFormater.toTEIReferences(tei, resCitations);
 

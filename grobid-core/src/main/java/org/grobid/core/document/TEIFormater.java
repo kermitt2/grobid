@@ -804,7 +804,7 @@ public class TEIFormater {
     }
 
   	
-	public String toTEIBody(List<BibDataSet> bds) throws Exception {
+	/*public String toTEIBody(List<BibDataSet> bds) throws Exception {
         StringBuffer tei = new StringBuffer();
 
       	tei.append("\t\t<body>\n");
@@ -823,16 +823,6 @@ public class TEIFormater {
 			//int blockPos = dp1.getBlockPtr();
 			for(int blockIndex = dp1.getBlockPtr(); blockIndex <= dp2.getBlockPtr(); blockIndex++) {
             	Block block = doc.getBlocks().get(blockIndex);
-
-	
-
-            /*for (Block block : doc.getBlocks()) {
-                Integer ii = new Integer(i);
-                if ((!doc.getBlockDocumentHeaders().contains(ii)) && (!doc.getBlockReferences().contains(ii)) &
-                        (!doc.getAcknowledgementBlocks().contains(ii))) {
-                    if ((!doc.getBlockHeaders().contains(ii)) && (!doc.getBlockFooters().contains(ii))
-                            && (!doc.getBlockFigures().contains(ii)) && (!doc.getBlockTables().contains(ii))) {*/
-	
 	
                 String localText = block.getText();
                 if (localText != null) {
@@ -1009,7 +999,7 @@ public class TEIFormater {
         }
 		
         return tei.toString();
-    }
+    }*/
 
 
     public StringBuffer toTEIBodyML(StringBuffer tei,
@@ -1598,8 +1588,8 @@ public class TEIFormater {
 
                 if (elements.size() > 0) {
                     String lastElement = elements.get(elements.size() - 1);
-                    if (lastElement.equals("table")) {
-                        tei.append("\n\t\t\t</table>\n\n");
+                    if (lastElement.equals("figure")) {
+                        tei.append("\n\t\t\t</figure>\n\n");
                         elements.remove(elements.size() - 1);
                     }
                     /*else if ( lastElement.equals("figDesc") && (!currentTag0.equals("<figure_marker>")) 
@@ -1729,20 +1719,22 @@ public class TEIFormater {
                     (currentNode.label != null) &&
                     (!currentNode.label.equals("header")) &&
                     (!currentNode.label.equals("top"))) {
-                if (currentNode.startToken == p) {
-                    divOpened += 1;
+                if (currentNode.startToken == p) {              
                     if ((currentNode.father == null) || (currentNode.father == doc.getTop())) {
                         tei.append("\n\t\t\t<div");
                         elements.add("div");
                         tei.append(" type=\"section\"");
+						divOpened += 1;
                     } else if ((currentNode.father.father == null) || (currentNode.father.father == doc.getTop())) {
                         tei.append("\n\t\t\t\t<div");
                         elements.add("div");
                         tei.append(" type=\"subsection\"");
+						divOpened += 1;
                     } else if (currentNode != doc.getTop()) {
                         tei.append("\n\t\t\t\t\t<div");
                         elements.add("div");
                         tei.append(" type=\"subsubsection\"");
+						divOpened += 1;
                     }
 
                     if (currentNode.realNumber != null) {
@@ -2083,7 +2075,7 @@ public class TEIFormater {
                                 openFigure = true;
                                 openTable = false;
                             } else if (hasTable) {
-                                tei.append("\n\t\t\t<table>\n\t\t\t\t<figDesc>");
+                                tei.append("\n\t\t\t<figure>\n\t\t\t\t<table/>\n\t\t\t\t<figDesc>");
                                 elements.add("table");
                                 elements.add("figDesc");
                                 openFigure = false;
@@ -2162,8 +2154,8 @@ public class TEIFormater {
                             currentFigureHead.append(s2);
                         }
                     } else if (!openFigure && !openTable) {
-                        tei.append("\n\t\t\t<table>\n\t\t\t\t<head>");
-                        elements.add("table");
+                        tei.append("\n\t\t\t<figure>\n\t\t\t\t<head>");
+                        elements.add("figure");
                         elements.add("head");
                         openFigure = false;
                         openTable = true;
@@ -2284,15 +2276,17 @@ public class TEIFormater {
                     tei.append("\t\t</" + lastElement + ">\n");
                     elements.remove(elements.size() - 1);
                     divOpened--;
-                }
+                }	
             }
+			else
+				divOpened = 0;
         }
 
         if (openTable) {
             if (elements.size() > 0) {
                 String lastElement = elements.get(elements.size() - 1);
-                if (lastElement.equals("table")) {
-                    tei.append("\n\t\t\t</table>\n\n");
+                if (lastElement.equals("figure")) {
+                    tei.append("\n\t\t\t</figure>\n\n");
                     elements.remove(elements.size() - 1);
                 }
             }
@@ -2408,7 +2402,7 @@ public class TEIFormater {
                     }
                 }
             } else if (currentEquation.length() > 0) {
-                tei.append("\n\t<formula>" + normalizeText(currentEquation.toString()) + "</formula>\n");
+                tei.append("\n\t<p><formula>" + normalizeText(currentEquation.toString()) + "</formula></p>\n");
                 currentEquation = new StringBuffer();
             } else if (currentParagraph.length() > 0) {
                 if (currentTag0.equals("<citation_marker>") ||
@@ -2756,8 +2750,8 @@ public class TEIFormater {
 		}
         //System.out.println(text);
         return text;
-    }
-	*/
+    }*/
+	
 
     /**
      * Mark using TEI annotations the identified references in the text body build with the machine learning model.
@@ -3059,7 +3053,7 @@ public class TEIFormater {
 		
 		// we have not been able to solve the bibliographical marker, but we still annotate it globally
 		// without pointer - just ignoring possible punctuation at the beginning and end of the string
-		text = "<ref type=\"bibr\">" + text + "</ref>";
+		//text = "<ref type=\"bibr\">" + text + "</ref>";
         return text;
     }
 
