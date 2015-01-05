@@ -626,7 +626,7 @@
 		<bibl> <title level="a">JATMA Year Book</title> </bibl>
 		<bibl> <author>Berman et al.</author>   (<title level="j">Urology</title>, <date>1999</date>,   <biblScope type="vol">54</biblScope>,   <biblScope type="pp">385</biblScope>) </bibl>
 		<bibl> <author>Kaplan et al.</author>   (<title level="j">Urology</title>, <date>1999</date>,   <biblScope type="vol">53</biblScope>,   <biblScope type="pp">481</biblScope>) </bibl>
-		<bibl> <author>Morgentaler</author>   (<title level="j">Lancet</title>, <date>1999</date>,   <biblScope type="vol">354</biblScope>   (<biblScope type="pp">9191), 1713</biblScope>) </bibl>
+		<bibl> <author>Morgentaler</author>   (<title level="j">Lancet</title>, <date>1999</date>,   <biblScope type="vol">354</biblScope> (<biblScope type="issue">9191</biblScope>), <biblScope type="pp">1713</biblScope>) </bibl>
 		<bibl> <author>Clark et al.</author>,   <title level="j">Steroids</title>  <biblScope type="vol">22</biblScope>:   <biblScope type="pp">707</biblScope>,   <date>1973</date> </bibl>
 		<bibl> <author>Capony et al.</author>,   <title level="j">Mol Cell Endocrinol</title>, <biblScope type="vol">3</biblScope>:   <biblScope type="pp">233</biblScope>,   <date>1975</date> </bibl>
 		<bibl> <title level="j">European Journal of Pharmacology</title>,  <biblScope type="pp">251</biblScope>,   <biblScope type="vol"></biblScope>   (<date>1994</date>) </bibl>
