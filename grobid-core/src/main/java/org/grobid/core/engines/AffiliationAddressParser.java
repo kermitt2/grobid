@@ -25,6 +25,10 @@ public class AffiliationAddressParser extends AbstractParser {
 
     public ArrayList<Affiliation> processing(String input) {
         try {
+	        if ( (input == null) || (input.length() == 0) ) {
+				return null;
+			}
+			
             ArrayList<String> affiliationBlocks = new ArrayList<String>();
             input = input.trim();
 
@@ -89,7 +93,6 @@ public class AffiliationAddressParser extends AbstractParser {
 
             return processingReflow(affiliationBlocks, subTokenizations);
         } catch (Exception e) {
-//			e.printStackTrace();
             throw new GrobidException("An exception occured while running Grobid.", e);
         }
     }
@@ -215,15 +218,6 @@ public class AffiliationAddressParser extends AbstractParser {
             String header =
                     FeaturesVectorAffiliationAddress.addFeaturesAffiliationAddress(affiliationBlocks, placesPositions);
 
-            // clear internal context
-//            int n = 0;
-//            StringTokenizer st = new StringTokenizer(header, "\n");
-
-            //TODO: VZ: understand how tagging is done and how we can utilize wapiti
-
-
-//            ArrayList<String> preToken = new ArrayList<String>();
-
 			if ( (header == null) || (header.trim().length() == 0) ) {
 				return null;
 			}
@@ -231,64 +225,9 @@ public class AffiliationAddressParser extends AbstractParser {
             String res = label(header);
             res = label(res);
 
-//            // add context
-//            while (st.hasMoreTokens()) {
-//                String piece = st.nextToken();
-//                if (piece.trim().length() != 0) {
-//                    tagger.add(piece);
-//                    tagger.add("\n");
-//                    String pretok = piece.substring(piece.lastIndexOf(' '), piece.length());
-//                    preToken.add(pretok);
-//                } else {
-//                    tagger.add("\n");
-//
-//                    // parse and change internal stated as 'parsed'
-//                    if (!tagger.parse()) {
-//                        // throw an exception
-//                        throw new Exception("CRF++ parsing failed.");
-//                    }
-//
-//                    for (int i = 0; i < tagger.size(); i++) {
-//                        for (int j = 0; j < tagger.xsize(); j++) {
-//                            //System.out.print(tagger.x(i, j) + "\t");
-//                            res.append(tagger.x(i, j) + "\t");
-//                        }
-//
-//                        res.append(preToken.get(i) + "\t");
-//                        res.append(tagger.y2(i));
-//                        res.append("\n");
-//                    }
-//                    res.append(" \n");
-//                    tagger.clear();
-//                }
-//                n++;
-//            }
-//
-//            // parse and change internal stated as 'parsed'
-//            if (!tagger.parse()) {
-//                // throw an exception
-//                throw new Exception("CRF++ parsing failed.");
-//            }
-//
-//            for (int i = 0; i < tagger.size(); i++) {
-//                for (int j = 0; j < tagger.xsize(); j++) {
-//                    //System.out.print(tagger.x(i, j) + "\t");
-//                    res.append(tagger.x(i, j) + "\t");
-//                }
-//
-//                res.append(preToken.get(i) + "\t");
-//                res.append(tagger.y2(i));
-//                res.append("\n");
-//            }
-//            res.append(" \n");
-
             return res;
         } catch (Exception e) {
             throw new GrobidException("An exception occured while running Grobid.", e);
-        } finally {
-//            if (tagger != null) {
-//                tagger.delete();
-//            }
         }
     }
 
@@ -305,6 +244,10 @@ public class AffiliationAddressParser extends AbstractParser {
         try {
             //System.out.println(tokenizations.toString());
             // extract results from the processed file
+	        if ( (result == null) || (result.length() == 0) ) {
+				return null;
+			}
+			
             StringTokenizer st2 = new StringTokenizer(result, "\n");
             String lastTag = null;
             org.grobid.core.data.Affiliation aff = new Affiliation();
