@@ -16,7 +16,6 @@ import java.io.File;
 public class WapitiModel {
     public static final Logger LOGGER = LoggerFactory.getLogger(WapitiModel.class);
 
-
     private SWIGTYPE_p_mdl_t model;
     private File modelFile;
 
@@ -64,10 +63,8 @@ public class WapitiModel {
     }
 
     public static void train(File template, File trainingData, File outputModel, String params) {
-        String args = String.format("train " + params + " -w 20 -e 0.00001  -p  %s %s %s", template.getAbsolutePath(), trainingData.getAbsolutePath(), outputModel.getAbsolutePath());
-        // PL : we reproduce the default CRF++ parameters eta at 0.00001 and "window" size at 20
-		// however we could adapt them with the model to be trained (for faster training) by 
-		// setting them as parameters
+        //String args = String.format("train " + params + " -w 20 -e 0.00001  -p  %s %s %s", template.getAbsolutePath(), trainingData.getAbsolutePath(), outputModel.getAbsolutePath());
+		String args = String.format("train " + params + " -p %s %s %s", template.getAbsolutePath(), trainingData.getAbsolutePath(), outputModel.getAbsolutePath());
 		Wapiti.runWapiti(args);
     }
 
