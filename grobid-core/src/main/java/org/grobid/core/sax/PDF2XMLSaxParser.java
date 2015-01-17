@@ -388,9 +388,12 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 
 						LayoutToken token = new LayoutToken();
 
-						if ((previousToken != null) && (tok != null)
+						if ( (previousToken != null) && (tok != null)
 								&& (previousToken.length() > 0)
-								&& (tok.length() > 0) && blabla.length() > 0) {
+								&& (tok.length() > 0) 
+								&& (blabla.length() > 0)
+						        && (previousTok.getText() != null)
+								&& (previousTok.getText().length() > 1)	) {
 
 							Character leftChar = previousTok.getText().charAt(
 									previousTok.getText().length() - 1);

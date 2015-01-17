@@ -148,12 +148,18 @@ public class FullTextParser extends AbstractParser {
 			//List<String> tokenizations = doc.getTokenizations();
 			 
 			Pair<String,List<String>> featSeg = getBodyTextFeatured(doc, documentBodyParts);
-			String bodytext = featSeg.getA();
-			List<String> tokenizationsBody = featSeg.getB();
-            String rese = label(bodytext);
-//System.out.println(rese);
-            // set the different sections of the Document object
-            //doc = BasicStructureBuilder.resultSegmentation(doc, rese, tokenizations);
+			String rese = null;
+			List<String> tokenizationsBody = null;
+			if (featSeg != null) {
+				// if featSeg is null, it usually means that no body segment is found in the 
+				// document segmentation
+				String bodytext = featSeg.getA();
+				tokenizationsBody = featSeg.getB();
+	            rese = label(bodytext);
+				//System.out.println(rese);
+	            // set the different sections of the Document object
+	            //doc = BasicStructureBuilder.resultSegmentation(doc, rese, tokenizations);
+			}
 
             // header processing
             BiblioItem resHeader = new BiblioItem();
@@ -1276,7 +1282,6 @@ public class FullTextParser extends AbstractParser {
 			
 			//System.out.println(rese);
            	tei = teiFormater.toTEIBodyML(tei, rese, resHeader, resCitations, tokenizations, doc);
-			//tei.append(teiFormater.toTEIBody(resCitations));
             tei = teiFormater.toTEIReferences(tei, resCitations);
 
             tei.append("\t\t</back>\n");
