@@ -46,7 +46,7 @@ public class ModelMap {
 			Model model = getModel(grobidModel.getModelPath());
 			tagger = model.createTagger();
 		} catch (Throwable thb) {
-			throw new GrobidException("Cannot instantiate a tagger: " + thb);
+			throw new GrobidException("Cannot instantiate a tagger", thb);
 		}
 		LOGGER.debug("end getTagger");
 		return tagger;

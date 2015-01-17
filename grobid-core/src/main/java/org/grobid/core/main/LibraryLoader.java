@@ -104,7 +104,7 @@ public class LibraryLoader {
                     MockContext.destroyInitialContext();
                 } catch (Exception exp) {
                     LOGGER.error("Could not unmock the context." + exp);
-                    new GrobidException("Could not unmock the context." + exp);
+                    throw new GrobidException("Could not unmock the context.", exp);
                 }
                 isContextMocked = false;
             }
@@ -130,7 +130,7 @@ public class LibraryLoader {
                 isContextMocked = true;
             } catch (Exception mexp) {
                 LOGGER.error("Could not mock the context." + mexp);
-                new GrobidException("Could not mock the context." + mexp);
+                throw new GrobidException("Could not mock the context.",  mexp);
             }
         }
     }

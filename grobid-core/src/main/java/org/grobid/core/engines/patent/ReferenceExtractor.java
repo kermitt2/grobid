@@ -232,10 +232,11 @@ public class ReferenceExtractor implements Closeable {
                         consolidate,
                         patents,
                         articles);
-            } else
+            } else {
                 return null;
+            }
         } catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.error("Error in extractAllReferencesPDFFile", e);
         }
         return null;
     }

@@ -15,11 +15,12 @@
 			<directory>${basedir}</directory>
 			<outputDirectory>grobid-home</outputDirectory>
 			<includes>
-				<include>${basedir}/lexicon/**</include>
-				<include>${basedir}/lib/**</include>
-				<include>${basedir}/models/**</include>
-				<include>${basedir}/pdf2xml/**</include>
-				<include>${basedir}/config/*</include>
+                <include>${basedir}/config/*</include>
+                <include>${basedir}/language-detection/**</include>
+                <include>${basedir}/lexicon/**</include>
+                <include>${basedir}/lib/**</include>
+                <include>${basedir}/models/**</include>
+                <include>${basedir}/pdf2xml/**</include>
 			</includes>
 			<excludes>
 				<exclude>${basedir}/models/**/*.old</exclude>

@@ -19,7 +19,8 @@
 				<include>${basedir}/lib/**</include>
 				<include>${basedir}/models/**</include>
 				<include>${basedir}/pdf2xml/**</include>
-			</includes>
+                <include>${basedir}/language-detection/**</include>
+            </includes>
 			<excludes>
 				<exclude>${basedir}/models/**/*.old</exclude>
 			</excludes>
