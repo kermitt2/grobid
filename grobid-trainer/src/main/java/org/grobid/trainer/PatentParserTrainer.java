@@ -78,7 +78,7 @@ public class PatentParserTrainer extends AbstractTrainer{
 
         //trainer.train(templatePath1, trainingDataPath1, modelPath1, GrobidProperties.getNBThreads());
         //trainer.train(templatePath2, trainingDataPath2, modelPath2, GrobidProperties.getNBThreads());
-        trainer.train(templatePath3, trainingDataPath3, modelPath3, GrobidProperties.getNBThreads());
+        trainer.train(templatePath3, trainingDataPath3, modelPath3, GrobidProperties.getNBThreads(), model);
 
         //renaming
         //renameModels(GrobidProperties.getModelPath(GrobidModels.PATENT_NPL), modelPath1);

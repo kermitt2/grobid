@@ -6,6 +6,7 @@ import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * SAX parser for author sequences encoded in the TEI format data.
@@ -123,7 +124,7 @@ public class TEIAuthorSaxParser extends DefaultHandler {
     private void writeField(String text) {
         // we segment the text
         //StringTokenizer st = new StringTokenizer(text, " \n\t");
-        ArrayList<String> tokens = TextUtilities.segment(text, TextUtilities.punctuations);
+        List<String> tokens = TextUtilities.segment(text, TextUtilities.punctuations);
 
         boolean begin = true;
         //while(st.hasMoreTokens()) {
