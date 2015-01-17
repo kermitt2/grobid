@@ -297,6 +297,11 @@ public class AffiliationAddressParser extends AbstractParser {
                                                  List<String> tokenizations,
                                                  boolean usePreLabel) {
         ArrayList<Affiliation> fullAffiliations = null;
+
+        if (result == null) {
+            return fullAffiliations;
+        }
+
         try {
             //System.out.println(tokenizations.toString());
             // extract results from the processed file
@@ -804,8 +809,7 @@ public class AffiliationAddressParser extends AbstractParser {
                 }
             }
         } catch (Exception e) {
-//			e.printStackTrace();
-            throw new GrobidException("An exception occured while running Grobid.", e);
+            throw new GrobidException("An exception occurred while running Grobid.", e);
         }
         return fullAffiliations;
     }

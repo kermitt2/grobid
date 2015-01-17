@@ -78,7 +78,7 @@ public class HeaderParser extends AbstractParser {
 	 *  Processing without application of the segmentation model, regex are used to identify the header
 	 *  zone.  
 	 */ 
-	public Pair<String, Document> processing2(String input, boolean consolidate, BiblioItem resHeader, int startPage, int endPage) throws TimeoutException {
+	public Pair<String, Document> processing2(String input, boolean consolidate, BiblioItem resHeader, int startPage, int endPage) {
         Document doc = new Document(input, tmpPath.getAbsolutePath());
         String pathXML = null;
         try {
@@ -93,7 +93,7 @@ public class HeaderParser extends AbstractParser {
             // path is the resource path
             // and we do not extract images in the PDF file
             if (pathXML == null) {
-                throw new GrobidException("PDF parsing fails");
+                throw new GrobidException("PDF parsing fails, pdf2xml returned null");
             }
             doc.setPathXML(pathXML);
             doc.addTokenizedDocument();
@@ -105,9 +105,9 @@ public class HeaderParser extends AbstractParser {
             String tei = processingHeaderBlock(consolidate, doc, resHeader);
             return new ImmutablePair<String, Document>(tei, doc);
         } catch (TimeoutException timeoutExp) {
-            throw new TimeoutException("A time out occured");
+            throw new GrobidException("A timeout occurred when extracting XML from PDF", timeoutExp);
         } catch (final Exception exp) {
-            throw new GrobidException("An exception occurred while running Grobid on file " + input + ": " + exp);
+            throw new GrobidException("An exception occurred while running Grobid on file " + input, exp);
         } finally {
             doc.cleanLxmlFile(pathXML, true);
         }
@@ -285,7 +285,7 @@ public class HeaderParser extends AbstractParser {
 			//LOGGER.debug(tei.toString());
 			return tei.toString();
 		} catch (Exception e) {
-			throw new GrobidException("An exception occured while running Grobid.", e);
+			throw new GrobidException("An exception occurred while processing header block.", e);
 		}
 	}
 

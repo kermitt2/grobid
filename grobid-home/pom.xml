@@ -9,8 +9,7 @@
 		<relativePath>../pom.xml</relativePath>
 	</parent>
 
-	<groupId>org.grobid</groupId>
-	<artifactId>grobid-home</artifactId>
+    <artifactId>grobid-home</artifactId>
 	<version>0.3.0</version>
 	<name>${project.artifactId}</name>
 

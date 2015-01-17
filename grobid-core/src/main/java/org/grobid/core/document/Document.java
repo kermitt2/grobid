@@ -350,7 +350,7 @@ public class Document {
 
         if (exitCode == null) {
 //			tmpPathXML = null;
-            throw new RuntimeException("An error occured while converting pdf "
+            throw new RuntimeException("An error occurred while converting pdf "
                     + pdfPath);
         } else if (exitCode == KILLED_DUE_2_TIMEOUT) {
             throw new TimeoutException("PDF to XML conversion timed out");

@@ -115,7 +115,7 @@ public class Annotation {
 				addListItems();
 				writer.addEndElement(TAG_NOTE);
 			} catch (XMLStreamException xmlsExp) {
-				throw new GrobidException("Failed to generate the header of document: " + xmlsExp);
+				throw new GrobidException("Failed to generate the header of document", xmlsExp);
 			}
 			if (pIndent)
 				return writer.toStringIndented();
