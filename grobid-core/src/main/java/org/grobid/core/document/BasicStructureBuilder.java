@@ -8,6 +8,7 @@ import com.google.common.collect.SortedSetMultimap;
 import com.google.common.collect.TreeMultimap;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.engines.tagging.GenericTaggerUtils;
+import org.grobid.core.engines.Segmentation;
 import org.grobid.core.layout.Block;
 import org.grobid.core.layout.Cluster;
 import org.grobid.core.layout.LayoutToken;
@@ -677,10 +678,140 @@ public class BasicStructureBuilder {
             doc.getClusters().add(cluster);
         }
 
+    }	
+	
+    static public Document generalResultSegmentation(Document doc, String labeledResult, List<String> documentTokens) {
+        List<Pair<String, String>> labeledTokens = GenericTaggerUtils.getTokensAndLabels(labeledResult);
+
+        SortedSetMultimap<String, DocumentPiece> labeledBlocks = TreeMultimap.create();
+        doc.setLabeledBlocks(labeledBlocks);
+
+        List<Block> docBlocks = doc.getBlocks();
+		int indexLine = 0;		
+        int blockIndex = 0;
+        int p = 0; // position in the labeled result 
+		int currentLineEndPos = 0; // position in the global doc. tokenization of the last 
+								// token of the current line
+		int currentLineStartPos = 0; // position in the global doc. 
+									 // tokenization of the first token of the current line
+		String line = null;
+		
+        DocumentPointer pointerA = DocumentPointer.START_DOCUMENT_POINTER;
+        DocumentPointer currentPointer = null;
+        DocumentPointer lastPointer = null;
+
+        String curLabel;
+        String curPlainLabel = null;
+        String lastPlainLabel = null;
+
+        int lastTokenInd = -1;
+        for (int i = docBlocks.size() - 1; i >=0; i--) {
+            int endToken = docBlocks.get(i).getEndToken();
+            if (endToken != -1) {
+                lastTokenInd = endToken;
+                break;
+            }
+        }
+
+        // we do this concatenation trick so that we don't have to process stuff after the main loop
+        // no copying of lists happens because of this, so it's ok to concatenate
+        String ignoredLabel = "@IGNORED_LABEL@";
+        for (Pair<String, String> labeledTokenPair :
+                Iterables.concat(labeledTokens, Collections.singleton(new Pair<String, String>("IgnoredToken", ignoredLabel)))) {
+            if (labeledTokenPair == null) {
+                p++;
+                continue;
+            }
+			
+			// as we process the document segmentation line by line, we don't use the usual 
+			// tokenization to rebuild the text flow, but we get each line again from the 
+			// text stored in the document blocks (similarly as when generating the features) 
+			line = null;
+			while( (line == null) && (blockIndex < docBlocks.size()) ) {
+				Block block = docBlocks.get(blockIndex);
+		        List<LayoutToken> tokens = block.getTokens();
+				String localText = block.getText();
+		        if ( (tokens == null) || (localText == null) || (localText.trim().length() == 0) ) {
+					blockIndex++;
+					indexLine = 0;
+					if (blockIndex < docBlocks.size()) {
+						block = docBlocks.get(blockIndex);
+						currentLineStartPos = block.getStartToken();
+					}
+		            continue;
+		        }
+				String[] lines = localText.split("\n");
+				if ( (lines.length == 0) || (indexLine >= lines.length)) {
+					blockIndex++;
+					indexLine = 0;
+					if (blockIndex < docBlocks.size()) {
+						block = docBlocks.get(blockIndex);
+						currentLineStartPos = block.getStartToken();
+					}
+					continue;
+				}
+				else {
+					line = lines[indexLine];
+					indexLine++;
+					if (line.trim().length() == 0) {
+						line = null;
+						continue;
+					}
+
+					if (Segmentation.filterLine(line)) {
+						line = null;
+						continue;
+					}
+					
+					// what is the position of the last token of this line?
+					currentLineEndPos = currentLineStartPos;
+					while(currentLineEndPos < documentTokens.size()) {
+						if (documentTokens.get(currentLineEndPos).equals("\n")) {
+							currentLineEndPos--;
+							break;
+						}
+						currentLineEndPos++;
+					}
+				}
+			}
+            curLabel = labeledTokenPair.b;
+            curPlainLabel = GenericTaggerUtils.getPlainLabel(curLabel);
+			
+			/*System.out.println("-------------------------------");
+			System.out.println("block: " + blockIndex);
+			System.out.println("token: " + labeledTokenPair.a);
+			System.out.println("curPlainLabel: " + curPlainLabel);
+			System.out.println("lastPlainLabel: " + lastPlainLabel);
+			System.out.println("currentLineStartPos: " + currentLineStartPos);
+			System.out.println("currentLineEndPos: " + currentLineEndPos);*/
+			
+			if (blockIndex == docBlocks.size()) {
+				// the last labelled piece has still to be added
+				if ((!curPlainLabel.equals(lastPlainLabel)) && (lastPlainLabel != null)) {	
+					labeledBlocks.put(lastPlainLabel, new DocumentPiece(pointerA, lastPointer));
+				}
+				break;
+			}
+
+            currentPointer = new DocumentPointer(doc, blockIndex, currentLineEndPos);
+
+            // either a new entity starts or a new beginning of the same type of entity
+			if ((!curPlainLabel.equals(lastPlainLabel)) && (lastPlainLabel != null)) {	
+                labeledBlocks.put(lastPlainLabel, new DocumentPiece(pointerA, lastPointer));
+                pointerA = new DocumentPointer(doc, blockIndex, currentLineStartPos);
+            }
+
+            //updating stuff for next iteration
+            lastPlainLabel = curPlainLabel;
+            lastPointer = currentPointer;
+			currentLineStartPos = currentLineEndPos+2; // one shift for the EOL, one for the next line
+            p++;
+        }
+
+        return doc;
     }
 
-
-    static public Document generalResultSegmentation(Document doc, String labeledResult, List<String> documentTokens) {
+    /*static public Document generalResultSegmentationOld(Document doc, String labeledResult, List<String> documentTokens) {
         List<Pair<String, String>> labeledTokens = GenericTaggerUtils.getTokensAndLabels(labeledResult);
 
         SortedSetMultimap<String, DocumentPiece> labeledBlocks = TreeMultimap.create();
@@ -801,7 +932,7 @@ public class BasicStructureBuilder {
         }
 
         return doc;
-    }
+    }*/
 
     /**
      * Set the main segments of the document based on the full text parsing results
