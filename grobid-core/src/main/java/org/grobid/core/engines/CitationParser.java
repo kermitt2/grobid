@@ -166,7 +166,7 @@ public class CitationParser extends AbstractParser {
                 cntManager.i(CitationParserCounters.SEGMENTED_REFERENCES, references.size());
             }
 
-            for (LabeledReferenceResult ref: references) {
+            for (LabeledReferenceResult ref : references) {
                 BiblioItem bib = processing(ref.getReferenceText(), consolidate);
                 BibDataSet bds = new BibDataSet();
 
@@ -184,7 +184,7 @@ public class CitationParser extends AbstractParser {
 
     public List<BibDataSet> processingReferenceSection(String input,
                                                        ReferenceSegmenter referenceSegmenter,
-                                                       boolean consolidate) throws Exception {
+                                                       boolean consolidate) {
         List<BibDataSet> results = new ArrayList<BibDataSet>();
         try {
 
@@ -213,6 +213,8 @@ public class CitationParser extends AbstractParser {
                 bds.setRawBib(ref.getReferenceText());
                 results.add(bds);
             }
+        } catch (GrobidException e) {
+            throw e;
         } catch (Exception e) {
             throw new GrobidException("An exception occurred while running Grobid.", e);
         }
@@ -230,8 +232,8 @@ public class CitationParser extends AbstractParser {
      * @return bibilio item
      */
     public BiblioItem resultExtraction(String result,
-                                       boolean volumePostProcess, 
-									   List<String> tokenizations) {
+                                       boolean volumePostProcess,
+                                       List<String> tokenizations) {
         BiblioItem biblio = new BiblioItem();
 
         StringTokenizer st = new StringTokenizer(result, "\n");
@@ -391,14 +393,14 @@ public class CitationParser extends AbstractParser {
                 } else
                     biblio.setVolumeBlock(s2, volumePostProcess);
             } else if ((s1.equals("<issue>")) || (s1.equals("I-<issue>"))) {
-	            if (biblio.getIssue() != null) {
+                if (biblio.getIssue() != null) {
                     if (addSpace)
                         biblio.setIssue(biblio.getIssue() + " " + s2);
                     else
                         biblio.setIssue(biblio.getIssue() + s2);
                 } else
                     biblio.setIssue(s2);
-	        } else if ((s1.equals("<editor>")) || (s1.equals("I-<editor>"))) {
+            } else if ((s1.equals("<editor>")) || (s1.equals("I-<editor>"))) {
                 if (biblio.getEditors() != null) {
                     if (addSpace)
                         biblio.setEditors(biblio.getEditors() + " " + s2);

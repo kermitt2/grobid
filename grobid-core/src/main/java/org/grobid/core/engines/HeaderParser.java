@@ -11,7 +11,6 @@ import org.grobid.core.document.DocumentPiece;
 import org.grobid.core.document.DocumentPointer;
 import org.grobid.core.document.TEIFormater;
 import org.grobid.core.exceptions.GrobidException;
-import org.grobid.core.exceptions.GrobidExceptionStatus;
 import org.grobid.core.features.FeatureFactory;
 import org.grobid.core.features.FeaturesVectorHeader;
 import org.grobid.core.lang.Language;
@@ -33,7 +32,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.SortedSet;
 import java.util.StringTokenizer;
-import java.util.concurrent.TimeoutException;
 import java.util.regex.Matcher;
 
 /**
@@ -61,18 +59,11 @@ public class HeaderParser extends AbstractParser {
 	/**
 	 * Processing with application of the segmentation model
 	 */ 
-	public Pair<String, Document> processing(String input, boolean consolidate, BiblioItem resHeader) throws TimeoutException {
-        try {
+	public Pair<String, Document> processing(String input, boolean consolidate, BiblioItem resHeader) {
+        Document doc = parsers.getSegmentationParser().processing(input, true);
 
-            Document doc = parsers.getSegmentationParser().processing(input, true);
-
-			String tei = processingHeaderSection(doc, consolidate, resHeader);
-            return new ImmutablePair<String, Document>(tei, doc);
-        } catch (TimeoutException timeoutExp) {
-            throw new TimeoutException("A time out occured");
-        } catch (final Exception exp) {
-            throw new GrobidException("An exception occurred while running Grobid on file " + tmpPath.getAbsolutePath() + ": " + exp);
-        } 
+        String tei = processingHeaderSection(doc, consolidate, resHeader);
+        return new ImmutablePair<String, Document>(tei, doc);
     }
 	
 	/**
@@ -169,7 +160,7 @@ public class HeaderParser extends AbstractParser {
 					boolean fragmentedAuthors = false;
 					boolean hasMarker = false;
 					List<Integer> authorsBlocks = new ArrayList<Integer>();
-					String[] authorSegments = null;
+					String[] authorSegments;
 					if (resHeader.getAuthors() != null) {
 						ArrayList<String> auts;
 						authorSegments = resHeader.getAuthors().split("\n");
@@ -285,7 +276,7 @@ public class HeaderParser extends AbstractParser {
 	/**
 	 *  Header processing after application of the segmentation model
 	 */
-	public String processingHeaderSection(Document doc, boolean consolidate, BiblioItem resHeader) throws Exception {
+	public String processingHeaderSection(Document doc, boolean consolidate, BiblioItem resHeader) {
         try {
             SortedSet<DocumentPiece> documentHeaderParts = doc.getDocumentPart(SegmentationLabel.HEADER);
 			List<String> tokenizations = doc.getTokenizations();
@@ -321,7 +312,7 @@ public class HeaderParser extends AbstractParser {
 					// we need more textual content to ensure that the language identification will be
 					// correct
 					SortedSet<DocumentPiece> documentBodyParts = doc.getDocumentPart(SegmentationLabel.BODY);
-					StringBuffer contentBuffer = new StringBuffer();
+					StringBuilder contentBuffer = new StringBuilder();
 					for(DocumentPiece docPiece : documentBodyParts) {
 						DocumentPointer dp1 = docPiece.a;
 						DocumentPointer dp2 = docPiece.b;
