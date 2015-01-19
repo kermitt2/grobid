@@ -274,7 +274,7 @@ public class Engine implements Closeable {
      * @return the list of parsed references as bibliographical objects enriched
      *         with citation contexts
      */
-    public List<BibDataSet> processReferences(String inputFile, boolean consolidate) throws Exception {
+    public List<BibDataSet> processReferences(String inputFile, boolean consolidate) {
         return parsers.getCitationParser().processingReferenceSection(inputFile, parsers.getReferenceSegmenterParser(), consolidate);
     }
 
@@ -421,7 +421,7 @@ public class Engine implements Closeable {
      *         information
      * @throws Exception if sth went wrong
      */
-    public String processHeader(String inputFile, boolean consolidate, BiblioItem result) throws Exception {
+    public String processHeader(String inputFile, boolean consolidate, BiblioItem result) {
         return processHeader(inputFile, consolidate, 0, 2, result);
     }
 
@@ -437,9 +437,8 @@ public class Engine implements Closeable {
      * @param result      bib result
      * @return the TEI representation of the extracted bibliographical
      *         information
-     * @throws Exception if sth went wrong
      */
-    public String processHeader(String inputFile, boolean consolidate, int startPage, int endPage, BiblioItem result) throws Exception {
+    public String processHeader(String inputFile, boolean consolidate, int startPage, int endPage, BiblioItem result) {
         // normally the BiblioItem reference must not be null, but if it is the
         // case, we still continue
         // with a new instance, so that the resulting TEI string is still
@@ -467,7 +466,7 @@ public class Engine implements Closeable {
      *         information
      * @throws Exception if sth went wrong
      */
-    public String segmentAndProcessHeader(String inputFile, boolean consolidate, BiblioItem result) throws Exception {
+    public String segmentAndProcessHeader(String inputFile, boolean consolidate, BiblioItem result) {
         // normally the BiblioItem reference must not be null, but if it is the
         // case, we still continue
         // with a new instance, so that the resulting TEI string is still
