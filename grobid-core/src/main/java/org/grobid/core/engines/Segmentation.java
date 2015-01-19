@@ -169,7 +169,7 @@ public class Segmentation extends AbstractParser {
 	/**
      *  Addition of the features at token level for the complete document
 	 */	
-	private String getAllTextFeatured(Document doc, boolean headerMode) {
+	public String getAllTextFeatured(Document doc, boolean headerMode) {
 		FeatureFactory featureFactory = FeatureFactory.getInstance();
         StringBuilder fulltext = new StringBuilder();
         String currentFont = null;
@@ -569,7 +569,7 @@ public class Segmentation extends AbstractParser {
 	 * The dictionnary flags are at line level (i.e. the line contains a name mention, a place mention, a year, etc.)
 	 * Regarding layout features: font, size and style are the one associated to the first token of the line. 
 	 */
-	private String getAllLinesFeatured(Document doc, boolean headerMode) {
+	public static String getAllLinesFeatured(Document doc, boolean headerMode) {
 		FeatureFactory featureFactory = FeatureFactory.getInstance();
         StringBuilder fulltext = new StringBuilder();
         String currentFont = null;
@@ -642,8 +642,6 @@ public class Segmentation extends AbstractParser {
                 newPage = true;
                 start = false;
             }
-            boolean newline;
-            boolean previousNewline = false;
             endblock = false;
 
             if (endPage) {
@@ -663,9 +661,13 @@ public class Segmentation extends AbstractParser {
                 }
             }
 
-			StringTokenizer st = new StringTokenizer(localText, "\n");
-			while(st.hasMoreTokens()) {
-				String line = st.nextToken();
+			//StringTokenizer st = new StringTokenizer(localText, "\n");
+			String[] lines = localText.split("\n");
+			int n = 0;// token position in current block
+			//while(st.hasMoreTokens()) {
+			for(int li=0; li < lines.length; li++) {	
+				//String line = st.nextToken();
+				String line = lines[li];
 				boolean firstPageBlock = false;
 				boolean lastPageBlock = false;
 			
@@ -679,9 +681,8 @@ public class Segmentation extends AbstractParser {
 	                //blockPos++;
 	                continue;
 	            }
-
-				int n = 0;// token position in current block
-            //while (n < tokens.size()) {
+				
+            	//while (n < tokens.size()) {
                 LayoutToken token = tokens.get(n);
                 features = new FeaturesVectorSegmentation();
                 features.token = token;
@@ -698,41 +699,18 @@ public class Segmentation extends AbstractParser {
 				//if (text.length() > 10)
 					//text = text.substring(0,10);
 
-                if (text == null) {
-                    n++;
-                    mm++;
-                    nn++;
-                    continue;
-                }
-                text = text.trim();
-                if (text.length() == 0) {
+                
+                if ( (text == null) || 
+					(text.trim().length() == 0) || 
+					(text.trim().equals("\n")) || 
+					(Segmentation.filterLine(line)) ) {
                     n++;
                     mm++;
                     nn++;
                     continue;
                 }
 
-                if (text.equals("\n")) {
-                    newline = true;
-                    previousNewline = true;
-                    n++;
-                    mm++;
-                    nn++;
-                    continue;
-                } else
-                    newline = false;
-
-                if (previousNewline) {
-                    newline = true;
-                    previousNewline = false;
-                }
-
-                if (Segmentation.filterLine(line)) {
-                    n++;
-                    mm++;
-                    nn++;
-                    continue;
-                }
+				text = text.trim();
 
                 features.string = text;
 				features.secondString = text2;
@@ -742,86 +720,25 @@ public class Segmentation extends AbstractParser {
 				features.lineLength = line.length() / LINESCALE;
 				features.punctuationProfile = TextUtilities.punctuationProfile(line);
 				
-                if (newline)
-                    features.lineStatus = null;
-                /*Matcher m0 = featureFactory.isPunct.matcher(text);
-                if (m0.find()) {
-                    features.punctType = "PUNCT";
-                }
-                if (text.equals("(") || text.equals("[")) {
-                    features.punctType = "OPENBRACKET";
-
-                } else if (text.equals(")") || text.equals("]")) {
-                    features.punctType = "ENDBRACKET";
-
-                } else if (text.equals(".")) {
-                    features.punctType = "DOT";
-
-                } else if (text.equals(",")) {
-                    features.punctType = "COMMA";
-
-                } else if (text.equals("-")) {
-                    features.punctType = "HYPHEN";
-
-                } else if (text.equals("\"") || text.equals("\'") || text.equals("`")) {
-                    features.punctType = "QUOTE";
-
-                }*/
+                features.lineStatus = null;
 				features.punctType = null;
 				
                 if (n == 0) {
-                    features.lineStatus = null;
-                    features.blockStatus = null;
+                    features.blockStatus = "BLOCKSTART";
                 } else if (n == tokens.size() - 1) {
-                    features.lineStatus = null;
-                    previousNewline = true;
-                    features.blockStatus = null;
+                    features.blockStatus = "BLOCKEND";
                     endblock = true;
                 } else {
                     // look ahead...
                     boolean endline = false;
-
-                    int ii = 1;
-                    boolean endloop = false;
-                    while ((n + ii < tokens.size()) && (!endloop)) {
-                        LayoutToken tok = tokens.get(n + ii);
-                        if (tok != null) {
-                            String toto = tok.getText();
-                            if (toto != null) {
-                                if (toto.equals("\n")) {
-                                    endline = true;
-                                    endloop = true;
-                                } else {
-                                    if ((toto.length() != 0)
-                                            && (!(toto.startsWith("@IMAGE")))
-                                            && (!text.contains(".pbm"))
-                                            && (!text.contains(".vec"))
-                                            && (!text.contains(".jpg"))) {
-                                        endloop = true;
-                                    }
-                                }
-                            }
-                        }
-
-                        if (n + ii == tokens.size() - 1) {
-                            endblock = true;
-                            endline = true;
-                        }
-
-                        ii++;
-                    }
-
-                    if ((!endline) && !(newline)) {
-                        features.lineStatus = null;
-                    } else if (!newline) {
-                        features.lineStatus = null;
-                        previousNewline = true;
-                    }
+					if (li+1 == lines.length) {
+						endblock = true;
+					}
 
                     if ((!endblock) && (features.blockStatus == null))
-                        features.blockStatus = null;
+                        features.blockStatus = "BLOCKIN";
                     else if (features.blockStatus == null) {
-                        features.blockStatus = null;
+                        features.blockStatus = "BLOCKEND";
                         endblock = true;
                     }
                 }
