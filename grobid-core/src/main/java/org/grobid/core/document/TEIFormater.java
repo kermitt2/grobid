@@ -2,21 +2,19 @@ package org.grobid.core.document;
 
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.BiblioItem;
-import org.grobid.core.data.Person;
 import org.grobid.core.data.Date;
+import org.grobid.core.data.Person;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.lang.Language;
-import org.grobid.core.layout.*;
-import org.grobid.core.utilities.TextUtilities;
+import org.grobid.core.layout.Block;
 import org.grobid.core.utilities.LanguageUtilities;
-import org.grobid.core.engines.SegmentationLabel;
+import org.grobid.core.utilities.TextUtilities;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.util.SortedSet;
 
 /**
  * Class for generating a TEI representation of a document.
@@ -42,8 +40,8 @@ public class TEIFormater {
     private ArrayList<String> elements = null;
 
     // static variable for the position of italic and bold features in the CRF model
-    private static int italicPos = 16;
-    private static int boldPos = 17;
+    private static final int ITALIC_POS = 16;
+    private static final int BOLD_POS = 17;
 
 	private static Pattern numberRef = Pattern.compile("(\\[|\\()\\d+\\w?(\\)|\\])");
     private static Pattern numberRefCompact =
@@ -58,7 +56,7 @@ public class TEIFormater {
     public StringBuffer toTEIHeader(BiblioItem biblio,
                                     boolean peer,
                                     boolean withStyleSheet,
-                                    String defaultPublicationStatement) throws Exception {
+                                    String defaultPublicationStatement) {
         StringBuffer tei = new StringBuffer();
         tei.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
         if (withStyleSheet) {
@@ -1532,12 +1530,12 @@ public class TEIFormater {
                     }
                 } else if (j == ll - 1) {
                     s1 = s; // current tag
-                } else if (j == italicPos) {
+                } else if (j == ITALIC_POS) {
                     // this is the italic position
                     if (s.equals("1")) {
                         isItalic = true;
                     }
-                } else if (j == boldPos) {
+                } else if (j == BOLD_POS) {
                     // this is the bold position
                     if (s.equals("1")) {
                         isBold = true;

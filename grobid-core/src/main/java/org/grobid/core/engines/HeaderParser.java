@@ -11,6 +11,7 @@ import org.grobid.core.document.DocumentPiece;
 import org.grobid.core.document.DocumentPointer;
 import org.grobid.core.document.TEIFormater;
 import org.grobid.core.exceptions.GrobidException;
+import org.grobid.core.exceptions.GrobidExceptionStatus;
 import org.grobid.core.features.FeatureFactory;
 import org.grobid.core.features.FeaturesVectorHeader;
 import org.grobid.core.lang.Language;
@@ -104,17 +105,12 @@ public class HeaderParser extends AbstractParser {
 
             String tei = processingHeaderBlock(consolidate, doc, resHeader);
             return new ImmutablePair<String, Document>(tei, doc);
-        } catch (TimeoutException timeoutExp) {
-            throw new GrobidException("A timeout occurred when extracting XML from PDF", timeoutExp);
-        } catch (final Exception exp) {
-            throw new GrobidException("An exception occurred while running Grobid on file " + input, exp);
         } finally {
             doc.cleanLxmlFile(pathXML, true);
         }
     }
 
 	public String processingHeaderBlock(boolean consolidate, Document doc, BiblioItem resHeader) {
-		try {
 			String header;
 			if (doc.getBlockDocumentHeaders() == null) {
 				header = doc.getHeaderFeatured(true, true, true);
@@ -284,9 +280,6 @@ public class HeaderParser extends AbstractParser {
             tei.append("</TEI>\n");
 			//LOGGER.debug(tei.toString());
 			return tei.toString();
-		} catch (Exception e) {
-			throw new GrobidException("An exception occurred while processing header block.", e);
-		}
 	}
 
 	/**
