@@ -1461,22 +1461,29 @@ public class BiblioItem {
      * Export to BibTeX format
      */
     public String toBibTeX() {
+		return toBibTeX("id");
+	}
+
+    /**
+     * Export to BibTeX format
+     */
+    public String toBibTeX(String id) {
         String bibtex = "";
         try {
 
             if (journal != null) {
-                bibtex += "@article{" + "id,\n";
+                bibtex += "@article{" + id + ",\n";
             } else if (book_type != null) {
-                bibtex += "@techreport{" + "id,\n";
+                bibtex += "@techreport{" + id + ",\n";
             } else if (bookTitle != null) {
                 if ((bookTitle.startsWith("proc")) || (bookTitle.startsWith("Proc")) ||
                         (bookTitle.startsWith("In Proc")) || (bookTitle.startsWith("In proc"))) {
-                    bibtex += "@inproceedings{" + "id,\n";
+                    bibtex += "@inproceedings{" + id + ",\n";
                 } else {
-                    bibtex += "@article{" + "id,\n"; // ???
+                    bibtex += "@article{" + id + ",\n"; // ???
                 }
             } else {
-                bibtex += "@misc{" + "id,\n"; // ???
+                bibtex += "@misc{" + id + ",\n"; // ???
             }
 
             // author 
@@ -1557,6 +1564,16 @@ public class BiblioItem {
                 bibtex += ",\npages\t=\t\"" + pageRange + "\"";
             }
 
+			// volume
+			if (volumeBlock != null) {
+				bibtex += ",\nvolume\t=\t\"" + volumeBlock + "\"";
+			}
+
+			// issue (named number in BibTeX)
+			if (issue != null) {
+				bibtex += ",\nnumber\t=\t\"" + issue + "\"";
+			}
+			
             // abstract
             if (abstract_ != null) {
                 if (abstract_.length() > 0) {
