@@ -6,18 +6,13 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.SortedSetMultimap;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.BiblioItem;
-import org.grobid.core.engines.CitationParser;
 import org.grobid.core.engines.Engine;
-import org.grobid.core.engines.HeaderParser;
 import org.grobid.core.engines.SegmentationLabel;
-import org.grobid.core.engines.citations.LabeledReferenceResult;
-import org.grobid.core.engines.citations.ReferenceSegmenter;
-import org.grobid.core.engines.citations.RegexReferenceSegmenter;
 import org.grobid.core.exceptions.GrobidException;
+import org.grobid.core.exceptions.GrobidExceptionStatus;
 import org.grobid.core.exceptions.GrobidResourceException;
 import org.grobid.core.features.FeatureFactory;
 import org.grobid.core.features.FeaturesVectorHeader;
-import org.grobid.core.lang.Language;
 import org.grobid.core.layout.Block;
 import org.grobid.core.layout.Cluster;
 import org.grobid.core.layout.LayoutToken;
@@ -25,14 +20,11 @@ import org.grobid.core.process.ProcessRunner;
 import org.grobid.core.sax.PDF2XMLSaxParser;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.KeyGen;
-import org.grobid.core.utilities.LanguageUtilities;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.Utilities;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.xml.sax.SAXException;
 
-import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 import java.io.File;
@@ -61,6 +53,7 @@ public class Document {
      * Exit code got when pdf2xml took too much time and has been killed by pdf2xml_server.
      */
     private static final int KILLED_DUE_2_TIMEOUT = 143;
+    public static final int DEFAULT_TIMEOUT = 50000;
 
     private String path = null; // path where the pdf file is stored
 
@@ -248,8 +241,7 @@ public class Document {
      * pdf, which is relevant for fulltext extraction.
      */
     public String pdf2xml(boolean tout, boolean force, int startPage,
-                          int endPage, String pdfPath, String tmpPath, boolean full)
-            throws Exception {
+                          int endPage, String pdfPath, String tmpPath, boolean full) {
         LOGGER.debug("start pdf2xml");
         long time = System.currentTimeMillis();
         String pdftoxml0;
@@ -271,21 +263,20 @@ public class Document {
             List<String> cmd = new ArrayList<String>();
             String[] tokens = pdftoxml0.split(" ");
             for (String token : tokens) {
-                if (token.trim().length() > 0)
+                if (token.trim().length() > 0) {
                     cmd.add(token);
+                }
             }
             cmd.add(pdfPath);
             cmd.add(tmpPathXML);
             if (GrobidProperties.isContextExecutionServer()) {
                 tmpPathXML = processPdf2Xml(pdfPath, tmpPathXML, cmd);
             } else {
-                tmpPathXML = processPdf2XmlThreadMode(tout, pdfPath,
-                        tmpPathXML, cmd);
+                tmpPathXML = processPdf2XmlThreadMode(tout, pdfPath, tmpPathXML, cmd);
             }
 
         }
-        LOGGER.debug("end pdf2xml. Time to process:"
-                + (System.currentTimeMillis() - time) + "ms");
+        LOGGER.debug("pdf2xml process finished. Time to process:" + (System.currentTimeMillis() - time) + "ms");
         return tmpPathXML;
     }
 
@@ -310,18 +301,17 @@ public class Document {
             if (tout) {
                 worker.join(timeout);
             } else {
-                worker.join(50000); // max 50 second even without predefined
+                worker.join(DEFAULT_TIMEOUT); // max 50 second even without predefined
                 // timeout
             }
             if (worker.getExitStatus() == null) {
                 tmpPathXML = null;
-                throw new RuntimeException("PDF to XML conversion timed out");
+                throw new GrobidException("PDF to XML conversion timed out", GrobidExceptionStatus.TIMEOUT);
             }
 
             if (worker.getExitStatus() != 0) {
-                throw new RuntimeException(
-                        "PDF to XML conversion failed due to: "
-                                + worker.getErrorStreamContents());
+                throw new GrobidException("PDF to XML conversion failed due to: " + worker.getErrorStreamContents(),
+                        GrobidExceptionStatus.TIMEOUT);
             }
         } catch (InterruptedException ex) {
             tmpPathXML = null;
@@ -343,20 +333,16 @@ public class Document {
      * @return the path the the converted file.
      * @throws TimeoutException
      */
-    protected String processPdf2Xml(String pdfPath, String tmpPathXML,
-                                    List<String> cmd) throws TimeoutException {
+    protected String processPdf2Xml(String pdfPath, String tmpPathXML, List<String> cmd) {
         LOGGER.debug("Executing: " + cmd.toString());
         Integer exitCode = org.grobid.core.process.ProcessPdf2Xml.process(cmd);
 
         if (exitCode == null) {
-//			tmpPathXML = null;
-            throw new RuntimeException("An error occurred while converting pdf "
-                    + pdfPath);
+            throw new GrobidException("An error occurred while converting pdf " + pdfPath, GrobidExceptionStatus.BAD_INPUT_DATA);
         } else if (exitCode == KILLED_DUE_2_TIMEOUT) {
-            throw new TimeoutException("PDF to XML conversion timed out");
+            throw new GrobidException("PDF to XML conversion timed out", GrobidExceptionStatus.TIMEOUT);
         } else if (exitCode != 0) {
-            throw new RuntimeException(
-                    "PDF to XML conversion failed with error code: " + exitCode);
+            throw new GrobidException("PDF to XML conversion failed with error code: " + exitCode, GrobidExceptionStatus.BAD_INPUT_DATA);
         }
 
         return tmpPathXML;
@@ -413,16 +399,11 @@ public class Document {
     }
 
     /**
-     *  Parser PDF2XML output representation and get the tokenized form of the document.
+     * Parser PDF2XML output representation and get the tokenized form of the document.
      *
      * @return list of features
-     * @throws java.io.IOException      when a file can not be opened
-     * @throws javax.xml.parsers.ParserConfigurationException
-     *                                  when parsing
-     * @throws org.xml.sax.SAXException when parsing
      */
-    public List<String> addTokenizedDocument() throws IOException,
-            ParserConfigurationException, SAXException {
+    public List<String> addTokenizedDocument() {
         List<String> images = new ArrayList<String>();
         PDF2XMLSaxParser parser = new PDF2XMLSaxParser(this, images);
 
@@ -430,19 +411,32 @@ public class Document {
         tokenizations = null;
 
         File file = new File(pathXML);
-        FileInputStream in = new FileInputStream(file);
-
-        // get a factory
-        SAXParserFactory spf = SAXParserFactory.newInstance();
-        // get a new instance of parser
-        SAXParser p = spf.newSAXParser();
+        FileInputStream in = null;
         try {
-            p.parse(in, parser);
-            tokenizations = parser.getTokenization();
+            in = new FileInputStream(file);
+
+            // get a factory
+            SAXParserFactory spf = SAXParserFactory.newInstance();
+            // get a new instance of parser
+            SAXParser p = spf.newSAXParser();
+            try {
+                p.parse(in, parser);
+                tokenizations = parser.getTokenization();
+            } catch (Exception e) {
+                throw new GrobidException("An exception occurs.", e);
+            }
         } catch (Exception e) {
-            throw new GrobidException("An exception occurs.", e);
+            throw new GrobidException("Cannot parse file: " + file, e, GrobidExceptionStatus.PARSING_ERROR);
+        } finally {
+            if (in != null) {
+                try {
+                    in.close();
+                } catch (IOException e) {
+                    LOGGER.error("Cannot close input stream", e);
+                }
+
+            }
         }
-        in.close();
         // we filter out possible line numbering for review works
         // filterLineNumber();
         return tokenizations;
@@ -1857,21 +1851,21 @@ public class Document {
     }
 
     public SortedSet<DocumentPiece> getDocumentPart(SegmentationLabel segmentationLabel) {
-		if (labeledBlocks == null) {
-			LOGGER.debug("labeledBlocks is null");
-			return null;
-		}
-		if (segmentationLabel.getLabel() == null) {
-			System.out.println("segmentationLabel.getLabel()  is null");
-		}
+        if (labeledBlocks == null) {
+            LOGGER.debug("labeledBlocks is null");
+            return null;
+        }
+        if (segmentationLabel.getLabel() == null) {
+            System.out.println("segmentationLabel.getLabel()  is null");
+        }
         return labeledBlocks.get(segmentationLabel.getLabel());
     }
 
     public String getDocumentPartText(SegmentationLabel segmentationLabel) {
-		SortedSet<DocumentPiece> pieces = getDocumentPart(segmentationLabel);
-		if (pieces == null)
-			return null;
-		else 
-			return getDocumentPieceText(getDocumentPart(segmentationLabel));
+        SortedSet<DocumentPiece> pieces = getDocumentPart(segmentationLabel);
+        if (pieces == null)
+            return null;
+        else
+            return getDocumentPieceText(getDocumentPart(segmentationLabel));
     }
 }
