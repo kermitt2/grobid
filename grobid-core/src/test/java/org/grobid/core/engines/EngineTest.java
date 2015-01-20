@@ -17,6 +17,7 @@ import org.grobid.core.jni.WapitiModel;
 import org.grobid.core.main.LibraryLoader;
 import org.grobid.core.utilities.TextUtilities;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.File;
@@ -25,7 +26,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.StringTokenizer;
 
-//@Ignore
+@Ignore
 public class EngineTest {
 
     @BeforeClass
