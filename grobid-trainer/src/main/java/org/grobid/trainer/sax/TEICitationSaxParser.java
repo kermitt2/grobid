@@ -219,7 +219,7 @@ public class TEICitationSaxParser extends DefaultHandler {
 
     private void writeField(String text) {
         // we segment the text
-        ArrayList<String> tokens = TextUtilities.segment(text, "[(" + TextUtilities.punctuations);
+        List<String> tokens = TextUtilities.segment(text, "[(" + TextUtilities.punctuations);
 
         boolean begin = true;
         //while(st.hasMoreTokens()) {

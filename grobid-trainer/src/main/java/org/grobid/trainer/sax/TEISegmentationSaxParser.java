@@ -183,6 +183,8 @@ public class TEISegmentationSaxParser extends DefaultHandler {
                         if (name.equals("type")) {
                             if (value.equals("annex")) {
 								currentTag = "<annex>";
+								upperTag = currentTag;
+								upperQname = "div";
                             }
                         }
                     }
@@ -206,6 +208,73 @@ public class TEISegmentationSaxParser extends DefaultHandler {
                 (qName.equals("div")) 
                 ) {
             String text = getText();
+			boolean begin = true;
+//System.out.println(text);			
+            // we segment the text line by line first
+            //StringTokenizer st = new StringTokenizer(text, "\n", true);
+			String[] tokens = text.split("\\+L\\+");
+			//while (st.hasMoreTokens()) {
+			boolean page = false;
+			for(int p=0; p<tokens.length; p++) {	
+				//String line = st.nextToken().trim();
+				String line = tokens[p].trim();
+				if (line.equals("\n"))
+					continue;
+				if (line.length() == 0) 
+					continue;
+				if (line.indexOf("+PAGE+") != -1) {
+                    // page break should be a distinct feature
+                    //labeled.add("@newpage\n");
+					line = line.replace("+PAGE+", "");
+					page = true;
+                } 
+				
+				StringTokenizer st = new StringTokenizer(line, " \t");
+				if (!st.hasMoreTokens()) 
+					continue;
+				String tok = st.nextToken();
+
+                //String tok = line.replace(" ", "").replace("\t", "");
+				//if (tok.length() > 10)
+				//	tok = tok.substring(0,10);
+				
+	            //StringTokenizer st2 = new StringTokenizer(text, " \t" + TextUtilities.fullPunctuations, true);
+	            
+	            //if (st2.hasMoreTokens()) {
+	                //String tok = st2.nextToken().trim();
+	            if (tok.length() == 0) continue;
+
+	                //if (tok.equals("+L+")) {
+	                //    labeled.add("@newline\n");
+	                //} else 
+					
+	                    //if (tok.length() > 0) {
+	        	if (begin) {
+	        		labeled.add(tok + " I-" + surfaceTag + "\n");
+	  			  	begin = false;
+	         	} else {
+	           	 	labeled.add(tok + " " + surfaceTag + "\n");
+	            }
+				if (page) {
+					labeled.add("@newpage\n");
+					page = false;
+				}
+							//}
+			}
+            accumulator.setLength(0);
+        }
+    }
+	
+    /*private void writeData2(String qName, String surfaceTag) {
+        if ((qName.equals("front")) || (qName.equals("titlePage")) || (qName.equals("note")) ||
+                (qName.equals("page")) || (qName.equals("pages")) || (qName.equals("body")) ||
+                (qName.equals("listBibl")) || 
+                (qName.equals("div")) 
+                ) {				
+            String text = getText();
+			if (surfaceTag == null) {
+				System.err.println("Warning label is null for text: " + text);
+			}	
             // we segment the text
             StringTokenizer st = new StringTokenizer(text, " \n\t" + TextUtilities.fullPunctuations, true);
             boolean begin = true;
@@ -234,6 +303,6 @@ public class TEISegmentationSaxParser extends DefaultHandler {
             }
             accumulator.setLength(0);
         }
-    }
+    }*/
 
 }

@@ -74,14 +74,12 @@
 			<version>4.8.2</version>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
+		<!--dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
 			<version>1.2.16</version>
-			<!-- Should be runtime or at least optional -->
 			<optional>true</optional>
-			<!--scope>runtime</scope -->
-		</dependency>
+		</dependency-->
 		<!-- for pooling e.g. Engine -->
 		<dependency>
 			<groupId>commons-pool</groupId>
@@ -106,12 +104,12 @@
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
-			<version>1.6.6</version>
+			<version>1.7.7</version>
 		</dependency>
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
-			<version>1.6.6</version>
+			<version>1.7.7</version>
 		</dependency>
 		<dependency>
 			<groupId>log4j</groupId>
