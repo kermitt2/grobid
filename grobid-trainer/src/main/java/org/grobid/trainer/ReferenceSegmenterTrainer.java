@@ -51,7 +51,7 @@ public class ReferenceSegmenterTrainer extends AbstractTrainer {
             // we process all tei files in the output directory
             final File[] refFiles = corpusDir.listFiles(new FilenameFilter() {
                 public boolean accept(File dir, String name) {
-                    return name.endsWith(".xml");
+                    return (name.endsWith(".xml") || name.endsWith(".tei"));
                 }
             });
 
@@ -77,6 +77,9 @@ public class ReferenceSegmenterTrainer extends AbstractTrainer {
                 evaluationOS = new FileOutputStream(evaluationOutputPath);
                 evaluationWriter = new OutputStreamWriter(evaluationOS, "UTF8");
             }
+
+			System.out.println("training data under: " + trainingOutputPath);
+			System.out.println("evaluation data under: " + evaluationOutputPath);
 
             // get a factory for SAX parser
             SAXParserFactory spf = SAXParserFactory.newInstance();

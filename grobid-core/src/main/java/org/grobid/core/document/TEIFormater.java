@@ -1006,7 +1006,12 @@ public class TEIFormater {
                                     List<BibDataSet> bds,
                                     List<String> tokenizations,
                                     Document doc) throws Exception {
-        tei.append("\t\t<body>\n");
+		if ( (rese == null) || (tokenizations == null) ) {
+			tei.append("\t\t<body/>\n");
+			return tei;
+		}
+		
+		tei.append("\t\t<body>\n");
         //System.out.println(rese);
         elements = new ArrayList<String>();
         elements.add("body");

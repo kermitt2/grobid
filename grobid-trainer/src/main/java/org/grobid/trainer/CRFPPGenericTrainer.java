@@ -1,6 +1,7 @@
 package org.grobid.trainer;
 
 import org.chasen.crfpp.CRFPPTrainer;
+import org.grobid.core.GrobidModels;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -20,7 +21,7 @@ public class CRFPPGenericTrainer implements GenericTrainer {
     }
 
     @Override
-    public void train(File template, File trainingData, File outputModel, int numThreads) {
+    public void train(File template, File trainingData, File outputModel, int numThreads, GrobidModels model) {
         crfppTrainer.train(template.getAbsolutePath(), trainingData.getAbsolutePath(), outputModel.getAbsolutePath(), numThreads);
         if (!crfppTrainer.what().isEmpty()) {
             LOGGER.warn("CRF++ Trainer warnings:\n" + crfppTrainer.what());

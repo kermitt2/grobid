@@ -9,7 +9,10 @@ import org.grobid.core.layout.LayoutToken;
  */
 public class FeaturesVectorSegmentation {
     public LayoutToken token = null; // not a feature, reference value
-    public String string = null; // lexical feature
+	public String line = null; // not a feature, the complete processed line
+	
+    public String string = null; // first lexical feature
+	public String secondString = null; // second lexical feature
     public String label = null; // label if known
     public String blockStatus = null; // one of BLOCKSTART, BLOCKIN, BLOCKEND
     public String lineStatus = null; // one of LINESTART, LINEIN, LINEEND
@@ -34,6 +37,10 @@ public class FeaturesVectorSegmentation {
     public String punctType = null; // one of NOPUNCT, OPENBRACKET, ENDBRACKET, DOT, COMMA, HYPHEN, QUOTE, PUNCT (default)
     public int relativeDocumentPosition = -1;
     public int relativePagePosition = -1;
+	public String punctuationProfile = null; // the punctuations of the current line of the token
+	public boolean firstPageBlock = false; 
+	public boolean lastPageBlock = false;
+	public int lineLength = 0;
 
     public String printVector() {
         if (string == null) return null;
@@ -42,7 +49,13 @@ public class FeaturesVectorSegmentation {
 
         // token string (1)
         res.append(string);
-
+		
+		// second token string
+		if (secondString != null)
+			res.append(" " + secondString);
+		else
+			res.append(" " + string);
+		
         // lowercase string
         res.append(" " + string.toLowerCase());
 
@@ -70,6 +83,7 @@ public class FeaturesVectorSegmentation {
         else
             res.append(" " + string.substring(0, 1));
 
+		/*
         // suffix (4)
         res.append(" " + string.charAt(string.length() - 1));
 
@@ -93,13 +107,15 @@ public class FeaturesVectorSegmentation {
             res.append(" " + string.substring(string.length() - 2, string.length()));
         else
             res.append(" " + string.charAt(string.length() - 1));
-
+*/
         // block information (1)
-        res.append(" " + blockStatus);
+		if (blockStatus != null)
+			res.append(" " + blockStatus);
         //res.append(" 0");
 
         // line information (1)
-        res.append(" " + lineStatus);
+		if (lineStatus != null)
+			res.append(" " + lineStatus);
 
         // page information (1)
         res.append(" " + pageStatus);
@@ -176,13 +192,23 @@ public class FeaturesVectorSegmentation {
             res.append(" 0");
 
         // punctuation information (2)
-        res.append(" " + punctType); // in case the token is a punctuation (NO otherwise)
+		if (punctType != null)
+			res.append(" " + punctType); // in case the token is a punctuation (NO otherwise)
 
         // relative document position (1)
         res.append(" " + relativeDocumentPosition);
 
         // relative page position (1)
         res.append(" " + relativePagePosition);
+		
+		// punctuation profile
+		if ( (punctuationProfile == null) || (punctuationProfile.length() == 0) )
+			res.append(" no");
+		else
+			res.append(" " + punctuationProfile);
+
+		// current line length on a predefined scale
+		res.append(" " + lineLength);
 
         // label - for training data (1)
         /*if (label != null)

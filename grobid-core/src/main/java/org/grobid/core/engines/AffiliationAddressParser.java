@@ -1,5 +1,6 @@
 package org.grobid.core.engines;
 
+import org.chasen.crfpp.Tagger;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.data.Affiliation;
 import org.grobid.core.exceptions.GrobidException;
@@ -24,6 +25,10 @@ public class AffiliationAddressParser extends AbstractParser {
 
     public ArrayList<Affiliation> processing(String input) {
         try {
+	        if ( (input == null) || (input.length() == 0) ) {
+				return null;
+			}
+			
             ArrayList<String> affiliationBlocks = new ArrayList<String>();
             input = input.trim();
 
@@ -36,14 +41,16 @@ public class AffiliationAddressParser extends AbstractParser {
                 if (tok.length() == 0) continue;
                 if (tok.equals("\n")) {
                     tokenizations.add(" ");
-                } else {
+                } 
+				else {
                     tokenizations.add(tok);
                 }
                 if (!tok.equals(" ")) {
                     if (tok.equals("\n")) {
                         affiliationBlocks.add("@newline");
-                    } else
-                        affiliationBlocks.add(tok + " <affiliation>");
+                    }
+					else
+                    	affiliationBlocks.add(tok + " <affiliation>");
                 }
             }
 
@@ -70,20 +77,24 @@ public class AffiliationAddressParser extends AbstractParser {
      * We also need to keep the original tokenization information to recreate the exact
      * initial string.
      */
-    public ArrayList<Affiliation> processReflow(String result, List<String> tokenizations) {
-        if ((result == null) || (result.length() == 0)) {
-            return null;
+    public ArrayList<Affiliation> processReflow(String result,
+                                                List<String> tokenizations) throws Exception {
+        if ( (result == null) || (result.length() == 0) ) {
+			return null;
+		}
+		try {
+            List<String> affiliationBlocks = new ArrayList<String>();
+            List<String> subTokenizations = new ArrayList<String>();
+
+            filterAffiliationAddress(result, tokenizations, affiliationBlocks, subTokenizations);
+
+            //System.out.println(affiliationBlocks.toString());
+            //System.out.println(subTokenizations.toString());
+
+            return processingReflow(affiliationBlocks, subTokenizations);
+        } catch (Exception e) {
+            throw new GrobidException("An exception occured while running Grobid.", e);
         }
-
-        List<String> affiliationBlocks = new ArrayList<String>();
-        List<String> subTokenizations = new ArrayList<String>();
-
-        filterAffiliationAddress(result, tokenizations, affiliationBlocks, subTokenizations);
-
-        //System.out.println(affiliationBlocks.toString());
-        //System.out.println(subTokenizations.toString());
-
-        return processingReflow(affiliationBlocks, subTokenizations);
     }
 
 
@@ -100,7 +111,7 @@ public class AffiliationAddressParser extends AbstractParser {
         while (st.hasMoreTokens() && (p < tokenizations.size())) {
             String toke = tokenizations.get(p);
             List<String> tokes = new ArrayList<String>();
-            while ((toke.equals(" ") || toke.equals("\n") || (toke.length() == 0)) && ((p + 1) < tokenizations.size())) {
+            while ((toke.equals(" ") || toke.equals("\n") || (toke.length() == 0)) && ((p+1) < tokenizations.size())) {
                 p++;
                 if (toke.length() == 0) {
                     toke = tokenizations.get(p);
@@ -170,7 +181,6 @@ public class AffiliationAddressParser extends AbstractParser {
         public void add(String s) {
             str += s;
         }
-
         public void clear() {
             str = "";
         }
@@ -190,8 +200,8 @@ public class AffiliationAddressParser extends AbstractParser {
         }
 
 
-    }
 
+    }
     private String runReflow(List<String> affiliationBlocks,
                              List<String> tokenizations) {
 //        StringBuilder res = new StringBuilder();
@@ -202,80 +212,16 @@ public class AffiliationAddressParser extends AbstractParser {
             String header =
                     FeaturesVectorAffiliationAddress.addFeaturesAffiliationAddress(affiliationBlocks, placesPositions);
 
-            // clear internal context
-//            int n = 0;
-//            StringTokenizer st = new StringTokenizer(header, "\n");
-
-            //TODO: VZ: understand how tagging is done and how we can utilize wapiti
-
-
-//            ArrayList<String> preToken = new ArrayList<String>();
-
-            if ((header == null) || (header.trim().length() == 0)) {
-                return null;
-            }
+			if ( (header == null) || (header.trim().length() == 0) ) {
+				return null;
+			}
 
             String res = label(header);
             res = label(res);
 
-//            // add context
-//            while (st.hasMoreTokens()) {
-//                String piece = st.nextToken();
-//                if (piece.trim().length() != 0) {
-//                    tagger.add(piece);
-//                    tagger.add("\n");
-//                    String pretok = piece.substring(piece.lastIndexOf(' '), piece.length());
-//                    preToken.add(pretok);
-//                } else {
-//                    tagger.add("\n");
-//
-//                    // parse and change internal stated as 'parsed'
-//                    if (!tagger.parse()) {
-//                        // throw an exception
-//                        throw new Exception("CRF++ parsing failed.");
-//                    }
-//
-//                    for (int i = 0; i < tagger.size(); i++) {
-//                        for (int j = 0; j < tagger.xsize(); j++) {
-//                            //System.out.print(tagger.x(i, j) + "\t");
-//                            res.append(tagger.x(i, j) + "\t");
-//                        }
-//
-//                        res.append(preToken.get(i) + "\t");
-//                        res.append(tagger.y2(i));
-//                        res.append("\n");
-//                    }
-//                    res.append(" \n");
-//                    tagger.clear();
-//                }
-//                n++;
-//            }
-//
-//            // parse and change internal stated as 'parsed'
-//            if (!tagger.parse()) {
-//                // throw an exception
-//                throw new Exception("CRF++ parsing failed.");
-//            }
-//
-//            for (int i = 0; i < tagger.size(); i++) {
-//                for (int j = 0; j < tagger.xsize(); j++) {
-//                    //System.out.print(tagger.x(i, j) + "\t");
-//                    res.append(tagger.x(i, j) + "\t");
-//                }
-//
-//                res.append(preToken.get(i) + "\t");
-//                res.append(tagger.y2(i));
-//                res.append("\n");
-//            }
-//            res.append(" \n");
-
             return res;
         } catch (Exception e) {
             throw new GrobidException("An exception occured while running Grobid.", e);
-        } finally {
-//            if (tagger != null) {
-//                tagger.delete();
-//            }
         }
     }
 
@@ -292,6 +238,10 @@ public class AffiliationAddressParser extends AbstractParser {
         try {
             //System.out.println(tokenizations.toString());
             // extract results from the processed file
+	        if ( (result == null) || (result.length() == 0) ) {
+				return null;
+			}
+			
             StringTokenizer st2 = new StringTokenizer(result, "\n");
             String lastTag = null;
             org.grobid.core.data.Affiliation aff = new Affiliation();
@@ -806,28 +756,28 @@ public class AffiliationAddressParser extends AbstractParser {
      */
     public StringBuffer trainingExtraction(String result,
                                            List<String> tokenizations) {
-        if ((result == null) || (result.length() == 0)) {
-            return null;
-        }
-
+		if ( (result == null) || (result.length() == 0) ) {
+			return null;
+		}
+											
         List<String> affiliationBlocks = new ArrayList<String>();
         List<String> tokenizationsAffiliation = new ArrayList<String>();
 
         filterAffiliationAddress(result, tokenizations, affiliationBlocks, tokenizationsAffiliation);
         String resultAffiliation = runReflow(affiliationBlocks, tokenizationsAffiliation);
 
-        StringBuffer bufferAffiliation = new StringBuffer();
+		StringBuffer bufferAffiliation = new StringBuffer();
 
-        if (resultAffiliation == null) {
-            return bufferAffiliation;
-        }
+		if (resultAffiliation == null) {
+			return bufferAffiliation;
+		}
 
         StringTokenizer st = new StringTokenizer(resultAffiliation, "\n");
         String s1 = null;
         String s2 = null;
         String lastTag = null;
 
-        int p = 0;
+        int p = 0;        
 
         String currentTag0 = null;
         String lastTag0 = null;
