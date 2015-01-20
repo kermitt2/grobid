@@ -277,7 +277,10 @@ public class FeaturesVectorReferenceSegmenter {
                 filter = true;
             }
 
-            if (filter) continue;
+            if (filter) {
+                n++;
+                continue;
+            }
 
             features = new FeaturesVectorReferenceSegmenter();
             features.string = text;

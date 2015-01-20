@@ -147,36 +147,33 @@ public class CitationParser extends AbstractParser {
         }
     }
 
-    public List<BibDataSet> processingReferenceSection(Document doc, ReferenceSegmenter referenceSegmenter, boolean consolidate) throws Exception {
+    public List<BibDataSet> processingReferenceSection(Document doc, ReferenceSegmenter referenceSegmenter, boolean consolidate) {
         ArrayList<BibDataSet> results = new ArrayList<BibDataSet>();
-        try {
 
-            String referencesStr = doc.getDocumentPartText(SegmentationLabel.REFERENCES);
-            if (!referencesStr.isEmpty()) {
-                cntManager.i(CitationParserCounters.NOT_EMPTY_REFERENCES_BLOCKS);
-            }
+
+        String referencesStr = doc.getDocumentPartText(SegmentationLabel.REFERENCES);
+        if (!referencesStr.isEmpty()) {
+            cntManager.i(CitationParserCounters.NOT_EMPTY_REFERENCES_BLOCKS);
+        }
 //			List<String> tokenizations = doc.getTokenizationsReferences();
 
-            List<LabeledReferenceResult> references = referenceSegmenter.extract(referencesStr);
+        List<LabeledReferenceResult> references = referenceSegmenter.extract(referencesStr);
 
-            if (references == null) {
-                cntManager.i(CitationParserCounters.NULL_SEGMENTED_REFERENCES_LIST);
-                return results;
-            } else {
-                cntManager.i(CitationParserCounters.SEGMENTED_REFERENCES, references.size());
-            }
+        if (references == null) {
+            cntManager.i(CitationParserCounters.NULL_SEGMENTED_REFERENCES_LIST);
+            return results;
+        } else {
+            cntManager.i(CitationParserCounters.SEGMENTED_REFERENCES, references.size());
+        }
 
-            for (LabeledReferenceResult ref : references) {
-                BiblioItem bib = processing(ref.getReferenceText(), consolidate);
-                BibDataSet bds = new BibDataSet();
+        for (LabeledReferenceResult ref : references) {
+            BiblioItem bib = processing(ref.getReferenceText(), consolidate);
+            BibDataSet bds = new BibDataSet();
 
-                bds.setRefSymbol(ref.getLabel());
-                bds.setResBib(bib);
-                bds.setRawBib(ref.getReferenceText());
-                results.add(bds);
-            }
-        } catch (Exception e) {
-            throw new GrobidException("An exception occurred while running Grobid.", e);
+            bds.setRefSymbol(ref.getLabel());
+            bds.setResBib(bib);
+            bds.setRawBib(ref.getReferenceText());
+            results.add(bds);
         }
         return results;
     }
