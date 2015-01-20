@@ -147,8 +147,6 @@ public class Segmentation extends AbstractParser {
 	            //LOGGER.debug(labelledResult);
 			}
             return doc;
-        } catch (Exception e) {
-            throw new GrobidException("An exception occurred while running Grobid.", e);
         } finally {
             // keep it clean when leaving...
             doc.cleanLxmlFile(pathXML, false);
