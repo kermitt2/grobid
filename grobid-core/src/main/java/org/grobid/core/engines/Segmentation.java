@@ -660,7 +660,7 @@ public class Segmentation extends AbstractParser {
             }
 
 			//StringTokenizer st = new StringTokenizer(localText, "\n");
-			String[] lines = localText.split("\n");
+			String[] lines = localText.split("[\\n\\r]");
 			int n = 0;// token position in current block
 			//while(st.hasMoreTokens()) {
 			for(int li=0; li < lines.length; li++) {	
