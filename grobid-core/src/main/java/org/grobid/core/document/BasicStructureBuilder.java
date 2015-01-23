@@ -740,7 +740,7 @@ public class BasicStructureBuilder {
 					}
 		            continue;
 		        }
-				String[] lines = localText.split("\n");
+				String[] lines = localText.split("[\\n\\r]");
 				if ( (lines.length == 0) || (indexLine >= lines.length)) {
 					blockIndex++;
 					indexLine = 0;
