@@ -166,7 +166,8 @@ public class FullTextParser extends AbstractParser {
             parsers.getHeaderParser().processingHeaderSection(doc, consolidateHeader, resHeader);
 
             // citation processing
-            List<BibDataSet> resCitations = parsers.getCitationParser().processingReferenceSection(doc, parsers.getReferenceSegmenterParser(), consolidateCitations);
+            List<BibDataSet> resCitations = parsers.getCitationParser().
+				processingReferenceSection(doc, parsers.getReferenceSegmenterParser(), consolidateCitations);
 
             if (resCitations != null) {
                 for (BibDataSet bds : resCitations) {
