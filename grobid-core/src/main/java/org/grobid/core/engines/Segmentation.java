@@ -133,10 +133,13 @@ public class Segmentation extends AbstractParser {
 				getAllLinesFeatured(doc, headerMode);
 			if ( (content != null) && (content.trim().length() > 0) ) {
 	            String labelledResult = label(content);
-
-	            //FileUtils.writeStringToFile(new File("/tmp/x.txt"), labelledResult);
-				//FileUtils.writeStringToFile(new File("/tmp/x2.txt"), tokenizations.toString());
-
+				/*try {
+	            	FileUtils.writeStringToFile(new File("/tmp/x.txt"), labelledResult);
+					FileUtils.writeStringToFile(new File("/tmp/x2.txt"), tokenizations.toString());
+				}
+				catch(Exception e) {
+					e.printStackTrace();
+				}*/
 	            // set the different sections of the Document object
 	            doc = BasicStructureBuilder.generalResultSegmentation(doc, labelledResult, tokenizations);
 
@@ -651,7 +654,6 @@ public class Segmentation extends AbstractParser {
             if (localText != null) {
                 if (localText.contains("@PAGE")) {
                     mm = 0;
-                    // pageLength = 0;
                     endPage = true;
                     newPage = false;
                 } else {
@@ -659,12 +661,9 @@ public class Segmentation extends AbstractParser {
                 }
             }
 
-			//StringTokenizer st = new StringTokenizer(localText, "\n");
 			String[] lines = localText.split("[\\n\\r]");
-			int n = 0;// token position in current block
-			//while(st.hasMoreTokens()) {
+			List<LayoutToken> tokens = block.getTokens();			
 			for(int li=0; li < lines.length; li++) {	
-				//String line = st.nextToken();
 				String line = lines[li];
 				boolean firstPageBlock = false;
 				boolean lastPageBlock = false;
@@ -673,15 +672,13 @@ public class Segmentation extends AbstractParser {
 					firstPageBlock = true;
 				if (endPage)
 					lastPageBlock = true;
-			
-	            List<LayoutToken> tokens = block.getTokens();
-	            if (tokens == null) {
-	                //blockPos++;
+	            
+	            if ( (tokens == null) || (tokens.size() == 0) ) {
 	                continue;
 	            }
+				// for the layout information of the block, we take simply the first layout token
+				LayoutToken token = tokens.get(0);
 				
-            	//while (n < tokens.size()) {
-                LayoutToken token = tokens.get(n);
                 features = new FeaturesVectorSegmentation();
                 features.token = token;
 				features.line = line;
@@ -692,19 +689,13 @@ public class Segmentation extends AbstractParser {
 				if (st2.hasMoreTokens())
 					text = st2.nextToken();		
 				if (st2.hasMoreTokens())
-					text2 = st2.nextToken();					
-                //String text = line.replace(" ", "").replace("\t", "");
-				//if (text.length() > 10)
-					//text = text.substring(0,10);
-
-                
+					text2 = st2.nextToken();
                 if ( (text == null) || 
 					(text.trim().length() == 0) || 
 					(text.trim().equals("\n")) || 
+					(text.trim().equals("\r")) || 
+					(text.trim().equals("\n\r")) || 
 					(Segmentation.filterLine(line)) ) {
-                    n++;
-                    mm++;
-                    nn++;
                     continue;
                 }
 
@@ -721,24 +712,15 @@ public class Segmentation extends AbstractParser {
                 features.lineStatus = null;
 				features.punctType = null;
 				
-                if (n == 0) {
+                if ( (li == 0) || 
+					((previousFeatures != null) && previousFeatures.blockStatus.equals("BLOCKEND")) ) {
                     features.blockStatus = "BLOCKSTART";
-                } else if (n == tokens.size() - 1) {
+                } else if (li == lines.length-1) {
                     features.blockStatus = "BLOCKEND";
                     endblock = true;
-                } else {
-                    // look ahead...
-                    boolean endline = false;
-					if (li+1 == lines.length) {
-						endblock = true;
-					}
-
-                    if ((!endblock) && (features.blockStatus == null))
-                        features.blockStatus = "BLOCKIN";
-                    else if (features.blockStatus == null) {
-                        features.blockStatus = "BLOCKEND";
-                        endblock = true;
-                    }
+                }
+				else if (features.blockStatus == null) {
+                 	features.blockStatus = "BLOCKIN";
                 }
 
                 if (newPage) {
@@ -846,23 +828,21 @@ public class Segmentation extends AbstractParser {
 
                 features.relativeDocumentPosition = featureFactory
                         .relativeLocation(nn, documentLength, NBBINS);
-                // System.out.println(mm + " / " + pageLength);
                 features.relativePagePosition = featureFactory
                         .relativeLocation(mm, pageLength, NBBINS);
 
                 // fulltext.append(features.printVector());
                 if (previousFeatures != null) {
                     String vector = previousFeatures.printVector();
-                    /*if (vector.split(" ").length < 5 || vector.contains("ZHUNFROOHJH")) {
-                        int asf = 0;
-                    }*/
                     fulltext.append(vector);
                 }
-                n++;
-                mm++;
-                nn++;
                 previousFeatures = features;
            	}
+			// update page-level and document-level positions
+			if (tokens != null) {
+				mm += tokens.size();
+				nn += tokens.size();
+			}
         }
         if (previousFeatures != null)
             fulltext.append(previousFeatures.printVector());
