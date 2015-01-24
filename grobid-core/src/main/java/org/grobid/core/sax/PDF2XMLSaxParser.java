@@ -42,7 +42,7 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 	private List<String> images = null;
 
 	private StringBuffer blabla = null;
-	private ArrayList<String> tokenizations = null;
+	private List<String> tokenizations = null;
 
 	private Document doc = null;
 
@@ -60,7 +60,7 @@ public class PDF2XMLSaxParser extends DefaultHandler {
 		tokenizations = new ArrayList<String>();
 	}
 
-	public ArrayList<String> getTokenization() {
+	public List<String> getTokenization() {
 		return tokenizations;
 	}
 

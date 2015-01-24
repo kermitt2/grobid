@@ -27,7 +27,7 @@ public class CybozuLanguageDetector implements LanguageDetector {
                 return null;
             }
 
-            System.out.println(probabilities);
+            LOGGER.debug(probabilities.toString());
             com.cybozu.labs.langdetect.Language l = probabilities.get(0);
 
             return new Language(l.lang, l.prob);
