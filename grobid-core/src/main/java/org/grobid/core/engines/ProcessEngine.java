@@ -106,7 +106,7 @@ public class ProcessEngine implements Closeable {
                     }
                 } catch (final Exception exp) {
                     LOGGER.error("An error occured while processing the file " + currPdf.getAbsolutePath()
-                            + ". Continuing the process for the other files");
+                            + ". Continuing the process for the other files", exp);
                 }
             }
         }

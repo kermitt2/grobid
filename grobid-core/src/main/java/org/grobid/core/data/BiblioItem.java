@@ -1700,7 +1700,7 @@ public class BiblioItem {
                 // if it's not something in English, we will write it anyway as note without type at the end
             }
 
-            tei.append(toTEIAuthorBlock(2, false));
+            tei.append(toTEIAuthorBlock(2));
 
             if ((bookTitle != null) || (journal != null)) {
                 for (int i = 0; i < indent + 1; i++) {
@@ -3098,10 +3098,6 @@ public class BiblioItem {
      * Create the TEI encoding for the author+affiliation block for the current biblio object.
      */
     public String toTEIAuthorBlock(int nbTag) {
-        return toTEIAuthorBlock(nbTag, true);
-    }
-
-    public String toTEIAuthorBlock(int nbTag, boolean peer) {
         StringBuffer tei = new StringBuffer();
         int nbAuthors = 0;
         int nbAffiliations = 0;
@@ -3155,42 +3151,36 @@ public class BiblioItem {
                     tei.append("<author");
 
                     if (autRank == contactAut) {
-                        tei.append(" role=\"corresp\"");
-                        if (peer) {
-                            tei.append(" type=\"corresp\">\n");
-                        } else
-                            tei.append(">\n");
+                        tei.append(" role=\"corresp\">\n");
                     } else
                         tei.append(">\n");
 
-                    {
-                        TextUtilities.appendN(tei, '\t', nbTag + 1);
-                        tei.append("<persName>\n");
-                        if (author.getFirstName() != null) {
-                            TextUtilities.appendN(tei, '\t', nbTag + 2);
-                            tei.append("<forename type=\"first\">" +
-                                    TextUtilities.HTMLEncode(author.getFirstName()) + "</forename>\n");
-                        }
-                        if (author.getMiddleName() != null) {
-                            TextUtilities.appendN(tei, '\t', nbTag + 2);
-                            tei.append("<forename type=\"middle\">" +
-                                    TextUtilities.HTMLEncode(author.getMiddleName()) + "</forename>\n");
-                        }
-                        if (author.getLastName() != null) {
-                            TextUtilities.appendN(tei, '\t', nbTag + 2);
-                            tei.append("<surname>" +
-                                    TextUtilities.HTMLEncode(author.getLastName()) + "</surname>\n");
-                            //author.getLastName() + "</surname>\n");
-                        }
-                        if (author.getTitle() != null) {
-                            TextUtilities.appendN(tei, '\t', nbTag + 2);
-                            tei.append("<roleName>" +
-                                    TextUtilities.HTMLEncode(author.getTitle()) + "</roleName>\n");
-                        }
-
-                        TextUtilities.appendN(tei, '\t', nbTag + 1);
-                        tei.append("</persName>\n");
+                    TextUtilities.appendN(tei, '\t', nbTag + 1);
+                    tei.append("<persName>\n");
+                    if (author.getFirstName() != null) {
+                        TextUtilities.appendN(tei, '\t', nbTag + 2);
+                        tei.append("<forename type=\"first\">" +
+                                TextUtilities.HTMLEncode(author.getFirstName()) + "</forename>\n");
                     }
+                    if (author.getMiddleName() != null) {
+                        TextUtilities.appendN(tei, '\t', nbTag + 2);
+                        tei.append("<forename type=\"middle\">" +
+                                TextUtilities.HTMLEncode(author.getMiddleName()) + "</forename>\n");
+                    }
+                    if (author.getLastName() != null) {
+                        TextUtilities.appendN(tei, '\t', nbTag + 2);
+                        tei.append("<surname>" +
+                                TextUtilities.HTMLEncode(author.getLastName()) + "</surname>\n");
+                        //author.getLastName() + "</surname>\n");
+                    }
+                    if (author.getTitle() != null) {
+                        TextUtilities.appendN(tei, '\t', nbTag + 2);
+                        tei.append("<roleName>" +
+                                TextUtilities.HTMLEncode(author.getTitle()) + "</roleName>\n");
+                    }
+
+                    TextUtilities.appendN(tei, '\t', nbTag + 1);
+                    tei.append("</persName>\n");
 
                     if (author.getEmail() != null) {
                         TextUtilities.appendN(tei, '\t', nbTag + 1);

@@ -542,12 +542,12 @@ public class Engine implements Closeable {
         FullTextParser fullTextParser = parsers.getFullTextParser();
 
         // replace by the commented version for the new full ML text parser
-        Document resultTEI;
+        Document resultDoc;
         LOGGER.debug("Starting processing fullTextToTEI on " + inputFile);
         long time = System.currentTimeMillis();
-        resultTEI = fullTextParser.processing(inputFile, consolidateHeader, consolidateCitations);
+        resultDoc = fullTextParser.processing(inputFile, consolidateHeader, consolidateCitations, 1, false);
         LOGGER.debug("Ending processing fullTextToTEI on " + inputFile + ". Time to process: " + (System.currentTimeMillis() - time) + "ms");
-        return resultTEI.getTei();
+        return resultDoc.getTei();
     }
 
     /**

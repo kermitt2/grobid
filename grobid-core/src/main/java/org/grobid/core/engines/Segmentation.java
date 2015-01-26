@@ -83,11 +83,11 @@ public class Segmentation extends AbstractParser {
      *	page footer, page header, body, page numbers, biblio section and annexes.
      *
      * @param input filename of pdf file
-	 * @param headerMode boolean indicating if we simply try to identify the header section, this is useful 
-	 * in term of speed if only the header extraction is to be performed in the next stages
+	 * @param assets boolean indicating if the assets (embedded images and vectoriels) should also be 
+	 * extracted and saved	
      * @return Document object with segmentation informations
      */
-    public Document processing(String input, boolean headerMode) {
+    public Document processing(String input, boolean assets) {
         if (input == null) {
             throw new GrobidResourceException("Cannot process pdf file, because input file was null.");
         }
@@ -108,16 +108,12 @@ public class Segmentation extends AbstractParser {
         try {
             int startPage = -1;
             int endPage = -1;
-			if (headerMode) {
-				startPage = 0;
-				endPage = 3;
-			}
-            pathXML = doc.pdf2xml(true, false, startPage, endPage, input, tmpPath.getAbsolutePath(), false);
+            pathXML = doc.pdf2xml(true, false, startPage, endPage, input, tmpPath.getAbsolutePath(), assets);
             //with timeout,
             //no force pdf reloading
             // input is the pdf absolute path, tmpPath is the temp. directory for the temp. lxml file,
             // path is the resource path
-            // and we don't extract images in the PDF file
+            // and we extract images in the PDF file according to the assets parameters
             if (pathXML == null) {
                 throw new GrobidResourceException("PDF parsing fails, " +
                         "because path of where to store xml file is null.");
@@ -130,7 +126,7 @@ public class Segmentation extends AbstractParser {
             }
 
 			String content = //getAllTextFeatured(doc, headerMode);
-				getAllLinesFeatured(doc, headerMode);
+				getAllLinesFeatured(doc);
 			if ( (content != null) && (content.trim().length() > 0) ) {
 	            String labelledResult = label(content);
 				/*try {
@@ -164,13 +160,15 @@ public class Segmentation extends AbstractParser {
         } finally {
             // keep it clean when leaving...
             doc.cleanLxmlFile(pathXML, false);
+			// if assets is true, the images are still there under directory pathXML+"_data"
+			// pathXML can be obtained via doc.getPathXML()
         }
     }
 	
 	/**
      *  Addition of the features at token level for the complete document
 	 */	
-	public String getAllTextFeatured(Document doc, boolean headerMode) {
+	/*public String getAllTextFeatured(Document doc, boolean headerMode) {
 		FeatureFactory featureFactory = FeatureFactory.getInstance();
         StringBuilder fulltext = new StringBuilder();
         String currentFont = null;
@@ -558,7 +556,7 @@ public class Segmentation extends AbstractParser {
             fulltext.append(previousFeatures.printVector());
 
         return fulltext.toString();
-	}
+	}*/
 	
 	/**
 	 * Addition of the features at line level for the complete document.  
@@ -570,7 +568,7 @@ public class Segmentation extends AbstractParser {
 	 * The dictionnary flags are at line level (i.e. the line contains a name mention, a place mention, a year, etc.)
 	 * Regarding layout features: font, size and style are the one associated to the first token of the line. 
 	 */
-	public static String getAllLinesFeatured(Document doc, boolean headerMode) {
+	public static String getAllLinesFeatured(Document doc) {
 		FeatureFactory featureFactory = FeatureFactory.getInstance();
         StringBuilder fulltext = new StringBuilder();
         String currentFont = null;
@@ -602,11 +600,6 @@ public class Segmentation extends AbstractParser {
 			if (tokens == null) 
 				continue;
 			documentLength += tokens.size();
-		}
-		if (headerMode) {
-			// if we only aim to process the header, we extracted only the two first pages, so
-			// we estimate the global length to for instance 10 pages, so 5 times more.
-			documentLength = documentLength * 5;
 		}
 
 		//int blockPos = dp1.getBlockPtr();
@@ -897,7 +890,7 @@ public class Segmentation extends AbstractParser {
             }
 
             String fulltext = //getAllTextFeatured(doc, false);
-				getAllLinesFeatured(doc, false);
+				getAllLinesFeatured(doc);
             List<String> tokenizations = doc.getTokenizationsFulltext();
 
             // we write the full text untagged

@@ -39,8 +39,6 @@ public class BasicStructureBuilder {
             Pattern.compile("^\\b*(1\\.\\sPROBLEMS?|1\\.(\\n)?\\sIntroduction?|1\\.(\\n)?\\sContent?|1\\.\\sINTRODUCTION|I\\.(\\s)+Introduction|1\\.\\sProblems?|I\\.\\sEinleitung?|1\\.\\sEinleitung?|1\\sEinleitung?|1\\sIntroduction?)",
                     Pattern.CASE_INSENSITIVE);
 
-    //public Pattern introductionZFN2 = Pattern.compile("\\b(Introduction?|Einleitung|EINLEITUNG|INTRODUCTION|INTRODUCTION?|Acknowledge?ments?|Acknowledge?ment?|Background?|BACKGROUND?|Content?|Contents?|CONTENT?|CONTENTS?|Motivations?|MOTIVATIONS?|1\\. PROBLEMS?|1\\. Introduction?|I\\. Introduction|1\\. Problems?|I\\. Einleitung|I\\. EINLEITUNG|1\\. Einleitung|1\\. EINLEITUNG)");
-
     static public Pattern abstract_ = Pattern.compile("^\\b*\\.?(abstract?|résumé?|summary?|zusammenfassung?)",
             Pattern.CASE_INSENSITIVE);
     static public Pattern keywords = Pattern.compile("^\\b*\\.?(keyword?|key\\s*word?|mots\\s*clefs?)",
@@ -198,19 +196,17 @@ public class BasicStructureBuilder {
         }
 
         int i = 0;
-//        boolean first = true;
-        ArrayList<Integer> blockHeaders = new ArrayList<Integer>();
-        ArrayList<Integer> blockFooters = new ArrayList<Integer>();
-        ArrayList<Integer> blockSectionTitles = new ArrayList<Integer>();
-        ArrayList<Integer> acknowledgementBlocks = new ArrayList<Integer>();
-        ArrayList<Integer> blockTables = new ArrayList<Integer>();
-        ArrayList<Integer> blockFigures = new ArrayList<Integer>();
-        ArrayList<Integer> blockHeadTables = new ArrayList<Integer>();
-        ArrayList<Integer> blockHeadFigures = new ArrayList<Integer>();
-        ArrayList<Integer> blockDocumentHeaders = new ArrayList<Integer>();
+        List<Integer> blockHeaders = new ArrayList<Integer>();
+        List<Integer> blockFooters = new ArrayList<Integer>();
+        List<Integer> blockSectionTitles = new ArrayList<Integer>();
+        List<Integer> acknowledgementBlocks = new ArrayList<Integer>();
+        List<Integer> blockTables = new ArrayList<Integer>();
+        List<Integer> blockFigures = new ArrayList<Integer>();
+        List<Integer> blockHeadTables = new ArrayList<Integer>();
+        List<Integer> blockHeadFigures = new ArrayList<Integer>();
+        List<Integer> blockDocumentHeaders = new ArrayList<Integer>();
 
         doc.setTitleMatchNum(false);
-
         try {
             for (Block block : doc.getBlocks()) {
                 String localText = block.getText().trim();
@@ -333,7 +329,7 @@ public class BasicStructureBuilder {
                 }
             }
             if (candidateCluster != null) {
-                ArrayList<Integer> newBlockSectionTitles = new ArrayList<Integer>();
+                List<Integer> newBlockSectionTitles = new ArrayList<Integer>();
                 for (Integer bl : blockSectionTitles) {
                     if (!newBlockSectionTitles.contains(bl))
                         newBlockSectionTitles.add(bl);

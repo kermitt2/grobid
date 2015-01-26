@@ -9,9 +9,11 @@ import org.grobid.core.lang.Language;
 import org.grobid.core.layout.Block;
 import org.grobid.core.utilities.LanguageUtilities;
 import org.grobid.core.utilities.TextUtilities;
+import org.grobid.core.engines.SegmentationLabel;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.SortedSet;
 import java.util.StringTokenizer;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -49,12 +51,13 @@ public class TEIFormater {
     //private static Pattern numberRefVeryCompact = Pattern.compile("(\\[|\\()(\\d)+-(\\d)+(\\)|\\])");
     private static Pattern numberRefCompact2 = Pattern.compile("(\\[|\\()(\\d+)(-|‒|–|—|―|\u2013)(\\d+)(\\)|\\])");
 
+	private static Pattern startNum = Pattern.compile("^(\\d+)(.*)");
+
     public TEIFormater(Document document) {
         doc = document;
     }
 
     public StringBuffer toTEIHeader(BiblioItem biblio,
-                                    boolean peer,
                                     boolean withStyleSheet,
                                     String defaultPublicationStatement) {
         StringBuffer tei = new StringBuffer();
@@ -221,7 +224,7 @@ public class TEIFormater {
         //biblio.createAuthorSet();
         //biblio.attachEmails();
         //biblio.attachAffiliations();
-        tei.append(biblio.toTEIAuthorBlock(6, peer));
+        tei.append(biblio.toTEIAuthorBlock(6));
 
         // title
         String title = biblio.getTitle();
@@ -410,110 +413,108 @@ public class TEIFormater {
 					}
                 }
 
-                //if (peer) 
-                {
-                    if (biblio.getNormalizedPublicationDate() != null) {
-                        Date date = biblio.getNormalizedPublicationDate();
-                        int year = date.getYear();
-                        int month = date.getMonth();
-                        int day = date.getDay();
+                if (biblio.getNormalizedPublicationDate() != null) {
+                    Date date = biblio.getNormalizedPublicationDate();
+                    int year = date.getYear();
+                    int month = date.getMonth();
+                    int day = date.getDay();
 
-		                String when = "";
-						if (year <= 9) 
-							when += "000" + year;
-						else if (year <= 99) 
-							when += "00" + year;
-						else if (year <= 999)
-							when += "0" + year;
-						else
-							when += year;
-		                if (month != -1) {
-							if (month <= 9) 
-								when += "-0" + month;
-							else 
-		 					   	when += "-" + month;
-		                    if (day != -1) {
-								if (day <= 9)
-									when += "-0" + day;
-								else
-									when += "-" + day;
-		                    }
-		                }
-						if (biblio.getPublicationDate() != null) {
-                        	tei.append("\t\t\t\t\t\t\t<date type=\"published\" when=\"");
-                        	tei.append(when + "\">");
-							tei.append(TextUtilities.HTMLEncode(biblio.getPublicationDate())
-	                                + "</date>\n");
-						}
-						else {
-                        	tei.append("\t\t\t\t\t\t\t<date type=\"published\" when=\"");
-                        	tei.append(when + "\" />\n");
-						}
-                    } else if (biblio.getYear() != null) {
-						String when = "";
-						if (biblio.getYear().length() == 1)
-							when += "000" + biblio.getYear();
-						else if (biblio.getYear().length() == 2)
-							when += "00" + biblio.getYear();
-						else if (biblio.getYear().length() == 3)
-							when += "0" + biblio.getYear();
-						else if (biblio.getYear().length() == 4)
-							when += biblio.getYear();
-				
-		                if (biblio.getMonth() != null) {
-							if (biblio.getMonth().length() == 1)
-								when += "-0" + biblio.getMonth();
+	                String when = "";
+					if (year <= 9) 
+						when += "000" + year;
+					else if (year <= 99) 
+						when += "00" + year;
+					else if (year <= 999)
+						when += "0" + year;
+					else
+						when += year;
+	                if (month != -1) {
+						if (month <= 9) 
+							when += "-0" + month;
+						else 
+	 					   	when += "-" + month;
+	                    if (day != -1) {
+							if (day <= 9)
+								when += "-0" + day;
 							else
-								when += "-" + biblio.getMonth();
-		                    if (biblio.getDay() != null) {
-								if (biblio.getDay().length() == 1)
-									when += "-0" + biblio.getDay();
-								else
-									when += "-" + biblio.getDay();
-		                    }
-		                }
-						if (biblio.getPublicationDate() != null) {
-							tei.append("\t\t\t\t\t\t\t<date type=\"published\" when=\"");
-                        	tei.append(when + "\">");
-							tei.append(TextUtilities.HTMLEncode(biblio.getPublicationDate())
-	                                + "</date>\n");
-						} 
-						else {
-                        	tei.append("\t\t\t\t\t\t\t<date type=\"published\" when=\"");
-                        	tei.append(when + "\" />\n");
-						}
-                    } else if (biblio.getE_Year() != null) {
-						String when = "";
-						if (biblio.getE_Year().length() == 1)
-							when += "000" + biblio.getE_Year();
-						else if (biblio.getE_Year().length() == 2)
-							when += "00" + biblio.getE_Year();
-						else if (biblio.getE_Year().length() == 3)
-							when += "0" + biblio.getE_Year();
-						else if (biblio.getE_Year().length() == 4)
-							when += biblio.getE_Year();
-				
-		                if (biblio.getE_Month() != null) {
-							if (biblio.getE_Month().length() == 1)
-								when += "-0" + biblio.getE_Month();
-							else
-								when += "-" + biblio.getE_Month();
-					
-		                    if (biblio.getE_Day() != null) {
-								if (biblio.getE_Day().length() == 1)
-									when += "-0" + biblio.getE_Day();
-								else
-									when += "-" + biblio.getE_Day();
-		  					 }
-		                }
-                        tei.append("\t\t\t\t\t\t\t<date type=\"ePublished\" when=\"");
-                        tei.append(when + "\" />\n");
-                    } else if (biblio.getPublicationDate() != null) {
-                        tei.append("\t\t\t\t\t\t\t<date type=\"published\">");
-                        tei.append(TextUtilities.HTMLEncode(biblio.getPublicationDate())
+								when += "-" + day;
+	                    }
+	                }
+					if (biblio.getPublicationDate() != null) {
+                    	tei.append("\t\t\t\t\t\t\t<date type=\"published\" when=\"");
+                    	tei.append(when + "\">");
+						tei.append(TextUtilities.HTMLEncode(biblio.getPublicationDate())
                                 + "</date>\n");
-                    }
+					}
+					else {
+                    	tei.append("\t\t\t\t\t\t\t<date type=\"published\" when=\"");
+                    	tei.append(when + "\" />\n");
+					}
+                } else if (biblio.getYear() != null) {
+					String when = "";
+					if (biblio.getYear().length() == 1)
+						when += "000" + biblio.getYear();
+					else if (biblio.getYear().length() == 2)
+						when += "00" + biblio.getYear();
+					else if (biblio.getYear().length() == 3)
+						when += "0" + biblio.getYear();
+					else if (biblio.getYear().length() == 4)
+						when += biblio.getYear();
+			
+	                if (biblio.getMonth() != null) {
+						if (biblio.getMonth().length() == 1)
+							when += "-0" + biblio.getMonth();
+						else
+							when += "-" + biblio.getMonth();
+	                    if (biblio.getDay() != null) {
+							if (biblio.getDay().length() == 1)
+								when += "-0" + biblio.getDay();
+							else
+								when += "-" + biblio.getDay();
+	                    }
+	                }
+					if (biblio.getPublicationDate() != null) {
+						tei.append("\t\t\t\t\t\t\t<date type=\"published\" when=\"");
+                    	tei.append(when + "\">");
+						tei.append(TextUtilities.HTMLEncode(biblio.getPublicationDate())
+                                + "</date>\n");
+					} 
+					else {
+                    	tei.append("\t\t\t\t\t\t\t<date type=\"published\" when=\"");
+                    	tei.append(when + "\" />\n");
+					}
+                } else if (biblio.getE_Year() != null) {
+					String when = "";
+					if (biblio.getE_Year().length() == 1)
+						when += "000" + biblio.getE_Year();
+					else if (biblio.getE_Year().length() == 2)
+						when += "00" + biblio.getE_Year();
+					else if (biblio.getE_Year().length() == 3)
+						when += "0" + biblio.getE_Year();
+					else if (biblio.getE_Year().length() == 4)
+						when += biblio.getE_Year();
+			
+	                if (biblio.getE_Month() != null) {
+						if (biblio.getE_Month().length() == 1)
+							when += "-0" + biblio.getE_Month();
+						else
+							when += "-" + biblio.getE_Month();
+				
+	                    if (biblio.getE_Day() != null) {
+							if (biblio.getE_Day().length() == 1)
+								when += "-0" + biblio.getE_Day();
+							else
+								when += "-" + biblio.getE_Day();
+	  					 }
+	                }
+                    tei.append("\t\t\t\t\t\t\t<date type=\"ePublished\" when=\"");
+                    tei.append(when + "\" />\n");
+                } else if (biblio.getPublicationDate() != null) {
+                    tei.append("\t\t\t\t\t\t\t<date type=\"published\">");
+                    tei.append(TextUtilities.HTMLEncode(biblio.getPublicationDate())
+                            + "</date>\n");
                 }
+            
 				// Fix for issue #31
                 tei.append("\t\t\t\t\t\t</imprint>\n");
             }
@@ -526,11 +527,7 @@ public class TEIFormater {
                 theDOI = theDOI.replace(".xml", "");
             }
 
-            if (peer) {
-                tei.append("\t\t\t\t\t<idno type=\"DOI\">" + theDOI + "</idno>\n");
-            } else {
-                tei.append("\t\t\t\t\t<idno type=\"doi\">" + theDOI + "</idno>\n");
-            }
+            tei.append("\t\t\t\t\t<idno type=\"DOI\">" + theDOI + "</idno>\n");    
         }
 
         if (biblio.getSubmission() != null) {
@@ -762,8 +759,7 @@ public class TEIFormater {
             tei.append("\t<text>\n");
         }
 		
-		// if peer, we generate an empty abstract "sub-structure" if the abstract is null
-        if ( (biblio.getAbstract() != null) || peer) {
+        if (biblio.getAbstract() != null) {
             tei.append("\t\t<front>\n");
             String abstractText = biblio.getAbstract();
 
@@ -801,10 +797,12 @@ public class TEIFormater {
         return tei;
     }
 
-  	
-	/*public String toTEIBody(List<BibDataSet> bds) throws Exception {
-        StringBuffer tei = new StringBuffer();
-
+	public StringBuffer toTEIBodyLight(StringBuffer tei,
+                       			 	String rese,
+                                	BiblioItem biblio,
+                                	List<BibDataSet> bds,
+                                	List<String> tokenizations,
+                                	Document doc) throws Exception {
       	tei.append("\t\t<body>\n");
 
         int i = 0; 
@@ -822,7 +820,7 @@ public class TEIFormater {
 			for(int blockIndex = dp1.getBlockPtr(); blockIndex <= dp2.getBlockPtr(); blockIndex++) {
             	Block block = doc.getBlocks().get(blockIndex);
 	
-                String localText = block.getText();
+                String localText = block.getText().trim();
                 if (localText != null) {
                     localText = localText.trim();
                     localText = TextUtilities.dehyphenize(localText);
@@ -830,9 +828,7 @@ public class TEIFormater {
                     localText = localText.replace("  ", " ");
                     localText = localText.trim();
 
-                    localText = markReferencesTEI(localText, bds);
-
-                    if (listOpened & (!localText.startsWith("@BULLET"))) {
+                    if (listOpened && (!localText.startsWith("@BULLET"))) {
                         tei.append("\t\t\t\t</list>\n");
                         listOpened = false;
                     }
@@ -844,6 +840,7 @@ public class TEIFormater {
                             first = false;
                         // dehyphenization of section titles	
                         localText = TextUtilities.dehyphenizeHard(localText);
+						localText = localText.replace("@BULLET", "•");
                         // we try to recognize the numbering of the section titles
                         Matcher m1 = BasicStructureBuilder.headerNumbering1.matcher(localText);
                         Matcher m2 = BasicStructureBuilder.headerNumbering2.matcher(localText);
@@ -926,14 +923,19 @@ public class TEIFormater {
                             tei.append("\t\t\t\t\t<item>" + localText.substring(0, ind) + "</item>\n");
                             while (ind != -1) {
                                 localText = localText.substring(ind + 7, localText.length()).trim();
+								localText = TextUtilities.HTMLEncode(localText);
+								localText = markReferencesTEI(localText, bds);
                                 ind = localText.indexOf("@BULLET");
                                 if (ind != -1) {
                                     tei.append("\t\t\t\t\t<item>" + localText.substring(0, ind) + "</item>\n");
                                 } else
                                     tei.append("\t\t\t\t\t<item>" + localText + "</item>\n");
                             }
-                        } else
+                        } else {
+							localText = TextUtilities.HTMLEncode(localText);
+							localText = markReferencesTEI(localText, bds);
                             tei.append("\t\t\t\t\t<item>" + localText + "</item>\n");
+						}
                     } else if (localText.startsWith("@IMAGE")) {
                         String image = localText.substring(7, localText.length());
                         if (image.endsWith(".jpg"))
@@ -946,7 +948,10 @@ public class TEIFormater {
                             double localPos2 = block.getY();
                             //System.out.println(localPos + " " + localPos2 + " " + width);
                             if (width > 20) {
-                                //localText = utilities.dehyphenize(localText);
+                                localText = TextUtilities.dehyphenize(localText);
+								localText = localText.replace("@BULLET", "•");
+								localText = TextUtilities.HTMLEncode(localText);
+								localText = markReferencesTEI(localText, bds);
                                 tei.append("<p>" + localText + "</p>\n");
                             }
                         }
@@ -975,7 +980,7 @@ public class TEIFormater {
                             Block block = doc.getBlocks().get(ii);
                             String localText = block.getText();
                             if (localText != null) {
-                                localText = localText.trim();
+                                localText = localText.replace("@BULLET", "•").trim();
                             }
                             localText = TextUtilities.dehyphenize(localText);
                             if (localText != null) {
@@ -996,8 +1001,8 @@ public class TEIFormater {
             }
         }
 		
-        return tei.toString();
-    }*/
+        return tei;
+    }
 
 
     public StringBuffer toTEIBodyML(StringBuffer tei,
@@ -1012,7 +1017,7 @@ public class TEIFormater {
 		}
 		
 		tei.append("\t\t<body>\n");
-        //System.out.println(rese);
+
         elements = new ArrayList<String>();
         elements.add("body");
 
@@ -1046,12 +1051,12 @@ public class TEIFormater {
         // for keeping track of figure/table
         int startFigureHeaderPosition = -1;
         currentFigureHead = new StringBuffer();
-        ArrayList<NonTextObject> ntos = new ArrayList<NonTextObject>();
+        List<NonTextObject> ntos = new ArrayList<NonTextObject>();
 
         // these are the structures for keeping track of figure and table begining
-        ArrayList<NonTextObject> graphicObjects = new ArrayList<NonTextObject>();
-        //ArrayList<Integer> figurePositions = new ArrayList<Integer>();
-        //ArrayList<Integer> tablePositions = new ArrayList<Integer>();
+        List<NonTextObject> graphicObjects = new ArrayList<NonTextObject>();
+        //List<Integer> figurePositions = new ArrayList<Integer>();
+        //List<Integer> tablePositions = new ArrayList<Integer>();
 
         // keeping track of the blocks
         int b = 0;
@@ -1065,16 +1070,14 @@ public class TEIFormater {
             String tok = st.nextToken().trim();
             StringTokenizer stt = new StringTokenizer(tok, " \t");
 
-            //System.out.println(tok);
             int j = 0;
             int ll = stt.countTokens();
             while (stt.hasMoreTokens()) {
                 String s = stt.nextToken().trim();
-                if (s.equals("@BULLET")) {
-                    s = "•";
-                }
-
                 if (j == 0) {
+	                if (s.equals("@BULLET")) {
+	                    s = "•";
+	                }
                     s2 = TextUtilities.HTMLEncode(s); // lexical token
 
                     boolean strop = false;
@@ -1083,7 +1086,7 @@ public class TEIFormater {
                         if (tokOriginal.equals(" ")
                                 //| tokOriginal.equals("\n") 
                                 //| tokOriginal.equals("\r") 
-                                | tokOriginal.equals("\t")) {
+                                || tokOriginal.equals("\t")) {
                             if (p > 0) {
                                 addSpace = true;
                             }
@@ -1257,8 +1260,9 @@ public class TEIFormater {
             }
             p++;
         }
-
-        // document structure
+		// end of first pass
+		
+        // we build the general document structure
         DocumentNode newTop = doc.getTop().clone();
         newTop.realNumber = "0";
         if (doc.getTop().children != null) {
@@ -1352,7 +1356,8 @@ public class TEIFormater {
             }
         }
 		*/
-        System.out.println(doc.getTop().toString());
+        
+		System.out.println(doc.getTop().toString());
 
         // second pass for fine grained analysis of the document structure
         st = new StringTokenizer(rese, "\n");
@@ -1502,6 +1507,7 @@ public class TEIFormater {
             while (stt.hasMoreTokens()) {
                 String s = stt.nextToken().trim();
                 if (j == 0) {
+					s = s.replace("@BULLET", "•");
                     s2 = TextUtilities.HTMLEncode(s); // lexical token
                     //s2 = s; 
 
@@ -2305,27 +2311,48 @@ public class TEIFormater {
             }
         }
 
+		// write the footnotes
+		SortedSet<DocumentPiece> documentFootnoteParts = doc.getDocumentPart(SegmentationLabel.FOOTNOTE);
+		String footnotes = doc.getDocumentPartText(SegmentationLabel.FOOTNOTE);
+		if (documentFootnoteParts != null) {
+			for(DocumentPiece docPiece : documentFootnoteParts) {
+				String footText = doc.getDocumentPieceText(docPiece);
+				footText = TextUtilities.dehyphenize(footText);
+				footText = footText.replace("\n", " ");
+				footText = footText.replace("  ", " ").trim();
+				if (footText.trim().length() < 6)
+					continue;
+				// pattern is <note n="1" place="foot" xml:id="no1">
+				tei.append("\n\t\t\t<note place=\"foot\"");
+				Matcher ma = startNum.matcher(footText);
+				int currentNumber = -1;
+                if (ma.find()) {
+                    String groupStr = ma.group(1);
+					footText = ma.group(2);
+                    try {
+                        currentNumber = Integer.parseInt(groupStr);
+                    } catch (NumberFormatException e) {
+                        currentNumber = -1;
+                    }
+                }
+				if (currentNumber != -1) {
+					tei.append(" n=\"" + currentNumber + "\"");
+				}
+				tei.append(">");
+				tei.append(TextUtilities.HTMLEncode(footText.trim()));
+				tei.append("</note>\n");
+			}
+		}
+
         boolean end = false;
         while (!end) {
             if (elements.size() == 0) {
-                // we write the footnotes that have been accumulated
-                /*if (currentPageFootNote.length() > 0) {
-                    tei.append("\n\t\t\t<note place=\"foot\">" +
-                            currentPageFootNote.toString() + "</note>\n");
-                }
-				*/
                 tei.append("\t\t</body>\n");
                 end = true;
             }
             if ((elements.size() > 0) && (!end)) {
                 String lastElement = elements.get(elements.size() - 1);
                 if (lastElement.equals("body")) {
-                    // we write the footnotes that have been accumulated
-                 /*   if (currentPageFootNote.length() > 0) {
-                        tei.append("\n\t\t\t<note place=\"foot\">" +
-                                currentPageFootNote.toString() + "</note>\n");
-                    }
-					*/
                     tei.append("\t\t</body>\n");
                     elements.remove(elements.size() - 1);
                     end = true;
