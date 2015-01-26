@@ -104,9 +104,9 @@ public class HeaderParser extends AbstractParser {
 	public String processingHeaderBlock(boolean consolidate, Document doc, BiblioItem resHeader) {
 			String header;
 			if (doc.getBlockDocumentHeaders() == null) {
-				header = doc.getHeaderFeatured(true, true, true);
+				header = doc.getHeaderFeatured(true, true);
 			} else {
-				header = doc.getHeaderFeatured(true, false, true);
+				header = doc.getHeaderFeatured(false, true);
 			}
 			List<String> tokenizations = doc.getTokenizationsHeader();
  		   	
@@ -271,7 +271,7 @@ public class HeaderParser extends AbstractParser {
 			}
 			
 			TEIFormater teiFormater = new TEIFormater(doc);
-			StringBuffer tei = teiFormater.toTEIHeader(resHeader, true, false, null);
+			StringBuffer tei = teiFormater.toTEIHeader(resHeader, false, null);
             tei.append("\t</text>\n");
             tei.append("</TEI>\n");
 			//LOGGER.debug(tei.toString());
@@ -465,7 +465,7 @@ public class HeaderParser extends AbstractParser {
 				}
 
 				TEIFormater teiFormater = new TEIFormater(doc);
-				StringBuffer tei = teiFormater.toTEIHeader(resHeader, true, false, null);
+				StringBuffer tei = teiFormater.toTEIHeader(resHeader, false, null);
 	            tei.append("\t</text>\n");
 	            tei.append("</TEI>\n");
 				//LOGGER.debug(tei);
@@ -792,7 +792,7 @@ public class HeaderParser extends AbstractParser {
                 throw new GrobidException("PDF parsing resulted in empty content");
             }
 
-            String header = doc.getHeaderFeatured(true, true, true);
+            String header = doc.getHeaderFeatured(true, true);
             List<String> tokenizations = doc.getTokenizationsHeader();
 
             // we write the header untagged

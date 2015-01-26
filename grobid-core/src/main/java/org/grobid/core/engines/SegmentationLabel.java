@@ -13,7 +13,7 @@ public enum SegmentationLabel {
      document body <body>,
      bibliographical section <references>,
      page number <page>,
-     annexes <annex>
+     annexes <annex>,
      */
     COVER("<cover>"),
     HEADER("<header>"),

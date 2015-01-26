@@ -7,6 +7,11 @@ import com.google.common.collect.SortedSetMultimap;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.BiblioItem;
 import org.grobid.core.engines.Engine;
+import org.grobid.core.engines.EngineParsers;
+import org.grobid.core.engines.HeaderParser;
+import org.grobid.core.engines.CitationParser;
+import org.grobid.core.engines.ReferenceSegmenterParser;
+import org.grobid.core.engines.citations.LabeledReferenceResult;
 import org.grobid.core.engines.SegmentationLabel;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.exceptions.GrobidExceptionStatus;
@@ -407,7 +412,6 @@ public class Document {
         List<String> images = new ArrayList<String>();
         PDF2XMLSaxParser parser = new PDF2XMLSaxParser(this, images);
 
-
         tokenizations = null;
 
         File file = new File(pathXML);
@@ -443,237 +447,6 @@ public class Document {
     }
 
     /**
-     * First pass to detect structures: remove page header/footer, identify
-     * section numbering, identify Figure and table blocks.
-     */
-    public void firstPass() {
-        try {
-            BasicStructureBuilder.firstPass(this);
-        } catch (Exception e) {
-            throw new GrobidException("An exception occurs.", e);
-        }
-    }
-
-    /**
-     * Create a TEI representation of the document
-     */
-    /*public void toTEI(HeaderParser headerParser,
-                      ReferenceSegmenter referenceSegmenter,
-                      CitationParser citationParser, boolean consolidateHeader,
-                      boolean consolidateCitations, boolean peer, BiblioItem catalogue,
-                      boolean withStyleSheet, boolean onlyHeader) throws Exception {
-        addFeaturesDocument();
-
-        if (blocks == null) {
-            return;
-        }
-
-        BasicStructureBuilder.firstPass(this);
-        String header = getHeader(false);
-        if (header == null) {
-            header = getHeaderLastHope();
-        }
-        String body = getBody();
-        List<BibDataSet> bds = new ArrayList<>();
-
-        if (!onlyHeader) {
-            if (titleMatchNum) {
-                // have we miss a section title? in case of standard numbering
-                // we can try to recover missing ones
-                int i = 0;
-                for (Block block : blocks) {
-                    Integer ii = i;
-
-                    if ((!blockFooters.contains(ii))
-                            && (!blockDocumentHeaders.contains(ii))
-                            && (!blockHeaders.contains(ii))
-                            && (!blockReferences.contains(ii))
-                            && (!blockFigures.contains(ii))
-                            && (!blockTables.contains(ii))
-                            && (!blockSectionTitles.contains(ii))
-                            && (!acknowledgementBlocks.contains(ii))) {
-                        String localText = block.getText();
-
-                        if (localText != null) {
-                            localText = localText.replace("\n", " ");
-                            localText = localText.replace("  ", " ");
-                            localText = localText.trim();
-                            if ((localText.length() > 9)
-                                    && (localText.length() < 150)) {
-
-                                Matcher m1 = BasicStructureBuilder.headerNumbering1
-                                        .matcher(localText);
-                                Matcher m2 = BasicStructureBuilder.headerNumbering2
-                                        .matcher(localText);
-                                if (m1.find()) {
-                                    if (block.getNbTokens() < 10) {
-                                        int count1 = TextUtilities
-                                                .countDigit(localText);
-                                        if (count1 < localText.length() / 4) {
-                                            if (!blockSectionTitles
-                                                    .contains(ii))
-                                                blockSectionTitles.add(ii);
-                                        }
-                                    }
-                                } else if (m2.find()) {
-                                    if (block.getNbTokens() < 10) {
-                                        int count1 = TextUtilities
-                                                .countDigit(localText);
-                                        if (count1 < localText.length() / 4) {
-                                            if (!blockSectionTitles
-                                                    .contains(ii))
-                                                blockSectionTitles.add(ii);
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    i++;
-                }
-            }
-
-            List<String> tokenizations = getTokenizationsReferences();
-            if ((tokenizations == null) || (tokenizations.size() == 0)) {
-                // we need to tokenize the reference section, as it has not been
-                // done until this stage
-                String refSection = getReferences();
-                StringTokenizer st = new StringTokenizer(refSection, " \t\n"
-                        + TextUtilities.fullPunctuations, true);
-                while (st.hasMoreTokens()) {
-                    tokenizations.add(st.nextToken());
-                }
-            }
-
-            List<LabeledReferenceResult> refs;
-            if (citationParser != null) {
-                refs = referenceSegmenter.extract(Joiner.on("").join(tokenizations));
-                if (refs != null) {
-                    for (LabeledReferenceResult ref: refs) {
-                        BiblioItem bib = citationParser.processing(ref.getReferenceText(),
-                                consolidateCitations);
-
-                        BibDataSet bd = new BibDataSet();
-                        bd.setResBib(bib);
-                        bd.setRefSymbol(ref.getLabel());
-                        bd.setRawBib(ref.getReferenceText());
-                        bds.add(bd);
-                    }
-                }
-            }
-        }
-        // BiblioItem biblio =
-        // headerParser.processingHeaderBlock(consolidateHeader, this);
-        BiblioItem biblio = new BiblioItem();
-        headerParser.processingHeaderBlock(consolidateHeader, this, biblio);
-
-        if (catalogue != null) {
-            BiblioItem.correct(biblio, catalogue);
-        }
-        LanguageUtilities languageUtilities = LanguageUtilities.getInstance();
-        Language lang = languageUtilities.runLanguageId(body);
-
-        if (lang != null) {
-            setLanguage(lang.getLangId());
-            biblio.setLanguage(lang.getLangId());
-        }
-
-        if (!onlyHeader) {
-            // re-adjust the introduction boundary
-            int i = 0;
-            for (Block block : blocks) {
-                Integer ii = i;
-                if (blockDocumentHeaders.contains(ii)) {
-                    String localText = block.getText();
-
-                    if (localText != null) {
-                        localText = localText.trim();
-                        localText = localText.replace("\n", " ");
-                        localText = localText.replace("  ", " ");
-                        localText = localText.trim();
-                        if (localText.length() > 0) {
-                            Matcher ma1 = BasicStructureBuilder.introduction
-                                    .matcher(localText);
-                            Matcher ma2 = BasicStructureBuilder.references
-                                    .matcher(localText);
-                            if ((ma1.find()) || (ma2.find())) {
-                                if (((localText.startsWith("1.")) || (localText
-                                        .startsWith("1 ")))
-                                        || ((localText.startsWith("2.")) || (localText
-                                        .startsWith("2 ")))) {
-                                    blockDocumentHeaders.remove(ii);
-                                    break;
-                                }
-                            }
-                        }
-                    }
-                }
-                i++;
-            }
-
-            // ACM-type specific cleaning
-            i = 0;
-            for (Block block : blocks) {
-                Integer ii = i;
-
-                if ((!blockFooters.contains(ii))
-                        && (!blockDocumentHeaders.contains(ii))
-                        && (!blockHeaders.contains(ii))
-                        && (!blockReferences.contains(ii))
-                        && (!blockFigures.contains(ii))
-                        && (!blockTables.contains(ii))
-                        && (!blockSectionTitles.contains(ii))
-                        && (!acknowledgementBlocks.contains(ii))) {
-                    String localText = block.getText();
-
-                    if (localText != null) {
-                        localText = localText.replace("  ", " ");
-                        localText = localText.trim();
-                        String lastLocalText = null;
-
-                        StringTokenizer st = new StringTokenizer(localText,
-                                "\n");
-                        while (st.hasMoreTokens()) {
-                            lastLocalText = st.nextToken().trim();
-                        }
-
-                        if (lastLocalText != null) {
-                            if (lastLocalText.startsWith("* Contact author:")) {
-                                String newLocalText = "";
-                                st = new StringTokenizer(localText, "\n");
-                                boolean start = true;
-                                while (st.hasMoreTokens()) {
-                                    if (start) {
-                                        String toto = st.nextToken();
-                                        if (st.hasMoreTokens())
-                                            newLocalText += toto;
-                                        start = false;
-                                    } else {
-                                        String toto = st.nextToken();
-                                        if (st.hasMoreTokens()) {
-                                            newLocalText += "\n" + toto;
-                                        }
-                                    }
-                                }
-                                block.setText(newLocalText);
-                                break;
-                            }
-                        }
-                    }
-                }
-                i++;
-            }
-
-            reconnectBlocks();
-        }
-
-        TEIFormater teiFormater = new TEIFormater(this);
-        tei = teiFormater.toTEIBody(biblio, bds, peer, withStyleSheet,
-                onlyHeader);
-    }
-	*/
-
-    /**
      * Try to reconnect blocks cut because of layout constraints (new col., new
      * page, inserted figure, etc.)
      */
@@ -705,10 +478,7 @@ public class Document {
                         if (innd == -1)
                             innd = text.indexOf("@IMAGE");
 
-                        if (innd != -1) {
-//							if (candidate == true) {
-//							}
-                        } else
+                        if (innd == -1) {
                             // test if the block starts without upper case
                             if (text.length() > 2) {
                                 char c1 = text.charAt(0);
@@ -741,42 +511,43 @@ public class Document {
                                 candidate = false;
                             }
 
-                        // test if the block ends "suddently"
-                        if (text.length() > 2) {
-                            // test the position of the last token, which should
-                            // be close
-                            // to the one of the block + width of the block
-                            StringTokenizer st = new StringTokenizer(text, "\n");
-                            int lineLength = 0;
-                            int nbLines = 0;
-                            int p = 0;
-                            while (p < st.countTokens() - 1) {
-                                String line = st.nextToken();
-                                lineLength += line.length();
-                                nbLines++;
-                                p++;
-                            }
+	                        // test if the block ends "suddently"
+	                        if (text.length() > 2) {
+	                            // test the position of the last token, which should
+	                            // be close
+	                            // to the one of the block + width of the block
+	                            StringTokenizer st = new StringTokenizer(text, "\n");
+	                            int lineLength = 0;
+	                            int nbLines = 0;
+	                            int p = 0;
+	                            while (p < st.countTokens() - 1) {
+	                                String line = st.nextToken();
+	                                lineLength += line.length();
+	                                nbLines++;
+	                                p++;
+	                            }
 
-                            if (st.countTokens() > 1) {
-                                lineLength = lineLength / nbLines;
-                                int finalLineLength = st.nextToken().length();
+	                            if (st.countTokens() > 1) {
+	                                lineLength = lineLength / nbLines;
+	                                int finalLineLength = st.nextToken().length();
 
-                                if (Math.abs(finalLineLength - lineLength) < (lineLength / 3)) {
+	                                if (Math.abs(finalLineLength - lineLength) < (lineLength / 3)) {
 
-                                    char c1 = text.charAt(text.length() - 1);
-                                    char c2 = text.charAt(text.length() - 2);
-                                    if ((((c1 == '-') || (c1 == ')')) && Character
-                                            .isLetter(c2))
-                                            | (Character.isLetter(c1) && Character
-                                            .isLetter(c2))) {
-                                        // this block is a candidate for merging
-                                        // with the next one
-                                        candidate = true;
-                                        candidateIndex = i;
-                                    }
-                                }
-                            }
-                        }
+	                                    char c1 = text.charAt(text.length() - 1);
+	                                    char c2 = text.charAt(text.length() - 2);
+	                                    if ((((c1 == '-') || (c1 == ')')) && Character
+	                                            .isLetter(c2))
+	                                            | (Character.isLetter(c1) && Character
+	                                            .isLetter(c2))) {
+	                                        // this block is a candidate for merging
+	                                        // with the next one
+	                                        candidate = true;
+	                                        candidateIndex = i;
+	                                    }
+	                                }
+	                            }
+	                        }
+						}
                     }
                 }
             }
@@ -784,11 +555,11 @@ public class Document {
         }
     }
 
-    public String getHeaderFeatured(boolean firstPass, boolean getHeader,
+    public String getHeaderFeatured(boolean getHeader,
                                     boolean withRotation) {
         if (getHeader) {
             // String theHeader = getHeaderZFN(firstPass);
-            String theHeader = getHeader(firstPass);
+            String theHeader = getHeader();
             if (theHeader == null) {
                 getHeaderLastHope();
             } else if (theHeader.trim().length() == 1) {
@@ -1051,9 +822,9 @@ public class Document {
     // heuristics to get the header section... should be replaced be a global
     // CRF structure recognition
     // model
-    public String getHeader(boolean firstPass) {
-        if (firstPass)
-            firstPass();
+    public String getHeader() {
+        //if (firstPass)
+        BasicStructureBuilder.firstPass(this);
 
         // try first to find the introduction in a safe way
         String tmpRes = getHeaderByIntroduction();

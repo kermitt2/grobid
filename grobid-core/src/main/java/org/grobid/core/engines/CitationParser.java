@@ -148,8 +148,7 @@ public class CitationParser extends AbstractParser {
     }
 
     public List<BibDataSet> processingReferenceSection(Document doc, ReferenceSegmenter referenceSegmenter, boolean consolidate) {
-        ArrayList<BibDataSet> results = new ArrayList<BibDataSet>();
-
+        List<BibDataSet> results = new ArrayList<BibDataSet>();
 
         String referencesStr = doc.getDocumentPartText(SegmentationLabel.REFERENCES);
         if (!referencesStr.isEmpty()) {
@@ -169,7 +168,6 @@ public class CitationParser extends AbstractParser {
         for (LabeledReferenceResult ref : references) {
             BiblioItem bib = processing(ref.getReferenceText(), consolidate);
             BibDataSet bds = new BibDataSet();
-
             bds.setRefSymbol(ref.getLabel());
             bds.setResBib(bib);
             bds.setRawBib(ref.getReferenceText());
@@ -186,29 +184,7 @@ public class CitationParser extends AbstractParser {
         try {
 
             Document doc = parsers.getSegmentationParser().processing(input);
-
-            String referencesStr = doc.getDocumentPartText(SegmentationLabel.REFERENCES);
-            if ((referencesStr != null) && (!referencesStr.isEmpty())) {
-                cntManager.i(CitationParserCounters.NOT_EMPTY_REFERENCES_BLOCKS);
-            }
-
-            List<LabeledReferenceResult> references = referenceSegmenter.extract(referencesStr);
-
-            if (references == null) {
-                cntManager.i(CitationParserCounters.NULL_SEGMENTED_REFERENCES_LIST);
-                return results;
-            } else {
-                cntManager.i(CitationParserCounters.SEGMENTED_REFERENCES, references.size());
-            }
-
-            for (LabeledReferenceResult ref : references) {
-                BiblioItem bib = processing(ref.getReferenceText(), consolidate);
-                BibDataSet bds = new BibDataSet();
-                bds.setResBib(bib);
-                bds.setRefSymbol(ref.getLabel());
-                bds.setRawBib(ref.getReferenceText());
-                results.add(bds);
-            }
+			results = processingReferenceSection(doc, referenceSegmenter, consolidate); 
         } catch (GrobidException e) {
             throw e;
         } catch (Exception e) {
