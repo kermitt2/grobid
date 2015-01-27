@@ -28,16 +28,12 @@ import java.util.StringTokenizer;
 public class CitationParser extends AbstractParser {
     private Consolidation consolidator = null;
 
-//    private File tmpPath = null;
-//	private String pathXML = null;
-
     public Lexicon lexicon = Lexicon.getInstance();
     private EngineParsers parsers;
 
     public CitationParser(EngineParsers parsers, CntManager cntManager) {
         super(GrobidModels.CITATION, cntManager);
         this.parsers = parsers;
-//        tmpPath = GrobidProperties.getTempPath();
     }
 
     public CitationParser(EngineParsers parsers) {
@@ -151,10 +147,13 @@ public class CitationParser extends AbstractParser {
         List<BibDataSet> results = new ArrayList<BibDataSet>();
 
         String referencesStr = doc.getDocumentPartText(SegmentationLabel.REFERENCES);
-        if (!referencesStr.isEmpty()) {
-            cntManager.i(CitationParserCounters.NOT_EMPTY_REFERENCES_BLOCKS);
+
+        if (StringUtils.isEmpty(referencesStr)) {
+            cntManager.i(CitationParserCounters.EMPTY_REFERENCES_BLOCKS);
+            return results;
         }
-//			List<String> tokenizations = doc.getTokenizationsReferences();
+
+        cntManager.i(CitationParserCounters.NOT_EMPTY_REFERENCES_BLOCKS);
 
         List<LabeledReferenceResult> references = referenceSegmenter.extract(referencesStr);
 
@@ -180,7 +179,7 @@ public class CitationParser extends AbstractParser {
     public List<BibDataSet> processingReferenceSection(String input,
                                                        ReferenceSegmenter referenceSegmenter,
                                                        boolean consolidate) {
-        List<BibDataSet> results = new ArrayList<BibDataSet>();
+        List<BibDataSet> results;
         try {
 
             Document doc = parsers.getSegmentationParser().processing(input);

@@ -78,7 +78,12 @@ public class LanguageUtilities {
 		if (!useLanguageId) {
 			return null;
 		}
-		return ldf.getInstance().detect(text);
-	}
+        try {
+            return ldf.getInstance().detect(text);
+        } catch (Exception e) {
+            LOGGER.warn("Cannot detect language because of: " + e.getClass().getName() + ": " + e.getMessage());
+            return null;
+        }
+    }
 
 }

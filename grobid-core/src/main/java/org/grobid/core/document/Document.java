@@ -4,14 +4,10 @@ import com.google.common.base.Function;
 import com.google.common.base.Joiner;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.SortedSetMultimap;
+import org.apache.commons.lang3.StringUtils;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.BiblioItem;
 import org.grobid.core.engines.Engine;
-import org.grobid.core.engines.EngineParsers;
-import org.grobid.core.engines.HeaderParser;
-import org.grobid.core.engines.CitationParser;
-import org.grobid.core.engines.ReferenceSegmenterParser;
-import org.grobid.core.engines.citations.LabeledReferenceResult;
 import org.grobid.core.engines.SegmentationLabel;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.exceptions.GrobidExceptionStatus;
@@ -315,7 +311,8 @@ public class Document {
             }
 
             if (worker.getExitStatus() != 0) {
-                throw new GrobidException("PDF to XML conversion failed due to: " + worker.getErrorStreamContents(),
+                String errorStreamContents = worker.getErrorStreamContents();
+                throw new GrobidException("PDF to XML conversion failed " + (StringUtils.isEmpty(errorStreamContents) ? "" : ("due to: " + errorStreamContents)),
                         GrobidExceptionStatus.TIMEOUT);
             }
         } catch (InterruptedException ex) {
@@ -423,12 +420,9 @@ public class Document {
             SAXParserFactory spf = SAXParserFactory.newInstance();
             // get a new instance of parser
             SAXParser p = spf.newSAXParser();
-            try {
-                p.parse(in, parser);
-                tokenizations = parser.getTokenization();
-            } catch (Exception e) {
-                throw new GrobidException("An exception occurs.", e);
-            }
+
+            p.parse(in, parser);
+            tokenizations = parser.getTokenization();
         } catch (Exception e) {
             throw new GrobidException("Cannot parse file: " + file, e, GrobidExceptionStatus.PARSING_ERROR);
         } finally {
@@ -511,43 +505,43 @@ public class Document {
                                 candidate = false;
                             }
 
-	                        // test if the block ends "suddently"
-	                        if (text.length() > 2) {
-	                            // test the position of the last token, which should
-	                            // be close
-	                            // to the one of the block + width of the block
-	                            StringTokenizer st = new StringTokenizer(text, "\n");
-	                            int lineLength = 0;
-	                            int nbLines = 0;
-	                            int p = 0;
-	                            while (p < st.countTokens() - 1) {
-	                                String line = st.nextToken();
-	                                lineLength += line.length();
-	                                nbLines++;
-	                                p++;
-	                            }
+                            // test if the block ends "suddently"
+                            if (text.length() > 2) {
+                                // test the position of the last token, which should
+                                // be close
+                                // to the one of the block + width of the block
+                                StringTokenizer st = new StringTokenizer(text, "\n");
+                                int lineLength = 0;
+                                int nbLines = 0;
+                                int p = 0;
+                                while (p < st.countTokens() - 1) {
+                                    String line = st.nextToken();
+                                    lineLength += line.length();
+                                    nbLines++;
+                                    p++;
+                                }
 
-	                            if (st.countTokens() > 1) {
-	                                lineLength = lineLength / nbLines;
-	                                int finalLineLength = st.nextToken().length();
+                                if (st.countTokens() > 1) {
+                                    lineLength = lineLength / nbLines;
+                                    int finalLineLength = st.nextToken().length();
 
-	                                if (Math.abs(finalLineLength - lineLength) < (lineLength / 3)) {
+                                    if (Math.abs(finalLineLength - lineLength) < (lineLength / 3)) {
 
-	                                    char c1 = text.charAt(text.length() - 1);
-	                                    char c2 = text.charAt(text.length() - 2);
-	                                    if ((((c1 == '-') || (c1 == ')')) && Character
-	                                            .isLetter(c2))
-	                                            | (Character.isLetter(c1) && Character
-	                                            .isLetter(c2))) {
-	                                        // this block is a candidate for merging
-	                                        // with the next one
-	                                        candidate = true;
-	                                        candidateIndex = i;
-	                                    }
-	                                }
-	                            }
-	                        }
-						}
+                                        char c1 = text.charAt(text.length() - 1);
+                                        char c2 = text.charAt(text.length() - 2);
+                                        if ((((c1 == '-') || (c1 == ')')) && Character
+                                                .isLetter(c2))
+                                                | (Character.isLetter(c1) && Character
+                                                .isLetter(c2))) {
+                                            // this block is a candidate for merging
+                                            // with the next one
+                                            candidate = true;
+                                            candidateIndex = i;
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -1634,9 +1628,10 @@ public class Document {
 
     public String getDocumentPartText(SegmentationLabel segmentationLabel) {
         SortedSet<DocumentPiece> pieces = getDocumentPart(segmentationLabel);
-        if (pieces == null)
+        if (pieces == null) {
             return null;
-        else
+        } else {
             return getDocumentPieceText(getDocumentPart(segmentationLabel));
+        }
     }
 }
