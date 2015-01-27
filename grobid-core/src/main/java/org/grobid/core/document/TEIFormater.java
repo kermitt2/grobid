@@ -10,6 +10,7 @@ import org.grobid.core.layout.Block;
 import org.grobid.core.utilities.LanguageUtilities;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.engines.SegmentationLabel;
+import org.grobid.core.engines.FullTextParser;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -797,15 +798,287 @@ public class TEIFormater {
         return tei;
     }
 
-	public StringBuffer toTEIBodyLight(StringBuffer tei,
-                       			 	String rese,
+	public StringBuffer toTEIBodyLight(StringBuffer buffer,
+                       			 	String result,
                                 	BiblioItem biblio,
                                 	List<BibDataSet> bds,
                                 	List<String> tokenizations,
                                 	Document doc) throws Exception {
-      	tei.append("\t\t<body>\n");
+      	
+		if ( (result == null) || (tokenizations == null) ) {
+			buffer.append("\t\t<body/>\n");
+			return buffer;
+		}
+		buffer.append("\t\t<body>\n");
 
-        int i = 0; 
+        StringTokenizer st = new StringTokenizer(result, "\n");
+        String s1 = null;
+        String s2 = null;
+        String lastTag = null;
+		//System.out.println(tokenizations.toString());
+		//System.out.println(result);
+        // current token position
+        int p = 0;
+        boolean start = true;
+        boolean openFigure = false;
+        boolean headFigure = false;
+        boolean descFigure = false;
+        boolean tableBlock = false;
+
+        while (st.hasMoreTokens()) {
+            boolean addSpace = false;
+            String tok = st.nextToken().trim();
+            if (tok.length() == 0) {
+                continue;
+            }
+            StringTokenizer stt = new StringTokenizer(tok, " \t");
+            List<String> localFeatures = new ArrayList<String>();
+            int i = 0;
+
+            boolean newLine = false;
+            int ll = stt.countTokens();
+            while (stt.hasMoreTokens()) {
+                String s = stt.nextToken().trim();
+                if (i == 0) {
+					if (s.equals("@BULLET")) {
+						s = "•";
+					}
+                    s2 = TextUtilities.HTMLEncode(s); // lexical token
+					int p0 = p;
+                    boolean strop = false;
+                    while ((!strop) && (p < tokenizations.size())) {
+                        String tokOriginal = tokenizations.get(p);
+                        if (tokOriginal.equals(" ") 							 
+						 || tokOriginal.equals("\u00A0")) {
+                            addSpace = true;
+                        } 
+						else if (tokOriginal.equals("\n")) {
+							newLine = true;
+						}  
+						else if (tokOriginal.equals(s)) {
+                            strop = true;
+                        }
+                        p++;
+                    }
+					if (p == tokenizations.size()) {
+						// either we are at the end of the header, or we might have 
+						// a problematic token in tokenization for some reasons
+						if ((p - p0) > 2) {
+							// we loose the synchronicity, so we reinit p for the next token
+							p = p0;
+						}
+					}
+                } else if (i == ll - 1) {
+                    s1 = s; // current tag
+                } else {
+                    if (s.equals("LINESTART"))
+                        newLine = true;
+                    localFeatures.add(s);
+                }
+                i++;
+            }
+
+            if (newLine && !start) {
+                buffer.append("<lb/>");
+            }
+
+            String lastTag0 = null;
+            if (lastTag != null) {
+                if (lastTag.startsWith("I-")) {
+                    lastTag0 = lastTag.substring(2, lastTag.length());
+                } else {
+                    lastTag0 = lastTag;
+                }
+            }
+            String currentTag0 = null;
+            if (s1 != null) {
+                if (s1.startsWith("I-")) {
+                    currentTag0 = s1.substring(2, s1.length());
+                } else {
+                    currentTag0 = s1;
+                }
+            }
+
+            boolean closeParagraph = false;
+            if (lastTag != null) {
+                closeParagraph = FullTextParser.testClosingTag(buffer, currentTag0, lastTag0, s1);
+            }
+
+            boolean output;
+
+            if (!currentTag0.equals("<table>") &&
+                    !currentTag0.equals("<trash>") &&
+                    !currentTag0.equals("<figure_head>") &&
+                    !currentTag0.equals("<label>")) {
+                if (openFigure) {
+                    buffer.append("\n\t\t\t</figure>\n\n");
+                }
+                openFigure = false;
+                headFigure = false;
+                descFigure = false;
+                tableBlock = false;
+            }
+               
+			output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<other>", "<note type=\"other\">", addSpace, 3);
+
+            // for paragraph we must distinguish starting and closing tags
+            if (!output) {
+                if (closeParagraph) {
+                    output = FullTextParser.writeFieldBeginEnd(buffer, s1, "", s2, "<paragraph>", "<p>", addSpace, 3);
+                } else {
+                    output = FullTextParser.writeFieldBeginEnd(buffer, s1, lastTag, s2, "<paragraph>", "<p>", addSpace, 3);
+                }
+            }
+            /*if (!output) {
+                output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<page_header>", "<note place=\"headnote\">",
+                        addSpace, 3);
+            }
+            if (!output) {
+                output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<page_footnote>", "<note place=\"footnote\">",
+                        addSpace, 3);
+            }
+            if (!output) {
+                output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<page>", "<page>", addSpace, 3);
+            }
+            if (!output) {
+                output = FullTextParser.writeFieldBeginEnd(buffer, s1, lastTag0, s2, "<reference>", "<bibl>", addSpace, 3);
+            }*/
+            /*if (!output) {
+                if (closeParagraph) {
+                    output = FullTextParser.writeField(buffer, s1, "", s2, "<reference_marker>", "<label>", addSpace, 3);
+                } else
+                    output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<reference_marker>", "<label>", addSpace, 3);
+            }*/
+            if (!output) {
+                output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<citation_marker>", "<ref type=\"biblio\">",
+                        addSpace, 3);
+            }
+            if (!output) {
+                output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<section>", "<head>", addSpace, 3);
+            }
+            if (!output) {
+                output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<subsection>", "<head>", addSpace, 3);
+            }
+            if (!output) {
+                if (openFigure) {
+                    output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<trash>", "<trash>", addSpace, 4);
+                } else {
+                    //output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<trash>", "<figure>\n\t\t\t\t<trash>",
+                    output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<trash>", "<trash>",
+                            addSpace, 3);
+                    if (output) {
+                        openFigure = true;
+                    }
+                }
+            }
+            if (!output) {
+                output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<equation>", "<formula>", addSpace, 3);
+            }
+            if (!output) {
+                output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<figure_marker>", "<ref type=\"figure\">",
+                        addSpace, 3);
+            }
+            if (!output) {
+                if (openFigure) {
+                    if (tableBlock && (!lastTag0.equals("<table>")) && (currentTag0.equals("<table>"))) {
+                        buffer.append("\n\t\t\t</figure>\n\n");
+                        output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<figure>\n\t\t\t\t<table>", "<figure>",
+                                addSpace, 3);
+                        if (output) {
+                            tableBlock = true;
+                            descFigure = false;
+                            headFigure = false;
+                        }
+                    } else {
+                        output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<table>", "<table>", addSpace, 4);
+                        if (output) {
+                            tableBlock = true;
+                        }
+                    }
+                } else {
+                    output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<table>", "<figure>\n\t\t\t\t<table>",
+                            addSpace, 3);
+                    if (output) {
+                        openFigure = true;
+                        tableBlock = true;
+                    }
+                }
+            }
+            if (!output) {
+                if (openFigure) {
+                    if (descFigure && (!lastTag0.equals("<label>")) && (currentTag0.equals("<label>"))) {
+                        buffer.append("\n\t\t\t</figure>\n\n");
+                        output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<label>", "<figure>\n\t\t\t\t<figDesc>",
+                                addSpace, 3);
+                        if (output) {
+                            descFigure = true;
+                            tableBlock = false;
+                            headFigure = false;
+                        }
+                    } else {
+                        output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<label>", "<figDesc>", addSpace, 4);
+                        if (output) {
+                            descFigure = true;
+                        }
+                    }
+                } else {
+                    output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<label>", "<figure>\n\t\t\t\t<figDesc>",
+                            addSpace, 3);
+                    if (output) {
+                        openFigure = true;
+                        descFigure = true;
+                    }
+                }
+            }
+            if (!output) {
+                if (openFigure) {
+                    if (headFigure && (!lastTag0.equals("<figure_head>")) &&
+                            (currentTag0.equals("<figure_head>"))) {
+                        buffer.append("\n\t\t\t</figure>\n\n");
+                        output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<figure_head>", "<figure>\n\t\t\t\t<head>",
+                                addSpace, 3);
+                        if (output) {
+                            descFigure = false;
+                            tableBlock = false;
+                            headFigure = true;
+                        }
+                    } else {
+                        output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<figure_head>", "<head>", addSpace, 4);
+                        if (output) {
+                            headFigure = true;
+                        }
+                    }
+                } else {
+                    output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<figure_head>", "<figure>\n\t\t\t\t<head>",
+                            addSpace, 3);
+                    if (output) {
+                        openFigure = true;
+                        headFigure = true;
+                    }
+                }
+            }
+            // for item we must distinguish starting and closing tags
+            if (!output) {
+                output = FullTextParser.writeFieldBeginEnd(buffer, s1, lastTag, s2, "<item>", "<item>", addSpace, 3);
+            }
+
+            lastTag = s1;
+
+            if (!st.hasMoreTokens()) {
+                if (lastTag != null) {
+                    FullTextParser.testClosingTag(buffer, "", currentTag0, s1);
+                }
+                if (openFigure) {
+                    buffer.append("\n\t\t\t</figure>\n\n");
+                }
+            }
+            if (start) {
+                start = false;
+            }
+        }
+
+
+        /*int i = 0; 
         boolean first = true;
         boolean listOpened = false;
         double pos = 0.0;
@@ -999,9 +1272,13 @@ public class TEIFormater {
                     tei.append("\t\t\t</div>\n");
                 }
             }
-        }
+        }*/
 		
-        return tei;
+      	buffer.append("\t\t<body>\n");
+		String fulltext = buffer.toString();
+		fulltext = TextUtilities.dehyphenize(fulltext);
+		
+        return buffer;
     }
 
 
