@@ -32,7 +32,7 @@ public class CybozuLanguageDetector implements LanguageDetector {
 
             return new Language(l.lang, l.prob);
         } catch (LangDetectException e) {
-            LOGGER.error("Cannot detect language", e);
+            LOGGER.warn("Cannot detect language because of: " + e.getClass().getName() + ": " + e.getMessage());
             return null;
         }
 
