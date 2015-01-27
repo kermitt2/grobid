@@ -127,12 +127,7 @@ public class HeaderParser extends AbstractParser {
 					// correct
 					contentSample += doc.getBody();
 				}
-                Language langu = null;
-                try {
-                    langu = languageUtilities.runLanguageId(contentSample);
-                } catch (Exception e) {
-                    LOGGER.warn("Cannot detect language because of: " + e.getMessage(), e);
-                }
+                Language langu = languageUtilities.runLanguageId(contentSample);
                 if (langu != null) {
 					String lang = langu.getLangId();
 					doc.setLanguage(lang);

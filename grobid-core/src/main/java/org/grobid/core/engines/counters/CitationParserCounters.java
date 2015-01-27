@@ -7,5 +7,5 @@ package org.grobid.core.engines.counters;
 public enum CitationParserCounters {
     SEGMENTED_REFERENCES,
     NULL_SEGMENTED_REFERENCES_LIST,
-    NOT_EMPTY_REFERENCES_BLOCKS
+    EMPTY_REFERENCES_BLOCKS, NOT_EMPTY_REFERENCES_BLOCKS
 }
