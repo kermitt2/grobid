@@ -87,7 +87,8 @@ public class TextUtilities {
     }
 
     /**
-     * Text extracted from a PDF is usually hyphenized, which is not desirable.
+     * Text extracted from a PDF is usually hyphenized, which is not desirable. This 
+	 * version supposes that the ends of line are preserved in the input text. 
      *
      * @param text the string to be processed with preserved end of lines.
      * @return Returns the dehyphenized string.
@@ -166,7 +167,8 @@ public class TextUtilities {
     /**
      * Text extracted from a PDF is usually hyphenized, which is not desirable.
      * This version supposes that the end of line are lost and than hyphenation
-     * could appear everywhere.
+     * could appear everywhere. So a dictionary is used to control the recognition
+     * of hyphen. 
      *
      * @param text the string to be processed without preserved end of lines.
      * @return Returns the dehyphenized string.

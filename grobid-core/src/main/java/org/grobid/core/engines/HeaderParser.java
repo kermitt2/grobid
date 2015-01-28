@@ -136,8 +136,8 @@ public class HeaderParser extends AbstractParser {
 
 				if (resHeader != null) {
 					if (resHeader.getAbstract() != null) {
-						// resHeader.setAbstract(utilities.dehyphenizeHard(resHeader.getAbstract()));
-						resHeader.setAbstract(TextUtilities.dehyphenize(resHeader.getAbstract()));
+						resHeader.setAbstract(TextUtilities.dehyphenizeHard(resHeader.getAbstract()));
+						//resHeader.setAbstract(TextUtilities.dehyphenize(resHeader.getAbstract()));
 					}
 					BiblioItem.cleanTitles(resHeader);
 					if (resHeader.getTitle() != null) {
