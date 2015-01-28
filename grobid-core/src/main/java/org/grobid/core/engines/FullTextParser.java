@@ -1133,7 +1133,7 @@ public class FullTextParser extends AbstractParser {
      * @param currentTag
      * @return
      */
-    public static boolean testClosingTag(StringBuffer buffer,
+    private static boolean testClosingTag(StringBuffer buffer,
                                    String currentTag0,
                                    String lastTag0,
                                    String currentTag) {
