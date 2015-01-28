@@ -798,6 +798,14 @@ public class TEIFormater {
         return tei;
     }
 
+
+	/** 
+	 *  Light TEI formatting of the body where only basic logical document structures are present. 
+	 *  This TEI format avoids most of the risks of ill-formed TEI due to structure recognition 
+	 *  errors and frequent PDF noises.
+	 *  It is adapted to fully automatic process and simple exploitation of the document structures 
+     *  like structured indexing and search.
+	 */
 	public StringBuffer toTEIBodyLight(StringBuffer buffer,
                        			 	String result,
                                 	BiblioItem biblio,
@@ -815,7 +823,7 @@ public class TEIFormater {
         String s1 = null;
         String s2 = null;
         String lastTag = null;
-		//System.out.println(tokenizations.toString());
+		String lastOriginalTag = "";
 		//System.out.println(result);
         // current token position
         int p = 0;
@@ -832,7 +840,7 @@ public class TEIFormater {
                 continue;
             }
             StringTokenizer stt = new StringTokenizer(tok, " \t");
-            List<String> localFeatures = new ArrayList<String>();
+            //List<String> localFeatures = new ArrayList<String>();
             int i = 0;
 
             boolean newLine = false;
@@ -840,10 +848,6 @@ public class TEIFormater {
             while (stt.hasMoreTokens()) {
                 String s = stt.nextToken().trim();
                 if (i == 0) {
-					if (s.equals("@BULLET")) {
-						s = "•";
-					}
-                    s2 = TextUtilities.HTMLEncode(s); // lexical token
 					int p0 = p;
                     boolean strop = false;
                     while ((!strop) && (p < tokenizations.size())) {
@@ -860,26 +864,32 @@ public class TEIFormater {
                         }
                         p++;
                     }
-					if (p == tokenizations.size()) {
+					if (p >= tokenizations.size()) {
 						// either we are at the end of the header, or we might have 
 						// a problematic token in tokenization for some reasons
-						if ((p - p0) > 2) {
+						if ((p - p0) > 1) {
 							// we loose the synchronicity, so we reinit p for the next token
 							p = p0;
+							// and we add a space to avoid concatenated words
+							addSpace = true;
 						}
 					}
+					if (s.equals("@BULLET")) {
+						s = "•";
+					}
+                    s2 = TextUtilities.HTMLEncode(s); // lexical token
                 } else if (i == ll - 1) {
                     s1 = s; // current tag
                 } else {
                     if (s.equals("LINESTART"))
                         newLine = true;
-                    localFeatures.add(s);
+                    //localFeatures.add(s);
                 }
                 i++;
             }
 
             if (newLine && !start) {
-                buffer.append("<lb/>");
+				buffer.append("\n");
             }
 
             String lastTag0 = null;
@@ -898,10 +908,22 @@ public class TEIFormater {
                     currentTag0 = s1;
                 }
             }
-
+			// we avoid citation_marker and figure_marker tags because they introduce too much mess, 
+			// they will be injected later
+			String currentOriginalTag = s1;
+			if (currentTag0.equals("<citation_marker>") || currentTag0.equals("<figure_marker>")) {
+				currentTag0 = lastTag0;
+				s1 = lastTag;
+			}
+			if (s1.equals("I-<paragraph>") && 
+				(lastOriginalTag.endsWith("<citation_marker>") || lastOriginalTag.endsWith("<figure_marker>")) ) {
+				currentTag0 = "<paragraph>";
+				s1 = "<paragraph>";
+			}
+			lastOriginalTag = currentOriginalTag;
             boolean closeParagraph = false;
             if (lastTag != null) {
-                closeParagraph = FullTextParser.testClosingTag(buffer, currentTag0, lastTag0, s1);
+                closeParagraph = testClosingTag(buffer, currentTag0, lastTag0, s1, bds);
             }
 
             boolean output;
@@ -925,33 +947,14 @@ public class TEIFormater {
             if (!output) {
                 if (closeParagraph) {
                     output = FullTextParser.writeFieldBeginEnd(buffer, s1, "", s2, "<paragraph>", "<p>", addSpace, 3);
-                } else {
+				} 
+				else 
+				{
                     output = FullTextParser.writeFieldBeginEnd(buffer, s1, lastTag, s2, "<paragraph>", "<p>", addSpace, 3);
                 }
             }
-            /*if (!output) {
-                output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<page_header>", "<note place=\"headnote\">",
-                        addSpace, 3);
-            }
             if (!output) {
-                output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<page_footnote>", "<note place=\"footnote\">",
-                        addSpace, 3);
-            }
-            if (!output) {
-                output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<page>", "<page>", addSpace, 3);
-            }
-            if (!output) {
-                output = FullTextParser.writeFieldBeginEnd(buffer, s1, lastTag0, s2, "<reference>", "<bibl>", addSpace, 3);
-            }*/
-            /*if (!output) {
-                if (closeParagraph) {
-                    output = FullTextParser.writeField(buffer, s1, "", s2, "<reference_marker>", "<label>", addSpace, 3);
-                } else
-                    output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<reference_marker>", "<label>", addSpace, 3);
-            }*/
-            if (!output) {
-                output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<citation_marker>", "<ref type=\"biblio\">",
-                        addSpace, 3);
+                output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<citation_marker>", "<ref type=\"biblio\">", addSpace, 3);
             }
             if (!output) {
                 output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<section>", "<head>", addSpace, 3);
@@ -963,9 +966,8 @@ public class TEIFormater {
                 if (openFigure) {
                     output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<trash>", "<trash>", addSpace, 4);
                 } else {
-                    //output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<trash>", "<figure>\n\t\t\t\t<trash>",
-                    output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<trash>", "<trash>",
-                            addSpace, 3);
+                    output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<trash>", 
+						"<figure>\n\t\t\t\t<trash>", addSpace, 3);
                     if (output) {
                         openFigure = true;
                     }
@@ -975,29 +977,30 @@ public class TEIFormater {
                 output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<equation>", "<formula>", addSpace, 3);
             }
             if (!output) {
-                output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<figure_marker>", "<ref type=\"figure\">",
-                        addSpace, 3);
+                output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<figure_marker>", 
+					"<ref type=\"figure\">", addSpace, 3);
             }
             if (!output) {
                 if (openFigure) {
                     if (tableBlock && (!lastTag0.equals("<table>")) && (currentTag0.equals("<table>"))) {
                         buffer.append("\n\t\t\t</figure>\n\n");
-                        output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<figure>\n\t\t\t\t<table>", "<figure>",
-                                addSpace, 3);
+                        output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<table>", 
+							"<figure>\n\t\t\t\t<table>", addSpace, 3);
                         if (output) {
                             tableBlock = true;
                             descFigure = false;
                             headFigure = false;
                         }
                     } else {
-                        output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<table>", "<table>", addSpace, 4);
+                        output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<table>", "<table>", 
+							addSpace, 4);
                         if (output) {
                             tableBlock = true;
                         }
                     }
                 } else {
-                    output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<table>", "<figure>\n\t\t\t\t<table>",
-                            addSpace, 3);
+                    output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<table>", 
+						"<figure>\n\t\t\t\t<table>", addSpace, 3);
                     if (output) {
                         openFigure = true;
                         tableBlock = true;
@@ -1008,22 +1011,23 @@ public class TEIFormater {
                 if (openFigure) {
                     if (descFigure && (!lastTag0.equals("<label>")) && (currentTag0.equals("<label>"))) {
                         buffer.append("\n\t\t\t</figure>\n\n");
-                        output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<label>", "<figure>\n\t\t\t\t<figDesc>",
-                                addSpace, 3);
+                        output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<label>",
+							 "<figure>\n\t\t\t\t<figDesc>", addSpace, 3);
                         if (output) {
                             descFigure = true;
                             tableBlock = false;
                             headFigure = false;
                         }
                     } else {
-                        output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<label>", "<figDesc>", addSpace, 4);
+                        output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<label>", 
+							"<figDesc>", addSpace, 4);
                         if (output) {
                             descFigure = true;
                         }
                     }
                 } else {
-                    output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<label>", "<figure>\n\t\t\t\t<figDesc>",
-                            addSpace, 3);
+                    output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<label>",
+						 "<figure>\n\t\t\t\t<figDesc>", addSpace, 3);
                     if (output) {
                         openFigure = true;
                         descFigure = true;
@@ -1035,22 +1039,23 @@ public class TEIFormater {
                     if (headFigure && (!lastTag0.equals("<figure_head>")) &&
                             (currentTag0.equals("<figure_head>"))) {
                         buffer.append("\n\t\t\t</figure>\n\n");
-                        output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<figure_head>", "<figure>\n\t\t\t\t<head>",
-                                addSpace, 3);
+                        output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<figure_head>", 
+							"<figure>\n\t\t\t\t<head>", addSpace, 3);
                         if (output) {
                             descFigure = false;
                             tableBlock = false;
                             headFigure = true;
                         }
                     } else {
-                        output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<figure_head>", "<head>", addSpace, 4);
+                        output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<figure_head>", 
+							"<head>", addSpace, 4);
                         if (output) {
                             headFigure = true;
                         }
                     }
                 } else {
-                    output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<figure_head>", "<figure>\n\t\t\t\t<head>",
-                            addSpace, 3);
+                    output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<figure_head>", 
+						"<figure>\n\t\t\t\t<head>", addSpace, 3);
                     if (output) {
                         openFigure = true;
                         headFigure = true;
@@ -1059,14 +1064,16 @@ public class TEIFormater {
             }
             // for item we must distinguish starting and closing tags
             if (!output) {
-                output = FullTextParser.writeFieldBeginEnd(buffer, s1, lastTag, s2, "<item>", "<item>", addSpace, 3);
+                output = FullTextParser.writeFieldBeginEnd(buffer, s1, lastTag, s2, "<item>", 
+					"<item>", addSpace, 3);
             }
 
             lastTag = s1;
-
+			lastTag0 = currentTag0;
+			
             if (!st.hasMoreTokens()) {
                 if (lastTag != null) {
-                    FullTextParser.testClosingTag(buffer, "", currentTag0, s1);
+                    testClosingTag(buffer, "", currentTag0, s1, bds);
                 }
                 if (openFigure) {
                     buffer.append("\n\t\t\t</figure>\n\n");
@@ -1076,7 +1083,6 @@ public class TEIFormater {
                 start = false;
             }
         }
-
 
         /*int i = 0; 
         boolean first = true;
@@ -1274,14 +1280,153 @@ public class TEIFormater {
             }
         }*/
 		
-      	buffer.append("\t\t<body>\n");
-		String fulltext = buffer.toString();
-		fulltext = TextUtilities.dehyphenize(fulltext);
+      	buffer.append("\t\t</body>\n");
+		
+		buffer.append("\t\t<back>\n");
+		
+		// we apply some overall cleaning and simplification
+		String str1 = "</ref></p>\n\n\t\t\t<p>";
+		String str2 = "</ref> ";
+		int startPos = 0;
+		while(startPos != -1) {
+			startPos = buffer.indexOf(str1, startPos);
+			if (startPos != -1) {
+				int endPos = startPos + str1.length();
+				buffer.replace(startPos, endPos, str2);
+				startPos = endPos;
+			}
+		}
 		
         return buffer;
     }
+	
+    /**
+     * TODO some documentation
+     *
+     * @param buffer
+     * @param currentTag0
+     * @param lastTag0
+     * @param currentTag
+     * @return
+     */
+    public boolean testClosingTag(StringBuffer buffer,
+                                   String currentTag0,
+                                   String lastTag0,
+                                   String currentTag, 
+								   List<BibDataSet> bds) {
+        boolean res = false;
+        // reference_marker and citation_marker are two exceptions because they can be embedded
 
+        if (!currentTag0.equals(lastTag0) || currentTag.equals("I-<paragraph>") || currentTag.equals("I-<item>")) {
+            //if (currentTag0.equals("<citation_marker>") || currentTag0.equals("<figure_marker>")) {
+            //    return res;
+            //}
+			
+			// we get the enclosed text
+			int ind = buffer.lastIndexOf(">");
+			String text = null;
+			if (ind != -1) {
+				text = buffer.substring(ind+1, buffer.length()).trim();
+				// cleaning
+				int ind2 = buffer.lastIndexOf("<");
+				buffer.delete(ind2, buffer.length());
+			}
+			else {
+				// this should actually never happen
+				text = buffer.toString().trim();
+			}
+			text = TextUtilities.dehyphenize(text);
+			text = text.replace("\n", " ");
+			text = text.replace("  ", " ");
+			text = markReferencesTEI(text, bds).trim();
+			if (lastTag0.equals("<section>")) {
+				// let's have a look at the numbering
+                // we try to recognize the numbering of the section titles
+                Matcher m1 = BasicStructureBuilder.headerNumbering1.matcher(text);
+                Matcher m2 = BasicStructureBuilder.headerNumbering2.matcher(text);
+                Matcher m3 = BasicStructureBuilder.headerNumbering3.matcher(text);
+                Matcher m = null;
+                String numb = null;
+                if (m1.find()) {
+                    numb = m1.group(0);
+                    m = m1;
+                } else if (m2.find()) {
+                    numb = m2.group(0);
+                    m = m2;
+                } else if (m3.find()) {
+                    numb = m3.group(0);
+                    m = m3;
+                }
+                if (numb != null) {
+					text = text.replace(numb, "").trim();
+                    numb = numb.replace(" ", "");
+                    if (numb.endsWith("."))
+                        numb = numb.substring(0, numb.length() - 1);
+                    //numb = numb.replace(".","");
+                    text = "<head n=\"" + numb + "\">" + text;
+                } else {
+                   	text = "<head>" + text;
+                }
+            }
+			
+            res = false;
+            // we close the current tag
+            if (lastTag0.equals("<other>")) {
+                buffer.append("<note>" + text+ "</note>\n\n");
+				
+            } else if (lastTag0.equals("<paragraph>")) {
+				buffer.append("<p>" + text + "</p>\n\n");
+                res = true;
+				// return true only when the paragraph is closed
 
+            } else if (lastTag0.equals("<section>")) {
+                buffer.append(text + "</head>\n\n");
+
+            } else if (lastTag0.equals("<subsection>")) {
+                buffer.append(text + "</head>\n\n");
+
+            } else if (lastTag0.equals("<equation>")) {
+                buffer.append("<formula>" + text + "</formula>\n\n");
+
+            } else if (lastTag0.equals("<table>")) {
+                buffer.append("<table>" + text + "</table>\n");
+
+            } else if (lastTag0.equals("<label>")) {
+                buffer.append("<figDesc>" + text + "</figDesc>\n");
+
+            } else if (lastTag0.equals("<figure_head>")) {
+                buffer.append("<head>" + text + "</head>\n\n");
+
+            } else if (lastTag0.equals("<item>")) {
+                buffer.append("<item>" + text + "</item>\n\n");
+
+            } else if (lastTag0.equals("<trash>")) {
+                buffer.append("<trash>" + text + "</trash>\n\n");
+
+            } /*else if (lastTag0.equals("<citation_marker>")) {
+                buffer.append("</ref>");
+				
+            } else if (lastTag0.equals("<figure_marker>")) {
+                buffer.append("</ref>");
+
+            } */
+			else {
+                res = false;
+
+            }
+
+        }
+        return res;
+    }
+
+	/**
+	 *  TEI formatting of the body where we try to realize the full logical document 
+	 *  structure. At this stage of development, the TEI might be ill-formed due to 
+	 *  the complexity of the task and PDF noises, and thus can require additional 
+	 *  human editing efforts.
+	 *  This formatting is adapted to more complex further scenario such as document
+	 *  multi-publishing and archiving.
+	 */
     public StringBuffer toTEIBodyML(StringBuffer tei,
                                     String rese,
                                     BiblioItem biblio,
