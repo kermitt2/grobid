@@ -24,7 +24,7 @@
   <property file="${user.home}/.m2/maven.properties"/>
   <property file="maven-build.properties"/>
 
-  <property name="maven.build.finalName" value="grobid-trainer-0.0.16"/>
+  <property name="maven.build.finalName" value="grobid-trainer-0.3.2"/>
   <property name="maven.build.dir" value="target"/>
   <property name="maven.build.outputDir" value="${maven.build.dir}/classes"/>
   <property name="maven.build.srcDir.0" value="src/main/java"/>
@@ -44,7 +44,7 @@
   <!-- ====================================================================== -->
 
   <path id="build.classpath">
-    <pathelement location="../grobid-core/target/grobid-core-0.2.10.jar"/>
+    <pathelement location="../grobid-core/target/grobid-core-0.3.2.jar"/>
 	<pathelement location="../grobid-core/target/classes"/>
     <pathelement location="../grobid-core/lib/org/chasen/crfpp/1.0.2/crfpp-1.0.2.jar"/>
 	<pathelement location="../grobid-core/lib/com/cybozu/language-detection/09-13-2011/language-detection-09-13-2011.jar"/>
@@ -62,7 +62,7 @@
 	<pathelement location="${maven.repo.local}/net/arnx/jsonic/1.3.5/jsonic-1.3.5.jar"/>
   </path>
   <path id="build.test.classpath">
-    <pathelement location="../grobid-core/target/grobid-core-0.2.10.jar"/>
+    <pathelement location="../grobid-core/target/grobid-core-0.3.2.jar"/>
 	<pathelement location="../grobid-core/target/test-classes"/>
     <pathelement location="../grobid-core/lib/org/chasen/crfpp/1.0.2/crfpp-1.0.2.jar"/>
 	<pathelement location="../grobid-core/lib/com/cybozu/language-detection/09-13-2011/language-detection-09-13-2011.jar"/>
@@ -221,9 +221,9 @@
           description="Download all dependencies" 
           unless="maven.mode.offline">
     <mkdir dir="${maven.repo.local}"/>
-    <mkdir dir="${maven.repo.local}/org/grobid/grobid-core/0.2.10"/>
-    <get src="http://repo1.maven.org/maven2/org/grobid/grobid-core/0.2.10/grobid-core-0.2.10.jar" 
-         dest="${maven.repo.local}/org/grobid/grobid-core/0.2.10/grobid-core-0.2.10.jar" 
+    <mkdir dir="${maven.repo.local}/org/grobid/grobid-core/0.3.2"/>
+    <get src="http://repo1.maven.org/maven2/org/grobid/grobid-core/0.3.2/grobid-core-0.3.2.jar" 
+         dest="${maven.repo.local}/org/grobid/grobid-core/0.3.2/grobid-core-0.3.2.jar" 
          usetimestamp="false" 
          ignoreerrors="true"/>
     <mkdir dir="${maven.repo.local}/org/chasen/crfpp/1.0.2"/>

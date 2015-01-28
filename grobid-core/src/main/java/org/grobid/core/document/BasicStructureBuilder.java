@@ -3,6 +3,9 @@ package org.grobid.core.document;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import org.apache.commons.io.FileUtils;
+import java.io.File;
+
 import com.google.common.collect.Iterables;
 import com.google.common.collect.SortedSetMultimap;
 import com.google.common.collect.TreeMultimap;
@@ -682,6 +685,14 @@ public class BasicStructureBuilder {
         SortedSetMultimap<String, DocumentPiece> labeledBlocks = TreeMultimap.create();
         doc.setLabeledBlocks(labeledBlocks);
 
+		/*try {
+        	FileUtils.writeStringToFile(new File("/tmp/x1.txt"), labeledResult);
+			FileUtils.writeStringToFile(new File("/tmp/x2.txt"), documentTokens.toString());
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}*/
+
         List<Block> docBlocks = doc.getBlocks();
 		int indexLine = 0;		
         int blockIndex = 0;
@@ -759,13 +770,24 @@ public class BasicStructureBuilder {
 						continue;
 					
 					// adjust the start token position in documentTokens to this non trivial line
+					// first skip possible space characters and tabs at the beginning of the line
+					while( (documentTokens.get(currentLineStartPos).equals(" ") ||
+							documentTokens.get(currentLineStartPos).equals("\t") )
+					 	&& (currentLineStartPos != lastTokenInd)) {
+					 	currentLineStartPos++;
+					}
 					if (!labeledTokenPair.a.startsWith(documentTokens.get(currentLineStartPos))) {
 						while(currentLineStartPos < block.getEndToken()) {
 							if (documentTokens.get(currentLineStartPos).equals("\n") 
 							 || documentTokens.get(currentLineStartPos).equals("\r")) {
-								 // move to the start of the next line
+								 // move to the start of the next line, but ignore space characters and tabs
 								 currentLineStartPos++;
-								 if ((currentLineStartPos!= lastTokenInd) && 
+								 while( (documentTokens.get(currentLineStartPos).equals(" ") ||
+									 	documentTokens.get(currentLineStartPos).equals("\t") )
+								 	&& (currentLineStartPos != lastTokenInd)) {
+								 	currentLineStartPos++;
+								 }
+								 if ((currentLineStartPos != lastTokenInd) && 
 								 	labeledTokenPair.a.startsWith(documentTokens.get(currentLineStartPos))) {
 									 break;
 								 }
@@ -810,7 +832,10 @@ public class BasicStructureBuilder {
 
             // either a new entity starts or a new beginning of the same type of entity
 			if ((!curPlainLabel.equals(lastPlainLabel)) && (lastPlainLabel != null)) {	
-                labeledBlocks.put(lastPlainLabel, new DocumentPiece(pointerA, lastPointer));
+				if ( (pointerA.getTokenDocPos() <= lastPointer.getTokenDocPos()) &&
+				   	(pointerA.getTokenDocPos() != -1) ) {
+					labeledBlocks.put(lastPlainLabel, new DocumentPiece(pointerA, lastPointer));
+				}
                 pointerA = new DocumentPointer(doc, blockIndex, currentLineStartPos);
 				//System.out.println("add segment for: " + lastPlainLabel + ", until " + (currentLineStartPos-2));
             }
@@ -825,7 +850,8 @@ public class BasicStructureBuilder {
 		if (blockIndex == docBlocks.size()) {
 			// the last labelled piece has still to be added
 			if ((!curPlainLabel.equals(lastPlainLabel)) && (lastPlainLabel != null)) {	
-				if (pointerA.getTokenDocPos() <= lastPointer.getTokenDocPos()) {
+				if ( (pointerA.getTokenDocPos() <= lastPointer.getTokenDocPos()) && 
+					(pointerA.getTokenDocPos() != -1) ) {
 					labeledBlocks.put(lastPlainLabel, new DocumentPiece(pointerA, lastPointer));
 					//System.out.println("add segment for: " + lastPlainLabel + ", until " + (currentLineStartPos-2));
 				}

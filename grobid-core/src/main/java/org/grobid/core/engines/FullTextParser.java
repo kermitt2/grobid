@@ -1006,7 +1006,7 @@ public class FullTextParser extends AbstractParser {
      * @param nbIndent
      * @return
      */
-    private boolean writeField(StringBuffer buffer,
+    public static boolean writeField(StringBuffer buffer,
                                String s1,
                                String lastTag0,
                                String s2,
@@ -1084,7 +1084,7 @@ public class FullTextParser extends AbstractParser {
      * @param nbIndent
      * @return
      */
-    private boolean writeFieldBeginEnd(StringBuffer buffer,
+    public static boolean writeFieldBeginEnd(StringBuffer buffer,
                                        String s1,
                                        String lastTag0,
                                        String s2,
@@ -1133,7 +1133,7 @@ public class FullTextParser extends AbstractParser {
      * @param currentTag
      * @return
      */
-    private boolean testClosingTag(StringBuffer buffer,
+    private static boolean testClosingTag(StringBuffer buffer,
                                    String currentTag0,
                                    String lastTag0,
                                    String currentTag) {

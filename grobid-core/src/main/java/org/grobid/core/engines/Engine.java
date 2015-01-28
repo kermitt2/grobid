@@ -545,7 +545,7 @@ public class Engine implements Closeable {
         Document resultDoc;
         LOGGER.debug("Starting processing fullTextToTEI on " + inputFile);
         long time = System.currentTimeMillis();
-        resultDoc = fullTextParser.processing(inputFile, consolidateHeader, consolidateCitations, 1, false);
+        resultDoc = fullTextParser.processing(inputFile, consolidateHeader, consolidateCitations, 0, false);
         LOGGER.debug("Ending processing fullTextToTEI on " + inputFile + ". Time to process: " + (System.currentTimeMillis() - time) + "ms");
         return resultDoc.getTei();
     }
