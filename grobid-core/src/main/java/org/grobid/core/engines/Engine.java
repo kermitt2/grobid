@@ -536,16 +536,43 @@ public class Engine implements Closeable {
      *                             web services for improving header information
      * @param consolidateCitations - the consolidation option allows GROBID to exploit Crossref
      *                             web services for improving citations information
+	 * @return the resulting structured document as a TEI string.
      */
-    public String fullTextToTEI(String inputFile, boolean consolidateHeader, boolean consolidateCitations) throws Exception {
+    public String fullTextToTEI(String inputFile, 
+								boolean consolidateHeader, 
+								boolean consolidateCitations) throws Exception {
+		return fullTextToTEI(inputFile, consolidateHeader, consolidateCitations, -1, -1);							
+	}
 
+    /**
+     * Parse and convert the current article into TEI, this method performs the
+     * whole parsing and conversion process. If onlyHeader is true, than only
+     * the tei header data will be created.
+     *
+     * @param inputFile            - absolute path to the pdf to be processed
+     * @param consolidateHeader    - the consolidation option allows GROBID to exploit Crossref
+     *                             web services for improving header information
+     * @param consolidateCitations - the consolidation option allows GROBID to exploit Crossref
+     *                             web services for improving citations information
+   	 * @param startPage give the starting page to consider in case of segmentation of the 
+   	 * PDF, -1 for the first page (default) 
+   	 * @param endPage give the end page to consider in case of segmentation of the 
+   	 * PDF, -1 for the last page (default)
+	 * @return the resulting structured document as a TEI string.
+     */
+    public String fullTextToTEI(String inputFile, 
+								boolean consolidateHeader, 
+								boolean consolidateCitations,
+								int startPage,
+								int endPage) throws Exception {
         FullTextParser fullTextParser = parsers.getFullTextParser();
 
         // replace by the commented version for the new full ML text parser
         Document resultDoc;
         LOGGER.debug("Starting processing fullTextToTEI on " + inputFile);
         long time = System.currentTimeMillis();
-        resultDoc = fullTextParser.processing(inputFile, consolidateHeader, consolidateCitations, 0, false);
+        resultDoc = fullTextParser.processing(inputFile, consolidateHeader, 
+				consolidateCitations, 0, false, startPage, endPage);
         LOGGER.debug("Ending processing fullTextToTEI on " + inputFile + ". Time to process: " + (System.currentTimeMillis() - time) + "ms");
         return resultDoc.getTei();
     }
