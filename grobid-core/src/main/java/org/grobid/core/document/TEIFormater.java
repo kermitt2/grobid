@@ -818,7 +818,6 @@ public class TEIFormater {
 			return buffer;
 		}
 		buffer.append("\t\t<body>\n");
-
         StringTokenizer st = new StringTokenizer(result, "\n");
         String s1 = null;
         String s2 = null;
@@ -842,7 +841,6 @@ public class TEIFormater {
             StringTokenizer stt = new StringTokenizer(tok, " \t");
             //List<String> localFeatures = new ArrayList<String>();
             int i = 0;
-
             boolean newLine = false;
             int ll = stt.countTokens();
             while (stt.hasMoreTokens()) {
@@ -915,7 +913,7 @@ public class TEIFormater {
 				currentTag0 = lastTag0;
 				s1 = lastTag;
 			}
-			if (s1.equals("I-<paragraph>") && 
+			if ((s1 != null) && s1.equals("I-<paragraph>") && 
 				(lastOriginalTag.endsWith("<citation_marker>") || lastOriginalTag.endsWith("<figure_marker>")) ) {
 				currentTag0 = "<paragraph>";
 				s1 = "<paragraph>";
@@ -925,10 +923,10 @@ public class TEIFormater {
             if (lastTag != null) {
                 closeParagraph = testClosingTag(buffer, currentTag0, lastTag0, s1, bds);
             }
-
             boolean output;
 
-            if (!currentTag0.equals("<table>") &&
+            if ((currentTag0 != null) && 
+					!currentTag0.equals("<table>") &&
                     !currentTag0.equals("<trash>") &&
                     !currentTag0.equals("<figure_head>") &&
                     !currentTag0.equals("<label>")) {
@@ -941,20 +939,24 @@ public class TEIFormater {
                 tableBlock = false;
             }
                
-			output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<other>", "<note type=\"other\">", addSpace, 3);
+			output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<other>", 
+				"<note type=\"other\">", addSpace, 3);
 
             // for paragraph we must distinguish starting and closing tags
             if (!output) {
                 if (closeParagraph) {
-                    output = FullTextParser.writeFieldBeginEnd(buffer, s1, "", s2, "<paragraph>", "<p>", addSpace, 3);
+                    output = FullTextParser.writeFieldBeginEnd(buffer, s1, "", s2, 
+						"<paragraph>", "<p>", addSpace, 3);
 				} 
 				else 
 				{
-                    output = FullTextParser.writeFieldBeginEnd(buffer, s1, lastTag, s2, "<paragraph>", "<p>", addSpace, 3);
+                    output = FullTextParser.writeFieldBeginEnd(buffer, s1, lastTag, s2, 
+						"<paragraph>", "<p>", addSpace, 3);
                 }
             }
             if (!output) {
-                output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<citation_marker>", "<ref type=\"biblio\">", addSpace, 3);
+                output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<citation_marker>", 
+					"<ref type=\"biblio\">", addSpace, 3);
             }
             if (!output) {
                 output = FullTextParser.writeField(buffer, s1, lastTag0, s2, "<section>", "<head>", addSpace, 3);
@@ -1221,11 +1223,9 @@ public class TEIFormater {
                             tei.append("<graphic url=\"" + image + "\" />\n");
                     } else {
                         if (localText.length() > 0) {
-                            //System.out.println(i + ": " + localText);
                             double localPos = block.getX();
                             double width = block.getWidth();
                             double localPos2 = block.getY();
-                            //System.out.println(localPos + " " + localPos2 + " " + width);
                             if (width > 20) {
                                 localText = TextUtilities.dehyphenize(localText);
 								localText = localText.replace("@BULLET", "•");
@@ -1283,7 +1283,6 @@ public class TEIFormater {
       	buffer.append("\t\t</body>\n");
 		
 		buffer.append("\t\t<back>\n");
-		
 		// we apply some overall cleaning and simplification
 		String str1 = "</ref></p>\n\n\t\t\t<p>";
 		String str2 = "</ref> ";
@@ -1296,7 +1295,6 @@ public class TEIFormater {
 				startPos = endPos;
 			}
 		}
-		
         return buffer;
     }
 	
@@ -1318,10 +1316,6 @@ public class TEIFormater {
         // reference_marker and citation_marker are two exceptions because they can be embedded
 
         if (!currentTag0.equals(lastTag0) || currentTag.equals("I-<paragraph>") || currentTag.equals("I-<item>")) {
-            //if (currentTag0.equals("<citation_marker>") || currentTag0.equals("<figure_marker>")) {
-            //    return res;
-            //}
-			
 			// we get the enclosed text
 			int ind = buffer.lastIndexOf(">");
 			String text = null;
@@ -3002,210 +2996,6 @@ public class TEIFormater {
     }
 
     /**
-     * Mark the identified references in the text body using TEI annotations. This is the old version.
-     */
-    /*public String markReferencesTEI2(String text, List<BibDataSet> bds) {
-        if (text == null)
-            return null;
-        if (text.trim().length() == 0)
-            return text;
-        //System.out.println(text);
-        text = TextUtilities.HTMLEncode(text);
-        Pattern numberRef = Pattern.compile("(\\[|\\()\\d+\\w?(\\)|\\])");
-        Pattern numberRefCompact =
-                Pattern.compile("(\\[|\\()((\\d)+(\\w)?(\\-\\d+\\w?)?,\\s?)+(\\d+\\w?)(\\-\\d+\\w?)?(\\)|\\])");
-        //Pattern numberRefVeryCompact = Pattern.compile("(\\[|\\()(\\d)+-(\\d)+(\\)|\\])");
-        Pattern numberRefCompact2 = Pattern.compile("((\\[|\\()(\\d+)(-|√¢¬Ä¬ì|\u2013)(\\d+)(\\)|\\]))");
-
-        boolean numerical = false;
-
-        // we check if we have numerical references
-
-        // we re-write compact references, i.e [1,2] -> [1] [2] 
-        Matcher m2 = numberRefCompact.matcher(text);
-        StringBuffer sb = new StringBuffer();
-        boolean result = m2.find();
-        // Loop through and create a new String 
-        // with the replacements
-        while (result) {
-            String toto = m2.group(0);
-            if (toto.indexOf("]") != -1) {
-                toto = toto.replace(",", "] [");
-                toto = toto.replace("[ ", "[");
-                toto = toto.replace(" ]", "]");
-            } else {
-                toto = toto.replace(",", ") (");
-                toto = toto.replace("( ", "(");
-                toto = toto.replace(" )", ")");
-            }
-            m2.appendReplacement(sb, toto);
-            result = m2.find();
-        }
-        // Add the last segment of input to 
-        // the new String
-        m2.appendTail(sb);
-        text = sb.toString();
-
-        // we expend the references [1-3] -> [1] [2] [3]
-        Matcher m3 = numberRefCompact2.matcher(text);
-        StringBuffer sb2 = new StringBuffer();
-        boolean result2 = m3.find();
-        // Loop through and create a new String 
-        // with the replacements
-        while (result2) {
-            String toto = m3.group(0);
-            if (toto.indexOf("]") != -1) {
-                toto = toto.replace("]", "");
-                toto = toto.replace("[", "");
-                int ind = toto.indexOf('-');
-                if (ind == -1)
-                    ind = toto.indexOf('\u2013');
-                if (ind != -1) {
-                    try {
-                        int firstIndex = Integer.parseInt(toto.substring(0, ind));
-                        int secondIndex = Integer.parseInt(toto.substring(ind + 1, toto.length()));
-                        toto = "";
-                        boolean first = true;
-                        for (int j = firstIndex; j <= secondIndex; j++) {
-                            if (first) {
-                                toto += "[" + j + "]";
-                                first = false;
-                            } else
-                                toto += " [" + j + "]";
-                        }
-                    } catch (Exception e) {
-                        throw new GrobidException("An exception occurs.", e);
-                    }
-                }
-            } else {
-                toto = toto.replace(")", "");
-                toto = toto.replace("(", "");
-                int ind = toto.indexOf('-');
-                if (ind == -1)
-                    ind = toto.indexOf('\u2013');
-                if (ind != -1) {
-                    try {
-                        int firstIndex = Integer.parseInt(toto.substring(0, ind));
-                        int secondIndex = Integer.parseInt(toto.substring(ind + 1, toto.length()));
-                        toto = "";
-                        boolean first = true;
-                        for (int j = firstIndex; j <= secondIndex; j++) {
-                            if (first) {
-                                toto += "(" + j + ")";
-                                first = false;
-                            } else
-                                toto += " (" + j + ")";
-                        }
-                    } catch (Exception e) {
-                        throw new GrobidException("An exception occurs.", e);
-                    }
-                }
-            }
-            m3.appendReplacement(sb2, toto);
-            result2 = m3.find();
-        }
-        // Add the last segment of input to 
-        // the new String
-        m3.appendTail(sb2);
-        text = sb2.toString();
-
-        String res = "";
-        int p = 0;
-        //text = TextUtilities.HTMLEncode(text);
-		if (bds != null) {
-	        for (BibDataSet bib : bds) {
-	            List<String> contexts = bib.getSourceBib();
-	            String marker = TextUtilities.HTMLEncode(bib.getRefSymbol());
-	            BiblioItem resBib = bib.getResBib();
-
-				if (resBib == null) {
-					continue;
-				}
-
-	            // search for first author and date
-	            String author = resBib.getFirstAuthorSurname();
-	            if (author != null) {
-	                author = author.toLowerCase();
-	            }
-	            String year = null;
-	            Date datt = resBib.getNormalizedPublicationDate();
-	            if (datt != null) {
-	                if (datt.getYear() != -1) {
-	                    year = "" + datt.getYear();
-	                }
-	            }
-	            //System.out.println(author + " " + year);
-
-	            if (marker != null) {
-	                Matcher m = numberRef.matcher(marker);
-	                if (m.find()) {
-	                    int ind = text.indexOf(marker);
-	                    if (ind != -1) {
-	                        text = text.substring(0, ind) +
-	                                "<ref type=\"bibr\" target=\"#b" + p + "\">" + marker
-	                                + "</ref>" + text.substring(ind + marker.length(), text.length());
-	                    }
-	                }
-	            }
-	            //else 
-	            {
-	                if ((author != null) && (year != null) && (author.length()>1)) {
-	                    int indi1 = -1;
-	                    int indi2 = -1;
-	                    int i = 0;
-	                    boolean end = false;
-	                    while (!end) {
-	                        indi1 = text.toLowerCase().indexOf(author, i);
-	                        indi2 = text.indexOf(year, i);
-	                        int added = 1;
-
-	                        if ((indi1 == -1) || (indi2 == -1))
-	                            end = true;
-	                        else if ((indi1 != -1) && (indi2 != -1) && (indi1 < indi2) &&
-	                                (indi2 - indi1 > author.length())) {
-	                            // we check if we don't have another instance of the author between the two indices
-	                            int indi1bis = text.toLowerCase().indexOf(author, indi1 + author.length());
-	                            if (indi1bis == -1) {
-	                                String reference = text.substring(indi1, indi2 + 4);
-	                                boolean extended = false;
-	                                if (text.length() > indi2 + 5) {
-	                                    if ((text.charAt(indi2 + 5) == ')') ||
-	                                            (text.charAt(indi2 + 5) == ']')) {
-	                                        reference += text.charAt(indi2 + 5);
-	                                        extended = true;
-	                                    }
-	                                }
-	                                if (extended) {
-	                                    text = text.substring(0, indi1) +
-	                                            "<ref type=\"bibr\" target=\"#b" + p + "\">" + reference + "</ref>" +
-	                                            text.substring(indi2 + 5, text.length());
-	                                    added = 31;
-	                                } else {
-	                                    text = text.substring(0, indi1) +
-	                                            "<ref type=\"bibr\" target=\"#b" + p + "\">" + reference + "</ref>" +
-	                                            text.substring(indi2 + 4, text.length());
-	                                    added = 31;
-	                                }
-	                            }
-	                        }
-							if (!end) {
-	                        	i = indi1 + author.length() + added;
-	                        	if (i >= text.length()) {
-	                            	end = true;
-	                        	}
-							}
-	                    }
-	                }
-	            }
-	            p++;
-	        }
-		}
-        //System.out.println(text);
-        return text;
-    }*/
-	
-
-    /**
      * Mark using TEI annotations the identified references in the text body build with the machine learning model.
      */
     public String markReferencesTEI(String text, List<BibDataSet> bds) {
@@ -3262,7 +3052,10 @@ public class TEIFormater {
                     try {
                         int firstIndex = Integer.parseInt(toto.substring(0, ind));
                         int secondIndex = Integer.parseInt(toto.substring(ind + 1, toto.length()));
-                        toto = "";
+						if (secondIndex - firstIndex > 9) {
+							break;
+						}
+						toto = "";
                         boolean first = true;
                         for (int j = firstIndex; j <= secondIndex; j++) {
                             if (first) {
@@ -3286,6 +3079,9 @@ public class TEIFormater {
                     try {
                         int firstIndex = Integer.parseInt(toto.substring(0, ind));
                         int secondIndex = Integer.parseInt(toto.substring(ind + 1, toto.length()));
+						if (secondIndex - firstIndex > 9) {
+							break;
+						}
                         toto = "";
                         boolean first = true;
                         for (int j = firstIndex; j <= secondIndex; j++) {
@@ -3307,7 +3103,6 @@ public class TEIFormater {
         // the new String
         m3.appendTail(sb2);
         text = sb2.toString();
-
         String res = "";
         int p = 0;
         //text = TextUtilities.HTMLEncode(text);
