@@ -541,7 +541,7 @@ public class Engine implements Closeable {
     public String fullTextToTEI(String inputFile, 
 								boolean consolidateHeader, 
 								boolean consolidateCitations) throws Exception {
-		return fullTextToTEI(inputFile, consolidateHeader, consolidateCitations, -1, -1);							
+		return fullTextToTEI(inputFile, consolidateHeader, consolidateCitations, null, -1, -1);							
 	}
 
     /**
@@ -554,6 +554,29 @@ public class Engine implements Closeable {
      *                             web services for improving header information
      * @param consolidateCitations - the consolidation option allows GROBID to exploit Crossref
      *                             web services for improving citations information
+     * @param assetPath if not null, the PDF assets (embedded images) will be extracted and 
+	 * saved under the indicated repository path		
+	 * @return the resulting structured document as a TEI string.
+     */
+    public String fullTextToTEI(String inputFile, 
+								boolean consolidateHeader, 
+								boolean consolidateCitations,
+								String assetPath) throws Exception {
+		return fullTextToTEI(inputFile, consolidateHeader, consolidateCitations, assetPath, -1, -1);
+	}
+
+    /**
+     * Parse and convert the current article into TEI, this method performs the
+     * whole parsing and conversion process. If onlyHeader is true, than only
+     * the tei header data will be created.
+     *
+     * @param inputFile            - absolute path to the pdf to be processed
+     * @param consolidateHeader    - the consolidation option allows GROBID to exploit Crossref
+     *                             web services for improving header information
+     * @param consolidateCitations - the consolidation option allows GROBID to exploit Crossref
+     *                             web services for improving citations information
+     * @param assetPath if not null, the PDF assets (embedded images) will be extracted and 
+	 * saved under the indicated repository path			
    	 * @param startPage give the starting page to consider in case of segmentation of the 
    	 * PDF, -1 for the first page (default) 
    	 * @param endPage give the end page to consider in case of segmentation of the 
@@ -563,6 +586,7 @@ public class Engine implements Closeable {
     public String fullTextToTEI(String inputFile, 
 								boolean consolidateHeader, 
 								boolean consolidateCitations,
+								String assetPath,
 								int startPage,
 								int endPage) throws Exception {
         FullTextParser fullTextParser = parsers.getFullTextParser();
@@ -572,7 +596,7 @@ public class Engine implements Closeable {
         LOGGER.debug("Starting processing fullTextToTEI on " + inputFile);
         long time = System.currentTimeMillis();
         resultDoc = fullTextParser.processing(inputFile, consolidateHeader, 
-				consolidateCitations, 0, false, startPage, endPage);
+				consolidateCitations, 0, assetPath, startPage, endPage);
         LOGGER.debug("Ending processing fullTextToTEI on " + inputFile + ". Time to process: " + (System.currentTimeMillis() - time) + "ms");
         return resultDoc.getTei();
     }

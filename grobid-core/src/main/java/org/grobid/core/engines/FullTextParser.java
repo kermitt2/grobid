@@ -68,7 +68,8 @@ public class FullTextParser extends AbstractParser {
      * @param consolidateHeader if consolidate header
      * @param consolidateCitations if consolidate citations
 	 * @param mode, 0 for light re-structuring (more robust), 1 for full re-structuring
-	 * @param assets, if true the document assets (embedded images) are saved with the TEI
+     * @param assetPath if not null, the PDF assets (embedded images) will be extracted 
+	 * and saved under the indicated repository path
 	 * @param startPage give the starting page to consider in case of segmentation of the 
 	 * PDF, -1 for the first page (default) 
 	 * @param endPage give the end page to consider in case of segmentation of the 
@@ -79,7 +80,7 @@ public class FullTextParser extends AbstractParser {
 							boolean consolidateHeader, 
 							boolean consolidateCitations,
 							int mode,
-							boolean assets,
+							String assetPath,
 							int startPage,
 							int endPage) throws Exception {
         if (input == null) {
@@ -99,7 +100,7 @@ public class FullTextParser extends AbstractParser {
         }
         try {
             // general segmentation
-            Document doc = parsers.getSegmentationParser().processing(input, assets, startPage, endPage); 
+            Document doc = parsers.getSegmentationParser().processing(input, assetPath, startPage, endPage); 
 			SortedSet<DocumentPiece> documentBodyParts = doc.getDocumentPart(SegmentationLabel.BODY);
 			Pair<String,List<String>> featSeg = getBodyTextFeatured(doc, documentBodyParts);
 			String rese = null;
