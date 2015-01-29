@@ -69,13 +69,19 @@ public class FullTextParser extends AbstractParser {
      * @param consolidateCitations if consolidate citations
 	 * @param mode, 0 for light re-structuring (more robust), 1 for full re-structuring
 	 * @param assets, if true the document assets (embedded images) are saved with the TEI
+	 * @param startPage give the starting page to consider in case of segmentation of the 
+	 * PDF, -1 for the first page (default) 
+	 * @param endPage give the end page to consider in case of segmentation of the 
+	 * PDF, -1 for the last page (default) 			
      * @return the document object with built TEI
      */
     public Document processing(String input, 
 							boolean consolidateHeader, 
 							boolean consolidateCitations,
 							int mode,
-							boolean assets) throws Exception {
+							boolean assets,
+							int startPage,
+							int endPage) throws Exception {
         if (input == null) {
             throw new GrobidResourceException("Cannot process pdf file, because input file was null.");
         }
@@ -93,7 +99,7 @@ public class FullTextParser extends AbstractParser {
         }
         try {
             // general segmentation
-            Document doc = parsers.getSegmentationParser().processing(input, assets); 
+            Document doc = parsers.getSegmentationParser().processing(input, assets, startPage, endPage); 
 			SortedSet<DocumentPiece> documentBodyParts = doc.getDocumentPart(SegmentationLabel.BODY);
 			Pair<String,List<String>> featSeg = getBodyTextFeatured(doc, documentBodyParts);
 			String rese = null;
@@ -1015,6 +1021,9 @@ public class FullTextParser extends AbstractParser {
                                boolean addSpace,
                                int nbIndent) {
         boolean result = false;
+		if (s1 == null) {
+			return result;
+		}
         if ((s1.equals(field)) || (s1.equals("I-" + field))) {
             result = true;
             if (s1.equals(lastTag0) || s1.equals("I-" + lastTag0)) {
@@ -1093,6 +1102,9 @@ public class FullTextParser extends AbstractParser {
                                        boolean addSpace,
                                        int nbIndent) {
         boolean result = false;
+		if (s1 == null) {
+			return false;
+		}
         if ((s1.equals(field)) || (s1.equals("I-" + field))) {
             result = true;
 			if (lastTag0 == null) {

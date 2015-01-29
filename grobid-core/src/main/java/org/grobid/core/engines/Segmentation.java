@@ -77,7 +77,7 @@ public class Segmentation extends AbstractParser {
 	public Document processing(String input) {
 		return processing(input, false);
 	}
-
+	
     /**
      *  Segment a PDF document into high level zones: cover page, document header, 
      *	page footer, page header, body, page numbers, biblio section and annexes.
@@ -88,6 +88,23 @@ public class Segmentation extends AbstractParser {
      * @return Document object with segmentation informations
      */
     public Document processing(String input, boolean assets) {
+		return processing(input, assets, -1, -1);
+	}
+
+    /**
+     *  Segment a PDF document into high level zones: cover page, document header, 
+     *	page footer, page header, body, page numbers, biblio section and annexes.
+     *
+     * @param input filename of pdf file
+	 * @param assets boolean indicating if the assets (embedded images and vectoriels) should also be 
+	 * extracted and saved	
+	 * @param startPage give the starting page to consider in case of segmentation of the 
+	 * PDF, -1 for the first page (default) 
+	 * @param endPage give the end page to consider in case of segmentation of the 
+	 * PDF, -1 for the last page (default) 	
+     * @return Document object with segmentation informations
+     */
+    public Document processing(String input, boolean assets, int startPage, int endPage) {
         if (input == null) {
             throw new GrobidResourceException("Cannot process pdf file, because input file was null.");
         }
@@ -106,8 +123,8 @@ public class Segmentation extends AbstractParser {
         Document doc = new Document(input, tmpPath.getAbsolutePath());
         String pathXML = null;
         try {
-            int startPage = -1;
-            int endPage = -1;
+            //int startPage = -1;
+            //int endPage = -1;
             pathXML = doc.pdf2xml(true, false, startPage, endPage, input, tmpPath.getAbsolutePath(), assets);
             //with timeout,
             //no force pdf reloading
