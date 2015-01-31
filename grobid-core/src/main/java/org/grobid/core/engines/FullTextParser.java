@@ -140,8 +140,26 @@ public class FullTextParser extends AbstractParser {
                 }
             }
 
+			// possible annexes (view as a piece of full text similar to the body)
+			documentBodyParts = doc.getDocumentPart(SegmentationLabel.ANNEX);
+			featSeg = getBodyTextFeatured(doc, documentBodyParts);
+			String rese2 = null;
+			List<String> tokenizationsBody2 = null;
+			if (featSeg != null) {
+				// if featSeg is null, it usually means that no body segment is found in the 
+				// document segmentation
+				String bodytext = featSeg.getA();
+				tokenizationsBody2 = featSeg.getB();
+	            rese2 = label(bodytext);
+				//System.out.println(rese);
+			}
+
             // final combination
-            toTEI(doc, rese, tokenizationsBody, resHeader, resCitations, null, false, mode);
+            toTEI(doc, // document
+				rese, rese2, // labeled data for body and annex  
+				tokenizationsBody, tokenizationsBody2, // tokenization for body and annex 
+				resHeader, resCitations, // header and bibliographical citations
+				null, false, mode);
             return doc;
         } catch (Exception e) {
             throw new GrobidException("An exception occurred while running Grobid.", e);
@@ -1230,8 +1248,10 @@ public class FullTextParser extends AbstractParser {
      * and body sections.
      */
     private void toTEI(Document doc,
-                       String rese,
+                       String reseBody,
+					   String reseAnnex,
                        List<String> tokenizationsBody,
+					   List<String> tokenizationsAnnex,
                        BiblioItem resHeader,
 					   List<BibDataSet> resCitations,
                        BiblioItem catalogue,
@@ -1247,14 +1267,22 @@ public class FullTextParser extends AbstractParser {
 			
 			//System.out.println(rese);
 			if (mode == 0) {
-				tei = teiFormater.toTEIBodyLight(tei, rese, resHeader, resCitations, tokenizationsBody, doc);
+				tei = teiFormater.toTEIBodyLight(tei, reseBody, resHeader, resCitations, tokenizationsBody, doc);
 			}
 			else if (mode == 1) {
-           		tei = teiFormater.toTEIBodyML(tei, rese, resHeader, resCitations, tokenizationsBody, doc);
+           		tei = teiFormater.toTEIBodyML(tei, reseBody, resHeader, resCitations, tokenizationsBody, doc);
 			}
-            tei = teiFormater.toTEIReferences(tei, resCitations);
 
+			tei.append("\t\t<back>\n");
+			if (mode == 0) {
+				tei = teiFormater.toTEIAnnexLight(tei, reseAnnex, resHeader, resCitations, tokenizationsAnnex, doc);
+			}
+			else if (mode == 1) {
+				tei = teiFormater.toTEIAnnexML(tei, reseAnnex, resHeader, resCitations, tokenizationsAnnex, doc);
+			}
+			tei = teiFormater.toTEIReferences(tei, resCitations);
             tei.append("\t\t</back>\n");
+			
             tei.append("\t</text>\n");
             tei.append("</TEI>\n");
         } catch (Exception e) {

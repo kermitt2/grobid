@@ -812,12 +812,39 @@ public class TEIFormater {
                                 	List<BibDataSet> bds,
                                 	List<String> tokenizations,
                                 	Document doc) throws Exception {
-      	
 		if ( (result == null) || (tokenizations == null) ) {
 			buffer.append("\t\t<body/>\n");
 			return buffer;
 		}
 		buffer.append("\t\t<body>\n");
+		buffer = toTEITextPieceLight(buffer, result,  biblio,  bds, tokenizations, doc);
+      	buffer.append("\t\t</body>\n");
+		
+        return buffer;
+    }
+	
+	public StringBuffer toTEIAnnexLight(StringBuffer buffer,
+                       			 	String result,
+                                	BiblioItem biblio,
+                                	List<BibDataSet> bds,
+                                	List<String> tokenizations,
+                                	Document doc) throws Exception {
+		if ( (result == null) || (tokenizations == null) ) {
+			return buffer;
+		}
+		buffer.append("\t\t<div type=\"annex\"/>\n");
+		buffer = toTEITextPieceLight(buffer, result,  biblio,  bds, tokenizations, doc);
+      	buffer.append("\t\t</div>\n");
+		
+        return buffer;
+    }
+	
+	private StringBuffer toTEITextPieceLight(StringBuffer buffer,
+                       			 	String result,
+                                	BiblioItem biblio,
+                                	List<BibDataSet> bds,
+                                	List<String> tokenizations,
+                                	Document doc) throws Exception {
         StringTokenizer st = new StringTokenizer(result, "\n");
         String s1 = null;
         String s2 = null;
@@ -1085,6 +1112,19 @@ public class TEIFormater {
                 start = false;
             }
         }
+		
+		// we apply some overall cleaning and simplification
+		String str1 = "</ref></p>\n\n\t\t\t<p>";
+		String str2 = "</ref> ";
+		int startPos = 0;
+		while(startPos != -1) {
+			startPos = buffer.indexOf(str1, startPos);
+			if (startPos != -1) {
+				int endPos = startPos + str1.length();
+				buffer.replace(startPos, endPos, str2);
+				startPos = endPos;
+			}
+		}
 
         /*int i = 0; 
         boolean first = true;
@@ -1278,25 +1318,11 @@ public class TEIFormater {
                     tei.append("\t\t\t</div>\n");
                 }
             }
-        }*/
+        }*/								
 		
-      	buffer.append("\t\t</body>\n");
-		
-		buffer.append("\t\t<back>\n");
-		// we apply some overall cleaning and simplification
-		String str1 = "</ref></p>\n\n\t\t\t<p>";
-		String str2 = "</ref> ";
-		int startPos = 0;
-		while(startPos != -1) {
-			startPos = buffer.indexOf(str1, startPos);
-			if (startPos != -1) {
-				int endPos = startPos + str1.length();
-				buffer.replace(startPos, endPos, str2);
-				startPos = endPos;
-			}
-		}
-        return buffer;
-    }
+		return buffer;								
+	}
+	
 	
     /**
      * TODO some documentation
@@ -1433,7 +1459,35 @@ public class TEIFormater {
 		}
 		
 		tei.append("\t\t<body>\n");
-
+		toTEITextPieceML(tei, rese, biblio, bds, tokenizations, doc);
+		tei.append("\t\t</body>\n");
+		
+		return tei;
+	}
+	
+    public StringBuffer toTEIAnnexML(StringBuffer tei,
+                                    String rese,
+                                    BiblioItem biblio,
+                                    List<BibDataSet> bds,
+                                    List<String> tokenizations,
+                                    Document doc) throws Exception {
+		if ( (rese == null) || (tokenizations == null) ) {
+			return tei;
+		}
+		
+		tei.append("\t\t<div type=\"annex\"/>\n");
+		toTEITextPieceML(tei, rese, biblio, bds, tokenizations, doc);
+		tei.append("\t\t</div>\n");
+		
+		return tei;
+	}
+	
+	private StringBuffer toTEITextPieceML(StringBuffer tei,
+                       			 	String rese,
+                                	BiblioItem biblio,
+                                	List<BibDataSet> bds,
+                                	List<String> tokenizations,
+                                	Document doc) throws Exception {
         elements = new ArrayList<String>();
         elements.add("body");
 
@@ -2763,13 +2817,13 @@ public class TEIFormater {
         boolean end = false;
         while (!end) {
             if (elements.size() == 0) {
-                tei.append("\t\t</body>\n");
+                //tei.append("\t\t</body>\n");
                 end = true;
             }
             if ((elements.size() > 0) && (!end)) {
                 String lastElement = elements.get(elements.size() - 1);
                 if (lastElement.equals("body")) {
-                    tei.append("\t\t</body>\n");
+                    //tei.append("\t\t</body>\n");
                     elements.remove(elements.size() - 1);
                     end = true;
                 } else {
@@ -2778,9 +2832,6 @@ public class TEIFormater {
                 }
             }
         }
-
-        tei.append("\t\t<back>\n");
-
 
         return tei;
     }
