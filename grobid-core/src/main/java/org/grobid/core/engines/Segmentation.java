@@ -75,7 +75,20 @@ public class Segmentation extends AbstractParser {
      * @return Document object with segmentation informations
      */
 	public Document processing(String input) {
-		return processing(input, false);
+		return processing(input, null);
+	}
+	
+    /**
+     *  Segment a PDF document into high level zones: cover page, document header, 
+     *	page footer, page header, body, page numbers, biblio section and annexes.
+     *
+     * @param input filename of pdf file
+     * @param assetPath if not null, the PDF assets (embedded images) will be extracted and 
+     * saved under the indicated repository path
+     * @return Document object with segmentation informations
+     */
+    public Document processing(String input, String assetPath) {
+		return processing(input, assetPath, -1, -1);
 	}
 
     /**
@@ -83,11 +96,15 @@ public class Segmentation extends AbstractParser {
      *	page footer, page header, body, page numbers, biblio section and annexes.
      *
      * @param input filename of pdf file
-	 * @param assets boolean indicating if the assets (embedded images and vectoriels) should also be 
-	 * extracted and saved	
+     * @param assetPath if not null, the PDF assets (embedded images) will be extracted and 
+     * saved under the indicated repository path
+	 * @param startPage give the starting page to consider in case of segmentation of the 
+	 * PDF, -1 for the first page (default) 
+	 * @param endPage give the end page to consider in case of segmentation of the 
+	 * PDF, -1 for the last page (default) 	
      * @return Document object with segmentation informations
      */
-    public Document processing(String input, boolean assets) {
+    public Document processing(String input, String assetPath, int startPage, int endPage) {
         if (input == null) {
             throw new GrobidResourceException("Cannot process pdf file, because input file was null.");
         }
@@ -106,8 +123,11 @@ public class Segmentation extends AbstractParser {
         Document doc = new Document(input, tmpPath.getAbsolutePath());
         String pathXML = null;
         try {
-            int startPage = -1;
-            int endPage = -1;
+            //int startPage = -1;
+            //int endPage = -1;
+			boolean assets = false;
+			if (assetPath!= null)
+				assets = true;
             pathXML = doc.pdf2xml(true, false, startPage, endPage, input, tmpPath.getAbsolutePath(), assets);
             //with timeout,
             //no force pdf reloading
@@ -130,7 +150,7 @@ public class Segmentation extends AbstractParser {
 			if ( (content != null) && (content.trim().length() > 0) ) {
 	            String labelledResult = label(content);
 				/*try {
-	            	FileUtils.writeStringToFile(new File("/tmp/x.txt"), labelledResult);
+	            	FileUtils.writeStringToFile(new File("/tmp/x1.txt"), labelledResult);
 					FileUtils.writeStringToFile(new File("/tmp/x2.txt"), tokenizations.toString());
 				}
 				catch(Exception e) {
@@ -155,13 +175,21 @@ public class Segmentation extends AbstractParser {
 				
 	            //System.out.println(doc.getDocumentPieceText(doc.getDocumentPart(SegmentationLabel.FOOTNOTE)));
 				//System.out.println("------------------");
+				
+				// if assets is true, the images are still there under directory pathXML+"_data"
+				// we copy them to the assetPath directory
+				if (assetPath != null) {
+					// copy the files under the directory pathXML+"_data"
+					//...
+				}
 			}
             return doc;
         } finally {
             // keep it clean when leaving...
-            doc.cleanLxmlFile(pathXML, false);
-			// if assets is true, the images are still there under directory pathXML+"_data"
-			// pathXML can be obtained via doc.getPathXML()
+			if (assetPath == null)
+				doc.cleanLxmlFile(pathXML, false);
+			else 
+				doc.cleanLxmlFile(pathXML, true);
         }
     }
 	

@@ -60,7 +60,7 @@ public class HeaderParser extends AbstractParser {
 	 * Processing with application of the segmentation model
 	 */ 
 	public Pair<String, Document> processing(String input, boolean consolidate, BiblioItem resHeader) {
-        Document doc = parsers.getSegmentationParser().processing(input, true);
+        Document doc = parsers.getSegmentationParser().processing(input);
 
         String tei = processingHeaderSection(doc, consolidate, resHeader);
         return new ImmutablePair<String, Document>(tei, doc);
@@ -70,7 +70,8 @@ public class HeaderParser extends AbstractParser {
 	 *  Processing without application of the segmentation model, regex are used to identify the header
 	 *  zone.  
 	 */ 
-	public Pair<String, Document> processing2(String input, boolean consolidate, BiblioItem resHeader, int startPage, int endPage) {
+	public Pair<String, Document> processing2(String input, boolean consolidate, 
+			BiblioItem resHeader, int startPage, int endPage) {
         Document doc = new Document(input, tmpPath.getAbsolutePath());
         String pathXML = null;
         try {
